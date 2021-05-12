@@ -12,7 +12,7 @@ public enum Broadcast {
     FRIENDS(Icon.GREEN_INFO_BADGE, (player, message) -> CentralClient.sendGlobalMessage(player.getUserId(), message)),
     WORLD(Icon.BLUE_INFO_BADGE, (player, message) -> World.players.forEach(p -> {
         //If the player has toggle off announcement broadcasts don't send.
-        if (!p.broadcastAnnouncements && (message.contains("Announcements") || message.contains("::Vote for"))) {
+        if (!p.broadcastAnnouncements && (message.contains("[Info]"))) {
             return;
         }
         //If the player has toggle off tournament broadcasts don't send.

@@ -18,9 +18,9 @@ public class BroadcastAnnouncements extends JournalEntry {
     public void select(Player player) {
         player.broadcastAnnouncements = !player.broadcastAnnouncements;
         if(player.broadcastAnnouncements)
-            player.sendMessage(Color.DARK_GREEN.wrap("You will now get broadcasted messages about the Announcements."));
+            player.sendMessage(Color.DARK_GREEN.wrap("You will now get broadcasted Announcements."));
         else
-            player.sendMessage(Color.DARK_GREEN.wrap("You will no longer get broadcasted messaged about the Announcements."));
+            player.sendMessage(Color.DARK_GREEN.wrap("You will no longer get broadcasted Announcements."));
         send(player);
     }
 
