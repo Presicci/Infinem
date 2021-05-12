@@ -9,7 +9,8 @@ public enum Icon {
     WILDERNESS(46),
     ANNOUNCEMENT(55),
     HCIM_DEATH(32),
-    DONATOR(142)
+    DONATOR(25),
+    INFO(15)
     ;
 
     public final int imgId;

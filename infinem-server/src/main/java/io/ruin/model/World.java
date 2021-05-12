@@ -409,21 +409,19 @@ public class World extends EventWorker {
         Server.afterData.add(() -> {
             List<String> announcements;
             announcements = Arrays.asList(
-                    "Need help? Join the \"help\" cc!",
-                    "Make sure to vote to gain access to exclusive items!",
-                    "Looking to support Kronos? Type ::store ingame!",
-                    "Take the time to protect your account and set a bank pin and 2FA!",
-                    "Please take the time to vote for us. It helps us out and takes two seconds! ::vote",
-                    "Join ::discord to get closer to the community!",
-                    "Item Upgrades can be a great way to get the most from your gear!"
+                    "Make sure to ::vote to help support the server and get free loot!",
+                    "Need help? Join the \"help\" clan chat!",
+                    "Take the time to protect your account and set a bank pin!",
+                    "Infinem is made possible by donations, visit the ::store to help out!",
+                    "Join the ::discord to meet friends and share achievements!"
             );
 
             Collections.shuffle(announcements);
             startEvent(e -> {
                 int offset = 0;
                 while(true) {
-                    e.delay(500); //5 minutes
-                    Broadcast.WORLD.sendNews(Icon.ANNOUNCEMENT, "Announcements", announcements.get(offset));
+                    e.delay(1500); // 15 minutes
+                    Broadcast.WORLD.sendNews(Icon.INFO, "[Info]", announcements.get(offset));
                     if(++offset >= announcements.size())
                         offset = 0;
                 }
