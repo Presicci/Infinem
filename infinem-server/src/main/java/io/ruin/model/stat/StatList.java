@@ -2,6 +2,7 @@ package io.ruin.model.stat;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.cache.Color;
+import io.ruin.cache.Icon;
 import io.ruin.model.World;
 import io.ruin.model.activities.summerevent.SummerTokens;
 import io.ruin.model.activities.wilderness.Wilderness;
@@ -231,7 +232,7 @@ public class StatList {
             player.sendMessage(Color.ORANGE_RED.tag() + "Congratulations on achieving level 99 in " + type.name() + "!");
             player.sendMessage(Color.ORANGE_RED.tag() + "You may now purchase a skillcape from Mac at home.");
             Broadcast broadcast = type.defaultXpMultiplier == -1 ? Broadcast.FRIENDS : Broadcast.GLOBAL;
-            broadcast.sendNews(player, player.getName() + " has just achieved level 99 in " + type.name() + "!");
+            broadcast.sendNews(player, Icon.SILVER_STAR, player.getName() + " has just achieved level 99 in " + type.name() + "!");
         }
         if(statId <= 6)
             player.getCombat().updateLevel();

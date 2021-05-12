@@ -10,7 +10,8 @@ public enum Icon {
     HCIM_DEATH(32),
     DONATOR(19),
     INFO(15),
-    GOLD_STAR(32)
+    GOLD_STAR(32),
+    SILVER_STAR(31)
     ;
 
     public final int imgId;
