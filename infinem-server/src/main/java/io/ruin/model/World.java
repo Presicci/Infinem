@@ -168,36 +168,36 @@ public class World extends EventWorker {
 
     public static void toggleDoubleDrops() {
         doubleDrops = !doubleDrops;
-        Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Double drops have been " + (doubleDrops ? "enabled" : "disabled") + ".");
+        Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Double drops have been " + (doubleDrops ? "enabled" : "disabled") + ".");
     }
 
     public static void toggleDoublePkp() {
         doublePkp = !doublePkp;
-        Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Double Pkp has been " + (doublePkp ? "enabled" : "disabled") + ".");
+        Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Double Pkp has been " + (doublePkp ? "enabled" : "disabled") + ".");
     }
 
     public static void toggleDoubleSlayer() {
         doubleSlayer = !doubleSlayer;
-        Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Double Slayer Points has been " + (doubleSlayer ? "enabled" : "disabled") + ".");
+        Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Double Slayer Points has been " + (doubleSlayer ? "enabled" : "disabled") + ".");
     }
 
     public static void toggleDoublePest() {
         doublePest = !doublePest;
-        Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Double Pest Control Points has been " + (doublePest ? "enabled" : "disabled") + ".");
+        Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Double Pest Control Points has been " + (doublePest ? "enabled" : "disabled") + ".");
     }
 
     public static void boostXp(int multiplier) {
         xpMultiplier = multiplier;
         if(xpMultiplier == 1)
-            Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Experience is now normal. (x1)");
+            Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Experience is now normal. (x1)");
         else if(xpMultiplier == 2)
-            Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Experience is now being doubled! (x2)");
+            Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Experience is now being doubled! (x2)");
         else if(xpMultiplier == 3)
-            Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Experience is now being tripled! (x3)");
+            Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Experience is now being tripled! (x3)");
         else if(xpMultiplier == 4)
-            Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Experience is now being quadrupled! (x4)");
+            Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Experience is now being quadrupled! (x4)");
         else
-            Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Experience is now boosted! (x" + multiplier + ")");
+            Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Experience is now boosted! (x" + multiplier + ")");
     }
 
     /*
@@ -210,24 +210,24 @@ public class World extends EventWorker {
     public static void toggleWeekendExpBoost() {
         weekendExpBoost = !weekendExpBoost;
         if(weekendExpBoost) {
-            Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "The 25% weekend experience boost is now activated!");
+            Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "The 25% weekend experience boost is now activated!");
         } else {
-            Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "The 25% weekend experience boost is now deactivated!");
+            Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "The 25% weekend experience boost is now deactivated!");
         }
     }
 
     public static void boostBM(int multiplier) {
         bmMultiplier = multiplier;
         if(bmMultiplier == 1)
-            Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Blood money drops from player kills are now normal. (x1)");
+            Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Blood money drops from player kills are now normal. (x1)");
         else if(bmMultiplier == 2)
-            Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Blood money drops from player kills are now being doubled! (x2)");
+            Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Blood money drops from player kills are now being doubled! (x2)");
         else if(bmMultiplier == 3)
-            Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Blood money drops from player kills are now being tripled! (x3)");
+            Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Blood money drops from player kills are now being tripled! (x3)");
         else if(bmMultiplier == 4)
-            Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Blood money drops from player kills are now being quadrupled! (x4)");
+            Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Blood money drops from player kills are now being quadrupled! (x4)");
         else
-            Broadcast.WORLD.sendNews(Icon.RED_INFO_BADGE, "Blood money drops from player kills are now boosted! (x" + multiplier + ")");
+            Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Blood money drops from player kills are now boosted! (x" + multiplier + ")");
     }
 
     public static void sendLoginMessages(Player player) {
