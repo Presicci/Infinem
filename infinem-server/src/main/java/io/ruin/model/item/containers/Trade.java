@@ -119,7 +119,7 @@ public class Trade extends ItemContainer {
             return;
         }
         if(target.getGameMode().isIronMan() && !player.isAdmin()) {
-            player.sendMessage(target.getName() + " is an ironman and so cannot trade.");
+            player.sendMessage(target.getName() + " is an ironman and cannot trade.");
             return;
         }
         if(target.isLocked()) {
