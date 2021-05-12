@@ -1,0 +1,11 @@
+rootProject.name = "Infinem"
+
+include ':infinem-server'
+include ':infinem-server-live'
+include ':infinem-client'
+include ':infinem-api'
+include ':infinem-update-server'
+include ':infinem-central-server'
+include ':infinem-launcher'
+include ':infinem-webhooks'
+
