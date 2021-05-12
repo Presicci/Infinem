@@ -26,7 +26,7 @@ import java.util.List;
 public class CreditManager {
 
     public static final String STORE_URL = World.type.getWebsiteUrl() + "/store";
-    static boolean doubleChance = false;
+
     private static void talkTo(Player player, NPC npc) {
         player.dialogue(
                 new NPCDialogue(npc, "Hey there, Adventurer, are you admiring my mighty table of riches? The seemingly uncountable piles of gold laid before you? It's beautiful, isn't it?"),
@@ -88,13 +88,6 @@ public class CreditManager {
                 for(Iterator<Item> it = items.iterator(); it.hasNext(); ) {
                     Item item = it.next();
                     ItemDef def = item.getDef();
-                    if (doubleChance) {
-                        doubleChance = false;
-                        if (Random.rollPercent(40) && item.getId() != 13190) {
-                            item.setAmount(item.getAmount() * 2);
-                            player.sendMessage("Your item was doubled :-)");
-                        }
-                    }
                     if(def.stackable) {
                         Item invItem = player.getInventory().findItem(item.getId());
                         if(invItem != null) {
@@ -131,11 +124,7 @@ public class CreditManager {
                     dialogues.add(new NPCDialogue(npc, "Claimed " + claimedPurchases + "/" + totalPurchases + " purchases.<br>Come back for the rest when you have enough inventory space.").lineHeight(19));
                 if(bankedItems)
                     player.sendMessage(Color.COOL_BLUE.wrap("One or more of your claimed items have been deposited into your bank."));
-                Broadcast.GLOBAL.sendNews(player, player.getName() + " has claimed a donation :O! Join them at ::store!");
-                if (Random.get(1, 4) > 2) {
-                    Broadcast.GLOBAL.sendNews(Icon.DONATOR, "Next donation claim ingame has a 40% chance of doubling!");
-                    doubleChance = true;
-                }
+                Broadcast.GLOBAL.sendNews(player, "Thank you to " +player.getName() + " for their generous donation! Join them at ::store!");
                 player.storeAmountSpent += spent;
                 PlayerGroup group = getGroup(player);
                 if(group != null && !player.isGroup(group)) {
@@ -162,19 +151,19 @@ public class CreditManager {
      */
 
     public static PlayerGroup getGroup(Player player) {
-        if(player.storeAmountSpent >= 2500)
-            return  PlayerGroup.ZENYTE;
         if(player.storeAmountSpent >= 1000)
-            return PlayerGroup.ONYX;
+            return  PlayerGroup.ZENYTE;
         if(player.storeAmountSpent >= 500)
-            return PlayerGroup.DRAGONSTONE;
+            return PlayerGroup.ONYX;
         if(player.storeAmountSpent >= 250)
-            return PlayerGroup.DIAMOND;
+            return PlayerGroup.DRAGONSTONE;
         if(player.storeAmountSpent >= 100)
-            return PlayerGroup.RUBY;
+            return PlayerGroup.DIAMOND;
         if(player.storeAmountSpent >= 50)
+            return PlayerGroup.RUBY;
+        if(player.storeAmountSpent >= 25)
             return PlayerGroup.EMERALD;
-        if(player.storeAmountSpent >= 1)
+        if(player.storeAmountSpent >= 5)
             return PlayerGroup.SAPPHIRE;
         return null;
     }
