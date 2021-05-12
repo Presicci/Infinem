@@ -908,11 +908,6 @@ public class CommandHandler implements Incoming {
                 return true;
             }
 
-            case "doublepkp": {
-                World.toggleDoublePkp();
-                return true;
-            }
-
             case "doubleslayer": {
                 World.toggleDoubleSlayer();
                 return true;

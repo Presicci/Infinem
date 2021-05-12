@@ -43,9 +43,9 @@ public class TabQuest {
         COMPONENT_12(12, player -> "Server Uptime: " + Color.GREEN.wrap(TimeUtils.fromMs(Server.currentTick() * Server.tickMs(), false))),
         COMPONENT_43(43, player -> "XP Bonus: " + Color.GREEN.wrap(String.valueOf(World.xpMultiplier))),
         COMPONENT_44(44, player -> "Double Drops: " + Color.GREEN.wrap(getDoubleDrops())),
-        COMPONENT_45(45, player -> "Double PK Points: " + Color.GREEN.wrap(getDoublePkp())),
-        COMPONENT_46(46, player -> "Double Slayer Points: " + Color.GREEN.wrap(getDoubleSlayerPoints())),
-        COMPONENT_47(47, player -> "Double Pest Control: " + Color.GREEN.wrap(getDoublePcPoints())),
+        COMPONENT_46(45, player -> "Double Slayer Points: " + Color.GREEN.wrap(getDoubleSlayerPoints())),
+        COMPONENT_45(46, player -> "Double Pest Control: " + Color.GREEN.wrap(getDoublePcPoints())),
+        //COMPONENT_47(47, player -> "Double Pest Control: " + Color.GREEN.wrap(getDoublePcPoints())),
         COMPONENT_14(14, player -> {
             boolean hasTwoFactor = player.tfa;
             String text = "Two-factor authentication";
@@ -124,13 +124,6 @@ public class TabQuest {
 
     private static String getDoubleDrops() {
         if (World.doubleDrops) {
-            return Color.GREEN.wrap("Enabled!");
-        } else {
-            return Color.RED.wrap("Disabled");
-        }
-    }
-    private static String getDoublePkp() {
-        if (World.doublePkp) {
             return Color.GREEN.wrap("Enabled!");
         } else {
             return Color.RED.wrap("Disabled");

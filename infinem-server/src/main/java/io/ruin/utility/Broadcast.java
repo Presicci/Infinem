@@ -65,6 +65,10 @@ public enum Broadcast {
         sendNews(player, null, null, message);
     }
 
+    public void sendNews(Player player, Icon overrideIcon, String message) {
+        sendNews(player, overrideIcon, null, message);
+    }
+
     public void sendNews(Icon overrideIcon, String title, String message) {
         sendNews(null, overrideIcon, title, message);
     }

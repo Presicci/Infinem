@@ -152,8 +152,6 @@ public class World extends EventWorker {
      */
     public static boolean doubleDrops;
 
-    public static boolean doublePkp;
-
     public static boolean doubleSlayer;
 
     public static boolean doublePest;
@@ -168,22 +166,17 @@ public class World extends EventWorker {
 
     public static void toggleDoubleDrops() {
         doubleDrops = !doubleDrops;
-        Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Double drops have been " + (doubleDrops ? "enabled" : "disabled") + ".");
-    }
-
-    public static void toggleDoublePkp() {
-        doublePkp = !doublePkp;
-        Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Double Pkp has been " + (doublePkp ? "enabled" : "disabled") + ".");
+        Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "[Server]", "Double drops has been " + (doubleDrops ? "enabled! Start killing!" : "disabled."));
     }
 
     public static void toggleDoubleSlayer() {
         doubleSlayer = !doubleSlayer;
-        Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Double Slayer Points has been " + (doubleSlayer ? "enabled" : "disabled") + ".");
+        Broadcast.WORLD.sendNews(Icon.GOLD_STAR,"[Server]", "Double Slayer Points has been " + (doubleSlayer ? "enabled! Start slaying!" : "disabled."));
     }
 
     public static void toggleDoublePest() {
         doublePest = !doublePest;
-        Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "Double Pest Control Points has been " + (doublePest ? "enabled" : "disabled") + ".");
+        Broadcast.WORLD.sendNews(Icon.GOLD_STAR,"[Server]", "Double Pest Control Points has been " + (doublePest ? "enabled! Start controlling those pests!" : "disabled."));
     }
 
     public static void boostXp(int multiplier) {
