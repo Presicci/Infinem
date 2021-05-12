@@ -208,7 +208,7 @@ public interface RuneLiteConfig extends Config
 	)
 	default boolean requestFocusOnNotification()
 	{
-		return true;
+		return false;
 	}
 
 	@ConfigItem(
@@ -220,7 +220,7 @@ public interface RuneLiteConfig extends Config
 	)
 	default boolean enableNotificationSound()
 	{
-		return true;
+		return false;
 	}
 
 	@ConfigItem(
