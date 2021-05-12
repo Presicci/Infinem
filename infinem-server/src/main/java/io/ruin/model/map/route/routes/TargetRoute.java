@@ -158,7 +158,7 @@ public class TargetRoute {
      * Misc checks
      */
 
-    protected static boolean inTarget(int absX, int absY, int size, int targetX, int targetY, int targetSize) {
+    public static boolean inTarget(int absX, int absY, int size, int targetX, int targetY, int targetSize) {
         if(absX > (targetX + (targetSize - 1)) || absY > (targetY + (targetSize - 1)))
             return false;
         if(targetX > (absX + (size - 1)) || targetY > (absY + (size - 1)))
