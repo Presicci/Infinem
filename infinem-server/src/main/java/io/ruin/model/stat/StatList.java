@@ -229,7 +229,7 @@ public class StatList {
         player.sendMessage("You've just advanced " + type.descriptiveName + " level. You have reached level " + newLevel + ".");
         if(newLevel == 99) {
             player.sendMessage(Color.ORANGE_RED.tag() + "Congratulations on achieving level 99 in " + type.name() + "!");
-            player.sendMessage(Color.ORANGE_RED.tag() + "You may now purchase a skillcape from Mac who can be found at home.");
+            player.sendMessage(Color.ORANGE_RED.tag() + "You may now purchase a skillcape from Mac at home.");
             Broadcast broadcast = type.defaultXpMultiplier == -1 ? Broadcast.FRIENDS : Broadcast.GLOBAL;
             broadcast.sendNews(player, player.getName() + " has just achieved level 99 in " + type.name() + "!");
         }
