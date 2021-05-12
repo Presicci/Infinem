@@ -186,8 +186,8 @@ public enum DragonfireShield {
     }
 
     private static boolean consumeCharge(Player player, int shieldId) {
-        Item shield = player.getEquipment().findItem(shieldId);
-        if(shield == null)
+        Item shield = player.getEquipment().get(Equipment.SLOT_SHIELD);
+        if(shield == null || shield.getId() != shieldId)
             return false;
         int charges = AttributeExtensions.getCharges(shield);
         if(charges <= 0) {
