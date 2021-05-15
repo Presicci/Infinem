@@ -34,7 +34,7 @@ public class RareDropEmbedMessage {
              * Footer
              */
             Footer footer = new Footer();
-            footer.setText(World.type.getWorldName() + " - The Final Challenge!");
+            footer.setText(World.type.getWorldName());
             embedMessage.setFooter(footer);
 
             /*
