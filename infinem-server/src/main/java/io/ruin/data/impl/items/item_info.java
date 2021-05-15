@@ -126,7 +126,7 @@ public class item_info extends DataFile {
     }
 
     private void loadMisc(ItemDef def) {
-        def.dropOption = def.getOption("drop");
+        def.dropOption = def.getOption("drop", "release");
         def.equipOption = def.getOption("wield", "equip", "wear", "ride", "hold");
         def.pickupOption = def.getGroundOption("take", "pickup");
         if(def.value > 0) {
