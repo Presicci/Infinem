@@ -137,7 +137,8 @@ public class DeathStorage extends ItemContainer {
     private void takeAll() {
         for (Item item : getItems()) {
             if (item != null) {
-                if (item.move(item.getId(), item.getAmount(), player.getInventory()) != item.getAmount()) {
+                int itemAmt = item.getAmount();
+                if (item.move(item.getId(), itemAmt, player.getInventory()) != itemAmt) {
                     break;
                 }
             }
