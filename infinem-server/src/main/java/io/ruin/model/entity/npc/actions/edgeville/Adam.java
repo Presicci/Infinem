@@ -10,6 +10,8 @@ import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.Item;
+import io.ruin.model.item.ItemContainerG;
 import io.ruin.model.shop.ShopManager;
 
 public class Adam {
@@ -55,9 +57,17 @@ public class Adam {
         SpawnListener.register(ADAM, npc -> npc.skipReachCheck = p -> p.equals(3083, 3510));
     }
 
+    private static int[] ironmanArmors = { 12810, 12811, 12812, 12813, 12814, 12815, 20792, 20794, 20796 };
+
     private static void removeIronmanMode(Player player) {
         if(player.getBankPin().requiresVerification(Adam::removeIronmanMode))
             return;
+        for (int armor : ironmanArmors) {   // Removes the players ironman armor
+            ItemContainerG<? extends Item> container = player.findItem(armor);
+            if (player.findItem(armor) != null) {
+                container.remove(armor, 1);
+            }
+        }
         GameMode.changeForumsGroup(player, GameMode.STANDARD.groupId);
         Config.IRONMAN_MODE.set(player, 0);
         player.dialogue(new MessageDialogue("You have successfully removed your ironman status."));
