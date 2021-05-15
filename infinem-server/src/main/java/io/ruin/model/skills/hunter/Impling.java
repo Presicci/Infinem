@@ -15,6 +15,7 @@ import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
@@ -71,15 +72,32 @@ public enum Impling {
         if(!player.getPosition().isWithinDistance(npc.getPosition(), 1))
             return;
 
+        attemptCatchEvent(player, npc, impling, barehands, impJar);
+    }
+
+    private static void recursiveAttemptCatch(Player player, NPC npc, Impling impling, boolean barehands, Item impJar) {
+        TargetRoute.set(player, npc, () -> {
+            player.face(npc);
+            attemptCatchEvent(player, npc, impling, barehands, impJar);
+        });
+    }
+
+    private static void attemptCatchEvent(Player player, NPC npc, Impling impling, boolean barehands, Item impJar) {
         player.startEvent(event -> {
+            //if (!player.getPosition().isWithinDistance(npc.getPosition(), 1)) { // Check that the play is within range
+            ////    return;
+            //}
             player.lock();
-            if(barehands) {
+            if (barehands) {
                 player.animate(7171);
             } else {
                 player.animate(hasMagicButterflyNet(player) ? 6605 : 6606);
             }
             event.delay(2);
-            if(Random.rollDie(2, 1)) { //TODO: proper chance
+            if (npc.isRemoved()) {  // Check if the npc has been removed
+                return;
+            }
+            if (isCatch(player, impling)) {
 
                 if (barehands) {
                     ImplingJar jar = ImplingJar.forJarId(impling.jarId);
@@ -102,9 +120,22 @@ public enum Impling {
                 despawnImpling(npc);
                 player.getStats().addXp(StatType.Hunter, player.getPosition().inBounds(PURO_PURO) ? impling.puroExp : impling.worldExp, true);
                 PlayerCounter.IMPLINGS_CAUGHT.increment(player, 1);
+                player.unlock();
+            } else {
+                if (false) { // TODO add auto catch
+                    event.delay(1);
+                    player.unlock();
+                    recursiveAttemptCatch(player, npc, impling, barehands, impJar);
+                } else {
+                    player.unlock();
+                }
             }
-            player.unlock();
         });
+    }
+
+    private static boolean isCatch(Player player, Impling impling) {
+        int hunterLevel = player.getStats().get(StatType.Hunter).currentLevel;
+        return Random.rollDie(4, Math.min(3, Math.max(1 , (int) ((hunterLevel - impling.levelReq) / 5))));
     }
 
     private static boolean hasButterflyNet(Player player) {
@@ -341,7 +372,7 @@ public enum Impling {
         //overworld spawns
         World.startEvent(event -> {
             //spawn a few on startup
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 300; i++)
                 spawnRandomImplingOverworld();
             while (true) {
                 if (ACTIVE_OVERWORLD_IMPLINGS < OVERWORLD_MAX_IMPLINGS)
