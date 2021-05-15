@@ -197,7 +197,7 @@ public class Bank extends ItemContainerG<BankItem> {
             player.sendMessage("You don't have enough inventory space.");
             return;
         }
-        if(moved < amount) {
+        if((moved < amount) && amount != Integer.MAX_VALUE) {
             /* kinda pointless but rs does it so hey */
             player.sendMessage("You don't have enough inventory space to withdraw that many.");
         }
