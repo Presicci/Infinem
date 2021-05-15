@@ -65,7 +65,7 @@ public abstract class PlayerAttributes extends Entity {
     public int tutorialStage;
     @Setter protected Runnable onDialogueContinued;
 
-    @Expose public Journal journal = Journal.BESTIARY;
+    @Expose public Journal journal = Journal.MAIN;
 
     @Expose public int targetOverlaySetting = 0;
     public Entity targetOverlayTarget;

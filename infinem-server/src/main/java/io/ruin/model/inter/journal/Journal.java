@@ -11,9 +11,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.handlers.TabJournal;
-import io.ruin.model.inter.journal.bestiary.BestiarySearchDrop;
-import io.ruin.model.inter.journal.bestiary.BestiarySearchMonster;
-import io.ruin.model.inter.journal.bestiary.BestiarySearchResult;
+import io.ruin.model.inter.journal.bestiary.*;
 import io.ruin.model.inter.journal.main.*;
 import io.ruin.model.inter.journal.presets.PresetCustom;
 import io.ruin.model.inter.journal.presets.main.Hybrid;
@@ -23,6 +21,7 @@ import io.ruin.model.inter.journal.presets.pure.PureMelee;
 import io.ruin.model.inter.journal.presets.pure.PureNoHonorTribrid;
 import io.ruin.model.inter.journal.presets.pure.RangeDDS;
 import io.ruin.model.inter.journal.toggles.*;
+import io.ruin.network.incoming.handlers.DisplayHandler;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,6 +32,7 @@ public enum Journal {
     ACHIEVEMENTS,
     PRESETS,
     TOGGLES,
+    CHARACTER,
     BESTIARY;
 
     public Journal next() {
@@ -73,11 +73,11 @@ public enum Journal {
     public void send(Player player) {
         player.journal = this;
         TabJournal.swap(player, Interface.SERVER_TAB);
+        for(int childId = 9; childId <= 47; childId++) {
+            player.getPacketSender().sendClientScript(135, "ii", Interface.SERVER_TAB << 16 | childId, 494);
+            player.getPacketSender().sendString(Interface.SERVER_TAB, childId, "");
+        }
         if(this == BESTIARY && player.bestiarySearchResults != null) {
-            for(int childId = 9; childId <= 47; childId++) {
-                player.getPacketSender().sendClientScript(135, "ii", Interface.SERVER_TAB << 16 | childId, 494);
-                player.getPacketSender().sendString(Interface.SERVER_TAB, childId, "");
-            }
             for(JournalEntry entry : player.bestiarySearchResults)
                 entry.send(player);
         } else {
@@ -86,6 +86,7 @@ public enum Journal {
                 entry.send(player);
             }
         }
+        DisplayHandler.updateDisplay(player);
     }
 
     /**
@@ -104,55 +105,88 @@ public enum Journal {
     }
 
     static {
-//        /*
-//         * Main
-//         */
-//        MAIN.addCategory("<img=85> Server");
-//        MAIN.addEntry(Uptime.INSTANCE);
-//        MAIN.addEntry(PlayersOnline.INSTANCE);
-//        MAIN.addEntry(WildernessCount.INSTANCE);
-//        MAIN.addEntry(PVPInstanceCount.INSTANCE);
-//
-//        MAIN.addCategory("");
-//        MAIN.addCategory("<img=67> Player Statistics");
-//        MAIN.addEntry(TotalSpent.INSTANCE);
-//        MAIN.addEntry(PlayTime.INSTANCE);
-//        MAIN.addEntry(ExpBonusTime.INSTANCE);
-//        MAIN.addEntry(DropBoostTime.INSTANCE);
-//        MAIN.addEntry(PetDropBoostTime.INSTANCE);
-//
-//        MAIN.addCategory("");
-//        MAIN.addCategory("<img=65> PVP Statistics");
-//        MAIN.addEntry(PKRating.INSTANCE);
-//        MAIN.addEntry(new TotalKills());
-//        MAIN.addEntry(new TotalDeaths());
-//        MAIN.addEntry(new KillDeathRatio());
-//        MAIN.addEntry(new KillingSpree());
-//        MAIN.addEntry(new HighestKillingSpree());
-//        MAIN.addEntry(new HighestShutdown());
-//
-//        MAIN.addCategory("");
-//        MAIN.addCategory("<img=123> Events");
-//        BossEvent[] bossEvents = new BossEvent[BossEvent.BOSSES.length];
-//        for (int i = 0; i < bossEvents.length; i++)
-//                MAIN.addEntry(bossEvents[i] = new BossEvent(i));
-//        MAIN.addEntry(Hotspot.Entry.INSTANCE);
-//        MAIN.addEntry(DeadmanChestEntry.INSTANCE);
-//        MAIN.addEntry(ActiveVolcano.Entry.INSTANCE);
-//        //MAIN.addEntry(SupplyChest.Entry.INSTANCE);
-//        MAIN.addEntry(BloodyMerchant.Entry.INSTANCE);
-//
-//        MAIN.addCategory("");
-//        MAIN.addCategory("<img=53> Daily Tasks");
-//        MAIN.addEntry(DailyTask.PointsEntry.ENTRY);
-//        for (int i = 0; i < 3; i++)
-//            MAIN.addEntry(DailyTask.TaskEntry.ENTRIES[i]);
-//
-//
-//
-//        /*
-//         * Achievements
-//         */
+        /*
+         * Main
+         */
+        MAIN.addCategory("Server");
+        MAIN.addEntry(Uptime.INSTANCE);
+        MAIN.addEntry(PlayersOnline.INSTANCE);
+        //Online staff
+        MAIN.addEntry(WildernessCount.INSTANCE);
+        MAIN.addEntry(PVPInstanceCount.INSTANCE);
+        MAIN.addCategory("");
+        MAIN.addEntry(new DropTable());
+        MAIN.addCategory("");
+        MAIN.addCategory("Events");
+        BossEvent[] bossEvents = new BossEvent[BossEvent.BOSSES.length];
+        for (int i = 0; i < bossEvents.length; i++)
+                MAIN.addEntry(bossEvents[i] = new BossEvent(i));
+        MAIN.addEntry(Hotspot.Entry.INSTANCE);
+        MAIN.addEntry(DeadmanChestEntry.INSTANCE);
+        MAIN.addEntry(ActiveVolcano.Entry.INSTANCE);
+        //MAIN.addEntry(SupplyChest.Entry.INSTANCE);
+        MAIN.addEntry(BloodyMerchant.Entry.INSTANCE);
+        MAIN.addCategory("");
+        MAIN.addEntry(DoubleExperience.INSTANCE);
+        MAIN.addEntry(DoubleDrops.INSTANCE);
+        MAIN.addEntry(DoubleSlayerPoints.INSTANCE);
+        MAIN.addEntry(DoublePestControl.INSTANCE);
+        MAIN.addCategory("");
+        MAIN.addEntry(new Website("Open Website", ""));
+        MAIN.addEntry(new Website("Open Forums", ""));
+        MAIN.addEntry(new Website("Open Discord", "https://discord.gg/ks9WxBQb7d"));
+        MAIN.addEntry(new Website("Open Store", ""));
+
+
+
+        /*
+         * Character
+         */
+        CHARACTER.addCategory("Daily Tasks");
+        CHARACTER.addEntry(DailyTask.PointsEntry.ENTRY);
+        for (int i = 0; i < 3; i++) {
+            CHARACTER.addEntry(DailyTask.TaskEntry.ENTRIES[i]);
+        }
+
+        CHARACTER.addCategory("");
+        CHARACTER.addCategory("Currencies");
+        CHARACTER.addEntry(new AppreciationPoints());
+
+        CHARACTER.addCategory("");
+        CHARACTER.addCategory("Account");
+        CHARACTER.addEntry(new JournalPlayerGroup());
+        CHARACTER.addEntry(TotalSpent.INSTANCE);
+        CHARACTER.addEntry(PlayTime.INSTANCE);
+        CHARACTER.addEntry(ExpBonusTime.INSTANCE);
+        CHARACTER.addEntry(DropBoostTime.INSTANCE);
+        CHARACTER.addEntry(PetDropBoostTime.INSTANCE);
+
+        CHARACTER.addCategory("");
+        CHARACTER.addEntry(new DoubleDropChance());
+
+        // Points
+
+        // gamemode
+        // skilling xp multi
+        // combat xp multi
+
+        /*COMPONENT_17(17, player -> "Base XP: " + Color.GREEN.wrap(String.valueOf(getXpBonus(player)))),
+        COMPONENT_49(49, player -> "PVM Points: " + Color.GREEN.wrap(Integer.toString(player.PvmPoints))),*/
+
+        CHARACTER.addCategory("");
+        CHARACTER.addCategory("Player vs. Player");
+        CHARACTER.addEntry(PKRating.INSTANCE);
+        CHARACTER.addEntry(new TotalKills());
+        CHARACTER.addEntry(new TotalDeaths());
+        CHARACTER.addEntry(new KillDeathRatio());
+        CHARACTER.addEntry(new KillingSpree());
+        CHARACTER.addEntry(new HighestKillingSpree());
+        CHARACTER.addEntry(new HighestShutdown());
+
+
+        /*
+         * Achievements
+         */
         for (AchievementCategory cat : AchievementCategory.values()) {
             ACHIEVEMENTS.addCategory(cat.name());
             Arrays.stream(Achievement.values())
@@ -227,7 +261,8 @@ public enum Journal {
         BESTIARY.addCategory("Search");
         BESTIARY.addEntry(BestiarySearchDrop.INSTANCE);
         BESTIARY.addEntry(BestiarySearchMonster.INSTANCE);
-
+        BESTIARY.addCategory("");
+        BESTIARY.addEntry(new BackButton());
         BESTIARY.addCategory("");
         BESTIARY.addCategory("Popular");
         BESTIARY.addEntry(new BestiarySearchResult(415)); //Abyssal demon
@@ -245,7 +280,8 @@ public enum Journal {
          * Updating
          */
         LoginListener.register(player -> {
-            TOGGLES.entries.forEach(entry -> entry.send(player)); // Sending these on login forces the custom varp based settings to be updated
+            TOGGLES.entries.forEach(entry -> entry.send(player));   // Sending these on login forces the custom varp based settings to be updated
+            MAIN.send(player);  // First tab displayed
 //            player.journal.send(player);
 //            player.addEvent(event -> {
 //                while(true) {

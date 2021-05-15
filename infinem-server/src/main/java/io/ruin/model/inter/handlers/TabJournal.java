@@ -20,12 +20,18 @@ public class TabJournal {
 //                h.actions[4] = (SlotAction) (p, slot) -> p.journal.select(p, slot);
 //            });
             InterfaceHandler.register(Interface.SERVER_TAB, h -> {
-                h.actions[48] = (SimpleAction) TabJournal::restore;
-//                h.actions[49] = (SimpleAction) TabJournal::restore;
-                for(int i = 9; i <= 47; i++) {
+                //h.actions[48] = (SimpleAction) TabJournal::restore;
+                //h.actions[49] = (SimpleAction) TabJournal::restore;
+                for(int i = 8; i <= 47; i++) {
                     int finalI = i;
                     h.actions[i] = (SimpleAction) p -> p.journal.select(p, finalI - 8);
                 }
+            });
+            InterfaceHandler.register(Interface.QUEST_TAB, h -> {
+                h.actions[3] = (SimpleAction) Journal.MAIN::send;
+                h.actions[4] = (SimpleAction) Journal.ACHIEVEMENTS::send;
+                h.actions[5] = (SimpleAction) Journal.CHARACTER::send;
+                h.actions[6] = (SimpleAction) Journal.TOGGLES::send;
             });
         }
 //        InterfaceHandler.register(Interface.SERVER_TAB, h -> {
@@ -58,17 +64,17 @@ public class TabJournal {
 
     public static void swap(Player player, int interfaceId) {
         if(player.isFixedScreen())
-            player.getPacketSender().sendInterface(interfaceId, 548, 68, 1);
+            player.getPacketSender().sendInterface(interfaceId, Interface.QUEST_TAB, 2, 1);
         else if(player.getGameFrameId() == 164)
-            player.getPacketSender().sendInterface(interfaceId, 164, 70, 1);
+            player.getPacketSender().sendInterface(interfaceId, Interface.QUEST_TAB, 2, 1);
         else
-            player.getPacketSender().sendInterface(interfaceId, 161, 70, 1);
+            player.getPacketSender().sendInterface(interfaceId, Interface.QUEST_TAB, 2, 1);
     }
 
     public static void restore(Player player) {
-        swap(player, Interface.NOTICEBOARD);
-        TabQuest.send(player);
-        //player.journal.send(player);
+        swap(player, Interface.SERVER_TAB);
+        //TabQuest.sendGeneral(player);
+        player.journal.send(player);
     }
 
 }
