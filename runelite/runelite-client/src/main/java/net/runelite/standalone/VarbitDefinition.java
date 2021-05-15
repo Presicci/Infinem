@@ -411,15 +411,15 @@ public class VarbitDefinition extends DualNode implements RSVarbitDefinition {
             short var5;
             if(Login.loginIndex == 0) {
                var44 = 251;
-               var0.method5332("Welcome to Kronos", Login.loginBoxX + 180, var44, 16776960, 0);
+               var0.method5332("Welcome to Infinem", Login.loginBoxX + 180, var44, 16776960, 0);
                var45 = var44 + 30;
                var24 = Login.loginBoxX + 180 - 80;
                var5 = 291;
                AbstractRasterProvider.titlebuttonSprite.method6320(var24 - 73, var5 - 20);
-               var0.method5333("New User", var24 - 73, var5 - 20, 144, 40, 16777215, 0, 1, 1, 0);
+               var0.method5333("Forums", var24 - 73, var5 - 20, 144, 40, 16777215, 0, 1, 1, 0);
                var24 = Login.loginBoxX + 180 + 80;
                AbstractRasterProvider.titlebuttonSprite.method6320(var24 - 73, var5 - 20);
-               var0.method5333("Existing User", var24 - 73, var5 - 20, 144, 40, 16777215, 0, 1, 1, 0);
+               var0.method5333("Login", var24 - 73, var5 - 20, 144, 40, 16777215, 0, 1, 1, 0);
             } else if(Login.loginIndex == 1) {
                var0.method5332(Login.Login_response0, Login.loginBoxX + 180, 201, 16776960, 0);
                var44 = 236;
