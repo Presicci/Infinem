@@ -15,15 +15,15 @@ public class CrystalKeyChest {
              * Spinach roll & coins
             */
             new Item[]{
-                    new Item(13442, 60),
-                    new Item(COINS_995, 300000)
+                    new Item(1969, 1),
+                    new Item(COINS_995, 50000)
             },
             /**
              * Raw swordfish & coins
             */
             new Item[]{
-                    new Item(COINS_995, 1000000),
-                    new Item(13440, 60)
+                    new Item(COINS_995, 50000),
+                    new Item(372, 30)
             },
             /**
              * Runes
@@ -37,52 +37,62 @@ public class CrystalKeyChest {
              * Coal ore
             */
             new Item[]{
-                    new Item(454, 600)
+                    new Item(454, 75)
             },
             /**
              * Gems
             */
             new Item[]{
-                    new Item(1632, 10)
+                    new Item(1620, 10)
             },
             /**
              * Tooth half of a key & coins
             */
             new Item[]{
-                    new Item(COINS_995, 750000),
+                    new Item(COINS_995, 50000),
                     new Item(985, 1)
             },
             /**
              * Runite bars
             */
             new Item[]{
-                    new Item(2364, 20)
+                    new Item(2364, 5)
             },
             /**
              * Loop half of a key
             */
             new Item[]{
-                    new Item(COINS_995, 750000),
+                    new Item(COINS_995, 50000),
                     new Item(987, 1)
             },
             /**
              * Iron ore
             */
             new Item[]{
-                    new Item(450, 150)
+                    new Item(445, 50)
             },
             /**
              * Adamant sq
             */
             new Item[]{
-                    new Item(1202, 3)
+                    new Item(1202, 2)
             },
             /**
              * Rune platelegs/plateskirt
             */
             new Item[]{
-                    new Item(1080, 3),
-                    new Item(1094, 3)
+                    new Item(1080, 2),
+                    new Item(1094, 1)
+            },
+
+            // Coins
+            new Item[]{
+                    new Item(995, 150000)
+            },
+
+            // Herb box
+            new Item[]{
+                    new Item(11738, 1)
             }
     };
 
@@ -113,7 +123,6 @@ public class CrystalKeyChest {
             player.startEvent(event -> {
                 player.lock();
                 player.sendFilteredMessage("You unlock the chest with your key.");
-                crystalKey.remove();
                 player.privateSound(51);
                 player.animate(536);
                 World.startEvent(e -> {
