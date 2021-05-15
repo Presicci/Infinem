@@ -32,6 +32,7 @@ import io.ruin.model.inter.journal.presets.PresetCustom;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
+import io.ruin.model.item.ItemContainerG;
 import io.ruin.model.item.actions.impl.boxes.mystery.SuperMysteryBox;
 import io.ruin.model.item.actions.impl.chargable.SerpentineHelm;
 import io.ruin.model.item.actions.impl.storage.DeathStorage;
@@ -1629,5 +1630,29 @@ public class Player extends PlayerAttributes {
             System.out.println("Running onDialogueContinued runnable.");
         }
         onDialogueContinued = null;
+    }
+
+    /**
+     * Finds an item in any containers connected to the player.
+     * @param itemId
+     * @return ItemContainerG<? extends Item>,
+     * Null if no item is found
+     */
+    public ItemContainerG<? extends Item> findItem(int itemId) {
+        if (getInventory().contains(itemId)) {
+            return getInventory();
+        } else if (getEquipment().contains(itemId)) {
+            return getInventory();
+        } else if (getBank().contains(itemId)) {
+            return getBank();
+        } else if (getLootingBag().contains(itemId)) {
+            return getLootingBag();
+        } else if (getDeathStorage().contains(itemId)) {
+            return getDeathStorage();
+        } else if (getPrivateRaidStorage().contains(itemId)) {
+            return getPrivateRaidStorage();
+        } else {
+            return null;
+        }
     }
 }
