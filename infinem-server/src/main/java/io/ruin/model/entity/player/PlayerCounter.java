@@ -350,7 +350,7 @@ public enum PlayerCounter {
 
     @SuppressWarnings("ConfusingArgumentToVarargsMethod")
     PlayerCounter(BiConsumer<Player, Integer> setAction, Function<Player, Integer> getAction) {
-        this(setAction, getAction, null);
+        this(setAction, getAction, (Achievement) null);
     }
 
     PlayerCounter(BiConsumer<Player, Integer> setAction, Function<Player, Integer> getAction, Achievement... achievements) {

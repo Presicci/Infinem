@@ -27,9 +27,9 @@ import java.util.Map;
 @ToString
 public class Item {
 
-    @Expose @Getter private int id, amount;
+    @Expose private int id, amount;
     @Expose private Map<String, String> attributes;
-    @Setter @Getter private int slot = -1;
+    @Setter private int slot = -1;
 
     @Setter @Getter private ItemContainerG container;
     public Broadcast lootBroadcast;
