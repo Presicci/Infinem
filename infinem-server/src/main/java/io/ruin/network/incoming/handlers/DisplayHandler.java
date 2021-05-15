@@ -4,6 +4,7 @@ import io.ruin.api.buffer.InBuffer;
 import io.ruin.cache.EnumMap;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
+import io.ruin.model.inter.journal.Journal;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.network.PacketSender;
 import io.ruin.network.incoming.Incoming;
@@ -51,15 +52,15 @@ public class DisplayHandler implements Incoming {
         //ps.sendInterface(50, 165, 27, 0); //welcome screen pt2
 
         ps.sendInterface(320, 165, 9, 1);
-        ps.sendInterface(Interface.NOTICEBOARD, 165, 10, 1);
-        ps.sendInterface(399, 629, 2, 1);
+        ps.sendInterface(Interface.QUEST_TAB, 165, 10, 1);
+        ps.sendInterface(729, Interface.QUEST_TAB, 2, 1);
         ps.sendInterface(149, 165, 11, 1);
         ps.sendInterface(387, 165, 12, 1);
         ps.sendInterface(541, 165, 13, 1);
         ps.sendInterface(218, 165, 14, 1);
         ps.sendInterface(Config.FRIENDS_AND_IGNORE_TOGGLE.get(player) == 0 ? Interface.FRIENDS_LIST : Interface.IGNORE_LIST, 165, 17, 1);
         //ps.sendInterface(432, 165, 16, 1);
-        ps.sendInterface(Interface.NOTICEBOARD, 165, 16, 1);
+        ps.sendInterface(725, 165, 16, 1);
         ps.sendInterface(182, 165, 18, 1);
         ps.sendInterface(261, 165, 19, 1);
         ps.sendInterface(216, 165, 20, 1);
@@ -93,7 +94,7 @@ public class DisplayHandler implements Incoming {
         moveSubInterfaces(oldComponents, newComponents, player);
     }
 
-    private static void updateDisplay(Player player) {
+    public static void updateDisplay(Player player) {
         Map<Integer, Integer> oldComponents = getToplevelComponents(player).ints();
 
         PacketSender ps = player.getPacketSender();
