@@ -294,10 +294,17 @@ public class Item {
         int moved;
         int hash = getAttributeHash();
         if (hash == 0) {
-            if ((stack = container.forceStack || getDef().stackable))
-                amount = Math.min(amount, this.amount);
-            else
-                amount = Math.min(amount, container.count(id));
+            long tempAmt;
+            if ((stack = container.forceStack || getDef().stackable)) {
+                tempAmt = Math.min(amount, this.amount);
+            } else {
+                tempAmt = Math.min(amount, container.count(id));
+            }
+            if (tempAmt + toContainer.getAmount(addId) >= Integer.MAX_VALUE) {    // Fixes depositing over max stack
+                amount = Integer.MAX_VALUE - toContainer.getAmount(addId);
+            } else {
+                amount = (int) tempAmt;
+            }
             moved = toContainer.add(addId, amount, attributes);
         } else {
             //TODO Need to change this
