@@ -10,6 +10,8 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.item.Item;
+import io.ruin.model.item.ItemContainerG;
 import io.ruin.utility.Broadcast;
 
 import java.util.HashMap;
@@ -43,6 +45,8 @@ public enum GameMode {
         return this == HARDCORE_IRONMAN;
     }
 
+    private static int[] hcimArmor = { 20792, 20794, 20796 };
+    private static int[] normalArmor = { 12810, 12811, 12812 };
 
     public static void hardcoreDeath(Player player, Hit killHit) {
         Config.IRONMAN_MODE.set(player, 1);
@@ -66,6 +70,13 @@ public enum GameMode {
                 } else { // not sure if this can happen? can't think of anything
                     Broadcast.GLOBAL.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has died as a Hardcore Ironman with a total level of " + overall + "!"));
                 }
+            }
+        }
+        for (int index = 0; index <= hcimArmor.length; index++) {   // Hopefully swaps the players hcim armor
+            ItemContainerG<? extends Item> container = player.findItem(hcimArmor[index]);
+            if (container != null) {
+                container.remove(hcimArmor[index], 1);
+                container.add(normalArmor[index], 1);
             }
         }
     }
