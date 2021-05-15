@@ -203,6 +203,11 @@ public abstract class ItemContainerG<I extends Item> {
                 stackItem.incrementAmount(amount);
                 return amount;
             }
+            Item equipItem = player.getEquipment().findItem(id);
+            if (equipItem != null) {
+                equipItem.incrementAmount(amount);
+                return amount;
+            }
             stack = true;
         }
 
