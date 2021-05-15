@@ -24,16 +24,9 @@
  */
 package net.runelite.client.ui.components;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.JScrollPane;
-import javax.swing.JViewport;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.MatteBorder;
 import javax.swing.plaf.basic.BasicProgressBarUI;
@@ -42,6 +35,7 @@ import lombok.Getter;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.ui.RuneLiteSplashScreen;
+import net.runelite.client.util.ImageUtil;
 
 @Getter
 public class MessagePanel extends JPanel
@@ -50,13 +44,14 @@ public class MessagePanel extends JPanel
 	private static final Dimension BAR_SIZE = new Dimension(PANEL_SIZE.width, 30);
 	private static final int MESSAGE_AREA_PADDING = 15;
 
+	private static final BufferedImage TRANSPARENT_LOGO = ImageUtil.getResourceStreamFromClass(InfoPanel.class, "/img/banner.png");
 	private final JLabel titleLabel = new JLabel("Welcome to Infinem");
-	private final JLabel messageArea;
+	//private final JLabel messageArea;
 	private final JLabel barLabel = new JLabel("Doing something important");
 	private final JProgressBar bar = new JProgressBar(0, 100);
 
-	@Getter(AccessLevel.NONE)
-	private final JScrollPane scrollPane;
+	//@Getter(AccessLevel.NONE)
+	//private final JScrollPane scrollPane;
 
 	public MessagePanel()
 	{
@@ -72,6 +67,16 @@ public class MessagePanel extends JPanel
 		c.gridy = 0;
 		c.ipady = 25;
 
+		final ImageIcon transparentLogo = new ImageIcon();
+		if (TRANSPARENT_LOGO != null)
+		{
+			transparentLogo.setImage(TRANSPARENT_LOGO.getScaledInstance(464, 96, Image.SCALE_SMOOTH));
+		}
+		final JLabel logo = new JLabel(transparentLogo);
+
+		c.weighty = 1;
+		this.add(logo, c);
+
 		// main message
 		titleLabel.setFont(new Font(FontManager.getRunescapeFont().getName(), FontManager.getRunescapeFont().getStyle(), 32));
 		titleLabel.setHorizontalAlignment(JLabel.CENTER);
@@ -80,7 +85,7 @@ public class MessagePanel extends JPanel
 		c.gridy++;
 
 		// alternate message action
-		messageArea = new JLabel("<html><div style='text-align:center;'>Welcome to Infinem!</div></html>")
+		/*messageArea = new JLabel("<html><div style='text-align:center;'>Welcome to Infinem!</div></html>")
 		{
 			@Override
 			public Dimension getPreferredSize()
@@ -100,12 +105,12 @@ public class MessagePanel extends JPanel
 		final JViewport viewport = scrollPane.getViewport();
 		viewport.setForeground(Color.WHITE);
 		viewport.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-		viewport.setOpaque(true);
+		viewport.setOpaque(true);*/
 
-		c.weighty = 1;
-		c.fill = 1;
-		this.add(scrollPane, c);
-		c.gridy++;
+		//c.weighty = 1;
+		//c.fill = 1;
+		//this.add(scrollPane, c);
+		//c.gridy++;
 
 		c.weighty = 0;
 		c.weightx = 1;
@@ -118,8 +123,8 @@ public class MessagePanel extends JPanel
 		this.add(barLabel, c);
 		c.gridy++;
 
-		bar.setBackground(ColorScheme.BRAND_BLUE_TRANSPARENT.darker());
-		bar.setForeground(ColorScheme.BRAND_RED);
+		bar.setBackground(ColorScheme.PROGRESS_INPROGRESS_COLOR.darker());
+		bar.setForeground(ColorScheme.PROGRESS_INPROGRESS_COLOR);
 		bar.setMinimumSize(BAR_SIZE);
 		bar.setMaximumSize(BAR_SIZE);
 		bar.setBorder(new MatteBorder(0, 0, 0, 0, Color.LIGHT_GRAY));
@@ -148,9 +153,9 @@ public class MessagePanel extends JPanel
 			content = "<html><div style='width: 100%; text-align:center;'>" + content + "</div></html>";
 		}
 
-		messageArea.setText(content);
-		messageArea.revalidate();
-		messageArea.repaint();
+		//messageArea.setText(content);
+		//messageArea.revalidate();
+		//messageArea.repaint();
 	}
 
 	public void setMessageTitle(String text)

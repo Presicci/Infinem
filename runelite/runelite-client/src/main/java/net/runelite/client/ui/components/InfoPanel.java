@@ -53,7 +53,6 @@ public class InfoPanel extends JPanel
 	private static final String RUNELITE_PLUS_VERSION = "open.osrs.version";
 	private static final String RUNELITE_PLUS_DATE = "open.osrs.builddate";
 
-	private static final BufferedImage TRANSPARENT_LOGO = ImageUtil.getResourceStreamFromClass(InfoPanel.class, "/kronos.png");
 	static final Dimension PANEL_SIZE = new Dimension(200, RuneLiteSplashScreen.FRAME_SIZE.height);
 	private static final Dimension VERSION_SIZE = new Dimension(PANEL_SIZE.width, 25);
 	private static final File RUNELITE_DIR = new File(System.getProperty("user.home"), ".kronos");
@@ -74,7 +73,7 @@ public class InfoPanel extends JPanel
 
 		this.setLayout(new GridBagLayout());
 		this.setPreferredSize(PANEL_SIZE);
-		this.setBackground(new Color(69, 13, 3));
+		this.setBackground(new Color(11, 116, 158));
 
 		final GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
@@ -82,24 +81,12 @@ public class InfoPanel extends JPanel
 		c.gridx = 0;
 		c.gridy = 0;
 		c.ipady = 5;
-
-		// Logo
-		final ImageIcon transparentLogo = new ImageIcon();
-		if (TRANSPARENT_LOGO != null)
-		{
-			transparentLogo.setImage(TRANSPARENT_LOGO.getScaledInstance(128, 128, Image.SCALE_SMOOTH));
-		}
-		final JLabel logo = new JLabel(transparentLogo);
-
-		c.anchor = GridBagConstraints.NORTH;
-		c.weighty = 1;
-		this.add(logo, c);
 		c.gridy++;
 		c.anchor = GridBagConstraints.SOUTH;
 		c.weighty = 0;
 
 		// OpenOSRS version
-		this.add(createPanelTextButton("Infinem Version: " + properties.getProperty(RUNELITE_PLUS_VERSION)), c);
+		this.add(createPanelTextButton("Version: " + properties.getProperty(RUNELITE_PLUS_VERSION)), c);
 		c.gridy++;
 
 		// Build date

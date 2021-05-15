@@ -39,14 +39,14 @@ import net.runelite.client.ui.components.MessagePanel;
 public class RuneLiteSplashScreen extends JFrame
 {
 	private static RuneLiteSplashScreen INSTANCE;
-	public static final Dimension FRAME_SIZE = new Dimension(600, 350);
+	public static final Dimension FRAME_SIZE = new Dimension(680, 172);
 
 	@Getter
 	private final MessagePanel messagePanel = new MessagePanel();
 
 	private RuneLiteSplashScreen()
 	{
-		this.setTitle("Kronos");
+		this.setTitle("Infinem");
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setSize(FRAME_SIZE);
 		this.setLayout(new BorderLayout());
