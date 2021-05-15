@@ -82,27 +82,20 @@ class DeadmanChest(val location: DeadmanChestLocation) {
     companion object {
         const val CHEST_KEY_ID = 2399
 
-        private val DROP_TABLE = LootTable().addTable(1,
-                LootItem(4151, 1, 15),
-                LootItem(21295, 1, 1),
-                LootItem(12877, 1, 15),
-                LootItem(12881, 1, 15),
-                LootItem(11773, 1, 11),
-                LootItem(11772, 1, 11),
-                LootItem(11770, 1, 11),
-                LootItem(11771, 1, 11),
-                LootItem(4153, 1, 180),
-                LootItem(1249, 1, 12),
-                LootItem(12831, 1, 12),
-                LootItem(12846, 1, 12),
-                LootItem(22804, 300, 12),
-                LootItem(11235, 1, 12),
-                LootItem(21902, 1, 7),
-                LootItem(12902, 1, 7),
-                LootItem(20517, 1, 15),
-                LootItem(20520, 1, 15),
-                LootItem(6920, 1, 15),
-                LootItem(12791, 1, 36)
+        private val DROP_TABLE = LootTable().addTable(1,    // Barrows pieces, noted food and resources
+                LootItem(12877, 1, 15),     // DH Set
+                LootItem(12881, 1, 15),     // Ahrims set
+                LootItem(4153, 1, 180),     // Gmaul
+                LootItem(1249, 1, 12),      // Dragon spear
+                LootItem(12831, 1, 12),     // Blessed spirit shield
+                LootItem(12846, 1, 12),     // Bounty teleport scroll
+                LootItem(1505, 1, 12),      // Obelisk destination scroll
+                LootItem(22804, 300, 12),   // Dragon knives
+                //LootItem(11235, 1, 12), // Dark bow
+                //LootItem(4151, 1, 15), // Abby whip
+                LootItem(20517, 1, 15),     // Elder chaos robes top
+                LootItem(20520, 1, 15),     // Elder chaos robes
+                LootItem(6920, 1, 15)       // Infinity boots
         )
     }
 }
