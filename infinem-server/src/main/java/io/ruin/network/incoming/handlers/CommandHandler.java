@@ -991,7 +991,10 @@ public class CommandHandler implements Incoming {
                 player.getStats().set(StatType.values()[id], level);
                 return true;
             }
-
+            case "collectionlog": {
+                player.openInterface(InterfaceType.MAIN, Interface.COLLECTION_LOG);
+                return true;
+            }
             case "checkclip": {
                 Tile tile = Tile.get(player.getPosition(), true);
                 int clipping = tile.clipping;
