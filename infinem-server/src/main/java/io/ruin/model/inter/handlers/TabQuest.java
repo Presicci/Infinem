@@ -35,8 +35,8 @@ public class TabQuest {
 
     @Getter
     private enum NoticeboardComponent {
-
-        COMPONENT_8(8, player -> "Players Online: " + Color.GREEN.wrap(String.valueOf(World.players.count()))),
+        COMPONENT_8(8, player -> "Players Online: " + Color.GREEN.wrap(String.valueOf(World.players.count())));
+        /*COMPONENT_8(8, player -> "Players Online: " + Color.GREEN.wrap(String.valueOf(World.players.count()))),
         COMPONENT_9(9, player -> "Online Staff: " + Color.GREEN.wrap(String.valueOf(getStaffOnlineCount())), (SimpleAction) player -> sendStaffOnline(player)),
         COMPONENT_10(10, player -> "Players in Wild: " + Color.GREEN.wrap(String.valueOf(Wilderness.players.size()))),
         COMPONENT_11(11, player -> "Players in Tournament: " + Color.GREEN.wrap(String.valueOf(PVPInstance.players.size()))),
@@ -64,7 +64,7 @@ public class TabQuest {
         COMPONENT_19(19, player -> "Website", (SimpleAction) player -> player.openUrl("http://kronos.rip/")),
         COMPONENT_20(20, player -> "Community", (SimpleAction) player -> player.openUrl("https://community.kronos.rip/index.php")),
         COMPONENT_21(21, player -> "Discord", (SimpleAction) player -> player.openUrl("https://discord.com/invite/ZyWAmpS")),
-        COMPONENT_22(22, player -> "Store", (SimpleAction) player -> player.openUrl("http://kronos.rip/store"));
+        COMPONENT_22(22, player -> "Store", (SimpleAction) player -> player.openUrl("http://kronos.rip/store"));*/
 
         private int componentId;
         private TextField text;
@@ -88,14 +88,88 @@ public class TabQuest {
         }
     }
 
+    @Getter
+    private enum GeneralTab {
+        COMPONENT_7(7, player -> "Server Uptime: " + Color.GREEN.wrap(TimeUtils.fromMs(Server.currentTick() * Server.tickMs(), false))),
+        COMPONENT_8(8, player -> "Players Online: " + Color.GREEN.wrap(String.valueOf(World.players.count()))),
+        COMPONENT_9(9, player -> "Online Staff: " + Color.GREEN.wrap(String.valueOf(getStaffOnlineCount())), (SimpleAction) player -> sendStaffOnline(player)),
+        COMPONENT_10(10, player -> "Players in Wilderness: " + Color.GREEN.wrap(String.valueOf(Wilderness.players.size()))),
+        COMPONENT_11(11, player -> "Players in Tournament: " + Color.GREEN.wrap(String.valueOf(PVPInstance.players.size()))),
+        COMPONENT_12(12, player -> ""),
+        COMPONENT_43(43, player -> "XP Bonus: " + Color.GREEN.wrap(String.valueOf(World.xpMultiplier))),
+        COMPONENT_44(44, player -> "Double Drops: " + Color.GREEN.wrap(getDoubleDrops())),
+        COMPONENT_45(45, player -> "Double Slayer Points: " + Color.GREEN.wrap(getDoubleSlayerPoints())),
+        COMPONENT_46(46, player -> "Double Pest Control: " + Color.GREEN.wrap(getDoublePcPoints())),
+        COMPONENT_13(13, player -> ""),
+        COMPONENT_14(14, player -> "Drop Tables", (SimpleAction) player -> sendBestiary(player)),
+        COMPONENT_15(15, player -> ""),
+        COMPONENT_16(16, player -> "Website", (SimpleAction) player -> player.openUrl("")),
+        COMPONENT_17(17, player -> "Community", (SimpleAction) player -> player.openUrl("")),
+        COMPONENT_18(18, player -> "Discord", (SimpleAction) player -> player.openUrl("https://discord.gg/ks9WxBQb7d")),
+        COMPONENT_49(49, player -> "Store", (SimpleAction) player -> player.openUrl("")),
+        ;
+
+        private int componentId;
+        private TextField text;
+        private InterfaceAction action;
+
+        //use for blank components
+        GeneralTab(int componentId) {
+            this(componentId, player -> "", null);
+        }
+
+        //use for components without a click option
+        GeneralTab(int componentId, TextField text) {
+            this(componentId, text, null);
+        }
+
+        //use for components with a click option
+        GeneralTab(int componentId, TextField text, InterfaceAction action) {
+            this.componentId = componentId;
+            this.text = text;
+            this.action = action;
+        }
+    }
+
+    @Getter
+    private enum CharacterTab {
+        COMPONENT_15(15, player -> "Time Played: " + Color.GREEN.wrap(TimeUtils.fromMs(player.playTime * Server.tickMs(), false))),
+        COMPONENT_16(16, player -> "Total Spent: " + Color.GREEN.wrap( "$" + player.storeAmountSpent)),
+        COMPONENT_17(17, player -> "Base XP: " + Color.GREEN.wrap(String.valueOf(getXpBonus(player)))),
+        COMPONENT_18(18, player -> "Double Drop Chance: " + Color.GREEN.wrap(DoubleDrops.getChance(player) + "%")),
+        COMPONENT_49(49, player -> "PVM Points: " + Color.GREEN.wrap(Integer.toString(player.PvmPoints))),
+        ;
+
+        private int componentId;
+        private TextField text;
+        private InterfaceAction action;
+
+        //use for blank components
+        CharacterTab(int componentId) {
+            this(componentId, player -> "", null);
+        }
+
+        //use for components without a click option
+        CharacterTab(int componentId, TextField text) {
+            this(componentId, text, null);
+        }
+
+        //use for components with a click option
+        CharacterTab(int componentId, TextField text, InterfaceAction action) {
+            this.componentId = componentId;
+            this.text = text;
+            this.action = action;
+        }
+    }
+
     /**
      * Sends all of the basic text for the noticeboard components
      * @param player    The player.
      */
-    public static void send(Player player) {
-        for (NoticeboardComponent component : NoticeboardComponent.values()) {
-            player.getPacketSender().sendString(Interface.NOTICEBOARD, component.getComponentId(), component.getText().send(player));
-        }
+    public static void sendGeneral(Player player) {
+       // for (GeneralTab component : GeneralTab.values()) {
+        //   player.getPacketSender().sendString(Interface.QUEST_GENERAL_TAB, component.getComponentId(), component.getText().send(player));
+       // }
     }
 
     /**
@@ -168,16 +242,16 @@ public class TabQuest {
     }
 
     static {
-        InterfaceHandler.register(Interface.NOTICEBOARD, (h) -> {
-            for (NoticeboardComponent component : NoticeboardComponent.values()) {
-                h.actions[component.getComponentId()] = component.getAction();
+        InterfaceHandler.register(Interface.QUEST_GENERAL_TAB, (h) -> {
+            for (GeneralTab component : GeneralTab.values()) {
+                //h.actions[component.getComponentId()] = component.getAction();
             }
         });
         LoginListener.register(player -> {
-            send(player);
+            sendGeneral(player);
             player.addEvent(event -> {
                 while(true) {
-                    send(player);
+                    sendGeneral(player);
                     event.delay(10);
                 }
             });
