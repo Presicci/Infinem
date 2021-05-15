@@ -173,7 +173,7 @@ public class DeathStorage extends ItemContainer {
     private Item getUnlockCost() {
         if (player.getStats().totalLevel < 500)
             return null;
-        return new Item(COINS_995, (int) (200000 + (((player.getStats().totalLevel - 500) / (2277d - 500)) * 800000)));
+        return new Item(COINS_995, (int) (100000 + (((player.getStats().totalLevel - 500) / (2277d - 500)) * 100000)));
 
     }
 
