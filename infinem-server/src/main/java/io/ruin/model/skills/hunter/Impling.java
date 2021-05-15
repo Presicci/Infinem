@@ -372,7 +372,7 @@ public enum Impling {
         //overworld spawns
         World.startEvent(event -> {
             //spawn a few on startup
-            for (int i = 0; i < 300; i++)
+            for (int i = 0; i < 8; i++)
                 spawnRandomImplingOverworld();
             while (true) {
                 if (ACTIVE_OVERWORLD_IMPLINGS < OVERWORLD_MAX_IMPLINGS)
