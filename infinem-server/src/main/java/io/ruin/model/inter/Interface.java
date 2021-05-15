@@ -290,7 +290,7 @@ public class Interface {
 
     public static final int PEST_CONTROL_REWARDS = 243;
 
-    public static final int SERVER_TAB = 701;
+    public static final int SERVER_TAB = 729; //701
 
     public static final int QUEST_TAB = 629;
 
@@ -315,4 +315,6 @@ public class Interface {
     public static final int TOB_PARTY_LIST = 364;
 
     public static final int TOB_PARTY_MEMBERS_OVERLAY = 28;
+
+    public static final int QUEST_GENERAL_TAB = 727;
 }
