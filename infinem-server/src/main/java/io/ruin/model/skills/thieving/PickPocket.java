@@ -21,11 +21,11 @@ public enum PickPocket {
 
     MAN(1, 8.0, 422, 5, 1, "man's", PlayerCounter.PICKPOCKETED_MAN,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 500, 700, 1)  //Coins
+                    new LootItem(COINS_995, 150, 450, 1)  //Coins
             )),
     FARMER(10, 14.5, 433, 5, 1, "farmer's", PlayerCounter.PICKPOCKETED_FARMER,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 600, 1000, 6), //Coins
+                    new LootItem(COINS_995, 200, 500, 6), //Coins
                     new LootItem(5318, 1, 1) //Potato seed
             )),
     HAM(15, 18.5, 433, 4, 1, "H.A.M member's", PlayerCounter.PICKPOCKETED_HAM_MEMBER,
@@ -46,7 +46,7 @@ public enum PickPocket {
                     new LootItem(4306, 1, 1), //Coins
                     new LootItem(4308, 1, 1), //Coins
                     new LootItem(4310, 1, 1), //Coins
-                    new LootItem(COINS_995, 1200, 1), //Coins
+                    new LootItem(COINS_995, 300, 1), //Coins
                     new LootItem(319, 1, 1), //Coins
                     new LootItem(2138, 1, 1), //Coins
                     new LootItem(453, 1, 1), //Coins
@@ -66,11 +66,11 @@ public enum PickPocket {
             )),
     WARRIOR(25, 26.0, 386, 5, 2, "warrior's", PlayerCounter.PICKPOCKETED_WARRIOR,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 900, 1200, 1) //Coins
+                    new LootItem(COINS_995, 350, 800, 1) //Coins
             )),
     ROGUE(32, 35.5, 422, 5, 2, "rogue's", PlayerCounter.PICKPOCKETED_ROGUE,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 2500, 5000, 10), //Coins
+                    new LootItem(COINS_995, 1500, 5000, 10), //Coins
                     new LootItem(556, 8, 5),  //Air runes
                     new LootItem(1933, 1, 4), //Jug of wine
                     new LootItem(1219, 1, 3), //Iron dagger(p)
@@ -106,26 +106,26 @@ public enum PickPocket {
             )),
     GUARD(40, 46.8, 386, 5, 2, "guard's", PlayerCounter.PICKPOCKETED_GUARD,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 1500, 2000, 1) //Coins
+                    new LootItem(COINS_995, 300, 900, 1) //Coins
             )),
     BANDIT(53, 79.5, 422, 5, 3, "bandit's", PlayerCounter.PICKPOCKETED_BANDIT,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 2000, 2800, 8), //Coins
+                    new LootItem(COINS_995, 300, 900, 8), //Coins
                     new LootItem(175, 1, 3),  //Antipoison
                     new LootItem(1523, 1, 1)  //Lockpick
             )),
     KNIGHT(55, 84.3, 386, 5, 3, "knight's", PlayerCounter.PICKPOCKETED_KNIGHT,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 3000, 4000, 1) //Coins
+                    new LootItem(COINS_995, 400, 1000, 1) //Coins
             )),
     PALADIN(70, 151.75, 386, 5, 3, "paladin's", PlayerCounter.PICKPOCKETED_PALADIN,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 4000, 4500, 6), //Coins
+                    new LootItem(COINS_995, 500, 1500, 6), //Coins
                     new LootItem(562, 2, 3)   //Chaos runes
             )),
     GNOME(75, 198.5, 201, 5, 1, "gnome's", PlayerCounter.PICKPOCKETED_GNOME,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 4000, 4500, 16), //Coins
+                    new LootItem(COINS_995, 500, 1500, 16), //Coins
                     new LootItem(5321, 3, 8),   //Watermelon seed
                     new LootItem(5100, 1, 8),   //Limpwurt seed
                     new LootItem(5295, 1, 7),   //Ranarr seed
@@ -151,7 +151,7 @@ public enum PickPocket {
             )),
     HERO(80, 275.0, 386, 6, 4, "hero's", PlayerCounter.PICKPOCKETED_HERO,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 5000, 6000, 16),  //Coins
+                    new LootItem(COINS_995, 1000, 2000, 16),  //Coins
                     new LootItem(565, 1, 5),  //Blood rune
                     new LootItem(560, 2, 5),  //Death runes
                     new LootItem(1933, 1, 2), //Jug of wine
@@ -161,7 +161,7 @@ public enum PickPocket {
             )),
     ELF(85, 353.0, 422, 6, 5, "elf's", PlayerCounter.PICKPOCKETED_ELF,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 5500, 6500, 16), //Coins
+                    new LootItem(COINS_995, 1500, 2500, 16), //Coins
                     new LootItem(561, 3, 5),  //Nature runes
                     new LootItem(560, 2, 5),  //Death runes
                     new LootItem(1933, 1, 2), //Jug of wine
