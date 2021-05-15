@@ -210,8 +210,19 @@ public class ToolStorage {
     }
 
     private int getMaxAmount(Tool tool) {
-        if (tool == Tool.EMPTY_BUCKET || tool == Tool.COMPOST || tool == Tool.SUPERCOMPOST || tool == Tool.ULTRACOMPOST || tool == Tool.PLANT_CURE)
+        if (tool == Tool.EMPTY_BUCKET
+                || tool == Tool.COMPOST
+                || tool == Tool.SUPERCOMPOST
+                || tool == Tool.ULTRACOMPOST
+                || tool == Tool.PLANT_CURE) {
             return 1000;
+        } else if (tool == Tool.GARDENING_TROWEL
+                || tool == Tool.RAKE
+                || tool == Tool.SEED_DIBBER
+                || tool == Tool.SPADE
+                || tool == Tool.SECATEURS) {
+            return 100;
+        }
         return 1;
     }
 
