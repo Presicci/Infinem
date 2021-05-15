@@ -172,7 +172,7 @@ public class Server extends ServerWrapper {
             LatestUpdate.fetch();
             Giveaway.updateTotalAmount();
             if(!OfflineMode.enabled && !World.isDev()) {
-                //DiscordConnection.setup("NjY2ODYwNTYwNjcxMDQ3Njg5.XiTqtw.aUSPC_CW6Oszpz1Ru1e08AQjsMQ");
+                //DiscordConnection.setup("NTY4NjgxMjU2NDQzNzA3Mzkz.XLlnsQ.s6HIMbTgRrVsNhclAY1VYJPwGnc");
             }
         }
 

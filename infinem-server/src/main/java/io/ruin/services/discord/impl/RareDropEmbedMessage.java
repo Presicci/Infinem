@@ -3,10 +3,7 @@ package io.ruin.services.discord.impl;
 import io.ruin.api.utils.ServerWrapper;
 import io.ruin.model.World;
 import io.ruin.services.discord.Webhook;
-import io.ruin.services.discord.util.Embed;
-import io.ruin.services.discord.util.Footer;
-import io.ruin.services.discord.util.Message;
-import io.ruin.services.discord.util.Thumbnail;
+import io.ruin.services.discord.util.*;
 
 public class RareDropEmbedMessage {
 
@@ -15,13 +12,13 @@ public class RareDropEmbedMessage {
             return;
         }
         try {
-            Webhook webhook = new Webhook("https://discordapp.com/api/webhooks/723479940929945640/QTeEH1MFFp7nR-WrSoMr3mt1gxaNUAiCzU8CM96j4sssDycDvbk69DCSD9dOtBf7Kz8S");
+            Webhook webhook = new Webhook(Constants.WEBHOOK_URL);
             Message message = new Message();
 
             Embed embedMessage = new Embed();
             embedMessage.setTitle("New Loot! Rare drop received!");
             embedMessage.setDescription(discordMessage + " from " + npcDescriptiveName + "!");
-            embedMessage.setColor(8917522);
+            embedMessage.setColor(26280);
 
             /*
              * Thumbnail

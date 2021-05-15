@@ -3,9 +3,11 @@ package io.ruin.services.discord.impl;
 import io.ruin.api.utils.ServerWrapper;
 import io.ruin.model.World;
 import io.ruin.services.discord.Webhook;
+import io.ruin.services.discord.util.Constants;
 import io.ruin.services.discord.util.Embed;
 import io.ruin.services.discord.util.Footer;
 import io.ruin.services.discord.util.Message;
+import net.dv8tion.jda.api.requests.restaction.WebhookAction;
 
 public class TournamentEmbedMessage {
 
@@ -14,13 +16,13 @@ public class TournamentEmbedMessage {
             return;
         }
         try {
-            Webhook webhook = new Webhook("https://discordapp.com/api/webhooks/724832730944110612/XsPyRFkx-EiNNle3UFzrmV1Nmahn7J6PUEne89RU7cRrHwY2smjTw5fs2uLzTpv26OpP");
+            Webhook webhook = new Webhook(Constants.WEBHOOK_URL);
             Message message = new Message();
 
             Embed embedMessage = new Embed();
             embedMessage.setTitle("Tournament System");
             embedMessage.setDescription("The " + presetName + " tournament will begin in **" + minutes + " minutes**. Login and type ::tournament to join!");
-            embedMessage.setColor(8917522);
+            embedMessage.setColor(26280);
 
             /*
              * Footer

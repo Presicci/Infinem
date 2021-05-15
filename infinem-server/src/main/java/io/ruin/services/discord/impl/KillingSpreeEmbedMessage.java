@@ -3,10 +3,7 @@ package io.ruin.services.discord.impl;
 import io.ruin.api.utils.ServerWrapper;
 import io.ruin.model.World;
 import io.ruin.services.discord.Webhook;
-import io.ruin.services.discord.util.Embed;
-import io.ruin.services.discord.util.Footer;
-import io.ruin.services.discord.util.Message;
-import io.ruin.services.discord.util.Thumbnail;
+import io.ruin.services.discord.util.*;
 
 public class KillingSpreeEmbedMessage {
 
@@ -15,13 +12,13 @@ public class KillingSpreeEmbedMessage {
             return;
         }
         try {
-            Webhook webhook = new Webhook("https://discordapp.com/api/webhooks/639305351564623882/5y_4r4uy6emG1VptJ6lf7fHO77nE8UYC7R3EhzwOyjkB2sHM_77E_ydgo9lBoTBIWT0z");
+            Webhook webhook = new Webhook(Constants.WEBHOOK_URL);
             Message message = new Message();
 
             Embed embedMessage = new Embed();
             embedMessage.setTitle("KillSpree Announcement");
             embedMessage.setDescription(spreeMessage);
-            embedMessage.setColor(8917522);
+            embedMessage.setColor(26280);
 
             /*
              * Thumbnail
@@ -34,7 +31,7 @@ public class KillingSpreeEmbedMessage {
              * Footer
              */
             Footer footer = new Footer();
-            footer.setText(World.type.getWorldName() + " - Waste Your Life One Skill At A Time!");
+            footer.setText(World.type.getWorldName());
             embedMessage.setFooter(footer);
 
             /*
