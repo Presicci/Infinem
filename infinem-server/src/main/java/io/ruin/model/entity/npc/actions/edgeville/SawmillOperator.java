@@ -2,6 +2,7 @@ package io.ruin.model.entity.npc.actions.edgeville;
 
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -74,6 +75,7 @@ public class SawmillOperator {
         }
 
         static {
+            SpawnListener.register(5422, npc -> npc.skipReachCheck = p -> p.equals(1624, 3500));
             NPCAction.register(5422, "talk-to", (player, npc) -> player.dialogue(
                     new NPCDialogue(npc, "Do you want me to make some planks for you? Or would you be interested in some other housing supplies?"),
                     new OptionsDialogue(
