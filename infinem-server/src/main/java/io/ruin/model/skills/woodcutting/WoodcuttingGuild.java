@@ -1,6 +1,7 @@
 package io.ruin.model.skills.woodcutting;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -156,7 +157,11 @@ public class WoodcuttingGuild {
 
                 if (Woodcutting.successfullyCutTree(Woodcutting.getEffectiveLevel(player, Tree.ENTTRUNK, axe), Tree.ENTTRUNK, axe)) {
                     player.getStats().addXp(StatType.Woodcutting, Tree.ENTTRUNK.experience, true);
-                    player.getInventory().add(Ent.getEntLog(player, axe));
+                    if (Wilderness.players.contains(player)) {
+                        player.getInventory().add(Ent.getEntLog(player, axe), 2);   // Double logs in wildy
+                    } else {
+                        player.getInventory().add(Ent.getEntLog(player, axe));
+                    }
                     if (Random.rollDie(Woodcutting.nestChance(player), 1)) {
                         new GroundItem(BirdNest.getRandomNest(Tree.ENTTRUNK), 1)
                                 .owner(player).position(RouteFinder.findWalkable(player.getPosition()))
