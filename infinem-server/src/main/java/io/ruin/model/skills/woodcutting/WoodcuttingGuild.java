@@ -16,6 +16,7 @@ import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.route.RouteFinder;
+import io.ruin.model.skills.agility.shortcut.CrumblingWall;
 import io.ruin.model.stat.StatType;
 
 public class WoodcuttingGuild {
@@ -100,6 +101,10 @@ public class WoodcuttingGuild {
                 }
             });
         }
+
+        ObjectAction.register(26720, "step-over", (player, obj) -> CrumblingWall.shortcut(player, obj, 0));
+        ObjectAction.register(26721, "step-over", (player, obj) -> CrumblingWall.shortcut(player, obj, 0));
+
 
         /**
          * Rope ladders
