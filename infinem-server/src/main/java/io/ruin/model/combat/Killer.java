@@ -37,6 +37,7 @@ public class Killer {
         /*
          * Farming checks
          */
+        //TODO more anti farm
         long ms = System.currentTimeMillis();
         if(player.getIpInt() == pKilled.getIpInt()) //don't reward bm for killing someone on your same ip
             return;
