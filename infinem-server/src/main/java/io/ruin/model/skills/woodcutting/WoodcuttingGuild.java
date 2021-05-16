@@ -1,6 +1,9 @@
 package io.ruin.model.skills.woodcutting;
 
+import io.ruin.api.utils.Random;
+import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.item.actions.ItemObjectAction;
@@ -8,8 +11,10 @@ import io.ruin.model.item.actions.impl.BirdNest;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.map.Tile;
+import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.map.route.RouteFinder;
 import io.ruin.model.stat.StatType;
 
 public class WoodcuttingGuild {
@@ -135,5 +140,35 @@ public class WoodcuttingGuild {
          * Redwood tree exit back to lower level
          */
         ObjectAction.register(29682, "enter", (player, obj) -> player.getMovement().teleport(player.getAbsX(), player.getAbsY(), player.getHeight() - 1));
+
+        NPCAction.register(6595, "chop", (player, npc) -> player.startEvent(event -> {
+            event.delay(1);
+            Hatchet axe = Hatchet.find(player);
+
+            if (axe == null) {
+                player.sendMessage("You do not have an axe which you have the woodcutting level to use.");
+                player.privateSound(2277);
+                return;
+            }
+            while (!npc.isRemoved()) {
+                player.animate(Ent.getEntAnimation(axe));
+                event.delay(3);
+
+                if (Woodcutting.successfullyCutTree(Woodcutting.getEffectiveLevel(player, Tree.ENTTRUNK, axe), Tree.ENTTRUNK, axe)) {
+                    player.getStats().addXp(StatType.Woodcutting, Tree.ENTTRUNK.experience, true);
+                    player.getInventory().add(Ent.getEntLog(player, axe));
+                    if (Random.rollDie(Woodcutting.nestChance(player), 1)) {
+                        new GroundItem(BirdNest.getRandomNest(Tree.ENTTRUNK), 1)
+                                .owner(player).position(RouteFinder.findWalkable(player.getPosition()))
+                                .spawn();
+                        player.sendFilteredMessage("A bird's nest falls out of the trunk.");
+                        PlayerCounter.ACQUIRED_BIRDS_NESTS.increment(player, 1);
+                    }
+                    if (Random.rollDie(10, 1)) { // 10% chance per harvest of trunk leaving
+                        npc.remove();
+                    }
+                }
+            }
+        }));
     }
 }

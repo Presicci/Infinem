@@ -56,6 +56,7 @@ public enum PlayerCounter {
     CHOPPED_REDWOOD((p, amt) -> p.choppedRedwood = amt, p -> p.choppedRedwood),
     CHOPPED_MAHOGANY((p, amt) -> p.choppedMahogany = amt, p -> p.choppedMahogany),
     CHOPPED_CORRUPT((p, amt) -> p.choppedCorrupt = amt, p -> p.choppedCorrupt),
+    CHOPPED_ENTS((p, amt) -> p.choppedEnts = amt, p -> p.choppedEnts),
     OPENED_BIRDS_NESTS((p, amt) -> p.openedBirdsNests = amt, p -> p.openedBirdsNests),
     ACQUIRED_BIRDS_NESTS((p, amt) -> p.acquiredBirdsNests = amt, p -> p.acquiredBirdsNests),
 

@@ -44,7 +44,6 @@ public class Woodcutting {
         Hatchet hatchet = Hatchet.find(player);
 
         if (hatchet == null) {
-            player.sendMessage("You need an axe to chop down this tree.");
             player.sendMessage("You do not have an axe which you have the woodcutting level to use.");
             player.privateSound(2277);
             return;
@@ -136,7 +135,7 @@ public class Woodcutting {
         });
     }
 
-    private static int nestChance(Player player) {
+    protected static int nestChance(Player player) {
         int chance = 200;
         if (player.isGroup(PlayerGroup.ZENYTE)) {
             chance = 170;
@@ -161,14 +160,14 @@ public class Woodcutting {
         return chance;
     }
 
-    private static int getEffectiveLevel(Player player, Tree treeData, Hatchet hatchet) {
+    protected static int getEffectiveLevel(Player player, Tree treeData, Hatchet hatchet) {
         int base = player.getStats().get(StatType.Woodcutting).currentLevel;
         if (WoodcuttingGuild.hasBoost(player))
             base += 7;
         return base;
     }
 
-    private static boolean successfullyCutTree(int level, Tree type, Hatchet hatchet) {
+    protected static boolean successfullyCutTree(int level, Tree type, Hatchet hatchet) {
         return Random.get(100) <= chance(level, type, hatchet);
     }
 

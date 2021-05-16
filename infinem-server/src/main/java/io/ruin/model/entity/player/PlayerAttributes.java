@@ -164,6 +164,7 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int choppedRedwood;
     @Expose public int choppedMahogany;
     @Expose public int choppedCorrupt;
+    @Expose public int choppedEnts;
     @Expose public int openedBirdsNests;
     @Expose public int acquiredBirdsNests;
 
