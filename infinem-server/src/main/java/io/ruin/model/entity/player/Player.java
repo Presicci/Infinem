@@ -33,6 +33,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
 import io.ruin.model.item.ItemContainerG;
+import io.ruin.model.item.actions.impl.MasterScrollBook;
 import io.ruin.model.item.actions.impl.boxes.mystery.SuperMysteryBox;
 import io.ruin.model.item.actions.impl.chargable.SerpentineHelm;
 import io.ruin.model.item.actions.impl.storage.DeathStorage;
@@ -764,6 +765,8 @@ public class Player extends PlayerAttributes {
 
     @Expose private BankPin bankPin;
 
+    @Expose private MasterScrollBook masterScrollBook;
+
     @Expose private LootingBag lootingBag;
 
     @Expose private RunePouch runePouch;
@@ -808,6 +811,10 @@ public class Player extends PlayerAttributes {
 
     public LootingBag getLootingBag() {
         return lootingBag;
+    }
+
+    public MasterScrollBook getMasterScrollBook() {
+        return masterScrollBook;
     }
 
     public RunePouch getRunePouch() {
@@ -1063,6 +1070,10 @@ public class Player extends PlayerAttributes {
         if(lootingBag == null)
             lootingBag = new LootingBag();
         lootingBag.init(this, 28, -1, 63786, 516, false);
+
+        if(masterScrollBook == null)
+            masterScrollBook = new MasterScrollBook();
+        masterScrollBook.setPlayer(this);
 
         if(runePouch == null)
             runePouch = new RunePouch();
