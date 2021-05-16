@@ -54,6 +54,15 @@
     "walkRange": 2
   },
   {
+    "name": "Perry",
+    "id": 7240,
+    "x": 1654,
+    "y": 3500,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
     "name": "Berry",
     "id": 7235,
     "x": 1657,
