@@ -587,6 +587,7 @@ public class PlayerCombat extends Combat {
             return;
         }
         boolean ava = hasAvaDevice();
+        boolean advAva = hasAdvancedAva();
         for(Hit hit : hits) {
             if(ava) {
                 if (rollAvaChance()) {  // Keep ammo
@@ -596,6 +597,12 @@ public class PlayerCombat extends Combat {
                         ammo.incrementAmount(-1);
                         return;
                     }
+                }
+            } else if (advAva) {
+                if (rollAdvnacedAva()) {  // Keep ammo
+                    continue;
+                } else {
+                    ammo.incrementAmount(-1);
                 }
             } else {
                 if (Random.rollPercent(20)) {   // Break ammo w/o ava
@@ -611,12 +618,19 @@ public class PlayerCombat extends Combat {
 
     private boolean hasAvaDevice() {
         int capeID = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        return capeID == 10499 || capeID == 21898 || capeID == 13337
-                || capeID == 22109 || capeID == 9756 || capeID == 9757 || capeID == 13280;
+        return capeID == 10499 || capeID == 9756 || capeID == 9757;
+    }
+
+    private boolean hasAdvancedAva() {
+        int capeID = player.getEquipment().getId(Equipment.SLOT_CAPE);
+        return capeID == 21898 || capeID == 13337  || capeID == 22109 || capeID == 13280;
     }
 
     private boolean rollAvaChance() {
         return Random.rollPercent(72); //72% chance according to wiki
+    }
+    private boolean rollAdvnacedAva() {
+        return Random.rollPercent(80); //80% chance according to wiki
     }
 
     /**
