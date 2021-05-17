@@ -41,7 +41,7 @@ public class Study {
 
         public void open(Player player) {
             player.startEvent(event -> {
-               player.animate(Construction.READ_LECTERN);
+               //player.animate(Construction.READ_LECTERN); TODO Find proper reading animation
                event.delay(1);
                 Config.LECTERN_EAGLE.set(player, eagleSetting);
                 Config.LECTERN_DEMON.set(player, demonSetting);
@@ -57,24 +57,24 @@ public class Study {
     }
 
     public enum Tablet {
-        ENCHANT_SAPPHIRE(3, 8016, 0, 0, JewelleryEnchant.EnchantLevel.ONE),
-        ENCHANT_EMERALD(4, 8017, 0, 1, JewelleryEnchant.EnchantLevel.TWO),
-        ENCHANT_RUBY(6, 8018, 0, 2, JewelleryEnchant.EnchantLevel.THREE),
-        ENCHANT_DIAMOND(7, 8019, 0, 2, JewelleryEnchant.EnchantLevel.FOUR),
-        ENCHANT_DRAGONSTONE(8, 8020, 0, 3, JewelleryEnchant.EnchantLevel.FIVE),
-        ENCHANT_ONYX(9, 8021, 0, 3, JewelleryEnchant.EnchantLevel.SIX),
+        ENCHANT_SAPPHIRE(17, 8016, 0, 0, JewelleryEnchant.EnchantLevel.ONE),
+        ENCHANT_EMERALD(16, 8017, 0, 1, JewelleryEnchant.EnchantLevel.TWO),
+        ENCHANT_RUBY(22, 8018, 0, 2, JewelleryEnchant.EnchantLevel.THREE),
+        ENCHANT_DIAMOND(13, 8019, 0, 2, JewelleryEnchant.EnchantLevel.FOUR),
+        ENCHANT_DRAGONSTONE(21, 8020, 0, 3, JewelleryEnchant.EnchantLevel.FIVE),
+        ENCHANT_ONYX(11, 8021, 0, 3, JewelleryEnchant.EnchantLevel.SIX),
 
-        VARROCK_TELEPORT(11, TeleportTab.VARROCK.id, 0, 0, ModernTeleport.VARROCK_TELEPORT),
+        VARROCK_TELEPORT(23, TeleportTab.VARROCK.id, 0, 0, ModernTeleport.VARROCK_TELEPORT),
         LUMBRIDGE_TELEPORT(12, TeleportTab.LUMBRIDGE.id, 1, 0, ModernTeleport.LUMBRIDGE_TELEPORT),
-        FALADOR_TELEPORT(13, TeleportTab.FALADOR.id, 1, 0, ModernTeleport.FALADOR_TELEPORT),
-        CAMELOT_TELEPORT(14, TeleportTab.CAMELOT.id, 2, 0, ModernTeleport.CAMELOT_TELEPORT),
-        ARDOUGNE_TELEPORT(15, TeleportTab.ARDOUGNE.id, 2, 0, ModernTeleport.ARDOUGNE_TELEPORT),
-        WATCHTOWER_TELEPORT(16, TeleportTab.WATCHTOWER.id, 3, 0, ModernTeleport.WATCHTOWER_TELEPORT),
+        FALADOR_TELEPORT(18, TeleportTab.FALADOR.id, 1, 0, ModernTeleport.FALADOR_TELEPORT),
+        CAMELOT_TELEPORT(24, TeleportTab.CAMELOT.id, 2, 0, ModernTeleport.CAMELOT_TELEPORT),
+        ARDOUGNE_TELEPORT(19, TeleportTab.ARDOUGNE.id, 2, 0, ModernTeleport.ARDOUGNE_TELEPORT),
+        WATCHTOWER_TELEPORT(14, TeleportTab.WATCHTOWER.id, 3, 0, ModernTeleport.WATCHTOWER_TELEPORT),
 
-        HOUSE_TELEPORT(17, 8013, TeleportToHouse.LVL_REQ, TeleportToHouse.XP,  3, 0, TeleportToHouse.RUNES),
+        HOUSE_TELEPORT(15, 8013, TeleportToHouse.LVL_REQ, TeleportToHouse.XP,  3, 0, TeleportToHouse.RUNES),
 
-        BONES_TO_BANANAS(5, 8014, BonesBananas.LVL_REQ, BonesBananas.XP, 0, 1, BonesBananas.RUNES),
-        BONES_TO_PEACHES(10, 8015, BonesPeaches.LVL_REQ, BonesPeaches.XP, 0, 3, BonesPeaches.RUNES);
+        BONES_TO_BANANAS(20, 8014, BonesBananas.LVL_REQ, BonesBananas.XP, 0, 1, BonesBananas.RUNES),
+        BONES_TO_PEACHES(25, 8015, BonesPeaches.LVL_REQ, BonesPeaches.XP, 0, 3, BonesPeaches.RUNES);
 
         int childId;
 
@@ -141,15 +141,6 @@ public class Study {
                 h.actions[tab.childId] = (OptionAction) (p, option) -> {
                     switch (option) {
                         case 1:
-                            tab.make(p, 1);
-                            break;
-                        case 2:
-                            tab.make(p, 5);
-                            break;
-                        case 3:
-                            tab.make(p, p.getInventory().getAmount(1761));
-                            break;
-                        case 4:
                             p.integerInput("Enter amount:", amt -> tab.make(p, amt));
                             break;
                     }
