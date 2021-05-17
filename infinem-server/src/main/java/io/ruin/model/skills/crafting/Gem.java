@@ -38,6 +38,7 @@ public enum Gem {
 
     private void cut(Player player, Item uncutItem) {
         player.animate(animId);
+        player.privateSound(2586);
         uncutItem.setId(cutId);
         player.getStats().addXp(StatType.Crafting, xp, true);
     }
