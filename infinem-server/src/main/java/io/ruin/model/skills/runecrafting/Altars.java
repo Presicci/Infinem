@@ -74,28 +74,28 @@ public enum Altars {
 
     private enum RuneCombination {
         /* Mist runes */
-        MIST_RUNES_AIR_ALTAR(4695, 14897, 555, 1444, 6, 8.0),
-        MIST_RUNES_WATER_ALTAR(4695, 14899, 556, 1438, 8, 8.5),
+        MIST_RUNES_AIR_ALTAR(4695, 34760, 555, 1444, 6, 8.0),
+        MIST_RUNES_WATER_ALTAR(4695, 34762, 556, 1438, 8, 8.5),
 
         /* Dust runes */
-        DUST_RUNES_AIR_ALTAR(4696, 14897, 557, 1440, 10, 8.3),
-        DUST_RUNES_EARTH_ALTAR(4696, 14900, 556, 1438, 10, 9.0),
+        DUST_RUNES_AIR_ALTAR(4696, 34760, 557, 1440, 10, 8.3),
+        DUST_RUNES_EARTH_ALTAR(4696, 34763, 556, 1438, 10, 9.0),
 
         /* Mud runes */
-        MUD_RUNES_WATER_ALTAR(4698, 14899, 557, 1440, 13, 9.0),
-        MUD_RUNES_EARTH_ALTAR(4698, 14900, 555, 1444, 13, 9.5),
+        MUD_RUNES_WATER_ALTAR(4698, 34762, 557, 1440, 13, 9.0),
+        MUD_RUNES_EARTH_ALTAR(4698, 34763, 555, 1444, 13, 9.5),
 
         /* Smoke runes */
-        SMOKE_RUNES_AIR_ALTAR(4697, 14897, 554, 1442, 15, 8.5),
-        SMOKE_RUNES_FIRE_ALTAR(4697, 14901, 556, 1438, 15, 9.5),
+        SMOKE_RUNES_AIR_ALTAR(4697, 34760, 554, 1442, 15, 8.5),
+        SMOKE_RUNES_FIRE_ALTAR(4697, 34764, 556, 1438, 15, 9.5),
 
         /* Steam runes */
-        STEAM_RUNES_WATER_ALTAR(4694, 14899, 554, 1442, 19, 9.5),
-        STEAM_RUNES_FIRE_ALTAR(4694, 14901, 555, 1444, 19, 10.0),
+        STEAM_RUNES_WATER_ALTAR(4694, 34762, 554, 1442, 19, 9.5),
+        STEAM_RUNES_FIRE_ALTAR(4694, 34764, 555, 1444, 19, 10.0),
 
         /* Lava runes */
-        LAVA_RUNES_EARTH_ALTAR(4699, 14900, 554, 1442, 23, 10.0),
-        LAVA_RUNES_FIRE_ALTAR(4699, 14901, 557, 1440, 23, 10.5);
+        LAVA_RUNES_EARTH_ALTAR(4699, 34763, 554, 1442, 23, 10.0),
+        LAVA_RUNES_FIRE_ALTAR(4699, 34764, 557, 1440, 23, 10.5);
 
         public final int combinationRuneId, altar, requiredRuneId, requiredTalismanId, levelReq;
         public final double exp;
