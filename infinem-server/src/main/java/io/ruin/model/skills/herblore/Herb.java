@@ -7,6 +7,7 @@ import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.item.actions.impl.skillcapes.HerbloreSkillCape;
 import io.ruin.model.skills.CapePerks;
 import io.ruin.model.stat.StatType;
 
@@ -67,7 +68,7 @@ public enum Herb {
                 while(amount-- > 0) {
                     Item herbItem = player.getInventory().findItem(herb.cleanId);
                     if(herbItem == null) {
-                        if (CapePerks.wearsHerbloreCape(player)) {
+                        if (HerbloreSkillCape.wearingHerbloreCape(player)) {
                             herbItem = player.getInventory().findItem(herb.grimyId);
                             if (herbItem == null) {
                                 return;
@@ -93,7 +94,7 @@ public enum Herb {
                 herb.mix(player, herbItem, vialItem);
             });
             ItemItemAction.register(herb.grimyId, VIAL_OF_WATER, (player, herbItem, vialItem) -> {
-                if (!CapePerks.wearsHerbloreCape(player)) {
+                if (!HerbloreSkillCape.wearingHerbloreCape(player)) {
                     player.sendMessage("Nothing interesting happens.");
                     return;
                 }

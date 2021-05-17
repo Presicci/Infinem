@@ -130,11 +130,6 @@ public class CapePerks {
 		return cape == 9792 || cape == 9793;
 	}
 
-	public static boolean wearsHerbloreCape(Player player) {
-		int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
-		return cape == 9774 || cape == 9775;
-	}
-
 	static {
 			// Agility
 			ItemAction.registerInventory(9771, "Stamina Boost", CapePerks::staminaBoost);

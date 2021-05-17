@@ -3,6 +3,7 @@ package io.ruin.model.item.actions.impl.skillcapes;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.stat.StatType;
 
 /*
@@ -13,6 +14,7 @@ import io.ruin.model.stat.StatType;
 public class HerbloreSkillCape {
     private static final int CAPE = StatType.Herblore.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Herblore.trimmedCapeId;
+    private static final int MASTER_CAPE = StatType.Herblore.masterCapeId;
     private static final int PESTLE = 233;
 
     static {
@@ -30,5 +32,10 @@ public class HerbloreSkillCape {
         } else {
             player.sendMessage("You already have a Pestle and mortar.");
         }
+    }
+
+    public static boolean wearingHerbloreCape(Player player) {
+        int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
+        return cape == CAPE || cape == TRIMMED_CAPE || cape == 13280 || cape == MASTER_CAPE;
     }
 }
