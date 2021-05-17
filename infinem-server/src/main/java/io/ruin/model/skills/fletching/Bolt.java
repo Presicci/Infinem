@@ -42,7 +42,6 @@ public enum Bolt {
     /**
      * Other
      */
-    BROAD(55, 3.0, 11876, 314, 21316, 8464),
     AMETHYST(76, 10.6, 11875, 21338, 21316, 8473);
 
     public final int levelRequirement;
@@ -69,10 +68,7 @@ public enum Bolt {
         player.getInventory().add(tipped, amount);
         player.getStats().addXp(StatType.Fletching, experience * amount, true);
         player.animate(emote);
-        boolean broad = boltItem.getId() == BROAD.id;
-        if (broad)
-            player.sendFilteredMessage("You attach feathers to " + amount + " broad bolts.");
-        else if (amount == 1)
+        if (amount == 1)
             player.sendFilteredMessage("You fletch a bolt.");
         else
             player.sendFilteredMessage("You fletch " + amount + " bolts");
@@ -102,10 +98,6 @@ public enum Bolt {
             ItemItemAction.register(bolt.id, bolt.tip, (player, boltItem, tipItem) -> {
                 if (!player.getStats().check(StatType.Fletching, bolt.levelRequirement, bolt.tipped, "make " + bolt.tippedName))
                     return;
-                if (bolt == BROAD && Config.BROADER_FLETCHING.get(player) == 0) {
-                    player.sendMessage("You haven't unlocked the ability to fletch broad bolts.");
-                    return;
-                }
                 int maxAmount = Math.min(boltItem.getAmount(), tipItem.getAmount());
                 if (maxAmount > 10) {
                     SkillDialogue.make(player, item);
