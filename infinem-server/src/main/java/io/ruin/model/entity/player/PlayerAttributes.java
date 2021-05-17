@@ -313,6 +313,7 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int craftedAstral;
     @Expose public int craftedBlood;
     @Expose public int craftedSoul;
+    @Expose public int craftedWrath;
 
 
     /**

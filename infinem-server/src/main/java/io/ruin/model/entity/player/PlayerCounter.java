@@ -24,6 +24,7 @@ public enum PlayerCounter {
     CRAFTED_ASTRAL((p, amt) -> p.craftedAstral = amt, p -> p.craftedAstral, Achievement.EXPERT_RUNECRAFTER),
     CRAFTED_BLOOD((p, amt) -> p.craftedBlood = amt, p -> p.craftedBlood, Achievement.EXPERT_RUNECRAFTER),
     CRAFTED_SOUL((p, amt) -> p.craftedSoul = amt, p -> p.craftedSoul, Achievement.EXPERT_RUNECRAFTER),
+    CRAFTED_WRATH((p, amt) -> p.craftedWrath = amt, p -> p.craftedWrath, Achievement.EXPERT_RUNECRAFTER),
 
     /**
      * Agility

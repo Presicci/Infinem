@@ -25,21 +25,25 @@ public enum Altars {
     //water = 136, 137
     //earth = 139, 140
     //fire = 130, 131
-    AIR(1, 5.0, 1438, 5527, 556, 34760, 14989, new Position(2841, 4830, 0), 14841, new Position(2983, 3293, 0), Essence.REGULAR, 11, 52800, PlayerCounter.CRAFTED_AIR, 133, 134),
-    MIND(2, 5.5, 1448, 5529, 558, 34761, 14990, new Position(2792, 4827, 0), 14842, new Position(2984, 3512, 0), Essence.REGULAR, 14, 51000, PlayerCounter.CRAFTED_MIND, 133, 134),
-    WATER(5, 6.0, 1444, 5531, 555, 34762, 14991, new Position(2726, 4832, 0), 14843, new Position(3183, 3167, 0), Essence.REGULAR, 19, 47200, PlayerCounter.CRAFTED_WATER, 136, 137),
-    EARTH(9, 6.5, 1440, 5535, 557, 34763, 14992, new Position(2655, 4830, 0), 14844, new Position(3305, 3472, 0), Essence.REGULAR, 29, 45200, PlayerCounter.CRAFTED_EARTH, 139, 140),
-    FIRE(14, 7.0, 1442, 5537, 554, 34764, 14993, new Position(2574, 4849, 0), 14845, new Position(3312, 3253, 0), Essence.REGULAR, 35, 43500, PlayerCounter.CRAFTED_FIRE, 130, 131),
-    BODY(20, 7.5, 1446, 5533, 559, 34765, 14994, new Position(2521, 4834, 0), 14846, new Position(3054, 3443, 0), Essence.REGULAR, 46, 41800, PlayerCounter.CRAFTED_BODY, 130, 131),
-    COSMIC(27, 8.0, 1454, 5539, 564, 34766, 15608, new Position(2162, 4833, 0), 14847, new Position(2410, 4377, 0), Essence.PURE, 59, 39500, PlayerCounter.CRAFTED_COSMIC, 133, 134),
-    LAW(54, 9.5, 1458, 5545, 563, 34767, 15609, new Position(2464, 4818, 0), 14848, new Position(2860, 3381, 0), Essence.PURE, 200, 38200, PlayerCounter.CRAFTED_LAW, 133, 134),
-    NATURE(44, 9.0, 1462, 5541, 561, 34768, 15610, new Position(2400, 4835, 0), 14892, new Position(2868, 3017, 0), Essence.PURE, 91, 30570, PlayerCounter.CRAFTED_NATURE, 139, 140),
-    CHAOS(35, 8.5, 1452, 5543, 562, 34769, 15611, new Position(2281, 4837, 0), 14893, new Position(3062, 3590, 0), Essence.PURE, 74, 17080, PlayerCounter.CRAFTED_CHAOS, 133, 134),
-    DEATH(65, 10.0, 1456, 5547, 560, 34770, 15612, new Position(2208, 4830, 0), 14894, new Position(1862, 4639, 0), Essence.PURE, 99, 14900, PlayerCounter.CRAFTED_DEATH, 130, 131),
+    AIR(1, 5.0, 1438, 5527, 556, 34760, 34813, new Position(2841, 4830, 0), 34748, new Position(2983, 3293, 0), Essence.REGULAR, 11, 52800, PlayerCounter.CRAFTED_AIR, 133, 134),
+    // MIND ALTAR IS FUCKING BROKEN
+    MIND(2, 5.5, 1448, 5529, 558, 34761, 34814, new Position(2792, 4827, 0), 34749, new Position(2984, 3512, 0), Essence.REGULAR, 14, 51000, PlayerCounter.CRAFTED_MIND, 133, 134),
+    WATER(5, 6.0, 1444, 5531, 555, 34762, 34815, new Position(2726, 4832, 0), 34750, new Position(3183, 3167, 0), Essence.REGULAR, 19, 47200, PlayerCounter.CRAFTED_WATER, 136, 137),
+    EARTH(9, 6.5, 1440, 5535, 557, 34763, 34816, new Position(2655, 4830, 0), 34751, new Position(3305, 3472, 0), Essence.REGULAR, 29, 45200, PlayerCounter.CRAFTED_EARTH, 139, 140),
+    FIRE(14, 7.0, 1442, 5537, 554, 34764, 34817, new Position(2574, 4849, 0), 34752, new Position(3312, 3253, 0), Essence.REGULAR, 35, 43500, PlayerCounter.CRAFTED_FIRE, 130, 131),
+    // BODY ALTAR IS FUCKING BROKEN
+    BODY(20, 7.5, 1446, 5533, 559, 34765, 34818, new Position(2521, 4834, 0), 34753, new Position(3054, 3443, 0), Essence.REGULAR, 46, 41800, PlayerCounter.CRAFTED_BODY, 130, 131),
+    // COSMIC ALTAR IS FUCKING BROKEN
+    COSMIC(27, 8.0, 1454, 5539, 564, 34766, 34819, new Position(2162, 4833, 0), 34754, new Position(2410, 4377, 0), Essence.PURE, 59, 39500, PlayerCounter.CRAFTED_COSMIC, 133, 134),
+    LAW(54, 9.5, 1458, 5545, 563, 34767, 34820, new Position(2464, 4818, 0), 34755, new Position(2860, 3381, 0), Essence.PURE, 200, 38200, PlayerCounter.CRAFTED_LAW, 133, 134),
+    NATURE(44, 9.0, 1462, 5541, 561, 34768, 34821, new Position(2400, 4835, 0), 34756, new Position(2868, 3017, 0), Essence.PURE, 91, 30570, PlayerCounter.CRAFTED_NATURE, 139, 140),
+    CHAOS(35, 8.5, 1452, 5543, 562, 34769, 34822, new Position(2281, 4837, 0), 34757, new Position(3062, 3590, 0), Essence.PURE, 74, 17080, PlayerCounter.CRAFTED_CHAOS, 133, 134),
+    DEATH(65, 10.0, 1456, 5547, 560, 34770, 34823, new Position(2208, 4830, 0), 34758, new Position(1862, 4639, 0), Essence.PURE, 99, 14900, PlayerCounter.CRAFTED_DEATH, 130, 131),
     ASTRAL(40, 8.7, -1, -1, 9075, 34771, 0, new Position(2156, 3863, 0), 14895, new Position(2156, 3863, 0), Essence.PURE, 82, 9990, PlayerCounter.CRAFTED_ASTRAL, -1, -1),
     BLOOD(77, 23.8, -1, -1, 565, 27978, 0, new Position(1727, 3825, 0), 0, new Position(1727, 3825, 0), Essence.DARK, -1, 8500, PlayerCounter.CRAFTED_BLOOD, -1, -1),
-    SOUL(90, 29.7, -1, -1, 566, 27980, 0, new Position(1820, 3862, 0), 0, new Position(1820, 3862, 0), Essence.DARK, -1, 8000, PlayerCounter.CRAFTED_SOUL, -1, -1);
-    //34772 wrath
+    SOUL(90, 29.7, -1, -1, 566, 27980, 0, new Position(1820, 3862, 0), 0, new Position(1820, 3862, 0), Essence.DARK, -1, 8000, PlayerCounter.CRAFTED_SOUL, -1, -1),
+    WRATH(95, 52.5, 22118, 22121, 21880, 34772, 34824, new Position(2335, 4827, 0), 34759, new Position(2447, 2823, 0), Essence.PURE, 99, 8990, PlayerCounter.CRAFTED_WRATH, -1, -1);
+
     public final int levelRequirement, talisman, tiara, runeID, altarObj, entranceObj, exitObj, multiplier, petOdds, imbueProjectile, imbueExplosion;
     public final double experience;
     public final Position entranceTile, exitTile;
