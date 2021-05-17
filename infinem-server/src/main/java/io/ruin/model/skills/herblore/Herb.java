@@ -7,6 +7,7 @@ import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.CapePerks;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.model.skills.Tool.VIAL_OF_WATER;
@@ -45,6 +46,9 @@ public enum Herb {
     private void mix(Player player, Item herbItem, Item vialItem) {
         herbItem.remove();
         vialItem.remove();
+        if (herbItem.getId() == grimyId) {
+            player.getStats().addXp(StatType.Herblore, xp, true);
+        }
         player.getInventory().add(unfId, 1);
         player.animate(363);
     }
@@ -62,8 +66,16 @@ public enum Herb {
             SkillItem skillItem = new SkillItem(herb.unfId).addAction((player, amount, event) -> {
                 while(amount-- > 0) {
                     Item herbItem = player.getInventory().findItem(herb.cleanId);
-                    if(herbItem == null)
-                        return;
+                    if(herbItem == null) {
+                        if (CapePerks.wearsHerbloreCape(player)) {
+                            herbItem = player.getInventory().findItem(herb.grimyId);
+                            if (herbItem == null) {
+                                return;
+                            }
+                        } else {
+                            return;
+                        }
+                    }
                     Item vialItem = player.getInventory().findItem(VIAL_OF_WATER);
                     if(vialItem == null)
                         return;
@@ -75,6 +87,19 @@ public enum Herb {
                 if(!player.getStats().check(StatType.Herblore, herb.lvlReq, VIAL_OF_WATER, herb.cleanId, "mix this"))
                     return;
                 if(player.getInventory().hasMultiple(herb.cleanId, VIAL_OF_WATER)) {
+                    SkillDialogue.make(player, skillItem);
+                    return;
+                }
+                herb.mix(player, herbItem, vialItem);
+            });
+            ItemItemAction.register(herb.grimyId, VIAL_OF_WATER, (player, herbItem, vialItem) -> {
+                if (!CapePerks.wearsHerbloreCape(player)) {
+                    player.sendMessage("Nothing interesting happens.");
+                    return;
+                }
+                if(!player.getStats().check(StatType.Herblore, herb.lvlReq, VIAL_OF_WATER, herb.grimyId, "mix this"))
+                    return;
+                if(player.getInventory().hasMultiple(herb.grimyId, VIAL_OF_WATER)) {
                     SkillDialogue.make(player, skillItem);
                     return;
                 }

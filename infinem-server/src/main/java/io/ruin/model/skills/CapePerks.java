@@ -96,70 +96,46 @@ public class CapePerks {
 	}
 
 	public static boolean wearsAttackCape(Player player) {
-		if (!OfflineMode.enabled) {
-			return false;
-		}
-
 		int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
 		return cape == 9747 || cape == 9748;
 	}
 
 	public static boolean wearsCookingCape(Player player) {
-		if (!OfflineMode.enabled) {
-			return false;
-		}
-
 		int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
 		return cape == 9801 || cape == 9802;
 	}
 
 	public static boolean wearsFarmingCape(Player player) {
-		if (!OfflineMode.enabled) {
-			return false;
-		}
-
 		int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
 		return cape == 9810 || cape == 9811;
 	}
 
 	public static boolean wearsHPCape(Player player) {
-		if (!OfflineMode.enabled) {
-			return false;
-		}
-
 		int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
 		return cape == 9768 || cape == 9769;
 	}
 
 	public static boolean wearsThievingCape(Player player) {
-		if (!OfflineMode.enabled) {
-			return false;
-		}
-
 		int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
 		return cape == 9777 || cape == 9778;
 	}
 
 	public static boolean wearsWoodcuttingCape(Player player) {
-		if (!OfflineMode.enabled) {
-			return false;
-		}
-
 		int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
 		return cape == 9807 || cape == 9808;
 	}
 
 	public static boolean wearsMiningCape(Player player) {
-		if (!OfflineMode.enabled) {
-			return false;
-		}
-
 		int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
 		return cape == 9792 || cape == 9793;
 	}
 
+	public static boolean wearsHerbloreCape(Player player) {
+		int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
+		return cape == 9774 || cape == 9775;
+	}
+
 	static {
-		if (OfflineMode.enabled) {
 			// Agility
 			ItemAction.registerInventory(9771, "Stamina Boost", CapePerks::staminaBoost);
 			ItemAction.registerInventory(9772, "Stamina Boost", CapePerks::staminaBoost);
@@ -201,7 +177,6 @@ public class CapePerks {
 			ItemAction.registerInventory(9799, "Otto's Grotto", CapePerks::teleportToOttosGrotto);
 			ItemAction.registerEquipment(9798, "Otto's Grotto", CapePerks::teleportToOttosGrotto);
 			ItemAction.registerEquipment(9799, "Otto's Grotto", CapePerks::teleportToOttosGrotto);
-		}
 	}
 
 }
