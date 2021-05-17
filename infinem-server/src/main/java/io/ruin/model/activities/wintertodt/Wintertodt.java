@@ -345,8 +345,66 @@ public class Wintertodt { // TODO make hits not reset events
         send(player);
     }
 
+    private static final int[] warmItems = {
+            12887, 12888, 12889, 12890, 12891,      // Santa
+            12892, 12893, 12894, 12895, 12896,      // Antisanta
+            13663, 13664, 13665, 13182,             // Bunny
+            19689, 19691, 19693, 19695, 19697,      // Clue hunter
+            10053, 10055,                           // Wood camo
+            10057, 10059,                           // Jungle camo
+            10061, 10063,                           // Desert camo
+            10065, 10067,                           // Polar camo
+            10041, 10043, 10045,                    // Larupia
+            10047, 10049, 10051,                    // Graahk
+            10035, 10037, 10039,                    // Kyatt
+            9944, 9945,                             // Bomber
+            10822, 10824,                           // Yak-hide
+            20704, 20706, 20708, 20710,             // Pyromancer
+            11015, 11016, 11017, 11018,             // Chicken
+            20433, 20436, 20439, 20442,             // Evil chicken
+            1050,                                   // Santa hat
+            13343,                                  // Black santa hat
+            4502,                                   // Bearhead
+            5537,                                   // Fire tiara
+            10941,                                  // Lumberjack hat
+            9806,                                   // Firemaking hood
+            13330,                                  // Fire max hood
+            21282,                                  // Infernal max hood
+            6857, 6859, 6861, 6863, 9470, 21314,    // Scarves
+            20712,                                  // Warm gloves
+            3799,                                   // Fremennik gloves
+            9804, 9805, 30244,                      // Firemaking capes
+            18280,                                  // Max cape
+            6570,                                   // Fire cape
+            13329,                                  // Fire max cape
+            21295,                                  // Infernal cape
+            21285,                                  // Infernal max cape
+            6568, 20050,                            // Obsidian capes
+            1387, 1393, 1401,                       // Fire staves
+            3053, 3054,                             // Lava staves
+            11787, 11789,                           // Steam staves
+            11998, 12000,                           // Smoke staves
+            13241,                                  // Infernal axe
+            13243,                                  // Infernal pickaxe
+            12773,                                  // Volcanic abyssal whip
+            20056,                                  // Ale of the gods
+            20720,                                  // Bruma torch
+            20714,                                  // Tome of fire
+            7053,                                   // Lit bug lantern
+            10075,                                  // Gloves of silence
+    };
+
     public static int getWarmItemsWorn(Player player) {
-        return 4; //todo
+        int wornWarmItems = 0;
+        for (int item : warmItems) {
+            if (player.getEquipment().contains(item)) {
+                ++wornWarmItems;
+            }
+        }
+        if (wornWarmItems > 4) {
+            wornWarmItems = 4;
+        }
+        return wornWarmItems;
     }
 
     public static int getBraziersLit() {
