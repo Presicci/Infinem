@@ -157,7 +157,7 @@ public class WoodcuttingGuild {
                 return;
             }
             while (!npc.isRemoved()) {
-                player.animate(Ent.getEntAnimation(axe));
+                player.animate(axe.canoeAnimationId);
                 event.delay(3);
 
                 if (Woodcutting.successfullyCutTree(Woodcutting.getEffectiveLevel(player, Tree.ENTTRUNK, axe), Tree.ENTTRUNK, axe)) {

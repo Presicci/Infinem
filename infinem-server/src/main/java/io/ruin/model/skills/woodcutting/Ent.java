@@ -20,29 +20,6 @@ public class Ent {
         });
     }
 
-    protected static int getEntAnimation(Hatchet axe) {
-        switch (axe) {
-            case INFERNAL:
-                return 2116;
-            case DRAGON:
-                return 3292;
-            case ADAMANT:
-                return 3286;
-            case MITHRIL:
-                return 3287;
-            case BLACK:
-                return 3288;
-            case STEEL:
-                return 3289;
-            case IRON:
-                return 3290;
-            case BRONZE:
-                return 3291;
-            default:
-                return 3285;
-        }
-    }
-
     protected static int getEntLog(Player player, Hatchet axe) {
         int level = Woodcutting.getEffectiveLevel(player, Tree.ENTTRUNK, axe);
         if (level >= 75 && Random.rollDie(10, 4)) {
