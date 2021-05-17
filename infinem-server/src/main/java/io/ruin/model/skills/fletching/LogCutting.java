@@ -9,6 +9,8 @@ import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 import io.ruin.process.event.Event;
 
+import java.util.ArrayList;
+
 public enum LogCutting {
     //Normal log
     ARROW_SHAFT(1511, 1, 5.0, new Item(52, 15), "15 arrow shafts", ""),
@@ -22,35 +24,39 @@ public enum LogCutting {
     OAK_SHORTBOW(1521, 20, 16.5, new Item(54, 1), "a shorbow", "make an Oak Shortbow"),
     OAK_LONGBOW(1521, 25, 16.5, new Item(56, 1), "a longbow", "make an Oak Longbow"),
     OAK_STOCK(1521, 24, 16.0, new Item(9442, 1), "a crossbow stock", "make an Oak Stock"),
+    OAK_SHIELD(1521, 27, 50, new Item(22251, 1), "a shield", "make a Oak shield"),
 
     //Willow log
     WILLOW_SHAFT(1519, 30, 15.0, new Item(52, 45), "45 arrow shafts", "make shafts from willow logs"),
     WILLOW_SHORTBOW(1519, 35, 33.3, new Item(60, 1), "a shortbow", "make a Willow Shortbow"),
     WILLOW_LONGBOW(1519, 40, 41.5, new Item(58, 1), "a longbow", "make a Willow Longbow"),
     WILLOW_STOCK(1519, 39, 22.0, new Item(9444, 1), "a crossbow stock", "make a Willow Stock"),
+    WILLOW_SHIELD(1519, 42, 83, new Item(22254, 1), "a shield", "make a Willow shield"),
 
     //Maple log
     MAPLE_SHAFT(1517, 45, 20.0, new Item(52, 60), "60 arrow shafts", "make shafts from maple logs"),
     MAPLE_SHORTBOW(1517, 50, 50.0, new Item(64, 1), "a shortbow", "make a Maple Shortbow"),
     MAPLE_LONGBOW(1517, 55, 55.0, new Item(62, 1), "a longbow", "make a Maple Longbow"),
     MAPLE_STOCK(1517, 54, 32.0, new Item(9448, 1), "a crossbow stock", "make a Maple Stock"),
+    MAPLE_SHIELD(1517, 57, 116.5, new Item(22257, 1), "a shield", "make a Maple shield"),
 
     //Yew log
     YEW_SHAFT(1515, 60, 25.0, new Item(52, 75), "75 arrow shafts", "make shafts from yew logs"),
     YEW_SHORTBOW(1515, 65, 67.5, new Item(68, 1), "a shortbow", "make a Yew Shortbow"),
     YEW_LONGBOW(1515, 70, 75.0, new Item(66, 1), "a longbow", "make a Yew Longbow"),
     YEW_STOCK(1515, 69, 32.0, new Item(9452, 1), "a crossbow stock", "make a Yew Stock"),
+    YEW_SHIELD(1515, 72, 150, new Item(22260, 1), "a shield", "make a Yew shield"),
 
     //Magic log
     MAGIC_SHAFT(1513, 75, 30.0, new Item(52, 90), "90 arrow shafts", "make shafts from magic logs"),
-    MAGIC_STAFF(1513, 78, 50, new Item(1379, 1), "a staff", "make a Staff"),
     MAGIC_SHORTBOW(1513, 80, 83.3, new Item(72, 1), "a shortbow", "make a Magic Shortbow"),
     MAGIC_LONGBOW(1513, 85, 91.5, new Item(70, 1), "a longbow", "make a Magic Longbow"),
     MAGIC_STOCK(1513, 78, 70.0, new Item(21952, 1), "a crossbow stock", "make a Magic Stock"),
+    MAGIC_SHIELD(1513, 87, 183, new Item(22263, 1), "a shield", "make a Magic shield"),
 
     //Redwood log
     REDWOOD_SHAFT(19669, 90, 35.0, new Item(52, 105), "105 arrow shafts", "make shafts from redwood logs"),
-    REDWOOD_STAFF(19669, 91, 65.0, new Item(1379, 1), "a staff", "make a staff from redwood logs"),
+    REDWOOD_SHIELD(19669, 92, 216.0, new Item(22266, 1), "a shield", "make a redwood shield"),
 
     CORRUPT_ARROW_SHAFT(30105, 90, 50.0, new Item(30115, 5), "5 corrupted arrow shafts", "makes corrupted arrows shafts from corrupted logs"),
     CORRUPT_SHORTBOW(30105, 92, 70.0, new Item(30151, 1), "a corrupt short", "makes a corrupt shortbow from corrupted logs"),
@@ -77,8 +83,8 @@ public enum LogCutting {
     private static void cut(Player player, LogCutting log, int amount) {
         if(!player.getStats().check(StatType.Fletching, log.levelReq, log.descriptionName))
             return;
-        if (log == MAGIC_STAFF && !player.getInventory().contains(log.logID, 2)) {
-            player.sendMessage("You'll need 2 magic logs to make a staff.");
+        if (log.descriptionName.contains("shield") && !player.getInventory().contains(log.logID, 2)) {
+            player.sendMessage("You need 2 logs to make a shield.");
             return;
         }
         player.startEvent(event -> {
@@ -95,11 +101,11 @@ public enum LogCutting {
                     player.unlock();
                     break;
                 }
-                if (log == MAGIC_STAFF && !player.getInventory().contains(log.logID, 2)) {
+                if (log.descriptionName.contains("shield") && !player.getInventory().contains(log.logID, 2)) {
                     player.unlock();
                     break;
                 }
-                logToCut.remove(log == MAGIC_STAFF ? 2 : 1);
+                logToCut.remove(log.descriptionName.contains("shield") ? 2 : 1);
                 player.getInventory().add(log.item);
                 player.sendFilteredMessage("You carefully cut the wood into " + log.name + ".");
                 player.getStats().addXp(StatType.Fletching, log.exp, true);
@@ -140,7 +146,8 @@ public enum LogCutting {
                     item(OAK_SHAFT),
                     new SkillItem(OAK_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, OAK_SHORTBOW, amount)),
                     new SkillItem(OAK_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, OAK_LONGBOW, amount)),
-                    new SkillItem(OAK_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, OAK_STOCK, amount)));
+                    new SkillItem(OAK_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, OAK_STOCK, amount)),
+                    item(OAK_SHIELD));
         });
 
         /**
@@ -151,7 +158,8 @@ public enum LogCutting {
                     item(WILLOW_SHAFT),
                     new SkillItem(WILLOW_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, WILLOW_SHORTBOW, amount)),
                     new SkillItem(WILLOW_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, WILLOW_LONGBOW, amount)),
-                    new SkillItem(WILLOW_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, WILLOW_STOCK, amount)));
+                    new SkillItem(WILLOW_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, WILLOW_STOCK, amount)),
+                    item(WILLOW_SHIELD));
         });
 
         /**
@@ -162,7 +170,8 @@ public enum LogCutting {
                     item(MAPLE_SHAFT),
                     new SkillItem(MAPLE_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, MAPLE_SHORTBOW, amount)),
                     new SkillItem(MAPLE_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, MAPLE_LONGBOW, amount)),
-                    new SkillItem(MAPLE_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, MAPLE_STOCK, amount)));
+                    new SkillItem(MAPLE_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, MAPLE_STOCK, amount)),
+                    item(MAPLE_SHIELD));
         });
 
         /**
@@ -173,7 +182,8 @@ public enum LogCutting {
                     item(YEW_SHAFT),
                     new SkillItem(YEW_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, YEW_SHORTBOW, amount)),
                     new SkillItem(YEW_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, YEW_LONGBOW, amount)),
-                    new SkillItem(YEW_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, YEW_STOCK, amount)));
+                    new SkillItem(YEW_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, YEW_STOCK, amount)),
+                    item(YEW_SHIELD));
         });
 
         /**
@@ -182,10 +192,10 @@ public enum LogCutting {
         ItemItemAction.register(Tool.KNIFE, MAGIC_LOG, (player, knife, magicLog) -> {
             SkillDialogue.make(player,
                     item(MAGIC_SHAFT),
-                    item(MAGIC_STAFF),
                     new SkillItem(MAGIC_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, MAGIC_SHORTBOW, amount)),
                     new SkillItem(MAGIC_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, MAGIC_LONGBOW, amount)),
-                    item(MAGIC_STOCK));
+                    item(MAGIC_STOCK),
+                    item(MAGIC_SHIELD));
         });
 
         /**
@@ -194,7 +204,7 @@ public enum LogCutting {
         ItemItemAction.register(Tool.KNIFE, 19669, (player, knife, magicLog) -> {
             SkillDialogue.make(player,
                     item(REDWOOD_SHAFT),
-                    item(REDWOOD_STAFF));
+                    item(REDWOOD_SHIELD));
         });
 
         /**
