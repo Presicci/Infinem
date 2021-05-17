@@ -45,6 +45,7 @@ public enum Amethyst {
                 item.remove();
                 player.getInventory().add(crystal.itemID, crystal.amount);
                 player.animate(6295);
+                player.privateSound(2586);
                 player.getStats().addXp(StatType.Crafting, crystal.exp, true);
                 event.delay(2);
             }
