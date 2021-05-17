@@ -90,7 +90,7 @@ public class Woodcutting {
                     player.sendFilteredMessage("You swing your axe at the tree.");
                     event.delay(1);
                 }
-                if (attempts % 2 == 0 && successfullyCutTree(effectiveLevel, treeData, hatchet)) {
+                if (attempts % 4 == 0 && successfullyCutTree(effectiveLevel, treeData, hatchet)) {
                     if (hatchet == Hatchet.INFERNAL && (Random.rollDie(3, 1) || player.infernalAxeSpecial > 0)) {
                         Burning burning = Burning.get(treeData.log);
                         if (burning != null) {
