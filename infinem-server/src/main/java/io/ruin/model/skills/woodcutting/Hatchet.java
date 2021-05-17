@@ -15,6 +15,7 @@ public enum Hatchet {
     MITHRIL(21, 871, 3287, 22),
     ADAMANT(31, 869, 3286, 26),
     RUNE(41, 867, 3285, 31),
+    GILDED(41, 8303, 8305, 31),
     DRAGON(61, 2846, 3292, 42),
     THIRD_AGE(61, 7264, 7266, 42),
     INFERNAL(61, 2117, 2116, 45),
