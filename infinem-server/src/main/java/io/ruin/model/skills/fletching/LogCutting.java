@@ -90,19 +90,15 @@ public enum LogCutting {
         player.startEvent(event -> {
             int made = 0;
             while (made++ < amount) {
-                player.lock();
                 Item knife = player.getInventory().findItem(Tool.KNIFE);
                 if(knife == null) {
-                    player.unlock();
                     break;
                 }
                 Item logToCut = player.getInventory().findItem(log.logID);
                 if(logToCut == null) {
-                    player.unlock();
                     break;
                 }
                 if (log.descriptionName.contains("shield") && !player.getInventory().contains(log.logID, 2)) {
-                    player.unlock();
                     break;
                 }
                 logToCut.remove(log.descriptionName.contains("shield") ? 2 : 1);
@@ -111,10 +107,8 @@ public enum LogCutting {
                 player.getStats().addXp(StatType.Fletching, log.exp, true);
                 player.animate(1248);
                 event.delay(2);
-                player.unlock();
             }
         });
-        player.unlock();
     }
 
     private static final int NORMAL_LOG = 1511;
