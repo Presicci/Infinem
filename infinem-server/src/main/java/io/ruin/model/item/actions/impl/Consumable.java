@@ -9,6 +9,7 @@ import io.ruin.model.inter.Widget;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.item.actions.impl.skillcapes.PrayerSkillCape;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.herblore.Potion;
 import io.ruin.model.stat.Stat;
@@ -291,7 +292,9 @@ public class Consumable {
         registerPotion(Potion.ENERGY, p -> p.getMovement().restoreEnergy(10));
         registerPotion(Potion.PRAYER, p -> {
             Stat stat = p.getStats().get(StatType.Prayer);
-            if(p.getEquipment().getId(Equipment.SLOT_RING) == 13202)
+            if(p.getEquipment().getId(Equipment.SLOT_RING) == 13202
+                    || p.getInventory().contains(6714)
+                    || PrayerSkillCape.wearingPrayerCape(p))
                 stat.restore(7, 0.27);
             else
                 stat.restore(7, 0.25);
