@@ -41,6 +41,7 @@ public enum Arrow {
     private void make(Player player, Item shaft, Item tipItem, int amount) {
         shaft.remove(amount);
         tipItem.remove(amount);
+        player.animate(8480);
         player.getInventory().add(outcome, amount);
         player.getStats().addXp(StatType.Fletching, exp * amount, true);
         boolean headless = shaft.getId() == 52 && tipItem.getId() == 314;
