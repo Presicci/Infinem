@@ -327,8 +327,8 @@ public class Mining {
          * Crystals
          */
         Object[][] crystals = {
-                {Rock.AMETHYST, 30371, 30373, PlayerCounter.MINED_AMETHYST},
-                {Rock.AMETHYST, 30372, 30373, PlayerCounter.MINED_AMETHYST}
+                {Rock.AMETHYST, 11389, 11393, PlayerCounter.MINED_AMETHYST},
+                {Rock.AMETHYST, 11388, 11393, PlayerCounter.MINED_AMETHYST}
         };
         for (Object[] c : crystals) {
             Rock rock = (Rock) c[0];
@@ -338,7 +338,7 @@ public class Mining {
             ObjectAction.register(baseId, "mine", (player, obj) -> mine(rock, player, obj, emptyId, counter));
             ObjectAction.register(baseId, "prospect", (player, obj) -> prospect(rock, player, true));
         }
-        int[] emptyCrystals = {30373};
+        int[] emptyCrystals = {11393};
         for (int id : emptyCrystals) {
             ObjectAction.register(id, "mine", (player, obj) -> player.sendMessage("There is no ore currently available in this wall."));
             ObjectAction.register(id, "prospect", (player, obj) -> player.sendMessage("There is no ore currently available in this wall."));
