@@ -694,6 +694,11 @@ public class Config {
     public static final Config THEATRE_OF_BLOOD_ORB_5 = varpbit(6446, false);
 
     /**
+     * Silver jewellery
+     */
+    public static final Config SILVER_QUANTITY = varpbit(2224, false);
+
+    /**
      * Separator
      */
 
