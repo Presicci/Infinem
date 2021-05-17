@@ -588,8 +588,22 @@ public class PlayerCombat extends Combat {
         }
         boolean ava = hasAvaDevice();
         for(Hit hit : hits) {
-            if(ava && rollAvaChance())
-                continue;
+            if(ava) {
+                if (rollAvaChance()) {  // Keep ammo
+                    continue;
+                } else {
+                    if (Random.rollPercent(71)) {   // Break ammo
+                        ammo.incrementAmount(-1);
+                        return;
+                    }
+                }
+            } else {
+                if (Random.rollPercent(20)) {   // Break ammo w/o ava
+                    ammo.incrementAmount(-1);
+                    return;
+                }
+            }
+            // Drop ammo
             ammo.incrementAmount(-1);
             hit.drop(new GroundItem(ammo.getId(), 1).owner(player).position(target.getPosition()));
         }
@@ -597,7 +611,8 @@ public class PlayerCombat extends Combat {
 
     private boolean hasAvaDevice() {
         int capeID = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        return capeID == 10499 || capeID == 21898 || capeID == 13337 || capeID == 22109 || capeID == 9756 || capeID == 9757;
+        return capeID == 10499 || capeID == 21898 || capeID == 13337
+                || capeID == 22109 || capeID == 9756 || capeID == 9757 || capeID == 13280;
     }
 
     private boolean rollAvaChance() {
