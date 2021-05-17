@@ -191,7 +191,7 @@ public class MenagerieRoom extends Room {
             case DESECRATED_HOUSE:
                 return 12;
             case NATURE_HOUSE:
-                return 40;
+                return 12;  // TODO Find out why the interface wont show you more than 12 pets
             default:
                 return 0;
         }
