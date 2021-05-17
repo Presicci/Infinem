@@ -14,36 +14,36 @@ public enum Bolt {
     /**
      * Gem-tipped bolts
      */
-    OPAL(11, 1.6, 877, 45, 879),
-    JADE(26, 2.4, 9139, 9187, 9335),
-    PEARL(41, 3.0, 9140, 46, 880),
-    RED_TOPAZ(48, 4.0, 9141, 9188, 9336),
-    SAPPHIRE(56, 4.0, 9142, 9189, 9337),
-    EMERALD(55, 4.0, 9142, 9190, 9338),
-    RUBY(63, 6.3, 9143, 9191, 9339),
-    DIAMOND(65, 7.0, 9143, 9192, 9340),
-    DRAGONSTONE(71, 8.2, 9144, 9193, 9341),
-    ONYX(73, 10.0, 9144, 9194, 9342),
+    OPAL(11, 1.6, 877, 45, 879, 8472),    // bronze
+    JADE(26, 2.4, 9139, 9187, 9335, 8474),    // blurite
+    PEARL(41, 3.0, 9140, 46, 880, 8473),  // iron
+    RED_TOPAZ(48, 4.0, 9141, 9188, 9336, 8475),   // steel
+    SAPPHIRE(56, 4.0, 9142, 9189, 9337, 8476),    // mithril
+    EMERALD(55, 4.0, 9142, 9190, 9338, 8476), // mithril
+    RUBY(63, 6.3, 9143, 9191, 9339, 8477),    // addy
+    DIAMOND(65, 7.0, 9143, 9192, 9340, 8477), // addy
+    DRAGONSTONE(71, 8.2, 9144, 9193, 9341, 8478), // rune
+    ONYX(73, 10.0, 9144, 9194, 9342, 8478), // rune
 
     /**
      * Dragon gem-tipped bolts
      */
-    OPAL_DRAGON(84, 12.0, 21905, 45, 21955),
-    JADE_DRAGON(84, 12.0, 21905, 9187, 21957),
-    PEARL_DRAGON(84, 12.0, 21905, 46, 21959),
-    RED_TOPAZ_DRAGON(84, 12.0, 21905, 9188, 21961),
-    SAPPHIRE_DRAGON(84, 12.0, 21905, 9189, 21963),
-    EMERALD_DRAGON(84, 12.0, 21905, 9190, 21965),
-    RUBY_DRAGON(84, 12.0, 21905, 9191, 21967),
-    DIAMOND_DRAGON(84, 12.0, 21905, 9192, 21969),
-    DRAGONSTONE_DRAGON(84, 12.0, 21905, 9193, 21971),
-    ONYX_DRAGON(84, 12.0, 21905, 9194, 21973),
+    OPAL_DRAGON(84, 12.0, 21905, 45, 21955, 8479),
+    JADE_DRAGON(84, 12.0, 21905, 9187, 21957, 8479),
+    PEARL_DRAGON(84, 12.0, 21905, 46, 21959, 8479),
+    RED_TOPAZ_DRAGON(84, 12.0, 21905, 9188, 21961, 8479),
+    SAPPHIRE_DRAGON(84, 12.0, 21905, 9189, 21963, 8479),
+    EMERALD_DRAGON(84, 12.0, 21905, 9190, 21965, 8479),
+    RUBY_DRAGON(84, 12.0, 21905, 9191, 21967, 8479),
+    DIAMOND_DRAGON(84, 12.0, 21905, 9192, 21969, 8479),
+    DRAGONSTONE_DRAGON(84, 12.0, 21905, 9193, 21971, 8479),
+    ONYX_DRAGON(84, 12.0, 21905, 9194, 21973, 8479),
 
     /**
      * Other
      */
-    BROAD(55, 3.0, 11875, 21338, 21316),
-    AMETHYST(76, 10.6, 11875, 21338, 21316);
+    BROAD(55, 3.0, 11876, 314, 21316, 8464),
+    AMETHYST(76, 10.6, 11875, 21338, 21316, 8473);
 
     public final int levelRequirement;
     public final double experience;
@@ -51,14 +51,16 @@ public enum Bolt {
     public final int tip;
     public final int tipped;
     public final String tippedName;
+    public final int emote;
 
-    Bolt(int levelRequirement, double experience, int id, int tip, int tipped) {
+    Bolt(int levelRequirement, double experience, int id, int tip, int tipped, int emote) {
         this.levelRequirement = levelRequirement;
         this.experience = experience;
         this.id = id;
         this.tip = tip;
         this.tipped = tipped;
         this.tippedName = ItemDef.get(tipped).name;
+        this.emote = emote;
     }
 
     private void make(Player player, Item boltItem, Item tipItem, int amount) {
@@ -66,6 +68,7 @@ public enum Bolt {
         tipItem.remove(amount);
         player.getInventory().add(tipped, amount);
         player.getStats().addXp(StatType.Fletching, experience * amount, true);
+        player.animate(emote);
         boolean broad = boltItem.getId() == BROAD.id;
         if (broad)
             player.sendFilteredMessage("You attach feathers to " + amount + " broad bolts.");
