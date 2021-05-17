@@ -187,6 +187,7 @@ public class House {
             entered(player);
             if (onEnter != null)
                 onEnter.run();
+            player.resetAnimation();
         });
     }
 
