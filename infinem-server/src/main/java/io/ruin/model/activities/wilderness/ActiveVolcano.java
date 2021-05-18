@@ -26,7 +26,7 @@ import static io.ruin.cache.ItemID.BLOOD_FRAGMENT;
 
 public class ActiveVolcano {
 
-    private static boolean DISABLED = false;
+    private static boolean DISABLED = true;
 
     private static long spawnTicks = 0;
     private static final int BOULDER = 31037;
@@ -143,7 +143,7 @@ public class ActiveVolcano {
             for (Player p : player.localPlayers()) {
                 if (p.getPosition().equals(position)) {
                     p.sendFilteredMessage(Color.DARK_RED.wrap("You hear something falling..."));
-                    event.delay(2);
+                    event.delay(5);
                     World.sendGraphics(1406, 0, 0, position);
                     event.delay(1);
                     if (p.getPosition().equals(position)) {
@@ -164,11 +164,11 @@ public class ActiveVolcano {
             boulder = null;
             if (success) {
                 String successMessage = "The Volcano has been subdued! Well done everyone!";
-                Broadcast.WORLD.sendNews(Icon.WILDERNESS, "Wilderness Event", successMessage);
+                Broadcast.WORLD.sendNews(Icon.SKULL, "[Wilderness]", successMessage);
                 broadcastEvent(successMessage);
             } else {
                 String failedMessage = "The Volcano has erupted! Help subdue it next time for blood money!";
-                Broadcast.WORLD.sendNews(Icon.WILDERNESS, "Wilderness Event", failedMessage);
+                Broadcast.WORLD.sendNews(Icon.SKULL, "[Wilderness]", failedMessage);
                 broadcastEvent(failedMessage);
             }
         }
