@@ -23,14 +23,13 @@ public class LarranChest {
         Item larrenKey = player.getInventory().findItem(LARRAN_KEY_ID);
 
         if (larrenKey == null) {
-            player.sendFilteredMessage("You need a key to open this chest");
+            player.sendFilteredMessage("You need a key to open this chest.");
             return;
         }
 
         player.startEvent(event -> {
             player.lock();
-            player.sendFilteredMessage("You unlock the chest with your key");
-            Broadcast.GLOBAL.sendNews("The Larran's Chest has been opened!");
+            player.sendFilteredMessage("You unlock the chest with your key.");
             larrenKey.remove(1);
             player.animate(536);
             Item loot = new LarranChestLoot().rollItem();
