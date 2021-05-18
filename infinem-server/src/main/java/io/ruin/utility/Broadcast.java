@@ -19,7 +19,7 @@ public enum Broadcast {
             return;
         }
         //If the player has toggle off tournament broadcasts don't send.
-        if (!p.broadcastTournaments && message.contains("Tournament is starting")) {
+        if (!p.broadcastTournaments && message.contains("[Tournament]")) {
             return;
         }
         if (!p.broadcastBossEvent && message.contains("[World Boss]")) {

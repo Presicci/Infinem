@@ -2,6 +2,7 @@ package io.ruin.content.activities.tournament
 
 import io.ruin.api.*
 import io.ruin.cache.Color
+import io.ruin.cache.Icon
 import io.ruin.model.World
 import io.ruin.model.entity.player.Player
 import io.ruin.model.stat.StatType
@@ -106,35 +107,43 @@ object TournamentManager {
      * The main method of our manager that is processed every cycle of our dedicated event processor.
      */
     fun pulse() = globalEvent {
+        var attempts = 0;
         while(activityTimer != -1) {
             pause(100)
             when(activityTimer--) {
                 30 -> {
                     TournamentEmbedMessage.sendDiscordMessage(activeTournament?.name, "30")
-                    Broadcast.WORLD.sendNews("In 30 minutes a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
+                    Broadcast.WORLD.sendNews(Icon.RED_STAR, "[Tournament]", "In 30 minutes a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
                 }
                 15 -> {
                     TournamentEmbedMessage.sendDiscordMessage(activeTournament?.name, "15")
-                    Broadcast.WORLD.sendNews("In 15 minutes a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
+                    Broadcast.WORLD.sendNews(Icon.RED_STAR, "[Tournament]", "In 15 minutes a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
                 }
                 10 -> {
                     TournamentEmbedMessage.sendDiscordMessage(activeTournament?.name, "10")
-                    Broadcast.WORLD.sendNews("In 10 minutes a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
+                    Broadcast.WORLD.sendNews(Icon.RED_STAR, "[Tournament]", "In 10 minutes a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
                 }
                 5 -> {
-                    TournamentEmbedMessage.sendDiscordMessage(activeTournament?.name, "5")
-                    Broadcast.WORLD.sendNews("In five minutes a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
-                    broadcast("In five minutes a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
+                    if (attempts > 0) {
+
+                    } else {
+                        TournamentEmbedMessage.sendDiscordMessage(activeTournament?.name, "5")
+                        Broadcast.WORLD.sendNews(Icon.RED_STAR, "[Tournament]", "The ${activeTournament?.name} Tournament doesn't have enough people! Type ::tournament to sign up now!")
+                        broadcast("The ${activeTournament?.name} Tournament doesn't have enough people! Type ::tournament to sign up now!")
+                    }
                 }
                 1 -> {
                     if (Lobby.players.size >= 4) {
                         TournamentEmbedMessage.sendDiscordMessage(activeTournament?.name, "1")
-                        Broadcast.WORLD.sendNews("In one minute a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
+                        Broadcast.WORLD.sendNews(Icon.RED_STAR, "[Tournament]", "In one minute a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
                         broadcast("In one minute a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
                     }
                 }
                 0 -> {
                     activityTimer = if (!begin(activeTournament)) {
+                        if (++attempts > 3) {
+                            -1
+                        }
                         5
                     } else {
                         -1
@@ -160,7 +169,7 @@ object TournamentManager {
         }
 
         if (World.updating) {
-            Broadcast.WORLD.sendNews("The tournament has been put on hold due to a system update.")
+            Broadcast.WORLD.sendNews(Icon.RED_STAR, "[Tournament]","The tournament has been put on hold due to a system update.")
             return false
         }
 

@@ -2,6 +2,7 @@ package io.ruin.content.activities.tournament
 
 import io.ruin.api.*
 import io.ruin.cache.Color
+import io.ruin.cache.Icon
 import io.ruin.cache.ItemID.BLOOD_MONEY
 import io.ruin.cache.ItemID.COINS_995
 import io.ruin.model.World
@@ -213,7 +214,7 @@ class Tournament(var attributes: TournamentAttributes) {
             if (fight.valid()) {
                 val first = fight.first()
                 val second = fight.second()
-                Broadcast.WORLD.sendNews("The final round of the tournament, ${first.name} Vs ${second.name}, is about to begin!")
+                Broadcast.WORLD.sendNews(Icon.RED_STAR, "[Tournament]", "The final round of the tournament, ${first.name} Vs ${second.name}, is about to begin!")
             }
         } else {
             announce("Round $round will start in 15 seconds.")
@@ -263,7 +264,7 @@ class Tournament(var attributes: TournamentAttributes) {
     private fun Player.awardWinner() {
         stage = TournamentStage.ENDED
         tournamentWins++
-        Broadcast.WORLD.sendNews("$name has won the tournament!")
+        Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "[Tournament]", "$name has won the tournament!")
         World.sendGraphics(1389, 0, 0, 3644, 9074, 0)
         World.sendGraphics(1389, 0, 0, 3644, 9081, 0)
         World.sendGraphics(1389, 0, 0, 3651, 9081, 0)

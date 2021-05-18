@@ -10,6 +10,7 @@ public enum Icon {
     HCIM_DEATH(10),
     DONATOR(19),
     INFO(15),
+    RED_STAR(30),
     GOLD_STAR(32),
     SILVER_STAR(31),
     SKULL(9)
