@@ -9,7 +9,6 @@ import io.ruin.model.item.actions.impl.skillcapes.AttackSkillCape;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.skills.CapePerks;
 import io.ruin.model.stat.StatType;
 
 public class WarriorsGuild {

@@ -7,9 +7,9 @@ import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
+import io.ruin.model.item.actions.impl.skillcapes.CookingSkillCape;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.GameObject;
-import io.ruin.model.skills.CapePerks;
 import io.ruin.model.stat.StatType;
 
 public class Cooking {
@@ -88,7 +88,7 @@ public class Cooking {
     private static boolean cookedFood(Player player, Food food, Boolean fire) {
         if(food.burntID == -1)
             return true;
-        if (CapePerks.wearsCookingCape(player))
+        if (CookingSkillCape.wearsCookingCape(player))
             return true;
         double burnBonus = 0.0;
         int levelReq = food.levelRequirement;

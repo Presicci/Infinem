@@ -12,7 +12,6 @@ import io.ruin.model.item.actions.impl.skillcapes.MiningSkillCape;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.skills.CapePerks;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 

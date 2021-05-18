@@ -4,7 +4,7 @@ package io.ruin.model.skills.farming.patch.impl;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.item.Item;
-import io.ruin.model.skills.CapePerks;
+import io.ruin.model.item.actions.impl.skillcapes.FarmingSkillCape;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.HerbCrop;
 import io.ruin.model.skills.farming.patch.Patch;
@@ -75,7 +75,7 @@ public class HerbPatch extends Patch {
         if (getCompost() == 2) { // supercompost bonus
             amount += Random.get(3, 5);
         }
-        if (CapePerks.wearsFarmingCape(player)) {
+        if (FarmingSkillCape.wearingFarmingCape(player)) {
             amount += Random.get(1, 2);
         }
         return amount;

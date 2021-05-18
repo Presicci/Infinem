@@ -3,25 +3,21 @@ package io.ruin.model.skills.woodcutting;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
-import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.BirdNest;
 import io.ruin.model.item.actions.impl.skillcapes.WoodcuttingSkillCape;
-import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.route.RouteFinder;
-import io.ruin.model.skills.CapePerks;
 import io.ruin.model.skills.firemaking.Burning;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 import io.ruin.process.event.EventConsumer;
 
-import java.util.List;
 import java.util.function.Supplier;
 
 public class Woodcutting {

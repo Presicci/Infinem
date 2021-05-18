@@ -12,7 +12,6 @@ import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.skillcapes.HitpointsSkillCape;
 import io.ruin.model.item.attributes.AttributeExtensions;
-import io.ruin.model.skills.CapePerks;
 import io.ruin.model.skills.prayer.Prayer;
 import io.ruin.utility.Broadcast;
 

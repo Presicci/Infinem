@@ -8,7 +8,6 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.impl.skillcapes.HerbloreSkillCape;
-import io.ruin.model.skills.CapePerks;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.model.skills.Tool.VIAL_OF_WATER;

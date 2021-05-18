@@ -12,7 +12,6 @@ import io.ruin.model.item.actions.impl.skillcapes.ThievingSkillCape;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.skills.BotPrevention;
-import io.ruin.model.skills.CapePerks;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.cache.ItemID.COINS_995;

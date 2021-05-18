@@ -6,11 +6,11 @@ import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
+import io.ruin.model.item.actions.impl.skillcapes.FarmingSkillCape;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.skills.CapePerks;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 
@@ -114,7 +114,7 @@ public enum Farming {
     public static int calculateProduceAmount(Player player) {
         int amount = Random.get(8, 10);
 
-        if (CapePerks.wearsFarmingCape(player)) {
+        if (FarmingSkillCape.wearingFarmingCape(player)) {
             amount += Random.get(1, 2);
         }
         return amount;

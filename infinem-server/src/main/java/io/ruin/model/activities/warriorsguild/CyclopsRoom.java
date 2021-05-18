@@ -7,7 +7,6 @@ import io.ruin.model.item.actions.impl.skillcapes.AttackSkillCape;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.MapListener;
 import io.ruin.model.map.Position;
-import io.ruin.model.skills.CapePerks;
 
 public class CyclopsRoom {
 
