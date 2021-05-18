@@ -2,12 +2,14 @@ package io.ruin.model.activities.wilderness;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
+import io.ruin.cache.Icon;
 import io.ruin.data.impl.Help;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.journal.JournalEntry;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.MapListener;
+import io.ruin.utility.Broadcast;
 
 public class Hotspot {
 
@@ -64,17 +66,10 @@ public class Hotspot {
                 }
                 ACTIVE = next;
                 String eventMessage = next.name + " is the new hotspot! Killing players here will give double blood money for the next 20 minutes!";
-                broadcastEvent(eventMessage);
+                Broadcast.WORLD.sendNews(Icon.SKULL, "[Hotspot]", eventMessage);
                 e.delay(swapTicks);
             }
         });
-    }
-
-    private static void broadcastEvent(String eventMessage) {
-        for(Player p : World.players) {
-            if(p.broadcastHotspot)
-                p.getPacketSender().sendMessage(eventMessage, "", 14);
-        }
     }
 
     /**

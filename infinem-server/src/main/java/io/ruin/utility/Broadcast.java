@@ -15,6 +15,9 @@ public enum Broadcast {
         if (!p.broadcastAnnouncements && (message.contains("[Info]"))) {
             return;
         }
+        if (!p.broadcastHotspot && (message.contains("[Hotspot]"))) {
+            return;
+        }
         //If the player has toggle off tournament broadcasts don't send.
         if (!p.broadcastTournaments && message.contains("Tournament is starting")) {
             return;
@@ -28,6 +31,7 @@ public enum Broadcast {
         p.sendMessage(message);
         p.sendNotification(message);
     })),
+    // 99 messages and 200m, use to filter
     GLOBAL(Icon.YELLOW_INFO_BADGE, (player, message) -> CentralClient.sendGlobalMessage(-1, message));
 
     private final Icon newsIcon;
