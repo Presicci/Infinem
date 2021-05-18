@@ -29,7 +29,7 @@ class EventBoss(val boss: EventBossType) : TimedEventImpl {
         npc.spawn(boss.positions[random])
         npc.setIgnoreMulti(true)
         npc.combat.setAllowRespawn(false)
-        globalEvent { Broadcast.WORLD_NOTIFICATION.sendNews(Icon.BLUE_INFO_BADGE, boss.message[random]) }
+        globalEvent { Broadcast.WORLD.sendNews(Icon.SKULL, "[World Boss]", boss.message[random]) }
         if (!OfflineMode.enabled) {
             EventBossEmbedMessage.sendDiscordMessage(boss, boss.message[random])
         }
@@ -46,13 +46,13 @@ class EventBoss(val boss: EventBossType) : TimedEventImpl {
                     }
                 }
             }
-            globalEvent { Broadcast.WORLD_NOTIFICATION.sendNews(Icon.BLUE_INFO_BADGE, "${npc.def.name} has been defeated!") }
+            globalEvent { Broadcast.WORLD.sendNews(Icon.SKULL, "[World Boss]", "${npc.def.name} has been defeated!") }
         }
     }
 
     override fun onEventStopped() {
         npc.remove()
-        globalEvent { Broadcast.WORLD_NOTIFICATION.sendNews(Icon.BLUE_INFO_BADGE, "${npc.def.name} has retreated...") }
+        globalEvent { Broadcast.WORLD.sendNews(Icon.SKULL, "[World Boss]", "${npc.def.name} has retreated...") }
     }
 
     override fun tick() {
