@@ -11,7 +11,8 @@ public enum Icon {
     DONATOR(19),
     INFO(15),
     GOLD_STAR(32),
-    SILVER_STAR(31)
+    SILVER_STAR(31),
+    SKULL(9)
     ;
 
     public final int imgId;
