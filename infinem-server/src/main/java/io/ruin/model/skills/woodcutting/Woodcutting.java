@@ -154,7 +154,7 @@ public class Woodcutting {
         }
 
         if (WoodcuttingSkillCape.wearsWoodcuttingCape(player)) {
-            chance += chance / 10;
+            chance -= chance / 10;
         }
 
         return chance;
