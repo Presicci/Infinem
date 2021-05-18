@@ -12,7 +12,10 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.actions.impl.skillcapes.SlayerSkillCape;
+import io.ruin.model.map.Bounds;
 import io.ruin.model.shop.ShopManager;
+import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.skills.slayer.SlayerTask;
 import io.ruin.model.skills.slayer.SlayerUnlock;
@@ -103,26 +106,21 @@ public class SlayerMaster {
                     new NPCDialogue(npc, "What kind of task would you like?"),
                     new OptionsDialogue(
                             new Option("I want an easy task.", () -> player.dialogue(
-                                    new PlayerDialogue("I want an " + Color.CRIMSON.wrap("easy") + " task."),
                                     new ActionDialogue(() -> assign(player, npc, SlayerTask.Type.EASY))
                             )),
                             new Option("I want a medium task.", () -> player.dialogue(
-                                    new PlayerDialogue("I want a " + Color.CRIMSON.wrap("medium") + " task."),
                                     new ActionDialogue(() -> assign(player, npc, SlayerTask.Type.MEDIUM))
                             )),
                             new Option("I want a hard task.", () -> player.dialogue(
-                                    new PlayerDialogue("I want a " + Color.CRIMSON.wrap("hard") + " task."),
                                     new ActionDialogue(() -> assign(player, npc, SlayerTask.Type.HARD))
                             )),
                             new Option("I want a boss task.", () -> {
                                 if (Config.LIKE_A_BOSS.get(player) == 1)
                                     player.dialogue(
-                                            new PlayerDialogue("I want a " + Color.CRIMSON.wrap("boss") + " task."),
                                             new ActionDialogue(() -> assign(player, npc, SlayerTask.Type.BOSS))
                                     );
                                 else
                                     player.dialogue(
-                                            new PlayerDialogue("I want a " + Color.CRIMSON.wrap("boss") + " task."),
                                             new NPCDialogue(npc, "You haven't unlocked the ability to receive boss tasks yet.")
                                     );
                             })
@@ -155,16 +153,37 @@ public class SlayerMaster {
            set(player, type, preferWilderness);
            if(player.slayerTaskRemaining == -1) {
                player.dialogue(
-                       new PlayerDialogue(message),
                        new ActionDialogue(() -> requestAmount(player, npc))
                );
+           } else if (SlayerSkillCape.wearingSlayerCape(player) && Random.rollPercent(10)) {
+               SlayerTask task = player.slayerTask;
+               int taskAmount = player.slayerTaskRemaining;
+               int assignedAmount = player.slayerTaskAmountAssigned;
+               set(player, type, preferWilderness);
+               SlayerTask secondTask = player.slayerTask;
+               int secondTaskAmount = player.slayerTaskRemaining;
+               int secondTaskAssignedAmount = player.slayerTaskAmountAssigned;
+               player.dialogue(new OptionsDialogue("Choose a task",
+                       new Option(taskAmount + " " + task.name, () -> setTask(player, task, taskAmount, assignedAmount, preferWilderness, message, npc)),
+                       new Option(secondTaskAmount + " " + secondTask.name, () -> setTask(player, secondTask, secondTaskAmount, secondTaskAssignedAmount, preferWilderness, message, npc))));
            } else {
                player.dialogue(
-                       new PlayerDialogue(message),
                        new NPCDialogue(npc, "Your new task is to kill " + player.slayerTaskRemaining + " " + player.slayerTaskName + ".<br>Good luck!").lineHeight(28)
                );
            }
         });
+    }
+
+    private static void setTask(Player player, SlayerTask task, int taskAmount, int assignedAmount, boolean preferWilderness, String message, NPC npc) {
+        player.slayerTask = task;
+        player.slayerTaskName = task.name;
+        player.slayerTaskRemaining = taskAmount;
+        player.slayerTaskAmountAssigned = assignedAmount;
+        if(preferWilderness)
+            player.slayerTaskDangerous = true;
+        player.dialogue(
+                new NPCDialogue(npc, "Your new task is to kill " + player.slayerTaskRemaining + " " + player.slayerTaskName + ".<br>Good luck!").lineHeight(28)
+        );
     }
 
     private static void requestAmount(Player player, NPC npc) {
