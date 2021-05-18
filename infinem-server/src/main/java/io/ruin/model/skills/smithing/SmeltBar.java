@@ -8,6 +8,7 @@ import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
+import io.ruin.model.item.actions.impl.skillcapes.SmithingSkillCape;
 import io.ruin.model.item.actions.impl.storage.CoalBag;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -87,7 +88,7 @@ public class SmeltBar {
                 bar.counter.increment(player, 1);
                 player.getInventory().add(bar.itemId, 1);
                 double xp = bar.smeltXp;
-                if (bar == SmithBar.GOLD && player.getEquipment().hasId(776)) // goldsmith gauntlets
+                if (bar == SmithBar.GOLD && (player.getEquipment().hasId(776) || SmithingSkillCape.wearingSmithingCape(player))) // goldsmith gauntlets
                     xp *= 2.5;
                 player.getStats().addXp(StatType.Smithing, xp, true);
                 event.delay(2);
