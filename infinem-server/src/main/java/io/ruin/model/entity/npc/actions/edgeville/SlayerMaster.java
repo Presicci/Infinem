@@ -105,16 +105,16 @@ public class SlayerMaster {
             player.dialogue(
                     new NPCDialogue(npc, "What kind of task would you like?"),
                     new OptionsDialogue(
-                            new Option("I want an easy task.", () -> player.dialogue(
+                            new Option("Easy task.", () -> player.dialogue(
                                     new ActionDialogue(() -> assign(player, npc, SlayerTask.Type.EASY))
                             )),
-                            new Option("I want a medium task.", () -> player.dialogue(
+                            new Option("Medium task.", () -> player.dialogue(
                                     new ActionDialogue(() -> assign(player, npc, SlayerTask.Type.MEDIUM))
                             )),
-                            new Option("I want a hard task.", () -> player.dialogue(
+                            new Option("Hard task.", () -> player.dialogue(
                                     new ActionDialogue(() -> assign(player, npc, SlayerTask.Type.HARD))
                             )),
-                            new Option("I want a boss task.", () -> {
+                            new Option("Boss task.", () -> {
                                 if (Config.LIKE_A_BOSS.get(player) == 1)
                                     player.dialogue(
                                             new ActionDialogue(() -> assign(player, npc, SlayerTask.Type.BOSS))
