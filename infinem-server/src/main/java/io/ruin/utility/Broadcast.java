@@ -19,7 +19,7 @@ public enum Broadcast {
         if (!p.broadcastTournaments && message.contains("Tournament is starting")) {
             return;
         }
-        if (!p.broadcastBossEvent && message.contains("Wilderness Event")) {
+        if (!p.broadcastBossEvent && message.contains("[World Boss]")) {
             return;
         }
         p.sendMessage(message);
