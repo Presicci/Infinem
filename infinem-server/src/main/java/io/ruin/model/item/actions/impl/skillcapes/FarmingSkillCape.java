@@ -23,7 +23,7 @@ public class FarmingSkillCape {
         return cape == CAPE || cape == TRIMMED_CAPE || cape == MASTER_CAPE || cape == 13342;
     }
 
-    private static void teleportToFarmingGuild(Player player, Item item) {
+    protected static void teleportToFarmingGuild(Player player, Item item) {
         player.sendMessage("Please note that the farming guild is not operated at this time.");
         ModernTeleport.teleport(player, new Position(1248, 3721, 0));
     }

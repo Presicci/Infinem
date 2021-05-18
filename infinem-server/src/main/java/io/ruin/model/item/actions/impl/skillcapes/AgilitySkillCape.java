@@ -15,7 +15,7 @@ import java.util.GregorianCalendar;
  */
 public class AgilitySkillCape {
 
-    private static void staminaBoost(Player p, Item item) {
+    protected static void staminaBoost(Player p, Item item) {
         if (!available(p.lastAgilityCapeBoost)) {
             p.sendMessage("You have already made use of that today.");
             return;

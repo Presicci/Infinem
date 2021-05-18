@@ -25,7 +25,7 @@ public class CraftingSkillCape {
         ItemAction.registerEquipment(TRIMMED_CAPE, "Teleport", CraftingSkillCape::craftingTeleport);
     }
 
-    private static void craftingTeleport(Player player, Item item) {
+    protected static void craftingTeleport(Player player, Item item) {
         ModernTeleport.teleport(player, new Bounds(2935, 3282, 2936, 3283, 0));
     }
 }

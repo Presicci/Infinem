@@ -47,7 +47,7 @@ public class TabEquipment {
             return;
         }
         int i = option - 1;
-        if(i < 0 || i >= 6)
+        if(i < 0 || i >= 10)
             return;
         ItemAction[] actions = item.getDef().equipmentActions;
         if(actions != null) {

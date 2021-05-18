@@ -31,7 +31,7 @@ public class ConstructionSkillCape {
         ItemAction.registerEquipment(TRIMMED_CAPE, "Tele to POH", ConstructionSkillCape::telePOH);
     }
 
-    private static void selectTeleport(Player player, Item item) {
+    protected static void selectTeleport(Player player, Item item) {
         player.dialogue(new OptionsDialogue("Choose Location:",
                 new Option("Rimmington", () -> ModernTeleport.teleport(player, new Bounds(2953,3223,2955,3225,0))),
                 new Option("Taverley", () -> ModernTeleport.teleport(player, new Bounds(2893,3464,2895,3466,0))),
@@ -40,7 +40,7 @@ public class ConstructionSkillCape {
         ));
     }
 
-    private static void selectTeleport2(Player player, Item item) {
+    protected static void selectTeleport2(Player player, Item item) {
         player.dialogue(new OptionsDialogue("Choose Location:",
                 new Option("Hosidius", () -> ModernTeleport.teleport(player, new Bounds(1742,3516,1744,3518,0))),
                 new Option("Brimhaven", () -> ModernTeleport.teleport(player, new Bounds(2757,3177,2759,3179,0))),
@@ -49,7 +49,7 @@ public class ConstructionSkillCape {
         ));
     }
 
-    private static void telePOH(Player player, Item item) {
+    protected static void telePOH(Player player, Item item) {
         TeleportTab.houseTab(player, item);
     }
 }

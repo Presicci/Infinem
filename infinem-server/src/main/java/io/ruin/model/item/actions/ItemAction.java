@@ -44,14 +44,14 @@ public interface ItemAction {
     static void registerEquipment(int itemId, int option, ItemAction action) {
         ItemDef def = ItemDef.get(itemId);
         if(def.equipmentActions == null)
-            def.equipmentActions = new ItemAction[7];
+            def.equipmentActions = new ItemAction[9];
         def.equipmentActions[option - 1] = action;
     }
 
     static boolean registerEquipment(int itemId, String optionName, ItemAction action) {
         ItemDef def = ItemDef.get(itemId);
         int option = -1;
-        for(int i = 451; i < 458; i++) { //tbh might go past 458, but doubt it..
+        for(int i = 451; i < 459; i++) { //tbh might go past 458, but doubt it..
             String s = (String) def.attributes.get(i);
             if(optionName.equalsIgnoreCase(s)) {
                 option = (i - 451) + 2; //plus two because "Remove" is always 1
