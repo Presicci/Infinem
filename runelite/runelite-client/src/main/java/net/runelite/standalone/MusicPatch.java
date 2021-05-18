@@ -550,8 +550,13 @@ public class MusicPatch extends Node {
          return var4;
       } else {
          int var6 = var1.readInt();
+         if (var6 > 10000000) {
+            System.out.println("XTEA crash intercepted.");
+            return new byte[100];
+         }
          if(var6 < 0 || AbstractArchive.field2738 != 0 && var6 > AbstractArchive.field2738) {
-            throw new RuntimeException();
+            return new byte[100];
+            //throw new RuntimeException();
          } else {
             byte[] var5 = new byte[var6];
             if(var2 == 1) {
