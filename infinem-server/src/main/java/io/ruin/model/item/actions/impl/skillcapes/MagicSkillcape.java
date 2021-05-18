@@ -12,6 +12,10 @@ import io.ruin.model.stat.StatType;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 5/17/2021
+ */
 public class MagicSkillcape {
 
     private static final int CAPE = StatType.Magic.regularCapeId;

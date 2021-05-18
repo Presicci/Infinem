@@ -9,6 +9,10 @@ import io.ruin.model.map.Bounds;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 import io.ruin.model.stat.StatType;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 5/17/2021
+ */
 public class HunterSkillCape {
     private static final int CAPE = StatType.Hunter.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Hunter.trimmedCapeId;

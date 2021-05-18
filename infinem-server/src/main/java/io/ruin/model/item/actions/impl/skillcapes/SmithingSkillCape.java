@@ -4,6 +4,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.stat.StatType;
 
+
 public class SmithingSkillCape {
 
     private static final int CAPE = StatType.Smithing.regularCapeId;

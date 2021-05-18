@@ -1,15 +1,13 @@
 package io.ruin.model.item.actions.impl.skillcapes;
 
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.dialogue.OptionsDialogue;
-import io.ruin.model.inter.utils.Option;
-import io.ruin.model.item.Item;
-import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.containers.Equipment;
-import io.ruin.model.map.Bounds;
-import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 import io.ruin.model.stat.StatType;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 5/17/2021
+ */
 public class SlayerSkillCape {
 
     private static final int CAPE = StatType.Slayer.regularCapeId;
