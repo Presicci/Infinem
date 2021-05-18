@@ -22,12 +22,12 @@ public class ArmadylSpiritualMage extends NPCCombat {
 
     @Override
     public void follow() {
-        follow(10);
+        follow(7);
     }
 
     @Override
     public boolean attack() {
-        if (!withinDistance(10))
+        if (!withinDistance(7))
             return false;
         npc.animate(info.attack_animation);
         int delay = PROJECTILE.send(npc, target);
