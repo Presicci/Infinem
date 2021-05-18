@@ -2,6 +2,7 @@ package io.ruin.model.activities.raids.xeric;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
+import io.ruin.cache.Icon;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -137,7 +138,7 @@ public class XericRewards {
                     raid.getParty().forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap("Special loot:")));
                 }
                 raid.getParty().forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap(lucker.getName() + " - ") + Color.RED.wrap(item.getDef().name)));
-                Broadcast.GLOBAL.sendNews("[RARE DROP] "+lucker.getName()+" Has just received "+item.getDef().name+" from Chambers of Xeric!");
+                Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "[Rare Drop] "+lucker.getName()+" Has just received "+item.getDef().name+" from Chambers of Xeric!");
             }
         }
         //regular drops

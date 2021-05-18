@@ -55,20 +55,20 @@ public enum GameMode {
         if (player.getStats().totalLevel >= 100) {
             String overall = NumberUtils.formatNumber(player.getStats().totalLevel);
             if (killHit == null) {
-                Broadcast.GLOBAL.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has died as a Hardcore Ironman with a total level of " + overall + "!"));
+                Broadcast.WORLD.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has died as a Hardcore Ironman with a total level of " + overall + "!"));
             } else if (killHit.attacker != null) {
                 if (killHit.attacker instanceof Player) {
-                        Broadcast.GLOBAL.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has died as a Hardcore Ironman with a total level of " + overall + ", losing a fight to " + killHit.attacker.player.getName() +"!"));
+                        Broadcast.WORLD.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has died as a Hardcore Ironman with a total level of " + overall + ", losing a fight to " + killHit.attacker.player.getName() +"!"));
                 } else {
-                    Broadcast.GLOBAL.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has died as a Hardcore Ironman with a total level of " + overall + ", brutally executed by " + killHit.attacker.npc.getDef().descriptiveName +"!"));
+                    Broadcast.WORLD.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has died as a Hardcore Ironman with a total level of " + overall + ", brutally executed by " + killHit.attacker.npc.getDef().descriptiveName +"!"));
                 }
             } else {
                 if (killHit.type == HitType.POISON) {
-                    Broadcast.GLOBAL.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has been poisoned to death as a Hardcore Ironman with a total level of " + overall + "!"));
+                    Broadcast.WORLD.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has been poisoned to death as a Hardcore Ironman with a total level of " + overall + "!"));
                 } else if (killHit.type == HitType.VENOM) {
-                    Broadcast.GLOBAL.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has succumbed to venom as a Hardcore Ironman with a total level of " + overall + "!"));
+                    Broadcast.WORLD.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has succumbed to venom as a Hardcore Ironman with a total level of " + overall + "!"));
                 } else { // not sure if this can happen? can't think of anything
-                    Broadcast.GLOBAL.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has died as a Hardcore Ironman with a total level of " + overall + "!"));
+                    Broadcast.WORLD.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has died as a Hardcore Ironman with a total level of " + overall + "!"));
                 }
             }
         }
@@ -87,7 +87,7 @@ public enum GameMode {
         player.sendMessage(Color.RED.wrap("You have fallen as a Hardcore Ironman, your Hardcore status has been revoked."));
         if (player.getStats().totalLevel >= 1) { // hmm
             String overall = NumberUtils.formatNumber(player.getStats().totalLevel);
-                Broadcast.GLOBAL.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has died as a Hardcore Ironman with a total level of " + overall + ", brutally executed by " + npcName + "!"));
+                Broadcast.WORLD.sendPlain(Color.RED.wrap(Icon.HCIM_DEATH.tag() + player.getName() + " has died as a Hardcore Ironman with a total level of " + overall + ", brutally executed by " + npcName + "!"));
         }
     }
 

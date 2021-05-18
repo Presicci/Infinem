@@ -7,7 +7,7 @@ public enum Icon {
     GREEN_INFO_BADGE(86),
     WILDERNESS(46),
     ANNOUNCEMENT(55),
-    HCIM_DEATH(32),
+    HCIM_DEATH(10),
     DONATOR(19),
     INFO(15),
     GOLD_STAR(32),

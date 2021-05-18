@@ -203,7 +203,7 @@ public class StatList {
         if(newXp > Stat.MAX_XP)
             newXp = Stat.MAX_XP;
         if(newXp == Stat.MAX_XP && stat.experience < Stat.MAX_XP) {
-            Broadcast.GLOBAL.sendNews(player.getName() + " has just reached 200 million experience in " + type.name() + "!");
+            Broadcast.GLOBAL.sendNews(Icon.GOLD_STAR, player.getName() + " has just reached 200 million experience in " + type.name() + "!");
             player.sendMessage("Congratulations, you have reached max experience in " + type.name() + "!");
         }
 

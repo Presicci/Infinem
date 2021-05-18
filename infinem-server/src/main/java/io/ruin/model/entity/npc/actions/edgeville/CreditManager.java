@@ -124,7 +124,7 @@ public class CreditManager {
                     dialogues.add(new NPCDialogue(npc, "Claimed " + claimedPurchases + "/" + totalPurchases + " purchases.<br>Come back for the rest when you have enough inventory space.").lineHeight(19));
                 if(bankedItems)
                     player.sendMessage(Color.COOL_BLUE.wrap("One or more of your claimed items have been deposited into your bank."));
-                Broadcast.GLOBAL.sendNews(player, Icon.DONATOR, "[Donation]", "Thank you to " +player.getName() + " for their generous donation! Join them at ::store!");
+                Broadcast.WORLD.sendNews(player, Icon.DONATOR, "[Donation]", "Thank you to " +player.getName() + " for their generous donation! Join them at ::store!");
                 player.storeAmountSpent += spent;
                 PlayerGroup group = getGroup(player);
                 if(group != null && !player.isGroup(group)) {

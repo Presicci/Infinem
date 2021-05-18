@@ -3,6 +3,7 @@ package io.ruin.model.activities.inferno;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
+import io.ruin.cache.Icon;
 import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.model.World;
@@ -180,7 +181,7 @@ public class Inferno {
                     player.infernoBestTime = timer.stop(player, player.infernoBestTime);
                     player.getInventory().addOrDrop(21295, 1);
                     player.getInventory().addOrDrop(6529, 16440);
-                    Broadcast.GLOBAL.sendNews(player, player.getName() + " has defeated the Inferno.");
+                    Broadcast.WORLD.sendNews(player, Icon.GOLD_STAR, player.getName() + " has defeated the Inferno.");
                 }
             }
             player.inferno = null;

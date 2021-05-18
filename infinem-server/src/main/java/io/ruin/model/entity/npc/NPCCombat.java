@@ -3,6 +3,7 @@ package io.ruin.model.entity.npc;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
+import io.ruin.cache.Icon;
 import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.model.World;
@@ -489,9 +490,9 @@ public abstract class NPCCombat extends Combat {
         else
             message += item.getDef().descriptiveName;
         if (item.lootBroadcast != null) {
-            item.lootBroadcast.sendNews(pKiller, message + " from " + npc.getDef().descriptiveName + "!");
+            item.lootBroadcast.sendNews(pKiller, Icon.SILVER_STAR, "[Rare Drop] " + message + " from " + npc.getDef().descriptiveName + "!");
         } else {
-            Broadcast.GLOBAL.sendNews(pKiller, message + " from " + npc.getDef().descriptiveName + "!");
+            Broadcast.WORLD.sendNews(pKiller, Icon.SILVER_STAR, "[Rare Drop] " + message + " from " + npc.getDef().descriptiveName + "!");
         }
         RareDropEmbedMessage.sendDiscordMessage(message, npc.getDef().descriptiveName, item.getId());
     }

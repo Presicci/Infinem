@@ -422,20 +422,20 @@ public enum ClueType {
             /**
              * Ultra rare (1 / 3510)
              */
-            new LootItem(10350, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age full helmet
-            new LootItem(10348, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age platebody
-            new LootItem(10346, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age platelegs
-            new LootItem(10352, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age kiteshield
+            new LootItem(10350, 1, 1).broadcast(Broadcast.WORLD),         //3rd age full helmet
+            new LootItem(10348, 1, 1).broadcast(Broadcast.WORLD),         //3rd age platebody
+            new LootItem(10346, 1, 1).broadcast(Broadcast.WORLD),         //3rd age platelegs
+            new LootItem(10352, 1, 1).broadcast(Broadcast.WORLD),         //3rd age kiteshield
 
-            new LootItem(10334, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age range coif
-            new LootItem(10330, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age range top
-            new LootItem(10332, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age range legs
-            new LootItem(10336, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age vambraces
+            new LootItem(10334, 1, 1).broadcast(Broadcast.WORLD),         //3rd age range coif
+            new LootItem(10330, 1, 1).broadcast(Broadcast.WORLD),         //3rd age range top
+            new LootItem(10332, 1, 1).broadcast(Broadcast.WORLD),         //3rd age range legs
+            new LootItem(10336, 1, 1).broadcast(Broadcast.WORLD),         //3rd age vambraces
 
-            new LootItem(10342, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age mage hat
-            new LootItem(10338, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age robe top
-            new LootItem(10340, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age robe
-            new LootItem(10344, 1, 1).broadcast(Broadcast.GLOBAL)          //3rd age amulet
+            new LootItem(10342, 1, 1).broadcast(Broadcast.WORLD),         //3rd age mage hat
+            new LootItem(10338, 1, 1).broadcast(Broadcast.WORLD),         //3rd age robe top
+            new LootItem(10340, 1, 1).broadcast(Broadcast.WORLD),         //3rd age robe
+            new LootItem(10344, 1, 1).broadcast(Broadcast.WORLD)          //3rd age amulet
     ),
     ELITE(
             12073, 20543, 10, 12,
@@ -543,25 +543,25 @@ public enum ClueType {
             /**
              * Ultra rare (1 / 3300)
              */
-            new LootItem(10350, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age full helmet
-            new LootItem(10348, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age platebody
-            new LootItem(10346, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age platelegs
-            new LootItem(10352, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age kiteshield
+            new LootItem(10350, 1, 1).broadcast(Broadcast.WORLD),         //3rd age full helmet
+            new LootItem(10348, 1, 1).broadcast(Broadcast.WORLD),         //3rd age platebody
+            new LootItem(10346, 1, 1).broadcast(Broadcast.WORLD),         //3rd age platelegs
+            new LootItem(10352, 1, 1).broadcast(Broadcast.WORLD),         //3rd age kiteshield
 
-            new LootItem(10342, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age mage hat
-            new LootItem(10338, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age robe top
-            new LootItem(10340, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age robe
-            new LootItem(10344, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age amulet
+            new LootItem(10342, 1, 1).broadcast(Broadcast.WORLD),         //3rd age mage hat
+            new LootItem(10338, 1, 1).broadcast(Broadcast.WORLD),         //3rd age robe top
+            new LootItem(10340, 1, 1).broadcast(Broadcast.WORLD),         //3rd age robe
+            new LootItem(10344, 1, 1).broadcast(Broadcast.WORLD),         //3rd age amulet
 
-            new LootItem(10334, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age range coif
-            new LootItem(10330, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age range top
-            new LootItem(10332, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age range legs
-            new LootItem(10336, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age vambraces
+            new LootItem(10334, 1, 1).broadcast(Broadcast.WORLD),         //3rd age range coif
+            new LootItem(10330, 1, 1).broadcast(Broadcast.WORLD),         //3rd age range top
+            new LootItem(10332, 1, 1).broadcast(Broadcast.WORLD),         //3rd age range legs
+            new LootItem(10336, 1, 1).broadcast(Broadcast.WORLD),         //3rd age vambraces
 
-            new LootItem(12437, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age cloak
-            new LootItem(12422, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age wand
-            new LootItem(12424, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age bow
-            new LootItem(12426, 1, 1).broadcast(Broadcast.GLOBAL)          //3rd age longsword
+            new LootItem(12437, 1, 1).broadcast(Broadcast.WORLD),         //3rd age cloak
+            new LootItem(12422, 1, 1).broadcast(Broadcast.WORLD),         //3rd age wand
+            new LootItem(12424, 1, 1).broadcast(Broadcast.WORLD),         //3rd age bow
+            new LootItem(12426, 1, 1).broadcast(Broadcast.WORLD)          //3rd age longsword
     ),
     MASTER(
             19835, 19836, 15, 17,
@@ -648,28 +648,28 @@ public enum ClueType {
             /**
              * Ultra rare (1 / 3300)
              */
-            new LootItem(10350, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age full helmet
-            new LootItem(10348, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age platebody
-            new LootItem(10346, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age platelegs
-            new LootItem(10352, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age kiteshield
+            new LootItem(10350, 1, 1).broadcast(Broadcast.WORLD),         //3rd age full helmet
+            new LootItem(10348, 1, 1).broadcast(Broadcast.WORLD),         //3rd age platebody
+            new LootItem(10346, 1, 1).broadcast(Broadcast.WORLD),         //3rd age platelegs
+            new LootItem(10352, 1, 1).broadcast(Broadcast.WORLD),         //3rd age kiteshield
 
-            new LootItem(10342, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age mage hat
-            new LootItem(10338, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age robe top
-            new LootItem(10340, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age robe
-            new LootItem(10344, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age amulet
+            new LootItem(10342, 1, 1).broadcast(Broadcast.WORLD),         //3rd age mage hat
+            new LootItem(10338, 1, 1).broadcast(Broadcast.WORLD),         //3rd age robe top
+            new LootItem(10340, 1, 1).broadcast(Broadcast.WORLD),         //3rd age robe
+            new LootItem(10344, 1, 1).broadcast(Broadcast.WORLD),         //3rd age amulet
 
-            new LootItem(10334, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age range coif
-            new LootItem(10330, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age range top
-            new LootItem(10332, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age range legs
-            new LootItem(10336, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age vambraces
+            new LootItem(10334, 1, 1).broadcast(Broadcast.WORLD),         //3rd age range coif
+            new LootItem(10330, 1, 1).broadcast(Broadcast.WORLD),         //3rd age range top
+            new LootItem(10332, 1, 1).broadcast(Broadcast.WORLD),         //3rd age range legs
+            new LootItem(10336, 1, 1).broadcast(Broadcast.WORLD),         //3rd age vambraces
 
-            new LootItem(12437, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age cloak
-            new LootItem(12422, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age wand
-            new LootItem(12424, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age bow
-            new LootItem(12426, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age longsword
+            new LootItem(12437, 1, 1).broadcast(Broadcast.WORLD),         //3rd age cloak
+            new LootItem(12422, 1, 1).broadcast(Broadcast.WORLD),         //3rd age wand
+            new LootItem(12424, 1, 1).broadcast(Broadcast.WORLD),         //3rd age bow
+            new LootItem(12426, 1, 1).broadcast(Broadcast.WORLD),         //3rd age longsword
 
-            new LootItem(20011, 1, 1).broadcast(Broadcast.GLOBAL),         //3rd age axe
-            new LootItem(20014, 1, 1).broadcast(Broadcast.GLOBAL)          //3rd age pickaxe
+            new LootItem(20011, 1, 1).broadcast(Broadcast.WORLD),         //3rd age axe
+            new LootItem(20014, 1, 1).broadcast(Broadcast.WORLD)          //3rd age pickaxe
     );
 
     public final int clueId, casketId;
