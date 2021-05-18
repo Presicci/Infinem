@@ -97355,6 +97355,23 @@
     "weight": 1.5,
     "protect_value": 2800
   },
+  { #Neitiznot faceguard
+    "id": 24271,
+    "tradeable": false,
+    "examine": "A gift from Neitiznot's Burgher enhanced with the jaw of a Basilisk.",
+    "weight": 2.721,
+	"protect_value": 550000,
+    "equip_slot": 0,
+    "defence_level": 70,
+    "stab_defence_bonus": 36,
+    "slash_defence_bonus": 34,
+    "crush_defence_bonus": 38,
+    "magic_defence_bonus": 3,
+    "range_defence_bonus": 34,
+    "melee_strength_bonus": 6,
+    "prayer_bonus": 3,
+    "hide_hair": true
+  },
    { #Founder hat
       "id": 30000,
       "tradeable": true,
