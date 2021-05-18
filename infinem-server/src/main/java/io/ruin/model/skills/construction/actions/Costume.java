@@ -3,7 +3,7 @@ package io.ruin.model.skills.construction.actions;
 import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.item.actions.impl.MaxCape;
+import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
@@ -137,7 +137,7 @@ public enum Costume {
     MUSIC_CAPE(single(13223), multiple(13221, 13222)),
     SPOTTED_CAPE(10069),
     SPOTTIER_CAPE(10071),
-    MAX_CAPE(MaxCape.MaxCapes.INFERNAL),
+    MAX_CAPE(MaxCapeVariants.MaxCapes.INFERNAL),
     INFERNAL_CAPE(21295),
     CHAMPIONS_CAPE(21439),
     IMBUED_SARADOMIN_CAPE(21791),
@@ -526,12 +526,12 @@ public enum Costume {
         this(single(skill.hoodId), multiple(skill.trimmedCapeId, skill.regularCapeId));
     }
 
-    Costume(MaxCape.MaxCapes c) { // max cape
-        pieces = new int[2][MaxCape.MaxCapes.values().length + 1];
+    Costume(MaxCapeVariants.MaxCapes c) { // max cape
+        pieces = new int[2][MaxCapeVariants.MaxCapes.values().length + 1];
         pieces[0][0] = 13281;
         pieces[1][0] = 13342;
-        for (int i = 0; i < MaxCape.MaxCapes.values().length; i++) {
-            c = MaxCape.MaxCapes.values()[i];
+        for (int i = 0; i < MaxCapeVariants.MaxCapes.values().length; i++) {
+            c = MaxCapeVariants.MaxCapes.values()[i];
             pieces[0][i + 1] = c.newHoodId;
             pieces[1][i + 1] = c.newCapeId;
         }

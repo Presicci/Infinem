@@ -8,7 +8,7 @@ import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
-import io.ruin.model.item.actions.impl.MaxCape;
+import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.construction.Buildable;
@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-import static io.ruin.model.item.actions.impl.MaxCape.MaxCapes.*;
+import static io.ruin.model.item.actions.impl.MaxCapeVariants.MaxCapes.*;
 import static io.ruin.model.skills.construction.Buildable.CAPE_HANGER;
 
 public class AchievementGalleryRoom extends Room {
@@ -254,7 +254,7 @@ public class AchievementGalleryRoom extends Room {
             this.items = items;
         }
 
-        Cape(int objId, MaxCape.MaxCapes maxCapes) {
+        Cape(int objId, MaxCapeVariants.MaxCapes maxCapes) {
             this(objId, maxCapes.newCapeId, maxCapes.newHoodId);
         }
 

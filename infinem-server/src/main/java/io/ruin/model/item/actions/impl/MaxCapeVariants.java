@@ -14,7 +14,7 @@ import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.ground.GroundItem;
 
-public class MaxCape {
+public class MaxCapeVariants {
 
     public static void check(Player player) {
         if(unlocked(player))

@@ -3,7 +3,7 @@ package io.ruin.model.skills.crafting;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.item.Item;
-import io.ruin.model.item.actions.impl.MaxCape;
+import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -31,7 +31,7 @@ public class CraftingGuild {
                 boolean hasApron = apron != null && (apron.getId() == BROWN_APRON || apron.getId() == GOLDEN_APRON);
                 boolean hasCraftingCape = player.getEquipment().getId(Equipment.SLOT_CAPE) == CRAFTING_CAPE || player.getEquipment().getId(Equipment.SLOT_CAPE) == CRAFTING_CAPE_T;
 
-                if (!MaxCape.wearing(player) && !hasApron && !hasCraftingCape) {
+                if (!MaxCapeVariants.wearing(player) && !hasApron && !hasCraftingCape) {
                     player.dialogue(new NPCDialogue(5810, "Where's your brown apron? You can't come in here unless you're wearing one."));
                     return;
                 }

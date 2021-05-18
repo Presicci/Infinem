@@ -7,7 +7,7 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
-import io.ruin.model.item.actions.impl.MaxCape;
+import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.shop.*;
 import io.ruin.model.stat.StatRequirement;
 import io.ruin.model.stat.StatType;
@@ -80,7 +80,7 @@ public class Mac {
                 .price(ECO_PRICE * 23)
                 .additionalItems(Arrays.asList(new Item(13281, 1)))
                 .requirementCheckType(RequirementCheckType.REQUIRED_TO_BUY)
-                .additionalRequirements(player -> MaxCape.unlocked(player) ? "" : "You need to be maxed in all trainable stats to purchase this cape.")
+                .additionalRequirements(player -> MaxCapeVariants.unlocked(player) ? "" : "You need to be maxed in all trainable stats to purchase this cape.")
                 .build();
         trimmedCapes.add(maxCape);
 

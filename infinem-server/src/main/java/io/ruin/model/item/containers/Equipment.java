@@ -8,9 +8,8 @@ import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.handlers.EquipmentStats;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
-import io.ruin.model.item.actions.impl.MaxCape;
+import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.item.actions.impl.chargable.Blowpipe;
-import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.skills.construction.actions.CombatRoom;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -44,7 +43,7 @@ public class Equipment extends ItemContainer {
                 }
             }
         }
-        if(selectedDef.maxType && !MaxCape.unlocked(player)) {
+        if(selectedDef.maxType && !MaxCapeVariants.unlocked(player)) {
             player.sendMessage("You don't have the required stats to wear this.");
             return;
         }
