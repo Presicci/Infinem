@@ -5,6 +5,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.item.actions.impl.skillcapes.SmithingSkillCape;
 import io.ruin.model.item.containers.Equipment;
 
 public class CoalBag {
@@ -14,9 +15,8 @@ public class CoalBag {
     public static final int COAL_BAG = 12019;
 
     private static int getBagSize(Player player) {
-        int capeId = player.getEquipment().getId(Equipment.SLOT_CAPE);
         int maxSize = 27;
-        if (capeId == 9795 || capeId == 9796)
+        if (SmithingSkillCape.wearingSmithingCape(player))
             maxSize += 9;
         return maxSize;
     }
