@@ -1,7 +1,7 @@
 [
-  { #Spiritual ranger (118)
+  { #Spiritual ranger zammy (118)
     "ids": [ 3160 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.godwars.combat.zamorak.ZamorakSpiritualRanger",
     //Combat Info
     "hitpoints": 120,
     "aggressive_level": 236,
@@ -9,7 +9,7 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 63,
-    "slayer_xp": 120.0,
+    "slayer_xp": 106.0,
     "slayer_tasks": [ "Spiritual Creatures" ],
     //Combat Stats
     "attack": 1,
@@ -42,9 +42,9 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Spiritual ranger (122)
+  { #Spiritual ranger sara (122)
     "ids": [ 2211 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.godwars.combat.saradomin.SaradominSpiritualRanger",
     //Combat Info
     "hitpoints": 106,
     "aggressive_level": 244,
@@ -85,9 +85,9 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Spiritual ranger (115)
+  { #Spiritual ranger bandos(115)
     "ids": [ 2242 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.godwars.combat.bandos.BandosSpiritualRanger",
     //Combat Info
     "hitpoints": 131,
     "aggressive_level": 230,
@@ -135,7 +135,7 @@
     "hitpoints": 89,
     "aggressive_level": 254,
     "max_damage": 16,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 63,
     "slayer_xp": 120.0,
