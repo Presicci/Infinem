@@ -40,24 +40,24 @@ class CorruptedNechryarchLoot : LootTable() {
                 LootItem(11230, 20, 50, 90) //dragon dart
         )
         addTable(1,
-                LootItem(22610, 1, 1, 1).broadcast(Broadcast.GLOBAL), //vesta spear
-                LootItem(22613, 1, 1, 1).broadcast(Broadcast.GLOBAL), //vesta sword
-                LootItem(22616, 1, 1, 1).broadcast(Broadcast.GLOBAL), //vesta chest
-                LootItem(22619, 1, 1, 1).broadcast(Broadcast.GLOBAL), //vesta skirt
-                LootItem(22622, 1, 1, 1).broadcast(Broadcast.GLOBAL), //statius warhammer
-                LootItem(22625, 1, 1, 1).broadcast(Broadcast.GLOBAL), //statius helm
-                LootItem(22628, 1, 1, 1).broadcast(Broadcast.GLOBAL), //statius plate
-                LootItem(22631, 1, 1, 1).broadcast(Broadcast.GLOBAL), //statius legs
-                LootItem(22634, 1, 1, 1).broadcast(Broadcast.GLOBAL), //Morrigans axe
-                LootItem(22636, 1, 1, 1).broadcast(Broadcast.GLOBAL), //morrigans javelin
-                LootItem(22638, 1, 1, 1).broadcast(Broadcast.GLOBAL), //morrigans coif
-                LootItem(22641, 1, 1, 1).broadcast(Broadcast.GLOBAL), //morrigans body
-                LootItem(22644, 1, 1, 1).broadcast(Broadcast.GLOBAL), //morrigans chaps
-                LootItem(22647, 1, 1, 1).broadcast(Broadcast.GLOBAL), //zuriels staff
-                LootItem(22650, 1, 1, 1).broadcast(Broadcast.GLOBAL), //zuriels hood
-                LootItem(22653, 1, 1, 1).broadcast(Broadcast.GLOBAL), //zuriels top
-                LootItem(22656, 1, 1, 1).broadcast(Broadcast.GLOBAL), //zuriels bottom
-                LootItem(22656, 1, 1, 1).broadcast(Broadcast.GLOBAL) //custom javelin
+                LootItem(22610, 1, 1, 1).broadcast(Broadcast.WORLD), //vesta spear
+                LootItem(22613, 1, 1, 1).broadcast(Broadcast.WORLD), //vesta sword
+                LootItem(22616, 1, 1, 1).broadcast(Broadcast.WORLD), //vesta chest
+                LootItem(22619, 1, 1, 1).broadcast(Broadcast.WORLD), //vesta skirt
+                LootItem(22622, 1, 1, 1).broadcast(Broadcast.WORLD), //statius warhammer
+                LootItem(22625, 1, 1, 1).broadcast(Broadcast.WORLD), //statius helm
+                LootItem(22628, 1, 1, 1).broadcast(Broadcast.WORLD), //statius plate
+                LootItem(22631, 1, 1, 1).broadcast(Broadcast.WORLD), //statius legs
+                LootItem(22634, 1, 1, 1).broadcast(Broadcast.WORLD), //Morrigans axe
+                LootItem(22636, 1, 1, 1).broadcast(Broadcast.WORLD), //morrigans javelin
+                LootItem(22638, 1, 1, 1).broadcast(Broadcast.WORLD), //morrigans coif
+                LootItem(22641, 1, 1, 1).broadcast(Broadcast.WORLD), //morrigans body
+                LootItem(22644, 1, 1, 1).broadcast(Broadcast.WORLD), //morrigans chaps
+                LootItem(22647, 1, 1, 1).broadcast(Broadcast.WORLD), //zuriels staff
+                LootItem(22650, 1, 1, 1).broadcast(Broadcast.WORLD), //zuriels hood
+                LootItem(22653, 1, 1, 1).broadcast(Broadcast.WORLD), //zuriels top
+                LootItem(22656, 1, 1, 1).broadcast(Broadcast.WORLD), //zuriels bottom
+                LootItem(22656, 1, 1, 1).broadcast(Broadcast.WORLD) //custom javelin
         )
     }
 
