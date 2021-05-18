@@ -83669,6 +83669,27 @@
     "weight": 0.0,
 	"protect_value": 0
   },
+  { #Max cape
+    "id": 13342,
+    "tradeable": false,
+    "examine": "Max cape - Examine not set.",
+    "weight": 0.4,
+	"protect_value": 0,
+    "equip_slot": 1,
+    "attack_level": 99,
+    "defence_level": 99,
+    "strength_level": 99,
+    "hitpoints_level": 99,
+    "ranged_level": 99,
+    "prayer_level": 99,
+    "magic_level": 99,
+    "stab_defence_bonus": 9,
+    "slash_defence_bonus": 9,
+    "crush_defence_bonus": 9,
+    "magic_defence_bonus": 9,
+    "range_defence_bonus": 9,
+    "prayer_bonus": 4
+  },
   { #Black santa hat
     "id": 13343,
     "tradeable": true,

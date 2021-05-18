@@ -17,7 +17,7 @@ public class WoodcuttingSkillCape {
 
     public static boolean wearsWoodcuttingCape(Player player) {
         int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        return cape == CAPE || cape == TRIMMED_CAPE || cape == 13280 || cape == MASTER_CAPE;
+        return cape == CAPE || cape == TRIMMED_CAPE || cape == 13342 || cape == MASTER_CAPE;
     }
 }
 

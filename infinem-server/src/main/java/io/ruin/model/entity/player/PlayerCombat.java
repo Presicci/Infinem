@@ -623,7 +623,7 @@ public class PlayerCombat extends Combat {
 
     private boolean hasAdvancedAva() {
         int capeID = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        return capeID == 21898 || capeID == 13337  || capeID == 22109 || capeID == 13280;
+        return capeID == 21898 || capeID == 13337  || capeID == 22109 || capeID == 13342;
     }
 
     private boolean rollAvaChance() {

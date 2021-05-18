@@ -17,6 +17,6 @@ public class MiningSkillCape {
 
     public static boolean wearsMiningCape(Player player) {
         int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        return cape == CAPE || cape == TRIMMED_CAPE || cape == 13280 || cape == MASTER_CAPE;
+        return cape == CAPE || cape == TRIMMED_CAPE || cape == 13342 || cape == MASTER_CAPE;
     }
 }

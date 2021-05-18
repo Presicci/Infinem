@@ -191,7 +191,7 @@ public class AchievementGalleryRoom extends Room {
         MYTHICAL_CAPE(31983, 22114),
         CHAMPIONS_CAPE(30403, 21439),
 
-        MAX(29170, 13280, 13281),
+        MAX(29170, 13342, 13281),
         INFERNAL_MAX(26714, INFERNAL),
         FIRE_MAX(29171, FIRE),
         SARADOMIN_MAX(29172, SARADOMIN),

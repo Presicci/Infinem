@@ -20,7 +20,7 @@ public class FarmingSkillCape {
 
     public static boolean wearingFarmingCape(Player player) {
         int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        return cape == CAPE || cape == TRIMMED_CAPE || cape == MASTER_CAPE || cape == 13280;
+        return cape == CAPE || cape == TRIMMED_CAPE || cape == MASTER_CAPE || cape == 13342;
     }
 
     private static void teleportToFarmingGuild(Player player, Item item) {

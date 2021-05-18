@@ -76,7 +76,7 @@ public class MaxCape {
 
     static {
         for(MaxCapes cape : MaxCapes.values()) {
-            ItemItemAction.register(13280, cape.secondaryId, (player, primary, secondary) -> {
+            ItemItemAction.register(13342, cape.secondaryId, (player, primary, secondary) -> {
                 player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Combine these capes to create " + ItemDef.get(cape.newCapeId).descriptiveName+ "?", primary, () -> {
                     Item hoodItem = player.getInventory().findItem(13281);
                     if(hoodItem == null) {
@@ -98,9 +98,9 @@ public class MaxCape {
                         new Option("Yes", () -> player.startEvent(event -> {
                             player.lock();
                             item.setId(cape.secondaryId);
-                            player.getInventory().add(13280, 1);
+                            player.getInventory().add(13342, 1);
                             player.getInventory().add(13281, 1);
-                            player.dialogue(new ItemDialogue().two(cape.secondaryId, 13280, "You rip the " + ItemDef.get(cape.secondaryId).name + " from your max cape."));
+                            player.dialogue(new ItemDialogue().two(cape.secondaryId, 13342, "You rip the " + ItemDef.get(cape.secondaryId).name + " from your max cape."));
                             player.unlock();
                         })),
                         new Option("No", player::closeDialogue)

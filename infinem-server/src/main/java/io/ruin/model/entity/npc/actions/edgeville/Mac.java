@@ -75,7 +75,7 @@ public class Mac {
                 .collect(Collectors.toList());
 
         ShopItem maxCape = ShopItem.builder()
-                .id(13280)
+                .id(13342)
                 .amount(100)
                 .price(ECO_PRICE * 23)
                 .additionalItems(Arrays.asList(new Item(13281, 1)))
