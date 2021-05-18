@@ -1,7 +1,7 @@
 [
   { #Saradomin priest (113)
     "ids": [ 2209 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.godwars.combat.saradomin.SaradominSpiritualMage",
     //Combat Info
     "hitpoints": 89,
     "aggressive_level": 226,
