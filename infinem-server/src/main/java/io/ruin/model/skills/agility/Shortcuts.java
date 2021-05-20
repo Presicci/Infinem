@@ -188,5 +188,6 @@ public class Shortcuts {
 
         // Zeah runecrafting
         ObjectAction.register(27990,1776,3883, 0, "Jump", JumpShortcut.ZEAH_JUMP49::traverse);
+        ObjectAction.register(34741,1761,3873, 0, "Jump", JumpShortcut.ZEAH_JUMP69::traverse);
     }
 }
