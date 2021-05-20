@@ -254,5 +254,84 @@ public class Shortcuts {
         ObjectAction.register(16515, 2337, 3253, 0, "Climb", ClimbingSpots.ARANDAR_CLIMB85::traverse);
         ObjectAction.register(16514, 2333, 3252, 0, "Climb", ClimbingSpots.ARANDAR_CLIMB85::traverse);
 
+
+        /**
+         *                                              STEPPING STONES
+         * _____________________________________________________________________________________________________________
+         */
+        // Stepping Stone Lv. 12
+        ObjectAction.register(21738, 2649, 9561, 0, "Jump-from", SteppingStone.BRIMHAVEN_STONES12::traverse);
+        ObjectAction.register(21739, 2647, 9558, 0, "Jump-from", SteppingStone.BRIMHAVEN_STONES12::traverse);
+
+        // Stepping Stone Lv. 15
+        Tile.getObject(31809, 1981, 8996, 1).skipReachCheck = p -> p.equals(1981, 8994, 1) || p.equals(1981, 8998, 1);
+        ObjectAction.register(31809, "Jump-to", SteppingStone.CORSAIR_COVE_STONES15::traverse);
+
+        // Stepping Stone Lv. 30
+        ObjectAction.register(23645, "Cross", SteppingStone.KARAMJA_STONES30::traverse);
+        ObjectAction.register(23647, "Cross", SteppingStone.KARAMJA_STONES30::traverse);
+
+        // Stepping Stone Lv. 31
+        ObjectAction.register(16533, "Jump-onto", SteppingStone.DRAYNOR_STONES31::traverse);
+
+        // Stepping Stone Lv. 40 (EAST STONE)
+        Tile.getObject(29729, 1612, 3570, 0).skipReachCheck = p -> p.equals(1610, 3570) || p.equals(1614, 3570);
+        ObjectAction.register(29729, "Cross", SteppingStone.ZEAH_E_STONES40::traverse);
+
+        // Stepping Stone Lv. 40 (WEST STONE)
+        Tile.getObject(29730, 1605, 3571, 0).skipReachCheck = p -> p.equals(1607, 3571) || p.equals(1603, 3571);
+        ObjectAction.register(29730, "Cross", SteppingStone.ZEAH_W_STONES40::traverse);
+
+        // Stepping Stone Lv. 45
+        Tile.getObject(29728, 1722, 3551, 0).skipReachCheck = p -> p.equals(1720, 3551) || p.equals(1724, 3551);
+        ObjectAction.register(29728, "Cross", SteppingStone.ZEAH_STONES45::traverse);
+
+        // Stepping Stone Lv. 50
+        Tile.getObject(13504, 3419, 3325, 0).skipReachCheck = p -> p.equals(3417, 3325) || p.equals(3421, 3323);
+        ObjectAction.register(13504, "Cross", SteppingStone.MORTMYRE_STONES50::traverse);
+
+        // Stepping Stone Lv. 55
+        Tile.getObject(11768, 2573, 3861, 0).skipReachCheck = p -> p.equals(2573, 3859) || p.equals(2575, 3861);
+        ObjectAction.register(11768, "Cross", SteppingStone.MISCELLANIA_STONES55::traverse);
+
+        // Stepping Stone Lv. 60
+        Tile.getObject(19042, 3711, 2969, 0).skipReachCheck = p -> p.equals(3708, 2969) || p.equals(3715, 2969);
+        ObjectAction.register(19042, "Jump-to", SteppingStone.MOS_LEHARMLESS_STONES60::traverse);
+
+        // Stepping Stone Lv. 66
+        Tile.getObject(16513, 3214, 3135, 0).skipReachCheck = p -> p.equals(3212, 3137) || p.equals(3214, 3132);
+        ObjectAction.register(16513, "Jump-to", SteppingStone.LUMBRIDGE_STONES66::traverse);
+
+        // Stepping Stone Lv. 74
+        Tile.getObject(14918, 3201, 3808, 0).skipReachCheck = p -> p.equals(3201, 3810) || p.equals(3201, 3807);
+        ObjectAction.register(14918, "Cross", SteppingStone.WILDERNESS_LAVADRAG_STONES74::traverse);
+
+        // Stepping Stone Lv. 76
+        Tile.getObject(10663, 2157, 3072, 0).skipReachCheck = p -> p.equals(2160, 3072) || p.equals(2154, 3072);
+        ObjectAction.register(10663, "Cross", SteppingStone.ZULRAH_STONES76::traverse);
+
+        // Stepping Stone Lv. 77
+        Tile.getObject(16466, 2863, 2974, 0).skipReachCheck = p -> p.equals(2863, 2971) || p.equals(2863, 2976);
+        Tile.getObject(16466, 2863, 2974, 0).nearPosition = (p, obj) -> {
+            int val = Integer.compare(p.getPosition().distance(Position.of(2863, 2971)), p.getPosition().distance(Position.of(2863, 2976)));
+            return val < 0 ? Position.of(2863, 2971) : Position.of(2863, 2976);
+        };
+        ObjectAction.register(16466, "Cross", SteppingStone.SHILO_STONES77::traverse);
+
+        // Stepping Stone Lv. 82
+        Tile.getObject(14917, 3092, 3879, 0).skipReachCheck = p -> p.equals(3091, 3882) || p.equals(3093, 3879);
+        ObjectAction.register(14917, "Cross", SteppingStone.WILDERNESS_LAVAMAZE_STONES82::traverse);
+
+        // Stepping Stone Lv. 83 (NORTH STONES)
+        Tile.getObject(19040, 2684, 9548, 0).skipReachCheck = p -> p.equals(2682, 9548);
+        Tile.getObject(19040, 2688, 9547, 0).skipReachCheck = p -> p.equals(2690, 9547);
+        ObjectAction.register(19040, 2684, 9548, 0, "Cross", SteppingStone.BRIMHAVEN_N_STONES83::traverse);
+        ObjectAction.register(19040, 2688, 9547, 0, "Cross", SteppingStone.BRIMHAVEN_N_STONES83::traverse);
+
+        // Stepping Stone Lv. 83 (SOUTH STONES)
+        Tile.getObject(19040, 2695, 9531, 0).skipReachCheck = p -> p.equals(2695, 9533);
+        Tile.getObject(19040, 2696, 9527, 0).skipReachCheck = p -> p.equals(2697, 9525);
+        ObjectAction.register(19040, 2695, 9531, 0, "Cross", SteppingStone.BRIMHAVEN_S_STONES83::traverse);
+        ObjectAction.register(19040, 2696, 9527, 0, "Cross", SteppingStone.BRIMHAVEN_S_STONES83::traverse);
     }
 }
