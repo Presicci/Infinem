@@ -13,6 +13,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 5/20/2021
+ */
 public enum ClimbingSpots {
 
     CAIRN_S_CLIMB1(Direction.WEST, 1,1,
