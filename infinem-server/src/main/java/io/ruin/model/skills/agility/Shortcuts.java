@@ -9,7 +9,6 @@ import io.ruin.model.skills.agility.shortcut.*;
 
 public class Shortcuts {
     static {
-
         // Stile at Fred the Farmer's sheep field and the stile at Falador cabbage patch
         // Stile at Taverly which is required for the clue scroll south of the long house
         // Stile into the beahive in Camelot
@@ -153,5 +152,9 @@ public class Shortcuts {
         ObjectAction.register(34396, 1324, 3788, 0, "climb",  ClimbingRocks::climb);
         ObjectAction.register(34396, 1324, 3794, 0, "climb",  ClimbingRocks::climb);
 
+        // SW of Trollheim rocks
+        ObjectAction.register(3748,2834,3628, 0, "Climb", JumpShortcut.TROLL_E_JUMP1::traverse);
+        ObjectAction.register(3748,2833,3628, 0, "Climb", JumpShortcut.TROLL_W_JUMP1::traverse);
+        ObjectAction.register(3748,2821,3635, 0, "Climb", JumpShortcut.TROLL_FAR_W_JUMP1::traverse);
     }
 }
