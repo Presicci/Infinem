@@ -9,10 +9,13 @@ import io.ruin.model.skills.agility.shortcut.*;
 
 public class Shortcuts {
     static {
-        // Stile at Fred the Farmer's sheep field and the stile at Falador cabbage patch
-        // Stile at Taverly which is required for the clue scroll south of the long house
-        // Stile into the beahive in Camelot
-        ObjectAction.register(993, "climb-over", (p, obj) -> Stile.shortcut(p, obj, 1));
+        // Ardy stile
+        Tile.getObject(993, 2647, 3375, 0).skipReachCheck = p -> p.equals(2649, 3375) || p.equals(2646, 3375);
+        Tile.getObject(993, 2647, 3375, 0).nearPosition = (p, obj) -> {
+            int val = Integer.compare(p.getPosition().distance(Position.of(2649, 3375)), p.getPosition().distance(Position.of(2646, 3375)));
+            return val < 0 ? Position.of(2649, 3375) : Position.of(2646, 3375);
+        };
+        ObjectAction.register(993,2647,3375, 0, "Climb-over", JumpShortcut.ARDY_JUMP1::traverse);
 
         // Draynor Stile into cabbage field
         Tile.getObject(7527, 3063, 3282, 0).skipReachCheck = p -> p.equals(3063, 3281) || p.equals(3063, 3284);
