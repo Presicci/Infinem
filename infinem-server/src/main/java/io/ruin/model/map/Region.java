@@ -113,10 +113,11 @@ public class Region {
         try {
             landscapeData = getLandscapeData();
         } catch(Throwable t) {
-            //System.err.println("Invalid Map Keys for Region (" + id + "): base=(" + baseX + ", " + baseY + ") keys=" + Arrays.toString(keys));
+            System.err.println("Invalid Map Keys for Region (" + id + "): base=(" + baseX + ", " + baseY + ") keys=" + Arrays.toString(keys));
             invalidKeys = true;
         }
         if(landscapeData != null) {
+            try {
             InBuffer landIn = new InBuffer(landscapeData);
             int objectId = -1;
             for(; ; ) {
@@ -145,9 +146,13 @@ public class Region {
                         int absY = baseY + localY;
                         GameObject obj = new GameObject(objectId, absX, absY, height, type, direction);
                         getTile(absX, absY, height, true).addObject(obj);
-                        BankActions.markTiles(obj);
+                        //BankActions.markTiles(obj);
                     }
                 }
+            }
+            } catch (Exception e){
+                System.out.print("Error initializing region: " + id + " ");
+                e.printStackTrace();
             }
         }
         empty = !invalidKeys && mapData == null && landscapeData == null;
