@@ -20,6 +20,10 @@ public class Position {
         updateFirstChunk();
     }
 
+    public Position(int x, int y) {
+        new Position(x, y, 0);
+    }
+
     public void updateFirstChunk() {
         firstChunkX = x >> 3;
         firstChunkY = y >> 3;
