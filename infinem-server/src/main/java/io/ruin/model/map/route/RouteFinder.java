@@ -212,7 +212,10 @@ public class RouteFinder {
         RouteType route;
         if(gameObject.walkTo != null)
             route = routeAbsolute(gameObject.walkTo.getX(), gameObject.walkTo.getY());
-        else
+        else if(gameObject.nearPosition != null) {
+            Position nearestPosition = gameObject.nearPosition.apply(entity.player, gameObject);
+            route = routeAbsolute(nearestPosition.getX(), nearestPosition.getY());
+        } else
             route = routeObject(gameObject);
         if(entity.player != null) {
             if(entity.player.emoteDelay.isDelayed()) {
