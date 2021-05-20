@@ -15,7 +15,12 @@ public class Shortcuts {
         ObjectAction.register(993, "climb-over", (p, obj) -> Stile.shortcut(p, obj, 1));
 
         // Draynor Stile into cabbage field
-        ObjectAction.register(7527, "climb-over", (p, obj) -> Stile.shortcut(p, obj, 1));
+        Tile.getObject(7527, 3063, 3282, 0).skipReachCheck = p -> p.equals(3063, 3281) || p.equals(3063, 3284);
+        Tile.getObject(7527, 3063, 3282, 0).nearPosition = (p, obj) -> {
+            int val = Integer.compare(p.getPosition().distance(Position.of(3063, 3281)), p.getPosition().distance(Position.of(3063, 3284)));
+            return val < 0 ? Position.of(3063, 3281) : Position.of(3063, 3284);
+        };
+        ObjectAction.register(7527,3063,3282, 0, "Climb-over", JumpShortcut.CABBAGE_JUMP1::traverse);
 
         // lumberyard stile
         ObjectAction.register(2618, "climb-over", (p, obj) -> Stile.shortcutN(p, obj, 1));
