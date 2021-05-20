@@ -129,12 +129,9 @@ public enum ClimbingSpots {
                 }
             } else if(p.getPosition().isWithinDistance(startPosition, 1)){
                 posCopy.add(endPosition);
-                p.sendMessage("Not reverse");
             } else {
-                p.sendMessage("pos" + p.getPosition() + " / " + first);
                 Collections.reverse(posCopy);
                 posCopy.add(startPosition);
-                p.sendMessage("Reverse");
             }
 
 
@@ -142,7 +139,6 @@ public enum ClimbingSpots {
                 Position pos = posCopy.get(index);
                 int xDiff = pos.getX() - p.getPosition().getX();
                 int yDiff = pos.getY() - p.getPosition().getY();
-                p.sendMessage("Moving X: " + xDiff + " Y: " + yDiff);
                 p.animate(740);
                 int speed = index == 0 || index == posCopy.size() - 1 ? 35 : 80;
                 p.getMovement().force(xDiff, yDiff, 0, 0, 5, speed, faceDir);
@@ -151,7 +147,6 @@ public enum ClimbingSpots {
 
             if(World.isEco())
                 p.getStats().addXp(StatType.Agility, xp, true);
-            p.sendMessage("Finsihed!");
             p.unlock();
             p.resetAnimation();
         });
