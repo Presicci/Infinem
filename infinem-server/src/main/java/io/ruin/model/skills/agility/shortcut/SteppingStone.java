@@ -118,19 +118,16 @@ public enum SteppingStone {
                 }
             } else if(obj.getPosition().equals(first)){
                 posCopy.add(endPosition);
-                p.sendMessage("Not reverse");
             } else {
 
                 Collections.reverse(posCopy);
                 posCopy.add(startPosition);
-                p.sendMessage("Reverse");
             }
 
             for(int index = 0;index<posCopy.size();index++){
                 Position pos = posCopy.get(index);
                 int xDiff = pos.getX() - p.getPosition().getX();
                 int yDiff = pos.getY() - p.getPosition().getY();
-                p.sendMessage("Moving X: " + xDiff + " Y: " + yDiff);
                 p.animate(741);
                 p.getMovement().force(xDiff, yDiff, 0, 0, 5, 35, Direction.getDirection(p.getPosition(), pos));
                 if (index != posCopy.size() - 1) e.delay(2);
