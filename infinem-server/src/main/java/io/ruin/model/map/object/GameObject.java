@@ -16,6 +16,7 @@ import io.ruin.model.skills.hunter.traps.Trap;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
@@ -25,6 +26,7 @@ public class GameObject extends AttributesHolder {
     public final int originalDirection;
     public final int x, y, z;
     public final int type, direction;
+    public BiFunction<Player, GameObject, Position> nearPosition;
 
     private boolean skipClipping, spawned;
     public Tile tile;
