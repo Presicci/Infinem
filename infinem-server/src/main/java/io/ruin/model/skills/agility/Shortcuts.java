@@ -185,5 +185,8 @@ public class Shortcuts {
         // Trollheim
         ObjectAction.register(3748,2910,3687, 0, "Climb", JumpShortcut.TROLL_N_JUMP44::traverse);
         ObjectAction.register(3748,2910,3686, 0, "Climb", JumpShortcut.TROLL_S_JUMP44::traverse);
+
+        // Zeah runecrafting
+        ObjectAction.register(27990,1776,3883, 0, "Jump", JumpShortcut.ZEAH_JUMP49::traverse);
     }
 }
