@@ -36,7 +36,7 @@ public enum JumpShortcut {
 
     TROLL_N_JUMP44(44,1, Position.of(2911, 3687), Position.of(2909, 3687)),
 
-    ZEAH_JUMP49(49,1, Position.of(1776, 3884), Position.of(1776, 3882)),
+    ZEAH_JUMP49(49,1, Position.of(1776, 3884), Position.of(1776, 3880)),
 
     ZEAH_JUMP69(69,1, new Position(1761, 3874), new Position(1761, 3872))
     ;
