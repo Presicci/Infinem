@@ -378,6 +378,14 @@ public class Shortcuts {
         ObjectAction.register(23548, 2580, 9513, 0, "Walk-across", BalancingLedge.YANILLE_DUNGEON_ENTRANCE_2::traverse);
 
         /**
+         * Monkeybars
+         */
+        ObjectAction.register(23567, 2597, 9494, 0, "Swing across", MonkeyBars.YANILLE_DUNGEON_BARS_1::traverse);
+        ObjectAction.register(23567, 2598, 9494, 0, "Swing across", MonkeyBars.YANILLE_DUNGEON_BARS_1::traverse);
+        ObjectAction.register(23567, 2597, 9489, 0, "Swing across", MonkeyBars.YANILLE_DUNGEON_BARS_2::traverse);
+        ObjectAction.register(23567, 2598, 9489, 0, "Swing across", MonkeyBars.YANILLE_DUNGEON_BARS_2::traverse);
+
+        /**
          * Pipes
          */
         Tile.getObject(23140, 2576, 9506, 0).walkTo = new Position(2578, 9506, 0);
