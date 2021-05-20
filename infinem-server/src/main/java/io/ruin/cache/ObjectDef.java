@@ -134,8 +134,11 @@ public class ObjectDef {
     public boolean someFlag = false;
     public int varpBitId = -1;
     public int varpId = -1;
+    public Map<Integer, Object> clientScriptData;
 
     public int someDirection;
+    private int anInt2167;
+    private boolean randomizeAnimStart = false;
 
     private void decode(InBuffer in) {
         for (;;) {
@@ -496,8 +499,37 @@ public class ObjectDef {
             anIntArray1597 = new int[i_15_];
             for (int i_16_ = 0; i_16_ < i_15_; i_16_++)
                 anIntArray1597[i_16_] = in.readUnsignedShort();
-        } else if (i == 81)
+        } else if (i == 81) {
             anInt1569 = in.readUnsignedByte() * 256;
+        } else if (i == 82) {
+            anInt2167 = in.readUnsignedShort();
+        } else if (i == 89) {
+            randomizeAnimStart = true;
+        } else if (i == 249) {
+            int length = in.readUnsignedByte();
+            int index;
+            if (clientScriptData == null) {
+                index = method32(length);
+                clientScriptData = new HashMap<>(index);
+            }
+            for (index = 0; index < length; index++) {
+                boolean stringData = in.readUnsignedByte() == 1;
+                int key = in.readMedium();
+                clientScriptData.put(key, stringData ? in.readString() : in.readInt());
+            }
+        } else {
+            throw new RuntimeException("cannot parse object definition, missing config code: " + i);
+        }
+    }
+
+    public static int method32(int var0) {
+        --var0;
+        var0 |= var0 >>> 1;
+        var0 |= var0 >>> 2;
+        var0 |= var0 >>> 4;
+        var0 |= var0 >>> 8;
+        var0 |= var0 >>> 16;
+        return var0 + 1;
     }
 
     public boolean isClippedDecoration() {
