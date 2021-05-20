@@ -376,5 +376,15 @@ public class Shortcuts {
          */
         ObjectAction.register(23548, 2580, 9519, 0, "Walk-across", BalancingLedge.YANILLE_DUNGEON_ENTRANCE_1::traverse);
         ObjectAction.register(23548, 2580, 9513, 0, "Walk-across", BalancingLedge.YANILLE_DUNGEON_ENTRANCE_2::traverse);
+
+        /**
+         * Pipes
+         */
+        Tile.getObject(23140, 2576, 9506, 0).walkTo = new Position(2578, 9506, 0);
+        ObjectAction.register(23140, 2576, 9506, 0, "Squeeze-through", PipeShortcut.YANILLE_PIPE::traverse);
+
+        Tile.getObject(23140, 2573, 9506, 0).walkTo =  new Position(2572, 9506, 0);
+        ObjectAction.register(23140, 2573, 9506, 0, "Squeeze-through", PipeShortcut.YANILLE_PIPE::traverse);
+
     }
 }
