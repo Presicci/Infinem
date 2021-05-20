@@ -108,8 +108,6 @@ public class Shortcuts {
         // Contortion in Yanille Dungeon small room
         // Arceuus essence mine boulder leap
         // Stepping stone into Morytania near the Nature Grotto
-        Tile.getObject(13504, 3419, 3325, 0, 22, -1).skipReachCheck = p -> true;
-        ObjectAction.register(13504, "cross", ((player, obj) -> SteppingStone.crossEW(player, obj, 1)));
         // Pipe from Edgeville dungeon to Varrock Sewers
         // Arceuus essence mine eastern scramble
         // (Grapple) Karamja Volcano
