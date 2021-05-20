@@ -636,7 +636,7 @@ public class Config {
     public static final Config SHOW_SPELLS_LACK_LEVEL = varpbit(6607, true);
     public static final Config SHOW_SPELLS_LACK_RUNES = varpbit(6608, true);
     public static final Config SHOW_TELEPORT_SPELLS = varpbit(6609, true);
-    public static final Config SHOW_SPELLS_LACK_REQS = varpbit(12137, true);
+    //public static final Config SHOW_SPELLS_LACK_REQS = varpbit(12137, true);
 
     /**
      * Clan Wars
