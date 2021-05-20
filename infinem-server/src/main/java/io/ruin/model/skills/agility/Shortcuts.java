@@ -188,6 +188,9 @@ public class Shortcuts {
         ObjectAction.register(27990,1776,3883, 0, "Jump", JumpShortcut.ZEAH_JUMP49::traverse);
         ObjectAction.register(34741,1761,3873, 0, "Jump", JumpShortcut.ZEAH_JUMP69::traverse);
 
+        // Dwarven mine crevice
+        ObjectAction.register(16543, "Squeeze-through", CreviceShortcut.FALADOR::squeeze);
+
         /**
          *                                              CLIMBING ROCKS
          * _____________________________________________________________________________________________________________
@@ -334,7 +337,33 @@ public class Shortcuts {
         ObjectAction.register(19040, 2695, 9531, 0, "Cross", SteppingStone.BRIMHAVEN_S_STONES83::traverse);
         ObjectAction.register(19040, 2696, 9527, 0, "Cross", SteppingStone.BRIMHAVEN_S_STONES83::traverse);
 
-        // Dwarven mine crevice
-        ObjectAction.register(16543, "Squeeze-through", CreviceShortcut.FALADOR::squeeze);
+        /**
+         *                                              LOG BALANCE
+         * _____________________________________________________________________________________________________________
+         */
+
+        // Lob Balance Lv. 1
+        ObjectAction.register(23644, "Cross", LogBalance.KARAMJA_LOG1::traverse);
+
+        // Log Balance Lv. 20
+        ObjectAction.register(23274, "Walk-across", LogBalance.CAMELOT_LOG20::traverse);
+
+        // Log Balance Lv. 30
+        ObjectAction.register(20882, "Walk-across", LogBalance.BRIMHAVEN_LOG30::traverse);
+        ObjectAction.register(20884, "Walk-across", LogBalance.BRIMHAVEN_LOG30::traverse);
+
+        // Log Balance Lv. 33
+        ObjectAction.register(16548, "Walk-across", LogBalance.ARDY_LOG33::traverse);
+        ObjectAction.register(16546, "Walk-across", LogBalance.ARDY_LOG33::traverse);
+
+        // Log Balance Lv. 45
+        ObjectAction.register(3931, "Cross", LogBalance.ISAFDAR_1_LOG45::traverse);
+        ObjectAction.register(3932, "Cross", LogBalance.ISAFDAR_2_LOG45::traverse);
+        ObjectAction.register(3933, "Cross", LogBalance.ISAFDAR_3_LOG45::traverse);
+
+        // Log Balance Lv. 48
+        ObjectAction.register(16542, "Walk-across", LogBalance.CAMELOT_LOG48::traverse);
+        ObjectAction.register(16540, "Walk-across", LogBalance.CAMELOT_LOG48::traverse);
+
     }
 }
