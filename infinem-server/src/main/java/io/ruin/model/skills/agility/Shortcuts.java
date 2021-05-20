@@ -158,6 +158,11 @@ public class Shortcuts {
         ObjectAction.register(3748,2821,3635, 0, "Climb", JumpShortcut.TROLL_FAR_W_JUMP1::traverse);
 
         // Lumbridge sheep pen
+        Tile.getObject(12982, 3197, 3276, 0).skipReachCheck = p -> p.equals(3197, 3278) || p.equals(3197, 3275);
+        Tile.getObject(12982, 3197, 3276, 0).nearPosition = (p, obj) -> {
+            int val = Integer.compare(p.getPosition().distance(Position.of(3197, 3278)), p.getPosition().distance(Position.of(3197, 3275)));
+            return val < 0 ? Position.of(3197, 3278) : Position.of(3197, 3275);
+        };
         ObjectAction.register(12982,3197,3276, 0, "Climb-over", JumpShortcut.SHEEP_JUMP1::traverse);
     }
 }
