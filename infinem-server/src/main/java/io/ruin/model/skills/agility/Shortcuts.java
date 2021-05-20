@@ -175,5 +175,8 @@ public class Shortcuts {
 
         // Burgh de Rott low fence
         ObjectAction.register(12776,3474,3221, 0, "Jump-over", JumpShortcut.BURGH_JUMP1::traverse);
+
+        // Corsair cove rocks
+        ObjectAction.register(31757,2546,2872, 0, "Climb", JumpShortcut.CORSAIR_JUMP10::traverse);
     }
 }
