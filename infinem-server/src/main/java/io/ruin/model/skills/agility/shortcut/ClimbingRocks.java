@@ -20,7 +20,7 @@ public class ClimbingRocks {
             if (player.getAbsY() < object.y)
                 player.getMovement().force(0, 8, 0, 0, 0, 120, Direction.NORTH);
             else
-                player.getMovement().force(0, -8, 0, 0, 0, 120, Direction.SOUTH);
+                player.getMovement().force(0, -8, 0, 0, 0, 120, Direction.NORTH);
             e.delay(5);
             player.animate(-1);
             player.unlock();
