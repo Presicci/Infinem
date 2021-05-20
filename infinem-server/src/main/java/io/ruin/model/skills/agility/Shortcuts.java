@@ -39,10 +39,6 @@ public class Shortcuts {
 
         // (Grapple) Over the River Lum to Al Kharid (FUCK THAT)
 
-        // Rope swing to Moss Giant Island
-        ObjectAction.register(23568, 2705, 3209, 0, "swing-on", (p, obj) -> RopeSwing.shortcut(p, obj, 10, Position.of(2709, 3209, 0), Position.of(2704, 3209, 0)));
-        ObjectAction.register(23569, 2703, 3205, 0, "swing-on", (p, obj) -> RopeSwing.shortcut(p, obj, 10, Position.of(2705, 3205, 0), Position.of(2709, 3205, 0)));
-
         // (Grapple) Scale Falador wall
         ObjectAction.register(17050, 3032, 3389, 0, "grapple", (p, obj) -> Grappling.grapple(p, obj, 11, 19, 37, 4455, 760, 10, Position.of(3032, 3388, 0), Position.of(3032, 3389, 1)));
         ObjectAction.register(17049, 3033, 3390, 0, "grapple", (p, obj) -> Grappling.grapple(p, obj, 11, 19, 37, 4455, 760, 10, Position.of(3033, 3390, 0), Position.of(3033, 3389, 1)));
@@ -364,6 +360,16 @@ public class Shortcuts {
         // Log Balance Lv. 48
         ObjectAction.register(16542, "Walk-across", LogBalance.CAMELOT_LOG48::traverse);
         ObjectAction.register(16540, "Walk-across", LogBalance.CAMELOT_LOG48::traverse);
+
+        /**
+         * Rope swings
+         */
+        // Rope swing to Moss Giant Island
+        ObjectAction.register(23568, 2705, 3209, 0, "swing-on", RopeSwing.MOSS_GIANT_ISLAND_TO::traverse);
+        ObjectAction.register(23569, 2703, 3205, 0, "swing-on", RopeSwing.MOSS_GIANT_ISLAND_BACK::traverse);
+
+        // Ogre island
+        ObjectAction.register(23570,2511,3090, 0, "Swing-on", RopeSwing.OGRE_ISLAND::traverse);
 
     }
 }
