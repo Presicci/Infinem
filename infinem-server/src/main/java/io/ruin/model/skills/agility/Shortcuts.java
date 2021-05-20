@@ -333,5 +333,8 @@ public class Shortcuts {
         Tile.getObject(19040, 2696, 9527, 0).skipReachCheck = p -> p.equals(2697, 9525);
         ObjectAction.register(19040, 2695, 9531, 0, "Cross", SteppingStone.BRIMHAVEN_S_STONES83::traverse);
         ObjectAction.register(19040, 2696, 9527, 0, "Cross", SteppingStone.BRIMHAVEN_S_STONES83::traverse);
+
+        // Dwarven mine crevice
+        ObjectAction.register(16543, "Squeeze-through", CreviceShortcut.FALADOR::squeeze);
     }
 }
