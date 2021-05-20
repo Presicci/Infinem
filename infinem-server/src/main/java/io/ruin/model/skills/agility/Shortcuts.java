@@ -178,5 +178,8 @@ public class Shortcuts {
 
         // Corsair cove rocks
         ObjectAction.register(31757,2546,2872, 0, "Climb", JumpShortcut.CORSAIR_JUMP10::traverse);
+
+        // Lumbridge to varrock fence
+        ObjectAction.register(16518,3240,3335, 0, "Jump-over", JumpShortcut.VARROCK_JUMP13::traverse);
     }
 }
