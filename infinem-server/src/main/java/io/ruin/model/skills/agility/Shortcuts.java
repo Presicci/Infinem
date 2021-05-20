@@ -32,7 +32,7 @@ public class Shortcuts {
         ObjectAction.register(12892, "climb-over", (p, obj) -> Stile.shortcut(p, obj, 1));
 
         // Falador Agility Shortcut
-        ObjectAction.register(24222, "climb-over", (p, obj) -> CrumblingWall.shortcut(p, obj, 5));
+        ObjectAction.register(24222,2935,3355, 0, "Climb-over", JumpShortcut.FALADOR_JUMP5::traverse);
 
         // Camelot loose railing
         ObjectAction.register(51, 2662, 3500, 0, "squeeze-through", (p, obj) -> LooseRailing.shortcut(p, obj, 1));
