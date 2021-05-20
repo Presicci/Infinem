@@ -156,5 +156,8 @@ public class Shortcuts {
         ObjectAction.register(3748,2834,3628, 0, "Climb", JumpShortcut.TROLL_E_JUMP1::traverse);
         ObjectAction.register(3748,2833,3628, 0, "Climb", JumpShortcut.TROLL_W_JUMP1::traverse);
         ObjectAction.register(3748,2821,3635, 0, "Climb", JumpShortcut.TROLL_FAR_W_JUMP1::traverse);
+
+        // Lumbridge sheep pen
+        ObjectAction.register(12982,3197,3276, 0, "Climb-over", JumpShortcut.SHEEP_JUMP1::traverse);
     }
 }
