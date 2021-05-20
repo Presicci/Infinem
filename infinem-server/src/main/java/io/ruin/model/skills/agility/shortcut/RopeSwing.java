@@ -32,7 +32,6 @@ public enum RopeSwing {
         if (!player.getStats().check(StatType.Agility, levelReq, "attempt this"))
             return;
         if (!player.getPosition().isWithinDistance(startPosition, 2)) {
-            player.sendMessage("fail");
             return;
         }
         player.startEvent(event -> {

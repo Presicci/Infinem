@@ -365,7 +365,11 @@ public class Shortcuts {
          * Rope swings
          */
         // Rope swing to Moss Giant Island
+        Tile.getObject(23568, 2705, 3209, 0).walkTo = new Position(2709, 3209, 0);
         ObjectAction.register(23568, 2705, 3209, 0, "swing-on", RopeSwing.MOSS_GIANT_ISLAND_TO::traverse);
+
+        // Rope swing from Moss Giant Island
+        Tile.getObject(23569, 2703, 3205, 0).walkTo = new Position(2705, 3205, 0);
         ObjectAction.register(23569, 2703, 3205, 0, "swing-on", RopeSwing.MOSS_GIANT_ISLAND_BACK::traverse);
 
         // Ogre island
