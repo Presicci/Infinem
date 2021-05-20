@@ -189,5 +189,72 @@ public class Shortcuts {
         // Zeah runecrafting
         ObjectAction.register(27990,1776,3883, 0, "Jump", JumpShortcut.ZEAH_JUMP49::traverse);
         ObjectAction.register(34741,1761,3873, 0, "Jump", JumpShortcut.ZEAH_JUMP69::traverse);
+
+        /**
+         *                                              CLIMBING ROCKS
+         * _____________________________________________________________________________________________________________
+         */
+        // Climbing Rocks Lv. 1
+        ObjectAction.register(2231, 2792, 2978, 0, "Climb", ClimbingSpots.CAIRN_S_CLIMB1::traverse);
+        ObjectAction.register(2231, 2794, 2978, 0, "Climb", ClimbingSpots.CAIRN_S_CLIMB1::traverse);
+        ObjectAction.register(2231, 2792, 2979, 0, "Climb", ClimbingSpots.CAIRN_M_CLIMB1::traverse);
+        ObjectAction.register(2231, 2794, 2979, 0, "Climb", ClimbingSpots.CAIRN_M_CLIMB1::traverse);
+        ObjectAction.register(2231, 2792, 2980, 0, "Climb", ClimbingSpots.CAIRN_N_CLIMB1::traverse);
+        ObjectAction.register(2231, 2794, 2980, 0, "Climb", ClimbingSpots.CAIRN_N_CLIMB1::traverse);
+
+        // Climbing Rocks Lv.25
+        ObjectAction.register(19849, 2323, 3497, 0, "Climb", ClimbingSpots.EAGLES_TOP_W_CLIMB25::traverse);
+        ObjectAction.register(19849, 2324, 3498, 0, "Climb", ClimbingSpots.EAGLES_TOP_E_CLIMB25::traverse);
+        ObjectAction.register(19849, 2322, 3501, 0, "Climb", ClimbingSpots.EAGLES_TOP_W_CLIMB25::traverse);
+
+        // Climbing Rocks Lv. 37
+        ObjectAction.register(16535, 2489, 3520, 0, "Climb", ClimbingSpots.GNOME_CLIMB37::traverse);
+        ObjectAction.register(16534, 2487, 3515, 0, "Climb", ClimbingSpots.GNOME_CLIMB37::traverse);
+
+        // Climbing Rocks Lv. 38
+        ObjectAction.register(16550, 3303, 3315, 0, "Climb", ClimbingSpots.AL_KHARID_CLIMB38::traverse);
+        ObjectAction.register(16549, 3305, 3315, 0, "Climb", ClimbingSpots.AL_KHARID_CLIMB38::traverse);
+
+        //Climbing Rocks Lv. 41
+        ObjectAction.register(16521, 2870, 3671, 0, "Climb", ClimbingSpots.TROLL_CLIMB41::traverse);
+        ObjectAction.register(16521, 2871, 3671, 0, "Climb", ClimbingSpots.TROLL_CLIMB41::traverse);
+
+        //Climbing Rocks Lv. 43
+        ObjectAction.register(16522, 2878, 3666, 0, "Climb", ClimbingSpots.TROLL_1_CLIMB43::traverse);
+        ObjectAction.register(16522, 2878, 3667, 0, "Climb", ClimbingSpots.TROLL_1_CLIMB43::traverse);
+
+        //Climbing Rocks Lv. 43
+        ObjectAction.register(3803, 2888, 3661, 0, "Climb", ClimbingSpots.TROLL_3_CLIMB43::traverse);
+        ObjectAction.register(3804, 2887, 3661, 0, "Climb", ClimbingSpots.TROLL_2_CLIMB43::traverse);
+
+        //Climbing Rocks Lv. 43
+        ObjectAction.register(3803, 2885, 3683, 0, "Climb", ClimbingSpots.TROLL_5_CLIMB43::traverse);
+        ObjectAction.register(3804, 2885, 3684, 0, "Climb", ClimbingSpots.TROLL_4_CLIMB43::traverse);
+
+        //Climbing Rocks Lv. 44
+        ObjectAction.register(16523, 2908, 3682, 0, "Climb", ClimbingSpots.TROLL_W_CLIMB44::traverse);
+        ObjectAction.register(16523, 2909, 3683, 0, "Climb", ClimbingSpots.TROLL_S_CLIMB44::traverse);
+
+        //Climbing Rocks Lv. 47
+        ObjectAction.register(16524, 2902, 3680, 0, "Climb", ClimbingSpots.TROLL_CLIMB47::traverse);
+        ObjectAction.register(16524, 2901, 3680, 0, "Climb", ClimbingSpots.TROLL_CLIMB47::traverse);
+
+
+        // Climbing Rocks Lv. 59
+        ObjectAction.register(16515, 2344, 3295, 0, "Climb", ClimbingSpots.ARANDAR_CLIMB59::traverse);
+        ObjectAction.register(16514, 2346, 3299, 0, "Climb", ClimbingSpots.ARANDAR_CLIMB59::traverse);
+
+        // Climb Rocks Lv. 68
+        ObjectAction.register(16515, 2338, 3285, 0, "Climb", ClimbingSpots.ARANDAR_CLIMB68::traverse);
+        ObjectAction.register(16514, 2338, 3282, 0, "Climb", ClimbingSpots.ARANDAR_CLIMB68::traverse);
+
+        //Climbing Rocks Lv. 73
+        ObjectAction.register(16464, 2843, 3693, 0, "Climb", ClimbingSpots.TROLL_HERB_CLIMB73::traverse);
+        ObjectAction.register(16464, 2839, 3693, 0, "Climb", ClimbingSpots.TROLL_HERB_CLIMB73::traverse);
+
+        // Climb Rocks Lv. 85
+        ObjectAction.register(16515, 2337, 3253, 0, "Climb", ClimbingSpots.ARANDAR_CLIMB85::traverse);
+        ObjectAction.register(16514, 2333, 3252, 0, "Climb", ClimbingSpots.ARANDAR_CLIMB85::traverse);
+
     }
 }
