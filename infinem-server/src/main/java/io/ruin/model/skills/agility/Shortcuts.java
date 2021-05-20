@@ -172,5 +172,8 @@ public class Shortcuts {
             return val < 0 ? Position.of(3197, 3278) : Position.of(3197, 3275);
         };
         ObjectAction.register(12982,3197,3276, 0, "Climb-over", JumpShortcut.SHEEP_JUMP1::traverse);
+
+        // Burgh de Rott low fence
+        ObjectAction.register(12776,3474,3221, 0, "Jump-over", JumpShortcut.BURGH_JUMP1::traverse);
     }
 }
