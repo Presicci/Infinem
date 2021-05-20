@@ -181,5 +181,9 @@ public class Shortcuts {
 
         // Lumbridge to varrock fence
         ObjectAction.register(16518,3240,3335, 0, "Jump-over", JumpShortcut.VARROCK_JUMP13::traverse);
+
+        // Trollheim
+        ObjectAction.register(3748,2910,3687, 0, "Climb", JumpShortcut.TROLL_N_JUMP44::traverse);
+        ObjectAction.register(3748,2910,3686, 0, "Climb", JumpShortcut.TROLL_S_JUMP44::traverse);
     }
 }
