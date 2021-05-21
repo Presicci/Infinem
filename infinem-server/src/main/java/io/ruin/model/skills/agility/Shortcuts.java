@@ -253,6 +253,10 @@ public class Shortcuts {
         ObjectAction.register(16515, 2337, 3253, 0, "Climb", ClimbingSpots.ARANDAR_CLIMB85::traverse);
         ObjectAction.register(16514, 2333, 3252, 0, "Climb", ClimbingSpots.ARANDAR_CLIMB85::traverse);
 
+        // Climb vine Lv. 79
+        ObjectAction.register(26884, 2899, 2941, 0, "Climb", ClimbingSpots.KHARAZI_VINE::traverse); // TODO null protecting this?
+        ObjectAction.register(26886, 2899, 2938, 0, "Climb", ClimbingSpots.KHARAZI_VINE::traverse);
+
 
         /**
          *                                              STEPPING STONES

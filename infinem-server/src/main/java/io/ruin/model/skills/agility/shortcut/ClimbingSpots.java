@@ -97,7 +97,10 @@ public enum ClimbingSpots {
 
     ARANDAR_CLIMB85(Direction.WEST, 85,1,
             Position.of(2338, 3253), Position.of(2332, 3252),
-            Position.of(2337, 3253), Position.of(2335, 3253), Position.of(2333, 3252))
+            Position.of(2337, 3253), Position.of(2335, 3253), Position.of(2333, 3252)),
+
+    KHARAZI_VINE(Direction.SOUTH, 79, 1,
+            Position.of(2899, 2942), Position.of(2899, 2937), Position.of(2899, 2940))
     ;
 
     private ClimbingSpots(Direction faceDir, int levelReq, int xp, Position startPosition, Position endPosition, Position... steps){
