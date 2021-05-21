@@ -427,6 +427,11 @@ public abstract class NPCCombat extends Combat {
                     }
                 }
             }
+            // Bonecrusher
+            if (pKiller.getBoneCrusher().handleBury(item)) {
+                continue;
+            }
+
             /*
              * Donator Benefit: [Noted dragon bones in wilderness]
              */

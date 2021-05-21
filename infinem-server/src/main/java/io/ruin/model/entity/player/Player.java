@@ -33,6 +33,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
 import io.ruin.model.item.ItemContainerG;
+import io.ruin.model.item.actions.impl.BoneCrusher;
 import io.ruin.model.item.actions.impl.MasterScrollBook;
 import io.ruin.model.item.actions.impl.boxes.mystery.SuperMysteryBox;
 import io.ruin.model.item.actions.impl.chargable.SerpentineHelm;
@@ -827,6 +828,9 @@ public class Player extends PlayerAttributes {
         return deathStorage;
     }
 
+    //Bonecrusher
+    @Getter @Expose public BoneCrusher boneCrusher;
+
     /**
      * Farming
      */
@@ -1123,6 +1127,10 @@ public class Player extends PlayerAttributes {
         if(bountyHunter == null)
             bountyHunter = new BountyHunter();
         bountyHunter.init(this);
+
+        if(boneCrusher == null)
+            boneCrusher = new BoneCrusher();
+        boneCrusher.init(this);
 
         if (tradePost == null) {
             tradePost = new TradePost();
