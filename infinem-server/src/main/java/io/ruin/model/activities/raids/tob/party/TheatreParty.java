@@ -116,6 +116,43 @@ public class TheatreParty {
     }
 
     /**
+     *
+     * @param player
+     */
+    public void updateOrbs(Player player) {
+        for (int index = 0; index < 5; index++) {
+            if (index < getUsers().size()) {
+                int userId = getUsers().get(index);
+                int finalIndex = index;
+                TheatrePartyManager.instance().forUserId(userId).ifPresent(user -> updateOrb(player, finalIndex,
+                        (int) ((player.getHp() * 0.27D) >= 27 ? 27 : (player.getHp() * 0.27D))));
+            } else {
+                updateOrb(player, index, 0);
+            }
+        }
+    }
+
+    public void updateOrb(Player player, int index, int health) {
+        switch (index) {
+            case 0:
+                Config.THEATRE_OF_BLOOD_ORB_1.set(player, health);
+                break;
+            case 1:
+                Config.THEATRE_OF_BLOOD_ORB_2.set(player, health);
+                break;
+            case 2:
+                Config.THEATRE_OF_BLOOD_ORB_3.set(player, health);
+                break;
+            case 3:
+                Config.THEATRE_OF_BLOOD_ORB_4.set(player, health);
+                break;
+            case 4:
+                Config.THEATRE_OF_BLOOD_ORB_5.set(player, health);
+                break;
+        }
+    }
+
+    /**
      * Performs a consumer on every user in the party.
      * @param consumer
      */

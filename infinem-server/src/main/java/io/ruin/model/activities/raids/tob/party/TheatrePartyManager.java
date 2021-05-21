@@ -449,7 +449,8 @@ public final class TheatrePartyManager {
      */
     private static void startDungeon(Player player, TheatreParty party) {
         party.getDungeon().enterRoom(player, RoomType.MAIDEN);
-        Config.THEATRE_HUD_STATE.set(player, 2);
+        Config.THEATRE_HUD_STATE.set(player, 1);
+        party.updateOrbs(player);
         List<String> names = Lists.newArrayList();
         for (int i = 0; i < 5; i++) {
             if (i < party.getUsers().size()) {
