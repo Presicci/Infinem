@@ -110,7 +110,9 @@ public class PVMInstance {
                     } else if (timeLeft == 50) {
                         map.forPlayers(p -> p.sendMessage(Color.RED.wrap("The instance will expire in 30 seconds.")));
                     } else if (timeLeft == 0) {
-                        map.forPlayers(p -> p.sendMessage(Color.RED.wrap("The instance has expired. Monsters will no longer respawn.")));
+                        if (type.getDuration() != 1) {
+                            map.forPlayers(p -> p.sendMessage(Color.RED.wrap("The instance has expired. Monsters will no longer respawn.")));
+                        }
                     }
                 }
                 if (playersInside == 0) {
@@ -142,6 +144,10 @@ public class PVMInstance {
         player.deathEndListener = null;
         player.currentInstance = null;
         playersInside--;
+        if (type.getDuration() == 1) {
+            destroy();
+            return;
+        }
         if (playersInside == 0 && timeLeft <= 0) {
             destroy();
         } else if (playersInside == 0) {
@@ -187,6 +193,12 @@ public class PVMInstance {
             p.getMovement().teleport(type.getExitPosition());
             p.sendMessage("The instance owner has destroyed the instance.");
         });
+    }
+
+    public static void enterTimeless(Player player, InstanceType type) {
+        PVMInstance instance = new PVMInstance(player, type, InstancePrivacy.PRIVATE);
+        instance.enter(player);
+        instance.timeLeft = 1;
     }
 
     public InstanceType getType() {
