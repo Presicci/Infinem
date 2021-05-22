@@ -6794,8 +6794,7 @@ public final class Client extends GameShell implements Usernamed, RSClient {
                      if (upgradeLength >= 0)
                         System.arraycopy(attributes, 0, widget.itemAttributes[i], 0, upgradeLength);
                   }
-
-                  class8.setContainerItem(containerId, i, itemId - 1, itemAmt, widget == null ? null : i < widget.itemAttributes.length ? widget.itemAttributes[i] : null, upgradeLength);
+                  class8.setContainerItem(containerId, i, itemId - 1, itemAmt, attributes, upgradeLength);
                }
 
                if(widget != null) {

@@ -53,7 +53,7 @@ import org.apache.commons.lang3.time.DurationFormatUtils;
 
 public class ItemStatOverlay extends Overlay
 {
-	// Unarmed attack speed is 6
+	// Unarmed attack speed is 4
 	private static final ItemStats UNARMED = new ItemStats(false, true, 0, 0,
 		ItemEquipmentStats.builder()
 			.aspeed(4)
@@ -120,8 +120,16 @@ public class ItemStatOverlay extends Overlay
 				itemId = widgetItem.getItemId();
 			}
 			if (container != null) {
+				int equipmentSlot = entry.getParam1() - 25362438;	// Used for displaying upgrades on equipment slots
+				if (equipmentSlot == 6) {	// Because slot 6 doesn't exist
+					++equipmentSlot;
+				} else if (equipmentSlot == 7 || equipmentSlot == 8){	// Because slot 8 doesn't exist
+					equipmentSlot += 2;
+				} else if (equipmentSlot == 9 || equipmentSlot == 10) {	// Because slot 11 doesn't exist
+					equipmentSlot += 3;
+				}
 				Item[] items = container.getItems();
-				attributes = items[1].getAttributes();
+				attributes = items[equipmentSlot].getAttributes();
 			}
 		}
 		else if (group == WidgetInfo.EQUIPMENT_INVENTORY_ITEMS_CONTAINER.getGroupId()
@@ -151,7 +159,7 @@ public class ItemStatOverlay extends Overlay
 		}
 
 		if (attributes != null) {
-			if (!attributes[0].equalsIgnoreCase("Empty")) {
+			if (attributes.length > 0 && !attributes[0].equalsIgnoreCase("Empty")) {
 				StringBuilder attributeBuilder = new StringBuilder();
 				attributeBuilder.append("Upgrades: ");
 				for (String attribute : attributes) {
@@ -166,7 +174,6 @@ public class ItemStatOverlay extends Overlay
 				}
 				tooltipManager.add(new Tooltip(attributeBuilder.toString()));
 			}
-
 		}
 
 		if (config.consumableStats())
