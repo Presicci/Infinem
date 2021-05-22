@@ -1,6 +1,7 @@
 package io.ruin.model.entity.npc.actions.traveling;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.map.Position;
 
 /**
  * @author ReverendDread on 7/19/2020
@@ -8,6 +9,10 @@ import io.ruin.model.entity.player.Player;
  * @project Kronos
  */
 public class Traveling {
+
+    public static void fadeTravel(Player player, Position positon) {
+        fadeTravel(player, positon.getX(), positon.getY(), positon.getZ());
+    }
 
     public static void fadeTravel(Player player, int x, int y, int z) {
         player.startEvent(e -> {
