@@ -8,6 +8,7 @@ import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.stat.StatType;
+import javafx.geometry.Pos;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -157,6 +158,43 @@ public enum ClimbingSpots {
             p.unlock();
             p.resetAnimation();
         });
+    }
 
+    public static void traverseStatic(Player p, GameObject obj, Direction direction, int tiles, boolean towardsWall){
+        p.startEvent(e -> {
+            p.lock(LockType.FULL_DELAY_DAMAGE);
+            for (int index = 0; index < tiles; index++) {
+                p.animate(740);
+                p.getMovement().force(direction == Direction.EAST ? (1) : (direction == Direction.WEST ? -1 : 0),
+                        direction == Direction.NORTH ? (1) : (direction == Direction.SOUTH ? -1 : 0),
+                        0, 0, 5, 65, towardsWall ? direction : Direction.getOppositeDirection(direction));
+                e.delay(2);
+            }
+            p.unlock();
+            p.resetAnimation();
+        });
+    }
+
+    public static void traverseStaticBidirectional(Player p, GameObject obj, Direction direction, int tiles) {
+        switch (direction) {
+            case NORTH:
+            case SOUTH:
+                if (p.getPosition().getY() > obj.getPosition().getY()) {
+                    traverseStatic(p, obj, Direction.SOUTH, tiles, direction == Direction.NORTH ? true : false);
+                } else {
+                    traverseStatic(p, obj, Direction.NORTH, tiles, direction == Direction.SOUTH ? true : false);
+                }
+                break;
+            case EAST:
+            case WEST:
+                if (p.getPosition().getX() > obj.getPosition().getX()) {
+                    traverseStatic(p, obj, Direction.WEST, tiles, direction == Direction.EAST ? true : false);
+                } else {
+                    traverseStatic(p, obj, Direction.EAST, tiles, direction == Direction.WEST ? true : false);
+                }
+                break;
+            default:
+                return;
+        }
     }
 }
