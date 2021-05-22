@@ -3,6 +3,7 @@ package io.ruin.model.activities.pvminstances;
 import io.ruin.cache.Color;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
+import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.map.MapListener;
@@ -134,7 +135,7 @@ public class PVMInstance {
     public void enter(Player player) {
         playersInside++;
         player.currentInstance = this;
-        player.getMovement().teleport(convertPosition(type.getEntryPosition()));
+        Traveling.fadeTravel(player, convertPosition(type.getEntryPosition()));
         player.addActiveMapListener(mapListener);
     }
 
