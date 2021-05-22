@@ -1,5 +1,6 @@
 package io.ruin.model.activities.bosses;
 
+import io.ruin.api.utils.Random;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.skills.prayer.Prayer;
@@ -14,23 +15,19 @@ public class Obor extends NPCCombat {   //WIP TODO find ranged gfx
 
     @Override
     public void init() {
-        npc.getCombat().setAllowRespawn(false);
+        setAllowRespawn(false);
     }
 
     @Override
     public void follow() {
-        follow(8);
+        follow(2);
     }
 
     @Override
     public boolean attack() {
-        if (target instanceof Player) {
-            if (((Player) target).getPrayer().isActive(Prayer.PROTECT_FROM_MELEE)) {
-
-            } else {
-
-            }
-        }
+        if (!withinDistance(2))
+            return false;
+        basicAttack();
         return true;
     }
 }
