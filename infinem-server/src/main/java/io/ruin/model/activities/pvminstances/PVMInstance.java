@@ -153,7 +153,7 @@ public class PVMInstance {
             destroy();
         } else if (playersInside == 0) {
             Player owner = World.getPlayer(ownerId);
-            if (owner != null) {
+            if (owner != null && type.getDuration() != 1) {
                 player.sendMessage(Color.RED.wrap("Your " + type.getName() + " instance is now empty. If it remains empty for 10 consecutive minutes, it will be destroyed."));
             }
         }
