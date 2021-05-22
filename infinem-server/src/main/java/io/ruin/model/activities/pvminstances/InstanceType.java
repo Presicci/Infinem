@@ -11,7 +11,7 @@ import java.util.List;
 
 
 public enum InstanceType {
-    GIANT_MOLE("Giant Mole", new Bounds(1728, 5120, 1791, 5247, 1), 300_000, 2000, 60, new Position(1752, 5236, 0), new Position(2985, 3316, 0)),
+    GIANT_MOLE("Giant Mole", new Bounds(1728, 5120, 1791, 5247, -1), 300_000, 2000, 60, new Position(1752, 5236, 0), new Position(2985, 3316, 0)),
     DAGANNOTH_KINGS("Dagannoth Kings", 11589, 400_000, 2_000, 60, new Position(2899, 4449, 0), new Position(1912, 4367, 0)),
     KRAKEN("Kraken", 9116, 400_000, 1_500, 60, new Position(2280, 10022, 0), new Position(2280, 10016, 0)),
     KBD("King Black Dragon", 9033, 500_000, 2_500, 60, new Position(2271, 4680, 0),  new Position(3067, 10253, 0)),
@@ -19,6 +19,8 @@ public enum InstanceType {
     CERBERUS("Cerberus", 5140, 600_000, 3000, 60, new Position(1304, 1290, 0), new Position(1310, 1274, 0)),
     CORP("Corporeal Beast", 11844, 1_000_000, 5_000, 60, new Position(2974, 4384, 2), new Position(2970, 4384, 2)),
     KALPHITE_QUEEN("Kalphite Queen", 13972, 500_000, 2_500, 60, new Position(3507, 9494, 0), new Position(3509, 9496, 2)),
+
+    OBOR("Obor", new Bounds(3072, 9792, 3107, 9817, 0), 0, 0, 1, new Position(3091, 9815, 0), new Position(3095, 9832, 0)),
 
     BANDOS_GWD("General Graardor", new Bounds(2856, 5344, 2877, 5374, 2), 500_000, 3_000, 60, new Position(2864, 5354, 2), new Position(2862, 5354, 2)),
     ZAMORAK_GWD("K'ril Tsutsaroth", new Bounds(2912, 5312, 2944, 5336, 2), 500_000, 3_000, 60, new Position(2925, 5331, 2), new Position(2925, 5333, 2)),

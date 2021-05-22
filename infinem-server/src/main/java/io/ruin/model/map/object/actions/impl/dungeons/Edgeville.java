@@ -1,12 +1,21 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
+import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
+import io.ruin.model.activities.pvminstances.InstanceDialogue;
+import io.ruin.model.activities.pvminstances.InstanceType;
+import io.ruin.model.activities.pvminstances.PVMInstance;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
+import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.MessageDialogue;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.utils.Config;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
@@ -15,6 +24,9 @@ import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.Ladder;
+import io.ruin.model.skills.agility.shortcut.ClimbingSpots;
+
+import static io.ruin.cache.ItemID.COINS_995;
 
 public class Edgeville {
 
@@ -30,6 +42,16 @@ public class Edgeville {
             player.animate(743);
             player.unlock();
         });
+    }
+
+    private static void enterObor(Player player) {
+        boolean hasKey = player.getInventory().hasId(20754);
+        if (!hasKey) {
+            player.dialogue(new ItemDialogue().one(20754, "You need a Giant key to enter Obor's lair."));
+        } else {
+            player.getInventory().remove(20754, 1);
+            PVMInstance.enterTimeless(player, InstanceType.OBOR);
+        }
     }
 
     private static Bounds WILDERNESS = new Bounds(3072, 9924, 3153, 10002, -1);
@@ -123,6 +145,32 @@ public class Edgeville {
             player.unlock();
         }));
         Tile.getObject(16511, 3153, 9906, 0).walkTo = new Position(3155, 9906, 0);
-    }
 
+        /**
+         * Obor
+         */
+        ObjectAction.register(29486, "open", (player, obj) -> {
+            player.dialogue(new OptionsDialogue("Enter Obor's Lair?",
+                    new Option("Yes", () -> enterObor(player)),
+                    new Option("No", player::closeDialogue)));
+                });
+
+        ObjectAction.register(29487, "open", (player, obj) -> {
+            player.dialogue(new OptionsDialogue("Enter Obor's Lair?",
+                    new Option("Yes", () -> enterObor(player)),
+                    new Option("No", player::closeDialogue)));
+        });
+
+        ObjectAction.register(29488, "open", (player, obj) -> {
+            player.getMovement().teleport(3095, 9832, 0);
+        });
+
+        ObjectAction.register(29489, "open", (player, obj) -> {
+            player.getMovement().teleport(3095, 9832, 0);
+        });
+
+        ObjectAction.register(29491, "Climb", (player, obj) -> {
+            ClimbingSpots.traverseStaticBidirectional(player, obj, Direction.SOUTH, 3);
+        });
+    }
 }
