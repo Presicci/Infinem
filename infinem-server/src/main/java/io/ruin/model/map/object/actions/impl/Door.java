@@ -36,7 +36,7 @@ public class Door {
             player.sendMessage("Unhandled door, report this to a staff member! ID: "+def.id);
         }
         if (def.doorOppositeId == -1) {
-            player.sendMessage("The " + (def.gateType ? "gate" : "door") + " won't seem to budge.");
+            player.sendMessage("The " + (def.gateType ? "gate" : "door") + " does not seem to budge.");
             return;
         }
 //        if (obj.conOwner != -1 && obj.conOwner != player.getUserId()) {
