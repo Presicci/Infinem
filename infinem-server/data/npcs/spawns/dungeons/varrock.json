@@ -781,5 +781,13 @@
     "z": 0,
     "direction": "S",
     "walkRange": 2
-  }
+  },
+  {
+	"id": 8195,
+	"x": 3221,
+	"y": 9933,
+	"z": 0,
+	"direction": "W",
+	"walkRange": 3
+  } // Bryophyta
 ]
