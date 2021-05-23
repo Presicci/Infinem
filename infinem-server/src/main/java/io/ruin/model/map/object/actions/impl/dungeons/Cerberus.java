@@ -62,6 +62,7 @@ public class Cerberus {
         ObjectAction.register(21772, 1303, 1289, 0, "exit", (player, obj) -> exitPortcullis(player, 1309, 1269));
         ObjectAction.register(21772, 1367, 1225, 0, "exit", (player, obj) -> exitPortcullis(player, 1328, 1253));
         ObjectAction.register(21772, 1239, 1225, 0, "exit", (player, obj) -> exitPortcullis(player, 1291, 1253));
+        ObjectAction.register(21772, "exit", (player, obj) -> exitPortcullis(player, 1309, 1269));
 
         /**
          * Iron winch
