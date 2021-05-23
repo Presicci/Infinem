@@ -161,7 +161,7 @@ public class Cerberus extends NPCCombat { // todo - only allow attacking if on a
     }
 
     private void summonSouls() {
-        summonSoulsCooldown.delay(45);
+        summonSoulsCooldown.delay(60);
         npc.forceText("Aaarrrooooooo");
         npc.animate(4494);
         Collections.shuffle(souls);
