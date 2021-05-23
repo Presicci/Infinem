@@ -1,9 +1,29 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
+import io.ruin.model.activities.pvminstances.InstanceType;
+import io.ruin.model.activities.pvminstances.PVMInstance;
+import io.ruin.model.entity.npc.actions.traveling.Traveling;
+import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.utils.Option;
+import io.ruin.model.map.Direction;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.Ladder;
+import io.ruin.model.skills.agility.shortcut.ClimbingSpots;
 
 public class Varrock {
+
+    private static void enterBryo(Player player) {
+        boolean hasKey = player.getInventory().hasId(22374);
+        if (!hasKey) {
+            player.dialogue(new ItemDialogue().one(22374, "You need a Mossy key to enter Bryophyta's lair."));
+        } else {
+            player.getInventory().remove(22374, 1);
+            PVMInstance.enterTimeless(player, InstanceType.BRYOPHYTA);
+        }
+    }
 
     static {
         /**
@@ -34,5 +54,28 @@ public class Varrock {
             player.sendFilteredMessage("You climb down through the manhole.");
             player.unlock();
         }));
+
+        /**
+         * Bryophyta
+         */
+        ObjectAction.register(32534, "open", (player, obj) -> {
+            player.dialogue(new OptionsDialogue("Enter Bryophyta's Lair?",
+                    new Option("Yes", () -> enterBryo(player)),
+                    new Option("No", player::closeDialogue)));
+        });
+
+        ObjectAction.register(32535, "clamber", (player, obj) -> {
+            Traveling.fadeTravel(player, 3174, 9900, 0);
+        });
+
+        ObjectAction.register(32536, "take-axe", (player, obj) -> {
+            if (!player.getInventory().hasFreeSlots(1)) {
+                player.sendMessage("You don't haven enough inventory space.");
+            } else {
+                player.getInventory().add(1351, 1);
+                obj.setId(5582);
+                player.sendMessage("You take the axe from the log.");
+            }
+        });
     }
 }
