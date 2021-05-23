@@ -14,8 +14,12 @@ public class Obor extends NPCCombat {   //WIP TODO find ranged gfx
     private static final int RANGED_EMOTE = 7183;
 
     @Override
+    public boolean allowRespawn() {
+        return false;
+    }
+
+    @Override
     public void init() {
-        setAllowRespawn(false);
     }
 
     @Override
