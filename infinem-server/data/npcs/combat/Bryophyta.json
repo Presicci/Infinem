@@ -1,0 +1,90 @@
+[
+  { #Bryophyta (128)
+    "ids": [ 8195 ],
+    "handler": "io.ruin.model.activities.bosses.bryophyta.Bryophyta",
+    //Combat Info
+    "hitpoints": 115,
+    "aggressive_level": 212,
+    "max_damage": 16,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 115.0,
+    "slayer_tasks": [ "Moss Giants" ],
+    //Combat Stats
+    "attack": 130,
+    "strength": 100,
+    "defence": 100,
+    "ranged": 90,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 33,
+    "slash_attack": 33,
+    "crush_attack": 33,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 6,
+    "death_ticks": 4,
+    "respawn_ticks": 60,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 4652,
+    "defend_animation": 4651,
+    "death_animation": 4653
+  },
+  
+  { #Growthling (37)
+    "ids": [
+      8194
+    ],
+	"handler": "io.ruin.model.activities.bosses.bryophyta.Growthling",
+	
+    "hitpoints": 10,
+    "aggressive_level": 212,
+    "max_damage": 5,
+    "attack_style": "SLASH",
+	
+    "slayer_level": 0,
+    "slayer_xp": 0.0,
+	
+    "attack": 40,
+    "strength": 38,
+    "defence": 40,
+    "ranged": 1,
+    "magic": 1,
+	
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+	
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+	
+    "poison_immunity": true,
+    "venom_immunity": true,
+	
+    "attack_ticks": 4,
+    "death_ticks": 3,
+    "respawn_ticks": -1,
+	
+	"spawn_animation": -1,
+    "attack_animation": 3262,
+    "defend_animation": 3260,
+    "death_animation": 3263
+  }
+]
