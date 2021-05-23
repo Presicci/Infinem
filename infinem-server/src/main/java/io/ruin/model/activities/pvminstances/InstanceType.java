@@ -6,8 +6,7 @@ import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 
 public enum InstanceType {
@@ -20,7 +19,10 @@ public enum InstanceType {
     CORP("Corporeal Beast", 11844, 1_000_000, 5_000, 60, new Position(2974, 4384, 2), new Position(2970, 4384, 2)),
     KALPHITE_QUEEN("Kalphite Queen", 13972, 500_000, 2_500, 60, new Position(3507, 9494, 0), new Position(3509, 9496, 2)),
 
-    OBOR("Obor", new Bounds(3072, 9792, 3107, 9817, 0), 0, 0, 1, new Position(3091, 9815, 0), new Position(3095, 9832, 0)),
+    OBOR("Obor", new Bounds(3072, 9792, 3107, 9817, 0), 0, 0, 60, new Position(3091, 9815, 0), new Position(3095, 9832, 0)),
+    BRYOPHYTA("Bryophyta", new Bounds(3200, 9920, 3235, 9951, -1), 0, 0, 60, new Position(3214, 9937, 0), new Position(3174, 9900, 0)),
+
+
 
     BANDOS_GWD("General Graardor", new Bounds(2856, 5344, 2877, 5374, 2), 500_000, 3_000, 60, new Position(2864, 5354, 2), new Position(2862, 5354, 2)),
     ZAMORAK_GWD("K'ril Tsutsaroth", new Bounds(2912, 5312, 2944, 5336, 2), 500_000, 3_000, 60, new Position(2925, 5331, 2), new Position(2925, 5333, 2)),
@@ -40,6 +42,8 @@ public enum InstanceType {
         this.exitPosition = exitPosition;
         loadSpawns();
     }
+
+    public static final Set<InstanceType> timelessInstances = EnumSet.of(OBOR, BRYOPHYTA);
 
     private void loadSpawns() {
         int baseX = bounds.swX;
