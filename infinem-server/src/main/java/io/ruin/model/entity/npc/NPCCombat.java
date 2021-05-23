@@ -333,6 +333,8 @@ public abstract class NPCCombat extends Combat {
                     handleDrop(killer, dropPosition, pKiller, items);
                 }
             }
+        } else {    // Prevents all these other rolls on npcs with no drops
+            return;
         }
 
         /*
