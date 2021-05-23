@@ -3,7 +3,6 @@ package io.ruin.model.activities.pvminstances;
 import io.ruin.cache.Color;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
-import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.map.MapListener;
@@ -111,9 +110,7 @@ public class PVMInstance {
                     } else if (timeLeft == 50) {
                         map.forPlayers(p -> p.sendMessage(Color.RED.wrap("The instance will expire in 30 seconds.")));
                     } else if (timeLeft == 0) {
-                        if (type.getDuration() != 1) {
-                            map.forPlayers(p -> p.sendMessage(Color.RED.wrap("The instance has expired. Monsters will no longer respawn.")));
-                        }
+                        map.forPlayers(p -> p.sendMessage(Color.RED.wrap("The instance has expired. Monsters will no longer respawn.")));
                     }
                 }
                 if (playersInside == 0) {
@@ -135,7 +132,7 @@ public class PVMInstance {
     public void enter(Player player) {
         playersInside++;
         player.currentInstance = this;
-        Traveling.fadeTravel(player, convertPosition(type.getEntryPosition()));
+        player.getMovement().teleport(convertPosition(type.getEntryPosition()));
         player.addActiveMapListener(mapListener);
     }
 
@@ -145,15 +142,11 @@ public class PVMInstance {
         player.deathEndListener = null;
         player.currentInstance = null;
         playersInside--;
-        if (type.getDuration() == 1) {
-            destroy();
-            return;
-        }
-        if (playersInside == 0 && timeLeft <= 0) {
+        if (playersInside == 0 && timeLeft <= 0 || InstanceType.timelessInstances.contains(getType())) {
             destroy();
         } else if (playersInside == 0) {
             Player owner = World.getPlayer(ownerId);
-            if (owner != null && type.getDuration() != 1) {
+            if (owner != null) {
                 player.sendMessage(Color.RED.wrap("Your " + type.getName() + " instance is now empty. If it remains empty for 10 consecutive minutes, it will be destroyed."));
             }
         }
@@ -197,9 +190,10 @@ public class PVMInstance {
     }
 
     public static void enterTimeless(Player player, InstanceType type) {
-        PVMInstance instance = new PVMInstance(player, type, InstancePrivacy.PRIVATE);
-        instance.enter(player);
-        instance.timeLeft = 1;
+        player.addEvent(event -> {
+            PVMInstance instance = new PVMInstance(player, type, InstancePrivacy.PRIVATE);
+            instance.enter(player);
+        });
     }
 
     public InstanceType getType() {
