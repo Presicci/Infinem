@@ -117,7 +117,7 @@ public class ShopItemContainer extends ItemContainerG<ShopItem> {
 
 
 
-        if (amount <= 0) {
+        if (amount <= -1) {
             System.err.println("Invalid add amount: " + amount + " | " + new Throwable().getStackTrace()[1].toString());
             return 0;
         }
