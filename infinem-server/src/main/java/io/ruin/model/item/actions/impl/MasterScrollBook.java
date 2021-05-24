@@ -18,34 +18,33 @@ public class MasterScrollBook {
 
     public enum TeleportScroll {
 
-        NARDAH(12402, new Bounds(3419, 2916, 3421, 2918, 0), 5, 21361, 21374),
-        DIGSITE(12403, new Bounds(3324, 3411, 3327, 3414, 0), 9, 21362, 21375),
-        FELDIP_HILLS(12404, new Bounds(2540, 2924, 2542, 2926, 0), 13, 21363, 21376),
-        LUNAR_ISLE(12405, new Bounds(2098, 3913, 2101, 3915, 0), 17, 21364,21377),
-        MORT_TON(12406, new Bounds(3487, 3287, 3489, 3289, 0), 21, 21365, 21378),
-        PEST_CONTROL(12407, new Bounds(2657, 2658, 2659, 2660, 0), 25, 21366, 21379),
-        PISCATORIS(12408, new Bounds(2338, 3648, 2341, 3651, 0), 29, 21367, 21380),
-        TAI_BWO_WANNAI(12409, new Bounds(2787, 3064, 2791, 3067, 0), 33, 21368, 21381),
-        ELF_CAMP(12410, new Bounds(2202, 3352, 2206, 3354, 0), 37, 21369, 21382),
-        MOS_LE_HARMLESS(12411, new Bounds(3684, 2968, 3687, 2971, 0), 41, 21370, 21383),
-        LUMBER_YARD(12642, new Bounds(3306, 3488, 3309, 3490, 0), 45, 21371, 21384),
-        ZAL_ANDRA(12938, new Bounds(2194, 3055, 2197, 3057, 0), 49, 21372, 21385),
-        KEY_MASTER(13249, new Bounds(1312, 1249, 1315, 1251, 0), 53, 21373, 21386),
-        REVENANT_SCROLL(21802, new Bounds(3128, 3830, 3131, 3835, 0), 57, 21789, 21790),
-        WATSON(23387, new Bounds(1644, 3575, 1646, 3580, 0), 61, 7674, 0);
+        NARDAH(12402, new Bounds(3419, 2916, 3421, 2918, 0), 5, Config.NARDAH_SCROLLS),
+        DIGSITE(12403, new Bounds(3324, 3411, 3327, 3414, 0), 9, Config.DIGSITE_SCROLLS),
+        FELDIP_HILLS(12404, new Bounds(2540, 2924, 2542, 2926, 0), 13, Config.FELDIP_SCROLLS),
+        LUNAR_ISLE(12405, new Bounds(2098, 3913, 2101, 3915, 0), 17, Config.LUNAR_SCROLLS),
+        MORT_TON(12406, new Bounds(3487, 3287, 3489, 3289, 0), 21, Config.MORTTON_SCROLLS),
+        PEST_CONTROL(12407, new Bounds(2657, 2658, 2659, 2660, 0), 25, Config.PEST_CONTROL_SCROLLS),
+        PISCATORIS(12408, new Bounds(2338, 3648, 2341, 3651, 0), 29, Config.PISCATORIS_SCROLLS),
+        TAI_BWO_WANNAI(12409, new Bounds(2787, 3064, 2791, 3067, 0), 33, Config.TAI_BWO_WANNAI_SCROLLS),
+        ELF_CAMP(12410, new Bounds(2202, 3352, 2206, 3354, 0), 37, Config.IORWERTH_SCROLLS),
+        MOS_LE_HARMLESS(12411, new Bounds(3684, 2968, 3687, 2971, 0), 41, Config.MOS_LEHARMLESS_SCROLLS),
+        LUMBER_YARD(12642, new Bounds(3306, 3488, 3309, 3490, 0), 45, Config.LUMBERYARD_SCROLLS),
+        ZAL_ANDRA(12938, new Bounds(2194, 3055, 2197, 3057, 0), 49, Config.ZUL_ANDRA_SCROLLS),
+        KEY_MASTER(13249, new Bounds(1312, 1249, 1315, 1251, 0), 53, Config.KEY_MASTER_SCROLLS),
+        REVENANT_SCROLL(21802, new Bounds(3128, 3830, 3131, 3835, 0), 57, Config.REV_SCROLLS),
+        WATSON(23387, new Bounds(1644, 3575, 1646, 3580, 0), 61, Config.WATSON_SCROLLS);
 
-        public final int id, componentId, emptyId, defaultId;
+        public final int id, componentId;
 
         private Config config;
 
         public final Bounds bounds;
 
-        TeleportScroll(int id, Bounds bounds, int componentId, int emptyId, int defaultId) {
+        TeleportScroll(int id, Bounds bounds, int componentId, Config config) {
             this.id = id;
             this.bounds = bounds;
             this.componentId = componentId;
-            this.emptyId = emptyId;
-            this.defaultId = defaultId;
+            this.config = config;
         }
 
         private void teleport(Player player, Item scroll) {
@@ -75,53 +74,27 @@ public class MasterScrollBook {
         }
     }
 
-    private Player player;  // TODO Get varpbits from osrs
-    @Expose @Setter private TeleportScroll defaultScroll = null;
-    @Expose private HashMap<TeleportScroll, Integer> storedScrolls;
-
     private static final int SCROLLBOOK = 21389;
     private static final int INTERFACE = 597;
 
     private static final int MAX_SCROLL_AMT = 1000;
 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
-    public MasterScrollBook() {
-        this.storedScrolls = new HashMap<TeleportScroll, Integer>();
-        for (TeleportScroll scroll : TeleportScroll.values()) {
-            this.storedScrolls.put(scroll, 0);
-        }
-    }
-
-    private void sendInterface() {
-        for (TeleportScroll scroll : TeleportScroll.values()) {
-            int scrollAmt = storedScrolls.get(scroll);
-            if (scrollAmt > 0) {
-                player.getPacketSender().sendString(INTERFACE, scroll.componentId + 2, "<col=ffff00>" + scrollAmt);
-                if (defaultScroll != null && scroll == defaultScroll) {
-                    player.getPacketSender().sendItem(INTERFACE, scroll.componentId + 1, scroll.defaultId, 1);
-                } else {
-                    player.getPacketSender().sendItem(INTERFACE, scroll.componentId + 1, scroll.id, 1);
-                }
-                player.sendMessage("sent");
-            }
-        }
+    private static void sendInterface(Player player) {
         player.openInterface(InterfaceType.MAIN, INTERFACE);
     }
 
-    private boolean teleport(TeleportScroll scroll) {
-        if (storedScrolls.get(scroll) <= 0) {
+    private static boolean teleport(Player player, TeleportScroll scroll) {
+        int scrolls = scroll.config.get(player);
+        if (scrolls <= 0) {
             player.sendMessage("You do not have any of that scroll left.");
             return false;
         }
         scroll.bookTeleport(player);
-        storedScrolls.put(scroll, storedScrolls.get(scroll) - 1);
+        scroll.config.set(player, scrolls - 1);
         return true;
     }
 
-    private void deposit(Item primary, Item secondary) {
+    private static void deposit(Player player, Item primary, Item secondary) {
         TeleportScroll scroll = null;
         for (TeleportScroll s : TeleportScroll.values()) {
             if (s.id == secondary.getId()) {
@@ -133,21 +106,22 @@ public class MasterScrollBook {
             return;
         }
         int intAmt = player.getInventory().getAmount(scroll.id);
-        int storedAmt = storedScrolls.get(scroll);
-
-        if (storedAmt >= MAX_SCROLL_AMT) {
+        int storedAmt = scroll.config.get(player);
+        int maxAmt = scroll == TeleportScroll.WATSON ? 250 : MAX_SCROLL_AMT;
+        if (storedAmt >= maxAmt) {
             player.sendMessage("Your scroll storage for that scroll is full!");
             return;
         }
-        if ((storedAmt + intAmt) > MAX_SCROLL_AMT) {
-            intAmt = MAX_SCROLL_AMT - storedAmt;
+        if ((storedAmt + intAmt) > maxAmt) {
+            intAmt = maxAmt - storedAmt;
         }
         player.getInventory().remove(secondary.getId(), intAmt);
-        storedScrolls.put(scroll, storedAmt + intAmt);
+        scroll.config.set(player, storedAmt + intAmt);
     }
 
-    private void withdraw(TeleportScroll scroll) {
-        if (storedScrolls.get(scroll) <= 0) {
+    private static void withdraw(Player player, TeleportScroll scroll) {
+        int scrolls = scroll.config.get(player);
+        if (scrolls <= 0) {
             player.sendMessage("You do not have any of this scroll stored.");
             return;
         }
@@ -155,34 +129,40 @@ public class MasterScrollBook {
             player.sendMessage("Your inventory is full.");
             return;
         }
-        int storedAmt = storedScrolls.get(scroll);
+        int storedAmt = scrolls;
         int withdrawAmt = storedAmt;
         long invAmt = player.getInventory().getAmount(scroll.id);
         if (invAmt + storedAmt > Integer.MAX_VALUE) {
             withdrawAmt = (int) (Integer.MAX_VALUE - invAmt);
         }
         player.getInventory().add(scroll.id, withdrawAmt);
-        storedScrolls.put(scroll, storedAmt - withdrawAmt);
+        scroll.config.set(player, storedAmt - withdrawAmt);
     }
 
     static {
         ItemAction.registerInventory(SCROLLBOOK, "open", (player, item) -> {
-            player.getMasterScrollBook().sendInterface();
+            MasterScrollBook.sendInterface(player);
+        });
+        ItemAction.registerInventory(SCROLLBOOK, "teleport", (player, item) -> {
+            MasterScrollBook.teleport(player, TeleportScroll.values()[Config.DEFAULT_SCROLL.get(player) - 1]);
+        });
+        ItemAction.registerInventory(SCROLLBOOK, "remove defualt", (player, item) -> {
+            Config.DEFAULT_SCROLL.set(player, 0);
         });
         for (TeleportScroll scroll : TeleportScroll.values()) {
             ItemItemAction.register(SCROLLBOOK, scroll.id, (player, primary, secondary) -> {
-                player.getMasterScrollBook().deposit(primary, secondary);
+                MasterScrollBook.deposit(player, primary, secondary);
             });
         }
         InterfaceHandler.register(INTERFACE, h -> {
             for (TeleportScroll scroll : TeleportScroll.values()) {
                 h.actions[scroll.componentId] = (OptionAction) (player, option) -> {
                     if (option == 1) {  // Activate
-                        player.getMasterScrollBook().teleport(scroll);
+                        MasterScrollBook.teleport(player, scroll);
                     } else if (option == 2) {   // Set default
-                        player.getMasterScrollBook().setDefaultScroll(scroll);
+                        Config.DEFAULT_SCROLL.set(player, scroll.ordinal() + 1);
                     } else {    // Withdraw
-                        player.getMasterScrollBook().withdraw(scroll);
+                        MasterScrollBook.withdraw(player, scroll);
                     }
                 };
             }

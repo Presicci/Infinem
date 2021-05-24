@@ -539,6 +539,27 @@ public class Config {
     public static final Config CHATBOX_INTERFACE_USE_FULL_FRAME = varpbit(5983, false);
 
     /**
+     * Master scroll book
+     */
+    public static final Config NARDAH_SCROLLS = varpbit(5672, true);
+    public static final Config DIGSITE_SCROLLS = varpbit(5673, true);
+    public static final Config FELDIP_SCROLLS = varpbit(5674, true);
+    public static final Config LUNAR_SCROLLS = varpbit(5675, true);
+    public static final Config MORTTON_SCROLLS = varpbit(5676, true);
+    public static final Config PEST_CONTROL_SCROLLS = varpbit(5677, true);
+    public static final Config PISCATORIS_SCROLLS = varpbit(5678, true);
+    public static final Config TAI_BWO_WANNAI_SCROLLS = varpbit(5679, true);
+    public static final Config IORWERTH_SCROLLS = varpbit(5680, true);
+    public static final Config MOS_LEHARMLESS_SCROLLS = varpbit(5681, true);
+    public static final Config LUMBERYARD_SCROLLS = varpbit(5682, true);
+    public static final Config ZUL_ANDRA_SCROLLS = varpbit(5683, true);
+    public static final Config KEY_MASTER_SCROLLS = varpbit(5684, true);
+    public static final Config REV_SCROLLS = varpbit(6056, true);
+    public static final Config WATSON_SCROLLS = varpbit(8253, true);
+
+    public static final Config DEFAULT_SCROLL = varpbit(5685, true);
+
+    /**
      * Pets
      */
     public static final Config PET_NPC_INDEX = varp(447, false);
@@ -662,6 +683,22 @@ public class Config {
     public static final Config CLAN_WARS_ACTIVE_TEAM = varpbit(4289, false);
 
     /**
+     * Collection log?
+     */
+    public static final Config COLLECTION_LOG_TAB = varpbit(6905, false);
+    public static final Config COLLECTION_LOG_KC = varp(2048, false);
+
+    /**
+     * Leagues
+     */
+    public static final Config LEAGUE_FILTER = varpbit(2606, false);
+    public static final Config LEAGUE_AREA_FILTER = varpbit(2805, false);
+    public static final Config LEAGUE_POINTS = varpbit(2614, false);
+    public static final Config LEAGUE_POINTS2 = varpbit(2615, false);
+    public static final Config LEAGUE_TASKS_COMPLETED = varpbit(2610, false);
+    public static final Config LEAGUE_THING = varpbit(2810, false);
+
+    /**
      * Catacombs entrances
      */
     public static final Config CATACOMBS_ENTRANCE_NW = varpbit(5090, true);
@@ -693,6 +730,9 @@ public class Config {
     public static final Config THEATRE_OF_BLOOD_ORB_3 = varpbit(6444, false);
     public static final Config THEATRE_OF_BLOOD_ORB_4 = varpbit(6445, false);
     public static final Config THEATRE_OF_BLOOD_ORB_5 = varpbit(6446, false);
+
+
+    //public static final Config THEATRE_OF_BLOOD_HEALTHBAR = varpbit(6448, false);
 
     /**
      * Silver jewellery
