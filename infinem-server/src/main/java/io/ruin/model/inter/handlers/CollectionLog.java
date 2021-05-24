@@ -11,6 +11,7 @@ import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.containers.Equipment;
 
 /**
@@ -23,6 +24,7 @@ public class CollectionLog {
 
     public static void openLog(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.COLLECTION_LOG);
+        setTab(player, Config.COLLECTION_LOG_TAB.get(player));
     }
 
     public static void setTab(Player player, int option) {
@@ -75,6 +77,10 @@ public class CollectionLog {
             h.actions[7] = (SimpleAction) (player) -> CollectionLog.setTab(player, 3);
             h.actions[8] = (SimpleAction) (player) -> CollectionLog.setTab(player, 4);
             h.actions[11] = (SlotAction) (player, slot) -> CollectionLog.showItems(player, slot);
+        });
+
+        ItemAction.registerInventory(22711, "read", (player, item) -> {
+            openLog(player);
         });
     }
 
