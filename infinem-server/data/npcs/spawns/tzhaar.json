@@ -117,10 +117,7 @@
     "y": 5149,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
-    "shopOptions": {
-      "trade": "5e31b723-6faf-4f79-bb5d-b8967e35c073"
-    }
+    "walkRange": 1
   },
   {
     "name": "TzHaar-Ket",
