@@ -49,6 +49,20 @@ public class Shop {
         this.onTick = onTick;
     }
 
+    public Shop(String title, Currency currency, boolean generalStore, RestockRules restockRules, List<ShopItem> defaultStock, boolean accessibleByIronMan) {
+        this.identifier = null;
+        this.title = title;
+        this.currency = currency;
+        this.currencyHandler = null;
+        this.generalStore = generalStore;
+        this.canSellToStore = generalStore;
+        this.restockRules = restockRules;
+        this.defaultStock = defaultStock;
+        this.accessibleByIronMan = accessibleByIronMan;
+        this.generatedByBuilder = false;
+        this.onTick = null;
+    }
+
     //TODO Adjust price based on stock
     public List<ShopContainerListener> viewingPlayers = Lists.newArrayList();
     public String identifier;
@@ -85,8 +99,18 @@ public class Shop {
 
     public void populate(){
         shopItems.clear();
-        defaultStock.forEach(shopItem -> shopItems.add(shopItem));
-        shopItems.forEach(shopItem -> shopItem.defaultStockItem = true);
+        defaultStock.forEach(shopItem ->
+        {
+            if (shopItem.getId() != -1) {
+                shopItems.add(shopItem);
+            }
+        });
+        shopItems.forEach(shopItem ->
+        {
+            if (shopItem.getId() != -1) {
+                shopItem.defaultStockItem = true;
+            }
+        });
     }
 
     public Shop replace(Shop shop){
