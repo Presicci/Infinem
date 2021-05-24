@@ -3,7 +3,7 @@ package io.ruin.model.inter.dialogue;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 
-public class ActionDialogue implements Dialogue {
+public class ActionDialogue extends Dialogue {
 
     private Runnable action;
 

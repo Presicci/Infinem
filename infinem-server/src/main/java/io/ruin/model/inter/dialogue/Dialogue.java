@@ -2,10 +2,21 @@ package io.ruin.model.inter.dialogue;
 
 import io.ruin.model.entity.player.Player;
 
-public interface Dialogue {
+import java.util.function.Consumer;
 
-    void open(Player player);
+public abstract class Dialogue {
 
-    default void closed(Player player) {}
+    public abstract void open(Player player);
+
+    private Consumer<Player> onClose = null;
+
+    public Dialogue setOnClose(Consumer<Player> playerConsumer){
+        this.onClose = playerConsumer;
+        return this;
+    }
+
+    public void closed(Player player) {
+        if(onClose != null) onClose.accept(player);
+    }
 
 }

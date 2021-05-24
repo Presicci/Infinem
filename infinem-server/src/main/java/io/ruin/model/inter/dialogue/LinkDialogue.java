@@ -10,7 +10,7 @@ import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 
-public class LinkDialogue implements Dialogue {
+public class LinkDialogue extends Dialogue {
 
     private int itemId1, itemId2;
 

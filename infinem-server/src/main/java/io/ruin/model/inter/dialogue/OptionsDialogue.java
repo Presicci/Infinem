@@ -10,7 +10,7 @@ import io.ruin.model.inter.utils.Unlock;
 
 import java.util.List;
 
-public class OptionsDialogue implements Dialogue {
+public class OptionsDialogue extends Dialogue {
 
     private final Object[] params;
 

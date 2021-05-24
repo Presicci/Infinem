@@ -10,7 +10,7 @@ import io.ruin.model.inter.actions.SimpleAction;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class NPCDialogue implements Dialogue {
+public class NPCDialogue extends Dialogue {
 
     private NPCDef npcDef;
 

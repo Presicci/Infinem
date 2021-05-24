@@ -11,7 +11,7 @@ import io.ruin.model.item.Item;
 
 import java.util.function.BiConsumer;
 
-public class SkillDialogue implements Dialogue {
+public class SkillDialogue extends Dialogue {
 
     private static final SkillItem EMPTY = new SkillItem(-1).name("");
 

@@ -6,7 +6,7 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SimpleAction;
 
-public class MessageDialogue implements Dialogue {
+public class MessageDialogue extends Dialogue {
 
     private String message;
 

@@ -56,8 +56,7 @@ public class ElnockInquisitor {
     }
 
     private static void whereIsThisPlace(Player player, NPC npc) {
-        player.dialogue(event -> player.dialogue(
-                new PlayerDialogue("Where is this place?"),
+        player.dialogue(new PlayerDialogue("Where is this place?"),
                 new NPCDialogue(npc, "The fairies call it Puro-Puro. It seems to be the home plane of the implings."),
                 new NPCDialogue(npc, "I don't think these creatures have a name for it. As you can see there isn't a lot else here other than wheat."),
                 new PlayerDialogue("How did you get here?"),
@@ -68,7 +67,7 @@ public class ElnockInquisitor {
                         new Option("So what are these implings?", () -> soWhatAre(player, npc)),
                         new Option("Can I catch these implings then?", () -> canICatch(player, npc))
                 )
-        ));
+        );
     }
 
     private static void soWhatAre(Player player, NPC npc) {

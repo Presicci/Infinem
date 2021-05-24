@@ -7,7 +7,7 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.item.Item;
 
-public class YesNoDialogue implements Dialogue {
+public class YesNoDialogue extends Dialogue {
 
     private int itemId, itemAmount;
 
