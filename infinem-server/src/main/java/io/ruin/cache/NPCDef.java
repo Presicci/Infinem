@@ -15,8 +15,10 @@ import io.ruin.model.entity.player.KillCounter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.item.loot.LootTable;
+import io.ruin.model.shop.Shop;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -70,6 +72,8 @@ public class NPCDef {
     public AnagramClue anagram;
 
     public CrypticClue cryptic;
+
+    public List<Shop> shops;
 
     public npc_combat.Info combatInfo;
 
