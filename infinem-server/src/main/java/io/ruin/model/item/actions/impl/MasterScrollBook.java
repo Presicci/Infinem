@@ -32,7 +32,7 @@ public class MasterScrollBook {
         ZAL_ANDRA(12938, new Bounds(2194, 3055, 2197, 3057, 0), 49, Config.ZUL_ANDRA_SCROLLS),
         KEY_MASTER(13249, new Bounds(1312, 1249, 1315, 1251, 0), 53, Config.KEY_MASTER_SCROLLS),
         REVENANT_SCROLL(21802, new Bounds(3128, 3830, 3131, 3835, 0), 57, Config.REV_SCROLLS),
-        WATSON(23387, new Bounds(1644, 3575, 1646, 3580, 0), 61, Config.WATSON_SCROLLS);
+        WATSON(23387, new Bounds(1644, 3576, 1646, 3580, 0), 61, Config.WATSON_SCROLLS);
 
         public final int id, componentId;
 
