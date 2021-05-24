@@ -1,0 +1,42 @@
+{
+  "name": "Magic Guild Store - Mystic Robes",
+  "currency": "COINS",
+  "npcs": [
+    3249
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 4089,
+      "stock": 1000,
+      "buy_price": 9000,
+      "sell_price": 15000
+    },
+    {
+      "itemId": 4091,
+      "stock": 1000,
+      "buy_price": 72000,
+      "sell_price": 120000
+    },
+    {
+      "itemId": 4093,
+      "stock": 1000,
+      "buy_price": 48000,
+      "sell_price": 80000
+    },
+    {
+      "itemId": 4095,
+      "stock": 1000,
+      "buy_price": 6000,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 4097,
+      "stock": 1000,
+      "buy_price": 6000,
+      "sell_price": 10000
+    }
+  ]
+}

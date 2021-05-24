@@ -1,0 +1,48 @@
+{
+  "name": "Ranging Guild Ticket Exchange",
+  "currency": "ARCHERY_TICKETS",
+  "npcs": [
+    6071
+  ],
+  "sellMultiplier": 0,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 47,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 140
+    },
+    {
+      "itemId": 1133,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 150
+    },
+    {
+      "itemId": 892,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 2000
+    },
+    {
+      "itemId": 1169,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 100
+    },
+    {
+      "itemId": 1135,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 2400
+    },
+    {
+      "itemId": 829,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 2000
+    }
+  ]
+}

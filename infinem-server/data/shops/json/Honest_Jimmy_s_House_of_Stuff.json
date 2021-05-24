@@ -1,0 +1,186 @@
+{
+  "name": "Honest Jimmy's House of Stuff",
+  "currency": "PIECES_OF_EIGHT",
+  "npcs": [
+    1816
+  ],
+  "sellMultiplier": 10000,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 8952,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8959,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 500
+    },
+    {
+      "itemId": 8991,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8953,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8960,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 500
+    },
+    {
+      "itemId": 8992,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8954,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8961,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 500
+    },
+    {
+      "itemId": 8993,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8955,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8962,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 500
+    },
+    {
+      "itemId": 8994,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8956,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8963,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 500
+    },
+    {
+      "itemId": 8995,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8957,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8964,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 500
+    },
+    {
+      "itemId": 8996,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8958,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8965,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 500
+    },
+    {
+      "itemId": 8997,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8966,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 2000
+    },
+    {
+      "itemId": 8967,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 2000
+    },
+    {
+      "itemId": 8968,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 3000
+    },
+    {
+      "itemId": 8969,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 4000
+    },
+    {
+      "itemId": 8970,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 5000
+    },
+    {
+      "itemId": 8971,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 6000
+    },
+    {
+      "itemId": 8988,
+      "stock": 200,
+      "buy_price": -1,
+      "sell_price": 50
+    },
+    {
+      "itemId": 2801,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 5000
+    }
+  ]
+}

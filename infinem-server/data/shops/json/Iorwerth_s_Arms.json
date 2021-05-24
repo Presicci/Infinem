@@ -1,0 +1,60 @@
+{
+  "name": "Iorwerth's Arms",
+  "currency": "COINS",
+  "npcs": [
+    9156
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1211,
+      "stock": 4,
+      "buy_price": 480,
+      "sell_price": 800
+    },
+    {
+      "itemId": 1213,
+      "stock": 3,
+      "buy_price": 4800,
+      "sell_price": 8000
+    },
+    {
+      "itemId": 1215,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1331,
+      "stock": 2,
+      "buy_price": 1536,
+      "sell_price": 2560
+    },
+    {
+      "itemId": 1333,
+      "stock": 1,
+      "buy_price": 15360,
+      "sell_price": 25600
+    },
+    {
+      "itemId": 3200,
+      "stock": 7,
+      "buy_price": 3840,
+      "sell_price": 6400
+    },
+    {
+      "itemId": 3202,
+      "stock": 7,
+      "buy_price": 38400,
+      "sell_price": 64000
+    },
+    {
+      "itemId": 3204,
+      "stock": 5,
+      "buy_price": 150000,
+      "sell_price": 250000
+    }
+  ]
+}

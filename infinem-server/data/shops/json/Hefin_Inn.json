@@ -1,0 +1,36 @@
+{
+  "name": "Hefin Inn",
+  "currency": "COINS",
+  "npcs": [
+    9139
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 1917,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 5763,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 2003,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 20
+    },
+    {
+      "itemId": 23948,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 6
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Zavistic Rarve's Shop",
+  "currency": "COINS",
+  "npcs": [
+    881
+  ],
+  "sellMultiplier": 0,
+  "buyMultiplier": 0,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 4808,
+      "stock": 0,
+      "buy_price": 2000,
+      "sell_price": -1
+    }
+  ]
+}

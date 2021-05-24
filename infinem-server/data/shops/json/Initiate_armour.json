@@ -1,0 +1,76 @@
+{
+  "name": "Initiate Armour",
+  "currency": "COINS",
+  "npcs": [
+    4687,
+    8045,
+    8157,
+    8165,
+    8173
+  ],
+  "sellMultiplier": 0,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 5574,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 6000
+    },
+    {
+      "itemId": 5575,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 5576,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 8000
+    },
+    {
+      "itemId": 9668,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 20000
+    },
+    {
+      "itemId": 9672,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 8000
+    },
+    {
+      "itemId": 9674,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 12000
+    },
+    {
+      "itemId": 9676,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 9678,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 9666,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 25000
+    },
+    {
+      "itemId": 9670,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 25000
+    }
+  ]
+}

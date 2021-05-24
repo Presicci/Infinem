@@ -1,0 +1,31 @@
+{
+  "name": "Spice Stall",
+  "currency": "COINS",
+  "npcs": [
+    3209,
+    4579
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2007,
+      "stock": 1,
+      "buy_price": 138,
+      "sell_price": 230
+    },
+    {
+      "itemId": 946,
+      "stock": 1,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 1550,
+      "stock": 2,
+      "buy_price": 1,
+      "sell_price": 3
+    }
+  ]
+}

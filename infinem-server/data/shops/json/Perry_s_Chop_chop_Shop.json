@@ -1,0 +1,54 @@
+{
+  "name": "Perry's Chop-chop Shop",
+  "currency": "COINS",
+  "npcs": [
+    7240
+  ],
+  "sellMultiplier": 3200,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1351,
+      "stock": 4,
+      "buy_price": 9,
+      "sell_price": 51
+    },
+    {
+      "itemId": 1349,
+      "stock": 3,
+      "buy_price": 33,
+      "sell_price": 179
+    },
+    {
+      "itemId": 1353,
+      "stock": 2,
+      "buy_price": 120,
+      "sell_price": 640
+    },
+    {
+      "itemId": 1355,
+      "stock": 1,
+      "buy_price": 312,
+      "sell_price": 1664
+    },
+    {
+      "itemId": 1357,
+      "stock": 1,
+      "buy_price": 768,
+      "sell_price": 4096
+    },
+    {
+      "itemId": 1359,
+      "stock": 1,
+      "buy_price": 7680,
+      "sell_price": 40960
+    },
+    {
+      "itemId": 590,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 3
+    }
+  ]
+}

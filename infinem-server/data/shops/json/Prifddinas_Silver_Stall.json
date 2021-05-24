@@ -1,0 +1,30 @@
+{
+  "name": "Prifddinas Silver Stall",
+  "currency": "COINS",
+  "npcs": [
+    9160
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1714,
+      "stock": 2,
+      "buy_price": 140,
+      "sell_price": 200
+    },
+    {
+      "itemId": 442,
+      "stock": 1,
+      "buy_price": 52,
+      "sell_price": 75
+    },
+    {
+      "itemId": 2355,
+      "stock": 1,
+      "buy_price": 105,
+      "sell_price": 150
+    }
+  ]
+}

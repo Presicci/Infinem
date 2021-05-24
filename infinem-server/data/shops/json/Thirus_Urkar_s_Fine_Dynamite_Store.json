@@ -1,0 +1,25 @@
+{
+  "name": "Thirus Urkar's Fine Dynamite Store",
+  "currency": "COINS",
+  "npcs": [
+    8546,
+    8547
+  ],
+  "sellMultiplier": 11500,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 13573,
+      "stock": 1000,
+      "buy_price": 50,
+      "sell_price": 1150
+    },
+    {
+      "itemId": 590,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 11
+    }
+  ]
+}

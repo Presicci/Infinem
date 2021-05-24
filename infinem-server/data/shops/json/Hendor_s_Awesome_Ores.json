@@ -1,0 +1,54 @@
+{
+  "name": "Hendor's Awesome Ores",
+  "currency": "COINS",
+  "npcs": [
+    7717
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 436,
+      "stock": 0,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    {
+      "itemId": 438,
+      "stock": 0,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    {
+      "itemId": 440,
+      "stock": 0,
+      "buy_price": 11,
+      "sell_price": 17
+    },
+    {
+      "itemId": 447,
+      "stock": 0,
+      "buy_price": 113,
+      "sell_price": 162
+    },
+    {
+      "itemId": 449,
+      "stock": 0,
+      "buy_price": 280,
+      "sell_price": 400
+    },
+    {
+      "itemId": 451,
+      "stock": 0,
+      "buy_price": 2240,
+      "sell_price": 3200
+    },
+    {
+      "itemId": 453,
+      "stock": 0,
+      "buy_price": 31,
+      "sell_price": 45
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "name": "Crossbow Shop (White Wolf Mountain)",
+  "currency": "COINS",
+  "npcs": [
+    2784
+  ],
+  "sellMultiplier": 3600,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 9440,
+      "stock": 5,
+      "buy_price": 10,
+      "sell_price": 72
+    },
+    {
+      "itemId": 9442,
+      "stock": 5,
+      "buy_price": 13,
+      "sell_price": 97
+    },
+    {
+      "itemId": 9444,
+      "stock": 5,
+      "buy_price": 26,
+      "sell_price": 190
+    },
+    {
+      "itemId": 9446,
+      "stock": 5,
+      "buy_price": 38,
+      "sell_price": 277
+    },
+    {
+      "itemId": 9448,
+      "stock": 5,
+      "buy_price": 50,
+      "sell_price": 360
+    },
+    {
+      "itemId": 9450,
+      "stock": 0,
+      "buy_price": 66,
+      "sell_price": 478
+    },
+    {
+      "itemId": 9452,
+      "stock": 0,
+      "buy_price": 83,
+      "sell_price": 601
+    },
+    {
+      "itemId": 9420,
+      "stock": 5,
+      "buy_price": 10,
+      "sell_price": 72
+    },
+    {
+      "itemId": 9423,
+      "stock": 5,
+      "buy_price": 35,
+      "sell_price": 252
+    },
+    {
+      "itemId": 9425,
+      "stock": 5,
+      "buy_price": 125,
+      "sell_price": 900
+    },
+    {
+      "itemId": 9427,
+      "stock": 5,
+      "buy_price": 325,
+      "sell_price": 2340
+    },
+    {
+      "itemId": 9429,
+      "stock": 0,
+      "buy_price": 800,
+      "sell_price": 5760
+    },
+    {
+      "itemId": 9431,
+      "stock": 0,
+      "buy_price": 8000,
+      "sell_price": 57600
+    },
+    {
+      "itemId": 9174,
+      "stock": 0,
+      "buy_price": 36,
+      "sell_price": 262
+    },
+    {
+      "itemId": 9177,
+      "stock": 0,
+      "buy_price": 78,
+      "sell_price": 565
+    },
+    {
+      "itemId": 9179,
+      "stock": 0,
+      "buy_price": 180,
+      "sell_price": 1296
+    },
+    {
+      "itemId": 9181,
+      "stock": 0,
+      "buy_price": 391,
+      "sell_price": 2818
+    },
+    {
+      "itemId": 9183,
+      "stock": 0,
+      "buy_price": 883,
+      "sell_price": 6361
+    },
+    {
+      "itemId": 9185,
+      "stock": 0,
+      "buy_price": 8100,
+      "sell_price": 58320
+    }
+  ]
+}

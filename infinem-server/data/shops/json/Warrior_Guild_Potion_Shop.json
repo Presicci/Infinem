@@ -1,0 +1,30 @@
+{
+  "name": "Warrior Guild Potion Shop",
+  "currency": "COINS",
+  "npcs": [
+    2470
+  ],
+  "sellMultiplier": 1200,
+  "buyMultiplier": 150,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 115,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 121,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 133,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 0
+    }
+  ]
+}

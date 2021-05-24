@@ -1,0 +1,36 @@
+{
+  "name": "Green Gemstone Gems",
+  "currency": "COINS",
+  "npcs": [
+    2362
+  ],
+  "sellMultiplier": 1500,
+  "buyMultiplier": 800,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1607,
+      "stock": 3,
+      "buy_price": 200,
+      "sell_price": 375
+    },
+    {
+      "itemId": 1605,
+      "stock": 1,
+      "buy_price": 400,
+      "sell_price": 750
+    },
+    {
+      "itemId": 1603,
+      "stock": 1,
+      "buy_price": 800,
+      "sell_price": 1500
+    },
+    {
+      "itemId": 1601,
+      "stock": 0,
+      "buy_price": 1600,
+      "sell_price": 3000
+    }
+  ]
+}

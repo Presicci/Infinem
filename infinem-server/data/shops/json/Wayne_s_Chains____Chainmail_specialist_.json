@@ -1,0 +1,48 @@
+{
+  "name": "Wayne's Chains",
+  "currency": "COINS",
+  "npcs": [
+    5897
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 650,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1103,
+      "stock": 3,
+      "buy_price": 39,
+      "sell_price": 60
+    },
+    {
+      "itemId": 1101,
+      "stock": 2,
+      "buy_price": 136,
+      "sell_price": 210
+    },
+    {
+      "itemId": 1105,
+      "stock": 1,
+      "buy_price": 487,
+      "sell_price": 750
+    },
+    {
+      "itemId": 1107,
+      "stock": 1,
+      "buy_price": 936,
+      "sell_price": 1440
+    },
+    {
+      "itemId": 1109,
+      "stock": 1,
+      "buy_price": 1267,
+      "sell_price": 1950
+    },
+    {
+      "itemId": 1111,
+      "stock": 1,
+      "buy_price": 3120,
+      "sell_price": 4800
+    }
+  ]
+}

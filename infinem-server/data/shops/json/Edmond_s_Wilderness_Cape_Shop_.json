@@ -1,0 +1,42 @@
+{
+  "name": "Edmond's Wilderness Cape Shop",
+  "currency": "COINS",
+  "npcs": [
+    2202
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 4329,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4349,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4369,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4389,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4409,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    }
+  ]
+}

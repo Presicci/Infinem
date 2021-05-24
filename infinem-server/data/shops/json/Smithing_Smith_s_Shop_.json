@@ -1,0 +1,60 @@
+{
+  "name": "Smithing Smith's Shop",
+  "currency": "COINS",
+  "npcs": [
+    4018
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1321,
+      "stock": 5,
+      "buy_price": 19,
+      "sell_price": 32
+    },
+    {
+      "itemId": 1323,
+      "stock": 3,
+      "buy_price": 67,
+      "sell_price": 112
+    },
+    {
+      "itemId": 1325,
+      "stock": 2,
+      "buy_price": 240,
+      "sell_price": 400
+    },
+    {
+      "itemId": 1329,
+      "stock": 1,
+      "buy_price": 624,
+      "sell_price": 1040
+    },
+    {
+      "itemId": 2347,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 7141,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 1040
+    },
+    {
+      "itemId": 7140,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 2560
+    },
+    {
+      "itemId": 7142,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 25600
+    }
+  ]
+}

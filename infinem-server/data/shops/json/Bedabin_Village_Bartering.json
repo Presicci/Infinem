@@ -1,0 +1,54 @@
+{
+  "name": "Bedabin Village Bartering",
+  "currency": "COINS",
+  "npcs": [
+    4638
+  ],
+  "sellMultiplier": 1200,
+  "buyMultiplier": 800,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1823,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1831,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1937,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1921,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 4
+    },
+    {
+      "itemId": 1929,
+      "stock": 5,
+      "buy_price": 4,
+      "sell_price": 7
+    },
+    {
+      "itemId": 946,
+      "stock": 5,
+      "buy_price": 4,
+      "sell_price": 7
+    },
+    {
+      "itemId": 2347,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}

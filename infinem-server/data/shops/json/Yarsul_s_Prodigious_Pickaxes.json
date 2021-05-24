@@ -1,0 +1,48 @@
+{
+  "name": "Yarsul's Prodigious Pickaxes",
+  "currency": "COINS",
+  "npcs": [
+    7718
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1265,
+      "stock": 6,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1267,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1269,
+      "stock": 4,
+      "buy_price": 300,
+      "sell_price": 500
+    },
+    {
+      "itemId": 1273,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1271,
+      "stock": 2,
+      "buy_price": 1920,
+      "sell_price": 3200
+    },
+    {
+      "itemId": 1275,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 0
+    }
+  ]
+}

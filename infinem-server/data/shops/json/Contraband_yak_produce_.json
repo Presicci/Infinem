@@ -1,0 +1,36 @@
+{
+  "name": "Contraband Yak Produce",
+  "currency": "COINS",
+  "npcs": [
+    1990
+  ],
+  "sellMultiplier": 1100,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 10818,
+      "stock": 25,
+      "buy_price": 35,
+      "sell_price": 55
+    },
+    {
+      "itemId": 10816,
+      "stock": 50,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 10814,
+      "stock": 50,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 10820,
+      "stock": 10,
+      "buy_price": 70,
+      "sell_price": 110
+    }
+  ]
+}

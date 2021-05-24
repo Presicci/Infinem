@@ -1,0 +1,54 @@
+{
+  "name": "Raetul and Co's Cloth Store",
+  "currency": "COINS",
+  "npcs": [
+    4204
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 750,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 4684,
+      "stock": 20,
+      "buy_price": 22,
+      "sell_price": 30
+    },
+    {
+      "itemId": 1833,
+      "stock": 20,
+      "buy_price": 30,
+      "sell_price": 40
+    },
+    {
+      "itemId": 1835,
+      "stock": 20,
+      "buy_price": 30,
+      "sell_price": 40
+    },
+    {
+      "itemId": 1837,
+      "stock": 20,
+      "buy_price": 15,
+      "sell_price": 20
+    },
+    {
+      "itemId": 950,
+      "stock": 10,
+      "buy_price": 22,
+      "sell_price": 30
+    },
+    {
+      "itemId": 1734,
+      "stock": 50,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1733,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}

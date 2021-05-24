@@ -1,0 +1,36 @@
+{
+  "name": "Solihib's Food Stall",
+  "currency": "COINS",
+  "npcs": [
+    5249
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 4012,
+      "stock": 200,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 1963,
+      "stock": 1000,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 4016,
+      "stock": 10,
+      "buy_price": 150,
+      "sell_price": 300
+    },
+    {
+      "itemId": 4014,
+      "stock": 20,
+      "buy_price": 25,
+      "sell_price": 50
+    }
+  ]
+}

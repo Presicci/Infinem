@@ -1,0 +1,84 @@
+{
+  "name": "Thessalia's Fine Clothes",
+  "currency": "COINS",
+  "npcs": [
+    534
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1005,
+      "stock": 3,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1129,
+      "stock": 12,
+      "buy_price": 11,
+      "sell_price": 21
+    },
+    {
+      "itemId": 1059,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 1061,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 1757,
+      "stock": 1,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1013,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1015,
+      "stock": 3,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1011,
+      "stock": 2,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1007,
+      "stock": 4,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 950,
+      "stock": 5,
+      "buy_price": 16,
+      "sell_price": 30
+    },
+    {
+      "itemId": 428,
+      "stock": 3,
+      "buy_price": 20,
+      "sell_price": 30
+    },
+    {
+      "itemId": 426,
+      "stock": 3,
+      "buy_price": 20,
+      "sell_price": 30
+    }
+  ]
+}

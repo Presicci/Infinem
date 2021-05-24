@@ -1,0 +1,78 @@
+{
+  "name": "Leprechaun Larry's Farming Supplies",
+  "currency": "COINS",
+  "npcs": [
+    757
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 5341,
+      "stock": 6,
+      "buy_price": 2,
+      "sell_price": 7
+    },
+    {
+      "itemId": 5343,
+      "stock": 4,
+      "buy_price": 2,
+      "sell_price": 7
+    },
+    {
+      "itemId": 5329,
+      "stock": 1,
+      "buy_price": 2,
+      "sell_price": 6
+    },
+    {
+      "itemId": 952,
+      "stock": 3,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 5325,
+      "stock": 2,
+      "buy_price": 4,
+      "sell_price": 15
+    },
+    {
+      "itemId": 5331,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 6032,
+      "stock": 2,
+      "buy_price": 8,
+      "sell_price": 26
+    },
+    {
+      "itemId": 19704,
+      "stock": 10,
+      "buy_price": 800,
+      "sell_price": 2600
+    },
+    {
+      "itemId": 6036,
+      "stock": 5,
+      "buy_price": 16,
+      "sell_price": 52
+    },
+    {
+      "itemId": 2026,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1480,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 200
+    }
+  ]
+}

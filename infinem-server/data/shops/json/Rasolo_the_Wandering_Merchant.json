@@ -1,0 +1,162 @@
+{
+  "name": "Rasolo the Wandering Merchant",
+  "currency": "COINS",
+  "npcs": [
+    679
+  ],
+  "sellMultiplier": 2000,
+  "buyMultiplier": 0,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1969,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 2023,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 4
+    },
+    {
+      "itemId": 660,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 320
+    },
+    {
+      "itemId": 1215,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 550,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 583,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 20
+    },
+    {
+      "itemId": 1941,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 60
+    },
+    {
+      "itemId": 273,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 3
+    },
+    {
+      "itemId": 970,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 20
+    },
+    {
+      "itemId": 975,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 80
+    },
+    {
+      "itemId": 1599,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 10
+    },
+    {
+      "itemId": 2976,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 20
+    },
+    {
+      "itemId": 1823,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1837,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 40
+    },
+    {
+      "itemId": 1854,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 10
+    },
+    {
+      "itemId": 2524,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 200
+    },
+    {
+      "itemId": 3377,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 10
+    },
+    {
+      "itemId": 2894,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 1909,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 4
+    },
+    {
+      "itemId": 3787,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 500
+    },
+    {
+      "itemId": 3711,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 3678,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 20000
+    },
+    {
+      "itemId": 3424,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 3420,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 40
+    },
+    {
+      "itemId": 5,
+      "stock": 1,
+      "buy_price": -1,
+      "sell_price": 20
+    }
+  ]
+}

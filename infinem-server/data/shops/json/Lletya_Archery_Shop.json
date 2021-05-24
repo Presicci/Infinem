@@ -1,0 +1,78 @@
+{
+  "name": "Lletya Archery Shop",
+  "currency": "COINS",
+  "npcs": [
+    1481
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 884,
+      "stock": 2000,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 886,
+      "stock": 500,
+      "buy_price": 4,
+      "sell_price": 15
+    },
+    {
+      "itemId": 888,
+      "stock": 500,
+      "buy_price": 12,
+      "sell_price": 41
+    },
+    {
+      "itemId": 890,
+      "stock": 450,
+      "buy_price": 32,
+      "sell_price": 104
+    },
+    {
+      "itemId": 892,
+      "stock": 400,
+      "buy_price": 160,
+      "sell_price": 520
+    },
+    {
+      "itemId": 877,
+      "stock": 1500,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 843,
+      "stock": 5,
+      "buy_price": 40,
+      "sell_price": 130
+    },
+    {
+      "itemId": 845,
+      "stock": 5,
+      "buy_price": 64,
+      "sell_price": 208
+    },
+    {
+      "itemId": 837,
+      "stock": 5,
+      "buy_price": 28,
+      "sell_price": 91
+    },
+    {
+      "itemId": 849,
+      "stock": 5,
+      "buy_price": 80,
+      "sell_price": 260
+    },
+    {
+      "itemId": 847,
+      "stock": 5,
+      "buy_price": 128,
+      "sell_price": 416
+    }
+  ]
+}

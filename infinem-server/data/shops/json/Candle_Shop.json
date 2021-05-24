@@ -1,0 +1,18 @@
+{
+  "name": "Candle Shop",
+  "currency": "COINS",
+  "npcs": [
+    3199
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 36,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 3
+    }
+  ]
+}

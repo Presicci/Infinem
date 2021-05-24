@@ -1,0 +1,42 @@
+{
+  "name": "Simon's Wilderness Cape Shop",
+  "currency": "COINS",
+  "npcs": [
+    2203
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 4331,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4351,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4371,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4391,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4411,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    }
+  ]
+}

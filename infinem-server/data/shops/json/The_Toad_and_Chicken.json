@@ -1,0 +1,30 @@
+{
+  "name": "The Toad and Chicken",
+  "currency": "COINS",
+  "npcs": [
+    4102
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1905,
+      "stock": 12,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1907,
+      "stock": 12,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1913,
+      "stock": 12,
+      "buy_price": 0,
+      "sell_price": 2
+    }
+  ]
+}

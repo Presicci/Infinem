@@ -1,0 +1,36 @@
+{
+  "name": "Prifddinas Gem Stall",
+  "currency": "COINS",
+  "npcs": [
+    9163
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 800,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1607,
+      "stock": 2,
+      "buy_price": 200,
+      "sell_price": 250
+    },
+    {
+      "itemId": 1605,
+      "stock": 1,
+      "buy_price": 400,
+      "sell_price": 500
+    },
+    {
+      "itemId": 1603,
+      "stock": 1,
+      "buy_price": 800,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 1601,
+      "stock": 0,
+      "buy_price": 1600,
+      "sell_price": 2000
+    }
+  ]
+}

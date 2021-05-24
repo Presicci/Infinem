@@ -1,0 +1,18 @@
+{
+  "name": "Tony's Pizza Bases",
+  "currency": "COINS",
+  "npcs": [
+    8688
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2283,
+      "stock": 30,
+      "buy_price": 2,
+      "sell_price": 4
+    }
+  ]
+}

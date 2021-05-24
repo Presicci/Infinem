@@ -1,0 +1,90 @@
+{
+  "name": "Dodgy Mike's Second Hand Clothing",
+  "currency": "COINS",
+  "npcs": [
+    4022
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 7114,
+      "stock": 15,
+      "buy_price": 210,
+      "sell_price": 350
+    },
+    {
+      "itemId": 7110,
+      "stock": 10,
+      "buy_price": 180,
+      "sell_price": 300
+    },
+    {
+      "itemId": 7112,
+      "stock": 20,
+      "buy_price": 60,
+      "sell_price": 100
+    },
+    {
+      "itemId": 7116,
+      "stock": 10,
+      "buy_price": 210,
+      "sell_price": 350
+    },
+    {
+      "itemId": 7122,
+      "stock": 10,
+      "buy_price": 180,
+      "sell_price": 300
+    },
+    {
+      "itemId": 7124,
+      "stock": 20,
+      "buy_price": 60,
+      "sell_price": 100
+    },
+    {
+      "itemId": 7126,
+      "stock": 10,
+      "buy_price": 210,
+      "sell_price": 350
+    },
+    {
+      "itemId": 7134,
+      "stock": 10,
+      "buy_price": 180,
+      "sell_price": 300
+    },
+    {
+      "itemId": 7136,
+      "stock": 20,
+      "buy_price": 60,
+      "sell_price": 100
+    },
+    {
+      "itemId": 7138,
+      "stock": 10,
+      "buy_price": 210,
+      "sell_price": 350
+    },
+    {
+      "itemId": 7128,
+      "stock": 10,
+      "buy_price": 180,
+      "sell_price": 300
+    },
+    {
+      "itemId": 7130,
+      "stock": 20,
+      "buy_price": 60,
+      "sell_price": 100
+    },
+    {
+      "itemId": 7132,
+      "stock": 10,
+	  "buy_price": 210,
+      "sell_price": 350
+    }
+  ]
+}

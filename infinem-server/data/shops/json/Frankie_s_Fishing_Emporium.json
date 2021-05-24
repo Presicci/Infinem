@@ -1,0 +1,78 @@
+{
+  "name": "Frankie's Fishing Emporium",
+  "currency": "COINS",
+  "npcs": [
+    6963
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 950,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 317,
+      "stock": 500,
+      "buy_price": 4,
+      "sell_price": 5
+    },
+    {
+      "itemId": 327,
+      "stock": 500,
+      "buy_price": 9,
+      "sell_price": 10
+    },
+    {
+      "itemId": 345,
+      "stock": 250,
+      "buy_price": 9,
+      "sell_price": 10
+    },
+    {
+      "itemId": 353,
+      "stock": 250,
+      "buy_price": 14,
+      "sell_price": 15
+    },
+    {
+      "itemId": 341,
+      "stock": 100,
+      "buy_price": 9,
+      "sell_price": 10
+    },
+    {
+      "itemId": 321,
+      "stock": 100,
+      "buy_price": 14,
+      "sell_price": 15
+    },
+    {
+      "itemId": 359,
+      "stock": 100,
+      "buy_price": 38,
+      "sell_price": 40
+    },
+    {
+      "itemId": 377,
+      "stock": 50,
+      "buy_price": 66,
+      "sell_price": 70
+    },
+    {
+      "itemId": 363,
+      "stock": 50,
+      "buy_price": 38,
+      "sell_price": 40
+    },
+    {
+      "itemId": 371,
+      "stock": 50,
+      "buy_price": 76,
+      "sell_price": 80
+    },
+    {
+      "itemId": 383,
+      "stock": 25,
+      "buy_price": 161,
+      "sell_price": 170
+    }
+  ]
+}

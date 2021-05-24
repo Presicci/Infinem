@@ -1,0 +1,84 @@
+{
+  "name": "Aleck's Hunter Emporium",
+  "currency": "COINS",
+  "npcs": [
+    1501
+  ],
+  "sellMultiplier": 1200,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 10010,
+      "stock": 5,
+      "buy_price": 14,
+      "sell_price": 24
+    },
+    {
+      "itemId": 10012,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 10025,
+      "stock": 30,
+      "buy_price": 420,
+      "sell_price": 720
+    },
+    {
+      "itemId": 10150,
+      "stock": 50,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 10006,
+      "stock": 50,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 10008,
+      "stock": 25,
+      "buy_price": 22,
+      "sell_price": 38
+    },
+    {
+      "itemId": 10029,
+      "stock": 5,
+      "buy_price": 35,
+      "sell_price": 60
+    },
+    {
+      "itemId": 596,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 10031,
+      "stock": 10,
+      "buy_price": 10,
+      "sell_price": 18
+    },
+    {
+      "itemId": 12740,
+      "stock": 3,
+      "buy_price": 353,
+      "sell_price": 606
+    },
+    {
+      "itemId": 12742,
+      "stock": 3,
+      "buy_price": 2240,
+      "sell_price": 3840
+    },
+    {
+      "itemId": 12744,
+      "stock": 3,
+      "buy_price": 42000,
+      "sell_price": 72000
+    }
+  ]
+}

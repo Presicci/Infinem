@@ -1,0 +1,72 @@
+{
+  "name": "Miltog's Lamps",
+  "currency": "COINS",
+  "npcs": [
+    2297
+  ],
+  "sellMultiplier": 1500,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 596,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 4525,
+      "stock": 4,
+      "buy_price": 10,
+      "sell_price": 37
+    },
+    {
+      "itemId": 4535,
+      "stock": 2,
+      "buy_price": 48,
+      "sell_price": 180
+    },
+    {
+      "itemId": 4546,
+      "stock": 1,
+      "buy_price": 160,
+      "sell_price": 600
+    },
+    {
+      "itemId": 5013,
+      "stock": 1,
+      "buy_price": 240,
+      "sell_price": 900
+    },
+    {
+      "itemId": 590,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 10973,
+      "stock": 0,
+      "buy_price": 140,
+      "sell_price": 525
+    },
+    {
+      "itemId": 4522,
+      "stock": 0,
+      "buy_price": 11,
+      "sell_price": 42
+    },
+    {
+      "itemId": 4537,
+      "stock": 0,
+      "buy_price": 50,
+      "sell_price": 187
+    },
+    {
+      "itemId": 4548,
+      "stock": 0,
+      "buy_price": 168,
+      "sell_price": 630
+    }
+  ]
+}

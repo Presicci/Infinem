@@ -1,0 +1,72 @@
+{
+  "name": "Mount Karuulm Weapon Shop",
+  "currency": "COINS",
+  "npcs": [
+    8697
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1241,
+      "stock": 2,
+      "buy_price": 195,
+      "sell_price": 325
+    },
+    {
+      "itemId": 1243,
+      "stock": 1,
+      "buy_price": 507,
+      "sell_price": 845
+    },
+    {
+      "itemId": 1245,
+      "stock": 1,
+      "buy_price": 1248,
+      "sell_price": 2080
+    },
+    {
+      "itemId": 1247,
+      "stock": 1,
+      "buy_price": 12480,
+      "sell_price": 20800
+    },
+    {
+      "itemId": 1365,
+      "stock": 2,
+      "buy_price": 390,
+      "sell_price": 650
+    },
+    {
+      "itemId": 1369,
+      "stock": 1,
+      "buy_price": 1014,
+      "sell_price": 1690
+    },
+    {
+      "itemId": 1371,
+      "stock": 1,
+      "buy_price": 2496,
+      "sell_price": 4160
+    },
+    {
+      "itemId": 1339,
+      "stock": 2,
+      "buy_price": 384,
+      "sell_price": 640
+    },
+    {
+      "itemId": 1343,
+      "stock": 1,
+      "buy_price": 996,
+      "sell_price": 1660
+    },
+    {
+      "itemId": 1345,
+      "stock": 1,
+      "buy_price": 2472,
+      "sell_price": 4120
+    }
+  ]
+}

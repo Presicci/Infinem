@@ -1,0 +1,132 @@
+{
+  "name": "King Lathas's Armoury",
+  "currency": "COINS",
+  "npcs": [
+    2894
+  ],
+  "sellMultiplier": 1500,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 882,
+      "stock": 200,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 877,
+      "stock": 200,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 841,
+      "stock": 4,
+      "buy_price": 25,
+      "sell_price": 75
+    },
+    {
+      "itemId": 839,
+      "stock": 2,
+      "buy_price": 40,
+      "sell_price": 120
+    },
+    {
+      "itemId": 837,
+      "stock": 2,
+      "buy_price": 35,
+      "sell_price": 105
+    },
+    {
+      "itemId": 39,
+      "stock": 800,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 40,
+      "stock": 800,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 41,
+      "stock": 800,
+      "buy_price": 3,
+      "sell_price": 9
+    },
+    {
+      "itemId": 42,
+      "stock": 800,
+      "buy_price": 8,
+      "sell_price": 24
+    },
+    {
+      "itemId": 1349,
+      "stock": 5,
+      "buy_price": 28,
+      "sell_price": 84
+    },
+    {
+      "itemId": 1353,
+      "stock": 3,
+      "buy_price": 100,
+      "sell_price": 300
+    },
+    {
+      "itemId": 1363,
+      "stock": 5,
+      "buy_price": 91,
+      "sell_price": 273
+    },
+    {
+      "itemId": 1365,
+      "stock": 2,
+      "buy_price": 325,
+      "sell_price": 975
+    },
+    {
+      "itemId": 1369,
+      "stock": 1,
+      "buy_price": 845,
+      "sell_price": 2535
+    },
+    {
+      "itemId": 1307,
+      "stock": 4,
+      "buy_price": 40,
+      "sell_price": 120
+    },
+    {
+      "itemId": 1309,
+      "stock": 3,
+      "buy_price": 140,
+      "sell_price": 420
+    },
+    {
+      "itemId": 1311,
+      "stock": 2,
+      "buy_price": 500,
+      "sell_price": 1500
+    },
+    {
+      "itemId": 1313,
+      "stock": 1,
+      "buy_price": 960,
+      "sell_price": 2880
+    },
+    {
+      "itemId": 1315,
+      "stock": 1,
+      "buy_price": 1300,
+      "sell_price": 3900
+    },
+    {
+      "itemId": 1317,
+      "stock": 1,
+      "buy_price": 3200,
+      "sell_price": 9600
+    }
+  ]
+}

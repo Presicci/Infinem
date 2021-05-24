@@ -1,0 +1,84 @@
+{
+  "name": "Fremennik Fur Trader",
+  "currency": "COINS",
+  "npcs": [
+    3948
+  ],
+  "sellMultiplier": 1200,
+  "buyMultiplier": 950,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 948,
+      "stock": 3,
+      "buy_price": 9,
+      "sell_price": 12
+    },
+    {
+      "itemId": 958,
+      "stock": 3,
+      "buy_price": 47,
+      "sell_price": 60
+    },
+    {
+      "itemId": 10117,
+      "stock": 0,
+      "buy_price": 9,
+      "sell_price": 12
+    },
+    {
+      "itemId": 10121,
+      "stock": 0,
+      "buy_price": 11,
+      "sell_price": 14
+    },
+    {
+      "itemId": 10119,
+      "stock": 0,
+      "buy_price": 13,
+      "sell_price": 16
+    },
+    {
+      "itemId": 10123,
+      "stock": 0,
+      "buy_price": 16,
+      "sell_price": 20
+    },
+    {
+      "itemId": 10093,
+      "stock": 0,
+      "buy_price": 57,
+      "sell_price": 72
+    },
+    {
+      "itemId": 10095,
+      "stock": 0,
+      "buy_price": 76,
+      "sell_price": 96
+    },
+    {
+      "itemId": 10097,
+      "stock": 0,
+      "buy_price": 85,
+      "sell_price": 108
+    },
+    {
+      "itemId": 10099,
+      "stock": 0,
+      "buy_price": 114,
+      "sell_price": 144
+    },
+    {
+      "itemId": 10101,
+      "stock": 0,
+      "buy_price": 114,
+      "sell_price": 144
+    },
+    {
+      "itemId": 10103,
+      "stock": 0,
+      "buy_price": 152,
+      "sell_price": 192
+    }
+  ]
+}

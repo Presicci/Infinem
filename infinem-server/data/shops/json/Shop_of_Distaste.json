@@ -1,0 +1,18 @@
+{
+  "name": "Shop of Distaste",
+  "currency": "COINS",
+  "npcs": [
+    3340
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2518,
+      "stock": 2000,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}

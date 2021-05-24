@@ -1,0 +1,42 @@
+{
+  "name": "Flosi's Fishmongers",
+  "currency": "COINS",
+  "npcs": [
+    1942
+  ],
+  "sellMultiplier": 1100,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 377,
+      "stock": 5,
+      "buy_price": 49,
+      "sell_price": 77
+    },
+    {
+      "itemId": 359,
+      "stock": 20,
+      "buy_price": 28,
+      "sell_price": 44
+    },
+    {
+      "itemId": 331,
+      "stock": 20,
+      "buy_price": 21,
+      "sell_price": 33
+    },
+    {
+      "itemId": 341,
+      "stock": 20,
+      "buy_price": 7,
+      "sell_price": 11
+    },
+    {
+      "itemId": 383,
+      "stock": 0,
+      "buy_price": 118,
+      "sell_price": 187
+    }
+  ]
+}

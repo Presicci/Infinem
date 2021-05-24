@@ -1,0 +1,42 @@
+{
+  "name": "Lletya Food Store",
+  "currency": "COINS",
+  "npcs": [
+    1482
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2309,
+      "stock": 10,
+      "buy_price": 4,
+      "sell_price": 15
+    },
+    {
+      "itemId": 379,
+      "stock": 15,
+      "buy_price": 28,
+      "sell_price": 91
+    },
+    {
+      "itemId": 1993,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1985,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1891,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 0
+    }
+  ]
+}

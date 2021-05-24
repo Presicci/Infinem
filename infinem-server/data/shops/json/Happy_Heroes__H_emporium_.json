@@ -1,0 +1,24 @@
+{
+  "name": "Happy Heroes Emporium",
+  "currency": "COINS",
+  "npcs": [
+    4924
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1377,
+      "stock": 1,
+      "buy_price": 110000,
+      "sell_price": 200000
+    },
+    {
+      "itemId": 1434,
+      "stock": 1,
+      "buy_price": 27500,
+      "sell_price": 50000
+    }
+  ]
+}

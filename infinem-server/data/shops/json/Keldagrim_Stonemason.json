@@ -1,0 +1,36 @@
+{
+  "name": "Keldagrim Stonemason",
+  "currency": "COINS",
+  "npcs": [
+    5420
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 3420,
+      "stock": 1000,
+      "buy_price": 10,
+      "sell_price": 26
+    },
+    {
+      "itemId": 8786,
+      "stock": 20,
+      "buy_price": 125000,
+      "sell_price": 325000
+    },
+    {
+      "itemId": 8784,
+      "stock": 20,
+      "buy_price": 50000,
+      "sell_price": 130000
+    },
+    {
+      "itemId": 4703,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}

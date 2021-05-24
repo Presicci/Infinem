@@ -1,0 +1,32 @@
+{
+  "name": "Rising Sun Inn",
+  "currency": "COINS",
+  "npcs": [
+    1315,
+    1316,
+    1317
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 1905,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 1907,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 1913,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 3
+    }
+  ]
+}

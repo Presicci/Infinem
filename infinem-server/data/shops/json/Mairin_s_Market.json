@@ -1,0 +1,48 @@
+{
+  "name": "Mairin's Market",
+  "currency": "MERMAIDS_TEARS",
+  "npcs": [
+    7784
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 21562,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 100
+    },
+    {
+      "itemId": 21564,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 200
+    },
+    {
+      "itemId": 21566,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 300
+    },
+    {
+      "itemId": 21649,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 400
+    },
+    {
+      "itemId": 21490,
+      "stock": 1000,
+      "buy_price": -1,
+      "sell_price": 20
+    },
+    {
+      "itemId": 21693,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 30
+    }
+  ]
+}

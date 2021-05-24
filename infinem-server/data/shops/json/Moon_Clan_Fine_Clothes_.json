@@ -1,0 +1,66 @@
+{
+  "name": "Moon Clan Fine Clothes",
+  "currency": "COINS",
+  "npcs": [
+    3842
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 9068,
+      "stock": 9,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 9069,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 9070,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 9071,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 9072,
+      "stock": 9,
+      "buy_price": -1,
+      "sell_price": 900
+    },
+    {
+      "itemId": 9073,
+      "stock": 12,
+      "buy_price": -1,
+      "sell_price": 900
+    },
+    {
+      "itemId": 9074,
+      "stock": 15,
+      "buy_price": -1,
+      "sell_price": 200
+    },
+    {
+      "itemId": 1733,
+      "stock": 50,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1734,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "name": "Prifddinas Foodstuffs",
+  "currency": "COINS",
+  "npcs": [
+    9154
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1933,
+      "stock": 3,
+      "buy_price": 7,
+      "sell_price": 10
+    },
+    {
+      "itemId": 1927,
+      "stock": 3,
+      "buy_price": 4,
+      "sell_price": 6
+    },
+    {
+      "itemId": 339,
+      "stock": 3,
+      "buy_price": 7,
+      "sell_price": 10
+    },
+    {
+      "itemId": 333,
+      "stock": 3,
+      "buy_price": 7,
+      "sell_price": 10
+    },
+    {
+      "itemId": 365,
+      "stock": 3,
+      "buy_price": 28,
+      "sell_price": 40
+    },
+    {
+      "itemId": 2003,
+      "stock": 10,
+      "buy_price": 14,
+      "sell_price": 20
+    },
+    {
+      "itemId": 2309,
+      "stock": 10,
+      "buy_price": 8,
+      "sell_price": 12
+    },
+    {
+      "itemId": 1985,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 1942,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1957,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    {
+      "itemId": 1982,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 1965,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1963,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1951,
+      "stock": 3,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    {
+      "itemId": 2132,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2138,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1973,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 10
+    },
+    {
+      "itemId": 1891,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 0
+    }
+  ]
+}

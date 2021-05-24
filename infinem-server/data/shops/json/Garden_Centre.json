@@ -1,0 +1,151 @@
+{
+  "name": "Garden Centre",
+  "currency": "COINS",
+  "npcs": [
+    5423,
+    8516
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 8417,
+      "stock": 20,
+      "buy_price": 400,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8419,
+      "stock": 20,
+      "buy_price": 800,
+      "sell_price": 2000
+    },
+    {
+      "itemId": 8421,
+      "stock": 20,
+      "buy_price": 2000,
+      "sell_price": 5000
+    },
+    {
+      "itemId": 8423,
+      "stock": 20,
+      "buy_price": 4000,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 8425,
+      "stock": 20,
+      "buy_price": 6000,
+      "sell_price": 15000
+    },
+    {
+      "itemId": 8427,
+      "stock": 20,
+      "buy_price": 8000,
+      "sell_price": 20000
+    },
+    {
+      "itemId": 8429,
+      "stock": 20,
+      "buy_price": 20000,
+      "sell_price": 50000
+    },
+    {
+      "itemId": 8431,
+      "stock": 20,
+      "buy_price": 400,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 8433,
+      "stock": 20,
+      "buy_price": 2000,
+      "sell_price": 5000
+    },
+    {
+      "itemId": 8435,
+      "stock": 20,
+      "buy_price": 4000,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 8437,
+      "stock": 20,
+      "buy_price": 2000,
+      "sell_price": 5000
+    },
+    {
+      "itemId": 8439,
+      "stock": 20,
+      "buy_price": 4000,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 8441,
+      "stock": 20,
+      "buy_price": 6000,
+      "sell_price": 15000
+    },
+    {
+      "itemId": 8443,
+      "stock": 20,
+      "buy_price": 8000,
+      "sell_price": 20000
+    },
+    {
+      "itemId": 8445,
+      "stock": 20,
+      "buy_price": 10000,
+      "sell_price": 25000
+    },
+    {
+      "itemId": 8447,
+      "stock": 20,
+      "buy_price": 20000,
+      "sell_price": 50000
+    },
+    {
+      "itemId": 8449,
+      "stock": 20,
+      "buy_price": 40000,
+      "sell_price": 100000
+    },
+    {
+      "itemId": 8451,
+      "stock": 20,
+      "buy_price": 2000,
+      "sell_price": 5000
+    },
+    {
+      "itemId": 8453,
+      "stock": 20,
+      "buy_price": 4000,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 8455,
+      "stock": 20,
+      "buy_price": 6000,
+      "sell_price": 15000
+    },
+    {
+      "itemId": 8457,
+      "stock": 20,
+      "buy_price": 2000,
+      "sell_price": 5000
+    },
+    {
+      "itemId": 8459,
+      "stock": 20,
+      "buy_price": 4000,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 8461,
+      "stock": 20,
+      "buy_price": 6000,
+      "sell_price": 15000
+    }
+  ]
+}

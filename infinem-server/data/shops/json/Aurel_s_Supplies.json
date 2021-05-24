@@ -1,0 +1,36 @@
+{
+  "name": "Aurel's Supplies",
+  "currency": "COINS",
+  "npcs": [
+    4445
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1351,
+      "stock": 10,
+      "buy_price": 6,
+      "sell_price": 20
+    },
+    {
+      "itemId": 590,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 3363,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 6
+    },
+    {
+      "itemId": 353,
+      "stock": 10,
+      "buy_price": 6,
+      "sell_price": 19
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "name": "Lundail's Arena-side Rune Shop",
+  "currency": "COINS",
+  "npcs": [
+    1601
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 554,
+      "stock": 200,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 555,
+      "stock": 200,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 556,
+      "stock": 200,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 557,
+      "stock": 200,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 558,
+      "stock": 140,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 559,
+      "stock": 140,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 561,
+      "stock": 250,
+      "buy_price": 108,
+      "sell_price": 180
+    },
+    {
+      "itemId": 562,
+      "stock": 250,
+      "buy_price": 54,
+      "sell_price": 90
+    },
+    {
+      "itemId": 563,
+      "stock": 250,
+      "buy_price": 144,
+      "sell_price": 240
+    },
+    {
+      "itemId": 564,
+      "stock": 20,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 560,
+      "stock": 250,
+      "buy_price": 108,
+      "sell_price": 180
+    },
+    {
+      "itemId": 12734,
+      "stock": 5,
+      "buy_price": 258,
+      "sell_price": 430
+    },
+    {
+      "itemId": 12730,
+      "stock": 5,
+      "buy_price": 258,
+      "sell_price": 430
+    },
+    {
+      "itemId": 12728,
+      "stock": 5,
+      "buy_price": 258,
+      "sell_price": 430
+    },
+    {
+      "itemId": 12732,
+      "stock": 5,
+      "buy_price": 258,
+      "sell_price": 430
+    },
+    {
+      "itemId": 12736,
+      "stock": 4,
+      "buy_price": 198,
+      "sell_price": 330
+    },
+    {
+      "itemId": 12738,
+      "stock": 3,
+      "buy_price": 5970,
+      "sell_price": 9950
+    }
+  ]
+}

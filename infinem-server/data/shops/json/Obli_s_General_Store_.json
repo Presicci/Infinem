@@ -1,0 +1,313 @@
+{
+  "name": "Obli's General Store",
+  "currency": "COINS",
+  "generalStore": true,
+  "npcs": [
+    5362
+  ],
+  "sellMultiplier": 1500,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 590,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 229,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 11877,
+      "stock": 100,
+      "buy_price": 100,
+      "sell_price": 300
+    },
+    {
+      "itemId": 233,
+      "stock": 3,
+      "buy_price": 2,
+      "sell_price": 6
+    },
+    {
+      "itemId": 1931,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1351,
+      "stock": 3,
+      "buy_price": 8,
+      "sell_price": 24
+    },
+    {
+      "itemId": 1265,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1349,
+      "stock": 5,
+      "buy_price": 28,
+      "sell_price": 84
+    },
+    {
+      "itemId": 1129,
+      "stock": 12,
+      "buy_price": 10,
+      "sell_price": 31
+    },
+    {
+      "itemId": 1059,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 9
+    },
+    {
+      "itemId": 1061,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 9
+    },
+    {
+      "itemId": 2142,
+      "stock": 2,
+      "buy_price": 2,
+      "sell_price": 6
+    },
+    {
+      "itemId": 2309,
+      "stock": 10,
+      "buy_price": 6,
+      "sell_price": 18
+    },
+    {
+      "itemId": 2349,
+      "stock": 10,
+      "buy_price": 4,
+      "sell_price": 12
+    },
+    {
+      "itemId": 952,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 4
+    },
+    {
+      "itemId": 36,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 4
+    },
+    {
+      "itemId": 596,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1755,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2347,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 970,
+      "stock": 50,
+      "buy_price": 5,
+      "sell_price": 15
+    },
+    {
+      "itemId": 973,
+      "stock": 50,
+      "buy_price": 22,
+      "sell_price": 67
+    },
+    {
+      "itemId": 227,
+      "stock": 50,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 11879,
+      "stock": 50,
+      "buy_price": 100,
+      "sell_price": 301
+    },
+    {
+      "itemId": 975,
+      "stock": 50,
+      "buy_price": 20,
+      "sell_price": 60
+    },
+    {
+      "itemId": 954,
+      "stock": 10,
+      "buy_price": 9,
+      "sell_price": 27
+    },
+    {
+      "itemId": 590,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 229,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 11877,
+      "stock": 100,
+      "buy_price": 100,
+      "sell_price": 300
+    },
+    {
+      "itemId": 233,
+      "stock": 3,
+      "buy_price": 2,
+      "sell_price": 6
+    },
+    {
+      "itemId": 1931,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1351,
+      "stock": 3,
+      "buy_price": 8,
+      "sell_price": 24
+    },
+    {
+      "itemId": 1265,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1349,
+      "stock": 5,
+      "buy_price": 28,
+      "sell_price": 84
+    },
+    {
+      "itemId": 1129,
+      "stock": 12,
+      "buy_price": 10,
+      "sell_price": 31
+    },
+    {
+      "itemId": 1059,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 9
+    },
+    {
+      "itemId": 1061,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 9
+    },
+    {
+      "itemId": 2142,
+      "stock": 2,
+      "buy_price": 2,
+      "sell_price": 6
+    },
+    {
+      "itemId": 2309,
+      "stock": 10,
+      "buy_price": 6,
+      "sell_price": 18
+    },
+    {
+      "itemId": 2349,
+      "stock": 10,
+      "buy_price": 4,
+      "sell_price": 12
+    },
+    {
+      "itemId": 952,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 4
+    },
+    {
+      "itemId": 36,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 4
+    },
+    {
+      "itemId": 596,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1755,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2347,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 970,
+      "stock": 50,
+      "buy_price": 5,
+      "sell_price": 15
+    },
+    {
+      "itemId": 973,
+      "stock": 50,
+      "buy_price": 22,
+      "sell_price": 67
+    },
+    {
+      "itemId": 227,
+      "stock": 50,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 11879,
+      "stock": 50,
+      "buy_price": 100,
+      "sell_price": 301
+    },
+    {
+      "itemId": 975,
+      "stock": 50,
+      "buy_price": 20,
+      "sell_price": 60
+    },
+    {
+      "itemId": 954,
+      "stock": 10,
+      "buy_price": 9,
+      "sell_price": 27
+    }
+  ]
+}

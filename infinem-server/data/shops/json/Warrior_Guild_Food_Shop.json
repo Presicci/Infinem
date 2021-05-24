@@ -1,0 +1,42 @@
+{
+  "name": "Warrior Guild Food Shop",
+  "currency": "COINS",
+  "npcs": [
+    2469
+  ],
+  "sellMultiplier": 1200,
+  "buyMultiplier": 150,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 333,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 12
+    },
+    {
+      "itemId": 365,
+      "stock": 10,
+      "buy_price": 6,
+      "sell_price": 48
+    },
+    {
+      "itemId": 2289,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 6705,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 9
+    },
+    {
+      "itemId": 2003,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 24
+    }
+  ]
+}

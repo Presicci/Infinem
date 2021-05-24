@@ -1,0 +1,156 @@
+{
+  "name": "Baba Yaga's Magic Shop",
+  "currency": "COINS",
+  "npcs": [
+    3837
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 556,
+      "stock": 5000,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 555,
+      "stock": 5000,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 557,
+      "stock": 5000,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 554,
+      "stock": 5000,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 558,
+      "stock": 5000,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 559,
+      "stock": 5000,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 562,
+      "stock": 250,
+      "buy_price": 54,
+      "sell_price": 90
+    },
+    {
+      "itemId": 561,
+      "stock": 250,
+      "buy_price": 99,
+      "sell_price": 180
+    },
+    {
+      "itemId": 560,
+      "stock": 250,
+      "buy_price": 108,
+      "sell_price": 180
+    },
+    {
+      "itemId": 563,
+      "stock": 250,
+      "buy_price": 132,
+      "sell_price": 240
+    },
+    {
+      "itemId": 565,
+      "stock": 250,
+      "buy_price": 240,
+      "sell_price": 400
+    },
+    {
+      "itemId": 566,
+      "stock": 250,
+      "buy_price": 165,
+      "sell_price": 300
+    },
+    {
+      "itemId": 9075,
+      "stock": 250,
+      "buy_price": 27,
+      "sell_price": 50
+    },
+    {
+      "itemId": 12734,
+      "stock": 80,
+      "buy_price": 236,
+      "sell_price": 430
+    },
+    {
+      "itemId": 12730,
+      "stock": 80,
+      "buy_price": 236,
+      "sell_price": 430
+    },
+    {
+      "itemId": 12728,
+      "stock": 80,
+      "buy_price": 236,
+      "sell_price": 430
+    },
+    {
+      "itemId": 12732,
+      "stock": 80,
+      "buy_price": 236,
+      "sell_price": 430
+    },
+    {
+      "itemId": 12736,
+      "stock": 40,
+      "buy_price": 181,
+      "sell_price": 330
+    },
+    {
+      "itemId": 12738,
+      "stock": 35,
+      "buy_price": 5472,
+      "sell_price": 9950
+    },
+    {
+      "itemId": 1391,
+      "stock": 5,
+      "buy_price": 3850,
+      "sell_price": 7000
+    },
+    {
+      "itemId": 1387,
+      "stock": 2,
+      "buy_price": 825,
+      "sell_price": 1500
+    },
+    {
+      "itemId": 1383,
+      "stock": 2,
+      "buy_price": 825,
+      "sell_price": 1500
+    },
+    {
+      "itemId": 1381,
+      "stock": 2,
+      "buy_price": 825,
+      "sell_price": 1500
+    },
+    {
+      "itemId": 1385,
+      "stock": 2,
+      "buy_price": 825,
+      "sell_price": 1500
+    }
+  ]
+}

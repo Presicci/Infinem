@@ -1,0 +1,333 @@
+{
+  "name": "Bounty Hunter Store",
+  "currency": "BOUNTY",
+  "npcs": [
+    315,
+    316,
+    7941,
+    7942
+  ],
+  "sellMultiplier": 0,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 4587,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 300000
+    },
+    {
+      "itemId": 1305,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 300000
+    },
+    {
+      "itemId": 1215,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 90000
+    },
+    {
+      "itemId": 1377,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 600000
+    },
+    {
+      "itemId": 1434,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 150000
+    },
+    {
+      "itemId": 3204,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 900000
+    },
+    {
+      "itemId": 10828,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 150000
+    },
+    {
+      "itemId": 3751,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 234000
+    },
+    {
+      "itemId": 3753,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 234000
+    },
+    {
+      "itemId": 3749,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 234000
+    },
+    {
+      "itemId": 3755,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 234000
+    },
+    {
+      "itemId": 4091,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 360000
+    },
+    {
+      "itemId": 4093,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 240000
+    },
+    {
+      "itemId": 4089,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 45000
+    },
+    {
+      "itemId": 4095,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 30000
+    },
+    {
+      "itemId": 4097,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 30000
+    },
+    {
+      "itemId": 1127,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 255000
+    },
+    {
+      "itemId": 1079,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 192000
+    },
+    {
+      "itemId": 1093,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 192000
+    },
+    {
+      "itemId": 4207,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 540000
+    },
+    {
+      "itemId": 12759,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 12761,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 12763,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 12757,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 12781,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 12782,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 12775,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 12776,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 12777,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 12778,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 12779,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 12780,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 12771,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 12769,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 12798,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 250000
+    },
+    {
+      "itemId": 21202,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 250000
+    },
+    {
+      "itemId": 12800,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 300000
+    },
+    {
+      "itemId": 12802,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 350000
+    },
+    {
+      "itemId": 12783,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 50000
+    },
+    {
+      "itemId": 12786,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 100000
+    },
+    {
+      "itemId": 12804,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 25000000
+    },
+    {
+      "itemId": 12791,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 1200000
+    },
+    {
+      "itemId": 11941,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 4740,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 360
+    },
+    {
+      "itemId": 892,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 600
+    },
+    {
+      "itemId": 890,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 240
+    },
+    {
+      "itemId": 12789,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 100000
+    },
+    {
+      "itemId": 3105,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 5400
+    },
+    {
+      "itemId": 12849,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 250000
+    },
+    {
+      "itemId": 24229,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 1250000
+    },
+    {
+      "itemId": 12846,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 8000000
+    },
+    {
+      "itemId": 12855,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 2500000
+    },
+    {
+      "itemId": 12856,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 2500000
+    }
+  ]
+}

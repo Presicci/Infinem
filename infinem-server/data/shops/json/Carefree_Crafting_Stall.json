@@ -1,0 +1,49 @@
+{
+  "name": "Carefree Crafting Stall",
+  "currency": "COINS",
+  "npcs": [
+    2363,
+    2425
+  ],
+  "sellMultiplier": 1500,
+  "buyMultiplier": 800,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1755,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1592,
+      "stock": 4,
+      "buy_price": 4,
+      "sell_price": 7
+    },
+    {
+      "itemId": 1597,
+      "stock": 2,
+      "buy_price": 4,
+      "sell_price": 7
+    },
+    {
+      "itemId": 1733,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1734,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1759,
+      "stock": 100,
+      "buy_price": 1,
+      "sell_price": 3
+    }
+  ]
+}

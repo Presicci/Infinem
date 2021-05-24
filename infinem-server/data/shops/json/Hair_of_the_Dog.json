@@ -1,0 +1,18 @@
+{
+  "name": "Hair of the Dog",
+  "currency": "COINS",
+  "npcs": [
+    6527
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 2955,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 5
+    }
+  ]
+}

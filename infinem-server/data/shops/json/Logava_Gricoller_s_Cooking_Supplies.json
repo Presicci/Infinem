@@ -1,0 +1,108 @@
+{
+  "name": "Logava Gricoller's Cooking Supplies",
+  "currency": "COINS",
+  "npcs": [
+    6945
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2313,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 1887,
+      "stock": 5,
+      "buy_price": 5,
+      "sell_price": 10
+    },
+    {
+      "itemId": 1923,
+      "stock": 2,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 590,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1935,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 20742,
+      "stock": 4,
+      "buy_price": 77,
+      "sell_price": 140
+    },
+    {
+      "itemId": 1931,
+      "stock": 12,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1980,
+      "stock": 3,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 946,
+      "stock": 3,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 1759,
+      "stock": 30,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1942,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1955,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2309,
+      "stock": 2,
+      "buy_price": 6,
+      "sell_price": 12
+    },
+    {
+      "itemId": 1973,
+      "stock": 1,
+      "buy_price": 5,
+      "sell_price": 10
+    },
+    {
+      "itemId": 1985,
+      "stock": 3,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 1933,
+      "stock": 8,
+      "buy_price": 5,
+      "sell_price": 10
+    }
+  ]
+}

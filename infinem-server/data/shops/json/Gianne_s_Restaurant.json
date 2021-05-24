@@ -1,0 +1,90 @@
+{
+  "name": "Gianne's Restaurant",
+  "currency": "COINS",
+  "npcs": [
+    2657
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 250,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2227,
+      "stock": 3,
+      "buy_price": 30,
+      "sell_price": 120
+    },
+    {
+      "itemId": 2219,
+      "stock": 3,
+      "buy_price": 30,
+      "sell_price": 120
+    },
+    {
+      "itemId": 2221,
+      "stock": 3,
+      "buy_price": 30,
+      "sell_price": 120
+    },
+    {
+      "itemId": 2225,
+      "stock": 3,
+      "buy_price": 30,
+      "sell_price": 120
+    },
+    {
+      "itemId": 2223,
+      "stock": 3,
+      "buy_price": 30,
+      "sell_price": 120
+    },
+    {
+      "itemId": 2233,
+      "stock": 3,
+      "buy_price": 37,
+      "sell_price": 150
+    },
+    {
+      "itemId": 2231,
+      "stock": 3,
+      "buy_price": 40,
+      "sell_price": 160
+    },
+    {
+      "itemId": 2235,
+      "stock": 3,
+      "buy_price": 37,
+      "sell_price": 150
+    },
+    {
+      "itemId": 2229,
+      "stock": 3,
+      "buy_price": 40,
+      "sell_price": 160
+    },
+    {
+      "itemId": 2237,
+      "stock": 3,
+      "buy_price": 21,
+      "sell_price": 85
+    },
+    {
+      "itemId": 2243,
+      "stock": 3,
+      "buy_price": 21,
+      "sell_price": 85
+    },
+    {
+      "itemId": 2239,
+      "stock": 3,
+      "buy_price": 21,
+      "sell_price": 85
+    },
+    {
+      "itemId": 2241,
+      "stock": 3,
+      "buy_price": 21,
+      "sell_price": 85
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Louie's Armoured Legs Bazaar",
+  "currency": "COINS",
+  "npcs": [
+    2876
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 650,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1075,
+      "stock": 5,
+      "buy_price": 52,
+      "sell_price": 80
+    },
+    {
+      "itemId": 1067,
+      "stock": 3,
+      "buy_price": 182,
+      "sell_price": 280
+    },
+    {
+      "itemId": 1069,
+      "stock": 2,
+      "buy_price": 650,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 1077,
+      "stock": 1,
+      "buy_price": 1248,
+      "sell_price": 1920
+    },
+    {
+      "itemId": 1071,
+      "stock": 1,
+      "buy_price": 1690,
+      "sell_price": 2600
+    },
+    {
+      "itemId": 1073,
+      "stock": 1,
+      "buy_price": 4160,
+      "sell_price": 6400
+    }
+  ]
+}

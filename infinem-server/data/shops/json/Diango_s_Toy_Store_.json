@@ -1,0 +1,168 @@
+{
+  "name": "Diango's Toy Store",
+  "currency": "COINS",
+  "npcs": [
+    8693
+  ],
+  "sellMultiplier": 1500,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2520,
+      "stock": 5,
+      "buy_price": 50,
+      "sell_price": 150
+    },
+    {
+      "itemId": 2522,
+      "stock": 5,
+      "buy_price": 50,
+      "sell_price": 150
+    },
+    {
+      "itemId": 2524,
+      "stock": 5,
+      "buy_price": 50,
+      "sell_price": 150
+    },
+    {
+      "itemId": 4613,
+      "stock": 250,
+      "buy_price": -1,
+      "sell_price": 75
+    },
+    {
+      "itemId": 11707,
+      "stock": 3,
+      "buy_price": -1,
+      "sell_price": 45
+    },
+    {
+      "itemId": 11708,
+      "stock": 3,
+      "buy_price": -1,
+      "sell_price": 45
+    },
+    {
+      "itemId": 11709,
+      "stock": 3,
+      "buy_price": -1,
+      "sell_price": 45
+    },
+    {
+      "itemId": 12727,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 225
+    },
+    {
+      "itemId": 13188,
+      "stock": 5,
+      "buy_price": -1,
+      "sell_price": 750
+    },
+    {
+      "itemId": 13328,
+      "stock": 5,
+      "buy_price": -1,
+      "sell_price": 73
+    },
+    {
+      "itemId": 13660,
+      "stock": 1,
+      "buy_price": -1,
+      "sell_price": 300
+    },
+    {
+      "itemId": 13658,
+      "stock": 100,
+      "buy_price": 50,
+      "sell_price": 150
+    },
+    {
+      "itemId": 13679,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 150
+    },
+    {
+      "itemId": 13681,
+      "stock": 15,
+      "buy_price": -1,
+      "sell_price": 300
+    },
+    {
+      "itemId": 13215,
+      "stock": 15,
+      "buy_price": -1,
+      "sell_price": 150
+    },
+    {
+      "itemId": 13216,
+      "stock": 15,
+      "buy_price": -1,
+      "sell_price": 150
+    },
+    {
+      "itemId": 13217,
+      "stock": 15,
+      "buy_price": -1,
+      "sell_price": 150
+    },
+    {
+      "itemId": 13218,
+      "stock": 15,
+      "buy_price": -1,
+      "sell_price": 150
+    },
+    {
+      "itemId": 21314,
+      "stock": 5,
+      "buy_price": -1,
+      "sell_price": 120
+    },
+    {
+      "itemId": 22355,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 22358,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 22361,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 19699,
+      "stock": 100,
+      "buy_price": 5,
+      "sell_price": 15
+    },
+    {
+      "itemId": 21354,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 13203,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 12600,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Quality Weapons Shop",
+  "currency": "COINS",
+  "npcs": [
+    2357
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1365,
+      "stock": 2,
+      "buy_price": 357,
+      "sell_price": 845
+    },
+    {
+      "itemId": 1369,
+      "stock": 1,
+      "buy_price": 929,
+      "sell_price": 2197
+    },
+    {
+      "itemId": 1285,
+      "stock": 3,
+      "buy_price": 464,
+      "sell_price": 1098
+    },
+    {
+      "itemId": 1287,
+      "stock": 2,
+      "buy_price": 1144,
+      "sell_price": 2704
+    },
+    {
+      "itemId": 1325,
+      "stock": 2,
+      "buy_price": 220,
+      "sell_price": 520
+    },
+    {
+      "itemId": 1297,
+      "stock": 2,
+      "buy_price": 528,
+      "sell_price": 1248
+    },
+    {
+      "itemId": 1303,
+      "stock": 1,
+      "buy_price": 17600,
+      "sell_price": 41600
+    },
+    {
+      "itemId": 853,
+      "stock": 1,
+      "buy_price": 220,
+      "sell_price": 520
+    },
+    {
+      "itemId": 851,
+      "stock": 1,
+      "buy_price": 352,
+      "sell_price": 832
+    },
+    {
+      "itemId": 888,
+      "stock": 800,
+      "buy_price": 17,
+      "sell_price": 41
+    },
+    {
+      "itemId": 890,
+      "stock": 600,
+      "buy_price": 44,
+      "sell_price": 104
+    }
+  ]
+}

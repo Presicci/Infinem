@@ -1,0 +1,108 @@
+{
+  "name": "Amelia's Seed Shop",
+  "currency": "COINS",
+  "npcs": [
+    8530
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 5318,
+      "stock": 20,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 5319,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 5324,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 5322,
+      "stock": 0,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 5320,
+      "stock": 0,
+      "buy_price": 4,
+      "sell_price": 8
+    },
+    {
+      "itemId": 5323,
+      "stock": 0,
+      "buy_price": 10,
+      "sell_price": 18
+    },
+    {
+      "itemId": 5321,
+      "stock": 0,
+      "buy_price": 33,
+      "sell_price": 56
+    },
+    {
+      "itemId": 5305,
+      "stock": 20,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 5306,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    {
+      "itemId": 5097,
+      "stock": 20,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 5096,
+      "stock": 20,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 5307,
+      "stock": 20,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 5308,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 5309,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 5310,
+      "stock": 0,
+      "buy_price": 4,
+      "sell_price": 8
+    },
+    {
+      "itemId": 5311,
+      "stock": 0,
+      "buy_price": 8,
+      "sell_price": 14
+    }
+  ]
+}

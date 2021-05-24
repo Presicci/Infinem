@@ -1,0 +1,31 @@
+{
+  "name": "Tiadeche's Karambwan Stall",
+  "currency": "COINS",
+  "npcs": [
+    4699,
+    4700
+  ],
+  "sellMultiplier": 550,
+  "buyMultiplier": 450,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 3142,
+      "stock": 10,
+      "buy_price": 90,
+      "sell_price": 110
+    },
+    {
+      "itemId": 3150,
+      "stock": 50,
+      "buy_price": -1,
+      "sell_price": 10
+    },
+    {
+      "itemId": 3157,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 0
+    }
+  ]
+}

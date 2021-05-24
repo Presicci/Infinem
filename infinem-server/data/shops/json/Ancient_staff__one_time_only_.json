@@ -1,0 +1,19 @@
+{
+  "name": "Ancient Staff",
+  "currency": "COINS",
+  "npcs": [
+    688,
+    689
+  ],
+  "sellMultiplier": 0,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 4675,
+      "stock": 1,
+      "buy_price": -1,
+      "sell_price": 80000
+    }
+  ]
+}

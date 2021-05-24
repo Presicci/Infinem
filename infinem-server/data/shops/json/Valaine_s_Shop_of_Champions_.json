@@ -1,0 +1,36 @@
+{
+  "name": "Valaine's Shop of Champions",
+  "currency": "COINS",
+  "npcs": [
+    2870
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1021,
+      "stock": 2,
+      "buy_price": 12,
+      "sell_price": 41
+    },
+    {
+      "itemId": 1165,
+      "stock": 1,
+      "buy_price": 422,
+      "sell_price": 1372
+    },
+    {
+      "itemId": 1077,
+      "stock": 1,
+      "buy_price": 768,
+      "sell_price": 2496
+    },
+    {
+      "itemId": 1123,
+      "stock": 1,
+      "buy_price": 6656,
+      "sell_price": 21632
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "name": "Lowe's Archery Emporium",
+  "currency": "COINS",
+  "npcs": [
+    2883
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 882,
+      "stock": 2000,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 884,
+      "stock": 1500,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 886,
+      "stock": 1000,
+      "buy_price": 6,
+      "sell_price": 12
+    },
+    {
+      "itemId": 888,
+      "stock": 800,
+      "buy_price": 17,
+      "sell_price": 32
+    },
+    {
+      "itemId": 890,
+      "stock": 600,
+      "buy_price": 44,
+      "sell_price": 80
+    },
+    {
+      "itemId": 877,
+      "stock": 1500,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 841,
+      "stock": 4,
+      "buy_price": 27,
+      "sell_price": 50
+    },
+    {
+      "itemId": 839,
+      "stock": 4,
+      "buy_price": 44,
+      "sell_price": 80
+    },
+    {
+      "itemId": 843,
+      "stock": 3,
+      "buy_price": 55,
+      "sell_price": 100
+    },
+    {
+      "itemId": 845,
+      "stock": 3,
+      "buy_price": 88,
+      "sell_price": 160
+    },
+    {
+      "itemId": 849,
+      "stock": 2,
+      "buy_price": 110,
+      "sell_price": 200
+    },
+    {
+      "itemId": 847,
+      "stock": 2,
+      "buy_price": 176,
+      "sell_price": 320
+    },
+    {
+      "itemId": 853,
+      "stock": 1,
+      "buy_price": 220,
+      "sell_price": 400
+    },
+    {
+      "itemId": 851,
+      "stock": 1,
+      "buy_price": 352,
+      "sell_price": 640
+    },
+    {
+      "itemId": 837,
+      "stock": 2,
+      "buy_price": 38,
+      "sell_price": 70
+    }
+  ]
+}

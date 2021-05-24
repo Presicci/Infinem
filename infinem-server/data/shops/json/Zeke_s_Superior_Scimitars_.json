@@ -1,0 +1,36 @@
+{
+  "name": "Zeke's Superior Scimitars",
+  "currency": "COINS",
+  "npcs": [
+    2875
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1321,
+      "stock": 5,
+      "buy_price": 17,
+      "sell_price": 32
+    },
+    {
+      "itemId": 1323,
+      "stock": 3,
+      "buy_price": 61,
+      "sell_price": 112
+    },
+    {
+      "itemId": 1325,
+      "stock": 2,
+      "buy_price": 220,
+      "sell_price": 400
+    },
+    {
+      "itemId": 1329,
+      "stock": 1,
+      "buy_price": 572,
+      "sell_price": 1040
+    }
+  ]
+}

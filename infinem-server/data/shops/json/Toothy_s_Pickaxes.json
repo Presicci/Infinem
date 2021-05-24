@@ -1,0 +1,54 @@
+{
+  "name": "Toothy's Pickaxes",
+  "currency": "COINS",
+  "npcs": [
+    7071
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1265,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1267,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1269,
+      "stock": 3,
+      "buy_price": 275,
+      "sell_price": 650
+    },
+    {
+      "itemId": 1273,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1271,
+      "stock": 1,
+      "buy_price": 1760,
+      "sell_price": 4160
+    },
+    {
+      "itemId": 1275,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1931,
+      "stock": 50000,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}

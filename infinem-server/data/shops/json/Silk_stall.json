@@ -1,0 +1,18 @@
+{
+  "name": "Silk Stall",
+  "currency": "COINS",
+  "npcs": [
+    9162
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 950,
+      "stock": 0,
+      "buy_price": 60,
+      "sell_price": -1
+    }
+  ]
+}

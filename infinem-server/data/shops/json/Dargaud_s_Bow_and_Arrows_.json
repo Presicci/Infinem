@@ -1,0 +1,174 @@
+{
+  "name": "Dargaud's Bow and Arrows",
+  "currency": "COINS",
+  "npcs": [
+    6060
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 52,
+      "stock": 1000,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 39,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 40,
+      "stock": 400,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 41,
+      "stock": 300,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 42,
+      "stock": 200,
+      "buy_price": 8,
+      "sell_price": 16
+    },
+    {
+      "itemId": 43,
+      "stock": 200,
+      "buy_price": 20,
+      "sell_price": 40
+    },
+    {
+      "itemId": 44,
+      "stock": 150,
+      "buy_price": 100,
+      "sell_price": 200
+    },
+    {
+      "itemId": 882,
+      "stock": 1000,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 884,
+      "stock": 500,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 886,
+      "stock": 500,
+      "buy_price": 6,
+      "sell_price": 12
+    },
+    {
+      "itemId": 888,
+      "stock": 500,
+      "buy_price": 16,
+      "sell_price": 32
+    },
+    {
+      "itemId": 890,
+      "stock": 450,
+      "buy_price": 40,
+      "sell_price": 80
+    },
+    {
+      "itemId": 892,
+      "stock": 400,
+      "buy_price": 200,
+      "sell_price": 400
+    },
+    {
+      "itemId": 4773,
+      "stock": 0,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 4778,
+      "stock": 0,
+      "buy_price": 5,
+      "sell_price": 10
+    },
+    {
+      "itemId": 4783,
+      "stock": 0,
+      "buy_price": 10,
+      "sell_price": 20
+    },
+    {
+      "itemId": 4788,
+      "stock": 0,
+      "buy_price": 17,
+      "sell_price": 35
+    },
+    {
+      "itemId": 4793,
+      "stock": 0,
+      "buy_price": 25,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4798,
+      "stock": 0,
+      "buy_price": 47,
+      "sell_price": 95
+    },
+    {
+      "itemId": 4803,
+      "stock": 0,
+      "buy_price": 225,
+      "sell_price": 450
+    },
+    {
+      "itemId": 841,
+      "stock": 20,
+      "buy_price": 25,
+      "sell_price": 50
+    },
+    {
+      "itemId": 843,
+      "stock": 20,
+      "buy_price": 50,
+      "sell_price": 100
+    },
+    {
+      "itemId": 849,
+      "stock": 20,
+      "buy_price": 100,
+      "sell_price": 200
+    },
+    {
+      "itemId": 839,
+      "stock": 20,
+      "buy_price": 40,
+      "sell_price": 80
+    },
+    {
+      "itemId": 845,
+      "stock": 20,
+      "buy_price": 80,
+      "sell_price": 160
+    },
+    {
+      "itemId": 4827,
+      "stock": 0,
+      "buy_price": 90,
+      "sell_price": 180
+    },
+    {
+      "itemId": 847,
+      "stock": 10,
+      "buy_price": 160,
+      "sell_price": 320
+    }
+  ]
+}

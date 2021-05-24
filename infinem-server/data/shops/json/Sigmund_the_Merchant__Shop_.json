@@ -1,0 +1,132 @@
+{
+  "name": "Sigmund the Merchant (Shop)",
+  "currency": "COINS",
+  "npcs": [
+    3894
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 590,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 954,
+      "stock": 10,
+      "buy_price": 9,
+      "sell_price": 23
+    },
+    {
+      "itemId": 233,
+      "stock": 3,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1931,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2142,
+      "stock": 2,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 2309,
+      "stock": 10,
+      "buy_price": 6,
+      "sell_price": 15
+    },
+    {
+      "itemId": 952,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 36,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 1755,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2347,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 229,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 11877,
+      "stock": 10,
+      "buy_price": 100,
+      "sell_price": 260
+    },
+    {
+      "itemId": 227,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 11879,
+      "stock": 10,
+      "buy_price": 100,
+      "sell_price": 261
+    },
+    {
+      "itemId": 1925,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 22660,
+      "stock": 15,
+      "buy_price": 250,
+      "sell_price": 650
+    },
+    {
+      "itemId": 1929,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 7
+    },
+    {
+      "itemId": 1944,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1942,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1965,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}

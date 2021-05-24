@@ -1,0 +1,48 @@
+{
+  "name": "Keepa Kettilon's Store",
+  "currency": "COINS",
+  "npcs": [
+    1945
+  ],
+  "sellMultiplier": 1100,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 361,
+      "stock": 20,
+      "buy_price": 28,
+      "sell_price": 44
+    },
+    {
+      "itemId": 329,
+      "stock": 20,
+      "buy_price": 21,
+      "sell_price": 33
+    },
+    {
+      "itemId": 339,
+      "stock": 20,
+      "buy_price": 7,
+      "sell_price": 11
+    },
+    {
+      "itemId": 379,
+      "stock": 10,
+      "buy_price": 49,
+      "sell_price": 77
+    },
+    {
+      "itemId": 373,
+      "stock": 0,
+      "buy_price": 56,
+      "sell_price": 88
+    },
+    {
+      "itemId": 385,
+      "stock": 0,
+      "buy_price": 118,
+      "sell_price": 187
+    }
+  ]
+}

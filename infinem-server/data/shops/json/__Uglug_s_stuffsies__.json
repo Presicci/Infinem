@@ -1,0 +1,108 @@
+{
+  "name": "~ Uglug's Stuffsies",
+  "currency": "COINS",
+  "npcs": [
+    861
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 4844,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 10927,
+      "stock": 0,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 2862,
+      "stock": 100,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 1777,
+      "stock": 10,
+      "buy_price": 6,
+      "sell_price": 10
+    },
+    {
+      "itemId": 2876,
+      "stock": 0,
+      "buy_price": 51,
+      "sell_price": 85
+    },
+    {
+      "itemId": 2878,
+      "stock": 10,
+      "buy_price": 78,
+      "sell_price": 130
+    },
+    {
+      "itemId": 4850,
+      "stock": 0,
+      "buy_price": 60,
+      "sell_price": 100
+    },
+    {
+      "itemId": 946,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 4773,
+      "stock": 0,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    {
+      "itemId": 4778,
+      "stock": 0,
+      "buy_price": 6,
+      "sell_price": 10
+    },
+    {
+      "itemId": 4783,
+      "stock": 0,
+      "buy_price": 12,
+      "sell_price": 20
+    },
+    {
+      "itemId": 4788,
+      "stock": 0,
+      "buy_price": 21,
+      "sell_price": 35
+    },
+    {
+      "itemId": 4793,
+      "stock": 0,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4798,
+      "stock": 0,
+      "buy_price": 57,
+      "sell_price": 95
+    },
+    {
+      "itemId": 4803,
+      "stock": 0,
+      "buy_price": 270,
+      "sell_price": 450
+    },
+    {
+      "itemId": 4827,
+      "stock": 0,
+      "buy_price": 108,
+      "sell_price": 180
+    }
+  ]
+}

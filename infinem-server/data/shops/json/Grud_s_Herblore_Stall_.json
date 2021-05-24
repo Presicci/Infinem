@@ -1,0 +1,54 @@
+{
+  "name": "Grud's Herblore Stall",
+  "currency": "COINS",
+  "npcs": [
+    4402
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 229,
+      "stock": 50,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 11877,
+      "stock": 10,
+      "buy_price": 80,
+      "sell_price": 260
+    },
+    {
+      "itemId": 227,
+      "stock": 45,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 11879,
+      "stock": 8,
+      "buy_price": 80,
+      "sell_price": 261
+    },
+    {
+      "itemId": 233,
+      "stock": 3,
+      "buy_price": 1,
+      "sell_price": 5
+    },
+    {
+      "itemId": 221,
+      "stock": 50,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 12859,
+      "stock": 20,
+      "buy_price": 120,
+      "sell_price": 390
+    }
+  ]
+}

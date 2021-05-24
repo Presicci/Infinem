@@ -1,0 +1,132 @@
+{
+  "name": "Rometti's Fine Fashions",
+  "currency": "COINS",
+  "npcs": [
+    14
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 656,
+      "stock": 5,
+      "buy_price": 88,
+      "sell_price": 160
+    },
+    {
+      "itemId": 658,
+      "stock": 5,
+      "buy_price": 88,
+      "sell_price": 160
+    },
+    {
+      "itemId": 660,
+      "stock": 5,
+      "buy_price": 88,
+      "sell_price": 160
+    },
+    {
+      "itemId": 662,
+      "stock": 5,
+      "buy_price": 88,
+      "sell_price": 160
+    },
+    {
+      "itemId": 664,
+      "stock": 5,
+      "buy_price": 88,
+      "sell_price": 160
+    },
+    {
+      "itemId": 636,
+      "stock": 5,
+      "buy_price": 99,
+      "sell_price": 180
+    },
+    {
+      "itemId": 638,
+      "stock": 5,
+      "buy_price": 99,
+      "sell_price": 180
+    },
+    {
+      "itemId": 640,
+      "stock": 5,
+      "buy_price": 99,
+      "sell_price": 180
+    },
+    {
+      "itemId": 642,
+      "stock": 5,
+      "buy_price": 99,
+      "sell_price": 180
+    },
+    {
+      "itemId": 644,
+      "stock": 5,
+      "buy_price": 99,
+      "sell_price": 180
+    },
+    {
+      "itemId": 646,
+      "stock": 5,
+      "buy_price": 99,
+      "sell_price": 180
+    },
+    {
+      "itemId": 648,
+      "stock": 5,
+      "buy_price": 99,
+      "sell_price": 180
+    },
+    {
+      "itemId": 650,
+      "stock": 5,
+      "buy_price": 99,
+      "sell_price": 180
+    },
+    {
+      "itemId": 652,
+      "stock": 5,
+      "buy_price": 99,
+      "sell_price": 180
+    },
+    {
+      "itemId": 654,
+      "stock": 5,
+      "buy_price": 99,
+      "sell_price": 180
+    },
+    {
+      "itemId": 626,
+      "stock": 5,
+      "buy_price": 110,
+      "sell_price": 200
+    },
+    {
+      "itemId": 628,
+      "stock": 5,
+      "buy_price": 110,
+      "sell_price": 200
+    },
+    {
+      "itemId": 630,
+      "stock": 5,
+      "buy_price": 110,
+      "sell_price": 200
+    },
+    {
+      "itemId": 632,
+      "stock": 5,
+      "buy_price": 110,
+      "sell_price": 200
+    },
+    {
+      "itemId": 634,
+      "stock": 5,
+      "buy_price": 110,
+      "sell_price": 200
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Treznor's Shop",
+  "currency": "COINS",
+  "npcs": [
+    2680
+  ],
+  "sellMultiplier": 0,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 6036,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 25
+    },
+    {
+      "itemId": 6032,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 35
+    },
+    {
+      "itemId": 5341,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 15
+    },
+    {
+      "itemId": 5350,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 40
+    },
+    {
+      "itemId": 5331,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 25
+    },
+    {
+      "itemId": 5325,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 15
+    },
+    {
+      "itemId": 5343,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 15
+    }
+  ]
+}

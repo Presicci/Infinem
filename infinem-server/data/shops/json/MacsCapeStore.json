@@ -1,0 +1,156 @@
+{
+  "name": "Mac's Cape Store",
+  "currency": "COINS",
+  "npcs": [
+    6481
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 9748,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+	    {
+      "itemId": 9751,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+		    {
+      "itemId": 9754,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+			    {
+      "itemId": 9757,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+				    {
+      "itemId": 9760,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+					    {
+      "itemId": 9763,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+						    {
+      "itemId": 9766,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+							    {
+      "itemId": 9790,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+								    {
+      "itemId": 9769,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+    {
+      "itemId": 9772,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+	    {
+      "itemId": 9775,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+		    {
+      "itemId": 9778,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+			    {
+      "itemId": 9781,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+				    {
+      "itemId": 9784,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+					    {
+      "itemId": 9787,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+						    {
+      "itemId": 9949,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+							    {
+      "itemId": 9793,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+								    {
+      "itemId": 9799,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+    {
+      "itemId": 9802,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+	    {
+      "itemId": 9805,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+		    {
+      "itemId": 9808,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+			    {
+      "itemId": 9811,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+				    {
+      "itemId": 9796,
+      "stock": 100,
+      "sell_price": 99000,
+      "buy_price": 0
+    },
+					    {
+      "itemId": 13280,
+      "stock": 100,
+      "sell_price": 1000000,
+      "buy_price": 0
+    }
+  ]
+}

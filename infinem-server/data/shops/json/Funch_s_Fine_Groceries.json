@@ -1,0 +1,114 @@
+{
+  "name": "Funch's Fine Groceries",
+  "currency": "COINS",
+  "npcs": [
+    16
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2021,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 2019,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 2015,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 2017,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 2114,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 2128,
+      "stock": 20,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 2108,
+      "stock": 20,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 2102,
+      "stock": 20,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 2120,
+      "stock": 20,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 2126,
+      "stock": 5,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 2025,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1973,
+      "stock": 20,
+      "buy_price": 5,
+      "sell_price": 10
+    },
+    {
+      "itemId": 1975,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 2130,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1927,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 946,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 2026,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}

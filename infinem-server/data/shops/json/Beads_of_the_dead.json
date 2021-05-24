@@ -1,0 +1,60 @@
+{
+  "name": "Beads of the Dead",
+  "currency": "COINS",
+  "npcs": [
+    5361
+  ],
+  "sellMultiplier": 0,
+  "buyMultiplier": 0,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 607,
+      "stock": 0,
+      "buy_price": 100,
+      "sell_price": -1
+    },
+    {
+      "itemId": 608,
+      "stock": 0,
+      "buy_price": 100,
+      "sell_price": -1
+    },
+    {
+      "itemId": 624,
+      "stock": 0,
+      "buy_price": 100,
+      "sell_price": -1
+    },
+    {
+      "itemId": 606,
+      "stock": 0,
+      "buy_price": 100,
+      "sell_price": -1
+    },
+    {
+      "itemId": 611,
+      "stock": 0,
+      "buy_price": 500,
+      "sell_price": -1
+    },
+    {
+      "itemId": 616,
+      "stock": 1,
+      "buy_price": 1000,
+      "sell_price": 1200
+    },
+    {
+      "itemId": 4808,
+      "stock": 0,
+      "buy_price": 5000,
+      "sell_price": -1
+    },
+    {
+      "itemId": 4446,
+      "stock": 1,
+      "buy_price": -1,
+      "sell_price": 500
+    }
+  ]
+}

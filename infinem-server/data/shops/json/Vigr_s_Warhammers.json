@@ -1,0 +1,48 @@
+{
+  "name": "Vigr's Warhammers",
+  "currency": "COINS",
+  "npcs": [
+    2356
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1337,
+      "stock": 5,
+      "buy_price": 25,
+      "sell_price": 61
+    },
+    {
+      "itemId": 1335,
+      "stock": 4,
+      "buy_price": 95,
+      "sell_price": 224
+    },
+    {
+      "itemId": 1339,
+      "stock": 3,
+      "buy_price": 352,
+      "sell_price": 832
+    },
+    {
+      "itemId": 1341,
+      "stock": 3,
+      "buy_price": 539,
+      "sell_price": 1274
+    },
+    {
+      "itemId": 1343,
+      "stock": 2,
+      "buy_price": 913,
+      "sell_price": 2158
+    },
+    {
+      "itemId": 1345,
+      "stock": 1,
+      "buy_price": 2266,
+      "sell_price": 5356
+    }
+  ]
+}

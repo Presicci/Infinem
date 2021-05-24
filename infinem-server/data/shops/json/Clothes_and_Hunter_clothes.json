@@ -1,0 +1,144 @@
+{
+  "name": "Clothes and Hunter Clothes",
+  "currency": "COINS",
+  "npcs": [
+    2887
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1949,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 579,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1023,
+      "stock": 1,
+      "buy_price": 12,
+      "sell_price": 41
+    },
+    {
+      "itemId": 958,
+      "stock": 3,
+      "buy_price": 20,
+      "sell_price": 65
+    },
+    {
+      "itemId": 948,
+      "stock": 3,
+      "buy_price": 4,
+      "sell_price": 13
+    },
+    {
+      "itemId": 1733,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1734,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1059,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 7
+    },
+    {
+      "itemId": 1061,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 7
+    },
+    {
+      "itemId": 428,
+      "stock": 3,
+      "buy_price": 2,
+      "sell_price": 7
+    },
+    {
+      "itemId": 426,
+      "stock": 3,
+      "buy_price": 2,
+      "sell_price": 7
+    },
+    {
+      "itemId": 1757,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1013,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1015,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1011,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1007,
+      "stock": 4,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1025,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 10088,
+      "stock": 0,
+      "buy_price": 4,
+      "sell_price": 13
+    },
+    {
+      "itemId": 10090,
+      "stock": 0,
+      "buy_price": 5,
+      "sell_price": 16
+    },
+    {
+      "itemId": 10091,
+      "stock": 0,
+      "buy_price": 6,
+      "sell_price": 19
+    },
+    {
+      "itemId": 10089,
+      "stock": 0,
+      "buy_price": 6,
+      "sell_price": 20
+    },
+    {
+      "itemId": 10087,
+      "stock": 0,
+      "buy_price": 8,
+      "sell_price": 26
+    }
+  ]
+}

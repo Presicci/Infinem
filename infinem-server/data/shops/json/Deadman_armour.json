@@ -1,0 +1,31 @@
+{
+  "name": "Deadman Armour",
+  "currency": "BLOOD_MONEY",
+  "npcs": [
+    8390,
+    8391
+  ],
+  "sellMultiplier": 0,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 13317,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 1
+    },
+    {
+      "itemId": 13318,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 1
+    },
+    {
+      "itemId": 13319,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 1
+    }
+  ]
+}

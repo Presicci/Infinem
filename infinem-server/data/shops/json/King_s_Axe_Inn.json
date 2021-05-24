@@ -1,0 +1,30 @@
+{
+  "name": "King's Axe Inn",
+  "currency": "COINS",
+  "npcs": [
+    2384
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 1917,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1913,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1993,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10
+    }
+  ]
+}

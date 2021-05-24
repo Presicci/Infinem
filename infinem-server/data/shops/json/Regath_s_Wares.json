@@ -1,0 +1,132 @@
+{
+  "name": "Regath's Wares",
+  "currency": "COINS",
+  "npcs": [
+    7056
+  ],
+  "sellMultiplier": 1400,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 227,
+      "stock": 30,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 11879,
+      "stock": 25,
+      "buy_price": 80,
+      "sell_price": 281
+    },
+    {
+      "itemId": 954,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 25
+    },
+    {
+      "itemId": 554,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 555,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 556,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 557,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 558,
+      "stock": 300,
+      "buy_price": 1,
+      "sell_price": 4
+    },
+    {
+      "itemId": 559,
+      "stock": 300,
+      "buy_price": 1,
+      "sell_price": 4
+    },
+    {
+      "itemId": 565,
+      "stock": 50,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 566,
+      "stock": 50,
+      "buy_price": 120,
+      "sell_price": 420
+    },
+    {
+      "itemId": 12734,
+      "stock": 80,
+      "buy_price": 172,
+      "sell_price": 602
+    },
+    {
+      "itemId": 12730,
+      "stock": 80,
+      "buy_price": 172,
+      "sell_price": 602
+    },
+    {
+      "itemId": 12728,
+      "stock": 80,
+      "buy_price": 172,
+      "sell_price": 602
+    },
+    {
+      "itemId": 12732,
+      "stock": 80,
+      "buy_price": 172,
+      "sell_price": 602
+    },
+    {
+      "itemId": 12736,
+      "stock": 40,
+      "buy_price": 132,
+      "sell_price": 461
+    },
+    {
+      "itemId": 579,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1017,
+      "stock": 1,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 221,
+      "stock": 300,
+      "buy_price": 1,
+      "sell_price": 4
+    },
+    {
+      "itemId": 12859,
+      "stock": 60,
+      "buy_price": 120,
+      "sell_price": 420
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Dark Mage's Shop",
+  "currency": "COINS",
+  "npcs": [
+    7752,
+    7753
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 12658,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 200000
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "Cassie's Shield Shop",
+  "currency": "COINS",
+  "npcs": [
+    3214
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1171,
+      "stock": 5,
+      "buy_price": 12,
+      "sell_price": 20
+    },
+    {
+      "itemId": 1173,
+      "stock": 3,
+      "buy_price": 28,
+      "sell_price": 48
+    },
+    {
+      "itemId": 1189,
+      "stock": 3,
+      "buy_price": 40,
+      "sell_price": 68
+    },
+    {
+      "itemId": 1175,
+      "stock": 2,
+      "buy_price": 100,
+      "sell_price": 168
+    },
+    {
+      "itemId": 1191,
+      "stock": 0,
+      "buy_price": 142,
+      "sell_price": 238
+    },
+    {
+      "itemId": 1177,
+      "stock": 0,
+      "buy_price": 360,
+      "sell_price": 600
+    },
+    {
+      "itemId": 1193,
+      "stock": 0,
+      "buy_price": 510,
+      "sell_price": 850
+    },
+    {
+      "itemId": 1181,
+      "stock": 0,
+      "buy_price": 936,
+      "sell_price": 1560
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Ned's Handmade Rope",
+  "currency": "COINS",
+  "npcs": [
+    4280
+  ],
+  "sellMultiplier": 900,
+  "buyMultiplier": 200,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 954,
+      "stock": 30,
+      "buy_price": 3,
+      "sell_price": 16
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Rufus's Meat Emporium",
+  "currency": "COINS",
+  "npcs": [
+    546,
+    6478
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2132,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2138,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2134,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2136,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 335,
+      "stock": 5,
+      "buy_price": 7,
+      "sell_price": 13
+    },
+    {
+      "itemId": 349,
+      "stock": 5,
+      "buy_price": 14,
+      "sell_price": 26
+    },
+    {
+      "itemId": 331,
+      "stock": 5,
+      "buy_price": 21,
+      "sell_price": 39
+    },
+    {
+      "itemId": 383,
+      "stock": 1,
+      "buy_price": 118,
+      "sell_price": 221
+    }
+  ]
+}

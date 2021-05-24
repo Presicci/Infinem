@@ -1,0 +1,72 @@
+{
+  "name": "Blurberry Bar",
+  "currency": "COINS",
+  "npcs": [
+    6532
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 250,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2028,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 30
+    },
+    {
+      "itemId": 2030,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 30
+    },
+    {
+      "itemId": 2032,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 30
+    },
+    {
+      "itemId": 2034,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 30
+    },
+    {
+      "itemId": 2036,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 30
+    },
+    {
+      "itemId": 2038,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 30
+    },
+    {
+      "itemId": 2040,
+      "stock": 10,
+      "buy_price": 7,
+      "sell_price": 30
+    },
+    {
+      "itemId": 2102,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 20
+    },
+    {
+      "itemId": 2108,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 20
+    },
+    {
+      "itemId": 2025,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 20
+    }
+  ]
+}

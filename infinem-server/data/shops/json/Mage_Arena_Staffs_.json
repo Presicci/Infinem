@@ -1,0 +1,30 @@
+{
+  "name": "Mage Arena Staffs",
+  "currency": "COINS",
+  "npcs": [
+    1602
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 2415,
+      "stock": 5,
+      "buy_price": -1,
+      "sell_price": 80000
+    },
+    {
+      "itemId": 2416,
+      "stock": 5,
+      "buy_price": -1,
+      "sell_price": 80000
+    },
+    {
+      "itemId": 2417,
+      "stock": 5,
+      "buy_price": -1,
+      "sell_price": 80000
+    }
+  ]
+}

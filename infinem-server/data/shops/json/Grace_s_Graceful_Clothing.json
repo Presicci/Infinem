@@ -1,0 +1,54 @@
+{
+  "name": "Grace's Graceful Clothing",
+  "currency": "MARKS_OF_GRACE",
+  "npcs": [
+    5919
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 800,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 11850,
+      "stock": 100,
+      "buy_price": 28,
+      "sell_price": 35
+    },
+    {
+      "itemId": 11852,
+      "stock": 100,
+      "buy_price": 32,
+      "sell_price": 40
+    },
+    {
+      "itemId": 11854,
+      "stock": 100,
+      "buy_price": 44,
+      "sell_price": 55
+    },
+    {
+      "itemId": 11856,
+      "stock": 100,
+      "buy_price": 48,
+      "sell_price": 60
+    },
+    {
+      "itemId": 11858,
+      "stock": 100,
+      "buy_price": 24,
+      "sell_price": 30
+    },
+    {
+      "itemId": 11860,
+      "stock": 100,
+      "buy_price": 32,
+      "sell_price": 40
+    },
+    {
+      "itemId": 12641,
+      "stock": 1000,
+      "buy_price": 8,
+      "sell_price": 10
+    }
+  ]
+}

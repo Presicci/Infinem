@@ -1,0 +1,60 @@
+{
+  "name": "Prospector Percy's Nugget Shop",
+  "currency": "GOLDEN_NUGGETS",
+  "npcs": [
+    6562
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 800,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 12013,
+      "stock": 100,
+      "buy_price": 32,
+      "sell_price": 40
+    },
+    {
+      "itemId": 12014,
+      "stock": 100,
+      "buy_price": 48,
+      "sell_price": 60
+    },
+    {
+      "itemId": 12015,
+      "stock": 100,
+      "buy_price": 40,
+      "sell_price": 50
+    },
+    {
+      "itemId": 12016,
+      "stock": 100,
+      "buy_price": 24,
+      "sell_price": 30
+    },
+    {
+      "itemId": 12019,
+      "stock": 1,
+      "buy_price": 80,
+      "sell_price": 100
+    },
+    {
+      "itemId": 12020,
+      "stock": 1,
+      "buy_price": 80,
+      "sell_price": 100
+    },
+    {
+      "itemId": 12009,
+      "stock": 1000,
+      "buy_price": 8,
+      "sell_price": 10
+    },
+    {
+      "itemId": 19473,
+      "stock": 100,
+      "buy_price": 32,
+      "sell_price": 40
+    }
+  ]
+}

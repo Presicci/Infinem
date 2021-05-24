@@ -1,0 +1,19 @@
+{
+  "name": "Fairy Fixit's Fairy Enchantment",
+  "currency": "COINS",
+  "npcs": [
+    7332,
+    7333
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 20609,
+      "stock": 4,
+      "buy_price": 60,
+      "sell_price": 100
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Edward's Wilderness Cape Shop",
+  "currency": "COINS",
+  "npcs": [
+    2199
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 4323,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4343,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4363,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4383,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4403,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "name": "Allanna's Farming Shop",
+  "currency": "COINS",
+  "npcs": [
+    8531
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 5341,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 5343,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 5329,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    {
+      "itemId": 952,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 5325,
+      "stock": 3,
+      "buy_price": 7,
+      "sell_price": 12
+    },
+    {
+      "itemId": 5331,
+      "stock": 30,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 5350,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 5354,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 13250,
+      "stock": 10,
+      "buy_price": 60,
+      "sell_price": 100
+    },
+    {
+      "itemId": 6032,
+      "stock": 100,
+      "buy_price": 12,
+      "sell_price": 20
+    },
+    {
+      "itemId": 19704,
+      "stock": 10,
+      "buy_price": 1200,
+      "sell_price": 2000
+    },
+    {
+      "itemId": 1925,
+      "stock": 100,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 22660,
+      "stock": 15,
+      "buy_price": 300,
+      "sell_price": 500
+    },
+    {
+      "itemId": 5418,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 13252,
+      "stock": 30,
+      "buy_price": 60,
+      "sell_price": 100
+    },
+    {
+      "itemId": 5376,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 13254,
+      "stock": 30,
+      "buy_price": 60,
+      "sell_price": 100
+    },
+    {
+      "itemId": 6036,
+      "stock": 40,
+      "buy_price": 24,
+      "sell_price": 40
+    }
+  ]
+}

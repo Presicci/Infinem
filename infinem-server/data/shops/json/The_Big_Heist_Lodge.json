@@ -1,0 +1,18 @@
+{
+  "name": "The Big Heist Lodge",
+  "currency": "COINS",
+  "npcs": [
+    687
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 4627,
+      "stock": 10,
+      "buy_price": 350,
+      "sell_price": 650
+    }
+  ]
+}

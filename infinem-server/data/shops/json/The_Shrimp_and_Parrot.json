@@ -1,0 +1,48 @@
+{
+  "name": "The Shrimp and Parrot",
+  "currency": "COINS",
+  "npcs": [
+    4920
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 750,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 347,
+      "stock": 5,
+      "buy_price": 7,
+      "sell_price": 13
+    },
+    {
+      "itemId": 339,
+      "stock": 5,
+      "buy_price": 7,
+      "sell_price": 13
+    },
+    {
+      "itemId": 361,
+      "stock": 5,
+      "buy_price": 30,
+      "sell_price": 52
+    },
+    {
+      "itemId": 379,
+      "stock": 3,
+      "buy_price": 52,
+      "sell_price": 91
+    },
+    {
+      "itemId": 373,
+      "stock": 2,
+      "buy_price": 60,
+      "sell_price": 104
+    },
+    {
+      "itemId": 3144,
+      "stock": 3,
+      "buy_price": 187,
+      "sell_price": 325
+    }
+  ]
+}

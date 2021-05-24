@@ -1,0 +1,42 @@
+{
+  "name": "Darren's Wilderness Cape Shop",
+  "currency": "COINS",
+  "npcs": [
+    2198
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 4321,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4341,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4361,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4381,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4401,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    }
+  ]
+}

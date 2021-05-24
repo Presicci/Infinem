@@ -1,0 +1,48 @@
+{
+  "name": "Nardok's Bone Weapons",
+  "currency": "COINS",
+  "npcs": [
+    996
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 5018,
+      "stock": 10,
+      "buy_price": 360,
+      "sell_price": 600
+    },
+    {
+      "itemId": 5016,
+      "stock": 10,
+      "buy_price": 360,
+      "sell_price": 600
+    },
+    {
+      "itemId": 8872,
+      "stock": 5,
+      "buy_price": 1200,
+      "sell_price": 2000
+    },
+    {
+      "itemId": 8880,
+      "stock": 5,
+      "buy_price": 1200,
+      "sell_price": 2000
+    },
+    {
+      "itemId": 8882,
+      "stock": 1000,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 13193,
+      "stock": 80,
+      "buy_price": 210,
+      "sell_price": 350
+    }
+  ]
+}

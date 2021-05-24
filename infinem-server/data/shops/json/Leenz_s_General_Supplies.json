@@ -1,0 +1,73 @@
+{
+  "name": "Leenz's General Supplies",
+  "currency": "COINS",
+  "generalStore": true,
+  "npcs": [
+    6986
+  ],
+  "sellMultiplier": 1100,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1931,
+      "stock": 50000,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1935,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 20742,
+      "stock": 6,
+      "buy_price": 56,
+      "sell_price": 154
+    },
+    {
+      "itemId": 1925,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 22660,
+      "stock": 15,
+      "buy_price": 200,
+      "sell_price": 550
+    },
+    {
+      "itemId": 1923,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 4
+    },
+    {
+      "itemId": 590,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2347,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 4819,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 4820,
+      "stock": 500,
+      "buy_price": 1,
+      "sell_price": 4
+    }
+  ]
+}

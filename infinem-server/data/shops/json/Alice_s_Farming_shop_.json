@@ -1,0 +1,199 @@
+{
+  "name": "Alice's Farming Shop",
+  "currency": "COINS",
+  "npcs": [
+    504,
+    4422
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 5341,
+      "stock": 500,
+      "buy_price": 4,
+      "sell_price": 6
+    },
+    {
+      "itemId": 5343,
+      "stock": 500,
+      "buy_price": 4,
+      "sell_price": 6
+    },
+    {
+      "itemId": 5329,
+      "stock": 500,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    {
+      "itemId": 952,
+      "stock": 500,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    {
+      "itemId": 5325,
+      "stock": 500,
+      "buy_price": 8,
+      "sell_price": 12
+    },
+    {
+      "itemId": 5331,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 5354,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 13250,
+      "stock": 30,
+      "buy_price": 70,
+      "sell_price": 100
+    },
+    {
+      "itemId": 6032,
+      "stock": 500,
+      "buy_price": 14,
+      "sell_price": 20
+    },
+    {
+      "itemId": 19704,
+      "stock": 10,
+      "buy_price": 1400,
+      "sell_price": 2000
+    },
+    {
+      "itemId": 5418,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 13252,
+      "stock": 30,
+      "buy_price": 70,
+      "sell_price": 100
+    },
+    {
+      "itemId": 5376,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 13254,
+      "stock": 30,
+      "buy_price": 70,
+      "sell_price": 100
+    },
+    {
+      "itemId": 1925,
+      "stock": 100,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 22660,
+      "stock": 15,
+      "buy_price": 350,
+      "sell_price": 500
+    },
+    {
+      "itemId": 1942,
+      "stock": 0,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1957,
+      "stock": 0,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    {
+      "itemId": 1965,
+      "stock": 0,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1982,
+      "stock": 0,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 5986,
+      "stock": 0,
+      "buy_price": 6,
+      "sell_price": 9
+    },
+    {
+      "itemId": 5504,
+      "stock": 0,
+      "buy_price": 11,
+      "sell_price": 17
+    },
+    {
+      "itemId": 5982,
+      "stock": 0,
+      "buy_price": 33,
+      "sell_price": 48
+    },
+    {
+      "itemId": 5994,
+      "stock": 0,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 5996,
+      "stock": 0,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    {
+      "itemId": 5998,
+      "stock": 0,
+      "buy_price": 4,
+      "sell_price": 7
+    },
+    {
+      "itemId": 6000,
+      "stock": 0,
+      "buy_price": 7,
+      "sell_price": 10
+    },
+    {
+      "itemId": 6002,
+      "stock": 0,
+      "buy_price": 10,
+      "sell_price": 15
+    },
+    {
+      "itemId": 5931,
+      "stock": 0,
+      "buy_price": 4,
+      "sell_price": 6
+    },
+    {
+      "itemId": 6006,
+      "stock": 0,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 6036,
+      "stock": 100,
+      "buy_price": 28,
+      "sell_price": 40
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Two Feet Charley's Fish Shop",
+  "currency": "COINS",
+  "npcs": [
+    4017
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 317,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    {
+      "itemId": 327,
+      "stock": 10,
+      "buy_price": 6,
+      "sell_price": 10
+    },
+    {
+      "itemId": 345,
+      "stock": 7,
+      "buy_price": 6,
+      "sell_price": 10
+    },
+    {
+      "itemId": 353,
+      "stock": 7,
+      "buy_price": 9,
+      "sell_price": 15
+    },
+    {
+      "itemId": 341,
+      "stock": 6,
+      "buy_price": 6,
+      "sell_price": 10
+    },
+    {
+      "itemId": 321,
+      "stock": 5,
+      "buy_price": 9,
+      "sell_price": 15
+    },
+    {
+      "itemId": 359,
+      "stock": 4,
+      "buy_price": 24,
+      "sell_price": 40
+    },
+    {
+      "itemId": 377,
+      "stock": 2,
+      "buy_price": 42,
+      "sell_price": 70
+    },
+    {
+      "itemId": 363,
+      "stock": 2,
+      "buy_price": 24,
+      "sell_price": 40
+    },
+    {
+      "itemId": 371,
+      "stock": 1,
+      "buy_price": 48,
+      "sell_price": 80
+    }
+  ]
+}

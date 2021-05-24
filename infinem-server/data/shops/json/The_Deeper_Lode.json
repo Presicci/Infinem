@@ -1,0 +1,42 @@
+{
+  "name": "The Deeper Lode",
+  "currency": "COINS",
+  "npcs": [
+    7090
+  ],
+  "sellMultiplier": 1400,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1917,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1913,
+      "stock": 1,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1911,
+      "stock": 3,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1971,
+      "stock": 2,
+      "buy_price": 1,
+      "sell_price": 4
+    },
+    {
+      "itemId": 1919,
+      "stock": 0,
+      "buy_price": 1,
+      "sell_price": 2
+    }
+  ]
+}

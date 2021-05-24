@@ -1,0 +1,36 @@
+{
+  "name": "Myths' Guild Weaponry",
+  "currency": "COINS",
+  "npcs": [
+    8036
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1215,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1305,
+      "stock": 2,
+      "buy_price": 60000,
+      "sell_price": 100000
+    },
+    {
+      "itemId": 1434,
+      "stock": 2,
+      "buy_price": 30000,
+      "sell_price": 50000
+    },
+    {
+      "itemId": 1377,
+      "stock": 2,
+      "buy_price": 120000,
+      "sell_price": 200000
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Rupert the Beard's Shop",
+  "currency": "COINS",
+  "npcs": [
+    5120,
+    5123
+  ],
+  "sellMultiplier": 0,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 11200,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 60000
+    }
+  ]
+}

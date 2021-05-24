@@ -1,0 +1,54 @@
+{
+  "name": "Sian's Ranged Weaponry",
+  "currency": "COINS",
+  "npcs": [
+    9166
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 888,
+      "stock": 700,
+      "buy_price": 17,
+      "sell_price": 32
+    },
+    {
+      "itemId": 890,
+      "stock": 600,
+      "buy_price": 44,
+      "sell_price": 80
+    },
+    {
+      "itemId": 892,
+      "stock": 500,
+      "buy_price": 220,
+      "sell_price": 400
+    },
+    {
+      "itemId": 853,
+      "stock": 5,
+      "buy_price": 220,
+      "sell_price": 400
+    },
+    {
+      "itemId": 851,
+      "stock": 5,
+      "buy_price": 352,
+      "sell_price": 640
+    },
+    {
+      "itemId": 857,
+      "stock": 5,
+      "buy_price": 440,
+      "sell_price": 800
+    },
+    {
+      "itemId": 855,
+      "stock": 5,
+      "buy_price": 704,
+      "sell_price": 1280
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Horvik's Armour Shop",
+  "currency": "COINS",
+  "npcs": [
+    2882
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1103,
+      "stock": 5,
+      "buy_price": 36,
+      "sell_price": 60
+    },
+    {
+      "itemId": 1101,
+      "stock": 3,
+      "buy_price": 126,
+      "sell_price": 210
+    },
+    {
+      "itemId": 1105,
+      "stock": 3,
+      "buy_price": 450,
+      "sell_price": 750
+    },
+    {
+      "itemId": 1109,
+      "stock": 1,
+      "buy_price": 1170,
+      "sell_price": 1950
+    },
+    {
+      "itemId": 1117,
+      "stock": 3,
+      "buy_price": 96,
+      "sell_price": 160
+    },
+    {
+      "itemId": 1115,
+      "stock": 1,
+      "buy_price": 336,
+      "sell_price": 560
+    },
+    {
+      "itemId": 1119,
+      "stock": 1,
+      "buy_price": 1200,
+      "sell_price": 2000
+    },
+    {
+      "itemId": 1125,
+      "stock": 1,
+      "buy_price": 2304,
+      "sell_price": 3840
+    },
+    {
+      "itemId": 1121,
+      "stock": 1,
+      "buy_price": 3120,
+      "sell_price": 5200
+    },
+    {
+      "itemId": 1067,
+      "stock": 1,
+      "buy_price": 168,
+      "sell_price": 280
+    },
+    {
+      "itemId": 1133,
+      "stock": 1,
+      "buy_price": 510,
+      "sell_price": 850
+    },
+    {
+      "itemId": 1097,
+      "stock": 1,
+      "buy_price": 450,
+      "sell_price": 750
+    }
+  ]
+}

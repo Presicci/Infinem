@@ -1,0 +1,18 @@
+{
+  "name": "Leon's Prototype Crossbow",
+  "currency": "COINS",
+  "npcs": [
+    1502
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 200,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 10156,
+      "stock": 2,
+      "buy_price": 260,
+      "sell_price": 1300
+    }
+  ]
+}

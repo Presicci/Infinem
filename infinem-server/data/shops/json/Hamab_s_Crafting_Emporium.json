@@ -1,0 +1,60 @@
+{
+  "name": "Hamab's Crafting Emporium",
+  "currency": "COINS",
+  "npcs": [
+    5253
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1755,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1592,
+      "stock": 4,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1597,
+      "stock": 2,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 4020,
+      "stock": 2,
+      "buy_price": -1,
+      "sell_price": 10
+    },
+    {
+      "itemId": 1733,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1734,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1759,
+      "stock": 100,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 11065,
+      "stock": 2,
+      "buy_price": 2,
+      "sell_price": 5
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Lliann's Wares",
+  "currency": "COINS",
+  "npcs": [
+    9170
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 23911,
+      "stock": 3,
+      "buy_price": -1,
+      "sell_price": 250000000
+    },
+    {
+      "itemId": 23927,
+      "stock": 10,
+      "buy_price": 275000,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 23929,
+      "stock": 10,
+      "buy_price": 275000,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 23931,
+      "stock": 10,
+      "buy_price": 275000,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 23933,
+      "stock": 10,
+      "buy_price": 275000,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 23935,
+      "stock": 10,
+      "buy_price": 275000,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 23937,
+      "stock": 10,
+      "buy_price": 275000,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 23939,
+      "stock": 10,
+      "buy_price": 275000,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 23941,
+      "stock": 10,
+      "buy_price": 275000,
+      "sell_price": 500000
+    },
+    {
+      "itemId": 24003,
+      "stock": 50,
+      "buy_price": 275,
+      "sell_price": 500
+    },
+    {
+      "itemId": 24006,
+      "stock": 50,
+      "buy_price": 275,
+      "sell_price": 500
+    },
+    {
+      "itemId": 24024,
+      "stock": 100,
+      "buy_price": 2750,
+      "sell_price": 5000
+    }
+  ]
+}

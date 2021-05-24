@@ -1,0 +1,205 @@
+{
+  "name": "Gabooty's Tai Bwo Wannai Cooperative",
+  "currency": "TRADING_STICKS",
+  "npcs": [
+    6424,
+    6425
+  ],
+  "sellMultiplier": 1200,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 6313,
+      "stock": 50,
+      "buy_price": 300,
+      "sell_price": 600
+    },
+    {
+      "itemId": 6315,
+      "stock": 50,
+      "buy_price": 600,
+      "sell_price": 1200
+    },
+    {
+      "itemId": 6317,
+      "stock": 50,
+      "buy_price": 1200,
+      "sell_price": 2400
+    },
+    {
+      "itemId": 1625,
+      "stock": 0,
+      "buy_price": 12,
+      "sell_price": 24
+    },
+    {
+      "itemId": 1627,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    },
+    {
+      "itemId": 1629,
+      "stock": 0,
+      "buy_price": 24,
+      "sell_price": 48
+    },
+    {
+      "itemId": 1609,
+      "stock": 0,
+      "buy_price": 60,
+      "sell_price": 120
+    },
+    {
+      "itemId": 1611,
+      "stock": 0,
+      "buy_price": 90,
+      "sell_price": 180
+    },
+    {
+      "itemId": 1613,
+      "stock": 0,
+      "buy_price": 120,
+      "sell_price": 240
+    },
+    {
+      "itemId": 6311,
+      "stock": 0,
+      "buy_price": 120,
+      "sell_price": 240
+    },
+    {
+      "itemId": 6313,
+      "stock": 50,
+      "buy_price": 300,
+      "sell_price": 600
+    },
+    {
+      "itemId": 6315,
+      "stock": 50,
+      "buy_price": 600,
+      "sell_price": 1200
+    },
+    {
+      "itemId": 6317,
+      "stock": 50,
+      "buy_price": 1200,
+      "sell_price": 2400
+    },
+    {
+      "itemId": 1625,
+      "stock": 0,
+      "buy_price": 12,
+      "sell_price": 24
+    },
+    {
+      "itemId": 1627,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    },
+    {
+      "itemId": 1629,
+      "stock": 0,
+      "buy_price": 24,
+      "sell_price": 48
+    },
+    {
+      "itemId": 1609,
+      "stock": 0,
+      "buy_price": 60,
+      "sell_price": 120
+    },
+    {
+      "itemId": 1611,
+      "stock": 0,
+      "buy_price": 90,
+      "sell_price": 180
+    },
+    {
+      "itemId": 1613,
+      "stock": 0,
+      "buy_price": 120,
+      "sell_price": 240
+    },
+    {
+      "itemId": 6311,
+      "stock": 0,
+      "buy_price": 120,
+      "sell_price": 240
+    },
+    {
+      "itemId": 2084,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    },
+    {
+      "itemId": 2092,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    },
+    {
+      "itemId": 2048,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    },
+    {
+      "itemId": 2054,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    },
+    {
+      "itemId": 2064,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    },
+    {
+      "itemId": 2074,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    },
+    {
+      "itemId": 2084,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    },
+    {
+      "itemId": 2092,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    },
+    {
+      "itemId": 2048,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    },
+    {
+      "itemId": 2054,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    },
+    {
+      "itemId": 2064,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    },
+    {
+      "itemId": 2074,
+      "stock": 0,
+      "buy_price": 18,
+      "sell_price": 36
+    }
+  ]
+}

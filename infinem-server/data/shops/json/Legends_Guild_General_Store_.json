@@ -1,0 +1,37 @@
+{
+  "name": "Legends Guild General Store",
+  "currency": "COINS",
+  "generalStore": true,
+  "npcs": [
+    3960
+  ],
+  "sellMultiplier": 1550,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 373,
+      "stock": 20,
+      "buy_price": 44,
+      "sell_price": 124
+    },
+    {
+      "itemId": 2323,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 121,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 886,
+      "stock": 500,
+      "buy_price": 6,
+      "sell_price": 18
+    }
+  ]
+}

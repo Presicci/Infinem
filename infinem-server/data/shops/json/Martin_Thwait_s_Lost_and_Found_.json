@@ -1,0 +1,78 @@
+{
+  "name": "Martin Thwait's Lost and Found",
+  "currency": "COINS",
+  "npcs": [
+    3193
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 954,
+      "stock": 50,
+      "buy_price": 10,
+      "sell_price": 18
+    },
+    {
+      "itemId": 1523,
+      "stock": 25,
+      "buy_price": 12,
+      "sell_price": 20
+    },
+    {
+      "itemId": 1755,
+      "stock": 30,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 946,
+      "stock": 20,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 5560,
+      "stock": 25,
+      "buy_price": -1,
+      "sell_price": 10
+    },
+    {
+      "itemId": 864,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 863,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 865,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 3095,
+      "stock": 3,
+      "buy_price": 9,
+      "sell_price": 15
+    },
+    {
+      "itemId": 3096,
+      "stock": 2,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 3097,
+      "stock": 1,
+      "buy_price": 105,
+      "sell_price": 175
+    }
+  ]
+}

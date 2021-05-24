@@ -1,0 +1,156 @@
+{
+  "name": "Warrens Fish Monger",
+  "currency": "COINS",
+  "npcs": [
+    7912
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 303,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 307,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 309,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 311,
+      "stock": 2,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 301,
+      "stock": 2,
+      "buy_price": 14,
+      "sell_price": 26
+    },
+    {
+      "itemId": 313,
+      "stock": 1500,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    {
+      "itemId": 11883,
+      "stock": 80,
+      "buy_price": 210,
+      "sell_price": 390
+    },
+    {
+      "itemId": 314,
+      "stock": 1000,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 11881,
+      "stock": 50,
+      "buy_price": 140,
+      "sell_price": 260
+    },
+    {
+      "itemId": 305,
+      "stock": 5,
+      "buy_price": 14,
+      "sell_price": 26
+    },
+    {
+      "itemId": 317,
+      "stock": 0,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 327,
+      "stock": 200,
+      "buy_price": 7,
+      "sell_price": 13
+    },
+    {
+      "itemId": 345,
+      "stock": 0,
+      "buy_price": 7,
+      "sell_price": 13
+    },
+    {
+      "itemId": 353,
+      "stock": 0,
+      "buy_price": 10,
+      "sell_price": 19
+    },
+    {
+      "itemId": 341,
+      "stock": 0,
+      "buy_price": 7,
+      "sell_price": 13
+    },
+    {
+      "itemId": 321,
+      "stock": 0,
+      "buy_price": 10,
+      "sell_price": 19
+    },
+    {
+      "itemId": 335,
+      "stock": 0,
+      "buy_price": 7,
+      "sell_price": 13
+    },
+    {
+      "itemId": 349,
+      "stock": 0,
+      "buy_price": 14,
+      "sell_price": 26
+    },
+    {
+      "itemId": 331,
+      "stock": 0,
+      "buy_price": 21,
+      "sell_price": 39
+    },
+    {
+      "itemId": 359,
+      "stock": 0,
+      "buy_price": 28,
+      "sell_price": 52
+    },
+    {
+      "itemId": 377,
+      "stock": 0,
+      "buy_price": 49,
+      "sell_price": 91
+    },
+    {
+      "itemId": 363,
+      "stock": 0,
+      "buy_price": 28,
+      "sell_price": 52
+    },
+    {
+      "itemId": 371,
+      "stock": 0,
+      "buy_price": 56,
+      "sell_price": 104
+    },
+    {
+      "itemId": 383,
+      "stock": 0,
+      "buy_price": 118,
+      "sell_price": 221
+    }
+  ]
+}

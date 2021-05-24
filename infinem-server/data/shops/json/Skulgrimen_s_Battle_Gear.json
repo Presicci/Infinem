@@ -1,0 +1,78 @@
+{
+  "name": "Skulgrimen's Battle Gear",
+  "currency": "COINS",
+  "npcs": [
+    3935
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1337,
+      "stock": 5,
+      "buy_price": 32,
+      "sell_price": 61
+    },
+    {
+      "itemId": 1335,
+      "stock": 4,
+      "buy_price": 121,
+      "sell_price": 224
+    },
+    {
+      "itemId": 1339,
+      "stock": 3,
+      "buy_price": 448,
+      "sell_price": 832
+    },
+    {
+      "itemId": 1341,
+      "stock": 3,
+      "buy_price": 686,
+      "sell_price": 1274
+    },
+    {
+      "itemId": 1343,
+      "stock": 2,
+      "buy_price": 1162,
+      "sell_price": 2158
+    },
+    {
+      "itemId": 1345,
+      "stock": 1,
+      "buy_price": 2884,
+      "sell_price": 5356
+    },
+    {
+      "itemId": 1347,
+      "stock": 0,
+      "buy_price": 29049,
+      "sell_price": 53950
+    },
+    {
+      "itemId": 3749,
+      "stock": 5,
+      "buy_price": 42000,
+      "sell_price": 78000
+    },
+    {
+      "itemId": 3751,
+      "stock": 5,
+      "buy_price": 42000,
+      "sell_price": 78000
+    },
+    {
+      "itemId": 3753,
+      "stock": 5,
+      "buy_price": 42000,
+      "sell_price": 78000
+    },
+    {
+      "itemId": 3755,
+      "stock": 5,
+      "buy_price": 42000,
+      "sell_price": 78000
+    }
+  ]
+}

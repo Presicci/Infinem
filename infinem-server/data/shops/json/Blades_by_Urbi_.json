@@ -1,0 +1,78 @@
+{
+  "name": "Blades by Urbi",
+  "currency": "COINS",
+  "npcs": [
+    3891
+  ],
+  "sellMultiplier": 1500,
+  "buyMultiplier": 250,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1205,
+      "stock": 1,
+      "buy_price": 2,
+      "sell_price": 15
+    },
+    {
+      "itemId": 1203,
+      "stock": 1,
+      "buy_price": 8,
+      "sell_price": 52
+    },
+    {
+      "itemId": 1207,
+      "stock": 1,
+      "buy_price": 31,
+      "sell_price": 187
+    },
+    {
+      "itemId": 1217,
+      "stock": 0,
+      "buy_price": 60,
+      "sell_price": 360
+    },
+    {
+      "itemId": 1209,
+      "stock": 1,
+      "buy_price": 81,
+      "sell_price": 487
+    },
+    {
+      "itemId": 1211,
+      "stock": 1,
+      "buy_price": 200,
+      "sell_price": 1200
+    },
+    {
+      "itemId": 1213,
+      "stock": 1,
+      "buy_price": 2000,
+      "sell_price": 12000
+    },
+    {
+      "itemId": 1215,
+      "stock": 0,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1321,
+      "stock": 1,
+      "buy_price": 8,
+      "sell_price": 48
+    },
+    {
+      "itemId": 1323,
+      "stock": 1,
+      "buy_price": 28,
+      "sell_price": 168
+    },
+    {
+      "itemId": 1325,
+      "stock": 1,
+      "buy_price": 100,
+      "sell_price": 600
+    }
+  ]
+}

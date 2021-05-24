@@ -1,0 +1,48 @@
+{
+  "name": "Oobapohk's Javelin Store",
+  "currency": "COINS",
+  "npcs": [
+    7120
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 825,
+      "stock": 500,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 826,
+      "stock": 500,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 827,
+      "stock": 500,
+      "buy_price": 14,
+      "sell_price": 24
+    },
+    {
+      "itemId": 828,
+      "stock": 500,
+      "buy_price": 38,
+      "sell_price": 64
+    },
+    {
+      "itemId": 829,
+      "stock": 500,
+      "buy_price": 96,
+      "sell_price": 160
+    },
+    {
+      "itemId": 830,
+      "stock": 500,
+      "buy_price": 240,
+      "sell_price": 400
+    }
+  ]
+}

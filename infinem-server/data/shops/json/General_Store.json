@@ -1,0 +1,68 @@
+{
+  "name": "General Store",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": true,
+  "npcs": [
+    20000
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1931,
+      "stock": 50,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1935,
+      "stock": 500,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 20742,
+      "stock": 50,
+      "buy_price": 200,
+      "sell_price": 500
+    },
+    {
+      "itemId": 1735,
+      "stock": 50,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1925,
+      "stock": 500,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1923,
+      "stock": 500,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1887,
+      "stock": 50,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 590,
+      "stock": 50,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 954,
+      "stock": 50,
+      "buy_price": 2,
+      "sell_price": 5
+    }
+  ]
+}

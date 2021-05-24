@@ -1,0 +1,60 @@
+{
+  "name": "Ore Store",
+  "currency": "COINS",
+  "npcs": [
+    1941
+  ],
+  "sellMultiplier": 1100,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 436,
+      "stock": 20,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    {
+      "itemId": 438,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    {
+      "itemId": 440,
+      "stock": 10,
+      "buy_price": 11,
+      "sell_price": 18
+    },
+    {
+      "itemId": 442,
+      "stock": 5,
+      "buy_price": 52,
+      "sell_price": 82
+    },
+    {
+      "itemId": 453,
+      "stock": 10,
+      "buy_price": 31,
+      "sell_price": 49
+    },
+    {
+      "itemId": 444,
+      "stock": 5,
+      "buy_price": 105,
+      "sell_price": 165
+    },
+    {
+      "itemId": 447,
+      "stock": 0,
+      "buy_price": 113,
+      "sell_price": 178
+    },
+    {
+      "itemId": 449,
+      "stock": 0,
+      "buy_price": 280,
+      "sell_price": 440
+    }
+  ]
+}

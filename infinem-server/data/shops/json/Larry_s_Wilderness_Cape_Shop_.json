@@ -1,0 +1,42 @@
+{
+  "name": "Larry's Wilderness Cape Shop.",
+  "currency": "COINS",
+  "npcs": [
+    2197
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 4319,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4339,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4359,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4379,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    },
+    {
+      "itemId": 4399,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 50
+    }
+  ]
+}

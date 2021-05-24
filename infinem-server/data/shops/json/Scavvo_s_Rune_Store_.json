@@ -1,0 +1,66 @@
+{
+  "name": "Scavvo's Rune Store",
+  "currency": "COINS",
+  "npcs": [
+    2871
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1093,
+      "stock": 1,
+      "buy_price": 38400,
+      "sell_price": 64000
+    },
+    {
+      "itemId": 1079,
+      "stock": 1,
+      "buy_price": 38400,
+      "sell_price": 64000
+    },
+    {
+      "itemId": 1432,
+      "stock": 1,
+      "buy_price": 8640,
+      "sell_price": 14400
+    },
+    {
+      "itemId": 1113,
+      "stock": 1,
+      "buy_price": 30000,
+      "sell_price": 50000
+    },
+    {
+      "itemId": 1303,
+      "stock": 1,
+      "buy_price": 19200,
+      "sell_price": 32000
+    },
+    {
+      "itemId": 1289,
+      "stock": 1,
+      "buy_price": 12480,
+      "sell_price": 20800
+    },
+    {
+      "itemId": 1099,
+      "stock": 1,
+      "buy_price": 2340,
+      "sell_price": 3900
+    },
+    {
+      "itemId": 1065,
+      "stock": 1,
+      "buy_price": 1500,
+      "sell_price": 2500
+    },
+    {
+      "itemId": 1169,
+      "stock": 2,
+      "buy_price": 120,
+      "sell_price": 200
+    }
+  ]
+}

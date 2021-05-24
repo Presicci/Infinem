@@ -1,0 +1,96 @@
+{
+  "name": "Bandit Bargains",
+  "currency": "COINS",
+  "npcs": [
+    1833
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1823,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1831,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1937,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1921,
+      "stock": 5,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 1929,
+      "stock": 5,
+      "buy_price": 4,
+      "sell_price": 6
+    },
+    {
+      "itemId": 1935,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 20742,
+      "stock": 8,
+      "buy_price": 98,
+      "sell_price": 140
+    },
+    {
+      "itemId": 1923,
+      "stock": 5,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 1925,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 22660,
+      "stock": 15,
+      "buy_price": 350,
+      "sell_price": 500
+    },
+    {
+      "itemId": 1837,
+      "stock": 5,
+      "buy_price": 14,
+      "sell_price": 20
+    },
+    {
+      "itemId": 1833,
+      "stock": 5,
+      "buy_price": 28,
+      "sell_price": 40
+    },
+    {
+      "itemId": 1835,
+      "stock": 5,
+      "buy_price": 28,
+      "sell_price": 40
+    },
+    {
+      "itemId": 946,
+      "stock": 5,
+      "buy_price": 4,
+      "sell_price": 6
+    }
+  ]
+}

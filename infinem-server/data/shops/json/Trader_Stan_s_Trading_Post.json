@@ -1,0 +1,192 @@
+{
+  "name": "Trader Stan's Trading Post",
+  "currency": "COINS",
+  "npcs": [
+    1328,
+    1329,
+    1330,
+    1331,
+    1332,
+    1333,
+    1334
+  ],
+  "sellMultiplier": 2500,
+  "buyMultiplier": 150,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1931,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1935,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 20742,
+      "stock": 6,
+      "buy_price": 21,
+      "sell_price": 350
+    },
+    {
+      "itemId": 1735,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1925,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 5
+    },
+    {
+      "itemId": 22660,
+      "stock": 10,
+      "buy_price": 75,
+      "sell_price": 1250
+    },
+    {
+      "itemId": 1923,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 10
+    },
+    {
+      "itemId": 1887,
+      "stock": 2,
+      "buy_price": 1,
+      "sell_price": 25
+    },
+    {
+      "itemId": 590,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1755,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 2347,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 550,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 9003,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 5
+    },
+    {
+      "itemId": 954,
+      "stock": 2,
+      "buy_price": 2,
+      "sell_price": 45
+    },
+    {
+      "itemId": 946,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 15
+    },
+    {
+      "itemId": 2114,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1963,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 5
+    },
+    {
+      "itemId": 2108,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 5
+    },
+    {
+      "itemId": 4286,
+      "stock": 10,
+      "buy_price": -1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1785,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1783,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 5
+    },
+    {
+      "itemId": 401,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1781,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 5
+    },
+    {
+      "itemId": 301,
+      "stock": 20,
+      "buy_price": 3,
+      "sell_price": 50
+    },
+    {
+      "itemId": 307,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 12
+    },
+    {
+      "itemId": 1941,
+      "stock": 30,
+      "buy_price": 4,
+      "sell_price": 75
+    },
+    {
+      "itemId": 9629,
+      "stock": 25,
+      "buy_price": 82,
+      "sell_price": 1375
+    },
+    {
+      "itemId": 3226,
+      "stock": 20,
+      "buy_price": 3,
+      "sell_price": 50
+    },
+    {
+      "itemId": 1025,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 5
+    }
+  ]
+}

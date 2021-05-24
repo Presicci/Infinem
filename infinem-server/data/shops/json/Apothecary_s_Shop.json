@@ -1,0 +1,30 @@
+{
+  "name": "Apothecary's Shop",
+  "currency": "COINS",
+  "npcs": [
+    5036
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 113,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 5
+    },
+    {
+      "itemId": 3008,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 0
+    },
+    {
+      "itemId": 2446,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 5
+    }
+  ]
+}

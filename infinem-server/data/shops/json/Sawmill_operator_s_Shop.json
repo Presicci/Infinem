@@ -1,0 +1,42 @@
+{
+  "name": "Sawmill Operator's Shop",
+  "currency": "COINS",
+  "npcs": [
+    5422
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 8794,
+      "stock": 1000,
+      "buy_price": 5,
+      "sell_price": 13
+    },
+    {
+      "itemId": 8790,
+      "stock": 1000,
+      "buy_price": 250,
+      "sell_price": 650
+    },
+    {
+      "itemId": 4819,
+      "stock": 1000,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 4820,
+      "stock": 1000,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1539,
+      "stock": 1000,
+      "buy_price": 1,
+      "sell_price": 3
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "name": "Varrock Swordshop",
+  "currency": "COINS",
+  "npcs": [
+    2884
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1277,
+      "stock": 5,
+      "buy_price": 15,
+      "sell_price": 26
+    },
+    {
+      "itemId": 1279,
+      "stock": 4,
+      "buy_price": 54,
+      "sell_price": 91
+    },
+    {
+      "itemId": 1281,
+      "stock": 4,
+      "buy_price": 195,
+      "sell_price": 325
+    },
+    {
+      "itemId": 1283,
+      "stock": 3,
+      "buy_price": 374,
+      "sell_price": 624
+    },
+    {
+      "itemId": 1285,
+      "stock": 3,
+      "buy_price": 507,
+      "sell_price": 845
+    },
+    {
+      "itemId": 1287,
+      "stock": 2,
+      "buy_price": 1248,
+      "sell_price": 2080
+    },
+    {
+      "itemId": 1291,
+      "stock": 4,
+      "buy_price": 24,
+      "sell_price": 40
+    },
+    {
+      "itemId": 1293,
+      "stock": 3,
+      "buy_price": 84,
+      "sell_price": 140
+    },
+    {
+      "itemId": 1295,
+      "stock": 3,
+      "buy_price": 300,
+      "sell_price": 500
+    },
+    {
+      "itemId": 1297,
+      "stock": 2,
+      "buy_price": 576,
+      "sell_price": 960
+    },
+    {
+      "itemId": 1299,
+      "stock": 2,
+      "buy_price": 780,
+      "sell_price": 1300
+    },
+    {
+      "itemId": 1301,
+      "stock": 1,
+      "buy_price": 1920,
+      "sell_price": 3200
+    },
+    {
+      "itemId": 1205,
+      "stock": 10,
+      "buy_price": 6,
+      "sell_price": 10
+    },
+    {
+      "itemId": 1203,
+      "stock": 6,
+      "buy_price": 21,
+      "sell_price": 35
+    },
+    {
+      "itemId": 1207,
+      "stock": 5,
+      "buy_price": 75,
+      "sell_price": 125
+    },
+    {
+      "itemId": 1217,
+      "stock": 4,
+      "buy_price": 144,
+      "sell_price": 240
+    },
+    {
+      "itemId": 1209,
+      "stock": 3,
+      "buy_price": 195,
+      "sell_price": 325
+    },
+    {
+      "itemId": 1211,
+      "stock": 2,
+      "buy_price": 480,
+      "sell_price": 800
+    }
+  ]
+}

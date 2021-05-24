@@ -1,0 +1,175 @@
+{
+  "name": "The Lighthouse Store",
+  "currency": "COINS",
+  "npcs": [
+    4423,
+    4424
+  ],
+  "sellMultiplier": 1100,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 954,
+      "stock": 10,
+      "buy_price": 9,
+      "sell_price": 19
+    },
+    {
+      "itemId": 2347,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1755,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 946,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 952,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 590,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 36,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 233,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 1931,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1925,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 22660,
+      "stock": 15,
+      "buy_price": 275,
+      "sell_price": 550
+    },
+    {
+      "itemId": 1929,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 1935,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 20742,
+      "stock": 8,
+      "buy_price": 77,
+      "sell_price": 154
+    },
+    {
+      "itemId": 1937,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 229,
+      "stock": 100,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 11877,
+      "stock": 100,
+      "buy_price": 110,
+      "sell_price": 220
+    },
+    {
+      "itemId": 227,
+      "stock": 100,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 11879,
+      "stock": 100,
+      "buy_price": 110,
+      "sell_price": 221
+    },
+    {
+      "itemId": 2019,
+      "stock": 5,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 2021,
+      "stock": 5,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 2015,
+      "stock": 5,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1915,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 2017,
+      "stock": 5,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1909,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1913,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1907,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 2
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "name": "Crossbow Shop (Keldagrim)",
+  "currency": "COINS",
+  "npcs": [
+    2783
+  ],
+  "sellMultiplier": 3000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 9440,
+      "stock": 5,
+      "buy_price": 12,
+      "sell_price": 60
+    },
+    {
+      "itemId": 9442,
+      "stock": 5,
+      "buy_price": 16,
+      "sell_price": 81
+    },
+    {
+      "itemId": 9444,
+      "stock": 5,
+      "buy_price": 31,
+      "sell_price": 159
+    },
+    {
+      "itemId": 9446,
+      "stock": 5,
+      "buy_price": 46,
+      "sell_price": 231
+    },
+    {
+      "itemId": 9448,
+      "stock": 5,
+      "buy_price": 60,
+      "sell_price": 300
+    },
+    {
+      "itemId": 9450,
+      "stock": 5,
+      "buy_price": 79,
+      "sell_price": 399
+    },
+    {
+      "itemId": 9452,
+      "stock": 0,
+      "buy_price": 100,
+      "sell_price": 501
+    },
+    {
+      "itemId": 9420,
+      "stock": 5,
+      "buy_price": 12,
+      "sell_price": 60
+    },
+    {
+      "itemId": 9423,
+      "stock": 5,
+      "buy_price": 42,
+      "sell_price": 210
+    },
+    {
+      "itemId": 9425,
+      "stock": 5,
+      "buy_price": 150,
+      "sell_price": 750
+    },
+    {
+      "itemId": 9427,
+      "stock": 5,
+      "buy_price": 390,
+      "sell_price": 1950
+    },
+    {
+      "itemId": 9429,
+      "stock": 5,
+      "buy_price": 960,
+      "sell_price": 4800
+    },
+    {
+      "itemId": 9431,
+      "stock": 0,
+      "buy_price": 9600,
+      "sell_price": 48000
+    },
+    {
+      "itemId": 9174,
+      "stock": 0,
+      "buy_price": 43,
+      "sell_price": 219
+    },
+    {
+      "itemId": 9177,
+      "stock": 0,
+      "buy_price": 94,
+      "sell_price": 471
+    },
+    {
+      "itemId": 9179,
+      "stock": 0,
+      "buy_price": 216,
+      "sell_price": 1080
+    },
+    {
+      "itemId": 9181,
+      "stock": 0,
+      "buy_price": 469,
+      "sell_price": 2349
+    },
+    {
+      "itemId": 9183,
+      "stock": 0,
+      "buy_price": 1060,
+      "sell_price": 5301
+    },
+    {
+      "itemId": 9185,
+      "stock": 0,
+      "buy_price": 9720,
+      "sell_price": 48600
+    },
+    {
+      "itemId": 9433,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 1500
+    }
+  ]
+}

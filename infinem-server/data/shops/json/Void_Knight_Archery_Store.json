@@ -1,0 +1,84 @@
+{
+  "name": "Void Knight Archery Store",
+  "currency": "COINS",
+  "npcs": [
+    1765
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 825,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 826,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 827,
+      "stock": 10,
+      "buy_price": 14,
+      "sell_price": 24
+    },
+    {
+      "itemId": 828,
+      "stock": 5,
+      "buy_price": 38,
+      "sell_price": 64
+    },
+    {
+      "itemId": 829,
+      "stock": 5,
+      "buy_price": 96,
+      "sell_price": 160
+    },
+    {
+      "itemId": 830,
+      "stock": 5,
+      "buy_price": 240,
+      "sell_price": 400
+    },
+    {
+      "itemId": 39,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 40,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 41,
+      "stock": 10,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    {
+      "itemId": 42,
+      "stock": 5,
+      "buy_price": 9,
+      "sell_price": 16
+    },
+    {
+      "itemId": 43,
+      "stock": 5,
+      "buy_price": 24,
+      "sell_price": 40
+    },
+    {
+      "itemId": 44,
+      "stock": 5,
+      "buy_price": 120,
+      "sell_price": 200
+    }
+  ]
+}

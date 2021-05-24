@@ -1,0 +1,30 @@
+{
+  "name": "Rellekka Longhall Bar",
+  "currency": "COINS",
+  "npcs": [
+    3932
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1917,
+      "stock": 5,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 3803,
+      "stock": 5,
+      "buy_price": 14,
+      "sell_price": 26
+    },
+    {
+      "itemId": 3711,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}

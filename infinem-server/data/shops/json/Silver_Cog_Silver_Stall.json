@@ -1,0 +1,30 @@
+{
+  "name": "Silver Cog Silver Stall",
+  "currency": "COINS",
+  "npcs": [
+    2364
+  ],
+  "sellMultiplier": 1500,
+  "buyMultiplier": 800,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1714,
+      "stock": 2,
+      "buy_price": 160,
+      "sell_price": 300
+    },
+    {
+      "itemId": 442,
+      "stock": 1,
+      "buy_price": 60,
+      "sell_price": 112
+    },
+    {
+      "itemId": 2355,
+      "stock": 1,
+      "buy_price": 120,
+      "sell_price": 225
+    }
+  ]
+}

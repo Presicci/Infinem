@@ -1,0 +1,54 @@
+{
+  "name": "Ore Seller",
+  "currency": "COINS",
+  "npcs": [
+    1560
+  ],
+  "sellMultiplier": 1500,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 436,
+      "stock": 100,
+      "buy_price": 1,
+      "sell_price": 4
+    },
+    {
+      "itemId": 438,
+      "stock": 100,
+      "buy_price": 1,
+      "sell_price": 4
+    },
+    {
+      "itemId": 440,
+      "stock": 100,
+      "buy_price": 6,
+      "sell_price": 25
+    },
+    {
+      "itemId": 447,
+      "stock": 100,
+      "buy_price": 64,
+      "sell_price": 243
+    },
+    {
+      "itemId": 442,
+      "stock": 100,
+      "buy_price": 30,
+      "sell_price": 112
+    },
+    {
+      "itemId": 444,
+      "stock": 100,
+      "buy_price": 60,
+      "sell_price": 225
+    },
+    {
+      "itemId": 453,
+      "stock": 100,
+      "buy_price": 18,
+      "sell_price": 67
+    }
+  ]
+}

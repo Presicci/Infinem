@@ -1,0 +1,54 @@
+{
+  "name": "Miscellanian Clothes Shop",
+  "currency": "COINS",
+  "npcs": [
+    1079
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 3767,
+      "stock": 5,
+      "buy_price": 137,
+      "sell_price": 250
+    },
+    {
+      "itemId": 3769,
+      "stock": 5,
+      "buy_price": 137,
+      "sell_price": 250
+    },
+    {
+      "itemId": 3771,
+      "stock": 5,
+      "buy_price": 137,
+      "sell_price": 250
+    },
+    {
+      "itemId": 3773,
+      "stock": 5,
+      "buy_price": 137,
+      "sell_price": 250
+    },
+    {
+      "itemId": 3775,
+      "stock": 5,
+      "buy_price": 137,
+      "sell_price": 250
+    },
+    {
+      "itemId": 3793,
+      "stock": 5,
+      "buy_price": 275,
+      "sell_price": 500
+    },
+    {
+      "itemId": 3795,
+      "stock": 5,
+      "buy_price": 275,
+      "sell_price": 500
+    }
+  ]
+}

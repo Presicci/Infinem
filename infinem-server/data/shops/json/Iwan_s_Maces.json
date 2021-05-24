@@ -1,0 +1,30 @@
+{
+  "name": "Iwan's Maces",
+  "currency": "COINS",
+  "npcs": [
+    9153
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1428,
+      "stock": 3,
+      "buy_price": 351,
+      "sell_price": 585
+    },
+    {
+      "itemId": 1430,
+      "stock": 2,
+      "buy_price": 864,
+      "sell_price": 1440
+    },
+    {
+      "itemId": 1432,
+      "stock": 1,
+      "buy_price": 8640,
+      "sell_price": 14400
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "name": "Yrsa's Accoutrements",
+  "currency": "COINS",
+  "npcs": [
+    3933
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 3775,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3773,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3767,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3769,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3771,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3793,
+      "stock": 5,
+      "buy_price": 350,
+      "sell_price": 650
+    },
+    {
+      "itemId": 3795,
+      "stock": 5,
+      "buy_price": 350,
+      "sell_price": 650
+    },
+    {
+      "itemId": 3797,
+      "stock": 5,
+      "buy_price": 350,
+      "sell_price": 650
+    },
+    {
+      "itemId": 3791,
+      "stock": 5,
+      "buy_price": 350,
+      "sell_price": 650
+    },
+    {
+      "itemId": 3799,
+      "stock": 5,
+      "buy_price": 350,
+      "sell_price": 650
+    },
+    {
+      "itemId": 3765,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3763,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3761,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3759,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3777,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3779,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3781,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3783,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3785,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3787,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    },
+    {
+      "itemId": 3789,
+      "stock": 5,
+      "buy_price": 175,
+      "sell_price": 325
+    }
+  ]
+}

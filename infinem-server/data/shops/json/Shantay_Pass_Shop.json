@@ -1,0 +1,132 @@
+{
+  "name": "Shantay Pass Shop",
+  "currency": "COINS",
+  "npcs": [
+    4642
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1823,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1831,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1937,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1921,
+      "stock": 10,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 1929,
+      "stock": 10,
+      "buy_price": 4,
+      "sell_price": 6
+    },
+    {
+      "itemId": 946,
+      "stock": 10,
+      "buy_price": 4,
+      "sell_price": 6
+    },
+    {
+      "itemId": 1833,
+      "stock": 10,
+      "buy_price": 28,
+      "sell_price": 40
+    },
+    {
+      "itemId": 1835,
+      "stock": 10,
+      "buy_price": 28,
+      "sell_price": 40
+    },
+    {
+      "itemId": 1837,
+      "stock": 10,
+      "buy_price": 14,
+      "sell_price": 20
+    },
+    {
+      "itemId": 2349,
+      "stock": 10,
+      "buy_price": 5,
+      "sell_price": 8
+    },
+    {
+      "itemId": 314,
+      "stock": 500,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 11881,
+      "stock": 50,
+      "buy_price": 140,
+      "sell_price": 200
+    },
+    {
+      "itemId": 2347,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 22660,
+      "stock": 15,
+      "buy_price": 350,
+      "sell_price": 500
+    },
+    {
+      "itemId": 1925,
+      "stock": 0,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1923,
+      "stock": 0,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 1935,
+      "stock": 0,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 20742,
+      "stock": 0,
+      "buy_price": 98,
+      "sell_price": 140
+    },
+    {
+      "itemId": 1854,
+      "stock": 500,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    {
+      "itemId": 954,
+      "stock": 20,
+      "buy_price": 12,
+      "sell_price": 18
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Aneirin's Armour",
+  "currency": "COINS",
+  "npcs": [
+    9157
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1121,
+      "stock": 4,
+      "buy_price": 3120,
+      "sell_price": 5200
+    },
+    {
+      "itemId": 1123,
+      "stock": 3,
+      "buy_price": 9984,
+      "sell_price": 16640
+    },
+    {
+      "itemId": 1113,
+      "stock": 1,
+      "buy_price": 30000,
+      "sell_price": 50000
+    },
+    {
+      "itemId": 1071,
+      "stock": 4,
+      "buy_price": 1560,
+      "sell_price": 2600
+    },
+    {
+      "itemId": 1073,
+      "stock": 3,
+      "buy_price": 3840,
+      "sell_price": 6400
+    },
+    {
+      "itemId": 1079,
+      "stock": 1,
+      "buy_price": 38400,
+      "sell_price": 64000
+    },
+    {
+      "itemId": 1085,
+      "stock": 4,
+      "buy_price": 1560,
+      "sell_price": 2600
+    },
+    {
+      "itemId": 1091,
+      "stock": 3,
+      "buy_price": 3840,
+      "sell_price": 6400
+    },
+    {
+      "itemId": 1093,
+      "stock": 1,
+      "buy_price": 38400,
+      "sell_price": 64000
+    },
+    {
+      "itemId": 1159,
+      "stock": 4,
+      "buy_price": 858,
+      "sell_price": 1430
+    },
+    {
+      "itemId": 1161,
+      "stock": 3,
+      "buy_price": 2112,
+      "sell_price": 3520
+    },
+    {
+      "itemId": 1163,
+      "stock": 1,
+      "buy_price": 21120,
+      "sell_price": 35200
+    }
+  ]
+}

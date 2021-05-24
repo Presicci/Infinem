@@ -1,0 +1,42 @@
+{
+  "name": "Legends Guild Shop of Useful Items",
+  "currency": "COINS",
+  "npcs": [
+    3961
+  ],
+  "sellMultiplier": 1500,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 299,
+      "stock": 6,
+      "buy_price": 100,
+      "sell_price": 300
+    },
+    {
+      "itemId": 1590,
+      "stock": 5,
+      "buy_price": -1,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1542,
+      "stock": 3,
+      "buy_price": -1,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2368,
+      "stock": 1,
+      "buy_price": 250000,
+      "sell_price": 750000
+    },
+    {
+      "itemId": 1052,
+      "stock": 3,
+      "buy_price": -1,
+      "sell_price": 675
+    }
+  ]
+}

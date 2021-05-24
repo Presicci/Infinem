@@ -1,0 +1,24 @@
+{
+  "name": "Rok's Chocs Box",
+  "currency": "COINS",
+  "npcs": [
+    4761
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 650,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 6794,
+      "stock": 30,
+      "buy_price": 19,
+      "sell_price": 30
+    },
+    {
+      "itemId": 1973,
+      "stock": 25,
+      "buy_price": 6,
+      "sell_price": 10
+    }
+  ]
+}

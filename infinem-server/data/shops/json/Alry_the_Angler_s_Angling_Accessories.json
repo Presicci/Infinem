@@ -1,0 +1,60 @@
+{
+  "name": "Alry the Angler's Angling Accessories",
+  "currency": "MOLCH_PEARLS",
+  "npcs": [
+    8521
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 1000,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 22846,
+      "stock": 1000,
+      "buy_price": -1,
+      "sell_price": 100
+    },
+    {
+      "itemId": 22844,
+      "stock": 1000,
+      "buy_price": -1,
+      "sell_price": 120
+    },
+    {
+      "itemId": 22842,
+      "stock": 1000,
+      "buy_price": -1,
+      "sell_price": 150
+    },
+    {
+      "itemId": 22838,
+      "stock": 1000,
+      "buy_price": -1,
+      "sell_price": 1000
+    },
+    {
+      "itemId": 13258,
+      "stock": 1000,
+      "buy_price": -1,
+      "sell_price": 100
+    },
+    {
+      "itemId": 13259,
+      "stock": 1000,
+      "buy_price": -1,
+      "sell_price": 100
+    },
+    {
+      "itemId": 13260,
+      "stock": 1000,
+      "buy_price": -1,
+      "sell_price": 100
+    },
+    {
+      "itemId": 13261,
+      "stock": 1000,
+      "buy_price": -1,
+      "sell_price": 100
+    }
+  ]
+}

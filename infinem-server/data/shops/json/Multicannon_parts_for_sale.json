@@ -1,0 +1,54 @@
+{
+  "name": "Multicannon Parts for Sale",
+  "currency": "COINS",
+  "npcs": [
+    1400
+  ],
+  "sellMultiplier": 1070,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 8,
+      "stock": 5,
+      "buy_price": 75000,
+      "sell_price": 200625
+    },
+    {
+      "itemId": 6,
+      "stock": 5,
+      "buy_price": 75000,
+      "sell_price": 200625
+    },
+    {
+      "itemId": 12,
+      "stock": 5,
+      "buy_price": 75000,
+      "sell_price": 200625
+    },
+    {
+      "itemId": 10,
+      "stock": 5,
+      "buy_price": 75000,
+      "sell_price": 200625
+    },
+    {
+      "itemId": 5,
+      "stock": 5,
+      "buy_price": -1,
+      "sell_price": 10
+    },
+    {
+      "itemId": 4,
+      "stock": 5,
+      "buy_price": -1,
+      "sell_price": 5
+    },
+    {
+      "itemId": 12863,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 750000
+    }
+  ]
+}

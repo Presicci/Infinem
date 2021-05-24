@@ -1,0 +1,55 @@
+{
+  "name": "Zaff's Superior Staffs",
+  "currency": "COINS",
+  "npcs": [
+    2880,
+    4161
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1391,
+      "stock": 5,
+      "buy_price": 3850,
+      "sell_price": 7000
+    },
+    {
+      "itemId": 1379,
+      "stock": 5,
+      "buy_price": 8,
+      "sell_price": 15
+    },
+    {
+      "itemId": 1389,
+      "stock": 5,
+      "buy_price": 110,
+      "sell_price": 200
+    },
+    {
+      "itemId": 1381,
+      "stock": 2,
+      "buy_price": 825,
+      "sell_price": 1500
+    },
+    {
+      "itemId": 1383,
+      "stock": 2,
+      "buy_price": 825,
+      "sell_price": 1500
+    },
+    {
+      "itemId": 1385,
+      "stock": 2,
+      "buy_price": 825,
+      "sell_price": 1500
+    },
+    {
+      "itemId": 1387,
+      "stock": 2,
+      "buy_price": 825,
+      "sell_price": 1500
+    }
+  ]
+}

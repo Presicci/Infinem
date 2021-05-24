@@ -1,0 +1,18 @@
+{
+  "name": "Magic Secateurs",
+  "currency": "COINS",
+  "npcs": [
+    1783
+  ],
+  "sellMultiplier": 0,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 7409,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 40000
+    }
+  ]
+}

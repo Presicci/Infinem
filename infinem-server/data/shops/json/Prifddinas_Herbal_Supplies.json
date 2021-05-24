@@ -1,0 +1,54 @@
+{
+  "name": "Prifddinas Herbal Supplies",
+  "currency": "COINS",
+  "npcs": [
+    9168
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 233,
+      "stock": 3,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 229,
+      "stock": 100,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 227,
+      "stock": 100,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 221,
+      "stock": 50,
+      "buy_price": 2,
+      "sell_price": 3
+    },
+    {
+      "itemId": 11877,
+      "stock": 100,
+      "buy_price": 140,
+      "sell_price": 200
+    },
+    {
+      "itemId": 11879,
+      "stock": 100,
+      "buy_price": 140,
+      "sell_price": 201
+    },
+    {
+      "itemId": 12859,
+      "stock": 50,
+      "buy_price": 210,
+      "sell_price": 300
+    }
+  ]
+}

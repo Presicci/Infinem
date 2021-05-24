@@ -1,0 +1,42 @@
+{
+  "name": "Weapons Galore",
+  "currency": "COINS",
+  "npcs": [
+    1944
+  ],
+  "sellMultiplier": 1100,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1299,
+      "stock": 4,
+      "buy_price": 909,
+      "sell_price": 1430
+    },
+    {
+      "itemId": 1343,
+      "stock": 4,
+      "buy_price": 1162,
+      "sell_price": 1826
+    },
+    {
+      "itemId": 1369,
+      "stock": 4,
+      "buy_price": 1183,
+      "sell_price": 1859
+    },
+    {
+      "itemId": 3099,
+      "stock": 4,
+      "buy_price": 332,
+      "sell_price": 522
+    },
+    {
+      "itemId": 1315,
+      "stock": 4,
+      "buy_price": 1819,
+      "sell_price": 2860
+    }
+  ]
+}

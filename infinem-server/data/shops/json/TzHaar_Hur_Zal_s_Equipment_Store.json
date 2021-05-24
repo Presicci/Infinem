@@ -1,0 +1,84 @@
+{
+  "name": "TzHaar-Hur-Zal's Equipment Store",
+  "currency": "TOKKUL",
+  "npcs": [
+    7688
+  ],
+  "sellMultiplier": 1500,
+  "buyMultiplier": 150,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 6522,
+      "stock": 500,
+      "buy_price": 37,
+      "sell_price": 375
+    },
+    {
+      "itemId": 6523,
+      "stock": 1,
+      "buy_price": 6000,
+      "sell_price": 60000
+    },
+    {
+      "itemId": 6525,
+      "stock": 1,
+      "buy_price": 3750,
+      "sell_price": 37500
+    },
+    {
+      "itemId": 6528,
+      "stock": 1,
+      "buy_price": 7500,
+      "sell_price": 75001
+    },
+    {
+      "itemId": 6526,
+      "stock": 1,
+      "buy_price": 5250,
+      "sell_price": 52500
+    },
+    {
+      "itemId": 6527,
+      "stock": 1,
+      "buy_price": 4500,
+      "sell_price": 45000
+    },
+    {
+      "itemId": 6568,
+      "stock": 1,
+      "buy_price": 9000,
+      "sell_price": 90000
+    },
+    {
+      "itemId": 6524,
+      "stock": 1,
+      "buy_price": 6750,
+      "sell_price": 67500
+    },
+    {
+      "itemId": 21298,
+      "stock": 1,
+      "buy_price": 8448,
+      "sell_price": 84480
+    },
+    {
+      "itemId": 21301,
+      "stock": 1,
+      "buy_price": 12600,
+      "sell_price": 126000
+    },
+    {
+      "itemId": 21304,
+      "stock": 1,
+      "buy_price": 10050,
+      "sell_price": 100500
+    },
+    {
+      "itemId": 6522,
+      "stock": 500,
+      "buy_price": 37,
+      "sell_price": 375
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Falador Party Room",
+  "currency": "COINS",
+  "npcs": [
+    5794,
+    5795
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 1917,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 2
+    }
+  ]
+}

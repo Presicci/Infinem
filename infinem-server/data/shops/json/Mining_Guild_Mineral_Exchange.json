@@ -1,0 +1,24 @@
+{
+  "name": "Mining Guild Mineral Exchange",
+  "currency": "UNIDENTIFIED_MATERIALS",
+  "npcs": [
+    7719
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 800,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 21343,
+      "stock": 100,
+      "buy_price": 48,
+      "sell_price": 60
+    },
+    {
+      "itemId": 21345,
+      "stock": 100,
+      "buy_price": 96,
+      "sell_price": 120
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Ava's Odds and Ends",
+  "currency": "COINS",
+  "npcs": [
+    4407
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 314,
+      "stock": 1000,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 11881,
+      "stock": 100,
+      "buy_price": 80,
+      "sell_price": 260
+    },
+    {
+      "itemId": 884,
+      "stock": 40,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 886,
+      "stock": 10,
+      "buy_price": 4,
+      "sell_price": 15
+    },
+    {
+      "itemId": 40,
+      "stock": 30,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 41,
+      "stock": 20,
+      "buy_price": 2,
+      "sell_price": 7
+    }
+  ]
+}

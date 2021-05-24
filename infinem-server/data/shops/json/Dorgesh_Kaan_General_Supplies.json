@@ -1,0 +1,67 @@
+{
+  "name": "Dorgesh-Kaan General Supplies",
+  "currency": "COINS",
+  "generalStore": true,
+  "npcs": [
+    2314
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 596,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 590,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1931,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1935,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 20742,
+      "stock": 6,
+      "buy_price": 77,
+      "sell_price": 182
+    },
+    {
+      "itemId": 1923,
+      "stock": 2,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1887,
+      "stock": 2,
+      "buy_price": 5,
+      "sell_price": 13
+    },
+    {
+      "itemId": 954,
+      "stock": 3,
+      "buy_price": 9,
+      "sell_price": 23
+    },
+    {
+      "itemId": 1785,
+      "stock": 1,
+      "buy_price": 1,
+      "sell_price": 2
+    }
+  ]
+}

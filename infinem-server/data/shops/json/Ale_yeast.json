@@ -1,0 +1,19 @@
+{
+  "name": "Ale Yeast",
+  "currency": "COINS",
+  "npcs": [
+    3241,
+    3242
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 5767,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 25
+    }
+  ]
+}

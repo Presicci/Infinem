@@ -1,0 +1,103 @@
+{
+  "name": "Grum's Gold Exchange",
+  "currency": "COINS",
+  "npcs": [
+    1789,
+    2889
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 700,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1635,
+      "stock": 0,
+      "buy_price": 244,
+      "sell_price": 350
+    },
+    {
+      "itemId": 1637,
+      "stock": 0,
+      "buy_price": 630,
+      "sell_price": 900
+    },
+    {
+      "itemId": 1639,
+      "stock": 0,
+      "buy_price": 892,
+      "sell_price": 1275
+    },
+    {
+      "itemId": 1641,
+      "stock": 0,
+      "buy_price": 1417,
+      "sell_price": 2025
+    },
+    {
+      "itemId": 1643,
+      "stock": 0,
+      "buy_price": 2467,
+      "sell_price": 3525
+    },
+    {
+      "itemId": 1654,
+      "stock": 0,
+      "buy_price": 315,
+      "sell_price": 450
+    },
+    {
+      "itemId": 1656,
+      "stock": 0,
+      "buy_price": 735,
+      "sell_price": 1050
+    },
+    {
+      "itemId": 1658,
+      "stock": 0,
+      "buy_price": 997,
+      "sell_price": 1425
+    },
+    {
+      "itemId": 1660,
+      "stock": 0,
+      "buy_price": 1522,
+      "sell_price": 2175
+    },
+    {
+      "itemId": 1662,
+      "stock": 0,
+      "buy_price": 2572,
+      "sell_price": 3675
+    },
+    {
+      "itemId": 1692,
+      "stock": 0,
+      "buy_price": 244,
+      "sell_price": 350
+    },
+    {
+      "itemId": 1694,
+      "stock": 0,
+      "buy_price": 630,
+      "sell_price": 900
+    },
+    {
+      "itemId": 1696,
+      "stock": 0,
+      "buy_price": 892,
+      "sell_price": 1275
+    },
+    {
+      "itemId": 1698,
+      "stock": 0,
+      "buy_price": 1417,
+      "sell_price": 2025
+    },
+    {
+      "itemId": 1700,
+      "stock": 0,
+      "buy_price": 2467,
+      "sell_price": 3525
+    }
+  ]
+}

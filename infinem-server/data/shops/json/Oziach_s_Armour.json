@@ -1,0 +1,30 @@
+{
+  "name": "Oziach's Armour",
+  "currency": "COINS",
+  "npcs": [
+    822
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1127,
+      "stock": 2,
+      "buy_price": 26000,
+      "sell_price": 84500
+    },
+    {
+      "itemId": 1135,
+      "stock": 2,
+      "buy_price": 3120,
+      "sell_price": 10140
+    },
+    {
+      "itemId": 1540,
+      "stock": 35,
+      "buy_price": 0,
+      "sell_price": 0
+    }
+  ]
+}

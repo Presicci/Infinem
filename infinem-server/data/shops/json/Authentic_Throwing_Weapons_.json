@@ -1,0 +1,84 @@
+{
+  "name": "Authentic Throwing Weapons",
+  "currency": "COINS",
+  "npcs": [
+    6069
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 825,
+      "stock": 900,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    {
+      "itemId": 826,
+      "stock": 800,
+      "buy_price": 3,
+      "sell_price": 7
+    },
+    {
+      "itemId": 827,
+      "stock": 700,
+      "buy_price": 12,
+      "sell_price": 31
+    },
+    {
+      "itemId": 828,
+      "stock": 600,
+      "buy_price": 32,
+      "sell_price": 83
+    },
+    {
+      "itemId": 829,
+      "stock": 500,
+      "buy_price": 80,
+      "sell_price": 208
+    },
+    {
+      "itemId": 830,
+      "stock": 400,
+      "buy_price": 200,
+      "sell_price": 520
+    },
+    {
+      "itemId": 800,
+      "stock": 900,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 801,
+      "stock": 800,
+      "buy_price": 3,
+      "sell_price": 9
+    },
+    {
+      "itemId": 802,
+      "stock": 700,
+      "buy_price": 13,
+      "sell_price": 33
+    },
+    {
+      "itemId": 803,
+      "stock": 600,
+      "buy_price": 35,
+      "sell_price": 91
+    },
+    {
+      "itemId": 804,
+      "stock": 500,
+      "buy_price": 88,
+      "sell_price": 228
+    },
+    {
+      "itemId": 805,
+      "stock": 400,
+      "buy_price": 220,
+      "sell_price": 572
+    }
+  ]
+}

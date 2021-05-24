@@ -1,0 +1,30 @@
+{
+  "name": "Dragon Inn",
+  "currency": "COINS",
+  "npcs": [
+    1320
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    {
+      "itemId": 1911,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1909,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 10
+    },
+    {
+      "itemId": 1917,
+      "stock": 2147483647,
+      "buy_price": -1,
+      "sell_price": 2
+    }
+  ]
+}

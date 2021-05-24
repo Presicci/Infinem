@@ -1,0 +1,54 @@
+{
+  "name": "Bob's Brilliant Axes",
+  "currency": "COINS",
+  "npcs": [
+    2812
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1265,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1351,
+      "stock": 10,
+      "buy_price": 9,
+      "sell_price": 16
+    },
+    {
+      "itemId": 1349,
+      "stock": 5,
+      "buy_price": 33,
+      "sell_price": 56
+    },
+    {
+      "itemId": 1353,
+      "stock": 3,
+      "buy_price": 120,
+      "sell_price": 200
+    },
+    {
+      "itemId": 1363,
+      "stock": 5,
+      "buy_price": 109,
+      "sell_price": 182
+    },
+    {
+      "itemId": 1365,
+      "stock": 2,
+      "buy_price": 390,
+      "sell_price": 650
+    },
+    {
+      "itemId": 1369,
+      "stock": 1,
+      "buy_price": 1014,
+      "sell_price": 1690
+    }
+  ]
+}

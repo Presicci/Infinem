@@ -1,0 +1,42 @@
+{
+  "name": "Wine Shop",
+  "currency": "COINS",
+  "npcs": [
+    1260
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1993,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1935,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 20742,
+      "stock": 5,
+      "buy_price": 84,
+      "sell_price": 140
+    },
+    {
+      "itemId": 7919,
+      "stock": 2,
+      "buy_price": 300,
+      "sell_price": 500
+    },
+    {
+      "itemId": 7810,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Vermundi's Clothes Stall",
+  "currency": "COINS",
+  "npcs": [
+    2367
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 5048,
+      "stock": 3,
+      "buy_price": 192,
+      "sell_price": 455
+    },
+    {
+      "itemId": 5036,
+      "stock": 3,
+      "buy_price": 302,
+      "sell_price": 715
+    },
+    {
+      "itemId": 5042,
+      "stock": 3,
+      "buy_price": 154,
+      "sell_price": 364
+    },
+    {
+      "itemId": 5024,
+      "stock": 3,
+      "buy_price": 275,
+      "sell_price": 650
+    },
+    {
+      "itemId": 5030,
+      "stock": 3,
+      "buy_price": 247,
+      "sell_price": 585
+    },
+    {
+      "itemId": 950,
+      "stock": 5,
+      "buy_price": 16,
+      "sell_price": 39
+    }
+  ]
+}

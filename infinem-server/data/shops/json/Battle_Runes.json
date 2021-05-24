@@ -1,0 +1,101 @@
+{
+  "name": "Battle Runes",
+  "currency": "COINS",
+  "npcs": [
+    2580,
+    2581,
+    2582,
+    4936,
+    4937,
+    4938
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 554,
+      "stock": 1000,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 555,
+      "stock": 1000,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 556,
+      "stock": 1000,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 557,
+      "stock": 1000,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 558,
+      "stock": 1000,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 562,
+      "stock": 500,
+      "buy_price": 49,
+      "sell_price": 90
+    },
+    {
+      "itemId": 560,
+      "stock": 500,
+      "buy_price": 99,
+      "sell_price": 180
+    },
+    {
+      "itemId": 565,
+      "stock": 500,
+      "buy_price": 220,
+      "sell_price": 400
+    },
+    {
+      "itemId": 12734,
+      "stock": 50,
+      "buy_price": 236,
+      "sell_price": 430
+    },
+    {
+      "itemId": 12730,
+      "stock": 50,
+      "buy_price": 236,
+      "sell_price": 430
+    },
+    {
+      "itemId": 12728,
+      "stock": 50,
+      "buy_price": 236,
+      "sell_price": 430
+    },
+    {
+      "itemId": 12732,
+      "stock": 50,
+      "buy_price": 236,
+      "sell_price": 430
+    },
+    {
+      "itemId": 12736,
+      "stock": 35,
+      "buy_price": 181,
+      "sell_price": 330
+    },
+    {
+      "itemId": 12738,
+      "stock": 35,
+      "buy_price": 5472,
+      "sell_price": 9950
+    }
+  ]
+}

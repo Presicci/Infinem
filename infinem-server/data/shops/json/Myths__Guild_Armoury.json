@@ -1,0 +1,24 @@
+{
+  "name": "Myths' Guild Armoury",
+  "currency": "COINS",
+  "npcs": [
+    7952
+  ],
+  "sellMultiplier": 1500,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2368,
+      "stock": 1,
+      "buy_price": 250000,
+      "sell_price": 750000
+    },
+    {
+      "itemId": 22097,
+      "stock": 1,
+      "buy_price": 600000,
+      "sell_price": 1800000
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "name": "Prifddinas Seamstress",
+  "currency": "COINS",
+  "npcs": [
+    9165
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1734,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1733,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1759,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 950,
+      "stock": 5,
+      "buy_price": 12,
+      "sell_price": 39
+    },
+    {
+      "itemId": 6814,
+      "stock": 3,
+      "buy_price": 4,
+      "sell_price": 13
+    },
+    {
+      "itemId": 948,
+      "stock": 3,
+      "buy_price": 4,
+      "sell_price": 13
+    },
+    {
+      "itemId": 958,
+      "stock": 3,
+      "buy_price": 20,
+      "sell_price": 65
+    },
+    {
+      "itemId": 10117,
+      "stock": 0,
+      "buy_price": 4,
+      "sell_price": 13
+    },
+    {
+      "itemId": 10121,
+      "stock": 0,
+      "buy_price": 4,
+      "sell_price": 15
+    },
+    {
+      "itemId": 10119,
+      "stock": 0,
+      "buy_price": 5,
+      "sell_price": 18
+    },
+    {
+      "itemId": 10123,
+      "stock": 0,
+      "buy_price": 6,
+      "sell_price": 22
+    },
+    {
+      "itemId": 10093,
+      "stock": 0,
+      "buy_price": 24,
+      "sell_price": 78
+    },
+    {
+      "itemId": 10095,
+      "stock": 0,
+      "buy_price": 32,
+      "sell_price": 104
+    },
+    {
+      "itemId": 10097,
+      "stock": 0,
+      "buy_price": 36,
+      "sell_price": 117
+    },
+    {
+      "itemId": 10099,
+      "stock": 0,
+      "buy_price": 48,
+      "sell_price": 156
+    },
+    {
+      "itemId": 10101,
+      "stock": 0,
+      "buy_price": 48,
+      "sell_price": 156
+    },
+    {
+      "itemId": 10103,
+      "stock": 0,
+      "buy_price": 64,
+      "sell_price": 208
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "name": "Barker's Haberdashery",
+  "currency": "COINS",
+  "npcs": [
+    6524
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2894,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2896,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2898,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2900,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2902,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2904,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2906,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2908,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2910,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2912,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2914,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2916,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2918,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2920,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2922,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2924,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2926,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2928,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2930,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2932,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2934,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2936,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2938,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2940,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 2942,
+      "stock": 5,
+      "buy_price": 200,
+      "sell_price": 650
+    },
+    {
+      "itemId": 1007,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 1019,
+      "stock": 5,
+      "buy_price": 2,
+      "sell_price": 9
+    },
+    {
+      "itemId": 1021,
+      "stock": 5,
+      "buy_price": 12,
+      "sell_price": 41
+    },
+    {
+      "itemId": 1023,
+      "stock": 5,
+      "buy_price": 12,
+      "sell_price": 41
+    },
+    {
+      "itemId": 1027,
+      "stock": 5,
+      "buy_price": 12,
+      "sell_price": 41
+    }
+  ]
+}

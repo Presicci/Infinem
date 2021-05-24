@@ -1,0 +1,96 @@
+{
+  "name": "Quartermaster's Stores",
+  "currency": "COINS",
+  "npcs": [
+    3438
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1931,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1935,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 20742,
+      "stock": 5,
+      "buy_price": 56,
+      "sell_price": 182
+    },
+    {
+      "itemId": 1735,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 590,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2309,
+      "stock": 10,
+      "buy_price": 4,
+      "sell_price": 15
+    },
+    {
+      "itemId": 3190,
+      "stock": 10,
+      "buy_price": 32,
+      "sell_price": 104
+    },
+    {
+      "itemId": 3192,
+      "stock": 10,
+      "buy_price": 112,
+      "sell_price": 364
+    },
+    {
+      "itemId": 3194,
+      "stock": 10,
+      "buy_price": 400,
+      "sell_price": 1300
+    },
+    {
+      "itemId": 3196,
+      "stock": 10,
+      "buy_price": 768,
+      "sell_price": 2496
+    },
+    {
+      "itemId": 3198,
+      "stock": 7,
+      "buy_price": 1040,
+      "sell_price": 3380
+    },
+    {
+      "itemId": 3200,
+      "stock": 7,
+      "buy_price": 2560,
+      "sell_price": 8320
+    },
+    {
+      "itemId": 3202,
+      "stock": 7,
+      "buy_price": 25600,
+      "sell_price": 83200
+    },
+    {
+      "itemId": 3204,
+      "stock": 5,
+      "buy_price": 100000,
+      "sell_price": 325000
+    }
+  ]
+}

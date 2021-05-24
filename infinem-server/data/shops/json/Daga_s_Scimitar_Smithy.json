@@ -1,0 +1,42 @@
+{
+  "name": "Daga's Scimitar Smithy",
+  "currency": "COINS",
+  "npcs": [
+    5250
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1321,
+      "stock": 10,
+      "buy_price": 16,
+      "sell_price": 32
+    },
+    {
+      "itemId": 1323,
+      "stock": 10,
+      "buy_price": 56,
+      "sell_price": 112
+    },
+    {
+      "itemId": 1325,
+      "stock": 8,
+      "buy_price": 200,
+      "sell_price": 400
+    },
+    {
+      "itemId": 1329,
+      "stock": 6,
+      "buy_price": 520,
+      "sell_price": 1040
+    },
+    {
+      "itemId": 4587,
+      "stock": 4,
+      "buy_price": 50000,
+      "sell_price": 100000
+    }
+  ]
+}

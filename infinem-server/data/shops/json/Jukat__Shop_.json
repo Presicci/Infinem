@@ -1,0 +1,24 @@
+{
+  "name": "Jukat (Shop)",
+  "currency": "COINS",
+  "npcs": [
+    3201
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1305,
+      "stock": 2000,
+      "buy_price": 60000,
+      "sell_price": 100000
+    },
+    {
+      "itemId": 1215,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 0
+    }
+  ]
+}
