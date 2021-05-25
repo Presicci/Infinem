@@ -25,14 +25,5 @@
     "z": 0,
     "direction": "S",
     "walkRange": 1
-  },
-  {
-    "name": "Paul",
-    "id": 317,
-    "x": 3137,
-    "y": 3087,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1
   }
 ]

@@ -1701,15 +1701,6 @@
     "walkRange": 1
   },
   {
-    "name": "Paul",
-    "id": 317,
-    "x": 3228,
-    "y": 3227,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1
-  },
-  {
     "name": "Woodsman tutor",
     "id": 3226,
     "x": 3227,
