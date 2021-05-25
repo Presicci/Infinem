@@ -56,8 +56,8 @@ public class Ladder {
                 ObjectAction.register(def.id, "climb", (p, obj) -> {
                     p.dialogue(
                             new OptionsDialogue("Climb up or down the ladder?",
-                                    new Option("Climb Up.", () -> climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() + 1, true, true, true)),
-                                    new Option("Climb Down.", () -> climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() - 1, false, true, true))
+                                    new Option("Climb up the ladder.", () -> climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() + 1, true, true, true)),
+                                    new Option("Climb down the ladder.", () -> climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() - 1, false, true, true))
                             ));
                 });
             }
