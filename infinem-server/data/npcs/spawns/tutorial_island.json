@@ -34,14 +34,5 @@
     "z": 0,
     "direction": "S",
     "walkRange": 1
-  },
-  {
-    "name": "Angel",
-    "id": 3369,
-    "x": 3138,
-    "y": 3087,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1
   }
 ]
