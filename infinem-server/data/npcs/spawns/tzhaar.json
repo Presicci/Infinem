@@ -96,10 +96,7 @@
     "y": 5125,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
-    "shopOptions": {
-      "trade": "35b90463-33c1-42e6-a1c5-14ba417e3248"
-    }
+    "walkRange": 1
   },
   {
     "name": "TzHaar-Hur",
@@ -252,10 +249,7 @@
     "y": 5146,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
-    "shopOptions": {
-      "trade": "7aacc988-30ae-44e7-b5a7-a685c79db41d"
-    }
+    "walkRange": 1
   },
   {
     "name": "TzHaar-Mej",

@@ -14,7 +14,7 @@ public class TzHaarHurLek {
         NPCAction.register(2184, "talk-to", (player, npc) -> player.dialogue(
                 new NPCDialogue(npc, "Can I help you JalYt-Xil-" + player.getName() + "?"),
                 new OptionsDialogue(
-                        new Option("What do you have to trade?", NPCDef.get(2184).shops.get(0)::open),//TODO Fill this out
+                        new Option("What do you have to trade?", NPCDef.get(2184).shops.get(0)::open),
                         new Option("No I'm fine thanks.", () -> player.dialogue(new PlayerDialogue("No I'm fine thanks.")))
                 )
         ));
