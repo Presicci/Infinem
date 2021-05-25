@@ -3129,7 +3129,7 @@
     "y": 3267,
     "z": 0,
     "direction": "S",
-    "walkRange": 5
+    "walkRange": 0
   },
   {
     "name": "Giant spider",
@@ -4011,7 +4011,7 @@
     "y": 3272,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 0
   },
   {
     "name": "Cow",
