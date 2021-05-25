@@ -37,7 +37,7 @@ public class npc_shops extends DataFile {
         TempShop s = JsonUtils.fromJson(json, TempShop.class);
         List<ShopItem> items = new ArrayList<>();
         for (TempItem i : s.items)
-            items.add(new ShopItem(i.itemId, i.stock, i.sell_price));
+            items.add(new ShopItem(i.itemId, i.stock, i.sell_price, i.buy_price));
         Shop shop = new Shop(s.name, s.currency, s.generalStore, RestockRules.generateDefault(), items, s.ironman);
         allShops.add(shop);
         for (int n : s.npcs) {

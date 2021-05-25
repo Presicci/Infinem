@@ -55,7 +55,7 @@ public class Shop {
         this.currency = currency;
         this.currencyHandler = null;
         this.generalStore = generalStore;
-        this.canSellToStore = generalStore;
+        this.canSellToStore = true;
         this.restockRules = restockRules;
         this.defaultStock = defaultStock;
         this.accessibleByIronMan = accessibleByIronMan;
@@ -63,7 +63,6 @@ public class Shop {
         this.onTick = null;
     }
 
-    //TODO Adjust price based on stock
     public List<ShopContainerListener> viewingPlayers = Lists.newArrayList();
     public String identifier;
     public String title;
@@ -244,32 +243,30 @@ public class Shop {
             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
             return;
         }
-
         if(requestedItem.getDef().isCurrency()){
             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
             return;
         }
-
-
         if(!canSellToStore){
             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
             return;
         }
-
         ShopItem matchingItem = shopItems.findItem(requestedItem.getId(), true);
+        if (matchingItem.buyPrice < 0) {
+            player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
+            return;
+        }
         if(generalStore && (matchingItem == null || !matchingItem.defaultStockItem)){
             if(shopItems.getFreeSlots() == 0 && matchingItem == null){
                 player.sendMessage(ShopManager.SHOP_FULL);
                 return;
             }
-
             int inventoryCount = player.getInventory().count(requestedItem.getId());
                 int maxInventory = Math.min(requestedItem.getAmount(), inventoryCount);
 
                 int maxSell = Math.min(Integer.MAX_VALUE - (matchingItem != null ? matchingItem.getAmount() : 0), maxInventory);
 
                 int pricePer = getBuyPrice(requestedItem);
-
 
                 boolean allSold = maxSell == inventoryCount;//guarantees that 1 slot will be open
 
@@ -302,7 +299,6 @@ public class Shop {
             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
             return;
         }
-
         int maxInventory = Math.min(requestedItem.getAmount(), player.getInventory().count(requestedItem.getId()));
 
         int maxSell = Math.min(Integer.MAX_VALUE - matchingItem.getAmount(), maxInventory);
@@ -327,11 +323,9 @@ public class Shop {
         if(itemDef.free){
             return -1;
         }
-
         if(itemDef.isCurrency()){
             return -1;
         }
-
         if(generalStore){
             return Math.max(itemDef.lowAlchValue, 1);
         }
@@ -342,11 +336,12 @@ public class Shop {
         if(matchingItem == null && !generalStore){
             return -1;
         }
-
-        if(matchingItem != null && matchingItem.getPrice() > 0){
-            return Math.max((int)(matchingItem.getPrice() * 0.75), 1);
+        if (matchingItem.buyPrice < 0) {
+            return -1;
         }
-
+        if(matchingItem != null && matchingItem.buyPrice >= 0){
+            return matchingItem.buyPrice;
+        }
         return 1;
     }
 

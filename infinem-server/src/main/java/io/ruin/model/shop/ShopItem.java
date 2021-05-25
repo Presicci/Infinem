@@ -42,12 +42,23 @@ public class ShopItem extends Item {
         this.price = price;
     }
 
+    public ShopItem(int id, int amount, int price, int buyPrice) {
+        this(id, amount, price, buyPrice, null);
+    }
+
+    public ShopItem(int id, int amount, int price, int buyPrice, Map<String, String> attributes) {
+        super(id, amount, attributes);
+        this.price = price;
+        this.buyPrice = buyPrice;
+    }
+
     @Override
     public ShopItem copy() {
         ShopItem shopItem = new ShopItem(getId(), getAmount(), getPrice(), copyOfAttributes());
 
         shopItem.placeholderRule = placeholderRule;
         shopItem.price = this.price;
+        shopItem.buyPrice = this.buyPrice;
         shopItem.defaultStockItem = this.defaultStockItem;
         shopItem.placeholderId = this.placeholderId;
         shopItem.requiredAchievements = this.requiredAchievements;
@@ -111,6 +122,7 @@ public class ShopItem extends Item {
 
     public PlaceHolderRule placeholderRule = PlaceHolderRule.SHOW_ON_EMPTY;
     public int price;
+    public int buyPrice = -1;
 
     public boolean defaultStockItem;
 
