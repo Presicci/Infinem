@@ -1341,15 +1341,6 @@
     "walkRange": 3
   },
   {
-    "name": "Cow",
-    "id": 2795,
-    "x": 3202,
-    "y": 3262,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
     "name": "Giant spider",
     "id": 3017,
     "x": 3200,
@@ -1357,24 +1348,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 9
-  },
-  {
-    "name": "Cow calf",
-    "id": 2794,
-    "x": 3203,
-    "y": 3260,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Piglet",
-    "id": 2800,
-    "x": 3204,
-    "y": 3261,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
   },
   {
     "name": "Rat",
@@ -1449,6 +1422,51 @@
     "walkRange": 4
   },
   {
+    "name": "Sheep",
+    "id": 2695,
+    "x": 3205,
+    "y": 3268,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sheep",
+    "id": 2695,
+    "x": 3202,
+    "y": 3272,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sheep",
+    "id": 2695,
+    "x": 3196,
+    "y": 3259,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sheep",
+    "id": 2695,
+    "x": 3200,
+    "y": 3262,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sheep",
+    "id": 2695,
+    "x": 3209,
+    "y": 3267,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
     "name": "Rat",
     "id": 2854,
     "x": 3209,
@@ -1485,15 +1503,6 @@
     "walkRange": 4
   },
   {
-    "name": "Cow calf",
-    "id": 2794,
-    "x": 3206,
-    "y": 3261,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Sheep",
     "id": 2696,
     "x": 3208,
@@ -1505,7 +1514,7 @@
   {
     "name": "Cook",
     "id": 4626,
-    "x": 3208,
+    "x": 3207,
     "y": 3214,
     "z": 0,
     "direction": "S",
@@ -1525,15 +1534,6 @@
     "id": 1263,
     "x": 3209,
     "y": 3258,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
-    "name": "Piglet",
-    "id": 2800,
-    "x": 3208,
-    "y": 3262,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -1930,16 +1930,16 @@
     "id": 3078,
     "x": 3209,
     "y": 3215,
-    "z": 0,
+    "z": 1,
     "direction": "S",
     "walkRange": 1
   },
   {
     "name": "Man",
     "id": 3080,
-    "x": 3211,
+    "x": 3206,
     "y": 3215,
-    "z": 0,
+    "z": 1,
     "direction": "S",
     "walkRange": 5
   },
@@ -1948,7 +1948,7 @@
     "id": 3220,
     "x": 3210,
     "y": 3212,
-    "z": 0,
+    "z": 1,
     "direction": "N",
     "walkRange": 0
   },
@@ -1957,7 +1957,7 @@
     "id": 3083,
     "x": 3212,
     "y": 3213,
-    "z": 0,
+    "z": 1,
     "direction": "S",
     "walkRange": 4
   },
@@ -1966,7 +1966,7 @@
     "id": 815,
     "x": 3210,
     "y": 3221,
-    "z": 0,
+    "z": 1,
     "direction": "S",
     "walkRange": 3
   },
@@ -1975,7 +1975,7 @@
     "id": 3227,
     "x": 3208,
     "y": 3222,
-    "z": 0,
+    "z": 2,
     "direction": "S",
     "walkRange": 0
   },
@@ -1984,7 +1984,7 @@
     "id": 6520,
     "x": 3209,
     "y": 3222,
-    "z": 0,
+    "z": 2,
     "direction": "S",
     "walkRange": 0
   },
@@ -3213,15 +3213,6 @@
     "walkRange": 3
   },
   {
-    "name": "Cow calf",
-    "id": 2801,
-    "x": 3196,
-    "y": 3271,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
     "name": "Giant spider",
     "id": 3017,
     "x": 3172,
@@ -3301,15 +3292,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 8
-  },
-  {
-    "name": "Piglet",
-    "id": 2800,
-    "x": 3197,
-    "y": 3269,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
   },
   {
     "name": "Butterfly",
@@ -3411,28 +3393,10 @@
     "walkRange": 3
   },
   {
-    "name": "Cow calf",
-    "id": 2794,
-    "x": 3198,
-    "y": 3265,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 5
-  },
-  {
     "name": "Cow",
     "id": 2790,
     "x": 3186,
     "y": 3217,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
-    "name": "Cow calf",
-    "id": 2794,
-    "x": 3198,
-    "y": 3271,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -3528,15 +3492,6 @@
     "walkRange": 5
   },
   {
-    "name": "Piglet",
-    "id": 2800,
-    "x": 3195,
-    "y": 3262,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
     "name": "Giant rat",
     "id": 2861,
     "x": 3195,
@@ -3582,15 +3537,6 @@
     "walkRange": 0
   },
   {
-    "name": "Cow calf",
-    "id": 2801,
-    "x": 3196,
-    "y": 3260,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Giant rat",
     "id": 2859,
     "x": 3196,
@@ -3625,15 +3571,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 9
-  },
-  {
-    "name": "Cow calf",
-    "id": 2794,
-    "x": 3198,
-    "y": 3261,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
   },
   {
     "name": "Giant rat",
@@ -3888,15 +3825,6 @@
     "walkRange": 0
   },
   {
-    "name": "Cow calf",
-    "id": 2801,
-    "x": 3201,
-    "y": 3271,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 5
-  },
-  {
     "name": "Cow",
     "id": 2791,
     "x": 3202,
@@ -3931,15 +3859,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
-  },
-  {
-    "name": "Pig",
-    "id": 2796,
-    "x": 3205,
-    "y": 3266,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
   },
   {
     "name": "Cow calf",
