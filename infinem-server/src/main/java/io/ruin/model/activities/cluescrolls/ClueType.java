@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
@@ -805,6 +806,7 @@ public enum ClueType {
                 player.getInventory().addOrDrop(item.getId(), item.getAmount());
         }
         player.openInterface(InterfaceType.MAIN, 73);
+        player.getPacketSender().sendAccessMask(73, 3, 0, 6, 1024);
         container.sendUpdates();
     }
 
