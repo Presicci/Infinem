@@ -130,7 +130,7 @@ public enum CanoeStation {
             player.dialogue(new MessageDialogue("You need to pick a destination you're not already at."));
             return;
         }
-        player.startEvent(event -> { //todo fix this lmao
+        player.startEvent(event -> {
             player.lock(LockType.FULL_NULLIFY_DAMAGE);
             player.closeInterface(InterfaceType.MAIN);
             player.getPacketSender().fadeOut();
@@ -143,9 +143,9 @@ public enum CanoeStation {
             event.delay(1);
             player.animate(3302);
             Config.LOCK_CAMERA.set(player, 1);
-            player.getPacketSender().moveCameraToLocation(dynamicMap.convertX(1814), dynamicMap.convertY(4518), 255, 100, 100);
-            player.getPacketSender().turnCameraToLocation(dynamicMap.convertX(1817), dynamicMap.convertY(4518), 255, 100, 100);
-            player.face(Direction.SOUTH);
+            player.getPacketSender().moveCameraToLocation(dynamicMap.convertX(1810), dynamicMap.convertY(4517), 255, 100, 100);
+            player.getPacketSender().turnCameraToLocation(dynamicMap.convertX(1817), dynamicMap.convertY(4515), 255, 100, 100);
+            player.face(Direction.WEST);
             player.getPacketSender().fadeIn();
             event.delay(10);
             player.getPacketSender().fadeOut();
@@ -213,15 +213,11 @@ public enum CanoeStation {
                 }
                 player.face(obj.x + canoeStation.faceBoatPosition.getX(), obj.y + canoeStation.faceBoatPosition.getY());
                 event.delay(1);
-                player.getPacketSender().sendClientScript(917, "Ii", 3612928, 0);
-                player.getPacketSender().setHidden(Interface.CANOE_SELECTION, 6, false);
-                player.getPacketSender().setHidden(Interface.CANOE_SELECTION, 32, true);
-                player.getPacketSender().setHidden(Interface.CANOE_SELECTION, 3, false);
-                player.getPacketSender().setHidden(Interface.CANOE_SELECTION, 35, true);
-                player.getPacketSender().setHidden(Interface.CANOE_SELECTION, 13, false);
-                player.getPacketSender().setHidden(Interface.CANOE_SELECTION, 29, true);
                 player.openInterface(InterfaceType.MAIN, Interface.CANOE_SELECTION);
-                player.getPacketSender().sendClientScript(917, "ii", -1, -1);
+                player.getPacketSender().sendAccessMask(Interface.CANOE_SELECTION, 11, 0, 1, 1<<1);
+                player.getPacketSender().sendAccessMask(Interface.CANOE_SELECTION, 12, 0, 1, 1<<1);
+                player.getPacketSender().sendAccessMask(Interface.CANOE_SELECTION, 18, 0, 1, 1<<1);
+                player.getPacketSender().sendAccessMask(Interface.CANOE_SELECTION, 20, 0, 1, 1<<1);
                 player.unlock();
             });
         } else {
@@ -270,35 +266,27 @@ public enum CanoeStation {
                 for (int i : canoeStation.travelButtonIds)
                     h.actions[i] = (SimpleAction) p -> travelToDestination(p, canoeStation);
         });
-        //TODO::CHANGE THIS 182
-        /*InterfaceHandler.register(Interface.CANOE_SELECTION, h -> {
-            *//**
+
+        InterfaceHandler.register(Interface.CANOE_SELECTION, h -> {
+            /**
              * Log
-             *//*
-            h.actions[8] = (SimpleAction) p -> shapeBoat(p, 1); //<-- 182 out of bounds
-            h.actions[24] = (SimpleAction) p -> shapeBoat(p, 1);
-            h.actions[36] = (SimpleAction) p -> shapeBoat(p, 1);
+             */
+            h.actions[20] = (SimpleAction) p -> shapeBoat(p, 1);
 
-            *//**
+            /**
              * Dugout
-             *//*
-            h.actions[6] = (SimpleAction) p -> shapeBoat(p, 2);
-            h.actions[25] = (SimpleAction) p -> shapeBoat(p, 2);
-            h.actions[37] = (SimpleAction) p -> shapeBoat(p, 2);
+             */
+            h.actions[18] = (SimpleAction) p -> shapeBoat(p, 2);
 
-            *//**
+            /**
              * Stable dugout
-             *//*
-            h.actions[3] = (SimpleAction) p -> shapeBoat(p, 3);
-            h.actions[26] = (SimpleAction) p -> shapeBoat(p, 3);
-            h.actions[38] = (SimpleAction) p -> shapeBoat(p, 3);
+             */
+            h.actions[12] = (SimpleAction) p -> shapeBoat(p, 3);
 
-            *//**
+            /**
              * Waka
-             *//*
-            h.actions[13] = (SimpleAction) p -> shapeBoat(p, 4);
-            h.actions[27] = (SimpleAction) p -> shapeBoat(p, 4);
-            h.actions[39] = (SimpleAction) p -> shapeBoat(p, 4);
-        });*/
+             */
+            h.actions[11] = (SimpleAction) p -> shapeBoat(p, 4);
+        });
     }
 }
