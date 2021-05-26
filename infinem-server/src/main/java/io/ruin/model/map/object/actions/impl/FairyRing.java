@@ -84,7 +84,7 @@ public enum FairyRing { //todo add favorite option
     }
 
     public static void teleport(Player player, FairyRing entry, GameObject fairyRing) {
-        Item dramenStaff = player.getEquipment().findItem(772);
+        Item dramenStaff = player.getEquipment().findFirst(772, 9084);
         if(dramenStaff == null) {
             player.sendFilteredMessage("The fairy ring only works for those who wield fairy magic.");
             return;
@@ -136,7 +136,7 @@ public enum FairyRing { //todo add favorite option
     }
 
     public static void openCombinationPanel(Player player, GameObject fairyRing) {
-        Item dramenStaff = player.getEquipment().findItem(772);
+        Item dramenStaff = player.getEquipment().findFirst(772, 9084);
         if(dramenStaff == null) {
             player.sendFilteredMessage("The fairy ring only works for those who wield fairy magic.");
             return;
