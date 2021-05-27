@@ -29,7 +29,7 @@ public enum FountainOfRune {
                 player.animate(832);
                 int amount = uncharged.count();
                 player.getInventory().remove(uncharged.getId(), amount);
-                if(uncharged.getId() == GLORY.unchargedID && Random.rollDie(250, 1)) {
+                if(uncharged.getId() == GLORY.unchargedID && Random.rollDie(2500, 1)) {
                     player.getInventory().add(19707, 1);
                     player.getInventory().add(fountainOfRune.chargedID, amount - 1);
                     player.dialogue(new ItemDialogue().one(19707, "The power of the fountain is transferred into an amulet of eternal glory."));
