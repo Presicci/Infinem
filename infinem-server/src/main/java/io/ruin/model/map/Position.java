@@ -21,7 +21,7 @@ public class Position {
     }
 
     public Position(int x, int y) {
-        new Position(x, y, 0);
+        this(x, y, 0);
     }
 
     public void updateFirstChunk() {
