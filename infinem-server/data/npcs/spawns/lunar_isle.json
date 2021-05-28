@@ -378,5 +378,179 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "\u0027Beedy-eye\u0027 Jones"
+  },
+
+
+
+  //8508
+  {
+    "id": 2854,
+    "x": 2115,
+    "y": 3895,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 789,
+    "x": 2136,
+    "y": 3872,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 792,
+    "x": 2140,
+    "y": 3854,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 791,
+    "x": 2137,
+    "y": 3851,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 788,
+    "x": 2123,
+    "y": 3856,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 2854,
+    "x": 2124,
+    "y": 3892,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 6650,
+    "x": 2142,
+    "y": 3902,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shop"
+  },
+  {
+    "id": 3867,
+    "x": 2140,
+    "y": 3898,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Murky Pat"
+  },
+  {
+    "id": 3860,
+    "x": 2140,
+    "y": 3891,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "First mate \u0027Davey-boy\u0027"
+  },
+  {
+    "id": 3873,
+    "x": 2137,
+    "y": 3892,
+    "z": 3,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "\u0027Lecherous\u0027 Lee"
+  },
+  {
+    "id": 3864,
+    "x": 2138,
+    "y": 3898,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bedread the bold"
+  },
+  {
+    "id": 3866,
+    "x": 2138,
+    "y": 3902,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Tommy 2-times"
+  },
+  {
+    "id": 3862,
+    "x": 2141,
+    "y": 3902,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "\u0027Picarron\u0027 Pete"
+  },
+  {
+    "id": 3861,
+    "x": 2137,
+    "y": 3891,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "\u0027Birds-Eye\u0027 Jack"
+  },
+  {
+    "id": 3870,
+    "x": 2139,
+    "y": 3897,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "\u0027Betty\u0027 B.Boppin"
+  },
+  {
+    "id": 787,
+    "x": 2142,
+    "y": 3900,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 3858,
+    "x": 2137,
+    "y": 3892,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "\u0027Beefy\u0027 Burns"
   }
 ]
