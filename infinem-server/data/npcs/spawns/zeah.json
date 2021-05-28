@@ -892,16 +892,6 @@
     "npcName": "Lokraa quo Sihar"
   },
   {
-    "id": 85578560,
-    "x": 1325,
-    "y": 3813,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 2,
-    "world": "ECO",
-    "npcName": "null"
-  },
-  {
     "id": 8560,
     "x": 1325,
     "y": 3813,
