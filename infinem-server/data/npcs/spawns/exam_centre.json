@@ -84,5 +84,168 @@
     "walkRange": 2,
     "world": "ECO",
     "npcName": "Panning guide"
+  },
+
+
+  //13365
+  {
+    "id": 3632,
+    "x": 3363,
+    "y": 3395,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Student"
+  },
+  {
+    "id": 3630,
+    "x": 3359,
+    "y": 3406,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Digsite workman"
+  },
+  {
+    "id": 3631,
+    "x": 3362,
+    "y": 3408,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Digsite workman"
+  },
+  {
+    "id": 3631,
+    "x": 3350,
+    "y": 3396,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Digsite workman"
+  },
+  {
+    "id": 3633,
+    "x": 3370,
+    "y": 3417,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Student"
+  },
+  {
+    "id": 3628,
+    "x": 3361,
+    "y": 3417,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Digsite workman"
+  },
+  {
+    "id": 1933,
+    "x": 3357,
+    "y": 3415,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Dig Site workman"
+  },
+  {
+    "id": 3634,
+    "x": 3348,
+    "y": 3427,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Student"
+  },
+  {
+    "id": 3630,
+    "x": 3365,
+    "y": 3430,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Digsite workman"
+  },
+  {
+    "id": 3630,
+    "x": 3374,
+    "y": 3423,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Digsite workman"
+  },
+  {
+    "id": 3631,
+    "x": 3371,
+    "y": 3426,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Digsite workman"
+  },
+  {
+    "id": 5138,
+    "x": 3377,
+    "y": 3430,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Elissa"
+  },
+  {
+    "id": 1938,
+    "x": 3364,
+    "y": 3445,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Barge foreman"
+  },
+  {
+    "id": 8012,
+    "x": 3362,
+    "y": 3446,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Barge guard"
+  },
+  {
+    "id": 1937,
+    "x": 3356,
+    "y": 3446,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Barge workman"
+  },
+  {
+    "id": 1927,
+    "x": 3350,
+    "y": 3446,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Workman"
   }
 ]
