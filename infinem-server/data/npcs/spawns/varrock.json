@@ -2102,5 +2102,119 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Apothecary"
+  },
+
+
+
+  //13110
+  {
+    "id": 5422,
+    "x": 3302,
+    "y": 3492,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Sawmill operator"
+  },
+  {
+    "id": 3080,
+    "x": 3281,
+    "y": 3502,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 3080,
+    "x": 3280,
+    "y": 3494,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 3092,
+    "x": 3280,
+    "y": 3497,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Thief"
+  },
+  {
+    "id": 3084,
+    "x": 3280,
+    "y": 3500,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 3015,
+    "x": 3279,
+    "y": 3496,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 2896,
+    "x": 3285,
+    "y": 3489,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Cook"
+  },
+  {
+    "id": 1310,
+    "x": 3276,
+    "y": 3488,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Bartender"
+  },
+  {
+    "id": 5445,
+    "x": 3278,
+    "y": 3504,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Johnathon"
+  },
+  {
+    "id": 3014,
+    "x": 3279,
+    "y": 3495,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 508,
+    "x": 3282,
+    "y": 3503,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Black Knight"
   }
 ]
