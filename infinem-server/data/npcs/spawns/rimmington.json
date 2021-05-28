@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1614,
+    "x": 2947,
+    "y": 3214,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Phials"
+  },
+  {
+    "id": 8694,
+    "x": 2956,
+    "y": 3203,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Brian"
+  },
+  {
+    "id": 6530,
+    "x": 2949,
+    "y": 3205,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rommik"
+  },
+  {
+    "id": 4619,
+    "x": 2969,
+    "y": 3206,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hetty"
+  },
+  {
+    "id": 3285,
+    "x": 2967,
+    "y": 3213,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Anja"
+  },
+  {
+    "id": 3284,
+    "x": 2967,
+    "y": 3211,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hengel"
+  },
+  {
+    "id": 3369,
+    "x": 2965,
+    "y": 3211,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Angel"
+  },
+  {
+    "id": 3306,
+    "x": 2965,
+    "y": 3214,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Henja"
+  },
+  {
+    "id": 2823,
+    "x": 2948,
+    "y": 3215,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shop keeper"
+  },
+  {
+    "id": 2824,
+    "x": 2949,
+    "y": 3216,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shop assistant"
+  },
+  {
+    "id": 2492,
+    "x": 2955,
+    "y": 3204,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2492,
+    "x": 2959,
+    "y": 3203,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2492,
+    "x": 2957,
+    "y": 3203,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2492,
+    "x": 2954,
+    "y": 3204,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  }
+]
