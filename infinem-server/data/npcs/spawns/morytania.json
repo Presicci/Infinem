@@ -7,5 +7,87 @@
     "z": 0,
     "direction": "S",
     "walkRange": 13
+  },
+
+  //14134
+  {
+    "id": 3233,
+    "x": 3557,
+    "y": 3483,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 3233,
+    "x": 3540,
+    "y": 3495,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 3233,
+    "x": 3532,
+    "y": 3498,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 3233,
+    "x": 3548,
+    "y": 3510,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 3233,
+    "x": 3573,
+    "y": 3489,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 2827,
+    "x": 3573,
+    "y": 3507,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 3237,
+    "x": 3583,
+    "y": 3475,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Feral Vampyre"
+  },
+  {
+    "id": 3237,
+    "x": 3578,
+    "y": 3467,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Feral Vampyre"
   }
 ]
