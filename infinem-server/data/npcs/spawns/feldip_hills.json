@@ -1864,5 +1864,119 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Wolf"
+  },
+
+
+
+  //10029
+  {
+    "id": 2911,
+    "x": 2499,
+    "y": 2902,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2500,
+    "y": 2906,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2504,
+    "y": 2907,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2508,
+    "y": 2882,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2515,
+    "y": 2887,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2518,
+    "y": 2887,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2519,
+    "y": 2894,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2537,
+    "y": 2885,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2534,
+    "y": 2889,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2531,
+    "y": 2894,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2537,
+    "y": 2889,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
   }
 ]
