@@ -1438,5 +1438,79 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Museum guard"
+  },
+
+
+
+  //13108
+  {
+    "id": 1108,
+    "x": 3267,
+    "y": 3390,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hops"
+  },
+  {
+    "id": 2902,
+    "x": 3272,
+    "y": 3386,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Stray dog"
+  },
+  {
+    "id": 2864,
+    "x": 3265,
+    "y": 3386,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2864,
+    "x": 3265,
+    "y": 3382,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 1109,
+    "x": 3281,
+    "y": 3384,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Julie"
+  },
+  {
+    "id": 1110,
+    "x": 3284,
+    "y": 3382,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Guidor"
+  },
+  {
+    "id": 2862,
+    "x": 3292,
+    "y": 3377,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Giant rat"
   }
 ]
