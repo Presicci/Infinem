@@ -1191,5 +1191,19 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Billy"
+  },
+
+
+
+  //10554
+  {
+    "id": 3050,
+    "x": 2656,
+    "y": 3719,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hobgoblin"
   }
 ]
