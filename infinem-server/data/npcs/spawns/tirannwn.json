@@ -1,0 +1,143 @@
+[
+  //9013
+  {
+    "id": 9202,
+    "x": 2249,
+    "y": 3448,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tide"
+  },
+  {
+    "id": 2911,
+    "x": 2262,
+    "y": 3410,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2268,
+    "y": 3412,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2275,
+    "y": 3404,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2276,
+    "y": 3409,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2266,
+    "y": 3406,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2268,
+    "y": 3411,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2261,
+    "y": 3410,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2277,
+    "y": 3404,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2279,
+    "y": 3401,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2286,
+    "y": 3401,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 9198,
+    "x": 2288,
+    "y": 3409,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Red Panda"
+  },
+  {
+    "id": 2911,
+    "x": 2275,
+    "y": 3410,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  },
+  {
+    "id": 2911,
+    "x": 2264,
+    "y": 3407,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Carnivorous chinchompa"
+  }
+]
