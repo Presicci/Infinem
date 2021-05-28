@@ -393,5 +393,59 @@
     "walkRange": 2,
     "world": "ECO",
     "npcName": "Olivia"
+  },
+
+
+
+  //12339
+  {
+    "id": 2492,
+    "x": 3093,
+    "y": 3267,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2492,
+    "x": 3091,
+    "y": 3266,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 3097,
+    "y": 3272,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 3094,
+    "y": 3280,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 510,
+    "x": 3109,
+    "y": 3296,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Highwayman"
   }
 ]
