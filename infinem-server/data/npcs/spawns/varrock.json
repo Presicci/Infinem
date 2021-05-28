@@ -1260,5 +1260,98 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Aeonisig Raispher"
+  },
+
+
+  //12598 GE
+  {
+    "id": 8368,
+    "x": 3185,
+    "y": 3516,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Abigaila"
+  },
+  {
+    "id": 1029,
+    "x": 3163,
+    "y": 3489,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 1031,
+    "x": 3163,
+    "y": 3490,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 2148,
+    "x": 3164,
+    "y": 3491,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Grand Exchange Clerk"
+  },
+  {
+    "id": 2148,
+    "x": 3165,
+    "y": 3491,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Grand Exchange Clerk"
+  },
+  {
+    "id": 1027,
+    "x": 3166,
+    "y": 3490,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 1027,
+    "x": 3166,
+    "y": 3489,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 2148,
+    "x": 3165,
+    "y": 3488,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Grand Exchange Clerk"
+  },
+  {
+    "id": 2148,
+    "x": 3164,
+    "y": 3488,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Grand Exchange Clerk"
   }
 ]
