@@ -2115,5 +2115,209 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Hudon"
+  },
+
+
+
+  //10039
+  {
+    "id": 1660,
+    "x": 2521,
+    "y": 3573,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Private Pierreb"
+  },
+  {
+    "id": 1661,
+    "x": 2520,
+    "y": 3570,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Private Paldon"
+  },
+  {
+    "id": 380,
+    "x": 2519,
+    "y": 3575,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pillory Guard"
+  },
+  {
+    "id": 1659,
+    "x": 2523,
+    "y": 3566,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Private Pendron"
+  },
+  {
+    "id": 1657,
+    "x": 2532,
+    "y": 3569,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Cain"
+  },
+  {
+    "id": 1656,
+    "x": 2535,
+    "y": 3577,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Commander Connad"
+  },
+  {
+    "id": 2153,
+    "x": 2541,
+    "y": 3551,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shop"
+  },
+  {
+    "id": 7724,
+    "x": 2543,
+    "y": 3566,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barbarian guard"
+  },
+  {
+    "id": 7724,
+    "x": 2543,
+    "y": 3571,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barbarian guard"
+  },
+  {
+    "id": 3062,
+    "x": 2543,
+    "y": 3576,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barbarian"
+  },
+  {
+    "id": 3059,
+    "x": 2548,
+    "y": 3570,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barbarian"
+  },
+  {
+    "id": 5229,
+    "x": 2549,
+    "y": 3568,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kharid Scorpion"
+  },
+  {
+    "id": 3056,
+    "x": 2549,
+    "y": 3571,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barbarian"
+  },
+  {
+    "id": 3057,
+    "x": 2549,
+    "y": 3566,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barbarian"
+  },
+  {
+    "id": 5229,
+    "x": 2554,
+    "y": 3565,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kharid Scorpion"
+  },
+  {
+    "id": 1173,
+    "x": 2553,
+    "y": 3564,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1174,
+    "x": 2553,
+    "y": 3562,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1174,
+    "x": 2551,
+    "y": 3561,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 3055,
+    "x": 2548,
+    "y": 3561,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barbarian"
+  },
+  {
+    "id": 3071,
+    "x": 2549,
+    "y": 3558,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barbarian"
   }
 ]
