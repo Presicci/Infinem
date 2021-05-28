@@ -1048,5 +1048,30 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Kathy Corkat"
+  },
+
+
+
+
+  //9016
+  {
+    "id": 2910,
+    "x": 2295,
+    "y": 3641,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 7412,
+    "x": 2280,
+    "y": 3610,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lieve McCracken"
   }
 ]
