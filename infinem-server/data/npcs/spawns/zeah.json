@@ -4199,5 +4199,49 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Wounded soldier"
+  },
+
+
+
+  //6199
+  {
+    "id": 6875,
+    "x": 1573,
+    "y": 3582,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Nurse Boubou"
+  },
+  {
+    "id": 6867,
+    "x": 1549,
+    "y": 3536,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Kilian"
+  },
+  {
+    "id": 6866,
+    "x": 1542,
+    "y": 3531,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Babacus"
+  },
+  {
+    "id": 6865,
+    "x": 1550,
+    "y": 3527,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Salara"
   }
 ]
