@@ -6086,5 +6086,149 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Loinur"
+  },
+
+
+
+  //6714
+  {
+    "id": 7204,
+    "x": 1667,
+    "y": 3729,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Filamina"
+  },
+  {
+    "id": 2827,
+    "x": 1671,
+    "y": 3721,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 7053,
+    "x": 1686,
+    "y": 3726,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rassain"
+  },
+  {
+    "id": 6824,
+    "x": 1707,
+    "y": 3713,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2827,
+    "x": 1707,
+    "y": 3716,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 8501,
+    "x": 1698,
+    "y": 3742,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mori"
+  },
+  {
+    "id": 7056,
+    "x": 1719,
+    "y": 3726,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Regath"
+  },
+  {
+    "id": 7203,
+    "x": 1722,
+    "y": 3746,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Thyria"
+  },
+  {
+    "id": 7061,
+    "x": 1703,
+    "y": 3771,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Batt Mellamy"
+  },
+  {
+    "id": 7062,
+    "x": 1704,
+    "y": 3772,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Freald"
+  },
+  {
+    "id": 7066,
+    "x": 1686,
+    "y": 3770,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 7066,
+    "x": 1686,
+    "y": 3766,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 7064,
+    "x": 1677,
+    "y": 3767,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2827,
+    "x": 1666,
+    "y": 3762,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
   }
 ]
