@@ -237,15 +237,6 @@
     "walkRange": 4
   },
   {
-    "name": "Shop assistant",
-    "id": 2816,
-    "x": 2933,
-    "y": 3274,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
     "name": "Cow",
     "id": 2790,
     "x": 2934,
@@ -372,15 +363,6 @@
     "walkRange": 3
   },
   {
-    "name": "Banker",
-    "id": 1027,
-    "x": 3010,
-    "y": 3353,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
     "name": "Duck",
     "id": 1838,
     "x": 2974,
@@ -397,15 +379,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 5
-  },
-  {
-    "name": "Banker",
-    "id": 1027,
-    "x": 3011,
-    "y": 3353,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
   },
   {
     "name": "Duck",
@@ -453,15 +426,6 @@
     "walkRange": 2
   },
   {
-    "name": "Banker",
-    "id": 1027,
-    "x": 3012,
-    "y": 3353,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
     "name": "Duck",
     "id": 1838,
     "x": 2974,
@@ -471,15 +435,6 @@
     "walkRange": 8
   },
   {
-    "name": "Banker",
-    "id": 1027,
-    "x": 3013,
-    "y": 3353,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
     "name": "Duck",
     "id": 1839,
     "x": 2975,
@@ -487,15 +442,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 7
-  },
-  {
-    "name": "Banker",
-    "id": 1027,
-    "x": 3014,
-    "y": 3353,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
   },
   {
     "name": "Ducklings",
@@ -591,7 +537,7 @@
     "name": "Gardener",
     "id": 3275,
     "x": 3019,
-    "y": 3371,
+    "y": 3370,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -804,24 +750,6 @@
     "walkRange": 2
   },
   {
-    "name": "Banker",
-    "id": 1028,
-    "x": 2945,
-    "y": 3366,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
-    "name": "Banker",
-    "id": 1028,
-    "x": 2946,
-    "y": 3366,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
     "name": "Hairdresser",
     "id": 1305,
     "x": 2945,
@@ -831,15 +759,6 @@
     "walkRange": 2
   },
   {
-    "name": "Banker",
-    "id": 1028,
-    "x": 2947,
-    "y": 3366,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
     "name": "Guard",
     "id": 3269,
     "x": 2948,
@@ -847,24 +766,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 1
-  },
-  {
-    "name": "Banker",
-    "id": 1028,
-    "x": 2948,
-    "y": 3366,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
-    "name": "null",
-    "id": 6523,
-    "x": 2949,
-    "y": 3366,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
   },
   {
     "name": "Guard",
@@ -914,7 +815,7 @@
   {
     "name": "Shop Assistant",
     "id": 2816,
-    "x": 2956,
+    "x": 2958,
     "y": 3387,
     "z": 0,
     "direction": "S",
@@ -1618,5 +1519,78 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Piglet"
+  },
+
+
+  //11828
+  {
+    "id": 1028,
+    "x": 2945,
+    "y": 3366,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 1028,
+    "x": 2946,
+    "y": 3366,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 1028,
+    "x": 2948,
+    "y": 3366,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 1027,
+    "x": 2949,
+    "y": 3366,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 1027,
+    "x": 2947,
+    "y": 3366,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 5419,
+    "x": 2982,
+    "y": 3369,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Estate agent"
+  },
+  {
+    "id": 5421,
+    "x": 2989,
+    "y": 3341,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Sir Renitee"
   }
 ]
