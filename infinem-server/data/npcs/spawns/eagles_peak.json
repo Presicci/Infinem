@@ -1,0 +1,133 @@
+[
+  //9270
+  {
+    "id": 5556,
+    "x": 2344,
+    "y": 3516,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 5317,
+    "x": 2337,
+    "y": 3485,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Eagle"
+  },
+  {
+    "id": 5317,
+    "x": 2323,
+    "y": 3473,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Eagle"
+  },
+  {
+    "id": 5317,
+    "x": 2329,
+    "y": 3484,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Eagle"
+  },
+  {
+    "id": 5317,
+    "x": 2336,
+    "y": 3496,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Eagle"
+  },
+  {
+    "id": 5317,
+    "x": 2336,
+    "y": 3490,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Eagle"
+  },
+  {
+    "id": 1505,
+    "x": 2321,
+    "y": 3503,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ferret"
+  },
+  {
+    "id": 1505,
+    "x": 2316,
+    "y": 3505,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ferret"
+  },
+  {
+    "id": 1505,
+    "x": 2311,
+    "y": 3517,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ferret"
+  },
+  {
+    "id": 1505,
+    "x": 2308,
+    "y": 3513,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ferret"
+  },
+  {
+    "id": 1505,
+    "x": 2311,
+    "y": 3512,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ferret"
+  },
+  {
+    "id": 1485,
+    "x": 2319,
+    "y": 3503,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Nickolaus"
+  },
+  {
+    "id": 1505,
+    "x": 2316,
+    "y": 3517,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ferret"
+  }
+]
