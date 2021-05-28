@@ -267,5 +267,29 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Ice troll runt"
+  },
+
+
+
+  //9276
+  {
+    "id": 1874,
+    "x": 2360,
+    "y": 3863,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ice troll runt"
+  },
+  {
+    "id": 1874,
+    "x": 2328,
+    "y": 3860,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ice troll runt"
   }
 ]
