@@ -1205,5 +1205,29 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Hobgoblin"
+  },
+
+
+
+  //10040
+  {
+    "id": 4425,
+    "x": 2508,
+    "y": 3634,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Larrissa"
+  },
+  {
+    "id": 4423,
+    "x": 2506,
+    "y": 3639,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jossik"
   }
 ]
