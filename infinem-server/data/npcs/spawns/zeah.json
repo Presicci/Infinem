@@ -1383,5 +1383,80 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Lizardman brute"
+  },
+
+
+
+
+  //5175
+  {
+    "id": 6919,
+    "x": 1340,
+    "y": 3543,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 6919,
+    "x": 1330,
+    "y": 3555,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 6919,
+    "x": 1330,
+    "y": 3558,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 6919,
+    "x": 1318,
+    "y": 3554,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 6919,
+    "x": 1320,
+    "y": 3571,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 6919,
+    "x": 1313,
+    "y": 3551,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 6919,
+    "x": 1321,
+    "y": 3580,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
   }
 ]
