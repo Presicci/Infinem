@@ -729,5 +729,238 @@
     "walkRange": 3,
     "world": "ECO",
     "npcName": "Ochre Blamish Snail"
+  },
+
+
+  //13622
+  {
+    "id": 0,
+    "x": 3454,
+    "y": 3476,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tool Leprechaun"
+  },
+  {
+    "id": 2827,
+    "x": 3405,
+    "y": 3493,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3406,
+    "y": 3481,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 4563,
+    "x": 3405,
+    "y": 3489,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 3486,
+    "x": 3415,
+    "y": 3485,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 3486,
+    "x": 3412,
+    "y": 3489,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 3486,
+    "x": 3410,
+    "y": 3493,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 3485,
+    "x": 3411,
+    "y": 3485,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 3485,
+    "x": 3413,
+    "y": 3490,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 3485,
+    "x": 3412,
+    "y": 3486,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 3486,
+    "x": 3412,
+    "y": 3485,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 3486,
+    "x": 3415,
+    "y": 3488,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 3486,
+    "x": 3413,
+    "y": 3490,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 3488,
+    "x": 3417,
+    "y": 3489,
+    "z": 2,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Drezel"
+  },
+  {
+    "id": 1579,
+    "x": 3432,
+    "y": 3486,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Hiylik Myna"
+  },
+  {
+    "id": 289,
+    "x": 3418,
+    "y": 3507,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ghoul"
+  },
+  {
+    "id": 289,
+    "x": 3421,
+    "y": 3511,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ghoul"
+  },
+  {
+    "id": 289,
+    "x": 3415,
+    "y": 3511,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ghoul"
+  },
+  {
+    "id": 289,
+    "x": 3414,
+    "y": 3507,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ghoul"
+  },
+  {
+    "id": 289,
+    "x": 3422,
+    "y": 3506,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ghoul"
+  },
+  {
+    "id": 289,
+    "x": 3420,
+    "y": 3510,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ghoul"
+  },
+  {
+    "id": 289,
+    "x": 3419,
+    "y": 3506,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ghoul"
+  },
+  {
+    "id": 289,
+    "x": 3423,
+    "y": 3511,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ghoul"
   }
 ]
