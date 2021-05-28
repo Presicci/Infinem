@@ -962,5 +962,48 @@
     "walkRange": 3,
     "world": "ECO",
     "npcName": "Ghoul"
+  },
+
+
+  //13621
+  {
+    "id": 2646,
+    "x": 3444,
+    "y": 3434,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3436,
+    "y": 3401,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3424,
+    "y": 3403,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3454,
+    "y": 3397,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
   }
 ]
