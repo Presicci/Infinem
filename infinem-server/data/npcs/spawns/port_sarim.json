@@ -12,7 +12,7 @@
     "name": "Wydin",
     "id": 2890,
     "x": 3014,
-    "y": 3205,
+    "y": 3206,
     "z": 0,
     "direction": "S",
     "walkRange": 2
@@ -460,15 +460,6 @@
   },
   {
     "name": "Goblin",
-    "id": 3036,
-    "x": 3013,
-    "y": 3204,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1
-  },
-  {
-    "name": "Goblin",
     "id": 3035,
     "x": 3003,
     "y": 3208,
@@ -759,15 +750,6 @@
     "walkRange": 1
   },
   {
-    "name": "Cavey Davey",
-    "id": 1052,
-    "x": 3012,
-    "y": 3259,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1
-  },
-  {
     "name": "Seagull",
     "id": 1339,
     "x": 3063,
@@ -793,5 +775,39 @@
     "z": 0,
     "direction": "S",
     "walkRange": 2
+  },
+
+
+
+  //12082
+  {
+    "id": 8630,
+    "x": 3054,
+    "y": 3245,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Veos"
+  },
+  {
+    "id": 2892,
+    "x": 3028,
+    "y": 3251,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Brian"
+  },
+  {
+    "id": 5905,
+    "x": 3013,
+    "y": 3260,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Betty"
   }
 ]
