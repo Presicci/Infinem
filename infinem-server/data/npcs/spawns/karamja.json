@@ -256,5 +256,229 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Jungle forester"
+  },
+
+
+
+  //11056
+  {
+    "id": 2893,
+    "x": 2767,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jiminua"
+  },
+  {
+    "id": 2134,
+    "x": 2765,
+    "y": 3120,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Aisles"
+  },
+  {
+    "id": 3020,
+    "x": 2778,
+    "y": 3119,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2809,
+    "y": 3108,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2811,
+    "y": 3113,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2804,
+    "y": 3096,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2796,
+    "y": 3105,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 2688,
+    "x": 2794,
+    "y": 3105,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Imiago"
+  },
+  {
+    "id": 0,
+    "x": 2800,
+    "y": 3103,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tool Leprechaun"
+  },
+  {
+    "id": 3020,
+    "x": 2798,
+    "y": 3117,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2804,
+    "y": 3117,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2782,
+    "y": 3098,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2784,
+    "y": 3105,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 2845,
+    "x": 2786,
+    "y": 3104,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 2845,
+    "x": 2783,
+    "y": 3094,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 2845,
+    "x": 2807,
+    "y": 3095,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 2845,
+    "x": 2811,
+    "y": 3104,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 6422,
+    "x": 2791,
+    "y": 3099,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Safta Doc"
+  },
+  {
+    "id": 4625,
+    "x": 2809,
+    "y": 3086,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Trufitus"
+  },
+  {
+    "id": 6420,
+    "x": 2801,
+    "y": 3081,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Karaday"
+  },
+  {
+    "id": 6416,
+    "x": 2792,
+    "y": 3076,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Mamma Bufetta"
+  },
+  {
+    "id": 4858,
+    "x": 2753,
+    "y": 3081,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ogre boat"
   }
 ]
