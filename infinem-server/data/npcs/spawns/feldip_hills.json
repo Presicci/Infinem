@@ -877,5 +877,19 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Scarg"
+  },
+
+
+
+  //9776 CASTLE WARS
+  {
+    "id": 5721,
+    "x": 2440,
+    "y": 3090,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lanthus"
   }
 ]
