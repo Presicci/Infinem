@@ -553,5 +553,29 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
+  },
+
+
+
+  //4923
+  {
+    "id": 2834,
+    "x": 1273,
+    "y": 3825,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2834,
+    "x": 1279,
+    "y": 3833,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Giant bat"
   }
 ]
