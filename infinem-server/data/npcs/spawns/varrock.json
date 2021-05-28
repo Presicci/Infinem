@@ -342,15 +342,6 @@
     "walkRange": 0
   },
   {
-    "name": "Sheep",
-    "id": 1302,
-    "x": 3271,
-    "y": 3411,
-    "z": 0,
-    "direction": "NW",
-    "walkRange": 0
-  },
-  {
     "name": "Banker",
     "id": 2897,
     "x": 3251,
@@ -835,15 +826,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 2
-  },
-  {
-    "name": "Sheep",
-    "id": 1302,
-    "x": 3271,
-    "y": 3411,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
   },
   {
     "name": "Man",
