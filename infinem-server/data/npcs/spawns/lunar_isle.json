@@ -34,5 +34,130 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+
+
+
+
+  //8253
+  {
+    "id": 3843,
+    "x": 2097,
+    "y": 3921,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Sirsal Banker"
+  },
+  {
+    "id": 3843,
+    "x": 2098,
+    "y": 3921,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Sirsal Banker"
+  },
+  {
+    "id": 3850,
+    "x": 2094,
+    "y": 3922,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bouquet Mac Hyacinth"
+  },
+  {
+    "id": 3842,
+    "x": 2105,
+    "y": 3909,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rimae Sirsalis"
+  },
+  {
+    "id": 3840,
+    "x": 2093,
+    "y": 3906,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Melana Moonlander"
+  },
+  {
+    "id": 3848,
+    "x": 2091,
+    "y": 3914,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Enchanted Bucket"
+  },
+  {
+    "id": 3856,
+    "x": 2087,
+    "y": 3925,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cabin boy"
+  },
+  {
+    "id": 3836,
+    "x": 2085,
+    "y": 3928,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "House"
+  },
+  {
+    "id": 3838,
+    "x": 2073,
+    "y": 3917,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pauline Polaris"
+  },
+  {
+    "id": 3841,
+    "x": 2080,
+    "y": 3913,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Selene"
+  },
+  {
+    "id": 787,
+    "x": 2111,
+    "y": 3945,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 787,
+    "x": 2093,
+    "y": 3940,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
   }
 ]
