@@ -3905,5 +3905,299 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Archer"
+  },
+
+
+
+  //6200
+  {
+    "id": 3909,
+    "x": 1591,
+    "y": 3633,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bear Cub"
+  },
+  {
+    "id": 3909,
+    "x": 1598,
+    "y": 3628,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bear Cub"
+  },
+  {
+    "id": 2838,
+    "x": 1598,
+    "y": 3634,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Grizzly bear"
+  },
+  {
+    "id": 7223,
+    "x": 1591,
+    "y": 3620,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Mogrim"
+  },
+  {
+    "id": 6878,
+    "x": 1565,
+    "y": 3616,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6879,
+    "x": 1565,
+    "y": 3613,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6880,
+    "x": 1565,
+    "y": 3610,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6880,
+    "x": 1558,
+    "y": 3616,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 7201,
+    "x": 1543,
+    "y": 3630,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Quartermaster Briget"
+  },
+  {
+    "id": 305,
+    "x": 1545,
+    "y": 3627,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jennifer"
+  },
+  {
+    "id": 7016,
+    "x": 1538,
+    "y": 3614,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1547,
+    "y": 3604,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1550,
+    "y": 3619,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1540,
+    "y": 3600,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 6906,
+    "x": 1547,
+    "y": 3600,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Soldier (tier 2)"
+  },
+  {
+    "id": 6908,
+    "x": 1547,
+    "y": 3590,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Soldier (tier 3)"
+  },
+  {
+    "id": 6912,
+    "x": 1538,
+    "y": 3591,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Soldier (tier 5)"
+  },
+  {
+    "id": 6904,
+    "x": 1538,
+    "y": 3597,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Soldier (tier 1)"
+  },
+  {
+    "id": 6895,
+    "x": 1561,
+    "y": 3602,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Captain Ginea"
+  },
+  {
+    "id": 6873,
+    "x": 1581,
+    "y": 3591,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Nurse Wooned"
+  },
+  {
+    "id": 6828,
+    "x": 1582,
+    "y": 3593,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6842,
+    "x": 1585,
+    "y": 3593,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6830,
+    "x": 1588,
+    "y": 3593,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6836,
+    "x": 1582,
+    "y": 3589,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6834,
+    "x": 1585,
+    "y": 3589,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6838,
+    "x": 1588,
+    "y": 3589,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6846,
+    "x": 1582,
+    "y": 3585,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6844,
+    "x": 1585,
+    "y": 3585,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6826,
+    "x": 1588,
+    "y": 3585,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
   }
 ]
