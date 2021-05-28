@@ -9912,5 +9912,340 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Rat"
+  },
+
+
+
+
+  //7225
+  {
+    "id": 6968,
+    "x": 1808,
+    "y": 3710,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dock worker"
+  },
+  {
+    "id": 6999,
+    "x": 1808,
+    "y": 3707,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Port Official"
+  },
+  {
+    "id": 1338,
+    "x": 1805,
+    "y": 3708,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 1338,
+    "x": 1805,
+    "y": 3705,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 3019,
+    "x": 1807,
+    "y": 3702,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 1807,
+    "y": 3701,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 1338,
+    "x": 1812,
+    "y": 3689,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 1338,
+    "x": 1807,
+    "y": 3694,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 7009,
+    "x": 1808,
+    "y": 3695,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Andrea"
+  },
+  {
+    "id": 6995,
+    "x": 1806,
+    "y": 3690,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 3019,
+    "x": 1806,
+    "y": 3686,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 7007,
+    "x": 1803,
+    "y": 3691,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Melvin"
+  },
+  {
+    "id": 7001,
+    "x": 1793,
+    "y": 3689,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Port worker"
+  },
+  {
+    "id": 6994,
+    "x": 1807,
+    "y": 3675,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 6994,
+    "x": 1806,
+    "y": 3683,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 7006,
+    "x": 1812,
+    "y": 3690,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Darren"
+  },
+  {
+    "id": 6997,
+    "x": 1816,
+    "y": 3689,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 7003,
+    "x": 1816,
+    "y": 3689,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cheryl"
+  },
+  {
+    "id": 7004,
+    "x": 1820,
+    "y": 3689,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Charles"
+  },
+  {
+    "id": 2147,
+    "x": 1824,
+    "y": 3690,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Veos"
+  },
+  {
+    "id": 3019,
+    "x": 1820,
+    "y": 3684,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 1820,
+    "y": 3680,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 6987,
+    "x": 1822,
+    "y": 3682,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 6996,
+    "x": 1819,
+    "y": 3681,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mugger"
+  },
+  {
+    "id": 6988,
+    "x": 1821,
+    "y": 3677,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 6992,
+    "x": 1834,
+    "y": 3689,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 1338,
+    "x": 1841,
+    "y": 3690,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 6998,
+    "x": 1829,
+    "y": 3690,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 6988,
+    "x": 1839,
+    "y": 3691,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 7000,
+    "x": 1845,
+    "y": 3691,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Janaway"
+  },
+  {
+    "id": 7005,
+    "x": 1840,
+    "y": 3688,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sarah"
+  },
+  {
+    "id": 7010,
+    "x": 1843,
+    "y": 3689,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Elizabeth"
+  },
+  {
+    "id": 3019,
+    "x": 1841,
+    "y": 3690,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
   }
 ]
