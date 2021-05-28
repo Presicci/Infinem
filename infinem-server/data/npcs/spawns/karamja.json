@@ -2299,5 +2299,119 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Fishing spot"
+  },
+
+
+
+  //11313
+  {
+    "id": 3024,
+    "x": 2865,
+    "y": 3167,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Scorpion"
+  },
+  {
+    "id": 3024,
+    "x": 2865,
+    "y": 3156,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Scorpion"
+  },
+  {
+    "id": 3024,
+    "x": 2868,
+    "y": 3171,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Scorpion"
+  },
+  {
+    "id": 2848,
+    "x": 2879,
+    "y": 3156,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2845,
+    "x": 2874,
+    "y": 3163,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 3024,
+    "x": 2854,
+    "y": 3150,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Scorpion"
+  },
+  {
+    "id": 2854,
+    "x": 2816,
+    "y": 3184,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2845,
+    "x": 2823,
+    "y": 3195,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 2845,
+    "x": 2828,
+    "y": 3198,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 2848,
+    "x": 2829,
+    "y": 3193,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2845,
+    "x": 2878,
+    "y": 3155,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Snake"
   }
 ]
