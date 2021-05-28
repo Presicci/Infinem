@@ -737,5 +737,139 @@
     "walkRange": 5,
     "world": "ECO",
     "npcName": "Cormorant"
+  },
+
+
+
+  //14907
+  {
+    "id": 7754,
+    "x": 3715,
+    "y": 3832,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 0,
+    "x": 3712,
+    "y": 3839,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tool Leprechaun"
+  },
+  {
+    "id": 7772,
+    "x": 3714,
+    "y": 3804,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Peter"
+  },
+  {
+    "id": 8105,
+    "x": 3720,
+    "y": 3813,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jardric"
+  },
+  {
+    "id": 7769,
+    "x": 3725,
+    "y": 3817,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shop keeper"
+  },
+  {
+    "id": 7790,
+    "x": 3732,
+    "y": 3812,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "John"
+  },
+  {
+    "id": 7791,
+    "x": 3735,
+    "y": 3815,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "David"
+  },
+  {
+    "id": 7773,
+    "x": 3734,
+    "y": 3819,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Charles"
+  },
+  {
+    "id": 7770,
+    "x": 3737,
+    "y": 3807,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Fossil Collector"
+  },
+  {
+    "id": 7771,
+    "x": 3739,
+    "y": 3805,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Dog"
+  },
+  {
+    "id": 7774,
+    "x": 3753,
+    "y": 3807,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "John"
+  },
+  {
+    "id": 7787,
+    "x": 3760,
+    "y": 3827,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mattimeo"
+  },
+  {
+    "id": 283,
+    "x": 3768,
+    "y": 3829,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Pelican"
   }
 ]
