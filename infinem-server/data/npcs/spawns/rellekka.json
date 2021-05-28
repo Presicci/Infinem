@@ -1112,5 +1112,49 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Wolf"
+  },
+
+
+
+  //10297
+  {
+    "id": 3933,
+    "x": 2623,
+    "y": 3675,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Yrsa"
+  },
+  {
+    "id": 7205,
+    "x": 2621,
+    "y": 3683,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jarvald"
+  },
+  {
+    "id": 3855,
+    "x": 2620,
+    "y": 3688,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Lokar Searunner"
+  },
+  {
+    "id": 3950,
+    "x": 2613,
+    "y": 3660,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior"
   }
 ]
