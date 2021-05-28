@@ -1442,5 +1442,120 @@
     "walkRange": 6,
     "world": "ECO",
     "npcName": "Jogre"
+  },
+
+
+
+
+  //10802
+  {
+    "id": 3025,
+    "x": 2736,
+    "y": 3228,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Poison Scorpion"
+  },
+  {
+    "id": 3025,
+    "x": 2727,
+    "y": 3222,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Poison Scorpion"
+  },
+  {
+    "id": 3025,
+    "x": 2736,
+    "y": 3221,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Poison Scorpion"
+  },
+  {
+    "id": 3025,
+    "x": 2728,
+    "y": 3218,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Poison Scorpion"
+  },
+  {
+    "id": 3025,
+    "x": 2722,
+    "y": 3221,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Poison Scorpion"
+  },
+  {
+    "id": 3025,
+    "x": 2742,
+    "y": 3233,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Poison Scorpion"
+  },
+  {
+    "id": 2090,
+    "x": 2699,
+    "y": 3211,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 2090,
+    "x": 2699,
+    "y": 3205,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 2092,
+    "x": 2694,
+    "y": 3206,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 2091,
+    "x": 2692,
+    "y": 3215,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 2091,
+    "x": 2697,
+    "y": 3204,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
   }
 ]
