@@ -1,0 +1,193 @@
+[
+  //14652
+  {
+    "id": 8690,
+    "x": 3674,
+    "y": 3878,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3678,
+    "y": 3867,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3685,
+    "y": 3890,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3685,
+    "y": 3867,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3685,
+    "y": 3858,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3679,
+    "y": 3856,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3673,
+    "y": 3859,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3682,
+    "y": 3849,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3678,
+    "y": 3846,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 7799,
+    "x": 3709,
+    "y": 3897,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ammonite Crab"
+  },
+  {
+    "id": 8690,
+    "x": 3703,
+    "y": 3872,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 7778,
+    "x": 3689,
+    "y": 3878,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Irene"
+  },
+  {
+    "id": 8690,
+    "x": 3692,
+    "y": 3868,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3697,
+    "y": 3865,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3696,
+    "y": 3859,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3694,
+    "y": 3853,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3698,
+    "y": 3846,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3693,
+    "y": 3847,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3688,
+    "y": 3845,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  }
+]
