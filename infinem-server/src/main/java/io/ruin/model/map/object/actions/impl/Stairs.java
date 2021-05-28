@@ -31,4 +31,11 @@ public class Stairs {
     private static void climbDown(Player player) {
         player.getMovement().teleport(player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ() + 1);
     }
+
+    static {
+        // Wizard's tower
+        registerStair(12536, new Position(3103, 3159, 0));
+        registerStair(12537, new Position(3103, 3159, 1));
+        registerStair(12538, new Position(3104, 3160, 2));
+    }
 }
