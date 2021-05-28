@@ -434,8 +434,8 @@
   {
     "name": "Skeletal Wyvern",
     "id": 467,
-    "x": 3051,
-    "y": 9561,
+    "x": 3050,
+    "y": 9560,
     "z": 0,
     "direction": "S",
     "walkRange": 4
