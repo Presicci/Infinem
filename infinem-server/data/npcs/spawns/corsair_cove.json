@@ -1,0 +1,142 @@
+[
+  {
+    "id": 7976,
+    "x": 2561,
+    "y": 2856,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Arsen the Thief"
+  },
+  {
+    "id": 1339,
+    "x": 2575,
+    "y": 2860,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 1339,
+    "x": 2569,
+    "y": 2858,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 1339,
+    "x": 2565,
+    "y": 2857,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 1339,
+    "x": 2570,
+    "y": 2853,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 1339,
+    "x": 2577,
+    "y": 2852,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 1339,
+    "x": 2579,
+    "y": 2846,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 1262,
+    "x": 2575,
+    "y": 2867,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ram"
+  },
+  {
+    "id": 7982,
+    "x": 2569,
+    "y": 2866,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Yusuf"
+  },
+  {
+    "id": 7957,
+    "x": 2586,
+    "y": 2867,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Captain Tock"
+  },
+  {
+    "id": 1339,
+    "x": 2585,
+    "y": 2850,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 1339,
+    "x": 2579,
+    "y": 2842,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 1334,
+    "x": 2583,
+    "y": 2851,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Trader Crewmember"
+  },
+  {
+    "id": 1331,
+    "x": 2588,
+    "y": 2851,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Trader Crewmember"
+  }
+]
