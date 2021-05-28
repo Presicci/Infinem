@@ -1217,5 +1217,210 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Gnome"
+  },
+
+
+
+
+  //9778
+  {
+    "id": 2839,
+    "x": 2464,
+    "y": 3202,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Black bear"
+  },
+  {
+    "id": 520,
+    "x": 2480,
+    "y": 3233,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 520,
+    "x": 2475,
+    "y": 3238,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 520,
+    "x": 2478,
+    "y": 3241,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 520,
+    "x": 2471,
+    "y": 3247,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 520,
+    "x": 2472,
+    "y": 3252,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 520,
+    "x": 2460,
+    "y": 3250,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 520,
+    "x": 2479,
+    "y": 3250,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 5370,
+    "x": 2481,
+    "y": 3223,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost"
+  },
+  {
+    "id": 5370,
+    "x": 2465,
+    "y": 3221,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost"
+  },
+  {
+    "id": 5370,
+    "x": 2463,
+    "y": 3224,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost"
+  },
+  {
+    "id": 5370,
+    "x": 2470,
+    "y": 3226,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost"
+  },
+  {
+    "id": 5372,
+    "x": 2467,
+    "y": 3227,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Grave scorpion"
+  },
+  {
+    "id": 5372,
+    "x": 2469,
+    "y": 3220,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Grave scorpion"
+  },
+  {
+    "id": 5372,
+    "x": 2471,
+    "y": 3224,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Grave scorpion"
+  },
+  {
+    "id": 5371,
+    "x": 2464,
+    "y": 3228,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spirit of Scorpius"
+  },
+  {
+    "id": 7425,
+    "x": 2454,
+    "y": 3233,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mage of Zamorak"
+  },
+  {
+    "id": 520,
+    "x": 2455,
+    "y": 3239,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 520,
+    "x": 2455,
+    "y": 3244,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 520,
+    "x": 2455,
+    "y": 3248,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
   }
 ]
