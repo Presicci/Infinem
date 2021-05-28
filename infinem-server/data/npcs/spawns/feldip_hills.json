@@ -2097,5 +2097,119 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Dwarf"
+  },
+
+
+
+  //10286
+  {
+    "id": 2095,
+    "x": 2588,
+    "y": 2966,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ogre"
+  },
+  {
+    "id": 2095,
+    "x": 2585,
+    "y": 2967,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ogre"
+  },
+  {
+    "id": 1473,
+    "x": 2592,
+    "y": 2967,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 1473,
+    "x": 2598,
+    "y": 2970,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 1473,
+    "x": 2602,
+    "y": 2969,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 1473,
+    "x": 2603,
+    "y": 2966,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 1473,
+    "x": 2601,
+    "y": 2964,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 1473,
+    "x": 2598,
+    "y": 2962,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 2095,
+    "x": 2579,
+    "y": 2981,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ogre"
+  },
+  {
+    "id": 2095,
+    "x": 2576,
+    "y": 2991,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ogre"
+  },
+  {
+    "id": 2095,
+    "x": 2572,
+    "y": 2991,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ogre"
   }
 ]
