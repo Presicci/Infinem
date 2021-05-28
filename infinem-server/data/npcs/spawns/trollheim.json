@@ -384,5 +384,130 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Thrower troll"
+  },
+
+
+
+
+  //11576
+  {
+    "id": 4143,
+    "x": 2903,
+    "y": 3643,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mountain troll"
+  },
+  {
+    "id": 939,
+    "x": 2910,
+    "y": 3641,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mountain troll"
+  },
+  {
+    "id": 936,
+    "x": 2918,
+    "y": 3635,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mountain troll"
+  },
+  {
+    "id": 937,
+    "x": 2920,
+    "y": 3638,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mountain troll"
+  },
+  {
+    "id": 4124,
+    "x": 2920,
+    "y": 3622,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Troll spectator"
+  },
+  {
+    "id": 4125,
+    "x": 2923,
+    "y": 3618,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Troll spectator"
+  },
+  {
+    "id": 4123,
+    "x": 2906,
+    "y": 3624,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Troll spectator"
+  },
+  {
+    "id": 4126,
+    "x": 2923,
+    "y": 3613,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Troll spectator"
+  },
+  {
+    "id": 4129,
+    "x": 2922,
+    "y": 3607,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Troll spectator"
+  },
+  {
+    "id": 4127,
+    "x": 2916,
+    "y": 3601,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Troll spectator"
+  },
+  {
+    "id": 4128,
+    "x": 2902,
+    "y": 3603,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Troll spectator"
+  },
+  {
+    "id": 4130,
+    "x": 2912,
+    "y": 3613,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dad"
   }
 ]
