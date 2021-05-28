@@ -892,5 +892,189 @@
     "walkRange": 6,
     "world": "ECO",
     "npcName": "Monkey"
+  },
+
+
+
+  //11311
+  {
+    "id": 2845,
+    "x": 2832,
+    "y": 3015,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 2845,
+    "x": 2835,
+    "y": 3022,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 2845,
+    "x": 2836,
+    "y": 3021,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 2845,
+    "x": 2827,
+    "y": 3033,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 2845,
+    "x": 2844,
+    "y": 3049,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 2845,
+    "x": 2859,
+    "y": 3035,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 2848,
+    "x": 2837,
+    "y": 3036,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2832,
+    "y": 3024,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2819,
+    "y": 3034,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2845,
+    "y": 3021,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2852,
+    "y": 3027,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2821,
+    "y": 3033,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2851,
+    "y": 3054,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 4703,
+    "x": 2844,
+    "y": 3040,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Tamayu"
+  },
+  {
+    "id": 3020,
+    "x": 2855,
+    "y": 3056,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2848,
+    "y": 3069,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2868,
+    "y": 3071,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 522,
+    "x": 2864,
+    "y": 3061,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Tribesman"
   }
 ]
