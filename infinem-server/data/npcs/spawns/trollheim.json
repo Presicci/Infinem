@@ -509,5 +509,39 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Dad"
+  },
+
+
+
+  //11320
+  {
+    "id": 4092,
+    "x": 2840,
+    "y": 3590,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 4117,
+    "x": 2857,
+    "y": 3609,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mountain goat"
+  },
+  {
+    "id": 4117,
+    "x": 2832,
+    "y": 3596,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mountain goat"
   }
 ]
