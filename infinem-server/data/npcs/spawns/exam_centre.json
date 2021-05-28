@@ -34,5 +34,55 @@
     "z": 0,
     "direction": "S",
     "walkRange": 2
+  },
+  {
+    "id": 3630,
+    "x": 3356,
+    "y": 3384,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Digsite workman"
+  },
+  {
+    "id": 3628,
+    "x": 3371,
+    "y": 3387,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Digsite workman"
+  },
+  {
+    "id": 3642,
+    "x": 3376,
+    "y": 3373,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Nisha"
+  },
+  {
+    "id": 3641,
+    "x": 3381,
+    "y": 3379,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Nick"
+  },
+  {
+    "id": 3640,
+    "x": 3377,
+    "y": 3380,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Panning guide"
   }
 ]
