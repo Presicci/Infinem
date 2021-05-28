@@ -189,5 +189,189 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Ancient Fungi"
+  },
+
+
+
+  //14651
+  {
+    "id": 8690,
+    "x": 3680,
+    "y": 3835,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3680,
+    "y": 3825,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3686,
+    "y": 3823,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3694,
+    "y": 3822,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3692,
+    "y": 3816,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3690,
+    "y": 3831,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 8690,
+    "x": 3692,
+    "y": 3838,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ancient Fungi"
+  },
+  {
+    "id": 7756,
+    "x": 3705,
+    "y": 3838,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 7755,
+    "x": 3708,
+    "y": 3836,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 7802,
+    "x": 3680,
+    "y": 3812,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hoop Snake"
+  },
+  {
+    "id": 7802,
+    "x": 3689,
+    "y": 3805,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Hoop Snake"
+  },
+  {
+    "id": 7802,
+    "x": 3680,
+    "y": 3804,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Hoop Snake"
+  },
+  {
+    "id": 7802,
+    "x": 3665,
+    "y": 3803,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Hoop Snake"
+  },
+  {
+    "id": 7802,
+    "x": 3666,
+    "y": 3802,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Hoop Snake"
+  },
+  {
+    "id": 7802,
+    "x": 3668,
+    "y": 3805,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Hoop Snake"
+  },
+  {
+    "id": 7802,
+    "x": 3665,
+    "y": 3806,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Hoop Snake"
+  },
+  {
+    "id": 7802,
+    "x": 3696,
+    "y": 3801,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Hoop Snake"
+  },
+  {
+    "id": 7802,
+    "x": 3667,
+    "y": 3805,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Hoop Snake"
   }
 ]
