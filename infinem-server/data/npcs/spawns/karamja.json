@@ -2413,5 +2413,59 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Snake"
+  },
+
+
+
+  //11569
+  {
+    "id": 2826,
+    "x": 2905,
+    "y": 3148,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shop assistant"
+  },
+  {
+    "id": 2825,
+    "x": 2901,
+    "y": 3148,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shop keeper"
+  },
+  {
+    "id": 2848,
+    "x": 2887,
+    "y": 3164,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2893,
+    "y": 3165,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2845,
+    "x": 2891,
+    "y": 3154,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Snake"
   }
 ]
