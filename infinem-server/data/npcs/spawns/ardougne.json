@@ -2023,5 +2023,69 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+
+
+
+  //10292
+  {
+    "id": 1102,
+    "x": 2591,
+    "y": 3336,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Elena"
+  },
+  {
+    "id": 8971,
+    "x": 2578,
+    "y": 3330,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Mourner"
+  },
+  {
+    "id": 512,
+    "x": 2563,
+    "y": 3357,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chaos druid"
+  },
+  {
+    "id": 512,
+    "x": 2564,
+    "y": 3356,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chaos druid"
+  },
+  {
+    "id": 512,
+    "x": 2561,
+    "y": 3356,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chaos druid"
+  },
+  {
+    "id": 512,
+    "x": 2560,
+    "y": 3355,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chaos druid"
   }
 ]
