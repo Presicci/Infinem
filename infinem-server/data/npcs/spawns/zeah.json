@@ -10361,5 +10361,89 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Man"
+  },
+
+
+
+  //7222
+  {
+    "id": 1418,
+    "x": 1793,
+    "y": 3513,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1795,
+    "y": 3511,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1798,
+    "y": 3509,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1798,
+    "y": 3503,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 6920,
+    "x": 1799,
+    "y": 3498,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Farmer Gricoller"
+  },
+  {
+    "id": 7415,
+    "x": 1798,
+    "y": 3501,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Exodia the Forbidden one"
+  },
+  {
+    "id": 5935,
+    "x": 1799,
+    "y": 3466,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sand Crab"
+  },
+  {
+    "id": 5935,
+    "x": 1797,
+    "y": 3462,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sand Crab"
   }
 ]
