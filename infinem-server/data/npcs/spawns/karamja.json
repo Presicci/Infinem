@@ -778,5 +778,119 @@
     "walkRange": 6,
     "world": "ECO",
     "npcName": "Jungle spider"
+  },
+
+
+
+  //11312
+  {
+    "id": 6430,
+    "x": 2816,
+    "y": 3082,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Murcaily"
+  },
+  {
+    "id": 522,
+    "x": 2876,
+    "y": 3073,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2860,
+    "y": 3080,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2846,
+    "y": 3083,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2857,
+    "y": 3093,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2846,
+    "y": 3097,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 3020,
+    "x": 2840,
+    "y": 3088,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2859,
+    "y": 3094,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2857,
+    "y": 3081,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 2848,
+    "x": 2869,
+    "y": 3090,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2877,
+    "y": 3081,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
   }
 ]
