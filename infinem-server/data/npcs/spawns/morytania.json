@@ -1899,5 +1899,99 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Afflicted"
+  },
+
+
+
+  //13877
+  {
+    "id": 2646,
+    "x": 3516,
+    "y": 3413,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3507,
+    "y": 3437,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3496,
+    "y": 3421,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3516,
+    "y": 3399,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3487,
+    "y": 3407,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3472,
+    "y": 3430,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3463,
+    "y": 3425,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3457,
+    "y": 3433,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3456,
+    "y": 3403,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
   }
 ]
