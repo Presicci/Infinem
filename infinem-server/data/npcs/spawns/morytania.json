@@ -1005,5 +1005,48 @@
     "walkRange": 3,
     "world": "ECO",
     "npcName": "Ochre Blamish Snail"
+  },
+
+
+  //13620
+  {
+    "id": 2646,
+    "x": 3454,
+    "y": 3382,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3441,
+    "y": 3386,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3426,
+    "y": 3379,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3423,
+    "y": 3391,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
   }
 ]
