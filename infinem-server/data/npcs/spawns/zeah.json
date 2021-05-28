@@ -4440,5 +4440,189 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Bat"
+  },
+
+
+
+  //6458
+  {
+    "id": 7017,
+    "x": 1626,
+    "y": 3713,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  {
+    "id": 8543,
+    "x": 1623,
+    "y": 3717,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Royal Guard"
+  },
+  {
+    "id": 8543,
+    "x": 1631,
+    "y": 3714,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Royal Guard"
+  },
+  {
+    "id": 7058,
+    "x": 1622,
+    "y": 3749,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7058,
+    "x": 1622,
+    "y": 3746,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7058,
+    "x": 1622,
+    "y": 3743,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7057,
+    "x": 1637,
+    "y": 3749,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7057,
+    "x": 1637,
+    "y": 3743,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7059,
+    "x": 1637,
+    "y": 3746,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7059,
+    "x": 1637,
+    "y": 3740,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7060,
+    "x": 1622,
+    "y": 3740,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6824,
+    "x": 1627,
+    "y": 3759,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 6824,
+    "x": 1635,
+    "y": 3759,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2827,
+    "x": 1638,
+    "y": 3757,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 6770,
+    "x": 1651,
+    "y": 3758,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Arcis"
+  },
+  {
+    "id": 7065,
+    "x": 1651,
+    "y": 3730,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 7065,
+    "x": 1649,
+    "y": 3722,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 7065,
+    "x": 1651,
+    "y": 3719,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
   }
 ]
