@@ -802,5 +802,90 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+
+
+
+
+  //10550
+  {
+    "id": 114,
+    "x": 2645,
+    "y": 3488,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 114,
+    "x": 2642,
+    "y": 3501,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 114,
+    "x": 2628,
+    "y": 3481,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 114,
+    "x": 2642,
+    "y": 3475,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 4076,
+    "x": 2653,
+    "y": 3465,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Forester"
+  },
+  {
+    "id": 114,
+    "x": 2662,
+    "y": 3484,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 114,
+    "x": 2667,
+    "y": 3479,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 114,
+    "x": 2671,
+    "y": 3497,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
   }
 ]
