@@ -644,6 +644,200 @@
     "world": "ECO",
     "npcName": "null"
   },
+
+
+
+  //9775
+  {
+    "id": 860,
+    "x": 2444,
+    "y": 3053,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Grish"
+  },
+  {
+    "id": 861,
+    "x": 2445,
+    "y": 3050,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Uglug Nar"
+  },
+  {
+    "id": 862,
+    "x": 2444,
+    "y": 3047,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Pilg"
+  },
+  {
+    "id": 863,
+    "x": 2447,
+    "y": 3050,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Grug"
+  },
+  {
+    "id": 864,
+    "x": 2454,
+    "y": 3047,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ogre guard"
+  },
+  {
+    "id": 872,
+    "x": 2459,
+    "y": 3045,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Skogre"
+  },
+  {
+    "id": 872,
+    "x": 2465,
+    "y": 3051,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Skogre"
+  },
+  {
+    "id": 872,
+    "x": 2469,
+    "y": 3051,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Skogre"
+  },
+  {
+    "id": 872,
+    "x": 2480,
+    "y": 3046,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Skogre"
+  },
+  {
+    "id": 872,
+    "x": 2467,
+    "y": 3045,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Skogre"
+  },
+  {
+    "id": 872,
+    "x": 2485,
+    "y": 3047,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Skogre"
+  },
+  {
+    "id": 873,
+    "x": 2467,
+    "y": 3051,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Zogre"
+  },
+  {
+    "id": 873,
+    "x": 2463,
+    "y": 3043,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Zogre"
+  },
+  {
+    "id": 873,
+    "x": 2485,
+    "y": 3047,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Zogre"
+  },
+  {
+    "id": 874,
+    "x": 2466,
+    "y": 3043,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Zogre"
+  },
+  {
+    "id": 874,
+    "x": 2463,
+    "y": 3051,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Zogre"
+  },
+  {
+    "id": 874,
+    "x": 2484,
+    "y": 3047,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Zogre"
+  },
+  {
+    "id": 865,
+    "x": 2446,
+    "y": 3036,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ogre guard"
+  },
+  {
+    "id": 865,
+    "x": 2455,
+    "y": 3028,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ogre guard"
+  },
   {
     "id": 7655,
     "x": 2412,
