@@ -243,5 +243,140 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Suqah"
+  },
+
+
+
+
+  //8509
+  {
+    "id": 790,
+    "x": 2116,
+    "y": 3924,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 787,
+    "x": 2112,
+    "y": 3936,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 787,
+    "x": 2125,
+    "y": 3940,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 787,
+    "x": 2119,
+    "y": 3949,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 787,
+    "x": 2136,
+    "y": 3947,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 787,
+    "x": 2139,
+    "y": 3938,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 787,
+    "x": 2144,
+    "y": 3947,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 3872,
+    "x": 2140,
+    "y": 3904,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jenny Blade"
+  },
+  {
+    "id": 3868,
+    "x": 2141,
+    "y": 3908,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jack Sails"
+  },
+  {
+    "id": 3868,
+    "x": 2136,
+    "y": 3912,
+    "z": 2,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jack Sails"
+  },
+  {
+    "id": 3859,
+    "x": 2140,
+    "y": 3916,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "\u0027Eagle-eye\u0027 Shultz"
+  },
+  {
+    "id": 3872,
+    "x": 2139,
+    "y": 3912,
+    "z": 3,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jenny Blade"
+  },
+  {
+    "id": 3871,
+    "x": 2139,
+    "y": 3906,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "\u0027Beedy-eye\u0027 Jones"
   }
 ]
