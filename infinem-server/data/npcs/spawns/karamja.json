@@ -1244,5 +1244,39 @@
     "walkRange": 6,
     "world": "ECO",
     "npcName": "Monkey"
+  },
+
+
+
+  //11567
+  {
+    "id": 2848,
+    "x": 2903,
+    "y": 3008,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2905,
+    "y": 3019,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2898,
+    "y": 3017,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
   }
 ]
