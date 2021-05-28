@@ -555,5 +555,179 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Feral Vampyre"
+  },
+
+
+
+  //14389
+  {
+    "id": 2827,
+    "x": 3599,
+    "y": 3449,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 3233,
+    "x": 3594,
+    "y": 3450,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 3233,
+    "x": 3618,
+    "y": 3441,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 3237,
+    "x": 3621,
+    "y": 3437,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Feral Vampyre"
+  },
+  {
+    "id": 3235,
+    "x": 3614,
+    "y": 3443,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 8299,
+    "x": 3602,
+    "y": 3439,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swampy log"
+  },
+  {
+    "id": 8299,
+    "x": 3604,
+    "y": 3447,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swampy log"
+  },
+  {
+    "id": 8299,
+    "x": 3597,
+    "y": 3444,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swampy log"
+  },
+  {
+    "id": 8299,
+    "x": 3601,
+    "y": 3447,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swampy log"
+  },
+  {
+    "id": 8299,
+    "x": 3598,
+    "y": 3448,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swampy log"
+  },
+  {
+    "id": 8299,
+    "x": 3600,
+    "y": 3448,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swampy log"
+  },
+  {
+    "id": 8299,
+    "x": 3599,
+    "y": 3441,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swampy log"
+  },
+  {
+    "id": 8299,
+    "x": 3603,
+    "y": 3435,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swampy log"
+  },
+  {
+    "id": 2645,
+    "x": 3607,
+    "y": 3432,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Blood Blamish Snail"
+  },
+  {
+    "id": 2645,
+    "x": 3623,
+    "y": 3437,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Blood Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3621,
+    "y": 3437,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
+  },
+  {
+    "id": 2646,
+    "x": 3612,
+    "y": 3424,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ochre Blamish Snail"
   }
 ]
