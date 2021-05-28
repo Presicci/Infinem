@@ -9168,5 +9168,299 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Duck"
+  },
+
+
+
+  //6966
+  {
+    "id": 2834,
+    "x": 1775,
+    "y": 3515,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2834,
+    "x": 1774,
+    "y": 3514,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2834,
+    "x": 1769,
+    "y": 3504,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 3029,
+    "x": 1776,
+    "y": 3513,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 3029,
+    "x": 1769,
+    "y": 3503,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 3029,
+    "x": 1771,
+    "y": 3499,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 3029,
+    "x": 1782,
+    "y": 3496,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 3029,
+    "x": 1781,
+    "y": 3500,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 3029,
+    "x": 1778,
+    "y": 3502,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 1416,
+    "x": 1763,
+    "y": 3503,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1761,
+    "y": 3490,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1753,
+    "y": 3488,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 6956,
+    "x": 1751,
+    "y": 3498,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 6956,
+    "x": 1751,
+    "y": 3491,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 6956,
+    "x": 1747,
+    "y": 3493,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 6956,
+    "x": 1747,
+    "y": 3495,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 6956,
+    "x": 1741,
+    "y": 3495,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 1418,
+    "x": 1742,
+    "y": 3496,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 6991,
+    "x": 1740,
+    "y": 3494,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 6991,
+    "x": 1739,
+    "y": 3491,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 1418,
+    "x": 1741,
+    "y": 3483,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1735,
+    "y": 3482,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1756,
+    "y": 3490,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1732,
+    "y": 3511,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 5935,
+    "x": 1737,
+    "y": 3467,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sand Crab"
+  },
+  {
+    "id": 5935,
+    "x": 1747,
+    "y": 3473,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sand Crab"
+  },
+  {
+    "id": 5935,
+    "x": 1743,
+    "y": 3473,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sand Crab"
+  },
+  {
+    "id": 5935,
+    "x": 1738,
+    "y": 3472,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sand Crab"
+  },
+  {
+    "id": 5935,
+    "x": 1759,
+    "y": 3473,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sand Crab"
   }
 ]
