@@ -9462,5 +9462,30 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Sand Crab"
+  },
+
+
+
+
+  //7227
+  {
+    "id": 6965,
+    "x": 1843,
+    "y": 3802,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Nicholas"
+  },
+  {
+    "id": 7904,
+    "x": 1796,
+    "y": 3781,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Tomas Lawry"
   }
 ]
