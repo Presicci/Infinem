@@ -416,5 +416,270 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Ice troll runt"
+  },
+
+
+
+
+  //9531
+  {
+    "id": 1940,
+    "x": 2421,
+    "y": 3781,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Mord Gunnars"
+  },
+  {
+    "id": 1950,
+    "x": 2413,
+    "y": 3795,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1950,
+    "x": 2410,
+    "y": 3798,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1993,
+    "x": 2412,
+    "y": 3799,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Miner"
+  },
+  {
+    "id": 6512,
+    "x": 2416,
+    "y": 3799,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Magnus Gram"
+  },
+  {
+    "id": 1952,
+    "x": 2411,
+    "y": 3801,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lensa"
+  },
+  {
+    "id": 1898,
+    "x": 2409,
+    "y": 3803,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "HRH Hrafn"
+  },
+  {
+    "id": 1897,
+    "x": 2407,
+    "y": 3802,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "King Gjuki Sorvott IV"
+  },
+  {
+    "id": 1949,
+    "x": 2409,
+    "y": 3805,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1899,
+    "x": 2409,
+    "y": 3804,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Thorkel Silkbeard"
+  },
+  {
+    "id": 1993,
+    "x": 2412,
+    "y": 3819,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Miner"
+  },
+  {
+    "id": 1945,
+    "x": 2417,
+    "y": 3817,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Keepa Kettilon"
+  },
+  {
+    "id": 1942,
+    "x": 2418,
+    "y": 3813,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Flosi Dalksson"
+  },
+  {
+    "id": 1950,
+    "x": 2415,
+    "y": 3822,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1950,
+    "x": 2415,
+    "y": 3826,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 2000,
+    "x": 2406,
+    "y": 3816,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Grundt"
+  },
+  {
+    "id": 1990,
+    "x": 2405,
+    "y": 3813,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Vanligga Gastfrihet"
+  },
+  {
+    "id": 1999,
+    "x": 2408,
+    "y": 3815,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Brendt"
+  },
+  {
+    "id": 1997,
+    "x": 2403,
+    "y": 3810,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Eric"
+  },
+  {
+    "id": 1944,
+    "x": 2395,
+    "y": 3805,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skuli Myrka"
+  },
+  {
+    "id": 1943,
+    "x": 2396,
+    "y": 3798,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Raum Urda-Stein"
+  },
+  {
+    "id": 1941,
+    "x": 2397,
+    "y": 3798,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hring Hring"
+  },
+  {
+    "id": 1993,
+    "x": 2393,
+    "y": 3799,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Miner"
+  },
+  {
+    "id": 1951,
+    "x": 2398,
+    "y": 3800,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Freygerd"
+  },
+  {
+    "id": 1950,
+    "x": 2390,
+    "y": 3797,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1950,
+    "x": 2389,
+    "y": 3798,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
   }
 ]
