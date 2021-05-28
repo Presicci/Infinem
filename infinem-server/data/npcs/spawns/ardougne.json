@@ -2101,5 +2101,19 @@
     "walkRange": 7,
     "world": "ECO",
     "npcName": "Rasolo"
+  },
+
+
+
+  //10038
+  {
+    "id": 4182,
+    "x": 2511,
+    "y": 3484,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Hudon"
   }
 ]
