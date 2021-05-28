@@ -232,5 +232,29 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
+  },
+
+
+
+  //11309
+  {
+    "id": 3955,
+    "x": 2868,
+    "y": 2941,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jungle forester"
+  },
+  {
+    "id": 3954,
+    "x": 2864,
+    "y": 2941,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jungle forester"
   }
 ]
