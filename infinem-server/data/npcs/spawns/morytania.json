@@ -240,5 +240,137 @@
     "walkRange": 3,
     "world": "ECO",
     "npcName": "Ochre Blamish Snail"
+  },
+
+  //14391
+  {
+    "id": 2993,
+    "x": 3635,
+    "y": 3528,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Undead chicken"
+  },
+  {
+    "id": 2993,
+    "x": 3629,
+    "y": 3530,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Undead chicken"
+  },
+  {
+    "id": 2993,
+    "x": 3632,
+    "y": 3526,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Undead chicken"
+  },
+  {
+    "id": 2993,
+    "x": 3634,
+    "y": 3532,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Undead chicken"
+  },
+  {
+    "id": 2993,
+    "x": 3624,
+    "y": 3530,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Undead chicken"
+  },
+  {
+    "id": 2993,
+    "x": 3632,
+    "y": 3525,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Undead chicken"
+  },
+  {
+    "id": 504,
+    "x": 3627,
+    "y": 3526,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Alice"
+  },
+  {
+    "id": 2992,
+    "x": 3621,
+    "y": 3527,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Undead cow"
+  },
+  {
+    "id": 2992,
+    "x": 3617,
+    "y": 3525,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Undead cow"
+  },
+  {
+    "id": 2992,
+    "x": 3613,
+    "y": 3527,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Undead cow"
+  },
+  {
+    "id": 2992,
+    "x": 3612,
+    "y": 3524,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Undead cow"
+  },
+  {
+    "id": 4412,
+    "x": 3620,
+    "y": 3524,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Alice\u0027s husband"
+  },
+  {
+    "id": 2993,
+    "x": 3621,
+    "y": 3529,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Undead chicken"
   }
 ]
