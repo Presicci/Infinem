@@ -372,5 +372,188 @@
     "walkRange": 2,
     "world": "ECO",
     "npcName": "Undead chicken"
+  },
+
+
+  //14390
+  {
+    "id": 3233,
+    "x": 3584,
+    "y": 3476,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 3233,
+    "x": 3600,
+    "y": 3485,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 3233,
+    "x": 3591,
+    "y": 3495,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 3233,
+    "x": 3600,
+    "y": 3501,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 3233,
+    "x": 3613,
+    "y": 3488,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 3233,
+    "x": 3612,
+    "y": 3480,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 3233,
+    "x": 3599,
+    "y": 3471,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 2827,
+    "x": 3594,
+    "y": 3506,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3584,
+    "y": 3498,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3606,
+    "y": 3481,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3591,
+    "y": 3462,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 3233,
+    "x": 3629,
+    "y": 3465,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Leech"
+  },
+  {
+    "id": 3237,
+    "x": 3619,
+    "y": 3466,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Feral Vampyre"
+  },
+  {
+    "id": 3237,
+    "x": 3601,
+    "y": 3471,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Feral Vampyre"
+  },
+  {
+    "id": 3235,
+    "x": 3589,
+    "y": 3460,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3237,
+    "x": 3602,
+    "y": 3490,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Feral Vampyre"
+  },
+  {
+    "id": 3237,
+    "x": 3603,
+    "y": 3502,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Feral Vampyre"
+  },
+  {
+    "id": 3237,
+    "x": 3592,
+    "y": 3491,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Feral Vampyre"
   }
 ]
