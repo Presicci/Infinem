@@ -2068,5 +2068,48 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Skeleton"
+  },
+
+
+  //5947
+  {
+    "id": 3019,
+    "x": 1485,
+    "y": 3781,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 2856,
+    "x": 1533,
+    "y": 3790,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2856,
+    "x": 1531,
+    "y": 3803,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2827,
+    "x": 1533,
+    "y": 3793,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
   }
 ]
