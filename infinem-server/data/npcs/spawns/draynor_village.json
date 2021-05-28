@@ -340,5 +340,58 @@
     "z": 0,
     "direction": "S",
     "walkRange": 5
+  },
+
+
+  //12338
+  {
+    "id": 5527,
+    "x": 3096,
+    "y": 3228,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Twiggy O\u0027Korn"
+  },
+  {
+    "id": 2854,
+    "x": 3094,
+    "y": 3260,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 508,
+    "x": 3107,
+    "y": 3217,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Black Knight"
+  },
+  {
+    "id": 2120,
+    "x": 3080,
+    "y": 3251,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Market Guard"
+  },
+  {
+    "id": 2121,
+    "x": 3080,
+    "y": 3251,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Olivia"
   }
 ]
