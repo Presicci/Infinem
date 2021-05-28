@@ -1,4 +1,5 @@
 [
+  //11826
   {
     "id": 1614,
     "x": 2947,
@@ -135,6 +136,200 @@
     "y": 3204,
     "z": 0,
     "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+
+
+
+  //11570
+  {
+    "id": 0,
+    "x": 2942,
+    "y": 3224,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tool Leprechaun"
+  },
+  {
+    "id": 1105,
+    "x": 2929,
+    "y": 3222,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Chancy"
+  },
+  {
+    "id": 1103,
+    "x": 2927,
+    "y": 3218,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Da Vinci"
+  },
+  {
+    "id": 1107,
+    "x": 2932,
+    "y": 3218,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Hops"
+  },
+  {
+    "id": 1146,
+    "x": 2935,
+    "y": 3209,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Chemist"
+  },
+  {
+    "id": 8763,
+    "x": 2915,
+    "y": 3226,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Barnaby"
+  },
+  {
+    "id": 7967,
+    "x": 2910,
+    "y": 3226,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Cabin Boy Colin"
+  },
+  {
+    "id": 3288,
+    "x": 2925,
+    "y": 3262,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hobgoblin"
+  },
+  {
+    "id": 3971,
+    "x": 2926,
+    "y": 3257,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie rat"
+  },
+  {
+    "id": 2854,
+    "x": 2924,
+    "y": 3254,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 3969,
+    "x": 2932,
+    "y": 3252,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie rat"
+  },
+  {
+    "id": 2854,
+    "x": 2933,
+    "y": 3254,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 3970,
+    "x": 2931,
+    "y": 3250,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie rat"
+  },
+  {
+    "id": 3970,
+    "x": 2930,
+    "y": 3245,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie rat"
+  },
+  {
+    "id": 3971,
+    "x": 2937,
+    "y": 3247,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie rat"
+  },
+  {
+    "id": 3971,
+    "x": 2929,
+    "y": 3251,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie rat"
+  },
+  {
+    "id": 2854,
+    "x": 2934,
+    "y": 3245,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2928,
+    "y": 3248,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2939,
+    "y": 3240,
+    "z": 0,
+    "direction": "N",
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Rat"
