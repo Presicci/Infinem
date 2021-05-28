@@ -1,41 +1,5 @@
 [
   {
-    "name": "Scavvo",
-    "id": 2871,
-    "x": 2997,
-    "y": 9547,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
-    "name": "Scavvo",
-    "id": 2871,
-    "x": 2995,
-    "y": 9544,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
-    "name": "Scavvo",
-    "id": 2871,
-    "x": 2994,
-    "y": 9549,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
-    "name": "Scavvo",
-    "id": 2871,
-    "x": 2998,
-    "y": 9546,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
     "name": "Hobgoblin",
     "id": 3049,
     "x": 2999,
