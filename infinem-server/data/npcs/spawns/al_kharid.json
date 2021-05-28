@@ -306,15 +306,6 @@
     "walkRange": 3
   },
   {
-    "name": "Zeke",
-    "id": 2875,
-    "x": 3288,
-    "y": 3189,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
     "name": "Man",
     "id": 3079,
     "x": 3294,
@@ -709,5 +700,149 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+
+
+
+  //13105
+  {
+    "id": 3103,
+    "x": 3289,
+    "y": 3168,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Al-Kharid warrior"
+  },
+  {
+    "id": 3103,
+    "x": 3295,
+    "y": 3168,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Al-Kharid warrior"
+  },
+  {
+    "id": 3103,
+    "x": 3286,
+    "y": 3165,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Al-Kharid warrior"
+  },
+  {
+    "id": 3103,
+    "x": 3300,
+    "y": 3171,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Al-Kharid warrior"
+  },
+  {
+    "id": 3103,
+    "x": 3301,
+    "y": 3175,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Al-Kharid warrior"
+  },
+  {
+    "id": 3103,
+    "x": 3285,
+    "y": 3169,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Al-Kharid warrior"
+  },
+  {
+    "id": 3103,
+    "x": 3285,
+    "y": 3173,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Al-Kharid warrior"
+  },
+  {
+    "id": 3103,
+    "x": 3283,
+    "y": 3172,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Al-Kharid warrior"
+  },
+  {
+    "id": 4285,
+    "x": 3298,
+    "y": 3163,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hassan"
+  },
+  {
+    "id": 4286,
+    "x": 3286,
+    "y": 3180,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Osman"
+  },
+  {
+    "id": 2875,
+    "x": 3287,
+    "y": 3190,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zeke"
+  },
+  {
+    "id": 3079,
+    "x": 3299,
+    "y": 3198,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 3079,
+    "x": 3292,
+    "y": 3192,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 3079,
+    "x": 3281,
+    "y": 3186,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
   }
 ]
