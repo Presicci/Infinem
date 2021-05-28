@@ -548,5 +548,69 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Goblin"
+  },
+
+
+
+  //9777
+  {
+    "id": 5381,
+    "x": 2469,
+    "y": 3158,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Clothears"
+  },
+  {
+    "id": 5379,
+    "x": 2465,
+    "y": 3183,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Smellytoes"
+  },
+  {
+    "id": 5378,
+    "x": 2467,
+    "y": 3183,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Greasycheeks"
+  },
+  {
+    "id": 5380,
+    "x": 2470,
+    "y": 3185,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Creakyknees"
+  },
+  {
+    "id": 2839,
+    "x": 2474,
+    "y": 3193,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Black bear"
+  },
+  {
+    "id": 5365,
+    "x": 2443,
+    "y": 3189,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Observatory assistant"
   }
 ]
