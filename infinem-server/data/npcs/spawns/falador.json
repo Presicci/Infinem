@@ -1592,5 +1592,80 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Sir Renitee"
+  },
+
+
+
+
+  //11827
+  {
+    "id": 1559,
+    "x": 2993,
+    "y": 3274,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Air wizard"
+  },
+  {
+    "id": 1556,
+    "x": 2993,
+    "y": 3272,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Fire wizard"
+  },
+  {
+    "id": 1558,
+    "x": 2994,
+    "y": 3271,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Earth wizard"
+  },
+  {
+    "id": 1557,
+    "x": 2990,
+    "y": 3271,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Water wizard"
+  },
+  {
+    "id": 1783,
+    "x": 2995,
+    "y": 3273,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Malignius Mortifer"
+  },
+  {
+    "id": 510,
+    "x": 3005,
+    "y": 3286,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Highwayman"
+  },
+  {
+    "id": 511,
+    "x": 3007,
+    "y": 3275,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Highwayman"
   }
 ]
