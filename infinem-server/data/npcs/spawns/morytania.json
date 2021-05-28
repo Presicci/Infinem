@@ -1145,5 +1145,335 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
+  },
+  {
+    "id": 1276,
+    "x": 3488,
+    "y": 3251,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 4445,
+    "x": 3517,
+    "y": 3241,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Aurel"
+  },
+  {
+    "id": 4446,
+    "x": 3516,
+    "y": 3235,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sorin"
+  },
+  {
+    "id": 2854,
+    "x": 3513,
+    "y": 3235,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 4459,
+    "x": 3506,
+    "y": 3241,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Teodor"
+  },
+  {
+    "id": 4469,
+    "x": 3505,
+    "y": 3236,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Luminata"
+  },
+  {
+    "id": 4448,
+    "x": 3502,
+    "y": 3232,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sergiu"
+  },
+  {
+    "id": 2854,
+    "x": 3505,
+    "y": 3244,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 3500,
+    "y": 3242,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 4466,
+    "x": 3499,
+    "y": 3241,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Simona"
+  },
+  {
+    "id": 4463,
+    "x": 3498,
+    "y": 3242,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Calin"
+  },
+  {
+    "id": 4447,
+    "x": 3491,
+    "y": 3242,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Luscion"
+  },
+  {
+    "id": 4467,
+    "x": 3487,
+    "y": 3240,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Vasile"
+  },
+  {
+    "id": 2854,
+    "x": 3486,
+    "y": 3242,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 4454,
+    "x": 3484,
+    "y": 3242,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Florin"
+  },
+  {
+    "id": 1568,
+    "x": 3495,
+    "y": 3235,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Abidor Crank"
+  },
+  {
+    "id": 2854,
+    "x": 3489,
+    "y": 3230,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 4465,
+    "x": 3479,
+    "y": 3223,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Nicoleta"
+  },
+  {
+    "id": 4464,
+    "x": 3480,
+    "y": 3222,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Mihail"
+  },
+  {
+    "id": 2854,
+    "x": 3484,
+    "y": 3217,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 4450,
+    "x": 3490,
+    "y": 3222,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Grigore"
+  },
+  {
+    "id": 4455,
+    "x": 3489,
+    "y": 3221,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Catalina"
+  },
+  {
+    "id": 2854,
+    "x": 3497,
+    "y": 3223,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 3495,
+    "y": 3222,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 4451,
+    "x": 3514,
+    "y": 3228,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ileana"
+  },
+  {
+    "id": 2854,
+    "x": 3516,
+    "y": 3224,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 4461,
+    "x": 3513,
+    "y": 3210,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gabriela"
+  },
+  {
+    "id": 4452,
+    "x": 3509,
+    "y": 3209,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Valeria"
+  },
+  {
+    "id": 4456,
+    "x": 3509,
+    "y": 3209,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ivan"
+  },
+  {
+    "id": 4471,
+    "x": 3493,
+    "y": 3211,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cornelius"
+  },
+  {
+    "id": 4457,
+    "x": 3484,
+    "y": 3208,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Victor"
+  },
+  {
+    "id": 4458,
+    "x": 3482,
+    "y": 3210,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Helena"
+  },
+  {
+    "id": 4453,
+    "x": 3483,
+    "y": 3208,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Emilia"
   }
 ]
