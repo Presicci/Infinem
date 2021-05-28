@@ -2913,5 +2913,359 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Bat"
+  },
+
+
+
+  //5942
+  {
+    "id": 2856,
+    "x": 1505,
+    "y": 3457,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2856,
+    "x": 1497,
+    "y": 3460,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2856,
+    "x": 1511,
+    "y": 3456,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2864,
+    "x": 1495,
+    "y": 3461,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2864,
+    "x": 1493,
+    "y": 3469,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 7474,
+    "x": 1506,
+    "y": 3469,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Reginald"
+  },
+  {
+    "id": 7475,
+    "x": 1506,
+    "y": 3466,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Roy jr."
+  },
+  {
+    "id": 1173,
+    "x": 1510,
+    "y": 3471,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1173,
+    "x": 1504,
+    "y": 3465,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1173,
+    "x": 1510,
+    "y": 3465,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1418,
+    "x": 1502,
+    "y": 3470,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1508,
+    "y": 3465,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1509,
+    "y": 3473,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1515,
+    "y": 3474,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1515,
+    "y": 3468,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1523,
+    "y": 3476,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1521,
+    "y": 3469,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1514,
+    "y": 3468,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1504,
+    "y": 3479,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1488,
+    "y": 3476,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1496,
+    "y": 3484,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 2910,
+    "x": 1494,
+    "y": 3497,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 2910,
+    "x": 1487,
+    "y": 3496,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 2910,
+    "x": 1481,
+    "y": 3498,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 2910,
+    "x": 1485,
+    "y": 3506,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 2910,
+    "x": 1487,
+    "y": 3504,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 2090,
+    "x": 1515,
+    "y": 3501,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 2090,
+    "x": 1513,
+    "y": 3507,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 2090,
+    "x": 1520,
+    "y": 3509,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 2090,
+    "x": 1522,
+    "y": 3502,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 2090,
+    "x": 1517,
+    "y": 3497,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 5556,
+    "x": 1522,
+    "y": 3476,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 5556,
+    "x": 1515,
+    "y": 3464,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 5556,
+    "x": 1498,
+    "y": 3469,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 5556,
+    "x": 1499,
+    "y": 3475,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
   }
 ]
