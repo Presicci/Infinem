@@ -8186,5 +8186,279 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Duck"
+  },
+
+
+
+  //6969
+  {
+    "id": 7016,
+    "x": 1787,
+    "y": 3711,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1783,
+    "y": 3710,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1788,
+    "y": 3709,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1790,
+    "y": 3707,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7017,
+    "x": 1791,
+    "y": 3708,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  {
+    "id": 2854,
+    "x": 1779,
+    "y": 3709,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 7221,
+    "x": 1761,
+    "y": 3709,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Raeli"
+  },
+  {
+    "id": 3019,
+    "x": 1756,
+    "y": 3707,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 1764,
+    "y": 3711,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 510,
+    "x": 1763,
+    "y": 3699,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Highwayman"
+  },
+  {
+    "id": 5894,
+    "x": 1769,
+    "y": 3683,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Bast"
+  },
+  {
+    "id": 7012,
+    "x": 1779,
+    "y": 3681,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ross and Ben"
+  },
+  {
+    "id": 7014,
+    "x": 1783,
+    "y": 3683,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Alexander"
+  },
+  {
+    "id": 7013,
+    "x": 1785,
+    "y": 3685,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dobwinkle"
+  },
+  {
+    "id": 7011,
+    "x": 1788,
+    "y": 3690,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lorraine"
+  },
+  {
+    "id": 7008,
+    "x": 1790,
+    "y": 3690,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Simon"
+  },
+  {
+    "id": 7016,
+    "x": 1757,
+    "y": 3680,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1758,
+    "y": 3674,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1754,
+    "y": 3672,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7017,
+    "x": 1755,
+    "y": 3685,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  {
+    "id": 6989,
+    "x": 1778,
+    "y": 3655,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 2786,
+    "x": 1778,
+    "y": 3650,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sheep"
+  },
+  {
+    "id": 2693,
+    "x": 1782,
+    "y": 3652,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sheep"
+  },
+  {
+    "id": 1838,
+    "x": 1742,
+    "y": 3662,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1745,
+    "y": 3666,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1744,
+    "y": 3671,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1737,
+    "y": 3694,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
   }
 ]
