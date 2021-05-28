@@ -250,5 +250,18 @@
     "z": 0,
     "direction": "S",
     "walkRange": 6
+  },
+
+
+  //12341
+  {
+    "id": 1526,
+    "x": 3104,
+    "y": 3424,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Rod Fishing spot"
   }
 ]
