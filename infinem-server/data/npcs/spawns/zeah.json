@@ -6013,5 +6013,78 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Skeleton"
+  },
+
+
+  //6715
+  {
+    "id": 7055,
+    "x": 1696,
+    "y": 3783,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Novice"
+  },
+  {
+    "id": 7055,
+    "x": 1687,
+    "y": 3796,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Novice"
+  },
+  {
+    "id": 7055,
+    "x": 1709,
+    "y": 3783,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Novice"
+  },
+  {
+    "id": 7055,
+    "x": 1712,
+    "y": 3801,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Novice"
+  },
+  {
+    "id": 7054,
+    "x": 1691,
+    "y": 3793,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mofina"
+  },
+  {
+    "id": 2827,
+    "x": 1671,
+    "y": 3788,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 7225,
+    "x": 1670,
+    "y": 3834,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Loinur"
   }
 ]
