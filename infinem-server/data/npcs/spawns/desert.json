@@ -1714,5 +1714,39 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Desert Wolf"
+  },
+
+
+
+  //13360
+  {
+    "id": 4652,
+    "x": 3339,
+    "y": 3082,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ugthanki"
+  },
+  {
+    "id": 4651,
+    "x": 3336,
+    "y": 3078,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4651,
+    "x": 3338,
+    "y": 3077,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
   }
 ]
