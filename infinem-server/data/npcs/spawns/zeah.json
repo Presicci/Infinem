@@ -2465,5 +2465,329 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Dwarf"
+  },
+
+
+
+  //5944
+  {
+    "id": 7017,
+    "x": 1524,
+    "y": 3635,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  {
+    "id": 7016,
+    "x": 1530,
+    "y": 3633,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1528,
+    "y": 3625,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1518,
+    "y": 3620,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7999,
+    "x": 1512,
+    "y": 3629,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Phileas Rimor"
+  },
+  {
+    "id": 7016,
+    "x": 1512,
+    "y": 3625,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1503,
+    "y": 3627,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1505,
+    "y": 3633,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1508,
+    "y": 3632,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 6864,
+    "x": 1512,
+    "y": 3617,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6861,
+    "x": 1512,
+    "y": 3616,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6862,
+    "x": 1506,
+    "y": 3613,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6859,
+    "x": 1505,
+    "y": 3613,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6862,
+    "x": 1504,
+    "y": 3613,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6883,
+    "x": 1496,
+    "y": 3616,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6860,
+    "x": 1496,
+    "y": 3617,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7016,
+    "x": 1494,
+    "y": 3610,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1489,
+    "y": 3603,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1491,
+    "y": 3620,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1481,
+    "y": 3626,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7017,
+    "x": 1475,
+    "y": 3626,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  {
+    "id": 7016,
+    "x": 1478,
+    "y": 3637,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1486,
+    "y": 3637,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1481,
+    "y": 3643,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7017,
+    "x": 1483,
+    "y": 3641,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  {
+    "id": 7016,
+    "x": 1505,
+    "y": 3638,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 6781,
+    "x": 1496,
+    "y": 3631,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shayda"
+  },
+  {
+    "id": 7016,
+    "x": 1516,
+    "y": 3606,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1514,
+    "y": 3585,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1508,
+    "y": 3598,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 8180,
+    "x": 1496,
+    "y": 3597,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Amelia"
+  },
+  {
+    "id": 7016,
+    "x": 1474,
+    "y": 3598,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
   }
 ]
