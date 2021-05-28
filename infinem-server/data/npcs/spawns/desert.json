@@ -2355,5 +2355,17 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Bandit"
+  },
+
+  //13357
+  {
+    "id": 23,
+    "x": 3346,
+    "y": 2940,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monkey"
   }
 ]
