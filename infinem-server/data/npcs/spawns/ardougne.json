@@ -3144,5 +3144,799 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Rat"
+  },
+
+
+
+  //9779
+  {
+    "id": 2854,
+    "x": 2482,
+    "y": 3285,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2469,
+    "y": 3295,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2470,
+    "y": 3288,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2481,
+    "y": 3300,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2472,
+    "y": 3325,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2466,
+    "y": 3315,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2461,
+    "y": 3317,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2461,
+    "y": 3304,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2480,
+    "y": 3325,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2471,
+    "y": 3320,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 9003,
+    "x": 2493,
+    "y": 3315,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Mourner"
+  },
+  {
+    "id": 9003,
+    "x": 2489,
+    "y": 3306,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Mourner"
+  },
+  {
+    "id": 3505,
+    "x": 2495,
+    "y": 3316,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Civilian"
+  },
+  {
+    "id": 3506,
+    "x": 2492,
+    "y": 3310,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Civilian"
+  },
+  {
+    "id": 3507,
+    "x": 2489,
+    "y": 3316,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Civilian"
+  },
+  {
+    "id": 3507,
+    "x": 2481,
+    "y": 3314,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Civilian"
+  },
+  {
+    "id": 1132,
+    "x": 2485,
+    "y": 3313,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Child"
+  },
+  {
+    "id": 2854,
+    "x": 2486,
+    "y": 3311,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2484,
+    "y": 3315,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 1142,
+    "x": 2481,
+    "y": 3309,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 1131,
+    "x": 2482,
+    "y": 3318,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 2854,
+    "x": 2488,
+    "y": 3323,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2480,
+    "y": 3310,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2484,
+    "y": 3306,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2483,
+    "y": 3300,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2473,
+    "y": 3313,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 3505,
+    "x": 2479,
+    "y": 3314,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Civilian"
+  },
+  {
+    "id": 2854,
+    "x": 2468,
+    "y": 3300,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2466,
+    "y": 3315,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2473,
+    "y": 3322,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 1133,
+    "x": 2476,
+    "y": 3318,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Child"
+  },
+  {
+    "id": 1132,
+    "x": 2471,
+    "y": 3318,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Child"
+  },
+  {
+    "id": 1132,
+    "x": 2466,
+    "y": 3318,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Child"
+  },
+  {
+    "id": 1142,
+    "x": 2473,
+    "y": 3325,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 1132,
+    "x": 2473,
+    "y": 3325,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Child"
+  },
+  {
+    "id": 1131,
+    "x": 2482,
+    "y": 3324,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 1132,
+    "x": 2473,
+    "y": 3305,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Child"
+  },
+  {
+    "id": 1139,
+    "x": 2472,
+    "y": 3307,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 7753,
+    "x": 2460,
+    "y": 3305,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark Mage"
+  },
+  {
+    "id": 1119,
+    "x": 2457,
+    "y": 3308,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 1118,
+    "x": 2465,
+    "y": 3307,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 1132,
+    "x": 2465,
+    "y": 3307,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Child"
+  },
+  {
+    "id": 1133,
+    "x": 2466,
+    "y": 3305,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Child"
+  },
+  {
+    "id": 1132,
+    "x": 2465,
+    "y": 3302,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Child"
+  },
+  {
+    "id": 1132,
+    "x": 2466,
+    "y": 3300,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Child"
+  },
+  {
+    "id": 2854,
+    "x": 2466,
+    "y": 3301,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2472,
+    "y": 3299,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2474,
+    "y": 3301,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 1133,
+    "x": 2470,
+    "y": 3297,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Child"
+  },
+  {
+    "id": 1131,
+    "x": 2472,
+    "y": 3295,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 1132,
+    "x": 2474,
+    "y": 3295,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Child"
+  },
+  {
+    "id": 3506,
+    "x": 2474,
+    "y": 3297,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Civilian"
+  },
+  {
+    "id": 1131,
+    "x": 2472,
+    "y": 3288,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 4527,
+    "x": 2464,
+    "y": 3286,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chadwell"
+  },
+  {
+    "id": 2854,
+    "x": 2464,
+    "y": 3288,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 1130,
+    "x": 2468,
+    "y": 3284,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 1142,
+    "x": 2467,
+    "y": 3285,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 2854,
+    "x": 2478,
+    "y": 3286,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2476,
+    "y": 3285,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 1141,
+    "x": 2482,
+    "y": 3286,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 3506,
+    "x": 2488,
+    "y": 3286,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Civilian"
+  },
+  {
+    "id": 1118,
+    "x": 2481,
+    "y": 3293,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 2854,
+    "x": 2480,
+    "y": 3296,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2481,
+    "y": 3296,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 1140,
+    "x": 2481,
+    "y": 3296,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 1132,
+    "x": 2482,
+    "y": 3295,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Child"
+  },
+  {
+    "id": 1141,
+    "x": 2488,
+    "y": 3295,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 1131,
+    "x": 2489,
+    "y": 3295,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 1119,
+    "x": 2481,
+    "y": 3303,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 3507,
+    "x": 2486,
+    "y": 3299,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Civilian"
+  },
+  {
+    "id": 2854,
+    "x": 2493,
+    "y": 3296,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2494,
+    "y": 3285,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2492,
+    "y": 3300,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2495,
+    "y": 3300,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2494,
+    "y": 3306,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 8976,
+    "x": 2436,
+    "y": 3314,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Koftik"
+  },
+  {
+    "id": 7621,
+    "x": 2456,
+    "y": 3301,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard warlord"
+  },
+  {
+    "id": 4969,
+    "x": 2451,
+    "y": 3300,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 4969,
+    "x": 2445,
+    "y": 3303,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
   }
 ]
