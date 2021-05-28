@@ -5909,5 +5909,109 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Perry"
+  },
+
+
+
+  //6716
+  {
+    "id": 2827,
+    "x": 1713,
+    "y": 3903,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1672,
+    "y": 3878,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1679,
+    "y": 3878,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 74,
+    "x": 1686,
+    "y": 3879,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 74,
+    "x": 1689,
+    "y": 3879,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 74,
+    "x": 1700,
+    "y": 3881,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 74,
+    "x": 1718,
+    "y": 3881,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 7050,
+    "x": 1713,
+    "y": 3883,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Tyss"
+  },
+  {
+    "id": 2827,
+    "x": 1720,
+    "y": 3887,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 74,
+    "x": 1726,
+    "y": 3891,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
   }
 ]
