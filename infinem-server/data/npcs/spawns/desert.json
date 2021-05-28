@@ -441,5 +441,429 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Desert Wolf"
+  },
+
+
+
+  //13102
+  {
+    "id": 4652,
+    "x": 3281,
+    "y": 3003,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ugthanki"
+  },
+  {
+    "id": 4649,
+    "x": 3283,
+    "y": 2998,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4649,
+    "x": 3286,
+    "y": 2997,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4649,
+    "x": 3288,
+    "y": 2998,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4649,
+    "x": 3286,
+    "y": 3001,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4649,
+    "x": 3326,
+    "y": 2995,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4649,
+    "x": 3323,
+    "y": 2996,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4649,
+    "x": 3326,
+    "y": 3001,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 3544,
+    "x": 3281,
+    "y": 2950,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3270,
+    "y": 2944,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3264,
+    "y": 2952,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3265,
+    "y": 2961,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3271,
+    "y": 2968,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3294,
+    "y": 2949,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3299,
+    "y": 2960,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3284,
+    "y": 2956,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3299,
+    "y": 2963,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3300,
+    "y": 2968,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3297,
+    "y": 2972,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3302,
+    "y": 2957,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3301,
+    "y": 2952,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3300,
+    "y": 2950,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3295,
+    "y": 2962,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3265,
+    "y": 2952,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3265,
+    "y": 2946,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3272,
+    "y": 2946,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3287,
+    "y": 2970,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3294,
+    "y": 2978,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3285,
+    "y": 2975,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3277,
+    "y": 2976,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3269,
+    "y": 2979,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3273,
+    "y": 2980,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3298,
+    "y": 2956,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3265,
+    "y": 2977,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3283,
+    "y": 2965,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 695,
+    "x": 3288,
+    "y": 2964,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 695,
+    "x": 3279,
+    "y": 2966,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 695,
+    "x": 3282,
+    "y": 2976,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 695,
+    "x": 3285,
+    "y": 2952,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 695,
+    "x": 3309,
+    "y": 2965,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 3544,
+    "x": 3326,
+    "y": 2952,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3324,
+    "y": 2948,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
   }
 ]
