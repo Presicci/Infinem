@@ -8460,5 +8460,509 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Duck"
+  },
+
+
+
+  //6968
+  {
+    "id": 2793,
+    "x": 1761,
+    "y": 3640,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cow"
+  },
+  {
+    "id": 2790,
+    "x": 1759,
+    "y": 3639,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cow"
+  },
+  {
+    "id": 2791,
+    "x": 1757,
+    "y": 3642,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cow"
+  },
+  {
+    "id": 2791,
+    "x": 1754,
+    "y": 3643,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cow"
+  },
+  {
+    "id": 2792,
+    "x": 1760,
+    "y": 3643,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cow calf"
+  },
+  {
+    "id": 2794,
+    "x": 1756,
+    "y": 3637,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cow calf"
+  },
+  {
+    "id": 2794,
+    "x": 1754,
+    "y": 3637,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cow calf"
+  },
+  {
+    "id": 2790,
+    "x": 1753,
+    "y": 3636,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cow"
+  },
+  {
+    "id": 397,
+    "x": 1765,
+    "y": 3634,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Town Guard"
+  },
+  {
+    "id": 399,
+    "x": 1772,
+    "y": 3634,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Town Guard"
+  },
+  {
+    "id": 3257,
+    "x": 1765,
+    "y": 3632,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Master Farmer"
+  },
+  {
+    "id": 5419,
+    "x": 1779,
+    "y": 3627,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Estate agent"
+  },
+  {
+    "id": 6991,
+    "x": 1779,
+    "y": 3618,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 397,
+    "x": 1769,
+    "y": 3613,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Town Guard"
+  },
+  {
+    "id": 6990,
+    "x": 1765,
+    "y": 3621,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 6992,
+    "x": 1766,
+    "y": 3605,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 7209,
+    "x": 1779,
+    "y": 3601,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 6945,
+    "x": 1768,
+    "y": 3598,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Logava"
+  },
+  {
+    "id": 7209,
+    "x": 1762,
+    "y": 3601,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 6823,
+    "x": 1756,
+    "y": 3598,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Town crier"
+  },
+  {
+    "id": 6988,
+    "x": 1762,
+    "y": 3592,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 6944,
+    "x": 1763,
+    "y": 3592,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Vannah"
+  },
+  {
+    "id": 6943,
+    "x": 1770,
+    "y": 3588,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Horace"
+  },
+  {
+    "id": 6940,
+    "x": 1746,
+    "y": 3599,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6942,
+    "x": 1746,
+    "y": 3598,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6942,
+    "x": 1746,
+    "y": 3600,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7209,
+    "x": 1742,
+    "y": 3595,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 7209,
+    "x": 1740,
+    "y": 3595,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 7209,
+    "x": 1752,
+    "y": 3623,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 7063,
+    "x": 1749,
+    "y": 3624,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cob"
+  },
+  {
+    "id": 2854,
+    "x": 1741,
+    "y": 3612,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 6954,
+    "x": 1739,
+    "y": 3612,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Richard"
+  },
+  {
+    "id": 6953,
+    "x": 1743,
+    "y": 3611,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Golova"
+  },
+  {
+    "id": 6947,
+    "x": 1744,
+    "y": 3615,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Farmer"
+  },
+  {
+    "id": 6950,
+    "x": 1746,
+    "y": 3613,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Farmer"
+  },
+  {
+    "id": 6948,
+    "x": 1745,
+    "y": 3614,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Farmer"
+  },
+  {
+    "id": 6987,
+    "x": 1741,
+    "y": 3617,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 6949,
+    "x": 1748,
+    "y": 3618,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Farmer"
+  },
+  {
+    "id": 6951,
+    "x": 1744,
+    "y": 3618,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Farmer"
+  },
+  {
+    "id": 6952,
+    "x": 1742,
+    "y": 3619,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Farmer"
+  },
+  {
+    "id": 2854,
+    "x": 1737,
+    "y": 3623,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 6988,
+    "x": 1730,
+    "y": 3616,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 6990,
+    "x": 1730,
+    "y": 3612,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 6992,
+    "x": 1731,
+    "y": 3612,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 3019,
+    "x": 1736,
+    "y": 3608,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 398,
+    "x": 1743,
+    "y": 3591,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Town Guard"
+  },
+  {
+    "id": 400,
+    "x": 1739,
+    "y": 3590,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Town Guard"
+  },
+  {
+    "id": 6962,
+    "x": 1741,
+    "y": 3587,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Farmer Hayfield"
+  },
+  {
+    "id": 8181,
+    "x": 1751,
+    "y": 3587,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jonathan"
+  },
+  {
+    "id": 1838,
+    "x": 1732,
+    "y": 3640,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
   }
 ]
