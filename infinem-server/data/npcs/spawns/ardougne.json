@@ -4841,5 +4841,19 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Knight of Ardougne"
+  },
+
+
+
+  //10805
+  {
+    "id": 118,
+    "x": 2710,
+    "y": 3438,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Ignatius Vulcan"
   }
 ]
