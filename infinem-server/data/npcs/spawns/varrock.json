@@ -1335,5 +1335,108 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Grand Exchange Clerk"
+  },
+
+
+  //13109
+  {
+    "id": 8687,
+    "x": 3271,
+    "y": 3411,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Tea seller"
+  },
+  {
+    "id": 4588,
+    "x": 3268,
+    "y": 3401,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Hooknosed Jack"
+  },
+  {
+    "id": 4574,
+    "x": 3267,
+    "y": 3398,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Pox"
+  },
+  {
+    "id": 4984,
+    "x": 3280,
+    "y": 3403,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Dimintheis"
+  },
+  {
+    "id": 2887,
+    "x": 3281,
+    "y": 3397,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "null"
+  },
+  {
+    "id": 1311,
+    "x": 3269,
+    "y": 3393,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bartender"
+  },
+  {
+    "id": 1058,
+    "x": 3308,
+    "y": 3453,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Tolna"
+  },
+  {
+    "id": 6091,
+    "x": 3321,
+    "y": 3431,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Captain Errdo"
+  },
+  {
+    "id": 1939,
+    "x": 3324,
+    "y": 3446,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ed Wood"
+  },
+  {
+    "id": 1911,
+    "x": 3295,
+    "y": 3427,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Museum guard"
   }
 ]
