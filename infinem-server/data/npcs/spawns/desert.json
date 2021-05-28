@@ -1387,5 +1387,129 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Desert Wolf"
+  },
+
+
+
+  //12846
+  {
+    "id": 4652,
+    "x": 3221,
+    "y": 3002,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ugthanki"
+  },
+  {
+    "id": 4652,
+    "x": 3219,
+    "y": 2995,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ugthanki"
+  },
+  {
+    "id": 4652,
+    "x": 3234,
+    "y": 2997,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ugthanki"
+  },
+  {
+    "id": 4652,
+    "x": 3247,
+    "y": 3003,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ugthanki"
+  },
+  {
+    "id": 4652,
+    "x": 3240,
+    "y": 3000,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ugthanki"
+  },
+  {
+    "id": 4649,
+    "x": 3205,
+    "y": 2987,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4649,
+    "x": 3208,
+    "y": 2988,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4649,
+    "x": 3229,
+    "y": 2988,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4649,
+    "x": 3231,
+    "y": 2989,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4649,
+    "x": 3249,
+    "y": 2993,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4649,
+    "x": 3252,
+    "y": 2993,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 3544,
+    "x": 3262,
+    "y": 2967,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
   }
 ]
