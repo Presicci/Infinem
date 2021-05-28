@@ -891,5 +891,60 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Lanthus"
+  },
+
+
+
+
+  //9773
+  {
+    "id": 106,
+    "x": 2489,
+    "y": 2927,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wolf"
+  },
+  {
+    "id": 106,
+    "x": 2492,
+    "y": 2929,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wolf"
+  },
+  {
+    "id": 106,
+    "x": 2486,
+    "y": 2924,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wolf"
+  },
+  {
+    "id": 106,
+    "x": 2490,
+    "y": 2922,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wolf"
+  },
+  {
+    "id": 115,
+    "x": 2488,
+    "y": 2927,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Big Wolf"
   }
 ]
