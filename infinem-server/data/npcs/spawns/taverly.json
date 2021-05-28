@@ -461,8 +461,8 @@
   {
     "name": "Jatix",
     "id": 8532,
-    "x": 2898,
-    "y": 3428,
+    "x": 2899,
+    "y": 3427,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -592,5 +592,29 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+
+
+
+  //11573
+  {
+    "id": 4723,
+    "x": 2938,
+    "y": 3424,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Assistant Stan"
+  },
+  {
+    "id": 5044,
+    "x": 2899,
+    "y": 3426,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sanfew"
   }
 ]
