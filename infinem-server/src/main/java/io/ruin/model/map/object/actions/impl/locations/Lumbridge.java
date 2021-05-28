@@ -26,6 +26,6 @@ public class Lumbridge {
 
         // Castle cellar
         ObjectAction.register(17385, 3209, 9616, 0, "climb-up", (player, obj) -> Ladder.climb(player, 3210, 3216, 0, true, true, false));
-        ObjectAction.register(14880, 3209, 3216, 0, "climb-down", (player, obj) -> Ladder.climb(player, 3210, 9616, 0, true, true, false));
+        ObjectAction.register(14880, 3209, 3216, 0, "climb-down", (player, obj) -> Ladder.climb(player, 3210, 9616, 0, false, true, false));
     }
 }
