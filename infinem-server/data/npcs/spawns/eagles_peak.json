@@ -1073,5 +1073,130 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Lieve McCracken"
+  },
+
+
+
+
+  //9528
+  {
+    "id": 1340,
+    "x": 2375,
+    "y": 3606,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Matthias"
+  },
+  {
+    "id": 5531,
+    "x": 2368,
+    "y": 3595,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spotted kebbit"
+  },
+  {
+    "id": 5532,
+    "x": 2370,
+    "y": 3591,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark kebbit"
+  },
+  {
+    "id": 5532,
+    "x": 2368,
+    "y": 3587,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark kebbit"
+  },
+  {
+    "id": 5532,
+    "x": 2372,
+    "y": 3592,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark kebbit"
+  },
+  {
+    "id": 5532,
+    "x": 2383,
+    "y": 3592,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark kebbit"
+  },
+  {
+    "id": 5532,
+    "x": 2382,
+    "y": 3586,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark kebbit"
+  },
+  {
+    "id": 5532,
+    "x": 2385,
+    "y": 3589,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark kebbit"
+  },
+  {
+    "id": 5531,
+    "x": 2382,
+    "y": 3589,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spotted kebbit"
+  },
+  {
+    "id": 5531,
+    "x": 2368,
+    "y": 3590,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spotted kebbit"
+  },
+  {
+    "id": 5531,
+    "x": 2376,
+    "y": 3587,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spotted kebbit"
+  },
+  {
+    "id": 5531,
+    "x": 2373,
+    "y": 3586,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spotted kebbit"
   }
 ]
