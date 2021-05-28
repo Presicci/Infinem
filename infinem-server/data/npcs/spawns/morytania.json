@@ -1,4 +1,5 @@
 [
+  //14131
   {
     "name": "Strange Old Man",
     "id": 1671,
@@ -7,6 +8,16 @@
     "z": 0,
     "direction": "S",
     "walkRange": 13
+  },
+  {
+    "id": 5046,
+    "x": 3522,
+    "y": 3285,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cyreg Paddlehorn"
   },
 
   //14134
