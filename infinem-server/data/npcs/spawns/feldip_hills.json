@@ -484,5 +484,120 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+
+
+
+
+  //9263
+  {
+    "id": 1473,
+    "x": 2341,
+    "y": 3063,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 1473,
+    "x": 2336,
+    "y": 3068,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 1473,
+    "x": 2336,
+    "y": 3057,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 1473,
+    "x": 2344,
+    "y": 3061,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 1473,
+    "x": 2339,
+    "y": 3056,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 1473,
+    "x": 2333,
+    "y": 3058,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 1473,
+    "x": 2337,
+    "y": 3060,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 1473,
+    "x": 2332,
+    "y": 3065,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 887,
+    "x": 2339,
+    "y": 3062,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Gruh"
+  },
+  {
+    "id": 1473,
+    "x": 2338,
+    "y": 3068,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swamp toad"
+  },
+  {
+    "id": 1473,
+    "x": 2342,
+    "y": 3063,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Swamp toad"
   }
 ]
