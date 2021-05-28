@@ -1748,5 +1748,79 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Desert Wolf"
+  },
+
+
+
+  //13359
+  {
+    "id": 4652,
+    "x": 3339,
+    "y": 3070,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ugthanki"
+  },
+  {
+    "id": 4652,
+    "x": 3345,
+    "y": 3060,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ugthanki"
+  },
+  {
+    "id": 4652,
+    "x": 3334,
+    "y": 3042,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ugthanki"
+  },
+  {
+    "id": 4651,
+    "x": 3344,
+    "y": 3018,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4651,
+    "x": 3344,
+    "y": 3019,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4651,
+    "x": 3350,
+    "y": 3049,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4651,
+    "x": 3358,
+    "y": 3038,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
   }
 ]
