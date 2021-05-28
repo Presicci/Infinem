@@ -4317,5 +4317,128 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Bat"
+  },
+
+
+  //6459
+  {
+    "id": 7049,
+    "x": 1639,
+    "y": 3800,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sam"
+  },
+  {
+    "id": 7048,
+    "x": 1625,
+    "y": 3803,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Professor Gracklebone"
+  },
+  {
+    "id": 7614,
+    "x": 1619,
+    "y": 3809,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Archeio"
+  },
+  {
+    "id": 7047,
+    "x": 1629,
+    "y": 3815,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Villia"
+  },
+  {
+    "id": 7044,
+    "x": 1633,
+    "y": 3808,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Logosia"
+  },
+  {
+    "id": 7046,
+    "x": 1638,
+    "y": 3816,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Horphis"
+  },
+  {
+    "id": 7902,
+    "x": 1655,
+    "y": 3830,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Galana"
+  },
+  {
+    "id": 7067,
+    "x": 1646,
+    "y": 3824,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 7045,
+    "x": 1641,
+    "y": 3825,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Biblia"
+  },
+  {
+    "id": 7065,
+    "x": 1612,
+    "y": 3822,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 7066,
+    "x": 1610,
+    "y": 3792,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 2827,
+    "x": 1630,
+    "y": 3839,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
   }
 ]
