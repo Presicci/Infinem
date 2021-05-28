@@ -1825,5 +1825,109 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Spider"
+  },
+
+
+
+  //5688
+  {
+    "id": 2827,
+    "x": 1450,
+    "y": 3595,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1463,
+    "y": 3605,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1459,
+    "y": 3587,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2101,
+    "x": 1449,
+    "y": 3603,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2101,
+    "x": 1444,
+    "y": 3603,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2101,
+    "x": 1441,
+    "y": 3606,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2101,
+    "x": 1447,
+    "y": 3610,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2101,
+    "x": 1448,
+    "y": 3603,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2101,
+    "x": 1441,
+    "y": 3602,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 8189,
+    "x": 1427,
+    "y": 3592,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Grave digger"
   }
 ]
