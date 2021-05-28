@@ -480,5 +480,169 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Ogre boat"
+  },
+
+
+
+  //11055
+  {
+    "id": 522,
+    "x": 2801,
+    "y": 3067,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2786,
+    "y": 3066,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2776,
+    "y": 3062,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 1174,
+    "x": 2802,
+    "y": 3062,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1174,
+    "x": 2789,
+    "y": 3060,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1173,
+    "x": 2807,
+    "y": 3071,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 7665,
+    "x": 2760,
+    "y": 3059,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Banisoch"
+  },
+  {
+    "id": 3020,
+    "x": 2777,
+    "y": 3037,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2784,
+    "y": 3031,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 6428,
+    "x": 2792,
+    "y": 3048,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Jagbakoba"
+  },
+  {
+    "id": 522,
+    "x": 2774,
+    "y": 3019,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2779,
+    "y": 3012,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2770,
+    "y": 3012,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 3049,
+    "x": 2771,
+    "y": 3015,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Hobgoblin"
+  },
+  {
+    "id": 3049,
+    "x": 2782,
+    "y": 3011,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Hobgoblin"
+  },
+  {
+    "id": 3049,
+    "x": 2778,
+    "y": 3021,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Hobgoblin"
   }
 ]
