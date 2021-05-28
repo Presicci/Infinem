@@ -1017,5 +1017,100 @@
     "walkRange": 2,
     "world": "ECO",
     "npcName": "Eldgrim"
+  },
+
+
+
+
+  //10552
+  {
+    "id": 5526,
+    "x": 2657,
+    "y": 3626,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Thorodin"
+  },
+  {
+    "id": 3931,
+    "x": 2664,
+    "y": 3646,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Town Guard"
+  },
+  {
+    "id": 3931,
+    "x": 2660,
+    "y": 3646,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Town Guard"
+  },
+  {
+    "id": 3912,
+    "x": 2643,
+    "y": 3615,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wolf"
+  },
+  {
+    "id": 3912,
+    "x": 2642,
+    "y": 3621,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wolf"
+  },
+  {
+    "id": 3912,
+    "x": 2640,
+    "y": 3626,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wolf"
+  },
+  {
+    "id": 3912,
+    "x": 2634,
+    "y": 3634,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wolf"
+  },
+  {
+    "id": 3912,
+    "x": 2628,
+    "y": 3633,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wolf"
+  },
+  {
+    "id": 3912,
+    "x": 2633,
+    "y": 3625,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wolf"
   }
 ]
