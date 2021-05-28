@@ -4969,5 +4969,70 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "\u0027No fingers\u0027"
+  },
+
+
+
+
+  //10545
+  {
+    "id": 5007,
+    "x": 2629,
+    "y": 3195,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 2888,
+    "x": 2641,
+    "y": 3172,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shop keeper"
+  },
+  {
+    "id": 2888,
+    "x": 2656,
+    "y": 3153,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Shop keeper"
+  },
+  {
+    "id": 5607,
+    "x": 2666,
+    "y": 3161,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Murphy"
+  },
+  {
+    "id": 1330,
+    "x": 2674,
+    "y": 3147,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Trader Crewmember"
+  },
+  {
+    "id": 1358,
+    "x": 2678,
+    "y": 3152,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Tindel Marchant"
   }
 ]
