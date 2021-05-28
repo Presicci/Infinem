@@ -3527,5 +3527,209 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Dwarf"
+  },
+
+
+
+  //6202
+  {
+    "id": 3019,
+    "x": 1580,
+    "y": 3762,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 2827,
+    "x": 1577,
+    "y": 3768,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1569,
+    "y": 3771,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1565,
+    "y": 3760,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 7093,
+    "x": 1566,
+    "y": 3765,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Miner"
+  },
+  {
+    "id": 7094,
+    "x": 1569,
+    "y": 3765,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Miner"
+  },
+  {
+    "id": 7091,
+    "x": 1568,
+    "y": 3762,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Miner"
+  },
+  {
+    "id": 7092,
+    "x": 1568,
+    "y": 3760,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Miner"
+  },
+  {
+    "id": 7090,
+    "x": 1568,
+    "y": 3760,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Fuggy"
+  },
+  {
+    "id": 2854,
+    "x": 1561,
+    "y": 3753,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2827,
+    "x": 1561,
+    "y": 3752,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1550,
+    "y": 3754,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 7089,
+    "x": 1571,
+    "y": 3718,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Moggy"
+  },
+  {
+    "id": 3019,
+    "x": 1555,
+    "y": 3719,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 1545,
+    "y": 3720,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 7088,
+    "x": 1550,
+    "y": 3719,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Munty"
+  },
+  {
+    "id": 1403,
+    "x": 1546,
+    "y": 3719,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
+  },
+  {
+    "id": 3019,
+    "x": 1541,
+    "y": 3718,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 1538,
+    "y": 3715,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 2854,
+    "x": 1537,
+    "y": 3722,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
   }
 ]
