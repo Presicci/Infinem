@@ -898,5 +898,367 @@
     "z": 0,
     "direction": "S",
     "walkRange": 2
+  },
+
+  //12854
+  {
+    "id": 508,
+    "x": 3230,
+    "y": 3516,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Black Knight"
+  },
+  {
+    "id": 508,
+    "x": 3236,
+    "y": 3514,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Black Knight"
+  },
+  {
+    "id": 3013,
+    "x": 3213,
+    "y": 3491,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Captain"
+  },
+  {
+    "id": 5085,
+    "x": 3204,
+    "y": 3496,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Captain Rovin"
+  },
+  {
+    "id": 3010,
+    "x": 3222,
+    "y": 3470,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3010,
+    "x": 3214,
+    "y": 3469,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3010,
+    "x": 3211,
+    "y": 3472,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3010,
+    "x": 3214,
+    "y": 3475,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3010,
+    "x": 3206,
+    "y": 3478,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3010,
+    "x": 3204,
+    "y": 3483,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3010,
+    "x": 3205,
+    "y": 3487,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3010,
+    "x": 3219,
+    "y": 3477,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3010,
+    "x": 3223,
+    "y": 3485,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3012,
+    "x": 3215,
+    "y": 3490,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Trainee Guard"
+  },
+  {
+    "id": 3012,
+    "x": 3217,
+    "y": 3490,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Trainee Guard"
+  },
+  {
+    "id": 3012,
+    "x": 3213,
+    "y": 3490,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Trainee Guard"
+  },
+  {
+    "id": 3012,
+    "x": 3211,
+    "y": 3490,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Trainee Guard"
+  },
+  {
+    "id": 3012,
+    "x": 3209,
+    "y": 3490,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Trainee Guard"
+  },
+  {
+    "id": 3013,
+    "x": 3213,
+    "y": 3491,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Captain"
+  },
+  {
+    "id": 2557,
+    "x": 3217,
+    "y": 3468,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Ambassador Ferrnook"
+  },
+  {
+    "id": 3010,
+    "x": 3205,
+    "y": 3498,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3010,
+    "x": 3203,
+    "y": 3494,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3010,
+    "x": 3206,
+    "y": 3491,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3010,
+    "x": 3205,
+    "y": 3493,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3011,
+    "x": 3215,
+    "y": 3463,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3011,
+    "x": 3208,
+    "y": 3467,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3011,
+    "x": 3210,
+    "y": 3461,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3100,
+    "x": 3202,
+    "y": 3484,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior woman"
+  },
+  {
+    "id": 3100,
+    "x": 3206,
+    "y": 3487,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior woman"
+  },
+  {
+    "id": 3010,
+    "x": 3204,
+    "y": 3496,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 4159,
+    "x": 3209,
+    "y": 3496,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Norse Wizard"
+  },
+  {
+    "id": 4243,
+    "x": 3210,
+    "y": 3494,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Reldo"
+  },
+  {
+    "id": 5215,
+    "x": 3221,
+    "y": 3475,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "King Roald"
+  },
+  {
+    "id": 520,
+    "x": 3213,
+    "y": 3476,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Monk of Zamorak"
+  },
+  {
+    "id": 1390,
+    "x": 3229,
+    "y": 3478,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ellamaria"
+  },
+  {
+    "id": 3774,
+    "x": 3224,
+    "y": 3472,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Aeonisig Raispher"
   }
 ]
