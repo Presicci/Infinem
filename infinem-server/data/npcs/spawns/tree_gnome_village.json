@@ -25,5 +25,528 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+
+
+  //10033
+  {
+    "id": 4949,
+    "x": 2542,
+    "y": 3172,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "null"
+  },
+  {
+    "id": 4979,
+    "x": 2542,
+    "y": 3172,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Local Gnome"
+  },
+  {
+    "id": 4979,
+    "x": 2541,
+    "y": 3171,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Local Gnome"
+  },
+  {
+    "id": 4963,
+    "x": 2542,
+    "y": 3169,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "King Bolren"
+  },
+  {
+    "id": 4979,
+    "x": 2542,
+    "y": 3167,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Local Gnome"
+  },
+  {
+    "id": 4979,
+    "x": 2541,
+    "y": 3168,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Local Gnome"
+  },
+  {
+    "id": 6094,
+    "x": 2537,
+    "y": 3170,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 6094,
+    "x": 2534,
+    "y": 3169,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 6094,
+    "x": 2530,
+    "y": 3170,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 6094,
+    "x": 2525,
+    "y": 3168,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 6094,
+    "x": 2521,
+    "y": 3172,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 6095,
+    "x": 2520,
+    "y": 3169,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 4966,
+    "x": 2519,
+    "y": 3170,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Remsai"
+  },
+  {
+    "id": 4980,
+    "x": 2520,
+    "y": 3177,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kalron"
+  },
+  {
+    "id": 4968,
+    "x": 2515,
+    "y": 3159,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Elkoy"
+  },
+  {
+    "id": 3045,
+    "x": 2533,
+    "y": 3156,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 3045,
+    "x": 2528,
+    "y": 3156,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 5007,
+    "x": 2531,
+    "y": 3148,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 3045,
+    "x": 2546,
+    "y": 3156,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 2099,
+    "x": 2549,
+    "y": 3148,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 3045,
+    "x": 2545,
+    "y": 3161,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 106,
+    "x": 2548,
+    "y": 3179,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wolf"
+  },
+  {
+    "id": 3019,
+    "x": 2537,
+    "y": 3180,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 2538,
+    "y": 3183,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 2535,
+    "y": 3182,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 2543,
+    "y": 3183,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 2544,
+    "y": 3187,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 2545,
+    "y": 3186,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 2546,
+    "y": 3185,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 2863,
+    "x": 2519,
+    "y": 3188,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2856,
+    "x": 2517,
+    "y": 3185,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2854,
+    "x": 2506,
+    "y": 3182,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2508,
+    "y": 3182,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2508,
+    "y": 3180,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2508,
+    "y": 3186,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2505,
+    "y": 3185,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2502,
+    "y": 3182,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2502,
+    "y": 3180,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 3054,
+    "x": 2511,
+    "y": 3178,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 2839,
+    "x": 2505,
+    "y": 3161,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Black bear"
+  },
+  {
+    "id": 3045,
+    "x": 2520,
+    "y": 3157,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 2100,
+    "x": 2507,
+    "y": 3150,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 3045,
+    "x": 2502,
+    "y": 3140,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 3045,
+    "x": 2539,
+    "y": 3153,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 2098,
+    "x": 2547,
+    "y": 3144,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 3045,
+    "x": 2550,
+    "y": 3172,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 3028,
+    "x": 2554,
+    "y": 3194,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 3028,
+    "x": 2552,
+    "y": 3197,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 2095,
+    "x": 2555,
+    "y": 3192,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ogre"
+  },
+  {
+    "id": 3045,
+    "x": 2553,
+    "y": 3197,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 3028,
+    "x": 2548,
+    "y": 3190,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
+  },
+  {
+    "id": 3028,
+    "x": 2550,
+    "y": 3196,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Goblin"
   }
 ]
