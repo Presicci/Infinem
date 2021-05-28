@@ -1076,5 +1076,173 @@
     "walkRange": 6,
     "world": "ECO",
     "npcName": "Tribesman"
+  },
+
+
+
+  //11310 Shilo village
+  {
+    "id": 1035,
+    "x": 2851,
+    "y": 2954,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 1035,
+    "x": 2853,
+    "y": 2955,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 5359,
+    "x": 2856,
+    "y": 2962,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Yohnus"
+  },
+  {
+    "id": 5357,
+    "x": 2835,
+    "y": 2952,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Vigroy"
+  },
+  {
+    "id": 5351,
+    "x": 2874,
+    "y": 2959,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Undead one"
+  },
+  {
+    "id": 5351,
+    "x": 2870,
+    "y": 2956,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Undead one"
+  },
+  {
+    "id": 5351,
+    "x": 2871,
+    "y": 2949,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Undead one"
+  },
+  {
+    "id": 5351,
+    "x": 2871,
+    "y": 2953,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Undead one"
+  },
+  {
+    "id": 5351,
+    "x": 2876,
+    "y": 2952,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Undead one"
+  },
+  {
+    "id": 5351,
+    "x": 2877,
+    "y": 2960,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Undead one"
+  },
+  {
+    "id": 5351,
+    "x": 2876,
+    "y": 2947,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Undead one"
+  },
+  {
+    "id": 5351,
+    "x": 2877,
+    "y": 2948,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Undead one"
+  },
+  {
+    "id": 5363,
+    "x": 2869,
+    "y": 2970,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Fernahei"
+  },
+  {
+    "id": 5360,
+    "x": 2870,
+    "y": 2974,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seravel"
+  },
+  {
+    "id": 405,
+    "x": 2869,
+    "y": 2982,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duradel"
+  },
+
+
+
+  //11568
+  {
+    "id": 2848,
+    "x": 2880,
+    "y": 3086,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
   }
 ]
