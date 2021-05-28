@@ -1881,5 +1881,169 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Hobgoblin"
+  },
+
+
+
+  //11572
+  {
+    "id": 2057,
+    "x": 2904,
+    "y": 3336,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2057,
+    "x": 2906,
+    "y": 3332,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2056,
+    "x": 2905,
+    "y": 3337,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2056,
+    "x": 2910,
+    "y": 3336,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2056,
+    "x": 2909,
+    "y": 3333,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2058,
+    "x": 2908,
+    "y": 3337,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2059,
+    "x": 2910,
+    "y": 3336,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2059,
+    "x": 2909,
+    "y": 3336,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2056,
+    "x": 2906,
+    "y": 3332,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2057,
+    "x": 2905,
+    "y": 3336,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2058,
+    "x": 2907,
+    "y": 3332,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2058,
+    "x": 2909,
+    "y": 3335,
+    "z": 2,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2059,
+    "x": 2906,
+    "y": 3332,
+    "z": 2,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2056,
+    "x": 2905,
+    "y": 3335,
+    "z": 2,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2056,
+    "x": 2910,
+    "y": 3333,
+    "z": 2,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 5841,
+    "x": 2907,
+    "y": 3332,
+    "z": 2,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zandar Horfyre"
   }
 ]
