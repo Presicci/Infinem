@@ -1993,5 +1993,118 @@
     "walkRange": 3,
     "world": "ECO",
     "npcName": "Ochre Blamish Snail"
+  },
+
+
+  //13366
+  {
+    "id": 2827,
+    "x": 3330,
+    "y": 3485,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3345,
+    "y": 3480,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3350,
+    "y": 3489,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3365,
+    "y": 3488,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3369,
+    "y": 3479,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3378,
+    "y": 3479,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3363,
+    "y": 3501,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3374,
+    "y": 3489,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3383,
+    "y": 3486,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3387,
+    "y": 3478,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 3387,
+    "y": 3477,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bat"
   }
 ]
