@@ -4855,5 +4855,119 @@
     "walkRange": 4,
     "world": "ECO",
     "npcName": "Ignatius Vulcan"
+  },
+
+
+
+  //10546
+  {
+    "id": 5007,
+    "x": 2629,
+    "y": 3223,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 5007,
+    "x": 2628,
+    "y": 3213,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 5007,
+    "x": 2624,
+    "y": 3224,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 3594,
+    "x": 2640,
+    "y": 3220,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "\u0027Currency\u0027 The Alchemist"
+  },
+  {
+    "id": 3592,
+    "x": 2639,
+    "y": 3218,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "\u0027Transmute\u0027 The Alchemist"
+  },
+  {
+    "id": 3585,
+    "x": 2639,
+    "y": 3219,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Effigy"
+  },
+  {
+    "id": 3599,
+    "x": 2643,
+    "y": 3226,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "\u0027The Guns\u0027"
+  },
+  {
+    "id": 3596,
+    "x": 2645,
+    "y": 3229,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "\u0027Black-eye\u0027"
+  },
+  {
+    "id": 3598,
+    "x": 2645,
+    "y": 3230,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "\u0027Gummy\u0027"
+  },
+  {
+    "id": 3587,
+    "x": 2650,
+    "y": 3227,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Bonafido"
+  },
+  {
+    "id": 3597,
+    "x": 2645,
+    "y": 3224,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "\u0027No fingers\u0027"
   }
 ]
