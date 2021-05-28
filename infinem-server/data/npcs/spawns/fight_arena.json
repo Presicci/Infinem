@@ -1,0 +1,562 @@
+[
+  {
+    "id": 5007,
+    "x": 2620,
+    "y": 3186,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 5007,
+    "x": 2613,
+    "y": 3198,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 1211,
+    "x": 2613,
+    "y": 3191,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2607,
+    "y": 3185,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2607,
+    "y": 3189,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2609,
+    "y": 3193,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2606,
+    "y": 3182,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2606,
+    "y": 3175,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2598,
+    "y": 3178,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2599,
+    "y": 3182,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2599,
+    "y": 3184,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2593,
+    "y": 3182,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2589,
+    "y": 3184,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2599,
+    "y": 3193,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2589,
+    "y": 3195,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2585,
+    "y": 3175,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2583,
+    "y": 3183,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2583,
+    "y": 3188,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2573,
+    "y": 3168,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1223,
+    "x": 2579,
+    "y": 3170,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Local"
+  },
+  {
+    "id": 1211,
+    "x": 2573,
+    "y": 3157,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2566,
+    "y": 3161,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2567,
+    "y": 3148,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2567,
+    "y": 3144,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1214,
+    "x": 2570,
+    "y": 3141,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard barman"
+  },
+  {
+    "id": 1211,
+    "x": 2567,
+    "y": 3148,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2576,
+    "y": 3149,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2586,
+    "y": 3146,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2577,
+    "y": 3142,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2595,
+    "y": 3146,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2598,
+    "y": 3136,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1208,
+    "x": 2584,
+    "y": 3142,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1216,
+    "x": 2588,
+    "y": 3142,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Joe"
+  },
+  {
+    "id": 1215,
+    "x": 2590,
+    "y": 3143,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kelvin"
+  },
+  {
+    "id": 1217,
+    "x": 2594,
+    "y": 3143,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Fightslave"
+  },
+  {
+    "id": 1218,
+    "x": 2599,
+    "y": 3143,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hengrad"
+  },
+  {
+    "id": 1208,
+    "x": 2596,
+    "y": 3140,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1208,
+    "x": 2587,
+    "y": 3140,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1208,
+    "x": 2616,
+    "y": 3150,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1209,
+    "x": 2610,
+    "y": 3143,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2610,
+    "y": 3149,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2607,
+    "y": 3141,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2617,
+    "y": 3156,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1211,
+    "x": 2617,
+    "y": 3151,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1217,
+    "x": 2616,
+    "y": 3160,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Fightslave"
+  },
+  {
+    "id": 1217,
+    "x": 2615,
+    "y": 3164,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Fightslave"
+  },
+  {
+    "id": 1220,
+    "x": 2615,
+    "y": 3168,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Sammy Servil"
+  },
+  {
+    "id": 1208,
+    "x": 2619,
+    "y": 3167,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1208,
+    "x": 2618,
+    "y": 3172,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Khazard Guard"
+  },
+  {
+    "id": 1226,
+    "x": 2609,
+    "y": 3159,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Khazard Scorpion"
+  },
+  {
+    "id": 1225,
+    "x": 2609,
+    "y": 3166,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard Ogre"
+  },
+  {
+    "id": 1224,
+    "x": 2609,
+    "y": 3163,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bouncer"
+  },
+  {
+    "id": 1213,
+    "x": 2603,
+    "y": 3154,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "General Khazard"
+  },
+  {
+    "id": 1221,
+    "x": 2600,
+    "y": 3156,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Sammy Servil"
+  },
+  {
+    "id": 1222,
+    "x": 2601,
+    "y": 3167,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Justin Servil"
+  },
+  {
+    "id": 1219,
+    "x": 2568,
+    "y": 3197,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lady Servil"
+  }
+]
