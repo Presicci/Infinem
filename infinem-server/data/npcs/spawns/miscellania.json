@@ -1,0 +1,393 @@
+[
+  //10044
+  {
+    "id": 2063,
+    "x": 2505,
+    "y": 3898,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Penguin"
+  },
+  {
+    "id": 2063,
+    "x": 2505,
+    "y": 3899,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Penguin"
+  },
+  {
+    "id": 2063,
+    "x": 2503,
+    "y": 3898,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Penguin"
+  },
+  {
+    "id": 2063,
+    "x": 2503,
+    "y": 3896,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Penguin"
+  },
+  {
+    "id": 2063,
+    "x": 2502,
+    "y": 3895,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Penguin"
+  },
+  {
+    "id": 2063,
+    "x": 2500,
+    "y": 3893,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Penguin"
+  },
+  {
+    "id": 2063,
+    "x": 2499,
+    "y": 3894,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Penguin"
+  },
+  {
+    "id": 2063,
+    "x": 2498,
+    "y": 3896,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Penguin"
+  },
+  {
+    "id": 3656,
+    "x": 2527,
+    "y": 3855,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Gardener Gunnhild"
+  },
+  {
+    "id": 3674,
+    "x": 2514,
+    "y": 3860,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ragnar"
+  },
+  {
+    "id": 3661,
+    "x": 2516,
+    "y": 3860,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 3686,
+    "x": 2515,
+    "y": 3865,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skraeling"
+  },
+  {
+    "id": 3673,
+    "x": 2512,
+    "y": 3866,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Flower Girl"
+  },
+  {
+    "id": 3689,
+    "x": 2515,
+    "y": 3866,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Greengrocer"
+  },
+  {
+    "id": 3687,
+    "x": 2518,
+    "y": 3864,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ragnvald"
+  },
+  {
+    "id": 3661,
+    "x": 2514,
+    "y": 3866,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 3681,
+    "x": 2511,
+    "y": 3864,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rannveig"
+  },
+  {
+    "id": 3688,
+    "x": 2520,
+    "y": 3864,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Fishmonger"
+  },
+  {
+    "id": 3682,
+    "x": 2512,
+    "y": 3870,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Thora"
+  },
+  {
+    "id": 3685,
+    "x": 2514,
+    "y": 3872,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Broddi"
+  },
+  {
+    "id": 3663,
+    "x": 2517,
+    "y": 3867,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rooster"
+  },
+  {
+    "id": 3662,
+    "x": 2518,
+    "y": 3869,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 3676,
+    "x": 2514,
+    "y": 3855,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Alrik"
+  },
+  {
+    "id": 3683,
+    "x": 2511,
+    "y": 3851,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Valgerd"
+  },
+  {
+    "id": 1099,
+    "x": 2509,
+    "y": 3849,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3677,
+    "x": 2501,
+    "y": 3852,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Thorhild"
+  },
+  {
+    "id": 3675,
+    "x": 2500,
+    "y": 3870,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Einar"
+  },
+  {
+    "id": 3666,
+    "x": 2502,
+    "y": 3851,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prince Brand"
+  },
+  {
+    "id": 3669,
+    "x": 2505,
+    "y": 3855,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 5447,
+    "x": 2500,
+    "y": 3858,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Advisor Ghrim"
+  },
+  {
+    "id": 3668,
+    "x": 2501,
+    "y": 3860,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "King Vargas"
+  },
+  {
+    "id": 3669,
+    "x": 2505,
+    "y": 3865,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3667,
+    "x": 2502,
+    "y": 3869,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Princess Astrid"
+  },
+  {
+    "id": 3672,
+    "x": 2537,
+    "y": 3853,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Farmer"
+  },
+  {
+    "id": 3665,
+    "x": 2545,
+    "y": 3869,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rabbit"
+  },
+  {
+    "id": 3665,
+    "x": 2551,
+    "y": 3869,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rabbit"
+  },
+  {
+    "id": 3664,
+    "x": 2548,
+    "y": 3867,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rabbit"
+  },
+  {
+    "id": 3664,
+    "x": 2557,
+    "y": 3868,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rabbit"
+  },
+  {
+    "id": 3653,
+    "x": 2550,
+    "y": 3869,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Lumberjack Leif"
+  }
+]
