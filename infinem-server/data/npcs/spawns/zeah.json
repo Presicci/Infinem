@@ -2033,5 +2033,40 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Kourend head guard"
+  },
+
+
+
+
+  //5686
+  {
+    "id": 79,
+    "x": 1427,
+    "y": 3518,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 78,
+    "x": 1431,
+    "y": 3517,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 81,
+    "x": 1437,
+    "y": 3516,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
   }
 ]
