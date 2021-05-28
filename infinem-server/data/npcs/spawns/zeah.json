@@ -2111,5 +2111,359 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Bat"
+  },
+
+
+
+  //5946
+  {
+    "id": 3019,
+    "x": 1523,
+    "y": 3750,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 7087,
+    "x": 1525,
+    "y": 3750,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Armourer (tier 5)"
+  },
+  {
+    "id": 7082,
+    "x": 1530,
+    "y": 3742,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7082,
+    "x": 1526,
+    "y": 3742,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7082,
+    "x": 1522,
+    "y": 3742,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7080,
+    "x": 1528,
+    "y": 3742,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7080,
+    "x": 1524,
+    "y": 3742,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7080,
+    "x": 1520,
+    "y": 3742,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7078,
+    "x": 1530,
+    "y": 3736,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7078,
+    "x": 1522,
+    "y": 3736,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7217,
+    "x": 1517,
+    "y": 3733,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Miriam"
+  },
+  {
+    "id": 1407,
+    "x": 1517,
+    "y": 3751,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
+  },
+  {
+    "id": 6824,
+    "x": 1510,
+    "y": 3737,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 6824,
+    "x": 1513,
+    "y": 3737,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 6824,
+    "x": 1502,
+    "y": 3745,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 6824,
+    "x": 1507,
+    "y": 3739,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 1407,
+    "x": 1507,
+    "y": 3750,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
+  },
+  {
+    "id": 1404,
+    "x": 1505,
+    "y": 3759,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
+  },
+  {
+    "id": 3019,
+    "x": 1512,
+    "y": 3761,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 1513,
+    "y": 3759,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 1408,
+    "x": 1510,
+    "y": 3769,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
+  },
+  {
+    "id": 1405,
+    "x": 1511,
+    "y": 3768,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
+  },
+  {
+    "id": 1407,
+    "x": 1503,
+    "y": 3775,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
+  },
+  {
+    "id": 1407,
+    "x": 1510,
+    "y": 3770,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
+  },
+  {
+    "id": 1408,
+    "x": 1506,
+    "y": 3757,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
+  },
+  {
+    "id": 1403,
+    "x": 1497,
+    "y": 3764,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
+  },
+  {
+    "id": 3019,
+    "x": 1501,
+    "y": 3760,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 1495,
+    "y": 3770,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 1478,
+    "y": 3763,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 1406,
+    "x": 1474,
+    "y": 3764,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
+  },
+  {
+    "id": 8496,
+    "x": 1481,
+    "y": 3756,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
+  },
+  {
+    "id": 8497,
+    "x": 1484,
+    "y": 3747,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lady Vulcana Lovakengj"
+  },
+  {
+    "id": 8498,
+    "x": 1483,
+    "y": 3745,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Councillor Unkar"
+  },
+  {
+    "id": 8499,
+    "x": 1487,
+    "y": 3748,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Jorra"
+  },
+  {
+    "id": 1403,
+    "x": 1535,
+    "y": 3719,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
   }
 ]
