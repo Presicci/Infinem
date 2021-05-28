@@ -99,5 +99,383 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Pirate Pete"
+  },
+
+  //14646
+  {
+    "id": 3007,
+    "x": 3658,
+    "y": 3508,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "id": 3007,
+    "x": 3661,
+    "y": 3508,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "id": 3004,
+    "x": 3700,
+    "y": 3497,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ghost sailor"
+  },
+  {
+    "id": 3004,
+    "x": 3705,
+    "y": 3497,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ghost sailor"
+  },
+  {
+    "id": 3004,
+    "x": 3689,
+    "y": 3503,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ghost sailor"
+  },
+  {
+    "id": 3004,
+    "x": 3684,
+    "y": 3503,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ghost sailor"
+  },
+  {
+    "id": 3004,
+    "x": 3689,
+    "y": 3515,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ghost sailor"
+  },
+  {
+    "id": 3004,
+    "x": 3699,
+    "y": 3487,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ghost sailor"
+  },
+  {
+    "id": 3005,
+    "x": 3703,
+    "y": 3487,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ghost captain"
+  },
+  {
+    "id": 1333,
+    "x": 3702,
+    "y": 3504,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Trader Crewmember"
+  },
+  {
+    "id": 1330,
+    "x": 3702,
+    "y": 3500,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Trader Crewmember"
+  },
+  {
+    "id": 3006,
+    "x": 3691,
+    "y": 3514,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ghost captain"
+  },
+  {
+    "id": 2985,
+    "x": 3678,
+    "y": 3510,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Velorina"
+  },
+  {
+    "id": 3001,
+    "x": 3678,
+    "y": 3496,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost innkeeper"
+  },
+  {
+    "id": 4011,
+    "x": 3677,
+    "y": 3496,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bill Teach"
+  },
+  {
+    "id": 2995,
+    "x": 3672,
+    "y": 3496,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Robin"
+  },
+  {
+    "id": 2998,
+    "x": 3672,
+    "y": 3492,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost villager"
+  },
+  {
+    "id": 2998,
+    "x": 3679,
+    "y": 3492,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost villager"
+  },
+  {
+    "id": 2998,
+    "x": 3667,
+    "y": 3505,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost villager"
+  },
+  {
+    "id": 2998,
+    "x": 3675,
+    "y": 3502,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost villager"
+  },
+  {
+    "id": 2998,
+    "x": 3660,
+    "y": 3490,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost villager"
+  },
+  {
+    "id": 2998,
+    "x": 3664,
+    "y": 3498,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost villager"
+  },
+  {
+    "id": 2998,
+    "x": 3664,
+    "y": 3493,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost villager"
+  },
+  {
+    "id": 2987,
+    "x": 3659,
+    "y": 3497,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gravingas"
+  },
+  {
+    "id": 2998,
+    "x": 3669,
+    "y": 3480,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost villager"
+  },
+  {
+    "id": 2998,
+    "x": 3660,
+    "y": 3469,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost villager"
+  },
+  {
+    "id": 2998,
+    "x": 3668,
+    "y": 3472,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost villager"
+  },
+  {
+    "id": 2998,
+    "x": 3682,
+    "y": 3474,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost villager"
+  },
+  {
+    "id": 3000,
+    "x": 3659,
+    "y": 3480,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost shopkeeper"
+  },
+  {
+    "id": 3494,
+    "x": 3653,
+    "y": 3471,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Droalak"
+  },
+  {
+    "id": 8134,
+    "x": 3673,
+    "y": 3469,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sarah"
+  },
+  {
+    "id": 3003,
+    "x": 3687,
+    "y": 3464,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ghost banker"
+  },
+  {
+    "id": 3003,
+    "x": 3688,
+    "y": 3464,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ghost banker"
+  },
+  {
+    "id": 3003,
+    "x": 3690,
+    "y": 3464,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ghost banker"
+  },
+  {
+    "id": 3003,
+    "x": 3691,
+    "y": 3464,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ghost banker"
+  },
+  {
+    "id": 2986,
+    "x": 3660,
+    "y": 3516,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Necrovarus"
+  },
+  {
+    "id": 2988,
+    "x": 3655,
+    "y": 3516,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost disciple"
+  },
+  {
+    "id": 2988,
+    "x": 3654,
+    "y": 3519,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghost disciple"
   }
 ]
