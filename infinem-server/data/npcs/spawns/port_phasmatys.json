@@ -477,5 +477,27 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Ghost disciple"
+  },
+
+  //14645
+  {
+    "id": 3007,
+    "x": 3671,
+    "y": 3453,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ghost guard"
+  },
+  {
+    "id": 3007,
+    "x": 3668,
+    "y": 3453,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ghost guard"
   }
 ]
