@@ -1929,5 +1929,109 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Grave digger"
+  },
+
+
+
+  //5687
+  {
+    "id": 7482,
+    "x": 1423,
+    "y": 3532,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Sdiar"
+  },
+  {
+    "id": 77,
+    "x": 1420,
+    "y": 3523,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 80,
+    "x": 1437,
+    "y": 3520,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 7016,
+    "x": 1417,
+    "y": 3534,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1420,
+    "y": 3533,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1420,
+    "y": 3538,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1416,
+    "y": 3538,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7016,
+    "x": 1424,
+    "y": 3533,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7017,
+    "x": 1418,
+    "y": 3535,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  {
+    "id": 7017,
+    "x": 1420,
+    "y": 3539,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
   }
 ]
