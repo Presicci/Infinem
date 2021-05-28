@@ -1822,5 +1822,538 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Desert Wolf"
+  },
+
+
+  //13358 POLLNIVNEACH
+  {
+    "id": 3544,
+    "x": 3329,
+    "y": 2959,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3328,
+    "y": 2946,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3332,
+    "y": 2954,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3333,
+    "y": 2960,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3548,
+    "x": 3329,
+    "y": 2950,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ali the Operator"
+  },
+  {
+    "id": 3550,
+    "x": 3341,
+    "y": 2948,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3550,
+    "x": 3339,
+    "y": 2947,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3550,
+    "x": 3339,
+    "y": 2945,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3550,
+    "x": 3342,
+    "y": 2945,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3550,
+    "x": 3337,
+    "y": 2954,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3550,
+    "x": 3338,
+    "y": 2957,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3550,
+    "x": 3338,
+    "y": 2963,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3550,
+    "x": 3339,
+    "y": 2967,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3550,
+    "x": 3335,
+    "y": 2961,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3550,
+    "x": 3344,
+    "y": 2948,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3550,
+    "x": 3343,
+    "y": 2958,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3569,
+    "x": 3336,
+    "y": 2961,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Aristarchus"
+  },
+  {
+    "id": 3543,
+    "x": 3343,
+    "y": 2964,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ali the Camel"
+  },
+  {
+    "id": 3543,
+    "x": 3341,
+    "y": 2964,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ali the Camel"
+  },
+  {
+    "id": 3550,
+    "x": 3343,
+    "y": 2961,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3550,
+    "x": 3342,
+    "y": 2963,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3550,
+    "x": 3346,
+    "y": 2957,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Menaphite Thug"
+  },
+  {
+    "id": 3539,
+    "x": 3351,
+    "y": 2950,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Street urchin"
+  },
+  {
+    "id": 3534,
+    "x": 3360,
+    "y": 2957,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Drunken Ali"
+  },
+  {
+    "id": 3554,
+    "x": 3361,
+    "y": 2955,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Villager"
+  },
+  {
+    "id": 3535,
+    "x": 3359,
+    "y": 2954,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ali The barman"
+  },
+  {
+    "id": 3542,
+    "x": 3354,
+    "y": 2953,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ali the Snake Charmer"
+  },
+  {
+    "id": 3545,
+    "x": 3354,
+    "y": 2952,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 3540,
+    "x": 3356,
+    "y": 2973,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ali the Mayor"
+  },
+  {
+    "id": 3546,
+    "x": 3351,
+    "y": 2971,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Blackjack seller"
+  },
+  {
+    "id": 3560,
+    "x": 3349,
+    "y": 2954,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Villager"
+  },
+  {
+    "id": 3560,
+    "x": 3348,
+    "y": 2956,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Villager"
+  },
+  {
+    "id": 3557,
+    "x": 3341,
+    "y": 2955,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Villager"
+  },
+  {
+    "id": 3557,
+    "x": 3361,
+    "y": 2978,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Villager"
+  },
+  {
+    "id": 3540,
+    "x": 3362,
+    "y": 2971,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ali the Mayor"
+  },
+  {
+    "id": 3536,
+    "x": 3353,
+    "y": 2975,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ali the Kebab seller"
+  },
+  {
+    "id": 3539,
+    "x": 3362,
+    "y": 2974,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Street urchin"
+  },
+  {
+    "id": 3539,
+    "x": 3365,
+    "y": 2969,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Street urchin"
+  },
+  {
+    "id": 735,
+    "x": 3363,
+    "y": 2984,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3361,
+    "y": 2988,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3363,
+    "y": 2986,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3358,
+    "y": 2993,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3358,
+    "y": 2995,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3358,
+    "y": 2994,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3367,
+    "y": 2992,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3368,
+    "y": 2991,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3365,
+    "y": 2993,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3364,
+    "y": 2994,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3363,
+    "y": 3002,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3358,
+    "y": 3004,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3356,
+    "y": 3003,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3342,
+    "y": 2987,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
+  },
+  {
+    "id": 735,
+    "x": 3344,
+    "y": 2986,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bandit"
   }
 ]
