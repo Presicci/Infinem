@@ -1557,5 +1557,199 @@
     "walkRange": 4,
     "world": "ECO",
     "npcName": "Moss giant"
+  },
+
+
+
+  //10801
+  {
+    "id": 330,
+    "x": 2745,
+    "y": 3189,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swarm"
+  },
+  {
+    "id": 330,
+    "x": 2750,
+    "y": 3184,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swarm"
+  },
+  {
+    "id": 330,
+    "x": 2747,
+    "y": 3177,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swarm"
+  },
+  {
+    "id": 330,
+    "x": 2742,
+    "y": 3177,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swarm"
+  },
+  {
+    "id": 330,
+    "x": 2736,
+    "y": 3190,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swarm"
+  },
+  {
+    "id": 2848,
+    "x": 2743,
+    "y": 3161,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2745,
+    "y": 3171,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2845,
+    "x": 2743,
+    "y": 3159,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 522,
+    "x": 2731,
+    "y": 3164,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2726,
+    "y": 3164,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2723,
+    "y": 3159,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2730,
+    "y": 3157,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2732,
+    "y": 3161,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2729,
+    "y": 3163,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2723,
+    "y": 3158,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2739,
+    "y": 3158,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2745,
+    "y": 3147,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2738,
+    "y": 3158,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 522,
+    "x": 2732,
+    "y": 3169,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Tribesman"
   }
 ]
