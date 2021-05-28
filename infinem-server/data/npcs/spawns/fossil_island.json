@@ -871,5 +871,19 @@
     "walkRange": 5,
     "world": "ECO",
     "npcName": "Pelican"
+  },
+
+
+
+  //15163
+  {
+    "id": 7776,
+    "x": 3817,
+    "y": 3808,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Petrified Pete"
   }
 ]
