@@ -3267,5 +3267,190 @@
     "walkRange": 4,
     "world": "ECO",
     "npcName": "Ruby harvest"
+  },
+
+
+
+
+  //5941
+  {
+    "id": 7471,
+    "x": 1504,
+    "y": 3403,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Captain Magoro"
+  },
+  {
+    "id": 7478,
+    "x": 1509,
+    "y": 3417,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Hugor"
+  },
+  {
+    "id": 7479,
+    "x": 1498,
+    "y": 3422,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Lan the Butcher"
+  },
+  {
+    "id": 7476,
+    "x": 1529,
+    "y": 3422,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Robert Boss"
+  },
+  {
+    "id": 3908,
+    "x": 1518,
+    "y": 3438,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bear Cub"
+  },
+  {
+    "id": 3908,
+    "x": 1511,
+    "y": 3444,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bear Cub"
+  },
+  {
+    "id": 3908,
+    "x": 1509,
+    "y": 3441,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bear Cub"
+  },
+  {
+    "id": 2838,
+    "x": 1519,
+    "y": 3449,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Grizzly bear"
+  },
+  {
+    "id": 2838,
+    "x": 1515,
+    "y": 3443,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Grizzly bear"
+  },
+  {
+    "id": 7459,
+    "x": 1494,
+    "y": 3443,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 7459,
+    "x": 1493,
+    "y": 3442,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 7459,
+    "x": 1497,
+    "y": 3448,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 7459,
+    "x": 1485,
+    "y": 3433,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 7459,
+    "x": 1485,
+    "y": 3431,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 7459,
+    "x": 1485,
+    "y": 3432,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 2856,
+    "x": 1498,
+    "y": 3454,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2864,
+    "x": 1503,
+    "y": 3454,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2864,
+    "x": 1496,
+    "y": 3454,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
   }
 ]
