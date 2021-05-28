@@ -1616,5 +1616,130 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Lizardman"
+  },
+
+
+
+
+  //5691
+  {
+    "id": 7084,
+    "x": 1440,
+    "y": 3785,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Armourer (tier 2)"
+  },
+  {
+    "id": 2854,
+    "x": 1434,
+    "y": 3785,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 1435,
+    "y": 3790,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 7085,
+    "x": 1428,
+    "y": 3797,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Armourer (tier 3)"
+  },
+  {
+    "id": 2854,
+    "x": 1428,
+    "y": 3794,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 7075,
+    "x": 1430,
+    "y": 3808,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mine supervisor"
+  },
+  {
+    "id": 2854,
+    "x": 1432,
+    "y": 3813,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 7076,
+    "x": 1429,
+    "y": 3817,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mine supervisor"
+  },
+  {
+    "id": 3027,
+    "x": 1448,
+    "y": 3807,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "King Scorpion"
+  },
+  {
+    "id": 3027,
+    "x": 1445,
+    "y": 3802,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "King Scorpion"
+  },
+  {
+    "id": 3027,
+    "x": 1450,
+    "y": 3800,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "King Scorpion"
+  },
+  {
+    "id": 3027,
+    "x": 1460,
+    "y": 3804,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "King Scorpion"
   }
 ]
