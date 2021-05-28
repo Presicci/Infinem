@@ -2211,5 +2211,120 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Ogre"
+  },
+
+
+
+
+  //10285
+  {
+    "id": 2908,
+    "x": 2571,
+    "y": 2885,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spined larupia"
+  },
+  {
+    "id": 2908,
+    "x": 2569,
+    "y": 2892,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spined larupia"
+  },
+  {
+    "id": 2908,
+    "x": 2566,
+    "y": 2893,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spined larupia"
+  },
+  {
+    "id": 1348,
+    "x": 2580,
+    "y": 2893,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barb-tailed kebbit"
+  },
+  {
+    "id": 1348,
+    "x": 2578,
+    "y": 2898,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barb-tailed kebbit"
+  },
+  {
+    "id": 1348,
+    "x": 2584,
+    "y": 2896,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barb-tailed kebbit"
+  },
+  {
+    "id": 1348,
+    "x": 2583,
+    "y": 2903,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barb-tailed kebbit"
+  },
+  {
+    "id": 1348,
+    "x": 2584,
+    "y": 2908,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barb-tailed kebbit"
+  },
+  {
+    "id": 1348,
+    "x": 2586,
+    "y": 2912,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barb-tailed kebbit"
+  },
+  {
+    "id": 1348,
+    "x": 2600,
+    "y": 2887,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barb-tailed kebbit"
+  },
+  {
+    "id": 1348,
+    "x": 2592,
+    "y": 2887,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Barb-tailed kebbit"
   }
 ]
