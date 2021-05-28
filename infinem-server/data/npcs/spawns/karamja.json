@@ -1278,5 +1278,169 @@
     "walkRange": 6,
     "world": "ECO",
     "npcName": "Monkey"
+  },
+
+
+
+  //11566
+  {
+    "id": 3020,
+    "x": 2887,
+    "y": 3006,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2886,
+    "y": 3002,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2892,
+    "y": 3005,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2890,
+    "y": 3005,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2884,
+    "y": 3004,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2894,
+    "y": 3002,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2892,
+    "y": 2997,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2884,
+    "y": 2994,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2883,
+    "y": 2992,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2888,
+    "y": 2998,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 522,
+    "x": 2918,
+    "y": 2987,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Tribesman"
+  },
+  {
+    "id": 2094,
+    "x": 2926,
+    "y": 2987,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jogre"
+  },
+  {
+    "id": 2845,
+    "x": 2923,
+    "y": 2977,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 2553,
+    "x": 2923,
+    "y": 2979,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Penwie"
+  },
+  {
+    "id": 2094,
+    "x": 2930,
+    "y": 2958,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jogre"
+  },
+  {
+    "id": 2094,
+    "x": 2941,
+    "y": 2978,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jogre"
   }
 ]
