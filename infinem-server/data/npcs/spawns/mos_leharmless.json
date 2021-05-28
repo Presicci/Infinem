@@ -1,4 +1,5 @@
 [
+  //14637
   {
     "name": "Trader Crewmember",
     "id": 1334,
@@ -7,5 +8,27 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+
+  //14638
+  {
+    "id": 1053,
+    "x": 3692,
+    "y": 2978,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Patchy"
+  },
+  {
+    "id": 4022,
+    "x": 3692,
+    "y": 2976,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Mike"
   }
 ]
