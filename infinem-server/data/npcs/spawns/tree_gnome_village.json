@@ -612,5 +612,610 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Observatory assistant"
+  },
+
+
+
+
+  //10034
+  {
+    "id": 5965,
+    "x": 2547,
+    "y": 3254,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5965,
+    "x": 2544,
+    "y": 3255,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5965,
+    "x": 2546,
+    "y": 3248,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5965,
+    "x": 2552,
+    "y": 3253,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5964,
+    "x": 2546,
+    "y": 3251,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5964,
+    "x": 2540,
+    "y": 3251,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5964,
+    "x": 2536,
+    "y": 3244,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5965,
+    "x": 2531,
+    "y": 3249,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5964,
+    "x": 2526,
+    "y": 3241,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5965,
+    "x": 2535,
+    "y": 3235,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5964,
+    "x": 2525,
+    "y": 3248,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5964,
+    "x": 2538,
+    "y": 3236,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5973,
+    "x": 2543,
+    "y": 3236,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mounted terrorbird gnome"
+  },
+  {
+    "id": 5969,
+    "x": 2546,
+    "y": 3237,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5970,
+    "x": 2531,
+    "y": 3239,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5968,
+    "x": 2534,
+    "y": 3236,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5970,
+    "x": 2525,
+    "y": 3236,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5972,
+    "x": 2523,
+    "y": 3238,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mounted terrorbird gnome"
+  },
+  {
+    "id": 5965,
+    "x": 2530,
+    "y": 3231,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5964,
+    "x": 2518,
+    "y": 3243,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5965,
+    "x": 2512,
+    "y": 3243,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5965,
+    "x": 2523,
+    "y": 3248,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5965,
+    "x": 2513,
+    "y": 3250,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5964,
+    "x": 2513,
+    "y": 3247,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5964,
+    "x": 2515,
+    "y": 3234,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Khazard trooper"
+  },
+  {
+    "id": 5969,
+    "x": 2520,
+    "y": 3234,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5970,
+    "x": 2522,
+    "y": 3235,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5972,
+    "x": 2516,
+    "y": 3233,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mounted terrorbird gnome"
+  },
+  {
+    "id": 4977,
+    "x": 2506,
+    "y": 3230,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Tracker gnome 3"
+  },
+  {
+    "id": 5970,
+    "x": 2510,
+    "y": 3228,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5968,
+    "x": 2516,
+    "y": 3229,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5968,
+    "x": 2509,
+    "y": 3216,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5968,
+    "x": 2515,
+    "y": 3217,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5968,
+    "x": 2521,
+    "y": 3219,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5970,
+    "x": 2525,
+    "y": 3221,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5970,
+    "x": 2529,
+    "y": 3221,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5968,
+    "x": 2531,
+    "y": 3217,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5968,
+    "x": 2532,
+    "y": 3224,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 6100,
+    "x": 2515,
+    "y": 3204,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lieutenant Schepbur"
+  },
+  {
+    "id": 5970,
+    "x": 2516,
+    "y": 3202,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5968,
+    "x": 2511,
+    "y": 3204,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5969,
+    "x": 2513,
+    "y": 3208,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 6076,
+    "x": 2511,
+    "y": 3204,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Tortoise"
+  },
+  {
+    "id": 6076,
+    "x": 2519,
+    "y": 3204,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Tortoise"
+  },
+  {
+    "id": 5966,
+    "x": 2535,
+    "y": 3207,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome troop"
+  },
+  {
+    "id": 5966,
+    "x": 2529,
+    "y": 3208,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome troop"
+  },
+  {
+    "id": 5966,
+    "x": 2538,
+    "y": 3209,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome troop"
+  },
+  {
+    "id": 5966,
+    "x": 2536,
+    "y": 3216,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome troop"
+  },
+  {
+    "id": 5966,
+    "x": 2537,
+    "y": 3213,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome troop"
+  },
+  {
+    "id": 5966,
+    "x": 2533,
+    "y": 3222,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome troop"
+  },
+  {
+    "id": 5968,
+    "x": 2535,
+    "y": 3217,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5968,
+    "x": 2541,
+    "y": 3216,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5970,
+    "x": 2532,
+    "y": 3209,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5970,
+    "x": 2533,
+    "y": 3221,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5970,
+    "x": 2521,
+    "y": 3203,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5969,
+    "x": 2539,
+    "y": 3205,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5969,
+    "x": 2541,
+    "y": 3201,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5968,
+    "x": 2544,
+    "y": 3204,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5968,
+    "x": 2532,
+    "y": 3212,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
+  },
+  {
+    "id": 5970,
+    "x": 2524,
+    "y": 3207,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnome"
   }
 ]
