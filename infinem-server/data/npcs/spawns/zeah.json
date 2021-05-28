@@ -6454,5 +6454,609 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Bat"
+  },
+
+
+
+  //6712
+  {
+    "id": 2854,
+    "x": 1725,
+    "y": 3620,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 6989,
+    "x": 1726,
+    "y": 3615,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 235,
+    "x": 1669,
+    "y": 3595,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 235,
+    "x": 1679,
+    "y": 3595,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 235,
+    "x": 1679,
+    "y": 3594,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 235,
+    "x": 1672,
+    "y": 3595,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 235,
+    "x": 1680,
+    "y": 3598,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 235,
+    "x": 1684,
+    "y": 3597,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 235,
+    "x": 1671,
+    "y": 3586,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 235,
+    "x": 1676,
+    "y": 3586,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 235,
+    "x": 1679,
+    "y": 3586,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 1838,
+    "x": 1677,
+    "y": 3592,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1671,
+    "y": 3591,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1666,
+    "y": 3588,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1695,
+    "y": 3593,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1713,
+    "y": 3589,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1715,
+    "y": 3609,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1717,
+    "y": 3608,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1725,
+    "y": 3639,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1683,
+    "y": 3590,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 3901,
+    "x": 1691,
+    "y": 3609,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Fox"
+  },
+  {
+    "id": 1417,
+    "x": 1688,
+    "y": 3611,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1417,
+    "x": 1697,
+    "y": 3613,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1417,
+    "x": 1692,
+    "y": 3601,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1417,
+    "x": 1699,
+    "y": 3611,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 237,
+    "x": 1696,
+    "y": 3615,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 237,
+    "x": 1668,
+    "y": 3614,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 6990,
+    "x": 1693,
+    "y": 3610,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 6988,
+    "x": 1680,
+    "y": 3607,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 6938,
+    "x": 1682,
+    "y": 3617,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Talia"
+  },
+  {
+    "id": 6937,
+    "x": 1676,
+    "y": 3617,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ramocean"
+  },
+  {
+    "id": 1418,
+    "x": 1676,
+    "y": 3621,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1685,
+    "y": 3621,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1687,
+    "y": 3627,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1685,
+    "y": 3632,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1677,
+    "y": 3627,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1667,
+    "y": 3630,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1668,
+    "y": 3623,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1667,
+    "y": 3625,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 2808,
+    "x": 1684,
+    "y": 3639,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pig"
+  },
+  {
+    "id": 2808,
+    "x": 1681,
+    "y": 3640,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pig"
+  },
+  {
+    "id": 2808,
+    "x": 1681,
+    "y": 3635,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pig"
+  },
+  {
+    "id": 2810,
+    "x": 1678,
+    "y": 3638,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Piglet"
+  },
+  {
+    "id": 2810,
+    "x": 1688,
+    "y": 3638,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Piglet"
+  },
+  {
+    "id": 2807,
+    "x": 1684,
+    "y": 3637,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pig"
+  },
+  {
+    "id": 2807,
+    "x": 1680,
+    "y": 3638,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pig"
+  },
+  {
+    "id": 2807,
+    "x": 1679,
+    "y": 3640,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pig"
+  },
+  {
+    "id": 1174,
+    "x": 1668,
+    "y": 3639,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1174,
+    "x": 1669,
+    "y": 3639,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1174,
+    "x": 1669,
+    "y": 3635,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1173,
+    "x": 1669,
+    "y": 3636,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1173,
+    "x": 1670,
+    "y": 3635,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1173,
+    "x": 1673,
+    "y": 3635,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1421,
+    "x": 1668,
+    "y": 3634,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Raccoon"
+  },
+  {
+    "id": 2854,
+    "x": 1665,
+    "y": 3635,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2807,
+    "x": 1669,
+    "y": 3640,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pig"
+  },
+  {
+    "id": 2807,
+    "x": 1668,
+    "y": 3638,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pig"
+  },
+  {
+    "id": 2808,
+    "x": 1685,
+    "y": 3638,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pig"
+  },
+  {
+    "id": 2808,
+    "x": 1687,
+    "y": 3640,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pig"
+  },
+  {
+    "id": 2808,
+    "x": 1687,
+    "y": 3636,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pig"
   }
 ]
