@@ -1741,5 +1741,89 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "King Scorpion"
+  },
+
+
+
+  //5690
+  {
+    "id": 3019,
+    "x": 1469,
+    "y": 3760,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 7086,
+    "x": 1459,
+    "y": 3761,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Armourer (tier 4)"
+  },
+  {
+    "id": 3019,
+    "x": 1451,
+    "y": 3769,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 2854,
+    "x": 1451,
+    "y": 3753,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2862,
+    "x": 1447,
+    "y": 3752,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2862,
+    "x": 1447,
+    "y": 3747,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 7083,
+    "x": 1452,
+    "y": 3747,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Armourer (tier 1)"
+  },
+  {
+    "id": 3019,
+    "x": 1453,
+    "y": 3748,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
   }
 ]
