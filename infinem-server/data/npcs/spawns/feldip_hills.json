@@ -946,5 +946,119 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Big Wolf"
+  },
+
+
+
+  //9772
+  {
+    "id": 7985,
+    "x": 2480,
+    "y": 2875,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Haris"
+  },
+  {
+    "id": 7950,
+    "x": 2457,
+    "y": 2867,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Alec Kincade"
+  },
+  {
+    "id": 8039,
+    "x": 2455,
+    "y": 2850,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Freja"
+  },
+  {
+    "id": 8038,
+    "x": 2466,
+    "y": 2850,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ellen"
+  },
+  {
+    "id": 7954,
+    "x": 2443,
+    "y": 2859,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Mysterious Adventurer"
+  },
+  {
+    "id": 8041,
+    "x": 2457,
+    "y": 2850,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dog"
+  },
+  {
+    "id": 7953,
+    "x": 2453,
+    "y": 2853,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Primula"
+  },
+  {
+    "id": 8040,
+    "x": 2448,
+    "y": 2861,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Lutwidge"
+  },
+  {
+    "id": 8037,
+    "x": 2452,
+    "y": 2848,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Jack"
+  },
+  {
+    "id": 7952,
+    "x": 2465,
+    "y": 2847,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Erdan"
+  },
+  {
+    "id": 8036,
+    "x": 2464,
+    "y": 2847,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Diana"
   }
 ]
