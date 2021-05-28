@@ -2218,5 +2218,29 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Butterfly"
+  },
+
+
+
+  //9269
+  {
+    "id": 2102,
+    "x": 2367,
+    "y": 3396,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 236,
+    "x": 2367,
+    "y": 3455,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
   }
 ]
