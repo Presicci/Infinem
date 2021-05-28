@@ -1198,5 +1198,30 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Spotted kebbit"
+  },
+
+
+
+
+  //9527
+  {
+    "id": 5532,
+    "x": 2368,
+    "y": 3577,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark kebbit"
+  },
+  {
+    "id": 5533,
+    "x": 2378,
+    "y": 3581,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dashing kebbit"
   }
 ]
