@@ -2,10 +2,10 @@
   {
     "name": "Gnome banker",
     "id": 6084,
-    "x": 2439,
+    "x": 2440,
     "y": 3487,
     "z": 1,
-    "direction": "S",
+    "direction": "E",
     "walkRange": 0
   },
   {
@@ -32,14 +32,14 @@
     "x": 2440,
     "y": 3488,
     "z": 1,
-    "direction": "S",
+    "direction": "E",
     "walkRange": 0
   },
   {
     "name": "Timble",
     "id": 2548,
     "x": 2441,
-    "y": 3502,
+    "y": 3503,
     "z": 1,
     "direction": "S",
     "walkRange": 0
@@ -77,7 +77,7 @@
     "x": 2448,
     "y": 3480,
     "z": 1,
-    "direction": "S",
+    "direction": "N",
     "walkRange": 0
   },
   {
@@ -138,7 +138,7 @@
     "name": "Gnome",
     "id": 6094,
     "x": 2449,
-    "y": 3495,
+    "y": 3490,
     "z": 1,
     "direction": "S",
     "walkRange": 1
@@ -167,7 +167,7 @@
     "x": 2450,
     "y": 3480,
     "z": 1,
-    "direction": "S",
+    "direction": "N",
     "walkRange": 0
   },
   {
@@ -255,7 +255,7 @@
     "name": "Gnome",
     "id": 6095,
     "x": 2472,
-    "y": 3496,
+    "y": 3495,
     "z": 1,
     "direction": "S",
     "walkRange": 1
@@ -318,7 +318,7 @@
     "name": "Barman",
     "id": 6532,
     "x": 2483,
-    "y": 3487,
+    "y": 3486,
     "z": 1,
     "direction": "S",
     "walkRange": 1
@@ -344,7 +344,7 @@
   {
     "name": "Gnome",
     "id": 6094,
-    "x": 2483,
+    "x": 2482,
     "y": 3499,
     "z": 1,
     "direction": "S",
@@ -452,8 +452,8 @@
   {
     "name": "Gnome woman",
     "id": 6086,
-    "x": 2451,
-    "y": 3495,
+    "x": 2457,
+    "y": 3496,
     "z": 2,
     "direction": "S",
     "walkRange": 2
@@ -497,8 +497,8 @@
   {
     "name": "Gnome guard",
     "id": 6081,
-    "x": 2466,
-    "y": 3495,
+    "x": 2464,
+    "y": 3497,
     "z": 2,
     "direction": "S",
     "walkRange": 4
@@ -533,8 +533,8 @@
   {
     "name": "Gnome woman",
     "id": 6086,
-    "x": 2467,
-    "y": 3490,
+    "x": 2469,
+    "y": 3489,
     "z": 2,
     "direction": "S",
     "walkRange": 3
@@ -542,8 +542,8 @@
   {
     "name": "Gnome guard",
     "id": 6082,
-    "x": 2468,
-    "y": 3494,
+    "x": 2467,
+    "y": 3495,
     "z": 2,
     "direction": "S",
     "walkRange": 5
