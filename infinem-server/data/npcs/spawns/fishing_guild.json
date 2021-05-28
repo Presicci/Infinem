@@ -270,18 +270,6 @@
     "walkRange": 6
   },
   {
-    "name": "Sheep",
-    "id": 1299,
-    "x": 2596,
-    "y": 3401,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3,
-    "shopOptions": {
-      "trade": "4ea4cb73-305a-445c-a7ab-131a90a1d8b5"
-    }
-  },
-  {
     "name": "Banker",
     "id": 1027,
     "x": 2584,
@@ -352,5 +340,15 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+  {
+    "id": 8684,
+    "x": 2597,
+    "y": 3399,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Roachey"
   }
 ]
