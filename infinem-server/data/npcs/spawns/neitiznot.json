@@ -291,5 +291,130 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Ice troll runt"
+  },
+
+
+
+
+  //9532
+  {
+    "id": 5830,
+    "x": 2410,
+    "y": 3853,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ice troll female"
+  },
+  {
+    "id": 7438,
+    "x": 2410,
+    "y": 3850,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 7438,
+    "x": 2402,
+    "y": 3851,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 7438,
+    "x": 2405,
+    "y": 3853,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 7438,
+    "x": 2401,
+    "y": 3856,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 7437,
+    "x": 2408,
+    "y": 3855,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1874,
+    "x": 2403,
+    "y": 3853,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ice troll runt"
+  },
+  {
+    "id": 1876,
+    "x": 2407,
+    "y": 3853,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ice troll female"
+  },
+  {
+    "id": 5829,
+    "x": 2398,
+    "y": 3853,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ice troll male"
+  },
+  {
+    "id": 5829,
+    "x": 2389,
+    "y": 3869,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ice troll male"
+  },
+  {
+    "id": 1874,
+    "x": 2386,
+    "y": 3861,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ice troll runt"
+  },
+  {
+    "id": 1874,
+    "x": 2369,
+    "y": 3868,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ice troll runt"
   }
 ]
