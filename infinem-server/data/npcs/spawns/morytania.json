@@ -1475,5 +1475,429 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Emilia"
+  },
+
+
+
+  //13875
+  {
+    "id": 1294,
+    "x": 3490,
+    "y": 3285,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1294,
+    "x": 3490,
+    "y": 3286,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1294,
+    "x": 3479,
+    "y": 3283,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1297,
+    "x": 3499,
+    "y": 3286,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1293,
+    "x": 3495,
+    "y": 3296,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1276,
+    "x": 3485,
+    "y": 3285,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1276,
+    "x": 3485,
+    "y": 3286,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1276,
+    "x": 3485,
+    "y": 3282,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1276,
+    "x": 3492,
+    "y": 3288,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1276,
+    "x": 3495,
+    "y": 3286,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1276,
+    "x": 3496,
+    "y": 3284,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1276,
+    "x": 3478,
+    "y": 3292,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1276,
+    "x": 3494,
+    "y": 3277,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1276,
+    "x": 3487,
+    "y": 3276,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1293,
+    "x": 3480,
+    "y": 3296,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1276,
+    "x": 3483,
+    "y": 3299,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1276,
+    "x": 3479,
+    "y": 3295,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1298,
+    "x": 3491,
+    "y": 3301,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1294,
+    "x": 3501,
+    "y": 3300,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1294,
+    "x": 3487,
+    "y": 3281,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1294,
+    "x": 3478,
+    "y": 3277,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1294,
+    "x": 3482,
+    "y": 3274,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1294,
+    "x": 3487,
+    "y": 3273,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1294,
+    "x": 3493,
+    "y": 3274,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1276,
+    "x": 3495,
+    "y": 3279,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1297,
+    "x": 3496,
+    "y": 3273,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1298,
+    "x": 3503,
+    "y": 3279,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1293,
+    "x": 3505,
+    "y": 3279,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1276,
+    "x": 3508,
+    "y": 3282,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1294,
+    "x": 3507,
+    "y": 3286,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1293,
+    "x": 3511,
+    "y": 3287,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1287,
+    "x": 3496,
+    "y": 3289,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted(Ulsquire)"
+  },
+  {
+    "id": 1289,
+    "x": 3488,
+    "y": 3297,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted(Razmire)"
+  },
+  {
+    "id": 1298,
+    "x": 3508,
+    "y": 3302,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1298,
+    "x": 3505,
+    "y": 3296,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1298,
+    "x": 3496,
+    "y": 3299,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
+  },
+  {
+    "id": 1276,
+    "x": 3505,
+    "y": 3299,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1276,
+    "x": 3499,
+    "y": 3313,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1276,
+    "x": 3500,
+    "y": 3315,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 1276,
+    "x": 3514,
+    "y": 3313,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Loar Shadow"
+  },
+  {
+    "id": 945,
+    "x": 3499,
+    "y": 3324,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ghast"
+  },
+  {
+    "id": 1293,
+    "x": 3517,
+    "y": 3285,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Afflicted"
   }
 ]
