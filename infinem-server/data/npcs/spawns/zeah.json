@@ -1055,5 +1055,239 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Keith"
+  },
+
+
+
+  //5177
+  {
+    "id": 8578,
+    "x": 1287,
+    "y": 3651,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp frog"
+  },
+  {
+    "id": 8578,
+    "x": 1285,
+    "y": 3651,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp frog"
+  },
+  {
+    "id": 8578,
+    "x": 1286,
+    "y": 3650,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp frog"
+  },
+  {
+    "id": 8578,
+    "x": 1288,
+    "y": 3649,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp frog"
+  },
+  {
+    "id": 8563,
+    "x": 1309,
+    "y": 3667,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman"
+  },
+  {
+    "id": 8563,
+    "x": 1315,
+    "y": 3672,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman"
+  },
+  {
+    "id": 8563,
+    "x": 1322,
+    "y": 3668,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Lizardman"
+  },
+  {
+    "id": 8578,
+    "x": 1308,
+    "y": 3673,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp frog"
+  },
+  {
+    "id": 8578,
+    "x": 1309,
+    "y": 3675,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp frog"
+  },
+  {
+    "id": 8578,
+    "x": 1310,
+    "y": 3673,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp frog"
+  },
+  {
+    "id": 8578,
+    "x": 1308,
+    "y": 3675,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp frog"
+  },
+  {
+    "id": 8578,
+    "x": 1309,
+    "y": 3672,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp frog"
+  },
+  {
+    "id": 8563,
+    "x": 1291,
+    "y": 3664,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman"
+  },
+  {
+    "id": 8563,
+    "x": 1282,
+    "y": 3661,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman"
+  },
+  {
+    "id": 8563,
+    "x": 1282,
+    "y": 3670,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman"
+  },
+  {
+    "id": 8600,
+    "x": 1291,
+    "y": 3695,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shayzien sergeant"
+  },
+  {
+    "id": 8601,
+    "x": 1288,
+    "y": 3695,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shayzien archer"
+  },
+  {
+    "id": 8599,
+    "x": 1293,
+    "y": 3695,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shayzien soldier"
+  },
+  {
+    "id": 8599,
+    "x": 1292,
+    "y": 3697,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shayzien soldier"
+  },
+  {
+    "id": 2854,
+    "x": 1294,
+    "y": 3707,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 1299,
+    "y": 3711,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2791,
+    "x": 1305,
+    "y": 3710,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cow"
+  },
+  {
+    "id": 8582,
+    "x": 1319,
+    "y": 3673,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ek\u0027ans Chan"
   }
 ]
