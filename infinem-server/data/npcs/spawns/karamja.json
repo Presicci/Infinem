@@ -644,5 +644,139 @@
     "walkRange": 4,
     "world": "ECO",
     "npcName": "Hobgoblin"
+  },
+
+
+
+  //11054
+  {
+    "id": 2909,
+    "x": 2776,
+    "y": 3006,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Horned graahk"
+  },
+  {
+    "id": 2909,
+    "x": 2768,
+    "y": 3004,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Horned graahk"
+  },
+  {
+    "id": 2909,
+    "x": 2782,
+    "y": 3002,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Horned graahk"
+  },
+  {
+    "id": 2909,
+    "x": 2788,
+    "y": 2998,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Horned graahk"
+  },
+  {
+    "id": 2848,
+    "x": 2796,
+    "y": 3003,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2794,
+    "y": 2995,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2789,
+    "y": 2998,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2790,
+    "y": 2990,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2807,
+    "y": 2992,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2807,
+    "y": 3006,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 3020,
+    "x": 2813,
+    "y": 3001,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2812,
+    "y": 2995,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2812,
+    "y": 2989,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 6,
+    "world": "ECO",
+    "npcName": "Jungle spider"
   }
 ]
