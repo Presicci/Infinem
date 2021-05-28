@@ -17,7 +17,8 @@ public enum Tree {
     MAGIC(1513, "magic logs", 75, 340, 250.0, 100, false, 7232, PlayerCounter.CHOPPED_MAGIC),
     REDWOOD(19669, "redwood logs", 90, 460, 380.0, 200, false, 6200, PlayerCounter.CHOPPED_REDWOOD),
     CORRUPT_TREE(30105, "corrupt logs", 95, 340, 300.0, 100, false, 6200, PlayerCounter.CHOPPED_CORRUPT),
-    ENTTRUNK(-1, "ent trunk", -1, 250, 25, 0, false, 15000, PlayerCounter.CHOPPED_ENTS); // Used for algo only;
+    ENTTRUNK(-1, "ent trunk", -1, 250, 25, 0, false, 15000, PlayerCounter.CHOPPED_ENTS), // Used for algo only;
+    HOLLOW_TREE(3239, "bark", 45, 160, 82.5, 45, false, 23000, PlayerCounter.CHOPPED_REGULAR);
 
     public final int log, levelReq, respawnTime, petOdds;
     public final double experience, difficulty;
