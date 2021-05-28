@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
  */
 @AllArgsConstructor
 public enum GliderSpots {
-    GRAND_TREE(new Position(2464, 3501, 3), 4),
+    GRAND_TREE(new Position(2465, 3501, 3), 4),
     ICE_MOUNTAIN(new Position(2850, 3498), 7),
     DIGSITE(new Position(3321, 3430), 10),
     DESERT(new Position(3284, 3213), 13),
