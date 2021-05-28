@@ -2087,5 +2087,19 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Chaos druid"
+  },
+
+
+
+  //10037
+  {
+    "id": 679,
+    "x": 2535,
+    "y": 3431,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 7,
+    "world": "ECO",
+    "npcName": "Rasolo"
   }
 ]
