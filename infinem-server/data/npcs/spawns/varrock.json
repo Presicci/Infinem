@@ -153,15 +153,6 @@
     "walkRange": 2
   },
   {
-    "name": "Chicken",
-    "id": 1174,
-    "x": 3195,
-    "y": 3404,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
     "name": "Guard",
     "id": 3011,
     "x": 3173,
