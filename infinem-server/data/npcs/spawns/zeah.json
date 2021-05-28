@@ -10247,5 +10247,119 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Spider"
+  },
+
+
+
+  //7223
+  {
+    "id": 6946,
+    "x": 1806,
+    "y": 3551,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pandur Hosidius"
+  },
+  {
+    "id": 0,
+    "x": 1806,
+    "y": 3554,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tool Leprechaun"
+  },
+  {
+    "id": 6996,
+    "x": 1818,
+    "y": 3568,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mugger"
+  },
+  {
+    "id": 6775,
+    "x": 1805,
+    "y": 3562,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gallow"
+  },
+  {
+    "id": 758,
+    "x": 1819,
+    "y": 3538,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Flies"
+  },
+  {
+    "id": 758,
+    "x": 1818,
+    "y": 3537,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Flies"
+  },
+  {
+    "id": 758,
+    "x": 1820,
+    "y": 3537,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Flies"
+  },
+  {
+    "id": 758,
+    "x": 1818,
+    "y": 3538,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Flies"
+  },
+  {
+    "id": 758,
+    "x": 1816,
+    "y": 3536,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Flies"
+  },
+  {
+    "id": 758,
+    "x": 1815,
+    "y": 3536,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Flies"
+  },
+  {
+    "id": 6776,
+    "x": 1816,
+    "y": 3537,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
   }
 ]
