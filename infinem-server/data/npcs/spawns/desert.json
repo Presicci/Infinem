@@ -865,5 +865,29 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Desert snake"
+  },
+
+
+
+  //13101
+  {
+    "id": 3544,
+    "x": 3291,
+    "y": 2943,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
+  },
+  {
+    "id": 3544,
+    "x": 3325,
+    "y": 2943,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert snake"
   }
 ]
