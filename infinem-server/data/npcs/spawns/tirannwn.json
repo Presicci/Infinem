@@ -493,5 +493,40 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Fishing spot"
+  },
+
+
+
+
+  //8499
+  {
+    "id": 9197,
+    "x": 2158,
+    "y": 3325,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Slippers"
+  },
+  {
+    "id": 9196,
+    "x": 2160,
+    "y": 3326,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Surma"
+  },
+  {
+    "id": 9195,
+    "x": 2161,
+    "y": 3326,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ian"
   }
 ]
