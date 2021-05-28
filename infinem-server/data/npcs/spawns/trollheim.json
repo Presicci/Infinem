@@ -280,5 +280,109 @@
     "z": 0,
     "direction": "N",
     "walkRange": 3
+  },
+
+
+
+  //11577
+  {
+    "id": 4146,
+    "x": 2890,
+    "y": 3677,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mountain goat"
+  },
+  {
+    "id": 4145,
+    "x": 2893,
+    "y": 3679,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mountain goat"
+  },
+  {
+    "id": 4145,
+    "x": 2893,
+    "y": 3686,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mountain goat"
+  },
+  {
+    "id": 4767,
+    "x": 2890,
+    "y": 3679,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Thistle"
+  },
+  {
+    "id": 4146,
+    "x": 2887,
+    "y": 3669,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mountain goat"
+  },
+  {
+    "id": 4135,
+    "x": 2902,
+    "y": 3696,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Thrower troll"
+  },
+  {
+    "id": 4136,
+    "x": 2898,
+    "y": 3698,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Thrower troll"
+  },
+  {
+    "id": 4137,
+    "x": 2893,
+    "y": 3700,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Thrower troll"
+  },
+  {
+    "id": 4138,
+    "x": 2889,
+    "y": 3699,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Thrower troll"
+  },
+  {
+    "id": 4139,
+    "x": 2886,
+    "y": 3698,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Thrower troll"
   }
 ]
