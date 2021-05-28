@@ -2104,5 +2104,119 @@
     "z": 3,
     "direction": "S",
     "walkRange": 1
+  },
+
+
+
+  //9525
+  {
+    "id": 2100,
+    "x": 2371,
+    "y": 3398,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2099,
+    "x": 2371,
+    "y": 3402,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2098,
+    "x": 2369,
+    "y": 3396,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2103,
+    "x": 2370,
+    "y": 3393,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2101,
+    "x": 2368,
+    "y": 3404,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 235,
+    "x": 2378,
+    "y": 3416,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 235,
+    "x": 2377,
+    "y": 3423,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 2066,
+    "x": 2371,
+    "y": 3425,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Terrorbird"
+  },
+  {
+    "id": 2066,
+    "x": 2380,
+    "y": 3430,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Terrorbird"
+  },
+  {
+    "id": 2571,
+    "x": 2378,
+    "y": 3436,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Meegle"
+  },
+  {
+    "id": 237,
+    "x": 2372,
+    "y": 3448,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
   }
 ]
