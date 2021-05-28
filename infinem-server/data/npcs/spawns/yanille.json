@@ -296,5 +296,279 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Hazelmere"
+  },
+
+
+
+  //10288
+  {
+    "id": 5007,
+    "x": 2612,
+    "y": 3133,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 5007,
+    "x": 2581,
+    "y": 3133,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 5007,
+    "x": 2579,
+    "y": 3122,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 5007,
+    "x": 2564,
+    "y": 3133,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 5007,
+    "x": 2595,
+    "y": 3117,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 2790,
+    "x": 2604,
+    "y": 3115,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cow"
+  },
+  {
+    "id": 383,
+    "x": 2605,
+    "y": 3102,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Tramp"
+  },
+  {
+    "id": 1027,
+    "x": 2615,
+    "y": 3094,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 1027,
+    "x": 2615,
+    "y": 3091,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 1028,
+    "x": 2615,
+    "y": 3092,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 2561,
+    "x": 2593,
+    "y": 3087,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Professor Imblewyn"
+  },
+  {
+    "id": 881,
+    "x": 2588,
+    "y": 3086,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Zavistic Rarve"
+  },
+  {
+    "id": 3248,
+    "x": 2593,
+    "y": 3088,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Wizard Distentor"
+  },
+  {
+    "id": 3097,
+    "x": 2588,
+    "y": 3089,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 3097,
+    "x": 2589,
+    "y": 3084,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 3097,
+    "x": 2587,
+    "y": 3091,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 3097,
+    "x": 2595,
+    "y": 3090,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 3097,
+    "x": 2593,
+    "y": 3084,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 3247,
+    "x": 2595,
+    "y": 3088,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wizard Akutha"
+  },
+  {
+    "id": 3249,
+    "x": 2594,
+    "y": 3085,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wizard Sinina"
+  },
+  {
+    "id": 3097,
+    "x": 2591,
+    "y": 3090,
+    "z": 2,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 3097,
+    "x": 2588,
+    "y": 3086,
+    "z": 2,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 3097,
+    "x": 2594,
+    "y": 3085,
+    "z": 2,
+    "direction": "W",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 0,
+    "x": 2571,
+    "y": 3106,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tool Leprechaun"
+  },
+  {
+    "id": 2671,
+    "x": 2577,
+    "y": 3100,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Selena"
+  },
+  {
+    "id": 8685,
+    "x": 2568,
+    "y": 3099,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Frenita"
+  },
+  {
+    "id": 5007,
+    "x": 2587,
+    "y": 3105,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Imp"
   }
 ]
