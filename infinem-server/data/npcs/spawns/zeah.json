@@ -2789,5 +2789,129 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Kourend guard"
+  },
+
+
+
+  //5943
+  {
+    "id": 2827,
+    "x": 1522,
+    "y": 3548,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1522,
+    "y": 3551,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1507,
+    "y": 3542,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 6872,
+    "x": 1500,
+    "y": 3544,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "New recruit Tony"
+  },
+  {
+    "id": 7486,
+    "x": 1477,
+    "y": 3533,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie"
+  },
+  {
+    "id": 7488,
+    "x": 1482,
+    "y": 3531,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie"
+  },
+  {
+    "id": 7487,
+    "x": 1483,
+    "y": 3535,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie"
+  },
+  {
+    "id": 472,
+    "x": 1484,
+    "y": 3532,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 7485,
+    "x": 1479,
+    "y": 3532,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie"
+  },
+  {
+    "id": 2827,
+    "x": 1500,
+    "y": 3551,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1495,
+    "y": 3561,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1478,
+    "y": 3565,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
   }
 ]
