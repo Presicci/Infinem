@@ -139,5 +139,170 @@
     "walkRange": 2,
     "world": "ECO",
     "npcName": "Carnivorous chinchompa"
+  },
+
+
+
+
+  //8757
+  {
+    "id": 9180,
+    "x": 2207,
+    "y": 3405,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Marwolaeth Dawnsio"
+  },
+  {
+    "id": 9178,
+    "x": 2196,
+    "y": 3411,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Gwerin Hapus"
+  },
+  {
+    "id": 9179,
+    "x": 2210,
+    "y": 3412,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Preswylwyr Dall"
+  },
+  {
+    "id": 2790,
+    "x": 2191,
+    "y": 3417,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Cow"
+  },
+  {
+    "id": 2790,
+    "x": 2194,
+    "y": 3420,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Cow"
+  },
+  {
+    "id": 2791,
+    "x": 2193,
+    "y": 3418,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Cow"
+  },
+  {
+    "id": 2791,
+    "x": 2196,
+    "y": 3417,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Cow"
+  },
+  {
+    "id": 2795,
+    "x": 2191,
+    "y": 3419,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Cow"
+  },
+  {
+    "id": 2793,
+    "x": 2194,
+    "y": 3420,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Cow"
+  },
+  {
+    "id": 9172,
+    "x": 2236,
+    "y": 3445,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 9174,
+    "x": 2235,
+    "y": 3433,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 9174,
+    "x": 2226,
+    "y": 3430,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 9174,
+    "x": 2225,
+    "y": 3429,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 9172,
+    "x": 2228,
+    "y": 3429,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 9172,
+    "x": 2228,
+    "y": 3428,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 9172,
+    "x": 2225,
+    "y": 3428,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
   }
 ]
