@@ -5034,5 +5034,120 @@
     "walkRange": 3,
     "world": "ECO",
     "npcName": "Tindel Marchant"
+  },
+
+
+
+
+  //10290
+  {
+    "id": 3606,
+    "x": 2570,
+    "y": 3249,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Brother Kojo"
+  },
+  {
+    "id": 4246,
+    "x": 2606,
+    "y": 3220,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 4246,
+    "x": 2600,
+    "y": 3210,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 4246,
+    "x": 2615,
+    "y": 3209,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 4246,
+    "x": 2609,
+    "y": 3210,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 5007,
+    "x": 2612,
+    "y": 3220,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 5007,
+    "x": 2593,
+    "y": 3216,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 5007,
+    "x": 2593,
+    "y": 3209,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Imp"
+  },
+  {
+    "id": 0,
+    "x": 2614,
+    "y": 3227,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tool Leprechaun"
+  },
+  {
+    "id": 2677,
+    "x": 2617,
+    "y": 3224,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Torrell"
+  },
+  {
+    "id": 5007,
+    "x": 2623,
+    "y": 3233,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 5,
+    "world": "ECO",
+    "npcName": "Imp"
   }
 ]
