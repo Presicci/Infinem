@@ -1511,5 +1511,208 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Desert snake"
+  },
+
+
+  //12591
+  {
+    "id": 4652,
+    "x": 3196,
+    "y": 3054,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ugthanki"
+  },
+  {
+    "id": 4652,
+    "x": 3191,
+    "y": 3020,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ugthanki"
+  },
+  {
+    "id": 4652,
+    "x": 3187,
+    "y": 3034,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ugthanki"
+  },
+  {
+    "id": 684,
+    "x": 3178,
+    "y": 3043,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Archaeologist"
+  },
+  {
+    "id": 4638,
+    "x": 3171,
+    "y": 3044,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bedabin Nomad"
+  },
+  {
+    "id": 4638,
+    "x": 3175,
+    "y": 3039,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bedabin Nomad"
+  },
+  {
+    "id": 4638,
+    "x": 3172,
+    "y": 3035,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bedabin Nomad"
+  },
+  {
+    "id": 4638,
+    "x": 3165,
+    "y": 3045,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bedabin Nomad"
+  },
+  {
+    "id": 4638,
+    "x": 3171,
+    "y": 3030,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bedabin Nomad"
+  },
+  {
+    "id": 4655,
+    "x": 3175,
+    "y": 3037,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bedabin Nomad Fighter"
+  },
+  {
+    "id": 4655,
+    "x": 3173,
+    "y": 3042,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bedabin Nomad Fighter"
+  },
+  {
+    "id": 4655,
+    "x": 3172,
+    "y": 3034,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bedabin Nomad Fighter"
+  },
+  {
+    "id": 4637,
+    "x": 3172,
+    "y": 3029,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Al Shabim"
+  },
+  {
+    "id": 23,
+    "x": 3182,
+    "y": 3040,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 4655,
+    "x": 3160,
+    "y": 3042,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bedabin Nomad Fighter"
+  },
+  {
+    "id": 4655,
+    "x": 3158,
+    "y": 3037,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bedabin Nomad Fighter"
+  },
+  {
+    "id": 4655,
+    "x": 3153,
+    "y": 3041,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bedabin Nomad Fighter"
+  },
+  {
+    "id": 4655,
+    "x": 3161,
+    "y": 3031,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bedabin Nomad Fighter"
+  },
+  {
+    "id": 4649,
+    "x": 3156,
+    "y": 3035,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
+  },
+  {
+    "id": 4649,
+    "x": 3154,
+    "y": 3040,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Desert Wolf"
   }
 ]
