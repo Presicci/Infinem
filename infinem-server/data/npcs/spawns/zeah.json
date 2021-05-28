@@ -5885,5 +5885,29 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Squirrel"
+  },
+
+
+
+  //6454
+  {
+    "id": 1418,
+    "x": 1660,
+    "y": 3502,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 7240,
+    "x": 1654,
+    "y": 3501,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Perry"
   }
 ]
