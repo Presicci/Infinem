@@ -753,16 +753,6 @@
     "npcName": "Mary"
   },
   {
-    "id": 860,
-    "x": 1252,
-    "y": 3684,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Grish"
-  },
-  {
     "id": 8600,
     "x": 1254,
     "y": 3679,
@@ -781,5 +771,90 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Shayzien soldier"
+  },
+
+
+
+
+  //5180
+  {
+    "id": 2834,
+    "x": 1284,
+    "y": 3840,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2834,
+    "x": 1288,
+    "y": 3841,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2834,
+    "x": 1295,
+    "y": 3844,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2834,
+    "x": 1300,
+    "y": 3840,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2834,
+    "x": 1313,
+    "y": 3840,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2834,
+    "x": 1320,
+    "y": 3843,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2834,
+    "x": 1328,
+    "y": 3843,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2834,
+    "x": 1333,
+    "y": 3841,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Giant bat"
   }
 ]
