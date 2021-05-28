@@ -159,5 +159,89 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Suqah"
+  },
+
+
+
+  //8252
+  {
+    "id": 3839,
+    "x": 2082,
+    "y": 3899,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Meteora"
+  },
+  {
+    "id": 3849,
+    "x": 2094,
+    "y": 3891,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Enchanted Bucket"
+  },
+  {
+    "id": 789,
+    "x": 2111,
+    "y": 3863,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 792,
+    "x": 2103,
+    "y": 3865,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 787,
+    "x": 2079,
+    "y": 3878,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 791,
+    "x": 2079,
+    "y": 3882,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 788,
+    "x": 2070,
+    "y": 3879,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
+  },
+  {
+    "id": 790,
+    "x": 2062,
+    "y": 3881,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Suqah"
   }
 ]
