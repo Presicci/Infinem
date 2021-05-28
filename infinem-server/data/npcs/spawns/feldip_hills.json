@@ -1978,5 +1978,50 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Carnivorous chinchompa"
+  },
+
+
+
+
+  //10028
+  {
+    "id": 7984,
+    "x": 2553,
+    "y": 2868,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Madame Caldarium"
+  },
+  {
+    "id": 1338,
+    "x": 2554,
+    "y": 2865,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 7970,
+    "x": 2548,
+    "y": 2864,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Gnocci the Cook"
+  },
+  {
+    "id": 1339,
+    "x": 2553,
+    "y": 2866,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
   }
 ]
