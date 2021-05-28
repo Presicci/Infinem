@@ -1512,5 +1512,88 @@
     "walkRange": 2,
     "world": "ECO",
     "npcName": "Giant rat"
+  },
+
+
+  //12852
+  {
+    "id": 1839,
+    "x": 3204,
+    "y": 3335,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1839,
+    "x": 3207,
+    "y": 3329,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1839,
+    "x": 3205,
+    "y": 3329,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1323,
+    "x": 3203,
+    "y": 3344,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tarquin"
+  },
+  {
+    "id": 3010,
+    "x": 3211,
+    "y": 3382,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3010,
+    "x": 3209,
+    "y": 3380,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3010,
+    "x": 3204,
+    "y": 3379,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 5209,
+    "x": 3210,
+    "y": 3391,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Charlie the Tramp"
   }
 ]
