@@ -1751,5 +1751,553 @@
     "walkRange": 4,
     "world": "ECO",
     "npcName": "Tribesman"
+  },
+
+
+
+  //11058
+  {
+    "id": 2686,
+    "x": 2801,
+    "y": 3200,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Praistan Ebola"
+  },
+  {
+    "id": 0,
+    "x": 2767,
+    "y": 3213,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tool Leprechaun"
+  },
+  {
+    "id": 2669,
+    "x": 2768,
+    "y": 3206,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Garth"
+  },
+  {
+    "id": 3020,
+    "x": 2774,
+    "y": 3205,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2765,
+    "y": 3204,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 3020,
+    "x": 2762,
+    "y": 3208,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jungle spider"
+  },
+  {
+    "id": 8764,
+    "x": 2772,
+    "y": 3230,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Barnaby"
+  },
+  {
+    "id": 1329,
+    "x": 2759,
+    "y": 3231,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Trader Crewmember"
+  },
+  {
+    "id": 3648,
+    "x": 2772,
+    "y": 3227,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Customs officer"
+  },
+
+
+
+  //11057
+  {
+    "id": 2848,
+    "x": 2804,
+    "y": 3183,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 514,
+    "x": 2809,
+    "y": 3188,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 514,
+    "x": 2811,
+    "y": 3196,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 514,
+    "x": 2797,
+    "y": 3186,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 514,
+    "x": 2793,
+    "y": 3186,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 514,
+    "x": 2790,
+    "y": 3186,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 514,
+    "x": 2785,
+    "y": 3183,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 514,
+    "x": 2802,
+    "y": 3184,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 7650,
+    "x": 2811,
+    "y": 3192,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Pirate Jackie the Fruit"
+  },
+  {
+    "id": 4926,
+    "x": 2800,
+    "y": 3195,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate Guard"
+  },
+  {
+    "id": 3092,
+    "x": 2798,
+    "y": 3179,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Thief"
+  },
+  {
+    "id": 3092,
+    "x": 2797,
+    "y": 3181,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Thief"
+  },
+  {
+    "id": 514,
+    "x": 2797,
+    "y": 3166,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 514,
+    "x": 2793,
+    "y": 3168,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 514,
+    "x": 2793,
+    "y": 3162,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 514,
+    "x": 2792,
+    "y": 3158,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 514,
+    "x": 2797,
+    "y": 3159,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 514,
+    "x": 2796,
+    "y": 3162,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 514,
+    "x": 2798,
+    "y": 3163,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 1314,
+    "x": 2796,
+    "y": 3155,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bartender"
+  },
+  {
+    "id": 8680,
+    "x": 2803,
+    "y": 3152,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Davon"
+  },
+  {
+    "id": 3092,
+    "x": 2809,
+    "y": 3152,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Thief"
+  },
+  {
+    "id": 2854,
+    "x": 2809,
+    "y": 3160,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 4916,
+    "x": 2811,
+    "y": 3171,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Grubor"
+  },
+  {
+    "id": 4917,
+    "x": 2810,
+    "y": 3174,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Trobert"
+  },
+  {
+    "id": 2848,
+    "x": 2784,
+    "y": 3175,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2845,
+    "x": 2783,
+    "y": 3170,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 114,
+    "x": 2784,
+    "y": 3190,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 114,
+    "x": 2785,
+    "y": 3195,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 114,
+    "x": 2784,
+    "y": 3198,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard dog"
+  },
+  {
+    "id": 4915,
+    "x": 2776,
+    "y": 3186,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Garv"
+  },
+  {
+    "id": 4926,
+    "x": 2775,
+    "y": 3189,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate Guard"
+  },
+  {
+    "id": 4926,
+    "x": 2771,
+    "y": 3193,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate Guard"
+  },
+  {
+    "id": 4926,
+    "x": 2761,
+    "y": 3192,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate Guard"
+  },
+  {
+    "id": 4926,
+    "x": 2775,
+    "y": 3198,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate Guard"
+  },
+  {
+    "id": 4926,
+    "x": 2777,
+    "y": 3198,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate Guard"
+  },
+  {
+    "id": 4926,
+    "x": 2778,
+    "y": 3195,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate Guard"
+  },
+  {
+    "id": 4707,
+    "x": 2769,
+    "y": 3173,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lubufu"
+  },
+  {
+    "id": 2848,
+    "x": 2765,
+    "y": 3181,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2845,
+    "x": 2761,
+    "y": 3183,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 514,
+    "x": 2763,
+    "y": 3186,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 2848,
+    "x": 2755,
+    "y": 3170,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2848,
+    "x": 2753,
+    "y": 3160,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monkey"
+  },
+  {
+    "id": 2845,
+    "x": 2757,
+    "y": 3171,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Snake"
+  },
+  {
+    "id": 4714,
+    "x": 2768,
+    "y": 3165,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Fishing spot"
   }
 ]
