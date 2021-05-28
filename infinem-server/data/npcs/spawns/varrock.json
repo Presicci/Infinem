@@ -2098,5 +2098,18 @@
     "walkRange": 2,
     "world": "ECO",
     "npcName": "Cow calf"
+  },
+
+
+  //12597
+  {
+    "id": 5036,
+    "x": 3195,
+    "y": 3404,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Apothecary"
   }
 ]
