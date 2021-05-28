@@ -25,5 +25,263 @@
     "z": 0,
     "direction": "E",
     "walkRange": 0
+  },
+
+
+
+  //11060
+  {
+    "id": 2667,
+    "x": 2814,
+    "y": 3338,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Francis"
+  },
+  {
+    "id": 0,
+    "x": 2812,
+    "y": 3332,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tool Leprechaun"
+  },
+  {
+    "id": 5386,
+    "x": 2815,
+    "y": 3343,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mazion"
+  },
+  {
+    "id": 3215,
+    "x": 2808,
+    "y": 3342,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Frincos"
+  },
+  {
+    "id": 4715,
+    "x": 2805,
+    "y": 3354,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Auguste"
+  },
+  {
+    "id": 2839,
+    "x": 2813,
+    "y": 3374,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Black bear"
+  },
+
+
+
+  //11316
+  {
+    "id": 2053,
+    "x": 2832,
+    "y": 3350,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Fritz the Glassblower"
+  },
+  {
+    "id": 4068,
+    "x": 2852,
+    "y": 3352,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 4068,
+    "x": 2852,
+    "y": 3346,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 4068,
+    "x": 2848,
+    "y": 3348,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 4068,
+    "x": 2852,
+    "y": 3349,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 4068,
+    "x": 2853,
+    "y": 3343,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 4068,
+    "x": 2853,
+    "y": 3353,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Monk"
+  },
+  {
+    "id": 1174,
+    "x": 2852,
+    "y": 3373,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1174,
+    "x": 2852,
+    "y": 3370,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1174,
+    "x": 2850,
+    "y": 3371,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1173,
+    "x": 2852,
+    "y": 3371,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1173,
+    "x": 2852,
+    "y": 3370,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1173,
+    "x": 2853,
+    "y": 3372,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 2837,
+    "x": 2857,
+    "y": 3373,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Unicorn"
+  },
+  {
+    "id": 2837,
+    "x": 2852,
+    "y": 3378,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Unicorn"
+  },
+  {
+    "id": 2837,
+    "x": 2840,
+    "y": 3371,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Unicorn"
+  },
+  {
+    "id": 2837,
+    "x": 2841,
+    "y": 3377,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Unicorn"
+  },
+  {
+    "id": 4927,
+    "x": 2852,
+    "y": 3381,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Entrana firebird"
+  },
+  {
+    "id": 1164,
+    "x": 2822,
+    "y": 3374,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Cave monk"
   }
 ]
