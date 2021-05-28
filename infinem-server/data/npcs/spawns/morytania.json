@@ -1126,5 +1126,24 @@
     "z": 0,
     "direction": "S",
     "walkRange": 5
+  },
+
+
+  //13874
+  {
+    "id": 3237,
+    "x": 3460,
+    "y": 3240,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 3237,
+    "x": 3457,
+    "y": 3233,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
   }
 ]
