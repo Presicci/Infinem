@@ -5088,5 +5088,469 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Kourend guard"
+  },
+
+
+
+  //6456
+  {
+    "id": 1417,
+    "x": 1662,
+    "y": 3613,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1417,
+    "x": 1663,
+    "y": 3606,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 237,
+    "x": 1662,
+    "y": 3612,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 6926,
+    "x": 1647,
+    "y": 3627,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ewesey"
+  },
+  {
+    "id": 6927,
+    "x": 1641,
+    "y": 3631,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Servery assistant"
+  },
+  {
+    "id": 6928,
+    "x": 1638,
+    "y": 3618,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Servery assistant"
+  },
+  {
+    "id": 6936,
+    "x": 1645,
+    "y": 3619,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6933,
+    "x": 1644,
+    "y": 3619,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6935,
+    "x": 1642,
+    "y": 3619,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6935,
+    "x": 1639,
+    "y": 3619,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6934,
+    "x": 1638,
+    "y": 3619,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6933,
+    "x": 1637,
+    "y": 3619,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6930,
+    "x": 1637,
+    "y": 3621,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6929,
+    "x": 1639,
+    "y": 3621,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6932,
+    "x": 1640,
+    "y": 3621,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6931,
+    "x": 1643,
+    "y": 3621,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6929,
+    "x": 1644,
+    "y": 3621,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6930,
+    "x": 1645,
+    "y": 3621,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6934,
+    "x": 1644,
+    "y": 3632,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6936,
+    "x": 1643,
+    "y": 3632,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6935,
+    "x": 1642,
+    "y": 3632,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6934,
+    "x": 1639,
+    "y": 3632,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6933,
+    "x": 1638,
+    "y": 3632,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6936,
+    "x": 1637,
+    "y": 3632,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6929,
+    "x": 1637,
+    "y": 3634,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6931,
+    "x": 1638,
+    "y": 3634,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6930,
+    "x": 1639,
+    "y": 3634,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6932,
+    "x": 1642,
+    "y": 3634,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6929,
+    "x": 1644,
+    "y": 3634,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6931,
+    "x": 1645,
+    "y": 3634,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 1421,
+    "x": 1645,
+    "y": 3609,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Raccoon"
+  },
+  {
+    "id": 1854,
+    "x": 1637,
+    "y": 3604,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 1854,
+    "x": 1644,
+    "y": 3604,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 1854,
+    "x": 1636,
+    "y": 3615,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 235,
+    "x": 1635,
+    "y": 3610,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 1418,
+    "x": 1644,
+    "y": 3585,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1652,
+    "y": 3589,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1419,
+    "x": 1631,
+    "y": 3589,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Raccoon"
+  },
+  {
+    "id": 1854,
+    "x": 1625,
+    "y": 3601,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Butterfly"
+  },
+  {
+    "id": 2854,
+    "x": 1622,
+    "y": 3601,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 1419,
+    "x": 1632,
+    "y": 3603,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Raccoon"
+  },
+  {
+    "id": 1419,
+    "x": 1626,
+    "y": 3597,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Raccoon"
+  },
+  {
+    "id": 7016,
+    "x": 1628,
+    "y": 3647,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7017,
+    "x": 1632,
+    "y": 3645,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  {
+    "id": 3909,
+    "x": 1601,
+    "y": 3637,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bear Cub"
+  },
+  {
+    "id": 3909,
+    "x": 1600,
+    "y": 3634,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bear Cub"
   }
 ]
