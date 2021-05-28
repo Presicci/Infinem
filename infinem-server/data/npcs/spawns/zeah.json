@@ -3452,5 +3452,80 @@
     "walkRange": 3,
     "world": "ECO",
     "npcName": "Giant rat"
+  },
+
+
+
+
+  //6203
+  {
+    "id": 3019,
+    "x": 1595,
+    "y": 3809,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 7052,
+    "x": 1597,
+    "y": 3821,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tower Mage"
+  },
+  {
+    "id": 7052,
+    "x": 1597,
+    "y": 3818,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tower Mage"
+  },
+  {
+    "id": 8509,
+    "x": 1590,
+    "y": 3817,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tower Mage"
+  },
+  {
+    "id": 8508,
+    "x": 1580,
+    "y": 3834,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tower Mage"
+  },
+  {
+    "id": 8511,
+    "x": 1581,
+    "y": 3824,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tower Mage"
+  },
+  {
+    "id": 1406,
+    "x": 1543,
+    "y": 3781,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dwarf"
   }
 ]
