@@ -856,5 +856,169 @@
     "walkRange": 2,
     "world": "ECO",
     "npcName": "Giant bat"
+  },
+
+
+
+  //5179
+  {
+    "id": 8623,
+    "x": 1308,
+    "y": 3785,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Konar quo Maten"
+  },
+  {
+    "id": 8697,
+    "x": 1298,
+    "y": 3797,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Leke quo Keran"
+  },
+  {
+    "id": 8557,
+    "x": 1324,
+    "y": 3798,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lokraa quo Sihar"
+  },
+  {
+    "id": 85578560,
+    "x": 1325,
+    "y": 3813,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "null"
+  },
+  {
+    "id": 8560,
+    "x": 1325,
+    "y": 3813,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Vortas quo Keran"
+  },
+  {
+    "id": 8552,
+    "x": 1322,
+    "y": 3821,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Gorhak quo Narga"
+  },
+  {
+    "id": 8551,
+    "x": 1332,
+    "y": 3823,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lornor quo Narga"
+  },
+  {
+    "id": 8549,
+    "x": 1311,
+    "y": 3825,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Uurrak quo Narga"
+  },
+  {
+    "id": 8555,
+    "x": 1309,
+    "y": 3819,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Xorrah quo Sihar"
+  },
+  {
+    "id": 8554,
+    "x": 1310,
+    "y": 3833,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Vornas quo Maten"
+  },
+  {
+    "id": 8548,
+    "x": 1300,
+    "y": 3828,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Darcor quo Narga"
+  },
+  {
+    "id": 8553,
+    "x": 1303,
+    "y": 3821,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Fornek quo Maten"
+  },
+  {
+    "id": 8550,
+    "x": 1291,
+    "y": 3808,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Marmor quo Narga"
+  },
+  {
+    "id": 8556,
+    "x": 1303,
+    "y": 3806,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Corkat quo Sihar"
+  },
+  {
+    "id": 8558,
+    "x": 1290,
+    "y": 3788,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Wengra quo Sihar"
+  },
+  {
+    "id": 8559,
+    "x": 1282,
+    "y": 3807,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Haldor quo Keran"
   }
 ]
