@@ -4162,5 +4162,370 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Jorral"
+  },
+
+
+
+
+  //10036
+  {
+    "id": 9007,
+    "x": 2549,
+    "y": 3331,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mourner"
+  },
+  {
+    "id": 9009,
+    "x": 2547,
+    "y": 3331,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mourner"
+  },
+  {
+    "id": 2854,
+    "x": 2518,
+    "y": 3333,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2531,
+    "y": 3332,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 4263,
+    "x": 2531,
+    "y": 3332,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ted Rehnison"
+  },
+  {
+    "id": 4265,
+    "x": 2530,
+    "y": 3332,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Billy Rehnison"
+  },
+  {
+    "id": 4264,
+    "x": 2532,
+    "y": 3330,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Martha Rehnison"
+  },
+  {
+    "id": 2854,
+    "x": 2531,
+    "y": 3331,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2499,
+    "y": 3330,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2508,
+    "y": 3329,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2508,
+    "y": 3330,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2510,
+    "y": 3332,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 2514,
+    "y": 3334,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 1111,
+    "x": 2522,
+    "y": 3361,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1111,
+    "x": 2519,
+    "y": 3356,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1111,
+    "x": 2514,
+    "y": 3356,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1112,
+    "x": 2519,
+    "y": 3365,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1112,
+    "x": 2525,
+    "y": 3371,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1112,
+    "x": 2531,
+    "y": 3367,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1113,
+    "x": 2518,
+    "y": 3373,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1113,
+    "x": 2512,
+    "y": 3374,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1113,
+    "x": 2508,
+    "y": 3374,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1111,
+    "x": 2512,
+    "y": 3377,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1153,
+    "x": 2524,
+    "y": 3375,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ogre"
+  },
+  {
+    "id": 1153,
+    "x": 2524,
+    "y": 3376,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ogre"
+  },
+  {
+    "id": 1153,
+    "x": 2530,
+    "y": 3376,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ogre"
+  },
+  {
+    "id": 1153,
+    "x": 2532,
+    "y": 3375,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ogre"
+  },
+  {
+    "id": 1153,
+    "x": 2527,
+    "y": 3375,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ogre"
+  },
+  {
+    "id": 1153,
+    "x": 2530,
+    "y": 3374,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ogre"
+  },
+  {
+    "id": 1153,
+    "x": 2526,
+    "y": 3376,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ogre"
+  },
+  {
+    "id": 1111,
+    "x": 2521,
+    "y": 3384,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1111,
+    "x": 2525,
+    "y": 3384,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1113,
+    "x": 2529,
+    "y": 3379,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 2894,
+    "x": 2514,
+    "y": 3385,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Shop keeper"
+  },
+  {
+    "id": 1111,
+    "x": 2511,
+    "y": 3383,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 1113,
+    "x": 2507,
+    "y": 3363,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Guard"
   }
 ]
