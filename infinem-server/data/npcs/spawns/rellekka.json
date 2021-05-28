@@ -412,5 +412,610 @@
     "z": 0,
     "direction": "S",
     "walkRange": 1
+  },
+
+
+
+
+  //10553
+  {
+    "id": 3943,
+    "x": 2656,
+    "y": 3653,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lensa"
+  },
+  {
+    "id": 3941,
+    "x": 2666,
+    "y": 3651,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pontak"
+  },
+  {
+    "id": 3928,
+    "x": 2660,
+    "y": 3663,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3928,
+    "x": 2657,
+    "y": 3663,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Guard"
+  },
+  {
+    "id": 3950,
+    "x": 2653,
+    "y": 3657,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior"
+  },
+  {
+    "id": 3925,
+    "x": 2645,
+    "y": 3660,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swensen the Navigator"
+  },
+  {
+    "id": 3916,
+    "x": 2658,
+    "y": 3670,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bjorn"
+  },
+  {
+    "id": 812,
+    "x": 2659,
+    "y": 3678,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fridgeir"
+  },
+  {
+    "id": 811,
+    "x": 2658,
+    "y": 3679,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Torbrund"
+  },
+  {
+    "id": 810,
+    "x": 2657,
+    "y": 3680,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Styrmir"
+  },
+  {
+    "id": 809,
+    "x": 2660,
+    "y": 3680,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ospak"
+  },
+  {
+    "id": 4490,
+    "x": 2671,
+    "y": 3663,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ingrid Hradson"
+  },
+  {
+    "id": 3950,
+    "x": 2668,
+    "y": 3667,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior"
+  },
+  {
+    "id": 3950,
+    "x": 2667,
+    "y": 3680,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior"
+  },
+  {
+    "id": 3950,
+    "x": 2675,
+    "y": 3685,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior"
+  },
+  {
+    "id": 3940,
+    "x": 2675,
+    "y": 3667,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lanzig"
+  },
+  {
+    "id": 3496,
+    "x": 2674,
+    "y": 3670,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Blanin"
+  },
+  {
+    "id": 3946,
+    "x": 2676,
+    "y": 3677,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Inga"
+  },
+  {
+    "id": 3938,
+    "x": 2674,
+    "y": 3677,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Freidir"
+  },
+  {
+    "id": 813,
+    "x": 2667,
+    "y": 3684,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Longhall Bouncer"
+  },
+  {
+    "id": 3935,
+    "x": 2664,
+    "y": 3692,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skulgrimen"
+  },
+  {
+    "id": 802,
+    "x": 2673,
+    "y": 3686,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Olaf the Bard"
+  },
+  {
+    "id": 3939,
+    "x": 2680,
+    "y": 3692,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Borrokar"
+  },
+  {
+    "id": 3950,
+    "x": 2678,
+    "y": 3696,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior"
+  },
+  {
+    "id": 3896,
+    "x": 2666,
+    "y": 3692,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Thorvald the Warrior"
+  },
+  {
+    "id": 3942,
+    "x": 2666,
+    "y": 3702,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Freygerd"
+  },
+  {
+    "id": 4489,
+    "x": 2658,
+    "y": 3699,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Volf Olafson"
+  },
+  {
+    "id": 3495,
+    "x": 2657,
+    "y": 3695,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dron"
+  },
+  {
+    "id": 3950,
+    "x": 2651,
+    "y": 3690,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior"
+  },
+  {
+    "id": 3950,
+    "x": 2647,
+    "y": 3683,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior"
+  },
+  {
+    "id": 3950,
+    "x": 2644,
+    "y": 3683,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior"
+  },
+  {
+    "id": 3894,
+    "x": 2642,
+    "y": 3681,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sigmund The Merchant"
+  },
+  {
+    "id": 3948,
+    "x": 2640,
+    "y": 3674,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Fur trader"
+  },
+  {
+    "id": 3949,
+    "x": 2645,
+    "y": 3680,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Market Guard"
+  },
+  {
+    "id": 3949,
+    "x": 2641,
+    "y": 3679,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Market Guard"
+  },
+  {
+    "id": 3949,
+    "x": 2644,
+    "y": 3673,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Market Guard"
+  },
+  {
+    "id": 3949,
+    "x": 2641,
+    "y": 3673,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Market Guard"
+  },
+  {
+    "id": 3947,
+    "x": 2640,
+    "y": 3674,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Fish monger"
+  },
+  {
+    "id": 3934,
+    "x": 2641,
+    "y": 3699,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fisherman"
+  },
+  {
+    "id": 8131,
+    "x": 2640,
+    "y": 3696,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Torfinn"
+  },
+  {
+    "id": 3936,
+    "x": 2629,
+    "y": 3693,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Sailor"
+  },
+  {
+    "id": 3895,
+    "x": 2633,
+    "y": 3668,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Peer the Seer"
+  },
+  {
+    "id": 3950,
+    "x": 2628,
+    "y": 3668,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior"
+  },
+  {
+    "id": 3950,
+    "x": 2625,
+    "y": 3661,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior"
+  },
+  {
+    "id": 3950,
+    "x": 2636,
+    "y": 3655,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior"
+  },
+  {
+    "id": 3945,
+    "x": 2629,
+    "y": 3654,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sassilik"
+  },
+  {
+    "id": 3944,
+    "x": 2641,
+    "y": 3650,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jennella"
+  },
+  {
+    "id": 1175,
+    "x": 2681,
+    "y": 3664,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rooster"
+  },
+  {
+    "id": 1173,
+    "x": 2680,
+    "y": 3665,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1173,
+    "x": 2682,
+    "y": 3662,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1174,
+    "x": 2683,
+    "y": 3664,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1174,
+    "x": 2680,
+    "y": 3662,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 3950,
+    "x": 2681,
+    "y": 3659,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Warrior"
+  },
+  {
+    "id": 5388,
+    "x": 2669,
+    "y": 3708,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Reeso"
+  },
+  {
+    "id": 8402,
+    "x": 2659,
+    "y": 3660,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Askeladden"
+  },
+  {
+    "id": 1900,
+    "x": 2643,
+    "y": 3709,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Mord Gunnars"
+  },
+  {
+    "id": 1883,
+    "x": 2643,
+    "y": 3710,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Maria Gunnars"
+  },
+  {
+    "id": 3932,
+    "x": 2660,
+    "y": 3670,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Thora the Barkeep"
+  },
+  {
+    "id": 3920,
+    "x": 2659,
+    "y": 3670,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Manni the Reveller"
+  },
+  {
+    "id": 3917,
+    "x": 2657,
+    "y": 3671,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Eldgrim"
   }
 ]
