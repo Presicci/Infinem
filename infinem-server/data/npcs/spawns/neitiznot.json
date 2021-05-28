@@ -223,5 +223,49 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
+  },
+
+
+
+  //9275
+  {
+    "id": 1891,
+    "x": 2318,
+    "y": 3833,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Honour guard"
+  },
+  {
+    "id": 1891,
+    "x": 2329,
+    "y": 3835,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Honour guard"
+  },
+  {
+    "id": 1891,
+    "x": 2326,
+    "y": 3830,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Honour guard"
+  },
+  {
+    "id": 1874,
+    "x": 2325,
+    "y": 3832,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ice troll runt"
   }
 ]
