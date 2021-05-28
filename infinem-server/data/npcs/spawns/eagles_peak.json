@@ -613,5 +613,440 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Wild kebbit"
+  },
+
+
+
+
+  //9272
+  {
+    "id": 5556,
+    "x": 2334,
+    "y": 3585,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 5556,
+    "x": 2327,
+    "y": 3584,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 1346,
+    "x": 2318,
+    "y": 3589,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2316,
+    "y": 3596,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 5552,
+    "x": 2313,
+    "y": 3589,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Copper longtail"
+  },
+  {
+    "id": 5552,
+    "x": 2309,
+    "y": 3587,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Copper longtail"
+  },
+  {
+    "id": 5552,
+    "x": 2308,
+    "y": 3595,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Copper longtail"
+  },
+  {
+    "id": 5552,
+    "x": 2315,
+    "y": 3586,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Copper longtail"
+  },
+  {
+    "id": 5552,
+    "x": 2323,
+    "y": 3591,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Copper longtail"
+  },
+  {
+    "id": 5552,
+    "x": 2323,
+    "y": 3600,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Copper longtail"
+  },
+  {
+    "id": 2910,
+    "x": 2318,
+    "y": 3598,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 2910,
+    "x": 2315,
+    "y": 3601,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 1346,
+    "x": 2313,
+    "y": 3605,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 5552,
+    "x": 2305,
+    "y": 3599,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Copper longtail"
+  },
+  {
+    "id": 1346,
+    "x": 2309,
+    "y": 3603,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 5556,
+    "x": 2322,
+    "y": 3605,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 5556,
+    "x": 2328,
+    "y": 3599,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 5556,
+    "x": 2310,
+    "y": 3624,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 5556,
+    "x": 2309,
+    "y": 3615,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 2910,
+    "x": 2326,
+    "y": 3612,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 2910,
+    "x": 2326,
+    "y": 3618,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 1346,
+    "x": 2321,
+    "y": 3614,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 5556,
+    "x": 2322,
+    "y": 3612,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 1346,
+    "x": 2321,
+    "y": 3631,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2325,
+    "y": 3629,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2335,
+    "y": 3629,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2334,
+    "y": 3633,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2329,
+    "y": 3633,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2330,
+    "y": 3630,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2321,
+    "y": 3635,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 2910,
+    "x": 2330,
+    "y": 3627,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 1346,
+    "x": 2340,
+    "y": 3638,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2335,
+    "y": 3638,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2324,
+    "y": 3645,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2320,
+    "y": 3641,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2311,
+    "y": 3645,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2311,
+    "y": 3642,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2311,
+    "y": 3623,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2306,
+    "y": 3621,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 1346,
+    "x": 2307,
+    "y": 3606,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Prickly kebbit"
+  },
+  {
+    "id": 2910,
+    "x": 2305,
+    "y": 3604,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 5556,
+    "x": 2311,
+    "y": 3600,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 4299,
+    "x": 2353,
+    "y": 3641,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kathy Corkat"
   }
 ]
