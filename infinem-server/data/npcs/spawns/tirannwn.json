@@ -304,5 +304,194 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Fishing spot"
+  },
+
+
+
+  //8501
+  {
+    "id": 9181,
+    "x": 2129,
+    "y": 3418,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Dire Wolf"
+  },
+  {
+    "id": 3426,
+    "x": 2143,
+    "y": 3418,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Dire Wolf"
+  },
+  {
+    "id": 3426,
+    "x": 2156,
+    "y": 3405,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Dire Wolf"
+  },
+  {
+    "id": 3426,
+    "x": 2168,
+    "y": 3406,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Dire Wolf"
+  },
+  {
+    "id": 9200,
+    "x": 2164,
+    "y": 3416,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ed"
+  },
+  {
+    "id": 253,
+    "x": 2157,
+    "y": 3428,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Black dragon"
+  },
+  {
+    "id": 89,
+    "x": 2168,
+    "y": 3430,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ghost"
+  },
+  {
+    "id": 89,
+    "x": 2167,
+    "y": 3430,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ghost"
+  },
+  {
+    "id": 88,
+    "x": 2164,
+    "y": 3432,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ghost"
+  },
+  {
+    "id": 88,
+    "x": 2170,
+    "y": 3428,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Ghost"
+  },
+
+
+
+
+  //8500
+  {
+    "id": 1331,
+    "x": 2158,
+    "y": 3329,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Trader Crewmember"
+  },
+  {
+    "id": 1334,
+    "x": 2160,
+    "y": 3330,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Trader Crewmember"
+  },
+  {
+    "id": 3420,
+    "x": 2168,
+    "y": 3364,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Rabbit"
+  },
+  {
+    "id": 9199,
+    "x": 2171,
+    "y": 3373,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bear Cub"
+  },
+  {
+    "id": 1845,
+    "x": 2171,
+    "y": 3382,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Stag"
+  },
+  {
+    "id": 9173,
+    "x": 2166,
+    "y": 3347,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 9173,
+    "x": 2165,
+    "y": 3374,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 9171,
+    "x": 2165,
+    "y": 3373,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
   }
 ]
