@@ -1279,5 +1279,109 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Ek\u0027ans Chan"
+  },
+
+
+
+  //5176
+  {
+    "id": 6919,
+    "x": 1323,
+    "y": 3589,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 6919,
+    "x": 1328,
+    "y": 3586,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 6919,
+    "x": 1321,
+    "y": 3597,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 6919,
+    "x": 1324,
+    "y": 3599,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 6919,
+    "x": 1322,
+    "y": 3603,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 7601,
+    "x": 1306,
+    "y": 3619,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swamp Priest"
+  },
+  {
+    "id": 6919,
+    "x": 1314,
+    "y": 3631,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 6919,
+    "x": 1297,
+    "y": 3630,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 6919,
+    "x": 1294,
+    "y": 3632,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
+  },
+  {
+    "id": 6919,
+    "x": 1299,
+    "y": 3629,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Lizardman brute"
   }
 ]
