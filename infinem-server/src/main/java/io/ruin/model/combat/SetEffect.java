@@ -69,7 +69,7 @@ public enum SetEffect {
                 target.graphics(400);
             }
         }
-    }, (player, hit) -> hit.attackStyle.isRanged(),
+    }, (player, hit) -> hit.attackStyle.isMagic(),
             new Piece(Equipment.SLOT_HAT, 4708, 4856, 4857, 4858, 4859),
             new Piece(Equipment.SLOT_CHEST, 4712, 4868, 4869, 4870, 4871),
             new Piece(Equipment.SLOT_LEGS, 4714, 4874, 4875, 4876, 4877),
