@@ -116,6 +116,14 @@ public class ThievableChests {
         public Position[] positions;
     }
 
+    private static void replaceChest(GameObject chest) {
+        World.startEvent(event -> {
+            chest.setId(26758);
+            event.delay(40);
+            chest.setId(chest.originalId);
+        });
+    }
+
     private static void rougesAttack(Player player) {
         for(NPC npc : player.localNpcs()) {
             if(npc.getId() != 6603)
@@ -141,7 +149,7 @@ public class ThievableChests {
         });
     }
 
-    private static void disarm(Player player, Chests chest) {
+    private static void disarm(Player player, Chests chest, GameObject object) {
         if (!player.getStats().check(StatType.Thieving, chest.level)) {
             player.sendMessage("You need a thieving level of " + chest.level + "to disarm this trap.");
             return;
@@ -160,7 +168,7 @@ public class ThievableChests {
                 player.getInventory().addOrDrop(loot.item, lootAmount);
                 player.getStats().addXp(StatType.Thieving, chest.xp, true);
                 player.sendMessage("You steal " + (lootAmount > 1 ? "some" : "a") + " " + ItemDef.get(loot.item).name + ".");
-                if (chest == Chests.ROGUES_CASTLE && Random.rollDie(15)) {
+                if (chest == Chests.ROGUES_CASTLE && Random.rollDie(50)) {
                     rougesAttack(player);
                 }
             } else {
@@ -182,7 +190,7 @@ public class ThievableChests {
                     open(player);
                 });
                 ObjectAction.register(chest.objectId, "pick-lock", (player, object) -> {
-                    disarm(player, chest);
+                    disarm(player, chest, object);
                 });
                 continue;
             }
@@ -191,10 +199,10 @@ public class ThievableChests {
                     open(player);
                 });
                 ObjectAction.register(chest.objectId, pos.getX(), pos.getY(), pos.getZ(), "search for traps", (player, object) -> {
-                    disarm(player, chest);
+                    disarm(player, chest, object);
                 });
                 ObjectAction.register(chest.objectId, pos.getX(), pos.getY(), pos.getZ(), "picklock", (player, object) -> {
-                    disarm(player, chest);
+                    disarm(player, chest, object);
                 });
             }
         }
