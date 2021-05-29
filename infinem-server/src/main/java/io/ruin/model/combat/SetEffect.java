@@ -48,6 +48,17 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_LEGS, 4730, 4922, 4923, 4924, 4925),
             new Piece(Equipment.SLOT_WEAPON, 4726, 4910, 4911, 4912, 4913)),
 
+    TORAG((player, target, hit) -> {
+        if (target instanceof Player && Random.rollDie(4)) {
+            target.player.getMovement().drainEnergy(20);
+            target.graphics(399);
+        }
+    }, (player, hit) -> hit.attackStyle.isMelee(),
+            new Piece(Equipment.SLOT_HAT, 4745, 4952, 4953, 4954, 4955),
+            new Piece(Equipment.SLOT_CHEST, 4749, 4964, 4965, 4966, 4967),
+            new Piece(Equipment.SLOT_LEGS, 4751, 4970, 4971, 4972, 4973),
+            new Piece(Equipment.SLOT_WEAPON, 4747, 4958, 4959, 4960, 4961)),
+
     KARIL((player, target, hit) -> {
         if (target instanceof Player && Random.rollDie(4)) {
             target.player.getStats().get(StatType.Agility).drain(20D);
