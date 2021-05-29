@@ -17,6 +17,8 @@ public enum SetEffect {
     VERAC((player, target, hit) -> {
         if (Random.rollDie(4)) {
             hit.ignorePrayer().ignoreDefence();
+            hit.maxDamage += 1;
+            hit.damage += 1;
             target.graphics(1041);
         }
     }, (player, hit) -> hit.attackStyle.isMelee(),
