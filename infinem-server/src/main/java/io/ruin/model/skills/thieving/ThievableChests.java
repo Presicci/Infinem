@@ -46,7 +46,7 @@ public class ThievableChests {
                 new Position[] { new Position(2671, 3299, 1) }),
         COINS_101(11735, 13, 7.8, 7,
                 new Loot[] { new Loot(995, 3000, 3250) },
-                new Position[] { new Position(2612, 3314, 1), new Position(2630, 3655) }),
+                new Position[] { new Position(2612, 3314, 1), new Position(2630, 3655), new Position(2673, 3307) }),
 
         NATURE(11736, 28, 25.0, 8,
                 new Loot[] { new Loot(995, 1000, 1250), new Loot(561, 3, 8) },
