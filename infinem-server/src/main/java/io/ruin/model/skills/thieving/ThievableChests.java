@@ -119,7 +119,7 @@ public class ThievableChests {
     private static void replaceChest(GameObject chest) {
         World.startEvent(event -> {
             chest.setId(26758);
-            event.delay(40);
+            event.delay(6);
             chest.setId(chest.originalId);
         });
     }
@@ -170,6 +170,9 @@ public class ThievableChests {
                 player.sendMessage("You steal " + (lootAmount > 1 ? "some" : "a") + " " + ItemDef.get(loot.item).name + ".");
                 if (chest == Chests.ROGUES_CASTLE && Random.rollDie(50)) {
                     rougesAttack(player);
+                }
+                if (chest != Chests.DORG_RICH && chest != Chests.DORGESH_KAAN && chest != Chests.STONE_CHEST) {
+                    replaceChest(object);
                 }
             } else {
                 player.sendMessage("You trigger a trap!");
