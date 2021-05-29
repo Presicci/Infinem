@@ -983,8 +983,9 @@ public class PlayerCombat extends Combat {
 
         SetEffect.GUTHAN.checkAndApply(player, target, hit);
 
-        if (hit.damage > 0) {
+        if (hit.damage > 0) {   // if the hit actually hits
             SetEffect.KARIL.checkAndApply(player, target, hit);
+            SetEffect.AHRIM.checkAndApply(player, target, hit);
         }
         for(Item item : player.getEquipment().getItems()) {
             if(item != null && item.getDef() != null)

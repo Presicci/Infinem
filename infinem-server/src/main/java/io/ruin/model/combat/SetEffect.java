@@ -3,6 +3,7 @@ package io.ruin.model.combat;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.Entity;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.stat.StatType;
@@ -57,6 +58,22 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_CHEST, 4736, 4940, 4941, 4942, 4943),
             new Piece(Equipment.SLOT_LEGS, 4738, 4946, 4947, 4948, 4949),
             new Piece(Equipment.SLOT_WEAPON, 4734, 4934, 4935, 4936, 4937)),
+
+    AHRIM((player, target, hit) -> {
+        if (Random.rollDie(4)) {
+            if (target instanceof Player) {
+                target.player.getStats().get(StatType.Strength).drain(5);
+                target.graphics(400);
+            } else if (target instanceof NPC) {
+                target.npc.getCombat().getStat(StatType.Strength).drain(5);
+                target.graphics(400);
+            }
+        }
+    }, (player, hit) -> hit.attackStyle.isRanged(),
+            new Piece(Equipment.SLOT_HAT, 4708, 4856, 4857, 4858, 4859),
+            new Piece(Equipment.SLOT_CHEST, 4712, 4868, 4869, 4870, 4871),
+            new Piece(Equipment.SLOT_LEGS, 4714, 4874, 4875, 4876, 4877),
+            new Piece(Equipment.SLOT_WEAPON, 4710, 4862, 4863, 4864, 4865)),
 
     //TODO ahrim, torag and karil set effects
     VOID_MELEE((player, target, hit) -> {
