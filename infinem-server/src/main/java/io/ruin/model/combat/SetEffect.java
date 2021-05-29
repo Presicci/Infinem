@@ -28,8 +28,8 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_WEAPON, 4755, 4982, 4983, 4984, 4985)),
 
     DHAROK((player, target, hit) -> {
-        hit.boostDamage(Math.max(0, (player.getMaxHp() - player.getHp()) * 0.01))
-           .boostAttack(Math.max(0, (player.getMaxHp() - player.getHp()) * 0.005));
+        double damageMod = ((player.getMaxHp() - player.getHp()) / 100) * (player.getMaxHp() / 100);
+        hit.boostDamage(damageMod);
     }, (player, hit) -> hit.attackStyle.isMelee(),
             new Piece(Equipment.SLOT_HAT, 4716, 4980, 4981, 4982, 4983),
             new Piece(Equipment.SLOT_CHEST, 4720, 4892, 4893, 4894, 4895),
