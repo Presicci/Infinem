@@ -882,7 +882,6 @@ public class PlayerCombat extends Combat {
         }
         boolean dharoksEffectActive = SetEffect.DHAROK.checkAndApply(player, target, hit);
         boolean veracsEffectActive = SetEffect.VERAC.checkAndApply(player, target, hit);
-        boolean karilEffectActive = SetEffect.KARIL.checkAndApply(player, target, hit);
         boolean voidMagesEffectActive = SetEffect.VOID_MAGE.checkAndApply(player, target, hit) ;
         boolean voidRangeEffectActive = SetEffect.VOID_RANGE.checkAndApply(player, target, hit);
         boolean voidMeleeEffectActive = SetEffect.VOID_MELEE.checkAndApply(player, target, hit);
@@ -984,6 +983,9 @@ public class PlayerCombat extends Combat {
 
         SetEffect.GUTHAN.checkAndApply(player, target, hit);
 
+        if (hit.damage > 0) {
+            SetEffect.KARIL.checkAndApply(player, target, hit);
+        }
         for(Item item : player.getEquipment().getItems()) {
             if(item != null && item.getDef() != null)
                 item.getDef().postTargetDamage(player, item, hit, target);
