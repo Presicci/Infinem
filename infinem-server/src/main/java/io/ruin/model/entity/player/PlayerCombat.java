@@ -359,6 +359,22 @@ public class PlayerCombat extends Combat {
             player.publicSound(weaponType.attackSound, 1, 1);
     }
 
+    private void ScytheOfVitur() {
+        AttackStyle style = attackSet.style;
+        AttackType type = attackSet.type;
+        int maxDamage = CombatUtils.getMaxDamage(player, style, type);
+
+        if (player.getEquipment().contains(22325)) {
+            if (target.isPlayer()) {
+                player.graphics(1231, 100, 0);
+            } else {
+                player.graphics(1231, 100, 0);
+                target.hit(new Hit(player, style, type).randDamage(maxDamage / 2).setAttackWeapon(player.getEquipment().getDef(Equipment.SLOT_WEAPON)),
+                        new Hit(player, style, type).randDamage(maxDamage / 3).setAttackWeapon(player.getEquipment().getDef(Equipment.SLOT_WEAPON)));
+            }
+        }
+    }
+
     /**
      * Melee
      */
@@ -374,6 +390,7 @@ public class PlayerCombat extends Combat {
         if(handleSpecial(style, type, maxDamage))
             return;
         attackAnim();
+        ScytheOfVitur();
 
         target.hit(new Hit(player, style, type).randDamage(maxDamage).setAttackWeapon(player.getEquipment().getDef(Equipment.SLOT_WEAPON)));
     }
@@ -864,7 +881,8 @@ public class PlayerCombat extends Combat {
             salveAmuletBoost(player, hit, target);
         }
         boolean dharoksEffectActive = SetEffect.DHAROK.checkAndApply(player, target, hit);
-        boolean veracsEffectActive = SetEffect.VERAC.checkAndApply(player, target, hit) ;
+        boolean veracsEffectActive = SetEffect.VERAC.checkAndApply(player, target, hit);
+        boolean karilEffectActive = SetEffect.KARIL.checkAndApply(player, target, hit);
         boolean voidMagesEffectActive = SetEffect.VOID_MAGE.checkAndApply(player, target, hit) ;
         boolean voidRangeEffectActive = SetEffect.VOID_RANGE.checkAndApply(player, target, hit);
         boolean voidMeleeEffectActive = SetEffect.VOID_MELEE.checkAndApply(player, target, hit);

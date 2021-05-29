@@ -5,6 +5,7 @@ import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
 import java.util.List;
@@ -43,6 +44,17 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_CHEST, 4728, 4916, 4917, 4918, 4919),
             new Piece(Equipment.SLOT_LEGS, 4730, 4922, 4923, 4924, 4925),
             new Piece(Equipment.SLOT_WEAPON, 4726, 4910, 4911, 4912, 4913)),
+
+    KARIL((player, target, hit) -> {
+        if (target instanceof Player && Random.rollDie(4)) {
+            target.player.getStats().get(StatType.Agility).drain(20D);
+            target.graphics(401);
+        }
+    }, (player, hit) -> hit.attackStyle.isRanged(),
+            new Piece(Equipment.SLOT_HAT, 4732, 4928, 4929, 4930, 4931),
+            new Piece(Equipment.SLOT_CHEST, 4736, 4940, 4941, 4942, 4943),
+            new Piece(Equipment.SLOT_LEGS, 4738, 4946, 4947, 4948, 4949),
+            new Piece(Equipment.SLOT_WEAPON, 4734, 4934, 4935, 4936, 4937)),
 
     //TODO ahrim, torag and karil set effects
     VOID_MELEE((player, target, hit) -> {
