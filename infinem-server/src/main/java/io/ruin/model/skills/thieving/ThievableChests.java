@@ -2,7 +2,9 @@ package io.ruin.model.skills.thieving;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
+import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.item.Item;
@@ -114,6 +116,18 @@ public class ThievableChests {
         public Position[] positions;
     }
 
+    private static void rougesAttack(Player player) {
+        for(NPC npc : player.localNpcs()) {
+            if(npc.getId() != 6603)
+                continue;
+            if(npc.getPosition().isWithinDistance(player.getPosition(), 7)) {
+                npc.face(player);
+                npc.getCombat().setTarget(player);
+                npc.forceText("Someone's stealing from us, get them!");
+            }
+        }
+    }
+
     private static void open(Player player) {
         player.startEvent(e -> {
             player.lock(LockType.FULL_REGULAR_DAMAGE);
@@ -146,6 +160,9 @@ public class ThievableChests {
                 player.getInventory().addOrDrop(loot.item, lootAmount);
                 player.getStats().addXp(StatType.Thieving, chest.xp, true);
                 player.sendMessage("You steal " + (lootAmount > 1 ? "some" : "a") + " " + ItemDef.get(loot.item).name + ".");
+                if (chest == Chests.ROGUES_CASTLE && Random.rollDie(15)) {
+                    rougesAttack(player);
+                }
             } else {
                 player.sendMessage("You trigger a trap!");
                 e.delay(1);
