@@ -17,7 +17,7 @@ public class GnomeGliders {
 
     public static void travel(Player player, GliderSpots spot) {
         if (player.getPosition().distance(spot.pos) < 10) {
-            player.sendMessage("You are already there!");
+            player.sendMessage("You are already here!");
             return;
         }
         Traveling.fadeTravel(player, spot.pos);
