@@ -1,5 +1,9 @@
 package net.runelite.standalone;
 
+import net.runelite.client.util.WorldUtil;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.text.WordUtils;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -41,21 +45,22 @@ public class CustomDropViewerInterface {
 
             boolean pet = minAmount == -1;
 
-            Widget bg = Widget.addChild(parent.id, 5, childId++);
+            Widget bg = Widget.addChild(parent.id, 3, childId++);
             bg.rawX = 0;
             bg.rawY = i * 38;
             bg.rawWidth = 424;
             bg.rawHeight = 38;
             bg.spriteId = 1040;
+            bg.setTextColor(16777215);
             bg.spriteTiling = true;
             bg.fill = true;
-            bg.onMouseOver = new Object[]{1015, -2147483645, -2147483643, 0, 255};
+            bg.onMouseOver = new Object[]{16777215, -2147483645, -2147483643, 0, 255};
             if(i % 2 == 0) {
-                bg.transparencyTop = 0;
-                bg.onMouseLeave = new Object[]{1015, -2147483645, -2147483643, 0, 0};
+                bg.transparencyTop = 255;
+                bg.onMouseLeave = new Object[]{16777215, -2147483645, -2147483643, 0, 0};
             } else {
-                bg.transparencyTop = 125;
-                bg.onMouseLeave = new Object[]{1015, -2147483645, -2147483643, 0, 125};
+                bg.transparencyTop = 225;
+                bg.onMouseLeave = new Object[]{16777215, -2147483645, -2147483643, 0, 125};
             }
             bg.hasListener = true;
             WorldMapSectionType.method116(bg);
@@ -71,7 +76,7 @@ public class CustomDropViewerInterface {
             examine.rawY = bg.rawY;
             examine.rawWidth = 40;
             examine.rawHeight = bg.rawHeight;
-            examine.setAction(0, "Examine <col=ff9040>" + name + "</col>");
+            examine.setAction(0, "<col=ff9040>" + name + "</col>");
             WorldMapSectionType.method116(examine);
             ViewportMouse.client.revalidateWidget(examine);
 
@@ -86,40 +91,60 @@ public class CustomDropViewerInterface {
             WorldMapSectionType.method116(item);
             ViewportMouse.client.revalidateWidget(item);
 
-            Widget itemName = Widget.addChild(parent.id, 4, childId++);
-            itemName.rawX = 38;
-            itemName.rawY = bg.rawY + 5;
-            itemName.rawWidth = 140;
-            itemName.rawHeight = 38;
-            itemName.fontId = 495;
-            itemName.textShadowed = true;
-            itemName.color = 16750623;
-            itemName.text = "<col=ffb83f>" + name;
-            itemName.textXAlignment = 1;
-            itemName.textYAlignment = 0;
-            WorldMapSectionType.method116(itemName);
-            ViewportMouse.client.revalidateWidget(itemName);
+            if (broadcastType > 2 || broadcastType < 0) {
+                Widget itemName = Widget.addChild(parent.id, 4, childId++);
+                itemName.rawX = 38;
+                itemName.rawY = bg.rawY + 10;
+                itemName.rawWidth = 140;
+                itemName.rawHeight = 38;
+                itemName.fontId = 495;
+                itemName.textShadowed = true;
+                itemName.color = 16750623;
+                name = WordUtils.wrap(name, 20, "<br><col=ffb83f>", true);
+                if (name.contains("<br>")) {    // Move the text up if it gets wrapped
+                    itemName.rawY -= 6;
+                }
+                itemName.text = "<col=ffb83f>" + name;
+                itemName.textXAlignment = 1;
+                itemName.textYAlignment = 0;
+                WorldMapSectionType.method116(itemName);
+                ViewportMouse.client.revalidateWidget(itemName);
+            } else {
+                Widget itemName = Widget.addChild(parent.id, 4, childId++);
+                itemName.rawX = 38;
+                itemName.rawY = bg.rawY + 5;
+                itemName.rawWidth = 140;
+                itemName.rawHeight = 38;
+                itemName.fontId = 495;
+                itemName.textShadowed = true;
+                itemName.color = 16750623;
+                itemName.text = "<col=ffb83f>" + name;
+                itemName.textXAlignment = 1;
+                itemName.textYAlignment = 0;
+                WorldMapSectionType.method116(itemName);
+                ViewportMouse.client.revalidateWidget(itemName);
 
-            Widget broadcast = Widget.addChild(parent.id, 4, childId++);
-            broadcast.rawX = itemName.rawX;
-            broadcast.rawY = itemName.rawY + 16;
-            broadcast.rawWidth = itemName.rawWidth;
-            broadcast.rawHeight = 10;
-            broadcast.fontId = 494;
-            broadcast.textShadowed = true;
-            broadcast.color = 16750623;
-            broadcast.textXAlignment = 1;
-            broadcast.textYAlignment = 0;
-            String b = "None";
-            if(broadcastType == 0)
-                b = "Friends";
-            else if(broadcastType == 1)
-                b = "World";
-            else if(broadcastType == 2)
-                b = "Global";
-            broadcast.text = "Broadcast: <col=ffb83f>" + b;
-            WorldMapSectionType.method116(broadcast);
-            ViewportMouse.client.revalidateWidget(broadcast);
+                Widget broadcast = Widget.addChild(parent.id, 4, childId++);
+                broadcast.rawX = itemName.rawX;
+                broadcast.rawY = itemName.rawY + 16;
+                broadcast.rawWidth = itemName.rawWidth;
+                broadcast.rawHeight = 10;
+                broadcast.fontId = 494;
+                broadcast.textShadowed = true;
+                broadcast.color = 16750623;
+                broadcast.textXAlignment = 1;
+                broadcast.textYAlignment = 0;
+                String b = "None";
+                if(broadcastType == 0)
+                    b = "Friends";
+                else if(broadcastType == 1)
+                    b = "World";
+                else if(broadcastType == 2)
+                    b = "Global";
+                broadcast.text = "Broadcast: <col=ffb83f>" + b;
+                WorldMapSectionType.method116(broadcast);
+                ViewportMouse.client.revalidateWidget(broadcast);
+            }
 
             if(pet) {
                 Widget info = Widget.addChild(parent.id, 4, childId++);
