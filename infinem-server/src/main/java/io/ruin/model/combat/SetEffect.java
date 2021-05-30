@@ -86,7 +86,6 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_LEGS, 4714, 4874, 4875, 4876, 4877),
             new Piece(Equipment.SLOT_WEAPON, 4710, 4862, 4863, 4864, 4865)),
 
-    //TODO ahrim, torag and karil set effects
     VOID_MELEE((player, target, hit) -> {
         hit.boostDamage(0.1).boostAttack(0.1);
     }, (player, hit) -> hit.attackStyle.isMelee(),
