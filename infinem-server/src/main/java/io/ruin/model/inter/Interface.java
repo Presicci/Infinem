@@ -317,4 +317,8 @@ public class Interface {
     public static final int TOB_PARTY_MEMBERS_OVERLAY = 28;
 
     public static final int QUEST_GENERAL_TAB = 727;
+
+    public static final int GLIDER = 138;
+
+    public static final int CHARTER = 72;
 }
