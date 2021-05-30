@@ -1,5 +1,6 @@
 package io.ruin.data.impl.npcs;
 
+import com.google.common.base.CharMatcher;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.FileUtils;
 import io.ruin.api.utils.JsonUtils;
@@ -90,13 +91,13 @@ public class npc_drops extends DataFile {
                         .get();
                 if(doc == null)
                     throw new IOException("Failed to connect to wiki page!");
-                String[] searchHeaders = {"h3", "h2", "h4"};
+                String[] searchHeaders = {"h3"};
                 Elements tableHeaders = null;
                 hLoop: for(String s : searchHeaders) {
                     Elements headers = doc.body().select(s);
                     for(Element header : headers) {
                         Element dl = header.nextElementSibling();
-                        if(dl != null && dl.is("dl")) {
+                        if(dl != null && dl.is("table")) {
                             tableHeaders = headers;
                             break hLoop;
                         }
@@ -107,9 +108,7 @@ public class npc_drops extends DataFile {
                 DumpTable table = new DumpTable();
                 for(Element header : tableHeaders) {
                     Element dl = header.nextElementSibling();
-                    if(dl != null && dl.is("h4"))
-                        dl = dl.nextElementSibling(); //try that lol idk
-                    if(dl == null || !dl.is("dl"))
+                    if(dl == null || !dl.is("table"))
                         continue;
                     String tableName = header.text();
                     int i = tableName.indexOf("[edit");
@@ -119,7 +118,7 @@ public class npc_drops extends DataFile {
                             .replace("100% drop", "Always")
                             .replaceFirst("100%", "Always")
                             .replace("Alwayss", "Always");
-                    Elements trs = dl.select("dd > table > tbody > tr");
+                    Elements trs = dl.select("tr");
                     if(trs == null)
                         continue;
                     List<DumpItem> tableItems = new ArrayList<>();
@@ -161,6 +160,13 @@ public class npc_drops extends DataFile {
                     return null;
                 int itemId;
                 boolean asNote;
+                if(item.contains("(m)")) {
+                    item = item.replace("(m)", "");
+                }
+                if(item.contains("(f)")) {
+                    item = item.replace("(f)", "");
+                    //return null;
+                }
                 if(item.contains("(noted)")) {
                     itemId = findItem(item.replace("(noted)", ""), false);
                     asNote = true;
@@ -211,6 +217,17 @@ public class npc_drops extends DataFile {
                     }
                 }
                 /**
+                 * Parse droprates
+                 */
+                int rarityWeight = 1;
+                if (!tableName.equalsIgnoreCase("always")) {
+                    Element rarityFractionElement = rarity.getElementsByTag("span").get(0);
+                    String rarityPercent = rarityFractionElement.attributes().getIgnoreCase("data-drop-percent");
+                    rarityPercent = rarityPercent.replaceAll("[^a-zA-Z0-9.]","");
+                    double rarityDouble = Double.parseDouble(rarityPercent) / 100;
+                    rarityWeight = (int ) (100000 * rarityDouble);
+                }
+                /**
                  * Parse quantities
                  */
                 String[] split = quantity.replace(" ", "").replace(";", " ")
@@ -222,9 +239,7 @@ public class npc_drops extends DataFile {
                         ItemDef def = ItemDef.get(id);
                         if((id = def.notedId) == -1)
                             throw new IOException("Item can't be noted!");
-                        s = s.replace("noted", "");
-                        s = s.replace("(", "");
-                        s = s.replace(")", "");
+                        s = s.replace("(noted)", "");
                         s = s.trim();
                     }
                     s = s.replace(",", "").trim();
@@ -252,7 +267,7 @@ public class npc_drops extends DataFile {
                             max = min;
                         }
                     }
-                    items.add(new DumpItem(id, min, max, 1, id == -1 ? item : null, itemNotes));
+                    items.add(new DumpItem(id, min, max, rarityWeight, id == -1 ? item : null, itemNotes));
                 }
                 return items;
             } catch(Exception e) {
@@ -336,11 +351,33 @@ public class npc_drops extends DataFile {
     private static final class DumpTable extends LootTable {
 
         public void export(String wikiName, Integer[] ids) {
-            File file = FileUtils.get("%HOME%/Desktop/" + wikiName + ".json");
+            File file = FileUtils.get("E:/Projects/Runescape/Infinem/infinem-server/data/wikidumps/npc/drops/" + wikiName + ".json");
+            int totalWeight = 0;
+            int[] tableWeights;
+            int[] finalTableWeights = null;
+            if(tables != null) {
+                tableWeights = new int[tables.size()];
+                finalTableWeights= new int[tables.size()];
+                for(int i = 0; i < tables.size(); i++) {
+                    LootTable.ItemsTable table = tables.get(i);
+                    if(table.items != null) {
+                        for(int x = 0; x < table.items.length; x++) {
+                            DumpItem item = (DumpItem) table.items[x];
+                            tableWeights[i] += item.weight;
+                            totalWeight += item.weight;
+                        }
+                    }
+                }
+                for(int i = 0; i < tables.size(); i++) {
+                    finalTableWeights[i] = (int) (((double) tableWeights[i] / (double) totalWeight) * 1000);
+                }
+            }
             try(BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+                bw.write("[");
+                bw.newLine();
                 bw.write("  {");
                 bw.newLine();
-                bw.write("    \"ids\": " + Arrays.toString(ids).replace("[", "[ ").replace("]", " ]") + ",");
+                bw.write("    \"ids\": [" + Arrays.toString(ids).replace("[", "[ ").replace("]", " ]") + "],");
                 if(guaranteed != null) {
                     bw.newLine();
                     bw.write("    \"guaranteed\": [");
@@ -381,7 +418,7 @@ public class npc_drops extends DataFile {
                         bw.newLine();
                         bw.write("        \"name\": \"" + table.name + "\",");
                         bw.newLine();
-                        bw.write("        \"weight\": " + table.weight);
+                        bw.write("        \"weight\": " + (finalTableWeights != null ? finalTableWeights[i] : table.weight));
                         if(table.items != null) {
                             bw.write(","); //weight,
                             bw.newLine();
@@ -421,6 +458,8 @@ public class npc_drops extends DataFile {
                 }
                 bw.newLine();
                 bw.write("  }");
+                bw.newLine();
+                bw.write("]");
             } catch(Exception e) {
                 ServerWrapper.logError("Error while exporting", e);
             }
