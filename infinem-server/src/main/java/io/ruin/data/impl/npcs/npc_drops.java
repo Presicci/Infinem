@@ -64,7 +64,14 @@ public class npc_drops extends DataFile {
      */
 
     public static void dump(String wikiName) {
-        dump(wikiName, null);
+        List<Integer> ids = new ArrayList<>();
+        NPCDef.forEach(npcDef -> {
+            if(!npcDef.name.equalsIgnoreCase(wikiName.replace("_", " ")))
+                return;
+            ids.add(npcDef.id);
+        });
+        Integer finalIds[] = new Integer[ids.size()];
+        dump(wikiName, ids.toArray(finalIds));
     }
 
     public static void dump(String wikiName, Integer[] ids) {
@@ -112,7 +119,9 @@ public class npc_drops extends DataFile {
                         String chanceLine = dl.select("i").text();
                         if (chanceLine.contains("coin")) {
                             dl = dl.nextElementSibling();
-                        } else if (chanceLine.contains("gem") || chanceLine.contains("rare drop")) {
+                        } else if (chanceLine.contains("gem") || chanceLine.contains("rare drop")
+                                || chanceLine.contains("Catacombs") || chanceLine.contains("Twisted")
+                                || chanceLine.contains("Krystilia")) {
                             continue;
                         } else {
                             String[] chanceWords = chanceLine.split(" ");
@@ -173,7 +182,7 @@ public class npc_drops extends DataFile {
                 /**
                  * Parse item
                  */
-                if(item.equalsIgnoreCase("rare drop table"))
+                if(item.equalsIgnoreCase("rare drop table") || item.equalsIgnoreCase("nothing"))
                     return null;
                 int itemId;
                 boolean asNote;
@@ -417,7 +426,7 @@ public class npc_drops extends DataFile {
                 bw.newLine();
                 bw.write("  {");
                 bw.newLine();
-                bw.write("    \"ids\": [" + Arrays.toString(ids).replace("[", "[ ").replace("]", " ]") + "],");
+                bw.write("    \"ids\": " + Arrays.toString(ids).replace("[", "[ ").replace("]", " ]") + ",");
                 if(guaranteed != null) {
                     bw.newLine();
                     bw.write("    \"guaranteed\": [");
