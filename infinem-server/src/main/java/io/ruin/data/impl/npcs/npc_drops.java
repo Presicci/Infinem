@@ -181,8 +181,8 @@ public class npc_drops extends DataFile {
                     item = item.replace("(m)", "");
                 }
                 if(item.contains("(f)")) {
-                    item = item.replace("(f)", "");
-                    //return null;
+                    //item = item.replace("(f)", "");
+                    return null;
                 }
                 if(item.contains("(noted)")) {
                     itemId = findItem(item.replace("(noted)", ""), false);
