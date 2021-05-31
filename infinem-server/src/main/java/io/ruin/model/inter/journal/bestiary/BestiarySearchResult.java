@@ -101,12 +101,11 @@ public class BestiarySearchResult extends JournalEntry {
         if(def.lootTable.tables != null) {
             for(LootTable.ItemsTable table : def.lootTable.tables) {
                 if(table != null) {
-                    for (int index = 0; index < LootTable.ItemsTable.COMMON_TABLE_NAMES.length; index++) {
-                        if (LootTable.ItemsTable.COMMON_TABLE_NAMES[index].equalsIgnoreCase(table.name)) {
-                            double tableChance = table.weight / totalTablesWeight;
+                    for (LootTable.CommonTables cTable : LootTable.CommonTables.values()) {
+                        if (cTable.title.equalsIgnoreCase(table.name)) {
                             Integer[] drop = new Integer[5];
-                            drop[0] = LootTable.ItemsTable.COMMON_TABLE_ITEMIMAGE[index];
-                            drop[1] = 50 + index;
+                            drop[0] = cTable.itemId;
+                            drop[1] = 50 + cTable.ordinal();
                             drop[2] = 0;
                             drop[3] = 0;
                             drop[4] = (int) (1D /(table.weight / totalTablesWeight));

@@ -6,12 +6,10 @@ import io.ruin.api.utils.Random;
 import io.ruin.api.utils.WebTable;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.item.Item;
+import lombok.AllArgsConstructor;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class LootTable {
 
@@ -127,6 +125,24 @@ public class LootTable {
                                 break;
                             }
                         }
+                    } else {
+                        for (CommonTables cTable : CommonTables.values()) {
+                            if (cTable.title.equalsIgnoreCase(table.name)) {
+                                double itemsRand = Random.get() * cTable.totalWeight;
+                                for(LootItem item : cTable.items) {
+                                    if(item.weight == 0) {
+                                        /* weightless item landed, add it and continue loop */
+                                        items.add(item.toItem());
+                                        continue;
+                                    }
+                                    if((itemsRand -= item.weight) <= 0) {
+                                        /* weighted item landed, add it and break loop */
+                                        items.add(item.toItem());
+                                        break;
+                                    }
+                                }
+                            }
+                        }
                     }
                     break;
                 }
@@ -230,34 +246,47 @@ public class LootTable {
 
     public static final class ItemsTable {
 
-        /**
-         * Rare seed drop table that can be added to monsters table lists
-         */
-        public static final String RARE_SEED_NAME = "";
+        @Expose public final String name;
 
-        public static final LootItem[] RARE_SEED = {
-                new LootItem(5296, 1, 47),   // Toadflax
-                new LootItem(5297, 1, 32),   // Irit
-                new LootItem(5281, 1, 31),   // Belladonna
-                new LootItem(5298, 1, 22),   // Avantoe
-                new LootItem(5106, 1, 22),   // Poison ivy
-                new LootItem(5280, 1, 21),   // Cactus
-                new LootItem(5299, 1, 15),   // Kwuarm
-                new LootItem(22873, 1, 15),  // Potato cactus
-                new LootItem(5300, 1, 10),   // Snapdragon
-                new LootItem(5301, 1, 7),   // Cadantine
-                new LootItem(5302, 1, 5),   // Lantadyme
-                new LootItem(22879, 1, 4),  // Snape grass
-                new LootItem(5303, 1, 3),   // Dwarf weed
-                new LootItem(5304, 1, 2),   // Torstol
-        };
+        @Expose public final int weight;
 
-        /**
-         * Uncommon seed drop table that can be added to monsters table lists
-         */
-        public static final String UNCOMMON_SEED_NAME = "uncommon seed";
+        @Expose public final LootItem[] items;
 
-        public static final LootItem[] UNCOMMON_SEED = {
+        public double totalWeight;
+
+        public ItemsTable(String name, int weight, LootItem[] items) {
+            this.name = name;
+            this.weight = weight;
+            this.items = items;
+            for(LootItem item : items) {
+                totalWeight += item.weight;
+                if(ItemDef.get(item.id) == null)
+                    System.err.println("!!@@@@@@@@@@@@@@@@@@@@@@: " + item.id);
+            }
+        }
+    }
+
+
+    /**
+     * Common drop table that can be added to monsters table lists
+     */
+    @AllArgsConstructor
+    public enum CommonTables {
+        HERB(199, "herb", 128, new LootItem[] {
+                new LootItem(199, 1, 32),   // Guam
+                new LootItem(201, 1, 24),   // Marrentill
+                new LootItem(203, 1, 18),   // Tarromin
+                new LootItem(205, 1, 14),   // Harralander
+                new LootItem(207, 1, 11),   // Ranarr
+                new LootItem(259, 1, 8),    // Irit
+                new LootItem(211, 1, 6),    // Avantoe
+                new LootItem(213, 1, 5),    // Kwuarm
+                new LootItem(215, 1, 4),    // Cadantine
+                new LootItem(2485, 1, 3),   // Lantadyme
+                new LootItem(217, 1, 3),    // Dwarf weed
+        }),
+
+        UNCOMMON_SEED(22879, "uncommon seed", 1048, new LootItem[] {
                 new LootItem(5100, 1, 137), // Limpwurt
                 new LootItem(5323, 1, 131), // Strawberry
                 new LootItem(5292, 1, 125), // Marrentill
@@ -283,54 +312,29 @@ public class LootTable {
                 new LootItem(5302, 1, 3),   // Lantadyme
                 new LootItem(5303, 1, 2),   // Dwarf weed
                 new LootItem(5304, 1, 1)    // Torstol
-        };
+        }),
 
-        /**
-         * Herb drop table that can be added to monsters table lists
-         */
-        public static final String HERB_NAME = "herb drop";
+        RARE_SEED(5304, "rare seed", 238, new LootItem[] {
+                new LootItem(5296, 1, 47),   // Toadflax
+                new LootItem(5297, 1, 32),   // Irit
+                new LootItem(5281, 1, 31),   // Belladonna
+                new LootItem(5298, 1, 22),   // Avantoe
+                new LootItem(5106, 1, 22),   // Poison ivy
+                new LootItem(5280, 1, 21),   // Cactus
+                new LootItem(5299, 1, 15),   // Kwuarm
+                new LootItem(22873, 1, 15),  // Potato cactus
+                new LootItem(5300, 1, 10),   // Snapdragon
+                new LootItem(5301, 1, 7),   // Cadantine
+                new LootItem(5302, 1, 5),   // Lantadyme
+                new LootItem(22879, 1, 4),  // Snape grass
+                new LootItem(5303, 1, 3),   // Dwarf weed
+                new LootItem(5304, 1, 2),   // Torstol
+        })
+        ;
 
-        public static final LootItem[] HERB = {
-                new LootItem(199, 1, 32),   // Guam
-                new LootItem(201, 1, 24),   // Marrentill
-                new LootItem(203, 1, 18),   // Tarromin
-                new LootItem(205, 1, 14),   // Harralander
-                new LootItem(207, 1, 11),   // Ranarr
-                new LootItem(259, 1, 8),    // Irit
-                new LootItem(211, 1, 6),    // Avantoe
-                new LootItem(213, 1, 5),    // Kwuarm
-                new LootItem(215, 1, 4),    // Cadantine
-                new LootItem(2485, 1, 3),   // Lantadyme
-                new LootItem(217, 1, 3),    // Dwarf weed
-        };
-
-        public static final String[] COMMON_TABLE_NAMES = {
-                RARE_SEED_NAME, UNCOMMON_SEED_NAME, HERB_NAME
-        };
-
-        public static final int[] COMMON_TABLE_ITEMIMAGE = {
-                5304, 22879, 199
-        };
-
-        @Expose public final String name;
-
-        @Expose public final int weight;
-
-        @Expose public final LootItem[] items;
-
-        public double totalWeight;
-
-        public ItemsTable(String name, int weight, LootItem[] items) {
-            this.name = name;
-            this.weight = weight;
-            this.items = items;
-            for(LootItem item : items) {
-                totalWeight += item.weight;
-                if(ItemDef.get(item.id) == null)
-                    System.err.println("!!@@@@@@@@@@@@@@@@@@@@@@: " + item.id);
-            }
-        }
-
-
+        public int itemId;
+        public String title;
+        public int totalWeight;
+        public LootItem[] items;
     }
 }
