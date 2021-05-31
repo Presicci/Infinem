@@ -98,11 +98,29 @@ public class BestiarySearchResult extends JournalEntry {
         }
         List<Integer[]> drops = new ArrayList<>();
         double totalTablesWeight = def.lootTable.totalWeight;
+        if(def.lootTable.tables != null) {
+            for(LootTable.ItemsTable table : def.lootTable.tables) {
+                if(table != null) {
+                    for (int index = 0; index < LootTable.ItemsTable.COMMON_TABLE_NAMES.length; index++) {
+                        if (LootTable.ItemsTable.COMMON_TABLE_NAMES[index].equalsIgnoreCase(table.name)) {
+                            double tableChance = table.weight / totalTablesWeight;
+                            Integer[] drop = new Integer[5];
+                            drop[0] = LootTable.ItemsTable.COMMON_TABLE_ITEMIMAGE[index];
+                            drop[1] = 50 + index;
+                            drop[2] = 0;
+                            drop[3] = 0;
+                            drop[4] = (int) (1D /(table.weight / totalTablesWeight));
+                            drops.add(drop);
+                        }
+                    }
+                }
+            }
+        }
         if(def.lootTable.guaranteed != null) {
             for(LootItem item : def.lootTable.guaranteed) {
                 Integer[] drop = new Integer[5];
                 drop[0] = item.id;
-                drop[1] = item.broadcast == null ? -1 : item.broadcast.ordinal();
+                drop[1] = item.broadcast == null ? 0 : (item.broadcast.ordinal() + 1);
                 drop[2] = item.min;
                 drop[3] = item.max;
                 drop[4] = 1; //average 1/1
@@ -120,7 +138,7 @@ public class BestiarySearchResult extends JournalEntry {
                         for(LootItem item : table.items) {
                             Integer[] drop = new Integer[5];
                             drop[0] = item.id;
-                            drop[1] = item.broadcast == null ? -1 : item.broadcast.ordinal();
+                            drop[1] = item.broadcast == null ? 0 : (item.broadcast.ordinal() + 1);
                             drop[2] = item.min;
                             drop[3] = item.max;
                             if (player.xpMode == XpMode.HARD) {

@@ -108,6 +108,22 @@ public class npc_drops extends DataFile {
                 DumpTable table = new DumpTable();
                 for(Element header : tableHeaders) {
                     Element dl = header.nextElementSibling();
+                    if (dl != null && dl.is("p")) {
+                        String chanceLine = dl.select("i").text();
+                        if (chanceLine.contains("coin")) {
+                            dl = dl.nextElementSibling();
+                        } else if (chanceLine.contains("gem") || chanceLine.contains("rare drop")) {
+                            continue;
+                        } else {
+                            String[] chanceWords = chanceLine.split(" ");
+                            String chance = chanceWords[3];
+                            String tableType = chanceWords[8] + " " + chanceWords[9];
+                            String[] chanceSplit = chance.split("/");
+                            int finalChance = (int) ((Double.parseDouble(chanceSplit[0]) / Double.parseDouble(chanceSplit[1])) * 100000);
+                            table.addTable(tableType, finalChance, new LootItem[] {});
+                            continue;
+                        }
+                    }
                     if(dl == null || !dl.is("table"))
                         continue;
                     String tableName = header.text();
@@ -119,8 +135,9 @@ public class npc_drops extends DataFile {
                             .replaceFirst("100%", "Always")
                             .replace("Alwayss", "Always");
                     Elements trs = dl.select("tr");
-                    if(trs == null)
+                    if(trs == null) {
                         continue;
+                    }
                     List<DumpItem> tableItems = new ArrayList<>();
                     for(Element tr : trs) {
                         Elements tds = tr.select("td");
@@ -355,24 +372,47 @@ public class npc_drops extends DataFile {
             int totalWeight = 0;
             int[] tableWeights;
             int[] finalTableWeights = null;
+            int commonTables = 0;
+            int[] commonTableWeights = null;
+            List<LootTable.ItemsTable> commonTab = new ArrayList<>();
             if(tables != null) {
                 tableWeights = new int[tables.size()];
                 finalTableWeights= new int[tables.size()];
                 for(int i = 0; i < tables.size(); i++) {
                     LootTable.ItemsTable table = tables.get(i);
                     if(table.items != null) {
-                        for(int x = 0; x < table.items.length; x++) {
-                            DumpItem item = (DumpItem) table.items[x];
-                            tableWeights[i] += item.weight;
-                            totalWeight += item.weight;
+                        if (table.name.equalsIgnoreCase("herb drop")
+                                || table.name.equalsIgnoreCase("uncommon seed")) {
+                            ++commonTables;
+                            commonTab.add(table);
+                        } else {
+                            for(int x = 0; x < table.items.length; x++) {
+                                DumpItem item = (DumpItem) table.items[x];
+                                tableWeights[i] += item.weight;
+                                if (!table.name.equalsIgnoreCase("tertiary")) {
+                                    totalWeight += item.weight;
+                                }
+                            }
                         }
+                    }
+                }
+                if (commonTables > 0) {
+                    for (LootTable.ItemsTable table : commonTab) {
+                        totalWeight += table.weight;
                     }
                 }
                 for(int i = 0; i < tables.size(); i++) {
                     finalTableWeights[i] = (int) (((double) tableWeights[i] / (double) totalWeight) * 1000);
                 }
+                if (commonTables > 0) {
+                    commonTableWeights = new int[commonTables];
+                    for (int i = 0; i < commonTab.size(); i++) {
+                        commonTableWeights[i] = (int) (((double) commonTab.get(i).weight / (double) totalWeight) * 1000);
+                    }
+                }
             }
             try(BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+                int commonTableIndex = 0;
                 bw.write("[");
                 bw.newLine();
                 bw.write("  {");
@@ -413,45 +453,64 @@ public class npc_drops extends DataFile {
                     bw.write("    \"tables\": [");
                     for(int i = 0; i < tables.size(); i++) {
                         LootTable.ItemsTable table = tables.get(i);
-                        bw.newLine();
-                        bw.write("      {");
-                        bw.newLine();
-                        bw.write("        \"name\": \"" + table.name + "\",");
-                        bw.newLine();
-                        bw.write("        \"weight\": " + (finalTableWeights != null ? finalTableWeights[i] : table.weight));
-                        if(table.items != null) {
+                        if (table.name.equalsIgnoreCase("uncommon seed")
+                                || table.name.equalsIgnoreCase("herb drop")) {
+                            bw.newLine();
+                            bw.write("      {");
+                            bw.newLine();
+                            bw.write("        \"name\": \"" + table.name + "\",");
+                            bw.newLine();
+                            bw.write("        \"weight\": " + (commonTableWeights != null ? commonTableWeights[commonTableIndex++] : table.weight));
                             bw.write(","); //weight,
                             bw.newLine();
                             bw.write("        \"items\": [");
-                            for(int x = 0; x < table.items.length; x++) {
-                                DumpItem item = (DumpItem) table.items[x];
-                                bw.newLine();
-                                boolean comment = false;
-                                if(!item.notes.isEmpty()) {
-                                    for(String note : item.notes) {
-                                        bw.write("          #" + note);
-                                        bw.newLine();
-                                        if(note.startsWith("WikiNote"))
-                                            comment = true;
-                                    }
-                                }
-                                if(item.unknownItem != null) {
-                                    bw.write("          #Unknown Item: \"" + item.unknownItem + "\"");
-                                    bw.newLine();
-                                    comment = true;
-                                }
-                                bw.write("          " + (comment ? "//" : "") + "{ \"id\": " + item.id + ", \"min\": " + item.min + ", \"max\": " + item.max + ", \"weight\": " + item.weight + " }");
-                                if(x != (table.items.length - 1))
-                                    bw.write(",");
-                                bw.write("   //" + item.getName());
-                            }
                             bw.newLine();
                             bw.write("        ]");
+                            bw.newLine();
+                            bw.write("      }");
+                            if(i != (tables.size() - 1))
+                                bw.write(",");
+                        } else {
+                            bw.newLine();
+                            bw.write("      {");
+                            bw.newLine();
+                            bw.write("        \"name\": \"" + table.name + "\",");
+                            bw.newLine();
+                            bw.write("        \"weight\": " + (finalTableWeights != null ? finalTableWeights[i] : table.weight));
+                            if(table.items != null) {
+                                bw.write(","); //weight,
+                                bw.newLine();
+                                bw.write("        \"items\": [");
+                                for(int x = 0; x < table.items.length; x++) {
+                                    DumpItem item = (DumpItem) table.items[x];
+                                    bw.newLine();
+                                    boolean comment = false;
+                                    if(!item.notes.isEmpty()) {
+                                        for(String note : item.notes) {
+                                            bw.write("          #" + note);
+                                            bw.newLine();
+                                            if(note.startsWith("WikiNote"))
+                                                comment = true;
+                                        }
+                                    }
+                                    if(item.unknownItem != null) {
+                                        bw.write("          #Unknown Item: \"" + item.unknownItem + "\"");
+                                        bw.newLine();
+                                        comment = true;
+                                    }
+                                    bw.write("          " + (comment ? "//" : "") + "{ \"id\": " + item.id + ", \"min\": " + item.min + ", \"max\": " + item.max + ", \"weight\": " + item.weight + " }");
+                                    if(x != (table.items.length - 1))
+                                        bw.write(",");
+                                    bw.write("   //" + item.getName());
+                                }
+                                bw.newLine();
+                                bw.write("        ]");
+                            }
+                            bw.newLine();
+                            bw.write("      }");
+                            if(i != (tables.size() - 1))
+                                bw.write(",");
                         }
-                        bw.newLine();
-                        bw.write("      }");
-                        if(i != (tables.size() - 1))
-                            bw.write(",");
                     }
                     bw.newLine();
                     bw.write("    ]");

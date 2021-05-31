@@ -44,6 +44,7 @@ public class CustomDropViewerInterface {
             int average = drop[4];
 
             boolean pet = minAmount == -1;
+            boolean commonTable = broadcastType >= 50;
 
             Widget bg = Widget.addChild(parent.id, 3, childId++);
             bg.rawX = 0;
@@ -91,7 +92,38 @@ public class CustomDropViewerInterface {
             WorldMapSectionType.method116(item);
             ViewportMouse.client.revalidateWidget(item);
 
-            if (broadcastType > 2 || broadcastType < 0) {
+            if ((broadcastType > 3 && broadcastType < 50) || broadcastType <= 0) {
+                Widget itemName = Widget.addChild(parent.id, 4, childId++);
+                itemName.rawX = 38;
+                itemName.rawY = bg.rawY + 10;
+                itemName.rawWidth = 140;
+                itemName.rawHeight = 38;
+                itemName.fontId = 495;
+                itemName.textShadowed = true;
+                itemName.color = 16750623;
+                name = WordUtils.wrap(name, 20, "<br><col=ffb83f>", true);
+                if (name.contains("<br>")) {    // Move the text up if it gets wrapped
+                    itemName.rawY -= 6;
+                }
+                itemName.text = "<col=ffb83f>" + name;
+                itemName.textXAlignment = 1;
+                itemName.textYAlignment = 0;
+                WorldMapSectionType.method116(itemName);
+                ViewportMouse.client.revalidateWidget(itemName);
+            } else if (broadcastType >= 50){
+                switch (broadcastType) {
+                    case 50:
+                        name = "Rare seed table";
+                        break;
+                    case 51:
+                        name = "Uncommon seed table";
+                        break;
+                    case 52:
+                        name = "Herb table";
+                        break;
+                    default:
+                        name = broadcastType + "";
+                }
                 Widget itemName = Widget.addChild(parent.id, 4, childId++);
                 itemName.rawX = 38;
                 itemName.rawY = bg.rawY + 10;
@@ -135,11 +167,11 @@ public class CustomDropViewerInterface {
                 broadcast.textXAlignment = 1;
                 broadcast.textYAlignment = 0;
                 String b = "None";
-                if(broadcastType == 0)
+                if(broadcastType == 1)
                     b = "Friends";
-                else if(broadcastType == 1)
-                    b = "World";
                 else if(broadcastType == 2)
+                    b = "World";
+                else if(broadcastType == 3)
                     b = "Global";
                 broadcast.text = "Broadcast: <col=ffb83f>" + b;
                 WorldMapSectionType.method116(broadcast);
@@ -171,6 +203,46 @@ public class CustomDropViewerInterface {
                 column.color = 16750623;
                 column.textXAlignment = 1;
                 column.text = "Unlock Chance:";
+                WorldMapSectionType.method116(column);
+                ViewportMouse.client.revalidateWidget(column);
+
+                Widget value = Widget.addChild(parent.id, 4, childId++);
+                value.rawX = column.rawX;
+                value.rawY = column.rawY + 12;
+                value.rawWidth = column.rawWidth;
+                value.rawHeight = 10;
+                value.fontId = 494;
+                value.textShadowed = true;
+                value.color = 16750623;
+                value.textXAlignment = 1;
+                value.text = "<col=ffb83f>~ 1 / " + average;
+                WorldMapSectionType.method116(value);
+                ViewportMouse.client.revalidateWidget(value);
+            } else if (commonTable) {
+                Widget info = Widget.addChild(parent.id, 4, childId++);
+                info.rawX = 170;
+                info.rawY = bg.rawY + 1;
+                info.rawWidth = 165;
+                info.rawHeight = bg.rawHeight;
+                info.fontId = 494;
+                info.textShadowed = true;
+                info.color = 16750623;
+                info.text = "<col=F5DEB3>Common table that is shared<br><col=F5DEB3>across many monsters.";
+                info.textXAlignment = 1;
+                info.textYAlignment = 1;
+                WorldMapSectionType.method116(info);
+                ViewportMouse.client.revalidateWidget(info);
+
+                Widget column = Widget.addChild(parent.id, 4, childId++);
+                column.rawX = 340;
+                column.rawY = bg.rawY + 7;
+                column.rawWidth = 80;
+                column.rawHeight = 32;
+                column.fontId = 494;
+                column.textShadowed = true;
+                column.color = 16750623;
+                column.textXAlignment = 1;
+                column.text = "Roll Chance:";
                 WorldMapSectionType.method116(column);
                 ViewportMouse.client.revalidateWidget(column);
 
