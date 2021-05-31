@@ -113,13 +113,13 @@ public class CustomDropViewerInterface {
             } else if (broadcastType >= 50){
                 switch (broadcastType) {
                     case 50:
-                        name = "Rare seed table";
+                        name = "Herb table";
                         break;
                     case 51:
                         name = "Uncommon seed table";
                         break;
                     case 52:
-                        name = "Herb table";
+                        name = "Rare seed table";
                         break;
                     default:
                         name = broadcastType + "";
