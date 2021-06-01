@@ -187,7 +187,8 @@ public class npc_drops extends DataFile {
                 /**
                  * Parse item
                  */
-                if(item.equalsIgnoreCase("rare drop table") || item.equalsIgnoreCase("nothing"))
+                if(item.equalsIgnoreCase("rare drop table") || item.equalsIgnoreCase("nothing")
+                        || item.contains("Looting bag"))
                     return null;
                 int itemId;
                 boolean asNote;
