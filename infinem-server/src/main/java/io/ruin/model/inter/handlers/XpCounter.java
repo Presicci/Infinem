@@ -29,27 +29,29 @@ public class XpCounter {
             player.getPacketSender().sendClientScript(917, "ii", -1, -1);
             player.openInterface(InterfaceType.MAIN, 137);
             player.getPacketSender().sendAccessMask(137, 50, 1, 3, 2);
-            player.getPacketSender().sendAccessMask(137, 51, 1, 3, 2);
-            player.getPacketSender().sendAccessMask(137, 52, 1, 4, 2);
-            player.getPacketSender().sendAccessMask(137, 53, 1, 32, 2);
-            player.getPacketSender().sendAccessMask(137, 54, 1, 32, 2);
-            player.getPacketSender().sendAccessMask(137, 55, 1, 8, 2);
-            player.getPacketSender().sendAccessMask(137, 56, 1, 2, 2);
-            player.getPacketSender().sendAccessMask(137, 57, 1, 3, 2);
+            player.getPacketSender().sendAccessMask(137, 51, 1, 3, 2);  // Position
+            player.getPacketSender().sendAccessMask(137, 52, 1, 3, 2);  // Size
+            player.getPacketSender().sendAccessMask(137, 53, 1, 4, 2);  // Duration
+            player.getPacketSender().sendAccessMask(137, 54, 1, 32, 2); // Counter
+            player.getPacketSender().sendAccessMask(137, 55, 1, 32, 2); // Progress
+            player.getPacketSender().sendAccessMask(137, 56, 1, 8, 2);  // Color
+            player.getPacketSender().sendAccessMask(137, 57, 1, 2, 2);  // Group
+            player.getPacketSender().sendAccessMask(137, 58, 1, 3, 2);  // Speed
+            player.getPacketSender().sendAccessMask(137, 59, 1, 3, 2);  // Fake drops
             player.getPacketSender().sendAccessMask(137, 16, 0, 24, 2);
         }
     }
 
     static {
         InterfaceHandler.register(137, h -> {
-            h.actions[50] = (SlotAction) (player, slot) -> Config.XP_COUNTER_POSITION.set(player, slot - 1);
-            h.actions[51] = (SlotAction) (player, slot) -> Config.XP_COUNTER_SIZE.set(player, slot - 1);
-            h.actions[57] = (SlotAction) (player, slot) -> Config.XP_COUNTER_SPEED.set(player, slot - 1);
-            h.actions[52] = (SlotAction) (player, slot) -> Config.XP_COUNTER_DURATION.set(player, slot - 1);
-            h.actions[53] = (SlotAction) (player, slot) -> Config.XP_COUNTER_COUNTER.set(player, slot - 1);
-            h.actions[54] = (SlotAction) (player, slot) -> Config.XP_COUNTER_PROGRESS_BAR.set(player, slot - 1);
-            h.actions[55] = (SlotAction) (player, slot) -> Config.XP_COUNTER_COLOUR.set(player, slot - 1);
-            h.actions[56] = (SlotAction) (player, slot) -> Config.XP_COUNTER_GROUP.set(player, slot - 1);
+            h.actions[51] = (SlotAction) (player, slot) -> Config.XP_COUNTER_POSITION.set(player, slot - 1);
+            h.actions[52] = (SlotAction) (player, slot) -> Config.XP_COUNTER_SIZE.set(player, slot - 1);
+            h.actions[58] = (SlotAction) (player, slot) -> Config.XP_COUNTER_SPEED.set(player, slot - 1);
+            h.actions[53] = (SlotAction) (player, slot) -> Config.XP_COUNTER_DURATION.set(player, slot - 1);
+            h.actions[54] = (SlotAction) (player, slot) -> Config.XP_COUNTER_COUNTER.set(player, slot - 1);
+            h.actions[55] = (SlotAction) (player, slot) -> Config.XP_COUNTER_PROGRESS_BAR.set(player, slot - 1);
+            h.actions[56] = (SlotAction) (player, slot) -> Config.XP_COUNTER_COLOUR.set(player, slot - 1);
+            h.actions[57] = (SlotAction) (player, slot) -> Config.XP_COUNTER_GROUP.set(player, slot - 1);
         });
     }
 
