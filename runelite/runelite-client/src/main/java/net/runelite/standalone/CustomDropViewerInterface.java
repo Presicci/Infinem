@@ -121,6 +121,23 @@ public class CustomDropViewerInterface {
                     case 52:
                         name = "Rare seed table";
                         break;
+                    case 53:
+                    case 54:
+                    case 55:
+                    case 56:
+                    case 57:
+                    case 58:
+                        name = "General seed table";
+                        break;
+                    case 59:
+                        name = "Three-herb seed table";
+                        break;
+                    case 60:
+                        name = "Useful herb table";
+                        break;
+                    case 61:
+                        name = "Allotment seed table";
+                        break;
                     default:
                         name = broadcastType + "";
                 }

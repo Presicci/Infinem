@@ -135,6 +135,9 @@ public class BestiarySearchResult extends JournalEntry {
                         //nothingPercentage = tableChance * 100D;
                     } else {
                         for(LootItem item : table.items) {
+                            if (item.id == 0) {
+                                continue;
+                            }
                             Integer[] drop = new Integer[5];
                             drop[0] = item.id;
                             drop[1] = item.broadcast == null ? 0 : (item.broadcast.ordinal() + 1);

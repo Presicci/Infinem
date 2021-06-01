@@ -328,9 +328,107 @@ public class LootTable {
                 new LootItem(5302, 1, 5),   // Lantadyme
                 new LootItem(22879, 1, 4),  // Snape grass
                 new LootItem(5303, 1, 3),   // Dwarf weed
-                new LootItem(5304, 1, 2),   // Torstol
-        })
-        ;
+                new LootItem(5304, 1, 2)   // Torstol
+        }),
+
+        GENERAL_SEED_0(5318, "general seed", 1008, new LootItem[] {
+                new LootItem(5318, 4, 368),     // Potato
+                new LootItem(5319, 4, 276),     // Onion
+                new LootItem(5324, 4, 184),     // Cabbage
+                new LootItem(5322, 3, 92),      // Tomato
+                new LootItem(5320, 3, 46),      // Sweetcorn seed
+                new LootItem(5323, 2, 23),      // Strawberry
+                new LootItem(5321, 2, 11),      // Watermelon
+                new LootItem(22879, 2, 8)       // Snape grass
+        }),
+
+        GENERAL_SEED_485(5305, "general seed485", 1000, new LootItem[] {
+                new LootItem(5305, 4, 229),     // Barley
+                new LootItem(5307, 3, 228),     // Hammerstone
+                new LootItem(5308, 3, 172),     // Asgarnian
+                new LootItem(5306, 2, 171),     // Jute
+                new LootItem(5309, 2, 114),     // Yanillian seed
+                new LootItem(5310, 2, 57),      // Krandorian
+                new LootItem(5311, 1, 29)       // Wildblood
+        }),
+
+        GENERAL_SEED_728(5096, "general seed728", 1000, new LootItem[] {
+                new LootItem(5096, 1, 376),     // Marigold
+                new LootItem(5098, 1, 249),     // Nasturtium
+                new LootItem(5097, 1, 161),     // Rosemary
+                new LootItem(5099, 1, 119),     // Woad
+                new LootItem(5100, 1, 95)       // Limpwurt
+        }),
+
+        GENERAL_SEED_850(5101, "general seed850", 1000, new LootItem[] {
+                new LootItem(5101, 1, 400),     // Redberry
+                new LootItem(5102, 1, 280),     // Cadavaberry
+                new LootItem(5103, 1, 200),     // Dewllberry
+                new LootItem(5104, 1, 80),      // Jangerberry
+                new LootItem(5105, 1, 29),      // Whiteberry
+                new LootItem(5106, 1, 11),      // Poison ivy
+        }),
+
+        GENERAL_SEED_947(5291, "general seed947", 1000, new LootItem[] {
+                new LootItem(5291, 1, 320),     // Guam
+                new LootItem(5292, 1, 218),     // Marrentill
+                new LootItem(5293, 1, 149),     // Tarromin
+                new LootItem(5294, 1, 101),     // Harralander
+                new LootItem(5295, 1, 69),      // Ranarr
+                new LootItem(5296, 1, 47),      // Toadflax
+                new LootItem(5297, 1, 32),      // Irit
+                new LootItem(5298, 1, 22),      // Avantoe
+                new LootItem(5299, 1, 15),      // Kwuarm
+                new LootItem(5300, 1, 10),      // Snapdragon
+                new LootItem(5301, 1, 7),       // Cadantine seed
+                new LootItem(5302, 1, 5),       // Lantadyme
+                new LootItem(5303, 1, 3),       // Dwarf weed
+                new LootItem(5304, 1, 2)        // Torstol
+        }),
+
+        GENERAL_SEED_995(5282, "general seed995", 1100, new LootItem[] {
+                new LootItem(5282, 1, 500),     // Mushroom
+                new LootItem(5281, 1, 300),     // Belladonna
+                new LootItem(5280, 1, 200),     // Cactus
+                new LootItem(22873, 1, 100)     // Potato cactus
+        }),
+
+        THREE_HERB_SEED(5313, "three-herb seed", 250, new LootItem[] {
+                new LootItem(5295, 1, 30),      // Ranarr
+                new LootItem(5300, 1, 28),      // Snapdragon
+                new LootItem(5304, 1, 22),      // Torstol
+                new LootItem(5321, 15, 21),     // Watermelon
+                new LootItem(5313, 1, 20),      // Willow
+                new LootItem(21488, 1, 18),     // Mahogany
+                new LootItem(5314, 1, 18),      // Maple
+                new LootItem(21486, 1, 18),     // Teak
+                new LootItem(5315, 1, 18),      // Yew
+                new LootItem(5288, 1, 14),      // Papaya
+                new LootItem(5316, 1, 11),      // Magic
+                new LootItem(5289, 1, 10),      // Palm
+                new LootItem(5317, 1, 4),       // Spirit
+                new LootItem(22877, 1, 6),      // Dragonfruit
+                new LootItem(22869, 1, 4),      // Celastrus
+                new LootItem(22871, 1, 4)       // Redwood
+        }),
+
+        USEFUL_HERB(212, "useful herb", 16, new LootItem[] {
+                new LootItem(212, 1, 5),        // Avantoe
+                new LootItem(3052, 1, 4),       // Snapdragon
+                new LootItem(207, 1, 4),        // Ranarr
+                new LootItem(219, 1, 3)         // Torstol
+        }),
+
+        ALLOTMENT_SEED(5282, "allotment seed", 128, new LootItem[] {
+                new LootItem(5318, 1, 4, 64),       // Potato
+                new LootItem(5319, 1, 3, 32),       // Onion
+                new LootItem(5324, 1, 3, 16),       // Cabbage
+                new LootItem(5322, 1, 2, 8),        // Tomato
+                new LootItem(5320, 1, 2, 4),        // Sweetcorn
+                new LootItem(5323, 1, 2),                        // Strawberry
+                new LootItem(5321, 1, 1),                        // Watermelon
+                new LootItem(22879, 1, 1),                       // Snape grass
+        });
 
         public int itemId;
         public String title;

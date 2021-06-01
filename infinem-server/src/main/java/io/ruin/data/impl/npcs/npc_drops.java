@@ -4,6 +4,7 @@ import com.google.common.base.CharMatcher;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.FileUtils;
 import io.ruin.api.utils.JsonUtils;
+import io.ruin.api.utils.Random;
 import io.ruin.api.utils.ServerWrapper;
 import io.ruin.api.utils.ThreadUtils;
 import io.ruin.cache.ItemDef;
@@ -46,7 +47,7 @@ public class npc_drops extends DataFile {
                 //ServerWrapper.logWarning("Drop table " + fileName + " has no drops.");
                 continue;
             }
-            for(int id : t.ids) {
+            for (int id : t.ids) {
                 LootTable loadedTable = loaded.get(id);
                 loaded.put(id, loadedTable == null ? t : loadedTable.combine(t));
             }
@@ -113,7 +114,7 @@ public class npc_drops extends DataFile {
                 if(tableHeaders == null)
                     throw new IOException("Failed to find table headers!");
                 DumpTable table = new DumpTable();
-                for(Element header : tableHeaders) {
+                elementLoop: for(Element header : tableHeaders) {
                     Element dl = header.nextElementSibling();
                     if (dl != null && dl.is("p")) {
                         String chanceLine = dl.select("i").text();
@@ -129,7 +130,11 @@ public class npc_drops extends DataFile {
                             String tableType = chanceWords[8] + " " + chanceWords[9];
                             String[] chanceSplit = chance.split("/");
                             int finalChance = (int) ((Double.parseDouble(chanceSplit[0]) / Double.parseDouble(chanceSplit[1])) * 100000);
-                            table.addTable(tableType, finalChance, new LootItem[] {});
+                            if (tableType.equalsIgnoreCase("general seed")) {
+                                table.addTable(tableType, finalChance, new LootItem[] { new LootItem(0, 1, 1, 5) });
+                            } else {
+                                table.addTable(tableType, finalChance, new LootItem[] {});
+                            }
                             continue;
                         }
                     }
@@ -391,7 +396,12 @@ public class npc_drops extends DataFile {
                     LootTable.ItemsTable table = tables.get(i);
                     if(table.items != null) {
                         if (table.name.equalsIgnoreCase("herb drop")
-                                || table.name.equalsIgnoreCase("uncommon seed")) {
+                                || table.name.equalsIgnoreCase("uncommon seed")
+                                || table.name.equalsIgnoreCase("rare seed")
+                                || table.name.equalsIgnoreCase("general seed")
+                                || table.name.equalsIgnoreCase("three-herb seed")
+                                || table.name.equalsIgnoreCase("useful herb")
+                                || table.name.equalsIgnoreCase("allotment seed")) {
                             ++commonTables;
                             commonTab.add(table);
                         } else {
@@ -462,8 +472,13 @@ public class npc_drops extends DataFile {
                     bw.write("    \"tables\": [");
                     for(int i = 0; i < tables.size(); i++) {
                         LootTable.ItemsTable table = tables.get(i);
-                        if (table.name.equalsIgnoreCase("uncommon seed")
-                                || table.name.equalsIgnoreCase("herb drop")) {
+                        if (table.name.equalsIgnoreCase("herb drop")
+                                || table.name.equalsIgnoreCase("uncommon seed")
+                                || table.name.equalsIgnoreCase("rare seed")
+                                || table.name.equalsIgnoreCase("general seed")
+                                || table.name.equalsIgnoreCase("three-herb seed")
+                                || table.name.equalsIgnoreCase("useful herb")
+                                || table.name.equalsIgnoreCase("allotment seed")) {
                             bw.newLine();
                             bw.write("      {");
                             bw.newLine();
@@ -474,6 +489,10 @@ public class npc_drops extends DataFile {
                             bw.newLine();
                             bw.write("        \"items\": [");
                             bw.newLine();
+                            if (table.name.equalsIgnoreCase("general seed")) {
+                                bw.write("          " + "" + "{ \"id\": " + "0" + ", \"min\": " + "1" + ", \"max\": " + "1" + ", \"weight\": " + "5" + " }");
+                                bw.newLine();
+                            }
                             bw.write("        ]");
                             bw.newLine();
                             bw.write("      }");

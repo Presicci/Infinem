@@ -329,6 +329,16 @@ public abstract class NPCCombat extends Combat {
             int rolls = DoubleDrops.getRolls(killer.player);
             for(int i = 0; i < rolls; i++) {
                 List<Item> items = t.rollItems(i == 0);
+                Item seedItem = null;
+                for (Item item : items) {
+                    if (item.getId() == 0) {
+                        handleGeneralSeedDrop(killer, dropPosition, pKiller);
+                        seedItem = item;
+                    }
+                }
+                if (seedItem != null) {
+                    items.remove(seedItem);
+                }
                 if(items != null) {
                     handleDrop(killer, dropPosition, pKiller, items);
                 }
@@ -394,6 +404,24 @@ public abstract class NPCCombat extends Combat {
             groundItem.spawn();
             pKiller.obtained50KCVorkathHead = true;
         }
+    }
+
+    private void handleGeneralSeedDrop(Killer killer, Position dropPosition, Player pKiller) {
+        int lvl = Random.get(this.npc.getDef().combatLevel * 10);
+        LootTable.CommonTables ct = LootTable.CommonTables.GENERAL_SEED_0;
+        if (lvl >= 485 && lvl < 728) {
+            ct = LootTable.CommonTables.GENERAL_SEED_485;
+        } else if (lvl >= 728 && lvl < 850) {
+            ct = LootTable.CommonTables.GENERAL_SEED_728;
+        } else if (lvl >= 850 && lvl < 947) {
+            ct = LootTable.CommonTables.GENERAL_SEED_850;
+        } else if (lvl >= 947 && lvl < 995) {
+            ct = LootTable.CommonTables.GENERAL_SEED_947;
+        } else if (lvl > 995) {
+            ct = LootTable.CommonTables.GENERAL_SEED_995;
+        }
+        LootTable t = new LootTable().addTable(0, ct.items);
+        handleDrop(killer, dropPosition, pKiller, t.rollItems(false));
     }
 
     private void handleDrop(Killer killer, Position dropPosition, Player pKiller, List<Item> items) {
