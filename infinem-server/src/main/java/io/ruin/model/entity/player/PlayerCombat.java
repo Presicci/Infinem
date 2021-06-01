@@ -809,6 +809,7 @@ public class PlayerCombat extends Combat {
         PhoenixNecklace.check(player);
         RingOfLife.check(player);
         DefenceSkillCape.check(player);
+        SetEffect.DHAROK_DAMNED.checkAndApply(player, target, hit);
 
         for(Item item : player.getEquipment().getItems()) {
             if(item != null && item.getDef() != null) {

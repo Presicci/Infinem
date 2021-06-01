@@ -37,6 +37,20 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_LEGS, 4722, 4898, 4899, 4900, 4901),
             new Piece(Equipment.SLOT_WEAPON, 4718, 4886, 4887, 4888, 4889)),
 
+    DHAROK_DAMNED((player, target, hit) -> {
+        if (Random.rollDie(4)) {
+            int damage = (int) Math.ceil(hit.damage * 0.15);
+            if(damage == 0)
+                return;
+            hit.attacker.hit(new Hit().fixedDamage(damage));
+        }
+    }, (player, hit) -> hit.attacker != null && hit.attackStyle != null,
+            new Piece(Equipment.SLOT_HAT, 4716, 4980, 4981, 4982, 4983),
+            new Piece(Equipment.SLOT_CHEST, 4720, 4892, 4893, 4894, 4895),
+            new Piece(Equipment.SLOT_LEGS, 4722, 4898, 4899, 4900, 4901),
+            new Piece(Equipment.SLOT_WEAPON, 4718, 4886, 4887, 4888, 4889),
+            new Piece(Equipment.SLOT_AMULET, 12851, 12853)),
+
     GUTHAN((player, target, hit) -> {
         if (Random.rollDie(4)) {
             target.graphics(398,0 ,0);
