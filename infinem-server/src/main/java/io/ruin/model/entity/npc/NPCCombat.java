@@ -359,7 +359,7 @@ public abstract class NPCCombat extends Combat {
         /*
          * Casket loots
          */
-        GoldCasket.drop(pKiller, npc, dropPosition);
+        //GoldCasket.drop(pKiller, npc, dropPosition);
         /*
          * Summer Loot
          */
