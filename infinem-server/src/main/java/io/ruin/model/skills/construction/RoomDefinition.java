@@ -78,7 +78,9 @@ public enum RoomDefinition {
     BEDROOM(20, 10000, 238, 719, false, false, 5, "bedroom", 1436, SimpleRoom.class,
             BED, WARDROBE, DRESSER, BEDROOM_CURTAINS, BEDROOM_RUG, BEDROOM_FIREPLACE, BEDROOM_CORNER),
     ACHIEVEMENT_GALLERY(80, 200000, 233, 720, false, false, 27, "achievement gallery", 1459, AchievementGalleryRoom.class,
-            SPELLBOOK_ALTAR, ADVENTURE_LOG, JEWELLERY_BOX, BOSS_LAIR_DISPLAY, DISPLAY, QUEST_LIST);
+            SPELLBOOK_ALTAR, ADVENTURE_LOG, JEWELLERY_BOX, BOSS_LAIR_DISPLAY, DISPLAY, QUEST_LIST),
+    PORTAL_NEXUS(72, 200000, 235, 720, false, false, 28, "skill hall", -1, SimpleRoom.class,
+            NEXUS, NEXUS_CURTAINS, NEXUS_RUGS, AMULET);
 
     private int chunkX, chunkY;
 

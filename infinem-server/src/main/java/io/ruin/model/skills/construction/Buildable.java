@@ -677,6 +677,15 @@ public enum Buildable {
     MEDIUM_STORAGE_UNIT(60, 150, MID_BUILD, 21038, 29779, MALLIGNUM_ROOT_PLANK.item(4)),
     LARGE_STORAGE_UNIT(90, 150, MID_BUILD, 21039, 29780, MALLIGNUM_ROOT_PLANK.item(6)),
 
+    /*
+     * Portal nexus
+     */
+    MOUNTED_XERIC(72, 500, HIGH_BUILD, 22708, 33411, MAHOGANY_PLANK.item(1), GOLD_LEAF.item(1), new Item(13392, 1), new Item(13391, 5000)),
+    MOUNTED_DIGSITE(82, 800, HIGH_BUILD, 22709, 33416, MAHOGANY_PLANK.item(1), GOLD_LEAF.item(1), new Item(22710, 1)),
+
+    MARBLE_NEXUS(72, 2000, MID_BUILD, 22705, 33354, MARBLE_BLOCK.item(4)),
+    GILDED_NEXUS(82, 2600, MID_BUILD, 22706, 33372, MARBLE_NEXUS, MARBLE_BLOCK.item(4), GOLD_LEAF.item(2)),
+    CRYSTALLINE_NEXUS(92, 2600, MID_BUILD, 22707, 33390, GILDED_NEXUS, MAGIC_STONE.item(2), GOLD_LEAF.item(2))
     ;
 
     Buildable(int levelReq, double xp, int animation, int itemId, int[] builtObjects, Item... materials) {
