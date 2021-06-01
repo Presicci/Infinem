@@ -4,7 +4,7 @@ import io.ruin.model.entity.player.PlayerCounter;
 
 public enum Tree {
 
-    REGULAR(1511, "logs", 1, 82.5, 25.0, 75, true, 31764, PlayerCounter.CHOPPED_REGULAR),
+    REGULAR(1511, "logs", 1, 55, 25.0, 75, true, 31764, PlayerCounter.CHOPPED_REGULAR),
     SAPLING(20799, "kindling", 1, 82.5, 45.0, 75, false, 31764, PlayerCounter.CHOPPED_SAPLING),
     ACHEY(2862, "achey logs", 1, 55, 25.0, 75, true, 31764, PlayerCounter.CHOPPED_ACHEY),
     OAK(1521, "oak logs", 15, 95, 37.5, 15, false, 36114, PlayerCounter.CHOPPED_OAK),
