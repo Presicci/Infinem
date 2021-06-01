@@ -893,6 +893,7 @@ public class PlayerCombat extends Combat {
         boolean berserkerNecklaceEffectActive = SetEffect.BERSERKER_NECKLACE.checkAndApply(player, target, hit);
         boolean obsidianEffectActive = SetEffect.OBSIDIAN_ARMOUR.checkAndApply(player, target, hit);
 
+
         if(target.npc != null && target.npc.getDef().dragon && hit.attackStyle != null) {
             //dragon hunter crossbow
             if(hit.attackStyle.isRanged() && player.getEquipment().hasId(21012))
@@ -983,7 +984,10 @@ public class PlayerCombat extends Combat {
                 target.player.getPrayer().drain(hit.damage / 4);
         }
 
-        SetEffect.GUTHAN.checkAndApply(player, target, hit);
+        boolean guthansDamnedEffectActive = SetEffect.GUTHAN_DAMNED.checkAndApply(player, target, hit);
+        if (!guthansDamnedEffectActive) {
+            SetEffect.GUTHAN.checkAndApply(player, target, hit);
+        }
 
         if (hit.damage > 0) {   // if the hit actually hits
             SetEffect.KARIL.checkAndApply(player, target, hit);

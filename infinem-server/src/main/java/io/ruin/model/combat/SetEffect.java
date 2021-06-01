@@ -69,6 +69,22 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_LEGS, 4730, 4922, 4923, 4924, 4925),
             new Piece(Equipment.SLOT_WEAPON, 4726, 4910, 4911, 4912, 4913)),
 
+    GUTHAN_DAMNED((player, target, hit) -> {
+        if (Random.rollDie(4)) {
+            target.graphics(398,0 ,0);
+            int hp = player.getHp();
+            int maxHp = player.getMaxHp();
+            int restore = hit.damage;
+            int newHp = Math.min(hp + restore, maxHp + 10);
+            player.setHp(newHp);
+        }
+    }, (player, hit) -> hit.attackStyle.isMelee(),
+            new Piece(Equipment.SLOT_HAT, 4724, 4904, 4905, 4906, 4907),
+            new Piece(Equipment.SLOT_CHEST, 4728, 4916, 4917, 4918, 4919),
+            new Piece(Equipment.SLOT_LEGS, 4730, 4922, 4923, 4924, 4925),
+            new Piece(Equipment.SLOT_WEAPON, 4726, 4910, 4911, 4912, 4913),
+            new Piece(Equipment.SLOT_AMULET, 12851, 12853)),
+
     TORAG((player, target, hit) -> {
         if (target instanceof Player && Random.rollDie(4)) {
             target.player.getMovement().drainEnergy(20);
