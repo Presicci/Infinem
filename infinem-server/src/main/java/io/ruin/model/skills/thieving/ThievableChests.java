@@ -105,7 +105,27 @@ public class ThievableChests {
                 new Position[] { new Position(2586, 9737), new Position(2586, 9734) }),
 
         STONE_CHEST(34429, 64, 280, 0,
-                new LootTable().addTable(1, ),  // TODO Loot
+                new LootTable().addTable(15, LootTable.CommonTables.UNCOMMON_SEED.items)
+                        .addTable(270,
+                            new LootItem(995, 20, 260, 99), // Coins
+                            new LootItem(13391, 1, 90), // Lizardman fang
+                            new LootItem(13383, 1, 60), // Xerician fabric
+                            new LootItem(1623, 1, 12),  // Uncut sapphire
+                            new LootItem(1619, 1, 9),   // Uncut ruby
+                            new LootItem(2801, 1, 3),   // Clue scroll (medium)
+                            new LootItem(13392, 1, 1)   // Xeric's talisman
+                        ).addTable(15, // Bolt tip table
+                            new LootItem(45, 4, 12, 4), // Opal
+                            new LootItem(46, 4, 12, 4), // Pearl
+                            new LootItem(9192, 4, 12, 4),   // Diamond
+                            new LootItem(9191, 4, 12, 3),   // Ruby
+                            new LootItem(9193, 4, 12, 3),   // Dragonstone
+                            new LootItem(9190, 4, 12, 2),   // Emerald
+                            new LootItem(9187, 4, 12, 1),   // Jade
+                            new LootItem(9188, 4, 12, 1),   // Topaz
+                            new LootItem(9189, 4, 12, 1),   // Sapphire
+                            new LootItem(9194, 4, 12, 1)   // Onyx
+                        ),
                 new Position[] { new Position(1302, 10087), new Position(1300, 10085), new Position(1300, 10089) }),
 
         PALADIN(11739, 72, 500.0, 400,
