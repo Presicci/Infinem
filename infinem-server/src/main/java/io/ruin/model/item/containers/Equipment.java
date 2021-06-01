@@ -4,6 +4,7 @@ import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.RangedWeapon;
+import io.ruin.model.combat.SetEffect;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.handlers.EquipmentStats;
 import io.ruin.model.item.Item;
@@ -213,6 +214,9 @@ public class Equipment extends ItemContainer {
                 }
                 weight += def.weightEquipment;
             }
+        }
+        if (SetEffect.VERAC_DAMNED.hasPieces(player)) {
+            bonuses[EquipmentStats.PRAYER] += 7;
         }
         /**
          * Update equipment stats interface

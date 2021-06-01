@@ -28,6 +28,13 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_LEGS, 4759, 4994, 4995, 4996, 4997),
             new Piece(Equipment.SLOT_WEAPON, 4755, 4982, 4983, 4984, 4985)),
 
+    VERAC_DAMNED(
+            new Piece(Equipment.SLOT_HAT, 4753, 4976, 4977, 4978, 4979),
+            new Piece(Equipment.SLOT_CHEST, 4757, 4988, 4989, 4990, 4991),
+            new Piece(Equipment.SLOT_LEGS, 4759, 4994, 4995, 4996, 4997),
+            new Piece(Equipment.SLOT_WEAPON, 4755, 4982, 4983, 4984, 4985),
+            new Piece(Equipment.SLOT_AMULET, 12851, 12853)),
+
     DHAROK((player, target, hit) -> {
         double damageMod = ((player.getMaxHp() - player.getHp()) / 100) * (player.getMaxHp() / 100);
         hit.boostDamage(damageMod);
