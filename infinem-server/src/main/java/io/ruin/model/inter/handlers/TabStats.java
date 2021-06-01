@@ -81,7 +81,7 @@ public class TabStats {
     public static void openGuide(Player player, StatType statType, int category) {
         Config.SKILL_GUIDE_STAT.set(player, statType.clientId);
         Config.SKILL_GUIDE_CAT.set(player, category);
-        player.getPacketSender().sendClientScript(917, "ii", 4600861, 80);
+        //player.getPacketSender().sendClientScript(917, "ii", 4600861, 80);
         player.openInterface(InterfaceType.MAIN, Interface.SKILL_GUIDE);
     }
 

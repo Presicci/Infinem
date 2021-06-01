@@ -307,7 +307,7 @@ public class Player extends PlayerAttributes {
         packetSender.sendString(119, childId++, "");
         for(String s : lines)
             packetSender.sendString(119, childId++, s);
-        packetSender.sendClientScript(917, "ii", -1, -1);
+        //packetSender.sendClientScript(917, "ii", -1, -1);
         openInterface(InterfaceType.MAIN, 119);
         packetSender.sendClientScript(2523, "1i", 1, lines.length);
     }
