@@ -8,11 +8,15 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.loot.LootItem;
+import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
+
+import static io.ruin.cache.ItemID.COINS_995;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -42,69 +46,118 @@ public class ThievableChests {
     @AllArgsConstructor
     public enum Chests {
         COINS_10(11737, 13, 7.8, 7,
-                new Loot[] { new Loot(995, 3000, 3250) },
+                new LootTable().addTable(1,
+                        new LootItem(995, 3000, 3250, 0)
+                ),
                 new Position[] { new Position(2671, 3299, 1) }),
         COINS_101(11735, 13, 7.8, 7,
-                new Loot[] { new Loot(995, 3000, 3250) },
+                new LootTable().addTable(1,
+                        new LootItem(995, 3000, 3250, 0)
+                ),
                 new Position[] { new Position(2612, 3314, 1), new Position(2630, 3655), new Position(2673, 3307) }),
 
         NATURE(11736, 28, 25.0, 8,
-                new Loot[] { new Loot(995, 1000, 1250), new Loot(561, 3, 8) },
+                new LootTable().addTable(1,
+                        new LootItem(995, 1000, 1250, 0),
+                        new LootItem(561, 3, 8, 0)
+                ),
                 new Position[] { new Position(2671, 3301, 1), new Position(2614, 3314, 1) }),
 
         COINS_50(11735, 43, 125.0, 50,
-                new Loot[] { new Loot(995, 5000, 6500) },
+                new LootTable().addTable(1,
+                        new LootItem(995, 5000, 6500, 0)
+                ),
                 new Position[] { new Position(3188, 3962), new Position(3189, 3962), new Position(3193, 3962), new Position(3044, 3951) }),
         COINS_501(11736, 43, 125.0, 50,
-                new Loot[] { new Loot(995, 5000, 6500) },
+                new LootTable().addTable(1,
+                        new LootItem(995, 5000, 6500, 0)
+                ),
                 new Position[] { new Position(3042, 3949) }),
         COINS_502(11737, 43, 125.0, 50,
-                new Loot[] { new Loot(995, 5000, 6500) },
+                new LootTable().addTable(1,
+                        new LootItem(995, 5000, 6500, 0)
+                ),
                 new Position[] { new Position(3040, 3949) }),
 
         ARROWTIP(11742, 47, 150.0, 210,
-                new Loot[] { new Loot(41, 25, 30), new Loot(995, 1000, 1250) },
+                new LootTable().addTable(1,
+                        new LootItem(41, 25, 30, 0),
+                        new LootItem(995, 1000, 1250, 0)
+                ),
                 new Position[] { new Position(2650, 3659), new Position(2639, 3424) }),
 
         DORGESH_KAAN(22697, 52, 200.0, 210,
-                new Loot[] { new Loot(995, 1500, 1750), new Loot(4548), new Loot(4537), new Loot(10981), new Loot(5013), new Loot(10192) },
+                new LootTable().addTable(1,
+                        new LootItem(995, 1500, 1750, 1),
+                        new LootItem(4548, 1, 1),
+                        new LootItem(4537, 1, 1),
+                        new LootItem(10981, 1, 1),
+                        new LootItem(5013, 1, 1),
+                        new LootItem(10192, 1, 1)
+                ),
                 new Position[] {  }),
 
         BLOOD(11738, 59, 250.0, 135,
-                new Loot[] { new Loot(995, 1750, 2000), new Loot(565, 15, 25) },
+                new LootTable().addTable(1,
+                        new LootItem(995, 1750, 2000, 0),
+                        new LootItem(565, 15, 25, 0)
+                ),
                 new Position[] { new Position(2586, 9737), new Position(2586, 9734) }),
 
         STONE_CHEST(34429, 64, 280, 0,
-                new Loot[] {},  // TODO Loot
+                new LootTable().addTable(1, ),  // TODO Loot
                 new Position[] { new Position(1302, 10087), new Position(1300, 10085), new Position(1300, 10089) }),
 
         PALADIN(11739, 72, 500.0, 400,
-                new Loot[] { new Loot(995, 2500, 3500), new Loot(384, 3, 6), new Loot(450, 3, 6), new Loot(1623, 1, 2) },
+                new LootTable().addTable(1,
+                        new LootItem(995, 2500, 3500, 0),
+                        new LootItem(384, 1, 2, 0),
+                        new LootItem(450, 1, 2, 0),
+                        new LootItem(1623, 1, 2, 0)
+                ),
                 new Position[] { new Position(2588, 3302, 1), new Position(2588, 3291, 1) }),
 
         DORG_RICH(22681, 78, 650.0, 300,
-                new Loot[] { new Loot(995, 500, 2500), new Loot(1623), new Loot(1621), new Loot(1619), new Loot(1617),
-                new Loot(1625), new Loot(1627), new Loot(1629), new Loot(4548), new Loot(5013), new Loot(10954), new Loot(10956), new Loot(10958),
-                new Loot(2351), new Loot(10973), new Loot(10980) },
+                new LootTable().addTable(1,
+                        new LootItem(995, 500, 2500, 1),
+                        new LootItem(1623, 1, 1),
+                        new LootItem(1621, 1, 1),
+                        new LootItem(1619, 1, 1),
+                        new LootItem(1617, 1, 1),
+                        new LootItem(1625, 1, 1),
+                        new LootItem(1627, 1, 1),
+                        new LootItem(1629, 1, 1),
+                        new LootItem(4548, 1, 1),
+                        new LootItem(5013, 1, 1),
+                        new LootItem(10954, 1, 1),
+                        new LootItem(10956, 1, 1),
+                        new LootItem(10958, 1, 1),
+                        new LootItem(2351, 1, 1),
+                        new LootItem(10973, 1, 1),
+                        new LootItem(10980, 1, 1)
+                ),
                 new Position[] {  }),
 
         ROGUES_CASTLE(26757, 84, 100, 10,
-                new Loot[] {
-                        new Loot(1622, 7, 12),          // Uncut emerald
-                        new Loot(1624, 9, 15),          // Uncut sapphire
-                        new Loot(360, 25, 35),          // Raw tuna
-                        new Loot(995, 10000, 15000),    // Coins
-                        new Loot(593, 35, 45),          // Ashes
-                        new Loot(454, 20, 30),          // Coal
-                        new Loot(558, 30, 50),          // Mind rune
-                        new Loot(1602, 4, 6),           // Diamond
-                        new Loot(562, 35, 50),          // Chaos rune
-                        new Loot(560, 25, 35),          // Death rune
-                        new Loot(554, 25, 40),          // Fire rune
-                        new Loot(352, 10, 15),          // Pike
-                        new Loot(591, 4, 5),            // Tinderbox
-                        new Loot(441, 15, 25)          // Iron ore
-                },
+                new LootTable().addTable(1,
+                        new LootItem(1622, 7, 12,5),          // Uncut emerald
+                        new LootItem(1624, 9, 15, 5),          // Uncut sapphire
+                        new LootItem(360, 25, 35, 5),          // Raw tuna
+                        new LootItem(995, 10000, 15000, 5),    // Coins
+                        new LootItem(593, 35, 45, 5),          // Ashes
+                        new LootItem(454, 20, 30, 5),          // Coal
+                        new LootItem(558, 30, 50, 5),          // Mind rune
+                        new LootItem(1602, 4, 6, 3),           // Diamond
+                        new LootItem(562, 35, 50, 3),          // Chaos rune
+                        new LootItem(560, 25, 35, 3),          // Death rune
+                        new LootItem(554, 25, 40, 3),          // Fire rune
+                        new LootItem(352, 10, 15, 3),          // Pike
+                        new LootItem(591, 4, 5, 3),            // Tinderbox
+                        new LootItem(441, 15, 25, 3),          // Iron ore
+                        new LootItem(386, 15, 20, 1),           // Shark
+                        new LootItem(1616, 2, 2, 1),            // Dragonstone
+                        new LootItem(2722, 1, 1, 1)             // Clue scroll (hard)
+                ),
                 new Position[] { new Position(3297, 3940), new Position(3287, 3946), new Position(3283, 3946) })
         ;   // TODO add one to home
 
@@ -112,7 +165,7 @@ public class ThievableChests {
         public int level;
         public double xp;
         public int respawnTime;
-        public Loot[] loot;
+        public LootTable lootTable;
         public Position[] positions;
     }
 
@@ -163,11 +216,10 @@ public class ThievableChests {
                 player.animate(536);
                 player.sendMessage("You successfully disarm the trap.");
                 e.delay(1);
-                Loot loot = chest.loot[Random.get(chest.loot.length - 1)];
-                int lootAmount = Random.get(loot.min, loot.max);
-                player.getInventory().addOrDrop(loot.item, lootAmount);
+                Item item = chest.lootTable.rollItem();
+                player.getInventory().addOrDrop(item);
                 player.getStats().addXp(StatType.Thieving, chest.xp, true);
-                player.sendMessage("You steal " + (lootAmount > 1 ? "some" : "a") + " " + ItemDef.get(loot.item).name + ".");
+                player.sendMessage("You steal some loot from the chest.");
                 if (chest == Chests.ROGUES_CASTLE && Random.rollDie(50)) {
                     rougesAttack(player);
                 }
