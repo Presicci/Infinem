@@ -988,6 +988,7 @@ public class PlayerCombat extends Combat {
             SetEffect.KARIL.checkAndApply(player, target, hit);
             SetEffect.AHRIM.checkAndApply(player, target, hit);
             SetEffect.TORAG.checkAndApply(player, target, hit);
+            SetEffect.KARIL_DAMNED.checkAndApply(player, target, hit);
         }
         for(Item item : player.getEquipment().getItems()) {
             if(item != null && item.getDef() != null)

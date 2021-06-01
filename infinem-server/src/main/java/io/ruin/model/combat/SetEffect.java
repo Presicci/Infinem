@@ -91,6 +91,27 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_LEGS, 4738, 4946, 4947, 4948, 4949),
             new Piece(Equipment.SLOT_WEAPON, 4734, 4934, 4935, 4936, 4937)),
 
+    KARIL_DAMNED((player, target, hit) -> {
+        if (Random.rollDie(4)) {
+            if (target.getHp() <= 0 || hit.attackWeapon == null) {
+                return;
+            }
+            int damage = hit.damage/2;
+            if (damage > target.getHp()) {
+                damage = target.getHp();
+            }
+            if (damage <= 0) {
+                return;
+            }
+            target.hit(new Hit(player, hit.attackStyle, hit.attackType).fixedDamage(damage).setAttackWeapon(null).ignoreDefence().ignorePrayer());
+        }
+    }, (player, hit) -> hit.attackStyle.isRanged(),
+            new Piece(Equipment.SLOT_HAT, 4732, 4928, 4929, 4930, 4931),
+            new Piece(Equipment.SLOT_CHEST, 4736, 4940, 4941, 4942, 4943),
+            new Piece(Equipment.SLOT_LEGS, 4738, 4946, 4947, 4948, 4949),
+            new Piece(Equipment.SLOT_WEAPON, 4734, 4934, 4935, 4936, 4937),
+            new Piece(Equipment.SLOT_AMULET, 12851, 12853)),
+
     AHRIM((player, target, hit) -> {
         if (Random.rollDie(4)) {
             if (target instanceof Player) {
