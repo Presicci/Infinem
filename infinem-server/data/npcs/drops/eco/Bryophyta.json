@@ -1,0 +1,90 @@
+[
+  {
+    "ids": [ 8195 ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 },   //Big bones
+      { "id": 23182, "min": 1, "max": 1 }   //Clue scroll (beginner)
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 390,
+        "items": [
+          { "id": 1303, "min": 1, "max": 1, "weight": 5080 },   //Rune longsword
+          { "id": 1289, "min": 2, "max": 2, "weight": 4240 },   //Rune sword
+          { "id": 1147, "min": 2, "max": 2, "weight": 5080 },   //Rune med helm
+          { "id": 1113, "min": 1, "max": 1, "weight": 5080 },   //Rune chainbody
+          { "id": 1093, "min": 1, "max": 1, "weight": 5080 },   //Rune plateskirt
+          { "id": 1079, "min": 1, "max": 1, "weight": 5080 },   //Rune platelegs
+          { "id": 1185, "min": 1, "max": 1, "weight": 5080 },   //Rune sq shield
+          { "id": 1199, "min": 3, "max": 3, "weight": 847 },   //Adamant kiteshield
+          { "id": 1124, "min": 5, "max": 5, "weight": 2540 },   //Adamant platebody (noted)
+          { "id": 1391, "min": 3, "max": 3, "weight": 2540 }   //Battlestaff
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 317,
+        "items": [
+          { "id": 564, "min": 100, "max": 100, "weight": 5080 },   //Cosmic rune
+          { "id": 563, "min": 100, "max": 100, "weight": 5080 },   //Law rune
+          { "id": 561, "min": 100, "max": 100, "weight": 6780 },   //Nature rune
+          { "id": 560, "min": 100, "max": 100, "weight": 4240 },   //Death rune
+          { "id": 562, "min": 100, "max": 100, "weight": 5080 },   //Chaos rune
+          { "id": 562, "min": 200, "max": 200, "weight": 5080 },   //Chaos rune
+          { "id": 565, "min": 100, "max": 100, "weight": 847 },   //Blood rune
+          { "id": 890, "min": 100, "max": 100, "weight": 847 }   //Adamant arrow
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 40,
+        "items": [
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 48,
+        "items": [
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 138,
+        "items": [
+          { "id": 2354, "min": 25, "max": 25, "weight": 2540 },   //Steel bar (noted)
+          { "id": 2363, "min": 2, "max": 2, "weight": 5080 },   //Runite bar
+          #WikiNote: ↑ 1.0 1.1
+          #WikiNote: Uncut rubies and uncut diamonds are always dropped together.
+          { "id": 1620, "min": 5, "max": 5, "weight": 3390 },   //Uncut ruby (noted)
+          #WikiNote: ↑ 1.0 1.1
+          #WikiNote: Uncut rubies and uncut diamonds are always dropped together.
+          { "id": 1618, "min": 5, "max": 5, "weight": 3390 }   //Uncut diamond (noted)
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 65,
+        "items": [
+          { "id": 995, "min": 8000, "max": 8000, "weight": 1689 },   //Coins
+          { "id": 995, "min": 10000, "max": 10000, "weight": 4240 },   //Coins
+          #WikiNote: ↑ 1.0 1.1
+          #WikiNote: Jagex. Mod Kira's Twitter account. 8 June 2018. (Archived from the original on 25 March 2019.) Mod Kira: "#Bryophyta and Mossy Key rates are as follows: Mossy Key from: a Moss Giant 1/150 Mossy Key from: a Moss Giant on task 1/75 Mossy Key from: Bryophyta 1/16 Bryophyta's Essence: 1/118 (same as Obor's Club) And there you have it! :-)"
+          { "id": 22372, "min": 1, "max": 1, "weight": 847 }   //Bryophyta's essence
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 62,
+        "items": [
+          #WikiNote: ↑ 1.0 1.1
+          #WikiNote: Jagex. Mod Kira's Twitter account. 8 June 2018. (Archived from the original on 25 March 2019.) Mod Kira: "#Bryophyta and Mossy Key rates are as follows: Mossy Key from: a Moss Giant 1/150 Mossy Key from: a Moss Giant on task 1/75 Mossy Key from: Bryophyta 1/16 Bryophyta's Essence: 1/118 (same as Obor's Club) And there you have it! :-)"
+          { "id": 22374, "min": 1, "max": 1, "weight": 6250 },   //Mossy key
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 6800, "min": 1, "max": 1, "weight": 20 },   //Giant champion scroll
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
+        ]
+      }
+    ]
+  }
+]
