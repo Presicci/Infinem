@@ -96,6 +96,13 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_LEGS, 4751, 4970, 4971, 4972, 4973),
             new Piece(Equipment.SLOT_WEAPON, 4747, 4958, 4959, 4960, 4961)),
 
+    TORAG_DAMNED(
+            new Piece(Equipment.SLOT_HAT, 4745, 4952, 4953, 4954, 4955),
+            new Piece(Equipment.SLOT_CHEST, 4749, 4964, 4965, 4966, 4967),
+            new Piece(Equipment.SLOT_LEGS, 4751, 4970, 4971, 4972, 4973),
+            new Piece(Equipment.SLOT_WEAPON, 4747, 4958, 4959, 4960, 4961),
+            new Piece(Equipment.SLOT_AMULET, 12851, 12853)),
+
     KARIL((player, target, hit) -> {
         if (target instanceof Player && Random.rollDie(4)) {
             target.player.getStats().get(StatType.Agility).drain(20D);
