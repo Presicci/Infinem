@@ -1,11 +1,16 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
+import io.ruin.model.map.Position;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 
 public class Lithkren {
+
+    private static GameObject BOAT_FOSSIL_ISLAND = GameObject.spawn(32079, 3658, 3848, 0, 10, 0);
 
     static {
         ObjectAction.register(32153, 1, (player, obj) -> {
@@ -51,5 +56,12 @@ public class Lithkren {
         ObjectAction.register(32084, 1, (player, obj) -> player.getMovement().teleport(3555, 4000, 0));
         ObjectAction.register(32082, 1, (player, obj) -> player.getMovement().teleport(3561, 4004, 0));
         ObjectAction.register(32081, 1, (player, obj) -> player.getMovement().teleport(3556, 4004, 1));
+
+        //Boat From Fossil Island
+        ObjectAction.register(BOAT_FOSSIL_ISLAND, 1,(p, obj)-> {
+            Traveling.fadeTravel(p, new Position(3583, 3974,0));
+        });
+        //Boat From Lithkren
+        ObjectAction.register(32079, 3582, 3971, 0 , "Travel", (p, obj)-> Traveling.fadeTravel(p, new Position(3661, 3849, 0)));
     }
 }
