@@ -143,17 +143,10 @@ public class BestiarySearchResult extends JournalEntry {
                             drop[1] = item.broadcast == null ? 0 : (item.broadcast.ordinal() + 1);
                             drop[2] = item.min;
                             drop[3] = item.max;
-                            if (player.xpMode == XpMode.HARD) {
-                                if (item.weight == 0)
-                                    drop[4] = (int) ((1D / tableChance) * .9);
-                                else
-                                    drop[4] = (int) ((1D / (tableChance * (item.weight / table.totalWeight))) * .9);
-                            } else {
-                                if (item.weight == 0)
-                                    drop[4] = (int) (1D / tableChance);
-                                else
-                                    drop[4] = (int) (1D / (tableChance * (item.weight / table.totalWeight)));
-                            }
+                            if (item.weight == 0)
+                                drop[4] = (int) (1D / tableChance);
+                            else
+                                drop[4] = (int) (1D / (tableChance * (item.weight / table.totalWeight)));
                             drops.add(drop);
                         }
                     }
