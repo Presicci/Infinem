@@ -1,5 +1,6 @@
 package io.ruin.model.inter.handlers;
 
+import io.ruin.model.combat.SetEffect;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -85,6 +86,13 @@ public class TabCombat {
         int staffId = item == null ? -1 : player.getEquipment().getId(Equipment.SLOT_WEAPON);
         if (staffId == -1) //shouldn't happen
             return null;
+        if (staffId == 4710 || staffId == 4862 || staffId == 4863 || staffId == 4864 || staffId == 4865) {
+            if (SetEffect.AHRIM_DAMNED.hasPieces(player) && SpellBook.ANCIENT.isActive(player)) {
+                return 4675;
+            } else {
+                return SpellBook.MODERN.isActive(player) ? -1 : null;
+            }
+        }
         if (staffId == 4675) //ancient staff
             return SpellBook.ANCIENT.isActive(player) ? 4675 : null;
         if (staffId == 6914) //master wand

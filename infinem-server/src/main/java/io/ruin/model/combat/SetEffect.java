@@ -128,6 +128,17 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_LEGS, 4714, 4874, 4875, 4876, 4877),
             new Piece(Equipment.SLOT_WEAPON, 4710, 4862, 4863, 4864, 4865)),
 
+    AHRIM_DAMNED((player, target, hit) -> {
+        if (Random.rollDie(4)) {
+            hit.boostDamage(0.3);
+        }
+    }, (player, hit) -> hit.attackStyle.isMagic(),
+            new Piece(Equipment.SLOT_HAT, 4708, 4856, 4857, 4858, 4859),
+            new Piece(Equipment.SLOT_CHEST, 4712, 4868, 4869, 4870, 4871),
+            new Piece(Equipment.SLOT_LEGS, 4714, 4874, 4875, 4876, 4877),
+            new Piece(Equipment.SLOT_WEAPON, 4710, 4862, 4863, 4864, 4865),
+            new Piece(Equipment.SLOT_AMULET, 12851, 12853)),
+
     VOID_MELEE((player, target, hit) -> {
         hit.boostDamage(0.1).boostAttack(0.1);
     }, (player, hit) -> hit.attackStyle.isMelee(),

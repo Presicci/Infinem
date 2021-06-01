@@ -883,6 +883,7 @@ public class PlayerCombat extends Combat {
         }
         boolean dharoksEffectActive = SetEffect.DHAROK.checkAndApply(player, target, hit);
         boolean veracsEffectActive = SetEffect.VERAC.checkAndApply(player, target, hit);
+        boolean ahrimDamnedEffectActive = SetEffect.AHRIM_DAMNED.checkAndApply(player, target, hit);
         boolean voidMagesEffectActive = SetEffect.VOID_MAGE.checkAndApply(player, target, hit) ;
         boolean voidRangeEffectActive = SetEffect.VOID_RANGE.checkAndApply(player, target, hit);
         boolean voidMeleeEffectActive = SetEffect.VOID_MELEE.checkAndApply(player, target, hit);

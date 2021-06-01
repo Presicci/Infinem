@@ -7,6 +7,7 @@ import io.ruin.model.combat.RangedWeapon;
 import io.ruin.model.combat.SetEffect;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.handlers.EquipmentStats;
+import io.ruin.model.inter.handlers.TabCombat;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
 import io.ruin.model.item.actions.impl.MaxCapeVariants;
@@ -125,6 +126,9 @@ public class Equipment extends ItemContainer {
                     worn.clearAttributes();
                     worn.putAttributes(selectedItem.copyOfAttributes());
                 }
+                if (worn.getId() == 12853 || worn.getId() == 12851) {
+                    TabCombat.resetAutocast(player);
+                }
                 worn.setId(selectedId);
                 worn.setAmount(selectedAmount);
                 worn.putAttributes(attributeCopy);
@@ -157,6 +161,9 @@ public class Equipment extends ItemContainer {
             }
             equipped.remove();
             inventory.set(freeSlot, equipped);
+        }
+        if (equipped.getId() == 12853 || equipped.getId() == 12851) {
+            TabCombat.resetAutocast(player);
         }
         return true;
     }
