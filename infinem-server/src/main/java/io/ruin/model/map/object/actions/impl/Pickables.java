@@ -13,7 +13,13 @@ public class Pickables {
 
     @AllArgsConstructor
     public enum Nodes {
-        FLAX(14896, 1779);
+        FLAX(14896, 1779),
+        CABBAGE(1161, 1965),
+        WHEAT(15506, 1947),
+        WHEAT1(15507, 1947),
+        WHEAT2(15508, 1947),
+        POTATO(312, 1942),
+        ONION(3366, 1957);
 
         public int objectId, itemId;
 
