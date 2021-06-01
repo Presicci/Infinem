@@ -48,7 +48,7 @@ public enum HouseLocation {
 
     public void home(Player player, boolean buildingMode) {
         if (player.house == null) {
-            player.dialogue(new MessageDialogue("You don't own a house. Visit the estate agent in Edgeville to purchase one."));
+            player.dialogue(new MessageDialogue("You don't own a house. Visit an estate agent to purchase one."));
             return;
         }
         if (player.house.getLocation() != this) {
