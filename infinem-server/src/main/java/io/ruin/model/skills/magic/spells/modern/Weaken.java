@@ -26,7 +26,7 @@ public class Weaken extends TargetSpell {
     public boolean cast(Entity entity, Entity target) {
         if(target.player != null ? target.player.getStats().get(StatType.Strength).isDrained()
                 : target.npc.getCombat().getStat(StatType.Strength).isDrained()) {
-            entity.player.sendMessage("That targets strength is already drained." + target.player.getStats().get(StatType.Strength).currentLevel + "/" + target.player.getStats().get(StatType.Strength).fixedLevel);
+            entity.player.sendMessage("That targets strength is already drained.");
             return false;
         }
         return super.cast(entity, target);
@@ -34,7 +34,6 @@ public class Weaken extends TargetSpell {
 
     @Override
     public void afterHit(Hit hit, Entity target) {
-        hit.attacker.player.sendMessage("Before: " + target.player.getStats().get(StatType.Strength).currentLevel);
         if(hit.isBlocked()) {
             hit.attacker.player.getStats().addXp(StatType.Magic, 21, false);
         } else {
@@ -45,7 +44,6 @@ public class Weaken extends TargetSpell {
                 target.npc.getCombat().getStat(StatType.Strength).drain(0.05);
             }
         }
-        hit.attacker.player.sendMessage("After: " + target.player.getStats().get(StatType.Strength).currentLevel);
         hit.hide();
     }
 }
