@@ -51,21 +51,21 @@ public class DisplayHandler implements Incoming {
         //ps.sendInterface(378, 165, 28, 0); //welcome screen pt1
         //ps.sendInterface(50, 165, 27, 0); //welcome screen pt2
 
-        ps.sendInterface(320, 165, 9, 1);
+        ps.sendInterface(Interface.SKILLS, 165, 9, 1);
         ps.sendInterface(Interface.QUEST_TAB, 165, 10, 1);
         ps.sendInterface(729, Interface.QUEST_TAB, 2, 1);
-        ps.sendInterface(149, 165, 11, 1);
-        ps.sendInterface(387, 165, 12, 1);
-        ps.sendInterface(541, 165, 13, 1);
-        ps.sendInterface(218, 165, 14, 1);
+        ps.sendInterface(Interface.INVENTORY, 165, 11, 1);
+        ps.sendInterface(Interface.EQUIPMENT, 165, 12, 1);
+        ps.sendInterface(Interface.PRAYER, 165, 13, 1);
+        ps.sendInterface(Interface.MAGIC_BOOK, 165, 14, 1);
         ps.sendInterface(Config.FRIENDS_AND_IGNORE_TOGGLE.get(player) == 0 ? Interface.FRIENDS_LIST : Interface.IGNORE_LIST, 165, 17, 1);
         //ps.sendInterface(432, 165, 16, 1);
         ps.sendInterface(Interface.ACCOUNT_MANAGEMENT, 165, 16, 1);
-        ps.sendInterface(182, 165, 18, 1);
-        ps.sendInterface(261, 165, 19, 1);
-        ps.sendInterface(216, 165, 20, 1);
-        ps.sendInterface(239, 165, 21, 1);
-        ps.sendInterface(7, 165, 15, 1);
+        ps.sendInterface(Interface.LOGOUT, 165, 18, 1);
+        ps.sendInterface(Interface.OPTIONS, 165, 19, 1);
+        ps.sendInterface(Interface.EMOTE, 165, 20, 1);
+        ps.sendInterface(Interface.MUSIC_PLAYER, 165, 21, 1);
+        ps.sendInterface(Interface.CLAN_CHAT, 165, 15, 1);
         ps.sendInterface(COMBAT_OPTIONS, 165, 8, 1);
 
         /**
