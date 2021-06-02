@@ -321,4 +321,8 @@ public class Interface {
     public static final int GLIDER = 138;
 
     public static final int CHARTER = 72;
+
+    public static final int PORTAL_NEXUS_CONFIGURE = 19;
+
+    public static final int PORTAL_NEXUS_TELEPORT = 17;
 }
