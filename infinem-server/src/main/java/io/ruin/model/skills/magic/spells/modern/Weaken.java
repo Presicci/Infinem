@@ -1,8 +1,11 @@
 package io.ruin.model.skills.magic.spells.modern;
 
+import io.ruin.model.combat.Hit;
+import io.ruin.model.entity.Entity;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.spells.TargetSpell;
+import io.ruin.model.stat.StatType;
 
 public class Weaken extends TargetSpell {
 
@@ -19,4 +22,30 @@ public class Weaken extends TargetSpell {
         setRunes(Rune.BODY.toItem(1), Rune.EARTH.toItem(2), Rune.WATER.toItem(3));
     }
 
+    @Override
+    public boolean cast(Entity entity, Entity target) {
+        if(target.player != null ? target.player.getStats().get(StatType.Strength).isDrained()
+                : target.npc.getCombat().getStat(StatType.Strength).isDrained()) {
+            entity.player.sendMessage("That targets strength is already drained." + target.player.getStats().get(StatType.Strength).currentLevel + "/" + target.player.getStats().get(StatType.Strength).fixedLevel);
+            return false;
+        }
+        return super.cast(entity, target);
+    }
+
+    @Override
+    public void afterHit(Hit hit, Entity target) {
+        hit.attacker.player.sendMessage("Before: " + target.player.getStats().get(StatType.Strength).currentLevel);
+        if(hit.isBlocked()) {
+            hit.attacker.player.getStats().addXp(StatType.Magic, 21, false);
+        } else {
+            hit.attacker.player.getStats().addXp(StatType.Magic, 21, false);
+            if (target.player != null) {
+                target.player.getStats().get(StatType.Strength).drain(0.05);
+            } else {
+                target.npc.getCombat().getStat(StatType.Strength).drain(0.05);
+            }
+        }
+        hit.attacker.player.sendMessage("After: " + target.player.getStats().get(StatType.Strength).currentLevel);
+        hit.hide();
+    }
 }
