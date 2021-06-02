@@ -171,7 +171,7 @@ public class TargetSpell extends Spell {
 
         Hit hit = new Hit(entity, AttackStyle.MAGIC, AttackType.ACCURATE)
                 .randDamage(maxDamage)
-                .clientDelay(projectileDuration, 19)
+                .clientDelay(projectileDuration, 16)
                 .setAttackSpell(this);
         hit.postDamage(t -> {
             if(hit.isBlocked()) {
