@@ -22,11 +22,20 @@ public class Weaken extends TargetSpell {
         setRunes(Rune.BODY.toItem(1), Rune.EARTH.toItem(2), Rune.WATER.toItem(3));
     }
 
+    private static final StatType stat = StatType.Strength;
+    private static final double percent = 0.05;
+
     @Override
     public boolean cast(Entity entity, Entity target) {
-        if(target.player != null ? target.player.getStats().get(StatType.Strength).isDrained()
-                : target.npc.getCombat().getStat(StatType.Strength).isDrained()) {
-            entity.player.sendMessage("That target's strength is already drained.");
+        if(target.player != null ? target.player.getStats().get(stat).isDrained()
+                : target.npc.getCombat().getStat(stat).isDrained()) {
+            entity.player.sendMessage("That target's " + stat.toString().toLowerCase() + " is already drained.");
+            return false;
+        }
+        int statLevel = target.player != null ? target.player.getStats().get(stat).fixedLevel
+                : target.npc.getCombat().getStat(stat).fixedLevel;
+        if((int) (statLevel * percent) == 0) {
+            entity.player.sendMessage("That target's " + stat.toString().toLowerCase() + " is too low to drain.");
             return false;
         }
         return super.cast(entity, target);
@@ -34,14 +43,11 @@ public class Weaken extends TargetSpell {
 
     @Override
     public void afterHit(Hit hit, Entity target) {
-        if(hit.isBlocked()) {
-            hit.attacker.player.getStats().addXp(StatType.Magic, 21, false);
-        } else {
-            hit.attacker.player.getStats().addXp(StatType.Magic, 21, false);
+        if(!hit.isBlocked()) {
             if (target.player != null) {
-                target.player.getStats().get(StatType.Strength).drain(0.05);
+                target.player.getStats().get(stat).drain(percent);
             } else {
-                target.npc.getCombat().getStat(StatType.Strength).drain(0.05);
+                target.npc.getCombat().getStat(stat).drain(percent);
             }
         }
         hit.hide();
