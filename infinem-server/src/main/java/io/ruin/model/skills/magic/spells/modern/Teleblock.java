@@ -50,7 +50,7 @@ public class Teleblock extends TargetSpell {
     public void afterHit(Hit hit, Entity target) {
         if(hit.isBlocked()) {
             hit.clientDelay(MISS_PROJECTILE.send(hit.attacker, target));
-            hit.attacker.player.getStats().addXp(StatType.Magic, 84, false);
+            hit.attacker.player.getStats().addXp(StatType.Magic, 83.6, false);
         } else {
             hit.clientDelay(LAND_PROJECTILE.send(hit.attacker, target));
             hit.attacker.player.getStats().addXp(StatType.Magic, 95, false);
