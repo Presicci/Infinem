@@ -109,6 +109,10 @@ public class Stat {
         return oldLevel - currentLevel;
     }
 
+    public boolean isDrained() {
+        return fixedLevel > currentLevel;
+    }
+
     public void process(boolean hitpoints, boolean rapidRestore, boolean rapidHeal, boolean preserve) {
         if(currentLevel > fixedLevel) {
             int boostTime = 100; //60 seconds
