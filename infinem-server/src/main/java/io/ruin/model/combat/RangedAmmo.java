@@ -36,7 +36,7 @@ public enum RangedAmmo {
     BLURITE_BOLTS(new RangedData(Projectile.BOLT)),
     BONE_BOLTS(new RangedData(Projectile.BOLT)),
     SILVER_BOLTS(new RangedData(Projectile.BOLT)),
-    OPAL_BOLTS(new RangedData(Projectile.BOLT)),
+    OPAL_BOLTS(new RangedData(Projectile.BOLT), new OpalBoltEffect()),
     JADE_BOLTS(new RangedData(Projectile.BOLT), new JadeBoltEffect()),
     PEARL_BOLTS(new RangedData(Projectile.BOLT), new PearlBoltEffect()),
     TOPAZ_BOLTS(new RangedData(Projectile.BOLT), new TopazBoltEffect()),
@@ -54,7 +54,7 @@ public enum RangedAmmo {
      * Dragon bolts
      */
     DRAGON_BOLTS(new RangedData(Projectile.DRAGON_BOLT)),
-    DRAGON_OPAL_BOLTS(new RangedData(Projectile.DRAGON_BOLT)),
+    DRAGON_OPAL_BOLTS(new RangedData(Projectile.DRAGON_BOLT), new OpalBoltEffect()),
     DRAGON_JADE_BOLTS(new RangedData(Projectile.DRAGON_BOLT), new JadeBoltEffect()),
     DRAGON_PEARL_BOLTS(new RangedData(Projectile.DRAGON_BOLT), new PearlBoltEffect()),
     DRAGON_TOPAZ_BOLTS(new RangedData(Projectile.DRAGON_BOLT), new TopazBoltEffect()),
