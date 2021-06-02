@@ -26,7 +26,7 @@ public class Weaken extends TargetSpell {
     public boolean cast(Entity entity, Entity target) {
         if(target.player != null ? target.player.getStats().get(StatType.Strength).isDrained()
                 : target.npc.getCombat().getStat(StatType.Strength).isDrained()) {
-            entity.player.sendMessage("That targets strength is already drained.");
+            entity.player.sendMessage("That target's strength is already drained.");
             return false;
         }
         return super.cast(entity, target);
