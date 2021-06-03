@@ -234,6 +234,8 @@ public abstract class Patch {
             compostType = 1;
         else if (item.getId() == 6034)
             compostType = 2;
+        else if (item.getId() == 21483)
+            compostType = 3;
         else
             throw new IllegalArgumentException("Invalid compost");
 
@@ -306,7 +308,7 @@ public abstract class Patch {
             } else {
                 player.sendMessage("You can't plant that seed on this type of patch.");
             }
-        } else if (item.getId() == 6032 || item.getId() == 6034) { // compost / supercompost
+        } else if (item.getId() == 6032 || item.getId() == 6034 || item.getId() == 21483) { // compost / supercompost / ultracompost
             treat(item);
         } else if (item.getId() == 6036) { // plant cure
             if (isDead()) {

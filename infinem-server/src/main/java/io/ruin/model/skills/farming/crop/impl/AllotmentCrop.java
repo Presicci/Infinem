@@ -78,6 +78,8 @@ public enum AllotmentCrop implements Crop {
 	@Override
 	public double getDiseaseChance(int compostType) {
 		switch(compostType) {
+			case 3:
+				return 0.02;
 			case 2:
 				return 0.045;
 			case 1:

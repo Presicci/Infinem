@@ -85,6 +85,8 @@ public enum FruitTreeCrop implements TreeCrop {
 	@Override
 	public double getDiseaseChance(int compostType) {
 		switch(compostType) {
+			case 3:
+				return 0.067 / getTotalStages();
 			case 2:
 				return 0.125 / getTotalStages();
 			case 1:

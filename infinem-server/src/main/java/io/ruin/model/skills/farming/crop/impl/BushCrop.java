@@ -93,6 +93,8 @@ public enum BushCrop implements Crop {
         if (this == POISON_IVY)
             return 0;
         switch(compostType) {
+            case 3:
+                return 0.025;
             case 2:
                 return 0.05;
             case 1:

@@ -38,6 +38,8 @@ public class CactusCrop implements Crop {
     @Override
     public double getDiseaseChance(int compostType) {
         switch(compostType) {
+            case 3:
+                return 0.7 / 6;
             case 2:
                 return 0.15 / 6;
             case 1:

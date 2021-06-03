@@ -39,6 +39,8 @@ public class SpiritTreeCrop implements TreeCrop {
     @Override
     public double getDiseaseChance(int compostType) {
         switch(compostType) {
+            case 3:
+                return 0.025 / getTotalStages();
             case 2:
                 return 0.05 / getTotalStages();
             case 1:
