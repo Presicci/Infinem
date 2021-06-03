@@ -71,14 +71,14 @@ public class DisplayHandler implements Incoming {
         /**
          * Unlocks
          */
-        ps.sendAccessMask(399, 7, 0, 19, 2);
-        ps.sendAccessMask(399, 8, 0, 118, 2);
-        ps.sendAccessMask(399, 9, 0, 11, 2);
-        ps.sendAccessMask(261, 106, 1, 4, 2);
-        ps.sendAccessMask(261, 107, 1, 4, 2);
-        ps.sendAccessMask(216, 1, 0, 47, 2);
-        ps.sendAccessMask(239, 2, 0, 580, 6);
-        ps.sendAccessMask(218, 184, 0, 4, 2);
+        ps.sendAccessMask(Interface.QUEST, 7, 0, 19, 2);
+        ps.sendAccessMask(Interface.QUEST, 8, 0, 118, 2);
+        ps.sendAccessMask(Interface.QUEST, 9, 0, 11, 2);
+        ps.sendAccessMask(Interface.OPTIONS, 106, 1, 4, 2);
+        ps.sendAccessMask(Interface.OPTIONS, 107, 1, 4, 2);
+        ps.sendAccessMask(Interface.EMOTE, 1, 0, 47, 2);
+        ps.sendAccessMask(Interface.MUSIC_PLAYER, 2, 0, 580, 6);
+        ps.sendAccessMask(Interface.MAGIC_BOOK, 184, 0, 4, 2);
 
         Map<Integer, Integer> oldComponents = getToplevelComponents(player).ints();
 
@@ -144,6 +144,15 @@ public class DisplayHandler implements Incoming {
                 ps.moveInterface(from >> 16, from & 0xffff, to >> 16, to & 0xffff);
             }
         }
+        // Temporary fix for broken access masks
+        ps.sendAccessMask(Interface.QUEST, 7, 0, 19, 2);
+        ps.sendAccessMask(Interface.QUEST, 8, 0, 118, 2);
+        ps.sendAccessMask(Interface.QUEST, 9, 0, 11, 2);
+        ps.sendAccessMask(Interface.OPTIONS, 106, 1, 4, 2);
+        ps.sendAccessMask(Interface.OPTIONS, 107, 1, 4, 2);
+        ps.sendAccessMask(Interface.EMOTE, 1, 0, 47, 2);
+        ps.sendAccessMask(Interface.MUSIC_PLAYER, 2, 0, 580, 6);
+        ps.sendAccessMask(Interface.MAGIC_BOOK, 184, 0, 4, 2);
     }
 
     private static EnumMap getToplevelComponents(Player player) {
