@@ -241,10 +241,6 @@ public abstract class Patch {
             player.sendMessage("You should clear the patch first.");
             return;
         }
-        if (plantedCrop != null) {
-            player.sendMessage("Something is already growing in this patch.");
-            return;
-        }
         if (getCompost() >= compostType) {
             player.sendMessage("This patch has already been treated.");
             return;
