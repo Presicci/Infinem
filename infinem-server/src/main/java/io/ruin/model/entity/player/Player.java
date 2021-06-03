@@ -43,6 +43,7 @@ import io.ruin.model.item.actions.impl.tradepost.TradePost;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.containers.Inventory;
+import io.ruin.model.item.containers.SeedVault;
 import io.ruin.model.item.containers.Trade;
 import io.ruin.model.item.containers.bank.Bank;
 import io.ruin.model.item.containers.bank.BankPin;
@@ -767,6 +768,8 @@ public class Player extends PlayerAttributes {
 
     @Expose private LootingBag lootingBag;
 
+    @Expose private SeedVault seedVault;
+
     @Expose private RunePouch runePouch;
 
     public RunePouch getTournamentRunePouch() {
@@ -809,6 +812,10 @@ public class Player extends PlayerAttributes {
 
     public LootingBag getLootingBag() {
         return lootingBag;
+    }
+
+    public SeedVault getSeedVault() {
+        return seedVault;
     }
 
     public RunePouch getRunePouch() {
@@ -1067,6 +1074,10 @@ public class Player extends PlayerAttributes {
         if(lootingBag == null)
             lootingBag = new LootingBag();
         lootingBag.init(this, 28, -1, 63786, 516, false);
+
+        if(seedVault == null)
+            seedVault = new SeedVault();
+        seedVault.init(this, 90, 631, 15, 626, true);
 
         if(runePouch == null)
             runePouch = new RunePouch();
@@ -1427,6 +1438,7 @@ public class Player extends PlayerAttributes {
         equipment.sendUpdates();
         bank.sendUpdates();
         lootingBag.sendUpdates();
+        seedVault.sendUpdates();
         runePouch.sendUpdates();
         tournamentRunePouch.sendUpdates();
         box.sendUpdates();
@@ -1655,6 +1667,8 @@ public class Player extends PlayerAttributes {
             return getBank();
         } else if (getLootingBag().contains(itemId)) {
             return getLootingBag();
+        } else if (getSeedVault().contains(itemId)) {
+            return getSeedVault();
         } else if (getDeathStorage().contains(itemId)) {
             return getDeathStorage();
         } else if (getPrivateRaidStorage().contains(itemId)) {

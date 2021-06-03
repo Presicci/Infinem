@@ -278,6 +278,8 @@ public class Interface {
 
     public static final int SEED_VAULT = 631;
 
+    public static final int SEED_VAULT_INVENTORY = 630;
+
     public static final int PEST_CONTROL_SCOREBOARD = 628;
 
     public static final int COLLECTION_LOG = 621;

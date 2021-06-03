@@ -741,6 +741,20 @@ public class Config {
     public static final Config SILVER_QUANTITY = varpbit(2224, false);
 
     /**
+     * Seed Vault
+     */
+    public static final Config SEED_VAULT_QUANTITY = varp(2195, false).defaultValue(1);
+    public static final Config SEED_VAULT_FAVORITE_1 = varpbit(8172, true).defaultValue(255);
+    public static final Config SEED_VAULT_FAVORITE_2 = varpbit(8173, true).defaultValue(255);
+    public static final Config SEED_VAULT_FAVORITE_3 = varpbit(8174, true).defaultValue(255);
+    public static final Config SEED_VAULT_FAVORITE_4 = varpbit(8175, true).defaultValue(255);
+    public static final Config SEED_VAULT_FAVORITE_5 = varpbit(8176, true).defaultValue(255);
+    public static final Config SEED_VAULT_FAVORITE_6 = varpbit(8177, true).defaultValue(255);
+    public static final Config SEED_VAULT_FAVORITE_7 = varpbit(8178, true).defaultValue(255);
+    public static final Config SEED_VAULT_FAVORITE_8 = varpbit(8179, true).defaultValue(255);
+    //varp 8172 - 8179 favorite related? 255 = free slot
+
+    /**
      * Separator
      */
 
