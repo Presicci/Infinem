@@ -697,6 +697,7 @@ public class Config {
     public static final Config LEAGUE_POINTS2 = varpbit(2615, false);
     public static final Config LEAGUE_TASKS_COMPLETED = varpbit(2610, false);
     public static final Config LEAGUE_THING = varpbit(2810, false);
+    public static final Config LEAGUE_A = varpbit(10032, false);
 
     /**
      * Catacombs entrances
