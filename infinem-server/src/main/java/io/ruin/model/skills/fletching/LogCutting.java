@@ -218,7 +218,7 @@ public enum LogCutting {
 
         ItemAction.registerInventory(CELASTRUS_BARK, "fletch", (player, id) -> {
             if (!player.getInventory().hasId(Tool.KNIFE)) {
-                player.sendMessage("You need a knife to fletch.");
+                player.sendMessage("You need a knife to fletch the bark.");
                 return;
             }
             SkillDialogue.make(player, item(BATTLESTAFF));
