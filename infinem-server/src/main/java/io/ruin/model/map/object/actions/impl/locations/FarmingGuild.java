@@ -1,16 +1,16 @@
 package io.ruin.model.map.object.actions.impl.locations;
 
-import io.ruin.cache.ItemDef;
-import io.ruin.model.activities.warriorsguild.Cyclops;
-import io.ruin.model.activities.warriorsguild.WarriorsGuild;
+import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.shared.StepType;
-import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
-import io.ruin.model.item.Item;
-import io.ruin.model.item.actions.impl.skillcapes.AttackSkillCape;
+import io.ruin.model.inter.dialogue.NPCDialogue;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.farming.farmer.Farmer;
+import io.ruin.model.skills.farming.patch.Patch;
+import io.ruin.model.skills.farming.patch.PatchData;
 import io.ruin.model.stat.StatType;
 
 /**
@@ -44,5 +44,25 @@ public class FarmingGuild {
     static {
         ObjectAction.register(34463, "open", FarmingGuild::enterGuild);
         ObjectAction.register(34464, "open", FarmingGuild::enterGuild);
+
+        NPCAction.register(8536, 1, (player, npc) -> {
+            Patch patch = player.getFarming().getPatch(PatchData.FARMING_GUILD_REDWOOD.getObjectId());
+            if (patch.isFullyGrown()) {
+                player.dialogue(new NPCDialogue(8536, "Would you like me to clear your redwood tree?"),
+                        new OptionsDialogue("Want me to clear your tree?",
+                                new Option("Yes", p -> {
+                                    patch.reset(false);
+                                    player.dialogue(new NPCDialogue(8536, "The patch has been cleared up!"));
+                                }),
+                                new Option("No")
+                        ));
+            } else {
+                player.dialogue(new NPCDialogue(8536, "Would you like me to watch over your redwood tree for you?"),
+                        new OptionsDialogue("Want me to watch over your tree?",
+                                new Option("Yes", p -> Farmer.attemptPayment(p, npc, PatchData.FARMING_GUILD_REDWOOD)),
+                                new Option("No")
+                        ));
+            }
+        });
     }
 }
