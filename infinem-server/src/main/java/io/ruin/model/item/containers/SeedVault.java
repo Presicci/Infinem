@@ -146,10 +146,22 @@ public class SeedVault extends ItemContainer {
     }
 
     public void deposit(Item item, int amount) {
+        boolean found = false;
         if (Arrays.stream(seeds).anyMatch(i -> i == item.getId())) {
-            if(item.move(item.getId(), amount, this) == 0)
+            if (item.move(item.getId(), amount, this) == 0) {
                 player.sendMessage("Not enough space in your seed vault.");
-        } else {
+            }
+            found = true;
+        } else if (Arrays.stream(seeds).anyMatch(i -> i == item.getDef().notedId)) {
+            if (item.move(item.getId(), amount, this) == 0) {
+                player.sendMessage("Not enough space in your seed vault.");
+            }
+            int amt = this.findItem(item.getId()).getAmount();
+            this.findItem(item.getId()).remove();
+            this.add(new Item(item.getDef().notedId, amt));
+            found = true;
+        }
+        if (!found) {
             player.sendMessage("You can only put seeds in the seed vault.");
         }
     }
@@ -157,8 +169,16 @@ public class SeedVault extends ItemContainer {
     public void depositAll() {
         for (Item item : player.getInventory().getItems()) {
             if (Arrays.stream(seeds).anyMatch(i -> i == item.getId())) {
-                if(item.move(item.getId(), item.getAmount(), this) == 0)
+                if (item.move(item.getId(), item.getAmount(), this) == 0) {
                     player.sendMessage("Not enough space in your seed vault for <col=ffffff>" + item.getDef().name.toLowerCase() + "</col> .");
+                }
+            } else if (Arrays.stream(seeds).anyMatch(i -> i == item.getDef().notedId)) {
+                if (item.move(item.getId(), item.getAmount(), this) == 0) {
+                    player.sendMessage("Not enough space in your seed vault for <col=ffffff>" + item.getDef().name.toLowerCase() + "</col> .");
+                }
+                int amt = this.findItem(item.getId()).getAmount();
+                this.findItem(item.getId()).remove();
+                this.add(new Item(item.getDef().notedId, amt));
             }
         }
     }
