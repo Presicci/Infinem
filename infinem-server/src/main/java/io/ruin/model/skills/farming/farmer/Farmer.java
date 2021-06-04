@@ -7,6 +7,8 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.NPCDialogue;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.farming.patch.PatchData;
@@ -48,7 +50,14 @@ public enum Farmer {
     PRAISTAN_EBOLA(2686, PatchData.BRIMHAVEN_SPIRIT_TREE),
     FRIZZY_SKERNIP(2684, PatchData.PORT_SARIM_SPIRIT_TREE),
     YULF_SQUECKS(2685, PatchData.ETCETERIA_SPIRIT_TREE),
-    LAMMY_LANGLE(6814, PatchData.ZEAH_SPIRIT_TREE);
+    LAMMY_LANGLE(6814, PatchData.ZEAH_SPIRIT_TREE),
+
+    ROSIE(8534, PatchData.FARMING_GUILD_TREE),
+    TAYLOR(8629, PatchData.FARMING_GUILD_CELASTRUS),
+    LATLINK_FASTBELL(8537, PatchData.FARMING_GUILD_SPIRIT_TREE),
+    NIKKIE(8533, PatchData.FARMING_GUILD_FRUIT),
+    ALEXANDRA(8536, PatchData.FARMING_GUILD_REDWOOD),
+    ALAN(8535, PatchData.FARMING_GUILD_NORTH, PatchData.FARMING_GUILD_SOUTH);
 
     Farmer(int npcId, PatchData patch1, PatchData patch2) {
         this.npcId = npcId;
@@ -150,7 +159,16 @@ public enum Farmer {
             });
             if (farmer.patch1 != null) {
                 NPCAction.register(farmer.npcId, 3, (player, npc) -> {
-                    attemptPayment(player, npc, farmer.patch1);
+                    if (farmer.npcId == 8535) {
+                        player.dialogue(new OptionsDialogue("Which patch would you like me to watch?",
+                                new Option("North Allotment", p -> attemptPayment(p, npc, farmer.patch1)),
+                                new Option("South Allotment", p -> attemptPayment(p, npc, farmer.patch2)),
+                                new Option("Bush", p -> attemptPayment(p, npc, PatchData.FARMING_GUILD_BUSH)),
+                                new Option("Cactus", p -> attemptPayment(p, npc, PatchData.FARMING_GUILD_CACTUS))
+                        ));
+                    } else {
+                        attemptPayment(player, npc, farmer.patch1);
+                    }
                 });
             }
             if (farmer.patch2 != null) {
