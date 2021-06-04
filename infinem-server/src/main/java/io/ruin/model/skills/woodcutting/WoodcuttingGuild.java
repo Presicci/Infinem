@@ -45,7 +45,7 @@ public class WoodcuttingGuild {
         return player.getPosition().inBounds(BOOST_AREA_1) || player.getPosition().inBounds(BOOST_AREA_2);
     }
 
-    private static void ropeLadder(Player player, GameObject ladder, int offsetX, int anim, int height) {
+    public static void ropeLadder(Player player, GameObject ladder, int offsetX, int anim, int height) {
         player.startEvent(event -> {
             player.lock();
             player.animate(anim);
