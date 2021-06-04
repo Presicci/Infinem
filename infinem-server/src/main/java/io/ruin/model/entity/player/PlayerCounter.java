@@ -222,11 +222,13 @@ public enum PlayerCounter {
     HARVESTED_SWEETCORN((p, amt) -> p.harvestedSweetcorn = amt, p -> p.harvestedSweetcorn),
     HARVESTED_STRAWBERRY((p, amt) -> p.harvestedStrawberry = amt, p -> p.harvestedStrawberry),
     HARVESTED_WATERMELON((p, amt) -> p.harvestedWatermelon = amt, p -> p.harvestedWatermelon),
+    HARVESTED_SNAPE_GRASS((p, amt) -> p.harvestedSnapeGrass = amt, p -> p.harvestedSnapeGrass),
     HARVESTED_MARIGOLDS((p, amt) -> p.harvestedMarigolds = amt, p -> p.harvestedMarigolds),
     HARVESTED_ROSEMARY((p, amt) -> p.harvestedRosemary = amt, p -> p.harvestedRosemary),
     HARVESTED_NASTURTIUM((p, amt) -> p.harvestedNasturtium = amt, p -> p.harvestedNasturtium),
     HARVESTED_WOAD((p, amt) -> p.harvestedWoad = amt, p -> p.harvestedWoad),
     HARVESTED_LIMPWURT((p, amt) -> p.harvestedLimpwurt = amt, p -> p.harvestedLimpwurt),
+    HARVESTED_WHITE_LILY((p, amt) -> p.harvestedWhiteLily = amt, p -> p.harvestedWhiteLily),
 
     HARVESTED_GUAM((p, amt) -> p.harvestedGuam = amt, p -> p.harvestedGuam, Achievement.MY_ARMS_PATCH),
     HARVESTED_MARRENTILL((p, amt) -> p.harvestedMarrentill = amt, p -> p.harvestedMarrentill, Achievement.MY_ARMS_PATCH),
@@ -272,6 +274,8 @@ public enum PlayerCounter {
     GROWN_CALQUAT((p, amt) -> p.grownCalquat = amt, p -> p.grownCalquat),
     GROWN_CACTUS((p, amt) -> p.grownCactus = amt, p -> p.grownCactus),
     GROWN_SPIRIT_TREE((p, amt) -> p.grownSpiritTree = amt, p -> p.grownSpiritTree),
+    GROWN_CELASTRUS_TREE((p, amt) -> p.grownCelastrusTree = amt, p -> p.grownCelastrusTree),
+    GROWN_REDWOOD_TREE((p, amt) -> p.grownRedwoodTree = amt, p -> p.grownRedwoodTree),
 
     /**
      * Fishing

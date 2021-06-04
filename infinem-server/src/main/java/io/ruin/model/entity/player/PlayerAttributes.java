@@ -327,12 +327,14 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int harvestedSweetcorn;
     @Expose public int harvestedStrawberry;
     @Expose public int harvestedWatermelon;
+    @Expose public int harvestedSnapeGrass;
 
     @Expose public int harvestedMarigolds;
     @Expose public int harvestedRosemary;
     @Expose public int harvestedNasturtium;
     @Expose public int harvestedWoad;
     @Expose public int harvestedLimpwurt;
+    @Expose public int harvestedWhiteLily;
 
     @Expose public int harvestedGuam;
     @Expose public int harvestedMarrentill;
@@ -384,6 +386,10 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int grownCactus;
 
     @Expose public int grownSpiritTree;
+
+    @Expose public int grownCelastrusTree;
+
+    @Expose public int grownRedwoodTree;
 
     /**
      * Clue scrolls
