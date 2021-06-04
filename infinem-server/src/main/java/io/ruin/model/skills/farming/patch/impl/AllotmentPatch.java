@@ -73,14 +73,28 @@ public class AllotmentPatch extends Patch {
         watered = false;
     }
 
+    private static int[] snapeGrassDisease = { 0, 196, 197, 198, 202, 203, 204 };
+    private static int[] snapeGrassDead = { 0, 193, 194, 195, 209, 210, 211 };
 
     @Override
     public int getCropVarpbitValue() {
         int value = getPlantedCrop().getContainerIndex() + getStage();
-        if (watered)
-            value |= 1 << 6;
-        else if (getDiseaseStage() > 0)
-            value |= (getDiseaseStage() + 1) << 6;
+        if (((AllotmentCrop) getPlantedCrop()) == AllotmentCrop.SNAPE_GRASS && getStage() == getPlantedCrop().getTotalStages()) {
+            value = 138;
+        }
+        if ((AllotmentCrop) getPlantedCrop() == AllotmentCrop.SNAPE_GRASS) {
+            if (watered)
+                value -= 65;
+            else if (getDiseaseStage() == 1)
+                value = snapeGrassDisease[stage];
+            else if (getDiseaseStage() == 2)
+                value = snapeGrassDead[stage];
+        } else {
+            if (watered)
+                value |= 1 << 6;
+            else if (getDiseaseStage() > 0)
+                value |= (getDiseaseStage() + 1) << 6;
+        }
         return value;
     }
 
