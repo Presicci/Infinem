@@ -65,15 +65,6 @@ public class FruitTreePatch extends RegrowPatch {
     }
 
     @Override
-    public void tick() {
-        super.tick();
-        if (getPlantedCrop() != null && getStage() == getPlantedCrop().getTotalStages() + 2) { // regrow tree
-            setStage(getStage() - 1);
-            update();
-        }
-    }
-
-    @Override
     public void cropInteract() {
         if (getStage() == getPlantedCrop().getTotalStages()) {
             checkHealth();
