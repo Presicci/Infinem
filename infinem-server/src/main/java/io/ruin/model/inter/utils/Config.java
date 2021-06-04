@@ -431,6 +431,14 @@ public class Config {
     public static final Config FARMING_PATCH_2 = varpbit(4772, false);
     public static final Config FARMING_PATCH_3 = varpbit(4773, false);
     public static final Config FARMING_PATCH_4 = varpbit(4774, false);
+    public static final Config FARMING_PATCH_7912 = varpbit(7912, false);
+    public static final Config FARMING_PATCH_7911 = varpbit(7911, false);
+    public static final Config FARMING_PATCH_7910 = varpbit(7910, false);
+    public static final Config FARMING_PATCH_7909 = varpbit(7909, false);
+    public static final Config FARMING_PATCH_7907 = varpbit(7907, false);
+    public static final Config FARMING_PATCH_7906 = varpbit(7906, false);
+    public static final Config FARMING_PATCH_7905 = varpbit(7905, false);
+    public static final Config FARMING_PATCH_7904 = varpbit(7904, false);
     public static final Config FARMING_COMPOST_BIN = varpbit(4775, false);
 
     public static final Config STORAGE_RAKE = varpbit(1435, true);
