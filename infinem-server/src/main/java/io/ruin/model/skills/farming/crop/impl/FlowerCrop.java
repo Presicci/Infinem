@@ -9,7 +9,8 @@ public enum FlowerCrop implements Crop {
 	ROSEMARY(5097, 6014, 11, 12, 66.5, TimeUtils.getMinutesToMillis(5), 13, PlayerCounter.HARVESTED_ROSEMARY),
 	NASTURTIUM(5098, 6012, 24, 19.5, 111, TimeUtils.getMinutesToMillis(5), 18, PlayerCounter.HARVESTED_NASTURTIUM),
 	WOAD(5099, 1793, 25, 20.5, 115.5, TimeUtils.getMinutesToMillis(5), 23, PlayerCounter.HARVESTED_WOAD),
-	LIMPWURT(5100, 225, 26, 21.5, 120.0, TimeUtils.getMinutesToMillis(5), 28, PlayerCounter.HARVESTED_LIMPWURT);
+	LIMPWURT(5100, 225, 26, 21.5, 120.0, TimeUtils.getMinutesToMillis(5), 28, PlayerCounter.HARVESTED_LIMPWURT),
+	WHITE_LILY(22887, 22932, 58, 42, 250, TimeUtils.getMinutesToMillis(5), 37, PlayerCounter.HARVESTED_WHITE_LILY);
 
 	FlowerCrop(int seedId, int produceId, int levelReq, double plantXP, double harvestXP, long stageTime,
 			   int containerIndex, PlayerCounter counter) {
