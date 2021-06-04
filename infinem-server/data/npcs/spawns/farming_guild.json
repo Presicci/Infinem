@@ -1,0 +1,165 @@
+[
+  // 4922
+  {
+    "name": "Guildmaster Jane",
+    "id": 8587,
+    "x": 1247,
+    "y": 3726,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Alan",
+    "id": 8535,
+    "x": 1266,
+    "y": 3736,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Tool Leprechaun",
+    "id": 0,
+    "x": 1262,
+    "y": 3731,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Master Farmer",
+    "id": 3258,
+    "x": 1263,
+    "y": 3723,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Allanna",
+    "id": 8531,
+    "x": 1250,
+    "y": 3734,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Garden Supplier",
+    "id": 8516,
+    "x": 1247,
+    "y": 3736,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Amelia",
+    "id": 8530,
+    "x": 1246,
+    "y": 3741,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Tool Leprechaun",
+    "id": 0,
+    "x": 1236,
+    "y": 3732,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Rosie",
+    "id": 8534,
+    "x": 1232,
+    "y": 3734,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Master Farmer",
+    "id": 3257,
+    "x": 1236,
+    "y": 3725,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Felfiz Yaryus",
+    "id": 8595,
+    "x": 1229,
+    "y": 3724,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Tool Leprechaun",
+    "id": 0,
+    "x": 1252,
+    "y": 3756,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Nikkie",
+    "id": 8533,
+    "x": 1241,
+    "y": 3757,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Latlink Fastbell",
+    "id": 8537,
+    "x": 1255,
+    "y": 3751,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Taylor",
+    "id": 8629,
+    "x": 1246,
+    "y": 3751,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Alexandra",
+    "id": 8536,
+    "x": 1234,
+    "y": 3752,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Master Farmer",
+    "id": 3257,
+    "x": 1250,
+    "y": 3748,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Tool Leprechaun",
+    "id": 0,
+    "x": 1234,
+    "y": 3761,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  }
+]
