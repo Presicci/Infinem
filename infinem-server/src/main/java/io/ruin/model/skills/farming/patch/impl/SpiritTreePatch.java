@@ -14,6 +14,7 @@ public class SpiritTreePatch extends Patch {
     public static final Position PORT_SARIM_TELEPORT = new Position(3060, 3256, 0);
     public static final Position ETCETERIA_TELEPORT = new Position(2800, 3203, 0);
     public static final Position ZEAH_TELEPORT = new Position(1691, 3542, 0);
+    public static final Position FARMING_GUILD_TELEPORT = new Position(1251, 3750, 0);
 
     private Position teleportPosition;
 
@@ -66,8 +67,6 @@ public class SpiritTreePatch extends Patch {
             SpiritTree.open(player);
         else if (option == 3)
             player.sendMessage((getPlantedCrop() == null ? "The patch is clear for new crops. " : "The patch has something growing on it. ") + (getCompost() > 0 ? "It has been treated with " + (getCompost() == 1 ? "regular" : "super") + " compost." : ""));
-        else if (option == 4)
-            ; // TODO open guide
     }
 
 
@@ -112,6 +111,9 @@ public class SpiritTreePatch extends Patch {
             count++;
         }
         if (player.getFarming().getEtceteriaSpiritTree().getPlantedCrop() != null) {
+            count++;
+        }
+        if (player.getFarming().getFarmingGuildSpiritTree().getPlantedCrop() != null) {
             count++;
         }
         return count;
