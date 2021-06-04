@@ -23,18 +23,21 @@ public class Farming {
     private Player player;
     private Map<Integer, Patch> patches = new HashMap<>();
     @Expose private ToolStorage storage = new ToolStorage();
-    @Expose private CompostBin faladorCompostBin, canifisCompostBin, catherbyCompostBin, ardougneCompostBin, zeahCompostBin;
-    @Expose private HerbPatch canifisHerb, ardougneHerb, faladorHerb, catherbyHerb, trollheimHerb, zeahHerb;
-    @Expose private FlowerPatch faladorFlower, catherbyFlower, ardougneFlower, canifisFlower, zeahFlower;
-    @Expose private AllotmentPatch faladorNorth, faladorSouth, catherbyNorth, catherbySouth, ardougneNorth, ardougneSouth, canifisNorth, canifisSouth, zeahNorth, zeahSouth;
-    @Expose private WoodTreePatch lumbridgeTree, faladorTree, varrockTree, gnomeTree, taverleyTree;
-    @Expose private FruitTreePatch catherbyFruit, brimhavenFruit, gnomeFruit, villageFruit, lletyaFruit;
-    @Expose private BushPatch varrockBush, ardougneBush, etceteriaBush, rimmingtonBush;
+    @Expose private CompostBin faladorCompostBin, canifisCompostBin, catherbyCompostBin, ardougneCompostBin, zeahCompostBin, farmingGuildCompost;
+    @Expose private HerbPatch canifisHerb, ardougneHerb, faladorHerb, catherbyHerb, trollheimHerb, zeahHerb, farmingGuildHerb;
+    @Expose private FlowerPatch faladorFlower, catherbyFlower, ardougneFlower, canifisFlower, zeahFlower, farmingGuildFlower;
+    @Expose private AllotmentPatch faladorNorth, faladorSouth, catherbyNorth, catherbySouth, ardougneNorth, ardougneSouth, canifisNorth, canifisSouth, zeahNorth, zeahSouth, farmingGuildNorth, farmingGuildSouth;
+    @Expose private WoodTreePatch lumbridgeTree, faladorTree, varrockTree, gnomeTree, taverleyTree, farmingGuildTree;
+    @Expose private FruitTreePatch catherbyFruit, brimhavenFruit, gnomeFruit, villageFruit, lletyaFruit, farmingGuildFruit;
+    @Expose private BushPatch varrockBush, ardougneBush, etceteriaBush, rimmingtonBush, farmingGuildBush;
     @Expose private HopsPatch lumbridgeHops, seersHops, yanilleHops, entranaHops;
     @Expose private CalquatTreePatch calquat;
-    @Expose private CactusPatch cactus;
-    @Expose private SpiritTreePatch brimhavenSpiritTree, etceteriaSpiritTree, portSarimSpiritTree, zeahSpiritTree;
+    @Expose private CactusPatch cactus, farmingGuildCactus;
+    @Expose private CelastrusPatch celastrus;
+    @Expose private SpiritTreePatch brimhavenSpiritTree, etceteriaSpiritTree, portSarimSpiritTree, zeahSpiritTree, farmingGuildSpiritTree;
     @Expose private MushroomPatch canifisMushroom;
+    @Expose private RedwoodPatch redwood;
+    @Expose private AnimaPatch anima;
 
     private PatchGroup visibleGroup;
 
@@ -126,6 +129,31 @@ public class Farming {
             canifisMushroom = new MushroomPatch();
         }
 
+        if (celastrus == null) {
+            celastrus = new CelastrusPatch();
+        }
+
+        if (redwood == null) {
+            redwood = new RedwoodPatch();
+        }
+
+        if (anima == null) {
+            anima = new AnimaPatch();
+        }
+
+        if (farmingGuildNorth == null) {
+            farmingGuildBush = new BushPatch();
+            farmingGuildNorth = new AllotmentPatch();
+            farmingGuildSpiritTree = new SpiritTreePatch();
+            farmingGuildCactus = new CactusPatch();
+            farmingGuildTree = new WoodTreePatch();
+            farmingGuildSouth = new AllotmentPatch();
+            farmingGuildHerb = new HerbPatch();
+            farmingGuildCompost = new CompostBin();
+            farmingGuildFlower = new FlowerPatch();
+            farmingGuildFruit = new FruitTreePatch();
+        }
+
         addPatch(faladorCompostBin.set(PatchData.FALADOR_COMPOST_BIN).setPlayer(player));
         addPatch(catherbyCompostBin.set(PatchData.CATHERBY_COMPOST_BIN).setPlayer(player));
         addPatch(canifisCompostBin.set(PatchData.CANIFIS_COMPOST_BIN).setPlayer(player));
@@ -187,19 +215,43 @@ public class Farming {
         addPatch(etceteriaSpiritTree.setTeleportPosition(SpiritTreePatch.ETCETERIA_TELEPORT).set(PatchData.ETCETERIA_SPIRIT_TREE).setPlayer(player));
         addPatch(zeahSpiritTree.setTeleportPosition(SpiritTreePatch.ZEAH_TELEPORT).set(PatchData.ZEAH_SPIRIT_TREE).setPlayer(player));
 
+        addPatch(farmingGuildSpiritTree.setTeleportPosition(SpiritTreePatch.FARMING_GUILD_TELEPORT).set(PatchData.FARMING_GUILD_SPIRIT_TREE).setPlayer(player));
+        addPatches(redwood.set(PatchData.FARMING_GUILD_REDWOOD).setPlayer(player), 34051, 34052, 34053, 34054, 34055, 34056, 34057, 34058, 34059,
+                34637, 34639, 34635, 34633  // Upper level chop objects
+        );
+        addPatch(anima.set(PatchData.FARMING_GUILD_ANIMA).setPlayer(player));
+        addPatch(celastrus.set(PatchData.FARMING_GUILD_CELASTRUS).setPlayer(player));
+        addPatch(farmingGuildBush.set(PatchData.FARMING_GUILD_BUSH).setPlayer(player));
+        addPatch(farmingGuildTree.set(PatchData.FARMING_GUILD_TREE).setPlayer(player));
+        addPatch(farmingGuildHerb.set(PatchData.FARMING_GUILD_HERB).setPlayer(player));
+        addPatch(farmingGuildCactus.set(PatchData.FARMING_GUILD_CACTUS).setPlayer(player));
+        addPatch(farmingGuildNorth.set(PatchData.FARMING_GUILD_NORTH, farmingGuildFlower).setPlayer(player));
+        addPatch(farmingGuildSouth.set(PatchData.FARMING_GUILD_SOUTH, farmingGuildFlower).setPlayer(player));
+        addPatch(farmingGuildFlower.set(PatchData.FARMING_GUILD_FLOWER).setPlayer(player));
+        addPatch(farmingGuildFruit.set(PatchData.FARMING_GUILD_FRUIT).setPlayer(player));
+        addPatch(farmingGuildCompost.set(PatchData.FARMING_GUILD_COMPOST_BIN).setPlayer(player));
+
         addPatch(canifisMushroom.set(PatchData.CANIFIS_MUSHROOM).setPlayer(player));
 
         patches.forEach((id, patch) -> patch.onLoad()); // force ticks
         refresh();
         player.addEvent(event -> { // absolutely disgusting
             while (true) {
-                event.delay(20);
+                if (player.debug) {
+                    event.delay(1);
+                } else {
+                    event.delay(20);
+                }
                 refresh();
             }
         });
         player.addEvent(event -> {
             while (true) {
-                event.delay(50);
+                if (player.debug) {
+                    event.delay(1);
+                } else {
+                    event.delay(50);
+                }
                 tick();
             }
         }); // farming tick
@@ -250,6 +302,12 @@ public class Farming {
         patches.put(patch.getObjectId(), patch);
     }
 
+    public void addPatches(Patch patch, int... objectIds) {
+        for (int id : objectIds) {
+            patches.put(id, patch);
+        }
+    }
+
     public boolean handleObject(GameObject obj, int option) {
         Patch patch = patches.get(obj.id);
         if (patch != null) {
@@ -297,6 +355,9 @@ public class Farming {
         Collections.addAll(CROPS, MushroomCrop.values());
         Collections.addAll(CROPS, BushCrop.values());
         Collections.addAll(CROPS, HopsCrop.values());
+        Collections.addAll(CROPS, AnimaCrop.values());
+        Collections.addAll(CROPS, RedwoodCrop.INSTANCE);
+        Collections.addAll(CROPS, CelastrusCrop.INSTANCE);
         Collections.addAll(CROPS, CalquatCrop.INSTANCE);
         Collections.addAll(CROPS, CactusCrop.INSTANCE);
         Collections.addAll(CROPS, SpiritTreeCrop.INSTANCE);
@@ -365,6 +426,10 @@ public class Farming {
 
     public SpiritTreePatch getEtceteriaSpiritTree() {
         return etceteriaSpiritTree;
+    }
+
+    public SpiritTreePatch getFarmingGuildSpiritTree() {
+        return farmingGuildSpiritTree;
     }
 
     public SpiritTreePatch getPortSarimSpiritTree() {
