@@ -166,7 +166,8 @@ public abstract class Patch {
     protected boolean isNextStageReady() {
         if (getPlantedCrop() == null)
             return false;
-        int actualStage = (int) Math.floor(getTimeElapsed() / (plantedCrop.getStageTime()));
+        long stageTime = player.debug ? plantedCrop.getStageTime() / 500 : plantedCrop.getStageTime();
+        int actualStage = (int) Math.floor(getTimeElapsed() / (stageTime));
         return stage < plantedCrop.getTotalStages() && actualStage > stage && !isDead();
     }
 
@@ -423,7 +424,6 @@ public abstract class Patch {
     }
 
     public boolean removeProduce() {
-
         if ((player.getEquipment().getId(Equipment.SLOT_WEAPON) == 7409 || player.getInventory().contains(7409, 1)) && Random.get() < (0.2)) { // magic secateurs, save a "life"
             player.sendFilteredMessage("<col=00ffff>Your magic secateurs allow you to efficiently harvest the crops.");
             return false;
@@ -469,21 +469,21 @@ public abstract class Patch {
             TabStats.openGuide(player, StatType.Farming, data.getGuideChildId());
     }
 
-    private void inspect() {
+    protected void inspect() {
         String msg = "";
         msg += "This is " + getPatchName() + " patch. ";
         if (getCompost() == 0) {
             msg += "The soil has not been treated. ";
         } else {
             msg += "The soil has been trated with ";
-            msg += getCompost() == 1 ? "compost" : "supercompost";
+            msg += getCompost() == 1 ? "compost" : (getCompost() == 3 ? "ultracompost" : "supercompost");
             msg +=  ". ";
         }
         if (getPlantedCrop() == null) {
             if (isRaked())
                 msg += "The patch is clear for new crops. ";
             else
-                msg += "The patch neeeds weeding.";
+                msg += "The patch needs weeding.";
         } else {
             msg += "The patch has something growing in it.";
         }
