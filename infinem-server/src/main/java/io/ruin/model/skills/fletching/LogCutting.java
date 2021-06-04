@@ -4,6 +4,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
@@ -63,6 +64,7 @@ public enum LogCutting {
     CORRUPT_LONGBOW(30105, 92, 70.0, new Item(30157, 1), "a corrupt longbow", "makes a corrupt longbow from corrupted logs"),
     CORRUPT_PICKAXE_HANDLE(30105, 90, 50.0, new Item(30092, 1), "a corrupt pickaxe handle", "makes a corrupt pickaxe handle from corrupted logs"),
 
+    BATTLESTAFF(22935, 40, 80, new Item(1391, 1), "a battlestaff", "make a battlestaff"),
     ;
 
 
@@ -118,6 +120,7 @@ public enum LogCutting {
     private static final int YEW_LOG = 1515;
     private static final int MAGIC_LOG = 1513;
     private static final int CORRUPT_LOG = 30105;
+    private static final int CELASTRUS_BARK = 22935;
 
     static {
         /**
@@ -204,8 +207,22 @@ public enum LogCutting {
         /**
          * Corrupt log
          */
-        ItemItemAction.register(Tool.KNIFE, CORRUPT_LOG, (player, knife, magicLog) ->
+        ItemItemAction.register(Tool.KNIFE, CORRUPT_LOG, (player, knife, corruptLog) ->
                 SkillDialogue.make(player, item(CORRUPT_ARROW_SHAFT), item(CORRUPT_SHORTBOW), item(CORRUPT_LONGBOW), item(CORRUPT_PICKAXE_HANDLE)));
+
+        /**
+         * Celastrus bark
+         */
+        ItemItemAction.register(Tool.KNIFE, CELASTRUS_BARK, (player, knife, bark) ->
+                SkillDialogue.make(player, item(BATTLESTAFF)));
+
+        ItemAction.registerInventory(CELASTRUS_BARK, "fletch", (player, id) -> {
+            if (!player.getInventory().hasId(Tool.KNIFE)) {
+                player.sendMessage("You need a knife to fletch.");
+                return;
+            }
+            SkillDialogue.make(player, item(BATTLESTAFF));
+        });
 
     }
 
