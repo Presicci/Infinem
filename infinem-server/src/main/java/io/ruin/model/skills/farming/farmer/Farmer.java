@@ -74,7 +74,7 @@ public enum Farmer {
     private PatchData patch1;
     private PatchData patch2;
 
-    private static void attemptPayment(Player player, NPC npc, PatchData pd) {
+    public static void attemptPayment(Player player, NPC npc, PatchData pd) {
         Patch patch = player.getFarming().getPatch(pd.getObjectId());
         if (patch == null) {
             throw new IllegalArgumentException();
@@ -154,9 +154,9 @@ public enum Farmer {
 
     static {
         for (Farmer farmer : values()) {
-            NPCAction.register(farmer.npcId, 1, (player, npc) -> {
+            //NPCAction.register(farmer.npcId, 1, (player, npc) -> {
                 //TODO shop, navigate to payment
-            });
+            //});
             if (farmer.patch1 != null) {
                 NPCAction.register(farmer.npcId, 3, (player, npc) -> {
                     if (farmer.npcId == 8535) {
