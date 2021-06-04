@@ -53,6 +53,15 @@ public class RedwoodPatch extends Patch {
     }
 
     @Override
+    public boolean isFullyGrown() {
+        if (getPlantedCrop() == null) {
+            return false;
+        }
+        int stage = getCropVarpbitValue();
+        return stage == 37 || stage == 18 || stage > 40;
+    }
+
+    @Override
     public void clear() {
         if (getPlantedCrop() == null) {
             player.sendMessage("This patch doesn't have anything planted on it.");

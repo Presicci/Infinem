@@ -194,6 +194,10 @@ public abstract class Patch {
         return diseaseStage == 2;
     }
 
+    public boolean isFullyGrown() {
+        return false;
+    }
+
     public long getTimeElapsed() {
         return System.currentTimeMillis() - getTimePlanted();
     }
