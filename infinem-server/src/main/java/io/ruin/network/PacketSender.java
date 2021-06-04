@@ -276,6 +276,21 @@ public class PacketSender {
         write(out);
     }
 
+    /**
+     * 1,048,576 - 20 - ?
+     * 262,144 - 18 - Move item
+     * 1024 - 10 - Option 10
+     * 512 - 9 - Option 9
+     * 256 - 8 - Option 8
+     * 128 - 7 - Option 7
+     * 64 - 6 - Option 6
+     * 32 - 5 - Option 5
+     * 16 - 4 - Option 4
+     * 8 - 3 - Option 3
+     * 4 - 2 - Option 2
+     * 2 - 1 - Option 1
+     * 1 - 0 - Option 0
+     */
     public void sendAccessMask(int interfaceId, int childParentId, int minChildId, int maxChildId, int mask) {
         OutBuffer out = new OutBuffer(13).sendFixedPacket(27)
                 .addLEShort(minChildId)
