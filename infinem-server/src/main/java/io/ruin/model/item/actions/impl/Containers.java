@@ -81,6 +81,9 @@ public enum Containers {
             if (objDef.name.equalsIgnoreCase("tap"))
                 for (Containers container : values())
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.TAP));
+            if (objDef.name.equalsIgnoreCase("water tap"))
+                for (Containers container : values())
+                    ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.TAP));
         });
 
         /**
