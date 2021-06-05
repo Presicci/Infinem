@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.FruitTreeCrop;
+import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.farming.patch.RegrowPatch;
 import io.ruin.model.skills.woodcutting.Hatchet;
 import io.ruin.model.stat.StatType;
@@ -32,6 +33,7 @@ public class FruitTreePatch extends RegrowPatch {
 
     private void checkHealth() {
         player.sendMessage("You examine the tree and find that it is in perfect health.");
+        FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
         getPlantedCrop().getCounter().increment(player, 1);
         player.getStats().addXp(StatType.Farming, getPlantedCrop().getCheckHealthXP(), true);
         advanceStage();

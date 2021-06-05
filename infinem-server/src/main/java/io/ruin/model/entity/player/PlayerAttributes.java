@@ -42,6 +42,7 @@ import io.ruin.model.map.object.actions.impl.FairyRing;
 import io.ruin.model.skills.construction.House;
 import io.ruin.model.skills.construction.room.Room;
 import io.ruin.model.skills.construction.seat.Seat;
+import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.hunter.traps.Trap;
 import io.ruin.model.skills.magic.spells.modern.Teleother;
 import io.ruin.model.skills.slayer.SlayerTask;
@@ -391,6 +392,8 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public int grownRedwoodTree;
 
+    @Expose public int farmingContractsCompleted;
+
     /**
      * Clue scrolls
      */
@@ -672,6 +675,12 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int blackChinchompaBoostTimeLeft;
     public TickDelay darkCrabBoost = new TickDelay();
     @Expose public int darkCrabBoostTimeLeft;
+
+    /**
+     * Farming contracts
+     */
+    @Expose public FarmingContracts farmingContract;
+    @Expose public boolean contractCompleted;
 
     /**
      * Antifire

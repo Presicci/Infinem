@@ -3,6 +3,7 @@ package io.ruin.model.skills.farming.patch.impl;
 import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.BushCrop;
+import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.farming.patch.RegrowPatch;
 import io.ruin.model.stat.StatType;
 
@@ -35,6 +36,7 @@ public class BushPatch extends RegrowPatch {
     }
     private void checkHealth() {
         player.sendMessage("You examine the bush and find that it is in perfect health.");
+        FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
         getPlantedCrop().getCounter().increment(player, 1);
         player.getStats().addXp(StatType.Farming, ((BushCrop) getPlantedCrop()).getCheckHealthXP(), true);
         advanceStage();

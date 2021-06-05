@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.RedwoodCrop;
+import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.woodcutting.Tree;
 import io.ruin.model.skills.woodcutting.Woodcutting;
@@ -117,6 +118,7 @@ public class RedwoodPatch extends Patch {
 
     private void checkHealth() {
         player.sendMessage("You examine the tree and find that it is in perfect health.");
+        FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
         getPlantedCrop().getCounter().increment(player, 1);
         player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP(), true);
         northHarvested = false;

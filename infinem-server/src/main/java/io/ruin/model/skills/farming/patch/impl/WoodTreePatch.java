@@ -3,6 +3,7 @@ package io.ruin.model.skills.farming.patch.impl;
 import io.ruin.api.utils.Random;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.WoodTreeCrop;
+import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.woodcutting.Woodcutting;
 import io.ruin.model.stat.StatType;
@@ -69,6 +70,7 @@ public class WoodTreePatch extends Patch {
     private void checkHealth() {
         player.sendMessage("You examine the tree and find that it is in perfect health.");
         getPlantedCrop().getCounter().increment(player, 1);
+        FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
         player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP(), true);
         advanceStage();
         update();

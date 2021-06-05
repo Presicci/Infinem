@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.FlowerCrop;
+import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.stat.StatType;
 
@@ -31,8 +32,9 @@ public class FlowerPatch extends Patch {
                         return;
                     }
                     if (getProduceCount() == 0) {
-                        reset(false);
                         player.sendMessage("You've picked all the flowers from this patch.");
+                        FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
+                        reset(false);
                         return;
                     }
                     player.animate(2292);

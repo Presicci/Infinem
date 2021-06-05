@@ -6,6 +6,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.AllotmentCrop;
 import io.ruin.model.skills.farming.crop.impl.FlowerCrop;
+import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.farming.patch.PatchData;
 import io.ruin.model.stat.StatType;
@@ -120,8 +121,9 @@ public class AllotmentPatch extends Patch {
                     getPlantedCrop().getCounter().increment(player, 1);
                     removeProduce();
                     if (getProduceCount() == 0) {
-                        AllotmentPatch.this.reset(false);
                         player.sendMessage("You've harvested the patch completely.");
+                        FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
+                        AllotmentPatch.this.reset(false);
                         return;
                     }
                     event.delay(1);

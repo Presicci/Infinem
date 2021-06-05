@@ -28,7 +28,7 @@ public abstract class Patch {
     private Crop plantedCrop;
     @Expose private int plantedSeed = -1;
 
-    private PatchData data;
+    protected PatchData data;
     private boolean update;
 
     public Patch() {

@@ -9,6 +9,7 @@ import io.ruin.model.map.object.actions.impl.SpiritTree;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.CelastrusCrop;
 import io.ruin.model.skills.farming.crop.impl.SpiritTreeCrop;
+import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.woodcutting.Tree;
 import io.ruin.model.skills.woodcutting.Woodcutting;
@@ -35,6 +36,7 @@ public class CelastrusPatch extends Patch {
     //14, 15, 16, 17 chop
     private void checkHealth() {
         player.sendMessage("You examine the tree and find that it is in perfect health.");
+        FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
         getPlantedCrop().getCounter().increment(player, 1);
         player.getStats().addXp(StatType.Farming, ((CelastrusCrop)getPlantedCrop()).getCheckHealthXP(), true);
         advanceStage();

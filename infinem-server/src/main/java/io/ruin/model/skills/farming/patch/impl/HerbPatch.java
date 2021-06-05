@@ -7,6 +7,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.skillcapes.FarmingSkillCape;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.HerbCrop;
+import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.stat.StatType;
 
@@ -42,8 +43,9 @@ public class HerbPatch extends Patch {
                     return;
                 }
                 if (getProduceCount() == 0) {
-                    reset(false);
                     player.sendMessage("You've picked all the herbs from this patch.");
+                    FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
+                    reset(false);
                     return;
                 }
                 player.animate(2282);
