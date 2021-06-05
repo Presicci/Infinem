@@ -42,7 +42,7 @@ public enum Containers {
     }
 
     private enum WaterSource {
-        SINK, WATERPUMP, FOUNTAIN, WELL, TAP
+        SINK, WATERPUMP, FOUNTAIN, WELL, TAP, BARREL
     }
 
     private static void fillContainer(Player player, Item item, Containers waterContainer, WaterSource source) {
@@ -84,6 +84,9 @@ public enum Containers {
             if (objDef.name.equalsIgnoreCase("water tap"))
                 for (Containers container : values())
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.TAP));
+            if (objDef.name.equalsIgnoreCase("water barrel"))
+                for (Containers container : values())
+                    ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.BARREL));
         });
 
         /**
