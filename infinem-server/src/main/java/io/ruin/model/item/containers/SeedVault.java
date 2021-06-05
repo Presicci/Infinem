@@ -168,6 +168,9 @@ public class SeedVault extends ItemContainer {
 
     public void depositAll() {
         for (Item item : player.getInventory().getItems()) {
+            if (item == null) {
+                continue;
+            }
             if (Arrays.stream(seeds).anyMatch(i -> i == item.getId())) {
                 if (item.move(item.getId(), item.getAmount(), this) == 0) {
                     player.sendMessage("Not enough space in your seed vault for <col=ffffff>" + item.getDef().name.toLowerCase() + "</col> .");
