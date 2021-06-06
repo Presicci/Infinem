@@ -10,6 +10,8 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.TreeCrop;
+import io.ruin.model.skills.farming.crop.impl.AnimaCrop;
+import io.ruin.model.skills.farming.patch.impl.AnimaPatch;
 import io.ruin.model.skills.farming.patch.impl.BushPatch;
 import io.ruin.model.stat.StatType;
 
@@ -21,7 +23,7 @@ public abstract class Patch {
     @Expose private int raked;
     @Expose private long timePlanted;
     @Expose private int diseaseStage;
-    @Expose private int produceCount;
+    @Expose protected int produceCount;
     @Expose private long lastWeedGrowth;
 
     @Expose private boolean farmerProtected;
@@ -428,9 +430,21 @@ public abstract class Patch {
         this.produceCount = produceCount;
     }
 
+    public boolean hasGrowingAttas() {
+        Patch patch = player.getFarming().getPatch(PatchData.FARMING_GUILD_ANIMA.getObjectId());
+        if (patch.getPlantedCrop() == AnimaCrop.ATTAS && patch.getStage() != patch.getPlantedCrop().getTotalStages()) {
+            return true;
+        }
+        return false;
+    }
+
     public boolean removeProduce() {
         if ((player.getEquipment().getId(Equipment.SLOT_WEAPON) == 7409 || player.getInventory().contains(7409, 1)) && Random.get() < (0.2)) { // magic secateurs, save a "life"
-            player.sendFilteredMessage("<col=00ffff>Your magic secateurs allow you to efficiently harvest the crops.");
+            player.sendFilteredMessage("<col=076900>Your magic secateurs allow you to efficiently harvest the crop!");
+            return false;
+        }
+        if (hasGrowingAttas() && Random.get() < 0.05) {
+            player.sendFilteredMessage("<col=076900>Your Attas plant allow you to efficiently harvest the crop!");
             return false;
         }
         if (--produceCount <= 0) {
