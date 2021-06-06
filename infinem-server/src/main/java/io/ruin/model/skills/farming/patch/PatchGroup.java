@@ -71,7 +71,9 @@ public enum PatchGroup {
     CANIFIS_MUSHROOM(new Bounds(new Position(3452, 3473, 0), 25),
             Collections.singletonList(PatchData.CANIFIS_MUSHROOM)),
     FOSSIL_ISLAND(new Bounds(new Position(3708, 3836), 25),
-            Arrays.asList(PatchData.FOSSIL_ISLAND_HARDWOOD, PatchData.FOSSIL_ISLAND_HARDWOOD1, PatchData.FOSSIL_ISLAND_HARDWOOD2));
+            Arrays.asList(PatchData.FOSSIL_ISLAND_HARDWOOD, PatchData.FOSSIL_ISLAND_HARDWOOD1, PatchData.FOSSIL_ISLAND_HARDWOOD2)),
+    DRAYNOR_MANOR(new Bounds(new Position(3087, 3353), 25),
+            Collections.singletonList(PatchData.DRAYNOR_MANOR_BELLADONNA));
 
     private Bounds bounds;
     private List<PatchData> patches;
