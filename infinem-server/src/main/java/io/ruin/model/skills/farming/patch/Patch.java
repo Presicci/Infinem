@@ -10,6 +10,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.TreeCrop;
+import io.ruin.model.skills.farming.patch.impl.BushPatch;
 import io.ruin.model.stat.StatType;
 
 public abstract class Patch {
@@ -121,7 +122,7 @@ public abstract class Patch {
             if (isDead() || getPlantedCrop() == null || !isDiseased())
                 return;
             player.resetAnimation();
-            player.sendMessage("You prune the calquat tree, curing it of its disease.");
+            player.sendMessage("You prune the " + (this instanceof BushPatch ? "bush" : "tree") + ", curing it of its disease.");
             setDiseaseStage(0);
             update();
         });
