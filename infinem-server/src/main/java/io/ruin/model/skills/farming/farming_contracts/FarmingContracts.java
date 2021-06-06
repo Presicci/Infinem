@@ -138,7 +138,7 @@ public enum FarmingContracts {
     }
 
     public static void completeFarmingContract(Player player, Crop crop, PatchData patchData) {
-        if (player.farmingContract == null || crop == null || crop != player.farmingContract.crop) {
+        if (player.farmingContract == null || crop == null || crop != player.farmingContract.crop || player.contractCompleted) {
             return;
         }
         if (Arrays.stream(player.farmingContract.patches).anyMatch(p -> p == patchData)) {
