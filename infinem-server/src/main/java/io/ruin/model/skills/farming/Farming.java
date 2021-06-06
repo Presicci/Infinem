@@ -38,6 +38,7 @@ public class Farming {
     @Expose private MushroomPatch canifisMushroom;
     @Expose private RedwoodPatch redwood;
     @Expose private AnimaPatch anima;
+    @Expose private HardWoodTreePatch hardWoodTreeOne, hardWoodTreeTwo, hardWoodTreeThree;
 
     private PatchGroup visibleGroup;
 
@@ -154,6 +155,12 @@ public class Farming {
             farmingGuildFruit = new FruitTreePatch();
         }
 
+        if (hardWoodTreeOne == null) {
+            hardWoodTreeOne = new HardWoodTreePatch();
+            hardWoodTreeTwo = new HardWoodTreePatch();
+            hardWoodTreeThree = new HardWoodTreePatch();
+        }
+
         addPatch(faladorCompostBin.set(PatchData.FALADOR_COMPOST_BIN).setPlayer(player));
         addPatch(catherbyCompostBin.set(PatchData.CATHERBY_COMPOST_BIN).setPlayer(player));
         addPatch(canifisCompostBin.set(PatchData.CANIFIS_COMPOST_BIN).setPlayer(player));
@@ -232,6 +239,10 @@ public class Farming {
         addPatch(farmingGuildCompost.set(PatchData.FARMING_GUILD_COMPOST_BIN).setPlayer(player));
 
         addPatch(canifisMushroom.set(PatchData.CANIFIS_MUSHROOM).setPlayer(player));
+
+        addPatch(hardWoodTreeOne.set(PatchData.FOSSIL_ISLAND_HARDWOOD).setPlayer(player));
+        addPatch(hardWoodTreeTwo.set(PatchData.FOSSIL_ISLAND_HARDWOOD1).setPlayer(player));
+        addPatch(hardWoodTreeThree.set(PatchData.FOSSIL_ISLAND_HARDWOOD2).setPlayer(player));
 
         patches.forEach((id, patch) -> patch.onLoad()); // force ticks
         refresh();
@@ -361,6 +372,7 @@ public class Farming {
         Collections.addAll(CROPS, CalquatCrop.INSTANCE);
         Collections.addAll(CROPS, CactusCrop.values());
         Collections.addAll(CROPS, SpiritTreeCrop.INSTANCE);
+        Collections.addAll(CROPS, HardWoodTreeCrop.values());
         ItemDef.cached.values().stream().filter(Objects::nonNull).forEach(def -> {
             def.produceOf = getCropForProduce(def.id);
             def.seedType = getCropForSeed(def.id);
