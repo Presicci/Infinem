@@ -245,6 +245,7 @@ public enum PlayerCounter {
     HARVESTED_DWARF_WEED((p, amt) -> p.harvestedDwarfWeed = amt, p -> p.harvestedDwarfWeed, Achievement.MY_ARMS_PATCH),
     HARVESTED_TORSTOL((p, amt) -> p.harvestedTorstol = amt, p -> p.harvestedTorstol, Achievement.MY_ARMS_PATCH),
 
+    HARVESTED_NIGHTSHADE((p, amt) -> p.harvestedNightshade = amt, p -> p.harvestedNightshade),
     HARVESTED_BITTERCAP((p, amt) -> p.harvestedBittercap = amt, p -> p.harvestedBittercap),
     GROWN_APPLE((p, amt) -> p.grownApple = amt, p -> p.grownApple),
     GROWN_BANANA((p, amt) -> p.grownBanana = amt, p -> p.grownBanana),
