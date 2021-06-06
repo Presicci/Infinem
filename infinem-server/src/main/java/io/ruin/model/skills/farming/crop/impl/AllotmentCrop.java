@@ -4,9 +4,11 @@ import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.farming.crop.Crop;
+import lombok.AllArgsConstructor;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
+@AllArgsConstructor
 public enum AllotmentCrop implements Crop {
 	POTATO(5318, 1942, 1, 8, 9, 4, FlowerCrop.MARIGOLDS, new Item(COINS_995,  50), 6, PlayerCounter.HARVESTED_POTATO),
 	ONION(5319, 1957, 5, 9.5, 10.5, 4, FlowerCrop.MARIGOLDS, new Item(COINS_995,  100), 13, PlayerCounter.HARVESTED_ONION),
@@ -16,41 +18,19 @@ public enum AllotmentCrop implements Crop {
 	STRAWBERRY(5323, 5504, 31, 26, 29, 6, null, new Item(COINS_995,  800), 43, PlayerCounter.HARVESTED_STRAWBERRY),
 	WATERMELON(5321, 5982, 47, 48.5, 54.5, 8, FlowerCrop.NASTURTIUM, new Item(COINS_995,  5000), 52, PlayerCounter.HARVESTED_WATERMELON),
 	SNAPE_GRASS(22879, 231, 61, 82, 82, 7, FlowerCrop.WHITE_LILY, new Item(995, 7500), 128, PlayerCounter.HARVESTED_SNAPE_GRASS);
-	
-	AllotmentCrop(int seedId, int produceId, int levelReq, double plantXP, double harvestXP, int totalStages, FlowerCrop protectionFlower,
-                  Item payment, int containerIndex, PlayerCounter counter) {
-		this(seedId, produceId, levelReq, plantXP, harvestXP, totalStages, TimeUtils.getMinutesToMillis(10), protectionFlower, payment, containerIndex, counter);
-	}
-	
-	AllotmentCrop(int seedId, int produceId, int levelReq, double plantXP, double harvestXP, int totalStages, long stageTime, FlowerCrop protectionFlower,
-                  Item payment, int containerIndex, PlayerCounter counter) {
-		this.plantXP = plantXP;
-		this.harvestXP = harvestXP;
-		this.seedId = seedId;
-		this.produceId = produceId;
-		this.levelReq = levelReq;
-		this.containerIndex = containerIndex;
-		this.totalStages = totalStages;
-		this.protectionFlower = protectionFlower;
-		this.stageTime = stageTime;
-		this.counter = counter;
-		this.payment = payment;
-	}
 
-	private double plantXP, harvestXP;
-	private int seedId, produceId, levelReq, containerIndex;
-	private int totalStages;
-	private long stageTime;
-	private PlayerCounter counter;
+	private final int seedId, produceId, levelReq;
+	private final double plantXP, harvestXP;
+	private final int totalStages;
+	private final FlowerCrop protectionFlower;
+	private final Item payment;
+	private final int containerIndex;
+	private final PlayerCounter counter;
 
 	@Override
 	public Item getPayment() {
 		return payment;
 	}
-
-	private Item payment;
-	
-	private FlowerCrop protectionFlower;
 	
 	public FlowerCrop getProtectionFlower() {
 		return protectionFlower;
@@ -68,7 +48,7 @@ public enum AllotmentCrop implements Crop {
 
 	@Override
 	public long getStageTime() {
-		return stageTime;
+		return TimeUtils.getMinutesToMillis(10);
 	}
 
 	@Override
@@ -115,5 +95,4 @@ public enum AllotmentCrop implements Crop {
 	public PlayerCounter getCounter() {
 		return counter;
 	}
-
 }
