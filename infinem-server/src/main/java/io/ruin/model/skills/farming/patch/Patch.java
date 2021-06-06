@@ -175,7 +175,7 @@ public abstract class Patch {
     }
 
     protected void diseaseRoll() {
-        double diseaseChance = plantedCrop.getDiseaseChance(compost);
+        double diseaseChance = plantedCrop.getDiseaseChance(compost) * (hasGrowingIasor() ? 0.2 : 1);
         if (!isFarmerProtected() && !isDiseaseImmune() && diseaseStage == 0 && getStage() != (plantedCrop.getTotalStages() - 1) && Random.get() < diseaseChance) {
             diseaseStage = 1;
             setNeedsUpdate(true);
@@ -433,6 +433,14 @@ public abstract class Patch {
     public boolean hasGrowingAttas() {
         Patch patch = player.getFarming().getPatch(PatchData.FARMING_GUILD_ANIMA.getObjectId());
         if (patch.getPlantedCrop() == AnimaCrop.ATTAS && patch.getStage() != patch.getPlantedCrop().getTotalStages()) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean hasGrowingIasor() {
+        Patch patch = player.getFarming().getPatch(PatchData.FARMING_GUILD_ANIMA.getObjectId());
+        if (patch.getPlantedCrop() == AnimaCrop.IASOR && patch.getStage() != patch.getPlantedCrop().getTotalStages()) {
             return true;
         }
         return false;
