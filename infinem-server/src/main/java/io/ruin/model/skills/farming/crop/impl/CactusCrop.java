@@ -4,35 +4,47 @@ import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.farming.crop.Crop;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
-public class CactusCrop implements Crop {
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 6/3/2021
+ */
+@AllArgsConstructor
+public enum CactusCrop implements Crop {
 
-    public static final CactusCrop INSTANCE = new CactusCrop();
+    CACTUS(5280, 6016, 55, 66.5, 25, 374, 7, TimeUtils.getMinutesToMillis(80), 8, new Item(COINS_995, 5000), PlayerCounter.GROWN_CACTUS),
+    ;
 
-    private CactusCrop() {
-
-    }
+    private final int seedId, produceId, levelReq;
+    private final double plantXP, harvestXP, checkHealthXP;
+    private final int totalStages;
+    private final long stageTime;
+    private final int containerIndex;
+    private final Item payment;
+    private final PlayerCounter counter;
 
     @Override
     public int getSeed() {
-        return 5280;
+        return seedId;
     }
 
     @Override
     public int getLevelReq() {
-        return 55;
+        return levelReq;
     }
 
     @Override
     public long getStageTime() {
-        return TimeUtils.getMinutesToMillis(80);
+        return stageTime;
     }
 
     @Override
     public int getTotalStages() {
-        return 7;
+        return totalStages;
     }
 
     @Override
@@ -52,37 +64,35 @@ public class CactusCrop implements Crop {
 
     @Override
     public double getPlantXP() {
-        return 66.5;
+        return plantXP;
     }
 
     @Override
     public int getContainerIndex() {
-        return 8;
+        return containerIndex;
     }
 
     @Override
     public int getProduceId() {
-        return 6016;
+        return produceId;
     }
 
     @Override
     public double getHarvestXP() {
-        return 25;
+        return harvestXP;
     }
 
     public double getCheckHealthXP() {
-        return 374;
+        return checkHealthXP;
     }
 
     @Override
     public PlayerCounter getCounter() {
-        return PlayerCounter.GROWN_CACTUS;
+        return counter;
     }
-
-    private static final Item PAYMENT = new Item(COINS_995, 5000);
 
     @Override
     public Item getPayment() {
-        return PAYMENT;
+        return payment;
     }
 }
