@@ -71,7 +71,7 @@ public class CactusPatch extends RegrowPatch {
 
     @Override
     public boolean requiresCure() {
-        return false;
+        return true;
     }
 
     @Override
