@@ -69,7 +69,7 @@ public enum FarmingContracts {
     POISON_IVY(70, 1,3, BushCrop.POISON_IVY, new PatchData[] { PatchData.FARMING_GUILD_BUSH }, true),
 
     CACTUS1(65, 1,4, CactusCrop.CACTUS, new PatchData[] { PatchData.FARMING_GUILD_CACTUS }, true),
-    //POTATO_CACTUS(65, 1,2, CactusCrop.INSTANCE, new PatchData[] { PatchData.FARMING_GUILD_CACTUS }, true),
+    POTATO_CACTUS(65, 1,2, CactusCrop.POTATO_CACTUS, new PatchData[] { PatchData.FARMING_GUILD_CACTUS }, true),
 
     WHITE_LILY(65, 1,2, FlowerCrop.WHITE_LILY, new PatchData[] { PatchData.FARMING_GUILD_FLOWER }, false),
 
@@ -96,12 +96,12 @@ public enum FarmingContracts {
     WHITEBERRIES1(85, 2,4, BushCrop.WHITEBERRY, new PatchData[] { PatchData.FARMING_GUILD_BUSH }, true),
     POISON_IVY1(85, 2,4, BushCrop.POISON_IVY, new PatchData[] { PatchData.FARMING_GUILD_BUSH }, true),
 
-    //POTATO_CACTUS1(85, 2,3, CactusCrop.INSTANCE, new PatchData[] { PatchData.FARMING_GUILD_CACTUS }, true),
+    POTATO_CACTUS1(85, 2,3, CactusCrop.POTATO_CACTUS, new PatchData[] { PatchData.FARMING_GUILD_CACTUS }, true),
 
     WHITE_LILY1(85, 2,3, FlowerCrop.WHITE_LILY, new PatchData[] { PatchData.FARMING_GUILD_FLOWER }, false),
 
     PALM1(85, 2,5, FruitTreeCrop.PALM, new PatchData[] { PatchData.FARMING_GUILD_FRUIT }, true),
-    //DRAGONFRUIT(85, 2,5, FruitTreeCrop.DRAGONFRUIT, new PatchData[] { PatchData.FARMING_GUILD_FRUIT }, true),
+    DRAGONFRUIT(85, 2,5, FruitTreeCrop.DRAGONFRUIT, new PatchData[] { PatchData.FARMING_GUILD_FRUIT }, true),
 
     SNAPDRAGON1(85, 2,4, HerbCrop.SNAPDRAGON, new PatchData[] { PatchData.FARMING_GUILD_HERB }, false),
     CADANTINE1(85, 2,4, HerbCrop.CADANTINE, new PatchData[] { PatchData.FARMING_GUILD_HERB }, false),
