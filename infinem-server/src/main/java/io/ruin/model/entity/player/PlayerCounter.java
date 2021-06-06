@@ -259,6 +259,8 @@ public enum PlayerCounter {
     GROWN_MAPLE((p, amt) -> p.grownMaple = amt, p -> p.grownMaple),
     GROWN_YEW((p, amt) -> p.grownYew = amt, p -> p.grownYew),
     GROWN_MAGIC((p, amt) -> p.grownMagic = amt, p -> p.grownMagic),
+    GROWN_TEAK((p, amt) -> p.grownTeak = amt, p -> p.grownTeak),
+    GROWN_MAHOGANY((p, amt) -> p.grownMahogany = amt, p -> p.grownMahogany),
     GROWN_REDBERRY((p, amt) -> p.grownRedberry = amt, p -> p.grownRedberry),
     GROWN_CADAVABERRY((p, amt) -> p.grownCadavaberry = amt, p -> p.grownCadavaberry),
     GROWN_DWELLBERRY((p, amt) -> p.grownDwellberry = amt, p -> p.grownDwellberry),
