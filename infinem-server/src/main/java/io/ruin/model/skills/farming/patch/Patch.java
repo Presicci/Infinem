@@ -154,6 +154,14 @@ public abstract class Patch {
             diseaseRoll();
             if (!isDead()) {
                 advanceStage();
+                if (hasGrowingKronos()
+                        && !(this instanceof AnimaPatch)
+                        && Random.get() < 0.05
+                        && getPlantedCrop() != null
+                        && getStage() != getPlantedCrop().getTotalStages()
+                        && !isDiseased()) {
+                    advanceStage();
+                }
                 setNeedsUpdate(true);
             }
         }
@@ -441,6 +449,14 @@ public abstract class Patch {
     public boolean hasGrowingIasor() {
         Patch patch = player.getFarming().getPatch(PatchData.FARMING_GUILD_ANIMA.getObjectId());
         if (patch.getPlantedCrop() == AnimaCrop.IASOR && patch.getStage() != patch.getPlantedCrop().getTotalStages()) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean hasGrowingKronos() {
+        Patch patch = player.getFarming().getPatch(PatchData.FARMING_GUILD_ANIMA.getObjectId());
+        if (patch.getPlantedCrop() == AnimaCrop.KRONOS && patch.getStage() != patch.getPlantedCrop().getTotalStages()) {
             return true;
         }
         return false;
