@@ -258,5 +258,15 @@
     "walkRange": 2,
     "world": "ECO",
     "npcName": "Professor Oddenstein"
+  },
+  {
+    "id": 0,
+    "x": 3086,
+    "y": 3351,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Tool Leprechaun"
   }
 ]
