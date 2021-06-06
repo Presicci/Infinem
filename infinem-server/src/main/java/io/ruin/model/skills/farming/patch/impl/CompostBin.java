@@ -67,6 +67,30 @@ public class CompostBin extends Patch {
                         player.sendMessage("The compost bin is now empty.");
                     }
                 });
+            } else {
+                if (!player.getInventory().contains(BUCKET)) {
+                    player.sendMessage("You need a bucket to fetch the compost.");
+                    return;
+                }
+                player.startEvent(event -> {
+                    while (getProduceCount() > 0 && player.getInventory().contains(BUCKET)) {
+                        Item bucket = player.getInventory().findItem(BUCKET);
+                        if(bucket == null)
+                            break;
+                        player.lock();
+                        player.animate(832);
+                        event.delay(1);
+                        bucket.setId(PRODUCTS[currentType]);
+                        removeProduce();
+                        update();
+                        player.unlock();
+                    }
+                    if (getProduceCount() == 0) {
+                        reset(false);
+                        update();
+                        player.sendMessage("The compost bin is now empty.");
+                    }
+                });
             }
         }
     }
