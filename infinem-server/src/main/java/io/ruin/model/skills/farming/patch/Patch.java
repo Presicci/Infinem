@@ -439,7 +439,7 @@ public abstract class Patch {
     }
 
     public boolean removeProduce() {
-        if ((player.getEquipment().getId(Equipment.SLOT_WEAPON) == 7409 || player.getInventory().contains(7409, 1)) && Random.get() < (0.2)) { // magic secateurs, save a "life"
+        if ((player.getEquipment().getId(Equipment.SLOT_WEAPON) == 7409 || player.getInventory().contains(7409, 1)) && Random.get() < (0.1)) { // magic secateurs, save a "life"
             player.sendFilteredMessage("<col=076900>Your magic secateurs allow you to efficiently harvest the crop!");
             return false;
         }
