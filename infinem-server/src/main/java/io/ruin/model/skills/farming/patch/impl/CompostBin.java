@@ -1,11 +1,13 @@
 package io.ruin.model.skills.farming.patch.impl;
 
 import com.google.gson.annotations.Expose;
+import io.ruin.api.utils.Random;
 import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.patch.Patch;
 
@@ -253,5 +255,14 @@ public class CompostBin extends Patch {
     @Override
     public String getPatchName() {
         return "";
+    }
+
+    @Override
+    public boolean removeProduce() {
+        if (--produceCount <= 0) {
+            produceCount = 0;
+            return true;
+        }
+        return false;
     }
 }
