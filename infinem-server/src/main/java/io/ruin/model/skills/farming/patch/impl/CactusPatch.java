@@ -1,5 +1,6 @@
 package io.ruin.model.skills.farming.patch.impl;
 
+import io.ruin.api.utils.Random;
 import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.CactusCrop;
@@ -11,18 +12,35 @@ public class CactusPatch extends RegrowPatch {
 
     @Override
     public int getCropVarpbitValue() {
-        if (getStage() == getPlantedCrop().getTotalStages()) {
-            return 31;
-        }
-        int val = getPlantedCrop().getContainerIndex() + getStage();
-        if (getStage() > getPlantedCrop().getTotalStages()) {
-            return val + getProduceCount() - 1;
-        }
-        if (isDiseased()) {
-            return val + 11;
-        }
-        if (isDead()) {
-            return val + 17;
+        int val = 0;
+        if (getPlantedCrop() == CactusCrop.CACTUS) {
+            if (getStage() == getPlantedCrop().getTotalStages()) {
+                return 31;
+            }
+            val = getPlantedCrop().getContainerIndex() + getStage();
+            if (getStage() > getPlantedCrop().getTotalStages()) {
+                return val + getProduceCount() - 1;
+            }
+            if (isDiseased()) {
+                return val + 11;
+            }
+            if (isDead()) {
+                return val + 17;
+            }
+        } else {
+            if (getStage() == getPlantedCrop().getTotalStages()) {
+                return 58;
+            }
+            val = getPlantedCrop().getContainerIndex() + getStage();
+            if (getStage() > getPlantedCrop().getTotalStages()) {
+                return val + getProduceCount() - 1;
+            }
+            if (isDiseased()) {
+                return val + 13;
+            }
+            if (isDead()) {
+                return val + 19;
+            }
         }
         return val;
     }
@@ -34,7 +52,7 @@ public class CactusPatch extends RegrowPatch {
 
     @Override
     public int getMaxProduce() {
-        return 3;
+        return getPlantedCrop() == CactusCrop.CACTUS ? 3 : Random.get(3, 6);
     }
 
     private void checkHealth() {

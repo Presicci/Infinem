@@ -273,6 +273,7 @@ public enum PlayerCounter {
     HARVESTED_WILDBLOOD((p, amt) -> p.harvestedWildblood = amt, p -> p.harvestedWildblood),
     GROWN_CALQUAT((p, amt) -> p.grownCalquat = amt, p -> p.grownCalquat),
     GROWN_CACTUS((p, amt) -> p.grownCactus = amt, p -> p.grownCactus),
+    GROWN_POTATO_CACTUS((p, amt) -> p.grownPotatoCactus = amt, p -> p.grownPotatoCactus),
     GROWN_SPIRIT_TREE((p, amt) -> p.grownSpiritTree = amt, p -> p.grownSpiritTree),
     GROWN_CELASTRUS_TREE((p, amt) -> p.grownCelastrusTree = amt, p -> p.grownCelastrusTree),
     GROWN_REDWOOD_TREE((p, amt) -> p.grownRedwoodTree = amt, p -> p.grownRedwoodTree),
