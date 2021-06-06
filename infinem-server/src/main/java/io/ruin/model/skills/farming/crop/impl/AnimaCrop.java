@@ -10,7 +10,7 @@ import io.ruin.model.skills.farming.crop.Crop;
  * Created on 6/3/2021
  */
 public enum AnimaCrop implements Crop {
-    BARLEY(22881, 76, 8, 100, 8),
+    ATTAS(22881, 76, 8, 100, 8),
     IASOR(22883, 76, 8, 100, 17),
     KRONOS(22885, 76, 8, 100, 26);
 
