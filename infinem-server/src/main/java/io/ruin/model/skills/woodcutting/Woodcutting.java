@@ -96,8 +96,10 @@ public class Woodcutting {
                             //TODO: take away an item charge?
                         }
                     } else {
-                        player.sendFilteredMessage("You get some " + treeData.treeName + ".");
-                        player.getInventory().add(treeData.log, 1);
+                        if (treeData != Tree.CRYSTAL) {
+                            player.sendFilteredMessage("You get some " + treeData.treeName + ".");
+                            player.getInventory().add(treeData.log, 1);
+                        }
                         player.collectResource(new Item(treeData.log, 1));
                         if (Random.rollDie(nestChance(player), 1)) {
                             new GroundItem(BirdNest.getRandomNest(treeData), 1)
