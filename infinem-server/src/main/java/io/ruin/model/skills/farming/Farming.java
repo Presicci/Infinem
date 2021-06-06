@@ -359,7 +359,7 @@ public class Farming {
         Collections.addAll(CROPS, RedwoodCrop.INSTANCE);
         Collections.addAll(CROPS, CelastrusCrop.INSTANCE);
         Collections.addAll(CROPS, CalquatCrop.INSTANCE);
-        Collections.addAll(CROPS, CactusCrop.INSTANCE);
+        Collections.addAll(CROPS, CactusCrop.values());
         Collections.addAll(CROPS, SpiritTreeCrop.INSTANCE);
         ItemDef.cached.values().stream().filter(Objects::nonNull).forEach(def -> {
             def.produceOf = getCropForProduce(def.id);

@@ -33,7 +33,7 @@ public enum FarmingContracts {
     DWELLBERRIES(45, 0,2, BushCrop.DWELLBERRY, new PatchData[] { PatchData.FARMING_GUILD_BUSH }, true),
     JANGERBERRIES(48, 0,2, BushCrop.JANGERBERRY, new PatchData[] { PatchData.FARMING_GUILD_BUSH }, true),
 
-    CACTUS(55, 0,3, CactusCrop.INSTANCE, new PatchData[] { PatchData.FARMING_GUILD_CACTUS }, true),
+    CACTUS(55, 0,3, CactusCrop.CACTUS, new PatchData[] { PatchData.FARMING_GUILD_CACTUS }, true),
 
     MARIGOLD(45, 0,1, FlowerCrop.MARIGOLDS, new PatchData[] { PatchData.FARMING_GUILD_FLOWER }, false),
     ROSEMARY(45, 0,1, FlowerCrop.ROSEMARY, new PatchData[] { PatchData.FARMING_GUILD_FLOWER }, false),
@@ -68,7 +68,7 @@ public enum FarmingContracts {
     WHITEBERRIES(65, 1,3, BushCrop.WHITEBERRY, new PatchData[] { PatchData.FARMING_GUILD_BUSH }, true),
     POISON_IVY(70, 1,3, BushCrop.POISON_IVY, new PatchData[] { PatchData.FARMING_GUILD_BUSH }, true),
 
-    CACTUS1(65, 1,4, CactusCrop.INSTANCE, new PatchData[] { PatchData.FARMING_GUILD_CACTUS }, true),
+    CACTUS1(65, 1,4, CactusCrop.CACTUS, new PatchData[] { PatchData.FARMING_GUILD_CACTUS }, true),
     //POTATO_CACTUS(65, 1,2, CactusCrop.INSTANCE, new PatchData[] { PatchData.FARMING_GUILD_CACTUS }, true),
 
     WHITE_LILY(65, 1,2, FlowerCrop.WHITE_LILY, new PatchData[] { PatchData.FARMING_GUILD_FLOWER }, false),
