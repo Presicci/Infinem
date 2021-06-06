@@ -1,0 +1,429 @@
+clue rewards
+make sure ironman armor doesnt drop on pvp death
+karuulm dungeon graphical issues
+stat track enchantment
+add teleports to master capes
+turn the wilderness activevolcano event into a juiced version of volcanic mine
+redo daily tasks
+herquin 6529 is aggressive
+infernal tool charges
+proper barrows degrading
+rare drop table
+fix whatever the fuck is wrong with death
+barrows catacombs
+drop viewer drop announcemnets are broken
+
+
+ammo pouch
+seed box
+rework slayer
+
+
+dmg against monster increases with kc?
+
+
+sendClientScript(917
+
+Upgrade system - if can get tooltips to work on all interfaces
++x attack level
+poison on hit
+goal is 3 affix, 3 prefix, MIGHT be possible
+"uniques"
+	pre rolled extremely rare drops of specific items
+Items to reroll/add upgrades on items
+Decently expensive to get into upgrading
+Item and gold sink
+
+13279 - Overseer's Book -> Engineer's Manuel "Written by an ancient civilization of dwarves, this book describes the process of physically altering equipment."
+23183 - Strange device -> Enchant vessel "Strange device capable of holding the power of one equipment augment."
+21800 - Enchanted symbol -> Chaotic Distrupter ""
+30034 - Scrap "The rawest of mechanical junk, useful for tinkering on powerful equipment."
+
+
+League-ish system
+Tons and tons of challenges, both global and area specific
+Have really powerful tier relics, that dont make you TOO powerful or increase drop rates
+	Want the server eco to last longer than the 3 months of leagues
+Unlock teleports in areas with area specific "league points"
+	i.e 1000 lumbridge points to unlock cow pen teleport
+	Can eventually purchase all/most of the teleports after you complete EVERY challenge in an area
+$x donation to reset relic/teleport choices
+Lets us have crazy and fun items like that teleport crystal from trailblazer
+Have more than just 6 tiers of relics
+All relics disabled in wilderness, or just against players in the wilderness
+
+This probably should be possible, need to find a way to properly get interfaces from osrs
+
+
+If league system causes power creep, introduce tiers of bosses
+	Hardmode(more health / damage), 
+	Endurance (way more health), 
+	Gauntlet (multiple bosses at once)
+
+
+	
+Roguelike system
+Global unlocks
+Dungeon crawler?
+Set to max stats
+
+
+~~Upgrades
+Item to reroll upgrades
+~Weapon
+Dmg against 5% - Dragons, Demons, Undead, Slayer task (2%)
+DH effect
+Guthans
+guthans but for prayer
+~Armor
+Thorns
+~Jewellery
+2% Chance of double drops
+Rare drop table access
+Wisdom - xp bonus
+Chance to send drop to bank
+Chance to auto bury bone
+~Tools
+Harvest speed +-
+Harvest quantity +-
+Rare drop table access while skilling
+
+
+~~Enchants From Bosses
+Cerberus - Smoldering - ignite chance
+Zulruh - Venom - venom chance
+Vorkath - 
+Barrows - 
+Kalphite queen - 
+Kril - 
+Kree - 
+Graardor - 
+Zilhana - 
+Abyssal sire - 
+Kraken - 
+Corp - 
+Dag kings - 
+Giant mole - 
+Thermonuclear smoke devil - 
+Alchemical hydra - 
+Callisto - 
+Venenatis - 
+Vet'ion -
+King black dragon - 
+Scorpia - 
+Chaos ele - 
+Skotizo - 
+Wintertodt - 
+Jad - 
+Inferno - 
+Sarachnis - 
+
+You mercilessly strike down your plants, who were just barely clinging onto what little life they had left.
+
+~~Farming
+Flower patch
+vb 33, 34, 35, 36 = scarecrow
+obj 34437 hespori
+
+*'You prune the calquat tree, curing it of its disease'
+*cactus prunes instead of plant cure
+make ultracompost affect yeild
+*add dragonfruit trees
+add scarecrows
+*add hardwood tree patch
+*add crystal trees
+make sure fruit trees still regrow
+add hespori
+*add bittercap mushrooms
+add grapes
+add giant seaweed?
+*add belladonna
+clear wood plots w/o cutting
+proper protection payments
+check zeah patch group bounds
+
+8
+15 check
+16 chop
+17 stump
+18 disease
+24 dead
+30 mahog
+
+
+
+
+alt teleport interface 723
+
+
+java -jar -ea x.jar -developer-mode
+
+
+VB 6670 1 marbe, 2 gold, 3 crystal
+
+
+
+
+
+621.12 list of names
+621.11 list of names
+621.35 items
+621.19[0] name, [1] obtained, [2] kills
+~~VARS
+2944 collection log total amount
+9638/9639/11 searching collection log?
+417 string held for searching	
+6905 collection log tab, 0,1,2,3,4
+6906 collection log section 0-whatever max is
+
+
+League interface 657
+2606 filter - 4 all, 68 easy, 132 medium, 196 hard, 260 elite, 324 master
+	33554436 skill, 67108868 combat, 100663300 quest, 134217732 achievement, 167772164 minigame, 201326596 other
+	516 incomplete, 1028 complete
+2805 area filter, 0-11
+2610 tasks completed
+2614 total points
+2615 total points?
+2810 -1593786232 -> -1593786200 (+32 on task complete?) (+8 on other task complete)
+
+
+2632 0->2 selected 2nd relic? 2->26
+Relic interface 655
+~~NOW
+
+~~Eventually
+bank presets
+bank equipment screen
+sounds?
+Obor
+Bryophyta
+~~
+
+VarbitDefinitions - change login screen
+Deadman chest key 1/3 on player kill @Killer.java
+
+~~~Journal.java - Customize journal tabs
+~~~item_info.java - Add item options like drop, equip
+
+~~~WidgetInspector
+Type 4, text
+Type 5, UI
+
+questtab
+comp 6 array size 22
+comp 7 array size 124
+comp 8 array size 14
+~~~
+
+
+NPCCombat.java
+consider pvp item drops and resource pack drops
+
+InfinemOSRS
+1997InfinemOSRS44!@
+
+group ironman
+
+Useful pets
+Vote day, double vote points, saturday
+
+~~~Timeline
+Announce - 2 weeks prior 
+
+Launch week races
+~~~PreBeta
+Discord refer a friend
+
+~~~Refer a friend
+Community invite goals - 50 100 150
+Personal invite goals - 5 10 15 25 50 100
+
+~~Both~~
+Clue scroll droprate increase
+	Donate or decent amount of vote points
+
+~~Voting~~
+Vote mystery box
+Vote lottery, pulled daily right before reset
+Vote boss
+
+
+~Store
+Ornament kits, also obtainable from clues
+
+
+~~~Donators~~~
+Custom titles
+Free death chest recovery?
+Higher chance of marks of grace
+Higher chance of bird nest
+Reduced/no kc requirement for gwd
+Run energy
+Pick slayer task
+Faster farming growth
+Farming - no weeds
+
+
+~Sapphire - $5
+1% double drop chance
+~Emerald - $25
+2% double drop chance
+~Ruby - $50
+3% double drop chance
+~Diamond - $100
+4% double drop chance
+~Dragonstone - $250
+5% double drop chance
+~Onyx - $500
+5% double drop chance
+~Zenyte - $1000
+5% double drop chance
+~UNKNOWN - $2500
+HIGHEST DONATOR at the time
+
+
+~Store
+First 10 people to get package get founder status
+Bonds
+Custom title
+Pets
+Mystery boxes
+$10 - Dicing rank
+Server threshhold - Well of goodwill, global server benefits
+Buyable perks
+Server wide perks
+~~~~~~~~~~~~~~
+
+
+Change ips at CustomWorldType.java, NettyServer.java
+Change ports at CentralClient.java, Update\Server.java, central\Server.java
+
+
+5/7/21
+~Client
+Changed layout of item upgrade tooltip
+Updated discord rich presence
+Updated client name
+Updated discord link
+-ItemStat plugin
+Updated unarmed attack speed
+Plugin now updates when config updates
+Added potion duration functionality to plugin
+Fixed item stats displaying on tooltips
+5/8/21
+~Client
+Replaced instances of infinem with Infinem in client
+-ItemStat plugin
+Tooltips now show in the bank
+Tooltips now show in the inventory while browsing the trading post
+	-- TODO while buying
+Updated ge config option to trading post
+Changed upgrade tooltip to be its own seperate tooltip
+Upgrade tooltip is now shown for the inventory when in the bank and equipment
+~Server
+Fixed music player
+Fixed a bug with the duel interface
+Fixed a bug with the trade interface
+Updated bans file location
+Updated dev file location
+Fixed whole project setup to no longer require forums or websites
+Implemented yanile shortcut, minus the anim
+Fixed all teleport spells
+Fixed player saving
+Changed owner crown
+Player no longer spawns in as admin
+Added groups command
+Fixed dwarf cannon single-target pathing
+5/9/21
+Fixed stat tracking on hops
+5/10/21
+Rock cake can no longer kill you
+Smithing items no longer examines them
+Added ancient wyvern shield smithing
+Added smithing xp to creating dragon sq shield
+Added smithing xp to creating spirit shields
+Added xp to creating infernal pick
+Added xp to creating infernal axe
+Added swamp tar requirement for mixing herbs into it
+Removed onyx and dragonstone from wall safe loot table
+Removed dragonstone from gem stall loot table
+Removed runite ore from ore stall loot table
+Lowered mith and addy ore amounts from ore stall loot table
+Fixed costume room inventories not accepting sets
+Fixed crash when depositing max cape into cape rack
+Changed text on redecorate house interface
+Changed text for home house location on interface
+~Client
+~Fishing plugin
+Fixed fishing plugin, now fully works
+5/11/21
+Fixed a negative amount of tokkul being rewarded at end of fight cave
+Removed weird sapphire donor check in fight cave rewards
+Removed weird sapphire donor check in inferno rewards
+Nuggets from pay-dirt chance reduced from 4/25 to 3/25
+Removed new account prompt when talking to ironman npc
+Lowered donator double drop chance from 100% to 5%
+Removed wilderness boss key rolling
+Lowered drop rates on gold caskets from 20% base to 3% base
+Added 1/30 drop for looting bag from all wilderness monsters
+Added point increase requirement to "You now have x PVP points" message
+
+https://discord.gg/ks9WxBQb7d
+
+
+
+NONE("None active", "There is currently no active curse."),
+	
+	/* == Skills == */
+	BLOODLUST("Bloodlust", "Double experience gained when fighting monsters in any combat style."),
+	ARCANIST("Arcanist", "Double experience gained when casting non-combat Magic spells."),
+	NECROMANCER("Necromancer", "Double experience gained for each bone buried. Only applies to burying."),
+	MERCURIAL("Mercurial", "Double experience gained when training Agility."),
+	HANDYMAN("Handyman", "Double experience gained when training Crafting."),
+	HIGHSTRUNG("Highstrung", "Double experience gained when training Fletching."),
+	BLOODSHED("Bloodshed", "Double experience gained when training Slayer."),
+	ARTEMIS_GAZE("Artemis' Gaze", "Double experience gained when hunting creatures."),
+	IRON_VEINS("Iron Veins", "Double experience gained when mining ores and essence."),
+	FORGER("Forger", "Double experience gained when smelting and smithing."),
+	TRITONS_GIFT("Triton's Gift", "Double experience gained when catching fish."),
+	CHEFS_DELIGHT("Chef's Delight", "Double experience gained when training Cooking."),
+	HEARTFIRE("Heartfire", "Double experience gained when training Firemaking."),
+	LUMBERJACK("Lumberjack", "Double experience gained when training Woodcutting."),
+	GREENFINGERS("Greenfingers", "Double experience gained when training Farming."),
+	ALCHEMIST("Alchemist", "Double experience gained when crafting runes."),
+	
+	/* == Skill Benefits == */
+	INFILTRATOR("Infiltrator", "Pickpocketing and stealing from stalls will go unnoticed."),
+	SUNS_BOUNTY("Sun's Bounty", "50% chance to conserve a herb or secondary ingredient when brewing potions."),
+	NATURES_GIFT("Nature's Gift", "Greatly increased Farming harvest, and 50% chance to conserve seeds."),
+	PROSPECTOR("Prospector", "50% chance to mine two ores, increased mining speed and faster rock respawn."),
+	GOLDSMITH("Goldsmith", "50% chance to conserve an ore or bar and increased smithing and smelting speed."),
+	CLEAR_WATER("Clear Water", "50% chance to catch an extra fish and only the best available fish is caught."),
+	CUISINIER("Cuisinier", "No food will be burned when cooking any type of food."),
+	PYROMANIAC("Pyromaniac", "50% chance to conserve a log when burning."),
+	BRIGHTWOOD("Brightwood", "50% chance to get an extra log when cutting wood."),
+	PREDATOR("Predator", "Increased chance to attract prey to your Hunting traps."),
+	FABLE("Fable", "Increased chance for superior slayer monsters to spawn, and increased chance to get a superior loot item."),
+	RUNESMITH("Runesmith", "x4 runes gained from Runecrafting."),
+	
+	/* == PVM related == */
+	UNTAMED("Untamed", "decreased kill count requirement for God Wars and increased boss pet drop rate."),
+	TOMB_RAIDER("Tomb Raider", "Increased barrows loot chance and supplies amount."),
+	
+	/* == Misc. == */
+	OBDURATE("Obdurate", "Run energy does not drain unless in the Wilderness."),
+	DEVOTION("Devotion", "Prayer drains at half the normal drain rate unless in the Wilderness.")
+
+
+
+Swamp crab spawning
+
+Missing spawns
+Slepe and surrounding areas
+Most of Mos Le'Harmless
+Ghasts in morytania
+Sophanem and surrounding areas
+Pest control
+Catherby fishing areas
+Pisc fishing colony
