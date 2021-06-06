@@ -15,7 +15,8 @@ public enum FruitTreeCrop implements TreeCrop {
 	CURRY(5286, 5970, 5499, 5483, 5491, 42, 40, 2906.9, 99, 15, PlayerCounter.GROWN_CURRY, new Item(COINS_995,  15000)),
 	PINEAPPLE(5287, 2114, 5500, 5484, 5492, 51, 57, 4605.7, 21.5, 136, PlayerCounter.GROWN_PINEAPPLE, new Item(COINS_995,  30000)),
 	PAPAYA(5288, 5972, 5501, 5485, 5493, 57, 72, 6146.4, 27, 163, PlayerCounter.GROWN_PAPAYA, new Item(COINS_995,  50000)),
-	PALM(5289, 5974, 5502, 5486, 5494, 68, 110.5, 10150.1, 41.5, 200, PlayerCounter.GROWN_PALM, new Item(COINS_995,  80000));
+	PALM(5289, 5974, 5502, 5486, 5494, 68, 110.5, 10150.1, 41.5, 200, PlayerCounter.GROWN_PALM, new Item(COINS_995,  80000)),
+	DRAGONFRUIT(22877, 22929, 22866, 22862, 22864, 81, 140, 17335, 70, 227, PlayerCounter.GROWN_DRAGONFRUIT, new Item(COINS_995,  80000));
 	
 	FruitTreeCrop(int seedId, int fruitId, int sapling, int seedling, int wateredSeedling, int levelReq, double plantXP, double checkHealthXP, double harvestXP,
 				  int containerIndex, PlayerCounter counter, Item payment) {
