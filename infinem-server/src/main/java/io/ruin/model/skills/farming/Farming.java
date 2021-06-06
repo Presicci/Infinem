@@ -25,8 +25,9 @@ public class Farming {
     @Expose private ToolStorage storage = new ToolStorage();
     @Expose private CompostBin faladorCompostBin, canifisCompostBin, catherbyCompostBin, ardougneCompostBin, zeahCompostBin, farmingGuildCompost;
     @Expose private HerbPatch canifisHerb, ardougneHerb, faladorHerb, catherbyHerb, trollheimHerb, zeahHerb, farmingGuildHerb;
-    @Expose private FlowerPatch faladorFlower, catherbyFlower, ardougneFlower, canifisFlower, zeahFlower, farmingGuildFlower;
-    @Expose private AllotmentPatch faladorNorth, faladorSouth, catherbyNorth, catherbySouth, ardougneNorth, ardougneSouth, canifisNorth, canifisSouth, zeahNorth, zeahSouth, farmingGuildNorth, farmingGuildSouth;
+    @Expose private FlowerPatch faladorFlower, catherbyFlower, ardougneFlower, canifisFlower, zeahFlower, farmingGuildFlower, prifFlower;
+    @Expose private AllotmentPatch faladorNorth, faladorSouth, catherbyNorth, catherbySouth, ardougneNorth, ardougneSouth, canifisNorth,
+            canifisSouth, zeahNorth, zeahSouth, farmingGuildNorth, farmingGuildSouth, prifNorth, prifSouth;
     @Expose private WoodTreePatch lumbridgeTree, faladorTree, varrockTree, gnomeTree, taverleyTree, farmingGuildTree;
     @Expose private FruitTreePatch catherbyFruit, brimhavenFruit, gnomeFruit, villageFruit, lletyaFruit, farmingGuildFruit;
     @Expose private BushPatch varrockBush, ardougneBush, etceteriaBush, rimmingtonBush, farmingGuildBush;
@@ -40,6 +41,7 @@ public class Farming {
     @Expose private AnimaPatch anima;
     @Expose private HardWoodTreePatch hardWoodTreeOne, hardWoodTreeTwo, hardWoodTreeThree;
     @Expose private BelladonnaPatch belladonnaPatch;
+    @Expose private CrystalTreePatch crystalTreePatch;
 
     private PatchGroup visibleGroup;
 
@@ -166,6 +168,16 @@ public class Farming {
             belladonnaPatch = new BelladonnaPatch();
         }
 
+        if (crystalTreePatch == null) {
+            crystalTreePatch = new CrystalTreePatch();
+        }
+
+        if (prifFlower == null) {
+            prifFlower = new FlowerPatch();
+            prifNorth = new AllotmentPatch();
+            prifSouth = new AllotmentPatch();
+        }
+
         addPatch(faladorCompostBin.set(PatchData.FALADOR_COMPOST_BIN).setPlayer(player));
         addPatch(catherbyCompostBin.set(PatchData.CATHERBY_COMPOST_BIN).setPlayer(player));
         addPatch(canifisCompostBin.set(PatchData.CANIFIS_COMPOST_BIN).setPlayer(player));
@@ -250,6 +262,11 @@ public class Farming {
         addPatch(hardWoodTreeThree.set(PatchData.FOSSIL_ISLAND_HARDWOOD2).setPlayer(player));
 
         addPatch(belladonnaPatch.set(PatchData.DRAYNOR_MANOR_BELLADONNA).setPlayer(player));
+
+        addPatch(crystalTreePatch.set(PatchData.PRIF_CRYSTAL_TREE).setPlayer(player));
+        addPatch(prifFlower.set(PatchData.PRIF_FLOWER).setPlayer(player));
+        addPatch(prifNorth.set(PatchData.PRIF_NORTH, prifFlower).setPlayer(player));
+        addPatch(prifSouth.set(PatchData.PRIF_SOUTH, prifFlower).setPlayer(player));
 
         patches.forEach((id, patch) -> patch.onLoad()); // force ticks
         refresh();
@@ -381,6 +398,7 @@ public class Farming {
         Collections.addAll(CROPS, SpiritTreeCrop.INSTANCE);
         Collections.addAll(CROPS, HardWoodTreeCrop.values());
         Collections.addAll(CROPS, BelladonnaCrop.values());
+        Collections.addAll(CROPS, CrystalTreeCrop.values());
         ItemDef.cached.values().stream().filter(Objects::nonNull).forEach(def -> {
             def.produceOf = getCropForProduce(def.id);
             def.seedType = getCropForSeed(def.id);
