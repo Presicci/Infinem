@@ -41,12 +41,12 @@ public class UserCommands extends ListenerAdapter {
 
         for (int x = 0; x < onlineAliases.length; x++) {
             if (e.getMessage().getContentRaw().equalsIgnoreCase(onlineAliases[x])) {
-                if (!e.getChannel().getId().equalsIgnoreCase("720814346774511646")) {
+                if (!e.getChannel().getId().equalsIgnoreCase("842960546298855486")) {
                     e.getChannel().sendMessage("Please only use this command in #bot-spam!").queue();
                     return;
                 }
                 EmbedBuilder embed = new EmbedBuilder()
-                        .setTitle("Kronos Server Status", "https://kronos.rip")
+                        .setTitle("Infinem Server Status", "https://kronos.rip")
                         .setColor(new Color(0xB00D03))
                         .setImage("https://kronos.rip/frontend/img/logo.png")
                         .addField("Players Online:", String.valueOf(World.players.count()), true)
@@ -60,7 +60,7 @@ public class UserCommands extends ListenerAdapter {
                 e.getChannel().sendMessage(embed.build()).queue();
             }
         }
-        if (e.getChannel().getId().equalsIgnoreCase("665271176729198604")) {
+        if (e.getChannel().getId().equalsIgnoreCase("842960546298855486")) {
             if (e.getMessage().getContentRaw().startsWith("::bugreport")) {
                 BugReport.handle(e);
             }
