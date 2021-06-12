@@ -32,7 +32,8 @@ public class TheMaidenOfSugadinti extends TheatreBoss {
         super(id, party);
         npc.hitListener = new HitListener().postDamage(hit -> {
             double ratio = ((double) npc.getHp() / npc.getMaxHp());
-            if (ratio >= .70 && ratio < .5 && stage == 0) {
+            System.out.print("Ratio: " + ratio + " | hp: " + npc.getHp() + "/" + npc.getMaxHp());
+            if (ratio <= .70 && ratio >= .5 && stage == 0) {
                 npc.transform(THE_MAIDEN_OF_SUGADINTI_8361);
                 nylocas();
             } else if (ratio <= .5 && ratio >= .3 && stage == 1) {
