@@ -96,7 +96,7 @@ public class TheatreDungeon {
             //TODO portal effect
             //TODO this aint working
             CS2Script.TOB_HUD_PORTAL.sendScript(player, "The Theatre awaits...");
-            CS2Script.TOB_HUD_FADE.sendScript(player, 1, 1, type.getPortalText());
+            //CS2Script.TOB_HUD_FADE.sendScript(player, 1, 1, type.getPortalText());
             move(player, type, rooms.get(type).getEntrance());
         });
     }
