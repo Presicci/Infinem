@@ -8,6 +8,7 @@ import io.ruin.model.activities.raids.tob.dungeon.boss.TheMaidenOfSugadinti;
 import io.ruin.model.activities.raids.tob.party.TheatreParty;
 import io.ruin.model.activities.raids.tob.party.TheatrePartyManager;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -37,6 +38,8 @@ public class MaidenRoom extends TheatreRoom {
         buildSe(12869, 1);
         GameObject.spawn(32756, convertX(3192), convertY(4448), 0, 11, 4);
         boss = new TheMaidenOfSugadinti(NpcID.THE_MAIDEN_OF_SUGADINTI, party);
+        //boss.lock(LockType.MOVEMENT);
+        boss.setMaxHp(3500);
         boss.spawn(convertX(3162), convertY(4444), 0, Direction.EAST, 0);
         boss.getCombat().setAllowRespawn(false);
         boss.postEffects();
@@ -56,6 +59,9 @@ public class MaidenRoom extends TheatreRoom {
                             moveIntoRoom(player, dir);
                         }
                     } else {
+                        if (dir == Direction.EAST) {
+                            moveOutRoom(player, dir);
+                        }
                         if (party.isLeader(player)) {
                             player.dialogue(new OptionsDialogue(Color.MAROON.wrap("Is your party ready to fight?"),
                                 new Option("Yes, let's begin.", () -> {
@@ -113,4 +119,9 @@ public class MaidenRoom extends TheatreRoom {
         };
     }
 
+    public void moveOutRoom(Player player, Direction direction) {
+        int x = player.getAbsX();
+        player.stepAbs(direction == Direction.WEST ? x - 2 : x + 2, player.getAbsY(), StepType.FORCE_WALK);
+        player.deathEndListener = null;
+    }
 }
