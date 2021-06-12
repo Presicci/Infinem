@@ -17,8 +17,8 @@ public class EventBossEmbedMessage {
         eb.setTitle("An Event Boss Has Spawned!");
         eb.setDescription(location);
         eb.setImage(boss.getEmbedUrl());
-        eb.setColor(new Color(0xB00D03));
-        DiscordConnection.post(724071952574185492L, eb.build());
+        eb.setColor(new Color(0xD80066A8, true));
+        DiscordConnection.post(842960546298855486L, eb.build());
         System.out.println("Embed sent!");
     }
 }
