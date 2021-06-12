@@ -8,6 +8,7 @@ import io.ruin.services.discord.impl.AdminCommands;
 import io.ruin.services.discord.impl.PrivateMessageReceived;
 import io.ruin.services.discord.impl.UserCommands;
 import io.ruin.utility.OfflineMode;
+import kilim.tools.P;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -22,7 +23,7 @@ public class DiscordConnection {
 	private static DiscordConnection instance = new DiscordConnection();
 	private static long myId;
 
-	public static final long CHANNEL_PUNISHMENTS = 642470243998105652L;
+	public static final long CHANNEL_PUNISHMENTS = 842964278490169354L;
 
 	public static void setup(String token) throws LoginException {
 		jda = new JDABuilder(token)
