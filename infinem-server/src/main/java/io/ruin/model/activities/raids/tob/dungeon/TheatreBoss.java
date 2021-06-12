@@ -20,7 +20,7 @@ public class TheatreBoss extends NPC {
     /**
      * The party associated with this boss.
      */
-    protected TheatreParty party;
+    public TheatreParty party;
 
     /**
      * Creates a new theatre boss object.
