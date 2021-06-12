@@ -12,12 +12,126 @@ rare drop table
 fix whatever the fuck is wrong with death
 barrows catacombs
 drop viewer drop announcemnets are broken
-
+dump all monster drops
+review monster animations and death ticks
 
 ammo pouch
 seed box
 rework slayer
 
+
+
+~~~clue scrolls
+stash units
+all clue types
+all clue tiers
+~~~hunter
+dead falls
+pit traps
+tracking
+herbiboar
+birdhouses
+butterflies
+~~~farming
+tithe farm
+rest of the stuff below
+fix tool storage capacity
+~~~magic
+magic dart formula
+lunar -
+spellbook swap
+plank make
+string jewellery
+tan leather
+spin flax
+hunter kit
+NPC contact
+cure plant
+geomancy
+tele group
+heal group
+heal other
+veangeance other
+energy transfer
+boost potion share
+stat restore potion share
+dream
+stat spy
+cure group
+arceuus spellbook -
+grasp spells
+demonbane spells
+corruption spells
+resurrection spells
+mark of darkness
+ward of aceuss
+offering spells
+shadow veil
+dark lure
+vile vigour
+degrime
+resurrect crops
+death charge
+~~~fletching
+ogre arrows
+~~~cooking
+add all pies (dragonfruit)
+~~~crafting
+weaving
+proper studded armor
+snakeskin shield
+broodoo shield
+snelm
+xerician
+birdhouses
+crystal singing
+~~~firemaking
+pyre ships
+pyre logs
+~~~herblore
+Imp repellent
+Serum 207
+Compost potion
+Blamish oil
+Shrink-me-quick
+Divine supers
+Bastion
+Battlemage
+Divine bastion and battlemage
+Divine super combat
+Barbarian mixes
+~~~fishing
+fishing spot movement
+infernal harpoon
+crystal harpoon
+some missing spots
+stuffed fish
+~~~slayer
+all masters
+coop slayer
+slayer helmets
+~~~runecrafting
+wtf is wrong with the objects - mind, body, and cosmics
+~~~agility
+pollnivneach rooftop course
+prif course portals w/rewards
+all shortcuts
+grapple shortcuts
+agility arena
+agility pyramid
+ape atol
+~~~thieving
+pyramid plunder
+rogues den
+add rest of npcs
+add rest of stalls
+~~~construction
+portal nexus
+game room
+menagerie storage space
+workshop - heraldry and clockmaking
+cape of legends teleport doesnt work
+~~~
 
 dmg against monster increases with kc?
 
@@ -93,7 +207,7 @@ Rare drop table access while skilling
 Cerberus - Smoldering - ignite chance
 Zulruh - Venom - venom chance
 Vorkath - 
-Barrows - 
+Barrows - Only need 3 items for set bonus
 Kalphite queen - 
 Kril - 
 Kree - 
@@ -109,14 +223,17 @@ Alchemical hydra -
 Callisto - 
 Venenatis - 
 Vet'ion -
-King black dragon - 
+King black dragon - Dragonhunter - % inc damage against dragons
 Scorpia - 
-Chaos ele - 
+Chaos ele - % chance to not use runes
 Skotizo - 
 Wintertodt - 
 Jad - 
 Inferno - 
-Sarachnis - 
+Sarachnis -
+
+reduce targets stats
+
 
 You mercilessly strike down your plants, who were just barely clinging onto what little life they had left.
 
