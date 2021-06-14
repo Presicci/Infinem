@@ -62,8 +62,12 @@ public class CelastrusPatch extends Patch {
                 player.getInventory().add(getPlantedCrop().getProduceId(), Random.get(1, maxBark));
                 player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP(), true);
                 player.sendFilteredMessage("You rip some bark from the tree.");
-                advanceStage();
-                update();
+                if (!((getCompost() == 3 && Random.get() < 0.15)
+                        || (getCompost() == 2 && Random.get() < 0.10)
+                        || (getCompost() == 1 && Random.get() < 0.05))) {
+                    advanceStage();
+                    update();
+                }
             });
         } else if (getStage() == getPlantedCrop().getTotalStages() + 4) {
             chop();
