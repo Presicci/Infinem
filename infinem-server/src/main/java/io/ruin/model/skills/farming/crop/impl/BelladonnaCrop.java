@@ -55,14 +55,14 @@ public enum BelladonnaCrop implements Crop {
     public double getDiseaseChance(int compostType) {
         switch(compostType) {
             case 3:
-                return 0.02;
+                return 1.0 / 128.0;
             case 2:
-                return 0.045;
+                return 2.0 / 128.0;
             case 1:
-                return 0.055;
+                return 5.0 / 128.0;
             case 0:
             default:
-                return 0.08;
+                return 10.0 / 128.0;
         }
     }
 

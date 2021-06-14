@@ -50,14 +50,14 @@ public enum HardWoodTreeCrop implements TreeCrop {
     public double getDiseaseChance(int compostType) {
         switch(compostType) {
             case 3:
-                return 0.1 / getTotalStages();
+                return 1.0 / 128.0;
             case 2:
-                return 0.2 / getTotalStages();
+                return 2.0 / 128.0;
             case 1:
-                return 0.3 / getTotalStages();
+                return 5.0 / 128.0;
             case 0:
             default:
-                return 0.4 / getTotalStages();
+                return 10.0 / 128.0;
         }
     }
 

@@ -39,14 +39,14 @@ public class CalquatCrop implements TreeCrop {
     public double getDiseaseChance(int compostType) {
         switch(compostType) {
             case 3:
-                return 0.062 / 6;
+                return 1.0 / 128.0;
             case 2:
-                return 0.125 / 6;
+                return 2.0 / 128.0;
             case 1:
-                return 0.175 / 6;
+                return 5.0 / 128.0;
             case 0:
             default:
-                return 0.25 / 6;
+                return 10.0 / 128.0;
         }
     }
 

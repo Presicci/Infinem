@@ -53,14 +53,14 @@ public enum FlowerCrop implements Crop {
 	public double getDiseaseChance(int compostType) {
 		switch(compostType) {
 			case 3:
-				return 0.027;
+				return 2.0 / 128.0;
 			case 2:
-				return 0.055;
+				return 3.0 / 128.0;
 			case 1:
-				return 0.065;
+				return 6.0 / 128.0;
 			case 0:
 			default:
-				return 0.10;
+				return 12.0 / 128.0;
 		}
 	}
 

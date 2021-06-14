@@ -51,14 +51,14 @@ public enum CactusCrop implements Crop {
     public double getDiseaseChance(int compostType) {
         switch(compostType) {
             case 3:
-                return 0.7 / 6;
+                return 2.0 / 128.0;
             case 2:
-                return 0.15 / 6;
+                return 4.0 / 128.0;
             case 1:
-                return 0.2 / 6;
+                return 8.0 / 128.0;
             case 0:
             default:
-                return 0.3 / 6;
+                return 16.0 / 128.0;
         }
     }
 

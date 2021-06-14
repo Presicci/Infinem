@@ -89,14 +89,14 @@ public enum HopsCrop implements Crop {
     public double getDiseaseChance(int compostType) {
         switch(compostType) {
             case 3:
-                return 0.0112;
+                return 3.0 / 128.0;
             case 2:
-                return 0.0225;
+                return 5.0 / 128.0;
             case 1:
-                return 0.0275;
+                return 9.0 / 128.0;
             case 0:
             default:
-                return 0.04;
+                return 18.0 / 128.0;
         }
     }
 

@@ -90,19 +90,16 @@ public enum BushCrop implements Crop {
 
     @Override
     public double getDiseaseChance(int compostType) {
-        if (this == POISON_IVY)
-            return 0;
         switch(compostType) {
             case 3:
-                return 0.025;
+                return 2.0 / 128.0;
             case 2:
-                return 0.05;
+                return 4.0 / 128.0;
             case 1:
-                return 0.065;
+                return 8.0 / 128.0;
             case 0:
             default:
-                return 0.1;
+                return 16.0 / 128.0;
         }
     }
-
 }
