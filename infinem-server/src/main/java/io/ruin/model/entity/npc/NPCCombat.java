@@ -330,10 +330,12 @@ public abstract class NPCCombat extends Combat {
             for(int i = 0; i < rolls; i++) {
                 List<Item> items = t.rollItems(i == 0);
                 Item seedItem = null;
-                for (Item item : items) {
-                    if (item.getId() == 0) {
-                        handleGeneralSeedDrop(killer, dropPosition, pKiller);
-                        seedItem = item;
+                if (items != null) {
+                    for (Item item : items) {
+                        if (item.getId() == 0) {
+                            handleGeneralSeedDrop(killer, dropPosition, pKiller);
+                            seedItem = item;
+                        }
                     }
                 }
                 if (seedItem != null) {
