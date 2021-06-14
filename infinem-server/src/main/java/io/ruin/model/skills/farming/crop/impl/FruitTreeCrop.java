@@ -87,14 +87,14 @@ public enum FruitTreeCrop implements TreeCrop {
 	public double getDiseaseChance(int compostType) {
 		switch(compostType) {
 			case 3:
-				return 0.067 / getTotalStages();
+				return 2.0 / 128.0;
 			case 2:
-				return 0.125 / getTotalStages();
+				return 4.0 / 128.0;
 			case 1:
-				return 0.175 / getTotalStages();
+				return 9.0 / 128.0;
 			case 0:
 			default:
-				return 0.25 / getTotalStages();
+				return 18.0 / 128.0;
 		}
 	}
 
