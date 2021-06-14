@@ -11,8 +11,7 @@ import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.TreeCrop;
 import io.ruin.model.skills.farming.crop.impl.AnimaCrop;
-import io.ruin.model.skills.farming.patch.impl.AnimaPatch;
-import io.ruin.model.skills.farming.patch.impl.BushPatch;
+import io.ruin.model.skills.farming.patch.impl.*;
 import io.ruin.model.stat.StatType;
 
 public abstract class Patch {
@@ -470,6 +469,29 @@ public abstract class Patch {
         if (hasGrowingAttas() && Random.get() < 0.05) {
             player.sendFilteredMessage("<col=076900>Your Attas plant allow you to efficiently harvest the crop!");
             return false;
+        }
+        if (this instanceof AllotmentPatch || this instanceof HopsPatch
+                || this instanceof HerbPatch) {
+            switch (getCompost()) {
+                case 3: // Ultra
+                    if (Random.get() < 0.15) {  // 15% chance for free harvest
+                        return false;
+                    }
+                    break;
+                case 2: // Super
+                    if (Random.get() < 0.10) {  // 10% chance for free harvest
+                        return false;
+                    }
+                    break;
+                case 1: // Compost
+                    if (Random.get() < 0.05) {  // 5% chance for free harvest
+                        return false;
+                    }
+                    break;
+                case 0: // Nothing
+                default:
+                    break;
+            }
         }
         if (--produceCount <= 0) {
             produceCount = 0;
