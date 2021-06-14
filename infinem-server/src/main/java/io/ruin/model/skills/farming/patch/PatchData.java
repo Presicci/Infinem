@@ -102,7 +102,7 @@ public enum PatchData {
     BRIMHAVEN_SPIRIT_TREE(8383, "saplings", Config.FARMING_PATCH_2, 7),
     PORT_SARIM_SPIRIT_TREE(8338, "saplings", Config.FARMING_PATCH_1, 7),
     ETCETERIA_SPIRIT_TREE(8382, "saplings", Config.FARMING_PATCH_2, 7),
-    ZEAH_SPIRIT_TREE(27116, "saplings", Config.FARMING_PATCH_1, 7),
+    ZEAH_SPIRIT_TREE(27116, "saplings", Config.FARMING_PATCH_7904, 7),
     FARMING_GUILD_SPIRIT_TREE(33733, "saplings", Config.FARMING_PATCH_1, 7);
 
     PatchData(int objectId, Config config, int guideChildId) {
