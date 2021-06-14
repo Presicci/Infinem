@@ -17,7 +17,7 @@ public enum PatchGroup {
             Arrays.asList(PatchData.CANIFIS_FLOWER, PatchData.CANIFIS_HERB, PatchData.CANIFIS_NORTH, PatchData.CANIFIS_SOUTH, PatchData.CANIFIS_COMPOST_BIN)),
     ARDOUGNE(new Bounds(new Position(2666, 3375, 0), 25),
             Arrays.asList(PatchData.ARDOUGNE_FLOWER, PatchData.ARDOUGNE_HERB, PatchData.ARDOUGNE_NORTH, PatchData.ARDOUGNE_SOUTH, PatchData.ARDOUGNE_COMPOST_BIN)),
-    ZEAH(new Bounds(new Position(1814, 3486, 0), 25),
+    ZEAH(new Bounds(new Position(1733, 3555, 0), 25),
             Arrays.asList(PatchData.ZEAH_FLOWER, PatchData.ZEAH_HERB, PatchData.ZEAH_NORTH, PatchData.ZEAH_SOUTH, PatchData.ZEAH_COMPOST_BIN)),
     FARMING_GUILD(Bounds.fromRegion(4922),
             Arrays.asList(PatchData.FARMING_GUILD_COMPOST_BIN, PatchData.FARMING_GUILD_HERB, PatchData.FARMING_GUILD_SPIRIT_TREE, PatchData.FARMING_GUILD_ANIMA,
