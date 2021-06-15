@@ -284,6 +284,8 @@ public class Interface {
 
     public static final int COLLECTION_LOG = 621;
 
+    public static final int LEAGUE_TASK = 657;
+
     public static final int GAUNTLET_RECIPES = 640;
 
     public static final int GAUNTLET_MAP = 638;
