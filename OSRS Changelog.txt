@@ -242,30 +242,15 @@ Flower patch
 vb 33, 34, 35, 36 = scarecrow
 obj 34437 hespori
 
-*'You prune the calquat tree, curing it of its disease'
-*cactus prunes instead of plant cure
-make ultracompost affect yeild
-*add dragonfruit trees
 add scarecrows
-*add hardwood tree patch
-*add crystal trees
 make sure fruit trees still regrow
 add hespori
-*add bittercap mushrooms
 add grapes
 add giant seaweed?
-*add belladonna
 clear wood plots w/o cutting
 proper protection payments
-check zeah patch group bounds
-test
-8
-15 check
-16 chop
-17 stump
-18 disease
-24 dead
-30 mahog
+
+add ways of getting diseaseless patches
 
 
 
