@@ -1,0 +1,8 @@
+[
+  {"id": 34753, "x": 2521, "y": 4833, "z": 0, "type": 10}, // Body exit portal
+  {"id": 34765, "x": 2522, "y": 4839, "z": 0, "type": 10}, // Body altar
+  {"id": 34749, "x": 2793, "y": 4827, "z": 0, "type": 10}, // Mind exit portal
+  {"id": 34761, "x": 2785, "y": 4840, "z": 0, "type": 10}, // Mind altar
+  {"id": 34754, "x": 2163, "y": 4833, "z": 0, "type": 10}, // Cosmic exit portal
+  {"id": 34766, "x": 2141, "y": 4832, "z": 0, "type": 10}  // Cosmic altar
+]
