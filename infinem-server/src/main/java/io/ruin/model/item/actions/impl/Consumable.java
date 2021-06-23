@@ -31,6 +31,7 @@ public class Consumable {
         registerEat(2162, 2, "king worm");
         registerEat(6883, 8, "peach");
         registerEat(1883, 19, "kebab");
+        registerEat(2108, 2, "orange");
 
         registerEat(2309, 5, "bread");
         registerCake(1891, 1893, 1895, 12, "cake");
