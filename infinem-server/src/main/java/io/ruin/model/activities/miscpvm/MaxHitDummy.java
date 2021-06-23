@@ -7,6 +7,8 @@ import io.ruin.model.entity.shared.listeners.HitListener;
 
 public class MaxHitDummy extends PassiveCombat {
 
+    public static final int[] dummyIds = { 2668, 7413, 8598, 10507, 10508, 10509, 10510, 10511, 10512, 15025 };
+
     @Override
     public void init() {
         npc.hitListener = new HitListener()

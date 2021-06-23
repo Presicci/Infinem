@@ -2,6 +2,7 @@ package io.ruin.model.combat.special.melee;
 
 import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.duelarena.DuelRule;
+import io.ruin.model.activities.miscpvm.MaxHitDummy;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.Hit;
@@ -10,6 +11,8 @@ import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.route.routes.DumbRoute;
+
+import java.util.Arrays;
 
 //Shove: Push your target back and stun them
 //for 3 seconds. This attack deals no damage. (25%)
@@ -30,7 +33,7 @@ public class DragonSpear implements Special {
             player.sendMessage("That monster is too big to be pushed back!");
             return false;
         }
-        if (target.npc.getId() == 2668) {
+        if (Arrays.stream(MaxHitDummy.dummyIds).anyMatch(i -> i == target.npc.getId())) {
             player.sendMessage("You cannot push a Combat Dummy");
             return false;
         }

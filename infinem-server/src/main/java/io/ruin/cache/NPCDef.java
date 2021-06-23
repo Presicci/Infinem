@@ -233,9 +233,6 @@ public class NPCDef {
         } else if(id == 4579) {
             name = "Shop";
             options[0] = "Misc";
-        } else if(id == 2668) {
-            name = "Max hit dummy";
-            options[2] = options[3] = options[4] = null;
         } else if (id == 6118) {
             name = "Elvarg";
             combatLevel = 280;

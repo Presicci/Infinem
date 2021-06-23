@@ -1,6 +1,7 @@
 package io.ruin.model.skills.magic.spells;
 
 import io.ruin.model.activities.duelarena.DuelRule;
+import io.ruin.model.activities.miscpvm.MaxHitDummy;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.CombatUtils;
@@ -16,6 +17,7 @@ import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
 import io.ruin.model.stat.StatType;
 
+import java.util.Arrays;
 import java.util.function.BiPredicate;
 
 public class TargetSpell extends Spell {
@@ -188,7 +190,7 @@ public class TargetSpell extends Spell {
         beforeHit(hit, target);
         int damage = target.hit(hit);
         if(baseXp > 0 && entity.isPlayer())
-            if (target.isPlayer() || (target.isNpc() && target.npc.getId() != 2668 && target.npc.getId() != 7413))
+            if (target.isPlayer() || (target.isNpc() && !Arrays.stream(MaxHitDummy.dummyIds).anyMatch(i -> i == target.npc.getId())))
                 CombatUtils.addMagicXp(entity.player, baseXp, damage, target.isNpc());
         afterHit(hit, target);
 

@@ -753,11 +753,6 @@ public class NPCDefinition extends DualNode implements RSNPCDefinition {
       } else if (id == 4579) {
          name = "Shop";
          actions[0] = "Misc";
-      } else if (id == 2668) {
-         name = "Max hit dummy";
-         actions[2] = null;
-         actions[3] = null;
-         actions[4] = null;
       } else if (id == 6118) {
          name = "Elvarg";
          combatLevel = 280;

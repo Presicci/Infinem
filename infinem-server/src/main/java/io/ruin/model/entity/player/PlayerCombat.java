@@ -7,6 +7,7 @@ import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.duelarena.DuelRule;
+import io.ruin.model.activities.miscpvm.MaxHitDummy;
 import io.ruin.model.activities.pvp.leaderboard.Leaderboard;
 import io.ruin.model.activities.raids.xeric.ChambersOfXeric;
 import io.ruin.model.activities.wilderness.BloodyChest;
@@ -1282,7 +1283,8 @@ public class PlayerCombat extends Combat {
             player.specTeleportDelay.delaySeconds(5);
         }
 
-        boolean ignoresSpecialDrain = (target.isNpc() && target.npc != null && target.npc.getId() == 2668);
+        boolean ignoresSpecialDrain = (target.isNpc() && target.npc != null
+                && Arrays.stream(MaxHitDummy.dummyIds).anyMatch(i -> i == target.npc.getId()));
         if (!ignoresSpecialDrain) {
             Config.SPECIAL_ENERGY.set(player, energy - (amount * 10)); //drain special energy
         }

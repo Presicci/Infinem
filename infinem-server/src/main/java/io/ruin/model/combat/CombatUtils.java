@@ -1,6 +1,7 @@
 package io.ruin.model.combat;
 
 import io.ruin.cache.ItemDef;
+import io.ruin.model.activities.miscpvm.MaxHitDummy;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.EquipmentStats;
@@ -8,6 +9,8 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.stat.StatList;
 import io.ruin.model.stat.StatType;
+
+import java.util.Arrays;
 
 public class CombatUtils {
 
@@ -187,7 +190,7 @@ public class CombatUtils {
         boolean multiplier = victim.npc != null;
         double xp = damageDealt * 4D;
         double monsterMod = 1.0;
-        if (multiplier && victim.npc.getId() == 2668)
+        if (multiplier && Arrays.stream(MaxHitDummy.dummyIds).anyMatch(i -> i == victim.npc.getId()))
             monsterMod = victim.npc.getCombat().getInfo().combat_xp_modifier;
         xp *= monsterMod;
         if (xp <= 0)

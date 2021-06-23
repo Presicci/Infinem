@@ -157,7 +157,8 @@ public class CombatRoom {
     //static dummies
     enum Dummy {
         REGULAR(Buildable.COMBAT_DUMMY, 2668),
-        UNDEAD(Buildable.UNDEAD_COMBAT_DUMMY, 7413);
+        UNDEAD(Buildable.UNDEAD_COMBAT_DUMMY, 7413),
+        ORNATE_UNDEAD(Buildable.ORNATE_UNDEAD_COMBAT_DUMMY, 10507);
 
         Dummy(Buildable b, int npcId) {
             objId = b.getBuiltObjects()[0];
