@@ -561,6 +561,10 @@ public abstract class ItemContainerG<I extends Item> {
 
     }
 
+    public boolean hasRoomFor(Item item) {
+        return hasRoomFor(item.getId(), item.getAmount());
+    }
+
     public boolean hasRoomFor(int id, int amt) {
         ItemDef def = ItemDef.get(id);
         boolean stackable = forceStack || def.stackable;
