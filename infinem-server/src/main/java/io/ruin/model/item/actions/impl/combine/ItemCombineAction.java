@@ -25,18 +25,19 @@ public class ItemCombineAction {
                 Arrays.asList(new ItemPair(-1, Items.PASTRY_DOUGH), new ItemPair(Items.POT_OF_FLOUR, Items.POT), new ItemPair(Items.BUCKET_OF_WATER, Items.BUCKET)),
                 Arrays.asList(new ItemPair(-1, Items.PITTA_DOUGH), new ItemPair(Items.POT_OF_FLOUR, Items.POT), new ItemPair(Items.BUCKET_OF_WATER, Items.BUCKET)),
                 Arrays.asList(new ItemPair(-1, Items.PIZZA_BASE), new ItemPair(Items.POT_OF_FLOUR, Items.POT), new ItemPair(Items.BUCKET_OF_WATER, Items.BUCKET))),
-
         BREAD_DOUGH_BOWL("You mix the flour and water to make dough.", 1, Arrays.asList(new SkillRequired(StatType.Cooking, 1, 1)),
                 Arrays.asList(new ItemPair(-1, Items.BREAD_DOUGH), new ItemPair(Items.POT_OF_FLOUR, Items.POT), new ItemPair(Items.BOWL_OF_WATER, Items.BOWL)),
                 Arrays.asList(new ItemPair(-1, Items.PASTRY_DOUGH), new ItemPair(Items.POT_OF_FLOUR, Items.POT), new ItemPair(Items.BOWL_OF_WATER, Items.BOWL)),
                 Arrays.asList(new ItemPair(-1, Items.PITTA_DOUGH), new ItemPair(Items.POT_OF_FLOUR, Items.POT), new ItemPair(Items.BOWL_OF_WATER, Items.BOWL)),
                 Arrays.asList(new ItemPair(-1, Items.PIZZA_BASE), new ItemPair(Items.POT_OF_FLOUR, Items.POT), new ItemPair(Items.BOWL_OF_WATER, Items.BOWL))),
-
         BREAD_DOUGH_JUG("You mix the flour and water to make dough.", 1, Arrays.asList(new SkillRequired(StatType.Cooking, 1, 1)),
                 Arrays.asList(new ItemPair(-1, Items.BREAD_DOUGH), new ItemPair(Items.POT_OF_FLOUR, Items.POT), new ItemPair(Items.JUG_OF_WATER, Items.JUG)),
                 Arrays.asList(new ItemPair(-1, Items.PASTRY_DOUGH), new ItemPair(Items.POT_OF_FLOUR, Items.POT), new ItemPair(Items.JUG_OF_WATER, Items.JUG)),
                 Arrays.asList(new ItemPair(-1, Items.PITTA_DOUGH), new ItemPair(Items.POT_OF_FLOUR, Items.POT), new ItemPair(Items.JUG_OF_WATER, Items.JUG)),
                 Arrays.asList(new ItemPair(-1, Items.PIZZA_BASE), new ItemPair(Items.POT_OF_FLOUR, Items.POT), new ItemPair(Items.JUG_OF_WATER, Items.JUG))),
+
+        PIE_SHELL("You use the dough on the dish to make a pie shell.",
+                Arrays.asList(new ItemPair(Items.PIE_DISH, Items.PIE_SHELL), new ItemPair(Items.PASTRY_DOUGH, -1))),
         ;
 
         public int tickInterval, animation, graphics, inventorySpaceRequired;
@@ -59,9 +60,13 @@ public class ItemCombineAction {
             this(2, -1, -1, combineMessage, "", inventorySpaceRequired, skillsRequired, items);
         }
 
+        ItemCombine(String combineMessage, List<ItemPair>... items) {
+            this(2, -1, -1, combineMessage, "", 0, null, items);
+        }
+
         public void combine(Player player, List<ItemPair> itemReqs) {
             for (ItemPair i : itemReqs) {   // If the player runs out of items, break loop
-                if (i.required.getId() != -1 && !player.getInventory().contains(i.required)) {
+                if (i.required != null && !player.getInventory().contains(i.required)) {
                     return;
                 }
             }
@@ -75,11 +80,11 @@ public class ItemCombineAction {
                 player.sendMessage(this.combineMessage);
             }
             for (ItemPair i : itemReqs) {
-                if (i.required.getId() != -1 && i.replacement.getId() != 1) {
+                if (i.required != null && i.replacement != null) {
                     player.getInventory().findItem(i.required.getId()).setId(i.replacement.getId());
-                } else if (i.required.getId() == -1) {
+                } else if (i.required == null) {
                     player.getInventory().addOrDrop(i.replacement);
-                } else if (i.replacement.getId() == -1) {
+                } else {
                     player.getInventory().remove(i.required);
                 }
             }
@@ -95,7 +100,7 @@ public class ItemCombineAction {
                     whileLoop:
                     while(amount-- > 0) {
                         for (ItemPair i : items) {   // If the player runs out of items, break loop
-                            if (i.required.getId() != -1 && !player.getInventory().contains(i.required)) {
+                            if (i.required != null && !player.getInventory().contains(i.required)) {
                                 break whileLoop;
                             }
                         }
@@ -109,11 +114,11 @@ public class ItemCombineAction {
                             player.sendMessage(itemCombine.combineMessage);
                         }
                         for (ItemPair i : items) {
-                            if (i.required.getId() != -1 && i.replacement.getId() != 1) {
+                            if (i.required != null && i.replacement != null) {
                                 player.getInventory().findItem(i.required.getId()).setId(i.replacement.getId());
-                            } else if (i.required.getId() == -1) {
+                            } else if (i.required == null) {
                                 player.getInventory().addOrDrop(i.replacement);
-                            } else if (i.replacement.getId() == -1) {
+                            } else {
                                 player.getInventory().remove(i.required);
                             }
                         }
@@ -124,10 +129,14 @@ public class ItemCombineAction {
                 skillItems.add(item);
             }
             for (List<ItemPair> itemReqs : itemCombine.items) {
-                ItemItemAction.register(itemReqs.get(1).required.getId(), itemReqs.get(2).required.getId(), (player, item1, item2) -> {
-                    for (SkillRequired skill : itemCombine.skillsRequired) {
-                        if(!player.getStats().check(skill.statType, skill.levelReq, itemReqs.get(0).replacement.getId(), "make the " + ItemDef.get(itemReqs.get(0).replacement.getId()) + ""))
-                            return;
+                int itemIdOne = itemReqs.get(1).required.getId();
+                int itemIdTwo = itemReqs.size() > 2 ? itemReqs.get(2).required.getId() : itemReqs.get(0).required.getId();
+                ItemItemAction.register(itemIdOne, itemIdTwo, (player, item1, item2) -> {
+                    if (itemCombine.skillsRequired != null) {
+                        for (SkillRequired skill : itemCombine.skillsRequired) {
+                            if(!player.getStats().check(skill.statType, skill.levelReq, itemReqs.get(0).replacement.getId(), "make the " + ItemDef.get(itemReqs.get(0).replacement.getId()) + ""))
+                                return;
+                        }
                     }
                     if (player.getInventory().getFreeSlots() < itemCombine.inventorySpaceRequired) {
                         player.sendMessage("You do not have enough inventory space to do that.");
@@ -168,8 +177,16 @@ public class ItemCombineAction {
         }
 
         public ItemPair(int required, int replacement) {
-            this.required = new Item(required, 1);
-            this.replacement = new Item(replacement, 1);
+            if (required == -1) {
+                this.required = null;
+            } else {
+                this.required = new Item(required, 1);
+            }
+            if (replacement == -1) {
+                this.replacement = null;
+            } else {
+                this.replacement = new Item(replacement, 1);
+            }
         }
     }
 }
