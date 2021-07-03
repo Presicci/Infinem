@@ -54,6 +54,9 @@ public enum Food {
     WILD_PIE(85, 240.0, 7206, 7208, 2329, "a wild pie", "", 3, 85, 85, 85),
     SUMMER_PIE(95, 260.0, 7216, 7218, 2329, "a summer pie", "", 3, 95, 95, 95),
 
+    //Stew
+    STEW(25, 117.0, Items.UNCOOKED_STEW, Items.STEW, Items.BURNT_STEW, "a stew", "", 3, 58, 58, 55),
+
     //Pizza
     PLAIN_PIZZA(35, 143.0, 2287, 2289, 2305, "a plain pizza", "", 3, 35, 35, 35),
 

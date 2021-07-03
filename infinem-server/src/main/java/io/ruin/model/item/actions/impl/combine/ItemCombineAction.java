@@ -98,6 +98,25 @@ public class ItemCombineAction {
                 Arrays.asList(new ItemPair(Items.PART_SUMMER_PIE_2, Items.RAW_SUMMER_PIE), new ItemPair(Items.COOKING_APPLE, -1))),
 
 
+        /**
+         * Stews
+         */
+        INCOMPLETE_STEW("You use the potato on the bowl of water to make an incomplete stew.", Arrays.asList(new SkillRequired(StatType.Cooking, 1, 1)),
+                Arrays.asList(new ItemPair(Items.BOWL_OF_WATER, Items.INCOMPLETE_STEW), new ItemPair(Items.POTATO, -1))),
+        UNCOOKED_STEW("You use the chicken on the incomplete stew to make an uncooked stew.", Arrays.asList(new SkillRequired(StatType.Cooking, 1, 1)),
+                Arrays.asList(new ItemPair(Items.INCOMPLETE_STEW, Items.UNCOOKED_STEW), new ItemPair(Items.COOKED_CHICKEN, -1))),
+        UNCOOKED_STEW2("You use the meat on the incomplete stew to make an uncooked stew.", Arrays.asList(new SkillRequired(StatType.Cooking, 1, 1)),
+                Arrays.asList(new ItemPair(Items.INCOMPLETE_STEW, Items.UNCOOKED_STEW), new ItemPair(Items.COOKED_MEAT, -1))),
+
+
+        /**
+         * Pizza
+         */
+
+
+        /**
+         * Potatoes
+         */
 
         ;
 
