@@ -53,6 +53,9 @@ public enum Food {
     //Pizza
     PLAIN_PIZZA(35, 143.0, 2287, 2289, 2305, "a plain pizza", "", 3, 35, 35, 35),
 
+    //Bread
+    BREAD(1, 40.0, 2307, 2309, 2311, "a loaf of bread", "loaves of bread", 3, 40, 38, 35),
+
     //Cake
     ISHCAKE(31, 100.0, 7529, 7530, 7531, "a fishcake", "", 3, 31, 31, 31),
     CAKE(40, 180.0, 1889, 1891, 1903, "a cake", "", 3, 40, 40, 40),
