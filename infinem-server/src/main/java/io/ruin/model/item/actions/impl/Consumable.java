@@ -8,6 +8,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Widget;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.impl.skillcapes.PrayerSkillCape;
 import io.ruin.model.item.containers.Equipment;
@@ -48,12 +49,15 @@ public class Consumable {
         registerPie(2323, 2335, 14, "apple pie", null);
         registerPie(7178, 7180, 12, "garden pie", p -> p.getStats().get(StatType.Farming).boost(3, 0.0));
         registerPie(7188, 7190, 12, "fish pie", p -> p.getStats().get(StatType.Fishing).boost(3, 0.0));
+        registerPie(Items.BOTANICAL_PIE, Items.HALF_A_BOTANICAL_PIE, 14, "botanical pie", p -> p.getStats().get(StatType.Herblore).boost(4, 0.0));
+        registerPie(21690, 21687, 16, "mushroom pie", p -> p.getStats().get(StatType.Crafting).boost(4, 0.0));
         registerPie(7198, 7200, 16, "admiral pie", p -> p.getStats().get(StatType.Fishing).boost(5, 0.0));
-        registerPie(7218, 7220, 22, "summer pie", p -> p.getStats().get(StatType.Agility).boost(5, 0.0));
+        registerPie(22795, 22792, 20, "dragonfruit pie", p -> p.getStats().get(StatType.Fletching).boost(4, 0.0));
         registerPie(7208, 7210, 22, "wild pie", p -> {
             p.getStats().get(StatType.Ranged).boost(4, 0.0);
             p.getStats().get(StatType.Slayer).boost(5, 0.0);
         });
+        registerPie(7218, 7220, 22, "summer pie", p -> p.getStats().get(StatType.Agility).boost(5, 0.0));
 
         registerEat(7082, 1923, 5, "fried mushrooms");
         registerEat(2011, 1923, 19, "curry");
