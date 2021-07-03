@@ -1,6 +1,7 @@
 package io.ruin.model.skills.cooking;
 
 import io.ruin.cache.ItemDef;
+import io.ruin.model.item.Items;
 
 public enum Food {
     //Raw Fish
@@ -46,7 +47,10 @@ public enum Food {
     APPLE_PIE(30, 130.0, 7168, 2323, 2329, "an apple pie", "", 3, 30, 30, 30),
     GARDEN_PIE(34, 128.0, 7186, 7188, 2329, "a garden pie", "", 3, 34, 34, 34),
     FISH_PIE(47, 164.0, 7186, 7188, 2329, "a fish pie", "", 3, 47, 47, 47),
+    BOTANICAL_PIE(52, 180.0, Items.UNCOOKED_BOTANICAL_PIE, Items.BOTANICAL_PIE, 2329, "a botanical pie", "", 3, 52, 52, 52),
+    MUSHROOM_PIE(60, 200.0, 21684, 21690, 2329, "a mushroom pie", "", 3, 60, 60, 60),
     ADMIRAL_PIE(70, 210.0, 7196, 7198, 2329, "an admiral pie", "", 3, 70, 70, 70),
+    DRAGONFRUIT_PIE(73, 220.0, 22789, 22795, 2329, "a dragonfruit pie", "", 3, 73, 73, 73),
     WILD_PIE(85, 240.0, 7206, 7208, 2329, "a wild pie", "", 3, 85, 85, 85),
     SUMMER_PIE(95, 260.0, 7216, 7218, 2329, "a summer pie", "", 3, 95, 95, 95),
 
