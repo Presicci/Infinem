@@ -77,7 +77,7 @@ public class ItemCombineAction {
                 player.animate(this.graphics);
             }
             if (!this.combineMessage.equalsIgnoreCase("")) { // If a combine message exists, send it
-                player.sendMessage(this.combineMessage);
+                player.sendFilteredMessage(this.combineMessage);
             }
             for (ItemPair i : itemReqs) {
                 if (i.required != null && i.replacement != null) {
@@ -111,7 +111,7 @@ public class ItemCombineAction {
                             player.animate(itemCombine.graphics);
                         }
                         if (!itemCombine.combineMessage.equalsIgnoreCase("")) { // If a combine message exists, send it
-                            player.sendMessage(itemCombine.combineMessage);
+                            player.sendFilteredMessage(itemCombine.combineMessage);
                         }
                         for (ItemPair i : items) {
                             if (i.required != null && i.replacement != null) {
