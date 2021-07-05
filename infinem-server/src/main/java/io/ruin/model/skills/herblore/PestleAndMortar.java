@@ -2,6 +2,7 @@ package io.ruin.model.skills.herblore;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.skills.Tool;
 
@@ -16,7 +17,11 @@ public enum PestleAndMortar {
     ASHES(592, 8865, "You grind down the ashes."),
     BLUE_DRAGON_SCALE(243, 241, "You grind the dragon scale to dust."),
     LAVA_SCALE(11992, 11994, null),
-    SUPERIOR_DRAGON_BONES(22124, 21975, "You grind the superior bones to dust.");
+    SUPERIOR_DRAGON_BONES(22124, 21975, "You grind the superior bones to dust."),
+    COD(Items.RAW_COD, Items.GROUND_COD, "You grind the raw cod."),
+    CRAB_MEAT(Items.CRAB_MEAT, Items.GROUND_CRAB_MEAT, "You grind the crab meat."),
+    KELP(Items.KELP, Items.GROUND_KELP, "You grind the kelp.")
+    ;
 
     public final int before, after;
 
