@@ -70,6 +70,7 @@ public enum Food {
     //Random
     SWEET_CORN(28, 104.0, 5986, 5988, 5990, "a piece of sweet corn", "", 3, 28, 28, 28),
     SEAWEED(1, 0.0, 401, 1781, 1781, "soda ash", "", 3, 1, 1, 1),
+    BAKED_POTATO(7, 15.0, Items.POTATO, Items.BAKED_POTATO, Items.BURNT_POTATO, "a potato", "", 3, 41, 41, 37),
 
     //Raids fish
     PYSK(1, 10, 20855, 20856, 20854, "a pysk", "pysk", 3, 31, 31, 31),
