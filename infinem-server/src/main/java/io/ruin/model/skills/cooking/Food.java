@@ -39,6 +39,7 @@ public enum Food {
     RAW_RABBIT(1, 30.0, 3226, 3228, 7222, "a rabbit", "rabbits", 3, 31, 31, 31),
     CRAB_MEAT(21, 100.0, 7518, 7521, 7520, "a piece of crab meat", "crab meat", 3, 31, 31, 31),
     SINEW(1, 3.0, 2132, 9436, 9436, "sinew", "sinews", 3, 1, 1, 1),
+    RAW_UGTHANKI_MEAT(1, 40.0, Items.RAW_UGTHANKI_MEAT, Items.UGTHANKI_MEAT, 2146, "a piece of ugthanki meat", "ugthanki meat", 3, 99, 99, 95),
 
     //Pies
     REDBERRY_PIE(10, 78.0, 2321, 2325, 2329, "a redberry pie", "", 3, 10, 10, 10),
@@ -71,6 +72,9 @@ public enum Food {
     SWEET_CORN(28, 104.0, 5986, 5988, 5990, "a piece of sweet corn", "", 3, 28, 28, 28),
     SEAWEED(1, 0.0, 401, 1781, 1781, "soda ash", "", 3, 1, 1, 1),
     BAKED_POTATO(7, 15.0, Items.POTATO, Items.BAKED_POTATO, Items.BURNT_POTATO, "a potato", "", 3, 41, 41, 37),
+    SCRAMBLED_EGG(13, 50, Items.UNCOOKED_EGG, Items.SCRAMBLED_EGG, Items.BURNT_EGG, "scrambled egg", "", 3, 48, 48, 43),
+    FRIED_MUSHROOMS(46, 60, Items.SLICED_MUSHROOMS, Items.FRIED_MUSHROOMS, Items.BURNT_MUSHROOM, "fried mushrooms", "", 3, 90, 90, 86),
+    FRIED_ONIONS(42, 60, Items.CHOPPED_ONION, Items.FRIED_ONIONS, Items.BURNT_ONION, "fried onions", "", 3, 77, 77, 72),
 
     //Raids fish
     PYSK(1, 10, 20855, 20856, 20854, "a pysk", "pysk", 3, 31, 31, 31),

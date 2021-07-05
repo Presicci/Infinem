@@ -72,6 +72,19 @@ public class Consumable {
         registerEat(6705, 16, "potato with cheese");
         registerEat(7060, 22, "tuna potato");
 
+        registerEat(Items.COOKED_FISHCAKE, 11, "fishcake");
+        registerEat(Items.COOKED_SWEETCORN, 10, "sweetcorn");
+        registerEat(Items.SWEETCORN_2, 10, "sweetcorn");
+        registerEat(Items.TUNA_AND_CORN, 13, "tuna and corn");
+        registerEat(Items.FRIED_MUSHROOMS, 5, "fried mushroom");
+        registerEat(Items.FRIED_ONIONS, 5, "fried onions");
+        registerEat(Items.MUSHROOM_ONION, 11, "mushroom and onion");
+        registerEat(Items.EGG_AND_TOMATO, 8, "egg and tomato");
+        registerEat(Items.SCRAMBLED_EGG, 5, "scrambled egg");
+        registerEat(Items.CHILLI_CON_CARNE, 5, "chilli con carne");
+        registerEat(Items.SPICY_SAUCE, 2, "spicy sauce");
+        registerEat(Items.MINCED_MEAT, 2, "minced meat");
+
         registerEat(2140, 4, "chicken");
         registerEat(2142, 4, "meat");
 

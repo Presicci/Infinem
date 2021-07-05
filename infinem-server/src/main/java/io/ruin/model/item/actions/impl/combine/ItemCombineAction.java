@@ -150,6 +150,63 @@ public class ItemCombineAction {
                 Arrays.asList(new ItemPair(Items.CAKE, Items.CHOCOLATE_CAKE), new ItemPair(Items.CHOCOLATE_DUST, -1))),
         CHOCOLATE_CAKE2("You use the chocolate bar on the cake to make a chocolate cake.", Arrays.asList(new SkillRequired(StatType.Cooking, 50, 30)),
                 Arrays.asList(new ItemPair(Items.CAKE, Items.CHOCOLATE_CAKE), new ItemPair(Items.CHOCOLATE_BAR, -1))),
+
+        /**
+         * Kebabs
+         */
+        CHOPPED_UGTHANKI("You use the ugthanki on an empty bowl to make chopped ugthanki.",
+                Arrays.asList(new ItemPair(Items.BOWL, Items.CHOPPED_UGTHANKI), new ItemPair(Items.UGTHANKI_MEAT, -1))),
+        UGTHANKI_AND_ONION("You use the meat on the chopped onion to make ugthanki and onion.",
+                Arrays.asList(new ItemPair(Items.CHOPPED_ONION, Items.UGTHANKI_ONION), new ItemPair(Items.UGTHANKI_MEAT, -1))),
+        UGTHANKI_AND_ONION_2("You use the onion on the chopped ugthanki to make ugthanki and onion.",
+                Arrays.asList(new ItemPair(Items.CHOPPED_UGTHANKI, Items.UGTHANKI_ONION), new ItemPair(Items.ONION, -1))),
+        UGTHANKI_AND_TOMATO("You use the tomato on the chopped ugthanki to make ugthanki and tomato.",
+                Arrays.asList(new ItemPair(Items.CHOPPED_UGTHANKI, Items.UGTHANKI_TOMATO), new ItemPair(Items.TOMATO, -1))),
+        KEBAB_MIX_TOMATO("You use the tomato on the ugthanki and onion nto make a kebab mix.", Arrays.asList(new SkillRequired(StatType.Cooking, 58, 0)),
+                Arrays.asList(new ItemPair(Items.UGTHANKI_ONION, Items.KEBAB_MIX), new ItemPair(Items.TOMATO, -1))),
+        KEBAB_MIX_ONION("You use the onion on the ugthanki and tomato nto make a kebab mix.", Arrays.asList(new SkillRequired(StatType.Cooking, 58, 0)),
+                Arrays.asList(new ItemPair(Items.UGTHANKI_TOMATO, Items.KEBAB_MIX), new ItemPair(Items.ONION, -1))),
+        KEBAB_MIX_MEAT("You use the meat on the onion and tomato nto make a kebab mix.", Arrays.asList(new SkillRequired(StatType.Cooking, 58, 0)),
+                Arrays.asList(new ItemPair(Items.ONION_TOMATO, Items.KEBAB_MIX), new ItemPair(Items.UGTHANKI_MEAT, -1))),
+        KEBAB("You add the kebab mix to the pitta to make a kebab.", Arrays.asList(new SkillRequired(StatType.Cooking, 58, 40)),
+                Arrays.asList(new ItemPair(Items.PITTA_BREAD, Items.UGTHANKI_KEBAB), new ItemPair(Items.KEBAB_MIX, -1))),
+
+        /**
+         * Misc
+         */
+        UNCOOKED_EGG("You use the egg on the empty bowl to make uncooked egg.", Arrays.asList(new SkillRequired(StatType.Cooking, 13, 0)),
+                Arrays.asList(new ItemPair(Items.BOWL, Items.UNCOOKED_EGG), new ItemPair(Items.EGG, -1))),
+        CHOPPED_ONION("You use the onion on an empty bowl to make chopped onion.",
+                Arrays.asList(new ItemPair(Items.BOWL, Items.CHOPPED_ONION), new ItemPair(Items.ONION, -1))),
+        CHOPPED_GARLIC("You use the garlic on an empty bowl to make chopped garlic.",
+                Arrays.asList(new ItemPair(Items.BOWL, Items.CHOPPED_GARLIC), new ItemPair(Items.GARLIC, -1))),
+        CHOPPED_TUNA("You use the tuna on an empty bowl to make chopped tuna.",
+                Arrays.asList(new ItemPair(Items.BOWL, Items.CHOPPED_TUNA), new ItemPair(Items.TUNA, -1))),
+        CHOPPED_TOMATO("You use the tomato on an empty bowl to make chopped tomato.",
+                Arrays.asList(new ItemPair(Items.BOWL, Items.CHOPPED_TOMATO), new ItemPair(Items.TOMATO, -1))),
+        MINCED_MEAT("You use the meat on an empty bowl to make minced meat.",
+                Arrays.asList(new ItemPair(Items.BOWL, Items.MINCED_MEAT), new ItemPair(Items.COOKED_MEAT, -1))),
+        SLICED_MUSHROOMS("You use the mushrooms on an empty bowl to make sliced mushrooms.",
+                Arrays.asList(new ItemPair(Items.BOWL, Items.SLICED_MUSHROOMS), new ItemPair(Items.MUSHROOM, -1))),
+        SWEETCORN_BOWL("You add the sweetcorn to the bowl.",
+                Arrays.asList(new ItemPair(Items.BOWL, Items.SWEETCORN_2), new ItemPair(Items.COOKED_SWEETCORN, -1))),
+
+        SPICY_SAUCE("You use the gnome spice on the garlic to make spicy sauce.", Arrays.asList(new SkillRequired(StatType.Cooking, 9, 25)),
+                Arrays.asList(new ItemPair(Items.CHOPPED_GARLIC, Items.SPICY_SAUCE), new ItemPair(Items.GNOME_SPICE, -1))),
+        CHILLI_CON_CARNE("You use the meat on the spicy sauce to make chili con carne.", Arrays.asList(new SkillRequired(StatType.Cooking, 11, 0)),
+                Arrays.asList(new ItemPair(Items.SPICY_SAUCE, Items.CHILLI_CON_CARNE), new ItemPair(Items.COOKED_MEAT, -1))),
+        CHILLI_CON_CARNE_MEAT("You use the minced meat on the spicy sauce to make chili con carne.", Arrays.asList(new SkillRequired(StatType.Cooking, 11, 0)),
+                Arrays.asList(new ItemPair(Items.SPICY_SAUCE, Items.CHILLI_CON_CARNE), new ItemPair(Items.MINCED_MEAT, -1))),
+        EGG_AND_TOMATO("You use the tomato on the scrambled eggs to make egg and tomato.", Arrays.asList(new SkillRequired(StatType.Cooking, 23, 0)),
+                Arrays.asList(new ItemPair(Items.SCRAMBLED_EGG, Items.EGG_AND_TOMATO), new ItemPair(Items.TOMATO, -1))),
+        MUSHROOM_AND_ONION("You use the mushroom on the onion to make mushroom and onion.", Arrays.asList(new SkillRequired(StatType.Cooking, 57, 0)),
+                Arrays.asList(new ItemPair(Items.FRIED_MUSHROOMS, Items.MUSHROOM_ONION), new ItemPair(Items.FRIED_ONIONS, -1))),
+        TUNA_AND_CORN("You use the tuna on the sweetcorn to make tuna and corn.", Arrays.asList(new SkillRequired(StatType.Cooking, 67, 0)),
+                Arrays.asList(new ItemPair(Items.CHOPPED_TUNA, Items.TUNA_AND_CORN), new ItemPair(Items.COOKED_SWEETCORN, -1))),
+
+        RAW_FISHCAPE("You mix the items to form a raw fishcake.", Arrays.asList(new SkillRequired(StatType.Cooking, 31, 0)),
+                Arrays.asList(new ItemPair(Items.BREADCRUMBS, Items.RAW_FISHCAKE), new ItemPair(Items.GROUND_COD, -1), new ItemPair(Items.GROUND_KELP, -1), new ItemPair(Items.GROUND_CRAB_MEAT, -1))),
+
         ;
 
         public int tickInterval, animation, graphics, inventorySpaceRequired;
