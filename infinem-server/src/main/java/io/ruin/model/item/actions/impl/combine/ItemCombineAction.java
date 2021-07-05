@@ -129,6 +129,16 @@ public class ItemCombineAction {
          * Potatoes
          */
 
+
+        /**
+         * Cake
+         */
+        UNCOOKED_CAKE("You use the ingredients on the cake tin to make an uncooked cake.", Arrays.asList(new SkillRequired(StatType.Cooking, 40, 0)),
+                Arrays.asList(new ItemPair(Items.CAKE_TIN, Items.UNCOOKED_CAKE), new ItemPair(Items.EGG, -1), new ItemPair(Items.BUCKET_OF_MILK, Items.BUCKET), new ItemPair(Items.POT_OF_FLOUR, Items.POT))),
+        CHOCOLATE_CAKE("You use the chocolate dust on the cake to make a chocolate cake.", Arrays.asList(new SkillRequired(StatType.Cooking, 50, 30)),
+                Arrays.asList(new ItemPair(Items.CAKE, Items.CHOCOLATE_CAKE), new ItemPair(Items.CHOCOLATE_DUST, -1))),
+        CHOCOLATE_CAKE2("You use the chocolate bar on the cake to make a chocolate cake.", Arrays.asList(new SkillRequired(StatType.Cooking, 50, 30)),
+                Arrays.asList(new ItemPair(Items.CAKE, Items.CHOCOLATE_CAKE), new ItemPair(Items.CHOCOLATE_BAR, -1))),
         ;
 
         public int tickInterval, animation, graphics, inventorySpaceRequired;
@@ -224,26 +234,37 @@ public class ItemCombineAction {
                 skillItems.add(item);
             }
             for (List<ItemPair> itemReqs : itemCombine.items) {
-                int itemIdOne = itemReqs.get(1).required.getId();
-                int itemIdTwo = itemReqs.size() > 2 ? itemReqs.get(2).required.getId() : itemReqs.get(0).required.getId();
-                ItemItemAction.register(itemIdOne, itemIdTwo, (player, item1, item2) -> {
-                    if (itemCombine.skillsRequired != null) {
-                        for (SkillRequired skill : itemCombine.skillsRequired) {
-                            if(!player.getStats().check(skill.statType, skill.levelReq, itemReqs.get(0).replacement.getId(), "make the " + ItemDef.get(itemReqs.get(0).replacement.getId()) + ""))
-                                return;
+                int mainId = 0;
+                List<Integer> itemIds = new ArrayList<Integer>();
+                for (ItemPair ip : itemReqs) {
+                    if (ip.required != null) {
+                        if (mainId == 0) {
+                            mainId = ip.required.getId();
+                        } else {
+                            itemIds.add(ip.required.getId());
                         }
                     }
-                    if (player.getInventory().getFreeSlots() < itemCombine.inventorySpaceRequired) {
-                        player.sendMessage("You do not have enough inventory space to do that.");
-                        return;
-                    }
-                    if(player.getInventory().hasMultiple(itemReqs.get(1).required.getId()) || skillItems.size() > 1) {
-                        SkillItem[] si = new SkillItem[skillItems.size()];
-                        SkillDialogue.make(player, skillItems.toArray(si));
-                    } else {
-                        itemCombine.combine(player, itemReqs);
-                    }
-                });
+                }
+                for (int itemId : itemIds) {
+                    ItemItemAction.register(mainId, itemId, (player, item1, item2) -> {
+                        if (itemCombine.skillsRequired != null) {
+                            for (SkillRequired skill : itemCombine.skillsRequired) {
+                                if(!player.getStats().check(skill.statType, skill.levelReq, itemReqs.get(0).replacement.getId(), "make the " + ItemDef.get(itemReqs.get(0).replacement.getId()) + ""))
+                                    return;
+                            }
+                        }
+                        if (player.getInventory().getFreeSlots() < itemCombine.inventorySpaceRequired) {
+                            player.sendMessage("You do not have enough inventory space to do that.");
+                            return;
+                        }
+                        if(player.getInventory().hasMultiple(itemReqs.get(1).required.getId()) || skillItems.size() > 1) {
+                            SkillItem[] si = new SkillItem[skillItems.size()];
+                            SkillDialogue.make(player, skillItems.toArray(si));
+                        } else {
+                            itemCombine.combine(player, itemReqs);
+                        }
+                    });
+                }
             }
         }
     }
