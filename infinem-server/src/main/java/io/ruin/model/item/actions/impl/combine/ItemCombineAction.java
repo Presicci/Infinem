@@ -112,7 +112,18 @@ public class ItemCombineAction {
         /**
          * Pizza
          */
-
+        INCOMPLETE_PIZZA("You use the tomato on the pizza base to make an incomplete pizza.", Arrays.asList(new SkillRequired(StatType.Cooking, 35, 0)),
+                Arrays.asList(new ItemPair(Items.PIZZA_BASE, Items.INCOMPLETE_PIZZA), new ItemPair(Items.TOMATO, -1))),
+        UNCOOKED_PIZZA("You use the cheese on the incomplete pizza to make an uncooked pizza.", Arrays.asList(new SkillRequired(StatType.Cooking, 35, 0)),
+                Arrays.asList(new ItemPair(Items.INCOMPLETE_PIZZA, Items.UNCOOKED_PIZZA), new ItemPair(Items.CHEESE, -1))),
+        MEAT_PIZZA("You use the chicken on the pizza to make a meat pizza.", Arrays.asList(new SkillRequired(StatType.Cooking, 45, 26)),
+                Arrays.asList(new ItemPair(Items.PLAIN_PIZZA, Items.MEAT_PIZZA), new ItemPair(Items.COOKED_CHICKEN, -1))),
+        MEAT_PIZZA2("You use the meat on the pizza to make a meat pizza.", Arrays.asList(new SkillRequired(StatType.Cooking, 45, 26)),
+                Arrays.asList(new ItemPair(Items.PLAIN_PIZZA, Items.MEAT_PIZZA), new ItemPair(Items.COOKED_MEAT, -1))),
+        ANCHOVY_PIZZA("You use the anchovy on the pizza to make an anchovy pizza.", Arrays.asList(new SkillRequired(StatType.Cooking, 55, 39)),
+                Arrays.asList(new ItemPair(Items.PLAIN_PIZZA, Items.ANCHOVY_PIZZA), new ItemPair(Items.ANCHOVIES, -1))),
+        PINEAPPLE_PIZZA("You use the pineapple the on pizza to make a pineapple pizza.", Arrays.asList(new SkillRequired(StatType.Cooking, 65, 52)),
+                Arrays.asList(new ItemPair(Items.PLAIN_PIZZA, Items.PINEAPPLE_PIZZA), new ItemPair(Items.PINEAPPLE, -1))),
 
         /**
          * Potatoes
