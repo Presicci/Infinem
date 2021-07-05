@@ -128,7 +128,18 @@ public class ItemCombineAction {
         /**
          * Potatoes
          */
-
+        POTATO_WITH_BUTTER("You use the butter on the potato to make potato with butter.", Arrays.asList(new SkillRequired(StatType.Cooking, 39, 40.0)),
+                Arrays.asList(new ItemPair(Items.BAKED_POTATO, Items.POTATO_WITH_BUTTER), new ItemPair(Items.PAT_OF_BUTTER, -1))),
+        CHILLI_POTATO("You use the chili on the potato to make chilli potato.", Arrays.asList(new SkillRequired(StatType.Cooking, 41, 15)),
+                Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.CHILLI_POTATO), new ItemPair(Items.CHILLI_CON_CARNE, -1))),
+        POTATO_WITH_CHEESE("You use the cheese on the potato to make potato with cheese.", Arrays.asList(new SkillRequired(StatType.Cooking, 47, 40)),
+                Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.POTATO_WITH_CHEESE), new ItemPair(Items.CHEESE, -1))),
+        EGG_POTATO("You use the egg on the potato to make egg potato.", Arrays.asList(new SkillRequired(StatType.Cooking, 51, 45)),
+                Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.EGG_POTATO), new ItemPair(Items.EGG_AND_TOMATO, -1))),
+        MUSHROOM_POTATO("You use the mushroom on the potato to make mushroom potato.", Arrays.asList(new SkillRequired(StatType.Cooking, 64, 55)),
+                Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.MUSHROOM_POTATO), new ItemPair(Items.MUSHROOM_ONION, -1))),
+        TUNA_POTATO("You use the tuna on the potato to make tuna potato.", Arrays.asList(new SkillRequired(StatType.Cooking, 68, 10)),
+                Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.TUNA_POTATO), new ItemPair(Items.TUNA_AND_CORN, -1))),
 
         /**
          * Cake

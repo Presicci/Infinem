@@ -64,7 +64,10 @@ public class Consumable {
         registerEat(7082, 1923, 5, "fried mushrooms");
         registerEat(2011, 1923, 19, "curry");
 
+        registerEat(Items.BAKED_POTATO, 4, "baked potato");
+        registerEat(Items.POTATO_WITH_BUTTER, 14, "potato with butter");
         registerEat(7054, 14, "chilli potato");
+        registerEat(Items.EGG_POTATO, 16, "egg potato");
         registerEat(7058, 20, "mushroom potato");
         registerEat(6705, 16, "potato with cheese");
         registerEat(7060, 22, "tuna potato");
