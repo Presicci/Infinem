@@ -87,6 +87,7 @@ public class Consumable {
 
         registerEat(2140, 4, "chicken");
         registerEat(2142, 4, "meat");
+        registerEat(Items.UGTHANKI_MEAT, 3, "meat");
 
         registerEat(315, 3, "shrimps");
         registerEat(325, 4, "sardine");
