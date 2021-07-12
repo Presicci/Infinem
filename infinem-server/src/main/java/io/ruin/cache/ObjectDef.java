@@ -124,6 +124,7 @@ public class ObjectDef {
     public short[] modifiedModelColors;
     short[] aShortArray1596;
     short[] aShortArray1563;
+    private int category;
     public boolean verticalFlip = false;
     public int render0x1 = 128;
     public int render0x2 = 128;
@@ -441,6 +442,8 @@ public class ObjectDef {
             }
         } else if (i == 60) //this was removed
             mapMarkerId = in.readUnsignedShort();
+        else if (i == 61)
+            category = in.readUnsignedShort();
         else if (i == 62)
             verticalFlip = true;
         else if (i == 64)
