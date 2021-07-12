@@ -46,6 +46,22 @@ public class RevCaves { //todo add the agility requirements for this (for the ec
         }));
 
         /**
+         * Middle entrance/exit
+         */
+        ObjectAction.register(40387, 3188, 10127, 0, "exit", (player, obj) -> player.startEvent(event -> {
+            player.lock();
+            player.getMovement().teleport(3067, 3740, 0);
+            player.sendFilteredMessage("You exit the cave.");
+            player.unlock();
+        }));
+        ObjectAction.register(40386, 3065, 3739, 0, "enter", (player, obj) -> player.startEvent(event -> {
+            player.lock();
+            player.getMovement().teleport(3187, 10128, 0);
+            player.sendFilteredMessage("You enter the cave.");
+            player.unlock();
+        }));
+
+        /**
          * North entrance/exit
          */
         ObjectAction.register(31558, 3240, 10235, 0, "exit", (player, obj) -> player.startEvent(event -> {
