@@ -34,18 +34,12 @@ public class RevCaves { //todo add the agility requirements for this (for the ec
          */
         ObjectAction.register(31557, 3194, 10055, 0, "exit", (player, obj) -> player.startEvent(event -> {
             player.lock();
-            player.animate(2796);
-            event.delay(2);
-            player.resetAnimation();
             player.getMovement().teleport(3075, 3653, 0);
             player.sendFilteredMessage("You exit the cave.");
             player.unlock();
         }));
         ObjectAction.register(31555, 3073, 3654, 0, "enter", (player, obj) -> player.startEvent(event -> {
             player.lock();
-            player.animate(2796);
-            event.delay(2);
-            player.resetAnimation();
             player.getMovement().teleport(3196, 10056, 0);
             player.sendFilteredMessage("You enter the cave.");
             player.unlock();
@@ -56,18 +50,12 @@ public class RevCaves { //todo add the agility requirements for this (for the ec
          */
         ObjectAction.register(31558, 3240, 10235, 0, "exit", (player, obj) -> player.startEvent(event -> {
             player.lock();
-            player.animate(2796);
-            event.delay(2);
-            player.resetAnimation();
             player.getMovement().teleport(3126, 3833, 0);
             player.sendFilteredMessage("You exit the cave.");
             player.unlock();
         }));
         ObjectAction.register(31556, 3124, 3831, 0, "enter", (player, obj) -> player.startEvent(event -> {
             player.lock();
-            player.animate(2796);
-            event.delay(2);
-            player.resetAnimation();
             player.getMovement().teleport(3241, 10234, 0);
             player.sendFilteredMessage("You enter the cave.");
             player.unlock();
