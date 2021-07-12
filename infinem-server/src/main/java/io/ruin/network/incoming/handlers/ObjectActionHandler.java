@@ -81,11 +81,19 @@ public class ObjectActionHandler implements Incoming {
     }
 
     public static void handleAction(Player player, int option, int objectId, int objectX, int objectY, int ctrlRun) {
-        if(objectId == -1)
+        if(objectId == -1) {
+            if(player.debug) {
+                player.sendFilteredMessage("[ObjectAction] ObjectId is -1.");
+            }
             return;
+        }
         GameObject gameObject = Tile.getObject(objectId, objectX, objectY, player.getPosition().getZ());
-        if(gameObject == null)
+        if(gameObject == null) {
+            if(player.debug) {
+                player.sendFilteredMessage("[ObjectAction] Object is null.");
+            }
             return;
+        }
         if(player.debug) {
             DebugMessage debug = new DebugMessage()
                     .add("option", option)
