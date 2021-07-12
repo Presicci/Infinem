@@ -1,139 +1,22 @@
-clue rewards
-make sure ironman armor doesnt drop on pvp death
-karuulm dungeon graphical issues
-stat track enchantment
-add teleports to master capes
-turn the wilderness activevolcano event into a juiced version of volcanic mine
-redo daily tasks
-herquin 6529 is aggressive
-infernal tool charges
-proper barrows degrading
-rare drop table
-fix whatever the fuck is wrong with death
-barrows catacombs
-drop viewer drop announcemnets are broken
-dump all monster drops
-review monster animations and death ticks
-
-ammo pouch
-seed box
-rework slayer
-
-
-
-~~~clue scrolls
-stash units
-all clue types
-all clue tiers
-~~~hunter
-dead falls
-pit traps
-tracking
-herbiboar
-birdhouses
-butterflies
-~~~farming
-tithe farm
-rest of the stuff below
-fix tool storage capacity
-~~~magic
-magic dart formula
-lunar -
-spellbook swap
-plank make
-string jewellery
-tan leather
-spin flax
-hunter kit
-NPC contact
-cure plant
-geomancy
-tele group
-heal group
-heal other
-veangeance other
-energy transfer
-boost potion share
-stat restore potion share
-dream
-stat spy
-cure group
-arceuus spellbook -
-grasp spells
-demonbane spells
-corruption spells
-resurrection spells
-mark of darkness
-ward of aceuss
-offering spells
-shadow veil
-dark lure
-vile vigour
-degrime
-resurrect crops
-death charge
-~~~fletching
-ogre arrows
-~~~cooking
-add all pies (dragonfruit)
-~~~crafting
-weaving
-proper studded armor
-snakeskin shield
-broodoo shield
-snelm
-xerician
-birdhouses
-crystal singing
-~~~firemaking
-pyre ships
-pyre logs
-~~~herblore
-Imp repellent
-Serum 207
-Compost potion
-Blamish oil
-Shrink-me-quick
-Divine supers
-Bastion
-Battlemage
-Divine bastion and battlemage
-Divine super combat
-Barbarian mixes
-~~~fishing
-fishing spot movement
-infernal harpoon
-crystal harpoon
-some missing spots
-stuffed fish
-~~~slayer
-all masters
-coop slayer
-slayer helmets
-~~~runecrafting
-wtf is wrong with the objects - mind, body, and cosmics
-~~~agility
-pollnivneach rooftop course
-prif course portals w/rewards
-all shortcuts
-grapple shortcuts
-agility arena
-agility pyramid
-ape atol
-~~~thieving
-pyramid plunder
-rogues den
-add rest of npcs
-add rest of stalls
-~~~construction
-portal nexus
-game room
-menagerie storage space
-workshop - heraldry and clockmaking
-cape of legends teleport doesnt work
 ~~~
-
-dmg against monster increases with kc?
+NEWLY PACKED MAPS
+Ferox enclave	- need to move mammoths, fix obelisk and rev entrance
+Al kharid, added ferry
+Replaced old clan wars
+Tempeross areas
+Darkmeyer
+Soul wars island
+Camdozaal
+Theatre of blood dock
+Wild varrock lms map
+Wilderness slayer dungeon
+wilderness slayer dungeon entrance
+shades of morton underground
+slepe underground
+slepe
+ice mountain cave entrance
+TODO get water near tempeross
+~~~
 
 
 sendClientScript(917
@@ -243,7 +126,6 @@ vb 33, 34, 35, 36 = scarecrow
 obj 34437 hespori
 
 add scarecrows
-make sure fruit trees still regrow
 add hespori
 add grapes
 add giant seaweed?
@@ -292,15 +174,6 @@ League interface 657
 
 2632 0->2 selected 2nd relic? 2->26
 Relic interface 655
-~~NOW
-
-~~Eventually
-bank presets
-bank equipment screen
-sounds?
-Obor
-Bryophyta
-~~
 
 VarbitDefinitions - change login screen
 Deadman chest key 1/3 on player kill @Killer.java
@@ -324,8 +197,6 @@ consider pvp item drops and resource pack drops
 
 InfinemOSRS
 1997InfinemOSRS44!@
-
-group ironman
 
 Useful pets
 Vote day, double vote points, saturday
@@ -518,6 +389,21 @@ NONE("None active", "There is currently no active curse."),
 	DEVOTION("Devotion", "Prayer drains at half the normal drain rate unless in the Wilderness.")
 
 
+	
+~~~HOME!~~~
+Port with charter access
+27292 - bank booth
+	
+	
+	
+RUNECRAFTING
+tiara varbits, set to 1 on equip, 0 on unequip
+607 - air tiara
+608 - mind tiara
+609 - water tiara
+610 - earth tiara
+611 - fire tia\ra
+612 - body tiara
 
 Swamp crab spawning
 
@@ -529,3 +415,37 @@ Sophanem and surrounding areas
 Pest control
 Catherby fishing areas
 Pisc fishing colony
+
+
+
+
+"7991": [
+    0,0,0,0
+  ],
+  "7992": [
+    0,0,0,0
+  ],
+  "5535": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "9046": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "12342": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "8247" : [
+    0,0,0,0
+  ],
+  "8248" : [
+    0,0,0,0
+  ],
