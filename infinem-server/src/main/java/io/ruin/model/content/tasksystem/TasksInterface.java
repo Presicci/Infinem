@@ -1,4 +1,4 @@
-package io.ruin.model.content.league;
+package io.ruin.model.content.tasksystem;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;

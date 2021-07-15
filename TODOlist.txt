@@ -4,7 +4,6 @@
 [Before Release]:
 clue rewards
 make sure ironman armor doesnt drop on pvp death
-karuulm dungeon graphical issues
 redo daily tasks
 herquin 6529 is aggressive
 fix whatever the fuck is wrong with death
@@ -22,9 +21,15 @@ vote shop
 move upgrade bench
 add upgrades unlocking
 rework slayer
-Ferox enclave	- need to move mammoths, fix obelisk and rev entrance
+Ferox enclave	- need to move mammoths
 Wilderness slayer dungeon
 wilderness slayer dungeon entrance
+finish quest tab panels
+account panel
+music tab doesnt unlock
+drop announcement, pet drop, etc have the killcount or experience acquired on message
+collection log
+new task system
 
 [Post Release]:
 add teleports to master capes

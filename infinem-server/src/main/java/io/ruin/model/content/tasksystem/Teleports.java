@@ -1,8 +1,8 @@
-package io.ruin.model.content.league;
+package io.ruin.model.content.tasksystem;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 5/27/2021
  */
-public class TeleportsInterface {
+public class Teleports {
 }

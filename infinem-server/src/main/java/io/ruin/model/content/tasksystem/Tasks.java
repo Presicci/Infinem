@@ -1,4 +1,4 @@
-package io.ruin.model.content.league;
+package io.ruin.model.content.tasksystem;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
