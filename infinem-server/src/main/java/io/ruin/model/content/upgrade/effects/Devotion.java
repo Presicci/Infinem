@@ -15,7 +15,7 @@ import static io.ruin.model.skills.prayer.Bone.*;
  * https://www.rune-server.ee/members/reverenddread/
  * @project Kronos
  */
-public class HolyBones extends ItemUpgrade {
+public class Devotion extends ItemUpgrade {
 
     @Override
     public boolean modifyDroppedItem(Player player, Item item) {

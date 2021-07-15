@@ -9,7 +9,7 @@ import io.ruin.model.stat.StatType;
  * https://www.rune-server.ee/members/reverenddread/
  * @project Kronos
  */
-public class ExperienceBoost extends ItemUpgrade {
+public class Wisdom extends ItemUpgrade {
 
     @Override
     public double giveExperienceBoost(Player player, StatType statType) {

@@ -12,7 +12,7 @@ import io.ruin.model.item.Item;
  * @author Patrity - https://github.com/Patrity
  * Created on - 8/10/2020
  */
-public class Agile extends ItemUpgrade {
+public class Escapist extends ItemUpgrade {
 
     @Override
     public void preDefend(Player player, Entity target, Item item, Hit hit) {

@@ -13,7 +13,7 @@ import io.ruin.model.item.Item;
  * https://www.rune-server.ee/members/reverenddread/
  * @project Kronos
  */
-public class FireAspect extends ItemUpgrade {
+public class Smoldering extends ItemUpgrade {
 
     @Override
     public void preTargetDefend(Player player, Entity target, Item item, Hit hit) {

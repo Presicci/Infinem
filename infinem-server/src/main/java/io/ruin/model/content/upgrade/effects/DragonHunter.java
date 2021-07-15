@@ -11,12 +11,19 @@ import io.ruin.model.item.Item;
  * https://www.rune-server.ee/members/reverenddread/
  * @project Kronos
  */
-public class Spiteful extends ItemUpgrade {
+public class DragonHunter extends ItemUpgrade {
+
+    private double boost;
+
+    public DragonHunter(double boost) {
+        this.boost = boost;
+    }
 
     @Override
     public void preTargetDefend(Player player, Entity target, Item item, Hit hit) {
-        double multiplier = Math.max(0, (player.getMaxHp() - player.getHp()) * 0.0025);
-        hit.boostDamage(multiplier);
+        if (hit.attacker != null && hit.attacker.npc != null && hit.attacker.npc.getDef().dragon) {
+            hit.boostDamage(boost);
+        }
     }
 
 }

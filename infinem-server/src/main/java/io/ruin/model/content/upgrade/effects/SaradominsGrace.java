@@ -19,7 +19,7 @@ public class SaradominsGrace extends ItemUpgrade {
         if (target.getHp() - hit.damage <= 0) {
             if (Random.rollDie(10)) {
                 player.getStats().get(StatType.Prayer).restore(5);
-                player.sendMessage("Saradomin's Grace has restored 5 prayer points!");
+                player.sendMessage("Saradomin's Grace has restored 5 prayer points.");
             }
         }
     }

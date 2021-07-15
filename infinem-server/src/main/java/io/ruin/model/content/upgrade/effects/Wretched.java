@@ -11,13 +11,11 @@ import io.ruin.model.item.Item;
  * https://www.rune-server.ee/members/reverenddread/
  * @project Kronos
  */
-public class BaneOfDragons extends ItemUpgrade {
+public class Wretched extends ItemUpgrade {
 
     @Override
     public void preTargetDefend(Player player, Entity target, Item item, Hit hit) {
-        if (hit.attacker != null && hit.attacker.npc != null && hit.attacker.npc.getDef().dragon) {
-            hit.boostDamage(0.1);
-        }
+        double multiplier = Math.max(0, (player.getMaxHp() - player.getHp()) * 0.0025);
+        hit.boostDamage(multiplier);
     }
-
 }

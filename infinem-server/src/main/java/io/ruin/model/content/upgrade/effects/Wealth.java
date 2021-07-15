@@ -7,7 +7,7 @@ import io.ruin.model.content.upgrade.ItemUpgrade;
  * https://www.rune-server.ee/members/reverenddread/
  * @project Kronos
  */
-public class Looting extends ItemUpgrade {
+public class Wealth extends ItemUpgrade {
 
     @Override
     public int addDoubleDropRolls() {

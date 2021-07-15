@@ -18,12 +18,13 @@ public class ZamoraksCurse extends ItemUpgrade {
     @Override
     public void preTargetDefend(Player player, Entity target, Item item, Hit hit) {
         if (target.getHp() - hit.damage <= 0) {
-            if (Random.rollDie(10)) {
+            if (Random.rollDie(20)) {
                 World.startEvent(e -> {
                     e.delay(1);
                     target.graphics(437, 0, 0);
-                    player.hit(new Hit().fixedDamage(10));
-                    player.sendMessage("Zamorak's Curse inflicts damage!");
+                    player.hit(new Hit().fixedDamage(5));
+                    player.getStats().get(StatType.Prayer).restore(10);
+                    player.sendMessage("Zamorak's Curse takes your life in exchange for prayer.");
                 });
             }
         }

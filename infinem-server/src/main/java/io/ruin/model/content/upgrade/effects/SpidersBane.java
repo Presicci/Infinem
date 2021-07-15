@@ -11,7 +11,7 @@ import io.ruin.model.item.Item;
  * https://www.rune-server.ee/members/reverenddread/
  * @project Kronos
  */
-public class BaneOfSpiders extends ItemUpgrade {
+public class SpidersBane extends ItemUpgrade {
 
     @Override
     public void preTargetDefend(Player player, Entity target, Item item, Hit hit) {
