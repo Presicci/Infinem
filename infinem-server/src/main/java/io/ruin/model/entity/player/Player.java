@@ -1202,7 +1202,7 @@ public class Player extends PlayerAttributes {
         /*
          * Clean those who have a crazy amount of money on update
          */
-        if (lastLoginDate != null && LocalDate.parse(lastLoginDate).isBefore(LocalDate.of(2019, 11, 10))) {
+        /*if (lastLoginDate != null && LocalDate.parse(lastLoginDate).isBefore(LocalDate.of(2019, 11, 10))) {
             if (player.inventory.getAmount(COINS_995) > 10000000) {
                 player.inventory.findItem(COINS_995).setAmount(2000000);
             }
@@ -1216,7 +1216,7 @@ public class Player extends PlayerAttributes {
             if (player.bank.getAmount(PLATINUM_TOKEN) > 10000) {
                 player.bank.findItem(PLATINUM_TOKEN).setAmount(2000);
             }
-        }
+        }*/
 
         /*
          * Daily
