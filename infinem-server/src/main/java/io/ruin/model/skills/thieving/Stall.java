@@ -321,11 +321,9 @@ public enum Stall {
 
     private static void replaceStall(Stall stall, GameObject object, int replacementID, Player player) {
         World.startEvent(e -> {
-            if (!player.getPosition().inBounds(HOME)) {
-                object.setId(replacementID);
-                e.delay(stall.respawnTime);
-                object.setId(object.originalId);
-            }
+            object.setId(replacementID);
+            e.delay(player.getPosition().inBounds(HOME) ? 3 : stall.respawnTime);
+            object.setId(object.originalId);
         });
     }
 
