@@ -10,7 +10,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum CharterPoints {
         BRIMHAVEN(new Position(2760, 3238, 0), 17),
-        CATHERBY(new Position(2792, 3414, 0), 23),
+        CATHERBY(new Position(2792, 3414, 0), 8),
         CORSAIR_COVE(new Position(2589, 2851, 0), 32),
         MUSA_POINT(new Position(2954, 3158, 0), 14),
         MOS_LEHARMLESS(new Position(3671, 2931, 0), 26),
