@@ -122,13 +122,9 @@ public enum Impling {
                 PlayerCounter.IMPLINGS_CAUGHT.increment(player, 1);
                 player.unlock();
             } else {
-                if (false) { // TODO add auto catch
-                    event.delay(1);
-                    player.unlock();
-                    recursiveAttemptCatch(player, npc, impling, barehands, impJar);
-                } else {
-                    player.unlock();
-                }
+                event.delay(1);
+                player.unlock();
+                recursiveAttemptCatch(player, npc, impling, barehands, impJar);
             }
         });
     }
