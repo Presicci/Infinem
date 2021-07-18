@@ -15,7 +15,9 @@ public enum XpMode {
 
     HARD("Hard", 5, 5, 5, 10),
     MEDIUM("Regular", 60, 15, 10, 0),
-    EASY("Easy", 100, 30, 15, 0)
+    EASY("Easy", 100, 30, 15, 0),
+    NORMAL("Normal", 30, 15, 15, 0),
+    PVP("PvP", 60, 15, 15, 0)
     ;
     @Getter
     private final String name;
