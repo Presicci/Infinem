@@ -168,7 +168,7 @@ public class ConfigPanel extends PluginPanel
 		BACK_ICON = new ImageIcon(backIcon);
 		BACK_ICON_HOVER = new ImageIcon(ImageUtil.alphaOffset(backIcon, -100));
 
-		final BufferedImage orangeBackIcon = ImageUtil.fillImage(backIcon, ColorScheme.BRAND_RED);
+		final BufferedImage orangeBackIcon = ImageUtil.fillImage(backIcon, ColorScheme.BRAND_BLUE);
 
 		final BufferedImage sectionRetractIcon = ImageUtil.rotateImage(orangeBackIcon, Math.PI * 1.5);
 		SECTION_RETRACT_ICON = new ImageIcon(sectionRetractIcon);
@@ -504,7 +504,7 @@ public class ConfigPanel extends PluginPanel
 
 			JLabel headerLabel = new JLabel(cs.name());
 			headerLabel.setFont(FontManager.getRunescapeFont());
-			headerLabel.setForeground(ColorScheme.BRAND_RED);
+			headerLabel.setForeground(ColorScheme.BRAND_BLUE);
 			if (!description.equals(""))
 			{
 				headerLabel.setToolTipText("<html>" + name + ":<br>" + description + "</html>");
@@ -576,7 +576,7 @@ public class ConfigPanel extends PluginPanel
 
 			JLabel configEntryName = new JLabel(cs.name());
 			configEntryName.setPreferredSize(new Dimension(PANEL_WIDTH, (int) configEntryName.getPreferredSize().getHeight()));
-			configEntryName.setForeground(ColorScheme.BRAND_RED);
+			configEntryName.setForeground(ColorScheme.BRAND_BLUE);
 			item.add(configEntryName, BorderLayout.NORTH);
 
 			final JPanel sectionContents = new JPanel();

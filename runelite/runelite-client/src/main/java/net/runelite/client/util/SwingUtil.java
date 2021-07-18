@@ -105,8 +105,8 @@ public class SwingUtil
 		UIManager.put("TextArea.selectionBackground", ColorScheme.BRAND_BLUE_TRANSPARENT);
 		UIManager.put("TextArea.selectionForeground", Color.WHITE);
 		UIManager.put("ProgressBar.background", ColorScheme.BRAND_BLUE_TRANSPARENT.darker());
-		UIManager.put("ProgressBar.foreground", ColorScheme.BRAND_RED);
-		UIManager.put("ProgressBar.selectionBackground", ColorScheme.BRAND_RED);
+		UIManager.put("ProgressBar.foreground", ColorScheme.BRAND_BLUE);
+		UIManager.put("ProgressBar.selectionBackground", ColorScheme.BRAND_BLUE);
 		UIManager.put("ProgressBar.selectionForeground", Color.BLACK);
 		UIManager.put("ProgressBar.border", new EmptyBorder(0, 0, 0, 0));
 		UIManager.put("ProgressBar.verticalSize", new Dimension(12, 10));
