@@ -27,7 +27,7 @@ public class AdventureJon {
     }
 
     static {
-        NPCAction.register(9244, "Talk-to", ((player, npc) -> changeMode(player, npc)));
+        //NPCAction.register(9244, "Talk-to", ((player, npc) -> changeMode(player, npc)));
     }
 
 }
