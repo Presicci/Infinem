@@ -16,9 +16,9 @@ public class RareDropEmbedMessage {
             Message message = new Message();
 
             Embed embedMessage = new Embed();
-            embedMessage.setTitle("New Loot! Rare drop received!");
+            embedMessage.setTitle("Rare Drop!");
             embedMessage.setDescription(discordMessage + " from " + npcDescriptiveName + "!");
-            embedMessage.setColor(26280);
+            embedMessage.setColor(16119064);
 
             /*
              * Thumbnail
