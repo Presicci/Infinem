@@ -28,13 +28,6 @@ public class KillingSpreeEmbedMessage {
             embedMessage.setThumbnail(thumbnail);
 
             /*
-             * Footer
-             */
-            Footer footer = new Footer();
-            footer.setText(World.type.getWorldName());
-            embedMessage.setFooter(footer);
-
-            /*
              * Fire the message
              */
             message.setEmbeds(embedMessage);
