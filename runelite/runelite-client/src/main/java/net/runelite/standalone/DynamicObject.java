@@ -144,7 +144,7 @@ public class DynamicObject extends Entity implements RSDynamicObject {
          label56: {
             do {
                do {
-                  if(var2 <= this.sequenceDefinition.frameLengths[this.frame]) {
+                  if(this.sequenceDefinition.frameLengths == null || var2 <= this.sequenceDefinition.frameLengths[this.frame]) {
                      break label56;
                   }
 
