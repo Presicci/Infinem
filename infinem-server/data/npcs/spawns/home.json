@@ -13,19 +13,6 @@
     }
   },
   {
-    "name": "Adventurer John",
-    "id": 9244,
-    "x": 2028,
-    "y": 3581,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0,
-    "world": "ECO",
-    "shopOptions": {
-      "trade": "57466715-a9d7-4284-bfc2-190ce93e07f2"
-    }
-  },
-  {
     "name": "Grum",
     "id": 2889,
     "x": 2022,
