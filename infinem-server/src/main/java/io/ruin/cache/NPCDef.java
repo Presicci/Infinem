@@ -259,9 +259,9 @@ public class NPCDef {
             options[0] = "Sign-up";
         } else if(id == 7941) {
             options[2] = options[3] = options[4] = null;
-        } else if(id == 3080) { // man at home. remove attack option so people can't be assholes to newbies that are just starting out
-            options[1] = null;
-            combatLevel = 0;
+        //} else if(id == 3080) { // man at home. remove attack option so people can't be assholes to newbies that are just starting out
+        //    options[1] = null;
+        //    combatLevel = 0;
         } else if (id == 307) { // second guide npc (with no options); originally dr jekyll
             name = World.type.getWorldName() + " Expert";
             options[0] = null;
