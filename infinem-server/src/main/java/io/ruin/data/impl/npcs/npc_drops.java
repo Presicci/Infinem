@@ -114,7 +114,7 @@ public class npc_drops extends DataFile {
                 if(tableHeaders == null)
                     throw new IOException("Failed to find table headers!");
                 DumpTable table = new DumpTable();
-                elementLoop: for(Element header : tableHeaders) {
+                for(Element header : tableHeaders) {
                     Element dl = header.nextElementSibling();
                     if (dl != null && dl.is("p")) {
                         String chanceLine = dl.select("i").text();
@@ -122,18 +122,22 @@ public class npc_drops extends DataFile {
                             dl = dl.nextElementSibling();
                         } else if (chanceLine.contains("gem") || chanceLine.contains("rare drop")
                                 || chanceLine.contains("Catacombs") || chanceLine.contains("Twisted")
-                                || chanceLine.contains("Krystilia")) {
+                                || chanceLine.contains("Krystilia") || chanceLine.contains("pickpocket")
+                                || chanceLine.contains("cavalier")) {
                             continue;
                         } else {
+                            if (chanceLine.length() < 3) {
+                                continue;
+                            }
                             String[] chanceWords = chanceLine.split(" ");
                             String chance = chanceWords[3];
                             String tableType = chanceWords[8] + " " + chanceWords[9];
                             String[] chanceSplit = chance.split("/");
                             int finalChance = (int) ((Double.parseDouble(chanceSplit[0]) / Double.parseDouble(chanceSplit[1])) * 100000);
                             if (tableType.equalsIgnoreCase("general seed")) {
-                                table.addTable(tableType, finalChance, new LootItem[] { new LootItem(0, 1, 1, 5) });
+                                table.addTable(tableType, finalChance, new LootItem(0, 1, 1, 5));
                             } else {
-                                table.addTable(tableType, finalChance, new LootItem[] {});
+                                table.addTable(tableType, finalChance);
                             }
                             continue;
                         }
@@ -144,6 +148,9 @@ public class npc_drops extends DataFile {
                     int i = tableName.indexOf("[edit");
                     if(i != -1)
                         tableName = tableName.substring(0, i);
+                    if (tableName.toLowerCase().contains("pickpocket")) {
+                        continue;
+                    }
                     tableName = tableName
                             .replace("100% drop", "Always")
                             .replaceFirst("100%", "Always")
@@ -154,6 +161,7 @@ public class npc_drops extends DataFile {
                     }
                     List<DumpItem> tableItems = new ArrayList<>();
                     for(Element tr : trs) {
+                        System.out.println(tableName);
                         Elements tds = tr.select("td");
                         if(tds.size() == 0)
                             continue;
@@ -188,7 +196,8 @@ public class npc_drops extends DataFile {
                  * Parse item
                  */
                 if(item.equalsIgnoreCase("rare drop table") || item.equalsIgnoreCase("nothing")
-                        || item.contains("Looting bag"))
+                        || item.contains("Looting bag")
+                        || (rarity.getElementsByTag("span").text().equalsIgnoreCase("always") && !tableName.equalsIgnoreCase("always")))
                     return null;
                 int itemId;
                 boolean asNote;
@@ -490,8 +499,24 @@ public class npc_drops extends DataFile {
                             bw.newLine();
                             bw.write("        \"items\": [");
                             bw.newLine();
+                            int index = -1;
                             if (table.name.equalsIgnoreCase("general seed")) {
-                                bw.write("          " + "" + "{ \"id\": " + "0" + ", \"min\": " + "1" + ", \"max\": " + "1" + ", \"weight\": " + "5" + " }");
+                                index = 0;
+                            } else if (table.name.equalsIgnoreCase("herb drop")) {
+                                index = 1;
+                            } else if (table.name.equalsIgnoreCase("uncommon seed")) {
+                                index = 2;
+                            } else if (table.name.equalsIgnoreCase("rare seed")) {
+                                index = 3;
+                            } else if (table.name.equalsIgnoreCase("three-herb seed")) {
+                                index = 4;
+                            } else if (table.name.equalsIgnoreCase("useful herb")) {
+                                index = 5;
+                            } else if (table.name.equalsIgnoreCase("allotment seed")) {
+                                index = 6;
+                            }
+                            if (index >= 0) {
+                                bw.write("          " + "" + "{ \"id\": " + "0" + ", \"min\": " + index + ", \"max\": " + index + ", \"weight\": " + "5" + " }");
                                 bw.newLine();
                             }
                             bw.write("        ]");
