@@ -272,7 +272,7 @@ public class LootTable {
      */
     @AllArgsConstructor
     public enum CommonTables {
-        HERB(199, "herb", 128, new LootItem[] {
+        HERB(199, "herb drop", 128, new LootItem[] {
                 new LootItem(199, 1, 32),   // Guam
                 new LootItem(201, 1, 24),   // Marrentill
                 new LootItem(203, 1, 18),   // Tarromin
