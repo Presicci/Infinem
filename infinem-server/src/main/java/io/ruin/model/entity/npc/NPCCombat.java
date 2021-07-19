@@ -333,7 +333,29 @@ public abstract class NPCCombat extends Combat {
                 if (items != null) {
                     for (Item item : items) {
                         if (item.getId() == 0) {
-                            handleGeneralSeedDrop(killer, dropPosition, pKiller);
+                            switch (item.getAmount()) {
+                                case 0:
+                                    handleGeneralSeedDrop(killer, dropPosition, pKiller);
+                                    break;
+                                case 1:
+                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.HERB);
+                                    break;
+                                case 2:
+                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.UNCOMMON_SEED);
+                                    break;
+                                case 3:
+                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.RARE_SEED);
+                                    break;
+                                case 4:
+                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.THREE_HERB_SEED);
+                                    break;
+                                case 5:
+                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.USEFUL_HERB);
+                                    break;
+                                case 6:
+                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.ALLOTMENT_SEED);
+                                    break;
+                            }
                             seedItem = item;
                         }
                     }
@@ -423,6 +445,11 @@ public abstract class NPCCombat extends Combat {
             ct = LootTable.CommonTables.GENERAL_SEED_995;
         }
         LootTable t = new LootTable().addTable(0, ct.items);
+        handleDrop(killer, dropPosition, pKiller, t.rollItems(false));
+    }
+
+    private void handleTableDrop(Killer killer, Position dropPosition, Player pKiller, LootTable.CommonTables table) {
+        LootTable t = new LootTable().addTable(0, table.items);
         handleDrop(killer, dropPosition, pKiller, t.rollItems(false));
     }
 
