@@ -49,48 +49,49 @@ public class Bestiary {
                 }
                 int[] childId = {13};
                 map.values().forEach(levelsMap -> {
-                    List<NPCDef> matched = new ArrayList<>();
-                    levelsMap.values().forEach(defs -> {
-                        defs.sort(new Comparator<NPCDef>() {
-                            @Override
-                            public int compare(NPCDef d1, NPCDef d2) {
-                                return Integer.compare(priority(d2), priority(d1));
-                            }
-                            private int priority(NPCDef def) {
-                                int priority = 0;
-                                if(def.combatInfo != null)
-                                    priority++;
-                                if(def.lootTable != null)
-                                    priority++;
-                                if(def.combatLevel > 0)
-                                    priority++;
-                                if(def.hasOption("attack"))
-                                    priority++;
-                                return priority;
-                            }
+                    if (results.size() <= 36) {
+                        List<NPCDef> matched = new ArrayList<>();
+                        levelsMap.values().forEach(defs -> {
+                            defs.sort(new Comparator<NPCDef>() {
+                                @Override
+                                public int compare(NPCDef d1, NPCDef d2) {
+                                    return Integer.compare(priority(d2), priority(d1));
+                                }
+
+                                private int priority(NPCDef def) {
+                                    int priority = 0;
+                                    if (def.combatInfo != null)
+                                        priority++;
+                                    if (def.lootTable != null)
+                                        priority++;
+                                    if (def.combatLevel > 0)
+                                        priority++;
+                                    if (def.hasOption("attack"))
+                                        priority++;
+                                    return priority;
+                                }
+                            });
+                            NPCDef def = defs.get(0);
+                            if (def.combatInfo != null && def.lootTable != null)
+                                matched.add(def);
+                            //^ only match the highest priority npc with this combat level.
                         });
-                        NPCDef def = defs.get(0);
-                        if(def.combatInfo != null || def.lootTable != null)
-                            matched.add(def);
-                        //^ only match the highest priority npc with this combat level.
-                    });
-                    for(NPCDef def : matched) {
-                        BestiarySearchResult result = new BestiarySearchResult(def.id);
-                        result.childId = childId[0] - 1; //wish java somehow allowed non-final modification inside of lambdas!
-                        if(matched.size() > 1) //multiple same levels
-                            result.name += " (" + def.combatLevel + ")";
-                        /* some custom name resizing! */
-                        result.name = result.name.replace("Greater Skeleton Hellhound", "Grtr. Skeleton Hellhound");
-                        /* end of custom name resizing! */
-                        results.add(result);
-                        childId[0]++;
+                        for (NPCDef def : matched) {
+                            BestiarySearchResult result = new BestiarySearchResult(def.id);
+                            result.childId = childId[0] - 1; //wish java somehow allowed non-final modification inside of lambdas!
+                            if (matched.size() > 1) //multiple same levels
+                                result.name += " (" + def.combatLevel + ")";
+                            /* some custom name resizing! */
+                            result.name = result.name.replace("Greater Skeleton Hellhound", "Grtr. Skeleton Hellhound");
+                            /* end of custom name resizing! */
+                            results.add(result);
+                            if (results.size() > 35) {
+                                break;
+                            }
+                            childId[0]++;
+                        }
                     }
                 });
-                if (results.size() > 15) {
-                    results.clear();
-                    player.sendMessage("Too many results..");
-                    return;
-                }
             }
             Server.worker.execute(() -> {
                 int found = results.size() - 2; //minus two because of the search entries
