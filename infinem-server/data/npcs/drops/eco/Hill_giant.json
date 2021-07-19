@@ -35,13 +35,14 @@
         "name": "herb drop",
         "weight": 56,
         "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
         ]
       },
       {
         "name": "general seed",
         "weight": 145,
         "items": [
-          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+          { "id": 0, "min": 0, "max": 0, "weight": 5 }
         ]
       },
       {
@@ -62,8 +63,6 @@
           { "id": 225, "min": 1, "max": 1, "weight": 8590 },   //Limpwurt root
           { "id": 1917, "min": 1, "max": 1, "weight": 4690 },   //Beer
           { "id": 1446, "min": 1, "max": 1, "weight": 1560 },   //Body talisman
-          #WikiNote: ↑
-          #WikiNote: The drop rate is doubled in the Wilderness
           { "id": 20754, "min": 1, "max": 1, "weight": 781 }   //Giant key
         ]
       },
