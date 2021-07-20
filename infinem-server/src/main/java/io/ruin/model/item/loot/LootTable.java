@@ -6,6 +6,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.api.utils.WebTable;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import lombok.AllArgsConstructor;
 
 import java.text.DecimalFormat;
@@ -393,7 +394,7 @@ public class LootTable {
                 new LootItem(22873, 1, 100)     // Potato cactus
         }),
 
-        THREE_HERB_SEED(5313, "three-herb seed", 250, new LootItem[] {
+        TREE_HERB_SEED(5313, "tree-herb seed", 250, new LootItem[] {
                 new LootItem(5295, 1, 30),      // Ranarr
                 new LootItem(5300, 1, 28),      // Snapdragon
                 new LootItem(5304, 1, 22),      // Torstol
@@ -428,7 +429,26 @@ public class LootTable {
                 new LootItem(5323, 1, 2),                        // Strawberry
                 new LootItem(5321, 1, 1),                        // Watermelon
                 new LootItem(22879, 1, 1),                       // Snape grass
-        });
+        }),
+
+        SUPERIOR(20724, "superior", 8, new LootItem[] {
+                new LootItem(20736, 1, 1, 3),        // Dust battlestaff
+                new LootItem(20730, 1, 1, 3),        // Mist battlestaff
+                new LootItem(20724, 1, 1, 1),        // Imbued heart
+                new LootItem(21270, 1, 1, 1)         // Eternal gem
+        }),
+
+        TALISMAN(Items.AIR_TALISMAN, "talisman drop", 28, new LootItem[] {
+                new LootItem(Items.AIR_TALISMAN, 1, 1, 4),          // Air
+                new LootItem(Items.BODY_TALISMAN, 1, 1, 4),         // Body
+                new LootItem(Items.EARTH_TALISMAN, 1, 1, 4),        // Earth
+                new LootItem(Items.FIRE_TALISMAN, 1, 1, 4),         // Fire
+                new LootItem(Items.MIND_TALISMAN, 1, 1, 4),         // Mind
+                new LootItem(Items.WATER_TALISMAN, 1, 1, 4),        // Water
+                new LootItem(Items.COSMIC_TALISMAN, 1, 1, 2),       // Cosmic
+                new LootItem(Items.CHAOS_TALISMAN, 1, 1, 1),        // Chaos
+                new LootItem(Items.NATURE_TALISMAN, 1, 1, 1)        // Nature
+        }),;
 
         public int itemId;
         public String title;
