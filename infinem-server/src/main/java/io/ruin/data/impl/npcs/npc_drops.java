@@ -123,8 +123,11 @@ public class npc_drops extends DataFile {
                         } else if (chanceLine.contains("gem") || chanceLine.contains("rare drop")
                                 || chanceLine.contains("Catacombs") || chanceLine.contains("Twisted")
                                 || chanceLine.contains("Krystilia") || chanceLine.contains("pickpocket")
-                                || chanceLine.contains("cavalier")) {
+                                || chanceLine.contains("cavalier") || chanceLine.contains("superior")
+                                || chanceLine.contains("Deadman")) {
                             continue;
+                        } else if (chanceLine.contains("herb subtable")) {
+                            dl = dl.nextElementSibling();
                         } else {
                             if (chanceLine.length() < 3) {
                                 continue;
@@ -409,9 +412,10 @@ public class npc_drops extends DataFile {
                                 || table.name.equalsIgnoreCase("uncommon seed")
                                 || table.name.equalsIgnoreCase("rare seed")
                                 || table.name.equalsIgnoreCase("general seed")
-                                || table.name.equalsIgnoreCase("three-herb seed")
+                                || table.name.equalsIgnoreCase("tree-herb seed")
                                 || table.name.equalsIgnoreCase("useful herb")
-                                || table.name.equalsIgnoreCase("allotment seed")) {
+                                || table.name.equalsIgnoreCase("allotment seed")
+                                || table.name.equalsIgnoreCase("talisman drop")) {
                             ++commonTables;
                             commonTab.add(table);
                         } else {
@@ -486,9 +490,10 @@ public class npc_drops extends DataFile {
                                 || table.name.equalsIgnoreCase("uncommon seed")
                                 || table.name.equalsIgnoreCase("rare seed")
                                 || table.name.equalsIgnoreCase("general seed")
-                                || table.name.equalsIgnoreCase("three-herb seed")
+                                || table.name.equalsIgnoreCase("tree-herb seed")
                                 || table.name.equalsIgnoreCase("useful herb")
-                                || table.name.equalsIgnoreCase("allotment seed")) {
+                                || table.name.equalsIgnoreCase("allotment seed")
+                                || table.name.equalsIgnoreCase("talisman drop")) {
                             bw.newLine();
                             bw.write("      {");
                             bw.newLine();
@@ -508,12 +513,14 @@ public class npc_drops extends DataFile {
                                 index = 2;
                             } else if (table.name.equalsIgnoreCase("rare seed")) {
                                 index = 3;
-                            } else if (table.name.equalsIgnoreCase("three-herb seed")) {
+                            } else if (table.name.equalsIgnoreCase("tree-herb seed")) {
                                 index = 4;
                             } else if (table.name.equalsIgnoreCase("useful herb")) {
                                 index = 5;
                             } else if (table.name.equalsIgnoreCase("allotment seed")) {
                                 index = 6;
+                            } else if (table.name.equalsIgnoreCase("talisman drop")) {
+                                index = 7;
                             }
                             if (index >= 0) {
                                 bw.write("          " + "" + "{ \"id\": " + "0" + ", \"min\": " + index + ", \"max\": " + index + ", \"weight\": " + "5" + " }");
