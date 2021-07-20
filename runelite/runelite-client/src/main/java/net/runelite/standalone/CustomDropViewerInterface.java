@@ -130,13 +130,16 @@ public class CustomDropViewerInterface {
                         name = "General seed table";
                         break;
                     case 59:
-                        name = "Three-herb seed table";
+                        name = "Tree-herb seed table";
                         break;
                     case 60:
                         name = "Useful herb table";
                         break;
                     case 61:
                         name = "Allotment seed table";
+                        break;
+                    case 63:
+                        name = "Talisman table";
                         break;
                     default:
                         name = broadcastType + "";
