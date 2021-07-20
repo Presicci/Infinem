@@ -347,13 +347,16 @@ public abstract class NPCCombat extends Combat {
                                     handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.RARE_SEED);
                                     break;
                                 case 4:
-                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.THREE_HERB_SEED);
+                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.TREE_HERB_SEED);
                                     break;
                                 case 5:
                                     handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.USEFUL_HERB);
                                     break;
                                 case 6:
                                     handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.ALLOTMENT_SEED);
+                                    break;
+                                case 7:
+                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.TALISMAN);
                                     break;
                             }
                             seedItem = item;
