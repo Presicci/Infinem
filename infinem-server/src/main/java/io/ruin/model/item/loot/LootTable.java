@@ -112,37 +112,17 @@ public class LootTable {
             double tableRand = Random.get() * totalWeight;
             for(ItemsTable table : tables) {
                 if((tableRand -= table.weight) <= 0) {
-                    if(table.items != null) {
-                        double itemsRand = Random.get() * table.totalWeight;
-                        for(LootItem item : table.items) {
-                            if(item.weight == 0) {
-                                /* weightless item landed, add it and continue loop */
-                                items.add(item.toItem());
-                                continue;
-                            }
-                            if((itemsRand -= item.weight) <= 0) {
-                                /* weighted item landed, add it and break loop */
-                                items.add(item.toItem());
-                                break;
-                            }
+                    double itemsRand = Random.get() * table.totalWeight;
+                    for(LootItem item : table.items) {
+                        if(item.weight == 0) {
+                            /* weightless item landed, add it and continue loop */
+                            items.add(item.toItem());
+                            continue;
                         }
-                    } else {
-                        for (CommonTables cTable : CommonTables.values()) {
-                            if (cTable.title.equalsIgnoreCase(table.name)) {
-                                double itemsRand = Random.get() * cTable.totalWeight;
-                                for(LootItem item : cTable.items) {
-                                    if(item.weight == 0) {
-                                        /* weightless item landed, add it and continue loop */
-                                        items.add(item.toItem());
-                                        continue;
-                                    }
-                                    if((itemsRand -= item.weight) <= 0) {
-                                        /* weighted item landed, add it and break loop */
-                                        items.add(item.toItem());
-                                        break;
-                                    }
-                                }
-                            }
+                        if((itemsRand -= item.weight) <= 0) {
+                            /* weighted item landed, add it and break loop */
+                            items.add(item.toItem());
+                            break;
                         }
                     }
                     break;
