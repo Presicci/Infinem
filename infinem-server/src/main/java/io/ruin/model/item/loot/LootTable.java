@@ -78,9 +78,9 @@ public class LootTable {
         totalWeight = 0;
         if(tables != null) {
             for(ItemsTable table : tables) {
-                if (!table.name.equalsIgnoreCase("tertiary")) {
-                    totalWeight += table.weight;
-                }
+                //if (!table.name.equalsIgnoreCase("tertiary")) {
+                totalWeight += table.weight;
+                //}
                 table.totalWeight = 0;
                 if(table.items != null) {
                     for(LootItem item : table.items)
@@ -111,17 +111,19 @@ public class LootTable {
         if(tables != null) {
             double tableRand = Random.get() * totalWeight;
             for(ItemsTable table : tables) {
+                System.out.println("" + table.name);
                 if((tableRand -= table.weight) <= 0) {
                     double itemsRand = Random.get() * table.totalWeight;
                     for(LootItem item : table.items) {
-                        if(item.weight == 0) {
-                            /* weightless item landed, add it and continue loop */
+                        if(item.weight == 0) {  // weightless item landed, add it and continue loop
                             items.add(item.toItem());
                             continue;
                         }
-                        if((itemsRand -= item.weight) <= 0) {
-                            /* weighted item landed, add it and break loop */
+                        if((itemsRand -= item.weight) <= 0) { // weighted item landed, add it and break loop
                             items.add(item.toItem());
+                            if (table.name.equalsIgnoreCase("tertiary")) {  // tertiary items are rolled alongside, so reroll after hitting one
+                                items.addAll(this.rollItems(false));
+                            }
                             break;
                         }
                     }
