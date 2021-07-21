@@ -207,7 +207,7 @@ public class npc_drops extends DataFile {
                 if(item.contains("(m)")) {
                     item = item.replace("(m)", "");
                 }
-                if(item.contains("(f)")) {
+                if(item.contains("(f)") || item.toLowerCase().contains("brimstone key")) {
                     //item = item.replace("(f)", "");
                     return null;
                 }
