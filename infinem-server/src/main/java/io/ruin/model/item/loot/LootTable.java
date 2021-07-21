@@ -120,9 +120,15 @@ public class LootTable {
                             continue;
                         }
                         if((itemsRand -= item.weight) <= 0) { // weighted item landed, add it and break loop
+                            if (item.id == -1) {    // -1 is nothing
+                                break;
+                            }
                             items.add(item.toItem());
                             if (table.name.equalsIgnoreCase("tertiary")) {  // tertiary items are rolled alongside, so reroll after hitting one
-                                items.addAll(this.rollItems(false));
+                                List<Item> i = this.rollItems(false);
+                                if (i != null) {
+                                    items.addAll(i);
+                                }
                             }
                             break;
                         }
