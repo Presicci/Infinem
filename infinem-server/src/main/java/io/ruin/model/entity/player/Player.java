@@ -1662,7 +1662,7 @@ public class Player extends PlayerAttributes {
         if (getInventory().contains(itemId)) {
             return getInventory();
         } else if (getEquipment().contains(itemId)) {
-            return getInventory();
+            return getEquipment();
         } else if (getBank().contains(itemId)) {
             return getBank();
         } else if (getLootingBag().contains(itemId)) {
