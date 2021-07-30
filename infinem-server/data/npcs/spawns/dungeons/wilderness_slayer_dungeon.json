@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3369,
+    "y": 10068,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3372,
+    "y": 10065,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3370,
+    "y": 10062,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3363,
+    "y": 10074,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3364,
+    "y": 10079,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3362,
+    "y": 10080,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3359,
+    "y": 10075,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3369,
+    "y": 10068,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3353,
+    "y": 10077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3350,
+    "y": 10075,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3351,
+    "y": 10083,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  }
+]
