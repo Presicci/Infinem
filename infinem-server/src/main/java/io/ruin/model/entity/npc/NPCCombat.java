@@ -39,7 +39,11 @@ import io.ruin.services.discord.impl.RareDropEmbedMessage;
 import io.ruin.utility.Broadcast;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.lang3.ArrayUtils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -313,6 +317,51 @@ public abstract class NPCCombat extends Combat {
         return allowRespawn;
     }
 
+    private final HashMap<String, Item[][]> groupedDrops = new HashMap<String, Item[][]>() {{
+        put("alchemical hydra", new Item[][] {
+                { new Item(1401), new Item(1403) }, // Mystic fire and water staff
+                { new Item(1079), new Item(1127) }, // Rune platelegs and platebody
+                { new Item(1093), new Item(1127) }, // Rune plateskirt and platebody
+                { new Item(4111), new Item(4113) }, // Mystic robe bottom and top
+                { new Item(169, 3), new Item(3026, 3) }
+        });
+    }};
+
+    private List<Item> getGroupDrop(Item item) {
+        List<Item> finalList = new ArrayList<Item>();
+        Item[][] groups = groupedDrops.get(this.npc.getDef().name.toLowerCase());
+        if (groups == null) {
+            return finalList;
+        }
+        for (Item[] group : groups) {
+            if (item.getId() == group[0].getId()) {
+                Item[] tempArray = new Item[group.length - 1];
+                System.arraycopy(group, 1, tempArray, 0, group.length - 1);
+                finalList.addAll(Arrays.asList(tempArray));
+            }
+        }
+        return finalList;
+    }
+
+    /*
+     * Drops the next part that the player needs to make the brimstone ring.
+     */
+    private int generateBrimstoneRingPart(Player player) {
+        if (player.findItem(22973) != null) {   // Hydra's Eye
+            if (player.findItem(22971) != null) {   // Hydra's Fang
+                if (player.findItem(22969) != null) {   // Hydra's Heart
+                    return 22973;   // Player has all parts, so drop the first again
+                } else {
+                    return 22969;   // Player has first 2 parts, drop last
+                }
+            } else {
+                return 22971;   // Player has first part, drop second
+            }
+        } else {
+            return 22973;   // Player has no parts, drop first
+        }
+    }
+
     public void dropItems(Killer killer) {
         NPCDef def = npc.getDef();
         Position dropPosition = getDropPosition();
@@ -329,9 +378,13 @@ public abstract class NPCCombat extends Combat {
             int rolls = DoubleDrops.getRolls(killer.player);
             for(int i = 0; i < rolls; i++) {
                 List<Item> items = t.rollItems(i == 0);
+                List<Item> toAdd = new ArrayList<Item>();
                 Item seedItem = null;
                 if (items != null) {
                     for (Item item : items) {
+                        /*
+                         * Handles common table drops, denoted in the item list as an id of 0
+                         */
                         if (item.getId() == 0) {
                             switch (item.getAmount()) {
                                 case 0:
@@ -361,12 +414,35 @@ public abstract class NPCCombat extends Combat {
                             }
                             seedItem = item;
                         }
+
+                        /*
+                         * Checks if an item is part of a drop group
+                         */
+                        List<Item> gItems = getGroupDrop(item);
+                        if (gItems.size() > 0) {
+                            toAdd.addAll(gItems);
+                        }
                     }
-                }
-                if (seedItem != null) {
-                    items.remove(seedItem);
-                }
-                if(items != null) {
+                    /*
+                     * Checks if a Hydra's Eye is in the loot, and makes sure the player
+                     * gets the correct part they need.
+                     */
+                    for (Item item : items) {
+                        if (item.getId() == 22973) {
+                            int part = generateBrimstoneRingPart(killer.player);
+                            if (part != 22973) {
+                                items.remove(item);
+                                items.add(new Item(part));
+                            }
+                            break;
+                        }
+                    }
+                    if (seedItem != null) {
+                        items.remove(seedItem);
+                    }
+                    if (toAdd.size() > 0) {
+                        items.addAll(toAdd);
+                    }
                     handleDrop(killer, dropPosition, pKiller, items);
                 }
             }
