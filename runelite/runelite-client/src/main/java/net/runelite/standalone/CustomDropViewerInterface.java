@@ -6,9 +6,35 @@ import org.apache.commons.text.WordUtils;
 
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 
 public class CustomDropViewerInterface {
+
+    private static final HashMap<String, Item[][]> groupedDrops = new HashMap<String, Item[][]>() {{
+        put("alchemical hydra", new Item[][] {
+                { new Item(1401), new Item(1403) }, // Mystic fire and water staff
+                { new Item(1079), new Item(1127) }, // Rune platelegs and platebody
+                { new Item(1093), new Item(1127) }, // Rune plateskirt and platebody
+                { new Item(4111), new Item(4113) }, // Mystic robe bottom and top
+                { new Item(169, 3), new Item(3026, 3) } // Super restores and super rangings
+        });
+    }};
+
+    private static class Item {
+        public int itemId;
+        public int amount;
+
+        public Item(int itemId, int amount) {
+            this.itemId = itemId;
+            this.amount = amount;
+        }
+
+        public Item(int itemId) {
+            this.itemId = itemId;
+            this.amount = 1;
+        }
+    }
 
     public static void init(String tableName, int petId, int petAverage, List<Integer[]> drops) {
         Widget infoX = Canvas.get(522, 17);
@@ -93,6 +119,9 @@ public class CustomDropViewerInterface {
             ViewportMouse.client.revalidateWidget(item);
 
             if ((broadcastType > 3 && broadcastType < 50) || broadcastType <= 0) {
+                if (itemId == 22973) {  // Hydra's Eye
+                    name = "Brimstone Ring Parts";
+                }
                 Widget itemName = Widget.addChild(parent.id, 4, childId++);
                 itemName.rawX = 38;
                 itemName.rawY = bg.rawY + 10;
@@ -278,42 +307,144 @@ public class CustomDropViewerInterface {
                 value.text = "<col=ffb83f>~ 1 / " + average;
                 WorldMapSectionType.method116(value);
                 ViewportMouse.client.revalidateWidget(value);
+            } else if (itemId == 22973) {   // Hydra's eye
+                Widget info = Widget.addChild(parent.id, 4, childId++);
+                info.rawX = 170;
+                info.rawY = bg.rawY + 1;
+                info.rawWidth = 165;
+                info.rawHeight = bg.rawHeight;
+                info.fontId = 494;
+                info.textShadowed = true;
+                info.color = 16750623;
+                info.text = "<col=F5DEB3>Dropped in order of:<br><col=F5DEB3>Eye, Fang, then Heart.";
+                info.textXAlignment = 1;
+                info.textYAlignment = 1;
+                WorldMapSectionType.method116(info);
+                ViewportMouse.client.revalidateWidget(info);
+
+                Widget column = Widget.addChild(parent.id, 4, childId++);
+                column.rawX = 340;
+                column.rawY = bg.rawY + 7;
+                column.rawWidth = 80;
+                column.rawHeight = 32;
+                column.fontId = 494;
+                column.textShadowed = true;
+                column.color = 16750623;
+                column.textXAlignment = 1;
+                column.text = "Drop Chance:";
+                WorldMapSectionType.method116(column);
+                ViewportMouse.client.revalidateWidget(column);
+
+                Widget value = Widget.addChild(parent.id, 4, childId++);
+                value.rawX = column.rawX;
+                value.rawY = column.rawY + 12;
+                value.rawWidth = column.rawWidth;
+                value.rawHeight = 10;
+                value.fontId = 494;
+                value.textShadowed = true;
+                value.color = 16750623;
+                value.textXAlignment = 1;
+                value.text = "<col=ffb83f>~ 1 / " + average;
+                WorldMapSectionType.method116(value);
+                ViewportMouse.client.revalidateWidget(value);
             } else {
-                int x = 170;
-                for(int c = 0; c < columns.length; c++) {
-                    String s = columns[c];
-                    Widget column = Widget.addChild(parent.id, 4, childId++);
-                    column.rawX = x;
-                    column.rawY = bg.rawY + 7;
-                    column.rawWidth = 80;
-                    column.rawHeight = 32;
-                    column.fontId = 494;
-                    column.textShadowed = true;
-                    column.color = 16750623;
-                    column.textXAlignment = 1;
-                    column.text = s + ":";
-                    WorldMapSectionType.method116(column);
-                    ViewportMouse.client.revalidateWidget(column);
-                    x += 85;
+                boolean groupDrop = false;
+                Item[][] groups = groupedDrops.get(tableName.toLowerCase());
+                if (groups != null) {
+                    for (Item[] group : groups) {
+                        if (itemId == group[0].itemId) {
+                            Widget info = Widget.addChild(parent.id, 4, childId++);
+                            info.rawX = 170;
+                            info.rawY = bg.rawY + 1;
+                            info.rawWidth = 165;
+                            info.rawHeight = bg.rawHeight;
+                            info.fontId = 494;
+                            info.textShadowed = true;
+                            info.color = 16750623;
+                            StringBuilder otherDrops = new StringBuilder(" ");
+                            for (int index = 1; index < group.length; index++) {
+                                ItemDefinition tempDef = Occluder.getItemDefinition(group[index].itemId);
+                                boolean tempNote = tempDef.noteTemplate >= 0 && tempDef.notedId >= 0;
+                                String tempName = (tempNote ? Occluder.getItemDefinition(tempDef.notedId).name : tempDef.name);
+                                if (index != 1) {
+                                    otherDrops.append(", ");
+                                }
+                                otherDrops.append(group[index].amount).append("x ").append(tempName);
 
-                    Widget value = Widget.addChild(parent.id, 4, childId++);
-                    value.rawX = column.rawX;
-                    value.rawY = column.rawY + 12;
-                    value.rawWidth = column.rawWidth;
-                    value.rawHeight = 10;
-                    value.fontId = 494;
-                    value.textShadowed = true;
-                    value.color = 16750623;
-                    value.textXAlignment = 1;
+                            }
+                            info.text = WordUtils.wrap("Drops with: <col=F5DEB3>" + otherDrops.toString(), 30, "<br><col=F5DEB3>", true);
+                            info.textXAlignment = 1;
+                            info.textYAlignment = 1;
+                            WorldMapSectionType.method116(info);
+                            ViewportMouse.client.revalidateWidget(info);
 
-                    if(c == 0)
-                        value.text = "<col=ffb83f>" + (minAmount == 0 ? "-" : minAmount);
-                    else if(c == 1)
-                        value.text = "<col=ffb83f>" + (maxAmount == 0 ? "-" : maxAmount);
-                    else if(c == 2)
-                        value.text = "<col=ffb83f>" + (average == 1 ? "Always" : ("~ 1 / " + average));
-                    WorldMapSectionType.method116(value);
-                    ViewportMouse.client.revalidateWidget(value);
+                            Widget column = Widget.addChild(parent.id, 4, childId++);
+                            column.rawX = 340;
+                            column.rawY = bg.rawY + 7;
+                            column.rawWidth = 80;
+                            column.rawHeight = 32;
+                            column.fontId = 494;
+                            column.textShadowed = true;
+                            column.color = 16750623;
+                            column.textXAlignment = 1;
+                            column.text = "Drop Chance:";
+                            WorldMapSectionType.method116(column);
+                            ViewportMouse.client.revalidateWidget(column);
+
+                            Widget value = Widget.addChild(parent.id, 4, childId++);
+                            value.rawX = column.rawX;
+                            value.rawY = column.rawY + 12;
+                            value.rawWidth = column.rawWidth;
+                            value.rawHeight = 10;
+                            value.fontId = 494;
+                            value.textShadowed = true;
+                            value.color = 16750623;
+                            value.textXAlignment = 1;
+                            value.text = "<col=ffb83f>~ 1 / " + average;
+                            WorldMapSectionType.method116(value);
+                            ViewportMouse.client.revalidateWidget(value);
+                            groupDrop = true;
+                            break;
+                        }
+                    }
+                }
+                if (!groupDrop) {
+                    int x = 170;
+                    for(int c = 0; c < columns.length; c++) {
+                        String s = columns[c];
+                        Widget column = Widget.addChild(parent.id, 4, childId++);
+                        column.rawX = x;
+                        column.rawY = bg.rawY + 7;
+                        column.rawWidth = 80;
+                        column.rawHeight = 32;
+                        column.fontId = 494;
+                        column.textShadowed = true;
+                        column.color = 16750623;
+                        column.textXAlignment = 1;
+                        column.text = s + ":";
+                        WorldMapSectionType.method116(column);
+                        ViewportMouse.client.revalidateWidget(column);
+                        x += 85;
+
+                        Widget value = Widget.addChild(parent.id, 4, childId++);
+                        value.rawX = column.rawX;
+                        value.rawY = column.rawY + 12;
+                        value.rawWidth = column.rawWidth;
+                        value.rawHeight = 10;
+                        value.fontId = 494;
+                        value.textShadowed = true;
+                        value.color = 16750623;
+                        value.textXAlignment = 1;
+
+                        if(c == 0)
+                            value.text = "<col=ffb83f>" + (minAmount == 0 ? "-" : minAmount);
+                        else if(c == 1)
+                            value.text = "<col=ffb83f>" + (maxAmount == 0 ? "-" : maxAmount);
+                        else if(c == 2)
+                            value.text = "<col=ffb83f>" + (average == 1 ? "Always" : ("~ 1 / " + average));
+                        WorldMapSectionType.method116(value);
+                        ViewportMouse.client.revalidateWidget(value);
+                    }
                 }
             }
         }
