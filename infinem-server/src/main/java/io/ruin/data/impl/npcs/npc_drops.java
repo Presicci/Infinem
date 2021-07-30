@@ -82,6 +82,8 @@ public class npc_drops extends DataFile {
         table.export(wikiName, ids);
     }
 
+    private static List<String> groupedDropsNotes = null;
+
     private static final class WikiDumper {
 
         private String wikiName;
@@ -101,6 +103,7 @@ public class npc_drops extends DataFile {
                     throw new IOException("Failed to connect to wiki page!");
                 String[] searchHeaders = {"h3"};
                 Elements tableHeaders = null;
+                groupedDropsNotes = null;
                 hLoop: for(String s : searchHeaders) {
                     Elements headers = doc.body().select(s);
                     for(Element header : headers) {
@@ -126,7 +129,8 @@ public class npc_drops extends DataFile {
                                 || chanceLine.contains("cavalier") || chanceLine.contains("superior")
                                 || chanceLine.contains("Deadman")) {
                             continue;
-                        } else if (chanceLine.contains("herb subtable")) {
+                        } else if (chanceLine.contains("herb subtable") || chanceLine.contains("Due to a unique mechanic")
+                                || chanceLine.contains("noted herbs")) {
                             dl = dl.nextElementSibling();
                         } else {
                             if (chanceLine.length() < 3) {
@@ -207,7 +211,8 @@ public class npc_drops extends DataFile {
                 if(item.contains("(m)")) {
                     item = item.replace("(m)", "");
                 }
-                if(item.contains("(f)") || item.toLowerCase().contains("brimstone key")) {
+                if(item.contains("(f)") || item.toLowerCase().contains("brimstone key")
+                    || item.contains("Ikkle")) {
                     //item = item.replace("(f)", "");
                     return null;
                 }
@@ -256,8 +261,17 @@ public class npc_drops extends DataFile {
                         continue;
                     }
                     for(Element e : notes.get(0).children()) {
-                        if(e.is("span"))
+                        if(e.is("span")) {
+                            if (e.text().toLowerCase().contains("Players will receive")) {
+                                if (groupedDropsNotes.contains(e.text())) {
+                                    System.out.println("Group drop line, removing!");
+                                    return null;
+                                } else {
+                                    groupedDropsNotes.add(e.text());
+                                }
+                            }
                             itemNotes.add("WikiNote: " + e.text());
+                        }
                     }
                 }
                 /**
@@ -267,6 +281,9 @@ public class npc_drops extends DataFile {
                 if (!tableName.equalsIgnoreCase("always")) {
                     Element rarityFractionElement = rarity.getElementsByTag("span").get(0);
                     String rarityPercent = rarityFractionElement.attributes().getIgnoreCase("data-drop-percent");
+                    if (rarityPercent.contains("×")) {
+                        rarityPercent = rarityPercent.split(" ")[2];
+                    }
                     rarityPercent = rarityPercent.replaceAll("[^a-zA-Z0-9.]","");
                     double rarityDouble = Double.parseDouble(rarityPercent) / 100;
                     rarityWeight = (int ) (100000 * rarityDouble);
