@@ -212,7 +212,7 @@ public class npc_drops extends DataFile {
                     item = item.replace("(m)", "");
                 }
                 if(item.contains("(f)") || item.toLowerCase().contains("brimstone key")
-                    || item.contains("Ikkle")) {
+                    || item.contains("Ikkle") || item.toLowerCase().contains("ecumenical")) {
                     //item = item.replace("(f)", "");
                     return null;
                 }
@@ -262,7 +262,10 @@ public class npc_drops extends DataFile {
                     }
                     for(Element e : notes.get(0).children()) {
                         if(e.is("span")) {
-                            if (e.text().toLowerCase().contains("Players will receive")) {
+                            if (e.text().toLowerCase().contains("rag and bone man")) {
+                                return null;
+                            }
+                            if (e.text().toLowerCase().contains("players will receive")) {
                                 if (groupedDropsNotes.contains(e.text())) {
                                     System.out.println("Group drop line, removing!");
                                     return null;
