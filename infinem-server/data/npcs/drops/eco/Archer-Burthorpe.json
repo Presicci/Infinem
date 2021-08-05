@@ -1,0 +1,55 @@
+[
+  {
+    "ids": [ 4096, 4097 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 169,
+        "items": [
+          { "id": 847, "min": 1, "max": 1, "weight": 3130 },   //Willow longbow
+          { "id": 1097, "min": 1, "max": 1, "weight": 6250 },   //Studded chaps
+          { "id": 1099, "min": 1, "max": 1, "weight": 4690 },   //Green d'hide chaps
+          { "id": 853, "min": 1, "max": 1, "weight": 781 }   //Maple shortbow
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 124,
+        "items": [
+          { "id": 557, "min": 18, "max": 18, "weight": 1560 },   //Earth rune
+          { "id": 882, "min": 14, "max": 14, "weight": 2339 },   //Bronze arrow
+          { "id": 886, "min": 14, "max": 14, "weight": 1560 },   //Steel arrow
+          { "id": 554, "min": 17, "max": 17, "weight": 1560 },   //Fire rune
+          { "id": 556, "min": 29, "max": 29, "weight": 1560 },   //Air rune
+          { "id": 561, "min": 6, "max": 6, "weight": 781 },   //Nature rune
+          { "id": 565, "min": 1, "max": 1, "weight": 781 },   //Blood rune
+          { "id": 562, "min": 2, "max": 2, "weight": 781 }   //Chaos rune
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 669,
+        "items": [
+          { "id": 995, "min": 3, "max": 3, "weight": 781 },   //Coins
+          { "id": 995, "min": 5, "max": 5, "weight": 30500 },   //Coins
+          { "id": 995, "min": 15, "max": 15, "weight": 12500 },   //Coins
+          { "id": 995, "min": 12, "max": 12, "weight": 7030 },   //Coins
+          { "id": 995, "min": 28, "max": 28, "weight": 3130 },   //Coins
+          { "id": 995, "min": 42, "max": 42, "weight": 3130 },   //Coins
+          { "id": 995, "min": 46, "max": 46, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 35,
+        "items": [
+          { "id": 1440, "min": 1, "max": 1, "weight": 2339 },   //Earth talisman
+          { "id": 447, "min": 1, "max": 1, "weight": 781 }   //Mithril ore
+        ]
+      }
+    ]
+  }
+]

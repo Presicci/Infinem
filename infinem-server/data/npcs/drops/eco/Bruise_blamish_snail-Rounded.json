@@ -1,0 +1,9 @@
+[
+  {
+    "ids": [ 2647 ],
+    "guaranteed": [
+      { "id": 3367, "min": 1, "max": 1 },   //Fat snail
+      { "id": 3351, "min": 1, "max": 1 }   //Blamish blue shell (rounded)
+    ]
+  }
+]

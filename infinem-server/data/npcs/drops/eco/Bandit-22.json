@@ -1,0 +1,58 @@
+[
+  {
+    "ids": [ 526 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 19,
+        "items": [
+          { "id": 1323, "min": 1, "max": 1, "weight": 3130 },   //Iron scimitar
+          { "id": 1177, "min": 1, "max": 1, "weight": 1560 },   //Steel sq shield
+          { "id": 1353, "min": 1, "max": 1, "weight": 781 }   //Steel axe
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 40,
+        "items": [
+          { "id": 562, "min": 6, "max": 6, "weight": 2339 },   //Chaos rune
+          { "id": 555, "min": 9, "max": 9, "weight": 2339 },   //Water rune
+          { "id": 556, "min": 10, "max": 10, "weight": 1560 },   //Air rune
+          { "id": 560, "min": 2, "max": 2, "weight": 1560 },   //Death rune
+          { "id": 563, "min": 3, "max": 3, "weight": 1560 },   //Law rune
+          { "id": 565, "min": 2, "max": 2, "weight": 781 },   //Blood rune
+          { "id": 558, "min": 2, "max": 2, "weight": 781 },   //Mind rune
+          { "id": 561, "min": 2, "max": 2, "weight": 781 }   //Nature rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 100,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 158,
+        "items": [
+          { "id": 995, "min": 35, "max": 35, "weight": 20300 },   //Coins
+          { "id": 995, "min": 12, "max": 12, "weight": 10200 },   //Coins
+          { "id": 995, "min": 53, "max": 53, "weight": 7810 },   //Coins
+          { "id": 995, "min": 1, "max": 1, "weight": 5470 },   //Coins
+          { "id": 995, "min": 80, "max": 80, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 16,
+        "items": [
+          { "id": 453, "min": 1, "max": 1, "weight": 4690 }   //Coal
+        ]
+      }
+    ]
+  }
+]

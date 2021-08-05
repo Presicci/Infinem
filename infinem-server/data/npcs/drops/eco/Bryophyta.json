@@ -8,7 +8,7 @@
     "tables": [
       {
         "name": "Weapons and armour",
-        "weight": 390,
+        "weight": 403,
         "items": [
           { "id": 1303, "min": 1, "max": 1, "weight": 5080 },   //Rune longsword
           { "id": 1289, "min": 2, "max": 2, "weight": 4240 },   //Rune sword
@@ -24,7 +24,7 @@
       },
       {
         "name": "Runes and ammunition",
-        "weight": 317,
+        "weight": 327,
         "items": [
           { "id": 564, "min": 100, "max": 100, "weight": 5080 },   //Cosmic rune
           { "id": 563, "min": 100, "max": 100, "weight": 5080 },   //Law rune
@@ -38,47 +38,40 @@
       },
       {
         "name": "herb drop",
-        "weight": 40,
+        "weight": 42,
         "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
         ]
       },
       {
         "name": "uncommon seed",
-        "weight": 48,
+        "weight": 50,
         "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
         ]
       },
       {
         "name": "Materials",
-        "weight": 138,
+        "weight": 109,
         "items": [
           { "id": 2354, "min": 25, "max": 25, "weight": 2540 },   //Steel bar (noted)
           { "id": 2363, "min": 2, "max": 2, "weight": 5080 },   //Runite bar
-          #WikiNote: ↑ 1.0 1.1
-          #WikiNote: Uncut rubies and uncut diamonds are always dropped together.
-          { "id": 1620, "min": 5, "max": 5, "weight": 3390 },   //Uncut ruby (noted)
-          #WikiNote: ↑ 1.0 1.1
-          #WikiNote: Uncut rubies and uncut diamonds are always dropped together.
-          { "id": 1618, "min": 5, "max": 5, "weight": 3390 }   //Uncut diamond (noted)
+          { "id": 1620, "min": 5, "max": 5, "weight": 3390 }   //Uncut ruby (noted)
         ]
       },
       {
         "name": "Other",
-        "weight": 65,
+        "weight": 67,
         "items": [
           { "id": 995, "min": 8000, "max": 8000, "weight": 1689 },   //Coins
           { "id": 995, "min": 10000, "max": 10000, "weight": 4240 },   //Coins
-          #WikiNote: ↑ 1.0 1.1
-          #WikiNote: Jagex. Mod Kira's Twitter account. 8 June 2018. (Archived from the original on 25 March 2019.) Mod Kira: "#Bryophyta and Mossy Key rates are as follows: Mossy Key from: a Moss Giant 1/150 Mossy Key from: a Moss Giant on task 1/75 Mossy Key from: Bryophyta 1/16 Bryophyta's Essence: 1/118 (same as Obor's Club) And there you have it! :-)"
           { "id": 22372, "min": 1, "max": 1, "weight": 847 }   //Bryophyta's essence
         ]
       },
       {
         "name": "Tertiary",
-        "weight": 62,
+        "weight": 64,
         "items": [
-          #WikiNote: ↑ 1.0 1.1
-          #WikiNote: Jagex. Mod Kira's Twitter account. 8 June 2018. (Archived from the original on 25 March 2019.) Mod Kira: "#Bryophyta and Mossy Key rates are as follows: Mossy Key from: a Moss Giant 1/150 Mossy Key from: a Moss Giant on task 1/75 Mossy Key from: Bryophyta 1/16 Bryophyta's Essence: 1/118 (same as Obor's Club) And there you have it! :-)"
           { "id": 22374, "min": 1, "max": 1, "weight": 6250 },   //Mossy key
           { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
           { "id": 6800, "min": 1, "max": 1, "weight": 20 },   //Giant champion scroll

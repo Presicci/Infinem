@@ -1,0 +1,58 @@
+[
+  {
+    "ids": [ 1409, 1410, 1411, 1412 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 101,
+        "items": [
+          { "id": 1265, "min": 1, "max": 1, "weight": 10200 },   //Bronze pickaxe
+          { "id": 1139, "min": 1, "max": 1, "weight": 3130 },   //Bronze med helm
+          { "id": 1375, "min": 1, "max": 1, "weight": 1560 },   //Bronze battleaxe
+          { "id": 1363, "min": 1, "max": 1, "weight": 781 }   //Iron battleaxe
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 76,
+        "items": [
+          { "id": 877, "min": 2, "max": 12, "weight": 5470 },   //Bronze bolts
+          { "id": 562, "min": 2, "max": 2, "weight": 3130 },   //Chaos rune
+          { "id": 561, "min": 2, "max": 2, "weight": 3130 }   //Nature rune
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 187,
+        "items": [
+          { "id": 995, "min": 4, "max": 4, "weight": 15600 },   //Coins
+          { "id": 995, "min": 10, "max": 10, "weight": 11700 },   //Coins
+          { "id": 995, "min": 30, "max": 30, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 162,
+        "items": [
+          { "id": 2347, "min": 1, "max": 1, "weight": 7810 },   //Hammer
+          { "id": 2349, "min": 1, "max": 1, "weight": 5470 },   //Bronze bar
+          { "id": 440, "min": 1, "max": 1, "weight": 3130 },   //Iron ore
+          { "id": 438, "min": 1, "max": 1, "weight": 2339 },   //Tin ore
+          { "id": 436, "min": 1, "max": 1, "weight": 2339 },   //Copper ore
+          { "id": 2351, "min": 1, "max": 1, "weight": 2339 },   //Iron bar
+          { "id": 453, "min": 1, "max": 1, "weight": 1560 }   //Coal
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 6,
+        "items": [
+          { "id": 23182, "min": 1, "max": 1, "weight": 1000 }   //Clue scroll (beginner)
+        ]
+      }
+    ]
+  }
+]

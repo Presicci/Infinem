@@ -2,45 +2,53 @@
   {
     "ids": [ 2586 ],
     "guaranteed": [
-      { "id": 592, "min": 1, "max": 1 } //Ashes
+      { "id": 592, "min": 1, "max": 1 }   //Ashes
     ],
     "tables": [
       {
         "name": "Talismans",
-        "weight": 1,
+        "weight": 252,
         "items": [
-          { "id": 1438, "min": 1, "max": 1, "weight": 10 }, //Air talisman
-          { "id": 1444, "min": 1, "max": 1, "weight": 10 }, //Water talisman
-          { "id": 1440, "min": 1, "max": 1, "weight": 10 }, //Earth talisman
-          { "id": 1442, "min": 1, "max": 1, "weight": 10 }, //Fire talisman
-          { "id": 1448, "min": 1, "max": 1, "weight": 10 }, //Mind talisman
-          { "id": 1454, "min": 1, "max": 1, "weight": 10 }, //Cosmic talisman
-          { "id": 1452, "min": 1, "max": 1, "weight": 10 }, //Chaos talisman
-          { "id": 1446, "min": 1, "max": 1, "weight": 10 }, //Body talisman
-          { "id": 1462, "min": 1, "max": 1, "weight": 1 }, //Nature talisman
-          { "id": 1458, "min": 1, "max": 1, "weight": 1 }, //Law talisman
-          { "id": 5516, "min": 1, "max": 1, "weight": 1 } //Elemental talisman
+          { "id": 1438, "min": 1, "max": 1, "weight": 1950 },   //Air talisman
+          { "id": 1444, "min": 1, "max": 1, "weight": 1950 },   //Water talisman
+          { "id": 1440, "min": 1, "max": 1, "weight": 1950 },   //Earth talisman
+          { "id": 1442, "min": 1, "max": 1, "weight": 1950 },   //Fire talisman
+          { "id": 1448, "min": 1, "max": 1, "weight": 1950 },   //Mind talisman
+          { "id": 1446, "min": 1, "max": 1, "weight": 1950 },   //Body talisman
+          { "id": 1454, "min": 1, "max": 1, "weight": 781 },   //Cosmic talisman
+          { "id": 1452, "min": 1, "max": 1, "weight": 781 },   //Chaos talisman
+          { "id": 1462, "min": 1, "max": 1, "weight": 781 },   //Nature talisman
+          { "id": 5516, "min": 1, "max": 1, "weight": 391 }   //Elemental talisman
         ]
       },
       {
-        "name": "Runecrafting Items",
-        "weight": 1,
+        "name": "Pouches",
+        "weight": 166,
         "items": [
-          { "id": 7936, "min": 1, "max": 1, "weight": 20 }, //Pure essence
-          { "id": 7936, "min": 1, "max": 1, "weight": 20 }, //Pure essence
-          { "id": 7936, "min": 5, "max": 5, "weight": 20 }, //Pure essence
-          { "id": 7936, "min": 10, "max": 10, "weight": 20 }, //Pure essence
-          { "id": 7937, "min": 25, "max": 25, "weight": 20 }, //Pure essence (noted)
-          { "id": 5521, "min": 1, "max": 1, "weight": 1 } //Binding necklace
+        { "id": 5509, "min": 1, "max": 1, "weight": 2380 },   //Small pouch
+        { "id": 5510, "min": 1, "max": 1, "weight": 2380 },   //Medium pouch
+        { "id": 5512, "min": 1, "max": 1, "weight": 2380 },   //Large pouch
+        { "id": 5514, "min": 1, "max": 1, "weight": 2380 }   //Giant pouch
+      ]
+      },
+      {
+        "name": "Runecrafting items",
+        "weight": 581,
+        "items": [
+          { "id": 7937, "min": 1, "max": 1, "weight": 14099 },   //Pure essence (noted)
+          { "id": 7936, "min": 1, "max": 1, "weight": 13300 },   //Pure essence
+          { "id": 7937, "min": 5, "max": 5, "weight": 1560 },   //Pure essence (noted)
+          { "id": 7937, "min": 10, "max": 10, "weight": 1560 },   //Pure essence (noted)
+          { "id": 7937, "min": 15, "max": 15, "weight": 1560 },   //Pure essence (noted)
+          { "id": 5521, "min": 1, "max": 1, "weight": 1169 }   //Binding necklace
         ]
       },
       {
-        "name": "Others",
-        "weight": 1,
+        "name": "Tertiary",
+        "weight": 50,
         "items": [
-          { "id": 2289, "min": 1, "max": 1, "weight": 50 }, //Plain pizza
-          { "id": 13508, "min": 1, "max": 1, "weight": 1 }, //Ensouled abyssal head
-          { "id": 2801, "min": 1, "max": 1, "weight": 1 } //Clue scroll (medium)
+          { "id": 13508, "min": 1, "max": 1, "weight": 2500 },   //Ensouled abyssal head
+          { "id": 2801, "min": 1, "max": 1, "weight": 391 }   //Clue scroll (medium)
         ]
       }
     ]

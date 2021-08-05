@@ -1,5 +1,84 @@
 [
   {
-    "ids": [ 2623 ]
+    "ids": [ 2623 ],
+    "guaranteed": [
+      { "id": 2859, "min": 1, "max": 1 }   //Wolf bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons",
+        "weight": 19,
+        "items": [
+          { "id": 1353, "min": 1, "max": 1, "weight": 1950 }   //Steel axe
+        ]
+      },
+      {
+        "name": "Ammunition",
+        "weight": 39,
+        "items": [
+          { "id": 886, "min": 50, "max": 50, "weight": 1950 },   //Steel arrow
+          { "id": 887, "min": 5, "max": 5, "weight": 1950 }   //Steel arrow(p)
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 3,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 239,
+        "items": [
+          { "id": 221, "min": 1, "max": 1, "weight": 391 },   //Eye of newt
+          { "id": 231, "min": 1, "max": 1, "weight": 391 },   //Snape grass
+          { "id": 247, "min": 1, "max": 1, "weight": 391 },   //Jangerberries
+          { "id": 239, "min": 1, "max": 1, "weight": 391 },   //White berries
+          { "id": 225, "min": 1, "max": 1, "weight": 391 },   //Limpwurt root
+          { "id": 245, "min": 1, "max": 1, "weight": 391 },   //Wine of zamorak
+          { "id": 440, "min": 5, "max": 5, "weight": 1950 },   //Iron ore
+          { "id": 453, "min": 2, "max": 2, "weight": 1950 },   //Coal
+          { "id": 2353, "min": 2, "max": 2, "weight": 1950 },   //Steel bar
+          { "id": 2138, "min": 2, "max": 2, "weight": 1950 },   //Raw chicken
+          { "id": 2132, "min": 2, "max": 2, "weight": 1950 },   //Raw beef
+          { "id": 2136, "min": 2, "max": 2, "weight": 1950 },   //Raw bear meat
+          { "id": 227, "min": 2, "max": 2, "weight": 9770 }   //Vial of water
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 117,
+        "items": [
+          { "id": 995, "min": 6, "max": 6, "weight": 3910 },   //Coins
+          { "id": 995, "min": 15, "max": 15, "weight": 976 },   //Coins
+          { "id": 995, "min": 16, "max": 16, "weight": 976 },   //Coins
+          { "id": 995, "min": 20, "max": 20, "weight": 1950 },   //Coins
+          { "id": 995, "min": 38, "max": 38, "weight": 976 },   //Coins
+          { "id": 995, "min": 50, "max": 50, "weight": 976 },   //Coins
+          { "id": 995, "min": 96, "max": 96, "weight": 976 },   //Coins
+          { "id": 995, "min": 120, "max": 120, "weight": 976 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 580,
+        "items": [
+          { "id": 1925, "min": 2, "max": 2, "weight": 4880 },   //Bucket
+          { "id": 590, "min": 2, "max": 2, "weight": 3910 },   //Tinderbox
+          { "id": 229, "min": 2, "max": 2, "weight": 9770 },   //Vial
+          { "id": 6814, "min": 1, "max": 1, "weight": 19500 },   //Fur
+          { "id": 958, "min": 1, "max": 1, "weight": 19500 },   //Grey wolf fur
+          { "id": 1582, "min": 1, "max": 1, "weight": 195 }   //Blamish oil
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 7,
+        "items": [
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (easy)
+        ]
+      }
+    ]
   }
 ]

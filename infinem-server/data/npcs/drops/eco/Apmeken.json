@@ -1,5 +1,8 @@
 [
   {
-    "ids": [ 4196 ]
+    "ids": [ 4196 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ]
   }
 ]

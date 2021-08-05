@@ -1,81 +1,88 @@
 [
   {
-    "ids": [ 7275 ],
+    "ids": [ 7275, 8092, 8093 ],
     "guaranteed": [
-      { "id": 536, "min": 1, "max": 1 }, //Dragon bones
-      { "id": 1747, "min": 2, "max": 2 } //Black dragonhide
+      { "id": 536, "min": 1, "max": 1 },   //Dragon bones
+      { "id": 1747, "min": 2, "max": 2 }   //Black dragonhide
     ],
     "tables": [
       {
-        "name": "Weapons",
-        "weight": 12,
+        "name": "Uniques",
+        "weight": 7,
         "items": [
-          { "id": 11377, "min": 1, "max": 1, "weight": 6 }, //Rune hasta
-          { "id": 1247, "min": 1, "max": 1, "weight": 6 }, //Rune spear
-          { "id": 1303, "min": 1, "max": 1, "weight": 3 }, //Rune longsword
-          { "id": 1289, "min": 1, "max": 1, "weight": 3 }, //Rune sword
-          { "id": 1215, "min": 1, "max": 1, "weight": 3 }, //Dragon dagger
-          { "id": 1305, "min": 1, "max": 1, "weight": 1 } //Dragon longsword
+          { "id": 4087, "min": 1, "max": 1, "weight": 195 },   //Dragon platelegs
+          { "id": 4585, "min": 1, "max": 1, "weight": 195 },   //Dragon plateskirt
+          { "id": 1249, "min": 1, "max": 1, "weight": 195 },   //Dragon spear
+          { "id": 1631, "min": 1, "max": 1, "weight": 195 }   //Uncut dragonstone
         ]
       },
       {
-        "name": "Armour",
-        "weight": 12,
+        "name": "Weapons and armour",
+        "weight": 400,
         "items": [
-          { "id": 1079, "min": 1, "max": 1, "weight": 6 }, //Rune platelegs
-          { "id": 1163, "min": 2, "max": 2, "weight": 6 }, //Rune full helm
-          { "id": 1127, "min": 1, "max": 1, "weight": 6 }, //Rune platebody
-          { "id": 2503, "min": 1, "max": 1, "weight": 3 }, //Black d'hide body
-          { "id": 2491, "min": 1, "max": 1, "weight": 1 }, //Black d'hide vamb
-          { "id": 1149, "min": 1, "max": 1, "weight": 1 } //Dragon med helm
+          //{ "id": 11377, "min": 1, "max": 1, "weight": 7810 },   //Rune hasta
+          { "id": 1247, "min": 1, "max": 1, "weight": 7810 },   //Rune spear
+          { "id": 1079, "min": 1, "max": 1, "weight": 5470 },   //Rune platelegs
+          { "id": 1163, "min": 2, "max": 2, "weight": 4690 },   //Rune full helm
+          { "id": 811, "min": 20, "max": 20, "weight": 3910 },   //Rune dart
+          { "id": 1303, "min": 1, "max": 1, "weight": 3910 },   //Rune longsword
+          { "id": 2503, "min": 1, "max": 1, "weight": 1560 },   //Black d'hide body
+          { "id": 868, "min": 25, "max": 25, "weight": 1560 },   //Rune knife
+          { "id": 805, "min": 30, "max": 30, "weight": 1560 },   //Rune thrownaxe
+          { "id": 2491, "min": 1, "max": 1, "weight": 781 },   //Black d'hide vambraces
+          { "id": 1127, "min": 1, "max": 1, "weight": 781 },   //Rune platebody
+          { "id": 1149, "min": 1, "max": 1, "weight": 781 },   //Dragon med helm
+          { "id": 1305, "min": 1, "max": 1, "weight": 781 },   //Dragon longsword
+          { "id": 1215, "min": 1, "max": 1, "weight": 781 }   //Dragon dagger
         ]
       },
       {
-        "name": "Runes and Ammunition",
-        "weight": 12,
+        "name": "Runes and ammunition",
+        "weight": 333,
         "items": [
-          { "id": 830, "min": 50, "max": 50, "weight": 3 }, //Rune javelin
-          { "id": 811, "min": 20, "max": 20, "weight": 3 }, //Rune dart
-          { "id": 563, "min": 75, "max": 75, "weight": 3 }, //Law rune
-          { "id": 560, "min": 75, "max": 75, "weight": 3 }, //Death rune
-          { "id": 565, "min": 50, "max": 50, "weight": 3 }, //Blood rune
-          { "id": 566, "min": 50, "max": 50, "weight": 3 }, //Soul rune
-          { "id": 892, "min": 75, "max": 75, "weight": 3 }, //Rune arrow
-          { "id": 868, "min": 25, "max": 25, "weight": 1 }, //Rune knife
-          { "id": 805, "min": 30, "max": 30, "weight": 1 } //Rune thrownaxe
+          { "id": 830, "min": 50, "max": 50, "weight": 6250 },   //Rune javelin
+          { "id": 560, "min": 75, "max": 75, "weight": 5470 },   //Death rune
+          { "id": 565, "min": 50, "max": 50, "weight": 6250 },   //Blood rune
+          { "id": 566, "min": 50, "max": 50, "weight": 6250 },   //Soul rune
+          { "id": 563, "min": 75, "max": 75, "weight": 5470 },   //Law rune
+          { "id": 892, "min": 75, "max": 75, "weight": 5470 }   //Rune arrow
         ]
       },
       {
-        "name": "Materials and Consumables",
-        "weight": 12,
+        "name": "Materials",
+        "weight": 96,
         "items": [
-          { "id": 13441, "min": 2, "max": 2, "weight": 10 }, //Anglerfish
-          { "id": 11993, "min": 5, "max": 5, "weight": 10 }, //Lava scale (noted)
-          { "id": 11237, "min": 40, "max": 40, "weight": 10 }, //Dragon arrowtips
-          { "id": 11232, "min": 40, "max": 40, "weight": 10 }, //Dragon dart tip
-          { "id": 19582, "min": 40, "max": 40, "weight": 1 }, //Dragon javelin heads
-          { "id": 452, "min": 3, "max": 3, "weight": 1 } //Runite ore (noted)
+          { "id": 11993, "min": 5, "max": 5, "weight": 3130 },   //Lava scale (noted)
+          { "id": 11232, "min": 40, "max": 40, "weight": 2339 },   //Dragon dart tip
+          { "id": 452, "min": 3, "max": 3, "weight": 1560 },   //Runite ore (noted)
+          { "id": 11237, "min": 40, "max": 40, "weight": 1560 },   //Dragon arrowtips
+          { "id": 19582, "min": 40, "max": 40, "weight": 1560 }   //Dragon javelin heads
         ]
       },
       {
-        "name": "Rare",
-        "weight": 2,
+        "name": "Coins",
+        "weight": 103,
         "items": [
-          { "id": 4087, "min": 1, "max": 1, "weight": 5 }, //Dragon platelegs
-          { "id": 4585, "min": 1, "max": 1, "weight": 5 }, //Dragon plateskirt
-          { "id": 1249, "min": 1, "max": 1, "weight": 3 }, //Dragon spear
-          { "id": 1631, "min": 1, "max": 1, "weight": 3 } //Uncut dragonstone
+          { "id": 995, "min": 370, "max": 370, "weight": 8590 },   //Coins
+          { "id": 995, "min": 540, "max": 929, "weight": 781 }   //Coins
+          //{ "id": 995, "min": 2200, "max": 2200, "weight": 1560 }   //Coins
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 59,
         "items": [
-          { "id": 995, "min": 370, "max": 2200, "weight": 50 }, //Coins
-          { "id": 13511, "min": 1, "max": 1, "weight": 50 }, //Ensouled dragon head
-          { "id": 2722, "min": 1, "max": 1, "weight": 3 }, //Clue scroll (hard)
-          { "id": 12073, "min": 1, "max": 1, "weight": 3 }, //Clue scroll (elite)
-          { "id": 11286, "min": 1, "max": 1, "weight": 1 } //Draconic visage
+          { "id": 13441, "min": 2, "max": 2, "weight": 6250 }   //Anglerfish
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 58,
+        "items": [
+          { "id": 13511, "min": 1, "max": 1, "weight": 5000 },   //Ensouled dragon head
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (hard)
+          { "id": 12073, "min": 1, "max": 1, "weight": 400 },   //Clue scroll (elite)
+          { "id": 11286, "min": 1, "max": 1, "weight": 10 }   //Draconic visage
         ]
       }
     ]

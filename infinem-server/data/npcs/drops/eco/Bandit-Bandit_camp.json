@@ -1,0 +1,54 @@
+[
+  {
+    "ids": [ 690, 695 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Runes",
+        "weight": 305,
+        "items": [
+          { "id": 562, "min": 2, "max": 2, "weight": 16399 },   //Chaos rune
+          { "id": 560, "min": 2, "max": 2, "weight": 2339 },   //Death rune
+          { "id": 561, "min": 2, "max": 2, "weight": 1560 },   //Nature rune
+          { "id": 564, "min": 2, "max": 2, "weight": 1560 },   //Cosmic rune
+          { "id": 563, "min": 2, "max": 2, "weight": 1560 }   //Law rune
+        ]
+      },
+      {
+        "name": "Weapons and armour",
+        "weight": 30,
+        "items": [
+          { "id": 1363, "min": 1, "max": 1, "weight": 1560 },   //Iron battleaxe
+          { "id": 1353, "min": 1, "max": 1, "weight": 781 }   //Steel axe
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 142,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 428,
+        "items": [
+          { "id": 995, "min": 12, "max": 12, "weight": 18000 },   //Coins
+          { "id": 995, "min": 20, "max": 20, "weight": 9380 },   //Coins
+          { "id": 995, "min": 30, "max": 30, "weight": 781 },   //Coins
+          { "id": 995, "min": 45, "max": 45, "weight": 4690 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 91,
+        "items": [
+          { "id": 453, "min": 1, "max": 1, "weight": 3130 },   //Coal
+          { "id": 2353, "min": 1, "max": 1, "weight": 3910 }   //Steel bar
+        ]
+      }
+    ]
+  }
+]

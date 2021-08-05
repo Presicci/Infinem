@@ -1,0 +1,71 @@
+[
+  {
+    "ids": [ 7799 ],
+    "tables": [
+      {
+        "name": "Weapons",
+        "weight": 44,
+        "items": [
+          { "id": 1267, "min": 1, "max": 1, "weight": 3910 }   //Iron pickaxe
+        ]
+      },
+      {
+        "name": "Fossilised currency",
+        "weight": 384,
+        "items": [
+          { "id": 21555, "min": 4, "max": 4, "weight": 22699 },   //Numulite
+          { "id": 21555, "min": 2, "max": 2, "weight": 6250 },   //Numulite
+          { "id": 21555, "min": 8, "max": 8, "weight": 4690 }   //Numulite
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 178,
+        "items": [
+          { "id": 21622, "min": 1, "max": 1, "weight": 4690 },   //Volcanic ash
+          { "id": 440, "min": 1, "max": 1, "weight": 3130 },   //Iron ore
+          { "id": 438, "min": 3, "max": 3, "weight": 3130 },   //Tin ore
+          { "id": 45, "min": 5, "max": 5, "weight": 1560 },   //Opal bolt tips
+          { "id": 453, "min": 2, "max": 2, "weight": 1560 },   //Coal
+          { "id": 436, "min": 3, "max": 3, "weight": 1560 }   //Copper ore
+        ]
+      },
+      {
+        "name": "Oysters and Seaweed",
+        "weight": 339,
+        "items": [
+          { "id": 407, "min": 2, "max": 2, "weight": 9380 },   //Oyster
+          { "id": 407, "min": 1, "max": 1, "weight": 7030 },   //Oyster
+          { "id": 401, "min": 1, "max": 2, "weight": 6250 },   //Seaweed
+          { "id": 409, "min": 1, "max": 1, "weight": 2339 },   //Empty oyster
+          { "id": 401, "min": 5, "max": 5, "weight": 1560 },   //Seaweed
+          { "id": 403, "min": 2, "max": 2, "weight": 1560 },   //Edible seaweed
+          { "id": 411, "min": 1, "max": 1, "weight": 781 },   //Oyster pearl
+          { "id": 409, "min": 3, "max": 3, "weight": 781 }   //Empty oyster
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 53,
+        "items": [
+          { "id": 313, "min": 10, "max": 10, "weight": 1560 },   //Fishing bait
+          { "id": 21543, "min": 1, "max": 1, "weight": 781 },   //Calcite
+          { "id": 21490, "min": 2, "max": 2, "weight": 781 },   //Seaweed spore
+          { "id": 405, "min": 1, "max": 1, "weight": 781 }   //Casket
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 204,
+        "items": [
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (easy)
+          { "id": 21555, "min": 5, "max": 14, "weight": 15400 },   //Numulite
+          { "id": 21562, "min": 1, "max": 1, "weight": 857 },   //Unidentified small fossil
+          { "id": 21564, "min": 1, "max": 1, "weight": 428 },   //Unidentified medium fossil
+          { "id": 21566, "min": 1, "max": 1, "weight": 343 },   //Unidentified large fossil
+          { "id": 21568, "min": 1, "max": 1, "weight": 85 }   //Unidentified rare fossil
+        ]
+      }
+    ]
+  }
+]

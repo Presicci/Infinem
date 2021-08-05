@@ -1,0 +1,63 @@
+[
+  {
+    "ids": [ 7864 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 14,
+        "items": [
+          { "id": 1211, "min": 1, "max": 1, "weight": 2109 },   //Adamant dagger
+          { "id": 1073, "min": 1, "max": 1, "weight": 1050 }   //Adamant platelegs
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 75,
+        "items": [
+          { "id": 892, "min": 5, "max": 14, "weight": 4210 },   //Rune arrow
+          { "id": 560, "min": 15, "max": 15, "weight": 3160 },   //Death rune
+          { "id": 560, "min": 17, "max": 17, "weight": 3160 },   //Death rune
+          { "id": 565, "min": 11, "max": 11, "weight": 3160 },   //Blood rune
+          { "id": 565, "min": 8, "max": 8, "weight": 2109 },   //Blood rune
+          { "id": 565, "min": 18, "max": 18, "weight": 1050 }   //Blood rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 14,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 4,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 329,
+        "items": [
+          { "id": 11940, "min": 60, "max": 60, "weight": 55799 },   //Dark fishing bait
+          { "id": 995, "min": 500, "max": 999, "weight": 10500 },   //Coins
+          { "id": 7946, "min": 1, "max": 1, "weight": 2109 },   //Monkfish
+          { "id": 7946, "min": 2, "max": 2, "weight": 1050 },   //Monkfish
+          { "id": 448, "min": 3, "max": 7, "weight": 2109 },   //Mithril ore (noted)
+          { "id": 187, "min": 1, "max": 1, "weight": 2109 }   //Weapon poison
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 1,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 391 }   //Clue scroll (hard)
+        ]
+      }
+    ]
+  }
+]

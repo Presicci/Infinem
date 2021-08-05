@@ -1,0 +1,56 @@
+[
+  {
+    "ids": [ 7797 ],
+    "guaranteed": [
+      { "id": 2970, "min": 1, "max": 1 }   //Mort myre fungus
+    ],
+    "tables": [
+      {
+        "name": "Weapons",
+        "weight": 29,
+        "items": [
+          { "id": 1359, "min": 1, "max": 1, "weight": 2540 }   //Rune axe
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 353,
+        "items": [
+          { "id": 557, "min": 100, "max": 100, "weight": 15300 },   //Earth rune
+          { "id": 563, "min": 15, "max": 15, "weight": 5080 },   //Law rune
+          { "id": 564, "min": 15, "max": 15, "weight": 5080 },   //Cosmic rune
+          { "id": 561, "min": 15, "max": 15, "weight": 5080 }   //Nature rune
+        ]
+      },
+      {
+        "name": "tree-herb seed",
+        "weight": 9,
+        "items": [
+          { "id": 0, "min": 4, "max": 4, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 607,
+        "items": [
+          { "id": 21543, "min": 1, "max": 1, "weight": 15300 },   //Calcite
+          { "id": 6035, "min": 2, "max": 2, "weight": 10800 },   //Supercompost (noted)
+          { "id": 2971, "min": 5, "max": 5, "weight": 8470 },   //Mort myre fungus (noted)
+          { "id": 21622, "min": 2, "max": 2, "weight": 2710 }   //Volcanic ash
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 425,
+        "items": [
+          { "id": 21555, "min": 5, "max": 19, "weight": 32000 },   //Numulite
+          { "id": 21562, "min": 1, "max": 1, "weight": 2000 },   //Unidentified small fossil
+          { "id": 21564, "min": 1, "max": 1, "weight": 1000 },   //Unidentified medium fossil
+          { "id": 21566, "min": 1, "max": 1, "weight": 800 },   //Unidentified large fossil
+          { "id": 21568, "min": 1, "max": 1, "weight": 200 },   //Unidentified rare fossil
+          { "id": 2801, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (medium)
+        ]
+      }
+    ]
+  }
+]

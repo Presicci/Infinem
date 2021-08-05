@@ -1,0 +1,8 @@
+[
+  {
+    "ids": [ 6410, 6411 ],
+    "guaranteed": [
+      { "id": 6337, "min": 1, "max": 1 },   //Tribal mask (yellow)
+    ]
+  }
+]

@@ -1,32 +1,62 @@
 [
   {
-    "ids": [ 6050, 6051, 6052 ],
+    "ids": [ 2232, 6050, 6051, 6052 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 } //Bones
+      { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
-        "name": "Weapons",
-        "weight": 1,
+        "name": "Weapons and armour",
+        "weight": 128,
         "items": [
-          { "id": 1337, "min": 1, "max": 1, "weight": 6 }, //Bronze warhammer
-          { "id": 1335, "min": 1, "max": 1, "weight": 3 }, //Iron warhammer
-          { "id": 1339, "min": 1, "max": 1, "weight": 1 }, //Steel warhammer
-          { "id": 1341, "min": 1, "max": 1, "weight": 1 } //Black warhammer
+          { "id": 1337, "min": 1, "max": 1, "weight": 2339 },   //Bronze warhammer
+          { "id": 1335, "min": 1, "max": 1, "weight": 4690 },   //Iron warhammer
+          { "id": 1339, "min": 1, "max": 1, "weight": 781 },   //Steel warhammer
+          { "id": 1341, "min": 1, "max": 1, "weight": 1560 }   //Black warhammer
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 21,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 64,
+        "items": [
+          { "id": 436, "min": 5, "max": 5, "weight": 1560 },   //Copper ore
+          { "id": 438, "min": 1, "max": 1, "weight": 781 },   //Tin ore
+          { "id": 440, "min": 2, "max": 2, "weight": 2339 }   //Iron ore
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 666,
+        "items": [
+          { "id": 995, "min": 35, "max": 35, "weight": 35200 },   //Coins
+          { "id": 995, "min": 42, "max": 42, "weight": 3910 },   //Coins
+          { "id": 995, "min": 46, "max": 46, "weight": 7030 },   //Coins
+          { "id": 995, "min": 57, "max": 57, "weight": 2339 }   //Coins
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 118,
         "items": [
-          { "id": 995, "min": 35, "max": 57, "weight": 6 }, //Coins
-          { "id": 440, "min": 1, "max": 1, "weight": 6 }, //Iron ore
-          { "id": 438, "min": 1, "max": 1, "weight": 6 }, //Tin ore
-          { "id": 1917, "min": 1, "max": 1, "weight": 6 }, //Beer
-          { "id": 3801, "min": 1, "max": 1, "weight": 3 }, //Keg of beer
-          { "id": 1592, "min": 1, "max": 1, "weight": 3 }, //Ring mould
-          { "id": 1929, "min": 1, "max": 1, "weight": 3 }, //Bucket of water
-          { "id": 2801, "min": 1, "max": 1, "weight": 1 } //Clue scroll (medium)
+          { "id": 1917, "min": 1, "max": 1, "weight": 781 },   //Beer
+          { "id": 3801, "min": 1, "max": 1, "weight": 3130 },   //Keg of beer
+          { "id": 1891, "min": 1, "max": 1, "weight": 3130 },   //Cake
+          { "id": 1929, "min": 1, "max": 1, "weight": 781 },   //Bucket of water
+          { "id": 1592, "min": 1, "max": 1, "weight": 781 }   //Ring mould
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 10,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (medium)
         ]
       }
     ]

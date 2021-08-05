@@ -1,0 +1,62 @@
+[
+  {
+    "ids": [ 9293 ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 204,
+        "items": [
+          { "id": 1073, "min": 1, "max": 1, "weight": 1919 },   //Adamant platelegs
+          { "id": 1199, "min": 1, "max": 1, "weight": 1919 },   //Adamant kiteshield
+          { "id": 1359, "min": 1, "max": 1, "weight": 3850 },   //Rune axe
+          { "id": 1373, "min": 1, "max": 1, "weight": 1919 },   //Rune battleaxe
+          { "id": 1213, "min": 1, "max": 1, "weight": 1919 },   //Rune dagger
+          { "id": 1333, "min": 1, "max": 1, "weight": 1919 },   //Rune scimitar
+          { "id": 1247, "min": 1, "max": 1, "weight": 1919 },   //Rune spear
+          { "id": 1147, "min": 1, "max": 1, "weight": 1919 }   //Rune med helm
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 544,
+        "items": [
+          { "id": 9075, "min": 15, "max": 35, "weight": 11500 },   //Astral rune
+          { "id": 561, "min": 15, "max": 30, "weight": 11500 },   //Nature rune
+          { "id": 563, "min": 20, "max": 30, "weight": 11500 },   //Law rune
+          { "id": 560, "min": 10, "max": 25, "weight": 5769 },   //Death rune
+          { "id": 565, "min": 8, "max": 20, "weight": 5769 }   //Blood rune
+        ]
+      },
+      {
+        "name": "useful herb",
+        "weight": 68,
+        "items": [
+          { "id": 0, "min": 5, "max": 5, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 182,
+        "items": [
+          { "id": 995, "min": 500, "max": 2499, "weight": 13500 },   //Coins
+          { "id": 450, "min": 1, "max": 2, "weight": 1919 }   //Adamantite ore (noted)
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 15,
+        "items": [
+          { "id": 4109, "min": 1, "max": 1, "weight": 391 },   //Mystic hat (light)
+          { "id": 2722, "min": 1, "max": 1, "weight": 521 },   //Clue scroll (hard)
+          { "id": 7977, "min": 1, "max": 1, "weight": 100 },   //Basilisk head
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 24268, "min": 1, "max": 1, "weight": 20 },   //Basilisk jaw
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
+        ]
+      }
+    ]
+  }
+]

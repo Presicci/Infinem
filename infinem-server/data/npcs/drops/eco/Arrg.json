@@ -1,45 +1,79 @@
 [
   {
-    "ids": [ 642, 643, 6392, 6331 ],
+    "ids": [ 642, 643, 6392 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 } //Bones
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
     ],
     "tables": [
       {
-        "name": "Herbs and Seeds",
-        "weight": 1,
-        "items": [
-          { "id": 203, "min": 1, "max": 1, "weight": 6 }, //Grimy tarromin
-          { "id": 199, "min": 1, "max": 1, "weight": 6 }, //Grimy guam leaf
-          { "id": 209, "min": 1, "max": 1, "weight": 6 }, //Grimy irit leaf
-          { "id": 5282, "min": 1, "max": 1, "weight": 3 }, //Mushroom spore
-          { "id": 5281, "min": 1, "max": 1, "weight": 3 }, //Belladonna seed
-          { "id": 5295, "min": 1, "max": 1, "weight": 3 }, //Ranarr seed
-          { "id": 5321, "min": 1, "max": 1, "weight": 3 }, //Watermelon seed
-          { "id": 5280, "min": 1, "max": 1, "weight": 3 }, //Cactus seed
-          { "id": 5100, "min": 1, "max": 1, "weight": 1 }, //Limpwurt seed
-          { "id": 5300, "min": 1, "max": 1, "weight": 1 } //Snapdragon seed
-        ]
-      },
-      {
         "name": "Weapons and armour",
-        "weight": 1,
+        "weight": 105,
         "items": [
-          { "id": 1341, "min": 1, "max": 1, "weight": 3 }, //Black warhammer
-          { "id": 1339, "min": 1, "max": 1, "weight": 3 }, //Steel warhammer
-          { "id": 1141, "min": 1, "max": 1, "weight": 3 }, //Steel med helm
-          { "id": 1181, "min": 1, "max": 1, "weight": 1 } //Mithril sq shield
+          { "id": 1141, "min": 1, "max": 1, "weight": 3130 },   //Steel med helm
+          { "id": 1341, "min": 1, "max": 1, "weight": 2339 },   //Black warhammer
+          { "id": 1339, "min": 1, "max": 1, "weight": 2339 },   //Steel warhammer
+          { "id": 1145, "min": 1, "max": 1, "weight": 781 },   //Adamant med helm
+          { "id": 1345, "min": 1, "max": 1, "weight": 781 },   //Adamant warhammer
+          { "id": 1181, "min": 1, "max": 1, "weight": 781 }   //Mithril sq shield
         ]
       },
       {
-        "name": "Other",
-        "weight": 1,
+        "name": "Runes",
+        "weight": 146,
         "items": [
-          { "id": 995, "min": 5, "max": 100, "weight": 5 }, //Coins
-          { "id": 453, "min": 3, "max": 3, "weight": 5 }, //Coal
-          { "id": 557, "min": 25, "max": 60, "weight": 3 }, //Earth rune
-          { "id": 561, "min": 1, "max": 7, "weight": 1 }, //Nature rune
-          { "id": 2801, "min": 1, "max": 1, "weight": 1 } //Clue scroll (medium)
+          { "id": 557, "min": 60, "max": 60, "weight": 6250 },   //Earth rune
+          { "id": 561, "min": 7, "max": 7, "weight": 3910 },   //Nature rune
+          { "id": 563, "min": 2, "max": 2, "weight": 2339 },   //Law rune
+          { "id": 557, "min": 45, "max": 45, "weight": 781 },   //Earth rune
+          { "id": 557, "min": 25, "max": 25, "weight": 781 }   //Earth rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 121,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 154,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 40,
+        "items": [
+          { "id": 454, "min": 3, "max": 3, "weight": 2339 },   //Coal (noted)
+          { "id": 354, "min": 3, "max": 3, "weight": 1560 }   //Raw mackerel (noted)
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 431,
+        "items": [
+          { "id": 995, "min": 35, "max": 35, "weight": 22699 },   //Coins
+          { "id": 995, "min": 100, "max": 100, "weight": 7810 },   //Coins
+          { "id": 995, "min": 8, "max": 8, "weight": 5470 },   //Coins
+          { "id": 995, "min": 50, "max": 50, "weight": 4690 },   //Coins
+          { "id": 995, "min": 250, "max": 250, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 283,
+        "items": [
+          { "id": 13484, "min": 1, "max": 1, "weight": 2220 }   //Ensouled troll head
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 2,
+        "items": [
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
         ]
       }
     ]

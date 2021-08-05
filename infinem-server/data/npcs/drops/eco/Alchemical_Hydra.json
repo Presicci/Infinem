@@ -1,74 +1,98 @@
- [
-   {
-    "ids": [ 8615, 8616, 8617, 8618, 8619, 8620, 8621, 8622 ],
+[
+  {
+    "ids": [ 8615, 8616, 8617, 8618, 8619, 8620, 8621, 8622, 8634 ],
     "guaranteed": [
       { "id": 22786, "min": 2, "max": 2 }   //Hydra bones
     ],
     "tables": [
       {
-        "name": "Unique",
-        "weight": 1,
+        "name": "Pre-roll",
+        "weight": 114,
         "items": [
-          {"id": 22973, "min": 1, "max": 1, "weight": 3 },   //Hydra's eye
-          { "id": 22971, "min": 1, "max": 1, "weight": 3 },   //Hydra's fang
-          { "id": 22969, "min": 1, "max": 1, "weight": 3 },   //Hydra's heart
-          { "id": 22988, "min": 1, "max": 1, "weight": 3 },   //Hydra tail
-          { "id": 22983, "min": 1, "max": 1, "weight": 3 },   //Hydra leather
-          { "id": 22966, "min": 1, "max": 1, "weight": 2 },   //Hydra's claw
-          { "id": 22804, "min": 500, "max": 1000, "weight": 3 },   //Dragon knife
-          { "id": 20849, "min": 500, "max": 1000, "weight": 3 }   //Dragon thrownaxe
+          { "id": 22973, "min": 1, "max": 1, "weight": 552 },   //Hydra's eye
+          //{ "id": 22971, "min": 1, "max": 1, "weight": 552 },   //Hydra's fang
+          //{ "id": 22969, "min": 1, "max": 1, "weight": 552 },   //Hydra's heart
+          { "id": 22988, "min": 1, "max": 1, "weight": 195 },   //Hydra tail
+          { "id": 22983, "min": 1, "max": 1, "weight": 195 },   //Hydra leather
+          { "id": 22966, "min": 1, "max": 1, "weight": 99 },   //Hydra's claw
+          { "id": 20849, "min": 500, "max": 1000, "weight": 50 },   //Dragon thrownaxe
+          { "id": 22804, "min": 500, "max": 1000, "weight": 50 }   //Dragon knife
         ]
       },
       {
         "name": "Weapons and armour",
-        "weight": 18,
+        "weight": 3460,
         "items": [
-          { "id": 1401, "min": 1, "max": 1, "weight": 1 },   //Mystic fire staff
-          { "id": 1403, "min": 1, "max": 1, "weight": 1 },   //Mystic water staff
-          { "id": 1392, "min": 8, "max": 12, "weight": 1 },   //Battlestaff (noted)
-          { "id": 2503, "min": 1, "max": 1, "weight": 1 },   //Black d'hide body
-          { "id": 1305, "min": 1, "max": 1, "weight": 1 },   //Dragon longsword
-          { "id": 1149, "min": 1, "max": 1, "weight": 1 },   //Dragon med helm
-          { "id": 1127, "min": 1, "max": 1, "weight": 1 },   //Rune platebody
-          { "id": 1377, "min": 1, "max": 1, "weight": 1 },   //Dragon battleaxe
-          { "id": 1079, "min": 1, "max": 1, "weight": 1 },   //Rune platelegs
-          { "id": 1093, "min": 1, "max": 1, "weight": 1 },   //Rune plateskirt
-          { "id": 4111, "min": 1, "max": 1, "weight": 1 },   //Mystic robe top (light)
-          { "id": 4113, "min": 1, "max": 1, "weight": 1 }   //Mystic robe bottom (light)
+          { "id": 1401, "min": 1, "max": 1, "weight": 7919 },   //Mystic fire staff
+          //{ "id": 1403, "min": 1, "max": 1, "weight": 7919 },   //Mystic water staff
+          { "id": 1392, "min": 8, "max": 12, "weight": 4950 },   //Battlestaff (noted)
+          { "id": 2503, "min": 1, "max": 1, "weight": 4950 },   //Black d'hide body
+          { "id": 1305, "min": 1, "max": 1, "weight": 2970 },   //Dragon longsword
+          { "id": 1149, "min": 1, "max": 1, "weight": 2970 },   //Dragon med helm
+          //{ "id": 1127, "min": 1, "max": 1, "weight": 2970 },   //Rune platebody
+          { "id": 1377, "min": 1, "max": 1, "weight": 1979 },   //Dragon battleaxe
+          { "id": 1079, "min": 1, "max": 1, "weight": 1490 },   //Rune platelegs
+          { "id": 1093, "min": 1, "max": 1, "weight": 1490 },   //Rune plateskirt
+          { "id": 4111, "min": 1, "max": 1, "weight": 989 }   //Mystic robe top (light)
+          //{ "id": 4113, "min": 1, "max": 1, "weight": 989 }   //Mystic robe bottom (light)
         ]
       },
       {
         "name": "Runes and ammunition",
-        "weight": 18,
+        "weight": 2220,
         "items": [
-          { "id": 562, "min": 150, "max": 300, "weight": 2 },   //Chaos rune
-          { "id": 560, "min": 150, "max": 300, "weight": 2 },   //Death rune
-          { "id": 565, "min": 150, "max": 300, "weight": 2 },   //Blood rune
-          { "id": 9075, "min": 150, "max": 300, "weight": 2 },   //Astral rune
-          { "id": 9244, "min": 100, "max": 120, "weight": 2 },   //Dragonstone bolts (e)
-          { "id": 9245, "min": 35, "max": 50, "weight": 1 }   //Onyx bolts (e)
+          { "id": 562, "min": 150, "max": 300, "weight": 5940 },   //Chaos rune
+          { "id": 560, "min": 150, "max": 300, "weight": 5940 },   //Death rune
+          { "id": 565, "min": 150, "max": 300, "weight": 5940 },   //Blood rune
+          { "id": 9075, "min": 150, "max": 300, "weight": 5940 },   //Astral rune
+          { "id": 9244, "min": 100, "max": 120, "weight": 1979 },   //Dragonstone bolts (e)
+          { "id": 9245, "min": 35, "max": 50, "weight": 989 }   //Onyx bolts (e)
+        ]
+      },
+      {
+        "name": "Herbs",
+        "weight": 820,
+        "items": [
+          { "id": 212, "min": 10, "max": 15, "weight": 1550 },   //Grimy avantoe (noted)
+          { "id": 214, "min": 25, "max": 30, "weight": 1550 },   //Grimy kwuarm (noted)
+          { "id": 208, "min": 10, "max": 15, "weight": 1240 },   //Grimy ranarr weed (noted)
+          { "id": 3052, "min": 10, "max": 15, "weight": 1240 },   //Grimy snapdragon (noted)
+          { "id": 216, "min": 25, "max": 30, "weight": 1240 },   //Grimy cadantine (noted)
+          { "id": 218, "min": 25, "max": 30, "weight": 1240 },   //Grimy dwarf weed (noted)
+          { "id": 2486, "min": 25, "max": 30, "weight": 929 },   //Grimy lantadyme (noted)
+          { "id": 220, "min": 10, "max": 15, "weight": 929 }   //Grimy torstol (noted)
+        ]
+      },
+      {
+        "name": "tree-herb seed",
+        "weight": 160,
+        "items": [
+          { "id": 0, "min": 4, "max": 4, "weight": 5 }
         ]
       },
       {
         "name": "Other",
-        "weight": 18,
+        "weight": 3130,
         "items": [
-          { "id": 995, "min": 50000, "max": 90000, "weight": 2 },   //Coins
-          { "id": 385, "min": 2, "max": 4, "weight": 1 },   //Shark
-          { "id": 169, "min": 2, "max": 2, "weight": 1 },   //Ranging potion(3)
-          { "id": 3026, "min": 3, "max": 4, "weight": 1 },   //Super restore(3)
-          { "id": 537, "min": 30, "max": 50, "weight": 2 },   //Dragon bones (noted)
-          { "id": 989, "min": 1, "max": 2, "weight": 1 }   //Crystal key
+          { "id": 995, "min": 5550, "max": 25550, "weight": 494 },   //Coins
+          { "id": 995, "min": 40000, "max": 60000, "weight": 9410 },   //Coins
+          { "id": 385, "min": 2, "max": 4, "weight": 6930 },   //Shark
+          { "id": 169, "min": 1, "max": 1, "weight": 6930 },   //Ranging potion(3)
+          //{ "id": 3026, "min": 2, "max": 2, "weight": 6930 },   //Super restore(3)
+          { "id": 537, "min": 30, "max": 30, "weight": 5940 },   //Dragon bones (noted)
+          { "id": 989, "min": 1, "max": 1, "weight": 989 }   //Crystal key
         ]
       },
       {
-        "name": "Tertiary drops",
-        "weight": 1,
+        "name": "Tertiary",
+        "weight": 180,
         "items": [
-          { "id": 2722, "min": 1, "max": 1, "weight": 3 },   //Clue scroll (hard)
-          { "id": 12073, "min": 1, "max": 1, "weight": 1 }   //Clue scroll (elite)
+          { "id": 2722, "min": 1, "max": 1, "weight": 1000 },   //Clue scroll (hard)
+          { "id": 23077, "min": 1, "max": 1, "weight": 391 },   //Alchemical hydra heads
+          { "id": 12073, "min": 1, "max": 1, "weight": 391 },   //Clue scroll (elite)
+          { "id": 23064, "min": 1, "max": 1, "weight": 50 }   //Jar of chemicals
         ]
       }
     ]
   }
- ]
+]

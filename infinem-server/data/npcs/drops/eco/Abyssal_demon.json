@@ -67,7 +67,7 @@
       },
       {
         "name": "Tertiary",
-        "weight": 66,
+        "weight": 51,
         "items": [
           { "id": 13508, "min": 1, "max": 1, "weight": 4000 },   //Ensouled abyssal head
           { "id": 2722, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (hard)

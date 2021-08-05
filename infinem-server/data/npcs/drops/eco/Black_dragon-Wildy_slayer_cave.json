@@ -1,0 +1,65 @@
+[
+  {
+    "ids": [ 7861, 7862, 7863 ],
+    "guaranteed": [
+      { "id": 536, "min": 1, "max": 1 },   //Dragon bones
+      { "id": 1747, "min": 1, "max": 1 }   //Black dragonhide
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 194,
+        "items": [
+          { "id": 1123, "min": 1, "max": 1, "weight": 15600 },   //Adamant platebody
+          { "id": 868, "min": 15, "max": 15, "weight": 5470 },   //Rune knife
+          { "id": 868, "min": 10, "max": 10, "weight": 4690 },   //Rune knife
+          { "id": 1317, "min": 1, "max": 1, "weight": 3130 },   //Adamant 2h sword
+          { "id": 1371, "min": 1, "max": 1, "weight": 2339 },   //Adamant battleaxe
+          { "id": 1359, "min": 1, "max": 1, "weight": 2339 },   //Rune axe
+          { "id": 868, "min": 5, "max": 5, "weight": 2339 },   //Rune knife
+          { "id": 1147, "min": 1, "max": 1, "weight": 781 },   //Rune med helm
+          { "id": 1201, "min": 1, "max": 1, "weight": 781 },   //Rune kiteshield
+          { "id": 1303, "min": 1, "max": 1, "weight": 781 }   //Rune longsword
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 67,
+        "items": [
+          { "id": 560, "min": 10, "max": 10, "weight": 6250 },   //Death rune
+          { "id": 563, "min": 10, "max": 10, "weight": 3910 },   //Law rune
+          { "id": 565, "min": 10, "max": 10, "weight": 2339 },   //Blood rune
+          { "id": 562, "min": 25, "max": 25, "weight": 781 }   //Chaos rune
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 202,
+        "items": [
+          { "id": 995, "min": 500, "max": 999, "weight": 31300 },   //Coins
+          { "id": 995, "min": 1000, "max": 1999, "weight": 7810 },   //Coins
+          { "id": 995, "min": 690, "max": 690, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 47,
+        "items": [
+          { "id": 19582, "min": 25, "max": 25, "weight": 4690 },   //Dragon javelin heads
+          { "id": 2362, "min": 1, "max": 1, "weight": 2339 },   //Adamantite bar (noted)
+          { "id": 7946, "min": 2, "max": 2, "weight": 2339 }   //Monkfish
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 19,
+        "items": [
+          { "id": 13511, "min": 1, "max": 1, "weight": 2860 },   //Ensouled dragon head
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (hard)
+          { "id": 12073, "min": 1, "max": 1, "weight": 200 },   //Clue scroll (elite)
+          { "id": 11286, "min": 1, "max": 1, "weight": 20 }   //Draconic visage
+        ]
+      }
+    ]
+  }
+]

@@ -1,10 +1,21 @@
 [
   {
-    "ids": [ 3908, 3909 ],
+    "ids": [ 3908, 3909, 9199 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 }, //Bones
-      { "id": 948, "min": 1, "max": 1 }, //Bear fur
-      { "id": 2136, "min": 1, "max": 1 } //Raw bear meat
+      { "id": 526, "min": 1, "max": 1 },   //Bones
+      { "id": 948, "min": 1, "max": 1 },   //Bear fur
+      { "id": 2136, "min": 1, "max": 1 }   //Raw bear meat
+    ],
+    "tables": [
+      {
+        "name": "Tertiary",
+        "weight": 2147483647,
+        "items": [
+          { "id": -1, "min": 1, "max": 1, "weight": 85 },   //Nothing
+          { "id": 13463, "min": 1, "max": 1, "weight": 4 },   //Ensouled bear head
+          { "id": 23182, "min": 1, "max": 1, "weight": 1 }   //Clue scroll (beginner)
+        ]
+      }
     ]
   }
 ]

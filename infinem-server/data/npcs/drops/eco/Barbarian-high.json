@@ -1,0 +1,61 @@
+[
+  {
+    "ids": [ 3068, 3055, 3057, 3058, 3062, 3069 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons",
+        "weight": 59,
+        "items": [
+          { "id": 1349, "min": 1, "max": 1, "weight": 4690 },   //Iron axe
+          { "id": 1375, "min": 1, "max": 1, "weight": 3130 },   //Bronze battleaxe
+          { "id": 1420, "min": 1, "max": 1, "weight": 781 }   //Iron mace
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 102,
+        "items": [
+          { "id": 882, "min": 10, "max": 10, "weight": 3130 },   //Bronze arrow
+          { "id": 562, "min": 3, "max": 3, "weight": 3130 },   //Chaos rune
+          { "id": 884, "min": 8, "max": 8, "weight": 2339 },   //Iron arrow
+          { "id": 557, "min": 5, "max": 5, "weight": 2339 },   //Earth rune
+          { "id": 558, "min": 10, "max": 10, "weight": 1560 },   //Mind rune
+          { "id": 554, "min": 8, "max": 8, "weight": 1560 },   //Fire rune
+          { "id": 563, "min": 2, "max": 2, "weight": 781 }   //Law rune
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 318,
+        "items": [
+          { "id": 995, "min": 8, "max": 8, "weight": 32799 },   //Coins
+          { "id": 995, "min": 12, "max": 12, "weight": 7030 },   //Coins
+          { "id": 995, "min": 25, "max": 25, "weight": 3910 },   //Coins
+          { "id": 995, "min": 32, "max": 32, "weight": 2339 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 27,
+        "items": [
+          { "id": 2142, "min": 1, "max": 1, "weight": 781 },   //Cooked meat
+          { "id": 1595, "min": 1, "max": 1, "weight": 781 },   //Amulet mould
+          { "id": 1917, "min": 1, "max": 1, "weight": 781 },   //Beer
+          { "id": 948, "min": 1, "max": 1, "weight": 781 },   //Bear fur
+          { "id": 7922, "min": 1, "max": 1, "weight": 781 }   //Flyer
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 18,
+        "items": [
+          { "id": 23182, "min": 1, "max": 1, "weight": 1820 },   //Clue scroll (beginner)
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (easy)
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,89 @@
+[
+  {
+    "ids": [ 7795 ],
+    "guaranteed": [
+      { "id": 6812, "min": 1, "max": 1 }   //Wyvern bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 165,
+        "items": [
+          { "id": 1397, "min": 2, "max": 2, "weight": 3029 },   //Air battlestaff
+          { "id": 1405, "min": 1, "max": 1, "weight": 2270 },   //Mystic air staff
+          { "id": 1275, "min": 1, "max": 1, "weight": 2270 },   //Rune pickaxe
+          { "id": 1373, "min": 1, "max": 1, "weight": 1520 },   //Rune battleaxe
+          { "id": 1201, "min": 1, "max": 1, "weight": 1520 },   //Rune kiteshield
+          { "id": 1163, "min": 1, "max": 1, "weight": 1520 },   //Rune full helm
+          { "id": 1392, "min": 6, "max": 6, "weight": 3029 },   //Battlestaff (noted)
+          { "id": 21646, "min": 1, "max": 1, "weight": 167 },   //Granite longsword
+          { "id": 21643, "min": 1, "max": 1, "weight": 167 }   //Granite boots
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 153,
+        "items": [
+          { "id": 890, "min": 50, "max": 76, "weight": 2270 },   //Adamant arrow
+          { "id": 561, "min": 37, "max": 43, "weight": 3029 },   //Nature rune
+          { "id": 560, "min": 47, "max": 53, "weight": 3029 },   //Death rune
+          { "id": 565, "min": 27, "max": 33, "weight": 3029 },   //Blood rune
+          { "id": 892, "min": 25, "max": 50, "weight": 2270 },   //Rune arrow
+          { "id": 9144, "min": 30, "max": 60, "weight": 758 }   //Runite bolts
+        ]
+      },
+      {
+        "name": "Herbs",
+        "weight": 129,
+        "items": [
+          { "id": 214, "min": 3, "max": 3, "weight": 1890 },   //Grimy kwuarm (noted)
+          { "id": 216, "min": 3, "max": 3, "weight": 1520 },   //Grimy cadantine (noted)
+          { "id": 2486, "min": 3, "max": 3, "weight": 1139 },   //Grimy lantadyme (noted)
+          { "id": 218, "min": 3, "max": 3, "weight": 1520 },   //Grimy dwarf weed (noted)
+          { "id": 219, "min": 1, "max": 1, "weight": 3029 },   //Grimy torstol
+          { "id": 207, "min": 2, "max": 4, "weight": 3029 }   //Grimy ranarr weed
+        ]
+      },
+      {
+        "name": "tree-herb seed",
+        "weight": 16,
+        "items": [
+          { "id": 0, "min": 4, "max": 4, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 259,
+        "items": [
+          { "id": 2362, "min": 3, "max": 3, "weight": 4550 },   //Adamantite bar (noted)
+          { "id": 450, "min": 20, "max": 20, "weight": 3790 },   //Adamantite ore (noted)
+          { "id": 452, "min": 2, "max": 3, "weight": 2270 },   //Runite ore (noted)
+          { "id": 1602, "min": 3, "max": 5, "weight": 2270 },   //Diamond (noted)
+          { "id": 9194, "min": 10, "max": 15, "weight": 3029 },   //Onyx bolt tips
+          { "id": 21622, "min": 80, "max": 120, "weight": 4550 },   //Volcanic ash
+          { "id": 8836, "min": 25, "max": 30, "weight": 3790 }   //Mahogany logs (noted)
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 275,
+        "items": [
+          { "id": 385, "min": 5, "max": 5, "weight": 6059 },   //Shark
+          { "id": 12699, "min": 1, "max": 1, "weight": 3790 },   //Super combat potion(2)
+          { "id": 3024, "min": 2, "max": 2, "weight": 6059 },   //Super restore(4)
+          { "id": 995, "min": 2000, "max": 6000, "weight": 5300 },   //Coins
+          { "id": 9465, "min": 1, "max": 1, "weight": 2270 },   //Runite crossbow (u)
+          { "id": 6035, "min": 7, "max": 10, "weight": 2270 }   //Supercompost (noted)
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 3,
+        "items": [
+          { "id": 12073, "min": 1, "max": 1, "weight": 285 },   //Clue scroll (elite)
+          { "id": 21637, "min": 1, "max": 1, "weight": 10 }   //Wyvern visage
+        ]
+      }
+    ]
+  }
+]
