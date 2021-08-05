@@ -323,8 +323,25 @@ public abstract class NPCCombat extends Combat {
                 { new Item(1079), new Item(1127) }, // Rune platelegs and platebody
                 { new Item(1093), new Item(1127) }, // Rune plateskirt and platebody
                 { new Item(4111), new Item(4113) }, // Mystic robe bottom and top
-                { new Item(169, 3), new Item(3026, 3) }
+                { new Item(169, 3), new Item(3026, 3) } // Super restores and super rangings
         });
+
+        put("ammonite crab", new Item[][] {
+                { new Item(21543), new Item(21545) }    // Calcite and pyrophosphite
+        });
+
+        put("ancient zygomite", new Item[][] {
+                { new Item(21543), new Item(21545) }    // Calcite and pyrophosphite
+        });
+
+        put("bryophyta", new Item[][] {
+                { new Item(1620, 5), new Item(1618, 5) }    // Uncut ruby and uncut diamond
+        });
+        /**
+         * put("ammonite crab", new Item[][] {
+         *                 { new Item(), new Item() }
+         *         });
+         */
     }};
 
     private List<Item> getGroupDrop(Item item) {
