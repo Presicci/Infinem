@@ -66,13 +66,26 @@ public class npc_drops extends DataFile {
 
     public static void dump(String wikiName) {
         List<Integer> ids = new ArrayList<>();
+        int combatLevel = -1;
+        String[] s = wikiName.split(">");
+        try {
+            if (s.length > 1) {
+                combatLevel = Integer.parseInt(s[1]);
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        int finalCombatLevel = combatLevel;
         NPCDef.forEach(npcDef -> {
-            if(!npcDef.name.equalsIgnoreCase(wikiName.replace("_", " ")))
+            if (finalCombatLevel >= 0 && npcDef.combatLevel != finalCombatLevel) {
+                return;
+            }
+            if(!npcDef.name.equalsIgnoreCase(s[0].replace("_", " ")))
                 return;
             ids.add(npcDef.id);
         });
-        Integer finalIds[] = new Integer[ids.size()];
-        dump(wikiName, ids.toArray(finalIds));
+        Integer[] finalIds = new Integer[ids.size()];
+        dump(s[0], ids.toArray(finalIds));
     }
 
     public static void dump(String wikiName, Integer[] ids) {
@@ -82,7 +95,7 @@ public class npc_drops extends DataFile {
         table.export(wikiName, ids);
     }
 
-    private static List<String> groupedDropsNotes = null;
+    private static List<String> groupedDropsNotes;
 
     private static final class WikiDumper {
 
@@ -101,16 +114,22 @@ public class npc_drops extends DataFile {
                         .get();
                 if(doc == null)
                     throw new IOException("Failed to connect to wiki page!");
-                String[] searchHeaders = {"h3"};
+                String[] searchHeaders = {"h3", "h4"};
                 Elements tableHeaders = null;
-                groupedDropsNotes = null;
+                groupedDropsNotes = new ArrayList<>();
                 hLoop: for(String s : searchHeaders) {
                     Elements headers = doc.body().select(s);
                     for(Element header : headers) {
                         Element dl = header.nextElementSibling();
                         if(dl != null && dl.is("table")) {
-                            tableHeaders = headers;
-                            break hLoop;
+                            if (tableHeaders == null) {
+                                tableHeaders = headers;
+                                break;
+                            } else {
+                                tableHeaders.addAll(headers);
+                                break;
+                            }
+                            //break hLoop;
                         }
                     }
                 }
@@ -121,6 +140,9 @@ public class npc_drops extends DataFile {
                     Element dl = header.nextElementSibling();
                     if (dl != null && dl.is("p")) {
                         String chanceLine = dl.select("i").text();
+                        if (chanceLine.equals("")) {
+                            chanceLine = dl.text();
+                        }
                         if (chanceLine.contains("coin")) {
                             dl = dl.nextElementSibling();
                         } else if (chanceLine.contains("gem") || chanceLine.contains("rare drop")
@@ -130,7 +152,8 @@ public class npc_drops extends DataFile {
                                 || chanceLine.contains("Deadman")) {
                             continue;
                         } else if (chanceLine.contains("herb subtable") || chanceLine.contains("Due to a unique mechanic")
-                                || chanceLine.contains("noted herbs")) {
+                                || chanceLine.contains("noted herbs") || chanceLine.contains("shard table")
+                                || chanceLine.contains("unique table") || chanceLine.contains("unique drop table")) {
                             dl = dl.nextElementSibling();
                         } else {
                             if (chanceLine.length() < 3) {
@@ -155,7 +178,7 @@ public class npc_drops extends DataFile {
                     int i = tableName.indexOf("[edit");
                     if(i != -1)
                         tableName = tableName.substring(0, i);
-                    if (tableName.toLowerCase().contains("pickpocket")) {
+                    if (tableName.toLowerCase().contains("pickpocket") || tableName.toLowerCase().contains("catacombs")) {
                         continue;
                     }
                     tableName = tableName
@@ -183,6 +206,10 @@ public class npc_drops extends DataFile {
                 }
                 return table;
             } catch(Exception e) {
+                if(e.getMessage() == null) {
+                    e.printStackTrace();
+                    return null;
+                }
                 if(e.getMessage().contains("HTTP error fetching URL")) {
                     //uhh, page does not exist??
                     return null;
@@ -265,7 +292,8 @@ public class npc_drops extends DataFile {
                             if (e.text().toLowerCase().contains("rag and bone man")) {
                                 return null;
                             }
-                            if (e.text().toLowerCase().contains("players will receive")) {
+                            if (e.text().toLowerCase().contains("players will receive")
+                                    || e.text().toLowerCase().contains("dropped together")) {
                                 if (groupedDropsNotes.contains(e.text())) {
                                     System.out.println("Group drop line, removing!");
                                     return null;
