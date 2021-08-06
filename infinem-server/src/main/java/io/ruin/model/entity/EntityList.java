@@ -2,6 +2,7 @@ package io.ruin.model.entity;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
+import io.ruin.model.entity.player.Player;
 
 import java.lang.reflect.Array;
 import java.util.Iterator;
@@ -97,11 +98,27 @@ public class EntityList<T extends Entity> implements Iterable<T> {
     /**
      * Scrambling
      */
-
     public void scramble() {
+        boolean[] indexes = new boolean[this.indexes.length];
+        for (int i = 0; i < indexes.length; i++) {
+            int index = this.indexes[i];
+            T entity = entityList[index];
+            if(entity instanceof Player) {
+                Player player = entity.player;
+                if(player.getDuel().isAccepted()) {
+                    indexes[i] = true;
+                }
+            }
+        }
+        scramble(indexes);
+    }
+
+    public void scramble(boolean[] ignoredIndexes) {
         int offset, temp;
         for(int i = count - 1; i > 0; i--) {
             offset = Random.get(i);
+            if(ignoredIndexes[indexes[offset]])
+                continue;
             temp = indexes[offset];
             indexes[offset] = indexes[i];
             indexes[i] = temp;
