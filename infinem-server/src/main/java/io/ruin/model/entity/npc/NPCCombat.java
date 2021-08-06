@@ -351,6 +351,20 @@ public abstract class NPCCombat extends Combat {
                 { new Item(1620, 20), new Item(1618, 10) },    // Uncut ruby and uncut diamond
                 { new Item(11936, 8), new Item(3024, 3) }    // Dark crab and super restore (4)
         });
+
+        put("chaos fanatic", new Item[][] {
+                { new Item(1622, 6), new Item(1624, 4) },    // Uncut emerald and uncut sapphire
+                { new Item(1035), new Item(1033) }    // Zamorak monk top and zamorak monk bottom
+        });
+
+        put("commander zilyana", new Item[][] {
+                { new Item(6687, 3), new Item(3024, 3) },    // Saradomin brew and super restore
+                { new Item(163, 3), new Item(3042, 3) }    // Super defence and magic
+        });
+
+        put("crazy archaeologist", new Item[][] {
+                { new Item(1622, 6), new Item(1624, 4) }    // Uncut emerald and uncut sapphire
+        });
         /**
          * put("ammonite crab", new Item[][] {
          *                 { new Item(), new Item() }
