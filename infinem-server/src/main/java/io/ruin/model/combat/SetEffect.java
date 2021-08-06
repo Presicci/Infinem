@@ -255,6 +255,14 @@ public enum SetEffect {
         return true;
     }
 
+    public int numberOfPieces(Player player) {
+        int count = 0;
+        for (Piece p : pieces)
+            if (p.hasPiece(player))
+                ++count;
+        return count;
+    }
+
     public boolean activate(Player player, Hit hit) {
         return hit.attackStyle != null && hitCondition.test(player, hit) && hasPieces(player);
     }
