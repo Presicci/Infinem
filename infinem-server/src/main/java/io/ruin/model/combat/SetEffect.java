@@ -231,6 +231,12 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_FEET, "graceful boots"),
             new Piece(Equipment.SLOT_CAPE, def -> def.name.toLowerCase().contains("graceful cape") || def.name.toLowerCase().contains("agility cape") || def.name.toLowerCase().contains("agility master cape")|| def.name.toLowerCase().contains("max cape"))
             ),
+
+    BLOODBARK(new Piece(Equipment.SLOT_HAT, 25413),
+            new Piece(Equipment.SLOT_CHEST, 25404),
+            new Piece(Equipment.SLOT_LEGS, 25416),
+            new Piece(Equipment.SLOT_HANDS, 25407),
+            new Piece(Equipment.SLOT_FEET, 25410))
     ;
 
     BiPredicate<Player, Hit> hitCondition; // must fulfill this condition to even check if the pieces are equipped
