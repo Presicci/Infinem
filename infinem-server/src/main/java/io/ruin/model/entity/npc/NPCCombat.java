@@ -274,8 +274,15 @@ public abstract class NPCCombat extends Combat {
                 Slayer.onNPCKill(killer.player, npc);
                 if (npc.getDef().killCounter != null)
                     npc.getDef().killCounter.apply(killer.player).increment(killer.player);
-                if(info.pet != null && Random.rollDie(info.pet.dropAverage))
-                    info.pet.unlock(killer.player);
+                if(info.pet != null) {
+                    int dropAverage = info.pet.dropAverage;
+                    if (npc.getId() == 6619) {  // Manual override for chaos fanatic sharing boss pet w/ chaos ele
+                        dropAverage = 1000;
+                    }
+                    if (Random.rollDie(dropAverage)) {
+                        info.pet.unlock(killer.player);
+                    }
+                }
                 DailyTask.checkNPCKill(killer.player, npc);
                 DemonSlayer.check(killer.player, npc);
             }
