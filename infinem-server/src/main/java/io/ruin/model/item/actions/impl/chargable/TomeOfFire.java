@@ -9,6 +9,7 @@ import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.item.attributes.AttributeTypes;
+import io.ruin.model.item.containers.Equipment;
 
 public class TomeOfFire {
 
@@ -100,7 +101,7 @@ public class TomeOfFire {
     }
 
     public static boolean consumeCharge(Player player) {
-        Item item = player.getEquipment().findItem(CHARGED);
+        Item item = player.getEquipment().findItemIgnoringAttributes(CHARGED, false);
         if(item == null)
             return false;
         int charges = AttributeExtensions.getCharges(item);
