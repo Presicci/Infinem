@@ -1,13 +1,13 @@
 [
   {
-    "ids": [ 3279 ],
+    "ids": [ 4111 ],
     "guaranteed": [
       { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
         "name": "Weapons and armour",
-        "weight": 20,
+        "weight": 24,
         "items": [
           { "id": 1139, "min": 1, "max": 1, "weight": 1560 },   //Bronze med helm
           { "id": 1203, "min": 1, "max": 1, "weight": 781 }   //Iron dagger
@@ -15,7 +15,7 @@
       },
       {
         "name": "Runes and ammunition",
-        "weight": 223,
+        "weight": 266,
         "items": [
           { "id": 877, "min": 2, "max": 12, "weight": 17200 },   //Bronze bolts
           { "id": 882, "min": 7, "max": 7, "weight": 2339 },   //Bronze arrow
@@ -27,14 +27,14 @@
       },
       {
         "name": "herb drop",
-        "weight": 160,
+        "weight": 191,
         "items": [
           { "id": 0, "min": 1, "max": 1, "weight": 5 }
         ]
       },
       {
         "name": "Coins",
-        "weight": 524,
+        "weight": 433,
         "items": [
           { "id": 995, "min": 3, "max": 3, "weight": 29700 },   //Coins
           { "id": 995, "min": 5, "max": 5, "weight": 7030 },   //Coins
@@ -44,7 +44,7 @@
       },
       {
         "name": "Other",
-        "weight": 69,
+        "weight": 83,
         "items": [
           { "id": 313, "min": 1, "max": 1, "weight": 3910 },   //Fishing bait
           { "id": 436, "min": 1, "max": 1, "weight": 1560 },   //Copper ore
@@ -54,7 +54,7 @@
       },
       {
         "name": "Tertiary",
-        "weight": 16,
+        "weight": 20,
         "items": [
           { "id": 23182, "min": 1, "max": 1, "weight": 1110 },   //Clue scroll (beginner)
           { "id": 2677, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (easy)

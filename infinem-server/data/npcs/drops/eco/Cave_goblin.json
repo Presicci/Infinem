@@ -1,0 +1,62 @@
+[
+  {
+    "ids": [ 6437, 6436, 6434, 6435 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 77,
+        "items": [
+          { "id": 1173, "min": 1, "max": 1, "weight": 2339 },   //Bronze sq shield
+          { "id": 1237, "min": 1, "max": 1, "weight": 3130 }   //Bronze spear
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 188,
+        "items": [
+          { "id": 559, "min": 7, "max": 7, "weight": 3910 },   //Body rune
+          { "id": 555, "min": 6, "max": 6, "weight": 4690 },   //Water rune
+          { "id": 557, "min": 4, "max": 4, "weight": 2339 },   //Earth rune
+          { "id": 877, "min": 8, "max": 8, "weight": 2339 }   //Bronze bolts
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 411,
+        "items": [
+          { "id": 995, "min": 5, "max": 5, "weight": 21899 },   //Coins
+          { "id": 995, "min": 9, "max": 9, "weight": 2339 },   //Coins
+          { "id": 995, "min": 15, "max": 15, "weight": 2339 },   //Coins
+          { "id": 995, "min": 20, "max": 20, "weight": 1560 },   //Coins
+          { "id": 995, "min": 1, "max": 1, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 321,
+        "items": [
+          { "id": 2347, "min": 1, "max": 1, "weight": 11700 },   //Hammer
+          { "id": 10999, "min": 1, "max": 1, "weight": 1560 },   //Goblin book
+          { "id": 288, "min": 1, "max": 1, "weight": 3910 },   //Goblin mail
+          { "id": 1949, "min": 1, "max": 1, "weight": 2339 },   //Chef's hat
+          { "id": 1917, "min": 1, "max": 1, "weight": 1560 },   //Beer
+          { "id": 1009, "min": 1, "max": 1, "weight": 781 },   //Brass necklace
+          { "id": 1438, "min": 1, "max": 1, "weight": 781 }   //Air talisman
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 74,
+        "items": [
+          { "id": 13448, "min": 1, "max": 1, "weight": 2860 },   //Ensouled goblin head
+          { "id": 23182, "min": 1, "max": 1, "weight": 1560 },   //Clue scroll (beginner)
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (easy)
+          { "id": 6801, "min": 1, "max": 1, "weight": 20 }   //Goblin champion scroll
+        ]
+      }
+    ]
+  }
+]

@@ -2,79 +2,58 @@
   {
     "ids": [ 2205, 6493 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 } //Bones
+      { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
-        "name": "Unique Weapons",
-        "weight": 1,
+        "name": "Uniques",
+        "weight": 20,
         "items": [
-          { "id": 11838, "min": 1, "max": 1, "weight": 5 }, //Saradomin sword
-          { "id": 11785, "min": 1, "max": 1, "weight": 2 } //Armadyl crossbow
+          { "id": 11838, "min": 1, "max": 1, "weight": 787 },   //Saradomin sword
+          { "id": 13256, "min": 1, "max": 1, "weight": 394 },   //Saradomin's light
+          { "id": 11785, "min": 1, "max": 1, "weight": 197 },   //Armadyl crossbow
+          { "id": 11814, "min": 1, "max": 1, "weight": 197 },   //Saradomin hilt
+          { "id": 11818, "min": 1, "max": 1, "weight": 131 },   //Godsword shard 1
+          { "id": 11820, "min": 1, "max": 1, "weight": 131 },   //Godsword shard 2
+          { "id": 11822, "min": 1, "max": 1, "weight": 131 }   //Godsword shard 3
         ]
       },
       {
-        "name": "Runes and Ammunition",
-        "weight": 16,
+        "name": "Weapons and armour",
+        "weight": 265,
         "items": [
-          { "id": 811, "min": 35, "max": 40, "weight": 3 }, //Rune dart
-          { "id": 563, "min": 95, "max": 105, "weight": 1 } //Law rune
+          { "id": 1123, "min": 1, "max": 1, "weight": 6300 },   //Adamant platebody
+          { "id": 811, "min": 35, "max": 40, "weight": 6300 },   //Rune dart
+          { "id": 1201, "min": 1, "max": 1, "weight": 6300 },   //Rune kiteshield
+          { "id": 1093, "min": 1, "max": 1, "weight": 6300 }   //Rune plateskirt
         ]
       },
       {
-        "name": "Armour",
-        "weight": 16,
+        "name": "Potions",
+        "weight": 182,
         "items": [
-          { "id": 1093, "min": 1, "max": 1, "weight": 3 }, //Rune plateskirt
-          { "id": 1123, "min": 1, "max": 1, "weight": 1 }, //Adamant platebody
-          { "id": 1201, "min": 1, "max": 1, "weight": 1 } //Rune kiteshield
-        ]
-      },
-      {
-        "name": "Brew/Restore",
-        "weight": 16,
-        "items": [
-          { "id": 6687, "min": 3, "max": 3, "weight": 1 }, //Saradomin brew(3)
-          { "id": 3024, "min": 3, "max": 3, "weight": 1 } //Super restore(4)
-        ]
-      },
-      {
-        "name": "Defence/Magic",
-        "weight": 16,
-        "items": [
-          { "id": 2442, "min": 3, "max": 3, "weight": 1 }, //Super defence(4)
-          { "id": 3042, "min": 3, "max": 3, "weight": 1 } //Magic potion(3)
-        ]
-      },
-      {
-        "name": "Herbs, potions, and seeds",
-        "weight": 16,
-        "items": [
-          { "id": 208, "min": 5, "max": 5, "weight": 1 }, //Grimy ranarr weed (noted)
-          { "id": 5295, "min": 2, "max": 2, "weight": 1 }, //Ranarr seed
-          { "id": 2434, "min": 3, "max": 3, "weight": 1 }, //Prayer potion(4)
-          { "id": 5316, "min": 1, "max": 1, "weight": 1 } //Magic seed
+          { "id": 2434, "min": 3, "max": 3, "weight": 6300 },   //Prayer potion(4)
+          { "id": 6687, "min": 3, "max": 3, "weight": 4720 },   //Saradomin brew(3)
+          { "id": 163, "min": 3, "max": 3, "weight": 6300 }   //Super defence(3)
         ]
       },
       {
         "name": "Other",
-        "weight": 16,
+        "weight": 532,
         "items": [
-          { "id": 995, "min": 19362, "max": 20300, "weight": 30 }, //Coins
-          { "id": 1602, "min": 6, "max": 6, "weight": 30 }, //Diamond (noted)
-          { "id": 13256, "min": 1, "max": 1, "weight": 2 }, //Saradomin's light
-          { "id": 12073, "min": 1, "max": 1, "weight": 3 }, //Clue scroll (elite)
-		  { "id": 1289, "min": 1, "max": 1, "weight": 1 } //Rune sword
+          { "id": 995, "min": 19500, "max": 20000, "weight": 24600 },   //Coins
+          { "id": 1602, "min": 6, "max": 6, "weight": 6300 },   //Diamond (noted)
+          { "id": 563, "min": 95, "max": 100, "weight": 6300 },   //Law rune
+          { "id": 208, "min": 5, "max": 5, "weight": 6300 },   //Grimy ranarr weed (noted)
+          { "id": 5295, "min": 2, "max": 2, "weight": 6300 },   //Ranarr seed
+          { "id": 5316, "min": 1, "max": 1, "weight": 787 }   //Magic seed
         ]
       },
-	  {
-        "name": "Godsword Items",
-        "weight": 1,
+      {
+        "name": "Tertiary",
+        "weight": 4,
         "items": [
-          { "id": 11814, "min": 1, "max": 1, "weight": 4 }, //Saradomin hilt
-          { "id": 11818, "min": 1, "max": 1, "weight": 5 }, //Godsword shard 1
-          { "id": 11820, "min": 1, "max": 1, "weight": 5 }, //Godsword shard 2
-          { "id": 11822, "min": 1, "max": 1, "weight": 5 } //Godsword shard 3
+          { "id": 12073, "min": 1, "max": 1, "weight": 400 }   //Clue scroll (elite)
         ]
       }
     ]

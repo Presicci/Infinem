@@ -1,0 +1,70 @@
+[
+  {
+    "ids": [ 2137, 2138, 2139, 2140, 2141, 2142 ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 233,
+        "items": [
+          { "id": 1317, "min": 1, "max": 1, "weight": 4000 },   //Adamant 2h sword
+          { "id": 809, "min": 12, "max": 12, "weight": 6000 },   //Mithril dart
+          { "id": 1211, "min": 1, "max": 1, "weight": 5000 },   //Adamant dagger
+          { "id": 1165, "min": 1, "max": 1, "weight": 5000 },   //Black full helm
+          { "id": 1426, "min": 1, "max": 1, "weight": 5000 },   //Black mace
+          { "id": 1329, "min": 1, "max": 1, "weight": 5000 },   //Mithril scimitar
+          { "id": 1197, "min": 1, "max": 1, "weight": 5000 },   //Mithril kiteshield
+          { "id": 1119, "min": 1, "max": 1, "weight": 5000 },   //Steel platebody
+          { "id": 1105, "min": 1, "max": 1, "weight": 7000 },   //Steel chainbody
+          { "id": 869, "min": 22, "max": 22, "weight": 4000 },   //Black knife
+          { "id": 1071, "min": 1, "max": 1, "weight": 4000 },   //Mithril platelegs
+          { "id": 1217, "min": 1, "max": 1, "weight": 5000 },   //Black dagger
+          { "id": 1147, "min": 1, "max": 1, "weight": 3000 },   //Rune med helm
+          { "id": 1183, "min": 1, "max": 1, "weight": 1000 },   //Adamant sq shield
+          { "id": 23597, "min": 1, "max": 1, "weight": 1000 },   //Dragon defender
+          { "id": 1163, "min": 1, "max": 1, "weight": 1000 }   //Rune full helm
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 14,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 10,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 60,
+        "items": [
+          { "id": 995, "min": 96, "max": 96, "weight": 10000 },   //Coins
+          { "id": 995, "min": 350, "max": 449, "weight": 7000 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 24,
+        "items": [
+          { "id": 379, "min": 1, "max": 1, "weight": 7000 }   //Lobster
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 2,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 391 },   //Clue scroll (hard)
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "ids": [ 481 ],
+    "tables": [
+      {
+        "name": "Runes",
+        "weight": 69,
+        "items": [
+          { "id": 557, "min": 6, "max": 6, "weight": 1560 },   //Earth rune
+          { "id": 555, "min": 8, "max": 8, "weight": 3910 },   //Water rune
+          { "id": 561, "min": 1, "max": 1, "weight": 3910 },   //Nature rune
+          { "id": 561, "min": 2, "max": 2, "weight": 781 }   //Nature rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 123,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 42,
+        "items": [
+          { "id": 235, "min": 1, "max": 1, "weight": 1560 },   //Unicorn horn dust
+          { "id": 221, "min": 1, "max": 1, "weight": 1560 },   //Eye of newt
+          { "id": 225, "min": 1, "max": 1, "weight": 781 },   //Limpwurt root
+          { "id": 231, "min": 1, "max": 1, "weight": 781 },   //Snape grass
+          { "id": 223, "min": 1, "max": 1, "weight": 1560 }   //Red spiders' eggs
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 58,
+        "items": [
+          { "id": 995, "min": 3, "max": 3, "weight": 6250 },   //Coins
+          { "id": 995, "min": 8, "max": 8, "weight": 2339 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 48,
+        "items": [
+          { "id": 590, "min": 1, "max": 1, "weight": 2339 },   //Tinderbox
+          { "id": 4527, "min": 1, "max": 1, "weight": 781 },   //Empty candle lantern
+          { "id": 36, "min": 1, "max": 1, "weight": 3910 }   //Candle
+        ]
+      }
+    ]
+  }
+]

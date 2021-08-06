@@ -2,37 +2,42 @@
   {
     "ids": [ 7388 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 } //Bones
+      { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
-        "name": "Weapons/Armour",
-        "weight": 1,
+        "name": "Gloves",
+        "weight": 362,
         "items": [
-          { "id": 1059, "min": 1, "max": 1, "weight": 3 }, //Leather gloves
-          { "id": 2922, "min": 1, "max": 1, "weight": 3 }, //Yellow gloves
-          { "id": 2912, "min": 1, "max": 1, "weight": 3 }, //Red gloves
-          { "id": 2932, "min": 1, "max": 1, "weight": 3 }, //Teal gloves
-          { "id": 2942, "min": 1, "max": 1, "weight": 1 }, //Purple gloves
-          { "id": 4105, "min": 1, "max": 1, "weight": 1 } //Mystic gloves (dark)
+          { "id": 1059, "min": 1, "max": 1, "weight": 16399 },   //Leather gloves
+          { "id": 2942, "min": 1, "max": 1, "weight": 1560 },   //Purple gloves
+          { "id": 2922, "min": 1, "max": 1, "weight": 1560 },   //Yellow gloves
+          { "id": 2912, "min": 1, "max": 1, "weight": 1560 },   //Red gloves
+          { "id": 2932, "min": 1, "max": 1, "weight": 1560 }   //Teal gloves
         ]
       },
       {
         "name": "Jewellery",
-        "weight": 1,
+        "weight": 87,
         "items": [
-          { "id": 1637, "min": 1, "max": 1, "weight": 1 }, //Sapphire ring
-          { "id": 1639, "min": 1, "max": 1, "weight": 1 }, //Emerald ring
-          { "id": 1635, "min": 1, "max": 1, "weight": 1 } //Gold ring
+          { "id": 1635, "min": 1, "max": 1, "weight": 2339 },   //Gold ring
+          { "id": 1637, "min": 1, "max": 1, "weight": 1560 },   //Sapphire ring
+          { "id": 1639, "min": 1, "max": 1, "weight": 1560 }   //Emerald ring
         ]
       },
       {
-        "name": "Other",
-        "weight": 1,
+        "name": "Coins",
+        "weight": 550,
         "items": [
-          { "id": 995, "min": 5, "max": 442, "weight": 3 }, //Coins
-          { "id": 592, "min": 1, "max": 1, "weight": 3 }, //Ashes
-          { "id": 7975, "min": 1, "max": 1, "weight": 1 } //Crawling hand (item)
+          { "id": 995, "min": 5, "max": 5, "weight": 16399 },   //Coins
+          { "id": 995, "min": 8, "max": 8, "weight": 18000 }   //Coins
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 2,
+        "items": [
+          { "id": 7975, "min": 1, "max": 1, "weight": 200 }   //Crawling hand (item)
         ]
       }
     ]
