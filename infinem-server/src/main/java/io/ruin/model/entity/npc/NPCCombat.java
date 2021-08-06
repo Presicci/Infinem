@@ -18,11 +18,13 @@ import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.DoubleDrops;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.GoldCasket;
 import io.ruin.model.item.actions.impl.WildernessKey;
 import io.ruin.model.item.actions.impl.jewellery.BraceletOfEthereum;
 import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
 import io.ruin.model.item.attributes.AttributeExtensions;
+import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Graphic;
@@ -337,6 +339,11 @@ public abstract class NPCCombat extends Combat {
         put("bryophyta", new Item[][] {
                 { new Item(1620, 5), new Item(1618, 5) }    // Uncut ruby and uncut diamond
         });
+
+        put("callisto", new Item[][] {
+                { new Item(1620, 20), new Item(1618, 10) },    // Uncut ruby and uncut diamond
+                { new Item(11936, 8), new Item(3024, 3) }    // Dark crab and super restore (4)
+        });
         /**
          * put("ammonite crab", new Item[][] {
          *                 { new Item(), new Item() }
@@ -376,6 +383,36 @@ public abstract class NPCCombat extends Combat {
             }
         } else {
             return 22973;   // Player has no parts, drop first
+        }
+    }
+
+    /*
+     * Chaos elemental has a loot table of minor drops that drop alongside the main drops.
+     */
+    private static final LootTable chaosElementalMinorDrops = new LootTable()
+            .addTable(1,
+                    new LootItem(Items.ANCHOVY_PIZZA, 3, 3, 1),         // Anchovy pizza
+                    new LootItem(Items.BABYDRAGON_BONES, 2, 2, 1),      // Babydragon bones
+                    new LootItem(Items.BAT_BONES, 5, 5, 1),             // Bat bones
+                    new LootItem(Items.BIG_BONES, 3, 3, 1),             // Big bones
+                    new LootItem(Items.BONES, 4, 4, 1),                 // Bones
+                    new LootItem(Items.DRAGON_BONES, 1, 1, 1),          // Dragon bones
+                    new LootItem(Items.SUPER_ATTACK_4, 1, 1, 1),        // Super attack
+                    new LootItem(Items.SUPER_DEFENCE_4, 1, 1, 1),       // Super defence
+                    new LootItem(Items.SUPER_STRENGTH_4, 1, 1, 1),      // Super strength
+                    new LootItem(Items.TUNA, 5, 5, 1)                   // Tuna
+            );
+
+    /**
+     * Handles the rolling of the minor drop table alongside the major drop table.
+     * @param killer The entity that killed the npc.
+     * @param player The player that killed the npc.
+     * @param pos The position to place the drop.
+     */
+    private void handleChaosEleDrops(Killer killer, Player player, Position pos) {
+        if (npc.getId() == 2054 || npc.getId() == 6505) {
+            List<Item> items = chaosElementalMinorDrops.rollItems(false);
+            handleDrop(killer, pos, player, items);
         }
     }
 
@@ -466,6 +503,11 @@ public abstract class NPCCombat extends Combat {
         } else {    // Prevents all these other rolls on npcs with no drops
             return;
         }
+
+        /*
+         * Handle the chaos elemental minor drops
+         */
+        handleChaosEleDrops(killer, pKiller, dropPosition);
 
         /*
          * Handle giving player vorkaths head after 50 kills.
