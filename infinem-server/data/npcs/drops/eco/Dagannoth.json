@@ -1,0 +1,78 @@
+[
+  {
+    "ids": [ 970, 971, 972, 7259, 973, 974, 975, 7260 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons",
+        "weight": 94,
+        "items": [
+          { "id": 1239, "min": 1, "max": 1, "weight": 4690 },   //Iron spear
+          { "id": 1237, "min": 1, "max": 1, "weight": 3910 },   //Bronze spear
+          { "id": 1243, "min": 1, "max": 1, "weight": 781 }   //Mithril spear
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 55,
+        "items": [
+          { "id": 555, "min": 15, "max": 15, "weight": 3130 },   //Water rune
+          { "id": 886, "min": 15, "max": 15, "weight": 1560 },   //Steel arrow
+          { "id": 828, "min": 3, "max": 3, "weight": 781 }   //Mithril javelin
+        ]
+      },
+      {
+        "name": "rare seed",
+        "weight": 141,
+        "items": [
+          { "id": 0, "min": 3, "max": 3, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Fishing",
+        "weight": 275,
+        "items": [
+          { "id": 301, "min": 1, "max": 1, "weight": 9380 },   //Lobster pot
+          { "id": 345, "min": 3, "max": 3, "weight": 3130 },   //Raw herring
+          { "id": 327, "min": 5, "max": 5, "weight": 3130 },   //Raw sardine
+          { "id": 311, "min": 1, "max": 1, "weight": 2339 },   //Harpoon
+          { "id": 314, "min": 15, "max": 15, "weight": 1560 },   //Feather
+          { "id": 313, "min": 50, "max": 50, "weight": 1560 },   //Fishing bait
+          { "id": 377, "min": 1, "max": 1, "weight": 1560 },   //Raw lobster
+          { "id": 359, "min": 1, "max": 1, "weight": 1560 },   //Raw tuna
+          { "id": 401, "min": 10, "max": 10, "weight": 1560 },   //Seaweed
+          { "id": 413, "min": 1, "max": 1, "weight": 781 },   //Oyster pearls
+          { "id": 411, "min": 2, "max": 2, "weight": 781 }   //Oyster pearl
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 409,
+        "items": [
+          { "id": 995, "min": 56, "max": 56, "weight": 22699 },   //Coins
+          { "id": 995, "min": 25, "max": 25, "weight": 7030 },   //Coins
+          { "id": 995, "min": 44, "max": 44, "weight": 6250 },   //Coins
+          { "id": 995, "min": 41, "max": 41, "weight": 4690 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 23,
+        "items": [
+          { "id": 405, "min": 1, "max": 1, "weight": 781 },   //Casket
+          { "id": 45, "min": 12, "max": 12, "weight": 1560 }   //Opal bolt tips
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 33,
+        "items": [
+          { "id": 13493, "min": 1, "max": 1, "weight": 2500 },   //Ensouled dagannoth head
+          { "id": 2801, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (medium)
+        ]
+      }
+    ]
+  }
+]

@@ -1,26 +1,50 @@
 [
   {
     "ids": [ 3184 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
     "tables": [
       {
-        "name": "Always Drops",
-        "weight": 1,
+        "name": "Runes",
+        "weight": 78,
         "items": [
-          { "id": 526, "min": 1, "max": 1, "weight": 1 } //Bones
+          { "id": 555, "min": 3, "max": 3, "weight": 7810 }   //Water rune
+        ]
+      },
+      {
+        "name": "Fish",
+        "weight": 196,
+        "items": [
+          { "id": 359, "min": 1, "max": 1, "weight": 7810 },   //Raw tuna
+          { "id": 345, "min": 1, "max": 1, "weight": 3910 },   //Raw herring
+          { "id": 327, "min": 1, "max": 1, "weight": 7810 }   //Raw sardine
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 157,
+        "items": [
+          { "id": 995, "min": 16, "max": 16, "weight": 7810 },   //Coins
+          { "id": 995, "min": 25, "max": 25, "weight": 7810 }   //Coins
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 567,
         "items": [
-          { "id": 995, "min": 16, "max": 38, "weight": 6 }, //Coins
-          { "id": 314, "min": 2, "max": 2, "weight": 6 }, //Feather
-          { "id": 359, "min": 1, "max": 1, "weight": 6 }, //Raw tuna
-          { "id": 327, "min": 1, "max": 1, "weight": 3 }, //Raw sardine
-          { "id": 555, "min": 3, "max": 3, "weight": 3 }, //Water rune
-          { "id": 407, "min": 1, "max": 1, "weight": 3 }, //Oyster
-          { "id": 411, "min": 1, "max": 1, "weight": 1 }, //Oyster pearl
-          { "id": 2677, "min": 1, "max": 1, "weight": 1 } //Clue scroll (easy)
+          { "id": 401, "min": 1, "max": 1, "weight": 7810 },   //Seaweed
+          { "id": 314, "min": 2, "max": 2, "weight": 29700 },   //Feather
+          { "id": 313, "min": 3, "max": 3, "weight": 7810 },   //Fishing bait
+          { "id": 411, "min": 1, "max": 1, "weight": 3130 },   //Oyster pearl
+          { "id": 1444, "min": 1, "max": 1, "weight": 7810 }   //Water talisman
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 7,
+        "items": [
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (easy)
         ]
       }
     ]

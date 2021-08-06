@@ -1,0 +1,63 @@
+[
+  {
+    "ids": [ 302 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 16,
+        "items": [
+          { "id": 1295, "min": 1, "max": 1, "weight": 781 },   //Steel longsword
+          { "id": 1157, "min": 1, "max": 1, "weight": 781 }   //Steel full helm
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 138,
+        "items": [
+          { "id": 563, "min": 2, "max": 2, "weight": 3130 },   //Law rune
+          { "id": 561, "min": 4, "max": 4, "weight": 3130 },   //Nature rune
+          { "id": 559, "min": 12, "max": 12, "weight": 2339 },   //Body rune
+          { "id": 562, "min": 3, "max": 3, "weight": 2339 },   //Chaos rune
+          { "id": 555, "min": 30, "max": 30, "weight": 2339 }   //Water rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 121,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 617,
+        "items": [
+          { "id": 995, "min": 48, "max": 48, "weight": 23400 },   //Coins
+          { "id": 995, "min": 15, "max": 15, "weight": 14099 },   //Coins
+          { "id": 995, "min": 8, "max": 8, "weight": 8590 },   //Coins
+          { "id": 995, "min": 70, "max": 70, "weight": 7810 },   //Coins
+          { "id": 995, "min": 5, "max": 5, "weight": 3910 },   //Coins
+          { "id": 995, "min": 150, "max": 150, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 105,
+        "items": [
+          { "id": 442, "min": 1, "max": 1, "weight": 8590 },   //Silver ore
+          { "id": 374, "min": 5, "max": 5, "weight": 1560 }   //Swordfish (noted)
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 8,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (medium)
+        ]
+      }
+    ]
+  }
+]

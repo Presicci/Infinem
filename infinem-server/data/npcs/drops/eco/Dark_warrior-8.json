@@ -1,0 +1,59 @@
+[
+  {
+    "ids": [ 523 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 17,
+        "items": [
+          { "id": 1139, "min": 1, "max": 1, "weight": 2339 },   //Bronze med helm
+          { "id": 1420, "min": 1, "max": 1, "weight": 781 },   //Iron mace
+          { "id": 1151, "min": 1, "max": 1, "weight": 781 },   //Black med helm
+          { "id": 1426, "min": 1, "max": 1, "weight": 781 }   //Black mace
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 37,
+        "items": [
+          { "id": 558, "min": 2, "max": 2, "weight": 2339 },   //Mind rune
+          { "id": 555, "min": 3, "max": 3, "weight": 1560 },   //Water rune
+          { "id": 557, "min": 2, "max": 2, "weight": 781 },   //Earth rune
+          { "id": 882, "min": 8, "max": 8, "weight": 3130 },   //Bronze arrow
+          { "id": 562, "min": 2, "max": 2, "weight": 781 },   //Chaos rune
+          { "id": 561, "min": 3, "max": 3, "weight": 1560 }   //Nature rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 8,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 245,
+        "items": [
+          { "id": 995, "min": 1, "max": 1, "weight": 24200 },   //Coins
+          { "id": 995, "min": 2, "max": 2, "weight": 15600 },   //Coins
+          { "id": 995, "min": 6, "max": 6, "weight": 15600 },   //Coins
+          { "id": 995, "min": 13, "max": 13, "weight": 5470 },   //Coins
+          { "id": 995, "min": 20, "max": 20, "weight": 4690 },   //Coins
+          { "id": 995, "min": 30, "max": 30, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 5,
+        "items": [
+          { "id": 440, "min": 1, "max": 1, "weight": 781 },   //Iron ore
+          { "id": 325, "min": 1, "max": 1, "weight": 781 }   //Sardine
+        ]
+      }
+    ]
+  }
+]

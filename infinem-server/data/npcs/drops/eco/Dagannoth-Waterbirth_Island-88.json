@@ -1,0 +1,76 @@
+[
+  {
+    "ids": [ 5942, 2259 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 124,
+        "items": [
+          { "id": 3799, "min": 1, "max": 1, "weight": 1560 },   //Fremennik gloves
+          { "id": 3767, "min": 1, "max": 1, "weight": 1560 },   //Fremennik brown shirt
+          { "id": 3761, "min": 1, "max": 1, "weight": 1560 },   //Fremennik brown cloak
+          { "id": 828, "min": 3, "max": 3, "weight": 1560 },   //Mithril javelin
+          { "id": 886, "min": 1, "max": 30, "weight": 7810 },   //Steel arrow
+          { "id": 6143, "min": 1, "max": 1, "weight": 1560 },   //Spined boots
+          { "id": 6149, "min": 1, "max": 1, "weight": 1560 },   //Spined gloves
+          { "id": 3758, "min": 1, "max": 1, "weight": 2339 },   //Fremennik shield
+          { "id": 3748, "min": 1, "max": 1, "weight": 2339 },   //Fremennik helm
+          { "id": 3757, "min": 1, "max": 1, "weight": 2339 },   //Fremennik blade
+          { "id": 3751, "min": 1, "max": 1, "weight": 48 },   //Berserker helm
+          { "id": 3749, "min": 1, "max": 1, "weight": 48 },   //Archer helm
+          { "id": 3755, "min": 1, "max": 1, "weight": 48 },   //Farseer helm
+          { "id": 3753, "min": 1, "max": 1, "weight": 48 }   //Warrior helm
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 31,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "rare seed",
+        "weight": 3,
+        "items": [
+          { "id": 0, "min": 3, "max": 3, "weight": 5 }
+        ]
+      },
+      {
+        "name": "talisman drop",
+        "weight": 19,
+        "items": [
+          { "id": 0, "min": 7, "max": 7, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 322,
+        "items": [
+          { "id": 405, "min": 1, "max": 1, "weight": 3910 },   //Casket
+          { "id": 413, "min": 1, "max": 1, "weight": 3910 },   //Oyster pearls
+          { "id": 45, "min": 1, "max": 20, "weight": 7810 },   //Opal bolt tips
+          { "id": 401, "min": 1, "max": 10, "weight": 23400 },   //Seaweed
+          { "id": 403, "min": 1, "max": 5, "weight": 6250 },   //Edible seaweed
+          { "id": 363, "min": 1, "max": 1, "weight": 3910 },   //Raw bass
+          { "id": 995, "min": 1, "max": 140, "weight": 7810 },   //Coins
+          { "id": 6171, "min": 1, "max": 1, "weight": 1560 },   //Flattened hide
+          { "id": 6173, "min": 1, "max": 1, "weight": 1560 },   //Stretched hide
+          { "id": 6169, "min": 1, "max": 1, "weight": 1560 },   //Circular hide
+          { "id": 3801, "min": 1, "max": 1, "weight": 1560 }   //Keg of beer
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 18,
+        "items": [
+          { "id": 13493, "min": 1, "max": 1, "weight": 2860 },   //Ensouled dagannoth head
+          { "id": 2801, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (medium)
+        ]
+      }
+    ]
+  }
+]

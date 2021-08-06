@@ -2,75 +2,83 @@
   {
     "ids": [ 2266, 6497 ],
     "guaranteed": [
-      { "id": 6729, "min": 1, "max": 1 }, //Dagannoth bones
-      { "id": 6155, "min": 1, "max": 1 } //Dagannoth hide
+      { "id": 6729, "min": 1, "max": 1 },   //Dagannoth bones
+      { "id": 6155, "min": 1, "max": 1 }   //Dagannoth hide
     ],
     "tables": [
       {
-        "name": "Weapons",
-        "weight": 1,
+        "name": "Weapons and armour",
+        "weight": 263,
         "items": [
-          { "id": 1397, "min": 1, "max": 1, "weight": 4 }, //Air battlestaff
-          { "id": 1399, "min": 1, "max": 1, "weight": 4 }, //Earth battlestaff
-          { "id": 1395, "min": 1, "max": 1, "weight": 4 }, //Water battlestaff
-          { "id": 1392, "min": 10, "max": 30, "weight": 4 }, //Battlestaff (noted)
-          { "id": 6562, "min": 1, "max": 1, "weight": 1 }, //Mud battlestaff
-          { "id": 6739, "min": 1, "max": 1, "weight": 1 } //Dragon axe
+          { "id": 1399, "min": 1, "max": 1, "weight": 7810 },   //Earth battlestaff
+          { "id": 1395, "min": 1, "max": 1, "weight": 3910 },   //Water battlestaff
+          { "id": 1397, "min": 1, "max": 1, "weight": 3130 },   //Air battlestaff
+          { "id": 1392, "min": 1, "max": 10, "weight": 781 },   //Battlestaff (noted)
+          { "id": 3757, "min": 1, "max": 1, "weight": 781 },   //Fremennik blade
+          { "id": 3758, "min": 1, "max": 1, "weight": 781 },   //Fremennik shield
+          { "id": 3748, "min": 1, "max": 1, "weight": 781 },   //Fremennik helm
+          { "id": 6562, "min": 1, "max": 1, "weight": 781 },   //Mud battlestaff
+          { "id": 6739, "min": 1, "max": 1, "weight": 781 },   //Dragon axe
+          { "id": 3755, "min": 1, "max": 1, "weight": 781 },   //Farseer helm
+          { "id": 6139, "min": 1, "max": 1, "weight": 781 },   //Skeletal top
+          { "id": 6141, "min": 1, "max": 1, "weight": 781 },   //Skeletal bottoms
+          { "id": 6731, "min": 1, "max": 1, "weight": 781 }   //Seers ring
         ]
       },
       {
-        "name": "Runes and Talismans",
-        "weight": 1,
+        "name": "Runes",
+        "weight": 190,
         "items": [
-          { "id": 1439, "min": 1, "max": 80, "weight": 3 }, //Air talisman (noted)
-          { "id": 1441, "min": 1, "max": 80, "weight": 3 }, //Earth talisman (noted)
-          { "id": 1445, "min": 1, "max": 80, "weight": 3 }, //Water talisman (noted)
-          { "id": 556, "min": 155, "max": 155, "weight": 1 }, //Air rune
-          { "id": 4698, "min": 32, "max": 44, "weight": 1 }, //Mud rune
-          { "id": 560, "min": 22, "max": 85, "weight": 1 }, //Death rune
-          { "id": 565, "min": 22, "max": 85, "weight": 1 } //Blood rune
+          { "id": 556, "min": 100, "max": 200, "weight": 4690 },   //Air rune
+          { "id": 557, "min": 50, "max": 100, "weight": 3910 },   //Earth rune
+          { "id": 565, "min": 25, "max": 75, "weight": 1560 },   //Blood rune
+          { "id": 563, "min": 10, "max": 75, "weight": 1560 },   //Law rune
+          { "id": 561, "min": 25, "max": 50, "weight": 1560 },   //Nature rune
+          { "id": 4698, "min": 25, "max": 75, "weight": 1560 },   //Mud rune
+          { "id": 560, "min": 25, "max": 85, "weight": 1560 }   //Death rune
         ]
       },
       {
-        "name": "Armour",
-        "weight": 1,
+        "name": "rare seed",
+        "weight": 63,
         "items": [
-          { "id": 3758, "min": 1, "max": 1, "weight": 8 }, //Fremennik shield
-          { "id": 3748, "min": 1, "max": 1, "weight": 4 }, //Fremennik helm
-          { "id": 6139, "min": 1, "max": 1, "weight": 4 }, //Skeletal top
-          { "id": 6141, "min": 1, "max": 1, "weight": 4 }, //Skeletal bottoms
-          { "id": 3755, "min": 1, "max": 1, "weight": 4 }, //Farseer helm
-          { "id": 6731, "min": 1, "max": 1, "weight": 1 } //Seers ring
+          { "id": 0, "min": 3, "max": 3, "weight": 5 }
         ]
       },
       {
-        "name": "Seeds",
-        "weight": 1,
+        "name": "talisman drop",
+        "weight": 9,
         "items": [
-          { "id": 5281, "min": 1, "max": 1, "weight": 3 }, //Belladonna seed
-          { "id": 5280, "min": 1, "max": 1, "weight": 3 }, //Cactus seed
-          { "id": 5106, "min": 1, "max": 1, "weight": 3 }, //Poison ivy seed
-          { "id": 5297, "min": 1, "max": 1, "weight": 3 }, //Irit seed
-          { "id": 5296, "min": 1, "max": 1, "weight": 3 }, //Toadflax seed
-          { "id": 5298, "min": 1, "max": 1, "weight": 3 }, //Avantoe seed
-          { "id": 5299, "min": 1, "max": 1, "weight": 3 }, //Kwuarm seed
-          { "id": 5301, "min": 1, "max": 1, "weight": 1 }, //Cadantine seed
-          { "id": 5302, "min": 1, "max": 1, "weight": 1 }, //Lantadyme seed
-          { "id": 5303, "min": 1, "max": 1, "weight": 1 }, //Dwarf weed seed
-          { "id": 5300, "min": 1, "max": 1, "weight": 1 } //Snapdragon seed
+          { "id": 0, "min": 7, "max": 7, "weight": 5 }
         ]
       },
       {
-        "name": "Others",
-        "weight": 1,
+        "name": "Talismans (noted)",
+        "weight": 218,
         "items": [
-          { "id": 995, "min": 972, "max": 3000, "weight": 15 }, //Coins
-          { "id": 7937, "min": 150, "max": 150, "weight": 15 }, //Pure essence (noted)
-          { "id": 207, "min": 1, "max": 1, "weight": 15 }, //Grimy ranarr weed
-          { "id": 385, "min": 5, "max": 5, "weight": 10 }, //Shark
-          { "id": 13493, "min": 1, "max": 1, "weight": 10 }, //Ensouled dagannoth head
-          { "id": 2722, "min": 1, "max": 1, "weight": 1 }, //Clue scroll (hard)
-          { "id": 12073, "min": 1, "max": 1, "weight": 1 } //Clue scroll (elite)
+          { "id": 1441, "min": 25, "max": 75, "weight": 7810 },   //Earth talisman (noted)
+          { "id": 1439, "min": 25, "max": 75, "weight": 5470 },   //Air talisman (noted)
+          { "id": 1445, "min": 1, "max": 76, "weight": 5470 }   //Water talisman (noted)
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 254,
+        "items": [
+          { "id": 385, "min": 5, "max": 5, "weight": 7810 },   //Shark
+          { "id": 995, "min": 500, "max": 1109, "weight": 2339 },   //Coins
+          { "id": 413, "min": 1, "max": 1, "weight": 3910 },   //Oyster pearls
+          { "id": 7937, "min": 150, "max": 150, "weight": 3910 },   //Pure essence (noted)
+          { "id": 207, "min": 1, "max": 1, "weight": 3910 }   //Grimy ranarr weed
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 87,
+        "items": [
+          { "id": 13493, "min": 1, "max": 1, "weight": 5000 },   //Ensouled dagannoth head
+          { "id": 2722, "min": 1, "max": 1, "weight": 2380 },   //Clue scroll (hard)
+          { "id": 12073, "min": 1, "max": 1, "weight": 133 }   //Clue scroll (elite)
         ]
       }
     ]

@@ -1,0 +1,80 @@
+[
+  {
+    "ids": [ 7806 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 111,
+        "items": [
+          { "id": 2503, "min": 1, "max": 1, "weight": 4690 },   //Black d'hide body
+          { "id": 1319, "min": 1, "max": 1, "weight": 2339 },   //Rune 2h sword
+          { "id": 1289, "min": 1, "max": 1, "weight": 3130 }   //Rune sword
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 196,
+        "items": [
+          { "id": 555, "min": 100, "max": 100, "weight": 4690 },   //Water rune
+          { "id": 4698, "min": 40, "max": 40, "weight": 4690 },   //Mud rune
+          { "id": 868, "min": 25, "max": 25, "weight": 4690 },   //Rune knife
+          { "id": 11212, "min": 60, "max": 60, "weight": 781 },   //Dragon arrow
+          { "id": 2, "min": 80, "max": 80, "weight": 3130 }   //Cannonball
+        ]
+      },
+      {
+        "name": "tree-herb seed",
+        "weight": 8,
+        "items": [
+          { "id": 0, "min": 4, "max": 4, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 367,
+        "items": [
+          { "id": 218, "min": 4, "max": 4, "weight": 6250 },   //Grimy dwarf weed (noted)
+          { "id": 240, "min": 10, "max": 10, "weight": 5470 },   //White berries (noted)
+          { "id": 9431, "min": 1, "max": 1, "weight": 3910 },   //Runite limbs
+          { "id": 1748, "min": 8, "max": 8, "weight": 4690 },   //Black dragonhide (noted)
+          { "id": 445, "min": 10, "max": 10, "weight": 4690 },   //Gold ore (noted)
+          { "id": 1618, "min": 5, "max": 5, "weight": 3910 },   //Uncut diamond (noted)
+          { "id": 9194, "min": 6, "max": 6, "weight": 4690 }   //Onyx bolt tips
+        ]
+      },
+      {
+        "name": "Consumables",
+        "weight": 239,
+        "items": [
+          { "id": 2297, "min": 2, "max": 2, "weight": 3130 },   //Anchovy pizza
+          { "id": 139, "min": 1, "max": 1, "weight": 6250 },   //Prayer potion(3)
+          { "id": 6705, "min": 3, "max": 3, "weight": 6250 },   //Potato with cheese
+          { "id": 385, "min": 2, "max": 2, "weight": 6250 }   //Shark
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 76,
+        "items": [
+          { "id": 989, "min": 1, "max": 1, "weight": 5470 },   //Crystal key
+          { "id": 10976, "min": 1, "max": 1, "weight": 1560 }   //Long bone
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 815,
+        "items": [
+          { "id": 21555, "min": 5, "max": 32, "weight": 61700 },   //Numulite
+          { "id": 21562, "min": 1, "max": 1, "weight": 3430 },   //Unidentified small fossil
+          { "id": 21564, "min": 1, "max": 1, "weight": 1710 },   //Unidentified medium fossil
+          { "id": 21566, "min": 1, "max": 1, "weight": 6860 },   //Unidentified large fossil
+          { "id": 21568, "min": 1, "max": 1, "weight": 343 },   //Unidentified rare fossil
+          { "id": 12073, "min": 1, "max": 1, "weight": 500 }   //Clue scroll (elite)
+        ]
+      }
+    ]
+  }
+]

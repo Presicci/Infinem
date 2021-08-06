@@ -1,0 +1,66 @@
+[
+  {
+    "ids": [ 11109, 11110, 11111 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 17,
+        "items": [
+          { "id": 1141, "min": 1, "max": 1, "weight": 2339 },   //Steel med helm
+          { "id": 1424, "min": 1, "max": 1, "weight": 781 },   //Steel mace
+          { "id": 1151, "min": 1, "max": 1, "weight": 781 },   //Black med helm
+          { "id": 1426, "min": 1, "max": 1, "weight": 781 }   //Black mace
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 37,
+        "items": [
+          { "id": 882, "min": 12, "max": 12, "weight": 3130 },   //Bronze arrow
+          { "id": 558, "min": 10, "max": 10, "weight": 2339 },   //Mind rune
+          { "id": 555, "min": 10, "max": 10, "weight": 1560 },   //Water rune
+          { "id": 561, "min": 8, "max": 8, "weight": 1560 },   //Nature rune
+          { "id": 557, "min": 10, "max": 10, "weight": 781 },   //Earth rune
+          { "id": 562, "min": 8, "max": 8, "weight": 781 }   //Chaos rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 8,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 297,
+        "items": [
+          { "id": 995, "min": 50, "max": 50, "weight": 24200 },   //Coins
+          { "id": 995, "min": 20, "max": 20, "weight": 15600 },   //Coins
+          { "id": 995, "min": 30, "max": 30, "weight": 15600 },   //Coins
+          { "id": 995, "min": 10, "max": 10, "weight": 14099 },   //Coins
+          { "id": 995, "min": 80, "max": 80, "weight": 7030 },   //Coins
+          { "id": 995, "min": 100, "max": 100, "weight": 4690 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 5,
+        "items": [
+          { "id": 325, "min": 2, "max": 2, "weight": 781 },   //Sardine
+          { "id": 440, "min": 3, "max": 3, "weight": 781 }   //Iron ore
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 3,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 1040 }   //Clue scroll (medium)
+        ]
+      }
+    ]
+  }
+]

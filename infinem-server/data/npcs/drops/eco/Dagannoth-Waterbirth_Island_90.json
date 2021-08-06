@@ -1,0 +1,84 @@
+[
+  {
+    "ids": [ 3185, 5943 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 160,
+        "items": [
+          { "id": 3799, "min": 1, "max": 1, "weight": 1560 },   //Fremennik gloves
+          { "id": 3767, "min": 1, "max": 1, "weight": 1560 },   //Fremennik brown shirt
+          { "id": 3761, "min": 1, "max": 1, "weight": 2339 },   //Fremennik brown cloak
+          { "id": 1353, "min": 1, "max": 1, "weight": 7810 },   //Steel axe
+          { "id": 828, "min": 3, "max": 3, "weight": 7810 },   //Mithril javelin
+          { "id": 886, "min": 15, "max": 15, "weight": 3910 },   //Steel arrow
+          { "id": 3758, "min": 1, "max": 1, "weight": 2339 },   //Fremennik shield
+          { "id": 3748, "min": 1, "max": 1, "weight": 2339 },   //Fremennik helm
+          { "id": 3757, "min": 1, "max": 1, "weight": 1560 },   //Fremennik blade
+          { "id": 3751, "min": 1, "max": 1, "weight": 48 },   //Berserker helm
+          { "id": 3749, "min": 1, "max": 1, "weight": 48 },   //Archer helm
+          { "id": 3755, "min": 1, "max": 1, "weight": 48 },   //Farseer helm
+          { "id": 3753, "min": 1, "max": 1, "weight": 48 }   //Warrior helm
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 127,
+        "items": [
+          { "id": 555, "min": 10, "max": 10, "weight": 7810 },   //Water rune
+          { "id": 561, "min": 1, "max": 10, "weight": 7810 },   //Nature rune
+          { "id": 565, "min": 1, "max": 10, "weight": 1560 },   //Blood rune
+          { "id": 563, "min": 1, "max": 10, "weight": 7810 }   //Law rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 15,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "rare seed",
+        "weight": 3,
+        "items": [
+          { "id": 0, "min": 3, "max": 3, "weight": 5 }
+        ]
+      },
+      {
+        "name": "talisman drop",
+        "weight": 15,
+        "items": [
+          { "id": 0, "min": 7, "max": 7, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 174,
+        "items": [
+          { "id": 6155, "min": 1, "max": 1, "weight": 7810 },   //Dagannoth hide
+          { "id": 590, "min": 1, "max": 1, "weight": 7810 },   //Tinderbox
+          { "id": 377, "min": 1, "max": 1, "weight": 3910 },   //Raw lobster
+          { "id": 411, "min": 1, "max": 1, "weight": 5470 },   //Oyster pearl
+          { "id": 995, "min": 3, "max": 3, "weight": 1560 },   //Coins
+          { "id": 995, "min": 26, "max": 26, "weight": 1560 },   //Coins
+          { "id": 995, "min": 38, "max": 38, "weight": 1560 },   //Coins
+          { "id": 995, "min": 47, "max": 47, "weight": 1560 },   //Coins
+          { "id": 995, "min": 81, "max": 81, "weight": 1560 },   //Coins
+          { "id": 3801, "min": 1, "max": 1, "weight": 1560 }   //Keg of beer
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 16,
+        "items": [
+          { "id": 13493, "min": 1, "max": 1, "weight": 2500 },   //Ensouled dagannoth head
+          { "id": 2801, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (medium)
+        ]
+      }
+    ]
+  }
+]

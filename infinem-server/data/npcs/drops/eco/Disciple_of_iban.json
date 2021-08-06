@@ -1,17 +1,11 @@
 [
   {
-    "ids": [ 4559 ],
-    "tables": [
-      {
-        "name": "Drops",
-        "weight": 1,
-        "items": [
-          { "id": 526, "min": 1, "max": 1, "weight": 1 }, //Bones
-          { "id": 1035, "min": 1, "max": 1, "weight": 1 }, //Zamorak robe (top)
-          { "id": 1033, "min": 1, "max": 1, "weight": 1 }, //Zamorak robe (bottom)
-          { "id": 1409, "min": 1, "max": 1, "weight": 1 } //Iban's staff
-        ]
-      }
+    "ids": [ 8997 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 },   //Bones
+      { "id": 1035, "min": 1, "max": 1 },   //Zamorak monk top
+      { "id": 1033, "min": 1, "max": 1 },   //Zamorak monk bottom
+      { "id": 1410, "min": 1, "max": 1 }   //Iban's staff (broken)
     ]
   }
 ]
