@@ -999,4 +999,8 @@ public class Duel extends ItemContainer {
             //player.openInterface(InterfaceType.MAIN, 108);
         });
     }
+
+    public boolean isAccepted() {
+        return accepted;
+    }
 }
