@@ -408,6 +408,14 @@ public abstract class ItemContainerG<I extends Item> {
         return null;
     }
 
+    public I findItemIgnoringAttributes(int id, boolean acceptNoted) {
+        for(I item : items) {
+            if(item != null && (item.getId() == id || (acceptNoted && ItemDef.get(id).notedId != -1 && item.getId() == ItemDef.get(id).notedId)))
+                return item;
+        }
+        return null;
+    }
+
     public I findItem(int id, boolean acceptNoted, int attributeHash) {
         for(I item : items) {
             if(item != null && item.getAttributeHash() == attributeHash && (item.getId() == id || (acceptNoted && ItemDef.get(id).notedId != -1 && item.getId() == ItemDef.get(id).notedId)))
