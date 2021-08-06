@@ -149,11 +149,12 @@ public class npc_drops extends DataFile {
                                 || chanceLine.contains("Catacombs") || chanceLine.contains("Twisted")
                                 || chanceLine.contains("Krystilia") || chanceLine.contains("pickpocket")
                                 || chanceLine.contains("cavalier") || chanceLine.contains("superior")
-                                || chanceLine.contains("Deadman")) {
+                                || chanceLine.contains("Deadman") || chanceLine.contains("Defenders")) {
                             continue;
                         } else if (chanceLine.contains("herb subtable") || chanceLine.contains("Due to a unique mechanic")
                                 || chanceLine.contains("noted herbs") || chanceLine.contains("shard table")
-                                || chanceLine.contains("unique table") || chanceLine.contains("unique drop table")) {
+                                || chanceLine.contains("unique table") || chanceLine.contains("unique drop table")
+                                || chanceLine.contains("bolt tips") || chanceLine.contains("sigil drop table")) {
                             dl = dl.nextElementSibling();
                         } else {
                             if (chanceLine.length() < 3) {
@@ -178,7 +179,8 @@ public class npc_drops extends DataFile {
                     int i = tableName.indexOf("[edit");
                     if(i != -1)
                         tableName = tableName.substring(0, i);
-                    if (tableName.toLowerCase().contains("pickpocket") || tableName.toLowerCase().contains("catacombs")) {
+                    if (tableName.toLowerCase().contains("pickpocket") || tableName.toLowerCase().contains("catacombs")
+                            || tableName.toLowerCase().contains("rare drop table")) {
                         continue;
                     }
                     tableName = tableName
@@ -239,7 +241,19 @@ public class npc_drops extends DataFile {
                     item = item.replace("(m)", "");
                 }
                 if(item.contains("(f)") || item.toLowerCase().contains("brimstone key")
-                    || item.contains("Ikkle") || item.toLowerCase().contains("ecumenical")) {
+                    || item.contains("Ikkle") || item.toLowerCase().contains("ecumenical")
+                    || item.contains("Callisto cub") || item.contains("Pet kraken")
+                        || item.contains("Baby mole") || item.contains("Hellpuppy")
+                        || item.contains("Kalphite princess") || item.contains("Pet chaos elemental")
+                        || item.contains("Pet dagannoth prime") || item.contains("Pet dagannoth rex")
+                        || item.contains("Pet dagannoth supreme") || item.contains("Pet dark core")
+                        || item.contains("Pet general graardor") || item.contains("Pet k'ril tsutsaroth")
+                        || item.contains("Pet kree'arra") || item.contains("Pet smoke devil")
+                        || item.contains("Pet snakeling") || item.contains("Pet zilyana")
+                        || item.contains("Prince black dragon") || item.contains("Scorpia's offspring")
+                        || item.contains("Skotos") || item.contains("Sraracha")
+                        || item.contains("Venenatis spiderling") || item.contains("Vorki")
+                        || item.contains("Vet'ion jr.")) {
                     //item = item.replace("(f)", "");
                     return null;
                 }
@@ -293,9 +307,10 @@ public class npc_drops extends DataFile {
                                 return null;
                             }
                             if (e.text().toLowerCase().contains("players will receive")
-                                    || e.text().toLowerCase().contains("dropped together")) {
+                                    || e.text().toLowerCase().contains("dropped together")
+                                    || e.text().toLowerCase().contains("dropped along")) {
                                 if (groupedDropsNotes.contains(e.text())) {
-                                    System.out.println("Group drop line, removing!");
+                                    System.out.println("Group drop line, removing! '" + e.text() + "'");
                                     return null;
                                 } else {
                                     groupedDropsNotes.add(e.text());
