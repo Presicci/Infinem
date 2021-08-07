@@ -1,6 +1,6 @@
 [
   {
-    "ids": [ 5293, 5294 ],
+    "ids": [ 5295, 5296 ],
     "guaranteed": [
       { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
@@ -56,9 +56,9 @@
       },
       {
         "name": "Tertiary",
-        "weight": 34,
+        "weight": 28,
         "items": [
-          { "id": 13481, "min": 1, "max": 1, "weight": 2500 },   //Ensouled elf head
+          { "id": 13481, "min": 1, "max": 1, "weight": 2000 },   //Ensouled elf head
           { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
         ]
       }

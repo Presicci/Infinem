@@ -1,29 +1,31 @@
 [
   {
     "ids": [ 4381 ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
+    ],
     "tables": [
       {
-        "name": "Bones",
-        "weight": 1,
+        "name": "uncommon seed",
+        "weight": 5,
         "items": [
-          { "id": 532, "min": 1, "max": 1, "weight": 1 } //Big bones
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
         ]
       },
       {
-        "name": "Seeds",
+        "name": "Other",
+        "weight": 21,
+        "items": [
+          { "id": -1, "min": 1, "max": 1, "weight": 1 }
+        ]
+      },
+      {
+        "name": "Tertiary",
         "weight": 1,
         "items": [
-          { "id": 5294, "min": 1, "max": 1, "weight": 3 }, //Harralander seed
-          { "id": 5323, "min": 1, "max": 1, "weight": 3 }, //Strawberry seed
-          { "id": 5293, "min": 1, "max": 1, "weight": 3 }, //Tarromin seed
-          { "id": 5292, "min": 1, "max": 1, "weight": 3 }, //Marrentill seed
-          { "id": 5281, "min": 1, "max": 1, "weight": 3 }, //Belladonna seed
-          { "id": 5100, "min": 1, "max": 1, "weight": 3 }, //Limpwurt seed
-          { "id": 5104, "min": 1, "max": 1, "weight": 3 }, //Jangerberry seed
-          { "id": 5282, "min": 1, "max": 1, "weight": 3 }, //Mushroom spore
-          { "id": 5295, "min": 1, "max": 1, "weight": 1 }, //Ranarr seed
-          { "id": 5300, "min": 1, "max": 1, "weight": 1 }, //Snapdragon seed
-          { "id": 5321, "min": 1, "max": 1, "weight": 1 } //Watermelon seed
+          { "id": 13478, "min": 1, "max": 1, "weight": 3425 },   //Ensouled ogre head
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
         ]
       }
     ]

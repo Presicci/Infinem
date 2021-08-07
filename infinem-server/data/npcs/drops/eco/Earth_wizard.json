@@ -2,15 +2,21 @@
   {
     "ids": [ 1558 ],
     "guaranteed": [
-      { "id": 592, "min": 1, "max": 1 } //Ashes
+      { "id": 592, "min": 1, "max": 1 }   //Ashes
     ],
     "tables": [
       {
-        "name": "Other",
-        "weight": 1,
+        "name": "Runes",
+        "weight": 950,
         "items": [
-          { "id": 557, "min": 4, "max": 10, "weight": 1 }, //Earth rune
-          { "id": 1440, "min": 1, "max": 1, "weight": 1 } //Earth talisman
+          { "id": 557, "min": 5, "max": 10, "weight": 95000 }   //Earth rune
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 50,
+        "items": [
+          { "id": 1440, "min": 1, "max": 1, "weight": 5000 }   //Earth talisman
         ]
       }
     ]
