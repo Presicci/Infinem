@@ -19,6 +19,10 @@ public class CustomDropViewerInterface {
                 { new Item(4111), new Item(4113) }, // Mystic robe bottom and top
                 { new Item(169, 3), new Item(3026, 3) } // Super restores and super rangings
         });
+
+        put("ammonite crab", new Item[][] {
+                { new Item(21543), new Item(21545) }    // Calcite and pyrophosphite
+        });
     }};
 
     private static class Item {
@@ -118,7 +122,7 @@ public class CustomDropViewerInterface {
             WorldMapSectionType.method116(item);
             ViewportMouse.client.revalidateWidget(item);
 
-            if ((broadcastType > 3 && broadcastType < 50) || broadcastType <= 0) {
+            if ((broadcastType > 4 && broadcastType < 50) || broadcastType <= 0) {
                 if (itemId == 22973) {  // Hydra's Eye
                     name = "Brimstone Ring Parts";
                 }
@@ -218,10 +222,9 @@ public class CustomDropViewerInterface {
                 String b = "None";
                 if(broadcastType == 1)
                     b = "Friends";
-                else if(broadcastType == 2)
+                else if(broadcastType == 2 || broadcastType == 3)
                     b = "World";
-                else if(broadcastType == 3)
-                    b = "Global";
+                else b = "Global";
                 broadcast.text = "Broadcast: <col=ffb83f>" + b;
                 WorldMapSectionType.method116(broadcast);
                 ViewportMouse.client.revalidateWidget(broadcast);
