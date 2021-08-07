@@ -77,7 +77,7 @@ public class DisplayHandler implements Incoming {
         ps.sendAccessMask(Interface.OPTIONS, 106, 1, 4, 2);
         ps.sendAccessMask(Interface.OPTIONS, 107, 1, 4, 2);
         ps.sendAccessMask(Interface.EMOTE, 1, 0, 47, 2);
-        ps.sendAccessMask(Interface.MUSIC_PLAYER, 2, 0, 580, 6);
+        ps.sendAccessMask(Interface.MUSIC_PLAYER, 3, 0, 625, 6);
         ps.sendAccessMask(Interface.MAGIC_BOOK, 184, 0, 4, 2);
 
         Map<Integer, Integer> oldComponents = getToplevelComponents(player).ints();
@@ -151,7 +151,7 @@ public class DisplayHandler implements Incoming {
         ps.sendAccessMask(Interface.OPTIONS, 106, 1, 4, 2);
         ps.sendAccessMask(Interface.OPTIONS, 107, 1, 4, 2);
         ps.sendAccessMask(Interface.EMOTE, 1, 0, 47, 2);
-        ps.sendAccessMask(Interface.MUSIC_PLAYER, 2, 0, 580, 6);
+        ps.sendAccessMask(Interface.MUSIC_PLAYER, 3, 0, 625, 6);
         ps.sendAccessMask(Interface.MAGIC_BOOK, 184, 0, 4, 2);
     }
 
