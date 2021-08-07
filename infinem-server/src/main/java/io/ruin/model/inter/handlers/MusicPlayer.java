@@ -580,19 +580,19 @@ public class MusicPlayer {
          * Select tracks
          */
         InterfaceHandler.register(Interface.MUSIC_PLAYER, h -> {
-            h.actions[1] = (SlotAction) (p, slot) -> {
-                int i = slot - 1;
+            h.actions[3] = (SlotAction) (p, slot) -> {
+                int i = slot;
                 if(i < 0 || i >= TRACKS.length)
                     return;
                 TRACKS[i].select(p);
             };
             h.actions[7] = (SimpleAction) p -> {
                 Config.MUSIC_PREFERENCE.set(p, 1);
-                p.getPacketSender().sendString(Interface.MUSIC_PLAYER, 5, "AUTO");
+                //p.getPacketSender().sendString(Interface.MUSIC_PLAYER, 5, "AUTO");
             };
             h.actions[9] = (SimpleAction) p -> {
                 Config.MUSIC_PREFERENCE.set(p, 0);
-                p.getPacketSender().sendString(Interface.MUSIC_PLAYER, 5, "MANUAL");
+                //p.getPacketSender().sendString(Interface.MUSIC_PLAYER, 5, "MANUAL");
             };
             h.actions[11] = (SimpleAction) p -> {
                 if(Config.MUSIC_LOOP.toggle(p) == 1)
