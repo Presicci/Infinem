@@ -60,7 +60,7 @@ public class CustomDropViewerInterface {
             }
         });
         if(petId != 65535)
-            drops.add(0, new Integer[]{petId, 1, -1, -1, petAverage}); //"pet" specifically identified by minAmount == -1
+            drops.add(0, new Integer[]{petId, 4, -1, -1, petAverage}); //"pet" specifically identified by minAmount == -1
 
         int childId = 0;
         String[] columns = {"Min Amount", "Max Amount", "Drop Chance"};
