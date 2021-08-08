@@ -3,10 +3,11 @@
     "ids": [ 626 ],
     "tables": [
       {
-        "name": "Other",
+        "name": "Herbs",
         "weight": 1,
         "items": [
-          { "id": 213, "min": 1, "max": 1, "weight": 1 } //Grimy kwuarm
+          { "id": -1, "min": 1, "max": 1, "weight": 11 },   //Nothing
+          { "id": 213, "min": 1, "max": 1, "weight": 1 }   //Grimy kwuarm
         ]
       }
     ]

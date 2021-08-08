@@ -1,0 +1,61 @@
+[
+  {
+    "ids": [ 10523, 10524, 10525, 10526, 10534, 10535, 10536, 10537 ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 62,
+        "items": [
+          { "id": 1295, "min": 1, "max": 1, "weight": 781 },   //Steel longsword
+          { "id": 1399, "min": 1, "max": 1, "weight": 781 },   //Earth battlestaff
+          { "id": 1393, "min": 1, "max": 1, "weight": 781 },   //Fire battlestaff
+          { "id": 1397, "min": 1, "max": 1, "weight": 781 },   //Air battlestaff
+          { "id": 1395, "min": 1, "max": 1, "weight": 781 },   //Water battlestaff
+          { "id": 581, "min": 1, "max": 1, "weight": 781 },   //Black robe
+          { "id": 1015, "min": 1, "max": 1, "weight": 781 },   //Black skirt
+          { "id": 1017, "min": 1, "max": 1, "weight": 781 }   //Wizard hat
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 346,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 196,
+        "items": [
+          { "id": 563, "min": 2, "max": 4, "weight": 5470 },   //Law rune
+          { "id": 9142, "min": 12, "max": 24, "weight": 1560 },   //Mithril bolts
+          { "id": 558, "min": 12, "max": 32, "weight": 3910 },   //Mind rune
+          { "id": 556, "min": 30, "max": 50, "weight": 3130 },   //Air rune
+          { "id": 557, "min": 10, "max": 20, "weight": 1560 },   //Earth rune
+          { "id": 555, "min": 10, "max": 30, "weight": 1560 },   //Water rune
+          { "id": 559, "min": 10, "max": 30, "weight": 1560 },   //Body rune
+          { "id": 561, "min": 3, "max": 5, "weight": 781 }   //Nature rune
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 236,
+        "items": [
+          { "id": 995, "min": 3, "max": 3, "weight": 3910 },   //Coins
+          { "id": 995, "min": 5, "max": 5, "weight": 3910 },   //Coins
+          { "id": 995, "min": 40, "max": 140, "weight": 15600 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 157,
+        "items": [
+          { "id": 228, "min": 2, "max": 4, "weight": 7810 },   //Vial of water (noted)
+          { "id": 303, "min": 1, "max": 1, "weight": 6250 },   //Small fishing net
+          { "id": 1759, "min": 1, "max": 1, "weight": 781 },   //Ball of wool
+          { "id": 231, "min": 1, "max": 1, "weight": 781 }   //Snape grass
+        ]
+      }
+    ]
+  }
+]

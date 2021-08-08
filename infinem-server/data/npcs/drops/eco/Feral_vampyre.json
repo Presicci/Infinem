@@ -1,0 +1,51 @@
+[
+  {
+    "ids": [ 3137, 3234, 3237, 3239, 3707, 3708, 4431, 5640, 5641, 5642, 8678 ],
+    "guaranteed": [
+      { "id": 3325, "min": 1, "max": 1 }   //Vampyre dust
+    ],
+    "tables": [
+      {
+        "name": "Runes",
+        "weight": 314,
+        "items": [
+          { "id": 557, "min": 4, "max": 4, "weight": 7810 },   //Earth rune
+          { "id": 560, "min": 2, "max": 2, "weight": 7810 },   //Death rune
+          { "id": 562, "min": 3, "max": 3, "weight": 6250 },   //Chaos rune
+          { "id": 565, "min": 1, "max": 1, "weight": 3910 },   //Blood rune
+          { "id": 565, "min": 2, "max": 2, "weight": 781 }   //Blood rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 92,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 175,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 416,
+        "items": [
+          { "id": 995, "min": 15, "max": 15, "weight": 31300 },   //Coins
+          { "id": 1361, "min": 1, "max": 1, "weight": 2339 },   //Black axe
+          { "id": 1440, "min": 1, "max": 1, "weight": 1560 }   //Earth talisman
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 9,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (medium)
+        ]
+      }
+    ]
+  }
+]

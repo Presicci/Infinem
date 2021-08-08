@@ -1,59 +1,61 @@
 [
   {
-    "ids": [ 3086, 3087, 3088 ],
+    "ids": [ 3086, 3087, 3088, 3089, 3090, 3091, 3672, 6947, 6948, 6949, 6950, 6951, 6952, 6959, 6960, 6961, 11045 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 } //Bones
+      { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
-        "name": "Seeds",
-        "weight": 1,
-        "items": [
-          { "id": 5320, "min": 1, "max": 1, "weight": 3 }, //Sweetcorn seed
-          { "id": 5319, "min": 1, "max": 4, "weight": 3 }, //Onion seed
-          { "id": 5322, "min": 1, "max": 4, "weight": 3 }, //Tomato seed
-          { "id": 5324, "min": 4, "max": 4, "weight": 3 }, //Cabbage seed
-          { "id": 5321, "min": 1, "max": 4, "weight": 3 }, //Watermelon seed
-          { "id": 5318, "min": 1, "max": 4, "weight": 1 }, //Potato seed
-          { "id": 5323, "min": 4, "max": 4, "weight": 1 } //Strawberry seed
-        ]
-      },
-      {
-        "name": "Herbs",
-        "weight": 1,
-        "items": [
-          { "id": 199, "min": 1, "max": 1, "weight": 6 }, //Grimy guam leaf
-          { "id": 203, "min": 1, "max": 1, "weight": 6 }, //Grimy tarromin
-          { "id": 209, "min": 1, "max": 1, "weight": 3 }, //Grimy irit leaf
-          { "id": 217, "min": 1, "max": 1, "weight": 3 }, //Grimy dwarf weed
-          { "id": 207, "min": 1, "max": 1, "weight": 3 }, //Grimy ranarr weed
-          { "id": 213, "min": 1, "max": 1, "weight": 1 }, //Grimy kwuarm
-          { "id": 211, "min": 1, "max": 1, "weight": 1 } //Grimy avantoe
-        ]
-      },
-      {
         "name": "Runes",
-        "weight": 1,
+        "weight": 35,
         "items": [
-          { "id": 562, "min": 2, "max": 2, "weight": 1 }, //Chaos rune
-          { "id": 554, "min": 6, "max": 6, "weight": 1 }, //Fire rune
-          { "id": 558, "min": 9, "max": 9, "weight": 1 } //Mind rune
+          { "id": 557, "min": 4, "max": 4, "weight": 1560 },   //Earth rune
+          { "id": 554, "min": 6, "max": 6, "weight": 1560 },   //Fire rune
+          { "id": 558, "min": 9, "max": 9, "weight": 1560 },   //Mind rune
+          { "id": 562, "min": 2, "max": 2, "weight": 781 }   //Chaos rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 55,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "allotment seed",
+        "weight": 136,
+        "items": [
+          { "id": 0, "min": 6, "max": 6, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 197,
+        "items": [
+          { "id": 995, "min": 3, "max": 3, "weight": 29700 },   //Coins
+          { "id": 995, "min": 25, "max": 25, "weight": 781 }   //Coins
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 80,
         "items": [
-          { "id": 1965, "min": 1, "max": 1, "weight": 6 }, //Cabbage
-          { "id": 1440, "min": 1, "max": 1, "weight": 6 }, //Earth talisman
-          { "id": 313, "min": 1, "max": 1, "weight": 6 }, //Fishing bait
-          { "id": 5341, "min": 1, "max": 1, "weight": 3 }, //Rake
-          { "id": 5329, "min": 1, "max": 1, "weight": 3 }, //Secateurs
-          { "id": 995, "min": 3, "max": 15, "weight": 3 }, //Coins
-          { "id": 5345, "min": 1, "max": 1, "weight": 3 }, //Gardening boots
-          { "id": 5331, "min": 1, "max": 1, "weight": 3 }, //Watering can
-          { "id": 5343, "min": 1, "max": 1, "weight": 1 }, //Seed dibber
-          { "id": 2677, "min": 1, "max": 1, "weight": 1 } //Clue scroll (easy)
+          { "id": 313, "min": 1, "max": 1, "weight": 3910 },   //Fishing bait
+          { "id": 5341, "min": 1, "max": 1, "weight": 2339 },   //Rake
+          { "id": 1440, "min": 1, "max": 1, "weight": 1560 },   //Earth talisman
+          { "id": 5345, "min": 1, "max": 1, "weight": 1560 },   //Gardening boots
+          { "id": 5343, "min": 1, "max": 1, "weight": 1560 },   //Seed dibber
+          { "id": 5329, "min": 1, "max": 1, "weight": 781 },   //Secateurs
+          { "id": 5340, "min": 1, "max": 1, "weight": 781 }   //Watering can(8)
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 12,
+        "items": [
+          { "id": 23182, "min": 1, "max": 1, "weight": 1110 },   //Clue scroll (beginner)
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (easy)
         ]
       }
     ]

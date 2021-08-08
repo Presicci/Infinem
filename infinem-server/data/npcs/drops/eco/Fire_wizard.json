@@ -2,15 +2,21 @@
   {
     "ids": [ 1556 ],
     "guaranteed": [
-      { "id": 592, "min": 1, "max": 1 } //Ashes
+      { "id": 592, "min": 1, "max": 1 }   //Ashes
     ],
     "tables": [
       {
-        "name": "Other",
-        "weight": 1,
+        "name": "Runes",
+        "weight": 950,
         "items": [
-          { "id": 554, "min": 4, "max": 9, "weight": 1 }, //Fire rune
-          { "id": 1442, "min": 1, "max": 1, "weight": 1 } //Fire talisman
+          { "id": 554, "min": 5, "max": 10, "weight": 95000 }   //Fire rune
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 50,
+        "items": [
+          { "id": 1442, "min": 1, "max": 1, "weight": 5000 }   //Fire talisman
         ]
       }
     ]

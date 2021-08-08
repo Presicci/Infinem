@@ -2,50 +2,67 @@
   {
     "ids": [ 3938 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 } //Bones
+      { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
-        "name": "Weapons",
-        "weight": 1,
+        "name": "Weapons and armour",
+        "weight": 341,
         "items": [
-          { "id": 1337, "min": 1, "max": 1, "weight": 1 }, //Bronze warhammer
-          { "id": 1335, "min": 1, "max": 1, "weight": 1 } //Iron warhammer
+          { "id": 1337, "min": 1, "max": 1, "weight": 19500 },   //Bronze warhammer
+          { "id": 1335, "min": 1, "max": 1, "weight": 13699 }   //Iron warhammer
         ]
       },
       {
-        "name": "Ores and Bars",
-        "weight": 1,
+        "name": "herb drop",
+        "weight": 20,
         "items": [
-          { "id": 453, "min": 1, "max": 1, "weight": 1 }, //Coal
-          { "id": 2353, "min": 1, "max": 1, "weight": 1 }, //Steel bar
-          { "id": 440, "min": 1, "max": 5, "weight": 1 }, //Iron ore
-          { "id": 438, "min": 1, "max": 5, "weight": 1 }, //Tin ore
-          { "id": 436, "min": 1, "max": 5, "weight": 1 } //Copper ore
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
         ]
       },
       {
-        "name": "Herbs",
-        "weight": 1,
+        "name": "Ore and bars",
+        "weight": 100,
         "items": [
-          { "id": 199, "min": 1, "max": 1, "weight": 1 }, //Grimy guam leaf
-          { "id": 201, "min": 1, "max": 1, "weight": 1 }, //Grimy marrentill
-          { "id": 203, "min": 1, "max": 1, "weight": 1 }, //Grimy tarromin
-          { "id": 205, "min": 1, "max": 1, "weight": 1 } //Grimy harralander
+          { "id": 436, "min": 5, "max": 5, "weight": 1950 },   //Copper ore
+          { "id": 438, "min": 5, "max": 5, "weight": 1950 },   //Tin ore
+          { "id": 440, "min": 5, "max": 5, "weight": 1950 },   //Iron ore
+          { "id": 453, "min": 1, "max": 1, "weight": 1950 },   //Coal
+          { "id": 2353, "min": 1, "max": 1, "weight": 1950 }   //Steel bar
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 120,
+        "items": [
+          { "id": 995, "min": 6, "max": 6, "weight": 3910 },   //Coins
+          { "id": 995, "min": 15, "max": 15, "weight": 2930 },   //Coins
+          { "id": 995, "min": 16, "max": 16, "weight": 1950 },   //Coins
+          { "id": 995, "min": 20, "max": 20, "weight": 1950 },   //Coins
+          { "id": 995, "min": 38, "max": 38, "weight": 976 }   //Coins
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 417,
         "items": [
-          { "id": 995, "min": 15, "max": 16, "weight": 6 }, //Coins
-          { "id": 227, "min": 1, "max": 1, "weight": 6 }, //Vial of water
-          { "id": 1925, "min": 1, "max": 1, "weight": 6 }, //Bucket
-          { "id": 590, "min": 1, "max": 1, "weight": 6 }, //Tinderbox
-          { "id": 3689, "min": 1, "max": 1, "weight": 6 }, //Lyre
-          { "id": 247, "min": 1, "max": 1, "weight": 3 }, //Jangerberries
-          { "id": 221, "min": 1, "max": 1, "weight": 1 }, //Eye of newt
-          { "id": 2677, "min": 1, "max": 1, "weight": 1 } //Clue scroll (easy)
+          { "id": 590, "min": 1, "max": 1, "weight": 9770 },   //Tinderbox
+          { "id": 229, "min": 1, "max": 1, "weight": 9770 },   //Vial
+          { "id": 227, "min": 1, "max": 1, "weight": 9770 },   //Vial of water
+          { "id": 1925, "min": 1, "max": 1, "weight": 3320 },   //Bucket
+          { "id": 3689, "min": 1, "max": 1, "weight": 5860 },   //Lyre
+          { "id": 1917, "min": 1, "max": 1, "weight": 391 },   //Beer
+          { "id": 221, "min": 1, "max": 1, "weight": 781 },   //Eye of newt
+          { "id": 231, "min": 1, "max": 1, "weight": 391 },   //Snape grass
+          { "id": 247, "min": 1, "max": 1, "weight": 391 },   //Jangerberries
+          { "id": 1582, "min": 1, "max": 1, "weight": 195 }   //Blamish oil
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 8,
+        "items": [
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (easy)
         ]
       }
     ]
