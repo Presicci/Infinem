@@ -25,7 +25,7 @@ public enum Pet {
      * Boss pets
      */
     ABYSSAL_ORPHAN(13262, 5884, 15006, true, 1000),
-    BABY_MOLE(12646, 6635, true, 1000),
+    BABY_MOLE(12646, 6635, true, 3000),
     CALLISTO_CUB(13178, 5558, true, 2000),
     HELLPUPPY(13247, 3099, 15007, true, 3000),
     KALPHITE_PRINCESS(12647, 6638, 6637, true, 1000),
