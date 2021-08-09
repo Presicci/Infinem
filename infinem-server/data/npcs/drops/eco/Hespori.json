@@ -1,0 +1,103 @@
+[
+  {
+    "ids": [ 8583 ],
+    "tables": [
+      {
+        "name": "Anima seeds",
+        "weight": 492,
+        "items": [
+          { "id": 22881, "min": 1, "max": 2, "weight": 33299 },   //Attas seed
+          { "id": 22883, "min": 1, "max": 2, "weight": 33299 },   //Iasor seed
+          { "id": 22885, "min": 1, "max": 2, "weight": 33299 }   //Kronos seed
+        ]
+      },
+      {
+        "name": "Pre-roll",
+        "weight": 14,
+        "items": [
+          { "id": 22994, "min": 1, "max": 1, "weight": 2860 }   //Bottomless compost bucket
+        ]
+      },
+      {
+        "name": "Allotment seeds",
+        "weight": 24,
+        "items": [
+          { "id": 5321, "min": 10, "max": 20, "weight": 2500 },   //Watermelon seed
+          { "id": 22879, "min": 6, "max": 16, "weight": 2500 }   //Snape grass seed
+        ]
+      },
+      {
+        "name": "Flower seeds",
+        "weight": 43,
+        "items": [
+          { "id": 22887, "min": 8, "max": 18, "weight": 6250 },   //White lily seed
+          { "id": 5100, "min": 6, "max": 14, "weight": 2500 }   //Limpwurt seed
+        ]
+      },
+      {
+        "name": "Hop seeds",
+        "weight": 12,
+        "items": [
+          { "id": 5311, "min": 10, "max": 20, "weight": 2500 }   //Wildblood seed
+        ]
+      },
+      {
+        "name": "Bush seeds",
+        "weight": 24,
+        "items": [
+          { "id": 5105, "min": 10, "max": 16, "weight": 2500 },   //Whiteberry seed
+          { "id": 5106, "min": 8, "max": 16, "weight": 2500 }   //Poison ivy seed
+        ]
+      },
+      {
+        "name": "Herb seeds",
+        "weight": 166,
+        "items": [
+          { "id": 5297, "min": 2, "max": 8, "weight": 3750 },   //Irit seed
+          { "id": 5298, "min": 2, "max": 5, "weight": 3750 },   //Avantoe seed
+          { "id": 5299, "min": 2, "max": 5, "weight": 3750 },   //Kwuarm seed
+          { "id": 5296, "min": 2, "max": 5, "weight": 3750 },   //Toadflax seed
+          { "id": 5301, "min": 2, "max": 5, "weight": 3750 },   //Cadantine seed
+          { "id": 5302, "min": 2, "max": 5, "weight": 3750 },   //Lantadyme seed
+          { "id": 5303, "min": 2, "max": 5, "weight": 3750 },   //Dwarf weed seed
+          { "id": 5295, "min": 1, "max": 2, "weight": 2500 },   //Ranarr seed
+          { "id": 5300, "min": 1, "max": 1, "weight": 2500 },   //Snapdragon seed
+          { "id": 5304, "min": 1, "max": 1, "weight": 2500 }   //Torstol seed
+        ]
+      },
+      {
+        "name": "Tree seeds",
+        "weight": 61,
+        "items": [
+          { "id": 5314, "min": 2, "max": 4, "weight": 5000 },   //Maple seed
+          { "id": 5313, "min": 2, "max": 5, "weight": 3750 },   //Willow seed
+          { "id": 5315, "min": 1, "max": 1, "weight": 2500 },   //Yew seed
+          { "id": 5316, "min": 1, "max": 1, "weight": 1250 }   //Magic seed
+        ]
+      },
+      {
+        "name": "Fruit tree seeds",
+        "weight": 67,
+        "items": [
+          { "id": 5287, "min": 3, "max": 6, "weight": 3750 },   //Pineapple seed
+          { "id": 5288, "min": 1, "max": 3, "weight": 3750 },   //Papaya tree seed
+          { "id": 5289, "min": 1, "max": 3, "weight": 3750 },   //Palm tree seed
+          { "id": 22877, "min": 1, "max": 1, "weight": 2500 }   //Dragonfruit tree seed
+        ]
+      },
+      {
+        "name": "Special seeds",
+        "weight": 92,
+        "items": [
+          { "id": 21486, "min": 2, "max": 5, "weight": 5000 },   //Teak seed
+          { "id": 21488, "min": 1, "max": 3, "weight": 3750 },   //Mahogany seed
+          { "id": 5280, "min": 4, "max": 14, "weight": 2500 },   //Cactus seed
+          { "id": 22873, "min": 4, "max": 14, "weight": 2500 },   //Potato cactus seed
+          { "id": 22869, "min": 1, "max": 1, "weight": 2500 },   //Celastrus seed
+          { "id": 5317, "min": 1, "max": 1, "weight": 1250 },   //Spirit seed
+          { "id": 22871, "min": 1, "max": 1, "weight": 1250 }   //Redwood tree seed
+        ]
+      }
+    ]
+  }
+]

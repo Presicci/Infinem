@@ -1,0 +1,71 @@
+[
+  {
+    "ids": [ 7017 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Pre-roll",
+        "weight": 4,
+        "items": [
+          { "id": 1201, "min": 1, "max": 1, "weight": 195 },   //Rune kiteshield
+          { "id": 1333, "min": 1, "max": 1, "weight": 195 }   //Rune scimitar
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 227,
+        "items": [
+          { "id": 9140, "min": 2, "max": 12, "weight": 7810 },   //Iron bolts
+          { "id": 886, "min": 1, "max": 1, "weight": 3130 },   //Steel arrow
+          { "id": 882, "min": 1, "max": 1, "weight": 2339 },   //Bronze arrow
+          { "id": 556, "min": 6, "max": 6, "weight": 1560 },   //Air rune
+          { "id": 557, "min": 3, "max": 3, "weight": 1560 },   //Earth rune
+          { "id": 554, "min": 2, "max": 2, "weight": 1560 },   //Fire rune
+          { "id": 565, "min": 1, "max": 1, "weight": 781 },   //Blood rune
+          { "id": 562, "min": 1, "max": 1, "weight": 781 },   //Chaos rune
+          { "id": 561, "min": 1, "max": 1, "weight": 781 },   //Nature rune
+          { "id": 886, "min": 5, "max": 5, "weight": 781 }   //Steel arrow
+        ]
+      },
+      {
+        "name": "general seed",
+        "weight": 151,
+        "items": [
+          { "id": 0, "min": 0, "max": 0, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 523,
+        "items": [
+          { "id": 995, "min": 1, "max": 1, "weight": 14800 },   //Coins
+          { "id": 995, "min": 7, "max": 7, "weight": 12500 },   //Coins
+          { "id": 995, "min": 12, "max": 12, "weight": 7030 },   //Coins
+          { "id": 995, "min": 4, "max": 4, "weight": 6250 },   //Coins
+          { "id": 995, "min": 25, "max": 25, "weight": 3130 },   //Coins
+          { "id": 995, "min": 17, "max": 17, "weight": 3130 },   //Coins
+          { "id": 995, "min": 30, "max": 30, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 92,
+        "items": [
+          { "id": 1203, "min": 1, "max": 1, "weight": 4690 },   //Iron dagger
+          { "id": 1446, "min": 1, "max": 1, "weight": 2339 },   //Body talisman
+          { "id": 1947, "min": 1, "max": 1, "weight": 781 },   //Grain
+          { "id": 440, "min": 1, "max": 1, "weight": 781 }   //Iron ore
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 8,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (medium)
+        ]
+      }
+    ]
+  }
+]

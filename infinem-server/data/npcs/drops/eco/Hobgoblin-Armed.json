@@ -1,0 +1,76 @@
+[
+  {
+    "ids": [ 3050, 3289, 4805 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons",
+        "weight": 21,
+        "items": [
+          { "id": 1279, "min": 1, "max": 1, "weight": 2339 },   //Iron sword
+          { "id": 1207, "min": 1, "max": 1, "weight": 2339 },   //Steel dagger
+          { "id": 1295, "min": 1, "max": 1, "weight": 781 }   //Steel longsword
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 46,
+        "items": [
+          { "id": 563, "min": 2, "max": 2, "weight": 2339 },   //Law rune
+          { "id": 555, "min": 2, "max": 2, "weight": 1560 },   //Water rune
+          { "id": 554, "min": 7, "max": 7, "weight": 1560 },   //Fire rune
+          { "id": 559, "min": 6, "max": 6, "weight": 1560 },   //Body rune
+          { "id": 562, "min": 3, "max": 3, "weight": 1560 },   //Chaos rune
+          { "id": 561, "min": 4, "max": 4, "weight": 1560 },   //Nature rune
+          { "id": 564, "min": 2, "max": 2, "weight": 781 },   //Cosmic rune
+          { "id": 826, "min": 5, "max": 5, "weight": 781 }   //Iron javelin
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 21,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 37,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 225,
+        "items": [
+          { "id": 995, "min": 15, "max": 15, "weight": 26600 },   //Coins
+          { "id": 995, "min": 5, "max": 5, "weight": 18800 },   //Coins
+          { "id": 995, "min": 28, "max": 28, "weight": 3130 },   //Coins
+          { "id": 995, "min": 62, "max": 62, "weight": 3130 },   //Coins
+          { "id": 995, "min": 42, "max": 42, "weight": 2339 },   //Coins
+          { "id": 995, "min": 1, "max": 1, "weight": 2339 },   //Coins
+          { "id": 995, "min": 1, "max": 1, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 80,
+        "items": [
+          { "id": 225, "min": 1, "max": 1, "weight": 16399 },   //Limpwurt root
+          { "id": 288, "min": 1, "max": 1, "weight": 3910 }   //Goblin mail
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 6,
+        "items": [
+          { "id": 23182, "min": 1, "max": 1, "weight": 1430 },   //Clue scroll (beginner)
+          { "id": 6802, "min": 1, "max": 1, "weight": 20 }   //Hobgoblin champion scroll
+        ]
+      }
+    ]
+  }
+]

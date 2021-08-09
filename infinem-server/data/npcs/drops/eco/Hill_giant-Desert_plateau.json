@@ -1,0 +1,82 @@
+[
+  {
+    "ids": [  ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 112,
+        "items": [
+          { "id": 1137, "min": 1, "max": 1, "weight": 3910 },   //Iron med helm
+          { "id": 1203, "min": 1, "max": 1, "weight": 3130 },   //Iron dagger
+          { "id": 1191, "min": 1, "max": 1, "weight": 2339 },   //Iron kiteshield
+          { "id": 1325, "min": 1, "max": 1, "weight": 1560 }   //Steel scimitar
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 201,
+        "items": [
+          { "id": 884, "min": 3, "max": 3, "weight": 4690 },   //Iron arrow
+          { "id": 554, "min": 15, "max": 15, "weight": 2339 },   //Fire rune
+          { "id": 555, "min": 7, "max": 7, "weight": 2339 },   //Water rune
+          { "id": 563, "min": 2, "max": 2, "weight": 2339 },   //Law rune
+          { "id": 886, "min": 10, "max": 10, "weight": 1560 },   //Steel arrow
+          { "id": 558, "min": 3, "max": 3, "weight": 1560 },   //Mind rune
+          { "id": 564, "min": 2, "max": 2, "weight": 1560 },   //Cosmic rune
+          { "id": 561, "min": 6, "max": 6, "weight": 1560 },   //Nature rune
+          { "id": 562, "min": 2, "max": 2, "weight": 781 },   //Chaos rune
+          { "id": 560, "min": 2, "max": 2, "weight": 781 }   //Death rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 56,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "general seed",
+        "weight": 145,
+        "items": [
+          { "id": 0, "min": 0, "max": 0, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 322,
+        "items": [
+          { "id": 995, "min": 38, "max": 38, "weight": 10900 },   //Coins
+          { "id": 995, "min": 52, "max": 52, "weight": 7810 },   //Coins
+          { "id": 995, "min": 15, "max": 15, "weight": 6250 },   //Coins
+          { "id": 995, "min": 8, "max": 8, "weight": 4690 },   //Coins
+          { "id": 995, "min": 88, "max": 88, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 161,
+        "items": [
+          { "id": 225, "min": 1, "max": 1, "weight": 8590 },   //Limpwurt root
+          { "id": 1917, "min": 1, "max": 1, "weight": 4690 },   //Beer
+          { "id": 1446, "min": 1, "max": 1, "weight": 1560 },   //Body talisman
+          { "id": 20754, "min": 1, "max": 1, "weight": 781 }   //Giant key
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 64,
+        "items": [
+          { "id": 13475, "min": 1, "max": 1, "weight": 4000 },   //Ensouled giant head
+          { "id": 23182, "min": 1, "max": 1, "weight": 2000 },   //Clue scroll (beginner)
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 6800, "min": 1, "max": 1, "weight": 20 },   //Giant champion scroll
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
+        ]
+      }
+    ]
+  }
+]
