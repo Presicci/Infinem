@@ -1,0 +1,66 @@
+[
+  {
+    "ids": [ 7865, 7866, 7867 ],
+    "guaranteed": [
+      { "id": 25769, "min": 1, "max": 1 }   //Vile ashes
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 48,
+        "items": [
+          { "id": 1165, "min": 1, "max": 1, "weight": 3130 },   //Black full helm
+          { "id": 1355, "min": 1, "max": 1, "weight": 3130 },   //Mithril axe
+          { "id": 1211, "min": 1, "max": 1, "weight": 781 },   //Adamant dagger
+          { "id": 1111, "min": 1, "max": 1, "weight": 781 },   //Adamant chainbody
+          { "id": 1123, "min": 1, "max": 1, "weight": 781 },   //Adamant platebody
+          { "id": 1147, "min": 1, "max": 1, "weight": 781 }   //Rune med helm
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 40,
+        "items": [
+          { "id": 562, "min": 20, "max": 20, "weight": 3910 },   //Chaos rune
+          { "id": 560, "min": 10, "max": 10, "weight": 2339 },   //Death rune
+          { "id": 560, "min": 30, "max": 30, "weight": 781 },   //Death rune
+          { "id": 565, "min": 10, "max": 10, "weight": 781 }   //Blood rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 4,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 387,
+        "items": [
+          { "id": 995, "min": 120, "max": 369, "weight": 38299 },   //Coins
+          { "id": 995, "min": 80, "max": 80, "weight": 22699 },   //Coins
+          { "id": 995, "min": 400, "max": 649, "weight": 7810 },   //Coins
+          { "id": 995, "min": 100, "max": 100, "weight": 5470 },   //Coins
+          { "id": 995, "min": 450, "max": 1199, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 20,
+        "items": [
+          { "id": 1993, "min": 1, "max": 1, "weight": 2339 },   //Jug of wine
+          { "id": 445, "min": 5, "max": 5, "weight": 1560 }   //Gold ore (noted)
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 10,
+        "items": [
+          { "id": 13502, "min": 1, "max": 1, "weight": 2000 },   //Ensouled demon head
+          { "id": 6805, "min": 1, "max": 1, "weight": 20 }   //Lesser demon champion scroll
+        ]
+      }
+    ]
+  }
+]

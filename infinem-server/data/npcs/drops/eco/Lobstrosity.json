@@ -1,0 +1,62 @@
+[
+  {
+    "ids": [ 7796 ],
+    "guaranteed": [
+      { "id": 377, "min": 1, "max": 1 }   //Raw lobster
+    ],
+    "tables": [
+      {
+        "name": "Runes",
+        "weight": 359,
+        "items": [
+          { "id": 555, "min": 100, "max": 100, "weight": 6780 },   //Water rune
+          { "id": 562, "min": 20, "max": 20, "weight": 6780 },   //Chaos rune
+          { "id": 560, "min": 10, "max": 10, "weight": 4240 },   //Death rune
+          { "id": 561, "min": 10, "max": 10, "weight": 5080 }   //Nature rune
+        ]
+      },
+      {
+        "name": "Noted herbs",
+        "weight": 1500,
+        "items": [
+          { "id": 232, "min": 2, "max": 2, "weight": 3 }, // Grimy kwuarm
+          { "id": 216, "min": 2, "max": 2, "weight": 15 }, // Grimy cadantine
+          { "id": 2486, "min": 2, "max": 2, "weight": 5 }, // Grimy lantadyme
+          { "id": 218, "min": 2, "max": 2, "weight": 15 } // Grimy dwarf weed
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 150,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 640,
+        "items": [
+          { "id": 995, "min": 1000, "max": 1000, "weight": 7629 },   //Coins
+          { "id": 21655, "min": 1, "max": 1, "weight": 6780 },   //Pufferfish
+          { "id": 21505, "min": 6, "max": 6, "weight": 6780 },   //Giant seaweed (noted)
+          { "id": 402, "min": 6, "max": 6, "weight": 6780 },   //Seaweed (noted)
+          { "id": 2153, "min": 2, "max": 2, "weight": 5080 },   //Toad's legs (noted)
+          { "id": 11327, "min": 2, "max": 2, "weight": 4240 },   //Caviar (noted)
+          { "id": 413, "min": 1, "max": 1, "weight": 3390 }   //Oyster pearls
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 461,
+        "items": [
+          { "id": 21555, "min": 5, "max": 14, "weight": 25700 },   //Numulite
+          { "id": 21562, "min": 1, "max": 1, "weight": 1430 },   //Unidentified small fossil
+          { "id": 21564, "min": 1, "max": 1, "weight": 714 },   //Unidentified medium fossil
+          { "id": 21566, "min": 1, "max": 1, "weight": 571 },   //Unidentified large fossil
+          { "id": 21568, "min": 1, "max": 1, "weight": 142 },   //Unidentified rare fossil
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (easy)
+        ]
+      }
+    ]
+  }
+]
