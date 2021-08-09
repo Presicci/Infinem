@@ -1,51 +1,68 @@
 [
   {
-    "ids": [ 239, 6502 ],
+    "ids": [ 239, 2642, 6502 ],
     "guaranteed": [
-      { "id": 536, "min": 1, "max": 1 },
-      { "id": 1747, "min": 2, "max": 2 }
+      { "id": 536, "min": 1, "max": 1 },   //Dragon bones
+      { "id": 1747, "min": 2, "max": 2 }   //Black dragonhide
     ],
     "tables": [
       {
-        "name": "Weapons/Armour",
+        "name": "Pre-roll",
         "weight": 1,
         "items": [
-          { "id": 1303, "min": 1, "max": 1, "weight": 25 }, //Rune longsword
-          { "id": 1123, "min": 1, "max": 1, "weight": 25 }, //Adamant platebody
-          { "id": 1199, "min": 1, "max": 1, "weight": 10 }, //Adamant kiteshield
-          { "id": 1149, "min": 1, "max": 1, "weight": 10 }, //Dragon med helm
-          { "id": 11920, "min": 1, "max": 1, "weight": 1 } //Dragon pickaxe
+          { "id": 11920, "min": 1, "max": 1, "weight": 66 }   //Dragon pickaxe
         ]
       },
       {
-        "name": "Runes/Ammunition",
-        "weight": 1,
+        "name": "Weapons and armour",
+        "weight": 291,
         "items": [
-          { "id": 554, "min": 300, "max": 300, "weight": 9 }, //Fire rune
-          { "id": 556, "min": 300, "max": 300, "weight": 9 }, //Air rune
-          { "id": 565, "min": 30, "max": 30, "weight": 6 }, //Blood rune
-          { "id": 884, "min": 690, "max": 690, "weight": 6 }, //Iron arrow
-          { "id": 563, "min": 30, "max": 30, "weight": 3 }, //Law rune
-          { "id": 9144, "min": 10, "max": 25, "weight": 3 }, //Runite bolts
-          { "id": 11232, "min": 5, "max": 14, "weight": 2 }, //Dragon dart tip
-          { "id": 11237, "min": 5, "max": 14, "weight": 2 }, //Dragon arrowtips
-          { "id": 19582, "min": 15, "max": 15, "weight": 2 } //Dragon javelin heads
+          { "id": 1303, "min": 1, "max": 1, "weight": 7810 },   //Rune longsword
+          { "id": 1123, "min": 1, "max": 1, "weight": 7030 },   //Adamant platebody
+          { "id": 1199, "min": 1, "max": 1, "weight": 2339 },   //Adamant kiteshield
+          { "id": 1149, "min": 1, "max": 1, "weight": 781 }   //Dragon med helm
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 572,
+        "items": [
+          { "id": 556, "min": 300, "max": 300, "weight": 7810 },   //Air rune
+          { "id": 884, "min": 690, "max": 690, "weight": 7810 },   //Iron arrow
+          { "id": 9144, "min": 10, "max": 20, "weight": 7810 },   //Runite bolts
+          { "id": 563, "min": 30, "max": 30, "weight": 3910 },   //Law rune
+          { "id": 565, "min": 30, "max": 30, "weight": 3910 }   //Blood rune
+        ]
+      },
+      {
+        "name": "Resources",
+        "weight": 254,
+        "items": [
+          { "id": 1516, "min": 150, "max": 150, "weight": 7810 },   //Yew logs (noted)
+          { "id": 2361, "min": 3, "max": 3, "weight": 3910 },   //Adamantite bar
+          { "id": 2363, "min": 1, "max": 1, "weight": 2339 },   //Runite bar
+          { "id": 445, "min": 100, "max": 100, "weight": 1560 }   //Gold ore (noted)
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 381,
         "items": [
-          { "id": 1731, "min": 1, "max": 1, "weight": 15 }, //Amulet of power
-          { "id": 1516, "min": 150, "max": 150, "weight": 15 }, //Yew logs (noted)
-          { "id": 385, "min": 4, "max": 4, "weight": 15 }, //Shark
-          { "id": 445, "min": 100, "max": 100, "weight": 25 }, //Gold ore (noted)
-          { "id": 9431, "min": 1, "max": 1, "weight": 10 }, //Runite limbs
-          { "id": 2363, "min": 1, "max": 1, "weight": 10 }, //Runite bar
-          { "id": 2361, "min": 3, "max": 3, "weight": 10 }, //Adamantite bar
-          { "id": 7980, "min": 1, "max": 1, "weight": 1 }, //Kbd heads
-          { "id": 12073, "min": 1, "max": 1, "weight": 2 }, //Clue scroll (elite)
-          { "id": 11286, "min": 1, "max": 1, "weight": 1 } //Draconic visage
+          { "id": 1731, "min": 1, "max": 1, "weight": 5470 },   //Amulet of power
+          { "id": 11237, "min": 5, "max": 14, "weight": 3910 },   //Dragon arrowtips
+          { "id": 11232, "min": 5, "max": 14, "weight": 3910 },   //Dragon dart tip
+          { "id": 19582, "min": 15, "max": 15, "weight": 3910 },   //Dragon javelin heads
+          { "id": 9431, "min": 1, "max": 1, "weight": 3130 },   //Runite limbs
+          { "id": 385, "min": 4, "max": 4, "weight": 3130 }   //Shark
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 16,
+        "items": [
+          { "id": 7980, "min": 1, "max": 1, "weight": 781 },   //Kbd heads
+          { "id": 12073, "min": 1, "max": 1, "weight": 222 },   //Clue scroll (elite)
+          { "id": 11286, "min": 1, "max": 1, "weight": 20 }   //Draconic visage
         ]
       }
     ]
