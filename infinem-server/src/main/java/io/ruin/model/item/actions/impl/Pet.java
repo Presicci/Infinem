@@ -38,7 +38,7 @@ public enum Pet {
     GENERAL_GRAARDOR(12650, 6632, true, 5000),
     JAL_NIB_REK(21291, 7675, 8009, true),
     KRIL_TSUTSAROTH(12652, 6634, true, 5000),
-    KRAKEN(12655, 6640, true, 1000),
+    KRAKEN(12655, 6640, true, 3000),
     KREEARRA(12649, 6631, true, 1000),
     MIDNIGHT(21750, 7893, 7892, true, 1000),
     NOON(21748, 7892, 7893, true),
