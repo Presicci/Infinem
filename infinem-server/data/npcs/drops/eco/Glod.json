@@ -1,20 +1,19 @@
 [
   {
-    "ids": [ 5129, 6358, 6297 ],
+    "ids": [ 5129, 6358 ],
     "guaranteed": [
-      { "id": 532, "min": 2, "max": 2 }, //Big bones
-      { "id": 11210, "min": 1, "max": 1 } //Golden goblin
+      { "id": 532, "min": 2, "max": 2 },   //Big bones
+      { "id": 1623, "min": 1, "max": 1 },   //Uncut sapphire
+      { "id": 1619, "min": 1, "max": 1 },   //Uncut ruby
+      { "id": 5336, "min": 1, "max": 1 }   //Watering can(4)
     ],
     "tables": [
       {
-        "name": "Other drops",
-        "weight": 1,
+        "name": "Tertiary",
+        "weight": 2147483647,
         "items": [
-          { "id": 5331, "min": 1, "max": 4, "weight": 12 }, //Watering can
-          { "id": 1623, "min": 1, "max": 1, "weight": 9 }, //Uncut sapphire
-          { "id": 1619, "min": 1, "max": 1, "weight": 6 }, //Uncut ruby
-          { "id": 1603, "min": 2, "max": 2, "weight": 3 }, //Ruby
-          { "id": 532, "min": 2, "max": 2, "weight": 1 } //Big bones
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
         ]
       }
     ]

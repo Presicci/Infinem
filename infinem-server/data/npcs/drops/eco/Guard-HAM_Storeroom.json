@@ -1,0 +1,59 @@
+[
+  {
+    "ids": [ 4516, 4517, 4518, 4519, 4520, 4522, 4523, 4524, 4525, 4526, 5141 ],
+    "tables": [
+      {
+        "name": "Armour and weaponry",
+        "weight": 390,
+        "items": [
+          { "id": 882, "min": 1, "max": 13, "weight": 1800 },   //Bronze arrow
+          { "id": 1351, "min": 1, "max": 1, "weight": 1800 },   //Bronze axe
+          { "id": 1205, "min": 1, "max": 1, "weight": 1800 },   //Bronze dagger
+          { "id": 1265, "min": 1, "max": 1, "weight": 1800 },   //Bronze pickaxe
+          { "id": 1349, "min": 1, "max": 1, "weight": 1800 },   //Iron axe
+          { "id": 1203, "min": 1, "max": 1, "weight": 1800 },   //Iron dagger
+          { "id": 1267, "min": 1, "max": 1, "weight": 1800 },   //Iron pickaxe
+          { "id": 1129, "min": 1, "max": 1, "weight": 1800 },   //Leather body
+          { "id": 4310, "min": 1, "max": 1, "weight": 600 },   //Ham boots
+          { "id": 4304, "min": 1, "max": 1, "weight": 600 },   //Ham cloak
+          { "id": 4308, "min": 1, "max": 1, "weight": 600 },   //Ham gloves
+          { "id": 4302, "min": 1, "max": 1, "weight": 600 },   //Ham hood
+          { "id": 4306, "min": 1, "max": 1, "weight": 600 },   //Ham logo
+          { "id": 4300, "min": 1, "max": 1, "weight": 600 },   //Ham robe
+          { "id": 4298, "min": 1, "max": 1, "weight": 600 },   //Ham shirt
+          { "id": 886, "min": 1, "max": 13, "weight": 1200 },   //Steel arrow
+          { "id": 1353, "min": 1, "max": 1, "weight": 1200 },   //Steel axe
+          { "id": 1207, "min": 1, "max": 1, "weight": 1200 },   //Steel dagger
+          { "id": 1269, "min": 1, "max": 1, "weight": 1200 }   //Steel pickaxe
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 610,
+        "items": [
+          { "id": 688, "min": 1, "max": 1, "weight": 2400 },   //Buttons
+          { "id": 22521, "min": 1, "max": 1, "weight": 9000 },   //Coin pouch
+          { "id": 314, "min": 1, "max": 7, "weight": 1800 },   //Feather
+          { "id": 946, "min": 1, "max": 1, "weight": 1200 },   //Knife
+          { "id": 1511, "min": 1, "max": 1, "weight": 1800 },   //Logs
+          { "id": 1733, "min": 1, "max": 1, "weight": 1200 },   //Needle
+          { "id": 321, "min": 1, "max": 1, "weight": 1200 },   //Raw anchovies
+          { "id": 2138, "min": 1, "max": 1, "weight": 1200 },   //Raw chicken
+          { "id": 1734, "min": 1, "max": 10, "weight": 1800 },   //Thread
+          { "id": 590, "min": 1, "max": 1, "weight": 1200 },   //Tinderbox
+          { "id": 1625, "min": 1, "max": 1, "weight": 1200 },   //Uncut opal
+          { "id": 2677, "min": 1, "max": 1, "weight": 1200 },   //Clue scroll (easy)
+          { "id": 453, "min": 1, "max": 1, "weight": 1200 },   //Coal
+          { "id": 1739, "min": 1, "max": 1, "weight": 1800 },   //Cowhide
+          { "id": 697, "min": 1, "max": 1, "weight": 2400 },   //Damaged armour
+          { "id": 199, "min": 1, "max": 1, "weight": 655 },   //Grimy guam leaf
+          { "id": 201, "min": 1, "max": 1, "weight": 327 },   //Grimy marrentill
+          { "id": 203, "min": 1, "max": 1, "weight": 218 },   //Grimy tarromin
+          { "id": 440, "min": 1, "max": 1, "weight": 1200 },   //Iron ore
+          { "id": 686, "min": 1, "max": 1, "weight": 2400 },   //Rusty sword
+          { "id": 1627, "min": 1, "max": 1, "weight": 1200 }   //Uncut jade
+        ]
+      }
+    ]
+  }
+]

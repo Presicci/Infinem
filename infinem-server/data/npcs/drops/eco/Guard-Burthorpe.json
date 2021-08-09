@@ -1,0 +1,62 @@
+[
+  {
+    "ids": [ 4099, 4100 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 172,
+        "items": [
+          { "id": 1339, "min": 1, "max": 1, "weight": 7030 },   //Steel warhammer
+          { "id": 1343, "min": 1, "max": 1, "weight": 4690 },   //Mithril warhammer
+          { "id": 1121, "min": 1, "max": 1, "weight": 3130 },   //Mithril platebody
+          { "id": 1159, "min": 1, "max": 1, "weight": 781 }   //Mithril full helm
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 120,
+        "items": [
+          { "id": 565, "min": 3, "max": 3, "weight": 781 },   //Blood rune
+          { "id": 562, "min": 3, "max": 3, "weight": 781 },   //Chaos rune
+          { "id": 561, "min": 4, "max": 4, "weight": 781 },   //Nature rune
+          { "id": 554, "min": 22, "max": 22, "weight": 1560 },   //Fire rune
+          { "id": 557, "min": 23, "max": 23, "weight": 1560 },   //Earth rune
+          { "id": 556, "min": 25, "max": 25, "weight": 1560 },   //Air rune
+          { "id": 882, "min": 12, "max": 12, "weight": 2339 },   //Bronze arrow
+          { "id": 886, "min": 12, "max": 12, "weight": 1560 }   //Steel arrow
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 672,
+        "items": [
+          { "id": 995, "min": 2, "max": 2, "weight": 781 },   //Coins
+          { "id": 995, "min": 4, "max": 4, "weight": 31300 },   //Coins
+          { "id": 995, "min": 12, "max": 12, "weight": 13300 },   //Coins
+          { "id": 995, "min": 18, "max": 18, "weight": 7810 },   //Coins
+          { "id": 995, "min": 32, "max": 32, "weight": 3130 },   //Coins
+          { "id": 995, "min": 45, "max": 45, "weight": 3130 },   //Coins
+          { "id": 995, "min": 50, "max": 50, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 34,
+        "items": [
+          { "id": 1440, "min": 1, "max": 1, "weight": 2339 },   //Earth talisman
+          { "id": 447, "min": 1, "max": 1, "weight": 781 }   //Mithril ore
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 8,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (medium)
+      ]
+      }
+    ]
+  }
+]

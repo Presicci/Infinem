@@ -1,0 +1,89 @@
+[
+  {
+    "ids": [ 681, 680 ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 436,
+        "items": [
+          { "id": 1191, "min": 1, "max": 1, "weight": 6250 },   //Iron kiteshield
+          { "id": 1155, "min": 1, "max": 1, "weight": 3910 },   //Bronze full helm
+          { "id": 1087, "min": 1, "max": 1, "weight": 3910 },   //Bronze plateskirt
+          { "id": 1335, "min": 1, "max": 1, "weight": 3910 },   //Iron warhammer
+          { "id": 1207, "min": 1, "max": 1, "weight": 3910 },   //Steel dagger
+          { "id": 1241, "min": 1, "max": 1, "weight": 3910 },   //Steel spear
+          { "id": 841, "min": 1, "max": 1, "weight": 2339 },   //Shortbow
+          { "id": 1363, "min": 1, "max": 1, "weight": 2339 },   //Iron battleaxe
+          { "id": 1323, "min": 1, "max": 1, "weight": 1560 },   //Iron scimitar
+          { "id": 1353, "min": 1, "max": 1, "weight": 1560 },   //Steel axe
+          { "id": 1105, "min": 1, "max": 1, "weight": 1560 },   //Steel chainbody
+          { "id": 1428, "min": 1, "max": 1, "weight": 1560 },   //Mithril mace
+          { "id": 1389, "min": 1, "max": 1, "weight": 781 },   //Magic staff
+          { "id": 1297, "min": 1, "max": 1, "weight": 781 },   //Black longsword
+          { "id": 1157, "min": 1, "max": 1, "weight": 781 },   //Steel full helm
+          { "id": 1193, "min": 1, "max": 1, "weight": 781 },   //Steel kiteshield
+          { "id": 1143, "min": 1, "max": 1, "weight": 781 },   //Mithril med helm
+          { "id": 1181, "min": 1, "max": 1, "weight": 781 },   //Mithril sq shield
+          { "id": 1371, "min": 1, "max": 1, "weight": 781 },   //Adamant battleaxe
+          { "id": 1333, "min": 1, "max": 1, "weight": 781 }   //Rune scimitar
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 126,
+        "items": [
+          { "id": 565, "min": 3, "max": 3, "weight": 2339 },   //Blood rune
+          { "id": 886, "min": 11, "max": 11, "weight": 1560 },   //Steel arrow
+          { "id": 9295, "min": 2, "max": 2, "weight": 2339 },   //Steel bolts (p+)
+          { "id": 5644, "min": 2, "max": 2, "weight": 2339 },   //Steel javelin(p+)
+          { "id": 9145, "min": 5, "max": 5, "weight": 2339 },   //Silver bolts
+          { "id": 890, "min": 4, "max": 4, "weight": 1560 }   //Adamant arrow
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 39,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 166,
+        "items": [
+          { "id": 995, "min": 17, "max": 17, "weight": 3910 },   //Coins
+          { "id": 995, "min": 41, "max": 41, "weight": 3910 },   //Coins
+          { "id": 995, "min": 142, "max": 142, "weight": 3910 },   //Coins
+          { "id": 995, "min": 206, "max": 206, "weight": 2339 },   //Coins
+          { "id": 995, "min": 106, "max": 106, "weight": 1560 },   //Coins
+          { "id": 995, "min": 323, "max": 323, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 230,
+        "items": [
+          { "id": 2370, "min": 6, "max": 6, "weight": 3910 },   //Steel studs
+          { "id": 1539, "min": 12, "max": 12, "weight": 3910 },   //Steel nails
+          { "id": 36, "min": 1, "max": 1, "weight": 3910 },   //Candle
+          { "id": 115, "min": 1, "max": 1, "weight": 3910 },   //Strength potion(3)
+          { "id": 946, "min": 1, "max": 1, "weight": 2339 },   //Knife
+          { "id": 444, "min": 1, "max": 1, "weight": 1560 },   //Gold ore
+          { "id": 2361, "min": 1, "max": 1, "weight": 1560 },   //Adamantite bar
+          { "id": 1637, "min": 1, "max": 1, "weight": 1560 }   //Sapphire ring
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 8,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (medium)
+          { "id": 6806, "min": 1, "max": 1, "weight": 20 }   //Skeleton champion scroll
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "ids": [ 2317 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 500,
+        "items": [
+          { "id": 5016, "min": 1, "max": 1, "weight": 15600 },   //Bone spear
+          { "id": 1101, "min": 1, "max": 1, "weight": 15600 }   //Iron chainbody
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 500,
+        "items": [
+          { "id": 995, "min": 12, "max": 12, "weight": 15600 },   //Coins
+          { "id": 4537, "min": 1, "max": 1, "weight": 15600 },   //Oil lantern
+          { "id": 590, "min": 1, "max": 1, "weight": 15600 }   //Tinderbox
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 0,
+        "items": [
+          { "id": 6801, "min": 1, "max": 1, "weight": 20 }   //Goblin champion scroll
+        ]
+      }
+    ]
+  }
+]

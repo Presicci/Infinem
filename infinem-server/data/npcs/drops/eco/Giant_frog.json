@@ -1,40 +1,58 @@
 [
   {
-    "ids": [ 2143, 477 ],
+    "ids": [ 477, 8700 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 } //Bones
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
     ],
     "tables": [
       {
-        "name": "Other",
-        "weight": 1,
+        "name": "Tertiary",
+        "weight": 10,
         "items": [
-          { "id": 995, "min": 2, "max": 2, "weight": 12 }, //Coins
-          { "id": 995, "min": 30, "max": 30, "weight": 12 }, //Coins
-          { "id": 995, "min": 37, "max": 37, "weight": 12 }, //Coins
-          { "id": 561, "min": 1, "max": 1, "weight": 9 }, //Nature rune
-          { "id": 561, "min": 3, "max": 3, "weight": 9 }, //Nature rune
-          { "id": 561, "min": 6, "max": 6, "weight": 9 }, //Nature rune
-          { "id": 561, "min": 9, "max": 9, "weight": 9 }, //Nature rune
-          { "id": 884, "min": 22, "max": 22, "weight": 6 }, //Iron arrow
-          { "id": 886, "min": 45, "max": 45, "weight": 6 }, //Steel arrow
-          { "id": 565, "min": 1, "max": 1, "weight": 3 }, //Blood rune
-          { "id": 564, "min": 1, "max": 10, "weight": 3 }, //Cosmic rune
-          { "id": 453, "min": 1, "max": 1, "weight": 3 }, //Coal
-          { "id": 1243, "min": 1, "max": 1, "weight": 1 }, //Mithril spear
-          { "id": 1969, "min": 1, "max": 1, "weight": 1 } //Spinach roll
+          { "id": 23182, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (beginner)
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
         ]
-      }
-    ]
-  },
-  { #This guy is not so special.. loses his legs sometimes..
-    "ids": [ 477 ],
-    "tables": [
+      },
       {
-        "name": "Leggies",
-        "weight": 1,
+        "name": "Weapons",
+        "weight": 15,
         "items": [
-          { "id": 4517, "min": 1, "max": 1, "weight": 1 } //Giant frog legs
+          { "id": 1243, "min": 1, "max": 1, "weight": 1560 }   //Mithril spear
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 288,
+        "items": [
+          { "id": 561, "min": 1, "max": 1, "weight": 7810 },   //Nature rune
+          { "id": 561, "min": 3, "max": 3, "weight": 7810 },   //Nature rune
+          { "id": 561, "min": 9, "max": 9, "weight": 7810 },   //Nature rune
+          { "id": 565, "min": 1, "max": 1, "weight": 781 },   //Blood rune
+          { "id": 564, "min": 5, "max": 5, "weight": 2339 },   //Cosmic rune
+          { "id": 884, "min": 22, "max": 22, "weight": 1560 },   //Iron arrow
+          { "id": 886, "min": 45, "max": 45, "weight": 781 }   //Steel arrow
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 695,
+        "items": [
+          { "id": 995, "min": 2, "max": 2, "weight": 6250 },   //Coins
+          { "id": 995, "min": 30, "max": 30, "weight": 7810 },   //Coins
+          { "id": 995, "min": 37, "max": 37, "weight": 3910 },   //Coins
+          { "id": 4517, "min": 1, "max": 1, "weight": 50000 },   //Giant frog legs
+          { "id": 453, "min": 1, "max": 1, "weight": 781 },   //Coal
+          { "id": 1969, "min": 1, "max": 1, "weight": 781 }   //Spinach roll
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 18,
+        "items": [
+          { "id": 23182, "min": 1, "max": 1, "weight": 1560 },   //Clue scroll (beginner)
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
         ]
       }
     ]

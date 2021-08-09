@@ -1,0 +1,69 @@
+[
+  {
+    "ids": [ 9182, 9183, 9184, 9185, 9186, 9187, 9188, 9189 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 97,
+        "items": [
+          { "id": 1099, "min": 1, "max": 1, "weight": 2339 },   //Green d'hide chaps
+          { "id": 1135, "min": 1, "max": 1, "weight": 3130 },   //Green d'hide body
+          { "id": 1243, "min": 1, "max": 1, "weight": 1560 },   //Mithril spear
+          { "id": 1197, "min": 1, "max": 1, "weight": 781 },   //Mithril kiteshield
+          { "id": 1161, "min": 1, "max": 1, "weight": 781 },   //Adamant full helm
+          { "id": 1213, "min": 1, "max": 1, "weight": 781 }   //Rune dagger
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 146,
+        "items": [
+          { "id": 555, "min": 70, "max": 70, "weight": 6250 },   //Water rune
+          { "id": 561, "min": 12, "max": 12, "weight": 3910 },   //Nature rune
+          { "id": 563, "min": 2, "max": 2, "weight": 2339 },   //Law rune
+          { "id": 554, "min": 37, "max": 37, "weight": 1560 }   //Fire rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 121,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 357,
+        "items": [
+          { "id": 995, "min": 20, "max": 20, "weight": 3910 },   //Coins
+          { "id": 995, "min": 44, "max": 44, "weight": 22699 },   //Coins
+          { "id": 995, "min": 180, "max": 180, "weight": 7810 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 276,
+        "items": [
+          { "id": 6103, "min": 1, "max": 1, "weight": 19500 },   //Crystal teleport seed
+          { "id": 365, "min": 1, "max": 1, "weight": 2339 },   //Bass
+          { "id": 385, "min": 1, "max": 1, "weight": 2339 },   //Shark
+          { "id": 449, "min": 1, "max": 1, "weight": 1560 },   //Adamantite ore
+          { "id": 6102, "min": 1, "max": 1, "weight": 781 },   //Teleport crystal (1)
+          { "id": 23959, "min": 1, "max": 1, "weight": 97 }   //Enhanced crystal teleport seed
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 72,
+        "items": [
+          { "id": 23962, "min": 1, "max": 1, "weight": 4170 },   //Crystal shard
+          { "id": 13481, "min": 1, "max": 1, "weight": 2000 },   //Ensouled elf head
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
+        ]
+      }
+    ]
+  }
+]

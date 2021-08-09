@@ -2,26 +2,60 @@
   {
     "ids": [ 1834, 3141 ],
     "guaranteed": [
-      { "id": 532, "min": 1, "max": 1 } //Big bones
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
     ],
     "tables": [
       {
-        "name": "Gems",
-        "weight": 1,
+        "name": "Weapons and armour",
+        "weight": 105,
         "items": [
-          { "id": 1623, "min": 1, "max": 1, "weight": 6 }, //Uncut sapphire
-          { "id": 1621, "min": 1, "max": 1, "weight": 6 }, //Uncut emerald
-          { "id": 1619, "min": 1, "max": 1, "weight": 3 }, //Uncut ruby
-          { "id": 1617, "min": 1, "max": 1, "weight": 1 } //Uncut diamond
+          { "id": 3192, "min": 1, "max": 1, "weight": 2339 },   //Iron halberd
+          { "id": 5670, "min": 1, "max": 1, "weight": 1560 },   //Bronze dagger(p+)
+          { "id": 1309, "min": 1, "max": 1, "weight": 2339 },   //Iron 2h sword
+          { "id": 802, "min": 1, "max": 1, "weight": 2339 },   //Steel thrownaxe
+          { "id": 1365, "min": 1, "max": 1, "weight": 781 },   //Steel battleaxe
+          { "id": 803, "min": 1, "max": 1, "weight": 2339 },   //Mithril thrownaxe
+          { "id": 1199, "min": 1, "max": 1, "weight": 781 },   //Adamant kiteshield
+          { "id": 1083, "min": 1, "max": 1, "weight": 781 },   //Steel plateskirt
+          { "id": 1069, "min": 1, "max": 1, "weight": 3130 },   //Steel platelegs
+          { "id": 1113, "min": 1, "max": 1, "weight": 781 }   //Rune chainbody
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 76,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 393,
+        "items": [
+          { "id": 995, "min": 27, "max": 27, "weight": 3910 },   //Coins
+          { "id": 995, "min": 97, "max": 97, "weight": 3910 },   //Coins
+          { "id": 995, "min": 104, "max": 104, "weight": 22699 },   //Coins
+          { "id": 995, "min": 132, "max": 132, "weight": 19500 },   //Coins
+          { "id": 995, "min": 286, "max": 286, "weight": 7810 },   //Coins
+          { "id": 995, "min": 475, "max": 475, "weight": 6250 }   //Coins
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 219,
         "items": [
-          { "id": 9016, "min": 1, "max": 1, "weight": 30 }, //Gorak claws
-          { "id": 1462, "min": 1, "max": 1, "weight": 30 },  //Nature talisman
-          { "id": 1249, "min": 1, "max": 1, "weight": 1 } //Dragon spear
+          { "id": 9016, "min": 1, "max": 1, "weight": 33299 },   //Gorak claws
+          { "id": 5625, "min": 4, "max": 4, "weight": 1560 },   //Mithril arrow(p++)
+          { "id": 2570, "min": 1, "max": 1, "weight": 781 }   //Ring of life
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 8,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (hard)
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
         ]
       }
     ]

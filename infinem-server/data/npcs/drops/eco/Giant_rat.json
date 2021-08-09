@@ -1,9 +1,19 @@
 [
   {
-    "ids": [ 2856, 2857, 2858, 2859, 2860, 2861, 3313, 3314, 3315, 2862, 2863, 2864, 2510, 2511, 2512 ],
+    "ids": [ 2510, 2511, 2512, 2856, 2857, 2858, 2859, 2860, 2861, 2862, 2863, 2864, 3313, 3314, 3315 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 }, //Bones
-      { "id": 2134, "min": 1, "max": 1 } //Raw rat meat
+      { "id": 526, "min": 1, "max": 1 },   //Bones
+      { "id": 2134, "min": 1, "max": 1 }   //Raw rat meat
+    ],
+    "tables": [
+      {
+        "name": "Tertiary",
+        "weight": 1,
+        "items": [
+          { "id": -1, "min": 1, "max": 1, "weight": 128 },   //Nothing
+          { "id": 23182, "min": 1, "max": 1, "weight": 1 }   //Clue scroll (beginner)
+        ]
+      }
     ]
   }
 ]

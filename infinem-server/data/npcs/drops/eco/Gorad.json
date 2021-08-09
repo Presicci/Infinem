@@ -1,5 +1,33 @@
 [
   {
-    "ids": [ 4367 ]
+    "ids": [ 4367 ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
+    ],
+    "tables": [
+      {
+        "name": "uncommon seed",
+        "weight": 19,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Nothing",
+        "weight": 109,
+        "items": [
+          { "id": -1, "min": 1, "max": 1, "weight": 1 }
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 5,
+        "items": [
+          { "id": 13478, "min": 1, "max": 1, "weight": 3330 },   //Ensouled ogre head
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
+        ]
+      }
+    ]
   }
 ]

@@ -1,0 +1,61 @@
+[
+  {
+    "ids": [ 7871, 7872, 7873 ],
+    "guaranteed": [
+      { "id": 25769, "min": 1, "max": 1 }   //Vile ashes
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 49,
+        "items": [
+          { "id": 1317, "min": 1, "max": 1, "weight": 3130 },   //Adamant 2h sword
+          { "id": 1357, "min": 1, "max": 1, "weight": 2339 },   //Adamant axe
+          { "id": 1371, "min": 1, "max": 1, "weight": 1560 },   //Adamant battleaxe
+          { "id": 1199, "min": 1, "max": 1, "weight": 781 },   //Adamant kiteshield
+          { "id": 1073, "min": 1, "max": 1, "weight": 781 },   //Adamant platelegs
+          { "id": 1163, "min": 1, "max": 1, "weight": 781 }   //Rune full helm
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 53,
+        "items": [
+          { "id": 562, "min": 40, "max": 40, "weight": 3910 },   //Chaos rune
+          { "id": 560, "min": 5, "max": 5, "weight": 3910 },   //Death rune
+          { "id": 560, "min": 15, "max": 15, "weight": 1560 },   //Death rune
+          { "id": 565, "min": 20, "max": 20, "weight": 781 }   //Blood rune
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 373,
+        "items": [
+          { "id": 995, "min": 250, "max": 499, "weight": 34400 },   //Coins
+          { "id": 995, "min": 250, "max": 250, "weight": 22699 },   //Coins
+          { "id": 995, "min": 150, "max": 150, "weight": 5470 },   //Coins
+          { "id": 995, "min": 500, "max": 749, "weight": 7810 },   //Coins
+          { "id": 995, "min": 500, "max": 999, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 28,
+        "items": [
+          { "id": 385, "min": 1, "max": 1, "weight": 1560 },   //Shark
+          { "id": 7946, "min": 1, "max": 1, "weight": 781 },   //Monkfish
+          { "id": 2358, "min": 10, "max": 10, "weight": 2339 },   //Gold bar (noted)
+          { "id": 445, "min": 10, "max": 10, "weight": 781 }   //Gold ore (noted)
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 17,
+        "items": [
+          { "id": 13502, "min": 1, "max": 1, "weight": 2500 },   //Ensouled demon head
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
+        ]
+      }
+    ]
+  }
+]

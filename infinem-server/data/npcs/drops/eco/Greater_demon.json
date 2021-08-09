@@ -1,46 +1,58 @@
 [
   {
-    "ids": [ 7244, 7871, 7872, 7873, 7246, 7245, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032 ],
+    "ids": [ 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 7244, 7245, 7246, 7871, 7872, 7873 ],
     "guaranteed": [
-      { "id": 592, "min": 1, "max": 1 } //Ashes
+      { "id": 25769, "min": 1, "max": 1 }   //Vile ashes
     ],
     "tables": [
       {
-        "name": "Weapons/Armour",
-        "weight": 1,
+        "name": "Weapons and armour",
+        "weight": 53,
         "items": [
-          { "id": 1353, "min": 1, "max": 1, "weight": 6 }, //Steel axe
-          { "id": 1365, "min": 1, "max": 1, "weight": 6 }, //Steel battleaxe
-          { "id": 1311, "min": 1, "max": 1, "weight": 6 }, //Steel 2h sword
-          { "id": 1073, "min": 1, "max": 1, "weight": 3 }, //Adamant platelegs
-          { "id": 1163, "min": 1, "max": 1, "weight": 3 }, //Rune full helm
-          { "id": 1197, "min": 1, "max": 1, "weight": 1 } //Mithril kiteshield
+          { "id": 1311, "min": 1, "max": 1, "weight": 3130 },   //Steel 2h sword
+          { "id": 1353, "min": 1, "max": 1, "weight": 2339 },   //Steel axe
+          { "id": 1365, "min": 1, "max": 1, "weight": 2339 },   //Steel battleaxe
+          { "id": 1197, "min": 1, "max": 1, "weight": 781 },   //Mithril kiteshield
+          { "id": 1073, "min": 1, "max": 1, "weight": 781 },   //Adamant platelegs
+          { "id": 1163, "min": 1, "max": 1, "weight": 781 }   //Rune full helm
         ]
       },
       {
         "name": "Runes",
-        "weight": 1,
+        "weight": 61,
         "items": [
-          { "id": 554, "min": 37, "max": 37, "weight": 3 }, //Fire rune
-          { "id": 554, "min": 75, "max": 75, "weight": 3 }, //Fire rune
-          { "id": 562, "min": 12, "max": 12, "weight": 3 }, //Chaos rune
-          { "id": 562, "min": 15, "max": 15, "weight": 1 }, //Chaos rune
-          { "id": 560, "min": 5, "max": 5, "weight": 1 } //Death rune
+          { "id": 554, "min": 75, "max": 75, "weight": 6250 },   //Fire rune
+          { "id": 562, "min": 15, "max": 15, "weight": 2339 },   //Chaos rune
+          { "id": 560, "min": 5, "max": 5, "weight": 2339 },   //Death rune
+          { "id": 554, "min": 37, "max": 37, "weight": 781 }   //Fire rune
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 356,
+        "items": [
+          { "id": 995, "min": 132, "max": 132, "weight": 31300 },   //Coins
+          { "id": 995, "min": 44, "max": 44, "weight": 22699 },   //Coins
+          { "id": 995, "min": 220, "max": 220, "weight": 7810 },   //Coins
+          { "id": 995, "min": 11, "max": 11, "weight": 5470 },   //Coins
+          { "id": 995, "min": 460, "max": 460, "weight": 781 }   //Coins
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 24,
         "items": [
-          { "id": 995, "min": 11, "max": 11, "weight": 12 }, //Coins
-          { "id": 995, "min": 44, "max": 44, "weight": 12 }, //Coins
-          { "id": 995, "min": 132, "max": 132, "weight": 9 }, //Coins
-          { "id": 995, "min": 220, "max": 220, "weight": 9 }, //Coins
-          { "id": 995, "min": 460, "max": 460, "weight": 6 }, //Coins
-          { "id": 2357, "min": 1, "max": 1, "weight": 6 }, //Gold bar
-          { "id": 361, "min": 1, "max": 1, "weight": 6 }, //Tuna
-          { "id": 1734, "min": 10, "max": 10, "weight": 1 }, //Thread
-          { "id": 2722, "min": 1, "max": 1, "weight": 1 } //Clue scroll (hard)
+          { "id": 361, "min": 1, "max": 1, "weight": 2339 },   //Tuna
+          { "id": 2357, "min": 1, "max": 1, "weight": 1560 },   //Gold bar
+          { "id": 1734, "min": 10, "max": 10, "weight": 781 }   //Thread
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 17,
+        "items": [
+          { "id": 13502, "min": 1, "max": 1, "weight": 2500 },   //Ensouled demon head
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
         ]
       }
     ]

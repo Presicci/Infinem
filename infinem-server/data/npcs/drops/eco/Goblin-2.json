@@ -1,13 +1,13 @@
 [
   {
-    "ids": [ 5369 ],
+    "ids": [ 3028, 3029, 3030, 3031, 3032, 3033, 3034, 3035, 3036, 3037, 3038, 3039, 3040, 3041, 3042, 3043, 3044, 3051, 3052, 3053, 3054, 5192, 5193, 5195, 5196, 5197, 5198, 5199, 5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208 ],
     "guaranteed": [
       { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
         "name": "Weapons and armour",
-        "weight": 77,
+        "weight": 33,
         "items": [
           { "id": 1173, "min": 1, "max": 1, "weight": 2339 },   //Bronze sq shield
           { "id": 1237, "min": 1, "max": 1, "weight": 3130 }   //Bronze spear
@@ -15,7 +15,7 @@
       },
       {
         "name": "Runes and ammunition",
-        "weight": 188,
+        "weight": 80,
         "items": [
           { "id": 559, "min": 7, "max": 7, "weight": 3910 },   //Body rune
           { "id": 555, "min": 6, "max": 6, "weight": 4690 },   //Water rune
@@ -25,7 +25,7 @@
       },
       {
         "name": "Coins",
-        "weight": 411,
+        "weight": 176,
         "items": [
           { "id": 995, "min": 5, "max": 5, "weight": 21899 },   //Coins
           { "id": 995, "min": 9, "max": 9, "weight": 2339 },   //Coins
@@ -36,7 +36,7 @@
       },
       {
         "name": "Other",
-        "weight": 321,
+        "weight": 137,
         "items": [
           { "id": 2347, "min": 1, "max": 1, "weight": 11700 },   //Hammer
           { "id": 10999, "min": 1, "max": 1, "weight": 1560 },   //Goblin book
@@ -49,7 +49,7 @@
       },
       {
         "name": "Tertiary",
-        "weight": 74,
+        "weight": 31,
         "items": [
           { "id": 13448, "min": 1, "max": 1, "weight": 2860 },   //Ensouled goblin head
           { "id": 23182, "min": 1, "max": 1, "weight": 1560 },   //Clue scroll (beginner)

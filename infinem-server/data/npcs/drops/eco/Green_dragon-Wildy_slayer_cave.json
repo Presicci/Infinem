@@ -1,0 +1,68 @@
+[
+  {
+    "ids": [ 7868, 7869, 7870 ],
+    "guaranteed": [
+      { "id": 536, "min": 1, "max": 1 },   //Dragon bones
+      { "id": 1753, "min": 1, "max": 1 }   //Green dragonhide
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 48,
+        "items": [
+          { "id": 1315, "min": 1, "max": 1, "weight": 3910 },   //Mithril 2h sword
+          { "id": 1071, "min": 1, "max": 1, "weight": 1560 },   //Mithril platelegs
+          { "id": 1369, "min": 1, "max": 1, "weight": 781 },   //Mithril battleaxe
+          { "id": 1211, "min": 1, "max": 1, "weight": 781 },   //Adamant dagger
+          { "id": 1287, "min": 1, "max": 1, "weight": 781 },   //Adamant sword
+          { "id": 1161, "min": 1, "max": 1, "weight": 781 },   //Adamant full helm
+          { "id": 1199, "min": 1, "max": 1, "weight": 781 }   //Adamant kiteshield
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 24,
+        "items": [
+          { "id": 563, "min": 3, "max": 10, "weight": 2339 },   //Law rune
+          { "id": 561, "min": 10, "max": 10, "weight": 781 },   //Nature rune
+          { "id": 560, "min": 15, "max": 15, "weight": 781 },   //Death rune
+          { "id": 565, "min": 5, "max": 5, "weight": 781 }   //Blood rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 60,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 325,
+        "items": [
+          { "id": 995, "min": 100, "max": 199, "weight": 22699 },   //Coins
+          { "id": 995, "min": 250, "max": 499, "weight": 19500 },   //Coins
+          { "id": 995, "min": 500, "max": 749, "weight": 10900 },   //Coins
+          { "id": 995, "min": 110, "max": 110, "weight": 4690 },   //Coins
+          { "id": 995, "min": 500, "max": 999, "weight": 4690 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 40,
+        "items": [
+          { "id": 7946, "min": 1, "max": 1, "weight": 5470 },   //Monkfish
+          { "id": 448, "min": 2, "max": 2, "weight": 2339 }   //Mithril ore (noted)
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 18,
+        "items": [
+          { "id": 13511, "min": 1, "max": 1, "weight": 2860 },   //Ensouled dragon head
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
+        ]
+      }
+    ]
+  }
+]

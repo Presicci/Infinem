@@ -1,0 +1,77 @@
+[
+  {
+    "ids": [
+      2246, 2247, // 12
+      2249, 2485, 3046, // 13
+      2248, // 15
+      2245, // 17
+      655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 674, 677, 678, 2484, 3045, 3047, 3048, 3073, 3074, 3075, 3076 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 61,
+        "items": [
+          { "id": 1351, "min": 1, "max": 1, "weight": 2339 },   //Bronze axe
+          { "id": 1321, "min": 1, "max": 1, "weight": 781 },   //Bronze scimitar
+          { "id": 1237, "min": 1, "max": 1, "weight": 7030 }   //Bronze spear
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 76,
+        "items": [
+          { "id": 882, "min": 7, "max": 7, "weight": 2339 },   //Bronze arrow
+          { "id": 558, "min": 2, "max": 2, "weight": 2339 },   //Mind rune
+          { "id": 557, "min": 4, "max": 4, "weight": 2339 },   //Earth rune
+          { "id": 559, "min": 2, "max": 2, "weight": 2339 },   //Body rune
+          { "id": 825, "min": 5, "max": 5, "weight": 1560 },   //Bronze javelin
+          { "id": 562, "min": 1, "max": 1, "weight": 781 },   //Chaos rune
+          { "id": 561, "min": 1, "max": 1, "weight": 781 }   //Nature rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 9,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 309,
+        "items": [
+          { "id": 995, "min": 1, "max": 1, "weight": 26600 },   //Coins
+          { "id": 995, "min": 3, "max": 3, "weight": 10200 },   //Coins
+          { "id": 995, "min": 5, "max": 5, "weight": 6250 },   //Coins
+          { "id": 995, "min": 16, "max": 16, "weight": 5470 },   //Coins
+          { "id": 995, "min": 24, "max": 24, "weight": 2339 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 114,
+        "items": [
+          { "id": 2347, "min": 1, "max": 1, "weight": 7030 },   //Hammer
+          { "id": 10999, "min": 1, "max": 1, "weight": 1560 },   //Goblin book
+          { "id": 288, "min": 1, "max": 1, "weight": 7810 },   //Goblin mail
+          { "id": 1987, "min": 1, "max": 1, "weight": 781 },   //Grapes
+          { "id": 1007, "min": 1, "max": 1, "weight": 781 },   //Red cape
+          { "id": 438, "min": 1, "max": 1, "weight": 781 }   //Tin ore
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 32,
+        "items": [
+          { "id": 13448, "min": 1, "max": 1, "weight": 3330 },   //Ensouled goblin head
+          { "id": 23182, "min": 1, "max": 1, "weight": 1250 },   //Clue scroll (beginner)
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (easy)
+          { "id": 6801, "min": 1, "max": 1, "weight": 20 }   //Goblin champion scroll
+        ]
+      }
+    ]
+  }
+]

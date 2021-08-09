@@ -1,13 +1,6 @@
 [
   {
-    "ids": [
-      1546, 1547, 1548, 1549, 1550, // Jail guards
-      3010, 3011, // Varrock
-      3094, // South falador
-      3245, // Ardougne
-      3269, 3270, 3271, 3272, 3273, 3274, // Falador
-      3283 // East of dorics hut
-      ],
+    "ids": [ 3361, 7016 ],
     "guaranteed": [
       { "id": 526, "min": 1, "max": 1 }   //Bones
     ],

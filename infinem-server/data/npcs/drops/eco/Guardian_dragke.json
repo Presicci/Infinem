@@ -1,0 +1,87 @@
+[
+  {
+    "ids": [ 10400, 10401 ],
+    "guaranteed": [
+      { "id": 22783, "min": 1, "max": 1 }   //Drake bones
+    ],
+    "tables": [
+      {
+        "name": "Pre-roll",
+        "weight": 1,
+        "items": [
+          { "id": 22960, "min": 1, "max": 1, "weight": 39 },   //Drake's tooth
+          { "id": 22957, "min": 1, "max": 1, "weight": 39 },   //Drake's claw
+          { "id": 20849, "min": 100, "max": 200, "weight": 10 },   //Dragon thrownaxe
+          { "id": 22804, "min": 100, "max": 200, "weight": 10 }   //Dragon knife
+        ]
+      },
+      {
+        "name": "Weapons and armour",
+        "weight": 96,
+        "items": [
+          { "id": 1163, "min": 1, "max": 1, "weight": 3530 },   //Rune full helm
+          { "id": 2501, "min": 1, "max": 1, "weight": 2350 },   //Red d'hide body
+          { "id": 2491, "min": 1, "max": 1, "weight": 1180 },   //Black d'hide vambraces
+          { "id": 1407, "min": 1, "max": 1, "weight": 1180 },   //Mystic earth staff
+          { "id": 1434, "min": 1, "max": 1, "weight": 1180 }   //Dragon mace
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 602,
+        "items": [
+          { "id": 554, "min": 100, "max": 200, "weight": 11800 },   //Fire rune
+          { "id": 561, "min": 30, "max": 60, "weight": 11800 },   //Nature rune
+          { "id": 563, "min": 25, "max": 50, "weight": 11800 },   //Law rune
+          { "id": 560, "min": 20, "max": 40, "weight": 11800 },   //Death rune
+          { "id": 892, "min": 35, "max": 65, "weight": 11800 }   //Rune arrow
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 60,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Noted herbs",
+        "weight": 72,
+        "items": [
+          { "id": 212, "min": 1, "max": 3, "weight": 1100 },   //Grimy avantoe (noted)
+          { "id": 214, "min": 1, "max": 3, "weight": 1100 },   //Grimy kwuarm (noted)
+          { "id": 208, "min": 1, "max": 3, "weight": 882 },   //Grimy ranarr weed (noted)
+          { "id": 3052, "min": 1, "max": 3, "weight": 882 },   //Grimy snapdragon (noted)
+          { "id": 216, "min": 1, "max": 3, "weight": 882 },   //Grimy cadantine (noted)
+          { "id": 218, "min": 1, "max": 3, "weight": 882 },   //Grimy dwarf weed (noted)
+          { "id": 2486, "min": 1, "max": 3, "weight": 662 },   //Grimy lantadyme (noted)
+          { "id": 220, "min": 1, "max": 3, "weight": 662 }   //Grimy torstol (noted)
+        ]
+      },
+      {
+        "name": "rare seed",
+        "weight": 12,
+        "items": [
+          { "id": 0, "min": 3, "max": 3, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 156,
+        "items": [
+          { "id": 995, "min": 1000, "max": 2000, "weight": 4710 },   //Coins
+          { "id": 995, "min": 5000, "max": 7000, "weight": 1180 },   //Coins
+          { "id": 1602, "min": 3, "max": 6, "weight": 4710 },   //Diamond (noted)
+          { "id": 373, "min": 1, "max": 2, "weight": 4710 }   //Swordfish
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 7,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
+        ]
+      }
+    ]
+  }
+]

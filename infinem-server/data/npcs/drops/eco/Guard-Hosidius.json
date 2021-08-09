@@ -1,20 +1,13 @@
 [
   {
-    "ids": [
-      1546, 1547, 1548, 1549, 1550, // Jail guards
-      3010, 3011, // Varrock
-      3094, // South falador
-      3245, // Ardougne
-      3269, 3270, 3271, 3272, 3273, 3274, // Falador
-      3283 // East of dorics hut
-      ],
+    "ids": [ 400, 398, 397, 399 ],
     "guaranteed": [
       { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
         "name": "Runes and ammunition",
-        "weight": 228,
+        "weight": 226,
         "items": [
           { "id": 9140, "min": 2, "max": 12, "weight": 7810 },   //Iron bolts
           { "id": 886, "min": 1, "max": 1, "weight": 3130 },   //Steel arrow
@@ -22,22 +15,22 @@
           { "id": 556, "min": 6, "max": 6, "weight": 1560 },   //Air rune
           { "id": 557, "min": 3, "max": 3, "weight": 1560 },   //Earth rune
           { "id": 554, "min": 2, "max": 2, "weight": 1560 },   //Fire rune
-          { "id": 565, "min": 1, "max": 1, "weight": 781 },   //Blood rune
           { "id": 562, "min": 1, "max": 1, "weight": 781 },   //Chaos rune
           { "id": 561, "min": 1, "max": 1, "weight": 781 },   //Nature rune
+          { "id": 565, "min": 1, "max": 1, "weight": 781 },   //Blood rune
           { "id": 886, "min": 5, "max": 5, "weight": 781 }   //Steel arrow
         ]
       },
       {
         "name": "general seed",
-        "weight": 152,
+        "weight": 151,
         "items": [
           { "id": 0, "min": 0, "max": 0, "weight": 5 }
         ]
       },
       {
         "name": "Coins",
-        "weight": 525,
+        "weight": 520,
         "items": [
           { "id": 995, "min": 1, "max": 1, "weight": 14800 },   //Coins
           { "id": 995, "min": 7, "max": 7, "weight": 12500 },   //Coins
@@ -50,10 +43,10 @@
       },
       {
         "name": "Other",
-        "weight": 93,
+        "weight": 100,
         "items": [
           { "id": 1203, "min": 1, "max": 1, "weight": 4690 },   //Iron dagger
-          { "id": 1446, "min": 1, "max": 1, "weight": 2339 },   //Body talisman
+          { "id": 1446, "min": 1, "max": 1, "weight": 3130 },   //Body talisman
           { "id": 1947, "min": 1, "max": 1, "weight": 781 },   //Grain
           { "id": 440, "min": 1, "max": 1, "weight": 781 }   //Iron ore
         ]

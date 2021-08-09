@@ -1,45 +1,59 @@
 [
   {
     "ids": [ 299 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
     "tables": [
       {
-        "name": "Runes and talismans",
-        "weight": 1,
+        "name": "Weapons",
+        "weight": 117,
         "items": [
-          { "id": 563, "min": 2, "max": 2, "weight": 3 }, //Law rune
-          { "id": 562, "min": 3, "max": 3, "weight": 3 }, //Chaos rune
-          { "id": 557, "min": 5, "max": 5, "weight": 3 }, //Earth rune
-          { "id": 1462, "min": 1, "max": 1, "weight": 1 } //Nature talisman
+          { "id": 1349, "min": 1, "max": 1, "weight": 4690 },   //Iron axe
+          { "id": 1375, "min": 1, "max": 1, "weight": 3130 },   //Bronze battleaxe
+          { "id": 1420, "min": 1, "max": 1, "weight": 781 }   //Iron mace
         ]
       },
       {
-        "name": "Weapons and ammunition",
-        "weight": 1,
+        "name": "Runes and ammunition",
+        "weight": 202,
         "items": [
-          { "id": 884, "min": 3, "max": 3, "weight": 6 }, //Iron arrow
-          { "id": 884, "min": 8, "max": 8, "weight": 6 }, //Iron arrow
-          { "id": 884, "min": 10, "max": 10, "weight": 3 }, //Iron arrow
-          { "id": 886, "min": 9, "max": 9, "weight": 3 }, //Steel arrow
-          { "id": 1375, "min": 1, "max": 1, "weight": 1 }, //Bronze battleaxe
-          { "id": 882, "min": 1, "max": 15, "weight": 1 } //Bronze arrow
+          { "id": 882, "min": 10, "max": 10, "weight": 3130 },   //Bronze arrow
+          { "id": 562, "min": 3, "max": 3, "weight": 3130 },   //Chaos rune
+          { "id": 884, "min": 8, "max": 8, "weight": 2339 },   //Iron arrow
+          { "id": 557, "min": 5, "max": 5, "weight": 2339 },   //Earth rune
+          { "id": 558, "min": 10, "max": 10, "weight": 1560 },   //Mind rune
+          { "id": 554, "min": 8, "max": 8, "weight": 1560 },   //Fire rune
+          { "id": 563, "min": 2, "max": 2, "weight": 781 }   //Law rune
         ]
       },
       {
-        "name": "Other drops",
-        "weight": 1,
+        "name": "Coins",
+        "weight": 627,
         "items": [
-          { "id": 995, "min": 5, "max": 32, "weight": 9 }, //Coins
-          { "id": 2142, "min": 1, "max": 1, "weight": 9 }, //Cooked meat
-          { "id": 1349, "min": 1, "max": 1, "weight": 6 }, //Iron axe
-          { "id": 1595, "min": 1, "max": 1, "weight": 6 }, //Amulet mould
-          { "id": 1917, "min": 1, "max": 1, "weight": 6 }, //Beer
-          { "id": 948, "min": 1, "max": 1, "weight": 6 }, //Bear fur
-          { "id": 1621, "min": 1, "max": 1, "weight": 3 }, //Uncut emerald
-          { "id": 2677, "min": 1, "max": 1, "weight": 3 }, //Clue scroll (easy)
-          { "id": 1623, "min": 1, "max": 1, "weight": 3 }, //Uncut sapphire
-          { "id": 956, "min": 1, "max": 1, "weight": 3 }, //Flier
-          { "id": 1619, "min": 1, "max": 1, "weight": 1 }, //Uncut ruby
-          { "id": 1617, "min": 1, "max": 1, "weight": 1 } //Uncut diamond
+          { "id": 995, "min": 8, "max": 8, "weight": 32799 },   //Coins
+          { "id": 995, "min": 12, "max": 12, "weight": 7030 },   //Coins
+          { "id": 995, "min": 25, "max": 25, "weight": 3910 },   //Coins
+          { "id": 995, "min": 32, "max": 32, "weight": 2339 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 53,
+        "items": [
+          { "id": 2142, "min": 1, "max": 1, "weight": 781 },   //Cooked meat
+          { "id": 1595, "min": 1, "max": 1, "weight": 781 },   //Amulet mould
+          { "id": 1917, "min": 1, "max": 1, "weight": 781 },   //Beer
+          { "id": 948, "min": 1, "max": 1, "weight": 781 },   //Bear fur
+          { "id": 7922, "min": 1, "max": 1, "weight": 781 }   //Flyer
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 55,
+        "items": [
+          { "id": 23182, "min": 1, "max": 1, "weight": 3330 },   //Clue scroll (beginner)
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (easy)
         ]
       }
     ]

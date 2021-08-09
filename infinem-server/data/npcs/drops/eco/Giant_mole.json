@@ -8,51 +8,47 @@
     ],
     "tables": [
       {
-        "name": "Runes and Ammunition",
-        "weight": 1,
+        "name": "Weapons and armour",
+        "weight": 254,
         "items": [
-          { "id": 556, "min": 105, "max": 105, "weight": 6 }, //Air rune
-          { "id": 554, "min": 105, "max": 105, "weight": 6 }, //Fire rune
-          { "id": 565, "min": 15, "max": 15, "weight": 3 }, //Blood rune
-          { "id": 560, "min": 7, "max": 7, "weight": 3 }, //Death rune
-          { "id": 563, "min": 15, "max": 15, "weight": 1 }, //Law rune
-          { "id": 884, "min": 690, "max": 690, "weight": 1 } //Iron arrow
+          { "id": 1301, "min": 1, "max": 1, "weight": 7810 },   //Adamant longsword
+          { "id": 1121, "min": 1, "max": 1, "weight": 7030 },   //Mithril platebody
+          { "id": 1725, "min": 1, "max": 1, "weight": 5470 },   //Amulet of strength
+          { "id": 1355, "min": 1, "max": 1, "weight": 1560 },   //Mithril axe
+          { "id": 1369, "min": 1, "max": 1, "weight": 781 },   //Mithril battleaxe
+          { "id": 1147, "min": 1, "max": 1, "weight": 781 }   //Rune med helm
         ]
       },
       {
-        "name": "Weapons",
-        "weight": 1,
+        "name": "Runes and ammunition",
+        "weight": 575,
         "items": [
-          { "id": 1301, "min": 1, "max": 1, "weight": 6 }, //Adamant longsword
-          { "id": 1355, "min": 1, "max": 1, "weight": 3 }, //Mithril axe
-          { "id": 1369, "min": 1, "max": 1, "weight": 1 } //Mithril battleaxe
-        ]
-      },
-      {
-        "name": "Armour",
-        "weight": 1,
-        "items": [
-          { "id": 1121, "min": 1, "max": 1, "weight": 6 }, //Mithril platebody
-          { "id": 1147, "min": 1, "max": 1, "weight": 3 }, //Rune med helm
-          { "id": 1725, "min": 1, "max": 1, "weight": 1 } //Amulet of strength
-        ]
-      },
-      {
-        "name": "Ores and bars",
-        "weight": 1,
-        "items": [
-          { "id": 441, "min": 100, "max": 100, "weight": 1 }, //Iron ore (noted)
-          { "id": 2359, "min": 1, "max": 1, "weight": 1 } //Mithril bar
+          { "id": 556, "min": 105, "max": 105, "weight": 15600 },   //Air rune
+          { "id": 565, "min": 15, "max": 15, "weight": 14800 },   //Blood rune
+          { "id": 554, "min": 105, "max": 105, "weight": 8590 },   //Fire rune
+          { "id": 884, "min": 690, "max": 690, "weight": 7810 },   //Iron arrow
+          { "id": 563, "min": 15, "max": 15, "weight": 3910 },   //Law rune
+          { "id": 560, "min": 7, "max": 7, "weight": 2339 }   //Death rune
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 169,
         "items": [
-          { "id": 385, "min": 4, "max": 4, "weight": 10 }, //Shark
-          { "id": 1516, "min": 100, "max": 100, "weight": 10 }, //Yew logs (noted)
-          { "id": 413, "min": 1, "max": 1, "weight": 10 }, //Oyster pearls
-          { "id": 12073, "min": 1, "max": 1, "weight": 1 } //Clue scroll (elite)
+          { "id": 1516, "min": 100, "max": 100, "weight": 7810 },   //Yew logs (noted)
+          { "id": 385, "min": 4, "max": 4, "weight": 3130 },   //Shark
+          { "id": 2359, "min": 1, "max": 1, "weight": 2339 },   //Mithril bar
+          { "id": 441, "min": 100, "max": 100, "weight": 1560 },   //Iron ore (noted)
+          { "id": 413, "min": 1, "max": 1, "weight": 781 }   //Oyster pearls
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 5,
+        "items": [
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 12073, "min": 1, "max": 1, "weight": 200 },   //Clue scroll (elite)
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
         ]
       }
     ]

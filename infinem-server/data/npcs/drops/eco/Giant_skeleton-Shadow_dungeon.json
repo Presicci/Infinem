@@ -1,0 +1,68 @@
+[
+  {
+    "ids": [ 6440 ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
+    ],
+    "tables": [
+      {
+        "name": "herb drop",
+        "weight": 113,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Weapons and armour",
+        "weight": 113,
+        "items": [
+          { "id": 1141, "min": 1, "max": 1, "weight": 4690 },   //Steel med helm
+          { "id": 1281, "min": 1, "max": 1, "weight": 3130 },   //Steel sword
+          { "id": 1325, "min": 1, "max": 1, "weight": 781 },   //Steel scimitar
+          { "id": 1353, "min": 1, "max": 1, "weight": 1560 }   //Steel axe
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 121,
+        "items": [
+          { "id": 884, "min": 24, "max": 24, "weight": 1560 },   //Iron arrow
+          { "id": 556, "min": 30, "max": 30, "weight": 2339 },   //Air rune
+          { "id": 555, "min": 18, "max": 18, "weight": 2339 },   //Water rune
+          { "id": 562, "min": 8, "max": 8, "weight": 2339 },   //Chaos rune
+          { "id": 564, "min": 4, "max": 4, "weight": 781 },   //Cosmic rune
+          { "id": 563, "min": 4, "max": 4, "weight": 1560 }   //Law rune
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 608,
+        "items": [
+          { "id": 995, "min": 2, "max": 2, "weight": 6250 },   //Coins
+          { "id": 995, "min": 10, "max": 10, "weight": 19500 },   //Coins
+          { "id": 995, "min": 20, "max": 20, "weight": 18800 },   //Coins
+          { "id": 995, "min": 50, "max": 50, "weight": 6250 },   //Coins
+          { "id": 995, "min": 90, "max": 90, "weight": 3130 },   //Coins
+          { "id": 995, "min": 120, "max": 120, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 43,
+        "items": [
+          { "id": 2351, "min": 1, "max": 1, "weight": 3910 }   //Iron bar
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 6,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 20 },   //Clue scroll (medium)
+          { "id": 10976, "min": 1, "max": 1, "weight": 12 },   //Long bone
+          { "id": 6806, "min": 1, "max": 1, "weight": 20 },   //Skeleton champion scroll
+          { "id": 10977, "min": 1, "max": 1, "weight": 1 }   //Curved bone
+        ]
+      }
+    ]
+  }
+]
