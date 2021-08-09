@@ -1,61 +1,59 @@
 [
   {
-    "ids": [ 2094 ],
+    "ids": [ 2094, 2234 ],
+    "guaranteed": [
+      { "id": 3125, "min": 1, "max": 1 }   //Jogre bones
+    ],
     "tables": [
       {
-        "name": "Always Drops",
-        "weight": 1,
+        "name": "Weapons",
+        "weight": 293,
         "items": [
-          { "id": 3125, "min": 1, "max": 1, "weight": 1 } //Jogre bones
+          { "id": 1237, "min": 1, "max": 1, "weight": 23300 },   //Bronze spear
+          { "id": 1239, "min": 1, "max": 1, "weight": 3100 }   //Iron spear
         ]
       },
       {
-        "name": "Armour/Weapons",
-        "weight": 1,
+        "name": "Runes and ammunition",
+        "weight": 137,
         "items": [
-          { "id": 1237, "min": 1, "max": 1, "weight": 3 }, //Bronze spear
-          { "id": 1239, "min": 1, "max": 1, "weight": 3 }, //Iron spear
-          { "id": 827, "min": 5, "max": 5, "weight": 1 } //Steel javelin
+          { "id": 561, "min": 2, "max": 2, "weight": 7750 },   //Nature rune
+          { "id": 561, "min": 10, "max": 10, "weight": 1550 },   //Nature rune
+          { "id": 561, "min": 5, "max": 5, "weight": 1550 },   //Nature rune
+          { "id": 827, "min": 5, "max": 5, "weight": 1550 }   //Steel javelin
         ]
       },
       {
-        "name": "Herbs",
-        "weight": 1,
+        "name": "herb drop",
+        "weight": 51,
         "items": [
-          { "id": 1525, "min": 1, "max": 1, "weight": 9 }, //Grimy snake weed
-          { "id": 1533, "min": 1, "max": 1, "weight": 9 }, //Grimy rogue's purse
-          { "id": 203, "min": 1, "max": 1, "weight": 6 }, //Grimy tarromin
-          { "id": 201, "min": 1, "max": 1, "weight": 6 }, //Grimy marrentill
-          { "id": 199, "min": 1, "max": 1, "weight": 6 }, //Grimy guam leaf
-          { "id": 205, "min": 1, "max": 1, "weight": 3 }, //Grimy harralander
-          { "id": 207, "min": 1, "max": 1, "weight": 3 }, //Grimy ranarr weed
-          { "id": 213, "min": 1, "max": 1, "weight": 3 }, //Grimy kwuarm
-          { "id": 209, "min": 1, "max": 1, "weight": 3 }, //Grimy irit leaf
-          { "id": 215, "min": 1, "max": 1, "weight": 1 }, //Grimy cadantine
-          { "id": 217, "min": 1, "max": 1, "weight": 1 }, //Grimy dwarf weed
-          { "id": 2485, "min": 1, "max": 1, "weight": 1 } //Grimy lantadyme
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
         ]
       },
       {
-        "name": "Runes",
-        "weight": 1,
+        "name": "uncommon seed",
+        "weight": 129,
         "items": [
-          { "id": 561, "min": 2, "max": 2, "weight": 6 }, //Nature rune
-          { "id": 561, "min": 5, "max": 5, "weight": 3 }, //Nature rune
-          { "id": 561, "min": 10, "max": 10, "weight": 1 } //Nature rune
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 387,
         "items": [
-          { "id": 6306, "min": 22, "max": 22, "weight": 12 }, //Trading sticks
-          { "id": 2114, "min": 2, "max": 2, "weight": 12 }, //Pineapple
-          { "id": 946, "min": 1, "max": 1, "weight": 6 }, //Knife
-          { "id": 532, "min": 1, "max": 1, "weight": 6 }, //Big bones
-          { "id": 532, "min": 3, "max": 3, "weight": 3 }, //Big bones
-          { "id": 526, "min": 1, "max": 1, "weight": 3 }, //Bones
-          { "id": 2801, "min": 1, "max": 1, "weight": 1 } //Clue scroll (medium)
+          { "id": 6306, "min": 22, "max": 22, "weight": 20900 },   //Trading sticks
+          { "id": 2114, "min": 2, "max": 2, "weight": 6200 },   //Pineapple
+          { "id": 946, "min": 1, "max": 1, "weight": 3880 },   //Knife
+          { "id": 526, "min": 1, "max": 1, "weight": 2330 },   //Bones
+          { "id": 532, "min": 3, "max": 3, "weight": 1550 }   //Big bones
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 8,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 775 },   //Clue scroll (medium)
+          { "id": 6804, "min": 1, "max": 1, "weight": 20 }   //Jogre champion scroll
         ]
       }
     ]
