@@ -365,6 +365,19 @@ public abstract class NPCCombat extends Combat {
         put("crazy archaeologist", new Item[][] {
                 { new Item(1622, 6), new Item(1624, 4) }    // Uncut emerald and uncut sapphire
         });
+
+        put("insatiable bloodveld", new Item[][] {
+                { new Item(526), new Item(532, 3) }    // Bones nad big bones
+        });
+
+        put("jungle horror", new Item[][] {
+                { new Item(526), new Item(532, 3) }    // Bones nad big bones
+        });
+
+        put("k'ril tsutsaroth", new Item[][] {
+                { new Item(145, 3), new Item(157, 3) },    // Super attack and super strength
+                { new Item(3026, 3), new Item(189, 3) }    // Super restore and zammy brew
+        });
         /**
          * put("ammonite crab", new Item[][] {
          *                 { new Item(), new Item() }
@@ -412,16 +425,16 @@ public abstract class NPCCombat extends Combat {
      */
     private static final LootTable chaosElementalMinorDrops = new LootTable()
             .addTable(1,
-                    new LootItem(Items.ANCHOVY_PIZZA, 3, 3, 1),         // Anchovy pizza
-                    new LootItem(Items.BABYDRAGON_BONES, 2, 2, 1),      // Babydragon bones
-                    new LootItem(Items.BAT_BONES, 5, 5, 1),             // Bat bones
-                    new LootItem(Items.BIG_BONES, 3, 3, 1),             // Big bones
-                    new LootItem(Items.BONES, 4, 4, 1),                 // Bones
-                    new LootItem(Items.DRAGON_BONES, 1, 1, 1),          // Dragon bones
-                    new LootItem(Items.SUPER_ATTACK_4, 1, 1, 1),        // Super attack
-                    new LootItem(Items.SUPER_DEFENCE_4, 1, 1, 1),       // Super defence
-                    new LootItem(Items.SUPER_STRENGTH_4, 1, 1, 1),      // Super strength
-                    new LootItem(Items.TUNA, 5, 5, 1)                   // Tuna
+                    new LootItem(Items.ANCHOVY_PIZZA, 3, 3, 1),
+                    new LootItem(Items.BABYDRAGON_BONES, 2, 2, 1),
+                    new LootItem(Items.BAT_BONES, 5, 5, 1),
+                    new LootItem(Items.BIG_BONES, 3, 3, 1),
+                    new LootItem(Items.BONES, 4, 4, 1),
+                    new LootItem(Items.DRAGON_BONES, 1, 1, 1),
+                    new LootItem(Items.SUPER_ATTACK_4, 1, 1, 1),
+                    new LootItem(Items.SUPER_DEFENCE_4, 1, 1, 1),
+                    new LootItem(Items.SUPER_STRENGTH_4, 1, 1, 1),
+                    new LootItem(Items.TUNA, 5, 5, 1)
             );
 
     /**
@@ -433,6 +446,35 @@ public abstract class NPCCombat extends Combat {
     private void handleChaosEleDrops(Killer killer, Player player, Position pos) {
         if (npc.getId() == 2054 || npc.getId() == 6505) {
             List<Item> items = chaosElementalMinorDrops.rollItems(false);
+            handleDrop(killer, pos, player, items);
+        }
+    }
+
+    /*
+     * Kalphite queen has a loot table of consumables that drop alongside the main drops.
+     */
+    private static final LootTable kalphiteQueenConsumablesTable = new LootTable()
+            .addTable(1,
+                    new LootItem(Items.MONKFISH, 3, 3, 1),
+                    new LootItem(Items.SHARK, 2, 2, 1),
+                    new LootItem(Items.DARK_CRAB, 2, 2, 1),
+                    new LootItem(Items.SARADOMIN_BREW_4, 1, 1, 1),
+                    new LootItem(Items.PRAYER_POTION_4, 1, 1, 1),
+                    new LootItem(Items.SUPER_RESTORE_4, 1, 1, 1),
+                    new LootItem(Items.SUPER_COMBAT_POTION_2, 1, 1, 1),
+                    new LootItem(Items.RANGING_POTION_3, 1, 1, 1),
+                    new LootItem(Items.SUPERANTIPOISON_2, 1, 1, 1)
+            );
+
+    /**
+     * Handles the rolling of the consumable table alongside the major drop table.
+     * @param killer The entity that killed the npc.
+     * @param player The player that killed the npc.
+     * @param pos The position to place the drop.
+     */
+    private void handleKalphiteQueenDrops(Killer killer, Player player, Position pos) {
+        if (npc.getId() == 963 || npc.getId() == 965) {
+            List<Item> items = kalphiteQueenConsumablesTable.rollItems(false);
             handleDrop(killer, pos, player, items);
         }
     }
@@ -529,6 +571,11 @@ public abstract class NPCCombat extends Combat {
          * Handle the chaos elemental minor drops
          */
         handleChaosEleDrops(killer, pKiller, dropPosition);
+
+        /*
+         * Handle the kalphite queen consumable drops
+         */
+        handleKalphiteQueenDrops(killer, pKiller, dropPosition);
 
         /*
          * Handle giving player vorkaths head after 50 kills.
