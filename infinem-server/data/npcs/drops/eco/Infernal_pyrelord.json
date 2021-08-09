@@ -1,0 +1,58 @@
+[
+  {
+    "ids": [ 9465 ],
+    "guaranteed": [
+      { "id": 25766, "min": 1, "max": 1 }   //Fiendish ashes
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 120,
+        "items": [
+          { "id": 1355, "min": 1, "max": 1, "weight": 3130 },   //Mithril axe
+          { "id": 1159, "min": 1, "max": 1, "weight": 3130 },   //Mithril full helm
+          { "id": 1387, "min": 1, "max": 1, "weight": 2339 },   //Staff of fire
+          { "id": 1109, "min": 1, "max": 1, "weight": 1560 },   //Mithril chainbody
+          { "id": 1145, "min": 1, "max": 1, "weight": 781 },   //Adamant med helm
+          { "id": 4123, "min": 1, "max": 1, "weight": 781 }   //Steel boots
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 295,
+        "items": [
+          { "id": 554, "min": 50, "max": 50, "weight": 16399 },   //Fire rune
+          { "id": 554, "min": 100, "max": 100, "weight": 6250 },   //Fire rune
+          { "id": 562, "min": 20, "max": 20, "weight": 3910 },   //Chaos rune
+          { "id": 560, "min": 5, "max": 5, "weight": 2339 }   //Death rune
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 504,
+        "items": [
+          { "id": 995, "min": 10, "max": 10, "weight": 5470 },   //Coins
+          { "id": 995, "min": 60, "max": 60, "weight": 18800 },   //Coins
+          { "id": 995, "min": 200, "max": 200, "weight": 15600 },   //Coins
+          { "id": 995, "min": 400, "max": 400, "weight": 7810 },   //Coins
+          { "id": 995, "min": 600, "max": 600, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 79,
+        "items": [
+          { "id": 444, "min": 2, "max": 2, "weight": 6250 },   //Gold ore
+          { "id": 1993, "min": 1, "max": 1, "weight": 1560 }   //Jug of wine
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 98,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 9620 }   //Clue scroll (medium)
+        ]
+      }
+    ]
+  }
+]

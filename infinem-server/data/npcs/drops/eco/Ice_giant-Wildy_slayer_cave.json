@@ -1,0 +1,75 @@
+[
+  {
+    "ids": [ 7878, 7879, 7880 ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 56,
+        "items": [
+          { "id": 1355, "min": 1, "max": 1, "weight": 3130 },   //Mithril axe
+          { "id": 1287, "min": 1, "max": 1, "weight": 3130 },   //Adamant sword
+          { "id": 1071, "min": 1, "max": 1, "weight": 781 },   //Mithril platelegs
+          { "id": 1211, "min": 1, "max": 1, "weight": 781 },   //Adamant dagger
+          { "id": 1430, "min": 1, "max": 1, "weight": 781 },   //Adamant mace
+          { "id": 1183, "min": 1, "max": 1, "weight": 781 },   //Adamant sq shield
+          { "id": 1199, "min": 1, "max": 1, "weight": 781 },   //Adamant kiteshield
+          { "id": 1213, "min": 1, "max": 1, "weight": 781 }   //Rune dagger
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 80,
+        "items": [
+          { "id": 890, "min": 5, "max": 14, "weight": 4690 },   //Adamant arrow
+          { "id": 561, "min": 6, "max": 6, "weight": 3130 },   //Nature rune
+          { "id": 560, "min": 5, "max": 5, "weight": 2339 },   //Death rune
+          { "id": 563, "min": 3, "max": 3, "weight": 1560 },   //Law rune
+          { "id": 565, "min": 5, "max": 5, "weight": 1560 },   //Blood rune
+          { "id": 564, "min": 4, "max": 4, "weight": 781 },   //Cosmic rune
+          { "id": 562, "min": 15, "max": 15, "weight": 781 },   //Chaos rune
+          { "id": 560, "min": 3, "max": 3, "weight": 781 }   //Death rune
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 52,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 289,
+        "items": [
+          { "id": 995, "min": 150, "max": 299, "weight": 34400 },   //Coins
+          { "id": 995, "min": 200, "max": 399, "weight": 7810 },   //Coins
+          { "id": 995, "min": 250, "max": 250, "weight": 7030 },   //Coins
+          { "id": 995, "min": 100, "max": 100, "weight": 5470 },   //Coins
+          { "id": 995, "min": 400, "max": 799, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 20,
+        "items": [
+          { "id": 1993, "min": 1, "max": 1, "weight": 2339 },   //Jug of wine
+          { "id": 448, "min": 3, "max": 3, "weight": 781 },   //Mithril ore (noted)
+          { "id": 7946, "min": 1, "max": 1, "weight": 781 }   //Monkfish
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 25,
+        "items": [
+          { "id": 13475, "min": 1, "max": 1, "weight": 4760 },   //Ensouled giant head
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 6800, "min": 1, "max": 1, "weight": 20 },   //Giant champion scroll
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
+        ]
+      }
+    ]
+  }
+]

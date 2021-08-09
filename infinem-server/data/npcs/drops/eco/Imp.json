@@ -1,54 +1,78 @@
 [
   {
-    "ids": [ 5007, 3134 ],
+    "ids": [ 3134, 5007, 5008, 5728 ],
     "guaranteed": [
-      { "id": 592, "min": 1, "max": 1 } //Ashes
+      { "id": 25766, "min": 1, "max": 1 }   //Fiendish ashes
     ],
     "tables": [
       {
-        "name": "Weapons/Armour",
-        "weight": 1,
+        "name": "Beads",
+        "weight": 156,
         "items": [
-          { "id": 877, "min": 1, "max": 1, "weight": 6 }, //Bronze bolts
-          { "id": 579, "min": 1, "max": 1, "weight": 3 }, //Blue wizard hat
-          { "id": 1949, "min": 1, "max": 1, "weight": 1 } //Chef's hat
+          { "id": 1474, "min": 1, "max": 1, "weight": 3910 },   //Black bead
+          { "id": 1470, "min": 1, "max": 1, "weight": 3910 },   //Red bead
+          { "id": 1476, "min": 1, "max": 1, "weight": 3910 },   //White bead
+          { "id": 1472, "min": 1, "max": 1, "weight": 3910 }   //Yellow bead
+        ]
+      },
+      {
+        "name": "Equipment",
+        "weight": 124,
+        "items": [
+          { "id": 877, "min": 1, "max": 1, "weight": 6250 },   //Bronze bolts
+          { "id": 579, "min": 1, "max": 1, "weight": 6250 }   //Blue wizard hat
         ]
       },
       {
         "name": "Food",
-        "weight": 1,
+        "weight": 187,
         "items": [
-          { "id": 2309, "min": 1, "max": 1, "weight": 6 }, //Bread
-          { "id": 1965, "min": 1, "max": 1, "weight": 3 }, //Cabbage
-          { "id": 2142, "min": 1, "max": 1, "weight": 1 } //Cooked meat
+          { "id": 1944, "min": 1, "max": 1, "weight": 3910 },   //Egg
+          { "id": 2138, "min": 1, "max": 1, "weight": 3910 },   //Raw chicken
+          { "id": 2311, "min": 1, "max": 1, "weight": 3130 },   //Burnt bread
+          { "id": 2146, "min": 1, "max": 1, "weight": 3130 },   //Burnt meat
+          { "id": 24367, "min": 1, "max": 1, "weight": 1560 },   //Cabbage
+          { "id": 2307, "min": 1, "max": 1, "weight": 1560 },   //Bread dough
+          { "id": 2309, "min": 1, "max": 1, "weight": 781 },   //Bread
+          { "id": 2142, "min": 1, "max": 1, "weight": 781 }   //Cooked meat
+        ]
+      },
+      {
+        "name": "Tools",
+        "weight": 242,
+        "items": [
+          { "id": 2347, "min": 1, "max": 1, "weight": 6250 },   //Hammer
+          { "id": 590, "min": 1, "max": 1, "weight": 3910 },   //Tinderbox
+          { "id": 1735, "min": 1, "max": 1, "weight": 3130 },   //Shears
+          { "id": 1925, "min": 1, "max": 1, "weight": 3130 },   //Bucket
+          { "id": 1929, "min": 1, "max": 1, "weight": 1560 },   //Bucket of water
+          { "id": 1935, "min": 1, "max": 1, "weight": 1560 },   //Jug
+          { "id": 1937, "min": 1, "max": 1, "weight": 1560 },   //Jug of water
+          { "id": 1931, "min": 1, "max": 1, "weight": 1560 },   //Pot
+          { "id": 1933, "min": 1, "max": 1, "weight": 1560 }   //Pot of flour
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 289,
         "items": [
-          { "id": 1759, "min": 1, "max": 1, "weight": 9 }, //Ball of wool
-          { "id": 1944, "min": 1, "max": 1, "weight": 9 }, //Egg
-          { "id": 590, "min": 1, "max": 1, "weight": 6 }, //Tinderbox
-          { "id": 1925, "min": 1, "max": 1, "weight": 6 }, //Bucket
-          { "id": 2347, "min": 1, "max": 1, "weight": 6 }, //Hammer
-          { "id": 753, "min": 1, "max": 1, "weight": 6 }, //Cadava berries
-          { "id": 2307, "min": 1, "max": 1, "weight": 6 }, //Bread dough
-          { "id": 2138, "min": 1, "max": 1, "weight": 6 }, //Raw chicken
-          { "id": 592, "min": 1, "max": 1, "weight": 6 }, //Ashes
-          { "id": 2146, "min": 1, "max": 1, "weight": 6 }, //Burnt meat
-          { "id": 2311, "min": 1, "max": 1, "weight": 3 }, //Burnt bread
-          { "id": 1935, "min": 1, "max": 1, "weight": 3 }, //Jug
-          { "id": 1933, "min": 1, "max": 1, "weight": 3 }, //Pot of flour
-          { "id": 434, "min": 1, "max": 1, "weight": 3 }, //Clay
-          { "id": 195, "min": 1, "max": 1, "weight": 3 }, //Potion
-          { "id": 956, "min": 1, "max": 1, "weight": 3 }, //Flier
-          { "id": 1448, "min": 1, "max": 1, "weight": 3 }, //Mind talisman
-          { "id": 1937, "min": 1, "max": 1, "weight": 3 }, //Jug of water
-          { "id": 1929, "min": 1, "max": 1, "weight": 3 }, //Bucket of water
-          { "id": 1735, "min": 1, "max": 1, "weight": 1 }, //Shears
-          { "id": 1947, "min": 1, "max": 1, "weight": 1 }, //Grain
-          { "id": 13454, "min": 1, "max": 1, "weight": 1 } //Ensouled imp head
+          { "id": 1759, "min": 1, "max": 1, "weight": 6250 },   //Ball of wool
+          { "id": 1448, "min": 1, "max": 1, "weight": 5470 },   //Mind talisman
+          { "id": 592, "min": 1, "max": 1, "weight": 4690 },   //Ashes
+          { "id": 434, "min": 1, "max": 1, "weight": 3130 },   //Clay
+          { "id": 753, "min": 1, "max": 1, "weight": 3130 },   //Cadava berries
+          { "id": 1947, "min": 1, "max": 1, "weight": 2339 },   //Grain
+          { "id": 1949, "min": 1, "max": 1, "weight": 1560 },   //Chef's hat
+          { "id": 7922, "min": 1, "max": 1, "weight": 1560 },   //Flyer
+          { "id": 195, "min": 1, "max": 1, "weight": 781 }   //Potion
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 40,
+        "items": [
+          { "id": 13454, "min": 1, "max": 1, "weight": 4000 },   //Ensouled imp head
+          { "id": 6803, "min": 1, "max": 1, "weight": 20 }   //Imp champion scroll
         ]
       }
     ]
