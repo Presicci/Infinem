@@ -11,9 +11,9 @@ import io.ruin.model.item.Item
  * @author Leviticus
  */
 object SkinScrolls {
-    private const val GREEN_SKIN_SCROLL = 6806
-    private const val BLUE_SKIN_SCROLL = 6807
-    private const val PURPLE_SKIN_SCROLL = 6808
+    private const val GREEN_SKIN_SCROLL = 30322
+    private const val BLUE_SKIN_SCROLL = 30323
+    private const val PURPLE_SKIN_SCROLL = 30324
     private val scrolls = intArrayOf(GREEN_SKIN_SCROLL, BLUE_SKIN_SCROLL, PURPLE_SKIN_SCROLL)
 
     init {
