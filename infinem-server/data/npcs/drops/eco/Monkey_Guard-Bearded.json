@@ -1,8 +1,8 @@
 [
   {
-    "ids": [ 5275 ],
+    "ids": [ 5276 ],
     "guaranteed": [
-      { "id": 3181, "min": 1, "max": 1 }   //Monkey bones (gorilla)
+      { "id": 3182, "min": 1, "max": 1 }   //Monkey bones (gorilla)
     ],
     "tables": [
       {

@@ -2,14 +2,35 @@
   {
     "ids": [ 7119 ],
     "guaranteed": [
-      { "id": 3179, "min": 1, "max": 1 } //Monkey bones (small ninja)
+      { "id": 3179, "min": 1, "max": 1 }   //Monkey bones (small ninja)
     ],
     "tables": [
       {
-        "name": "Other",
-        "weight": 1,
+        "name": "Weapons",
+        "weight": 150,
         "items": [
-          { "id": 1325, "min": 1, "max": 1, "weight": 1 } //Steel scimitar
+          { "id": 1325, "min": 1, "max": 1, "weight": 10000 },   //Steel scimitar
+          { "id": 853, "min": 1, "max": 1, "weight": 5000 }   //Maple shortbow
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 250,
+        "items": [
+          { "id": 8778, "min": 1, "max": 1, "weight": 15000 },   //Oak plank
+          { "id": 199, "min": 1, "max": 1, "weight": 10000 }   //Grimy guam leaf
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 600,
+        "items": [
+          { "id": 1963, "min": 1, "max": 1, "weight": 10000 },   //Banana
+          { "id": 5626, "min": 5, "max": 5, "weight": 5000 },   //Adamant arrow(p++)
+          { "id": 177, "min": 1, "max": 1, "weight": 10000 },   //Antipoison(2)
+          { "id": 365, "min": 2, "max": 2, "weight": 20000 },   //Bass
+          { "id": 143, "min": 1, "max": 1, "weight": 10000 },   //Prayer potion(1)
+          { "id": 954, "min": 1, "max": 1, "weight": 5000 }   //Rope
         ]
       }
     ]

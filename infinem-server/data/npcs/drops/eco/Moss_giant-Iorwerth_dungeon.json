@@ -1,0 +1,84 @@
+[
+  {
+    "ids": [ 8736 ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 55,
+        "items": [
+          { "id": 1181, "min": 1, "max": 1, "weight": 3910 },   //Mithril sq shield
+          { "id": 1143, "min": 1, "max": 1, "weight": 1560 },   //Mithril med helm
+          { "id": 1245, "min": 1, "max": 1, "weight": 1560 },   //Adamant spear
+          { "id": 1287, "min": 1, "max": 1, "weight": 1560 },   //Adamant sword
+          { "id": 1391, "min": 1, "max": 1, "weight": 1560 },   //Battlestaff
+          { "id": 1197, "min": 1, "max": 1, "weight": 781 }   //Mithril kiteshield
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 91,
+        "items": [
+          { "id": 563, "min": 10, "max": 25, "weight": 3130 },   //Law rune
+          { "id": 556, "min": 40, "max": 80, "weight": 2339 },   //Air rune
+          { "id": 557, "min": 40, "max": 80, "weight": 2339 },   //Earth rune
+          { "id": 562, "min": 10, "max": 30, "weight": 2339 },   //Chaos rune
+          { "id": 561, "min": 6, "max": 25, "weight": 2339 },   //Nature rune
+          { "id": 564, "min": 10, "max": 25, "weight": 1560 },   //Cosmic rune
+          { "id": 888, "min": 20, "max": 30, "weight": 781 },   //Mithril arrow
+          { "id": 890, "min": 10, "max": 15, "weight": 1560 },   //Adamant arrow
+          { "id": 560, "min": 10, "max": 20, "weight": 781 },   //Death rune
+          { "id": 565, "min": 6, "max": 10, "weight": 781 }   //Blood rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 19,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 139,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 155,
+        "items": [
+          { "id": 995, "min": 60, "max": 60, "weight": 14800 },   //Coins
+          { "id": 995, "min": 100, "max": 1000, "weight": 7810 },   //Coins
+          { "id": 995, "min": 20, "max": 20, "weight": 6250 },   //Coins
+          { "id": 995, "min": 500, "max": 1500, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 31,
+        "items": [
+          { "id": 2359, "min": 1, "max": 1, "weight": 4690 },   //Mithril bar
+          { "id": 453, "min": 2, "max": 6, "weight": 781 },   //Coal
+          { "id": 1969, "min": 1, "max": 1, "weight": 781 }   //Spinach roll
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 50,
+        "items": [
+          { "id": 13475, "min": 1, "max": 1, "weight": 4170 },   //Ensouled giant head
+          { "id": 23962, "min": 1, "max": 1, "weight": 4170 },   //Crystal shard
+          { "id": 2722, "min": 1, "max": 1, "weight": 500 },   //Clue scroll (hard)
+          { "id": 22374, "min": 1, "max": 1, "weight": 832 },   //Mossy key
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 6800, "min": 1, "max": 1, "weight": 20 },   //Giant champion scroll
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
+        ]
+      }
+    ]
+  }
+]

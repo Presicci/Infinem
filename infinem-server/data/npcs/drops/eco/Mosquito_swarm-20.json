@@ -1,0 +1,8 @@
+[
+  {
+    "ids": [ 6402 ],
+    "guaranteed": [
+      { "id": 6319, "min": 5, "max": 5 }   //Proboscis
+    ]
+  }
+]

@@ -1,36 +1,54 @@
 [
   {
-    "ids": [ 1461, 2871, 6996 ],
+    "ids": [ 505, 1461, 6996, 8732 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 } //Bones
+      { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
-        "name": "Runes",
-        "weight": 1,
+        "name": "Runes and ammunition",
+        "weight": 295,
         "items": [
-          { "id": 558, "min": 9, "max": 9, "weight": 2 }, //Mind rune
-          { "id": 557, "min": 5, "max": 5, "weight": 1 }, //Earth rune
-          { "id": 555, "min": 6, "max": 6, "weight": 1 } //Water rune
+          { "id": 877, "min": 2, "max": 12, "weight": 21100 },   //Bronze bolts
+          { "id": 558, "min": 9, "max": 9, "weight": 2339 },   //Mind rune
+          { "id": 555, "min": 6, "max": 6, "weight": 1560 },   //Water rune
+          { "id": 557, "min": 5, "max": 5, "weight": 1560 }   //Earth rune
         ]
       },
       {
-        "name": "Weapons/Armour",
-        "weight": 1,
+        "name": "herb drop",
+        "weight": 112,
         "items": [
-          { "id": 877, "min": 3, "max": 11, "weight": 3 }, //Bronze bolts
-          { "id": 1139, "min": 1, "max": 1, "weight": 1 } //Bronze med helm
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
         ]
       },
       {
-        "name": "Herbs",
-        "weight": 1,
+        "name": "Coins",
+        "weight": 139,
         "items": [
-          { "id": 199, "min": 1, "max": 1, "weight": 6 }, //Grimy guam leaf
-          { "id": 201, "min": 1, "max": 1, "weight": 6 }, //Grimy marrentill
-          { "id": 203, "min": 1, "max": 1, "weight": 3 }, //Grimy tarromin
-          { "id": 205, "min": 1, "max": 1, "weight": 3 }, //Grimy harralander
-          { "id": 211, "min": 1, "max": 1, "weight": 1 } //Grimy avantoe
+          { "id": 995, "min": 5, "max": 5, "weight": 9380 },   //Coins
+          { "id": 995, "min": 15, "max": 15, "weight": 2339 },   //Coins
+          { "id": 995, "min": 25, "max": 25, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 452,
+        "items": [
+          { "id": 954, "min": 1, "max": 1, "weight": 31300 },   //Rope
+          { "id": 946, "min": 1, "max": 1, "weight": 781 },   //Knife
+          { "id": 313, "min": 1, "max": 1, "weight": 4690 },   //Fishing bait
+          { "id": 436, "min": 1, "max": 1, "weight": 1560 },   //Copper ore
+          { "id": 1139, "min": 1, "max": 1, "weight": 1560 },   //Bronze med helm
+          { "id": 24367, "min": 1, "max": 1, "weight": 781 }   //Cabbage
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 22,
+        "items": [
+          { "id": 23182, "min": 1, "max": 1, "weight": 1250 },   //Clue scroll (beginner)
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (easy)
         ]
       }
     ]

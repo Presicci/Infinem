@@ -1,5 +1,19 @@
 [
   {
-    "ids": [ 520, 3485, 519, 3484, 3486, 521 ]
+    "ids": [ 519, 520, 521, 3484, 3485, 3486, 8400, 8401, 8698 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Armour",
+        "weight": 1,
+        "items": [
+          { "id": -1, "min": 1, "max": 1, "weight": 18 },   //Nothing
+          { "id": 1033, "min": 1, "max": 1, "weight": 1 },   //Zamorak monk bottom
+          { "id": 1035, "min": 1, "max": 1, "weight": 1 }   //Zamorak monk top
+        ]
+      }
+    ]
   }
 ]

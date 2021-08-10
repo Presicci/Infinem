@@ -2,23 +2,35 @@
   {
     "ids": [ 7118 ],
     "guaranteed": [
-      { "id": 3183, "min": 1, "max": 1 } //Monkey bones (small zombie)
+      { "id": 3179, "min": 1, "max": 1 }   //Monkey bones (small ninja)
     ],
     "tables": [
       {
-        "name": "Other",
-        "weight": 1,
+        "name": "Weapons",
+        "weight": 150,
         "items": [
-          { "id": 1963, "min": 1, "max": 1, "weight": 6 }, //Banana
-          { "id": 8778, "min": 1, "max": 1, "weight": 6 }, //Oak plank
-          { "id": 5626, "min": 5, "max": 5, "weight": 6 }, //Adamant arrow(p++)
-          { "id": 177, "min": 1, "max": 1, "weight": 3 }, //Antipoison(2)
-          { "id": 1325, "min": 1, "max": 1, "weight": 3 }, //Steel scimitar
-          { "id": 199, "min": 1, "max": 1, "weight": 3 }, //Grimy guam leaf
-          { "id": 365, "min": 2, "max": 2, "weight": 3 }, //Bass
-          { "id": 143, "min": 1, "max": 1, "weight": 3 }, //Prayer potion(1)
-          { "id": 954, "min": 1, "max": 1, "weight": 1 }, //Rope
-          { "id": 853, "min": 1, "max": 1, "weight": 1 } //Maple shortbow
+          { "id": 1325, "min": 1, "max": 1, "weight": 10000 },   //Steel scimitar
+          { "id": 853, "min": 1, "max": 1, "weight": 5000 }   //Maple shortbow
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 250,
+        "items": [
+          { "id": 8778, "min": 1, "max": 1, "weight": 15000 },   //Oak plank
+          { "id": 199, "min": 1, "max": 1, "weight": 10000 }   //Grimy guam leaf
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 600,
+        "items": [
+          { "id": 1963, "min": 1, "max": 1, "weight": 10000 },   //Banana
+          { "id": 5626, "min": 5, "max": 5, "weight": 5000 },   //Adamant arrow(p++)
+          { "id": 177, "min": 1, "max": 1, "weight": 10000 },   //Antipoison(2)
+          { "id": 365, "min": 2, "max": 2, "weight": 20000 },   //Bass
+          { "id": 143, "min": 1, "max": 1, "weight": 10000 },   //Prayer potion(1)
+          { "id": 954, "min": 1, "max": 1, "weight": 5000 }   //Rope
         ]
       }
     ]

@@ -37,7 +37,6 @@
         "weight": 524,
         "items": [
           { "id": 995, "min": 3, "max": 3, "weight": 29700 },   //Coins
-          { "id": 995, "min": 10, "max": 10, "weight": 18000 },   //Coins
           { "id": 995, "min": 5, "max": 5, "weight": 7030 },   //Coins
           { "id": 995, "min": 15, "max": 15, "weight": 3130 },   //Coins
           { "id": 995, "min": 25, "max": 25, "weight": 781 }   //Coins
