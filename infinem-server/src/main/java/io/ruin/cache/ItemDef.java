@@ -385,22 +385,6 @@ public class ItemDef {
             name = "Clue key";
             inventoryOptions[3] = "Check-Hint";
         }
-
-        if(id == 6806) {
-            name = "Green Skin Scroll";
-            inventoryOptions[0] = "Redeem";
-        }
-
-        if(id == 6807) {
-            name = "Blue Skin Scroll";
-            inventoryOptions[0] = "Redeem";
-        }
-
-        if(id == 6808) {
-            name = "Purple Skin Scroll";
-            inventoryOptions[0] = "Redeem";
-        }
-
         if(id == 19625) {
             name = "Home teleport";
         }

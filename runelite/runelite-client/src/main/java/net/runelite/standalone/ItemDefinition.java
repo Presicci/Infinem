@@ -1075,22 +1075,6 @@ public class ItemDefinition extends DualNode implements RSItemDefinition {
          name = "LMS Sticks";
          isTradable = false;
       }
-
-      if(id == 6806) {
-         name = "Green Skin Scroll";
-         inventoryActions[0] = "Redeem";
-      }
-
-      if(id == 6807) {
-         name = "Blue Skin Scroll";
-         inventoryActions[0] = "Redeem";
-      }
-
-      if(id == 6808) {
-         name = "Purple Skin Scroll";
-         inventoryActions[0] = "Redeem";
-      }
-
       if(id == 19625) {
          name = "Home teleport";
       }
