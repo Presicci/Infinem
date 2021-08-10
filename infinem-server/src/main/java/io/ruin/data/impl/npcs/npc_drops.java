@@ -149,26 +149,45 @@ public class npc_drops extends DataFile {
                                 || chanceLine.contains("Catacombs") || chanceLine.contains("Twisted")
                                 || chanceLine.contains("Krystilia") || chanceLine.contains("pickpocket")
                                 || chanceLine.contains("cavalier") || chanceLine.contains("superior")
-                                || chanceLine.contains("Deadman") || chanceLine.contains("Defenders")) {
+                                || chanceLine.contains("Deadman") || chanceLine.contains("Defenders")
+                                || chanceLine.contains("unarmed") || chanceLine.contains("are dropped at a time")) {
                             continue;
                         } else if (chanceLine.contains("herb subtable") || chanceLine.contains("Due to a unique mechanic")
                                 || chanceLine.contains("noted herbs") || chanceLine.contains("shard table")
                                 || chanceLine.contains("unique table") || chanceLine.contains("unique drop table")
-                                || chanceLine.contains("bolt tips") || chanceLine.contains("sigil drop table")) {
+                                || chanceLine.contains("bolt tips") || chanceLine.contains("sigil drop table")
+                                || chanceLine.contains("uniques sub-table") || chanceLine.contains("noted herb")
+                                || chanceLine.contains("bush seed table") || chanceLine.contains("hops seed table")
+                                || chanceLine.contains("fruit tree seed table")) {
                             dl = dl.nextElementSibling();
+                        } else if (chanceLine.contains("robe subtable")) {
+                            dl = dl.nextElementSibling().nextElementSibling();
                         } else {
-                            if (chanceLine.length() < 3) {
+                            if (chanceLine.length() < 3 || !dl.nextElementSibling().is("table")) {
                                 continue;
                             }
-                            String[] chanceWords = chanceLine.split(" ");
-                            String chance = chanceWords[3];
-                            String tableType = chanceWords[8] + " " + chanceWords[9];
-                            String[] chanceSplit = chance.split("/");
-                            int finalChance = (int) ((Double.parseDouble(chanceSplit[0]) / Double.parseDouble(chanceSplit[1])) * 100000);
-                            if (tableType.equalsIgnoreCase("general seed")) {
-                                table.addTable(tableType, finalChance, new LootItem(0, 1, 1, 5));
+                            if (chanceLine.contains("/")) {
+                                String[] chanceWords = chanceLine.split(" ");
+                                String chance = chanceWords[3];
+                                String tableType = chanceWords[8] + " " + chanceWords[9];
+                                String[] chanceSplit = chance.split("/");
+                                int finalChance = (int) ((Double.parseDouble(chanceSplit[0]) / Double.parseDouble(chanceSplit[1])) * 100000);
+                                if (tableType.equalsIgnoreCase("general seed")) {
+                                    table.addTable(tableType, finalChance, new LootItem(0, 1, 1, 5));
+                                } else {
+                                    table.addTable(tableType, finalChance);
+                                }
                             } else {
-                                table.addTable(tableType, finalChance);
+                                String[] chanceWords = chanceLine.split(" ");
+                                String chance = chanceWords[3] + chanceWords[4] + chanceWords[5];
+                                String tableType = chanceWords[10] + " " + chanceWords[11];
+                                String[] chanceSplit = chance.split("in");
+                                int finalChance = (int) ((Double.parseDouble(chanceSplit[0]) / Double.parseDouble(chanceSplit[1])) * 100000);
+                                if (tableType.equalsIgnoreCase("general seed")) {
+                                    table.addTable(tableType, finalChance, new LootItem(0, 1, 1, 5));
+                                } else {
+                                    table.addTable(tableType, finalChance);
+                                }
                             }
                             continue;
                         }
