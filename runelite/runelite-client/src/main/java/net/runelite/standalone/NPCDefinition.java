@@ -784,9 +784,6 @@ public class NPCDefinition extends DualNode implements RSNPCDefinition {
          actions[1] = "Rewards";
       } else if (id == 7941) {
          actions[2] = actions[3] = actions[4] = null;
-      } else if (id == 3080) { // man at home. remove attack option so people can't be assholes to newbies that are just starting out
-         actions[1] = null;
-         combatLevel = 0;
       } else if (id == 307) { // second guide npc (with no options); originally dr jekyll
          name = CustomMain.worldType.getName() + " Expert";
          actions[0] = null;
