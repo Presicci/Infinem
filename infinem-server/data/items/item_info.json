@@ -41215,21 +41215,21 @@
   },
   { #Green Skin scroll
     "id": 6806,
-    "tradeable": true,
+    "tradeable": false,
     "examine": "It's a challenge from the Skeleton Champion!",
     "weight": 0.0,
 	"protect_value": 0
   },
   { #Blue Skin scroll
     "id": 6807,
-    "tradeable": true,
+    "tradeable": false,
     "examine": "It's a challenge from the Zombie Champion!",
     "weight": 0.0,
 	"protect_value": 0
   },
   { #Purple Skin scroll,
     "id": 6808,
-    "tradeable": true,
+    "tradeable": false,
     "examine": "It's a challenge from the Human Champion!",
     "weight": 0.0,
 	"protect_value": 0
@@ -99373,6 +99373,29 @@
         "examine": "Corrupted crystal - Examine not set.",
         "weight": 0.0,
     	"protect_value": 20086033
-      }
+      },
 
+  { #Green Skin scroll,
+  "id": 30322,
+  "tradeable": true,
+  "examine": "Can be redeemed to unlock the green skin color.",
+  "weight": 0.0,
+  "protect_value": 0
+  },
+
+  { #Blue Skin scroll,
+  "id": 30323,
+  "tradeable": true,
+  "examine": "Can be redeemed to unlock the blue skin color.",
+  "weight": 0.0,
+  "protect_value": 0
+  },
+
+  { #Purple Skin scroll,
+  "id": 30324,
+  "tradeable": true,
+  "examine": "Can be redeemed to unlock the purple skin color.",
+  "weight": 0.0,
+  "protect_value": 0
+  }
 ]
