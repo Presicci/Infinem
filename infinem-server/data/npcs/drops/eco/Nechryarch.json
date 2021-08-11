@@ -1,13 +1,13 @@
 [
   {
-    "ids": [ 8, 11 ],
+    "ids": [  ],
     "guaranteed": [
-      { "id": 25772, "min": 1, "max": 1 }   //Malicious ashes
+      { "id": 592, "min": 1, "max": 1 }   //Ashes
     ],
     "tables": [
       {
         "name": "Weapons and armour",
-        "weight": 162,
+        "weight": 70,
         "items": [
           { "id": 1073, "min": 1, "max": 1, "weight": 3450 },   //Adamant platelegs
           { "id": 1319, "min": 1, "max": 1, "weight": 3450 },   //Rune 2h sword
@@ -18,7 +18,7 @@
       },
       {
         "name": "Runes",
-        "weight": 337,
+        "weight": 145,
         "items": [
           { "id": 562, "min": 37, "max": 37, "weight": 6900 },   //Chaos rune
           { "id": 560, "min": 5, "max": 5, "weight": 5170 },   //Death rune
@@ -29,7 +29,7 @@
       },
       {
         "name": "Coins",
-        "weight": 418,
+        "weight": 180,
         "items": [
           { "id": 995, "min": 1000, "max": 1499, "weight": 11199 },   //Coins
           { "id": 995, "min": 1500, "max": 2000, "weight": 9050 },   //Coins
@@ -41,7 +41,7 @@
       },
       {
         "name": "Other",
-        "weight": 81,
+        "weight": 35,
         "items": [
           { "id": 1762, "min": 25, "max": 25, "weight": 3450 },   //Soft clay (noted)
           { "id": 361, "min": 1, "max": 1, "weight": 2590 }   //Tuna
@@ -49,9 +49,9 @@
       },
       {
         "name": "Tertiary",
-        "weight": 10,
+        "weight": 45,
         "items": [
-          { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
+          { "id": 2722, "min": 1, "max": 1, "weight": 7810 }   //Clue scroll (hard)
         ]
       }
     ]

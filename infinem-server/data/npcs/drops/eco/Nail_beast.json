@@ -1,9 +1,20 @@
 [
   {
-    "ids": [ 2946, 2947, 2948 ],
+    "ids": [ 2946, 2947, 2948, 9612, 9613 ],
     "guaranteed": [
-      { "id": 532, "min": 1, "max": 1 }, //Big bones
-      { "id": 10937, "min": 1, "max": 1 } //Nail beast nails
+      { "id": 532, "min": 1, "max": 1 },   //Big bones
+      { "id": 10937, "min": 1, "max": 1 }   //Nail beast nails
+    ],
+    "tables": [
+      {
+        "name": "Tertiary",
+        "weight": 1,
+        "items": [
+          { "id": -1, "min": 1, "max": 1, "weight": 4800 },   //Nothing
+          { "id": 10976, "min": 1, "max": 1, "weight": 12 },   //Long bone
+          { "id": 10977, "min": 1, "max": 1, "weight": 1 }   //Curved bone
+        ]
+      }
     ]
   }
 ]
