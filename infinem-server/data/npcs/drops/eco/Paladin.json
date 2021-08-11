@@ -1,53 +1,59 @@
 [
   {
-    "ids": [ 3104, 3105 ],
+    "ids": [ 1144, 3104, 3105, 8150, 8849, 8850, 8853 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 } //Bones
+      { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
-        "name": "Herbs",
-        "weight": 1,
+        "name": "Weapons and armour",
+        "weight": 32,
         "items": [
-          { "id": 199, "min": 1, "max": 1, "weight": 9 }, //Grimy guam leaf
-          { "id": 201, "min": 1, "max": 1, "weight": 9 }, //Grimy marrentill
-          { "id": 203, "min": 1, "max": 1, "weight": 9 }, //Grimy tarromin
-          { "id": 205, "min": 1, "max": 1, "weight": 6 }, //Grimy harralander
-          { "id": 207, "min": 1, "max": 1, "weight": 6 }, //Grimy ranarr weed
-          { "id": 209, "min": 1, "max": 1, "weight": 6 }, //Grimy irit leaf
-          { "id": 211, "min": 1, "max": 1, "weight": 3 }, //Grimy avantoe
-          { "id": 213, "min": 1, "max": 1, "weight": 3 }, //Grimy kwuarm
-          { "id": 215, "min": 1, "max": 1, "weight": 3 }, //Grimy cadantine
-          { "id": 2485, "min": 1, "max": 1, "weight": 1 }, //Grimy lantadyme
-          { "id": 217, "min": 1, "max": 1, "weight": 1 } //Grimy dwarf weed
+          { "id": 1281, "min": 1, "max": 1, "weight": 1560 },   //Steel sword
+          { "id": 1295, "min": 1, "max": 1, "weight": 781 },   //Steel longsword
+          { "id": 1157, "min": 1, "max": 1, "weight": 781 }   //Steel full helm
         ]
       },
       {
-        "name": "Armour, weapons and ammunition",
-        "weight": 1,
+        "name": "Runes",
+        "weight": 113,
         "items": [
-          { "id": 1281, "min": 1, "max": 1, "weight": 6 }, //Steel sword
-          { "id": 1295, "min": 1, "max": 1, "weight": 3 }, //Steel longsword
-          { "id": 1157, "min": 1, "max": 1, "weight": 3 }, //Steel full helm
-          { "id": 555, "min": 30, "max": 30, "weight": 1 }, //Water rune
-          { "id": 565, "min": 1, "max": 1, "weight": 1 } //Blood rune
+          { "id": 555, "min": 30, "max": 30, "weight": 10200 },   //Water rune
+          { "id": 565, "min": 1, "max": 1, "weight": 781 }   //Blood rune
         ]
       },
       {
-        "name": "Other",
-        "weight": 1,
+        "name": "Materials",
+        "weight": 88,
         "items": [
-          { "id": 995, "min": 2, "max": 2, "weight": 9 }, //Coins
-          { "id": 995, "min": 8, "max": 8, "weight": 9 }, //Coins
-          { "id": 995, "min": 15, "max": 15, "weight": 9 }, //Coins
-          { "id": 995, "min": 48, "max": 48, "weight": 6 }, //Coins
-          { "id": 995, "min": 120, "max": 120, "weight": 6 }, //Coins
-          { "id": 2351, "min": 1, "max": 1, "weight": 6 }, //Iron bar
-          { "id": 2359, "min": 1, "max": 1, "weight": 3 }, //Mithril bar
-          { "id": 2353, "min": 1, "max": 1, "weight": 3 }, //Steel bar
-          { "id": 1458, "min": 1, "max": 1, "weight": 3 }, //Law talisman
-          { "id": 2801, "min": 1, "max": 1, "weight": 1 }, //Clue scroll (medium)
-          { "id": 1617, "min": 1, "max": 1, "weight": 1 } //Uncut diamond
+          { "id": 2351, "min": 1, "max": 1, "weight": 7030 },   //Iron bar
+          { "id": 2359, "min": 1, "max": 1, "weight": 781 },   //Mithril bar
+          { "id": 2353, "min": 1, "max": 1, "weight": 781 }   //Steel bar
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 64,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 701,
+        "items": [
+          { "id": 995, "min": 48, "max": 48, "weight": 31300 },   //Coins
+          { "id": 995, "min": 15, "max": 15, "weight": 14800 },   //Coins
+          { "id": 995, "min": 2, "max": 2, "weight": 12500 },   //Coins
+          { "id": 995, "min": 8, "max": 8, "weight": 7810 },   //Coins
+          { "id": 995, "min": 120, "max": 120, "weight": 1560 }   //Coins
+        ]
+      }
+      {
+        "name": "Tertiary",
+        "weight": 8,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (medium)
         ]
       }
     ]
