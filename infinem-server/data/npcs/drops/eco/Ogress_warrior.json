@@ -1,0 +1,75 @@
+[
+  {
+    "ids": [ 7989, 7990 ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
+    ],
+    "tables": [
+      {
+        "name": "Armour",
+        "weight": 60,
+        "items": [
+          { "id": 1197, "min": 1, "max": 1, "weight": 6030 }   //Mithril kiteshield
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 637,
+        "items": [
+          { "id": 888, "min": 5, "max": 15, "weight": 6030 },   //Mithril arrow
+          { "id": 562, "min": 15, "max": 30, "weight": 6030 },   //Chaos rune
+          { "id": 563, "min": 8, "max": 15, "weight": 6030 },   //Law rune
+          { "id": 561, "min": 8, "max": 15, "weight": 6030 },   //Nature rune
+          { "id": 560, "min": 8, "max": 15, "weight": 5170 },   //Death rune
+          { "id": 556, "min": 10, "max": 20, "weight": 4310 },   //Air rune
+          { "id": 564, "min": 10, "max": 15, "weight": 4310 },   //Cosmic rune
+          { "id": 557, "min": 10, "max": 20, "weight": 4310 },   //Earth rune
+          { "id": 554, "min": 10, "max": 20, "weight": 4310 },   //Fire rune
+          { "id": 558, "min": 10, "max": 20, "weight": 4310 },   //Mind rune
+          { "id": 555, "min": 10, "max": 20, "weight": 4310 },   //Water rune
+          { "id": 886, "min": 10, "max": 30, "weight": 4310 },   //Steel arrow
+          { "id": 884, "min": 20, "max": 40, "weight": 4310 }   //Iron arrow
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 43,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 181,
+        "items": [
+          { "id": 225, "min": 1, "max": 1, "weight": 4310 },   //Limpwurt root
+          { "id": 1617, "min": 1, "max": 1, "weight": 3450 },   //Uncut diamond
+          { "id": 1621, "min": 1, "max": 1, "weight": 3450 },   //Uncut emerald
+          { "id": 1619, "min": 1, "max": 1, "weight": 3450 },   //Uncut ruby
+          { "id": 1623, "min": 1, "max": 1, "weight": 3450 }   //Uncut sapphire
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 77,
+        "items": [
+          { "id": 995, "min": 500, "max": 1000, "weight": 7760 }   //Coins
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 131,
+        "items": [
+          { "id": 329, "min": 1, "max": 3, "weight": 5000 },   //Salmon
+          { "id": 13478, "min": 1, "max": 1, "weight": 3330 },   //Ensouled ogre head
+          { "id": 1147, "min": 1, "max": 1, "weight": 2500 },   //Rune med helm
+          { "id": 1163, "min": 1, "max": 1, "weight": 1000 },   //Rune full helm
+          { "id": 1373, "min": 1, "max": 1, "weight": 1000 },   //Rune battleaxe
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 21838, "min": 1, "max": 1, "weight": 83 },   //Shaman mask
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
+        ]
+      }
+    ]
+  }
+]
