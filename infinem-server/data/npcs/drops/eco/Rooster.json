@@ -1,16 +1,24 @@
 [
   {
-    "ids": [ 3663 ],
+    "ids": [ 1175, 2803, 3663 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 },   //Bones
+      { "id": 2138, "min": 1, "max": 1 }   //Raw chicken
+    ],
     "tables": [
       {
-        "name": "Drops",
+        "name": "Other",
+        "weight": 299,
+        "items": [
+          { "id": 314, "min": 5, "max": 5, "weight": 50000 },   //Feather
+          { "id": 314, "min": 15, "max": 15, "weight": 25000 }   //Feather
+        ]
+      },
+      {
+        "name": "Tertiary",
         "weight": 1,
         "items": [
-          { "id": 526, "min": 1, "max": 1, "weight": 6 }, //Bones
-          { "id": 2138, "min": 1, "max": 1, "weight": 6 }, //Raw chicken
-          { "id": 314, "min": 5, "max": 5, "weight": 3 }, //Feather
-          { "id": 314, "min": 10, "max": 10, "weight": 3 }, //Feather
-          { "id": 314, "min": 15, "max": 15, "weight": 1 } //Feather
+          { "id": 23182, "min": 1, "max": 1, "weight": 333 }   //Clue scroll (beginner)
         ]
       }
     ]

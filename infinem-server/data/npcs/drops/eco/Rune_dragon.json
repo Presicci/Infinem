@@ -1,69 +1,66 @@
-  [
+[
   {
-    "ids": [8031, 8090],
+    "ids": [ 8027, 8031, 8091 ],
     "guaranteed": [
       { "id": 536, "min": 1, "max": 1 },   //Dragon bones
       { "id": 2363, "min": 1, "max": 1 }   //Runite bar
     ],
     "tables": [
       {
-        "name": "Weapons/Armour",
-        "weight": 10,
+        "name": "Weapons and armour",
+        "weight": 35880,
         "items": [
-          { "id": 1432, "min": 1, "max": 1, "weight": 2 },   //Rune mace
-          { "id": 1333, "min": 1, "max": 1, "weight": 2 },   //Rune scimitar
-          { "id": 1303, "min": 1, "max": 1, "weight": 2 },   //Rune longsword
-          { "id": 1347, "min": 1, "max": 1, "weight": 2 },   //Rune warhammer
-          { "id": 1127, "min": 1, "max": 1, "weight": 2 },   //Rune platebody
-          { "id": 1079, "min": 1, "max": 1, "weight": 2 },   //Rune platelegs
-          { "id": 4087, "min": 1, "max": 1, "weight": 1 },   //Dragon platelegs
-          { "id": 4585, "min": 1, "max": 1, "weight": 1 },   //Dragon plateskirt
-          { "id": 1149, "min": 1, "max": 1, "weight": 1 }   //Dragon med helm
+          { "id": 1127, "min": 1, "max": 1, "weight": 7090 },   //Rune platebody
+          { "id": 1303, "min": 1, "max": 1, "weight": 6300 },   //Rune longsword
+          { "id": 1432, "min": 1, "max": 1, "weight": 5510 },   //Rune mace
+          { "id": 1333, "min": 1, "max": 1, "weight": 5510 },   //Rune scimitar
+          { "id": 1347, "min": 1, "max": 1, "weight": 5510 },   //Rune warhammer
+          { "id": 1079, "min": 1, "max": 1, "weight": 4720 },   //Rune platelegs
+          { "id": 4087, "min": 1, "max": 1, "weight": 787 },   //Dragon platelegs
+          { "id": 4585, "min": 1, "max": 1, "weight": 787 },   //Dragon plateskirt
+          { "id": 1149, "min": 1, "max": 1, "weight": 787 }   //Dragon med helm
         ]
       },
       {
-        "name": "Runes/Ammunition",
-        "weight": 10,
+        "name": "Runes and ammunition",
+        "weight": 22904,
         "items": [
-          { "id": 892, "min": 30, "max": 42, "weight": 3 },   //Rune arrow
-          { "id": 562, "min": 76, "max": 150, "weight": 3 },   //Chaos rune
-          { "id": 560, "min": 40, "max": 100, "weight": 3 },   //Death rune
-          { "id": 21880, "min": 30, "max": 50, "weight": 1 }   //Wrath rune
+          { "id": 892, "min": 30, "max": 40, "weight": 6300 },   //Rune arrow
+          { "id": 21880, "min": 30, "max": 50, "weight": 6300 },   //Wrath rune
+          { "id": 562, "min": 75, "max": 150, "weight": 5510 },   //Chaos rune
+          { "id": 560, "min": 50, "max": 100, "weight": 5510 }   //Death rune
         ]
       },
       {
-        "name": "Herbs",
-        "weight": 10,
+        "name": "useful herb",
+        "weight": 6100,
         "items": [
-          { "id": 212, "min": 1, "max": 1, "weight": 1 },   //Grimy avantoe (noted)
-          { "id": 3052, "min": 1, "max": 1, "weight": 1 },   //Grimy snapdragon (noted)
-          { "id": 220, "min": 1, "max": 1, "weight": 1 },   //Grimy torstol (noted)
-          { "id": 208, "min": 1, "max": 1, "weight": 1 }   //Grimy ranarr weed (noted)
-        ]
-      },
-      {
-        "name": "Materials",
-        "weight": 10,
-        "items": [
-          { "id": 19580, "min": 21, "max": 29, "weight": 3 },   //Rune javelin heads
-          { "id": 19582, "min": 32, "max": 40, "weight": 3 },   //Dragon javelin heads
-          { "id": 1616, "min": 1, "max": 1, "weight": 2 },   //Dragonstone (noted)
-          { "id": 452, "min": 2, "max": 5, "weight": 2 },   //Runite ore (noted)
-          { "id": 9381, "min": 20, "max": 40, "weight": 2 },   //Runite bolts (unf)
-          { "id": 21930, "min": 20, "max": 40, "weight": 2 }   //Dragon bolts (unf)
+          { "id": 0, "min": 5, "max": 5, "weight": 5 }
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 35106,
         "items": [
-          { "id": 22118, "min": 1, "max": 1, "weight": 30 },   //Wrath talisman
-          { "id": 12073, "min": 1, "max": 1, "weight": 7 },   //Clue scroll (elite)
-          { "id": 21918, "min": 1, "max": 1, "weight": 4 },   //Dragon limbs
-          { "id": 22103, "min": 1, "max": 1, "weight": 4 },   //Dragon metal lump
-          { "id": 11286, "min": 1, "max": 1, "weight": 1 }   //Draconic visage
+          { "id": 9381, "min": 20, "max": 30, "weight": 8660 },   //Runite bolts (unf)
+          { "id": 19580, "min": 20, "max": 30, "weight": 11800 },   //Rune javelin heads
+          { "id": 1616, "min": 1, "max": 1, "weight": 5510 },   //Dragonstone (noted)
+          { "id": 452, "min": 2, "max": 5, "weight": 4720 },   //Runite ore (noted)
+          { "id": 19582, "min": 30, "max": 40, "weight": 3939 },   //Dragon javelin heads
+          { "id": 21930, "min": 20, "max": 40, "weight": 787 },   //Dragon bolts (unf)
+          { "id": 22118, "min": 1, "max": 1, "weight": 787 }   //Wrath talisman
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 475,
+        "items": [
+          { "id": 12073, "min": 1, "max": 1, "weight": 333 },   //Clue scroll (elite)
+          { "id": 21918, "min": 1, "max": 1, "weight": 125 },   //Dragon limbs
+          { "id": 22103, "min": 1, "max": 1, "weight": 20 },   //Dragon metal lump
+          { "id": 11286, "min": 1, "max": 1, "weight": 12 }   //Draconic visage
         ]
       }
     ]
   }
-  ]
+]

@@ -4,48 +4,67 @@
     "tables": [
       {
         "name": "Weapons",
-        "weight": 1,
+        "weight": 10186,
         "items": [
-          { "id": 1265, "min": 1, "max": 1, "weight": 6 }, //Bronze pickaxe
-          { "id": 1267, "min": 1, "max": 1, "weight": 3 }, //Iron pickaxe
-          { "id": 1351, "min": 1, "max": 1, "weight": 1 } //Bronze axe
+          { "id": 1265, "min": 1, "max": 1, "weight": 4690 },   //Bronze pickaxe
+          { "id": 1267, "min": 1, "max": 1, "weight": 3910 }   //Iron pickaxe
         ]
       },
       {
-        "name": "Runes and talisman",
-        "weight": 1,
+        "name": "Seaweed",
+        "weight": 11110,
         "items": [
-          { "id": 554, "min": 7, "max": 7, "weight": 6 }, //Fire rune
-          { "id": 561, "min": 4, "max": 4, "weight": 3 }, //Nature rune
-          { "id": 562, "min": 1, "max": 1, "weight": 1 } //Chaos rune
+          { "id": 401, "min": 1, "max": 1, "weight": 3130 },   //Seaweed
+          { "id": 401, "min": 2, "max": 2, "weight": 3130 },   //Seaweed
+          { "id": 401, "min": 5, "max": 5, "weight": 1560 },   //Seaweed
+          { "id": 403, "min": 2, "max": 2, "weight": 1560 }   //Edible seaweed
         ]
       },
       {
-        "name": "Others",
-        "weight": 1,
+        "name": "Ores",
+        "weight": 9251,
         "items": [
-          { "id": 995, "min": 4, "max": 413, "weight": 12 }, //Coins
-          { "id": 407, "min": 1, "max": 2, "weight": 12 }, //Oyster
-          { "id": 401, "min": 1, "max": 5, "weight": 12 }, //Seaweed
-          { "id": 411, "min": 1, "max": 1, "weight": 12 }, //Oyster pearl
-          { "id": 409, "min": 1, "max": 1, "weight": 12 }, //Empty oyster
-          { "id": 1969, "min": 1, "max": 1, "weight": 12 }, //Spinach roll
-          { "id": 946, "min": 1, "max": 1, "weight": 9 }, //Knife
-          { "id": 45, "min": 5, "max": 5, "weight": 9 }, //Opal bolt tips
-          { "id": 440, "min": 1, "max": 1, "weight": 9 }, //Iron ore
-          { "id": 453, "min": 2, "max": 2, "weight": 9 }, //Coal
-          { "id": 436, "min": 3, "max": 3, "weight": 9 }, //Copper ore
-          { "id": 438, "min": 3, "max": 3, "weight": 9 }, //Tin ore
-          { "id": 313, "min": 1, "max": 10, "weight": 6 }, //Fishing bait
-          { "id": 403, "min": 2, "max": 2, "weight": 6 }, //Edible seaweed
-          { "id": 9187, "min": 1, "max": 1, "weight": 6 }, //Jade bolt tips
-          { "id": 225, "min": 1, "max": 1, "weight": 6 }, //Limpwurt root
-          { "id": 207, "min": 1, "max": 1, "weight": 6 }, //Grimy ranarr weed
-          { "id": 211, "min": 1, "max": 1, "weight": 6 }, //Grimy avantoe
-          { "id": 5293, "min": 1, "max": 1, "weight": 3 }, //Tarromin seed
-          { "id": 5295, "min": 1, "max": 1, "weight": 3 }, //Ranarr seed
-          { "id": 2677, "min": 1, "max": 1, "weight": 3 }, //Clue scroll (easy)
-          { "id": 2742, "min": 1, "max": 1, "weight": 1 } //Casket
+          { "id": 438, "min": 3, "max": 3, "weight": 3130 },   //Tin ore
+          { "id": 440, "min": 1, "max": 1, "weight": 1560 },   //Iron ore
+          { "id": 453, "min": 2, "max": 2, "weight": 1560 },   //Coal
+          { "id": 436, "min": 3, "max": 3, "weight": 1560 }   //Copper ore
+        ]
+      },
+      {
+        "name": "Oyster",
+        "weight": 24058,
+        "items": [
+          { "id": 407, "min": 2, "max": 2, "weight": 9380 },   //Oyster
+          { "id": 407, "min": 1, "max": 1, "weight": 7030 },   //Oyster
+          { "id": 409, "min": 1, "max": 1, "weight": 2339 },   //Empty oyster
+          { "id": 409, "min": 3, "max": 3, "weight": 781 },   //Empty oyster
+          { "id": 411, "min": 1, "max": 1, "weight": 781 }   //Oyster pearl
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 39846,
+        "items": [
+          { "id": 995, "min": 4, "max": 4, "weight": 22699 },   //Coins
+          { "id": 995, "min": 8, "max": 8, "weight": 4690 },   //Coins
+          { "id": 995, "min": 36, "max": 36, "weight": 6250 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 5545,
+        "items": [
+          { "id": 313, "min": 10, "max": 10, "weight": 1560 },   //Fishing bait
+          { "id": 45, "min": 5, "max": 5, "weight": 1560 },   //Opal bolt tips
+          { "id": 1969, "min": 1, "max": 1, "weight": 781 },   //Spinach roll
+          { "id": 405, "min": 1, "max": 1, "weight": 781 }   //Casket
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 925,
+        "items": [
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (easy)
         ]
       }
     ]

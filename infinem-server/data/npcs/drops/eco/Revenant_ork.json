@@ -1,0 +1,83 @@
+[
+  {
+    "ids": [ 7937 ],
+    "guaranteed": [
+      { "id": 21820, "min": 2, "max": 22 }   //Revenant ether
+    ],
+    "tables": [
+      {
+        "name": "Unique",
+        "weight": 11,
+        "items": [
+          { "id": 22557, "min": 1, "max": 1, "weight": 4 },   //Amulet of avarice
+          { "id": 22547, "min": 1, "max": 1, "weight": 2 },   //Craw's bow (u)
+          { "id": 22552, "min": 1, "max": 1, "weight": 2 },   //Thammaron's sceptre (u)
+          { "id": 22542, "min": 1, "max": 1, "weight": 2 }   //Viggora's chainmace (u)
+        ]
+      },
+      {
+        "name": "Ancient statuettes",
+        "weight": 202,
+        "items": [
+          { "id": 21807, "min": 1, "max": 1, "weight": 68 },   //Ancient emblem
+          { "id": 21810, "min": 1, "max": 1, "weight": 45 },   //Ancient totem
+          { "id": 21813, "min": 1, "max": 1, "weight": 22 },   //Ancient statuette
+          { "id": 21804, "min": 1, "max": 1, "weight": 34 },   //Ancient crystal
+          { "id": 22299, "min": 1, "max": 1, "weight": 11 },   //Ancient medallion
+          { "id": 22302, "min": 1, "max": 1, "weight": 11 },   //Ancient effigy
+          { "id": 22305, "min": 1, "max": 1, "weight": 11 }   //Ancient relic
+        ]
+      },
+      {
+        "name": "Weapons and armour",
+        "weight": 22876,
+        "items": [
+          { "id": 21817, "min": 1, "max": 1, "weight": 10300 },   //Bracelet of ethereum (uncharged)
+          { "id": 1392, "min": 3, "max": 3, "weight": 3440 },   //Battlestaff (noted)
+          { "id": 1163, "min": 1, "max": 1, "weight": 1380 },   //Rune full helm
+          { "id": 1127, "min": 1, "max": 1, "weight": 1380 },   //Rune platebody
+          { "id": 1079, "min": 1, "max": 1, "weight": 1380 },   //Rune platelegs
+          { "id": 1201, "min": 1, "max": 1, "weight": 1380 },   //Rune kiteshield
+          { "id": 1347, "min": 1, "max": 1, "weight": 1380 },   //Rune warhammer
+          { "id": 4087, "min": 1, "max": 1, "weight": 344 },   //Dragon platelegs
+          { "id": 4585, "min": 1, "max": 1, "weight": 344 },   //Dragon plateskirt
+          { "id": 1215, "min": 1, "max": 1, "weight": 688 },   //Dragon dagger
+          { "id": 1305, "min": 1, "max": 1, "weight": 688 },   //Dragon longsword
+          { "id": 1149, "min": 1, "max": 1, "weight": 148 }   //Dragon med helm
+        ]
+      },
+      {
+        "name": "Resources",
+        "weight": 25585,
+        "items": [
+          { "id": 454, "min": 25, "max": 40, "weight": 4130 },   //Coal (noted)
+          { "id": 2362, "min": 4, "max": 6, "weight": 4130 },   //Adamantite bar (noted)
+          { "id": 452, "min": 1, "max": 3, "weight": 2750 },   //Runite ore (noted)
+          { "id": 2364, "min": 1, "max": 2, "weight": 2070 },   //Runite bar (noted)
+          { "id": 1748, "min": 3, "max": 4, "weight": 2750 },   //Black dragonhide (noted)
+          { "id": 8783, "min": 5, "max": 12, "weight": 2070 },   //Mahogany plank (noted)
+          { "id": 392, "min": 10, "max": 15, "weight": 2750 },   //Manta ray (noted)
+          { "id": 1516, "min": 20, "max": 40, "weight": 2750 },   //Yew logs (noted)
+          { "id": 1514, "min": 5, "max": 12, "weight": 1380 },   //Magic logs (noted)
+          { "id": 1632, "min": 2, "max": 5, "weight": 688 },   //Uncut dragonstone (noted)
+          { "id": 5315, "min": 2, "max": 7, "weight": 45 },   //Yew seed
+          { "id": 5316, "min": 2, "max": 7, "weight": 45 }   //Magic seed
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 51325,
+        "items": [
+          { "id": 995, "min": 1, "max": 251, "weight": 31300 },   //Coins
+          { "id": 21802, "min": 1, "max": 1, "weight": 3440 },   //Revenant cave teleport
+          { "id": 3025, "min": 1, "max": 3, "weight": 2070 },   //Super restore(4) (noted)
+          { "id": 9193, "min": 15, "max": 30, "weight": 2070 },   //Dragonstone bolt tips
+          { "id": 9194, "min": 2, "max": 4, "weight": 2070 },   //Onyx bolt tips
+          { "id": 563, "min": 20, "max": 45, "weight": 3440 },   //Law rune
+          { "id": 560, "min": 15, "max": 30, "weight": 3440 },   //Death rune
+          { "id": 565, "min": 10, "max": 20, "weight": 3440 }   //Blood rune
+        ]
+      }
+    ]
+  }
+]
