@@ -8135,7 +8135,7 @@ public final class Client extends GameShell implements Usernamed, RSClient {
                      drop[1] = var3.readUnsignedByte();     //broadcast
                      drop[2] = var3.readInt();              //min amount
                      drop[3] = var3.readInt();              //max amount
-                     drop[4] = var3.readUnsignedShort();    //average
+                     drop[4] = var3.readInt();              //average
                      drops.add(drop);
                   }
                   CustomDropViewerInterface.init(name, petId, petAverage, drops);

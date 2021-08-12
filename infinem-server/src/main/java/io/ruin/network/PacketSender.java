@@ -717,7 +717,7 @@ public class PacketSender {
             out.addByte(drop[1]);   //broadcast
             out.addInt(drop[2]);    //min amount
             out.addInt(drop[3]);    //max amount
-            out.addShort(drop[4]);  //average
+            out.addInt(drop[4]);  //average
         }
         write(out);
     }
