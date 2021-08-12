@@ -48,7 +48,7 @@
           { "id": 995, "min": 8, "max": 8, "weight": 7810 },   //Coins
           { "id": 995, "min": 120, "max": 120, "weight": 1560 }   //Coins
         ]
-      }
+      },
       {
         "name": "Tertiary",
         "weight": 8,
