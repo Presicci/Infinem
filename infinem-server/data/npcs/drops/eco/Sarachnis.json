@@ -1,0 +1,90 @@
+[
+  {
+    "ids": [ 8713 ],
+    "tables": [
+      {
+        "name": "Pre-roll",
+        "weight": 823,
+        "items": [
+          { "id": 1149, "min": 1, "max": 1, "weight": 521 },   //Dragon med helm
+          { "id": 23528, "min": 1, "max": 1, "weight": 260 }   //Sarachnis cudgel
+        ]
+      },
+      {
+        "name": "Weapons and armour",
+        "weight": 8440,
+        "items": [
+          { "id": 1392, "min": 8, "max": 10, "weight": 2000 },   //Battlestaff (noted)
+          { "id": 1127, "min": 1, "max": 1, "weight": 2000 },   //Rune platebody
+          { "id": 1147, "min": 1, "max": 1, "weight": 2000 },   //Rune med helm
+          { "id": 1319, "min": 1, "max": 1, "weight": 2000 }   //Rune 2h sword
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 30595,
+        "items": [
+          { "id": 565, "min": 80, "max": 100, "weight": 5000 },   //Blood rune
+          { "id": 562, "min": 175, "max": 200, "weight": 5000 },   //Chaos rune
+          { "id": 564, "min": 125, "max": 150, "weight": 5000 },   //Cosmic rune
+          { "id": 560, "min": 80, "max": 100, "weight": 5000 },   //Death rune
+          { "id": 566, "min": 80, "max": 100, "weight": 5000 },   //Soul rune
+          { "id": 888, "min": 450, "max": 600, "weight": 2000 },   //Mithril arrow
+          { "id": 9142, "min": 175, "max": 225, "weight": 2000 }   //Mithril bolts
+        ]
+      },
+      {
+        "name": "Herbs",
+        "weight": 10554,
+        "items": [
+          { "id": 214, "min": 10, "max": 15, "weight": 1879 },   //Grimy kwuarm (noted)
+          { "id": 216, "min": 10, "max": 15, "weight": 1639 },   //Grimy cadantine (noted)
+          { "id": 218, "min": 10, "max": 15, "weight": 1520 },   //Grimy dwarf weed (noted)
+          { "id": 212, "min": 5, "max": 10, "weight": 1330 },   //Grimy avantoe (noted)
+          { "id": 2486, "min": 10, "max": 15, "weight": 1030 },   //Grimy lantadyme (noted)
+          { "id": 208, "min": 5, "max": 10, "weight": 970 },   //Grimy ranarr weed (noted)
+          { "id": 3052, "min": 5, "max": 10, "weight": 909 },   //Grimy snapdragon (noted)
+          { "id": 220, "min": 5, "max": 10, "weight": 727 }   //Grimy torstol (noted)
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 28485,
+        "items": [
+          { "id": 448, "min": 60, "max": 90, "weight": 6000 },   //Mithril ore (noted)
+          { "id": 1750, "min": 15, "max": 25, "weight": 5000 },   //Red dragonhide (noted)
+          { "id": 1624, "min": 20, "max": 30, "weight": 4000 },   //Uncut sapphire (noted)
+          { "id": 450, "min": 30, "max": 40, "weight": 3000 },   //Adamantite ore (noted)
+          { "id": 1622, "min": 20, "max": 30, "weight": 3000 },   //Uncut emerald (noted)
+          { "id": 9194, "min": 8, "max": 10, "weight": 2000 },   //Onyx bolt tips
+          { "id": 1620, "min": 20, "max": 30, "weight": 2000 },   //Uncut ruby (noted)
+          { "id": 452, "min": 4, "max": 6, "weight": 1000 },   //Runite ore (noted)
+          { "id": 1618, "min": 20, "max": 30, "weight": 1000 }   //Uncut diamond (noted)
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 21100,
+        "items": [
+          { "id": 995, "min": 17000, "max": 25000, "weight": 6000 },   //Coins
+          { "id": 537, "min": 10, "max": 15, "weight": 5000 },   //Dragon bones (noted)
+          { "id": 7056, "min": 5, "max": 8, "weight": 5000 },   //Egg potato
+          { "id": 5941, "min": 4, "max": 6, "weight": 2000 },   //Weapon poison(++) (noted)
+          { "id": 989, "min": 1, "max": 1, "weight": 1000 },   //Crystal key
+          { "id": 6292, "min": 10, "max": 10, "weight": 1000 }   //Spider carcass (noted)
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 80064,
+        "items": [
+          { "id": 23517, "min": 1, "max": 1, "weight": 5000 },   //Giant egg sac(full)
+          { "id": 23499, "min": 1, "max": 1, "weight": 6669 },   //Grubby key
+          { "id": 2722, "min": 1, "max": 1, "weight": 2500 },   //Clue scroll (hard)
+          { "id": 12073, "min": 1, "max": 1, "weight": 1670 },   //Clue scroll (elite)
+          { "id": 23525, "min": 1, "max": 1, "weight": 50 }   //Jar of eyes
+        ]
+      }
+    ]
+  }
+]

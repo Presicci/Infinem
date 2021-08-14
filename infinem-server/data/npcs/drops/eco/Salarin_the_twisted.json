@@ -1,0 +1,67 @@
+[
+  {
+    "ids": [ 304 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons",
+        "weight": 1110,
+        "items": [
+          { "id": 1217, "min": 1, "max": 1, "weight": 781 }   //Black dagger
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 12234,
+        "items": [
+          { "id": 555, "min": 12, "max": 12, "weight": 3910 },   //Water rune
+          { "id": 563, "min": 2, "max": 2, "weight": 3130 },   //Law rune
+          { "id": 561, "min": 3, "max": 3, "weight": 781 },   //Nature rune
+          { "id": 554, "min": 36, "max": 36, "weight": 781 }   //Fire rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 43333,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 7782,
+        "items": [
+          { "id": 239, "min": 1, "max": 1, "weight": 3910 },   //White berries
+          { "id": 231, "min": 1, "max": 1, "weight": 781 },   //Snape grass
+          { "id": 227, "min": 1, "max": 1, "weight": 781 }   //Vial of water
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 12214,
+        "items": [
+          { "id": 995, "min": 3, "max": 3, "weight": 3910 },   //Coins
+          { "id": 995, "min": 24, "max": 24, "weight": 2339 },   //Coins
+          { "id": 995, "min": 10, "max": 10, "weight": 2339 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 23324,
+        "items": [
+          { "id": 167, "min": 1, "max": 1, "weight": 8590 },   //Super defence(1)
+          { "id": 993, "min": 1, "max": 1, "weight": 7810 }   //Sinister key
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 284,
+        "items": [
+          { "id": 12073, "min": 1, "max": 1, "weight": 200 }   //Clue scroll (elite)
+        ]
+      }
+    ]
+  }
+]

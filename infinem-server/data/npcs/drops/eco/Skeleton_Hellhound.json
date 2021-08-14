@@ -1,5 +1,19 @@
 [
   {
-    "ids": [ 5054, 6387, 6326 ]
+    "ids": [ 5054, 6387, 6613 ],
+    "guaranteed": [
+      { "id": 532, "min": 4, "max": 4 }   //Big bones
+    ],
+    "tables": [
+      {
+        "name": "Tertiary",
+        "weight": 1,
+        "items": [
+          { "id": -1, "min": 1, "max": 1, "weight": 4800 },   //Nothing
+          { "id": 10976, "min": 1, "max": 1, "weight": 12 },   //Long bone
+          { "id": 10977, "min": 1, "max": 1, "weight": 1 }   //Curved bone
+        ]
+      }
+    ]
   }
 ]

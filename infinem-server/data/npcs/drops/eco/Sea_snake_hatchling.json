@@ -1,35 +1,51 @@
 [
   {
     "ids": [ 1098 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
     "tables": [
       {
-        "name": "Always Drops ",
-        "weight": 1,
+        "name": "Runes and ammunition",
+        "weight": 4716,
         "items": [
-          { "id": 526, "min": 1, "max": 1, "weight": 1 } //Bones
+          { "id": 555, "min": 15, "max": 15, "weight": 1560 },   //Water rune
+          { "id": 4695, "min": 1, "max": 1, "weight": 1560 },   //Mist rune
+          { "id": 4160, "min": 4, "max": 4, "weight": 1560 }   //Broad arrows
         ]
       },
       {
-        "name": "Other ",
-        "weight": 1,
+        "name": "Coins",
+        "weight": 68516,
         "items": [
-          { "id": 995, "min": 23, "max": 23, "weight": 12 }, //Coins
-          { "id": 995, "min": 24, "max": 24, "weight": 12 }, //Coins
-          { "id": 995, "min": 44, "max": 44, "weight": 12 }, //Coins
-          { "id": 313, "min": 50, "max": 50, "weight": 12 }, //Fishing bait
-          { "id": 363, "min": 2, "max": 2, "weight": 12 }, //Raw bass
-          { "id": 377, "min": 1, "max": 1, "weight": 12 }, //Raw lobster
-          { "id": 401, "min": 5, "max": 5, "weight": 12 }, //Seaweed
-          { "id": 403, "min": 5, "max": 5, "weight": 6 }, //Edible seaweed
-          { "id": 823, "min": 2, "max": 2, "weight": 6 }, //Adamant dart tip
-          { "id": 4160, "min": 4, "max": 4, "weight": 6 }, //Broad arrows
-          { "id": 4695, "min": 1, "max": 1, "weight": 6 }, //Mist rune
-          { "id": 46, "min": 3, "max": 3, "weight": 6 }, //Pearl bolt tips
-          { "id": 411, "min": 2, "max": 2, "weight": 6 }, //Oyster pearl
-          { "id": 413, "min": 1, "max": 1, "weight": 3 }, //Oyster pearls
-          { "id": 571, "min": 1, "max": 1, "weight": 3 }, //Water orb
-          { "id": 2742, "min": 1, "max": 1, "weight": 3 }, //Casket
-          { "id": 2801, "min": 1, "max": 1, "weight": 1 } //Clue scroll (medium)
+          { "id": 995, "min": 44, "max": 44, "weight": 46900 },   //Coins
+          { "id": 995, "min": 32, "max": 32, "weight": 8590 },   //Coins
+          { "id": 995, "min": 24, "max": 24, "weight": 7030 },   //Coins
+          { "id": 995, "min": 23, "max": 23, "weight": 5470 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 26767,
+        "items": [
+          { "id": 823, "min": 2, "max": 2, "weight": 7810 },   //Adamant dart tip
+          { "id": 313, "min": 50, "max": 50, "weight": 3130 },   //Fishing bait
+          { "id": 46, "min": 3, "max": 3, "weight": 3130 },   //Pearl bolt tips
+          { "id": 571, "min": 1, "max": 1, "weight": 2339 },   //Water orb
+          { "id": 363, "min": 2, "max": 2, "weight": 3130 },   //Raw bass
+          { "id": 377, "min": 1, "max": 1, "weight": 1560 },   //Raw lobster
+          { "id": 401, "min": 5, "max": 5, "weight": 1560 },   //Seaweed
+          { "id": 403, "min": 5, "max": 5, "weight": 1560 },   //Edible seaweed
+          { "id": 411, "min": 2, "max": 2, "weight": 781 },   //Oyster pearl
+          { "id": 413, "min": 1, "max": 1, "weight": 781 },   //Oyster pearls
+          { "id": 405, "min": 1, "max": 1, "weight": 781 }   //Casket
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 787,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (medium)
         ]
       }
     ]

@@ -2,51 +2,53 @@
   {
     "ids": [ 2206 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 } //Bones
+      { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
-        "name": "Weapons",
-        "weight": 1,
+        "name": "Unique table",
+        "weight": 787,
         "items": [
-          { "id": 808, "min": 95, "max": 100, "weight": 200 }, //Steel dart
-          { "id": 11838, "min": 1, "max": 1, "weight": 1 } //Saradomin sword
+          { "id": 11838, "min": 1, "max": 1, "weight": 18 },   //Saradomin sword
+          { "id": 995, "min": 1400, "max": 1500, "weight": 769 }   //Coins
         ]
       },
       {
-        "name": "Runes/Arrows",
-        "weight": 700,
+        "name": "Godsword shard table",
+        "weight": 786,
         "items": [
-          { "id": 563, "min": 7, "max": 10, "weight": 1 }, //Law rune
-          { "id": 886, "min": 97, "max": 100, "weight": 1 } //Steel arrow
+          { "id": 11818, "min": 1, "max": 1, "weight": 65 },   //Godsword shard 1
+          { "id": 11820, "min": 1, "max": 1, "weight": 65 },   //Godsword shard 2
+          { "id": 11822, "min": 1, "max": 1, "weight": 65 },   //Godsword shard 3
+          { "id": 995, "min": 1300, "max": 1400, "weight": 591 }   //Coins
         ]
       },
       {
-        "name": "Herbs and Seeds",
-        "weight": 700,
+        "name": "Tertiary",
+        "weight": 781,
         "items": [
-          { "id": 208, "min": 1, "max": 1, "weight": 1 } //Grimy ranarr weed (noted)
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
         ]
       },
       {
-        "name": "Godsword shards",
-        "weight": 10,
+        "name": "Food and ammunition",
+        "weight": 31505,
         "items": [
-          { "id": 11818, "min": 1, "max": 1, "weight": 1 }, //Godsword shard 1
-          { "id": 11820, "min": 1, "max": 1, "weight": 1 }, //Godsword shard 2
-          { "id": 11822, "min": 1, "max": 1, "weight": 1 } //Godsword shard 3
+          { "id": 886, "min": 95, "max": 100, "weight": 6300 },   //Steel arrow
+          { "id": 808, "min": 95, "max": 100, "weight": 6300 },   //Steel dart
+          { "id": 563, "min": 5, "max": 10, "weight": 6300 },   //Law rune
+          { "id": 7946, "min": 3, "max": 3, "weight": 6300 },   //Monkfish
+          { "id": 7218, "min": 1, "max": 1, "weight": 6300 }   //Summer pie
         ]
       },
       {
         "name": "Other",
-        "weight": 700,
+        "weight": 66921,
         "items": [
-          { "id": 995, "min": 1300, "max": 2000, "weight": 30 }, //Coins
-          { "id": 232, "min": 5, "max": 5, "weight": 20 }, //Snape grass (noted)
-          { "id": 7218, "min": 1, "max": 1, "weight": 20 }, //Summer pie
-          { "id": 238, "min": 6, "max": 6, "weight": 10 }, //Unicorn horn (noted)
-          { "id": 7946, "min": 3, "max": 3, "weight": 10 }, //Monkfish
-          { "id": 2722, "min": 1, "max": 1, "weight": 1 } //Clue scroll (hard)
+          { "id": 995, "min": 1300, "max": 1400, "weight": 48800 },   //Coins
+          { "id": 208, "min": 1, "max": 1, "weight": 6300 },   //Grimy ranarr weed (noted)
+          { "id": 232, "min": 5, "max": 5, "weight": 5510 },   //Snape grass (noted)
+          { "id": 238, "min": 6, "max": 6, "weight": 6300 }   //Unicorn horn (noted)
         ]
       }
     ]

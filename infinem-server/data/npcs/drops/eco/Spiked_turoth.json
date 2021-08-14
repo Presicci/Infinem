@@ -1,0 +1,69 @@
+[
+  {
+    "ids": [ 10397 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 10925,
+        "items": [
+          { "id": 1069, "min": 1, "max": 1, "weight": 5470 },   //Steel platelegs
+          { "id": 1355, "min": 1, "max": 1, "weight": 2339 },   //Mithril axe
+          { "id": 1197, "min": 1, "max": 1, "weight": 781 },   //Mithril kiteshield
+          { "id": 1161, "min": 1, "max": 1, "weight": 781 },   //Adamant full helm
+          { "id": 1213, "min": 1, "max": 1, "weight": 781 },   //Rune dagger
+          { "id": 11902, "min": 1, "max": 1, "weight": 200 },   //Leaf-bladed sword
+          { "id": 4113, "min": 1, "max": 1, "weight": 195 }   //Mystic robe bottom (light)
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 9717,
+        "items": [
+          { "id": 563, "min": 3, "max": 3, "weight": 4690 },   //Law rune
+          { "id": 561, "min": 15, "max": 15, "weight": 3910 },   //Nature rune
+          { "id": 561, "min": 37, "max": 37, "weight": 781 }   //Nature rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 25086,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "rare seed",
+        "weight": 14566,
+        "items": [
+          { "id": 0, "min": 3, "max": 3, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 5666,
+        "items": [
+          { "id": 225, "min": 1, "max": 1, "weight": 5470 }   //Limpwurt root
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 34038,
+        "items": [
+          { "id": 995, "min": 44, "max": 44, "weight": 22699 },   //Coins
+          { "id": 995, "min": 132, "max": 132, "weight": 9380 },   //Coins
+          { "id": 995, "min": 440, "max": 440, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 809,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
+        ]
+      }
+    ]
+  }
+]

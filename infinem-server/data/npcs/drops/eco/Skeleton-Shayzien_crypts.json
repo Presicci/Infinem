@@ -1,0 +1,83 @@
+[
+  {
+    "ids": [ 8070, 8071, 8072 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 6848,
+        "items": [
+          { "id": 1357, "min": 1, "max": 1, "weight": 1670 },   //Adamant axe
+          { "id": 1287, "min": 1, "max": 1, "weight": 1670 },   //Adamant sword
+          { "id": 1333, "min": 1, "max": 1, "weight": 1670 },   //Rune scimitar
+          { "id": 1147, "min": 1, "max": 1, "weight": 1670 }   //Rune med helm
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 20495,
+        "items": [
+          { "id": 555, "min": 20, "max": 20, "weight": 3330 },   //Water rune
+          { "id": 564, "min": 12, "max": 12, "weight": 5000 },   //Cosmic rune
+          { "id": 562, "min": 10, "max": 10, "weight": 3330 },   //Chaos rune
+          { "id": 563, "min": 8, "max": 8, "weight": 3330 },   //Law rune
+          { "id": 888, "min": 15, "max": 15, "weight": 3330 },   //Mithril arrow
+          { "id": 565, "min": 10, "max": 10, "weight": 1670 }   //Blood rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 854,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "general seed",
+        "weight": 854,
+        "items": [
+          { "id": 0, "min": 0, "max": 0, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 5977,
+        "items": [
+          { "id": 2359, "min": 1, "max": 1, "weight": 5000 },   //Mithril bar
+          { "id": 45, "min": 4, "max": 10, "weight": 134 },   //Opal bolt tips
+          { "id": 9187, "min": 4, "max": 10, "weight": 44 },   //Jade bolt tips
+          { "id": 9188, "min": 4, "max": 10, "weight": 44 },   //Topaz bolt tips
+          { "id": 46, "min": 4, "max": 10, "weight": 134 },   //Pearl bolt tips
+          { "id": 9189, "min": 4, "max": 10, "weight": 44 },   //Sapphire bolt tips
+          { "id": 9190, "min": 4, "max": 10, "weight": 74 },   //Emerald bolt tips
+          { "id": 9191, "min": 4, "max": 10, "weight": 89 },   //Ruby bolt tips
+          { "id": 9192, "min": 4, "max": 10, "weight": 134 },   //Diamond bolt tips
+          { "id": 9193, "min": 4, "max": 10, "weight": 89 },   //Dragonstone bolt tips
+          { "id": 9194, "min": 4, "max": 10, "weight": 44 }   //Onyx bolt tips
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 64970,
+        "items": [
+          { "id": 995, "min": 5, "max": 5, "weight": 16699 },   //Coins
+          { "id": 995, "min": 25, "max": 25, "weight": 8330 },   //Coins
+          { "id": 995, "min": 40, "max": 40, "weight": 15800 },   //Coins
+          { "id": 995, "min": 80, "max": 80, "weight": 16699 },   //Coins
+          { "id": 995, "min": 45, "max": 45, "weight": 1670 },   //Coins
+          { "id": 995, "min": 100, "max": 200, "weight": 4170 }   //Coins
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 1045,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 1000 },   //Clue scroll (hard)
+          { "id": 6806, "min": 1, "max": 1, "weight": 20 }   //Skeleton champion scroll
+        ]
+      }
+    ]
+  }
+]

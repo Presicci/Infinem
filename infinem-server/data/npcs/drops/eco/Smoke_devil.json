@@ -1,73 +1,76 @@
 [
   {
-    "ids": [ 498 ],
+    "ids": [ 498, 6639, 6655, 8482, 8483 ],
     "guaranteed": [
-      { "id": 592, "min": 1, "max": 1 } //Ashes
+      { "id": 592, "min": 1, "max": 1 }   //Ashes
     ],
     "tables": [
       {
-        "name": "Runes/Ammunition",
-        "weight": 1,
+        "name": "Weapons and armour",
+        "weight": 18479,
         "items": [
-          { "id": 554, "min": 37, "max": 37, "weight": 3 }, //Fire rune
-          { "id": 554, "min": 150, "max": 150, "weight": 3 }, //Fire rune
-          { "id": 4697, "min": 10, "max": 40, "weight": 1 }, //Smoke rune
-          { "id": 556, "min": 37, "max": 37, "weight": 1 }, //Air rune
-          { "id": 566, "min": 10, "max": 10, "weight": 1 }, //Soul rune
-          { "id": 892, "min": 24, "max": 24, "weight": 1 }, //Rune arrow
-          { "id": 9144, "min": 15, "max": 15, "weight": 1 } //Runite bolts
+          { "id": 1371, "min": 1, "max": 1, "weight": 2339 },   //Adamant battleaxe
+          { "id": 1213, "min": 1, "max": 1, "weight": 2339 },   //Rune dagger
+          { "id": 1397, "min": 1, "max": 1, "weight": 2339 },   //Air battlestaff
+          { "id": 2491, "min": 1, "max": 1, "weight": 2339 },   //Black d'hide vambraces
+          { "id": 1393, "min": 1, "max": 1, "weight": 2339 },   //Fire battlestaff
+          { "id": 1085, "min": 1, "max": 1, "weight": 1560 },   //Mithril plateskirt
+          { "id": 1163, "min": 1, "max": 1, "weight": 1560 },   //Rune full helm
+          { "id": 1113, "min": 1, "max": 1, "weight": 1560 },   //Rune chainbody
+          { "id": 2501, "min": 1, "max": 1, "weight": 781 },   //Red d'hide body
+          { "id": 12002, "min": 1, "max": 1, "weight": 195 },   //Occult necklace
+          { "id": 3140, "min": 1, "max": 1, "weight": 3 }   //Dragon chainbody
         ]
       },
       {
-        "name": "Weapons/Armour",
-        "weight": 1,
+        "name": "Runes and ammunition",
+        "weight": 30794,
         "items": [
-          { "id": 1371, "min": 1, "max": 1, "weight": 250 }, //Adamant battleaxe
-          { "id": 1085, "min": 1, "max": 1, "weight": 250 }, //Mithril plateskirt
-          { "id": 1393, "min": 1, "max": 1, "weight": 250 }, //Fire battlestaff
-          { "id": 1213, "min": 1, "max": 1, "weight": 250 }, //Rune dagger
-          { "id": 1397, "min": 1, "max": 1, "weight": 250 }, //Air battlestaff
-          { "id": 2491, "min": 1, "max": 1, "weight": 40 }, //Black d'hide vamb
-          { "id": 2501, "min": 1, "max": 1, "weight": 40 }, //Red d'hide body
-          { "id": 1163, "min": 1, "max": 1, "weight": 40 }, //Rune full helm
-          { "id": 1113, "min": 1, "max": 1, "weight": 40 }, //Rune chainbody
-          { "id": 1319, "min": 1, "max": 1, "weight": 30 }, //Rune 2h sword
-          { "id": 12002, "min": 1, "max": 1, "weight": 5 }, //Occult necklace
-          { "id": 3140, "min": 1, "max": 1, "weight": 1 } //Dragon chainbody
+          { "id": 4697, "min": 15, "max": 15, "weight": 8590 },   //Smoke rune
+          { "id": 4697, "min": 40, "max": 40, "weight": 3910 },   //Smoke rune
+          { "id": 9144, "min": 15, "max": 15, "weight": 3910 },   //Runite bolts
+          { "id": 554, "min": 37, "max": 37, "weight": 3130 },   //Fire rune
+          { "id": 556, "min": 37, "max": 37, "weight": 3130 },   //Air rune
+          { "id": 566, "min": 10, "max": 10, "weight": 3130 },   //Soul rune
+          { "id": 554, "min": 150, "max": 150, "weight": 1560 },   //Fire rune
+          { "id": 892, "min": 24, "max": 24, "weight": 1560 }   //Rune arrow
         ]
       },
       {
-        "name": "Herbs",
-        "weight": 1,
+        "name": "herb drop",
+        "weight": 14973,
         "items": [
-          { "id": 199, "min": 1, "max": 1, "weight": 12 }, //Grimy guam leaf
-          { "id": 201, "min": 1, "max": 1, "weight": 12 }, //Grimy marrentill
-          { "id": 203, "min": 1, "max": 1, "weight": 6 }, //Grimy tarromin
-          { "id": 205, "min": 1, "max": 1, "weight": 6 }, //Grimy harralander
-          { "id": 209, "min": 1, "max": 1, "weight": 6 }, //Grimy irit leaf
-          { "id": 211, "min": 1, "max": 1, "weight": 3 }, //Grimy avantoe
-          { "id": 213, "min": 1, "max": 1, "weight": 3 }, //Grimy kwuarm
-          { "id": 215, "min": 1, "max": 1, "weight": 3 }, //Grimy cadantine
-          { "id": 217, "min": 1, "max": 1, "weight": 3 }, //Grimy dwarf weed
-          { "id": 207, "min": 1, "max": 1, "weight": 1 }, //Grimy ranarr weed
-          { "id": 2485, "min": 1, "max": 1, "weight": 1 } //Grimy lantadyme
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 18303,
+        "items": [
+          { "id": 995, "min": 750, "max": 750, "weight": 9380 },   //Coins
+          { "id": 995, "min": 80, "max": 80, "weight": 5470 },   //Coins
+          { "id": 995, "min": 300, "max": 300, "weight": 2339 }   //Coins
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 17449,
         "items": [
-          { "id": 995, "min": 80, "max": 800, "weight": 15 }, //Coins
-          { "id": 1971, "min": 1, "max": 3, "weight": 15 }, //Kebab
-          { "id": 385, "min": 1, "max": 1, "weight": 15 }, //Shark
-          { "id": 2361, "min": 1, "max": 1, "weight": 10 }, //Adamantite bar
-          { "id": 9438, "min": 1, "max": 1, "weight": 10 }, //Crossbow string
-          { "id": 2353, "min": 2, "max": 2, "weight": 10 }, //Steel bar
-          { "id": 1514, "min": 5, "max": 5, "weight": 10 }, //Magic logs (noted)
-          { "id": 454, "min": 15, "max": 15, "weight": 10 }, //Coal (noted)
-          { "id": 2363, "min": 1, "max": 1, "weight": 3 }, //Runite bar
-          { "id": 2722, "min": 1, "max": 1, "weight": 3 }, //Clue scroll (hard)
-          { "id": 12073, "min": 1, "max": 1, "weight": 1 } //Clue scroll (elite)
+          { "id": 385, "min": 1, "max": 1, "weight": 4690 },   //Shark
+          { "id": 2353, "min": 2, "max": 2, "weight": 2339 },   //Steel bar
+          { "id": 1514, "min": 5, "max": 5, "weight": 2339 },   //Magic logs (noted)
+          { "id": 454, "min": 15, "max": 15, "weight": 2339 },   //Coal (noted)
+          { "id": 2361, "min": 1, "max": 1, "weight": 1560 },   //Adamantite bar
+          { "id": 9438, "min": 1, "max": 1, "weight": 1560 },   //Crossbow string
+          { "id": 1883, "min": 3, "max": 3, "weight": 1560 }   //Ugthanki kebab
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 973,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (hard)
+          { "id": 12073, "min": 1, "max": 1, "weight": 133 }   //Clue scroll (elite)
         ]
       }
     ]

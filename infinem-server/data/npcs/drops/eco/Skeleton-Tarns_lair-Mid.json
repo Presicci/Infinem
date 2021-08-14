@@ -1,0 +1,94 @@
+[
+  {
+    "ids": [ 6442, 6447, 6448, 6467 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 13188,
+        "items": [
+          { "id": 1137, "min": 1, "max": 1, "weight": 6250 },   //Iron med helm
+          { "id": 1351, "min": 1, "max": 1, "weight": 3910 },   //Bronze axe
+          { "id": 1422, "min": 1, "max": 1, "weight": 3910 },   //Bronze mace
+          { "id": 1239, "min": 1, "max": 1, "weight": 3910 },   //Iron spear
+          { "id": 1129, "min": 1, "max": 1, "weight": 2339 },   //Leather body
+          { "id": 1349, "min": 1, "max": 1, "weight": 2339 },   //Iron axe
+          { "id": 1203, "min": 1, "max": 1, "weight": 2339 },   //Iron dagger
+          { "id": 813, "min": 2, "max": 2, "weight": 2339 },   //Iron dart(p)
+          { "id": 1063, "min": 1, "max": 1, "weight": 1560 },   //Leather vambraces
+          { "id": 1117, "min": 1, "max": 1, "weight": 1560 },   //Bronze platebody
+          { "id": 1420, "min": 1, "max": 1, "weight": 1560 },   //Iron mace
+          { "id": 1339, "min": 1, "max": 1, "weight": 1560 },   //Steel warhammer
+          { "id": 1119, "min": 1, "max": 1, "weight": 1560 },   //Steel platebody
+          { "id": 1329, "min": 1, "max": 1, "weight": 1560 },   //Mithril scimitar
+          { "id": 1297, "min": 1, "max": 1, "weight": 781 },   //Black longsword
+          { "id": 1071, "min": 1, "max": 1, "weight": 781 },   //Mithril platelegs
+          { "id": 1199, "min": 1, "max": 1, "weight": 781 }   //Adamant kiteshield
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 5008,
+        "items": [
+          { "id": 556, "min": 9, "max": 9, "weight": 3910 },   //Air rune
+          { "id": 563, "min": 1, "max": 1, "weight": 2339 },   //Law rune
+          { "id": 9140, "min": 7, "max": 7, "weight": 2339 },   //Iron bolts
+          { "id": 888, "min": 7, "max": 7, "weight": 2339 },   //Mithril arrow
+          { "id": 890, "min": 2, "max": 2, "weight": 2339 },   //Adamant arrow
+          { "id": 884, "min": 14, "max": 14, "weight": 1560 }   //Iron arrow
+        ]
+      },
+      {
+        "name": "Potions",
+        "weight": 4226,
+        "items": [
+          { "id": 3036, "min": 1, "max": 1, "weight": 3910 },   //Agility potion(2)
+          { "id": 175, "min": 1, "max": 1, "weight": 3910 },   //Antipoison(3)
+          { "id": 121, "min": 1, "max": 1, "weight": 3910 },   //Attack potion(3)
+          { "id": 187, "min": 1, "max": 1, "weight": 781 }   //Weapon poison
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 263,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 5807,
+        "items": [
+          { "id": 995, "min": 61, "max": 61, "weight": 4690 },   //Coins
+          { "id": 995, "min": 112, "max": 112, "weight": 3910 },   //Coins
+          { "id": 995, "min": 6, "max": 6, "weight": 3910 },   //Coins
+          { "id": 995, "min": 98, "max": 98, "weight": 2339 },   //Coins
+          { "id": 995, "min": 184, "max": 184, "weight": 1560 },   //Coins
+          { "id": 995, "min": 126, "max": 126, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 5013,
+        "items": [
+          { "id": 52, "min": 12, "max": 12, "weight": 3910 },   //Arrow shaft
+          { "id": 1595, "min": 1, "max": 1, "weight": 3910 },   //Amulet mould
+          { "id": 3865, "min": 1, "max": 1, "weight": 1560 },   //Games necklace(2)
+          { "id": 66, "min": 1, "max": 1, "weight": 2339 },   //Yew longbow (u)
+          { "id": 2355, "min": 2, "max": 2, "weight": 1560 },   //Silver bar
+          { "id": 444, "min": 1, "max": 1, "weight": 1560 }   //Gold ore
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 270,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (medium)
+          { "id": 6806, "min": 1, "max": 1, "weight": 20 }   //Skeleton champion scroll
+        ]
+      }
+    ]
+  }
+]

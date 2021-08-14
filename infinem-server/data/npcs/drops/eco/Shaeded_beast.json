@@ -1,0 +1,8 @@
+[
+  {
+    "ids": [ 8709, 8710 ],
+    "guaranteed": [
+      { "id": 23497, "min": 1, "max": 1 }   //Temple coin
+    ]
+  }
+]

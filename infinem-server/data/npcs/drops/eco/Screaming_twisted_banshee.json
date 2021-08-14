@@ -1,0 +1,78 @@
+[
+  {
+    "ids": [ 7391 ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 12597,
+        "items": [
+          { "id": 1391, "min": 1, "max": 1, "weight": 3910 },   //Battlestaff
+          { "id": 1199, "min": 1, "max": 1, "weight": 781 },   //Adamant kiteshield
+          { "id": 1397, "min": 1, "max": 1, "weight": 1560 },   //Air battlestaff
+          { "id": 1430, "min": 1, "max": 1, "weight": 1560 },   //Adamant mace
+          { "id": 1213, "min": 1, "max": 1, "weight": 1560 },   //Rune dagger
+          { "id": 1147, "min": 1, "max": 1, "weight": 1560 },   //Rune med helm
+          { "id": 1163, "min": 1, "max": 1, "weight": 781 },   //Rune full helm
+          { "id": 4105, "min": 1, "max": 1, "weight": 391 }   //Mystic gloves (dark)
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 7713,
+        "items": [
+          { "id": 564, "min": 20, "max": 20, "weight": 2339 },   //Cosmic rune
+          { "id": 556, "min": 30, "max": 30, "weight": 1950 },   //Air rune
+          { "id": 562, "min": 30, "max": 30, "weight": 1560 },   //Chaos rune
+          { "id": 562, "min": 17, "max": 17, "weight": 781 },   //Chaos rune
+          { "id": 554, "min": 35, "max": 35, "weight": 781 }   //Fire rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 27647,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "rare seed",
+        "weight": 10571,
+        "items": [
+          { "id": 0, "min": 3, "max": 3, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 18695,
+        "items": [
+          { "id": 7937, "min": 65, "max": 65, "weight": 16399 },   //Pure essence (noted)
+          { "id": 221, "min": 1, "max": 1, "weight": 781 },   //Eye of newt
+          { "id": 447, "min": 1, "max": 1, "weight": 781 }   //Mithril ore
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 18704,
+        "items": [
+          { "id": 995, "min": 130, "max": 130, "weight": 7030 },   //Coins
+          { "id": 995, "min": 35, "max": 35, "weight": 5470 },   //Coins
+          { "id": 995, "min": 260, "max": 260, "weight": 5470 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 4069,
+        "items": [
+          { "id": 373, "min": 1, "max": 1, "weight": 3910 }   //Swordfish
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 8129,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 7810 }   //Clue scroll (hard)
+        ]
+      }
+    ]
+  }
+]

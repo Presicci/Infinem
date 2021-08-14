@@ -1,52 +1,69 @@
 [
   {
-    "ids": [ 139, 274, 275, 7255 ],
+    "ids": [ 139, 274, 275, 7255, 8086 ],
     "guaranteed": [
-      { "id": 536, "min": 1, "max": 1 }, //Dragon bones
-      { "id": 2353, "min": 5, "max": 5 } //Steel bar
+      { "id": 536, "min": 1, "max": 1 },   //Dragon bones
+      { "id": 2353, "min": 5, "max": 5 }   //Steel bar
     ],
     "tables": [
       {
-        "name": "Weapons/Armour",
-        "weight": 3,
+        "name": "Pre-roll",
+        "weight": 397,
         "items": [
-          { "id": 1432, "min": 1, "max": 1, "weight": 50 }, //Rune mace
-          { "id": 1199, "min": 1, "max": 1, "weight": 50 }, //Adamant kiteshield
-          { "id": 868, "min": 5, "max": 7, "weight": 30 }, //Rune knife
-          { "id": 1359, "min": 1, "max": 1, "weight": 20 }, //Rune axe
-          { "id": 1163, "min": 1, "max": 1, "weight": 20 }, //Rune full helm
-          { "id": 4585, "min": 1, "max": 1, "weight": 1 }, //Dragon plateskirt
-          { "id": 4087, "min": 1, "max": 1, "weight": 1 } //Dragon platelegs
+          { "id": 4585, "min": 1, "max": 1, "weight": 195 },   //Dragon plateskirt
+          { "id": 4087, "min": 1, "max": 1, "weight": 195 }   //Dragon platelegs
         ]
       },
       {
-        "name": "Runes/Ammunition",
-        "weight": 3,
+        "name": "Weapons and armour",
+        "weight": 15136,
         "items": [
-          { "id": 565, "min": 15, "max": 15, "weight": 12 }, //Blood rune
-          { "id": 565, "min": 20, "max": 20, "weight": 6 }, //Blood rune
-          { "id": 830, "min": 2, "max": 7, "weight": 6 }, //Rune javelin
-          { "id": 19582, "min": 12, "max": 12, "weight": 3 }, //Dragon javelin heads
-          { "id": 9144, "min": 2, "max": 12, "weight": 3 }, //Runite bolts
-          { "id": 817, "min": 9, "max": 12, "weight": 3 }, //Rune dart(p)
-          { "id": 566, "min": 5, "max": 5, "weight": 1 } //Soul rune
+          { "id": 817, "min": 12, "max": 12, "weight": 5470 },   //Rune dart(p)
+          { "id": 1432, "min": 1, "max": 1, "weight": 3130 },   //Rune mace
+          { "id": 1199, "min": 1, "max": 1, "weight": 1560 },   //Adamant kiteshield
+          { "id": 868, "min": 7, "max": 7, "weight": 2339 },   //Rune knife
+          { "id": 1359, "min": 1, "max": 1, "weight": 1560 },   //Rune axe
+          { "id": 1163, "min": 1, "max": 1, "weight": 781 }   //Rune full helm
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 39779,
+        "items": [
+          { "id": 565, "min": 20, "max": 20, "weight": 14800 },   //Blood rune
+          { "id": 830, "min": 7, "max": 7, "weight": 15600 },   //Rune javelin
+          { "id": 9144, "min": 2, "max": 12, "weight": 4690 },   //Runite bolts
+          { "id": 566, "min": 5, "max": 5, "weight": 3910 }   //Soul rune
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 17554,
+        "items": [
+          { "id": 995, "min": 470, "max": 470, "weight": 13300 },   //Coins
+          { "id": 995, "min": 650, "max": 650, "weight": 3910 }   //Coins
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 27131,
         "items": [
-          { "id": 9431, "min": 1, "max": 1, "weight": 50 }, //Runite limbs
-          { "id": 145, "min": 1, "max": 1, "weight": 50 }, //Super attack(3)
-          { "id": 995, "min": 470, "max": 470, "weight": 25 }, //Coins
-          { "id": 995, "min": 650, "max": 650, "weight": 25 }, //Coins
-          { "id": 2011, "min": 1, "max": 2, "weight": 25 }, //Curry
-          { "id": 2363, "min": 1, "max": 1, "weight": 15 }, //Runite bar
-          { "id": 165, "min": 1, "max": 1, "weight": 6 }, //Super defence(2)
-          { "id": 161, "min": 1, "max": 1, "weight": 6 }, //Super strength(1)
-          { "id": 2722, "min": 1, "max": 1, "weight": 2 }, //Clue scroll (hard)
-          { "id": 12073, "min": 1, "max": 1, "weight": 2 }, //Clue scroll (elite)
-          { "id": 11286, "min": 1, "max": 1, "weight": 1 } //Draconic visage
+          { "id": 145, "min": 1, "max": 1, "weight": 10200 },   //Super attack(3)
+          { "id": 9431, "min": 1, "max": 1, "weight": 6250 },   //Runite limbs
+          { "id": 19582, "min": 12, "max": 12, "weight": 3910 },   //Dragon javelin heads
+          { "id": 2363, "min": 1, "max": 1, "weight": 2339 },   //Runite bar
+          { "id": 165, "min": 1, "max": 1, "weight": 2339 },   //Super defence(2)
+          { "id": 2011, "min": 1, "max": 1, "weight": 781 },   //Curry
+          { "id": 2011, "min": 2, "max": 2, "weight": 781 }   //Curry
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 1805,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 1560 },   //Clue scroll (hard)
+          { "id": 12073, "min": 1, "max": 1, "weight": 200 },   //Clue scroll (elite)
+          { "id": 11286, "min": 1, "max": 1, "weight": 10 }   //Draconic visage
         ]
       }
     ]

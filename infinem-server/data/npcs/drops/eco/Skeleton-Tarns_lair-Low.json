@@ -1,0 +1,87 @@
+[
+  {
+    "ids": [ 6444, 6445, 6446 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 11344,
+        "items": [
+          { "id": 1157, "min": 1, "max": 1, "weight": 6250 },   //Steel full helm
+          { "id": 1351, "min": 1, "max": 1, "weight": 3910 },   //Bronze axe
+          { "id": 870, "min": 1, "max": 1, "weight": 3910 },   //Bronze knife(p)
+          { "id": 1424, "min": 1, "max": 1, "weight": 3910 },   //Steel mace
+          { "id": 845, "min": 1, "max": 1, "weight": 2339 },   //Oak longbow
+          { "id": 807, "min": 5, "max": 5, "weight": 2339 },   //Iron dart
+          { "id": 1311, "min": 1, "max": 1, "weight": 2339 },   //Steel 2h sword
+          { "id": 1321, "min": 1, "max": 1, "weight": 1560 },   //Bronze scimitar
+          { "id": 1335, "min": 1, "max": 1, "weight": 1560 },   //Iron warhammer
+          { "id": 1193, "min": 1, "max": 1, "weight": 1560 },   //Steel kiteshield
+          { "id": 1428, "min": 1, "max": 1, "weight": 1560 },   //Mithril mace
+          { "id": 1341, "min": 1, "max": 1, "weight": 781 },   //Black warhammer
+          { "id": 1195, "min": 1, "max": 1, "weight": 781 },   //Black kiteshield
+          { "id": 1109, "min": 1, "max": 1, "weight": 781 }   //Mithril chainbody
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 3691,
+        "items": [
+          { "id": 555, "min": 4, "max": 4, "weight": 3910 },   //Water rune
+          { "id": 9075, "min": 2, "max": 2, "weight": 2339 },   //Astral rune
+          { "id": 886, "min": 9, "max": 9, "weight": 2339 },   //Steel arrow
+          { "id": 2, "min": 6, "max": 6, "weight": 2339 }   //Cannonball
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 527,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 6860,
+        "items": [
+          { "id": 995, "min": 39, "max": 39, "weight": 3910 },   //Coins
+          { "id": 995, "min": 89, "max": 89, "weight": 3910 },   //Coins
+          { "id": 995, "min": 100, "max": 100, "weight": 3910 },   //Coins
+          { "id": 995, "min": 12, "max": 12, "weight": 2339 },   //Coins
+          { "id": 995, "min": 53, "max": 53, "weight": 2339 },   //Coins
+          { "id": 995, "min": 12, "max": 12, "weight": 1560 },   //Coins
+          { "id": 995, "min": 84, "max": 84, "weight": 1560 },   //Coins
+          { "id": 995, "min": 181, "max": 181, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 10819,
+        "items": [
+          { "id": 4819, "min": 17, "max": 17, "weight": 3910 },   //Bronze nails
+          { "id": 4544, "min": 1, "max": 1, "weight": 3910 },   //Bullseye lantern (unf)
+          { "id": 9741, "min": 1, "max": 1, "weight": 3910 },   //Combat potion(3)
+          { "id": 155, "min": 1, "max": 1, "weight": 3910 },   //Fishing potion(1)
+          { "id": 227, "min": 1, "max": 1, "weight": 3910 },   //Vial of water
+          { "id": 1716, "min": 1, "max": 1, "weight": 2339 },   //Unblessed symbol
+          { "id": 567, "min": 1, "max": 1, "weight": 2339 },   //Unpowered orb
+          { "id": 2357, "min": 1, "max": 1, "weight": 1560 },   //Gold bar
+          { "id": 440, "min": 2, "max": 2, "weight": 1560 },   //Iron ore
+          { "id": 2562, "min": 1, "max": 1, "weight": 1560 },   //Ring of dueling(3)
+          { "id": 596, "min": 1, "max": 1, "weight": 1560 },   //Unlit torch
+          { "id": 1714, "min": 1, "max": 1, "weight": 1560 }   //Unstrung symbol
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 270,
+        "items": [
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (easy)
+          { "id": 6806, "min": 1, "max": 1, "weight": 20 }   //Skeleton champion scroll
+        ]
+      }
+    ]
+  }
+]

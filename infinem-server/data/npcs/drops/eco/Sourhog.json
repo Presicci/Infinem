@@ -1,0 +1,70 @@
+[
+  {
+    "ids": [ 10435, 10436 ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 2887,
+        "items": [
+          { "id": 1331, "min": 1, "max": 1, "weight": 1820 },   //Adamant scimitar
+          { "id": 1199, "min": 1, "max": 1, "weight": 909 }   //Adamant kiteshield
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 30774,
+        "items": [
+          { "id": 558, "min": 3, "max": 10, "weight": 5450 },   //Mind rune
+          { "id": 556, "min": 5, "max": 15, "weight": 5450 },   //Air rune
+          { "id": 557, "min": 5, "max": 15, "weight": 5450 },   //Earth rune
+          { "id": 561, "min": 1, "max": 5, "weight": 3640 },   //Nature rune
+          { "id": 562, "min": 1, "max": 5, "weight": 4550 },   //Chaos rune
+          { "id": 886, "min": 3, "max": 7, "weight": 4550 }   //Steel arrow
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 9616,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 23081,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 14387,
+        "items": [
+          { "id": 995, "min": 5, "max": 30, "weight": 13600 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 19253,
+        "items": [
+          { "id": 225, "min": 1, "max": 1, "weight": 4550 },   //Limpwurt root
+          { "id": 24367, "min": 1, "max": 1, "weight": 4550 },   //Cabbage
+          { "id": 1942, "min": 1, "max": 1, "weight": 4550 },   //Potato
+          { "id": 1955, "min": 1, "max": 1, "weight": 4550 }   //Cooking apple
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 285,
+        "items": [
+          { "id": 2677, "min": 1, "max": 1, "weight": 250 },   //Clue scroll (easy) TODO Adjust
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
+        ]
+      }
+    ]
+  }
+]
