@@ -129,7 +129,12 @@ public class BestiarySearchResult extends JournalEntry {
         if(def.lootTable.tables != null) {
             for(LootTable.ItemsTable table : def.lootTable.tables) {
                 if(table != null) {
-                    double tableChance = table.weight / totalTablesWeight;
+                    double tableChance;
+                    if (totalTablesWeight == 0) {
+                        tableChance = 1;
+                    } else {
+                       tableChance = table.weight / totalTablesWeight;
+                    }
                     if(table.items.length == 0) {
                         //Nothing!
                         //nothingPercentage = tableChance * 100D;
