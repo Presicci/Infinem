@@ -53,7 +53,7 @@ public enum Pet {
     VENENATIS_SPIDERLING(13177, 5557, true, 500),
     VETION_JR_PURPLE(13179, 5559, 5560, true, 500),
     VETION_JR_ORANGE(13180, 5560, 5559, false),
-    SKOTOS(21273, 7671, true, 500),
+    SKOTOS(21273, 7671, true, 65),
     VORKI(21992, 8029, false, 600),
     LIL_ZIK(22473, 8337, false, 500),
     TZREK_ZUK(22319, 8009, 7675, true, 100),
