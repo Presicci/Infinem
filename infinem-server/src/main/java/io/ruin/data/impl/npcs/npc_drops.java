@@ -14,6 +14,7 @@ import io.ruin.model.World;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.skills.herblore.Herb;
+import io.ruin.utility.Utils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -30,6 +31,68 @@ import java.util.regex.Pattern;
 import static io.ruin.cache.ItemID.COINS_995;
 
 public class npc_drops extends DataFile {
+
+    /*
+     * Strings that if found in the chance line for a table, will use that table.
+     *
+     * Example:
+     *
+     * Herbs <-- Header
+     * There is a 31/128 chance of rolling the herb drop table. <--- Chanceline
+     * [Table] <---- Table that we want to use
+     */
+    private static final String[] chanceLinesWithTable = {
+            "herb subtable", "Due to a unique mechanic", "noted herbs", "unique table",
+            "bolt tips", "uniques sub-table", "bush seed table", "fruit tree seed table",
+            "Two random herbs are dropped when this herb drop table is rolled",
+            "Skotizo has a guaranteed drop of at least one ancient shard",
+            "Skotizo's gemstone sub-table", "shard table", "unique drop table",
+            "sigil drop table", "noted herb", "hops seed table",
+            "Each tertiary item may be simultaneously dropped",
+            "coin"
+    };
+
+    /*
+     * Strings that if found in the chance line for a table, will use a table that is
+     * after the next element.
+     *
+     * Robes <-- Header
+     * There is a 31/128 chance of rolling the robe subtable. <--- Chanceline
+     * The robe sub table contains useless shit. <--- Another string line, skip this
+     * [Table] <---- Table that we want to use
+     */
+    private static final String[] chanceLinesWithTableSkipElement = {
+            "robe subtable"
+    };
+
+    /*
+     * Strings that if found in the chance line for a table, will skip that table entirely.
+     *
+     * Example:
+     *
+     * Location <--- Header
+     * Slayer rings offer immediate access to Fremennik Slayer Dungeon. <--- Chanceline
+     * <--- No table, so we skip
+     *
+     */
+    private static final String[] chanceLinesWithoutTable = {
+            "gem drop table", "rare drop", "Catacombs", "Krystilia", "cavalier", "Deadman",
+            "unarmed", "Twisted", "pickpocket", "superior", "Defenders",
+            "are dropped at a time"
+    };
+
+    /*
+     * Strings in item names that will be ignored when parsing drop tables.
+     * Case sensitive!
+     */
+    private static final String[] itemsToSkip = {
+            "(f)", "Brimstone key", "Ikkle", "Ecumenical", "Callisto cub", "Pet kraken",
+            "Baby mole", "Kalphite princess", "Pet dagannoth prime", "Pet dagannoth supreme",
+            "Pet general graardor", "Pet kree'arra", "Pet snakeling", "Prince black dragon",
+            "Skotos", "Venenatis spiderling", "Vet'ion jr.", "Hellpuppy", "Pet chaos elemental",
+            "Pet dagannoth rex", "Pet dark core", "Pet k'ril tsutsaroth", "Pet smoke devil",
+            "Pet zilyana", "Scorpia's offspring", "Sraracha", "Vorki"
+    };
 
     @Override
     public String path() {
@@ -143,27 +206,11 @@ public class npc_drops extends DataFile {
                         if (chanceLine.equals("")) {
                             chanceLine = dl.text();
                         }
-                        if (chanceLine.contains("coin")) {
-                            dl = dl.nextElementSibling();
-                        } else if (chanceLine.contains("gem") || chanceLine.contains("rare drop")
-                                || chanceLine.contains("Catacombs") || chanceLine.contains("Twisted")
-                                || chanceLine.contains("Krystilia") || chanceLine.contains("pickpocket")
-                                || chanceLine.contains("cavalier") || chanceLine.contains("superior")
-                                || chanceLine.contains("Deadman") || chanceLine.contains("Defenders")
-                                || chanceLine.contains("unarmed") || chanceLine.contains("are dropped at a time")) {
+                        if (Utils.doesStringContainAny(chanceLine, chanceLinesWithoutTable)) {
                             continue;
-                        } else if (chanceLine.contains("herb subtable") || chanceLine.contains("Due to a unique mechanic")
-                                || chanceLine.contains("noted herbs") || chanceLine.contains("shard table")
-                                || chanceLine.contains("unique table") || chanceLine.contains("unique drop table")
-                                || chanceLine.contains("bolt tips") || chanceLine.contains("sigil drop table")
-                                || chanceLine.contains("uniques sub-table") || chanceLine.contains("noted herb")
-                                || chanceLine.contains("bush seed table") || chanceLine.contains("hops seed table")
-                                || chanceLine.contains("fruit tree seed table") || chanceLine.contains("Each tertiary item may be simultaneously dropped")
-                                || chanceLine.contains("Two random herbs are dropped when this herb drop table is rolled")
-                                || chanceLine.contains("Skotizo has a guaranteed drop of at least one ancient shard")
-                                || chanceLine.contains("Skotizo's gemstone sub-table")) {
+                        } else if (Utils.doesStringContainAny(chanceLine, chanceLinesWithTable)) {
                             dl = dl.nextElementSibling();
-                        } else if (chanceLine.contains("robe subtable")) {
+                        } else if (Utils.doesStringContainAny(chanceLine, chanceLinesWithTableSkipElement)) {
                             dl = dl.nextElementSibling().nextElementSibling();
                         } else {
                             if (chanceLine.length() < 3 || !dl.nextElementSibling().is("table")) {
@@ -262,20 +309,7 @@ public class npc_drops extends DataFile {
                 if(item.contains("(m)")) {
                     item = item.replace("(m)", "");
                 }
-                if(item.contains("(f)") || item.toLowerCase().contains("brimstone key")
-                    || item.contains("Ikkle") || item.toLowerCase().contains("ecumenical")
-                    || item.contains("Callisto cub") || item.contains("Pet kraken")
-                        || item.contains("Baby mole") || item.contains("Hellpuppy")
-                        || item.contains("Kalphite princess") || item.contains("Pet chaos elemental")
-                        || item.contains("Pet dagannoth prime") || item.contains("Pet dagannoth rex")
-                        || item.contains("Pet dagannoth supreme") || item.contains("Pet dark core")
-                        || item.contains("Pet general graardor") || item.contains("Pet k'ril tsutsaroth")
-                        || item.contains("Pet kree'arra") || item.contains("Pet smoke devil")
-                        || item.contains("Pet snakeling") || item.contains("Pet zilyana")
-                        || item.contains("Prince black dragon") || item.contains("Scorpia's offspring")
-                        || item.contains("Skotos") || item.contains("Sraracha")
-                        || item.contains("Venenatis spiderling") || item.contains("Vorki")
-                        || item.contains("Vet'ion jr.")) {
+                if(Utils.doesStringContainAny(item, itemsToSkip)) {
                     //item = item.replace("(f)", "");
                     return null;
                 }
