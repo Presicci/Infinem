@@ -78,9 +78,9 @@ public class LootTable {
         totalWeight = 0;
         if(tables != null) {
             for(ItemsTable table : tables) {
-                //if (!table.name.equalsIgnoreCase("tertiary")) {
-                totalWeight += table.weight;
-                //}
+                if (!table.name.equalsIgnoreCase("tertiary")) {
+                    totalWeight += table.weight;
+                }
                 table.totalWeight = 0;
                 if(table.items != null) {
                     for(LootItem item : table.items)
@@ -127,6 +127,10 @@ public class LootTable {
                             if (table.name.equalsIgnoreCase("tertiary")) {  // tertiary items are rolled alongside, so reroll after hitting one
                                 List<Item> i = this.rollItems(false);
                                 if (i != null) {
+                                    i.removeIf(item1 -> item1.getId() == item.id);  // Makes sure we dont roll the same tertiary twice
+                                    if (i.isEmpty()) {
+                                        break;
+                                    }
                                     items.addAll(i);
                                 }
                             }
