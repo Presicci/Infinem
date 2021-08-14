@@ -47,4 +47,18 @@ public final class Utils {
         return max;
     }
 
+    /**
+     * Iterates over a String array to identify if the provided string contains any
+     * strings from the array.
+     * @param string The string to be parsed for matching strings from the array.
+     * @param array The array to be iterated over for strings that may be in the provided String.
+     * @return True if a match is found, false if not.
+     */
+    public static boolean doesStringContainAny(String string, String[] array) {
+        for (String element : array) {
+            if (string.contains(element))
+                return true;
+        }
+        return false;
+    }
 }
