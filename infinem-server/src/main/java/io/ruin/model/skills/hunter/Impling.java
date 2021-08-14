@@ -109,7 +109,7 @@ public enum Impling {
                         } else {
                             loot = jar.getLootTable().rollItem();
                         }
-                        player.getInventory().add(loot);
+                        player.getInventory().addOrDrop(loot);
                     } else {
                         player.getInventory().add(impling.jarId);
                     }
