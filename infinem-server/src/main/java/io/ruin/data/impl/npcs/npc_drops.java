@@ -158,7 +158,10 @@ public class npc_drops extends DataFile {
                                 || chanceLine.contains("bolt tips") || chanceLine.contains("sigil drop table")
                                 || chanceLine.contains("uniques sub-table") || chanceLine.contains("noted herb")
                                 || chanceLine.contains("bush seed table") || chanceLine.contains("hops seed table")
-                                || chanceLine.contains("fruit tree seed table")) {
+                                || chanceLine.contains("fruit tree seed table") || chanceLine.contains("Each tertiary item may be simultaneously dropped")
+                                || chanceLine.contains("Two random herbs are dropped when this herb drop table is rolled")
+                                || chanceLine.contains("Skotizo has a guaranteed drop of at least one ancient shard")
+                                || chanceLine.contains("Skotizo's gemstone sub-table")) {
                             dl = dl.nextElementSibling();
                         } else if (chanceLine.contains("robe subtable")) {
                             dl = dl.nextElementSibling().nextElementSibling();
@@ -517,12 +520,12 @@ public class npc_drops extends DataFile {
                     }
                 }
                 for(int i = 0; i < tables.size(); i++) {
-                    finalTableWeights[i] = (int) (((double) tableWeights[i] / (double) totalWeight) * 1000);
+                    finalTableWeights[i] = (int) (((double) tableWeights[i] / (double) totalWeight) * 100000);
                 }
                 if (commonTables > 0) {
                     commonTableWeights = new int[commonTables];
                     for (int i = 0; i < commonTab.size(); i++) {
-                        commonTableWeights[i] = (int) (((double) commonTab.get(i).weight / (double) totalWeight) * 1000);
+                        commonTableWeights[i] = (int) (((double) commonTab.get(i).weight / (double) totalWeight) * 100000);
                     }
                 }
             }
