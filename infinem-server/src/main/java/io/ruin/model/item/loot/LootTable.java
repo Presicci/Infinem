@@ -124,7 +124,7 @@ public class LootTable {
                                 break;
                             }
                             items.add(item.toItem());
-                            if (table.name.equalsIgnoreCase("tertiary")) {  // tertiary items are rolled alongside, so reroll after hitting one
+                            if (table.name != null && table.name.equalsIgnoreCase("tertiary")) {  // tertiary items are rolled alongside, so reroll after hitting one
                                 List<Item> i = this.rollItems(false);
                                 if (i != null) {
                                     i.removeIf(item1 -> item1.getId() == item.id);  // Makes sure we dont roll the same tertiary twice
