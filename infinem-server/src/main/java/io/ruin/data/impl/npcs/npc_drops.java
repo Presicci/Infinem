@@ -48,7 +48,7 @@ public class npc_drops extends DataFile {
             "Skotizo's gemstone sub-table", "shard table", "unique drop table",
             "sigil drop table", "noted herb", "hops seed table",
             "Each tertiary item may be simultaneously dropped",
-            "coin"
+            "coin", "mutagen sub-table"
     };
 
     /*
