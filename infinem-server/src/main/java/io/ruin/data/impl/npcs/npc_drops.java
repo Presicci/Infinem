@@ -387,10 +387,10 @@ public class npc_drops extends DataFile {
                     }
                     if (rarityPercent.isEmpty()) {
                         String rarityText = rarityFractionElement.text();
-                        if (rarityText.toLowerCase().contains("common")) {
-                            rarityPercent = "5";    // Default to 1/20
-                        } else if (rarityText.toLowerCase().contains("uncommon")) {
+                        if (rarityText.toLowerCase().contains("uncommon")) {
                             rarityPercent = "2";    // Default to 1/50
+                        } else if (rarityText.toLowerCase().contains("common")) {
+                            rarityPercent = "5";    // Default to 1/20
                         }  else if (rarityText.toLowerCase().contains("very rare")) {
                             rarityPercent = "0.1";  // Default to 1/1000
                         } else if (rarityText.toLowerCase().contains("rare")) {
