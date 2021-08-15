@@ -1,0 +1,77 @@
+[
+  {
+    "ids": [ 2145 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 4222,
+        "items": [
+          { "id": 1397, "min": 1, "max": 1, "weight": 2000 },   //Air battlestaff
+          { "id": 1399, "min": 1, "max": 1, "weight": 2000 },   //Earth battlestaff
+          { "id": 23522, "min": 1, "max": 1, "weight": 100 }   //Mask of ranul
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 30895,
+        "items": [
+          { "id": 556, "min": 200, "max": 300, "weight": 5000 },   //Air rune
+          { "id": 557, "min": 200, "max": 300, "weight": 5000 },   //Earth rune
+          { "id": 565, "min": 20, "max": 30, "weight": 3000 },   //Blood rune
+          { "id": 562, "min": 50, "max": 80, "weight": 3000 },   //Chaos rune
+          { "id": 564, "min": 20, "max": 30, "weight": 3000 },   //Cosmic rune
+          { "id": 560, "min": 20, "max": 30, "weight": 3000 },   //Death rune
+          { "id": 561, "min": 20, "max": 30, "weight": 3000 },   //Nature rune
+          { "id": 4698, "min": 30, "max": 70, "weight": 3000 },   //Mud rune
+          { "id": 563, "min": 10, "max": 20, "weight": 2000 }   //Law rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 22657,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 12358,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 8238,
+        "items": [
+          { "id": 222, "min": 25, "max": 30, "weight": 2000 },   //Eye of newt (noted)
+          { "id": 3139, "min": 10, "max": 15, "weight": 2000 },   //Potato cactus (noted)
+          { "id": 240, "min": 10, "max": 15, "weight": 2000 },   //White berries (noted)
+          { "id": 246, "min": 5, "max": 8, "weight": 2000 }   //Wine of zamorak (noted)
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 21627,
+        "items": [
+          { "id": 995, "min": 1000, "max": 5000, "weight": 6000 },   //Coins
+          { "id": 1729, "min": 1, "max": 1, "weight": 5000 },   //Amulet of defence
+          { "id": 1727, "min": 1, "max": 1, "weight": 5000 },   //Amulet of magic
+          { "id": 1725, "min": 1, "max": 1, "weight": 5000 }   //Amulet of strength
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 17868,
+        "items": [
+          { "id": 23499, "min": 1, "max": 1, "weight": 1330 },   //Grubby key
+          { "id": 2722, "min": 1, "max": 1, "weight": 1000 },   //Clue scroll (hard)
+          { "id": 6807, "min": 1, "max": 1, "weight": 20 }   //Zombie champion scroll
+        ]
+      }
+    ]
+  }
+]

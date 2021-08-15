@@ -1,5 +1,19 @@
 [
   {
-    "ids": [ 5344, 5345, 5342, 5343, 5346, 5347, 5348, 5349, 5350, 5351 ]
+    "ids": [ 5342, 5343, 5344, 5345, 5346, 5347, 5348, 5349, 5350, 5351 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Tertiary",
+        "weight": 2147483647,
+        "items": [
+          { "id": -1, "min": 1, "max": 1, "weight": 4998 },   //Nothing
+          { "id": 6806, "min": 1, "max": 1, "weight": 1 },   //Skeleton champion scroll
+          { "id": 6807, "min": 1, "max": 1, "weight": 1 }   //Zombie champion scroll
+        ]
+      }
+    ]
   }
 ]
