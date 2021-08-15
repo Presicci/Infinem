@@ -89,8 +89,8 @@ Rare drop table access while skilling
 ~~Enchants From Bosses
 Cerberus - Smoldering - ignite chance
 Zulruh - Venom - venom chance
-Vorkath - 
-Barrows - Only need 3 items for set bonus
+Vorkath - 50% increase to bolt proc chance
+Barrows - Amulet of the damned effect
 Kalphite queen - 
 Kril - 
 Kree - 
@@ -220,6 +220,7 @@ Clue scroll droprate increase
 Vote mystery box
 Vote lottery, pulled daily right before reset
 Vote boss
+Slayer VIP tickets
 
 
 ~Store
@@ -228,31 +229,40 @@ Ornament kits, also obtainable from clues
 
 ~~~Donators~~~
 Custom titles
-Free death chest recovery?
 Higher chance of marks of grace
 Higher chance of bird nest
-Reduced/no kc requirement for gwd
-Run energy
-Pick slayer task
-Faster farming growth
-Farming - no weeds
 
 
-~Sapphire - $5
+~~~~~~~Sapphire - $5
 1% double drop chance
-~Emerald - $25
+10% off death recovery cost
+-5 to gwd 1 kc req
+~~~~~~~Emerald - $25
 2% double drop chance
-~Ruby - $50
+20% off death recovery cost
+-10 to gwd 1 kc req
+Reroll 1 slayer task per day
+Farming - no weeds
+5% faster farming growth
+Dicing rank and ability to host gambling
+~~~~~~~Ruby - $50
 3% double drop chance
-~Diamond - $100
+25% off death recovery cost
+-15 to gwd 1 kc req
+Reroll 2 slayer task per day
+~~~~~~~Diamond - $100
 4% double drop chance
-~Dragonstone - $250
+50% off death recovery cost
+-20 to gwd 1 kc req
+Reroll 3 slayer task per day
+10% faster farming growth
+~~~~~~~Dragonstone - $250
 5% double drop chance
-~Onyx - $500
+~~~~~~~Onyx - $500
 5% double drop chance
-~Zenyte - $1000
+~~~~~~~Zenyte - $1000
 5% double drop chance
-~UNKNOWN - $2500
+~~~~~~~TOP DONATOR
 HIGHEST DONATOR at the time
 
 
@@ -262,8 +272,8 @@ Bonds
 Custom title
 Pets
 Mystery boxes
-$10 - Dicing rank
 Server threshhold - Well of goodwill, global server benefits
+Global No god wars kc
 Buyable perks
 Server wide perks
 ~~~~~~~~~~~~~~
@@ -415,37 +425,3 @@ Sophanem and surrounding areas
 Pest control
 Catherby fishing areas
 Pisc fishing colony
-
-
-
-
-"7991": [
-    0,0,0,0
-  ],
-  "7992": [
-    0,0,0,0
-  ],
-  "5535": [
-    0,
-    0,
-    0,
-    0
-  ],
-  "9046": [
-    0,
-    0,
-    0,
-    0
-  ],
-  "12342": [
-    0,
-    0,
-    0,
-    0
-  ],
-  "8247" : [
-    0,0,0,0
-  ],
-  "8248" : [
-    0,0,0,0
-  ],

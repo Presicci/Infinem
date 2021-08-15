@@ -7,13 +7,12 @@ make sure ironman armor doesnt drop on pvp death
 redo daily tasks
 herquin 6529 is aggressive
 fix whatever the fuck is wrong with death
-barrows catacombs
+barrows catacombs 
 drop viewer drop announcemnets are broken
 dump all monster drops
 stackable clue scrolls
 make it so you cant teleport for a few seconds after speccing someone, like osrs
 cant remove balance beam
-finish combat dummies
 donation benefits
 donation shop
 vote benefits
@@ -30,12 +29,48 @@ music tab doesnt unlock
 drop announcement, pet drop, etc have the killcount or experience acquired on message
 collection log
 new task system
+fix discord integration
+roll tertiary drops alongside main
+music doesnt auto play
+do something with jungle demons
+moss guardian as superior moss giant or something?
+
+tertiary is affecting drop rate display for other rolls
+make sure two of the same tertiary cant roll
+
+cast bloom on swamp crab to get fungus
+
+add hazelmeres signet ring
+
+wyvern combat
+canifis werewolves
+
+DROPS
+battlemage
+body guardian
+flawed golem
+mind golem
+boar
+if add chompy hunting, add chompy pet
+iban staff only dropping if you dont own one
+baby mole looks wack
+guards in some places
+trading sticks are LMS stick
+tortured gorilla
+
+DISCORD
+media
+announcement
+find way to track invites
+
+
 
 [Post Release]:
 add teleports to master capes
 turn the wilderness activevolcano event into a juiced version of volcanic mine
 infernal tool charges
 proper barrows degrading
+finish combat dummies
 rare drop table
 review monster animations and death ticks
 object and npc examines
