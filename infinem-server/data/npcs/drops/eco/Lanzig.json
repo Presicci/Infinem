@@ -10,7 +10,10 @@
         "weight": 341,
         "items": [
           { "id": 1337, "min": 1, "max": 1, "weight": 19500 },   //Bronze warhammer
-          { "id": 1335, "min": 1, "max": 1, "weight": 13699 }   //Iron warhammer
+          { "id": 1335, "min": 1, "max": 1, "weight": 13699 },   //Iron warhammer
+          { "id": 3757, "min": 1, "max": 1, "weight": 189 },   //Fremennik blade
+          { "id": 3758, "min": 1, "max": 1, "weight": 189 },   //Fremennik shield
+          { "id": 3748, "min": 1, "max": 1, "weight": 189 }   //Fremennik helm
         ]
       },
       {
