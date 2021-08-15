@@ -378,11 +378,24 @@ public abstract class NPCCombat extends Combat {
                 { new Item(145, 3), new Item(157, 3) },    // Super attack and super strength
                 { new Item(3026, 3), new Item(189, 3) }    // Super restore and zammy brew
         });
-        /**
-         * put("ammonite crab", new Item[][] {
-         *                 { new Item(), new Item() }
-         *         });
-         */
+
+        put("obor", new Item[][] {
+                { new Item(1620, 5), new Item(1618, 5) },    // Uncut ruby and uncut diamond
+        });
+
+        put("scorpia", new Item[][] {
+                { new Item(1622, 6), new Item(1624, 4) }    // Uncut emerald and uncut sapphire
+        });
+
+        put("venenatis", new Item[][] {
+                { new Item(1620, 20), new Item(1618, 10) },    // Uncut ruby and uncut diamond
+                { new Item(11936, 8), new Item(3024, 3) }    // Dark crab and super restore (4)
+        });
+
+        put("vet'ion", new Item[][] {
+                { new Item(1620, 20), new Item(1618, 10) },    // Uncut ruby and uncut diamond
+                { new Item(11936, 8), new Item(3024, 3) }    // Dark crab and super restore (4)
+        });
     }};
 
     private List<Item> getGroupDrop(Item item) {

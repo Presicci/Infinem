@@ -23,6 +23,64 @@ public class CustomDropViewerInterface {
         put("ammonite crab", new Item[][] {
                 { new Item(21543), new Item(21545) }    // Calcite and pyrophosphite
         });
+
+        put("ancient zygomite", new Item[][] {
+                { new Item(21543), new Item(21545) }    // Calcite and pyrophosphite
+        });
+
+        put("bryophyta", new Item[][] {
+                { new Item(1620, 5), new Item(1618, 5) }    // Uncut ruby and uncut diamond
+        });
+
+        put("callisto", new Item[][] {
+                { new Item(1620, 20), new Item(1618, 10) },    // Uncut ruby and uncut diamond
+                { new Item(11936, 8), new Item(3024, 3) }    // Dark crab and super restore (4)
+        });
+
+        put("chaos fanatic", new Item[][] {
+                { new Item(1622, 6), new Item(1624, 4) },    // Uncut emerald and uncut sapphire
+                { new Item(1035), new Item(1033) }    // Zamorak monk top and zamorak monk bottom
+        });
+
+        put("commander zilyana", new Item[][] {
+                { new Item(6687, 3), new Item(3024, 3) },    // Saradomin brew and super restore
+                { new Item(163, 3), new Item(3042, 3) }    // Super defence and magic
+        });
+
+        put("crazy archaeologist", new Item[][] {
+                { new Item(1622, 6), new Item(1624, 4) }    // Uncut emerald and uncut sapphire
+        });
+
+        put("insatiable bloodveld", new Item[][] {
+                { new Item(526), new Item(532, 3) }    // Bones nad big bones
+        });
+
+        put("jungle horror", new Item[][] {
+                { new Item(526), new Item(532, 3) }    // Bones nad big bones
+        });
+
+        put("k'ril tsutsaroth", new Item[][] {
+                { new Item(145, 3), new Item(157, 3) },    // Super attack and super strength
+                { new Item(3026, 3), new Item(189, 3) }    // Super restore and zammy brew
+        });
+
+        put("obor", new Item[][] {
+                { new Item(1620, 5), new Item(1618, 5) },    // Uncut ruby and uncut diamond
+        });
+
+        put("scorpia", new Item[][] {
+                { new Item(1622, 6), new Item(1624, 4) }    // Uncut emerald and uncut sapphire
+        });
+
+        put("venenatis", new Item[][] {
+                { new Item(1620, 20), new Item(1618, 10) },    // Uncut ruby and uncut diamond
+                { new Item(11936, 8), new Item(3024, 3) }    // Dark crab and super restore (4)
+        });
+
+        put("vet'ion", new Item[][] {
+                { new Item(1620, 20), new Item(1618, 10) },    // Uncut ruby and uncut diamond
+                { new Item(11936, 8), new Item(3024, 3) }    // Dark crab and super restore (4)
+        });
     }};
 
     private static class Item {
