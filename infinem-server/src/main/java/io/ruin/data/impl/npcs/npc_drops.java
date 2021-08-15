@@ -45,7 +45,6 @@ public class npc_drops extends DataFile {
             "herb subtable", "Due to a unique mechanic", "noted herbs", "unique table",
             "bolt tips", "uniques sub-table", "bush seed table", "fruit tree seed table",
             "Two random herbs are dropped when this herb drop table is rolled",
-            "Skotizo has a guaranteed drop of at least one ancient shard",
             "Skotizo's gemstone sub-table", "shard table", "unique drop table",
             "sigil drop table", "noted herb", "hops seed table",
             "Each tertiary item may be simultaneously dropped",
@@ -78,7 +77,7 @@ public class npc_drops extends DataFile {
     private static final String[] chanceLinesWithoutTable = {
             "gem drop table", "rare drop", "Catacombs", "Krystilia", "cavalier", "Deadman",
             "unarmed", "Twisted", "pickpocket", "superior", "Defenders",
-            "are dropped at a time"
+            "are dropped at a time", "guaranteed drop of at least one ancient shard"
     };
 
     /*
@@ -385,6 +384,18 @@ public class npc_drops extends DataFile {
                     String rarityPercent = rarityFractionElement.attributes().getIgnoreCase("data-drop-percent");
                     if (rarityPercent.contains("×")) {
                         rarityPercent = rarityPercent.split(" ")[2];
+                    }
+                    if (rarityPercent.isEmpty()) {
+                        String rarityText = rarityFractionElement.text();
+                        if (rarityText.toLowerCase().contains("common")) {
+                            rarityPercent = "5";    // Default to 1/20
+                        } else if (rarityText.toLowerCase().contains("uncommon")) {
+                            rarityPercent = "2";    // Default to 1/50
+                        }  else if (rarityText.toLowerCase().contains("very rare")) {
+                            rarityPercent = "0.1";  // Default to 1/1000
+                        } else if (rarityText.toLowerCase().contains("rare")) {
+                            rarityPercent = "0.725";    // Default to 1/138
+                        }
                     }
                     rarityPercent = rarityPercent.replaceAll("[^a-zA-Z0-9.]","");
                     double rarityDouble = Double.parseDouble(rarityPercent) / 100;
