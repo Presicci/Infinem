@@ -1,0 +1,85 @@
+[
+  {
+    "ids": [ 6449, 6450, 6451, 6452, 6453 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 7938,
+        "items": [
+          { "id": 1069, "min": 1, "max": 1, "weight": 6250 },   //Steel platelegs
+          { "id": 1375, "min": 1, "max": 1, "weight": 3910 },   //Bronze battleaxe
+          { "id": 865, "min": 1, "max": 1, "weight": 3910 },   //Steel knife
+          { "id": 1307, "min": 1, "max": 1, "weight": 2339 },   //Bronze 2h sword
+          { "id": 1381, "min": 1, "max": 1, "weight": 2339 },   //Staff of air
+          { "id": 1335, "min": 1, "max": 1, "weight": 1560 },   //Iron warhammer
+          { "id": 1424, "min": 1, "max": 1, "weight": 1560 },   //Steel mace
+          { "id": 1177, "min": 1, "max": 1, "weight": 781 },   //Steel sq shield
+          { "id": 1285, "min": 1, "max": 1, "weight": 781 }   //Mithril sword
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 6876,
+        "items": [
+          { "id": 555, "min": 4, "max": 4, "weight": 3910 },   //Water rune
+          { "id": 4698, "min": 3, "max": 3, "weight": 3910 },   //Mud rune
+          { "id": 2, "min": 3, "max": 3, "weight": 2339 },   //Cannonball
+          { "id": 886, "min": 7, "max": 7, "weight": 2339 },   //Steel arrow
+          { "id": 554, "min": 12, "max": 12, "weight": 2339 },   //Fire rune
+          { "id": 563, "min": 2, "max": 2, "weight": 2339 },   //Law rune
+          { "id": 557, "min": 8, "max": 8, "weight": 1560 },   //Earth rune
+          { "id": 562, "min": 6, "max": 6, "weight": 1560 }   //Chaos rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 793,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 6617,
+        "items": [
+          { "id": 995, "min": 19, "max": 19, "weight": 3910 },   //Coins
+          { "id": 995, "min": 33, "max": 33, "weight": 3910 },   //Coins
+          { "id": 995, "min": 60, "max": 60, "weight": 3910 },   //Coins
+          { "id": 995, "min": 86, "max": 86, "weight": 2339 },   //Coins
+          { "id": 995, "min": 2, "max": 2, "weight": 1560 },   //Coins
+          { "id": 995, "min": 37, "max": 37, "weight": 1560 },   //Coins
+          { "id": 995, "min": 54, "max": 54, "weight": 1560 },   //Coins
+          { "id": 995, "min": 126, "max": 126, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 10587,
+        "items": [
+          { "id": 1921, "min": 1, "max": 1, "weight": 3910 },   //Bowl of water
+          { "id": 155, "min": 1, "max": 1, "weight": 3910 },   //Fishing potion(1)
+          { "id": 1933, "min": 1, "max": 1, "weight": 3910 },   //Pot of flour
+          { "id": 4440, "min": 1, "max": 1, "weight": 3910 },   //Pot lid
+          { "id": 1539, "min": 1, "max": 1, "weight": 3910 },   //Steel nails
+          { "id": 440, "min": 2, "max": 2, "weight": 2339 },   //Iron ore
+          { "id": 5350, "min": 1, "max": 1, "weight": 2339 },   //Empty plant pot
+          { "id": 444, "min": 3, "max": 3, "weight": 1560 },   //Gold ore
+          { "id": 8778, "min": 1, "max": 1, "weight": 1560 },   //Oak plank
+          { "id": 966, "min": 1, "max": 1, "weight": 1560 },   //Tile
+          { "id": 1594, "min": 1, "max": 1, "weight": 1560 },   //Unholy mould
+          { "id": 575, "min": 1, "max": 1, "weight": 781 }   //Earth orb
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 6,
+        "items": [
+          { "id": 6807, "min": 1, "max": 1, "weight": 20 }   //Zombie champion scroll
+        ]
+      }
+    ]
+  }
+]

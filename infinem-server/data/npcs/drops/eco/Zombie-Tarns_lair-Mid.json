@@ -1,0 +1,85 @@
+[
+  {
+    "ids": [ 6454, 6455, 6456, 6457, 6458, 6459 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 6347,
+        "items": [
+          { "id": 1339, "min": 1, "max": 1, "weight": 3910 },   //Steel warhammer
+          { "id": 849, "min": 1, "max": 1, "weight": 2339 },   //Willow shortbow
+          { "id": 800, "min": 1, "max": 1, "weight": 2339 },   //Bronze thrownaxe
+          { "id": 1061, "min": 1, "max": 1, "weight": 1560 },   //Leather boots
+          { "id": 1295, "min": 1, "max": 1, "weight": 1560 },   //Steel longsword
+          { "id": 1209, "min": 1, "max": 1, "weight": 1560 },   //Mithril dagger
+          { "id": 1331, "min": 1, "max": 1, "weight": 1560 },   //Adamant scimitar
+          { "id": 5722, "min": 1, "max": 1, "weight": 781 },   //Steel spear(p++)
+          { "id": 1159, "min": 1, "max": 1, "weight": 781 },   //Mithril full helm
+          { "id": 1197, "min": 1, "max": 1, "weight": 781 },   //Mithril kiteshield
+          { "id": 1091, "min": 1, "max": 1, "weight": 781 },   //Adamant plateskirt
+          { "id": 1347, "min": 1, "max": 1, "weight": 781 }   //Rune warhammer
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 2377,
+        "items": [
+          { "id": 886, "min": 11, "max": 11, "weight": 2339 },   //Steel arrow
+          { "id": 808, "min": 3, "max": 3, "weight": 2339 },   //Steel dart
+          { "id": 560, "min": 4, "max": 4, "weight": 2339 }   //Death rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 529,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 10834,
+        "items": [
+          { "id": 995, "min": 52, "max": 52, "weight": 14800 },   //Coins
+          { "id": 995, "min": 35, "max": 35, "weight": 3910 },   //Coins
+          { "id": 995, "min": 298, "max": 298, "weight": 3910 },   //Coins
+          { "id": 995, "min": 67, "max": 67, "weight": 2339 },   //Coins
+          { "id": 995, "min": 135, "max": 135, "weight": 2339 },   //Coins
+          { "id": 995, "min": 27, "max": 27, "weight": 1560 },   //Coins
+          { "id": 995, "min": 95, "max": 95, "weight": 1560 },   //Coins
+          { "id": 995, "min": 132, "max": 132, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 13494,
+        "items": [
+          { "id": 946, "min": 1, "max": 1, "weight": 7810 },   //Knife
+          { "id": 1978, "min": 1, "max": 1, "weight": 3910 },   //Cup of tea
+          { "id": 7937, "min": 14, "max": 14, "weight": 3910 },   //Pure essence (noted)
+          { "id": 169, "min": 1, "max": 1, "weight": 3910 },   //Ranging potion(3)
+          { "id": 4824, "min": 3, "max": 3, "weight": 3910 },   //Rune nails
+          { "id": 569, "min": 1, "max": 1, "weight": 2339 },   //Fire orb
+          { "id": 1654, "min": 1, "max": 1, "weight": 2339 },   //Gold necklace
+          { "id": 1599, "min": 1, "max": 1, "weight": 2339 },   //Holy mould
+          { "id": 3420, "min": 2, "max": 2, "weight": 2339 },   //Limestone brick
+          { "id": 590, "min": 1, "max": 1, "weight": 1560 },   //Tinderbox
+          { "id": 1513, "min": 1, "max": 1, "weight": 1560 },   //Magic logs
+          { "id": 2359, "min": 1, "max": 1, "weight": 1560 },   //Mithril bar
+          { "id": 2562, "min": 1, "max": 1, "weight": 1560 },   //Ring of dueling(3)
+          { "id": 1550, "min": 1, "max": 1, "weight": 781 }   //Garlic
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 6,
+        "items": [
+          { "id": 6807, "min": 1, "max": 1, "weight": 20 }   //Zombie champion scroll
+        ]
+      }
+    ]
+  }
+]

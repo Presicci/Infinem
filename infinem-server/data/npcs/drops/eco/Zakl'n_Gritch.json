@@ -2,39 +2,55 @@
   {
     "ids": [ 3131 ],
     "guaranteed": [
-      { "id": 592, "min": 1, "max": 1 } //Ashes
+      { "id": 25772, "min": 1, "max": 1 }   //Malicious ashes
     ],
     "tables": [
       {
-        "name": "Weapons",
-        "weight": 50,
+        "name": "Unique table",
+        "weight": 786,
         "items": [
-          { "id": 808, "min": 96, "max": 100, "weight": 2000 }, //Steel dart
-          { "id": 11824, "min": 1, "max": 1, "weight": 1 } //Zamorakian spear
+          { "id": 11824, "min": 1, "max": 1, "weight": 18 },   //Zamorakian spear
+          { "id": 995, "min": 1300, "max": 1400, "weight": 769 }   //Coins
         ]
       },
       {
-        "name": "Godsword shards",
-        "weight": 1,
+        "name": "Godsword shard table",
+        "weight": 785,
         "items": [
-          { "id": 11818, "min": 1, "max": 1, "weight": 1 }, //Godsword shard 1
-          { "id": 11820, "min": 1, "max": 1, "weight": 1 }, //Godsword shard 2
-          { "id": 11822, "min": 1, "max": 1, "weight": 1 } //Godsword shard 3
+          { "id": 11818, "min": 1, "max": 1, "weight": 65 },   //Godsword shard 1
+          { "id": 11820, "min": 1, "max": 1, "weight": 65 },   //Godsword shard 2
+          { "id": 11822, "min": 1, "max": 1, "weight": 65 },   //Godsword shard 3
+          { "id": 995, "min": 1300, "max": 1400, "weight": 591 }   //Coins
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 800,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (hard)
+          { "id": 6805, "min": 1, "max": 1, "weight": 20 }   //Lesser demon champion scroll
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 24404,
+        "items": [
+          { "id": 886, "min": 95, "max": 100, "weight": 5510 },   //Steel arrow
+          { "id": 808, "min": 95, "max": 100, "weight": 6300 },   //Steel dart
+          { "id": 560, "min": 5, "max": 10, "weight": 6300 },   //Death rune
+          { "id": 565, "min": 5, "max": 10, "weight": 6300 }   //Blood rune
         ]
       },
       {
         "name": "Other",
-        "weight": 1000,
+        "weight": 74022,
         "items": [
-          { "id": 995, "min": 1300, "max": 1500, "weight": 6 }, //Coins
-          { "id": 886, "min": 95, "max": 100, "weight": 3 }, //Steel arrow
-          { "id": 565, "min": 5, "max": 10, "weight": 3 }, //Blood rune
-          { "id": 560, "min": 5, "max": 10, "weight": 3 }, //Death rune
-          { "id": 7060, "min": 2, "max": 2, "weight": 3 }, //Tuna potato
-          { "id": 157, "min": 1, "max": 1, "weight": 3 }, //Super strength(3)
-          { "id": 245, "min": 5, "max": 10, "weight": 3 }, //Wine of zamorak
-          { "id": 385, "min": 2, "max": 2, "weight": 3 }, //Shark
-          { "id": 2722, "min": 1, "max": 1, "weight": 1 } //Clue scroll (hard)
+          { "id": 995, "min": 1300, "max": 1400, "weight": 52000 },   //Coins
+          { "id": 385, "min": 3, "max": 3, "weight": 6300 },   //Shark
+          { "id": 7060, "min": 2, "max": 2, "weight": 6300 },   //Tuna potato
+          { "id": 246, "min": 5, "max": 10, "weight": 6300 },   //Wine of zamorak (noted)
+          { "id": 145, "min": 1, "max": 1, "weight": 1570 },   //Super attack(3)
+          { "id": 157, "min": 1, "max": 1, "weight": 1570 }   //Super strength(3)
         ]
       }
     ]

@@ -2,52 +2,48 @@
   {
     "ids": [ 2954 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 } //Bones
+      { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
-        "name": "Weapons/Armour",
-        "weight": 1,
+        "name": "Weapons and armour",
+        "weight": 14279,
         "items": [
-          { "id": 1397, "min": 1, "max": 1, "weight": 1 }, //Air battlestaff
-          { "id": 1399, "min": 1, "max": 1, "weight": 1 }, //Earth battlestaff
-          { "id": 1393, "min": 1, "max": 1, "weight": 1 }, //Fire battlestaff
-          { "id": 1395, "min": 1, "max": 1, "weight": 1 }, //Water battlestaff
-          { "id": 1033, "min": 1, "max": 1, "weight": 1 }, //Zamorak robe (bottom)
-          { "id": 1035, "min": 1, "max": 1, "weight": 1 } //Zamorak robe (top)
+          { "id": 1035, "min": 1, "max": 1, "weight": 2339 },   //Zamorak monk top
+          { "id": 1033, "min": 1, "max": 1, "weight": 3130 },   //Zamorak monk bottom
+          { "id": 1397, "min": 1, "max": 1, "weight": 1560 },   //Air battlestaff
+          { "id": 1395, "min": 1, "max": 1, "weight": 2339 },   //Water battlestaff
+          { "id": 1399, "min": 1, "max": 1, "weight": 2339 },   //Earth battlestaff
+          { "id": 1393, "min": 1, "max": 1, "weight": 781 }   //Fire battlestaff
         ]
       },
       {
         "name": "Runes",
-        "weight": 3,
+        "weight": 45541,
         "items": [
-          { "id": 556, "min": 60, "max": 60, "weight": 10 }, //Air rune
-          { "id": 556, "min": 189, "max": 189, "weight": 10 }, //Air rune
-          { "id": 556, "min": 192, "max": 192, "weight": 10 }, //Air rune
-          { "id": 557, "min": 79, "max": 79, "weight": 10 }, //Earth rune
-          { "id": 557, "min": 86, "max": 86, "weight": 10 }, //Earth rune
-          { "id": 557, "min": 107, "max": 107, "weight": 10 }, //Earth rune
-          { "id": 554, "min": 51, "max": 51, "weight": 10 }, //Fire rune
-          { "id": 554, "min": 180, "max": 180, "weight": 10 }, //Fire rune
-          { "id": 554, "min": 189, "max": 189, "weight": 10 }, //Fire rune
-          { "id": 555, "min": 86, "max": 86, "weight": 10 }, //Water rune
-          { "id": 555, "min": 107, "max": 107, "weight": 10 }, //Water rune
-          { "id": 555, "min": 146, "max": 146, "weight": 10 }, //Water rune
-          { "id": 565, "min": 8, "max": 8, "weight": 1 }, //Blood rune
-          { "id": 564, "min": 25, "max": 25, "weight": 1 }, //Cosmic rune
-          { "id": 560, "min": 45, "max": 45, "weight": 1 }, //Death rune
-          { "id": 563, "min": 9, "max": 9, "weight": 1 }, //Law rune
-          { "id": 561, "min": 12, "max": 12, "weight": 1 }, //Nature rune
-          { "id": 561, "min": 28, "max": 28, "weight": 1 } //Nature rune
+          { "id": 556, "min": 60, "max": 60, "weight": 2339 },   //Air rune
+          { "id": 556, "min": 189, "max": 189, "weight": 1560 },   //Air rune
+          { "id": 555, "min": 42, "max": 42, "weight": 2339 },   //Water rune
+          { "id": 555, "min": 126, "max": 126, "weight": 1560 },   //Water rune
+          { "id": 557, "min": 79, "max": 79, "weight": 2339 },   //Earth rune
+          { "id": 557, "min": 86, "max": 86, "weight": 3130 },   //Earth rune
+          { "id": 557, "min": 107, "max": 107, "weight": 1560 },   //Earth rune
+          { "id": 554, "min": 51, "max": 51, "weight": 2339 },   //Fire rune
+          { "id": 554, "min": 180, "max": 180, "weight": 1560 },   //Fire rune
+          { "id": 564, "min": 25, "max": 25, "weight": 781 },   //Cosmic rune
+          { "id": 561, "min": 30, "max": 30, "weight": 5470 },   //Nature rune
+          { "id": 563, "min": 9, "max": 9, "weight": 781 },   //Law rune
+          { "id": 560, "min": 45, "max": 45, "weight": 4690 },   //Death rune
+          { "id": 565, "min": 8, "max": 8, "weight": 9380 }   //Blood rune
         ]
       },
       {
-        "name": "Other",
-        "weight": 3,
+        "name": "Coins",
+        "weight": 40179,
         "items": [
-          { "id": 995, "min": 77, "max": 77, "weight": 1 }, //Coins
-          { "id": 995, "min": 89, "max": 89, "weight": 1 }, //Coins
-          { "id": 995, "min": 240, "max": 240, "weight": 1 } //Coins
+          { "id": 995, "min": 77, "max": 77, "weight": 13300 },   //Coins
+          { "id": 995, "min": 89, "max": 89, "weight": 19500 },   //Coins
+          { "id": 995, "min": 240, "max": 240, "weight": 2339 }   //Coins
         ]
       }
     ]

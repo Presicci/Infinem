@@ -1,0 +1,52 @@
+[
+  {
+    "ids": [ 64, 65, 66, 67, 68 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 46707,
+        "items": [
+          { "id": 1351, "min": 1, "max": 1, "weight": 39100 },   //Bronze axe
+          { "id": 1139, "min": 1, "max": 1, "weight": 3130 },   //Bronze med helm
+          { "id": 1291, "min": 1, "max": 1, "weight": 781 },   //Bronze longsword
+          { "id": 1349, "min": 1, "max": 1, "weight": 781 }   //Iron axe
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 7509,
+        "items": [
+          { "id": 556, "min": 13, "max": 13, "weight": 3130 },   //Air rune
+          { "id": 882, "min": 8, "max": 8, "weight": 3130 },   //Bronze arrow
+          { "id": 561, "min": 6, "max": 6, "weight": 781 }   //Nature rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 3333,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 42449,
+        "items": [
+          { "id": 313, "min": 5, "max": 5, "weight": 35900 },   //Fishing bait
+          { "id": 995, "min": 18, "max": 18, "weight": 2339 },   //Coins
+          { "id": 995, "min": 28, "max": 28, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 21,
+        "items": [
+          { "id": 6807, "min": 1, "max": 1, "weight": 20 }   //Zombie champion scroll
+        ]
+      }
+    ]
+  }
+]

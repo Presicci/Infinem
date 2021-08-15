@@ -1,0 +1,85 @@
+[
+  {
+    "ids": [ 6466, 6460, 6461, 6462, 6463, 6464, 6465 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 7671,
+        "items": [
+          { "id": 1339, "min": 1, "max": 1, "weight": 3910 },   //Steel warhammer
+          { "id": 1245, "min": 1, "max": 1, "weight": 3910 },   //Adamant spear
+          { "id": 1375, "min": 1, "max": 1, "weight": 2339 },   //Bronze battleaxe
+          { "id": 1315, "min": 1, "max": 1, "weight": 2339 },   //Mithril 2h sword
+          { "id": 1273, "min": 1, "max": 1, "weight": 2339 },   //Mithril pickaxe
+          { "id": 1059, "min": 1, "max": 1, "weight": 1560 },   //Leather gloves
+          { "id": 1105, "min": 1, "max": 1, "weight": 1560 },   //Steel chainbody
+          { "id": 1103, "min": 1, "max": 1, "weight": 781 },   //Bronze chainbody
+          { "id": 1361, "min": 1, "max": 1, "weight": 781 },   //Black axe
+          { "id": 1107, "min": 1, "max": 1, "weight": 781 },   //Black chainbody
+          { "id": 1179, "min": 1, "max": 1, "weight": 781 },   //Black sq shield
+          { "id": 1287, "min": 1, "max": 1, "weight": 781 },   //Adamant sword
+          { "id": 1373, "min": 1, "max": 1, "weight": 781 }   //Rune battleaxe
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 5284,
+        "items": [
+          { "id": 825, "min": 4, "max": 4, "weight": 2339 },   //Bronze javelin
+          { "id": 5620, "min": 3, "max": 3, "weight": 2339 },   //Adamant arrow(p+)
+          { "id": 561, "min": 7, "max": 7, "weight": 2339 },   //Nature rune
+          { "id": 558, "min": 10, "max": 10, "weight": 1560 },   //Mind rune
+          { "id": 4695, "min": 3, "max": 3, "weight": 1560 },   //Mist rune
+          { "id": 4699, "min": 8, "max": 8, "weight": 1560 },   //Lava rune
+          { "id": 564, "min": 2, "max": 2, "weight": 1560 },   //Cosmic rune
+          { "id": 563, "min": 6, "max": 6, "weight": 1560 },   //Law rune
+          { "id": 9143, "min": 7, "max": 7, "weight": 781 }   //Adamant bolts
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 529,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 14559,
+        "items": [
+          { "id": 995, "min": 17, "max": 17, "weight": 17200 },   //Coins
+          { "id": 995, "min": 82, "max": 82, "weight": 16399 },   //Coins
+          { "id": 995, "min": 154, "max": 154, "weight": 3910 },   //Coins
+          { "id": 995, "min": 78, "max": 78, "weight": 2339 },   //Coins
+          { "id": 995, "min": 55, "max": 55, "weight": 1560 },   //Coins
+          { "id": 995, "min": 112, "max": 112, "weight": 781 },   //Coins
+          { "id": 995, "min": 410, "max": 410, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 5557,
+        "items": [
+          { "id": 4821, "min": 8, "max": 8, "weight": 3910 },   //Black nails
+          { "id": 1744, "min": 2, "max": 2, "weight": 3910 },   //Hard leather (noted)
+          { "id": 313, "min": 7, "max": 7, "weight": 2339 },   //Fishing bait
+          { "id": 2127, "min": 4, "max": 4, "weight": 1560 },   //Dwellberries (noted)
+          { "id": 233, "min": 1, "max": 1, "weight": 1560 },   //Pestle and mortar
+          { "id": 239, "min": 1, "max": 1, "weight": 1560 },   //White berries
+          { "id": 2361, "min": 1, "max": 1, "weight": 781 },   //Adamantite bar
+          { "id": 2130, "min": 1, "max": 1, "weight": 781 }   //Pot of cream
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 6,
+        "items": [
+          { "id": 6807, "min": 1, "max": 1, "weight": 20 }   //Zombie champion scroll
+        ]
+      }
+    ]
+  }
+]

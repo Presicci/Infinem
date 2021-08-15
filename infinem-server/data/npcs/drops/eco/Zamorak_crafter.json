@@ -3,24 +3,29 @@
     "ids": [ 7426, 7427 ],
     "tables": [
       {
-        "name": "Drops",
-        "weight": 1,
+        "name": "Runes",
+        "weight": 77143,
         "items": [
-          { "id": 556, "min": 5, "max": 5, "weight": 9 }, //Air rune
-          { "id": 559, "min": 3, "max": 3, "weight": 9 }, //Body rune
-          { "id": 565, "min": 4, "max": 4, "weight": 9 }, //Blood rune
-          { "id": 562, "min": 4, "max": 4, "weight": 9 }, //Chaos rune
-          { "id": 560, "min": 3, "max": 3, "weight": 9 }, //Death rune
-          { "id": 557, "min": 6, "max": 6, "weight": 9 }, //Earth rune
-          { "id": 7936, "min": 3, "max": 10, "weight": 9 }, //Pure essence
-          { "id": 566, "min": 3, "max": 3, "weight": 9 }, //Soul rune
-          { "id": 555, "min": 5, "max": 5, "weight": 9 }, //Water rune
-          { "id": 995, "min": 1, "max": 50, "weight": 6 }, //Coins
-          { "id": 554, "min": 2, "max": 3, "weight": 6 }, //Fire rune
-          { "id": 563, "min": 3, "max": 3, "weight": 6 }, //Law rune
-          { "id": 561, "min": 2, "max": 2, "weight": 6 }, //Nature rune
-          { "id": 380, "min": 3, "max": 3, "weight": 3 }, //Lobster (noted)
-          { "id": 2139, "min": 5, "max": 5, "weight": 1 } //Raw chicken (noted)
+          { "id": 556, "min": 5, "max": 5, "weight": 14300 },   //Air rune
+          { "id": 559, "min": 3, "max": 3, "weight": 7139 },   //Body rune
+          { "id": 565, "min": 4, "max": 4, "weight": 2860 },   //Blood rune
+          { "id": 562, "min": 4, "max": 4, "weight": 7139 },   //Chaos rune
+          { "id": 560, "min": 3, "max": 3, "weight": 2860 },   //Death rune
+          { "id": 557, "min": 6, "max": 6, "weight": 7139 },   //Earth rune
+          { "id": 555, "min": 5, "max": 5, "weight": 14300 },   //Water rune
+          { "id": 566, "min": 3, "max": 3, "weight": 2860 },   //Soul rune
+          { "id": 554, "min": 2, "max": 2, "weight": 14300 },   //Fire rune
+          { "id": 563, "min": 3, "max": 3, "weight": 1430 },   //Law rune
+          { "id": 561, "min": 2, "max": 2, "weight": 2860 }   //Nature rune
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 22856,
+        "items": [
+          { "id": 7936, "min": 3, "max": 3, "weight": 7139 },   //Pure essence
+          { "id": 7936, "min": 10, "max": 10, "weight": 1430 },   //Pure essence
+          { "id": 995, "min": 50, "max": 50, "weight": 14300 }   //Coins
         ]
       }
     ]

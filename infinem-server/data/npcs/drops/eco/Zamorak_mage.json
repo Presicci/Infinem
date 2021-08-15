@@ -1,0 +1,29 @@
+[
+  {
+    "ids": [ 7422, 7423 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Runes",
+        "weight": 20000,
+        "items": [
+          { "id": 554, "min": 7, "max": 7, "weight": 4000 },   //Fire rune
+          { "id": 555, "min": 6, "max": 6, "weight": 4000 },   //Water rune
+          { "id": 556, "min": 5, "max": 5, "weight": 4000 },   //Air rune
+          { "id": 561, "min": 2, "max": 2, "weight": 4000 },   //Nature rune
+          { "id": 563, "min": 2, "max": 2, "weight": 2000 },   //Law rune
+          { "id": 565, "min": 1, "max": 1, "weight": 2000 }   //Blood rune
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 80000,
+        "items": [
+          { "id": 995, "min": 100, "max": 100, "weight": 80000 }   //Coins
+        ]
+      }
+    ]
+  }
+]

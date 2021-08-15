@@ -1,0 +1,65 @@
+[
+  {
+    "ids": [ 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 880 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 1030,
+        "items": [
+          { "id": 1139, "min": 1, "max": 1, "weight": 3130 },   //Bronze med helm
+          { "id": 1291, "min": 1, "max": 1, "weight": 781 },   //Bronze longsword
+          { "id": 1349, "min": 1, "max": 1, "weight": 781 }   //Iron axe
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 4805,
+        "items": [
+          { "id": 884, "min": 5, "max": 5, "weight": 5470 },   //Iron arrow
+          { "id": 559, "min": 6, "max": 6, "weight": 3910 },   //Body rune
+          { "id": 558, "min": 5, "max": 5, "weight": 3910 },   //Mind rune
+          { "id": 556, "min": 13, "max": 13, "weight": 3130 },   //Air rune
+          { "id": 884, "min": 8, "max": 8, "weight": 3130 },   //Iron arrow
+          { "id": 886, "min": 5, "max": 5, "weight": 1560 },   //Steel arrow
+          { "id": 561, "min": 6, "max": 6, "weight": 781 }   //Nature rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 4287,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 8054,
+        "items": [
+          { "id": 995, "min": 10, "max": 10, "weight": 28100 },   //Coins
+          { "id": 995, "min": 4, "max": 4, "weight": 3130 },   //Coins
+          { "id": 995, "min": 18, "max": 18, "weight": 2339 },   //Coins
+          { "id": 995, "min": 13, "max": 13, "weight": 1560 },   //Coins
+          { "id": 995, "min": 28, "max": 28, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 6687,
+        "items": [
+          { "id": 313, "min": 5, "max": 5, "weight": 28899 },   //Fishing bait
+          { "id": 436, "min": 1, "max": 1, "weight": 1560 }   //Copper ore
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 5,
+        "items": [
+          { "id": 6807, "min": 1, "max": 1, "weight": 20 }   //Zombie champion scroll
+        ]
+      }
+    ]
+  }
+]

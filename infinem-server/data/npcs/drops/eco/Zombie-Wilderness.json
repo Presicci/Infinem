@@ -1,0 +1,69 @@
+[
+  {
+    "ids": [ 45, 46, 47, 48, 59, 60, 61, 62, 63, 6596, 6597, 6598 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 856,
+        "items": [
+          { "id": 1189, "min": 1, "max": 1, "weight": 1560 },   //Bronze kiteshield
+          { "id": 1203, "min": 1, "max": 1, "weight": 1560 },   //Iron dagger
+          { "id": 1420, "min": 1, "max": 1, "weight": 781 }   //Iron mace
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 3086,
+        "items": [
+          { "id": 564, "min": 2, "max": 2, "weight": 4690 },   //Cosmic rune
+          { "id": 562, "min": 4, "max": 4, "weight": 3910 },   //Chaos rune
+          { "id": 556, "min": 3, "max": 3, "weight": 2339 },   //Air rune
+          { "id": 559, "min": 3, "max": 3, "weight": 2339 },   //Body rune
+          { "id": 554, "min": 7, "max": 7, "weight": 781 }   //Fire rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 2229,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 5308,
+        "items": [
+          { "id": 995, "min": 10, "max": 10, "weight": 14800 },   //Coins
+          { "id": 995, "min": 26, "max": 26, "weight": 3910 },   //Coins
+          { "id": 995, "min": 35, "max": 35, "weight": 3130 },   //Coins
+          { "id": 995, "min": 1, "max": 1, "weight": 1560 },   //Coins
+          { "id": 995, "min": 18, "max": 18, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 24504,
+        "items": [
+          { "id": 313, "min": 3, "max": 3, "weight": 32799 },   //Fishing bait
+          { "id": 11940, "min": 3, "max": 3, "weight": 32799 },   //Dark fishing bait
+          { "id": 313, "min": 4, "max": 4, "weight": 19500 },   //Fishing bait
+          { "id": 11940, "min": 4, "max": 4, "weight": 19500 },   //Dark fishing bait
+          { "id": 313, "min": 7, "max": 7, "weight": 2339 },   //Fishing bait
+          { "id": 11940, "min": 7, "max": 7, "weight": 2339 },   //Dark fishing bait
+          { "id": 221, "min": 1, "max": 1, "weight": 1560 },   //Eye of newt
+          { "id": 590, "min": 1, "max": 1, "weight": 781 }   //Tinderbox
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 4,
+        "items": [
+          { "id": 6807, "min": 1, "max": 1, "weight": 20 }   //Zombie champion scroll
+        ]
+      }
+    ]
+  }
+]
