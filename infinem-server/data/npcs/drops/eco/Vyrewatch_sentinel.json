@@ -1,0 +1,94 @@
+[
+  {
+    "ids": [ 9599, 9600, 9601, 9602, 9603, 9604, 9756, 9757, 9758, 9759, 9760, 9761, 9762, 9763 ],
+    "guaranteed": [
+      { "id": 3325, "min": 1, "max": 1 }   //Vampyre dust
+    ],
+    "tables": [
+      {
+        "name": "Unique",
+        "weight": 66,
+        "items": [
+          { "id": 24777, "min": 1, "max": 1, "weight": 66 }   //Blood shard
+        ]
+      },
+      {
+        "name": "Weapons and armour",
+        "weight": 19526,
+        "items": [
+          { "id": 1213, "min": 1, "max": 1, "weight": 6450 },   //Rune dagger
+          { "id": 1073, "min": 1, "max": 1, "weight": 6450 },   //Adamant platelegs
+          { "id": 1123, "min": 1, "max": 1, "weight": 4300 },   //Adamant platebody
+          { "id": 1163, "min": 1, "max": 1, "weight": 1080 },   //Rune full helm
+          { "id": 1201, "min": 1, "max": 1, "weight": 1080 }   //Rune kiteshield
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 39184,
+        "items": [
+          { "id": 560, "min": 6, "max": 10, "weight": 10800 },   //Death rune
+          { "id": 565, "min": 8, "max": 16, "weight": 10800 },   //Blood rune
+          { "id": 561, "min": 6, "max": 11, "weight": 10800 },   //Nature rune
+          { "id": 892, "min": 4, "max": 10, "weight": 4300 },   //Rune arrow
+          { "id": 830, "min": 5, "max": 15, "weight": 2150 }   //Rune javelin
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 1084,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 1084,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Bolt tips",
+        "weight": 1079,
+        "items": [
+          { "id": 45, "min": 6, "max": 14, "weight": 172 },   //Opal bolt tips
+          { "id": 9187, "min": 6, "max": 14, "weight": 57 },   //Jade bolt tips
+          { "id": 9188, "min": 6, "max": 14, "weight": 57 },   //Topaz bolt tips
+          { "id": 46, "min": 6, "max": 14, "weight": 172 },   //Pearl bolt tips
+          { "id": 9189, "min": 6, "max": 14, "weight": 57 },   //Sapphire bolt tips
+          { "id": 9190, "min": 6, "max": 14, "weight": 96 },   //Emerald bolt tips
+          { "id": 9191, "min": 6, "max": 14, "weight": 115 },   //Ruby bolt tips
+          { "id": 9192, "min": 6, "max": 14, "weight": 172 },   //Diamond bolt tips
+          { "id": 9193, "min": 6, "max": 14, "weight": 115 },   //Dragonstone bolt tips
+          { "id": 9194, "min": 6, "max": 14, "weight": 57 }   //Onyx bolt tips
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 15179,
+        "items": [
+          { "id": 3240, "min": 4, "max": 8, "weight": 4300 },   //Bark (noted)
+          { "id": 454, "min": 8, "max": 8, "weight": 4300 },   //Coal (noted)
+          { "id": 2363, "min": 1, "max": 1, "weight": 2150 },   //Runite bar
+          { "id": 1516, "min": 6, "max": 6, "weight": 2150 },   //Yew logs (noted)
+          { "id": 451, "min": 1, "max": 1, "weight": 2150 }   //Runite ore
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 22794,
+        "items": [
+          { "id": 995, "min": 100, "max": 1500, "weight": 22600 }   //Coins
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 1008,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 1000 }   //Clue scroll (hard)
+        ]
+      }
+    ]
+  }
+]

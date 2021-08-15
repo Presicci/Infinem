@@ -1,0 +1,55 @@
+[
+  {
+    "ids": [ 7400 ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 20955,
+        "items": [
+          { "id": 1371, "min": 1, "max": 1, "weight": 8590 },   //Adamant battleaxe
+          { "id": 1313, "min": 1, "max": 1, "weight": 3910 },   //Black 2h sword
+          { "id": 1357, "min": 1, "max": 1, "weight": 2339 },   //Adamant axe
+          { "id": 1317, "min": 1, "max": 1, "weight": 1560 },   //Adamant 2h sword
+          { "id": 4127, "min": 1, "max": 1, "weight": 1560 },   //Mithril boots
+          { "id": 1201, "min": 1, "max": 1, "weight": 1560 },   //Rune kiteshield
+          { "id": 1163, "min": 1, "max": 1, "weight": 781 }   //Rune full helm
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 6450,
+        "items": [
+          { "id": 562, "min": 45, "max": 45, "weight": 3910 },   //Chaos rune
+          { "id": 560, "min": 15, "max": 15, "weight": 2339 }   //Death rune
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 57272,
+        "items": [
+          { "id": 995, "min": 44, "max": 44, "weight": 21100 },   //Coins
+          { "id": 995, "min": 102, "max": 102, "weight": 21100 },   //Coins
+          { "id": 995, "min": 220, "max": 220, "weight": 7030 },   //Coins
+          { "id": 995, "min": 11, "max": 11, "weight": 4690 },   //Coins
+          { "id": 995, "min": 460, "max": 460, "weight": 1560 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 15320,
+        "items": [
+          { "id": 379, "min": 2, "max": 2, "weight": 12500 },   //Lobster
+          { "id": 2357, "min": 1, "max": 1, "weight": 1560 },   //Gold bar
+          { "id": 1734, "min": 10, "max": 10, "weight": 781 }   //Thread
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 16104,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 15600 }   //Clue scroll (hard)
+        ]
+      }
+    ]
+  }
+]

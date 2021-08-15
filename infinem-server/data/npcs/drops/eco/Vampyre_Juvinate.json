@@ -1,43 +1,67 @@
 [
   {
-    "ids": [ 4443, 4486, 3694, 3695, 4427, 4428, 4429, 4430, 4487, 4442 ],
+    "ids": [ 3690, 3691, 3694, 3695, 3698, 3699, 3700, 4427, 4428, 4429, 4430, 4432, 4433, 4434, 4442, 4443, 4481, 4482, 4486, 4487, 5634, 5635, 5636, 5637, 5638, 5639, 9586, 9587, 9614, 9615, 9616, 9617, 9683, 9684, 9727, 9728, 9729, 9730 ],
     "tables": [
       {
-        "name": "Weapon rewards",
-        "weight": 1,
+        "name": "Weapons",
+        "weight": 34716,
         "items": [
-          { "id": 1367, "min": 1, "max": 1, "weight": 12 }, //Black battleaxe
-          { "id": 1369, "min": 1, "max": 1, "weight": 12 }, //Mithril battleaxe
-          { "id": 1329, "min": 1, "max": 1, "weight": 12 }, //Mithril scimitar
-          { "id": 1299, "min": 1, "max": 1, "weight": 12 }, //Mithril longsword
-          { "id": 1357, "min": 1, "max": 1, "weight": 12 }, //Adamant axe
-          { "id": 1381, "min": 1, "max": 1, "weight": 1 }, //Staff of air
-          { "id": 1387, "min": 1, "max": 1, "weight": 1 }, //Staff of fire
-          { "id": 4580, "min": 1, "max": 1, "weight": 1 }, //Black spear
-          { "id": 1313, "min": 1, "max": 1, "weight": 1 }, //Black 2h sword
-          { "id": 1315, "min": 1, "max": 1, "weight": 1 }, //Mithril 2h sword
-          { "id": 1343, "min": 1, "max": 1, "weight": 1 }, //Mithril warhammer
-          { "id": 1287, "min": 1, "max": 1, "weight": 1 }, //Adamant sword
-          { "id": 1430, "min": 1, "max": 1, "weight": 1 }, //Adamant mace
-          { "id": 1331, "min": 1, "max": 1, "weight": 1 } //Adamant scimitar
+          { "id": 1367, "min": 1, "max": 1, "weight": 2000 },   //Black battleaxe
+          { "id": 1369, "min": 1, "max": 1, "weight": 2000 },   //Mithril battleaxe
+          { "id": 1329, "min": 1, "max": 1, "weight": 2000 },   //Mithril scimitar
+          { "id": 1299, "min": 1, "max": 1, "weight": 2000 },   //Mithril longsword
+          { "id": 1357, "min": 1, "max": 1, "weight": 2000 },   //Adamant axe
+          { "id": 1381, "min": 1, "max": 1, "weight": 725 },   //Staff of air
+          { "id": 1387, "min": 1, "max": 1, "weight": 725 },   //Staff of fire
+          { "id": 4580, "min": 1, "max": 1, "weight": 725 },   //Black spear
+          { "id": 1313, "min": 1, "max": 1, "weight": 725 },   //Black 2h sword
+          { "id": 1315, "min": 1, "max": 1, "weight": 725 },   //Mithril 2h sword
+          { "id": 1343, "min": 1, "max": 1, "weight": 725 },   //Mithril warhammer
+          { "id": 1287, "min": 1, "max": 1, "weight": 725 },   //Adamant sword
+          { "id": 1430, "min": 1, "max": 1, "weight": 725 },   //Adamant mace
+          { "id": 1331, "min": 1, "max": 1, "weight": 725 }   //Adamant scimitar
         ]
       },
       {
-        "name": "Armour rewards",
-        "weight": 1,
+        "name": "Armour",
+        "weight": 49632,
         "items": [
-          { "id": 1083, "min": 1, "max": 1, "weight": 6 }, //Steel plateskirt
-          { "id": 1119, "min": 1, "max": 1, "weight": 6 }, //Steel platebody
-          { "id": 1165, "min": 1, "max": 1, "weight": 3 }, //Black full helm
-          { "id": 1195, "min": 1, "max": 1, "weight": 3 }, //Black kiteshield
-          { "id": 1179, "min": 1, "max": 1, "weight": 3 }, //Black sq shield
-          { "id": 1159, "min": 1, "max": 1, "weight": 3 }, //Mithril full helm
-          { "id": 1109, "min": 1, "max": 1, "weight": 3 }, //Mithril chainbody
-          { "id": 1107, "min": 1, "max": 1, "weight": 1 }, //Black chainbody
-          { "id": 1077, "min": 1, "max": 1, "weight": 1 }, //Black platelegs
-          { "id": 1071, "min": 1, "max": 1, "weight": 1 }, //Mithril platelegs
-          { "id": 1181, "min": 1, "max": 1, "weight": 1 }, //Mithril sq shield
-          { "id": 1145, "min": 1, "max": 1, "weight": 1 } //Adamant med helm
+          { "id": 1083, "min": 1, "max": 1, "weight": 5000 },   //Steel plateskirt
+          { "id": 1119, "min": 1, "max": 1, "weight": 5000 },   //Steel platebody
+          { "id": 1165, "min": 1, "max": 1, "weight": 2000 },   //Black full helm
+          { "id": 1195, "min": 1, "max": 1, "weight": 2000 },   //Black kiteshield
+          { "id": 1179, "min": 1, "max": 1, "weight": 2000 },   //Black sq shield
+          { "id": 1159, "min": 1, "max": 1, "weight": 2000 },   //Mithril full helm
+          { "id": 1109, "min": 1, "max": 1, "weight": 2000 },   //Mithril chainbody
+          { "id": 1107, "min": 1, "max": 1, "weight": 725 },   //Black chainbody
+          { "id": 1077, "min": 1, "max": 1, "weight": 725 },   //Black platelegs
+          { "id": 1071, "min": 1, "max": 1, "weight": 725 },   //Mithril platelegs
+          { "id": 1181, "min": 1, "max": 1, "weight": 725 },   //Mithril sq shield
+          { "id": 1145, "min": 1, "max": 1, "weight": 725 }   //Adamant med helm
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 3046,
+        "items": [
+          { "id": 561, "min": 10, "max": 10, "weight": 725 },   //Nature rune
+          { "id": 560, "min": 10, "max": 10, "weight": 725 }   //Death rune
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 12605,
+        "items": [
+          { "id": 1519, "min": 5, "max": 5, "weight": 2000 },   //Willow logs
+          { "id": 1515, "min": 5, "max": 5, "weight": 2000 },   //Yew logs
+          { "id": 1641, "min": 1, "max": 1, "weight": 2000 }   //Ruby ring
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 900,
+        "items": [
+          { "id": 2801, "min": 1, "max": 1, "weight": 725 }   //Clue scroll (medium)
         ]
       }
     ]

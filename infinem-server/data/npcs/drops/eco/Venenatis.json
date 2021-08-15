@@ -3,64 +3,70 @@
     "ids": [ 6504, 6610 ],
     "tables": [
       {
-        "name": "Armour and weapons",
-        "weight": 1,
+        "name": "Pre-roll",
+        "weight": 180,
         "items": [
-          { "id": 1275, "min": 1, "max": 1, "weight": 75 }, //Rune pickaxe
-          { "id": 9243, "min": 100, "max": 100, "weight": 75 }, //Diamond bolts (e)
-          { "id": 1319, "min": 1, "max": 1, "weight": 75 }, //Rune 2h sword
-          { "id": 868, "min": 60, "max": 60, "weight": 75 }, //Rune knife
-          { "id": 30145, "min": 1, "max": 1, "weight": 20 }, //Leaf
-          { "id": 11920, "min": 1, "max": 1, "weight": 8 }, //Dragon pickaxe
-          { "id": 7158, "min": 1, "max": 1, "weight": 20 }, //Dragon 2h sword
-          { "id": 12605, "min": 1, "max": 1, "weight": 8 } //Treasonous ring
-        ]
-      },
-      { 
-        "name": "Gems",
-        "weight": 1,
-        "items": [
-          { "id": 1620, "min": 20, "max": 20, "weight": 3 }, //Uncut ruby (noted)
-          { "id": 1618, "min": 10, "max": 10, "weight": 3 } //Uncut diamond (noted)
+          { "id": 12605, "min": 1, "max": 1, "weight": 195 }   //Treasonous ring
         ]
       },
       {
-        "name": "Resources",
-        "weight": 1,
+        "name": "Weapons and armour",
+        "weight": 15379,
         "items": [
-          { "id": 562, "min": 400, "max": 400, "weight": 12 }, //Chaos rune
-          { "id": 560, "min": 300, "max": 300, "weight": 12 }, //Death rune
-          { "id": 565, "min": 200, "max": 200, "weight": 12 }, //Blood rune
-          { "id": 6035, "min": 100, "max": 100, "weight": 12 }, //Supercompost (noted)
-          { "id": 238, "min": 100, "max": 100, "weight": 12 }, //Unicorn horn (noted)
-          { "id": 224, "min": 500, "max": 500, "weight": 6 }, //Red spiders' eggs (noted)
-          { "id": 445, "min": 300, "max": 300, "weight": 6 }, //Gold ore (noted)
-          { "id": 2, "min": 250, "max": 250, "weight": 6 }, //Cannonball
-          { "id": 1514, "min": 100, "max": 100, "weight": 6 }, //Magic logs (noted)
-          { "id": 226, "min": 50, "max": 50, "weight": 3 }, //Limpwurt root (noted)
-          { "id": 1631, "min": 1, "max": 1, "weight": 3 }, //Uncut dragonstone
-          { "id": 5315, "min": 1, "max": 1, "weight": 3 }, //Yew seed
-          { "id": 5316, "min": 1, "max": 1, "weight": 3 }, //Magic seed
-          { "id": 5289, "min": 1, "max": 1, "weight": 3 }, //Palm tree seed
-          { "id": 3052, "min": 100, "max": 100, "weight": 3 } //Grimy snapdragon (noted)
+          { "id": 1275, "min": 1, "max": 1, "weight": 9380 },   //Rune pickaxe
+          { "id": 868, "min": 60, "max": 60, "weight": 3910 },   //Rune knife
+          { "id": 1319, "min": 1, "max": 1, "weight": 2339 },   //Rune 2h sword
+          { "id": 11920, "min": 1, "max": 1, "weight": 586 },   //Dragon pickaxe
+          { "id": 7158, "min": 1, "max": 1, "weight": 391 }   //Dragon 2h sword
         ]
       },
       {
-        "name": "Consumables",
-        "weight": 1,
+        "name": "Runes and ammunition",
+        "weight": 21718,
         "items": [
-          { "id": 11936, "min": 8, "max": 8, "weight": 6 }, //Dark crab
-          { "id": 3024, "min": 3, "max": 3, "weight": 6 }, //Super restore(4)
-          { "id": 5953, "min": 10, "max": 10, "weight": 1 } //Antidote++(4) (noted)
+          { "id": 562, "min": 400, "max": 400, "weight": 5470 },   //Chaos rune
+          { "id": 560, "min": 300, "max": 300, "weight": 5470 },   //Death rune
+          { "id": 565, "min": 200, "max": 200, "weight": 5470 },   //Blood rune
+          { "id": 9243, "min": 100, "max": 100, "weight": 3910 },   //Diamond bolts (e)
+          { "id": 2, "min": 250, "max": 250, "weight": 3130 }   //Cannonball
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 26052,
+        "items": [
+          { "id": 1620, "min": 20, "max": 20, "weight": 5470 },   //Uncut ruby (noted)
+          { "id": 445, "min": 300, "max": 300, "weight": 4690 },   //Gold ore (noted)
+          { "id": 9194, "min": 60, "max": 60, "weight": 3910 },   //Onyx bolt tips
+          { "id": 1514, "min": 100, "max": 100, "weight": 3910 },   //Magic logs (noted)
+          { "id": 226, "min": 25, "max": 25, "weight": 3910 },   //Limpwurt root (noted)
+          { "id": 224, "min": 500, "max": 500, "weight": 2339 },   //Red spiders' eggs (noted)
+          { "id": 238, "min": 100, "max": 100, "weight": 1560 },   //Unicorn horn (noted)
+          { "id": 1631, "min": 1, "max": 1, "weight": 1560 },   //Uncut dragonstone
+          { "id": 3052, "min": 100, "max": 100, "weight": 781 }   //Grimy snapdragon (noted)
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 36669,
         "items": [
-          { "id": 995, "min": 15000, "max": 20000, "weight": 10 }, //Coins
-          { "id": 9194, "min": 60, "max": 60, "weight": 10 }, //Onyx bolt tips
-          { "id": 12073, "min": 1, "max": 1, "weight": 1 } //Clue scroll (elite)
+          { "id": 995, "min": 15000, "max": 19999, "weight": 14800 },   //Coins
+          { "id": 11936, "min": 8, "max": 8, "weight": 7810 },   //Dark crab
+          { "id": 6035, "min": 100, "max": 100, "weight": 3710 },   //Supercompost (noted)
+          { "id": 5953, "min": 10, "max": 10, "weight": 2339 },   //Antidote++(4) (noted)
+          { "id": 11940, "min": 375, "max": 375, "weight": 781 },   //Dark fishing bait
+          { "id": 5315, "min": 1, "max": 1, "weight": 781 },   //Yew seed
+          { "id": 5316, "min": 1, "max": 1, "weight": 781 },   //Magic seed
+          { "id": 5289, "min": 1, "max": 1, "weight": 781 }   //Palm tree seed
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 1176,
+        "items": [
+          { "id": 12073, "min": 1, "max": 1, "weight": 1000 },   //Clue scroll (elite)
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
+          { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
         ]
       }
     ]
