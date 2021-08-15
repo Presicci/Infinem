@@ -1,0 +1,72 @@
+[
+  {
+    "ids": [ 1800 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 1188,
+        "items": [
+          { "id": 1293, "min": 1, "max": 1, "weight": 1560 },   //Iron longsword
+          { "id": 1141, "min": 1, "max": 1, "weight": 1560 },   //Steel med helm
+          { "id": 1281, "min": 1, "max": 1, "weight": 1560 }   //Steel sword
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 6148,
+        "items": [
+          { "id": 558, "min": 10, "max": 10, "weight": 6250 },   //Mind rune
+          { "id": 888, "min": 7, "max": 7, "weight": 3910 },   //Mithril arrow
+          { "id": 561, "min": 6, "max": 6, "weight": 3130 },   //Nature rune
+          { "id": 559, "min": 15, "max": 19, "weight": 2339 },   //Body rune
+          { "id": 562, "min": 4, "max": 4, "weight": 2339 },   //Chaos rune
+          { "id": 555, "min": 35, "max": 40, "weight": 2339 },   //Water rune
+          { "id": 890, "min": 4, "max": 4, "weight": 2339 },   //Adamant arrow
+          { "id": 565, "min": 3, "max": 3, "weight": 781 },   //Blood rune
+          { "id": 563, "min": 3, "max": 3, "weight": 781 }   //Law rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 1388,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "general seed",
+        "weight": 3571,
+        "items": [
+          { "id": 0, "min": 0, "max": 0, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 10524,
+        "items": [
+          { "id": 995, "min": 15, "max": 19, "weight": 10200 },   //Coins
+          { "id": 995, "min": 15, "max": 15, "weight": 8590 },   //Coins
+          { "id": 995, "min": 55, "max": 63, "weight": 7810 },   //Coins
+          { "id": 995, "min": 50, "max": 69, "weight": 7810 },   //Coins
+          { "id": 995, "min": 5, "max": 5, "weight": 4690 },   //Coins
+          { "id": 995, "min": 120, "max": 120, "weight": 1560 },   //Coins
+          { "id": 995, "min": 1, "max": 1, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 2182,
+        "items": [
+          { "id": 2351, "min": 2, "max": 2, "weight": 4690 },   //Iron bar
+          { "id": 2351, "min": 1, "max": 1, "weight": 1560 },   //Iron bar
+          { "id": 2335, "min": 1, "max": 1, "weight": 781 },   //Half an apple pie
+          { "id": 440, "min": 1, "max": 1, "weight": 781 },   //Iron ore
+          { "id": 1933, "min": 1, "max": 1, "weight": 781 }   //Pot of flour
+        ]
+      }
+    ]
+  }
+]

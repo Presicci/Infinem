@@ -1,0 +1,56 @@
+[
+  {
+    "ids": [ 3950, 3949 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 14892,
+        "items": [
+          { "id": 1337, "min": 1, "max": 1, "weight": 2339 },   //Bronze warhammer
+          { "id": 1335, "min": 1, "max": 1, "weight": 4690 },   //Iron warhammer
+          { "id": 1339, "min": 1, "max": 1, "weight": 781 },   //Steel warhammer
+          { "id": 1341, "min": 1, "max": 1, "weight": 781 },   //Black warhammer
+          { "id": 3748, "min": 1, "max": 1, "weight": 781 },   //Fremennik helm
+          { "id": 3757, "min": 1, "max": 1, "weight": 781 },   //Fremennik blade
+          { "id": 3758, "min": 1, "max": 1, "weight": 781 }   //Fremennik shield
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 2127,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 62760,
+        "items": [
+          { "id": 995, "min": 15, "max": 15, "weight": 32799 },   //Coins
+          { "id": 995, "min": 17, "max": 17, "weight": 3910 },   //Coins
+          { "id": 995, "min": 22, "max": 22, "weight": 7030 },   //Coins
+          { "id": 995, "min": 27, "max": 27, "weight": 2339 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 20219,
+        "items": [
+          { "id": 1929, "min": 1, "max": 1, "weight": 781 },   //Bucket of water
+          { "id": 948, "min": 1, "max": 1, "weight": 781 },   //Bear fur
+          { "id": 3801, "min": 1, "max": 1, "weight": 3130 },   //Keg of beer
+          { "id": 436, "min": 5, "max": 5, "weight": 1560 },   //Copper ore
+          { "id": 438, "min": 5, "max": 5, "weight": 781 },   //Tin ore
+          { "id": 440, "min": 2, "max": 2, "weight": 2339 },   //Iron ore
+          { "id": 327, "min": 1, "max": 1, "weight": 781 },   //Raw sardine
+          { "id": 1917, "min": 1, "max": 1, "weight": 781 },   //Beer
+          { "id": 1891, "min": 1, "max": 1, "weight": 3130 },   //Cake
+          { "id": 1592, "min": 1, "max": 1, "weight": 781 }   //Ring mould
+        ]
+      }
+    ]
+  }
+]

@@ -1,50 +1,56 @@
 [
   {
     "ids": [ 3163 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 },   //Bones
+      { "id": 314, "min": 1, "max": 11 }   //Feather
+    ],
     "tables": [
       {
-        "name": "Armour",
-        "weight": 1,
+        "name": "Unique table",
+        "weight": 787,
         "items": [
-          { "id": 11826, "min": 1, "max": 1, "weight": 1 }, //Armadyl helmet
-          { "id": 11828, "min": 1, "max": 1, "weight": 1 }, //Armadyl chestplate
-          { "id": 11830, "min": 1, "max": 1, "weight": 1 } //Armadyl chainskirt
+          { "id": 11826, "min": 1, "max": 1, "weight": 6 },   //Armadyl helmet
+          { "id": 11828, "min": 1, "max": 1, "weight": 6 },   //Armadyl chestplate
+          { "id": 11830, "min": 1, "max": 1, "weight": 6 },   //Armadyl chainskirt
+          { "id": 995, "min": 1000, "max": 1100, "weight": 769 }   //Coins
         ]
       },
       {
-        "name": "Ammunition",
-        "weight": 1000,
+        "name": "Godsword shard table",
+        "weight": 786,
         "items": [
-          { "id": 886, "min": 95, "max": 100, "weight": 20 }, //Steel arrow
-          { "id": 4697, "min": 15, "max": 25, "weight": 1 } //Smoke rune
+          { "id": 11818, "min": 1, "max": 1, "weight": 65 },   //Godsword shard 1
+          { "id": 11820, "min": 1, "max": 1, "weight": 65 },   //Godsword shard 2
+          { "id": 11822, "min": 1, "max": 1, "weight": 65 },   //Godsword shard 3
+          { "id": 995, "min": 1000, "max": 1100, "weight": 591 }   //Coins
         ]
       },
       {
-        "name": "Food",
-        "weight": 1000,
+        "name": "Tertiary",
+        "weight": 781,
         "items": [
-          { "id": 391, "min": 2, "max": 2, "weight": 1 }, //Manta ray
-          { "id": 7058, "min": 3, "max": 3, "weight": 1 } //Mushroom potato
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
         ]
       },
       {
-        "name": "Godsword shards",
-        "weight": 15,
+        "name": "Food and ammunition",
+        "weight": 30715,
         "items": [
-          { "id": 11818, "min": 1, "max": 1, "weight": 1 }, //Godsword shard 1
-          { "id": 11820, "min": 1, "max": 1, "weight": 1 }, //Godsword shard 2
-          { "id": 11822, "min": 1, "max": 1, "weight": 1 } //Godsword shard 3
+          { "id": 886, "min": 91, "max": 101, "weight": 5510 },   //Steel arrow
+          { "id": 808, "min": 91, "max": 101, "weight": 6300 },   //Steel dart
+          { "id": 4697, "min": 10, "max": 15, "weight": 6300 },   //Smoke rune
+          { "id": 391, "min": 2, "max": 2, "weight": 6300 },   //Manta ray
+          { "id": 7058, "min": 3, "max": 3, "weight": 6300 }   //Mushroom potato
         ]
       },
       {
         "name": "Other",
-        "weight": 1000,
+        "weight": 67711,
         "items": [
-          { "id": 808, "min": 95, "max": 100, "weight": 20 }, //Steel dart
-          { "id": 995, "min": 1300, "max": 1500, "weight": 20 }, //Coins
-          { "id": 6693, "min": 2, "max": 2, "weight": 10 }, //Crushed nest
-          { "id": 213, "min": 1, "max": 1, "weight": 10 }, //Grimy kwuarm
-          { "id": 2722, "min": 1, "max": 1, "weight": 1 } //Clue scroll (hard)
+          { "id": 995, "min": 1000, "max": 1100, "weight": 55100 },   //Coins
+          { "id": 6694, "min": 2, "max": 2, "weight": 6300 },   //Crushed nest (noted)
+          { "id": 214, "min": 1, "max": 1, "weight": 6300 }   //Grimy kwuarm (noted)
         ]
       }
     ]
