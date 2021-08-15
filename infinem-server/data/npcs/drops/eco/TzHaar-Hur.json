@@ -3,17 +3,25 @@
     "ids": [ 2161, 2162, 2163, 2164, 2165, 2166, 7682, 7683, 7684, 7685, 7686, 7687 ],
     "tables": [
       {
-        "name": "Other",
-        "weight": 1,
+        "name": "Materials",
+        "weight": 22540,
         "items": [
-          { "id": 1755, "min": 1, "max": 1, "weight": 12 }, //Chisel
-          { "id": 2347, "min": 1, "max": 1, "weight": 12 }, //Hammer
-          { "id": 1935, "min": 1, "max": 1, "weight": 12 }, //Jug
-          { "id": 946, "min": 1, "max": 1, "weight": 6 }, //Knife
-          { "id": 1931, "min": 1, "max": 1, "weight": 6 }, //Pot
-          { "id": 6529, "min": 1, "max": 16, "weight": 3 }, //Tokkul
-          { "id": 1623, "min": 1, "max": 1, "weight": 3 }, //Uncut sapphire
-          { "id": 1619, "min": 1, "max": 1, "weight": 1 } //Uncut ruby
+          { "id": 1623, "min": 1, "max": 1, "weight": 725 },   //Uncut sapphire
+          { "id": 1621, "min": 1, "max": 1, "weight": 725 },   //Uncut emerald
+          { "id": 1619, "min": 1, "max": 1, "weight": 725 },   //Uncut ruby
+          { "id": 1617, "min": 1, "max": 1, "weight": 100 },   //Uncut diamond
+          { "id": 6529, "min": 1, "max": 16, "weight": 5000 }   //Tokkul
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 77459,
+        "items": [
+          { "id": 1755, "min": 1, "max": 1, "weight": 5000 },   //Chisel
+          { "id": 2347, "min": 1, "max": 1, "weight": 5000 },   //Hammer
+          { "id": 1935, "min": 1, "max": 1, "weight": 5000 },   //Jug
+          { "id": 946, "min": 1, "max": 1, "weight": 5000 },   //Knife
+          { "id": 1931, "min": 1, "max": 1, "weight": 5000 }   //Pot
         ]
       }
     ]

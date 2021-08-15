@@ -4,35 +4,49 @@
     "tables": [
       {
         "name": "Runes",
-        "weight": 1,
+        "weight": 14295,
         "items": [
-          { "id": 559, "min": 7, "max": 7, "weight": 6 }, //Body rune
-          { "id": 555, "min": 6, "max": 6, "weight": 6 }, //Water rune
-          { "id": 563, "min": 2, "max": 2, "weight": 1 } //Law rune
+          { "id": 559, "min": 7, "max": 7, "weight": 5470 },   //Body rune
+          { "id": 555, "min": 6, "max": 6, "weight": 4690 },   //Water rune
+          { "id": 563, "min": 2, "max": 2, "weight": 2339 }   //Law rune
         ]
       },
       {
-        "name": "Seeds",
-        "weight": 1,
+        "name": "Herbs",
+        "weight": 10717,
         "items": [
-          { "id": 5104, "min": 1, "max": 1, "weight": 6 }, //Jangerberry seed
-          { "id": 5292, "min": 1, "max": 1, "weight": 6 }, //Marrentill seed
-          { "id": 5294, "min": 1, "max": 1, "weight": 6 }, //Harralander seed
-          { "id": 5293, "min": 1, "max": 1, "weight": 3 }, //Tarromin seed
-          { "id": 5295, "min": 1, "max": 1, "weight": 3 }, //Ranarr seed
-          { "id": 5323, "min": 1, "max": 1, "weight": 3 }, //Strawberry seed
-          { "id": 5321, "min": 1, "max": 1, "weight": 1 } //Watermelon seed
+          { "id": 205, "min": 1, "max": 1, "weight": 3910 },   //Grimy harralander
+          { "id": 203, "min": 1, "max": 1, "weight": 2339 },   //Grimy tarromin
+          { "id": 201, "min": 1, "max": 1, "weight": 1560 },   //Grimy marrentill
+          { "id": 199, "min": 1, "max": 1, "weight": 781 },   //Grimy guam leaf
+          { "id": 207, "min": 1, "max": 1, "weight": 781 }   //Grimy ranarr weed
+        ]
+      },
+      {
+        "name": "uncommon seed",
+        "weight": 17870,
+        "items": [
+          { "id": 0, "min": 2, "max": 2, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 53547,
+        "items": [
+          { "id": 995, "min": 12, "max": 12, "weight": 781 },   //Coins
+          { "id": 995, "min": 2, "max": 2, "weight": 1560 },   //Coins
+          { "id": 995, "min": 6, "max": 6, "weight": 2339 },   //Coins
+          { "id": 995, "min": 5, "max": 5, "weight": 2339 },   //Coins
+          { "id": 995, "min": 3, "max": 3, "weight": 23400 },   //Coins
+          { "id": 995, "min": 2, "max": 2, "weight": 16399 }   //Coins
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 3568,
         "items": [
-          { "id": 995, "min": 2, "max": 2, "weight": 6 }, //Coins
-          { "id": 995, "min": 3, "max": 3, "weight": 3 }, //Coins
-          { "id": 995, "min": 6, "max": 6, "weight": 3 }, //Coins
-          { "id": 225, "min": 1, "max": 1, "weight": 3 }, //Limpwurt root
-          { "id": 1623, "min": 1, "max": 1, "weight": 1 } //Uncut sapphire
+          { "id": 225, "min": 1, "max": 1, "weight": 2339 },   //Limpwurt root
+          { "id": 227, "min": 1, "max": 1, "weight": 781 }   //Vial of water
         ]
       }
     ]

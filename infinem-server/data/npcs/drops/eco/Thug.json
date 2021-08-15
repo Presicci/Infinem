@@ -2,64 +2,60 @@
   {
     "ids": [ 517 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 } //Bones
+      { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
-        "name": "Weapons/Armour",
-        "weight": 1,
+        "name": "Weapons and armour",
+        "weight": 7138,
         "items": [
-          { "id": 1137, "min": 1, "max": 1, "weight": 3 }, //Iron med helm
-          { "id": 1363, "min": 1, "max": 1, "weight": 3 }, //Iron battleaxe
-          { "id": 1353, "min": 1, "max": 1, "weight": 1 } //Steel axe
-        ]
-      },
-      {
-        "name": "Herbs",
-        "weight": 1,
-        "items": [
-          { "id": 199, "min": 1, "max": 1, "weight": 6 }, //Grimy guam leaf
-          { "id": 201, "min": 1, "max": 1, "weight": 6 }, //Grimy marrentill
-          { "id": 203, "min": 1, "max": 1, "weight": 6 }, //Grimy tarromin
-          { "id": 205, "min": 1, "max": 1, "weight": 3 }, //Grimy harralander
-          { "id": 207, "min": 1, "max": 1, "weight": 3 }, //Grimy ranarr weed
-          { "id": 209, "min": 1, "max": 1, "weight": 3 }, //Grimy irit leaf
-          { "id": 211, "min": 1, "max": 1, "weight": 3 }, //Grimy avantoe
-          { "id": 213, "min": 1, "max": 1, "weight": 1 }, //Grimy kwuarm
-          { "id": 215, "min": 1, "max": 1, "weight": 1 }, //Grimy cadantine
-          { "id": 2485, "min": 1, "max": 1, "weight": 1 }, //Grimy lantadyme
-          { "id": 217, "min": 1, "max": 1, "weight": 1 } //Grimy dwarf weed
+          { "id": 1137, "min": 1, "max": 1, "weight": 3130 },   //Iron med helm
+          { "id": 1363, "min": 1, "max": 1, "weight": 1560 },   //Iron battleaxe
+          { "id": 1353, "min": 1, "max": 1, "weight": 781 }   //Steel axe
         ]
       },
       {
         "name": "Runes",
-        "weight": 1,
+        "weight": 20449,
         "items": [
-          { "id": 561, "min": 2, "max": 2, "weight": 3 }, //Nature rune
-          { "id": 563, "min": 2, "max": 2, "weight": 3 }, //Law rune
-          { "id": 562, "min": 2, "max": 2, "weight": 3 }, //Chaos rune
-          { "id": 560, "min": 2, "max": 2, "weight": 3 }, //Death rune
-          { "id": 564, "min": 2, "max": 2, "weight": 1 } //Cosmic rune
+          { "id": 561, "min": 2, "max": 2, "weight": 10200 },   //Nature rune
+          { "id": 562, "min": 2, "max": 2, "weight": 3130 },   //Chaos rune
+          { "id": 564, "min": 2, "max": 2, "weight": 781 },   //Cosmic rune
+          { "id": 563, "min": 2, "max": 2, "weight": 781 },   //Law rune
+          { "id": 560, "min": 2, "max": 2, "weight": 781 }   //Death rune
         ]
       },
       {
-        "name": "Ores/Bars",
-        "weight": 1,
+        "name": "herb drop",
+        "weight": 24463,
         "items": [
-          { "id": 2351, "min": 1, "max": 1, "weight": 1 }, //Iron bar
-          { "id": 453, "min": 1, "max": 1, "weight": 1 }, //Coal
-          { "id": 440, "min": 1, "max": 1, "weight": 1 } //Iron ore
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
         ]
       },
       {
-        "name": "Other",
-        "weight": 1,
+        "name": "Resources",
+        "weight": 9170,
         "items": [
-          { "id": 995, "min": 8, "max": 8, "weight": 10 }, //Coins
-          { "id": 995, "min": 15, "max": 15, "weight": 10 }, //Coins
-          { "id": 995, "min": 20, "max": 20, "weight": 10 }, //Coins
-          { "id": 995, "min": 30, "max": 30, "weight": 10 }, //Coins
-          { "id": 2677, "min": 1, "max": 1, "weight": 1 } //Clue scroll (easy)
+          { "id": 440, "min": 1, "max": 1, "weight": 3130 },   //Iron ore
+          { "id": 2351, "min": 1, "max": 1, "weight": 2339 },   //Iron bar
+          { "id": 453, "min": 1, "max": 1, "weight": 1560 }   //Coal
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 38777,
+        "items": [
+          { "id": 995, "min": 8, "max": 8, "weight": 18000 },   //Coins
+          { "id": 995, "min": 15, "max": 15, "weight": 9380 },   //Coins
+          { "id": 995, "min": 30, "max": 30, "weight": 1560 },   //Coins
+          { "id": 995, "min": 20, "max": 20, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 1018,
+        "items": [
+          { "id": 2677, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (easy)
         ]
       }
     ]

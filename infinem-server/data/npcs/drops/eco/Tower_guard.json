@@ -1,35 +1,52 @@
 [
   {
     "ids": [ 4405 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
     "tables": [
       {
-        "name": "Runes",
-        "weight": 1,
+        "name": "Weapons and armour",
+        "weight": 6366,
         "items": [
-          { "id": 556, "min": 8, "max": 8, "weight": 6 }, //Air rune
-          { "id": 565, "min": 2, "max": 2, "weight": 6 }, //Blood rune
-          { "id": 562, "min": 3, "max": 3, "weight": 3 }, //Chaos rune
-          { "id": 557, "min": 4, "max": 4, "weight": 3 }, //Earth rune
-          { "id": 554, "min": 6, "max": 6, "weight": 1 } //Fire rune
+          { "id": 1295, "min": 1, "max": 1, "weight": 4690 },   //Steel longsword
+          { "id": 1141, "min": 1, "max": 1, "weight": 781 }   //Steel med helm
         ]
       },
       {
-        "name": "Weapons",
-        "weight": 1,
+        "name": "Runes and ammunition",
+        "weight": 17273,
         "items": [
-          { "id": 882, "min": 4, "max": 4, "weight": 6 }, //Bronze arrow
-          { "id": 886, "min": 2, "max": 2, "weight": 3 }, //Steel arrow
-          { "id": 1295, "min": 1, "max": 1, "weight": 3 }, //Steel longsword
-          { "id": 1141, "min": 1, "max": 1, "weight": 1 } //Steel med helm
+          { "id": 882, "min": 4, "max": 4, "weight": 3910 },   //Bronze arrow
+          { "id": 886, "min": 2, "max": 2, "weight": 3130 },   //Steel arrow
+          { "id": 556, "min": 8, "max": 8, "weight": 1560 },   //Air rune
+          { "id": 557, "min": 4, "max": 4, "weight": 1560 },   //Earth rune
+          { "id": 554, "min": 6, "max": 6, "weight": 1560 },   //Fire rune
+          { "id": 562, "min": 3, "max": 3, "weight": 781 },   //Chaos rune
+          { "id": 565, "min": 2, "max": 2, "weight": 781 },   //Blood rune
+          { "id": 561, "min": 2, "max": 2, "weight": 781 },   //Nature rune
+          { "id": 886, "min": 8, "max": 8, "weight": 781 }   //Steel arrow
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 72729,
+        "items": [
+          { "id": 995, "min": 9, "max": 9, "weight": 28899 },   //Coins
+          { "id": 995, "min": 8, "max": 8, "weight": 12500 },   //Coins
+          { "id": 995, "min": 24, "max": 24, "weight": 7030 },   //Coins
+          { "id": 995, "min": 6, "max": 6, "weight": 6250 },   //Coins
+          { "id": 995, "min": 30, "max": 30, "weight": 3130 },   //Coins
+          { "id": 995, "min": 12, "max": 12, "weight": 3130 },   //Coins
+          { "id": 995, "min": 35, "max": 35, "weight": 1560 }   //Coins
         ]
       },
       {
         "name": "Other",
-        "weight": 1,
+        "weight": 3630,
         "items": [
-          { "id": 995, "min": 6, "max": 35, "weight": 3 }, //Coins
-          { "id": 440, "min": 1, "max": 1, "weight": 3 }, //Iron ore
-          { "id": 1448, "min": 1, "max": 1, "weight": 1 } //Mind talisman
+          { "id": 1448, "min": 1, "max": 1, "weight": 2339 },   //Mind talisman
+          { "id": 440, "min": 1, "max": 1, "weight": 781 }   //Iron ore
         ]
       }
     ]

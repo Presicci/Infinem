@@ -1,0 +1,65 @@
+[
+  {
+    "ids": [ 6076 ],
+    "guaranteed": [
+      { "id": 526, "min": 3, "max": 3 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Armour",
+        "weight": 1327,
+        "items": [
+          { "id": 626, "min": 1, "max": 1, "weight": 781 },   //Pink boots
+          { "id": 646, "min": 1, "max": 1, "weight": 781 },   //Pink robe bottoms
+          { "id": 636, "min": 1, "max": 1, "weight": 781 }   //Pink robe top
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 22117,
+        "items": [
+          { "id": 557, "min": 10, "max": 14, "weight": 7810 },   //Earth rune
+          { "id": 888, "min": 6, "max": 11, "weight": 15600 },   //Mithril arrow
+          { "id": 561, "min": 1, "max": 3, "weight": 7810 },   //Nature rune
+          { "id": 886, "min": 12, "max": 23, "weight": 7810 }   //Steel arrow
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 4426,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "general seed",
+        "weight": 4426,
+        "items": [
+          { "id": 0, "min": 0, "max": 0, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Consumables",
+        "weight": 11067,
+        "items": [
+          { "id": 2114, "min": 1, "max": 1, "weight": 7810 },   //Pineapple
+          { "id": 2217, "min": 1, "max": 1, "weight": 7810 },   //Toad crunchies
+          { "id": 2253, "min": 1, "max": 1, "weight": 3130 },   //Worm batta
+          { "id": 2064, "min": 1, "max": 1, "weight": 781 }   //Blurberry special
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 8852,
+        "items": [
+          { "id": 7939, "min": 1, "max": 3, "weight": 6250 },   //Tortoise shell
+          { "id": 2150, "min": 1, "max": 1, "weight": 3910 },   //Swamp toad (item)
+          { "id": 6332, "min": 2, "max": 2, "weight": 1560 },   //Mahogany logs
+          { "id": 10995, "min": 1, "max": 3, "weight": 1560 },   //Perfect shell
+          { "id": 6333, "min": 2, "max": 2, "weight": 1560 },   //Teak logs
+          { "id": 6333, "min": 4, "max": 4, "weight": 781 }   //Teak logs
+        ]
+      }
+    ]
+  }
+]

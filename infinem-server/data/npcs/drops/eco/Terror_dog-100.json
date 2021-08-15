@@ -1,0 +1,67 @@
+[
+  {
+    "ids": [ 6474 ],
+    "guaranteed": [
+      { "id": 532, "min": 1, "max": 1 }   //Big bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 6500,
+        "items": [
+          { "id": 1069, "min": 1, "max": 1, "weight": 3130 },   //Steel platelegs
+          { "id": 1355, "min": 1, "max": 1, "weight": 2339 },   //Mithril axe
+          { "id": 1365, "min": 1, "max": 1, "weight": 2339 },   //Steel battleaxe
+          { "id": 1243, "min": 1, "max": 1, "weight": 1560 },   //Mithril spear
+          { "id": 1161, "min": 1, "max": 1, "weight": 781 },   //Adamant full helm
+          { "id": 10589, "min": 1, "max": 1, "weight": 781 },   //Granite helm
+          { "id": 1197, "min": 1, "max": 1, "weight": 781 },   //Mithril kiteshield
+          { "id": 1213, "min": 1, "max": 1, "weight": 781 }   //Rune dagger
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 6910,
+        "items": [
+          { "id": 555, "min": 75, "max": 75, "weight": 6250 },   //Water rune
+          { "id": 561, "min": 15, "max": 15, "weight": 3910 },   //Nature rune
+          { "id": 563, "min": 3, "max": 3, "weight": 2339 },   //Law rune
+          { "id": 554, "min": 37, "max": 37, "weight": 781 }   //Fire rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 6097,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 28463,
+        "items": [
+          { "id": 995, "min": 44, "max": 44, "weight": 22699 },   //Coins
+          { "id": 995, "min": 132, "max": 132, "weight": 19500 },   //Coins
+          { "id": 995, "min": 200, "max": 200, "weight": 7810 },   //Coins
+          { "id": 995, "min": 11, "max": 11, "weight": 3910 },   //Coins
+          { "id": 995, "min": 440, "max": 440, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 2028,
+        "items": [
+          { "id": 449, "min": 1, "max": 1, "weight": 2339 },   //Adamantite ore
+          { "id": 365, "min": 1, "max": 1, "weight": 1560 }   //Bass
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 406,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
+        ]
+      }
+    ]
+  }
+]
