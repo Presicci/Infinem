@@ -522,6 +522,64 @@ public class Config {
     public static final Config XP_COUNTER_COUNTER = varpbit(4697, true);
     public static final Config XP_COUNTER_PROGRESS_BAR = varpbit(4698, true);
     public static final Config XP_COUNTER_SPEED = varpbit(4722, true);
+    public static final Config XP_COUNTER_TRACKER_STAT_VIEWING = varpbit(4703, true);
+    public static final Config XP_COUNTER_TRACKER_TYPE_ACTIVE = varpbit(4704, true);
+    public static final Config XP_COUNTER_TRACKER_START = varp(261, true);
+    public static final Config XP_COUNTER_TRACKER_GOAL = varp(262, true);
+
+    public static final Config[] XP_COUNTER_TRACKER_SKILL_START = {
+            varp(1228, true),
+            varp(1229, true),
+            varp(1230, true),
+            varp(1231, true),
+            varp(1232, true),
+            varp(1233, true),
+            varp(1234, true),
+            varp(1235, true),
+            varp(1236, true),
+            varp(1237, true),
+            varp(1238, true),
+            varp(1239, true),
+            varp(1240, true),
+            varp(1241, true),
+            varp(1242, true),
+            varp(1243, true),
+            varp(1244, true),
+            varp(1245, true),
+            varp(1246, true),
+            varp(1247, true),
+            varp(1248, true),
+            varp(1249, true),
+            varp(1250, true),
+            varp(1251, true)
+    };
+    public static final Config[] XP_COUNTER_TRACKER_SKILL_GOAL = {
+            varp(1252, true),
+            varp(1253, true),
+            varp(1254, true),
+            varp(1255, true),
+            varp(1256, true),
+            varp(1257, true),
+            varp(1258, true),
+            varp(1259, true),
+            varp(1260, true),
+            varp(1261, true),
+            varp(1262, true),
+            varp(1263, true),
+            varp(1264, true),
+            varp(1265, true),
+            varp(1266, true),
+            varp(1267, true),
+            varp(1268, true),
+            varp(1269, true),
+            varp(1270, true),
+            varp(1271, true),
+            varp(1272, true),
+            varp(1273, true),
+            varp(1274, true),
+            varp(1275, true)
+    };
+
 
     /**
      * Kalphite lair
@@ -762,6 +820,9 @@ public class Config {
     public static final Config SEED_VAULT_FAVORITE_8 = varpbit(8179, true).defaultValue(255);
     //varp 8172 - 8179 favorite related? 255 = free slot
 
+    public static final Config FLOUR_BIN = varpbit(4920, true);
+    public static final Config FLOUR_BIN_FULL = varpbit(5325, true);
+
     /**
      * Separator
      */
@@ -805,6 +866,10 @@ public class Config {
         return newValue;
     }
 
+    public int decrement(Player player, int amount) {
+        return increment(player, -amount);
+    }
+
     public void reset(Player player) {
         set(player, defaultValue);
     }
@@ -822,6 +887,7 @@ public class Config {
             player.varps[varpId] = ((varpValue & (~shift)) | value << least & shift);
             player.updateVarp(varpId);
         } else {
+            System.out.println("" + player.varps.length);
             player.varps[id] = value;
             player.updateVarp(id);
         }
