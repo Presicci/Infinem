@@ -10,6 +10,7 @@ import io.ruin.model.combat.Combat;
 import io.ruin.model.combat.CombatUtils;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
@@ -31,7 +32,9 @@ import io.ruin.utility.TickDelay;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 
 // TODO replace entity.player != null checks with isPlayer (and one for npc)
@@ -49,6 +52,7 @@ public abstract class Entity {
         if(this instanceof Player) {
             player = (Player) this;
             npc = null;
+            attributes = new EnumMap<>(AttributeKey.class);
         } else {
             npc = (NPC) this;
             player = null;
@@ -985,5 +989,30 @@ public abstract class Entity {
 
     public boolean alive() {
         return !dead();
+    }
+
+    protected Map<AttributeKey, Object> attributes;
+
+    public boolean hasAttribute(AttributeKey key) {
+        return attributes != null && attributes.containsKey(key);
+    }
+
+    public <T> T attribute(AttributeKey key) {
+        return attributes == null ? null : (T) attributes.get(key);
+    }
+
+    public <T> T attributeOr(AttributeKey key, Object defaultValue) {
+        return attributes == null ? (T) defaultValue : (T) attributes.getOrDefault(key, defaultValue);
+    }
+
+    public void clearAttribute(AttributeKey key) {
+        if (attributes != null)
+            attributes.remove(key);
+    }
+
+    public void putAttribute(AttributeKey key, Object v) {
+        if (attributes == null)
+            attributes = new EnumMap<>(AttributeKey.class);
+        attributes.put(key, v);
     }
 }
