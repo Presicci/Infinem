@@ -28,6 +28,9 @@ public class Shortcuts {
         // lumberyard stile
         ObjectAction.register(2618, "climb-over", (p, obj) -> Stile.shortcutN(p, obj, 1));
 
+        // Ardy stiles
+        ObjectAction.register(993, "climb-over", (p, obj) -> Stile.shortcut(p, obj, 1));
+
         // Lumbridge Stile into sheep farm
         ObjectAction.register(12892, "climb-over", (p, obj) -> Stile.shortcut(p, obj, 1));
 
