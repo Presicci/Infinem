@@ -854,15 +854,22 @@ public abstract class Entity {
 
     private TickDelay stunDelay = new TickDelay();
 
-    public void stun(int seconds, boolean resetMovement) {
+    public void stun(int seconds, boolean resetMovement, boolean message) {
         stunDelay.delaySeconds(seconds);
         if(player != null) {
             player.privateSound(2727);
-            player.sendMessage("You have been stunned!");
+            player.privateSound(521);
+            if (message) {
+                player.sendMessage("You have been stunned!");
+            }
         }
         graphics(245, 124, 0);
         if(resetMovement)
             getMovement().reset();
+    }
+
+    public void stun(int seconds, boolean resetMovement) {
+        stun(seconds, resetMovement, true);
     }
 
     public void resetStun() {
