@@ -124,6 +124,7 @@ public class Consumable {
         registerEat(20883, 23, "psykk");
 
         registerEat(403, 4, "seaweed");
+        registerEat(2152, 3, "toad's legs");
 
         ItemDef.get(3144).consumable = true;
         ItemAction.registerInventory(3144, "eat", (player, item) -> {
