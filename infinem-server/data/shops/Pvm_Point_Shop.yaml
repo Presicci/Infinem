@@ -75,30 +75,6 @@ defaultStock:
     amount: 10
     price: 250
     placeholderId: 0
-  - id: 30040
-    amount: 10
-    price: 12500
-    placeholderId: 0
-  - id: 30039
-    amount: 10
-    price: 12500
-    placeholderId: 0
-  - id: 30046
-    amount: 10
-    price: 5000
-    placeholderId: 0
-  - id: 30041
-    amount: 10
-    price: 25000
-    placeholderId: 0
-  - id: 30043
-    amount: 10
-    price: 25000
-    placeholderId: 0
-  - id: 30042
-    amount: 10
-    price: 25000
-    placeholderId: 0
   - id: 3840
     amount: 100
     price: 250
@@ -117,9 +93,6 @@ defaultStock:
   - id: 12612
     amount: 100
     price: 500
-  - id: 12863
-    amount: 100
-    price: 650
   - id: 4081
     amount: 1000
     price: 20
