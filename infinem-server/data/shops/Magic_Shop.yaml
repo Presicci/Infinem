@@ -23,6 +23,10 @@ defaultStock:
     price: 14000
   - id: 559
     amount: 50000
+  - id: 560
+    amount: 50000
+  - id: 565
+    amount: 50000
   - id: 564
     amount: 50000
   - id: 561
