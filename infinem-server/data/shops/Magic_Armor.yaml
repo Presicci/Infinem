@@ -8,17 +8,7 @@ restockRules:
   restockTicks: 2
   restockPerTick: 1000
 defaultStock:
-  - id: 23110
-    amount: 100
   - id: 23113
-    amount: 100
-  - id: 23116
-    amount: 100
-  - id: 7398
-    amount: 100
-  - id: 7399
-    amount: 100
-  - id: 7400
     amount: 100
   - id: 542
     amount: 100
