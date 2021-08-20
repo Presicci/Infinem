@@ -2,7 +2,7 @@
 identifier: "c1acaaeb-7e71-492d-97f1-ba2d38c90648"
 title: "Ranged Weapons & Ammo Shop"
 currency: "COINS"
-accessibleByIronMan: false
+accessibleByIronMan: true
 canSellToStore: false
 restockRules:
   restockTicks: 1
