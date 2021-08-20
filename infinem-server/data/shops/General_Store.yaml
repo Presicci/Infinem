@@ -29,42 +29,33 @@ defaultStock:
   amount: 2
 - id: 2347
   amount: 5
+- id: 946
+  amount: 100
+- id: 19625
+  amount: 100
+- id: 1267
+  amount: 100
+- id: 1275
+  amount: 100
+- id: 1349
+  amount: 100
+- id: 1359
+  amount: 100
+- id: 1523
+  amount: 100
+- id: 954
+  amount: 100
 - id: 380
-  amount: 100000000
-- id: 7947
-  amount: 100000000
-- id: 2441
-  amount: 100000000
+  amount: 1000000
+- id: 2429
+  amount: 1000000
   price: 1000
-- id: 2437
-  amount: 100000000
+- id: 114
+  amount: 1000000
   price: 1000
-- id: 2443
-  amount: 100000000
-  price: 1000
-- id: 2435
-  amount: 100000000
-  price: 2000
-- id: 2445
-  amount: 100000000
+- id: 2433
+  amount: 1000000
   price: 1000
 - id: 2447
-  amount: 100000000
+  amount: 1000000
   price: 1000
-- id: 954
-  amount: 100000000
-- id: 19625
-  amount: 10000
-- id: 1267
-  amount: 10000
-- id: 1275
-  amount: 10000
-- id: 1349
-  amount: 10000
-- id: 1359
-  amount: 10000
-- id: 946
-  amount: 10000
-- id: 1523
-  amount: 10000
-
