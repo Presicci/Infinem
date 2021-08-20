@@ -96,3 +96,6 @@ defaultStock:
   - id: 4081
     amount: 1000
     price: 20
+  - id: 10498
+    amount: 100
+    price: 50
