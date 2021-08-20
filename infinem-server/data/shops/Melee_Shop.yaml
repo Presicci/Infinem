@@ -2,7 +2,7 @@
 identifier: "d8644890-1eb6-47c6-a074-ccb2833f8ea6"
 title: "Melee Shop"
 currency: "COINS"
-accessibleByIronMan: false
+accessibleByIronMan: true
 canSellToStore: false
 restockRules:
   restockTicks: 6
@@ -24,5 +24,7 @@ defaultStock:
     amount: 100
   - id: 4587
     amount: 100
+    price: 100000
   - id: 1215
     amount: 100
+    price: 30000

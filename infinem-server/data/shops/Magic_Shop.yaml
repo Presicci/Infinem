@@ -2,7 +2,7 @@
 identifier: "64473b09-f91f-44b6-93be-4c36b4d19133"
 title: "Magic Shop"
 currency: "COINS"
-accessibleByIronMan: false
+accessibleByIronMan: true
 canSellToStore: false
 restockRules:
   restockTicks: 2

@@ -2,7 +2,7 @@
 identifier: "3a66d8c1-dd6f-444e-a91e-24ea1f0135c0"
 title: "Magic Armor Shop"
 currency: "COINS"
-accessibleByIronMan: false
+accessibleByIronMan: true
 canSellToStore: false
 restockRules:
   restockTicks: 2

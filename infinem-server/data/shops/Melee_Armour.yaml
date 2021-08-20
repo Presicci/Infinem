@@ -2,7 +2,7 @@
 identifier: "81c7cb3a-f03f-4862-9d3e-3d63ddb64a8a"
 title: "Melee Armour Shop"
 currency: "COINS"
-accessibleByIronMan: false
+accessibleByIronMan: true
 canSellToStore: false
 restockRules:
   restockTicks: 2
