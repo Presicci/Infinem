@@ -450,6 +450,7 @@ public class Door {
          * Example: An object in this list with a direction of 0 (East) will look as if it's facing direction 2 (West)
          */
         int[] reversedIds = {
+                4630, 4629,
                 24060, 24062,   //Double doors on the top of the Falador castle.
                 22435, 22437,   //Double (closed) doors (Not sure what island these are on..)
                 22436, 22438,   //Double (opened) doors (Not sure what island these are on..)
@@ -503,6 +504,14 @@ public class Door {
                 def.doorOppositeId = 12658;
             else if (def.id == 12658)
                 def.doorOppositeId = 12657;
+            else if (def.id == 4629)
+                def.doorOppositeId = 4630;
+            else if (def.id == 4630)
+                def.doorOppositeId = 4629;
+            else if (def.id == 4633)
+                def.doorOppositeId = 4634;
+            else if (def.id == 4634)
+                def.doorOppositeId = 4633;
             else
                 def.doorOppositeId = findOppositeId(def);
 
