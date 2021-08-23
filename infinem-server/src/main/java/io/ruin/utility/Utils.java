@@ -99,6 +99,19 @@ public final class Utils {
     }
 
     /**
+     * Returns a comma separated, grammar correct list of item ids.
+     * @param items The itemIds to be converted to strings and joined together.
+     * @return The completed string.
+     */
+    public static String grammarCorrectListForItemIds(List<Integer> items) {
+        List<String> names = new ArrayList<>();
+        for (int itemId : items) {
+            names.add(ItemDef.get(itemId).descriptiveName);
+        }
+        return grammarCorrectList(names);
+    }
+
+    /**
      * Creates a comma separated, grammar correct list of strings.
      * @param strings The strings to be joined together.
      * @return The completed string.
