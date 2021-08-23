@@ -2,6 +2,7 @@ package io.ruin.model.inter.handlers;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.AnimDef;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.Interface;
@@ -9,7 +10,7 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.containers.Equipment;
-import org.apache.commons.lang3.RandomUtils;
+import io.ruin.model.map.Tile;
 
 public enum TabEmote {
 
@@ -110,9 +111,13 @@ public enum TabEmote {
             }
 
             p.animate(emoteId);
+            p.putAttribute(AttributeKey.LAST_EMOTE, emote);
             if(emote.gfxId != -1)
                 p.graphics(emote.gfxId);
-
+            Tile tile = p.getPosition().getTile();
+            if (tile.emoteAction != null) {
+                tile.emoteAction.accept(p, emote);
+            }
             if(p.yesDelay.isDelayed())
                 return;
             if(emote == YES && !p.yesDelay.isDelayed()) {

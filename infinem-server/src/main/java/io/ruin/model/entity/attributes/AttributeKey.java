@@ -6,7 +6,10 @@ package io.ruin.model.entity.attributes;
  */
 public enum AttributeKey {
 
-    GRAIN_IN_HOPPER
+    GRAIN_IN_HOPPER,
+    URI_CLUE,
+    LAST_EMOTE,
+    URI_SPAWNED
     ;
 
     private String saveName;

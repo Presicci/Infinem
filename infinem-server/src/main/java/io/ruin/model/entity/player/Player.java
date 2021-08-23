@@ -11,6 +11,7 @@ import io.ruin.cache.InterfaceDef;
 import io.ruin.cache.Varp;
 import io.ruin.event.GameEventProcessor;
 import io.ruin.model.World;
+import io.ruin.model.activities.cluescrolls.impl.EmoteClue;
 import io.ruin.model.activities.duelarena.Duel;
 import io.ruin.model.activities.duelarena.DuelArena;
 import io.ruin.model.activities.wilderness.BountyHunter;
@@ -772,6 +773,8 @@ public class Player extends PlayerAttributes {
 
     @Expose private RunePouch runePouch;
 
+    @Expose private HashMap<EmoteClue.EmoteClueData, List<Item>> stashes;
+
     public RunePouch getTournamentRunePouch() {
         return tournamentRunePouch;
     }
@@ -812,6 +815,10 @@ public class Player extends PlayerAttributes {
 
     public LootingBag getLootingBag() {
         return lootingBag;
+    }
+
+    public HashMap<EmoteClue.EmoteClueData, List<Item>> getStashUnits() {
+        return stashes;
     }
 
     public SeedVault getSeedVault() {
@@ -1074,6 +1081,9 @@ public class Player extends PlayerAttributes {
         if(lootingBag == null)
             lootingBag = new LootingBag();
         lootingBag.init(this, 28, -1, 63786, 516, false);
+
+        if (stashes == null)
+            stashes = new HashMap<>();
 
         if(seedVault == null)
             seedVault = new SeedVault();

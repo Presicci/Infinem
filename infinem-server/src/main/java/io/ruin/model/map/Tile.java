@@ -4,12 +4,14 @@ import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.handlers.TabEmote;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import static io.ruin.model.map.route.RouteFinder.*;
@@ -290,6 +292,8 @@ public class Tile {
      */
 
     public Consumer<Player> digAction;
+
+    public BiConsumer<Player, TabEmote> emoteAction;
 
     public boolean multi;
 

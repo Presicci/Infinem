@@ -407,12 +407,14 @@ public abstract class PlayerAttributes extends Entity {
      * Clue scrolls
      */
 
+    @Expose public ClueSave beginnerClue;
     @Expose public ClueSave easyClue;
     @Expose public ClueSave medClue;
     @Expose public ClueSave hardClue;
     @Expose public ClueSave eliteClue;
     @Expose public ClueSave masterClue;
 
+    @Expose public int beginnerClueCount;
     @Expose public int easyClueCount;
     @Expose public int medClueCount;
     @Expose public int hardClueCount;

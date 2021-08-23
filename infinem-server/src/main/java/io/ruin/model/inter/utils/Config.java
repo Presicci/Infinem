@@ -824,6 +824,17 @@ public class Config {
     public static final Config FLOUR_BIN_FULL = varpbit(5325, true);
 
     /**
+     * Stash units
+     */
+    //public static final Config
+    public static final Config STASH_UNITS[] = {
+            varpbit(8254, true), // Gypsy Aris
+            varpbit(8256, true), // Bob's brilliant axes
+            varpbit(8255, true) // Iffie Nitter
+    };
+
+
+    /**
      * Separator
      */
 
