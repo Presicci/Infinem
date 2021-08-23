@@ -143,7 +143,7 @@ public class Wilderness {
             return false;
         }
 
-        if (isAtWildernessLimitForIP(player)) {
+        if (isAtWildernessLimitForIP(player) && !player.isAdmin()) {
             if(message)
                 player.sendMessage("You can't attack yourself.");
             return false;
