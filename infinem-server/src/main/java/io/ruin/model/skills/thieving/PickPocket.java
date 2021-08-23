@@ -216,9 +216,8 @@ public enum PickPocket {
             return;
         }
 
-        player.startEvent(event -> {
+        player.addEvent(event -> {
             player.lock(LockType.FULL_REGULAR_DAMAGE);
-            player.sendFilteredMessage("You attempt to pick the " + pickpocket.identifier + " pocket.");
             if (successful(player, pickpocket)) {
                 player.animate(881);
                 player.privateSound(2581);
@@ -226,15 +225,12 @@ public enum PickPocket {
                 player.sendFilteredMessage("You pick the " + pickpocket.identifier + " pocket.");
                 player.getInventory().add(pickpocket.lootTable.rollItem());
                 player.getStats().addXp(StatType.Thieving, pickpocket.exp, true);
-                event.delay(1);
             } else {
-                event.delay(1);
                 player.sendFilteredMessage("You fail to pick the " + pickpocket.identifier + " pocket.");
                 npc.forceText("What do you think you're doing?");
                 npc.faceTemp(player);
                 npc.animate(pickpocket.stunAnimation);
                 player.hit(new Hit().randDamage(pickpocket.stunDamage));
-                event.delay(1);
                 player.stun(pickpocket.stunSeconds, true);
             }
             BotPrevention.attemptBlock(player);
