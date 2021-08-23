@@ -1328,6 +1328,17 @@
     "npcName": "Grand Exchange Clerk"
   },
 
+  {
+    "id": 2152,
+    "x": 3165,
+    "y": 3477,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Brugsen Bursen"
+  },
+
 
   //13109
   {
