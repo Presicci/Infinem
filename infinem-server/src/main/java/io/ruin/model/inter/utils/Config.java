@@ -830,7 +830,36 @@ public class Config {
     public static final Config STASH_UNITS[] = {
             varpbit(8254, true), // Gypsy Aris
             varpbit(8256, true), // Bob's brilliant axes
-            varpbit(8255, true) // Iffie Nitter
+            varpbit(8255, true), // Iffie Nitter
+            varpbit(5213, true), // Monkey cage
+            varpbit(5216, true), // Keep Le Faye
+            varpbit(5220, true), // Duel arena office
+            varpbit(5200, true), // Legends' guild entrance
+            varpbit(5211, true), // druid circle
+            varpbit(5202, true), // port sarim
+            varpbit(5218, true), // exam center
+            varpbit(5197, true), // wizard tower bridge
+            varpbit(5209, true), // east ardy mill
+            varpbit(5215, true), // fishing guild
+            varpbit(5206, true), // draynor crossroads
+            varpbit(5223, true), // grand exhcange entrance
+            varpbit(5210, true), // party room
+            varpbit(5196, true), // lumbridge swamp shack
+            varpbit(5224, true), // varrock rune store
+            varpbit(5203, true), // al kharid mine
+            varpbit(5212, true), // beehives
+            varpbit(5217, true), // sinclair mansion crossroads
+            varpbit(5199, true), // limestone mine
+            varpbit(5207, true), // rimmingtom mine
+            varpbit(5214, true), // rimmington crossroads
+            varpbit(5204, true), // draynor manor courtyard
+            varpbit(5221, true), // varrock castle courtyard
+            varpbit(5205, true), // lumbridge mill
+            varpbit(5219, true), // lumber yard
+            varpbit(5222, true), // falador gem stall
+            varpbit(5201, true), // mudskipper point
+            varpbit(5198, true), // draynor marketplace
+            varpbit(5208, true) // varrock library
     };
 
 
