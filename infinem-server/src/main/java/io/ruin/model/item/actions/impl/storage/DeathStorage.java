@@ -108,16 +108,6 @@ public class DeathStorage extends ItemContainer {
     private void unlock() {
         if (unlocked)
             return;
-        /*
-         * Donator Benefit: [Free death chest recovery]
-         */
-        if (player.isRuby()) {
-            unlocked = true;
-            update();
-            player.sendMessage("Your donator rank unlocks the death chest.");
-            return;
-        }
-
         Item cost = getUnlockCost();
         if (cost == null) {
             unlocked = true;
@@ -171,9 +161,25 @@ public class DeathStorage extends ItemContainer {
     }
 
     private Item getUnlockCost() {
-        if (player.getStats().totalLevel < 500)
-            return null;
-        return new Item(COINS_995, (int) (100000 + (((player.getStats().totalLevel - 500) / (2277d - 500)) * 100000)));
+        long cost = 0;
+        if (player.getStats().totalLevel < 250) {
+            cost = 1000;
+        } else {
+            cost = (int) (getContainerWorth() * 0.05f);
+        }
+        if (cost > 10000000) {
+            cost = 10000000;
+        }
+        if (player.isDiamond()) {           // 50% discount
+            cost = (long) (cost * 0.5f);
+        } else if (player.isRuby()) {       // 25% discount
+            cost = (long) (cost * 0.75f);
+        } else if (player.isEmerald()) {    // 20% discount
+            cost = (long) (cost * 0.8f);
+        } else if (player.isSapphire()) {   // 10% discount
+            cost = (long) (cost * 0.9f);
+        }
+        return new Item(COINS_995, (int) cost);
 
     }
 
