@@ -3,7 +3,6 @@ package io.ruin.model.item;
 import com.google.gson.annotations.Expose;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.WidgetInfo;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import lombok.extern.slf4j.Slf4j;
 
@@ -605,5 +604,15 @@ public abstract class ItemContainerG<I extends Item> {
 
     public int size(){
         return items == null ? 0 : items.length;
+    }
+
+    public long getContainerWorth() {
+        long worth = 0;
+        for (Item item : this.items) {
+            if (item != null && ItemDef.get(item.getId()) != null) {
+                worth += ItemDef.get(item.getId()).value;
+            }
+        }
+        return worth;
     }
 }
