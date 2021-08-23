@@ -11,10 +11,10 @@ import lombok.Getter;
 @Builder @Getter
 public class Graphic {
 
-    private int id = -1;
-    private int height;
-    private int delay;
+    private final int id;
+    private final int height;
+    private final int delay;
 
-    private int soundId = -1, soundType = 1, soundDelay;
+    private final int soundId, soundType, soundDelay;
 
 }
