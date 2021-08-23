@@ -1,6 +1,11 @@
 package io.ruin.utility;
 
+import com.google.api.client.util.Strings;
+import io.ruin.cache.ItemDef;
+import io.ruin.model.item.Item;
+
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -60,5 +65,58 @@ public final class Utils {
                 return true;
         }
         return false;
+    }
+
+    /**
+     * Takes a list of items and outputs a list of strings containing string elements representing those items.
+     * 1000xCoins -> 1000 coins
+     * @param items The items to be translated into strings.
+     * @return The list of strings representing the items.
+     */
+    public static List<String> itemsToStringList(List<Item> items) {
+        List<String> names = new ArrayList<>();
+        for (Item item : items) {
+            names.add(
+                    item.getAmount() > 1 ? (item.getAmount() + " " + ItemDef.get(item.getId()).name) : ItemDef.get(item.getId()).descriptiveName
+            );
+        }
+        return names;
+    }
+
+    /**
+     * Returns a comma separated, grammar correct list of items.
+     * @param items The items to be converted to strings and joined together.
+     * @return The completed string.
+     */
+    public static String grammarCorrectListForItems(List<Item> items) {
+        List<String> names = new ArrayList<>();
+        for (Item item : items) {
+            names.add(
+                    item.getAmount() > 1 ? (item.getAmount() + " " + ItemDef.get(item.getId()).name + "s") : ItemDef.get(item.getId()).descriptiveName
+            );
+        }
+        return grammarCorrectList(names);
+    }
+
+    /**
+     * Creates a comma separated, grammar correct list of strings.
+     * @param strings The strings to be joined together.
+     * @return The completed string.
+     */
+    public static String grammarCorrectList(List<String> strings) {
+        int count = 0;
+        StringBuilder list = new StringBuilder("");
+        for (String string : strings) {
+            if (count > 0) {
+                if (count < strings.size() - 1) {
+                    list.append(", ");
+                } else {
+                    list.append(" and ");
+                }
+            }
+            list.append(string);
+            ++count;
+        }
+        return list.toString();
     }
 }
