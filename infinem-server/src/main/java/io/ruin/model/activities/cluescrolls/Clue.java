@@ -46,7 +46,9 @@ public class Clue {
             } else {
                 item.setId(def.clueType.casketId);
                 String message = "Great job, you have completed your clue scroll!";
-                if(def.clueType == ClueType.EASY)
+                if(def.clueType == ClueType.BEGINNER)
+                    message += " You have now completed a total of " + NumberUtils.formatNumber(++player.beginnerClueCount) + " beginner clue scrolls!";
+                else if(def.clueType == ClueType.EASY)
                     message += " You have now completed a total of " + NumberUtils.formatNumber(++player.easyClueCount) + " easy clue scrolls!";
                 else if(def.clueType == ClueType.MEDIUM)
                     message += " You have now completed a total of " + NumberUtils.formatNumber(++player.medClueCount) + " medium clue scrolls!";

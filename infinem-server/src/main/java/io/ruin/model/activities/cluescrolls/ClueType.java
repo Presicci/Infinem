@@ -20,6 +20,8 @@ import static io.ruin.cache.ItemID.COINS_995;
 
 public enum ClueType {
 
+    BEGINNER(23182, 23245, 1, 3),
+
     EASY(
             2677, 20546, 2, 4,
             /**
