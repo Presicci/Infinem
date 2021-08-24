@@ -113,17 +113,6 @@ public class IKOD {
                     continue;
             }
 
-            //Auto keep god d'hides on death, when not in pvp
-            if (player.wildernessLevel < 1 && !player.pvpAttackZone && item.getDef().name.contains("d'hide") && (item.getDef().name.contains("Armadyl") ||
-                    item.getDef().name.contains("Ancient") ||
-                    item.getDef().name.contains("Bandos") ||
-                    item.getDef().name.contains("Saradomin") ||
-                    item.getDef().name.contains("Guthix") ||
-                    item.getDef().name.contains("Zamorak"))) {
-                keepItems.add(item);
-                continue;
-            }
-
             // Ferocious Gloves
             if (item.getId() == 22981) {
                 item.setId(22983);
