@@ -213,11 +213,15 @@ public class Player extends PlayerAttributes {
     }
 
     public boolean isSapphire() {
-        return isGroup(PlayerGroup.SAPPHIRE) || isRuby();
+        return isGroup(PlayerGroup.SAPPHIRE) || isEmerald();
+    }
+
+    public boolean isEmerald() {
+        return isGroup(PlayerGroup.EMERALD) || isRuby();
     }
 
     public boolean isRuby() {
-        return isGroup(PlayerGroup.SAPPHIRE) || isDiamond();
+        return isGroup(PlayerGroup.RUBY) || isDiamond();
     }
 
     public boolean isDiamond() {
