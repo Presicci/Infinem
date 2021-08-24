@@ -17,6 +17,8 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.inter.utils.Unlock;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
+import io.ruin.model.item.containers.Inventory;
+import io.ruin.model.item.containers.bank.Bank;
 import io.ruin.model.map.object.actions.ObjectAction;
 
 import static io.ruin.cache.ItemID.BLOOD_MONEY;
@@ -109,16 +111,58 @@ public class DeathStorage extends ItemContainer {
         if (unlocked)
             return;
         Item cost = getUnlockCost();
-        if (cost == null) {
+        if (cost.getAmount() == 0) {
             unlocked = true;
             update();
             return;
         }
-        if (!player.getInventory().contains(cost, true)) {
-            player.sendMessage("You do not have the required items to pay the unlock fee.");
-            return;
+        if ((player.getInventory().findItem(995) == null ? 0 : (long) player.getInventory().findItem(995).getAmount())
+                + (player.getBank().findItem(995) == null ? 0 : (long) player.getBank().findItem(995).getAmount())
+                + (this.findItem(995) == null ? 0 : (long) this.findItem(995).getAmount()) < cost.getAmount()) {
+            player.sendMessage("You do not have the required funds to pay the unlock fee.");
+        } else {
+            if (this.contains(995)) {
+                int amt = this.findItem(995).getAmount();
+                if (amt > cost.getAmount()) {
+                    this.remove(cost.getId(), cost.getAmount(), true, null);
+                    sendUpdates();
+                    finalizeUnlock();
+                    return;
+                } else {
+                    this.remove(995, amt);
+                    cost.incrementAmount(-amt);
+                    sendUpdates();
+                }
+            }
+            Inventory inventory = player.getInventory();
+            if (inventory.contains(995)) {
+                int amt = inventory.findItem(995).getAmount();
+                if (amt > cost.getAmount()) {
+                    inventory.remove(cost.getId(), cost.getAmount(), true, null);
+                    finalizeUnlock();
+                    return;
+                } else {
+                    inventory.remove(995, amt);
+                    cost.incrementAmount(-amt);
+                }
+            }
+            Bank bank = player.getBank();
+            if (bank.contains(995)) {
+                int amt = bank.findItem(995).getAmount();
+                if (amt > cost.getAmount()) {
+                    bank.remove(cost.getId(), cost.getAmount(), true, null);
+                    finalizeUnlock();
+                    return;
+                } else {    // OOPS IF WE HIT THIS
+                    System.out.println("Not good");
+                    bank.remove(995, amt);
+                    cost.incrementAmount(-amt);
+                }
+            }
         }
-        player.getInventory().remove(cost.getId(), cost.getAmount(), true, null);
+    }
+
+    private void finalizeUnlock() {
         unlocked = true;
         update();
         player.sendMessage("You may now collect your items.");
