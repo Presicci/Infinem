@@ -72,6 +72,26 @@ public class IKOD {
             12904, 11907, 12899, 22545
     );
 
+    /**
+     * Items that, if lost on death, degrade fully, regardless of how you die or where.
+     */
+    private static final int[][] degradeOnDeath = {
+            { 12809, 12804 },    // Saradomin's blessed sword
+            { 12006, 12004 },     // Abyssal tentacle
+            { 11283, 11284 },    // Dragonfire shield
+            { 21633, 21634 },    // ancienct wyvern shield
+            { 22002, 22003 }     // dragonfire ward
+    };
+
+    /**
+     * Items that, if lost on death, degrade fully if death is to another player.
+     */
+    private static final int[][] degradeOnDeathInPVP = {
+            { 20655, 19550 },    // Ring of suffering (r)
+            { 19710, 19550 },    // Ring of suffering (i)
+            { 20657, 19550 },    // Ring of suffering (ri)
+    };
+
     private static boolean allowProtect(Player player, Item item) {  // should this item be allowed to be 'saved'?
         if (item.getDef().neverProtect)
             return false;
@@ -101,14 +121,46 @@ public class IKOD {
         ArrayList<Item> loseItems = new ArrayList<>(items.size());
         ArrayList<Item> keepItems = new ArrayList<>();
         int keepCountRemaining = getKeepCount(player.getCombat().isSkulled(), false, player.getPrayer().isActive(Prayer.PROTECT_ITEM));
-        for(Item item : items) {
+        global: for(Item item : items) {
             boolean lootingBag = isLootingBag(item);
+            // UIM lose everything on death
+            if (player.getGameMode().isUltimateIronman() && !lootingBag) {
+                loseItems.add(item);
+                continue;
+            }
             /* attempt to protect */
             if(keepCountRemaining > 0 && allowProtect(player, item)) {
                 int keepAmount = Math.min(item.getAmount(), keepCountRemaining);
                 keepItems.add(new Item(item.getId(), keepAmount, item.copyOfAttributes()));
                 keepCountRemaining -= keepAmount;
                 item.incrementAmount(-keepAmount);
+                // If player is in wilderness, drop ether always
+                if (player.wildernessLevel > 0) {
+                    /* viggora's chainmace */
+                    if (item.getId() == 22545) {
+                        int etherAmount = AttributeExtensions.getCharges(item);
+                        if (etherAmount > 0)
+                            loseItems.add(new Item(21820, etherAmount));
+                        item.setId(22542);
+                        AttributeExtensions.setCharges(item, 0);
+                    }
+                    /* craw's bow */
+                    if (item.getId() == 22550) {
+                        int etherAmount = AttributeExtensions.getCharges(item);
+                        if (etherAmount > 0)
+                            loseItems.add(new Item(21820, etherAmount));
+                        item.setId(22547);
+                        AttributeExtensions.setCharges(item, 0);
+                    }
+                    /* thammarons's sceptre */
+                    if (item.getId() == 22555) {
+                        int etherAmount = AttributeExtensions.getCharges(item);
+                        if (etherAmount > 0)
+                            loseItems.add(new Item(21820, etherAmount));
+                        item.setId(22552);
+                        AttributeExtensions.setCharges(item, 0);
+                    }
+                }
                 if(item.getAmount() == 0)
                     continue;
             }
@@ -119,59 +171,89 @@ public class IKOD {
                 loseItems.add(item);
                 continue;
             }
-            /* rune pouch */
-            if(item.getId() == 12791) {
-                for(Item rune : player.getRunePouch().getItems()) {
-                    if(rune != null)
-                        loseItems.add(rune);
-                }
-
-                player.getRunePouch().clear();
+            /* serpentine helm */
+            if (item.getDef().breakId == 12929) {
+                int scalesAmount = AttributeExtensions.getCharges(item);
+                if (scalesAmount > 0)
+                    loseItems.add(new Item(12934, scalesAmount));
+                item.setId(12929);
+                AttributeExtensions.setCharges(item, 0);
+                loseItems.add(item);
                 continue;
             }
+            /* toxic blowpipe */
+            if (item.getId() == 12926) {
+                Blowpipe.Dart dart = Blowpipe.getDart(item);
+                if (dart != Blowpipe.Dart.NONE)
+                    loseItems.add(new Item(dart.id, Blowpipe.getDartAmount(item)));
+                int scales = Blowpipe.getScalesAmount(item);
+                if (scales > 0)
+                    loseItems.add(new Item(12934, scales));
+                AttributeExtensions.setCharges(item, 0);
+                item.setId(12924);
+                loseItems.add(item);
+                continue;
+            }
+            /* bracelet of ethereum */
+            if (item.getDef().breakId == 21817) {
+                int etherAmount = AttributeExtensions.getCharges(item);
+                if (etherAmount > 0)
+                    loseItems.add(new Item(21820, etherAmount));
+                AttributeExtensions.setCharges(item, 0);
+                item.setId(21817);
+                loseItems.add(item);
+                continue;
+            }
+            /* tome of fire */
+            if (item.getId() == 20714) {
+                int charges = AttributeExtensions.getCharges(item);
+                if (charges > 0)
+                    loseItems.add(new Item(20718, Math.max(1, charges / 20)));
+                AttributeExtensions.setCharges(item, 0);
+                item.setId(20716);
+                loseItems.add(item);
+                continue;
+            }
+            /* toxic staff of the dead */
+            if (item.getDef().breakId == 12902) {
+                int scalesAmount = AttributeExtensions.getCharges(item);
+                if (scalesAmount > 0)
+                    loseItems.add(new Item(12934, scalesAmount));
+                item.setId(12902);
+                AttributeExtensions.setCharges(item, 0);
+                loseItems.add(item);
+                continue;
+            }
+            if (item.getDef().name.toLowerCase().contains("chinchompa") && Objects.isNull(killer)) {
+                continue;
+            }
+            for (int[] i : degradeOnDeath) {
+                if (item.getId() == i[0]) {
+                    item.setId(i[1]);
+                    AttributeExtensions.setCharges(item, 0);
+                    loseItems.add(item);
+                    continue global;
+                }
+            }
             if (player.wildernessLevel > 0 || player.pvpAttackZone) {
-                /* saradomin's blessed sword */
-                if (item.getId() == 12809) {
-                    item.setId(12804);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
+                for (int[] i : degradeOnDeathInPVP) {
+                    if (item.getId() == i[0]) {
+                        item.setId(i[1]);
+                        AttributeExtensions.setCharges(item, 0);
+                        loseItems.add(item);
+                        continue global;
+                    }
+                }
+                /* rune pouch */
+                if(item.getId() == 12791) {
+                    for(Item rune : player.getRunePouch().getItems()) {
+                        if(rune != null)
+                            loseItems.add(rune);
+                    }
+                    player.getRunePouch().clear();
                     continue;
                 }
-                /* tentacle whip */
-                if (item.getId() == 12006) {
-                    item.setId(12004);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }
-                /* ring of suffering */
-                if (item.getId() == 20655 || item.getId() == 20657 || item.getId() == 19710) {
-                    item.setId(19550);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }
-                /* serpentine helm */
-                if (item.getDef().breakId == 12929) {
-                    int scalesAmount = AttributeExtensions.getCharges(item);
-                    if (scalesAmount > 0)
-                        loseItems.add(new Item(12934, scalesAmount));
-                    item.setId(12929);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }
-                /* viggora's chainmace */
-                if (item.getId() == 22545) {
-                    int etherAmount = AttributeExtensions.getCharges(item);
-                    if (etherAmount > 0)
-                        loseItems.add(new Item(21820, etherAmount));
-                    item.setId(22542);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }
-                /* corrupted staff */
+                /* corrupted staff
                 if (item.getId() == CorruptedStaff.CHARGED) {
                     int essenceAmt = AttributeExtensions.getCharges(item);
                     if (essenceAmt > 0)
@@ -181,12 +263,22 @@ public class IKOD {
                     loseItems.add(item);
                     continue;
                 }
-                /* corrupted staff */
+                /* corrupted staff
                 if (item.getId() == CorruptedJavelin.CHARGED) {
                     int essenceAmt = AttributeExtensions.getCharges(item);
                     if (essenceAmt > 0)
                         loseItems.add(new Item(CorruptedJavelin.ESSENCE, essenceAmt));
                     item.setId(CorruptedJavelin.UNCHARGED);
+                    AttributeExtensions.setCharges(item, 0);
+                    loseItems.add(item);
+                    continue;
+                }*/
+                /* viggora's chainmace */
+                if (item.getId() == 22545) {
+                    int etherAmount = AttributeExtensions.getCharges(item);
+                    if (etherAmount > 0)
+                        loseItems.add(new Item(21820, etherAmount));
+                    item.setId(22542);
                     AttributeExtensions.setCharges(item, 0);
                     loseItems.add(item);
                     continue;
@@ -211,72 +303,8 @@ public class IKOD {
                     loseItems.add(item);
                     continue;
                 }
-                /* dragonfire shield */
-                if (item.getDef().id == 11283) {
-                    item.setId(11284);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }
-                /*ancient wyvern shield */
-                if (item.getDef().id == 21633) {
-                    item.setId(21634);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }
-                /*dragonfire ward */
-                if (item.getDef().id == 22002) {
-                    item.setId(22003);
-
-                    loseItems.add(item);
-                    continue;
-                }
-                /* toxic staff of the dead */
-                if (item.getDef().breakId == 12902) {
-                    int scalesAmount = AttributeExtensions.getCharges(item);
-                    if (scalesAmount > 0)
-                        loseItems.add(new Item(12934, scalesAmount));
-                    item.setId(12902);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }
-                /* toxic blowpipe */
-                if (item.getId() == 12926) {
-                    Blowpipe.Dart dart = Blowpipe.getDart(item);
-                    if (dart != Blowpipe.Dart.NONE)
-                        loseItems.add(new Item(dart.id, Blowpipe.getDartAmount(item)));
-                    int scales = Blowpipe.getScalesAmount(item);
-                    if (scales > 0)
-                        loseItems.add(new Item(12934, scales));
-                    AttributeExtensions.setCharges(item, 0);
-                    item.setId(12924);
-                    loseItems.add(item);
-                    continue;
-                }
                 /* blood money pouches */
                 if (item.getId() >= 22521 && item.getId() <= 22524) {
-                    loseItems.add(item);
-                    continue;
-                }
-                /* bracelet of ethereum */
-                if (item.getDef().breakId == 21817) {
-                    int etherAmount = AttributeExtensions.getCharges(item);
-                    if (etherAmount > 0)
-                        loseItems.add(new Item(21820, etherAmount));
-                    AttributeExtensions.setCharges(item, 0);
-                    item.setId(21817);
-                    loseItems.add(item);
-                    continue;
-                }
-                /* tome of fire */
-                if (item.getId() == 20714) {
-                    int charges = AttributeExtensions.getCharges(item);
-                    if (charges > 0)
-                        loseItems.add(new Item(20718, Math.max(1, charges / 20)));
-                    AttributeExtensions.setCharges(item, 0);
-                    item.setId(20716);
                     loseItems.add(item);
                     continue;
                 }
@@ -364,9 +392,23 @@ public class IKOD {
             }
             /* combined items */
             ItemCombining combined = item.getDef().combinedFrom;
-            if(combined != null) {
-                loseItems.add(new Item(combined.primaryId, item.getAmount()));
-                loseItems.add(new Item(combined.secondaryId, item.getAmount()));
+            if(combined != null && (player.wildernessLevel > 0 || player.pvpAttackZone)) {
+                if (Objects.isNull(killer)) {
+                    keepItems.add(item);
+                } else if (ItemDef.get(combined.primaryId).tradeable) {
+                    loseItems.add(new Item(combined.primaryId, item.getAmount()));
+                    loseItems.add(new Item(combined.secondaryId, item.getAmount()));
+                } else {
+                    ItemBreaking breakab = ItemDef.get(combined.primaryId).breakTo;
+                    if (ItemDef.get(combined.primaryId).breakTo != null) {
+                        item.setId(ItemDef.get(breakab.brokenId).id);
+                        keepItems.add(item);
+                        loseItems.add(new Item(combined.secondaryId, item.getAmount()));
+                    } else {
+                        keepItems.add(new Item(combined.primaryId, item.getAmount()));
+                        loseItems.add(new Item(combined.secondaryId, item.getAmount()));
+                    }
+                }
                 continue;
             }
 
