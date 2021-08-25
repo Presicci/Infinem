@@ -1,0 +1,23 @@
+package io.ruin.model.map.object.actions.impl.locations;
+
+import io.ruin.model.map.object.actions.ObjectAction;
+
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 8/23/2021
+ */
+public class Burthorpe {
+
+    static {
+        // Main hall - Stairs down
+        ObjectAction.register(4624, 2899, 3566, 0, "climb-down", (player, obj) -> player.getMovement().teleport(2207, 4938, 0));
+        // Main hall - Stairs up
+        ObjectAction.register(4626, 2897, 3566, 0, "climb-up", (player, obj) -> player.getMovement().teleport(2898, 3569, 1));
+
+        // Upstairs - Stairs down
+        ObjectAction.register(4625, 2897, 3567, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2898, 3560, 0));
+
+        // Games room - Stairs up
+        ObjectAction.register(4622, 2207, 4935, 0, "climb-up", (player, obj) -> player.getMovement().teleport(2899, 3565, 0));
+    }
+}
