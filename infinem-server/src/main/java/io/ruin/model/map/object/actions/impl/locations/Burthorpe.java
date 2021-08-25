@@ -1,6 +1,8 @@
 package io.ruin.model.map.object.actions.impl.locations;
 
+import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.map.object.actions.impl.Stairs;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -25,5 +27,11 @@ public class Burthorpe {
 
         // Bar - Stairs down
         ObjectAction.register(15648, 2914, 3540, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2914, 3538, 0));
+
+        // Herblore house up
+        ObjectAction.register(16671, 2898, 3428, 0, "climb-up", (player, obj) -> player.getMovement().teleport(2898, 3427, 1));
+
+        // Herblore house down
+        ObjectAction.register(16673, 2898, 3428, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2898, 3427, 0));
     }
 }
