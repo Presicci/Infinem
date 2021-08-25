@@ -15,7 +15,7 @@ public class Burthorpe {
         ObjectAction.register(4626, 2897, 3566, 0, "climb-up", (player, obj) -> player.getMovement().teleport(2898, 3569, 1));
 
         // Upstairs - Stairs down
-        ObjectAction.register(4625, 2897, 3567, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2898, 3560, 0));
+        ObjectAction.register(4625, 2897, 3567, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2898, 3565, 0));
 
         // Games room - Stairs up
         ObjectAction.register(4622, 2207, 4935, 0, "climb-up", (player, obj) -> player.getMovement().teleport(2899, 3565, 0));
