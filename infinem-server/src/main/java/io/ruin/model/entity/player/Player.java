@@ -381,9 +381,9 @@ public class Player extends PlayerAttributes {
     /**
      * Interface visibility
      */
-    private boolean[] visibleInterfaces = new boolean[InterfaceDef.COUNTS.length];
+    private final boolean[] visibleInterfaces = new boolean[InterfaceDef.COUNTS.length];
 
-    private Integer[][] visibleInterfaceIds = new Integer[InterfaceDef.COUNTS.length][];
+    private final Integer[][] visibleInterfaceIds = new Integer[InterfaceDef.COUNTS.length][];
 
     public void setVisibleInterface(int interfaceId, int parentId, int childId) {
         if(visibleInterfaceIds[parentId] == null)
@@ -404,6 +404,8 @@ public class Player extends PlayerAttributes {
     }
 
     public void moveVisibleInterface(int fromParentId, int fromChildId, int toParentId, int toChildId) {
+        if(visibleInterfaceIds[fromParentId] == null)
+            visibleInterfaceIds[fromParentId] = new Integer[InterfaceDef.COUNTS[fromParentId]];
         Integer interfaceId = visibleInterfaceIds[fromParentId][fromChildId];
         if(interfaceId == null)
             return;
