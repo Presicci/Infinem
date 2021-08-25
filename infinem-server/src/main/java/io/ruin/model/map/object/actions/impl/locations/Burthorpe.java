@@ -34,6 +34,25 @@ public class Burthorpe {
         // Herblore house down
         ObjectAction.register(16673, 2898, 3428, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2898, 3427, 0));
 
+        // Witch's cellar up
+        ObjectAction.register(24717, 2907, 9876, 0, "climb-up", (player, obj) -> player.getMovement().teleport(2906, 3476, 0));
+
+        // Witch's cellar down
+        ObjectAction.register(24718, 2907, 3476, 0, "climb-down", (player, obj) -> player.getMovement().teleport(2906, 9876, 0));
+
+        // Witch's house up
+        ObjectAction.register(24672, 2906, 3469, 0, "walk-up", (player, obj) -> player.getMovement().teleport(2906, 3472, 1));
+
+        // Witch's house down
+        ObjectAction.register(24673, 2906, 3470, 1, "walk-down", (player, obj) -> player.getMovement().teleport(2906, 3468, 0));
+
+        // Experiments no 2 entrance
+        ObjectAction.register(24842, 2899, 3469, 0, "enter", (player, obj) -> player.getMovement().teleport(2901, 9867, 0));
+
+        // Experiments no 2 exit
+        ObjectAction.register(24687, 2898, 9867, 0, "climb-up", (player, obj) -> player.getMovement().teleport(2899, 3468, 0));
+
+
         // Dwarf tunnel
         // Burthorpe down
         ObjectAction.register(57, 2876, 3480, 0, "climb-down", (player, obj) -> player.getMovement().teleport(2877, 9879, 0));
