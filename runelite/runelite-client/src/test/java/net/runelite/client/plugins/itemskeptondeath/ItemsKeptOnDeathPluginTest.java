@@ -107,7 +107,7 @@ public class ItemsKeptOnDeathPluginTest
 	// Creates a new item
 	private static Item item(final int id, final int qty)
 	{
-		return new Item(id, qty);
+		return new Item(id, qty, new String[] {});
 	}
 
 	@Test

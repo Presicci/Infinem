@@ -95,7 +95,6 @@ public class ItemController
 				itemPrice.setId(priceEntry.getItem());
 				itemPrice.setName(priceEntry.getName());
 				itemPrice.setPrice(priceEntry.getPrice());
-				itemPrice.setTime(priceEntry.getTime());
 				return itemPrice;
 			})
 			.toArray(ItemPrice[]::new)), 30, TimeUnit.MINUTES);
@@ -195,7 +194,6 @@ public class ItemController
 		itemPrice.setId(item.getId());
 		itemPrice.setName(item.getName());
 		itemPrice.setPrice(priceEntry.getPrice());
-		itemPrice.setTime(priceEntry.getTime());
 
 		return ResponseEntity.ok()
 			.cacheControl(CacheControl.maxAge(30, TimeUnit.MINUTES).cachePublic())
@@ -233,7 +231,6 @@ public class ItemController
 				itemPrice.setId(priceEntry.getItem());
 				itemPrice.setName(priceEntry.getName());
 				itemPrice.setPrice(priceEntry.getPrice());
-				itemPrice.setTime(priceEntry.getTime());
 				return itemPrice;
 			})
 			.toArray(ItemPrice[]::new);

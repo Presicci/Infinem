@@ -67,9 +67,9 @@ public class ContainerCalculationTest
 	@Test
 	public void testCalculate()
 	{
-		Item coins = new Item(ItemID.COINS_995, Integer.MAX_VALUE);
+		Item coins = new Item(ItemID.COINS_995, Integer.MAX_VALUE, new String[] {});
 
-		Item whip = new Item(ItemID.ABYSSAL_WHIP, 1_000_000_000);
+		Item whip = new Item(ItemID.ABYSSAL_WHIP, 1_000_000_000, new String[] {});
 
 		Item[] items = ImmutableList.of(
 			coins,

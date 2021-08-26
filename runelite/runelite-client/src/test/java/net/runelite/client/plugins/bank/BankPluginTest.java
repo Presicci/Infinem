@@ -76,7 +76,7 @@ public class BankPluginTest
 		int itemId = ItemID.ABYSSAL_WHIP;
 
 		ItemContainer itemContainer = mock(ItemContainer.class);
-		when(itemContainer.getItems()).thenReturn(new Item[]{new Item(itemId, 30)});
+		when(itemContainer.getItems()).thenReturn(new Item[]{new Item(itemId, 30, new String[] {})});
 		when(client.getItemContainer(InventoryID.BANK)).thenReturn(itemContainer);
 
 		ItemDefinition comp = mock(ItemDefinition.class);

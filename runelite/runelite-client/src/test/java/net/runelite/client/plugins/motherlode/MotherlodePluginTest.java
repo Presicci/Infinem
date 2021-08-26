@@ -172,6 +172,6 @@ public class MotherlodePluginTest
 
 	private static Item item(int itemId, int quantity)
 	{
-		return new Item(itemId, quantity);
+		return new Item(itemId, quantity, new String[] {});
 	}
 }
