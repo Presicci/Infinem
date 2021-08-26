@@ -3,6 +3,8 @@ package io.ruin.model.skills.mining;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
+import io.ruin.model.entity.npc.NPC;
+import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -17,7 +19,7 @@ import io.ruin.model.stat.StatType;
 
 public class Mining {
 
-    private static void mine(Rock rockData, Player player, GameObject rock, int emptyId, PlayerCounter counter) {
+    private static void mine(Rock rockData, Player player, GameObject rock, int emptyId, PlayerCounter counter, NPC npc) {
         Pickaxe pickaxe = Pickaxe.find(player);
         if (pickaxe == null) {
             player.dialogue(new MessageDialogue("You need a pickaxe to mine this rock. You do not have a pickaxe which " +
@@ -42,7 +44,8 @@ public class Mining {
         player.startEvent(event -> {
             int attempts = 0;
             while (true) {
-                if (rock.id == emptyId) {
+                if ((rock != null && rock.id == emptyId)
+                        || (npc != null && npc.isRemoved())) {
                     player.resetAnimation();
                     return;
                 }
@@ -121,9 +124,13 @@ public class Mining {
                     if (Random.get() < depleteChance) {
                         player.resetAnimation();
                         World.startEvent(worldEvent -> {
-                            rock.setId(emptyId);
-                            worldEvent.delay(rockData.respawnTime);
-                            rock.setId(rock.originalId);
+                            if (rock != null) {
+                                rock.setId(emptyId);
+                                worldEvent.delay(rockData.respawnTime);
+                                rock.setId(rock.originalId);
+                            } else if (npc != null) {
+                                npc.remove();
+                            }
                         });
                         return;
                     }
@@ -313,7 +320,7 @@ public class Mining {
             int baseId = (Integer) d[1];
             int emptyId = (Integer) d[2];
             PlayerCounter counter = (PlayerCounter) d[3];
-            ObjectAction.register(baseId, "mine", (player, obj) -> mine(rock, player, obj, emptyId, counter));
+            ObjectAction.register(baseId, "mine", (player, obj) -> mine(rock, player, obj, emptyId, counter, null));
             ObjectAction.register(baseId, "prospect", (player, obj) -> prospect(rock, player, false));
         }
         int[] emptyOreIds = {11390, 11391};
@@ -334,7 +341,7 @@ public class Mining {
             int baseId = (Integer) c[1];
             int emptyId = (Integer) c[2];
             PlayerCounter counter = (PlayerCounter) c[3];
-            ObjectAction.register(baseId, "mine", (player, obj) -> mine(rock, player, obj, emptyId, counter));
+            ObjectAction.register(baseId, "mine", (player, obj) -> mine(rock, player, obj, emptyId, counter, null));
             ObjectAction.register(baseId, "prospect", (player, obj) -> prospect(rock, player, true));
         }
         int[] emptyCrystals = {11393};
@@ -355,9 +362,15 @@ public class Mining {
             int baseId = (Integer) g[1];
             int emptyId = (Integer) g[2];
             PlayerCounter counter = (PlayerCounter) g[3];
-            ObjectAction.register(baseId, "mine", (player, obj) -> mine(rock, player, obj, emptyId, counter));
+            ObjectAction.register(baseId, "mine", (player, obj) -> mine(rock, player, obj, emptyId, counter, null));
             ObjectAction.register(baseId, "prospect", (player, obj) -> prospect(rock, player, false));
         }
+
+        /**
+         * Runite golem
+         */
+        NPCAction.register(6601, "mine", (player, npc) -> mine(Rock.RUNE, player, null, -1, PlayerCounter.MINED_RUNITE, npc));
+        NPCAction.register(6601, "prospect", (player, npc) -> prospect(Rock.RUNE, player, false));
     }
 
 }
