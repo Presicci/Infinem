@@ -11,7 +11,9 @@ import io.ruin.model.item.actions.ItemItemAction;
 
 public class HerbSack {
 
-    private static final int[] GRIMY_HERBS = new int[] {
+    public static final int HERB_SACK = 13226;
+
+    public static final int[] GRIMY_HERBS = new int[] {
             199, 201, 203, 205, 207, 3049, 209,
             211, 213, 3051, 215, 2485, 217, 219 };
 
@@ -85,7 +87,7 @@ public class HerbSack {
 
     private static void addToSack(Player player, int herbId, int amount) {
         int herbSize = amountStored(player, herbId);
-        if (herbSize >= 60) {
+        if (herbSize >= 30) {
             player.sendFilteredMessage("Your herb sack cannot carry anymore " + ItemDef.get(herbId).name.toLowerCase() + "s.");
             return;
         }
@@ -98,11 +100,24 @@ public class HerbSack {
         player.sendFilteredMessage("You add " + amountToAdd + " grimy herb" + (amount == 1 ? "" : "s") + " to the sack.");
     }
 
+    public static boolean addToSackFromGround(Player player, int herbId, int amount) {
+        int herbSize = amountStored(player, herbId);
+        if (herbSize >= 30) {
+            return false;
+        }
+        int minToAdd = Math.min(amount, 30 - herbSize);
+        if (minToAdd == 0)
+            return false;
+        incrementSackStored(player, herbId, minToAdd);
+        player.sendFilteredMessage("You add the grimy herb to your herb sack.");
+        return true;
+    }
+
     static {
         /**
          * Fill
          */
-        ItemAction.registerInventory(13226, "fill", (player, item) -> {
+        ItemAction.registerInventory(HERB_SACK, "fill", (player, item) -> {
             int added = 0;
             for (int herbId : GRIMY_HERBS) {
                 Item herb = player.getInventory().findItem(herbId);
@@ -126,7 +141,7 @@ public class HerbSack {
         /**
          * Check
          */
-        ItemAction.registerInventory(13226, "check", (player, item) -> {
+        ItemAction.registerInventory(HERB_SACK, "check", (player, item) -> {
             player.sendFilteredMessage("The herb sack contains:");
             for (int herbs : GRIMY_HERBS) {
                 int herbSize = amountStored(player, herbs);
@@ -136,7 +151,7 @@ public class HerbSack {
         /**
          * Empty
          */
-        ItemAction.registerInventory(13226, "empty", (player, item) -> {
+        ItemAction.registerInventory(HERB_SACK, "empty", (player, item) -> {
             for (int herbId : GRIMY_HERBS) {
                 int freeSlots = player.getInventory().getFreeSlots();
                 if (freeSlots == 0)
@@ -152,7 +167,7 @@ public class HerbSack {
         /**
          * Destroy
          */
-        ItemAction.registerInventory(13226, "destroy", (player, item) ->
+        ItemAction.registerInventory(HERB_SACK, "destroy", (player, item) ->
                 player.dialogue(new YesNoDialogue("Are you sure you want to destroy the item?",
                                 "The contents of the sack will be destroyed with it.", item, () -> {
                             item.remove();
@@ -164,7 +179,7 @@ public class HerbSack {
          * Item on bag
          */
         for (int herbId : GRIMY_HERBS) {
-            ItemItemAction.register(herbId, 13226, (player, primary, secondary) -> player.dialogue(new OptionsDialogue(
+            ItemItemAction.register(herbId, HERB_SACK, (player, primary, secondary) -> player.dialogue(new OptionsDialogue(
                     "How many would you like to deposit?",
                     new Option("One", () -> addToSack(player, herbId, 1)),
                     new Option("Five", () -> addToSack(player, herbId, 5)),
