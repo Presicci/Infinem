@@ -1206,15 +1206,6 @@
     "walkRange": 7
   },
   {
-    "name": "Leo",
-    "id": 6746,
-    "x": 2931,
-    "y": 9692,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
     "name": "Ghost",
     "id": 85,
     "x": 2915,
