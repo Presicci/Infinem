@@ -27,7 +27,7 @@ public class ResourceArea {
             /*
              * Donator Benefit: [Free resource area entry]
              */
-            if (player.isSapphire()) {
+            if (player.isEmerald()) {
                 enter(player, door);
             }
             Item currency = player.getInventory().findItem(getCurrency());
