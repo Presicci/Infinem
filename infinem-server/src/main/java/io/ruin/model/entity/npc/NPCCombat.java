@@ -606,7 +606,7 @@ public abstract class NPCCombat extends Combat {
         /*
          * Summer Loot
          */
-        SummerTokens.npcKill(pKiller, npc, dropPosition);
+        //SummerTokens.npcKill(pKiller, npc, dropPosition);
         /*
          * Catacombs loot
          */

@@ -127,7 +127,7 @@ public class StatList {
         Stat stat = stats[statId];
         double baseAmount = amount;
 
-        SummerTokens.xpDrop(player);
+        //SummerTokens.xpDrop(player);
 
         for(Item item : player.getEquipment().getItems()) {
             if(item != null && item.getDef() != null) {
