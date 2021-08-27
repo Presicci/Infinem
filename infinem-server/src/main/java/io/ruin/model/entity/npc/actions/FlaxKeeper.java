@@ -6,10 +6,9 @@ import io.ruin.model.inter.dialogue.DialogueAnimations;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.item.actions.ItemNPCAction;
 
-/*
- * @project Kronos
- * @author Patrity - https://github.com/Patrity
- * Created on - 6/2/2020
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 8/26/2021
  */
 public class FlaxKeeper {
 
