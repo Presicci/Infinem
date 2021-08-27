@@ -31,6 +31,8 @@ public enum Food {
     RAW_MOLTEN_EEL(96, 235.0, 30086, 30089, 3383, "a molten eel", "molten eels", 3, 102, 102, 99),
 
     //Raw Meat
+    SINEW_MEAT(1, 3.0, 2132, 9436, 9436, "sinew", "sinews", 3, 1, 1, 1),
+    SINEW_BEAR_MEAT(1, 3.0, 2136, 9436, 9436, "sinew", "sinews", 3, 1, 1, 1),
     RAW_MEAT(1, 30.0, 2132, 2142, 2146, "a piece of meat", "meat", 3, 31, 31, 31),
     RAW_RAT_MEAT(1, 30.0, 2134, 2142, 2146, "a piece of rat meat", "rat meat", 3, 31, 31, 31),
     RAW_YAK_MEAT(1, 30.0, 10816, 2142, 2146, "a piece of yak meat", "yak meat", 3, 31, 31, 31),
@@ -38,7 +40,6 @@ public enum Food {
     RAW_CHICKEN(1, 30.0, 2138, 2140, 2144, "a chicken", "chickens", 10, 31, 31, 31),
     RAW_RABBIT(1, 30.0, 3226, 3228, 7222, "a rabbit", "rabbits", 3, 31, 31, 31),
     CRAB_MEAT(21, 100.0, 7518, 7521, 7520, "a piece of crab meat", "crab meat", 3, 31, 31, 31),
-    SINEW(1, 3.0, 2132, 9436, 9436, "sinew", "sinews", 3, 1, 1, 1),
     RAW_UGTHANKI_MEAT(1, 40.0, Items.RAW_UGTHANKI_MEAT, Items.UGTHANKI_MEAT, 2146, "a piece of ugthanki meat", "ugthanki meat", 3, 99, 99, 95),
 
     //Pies

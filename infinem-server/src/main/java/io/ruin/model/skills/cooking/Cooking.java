@@ -22,9 +22,13 @@ public class Cooking {
         SkillItem i = new SkillItem(food.rawID).name(food.rawName).
                 addAction((p, amount, event) -> startCooking(p, food, obj, amount, anim, fire));
         System.out.println(food.name());
-        if (food.equals(Food.RAW_MEAT) || food.equals(Food.SINEW)) {
-            SkillItem sinew = new SkillItem(Food.SINEW.cookedID).name(Food.SINEW.itemName).
-                    addAction((p, amount, event) -> startCooking(p, Food.SINEW, obj, amount, anim, fire));
+        if (food.equals(Food.RAW_MEAT)) {
+            SkillItem sinew = new SkillItem(Food.SINEW_MEAT.cookedID).name(Food.SINEW_MEAT.itemName).
+                    addAction((p, amount, event) -> startCooking(p, Food.SINEW_MEAT, obj, amount, anim, fire));
+            SkillDialogue.make(player, i, sinew);
+        } else if (food.equals(Food.RAW_BEAR_MEAT)) {
+            SkillItem sinew = new SkillItem(Food.SINEW_BEAR_MEAT.cookedID).name(Food.SINEW_BEAR_MEAT.itemName).
+                    addAction((p, amount, event) -> startCooking(p, Food.SINEW_BEAR_MEAT, obj, amount, anim, fire));
             SkillDialogue.make(player, i, sinew);
         } else {
             if (player.getInventory().hasMultiple(food.rawID))
@@ -52,6 +56,8 @@ public class Cooking {
                     player.getStats().addXp(StatType.Cooking, food.experience * bonus(player, fire), true);
                     player.sendFilteredMessage(cookingMessage(food));
                     PlayerCounter.COOKED_FOOD.increment(player, 1);
+                    // player.getTaskHandler().checkTaskProgress(0);
+                    // player.getTaskHandler().checkTaskProgress(0, 5, 11);
                 } else {
                     rawFood.setId(food.burntID);
                     player.sendFilteredMessage("You accidentally burn the " + food.itemName + ".");
