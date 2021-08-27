@@ -152,7 +152,7 @@ public enum Burning {
             }
 
             player.lock();
-            GameObject fire = new GameObject(burning.fireId, player.getAbsX(), player.getAbsY(), 0, 10, 0);
+            GameObject fire = new GameObject(burning.fireId, player.getAbsX(), player.getAbsY(), player.getPosition().getZ(), 10, 0);
             player.resetAnimation();
             player.getRouteFinder().routeSelf();
             event.delay(1);
