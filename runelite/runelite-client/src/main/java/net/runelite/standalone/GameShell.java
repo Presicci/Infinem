@@ -643,9 +643,9 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
    }
 
    public void onPost(Object var1) {
-      DrawCallbacks var2 = ViewportMouse.client.getDrawCallbacks();
-      if(var2 != null) {
-         var2.draw();
+      DrawCallbacks drawCallbacks = ViewportMouse.client.getDrawCallbacks();
+      if(drawCallbacks != null) {
+         drawCallbacks.draw();
       }
 
    }
