@@ -241,6 +241,12 @@ public abstract class PlayerAttributes extends Entity {
     /**
      * Prayer
      */
+    @Expose public int fiendishAshesScattered;
+    @Expose public int vileAshesScattered;
+    @Expose public int maliciousAshesScattered;
+    @Expose public int abyssalAshesScattered;
+    @Expose public int infernalAshesScattered;
+
     @Expose public int regularBonesBuried;
     @Expose public int burntBonesBuried;
     @Expose public int batBonesBuried;

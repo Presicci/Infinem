@@ -171,6 +171,12 @@ public enum PlayerCounter {
     /**
      * Prayer
      */
+    FIENDISH_ASHES_BURIED((p, amt) -> p.fiendishAshesScattered = amt, p -> p.fiendishAshesScattered),
+    VILE_ASHES_BURIED((p, amt) -> p.vileAshesScattered = amt, p -> p.vileAshesScattered),
+    MALICIOUS_ASHES_BURIED((p, amt) -> p.maliciousAshesScattered = amt, p -> p.maliciousAshesScattered),
+    ABYSSAL_ASHES_BURIED((p, amt) -> p.abyssalAshesScattered = amt, p -> p.abyssalAshesScattered),
+    INFERNAL_ASHES_BURIED((p, amt) -> p.infernalAshesScattered = amt, p -> p.infernalAshesScattered),
+
     REGULAR_BONES_BURIED((p, amt) -> p.regularBonesBuried = amt, p -> p.regularBonesBuried),
     BURNT_BONES_BURIED((p, amt) -> p.burntBonesBuried = amt, p -> p.burntBonesBuried),
     BAT_BONES_BURIED((p, amt) -> p.batBonesBuried = amt, p -> p.batBonesBuried),
