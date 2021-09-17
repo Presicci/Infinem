@@ -134,6 +134,7 @@ public enum PlayerCounter {
     PICKPOCKETED_PALADIN((p, amt) -> p.pickpocketPaladin = amt, p -> p.pickpocketPaladin),
     PICKPOCKETED_GNOME((p, amt) -> p.pickpocketGnome = amt, p -> p.pickpocketGnome),
     PICKPOCKETED_HERO((p, amt) -> p.pickpocketHero = amt, p -> p.pickpocketHero),
+    PICKPOCKETED_VYRE((p, amt) -> p.pickpocketVyre = amt, p -> p.pickpocketVyre),
     PICKPOCKETED_ELF((p, amt) -> p.pickpocketElf = amt, p -> p.pickpocketElf),
     PICKPOCKETED_TZHAAR_HUR((p, amt) -> p.pickpocketTzhaarHur = amt, p -> p.pickpocketTzhaarHur),
     WALL_SAFES_CRACKED((p, amt) -> p.wallSafesCracked = amt, p -> p.wallSafesCracked, Achievement.QUICK_HANDS),
