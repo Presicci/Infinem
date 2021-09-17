@@ -22,6 +22,7 @@ import io.ruin.model.stat.StatType;
 
 public class Mining {
 
+    /* LootTable for the gems obtained at a 1/256 rate from mining */
     private static final LootTable GEM_TABLE = new LootTable().addTable("gems", 1,
             new LootItem(Items.UNCUT_SAPPHIRE, 1, 8),
             new LootItem(Items.UNCUT_EMERALD, 1, 5),
