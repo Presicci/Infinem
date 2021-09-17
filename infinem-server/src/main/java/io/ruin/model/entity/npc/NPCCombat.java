@@ -710,6 +710,11 @@ public abstract class NPCCombat extends Combat {
                 continue;
             }
 
+            // Ash sanctifier
+            if (pKiller.getAshSanctifier().handleScatter(item)) {
+                continue;
+            }
+
             /*
              * Donator Benefit: [Noted dragon bones in wilderness]
              */
