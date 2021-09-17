@@ -7,7 +7,6 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.skills.prayer.Ashes;
-import io.ruin.model.skills.prayer.Bone;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 import lombok.Setter;
@@ -62,19 +61,19 @@ public class AshSanctifier {
         ItemAction.registerInventory(ASH_SANCTIFIER, 2, (player, item) -> player.getAshSanctifier().checkCharges());
         ItemAction.registerInventory(ASH_SANCTIFIER, 3, (player, item) -> player.getAshSanctifier().toggleActive());
         ItemAction.registerInventory(ASH_SANCTIFIER, 4, (player, item) -> {
-            if (player.getBoneCrusher().getCharges() <= 0) {
+            if (player.getAshSanctifier().getCharges() <= 0) {
                 player.sendMessage("Your ash sanctifier does not have any charges.");
                 return;
             }
             player.getInventory().addOrDrop(DEATH_RUNE, (player.getAshSanctifier().getCharges() / 10));
-            player.getBoneCrusher().setCharges(0);
+            player.getAshSanctifier().setCharges(0);
             player.sendMessage("You remove all the charges from your ash sanctifier.");
         });
         ItemItemAction.register(ASH_SANCTIFIER, DEATH_RUNE, (player, primary, secondary) -> {
-            int charges = player.getBoneCrusher().getCharges();
-            player.getBoneCrusher().setCharges(charges + (secondary.getAmount() * 10));
+            int charges = player.getAshSanctifier().getCharges();
+            player.getAshSanctifier().setCharges(charges + (secondary.getAmount() * 10));
             player.getInventory().remove(secondary.getId(), secondary.getAmount());
-            player.getBoneCrusher().checkCharges();
+            player.getAshSanctifier().checkCharges();
         });
     }
 }
