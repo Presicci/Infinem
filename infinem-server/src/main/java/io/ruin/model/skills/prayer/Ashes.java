@@ -1,6 +1,10 @@
 package io.ruin.model.skills.prayer;
 
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
+import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 
 /**
@@ -18,4 +22,26 @@ public enum Ashes {
     private final int itemId;
     private final double experience;
     private final PlayerCounter playercounter;
+
+    private void scatter(Player player, Item bone) {
+        player.resetActions(true, false, true);
+        player.startEvent(event -> {
+            if(player.boneBuryDelay.isDelayed())
+                return;
+            bone.remove();
+            //player.animate(827);  TODO find animation
+            // TODO find gfx if there is one
+            player.getStats().addXp(StatType.Prayer, experience, true);
+            //player.privateSound(2738);    TODO find sounds
+            playercounter.increment(player, 1);
+            player.boneBuryDelay.delay(2);
+            player.sendMessage("You scatter the ashes.");
+        });
+    }
+
+    static {
+        for(Ashes ashes : values()) {
+            ItemAction.registerInventory(ashes.itemId, "scatter", ashes::scatter);
+        }
+    }
 }
