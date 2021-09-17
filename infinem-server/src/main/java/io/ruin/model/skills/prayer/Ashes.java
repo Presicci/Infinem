@@ -6,12 +6,14 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 9/17/2021
  */
 @AllArgsConstructor
+@Getter
 public enum Ashes {
     FIENDISH(-1, 10, PlayerCounter.FIENDISH_ASHES_BURIED),
     VILE(-1, 25, PlayerCounter.VILE_ASHES_BURIED),
@@ -43,5 +45,13 @@ public enum Ashes {
         for(Ashes ashes : values()) {
             ItemAction.registerInventory(ashes.itemId, "scatter", ashes::scatter);
         }
+    }
+
+    public static Ashes get(int ashId) {
+        for (Ashes a : values()) {
+            if (ashId == a.itemId)
+                return a;
+        }
+        return null;
     }
 }
