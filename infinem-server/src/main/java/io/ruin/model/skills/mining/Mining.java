@@ -9,15 +9,25 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.Geode;
 import io.ruin.model.item.actions.impl.skillcapes.MiningSkillCape;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.item.loot.LootItem;
+import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 
 public class Mining {
+
+    private static final LootTable GEM_TABLE = new LootTable().addTable("gems", 1,
+            new LootItem(Items.UNCUT_SAPPHIRE, 1, 8),
+            new LootItem(Items.UNCUT_EMERALD, 1, 5),
+            new LootItem(Items.UNCUT_RUBY, 1, 3),
+            new LootItem(Items.UNCUT_DIAMOND, 1, 1)
+    );
 
     private static void mine(Rock rockData, Player player, GameObject rock, int emptyId, PlayerCounter counter, NPC npc) {
         Pickaxe pickaxe = Pickaxe.find(player);
@@ -77,6 +87,7 @@ public class Mining {
                     gemRock = true;
                 }
 
+                Item gem = null;
                 final int miningAnimation = rockData == Rock.AMETHYST ? pickaxe.crystalAnimationID : pickaxe.regularAnimationID;
                 if(attempts == 0) {
                     player.sendFilteredMessage("You swing your pick at the rock.");
@@ -87,8 +98,14 @@ public class Mining {
                         player.graphics(580, 155, 0);
                         addBar(player, rockData.ore);
                         //TODO: Get the proper message and take away charge
+                    } else if (rockData != Rock.GEM_ROCK && Random.rollDie(256)) {  // 1/256 chance to replace ore with a gem)
+                        gem = GEM_TABLE.rollItem();
+
+                        player.collectResource(gem);
+                        player.getInventory().add(gem);
                     } else {
                         int id = rockyOutcrop || gemRock ? itemId : rockData.ore;
+
                         player.collectResource(new Item(id, 1));
                         player.getInventory().add(id, 1);
 
@@ -99,14 +116,17 @@ public class Mining {
                             player.getInventory().add(id, 1);
                             player.sendFilteredMessage("You manage to mine an additional ore.");
                         }
-
                     }
 
                     counter.increment(player, 1);
-                    if(rockData == Rock.GEM_ROCK)
+                    if(rockData == Rock.GEM_ROCK) {
                         player.getStats().addXp(StatType.Mining, rockData.experience * xpBonus(player), true);
-                    else
+                    } else if (gem != null) {   // No xp is earned and the ore is not depleted, just go next
+                        player.sendFilteredMessage("You find an " + gem.getDef().name + ".");
+                        continue;
+                    } else {
                         player.getStats().addXp(StatType.Mining, rockyOutcrop ? rockData.multiExp[random] : rockData.experience * xpBonus(player), true);
+                    }
                     player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
                             (rockData == Rock.GEM_ROCK ? ItemDef.get(itemId).name.toLowerCase() : rockData.rockName) + ".");
 
