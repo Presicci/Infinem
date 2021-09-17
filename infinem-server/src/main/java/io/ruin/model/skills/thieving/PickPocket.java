@@ -128,6 +128,13 @@ public enum PickPocket {
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 400, 1000, 1) //Coins
             )),
+    // TODO stun anim
+    WATCHMAN(65, 137.5, 386, 5, 3, "watchman's", PlayerCounter.PICKPOCKETED_WATCHMAN,
+            134625,
+            new LootTable().addTable(1,
+                    new LootItem(Items.BREAD, 1, 0),
+                    new LootItem(995, 60, 0)
+            )),
     PALADIN(70, 151.75, 386, 5, 3, "paladin's", PlayerCounter.PICKPOCKETED_PALADIN,
             127056,
             new LootTable().addTable(1,
