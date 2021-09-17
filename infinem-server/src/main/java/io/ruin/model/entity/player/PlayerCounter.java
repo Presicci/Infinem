@@ -110,6 +110,7 @@ public enum PlayerCounter {
     TEA_STALL_THIEVES((p, amt) -> p.teaStallThieves = amt, p -> p.teaStallThieves),
     SILK_STALL_THIEVES((p, amt) -> p.silkStallThieves = amt, p -> p.silkStallThieves),
     WINE_STALL_THIEVES((p, amt) -> p.wineStallThieves = amt, p -> p.wineStallThieves),
+    FRUIT_STALL_THIEVES((p, amt) -> p.fruitStallThieves = amt, p -> p.fruitStallThieves),
     SEED_STALL_THIEVES((p, amt) -> p.seedStallThieves = amt, p -> p.seedStallThieves),
     FUR_STALL_THIEVES((p, amt) -> p.furStallThieves = amt, p -> p.furStallThieves),
     FISH_STALL_THIEVES((p, amt) -> p.fishStallThieves = amt, p -> p.fishStallThieves),

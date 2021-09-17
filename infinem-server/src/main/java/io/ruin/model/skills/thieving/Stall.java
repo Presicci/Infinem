@@ -6,6 +6,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.Pet;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
@@ -111,6 +112,25 @@ public enum Stall {
                     new LootItem(3732, 1, 1),                    //Empty jug
                     new LootItem(7919, 1, 1)                     //Bottle of wine
             )),
+    FRUIT_STALL(25, 3, 28.5, 124066, "fruit stall",
+            PlayerCounter.FRUIT_STALL_THIEVES,
+            new int[][] {
+                    { -1, -1 }  // TODO Stall objectids
+            },
+            null,
+            new LootTable().addTable(1,
+                    new LootItem(Items.COOKING_APPLE, 1, 40),
+                    new LootItem(Items.BANANA, 1, 20),
+                    new LootItem(Items.JANGERBERRIES, 1, 7),
+                    new LootItem(Items.LEMON, 1, 5),
+                    new LootItem(Items.REDBERRIES, 1, 5),
+                    new LootItem(Items.PINEAPPLE, 1, 5),
+                    new LootItem(Items.LIME, 1, 5),
+                    new LootItem(Items.STRAWBERRY, 1, 5),
+                    new LootItem(Items.STRANGE_FRUIT, 1, 5),
+                    new LootItem(Items.GOLOVANOVA_FRUIT_TOP, 1, 2),
+                    new LootItem(Items.PAPAYA_FRUIT, 1, 1))
+    ),
     SEED_STALL(27, 3, 10.0, 36490, "seed stall",
             PlayerCounter.SEED_STALL_THIEVES,
             new int[][]{
