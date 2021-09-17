@@ -328,7 +328,7 @@ public enum Stall {
             player.getInventory().add(loot);
             if(player.getPosition().inBounds(HOME))
                 player.edgevilleStallCooldown.delay(3);
-            if (Random.rollDie(stall.petOdds))
+            if (Random.rollDie(stall.petOdds - (player.getStats().get(StatType.Thieving).currentLevel * 25)))
                 Pet.ROCKY.unlock(player);
             stall.counter.increment(player, 1);
             player.getStats().addXp(StatType.Thieving, stall.experience, true);
