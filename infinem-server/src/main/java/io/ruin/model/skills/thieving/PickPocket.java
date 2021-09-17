@@ -311,14 +311,13 @@ public enum PickPocket {
         int slope = 2;
         int chance = 60; //Starts at a 60% chance
         int thievingLevel = player.getStats().get(StatType.Thieving).currentLevel;
-        int requiredLevel = levelReq;
 
         if (player.getEquipment().hasId(GLOVES_OF_SILENCE))
             chance += 5;
         if (player.getEquipment().hasMultiple(MAX_CAPES) || ThievingSkillCape.wearsThievingCape(player))
             chance *= 1.1;
         if (thievingLevel > levelReq)
-            chance += (thievingLevel - requiredLevel) * slope;
+            chance += (thievingLevel - levelReq) * slope;
         return Math.min(chance, 95); //Caps at 95%
     }
 
