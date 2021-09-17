@@ -219,11 +219,34 @@ public enum PickPocket {
         player.addEvent(event -> {
             player.lock(LockType.FULL_REGULAR_DAMAGE);
             if (successful(player, pickpocket)) {
+                /*
+                 Roll for 'additional loot'
+                 Rolls are nested, so the 3x roll only happens after 2x succeeds, etc.
+                 Each nested roll takes 10 more agility and thieving levels
+                 */
+                int agilityLevel = player.getStats().get(StatType.Agility).currentLevel;
+                int thievingLevel = player.getStats().get(StatType.Thieving).currentLevel;
+                int additionalRolls = 0;
+                while (agilityLevel >= pickpocket.levelReq
+                        && thievingLevel - 10 >= pickpocket.levelReq
+                        && Random.rollDie(3)         // 33% chance to get more loot
+                        && ++additionalRolls < 3) {         // Maximum of 3 additional rolls
+                    // Because each additional roll requires +10 levels in each
+                    agilityLevel -= 10;
+                    thievingLevel -= 10;
+                }
                 player.animate(881);
                 player.privateSound(2581);
                 event.delay(1);
-                player.sendFilteredMessage("You pick the " + pickpocket.identifier + " pocket.");
-                player.getInventory().add(pickpocket.lootTable.rollItem());
+                if (additionalRolls > 0) {
+                    for (int index = additionalRolls; index > 0; index--) {
+                        player.getInventory().addOrDrop(pickpocket.lootTable.rollItem());
+                    }
+                    player.sendFilteredMessage("You manage to pick the " + pickpocket.identifier + " pocket " + additionalRolls + " times.");
+                } else  {
+                    player.sendFilteredMessage("You pick the " + pickpocket.identifier + " pocket.");
+                    player.getInventory().add(pickpocket.lootTable.rollItem());
+                }
                 player.getStats().addXp(StatType.Thieving, pickpocket.exp, true);
             } else {
                 player.sendFilteredMessage("You fail to pick the " + pickpocket.identifier + " pocket.");
