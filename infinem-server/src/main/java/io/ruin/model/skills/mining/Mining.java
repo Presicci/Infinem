@@ -77,9 +77,10 @@ public class Mining {
                     gemRock = true;
                 }
 
+                final int miningAnimation = rockData == Rock.AMETHYST ? pickaxe.crystalAnimationID : pickaxe.regularAnimationID;
                 if(attempts == 0) {
                     player.sendFilteredMessage("You swing your pick at the rock.");
-                    player.animate(rockData == Rock.AMETHYST ? pickaxe.crystalAnimationID : pickaxe.regularAnimationID);
+                    player.animate(miningAnimation);
                     attempts++;
                 } else if (attempts % 2 == 0 && Random.get(100) <= chance(getEffectiveLevel(player), rockData, pickaxe)) {
                     if (pickaxe == Pickaxe.INFERNAL && (player.infernalPickaxeSpecial > 0 || Random.rollDie(3, 1))) {//TODO: change back to bar smelting when charge consuming is added
@@ -137,7 +138,7 @@ public class Mining {
                 }
 
                 if(attempts++ % 4 == 0)
-                    player.animate(rockData == Rock.AMETHYST ? pickaxe.crystalAnimationID : pickaxe.regularAnimationID);
+                    player.animate(miningAnimation);
 
                 event.delay(1);
             }
