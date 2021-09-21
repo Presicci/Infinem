@@ -35,8 +35,9 @@ public enum Stall {
     BAKERS_STALL(1, 2, 16.0, 124066, "baker's stall",
             PlayerCounter.BAKER_STALL_THIEVES,
             new int[][]{
-                    {6163, 6984},
-                    {11730, 634}
+                    { 6163, 6984 },
+                    { 11730, 634 },
+                    { 6945, 6944 }
             },
             new Item(22521, 1),
             new LootTable().addTable(1,
