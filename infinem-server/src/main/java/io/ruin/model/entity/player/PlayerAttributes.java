@@ -188,6 +188,7 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int teaStallThieves;
     @Expose public int silkStallThieves;
     @Expose public int wineStallThieves;
+    @Expose public int fruitStallThieves;
     @Expose public int seedStallThieves;
     @Expose public int furStallThieves;
     @Expose public int fishStallThieves;
@@ -208,9 +209,11 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int pickpocketGuard;
     @Expose public int pickpocketBandit;
     @Expose public int pickpocketKnight;
+    @Expose public int pickpocketWatchman;
     @Expose public int pickpocketPaladin;
     @Expose public int pickpocketGnome;
     @Expose public int pickpocketHero;
+    @Expose public int pickpocketVyre;
     @Expose public int pickpocketElf;
     @Expose public int pickpocketTzhaarHur;
     @Expose public int wallSafesCracked;
@@ -241,6 +244,12 @@ public abstract class PlayerAttributes extends Entity {
     /**
      * Prayer
      */
+    @Expose public int fiendishAshesScattered;
+    @Expose public int vileAshesScattered;
+    @Expose public int maliciousAshesScattered;
+    @Expose public int abyssalAshesScattered;
+    @Expose public int infernalAshesScattered;
+
     @Expose public int regularBonesBuried;
     @Expose public int burntBonesBuried;
     @Expose public int batBonesBuried;

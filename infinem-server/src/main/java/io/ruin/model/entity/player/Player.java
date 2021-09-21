@@ -34,6 +34,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
 import io.ruin.model.item.ItemContainerG;
+import io.ruin.model.item.actions.impl.AshSanctifier;
 import io.ruin.model.item.actions.impl.BoneCrusher;
 import io.ruin.model.item.actions.impl.boxes.mystery.SuperMysteryBox;
 import io.ruin.model.item.actions.impl.chargable.SerpentineHelm;
@@ -843,6 +844,8 @@ public class Player extends PlayerAttributes {
 
     //Bonecrusher
     @Getter @Expose public BoneCrusher boneCrusher;
+    //Ash sanctifier
+    @Getter @Expose public AshSanctifier ashSanctifier;
 
     /**
      * Farming
@@ -1147,6 +1150,10 @@ public class Player extends PlayerAttributes {
         if(boneCrusher == null)
             boneCrusher = new BoneCrusher();
         boneCrusher.init(this);
+
+        if(ashSanctifier == null)
+            ashSanctifier = new AshSanctifier();
+        ashSanctifier.init(this);
 
         if (tradePost == null) {
             tradePost = new TradePost();

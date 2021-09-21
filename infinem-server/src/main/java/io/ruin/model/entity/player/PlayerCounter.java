@@ -110,6 +110,7 @@ public enum PlayerCounter {
     TEA_STALL_THIEVES((p, amt) -> p.teaStallThieves = amt, p -> p.teaStallThieves),
     SILK_STALL_THIEVES((p, amt) -> p.silkStallThieves = amt, p -> p.silkStallThieves),
     WINE_STALL_THIEVES((p, amt) -> p.wineStallThieves = amt, p -> p.wineStallThieves),
+    FRUIT_STALL_THIEVES((p, amt) -> p.fruitStallThieves = amt, p -> p.fruitStallThieves),
     SEED_STALL_THIEVES((p, amt) -> p.seedStallThieves = amt, p -> p.seedStallThieves),
     FUR_STALL_THIEVES((p, amt) -> p.furStallThieves = amt, p -> p.furStallThieves),
     FISH_STALL_THIEVES((p, amt) -> p.fishStallThieves = amt, p -> p.fishStallThieves),
@@ -130,9 +131,11 @@ public enum PlayerCounter {
     PICKPOCKETED_GUARD((p, amt) -> p.pickpocketGuard = amt, p -> p.pickpocketGuard),
     PICKPOCKETED_BANDIT((p, amt) -> p.pickpocketBandit = amt, p -> p.pickpocketBandit),
     PICKPOCKETED_KNIGHT((p, amt) -> p.pickpocketKnight = amt, p -> p.pickpocketKnight),
+    PICKPOCKETED_WATCHMAN((p, amt) -> p.pickpocketWatchman = amt, p -> p.pickpocketWatchman),
     PICKPOCKETED_PALADIN((p, amt) -> p.pickpocketPaladin = amt, p -> p.pickpocketPaladin),
     PICKPOCKETED_GNOME((p, amt) -> p.pickpocketGnome = amt, p -> p.pickpocketGnome),
     PICKPOCKETED_HERO((p, amt) -> p.pickpocketHero = amt, p -> p.pickpocketHero),
+    PICKPOCKETED_VYRE((p, amt) -> p.pickpocketVyre = amt, p -> p.pickpocketVyre),
     PICKPOCKETED_ELF((p, amt) -> p.pickpocketElf = amt, p -> p.pickpocketElf),
     PICKPOCKETED_TZHAAR_HUR((p, amt) -> p.pickpocketTzhaarHur = amt, p -> p.pickpocketTzhaarHur),
     WALL_SAFES_CRACKED((p, amt) -> p.wallSafesCracked = amt, p -> p.wallSafesCracked, Achievement.QUICK_HANDS),
@@ -171,6 +174,12 @@ public enum PlayerCounter {
     /**
      * Prayer
      */
+    FIENDISH_ASHES_BURIED((p, amt) -> p.fiendishAshesScattered = amt, p -> p.fiendishAshesScattered),
+    VILE_ASHES_BURIED((p, amt) -> p.vileAshesScattered = amt, p -> p.vileAshesScattered),
+    MALICIOUS_ASHES_BURIED((p, amt) -> p.maliciousAshesScattered = amt, p -> p.maliciousAshesScattered),
+    ABYSSAL_ASHES_BURIED((p, amt) -> p.abyssalAshesScattered = amt, p -> p.abyssalAshesScattered),
+    INFERNAL_ASHES_BURIED((p, amt) -> p.infernalAshesScattered = amt, p -> p.infernalAshesScattered),
+
     REGULAR_BONES_BURIED((p, amt) -> p.regularBonesBuried = amt, p -> p.regularBonesBuried),
     BURNT_BONES_BURIED((p, amt) -> p.burntBonesBuried = amt, p -> p.burntBonesBuried),
     BAT_BONES_BURIED((p, amt) -> p.batBonesBuried = amt, p -> p.batBonesBuried),
