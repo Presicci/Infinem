@@ -28,6 +28,11 @@ public enum PickPocket {
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 150, 450, 1)  //Coins
             )),
+    WOMAN(1, 8.0, 422, 5, 1, "woman's", PlayerCounter.PICKPOCKETED_MAN,
+            257211,
+            new LootTable().addTable(1,
+                    new LootItem(COINS_995, 150, 450, 1)  //Coins
+            )),
     FARMER(10, 14.5, 433, 5, 1, "farmer's", PlayerCounter.PICKPOCKETED_FARMER,
             257211,
             new LootTable().addTable(1,
