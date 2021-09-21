@@ -8,6 +8,7 @@ import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
+import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.ThievingSkillCape;
@@ -15,6 +16,8 @@ import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.skills.BotPrevention;
 import io.ruin.model.stat.StatType;
+
+import java.util.List;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
@@ -128,13 +131,9 @@ public enum PickPocket {
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 400, 1000, 1) //Coins
             )),
-    // TODO stun anim
-    WATCHMAN(65, 137.5, 386, 5, 3, "watchman's", PlayerCounter.PICKPOCKETED_WATCHMAN,
+    WATCHMAN(65, 137.5, 433, 5, 3, "watchman's", PlayerCounter.PICKPOCKETED_WATCHMAN,
             134625,
-            new LootTable().addTable(1,
-                    new LootItem(Items.BREAD, 1, 0),
-                    new LootItem(995, 60, 0)
-            )),
+            new LootTable().guaranteedItems(new LootItem(995, 60, 1), new LootItem(Items.BREAD, 1, 1))),
     PALADIN(70, 151.75, 386, 5, 3, "paladin's", PlayerCounter.PICKPOCKETED_PALADIN,
             127056,
             new LootTable().addTable(1,
@@ -275,13 +274,19 @@ public enum PickPocket {
                 player.privateSound(2581);
                 event.delay(1);
                 if (additionalRolls > 0) {
-                    for (int index = additionalRolls; index > 0; index--) {
-                        player.getInventory().addOrDrop(pickpocket.lootTable.rollItem());
+                    for (int index = additionalRolls + 1; index > 0; index--) {
+                        List<Item> items = pickpocket.lootTable.rollItems(true);
+                        for (Item item : items) {
+                            player.getInventory().addOrDrop(item);
+                        }
                     }
-                    player.sendFilteredMessage("You manage to pick the " + pickpocket.identifier + " pocket " + additionalRolls + " times.");
+                    player.sendFilteredMessage("You manage to pick the " + pickpocket.identifier + " pocket " + (additionalRolls + 1) + " times.");
                 } else  {
                     player.sendFilteredMessage("You pick the " + pickpocket.identifier + " pocket.");
-                    player.getInventory().add(pickpocket.lootTable.rollItem());
+                    List<Item> items = pickpocket.lootTable.rollItems(true);
+                    for (Item item : items) {
+                        player.getInventory().add(item);
+                    }
                 }
                 if (Random.rollDie(pickpocket.petOdds - (player.getStats().get(StatType.Thieving).currentLevel * 25)))
                     Pet.ROCKY.unlock(player);
