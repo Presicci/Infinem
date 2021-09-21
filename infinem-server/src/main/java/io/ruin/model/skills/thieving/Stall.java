@@ -16,8 +16,6 @@ import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.BotPrevention;
 import io.ruin.model.stat.StatType;
 
-import static io.ruin.cache.ItemID.COINS_995;
-
 public enum Stall {
 
     VEGETABLE_STALL(2, 2, 10.0, 206777, "vegetable stall",
@@ -115,7 +113,7 @@ public enum Stall {
     FRUIT_STALL(25, 3, 28.5, 124066, "fruit stall",
             PlayerCounter.FRUIT_STALL_THIEVES,
             new int[][] {
-                    { -1, -1 }  // TODO Stall objectids
+                    { 28823, 6944 }
             },
             null,
             new LootTable().addTable(1,
