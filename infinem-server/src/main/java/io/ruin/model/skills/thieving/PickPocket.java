@@ -179,18 +179,17 @@ public enum PickPocket {
                     new LootItem(444, 1, 2),  //Gold ore
                     new LootItem(1617, 1, 1)  //Uncut diamond
             )),
-    // TODO stun animation
     VYRE(82, 306.9, -1, 6, 4, "vyre's", PlayerCounter.PICKPOCKETED_VYRE,
             99175,
             new LootTable().addTable(1,
                     new LootItem(995, 250, 315, 4129),
                     new LootItem(Items.DEATH_RUNE, 2, 303),
-                    new LootItem(-1, 1, 227), // TODO Blood pint
+                    new LootItem(24774, 1, 227), // Blood pint
                     new LootItem(Items.UNCUT_RUBY, 1, 189),
                     new LootItem(Items.BLOOD_RUNE, 4, 76),
                     new LootItem(Items.DIAMOND, 1, 38),
-                    new LootItem(-1, 1, 38), // TODO Cooked mystery meat
-                    new LootItem(-1, 1, 1)  // TODO Blood shard
+                    new LootItem(24785, 1, 38), // Mystery meat
+                    new LootItem(24777, 1, 1)   // Blood shard
             )),
     ELF(85, 353.0, 422, 6, 5, "elf's", PlayerCounter.PICKPOCKETED_ELF,
             99175,
