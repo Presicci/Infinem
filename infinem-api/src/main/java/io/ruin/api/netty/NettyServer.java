@@ -47,9 +47,9 @@ public class NettyServer {
 
         String host = "127.0.0.1";
         if (!local) {
-            host = "127.0.0.1";
+            host = "0.0.0.0";
             if (name.toLowerCase().contains("beta")) {
-                host = "127.0.0.1";
+                host = "0.0.0.0";
             }
             bootstrap.bind(host, port);
         } else {
