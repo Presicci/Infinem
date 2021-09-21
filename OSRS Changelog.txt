@@ -237,6 +237,9 @@ Higher chance of bird nest
 1% double drop chance
 10% off death recovery cost
 -5 to gwd 1 kc req
+>noted dragon bones in wildy
+>daily lottery
+>half cooldown on magic skillcape
 ~~~~~~~Emerald - $25
 2% double drop chance
 20% off death recovery cost
@@ -245,6 +248,7 @@ Reroll 1 slayer task per day
 Farming - no weeds
 5% faster farming growth
 Dicing rank and ability to host gambling
+Free resource area entry ~
 ~~~~~~~Ruby - $50
 3% double drop chance
 25% off death recovery cost
@@ -256,6 +260,7 @@ Reroll 2 slayer task per day
 -20 to gwd 1 kc req
 Reroll 3 slayer task per day
 10% faster farming growth
+>noted herbs in wildy
 ~~~~~~~Dragonstone - $250
 5% double drop chance
 ~~~~~~~Onyx - $500

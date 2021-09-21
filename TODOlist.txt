@@ -8,8 +8,6 @@ redo daily tasks
 herquin 6529 is aggressive
 fix whatever the fuck is wrong with death
 barrows catacombs 
-drop viewer drop announcemnets are broken
-dump all monster drops
 stackable clue scrolls
 make it so you cant teleport for a few seconds after speccing someone, like osrs
 cant remove balance beam
@@ -25,25 +23,35 @@ Wilderness slayer dungeon
 wilderness slayer dungeon entrance
 finish quest tab panels
 account panel
-music tab doesnt unlock
 drop announcement, pet drop, etc have the killcount or experience acquired on message
 collection log
 new task system
 fix discord integration
-roll tertiary drops alongside main
-music doesnt auto play
-do something with jungle demons
-moss guardian as superior moss giant or something?
+loot goblin
 
-tertiary is affecting drop rate display for other rolls
-make sure two of the same tertiary cant roll
+duplicate pet handling
 
-cast bloom on swamp crab to get fungus
-
-add hazelmeres signet ring
+cant spam pickpocket, way too slow
 
 wyvern combat
 canifis werewolves
+
+system where you kill a boss, get a buff, then teleport to another boss
+
+TASKS
+clan tasks
+
+CLANS
+clan coffers that are used to buy
+- clan perks
+- clan buffs
+
+
+high alch warnings
+
+SHOPS
+~Magic
+staff of air and chaos rune packs quantity is always chaning
 
 DROPS
 battlemage
@@ -66,6 +74,12 @@ find way to track invites
 
 
 [Post Release]:
+
+music doesnt auto play
+do something with jungle demons
+moss guardian as superior moss giant or something?
+cast bloom on swamp crab to get fungus
+add hazelmeres signet ring
 add teleports to master capes
 turn the wilderness activevolcano event into a juiced version of volcanic mine
 infernal tool charges

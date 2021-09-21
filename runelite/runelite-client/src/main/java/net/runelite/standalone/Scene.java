@@ -3732,4 +3732,46 @@ public class Scene implements RSScene {
 
       }
    }
+
+   private static byte[][][] rl$underlayIds;
+
+   private static byte[][][] rl$overlayIds;
+
+   private static byte[][][] rl$tileShapes;
+
+   @Override
+   public byte[][][] getUnderlayIds()
+   {
+      return rl$underlayIds;
+   }
+
+   @Override
+   public void setUnderlayIds(byte[][][] underlayIds)
+   {
+      rl$underlayIds = underlayIds;
+   }
+
+   @Override
+   public byte[][][] getOverlayIds()
+   {
+      return rl$overlayIds;
+   }
+
+   @Override
+   public void setOverlayIds(byte[][][] overlayIds)
+   {
+      rl$overlayIds = overlayIds;
+   }
+
+   @Override
+   public byte[][][] getTileShapes()
+   {
+      return rl$tileShapes;
+   }
+
+   @Override
+   public void setTileShapes(byte[][][] tileShapes)
+   {
+      rl$tileShapes = tileShapes;
+   }
 }
