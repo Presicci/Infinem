@@ -18,7 +18,7 @@ public class WorldList {
     public static void start() {
         ProcessWorker worker = Server.newWorker("world-list", 1000L, 4);
         worker.queue(() -> {
-            WorldList.update(active.toArray(new World[0]));
+            //WorldList.update(active.toArray(new World[0]));
             return false;
         });
     }
