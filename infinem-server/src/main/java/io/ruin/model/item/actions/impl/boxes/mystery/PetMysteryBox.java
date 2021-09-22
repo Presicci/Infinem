@@ -55,7 +55,7 @@ public class PetMysteryBox {
                 for(Pet pet : Pet.values()) {
                     if(owned[pet.ordinal()])
                         owned[pet.ordinal()] = false;
-                    else if(pet.mysteryBox)
+                    else if(pet.hasVariant)
                         potentialPets.add(pet);
                 }
                 if(potentialPets.isEmpty()) {

@@ -170,27 +170,27 @@ public enum Pet {
 
     public int roamId;
 
-    public final boolean mysteryBox;
+    public final boolean hasVariant;
 
     public final int dropAverage; //1 out of X
 
-    Pet(int itemId, int npcId, boolean mysteryBox) {
-        this(itemId, npcId, -1, mysteryBox, 0);
+    Pet(int itemId, int npcId, boolean hasVariant) {
+        this(itemId, npcId, -1, hasVariant, 0);
     }
 
-    Pet(int itemId, int npcId, int metaId, boolean mysteryBox) {
-        this(itemId, npcId, metaId, mysteryBox, 0);
+    Pet(int itemId, int npcId, int metaId, boolean hasVariant) {
+        this(itemId, npcId, metaId, hasVariant, 0);
     }
 
-    Pet(int itemId, int npcId, boolean mysteryBox, int dropAverage) {
-        this(itemId, npcId, -1, mysteryBox, dropAverage);
+    Pet(int itemId, int npcId, boolean hasVariant, int dropAverage) {
+        this(itemId, npcId, -1, hasVariant, dropAverage);
     }
 
-    Pet(int itemId, int npcId, int metaId, boolean mysteryBox, int dropAverage) {
+    Pet(int itemId, int npcId, int metaId, boolean hasVariant, int dropAverage) {
         this.itemId = itemId;
         this.npcId = npcId;
         this.metaId = metaId;
-        this.mysteryBox = mysteryBox;
+        this.hasVariant = hasVariant;
         this.dropAverage = dropAverage;
         this.roamId = findRoamId();
     }
