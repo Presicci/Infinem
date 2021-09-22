@@ -11,6 +11,7 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.Geode;
+import io.ruin.model.item.actions.impl.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.MiningSkillCape;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.loot.LootItem;
@@ -118,6 +119,9 @@ public class Mining {
                             player.sendFilteredMessage("You manage to mine an additional ore.");
                         }
                     }
+
+                    if (Random.rollDie(rockData.petOdds - (player.getStats().get(StatType.Mining).currentLevel * 25)))
+                        Pet.ROCK_GOLEM.unlock(player);
 
                     /* Rolling for a Geode clue scroll */
                     if (Random.rollDie(250, 1)) {
