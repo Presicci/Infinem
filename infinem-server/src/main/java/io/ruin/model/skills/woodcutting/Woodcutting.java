@@ -101,18 +101,19 @@ public class Woodcutting {
                             player.getInventory().add(treeData.log, 1);
                         }
                         player.collectResource(new Item(treeData.log, 1));
-                        if (Random.rollDie(nestChance(player), 1)) {
-                            new GroundItem(BirdNest.getRandomNest(treeData), 1)
-                                    .owner(player).position(RouteFinder.findWalkable(player.getPosition()))
-                                    .spawn();
-                            player.sendFilteredMessage("A bird's nest falls out of the tree.");
-                            PlayerCounter.ACQUIRED_BIRDS_NESTS.increment(player, 1);
-                        }
-                        if (player.dragonAxeSpecial > 0 && Random.rollPercent(50)) {
-                            player.sendFilteredMessage("Your axe's buff allows you to chop some additional logs!");
-                            player.getInventory().add(treeData.log, 1);
-                            player.getStats().addXp(StatType.Woodcutting, treeData.experience / 2.0, true);
-                        }
+                    }
+
+                    if (Random.rollDie(nestChance(player), 1)) {
+                        new GroundItem(BirdNest.getRandomNest(treeData), 1)
+                                .owner(player).position(RouteFinder.findWalkable(player.getPosition()))
+                                .spawn();
+                        player.sendFilteredMessage("A bird's nest falls out of the tree.");
+                        PlayerCounter.ACQUIRED_BIRDS_NESTS.increment(player, 1);
+                    }
+                    if (player.dragonAxeSpecial > 0 && Random.rollPercent(50)) {
+                        player.sendFilteredMessage("Your axe's buff allows you to chop some additional logs!");
+                        player.getInventory().add(treeData.log, 1);
+                        player.getStats().addXp(StatType.Woodcutting, treeData.experience / 2.0, true);
                     }
                     treeData.counter.increment(player, 1);
                     double xp = treeData.experience;
