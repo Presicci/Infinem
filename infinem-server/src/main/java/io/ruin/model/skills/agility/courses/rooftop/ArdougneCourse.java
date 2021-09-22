@@ -165,7 +165,7 @@ public class ArdougneCourse {
             p.getMovement().teleport(2668, 3297, 0);
             p.getStats().addXp(StatType.Agility, 529, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
-            AgilityPet.rollForPet(p, 15000);
+            AgilityPet.rollForPet(p, 34440);
             PlayerCounter.ARDOUGNE_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 90, MARK_SPAWNS);
             e.delay(1);

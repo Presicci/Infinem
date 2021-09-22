@@ -196,7 +196,7 @@ public class CanifisCourse {
             player.getStats().addXp(StatType.Agility, 175, true);
             player.getMovement().restoreEnergy(Random.get(1, 2));
             PlayerCounter.CANIFIS_ROOFTOP.increment(player, 1);
-            AgilityPet.rollForPet(player, 18000);
+            AgilityPet.rollForPet(player, 36842);
             MarkOfGrace.rollMark(player, 40, MARK_SPAWNS);
             player.unlock();
         }));

@@ -178,7 +178,7 @@ public class WildernessCourse {
             player.resetAnimation();
             if (player.lastAgilityObjId == 23542) {
                 player.getStats().addXp(StatType.Agility, 498.9, true);
-                AgilityPet.rollForPet(player, 17000);
+                AgilityPet.rollForPet(player, 34666);
                 PlayerCounter.WILDERNESS_COURSE.increment(player, 1);
                 player.lastAgilityObjId = -1;
             }

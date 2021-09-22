@@ -228,7 +228,7 @@ public class VarrockCourse {
             p.animate(2588);
             p.getStats().addXp(StatType.Agility, 125.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
-            AgilityPet.rollForPet(p, 14000);
+            AgilityPet.rollForPet(p, 24410);
             PlayerCounter.VARROCK_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 30, MARK_SPAWNS);
             p.unlock();

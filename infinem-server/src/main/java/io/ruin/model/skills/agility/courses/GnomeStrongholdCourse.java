@@ -132,7 +132,7 @@ public class GnomeStrongholdCourse {
                 if(p.lastAgilityObjId == 23135) {
                     p.getStats().addXp(StatType.Agility, 46.5, true);
                     PlayerCounter.GNOME_STRONGHOLD_COURSE.increment(p, 1);
-                    AgilityPet.rollForPet(p, 17000);
+                    AgilityPet.rollForPet(p, 35609);
                 } else {
                     p.getStats().addXp(StatType.Agility, 7.5, true);
                 }

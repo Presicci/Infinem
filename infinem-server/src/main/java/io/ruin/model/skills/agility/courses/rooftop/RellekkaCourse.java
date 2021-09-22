@@ -136,7 +136,7 @@ public class RellekkaCourse {
             p.stepAbs(2652, 3676, StepType.FORCE_WALK);
             PlayerCounter.RELLEKKA_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 80, MARK_SPAWNS);
-            AgilityPet.rollForPet(p, 16000);
+            AgilityPet.rollForPet(p, 31063);
             e.delay(1);
             p.unlock();
         }));

@@ -125,7 +125,7 @@ public class SeersCourse {
                 p.getStats().addXp(StatType.Agility, 435, true);
                 p.getMovement().restoreEnergy(Random.get(1, 2));
                 PlayerCounter.SEERS_ROOFTOP.increment(p, 1);
-                AgilityPet.rollForPet(p, 18000);
+                AgilityPet.rollForPet(p, 35205);
                 MarkOfGrace.rollMark(p, 60, MARK_SPAWNS);
                 p.preventSkippingCourse = false;
             }
