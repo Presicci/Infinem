@@ -588,7 +588,7 @@ public enum Pet {
             }
             case CHAOS_ELEMENTAL: {
                 return player -> player.dialogue(
-                        new PlayerDialogue("Is it true a level 3 skiller caught on of your siblings?"),
+                        new PlayerDialogue("Is it true a level 3 skiller caught one of your siblings?"),
                         new NPCDialogue(pet.npcId, "Yes, they killed my mummy, kidnapped my brother, smiled about it and went to sleep."),
                         new PlayerDialogue("Aww, well you have me now! I shall call you Squishy and you shall be mine and you shall be my Squishy."),
                         new PlayerDialogue("Come on, Squishy come on, little Squishy!")
