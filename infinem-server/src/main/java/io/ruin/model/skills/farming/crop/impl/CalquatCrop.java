@@ -16,6 +16,11 @@ public class CalquatCrop implements TreeCrop {
     }
 
     @Override
+    public int getPetOdds() {
+        return 6000;
+    }
+
+    @Override
     public int getSeed() {
         return 5290;
     }

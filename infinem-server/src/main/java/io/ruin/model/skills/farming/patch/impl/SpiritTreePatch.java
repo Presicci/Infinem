@@ -43,6 +43,7 @@ public class SpiritTreePatch extends Patch {
     }
 
     private void checkHealth() {
+        rollPet();
         player.sendMessage("You examine the tree and find that it is in perfect health.");
         getPlantedCrop().getCounter().increment(player, 1);
         player.getStats().addXp(StatType.Farming, ((SpiritTreeCrop)getPlantedCrop()).getCheckHealthXP(), true);

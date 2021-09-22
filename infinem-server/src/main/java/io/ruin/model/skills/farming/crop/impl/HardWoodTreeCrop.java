@@ -27,6 +27,11 @@ public enum HardWoodTreeCrop implements TreeCrop {
     private final PlayerCounter counter;
 
     @Override
+    public int getPetOdds() {
+        return 5000;
+    }
+
+    @Override
     public int getSeed() {
         return seedId;
     }

@@ -19,6 +19,10 @@ public class RedwoodCrop implements TreeCrop {
 
     }
 
+    @Override
+    public int getPetOdds() {
+        return 5000;
+    }
 
     @Override
     public int getSeed() {

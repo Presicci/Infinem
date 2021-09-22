@@ -22,7 +22,12 @@ public enum MushroomCrop implements Crop {
 	
 	double plantXP, pickXP;
 
-    @Override
+	@Override
+	public int getPetOdds() {
+		return 7500;
+	}
+
+	@Override
     public PlayerCounter getCounter() {
         return counter;
     }

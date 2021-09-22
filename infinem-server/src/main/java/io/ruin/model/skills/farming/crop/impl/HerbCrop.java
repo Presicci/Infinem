@@ -35,7 +35,12 @@ public enum HerbCrop implements Crop {
 	
 	double plantXP, pickXP;
 
-    @Override
+	@Override
+	public int getPetOdds() {
+		return 98364;
+	}
+
+	@Override
     public PlayerCounter getCounter() {
         return counter;
     }

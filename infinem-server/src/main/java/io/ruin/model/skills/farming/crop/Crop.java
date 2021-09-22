@@ -21,6 +21,8 @@ public interface Crop {
 
 	int getProduceId();
 
+	int getPetOdds();
+
 	double getHarvestXP();
 
 	PlayerCounter getCounter();

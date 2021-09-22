@@ -35,6 +35,7 @@ public class BushPatch extends RegrowPatch {
         return 4;
     }
     private void checkHealth() {
+        rollPet();
         player.sendMessage("You examine the bush and find that it is in perfect health.");
         FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
         getPlantedCrop().getCounter().increment(player, 1);

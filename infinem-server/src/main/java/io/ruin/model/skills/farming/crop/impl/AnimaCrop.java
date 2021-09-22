@@ -26,6 +26,11 @@ public enum AnimaCrop implements Crop {
     }
 
     @Override
+    public int getPetOdds() {
+        return -1;
+    }
+
+    @Override
     public int getSeed() {
         return seed;
     }

@@ -37,6 +37,7 @@ public class CrystalTreePatch extends Patch {
     }
 
     private void checkHealth() {
+        rollPet();
         player.sendMessage("You examine the tree and find that it is in perfect health.");
         getPlantedCrop().getCounter().increment(player, 1);
         player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP(), true);

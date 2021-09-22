@@ -32,6 +32,7 @@ public class FlowerPatch extends Patch {
                         return;
                     }
                     if (getProduceCount() == 0) {
+                        rollPet();
                         player.sendMessage("You've picked all the flowers from this patch.");
                         FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
                         reset(false);

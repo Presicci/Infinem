@@ -10,14 +10,14 @@ import static io.ruin.cache.ItemID.COINS_995;
 
 @AllArgsConstructor
 public enum AllotmentCrop implements Crop {
-	POTATO(5318, 1942, 1, 8, 9, 4, FlowerCrop.MARIGOLDS, new Item(COINS_995,  50), 6, PlayerCounter.HARVESTED_POTATO),
-	ONION(5319, 1957, 5, 9.5, 10.5, 4, FlowerCrop.MARIGOLDS, new Item(COINS_995,  100), 13, PlayerCounter.HARVESTED_ONION),
-	CABBAGE(5324, 1965, 7, 10, 11.5, 4, FlowerCrop.ROSEMARY, new Item(COINS_995,  200), 20, PlayerCounter.HARVESTED_CABBAGE),
-	TOMATO(5322, 1982, 12, 12.5, 14, 4, FlowerCrop.MARIGOLDS, new Item(COINS_995,  300), 27, PlayerCounter.HARVESTED_TOMATO),
-	SWEETCORN(5320, 5986, 20, 17, 19, 6, null, new Item(COINS_995,  500), 34, PlayerCounter.HARVESTED_SWEETCORN),
-	STRAWBERRY(5323, 5504, 31, 26, 29, 6, null, new Item(COINS_995,  800), 43, PlayerCounter.HARVESTED_STRAWBERRY),
-	WATERMELON(5321, 5982, 47, 48.5, 54.5, 8, FlowerCrop.NASTURTIUM, new Item(COINS_995,  5000), 52, PlayerCounter.HARVESTED_WATERMELON),
-	SNAPE_GRASS(22879, 231, 61, 82, 82, 7, FlowerCrop.WHITE_LILY, new Item(995, 7500), 128, PlayerCounter.HARVESTED_SNAPE_GRASS);
+	POTATO(5318, 1942, 1, 8, 9, 4, FlowerCrop.MARIGOLDS, new Item(COINS_995,  50), 6, 281040, PlayerCounter.HARVESTED_POTATO),
+	ONION(5319, 1957, 5, 9.5, 10.5, 4, FlowerCrop.MARIGOLDS, new Item(COINS_995,  100), 13, 281040, PlayerCounter.HARVESTED_ONION),
+	CABBAGE(5324, 1965, 7, 10, 11.5, 4, FlowerCrop.ROSEMARY, new Item(COINS_995,  200), 20, 281040, PlayerCounter.HARVESTED_CABBAGE),
+	TOMATO(5322, 1982, 12, 12.5, 14, 4, FlowerCrop.MARIGOLDS, new Item(COINS_995,  300), 27, 281040, PlayerCounter.HARVESTED_TOMATO),
+	SWEETCORN(5320, 5986, 20, 17, 19, 6, null, new Item(COINS_995,  500), 34, 224832, PlayerCounter.HARVESTED_SWEETCORN),
+	STRAWBERRY(5323, 5504, 31, 26, 29, 6, null, new Item(COINS_995,  800), 43, 187360, PlayerCounter.HARVESTED_STRAWBERRY),
+	WATERMELON(5321, 5982, 47, 48.5, 54.5, 8, FlowerCrop.NASTURTIUM, new Item(COINS_995,  5000), 52, 160594, PlayerCounter.HARVESTED_WATERMELON),
+	SNAPE_GRASS(22879, 231, 61, 82, 82, 7, FlowerCrop.WHITE_LILY, new Item(995, 7500), 128, 173977, PlayerCounter.HARVESTED_SNAPE_GRASS);
 
 	private final int seedId, produceId, levelReq;
 	private final double plantXP, harvestXP;
@@ -25,6 +25,7 @@ public enum AllotmentCrop implements Crop {
 	private final FlowerCrop protectionFlower;
 	private final Item payment;
 	private final int containerIndex;
+	private final int petOdds;
 	private final PlayerCounter counter;
 
 	@Override
@@ -34,6 +35,11 @@ public enum AllotmentCrop implements Crop {
 	
 	public FlowerCrop getProtectionFlower() {
 		return protectionFlower;
+	}
+
+	@Override
+	public int getPetOdds() {
+		return petOdds;
 	}
 
 	@Override

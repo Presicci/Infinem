@@ -121,6 +121,7 @@ public class AllotmentPatch extends Patch {
                     getPlantedCrop().getCounter().increment(player, 1);
                     removeProduce();
                     if (getProduceCount() == 0) {
+                        rollPet();
                         player.sendMessage("You've harvested the patch completely.");
                         FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
                         AllotmentPatch.this.reset(false);

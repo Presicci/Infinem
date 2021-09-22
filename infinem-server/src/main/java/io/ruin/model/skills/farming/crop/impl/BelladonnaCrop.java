@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
  */
 @AllArgsConstructor
 public enum BelladonnaCrop implements Crop {
-    BELLADONNA(5281, 2398, 63, 91, 512, 4, FlowerCrop.MARIGOLDS, null, 4, PlayerCounter.HARVESTED_NIGHTSHADE);
+    BELLADONNA(5281, 2398, 63, 91, 512, 4, FlowerCrop.MARIGOLDS, null, 4, 8000, PlayerCounter.HARVESTED_NIGHTSHADE);
 
     private final int seedId, produceId, levelReq;
     private final double plantXP, harvestXP;
@@ -20,6 +20,7 @@ public enum BelladonnaCrop implements Crop {
     private final FlowerCrop protectionFlower;
     private final Item payment;
     private final int containerIndex;
+    private final int petOdds;
     private final PlayerCounter counter;
 
     @Override
@@ -29,6 +30,11 @@ public enum BelladonnaCrop implements Crop {
 
     public FlowerCrop getProtectionFlower() {
         return protectionFlower;
+    }
+
+    @Override
+    public int getPetOdds() {
+        return petOdds;
     }
 
     @Override

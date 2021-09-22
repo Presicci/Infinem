@@ -41,6 +41,11 @@ public enum FruitTreeCrop implements TreeCrop {
 	private int containerIndex;
 
 	@Override
+	public int getPetOdds() {
+		return 9000;
+	}
+
+	@Override
 	public int getSapling() {
 		return sapling;
 	}

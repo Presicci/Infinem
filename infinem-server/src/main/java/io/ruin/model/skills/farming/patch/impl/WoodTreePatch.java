@@ -68,6 +68,7 @@ public class WoodTreePatch extends Patch {
     }
 
     private void checkHealth() {
+        rollPet();
         player.sendMessage("You examine the tree and find that it is in perfect health.");
         getPlantedCrop().getCounter().increment(player, 1);
         FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);

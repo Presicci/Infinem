@@ -21,6 +21,10 @@ public class CelastrusCrop implements TreeCrop {
 
     }
 
+    @Override
+    public int getPetOdds() {
+        return 9000;
+    }
 
     @Override
     public int getSeed() {
