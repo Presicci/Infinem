@@ -98,6 +98,7 @@ public enum Pet {
     RIFT_GUARDIAN_SOUL(20687, 7365, true),
     RIFT_GUARDIAN_ASTRAL(20689, 7366, true),
     RIFT_GUARDIAN_BLOOD(20691, 7367, true),
+    RIFT_GUARDIAN_WRATH(-1, -1, true),  // TODO Wrath guardian pet data
     HERBI(21509, 7760, true),
 
     /**
