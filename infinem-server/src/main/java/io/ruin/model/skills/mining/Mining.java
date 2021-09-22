@@ -119,6 +119,16 @@ public class Mining {
                         }
                     }
 
+                    /* Rolling for a Geode clue scroll */
+                    if (Random.rollDie(250, 1)) {
+                        player.getInventory().addOrDrop(Geode.getRandomGeode(), 1);
+                        PlayerCounter.MINED_GEODE.increment(player, 1);
+                    }
+
+                    /* Rolling for mined minerals */
+                    if (minedMineral(player, rockData))
+                        player.getInventory().addOrDrop(21341, 1);
+
                     counter.increment(player, 1);
                     if(rockData == Rock.GEM_ROCK) {
                         player.getStats().addXp(StatType.Mining, rockData.experience * xpBonus(player), true);
@@ -130,16 +140,6 @@ public class Mining {
                     }
                     player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
                             (rockData == Rock.GEM_ROCK ? ItemDef.get(itemId).name.toLowerCase() : rockData.rockName) + ".");
-
-                    /* Rolling for a Geode clue scroll */
-                    if (Random.rollDie(250, 1)) {
-                        player.getInventory().addOrDrop(Geode.getRandomGeode(), 1);
-                        PlayerCounter.MINED_GEODE.increment(player, 1);
-                    }
-
-                    /* Rolling for mined minerals */
-                    if (minedMineral(player, rockData))
-                        player.getInventory().addOrDrop(21341, 1);
 
                     /* Rolling for rock depletion */
                     double depleteChance = rockData.depleteChance * (1 - miningGloves(player, rockData));
