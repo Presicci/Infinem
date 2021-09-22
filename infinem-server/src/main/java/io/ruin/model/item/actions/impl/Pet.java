@@ -261,7 +261,7 @@ public enum Pet {
     }
 
     public void unlock(Player player) {
-        if (player.pet == this || player.getInventory().hasId(itemId) || player.getBank().hasId(itemId)) {
+        if (player.pet == this || player.getInventory().hasId(itemId) || player.getBank().hasId(itemId) || player.getCurrentHouse().getPetContainer().hasId(itemId)) {
             player.sendMessage("<col=FF0000>You have a funny feeling like you would have been followed...");
             return;
         }
