@@ -8,6 +8,7 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.BirdNest;
+import io.ruin.model.item.actions.impl.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.WoodcuttingSkillCape;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
@@ -115,6 +116,8 @@ public class Woodcutting {
                         player.getInventory().add(treeData.log, 1);
                         player.getStats().addXp(StatType.Woodcutting, treeData.experience / 2.0, true);
                     }
+                    if (Random.rollDie(treeData.petOdds - (player.getStats().get(StatType.Woodcutting).currentLevel * 25)))
+                        Pet.BEAVER.unlock(player);
                     treeData.counter.increment(player, 1);
                     double xp = treeData.experience;
                     if (player.infernalAxeSpecial > 0)
