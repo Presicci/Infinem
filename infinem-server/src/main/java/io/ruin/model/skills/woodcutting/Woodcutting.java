@@ -92,7 +92,7 @@ public class Woodcutting {
                         if (burning != null) {
                             player.sendFilteredMessage("The infernal axe incinerates some logs.");
                             player.graphics(580, 50, 0);
-                            player.getStats().addXp(StatType.Firemaking, burning.exp, true);
+                            player.getStats().addXp(StatType.Firemaking, burning.exp / 2, true);
                             //TODO: take away an item charge?
                         }
                     } else {
