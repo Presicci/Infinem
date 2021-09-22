@@ -316,7 +316,7 @@ public enum Pet {
                 if (pet.metaId == -1)
                     return;
                 player.faceTemp(npc);
-                if ((pet == BABY_CHINCHOMPA_BLACK || pet == BABY_CHINCHOMPA_GREY || pet == BABY_CHINCHOMPA_RED) && Random.rollDie(5000, 1)) {
+                if ((pet == BABY_CHINCHOMPA_BLACK || pet == BABY_CHINCHOMPA_GREY || pet == BABY_CHINCHOMPA_RED) && Random.rollDie(10000, 1)) {
                     npc.transform(BABY_CHINCHOMPA_GOLD.npcId); // https://youtu.be/6d-BGPO5SLk
 
                     return;
