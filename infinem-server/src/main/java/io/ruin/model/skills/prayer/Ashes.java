@@ -15,11 +15,11 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum Ashes {
-    FIENDISH(-1, 10, PlayerCounter.FIENDISH_ASHES_BURIED),
-    VILE(-1, 25, PlayerCounter.VILE_ASHES_BURIED),
-    MALICIOUS(-1, 65, PlayerCounter.MALICIOUS_ASHES_BURIED),
-    ABYSSAL(-1, 85, PlayerCounter.ABYSSAL_ASHES_BURIED),
-    INFERNAL(-1, 110, PlayerCounter.INFERNAL_ASHES_BURIED);
+    FIENDISH(25766, 10, PlayerCounter.FIENDISH_ASHES_BURIED),
+    VILE(25769, 25, PlayerCounter.VILE_ASHES_BURIED),
+    MALICIOUS(25772, 65, PlayerCounter.MALICIOUS_ASHES_BURIED),
+    ABYSSAL(25775, 85, PlayerCounter.ABYSSAL_ASHES_BURIED),
+    INFERNAL(25778, 110, PlayerCounter.INFERNAL_ASHES_BURIED);
 
     private final int itemId;
     private final double experience;
@@ -32,7 +32,6 @@ public enum Ashes {
                 return;
             bone.remove();
             //player.animate(827);  TODO find animation
-            // TODO find gfx if there is one
             player.getStats().addXp(StatType.Prayer, experience, true);
             //player.privateSound(2738);    TODO find sounds
             playercounter.increment(player, 1);
