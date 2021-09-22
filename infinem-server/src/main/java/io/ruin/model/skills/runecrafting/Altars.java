@@ -161,7 +161,7 @@ public enum Altars {
             player.graphics(186, 100, 0);
             e.delay(4);
 
-            if (Random.rollDie(altar.petOdds - (player.getStats().get(StatType.Runecrafting).currentLevel * 25)))   // TODO roll PER essence used
+            if (Random.rollDie(altar.petOdds - (player.getStats().get(StatType.Runecrafting).currentLevel * 25), essenceCount))
                 pet.unlock(player);
 
             int amount = essenceCount * runesPerEssence;
