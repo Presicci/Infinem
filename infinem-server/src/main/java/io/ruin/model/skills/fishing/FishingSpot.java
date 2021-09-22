@@ -204,24 +204,24 @@ public class FishingSpot {
                                 animTicks = 8;
                             }
                         }
-
-                        if(player.getInventory().isFull()) {
-                            player.sendMessage("Your inventory is too full to hold any more fish.");
-                            player.resetAnimation();
-                            return;
-                        }
-
-                        if(!barehand && tool.secondaryId != -1) {
-                            Item requiredSecondary = player.getInventory().findItem(tool.secondaryId);
-
-                            if(requiredSecondary == null) {
-                                player.sendMessage("You need at least one " + tool.secondaryName + " to fish at this spot.");
-                                return;
-                            }
-                        }
                     }
                     if (Random.rollDie(c.petOdds - (player.getStats().get(StatType.Fishing).currentLevel * 25)))
                         Pet.HERON.unlock(player);
+
+                    if(player.getInventory().isFull()) {
+                        player.sendMessage("Your inventory is too full to hold any more fish.");
+                        player.resetAnimation();
+                        return;
+                    }
+
+                    if(!barehand && tool.secondaryId != -1) {
+                        Item requiredSecondary = player.getInventory().findItem(tool.secondaryId);
+
+                        if(requiredSecondary == null) {
+                            player.sendMessage("You need at least one " + tool.secondaryName + " to fish at this spot.");
+                            return;
+                        }
+                    }
                 }
 
                 if(animTicks == 0) {
