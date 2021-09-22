@@ -37,7 +37,7 @@ public class Sheep {
             player.animate(893);
             player.privateSound(761);
             event.delay(2);
-            player.privateSound(762);
+            player.privateSound(2053);
             sheep.forceText("Baa!");
             if (Random.rollDie(3, 1)) {
                 player.sendFilteredMessage("The sheep manages to get away from you.");
