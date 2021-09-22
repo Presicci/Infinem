@@ -20,7 +20,7 @@ import java.util.Objects;
 @Getter
 @Setter
 public class AshSanctifier {
-    private static final int ASH_SANCTIFIER = -1;   // TODO find id
+    private static final int ASH_SANCTIFIER = 25781;
     private static final int DEATH_RUNE = Items.DEATH_RUNE;
 
     @Expose
