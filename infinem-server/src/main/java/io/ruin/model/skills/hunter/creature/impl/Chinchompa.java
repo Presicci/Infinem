@@ -1,15 +1,18 @@
 package io.ruin.model.skills.hunter.creature.impl;
 
+import io.ruin.api.utils.Random;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.impl.Pet;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.skills.hunter.Hunter;
 import io.ruin.model.skills.hunter.creature.Creature;
 import io.ruin.model.skills.hunter.traps.Trap;
 import io.ruin.model.skills.hunter.traps.TrapType;
 import io.ruin.model.skills.hunter.traps.impl.BoxTrap;
+import io.ruin.model.stat.StatType;
 import io.ruin.process.event.Event;
 import kilim.Pausable;
 
@@ -102,6 +105,22 @@ public class Chinchompa extends Creature {
    @Override
    public boolean hasRoomForLoot(Player player) {
         return player.getInventory().hasRoomFor(itemId);
+   }
+
+   @Override
+   protected void addLoot(Player player) {
+       getLoot().forEach(item -> {
+           player.collectResource(item);
+           if (player.blackChinchompaBoost.isDelayed()) {
+               boolean extra = Random.rollPercent(20);
+               if (extra) item.incrementAmount(1);
+           }
+           player.getInventory().add(item.getId(), item.getAmount());
+       });
+       player.getInventory().add(getTrapType().getItemId(), 1);
+       int petOdds = itemId == 11959 ? 82758 : itemId == 10034 ? 98373 : 131395;    // Pet odds based on type of chin
+       if (Random.rollDie(petOdds - (player.getStats().get(StatType.Hunter).currentLevel * 25)))
+           Pet.BABY_CHINCHOMPA_GREY.unlock(player);
    }
 
 }
