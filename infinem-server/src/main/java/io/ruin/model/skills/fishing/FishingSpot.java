@@ -184,7 +184,7 @@ public class FishingSpot {
                         player.getStats().addXp(StatType.Fishing, c.xp * anglerBonus(player), true);
 
                         FishingClueBottle.roll(player, c, barehand);
-                        if (Random.rollDie(c.petOdds))
+                        if (Random.rollDie(c.petOdds - (player.getStats().get(StatType.Fishing).currentLevel * 25)))
                             Pet.HERON.unlock(player);
 
                         if(npc.fishingArea != null && npc.fishingArea != FishingArea.RESOURCE_AREA && Random.rollDie(75))
