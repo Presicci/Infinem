@@ -8,6 +8,7 @@ import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.courses.AgilityPet;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
@@ -232,6 +233,7 @@ public class PrifddinasCourse {
             p.getPacketSender().fadeIn();
             p.getMovement().teleport(3240, 6109, 0);
             p.resetAnimation();
+            AgilityPet.rollForPet(p, 25146);
             p.getStats().addXp(StatType.Agility, 1037.1, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
