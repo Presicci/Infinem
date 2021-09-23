@@ -43,13 +43,20 @@ public class House {
         LoginListener.register(player -> {
             if (player.house != null) {
                 player.house.calculate();
-                player.house.petContainer.init(player, 40, -1, 63785,517, false);
+                player.house.initPetContainer();
                 if (player.house.servantSave.getHiredServant() != null) {
                     Config.HIRED_SERVANT.set(player, player.house.servantSave.getHiredServant().getVarpbitValue());
                 }
                 player.house.servantSave.init();
             }
         });
+    }
+
+    public void initPetContainer() {
+        if (owner == null) {
+            return;
+        }
+        petContainer.init(owner, 40, -1, 63785,517, false);
     }
 
     public static final int MAX_DIMENSION = 8;
