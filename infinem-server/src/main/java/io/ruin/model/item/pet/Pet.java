@@ -1,4 +1,4 @@
-package io.ruin.model.item.actions.impl;
+package io.ruin.model.item.pet;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;

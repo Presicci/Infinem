@@ -5,7 +5,7 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
-import io.ruin.model.item.actions.impl.Pet;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.skills.hunter.Hunter;
 import io.ruin.model.skills.hunter.creature.Creature;

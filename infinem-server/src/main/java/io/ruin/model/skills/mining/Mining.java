@@ -11,7 +11,7 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.Geode;
-import io.ruin.model.item.actions.impl.Pet;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.MiningSkillCape;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.loot.LootItem;

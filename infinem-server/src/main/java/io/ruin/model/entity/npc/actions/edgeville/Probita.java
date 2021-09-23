@@ -6,7 +6,7 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.actions.ItemNPCAction;
-import io.ruin.model.item.actions.impl.Pet;
+import io.ruin.model.item.pet.Pet;
 
 public class Probita {
 

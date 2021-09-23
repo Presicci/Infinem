@@ -8,7 +8,7 @@ import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
-import io.ruin.model.item.actions.impl.Pet;
+import io.ruin.model.item.pet.Pet;
 
 public class TzHaarKetKeh {
 

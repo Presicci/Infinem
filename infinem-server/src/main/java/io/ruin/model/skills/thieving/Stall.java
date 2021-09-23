@@ -7,7 +7,7 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
-import io.ruin.model.item.actions.impl.Pet;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.Bounds;

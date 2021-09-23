@@ -2,7 +2,7 @@ package io.ruin.content.activities.event.impl.eventboss
 
 import io.ruin.content.activities.event.impl.eventboss.tabel.BrutalLavaDragonLoot
 import io.ruin.content.activities.event.impl.eventboss.tabel.CorruptedNechryarchLoot
-import io.ruin.model.item.actions.impl.Pet
+import io.ruin.model.item.pet.Pet
 import io.ruin.model.item.loot.LootTable
 import io.ruin.model.map.Position
 

@@ -13,7 +13,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Unlock;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
-import io.ruin.model.item.actions.impl.Pet;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;

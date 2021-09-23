@@ -8,7 +8,7 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.BirdNest;
-import io.ruin.model.item.actions.impl.Pet;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.WoodcuttingSkillCape;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;

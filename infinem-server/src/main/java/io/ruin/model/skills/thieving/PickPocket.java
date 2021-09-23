@@ -10,7 +10,7 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
-import io.ruin.model.item.actions.impl.Pet;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.ThievingSkillCape;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;

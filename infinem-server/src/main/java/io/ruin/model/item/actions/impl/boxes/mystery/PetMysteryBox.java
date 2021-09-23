@@ -8,7 +8,7 @@ import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
-import io.ruin.model.item.actions.impl.Pet;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.utility.Broadcast;
 
 import java.util.ArrayList;

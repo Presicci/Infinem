@@ -14,15 +14,11 @@ import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.inter.journal.JournalEntry;
 import io.ruin.model.item.Item;
-import io.ruin.model.item.actions.impl.Pet;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.Position;
 import io.ruin.utility.Broadcast;
-
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoField;
 
 import static io.ruin.cache.ItemID.BLOOD_MONEY;
 import static io.ruin.cache.ItemID.COINS_995;

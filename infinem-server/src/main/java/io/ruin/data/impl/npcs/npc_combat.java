@@ -8,7 +8,7 @@ import io.ruin.cache.NPCDef;
 import io.ruin.data.DataFile;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.entity.npc.NPCCombat;
-import io.ruin.model.item.actions.impl.Pet;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.skills.slayer.SlayerTask;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;

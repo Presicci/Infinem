@@ -20,7 +20,7 @@ import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.impl.ItemBreaking;
 import io.ruin.model.item.actions.impl.ItemSet;
 import io.ruin.model.item.actions.impl.ItemUpgrading;
-import io.ruin.model.item.actions.impl.Pet;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.combine.ItemCombining;
 import io.ruin.model.item.listeners.IncomingHitListener;
 import io.ruin.model.item.listeners.OutgoingHitListener;
