@@ -55,8 +55,8 @@ public class PetMysteryBox {
                 for(Pet pet : Pet.values()) {
                     if(owned[pet.ordinal()])
                         owned[pet.ordinal()] = false;
-                    else if(pet.hasVariant)
-                        potentialPets.add(pet);
+                    //else if(pet.hasVariant)
+                    //    potentialPets.add(pet);
                 }
                 if(potentialPets.isEmpty()) {
                     player.dialogue(new ItemDialogue().one(6828, "You already have every obtainable pet unlocked!"));

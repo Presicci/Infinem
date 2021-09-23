@@ -24,173 +24,173 @@ public enum Pet {
     /**
      * Boss pets
      */
-    ABYSSAL_ORPHAN(13262, 5884, 15006, true, 1000),
-    BABY_MOLE(12646, 6635, true, 3000),
-    CALLISTO_CUB(13178, 5558, true, 2000),
-    HELLPUPPY(13247, 3099, 15007, true, 3000),
-    KALPHITE_PRINCESS(12647, 6638, 6637, true, 3000),
-    KALPHITE_PRINCESS_2(12654, 6637, 6638, false),
-    CHAOS_ELEMENTAL(11995, 2055, true, 300),
-    DAGANNOTH_PRIME(12644, 6629, true, 5000),
-    DAGANNOTH_REX(12645, 6630, true, 5000),
-    DAGGANOTH_SUPREME(12643, 6628, true, 5000),
-    DARK_CORE(12816, 318, 8010, true, 5000),
-    GENERAL_GRAARDOR(12650, 6632, true, 5000),
-    JAL_NIB_REK(21291, 7675, 8009, true),
-    KRIL_TSUTSAROTH(12652, 6634, true, 5000),
-    KRAKEN(12655, 6640, true, 3000),
-    KREEARRA(12649, 6631, true, 5000),
-    MIDNIGHT(21750, 7893, 7892, true, 1000),
-    NOON(21748, 7892, 7893, true),
-    SMOKE_DEVIL(12648, 6639, true, 3000),
-    SNAKELING_GREEN(12921, 2130, 2131, true, 4000),
-    SNAKELING_RED(12939, 2131, 2132, false),
-    SNAKELING_BLUE(12940, 2132, 2130, false),
-    ZILYANA(12651, 6633, true, 5000),
-    PRINCE_BLACK_DRAGON(12653, 6636, true, 3000),
-    SCORPIAS_OFFSPRING(13181, 5561, true, 2016),
-    TZREK_JAD(13225, 5893, 15008, true, 100),
-    VENENATIS_SPIDERLING(13177, 5557, true, 2000),
-    VETION_JR_PURPLE(13179, 5559, 5560, true, 2000),
-    VETION_JR_ORANGE(13180, 5560, 5559, false),
-    SKOTOS(21273, 7671, true, 65),
-    VORKI(21992, 8029, false, 3000),
-    LIL_ZIK(22473, 8337, false, 500),
-    TZREK_ZUK(22319, 8009, 7675, true, 100),
-    CORPOREAL_CRITTER(22318, 8010, 318, true),
-    IKKLE_HYDRA_GREEN(22746, 8492, 8493, true, 3000),
-    IKKLE_HYDRA_BLUE(22748, 8493, 8494, false),
-    IKKLE_HYDRA_RED(22750, 8494, 8495, false),
-    IKKLE_HYDRA_BLACK(22752, 8495, 8492, false),
-    SRARACHA(23495, 2143, false),
-    ABYYSALSIRE(30047, 15006, 5884, true),
-    CERBERUS(30045, 15007, 3099, true),
-    JALTOKJAD(30044, 15008, 5893, true),
-    Necromancer(30033, 15005, false),
-    Nech(30018, 15002, false),
-    LAVADRAGON(30131, 15017, false),
-    KAAL_KET_JOR(30211, 15022, false, 2000),
+    ABYSSAL_ORPHAN(13262, 5884, 15006, null, 1000),
+    BABY_MOLE(12646, 6635, null, 3000),
+    CALLISTO_CUB(13178, 5558, null, 2000),
+    HELLPUPPY(13247, 3099, 15007, null, 3000),
+    KALPHITE_PRINCESS(12647, 6638, 6637, null, 3000),
+    KALPHITE_PRINCESS_2(12654, 6637, 6638, null),
+    CHAOS_ELEMENTAL(11995, 2055, null, 300),
+    DAGANNOTH_PRIME(12644, 6629, null, 5000),
+    DAGANNOTH_REX(12645, 6630, null, 5000),
+    DAGGANOTH_SUPREME(12643, 6628, null, 5000),
+    DARK_CORE(12816, 318, 8010, null, 5000),
+    GENERAL_GRAARDOR(12650, 6632, null, 5000),
+    JAL_NIB_REK(21291, 7675, 8009, null),
+    KRIL_TSUTSAROTH(12652, 6634, null, 5000),
+    KRAKEN(12655, 6640, null, 3000),
+    KREEARRA(12649, 6631, null, 5000),
+    MIDNIGHT(21750, 7893, 7892, null, 1000),
+    NOON(21748, 7892, 7893, null),
+    SMOKE_DEVIL(12648, 6639, null, 3000),
+    SNAKELING_GREEN(12921, 2130, 2131, null, 4000),
+    SNAKELING_RED(12939, 2131, 2132, null),
+    SNAKELING_BLUE(12940, 2132, 2130, null),
+    ZILYANA(12651, 6633, null, 5000),
+    PRINCE_BLACK_DRAGON(12653, 6636, null, 3000),
+    SCORPIAS_OFFSPRING(13181, 5561, null, 2016),
+    TZREK_JAD(13225, 5893, 15008, null, 100),
+    VENENATIS_SPIDERLING(13177, 5557, null, 2000),
+    VETION_JR_PURPLE(13179, 5559, 5560, null, 2000),
+    VETION_JR_ORANGE(13180, 5560, 5559, null),
+    SKOTOS(21273, 7671, null, 65),
+    VORKI(21992, 8029, null, 3000),
+    LIL_ZIK(22473, 8337, null, 500),
+    TZREK_ZUK(22319, 8009, 7675, null, 100),
+    CORPOREAL_CRITTER(22318, 8010, 318, null),
+    IKKLE_HYDRA_GREEN(22746, 8492, 8493, null, 3000),
+    IKKLE_HYDRA_BLUE(22748, 8493, 8494, null),
+    IKKLE_HYDRA_RED(22750, 8494, 8495, null),
+    IKKLE_HYDRA_BLACK(22752, 8495, 8492, null),
+    SRARACHA(23495, 2143, null),
+    ABYYSALSIRE(30047, 15006, 5884, null),
+    CERBERUS(30045, 15007, 3099, null),
+    JALTOKJAD(30044, 15008, 5893, null),
+    Necromancer(30033, 15005, null),
+    Nech(30018, 15002, null),
+    LAVADRAGON(30131, 15017, null),
+    KAAL_KET_JOR(30211, 15022, null, 2000),
 
     /**
      * Skilling pets
      */
-    BABY_CHINCHOMPA_GREY(13324, 6757, 6756, true),
-    BABY_CHINCHOMPA_RED(13323, 6756, 6758, false),
-    BABY_CHINCHOMPA_BLACK(13325, 6758, 6757, false),
-    BABY_CHINCHOMPA_GOLD(13326, 6759, 6757, false),
-    BEAVER(13322, 6724, true),
-    HERON(13320, 6722, true),
-    ROCK_GOLEM(13321, 7451, true),
-    GIANT_SQUIRREL(20659, 7351, true),
-    TANGLEROOT(20661, 7352, true),
-    ROCKY(20663, 7353, true),
-    RIFT_GUARDIAN_FIRE(20665, 7354, true),
-    RIFT_GUARDIAN_AIR(20667, 7355, true),
-    RIFT_GUARDIAN_MIND(20669, 7356, true),
-    RIFT_GUARDIAN_WATER(20671, 7357, true),
-    RIFT_GUARDIAN_EARTH(20673, 7358, true),
-    RIFT_GUARDIAN_BODY(20675, 7359, true),
-    RIFT_GUARDIAN_COSMIC(20677, 7360, true),
-    RIFT_GUARDIAN_CHAOS(20679, 7361, true),
-    RIFT_GUARDIAN_NATURE(20681, 7362, true),
-    RIFT_GUARDIAN_LAW(20683, 7363, true),
-    RIFT_GUARDIAN_DEATH(20685, 7364, true),
-    RIFT_GUARDIAN_SOUL(20687, 7365, true),
-    RIFT_GUARDIAN_ASTRAL(20689, 7366, true),
-    RIFT_GUARDIAN_BLOOD(20691, 7367, true),
-    RIFT_GUARDIAN_WRATH(-1, -1, true),  // TODO Wrath guardian pet data
-    HERBI(21509, 7760, true),
+    BABY_CHINCHOMPA_GREY(13324, 6757, 6756, PetVariants.BABY_CHIN),
+    BABY_CHINCHOMPA_RED(13323, 6756, 6758, PetVariants.BABY_CHIN),
+    BABY_CHINCHOMPA_BLACK(13325, 6758, 6757, PetVariants.BABY_CHIN),
+    BABY_CHINCHOMPA_GOLD(13326, 6759, 6757, PetVariants.BABY_CHIN),
+    BEAVER(13322, 6724, null),
+    HERON(13320, 6722, null),
+    ROCK_GOLEM(13321, 7451, null),
+    GIANT_SQUIRREL(20659, 7351, null),
+    TANGLEROOT(20661, 7352, null),
+    ROCKY(20663, 7353, null),
+    RIFT_GUARDIAN_FIRE(20665, 7354, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_AIR(20667, 7355, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_MIND(20669, 7356, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_WATER(20671, 7357, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_EARTH(20673, 7358, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_BODY(20675, 7359, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_COSMIC(20677, 7360, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_CHAOS(20679, 7361, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_NATURE(20681, 7362, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_LAW(20683, 7363, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_DEATH(20685, 7364, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_SOUL(20687, 7365, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_ASTRAL(20689, 7366, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_BLOOD(20691, 7367, PetVariants.RIFT_GUARDIAN),
+    RIFT_GUARDIAN_WRATH(1, 1, PetVariants.RIFT_GUARDIAN),  // TODO Wrath guardian pet data
+    HERBI(21509, 7760, null),
 
     /**
      * Misc pets
      */
-    PENANCE_QUEEN(12703, 6674, true),
-    BLOODHOUND(19730, 7232, true),
-    CHOMPY_CHICK(13071, 4002, true),
-    PHOENIX(20693, 7370, true),
-    OLMLET(20851, 7520, 8201, true),
-    PUPPADILE(22376, 8201, 8202, true),
-    TEKTINY(22378, 8202, 8203, true),
-    VANGUARD(22380, 8203, 8204, true),
-    VASA(22382, 8204, 8205, true),
-    VESPINE(22384, 8205, 7520, true),
-    FOUNDER(30016, 15000, true),
-    KRONOS_MINION(30194, 15020, true),
-    SUMMER_PET(30217, 15023, true),
+    PENANCE_QUEEN(12703, 6674, null),
+    BLOODHOUND(19730, 7232, null),
+    CHOMPY_CHICK(13071, 4002, null),
+    PHOENIX(20693, 7370, null),
+    OLMLET(20851, 7520, 8201, null),
+    PUPPADILE(22376, 8201, 8202, null),
+    TEKTINY(22378, 8202, 8203, null),
+    VANGUARD(22380, 8203, 8204, null),
+    VASA(22382, 8204, 8205, null),
+    VESPINE(22384, 8205, 7520, null),
+    FOUNDER(30016, 15000, null),
+    KRONOS_MINION(30194, 15020, null),
+    SUMMER_PET(30217, 15023, null),
 
     /**
      * Cats
      */
-    KITTEN1(1555, 5591, 1619, false),
-    CAT1(1561, 1619, 5598, false),
-    OVERGROWN_CAT1(1567, 5598, 5585, false),
-    WILY_CAT1(6556, 5585, 1627, false),
-    LAZY_CAT1(6550, 1627, 5591, false),
+    KITTEN1(1555, 5591, 1619, null),
+    CAT1(1561, 1619, 5598, null),
+    OVERGROWN_CAT1(1567, 5598, 5585, null),
+    WILY_CAT1(6556, 5585, 1627, null),
+    LAZY_CAT1(6550, 1627, 5591, null),
 
-    KITTEN2(1556, 5592, 1620, false),
-    CAT2(1562, 1620, 5599, false),
-    OVERGROWN_CAT2(1568, 5599, 5584, false),
-    WILY_CAT2(6555, 5584, 1626, false),
-    LAZY_CAT2(6549, 1626, 5592, false),
+    KITTEN2(1556, 5592, 1620, null),
+    CAT2(1562, 1620, 5599, null),
+    OVERGROWN_CAT2(1568, 5599, 5584, null),
+    WILY_CAT2(6555, 5584, 1626, null),
+    LAZY_CAT2(6549, 1626, 5592, null),
 
-    KITTEN3(1557, 5593, 1621, false),
-    CAT3(1563, 1621, 5600, false),
-    OVERGROWN_CAT3(1569, 5600, 5586, false),
-    WILY_CAT3(6557, 5586, 1628, false),
-    LAZY_CAT3(6551, 1628, 5593, false),
+    KITTEN3(1557, 5593, 1621, null),
+    CAT3(1563, 1621, 5600, null),
+    OVERGROWN_CAT3(1569, 5600, 5586, null),
+    WILY_CAT3(6557, 5586, 1628, null),
+    LAZY_CAT3(6551, 1628, 5593, null),
 
-    KITTEN4(1558, 5594, 1622, false),
-    CAT4(1564, 1622, 5601, false),
-    OVERGROWN_CAT4(1570, 5601, 5587, false),
-    WILY_CAT4(6558, 5587, 1629, false),
-    LAZY_CAT4(6552, 1629, 5594, false),
+    KITTEN4(1558, 5594, 1622, null),
+    CAT4(1564, 1622, 5601, null),
+    OVERGROWN_CAT4(1570, 5601, 5587, null),
+    WILY_CAT4(6558, 5587, 1629, null),
+    LAZY_CAT4(6552, 1629, 5594, null),
 
-    KITTEN5(1559, 5595, 1623, false),
-    CAT5(1565, 1623, 5602, false),
-    OVERGROWN_CAT5(1571, 5602, 5588, false),
-    WILY_CAT5(6559, 5588, 1630, false),
-    LAZY_CAT5(6553, 1630, 5595, false),
+    KITTEN5(1559, 5595, 1623, null),
+    CAT5(1565, 1623, 5602, null),
+    OVERGROWN_CAT5(1571, 5602, 5588, null),
+    WILY_CAT5(6559, 5588, 1630, null),
+    LAZY_CAT5(6553, 1630, 5595, null),
 
-    KITTEN6(1560, 5596, 1624, false),
-    CAT6(1566, 1624, 5603, false),
-    OVERGROWN_CAT6(1572, 5603, 5589, false),
-    WILY_CAT6(6560, 5589, 1631, false),
-    LAZY_CAT6(6554, 1631, 5596, false),
+    KITTEN6(1560, 5596, 1624, null),
+    CAT6(1566, 1624, 5603, null),
+    OVERGROWN_CAT6(1572, 5603, 5589, null),
+    WILY_CAT6(6560, 5589, 1631, null),
+    LAZY_CAT6(6554, 1631, 5596, null),
 
-    HELL_KITTEN(7583, 5597, 1625, false),
-    HELL_CAT(7582, 1625, 5604, false),
-    HELL_OVERGROWN_CAT(7581, 5604, 5590, false),
-    HELL_WILY_CAT(7585, 5590, 1632, false),
-    HELL_LAZY_CAT(7584, 1632, 5597, false),
-    SMOLCANO(23760, 8731, 8739, false),
-    YOUNGLLEF(23757, 8729, 8737, false),
-    CORRUPTED_YOUNGLLEF(23759, 8730, 8738, false);
+    HELL_KITTEN(7583, 5597, 1625, null),
+    HELL_CAT(7582, 1625, 5604, null),
+    HELL_OVERGROWN_CAT(7581, 5604, 5590, null),
+    HELL_WILY_CAT(7585, 5590, 1632, null),
+    HELL_LAZY_CAT(7584, 1632, 5597, null),
+    SMOLCANO(23760, 8731, 8739, null),
+    YOUNGLLEF(23757, 8729, 8737, null),
+    CORRUPTED_YOUNGLLEF(23759, 8730, 8738, null);
 
     public final int itemId, npcId, metaId;
 
     public int roamId;
 
-    public final boolean hasVariant;
+    public final PetVariants variant;
 
     public final int dropAverage; //1 out of X
 
-    Pet(int itemId, int npcId, boolean hasVariant) {
-        this(itemId, npcId, -1, hasVariant, 0);
+    Pet(int itemId, int npcId, PetVariants variant) {
+        this(itemId, npcId, -1, variant, 0);
     }
 
-    Pet(int itemId, int npcId, int metaId, boolean hasVariant) {
-        this(itemId, npcId, metaId, hasVariant, 0);
+    Pet(int itemId, int npcId, int metaId, PetVariants variant) {
+        this(itemId, npcId, metaId, variant, 0);
     }
 
-    Pet(int itemId, int npcId, boolean hasVariant, int dropAverage) {
-        this(itemId, npcId, -1, hasVariant, dropAverage);
+    Pet(int itemId, int npcId, PetVariants variant, int dropAverage) {
+        this(itemId, npcId, -1, variant, dropAverage);
     }
 
-    Pet(int itemId, int npcId, int metaId, boolean hasVariant, int dropAverage) {
+    Pet(int itemId, int npcId, int metaId, PetVariants variant, int dropAverage) {
         this.itemId = itemId;
         this.npcId = npcId;
         this.metaId = metaId;
-        this.hasVariant = hasVariant;
+        this.variant = variant;
         this.dropAverage = dropAverage;
         this.roamId = findRoamId();
     }
@@ -262,7 +262,19 @@ public enum Pet {
     }
 
     public void unlock(Player player) {
-        if (player.pet == this || player.getInventory().hasId(itemId) || player.getBank().hasId(itemId) || player.getCurrentHouse().getPetContainer().hasId(itemId)) {
+        /*  Lets us do duplicate protection for pets with different forms, like the rift
+            guardian or baby chinchompa */
+        if (variant != null) {
+            for (Pet pet : variant.getPets()) {
+                if (player.pet == pet || player.getInventory().hasId(pet.itemId) || player.getBank().hasId(pet.itemId)
+                        || player.getCurrentHouse().getPetContainer().hasId(pet.itemId)) {
+                    player.sendMessage("<col=FF0000>You have a funny feeling like you would have been followed...");
+                    return;
+                }
+            }
+        }
+        if (player.pet == this || player.getInventory().hasId(itemId) || player.getBank().hasId(itemId)
+                || player.getCurrentHouse().getPetContainer().hasId(itemId)) {
             player.sendMessage("<col=FF0000>You have a funny feeling like you would have been followed...");
             return;
         }
