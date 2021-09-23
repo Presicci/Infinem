@@ -13,7 +13,7 @@ public enum PetVariants {
             Pet.RIFT_GUARDIAN_NATURE, Pet.RIFT_GUARDIAN_LAW, Pet.RIFT_GUARDIAN_DEATH, Pet.RIFT_GUARDIAN_SOUL,
             Pet.RIFT_GUARDIAN_ASTRAL, Pet.RIFT_GUARDIAN_BLOOD, Pet.RIFT_GUARDIAN_WRATH);
 
-    private Pet[] pets;
+    private final Pet[] pets;
 
     PetVariants(Pet... pets) {
         this.pets = pets;
