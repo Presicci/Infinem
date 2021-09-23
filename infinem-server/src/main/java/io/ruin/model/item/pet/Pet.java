@@ -267,14 +267,14 @@ public enum Pet {
         if (variant != null) {
             for (Pet pet : variant.getPets()) {
                 if (player.pet == pet || player.getInventory().hasId(pet.itemId) || player.getBank().hasId(pet.itemId)
-                        || player.getCurrentHouse().getPetContainer().hasId(pet.itemId)) {
+                        || (player.getCurrentHouse().getPetContainer().getItems() != null && player.getCurrentHouse().getPetContainer().hasId(pet.itemId))) {
                     player.sendMessage("<col=FF0000>You have a funny feeling like you would have been followed...");
                     return;
                 }
             }
         }
         if (player.pet == this || player.getInventory().hasId(itemId) || player.getBank().hasId(itemId)
-                || player.getCurrentHouse().getPetContainer().hasId(itemId)) {
+                || (player.getCurrentHouse().getPetContainer().getItems() != null && player.getCurrentHouse().getPetContainer().hasId(itemId))) {
             player.sendMessage("<col=FF0000>You have a funny feeling like you would have been followed...");
             return;
         }
