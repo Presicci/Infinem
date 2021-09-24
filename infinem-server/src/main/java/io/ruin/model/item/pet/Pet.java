@@ -11,6 +11,7 @@ import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.map.route.routes.DumbRoute;
@@ -82,7 +83,12 @@ public enum Pet {
     HERON(13320, 6722, null),
     ROCK_GOLEM(13321, 7451, null),
     GIANT_SQUIRREL(20659, 7351, null),
-    TANGLEROOT(20661, 7352, null),
+    TANGLEROOT(20661, 7352, PetVariants.TANGLEROOT),
+    TANGLEROOT_CRYSTAL(1, 5, PetVariants.TANGLEROOT),
+    TANGLEROOT_DRAGONFRUIT(2, 4, PetVariants.TANGLEROOT),
+    TANGLEROOT_GUAM(3, 3, PetVariants.TANGLEROOT),
+    TANGLEROOT_REDWOOD(4, 2, PetVariants.TANGLEROOT),
+    TANGLEROOT_WHITELILY(5, 1, PetVariants.TANGLEROOT),
     ROCKY(20663, 7353, null),
     RIFT_GUARDIAN_FIRE(20665, 7354, PetVariants.RIFT_GUARDIAN),
     RIFT_GUARDIAN_AIR(20667, 7355, PetVariants.RIFT_GUARDIAN),
@@ -204,6 +210,15 @@ public enum Pet {
             Pet.RIFT_GUARDIAN_EARTH, Pet.RIFT_GUARDIAN_BODY, Pet.RIFT_GUARDIAN_COSMIC, Pet.RIFT_GUARDIAN_CHAOS,
             Pet.RIFT_GUARDIAN_NATURE, Pet.RIFT_GUARDIAN_LAW, Pet.RIFT_GUARDIAN_DEATH, Pet.RIFT_GUARDIAN_SOUL,
             Pet.RIFT_GUARDIAN_ASTRAL, Pet.RIFT_GUARDIAN_BLOOD, Pet.RIFT_GUARDIAN_WRATH
+    };
+
+    public static final Pet[] TANGLEROOTS = new Pet[] {
+            Pet.TANGLEROOT_GUAM, Pet.TANGLEROOT_CRYSTAL, Pet.TANGLEROOT, Pet.TANGLEROOT_REDWOOD,
+            Pet.TANGLEROOT_DRAGONFRUIT, Pet.TANGLEROOT_WHITELILY
+    };
+
+    public static final int[] TANGLEROOT_SEEDS = new int[] {    // TODO seed ids
+            Items.GUAM_SEED, 1, Items.ACORN, 1, 1, 1
     };
 
     public Pet[] getVariantArray() {
@@ -435,6 +450,21 @@ public enum Pet {
                 player.sendMessage("You've already unlocked the JalTok-Jad metamorphosis.");
             }
         });
+        //  Tangleroot recoloring handling
+        for (Pet pet : TANGLEROOTS) {
+            for (int index = 0; index < TANGLEROOTS.length; index++) {
+                final int indexF = index;
+                ItemNPCAction.register(TANGLEROOT_SEEDS[index], pet.npcId, (player, item, npc) -> {
+                    if (pet != TANGLEROOTS[indexF]) {
+                        player.getInventory().remove(TANGLEROOT_SEEDS[indexF], 1);
+                        npc.transform(TANGLEROOTS[indexF].npcId);
+                        player.sendMessage("Tangleroot eats the " + ItemDef.get(TANGLEROOT_SEEDS[indexF]).name + " and takes on a new appearance.");
+                    } else {
+                        player.sendMessage("Tangleroot has already consumed his daily intake of " + ItemDef.get(TANGLEROOT_SEEDS[indexF]).name + "s.");
+                    }
+                });
+            }
+        }
     }
 
     public static boolean pickup(Player player, NPC npc, Pet pet) {

@@ -5,5 +5,5 @@ package io.ruin.model.item.pet;
  * Created on 9/22/2021
  */
 public enum PetVariants {
-    BABY_CHIN, RIFT_GUARDIAN;
+    BABY_CHIN, RIFT_GUARDIAN, TANGLEROOT;
 }
