@@ -195,6 +195,27 @@ public enum Pet {
         this.roamId = findRoamId();
     }
 
+    public static final Pet[] BABY_CHIN = new Pet[] {
+            Pet.BABY_CHINCHOMPA_BLACK, Pet.BABY_CHINCHOMPA_GOLD, Pet.BABY_CHINCHOMPA_GREY, Pet.BABY_CHINCHOMPA_RED
+    };
+
+    public static final Pet[] RIFT_GUARDIAN = new Pet[] {
+            Pet.RIFT_GUARDIAN_FIRE, Pet.RIFT_GUARDIAN_AIR, Pet.RIFT_GUARDIAN_MIND, Pet.RIFT_GUARDIAN_WATER,
+            Pet.RIFT_GUARDIAN_EARTH, Pet.RIFT_GUARDIAN_BODY, Pet.RIFT_GUARDIAN_COSMIC, Pet.RIFT_GUARDIAN_CHAOS,
+            Pet.RIFT_GUARDIAN_NATURE, Pet.RIFT_GUARDIAN_LAW, Pet.RIFT_GUARDIAN_DEATH, Pet.RIFT_GUARDIAN_SOUL,
+            Pet.RIFT_GUARDIAN_ASTRAL, Pet.RIFT_GUARDIAN_BLOOD, Pet.RIFT_GUARDIAN_WRATH
+    };
+
+    public Pet[] getVariantArray() {
+        switch (variant) {
+            case BABY_CHIN:
+                return BABY_CHIN;
+            case RIFT_GUARDIAN:
+                return RIFT_GUARDIAN;
+        }
+        return new Pet[] { this };
+    }
+
     private int findRoamId() {
         NPCDef baseDef = NPCDef.get(npcId);
         for (NPCDef def : NPCDef.cached.values()) {
@@ -216,6 +237,7 @@ public enum Pet {
         npc.spawn(player.getAbsX(), player.getAbsY(), player.getHeight());
         npc.face(player);
 
+        player.petNPC = npc;
         player.pet = this;
         Config.PET_NPC_INDEX.set(player, npc.getIndex());
 
@@ -265,7 +287,10 @@ public enum Pet {
         /*  Lets us do duplicate protection for pets with different forms, like the rift
             guardian or baby chinchompa */
         if (variant != null) {
-            for (Pet pet : variant.getPets()) {
+            for (Pet pet : getVariantArray()) {
+                if (pet.variant != variant) {
+                    continue;
+                }
                 if (player.pet == pet || player.getInventory().hasId(pet.itemId) || player.getBank().hasId(pet.itemId)
                         || (player.getCurrentHouse().getPetContainer().getItems() != null && player.getCurrentHouse().getPetContainer().hasId(pet.itemId))) {
                     player.sendMessage("<col=FF0000>You have a funny feeling like you would have been followed...");
