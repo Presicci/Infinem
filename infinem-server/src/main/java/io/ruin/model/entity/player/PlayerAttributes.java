@@ -1,6 +1,5 @@
 package io.ruin.model.entity.player;
 
-import com.google.common.collect.Lists;
 import com.google.gson.annotations.Expose;
 import io.ruin.content.activities.lms.LastManStandingQueue;
 import io.ruin.content.activities.lms.LastManStandingSession;
@@ -33,7 +32,7 @@ import io.ruin.model.inter.journal.presets.PresetCustom;
 import io.ruin.model.inter.journal.toggles.EdgevilleBlacklist;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
-import io.ruin.model.item.actions.impl.Pet;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.storage.EssencePouch;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
@@ -903,6 +902,8 @@ public abstract class PlayerAttributes extends Entity {
      */
 
     @Expose public Pet pet;
+
+    public NPC petNPC;
 
     public boolean callPet;
 
