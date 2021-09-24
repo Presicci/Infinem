@@ -20,7 +20,6 @@ import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 public enum Altars {
@@ -120,13 +119,6 @@ public enum Altars {
         }
     }
 
-    //  List of the different rc pet variants, used for changing its appearance
-    private List<Pet> runecraftingPets = Arrays.asList(
-            Pet.RIFT_GUARDIAN_AIR, Pet.RIFT_GUARDIAN_ASTRAL, Pet.RIFT_GUARDIAN_BLOOD, Pet.RIFT_GUARDIAN_BODY, Pet.RIFT_GUARDIAN_CHAOS, Pet.RIFT_GUARDIAN_COSMIC,
-            Pet.RIFT_GUARDIAN_DEATH, Pet.RIFT_GUARDIAN_EARTH, Pet.RIFT_GUARDIAN_FIRE, Pet.RIFT_GUARDIAN_LAW, Pet.RIFT_GUARDIAN_MIND, Pet.RIFT_GUARDIAN_NATURE,
-            Pet.RIFT_GUARDIAN_SOUL, Pet.RIFT_GUARDIAN_WATER, Pet.RIFT_GUARDIAN_WRATH
-    );
-
     private void runeConversation(Player player, Altars altar) {
         if (!player.getStats().check(StatType.Runecrafting, altar.levelRequirement, "infuse these runes"))
             return;
@@ -169,8 +161,9 @@ public enum Altars {
             player.animate(791);
             player.graphics(186, 100, 0);
             e.delay(4);
-            if (player.pet != null && runecraftingPets.stream().anyMatch(pet -> pet == player.pet)) {
-               // player.pet
+            //  If the player has a rift guardian pet active, set the appearance to that of the rune you crafted
+            if (player.pet != null && Arrays.stream(player.pet.getVariantArray()).anyMatch(pet -> pet == player.pet)) {
+                player.petNPC.transform(altar.pet.npcId);
             }
             if (Random.rollDie(altar.petOdds - (player.getStats().get(StatType.Runecrafting).currentLevel * 25), essenceCount))
                 pet.unlock(player);
