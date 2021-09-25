@@ -84,11 +84,11 @@ public enum Pet {
     ROCK_GOLEM(13321, 7451, null),
     GIANT_SQUIRREL(20659, 7351, null),
     TANGLEROOT(20661, 7352, PetVariants.TANGLEROOT),
-    TANGLEROOT_CRYSTAL(1, 5, PetVariants.TANGLEROOT),
-    TANGLEROOT_DRAGONFRUIT(2, 4, PetVariants.TANGLEROOT),
-    TANGLEROOT_GUAM(3, 3, PetVariants.TANGLEROOT),
-    TANGLEROOT_REDWOOD(4, 2, PetVariants.TANGLEROOT),
-    TANGLEROOT_WHITELILY(5, 1, PetVariants.TANGLEROOT),
+    TANGLEROOT_CRYSTAL(24555, 9497, PetVariants.TANGLEROOT),
+    TANGLEROOT_DRAGONFRUIT(24557, 9498, PetVariants.TANGLEROOT),
+    TANGLEROOT_GUAM(24559, 9499, PetVariants.TANGLEROOT),
+    TANGLEROOT_REDWOOD(24563, 9501, PetVariants.TANGLEROOT),
+    TANGLEROOT_WHITELILY(24561, 9500, PetVariants.TANGLEROOT),
     ROCKY(20663, 7353, null),
     RIFT_GUARDIAN_FIRE(20665, 7354, PetVariants.RIFT_GUARDIAN),
     RIFT_GUARDIAN_AIR(20667, 7355, PetVariants.RIFT_GUARDIAN),
@@ -217,8 +217,8 @@ public enum Pet {
             Pet.TANGLEROOT_DRAGONFRUIT, Pet.TANGLEROOT_WHITELILY
     };
 
-    public static final int[] TANGLEROOT_SEEDS = new int[] {    // TODO seed ids
-            Items.GUAM_SEED, 1, Items.ACORN, 1, 1, 1
+    public static final int[] TANGLEROOT_SEEDS = new int[] {
+            Items.GUAM_SEED, 23661, Items.ACORN, 22871, 22877, 22887
     };
 
     public Pet[] getVariantArray() {
