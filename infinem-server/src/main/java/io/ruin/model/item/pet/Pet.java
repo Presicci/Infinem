@@ -874,6 +874,139 @@ public enum Pet {
                     }
                 };
             }
+            case TANGLEROOT_CRYSTAL: {
+                return player -> {
+                    int random = Random.get(1, 4);
+                    if (random == 1) {
+                        player.dialogue(
+                                new PlayerDialogue("How are you doing today?"),
+                                new NPCDialogue(pet.npcId, "I am tangleroot!")
+                        );
+                    } else if (random == 2) {
+                        player.dialogue(
+                                new PlayerDialogue("I am Tangleroot."),
+                                new NPCDialogue(pet.npcId, "I am " + player.getName() + "!")
+                        );
+                    } else if (random == 3) {
+                        player.dialogue(
+                                new PlayerDialogue("Hello there pretty plant."),
+                                new NPCDialogue(pet.npcId, "I am Tangleroot!")
+                        );
+                    } else {
+                        player.dialogue(
+                                new PlayerDialogue("Everything is crystal clear now."),
+                                new NPCDialogue(pet.npcId, "I am Tangleroot!")
+                        );
+                    }
+                };
+            }
+            case TANGLEROOT_DRAGONFRUIT: {
+                return player -> {
+                    int random = Random.get(1, 4);
+                    if (random == 1) {
+                        player.dialogue(
+                                new PlayerDialogue("How are you doing today?"),
+                                new NPCDialogue(pet.npcId, "I am tangleroot!")
+                        );
+                    } else if (random == 2) {
+                        player.dialogue(
+                                new PlayerDialogue("I am Tangleroot."),
+                                new NPCDialogue(pet.npcId, "I am " + player.getName() + "!")
+                        );
+                    } else if (random == 3) {
+                        player.dialogue(
+                                new PlayerDialogue("Hello there pretty plant."),
+                                new NPCDialogue(pet.npcId, "I am Tangleroot!")
+                        );
+                    } else {
+                        player.dialogue(
+                                new PlayerDialogue("I can't believe they made dragonfruit trees into a real thing!"),
+                                new NPCDialogue(pet.npcId, "I am Tangleroot?"),
+                                new PlayerDialogue("Nothing.")
+                        );
+                    }
+                };
+            }
+            case TANGLEROOT_GUAM: {
+                return player -> {
+                    int random = Random.get(1, 4);
+                    if (random == 1) {
+                        player.dialogue(
+                                new PlayerDialogue("How are you doing today?"),
+                                new NPCDialogue(pet.npcId, "I am tangleroot!")
+                        );
+                    } else if (random == 2) {
+                        player.dialogue(
+                                new PlayerDialogue("I am Tangleroot."),
+                                new NPCDialogue(pet.npcId, "I am " + player.getName() + "!")
+                        );
+                    } else if (random == 3) {
+                        player.dialogue(
+                                new PlayerDialogue("Hello there pretty plant."),
+                                new NPCDialogue(pet.npcId, "I am Tangleroot!")
+                        );
+                    } else {
+                        player.dialogue(
+                                new PlayerDialogue("Are you related to Herbiboar now?"),
+                                new NPCDialogue(pet.npcId, "I am Tangleroot!"),
+                                new PlayerDialogue("I should have guessed.")
+                        );
+                    }
+                };
+            }
+            case TANGLEROOT_REDWOOD: {
+                return player -> {
+                    int random = Random.get(1, 4);
+                    if (random == 1) {
+                        player.dialogue(
+                                new PlayerDialogue("How are you doing today?"),
+                                new NPCDialogue(pet.npcId, "I am tangleroot!")
+                        );
+                    } else if (random == 2) {
+                        player.dialogue(
+                                new PlayerDialogue("I am Tangleroot."),
+                                new NPCDialogue(pet.npcId, "I am " + player.getName() + "!")
+                        );
+                    } else if (random == 3) {
+                        player.dialogue(
+                                new PlayerDialogue("Hello there pretty plant."),
+                                new NPCDialogue(pet.npcId, "I am Tangleroot!")
+                        );
+                    } else {
+                        player.dialogue(
+                                new PlayerDialogue("Oh dear, you've gone all red!"),
+                                new NPCDialogue(pet.npcId, "I am Tangleroot?"),
+                                new PlayerDialogue("It must be something you ate.")
+                        );
+                    }
+                };
+            }
+            case TANGLEROOT_WHITELILY: {
+                return player -> {
+                    int random = Random.get(1, 4);
+                    if (random == 1) {
+                        player.dialogue(
+                                new PlayerDialogue("How are you doing today?"),
+                                new NPCDialogue(pet.npcId, "I am tangleroot!")
+                        );
+                    } else if (random == 2) {
+                        player.dialogue(
+                                new PlayerDialogue("I am Tangleroot."),
+                                new NPCDialogue(pet.npcId, "I am " + player.getName() + "!")
+                        );
+                    } else if (random == 3) {
+                        player.dialogue(
+                                new PlayerDialogue("Hello there pretty plant."),
+                                new NPCDialogue(pet.npcId, "I am Tangleroot!")
+                        );
+                    } else {
+                        player.dialogue(
+                                new PlayerDialogue("I love your new hair cut!"),
+                                new NPCDialogue(pet.npcId, "I am Tangleroot!")
+                        );
+                    }
+                };
+            }
             case ROCKY: {
                 return player -> {
                     int random = Random.get(1, 3);
