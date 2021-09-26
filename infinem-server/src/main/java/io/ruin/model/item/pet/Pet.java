@@ -75,10 +75,10 @@ public enum Pet {
     /**
      * Skilling pets
      */
-    BABY_CHINCHOMPA_GREY(13324, 6757, 6756, PetVariants.BABY_CHIN),
-    BABY_CHINCHOMPA_RED(13323, 6756, 6758, PetVariants.BABY_CHIN),
-    BABY_CHINCHOMPA_BLACK(13325, 6758, 6757, PetVariants.BABY_CHIN),
-    BABY_CHINCHOMPA_GOLD(13326, 6759, 6757, PetVariants.BABY_CHIN),
+    BABY_CHINCHOMPA_GREY(13324, 6757, PetVariants.BABY_CHIN),
+    BABY_CHINCHOMPA_RED(13323, 6756, PetVariants.BABY_CHIN),
+    BABY_CHINCHOMPA_BLACK(13325, 6758, PetVariants.BABY_CHIN),
+    BABY_CHINCHOMPA_GOLD(13326, 6759, PetVariants.BABY_CHIN),
     BEAVER(13322, 6724, null),
     HERON(13320, 6722, null),
     ROCK_GOLEM(13321, 7451, PetVariants.ROCK_GOLEM),
@@ -402,16 +402,23 @@ public enum Pet {
                 if (pet.metaId == -1)
                     return;
                 player.faceTemp(npc);
-                if ((pet == BABY_CHINCHOMPA_BLACK || pet == BABY_CHINCHOMPA_GREY || pet == BABY_CHINCHOMPA_RED) && Random.rollDie(10000, 1)) {
-                    npc.transform(BABY_CHINCHOMPA_GOLD.npcId); // https://youtu.be/6d-BGPO5SLk
-
-                    return;
+                if (pet == BABY_CHINCHOMPA_BLACK || pet == BABY_CHINCHOMPA_GREY || pet == BABY_CHINCHOMPA_RED) {
+                    if (Random.rollDie(10000, 1)) {
+                        npc.transform(BABY_CHINCHOMPA_GOLD.npcId); // https://youtu.be/6d-BGPO5SLk
+                        npc.face(player);
+                        return;
+                    } else {
+                        Pet nextChin = (pet == BABY_CHINCHOMPA_BLACK ? BABY_CHINCHOMPA_GREY : pet == BABY_CHINCHOMPA_GREY ? BABY_CHINCHOMPA_RED : BABY_CHINCHOMPA_BLACK);
+                        npc.transform(nextChin.npcId);
+                        npc.face(player);
+                        return;
+                    }
                 }
                 if (pet == BABY_CHINCHOMPA_GOLD) {
                     player.dialogue(
                             new MessageDialogue("<col=ff0000>Warning:</col> Metamorphosis will result in you losing your<br>golden chinchompa. Are you sure you want to do this?").lineHeight(24),
                             new OptionsDialogue(
-                                    new Option("Yes", () -> npc.transform(BABY_CHINCHOMPA_GOLD.metaId)),
+                                    new Option("Yes", () -> npc.transform(BABY_CHINCHOMPA_GREY.npcId)),
                                     new Option("No")
                             )
                     );
