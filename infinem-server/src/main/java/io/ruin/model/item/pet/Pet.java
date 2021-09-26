@@ -1348,6 +1348,7 @@ public enum Pet {
             case RIFT_GUARDIAN_MIND:
             case RIFT_GUARDIAN_NATURE:
             case RIFT_GUARDIAN_SOUL:
+            case RIFT_GUARDIAN_WRATH:
             case RIFT_GUARDIAN_WATER: {
                 return player -> {
                     int random = Random.get(1, 3);
