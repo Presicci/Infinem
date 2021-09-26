@@ -236,6 +236,20 @@ public enum Pet {
             Items.GUAM_SEED, 23661, Items.ACORN, 22871, 22877, 22887
     };
 
+    public static final Pet[] ROCK_GOLEMS = new Pet[] {
+            ROCK_GOLEM, ROCK_GOLEM_TIN, ROCK_GOLEM_COPPER, ROCK_GOLEM_IRON, ROCK_GOLEM_BLUERITE,
+            ROCK_GOLEM_SILVER, ROCK_GOLEM_COAL, ROCK_GOLEM_GOLD, ROCK_GOLEM_MITHRIL,
+            ROCK_GOLEM_GRANITE, ROCK_GOLEM_ADDY, ROCK_GOLEM_RUNE, ROCK_GOLEM_AMETHYST,
+            ROCK_GOLEM_LOVAKITE, ROCK_GOLEM_ELEMENTAL, ROCK_GOLEM_DAEYALT,
+    };
+
+    public static final int[] ROCK_GOLEM_ORES = new int[] {
+            Items.ROCK, Items.TIN_ORE, Items.COPPER_ORE, Items.IRON_ORE, Items.BLURITE_ORE,
+            Items.SILVER_ORE, Items.COAL, Items.GOLD_ORE, Items.MITHRIL_ORE,
+            Items.GRANITE_2KG, Items.ADAMANTITE_ORE, Items.RUNITE_ORE, 21347,
+            Items.LOVAKITE_ORE, Items.ELEMENTAL_ORE, Items.DAEYALT_ORE
+    };
+
     public Pet[] getVariantArray() {
         switch (variant) {
             case BABY_CHIN:
@@ -476,6 +490,22 @@ public enum Pet {
                         player.sendMessage("Tangleroot eats the " + ItemDef.get(TANGLEROOT_SEEDS[indexF]).name + " and takes on a new appearance.");
                     } else {
                         player.sendMessage("Tangleroot has already consumed his daily intake of " + ItemDef.get(TANGLEROOT_SEEDS[indexF]).name + "s.");
+                    }
+                });
+            }
+        }
+
+        //  Rock golem recoloring handling
+        for (Pet pet : ROCK_GOLEMS) {
+            for (int index = 0; index < ROCK_GOLEMS.length; index++) {
+                final int indexF = index;
+                ItemNPCAction.register(ROCK_GOLEM_ORES[index], pet.npcId, (player, item, npc) -> {
+                    if (pet != ROCK_GOLEMS[indexF]) {
+                        player.getInventory().remove(ROCK_GOLEM_ORES[indexF], 1);
+                        npc.transform(ROCK_GOLEMS[indexF].npcId);
+                        player.sendMessage("Your rock golem eats the " + ItemDef.get(ROCK_GOLEM_ORES[indexF]).name + " and takes on a new appearance.");
+                    } else {
+                        player.sendMessage("Your rock golem has already taken that appearence.");
                     }
                 });
             }
