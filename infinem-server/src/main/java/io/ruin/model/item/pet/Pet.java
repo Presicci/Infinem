@@ -252,6 +252,14 @@ public enum Pet {
             Items.LOVAKITE_ORE, Items.ELEMENTAL_ORE, Items.DAEYALT_ORE
     };
 
+    public static final Pet[] ROCKY_VARIANTS = new Pet[] {
+            ROCKY, ROCKY_RED, ROCKY_BROWN
+    };
+
+    public static final int[] ROCKY_BERRIES = new int[] {
+            Items.WHITE_BERRIES, Items.REDBERRIES, Items.POISON_IVY_BERRIES
+    };
+
     public Pet[] getVariantArray() {
         switch (variant) {
             case BABY_CHIN:
@@ -503,6 +511,23 @@ public enum Pet {
                         player.sendMessage("Tangleroot eats the " + ItemDef.get(TANGLEROOT_SEEDS[indexF]).name + " and takes on a new appearance.");
                     } else {
                         player.sendMessage("Tangleroot has already consumed his daily intake of " + ItemDef.get(TANGLEROOT_SEEDS[indexF]).name + "s.");
+                    }
+                });
+            }
+        }
+
+        //  ROCKY recoloring handling
+        for (Pet pet : ROCKY_VARIANTS) {
+            for (int index = 0; index < ROCKY_VARIANTS.length; index++) {
+                final int indexF = index;
+                ItemNPCAction.register(ROCKY_BERRIES[index], pet.npcId, (player, item, npc) -> {
+                    if (pet != ROCKY_VARIANTS[indexF]) {
+                        String oldName = npc.getDef().name;
+                        player.getInventory().remove(ROCKY_BERRIES[indexF], 1);
+                        npc.transform(ROCKY_VARIANTS[indexF].npcId);
+                        player.sendMessage(oldName + " happily eats the " + ItemDef.get(ROCKY_BERRIES[indexF]).name + " and magically turns into his cousin, " + npc.getDef().name + ".");
+                    } else {
+                        player.sendMessage(npc.getDef().name + " doesn't want to eat any more " + ROCKY_BERRIES[indexF] + ".");
                     }
                 });
             }
