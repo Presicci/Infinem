@@ -1273,6 +1273,66 @@ public enum Pet {
                     }
                 };
             }
+            case ROCKY_RED: {
+                return player -> {
+                    int random = Random.get(1, 3);
+                    if (random == 1) {
+                        player.dialogue(
+                                new PlayerDialogue("Have you ever seen a blue panda before?"),
+                                new NPCDialogue(pet.npcId, "Blue Panda? That's ridiculous, there's only one type of panda and it is a beautiful red.")
+                        );
+                    } else if (random == 2) {
+                        player.dialogue(
+                                new PlayerDialogue("Hey Red, hows it going?"),
+                                new NPCDialogue(pet.npcId, "Hi! Want to see me do a really fast cartwheel?"),
+                                new PlayerDialogue("Uh, yeah, sure go ahead."),
+                                new MessageDialogue("Nothing happens..."),
+                                new NPCDialogue(pet.npcId, "Want to see me do it again?"),
+                                new PlayerDialogue("Huh? Nothing happened..."),
+                                new NPCDialogue(pet.npcId, "To your eyes...")
+                        );
+                    } else {
+                        player.dialogue(
+                                new PlayerDialogue("Do you know a raccoon called Dufresne?"),
+                                new NPCDialogue(pet.npcId, "No, I don't believe I have.")
+                        );
+                    }
+                };
+            }
+            case ROCKY_BROWN: {
+                return player -> {
+                    int random = Random.get(1, 3);
+                    if (random == 1) {
+                        player.dialogue(
+                                new PlayerDialogue("Hey Ziggy, do you have any relation to a raccoon named Rocky?"),
+                                new NPCDialogue(pet.npcId, "Who me? No, me and Rocky are not related."),
+                                new PlayerDialogue("Really? But you look so similar."),
+                                new NPCDialogue(pet.npcId, "That's because a Tanuki is a master of disguise! I could pretend to be a human if I wanted to."),
+                                new PlayerDialogue("Wow! Why don't you do it now then?"),
+                                new NPCDialogue(pet.npcId, "I said if I wanted to, I don't want to.")
+                        );
+                    } else if (random == 2) {
+                        player.dialogue(
+                                new PlayerDialogue("Hey Ziggy, *giggles* do you happen to know any good plumbers?"),
+                                new NPCDialogue(pet.npcId, "Well that's a bit of a silly question isn't it."),
+                                new PlayerDialogue("What do you mean?"),
+                                new NPCDialogue(pet.npcId, "Why would I, a Tanuki, know any good plumbers?"),
+                                new PlayerDialogue("I don't know, you might have come across one before."),
+                                new NPCDialogue(pet.npcId, "Well, clearly not, since I spend most of my time following you around.")
+                        );
+                    } else {
+                        player.dialogue(
+                                new PlayerDialogue("Ziggy! I've got a treat for you!"),
+                                new NPCDialogue(pet.npcId, "Really! Where! Let me have it!"),
+                                new MessageDialogue("You hold out your fist."),
+                                new NPCDialogue(pet.npcId, "Why are you hiding it? Let me have it! Please, please, please!"),
+                                new MessageDialogue("You open your fist... there is no treat."),
+                                new NPCDialogue(pet.npcId, "Oh, where did the treat go? Did you drop it?"),
+                                new PlayerDialogue("Yeah, I must have dropped it, sorry about that Ziggy.")
+                        );
+                    }
+                };
+            }
             case RIFT_GUARDIAN_AIR:
             case RIFT_GUARDIAN_ASTRAL:
             case RIFT_GUARDIAN_BLOOD:
