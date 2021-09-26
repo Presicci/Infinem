@@ -530,7 +530,7 @@ public enum Pet {
                         npc.transform(ROCKY_VARIANTS[indexF].npcId);
                         player.sendMessage(oldName + " happily eats the " + ItemDef.get(ROCKY_BERRIES[indexF]).name + " and magically turns into his " + relations[Random.get(relations.length) - 1] + ", " + npc.getDef().name + ".");
                     } else {
-                        player.sendMessage(npc.getDef().name + " doesn't want to eat any more " + ROCKY_BERRIES[indexF] + ".");
+                        player.sendMessage(npc.getDef().name + " doesn't want to eat any more " + ItemDef.get(ROCKY_BERRIES[indexF]).name + ".");
                     }
                 });
             }
