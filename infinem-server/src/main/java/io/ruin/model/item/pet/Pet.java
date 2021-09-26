@@ -270,6 +270,8 @@ public enum Pet {
                 return TANGLEROOTS;
             case ROCK_GOLEM:
                 return ROCK_GOLEMS;
+            case ROCKY:
+                return ROCKY_VARIANTS;
         }
         return new Pet[] { this };
     }
