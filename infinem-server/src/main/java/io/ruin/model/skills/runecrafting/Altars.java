@@ -78,34 +78,35 @@ public enum Altars {
 
     private enum RuneCombination {
         /* Mist runes */
-        MIST_RUNES_AIR_ALTAR(4695, 34760, 555, 1444, 6, 8.0),
-        MIST_RUNES_WATER_ALTAR(4695, 34762, 556, 1438, 8, 8.5),
+        MIST_RUNES_AIR_ALTAR(4695, 34760, 555, 1444, 6, 8.0, Pet.RIFT_GUARDIAN_AIR),
+        MIST_RUNES_WATER_ALTAR(4695, 34762, 556, 1438, 8, 8.5, Pet.RIFT_GUARDIAN_WATER),
 
         /* Dust runes */
-        DUST_RUNES_AIR_ALTAR(4696, 34760, 557, 1440, 10, 8.3),
-        DUST_RUNES_EARTH_ALTAR(4696, 34763, 556, 1438, 10, 9.0),
+        DUST_RUNES_AIR_ALTAR(4696, 34760, 557, 1440, 10, 8.3, Pet.RIFT_GUARDIAN_AIR),
+        DUST_RUNES_EARTH_ALTAR(4696, 34763, 556, 1438, 10, 9.0, Pet.RIFT_GUARDIAN_EARTH),
 
         /* Mud runes */
-        MUD_RUNES_WATER_ALTAR(4698, 34762, 557, 1440, 13, 9.0),
-        MUD_RUNES_EARTH_ALTAR(4698, 34763, 555, 1444, 13, 9.5),
+        MUD_RUNES_WATER_ALTAR(4698, 34762, 557, 1440, 13, 9.0, Pet.RIFT_GUARDIAN_WATER),
+        MUD_RUNES_EARTH_ALTAR(4698, 34763, 555, 1444, 13, 9.5, Pet.RIFT_GUARDIAN_EARTH),
 
         /* Smoke runes */
-        SMOKE_RUNES_AIR_ALTAR(4697, 34760, 554, 1442, 15, 8.5),
-        SMOKE_RUNES_FIRE_ALTAR(4697, 34764, 556, 1438, 15, 9.5),
+        SMOKE_RUNES_AIR_ALTAR(4697, 34760, 554, 1442, 15, 8.5, Pet.RIFT_GUARDIAN_AIR),
+        SMOKE_RUNES_FIRE_ALTAR(4697, 34764, 556, 1438, 15, 9.5, Pet.RIFT_GUARDIAN_FIRE),
 
         /* Steam runes */
-        STEAM_RUNES_WATER_ALTAR(4694, 34762, 554, 1442, 19, 9.5),
-        STEAM_RUNES_FIRE_ALTAR(4694, 34764, 555, 1444, 19, 10.0),
+        STEAM_RUNES_WATER_ALTAR(4694, 34762, 554, 1442, 19, 9.5, Pet.RIFT_GUARDIAN_WATER),
+        STEAM_RUNES_FIRE_ALTAR(4694, 34764, 555, 1444, 19, 10.0, Pet.RIFT_GUARDIAN_FIRE),
 
         /* Lava runes */
-        LAVA_RUNES_EARTH_ALTAR(4699, 34763, 554, 1442, 23, 10.0),
-        LAVA_RUNES_FIRE_ALTAR(4699, 34764, 557, 1440, 23, 10.5);
+        LAVA_RUNES_EARTH_ALTAR(4699, 34763, 554, 1442, 23, 10.0, Pet.RIFT_GUARDIAN_EARTH),
+        LAVA_RUNES_FIRE_ALTAR(4699, 34764, 557, 1440, 23, 10.5, Pet.RIFT_GUARDIAN_FIRE);
 
         public final int combinationRuneId, altar, requiredRuneId, requiredTalismanId, levelReq;
         public final double exp;
         public final String runeName, runeNameLowercase, requiredTalismanName, requiredRuneName;
+        public final Pet pet;
 
-        RuneCombination(int combinationRuneId, int altar, int requiredRuneId, int requiredTalismanId, int levelReq, double exp) {
+        RuneCombination(int combinationRuneId, int altar, int requiredRuneId, int requiredTalismanId, int levelReq, double exp, Pet pet) {
             this.combinationRuneId = combinationRuneId;
             this.altar = altar;
             this.requiredRuneId = requiredRuneId;
@@ -116,6 +117,7 @@ public enum Altars {
             this.runeNameLowercase = ItemDef.get(combinationRuneId).name.toLowerCase() + "s";
             this.requiredTalismanName = ItemDef.get(requiredTalismanId).name.toLowerCase();
             this.requiredRuneName = ItemDef.get(requiredRuneId).name.toLowerCase() + "s";
+            this.pet = pet;
         }
     }
 
@@ -232,6 +234,8 @@ public enum Altars {
             player.animate(791);
             player.graphics(186, 100, 0);
             player.getStats().addXp(StatType.Runecrafting, runeCombination.exp * amountToCombine, true);
+            if (Random.rollDie(1795758 - (player.getStats().get(StatType.Runecrafting).currentLevel * 25), amountToCombine))
+                runeCombination.pet.unlock(player);
 
             /* 50% chance of success without binding necklace */
             if (Random.rollDie(2, 1) && !hasNecklace(player)) {
