@@ -246,7 +246,7 @@ public enum Pet {
     };
 
     public static final int[] ROCK_GOLEM_ORES = new int[] {
-            Items.ROCK, Items.TIN_ORE, Items.COPPER_ORE, Items.IRON_ORE, Items.BLURITE_ORE,
+            1480, Items.TIN_ORE, Items.COPPER_ORE, Items.IRON_ORE, Items.BLURITE_ORE,
             Items.SILVER_ORE, Items.COAL, Items.GOLD_ORE, Items.MITHRIL_ORE,
             Items.GRANITE_2KG, Items.ADAMANTITE_ORE, Items.RUNITE_ORE, 21347,
             Items.LOVAKITE_ORE, Items.ELEMENTAL_ORE, Items.DAEYALT_ORE
