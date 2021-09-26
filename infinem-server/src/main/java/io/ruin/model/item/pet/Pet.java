@@ -516,6 +516,9 @@ public enum Pet {
             }
         }
 
+        //  Just for fun, random relations for when rocky transforms
+        String[] relations = new String[] { "cousin", "father", "nephew", "son", "friend", "bestie", "beloved" };
+
         //  ROCKY recoloring handling
         for (Pet pet : ROCKY_VARIANTS) {
             for (int index = 0; index < ROCKY_VARIANTS.length; index++) {
@@ -525,7 +528,7 @@ public enum Pet {
                         String oldName = npc.getDef().name;
                         player.getInventory().remove(ROCKY_BERRIES[indexF], 1);
                         npc.transform(ROCKY_VARIANTS[indexF].npcId);
-                        player.sendMessage(oldName + " happily eats the " + ItemDef.get(ROCKY_BERRIES[indexF]).name + " and magically turns into his cousin, " + npc.getDef().name + ".");
+                        player.sendMessage(oldName + " happily eats the " + ItemDef.get(ROCKY_BERRIES[indexF]).name + " and magically turns into his " + relations[Random.get(relations.length) - 1] + ", " + npc.getDef().name + ".");
                     } else {
                         player.sendMessage(npc.getDef().name + " doesn't want to eat any more " + ROCKY_BERRIES[indexF] + ".");
                     }
