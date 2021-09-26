@@ -656,6 +656,130 @@ public enum Pet {
                         new PlayerDialogue("But you're a Rock Golem...")
                 );
             }
+            case ROCK_GOLEM_TIN: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "I feel strangely emotionless and empty. Maybe I should feel sad about it, but I can't."),
+                        new PlayerDialogue("You can't feel sad?"),
+                        new NPCDialogue(pet.npcId, "Correct. Now, if I only had a heart..."),
+                        new PlayerDialogue("I'm not sure it works like that around here.")
+                );
+            }
+            case ROCK_GOLEM_COPPER: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "I have an idea for a song."),
+                        new PlayerDialogue("Oh?"),
+                        new NPCDialogue(pet.npcId, "Copper-copper-copper Cophelia - you come and go, you come and go..."),
+                        new PlayerDialogue("Mmmhmm.")
+                );
+            }
+            case ROCK_GOLEM_IRON: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "Truth is, I am Iron Golem."),
+                        new PlayerDialogue("I can see that.")
+                );
+            }
+            case ROCK_GOLEM_BLUERITE: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "I have an idea for a song."),
+                        new PlayerDialogue("Oh?"),
+                        new NPCDialogue(pet.npcId, "I'm blue, da-ba-dee da-ba-da."),
+                        new PlayerDialogue("I can see that.")
+                );
+            }
+            case ROCK_GOLEM_SILVER: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "Oh dear, I've gone all pale."),
+                        new PlayerDialogue("Are you okay?"),
+                        new NPCDialogue(pet.npcId, "It must be something I ate.")
+                );
+            }
+            case ROCK_GOLEM_DAEYALT: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "Did you ever hear the tragedy of Queen Efaritay the Fair?"),
+                        new PlayerDialogue("No?"),
+                        new NPCDialogue(pet.npcId, "I thought not."),
+                        new NPCDialogue(pet.npcId, "It's not a story the Myreque would tell you.")
+                );
+            }
+            case ROCK_GOLEM_COAL: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "So near and yet so far... if my atoms were arranged a little differently, I could be diamond."),
+                        new PlayerDialogue("Would you enjoy being a diamond?"),
+                        new NPCDialogue(pet.npcId, "I expect I would, until someone tried chipping bits off me with a chisel. I'm probably safer as coal.")
+                );
+            }
+            case ROCK_GOLEM_ELEMENTAL: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "I am so in my element right now."),
+                        new PlayerDialogue("Sigh...")
+                );
+            }
+            case ROCK_GOLEM_GOLD: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "I'm totally showing the bling today."),
+                        new PlayerDialogue("That's nice for you."),
+                        new NPCDialogue(pet.npcId, "A little. Though sometimes I just feel like I'm being used as a status symbol, and no-one appreciates me for me."),
+                        new PlayerDialogue("Oh dear."),
+                        new NPCDialogue(pet.npcId, "Don't worry. At least I look good.")
+                );
+            }
+            case ROCK_GOLEM_GRANITE: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "No-one appreciates granite."),
+                        new PlayerDialogue("Why do you say that?"),
+                        new NPCDialogue(pet.npcId, "I know how it works. No-one actually wants granite. They just chop us up and throw our pieces on the floor."),
+                        new PlayerDialogue("Oh, I can see that must be upsetting for you."),
+                        new NPCDialogue(pet.npcId, "When you've seen your relatives cut into pieces, with their severed limbs cast aside like junk, THEN you will understand how I feel."),
+                        new PlayerDialogue("I'll bear it in mind.")
+                );
+            }
+            case ROCK_GOLEM_MITHRIL: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "I feel sad today. Very blue."),
+                        new PlayerDialogue("Oh dear."),
+                        new NPCDialogue(pet.npcId, "No-one understands me."),
+                        new PlayerDialogue("Why not?"),
+                        new NPCDialogue(pet.npcId, "Because argle gargle gooble goop."),
+                        new PlayerDialogue("... I don't understand you either."),
+                        new NPCDialogue(pet.npcId, "*sigh*")
+                );
+            }
+            case ROCK_GOLEM_LOVAKITE: {
+                return player -> player.dialogue(
+                        new PlayerDialogue("So how do you pronounce Lovakengj?"),
+                        new NPCDialogue(pet.npcId, "Silly human, it's pronounced Lova-Kane."),
+                        new NPCDialogue(pet.npcId, "How did you not know that?"),
+                        new PlayerDialogue("You know, it really isn't that obvious.")
+                );
+            }
+            case ROCK_GOLEM_ADDY: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "I may be green, but I'm not an environmentalist."),
+                        new PlayerDialogue("Why not?"),
+                        new NPCDialogue(pet.npcId, "There's no need. Whatever you may have read, even coal is a renewable energy source - just wait a minute and the rocks respawn."),
+                        new NPCDialogue(pet.npcId, "You can burn as much as you like, too, without needing to worry about it affecting the climate - we don't have a lot of weather here."),
+                        new PlayerDialogue("That's handy."),
+                        new NPCDialogue(pet.npcId, "Yes, I pity anyone whose world doesn't work like this one. I don't know how they can possibly cope.")
+                );
+            }
+            case ROCK_GOLEM_RUNE: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "I'm confused. It takes incredible skill to smith anything from my ore, yet the items you'd get are terribly mediocre."),
+                        new PlayerDialogue("Is that something that worries you?"),
+                        new NPCDialogue(pet.npcId, "It just feels like my world doesn't make sense, sometimes. But I suppose it's always been like this, and I've got used to it.")
+                );
+            }
+            case ROCK_GOLEM_AMETHYST: {
+                return player -> player.dialogue(
+                        new NPCDialogue(pet.npcId, "Your world is amazing. I truly am in awe."),
+                        new PlayerDialogue("Did you just make an ore joke?"),
+                        new NPCDialogue(pet.npcId, "Maybe..."),
+                        new PlayerDialogue("Well it was awful."),
+                        new NPCDialogue(pet.npcId, "Ha! Now you're making them as well."),
+                        new PlayerDialogue("Are we really doing this? Amethyst isn't an ore anyway."),
+                        new NPCDialogue(pet.npcId, "I can dream, "  + player.getName() + "!")
+                );
+            }
             case HERON: {
                 return player -> player.dialogue(
                         new NPCDialogue(pet.npcId, "Hop inside my mouth if you want to live!"),
