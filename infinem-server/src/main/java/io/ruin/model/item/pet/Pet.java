@@ -256,6 +256,10 @@ public enum Pet {
                 return BABY_CHIN;
             case RIFT_GUARDIAN:
                 return RIFT_GUARDIAN;
+            case TANGLEROOT:
+                return TANGLEROOTS;
+            case ROCK_GOLEM:
+                return ROCK_GOLEMS;
         }
         return new Pet[] { this };
     }
