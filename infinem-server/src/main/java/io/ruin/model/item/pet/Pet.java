@@ -399,8 +399,6 @@ public enum Pet {
             NPCAction.register(pet.npcId, "metamorphosis", (player, npc) -> {
                 if (Config.PET_NPC_INDEX.get(player) != npc.getIndex())
                     return;
-                if (pet.metaId == -1)
-                    return;
                 player.faceTemp(npc);
                 if (pet == BABY_CHINCHOMPA_BLACK || pet == BABY_CHINCHOMPA_GREY || pet == BABY_CHINCHOMPA_RED) {
                     if (Random.rollDie(10000, 1)) {
@@ -442,6 +440,8 @@ public enum Pet {
                         return;
                     }
                 }
+                if (pet.metaId == -1)
+                    return;
                 npc.transform(pet.metaId);
                 npc.face(player);
             });
