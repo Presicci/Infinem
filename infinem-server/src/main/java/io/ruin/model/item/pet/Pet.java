@@ -1240,7 +1240,7 @@ public enum Pet {
             }
             case ROCKY: {
                 return player -> {
-                    int random = Random.get(1, 3);
+                    int random = Random.get(1, 4);
                     if (random == 1) {
                         player.dialogue(
                                 new PlayerDialogue("*Whistles*"),
@@ -1253,13 +1253,22 @@ public enum Pet {
                                 new NPCDialogue(pet.npcId, "Magpies have nothing on us! They're just interested in shinies."),
                                 new NPCDialogue(pet.npcId, "Us raccoons have a finer taste, we can see the value in anything, whether it shines or not.")
                         );
-                    } else {
+                    } else if (random == 3) {
                         player.dialogue(
                                 new PlayerDialogue("Hey Rocky, do you want to commit a bank robbery with me?"),
                                 new NPCDialogue(pet.npcId, "If that is the level you are at, I do not wish to participate in criminal acts with you " + player.getName() + "."),
                                 new PlayerDialogue("Well what are you interested in stealing?"),
                                 new NPCDialogue(pet.npcId, "The heart of a lovely raccoon called Rodney."),
                                 new PlayerDialogue("I cannot really help you there I'm afraid.")
+                        );
+                    } else {
+                        player.dialogue(
+                                new PlayerDialogue("Hi Rocky, how are you?"),
+                                new NPCDialogue(pet.npcId, "Your shoe laces are untied!"),
+                                new MessageDialogue("Rocky jumps into your backpack..."),
+                                new NPCDialogue(pet.npcId, "The master thief strikes again! Here you go, have it back."),
+                                new MessageDialogue("Rocky flicks the coin back into your backpack"),
+                                new PlayerDialogue("I better keep my eyes on you...")
                         );
                     }
                 };
