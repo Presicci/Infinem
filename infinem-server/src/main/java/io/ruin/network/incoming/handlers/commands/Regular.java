@@ -84,10 +84,6 @@ public class Regular {
                 return true;
             }
 
-            case "graves": {
-                CommandHandler.teleportDangerous(player, 3143, 3677, 0);
-                return true;
-            }
             case "cammypvp": {
                 CommandHandler.teleport(player, 134, 87, 0);
                 return true;
