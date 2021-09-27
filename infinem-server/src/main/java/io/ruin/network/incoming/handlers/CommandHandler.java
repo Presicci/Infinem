@@ -29,6 +29,7 @@ import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.network.incoming.Incoming;
 import io.ruin.network.incoming.handlers.commands.Administrator;
 import io.ruin.network.incoming.handlers.commands.Moderator;
+import io.ruin.network.incoming.handlers.commands.SeniorModerator;
 import io.ruin.network.incoming.handlers.commands.Support;
 import io.ruin.services.Loggers;
 import io.ruin.services.Punishment;
@@ -84,7 +85,7 @@ public class CommandHandler implements Incoming {
                 return;
             if(Moderator.handleMod(player, query, command, args))
                 return;
-            if(handleSeniorMod(player, query, command, args))
+            if(SeniorModerator.handleSeniorMod(player, query, command, args))
                 return;
             if(handleRegular(player, query, command, args))
                 return;
@@ -98,7 +99,7 @@ public class CommandHandler implements Incoming {
 
     private static boolean handleRegular(Player player, String query, String command, String[] args) {
 
-        switch(command) {
+        switch (command) {
 
             case "commands": {
                 player.sendScroll("<col=800000>Commands</col>",
@@ -165,7 +166,7 @@ public class CommandHandler implements Incoming {
                 return true;
             }
             case "50":
-            case "50s":{
+            case "50s": {
                 teleportDangerous(player, 3314, 3912, 0);
                 return true;
             }
@@ -207,10 +208,10 @@ public class CommandHandler implements Incoming {
              * Misc commands
              */
             case "help": {
-                if(args != null && args.length > 0) {
+                if (args != null && args.length > 0) {
                     try {
                         Help.open(player, Integer.parseInt(args[0]));
-                    } catch(Exception e) {
+                    } catch (Exception e) {
                         player.sendMessage("Invalid command usage. Example: [::help 1]");
                     }
                     return true;
@@ -219,7 +220,7 @@ public class CommandHandler implements Incoming {
                 return true;
             }
 
-            case "bankitems" : {
+            case "bankitems": {
                 int slots = player.getBank().getItems().length;
                 for (int slot = 0; slot < slots; slot++) {
                     BankItem item = player.getBank().get(slot);
@@ -236,7 +237,7 @@ public class CommandHandler implements Incoming {
                 break;
             }
             case "char": {
-                if(!player.getEquipment().isEmpty()) {
+                if (!player.getEquipment().isEmpty()) {
                     player.dialogue(new MessageDialogue("Please remove what your equipment before doing that."));
                     return true;
                 }
@@ -244,7 +245,7 @@ public class CommandHandler implements Incoming {
                 return true;
             }
             case "heal": {
-                if(!player.isAdmin() && !player.isNearBank() && !player.getPosition().inBounds(EDGEVILLE) || player.wildernessLevel > 0 || player.pvpAttackZone) {
+                if (!player.isAdmin() && !player.isNearBank() && !player.getPosition().inBounds(EDGEVILLE) || player.wildernessLevel > 0 || player.pvpAttackZone) {
                     player.dialogue(new MessageDialogue("You can only use this command near a bank or around Edgeville."));
                     return true;
                 }
@@ -254,7 +255,7 @@ public class CommandHandler implements Incoming {
                     return true;
                 }
 
-                if(!player.getCombat().isDead())
+                if (!player.getCombat().isDead())
                     Nurse.heal(player, null);
 
                 return true;
@@ -268,11 +269,11 @@ public class CommandHandler implements Incoming {
                 break;
 
             case "skull": {
-                if(player.wildernessLevel > 0 || player.pvpAttackZone) {
+                if (player.wildernessLevel > 0 || player.pvpAttackZone) {
                     player.dialogue(new MessageDialogue("You can't use this command from where you're standing."));
                     return true;
                 }
-                if(!player.getCombat().isDead())
+                if (!player.getCombat().isDead())
                     EmblemTrader.skull(player);
                 return true;
             }
@@ -313,13 +314,13 @@ public class CommandHandler implements Incoming {
                     int id = Integer.parseInt(args[0]);
                     int index = id - 1;
                     PresetCustom preset;
-                    if(index < 0 || index >= player.customPresets.length || (preset = player.customPresets[index]) == null)
+                    if (index < 0 || index >= player.customPresets.length || (preset = player.customPresets[index]) == null)
                         player.sendMessage("Preset #" + id + " does not exist.");
-                    else if(preset.allowSelect(player)) {
+                    else if (preset.allowSelect(player)) {
                         player.closeDialogue();
                         preset.selectFinish(player);
                     }
-                } catch(Exception e) {
+                } catch (Exception e) {
                     player.sendMessage("Invalid command usage. Example: [::preset 1]");
                 }
                 return true;
@@ -327,27 +328,27 @@ public class CommandHandler implements Incoming {
 
             case "yell": {
                 boolean shadow = false;
-                if(Punishment.isMuted(player)) {
-                    if(!player.shadowMute) {
+                if (Punishment.isMuted(player)) {
+                    if (!player.shadowMute) {
                         player.sendMessage("You're muted and can't talk.");
                         return true;
                     }
                     shadow = true;
                 }
                 String message;
-                if(query.length() < 5 || (message = query.substring(5).trim()).isEmpty()) {
+                if (query.length() < 5 || (message = query.substring(5).trim()).isEmpty()) {
                     player.sendMessage("You can't yell an empty message.");
                     return true;
                 }
-                if(message.contains("<col=") || message.contains("<img=")) {
+                if (message.contains("<col=") || message.contains("<img=")) {
                     player.sendMessage("You can't use color or image tags inside your yell!");
                     return true;
                 }
                 long ms = System.currentTimeMillis(); //ew oh well
                 long delay = player.yellDelay - ms;
-                if(delay > 0) {
+                if (delay > 0) {
                     long seconds = delay / 1000L;
-                    if(seconds <= 1)
+                    if (seconds <= 1)
                         player.sendMessage("You need to wait 1 more second before yelling again.");
                     else
                         player.sendMessage("You need to wait " + seconds + " more seconds before yelling again.");
@@ -355,28 +356,28 @@ public class CommandHandler implements Incoming {
                 }
                 boolean bypassFilter; //basically disallows players to filter staff yells.
                 int delaySeconds; //be sure this is set in ascending order.
-                if(player.isAdmin() || player.isSupport() || player.isModerator()) {
+                if (player.isAdmin() || player.isSupport() || player.isModerator()) {
                     bypassFilter = true;
                     delaySeconds = 0;
-                } else if(player.isGroup(PlayerGroup.ZENYTE)) {
+                } else if (player.isGroup(PlayerGroup.ZENYTE)) {
                     bypassFilter = false;
                     delaySeconds = 0;
-                } else if(player.isGroup(PlayerGroup.ONYX) || player.isGroup(PlayerGroup.YOUTUBER) || player.isGroup(PlayerGroup.BETA_TESTER)) {
+                } else if (player.isGroup(PlayerGroup.ONYX) || player.isGroup(PlayerGroup.YOUTUBER) || player.isGroup(PlayerGroup.BETA_TESTER)) {
                     bypassFilter = false;
                     delaySeconds = 5;
-                } else if(player.isGroup(PlayerGroup.DRAGONSTONE)) {
+                } else if (player.isGroup(PlayerGroup.DRAGONSTONE)) {
                     bypassFilter = false;
                     delaySeconds = 10;
-                } else if(player.isGroup(PlayerGroup.DIAMOND)) {
+                } else if (player.isGroup(PlayerGroup.DIAMOND)) {
                     bypassFilter = false;
                     delaySeconds = 15;
-                } else if(player.isGroup(PlayerGroup.RUBY)) {
+                } else if (player.isGroup(PlayerGroup.RUBY)) {
                     bypassFilter = false;
                     delaySeconds = 30;
-                } else if(player.isGroup(PlayerGroup.EMERALD)) {
+                } else if (player.isGroup(PlayerGroup.EMERALD)) {
                     bypassFilter = false;
                     delaySeconds = 45;
-                } else if(player.isGroup(PlayerGroup.SAPPHIRE)) {
+                } else if (player.isGroup(PlayerGroup.SAPPHIRE)) {
                     bypassFilter = false;
                     delaySeconds = 60;
                 } else {
@@ -396,14 +397,14 @@ public class CommandHandler implements Incoming {
                 message = Color.BLUE.wrap("[" + (clientGroup.clientImgId != -1 ? clientGroup.tag() : "") + title) + Color.BLUE.wrap(player.getName() + "]") + " " + message;
 
                 player.yellDelay = ms + (delaySeconds * 1000L);
-                if(shadow) {
+                if (shadow) {
                     player.sendMessage(message);
                     return true;
                 }
 
-                for(Player p : World.players) {
-                    if(!bypassFilter && p.yellFilter && p.getUserId() != player.getUserId())
-                      continue;
+                for (Player p : World.players) {
+                    if (!bypassFilter && p.yellFilter && p.getUserId() != player.getUserId())
+                        continue;
                     p.sendMessage(message);
                 }
 
@@ -492,7 +493,7 @@ public class CommandHandler implements Incoming {
                 int id;
                 try {
                     id = Integer.parseInt(args[0]);
-                } catch(Exception e) {
+                } catch (Exception e) {
                     player.sendMessage("Invalid topic # entered, please try again.");
                     return true;
                 }
@@ -503,7 +504,7 @@ public class CommandHandler implements Incoming {
                 int id;
                 try {
                     id = Integer.parseInt(args[0]);
-                } catch(Exception e) {
+                } catch (Exception e) {
                     player.sendMessage("Invalid user id entered, please try again.");
                     return true;
                 }
@@ -573,183 +574,6 @@ public class CommandHandler implements Incoming {
                         MithrilSeeds.plant(player, MithrilSeeds.Flowers.PURPLE);
                     }
                 });
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static boolean handleSeniorMod(Player player, String query, String command, String[] args) {
-        if (!player.isAdmin())
-            return false;
-        switch (command) {
-            case "hp": {
-                int amount = Integer.parseInt(args[0]);
-                player.setHp(amount);
-                player.sendMessage("HP set to " + amount + ".");
-                return true;
-            }
-
-            case "hide": {
-                if(player.isHidden()) {
-                    player.setHidden(false);
-                    player.sendMessage("You are now visible.");
-                } else {
-                    player.setHidden(true);
-                    player.sendMessage("You are now hidden.");
-                }
-                return true;
-            }
-
-            case "resetslayertask": {
-                Player p2 = World.getPlayer(String.join(" ", args));
-                if(p2 == null) {
-                    player.sendMessage("Player can't be found.");
-                    return true;
-                }
-                Slayer.reset(p2);
-                p2.sendMessage("Your slayer task has been reset.");
-                player.sendMessage("You have reset " + p2.getName() + "'s task.");
-                return true;
-            }
-
-            case "removeedgepker":
-                String playerName = query.substring(command.length() + 1);
-                for (EdgePker killas : Leaderboard.edgePkers.values()) {
-                    if (playerName.equalsIgnoreCase(killas.getPlayer().getName())) {
-                        Leaderboard.edgePkers.remove(killas.getPlayer().getUserId());
-                    }
-                }
-                return true;
-
-            case "removedeeppker":
-                String playerNameDeep = query.substring(command.length() + 1);
-                for (DeepWildernessPker killas : Leaderboard.deepWildernesPkers.values()) {
-                    if (playerNameDeep.equalsIgnoreCase(killas.getPlayer().getName())) {
-                        Leaderboard.deepWildernesPkers.remove(killas.getPlayer().getUserId());
-                    }
-                }
-                return true;
-
-            case "toggledmm":
-                if (TournamentManager.activeTournament == null) {
-                    player.sendMessage("Error setting tournament configs without a valid tournament active.");
-                } else {
-                    TournamentManager.activeTournament.setAttributes(TournamentPlaylist.DMM_TRIBRID.getAttributes());
-                    player.sendMessage("Set tournament preset config to DMM type.");
-                }
-                return true;
-
-            case "enabletourneyfee":
-                TournamentManager.requireFee = true;
-                player.sendMessage("The tournament will now require a fee to participate.");
-                return true;
-
-            case "disabletourneyfee":
-                TournamentManager.requireFee = false;
-                player.sendMessage("The tournament will no longer require a fee to participate.");
-                return true;
-
-            case "ttime":
-                int mins = Integer.parseInt(args[0]);
-                if (mins <= 0) {
-                    player.sendMessage("You must set a value greater than 0 to set the tournament time (in mins).");
-                } else {
-                    TournamentManager.activityTimer = mins;
-                    player.sendMessage("The tournament will now begin in "+ mins +" mins.");
-                }
-                return true;
-
-            case "endtournament":
-                if (TournamentManager.activeTournament == null) {
-                    player.sendMessage("There is no tournament active to end.");
-                } else {
-                    TournamentManager.activeTournament.end(true);
-                }
-                return true;
-
-            case "toggletournament":
-                TournamentManager.enabled = !TournamentManager.enabled;
-                player.sendMessage("The tournament is now "+ (TournamentManager.enabled ? "enabled" : "disabled") +".");
-                return true;
-
-            case"bmb":
-            case "bmboost": {
-                int multiplier = Integer.parseInt(args[0]);
-                if(multiplier < 1) {
-                    player.sendMessage("Blood money multiplier cannot be less than 1.");
-                    multiplier = 1;
-                } else if(multiplier > 4) {
-                    player.sendMessage("Blood money multiplier cannot be greater than 4.");
-                    multiplier = 4;
-                }
-                World.boostBM(multiplier);
-                return true;
-            }
-
-            case "getbmboost": {
-                player.sendMessage("The bloody money multiplier is currently: " + World.bmMultiplier);
-                return true;
-            }
-
-            case "xpb":
-            case "xpboost": {
-                int multiplier = Integer.parseInt(args[0]);
-                if(multiplier < 1) {
-                    player.sendMessage("Experience multiplier cannot be less than 1.");
-                    multiplier = 1;
-                } else if(multiplier > 4) {
-                    player.sendMessage("Experience multiplier cannot be greater than 4.");
-                    multiplier = 4;
-                }
-                World.boostXp(multiplier);
-                return true;
-            }
-
-            case "setbasebm": {
-                int base = Integer.parseInt(args[0]);
-                if(base < 1) {
-                    player.sendMessage("Base Blood Money cannot be less than 1.");
-                    base = 1;
-                } else if(base > 150) {
-                    player.sendMessage("Base Blood Money cannot be greater than 150.");
-                    base = 150;
-                }
-                World.setBaseBloodMoney(base);
-                return true;
-            }
-
-
-            case "doublexpweekend": {
-                World.toggleWeekendExpBoost();
-                return true;
-            }
-            case "doubledrops": {
-                World.toggleDoubleDrops();
-                return true;
-            }
-
-            case "doubleslayer": {
-                World.toggleDoubleSlayer();
-                return true;
-            }
-
-            case "doublepc": {
-                World.toggleDoublePest();
-                return true;
-            }
-
-            case "togglewildernesskeyevent": {
-                World.toggleWildernessKeyEvent();
-                boolean active = World.wildernessKeyEvent;
-                player.sendMessage("The wilderness key event is now " + (active ? "enabled" : "disabled") + ".");
-                return true;
-            }
-
-            case "toggledmmkeyevent": {
-                World.toggleDmmKeyEvent();
-                boolean active = World.wildernessDeadmanKeyEvent;
-                player.sendMessage("The DMM key event is now " + (active ? "enabled" : "disabled") + ".");
                 return true;
             }
         }
