@@ -108,7 +108,7 @@ public class Regular {
             /*
              * Misc commands
              */
-            case "help": {
+            case "help": {  //  TODO go through and edit the different help menus
                 if (args != null && args.length > 0) {
                     try {
                         Help.open(player, Integer.parseInt(args[0]));
