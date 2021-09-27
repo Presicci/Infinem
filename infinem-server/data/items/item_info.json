@@ -95057,10 +95057,18 @@
   { #Skull sceptre (i)
     "id": 21276,
     "tradeable": false,
-    "examine": "Skull sceptre (i) - Examine not set.",
-    "weight": 0.0,
+    "examine": "An imbued magical Sceptre.",
+    "weight": 1.8,
 	"protect_value": 0,
-    "equip_slot": 3
+    "equip_slot": 3,
+	"slash_attack_bonus": -1,
+    "crush_attack_bonus": 7,
+    "magic_attack_bonus": 4,
+    "stab_defence_bonus": 2,
+    "slash_defence_bonus": 3,
+    "crush_defence_bonus": 1,
+    "magic_defence_bonus": 4,
+    "melee_strength_bonus": 3
   },
   { #Tzhaar-hur
     "id": 21278,
