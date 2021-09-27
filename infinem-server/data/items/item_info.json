@@ -55350,7 +55350,8 @@
     "slash_defence_bonus": 3,
     "crush_defence_bonus": 1,
     "magic_defence_bonus": 4,
-    "melee_strength_bonus": 3
+    "melee_strength_bonus": 3,
+	"weapon_type": "MAGIC_STAFF"
   },
   { #Gorak claws
     "id": 9016,
@@ -95068,7 +95069,8 @@
     "slash_defence_bonus": 3,
     "crush_defence_bonus": 1,
     "magic_defence_bonus": 4,
-    "melee_strength_bonus": 3
+    "melee_strength_bonus": 3,
+	"weapon_type": "MAGIC_STAFF"
   },
   { #Tzhaar-hur
     "id": 21278,
