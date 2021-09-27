@@ -28,6 +28,7 @@ import io.ruin.model.map.*;
 import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.network.incoming.Incoming;
 import io.ruin.network.incoming.handlers.commands.Admin;
+import io.ruin.network.incoming.handlers.commands.Support;
 import io.ruin.services.Loggers;
 import io.ruin.services.Punishment;
 import io.ruin.utility.IdHolder;
@@ -78,7 +79,7 @@ public class CommandHandler implements Incoming {
                 player.sendMessage("Please finish what you're doing first.");
                 return;
             }
-            if(handleSupport(player, query, command, args))
+            if(Support.handleSupport(player, query, command, args))
                 return;
             if(handleMod(player, query, command, args))
                 return;
@@ -577,41 +578,6 @@ public class CommandHandler implements Incoming {
         return false;
     }
 
-    private static boolean handleSupport(Player player, String query, String command, String[] args) {
-        if(!player.isSupport() && !player.isModerator() && !player.isAdmin())
-            return false;
-        switch(command) {
-            case "tradepost": {
-                player.getTradePost().openViewOffers();
-                return true;
-            }
-            case "staffcommands": {
-                break;
-            }
-            case "kick": {
-                forPlayer(player, query, "::kick playerName", p2 -> Punishment.kick(player, p2));
-                return true;
-            }
-            case "jail": {
-                forPlayerInt(player, query, "::jail playerName rockCount", (p2, ores) -> Punishment.jail(player, p2, ores));
-                return true;
-            }
-            case "unjail": {
-                forPlayer(player, query, "::unjail playerName", p2 -> Punishment.unjail(player, p2));
-                return true;
-            }
-            case "mute": {
-                forPlayerTime(player, query, "::mute playerName #d/#h/perm", (p2, time) -> Punishment.mute(player, p2, time, false));
-                return true;
-            }
-            case "unmute": {
-                forPlayer(player, query, "::unmute playerName", p2 -> Punishment.unmute(player, p2));
-                return true;
-            }
-        }
-        return false;
-    }
-
     private static boolean handleMod(Player player, String query, String command, String[] args) {
         if(!player.isModerator() && !player.isAdmin())
             return false;
@@ -955,7 +921,7 @@ public class CommandHandler implements Incoming {
         });
     }
 
-    private static void forPlayerInt(Player player, String cmdQuery, String exampleUsage, BiConsumer<Player, Integer> consumer) {
+    public static void forPlayerInt(Player player, String cmdQuery, String exampleUsage, BiConsumer<Player, Integer> consumer) {
         forNameString(player, cmdQuery, exampleUsage, (name, string) -> {
             try {
                 Player p = getOnlinePlayer(player, name);
