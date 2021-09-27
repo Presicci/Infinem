@@ -339,12 +339,13 @@ public enum PickPocket {
                     if (pickpocketOption == -1)
                         return;
                     NPCAction.register(npcDef.name, pickpocketOption, (player, npc) -> pickpocket(player, npc, pickpocket));
-                    NPCAction.register("tzhaar-hur", pickpocketOption, (player, npc) -> pickpocket(player, npc, TZHAAR_HUR));
-                    final int[] HAM_MEMBERS = {2540, 2541};
-                    for (int hamMember : HAM_MEMBERS)
-                        NPCAction.register(hamMember, pickpocketOption, (player, npc) -> pickpocket(player, npc, HAM));
                 }
             }
         });
+        final int[] HAM_MEMBERS = { 2540, 2541 };
+        for (int hamMember : HAM_MEMBERS) {
+            NPCAction.register(hamMember, "pickpocket", (player, npc) -> pickpocket(player, npc, HAM));
+        }
+        NPCAction.register("tzhaar-hur", "pickpocket", (player, npc) -> pickpocket(player, npc, TZHAAR_HUR));
     }
 }
