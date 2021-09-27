@@ -49,6 +49,7 @@ import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.inter.handlers.OptionScroll;
+import io.ruin.model.inter.journal.presets.PresetCustom;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.inter.utils.Unlock;
@@ -763,6 +764,23 @@ public class Administrator {
                 };
                 OptionScroll.open(player, "Select a room type", true,
                         Arrays.stream(ChamberDefinition.values()).map(cd -> new Option(cd.getName(), () -> run.accept(cd))).collect(Collectors.toList()));
+                return true;
+            }
+
+            case "preset": {
+                try {
+                    int id = Integer.parseInt(args[0]);
+                    int index = id - 1;
+                    PresetCustom preset;
+                    if (index < 0 || index >= player.customPresets.length || (preset = player.customPresets[index]) == null)
+                        player.sendMessage("Preset #" + id + " does not exist.");
+                    else if (preset.allowSelect(player)) {
+                        player.closeDialogue();
+                        preset.selectFinish(player);
+                    }
+                } catch (Exception e) {
+                    player.sendMessage("Invalid command usage. Example: [::preset 1]");
+                }
                 return true;
             }
 

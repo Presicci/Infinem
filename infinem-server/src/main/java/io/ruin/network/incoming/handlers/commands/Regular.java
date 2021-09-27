@@ -157,47 +157,6 @@ public class Regular {
                 return true;
             }
 
-            // case "barrage": {
-            //     if(!player.isAdmin() && !player.isNearBank() && !player.getPosition().inBounds(EDGEVILLE) || player.wildernessLevel > 0 || player.pvpAttackZone) {
-            //         player.dialogue(new MessageDialogue("You cannot use this command here."));
-            //         return true;
-            //     }
-            //     player.getInventory().add(ItemID.WATER_RUNE, 1200);
-            //     player.getInventory().add(ItemID.BLOOD_RUNE, 400);
-            //     player.getInventory().add(ItemID.DEATH_RUNE, 800);
-            //     player.sendMessage("Barrage runes have been added to your inventory.");
-            //     break;
-            // }
-
-            // case "veng": {
-            //     if(!player.isAdmin() && !player.isNearBank() && !player.getPosition().inBounds(EDGEVILLE) || player.wildernessLevel > 0 || player.pvpAttackZone) {
-            //         player.dialogue(new MessageDialogue("You cannot use this command here."));
-            //         return true;
-            //     }
-            //     player.getInventory().add(ItemID.EARTH_RUNE, 2000);
-            //     player.getInventory().add(ItemID.DEATH_RUNE, 400);
-            //     player.getInventory().add(ItemID.ASTRAL_RUNE, 800);
-            //     player.sendMessage("Vengeance runes have been added to your inventory.");
-            //     break;
-            // }
-
-            case "preset": {
-                try {
-                    int id = Integer.parseInt(args[0]);
-                    int index = id - 1;
-                    PresetCustom preset;
-                    if (index < 0 || index >= player.customPresets.length || (preset = player.customPresets[index]) == null)
-                        player.sendMessage("Preset #" + id + " does not exist.");
-                    else if (preset.allowSelect(player)) {
-                        player.closeDialogue();
-                        preset.selectFinish(player);
-                    }
-                } catch (Exception e) {
-                    player.sendMessage("Invalid command usage. Example: [::preset 1]");
-                }
-                return true;
-            }
-
             case "yell": {
                 boolean shadow = false;
                 if (Punishment.isMuted(player)) {
