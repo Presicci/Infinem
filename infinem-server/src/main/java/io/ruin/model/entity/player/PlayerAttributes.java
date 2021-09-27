@@ -1316,4 +1316,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public boolean infernalJadMetamorphisis;
     @Expose public boolean abyssalSireMetamorphisis;
 
+    /*  Stronghold of Security  */
+    @Expose public boolean[] strongholdRewards = { false, false, false, false };
 }
