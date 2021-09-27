@@ -1293,7 +1293,6 @@ public abstract class PlayerAttributes extends Entity {
     public TournamentFightPair tournamentFight;
 
     @Expose public int mysteriousStrangerVarp;
-    public boolean rigging = false;
 
     @Expose public Cannon cannon;
     @Expose public Position cannonPosition;
