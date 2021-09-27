@@ -5,7 +5,9 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.attributes.AttributeTypes;
+import io.ruin.model.skills.Tool;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
+import lombok.AllArgsConstructor;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -60,5 +62,48 @@ public class SkullSceptre {
                 player.sendMessage("Your skull sceptre has " + item.getAttributeInt(AttributeTypes.CHARGES) + " charges left.");
             });
         }
+
+        /*  Sceptre charging    */
+        for (SceptrePart part : SceptrePart.values()) {
+            ItemItemAction.register(Tool.CHISEL, part.itemId, (player, item, item2) -> {
+                player.getInventory().remove(item2);
+                player.getInventory().add(25139, part.charges);
+                player.sendFilteredMessage("You break the piece down into bone fragments.");
+            });
+            ItemItemAction.register(21276, part.itemId, (player, item, item2) -> {
+                int charges = item.getAttributeInt(AttributeTypes.CHARGES);
+                if (charges >= MAX_CHARGES) {
+                    player.sendMessage("The sceptre is already fully charged.");
+                    return;
+                }
+                player.getInventory().remove(item2);
+                item.putAttribute(AttributeTypes.CHARGES, charges + part.charges);
+                player.sendFilteredMessage("You add " + part.charges + " charges to your sceptre.");
+            });
+        }
+        ItemItemAction.register(21276, 25139, (player, item, item2) -> {
+            int charges = item.getAttributeInt(AttributeTypes.CHARGES);
+            if (charges >= MAX_CHARGES) {
+                player.sendMessage("The sceptre is already fully charged.");
+                return;
+            }
+            int chargesToAdd = Math.min(player.getInventory().getAmount(25139), MAX_CHARGES - charges);
+            player.getInventory().remove(item2.getId(), chargesToAdd);
+            item.putAttribute(AttributeTypes.CHARGES, charges + chargesToAdd);
+            player.sendFilteredMessage("You add " + chargesToAdd + " charges to your sceptre.");
+        });
+    }
+
+    @AllArgsConstructor
+    public enum SceptrePart {
+        SKULL_LEFT(Items.LEFT_SKULL_HALF, 5),
+        SKULL_RIGHT(Items.RIGHT_SKULL_HALF, 3),
+        BOTTOM(Items.BOTTOM_OF_SCEPTRE, 3),
+        TOP(Items.TOP_OF_SCEPTRE, 3),
+        SKULL(Items.STRANGE_SKULL, 8),
+        SCEPTRE(Items.RUNED_SCEPTRE, 6),
+        SKULL_SCEPTRE(Items.SKULL_SCEPTRE, 14);
+
+        public final int itemId, charges;
     }
 }
