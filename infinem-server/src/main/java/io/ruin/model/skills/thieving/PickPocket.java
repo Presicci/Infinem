@@ -202,7 +202,7 @@ public enum PickPocket {
                     new LootItem(444, 1, 2),  //Gold ore
                     new LootItem(1617, 1, 1)  //Uncut diamond
             )),
-    VYRE(82, 306.9, -1, 6, 4, "vyre's", PlayerCounter.PICKPOCKETED_VYRE,
+    VYRE(82, 306.9, -1, 6, 5, "vyre's", PlayerCounter.PICKPOCKETED_VYRE,
             99175,
             new LootTable().addTable(1,
                     new LootItem(995, 250, 315, 4129),
@@ -225,7 +225,7 @@ public enum PickPocket {
                     new LootItem(444, 1, 2),  //Gold ore
                     new LootItem(1617, 1, 1)  //Uncut diamond
             )),
-    TZHAAR_HUR(90, 103.0, 2609, 6, 5, "tzhaar-hur's", PlayerCounter.PICKPOCKETED_TZHAAR_HUR,
+    TZHAAR_HUR(90, 103.0, 2609, 6, 4, "tzhaar-hur's", PlayerCounter.PICKPOCKETED_TZHAAR_HUR,
             176743,
             new LootTable().addTable(1,
                     new LootItem(1755, 1, 6),                    //Chisel
