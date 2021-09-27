@@ -50,13 +50,6 @@ public class Regular {
                 );
                 return true;
             }
-            case "raid":
-            case "raids":
-            case "enterraid":
-            case "enterraids":
-            case "raidstest":
-                CommandHandler.teleport(player, 1254, 3558, 0);
-                return true;
 
             case "clear":
             case "empty": {
