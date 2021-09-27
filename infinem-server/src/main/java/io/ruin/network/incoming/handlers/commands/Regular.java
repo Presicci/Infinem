@@ -139,22 +139,6 @@ public class Regular {
                 player.sendMessage("There is currently " + players + " player" + (players > 1 ? "s" : "") + " online!");
                 return true;
             }
-            case "heal": {
-                if (!player.isAdmin() && !player.isNearBank() && !player.getPosition().inBounds(CommandHandler.EDGEVILLE) || player.wildernessLevel > 0 || player.pvpAttackZone) {
-                    player.dialogue(new MessageDialogue("You can only use this command near a bank or around Edgeville."));
-                    return true;
-                }
-
-                if (!player.isAdmin() && (!player.isSapphire() || player.isGroup(PlayerGroup.SAPPHIRE))) {
-                    player.dialogue(new NPCDialogue(2108, "I'm afraid that's something only Super Donators or higher can make use of..."));
-                    return true;
-                }
-
-                if (!player.getCombat().isDead())
-                    Nurse.heal(player, null);
-
-                return true;
-            }
             case "dz":
             case "donatorzone":
             case "dzone":
