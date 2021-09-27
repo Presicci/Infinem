@@ -75,6 +75,7 @@ public class Regular {
                 CommandHandler.teleport(player, World.HOME);
                 return true;
             }
+
             case "arena":
             case "stake":
             case "duel":
@@ -82,11 +83,7 @@ public class Regular {
                 CommandHandler.teleport(player, 3367, 3265, 0);
                 return true;
             }
-            case "magebank":
-            case "mb": {
-                CommandHandler.teleport(player, 2539, 4716, 0);
-                return true;
-            }
+
             case "revs": {
                 CommandHandler.teleportDangerous(player, 3127, 3832, 0);
                 return true;
