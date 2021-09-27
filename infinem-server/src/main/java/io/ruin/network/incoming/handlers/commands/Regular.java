@@ -84,14 +84,6 @@ public class Regular {
                 return true;
             }
 
-            case "easts": {
-                CommandHandler.teleportDangerous(player, 3364, 3666, 0);
-                return true;
-            }
-            case "wests": {
-                CommandHandler.teleportDangerous(player, 2983, 3598, 0);
-                return true;
-            }
             case "50":
             case "50s": {
                 CommandHandler.teleportDangerous(player, 3314, 3912, 0);
