@@ -8,6 +8,7 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainerG;
 import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.containers.Inventory;
 
@@ -126,5 +127,8 @@ public class Solztun {
 
     static {
         NPCAction.register(7673, "talk-to", Solztun::dialogue);
+        ItemNPCAction.register(Items.SKULL_SCEPTRE, 7673, (player, item, npc) -> {
+            imbue(player, npc);
+        });
     }
 }
