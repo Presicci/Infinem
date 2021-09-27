@@ -766,6 +766,13 @@ public class Administrator {
                 return true;
             }
 
+            case "fonttest": {
+                int childId = Integer.parseInt(args[0]);
+                int fontId = Integer.parseInt(args[1]);
+                player.getPacketSender().sendClientScript(135, "ii", 701 << 16 | childId, fontId);
+                return true;
+            }
+
             case "hit":
             case "hitme": {
                 player.hit(new Hit().fixedDamage(Integer.parseInt(args[0])).delay(0));

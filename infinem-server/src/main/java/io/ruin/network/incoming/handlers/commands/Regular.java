@@ -157,13 +157,6 @@ public class Regular {
                 return true;
             }
 
-            case "fonttest": {
-                int childId = Integer.parseInt(args[0]);
-                int fontId = Integer.parseInt(args[1]);
-                player.getPacketSender().sendClientScript(135, "ii", 701 << 16 | childId, fontId);
-                return true;
-            }
-
             // case "barrage": {
             //     if(!player.isAdmin() && !player.isNearBank() && !player.getPosition().inBounds(EDGEVILLE) || player.wildernessLevel > 0 || player.pvpAttackZone) {
             //         player.dialogue(new MessageDialogue("You cannot use this command here."));
