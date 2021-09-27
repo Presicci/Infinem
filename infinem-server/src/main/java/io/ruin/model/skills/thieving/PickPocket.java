@@ -250,7 +250,7 @@ public enum PickPocket {
             player.sendMessage("You're stunned!");
             return false;
         }
-        if(BotPrevention.isBlocked(player)) {
+        if (BotPrevention.isBlocked(player)) {
             player.sendMessage("You can't pickpocket an NPC while a guard is watching you.");
             return false;
         }
