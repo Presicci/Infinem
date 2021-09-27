@@ -127,6 +127,7 @@ public enum PlayerCounter {
     PICKPOCKETED_WARRIOR((p, amt) -> p.pickpocketWarrior = amt, p -> p.pickpocketWarrior),
     PICKPOCKETED_HAM_MEMBER((p, amt) -> p.pickpocketHamMember = amt, p -> p.pickpocketHamMember),
     PICKPOCKETED_ROGUE((p, amt) -> p.pickpocketRogue = amt, p -> p.pickpocketRogue),
+    PICKPOCKETED_CAVE_GOBLIN((p, amt) -> p.pickpocketCaveGoblin = amt, p -> p.pickpocketCaveGoblin),
     PICKPOCKETED_MASTER_FARMER((p, amt) -> p.pickpocketMasterFarmer = amt, p -> p.pickpocketMasterFarmer),
     PICKPOCKETED_GUARD((p, amt) -> p.pickpocketGuard = amt, p -> p.pickpocketGuard),
     PICKPOCKETED_BANDIT((p, amt) -> p.pickpocketBandit = amt, p -> p.pickpocketBandit),

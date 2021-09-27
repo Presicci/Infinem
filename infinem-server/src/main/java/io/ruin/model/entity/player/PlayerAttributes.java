@@ -204,6 +204,7 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int pickpocketWarrior;
     @Expose public int pickpocketHamMember;
     @Expose public int pickpocketRogue;
+    @Expose public int pickpocketCaveGoblin;
     @Expose public int pickpocketMasterFarmer;
     @Expose public int pickpocketGuard;
     @Expose public int pickpocketBandit;

@@ -90,6 +90,25 @@ public enum PickPocket {
                     new LootItem(1219, 1, 3), //Iron dagger(p)
                     new LootItem(1523, 1, 1)  //Lockpick
             )),
+    //  TODO stunAnimation
+    CAVE_GOBLIN(36, 40.0, -1, 5, 1, "goblin's", PlayerCounter.PICKPOCKETED_CAVE_GOBLIN,
+            257211,
+            new LootTable().addTable(1,
+                    new LootItem(Items.BAT_SHISH, 1, 1),
+                    new LootItem(Items.COATED_FROGS_LEGS, 1, 1),
+                    new LootItem(Items.FINGERS, 1, 1),
+                    new LootItem(Items.FROGBURGER, 1, 1),
+                    new LootItem(Items.FROGSPAWN_GUMBO, 1, 1),
+                    new LootItem(Items.GREEN_GLOOP_SOUP, 1, 1),
+                    new LootItem(Items.COINS, 10, 50, 7),
+                    new LootItem(Items.BULLSEYE_LANTERN, 1, 1),
+                    new LootItem(Items.CAVE_GOBLIN_WIRE, 1, 1),
+                    new LootItem(Items.IRON_ORE, 1, 4, 1),
+                    new LootItem(Items.OIL_LANTERN, 1, 1),
+                    new LootItem(Items.SWAMP_TAR, 1, 1),
+                    new LootItem(Items.TINDERBOX, 1, 1),
+                    new LootItem(Items.UNLIT_TORCH, 1, 1)
+            )),
     MASTER_FARMER(38, 43.0, 386, 5, 3, "master farmer's", PlayerCounter.PICKPOCKETED_MASTER_FARMER,
             257211,
             new LootTable().addTable(1,
