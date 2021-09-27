@@ -1,6 +1,8 @@
 package io.ruin.model.item.actions.impl.chargable;
 
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
@@ -18,6 +20,24 @@ public class SkullSceptre {
     private static final int MAX_CHARGES = 10;
 
     private static final int[] sceptreIDS = { Items.SKULL_SCEPTRE, 21276 };
+
+    private static void invoke(Player player, Item item, int itemId) {
+        int currentCharges = item.getAttributeInt(AttributeTypes.CHARGES);
+        if (currentCharges > 0) {
+            ModernTeleport.teleport(player, 3081, 3421, 0);
+            item.putAttribute(AttributeTypes.CHARGES, currentCharges - 1);
+            if (item.getAttributeInt(AttributeTypes.CHARGES) <= 0) {
+                if (itemId == Items.SKULL_SCEPTRE) {
+                    player.getInventory().remove(item);
+                    player.sendMessage("<col=7F00FF>Your skull sceptre has run out of charges and crumbles to dust.");
+                } else {
+                    player.sendMessage("<col=7F00FF>Your skull sceptre has run out of charges, use bone fragments on it to recharge it.");
+                }
+            }
+        } else {
+            player.sendMessage("Your skull sceptre has no charges left, use bone fragments on it to recharge it.");
+        }
+    }
 
     static {
         ItemItemAction.register(Items.LEFT_SKULL_HALF, Items.RIGHT_SKULL_HALF, (player, item1, item2) -> {
@@ -42,23 +62,15 @@ public class SkullSceptre {
 
         for (int itemId : sceptreIDS) {
             ItemAction.registerInventory(itemId, "invoke", (player, item) -> {
-                int currentCharges = item.getAttributeInt(AttributeTypes.CHARGES);
-                if (currentCharges > 0) {
-                    ModernTeleport.teleport(player, 3081, 3421, 0);
-                    item.putAttribute(AttributeTypes.CHARGES, currentCharges - 1);
-                    if (item.getAttributeInt(AttributeTypes.CHARGES) <= 0) {
-                        if (itemId == Items.SKULL_SCEPTRE) {
-                            player.getInventory().remove(item);
-                            player.sendMessage("<col=7F00FF>Your skull sceptre has run out of charges and crumbles to dust.");
-                        } else {
-                            player.sendMessage("<col=7F00FF>Your skull sceptre has run out of charges, use bone fragments on it to recharge it.");
-                        }
-                    }
-                } else {
-                    player.sendMessage("Your skull sceptre has no charges left, use bone fragments on it to recharge it.");
-                }
+                invoke(player, item, itemId);
             });
             ItemAction.registerInventory(itemId, "divine", (player, item) -> {
+                player.sendMessage("Your skull sceptre has " + item.getAttributeInt(AttributeTypes.CHARGES) + " charges left.");
+            });
+            ItemAction.registerEquipment(itemId, "invoke", (player, item) -> {
+                invoke(player, item, itemId);
+            });
+            ItemAction.registerEquipment(itemId, "divine", (player, item) -> {
                 player.sendMessage("Your skull sceptre has " + item.getAttributeInt(AttributeTypes.CHARGES) + " charges left.");
             });
         }
