@@ -24,7 +24,16 @@ public enum Lightables {
     BULLSEYE_LANTERN(Items.BULLSEYE_LANTERN, Items.BULLSEYE_LANTERN_2),
     SAPPHIRE_LANTERN(Items.SAPPHIRE_LANTERN_2, Items.SAPPHIRE_LANTERN_3),
     EMERALD_LANTERN(Items.EMERALD_LANTERN, Items.EMERALD_LANTERN_2),
-    MINING_HELMET(Items.MINING_HELMET_2, Items.MINING_HELMET);
+    MINING_HELMET(Items.MINING_HELMET_2, Items.MINING_HELMET),
+    FIREMAKING_CAPE(-1, Items.FIREMAKING_CAPE),
+    FIREMAKING_CAPE_T(-1, Items.FIREMAKING_CAPE_T),
+    FIREMAKING_MASTER_CAPE(-1, 30244),
+    MAX_CAPE(-1, Items.MAX_CAPE_3),
+    KANDARIN_HEADGEAR_1(-1, Items.KANDARIN_HEADGEAR_1),
+    KANDARIN_HEADGEAR_2(-1, Items.KANDARIN_HEADGEAR_2),
+    KANDARIN_HEADGEAR_3(-1, Items.KANDARIN_HEADGEAR_3),
+    KANDARIN_HEADGEAR_4(-1, Items.KANDARIN_HEADGEAR_4),
+    BRUMA_TORCH(-1, Items.BRUMA_TORCH);
 
     public final int unlitId, litId;
 
@@ -54,10 +63,12 @@ public enum Lightables {
 
     static {
         for (Lightables lightable : values()) {
-            ItemItemAction.register(Tool.TINDER_BOX, lightable.unlitId, (player, tinderbox, item) -> {
-                lightable.light(player, item);
-            });
-            ItemAction.registerInventory(lightable.litId, "extinguish", lightable::extinguish);
+            if (lightable.unlitId != -1) {
+                ItemItemAction.register(Tool.TINDER_BOX, lightable.unlitId, (player, tinderbox, item) -> {
+                    lightable.light(player, item);
+                });
+                ItemAction.registerInventory(lightable.litId, "extinguish", lightable::extinguish);
+            }
         }
     }
 }
