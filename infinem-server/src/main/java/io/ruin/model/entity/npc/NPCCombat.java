@@ -414,6 +414,8 @@ public abstract class NPCCombat extends Combat {
         return finalList;
     }
 
+    private static final int[] brimstoneRingParts = { 22973, 22971, 22969 };
+
     /*
      * Drops the next part that the player needs to make the brimstone ring.
      */
@@ -421,7 +423,7 @@ public abstract class NPCCombat extends Combat {
         if (player.findItem(22973) != null) {   // Hydra's Eye
             if (player.findItem(22971) != null) {   // Hydra's Fang
                 if (player.findItem(22969) != null) {   // Hydra's Heart
-                    return 22973;   // Player has all parts, so drop the first again
+                    return brimstoneRingParts[Random.get(0, 2)];   // Player has all parts, so drop the first again
                 } else {
                     return 22969;   // Player has first 2 parts, drop last
                 }
