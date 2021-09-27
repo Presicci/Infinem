@@ -238,24 +238,29 @@ public enum PickPocket {
         this.lootTable = lootTable;
     }
 
-    private static void pickpocket(Player player, NPC npc, PickPocket pickpocket) {
+    private static boolean checkAll(Player player, PickPocket pickpocket) {
         if (!player.getStats().check(StatType.Thieving, pickpocket.levelReq, "pickpocket the " + pickpocket.name + "."))
-            return;
+            return false;
         if (player.getInventory().isFull()) {
             player.privateSound(2277);
             player.sendMessage("Your inventory is too full to hold any more loot.");
-            return;
+            return false;
         }
         if (player.isStunned()) {
             player.sendMessage("You're stunned!");
-            return;
+            return false;
         }
-
         if(BotPrevention.isBlocked(player)) {
             player.sendMessage("You can't pickpocket an NPC while a guard is watching you.");
+            return false;
+        }
+        return true;
+    }
+
+    private static void pickpocket(Player player, NPC npc, PickPocket pickpocket) {
+        if (!checkAll(player, pickpocket)) {
             return;
         }
-
         player.addEvent(event -> {
             player.lock(LockType.FULL_REGULAR_DAMAGE);
             if (successful(player, pickpocket)) {
