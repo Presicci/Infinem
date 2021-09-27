@@ -86,6 +86,8 @@ import io.ruin.network.central.CentralClient;
 import io.ruin.network.incoming.handlers.CommandHandler;
 import io.ruin.services.LatestUpdate;
 import io.ruin.services.Punishment;
+import io.ruin.services.discord.impl.EventBossEmbedMessage;
+import io.ruin.services.discord.impl.RareDropEmbedMessage;
 import io.ruin.services.discord.impl.ShutdownEmbedMessage;
 import io.ruin.utility.AttributePair;
 import io.ruin.utility.CS2Script;
@@ -362,7 +364,25 @@ public class Administrator {
             }
 
             case "testdiscord": {
+                EventBossEmbedMessage.sendDiscordMessage(EventBossType.CORRUPTED_NECHRYARCH, "The Corrupted Nechryarch has spawned south of Wintertodt.");
                 ShutdownEmbedMessage.sendDiscordMessage("test");
+                Item item = new Item(4151);
+                NPC npc = new NPC(415);
+                RareDropEmbedMessage.sendDiscordMessage(player.getName() + " just received " + item.getDef().descriptiveName, npc.getDef().descriptiveName, item.getId());
+                return true;
+            }
+
+            case "testclue": {
+                StringBuilder content = new StringBuilder();
+                for (String string : args) {
+                    if (args[args.length -1].equalsIgnoreCase(string)) {
+                        content.append(string);
+                    } else {
+                        content.append(string).append(" ");
+                    }
+                }
+                player.getPacketSender().sendString(203, 2, content.toString());
+                player.openInterface(InterfaceType.MAIN, 203);
                 return true;
             }
 
