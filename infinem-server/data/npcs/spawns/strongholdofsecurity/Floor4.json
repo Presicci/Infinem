@@ -844,5 +844,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 5
+  },
+  {
+    "name": "Solztun",
+    "id": 7673,
+    "x": 2339,
+    "y": 5213,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
