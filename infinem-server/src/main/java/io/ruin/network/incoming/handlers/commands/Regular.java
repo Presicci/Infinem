@@ -100,6 +100,7 @@ public class Regular {
                 CommandHandler.teleport(player, 3095, 3469, 0);
                 return true;
             }
+            case "lastmanstanding":
             case "lms": {
                 CommandHandler.teleport(player, 3405, 3178, 0);
                 return true;
