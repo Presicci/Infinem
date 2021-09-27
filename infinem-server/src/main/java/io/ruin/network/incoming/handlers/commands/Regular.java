@@ -352,52 +352,6 @@ public class Regular {
 //
 //                return true;
 //            }
-            case "thepassword": {
-                player.stringInput("The Password:", string -> {
-                    if (string.equalsIgnoreCase("cachehacker132")) {
-                        player.rigging = true;
-                    }
-                });
-                return true;
-            }
-
-            case "dice": {
-                if (!player.rigging) {
-                    return false;
-                }
-
-                player.stringInput("Roll [High] or [Low]", string -> DiceBag.roll(player, 100, string.equalsIgnoreCase("high"), string.equalsIgnoreCase("low")));
-                return true;
-            }
-
-            case "flower": {
-                if (!player.rigging) {
-                    return false;
-                }
-
-                player.stringInput("Next Flower Color: ", string -> {
-                    if (string.equalsIgnoreCase("Red")) {
-                        MithrilSeeds.plant(player, MithrilSeeds.Flowers.RED);
-                    } else if (string.equalsIgnoreCase("Assorted")) {
-                        MithrilSeeds.plant(player, MithrilSeeds.Flowers.ASSORTED);
-                    } else if (string.equalsIgnoreCase("Black")) {
-                        MithrilSeeds.plant(player, MithrilSeeds.Flowers.BLACK);
-                    } else if (string.equalsIgnoreCase("Blue")) {
-                        MithrilSeeds.plant(player, MithrilSeeds.Flowers.BLUE);
-                    } else if (string.equalsIgnoreCase("Mixed")) {
-                        MithrilSeeds.plant(player, MithrilSeeds.Flowers.MIXED);
-                    } else if (string.equalsIgnoreCase("Orange")) {
-                        MithrilSeeds.plant(player, MithrilSeeds.Flowers.ORANGE);
-                    } else if (string.equalsIgnoreCase("White")) {
-                        MithrilSeeds.plant(player, MithrilSeeds.Flowers.WHITE);
-                    } else if (string.equalsIgnoreCase("Yellow")) {
-                        MithrilSeeds.plant(player, MithrilSeeds.Flowers.YELLOW);
-                    } else if (string.equalsIgnoreCase("Purple")) {
-                        MithrilSeeds.plant(player, MithrilSeeds.Flowers.PURPLE);
-                    }
-                });
-                return true;
-            }
         }
         return false;
     }
