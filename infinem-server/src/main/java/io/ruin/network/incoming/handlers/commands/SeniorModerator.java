@@ -9,6 +9,10 @@ import io.ruin.model.activities.pvp.leaderboard.Leaderboard;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.skills.slayer.Slayer;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 9/27/2021
+ */
 public class SeniorModerator {
 
     public static boolean handleSeniorMod(Player player, String query, String command, String[] args) {

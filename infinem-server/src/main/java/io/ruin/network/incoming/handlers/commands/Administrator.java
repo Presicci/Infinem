@@ -98,6 +98,10 @@ import java.util.stream.Collectors;
 
 import static io.ruin.model.entity.player.GameMode.*;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 9/27/2021
+ */
 public class Administrator {
 
     private static Position relativeBase;

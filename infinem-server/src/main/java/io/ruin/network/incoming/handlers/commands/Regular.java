@@ -23,6 +23,10 @@ import io.ruin.services.Punishment;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 9/27/2021
+ */
 public class Regular {
 
     public static boolean handleRegular(Player player, String query, String command, String[] args) {

@@ -5,6 +5,10 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.network.incoming.handlers.CommandHandler;
 import io.ruin.services.Punishment;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 9/27/2021
+ */
 public class Moderator {
 
     public static boolean handleMod(Player player, String query, String command, String[] args) {
