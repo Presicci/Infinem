@@ -12,6 +12,7 @@ import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
+import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.inter.journal.presets.PresetCustom;
 import io.ruin.model.item.actions.impl.DiceBag;
 import io.ruin.model.item.actions.impl.boxes.MithrilSeeds;
@@ -59,7 +60,12 @@ public class Regular {
 
             case "clear":
             case "empty": {
-                player.getInventory().clear();
+                player.dialogue(
+                        new YesNoDialogue("Are you sure you want to destroy everything in your inventory?",
+                                "This cannot be undone!", 13195, 1, () -> {
+                            player.getInventory().clear();
+                        })
+                );
                 return true;
             }
             /*
