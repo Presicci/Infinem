@@ -139,14 +139,6 @@ public class Regular {
                 player.sendMessage("There is currently " + players + " player" + (players > 1 ? "s" : "") + " online!");
                 return true;
             }
-            case "char": {
-                if (!player.getEquipment().isEmpty()) {
-                    player.dialogue(new MessageDialogue("Please remove what your equipment before doing that."));
-                    return true;
-                }
-                player.openInterface(InterfaceType.MAIN, Interface.MAKE_OVER_MAGE);
-                return true;
-            }
             case "heal": {
                 if (!player.isAdmin() && !player.isNearBank() && !player.getPosition().inBounds(CommandHandler.EDGEVILLE) || player.wildernessLevel > 0 || player.pvpAttackZone) {
                     player.dialogue(new MessageDialogue("You can only use this command near a bank or around Edgeville."));
