@@ -135,8 +135,9 @@ public class Regular {
             }
 
             case "players": {
-                player.sendMessage("There is currently " + World.players.count() + " players online!");
-                break;
+                int players = World.players.count();
+                player.sendMessage("There is currently " + players + " player" + (players > 1 ? "s" : "") + " online!");
+                return true;
             }
             case "char": {
                 if (!player.getEquipment().isEmpty()) {
