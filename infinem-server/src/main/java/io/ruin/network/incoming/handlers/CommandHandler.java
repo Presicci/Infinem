@@ -27,7 +27,7 @@ import io.ruin.model.item.containers.bank.BankItem;
 import io.ruin.model.map.*;
 import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.network.incoming.Incoming;
-import io.ruin.network.incoming.handlers.commands.Admin;
+import io.ruin.network.incoming.handlers.commands.Administrator;
 import io.ruin.network.incoming.handlers.commands.Moderator;
 import io.ruin.network.incoming.handlers.commands.Support;
 import io.ruin.services.Loggers;
@@ -74,7 +74,7 @@ public class CommandHandler implements Incoming {
         }
         try {
             command = command.toLowerCase();
-            if(Admin.handleAdmin(player, query, command, args))
+            if(Administrator.handleAdmin(player, query, command, args))
                 return;
             if(player.isLocked()) {
                 player.sendMessage("Please finish what you're doing first.");

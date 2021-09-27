@@ -98,7 +98,7 @@ import java.util.stream.Collectors;
 
 import static io.ruin.model.entity.player.GameMode.*;
 
-public class Admin {
+public class Administrator {
 
     private static Position relativeBase;
 
