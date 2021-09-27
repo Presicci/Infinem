@@ -64,10 +64,13 @@ public class Regular {
             /*
              * Teleport commands
              */
+            case "ev":
+            case "edgeville":
             case "edge": {
                 CommandHandler.teleport(player, 3085, 3492, 0);
                 return true;
             }
+
             case "home": {
                 CommandHandler.teleport(player, World.HOME);
                 return true;
