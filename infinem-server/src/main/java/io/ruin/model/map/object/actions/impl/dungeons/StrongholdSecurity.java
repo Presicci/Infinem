@@ -13,6 +13,10 @@ import io.ruin.model.item.containers.Inventory;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.Ladder;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 9/26/2021
+ */
 public class StrongholdSecurity {
 
     private static void teleportPlayer(Player player, int x, int y) {
