@@ -272,15 +272,6 @@ public class Regular {
                 return true;
             }
             /**
-             * Hidden commands
-             */
-            case "pure":
-            case "hybrid":
-            case "master": {
-                player.dialogue(new MessageDialogue("To select presets, go to your quest tab and click the red button."));
-                return true;
-            }
-            /**
              * Website commands
              */
             case "store": {
