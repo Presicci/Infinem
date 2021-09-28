@@ -327,12 +327,14 @@ public enum PickPocket {
                 player.privateSound(2581);
                 event.delay(1);
                 if (additionalRolls > 0) {
+                    boolean hasGottenPouch = false;
                     for (int index = additionalRolls + 1; index > 0; index--) {
                         List<Item> items = pickpocket.lootTable.rollItems(true);
                         for (Item item : items) {
                             //  Coin pouch handling
-                            if (item.getId() == 995 && pouchId != -1) {
+                            if (item.getId() == 995 && pouchId != -1 && !hasGottenPouch) {
                                 player.getInventory().addOrDrop(pouchId, 1);
+                                hasGottenPouch = true;  // Prevents getting multiple pouches per pickpocket
                             } else {
                                 player.getInventory().addOrDrop(item);
                             }
