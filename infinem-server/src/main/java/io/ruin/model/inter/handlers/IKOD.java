@@ -300,11 +300,6 @@ public class IKOD {
                     loseItems.add(item);
                     continue;
                 }
-                /* blood money pouches */
-                if (item.getId() >= 22521 && item.getId() <= 22524) {
-                    loseItems.add(item);
-                    continue;
-                }
             }
             
             /* pet */
