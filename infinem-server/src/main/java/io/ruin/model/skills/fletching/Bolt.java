@@ -42,6 +42,8 @@ public enum Bolt {
     /**
      * Other
      */
+    GRAPPLE_UNF(59, 11.0, 9142, 9416, 9418, 8476),
+    GRAPPLE(59, 0, 9418, 954, 9419, 8476),
     AMETHYST(76, 10.6, 11875, 21338, 21316, 8473);
 
     public final int levelRequirement;
@@ -68,11 +70,14 @@ public enum Bolt {
         player.getInventory().add(tipped, amount);
         player.getStats().addXp(StatType.Fletching, experience * amount, true);
         player.animate(emote);
-        if (amount == 1)
+        if (tipItem.getId() == 954)
+            player.sendFilteredMessage("You make a mithril grapple.");
+        else if (tipItem.getId() == 9416)
+            player.sendFilteredMessage("You make an unfinished mithril grapple.");
+        else if (amount == 1)
             player.sendFilteredMessage("You fletch a bolt.");
         else
             player.sendFilteredMessage("You fletch " + amount + " bolts");
-
     }
 
     static {
@@ -107,5 +112,4 @@ public enum Bolt {
             });
         }
     }
-
 }
