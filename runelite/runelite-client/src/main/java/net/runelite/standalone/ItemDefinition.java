@@ -1259,21 +1259,6 @@ public class ItemDefinition extends DualNode implements RSItemDefinition {
          zoom2d = bloodyKey.zoom2d;
       }
 
-      if(id == 22521 || id == 22522 || id == 22523 || id == 22524) {
-         String size = "";
-         if(id == 22521)
-            size = "(small)";
-         else if(id == 22522)
-            size = "(medium)";
-         else if(id == 22523)
-            size = "(large)";
-         else if(id == 22524)
-            size = "(giant)";
-         name = "Blood money pouch " + size;
-         recolorFrom = new short[]{6798};
-         recolorTo = new short[]{948};
-      }
-
       if(id == 2528) {
          name = "Skill Lamp";
       }
