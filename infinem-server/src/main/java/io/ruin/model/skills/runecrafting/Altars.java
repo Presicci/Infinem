@@ -8,6 +8,7 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.storage.EssencePouch;
@@ -402,6 +403,30 @@ public enum Altars {
                     altar.createTiara(player, altar);
                 }
             });
+            /**
+             * Talisman locating
+             */
+            if (altar.talisman != -1) {
+                ItemAction.registerInventory(altar.talisman, "locate", (player, item) -> {
+                    Position altarPos = altar.exitTile;
+                    Position playerPos = player.getPosition();
+                    StringBuilder sb = new StringBuilder();
+                    if (playerPos.getY() > altarPos.getY()) {
+                        sb.append("south-");
+                    }
+                    if (playerPos.getY() < altarPos.getY()) {
+                        sb.append("north-");
+                    }
+                    if (playerPos.getX() > altarPos.getX()) {
+                        sb.append("west");
+                    } else if (playerPos.getX() < altarPos.getX()) {
+                        sb.append("east");
+                    } else {
+                        sb.deleteCharAt(sb.length() - 1);
+                    }
+                    player.sendMessage("The talisman pulls towards the " + sb.toString() + ".");
+                });
+            }
         }
     }
 }
