@@ -24,7 +24,6 @@ public enum Stall {
                     {4706, 634},
                     {4708, 634},
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(1957, 1, 1),                    //Onion
                     new LootItem(1965, 1, 1),                    //Cabbage
@@ -39,7 +38,6 @@ public enum Stall {
                     { 11730, 634 },
                     { 6945, 6944 }
             },
-            new Item(22521, 1),
             new LootTable().addTable(1,
                     new LootItem(1891, 1, 3),                    //Cake
                     new LootItem(2309, 1, 1),                    //Bread
@@ -51,7 +49,6 @@ public enum Stall {
                     {4874, 4797},
                     {6166, 6984},
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(1755, 1, 1),                    //Chisel
                     new LootItem(1592, 1, 1),                    //Ring mould
@@ -62,7 +59,6 @@ public enum Stall {
             new int[][]{
                     {4875, 4797},
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(1963, 1, 1)                    //Banana
             )),
@@ -71,7 +67,6 @@ public enum Stall {
             new int[][]{
                     {4876, 4797},
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(1931, 1, 1),                    //Pot
                     new LootItem(2347, 1, 1),                    //Hammer
@@ -84,7 +79,6 @@ public enum Stall {
                     {6574, 6573},
                     {20350, 20349}
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(712, 1, 2)                     //Cup of tea
             )),
@@ -94,7 +88,6 @@ public enum Stall {
                     {6165, 6984},
                     {11729, 634},
             },
-            new Item(22522, 1),
             new LootTable().addTable(1,
                     new LootItem(950, 1, 1)                     //Silk
             )),
@@ -103,7 +96,6 @@ public enum Stall {
             new int[][]{
                     {14011, 634},
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(1937, 1, 2),                    //Jug of water
                     new LootItem(1993, 1, 1),                    //Jug of wine
@@ -116,7 +108,6 @@ public enum Stall {
             new int[][] {
                     { 28823, 6944 }
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(Items.COOKING_APPLE, 1, 40),
                     new LootItem(Items.BANANA, 1, 20),
@@ -135,7 +126,6 @@ public enum Stall {
             new int[][]{
                     {7053, 634},
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(5318, 3,9, 8),      //Potato seed
                     new LootItem(5096, 2, 8),                     //Marigold seed
@@ -161,7 +151,6 @@ public enum Stall {
                     {4278, 634},
                     {11732, 634},
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(958, 1, 1)                       //Grey wolf fur
             )),
@@ -172,7 +161,6 @@ public enum Stall {
                     {4705, 634},
                     {4707, 634},
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(331, 1,1, 4),                      //Raw salmon
                     new LootItem(359, 1,1, 3),                      //Raw tuna
@@ -183,7 +171,6 @@ public enum Stall {
             new int[][]{
                     {17031, 6984},
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(877, 6, 2),                        //Bronze bolts
                     new LootItem(9420, 1, 2),                       //Bronze limbs
@@ -195,7 +182,6 @@ public enum Stall {
                     {6164, 6984},
                     {11734, 634},
             },
-            new Item(22523, 1),
             new LootTable().addTable(1,
                     new LootItem(442, 1, 1)                      //Silver ore
             )),
@@ -206,7 +192,6 @@ public enum Stall {
                     {11733, 634},
                     {20348, 20349},
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(2007, 1, 2)                      //Spice
             )),
@@ -215,7 +200,6 @@ public enum Stall {
             new int[][]{
                     {4877, 4797},
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(556, 10, 5),                      //Air rune
                     new LootItem(557, 10, 5),                      //Earth rune
@@ -228,7 +212,6 @@ public enum Stall {
             new int[][]{
                     {4878, 4797},
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(1323, 1, 30),                      //Iron scimitar
                     new LootItem(1325, 1, 30)                      //Rune scimitar
@@ -239,7 +222,6 @@ public enum Stall {
                     {6162, 6984},
                     {11731, 634},
             },
-            new Item(22524, 1),
             new LootTable().addTable(1,
                     new LootItem(1623, 1, 10),                     //Uncut sapphire
                     new LootItem(1621, 1, 8),                      //Uncut emerald
@@ -251,7 +233,6 @@ public enum Stall {
             new int[][]{
                     {30280, 30278}
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(1623, 1, 10),                     //Uncut sapphire
                     new LootItem(1621, 1, 8),                      //Uncut emerald
@@ -263,7 +244,6 @@ public enum Stall {
             new int[][]{
                     {30279, 30278}
             },
-            null,
             new LootTable().addTable(1,
                     new LootItem(440, 1, 15),  //Iron ore
                     new LootItem(454, 2, 15),  //Coal
@@ -280,9 +260,8 @@ public enum Stall {
     public final String name;
     public final LootTable lootTable;
     public final PlayerCounter counter;
-    public final Item bloodMoneyReward;
 
-    Stall(int levelReq, int respawnTime, double experience, int petOdds, String name, PlayerCounter counter, int[][] objIDs, Item bloodMoneyReward, LootTable lootTable) {
+    Stall(int levelReq, int respawnTime, double experience, int petOdds, String name, PlayerCounter counter, int[][] objIDs, LootTable lootTable) {
         this.levelReq = levelReq;
         this.respawnTime = respawnTime * 1000 / 600;
         this.experience = experience;
@@ -290,7 +269,6 @@ public enum Stall {
         this.name = name;
         this.counter = counter;
         this.objIDs = objIDs;
-        this.bloodMoneyReward = bloodMoneyReward;
         this.lootTable = lootTable;
     }
 
