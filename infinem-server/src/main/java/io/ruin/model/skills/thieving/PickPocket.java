@@ -25,22 +25,26 @@ public enum PickPocket {
 
     MAN(1, 8.0, 422, 5, 1, "man's", PlayerCounter.PICKPOCKETED_MAN,
             257211,
+            22521,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 150, 450, 1)  //Coins
             )),
     WOMAN(1, 8.0, 422, 5, 1, "woman's", PlayerCounter.PICKPOCKETED_MAN,
             257211,
+            22521,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 150, 450, 1)  //Coins
             )),
     FARMER(10, 14.5, 433, 5, 1, "farmer's", PlayerCounter.PICKPOCKETED_FARMER,
             257211,
+            22522,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 200, 500, 6), //Coins
                     new LootItem(5318, 1, 1) //Potato seed
             )),
     HAM(15, 18.5, 433, 4, 1, "H.A.M member's", PlayerCounter.PICKPOCKETED_HAM_MEMBER,
             257211,
+            22523,
             new LootTable().addTable(1,
                     new LootItem(882, 16, 60), //Coins
                     new LootItem(1351, 1, 1), //Coins
@@ -78,11 +82,13 @@ public enum PickPocket {
             )),
     WARRIOR(25, 26.0, 386, 5, 2, "warrior's", PlayerCounter.PICKPOCKETED_WARRIOR,
             257211,
+            22524,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 350, 800, 1) //Coins
             )),
     ROGUE(32, 35.5, 422, 5, 2, "rogue's", PlayerCounter.PICKPOCKETED_ROGUE,
             257211,
+            22525,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 1500, 5000, 10), //Coins
                     new LootItem(556, 8, 5),  //Air runes
@@ -93,6 +99,7 @@ public enum PickPocket {
     //  TODO stunAnimation
     CAVE_GOBLIN(36, 40.0, -1, 5, 1, "goblin's", PlayerCounter.PICKPOCKETED_CAVE_GOBLIN,
             257211,
+            22526,
             new LootTable().addTable(1,
                     new LootItem(Items.BAT_SHISH, 1, 1),
                     new LootItem(Items.COATED_FROGS_LEGS, 1, 1),
@@ -111,6 +118,7 @@ public enum PickPocket {
             )),
     MASTER_FARMER(38, 43.0, 386, 5, 3, "master farmer's", PlayerCounter.PICKPOCKETED_MASTER_FARMER,
             257211,
+            -1,
             new LootTable().addTable(1,
                     new LootItem(5318, 1, 4, 8), //Potato seed
                     new LootItem(5319, 1, 3, 5), //Onion seed
@@ -140,11 +148,13 @@ public enum PickPocket {
             )),
     GUARD(40, 46.8, 386, 5, 2, "guard's", PlayerCounter.PICKPOCKETED_GUARD,
             257211,
+            22527,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 300, 900, 1) //Coins
             )),
     BANDIT(53, 79.5, 422, 5, 3, "bandit's", PlayerCounter.PICKPOCKETED_BANDIT,
             257211,
+            22530,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 300, 900, 8), //Coins
                     new LootItem(175, 1, 3),  //Antipoison
@@ -152,20 +162,24 @@ public enum PickPocket {
             )),
     KNIGHT(55, 84.3, 386, 5, 3, "knight's", PlayerCounter.PICKPOCKETED_KNIGHT,
             257211,
+            22531,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 400, 1000, 1) //Coins
             )),
     WATCHMAN(65, 137.5, 433, 5, 3, "watchman's", PlayerCounter.PICKPOCKETED_WATCHMAN,
             134625,
+            22533,
             new LootTable().guaranteedItems(new LootItem(995, 60, 1), new LootItem(Items.BREAD, 1, 1))),
     PALADIN(70, 151.75, 386, 5, 3, "paladin's", PlayerCounter.PICKPOCKETED_PALADIN,
             127056,
+            22535,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 500, 1500, 6), //Coins
                     new LootItem(562, 2, 3)   //Chaos runes
             )),
     GNOME(75, 198.5, 201, 5, 1, "gnome's", PlayerCounter.PICKPOCKETED_GNOME,
             108718,
+            22536,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 500, 1500, 16), //Coins
                     new LootItem(5321, 3, 8),   //Watermelon seed
@@ -193,6 +207,7 @@ public enum PickPocket {
             )),
     HERO(80, 275.0, 386, 6, 4, "hero's", PlayerCounter.PICKPOCKETED_HERO,
             99175,
+            22537,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 1000, 2000, 16),  //Coins
                     new LootItem(565, 1, 5),  //Blood rune
@@ -204,6 +219,7 @@ public enum PickPocket {
             )),
     VYRE(82, 306.9, -1, 6, 5, "vyre's", PlayerCounter.PICKPOCKETED_VYRE,
             99175,
+            24703,
             new LootTable().addTable(1,
                     new LootItem(995, 250, 315, 4129),
                     new LootItem(Items.DEATH_RUNE, 2, 303),
@@ -216,6 +232,7 @@ public enum PickPocket {
             )),
     ELF(85, 353.0, 422, 6, 5, "elf's", PlayerCounter.PICKPOCKETED_ELF,
             99175,
+            22538,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 1500, 2500, 16), //Coins
                     new LootItem(561, 3, 5),  //Nature runes
@@ -227,6 +244,7 @@ public enum PickPocket {
             )),
     TZHAAR_HUR(90, 103.0, 2609, 6, 4, "tzhaar-hur's", PlayerCounter.PICKPOCKETED_TZHAAR_HUR,
             176743,
+            -1,
             new LootTable().addTable(1,
                     new LootItem(1755, 1, 6),                    //Chisel
                     new LootItem(2347, 1, 5),                    //Hammer
@@ -238,13 +256,13 @@ public enum PickPocket {
                     new LootItem(1619, 1, 1)                     //Uncut Ruby
             ));
 
-    public final int levelReq, stunAnimation, stunSeconds, stunDamage, petOdds;
+    public final int levelReq, stunAnimation, stunSeconds, stunDamage, petOdds, pouchId;
     private final String name, identifier;
     public final double exp;
     public final LootTable lootTable;
     public final PlayerCounter counter;
 
-    PickPocket(int levelReq, double exp, int stunAnimation, int stunSeconds, int stunDamage, String identifier, PlayerCounter counter, int petOdds, LootTable lootTable) {
+    PickPocket(int levelReq, double exp, int stunAnimation, int stunSeconds, int stunDamage, String identifier, PlayerCounter counter, int petOdds, int pouchId, LootTable lootTable) {
         this.levelReq = levelReq;
         this.exp = exp;
         this.stunAnimation = stunAnimation;
@@ -254,6 +272,7 @@ public enum PickPocket {
         this.identifier = identifier;
         this.counter = counter;
         this.petOdds = petOdds;
+        this.pouchId = pouchId;
         this.lootTable = lootTable;
     }
 
@@ -271,6 +290,10 @@ public enum PickPocket {
         }
         if (BotPrevention.isBlocked(player)) {
             player.sendMessage("You can't pickpocket an NPC while a guard is watching you.");
+            return false;
+        }
+        if (player.getInventory().getAmount(pickpocket.pouchId) >= 28) {
+            player.sendMessage("You need to open your coin pouches before you pick any more pockets.");
             return false;
         }
         return true;
@@ -299,6 +322,7 @@ public enum PickPocket {
                     agilityLevel -= 10;
                     thievingLevel -= 10;
                 }
+                int pouchId = pickpocket.pouchId;
                 player.animate(881);
                 player.privateSound(2581);
                 event.delay(1);
@@ -306,7 +330,12 @@ public enum PickPocket {
                     for (int index = additionalRolls + 1; index > 0; index--) {
                         List<Item> items = pickpocket.lootTable.rollItems(true);
                         for (Item item : items) {
-                            player.getInventory().addOrDrop(item);
+                            //  Coin pouch handling
+                            if (item.getId() == 995 && pouchId != -1) {
+                                player.getInventory().addOrDrop(pouchId, 1);
+                            } else {
+                                player.getInventory().addOrDrop(item);
+                            }
                         }
                     }
                     player.sendFilteredMessage("You manage to pick the " + pickpocket.identifier + " pocket " + (additionalRolls + 1) + " times.");
@@ -314,7 +343,11 @@ public enum PickPocket {
                     player.sendFilteredMessage("You pick the " + pickpocket.identifier + " pocket.");
                     List<Item> items = pickpocket.lootTable.rollItems(true);
                     for (Item item : items) {
-                        player.getInventory().add(item);
+                        if (item.getId() == 995 && pouchId != -1) {
+                            player.getInventory().add(pouchId, 1);
+                        } else {
+                            player.getInventory().add(item);
+                        }
                     }
                 }
                 if (Random.rollDie(pickpocket.petOdds - (player.getStats().get(StatType.Thieving).currentLevel * 25)))
