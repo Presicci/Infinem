@@ -8,8 +8,9 @@ import io.ruin.network.central.CentralClient;
 import java.util.function.BiConsumer;
 
 public enum Broadcast {
-
+    // Sent to friends.
     FRIENDS(Icon.GREEN_INFO_BADGE, (player, message) -> CentralClient.sendGlobalMessage(player.getUserId(), message)),
+    // Sent to everyone in the world.
     WORLD(Icon.BLUE_INFO_BADGE, (player, message) -> World.players.forEach(p -> {
         //If the player has toggle off announcement broadcasts don't send.
         if (!p.broadcastAnnouncements && (message.contains("[Info]"))) {
@@ -27,11 +28,13 @@ public enum Broadcast {
         }
         p.sendMessage(message);
     })),
+    // Sent to everyone in the world and as a notification.
     WORLD_NOTIFICATION(Icon.BLUE_INFO_BADGE, (player, message) -> World.players.forEach(p -> {
         p.sendMessage(message);
         p.sendNotification(message);
     })),
     // 99 messages and 200m, use to filter
+    // Global broadcasts are sent to everyone in the game, and to discord.
     GLOBAL(Icon.YELLOW_INFO_BADGE, (player, message) -> CentralClient.sendGlobalMessage(-1, message));
 
     private final Icon newsIcon;
