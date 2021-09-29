@@ -1249,6 +1249,7 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int voteMysteryBoxReward;
 
     @Expose public int implingCaught = 0;
+    @Expose public int butterfliesCaught = 0;
 
     @Expose public boolean startedEggHunt = false;
 
