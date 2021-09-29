@@ -1,4 +1,4 @@
-package io.ruin.model.item.actions.impl.combine;
+package io.ruin.model.item.actions.impl.combine.smithing;
 
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
