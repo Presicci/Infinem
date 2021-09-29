@@ -64,7 +64,7 @@ public enum Butterfly {
             }
             if (isCatch(player, butterfly)) {
                 impJar.setId(butterfly.jarId);
-                npc.remove();
+                removeButterfly(npc);
                 player.getStats().addXp(StatType.Hunter, butterfly.experience, true);
                 PlayerCounter.BUTTERFLIES_CAUGHT.increment(player, 1);
                 player.unlock();
@@ -73,6 +73,15 @@ public enum Butterfly {
                 player.unlock();
                 recursiveAttemptCatch(player, npc, butterfly, impJar);
             }
+        });
+    }
+
+    private static void removeButterfly(NPC npc) {
+        npc.addEvent(event -> {
+            npc.setHidden(true);
+            event.delay(10);
+            npc.getMovement().teleport(npc.getSpawnPosition());
+            npc.setHidden(false);
         });
     }
 
