@@ -5,6 +5,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
@@ -45,5 +46,12 @@ public enum DraconicVisage {
             }
             player.unlock();
         });
+    }
+
+    static {
+        for (DraconicVisage shield : values()) {
+            ItemObjectAction.register(shield.primary, "anvil", (player, item, obj) -> shield.make(player));
+            ItemObjectAction.register(shield.secondary, "anvil", (player, item, obj) -> shield.make(player));
+        }
     }
 }
