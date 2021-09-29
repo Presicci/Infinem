@@ -129,34 +129,35 @@ public class StarterGuide {
 			boolean startTutorial = false;
 			if (actuallyNew) {
 			    player.dialogue(
-			            new NPCDialogue(guide, "Please select an experience mode.<br>" +
-                                "You can change this later, but only to an easier<br>" +
-                                "experience mode, not harder."),
+			            new NPCDialogue(guide, "Do you want to play in normal or PvP mode?<br>" +
+                                "PvP mode gets double the combat xp but can't compete<br>" +
+                                "on the hiscores and can't be an ironman."),
                         new OptionsDialogue(
-                                new Option("Easy - 100x Combat, 30x Skilling", () -> XpMode.setXpMode(player, XpMode.EASY)),
-                                new Option("Medium - 60x Combat, 30x Skilling", () -> XpMode.setXpMode(player, XpMode.MEDIUM)),
-                                new Option("Hard - 5x Combat, 5x Skilling - " + Color.RED.wrap("+10% Drop Chance!"), () -> XpMode.setXpMode(player, XpMode.HARD))
+                                new Option("Normal - 30x Combat, 15x Skilling", () -> XpMode.setXpMode(player, XpMode.NORMAL)),
+                                new Option("PvP - 60x Combat, 15x Skilling (CAN'T BE IRONMAN)", () -> XpMode.setXpMode(player, XpMode.PVP))
                         )
                 );
 			    event.waitForDialogue(player);
-				player.dialogue(
-				        new NPCDialogue(guide, "Before I let you go, let's talk about your game mode."),
-						new NPCDialogue(guide, "Do you want to see the options for Iron Man modes?"),
-						new OptionsDialogue("View Iron Man options?",
-                                new Option("Yes", () -> {
-							        GameMode.openSelection(player);
-							        player.unsafeDialogue(new MessageDialogue("Close the interface once you're happy with your selection." +
-                                        "<br><br><col=ff0000>WARNING:</col> This is the ONLY chance to choose your Iron Man mode.").hideContinue());
-						}), new Option("No", player::closeDialogue)));
-				event.waitForDialogue(player);
-				String text = "You want to be a part of the economy, then? Great!";
-				if (player.getGameMode() == GameMode.IRONMAN) {
-					text = "Iron Man, huh? Self-sufficiency is quite a challenge, good luck!";
-				} else if (player.getGameMode() == GameMode.HARDCORE_IRONMAN) {
-					text = "Hardcore?! You only live once... make it count!";
-				} else if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
-					text = "Ultimate Iron Man... Up for quite the challenge, aren't you?";
-				}
+			    if (player.xpMode.equals(XpMode.NORMAL)) {
+                    player.dialogue(
+                            new NPCDialogue(guide, "Before I let you go, let's talk about your game mode."),
+                            new NPCDialogue(guide, "Do you want to see the options for Iron Man modes?"),
+                            new OptionsDialogue("View Iron Man options?",
+                                    new Option("Yes", () -> {
+                                        GameMode.openSelection(player);
+                                        player.unsafeDialogue(new MessageDialogue("Close the interface once you're happy with your selection." +
+                                                "<br><br><col=ff0000>WARNING:</col> This is the ONLY chance to choose your Iron Man mode.").hideContinue());
+                                    }), new Option("No", player::closeDialogue)));
+                    event.waitForDialogue(player);
+                }
+                String text = "You want to be a part of the economy, then? Great!";
+                if (player.getGameMode() == GameMode.IRONMAN) {
+                    text = "Iron Man, huh? Self-sufficiency is quite a challenge, good luck!";
+                } else if (player.getGameMode() == GameMode.HARDCORE_IRONMAN) {
+                    text = "Hardcore?! You only live once... make it count!";
+                } else if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
+                    text = "Ultimate Iron Man... Up for quite the challenge, aren't you?";
+                }
 				if (player.getGameMode().isIronMan()) {
                     player.dialogue(new NPCDialogue(guide, text),
                     new NPCDialogue(guide, "I'll give you a few items to help get you started..."),
@@ -225,7 +226,7 @@ public class StarterGuide {
             player.getPacketSender().turnCameraToLocation(2010, 3577, 500, 0, 30);
             e.delay(1);
             player.dialogue(new NPCDialogue(guide,
-                    "This is Kronos bank. It houses the normal bank<br>" +
+                    "This is the bank. It houses the normal bank<br>" +
                             "amenities but also inside are the vote point and<br>" +
                             "donation managers."));
             e.waitForDialogue(player);
@@ -243,9 +244,9 @@ public class StarterGuide {
             player.getPacketSender().turnCameraToLocation(2032, 3571, 500, 0, 30);
             e.delay(1);
             player.dialogue(new NPCDialogue(guide,
-                    "Here is the construction portal. Kronos offers full<br>" +
-                            "construction! There are also NPC's here to sell you<br>" +
-                            "supplies to build your house and remodel it as well."));
+                    "Here is the construction portal. There are <br>" +
+                            "also NPC's here to sell you supplies to <br>" +
+                            "build your house and remodel it as well."));
             e.waitForDialogue(player);
 
             player.getMovement().teleport(2031, 3577, 0);
