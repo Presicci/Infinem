@@ -38,6 +38,8 @@ public class WyvernShield {
                 player.getInventory().remove(VISAGE, 1);
                 player.getInventory().add(FULL, 1);
                 player.getStats().addXp(StatType.Smithing, 2000, true);
+                player.getStats().addXp(StatType.Magic, 2000, true);
+                player.getStats().get(StatType.Magic).drain(99);    // Drain magic to 0
                 player.sendMessage("You forge the visage to the shield.");
             }
             player.unlock();
@@ -45,6 +47,7 @@ public class WyvernShield {
     }
 
     static {
+        //  TODO change to the strange machine in house on the hill
         ItemObjectAction.register(VISAGE, "anvil", (player, item, obj) -> make(player));
         ItemObjectAction.register(ELE_SHIELD, "anvil", (player, item, obj) -> make(player));
     }
