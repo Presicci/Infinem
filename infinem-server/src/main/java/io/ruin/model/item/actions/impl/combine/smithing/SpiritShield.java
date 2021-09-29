@@ -23,6 +23,10 @@ public class SpiritShield {
          * Holy spirit shield
          */
         ItemItemAction.register(HOLY_ELIXIR, SPIRIT_SHIELD, (player, primary, secondary) -> {
+            if(player.getStats().get(StatType.Prayer).currentLevel < 85) {
+                player.sendMessage("You need 85 prayer to bless the spirit shield.");
+                return;
+            }
             primary.remove();
             secondary.remove();
             player.getInventory().add(BLESSED_SPIRIT_SHIELD, 1);
