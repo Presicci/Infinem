@@ -44,6 +44,8 @@ public enum ItemCombining {
     DRAGON_FULL_HELM_G(11335, 12538, 12417, true),
     DRAGON_SQUARE_G(1187, 12532, 12418, true),
     DRAGON_BOOTS_G(11840, 22231, 22234, true),
+    DRAGON_PLATEBODY_G(22239, 21895, 22244, true),
+    DRAGON_KITESHIELD_G(22236, 21892, 22242, true),
     /**
      * Recolors
      */
