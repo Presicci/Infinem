@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl.combine.smithing;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.skills.Tool;
@@ -24,7 +25,7 @@ public class DragonSquare {
 
         Item hammer = player.getInventory().findItem(Tool.HAMMER);
         if(hammer == null) {
-            player.sendMessage("You need a hammer to forge the shields.");
+            player.dialogue(new MessageDialogue("You need a hammer to forge the shield halves."));
             return;
         }
 
