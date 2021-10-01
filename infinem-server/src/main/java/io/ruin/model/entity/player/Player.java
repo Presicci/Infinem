@@ -1530,31 +1530,6 @@ public class Player extends PlayerAttributes {
                 Config.STAMINA_POTION.set(this, 0);
             }
         }
-        if (dragonAxeSpecial > 0) { // really need a better system to handle things like this :)
-            --dragonAxeSpecial;
-            if (dragonAxeSpecial == 0) {
-                player.sendMessage("<col=ff0000>Your woodcutting buff has expired.</col>");
-            }
-        }
-        if (infernalAxeSpecial > 0) {
-            --infernalAxeSpecial;
-            if (infernalAxeSpecial == 0) {
-                player.sendMessage("<col=ff0000>Your infernal woodcutting buff has expired.</col>");
-            }
-        }
-
-        if (dragonPickaxeSpecial > 0) { // really need a better system to handle things like this :)
-            --dragonPickaxeSpecial;
-            if (dragonPickaxeSpecial == 0) {
-                player.sendMessage("<col=ff0000>Your mining buff has expired.</col>");
-            }
-        }
-        if (infernalPickaxeSpecial > 0) {
-            --infernalPickaxeSpecial;
-            if (infernalPickaxeSpecial == 0) {
-                player.sendMessage("<col=ff0000>Your infernal mining buff has expired.</col>");
-            }
-        }
 
         if (lastTimeKilledDonatorBoss > 0) {
             if (System.currentTimeMillis() >= lastTimeKilledDonatorBoss + 86400000) {

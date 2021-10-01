@@ -21,7 +21,6 @@ public class InfernalAxeSpecial implements Special {
         player.graphics(479, 100, 0);
         player.forceText("Burn it down!");
         player.getStats().get(StatType.Woodcutting).boost(3, 0);
-        player.infernalAxeSpecial = 200;
         return true;
     }
 

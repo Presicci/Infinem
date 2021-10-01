@@ -21,7 +21,6 @@ public class InfernalPickaxeSpecial implements Special {
         player.graphics(479);
         player.forceText("Burning!");
         player.getStats().get(StatType.Mining).boost(3, 0);
-        player.infernalAxeSpecial = 200;
         return true;
     }
 

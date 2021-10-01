@@ -21,7 +21,6 @@ public class DragonAxeSpecial implements Special {
         player.graphics(479, 100, 0);
         player.forceText("Chop chop!");
         player.getStats().get(StatType.Woodcutting).boost(3, 0);
-        player.dragonAxeSpecial = 200;
         return true;
     }
 

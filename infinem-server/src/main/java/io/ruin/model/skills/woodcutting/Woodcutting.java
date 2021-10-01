@@ -88,7 +88,7 @@ public class Woodcutting {
                     event.delay(1);
                 }
                 if (attempts % 4 == 0 && successfullyCutTree(effectiveLevel, treeData, hatchet)) {
-                    if (hatchet == Hatchet.INFERNAL && (Random.rollDie(3, 1) || player.infernalAxeSpecial > 0)) {
+                    if (hatchet == Hatchet.INFERNAL && (Random.rollDie(3, 1))) {
                         Burning burning = Burning.get(treeData.log);
                         if (burning != null) {
                             player.sendFilteredMessage("The infernal axe incinerates some logs.");
@@ -111,17 +111,10 @@ public class Woodcutting {
                         player.sendFilteredMessage("A bird's nest falls out of the tree.");
                         PlayerCounter.ACQUIRED_BIRDS_NESTS.increment(player, 1);
                     }
-                    if (player.dragonAxeSpecial > 0 && Random.rollPercent(50)) {
-                        player.sendFilteredMessage("Your axe's buff allows you to chop some additional logs!");
-                        player.getInventory().add(treeData.log, 1);
-                        player.getStats().addXp(StatType.Woodcutting, treeData.experience / 2.0, true);
-                    }
                     if (Random.rollDie(treeData.petOdds - (player.getStats().get(StatType.Woodcutting).currentLevel * 25)))
                         Pet.BEAVER.unlock(player);
                     treeData.counter.increment(player, 1);
                     double xp = treeData.experience;
-                    if (player.infernalAxeSpecial > 0)
-                        xp *= 1.1;
                     player.getStats().addXp(StatType.Woodcutting, xp, true);
                     if (treeData.single || Random.get(10) == 3) {
                         player.resetAnimation();

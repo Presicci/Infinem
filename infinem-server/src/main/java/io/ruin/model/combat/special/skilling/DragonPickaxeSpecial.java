@@ -22,7 +22,6 @@ public class DragonPickaxeSpecial implements Special {
         player.graphics(479);
         player.forceText("Smashing!");
         player.getStats().get(StatType.Mining).boost(3, 0);
-        player.dragonPickaxeSpecial = 200;
         return true;
     }
 

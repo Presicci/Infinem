@@ -140,10 +140,6 @@ public enum ShootingStar {
                     int stardustQuantity = Random.rollPercent(currentStar.doubleDustChance) ? 2 : 1;
                     player.collectResource(new Item(STARDUST, stardustQuantity));
                     player.getInventory().add(STARDUST, stardustQuantity);
-                    if (player.dragonPickaxeSpecial > 0 && Random.rollPercent(50)) {
-                        player.getInventory().add(STARDUST, 1);
-                        player.sendFilteredMessage("Your pickaxe's buff allows you to mine an additional stardust!");
-                    }
                     if (Random.rollDie(currentStar.petOdds - (player.getStats().get(StatType.Mining).currentLevel * 25)))
                         Pet.ROCK_GOLEM.unlock(player);
                     /* Rolling for a Geode clue scroll */

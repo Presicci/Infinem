@@ -97,7 +97,7 @@ public class Mining {
                     player.animate(miningAnimation);
                     attempts++;
                 } else if (attempts % 2 == 0 && Random.get(100) <= chance(getEffectiveLevel(player), rockData, pickaxe)) {
-                    if (pickaxe == Pickaxe.INFERNAL && (player.infernalPickaxeSpecial > 0 || Random.rollDie(3, 1))) {//TODO: change back to bar smelting when charge consuming is added
+                    if (pickaxe == Pickaxe.INFERNAL && Random.rollDie(3, 1)) {//TODO: change back to bar smelting when charge consuming is added
                         player.graphics(580, 155, 0);
                         addBar(player, rockData.ore);
                         //TODO: Get the proper message and take away charge
@@ -112,10 +112,7 @@ public class Mining {
                         player.collectResource(new Item(id, 1));
                         player.getInventory().add(id, 1);
 
-                        if (player.dragonPickaxeSpecial > 0 && Random.rollPercent(50)) {
-                            player.getInventory().add(id, 1);
-                            player.sendFilteredMessage("Your pickaxe's buff allows you to mine an additional ore!");
-                        } else if (MiningSkillCape.wearsMiningCape(player)
+                        if (MiningSkillCape.wearsMiningCape(player)
                                 && rockData.ordinal() <= Rock.ADAMANT.ordinal()
                                 && Random.rollPercent(5)) {
                             player.getInventory().add(id, 1);
@@ -244,8 +241,6 @@ public class Mining {
     public static double xpBonus(Player player, Boolean multiple) {
         double multiplier = 1;
         multiplier *= prospectorBonus(player);
-        if (player.infernalPickaxeSpecial > 0)
-            multiplier *= 1.1;
         if (multiple)
             multiplier *= 2;
         return multiplier;

@@ -766,14 +766,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public boolean enteredAbyss;
     @Expose public int abyssCreaturesKilled;
 
-    /**
-     * Spec effect
-     */
-    @Expose public int dragonAxeSpecial;
-    @Expose public int infernalAxeSpecial;
-    @Expose public int dragonPickaxeSpecial;
-    @Expose public int infernalPickaxeSpecial;
-
     @Expose public boolean morytaniaFarmAchievement;
 
     public OptionScroll optionScroll;
