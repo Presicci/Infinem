@@ -84,6 +84,7 @@ public enum PlayerCounter {
     MINED_GRANITE((p, amt) -> p.minedGranite = amt, p -> p.minedGranite),
     MINED_GEM_ROCK((p, amt) -> p.minedGemRock = amt, p -> p.minedGemRock),
     MINED_CORRUPT((p, amt) -> p.minedCorrupt = amt, p -> p.minedCorrupt),
+    MINED_STARDUST((p, amt) -> p.minedStardust = amt, p -> p.minedStardust),
 
     /**
      * Smithing

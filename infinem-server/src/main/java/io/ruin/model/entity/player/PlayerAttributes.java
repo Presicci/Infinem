@@ -147,6 +147,7 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int minedGranite;
     @Expose public int minedGemRock;
     @Expose public int minedCorrupt;
+    @Expose public int minedStardust;
 
     /**
      * Woodcutting
@@ -1319,4 +1320,6 @@ public abstract class PlayerAttributes extends Entity {
 
     /*  Stronghold of Security  */
     @Expose public boolean[] strongholdRewards = { false, false, false, false };
+
+    @Expose public int shootingStarsFound;
 }
