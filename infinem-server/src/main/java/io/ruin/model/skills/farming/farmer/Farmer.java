@@ -189,7 +189,7 @@ public enum Farmer {
             //});
             if (farmer.patch1 != null) {
                 NPCAction.register(farmer.npcId, 3, (player, npc) -> {
-                    if (farmer.npcId == 8535) {
+                    if (farmer.npcId == 8535) { // Farming guild east wing farmer
                         player.dialogue(new OptionsDialogue("Which patch would you like me to watch?",
                                 new Option("North Allotment", p -> attemptPayment(p, npc, farmer.patch1)),
                                 new Option("South Allotment", p -> attemptPayment(p, npc, farmer.patch2)),
