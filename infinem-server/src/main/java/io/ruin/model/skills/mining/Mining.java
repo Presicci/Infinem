@@ -90,6 +90,7 @@ public class Mining {
                 }
 
                 Item gem = null;
+                Boolean multiple = false;
                 final int miningAnimation = rockData == Rock.AMETHYST ? pickaxe.crystalAnimationID : pickaxe.regularAnimationID;
                 if(attempts == 0) {
                     player.sendFilteredMessage("You swing your pick at the rock.");
@@ -119,6 +120,7 @@ public class Mining {
                                 && Random.rollPercent(5)) {
                             player.getInventory().add(id, 1);
                             player.sendFilteredMessage("You manage to mine an additional ore.");
+                            multiple = true;
                         }
                     }
 
@@ -137,12 +139,12 @@ public class Mining {
 
                     counter.increment(player, 1);
                     if(rockData == Rock.GEM_ROCK) {
-                        player.getStats().addXp(StatType.Mining, rockData.experience * xpBonus(player), true);
+                        player.getStats().addXp(StatType.Mining, rockData.experience * xpBonus(player, false), true);
                     } else if (gem != null) {   // No xp is earned and the ore is not depleted, just go next
                         player.sendFilteredMessage("You find an " + gem.getDef().name + ".");
                         continue;
                     } else {
-                        player.getStats().addXp(StatType.Mining, rockyOutcrop ? rockData.multiExp[random] : rockData.experience * xpBonus(player), true);
+                        player.getStats().addXp(StatType.Mining, rockyOutcrop ? rockData.multiExp[random] : rockData.experience * xpBonus(player, multiple), true);
                     }
                     player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
                             (rockData == Rock.GEM_ROCK ? ItemDef.get(itemId).name.toLowerCase() : rockData.rockName) + ".");
@@ -239,11 +241,13 @@ public class Mining {
         });
     }
 
-    public static double xpBonus(Player player) {
+    public static double xpBonus(Player player, Boolean multiple) {
         double multiplier = 1;
         multiplier *= prospectorBonus(player);
         if (player.infernalPickaxeSpecial > 0)
             multiplier *= 1.1;
+        if (multiple)
+            multiplier *= 2;
         return multiplier;
     }
 
