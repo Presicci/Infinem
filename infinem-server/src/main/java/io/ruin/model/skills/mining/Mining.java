@@ -114,7 +114,9 @@ public class Mining {
                         if (player.dragonPickaxeSpecial > 0 && Random.rollPercent(50)) {
                             player.getInventory().add(id, 1);
                             player.sendFilteredMessage("Your pickaxe's buff allows you to mine an additional ore!");
-                        } else if (MiningSkillCape.wearsMiningCape(player) && Random.rollPercent(5)) {
+                        } else if (MiningSkillCape.wearsMiningCape(player)
+                                && rockData.ordinal() <= Rock.ADAMANT.ordinal()
+                                && Random.rollPercent(5)) {
                             player.getInventory().add(id, 1);
                             player.sendFilteredMessage("You manage to mine an additional ore.");
                         }
