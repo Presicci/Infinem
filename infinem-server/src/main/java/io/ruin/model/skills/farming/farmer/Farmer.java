@@ -71,10 +71,10 @@ public enum Farmer {
         this(npcId, patch1, null);
     }
 
-    private int npcId;
+    private final int npcId;
 
-    private PatchData patch1;
-    private PatchData patch2;
+    private final PatchData patch1;
+    private final PatchData patch2;
 
     public static void attemptPayment(Player player, NPC npc, PatchData pd) {
         Patch patch = player.getFarming().getPatch(pd.getObjectId());
@@ -202,9 +202,7 @@ public enum Farmer {
                 });
             }
             if (farmer.patch2 != null) {
-                NPCAction.register(farmer.npcId, 4, (player, npc) -> {
-                    attemptPayment(player, npc, farmer.patch2);
-                });
+                NPCAction.register(farmer.npcId, 4, (player, npc) -> attemptPayment(player, npc, farmer.patch2));
             }
         }
     }
