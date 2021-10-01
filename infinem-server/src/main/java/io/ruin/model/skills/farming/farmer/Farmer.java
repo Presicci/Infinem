@@ -10,8 +10,10 @@ import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
+import io.ruin.model.skills.farming.crop.impl.WoodTreeCrop;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.farming.patch.PatchData;
+import io.ruin.model.skills.farming.patch.impl.WoodTreePatch;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
@@ -117,6 +119,34 @@ public enum Farmer {
         player.getInventory().remove(id, payment.getAmount());
         patch.setFarmerProtected(true);
         player.dialogue(new NPCDialogue(npc, "That'll do nicely, sir. Leave it with me - I'll make sure that patch grows for you."));
+    }
+
+    private static void attemptClearTreePatch(Player player, NPC npc, PatchData pd) {
+        Patch patch = player.getFarming().getPatch(pd.getObjectId());
+        if (patch == null) {
+            throw new IllegalArgumentException();
+        }
+        //  Nothing planted
+        if (patch.getPlantedCrop() == null) {
+            return;
+        }
+        //  Not a wood tree patch
+        if (!(patch instanceof WoodTreePatch)) {
+            return;
+        }
+        //  If tree isn't fully grown
+        if (patch.getStage() < patch.getPlantedCrop().getTotalStages()) {
+            player.dialogue(new NPCDialogue(npc, "The tree is just a baby, no way I am going to uproot it!"));
+        }
+        //  If tree hasn't been checked yet
+        if (patch.getStage() == patch.getPlantedCrop().getTotalStages()) {
+            player.dialogue(new NPCDialogue(npc, "You should check your fully grown tree before you try removing it!"));
+        }
+        if (patch.getStage() >= patch.getPlantedCrop().getTotalStages() + 1) {
+            //TODO check if tree needs to be just be a root or it can also be fully grown and checked
+            patch.reset(false);
+            player.dialogue(new NPCDialogue(npc, "There you go, I've cleared the patch for you."));
+        }
     }
 
     private static String getItemName(Item item) {
