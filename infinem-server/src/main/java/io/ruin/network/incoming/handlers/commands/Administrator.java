@@ -79,6 +79,7 @@ import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.mining.Mining;
 import io.ruin.model.skills.mining.Pickaxe;
 import io.ruin.model.skills.mining.Rock;
+import io.ruin.model.skills.mining.ShootingStar;
 import io.ruin.model.skills.slayer.SlayerTask;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -139,6 +140,12 @@ public class Administrator {
                 int id = Integer.parseInt(args[0]);
                 int level = Integer.parseInt(args[1]);
                 player.getStats().set(StatType.values()[id], level);
+                return true;
+            }
+            case "spawnstar": {
+                ShootingStar.spawnStar();
+                Position pos = ShootingStar.starObject.getPosition();
+                player.sendMessage("Spawned star at: x:" + pos.getX() + " y:" + pos.getY() + " z:" + pos.getZ());
                 return true;
             }
             case "seedpack": {
