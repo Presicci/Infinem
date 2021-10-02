@@ -7,7 +7,6 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.Geode;
-import io.ruin.model.item.actions.impl.skillcapes.MiningSkillCape;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
@@ -16,6 +15,8 @@ import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+
+import java.text.DecimalFormat;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -42,13 +43,13 @@ public enum ShootingStar {
     private static final int SPAWN_TICKS = 6000;
     private static StarLocation starLocation = getLocation();
     private static ShootingStar activeStar = null;
-    private static GameObject starObject = null;
+    public static GameObject starObject = null;
     private static boolean found = false;
     private static int stardustLeft;
 
-    private static void spawnStar() {
+    public static void spawnStar() {
         found = false;
-        if (starObject != null) {
+        if (starObject != null && !starObject.isRemoved()) {
             despawnStar();
         }
         int roll = Random.get(100);
@@ -64,6 +65,7 @@ public enum ShootingStar {
         }
         Position spawnPos = starLocation.positions[starLocation.positions.length - 1];
         starObject = new GameObject(star.starId, spawnPos, 10, 0);
+        starObject.spawn();
         stardustLeft = star.stardust;
         activeStar = star;
         starLocation = getLocation();
@@ -88,10 +90,6 @@ public enum ShootingStar {
     }
 
     private static void mine(final ShootingStar star, Player player, GameObject starObject) {
-        if (starObject.isRemoved()) {
-            player.resetAnimation();
-            return;
-        }
         if (!found) {
             found = true;
             player.dialogue(new MessageDialogue("Congratulations! You were the first person to find this star!"));
@@ -121,10 +119,13 @@ public enum ShootingStar {
             int attempts = 0;
             ShootingStar currentStar = star;
             while (true) {
-                if (starObject.id == currentStar.starId) {
+                if (starObject.isRemoved()) {
+                    player.resetAnimation();
+                    return;
+                }
+                if (starObject.id != currentStar.starId) {
                     currentStar = activeStar;
                 }
-
                 if(!player.getInventory().hasRoomFor(STARDUST)) {
                     player.resetAnimation();
                     player.privateSound(2277);
@@ -150,7 +151,7 @@ public enum ShootingStar {
                     PlayerCounter.MINED_STARDUST.increment(player, 1);
                     player.getStats().addXp(StatType.Mining, currentStar.experience, true);
                     if (--stardustLeft <= 0) {
-
+                        nextTier();
                     }
                     player.sendFilteredMessage("You manage to mine some stardust.");
                 }
@@ -166,18 +167,18 @@ public enum ShootingStar {
     private static void prospect(Player player, ShootingStar star) {
         player.dialogue(new MessageDialogue("This is a size-" + (star.getLevelRequirement() / 10) + " star. A Mining level of at least "
                 + star.getLevelRequirement() + " is required to mine this layer. It has been mined "
-                + (double)(stardustLeft/star.stardust) * 100 + "% of the way to the next layer"));
+                +  new DecimalFormat("#.##").format((double)(star.stardust - stardustLeft)/star.stardust * 100) + "% of the way to the next layer"));
     }
 
     private static double chance(int level, ShootingStar star, Pickaxe pickaxe) {
         double points = ((level - star.getLevelRequirement()) + 1 + (double) pickaxe.points);
-        double denominator = (double) 150;
+        double denominator = (double) 350;
         return (Math.min(0.80, points / denominator) * 100);
     }
 
     @Getter
     public enum StarLocation {
-        ASGARNIA(new Position(3018, 3443, 1));
+        ASGARNIA(new Position(3018, 3443, 0));
 
         private final Position[] positions;
 
