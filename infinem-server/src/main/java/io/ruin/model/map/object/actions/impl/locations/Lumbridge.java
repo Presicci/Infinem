@@ -16,13 +16,13 @@ public class Lumbridge {
         /**
          * Staircases
          */
-        Stairs.registerStair(16671, new Position(3204, 3207, 0));
-        Stairs.registerStair(16672, new Position(3204, 3207, 1));
-        Stairs.registerStair(16673, new Position(3205, 3208, 2));
+        Stairs.registerSpiralStair(16671, new Position(3204, 3207, 0));
+        Stairs.registerSpiralStair(16672, new Position(3204, 3207, 1));
+        Stairs.registerSpiralStair(16673, new Position(3205, 3208, 2));
 
-        Stairs.registerStair(16671, new Position(3204, 3229, 0));
-        Stairs.registerStair(16672, new Position(3204, 3229, 1));
-        Stairs.registerStair(16673, new Position(3205, 3229, 2));
+        Stairs.registerSpiralStair(16671, new Position(3204, 3229, 0));
+        Stairs.registerSpiralStair(16672, new Position(3204, 3229, 1));
+        Stairs.registerSpiralStair(16673, new Position(3205, 3229, 2));
 
         // Castle cellar
         ObjectAction.register(17385, 3209, 9616, 0, "climb-up", (player, obj) -> Ladder.climb(player, 3210, 3216, 0, true, true, false));
