@@ -1,4 +1,4 @@
-package io.ruin.model.map.object.actions.impl;
+package io.ruin.model.map.object.actions.impl.transportation;
 
 import io.ruin.data.impl.teleports;
 import io.ruin.model.entity.player.Player;

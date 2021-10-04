@@ -9,8 +9,8 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.map.object.actions.impl.FairyRing;
-import io.ruin.model.map.object.actions.impl.SpiritTree;
+import io.ruin.model.map.object.actions.impl.transportation.FairyRing;
+import io.ruin.model.map.object.actions.impl.transportation.SpiritTree;
 import io.ruin.model.skills.construction.Buildable;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -18,7 +18,7 @@ import io.ruin.model.stat.StatType;
 import java.util.Arrays;
 import java.util.List;
 
-import static io.ruin.model.map.object.actions.impl.FairyRing.ZANARIS;
+import static io.ruin.model.map.object.actions.impl.transportation.FairyRing.ZANARIS;
 import static io.ruin.model.skills.construction.Buildable.*;
 
 public class SuperiorGarden {

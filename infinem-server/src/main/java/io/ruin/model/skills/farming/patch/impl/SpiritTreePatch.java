@@ -2,7 +2,7 @@ package io.ruin.model.skills.farming.patch.impl;
 
 import io.ruin.model.item.Item;
 import io.ruin.model.map.Position;
-import io.ruin.model.map.object.actions.impl.SpiritTree;
+import io.ruin.model.map.object.actions.impl.transportation.SpiritTree;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.SpiritTreeCrop;
 import io.ruin.model.skills.farming.patch.Patch;
