@@ -1,10 +1,11 @@
-package io.ruin.model.map.object.actions.impl;
+package io.ruin.model.map.object.actions.impl.locations;
 
 import io.ruin.model.combat.Hit;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.map.object.actions.impl.Ladder;
 import io.ruin.model.stat.StatType;
 
 public class SlayerTower {

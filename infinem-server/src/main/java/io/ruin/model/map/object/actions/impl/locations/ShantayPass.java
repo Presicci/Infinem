@@ -1,4 +1,4 @@
-package io.ruin.model.map.object.actions.impl;
+package io.ruin.model.map.object.actions.impl.locations;
 
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.object.actions.ObjectAction;
