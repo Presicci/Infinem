@@ -1,7 +1,13 @@
 package io.ruin.model.item.actions.impl.combine.smithing;
 
+import io.ruin.cache.ItemDef;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.NPCDialogue;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.dialogue.PlayerDialogue;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.ItemObjectAction;
@@ -47,6 +53,39 @@ public class SpiritShield {
             item.setId(item.getId() == DIVINE_SIGIL ? 30191 : item.getId() - 2);
             player.unlock();
         });
+    }
+
+    private static void attachSigilNPC(Player player, NPC npc, Item sigil) {
+        int shieldId = sigil.getId() == DIVINE_SIGIL ? 30191 : sigil.getId() - 2;
+        player.dialogue(
+                new NPCDialogue(npc.getId(), "Would you like me to make " + ItemDef.get(shieldId).descriptiveName
+                        + " for you? It is a lot of work and would cost you 1,500,000 coins."),
+                new OptionsDialogue(
+                        new Option("Yes! (pay 1,500,000 coins)", () -> {
+                            if (player.getInventory().getAmount(995) < 1500000) {
+                                player.dialogue(new NPCDialogue(npc.getId(), "It appears you do not have enough money to pay me for my work."));
+                                return;
+                            } else {
+                                if (player.getInventory().hasId(sigil.getId()) && player.getInventory().hasId(BLESSED_SPIRIT_SHIELD)) {
+                                    player.getInventory().remove(sigil.getId(), 1);
+                                    player.getInventory().remove(BLESSED_SPIRIT_SHIELD, 1);
+                                    player.getInventory().remove(995, 1500000);
+                                    player.getInventory().add(shieldId);
+                                    player.dialogue(
+                                            new ItemDialogue().one(shieldId, "Abbot Langley carefully attaches the sigil to the spirit shield.."),
+                                            new NPCDialogue(npc.getId(), "There you go adventurer, may it serve you well in battle."),
+                                            new PlayerDialogue("Thank you!"));
+
+                                } else {
+                                    player.dialogue(
+                                            new NPCDialogue(npc.getId(), "You do not have all the parts that are required to make the shield, come back when you do.")
+                                    );
+                                }
+                            }
+                        }),
+                        new Option("Nope.")
+                )
+        );
     }
 
     static {
