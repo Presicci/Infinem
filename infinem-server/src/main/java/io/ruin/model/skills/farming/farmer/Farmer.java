@@ -10,8 +10,10 @@ import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
+import io.ruin.model.skills.farming.crop.impl.WoodTreeCrop;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.farming.patch.PatchData;
+import io.ruin.model.skills.farming.patch.impl.WoodTreePatch;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
@@ -69,10 +71,10 @@ public enum Farmer {
         this(npcId, patch1, null);
     }
 
-    private int npcId;
+    private final int npcId;
 
-    private PatchData patch1;
-    private PatchData patch2;
+    private final PatchData patch1;
+    private final PatchData patch2;
 
     public static void attemptPayment(Player player, NPC npc, PatchData pd) {
         Patch patch = player.getFarming().getPatch(pd.getObjectId());
@@ -119,6 +121,34 @@ public enum Farmer {
         player.dialogue(new NPCDialogue(npc, "That'll do nicely, sir. Leave it with me - I'll make sure that patch grows for you."));
     }
 
+    private static void attemptClearTreePatch(Player player, NPC npc, PatchData pd) {
+        Patch patch = player.getFarming().getPatch(pd.getObjectId());
+        if (patch == null) {
+            throw new IllegalArgumentException();
+        }
+        //  Nothing planted
+        if (patch.getPlantedCrop() == null) {
+            return;
+        }
+        //  Not a wood tree patch
+        if (!(patch instanceof WoodTreePatch)) {
+            return;
+        }
+        //  If tree isn't fully grown
+        if (patch.getStage() < patch.getPlantedCrop().getTotalStages()) {
+            player.dialogue(new NPCDialogue(npc, "The tree is just a baby, no way I am going to uproot it!"));
+        }
+        //  If tree hasn't been checked yet
+        if (patch.getStage() == patch.getPlantedCrop().getTotalStages()) {
+            player.dialogue(new NPCDialogue(npc, "You should check your fully grown tree before you try removing it!"));
+        }
+        if (patch.getStage() >= patch.getPlantedCrop().getTotalStages() + 1) {
+            //TODO check if tree needs to be just be a root or it can also be fully grown and checked
+            patch.reset(false);
+            player.dialogue(new NPCDialogue(npc, "There you go, I've cleared the patch for you."));
+        }
+    }
+
     private static String getItemName(Item item) {
         String str = "";
         ItemDef def = item.getDef();
@@ -159,7 +189,7 @@ public enum Farmer {
             //});
             if (farmer.patch1 != null) {
                 NPCAction.register(farmer.npcId, 3, (player, npc) -> {
-                    if (farmer.npcId == 8535) {
+                    if (farmer.npcId == 8535) { // Farming guild east wing farmer
                         player.dialogue(new OptionsDialogue("Which patch would you like me to watch?",
                                 new Option("North Allotment", p -> attemptPayment(p, npc, farmer.patch1)),
                                 new Option("South Allotment", p -> attemptPayment(p, npc, farmer.patch2)),
@@ -172,9 +202,7 @@ public enum Farmer {
                 });
             }
             if (farmer.patch2 != null) {
-                NPCAction.register(farmer.npcId, 4, (player, npc) -> {
-                    attemptPayment(player, npc, farmer.patch2);
-                });
+                NPCAction.register(farmer.npcId, 4, (player, npc) -> attemptPayment(player, npc, farmer.patch2));
             }
         }
     }
