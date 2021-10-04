@@ -3,6 +3,7 @@ package io.ruin.model.map.object.actions.impl;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -13,22 +14,22 @@ import io.ruin.model.map.object.actions.ObjectAction;
 public class Stairs {
 
     public static void registerSpiralStair(int objectId, Position position) {
-        ObjectAction.register(objectId, position.getX(), position.getY(), position.getZ(), "climb-up", (player, obj) -> climbUp(player));
-        ObjectAction.register(objectId, position.getX(), position.getY(), position.getZ(), "climb-down", (player, obj) -> climbDown(player));
+        ObjectAction.register(objectId, position.getX(), position.getY(), position.getZ(), "climb-up", (player, obj) -> climbUpSpiral(player));
+        ObjectAction.register(objectId, position.getX(), position.getY(), position.getZ(), "climb-down", (player, obj) -> climbDownSpiral(player));
         ObjectAction.register(objectId, position.getX(), position.getY(), position.getZ(), "climb", (player, obj) -> {
             player.dialogue(
                     new OptionsDialogue("Climb up or down the stairs?",
-                            new Option("Climb up the stairs.", () -> climbUp(player)),
-                            new Option("Climb down the stairs.", () -> climbDown(player))
+                            new Option("Climb up the stairs.", () -> climbUpSpiral(player)),
+                            new Option("Climb down the stairs.", () -> climbDownSpiral(player))
                     ));
         });
     }
 
-    private static void climbUp(Player player) {
+    private static void climbUpSpiral(Player player) {
         player.getMovement().teleport(player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ() + 1);
     }
 
-    private static void climbDown(Player player) {
+    private static void climbDownSpiral(Player player) {
         player.getMovement().teleport(player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ() - 1);
     }
 
