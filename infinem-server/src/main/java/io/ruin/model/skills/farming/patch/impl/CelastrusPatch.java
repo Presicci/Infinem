@@ -1,14 +1,10 @@
 package io.ruin.model.skills.farming.patch.impl;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
 import io.ruin.model.inter.handlers.TabStats;
 import io.ruin.model.item.Item;
-import io.ruin.model.map.Position;
-import io.ruin.model.map.object.actions.impl.SpiritTree;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.CelastrusCrop;
-import io.ruin.model.skills.farming.crop.impl.SpiritTreeCrop;
 import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.woodcutting.Tree;
@@ -88,8 +84,6 @@ public class CelastrusPatch extends Patch {
     public void objectAction(int option) {
         if (option == 1)
             interact();
-        else if (option == 2 && getStage() >= getPlantedCrop().getTotalStages())
-            SpiritTree.open(player);
         else if (option == 3)
             inspect();
         else if (option == 4)
