@@ -33,6 +33,38 @@ public class Stairs {
         player.getMovement().teleport(player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ() - 1);
     }
 
+    public static void registerStair(int objectId, Position position, final Direction direction, final int tiles) {
+        ObjectAction.register(objectId, position.getX(), position.getY(), position.getZ(), "climb-up", (player, obj) -> climbUp(player, direction ,tiles));
+        ObjectAction.register(objectId, position.getX(), position.getY(), position.getZ(), "climb-down", (player, obj) -> climbDown(player, direction, tiles));
+    }
+
+    private static void climbUp(Player player, Direction direction, int tiles) {
+        climb(player, direction, tiles, true);
+    }
+
+    private static void climbDown(Player player, Direction direction, int tiles) {
+        climb(player, direction, tiles, false);
+    }
+
+    private static void climb(Player player, Direction direction, int tiles, boolean climbUp) {
+        Position pos = player.getPosition();
+        switch (direction) {
+            case NORTH:
+                pos.translate(tiles, 0, climbUp ? 1 : -1);
+                break;
+            case SOUTH:
+                pos.translate(-tiles, 0, climbUp ? 1 : -1);
+                break;
+            case EAST:
+                pos.translate(0, tiles, climbUp ? 1 : -1);
+                break;
+            case WEST:
+                pos.translate(0, -tiles, climbUp ? 1 : -1);
+                break;
+        }
+        player.getMovement().teleport(pos);
+    }
+
     static {
         // Wizard's tower
         registerSpiralStair(12536, new Position(3103, 3159, 0));
