@@ -47,19 +47,19 @@ public class Stairs {
     }
 
     private static void climb(Player player, Direction direction, int tiles, boolean climbUp) {
-        Position pos = player.getPosition();
+        Position pos = player.getPosition().copy();
         switch (direction) {
             case NORTH:
-                pos.translate(tiles, 0, climbUp ? 1 : -1);
-                break;
-            case SOUTH:
-                pos.translate(-tiles, 0, climbUp ? 1 : -1);
-                break;
-            case EAST:
                 pos.translate(0, tiles, climbUp ? 1 : -1);
                 break;
-            case WEST:
+            case SOUTH:
                 pos.translate(0, -tiles, climbUp ? 1 : -1);
+                break;
+            case EAST:
+                pos.translate(tiles, 0, climbUp ? 1 : -1);
+                break;
+            case WEST:
+                pos.translate(-tiles, 0, climbUp ? 1 : -1);
                 break;
         }
         player.getMovement().teleport(pos);
