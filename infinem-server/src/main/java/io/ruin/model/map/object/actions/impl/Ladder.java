@@ -6,9 +6,14 @@ import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
 
 public class Ladder {
+
+    public static void climb(Player player, Position position, boolean climbingUp, boolean animate, boolean tileCheck) {
+        climb(player, position.getX(), position.getY(), position.getZ(), climbingUp, animate, tileCheck);
+    }
 
     public static void climb(Player player, int x, int y, int height, boolean climbingUp, boolean animate, boolean tileCheck) {
         if (tileCheck) {
