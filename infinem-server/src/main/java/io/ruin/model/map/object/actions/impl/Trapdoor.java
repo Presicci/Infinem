@@ -2,28 +2,25 @@ package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 
 public class Trapdoor {
 
-    private static void open(Player player, GameObject trapdoor) {
+    public static void open(Player player, GameObject trapdoor, int openedId) {
         World.startEvent(event -> {
-            trapdoor.setId(1581);
+            trapdoor.setId(openedId);
             event.delay(300);
             trapdoor.setId(trapdoor.originalId);
         });
 
-        player.sendMessage("The trapdoor opens..");
+        player.sendMessage("You open the trapdoor.");
     }
 
-    private static void climbDown(Player player) {
-        if (player.isAt(3096, 3468)) {
-            player.sendMessage("You climb down through the trapdoor..");
-            Ladder.climb(player, 3096, 9867, 0, false, true, false);
-        } else {
-            player.sendMessage("I'm not sure where this would take me..");
-        }
+    public static void climbDown(Player player, Position position) {
+        player.sendMessage("You climb down through the trapdoor.");
+        Ladder.climb(player, position, false, true, false);
     }
 
     private static void close(Player player, GameObject trapdoor) {
@@ -36,8 +33,8 @@ public class Trapdoor {
         /*
          * Edgeville dungeon
          */
-        ObjectAction.register(1579, "open", Trapdoor::open);
-        ObjectAction.register(1581, "climb-down", (player, obj) -> climbDown(player));
+        ObjectAction.register(1579, "open", (player, obj) -> open(player, obj, 1581));
+        ObjectAction.register(1581, "climb-down", (player, obj) -> climbDown(player, new Position(3096, 9867)));
         ObjectAction.register(1581, "close", Trapdoor::close);
 
         /*
