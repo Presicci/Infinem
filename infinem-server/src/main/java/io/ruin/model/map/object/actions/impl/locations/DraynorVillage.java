@@ -22,6 +22,5 @@ public class DraynorVillage {
         //  Sewer
         ObjectAction.register(6434, "open", (player, obj) -> Trapdoor.open(player, obj, 6435));
         ObjectAction.register(6435, "climb-down", (player, obj) -> Trapdoor.climbDown(player, new Position(3085, 9672, 0)));
-        ObjectAction.register(17385, 3084, 9672, 0, "climb", (player, obj) -> Ladder.climb(player, 3084, 3273, 0, true, true, false));
     }
 }
