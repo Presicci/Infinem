@@ -8,6 +8,7 @@ import io.ruin.model.map.MapArea;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
@@ -32,6 +33,7 @@ public class TaskManager {
     private HashMap<TaskArea, Integer> taskPoints;
     private HashMap<Integer, Integer> inProgressTasks;
     private Multimap<TaskCategory, Integer> completeTasks;
+    private ArrayList<TaskCategory> completedCategories;
 
     private void completeTask(String taskName, int uuid, TaskCategory taskCategory, TaskArea taskArea, TaskDifficulty taskDifficulty) {
         int pointGain = taskDifficulty.getPoints();
@@ -43,10 +45,15 @@ public class TaskManager {
     }
 
     public void doLookupByCategory(TaskCategory category, int trigger, int amount, MapArea mapArea) {
+        //  No tasks left for this category, abort
+        if (completedCategories.contains(category)) {
+            return;
+        }
         Server.gameDb.execute(connection -> {
 
             PreparedStatement statement = null;
             ResultSet rs = null;
+            boolean foundNotCompletedTask = false;
             try {
                 statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ?");
                 statement.setString(1, category.toString().toUpperCase());
@@ -57,6 +64,7 @@ public class TaskManager {
                     if (ignoredTasks.contains(uuid)) {
                         continue;
                     }
+                    foundNotCompletedTask = true;
                     int trig = rs.getInt("trigger");
                     if (trig > 0 && trig != trigger) {
                         continue;
@@ -95,6 +103,9 @@ public class TaskManager {
                         }
                     }
                     completeTask(name, uuid, category, finalTaskarea, finalDifficulty);
+                }
+                if (!foundNotCompletedTask) {
+                    completedCategories.add(category);
                 }
             } finally {
                 DatabaseUtils.close(statement, rs);
