@@ -1,5 +1,6 @@
 package io.ruin.model.item.actions.impl;
 
+import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.duelarena.DuelRule;
@@ -512,6 +513,24 @@ public class Consumable {
             p.getStats().get(StatType.Ranged).boost(6, 0.16);
             p.getStats().get(StatType.Magic).boost(6, 0.16);
         });
+        registerPotion(Potion.OVERLOAD_NMZ, p -> {
+            p.getStats().get(StatType.Attack).boost(5, 0.15);
+            p.getStats().get(StatType.Strength).boost(5, 0.15);
+            p.getStats().get(StatType.Defence).boost(5, 0.15);
+            p.getStats().get(StatType.Ranged).boost(5, 0.15);
+            p.getStats().get(StatType.Magic).boost(5, 0.15);
+        });
+        registerPotion(Potion.SUPER_MAGIC, p -> {
+            p.getStats().get(StatType.Magic).boost(5, 0.15);
+        });
+        registerPotion(Potion.SUPER_RANGING, p -> {
+            p.getStats().get(StatType.Ranged).boost(5, 0.15);
+        });
+        registerPotion(Potion.ABSORPTION, p -> {
+            p.absorptionPoints = p.absorptionPoints + 50;
+            Config.NMZ_ABSORPTION.set(p, p.absorptionPoints);
+            p.sendMessage(Color.DARK_GREEN.wrap("You now have " + p.absorptionPoints + " hitpoints of damage absorption left."));
+        });
     }
 
     private static void restore(Player player, boolean superEffect) {
@@ -588,16 +607,22 @@ public class Consumable {
             player.sendMessage("Drinks have been disabled for this duel!");
             return false;
         }
-        if (player.overloadBoostActive && (potion == Potion.OVERLOAD_PLUS || potion == Potion.OVERLOAD_REGULAR || potion == Potion.OVERLOAD_MINUS)) {
-            player.sendMessage("Your overload boost is still active.");
-            return false;
-        }
         if (player.prayerEnhanceBoostActive && (potion == Potion.PRAYER_ENHANCE_MINUS || potion == Potion.PRAYER_ENHANCE_REGULAR || potion == Potion.PRAYER_ENHANCE_PLUS)) {
             player.sendMessage("Your prayer enhance boost is still active.");
             return false;
         }
         if((potion == Potion.SARADOMIN_BREW || potion == Potion.GUTHIX_REST) && DuelRule.NO_FOOD.isToggled(player)) {
             player.sendMessage("Food has been disabled for this duel!");
+            return false;
+        }
+        boolean isOverload = potion == Potion.OVERLOAD_PLUS || potion == Potion.OVERLOAD_REGULAR || potion == Potion.OVERLOAD_MINUS || potion == Potion.OVERLOAD_NMZ;
+        if(player.overloadBoostActive && isOverload) {
+            player.sendMessage("Your overload boost is still active.");
+            return false;
+        }
+        boolean isNMZ = potion == Potion.SUPER_RANGING || potion == Potion.ABSORPTION || potion == Potion.SUPER_MAGIC || potion == Potion.OVERLOAD_NMZ;
+        if (isNMZ && player.get("nmz") == null) {
+            player.sendMessage("You can only drink this potion while dreaming.");
             return false;
         }
         if(newId == -1 || (newId == 229 && player.breakVials))
@@ -608,10 +633,16 @@ public class Consumable {
             item.setId(newId == 229 ? 20800 : newId);
         else
             item.setId(newId);
+        // NMZ potions dont reset actions
+        if (isNMZ && !isOverload) {
+            drinkNMZ(player);
+            return true;
+        }
         animDrink(player);
         player.potDelay.delay(3);
-        if(potion == Potion.OVERLOAD_PLUS || potion == Potion.OVERLOAD_REGULAR || potion == Potion.OVERLOAD_MINUS)
+        if (isOverload) {
             overload(player, potion);
+        }
         if(potion == Potion.PRAYER_ENHANCE_MINUS || potion == Potion.PRAYER_ENHANCE_REGULAR || potion == Potion.PRAYER_ENHANCE_PLUS)
             prayerEnhance(player, potion);
         return true;
@@ -623,10 +654,37 @@ public class Consumable {
             for (int i = 0; i < 5; i++) {
                 player.animate(3170);
                 player.graphics(560);
-                player.hit(new Hit().fixedDamage(10));
+                player.hit(new Hit().fixedDamage(10).ignoreAbsorption());
                 event.delay(2);
             }
-            if (potion == Potion.OVERLOAD_PLUS) {
+            if (potion == Potion.OVERLOAD_NMZ) {
+                if (player.get("nmz") == null) {
+                    player.sendMessage("You can only drink overload potions while dreaming.");
+                    return;
+                }
+                for (int i = 0; i < 20; i++) {
+                    if (player.get("nmz") == null) {
+                        player.sendMessage("Your overload boost has worn off.");
+                        player.overloadBoostActive = false;
+                        player.getStats().get(StatType.Attack).restore();
+                        player.getStats().get(StatType.Strength).restore();
+                        player.getStats().get(StatType.Defence).restore();
+                        player.getStats().get(StatType.Ranged).restore();
+                        player.getStats().get(StatType.Magic).restore();
+                        return;
+                    }
+                    player.getStats().get(StatType.Attack).boost(5, 0.15);
+                    player.getStats().get(StatType.Strength).boost(5, 0.15);
+                    player.getStats().get(StatType.Defence).boost(5, 0.15);
+                    player.getStats().get(StatType.Ranged).boost(5, 0.15);
+                    player.getStats().get(StatType.Magic).boost(5, 0.15);
+                    event.delay(25);
+
+                    if (i == 19) {
+                        player.incrementHp(50);
+                    }
+                }
+            } else if (potion == Potion.OVERLOAD_PLUS) {
                 for (int i = 0; i < 20; i++) {
                     if (player.raidsParty == null || player.raidsParty.getRaid() == null) {
                         player.sendMessage("Your overload boost has worn off.");
@@ -730,6 +788,12 @@ public class Consumable {
                 }
             }
         });
+    }
+
+    public static void drinkNMZ(Player player) {
+        player.animate(829);
+        player.privateSound(2401);
+        player.potDelay.delay(1);
     }
 
     private static void animDrink(Player player) {
