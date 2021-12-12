@@ -2,9 +2,11 @@ package io.ruin.model.combat;
 
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.shared.LockType;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.skills.magic.spells.TargetSpell;
 import lombok.Getter;
@@ -105,7 +107,7 @@ public class Hit {
 	 * Damage
 	 */
 
-	private int minDamage;
+	public int minDamage;
 
 	public int maxDamage;
 
@@ -176,7 +178,7 @@ public class Hit {
 	 * Ignores
 	 */
 
-	public boolean defenceIgnored, prayerIgnored;
+	public boolean defenceIgnored, prayerIgnored, absorptionIgnored;
 
 	public Hit ignoreDefence() {
 		defenceIgnored = true;
@@ -185,6 +187,11 @@ public class Hit {
 
 	public Hit ignorePrayer() {
 		prayerIgnored = true;
+		return this;
+	}
+
+	public Hit ignoreAbsorption() {
+		absorptionIgnored = true;
 		return this;
 	}
 
@@ -355,9 +362,24 @@ public class Hit {
 
 		//The following check is important for accurate xp drops.
 		//It is also important to note that OSRS removed this specific check for PvP combat.
-		if (target.npc != null && damage > target.getHp())
+		if (target.npc != null && damage > target.getHp()) {
 			damage = target.getHp();
+		}
 
+		// NMZ absorption potion
+		// Applied after the damage is set to the players health because thats how its done in osrs
+		if (target.player != null
+				&& target.player.absorptionPoints > 0
+				&& target.player.get("nmz") != null
+				&& !absorptionIgnored) {
+			target.player.absorptionPoints -= damage;
+			if (target.player.absorptionPoints < 0) {
+				target.player.absorptionPoints = 0;
+				target.player.sendMessage(Color.RED.wrap("Your absorption has run out."));
+			}
+			Config.NMZ_ABSORPTION.set(target.player, target.player.absorptionPoints);
+			damage = 0;
+		}
 		return true;
 	}
 
