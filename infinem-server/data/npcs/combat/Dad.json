@@ -9,10 +9,10 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 120.0,
+    "slayer_xp": 126.0,
     "slayer_tasks": [ "Trolls" ],
     //Combat Stats
-    "attack": 120,
+    "attack": 60,
     "strength": 120,
     "defence": 50,
     "ranged": 0,
@@ -21,8 +21,8 @@
     "stab_attack": 40,
     "slash_attack": 40,
     "crush_attack": 40,
-    "magic_attack": 40,
-    "ranged_attack": 40,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 25,
     "slash_defence": 25,
@@ -38,9 +38,9 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 284,
+    "defend_animation": 285,
+    "death_animation": 287
   },
   { #Dad (hard) (201)
     "ids": [ 6330 ],
@@ -81,8 +81,8 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 284,
+    "defend_animation": 285,
+    "death_animation": 287
   }
 ]

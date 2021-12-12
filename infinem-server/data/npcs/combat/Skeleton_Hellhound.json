@@ -81,9 +81,9 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 6559,
+    "defend_animation": 6557,
+    "death_animation": 6558
   },
   { #Skeleton Hellhound (hard) (198)
     "ids": [ 6326 ],
@@ -95,8 +95,8 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 55.0,
+    "slayer_tasks": [ "Hellhounds" ],
     //Combat Stats
     "attack": 168,
     "strength": 264,
@@ -124,8 +124,8 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 6559,
+    "defend_animation": 6557,
+    "death_animation": 6558
   }
 ]

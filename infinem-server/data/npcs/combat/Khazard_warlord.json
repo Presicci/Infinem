@@ -5,7 +5,7 @@
     //Combat Info
     "hitpoints": 170,
     "aggressive_level": 224,
-    "max_damage": 9,
+    "max_damage": 10,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
