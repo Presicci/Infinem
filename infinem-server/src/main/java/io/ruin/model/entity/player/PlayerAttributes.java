@@ -89,6 +89,27 @@ public abstract class PlayerAttributes extends Entity {
     @Expose @Setter @Getter public boolean acceptedTheatreCrystals;
 
     /**
+     * NMZ
+     */
+    @Expose public int absorptionPoints = 0;
+
+    @Expose public int nightmareZonePoints = 0;
+
+    @Expose public int nmzRewardPoints;
+
+    @Expose public int nmzCofferCoins;
+
+    /** blast furnace variables */
+    @Getter @Setter @Expose
+    public int blastFurnaceCofferAmount = 0;
+    @Getter @Setter @Expose
+    public int blastFurnaceOres = 0;
+    @Getter @Setter @Expose
+    public int blastFurnaceCoalAmount;
+    @Getter @Setter @Expose
+    public int blastFurnaceBars = 0;
+
+    /**
      * 2FA
      */
 
@@ -307,6 +328,11 @@ public abstract class PlayerAttributes extends Entity {
     public Room houseViewerRoom;
 
     /**
+     * Blast furnace
+     */
+    @Expose public int smithedBars;
+
+    /**
      * Runecrafting
      */
 
@@ -443,6 +469,12 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public boolean motherlodeRestrictedMineUnlocked;
     @Expose public boolean motherlodeBiggerSackUnlocked;
+
+    @Expose public long lastTimeEnteredPlunder = 0;
+    public boolean disarmedPlunderRoomTrap = false;
+    public boolean inPyramidPlunder = false;
+    @Expose public int nextPlunderRoomId;
+    @Expose public int totalPyramidPlunderGames = 0;
 
     /**
      * Misc
