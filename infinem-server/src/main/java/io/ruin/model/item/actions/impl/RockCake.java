@@ -16,7 +16,7 @@ public class RockCake {
                     player.rockCakeDelay.delay(1);
                 }
                 player.privateSound(1018);
-                player.hit(new Hit().fixedDamage(1));
+                player.hit(new Hit().fixedDamage(1).ignoreAbsorption());
                 player.animate(829);
             }
         });
@@ -29,7 +29,7 @@ public class RockCake {
                     player.rockCakeDelay.delay(1);
                 }
                 player.privateSound(1018);
-                player.hit(new Hit().fixedDamage(damage));
+                player.hit(new Hit().fixedDamage(damage).ignoreAbsorption());
                 player.animate(829);
             }
         });
