@@ -11,9 +11,11 @@ import io.ruin.cache.InterfaceDef;
 import io.ruin.cache.Varp;
 import io.ruin.event.GameEventProcessor;
 import io.ruin.model.World;
+import io.ruin.model.activities.blastfurnace.BlastFurnace;
 import io.ruin.model.activities.cluescrolls.impl.EmoteClue;
 import io.ruin.model.activities.duelarena.Duel;
 import io.ruin.model.activities.duelarena.DuelArena;
+import io.ruin.model.activities.pyramidplunder.PyramidPlunder;
 import io.ruin.model.activities.wilderness.BountyHunter;
 import io.ruin.model.content.UpgradeMachine;
 import io.ruin.model.content.upgrade.ItemEffect;
@@ -140,6 +142,46 @@ public class Player extends PlayerAttributes {
     public String getPassword() {
         return password;
     }
+
+    /**
+     * Blast furnace
+     */
+    @Getter @Setter
+    public boolean isCheckingDispenser = false;
+    @Getter @Setter
+    public boolean isOperatingPump = false;
+    @Getter @Setter
+    public boolean driveBeltBroken;
+    @Getter @Setter
+    public BlastFurnace.Ore currentBlastFurnaceOre;
+
+
+    /**
+     * Pyramid plunder
+     */
+    private PyramidPlunder pyramidPlunder;
+
+    public PyramidPlunder getPyramidPlunder() {
+        return pyramidPlunder;
+    }
+
+    public int[][] lootedPlunderObjects = {
+            {26580, 0},
+            {26600, 0},
+            {26601, 0},
+            {26603, 0},
+            {26604, 0},
+            {26606, 0},
+            {26607, 0},
+            {26608, 0},
+            {26609, 0},
+            {26610, 0},
+            {26611, 0},
+            {26612, 0},
+            {26613, 0},
+            {26616, 0},
+            {26626, 0}
+    };
 
     /**
      * Groups & Rank (Used to display client icons)
