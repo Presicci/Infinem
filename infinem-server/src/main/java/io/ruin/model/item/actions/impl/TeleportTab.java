@@ -48,7 +48,9 @@ public enum TeleportTab {
     RELLEKA(11744, 2670, 3632, 0),
     BRIMHAVEN(11745, 2758, 3178, 0),
     YANILLE(11746, 2544, 3095, 0),
-    TROLLHEIM(11747, 2910, 3612, 0);
+    TROLLHEIM(11747, 2910, 3612, 0),
+    HOSIDIUS(19651, 1744, 3517, 0),
+    PRIFDDINAS(23771, 3239, 6075, 0);
 
     public final int id, x, y, z;
 
