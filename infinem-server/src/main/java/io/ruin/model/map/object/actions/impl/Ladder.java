@@ -100,6 +100,9 @@ public class Ladder {
         ObjectAction.register(16962, 2118, 3894, 1, "climb", ((player, obj) -> climb(player, 2118, 3895, 0, false, true, true)));
         ObjectAction.register(16960, 2118, 3894, 0, "climb", ((player, obj) -> climb(player, 2118, 3893, 1, true, true, true)));
 
+        //Draynor Sewer
+        ObjectAction.register(17385, 3084, 9672, 0, "climb", (player, obj) -> climb(player, 3084, 3273, 0, true, true, false));
+
         /**
          * Stairs
          */
