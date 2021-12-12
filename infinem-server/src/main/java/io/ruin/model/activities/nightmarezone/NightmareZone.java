@@ -12,9 +12,9 @@ public class NightmareZone {
         MapListener.registerBounds(PREP_AREA).onEnter(player -> {
             player.openInterface(InterfaceType.PRIMARY_OVERLAY, 207);
         })
-        .onExit((player, logout) -> {
-            player.closeInterface(InterfaceType.PRIMARY_OVERLAY);
-        });
+                .onExit((player, logout) -> {
+                    player.closeInterface(InterfaceType.PRIMARY_OVERLAY);
+                });
     }
 
 }
