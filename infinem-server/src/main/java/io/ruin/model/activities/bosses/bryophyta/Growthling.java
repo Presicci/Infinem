@@ -12,6 +12,7 @@ import java.util.Arrays;
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 5/22/2021
+ * Last edit on 12/17/2021
  */
 public class Growthling extends NPCCombat {
 
@@ -52,7 +53,7 @@ public class Growthling extends NPCCombat {
     @Override
     public void startDeath(Hit killHit) {
         if (!chopped) {
-            npc.setHp(1);
+            npc.setHp(0);
             return;
         }
         super.startDeath(null);
