@@ -55,9 +55,9 @@ public class Bryophyta extends NPCCombat {
 
     @Override
     public boolean attack() {
-        if (growthlings.size() == 0 && Random.rollDie(5, 1) && growthlingCooldown <= 0) {
+        if ((growthlings.size() == 0 && Random.rollDie(5, 1) && growthlingCooldown <= 0) || growthlingCooldown <= -5 ) {
             summonGrowthlings();
-        } else if (growthlingCooldown > 0) {
+        } else {
             --growthlingCooldown;
         }
         if (Random.rollDie(10, 5) || !withinDistance(1)) {
