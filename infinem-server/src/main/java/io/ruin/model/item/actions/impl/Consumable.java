@@ -20,8 +20,6 @@ import io.ruin.model.stat.StatType;
 
 import java.util.function.Consumer;
 
-import static io.ruin.model.stat.StatType.Strength;
-
 public class Consumable {
 
     /**
@@ -157,17 +155,18 @@ public class Consumable {
          */
         //Beer tankard
         registerDrink(3803, 3805, 4, 3, p -> {
-            p.getStats().get(StatType.Magic).boost(Random.get(3, 4), 0);
-            p.getStats().get(StatType.Attack).drain(5);
-            p.getStats().get(Strength).drain(5);
-            p.getStats().get(StatType.Defence).drain(5);
+            p.getStats().get(StatType.Strength).boost(2, 0.04);
+            p.getStats().get(StatType.Attack).drain(-2, 0.10);
+            p.sendMessage("You quaff the beer. You feel slightly reinvigorated... but very dizzy too.");
         });
+
         //Keg of beer
-        registerDrink(3801, -1, 3, 10, p -> {
+        registerDrink(3801, -1, 15, 10, p -> {
             p.animate(829);
-            p.getStats().get(Strength).boost(10, 0);
-            p.getStats().get(StatType.Attack).drain(40);
-            p.sendMessage("You start to feel dizzy");
+            p.getStats().get(StatType.Strength).boost(2, 0.10);
+            p.getStats().get(StatType.Attack).drain(5, 0.50);
+            p.sendMessage("You chug the keg. You feel reinvigorated...");
+            p.sendMessage("...but extremely drunk, too.");
         });
     }
 
