@@ -152,6 +152,24 @@ public class Consumable {
         /**
          * Non-potion drinks
          */
+        //Dwarven stout
+        registerDrink(1913, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Smithing).boost(1, 0);
+            p.getStats().get(StatType.Mining).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(2, 0.04);
+            p.getStats().get(StatType.Strength).drain(2, 0.04);
+            p.getStats().get(StatType.Defence).drain(2, 0.04);
+        });
+
+        //Dwarven stout(m)
+        registerDrink(5747, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Smithing).boost(2, 0);
+            p.getStats().get(StatType.Mining).boost(2, 0);
+            p.getStats().get(StatType.Attack).drain(7);
+            p.getStats().get(StatType.Strength).drain(7);
+            p.getStats().get(StatType.Defence).drain(7);
+        });
+
         //Greenman's ale
         registerDrink(1909, 1919, 1, 3, p -> {
             p.getStats().get(StatType.Herblore).boost(1, 0);
