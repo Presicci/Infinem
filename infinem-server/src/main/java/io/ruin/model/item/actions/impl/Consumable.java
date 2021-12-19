@@ -152,6 +152,16 @@ public class Consumable {
         /**
          * Non-potion drinks
          */
+        //Moonlight mead
+        registerDrink(2955, 1919, 4, 3, p -> {
+            p.sendMessage("You drink the foul smelling brew. It tastes like something just died in your mouth.");
+        });
+
+        //Moonlight mead(m)
+        registerDrink(5749, 1919, 6, 3, p -> {
+            p.sendMessage("You drink the foul smelling brew. It tastes like something just died in your mouth.");
+        });
+
         //Slayer's respite
         registerDrink(5759, 1919, 1, 3, p -> {
             p.getStats().get(StatType.Slayer).boost(2, 0);
