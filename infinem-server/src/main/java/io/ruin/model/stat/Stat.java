@@ -109,6 +109,10 @@ public class Stat {
         return oldLevel - currentLevel;
     }
 
+    public int drain(int flatAmount, double percent) {
+        return drain(((int) (fixedLevel * percent)) + flatAmount);
+    }
+
     public boolean isDrained() {
         return fixedLevel > currentLevel;
     }
