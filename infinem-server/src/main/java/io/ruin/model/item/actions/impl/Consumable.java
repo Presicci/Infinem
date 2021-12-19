@@ -149,6 +149,18 @@ public class Consumable {
                 player.getPacketSender().sendWidget(Widget.ANTIFIRE, (int) (600 * 0.6));
             }
         });
+
+
+        /**
+         * Non-potion drinks
+         */
+        //Keg of beer
+        registerDrink(3801, -1, 3, 10, p -> {
+            p.animate(829);
+            p.getStats().get(Strength).boost(10, 0);
+            p.getStats().get(StatType.Attack).drain(40);
+            p.sendMessage("You start to feel dizzy");
+        });
     }
 
     private static void registerEat(int id, int heal, String name) {
