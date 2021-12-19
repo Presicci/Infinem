@@ -152,6 +152,20 @@ public class Consumable {
         /**
          * Non-potion drinks
          */
+        //Slayer's respite
+        registerDrink(5759, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Slayer).boost(2, 0);
+            p.getStats().get(StatType.Attack).drain(2);
+            p.getStats().get(StatType.Strength).drain(2);
+        });
+
+        //Slayer's respite(m)
+        registerDrink(5761, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Slayer).boost(4, 0);
+            p.getStats().get(StatType.Attack).drain(2);
+            p.getStats().get(StatType.Strength).drain(2);
+        });
+
         //Wizard's mind bomb
         registerDrink(1907, 1919, 1, 3, p -> {
             p.getStats().get(StatType.Magic).boost(2, 0);
