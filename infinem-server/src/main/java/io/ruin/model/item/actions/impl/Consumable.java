@@ -192,6 +192,12 @@ public class Consumable {
             p.getStats().get(StatType.Defence).drain(5);
         });
 
+        //Grog
+        registerDrink(1915, 1919, 3, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(3, 0);
+            p.getStats().get(StatType.Attack).drain(6);
+        });
+
         //Beer tankard
         registerDrink(3803, 3805, 4, 3, p -> {
             p.getStats().get(StatType.Strength).boost(2, 0.04);
