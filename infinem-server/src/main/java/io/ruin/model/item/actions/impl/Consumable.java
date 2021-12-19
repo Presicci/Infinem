@@ -152,6 +152,18 @@ public class Consumable {
         /**
          * Non-potion drinks
          */
+        //Dragon bitter
+        registerDrink(1911, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(2, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+
+        //Dragon bitter(m)
+        registerDrink(5745, 1919, 2, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(3, 0);
+            p.getStats().get(StatType.Attack).drain(6);
+        });
+
         //Dwarven stout
         registerDrink(1913, 1919, 1, 3, p -> {
             p.getStats().get(StatType.Smithing).boost(1, 0);
