@@ -152,6 +152,26 @@ public class Consumable {
         /**
          * Non-potion drinks
          */
+        //Axeman's folly
+        registerDrink(5751, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Woodcutting).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(3);
+            p.getStats().get(StatType.Strength).drain(3);
+        });
+
+        //Axeman's folly(m)
+        registerDrink(5751, 1919, 2, 3, p -> {
+            p.getStats().get(StatType.Woodcutting).boost(2, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+            p.getStats().get(StatType.Strength).drain(4);
+        });
+
+        //Bloody bracer
+        registerDrink(22430, 1919, 2, 3, p -> {
+            p.getStats().get(StatType.Prayer).drain(2, 0.04);
+            p.sendMessage("The tincture tastes great, but you feel an evil within you stir.");
+        });
+
         //Chef's delight
         registerDrink(5755, 1919, 1, 3, p -> {
             p.getStats().get(StatType.Cooking).boost(1, 5);
