@@ -310,6 +310,12 @@ public class Consumable {
             p.getStats().get(StatType.Defence).drain(5);
         });
 
+        //Cup of tea
+        registerDrink(712, 1980, 3, 3, p -> {
+            p.getStats().get(StatType.Attack).boost(3, 0.0);
+            p.forceText("Aaah, nothing like a nice cuppa tea!");
+        });
+
         //Beer
         registerDrink(1917, 1919, 1, 3, p -> {
             p.getStats().get(StatType.Strength).boost(2, 0.04);
