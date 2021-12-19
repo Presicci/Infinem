@@ -152,6 +152,20 @@ public class Consumable {
         /**
          * Non-potion drinks
          */
+        //Cider
+        registerDrink(5763, 1919, 2, 3, p -> {
+            p.getStats().get(StatType.Farming).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(2);
+            p.getStats().get(StatType.Strength).drain(2);
+        });
+
+        //Cider(m)
+        registerDrink(5765, 1919, 2, 3, p -> {
+            p.getStats().get(StatType.Farming).boost(2, 0);
+            p.getStats().get(StatType.Attack).drain(5);
+            p.getStats().get(StatType.Strength).drain(5);
+        });
+
         //Dragon bitter
         registerDrink(1911, 1919, 1, 3, p -> {
             p.getStats().get(StatType.Strength).boost(2, 0);
