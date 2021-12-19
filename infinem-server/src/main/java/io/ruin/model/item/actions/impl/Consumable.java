@@ -19,6 +19,8 @@ import io.ruin.model.stat.StatType;
 
 import java.util.function.Consumer;
 
+import static io.ruin.model.stat.StatType.Strength;
+
 public class Consumable {
 
     /**
@@ -173,6 +175,18 @@ public class Consumable {
         ItemDef.get(id).consumable = true;
         ItemAction.registerInventory(id, "eat", (player, item) -> {
             if(eat(player, item, newId, heal, ticks, stackable))
+                eatAction.accept(player);
+        });
+    }
+
+    private static void registerDrink(int id, int newId, int heal, String name) {
+        registerDrink(id, newId, heal, 3, p -> p.sendFilteredMessage("You drink the " + name + "."));
+    }
+
+    private static void registerDrink(int id, int newId, int heal, int ticks, Consumer<Player> eatAction) {
+        ItemDef.get(id).consumable = true;
+        ItemAction.registerInventory(id, "drink", (player, item) -> {
+            if (eat(player, item, newId, heal, ticks, false))
                 eatAction.accept(player);
         });
     }
