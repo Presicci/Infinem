@@ -242,6 +242,12 @@ public class Consumable {
             p.getStats().get(StatType.Defence).drain(7);
         });
 
+        //Elven dawn
+        registerDrink(23948, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Agility).boost(1, 0);
+            p.getStats().get(StatType.Strength).drain(1);
+        });
+
         //Greenman's ale
         registerDrink(1909, 1919, 1, 3, p -> {
             p.getStats().get(StatType.Herblore).boost(1, 0);
@@ -256,6 +262,12 @@ public class Consumable {
             p.getStats().get(StatType.Attack).drain(2);
             p.getStats().get(StatType.Strength).drain(2);
             p.getStats().get(StatType.Defence).drain(2);
+        });
+
+        //Grog
+        registerDrink(1915, 1919, 3, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(3, 0);
+            p.getStats().get(StatType.Attack).drain(6);
         });
 
         //Moonlight mead
@@ -296,18 +308,6 @@ public class Consumable {
             p.getStats().get(StatType.Attack).drain(5);
             p.getStats().get(StatType.Strength).drain(5);
             p.getStats().get(StatType.Defence).drain(5);
-        });
-
-        //Elven dawn
-        registerDrink(23948, 1919, 1, 3, p -> {
-            p.getStats().get(StatType.Agility).boost(1, 0);
-            p.getStats().get(StatType.Strength).drain(1);
-        });
-
-        //Grog
-        registerDrink(1915, 1919, 3, 3, p -> {
-            p.getStats().get(StatType.Strength).boost(3, 0);
-            p.getStats().get(StatType.Attack).drain(6);
         });
 
         //Beer tankard
