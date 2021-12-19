@@ -152,6 +152,20 @@ public class Consumable {
         /**
          * Non-potion drinks
          */
+        //Chef's delight
+        registerDrink(5755, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Cooking).boost(1, 5);
+            p.getStats().get(StatType.Attack).drain(2);
+            p.getStats().get(StatType.Strength).drain(2);
+        });
+
+        //Chef's delight(m)
+        registerDrink(5757, 1919, 2, 3, p -> {
+            p.getStats().get(StatType.Cooking).boost(2, 5);
+            p.getStats().get(StatType.Attack).drain(3);
+            p.getStats().get(StatType.Strength).drain(3);
+        });
+
         //Cider
         registerDrink(5763, 1919, 2, 3, p -> {
             p.getStats().get(StatType.Farming).boost(1, 0);
