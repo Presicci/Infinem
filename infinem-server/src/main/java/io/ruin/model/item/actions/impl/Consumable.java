@@ -152,6 +152,22 @@ public class Consumable {
         /**
          * Non-potion drinks
          */
+        //Greenman's ale
+        registerDrink(1909, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Herblore).boost(1, 0);
+            p.getStats().get(StatType.Attack).drain(3);
+            p.getStats().get(StatType.Strength).drain(3);
+            p.getStats().get(StatType.Defence).drain(3);
+        });
+
+        //Greenman's ale(m)
+        registerDrink(5743, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Herblore).boost(2, 0);
+            p.getStats().get(StatType.Attack).drain(2);
+            p.getStats().get(StatType.Strength).drain(2);
+            p.getStats().get(StatType.Defence).drain(2);
+        });
+
         //Moonlight mead
         registerDrink(2955, 1919, 4, 3, p -> {
             p.sendMessage("You drink the foul smelling brew. It tastes like something just died in your mouth.");
