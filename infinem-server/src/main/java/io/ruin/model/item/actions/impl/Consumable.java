@@ -310,16 +310,21 @@ public class Consumable {
             p.getStats().get(StatType.Defence).drain(5);
         });
 
+        //Beer
+        registerDrink(1917, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(2, 0.04);
+            p.getStats().get(StatType.Attack).drain(2.0);
+        });
+
         //Beer tankard
         registerDrink(3803, 3805, 4, 3, p -> {
-            p.getStats().get(StatType.Strength).boost(2, 0.04);
-            p.getStats().get(StatType.Attack).drain(-2, 0.10);
-            p.sendMessage("You quaff the beer. You feel slightly reinvigorated... but very dizzy too.");
+            p.getStats().get(StatType.Strength).boost(1, 0.02);
+            p.getStats().get(StatType.Attack).drain(1, 0.06);
         });
 
         //Keg of beer
         registerDrink(3801, -1, 15, 10, p -> {
-            p.animate(829);
+            p.animate(1330);
             p.getStats().get(StatType.Strength).boost(2, 0.10);
             p.getStats().get(StatType.Attack).drain(5, 0.50);
             p.sendMessage("You chug the keg. You feel reinvigorated...");
