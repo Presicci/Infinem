@@ -152,6 +152,18 @@ public class Consumable {
         /**
          * Non-potion drinks
          */
+        //Asgarnian ale
+        registerDrink(1905, 1919, 2, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(2, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+
+        //Asgarnian ale(m)
+        registerDrink(5739, 1919, 2, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(3, 0);
+            p.getStats().get(StatType.Attack).drain(6);
+        });
+
         //Axeman's folly
         registerDrink(5751, 1919, 1, 3, p -> {
             p.getStats().get(StatType.Woodcutting).boost(1, 0);
