@@ -1,6 +1,5 @@
 package io.ruin.model.item.actions.impl;
 
-import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
@@ -153,6 +152,22 @@ public class Consumable {
         /**
          * Non-potion drinks
          */
+        //Wizard's mind bomb
+        registerDrink(1907, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Magic).boost(2, 0);
+            p.getStats().get(StatType.Attack).drain(1, 0.05);
+            p.getStats().get(StatType.Strength).drain(1, 0.05);
+            p.getStats().get(StatType.Defence).drain(1, 0.05);
+        });
+
+        //Wizard's mind bomb(m)
+        registerDrink(5741, 1919, 1, 3, p -> {
+            p.getStats().get(StatType.Magic).boost(3, 0.02);
+            p.getStats().get(StatType.Attack).drain(5);
+            p.getStats().get(StatType.Strength).drain(5);
+            p.getStats().get(StatType.Defence).drain(5);
+        });
+
         //Beer tankard
         registerDrink(3803, 3805, 4, 3, p -> {
             p.getStats().get(StatType.Strength).boost(2, 0.04);
