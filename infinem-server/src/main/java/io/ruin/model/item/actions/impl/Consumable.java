@@ -6,7 +6,6 @@ import io.ruin.model.World;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.Widget;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
@@ -144,7 +143,6 @@ public class Consumable {
             if(eatAngler(player, item)) {
                 player.sendFilteredMessage("You eat the molten eel.");
                 player.antifireTicks = 600;
-                player.getPacketSender().sendWidget(Widget.ANTIFIRE, (int) (600 * 0.6));
             }
         });
 
@@ -319,7 +317,7 @@ public class Consumable {
         //Beer
         registerDrink(1917, 1919, 1, 3, p -> {
             p.getStats().get(StatType.Strength).boost(2, 0.04);
-            p.getStats().get(StatType.Attack).drain(2.0);
+            p.getStats().get(StatType.Attack).drain(1, 0.06);
         });
 
         //Beer tankard
@@ -538,20 +536,13 @@ public class Consumable {
              p.curePoison((90 * 1000) / 600);
         });
         registerPotion(Potion.ANTIDOTE_PLUS, p -> p.curePoison((540 * 1000) / 600));
-        registerPotion(Potion.ANTIFIRE, p -> {
-            p.antifireTicks = 600;
-            p.getPacketSender().sendWidget(Widget.ANTIFIRE, (int) (600 * 0.6));
-        });
-        registerPotion(Potion.SUPER_ANTIFIRE, p -> {
-            p.superAntifireTicks = 300;
-            p.getPacketSender().sendWidget(Widget.ANTIFIRE, (int) (300 * 0.6));
-        });
+        registerPotion(Potion.ANTIFIRE, p -> p.antifireTicks = 600);
+        registerPotion(Potion.SUPER_ANTIFIRE, p -> p.superAntifireTicks = 300);
 
         registerPotion(Potion.STAMINA, p -> {
             p.getMovement().restoreEnergy(20);
             Config.STAMINA_POTION.set(p, 1);
             p.staminaTicks = 200;
-            p.getPacketSender().sendWidget(Widget.STAMINA, 120);
         });
         registerPotion(Potion.ANTIDOTE_PLUS_PLUS, p -> {
             p.curePoison((730 * 1000) / 600);
@@ -573,17 +564,15 @@ public class Consumable {
             p.hit(new Hit().fixedDamage((int) (2 + (p.getMaxHp() * 0.1))));
         });
 
-        registerPotion(Potion.EXTENDED_ANTIFIRE, p -> {
-            p.antifireTicks = 1200;
-            p.getPacketSender().sendWidget(Widget.EXTENDED_ANTIFIRE, (int) (1200 * 0.6));
-        });
-        registerPotion(Potion.EXTENDED_SUPER_ANTIFIRE, p -> {
-            p.superAntifireTicks = 600;
-            p.getPacketSender().sendWidget(Widget.EXTENDED_ANTIFIRE, (int) (600 * 0.6));
-        });
+        registerPotion(Potion.EXTENDED_ANTIFIRE, p -> p.antifireTicks = 1200);
+        registerPotion(Potion.EXTENDED_SUPER_ANTIFIRE, p -> p.superAntifireTicks = 600);
         registerPotion(Potion.MAGIC_ESSENCE, p -> p.getStats().get(StatType.Magic).boost(3, 0));
-        registerPotion(Potion.ANTI_VENOM, p -> p.cureVenom(0));
-        registerPotion(Potion.SUPER_ANTI_VENOM, p -> p.cureVenom(300));
+        registerPotion(Potion.ANTI_VENOM, p -> {
+            p.cureVenom(0);
+        });
+        registerPotion(Potion.SUPER_ANTI_VENOM, p -> {
+            p.cureVenom(300);
+        });
 
         registerPotion(Potion.GUTHIX_REST, p -> { //todo give this it's own method with it's own correct drink messages
             p.getStats().get(StatType.Hitpoints).boost(5, 0.0);
