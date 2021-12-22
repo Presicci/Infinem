@@ -602,35 +602,17 @@ public class Consumable {
             p.getStats().get(StatType.Defence).boost(6, 0.16);
         });
 
-        registerPotion(Potion.TWISTED_MINUS, p -> {
-            p.getStats().get(StatType.Ranged).boost(4, 0.10);
-        });
-        registerPotion(Potion.TWISTED_REGULAR, p -> {
-            p.getStats().get(StatType.Ranged).boost(5, 0.13);
-        });
-        registerPotion(Potion.TWISTED_PLUS, p -> {
-            p.getStats().get(StatType.Ranged).boost(6, 0.16);
-        });
+        registerPotion(Potion.TWISTED_MINUS, p -> p.getStats().get(StatType.Ranged).boost(4, 0.10));
+        registerPotion(Potion.TWISTED_REGULAR, p -> p.getStats().get(StatType.Ranged).boost(5, 0.13));
+        registerPotion(Potion.TWISTED_PLUS, p -> p.getStats().get(StatType.Ranged).boost(6, 0.16));
 
-        registerPotion(Potion.KODAI_MINUS, p -> {
-            p.getStats().get(StatType.Magic).boost(4, 0.10);
-        });
-        registerPotion(Potion.KODAI_REGULAR, p -> {
-            p.getStats().get(StatType.Magic).boost(5, 0.13);
-        });
-        registerPotion(Potion.KODAI_PLUS, p -> {
-            p.getStats().get(StatType.Magic).boost(6, 0.16);
-        });
+        registerPotion(Potion.KODAI_MINUS, p -> p.getStats().get(StatType.Magic).boost(4, 0.10));
+        registerPotion(Potion.KODAI_REGULAR, p -> p.getStats().get(StatType.Magic).boost(5, 0.13));
+        registerPotion(Potion.KODAI_PLUS, p -> p.getStats().get(StatType.Magic).boost(6, 0.16));
 
-        registerPotion(Potion.REVITALISATION_MINUS, p -> {
-            restore(p, false);
-        });
-        registerPotion(Potion.REVITALISATION_REGULAR, p -> {
-            restore(p, false);
-        });
-        registerPotion(Potion.REVITALISATION_PLUS, p -> {
-            restore(p, true);
-        });
+        registerPotion(Potion.REVITALISATION_MINUS, p -> restore(p, false));
+        registerPotion(Potion.REVITALISATION_REGULAR, p -> restore(p, false));
+        registerPotion(Potion.REVITALISATION_PLUS, p -> restore(p, true));
 
         registerPotion(Potion.PRAYER_ENHANCE_MINUS, p -> {
             Stat stat = p.getStats().get(StatType.Prayer);
@@ -710,12 +692,8 @@ public class Consumable {
             p.getStats().get(StatType.Ranged).boost(5, 0.15);
             p.getStats().get(StatType.Magic).boost(5, 0.15);
         });
-        registerPotion(Potion.SUPER_MAGIC, p -> {
-            p.getStats().get(StatType.Magic).boost(5, 0.15);
-        });
-        registerPotion(Potion.SUPER_RANGING, p -> {
-            p.getStats().get(StatType.Ranged).boost(5, 0.15);
-        });
+        registerPotion(Potion.SUPER_MAGIC, p -> p.getStats().get(StatType.Magic).boost(5, 0.15));
+        registerPotion(Potion.SUPER_RANGING, p -> p.getStats().get(StatType.Ranged).boost(5, 0.15));
         registerPotion(Potion.ABSORPTION, p -> {
             p.absorptionPoints = p.absorptionPoints + 50;
             Config.NMZ_ABSORPTION.set(p, p.absorptionPoints);
