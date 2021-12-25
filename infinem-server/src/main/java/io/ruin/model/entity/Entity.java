@@ -574,7 +574,11 @@ public abstract class Entity {
         // Decrement our poison immunity ticks
         if(poisonImmunity > 0) {
             --poisonImmunity;
-            return;
+            if (poisonLevel < 2) {
+                if(venomImmunity > 0)
+                    --venomImmunity;
+                return;
+            }
         }
         // Decrement our venom immunity ticks
         if(venomImmunity > 0) {
