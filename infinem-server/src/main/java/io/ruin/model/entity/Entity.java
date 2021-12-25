@@ -565,55 +565,28 @@ public abstract class Entity {
     public int poisonImmunity;
 
     @Expose
-    public int poisonLevel; // 1 = poison, 2 = venom
+    public int venomImmunity;
 
     @Expose
-    public int poisonImmunityLevel; // ^
-
-    public void curePoison(int immuneFor) {
-        if(poisonLevel > 1) { // envenomed, downgrade to poison
-            poisonLevel--;
-            poisonDamage = 6;
-            Config.POISONED.set(player, 1);
-        } else { // regular poison, cure
-            this.poisonTicks = 0;
-            this.poisonDamage = 0;
-            if(poisonImmunityLevel < 2) { // if we have venom immunity already, we should keep that instead
-                if(poisonImmunity < immuneFor)
-                    this.poisonImmunity = immuneFor;
-                if(immuneFor > 0)
-                    poisonImmunityLevel = 2;
-            }
-            poisonLevel = 0;
-            if(player != null)
-                Config.POISONED.set(player, 0);
-        }
-    }
-
-    public boolean poison(int damage) {
-        if(poisonLevel > 0 || isPoisonImmune())
-            return false;
-        poisonTicks = 150;
-        poisonDamage = damage;
-        poisonLevel = 1;
-        if(player != null) {
-            player.sendMessage("You have been poisoned!");
-            Config.POISONED.set(player, 1);
-        }
-        return true;
-    }
+    public int poisonLevel; // 1 = poison, 2 = venom
 
     private void checkPoison() {
-        if(poisonImmunity > 0 && --poisonImmunity == 0) {
-            poisonImmunityLevel = 0;
+        // Decrement our poison immunity ticks
+        if(poisonImmunity > 0) {
+            --poisonImmunity;
             return;
         }
+        // Decrement our venom immunity ticks
+        if(venomImmunity > 0) {
+            --venomImmunity;
+            return;
+        }
+        // Not poisoned
         if(poisonDamage == 0) {
-            /* not poisoned */
             return;
         }
+        // Only apply poison/venom hits every 30 ticks / 18 seconds
         if(poisonTicks == 0 || --poisonTicks % 30 != 0) {
-            /* no hit required */
             return;
         }
         hit(new Hit(poisonLevel == 2 ? HitType.VENOM : HitType.POISON).fixedDamage(poisonDamage));
@@ -633,6 +606,19 @@ public abstract class Entity {
         }
     }
 
+    public boolean poison(int damage) {
+        if(poisonLevel > 0 || isPoisonImmune())
+            return false;
+        poisonTicks = 150;
+        poisonDamage = damage;
+        poisonLevel = 1;
+        if(player != null) {
+            player.sendMessage("You have been poisoned!");
+            Config.POISONED.set(player, 1);
+        }
+        return true;
+    }
+
     public boolean envenom(int damage) {
         if(poisonLevel >= 2 || isVenomImmune())
             return false;
@@ -646,19 +632,33 @@ public abstract class Entity {
         return true;
     }
 
+    public void curePoison(int immuneFor) {
+        if(poisonLevel > 1) { // envenomed, downgrade to poison
+            poisonLevel--;
+            poisonDamage = 6;
+            Config.POISONED.set(player, 1);
+        } else { // regular poison, cure
+            this.poisonTicks = 0;
+            this.poisonDamage = 0;
+            poisonLevel = 0;
+            if(poisonImmunity < immuneFor)
+                this.poisonImmunity = immuneFor;
+            if(player != null)
+                Config.POISONED.set(player, 0);
+        }
+    }
+
     /**
      * Note: curing venom also cures poison
      */
-    public void cureVenom(int immuneFor) {
-        if(poisonLevel == 0)
-            return;
+    public void cureVenom(int venomImmuneFor, int poisionImmuneFor) {
         this.poisonTicks = 0;
         this.poisonDamage = 0;
-        if(poisonImmunity < immuneFor)
-            this.poisonImmunity = immuneFor;
-        if(immuneFor > 0)
-            poisonImmunityLevel = 2;
         poisonLevel = 0;
+        if(poisonImmunity < poisionImmuneFor)
+            this.poisonImmunity = poisionImmuneFor;
+        if(venomImmunity < venomImmuneFor)
+            this.venomImmunity = venomImmuneFor;
         if(player != null)
             Config.POISONED.set(player, 0);
     }
@@ -672,7 +672,7 @@ public abstract class Entity {
     }
 
     public boolean isVenomImmune() {
-        return poisonImmunityLevel > 1 && poisonImmunity > 0;
+        return venomImmunity > 0;
     }
 
     /**
