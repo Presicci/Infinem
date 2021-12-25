@@ -510,6 +510,25 @@ public class Consumable {
         registerPotion(Potion.RANGING, p -> p.getStats().get(StatType.Ranged).boost(4, 0.10));
         registerPotion(Potion.MAGIC, p -> p.getStats().get(StatType.Magic).boost(5, 0.0));
 
+        registerPotion(Potion.DIVINE_SUPER_ATTACK, p -> p.getStats().get(StatType.Attack).boost(5, 0.15));
+        registerPotion(Potion.DIVINE_SUPER_STRENGTH, p -> p.getStats().get(StatType.Strength).boost(5, 0.15));
+        registerPotion(Potion.DIVINE_SUPER_DEFENCE, p -> p.getStats().get(StatType.Defence).boost(5, 0.15));
+        registerPotion(Potion.DIVINE_RANGING, p -> p.getStats().get(StatType.Ranged).boost(4, 0.10));
+        registerPotion(Potion.DIVINE_MAGIC, p -> p.getStats().get(StatType.Magic).boost(4, 0.0));
+        registerPotion(Potion.DIVINE_SUPER_COMBAT, p -> {
+            p.getStats().get(StatType.Attack).boost(5, 0.15);
+            p.getStats().get(StatType.Strength).boost(5, 0.15);
+            p.getStats().get(StatType.Defence).boost(5, 0.15);
+        });
+        registerPotion(Potion.DIVINE_BATTLEMAGE, p -> {
+            p.getStats().get(StatType.Magic).boost(4, 0.0);
+            p.getStats().get(StatType.Defence).boost(5, 0.15);
+        });
+        registerPotion(Potion.DIVINE_BASTION, p -> {
+            p.getStats().get(StatType.Ranged).boost(4, 0.10);
+            p.getStats().get(StatType.Defence).boost(5, 0.15);
+        });
+
         registerPotion(Potion.AGILITY, p -> p.getStats().get(StatType.Agility).boost(3, 0.0));
         registerPotion(Potion.FISHING, p -> p.getStats().get(StatType.Fishing).boost(3, 0.0));
         registerPotion(Potion.HUNTER, p -> p.getStats().get(StatType.Hunter).boost(3, 0.0));
@@ -766,6 +785,48 @@ public class Consumable {
         }
     }
 
+    /**
+     * Checks if the player is currently under the affect of any divine potions
+     * and if the player is trying to drink said divine potion/
+     * @param player The player drinking the potion.
+     * @param potion The potion the player is drinking.
+     * @return True if potion is not a divine, or if player does not have the buff for that divine.
+     */
+    private static boolean divinePreCheck(Player player, Potion potion) {
+        if (player.divineRangingBoostActive && potion == Potion.DIVINE_RANGING) {
+            player.sendMessage("Your ranging boost is still active.");
+            return false;
+        }
+        if (player.divineMagicBoostActive && potion == Potion.DIVINE_MAGIC) {
+            player.sendMessage("Your magic boost is still active.");
+            return false;
+        }
+        if (player.divineAttackBoostActive && potion == Potion.DIVINE_SUPER_ATTACK) {
+            player.sendMessage("Your attack boost is still active.");
+            return false;
+        }
+        if (player.divineStrBoostActive && potion == Potion.DIVINE_SUPER_STRENGTH) {
+            player.sendMessage("Your strength boost is still active.");
+            return false;
+        }
+        if (player.divineDefBoostActive && potion == Potion.DIVINE_SUPER_DEFENCE) {
+            player.sendMessage("Your defence boost is still active.");
+            return false;
+        }
+        if (player.divineSuperCmbBoostActive && potion == Potion.DIVINE_SUPER_COMBAT) {
+            player.sendMessage("Your super combat boost is still active.");
+            return false;
+        }
+        if (player.divineBattlemageBoostActive && potion == Potion.DIVINE_BATTLEMAGE) {
+            player.sendMessage("Your battlemage boost is still active.");
+            return false;
+        }if (player.divineBastionBoostActive && potion == Potion.DIVINE_BASTION) {
+            player.sendMessage("Your bastion boost is still active.");
+            return false;
+        }
+        return true;
+    }
+
     private static boolean drink(Player player, Potion potion, Item item, int newId) {
         if(player.isLocked() || player.isStunned())
             return false;
@@ -773,6 +834,9 @@ public class Consumable {
             return false;
         if(DuelRule.NO_DRINKS.isToggled(player)) {
             player.sendMessage("Drinks have been disabled for this duel!");
+            return false;
+        }
+        if (!divinePreCheck(player, potion)) {
             return false;
         }
         if (player.prayerEnhanceBoostActive && (potion == Potion.PRAYER_ENHANCE_MINUS || potion == Potion.PRAYER_ENHANCE_REGULAR || potion == Potion.PRAYER_ENHANCE_PLUS)) {
@@ -808,11 +872,14 @@ public class Consumable {
         }
         animDrink(player);
         player.potDelay.delay(3);
-        if (isOverload) {
+        if (isOverload)
             overload(player, potion);
-        }
-        if(potion == Potion.PRAYER_ENHANCE_MINUS || potion == Potion.PRAYER_ENHANCE_REGULAR || potion == Potion.PRAYER_ENHANCE_PLUS)
+        if (potion == Potion.PRAYER_ENHANCE_MINUS || potion == Potion.PRAYER_ENHANCE_REGULAR || potion == Potion.PRAYER_ENHANCE_PLUS)
             prayerEnhance(player, potion);
+        if (potion == Potion.DIVINE_SUPER_ATTACK || potion == Potion.DIVINE_SUPER_STRENGTH || potion == Potion.DIVINE_SUPER_DEFENCE
+                || potion == Potion.DIVINE_SUPER_COMBAT || potion == Potion.DIVINE_RANGING || potion == Potion.DIVINE_MAGIC
+                || potion == Potion.DIVINE_BATTLEMAGE || potion == Potion.DIVINE_BASTION)
+            divine(player, potion);
         return true;
     }
 
@@ -909,6 +976,118 @@ public class Consumable {
             }
             player.overloadBoostActive = false;
             player.sendMessage("Your overload boost has worn off.");
+        });
+    }
+
+    private static void divine(Player player, Potion potion) {
+        World.startEvent(event -> {
+            player.animate(3170);
+            player.graphics(560);
+            player.hit(new Hit().fixedDamage(10));
+
+            switch (potion) {
+                case DIVINE_SUPER_ATTACK:
+                    player.divineAttackBoostActive = true;
+                    for (int i = 0; i < 20; i++) {
+                        if(DuelRule.NO_DRINKS.isToggled(player)) {
+                            player.divineAttackBoostActive = false;
+                            return;
+                        }
+                        player.getStats().get(StatType.Attack).boost(5, 0.15);
+                        event.delay(25);
+                    }
+                    player.divineAttackBoostActive = false;
+                    break;
+                case DIVINE_SUPER_STRENGTH:
+                    player.divineStrBoostActive = true;
+                    for (int i = 0; i < 20; i++) {
+                        if(DuelRule.NO_DRINKS.isToggled(player)) {
+                            player.divineStrBoostActive = false;
+                            return;
+                        }
+                        player.getStats().get(StatType.Strength).boost(5, 0.15);
+                        event.delay(25);
+                    }
+                    player.divineStrBoostActive = false;
+                    break;
+                case DIVINE_SUPER_DEFENCE:
+                    player.divineDefBoostActive = true;
+                    for (int i = 0; i < 20; i++) {
+                        if(DuelRule.NO_DRINKS.isToggled(player)) {
+                            player.divineDefBoostActive = false;
+                            return;
+                        }
+                        player.getStats().get(StatType.Defence).boost(5, 0.15);
+                        event.delay(25);
+                    }
+                    player.divineDefBoostActive = false;
+                    break;
+                case DIVINE_RANGING:
+                    player.divineRangingBoostActive = true;
+                    for (int i = 0; i < 20; i++) {
+                        if(DuelRule.NO_DRINKS.isToggled(player)) {
+                            player.divineRangingBoostActive = false;
+                            return;
+                        }
+                        player.getStats().get(StatType.Ranged).boost(4, 0.10);
+                        event.delay(25);
+                    }
+                    player.divineRangingBoostActive = false;
+                    break;
+                case DIVINE_MAGIC:
+                    player.divineMagicBoostActive = true;
+                    for (int i = 0; i < 20; i++) {
+                        if(DuelRule.NO_DRINKS.isToggled(player)) {
+                            player.divineMagicBoostActive = false;
+                            return;
+                        }
+                        player.getStats().get(StatType.Magic).boost(4, 0.0);
+                        event.delay(25);
+                    }
+                    player.divineMagicBoostActive = false;
+                    break;
+                case DIVINE_SUPER_COMBAT:
+                    player.divineSuperCmbBoostActive = true;
+                    for (int i = 0; i < 20; i++) {
+                        if(DuelRule.NO_DRINKS.isToggled(player)) {
+                            player.divineSuperCmbBoostActive = false;
+                            return;
+                        }
+                        player.getStats().get(StatType.Attack).boost(5, 0.15);
+                        player.getStats().get(StatType.Strength).boost(5, 0.15);
+                        player.getStats().get(StatType.Defence).boost(5, 0.15);
+                        event.delay(25);
+                    }
+                    player.divineSuperCmbBoostActive = false;
+                    break;
+                case DIVINE_BASTION:
+                    player.divineBastionBoostActive = true;
+                    for (int i = 0; i < 20; i++) {
+                        if(DuelRule.NO_DRINKS.isToggled(player)) {
+                            player.divineBastionBoostActive = false;
+                            return;
+                        }
+                        player.getStats().get(StatType.Ranged).boost(4, 0.10);
+                        player.getStats().get(StatType.Defence).boost(5, 0.15);
+                        event.delay(25);
+                    }
+                    player.divineBastionBoostActive = false;
+                    break;
+                case DIVINE_BATTLEMAGE:
+                    player.divineBattlemageBoostActive = true;
+                    for (int i = 0; i < 20; i++) {
+                        if(DuelRule.NO_DRINKS.isToggled(player)) {
+                            player.divineBattlemageBoostActive = false;
+                            return;
+                        }
+                        player.getStats().get(StatType.Magic).boost(4, 0.0);
+                        player.getStats().get(StatType.Defence).boost(5, 0.15);
+                        event.delay(25);
+                    }
+                    player.divineBattlemageBoostActive = false;
+                    break;
+            }
+            player.sendMessage("Your " + potion.potionName + " has worn off.");
         });
     }
 

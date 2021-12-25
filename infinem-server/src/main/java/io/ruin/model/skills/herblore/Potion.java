@@ -57,31 +57,47 @@ public enum Potion {
     SUPER_ANTIFIRE(92, 130.0, "super antifire potion", "antifire potion(3)", "crushed superior dragon bones"),
     SUPER_ANTI_VENOM(94, 125.0, "anti-venom+", "anti-venom(3)", "torstol"),
     EXTENDED_SUPER_ANTIFIRE(98, 160.0, "extended super antifire", "super antifire potion(3)", "lava scale shard"),
+    DIVINE_SUPER_ATTACK(70,1.5,"divine super attack potion", "super attack(3)","crystal shard"),
+    DIVINE_SUPER_STRENGTH(70,1.5,"divine super strength potion","super strength(3)","crystal shard"),
+    DIVINE_SUPER_DEFENCE(70,1.5,"divine super defence potion","super defence(3)","crystal shard"),
+    DIVINE_RANGING(74,1.5,"divine ranging potion","ranging potion(3)","crystal shard"),
+    DIVINE_MAGIC(78,1.5,"divine magic potion","magic potion(3)","crystal shard"),
+    DIVINE_SUPER_COMBAT(97,1.5,"divine super combat potion","super combat potion(3)","crystal shard"),
+    DIVINE_BATTLEMAGE(86,1.5,"divine battlemage potion","battlemage potion(3)","crystal shard"),
+    DIVINE_BASTION(86,1.5,"divine bastion potion","bastion potion(3)","crystal shard"),
+
+    /**
+     * NMZ
+     */
+    OVERLOAD_NMZ("overload ", false),
+    SUPER_RANGING("super ranging ", false),
+    SUPER_MAGIC("super magic potion ", false),
+    ABSORPTION("absorption ", false),
 
     /**
      * Raids potions
      */
-    ELDER_MINUS("elder (-)"),
-    ELDER_REGULAR("elder potion"),
-    ELDER_PLUS("elder (+)"),
-    TWISTED_MINUS("twisted (-)"),
-    TWISTED_REGULAR("twisted potion"),
-    TWISTED_PLUS("twisted (+)"),
-    KODAI_MINUS("kodai (-)"),
-    KODAI_REGULAR("kodai potion"),
-    KODAI_PLUS("kodai (+)"),
-    REVITALISATION_MINUS("revitalisation (-)"),
-    REVITALISATION_REGULAR("revitalisation potion"),
-    REVITALISATION_PLUS("revitalisation (+)"),
-    PRAYER_ENHANCE_MINUS("prayer enhance (-)"),
-    PRAYER_ENHANCE_REGULAR("prayer enhance"),
-    PRAYER_ENHANCE_PLUS("prayer enhance (+)"),
-    XERIC_AID_MINUS("xeric's aid (-)"),
-    XERIC_AID_REGULAR("xeric's aid "),
-    XERIC_AID_PLUS("xeric's aid (+)"),
-    OVERLOAD_MINUS("overload (-)"),
-    OVERLOAD_REGULAR("overload "),
-    OVERLOAD_PLUS("overload (+)");
+    ELDER_MINUS("elder (-)", true),
+    ELDER_REGULAR("elder potion", true),
+    ELDER_PLUS("elder (+)", true),
+    TWISTED_MINUS("twisted (-)", true),
+    TWISTED_REGULAR("twisted potion", true),
+    TWISTED_PLUS("twisted (+)", true),
+    KODAI_MINUS("kodai (-)", true),
+    KODAI_REGULAR("kodai potion", true),
+    KODAI_PLUS("kodai (+)", true),
+    REVITALISATION_MINUS("revitalisation (-)", true),
+    REVITALISATION_REGULAR("revitalisation potion", true),
+    REVITALISATION_PLUS("revitalisation (+)", true),
+    PRAYER_ENHANCE_MINUS("prayer enhance (-)", true),
+    PRAYER_ENHANCE_REGULAR("prayer enhance", true),
+    PRAYER_ENHANCE_PLUS("prayer enhance (+)", true),
+    XERIC_AID_MINUS("xeric's aid (-)", true),
+    XERIC_AID_REGULAR("xeric's aid ", true),
+    XERIC_AID_PLUS("xeric's aid (+)", true),
+    OVERLOAD_MINUS("overload (-)", true),
+    OVERLOAD_REGULAR("overload ", true),
+    OVERLOAD_PLUS("overload (+)", true);
 
     public final int lvlReq;
 
@@ -107,14 +123,14 @@ public enum Potion {
         this.raidsPotion = false;
     }
 
-    Potion(String potionName) {
+    Potion(String potionName, boolean raidsPotion) {
         this.lvlReq = -1;
         this.xp = -1;
         this.potionName = potionName;
         this.primaryName = "";
         this.secondaryNames = new String[4];
         this.vialIds = new int[4];
-        this.raidsPotion = true;
+        this.raidsPotion = raidsPotion;
     }
 
     private void mix(Player player, Item primaryItem, List<Item> secondaryItems) {
@@ -286,6 +302,12 @@ public enum Potion {
                 if(def == null)
                     continue;
                 if(def.name.toLowerCase().startsWith(potion.potionName + "(") || def.name.toLowerCase().startsWith(potion.potionName + " (")) {
+                    // Differentiates the nmz and raids overload potions
+                    if (potion == Potion.OVERLOAD_NMZ && def.id > 20000) {
+                        continue;
+                    } else if (potion == Potion.OVERLOAD_REGULAR && def.id < 20000) {
+                        continue;
+                    }
                     int doses = Character.getNumericValue(def.name.charAt(def.name.lastIndexOf("(") + 1));
                     if(doses >= 1 && doses <= 4) {
                         if(potion.vialIds[doses - 1] == 0) {
