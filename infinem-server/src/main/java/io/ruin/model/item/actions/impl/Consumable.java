@@ -567,12 +567,8 @@ public class Consumable {
         registerPotion(Potion.EXTENDED_ANTIFIRE, p -> p.antifireTicks = 1200);
         registerPotion(Potion.EXTENDED_SUPER_ANTIFIRE, p -> p.superAntifireTicks = 600);
         registerPotion(Potion.MAGIC_ESSENCE, p -> p.getStats().get(StatType.Magic).boost(3, 0));
-        registerPotion(Potion.ANTI_VENOM, p -> {
-            p.cureVenom(0);
-        });
-        registerPotion(Potion.SUPER_ANTI_VENOM, p -> {
-            p.cureVenom(300);
-        });
+        registerPotion(Potion.ANTI_VENOM, p -> p.cureVenom((36 * 1000) / 600, (720 * 1000) / 600));
+        registerPotion(Potion.SUPER_ANTI_VENOM, p -> p.cureVenom((180 * 1000) / 600, (900 * 1000) / 600));
 
         registerPotion(Potion.GUTHIX_REST, p -> { //todo give this it's own method with it's own correct drink messages
             p.getStats().get(StatType.Hitpoints).boost(5, 0.0);
