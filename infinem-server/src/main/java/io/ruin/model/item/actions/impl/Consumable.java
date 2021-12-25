@@ -536,8 +536,8 @@ public class Consumable {
              p.curePoison((90 * 1000) / 600);
         });
         registerPotion(Potion.ANTIDOTE_PLUS, p -> p.curePoison((540 * 1000) / 600));
-        registerPotion(Potion.ANTIFIRE, p -> p.antifireTicks = 600);
-        registerPotion(Potion.SUPER_ANTIFIRE, p -> p.superAntifireTicks = 300);
+        registerPotion(Potion.ANTIFIRE, p -> p.antifireTicks = (360 * 1000) / 600);
+        registerPotion(Potion.SUPER_ANTIFIRE, p -> p.superAntifireTicks = (180 * 1000) / 600);
 
         registerPotion(Potion.STAMINA, p -> {
             p.getMovement().restoreEnergy(20);
@@ -564,8 +564,8 @@ public class Consumable {
             p.hit(new Hit().fixedDamage((int) (2 + (p.getMaxHp() * 0.1))));
         });
 
-        registerPotion(Potion.EXTENDED_ANTIFIRE, p -> p.antifireTicks = 1200);
-        registerPotion(Potion.EXTENDED_SUPER_ANTIFIRE, p -> p.superAntifireTicks = 600);
+        registerPotion(Potion.EXTENDED_ANTIFIRE, p -> p.antifireTicks = (720 * 1000) / 600);
+        registerPotion(Potion.EXTENDED_SUPER_ANTIFIRE, p -> p.superAntifireTicks = (360 * 1000) / 600);
         registerPotion(Potion.MAGIC_ESSENCE, p -> p.getStats().get(StatType.Magic).boost(3, 0));
         registerPotion(Potion.ANTI_VENOM, p -> p.cureVenom((36 * 1000) / 600, (720 * 1000) / 600));
         registerPotion(Potion.SUPER_ANTI_VENOM, p -> p.cureVenom((180 * 1000) / 600, (900 * 1000) / 600));
