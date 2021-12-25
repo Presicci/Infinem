@@ -635,7 +635,6 @@ public abstract class Entity {
     public void curePoison(int immuneFor) {
         if(poisonLevel > 1) { // envenomed, downgrade to poison
             poisonLevel--;
-            poisonDamage = 6;
             Config.POISONED.set(player, 1);
         } else { // regular poison, cure
             this.poisonTicks = 0;
