@@ -573,9 +573,13 @@ public class Consumable {
         registerPotion(Potion.GUTHIX_REST, p -> { //todo give this it's own method with it's own correct drink messages
             p.getStats().get(StatType.Hitpoints).boost(5, 0.0);
             p.getMovement().restoreEnergy(5);
-            if(p.isPoisoned()) {
-                p.curePoison(0);
-                p.sendFilteredMessage("You tea dilutes some of the poison.");
+            // If player is venomed, reduce to a poison
+            if (p.isVenomed()) {
+                p.venomToPoison();
+                p.sendFilteredMessage("The tea helps to dilute the venom.");
+            } else if (p.isPoisoned()) {    // If player is poisoned, reduce damage by 1
+                --p.poisonDamage;
+                p.sendFilteredMessage("The tea helps to dilute the poison.");
             }
         });
 
