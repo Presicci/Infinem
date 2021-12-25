@@ -623,7 +623,7 @@ public abstract class Entity {
                 return;
             }
             if(--poisonDamage > 0)
-                poisonTicks = 120;
+                poisonTicks = 150;
             else if(player != null) {
                 poisonLevel = 0;
                 Config.POISONED.set(player, 0);
@@ -679,7 +679,7 @@ public abstract class Entity {
      * Hits
      */
 
-    private ArrayList<Hit> queuedHits;
+    protected ArrayList<Hit> queuedHits;
 
     public HitsUpdate hitsUpdate;
 
