@@ -593,7 +593,7 @@ public abstract class Entity {
     public boolean poison(int damage) {
         if(poisonLevel > 0 || isPoisonImmune())
             return false;
-        poisonTicks = 120;
+        poisonTicks = 150;
         poisonDamage = damage;
         poisonLevel = 1;
         if(player != null) {
@@ -636,7 +636,7 @@ public abstract class Entity {
     public boolean envenom(int damage) {
         if(poisonLevel >= 2 || isVenomImmune())
             return false;
-        poisonTicks = 120;
+        poisonTicks = 150;
         poisonDamage = damage;
         poisonLevel = 2;
         if(player != null) {
