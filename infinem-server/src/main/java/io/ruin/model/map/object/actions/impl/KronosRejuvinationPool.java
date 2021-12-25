@@ -20,7 +20,7 @@ public class KronosRejuvinationPool {
         player.getStats().restore(true);
         player.getMovement().restoreEnergy(100);
         player.curePoison(1);
-        player.cureVenom(1);
+        player.cureVenom(1, 1);
         if (player.storeAmountSpent > 99) {
             player.getCombat().restore();
             player.sendMessage("Your stats and special attack have been restored!");

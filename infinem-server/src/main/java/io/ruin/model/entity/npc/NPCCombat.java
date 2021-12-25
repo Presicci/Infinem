@@ -68,7 +68,7 @@ public abstract class NPCCombat extends Combat {
     @Setter @Getter
     private boolean allowRetaliate = true;
 
-    protected final NPCCombat init(NPC npc, npc_combat.Info info) {
+    public final NPCCombat init(NPC npc, npc_combat.Info info) {
         this.npc = npc;
         this.info = info;
         this.stats = new Stat[] {
@@ -799,7 +799,7 @@ public abstract class NPCCombat extends Combat {
         for(Stat stat : stats)
             stat.restore();
         npc.resetFreeze();
-        npc.cureVenom(0);
+        npc.cureVenom(0, 0);
     }
 
     /**

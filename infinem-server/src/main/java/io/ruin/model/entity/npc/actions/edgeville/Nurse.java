@@ -17,7 +17,7 @@ public class Nurse {
         player.resetStun();
         player.getStats().restore(false);
         player.getMovement().restoreEnergy(100);
-        player.cureVenom(0);
+        player.cureVenom(0, 0);
 
         if(npc != null) {
             npc.faceTemp(player);

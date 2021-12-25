@@ -43,7 +43,7 @@ public class DuelArena {
     private static void deathStart(Entity entity, Killer killer, Hit hit) {
         Duel targetDuel = entity.player.getDuel().targetDuel;
         if(targetDuel != null)
-            targetDuel.player.cureVenom(0);
+            targetDuel.player.cureVenom(0, 0);
     }
 
     private static void deathEnd(Entity entity, Killer killer, Hit hit) {

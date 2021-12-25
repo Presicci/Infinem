@@ -1126,7 +1126,7 @@ public class PlayerCombat extends Combat {
         player.getMovement().restoreEnergy(100);
         player.getPrayer().deactivateAll();
         player.resetFreeze();
-        player.cureVenom(0);
+        player.cureVenom(0, 0);
         restoreSpecial(100);
         if(specialActive != null)
             deactivateSpecial();

@@ -703,7 +703,7 @@ public class House {
 
     public void leave(Player p) {
         p.unlock();
-        p.cureVenom(0);
+        p.cureVenom(0, 0);
         if (p.getCurrentHouse() != null)
             p.getMovement().teleport(p.getCurrentHouse().getLocation().getPosition());
     }
