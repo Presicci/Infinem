@@ -727,7 +727,11 @@ public class Consumable {
             Stat stat = player.getStats().get(type);
             if(stat.currentLevel < stat.fixedLevel) {
                 if(superEffect) {
-                    if(type == StatType.Prayer && player.getEquipment().getId(Equipment.SLOT_RING) == 13202) // ring of the gods
+                    if(type == StatType.Prayer
+                            && (player.getEquipment().getId(Equipment.SLOT_RING) == 13202   // Ring of the gods (i)
+                            || player.getInventory().contains(6714) // Holy wrench
+                            || PrayerSkillCape.hasPrayerCape(player)
+                            || PrayerSkillCape.wearingPrayerCape(player)))
                         stat.restore(8, 0.27);
                     else
                         stat.restore(8, 0.25);
