@@ -772,10 +772,18 @@ public class Consumable {
             return;
         if(!def.hasOption("empty"))
             return;
-        ItemAction.registerInventory(id, "empty", (player, item) -> {
-            item.setId(229);
-            player.sendMessage("You empty the contents of the vial on the floor.");
-        });
+        if (ItemDef.get(id).name.toLowerCase().contains("guthix rest")) {
+            ItemAction.registerInventory(id, "empty", (player, item) -> {
+                item.setId(1980);
+                player.sendMessage("You empty the contents of the cup on the floor.");
+            });
+        } else {
+            ItemAction.registerInventory(id, "empty", (player, item) -> {
+                item.setId(229);
+                player.sendMessage("You empty the contents of the vial on the floor.");
+            });
+        }
+
     }
 
     private static void registerPotion(Potion potion, Consumer<Player> effect) {
