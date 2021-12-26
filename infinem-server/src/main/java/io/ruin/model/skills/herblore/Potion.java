@@ -23,7 +23,7 @@ public enum Potion {
     ANTIPOISON(5, 37.5, "antipoison", "marrentill potion (unf)", "unicorn horn dust"),
     RELICYMS_BALM(8, 40.0, "relicym's balm", "rogue's purse", "snake weed", "vial of water"),
     STRENGTH(12, 50.0, "strength potion", "tarromin potion (unf)", "limpwurt root"),
-    GUTHIX_REST(18, 59.5, "guthix rest", "bowl of hot water", "guam leaf", "harralander", "marrentill"),
+    GUTHIX_REST(18, 59, "guthix rest", "cup of hot water", "guam leaf", "harralander", "marrentill"),
     RESTORE(22, 62.5, "restore potion", "harralander potion (unf)", "red spiders' eggs"),
     GUTHIX_BALANCE(22, 25.0, "guthix balance", "restore potion(3)", "garlic", "silver dust"),
     ENERGY(26, 67.5, "energy potion", "harralander potion (unf)", "chocolate dust"),
@@ -156,7 +156,7 @@ public enum Potion {
         fromDoses -= doses;
         toDoses += doses;
         if(fromDoses <= 0)
-            fromPot.setId(raidsPotion ? 20800 : 229);
+            fromPot.setId(this == Potion.GUTHIX_REST ? 1980 : raidsPotion ? 20800 : 229);
         else
             fromPot.setId(vialIds[fromDoses - 1]);
         toPot.setId(vialIds[toDoses - 1]);
@@ -360,7 +360,7 @@ public enum Potion {
                 for(int id1 : potion.vialIds) {
                     for (int id2 : potion.vialIds)
                         ItemItemAction.register(id1, id2, potion::decant);
-                    ItemItemAction.register(id1, potion.raidsPotion ? 20800 : 229, potion::divide);
+                    ItemItemAction.register(id1, potion == GUTHIX_REST ? 1980 : potion.raidsPotion ? 20800 : 229, potion::divide);
                 }
             }
         }
