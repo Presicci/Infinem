@@ -552,8 +552,22 @@ public class Consumable {
         registerPotion(Potion.SUPER_ENERGY, p -> p.getMovement().restoreEnergy(20));
         registerPotion(Potion.SUPER_RESTORE, p -> restore(p, true));
         registerPotion(Potion.SANFEW_SERUM, p -> {
-            restore(p, true);
-             p.curePoison((90 * 1000) / 600);
+            for (StatType type : StatType.values()) {
+                if (type == StatType.Hitpoints)
+                    continue;
+                Stat stat = p.getStats().get(type);
+                if (stat.currentLevel < stat.fixedLevel) {
+                    if (type == StatType.Prayer
+                            && (p.getEquipment().getId(Equipment.SLOT_RING) == 13202   // Ring of the gods (i)
+                            || p.getInventory().contains(6714) // Holy wrench
+                            || PrayerSkillCape.hasPrayerCape(p)
+                            || PrayerSkillCape.wearingPrayerCape(p)))
+                        stat.restore(4, 0.32);
+                    else
+                        stat.restore(4, 0.30);
+                }
+            }
+            p.curePoison((90 * 1000) / 600);
         });
         registerPotion(Potion.ANTIDOTE_PLUS, p -> p.curePoison((540 * 1000) / 600));
         registerPotion(Potion.ANTIFIRE, p -> p.antifireTicks = (360 * 1000) / 600);
