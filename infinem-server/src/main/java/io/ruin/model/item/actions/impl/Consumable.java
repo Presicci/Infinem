@@ -538,9 +538,10 @@ public class Consumable {
         registerPotion(Potion.ENERGY, p -> p.getMovement().restoreEnergy(10));
         registerPotion(Potion.PRAYER, p -> {
             Stat stat = p.getStats().get(StatType.Prayer);
-            if(p.getEquipment().getId(Equipment.SLOT_RING) == 13202
-                    || p.getInventory().contains(6714)
-                    || PrayerSkillCape.wearingPrayerCape(p))
+            if(p.getEquipment().getId(Equipment.SLOT_RING) == 13202 // Ring of the gods (i)
+                    || p.getInventory().contains(6714)  // Holy wrench
+                    || PrayerSkillCape.wearingPrayerCape(p)
+                    || PrayerSkillCape.hasPrayerCape(p))
                 stat.restore(7, 0.27);
             else
                 stat.restore(7, 0.25);
