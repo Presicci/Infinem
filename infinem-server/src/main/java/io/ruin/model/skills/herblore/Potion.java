@@ -12,6 +12,7 @@ import io.ruin.model.stat.StatType;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public enum Potion {
 
@@ -39,7 +40,9 @@ public enum Potion {
     MAGIC_ESSENCE(57, 130.0, "magic essence", "magic essence (unf)", "gorak claw powder"),
     WEAPON_POISON(60, 137.5, "weapon poison", "kwuarm potion (unf)", "dragon scale dust"),
     SUPER_RESTORE(63, 142.5, "super restore", "snapdragon potion (unf)", "red spiders' eggs"),
-    SANFEW_SERUM(65, 160.0, "sanfew serum", "super restore(4)", "unicorn horn dust", "snake weed", "nail beast nails"),
+    SANFEW_SERUM_1(65, 57.0, "mixture - step 1", "super restore(3)", "unicorn horn dust"),
+    SANFEW_SERUM_2(65, 63.0, "mixture - step 2", "mixture - step 1(3)", "snake weed"),
+    SANFEW_SERUM(65, 72.0, "sanfew serum", "mixture - step 2(3)", "nail beast nails"),
     SUPER_DEFENCE(66, 150.0, "super defence", "cadantine potion (unf)", "white berries"),
     ANTIDOTE_PLUS(68, 155.0, "antidote+", "coconut milk", "toadflax", "yew roots"),
     ANTIFIRE(69, 157.5, "antifire potion", "lantadyme potion (unf)", "dragon scale dust"),
@@ -264,14 +267,14 @@ public enum Potion {
         Potion primaryPotion = ItemDef.get(primaryId).potion;
         String secondaryName = ItemDef.get(secondaryId).name.toLowerCase().replace("'s", "");
         String secondaryPluralName = secondaryName + (secondaryName.endsWith("s") ? "" : "s");
-        double xpPerDose = potion.xp / 4;
+        double xpPerDose = secondaryAmtPerDose == 0 ? (potion.xp / 2) / 4 : potion.xp / 4;
         for(int i = 0; i < primaryPotion.vialIds.length; i++) {
             int vialId = primaryPotion.vialIds[i];
             ItemItemAction.register(vialId, secondaryId, (player, primary, secondary) -> {
                 if(!player.getStats().check(StatType.Herblore, potion.lvlReq, "make this potion"))
                     return;
                 int doses = primary.getDef().potionDoses;
-                int reqAmt = doses * secondaryAmtPerDose;
+                int reqAmt = secondaryAmtPerDose == 0 ? 1 : doses * secondaryAmtPerDose;
                 if(secondary.getAmount() < reqAmt) {
                     if(doses == 1)
                         player.sendMessage("You need at least " + reqAmt + " " + secondaryPluralName + " to upgrade 1 dose of that potion.");
@@ -282,7 +285,7 @@ public enum Potion {
                 secondary.remove(reqAmt);
                 primary.setId(potion.vialIds[doses - 1]);
                 player.animate(363);
-                player.getStats().addXp(StatType.Herblore, xpPerDose * doses, true);
+                player.getStats().addXp(StatType.Herblore, secondaryAmtPerDose == 0 ? potion.xp + (xpPerDose * doses) : xpPerDose * doses, true);
                 if(reqAmt == 1)
                     player.sendFilteredMessage("You mix 1 " + secondaryName + " into your potion.");
                 else
@@ -329,7 +332,7 @@ public enum Potion {
                         primaryId = def.id;
                     continue;
                 }
-                if(secondaryIds != null)
+                if(secondaryIds.length > 0)
                     for(int i = 0; i < secondaryIds.length; i++) {
                         if(secondaryIds[i] == 0 && def.name.toLowerCase().equals(potion.secondaryNames[i]))
                             secondaryIds[i] = def.id;
@@ -346,6 +349,8 @@ public enum Potion {
                 registerUpgrade(potion, primaryId, secondaryIds[0], 1);
             else if(potion == ANTI_VENOM)
                 registerUpgrade(potion, primaryId, secondaryIds[0], 5);
+            else if (potion == SANFEW_SERUM || potion == SANFEW_SERUM_1 || potion == SANFEW_SERUM_2)
+                registerUpgrade(potion, primaryId, secondaryIds[0], 0);
             else if(!potion.raidsPotion)
                 register(potion, primaryId, secondaryIds);
             /**
