@@ -98,7 +98,7 @@ public enum Containers {
         for (Containers container : values()) {
             ItemAction.registerInventory(container.full, "empty", (player, item) -> {
                 item.setId(container.empty);
-                player.sendMessage("You empty the contents of the " + container.name + " on the floor.");
+                player.sendMessage("You empty the " + container.name + ".");
             });
         }
 
@@ -108,7 +108,7 @@ public enum Containers {
         for(int id : FULL_BUCKETS) {
             ItemAction.registerInventory(id, "empty", (player, item) -> {
                 item.setId(BUCKET.empty);
-                player.sendMessage("You empty the contents of the bucket on the floor.");
+                player.sendMessage("You empty the bucket.");
             });
         }
     }
