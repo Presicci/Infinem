@@ -25,6 +25,7 @@ public enum Potion {
     STRENGTH(12, 50.0, "strength potion", "tarromin potion (unf)", "limpwurt root"),
     GUTHIX_REST(18, 59, "guthix rest", "cup of hot water", "guam leaf", "harralander", "marrentill"),
     RESTORE(22, 62.5, "restore potion", "harralander potion (unf)", "red spiders' eggs"),
+    COMPOST(22, 60, "compost potion", "harralander potion (unf)", "volcanic ash"),
     GUTHIX_BALANCE(22, 25.0, "guthix balance", "restore potion(3)", "garlic", "silver dust"),
     ENERGY(26, 67.5, "energy potion", "harralander potion (unf)", "chocolate dust"),
     DEFENCE(30, 75.0, "defence potion", "ranarr potion (unf)", "white berries"),
