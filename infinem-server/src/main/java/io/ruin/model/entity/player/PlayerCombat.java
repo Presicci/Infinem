@@ -393,7 +393,8 @@ public class PlayerCombat extends Combat {
         attackAnim();
         ScytheOfVitur();
 
-        target.hit(new Hit(player, style, type).randDamage(maxDamage).setAttackWeapon(player.getEquipment().getDef(Equipment.SLOT_WEAPON)));
+        Hit hit = new Hit(player, style, type).randDamage(maxDamage).setAttackWeapon(player.getEquipment().getDef(Equipment.SLOT_WEAPON));
+        target.hit(hit);
     }
 
     /**
@@ -970,6 +971,38 @@ public class PlayerCombat extends Combat {
 
         if (target.npc != null && ChambersOfXeric.isRaiding(player))
             ChambersOfXeric.addDamagePoints(player, target.npc, hit.damage);
+
+        /*
+         * Poison handling
+         */
+        if (hit.damage > 0) {
+            AttackStyle style = hit.attackStyle;
+            String weaponName = hit.attackWeapon != null ? hit.attackWeapon.name.toLowerCase() : "";
+            String ammoName = hit.rangedAmmo != null ? hit.rangedAmmo.name.toLowerCase() : "";
+            if (style == AttackStyle.CRUSH || style == AttackStyle.SLASH || style == AttackStyle.STAB) {
+                if (Random.rollDie(4)) {
+                    if (weaponName.contains("(p++)")) {
+                        target.poison(6);
+                    } else if (weaponName.contains("(p+)")) {
+                        target.poison(5);
+                    } else if (weaponName.contains("(p)") || weaponName.contains("abyssal tentacle")) {
+                        target.poison(4);
+                    } else if (weaponName.contains("(kp)")) {
+                        target.poison(6);
+                    }
+                }
+            } else if (style == AttackStyle.RANGED) {
+                if (Random.rollDie(8)) {
+                    if (weaponName.contains("(p++)") || ammoName.contains("(p++)")) {
+                        target.poison(4);
+                    } else if (weaponName.contains("(p+)") || ammoName.contains("(p+)")) {
+                        target.poison(3);
+                    } else if (weaponName.contains("(p)") || ammoName.contains("(p)")) {
+                        target.poison(2);
+                    }
+                }
+            }
+        }
     }
 
     private void preTargetDamage(Hit hit, Entity target) {
