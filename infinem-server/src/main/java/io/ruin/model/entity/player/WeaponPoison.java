@@ -208,5 +208,10 @@ public enum WeaponPoison {
                 ItemItemAction.register(weapon.getKaramjaId(), CLEANING_CLOTH, (p, w, cloth) -> cleanWeapon(p, w, cloth, weapon));
             }
         }
+        ItemItemAction.register(Items.KARAMJAN_RUM, Items.SILK, (p, rum, silk) -> {
+            silk.setId(CLEANING_CLOTH);
+            rum.remove();
+            p.sendFilteredMessage("You douse the silk in rum.");
+        });
     }
 }
