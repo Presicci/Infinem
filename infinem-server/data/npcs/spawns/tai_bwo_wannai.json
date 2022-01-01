@@ -25,5 +25,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Tamayu",
+    "id": 4704,
+    "x": 2803,
+    "y": 3058,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
