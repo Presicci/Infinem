@@ -52,48 +52,6 @@
       "stock": 10,
       "buy_price": 45,
       "sell_price": 60
-    },
-    {
-      "itemId": 3170,
-      "stock": 10,
-      "buy_price": -1,
-      "sell_price": 26
-    },
-    {
-      "itemId": 3171,
-      "stock": 10,
-      "buy_price": -1,
-      "sell_price": 91
-    },
-    {
-      "itemId": 3172,
-      "stock": 5,
-      "buy_price": -1,
-      "sell_price": 325
-    },
-    {
-      "itemId": 3173,
-      "stock": 2,
-      "buy_price": -1,
-      "sell_price": 845
-    },
-    {
-      "itemId": 3174,
-      "stock": 0,
-      "buy_price": -1,
-      "sell_price": 2080
-    },
-    {
-      "itemId": 3175,
-      "stock": 0,
-      "buy_price": -1,
-      "sell_price": 20800
-    },
-    {
-      "itemId": 3188,
-      "stock": 10,
-      "buy_price": 45,
-      "sell_price": 60
     }
   ]
 }
