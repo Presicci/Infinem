@@ -979,7 +979,7 @@ public class PlayerCombat extends Combat {
             AttackStyle style = hit.attackStyle;
             String weaponName = hit.attackWeapon != null ? hit.attackWeapon.name.toLowerCase() : "";
             String ammoName = hit.rangedAmmo != null ? hit.rangedAmmo.name.toLowerCase() : "";
-            if (style == AttackStyle.CRUSH || style == AttackStyle.SLASH || style == AttackStyle.STAB) {
+            if (style.isMelee()) {
                 if (Random.rollDie(4)) {
                     if (weaponName.contains("(p++)")) {
                         target.poison(6);
@@ -991,7 +991,7 @@ public class PlayerCombat extends Combat {
                         target.poison(6);
                     }
                 }
-            } else if (style == AttackStyle.RANGED) {
+            } else if (style.isRanged()) {
                 if (Random.rollDie(8)) {
                     if (weaponName.contains("(p++)") || ammoName.contains("(p++)")) {
                         target.poison(4);
