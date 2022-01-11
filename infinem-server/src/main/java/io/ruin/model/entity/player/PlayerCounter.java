@@ -8,6 +8,11 @@ import java.util.function.Function;
 public enum PlayerCounter {
 
     /**
+     * Blast furnace
+     */
+    SMITHED_BARS((p, amt) -> p.smithedBars = amt, p -> p.smithedBars),
+
+    /**
      * Runecrafting
      */
     CRAFTED_AIR((p, amt) -> p.craftedAir = amt, p -> p.craftedAir, Achievement.EXPERT_RUNECRAFTER),
@@ -356,6 +361,11 @@ public enum PlayerCounter {
      * Presets
      */
     PRESETS_LOADED((p, amt) -> p.presetsLoaded = amt, p -> p.presetsLoaded),
+
+    /**
+     * NightmareZone
+     */
+    NMZ_REWARD_POINTS((p, amt) -> p.nmzRewardPoints = amt, p -> p.nmzRewardPoints),
 
     /**
      * Daily tasks
