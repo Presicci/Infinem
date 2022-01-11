@@ -1286,8 +1286,19 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int timesKilledDonatorBoss;
     @Expose public long lastTimeKilledDonatorBoss;
 
+    // Raids / NMZ pots
     public boolean overloadBoostActive = false;
     public boolean prayerEnhanceBoostActive = false;
+
+    // Divine pots
+    public boolean divineAttackBoostActive = false;
+    public boolean divineStrBoostActive = false;
+    public boolean divineDefBoostActive = false;
+    public boolean divineSuperCmbBoostActive = false;
+    public boolean divineMagicBoostActive = false;
+    public boolean divineRangingBoostActive = false;
+    public boolean divineBastionBoostActive = false;
+    public boolean divineBattlemageBoostActive = false;
 
     @Expose public boolean obtained50KCVorkathHead = false;
 
