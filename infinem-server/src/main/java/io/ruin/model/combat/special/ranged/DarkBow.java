@@ -30,6 +30,9 @@ public class DarkBow implements Special {
 
     @Override
     public boolean handle(Player player, Entity target, AttackStyle style, AttackType type, int maxDamage) {
+        // In place to allow weapon poison to work
+        ItemDef ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
+
         Item ammo = player.getEquipment().get(Equipment.SLOT_AMMO);
         if(ammo == null || ammo.getAmount() < 2) {
             player.sendMessage("You need at least two arrows in your quiver to use this special attack.");
@@ -67,7 +70,7 @@ public class DarkBow implements Special {
             hit.postDefend(t -> {
                 hit.type = HitType.DAMAGE;
                 hit.damage = Math.max(minDamage, hit.damage);
-            }).postDamage(t -> t.graphics(gfxId, 96, 0));
+            }).postDamage(t -> t.graphics(gfxId, 96, 0)).setRangedAmmo(ammoDef);
             hits[i] = hit;
         }
         player.getCombat().removeAmmo(ammo, hits);

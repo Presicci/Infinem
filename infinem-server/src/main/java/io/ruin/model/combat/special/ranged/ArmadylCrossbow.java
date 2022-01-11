@@ -7,6 +7,7 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Projectile;
 
 //Armadyl Eye: Deal an attack with double accuracy. (40%)
@@ -21,9 +22,12 @@ public class ArmadylCrossbow implements Special {
 
     @Override
     public boolean handle(Player player, Entity victim, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
+        // In place to allow weapon poison to work
+        ItemDef ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
+
         player.animate(4230);
         int delay = PROJECTILE.send(player, victim);
-        victim.hit(new Hit(player, attackStyle, attackType).randDamage(maxDamage).boostAttack(1.0).clientDelay(delay));
+        victim.hit(new Hit(player, attackStyle, attackType).randDamage(maxDamage).boostAttack(1.0).clientDelay(delay).setRangedAmmo(ammoDef));
         return true;
     }
 

@@ -21,10 +21,13 @@ public class DragonKnife implements Special {
 
     @Override
     public boolean handle(Player player, Entity victim, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
+        // In place to allow weapon poison to work
+        ItemDef weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+
         int delay = PROJECTILE.send(player, victim);
         player.animate(8291);
         Hit hit = new Hit(player, attackStyle, attackType).randDamage(maxDamage).clientDelay(delay);
-        victim.hit(hit, new Hit(player, attackStyle, attackType).randDamage(maxDamage).clientDelay(delay));
+        victim.hit(hit, new Hit(player, attackStyle, attackType).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(weaponDef));
         player.getCombat().removeAmmo(player.getEquipment().get(Equipment.SLOT_WEAPON), hit);
         return true;
     }

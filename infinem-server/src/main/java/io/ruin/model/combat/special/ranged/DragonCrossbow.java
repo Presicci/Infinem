@@ -7,6 +7,7 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Projectile;
 import io.ruin.utility.Misc;
 
@@ -24,6 +25,9 @@ public class DragonCrossbow implements Special {
 
     @Override
     public boolean handle(Player player, Entity victim, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
+        // In place to allow weapon poison to work
+        ItemDef ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
+
         int delay = PROJECTILE.send(player, victim);
         victim.hit(new Hit(player, attackStyle, attackType).randDamage((int) (maxDamage * 1.2)).clientDelay(delay));
         player.animate(4230);
@@ -37,7 +41,7 @@ public class DragonCrossbow implements Special {
             if (n != victim && player.getCombat().canAttack(n, false) && Misc.getEffectiveDistance(n, victim) <= 1)
                 targets.add(n);
         });
-        targets.forEach(e -> e.hit(new Hit(player, attackStyle, attackType).randDamage((int) (maxDamage * 0.8)).clientDelay(delay)));
+        targets.forEach(e -> e.hit(new Hit(player, attackStyle, attackType).randDamage((int) (maxDamage * 0.8)).clientDelay(delay).setRangedAmmo(ammoDef)));
         return true;
     }
 

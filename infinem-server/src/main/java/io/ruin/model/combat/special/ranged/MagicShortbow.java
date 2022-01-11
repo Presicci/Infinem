@@ -27,6 +27,9 @@ public class MagicShortbow implements Special {
 
     @Override
     public boolean handle(Player player, Entity target, AttackStyle style, AttackType type, int maxDamage) {
+        // In place to allow weapon poison to work
+        ItemDef ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
+
         Item ammo = player.getEquipment().get(Equipment.SLOT_AMMO);
         if(ammo == null || ammo.getAmount() < 2) {
             player.sendMessage("You need at least two arrows in your quiver to use this special attack.");
@@ -37,7 +40,7 @@ public class MagicShortbow implements Special {
         Hit[] hits = new Hit[PROJECTILES.length];
         for(int i = 0; i < PROJECTILES.length; i++) {
             int delay = PROJECTILES[i].send(player, target);
-            hits[i] = new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay);
+            hits[i] = new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setRangedAmmo(ammoDef);
         }
         player.getCombat().removeAmmo(ammo, hits);
         target.hit(hits);
