@@ -252,6 +252,15 @@ public class Administrator {
                 return true;
             }
 
+            case "nmzpoints": {
+                if (args.length != 1) {
+                    player.sendMessage("syntax! ::nmzpoints [amounttoadd]");
+                    return true;
+                }
+                player.nmzRewardPoints += Integer.parseInt(args[0]);
+                return true;
+            }
+
             case "checkequipment": {
                 CommandHandler.forPlayer(player, query, "::checkequipment name", (target) -> {
                     player.dialogue(new OptionsDialogue("Viewing a players equipment will clear yours.",
