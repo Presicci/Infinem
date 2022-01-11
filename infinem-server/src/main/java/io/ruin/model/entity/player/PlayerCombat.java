@@ -276,8 +276,6 @@ public class PlayerCombat extends Combat {
             int damage = target.hit(hit);
             if (damage > 0) {
                 target.graphics(swamp ? 1042 : 1253, 90, duration);
-                if (swamp && Random.rollDie(4,1))
-                    target.envenom(6);
             } else {
                 hit.nullify();
                 target.graphics(85, 92, duration);
@@ -1000,6 +998,22 @@ public class PlayerCombat extends Combat {
                     } else if (weaponName.contains("(p)") || ammoName.contains("(p)")) {
                         target.poison(2);
                     }
+                }
+            }
+            /*
+             * Venom handling
+             */
+            if ((weaponName.contains("trident of the swamp")
+                    || weaponName.contains("toxic staff of the dead")
+                    || weaponName.contains("toxic blowpipe"))
+                    && target.npc != null) {    // Can only venom npcs
+                int roll = 4;
+                // If the player has serp helm equipped, its 100% chance
+                if (hit.attacker.player.getEquipment().get(Equipment.SLOT_HAT).getId() == 12931) {
+                    roll = 1;
+                }
+                if (Random.rollDie(roll)) {
+                    target.envenom(6);
                 }
             }
         }
