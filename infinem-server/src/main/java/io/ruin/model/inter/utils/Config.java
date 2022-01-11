@@ -20,6 +20,37 @@ public class Config {
     }
 
     /**
+     * Blast furnace
+     */
+    public static final Config BARS_IN_DESPENSER = varpbit(936, false);
+
+    /**
+     * Nightmare
+     */
+    public static final Config IMPREGNANTED = varpbit(10151, false);
+
+    /**
+     * NMZ
+     */
+    public static final Config NMZ_COFFER_STATUS = varpbit(3957, false);
+
+    public static final Config NMZ_COFFER_AMT = varpbit(3948, false);
+
+    public static final Config NMZ_ABSORPTION = varpbit(3956, false);
+
+    public static final Config NMZ_POINTS = varpbit(3949, false);
+
+    public static final Config NMZ_REWARD_POINTS_TOTAL = varp(1060, true);
+
+    public static final Config NMZ_SUPER_RANGE_DOSES = varpbit(3951, true);
+
+    public static final Config NMZ_SUPER_MAGIC_DOSES = varpbit(3952, true);
+
+    public static final Config NMZ_OVERLOAD_DOSES = varpbit(3953, true);
+
+    public static final Config NMZ_ABSORPTION_DOSES = varpbit(3954, true);
+
+    /**
      * Default options
      */
 
