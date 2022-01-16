@@ -30,6 +30,10 @@ public class Cooking {
             SkillItem sinew = new SkillItem(Food.SINEW_BEAR_MEAT.cookedID).name(Food.SINEW_BEAR_MEAT.itemName).
                     addAction((p, amount, event) -> startCooking(p, Food.SINEW_BEAR_MEAT, obj, amount, anim, fire));
             SkillDialogue.make(player, i, sinew);
+        } else if (food.equals(Food.RAW_KARAMBWAN)) {
+            SkillItem poison = new SkillItem(Food.RAW_KARAMBWAN_P.cookedID).name(Food.RAW_KARAMBWAN_P.itemName).
+                    addAction((p, amount, event) -> startCooking(p, Food.RAW_KARAMBWAN_P, obj, amount, anim, fire));
+            SkillDialogue.make(player, i, poison);
         } else {
             if (player.getInventory().hasMultiple(food.rawID))
                 SkillDialogue.cook(player, i);
