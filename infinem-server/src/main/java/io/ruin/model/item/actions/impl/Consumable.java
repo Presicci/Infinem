@@ -585,10 +585,10 @@ public class Consumable {
         registerPotion(Potion.SARADOMIN_BREW, p -> {
             p.getStats().get(StatType.Hitpoints).boost(2, 0.15);
             p.getStats().get(StatType.Defence).boost(2, 0.20);
-            p.getStats().get(StatType.Attack).drain(0.10);
-            p.getStats().get(StatType.Strength).drain(0.10);
-            p.getStats().get(StatType.Ranged).drain(0.10);
-            p.getStats().get(StatType.Magic).drain(0.10);
+            p.getStats().get(StatType.Attack).drain(2, 0.10);
+            p.getStats().get(StatType.Strength).drain(2, 0.10);
+            p.getStats().get(StatType.Ranged).drain(2, 0.10);
+            p.getStats().get(StatType.Magic).drain(2, 0.10);
         });
 
         registerPotion(Potion.ZAMORAK_BREW, p -> {
