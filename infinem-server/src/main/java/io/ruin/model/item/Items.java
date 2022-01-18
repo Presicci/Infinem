@@ -21147,4 +21147,22 @@ public interface Items {
     public static final int NEZZY_FACEGUARD = 24271;
     public static final int BASILISK_JAW = 24268;
     public static final int MIMIC = 23184;
+
+    public static final int CRYSTAL_SHARD = 23962;
+    public static final int CRYSTAL_DUST_23964 = 23964;
+    public static final int CRYSTAL_HELM_INACTIVE = 23973;
+    public static final int CRYSTAL_BODY_INACTIVE = 23977;
+    public static final int CRYSTAL_LEGS_INACTIVE = 23981;
+    public static final int CRYSTAL_BOW = 23983;
+    public static final int CRYSTAL_BOW_INACTIVE = 23985;
+    public static final int CRYSTAL_HALBERD = 23987;
+    public static final int CRYSTAL_HALBERD_INACTIVE = 23989;
+    public static final int CRYSTAL_SHIELD = 23991;
+    public static final int CRYSTAL_SHIELD_INACTIVE = 23993;
+    public static final int BLADE_OF_SAELDOR_23996 = 23996;
+    public static final int BLADE_OF_SAELDOR_INACTIVE = 23997;
+    public static final int BLADE_OF_SAELDOR_INACTIVE_23999 = 23999;
+    public static final int CRYSTAL_TOOL_SEED = 23953;
+    public static final int CRYSTAL_ARMOUR_SEED = 23956;
+    public static final int ENHANCED_CRYSTAL_TELEPORT_SEED = 23959;
 }
