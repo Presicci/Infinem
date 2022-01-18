@@ -539,7 +539,7 @@ public class Door {
                     break;
                 }
             }
-            if (def.doorClosed == def.hasOption("open"))
+            if (def.doorClosed = def.hasOption("open"))
                 ObjectAction.register(def.id, "open", Door::handle);
             else
                 ObjectAction.register(def.id, "close", Door::handle);
