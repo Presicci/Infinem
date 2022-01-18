@@ -168,6 +168,9 @@ public class DisplayHandler implements Incoming {
 
             case Interface.DEFAULT_SCREEN:
                 return EnumMap.get(1132);
+
+            case Interface.MOBILE_SCREEN:
+                return EnumMap.get(1745);
         }
 
         return null;

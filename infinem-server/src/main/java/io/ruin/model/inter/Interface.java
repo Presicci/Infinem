@@ -4,6 +4,8 @@ public class Interface {
 
     public static final int DEFAULT_SCREEN = 165;
 
+    public static final int MOBILE_SCREEN = 601;
+
     public static final int FIXED_SCREEN = 548;
 
     public static final int RESIZED_SCREEN = 161;
