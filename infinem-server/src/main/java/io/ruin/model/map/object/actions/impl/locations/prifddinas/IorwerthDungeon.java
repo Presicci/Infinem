@@ -4,10 +4,13 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
-import io.ruin.model.map.Direction;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 public class IorwerthDungeon {
 
     static {

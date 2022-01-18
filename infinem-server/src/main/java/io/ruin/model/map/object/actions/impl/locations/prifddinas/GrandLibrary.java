@@ -3,6 +3,10 @@ package io.ruin.model.map.object.actions.impl.locations.prifddinas;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.map.object.actions.ObjectAction;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 public class GrandLibrary {
 
     static {

@@ -5,6 +5,10 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.map.object.actions.ObjectAction;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 public class ZalcanoEntrance {
 
     static {

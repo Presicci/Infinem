@@ -8,6 +8,10 @@ import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 public class GauntletEntrance {
 
     public static final Bounds GAUNTLET_BOUNDS = new Bounds(new Position(1975, 5682, 1), 24);
