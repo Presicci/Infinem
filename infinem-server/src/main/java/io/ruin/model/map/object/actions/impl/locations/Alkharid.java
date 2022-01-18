@@ -3,6 +3,10 @@ package io.ruin.model.map.object.actions.impl.locations;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.impl.Stairs;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 public class Alkharid {
 
     static {

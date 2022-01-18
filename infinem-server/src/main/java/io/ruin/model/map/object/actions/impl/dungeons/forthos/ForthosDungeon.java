@@ -14,11 +14,14 @@ import io.ruin.model.map.Region;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.Ladder;
 import io.ruin.model.map.object.actions.impl.PassableDoor;
-import io.ruin.model.skills.agility.shortcut.CrumblingWall;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.model.map.object.actions.impl.Ladder.climb;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 public class ForthosDungeon {
 
     private static final Bounds SARACHNIS = new Bounds(1829, 9888, 1851, 9911, 0);

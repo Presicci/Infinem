@@ -7,6 +7,10 @@ import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 public class LizardmanTemple {
 
     private static void BarrierNSRoomOne(Player player, GameObject barrier) {

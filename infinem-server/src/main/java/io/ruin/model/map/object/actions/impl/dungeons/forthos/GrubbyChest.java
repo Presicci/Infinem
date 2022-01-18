@@ -1,6 +1,5 @@
 package io.ruin.model.map.object.actions.impl.dungeons.forthos;
 
-import io.ruin.api.utils.Random;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
@@ -9,11 +8,14 @@ import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.utility.Broadcast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 public class GrubbyChest {
 
     private static final LootTable FOOD = new LootTable().addTable(0,

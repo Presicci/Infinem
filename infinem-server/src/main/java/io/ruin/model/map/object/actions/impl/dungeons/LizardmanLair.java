@@ -5,6 +5,10 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 public class LizardmanLair {
 
     public static void handlePosition30383(Player player) {

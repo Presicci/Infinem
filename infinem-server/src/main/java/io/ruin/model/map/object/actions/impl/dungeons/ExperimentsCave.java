@@ -1,10 +1,13 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
-import io.ruin.data.impl.teleports;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 public class ExperimentsCave {
 
     static{

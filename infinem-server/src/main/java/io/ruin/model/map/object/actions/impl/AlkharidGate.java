@@ -6,6 +6,10 @@ import io.ruin.model.map.Direction;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 public class AlkharidGate {
 
     private static void openAlkharidGate(Player player, GameObject obj) {
