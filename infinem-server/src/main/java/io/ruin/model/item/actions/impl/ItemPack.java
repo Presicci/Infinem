@@ -45,7 +45,8 @@ public enum ItemPack {
     RUNE_ARROW_PACK(20607, 20600, 50),
 
     //Misc
-    SOFT_CLAY(12009, 1762);
+    SOFT_CLAY(12009, 1762),
+    EMPTY_BUCKET(22660, 1926);
 
     public final int itemID, packContents, packContentsAmt;
 
