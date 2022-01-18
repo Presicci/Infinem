@@ -2,6 +2,7 @@ package io.ruin.model.map.object.actions.impl.locations.prifddinas;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
+import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -45,12 +46,10 @@ public class IorwerthDungeon {
             if (!player.getStats().check(StatType.Agility, 78, "use this shortcut"))
                 return;
             player.lock(LockType.FULL_DELAY_DAMAGE);
-            player.animate(749, 30);
-            player.getMovement().force(-3, 0, 0, 0, 33, 126, Direction.WEST);
-            event.delay(3);
-            player.getMovement().force(-3, 0, 0, 0, 33, 126, Direction.WEST);
-            event.delay(1);
-            player.animate(749);
+            player.animate(2594);
+            player.stepAbs(player.getAbsX() - 6, player.getAbsY(), StepType.FORCE_WALK);
+            event.delay(6);
+            player.animate(2595);
             event.delay(2);
             player.unlock();
         });
@@ -61,12 +60,10 @@ public class IorwerthDungeon {
             if (!player.getStats().check(StatType.Agility, 78, "use this shortcut"))
                 return;
             player.lock(LockType.FULL_DELAY_DAMAGE);
-            player.animate(749, 30);
-            player.getMovement().force(3, 0, 0, 0, 33, 126, Direction.WEST);
-            event.delay(3);
-            player.getMovement().force(3, 0, 0, 0, 33, 126, Direction.WEST);
-            event.delay(1);
-            player.animate(749);
+            player.animate(2594);
+            player.stepAbs(player.getAbsX() + 6, player.getAbsY(), StepType.FORCE_WALK);
+            event.delay(6);
+            player.animate(2595);
             event.delay(2);
             player.unlock();
         });
@@ -77,12 +74,10 @@ public class IorwerthDungeon {
             if (!player.getStats().check(StatType.Agility, 84, "use this shortcut"))
                 return;
             player.lock(LockType.FULL_DELAY_DAMAGE);
-            player.animate(749, 30);
-            player.getMovement().force(-3, 0, 0, 0, 33, 126, Direction.WEST);
-            event.delay(3);
-            player.getMovement().force(-3, 0, 0, 0, 33, 126, Direction.WEST);
-            event.delay(1);
-            player.animate(749);
+            player.animate(2594);
+            player.stepAbs(player.getAbsX() - 10, player.getAbsY(), StepType.FORCE_WALK);
+            event.delay(10);
+            player.animate(2595);
             event.delay(2);
             player.unlock();
         });
@@ -93,12 +88,10 @@ public class IorwerthDungeon {
             if (!player.getStats().check(StatType.Agility, 84, "use this shortcut"))
                 return;
             player.lock(LockType.FULL_DELAY_DAMAGE);
-            player.animate(749, 30);
-            player.getMovement().force(3, 0, 0, 0, 33, 126, Direction.WEST);
-            event.delay(3);
-            player.getMovement().force(3, 0, 0, 0, 33, 126, Direction.WEST);
-            event.delay(1);
-            player.animate(749);
+            player.animate(2594);
+            player.stepAbs(player.getAbsX() + 10, player.getAbsY(), StepType.FORCE_WALK);
+            event.delay(10);
+            player.animate(2595);
             event.delay(2);
             player.unlock();
         });
