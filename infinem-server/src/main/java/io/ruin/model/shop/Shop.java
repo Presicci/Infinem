@@ -100,7 +100,7 @@ public class Shop {
         shopItems.clear();
         defaultStock.forEach(shopItem ->
         {
-            if (shopItem.getId() != -1) {
+            if (shopItem.getId() != -1 && shopItem.getId() < 30000) {
                 shopItems.add(shopItem);
             }
         });
@@ -252,10 +252,6 @@ public class Shop {
             return;
         }
         ShopItem matchingItem = shopItems.findItem(requestedItem.getId(), true);
-        if (matchingItem.buyPrice < 0) {
-            player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
-            return;
-        }
         if(generalStore && (matchingItem == null || !matchingItem.defaultStockItem)){
             if(shopItems.getFreeSlots() == 0 && matchingItem == null){
                 player.sendMessage(ShopManager.SHOP_FULL);
