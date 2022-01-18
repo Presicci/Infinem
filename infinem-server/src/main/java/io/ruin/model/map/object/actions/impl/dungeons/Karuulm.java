@@ -1,15 +1,14 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
 import io.ruin.model.combat.Hit;
+import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
+import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
-import io.ruin.model.map.Bounds;
-import io.ruin.model.map.Direction;
-import io.ruin.model.map.MapListener;
-import io.ruin.model.map.Tile;
+import io.ruin.model.map.*;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.slayer.Slayer;
@@ -53,6 +52,10 @@ public class Karuulm {
         ObjectAction.register(4469, 1357, 10206, 1, 1, Karuulm::handleBarrier);
         ObjectAction.register(4469, 1357, 10207, 1, 1, Karuulm::handleBarrier);
 
+        // Elevator
+        ObjectAction.register(34359, "activate", Karuulm::moveDownElevator);
+        ObjectAction.register(34513, "activate", Karuulm::moveDownLever);
+        ObjectAction.register(34514, "exit", (player, obj) -> Traveling.fadeTravel(player, new Position(1311, 3809, 0 )));
     }
 
     private static void handleBarrier(Player player, GameObject wall) {
@@ -160,5 +163,33 @@ public class Karuulm {
                 && player.getPosition().getRegion().dynamicData[0][0][0][1] == 5536; // chunk is generated off region 5536, which is the hydra boss lair region
     }
 
+    private static void moveDownElevator(Player player, Object obj) {
+        if (player.getPosition().getY() == 3807) {
+            player.startEvent(e -> {
+                player.face(Direction.WEST);
+                e.delay(1);
+                player.animate(2140);
+                e.delay(1);
+                Traveling.fadeTravel(player, new Position(1311, 10188, 0));
+            });
+        } else if (player.getPosition().getY() != 3807) {
+            player.startEvent(e -> {
+                player.stepAbs(1311, 3807, StepType.FORCE_WALK);
+                e.delay(1);
+                player.face(Direction.WEST);
+                e.delay(1);
+                player.animate(2140);
+                e.delay(1);
+                Traveling.fadeTravel(player, new Position(1311, 10188, 0));
+            });
+        }
+    }
 
+    private static void moveDownLever(Player player, Object obj) {
+        player.startEvent(e -> {
+            player.animate(2140);
+            e.delay(1);
+            Traveling.fadeTravel(player, new Position(1311, 10188, 0));
+        });
+    }
 }
