@@ -11,6 +11,10 @@ import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+/**
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 @AllArgsConstructor @Getter
 public enum SingingBowl {
 
