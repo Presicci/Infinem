@@ -10,7 +10,7 @@
   "items": [
     {
       "itemId": 950,
-      "stock": 2147483647,
+      "stock": 10000,
       "buy_price": -1,
       "sell_price": 3
     }
