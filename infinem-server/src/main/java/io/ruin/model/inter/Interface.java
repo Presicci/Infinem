@@ -329,4 +329,6 @@ public class Interface {
     public static final int PORTAL_NEXUS_CONFIGURE = 19;
 
     public static final int PORTAL_NEXUS_TELEPORT = 17;
+
+    public static int SINGING_BOWL_RECIPE = 640;
 }
