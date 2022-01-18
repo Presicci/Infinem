@@ -1,6 +1,7 @@
 package io.ruin.model.entity.npc.actions.traveling;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.map.Position;
 
 /**
@@ -15,6 +16,7 @@ public class Traveling {
     }
 
     public static void fadeTravel(Player player, int x, int y, int z) {
+        player.lock(LockType.FULL_NULLIFY_DAMAGE); //keep lock outside of event!
         player.startEvent(e -> {
             player.getPacketSender().fadeOut();
             e.delay(2);
