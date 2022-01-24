@@ -525,6 +525,10 @@ public abstract class ItemContainerG<I extends Item> {
         return false;
     }
 
+    /**
+     * @param itemIds Item ids to check the container for
+     * @return Returns true if the container contains multiple of each item id
+     */
     public boolean hasMultiple(int... itemIds) {
         int[] amounts = new int[itemIds.length];
         int multiples = 0;
@@ -593,6 +597,10 @@ public abstract class ItemContainerG<I extends Item> {
         return getFreeSlots();
     }
 
+    /**
+     * @param itemIds Item ids to check the container for
+     * @return Returns true if contains at least one of the provided items.
+     */
     public boolean hasAtLeastOneOf(int... itemIds){
         List<Integer> toFind = IntStream.of(itemIds).boxed().collect(Collectors.toList());
         return nonNullStream().anyMatch(item -> toFind.contains(item.getId()));
