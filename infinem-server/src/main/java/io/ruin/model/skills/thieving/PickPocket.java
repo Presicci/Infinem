@@ -376,18 +376,23 @@ public enum PickPocket {
     private static final int GLOVES_OF_SILENCE = 10075;
     private static final int[] MAX_CAPES = { 13280, 13329, 13331, 13333, 13335, 13337, 13342, 20760 };
 
+    /*
+     * Chance caps at 94 w/o any bonuses
+     */
     private static int chance(Player player, int levelReq) {
-        int slope = 2;
+        double slope = 0.24;
         int chance = 60; //Starts at a 60% chance
         int thievingLevel = player.getStats().get(StatType.Thieving).currentLevel;
-
+        chance += (thievingLevel - levelReq) * slope;
         if (player.getEquipment().hasId(GLOVES_OF_SILENCE))
-            chance += 5;
-        if (player.getEquipment().hasAtLeastOneOf(MAX_CAPES) || ThievingSkillCape.wearsThievingCape(player))
+            chance *= 1.05;
+        if (player.getEquipment().hasAtLeastOneOf(MAX_CAPES) || ThievingSkillCape.wearsThievingCape(player)) {
             chance *= 1.1;
-        if (thievingLevel > levelReq)
-            chance += (thievingLevel - levelReq) * slope;
-        return Math.min(chance, 95); //Caps at 95%
+        }
+        //TODO Ardy buff? if (player.getEquipment().hasAtLeastOneOf(MAX_CAPES) || ThievingSkillCape.wearsThievingCape(player)) {
+        //    chance *= 1.1;
+        //}
+        return chance;
     }
 
     static {
