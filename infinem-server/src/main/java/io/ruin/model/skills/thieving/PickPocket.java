@@ -342,8 +342,8 @@ public enum PickPocket {
         if (!checkAll(player, pickpocket)) {
             return;
         }
+        player.lock(LockType.FULL_REGULAR_DAMAGE);
         player.addEvent(event -> {
-            player.lock(LockType.FULL_REGULAR_DAMAGE);
             if (successful(player, pickpocket)) {
                 /*
                  Roll for 'additional loot'
@@ -364,7 +364,6 @@ public enum PickPocket {
                 int pouchId = pickpocket.pouchId;
                 player.animate(881);
                 player.privateSound(2581);
-                event.delay(1);
                 if (additionalRolls > 0) {
                     boolean hasGottenPouch = false;
                     for (int index = additionalRolls + 1; index > 0; index--) {
@@ -379,7 +378,7 @@ public enum PickPocket {
                             }
                         }
                     }
-                    player.sendFilteredMessage("You manage to pick the " + pickpocket.identifier + " pocket " + (additionalRolls + 1) + " times.");
+                    player.sendFilteredMessage("Your lightning-fast reactions allow you to steal " + (additionalRolls == 1 ? "double" : additionalRolls == 2 ? "triple" : "quadruple") + " the loot.");
                 } else  {
                     player.sendFilteredMessage("You pick the " + pickpocket.identifier + " pocket.");
                     List<Item> items = pickpocket.lootTable.rollItems(true);
@@ -430,7 +429,6 @@ public enum PickPocket {
         //TODO Ardy buff? if (player.getEquipment().hasAtLeastOneOf(MAX_CAPES) || ThievingSkillCape.wearsThievingCape(player)) {
         //    chance *= 1.1;
         //}
-        player.sendMessage("chance: " + chance);
         return (int) Math.floor(chance);
     }
 
