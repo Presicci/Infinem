@@ -374,7 +374,7 @@ public enum PickPocket {
     }
 
     private static final int GLOVES_OF_SILENCE = 10075;
-    private static final int[] MAX_CAPES = {13280, 13329, 13331, 13333, 13335, 13337, 13342, 20760};
+    private static final int[] MAX_CAPES = { 13280, 13329, 13331, 13333, 13335, 13337, 13342, 20760 };
 
     private static int chance(Player player, int levelReq) {
         int slope = 2;
@@ -383,7 +383,7 @@ public enum PickPocket {
 
         if (player.getEquipment().hasId(GLOVES_OF_SILENCE))
             chance += 5;
-        if (player.getEquipment().hasMultiple(MAX_CAPES) || ThievingSkillCape.wearsThievingCape(player))
+        if (player.getEquipment().hasAtLeastOneOf(MAX_CAPES) || ThievingSkillCape.wearsThievingCape(player))
             chance *= 1.1;
         if (thievingLevel > levelReq)
             chance += (thievingLevel - levelReq) * slope;
