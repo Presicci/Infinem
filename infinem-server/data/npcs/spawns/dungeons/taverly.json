@@ -1737,15 +1737,6 @@
     "walkRange": 10
   },
   {
-    "name": "Suit of armour",
-    "id": 5043,
-    "x": 2885,
-    "y": 9830,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Black Knight",
     "id": 508,
     "x": 2911,
@@ -1789,15 +1780,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 8
-  },
-  {
-    "name": "Suit of armour",
-    "id": 5043,
-    "x": 2885,
-    "y": 9833,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
   },
   {
     "name": "Black Knight",
