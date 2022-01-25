@@ -596,8 +596,8 @@
   {
     "name": "Seth Groats",
     "id": 1351,
-    "x": 3223,
-    "y": 3293,
+    "x": 3228,
+    "y": 3290,
     "z": 0,
     "direction": "S",
     "walkRange": 1
@@ -702,15 +702,6 @@
     "walkRange": 4
   },
   {
-    "name": "Farmer",
-    "id": 3086,
-    "x": 3232,
-    "y": 3289,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Goblin",
     "id": 3032,
     "x": 3256,
@@ -718,15 +709,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 9
-  },
-  {
-    "name": "Drake",
-    "id": 2004,
-    "x": 3228,
-    "y": 3282,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
   },
   {
     "name": "Goblin",
@@ -794,8 +776,8 @@
   {
     "name": "Chicken",
     "id": 1174,
-    "x": 3227,
-    "y": 3292,
+    "x": 3233,
+    "y": 3289,
     "z": 0,
     "direction": "S",
     "walkRange": 1
@@ -2313,15 +2295,6 @@
     "walkRange": 9
   },
   {
-    "name": "Drake",
-    "id": 2004,
-    "x": 3165,
-    "y": 3273,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 5
-  },
-  {
     "name": "Goblin",
     "id": 3036,
     "x": 3169,
@@ -2392,15 +2365,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
-  },
-  {
-    "name": "Drake",
-    "id": 2004,
-    "x": 3170,
-    "y": 3276,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
   },
   {
     "name": "Goblin",
@@ -4043,8 +4007,8 @@
   {
     "name": "Chicken",
     "id": 1174,
-    "x": 3225,
-    "y": 3293,
+    "x": 3236,
+    "y": 3291,
     "z": 0,
     "direction": "S",
     "walkRange": 0
