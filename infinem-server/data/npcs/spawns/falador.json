@@ -492,7 +492,7 @@
     "name": "Dwarf",
     "id": 296,
     "x": 3021,
-    "y": 3333,
+    "y": 3334,
     "z": 0,
     "direction": "S",
     "walkRange": 5
@@ -626,7 +626,7 @@
   {
     "name": "White Knight",
     "id": 1798,
-    "x": 2994,
+    "x": 2993,
     "y": 3341,
     "z": 0,
     "direction": "S",
@@ -779,8 +779,8 @@
   {
     "name": "Imp",
     "id": 5007,
-    "x": 2958,
-    "y": 3371,
+    "x": 2951,
+    "y": 3361,
     "z": 0,
     "direction": "S",
     "walkRange": 11
