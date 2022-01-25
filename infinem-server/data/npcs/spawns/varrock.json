@@ -140,7 +140,7 @@
     "x": 3187,
     "y": 3446,
     "z": 0,
-    "direction": "W",
+    "direction": "N",
     "walkRange": 0
   },
   {
@@ -612,15 +612,6 @@
     "walkRange": 3
   },
   {
-    "name": "Scavvo",
-    "id": 2871,
-    "x": 3245,
-    "y": 3394,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
     "name": "Thessalia",
     "id": 534,
     "x": 3205,
@@ -729,19 +720,10 @@
     "walkRange": 1
   },
   {
-    "name": "Sheep",
-    "id": 2692,
+    "name": "Chicken",
+    "id": 1173,
     "x": 3238,
     "y": 3323,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 5
-  },
-  {
-    "name": "Farmer",
-    "id": 3087,
-    "x": 3238,
-    "y": 3308,
     "z": 0,
     "direction": "S",
     "walkRange": 5

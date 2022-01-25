@@ -1496,11 +1496,11 @@
   {
     "name": "Donie",
     "id": 3262,
-    "x": 3216,
-    "y": 3259,
+    "x": 3223,
+    "y": 3237,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 15
   },
   {
     "name": "Woman",
