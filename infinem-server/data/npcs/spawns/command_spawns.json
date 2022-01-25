@@ -1,0 +1,149 @@
+[
+	/*
+	 * South varrock sheep pen spawns
+	 */
+	{
+		"name": "Sheep",
+		"id": 2787,
+		"x": 3233,
+		"y": 3345,
+		"z": 0,
+		"direction": "N",
+		"walkRange": 5
+	},
+	{
+		"name": "Sheep",
+		"id": 2693,
+		"x": 3239,
+		"y": 3342,
+		"z": 0,
+		"direction": "E",
+		"walkRange": 5
+	},
+	{
+		"name": "Ram",
+		"id": 1264,
+		"x": 3236,
+		"y": 3342,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 5
+	},
+	{
+		"name": "Master Farmer",
+		"id": 3257,
+		"x": 3237,
+		"y": 3347,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 7
+	},
+	{
+		"name": "Sheep",
+		"id": 2693,
+		"x": 3238,
+		"y": 3350,
+		"z": 0,
+		"direction": "N",
+		"walkRange": 5
+	},
+	{
+		"name": "Sheep",
+		"id": 2693,
+		"x": 3242,
+		"y": 3347,
+		"z": 0,
+		"direction": "E",
+		"walkRange": 5
+	},
+	{
+		"name": "Sheep",
+		"id": 2693,
+		"x": 3247,
+		"y": 3349,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 5
+	},
+	{
+		"name": "Ram",
+		"id": 1264,
+		"x": 3245,
+		"y": 3344,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 5
+	},
+	{
+		"name": "Sheep",
+		"id": 1299,
+		"x": 3244,
+		"y": 3354,
+		"z": 0,
+		"direction": "W",
+		"walkRange": 5
+	},
+	{
+		"name": "Sheep",
+		"id": 1178,
+		"x": 3232,
+		"y": 3342,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 5
+	},
+	{
+		"name": "Sheep",
+		"id": 1299,
+		"x": 3232,
+		"y": 3353,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 5
+	},
+	{
+		"name": "Ram",
+		"id": 1263,
+		"x": 3262,
+		"y": 3347,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 5
+	},
+	{
+		"name": "Sheep",
+		"id": 2693,
+		"x": 3266,
+		"y": 3351,
+		"z": 0,
+		"direction": "N",
+		"walkRange": 5
+	},
+	{
+		"name": "Swan",
+		"id": 1831,
+		"x": 3262,
+		"y": 3354,
+		"z": 0,
+		"direction": "W",
+		"walkRange": 2
+	},
+	{
+		"name": "Swan",
+		"id": 1831,
+		"x": 3260,
+		"y": 3355,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 2
+	},
+	{
+		"name": "Sheep",
+		"id": 2693,
+		"x": 3255,
+		"y": 3349,
+		"z": 0,
+		"direction": "W",
+		"walkRange": 5
+	}
+]
