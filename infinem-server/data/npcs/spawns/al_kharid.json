@@ -835,5 +835,14 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Man"
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 3295,
+    "y": 3271,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
   }
 ]
