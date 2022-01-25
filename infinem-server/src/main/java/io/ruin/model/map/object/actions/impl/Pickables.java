@@ -21,7 +21,7 @@ public class Pickables {
         POTATO(312, 1942),
         ONION(3366, 1957);
 
-        public int objectId, itemId;
+        public final int objectId, itemId;
 
         private void pick(Player player, GameObject obj) {
             if(player.getInventory().isFull()) {
@@ -51,7 +51,7 @@ public class Pickables {
 
     static {
         for (Nodes node : Nodes.values()) {
-            ObjectAction.register(node.objectId, "pick", (player, object) -> node.pick(player, object));
+            ObjectAction.register(node.objectId, "pick", node::pick);
         }
     }
 
