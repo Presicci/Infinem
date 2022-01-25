@@ -1,0 +1,18 @@
+{
+  "name": "Ye olde Tea Shoppe.",
+  "currency": "COINS",
+  "npcs": [
+    8687
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1978,
+      "stock": 20,
+      "buy_price": 3,
+      "sell_price": 10
+    }
+  ]
+}
