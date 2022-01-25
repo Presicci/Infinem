@@ -2,7 +2,8 @@
   "name": "Varrock Swordshop",
   "currency": "COINS",
   "npcs": [
-    2884
+    2884,
+    2885
   ],
   "sellMultiplier": 1000,
   "buyMultiplier": 600,
