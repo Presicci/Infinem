@@ -145,5 +145,136 @@
 		"z": 0,
 		"direction": "W",
 		"walkRange": 5
+	},
+
+	// Blue moon inn in varrock
+	{
+		"name": "Dr Harlow",
+		"id": 3480,
+		"x": 3223,
+		"y": 3399,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 3
+	},
+	{
+		"name": "Barbarian",
+		"id": 3102,
+		"x": 3224,
+		"y": 3402,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 2
+	},
+	{
+		"name": "Woman",
+		"id": 3015,
+		"x": 3219,
+		"y": 3395,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 3
+	},
+	{
+		"name": "Jonny the beard",
+		"id": 5213,
+		"x": 3224,
+		"y": 3395,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 2
+	},
+	{
+		"name": "Man",
+		"id": 3014,
+		"x": 3231,
+		"y": 3394,
+		"z": 1,
+		"direction": "S",
+		"walkRange": 4
+	},
+	{
+		"name": "Man",
+		"id": 3078,
+		"x": 3230,
+		"y": 3399,
+		"z": 1,
+		"direction": "S",
+		"walkRange": 4
+	},
+	{
+		"name": "Man",
+		"id": 3078,
+		"x": 3231,
+		"y": 3398,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 3
+	},
+
+
+	// Misc varrock
+	{
+		"name": "Jeff",
+		"id": 10415,
+		"x": 3241,
+		"y": 3451,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 4
+	},
+	{
+		"name": "Bob",
+		"id": 10414,
+		"x": 3239,
+		"y": 3485,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 3
+	},
+	{
+		"name": "Marlo",
+		"id": 10408,
+		"x": 3241,
+		"y": 3471,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 2
+	},
+	{
+		"name": "Guard",
+		"id": 3010,
+		"x": 3217,
+		"y": 3467,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 4
+	},
+	{
+		"name": "Guard",
+		"id": 3010,
+		"x": 3204,
+		"y": 3463,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 4
+	},
+	{
+		"name": "Guard",
+		"id": 3010,
+		"x": 3220,
+		"y": 3461,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 4
+	},
+	{
+		"name": "Iffie",
+		"id": 2899,
+		"x": 3204,
+		"y": 3419,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 0
 	}
 ]
