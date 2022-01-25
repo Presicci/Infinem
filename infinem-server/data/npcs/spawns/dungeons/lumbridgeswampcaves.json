@@ -92,8 +92,8 @@
   {
     "name": "Cave bug",
     "id": 481,
-    "x": 3214,
-    "y": 9572,
+    "x": 3218,
+    "y": 9570,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -380,8 +380,8 @@
   {
     "name": "Cave bug larva",
     "id": 482,
-    "x": 3245,
-    "y": 9569,
+    "x": 3244,
+    "y": 9568,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -947,7 +947,7 @@
   {
     "name": "Cave bug",
     "id": 481,
-    "x": 3185,
+    "x": 3191,
     "y": 9583,
     "z": 0,
     "direction": "S",
