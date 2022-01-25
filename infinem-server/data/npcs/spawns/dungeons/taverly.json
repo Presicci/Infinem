@@ -1092,7 +1092,7 @@
     "name": "Blue dragon",
     "id": 268,
     "x": 2905,
-    "y": 9799,
+    "y": 9803,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -1172,7 +1172,7 @@
   {
     "name": "Baby dragon",
     "id": 241,
-    "x": 2911,
+    "x": 2913,
     "y": 9807,
     "z": 0,
     "direction": "S",
@@ -1892,8 +1892,8 @@
   {
     "name": "Blue dragon",
     "id": 5880,
-    "x": 2893,
-    "y": 9816,
+    "x": 2890,
+    "y": 9805,
     "z": 1,
     "direction": "S",
     "walkRange": 4
@@ -1919,8 +1919,8 @@
   {
     "name": "Blue dragon",
     "id": 5881,
-    "x": 2921,
-    "y": 9814,
+    "x": 2917,
+    "y": 9812,
     "z": 1,
     "direction": "S",
     "walkRange": 4
