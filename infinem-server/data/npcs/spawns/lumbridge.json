@@ -3854,8 +3854,8 @@
   {
     "name": "Giant rat",
     "id": 2856,
-    "x": 3174,
-    "y": 3161,
+    "x": 3176,
+    "y": 3164,
     "z": 0,
     "direction": "S",
     "walkRange": 6
