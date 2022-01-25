@@ -3249,15 +3249,6 @@
     "walkRange": 2
   },
   {
-    "name": "Scavvo",
-    "id": 2871,
-    "x": 3183,
-    "y": 3215,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
-  },
-  {
     "name": "Butterfly",
     "id": 234,
     "x": 3181,
@@ -3330,15 +3321,6 @@
     "walkRange": 3
   },
   {
-    "name": "Sheep",
-    "id": 2788,
-    "x": 3185,
-    "y": 3219,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 5
-  },
-  {
     "name": "Goblin",
     "id": 3036,
     "x": 3186,
@@ -3355,15 +3337,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
-  },
-  {
-    "name": "Cow",
-    "id": 2790,
-    "x": 3186,
-    "y": 3217,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
   },
   {
     "name": "Goblin",
