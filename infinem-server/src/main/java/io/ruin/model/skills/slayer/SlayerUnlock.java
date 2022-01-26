@@ -26,6 +26,7 @@ public enum SlayerUnlock {
     HOT_STUFF(Config.HOT_STUFF, 100, 18),
     REPTILE_GOT_RIPPED(Config.REPTILE_GOT_RIPPED, 75, 30),
     LIKE_A_BOSS(Config.LIKE_A_BOSS, 200, 19),
+    BIGGER_AND_BADDER(Config.BIGGER_AND_BADDER, 150, 35),
     KING_BLACK_BONNET(Config.KING_BLACK_BONNET, 1000, 31),
     KALPHITE_KHAT(Config.KALPHITE_KHAT, 1000, 32),
     UNHOLY_HELMET(Config.UNHOLY_HELMET, 1000, 33),
@@ -60,13 +61,12 @@ public enum SlayerUnlock {
     KRACK_ON(Config.KRACK_ON, 100, 29, true),
     GET_SCABARIGHT_ON_IT(Config.GET_SCABARIGHT_ON_IT, 50, 36, true),
     WYVERNOTHER_TWO(Config.WYVER_NOTHER_TWO, 100, 39, true),
-    BASILONGER(Config.BASILONGER, 100, 46, true),
-    ;
+    BASILONGER(Config.BASILONGER, 100, 46, true);
 
-    Config config;
-    int price;
-    int slot;
-    boolean extension;
+    final Config config;
+    final int price;
+    final int slot;
+    final boolean extension;
 
 
     SlayerUnlock(Config config, int price, int slot, boolean extension) {
