@@ -12,10 +12,24 @@ import io.ruin.model.map.object.GameObject;
  */
 public class PassableDoor {
 
+    /**
+     * Passes the player through the door, with a little animation.
+     * default rotationOffset of 0
+     * @param player The player passing through the door.
+     * @param obj The door game object.
+     * @param doorOpenDirection The direction the door will be opening.
+     */
     public static void passDoor(Player player, GameObject obj, Direction doorOpenDirection) {
         passDoor(player, obj, doorOpenDirection, 0);
     }
 
+    /**
+     * Passes the player through the door, with a little animation.
+     * @param player The player passing through the door.
+     * @param obj The door game object.
+     * @param doorOpenDirection The direction the door will be opening.
+     * @param rotationOffset The offset for the rotation of the game in its open state, basically just trial and error to find this.
+     */
     public static void passDoor(Player player, GameObject obj, Direction doorOpenDirection, int rotationOffset) {
         World.startEvent(e -> {
             e.delay(1);
