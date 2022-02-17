@@ -7,15 +7,25 @@ import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import lombok.AllArgsConstructor;
 
+/**
+ * Class that handles berry bush picking, pretty similar to flax/crop picking.
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 public class BushPickables {
 
     @AllArgsConstructor
     public enum Nodes {
         REDBERRY(23628, 1951),
-        CABBAGE(23625, 753);
+        CADAVABERRY(23625, 753);
 
         private final int objectId, itemId;
 
+        /**
+         * Pick a berry from the bush.
+         * @param player The player picking.
+         * @param obj The bush game object.
+         */
         private void pick(Player player, GameObject obj) {
             if (obj.id == objectId + 2) {
                 player.sendMessage("There is nothing left on the bush.");

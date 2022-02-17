@@ -12,6 +12,11 @@ import io.ruin.model.map.object.actions.ObjectAction;
  */
 public class AlkharidGate {
 
+    /**
+     * Literally just opens the al kharid gates and passes the player through.
+     * @param player The player moving through the gates.
+     * @param obj The gate game object.
+     */
     private static void openAlkharidGate(Player player, GameObject obj) {
         Direction dir = player.getPosition().getX() == obj.getPosition().getX() ? Direction.WEST : Direction.EAST;
         World.startEvent(e -> {
