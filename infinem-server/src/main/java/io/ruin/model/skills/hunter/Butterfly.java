@@ -14,6 +14,11 @@ import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 
+/**
+ * Class that handles catching butterflies, very similar to imp catching.
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 1/18/2022
+ */
 @AllArgsConstructor
 public enum Butterfly {
 
@@ -26,6 +31,12 @@ public enum Butterfly {
     public final double experience;
     public final int jarId;
 
+    /**
+     * Test whether the player is capable of catching the butterfly.
+     * @param player The player.
+     * @param npc The butterfly npc.
+     * @param butterfly The butterfly object.
+     */
     protected static void attemptCatch(Player player, NPC npc, Butterfly butterfly) {
         if (!hasButterflyNet(player) && !hasMagicButterflyNet(player)) {
             player.sendMessage("You need a butterfly net to catch butterflies.");
@@ -47,14 +58,28 @@ public enum Butterfly {
         attemptCatchEvent(player, npc, butterfly, butterflyJar);
     }
 
-    private static void recursiveAttemptCatch(Player player, NPC npc, Butterfly butterfly, Item impJar) {
+    /**
+     * Keep attempting to catch butterfly until it is caught.
+     * @param player The player catching the butterfly.
+     * @param npc The butterfly npc.
+     * @param butterfly The butterfly object.
+     * @param jar The jar item.
+     */
+    private static void recursiveAttemptCatch(Player player, NPC npc, Butterfly butterfly, Item jar) {
         TargetRoute.set(player, npc, () -> {
             player.face(npc);
-            attemptCatchEvent(player, npc, butterfly, impJar);
+            attemptCatchEvent(player, npc, butterfly, jar);
         });
     }
 
-    private static void attemptCatchEvent(Player player, NPC npc, Butterfly butterfly, Item impJar) {
+    /**
+     * Attempt to catch the butterfly.
+     * @param player The player catching the butterfly.
+     * @param npc The butterfly npc.
+     * @param butterfly The butterfly object.
+     * @param jar The jar item.
+     */
+    private static void attemptCatchEvent(Player player, NPC npc, Butterfly butterfly, Item jar) {
         player.startEvent(event -> {
             player.lock();
             player.animate(hasMagicButterflyNet(player) ? 6605 : 6606);
@@ -63,7 +88,7 @@ public enum Butterfly {
                 return;
             }
             if (isCatch(player, butterfly)) {
-                impJar.setId(butterfly.jarId);
+                jar.setId(butterfly.jarId);
                 removeButterfly(npc);
                 player.getStats().addXp(StatType.Hunter, butterfly.experience, true);
                 PlayerCounter.BUTTERFLIES_CAUGHT.increment(player, 1);
@@ -71,11 +96,15 @@ public enum Butterfly {
             } else {
                 event.delay(1);
                 player.unlock();
-                recursiveAttemptCatch(player, npc, butterfly, impJar);
+                recursiveAttemptCatch(player, npc, butterfly, jar);
             }
         });
     }
 
+    /**
+     * Remove the butterfly npc
+     * @param npc The butterfly npc.
+     */
     private static void removeButterfly(NPC npc) {
         npc.addEvent(event -> {
             npc.setHidden(true);
@@ -85,15 +114,31 @@ public enum Butterfly {
         });
     }
 
+    /**
+     * Rolls for a successful catch.
+     * @param player The player.
+     * @param butterfly The butterfly object.
+     * @return True if the butterfly is caught.
+     */
     private static boolean isCatch(Player player, Butterfly butterfly) {
         int hunterLevel = player.getStats().get(StatType.Hunter).currentLevel;
         return Random.rollDie(4, Math.min(3, Math.max(1 , (int) ((hunterLevel - butterfly.levelReq) / 5))));
     }
 
+    /**
+     * Tests if the player has a butterfly net equipped.
+     * @param player The player.
+     * @return True if a net is equipped.
+     */
     private static boolean hasButterflyNet(Player player) {
         return player.getEquipment().hasId(ButterflyNet.BUTTERFLY_NET);
     }
 
+    /**
+     * Test if the player has a magic butterfly net equipped.
+     * @param player The player.
+     * @return True if a magic net is equipped.
+     */
     private static boolean hasMagicButterflyNet(Player player) {
         return player.getEquipment().hasId(ButterflyNet.MAGIC_BUTTERFLY_NET);
     }
