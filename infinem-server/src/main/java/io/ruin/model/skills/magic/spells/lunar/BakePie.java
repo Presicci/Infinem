@@ -45,7 +45,7 @@ public class BakePie extends Spell {
                                 continue;
                             }
                             RuneRemoval r = null;
-                            if (runes != null && (r = RuneRemoval.get(p, runes)) == null) {
+                            if ((r = RuneRemoval.get(p, runes)) == null) {
                                 p.sendMessage("You don't have enough runes to cast this spell.");
                                 break;
                             }
@@ -64,7 +64,6 @@ public class BakePie extends Spell {
                 if (count == 0)
                     p.sendMessage("You don't have any pies to bake.");
             });
-            return;
         };
     }
 
