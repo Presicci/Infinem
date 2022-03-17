@@ -1,12 +1,12 @@
 [
   { #Insatiable Bloodveld (202)
     "ids": [ 7397 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.InsatiableBloodveld",
     //Combat Info
     "hitpoints": 380,
-    "aggressive_level": 404,
+    "aggressive_level": 0,
     "max_damage": 15,
-    "attack_style": "CRUSH",
+    "attack_style": "MAGICAL_MELEE",
     //Slayer Info
     "slayer_level": 50,
     "slayer_xp": 2900.0,
