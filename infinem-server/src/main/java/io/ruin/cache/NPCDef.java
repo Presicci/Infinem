@@ -292,20 +292,6 @@ public class NPCDef {
         } else if(id == 8500) {
             name = "Old man";
             options[1] = "Trade";
-        } else if (id == 7411) {
-            name = "Exodia the Forbidden one";
-        } else if(id == 7412) { //Nechryarch Melee
-            copy(7411);
-            headIcon = 0;
-            name = "Exodia the Forbidden one";
-        } else if(id == 7414) { //Nechryarch Range
-            copy(7411);
-            headIcon = 1;
-            name = "Exodia the Forbidden one";
-        } else if(id == 7415) { //Nechryarch Mage
-            copy(7411);
-            headIcon = 2;
-            name = "Exodia the Forbidden one";
         } else if(id == 8300) { //Ranalph Devere Melee
             copy(3966);
             headIcon = 0;
