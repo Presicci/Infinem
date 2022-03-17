@@ -10,11 +10,10 @@ import io.ruin.model.stat.StatType;
 public class AberrantSpectre extends NPCCombat {
 
     private static final Projectile PROJECTILE = new Projectile(336, 37, 38, 5, 30, 15, 16, 0);
-    private static StatType[] DRAIN = { StatType.Attack, StatType.Strength, StatType.Defence, StatType.Ranged, StatType.Magic};
-    @Override
-    public void init() {
+    private static final StatType[] DRAIN = { StatType.Attack, StatType.Strength, StatType.Defence, StatType.Ranged, StatType.Magic};
 
-    }
+    @Override
+    public void init() {}
 
     @Override
     public void follow() {
