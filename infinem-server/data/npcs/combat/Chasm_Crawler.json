@@ -1,10 +1,10 @@
 [
   { #Chasm Crawler (68)
     "ids": [ 7389 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.ChasmCrawler",
     //Combat Info
-    "hitpoints": 1,
-    "aggressive_level": 136,
+    "hitpoints": 64,
+    "aggressive_level": 0,
     "max_damage": 7,
     "attack_style": "CRUSH",
     //Slayer Info
