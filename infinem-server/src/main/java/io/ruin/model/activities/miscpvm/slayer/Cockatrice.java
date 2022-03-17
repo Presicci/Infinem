@@ -6,7 +6,7 @@ import io.ruin.model.stat.StatType;
 
 public class Cockatrice extends NPCCombat {
 
-    private static StatType[] DRAIN = { StatType.Attack, StatType.Strength, StatType.Defence, StatType.Ranged, StatType.Magic };
+    private static final StatType[] DRAIN = { StatType.Attack, StatType.Strength, StatType.Defence, StatType.Ranged, StatType.Magic };
 
     @Override
     public void init() {
