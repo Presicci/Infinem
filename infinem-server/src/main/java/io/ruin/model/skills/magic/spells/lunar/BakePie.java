@@ -5,9 +5,11 @@ import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
 import io.ruin.model.stat.StatType;
+import lombok.AllArgsConstructor;
 
 public class BakePie extends Spell {
 
+    @AllArgsConstructor
     private enum Pie {
 
         REDBERRY_PIE(10, 78.0, 2321, 2325),
@@ -20,15 +22,9 @@ public class BakePie extends Spell {
         WILD_PIE(85, 240.0, 7206, 7208),
         SUMMER_PIE(95, 260.0, 7216, 7218);
 
-        private int levelReq, raw, baked;
-        private double exp;
-
-        Pie(int levelReq, double exp, int raw, int baked) {
-            this.levelReq = levelReq;
-            this.exp = exp;
-            this.raw = raw;
-            this.baked = baked;
-        }
+        private final int levelReq;
+        private final double exp;
+        private final int raw, baked;
     }
 
     public BakePie() {
@@ -49,7 +45,7 @@ public class BakePie extends Spell {
                                 continue;
                             }
                             RuneRemoval r = null;
-                            if (runes != null && (r = RuneRemoval.get(p, runes)) == null) {
+                            if ((r = RuneRemoval.get(p, runes)) == null) {
                                 p.sendMessage("You don't have enough runes to cast this spell.");
                                 break;
                             }
@@ -68,7 +64,6 @@ public class BakePie extends Spell {
                 if (count == 0)
                     p.sendMessage("You don't have any pies to bake.");
             });
-            return;
         };
     }
 

@@ -548,7 +548,7 @@ public enum Pet {
                         npc.transform(ROCK_GOLEMS[indexF].npcId);
                         player.sendMessage("Your rock golem eats the " + ItemDef.get(ROCK_GOLEM_ORES[indexF]).name + " and takes on a new appearance.");
                     } else {
-                        player.sendMessage("Your rock golem has already taken that appearence.");
+                        player.sendMessage("Your rock golem has already taken that appearance.");
                     }
                 });
                 // Multiple types of granite
@@ -559,7 +559,7 @@ public enum Pet {
                             npc.transform(ROCK_GOLEMS[indexF].npcId);
                             player.sendMessage("Your rock golem eats the " + ItemDef.get(Items.GRANITE_5KG).name + " and takes on a new appearance.");
                         } else {
-                            player.sendMessage("Your rock golem has already taken that appearence.");
+                            player.sendMessage("Your rock golem has already taken that appearance.");
                         }
                     });
                     ItemNPCAction.register(Items.GRANITE_500G, pet.npcId, (player, item, npc) -> {
@@ -568,7 +568,7 @@ public enum Pet {
                             npc.transform(ROCK_GOLEMS[indexF].npcId);
                             player.sendMessage("Your rock golem eats the " + ItemDef.get(Items.GRANITE_500G).name + " and takes on a new appearance.");
                         } else {
-                            player.sendMessage("Your rock golem has already taken that appearence.");
+                            player.sendMessage("Your rock golem has already taken that appearance.");
                         }
                     });
                 }
