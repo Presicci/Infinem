@@ -7,12 +7,10 @@ import io.ruin.model.stat.StatType;
 
 public class Basilisk extends NPCCombat {
 
-    private static StatType[] DRAIN = { StatType.Attack, StatType.Strength, StatType.Defence, StatType.Ranged, StatType.Magic };
+    private static final StatType[] DRAIN = { StatType.Attack, StatType.Strength, StatType.Defence, StatType.Ranged, StatType.Magic };
 
     @Override
-    public void init() {
-
-    }
+    public void init() {}
 
     @Override
     public void follow() {
