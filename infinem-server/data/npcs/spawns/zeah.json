@@ -10417,16 +10417,6 @@
     "npcName": "Farmer Gricoller"
   },
   {
-    "id": 7415,
-    "x": 1798,
-    "y": 3501,
-    "z": 1,
-    "direction": "N",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Exodia the Forbidden one"
-  },
-  {
     "id": 5935,
     "x": 1799,
     "y": 3466,
