@@ -4,6 +4,7 @@ import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.skills.prayer.Prayer;
 
 public class CaveHorror extends NPCCombat {
 
@@ -21,7 +22,8 @@ public class CaveHorror extends NPCCombat {
     public boolean attack() {
         if (!withinDistance(1))
             return false;
-        if (target.player != null && target.player.getEquipment().getId(Equipment.SLOT_AMULET) != 8923) {
+        if (target.player != null && target.player.getEquipment().getId(Equipment.SLOT_AMULET) != 8923
+                && !target.player.getPrayer().isActive(Prayer.PROTECT_FROM_MELEE)) {
             npc.animate(4237);
             target.hit(new Hit(npc, AttackStyle.MAGIC).fixedDamage(target.getMaxHp() / 10).ignoreDefence().ignorePrayer());
             if (target.player != null) {
