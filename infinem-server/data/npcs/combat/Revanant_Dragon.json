@@ -9,8 +9,8 @@
     "attack_style": "STAB",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 140.0,
-    "slayer_tasks": [],
+    "slayer_xp": 186.0,
+    "slayer_tasks": [ "Ghosts", "Revenants" ],
     //Combat Stats
     "attack": 106,
     "strength": 126,

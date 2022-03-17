@@ -9,8 +9,8 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 42.0,
+    "slayer_tasks": [ "Black Knights" ],
     //Combat Stats
     "attack": 25,
     "strength": 25,

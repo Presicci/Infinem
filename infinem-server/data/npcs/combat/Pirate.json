@@ -9,8 +9,8 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 23.0,
+    "slayer_tasks": [ "Pirates" ],
     //Combat Stats
     "attack": 1,
     "strength": 1,
@@ -52,8 +52,8 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 23.0,
+    "slayer_tasks": [ "Black Knights" ],
     //Combat Stats
     "attack": 1,
     "strength": 1,
@@ -95,8 +95,8 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 23.0,
+    "slayer_tasks": [ "Black Knights" ],
     //Combat Stats
     "attack": 1,
     "strength": 1,

@@ -10,7 +10,7 @@
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 17.0,
-    "slayer_tasks": [],
+    "slayer_tasks": [ "Dark Warriors" ],
     //Combat Stats
     "attack": 1,
     "strength": 1,
@@ -53,7 +53,7 @@
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 182.0,
-    "slayer_tasks": [],
+    "slayer_tasks": [ "Dark Warriors" ],
     //Combat Stats
     "attack": 1,
     "strength": 1,

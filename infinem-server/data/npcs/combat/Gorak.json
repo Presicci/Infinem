@@ -10,7 +10,7 @@
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_tasks": [ "Goraks" ],
     //Combat Stats
     "attack": 130,
     "strength": 130,
@@ -53,7 +53,7 @@
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_tasks": [ "Goraks" ],
     //Combat Stats
     "attack": 133,
     "strength": 126,

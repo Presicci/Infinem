@@ -224,8 +224,8 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 16.0,
-    "slayer_tasks": [ "Goblins" ],
+    "slayer_xp": 14.0,
+    "slayer_tasks": [ "Ghosts", "Revenants" ],
     //Combat Stats
     "attack": 1,
     "strength": 1,

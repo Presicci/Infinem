@@ -10,8 +10,8 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 150.0,
+    "slayer_tasks": [ "Chaos Druids" ],
     //Combat Stats
     "attack": 98,
     "strength": 65,
