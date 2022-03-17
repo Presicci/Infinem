@@ -276,5 +276,14 @@
 		"z": 0,
 		"direction": "S",
 		"walkRange": 0
+	},
+	{
+		"name": "Steve",
+		"id": 6798,
+		"x": 3060,
+		"y": 9558,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 2
 	}
 ]
