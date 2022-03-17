@@ -1,12 +1,12 @@
 [
   { #Screaming banshee (70)
     "ids": [ 7390 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.ScreamingBanshee",
     //Combat Info
     "hitpoints": 61,
-    "aggressive_level": 140,
+    "aggressive_level": 0,
     "max_damage": 7,
-    "attack_style": "CRUSH",
+    "attack_style": "MAGICAL_MELEE",
     //Slayer Info
     "slayer_level": 15,
     "slayer_xp": 610.0,
@@ -38,8 +38,8 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 7547,
+    "defend_animation": 7546,
+    "death_animation": 7548
   }
 ]
