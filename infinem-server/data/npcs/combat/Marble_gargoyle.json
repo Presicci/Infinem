@@ -1,15 +1,15 @@
 [
   { #Marble gargoyle (349)
     "ids": [ 7407, 7408 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.MarbleGargoyle",
     //Combat Info
     "hitpoints": 270,
-    "aggressive_level": 698,
+    "aggressive_level": 0,
     "max_damage": 38,
     "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 75,
-    "slayer_xp": 2.0,
+    "slayer_xp": 2768.0,
     "slayer_tasks": [ "Gargoyles" ],
     //Combat Stats
     "attack": 230,
@@ -30,7 +30,7 @@
     "magic_defence": 50,
     "ranged_defence": 50,
     //Immunites
-    "poison_immunity": false,
+    "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
     "attack_ticks": 4,
@@ -38,8 +38,8 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
+    "attack_animation": 7811,
     "defend_animation": -1,
-    "death_animation": -1
+    "death_animation": 7812
   }
 ]
