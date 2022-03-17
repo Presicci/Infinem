@@ -6,9 +6,11 @@ import io.ruin.model.activities.pvminstances.InstanceType;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.slayer.Slayer;
+import io.ruin.model.skills.slayer.SlayerCreature;
 
 public class KrakenCove {
 
@@ -17,7 +19,8 @@ public class KrakenCove {
             if (n.getCombat() != null && n.spawnPosition.getRegion().id == 9116) {
                 n.attackNpcListener = (player, npc, message) -> {
                     if (!Slayer.isTask(player, npc)) {
-                        if(n.getId() == 2917 || player.slayerTask != null && player.slayerTask.name.contains("Kraken") && npc.getId() == 5534 || npc.getId() == 5535)
+                        SlayerCreature task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
+                        if(n.getId() == 2917 || (task != null && task.name().contains("cave kraken") && npc.getId() == 5534) || npc.getId() == 5535)
                             return true;
                         if (message)
                             player.sendMessage("You cannot attack monsters in this cave unless they are assigned to you by a slayer master.");

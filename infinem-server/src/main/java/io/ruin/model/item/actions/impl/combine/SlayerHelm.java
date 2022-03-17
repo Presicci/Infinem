@@ -12,6 +12,7 @@ import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.slayer.Slayer;
+import io.ruin.model.skills.slayer.SlayerMaster;
 import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
@@ -189,11 +190,11 @@ public class SlayerHelm {
         ItemAction.registerInventory(HYDRA_HELM_IMBUE, "disassemble", (player, item) -> disassemble(player, item, NOSE_PEG, FACEMASK, GEM, EARMUFFS, SPINY_HELM, BLACK_MASK_IMBUE, HYDRAS_HEAD));
 
         for (int helm : Arrays.asList(SLAYER_HELM, SLAYER_HELM_IMBUE, RED_HELM_IMBUE, RED_SLAYER_HELM, GREEN_SLAYER_HELM, GREEN_HELM_IMBUE, BLACK_HELM_IMBUE, BLACK_SLAYER_HELM, PURPLE_HELM_IMBUE, PURPLE_SLAYER_HELM, TURQUOISE_SLAYER_HELM, TURQUOISE_HELM_IMBUE , HYDRA_SLAYER_HELM, HYDRA_HELM_IMBUE)) {
-            ItemAction.registerEquipment(helm, 4, (player, item) -> Slayer.check(player));
+            ItemAction.registerEquipment(helm, 4, (player, item) -> SlayerMaster.checkTask(player));
             ItemAction.registerEquipment(helm, "log", (player, item) -> KillCounter.openOwnSlayer(player));
-            ItemAction.registerInventory(helm, "check", (player, item) -> Slayer.check(player));
-            ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "check", (player, item) -> Slayer.check(player));
-            ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "activate", (player, item) -> Slayer.check(player));
+            ItemAction.registerInventory(helm, "check", (player, item) -> SlayerMaster.checkTask(player));
+            ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "check", (player, item) -> SlayerMaster.checkTask(player));
+            ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "activate", (player, item) -> SlayerMaster.checkTask(player));
             ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "log", (player, item) -> KillCounter.openOwnSlayer(player));
         }
     }

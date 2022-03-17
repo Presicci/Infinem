@@ -1,6 +1,8 @@
 package io.ruin.model.skills.slayer;
 
+import io.ruin.api.utils.Tuple;
 import io.ruin.cache.ItemDef;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -8,10 +10,12 @@ import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.utils.Config;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
+/**
+ * @author Mrbennjerry - https://github.com/Presicci
+ * Created on 1/25/2022
+ */
 public enum SlayerUnlock {
     GARGOYLE_SMASHER(Config.GARGOYLE_SMASHER, 120, 0),
     SLUG_SALTER(Config.SLUG_SALTER, 80, 1),
@@ -88,9 +92,14 @@ public enum SlayerUnlock {
         } else {
             config.set(player, 1);
             Config.SLAYER_POINTS.set(player, Config.SLAYER_POINTS.get(player) - price);
-            player.sendMessage(extension ? "Extension" : "Unlock" + " purchased.");
+            player.sendMessage((extension ? "Extension" : "Unlock") + " purchased.");
+            player.sendMessage("" + toString());
         }
     }
+
+
+
+
 
     private static final Map<Integer, SlayerUnlock> UNLOCKS = new HashMap<>();
 
@@ -104,11 +113,13 @@ public enum SlayerUnlock {
         });
     }
 
+    /**
+     * Handles unlocking upgrades from the shop.
+     * @param player The player unlocking something.
+     * @param slot The slot of the unlock.
+     */
     private static void handleUnlock(Player player, int slot) {
-        SlayerUnlock unlock = UNLOCKS.get(slot);
-        if (unlock != null) {
-            unlock.toggle(player);
-        } else if (slot == 35) {
+        if (slot == 35) {
             player.sendMessage("Superior slayer monsters are not yet available.");
         } else if (slot == 56) {
             extendAll(player);
@@ -119,8 +130,16 @@ public enum SlayerUnlock {
         } else if (slot >= 50 && slot <= 55) {
             unblockTask(player, slot - 50);
         }
+        SlayerUnlock unlock = UNLOCKS.get(slot);
+        if (unlock != null) {
+            unlock.toggle(player);
+        }
     }
 
+    /**
+     * Handles the extend all tasks button.
+     * @param player The player extending all tasks.
+     */
     private static void extendAll(Player player) {
         int cost = UNLOCKS.values().stream()
                 .filter(unlock -> unlock.extension && unlock.config.get(player) == 0)
@@ -139,19 +158,17 @@ public enum SlayerUnlock {
     }
 
     private static void unblockTask(Player player, int slot) {
-        if (player.slayerBlockedTasks == null)
-            return;
-        if (slot >= player.slayerBlockedTasks.size() || player.slayerBlockedTasks.get(slot) == null) {
-            player.sendMessage("You don't have a task blocked in that slot.");
-            return;
-        }
-        player.slayerBlockedTasks.set(slot, null);
-        Slayer.sendRewardInfo(player);
+        Config.BLOCKED_TASKS[slot].set(player, 0);
     }
 
+    /**
+     * Handles the cancelling of a task.
+     * @param player The player cancelling the task.
+     */
     private static void cancelTask(Player player) {
-        if (player.slayerTask == null) {
-            player.sendMessage("You don't have a slayer task to cancel.");
+        SlayerCreature task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
+        if (task == null) {
+            player.sendMessage("You don't have a slayer task to block.");
             return;
         }
         if (Config.SLAYER_POINTS.get(player) < 30) {
@@ -159,54 +176,90 @@ public enum SlayerUnlock {
             return;
         }
         Config.SLAYER_POINTS.set(player, Config.SLAYER_POINTS.get(player) - 30);
-        Slayer.sendRewardInfo(player);
-        Slayer.reset(player);
-        player.sendMessage("Your slayer task has been cleared. You may now receive another one.");
+        Config.SLAYER_TASK_AMOUNT.set(player, 0);
+        Config.SLAYER_TASK_1.set(player, 0);
+        player.slayerTaskRemaining = 0;
+        player.sendMessage("You have successfully cancelled your task.");
     }
 
+    /**
+     * Handles the blocking of a task.
+     * @param player The player blocking the task.
+     */
     private static void blockTask(Player player) {
-        if (player.slayerTask == null) {
+        SlayerCreature task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
+        if (task == null) {
             player.sendMessage("You don't have a slayer task to block.");
             return;
         }
         if (Config.SLAYER_POINTS.get(player) < 100) {
-            player.sendMessage("You don't have enough slayer points to block your task.");
+            player.sendMessage("You need 100 points to block your task.");
             return;
         }
-        if (player.slayerBlockedTasks == null)
-            player.slayerBlockedTasks = new ArrayList<>(6);
-        int freeSlot = -1;
-        for (int i = 0; i < 6; i++) {
-            if (i >= player.slayerBlockedTasks.size() || player.slayerBlockedTasks.get(i) == null) {
-                freeSlot = i;
-                break;
+        if (task == SlayerCreature.BOSSES) {
+            return;
+        }
+        // Grab our current task ID
+        final int taskId = Config.SLAYER_TASK_1.get(player);
+
+        // Check if the player has already blocked this task
+        if (isBlocked(player, taskId)) {
+            player.sendMessage("You are already blocking " + SlayerCreature.taskName(player, taskId) + ".");
+            return;
+        }
+        // Check for an available slot and block
+        for (Config i : Config.BLOCKED_TASKS) {
+            if (i.get(player) == 0) {
+                i.set(player, taskId);
+
+                Config.SLAYER_TASK_AMOUNT.set(player, 0);
+                player.slayerTaskRemaining = 0;
+                Config.SLAYER_TASK_1.set(player, 0);
+
+                int pts = Config.SLAYER_POINTS.get(player) - 100;
+
+                Config.SLAYER_POINTS.set(player, pts);
+                player.sendMessage("You have successfully blocked your task.");
+                return;
             }
         }
-        if (freeSlot == -1) {
-            player.sendMessage("You already have the maximum amount of tasks blocked.");
-            return;
-        }
-        Config.SLAYER_POINTS.set(player, Config.SLAYER_POINTS.get(player) - 100);
-        if (freeSlot >= player.slayerBlockedTasks.size())
-            player.slayerBlockedTasks.add(player.slayerTaskName);
-        else
-            player.slayerBlockedTasks.set(freeSlot, player.slayerTaskName);
-        Slayer.reset(player);
-        Slayer.sendTaskInfo(player);
-        Slayer.sendRewardInfo(player);
-        player.sendMessage("Your slayer task has been blocked and removed.");
     }
 
+    /**
+     * Opens the reward shop.
+     * @param player The player opening the shop.
+     */
     public static void openRewards(Player player) {
-        Slayer.sendTaskInfo(player);
-        Slayer.sendRewardInfo(player);
+        //Slayer.sendTaskInfo(player);
+        //Slayer.sendRewardInfo(player);
         player.getPacketSender().sendClientScript(917, "ii", -1, -1);
         player.openInterface(InterfaceType.MAIN, 426);
         player.getPacketSender().sendAccessMask(426, 8, 0, 56, 2);
         player.getPacketSender().sendAccessMask(426, 23, 0, 5, 1052);
     }
 
+    /**
+     * Checks if a task is blocked by the player.
+     * @param player The player being checked.
+     * @param taskId The task being checked.
+     * @return Returns true if the given task is already blocked
+     */
+    static boolean isBlocked(Player player, int taskId) {
+        for (Config i : Config.BLOCKED_TASKS) {
+            if (i.get(player) == taskId) {
+                return true;
+            }
+        }
+        return false;
+    }
 
+    /**
+     * Handles the buying of an item from the reward shop.
+     * @param player The player buying the item.
+     * @param option The option of the interface call.
+     * @param slot The slot of the interface call.
+     * @param itemId The itemId of the item.
+     */
     private static void buyItem(Player player, int option, int slot, int itemId) {
         if (slot < 0 || slot >= ShopItem.values().length)
             return;
@@ -236,15 +289,37 @@ public enum SlayerUnlock {
         Config.SLAYER_POINTS.set(player, pts - (amount * itemPrice));
     }
 
+    /**
+     * Opens the slayer gold shop.
+     * @param player The player opening the shop.
+     * @param npc The slayer master.
+     */
+    public static void openShop(Player player, NPC npc) {
+        npc.getDef().shops.get(0).open(player);
+    }
+
+    /**
+     * Tuple mapping slayer creature UIDs with configs for that
+     * creature's task extension unlock.
+     */
+    public static final List<Tuple<Integer, Config>> multipliable = Arrays.asList(
+            new Tuple<>(66, Config.NEED_MORE_DARKNESS), new Tuple<>(79, Config.ANKOU_VERY_MUCH), new Tuple<>(83, Config.SUQ_ANOTHER_ONE),
+            new Tuple<>(27, Config.FIRE_AND_DARKNESS), new Tuple<>(58, Config.PEDAL_TO_THE_METALS), new Tuple<>(59, Config.PEDAL_TO_THE_METALS),
+            new Tuple<>(60, Config.PEDAL_TO_THE_METALS), new Tuple<>(89, Config.SPIRITUAL_FERVOUR), new Tuple<>(91, Config.SPIRITUAL_FERVOUR),
+            new Tuple<>(42, Config.AUGMENT_MY_ABBIES), new Tuple<>(30, Config.ITS_DARK_IN_HERE), new Tuple<>(29, Config.GREATER_CHALLENGE),
+            new Tuple<>(48, Config.BLEED_ME_DRY), new Tuple<>(41, Config.SMELL_YA_LATER), new Tuple<>(94, Config.BIRDS_OF_A_FEATHER),
+            new Tuple<>(93, Config.I_REALLY_MITH_YOU), new Tuple<>(80, Config.HORRORIFIC), new Tuple<>(72, Config.WYVER_NOTHER_ONE),
+            new Tuple<>(46, Config.GET_SMASHED), new Tuple<>(52, Config.NECHS_PLEASE), new Tuple<>(92, Config.KRACK_ON)
+    );
+
     private enum ShopItem {
-        SLAYER_RING(11866, 75, 1),     //Slayer ring
-        BROAD_BOLTS(11875, 35, 250),   //Broad bolts
-        BROAD_ARROWS(4160, 35, 250),    //Broad arrows
-        HERB_SACK(13226, 750, 1),    //Herb sack
-        RUNE_POUCH(12791, 1250, 1), //Rune pouch
-        DWARF_CANNON(12863, 1500, 1), //Dwarf cannon
-        ;
-        int id, price, buyAmount;
+        SLAYER_RING(11866, 75, 1),      // Slayer ring
+        BROAD_BOLTS(11875, 35, 250),    // Broad bolts
+        BROAD_ARROWS(4160, 35, 250),    // Broad arrows
+        HERB_SACK(13226, 750, 1),       // Herb sack
+        RUNE_POUCH(12791, 1250, 1);      // Rune pouch
+
+        public final int id, price, buyAmount;
 
         ShopItem(int id, int price, int buyAmount) {
             this.id = id;
