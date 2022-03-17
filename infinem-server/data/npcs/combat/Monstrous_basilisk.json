@@ -1,20 +1,20 @@
 [
   { #Monstrous basilisk (135)
     "ids": [ 7395 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.MonstrousBasilisk",
     //Combat Info
-    "hitpoints": 172,
-    "aggressive_level": 270,
-    "max_damage": 1,
-    "attack_style": "CRUSH",
+    "hitpoints": 170,
+    "aggressive_level": 0,
+    "max_damage": 11,
+    "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 40,
     "slayer_xp": 1700.0,
     "slayer_tasks": [ "Basilisks" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 88,
+    "strength": 98,
+    "defence": 130,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
@@ -24,10 +24,10 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 0,
-    "slash_defence": 0,
+    "stab_defence": 35,
+    "slash_defence": 35,
     "crush_defence": 0,
-    "magic_defence": 0,
+    "magic_defence": 35,
     "ranged_defence": 0,
     //Immunites
     "poison_immunity": false,
@@ -38,8 +38,8 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 1546,
+    "defend_animation": 1547,
+    "death_animation": 1548
   }
 ]
