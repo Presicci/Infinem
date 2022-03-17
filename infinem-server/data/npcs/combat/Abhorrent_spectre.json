@@ -1,12 +1,12 @@
 [
   { #Abhorrent spectre (253)
     "ids": [ 7402 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.AbhorrentSpectre",
     //Combat Info
     "hitpoints": 250,
-    "aggressive_level": 506,
+    "aggressive_level": 0,
     "max_damage": 31,
-    "attack_style": "CRUSH",
+    "attack_style": "MAGIC",
     //Slayer Info
     "slayer_level": 60,
     "slayer_xp": 2500.0,
