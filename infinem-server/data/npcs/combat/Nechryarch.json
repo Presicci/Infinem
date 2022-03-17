@@ -1,15 +1,15 @@
 [
   { #Nechryarch (300)
     "ids": [ 7411, 7412, 7414, 7415 ],
-    "handler": "io.ruin.model.activities.bosses.Nechryarch",
+    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.nechryarch.Nechryarch",
     //Combat Info
-    "hitpoints": 1000,
-    "aggressive_level": 50,
+    "hitpoints": 320,
+    "aggressive_level": 0,
     "max_damage": 27,
     "attack_style": "CRUSH",
     //Slayer Info
-    "slayer_level": 1,
-    "slayer_xp": 0.0,
+    "slayer_level": 80,
+    "slayer_xp": 3280.0,
     "slayer_tasks": [ "Nechryael" ],
     //Combat Stats
     "attack": 310,
