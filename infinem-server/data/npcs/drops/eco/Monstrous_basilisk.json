@@ -7,7 +7,7 @@
     "tables": [
       {
         "name": "Weapons and armour",
-        "weight": 91,
+        "weight": 182,
         "items": [
           { "id": 1355, "min": 1, "max": 1, "weight": 2339 },   //Mithril axe
           { "id": 1243, "min": 1, "max": 1, "weight": 1560 },   //Mithril spear
@@ -20,7 +20,7 @@
       },
       {
         "name": "Runes",
-        "weight": 137,
+        "weight": 274,
         "items": [
           { "id": 555, "min": 75, "max": 75, "weight": 6250 },   //Water rune
           { "id": 561, "min": 15, "max": 15, "weight": 3910 },   //Nature rune
@@ -30,21 +30,21 @@
       },
       {
         "name": "herb drop",
-        "weight": 283,
+        "weight": 566,
         "items": [
           { "id": 0, "min": 1, "max": 1, "weight": 5 }
         ]
       },
       {
         "name": "Materials",
-        "weight": 24,
+        "weight": 48,
         "items": [
           { "id": 449, "min": 1, "max": 1, "weight": 2339 }   //Adamantite ore
         ]
       },
       {
         "name": "Coins",
-        "weight": 462,
+        "weight": 924,
         "items": [
           { "id": 995, "min": 44, "max": 44, "weight": 22699 },   //Coins
           { "id": 995, "min": 200, "max": 200, "weight": 13300 },   //Coins
@@ -55,9 +55,9 @@
       },
       {
         "name": "Tertiary",
-        "weight": 0,
+        "weight": 1,
         "items": [
-          { "id": 7977, "min": 1, "max": 1, "weight": 50 }   //Basilisk head
+          { "id": 7977, "min": 1, "max": 1, "weight": 25 }   //Basilisk head
         ]
       }
     ]
