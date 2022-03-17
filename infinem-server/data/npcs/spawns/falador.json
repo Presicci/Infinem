@@ -282,15 +282,6 @@
     "walkRange": 5
   },
   {
-    "name": "Sheep",
-    "id": 2692,
-    "x": 2966,
-    "y": 3346,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 5
-  },
-  {
     "name": "Swan",
     "id": 1831,
     "x": 2969,
