@@ -20,8 +20,8 @@
   {
     "name": "Thief",
     "id": 3092,
-    "x": 3014,
-    "y": 3229,
+    "x": 3013,
+    "y": 3232,
     "z": 0,
     "direction": "S",
     "walkRange": 7
@@ -128,8 +128,8 @@
   {
     "name": "Seaman Thresnor",
     "id": 3646,
-    "x": 3026,
-    "y": 3216,
+    "x": 3028,
+    "y": 3213,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -146,8 +146,8 @@
   {
     "name": "Seagull",
     "id": 1338,
-    "x": 3027,
-    "y": 3201,
+    "x": 3031,
+    "y": 3199,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -173,7 +173,7 @@
   {
     "name": "Seaman Lorris",
     "id": 3645,
-    "x": 3026,
+    "x": 3027,
     "y": 3221,
     "z": 0,
     "direction": "S",
@@ -191,8 +191,8 @@
   {
     "name": "Seagull",
     "id": 1338,
-    "x": 3029,
-    "y": 3234,
+    "x": 3032,
+    "y": 3236,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -317,7 +317,7 @@
   {
     "name": "Thurgo",
     "id": 4733,
-    "x": 2999,
+    "x": 3000,
     "y": 3144,
     "z": 0,
     "direction": "S",
@@ -364,33 +364,6 @@
     "id": 3643,
     "x": 3052,
     "y": 3247,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
-    "name": "Seagull",
-    "id": 1338,
-    "x": 3063,
-    "y": 3203,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Seagull",
-    "id": 1338,
-    "x": 3063,
-    "y": 3203,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
-    "name": "Seagull",
-    "id": 1338,
-    "x": 3063,
-    "y": 3203,
     "z": 0,
     "direction": "S",
     "walkRange": 2
@@ -716,8 +689,8 @@
   {
     "name": "Seagull",
     "id": 1339,
-    "x": 3052,
-    "y": 3193,
+    "x": 3045,
+    "y": 3192,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -725,8 +698,8 @@
   {
     "name": "Seagull",
     "id": 1339,
-    "x": 3053,
-    "y": 3193,
+    "x": 3048,
+    "y": 3194,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -741,24 +714,6 @@
     "walkRange": 4
   },
   {
-    "name": "Veos",
-    "id": 2147,
-    "x": 3058,
-    "y": 3192,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1
-  },
-  {
-    "name": "Seagull",
-    "id": 1339,
-    "x": 3063,
-    "y": 3193,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
     "name": "Gerrant",
     "id": 2891,
     "x": 3014,
@@ -766,15 +721,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
-  },
-  {
-    "name": "Seagull",
-    "id": 1339,
-    "x": 3063,
-    "y": 3193,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
   },
 
 
