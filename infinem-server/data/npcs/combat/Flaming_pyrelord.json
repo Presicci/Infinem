@@ -1,12 +1,12 @@
 [
   { #Flaming pyrelord (97)
     "ids": [ 7394 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.Pyrelord",
     //Combat Info
     "hitpoints": 126,
-    "aggressive_level": 194,
+    "aggressive_level": 0,
     "max_damage": 7,
-    "attack_style": "CRUSH",
+    "attack_style": "MAGICAL_MELEE",
     //Slayer Info
     "slayer_level": 30,
     "slayer_xp": 1250.0,
@@ -34,7 +34,7 @@
     "venom_immunity": true,
     //Speeds
     "attack_ticks": 4,
-    "death_ticks": 5,
+    "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
