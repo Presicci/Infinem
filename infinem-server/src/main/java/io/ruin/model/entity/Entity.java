@@ -29,7 +29,6 @@ import io.ruin.process.event.EventConsumer;
 import io.ruin.process.event.EventType;
 import io.ruin.process.event.EventWorker;
 import io.ruin.utility.TickDelay;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -638,8 +637,7 @@ public abstract class Entity {
 
     public void curePoison(int immuneFor) {
         if(poisonLevel > 1) { // envenomed, downgrade to poison
-            poisonLevel--;
-            Config.POISONED.set(player, 1);
+            venomToPoison();
         } else { // regular poison, cure
             this.poisonTicks = 0;
             this.poisonDamage = 0;
@@ -666,8 +664,20 @@ public abstract class Entity {
             Config.POISONED.set(player, 0);
     }
 
+    /**
+     * Reduces the player's venom to a poison of the same damage
+     */
+    public void venomToPoison() {
+        poisonLevel--;
+        Config.POISONED.set(player, 1);
+    }
+
     public boolean isPoisoned() {
         return poisonDamage > 0;
+    }
+
+    public boolean isVenomed() {
+        return poisonDamage > 0 && poisonLevel == 1;
     }
 
     public boolean isPoisonImmune() {
