@@ -17,4 +17,7 @@ public abstract class NPCAttributes extends Entity {
 
     public int ownerId = -1; //for pets
 
+    // if is a superior slayer creature
+    public boolean isSuperior = false;
+
 }
