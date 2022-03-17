@@ -1,12 +1,12 @@
 [
   { #Cave abomination (206)
     "ids": [ 7401 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.CaveAbomination",
     //Combat Info
     "hitpoints": 130,
-    "aggressive_level": 412,
+    "aggressive_level": 0,
     "max_damage": 24,
-    "attack_style": "CRUSH",
+    "attack_style": "MAGICAL_MELEE",
     //Slayer Info
     "slayer_level": 58,
     "slayer_xp": 1300.0,
