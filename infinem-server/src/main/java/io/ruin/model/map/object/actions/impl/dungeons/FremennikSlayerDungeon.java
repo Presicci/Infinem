@@ -46,11 +46,11 @@ public class FremennikSlayerDungeon {
             final int task = Config.SLAYER_TASK_1.get(player);
             int am = Config.SLAYER_TASK_AMOUNT.get(player);
             SlayerCreature creature = SlayerCreature.lookup(task);
-            //if ((creature == SlayerCreature.KURASK && am > 0) || player.getPosition().getY() < obj.getPosition().getY()) {
+            if ((creature == SlayerCreature.KURASK && am > 0) || player.getPosition().getY() < obj.getPosition().getY()) {
                 Stile.shortcutN(player, obj, 1);
-            //} else {
-             //   player.dialogue(new NPCDialogue(7518, "Naughty human! You not hunting the Kurask! Jelly's Kurasks only for people on Slayer tasks."));
-           // }
+            } else {
+                player.dialogue(new NPCDialogue(7518, "Naughty human! You not hunting the Kurask! Jelly's Kurasks only for people on Slayer tasks."));
+            }
         });
     }
 
