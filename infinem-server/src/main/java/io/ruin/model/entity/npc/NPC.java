@@ -4,7 +4,9 @@ import io.ruin.Server;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.miscpvm.BasicCombat;
+import io.ruin.model.activities.miscpvm.basic.BasicArcherCombat;
 import io.ruin.model.activities.wilderness.Wilderness;
+import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.UpdateMask;
 import io.ruin.model.entity.shared.listeners.RespawnListener;
@@ -129,7 +131,7 @@ public class NPC extends NPCAttributes {
      * Combat
      */
 
-    private NPCCombat combat;
+    protected NPCCombat combat;
 
     private boolean setCombat() {
         NPCDef def = getDef();
@@ -145,8 +147,16 @@ public class NPC extends NPCAttributes {
                 Server.logError("", e);
             }
         }
-        combat = new BasicCombat().init(this, def.combatInfo);
+        if (def.combatInfo.attack_style == AttackStyle.RANGED) {
+            combat = new BasicArcherCombat().init(this, def.combatInfo);
+        } else {
+            combat = new BasicCombat().init(this, def.combatInfo);
+        }
         return true;
+    }
+
+    public Position getCentrePosition() {
+        return new Position(getPosition().getX() + getDef().size / 2, getPosition().getY() + getDef().size / 2, getPosition().getZ());
     }
 
     public NPCCombat getCombat() {
@@ -222,7 +232,7 @@ public class NPC extends NPCAttributes {
      * Init
      */
 
-    private void init() {
+    protected void init() {
         this.movement = new NPCMovement(this);
         this.masks = new UpdateMask[]{
                 animationUpdate = new AnimationUpdate(),
