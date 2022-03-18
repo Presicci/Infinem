@@ -3054,7 +3054,7 @@
     "y": 3941,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 15
   },
   {
     "name": "Moss giant",
