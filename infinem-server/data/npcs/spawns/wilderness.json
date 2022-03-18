@@ -5021,8 +5021,8 @@
   {
     "name": "Black dragon",
     "id": 256,
-    "x": 3054,
-    "y": 10272,
+    "x": 3049,
+    "y": 10266,
     "z": 0,
     "direction": "S",
     "walkRange": 3,
@@ -5522,14 +5522,5 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
-  },
-  {
-    "name": "Tpiles",
-    "id": 13,
-    "x": 3086,
-    "y": 3870,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1
   }
 ]
