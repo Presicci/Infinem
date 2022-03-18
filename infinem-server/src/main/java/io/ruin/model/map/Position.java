@@ -83,6 +83,9 @@ public class Position {
         return this;
     }
 
+    public int getDistance(Position other) {
+        return (int) Math.sqrt(Math.pow(x - other.x, 2) + Math.pow(y - other.y, 2) + Math.pow(z - other.z, 2));
+    }
 
     public Position relative(int changeX, int changeY, int changeZ) {
         return copy().translate(changeX, changeY, changeZ);
