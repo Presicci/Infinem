@@ -9,14 +9,14 @@ import io.ruin.model.map.Projectile;
  */
 public class BasicArcherCombat extends NPCCombat {
 
-    private static final Projectile PROJECTILE = new Projectile(9, 40, 40, 30, 25, 8, 16, 64);
+    private static final Projectile PROJECTILE = new Projectile(9, 40, 36, 41, 51, 5, 15, 11);
 
     @Override
     public void init() {}
 
     @Override
     public void follow() {
-        follow(6);
+        follow(8);
     }
 
     @Override
