@@ -19,7 +19,7 @@ public class LeafVulnerableMonster extends NPCCombat {// Turoths and Kurasks
         npc.hitListener = new HitListener().preDefend(this::preDefend);
     }
 
-    private void preDefend(Hit hit) {
+    public void preDefend(Hit hit) {
         boolean block = false;
         if (hit.attacker != null && hit.attacker.player != null) {
             if (hit.attackStyle.isMelee() && (hit.attackWeapon == null || !hit.attackWeapon.leafBladed)) {
