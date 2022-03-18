@@ -38,9 +38,9 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 5327,
+    "defend_animation": 5328,
+    "death_animation": 5329
   },
   { #Poison spider (64)
     "ids": [ 3023 ],
@@ -77,7 +77,7 @@
     "venom_immunity": false,
     //Speeds
     "attack_ticks": 6,
-    "death_ticks": 5,
+    "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
