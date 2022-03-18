@@ -1,5 +1,7 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
+import io.ruin.data.impl.teleports;
+import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.utils.Config;
@@ -52,6 +54,9 @@ public class FremennikSlayerDungeon {
                 player.dialogue(new NPCDialogue(7518, "Naughty human! You not hunting the Kurask! Jelly's Kurasks only for people on Slayer tasks."));
             }
         });
+
+        ObjectAction.register(2123,2797, 3614,0, "enter", (player, obj) -> Traveling.fadeTravel(player, new Position(2808, 10002, 0)));
+        ObjectAction.register(2141,2809, 10001, 0, "enter", (player, obj) -> Traveling.fadeTravel(player, new Position(2796, 3615, 0)));
     }
 
     private static void squeezeThroughCrack(Player player, GameObject crack, Position destination, int levelReq) {
