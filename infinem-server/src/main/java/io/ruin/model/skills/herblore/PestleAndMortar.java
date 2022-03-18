@@ -20,7 +20,11 @@ public enum PestleAndMortar {
     SUPERIOR_DRAGON_BONES(22124, 21975, "You grind the superior bones to dust."),
     COD(Items.RAW_COD, Items.GROUND_COD, "You grind the raw cod."),
     CRAB_MEAT(Items.CRAB_MEAT, Items.GROUND_CRAB_MEAT, "You grind the crab meat."),
-    KELP(Items.KELP, Items.GROUND_KELP, "You grind the kelp.")
+    KELP(Items.KELP, Items.GROUND_KELP, "You grind the kelp."),
+    CRYSTAL_DUST(23962, 23867, "You grind the shards to dust."),
+    KARAMBWAN_PASTE_R(Items.RAW_KARAMBWAN, 3152, "You grind the karambwan to a paste."),
+    KARAMBWAN_PASTE_P(Items.POISON_KARAMBWAN, 3153, "You grind the karambwan to a paste."),
+    KARAMBWAN_PASTE_C(Items.COOKED_KARAMBWAN, 3154, "You grind the karambwan to a paste.")
     ;
 
     public final int before, after;
@@ -39,14 +43,18 @@ public enum PestleAndMortar {
                 for(Item resource : player.getInventory().getItems()) {
                     if(resource == null || resource.getId() != item.before)
                         continue;
-                    if(item != LAVA_SCALE) {
-                        resource.setId(item.after);
-                        player.sendMessage(item.message);
-                    } else {
+                    if(item == LAVA_SCALE) {
                         int amountOfShards = Random.get(3, 6);
                         resource.remove();
                         player.getInventory().add(item.after, amountOfShards);
                         player.sendMessage("You grind the lava dragon scale into " + amountOfShards + " shards.");
+                    } else if (item == CRYSTAL_DUST) {
+                        resource.remove(1);
+                        player.getInventory().add(item.after, 10);
+                        player.sendMessage(item.message);
+                    } else {
+                        resource.setId(item.after);
+                        player.sendMessage(item.message);
                     }
                     player.animate(364);
                     event.delay(2);
