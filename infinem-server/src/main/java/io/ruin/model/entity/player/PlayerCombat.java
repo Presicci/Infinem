@@ -1003,36 +1003,39 @@ public class PlayerCombat extends Combat {
             /*
              * Venom handling
              */
-            if (target.npc != null) {   // Can only venom npcs
-                int roll = 0;
-                // If player is using a venom weapon
-                if ((weaponName.contains("trident of the swamp")
-                        || weaponName.contains("toxic staff of the dead")
-                        || weaponName.contains("toxic blowpipe"))
-                        && !style.isMelee()) {  // So you cant venom with a staff melee hit
-                    roll = 4;   // 25% chance
-                    // If the player has serp helm equipped, its 100% chance
-                    if (hit.attacker.player.getEquipment().get(Equipment.SLOT_HAT).getId() == 12931) {
-                        roll = 1;
-                    }
-                } else if (hit.attacker.player.getEquipment().get(Equipment.SLOT_HAT).getId() == 12931) {
-                    roll = 6;
-                    if (style.isMelee()) {
-                        if (weaponName.contains("(p++)") || weaponName.contains("(p+)")
-                                || weaponName.contains("(p)") || weaponName.contains("abyssal tentacle")
-                                || weaponName.contains("(kp)")) {
-                            roll = 2;
+            if (hit.attacker.player != null) {
+                Item helmet = hit.attacker.player.getEquipment().get(Equipment.SLOT_HAT);
+                if (target.npc != null) {   // Can only venom npcs
+                    int roll = 0;
+                    // If player is using a venom weapon
+                    if ((weaponName.contains("trident of the swamp")
+                            || weaponName.contains("toxic staff of the dead")
+                            || weaponName.contains("toxic blowpipe"))
+                            && !style.isMelee()) {  // So you cant venom with a staff melee hit
+                        roll = 4;   // 25% chance
+                        // If the player has serp helm equipped, its 100% chance
+                        if (helmet != null && helmet.getId() == 12931) {
+                            roll = 1;
                         }
-                    } else if (style.isRanged()) {
-                        if (weaponName.contains("(p++)") || ammoName.contains("(p++)")
-                                || weaponName.contains("(p+)") || ammoName.contains("(p+)")
-                                || weaponName.contains("(p)") || ammoName.contains("(p)")) {
-                            roll = 2;
+                    } else if (helmet != null && helmet.getId() == 12931) {
+                        roll = 6;
+                        if (style.isMelee()) {
+                            if (weaponName.contains("(p++)") || weaponName.contains("(p+)")
+                                    || weaponName.contains("(p)") || weaponName.contains("abyssal tentacle")
+                                    || weaponName.contains("(kp)")) {
+                                roll = 2;
+                            }
+                        } else if (style.isRanged()) {
+                            if (weaponName.contains("(p++)") || ammoName.contains("(p++)")
+                                    || weaponName.contains("(p+)") || ammoName.contains("(p+)")
+                                    || weaponName.contains("(p)") || ammoName.contains("(p)")) {
+                                roll = 2;
+                            }
                         }
                     }
-                }
-                if (roll > 0 && Random.rollDie(roll)) {
-                    target.envenom(6);
+                    if (roll > 0 && Random.rollDie(roll)) {
+                        target.envenom(6);
+                    }
                 }
             }
         }
