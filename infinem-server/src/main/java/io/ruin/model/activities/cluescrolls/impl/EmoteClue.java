@@ -51,11 +51,13 @@ public class EmoteClue extends Clue {
         }
         Uri npc = new Uri(player, this);
         npc.addEvent(e -> {
+            int loops = 0;
             while(player.isOnline()) {
-                if (player.getPosition().distance(npc.getPosition()) > 20) {
+                if (player.getPosition().distance(npc.getPosition()) > 10 || loops > 15) {
                     npc.remove();
                 }
-                e.delay(5);
+                ++loops;
+                e.delay(10);
             }
             npc.remove();
         });
