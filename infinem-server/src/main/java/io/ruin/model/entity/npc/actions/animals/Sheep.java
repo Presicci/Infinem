@@ -18,6 +18,7 @@ public class Sheep {
             {2697, 2691},
             {2698, 2692},
             {2699, 2691},
+            {2787, 2691}
     };
 
     private static void shear(Player player, NPC sheep, int replacement) {
