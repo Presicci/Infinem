@@ -62,7 +62,7 @@ public enum SpinningWheel {
         player.getStats().addXp(StatType.Crafting, item.exp, true);
     }
 
-    private static void spinningOptions(Player player) {
+    public static void spinningOptions(Player player) {
         SkillDialogue.make(player,
                 new SkillItem(BALL_OF_WOOL.after).addAction((p, amount, event) -> spin(p, BALL_OF_WOOL, amount)),
                 new SkillItem(BOW_STRING.after).addAction((p, amount, event) -> spin(p, BOW_STRING, amount)),
