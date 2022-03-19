@@ -1012,6 +1012,7 @@ public abstract class Entity {
     }
 
     protected Map<AttributeKey, Object> attributes;
+    @Expose protected Map<AttributeKey, Object> exposedAttributes;
 
     public boolean hasAttribute(AttributeKey key) {
         return attributes != null && attributes.containsKey(key);
