@@ -1,4 +1,4 @@
-package io.ruin.model.activities.miscpvm.slayer;
+package io.ruin.model.activities.miscpvm.slayer.wyverns;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.combat.AttackStyle;
