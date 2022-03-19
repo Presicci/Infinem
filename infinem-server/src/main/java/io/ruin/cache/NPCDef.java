@@ -301,6 +301,8 @@ public class NPCDef {
         } else if(id == 8302) { //Ranalph Devere Mage
             copy(3966);
             headIcon = 2;
+        } else if (id == 5314) {
+            name = "Wizard Cromperty";
         }
 
         if(name != null) {
