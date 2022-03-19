@@ -42,9 +42,9 @@ import io.ruin.model.skills.construction.House;
 import io.ruin.model.skills.construction.room.Room;
 import io.ruin.model.skills.construction.seat.Seat;
 import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
+import io.ruin.model.skills.hunter.Birdhouse;
 import io.ruin.model.skills.hunter.traps.Trap;
 import io.ruin.model.skills.magic.spells.modern.Teleother;
-import io.ruin.model.skills.slayer.SlayerTask;
 import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 import io.ruin.utility.TickDelay;
@@ -715,13 +715,12 @@ public abstract class PlayerAttributes extends Entity {
     /**
      * Slayer
      */
-    public SlayerTask slayerTask;
     @Expose public String slayerTaskName;
     @Expose public int slayerTaskRemaining;
-    @Expose public int slayerTaskAmountAssigned;
-    @Expose public List<String> slayerBlockedTasks;
     @Expose public int slayerTasksCompleted;
-    @Expose public boolean slayerTaskDangerous = false;
+    @Expose public int slayerSpree = 0;
+    @Expose public boolean slayerCombatCheck;
+    @Expose public int slayerLocation = 0;
     @Expose public int wildernessTasksCompleted;
 
     public TickDelay blackChinchompaBoost = new TickDelay();
@@ -842,9 +841,15 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public KillCounter wintertodtKills = new KillCounter();
     @Expose public KillCounter oborKills = new KillCounter();
     @Expose public KillCounter chambersofXericKills = new KillCounter();
+    @Expose public KillCounter theatreOfBloodKills = new KillCounter();
     @Expose public KillCounter derangedArchaeologistKills = new KillCounter();
     @Expose public KillCounter elvargKills = new KillCounter();
     @Expose public KillCounter vorkathKills = new KillCounter();
+    @Expose public KillCounter sarachnisKills = new KillCounter();
+    @Expose public KillCounter alchemicalHydraKills = new KillCounter();
+    @Expose public KillCounter bryophytaKills = new KillCounter();
+    @Expose public KillCounter grotesqueGuardianKills = new KillCounter();
+    @Expose public KillCounter hesporiKills = new KillCounter();
 
     /**
      * Slayer kill counters
@@ -1357,4 +1362,11 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public boolean[] strongholdRewards = { false, false, false, false };
 
     @Expose public int shootingStarsFound;
+
+    @Expose @Getter @Setter public int collection_log_current_entry = 0;
+    @Expose @Getter @Setter public int collection_log_current_struct = 471;//471-475
+    @Expose @Getter @Setter public int collection_log_current_tab = 0;
+    @Expose @Getter @Setter public int[] collection_log_current_params = player.getCollectionLog().bossParams;
+
+    @Expose @Getter @Setter protected Birdhouse birdhouse;
 }
