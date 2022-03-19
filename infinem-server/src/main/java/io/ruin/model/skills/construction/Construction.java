@@ -2,6 +2,7 @@ package io.ruin.model.skills.construction;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
+import io.ruin.model.item.Items;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.skills.construction.room.Room;
@@ -23,6 +24,16 @@ public class Construction {
             7735, 7726, 7724, 7716, 7718, 7720, 7722, 7736, 7737, // tea stuff
             7740, 7752, 7744, 7746, 7748, 7754 // ales
     );
+
+    public static final int[] NAILS = {
+            Items.BRONZE_NAILS,
+            Items.IRON_NAILS,
+            Items.STEEL_NAILS,
+            Items.BLACK_NAILS,
+            Items.MITHRIL_NAILS,
+            Items.ADAMANTITE_NAILS,
+            Items.RUNE_NAILS
+    };
 
     /* animations */
     public static final int MID_BUILD = 3676;

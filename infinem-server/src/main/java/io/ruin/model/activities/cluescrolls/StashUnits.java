@@ -6,6 +6,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.construction.Construction;
 import io.ruin.model.stat.StatType;
 import io.ruin.utility.Utils;
 import lombok.AllArgsConstructor;
@@ -34,16 +35,6 @@ public class StashUnits {
         private final Item[] items;
     }
 
-    private static final int[] nails = {
-            Items.BRONZE_NAILS,
-            Items.IRON_NAILS,
-            Items.STEEL_NAILS,
-            Items.BLACK_NAILS,
-            Items.MITHRIL_NAILS,
-            Items.ADAMANTITE_NAILS,
-            Items.RUNE_NAILS
-    };
-
     public static void registerStashUnit(EmoteClue.EmoteClueData emoteClueData, Config config, int obj) {
         /*
          * Registers the building of the stash unit, only done once per account.
@@ -61,7 +52,7 @@ public class StashUnits {
                 }
             }
             int nail = 0;
-            for (int i : nails) {
+            for (int i : Construction.NAILS) {
                 if (player.getInventory().contains(i, 10)) {
                     nail = i;
                     break;
