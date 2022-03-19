@@ -6,7 +6,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.skills.construction.Construction;
+import io.ruin.model.skills.construction.Material;
 import io.ruin.model.stat.StatType;
 import io.ruin.utility.Utils;
 import lombok.AllArgsConstructor;
@@ -52,7 +52,7 @@ public class StashUnits {
                 }
             }
             int nail = 0;
-            for (int i : Construction.NAILS) {
+            for (int i : Material.NAIL_TYPES) {
                 if (player.getInventory().contains(i, 10)) {
                     nail = i;
                     break;

@@ -8,7 +8,7 @@ import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.item.actions.impl.Containers;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.skills.construction.Construction;
+import io.ruin.model.skills.construction.Material;
 import io.ruin.model.skills.cooking.Cooking;
 import io.ruin.model.skills.cooking.Food;
 import io.ruin.model.skills.crafting.SpinningWheel;
@@ -54,7 +54,7 @@ public class MuseumCamp {
                 return;
             }
         }
-        for (int nail : Construction.NAILS) {
+        for (int nail : Material.NAIL_TYPES) {
             if (player.getInventory().contains(nail, buildable.getNails())) {
                 player.getInventory().removeAll(false, buildable.getItems());
                 player.getInventory().remove(nail, buildable.getNails());

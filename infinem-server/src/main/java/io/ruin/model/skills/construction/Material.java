@@ -69,5 +69,5 @@ public enum Material {
             return player.getInventory().remove(material.getId(), material.getAmount());
     }
 
-    static final List<Integer> NAIL_TYPES = Arrays.asList(4819,4820,1539,4821,4822,4823,4824);
+    public static final List<Integer> NAIL_TYPES = Arrays.asList(4819,4820,1539,4821,4822,4823,4824);
 }

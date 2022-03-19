@@ -25,16 +25,6 @@ public class Construction {
             7740, 7752, 7744, 7746, 7748, 7754 // ales
     );
 
-    public static final int[] NAILS = {
-            Items.BRONZE_NAILS,
-            Items.IRON_NAILS,
-            Items.STEEL_NAILS,
-            Items.BLACK_NAILS,
-            Items.MITHRIL_NAILS,
-            Items.ADAMANTITE_NAILS,
-            Items.RUNE_NAILS
-    };
-
     /* animations */
     public static final int MID_BUILD = 3676;
     public static final int LOW_BUILD = 3683;
