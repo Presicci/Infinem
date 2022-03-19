@@ -39,18 +39,6 @@ public class Uri extends NPC {
         spawn(x, y, player.getHeight());
         face(player);
         graphics(86);
-        startEvent(e -> {   // If the player leaves or ignores the superior for 2 minutes, remove npc
-            int loops = 0;
-            while (loops < 2) { // 2 15 second loops, or 30 seconds
-                e.delay(Server.toTicks(15));    // Check if the player is offline/out of range every 15 seconds
-                if (player == null || !player.isOnline() || player.getPosition() == null || npc.getPosition().distance(player.getPosition()) > 15) {
-                    loops = 2;
-                } else {
-                    ++loops;
-                }
-            }
-            remove();
-        });
     }
 
     @Override
