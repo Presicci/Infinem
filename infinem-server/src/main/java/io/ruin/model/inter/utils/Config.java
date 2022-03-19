@@ -436,10 +436,11 @@ public class Config {
     public static final Config BASILOCKED = varpbit(1, true);
     public static final Config BASILONGER = varpbit(1, true);
 
-    public static final Config SLAYER_TASK_AMOUNT = varp(261, false);
-    public static final Config SLAYER_TASK_1 = varp(262, false);
-    public static final Config SLAYER_TASK_2 = varp(263, false);
+    public static final Config SLAYER_TASK_AMOUNT = varp(261, true);
+    public static final Config SLAYER_TASK_1 = varp(262, true);
+    public static final Config BOSS_TASK = varp(263, true);
     public static final Config SLAYER_POINTS = varpbit(4068, true);
+    public static final Config SLAYER_MASTER = varpbit(4067, true);
 
     public static final Config[] BLOCKED_TASKS = {
             varpbit(3209, false),
@@ -449,6 +450,14 @@ public class Config {
             varpbit(4441, false),
             varpbit(5023, false),
     };
+
+    /**
+     * Birdhouses
+     */
+    public static final Config BIRD_HOUSE_MEADOW_NORTH = varp(1626, true);
+    public static final Config BIRD_HOUSE_MEADOW_SOUTH = varp(1627, true);
+    public static final Config BIRD_HOUSE_VALLEY_NORTH = varp(1628, true);
+    public static final Config BIRD_HOUSE_VALLEY_SOUTH = varp(1629, true);
 
     /**
      * Quest points
@@ -488,6 +497,21 @@ public class Config {
     public static final Config STORAGE_PLANT_CURE = varpbit(6268, true);
     public static final Config STORAGE_ULTRACOMPOST = varpbit(5732, true);
     public static final Config STORAGE_BOTTOMLESS_COMPOST = varpbit(7915, true);
+
+    // East side
+    public static final Config VINERY_PATCH_1 = varpbit(4953, false);
+    public static final Config VINERY_PATCH_2 = varpbit(4954, false);
+    public static final Config VINERY_PATCH_3 = varpbit(4955, false);
+    public static final Config VINERY_PATCH_4 = varpbit(4956, false);
+    public static final Config VINERY_PATCH_5 = varpbit(4957, false);
+    public static final Config VINERY_PATCH_6 = varpbit(4958, false);
+    // West side
+    public static final Config VINERY_PATCH_7 = varpbit(4959, false);
+    public static final Config VINERY_PATCH_8 = varpbit(4960, false);
+    public static final Config VINERY_PATCH_9 = varpbit(4961, false);
+    public static final Config VINERY_PATCH_10 = varpbit(4962, false);
+    public static final Config VINERY_PATCH_11 = varpbit(4963, false);
+    public static final Config VINERY_PATCH_12 = varpbit(4964, false);
 
 
     /**
@@ -892,6 +916,16 @@ public class Config {
             varpbit(5198, true), // draynor marketplace
             varpbit(5208, true) // varrock library
     };
+
+    /**
+     * Fossil Island
+     */
+    public static final Config CAMP_BANK_CHEST = varpbit(5800, true);
+    public static final Config CAMP_CLEANING_TABLE = varpbit(5801, true);
+    public static final Config CAMP_WELL = varpbit(5802, true);
+    public static final Config CAMP_COOKING_POT = varpbit(5803, true);
+    public static final Config CAMP_SPINNING_WHEEL = varpbit(5804, true);
+    public static final Config CAMP_LOOM = varpbit(5805, true);
 
 
     /**
