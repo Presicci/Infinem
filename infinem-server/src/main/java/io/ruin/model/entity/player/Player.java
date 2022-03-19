@@ -51,6 +51,7 @@ import io.ruin.model.item.containers.SeedVault;
 import io.ruin.model.item.containers.Trade;
 import io.ruin.model.item.containers.bank.Bank;
 import io.ruin.model.item.containers.bank.BankPin;
+import io.ruin.model.item.containers.collectionlog.CollectionLog;
 import io.ruin.model.map.*;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.actions.impl.edgeville.Christmas;
@@ -59,6 +60,7 @@ import io.ruin.model.shop.Shop;
 import io.ruin.model.skills.construction.House;
 import io.ruin.model.skills.construction.room.Room;
 import io.ruin.model.skills.farming.Farming;
+import io.ruin.model.skills.hunter.Birdhouse;
 import io.ruin.model.skills.hunter.Hunter;
 import io.ruin.model.stat.StatList;
 import io.ruin.model.stat.StatType;
@@ -115,6 +117,13 @@ public class Player extends PlayerAttributes {
     public String getUUID() {
         return uuid;
     }
+
+    /**
+     * Collection Log
+     */
+    @Expose private CollectionLog collectionLog;
+
+    public CollectionLog getCollectionLog() { return collectionLog; }
 
     /**
      * Info
@@ -325,6 +334,10 @@ public class Player extends PlayerAttributes {
 
     public void sendMessage(String message) {
         packetSender.sendMessage(message, null, 0);
+    }
+
+    public void sendMessage(Color color, String message) {
+        packetSender.sendMessage(color.wrap(message), null, 0);
     }
 
     public void sendURL(String message) {
@@ -1165,6 +1178,10 @@ public class Player extends PlayerAttributes {
             raidRewards = new ItemContainer();
         raidRewards.init(player, 3, -1, -1, 581, false);
 
+        if (collectionLog == null)
+            collectionLog = new CollectionLog();
+        collectionLog.init(this, 500, -1, -1, 620, true);//621, 35
+
         if(bankPin == null)
             bankPin = new BankPin();
         bankPin.init(this);
@@ -1211,6 +1228,10 @@ public class Player extends PlayerAttributes {
             upgradeMachine = new UpgradeMachine();
         }
         upgradeMachine.setPlayer(this);
+
+        if (birdhouse == null)
+            birdhouse = new Birdhouse(this);
+        birdhouse.init(player);
 
         checkMulti();
         Tile.occupy(this);
@@ -1507,6 +1528,7 @@ public class Player extends PlayerAttributes {
         runePouch.sendUpdates();
         tournamentRunePouch.sendUpdates();
         box.sendUpdates();
+        collectionLog.sendUpdates();
 
         combat.preAttack();
         TargetRoute.beforeMovement(this);
