@@ -330,20 +330,18 @@ public class Wilderness {
             StatType.Hitpoints,
             StatType.Ranged,
             StatType.Magic,
-            StatType.Prayer,
-            StatType.Slayer,
+
             StatType.Fishing,
             StatType.Mining,
             StatType.Woodcutting,
-            StatType.Thieving
+            StatType.Thieving,
+            StatType.Hunter
     );
 
     public static double getXPModifier(Player player, StatType stat) {
         if(player.wildernessLevel < 1)
             return 0;
-        if(player.resourceArea)
-            return 0.8;
-        if(BONUS_SKILLS.contains(stat))
+        if(BONUS_SKILLS.contains(stat) && !player.resourceArea)
             return (Math.min(30, player.wildernessLevel) * 0.005) + (Math.max(0, player.wildernessLevel - 30) * 0.01);
         return 0;
     }
@@ -404,7 +402,7 @@ public class Wilderness {
     }
 
     public static void rollPvPItemDrop(Player player, NPC npc, Position dropPosition) {
-        int chance;
+        /*int chance;
         Item[] table;
 
         switch (npc.getDef().name.toLowerCase()) {
@@ -457,11 +455,11 @@ public class Wilderness {
             player.sendMessage("You have been red skulled and tele-blocked because of your loot!");
             player.getCombat().skullHighRisk();
             player.getCombat().teleblock();
-        }
+        }*/
     }
 
     public static void rollClueKeyDrop(Player player, NPC npc, Position dropPosition) {
-        int chance;
+        /*int chance;
         Item[] table;
         if (npc.wildernessSpawnLevel <= 0) {
             return;
@@ -503,11 +501,11 @@ public class Wilderness {
         if (Random.rollDie(chance)) {
             Item drop = Random.get(table);
             new GroundItem(drop).position(dropPosition).owner(player).spawn();
-        }
+        }*/
     }
 
     public static void bloodMoneyDrop(Player player, NPC npc) {
-        int bloodMoney;
+        /*int bloodMoney;
         if (npc.wildernessSpawnLevel <= 0) {
             return;
         }
@@ -541,7 +539,7 @@ public class Wilderness {
                 return;
         }
 
-        player.rewardBm(npc, bloodMoney);
+        player.rewardBm(npc, bloodMoney);*/
     }
 
     /**
@@ -572,7 +570,7 @@ public class Wilderness {
     }
 
     public static void resourcePackWithBoss(Player player, NPC npc) {
-        int chance;
+        /*int chance;
 
         switch (npc.getDef().name.toLowerCase()) {
             case "callisto":
@@ -590,7 +588,7 @@ public class Wilderness {
         }
         if (Random.rollDie(chance)) {
             new GroundItem(new Item(30104, 1)).position(npc.getPosition()).owner(player).spawn();
-        }
+        }*/
     }
 
 }
