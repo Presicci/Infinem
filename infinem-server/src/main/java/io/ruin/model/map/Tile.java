@@ -262,11 +262,20 @@ public class Tile {
             }
         }
         if (groundItems != null) {
+            groundItemCleanup(player);
             for (GroundItem groundItem : groundItems) {
                 if (groundItem.activeOwner == -1 || groundItem.activeOwner == player.getUserId()) {
-                    groundItem.sendRemove(player);
                     groundItem.sendAdd(player);
                 }
+            }
+        }
+    }
+
+    private void groundItemCleanup(Player player) {
+        for (GroundItem groundItem : groundItems) {
+            if (groundItem.activeOwner == -1 || groundItem.activeOwner == player.getUserId()
+                    || groundItem.z != player.getPosition().getZ()) {
+                groundItem.sendRemove(player);
             }
         }
     }
