@@ -141,7 +141,7 @@ public enum Currency {
             return amount;
         }
     }),
-    PEST_CONTROL_POINTS(new CurrencyHandler("pvm points") {
+    PEST_CONTROL_POINTS(new CurrencyHandler("pest control points") {
         @Override
         public int getCurrencyCount(Player player) {
             return player.pestPoints;
