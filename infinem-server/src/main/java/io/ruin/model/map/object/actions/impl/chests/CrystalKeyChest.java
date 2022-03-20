@@ -1,4 +1,4 @@
-package io.ruin.model.map.object.actions.impl.edgeville;
+package io.ruin.model.map.object.actions.impl.chests;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
