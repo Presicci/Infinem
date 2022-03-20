@@ -26,10 +26,11 @@ public enum BirdNest {
     SEED_THREE(13653, -1, "search"),
 
     /* Clue scrolls */
-    EASY_CLUE(19712, ClueType.EASY.clueId, "open"),
-    MEDIUM_CLUE(19714, ClueType.MEDIUM.clueId, "open"),
-    HARD_CLUE(19716, ClueType.HARD.clueId, "open"),
-    ELITE_CLUE(19718, ClueType.ELITE.clueId, "open");
+    BEGINNER_CLUE(23127, ClueType.BEGINNER.boxId, "open"),
+    EASY_CLUE(19712, ClueType.EASY.boxId, "open"),
+    MEDIUM_CLUE(19714, ClueType.MEDIUM.boxId, "open"),
+    HARD_CLUE(19716, ClueType.HARD.boxId, "open"),
+    ELITE_CLUE(19718, ClueType.ELITE.boxId, "open");
 
     public final int itemID, result;
     public final String optionName;
@@ -80,8 +81,8 @@ public enum BirdNest {
     public static int getRandomNest(Tree tree) {
         /* Redwood trees only give clue nests */
         if (tree == Tree.REDWOOD) {
-            int[] clueNests = {19712, 19714, 19716, 19718};
-            return clueNests[Random.get(3)];
+            int[] clueNests = { 23127, 19712, 19714, 19716, 19718 };
+            return clueNests[Random.get(4)];
         }
 
         int randomNest;
