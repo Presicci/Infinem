@@ -8,7 +8,7 @@ import io.ruin.utility.Broadcast;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
-public class CrystalKeyChest {
+public class CrystalChest {
 
     private static final Item[][] LOOTS = {
             /**
