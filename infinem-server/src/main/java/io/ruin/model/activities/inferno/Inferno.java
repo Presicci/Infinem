@@ -181,6 +181,7 @@ public class Inferno {
                     player.infernoBestTime = timer.stop(player, player.infernoBestTime);
                     player.getInventory().addOrDrop(21295, 1);
                     player.getInventory().addOrDrop(6529, 16440);
+                    player.getCollectionLog().collect(21295);
                     Broadcast.WORLD.sendNews(player, Icon.GOLD_STAR, player.getName() + " has defeated the Inferno.");
                 }
             }

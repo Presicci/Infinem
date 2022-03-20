@@ -130,6 +130,7 @@ public class FightCaves {
                     player.dialogue(new NPCDialogue(HOST, "You have defeated TzTok-Jad, I am most impressed! Please accept this gift. Give cape back to me if you not want it.").animate(615));
                     player.getInventory().addOrDrop(6570, 1);
                     player.getInventory().addOrDrop(6529, tokkul + 4000);
+                    player.getCollectionLog().collect(6570);
                 }
             }
             player.fightCaves = null;
