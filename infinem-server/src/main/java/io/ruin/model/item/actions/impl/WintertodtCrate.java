@@ -48,6 +48,7 @@ public class WintertodtCrate {
             player.getInventory().addOrDrop(secondReward.getId(), secondReward.getAmount());
             player.dialogue(new MessageDialogue("You have earned: " + firstReward.getDef().name + " x " + firstReward.getAmount() + ", "
                     + secondReward.getDef().name + " x " + secondReward.getAmount() + "."));
+            player.getCollectionLog().collect(item);
         });
     }
 }
