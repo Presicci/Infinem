@@ -177,8 +177,8 @@ public abstract class Patch {
     protected boolean isNextStageReady() {
         if (getPlantedCrop() == null)
             return false;
-        long stageTime = player.debug ? plantedCrop.getStageTime() / 500 : plantedCrop.getStageTime();
-        int actualStage = (int) Math.floor(getTimeElapsed() / (stageTime));
+        long stageTime = plantedCrop.getStageTime();
+        int actualStage = (int) Math.floor(getTimeElapsed() / (double) (stageTime));
         return stage < plantedCrop.getTotalStages() && actualStage > stage && !isDead();
     }
 
