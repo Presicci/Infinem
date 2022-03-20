@@ -41,11 +41,11 @@ public enum Containers {
         this.name = ItemDef.get(empty).name.toLowerCase();
     }
 
-    private enum WaterSource {
+    public enum WaterSource {
         SINK, WATERPUMP, FOUNTAIN, WELL, TAP, BARREL, PUMP
     }
 
-    private static void fillContainer(Player player, Item item, Containers waterContainer, WaterSource source) {
+    public static void fillContainer(Player player, Item item, Containers waterContainer, WaterSource source) {
         /* Only buckets are able to be filled from a well */
         if (source == WaterSource.WELL && waterContainer != BUCKET) {
             player.sendMessage("If I drop my " + waterContainer.name + " down there, I don't think I'm likely to get it back.");
