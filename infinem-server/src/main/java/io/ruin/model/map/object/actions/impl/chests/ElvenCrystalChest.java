@@ -87,10 +87,12 @@ public class ElvenCrystalChest {
                 player.animate(536);
                 if (Random.get(10000) == 1) {
                     player.getInventory().addOrDrop(Items.UNCUT_ONYX, 1);
+                    player.getCollectionLog().collect(Items.UNCUT_ONYX);
                 } else {
                     List<Item> loot = LOOT.rollItems(true);
                     for(Item item : loot) {
                         player.getInventory().addOrDrop(item.getId(), item.getAmount());
+                        player.getCollectionLog().collect(item);
                     }
                 }
                 event.delay(1);
