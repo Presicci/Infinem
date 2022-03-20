@@ -16,7 +16,7 @@ public class Cooking {
 
     public static final int COOKING_GAUNLETS = 775;
 
-    private static void cook(Player player, Food food, GameObject obj, int anim, boolean fire) {
+    public static void cook(Player player, Food food, GameObject obj, int anim, boolean fire) {
         if (!player.getStats().check(StatType.Cooking, food.levelRequirement, "cook " + food.descriptiveName))
             return;
         SkillItem i = new SkillItem(food.rawID).name(food.rawName).
@@ -118,6 +118,16 @@ public class Cooking {
         if (gloves != null && gloves.getId() == COOKING_GAUNLETS)
             return food.burnLevelCookingGauntlets;
         return cookingOnRange ? food.burnLevelRange : food.burnLevelFire;
+    }
+
+    public static void findCookable(Player player, GameObject obj) {
+        for (Food food : Food.values()) {
+            if (player.getInventory().contains(food.rawID)) {
+                Cooking.cook(player, food, obj, 897, true);
+                return;
+            }
+        }
+        player.sendMessage("You do not have anything to cook.");
     }
 
     static {
