@@ -1,6 +1,7 @@
 package io.ruin.network.incoming.handlers;
 
 import io.ruin.api.buffer.InBuffer;
+import io.ruin.cache.ItemDef;
 import io.ruin.event.GameEventProcessor;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -134,6 +135,10 @@ public class ActionButtonHandler {
             return;
         if (option == 10 && interfaceId == 149 && itemId != -1) {
             player.getInventory().get(slot).examine(player);
+            return;
+        }
+        if (option == 10 && interfaceId == 0 && itemId != -1) {
+            Item.examine(player, itemId);
             return;
         }
         InterfaceAction action = InterfaceHandler.getAction(player, interfaceId, childId);
