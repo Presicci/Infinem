@@ -45,6 +45,7 @@ public class XericRewards {
         if (item == null)
             return;
         if (item.move(item.getId(), item.getAmount(), p.getInventory()) > 0) {
+            p.getCollectionLog().collect(item);
             p.getRaidRewards().sendUpdates();
         } else {
             p.sendMessage("Not enough space in your inventory.");
