@@ -12,6 +12,8 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
 import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.item.actions.impl.chargable.Blowpipe;
+import io.ruin.model.item.containers.equipment.EquipAction;
+import io.ruin.model.item.containers.equipment.UnequipAction;
 import io.ruin.model.skills.construction.actions.CombatRoom;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -106,6 +108,7 @@ public class Equipment extends ItemContainer {
             selectedItem.remove();
             set(equipSlot, selectedItem);
         } else {
+            ItemDef equippedDef = worn.getDef();
             int selectedId = selectedItem.getId();
             int selectedAmount = selectedItem.getAmount();
             Map<String, String> attributeCopy = selectedItem.copyOfAttributes();
@@ -134,10 +137,20 @@ public class Equipment extends ItemContainer {
                 worn.putAttributes(attributeCopy);
                 selectedItem.clearAttributes();
                 selectedItem.putAttributes(attributes);
+                if (equippedDef.unequipAction != null) {
+                    equippedDef.unequipAction.handle(player);
+                }
             }
         }
-        if(addLast != null)
+        if(addLast != null) {
             inventory.add(addLast);
+            if (addLast.getDef().unequipAction != null) {
+                addLast.getDef().unequipAction.handle(player);
+            }
+        }
+        if (selectedDef.equipAction != null) {
+            selectedDef.equipAction.handle(player);
+        }
         if(!player.recentlyEquipped.isDelayed() && equipSlot == Equipment.SLOT_WEAPON) {
             player.recentlyEquipped.delay(1);
            // player.resetAnimation();
@@ -164,6 +177,9 @@ public class Equipment extends ItemContainer {
         }
         if (equipped.getId() == 12853 || equipped.getId() == 12851) {
             TabCombat.resetAutocast(player);
+        }
+        if (equipped.getDef().unequipAction != null) {
+            equipped.getDef().unequipAction.handle(player);
         }
         return true;
     }
