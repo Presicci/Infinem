@@ -9,6 +9,7 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
+import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
@@ -69,6 +70,12 @@ public class Sarachnis extends NPCCombat {
             NPC mage = new NPC(8715).spawn(Random.get(positions));
             NPC melee = new NPC(8714).spawn(Random.get(positions));
             Player p = Random.get(npc.localPlayers());
+            mage.deathEndListener = (DeathListener.SimpleKiller) killer -> {
+                npc.remove();
+            };
+            melee.deathEndListener = (DeathListener.SimpleKiller) killer -> {
+                npc.remove();
+            };
             mage.face(p);
             melee.face(p);
             target = p;
@@ -84,6 +91,12 @@ public class Sarachnis extends NPCCombat {
             NPC mage = new NPC(8715).spawn(Random.get(positions));
             NPC melee = new NPC(8714).spawn(Random.get(positions));
             Player p = Random.get(npc.localPlayers());
+            mage.deathEndListener = (DeathListener.SimpleKiller) killer -> {
+                npc.remove();
+            };
+            melee.deathEndListener = (DeathListener.SimpleKiller) killer -> {
+                npc.remove();
+            };
             mage.face(p);
             melee.face(p);
             spawnedSecond = true;
