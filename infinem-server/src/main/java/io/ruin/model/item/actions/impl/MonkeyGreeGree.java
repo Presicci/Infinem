@@ -68,6 +68,6 @@ public enum MonkeyGreeGree {
             ItemAction.registerInventory(monkeyGreeGree.greegreeId, "hold", monkeyGreeGree::hold);
     }
 
-    private Bounds ZOO_BOUNDS = new Bounds(2592, 3264, 2639, 3287, 0);
+    private final Bounds ZOO_BOUNDS = new Bounds(2592, 3264, 2639, 3287, 0);
 
 }
