@@ -115,7 +115,6 @@ public class BraceletOfEthereum {
     }
 
     public static boolean handleEthereumDrop(Player pKiller, Item item) {
-        //Check if our player has a ring of wealth
         boolean braceletOfEthereum = isToggled(pKiller, item);
         if(RingOfWealth.check(pKiller, item) || braceletOfEthereum) {
             if (braceletOfEthereum) {
