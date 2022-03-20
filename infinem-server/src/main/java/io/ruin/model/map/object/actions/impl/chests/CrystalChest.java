@@ -1,21 +1,17 @@
 package io.ruin.model.map.object.actions.impl.chests;
 
-import io.ruin.api.utils.Random;
 import io.ruin.model.World;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.utility.Broadcast;
 
 import java.util.List;
 
-import static io.ruin.cache.ItemID.COINS_995;
-
 public class CrystalChest {
 
-    private static final LootTable FOOD = new LootTable()
+    private static final LootTable LOOT = new LootTable()
             .addTable(34,   // Spinach Roll
                     new LootItem(Items.SPINACH_ROLL, 1, 0),
                     new LootItem(Items.COINS, 2000, 0)
@@ -75,7 +71,7 @@ public class CrystalChest {
                     obj.setId(obj.originalId);
                 });
                 crystalKey.setId(1631); //dragonstone
-                List<Item> loot = FOOD.rollItems(true);
+                List<Item> loot = LOOT.rollItems(true);
                 for(Item item : loot) {
                     player.getInventory().addOrDrop(item.getId(), item.getAmount());
                 }
