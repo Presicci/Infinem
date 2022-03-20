@@ -9,7 +9,8 @@ public enum Widget {
     OVERLOAD(115, "Overload", "Your stats are boosted every 15 seconds"),
     ANTIFIRE(110, "Antifire", "Partial protection against dragon fire"),
     EXTENDED_ANTIFIRE(117, "Extended antifire", "Partial protection against dragon fire"),
-    ANTI_VENOM(116, "Anti-venom", "You are immune to venom");
+    ANTI_VENOM(116, "Anti-venom", "You are immune to venom"),
+    PYRAMID_PLUNDER(112, "Pyramid Plunder", "You are currently plundering inside a pyramid");
 
     private final int spriteId;
     private final String name;
