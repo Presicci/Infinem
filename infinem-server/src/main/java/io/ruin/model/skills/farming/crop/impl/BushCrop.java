@@ -1,5 +1,6 @@
 package io.ruin.model.skills.farming.crop.impl;
 
+import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.farming.crop.Crop;
@@ -91,7 +92,7 @@ public enum BushCrop implements Crop {
 
     @Override
     public long getStageTime() {
-        return 3000;// TimeUtils.getMinutesToMillis(20);
+        return TimeUtils.getMinutesToMillis(20);
     }
 
     @Override
