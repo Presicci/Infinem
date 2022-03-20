@@ -393,6 +393,14 @@ public class Item {
         return slot;
     }
 
+    public Item note() {
+        if (getDef().notedTemplateId > 0 || getDef().notedId < 1) {
+            return this;
+        }
+
+        return new Item(getDef().notedId, amount);
+    }
+
     public static void examine(Player player, int id) {
         examine(player, id, 1);
     }
@@ -412,4 +420,7 @@ public class Item {
         attributes.clear();
     }
 
+    public boolean noteable() {
+        return id != note().id;
+    }
 }
