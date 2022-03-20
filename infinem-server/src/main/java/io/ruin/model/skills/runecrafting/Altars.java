@@ -284,7 +284,9 @@ public enum Altars {
         player.startEvent(event -> {
             player.lock();
             player.animate(827);
-            player.sendMessage("You hold the " + talisman.getDef().name.toLowerCase() + " talisman towards the mysterious ruins.");
+            if (talisman != null) {
+                player.sendMessage("You hold the " + talisman.getDef().name.toLowerCase() + " towards the mysterious ruins.");
+            }
             event.delay(2);
             player.sendMessage("You feel a powerful force take hold of you...");
             event.delay(1);
@@ -370,6 +372,7 @@ public enum Altars {
              * Entrance & Exit
              */
             ObjectAction.register(altar.exitObj, "use", (player, obj) -> altar.exitAltar(player, altar));
+            ObjectAction.register(altar.entranceObj, 1, (player, obj) -> altar.enterAltar(player, null, altar));
             ItemObjectAction.register(altar.talisman, altar.entranceObj, (player, item, obj) -> altar.enterAltar(player, item, altar));
 
             /**
