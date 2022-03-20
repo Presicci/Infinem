@@ -1,4 +1,4 @@
-package io.ruin.model.map.object.actions.impl.dungeons.forthos;
+package io.ruin.model.map.object.actions.impl.chests;
 
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
