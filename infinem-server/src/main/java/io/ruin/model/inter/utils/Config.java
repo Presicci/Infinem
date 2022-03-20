@@ -308,9 +308,18 @@ public class Config {
     /**
      * Runecrafting
      */
-    public static final Config AIR_TIARA_UNLOCK = varpbit(607, true).defaultValue(0); //why default 0? it's already 0?
-
-    public static final Config MIND_TIARA_UNLOCK = varpbit(608, true).defaultValue(0); //why default 0? it's already 0?
+    public static final Config AIR_TIARA = varpbit(607, true);
+    public static final Config MIND_TIARA = varpbit(608, true);
+    public static final Config WATER_TIARA = varpbit(609, true);
+    public static final Config EARTH_TIARA = varpbit(610, true);
+    public static final Config FIRE_TIARA = varpbit(611, true);
+    public static final Config BODY_TIARA = varpbit(612, true);
+    public static final Config COSMIC_TIARA = varpbit(613, true);
+    public static final Config LAW_TIARA = varpbit(614, true);
+    public static final Config NATURE_TIARA = varpbit(615, true);
+    public static final Config CHAOS_TIARA = varpbit(616, true);
+    public static final Config DEATH_TIARA = varpbit(617, true);
+    public static final Config WRATH_TIARA = varpbit(6220, true);
 
     /**
      * Rune pouch
