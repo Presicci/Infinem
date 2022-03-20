@@ -73,7 +73,7 @@ public class ElvenCrystalChest {
             );
 
     static {
-        ObjectAction.register(37342, "open", (player, obj) -> {
+        ObjectAction.register(37342, 1, (player, obj) -> {
             Item crystalKey = player.getInventory().findItem(23951);
             if (crystalKey == null) {
                 player.sendFilteredMessage("You need an enhanced crystal key to open this chest.");
