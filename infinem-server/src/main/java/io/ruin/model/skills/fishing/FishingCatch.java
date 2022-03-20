@@ -23,6 +23,7 @@ public enum FishingCatch {
     DARK_CRAB(11934, 85, 130.0, 0.3, 149434),
     MINNOWS(21356, 82, 26.0, 1.0, 977778),
     INFERNAL_EEL(21293, 80, 95.0, 0.3, 160000),
+    SACRED_EEL(13339, 87, 105.0, 0.3, 99000),
     /**
      * Barbarian
      */
