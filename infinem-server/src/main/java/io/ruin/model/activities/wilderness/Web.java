@@ -12,7 +12,7 @@ public class Web {
 
     private static final int KNIFE = 946;
 
-    private static void slashWeb(Player player, GameObject web) {
+    public static void slashWeb(Player player, GameObject web) {
         boolean knife, wildernessSword;
         ItemDef wepDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         if(wepDef != null && wepDef.sharpWeapon) {
