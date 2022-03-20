@@ -123,8 +123,10 @@ public class Barrows {
             player.getPacketSender().sendAccessMask(Interface.BARROWS_LOOT, 3, 0, 8, 1024);
             loot.sendUpdates();
             for(Item item : loot.getItems()) {
-                if(item != null)
+                if(item != null) {
                     player.getInventory().addOrDrop(item.getId(), item.getAmount());
+                    player.getCollectionLog().collect(item);
+                }
             }
             player.sendMessage("Your Barrows chest count is: <col=FF0000>" + (++player.barrowsChestsOpened) + "</col>.");
             for(BarrowsBrother brother : BarrowsBrother.values())

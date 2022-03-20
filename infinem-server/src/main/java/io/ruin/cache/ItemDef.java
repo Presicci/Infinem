@@ -20,6 +20,9 @@ import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.impl.ItemBreaking;
 import io.ruin.model.item.actions.impl.ItemSet;
 import io.ruin.model.item.actions.impl.ItemUpgrading;
+import io.ruin.model.item.containers.collectionlog.CollectionLogDataSet;
+import io.ruin.model.item.containers.equipment.EquipAction;
+import io.ruin.model.item.containers.equipment.UnequipAction;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.combine.ItemCombining;
 import io.ruin.model.item.listeners.IncomingHitListener;
@@ -44,6 +47,8 @@ import static io.ruin.cache.ItemID.BLOOD_FRAGMENT;
 public class ItemDef {
 
     public static Map<Integer, ItemDef> cached = Maps.newConcurrentMap();
+    public CollectionLogDataSet collectionLogDataSet;
+    public boolean collectable;
     private boolean currency;
     private boolean currencyChecked;
 
@@ -152,6 +157,11 @@ public class ItemDef {
     public Special special;
 
     public int rangedLevel = 1;
+
+
+    public EquipAction equipAction;
+
+    public UnequipAction unequipAction;
 
     public ItemAction[] inventoryActions, equipmentActions;
 

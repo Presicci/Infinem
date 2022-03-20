@@ -346,20 +346,21 @@ public enum Pet {
     public void unlock(Player player) {
         /*  Lets us do duplicate protection for pets with different forms, like the rift
             guardian or baby chinchompa */
+        player.getCollectionLog().collect(itemId);
         if (variant != null) {
             for (Pet pet : getVariantArray()) {
                 if (pet.variant != variant) {
                     continue;
                 }
                 if (player.pet == pet || player.getInventory().hasId(pet.itemId) || player.getBank().hasId(pet.itemId)
-                        || (player.getCurrentHouse().getPetContainer().getItems() != null && player.getCurrentHouse().getPetContainer().hasId(pet.itemId))) {
+                        || (player.getCurrentHouse() != null && player.getCurrentHouse().getPetContainer().getItems() != null && player.getCurrentHouse().getPetContainer().hasId(pet.itemId))) {
                     player.sendMessage("<col=FF0000>You have a funny feeling like you would have been followed...");
                     return;
                 }
             }
         }
         if (player.pet == this || player.getInventory().hasId(itemId) || player.getBank().hasId(itemId)
-                || (player.getCurrentHouse().getPetContainer().getItems() != null && player.getCurrentHouse().getPetContainer().hasId(itemId))) {
+                || (player.getCurrentHouse() != null && player.getCurrentHouse().getPetContainer().getItems() != null && player.getCurrentHouse().getPetContainer().hasId(itemId))) {
             player.sendMessage("<col=FF0000>You have a funny feeling like you would have been followed...");
             return;
         }

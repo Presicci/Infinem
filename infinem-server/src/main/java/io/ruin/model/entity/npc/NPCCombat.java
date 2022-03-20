@@ -8,7 +8,6 @@ import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.model.World;
 import io.ruin.model.achievements.listeners.experienced.DemonSlayer;
-import io.ruin.model.activities.summerevent.SummerTokens;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.*;
@@ -19,7 +18,6 @@ import io.ruin.model.entity.player.DoubleDrops;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
-import io.ruin.model.item.actions.impl.GoldCasket;
 import io.ruin.model.item.actions.impl.WildernessKey;
 import io.ruin.model.item.actions.impl.jewellery.BraceletOfEthereum;
 import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
@@ -41,12 +39,8 @@ import io.ruin.services.discord.impl.RareDropEmbedMessage;
 import io.ruin.utility.Broadcast;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.commons.lang3.ArrayUtils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -271,7 +265,7 @@ public abstract class NPCCombat extends Combat {
             dropItems(killer);
 
             if (killer != null && killer.player != null) {
-                Slayer.onNPCKill(killer.player, npc);
+                Slayer.handleNPCKilled(killer.player, npc);
                 if (npc.getDef().killCounter != null)
                     npc.getDef().killCounter.apply(killer.player).increment(killer.player);
                 if(info.pet != null) {
@@ -435,6 +429,26 @@ public abstract class NPCCombat extends Combat {
         }
     }
 
+    private void handleSuperiorDrops(Killer killer, Player player, Position pos) {
+        if (!npc.isSuperior)
+            return;
+        double multiplier = 200 - (Math.pow(npc.getCombat().getInfo().slayer_level + 55, 2)/125);
+        int rareChance = (int) (8 * multiplier);
+        int staffChance = (int) (8 * multiplier);
+        if (Random.rollDie(rareChance)) {
+            handleDrop(killer, pos, player, Collections.singletonList(new Item(21270)));    // Eternal Gem
+        }
+        if (Random.rollDie(rareChance)) {
+            handleDrop(killer, pos, player, Collections.singletonList(new Item(20724)));    // Imbued Heart
+        }
+        if (Random.rollDie(staffChance)) {
+            handleDrop(killer, pos, player, Collections.singletonList(new Item(20730)));    // Mist battlestaff
+        }
+        if (Random.rollDie(staffChance)) {
+            handleDrop(killer, pos, player, Collections.singletonList(new Item(20736)));    // Dust battlestaff
+        }
+    }
+
     /*
      * Chaos elemental has a loot table of minor drops that drop alongside the main drops.
      */
@@ -508,6 +522,9 @@ public abstract class NPCCombat extends Combat {
         LootTable t = def.lootTable;
         if(t != null) {
             int rolls = DoubleDrops.getRolls(killer.player);
+            if (npc.isSuperior) {
+                rolls += 3; // Superiors drop minimum of 4 items
+            }
             for(int i = 0; i < rolls; i++) {
                 List<Item> items = t.rollItems(i == 0);
                 List<Item> toAdd = new ArrayList<Item>();
@@ -593,6 +610,11 @@ public abstract class NPCCombat extends Combat {
         handleKalphiteQueenDrops(killer, pKiller, dropPosition);
 
         /*
+         * Handle superior slayer monster unique drops
+         */
+        handleSuperiorDrops(killer, pKiller, dropPosition);
+
+        /*
          * Handle giving player vorkaths head after 50 kills.
          */
         vorkathHead(dropPosition, pKiller);
@@ -676,11 +698,17 @@ public abstract class NPCCombat extends Combat {
 
     private void handleDrop(Killer killer, Position dropPosition, Player pKiller, List<Item> items) {
         for(Item item : items) {
+            /*
+             * Ethereum auto collect
+             */
             if (item.getId() == 21820) {
                 if (BraceletOfEthereum.handleEthereumDrop(pKiller, item)) {
                     continue;
                 }
             }
+            /*
+             * Coin auto collect
+             */
             if (item.getId() == COINS_995) {
                 if (RingOfWealth.check(pKiller, item)) {
                     pKiller.getInventory().addOrDrop(item);
@@ -763,6 +791,8 @@ public abstract class NPCCombat extends Combat {
             if (info.local_loot) {
                 getLocalAnnounce(pKiller, item);
             }
+
+            pKiller.getCollectionLog().collect(item);
 
             /*
              * Spawn the item on the ground.
