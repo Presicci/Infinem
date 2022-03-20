@@ -9,7 +9,6 @@ import io.ruin.data.DataFile;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.item.pet.Pet;
-import io.ruin.model.skills.slayer.SlayerTask;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -109,8 +108,6 @@ public class npc_combat extends DataFile {
         @Expose public double slayer_xp;
 
         @Expose public String[] slayer_tasks;
-
-        public SlayerTask[] slayerTasks;
 
         /**
          * Combat Stats
@@ -638,13 +635,6 @@ public class npc_combat extends DataFile {
                             "The " + catName + "s"
                     };
                     boolean found = false;
-                    for(String s : possibleNames) {
-                        if(SlayerTask.TASKS.get(s) != null) {
-                            found = true;
-                            slayerCategoryNames.add(s);
-                            break;
-                        }
-                    }
                     if(!found)
                         System.err.println(dumpFile.getName() + ": \"" + slayerCategoryLine + "\" task is invalid!");
                 }
