@@ -21,7 +21,7 @@ public class AbyssalBludgeon implements Special {
 
     @Override
     public boolean handle(Player player, Entity target, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
-        player.animate(7010);
+        player.animate(3299);
         target.graphics(1284);
         player.publicSound(2715, 1,10);
         player.publicSound(1930, 1,30);
