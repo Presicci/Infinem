@@ -11,7 +11,6 @@ import io.ruin.cache.InterfaceDef;
 import io.ruin.cache.Varp;
 import io.ruin.event.GameEventProcessor;
 import io.ruin.model.World;
-import io.ruin.model.activities.blastfurnace.BlastFurnace;
 import io.ruin.model.activities.cluescrolls.impl.EmoteClue;
 import io.ruin.model.activities.duelarena.Duel;
 import io.ruin.model.activities.duelarena.DuelArena;
@@ -73,7 +72,6 @@ import io.ruin.services.XenGroup;
 import io.ruin.utility.CS2Script;
 import io.ruin.utility.TickDelay;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -151,19 +149,6 @@ public class Player extends PlayerAttributes {
     public String getPassword() {
         return password;
     }
-
-    /**
-     * Blast furnace
-     */
-    @Getter @Setter
-    public boolean isCheckingDispenser = false;
-    @Getter @Setter
-    public boolean isOperatingPump = false;
-    @Getter @Setter
-    public boolean driveBeltBroken;
-    @Getter @Setter
-    public BlastFurnace.Ore currentBlastFurnaceOre;
-
 
     /**
      * Pyramid plunder
