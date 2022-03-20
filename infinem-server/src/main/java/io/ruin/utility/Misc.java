@@ -3,10 +3,27 @@ package io.ruin.utility;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.map.Position;
 
+import java.security.SecureRandom;
+import java.util.List;
+import java.util.Random;
+
 public class Misc {
 
     private static long lastUpdateTime = 0;
     private static long timeCorrection = 0;
+
+    public static int random(int min , int max) {
+        Random rand = new Random();
+        return rand.nextInt(max - min + 1) + min;
+    }
+
+    public static int random(int range) {
+        return (int) (java.lang.Math.random() * (range + 1));
+    }
+
+    public static double randomDouble(double min, double max) {
+        return (Math.random() * (max - min) + min);
+    }
 
     public static synchronized long currentTimeCorrectedMillis() {
         long current = System.currentTimeMillis();
@@ -74,4 +91,13 @@ public class Misc {
         return getDistance(pos, pos2);
     }
 
+    public static <T> T randomTypeOfList(List<T> list) {
+        if(list == null || list.size() == 0)
+            return null;
+        return list.get(new SecureRandom().nextInt(list.size()));
+    }
+
+    public static String format_string(String string, Object... params) {
+        return params == null ? string : String.format(string, (Object[]) params);
+    }
 }
