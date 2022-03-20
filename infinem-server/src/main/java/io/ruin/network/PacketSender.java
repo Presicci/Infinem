@@ -300,6 +300,34 @@ public class PacketSender {
         write(out);
     }
 
+    public void sendClientScript(int id, Object... params) {
+        OutBuffer out = new OutBuffer(1000).sendVarShortPacket(56);
+
+        String args = "";
+
+        if (params != null) {
+            for (int index = params.length - 1; index >= 0; index--) {
+                if (params[index] instanceof String) {
+                    args += "s";
+                } else {
+                    args += "i";
+                }
+            }
+        }
+
+        out.addString(args);
+
+        for(int i = params.length - 1; i >= 0; i--) {
+            Object param = params[i];
+            if(param instanceof String)
+                out.addString((String) param);
+            else
+                out.addInt((Integer) param);
+        }
+        out.addInt(id);
+        write(out);
+    }
+
     public void sendClientScript(int id, String type, Object... params) {
         OutBuffer out = new OutBuffer(3 + Protocol.strLen(type) + (params.length * 4)).sendVarShortPacket(56)
                 .addString(type);
