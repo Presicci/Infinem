@@ -53,7 +53,7 @@ public class LokarSearunner {
                 );
             }
         });
-        NPCAction.register(3855, "talk-to", (player, npc) -> {
+        NPCAction.register(3855, "travel", (player, npc) -> {
             if (npc.getPosition().equals(2214, 3794, 0)) {
                 Traveling.fadeTravel(player,2621, 3686, 0);
             } else {
