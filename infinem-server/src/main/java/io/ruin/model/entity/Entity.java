@@ -1036,4 +1036,27 @@ public abstract class Entity {
             attributes = new EnumMap<>(AttributeKey.class);
         attributes.put(key, v);
     }
+
+    public boolean hasExposedAttribute(AttributeKey key) {
+        return attributes != null && attributes.containsKey(key);
+    }
+
+    public <T> T exposedAttribute(AttributeKey key) {
+        return exposedAttributes == null ? null : (T) exposedAttributes.get(key);
+    }
+
+    public <T> T exposedAttributeOr(AttributeKey key, Object defaultValue) {
+        return exposedAttributes == null ? (T) defaultValue : (T) exposedAttributes.getOrDefault(key, defaultValue);
+    }
+
+    public void clearExposedAttribute(AttributeKey key) {
+        if (exposedAttributes != null)
+            exposedAttributes.remove(key);
+    }
+
+    public void putExposedAttribute(AttributeKey key, Object v) {
+        if (exposedAttributes == null)
+            exposedAttributes = new EnumMap<>(AttributeKey.class);
+        exposedAttributes.put(key, v);
+    }
 }
