@@ -2,11 +2,8 @@ package io.ruin.model.activities.cluescrolls;
 
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
-import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
-import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -16,14 +13,11 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
-import io.ruin.utility.Broadcast;
+import io.ruin.model.item.pet.Pet;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import static io.ruin.cache.ItemID.ANTIVENOM4;
-import static io.ruin.cache.ItemID.COINS_995;
 
 public enum ClueType {
 
@@ -1047,6 +1041,9 @@ public enum ClueType {
         }
         if (masterChance != -1 && Random.get(masterChance) == 1) {
             container.add(24366);   // Add a master clue
+        }
+        if (this == MASTER && Random.get(1000) == 1) {
+            Pet.BLOODHOUND.unlock(player);
         }
         for(Item item : container.getItems()) {
             if(item != null) {
