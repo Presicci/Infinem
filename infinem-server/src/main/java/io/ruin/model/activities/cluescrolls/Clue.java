@@ -42,7 +42,7 @@ public class Clue {
                 continue;
             save.id = -1;
             if(--save.remaining > 0) {
-                player.dialogue(new ItemDialogue().one(def.clueType.clueId, "Good job, you are now one step closer in completing your clue scroll."));
+                player.dialogue(new ItemDialogue().one(def.clueType.clueId, "Good job, you are now one step closer to completing your clue scroll."));
             } else {
                 item.setId(def.clueType.casketId);
                 String message = "Great job, you have completed your clue scroll!";
