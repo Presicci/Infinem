@@ -5,9 +5,12 @@ import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.npc.NPC;
+import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
-import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.*;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.MapRegion;
@@ -40,7 +43,7 @@ public class HotColdClue extends Clue {
 
     private static void feelBeginner(Player player, Item item) {
         String message = "The device is ";
-        if (player.beginnerClue != null && player.beginnerClue.id >= 0 &&
+        if (player.beginnerClue != null && player.beginnerClue.id >= 0 && player.getInventory().contains(ClueType.BEGINNER.clueId) &&
                 Clue.CLUES[player.beginnerClue.id] instanceof HotColdClue) {
             HotColdClue clue = (HotColdClue) Clue.CLUES[player.beginnerClue.id];
             int distance = player.getPosition().distance(clue.position);
@@ -75,7 +78,7 @@ public class HotColdClue extends Clue {
 
     private static void feelMaster(Player player, Item item) {
         String message = "The device is ";
-        if (player.masterClue != null && player.masterClue.id >= 0 &&
+        if (player.masterClue != null && player.masterClue.id >= 0 && player.getInventory().contains(ClueType.MASTER.clueId) &&
                 Clue.CLUES[player.masterClue.id] instanceof HotColdClue) {
             HotColdClue clue = (HotColdClue) Clue.CLUES[player.masterClue.id];
             int distance = player.getPosition().distance(clue.position);
@@ -118,12 +121,122 @@ public class HotColdClue extends Clue {
         Tile.get(position, true).digAction = clue::advance;
     }
 
+    private static final int BEGINNER_DEVICE = 23183, MASTER_DEVICE = 19939;
+
     static {
         for (HotCold clue : HotCold.values()) {
             registerDig(clue.position, clue.beginner ? ClueType.BEGINNER : ClueType.MASTER);
         }
-        ItemAction.registerInventory(23183, "feel", HotColdClue::feelBeginner);
-        ItemAction.registerInventory(19939, "feel", HotColdClue::feelMaster);
+        ItemAction.registerInventory(BEGINNER_DEVICE, "feel", HotColdClue::feelBeginner);
+        ItemAction.registerInventory(MASTER_DEVICE, "feel", HotColdClue::feelMaster);
+        NPCAction.register(4243, "talk-to", HotColdClue::reldoDialogue);
+        NPCAction.register(3490, "talk-to", HotColdClue::jorralDialogue);
+    }
+
+    private static void reldoDialogue(Player player, NPC npc) {
+        if (player.beginnerClue != null && player.beginnerClue.id >= 0 && player.getInventory().contains(ClueType.BEGINNER.clueId) &&
+                Clue.CLUES[player.beginnerClue.id] instanceof HotColdClue) {
+            if (player.getInventory().hasId(BEGINNER_DEVICE) || player.getBank().hasId(BEGINNER_DEVICE)) {
+                player.dialogue(
+                        new PlayerDialogue("Hey Reldo, I have one of those clue scrolls again, do you have any advice?"),
+                        new NPCDialogue(npc.getId(), "That strange device will guide you in the same way the key did. Feel it, but be careful as it is very powerful. Good luck.")
+                );
+            } else {
+                player.dialogue(
+                        new ItemDialogue().one(ClueType.BEGINNER.clueId, "You show Reldo your clue scroll."),
+                        new NPCDialogue(npc.getId(), "Ah! Do you know about hot and cold clues?"),
+                        new OptionsDialogue(
+                                new Option("Yes, I do.", () -> {
+                                    player.dialogue(
+                                            new NPCDialogue(npc.getId(), "Well then use this strange device to feel where your destination is and dig."),
+                                            new ActionDialogue(() -> {
+                                                if (player.getInventory().hasFreeSlots(1)) {
+                                                    player.getInventory().add(BEGINNER_DEVICE);
+                                                } else {
+                                                    player.dialogue(
+                                                            new NPCDialogue(npc.getId(), "You should make some room for it before I can give you it.")
+                                                    );
+                                                }
+                                            })
+                                    );
+                                }),
+                                new Option("No, I don't.", () -> {
+                                    player.dialogue(
+                                            new NPCDialogue(npc.getId(), "Ah, you use a strange device to tell you how far away you are from the place you need to be. When you get to your destination you dig."),
+                                            new NPCDialogue(npc.getId(), "Well then use this strange device to feel where your destination is and dig."),
+                                            new ActionDialogue(() -> {
+                                                if (player.getInventory().hasFreeSlots(1)) {
+                                                    player.getInventory().add(BEGINNER_DEVICE);
+                                                } else {
+                                                    player.dialogue(
+                                                            new NPCDialogue(npc.getId(), "You should make some room for it before I can give you it.")
+                                                    );
+                                                }
+                                            })
+                                    );
+                                })
+                        )
+                );
+            }
+        } else {
+            player.dialogue(
+                    new NPCDialogue(npc.getId(), "Hello stranger."),
+                    new PlayerDialogue("Hello.")
+            );
+        }
+    }
+
+    private static void jorralDialogue(Player player, NPC npc) {
+        if (player.masterClue != null && player.masterClue.id >= 0 && player.getInventory().contains(ClueType.MASTER.clueId) &&
+                Clue.CLUES[player.masterClue.id] instanceof HotColdClue) {
+            if (player.getInventory().hasId(MASTER_DEVICE) || player.getBank().hasId(MASTER_DEVICE)) {
+                player.dialogue(
+                        new PlayerDialogue("Hey Jorral, I have one of those clue scrolls again, do you have any advice?"),
+                        new NPCDialogue(npc.getId(), "That strange device will guide you in the same way the key did. Feel it, but be careful as it is very powerful. Good luck.")
+                );
+            } else {
+                player.dialogue(
+                        new ItemDialogue().one(ClueType.MASTER.clueId, "You show Jorral your clue scroll."),
+                        new NPCDialogue(npc.getId(), "Ah! Do you know about hot and cold clues?"),
+                        new OptionsDialogue(
+                                new Option("Yes, I do.", () -> {
+                                    player.dialogue(
+                                            new NPCDialogue(npc.getId(), "Well then use this strange device to feel where your destination is and dig."),
+                                            new ActionDialogue(() -> {
+                                                if (player.getInventory().hasFreeSlots(1)) {
+                                                    player.getInventory().add(MASTER_DEVICE);
+                                                } else {
+                                                    player.dialogue(
+                                                            new NPCDialogue(npc.getId(), "You should make some room for it before I can give you it.")
+                                                    );
+                                                }
+                                            })
+                                    );
+                                }),
+                                new Option("No, I don't.", () -> {
+                                    player.dialogue(
+                                            new NPCDialogue(npc.getId(), "Ah, you use a strange device to tell you how far away you are from the place you need to be. When you get to your destination you dig."),
+                                            new NPCDialogue(npc.getId(), "Well then use this strange device to feel where your destination is and dig."),
+                                            new ActionDialogue(() -> {
+                                                if (player.getInventory().hasFreeSlots(1)) {
+                                                    player.getInventory().add(MASTER_DEVICE);
+                                                } else {
+                                                    player.dialogue(
+                                                            new NPCDialogue(npc.getId(), "You should make some room for it before I can give you it.")
+                                                    );
+                                                }
+                                            })
+                                    );
+                                })
+                        )
+                );
+            }
+        } else {
+            player.dialogue(
+                    new NPCDialogue(npc.getId(), "Hello stranger."),
+                    new PlayerDialogue("Hello.")
+            );
+        }
     }
 
     @AllArgsConstructor
