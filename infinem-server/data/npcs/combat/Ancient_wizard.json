@@ -1,12 +1,12 @@
 [
-  { #Ancient Wizard (98)
-    "ids": [ 7307, 7308 ],
-    "handler": "",
+  { #Ancient Wizard (98) MAGE
+    "ids": [ 7307 ],
+    "handler": "io.ruin.model.activities.miscpvm.clues.AncientWizard",
     //Combat Info
     "hitpoints": 80,
     "aggressive_level": 196,
-    "max_damage": 16,
-    "attack_style": "CRUSH",
+    "max_damage": 18,
+    "attack_style": "MAGIC",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
@@ -42,14 +42,14 @@
     "defend_animation": 1156,
     "death_animation": 836
   },
-  { #Ancient Wizard (98)
-    "ids": [ 7307, 7308 ],
-    "handler": "",
+  { #Ancient Wizard (98) RANGE
+    "ids": [ 7308 ],
+    "handler": "io.ruin.model.activities.miscpvm.basic.BasicCrossbowCombat",
     //Combat Info
     "hitpoints": 80,
     "aggressive_level": 196,
     "max_damage": 23,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
@@ -81,13 +81,13 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": 1979,
+    "attack_animation": 4230,
     "defend_animation": 1156,
     "death_animation": 836
   },
   { #Ancient Wizard (112)
     "ids": [ 7309 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.miscpvm.basic.BasicPoisonCombat",
     //Combat Info
     "hitpoints": 80,
     "aggressive_level": 224,
@@ -107,8 +107,8 @@
     "stab_attack": 80,
     "slash_attack": 80,
     "crush_attack": 80,
-    "magic_attack": 80,
-    "ranged_attack": 80,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 0,
     "slash_defence": 0,
@@ -124,7 +124,7 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": 422,
+    "attack_animation": 396,
     "defend_animation": 424,
     "death_animation": 836
   }
