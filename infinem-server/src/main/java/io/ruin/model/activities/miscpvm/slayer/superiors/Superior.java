@@ -12,8 +12,6 @@ public abstract class Superior extends NPCCombat {
     @Override
     public void init() {
         npc.isSuperior = true;  // Flag for rolling additional loot
-        npc.deathEndListener = (DeathListener.SimpleKiller) killer -> {
-            npc.remove();
-        };
+        npc.removeOnDeath();
     }
 }

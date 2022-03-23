@@ -31,18 +31,7 @@ public class SuperiorSlayer {
             NPC monster = new NPC(superior);
             monster.targetPlayer(player, false); // Targets player so no one can steal
             monster.spawn(npc.getPosition());
-            monster.startEvent(e -> {   // If the player leaves or ignores the superior for 2 minutes, remove npc
-                int loops = 0;
-                while (loops < 4) { // 4 30 second loops, or 2 minutes
-                    e.delay(Server.toTicks(30));    // Check if the player is offline/out of range every 30 seconds
-                    if (player == null || !player.isOnline() || player.getPosition() == null || npc.getPosition().distance(player.getPosition()) > 15) {
-                        loops = 4;
-                    } else {
-                        ++loops;
-                    }
-                }
-                monster.remove();
-            });
+            monster.removeIfIdle(player);
             player.sendMessage("<col=ff0000>A superior foe has appeared...</col>");
         }
     }
