@@ -133,10 +133,12 @@ public class ActionButtonHandler {
         }
         if(player.inTutorial && interfaceId != Interface.LOGOUT && !dialogue && interfaceId != Interface.IRON_MAN_SETTINGS && interfaceId != Interface.APPEARANCE_CUSTOMIZATION)
             return;
+        // Inventory
         if (option == 10 && interfaceId == 149 && itemId != -1) {
             player.getInventory().get(slot).examine(player);
             return;
         }
+        // Ground item examine
         if (option == 10 && interfaceId == 0 && itemId != -1) {
             Item.examine(player, itemId);
             return;
