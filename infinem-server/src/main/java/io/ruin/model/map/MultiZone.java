@@ -98,6 +98,7 @@ public class MultiZone {
                 14938, 14939, // Smokedevil room in Nieve's cave + kalphite hive room
                 9023, // vorkath island
                 12889, // olm chamber
+                7322,   // Sarachnis
 
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, 12600, //Wilderness Ditch
