@@ -85,6 +85,7 @@ public class ElvenCrystalChest {
                 player.sendFilteredMessage("You unlock the chest with your key.");
                 player.privateSound(51);
                 player.animate(536);
+                player.getInventory().remove(23951, 1);
                 if (Random.get(10000) == 1) {
                     player.getInventory().addOrDrop(Items.UNCUT_ONYX, 1);
                     player.getCollectionLog().collect(Items.UNCUT_ONYX);
