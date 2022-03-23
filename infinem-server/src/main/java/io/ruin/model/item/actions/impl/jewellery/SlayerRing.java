@@ -3,7 +3,7 @@ package io.ruin.model.item.actions.impl.jewellery;
 import io.ruin.model.entity.player.KillCounter;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.Bounds;
-import io.ruin.model.skills.slayer.Slayer;
+import io.ruin.model.skills.slayer.SlayerMaster;
 
 public enum SlayerRing {
 
@@ -41,7 +41,7 @@ public enum SlayerRing {
         );
         for(SlayerRing ring : values()) {
             teleports.register(ring.id, ring.charges, ring.replacementId);
-            ItemAction.registerEquipment(ring.id, "check", (player, item) -> Slayer.check(player));
+            ItemAction.registerEquipment(ring.id, "check", (player, item) -> SlayerMaster.checkTask(player));
             ItemAction.registerInventory(ring.id, "log", (player, item) -> KillCounter.openOwnSlayer(player));
 
         }
