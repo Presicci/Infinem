@@ -9,5 +9,6 @@ public enum AttributeKey {
     URI_CLUE,
     LAST_EMOTE,
     URI_SPAWNED,
-    ESSENCE_TELEPORT;
+    ESSENCE_TELEPORT,
+    HOT_AND_COLD
 }
