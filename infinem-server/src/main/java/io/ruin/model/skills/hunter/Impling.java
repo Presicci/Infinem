@@ -105,7 +105,7 @@ public enum Impling {
                     if (jar != null) {
                         if (jar.equals(ImplingJar.LUCKY_IMPLING)) {
                             ClueType randomClue = Random.get(ClueType.values());
-                            loot = new LootTable().addTable(1, randomClue.loots).rollItem();
+                            loot = randomClue.lootTable.rollItem();
                         } else {
                             loot = jar.getLootTable().rollItem();
                         }
