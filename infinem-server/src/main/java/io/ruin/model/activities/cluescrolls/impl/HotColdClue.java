@@ -8,14 +8,17 @@ import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.map.Bounds;
 import io.ruin.model.map.MapRegion;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
+import io.ruin.model.map.route.routes.ProjectileRoute;
 import lombok.AllArgsConstructor;
 
 /**
@@ -50,7 +53,7 @@ public class HotColdClue extends Clue {
             int lastDistance = player.attributeOr(AttributeKey.HOT_AND_COLD, 0);
             Temperature temperature = null;
             for (Temperature temp : Temperature.values()) {
-                if (distance > temp.minDistance && distance < temp.maxDistance) {
+                if (distance >= temp.minDistance && distance <= temp.maxDistance) {
                     message += temp.message;
                     player.putAttribute(AttributeKey.HOT_AND_COLD, distance);
                     temperature = temp;
@@ -85,7 +88,7 @@ public class HotColdClue extends Clue {
             int lastDistance = player.attributeOr(AttributeKey.HOT_AND_COLD, 0);
             Temperature temperature = null;
             for (Temperature temp : Temperature.values()) {
-                if (distance > temp.minDistance && distance < temp.maxDistance) {
+                if (distance >= temp.minDistance && distance <= temp.maxDistance) {
                     message += temp.message;
                     player.putAttribute(AttributeKey.HOT_AND_COLD, distance);
                     temperature = temp;
@@ -118,7 +121,78 @@ public class HotColdClue extends Clue {
      */
     private static void registerDig(Position position, ClueType type) {
         HotColdClue clue = new HotColdClue(type, position);
-        Tile.get(position, true).digAction = clue::advance;
+        Tile.get(position, true).digAction = (player) -> {
+            int killedWizard = player.attributeOr(AttributeKey.KILLED_WIZARD, 0);
+            if (killedWizard == 3 || clue.type == ClueType.BEGINNER) {
+                player.clearAttribute(AttributeKey.KILLED_WIZARD);
+                clue.advance(player);
+            } else {
+                boolean spawnedWizard = player.attributeOr(AttributeKey.SPAWNED_WIZARD, false);
+                if (!spawnedWizard) {
+                    player.putAttribute(AttributeKey.SPAWNED_WIZARD, true);
+                    // Spawn a brassican mage in singles, ancient wizards in multi
+                    if (player.inMulti()) {
+                        NPC melee = new NPC(7309);
+                        NPC ranged = new NPC(7308);
+                        NPC magic = new NPC(7307);
+                        NPC[] wizards = new NPC[] { melee, ranged, magic };
+                        for (NPC wizard : wizards) {
+                            wizard.targetPlayer(player, true);
+                            wizard.removeOnDeath();
+                            wizard.removeIfIdle(player);
+                            wizard.removalAction = (p -> {
+                                p.clearAttribute(AttributeKey.SPAWNED_WIZARD);
+                            });
+                            wizard.deathStartListener = (DeathListener.SimpleKiller) killer -> {
+                                int killed = player.attributeOr(AttributeKey.KILLED_WIZARD, 0);
+                                player.putAttribute(AttributeKey.KILLED_WIZARD, killed + 1);
+                                player.sendMessage("CLEARED");
+                            };
+                        }
+                        Position[] positions = new Position[2];
+                        for (int index = 0; index < 3; index++) {
+                            NPC wizard = wizards[index];
+                            Bounds bounds = new Bounds(player.getPosition(), 5);
+                            boolean hasSpawned = false;
+                            while (!hasSpawned) {
+                                Position pos = bounds.randomPosition();
+                                if (ProjectileRoute.allow(player, pos) && !pos.equals(player.getPosition())
+                                        && (positions[0] == null || !pos.equals(positions[0]))
+                                        && (positions[1] == null || !pos.equals(positions[1]))) {
+                                    wizard.spawn(pos);
+                                    wizard.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(wizard.getPosition()));
+                                    if (index < 2)
+                                        positions[index] = pos;
+                                    hasSpawned = true;
+                                }
+                            }
+                        }
+                    } else {
+                        NPC npc = new NPC(7310);
+                        npc.targetPlayer(player, true);
+                        npc.removeOnDeath();
+                        npc.removeIfIdle(player);
+                        npc.removalAction = (p -> {
+                            p.clearAttribute(AttributeKey.SPAWNED_WIZARD);
+                        });
+                        npc.deathStartListener = (DeathListener.SimpleKiller) killer -> {
+                            player.putAttribute(AttributeKey.KILLED_WIZARD, 3);
+                            player.sendMessage("CLEARED");
+                        };
+                        Bounds bounds = new Bounds(player.getPosition(), 3);
+                        boolean hasSpawned = false;
+                        while (!hasSpawned) {
+                            Position pos = bounds.randomPosition();
+                            if (ProjectileRoute.allow(player, pos) && !pos.equals(player.getPosition())) {
+                                npc.spawn(pos);
+                                npc.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
+                                hasSpawned = true;
+                            }
+                        }
+                    }
+                }
+            }
+        };
     }
 
     private static final int BEGINNER_DEVICE = 23183, MASTER_DEVICE = 19939;
