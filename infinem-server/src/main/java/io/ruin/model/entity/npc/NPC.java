@@ -12,6 +12,7 @@ import io.ruin.model.entity.shared.UpdateMask;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.entity.shared.listeners.RespawnListener;
 import io.ruin.model.entity.shared.masks.*;
+import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Direction;
@@ -312,11 +313,15 @@ public class NPC extends NPCAttributes {
         return this;
     }
 
+    public SimpleAction removalAction;
+
     private void removeTarget() {
         if(targetPlayer != null) {
             targetPlayer.npcTarget = false;
-            if(targetIcon)
+            if (targetIcon)
                 targetPlayer.getPacketSender().resetHintIcon(true);
+            if (removalAction != null)
+                removalAction.handle(targetPlayer);
             targetPlayer = null;
         }
         if(targetRemovalAction != null) {
