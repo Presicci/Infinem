@@ -84,7 +84,9 @@ public class HotColdClue extends Clue {
         if (player.masterClue != null && player.masterClue.id >= 0 && player.getInventory().contains(ClueType.MASTER.clueId) &&
                 Clue.CLUES[player.masterClue.id] instanceof HotColdClue) {
             HotColdClue clue = (HotColdClue) Clue.CLUES[player.masterClue.id];
-            int distance = player.getPosition().distance(clue.position);
+            int distance = Math.max(
+                    Math.abs(player.getPosition().getX() - clue.position.getX()),
+                    Math.abs(player.getPosition().getY() - clue.position.getY()));  //player.getPosition().distance(clue.position);
             int lastDistance = player.attributeOr(AttributeKey.HOT_AND_COLD, 0);
             Temperature temperature = null;
             for (Temperature temp : Temperature.values()) {
