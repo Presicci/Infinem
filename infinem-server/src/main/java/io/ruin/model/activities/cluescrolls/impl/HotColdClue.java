@@ -153,7 +153,6 @@ public class HotColdClue extends Clue {
                                     wizard.deathStartListener = (DeathListener.SimpleKiller) killer -> {
                                         int killed = player.attributeOr(AttributeKey.KILLED_WIZARD, 0);
                                         player.putAttribute(AttributeKey.KILLED_WIZARD, killed + 1);
-                                        player.sendMessage("CLEARED");
                                     };
                                 }
                                 Position[] positions = new Position[2];
@@ -184,7 +183,6 @@ public class HotColdClue extends Clue {
                                 });
                                 npc.deathStartListener = (DeathListener.SimpleKiller) killer -> {
                                     player.putAttribute(AttributeKey.KILLED_WIZARD, 3);
-                                    player.sendMessage("CLEARED");
                                 };
                                 Bounds bounds = new Bounds(player.getPosition(), 3);
                                 boolean hasSpawned = false;
