@@ -157,7 +157,7 @@ public abstract class NPCCombat extends Combat {
     }
 
     public boolean canAttack(Entity target) {
-        if(isDead())
+        if(isDead() || npc.isRemoved())
             return false;
         if(target == null || target.isHidden())
             return false;
