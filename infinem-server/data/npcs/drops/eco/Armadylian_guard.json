@@ -9,10 +9,10 @@
         "name": "Weapons and armour",
         "weight": 36,
         "items": [
-          { "id": 1247, "min": 1, "max": 1, "weight": 781 },   //Rune spear
-          { "id": 805, "min": 6, "max": 6, "weight": 2339 },   //Rune thrownaxe
-          { "id": 11826, "min": 1, "max": 1, "weight": 0 },   //Armadyl helmet
-          { "id": 11836, "min": 1, "max": 1, "weight": 0 }   //Bandos boots
+          { "id": 1247, "min": 1, "max": 1, "weight": 8591 },   //Rune spear
+          { "id": 805, "min": 6, "max": 6, "weight": 25729 },   //Rune thrownaxe
+          { "id": 11826, "min": 1, "max": 1, "weight": 1 },   //Armadyl helmet
+          { "id": 11836, "min": 1, "max": 1, "weight": 1 }   //Bandos boots
         ]
       },
       {
