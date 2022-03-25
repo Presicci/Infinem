@@ -6,6 +6,8 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.map.Projectile;
 
+import java.util.Arrays;
+
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 3/22/2022
@@ -17,7 +19,7 @@ public class BrassicanMage extends NPCCombat {
 
     @Override
     public void init() {
-        npc.forceText(Random.get(1, 2) == 1 ? "Rest in cabbage!" : "Vegetate!");
+        npc.forceText(Random.get(Arrays.asList("Rest in cabbage!", "Vegetate!", "Grow up or leave.")));
     }
 
     @Override
