@@ -10,5 +10,7 @@ public enum AttributeKey {
     LAST_EMOTE,
     URI_SPAWNED,
     ESSENCE_TELEPORT,
-    HOT_AND_COLD
+    HOT_AND_COLD,
+    KILLED_WIZARD,
+    SPAWNED_WIZARD
 }
