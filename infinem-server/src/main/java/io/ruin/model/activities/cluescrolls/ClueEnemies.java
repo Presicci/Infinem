@@ -16,7 +16,7 @@ public class ClueEnemies {
 
     public static void ancientOrBrassicanDig(Clue clue, Player player) {
         int killedWizard = player.attributeOr(AttributeKey.KILLED_WIZARD, 0);
-        if (killedWizard == 3 || clue.type == ClueType.BEGINNER) {
+        if (killedWizard == 3 || clue.type != ClueType.MASTER) {
             player.clearAttribute(AttributeKey.KILLED_WIZARD);
             clue.advance(player);
         } else {
