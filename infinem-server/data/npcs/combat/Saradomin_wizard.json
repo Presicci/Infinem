@@ -1,7 +1,7 @@
 [
   { #Saradomin wizard (108)
     "ids": [ 2955 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.miscpvm.clues.SaradominWizard",
     //Combat Info
     "hitpoints": 120,
     "aggressive_level": 216,
@@ -21,8 +21,8 @@
     "stab_attack": 40,
     "slash_attack": 40,
     "crush_attack": 40,
-    "magic_attack": 40,
-    "ranged_attack": 40,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 0,
     "slash_defence": 0,
@@ -38,7 +38,7 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": 422,
+    "attack_animation":, 396,
     "defend_animation": 424,
     "death_animation": 836
   }
