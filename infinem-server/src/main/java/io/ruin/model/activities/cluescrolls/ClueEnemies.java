@@ -1,5 +1,6 @@
 package io.ruin.model.activities.cluescrolls;
 
+import io.ruin.api.utils.Random;
 import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -13,6 +14,39 @@ import io.ruin.model.map.route.routes.ProjectileRoute;
  * Created on 3/24/2022
  */
 public class ClueEnemies {
+
+    public static void spawnSingleEnemyOnDig(Clue clue, Player player, int... possibleIds) {
+        int killedWizard = player.attributeOr(AttributeKey.KILLED_WIZARD, 0);
+        if (killedWizard == 1) {
+            player.clearAttribute(AttributeKey.KILLED_WIZARD);
+            clue.advance(player);
+        } else {
+            boolean spawnedWizard = player.attributeOr(AttributeKey.SPAWNED_WIZARD, false);
+            if (!spawnedWizard) {
+                player.putAttribute(AttributeKey.SPAWNED_WIZARD, true);
+                NPC npc = new NPC(Random.get(possibleIds));
+                npc.targetPlayer(player, true);
+                npc.removeOnDeath();
+                npc.removeIfIdle(player);
+                npc.removalAction = (p -> {
+                    p.clearAttribute(AttributeKey.SPAWNED_WIZARD);
+                });
+                npc.deathStartListener = (DeathListener.SimpleKiller) killer -> {
+                    player.putAttribute(AttributeKey.KILLED_WIZARD, 1);
+                };
+                Bounds bounds = new Bounds(player.getPosition(), 3);
+                boolean hasSpawned = false;
+                while (!hasSpawned) {
+                    Position pos = bounds.randomPosition();
+                    if (ProjectileRoute.allow(player, pos) && !pos.equals(player.getPosition())) {
+                        npc.spawn(pos);
+                        npc.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
+                        hasSpawned = true;
+                    }
+                }
+            }
+        }
+    }
 
     public static void ancientOrBrassicanDig(Clue clue, Player player) {
         int killedWizard = player.attributeOr(AttributeKey.KILLED_WIZARD, 0);

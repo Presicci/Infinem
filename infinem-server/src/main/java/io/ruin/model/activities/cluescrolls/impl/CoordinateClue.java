@@ -1,7 +1,9 @@
 package io.ruin.model.activities.cluescrolls.impl;
 
 import io.ruin.model.activities.cluescrolls.Clue;
+import io.ruin.model.activities.cluescrolls.ClueEnemies;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.map.Position;
@@ -48,8 +50,16 @@ public class CoordinateClue extends Clue {
         int minY = (int) (north ? Math.floor(((y - obsY) % 32) * 1.875) : Math.floor(((obsY - y) % 32) * 1.875));
         String clue = twoDigitInt(degY) + " degrees " + twoDigitInt(minY) + " minutes " + (north ? "north" : "south") + ",<br>"
                 + twoDigitInt(degX) + " degrees " + twoDigitInt(minX) + " minutes " + (east ? "east" : "west");
-        CoordinateClue cryptic = new CoordinateClue(type, clue);
-        Tile.get(x, y, position.getZ(), true).digAction = cryptic::advance;
+        CoordinateClue coordinateClue = new CoordinateClue(type, clue);
+        if (type == ClueType.HARD) {
+            Tile.get(x, y, position.getZ(), true).digAction = (player -> ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 2955));
+        } else if (type == ClueType.ELITE) {
+            Tile.get(x, y, position.getZ(), true).digAction = (player -> ClueEnemies.spawnSingleEnemyOnDig(coordinateClue, player, 6587, 6588));
+        } else if (type == ClueType.MASTER) {
+            Tile.get(x, y, position.getZ(), true).digAction = (player -> ClueEnemies.ancientOrBrassicanDig(coordinateClue, player));
+        } else {
+            Tile.get(x, y, position.getZ(), true).digAction = coordinateClue::advance;
+        }
     }
 
     private static String twoDigitInt(int number) {
