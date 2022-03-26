@@ -12,5 +12,6 @@ public enum AttributeKey {
     ESSENCE_TELEPORT,
     HOT_AND_COLD,
     KILLED_WIZARD,
-    SPAWNED_WIZARD
+    SPAWNED_WIZARD,
+    FALO_SONG
 }
