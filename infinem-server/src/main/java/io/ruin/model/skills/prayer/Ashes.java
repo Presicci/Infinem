@@ -31,7 +31,7 @@ public enum Ashes {
             if(player.boneBuryDelay.isDelayed())
                 return;
             bone.remove();
-            //player.animate(827);  TODO find animation
+            player.animate(2295);
             player.getStats().addXp(StatType.Prayer, experience, true);
             //player.privateSound(2738);    TODO find sounds
             playercounter.increment(player, 1);
