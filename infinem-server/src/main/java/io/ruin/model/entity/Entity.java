@@ -1038,7 +1038,7 @@ public abstract class Entity {
     }
 
     public boolean hasExposedAttribute(AttributeKey key) {
-        return attributes != null && attributes.containsKey(key);
+        return exposedAttributes != null && exposedAttributes.containsKey(key);
     }
 
     public <T> T exposedAttribute(AttributeKey key) {
