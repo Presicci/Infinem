@@ -384,5 +384,14 @@
 		"z": 0,
 		"direction": "W",
 		"walkRange": 0
+	},
+	{
+		"name": "Falo the Bard",
+		"id": 7306,
+		"x": 2689,
+		"y": 3550,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 0
 	}
 ]
