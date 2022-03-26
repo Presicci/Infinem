@@ -11,6 +11,7 @@ import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.construction.Material;
 import io.ruin.model.skills.cooking.Cooking;
 import io.ruin.model.skills.cooking.Food;
+import io.ruin.model.skills.crafting.Loom;
 import io.ruin.model.skills.crafting.SpinningWheel;
 import io.ruin.model.stat.StatType;
 
@@ -101,5 +102,6 @@ public class MuseumCamp {
                 }
             });
         }
+        Loom.registerLoom(31432);
     }
 }
