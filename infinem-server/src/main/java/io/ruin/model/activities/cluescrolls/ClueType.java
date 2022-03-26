@@ -1018,7 +1018,7 @@ public enum ClueType {
         if(save.id == -1 || Clue.CLUES[save.id] == null) {
             ArrayList<Clue> clues = new ArrayList<>();
             for(Clue clue : Clue.CLUES) {
-                if(clue != null && clue.type.ordinal() <= ordinal())
+                if(clue != null && clue.type == this)
                     clues.add(clue);
             }
             Collections.shuffle(clues);
