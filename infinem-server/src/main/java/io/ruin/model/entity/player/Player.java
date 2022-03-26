@@ -131,7 +131,9 @@ public class Player extends PlayerAttributes {
 
     private String name;
 
-    @ Expose private String password;
+    @Expose private String fremennikName;
+
+    @Expose private String password;
 
     public int getUserId() {
         return userId;
@@ -1218,6 +1220,9 @@ public class Player extends PlayerAttributes {
             birdhouse = new Birdhouse(this);
         birdhouse.init(player);
 
+        if (fremennikName == null)
+            fremennikName = generateFremennikName();
+
         checkMulti();
         Tile.occupy(this);
     }
@@ -1723,5 +1728,16 @@ public class Player extends PlayerAttributes {
         } else {
             return null;
         }
+    }
+
+    private static final String[] PREFIX = { "Bal", "Bar", "Dal", "Dar", "Den", "Dok", "Jar", "Jik", "Lar", "Rak", "Ral", "Ril", "Sig", "Tal", "Thor", "Ton" };
+    private static final String[] SUFFIX = { "dar", "dor", "dur", "kal", "kar", "kir", "kur", "lah", "lak", "lim", "lor", "rak", "tin", "ton", "tor", "vald" };
+
+    private String generateFremennikName() {
+        return Random.get(PREFIX) + Random.get(SUFFIX);
+    }
+
+    public String getFremennikName() {
+        return fremennikName;
     }
 }
