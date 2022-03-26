@@ -3,6 +3,7 @@ package io.ruin.model.activities.cluescrolls;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.ItemDef;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.ItemDialogue;
@@ -1135,6 +1136,13 @@ public enum ClueType {
         if (clueType.getSave(player) != null) {
             clueType.getSave(player).id = -1;
         }
+        // Clear clue attributes
+        player.clearExposedAttribute(AttributeKey.FALO_SONG);
+        player.clearAttribute(AttributeKey.SPAWNED_WIZARD);
+        player.clearAttribute(AttributeKey.KILLED_WIZARD);
+        player.clearAttribute(AttributeKey.URI_SPAWNED);
+        player.clearAttribute(AttributeKey.URI_CLUE);
+
         player.getInventory().remove(clueType.boxId, 1);
         player.getInventory().add(clueType.clueId, 1);
     }
