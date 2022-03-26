@@ -10,7 +10,7 @@ public class Clue {
 
     private static int OFFSET;
 
-    public static final Clue[] CLUES = new Clue[450];
+    public static final Clue[] CLUES = new Clue[500];
 
     /**
      * Separator
