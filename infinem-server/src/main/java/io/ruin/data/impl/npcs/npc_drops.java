@@ -48,7 +48,8 @@ public class npc_drops extends DataFile {
             "Skotizo's gemstone sub-table", "shard table", "unique drop table",
             "sigil drop table", "noted herb", "hops seed table",
             "Each tertiary item may be simultaneously dropped",
-            "coin", "mutagen sub-table", "some cabbages"
+            "coin", "mutagen sub-table", "some cabbages",
+            "subtables on the standard loot table and are possible rewards from all"
     };
 
     /*
@@ -61,7 +62,7 @@ public class npc_drops extends DataFile {
      * [Table] <---- Table that we want to use
      */
     private static final String[] chanceLinesWithTableSkipElement = {
-            "robe subtable"
+            "robe subtable", "piece of gilded"
     };
 
     /*
@@ -77,7 +78,8 @@ public class npc_drops extends DataFile {
     private static final String[] chanceLinesWithoutTable = {
             "gem drop table", "rare drop", "Catacombs", "Krystilia", "cavalier", "Deadman",
             "unarmed", "Twisted", "pickpocket", "superior", "Defenders",
-            "are dropped at a time", "guaranteed drop of at least one ancient shard"
+            "are dropped at a time", "guaranteed drop of at least one ancient shard",
+            "find a mimic casket"
     };
 
     /*
@@ -90,7 +92,8 @@ public class npc_drops extends DataFile {
             "Pet general graardor", "Pet kree'arra", "Pet snakeling", "Prince black dragon",
             "Skotos", "Venenatis spiderling", "Vet'ion jr.", "Hellpuppy", "Pet chaos elemental",
             "Pet dagannoth rex", "Pet dark core", "Pet k'ril tsutsaroth", "Pet smoke devil",
-            "Pet zilyana", "Scorpia's offspring", "Sraracha", "Vorki"
+            "Pet zilyana", "Scorpia's offspring", "Sraracha", "Vorki", "Clue scroll (master)",
+            "Bloodhound"
     };
 
     @Override
@@ -248,7 +251,7 @@ public class npc_drops extends DataFile {
                     if(i != -1)
                         tableName = tableName.substring(0, i);
                     if (tableName.toLowerCase().contains("pickpocket") || tableName.toLowerCase().contains("catacombs")
-                            || tableName.toLowerCase().contains("rare drop table")) {
+                            || tableName.toLowerCase().contains("rare drop table") || tableName.toLowerCase().contains("gallery")) {
                         continue;
                     }
                     tableName = tableName
