@@ -70,16 +70,27 @@ public enum Teleother {
     static {
         InterfaceHandler.register(Interface.TELEOTHER, h -> {
             h.actions[97] = (SimpleAction) player -> {
-                if(player.teleotherActive == null)
-                    return;
-                player.getMovement().startTeleport(event -> {
-                    player.animate(1816);
-                    player.graphics(342);
-                    event.delay(3);
-                    player.getMovement().teleport(player.teleotherActive.x, player.teleotherActive.y, 0);
-                });
+                if (player.teleotherActive != null) {
+                    player.getMovement().startTeleport(event -> {
+                        player.animate(1816);
+                        player.graphics(342);
+                        event.delay(3);
+                        player.getMovement().teleport(player.teleotherActive.x, player.teleotherActive.y, 0);
+                    });
+                } else if (player.telegroupActive != null) {
+                    player.getMovement().startTeleport(event -> {
+                        player.animate(1816);
+                        player.graphics(342);
+                        event.delay(3);
+                        player.getMovement().teleport(player.telegroupActive.x, player.telegroupActive.y, 0);
+                    });
+                }
             };
-            h.actions[99] = (SimpleAction) player -> player.closeInterface(InterfaceType.MAIN);
+            h.actions[99] = (SimpleAction) player -> {
+                player.closeInterface(InterfaceType.MAIN);
+                player.teleotherActive = null;
+                player.telegroupActive = null;
+            };
         });
     }
 
