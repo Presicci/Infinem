@@ -20,6 +20,7 @@ public enum Containers {
     JUG(1935, 1937),
     KETTLE(7688, 7690),
     VASE(3734, 3735),
+    CLAY(434, 1761),
 
     /**
      * Watering cans
@@ -66,7 +67,11 @@ public enum Containers {
         containers.forEach(container -> container.setId(waterContainer.full));
         player.animate(832);
         player.privateSound(2609);
-        player.sendMessage("You fill the " + waterContainer.name + " from the " + source.name().toLowerCase() + ".");
+        if (waterContainer == Containers.CLAY) {
+            player.sendMessage("You wet the clay.");
+        } else {
+            player.sendMessage("You fill the " + waterContainer.name + " from the " + source.name().toLowerCase() + ".");
+        }
     }
 
     private static final int[] FULL_BUCKETS = {1783, 1927, 1929, 4286, 4687, 4693, 7622, 7624, 7626, 9659};
