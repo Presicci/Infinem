@@ -15,29 +15,31 @@ public class CureOther extends Spell {
                 Rune.EARTH.toItem(10)
         };
         registerEntity(68, runes, (player, entity) -> {
-            if(entity.npc != null) {
+            if (entity.player == null) {
                 player.sendMessage("You can only use this spell on players.");
                 return false;
             }
-            if(entity.player.getDuel().stage >= 4) {
-                player.sendMessage("This player can't be cured right now.");
+            if (entity.player.getDuel().stage >= 4) {
+                player.sendMessage("That player can't be cured right now.");
                 return false;
             }
-            if(Config.ACCEPT_AID.get(entity.player) == 0) {
-                player.sendMessage("This player is not accepting aid right now.");
+            if (Config.ACCEPT_AID.get(entity.player) == 0) {
+                player.sendMessage("That player is not accepting aid right now.");
                 return false;
             }
-            //TODO check if player is poisoned or not
-            //They're not poisoned, so there is no need to cast this!
+            if (!entity.player.isPoisoned()) {
+                player.sendMessage("They're not poisoned, so there is no need to cast this!");
+                return false;
+            }
 
             player.startEvent(event -> {
                 player.lock();
                 player.animate(4411);
                 player.publicSound(2886);
-                player.getStats().addXp(StatType.Magic, 61, true);
+                player.getStats().addXp(StatType.Magic, 65, true);
                 event.delay(4);
                 entity.graphics(738, 95, 0);
-                //TODO cure poison
+                entity.player.curePoison(0);
                 entity.player.sendMessage(player.getName() + " has cured your poison.");
                 player.unlock();
             });
