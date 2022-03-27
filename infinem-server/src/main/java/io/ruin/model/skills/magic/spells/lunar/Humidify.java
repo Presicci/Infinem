@@ -2,13 +2,14 @@ package io.ruin.model.skills.magic.spells.lunar;
 
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.Containers;
+import io.ruin.model.skills.farming.Farming;
+import io.ruin.model.skills.farming.crop.TreeCrop;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
 
-public class Humidify extends Spell {
+import java.util.concurrent.atomic.AtomicInteger;
 
-    private static final int CLAY = 434;
-    private static final int SOFT_CLAY = 1761;
+public class Humidify extends Spell {
 
     public Humidify() {
         Item[] runes = {
@@ -16,26 +17,24 @@ public class Humidify extends Spell {
                 Rune.WATER.toItem(3),
                 Rune.FIRE.toItem(1)
         };
-        registerClick(68, 68, true, runes, (p, i) -> {
-            int count = 0;
-            for(Item item : p.getInventory().getItems()) {
+        registerClick(68, 65, true, runes, (p, i) -> {
+            AtomicInteger count = new AtomicInteger();
+            for (Item item : p.getInventory().getItems()) {
                 if (item != null) {
                     /* Fill up our water containers */
-                    for(Containers containers : Containers.values()) {
-                        if(item.getId() == containers.empty) {
+                    for (Containers containers : Containers.values()) {
+                        if (item.getId() == containers.empty) {
                             item.setId(containers.full);
-                            count++;
+                            count.getAndIncrement();
                         }
                     }
-
-                    /* Turn any clay into soft clay */
-                    if(item.getId() == CLAY) {
-                        item.setId(SOFT_CLAY);
-                        count++;
-                    }
+                    Farming.CROPS.stream().filter(crop -> crop instanceof TreeCrop).map(crop -> (TreeCrop) crop).filter(crop -> crop.getSeedling() == item.getId()).forEach(crop -> {
+                        item.setId(crop.getWateredSeedling());
+                        count.getAndIncrement();
+                    });
                 }
             }
-            if(count > 0) {
+            if (count.get() > 0) {
                 p.startEvent(e -> {
                     p.lock();
                     p.animate(6294);
