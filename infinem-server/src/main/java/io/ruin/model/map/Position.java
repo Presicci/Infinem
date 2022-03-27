@@ -1,7 +1,6 @@
 package io.ruin.model.map;
 
 import com.google.gson.annotations.Expose;
-import io.ruin.model.entity.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
