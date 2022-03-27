@@ -460,6 +460,10 @@ public class Player extends PlayerAttributes {
         return interfaceId == gameFrameId || visibleInterfaces[interfaceId];
     }
 
+    public boolean hasOpenInterface(InterfaceType type) {
+        return activeInterfaceHandlers[type.ordinal()] != null;
+    }
+
     /**
      * Interfaces - Opening, Closing & Handling
      */
