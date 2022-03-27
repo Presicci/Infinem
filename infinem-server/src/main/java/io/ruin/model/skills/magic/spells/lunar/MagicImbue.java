@@ -1,5 +1,7 @@
 package io.ruin.model.skills.magic.spells.lunar;
 
+import io.ruin.Server;
+import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
@@ -21,7 +23,7 @@ public class MagicImbue extends Spell {
             p.privateSound(2888);
             p.animate(722);
             p.graphics(141, 92, 0);
-            p.magicImbueEffect.delay(15);
+            p.magicImbueEffect.delay(Server.toTicks(13));
             p.sendFilteredMessage("You are charged to combine runes!");
             return true;
         });
