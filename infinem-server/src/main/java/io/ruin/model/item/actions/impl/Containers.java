@@ -30,7 +30,16 @@ public enum Containers {
     WATERING_CAN_FOUR(5336, 5340),
     WATERING_CAN_FIVE(5337, 5340),
     WATERING_CAN_SIX(5338, 5340),
-    WATERING_CAN_SEVEN(5331, 5340);
+    WATERING_CAN_SEVEN(5331, 5340),
+
+    /**
+     * Waterskins
+     */
+    WATERSKIN_EMPTY(1831, 1823),
+    WATERSKIN_1(1829, 1823),
+    WATERSKIN_2(1827, 1823),
+    WATERSKIN_3(1825, 1823),
+    ;
 
     public final int empty, full;
     public final String name;
