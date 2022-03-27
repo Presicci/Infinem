@@ -31,7 +31,7 @@ public class GreaterAbyssalDemon extends Superior {
     private void teleportAttack() {
         npc.startEvent(e -> {
             int hits = 0;
-            while (hits < 4) {
+            while (hits < 4 && !npc.isRemoved()) {
                 int x = Random.get(-1, 1);
                 Position destination = target.getPosition().copy().translate(x, x == 0 ? Random.get(-1, 1) : 0, 0);
                 if (!destination.equals(target.getPosition()) && ProjectileRoute.allow(target, destination) && !destination.equals(npc.getPosition())) {
