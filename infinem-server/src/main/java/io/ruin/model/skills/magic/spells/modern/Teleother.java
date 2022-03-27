@@ -34,15 +34,19 @@ public enum Teleother {
 
     private boolean teleport(Player player, Entity target) {
         if(target.player == null) {
-            player.sendMessage("You cannot teleport a NPC.."); //todo - get actual message lmfao
+            player.sendMessage("I don't think they want to be teleported."); //todo - get actual message lmfao
+            return false;
+        }
+        if (target.player.wildernessLevel > 0) {
+            player.sendMessage("You cannot teleport other players in the wilderness.");
             return false;
         }
         if(Config.ACCEPT_AID.get(target.player) == 0) {
             player.sendMessage("That player won't let you teleport them."); //todo - get actual message lmfao
             return false;
         }
-        if(target.player.isVisibleInterface(Interface.TELEOTHER)) {
-            player.sendMessage("This player is busy."); //todo - get actual message lmfao
+        if(target.player.isVisibleInterface(Interface.TELEOTHER) || target.player.hasOpenInterface(InterfaceType.MAIN)) {
+            player.sendMessage("That player is busy."); //todo - get actual message lmfao
             return false;
         }
 
