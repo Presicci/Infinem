@@ -206,7 +206,7 @@ public abstract class Patch {
     }
 
     public boolean isFullyGrown() {
-        return false;
+        return getPlantedCrop() != null && getStage() >= getPlantedCrop().getTotalStages();
     }
 
     public long getTimeElapsed() {
