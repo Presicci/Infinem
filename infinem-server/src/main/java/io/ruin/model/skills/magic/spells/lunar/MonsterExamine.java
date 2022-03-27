@@ -9,6 +9,7 @@ import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
+import io.ruin.model.skills.slayer.SlayerCreature;
 import io.ruin.model.stat.StatType;
 
 public class MonsterExamine extends Spell {
@@ -22,6 +23,10 @@ public class MonsterExamine extends Spell {
         registerEntity(66, runes, (player, entity) -> {
             if (entity.player != null) {
                 player.sendMessage("You can't use this on players; it only works on monsters!");
+                return false;
+            }
+            if (entity.npc.getCombat() == null) {
+                player.sendMessage("That is not a monster.");
                 return false;
             }
             player.examineMonster = entity.npc;
@@ -38,7 +43,7 @@ public class MonsterExamine extends Spell {
 
     private static void overview(Player player) {
         NPC examined = player.examineMonster;
-        player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 20, "<col=ffb000>Stats<br>" +
+        player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 20, "<col=ffb000>Stats<br><br>" +
                 "<col=bebebe>Combat level: " + examined.getDef().combatLevel + "<br>" +
                 "<col=bebebe>Hitpoints: " + examined.getMaxHp() + "<br>" +
                 "<col=bebebe>Attack: " + (int) examined.getCombat().getLevel(StatType.Attack) + "<br>" +
@@ -47,13 +52,14 @@ public class MonsterExamine extends Spell {
                 "<col=bebebe>Magic: " + (int) examined.getCombat().getLevel(StatType.Magic) + "<br>" +
                 "<col=bebebe>Ranged: " + (int) examined.getCombat().getLevel(StatType.Ranged) + "<br>" +
                 "<col=bebebe>Max standard hit: " + examined.getCombat().getMaxDamage() + "<br>" +
-                "<col=bebebe>Main attack style: " + capitalize(examined.getCombat().getAttackStyle().toString()) + "<br>"
+                "<col=bebebe>Main attack style: " + capitalize(examined.getCombat().getAttackStyle().toString().toLowerCase()) + "<br>"
         );
     }
 
     private static void offensive(Player player) {
         NPC examined = player.examineMonster;
-        player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 22, "<col=ffb000>Offensive stats<br>" +
+        player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 22, "<col=ffb000>Aggressive Stats<br><br>" +
+                "<col=bebebe>Attack Rate: " + examined.getCombat().getInfo().attack_ticks + "<br>" +
                 "<col=bebebe>Stab: " + (int) examined.getCombat().getBonus(0) + "<br>" +
                 "<col=bebebe>Slash: " + (int) examined.getCombat().getBonus(1) + "<br>" +
                 "<col=bebebe>Crush: " + (int) examined.getCombat().getBonus(2) + "<br>" +
@@ -64,7 +70,7 @@ public class MonsterExamine extends Spell {
 
     private static void defensive(Player player) {
         NPC examined = player.examineMonster;
-        player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 24, "<col=ffb000>Defensive stats<br>" +
+        player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 24, "<col=ffb000>Defensive Stats<br><br>" +
                 "<col=bebebe>Stab: " + (int) examined.getCombat().getBonus(5) + "<br>" +
                 "<col=bebebe>Slash: " + (int) examined.getCombat().getBonus(6) + "<br>" +
                 "<col=bebebe>Crush: " + (int) examined.getCombat().getBonus(7) + "<br>" +
@@ -73,11 +79,27 @@ public class MonsterExamine extends Spell {
         );
     }
 
+    private static void other(Player player) {
+        NPC examined = player.examineMonster;
+        StringBuilder sb = new StringBuilder("<col=ffb000>Other Attributes<br><br>");
+        sb.append("<col=bebebe>Is ").append(SlayerCreature.isSlayerCreature(examined) ? "not " : "").append("a slayer monster.<br>");
+        sb.append("<col=bebebe>Can ").append(examined.getCombat().getInfo().poison_immunity ? "Immune to poison." : "Can be poisoned.").append("<br>");
+        sb.append("<col=bebebe>Can ").append(examined.getCombat().getInfo().venom_immunity ? "Immune to venom." : "Can be envenomed.").append("<br>");
+        if (examined.getDef().dragon) {
+            sb.append("<col=bebebe>Draconic.<br>");
+        }
+        if (examined.getDef().demon) {
+            sb.append("<col=bebebe>Demonic.<br>");
+        }
+        player.getPacketSender().sendString(Interface.MONSTER_EXAMINE, 26, sb.toString());
+    }
+
     static {
         InterfaceHandler.register(Interface.MONSTER_EXAMINE, h -> {
-            h.actions[5] = (SimpleAction) p -> overview(p);
-            h.actions[8] = (SimpleAction) p -> offensive(p);
-            h.actions[11] = (SimpleAction) p -> defensive(p);
+            h.actions[5] = (SimpleAction) MonsterExamine::overview;
+            h.actions[8] = (SimpleAction) MonsterExamine::offensive;
+            h.actions[11] = (SimpleAction) MonsterExamine::defensive;
+            h.actions[14] = (SimpleAction) MonsterExamine::other;
         });
     }
 
