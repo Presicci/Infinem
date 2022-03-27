@@ -29,7 +29,7 @@ public class Humidify extends Spell {
                         }
                     }
                     Farming.CROPS.stream().filter(crop -> crop instanceof TreeCrop).map(crop -> (TreeCrop) crop).filter(crop -> crop.getSeedling() == item.getId()).forEach(crop -> {
-                        item.setId(crop.getWateredSeedling());
+                        item.setId(crop.getSapling());
                         count.getAndIncrement();
                     });
                 }
