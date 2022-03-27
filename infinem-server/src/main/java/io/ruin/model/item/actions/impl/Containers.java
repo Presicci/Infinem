@@ -19,6 +19,7 @@ public enum Containers {
     BOWL(1923, 1921),
     JUG(1935, 1937),
     KETTLE(7688, 7690),
+    VASE(3734, 3735),
 
     /**
      * Watering cans
