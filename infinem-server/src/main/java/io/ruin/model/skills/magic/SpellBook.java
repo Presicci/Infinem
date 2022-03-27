@@ -4,6 +4,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.TabCombat;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.map.Bounds;
+import io.ruin.model.map.Position;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.spells.BountyTeleport;
 import io.ruin.model.skills.magic.spells.HomeTeleport;
@@ -124,19 +125,19 @@ public enum SpellBook {
             new TodoSpell("NPC Contact"),
             new CureOther(),
             new Humidify(),
-            new TodoSpell("Moonclan Teleport"),
+            new LunarTeleport(69, 66, new Bounds(new Position(2113, 3915), 1)),
             new TodoSpell("Tele Group Moonclan"),
             new TodoSpell("Cure Me"),
             new TodoSpell("Hunter Kit"),
-            new TodoSpell("Waterbirth Teleport"),
+            new LunarTeleport(75, 76, new Bounds(new Position(2546, 3755), 1)),
             new TodoSpell("Tele Group Waterbirth"),
             new TodoSpell("Cure Group"),
             new TodoSpell("Stat Spy"),
-            new TodoSpell("Barbarian Teleport"),
+            new LunarTeleport(75, 76, new Bounds(new Position(2543, 3568), 1)),
             new TodoSpell("Tele Group Barbarian"),
             new SuperglassMake(),
             new TodoSpell("Tan Leather"),
-            new TodoSpell("Khazard Teleport"),
+            new LunarTeleport(78, 80, new Bounds(new Position(2636, 3167), 1)),
             new TodoSpell("Tele Group Khazard"),
             new TodoSpell("Dream"),
             new TodoSpell("String Jewellery"),
@@ -144,13 +145,13 @@ public enum SpellBook {
             new MagicImbue(),
             new FertileSoil(),
             new TodoSpell("Boost Potion Share"),
-            new TodoSpell("Fishing Guild Teleport"),
+            new LunarTeleport(87, 92, new Bounds(new Position(2612, 3391), 1)),
             new TodoSpell("Tele Group Fishing Guild"),
             new TodoSpell("Plank Make"),
-            new TodoSpell("Catherby Teleport"),
+            new LunarTeleport(87, 92, new Bounds(new Position(2802, 3449), 1)),
             new TodoSpell("Tele Group Catherby"),
             new TodoSpell("Recharge Dragonstone"),
-            new TodoSpell("Ice Plateau Teleport"),
+            new LunarTeleport(89, 96, new Bounds(new Position(2973, 3939), 1)),
             new TodoSpell("Tele Group Ice Plateau"),
             new TodoSpell("Energy Transfer"),
             new TodoSpell("Heal Other"),
@@ -159,8 +160,8 @@ public enum SpellBook {
             new TodoSpell("Heal Group"),
             new TodoSpell("Spellbook Swap"),
             new TodoSpell("Geomancy"),
-            new TodoSpell("Spin Flax"),
-            new TodoSpell("Ourania Teleport")
+            new SpinFlaxSpell(),
+            new LunarTeleport(71, 69, new Bounds(new Position(2468, 3247), 1))  // TODO Add warning message
     ),
     ARCEUUS(
             HomeTeleport.ARCEUUS,
