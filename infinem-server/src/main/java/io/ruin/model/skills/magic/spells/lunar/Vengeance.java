@@ -53,9 +53,6 @@ public class Vengeance extends Spell {
             return;
         if(hit.attacker == null || hit.attackStyle == null)
             return;
-        if(player.getStats().get(StatType.Defence).fixedLevel < 40) {
-            return;
-        }
         int vengDamage = (int) Math.ceil(hit.damage * 0.75);
         if(vengDamage <= 0)
             return;
