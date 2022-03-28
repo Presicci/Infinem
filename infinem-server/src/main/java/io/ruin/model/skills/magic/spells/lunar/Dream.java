@@ -41,7 +41,7 @@ public class Dream extends Spell {
             Stat stat = player.getStats().get(StatType.Hitpoints);
             player.startEvent(e -> {
                 int count = 0;
-                while (true) {
+                while (true) {  // TODO find yawning animation before you sit down
                     player.getAppearance().setCustomRenders(Renders.DREAM);
                     player.graphics(1056);
                     if (count >= 15) {
