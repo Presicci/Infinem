@@ -44,6 +44,7 @@ import io.ruin.model.skills.construction.seat.Seat;
 import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.hunter.Birdhouse;
 import io.ruin.model.skills.hunter.traps.Trap;
+import io.ruin.model.skills.magic.spells.lunar.TeleGroup;
 import io.ruin.model.skills.magic.spells.modern.Teleother;
 import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
@@ -519,6 +520,7 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public boolean beginnerParkourEnergyBoost;
 
     public Teleother teleotherActive;
+    public TeleGroup telegroupActive;
 
 
     @Expose public boolean kylieMinnowDialogueStarted;
@@ -1369,4 +1371,8 @@ public abstract class PlayerAttributes extends Entity {
     @Expose @Getter @Setter public int[] collection_log_current_params = player.getCollectionLog().bossParams;
 
     @Expose @Getter @Setter protected Birdhouse birdhouse;
+
+    @Expose @Getter @Setter private boolean tanSoftLeather = true;
+
+    @Getter @Setter private boolean dreaming = false;
 }
