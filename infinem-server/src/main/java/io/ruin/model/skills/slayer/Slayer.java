@@ -40,7 +40,7 @@ public class Slayer {
         SlayerCreature creature = SlayerCreature.lookup(task);
 
         if (task > 0 && am > 0 && master > 0 && creature != null && creature.contains(npc)) {
-            int combat = npc.getDef().combatLevel;
+            int combatLevel = npc.getDef().combatLevel;
 
             if (master == SlayerMaster.KRYSTILIA_ID && player.wildernessLevel <= 0) {
                 player.sendMessage("<col=FF0000>You must kill your slayer assignment within the wilderness to receive experience!");
@@ -50,7 +50,6 @@ public class Slayer {
                  * Larran's Key rolling
                  * Formula for drop chance pulled from wiki
                  */
-                int combatLevel = npc.getDef().combatLevel;
                 int chance = (int) Math.floor(0.3 * Math.pow((80 - combatLevel), 2)) + 100;
                 if (combatLevel > 80) {
                     chance = (int) Math.floor(-0.18519 * combatLevel) + 115;
@@ -89,7 +88,6 @@ public class Slayer {
                  * Brimstone Key rolling
                  * Formula for drop chance pulled from wiki
                  */
-                int combatLevel = npc.getDef().combatLevel;
                 int chance = (int) Math.floor(Math.pow((100 - combatLevel), 2) / 5) + 100;
                 if (combatLevel > 100) {
                     chance = 120 - (int) Math.floor((double) combatLevel / 5);
