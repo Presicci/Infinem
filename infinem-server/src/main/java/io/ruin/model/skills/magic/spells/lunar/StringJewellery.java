@@ -60,7 +60,7 @@ public class StringJewellery extends Spell {
                                 break;
                             }
                             item.setId(amulet.strung);
-                            p.animate(4413);
+                            p.animate(4412);
                             p.graphics(746, 96, 0);
                             p.publicSound(2879);
                             r.remove();
