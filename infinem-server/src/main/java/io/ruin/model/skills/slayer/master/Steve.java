@@ -164,7 +164,7 @@ public class Steve {
         }
         int left = Config.SLAYER_TASK_AMOUNT.get(player);
 
-        if (left > 0) {
+        if (left > 0 && SlayerCreature.taskName(player, Config.SLAYER_TASK_1.get(player)).equalsIgnoreCase("null")) {
             String text = SlayerMaster.getTaskText(player, left);
             player.dialogue(new NPCDialogue(STEVE, text));
             return;

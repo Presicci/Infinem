@@ -297,7 +297,7 @@ public class SlayerMaster {
      */
     public static void checkTask(Player player) {
         int amount = Config.SLAYER_TASK_AMOUNT.get(player);
-        if (amount > 0) {
+        if (amount > 0 && !SlayerCreature.taskName(player, Config.SLAYER_TASK_1.get(player)).equalsIgnoreCase("null")) {
             String name = SlayerCreature.taskName(player, Config.SLAYER_TASK_1.get(player));
             String location = "";
             int master = Config.SLAYER_MASTER.get(player);
