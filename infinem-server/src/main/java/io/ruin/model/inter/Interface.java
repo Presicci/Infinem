@@ -74,6 +74,8 @@ public class Interface {
 
     public static final int BANK = 12;
 
+    public static final int NPC_CONTACT = 75;
+
     public static final int BANK_INVENTORY = 15;
 
     public static final int DEPOSIT_BOX = 192;
@@ -171,6 +173,8 @@ public class Interface {
     public static final int SHOP = 300;
 
     public static final int MONSTER_EXAMINE = 522;
+
+    public static final int STAT_SPY = 523;
 
     public static final int ELNOCK_EXCHANGE = 540;
 
