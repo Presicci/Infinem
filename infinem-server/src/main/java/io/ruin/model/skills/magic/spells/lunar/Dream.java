@@ -37,17 +37,15 @@ public class Dream extends Spell {
             }
             r.remove();
             player.getStats().addXp(StatType.Magic, 76, true);
-
-            Stat stat = player.getStats().get(StatType.Hitpoints);
             player.startEvent(e -> {
                 int count = 0;
                 while (true) {  // TODO find yawning animation before you sit down
                     player.getAppearance().setCustomRenders(Renders.DREAM);
                     player.graphics(1056);
                     if (count >= 15) {
-                        if (stat.currentLevel >= stat.fixedLevel)
+                        if (player.getHp() >= player.getMaxHp())
                             break;
-                        stat.currentLevel++;
+                        player.incrementHp(1);
                         count = 0;
                     } else {
                         ++count;
