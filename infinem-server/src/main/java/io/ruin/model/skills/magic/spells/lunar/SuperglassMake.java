@@ -1,13 +1,22 @@
 package io.ruin.model.skills.magic.spells.lunar;
 
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.stat.StatType;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class SuperglassMake extends Spell {
+
+    private static final int[] SECONDARIES = {
+            Items.SODA_ASH,
+            Items.SEAWEED,
+            21504,
+            Items.SWAMP_WEED
+    };
 
     public SuperglassMake() {
         Item[] runes = {
@@ -21,12 +30,26 @@ public class SuperglassMake extends Spell {
                 p.sendMessage("You don't have any sand to turn into glass.");
                 return false;
             }
+            if (!p.getInventory().containsAny(false, SECONDARIES)) {
+                p.sendMessage("You don't have any seaweed or soda ash to turn into glass.");
+                return false;
+            }
             p.startEvent(event -> {
                 p.lock();
                 p.animate(4413);
                 p.graphics(729, 96, 0);
-                items.forEach(item -> item.setId(1775));
-                p.getStats().addXp(StatType.Crafting, 8 * items.size(), true);
+                AtomicInteger count = new AtomicInteger();
+                items.forEach(item -> {
+                    for (int id : SECONDARIES) {
+                        if (p.getInventory().contains(id)) {
+                            p.getInventory().remove(id, 1);
+                            item.setId(1775);
+                            count.incrementAndGet();
+                            break;
+                        }
+                    }
+                });
+                p.getStats().addXp(StatType.Crafting, 10 * count.get(), true);
                 event.delay(1);
                 p.unlock();
             });
