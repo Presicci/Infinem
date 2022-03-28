@@ -122,7 +122,7 @@ public enum SpellBook {
             new BakePie(),
             new CurePlant(),
             new MonsterExamine(),
-            new TodoSpell("NPC Contact"),
+            new NPCContact(),
             new CureOther(),
             new Humidify(),
             new LunarTeleport(69, 66, new Bounds(new Position(2113, 3915), 1)),
