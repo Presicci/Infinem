@@ -18,19 +18,19 @@ public class Vengeance extends Spell {
     }
 
     public static boolean cast(Player player, Integer i) {
-        if(DuelRule.NO_MAGIC.isToggled(player)) {
+        if (DuelRule.NO_MAGIC.isToggled(player)) {
             player.sendMessage("Melee has been disabled for this duel!");
             return false;
         }
-        if(player.vengeanceActive) {
+        if (player.vengeanceActive) {
             player.sendMessage("You already have this spell casted.");
             return false;
         }
-        if(Config.VENG_COOLDOWN.get(player) == 1) {
+        if (Config.VENG_COOLDOWN.get(player) == 1) {
             player.sendMessage("Vengeance spells may only be cast every 30 seconds.");
             return false;
         }
-        if(player.getStats().get(StatType.Defence).currentLevel < 40) {
+        if (player.getStats().get(StatType.Defence).currentLevel < 40) {
             player.sendMessage("You need at least 40 defence to cast Vengeance.");
             return false;
         }
@@ -49,12 +49,12 @@ public class Vengeance extends Spell {
     }
 
     public static void check(Player player, Hit hit) {
-        if(!player.vengeanceActive)
+        if (!player.vengeanceActive)
             return;
-        if(hit.attacker == null || hit.attackStyle == null)
+        if (hit.attacker == null || hit.attackStyle == null)
             return;
         int vengDamage = (int) Math.ceil(hit.damage * 0.75);
-        if(vengDamage <= 0)
+        if (vengDamage <= 0)
             return;
         player.vengeanceActive = false;
         player.forceText("Taste Vengeance!");
