@@ -564,6 +564,14 @@ public abstract class ItemContainerG<I extends Item> {
         return true;
     }
 
+    public boolean containsAny(boolean acceptNoted, I... items) {
+        for (Item item: items) {
+            if (contains(item, acceptNoted))
+                return true;
+        }
+        return false;
+    }
+
     public int removeAll(boolean acceptNoted, I... items) {
         int removed = 0;
         for (Item item: items)
