@@ -169,9 +169,8 @@ public enum SlayerCreature {
      * @return True if npc is this slayer creature.
      */
     public boolean contains(NPC npc) {
-        if(npc.getDef().combatInfo == null || npc.getCombat().getInfo().slayer_tasks == null)
+        if(isSlayerCreature(npc))
             return false;
-
         for(String s : npc.getCombat().getInfo().slayer_tasks){
             if(category.contains(s.toLowerCase()))
                 return true;
@@ -546,5 +545,11 @@ public enum SlayerCreature {
             return EnumMap.get(1174).strings().get(Config.BOSS_TASK.get(player));
         }
         return EnumMap.get(693).strings().get(uid);
+    }
+
+    public static boolean isSlayerCreature(NPC npc) {
+        if(npc.getDef().combatInfo == null || npc.getCombat().getInfo().slayer_tasks == null || npc.getCombat().getInfo().slayer_tasks.length > 0)
+            return false;
+        return true;
     }
 }
