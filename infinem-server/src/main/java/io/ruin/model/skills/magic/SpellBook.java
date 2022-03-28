@@ -139,7 +139,7 @@ public enum SpellBook {
             new TanLeather(),
             new LunarTeleport(78, 80, new Bounds(new Position(2636, 3167), 1)),
             TeleGroup.KHAZARD.toSpell(),
-            new TodoSpell("Dream"),
+            new Dream(),
             new StringJewellery(),
             new TodoSpell("Stat Restore Pot Share"),
             new MagicImbue(),
