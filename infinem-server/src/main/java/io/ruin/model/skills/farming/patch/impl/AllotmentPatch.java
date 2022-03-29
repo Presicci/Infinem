@@ -176,6 +176,11 @@ public class AllotmentPatch extends Patch {
     public boolean isDiseaseImmune() {
         if (watered)
             return true;
+        return isFlowerProtected();
+    }
+
+    @Override
+    public boolean isFlowerProtected() {
         if (associatedFlowerPatch == null || associatedFlowerPatch.getDiseaseStage() > 0)
             return false;
         if (getPlantedCrop().getProtectionFlower() == null)
@@ -184,6 +189,11 @@ public class AllotmentPatch extends Patch {
         if (flower == null)
             return false;
         return getPlantedCrop().getProtectionFlower() == flower;
+    }
+
+    @Override
+    public boolean isWatered() {
+        return watered;
     }
 
     @Override
