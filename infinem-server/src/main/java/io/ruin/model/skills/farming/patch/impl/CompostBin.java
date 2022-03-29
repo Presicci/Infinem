@@ -8,6 +8,7 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.patch.Patch;
+import io.ruin.model.skills.farming.patch.PatchData;
 
 public class CompostBin extends Patch {
 
@@ -27,22 +28,24 @@ public class CompostBin extends Patch {
                 value |= 1 << 5;
             else if (currentType == TOMATOES)
                 value |= 1 << 7;
-            value |= getProduceCount();
+            value |= (data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount()/2 : getProduceCount());
+            if (data == PatchData.FARMING_GUILD_COMPOST_BIN && getProduceCount() == 30)
+                value = 77;
             return value;
         } else if (stage == 1) {
             return 31;
         } else if (stage == 2) {
             if (currentType != TOMATOES)
-                return (1 << 5) | (1 << 4) | (getProduceCount() - 1);
+                return (1 << 5) | (1 << 4) | ((data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount() / 2: getProduceCount()) - 1);
             else
-                return 144 | (getProduceCount() - 1);
+                return 144 | ((data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount() / 2: getProduceCount()) - 1);
         }
         return 0;
     }
 
     @Override
     public void interact() {
-        if (stage == 0 && getProduceCount() == 15) {
+        if (stage == 0 && (data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount() == 30 : getProduceCount() == 15)) {
             player.startEvent(event -> {
                 player.animate(810);
                 event.delay(1);
@@ -119,23 +122,24 @@ public class CompostBin extends Patch {
     @Override
     public void handleItem(Item item) {
         if (stage == 0) {
-            if (getProduceCount() >= 15) {
+            if (data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount() >= 30 : getProduceCount() >= 15) {
                 player.sendMessage("The compost bin is too full to put anything else in it.");
                 return;
             }
             int type;
             if (item.getId() == 1982) { // tomato
+                if (data == PatchData.FARMING_GUILD_COMPOST_BIN) {
+                    player.sendMessage("You can't make rotten tomatoes in a big compost bin.");
+                    return;
+                }
                 type = TOMATOES;
             } else if (item.getDef().produceOf != null) {
                 type = item.getDef().produceOf.getLevelReq() >= 47 ? SUPER : REGULAR;
             } else {
-                switch (item.getId()) {
-                    case 6055:
-                        type = 0;
-                        break;
-                    default:
-                        type = -1;
-                        break;
+                if (item.getId() == 6055) {
+                    type = 0;
+                } else {
+                    type = -1;
                 }
             }
             if (type == -1) {
@@ -154,6 +158,7 @@ public class CompostBin extends Patch {
             }
         } else if (stage == 2) {
             if (item.getId() == VOLACANIC_ASH) {
+                int ashRequired = data == PatchData.FARMING_GUILD_COMPOST_BIN ? 50 : 25;
                 if (currentType == ULTRA) {
                     player.dialogue(new MessageDialogue("This bin already contains ultracompost."));
                     return;
@@ -162,12 +167,15 @@ public class CompostBin extends Patch {
                     player.dialogue(new MessageDialogue("You can only turn supercompost into ultracompost."));
                     return;
                 }
-                if (player.getInventory().getAmount(VOLACANIC_ASH) < 25) {
-                    player.dialogue(new MessageDialogue("You need 25 Volcanic ash to turn this into ultracompost."));
+                if (player.getInventory().getAmount(VOLACANIC_ASH) < ashRequired) {
+                    player.dialogue(new MessageDialogue("You need " + ashRequired + " Volcanic ash to turn this into ultracompost."));
                     return;
                 }
-                player.getInventory().remove(VOLACANIC_ASH, 25);
+                player.getInventory().remove(VOLACANIC_ASH, ashRequired);
                 currentType = ULTRA;
+                player.animate(832);
+                player.sendMessage("You turn the supercompost into ultracompost.");
+                return;
             }
             if (item.getId() != BUCKET) {
                 player.sendMessage("You'll need a bucket instead.");
@@ -201,10 +209,11 @@ public class CompostBin extends Patch {
 
     public void add(Item item, int type) {
         player.startEvent(event -> {
+            int maxAmount = data == PatchData.FARMING_GUILD_COMPOST_BIN ? 30 : 15;
             player.lock();
             player.animate(832);
             event.delay(1);
-            int amount = Math.min(15 - getProduceCount(), player.getInventory().getAmount(item.getId()));
+            int amount = Math.min(maxAmount - getProduceCount(), player.getInventory().getAmount(item.getId()));
             currentType = type;
             setProduceCount(getProduceCount() + amount);
             player.getInventory().remove(item.getId(), amount);
