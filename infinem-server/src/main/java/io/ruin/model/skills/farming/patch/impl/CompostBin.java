@@ -6,9 +6,12 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.farming.patch.PatchData;
+
+import java.util.Arrays;
 
 public class CompostBin extends Patch {
 
@@ -119,6 +122,14 @@ public class CompostBin extends Patch {
         );
     }
 
+    private static final int[] ROOTS = {
+            Items.OAK_ROOTS,
+            Items.WILLOW_ROOTS,
+            Items.MAPLE_ROOTS,
+            Items.YEW_ROOTS,
+            Items.MAGIC_ROOTS
+    };
+
     @Override
     public void handleItem(Item item) {
         if (stage == 0) {
@@ -135,6 +146,8 @@ public class CompostBin extends Patch {
                 type = TOMATOES;
             } else if (item.getDef().produceOf != null) {
                 type = item.getDef().produceOf.getLevelReq() >= 47 ? SUPER : REGULAR;
+            } else if (Arrays.stream(ROOTS).anyMatch(r -> r == item.getId())) {
+                type = SUPER;
             } else {
                 if (item.getId() == 6055) {
                     type = 0;
