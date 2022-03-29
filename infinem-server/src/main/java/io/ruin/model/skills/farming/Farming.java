@@ -24,7 +24,7 @@ public class Farming {
     private Map<Integer, Patch> patches = new HashMap<>();
     @Expose private ToolStorage storage = new ToolStorage();
     @Expose private CompostBin faladorCompostBin, canifisCompostBin, catherbyCompostBin, ardougneCompostBin, zeahCompostBin, farmingGuildCompost;
-    @Expose private HerbPatch canifisHerb, ardougneHerb, faladorHerb, catherbyHerb, trollheimHerb, zeahHerb, farmingGuildHerb, harmonyHerb;
+    @Expose private HerbPatch canifisHerb, ardougneHerb, faladorHerb, catherbyHerb, trollheimHerb, zeahHerb, farmingGuildHerb, harmonyHerb, weissHerb;
     @Expose private FlowerPatch faladorFlower, catherbyFlower, ardougneFlower, canifisFlower, zeahFlower, farmingGuildFlower, prifFlower;
     @Expose private AllotmentPatch faladorNorth, faladorSouth, catherbyNorth, catherbySouth, ardougneNorth, ardougneSouth, canifisNorth,
             canifisSouth, zeahNorth, zeahSouth, farmingGuildNorth, farmingGuildSouth, prifNorth, prifSouth, harmonyAllotment;
@@ -183,6 +183,10 @@ public class Farming {
             harmonyHerb = new HerbPatch();
         }
 
+        if (weissHerb == null) {
+            weissHerb = new HerbPatch();
+        }
+
         addPatch(faladorCompostBin.set(PatchData.FALADOR_COMPOST_BIN).setPlayer(player));
         addPatch(catherbyCompostBin.set(PatchData.CATHERBY_COMPOST_BIN).setPlayer(player));
         addPatch(canifisCompostBin.set(PatchData.CANIFIS_COMPOST_BIN).setPlayer(player));
@@ -275,6 +279,8 @@ public class Farming {
 
         addPatch(harmonyAllotment.set(PatchData.HARMONY_ALLOTMENT).setPlayer(player));
         addPatch(harmonyHerb.set(PatchData.HARMONY_HERB).setPlayer(player));
+
+        addPatch(weissHerb.set(PatchData.WEISS_HERB).setPlayer(player));
 
         patches.forEach((id, patch) -> patch.onLoad()); // force ticks
         refresh();
