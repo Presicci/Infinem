@@ -76,6 +76,8 @@ public class Interface {
 
     public static final int NPC_CONTACT = 75;
 
+    public static final int GEOMANCY = 179;
+
     public static final int BANK_INVENTORY = 15;
 
     public static final int DEPOSIT_BOX = 192;
