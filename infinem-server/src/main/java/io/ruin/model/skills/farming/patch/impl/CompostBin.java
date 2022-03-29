@@ -18,7 +18,7 @@ public class CompostBin extends Patch {
     private static final int REGULAR = 0, SUPER = 1, TOMATOES = 2, ULTRA = 3;
     private static final int[] PRODUCTS = { 6032, 6034, 2518, 21483 };
     private static final int BUCKET = 1925;
-    private static final int VOLACANIC_ASH = 21622;
+    private static final int VOLCANIC_ASH = 21622;
     @Expose private int currentType = 0;
 
     @Override
@@ -170,7 +170,7 @@ public class CompostBin extends Patch {
                 add(item, getProduceCount() == 0 ? type : currentType);
             }
         } else if (stage == 2) {
-            if (item.getId() == VOLACANIC_ASH) {
+            if (item.getId() == VOLCANIC_ASH) {
                 int ashRequired = data == PatchData.FARMING_GUILD_COMPOST_BIN ? 50 : 25;
                 if (currentType == ULTRA) {
                     player.dialogue(new MessageDialogue("This bin already contains ultracompost."));
@@ -180,11 +180,11 @@ public class CompostBin extends Patch {
                     player.dialogue(new MessageDialogue("You can only turn supercompost into ultracompost."));
                     return;
                 }
-                if (player.getInventory().getAmount(VOLACANIC_ASH) < ashRequired) {
+                if (player.getInventory().getAmount(VOLCANIC_ASH) < ashRequired) {
                     player.dialogue(new MessageDialogue("You need " + ashRequired + " Volcanic ash to turn this into ultracompost."));
                     return;
                 }
-                player.getInventory().remove(VOLACANIC_ASH, ashRequired);
+                player.getInventory().remove(VOLCANIC_ASH, ashRequired);
                 currentType = ULTRA;
                 player.animate(832);
                 player.sendMessage("You turn the supercompost into ultracompost.");
