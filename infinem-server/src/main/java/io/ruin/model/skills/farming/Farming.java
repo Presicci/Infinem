@@ -360,6 +360,9 @@ public class Farming {
         return false;
     }
 
+    public Patch getPatch(PatchData patchData) {
+        return patches.get(patchData.getObjectId());
+    }
 
     public Patch getPatch(GameObject obj) {
         return patches.get(obj.id);
