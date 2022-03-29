@@ -11,9 +11,10 @@ import io.ruin.model.skills.farming.patch.Patch;
 
 public class CompostBin extends Patch {
 
-    private static final int REGULAR = 0, SUPER = 1, TOMATOES = 2;
-    private static final int[] PRODUCTS = {6032, 6034, 2518};
+    private static final int REGULAR = 0, SUPER = 1, TOMATOES = 2, ULTRA = 3;
+    private static final int[] PRODUCTS = { 6032, 6034, 2518, 21483 };
     private static final int BUCKET = 1925;
+    private static final int VOLACANIC_ASH = 21622;
     @Expose private int currentType = 0;
 
     @Override
@@ -152,6 +153,22 @@ public class CompostBin extends Patch {
                 add(item, getProduceCount() == 0 ? type : currentType);
             }
         } else if (stage == 2) {
+            if (item.getId() == VOLACANIC_ASH) {
+                if (currentType == ULTRA) {
+                    player.dialogue(new MessageDialogue("This bin already contains ultracompost."));
+                    return;
+                }
+                if (currentType != SUPER) {
+                    player.dialogue(new MessageDialogue("You can only turn supercompost into ultracompost."));
+                    return;
+                }
+                if (player.getInventory().getAmount(VOLACANIC_ASH) < 25) {
+                    player.dialogue(new MessageDialogue("You need 25 Volcanic ash to turn this into ultracompost."));
+                    return;
+                }
+                player.getInventory().remove(VOLACANIC_ASH, 25);
+                currentType = ULTRA;
+            }
             if (item.getId() != BUCKET) {
                 player.sendMessage("You'll need a bucket instead.");
                 return;
@@ -197,7 +214,7 @@ public class CompostBin extends Patch {
     }
 
     public int getProductId() {
-        if ((stage == 0 && getProduceCount() == 0) || currentType < 0 || currentType > 2) {
+        if ((stage == 0 && getProduceCount() == 0) || currentType < 0 || currentType > 3) {
                 return 1925;
         } else {
             return PRODUCTS[currentType];
