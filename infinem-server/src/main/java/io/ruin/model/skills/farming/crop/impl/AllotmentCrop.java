@@ -17,7 +17,7 @@ public enum AllotmentCrop implements Crop {
 	SWEETCORN(5320, 5986, 20, 17, 19, 6, null, new Item(COINS_995,  500), 34, 224832, PlayerCounter.HARVESTED_SWEETCORN),
 	STRAWBERRY(5323, 5504, 31, 26, 29, 6, null, new Item(COINS_995,  800), 43, 187360, PlayerCounter.HARVESTED_STRAWBERRY),
 	WATERMELON(5321, 5982, 47, 48.5, 54.5, 8, FlowerCrop.NASTURTIUM, new Item(COINS_995,  5000), 52, 160594, PlayerCounter.HARVESTED_WATERMELON),
-	SNAPE_GRASS(22879, 231, 61, 82, 82, 7, FlowerCrop.WHITE_LILY, new Item(995, 7500), 128, 173977, PlayerCounter.HARVESTED_SNAPE_GRASS);
+	SNAPE_GRASS(22879, 231, 61, 82, 82, 7, null, new Item(995, 7500), 128, 173977, PlayerCounter.HARVESTED_SNAPE_GRASS);
 
 	private final int seedId, produceId, levelReq;
 	private final double plantXP, harvestXP;
