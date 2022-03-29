@@ -10,8 +10,10 @@ import io.ruin.model.item.actions.ItemItemAction;
 public class Compost {
 
     private static final int[] COMPOST_POTIONS = { 6476, 6474, 6472, 6470 };
+    private static final int ULTRA_COMPOST = 21483;
     private static final int SUPER_COMPOST = 6034;
     private static final int COMPOST = 6032;
+    private static final int VOLCANIC_ASH = 21622;
 
     static {
         // Supercompost creation
@@ -31,5 +33,14 @@ public class Compost {
                 item.setId(229);
             });
         }
+        ItemItemAction.register(SUPER_COMPOST, VOLCANIC_ASH, ((player, primary, secondary) -> {
+            if (player.getInventory().getAmount(VOLCANIC_ASH) < 2) {
+                player.sendMessage("You need 2 volcanic ash to make ultracompost.");
+                return;
+            }
+            primary.setId(21483);
+            player.getInventory().remove(VOLCANIC_ASH, 2);
+            player.sendFilteredMessage("You turn the supercompost into ultracompost.");
+        }));
     }
 }
