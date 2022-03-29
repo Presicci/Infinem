@@ -489,6 +489,7 @@ public class Config {
     public static final Config FARMING_PATCH_7905 = varpbit(7905, false);
     public static final Config FARMING_PATCH_7904 = varpbit(7904, false);
     public static final Config FARMING_COMPOST_BIN = varpbit(4775, false);
+    public static final Config GEOMANCY_TAB = varpbit(4776, false);
 
     public static final Config STORAGE_RAKE = varpbit(1435, true);
     public static final Config STORAGE_SEED_DIBBER = varpbit(1436, true);
