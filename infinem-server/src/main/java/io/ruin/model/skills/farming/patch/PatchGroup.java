@@ -24,6 +24,7 @@ public enum PatchGroup {
                     PatchData.FARMING_GUILD_BUSH, PatchData.FARMING_GUILD_CACTUS, PatchData.FARMING_GUILD_CELASTRUS, PatchData.FARMING_GUILD_FLOWER,
                     PatchData.FARMING_GUILD_FRUIT, PatchData.FARMING_GUILD_NORTH, PatchData.FARMING_GUILD_REDWOOD, PatchData.FARMING_GUILD_SOUTH,
                     PatchData.FARMING_GUILD_TREE)),
+    HARMONY(Bounds.fromRegion(15148), Arrays.asList(PatchData.HARMONY_HERB, PatchData.HARMONY_ALLOTMENT)),
     TROLLHEIM(new Bounds(new Position(2827, 3694, 0), 25),
             Collections.singletonList(PatchData.TROLLHEIM_HERB)),
     FALADOR_TREE(new Bounds(new Position(3004, 3373, 0), 25),

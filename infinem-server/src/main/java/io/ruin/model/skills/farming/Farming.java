@@ -24,10 +24,10 @@ public class Farming {
     private Map<Integer, Patch> patches = new HashMap<>();
     @Expose private ToolStorage storage = new ToolStorage();
     @Expose private CompostBin faladorCompostBin, canifisCompostBin, catherbyCompostBin, ardougneCompostBin, zeahCompostBin, farmingGuildCompost;
-    @Expose private HerbPatch canifisHerb, ardougneHerb, faladorHerb, catherbyHerb, trollheimHerb, zeahHerb, farmingGuildHerb;
+    @Expose private HerbPatch canifisHerb, ardougneHerb, faladorHerb, catherbyHerb, trollheimHerb, zeahHerb, farmingGuildHerb, harmonyHerb;
     @Expose private FlowerPatch faladorFlower, catherbyFlower, ardougneFlower, canifisFlower, zeahFlower, farmingGuildFlower, prifFlower;
     @Expose private AllotmentPatch faladorNorth, faladorSouth, catherbyNorth, catherbySouth, ardougneNorth, ardougneSouth, canifisNorth,
-            canifisSouth, zeahNorth, zeahSouth, farmingGuildNorth, farmingGuildSouth, prifNorth, prifSouth;
+            canifisSouth, zeahNorth, zeahSouth, farmingGuildNorth, farmingGuildSouth, prifNorth, prifSouth, harmonyAllotment;
     @Expose private WoodTreePatch lumbridgeTree, faladorTree, varrockTree, gnomeTree, taverleyTree, farmingGuildTree;
     @Expose private FruitTreePatch catherbyFruit, brimhavenFruit, gnomeFruit, villageFruit, lletyaFruit, farmingGuildFruit;
     @Expose private BushPatch varrockBush, ardougneBush, etceteriaBush, rimmingtonBush, farmingGuildBush;
@@ -178,6 +178,11 @@ public class Farming {
             prifSouth = new AllotmentPatch();
         }
 
+        if (harmonyAllotment == null) {
+            harmonyAllotment = new AllotmentPatch();
+            harmonyHerb = new HerbPatch();
+        }
+
         addPatch(faladorCompostBin.set(PatchData.FALADOR_COMPOST_BIN).setPlayer(player));
         addPatch(catherbyCompostBin.set(PatchData.CATHERBY_COMPOST_BIN).setPlayer(player));
         addPatch(canifisCompostBin.set(PatchData.CANIFIS_COMPOST_BIN).setPlayer(player));
@@ -267,6 +272,9 @@ public class Farming {
         addPatch(prifFlower.set(PatchData.PRIF_FLOWER).setPlayer(player));
         addPatch(prifNorth.set(PatchData.PRIF_NORTH, prifFlower).setPlayer(player));
         addPatch(prifSouth.set(PatchData.PRIF_SOUTH, prifFlower).setPlayer(player));
+
+        addPatch(harmonyAllotment.set(PatchData.HARMONY_ALLOTMENT).setPlayer(player));
+        addPatch(harmonyHerb.set(PatchData.HARMONY_HERB).setPlayer(player));
 
         patches.forEach((id, patch) -> patch.onLoad()); // force ticks
         refresh();
