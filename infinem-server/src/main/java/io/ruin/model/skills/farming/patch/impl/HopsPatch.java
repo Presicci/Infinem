@@ -151,6 +151,11 @@ public class HopsPatch extends Patch {
     }
 
     @Override
+    public boolean isWatered() {
+        return watered;
+    }
+
+    @Override
     public int calculateProduceAmount() {
         int amount = Random.get(3, 25);
         if (getCompost() == 2) { // supercompost bonus
