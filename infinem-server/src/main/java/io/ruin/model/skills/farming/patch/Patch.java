@@ -574,4 +574,12 @@ public abstract class Patch {
         if (Random.rollDie(petOdds - (player.getStats().get(StatType.Farming).currentLevel * 25)))
             Pet.TANGLEROOT.unlock(player);
     }
+
+    public boolean isFlowerProtected() {
+        return false;
+    }
+
+    public boolean isWatered() {
+        return false;
+    }
 }
