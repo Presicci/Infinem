@@ -3187,7 +3187,7 @@
   { #Rusty sword
     "id": 686,
     "tradeable": false,
-    "examine": "A decent-enough weapon gone rusty.",
+    "examine": "A decent-enough weapon gone rusty. I should take this to a whetstone at my house.",
     "weight": 2.0,
 	"protect_value": 0
   },
@@ -30630,36 +30630,28 @@
     "tradeable": false,
     "examine": "This looks very rusty and worn.",
     "weight": 2.0,
-	"protect_value": 0,
-    "equip_slot": 0,
-    "weapon_type": "BATTLEAXE"
+	"protect_value": 0
   },
   { #Dwarven battleaxe
     "id": 5057,
     "tradeable": false,
     "examine": "This axe blade has been sharpened.",
     "weight": 2.0,
-	"protect_value": 0,
-    "equip_slot": 0,
-    "weapon_type": "BATTLEAXE"
+	"protect_value": 0
   },
   { #Dwarven battleaxe
     "id": 5058,
     "tradeable": false,
     "examine": "Three sapphires have been crafted onto the hilt.",
     "weight": 2.0,
-	"protect_value": 0,
-    "equip_slot": 0,
-    "weapon_type": "BATTLEAXE"
+	"protect_value": 0
   },
   { #Dwarven battleaxe
     "id": 5059,
     "tradeable": false,
     "examine": "This axe has a sharp blade and there are sapphires in the hilt.",
     "weight": 2.0,
-	"protect_value": 0,
-    "equip_slot": 0,
-    "weapon_type": "BATTLEAXE"
+	"protect_value": 0
   },
   { #Dwarven battleaxe
     "id": 5060,
@@ -30680,24 +30672,21 @@
     "tradeable": false,
     "examine": "One of a pair I assume.",
     "weight": 0.5,
-	"protect_value": 0,
-    "equip_slot": 0
+	"protect_value": 0
   },
   { #Right boot
     "id": 5063,
     "tradeable": false,
     "examine": "A good looking boot, for the right foot. Literally.",
     "weight": 0.5,
-	"protect_value": 0,
-    "equip_slot": 0
+	"protect_value": 0
   },
   { #Exquisite boots
     "id": 5064,
     "tradeable": false,
     "examine": "A lovely pair of boots.",
     "weight": 1.0,
-	"protect_value": 0,
-    "equip_slot": 0
+	"protect_value": 0
   },
   { #Book on costumes
     "id": 5065,
@@ -30718,8 +30707,7 @@
     "tradeable": false,
     "examine": "Clothes for the sculptor's model.",
     "weight": 0.0,
-	"protect_value": 0,
-    "equip_slot": 0
+	"protect_value": 0
   },
   { #Master farmer
     "id": 5068,
@@ -40611,7 +40599,7 @@
   { #Rusty scimitar
     "id": 6721,
     "tradeable": false,
-    "examine": "A decent enough weapon gone rusty.",
+    "examine": "A decent enough weapon gone rusty. I should take this to a whetstone at my house.",
     "weight": 2.0,
 	"protect_value": 0
   },
