@@ -48,7 +48,7 @@ public enum TeleGroup {
             if (target.player == player) {
                 continue;
             }
-            if (target.player.getPosition().distance(player.getPosition()) > 2) {
+            if (target.player.getPosition().distance(player.getPosition()) > 1) {
                 continue;
             }
             if (target.player.wildernessLevel > 0) {
