@@ -4,7 +4,7 @@ import io.ruin.model.entity.player.PlayerCounter;
 
 public enum Tree {
 
-    CRYSTAL(23866, "crystal shards", 1, 350, 0, 0, true, 317647, PlayerCounter.CHOPPED_REGULAR),
+    CRYSTAL(23962, "crystal shards", 1, 350, 0, 0, true, 317647, PlayerCounter.CHOPPED_REGULAR),
     CELASTRUS(22935, "bark", 1, 350, 0, 75, true, 317647, PlayerCounter.CHOPPED_REGULAR),
     REGULAR(1511, "logs", 1, 55, 25.0, 75, true, 317647, PlayerCounter.CHOPPED_REGULAR),
     SAPLING(20799, "kindling", 1, 82.5, 45.0, 75, false, 317647, PlayerCounter.CHOPPED_SAPLING),
