@@ -37,7 +37,7 @@ public enum SpellBook {
             new JewelleryEnchant(JewelleryEnchant.EnchantLevel.TWO),
             new EarthBolt(),
             ModernTeleport.LUMBRIDGE_TELEPORT,
-            new TodoSpell("Telekinetic Grab"),
+            new TodoSpell("Telekinetic Grab"),  // Handled in InterfaceOnGroundItemHandler.java
             new FireBolt(),
             ModernTeleport.FALADOR_TELEPORT,
             CrumbleUndead.INSTANCE,
