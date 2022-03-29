@@ -184,7 +184,7 @@ public class AllotmentPatch extends Patch {
         if (associatedFlowerPatch == null || associatedFlowerPatch.getDiseaseStage() > 0)
             return false;
         FlowerCrop flower = associatedFlowerPatch.getPlantedCrop();
-        if (flower == null)
+        if (flower == null || !associatedFlowerPatch.isFullyGrown())
             return false;
         return getPlantedCrop().getProtectionFlower() == flower || flower == FlowerCrop.WHITE_LILY;
     }
