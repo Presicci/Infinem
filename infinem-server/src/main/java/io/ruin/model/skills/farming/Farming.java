@@ -42,6 +42,7 @@ public class Farming {
     @Expose private HardWoodTreePatch hardWoodTreeOne, hardWoodTreeTwo, hardWoodTreeThree;
     @Expose private BelladonnaPatch belladonnaPatch;
     @Expose private CrystalTreePatch crystalTreePatch;
+    @Expose private HesporiPatch hesporiPatch;
 
     private PatchGroup visibleGroup;
 
@@ -191,6 +192,10 @@ public class Farming {
             prifCompostBin = new CompostBin();
         }
 
+        if (hesporiPatch == null) {
+            hesporiPatch = new HesporiPatch();
+        }
+
         addPatch(faladorCompostBin.set(PatchData.FALADOR_COMPOST_BIN).setPlayer(player));
         addPatch(catherbyCompostBin.set(PatchData.CATHERBY_COMPOST_BIN).setPlayer(player));
         addPatch(canifisCompostBin.set(PatchData.CANIFIS_COMPOST_BIN).setPlayer(player));
@@ -267,6 +272,7 @@ public class Farming {
         addPatch(farmingGuildFlower.set(PatchData.FARMING_GUILD_FLOWER).setPlayer(player));
         addPatch(farmingGuildFruit.set(PatchData.FARMING_GUILD_FRUIT).setPlayer(player));
         addPatch(farmingGuildCompost.set(PatchData.FARMING_GUILD_COMPOST_BIN).setPlayer(player));
+        addPatch(hesporiPatch.set(PatchData.HESPORI).setPlayer(player));
 
         addPatch(canifisMushroom.set(PatchData.CANIFIS_MUSHROOM).setPlayer(player));
 
@@ -365,7 +371,12 @@ public class Farming {
     public boolean handleObject(GameObject obj, int option) {
         Patch patch = patches.get(obj.id);
         if (patch != null) {
+            if (patch instanceof HesporiPatch) {
+                ((HesporiPatch) patch).objectAction(obj, option);
+                return true;
+            }
             patch.objectAction(option);
+            return true;
         }
         return false;
     }
@@ -421,6 +432,7 @@ public class Farming {
         Collections.addAll(CROPS, HardWoodTreeCrop.values());
         Collections.addAll(CROPS, BelladonnaCrop.values());
         Collections.addAll(CROPS, CrystalTreeCrop.values());
+        Collections.addAll(CROPS, HesporiCrop.INSTANCE);
         ItemDef.cached.values().stream().filter(Objects::nonNull).forEach(def -> {
             def.produceOf = getCropForProduce(def.id);
             def.seedType = getCropForSeed(def.id);

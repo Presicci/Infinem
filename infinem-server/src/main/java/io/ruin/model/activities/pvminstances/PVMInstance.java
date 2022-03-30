@@ -8,6 +8,9 @@ import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.map.MapListener;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.dynamic.DynamicMap;
+import io.ruin.model.map.object.GameObject;
+import io.ruin.model.skills.farming.patch.PatchData;
+import io.ruin.model.skills.farming.patch.impl.HesporiPatch;
 import io.ruin.services.Loggers;
 
 import java.util.HashMap;
@@ -132,7 +135,11 @@ public class PVMInstance {
     public void enter(Player player) {
         playersInside++;
         player.currentInstance = this;
-        player.getMovement().teleport(convertPosition(type.getEntryPosition()));
+        if (type == InstanceType.HESPORI) {
+            player.getMovement().teleport(convertPosition(player.getPosition()));
+        } else {
+            player.getMovement().teleport(convertPosition(type.getEntryPosition()));
+        }
         player.addActiveMapListener(mapListener);
     }
 
@@ -165,13 +172,19 @@ public class PVMInstance {
         Loggers.logPvMInstance(ownerId, type.getName(), type.getCost(), timeCreated, timeDestroyed);
     }
 
-    private Position convertPosition(Position pos) {
+    public Position convertPosition(Position pos) {
         if (!pos.inBounds(type.getBounds())) {
             throw new IllegalArgumentException("Position " + pos + " not in source bounds");
         }
         int localX = pos.getX() - type.getBounds().swX;
         int localY = pos.getY() - type.getBounds().swY;
         return new Position(localX + map.swRegion.baseX, localY + map.swRegion.baseY, pos.getZ());
+    }
+
+    private Position convertPositionBack(Position pos) {
+        int localX = pos.getX() - map.swRegion.baseX;
+        int localY = pos.getY() - map.swRegion.baseY;
+        return new Position(localX + type.getBounds().swX, localY + type.getBounds().swY, pos.getZ());
     }
 
     public InstancePrivacy getPrivacy() {
@@ -210,5 +223,30 @@ public class PVMInstance {
 
     public int getOwnerId() {
         return ownerId;
+    }
+
+    public static void enterHespori(Player player) {
+        InstanceType type = InstanceType.HESPORI;
+        player.addEvent(event -> {
+            PVMInstance instance = new PVMInstance(player, type, InstancePrivacy.PRIVATE);
+            instance.enter(player);
+            player.sendMessage("The Hespori doesn't take kindly to your attempt to harvest it.");
+            HesporiPatch patch = (HesporiPatch) player.getFarming().getPatch(PatchData.HESPORI);
+            if (patch != null && patch.hespori != null) {
+                GameObject object = new GameObject(-1, instance.convertPosition(new Position(1246, 10086)), 10, 0);
+                patch.hespori.deathEndListener = (entity, killer, killHit) -> {
+                    object.setId(34437);
+                    patch.setStage(4);
+                    instance.exitHespori(player);
+                    patch.update();
+                };
+                patch.hespori.spawn(instance.convertPosition(new Position(1246, 10086)));
+                object.spawn();
+            }
+        });
+    }
+
+    public void exitHespori(Player player) {
+        player.getMovement().teleport(convertPositionBack(player.getPosition()));
     }
 }
