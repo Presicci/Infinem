@@ -1,0 +1,45 @@
+[
+  { #Hespori (284)
+  "ids": [ 8583 ],
+  "handler": "io.ruin.model.activities.bosses.hespori.Hespori",
+  //Combat Info
+  "hitpoints": 300,
+  "aggressive_level": 156,
+  "max_damage": 16,
+  "attack_style": "MAGIC",
+  //Slayer Info
+  "slayer_level": 1,
+  "slayer_xp": 0.0,
+  "slayer_tasks": [],
+  //Combat Stats
+  "attack": 1,
+  "strength": 1,
+  "defence": 120,
+  "ranged": 150,
+  "magic": 126,
+  //Aggressive Stats
+  "stab_attack": 0,
+  "slash_attack": 0,
+  "crush_attack": 0,
+  "magic_attack": 150,
+  "ranged_attack": 150,
+  //Defensive Stats
+  "stab_defence": 60,
+  "slash_defence": 20,
+  "crush_defence": 60,
+  "magic_defence": 80,
+  "ranged_defence": 80,
+  //Immunites
+  "poison_immunity": true,
+  "venom_immunity": true,
+  //Speeds
+  "attack_ticks": 6,
+  "death_ticks": 3,
+  "respawn_ticks": 50,
+  //Animations
+  "spawn_animation": 8221,
+  "attack_animation": 8223,
+  "defend_animation": -1,
+  "death_animation": 8225
+  }
+]
