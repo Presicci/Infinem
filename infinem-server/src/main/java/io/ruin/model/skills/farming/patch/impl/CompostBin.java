@@ -7,11 +7,13 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
+import io.ruin.model.skills.farming.BottomlessCompostBucket;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.farming.patch.PatchData;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class CompostBin extends Patch {
 
@@ -75,7 +77,7 @@ public class CompostBin extends Patch {
                     }
                 });
             } else {
-                if (!player.getInventory().contains(BUCKET)) {
+                if (!player.getInventory().contains(BUCKET) && !player.getInventory().contains(22997) && !player.getInventory().contains(22994)) {
                     player.sendMessage("You need a bucket to fetch the compost.");
                     return;
                 }
@@ -96,10 +98,30 @@ public class CompostBin extends Patch {
                         reset(false);
                         update();
                         player.sendMessage("The compost bin is now empty.");
+                    } else {
+                        List<Item> buckets = player.getInventory().collectItems(22997, 22994);
+                        if (buckets != null && buckets.size() > 0) {
+                            int amountAdded = BottomlessCompostBucket.fillFromBin(player, buckets.get(0), getProduceCount(), currentType);
+                            if (amountAdded > 0) {
+                                removeProduce(amountAdded);
+                                player.sendMessage("You add " + amountAdded * 2 + " buckets of " + (currentType == 0 ? "compost" : currentType == 1 ? "supercompost" : "ultracompost")
+                                        + " to your Bottomless compost bucket.");
+                                if (getProduceCount() == 0) {
+                                    reset(false);
+                                    update();
+                                    player.sendMessage("The compost bin is now empty.");
+                                }
+                            }
+                        }
                     }
                 });
             }
         }
+    }
+
+    @Override
+    public boolean isFullyGrown() {
+        return stage == 2;
     }
 
     @Override
@@ -190,7 +212,7 @@ public class CompostBin extends Patch {
                 player.sendMessage("You turn the supercompost into ultracompost.");
                 return;
             }
-            if (item.getId() != BUCKET) {
+            if (item.getId() != BUCKET && item.getId() != 22997 && item.getId() != 22994) {
                 player.sendMessage("You'll need a bucket instead.");
                 return;
             }
@@ -215,6 +237,18 @@ public class CompostBin extends Patch {
                     reset(false);
                     update();
                     player.sendMessage("The compost bin is now empty.");
+                } else {
+                    int amountAdded = BottomlessCompostBucket.fillFromBin(player, item, getProduceCount(), currentType);
+                    if (amountAdded > 0) {
+                        removeProduce(amountAdded);
+                        player.sendMessage("You add " + amountAdded * 2 + " buckets of " + (currentType == 0 ? "compost" : currentType == 1 ? "supercompost" : "ultracompost")
+                                + " to your Bottomless compost bucket.");
+                        if (getProduceCount() == 0) {
+                            reset(false);
+                            update();
+                            player.sendMessage("The compost bin is now empty.");
+                        }
+                    }
                 }
             });
         }
@@ -305,6 +339,15 @@ public class CompostBin extends Patch {
     @Override
     public boolean removeProduce() {
         if (--produceCount <= 0) {
+            produceCount = 0;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean removeProduce(int amount) {
+        produceCount -= amount;
+        if (produceCount <= 0) {
             produceCount = 0;
             return true;
         }

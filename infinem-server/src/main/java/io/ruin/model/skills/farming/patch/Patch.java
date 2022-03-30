@@ -9,6 +9,7 @@ import io.ruin.model.inter.handlers.TabStats;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.skills.farming.BottomlessCompostBucket;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.TreeCrop;
 import io.ruin.model.skills.farming.crop.impl.AnimaCrop;
@@ -252,6 +253,9 @@ public abstract class Patch {
             compostType = 2;
         else if (item.getId() == 21483)
             compostType = 3;
+        else if (item.getId() == 22997) {
+            compostType = BottomlessCompostBucket.getType(item) + 1;
+        }
         else
             throw new IllegalArgumentException("Invalid compost");
 
@@ -265,12 +269,14 @@ public abstract class Patch {
         }
         setCompost(compostType);
         player.animate(2283);
-        if (!player.discardBuckets)
+        if (item.getId() == 22997)
+            BottomlessCompostBucket.removeCharge(player, item);
+        else if (!player.discardBuckets)
             item.setId(1925);
         else
             item.remove();
         player.getStats().addXp(StatType.Farming, 4, true);
-        player.sendMessage("You treat the patch with " + (compostType == 2 ? "super" : "") + " compost.");
+        player.sendMessage("You treat the patch with " + (compostType == 2 ? "super" : compostType == 3 ? "ultra" : "") + " compost.");
     }
 
     public void plant(Item item) {
@@ -324,7 +330,7 @@ public abstract class Patch {
             } else {
                 player.sendMessage("You can't plant that seed on this type of patch.");
             }
-        } else if (item.getId() == 6032 || item.getId() == 6034 || item.getId() == 21483) { // compost / supercompost / ultracompost
+        } else if (item.getId() == 6032 || item.getId() == 6034 || item.getId() == 21483 || item.getId() == 22997) { // compost / supercompost / ultracompost / bottomless
             treat(item);
         } else if (item.getId() == 6036) { // plant cure
             if (isDead()) {
