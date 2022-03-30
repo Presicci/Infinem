@@ -450,4 +450,17 @@ public class Hit {
 
 	public boolean removed;
 
+	/**
+	 * Experience
+	 */
+
+	private boolean experience = true;
+
+	public void denyExperience() {
+		this.experience = false;
+	}
+
+	public boolean givesExperience() {
+		return experience;
+	}
 }
