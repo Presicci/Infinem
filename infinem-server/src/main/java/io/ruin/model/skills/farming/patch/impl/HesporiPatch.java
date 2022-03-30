@@ -96,6 +96,7 @@ public class HesporiPatch extends Patch {
                 loot.add(HesporiLoot.NORMAL_SEEDS.rollItem());
                 for (Item item : loot) {
                     player.getInventory().addOrDrop(item);
+                    player.getCollectionLog().collect(item);
                 }
                 if (Random.rollDie(5000)) {
                     Pet.TANGLEROOT.unlock(player);
