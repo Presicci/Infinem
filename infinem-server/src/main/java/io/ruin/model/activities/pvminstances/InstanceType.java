@@ -22,7 +22,7 @@ public enum InstanceType {
     OBOR("Obor", new Bounds(3072, 9792, 3107, 9817, 0), 0, 0, 60, new Position(3091, 9815, 0), new Position(3095, 9832, 0)),
     BRYOPHYTA("Bryophyta", new Bounds(3200, 9920, 3235, 9951, -1), 0, 0, 60, new Position(3214, 9937, 0), new Position(3174, 9900, 0)),
 
-
+    HESPORI("Hespori", new Bounds(1232, 10072, 1264, 10104, -1), 0, 0, 60, new Position(1243, 10081), new Position(1230, 3729)),
 
     BANDOS_GWD("General Graardor", new Bounds(2856, 5344, 2877, 5374, 2), 500_000, 3_000, 60, new Position(2864, 5354, 2), new Position(2862, 5354, 2)),
     ZAMORAK_GWD("K'ril Tsutsaroth", new Bounds(2912, 5312, 2944, 5336, 2), 500_000, 3_000, 60, new Position(2925, 5331, 2), new Position(2925, 5333, 2)),
@@ -43,7 +43,7 @@ public enum InstanceType {
         loadSpawns();
     }
 
-    public static final Set<InstanceType> timelessInstances = EnumSet.of(OBOR, BRYOPHYTA);
+    public static final Set<InstanceType> timelessInstances = EnumSet.of(OBOR, BRYOPHYTA, HESPORI);
 
     private void loadSpawns() {
         int baseX = bounds.swX;
