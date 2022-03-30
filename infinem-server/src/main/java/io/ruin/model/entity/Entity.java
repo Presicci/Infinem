@@ -3,6 +3,7 @@ package io.ruin.model.entity;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.cache.AnimDef;
+import io.ruin.cache.Color;
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.duelarena.DuelRule;
@@ -718,7 +719,7 @@ public abstract class Entity {
             if(baseHit.attacker.player != null && baseHit.attackStyle != null) {
                 if(player != null) //important that this happens here for things that hit multiple targets
                     baseHit.attacker.player.getCombat().skull(player);
-                if(baseHit.attackSpell == null)
+                if(baseHit.attackSpell == null && baseHit.givesExperience())
                     CombatUtils.addXp(baseHit.attacker.player, this, baseHit.attackStyle, baseHit.attackType, damage);
             }
             getCombat().updateLastDefend(baseHit.attacker);
@@ -918,6 +919,35 @@ public abstract class Entity {
     }
 
     /**
+     *
+     */
+    private TickDelay clickOffRoot = new TickDelay();
+
+    private int clicks = 0;
+
+    public void clickOffRoot(int ticks, boolean resetMovement) {
+        clickOffRoot.delay(ticks);
+        if(resetMovement)
+            getMovement().reset();
+    }
+
+    public void resetClickOffRoot(boolean success) {
+        if (player != null) {
+            if (success) {
+                player.sendMessage(Color.GREEN, "You manage to break free of the vines!");
+            } else {
+                player.sendMessage(Color.RED, "The vines explode!");
+            }
+        }
+        clicks = 0;
+        clickOffRoot.reset();
+    }
+
+    public boolean isClickOffRooted() {
+        return clickOffRoot.isDelayed();
+    }
+
+    /**
      * Movement check
      */
 
@@ -940,6 +970,17 @@ public abstract class Entity {
         if(isStunned() || isRooted()) {
             if(message && player != null)
                 player.sendMessage("You're stunned!");
+            return true;
+        }
+        if(isStunned() || isClickOffRooted()) {
+            if (clicks > 15) {
+                resetClickOffRoot(true);
+            } else {
+                ++clicks;
+                if (clicks % 3 == 0 && player != null) {
+                    player.sendMessage("You feel the vines loosen slightly as you try to move.");
+                }
+            }
             return true;
         }
 
