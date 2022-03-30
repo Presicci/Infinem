@@ -7,6 +7,7 @@ import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
@@ -204,10 +205,10 @@ public class ItemCombineAction {
                 Arrays.asList(new ItemPair(Items.FRIED_MUSHROOMS, Items.MUSHROOM_ONION), new ItemPair(Items.FRIED_ONIONS, -1))),
         TUNA_AND_CORN("You use the tuna on the sweetcorn to make tuna and corn.", Collections.singletonList(new SkillRequired(StatType.Cooking, 67, 0)),
                 Arrays.asList(new ItemPair(Items.CHOPPED_TUNA, Items.TUNA_AND_CORN), new ItemPair(Items.COOKED_SWEETCORN, -1))),
-
         RAW_FISHCAPE("You mix the items to form a raw fishcake.", Collections.singletonList(new SkillRequired(StatType.Cooking, 31, 0)),
                 Arrays.asList(new ItemPair(Items.BREADCRUMBS, Items.RAW_FISHCAKE), new ItemPair(Items.GROUND_COD, -1), new ItemPair(Items.GROUND_KELP, -1), new ItemPair(Items.GROUND_CRAB_MEAT, -1))),
-
+        WRAPPED_OOMLIE("You use the palm leaf on the raw oomlie to make wrapped oomlie.", Collections.singletonList(new SkillRequired(StatType.Cooking, 50, 10)),
+                Arrays.asList(new ItemPair(Items.RAW_OOMLIE, Items.WRAPPED_OOMLIE), new ItemPair(Items.PALM_LEAF, -1))),
         ;
 
         public int tickInterval, animation, graphics, inventorySpaceRequired;
