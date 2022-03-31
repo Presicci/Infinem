@@ -1,0 +1,78 @@
+{
+  "name": "Rommik's Crafty Supplies",
+  "currency": "COINS",
+  "npcs": [
+    6530
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 650,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1755,
+      "stock": 2,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1592,
+      "stock": 4,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1597,
+      "stock": 2,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1595,
+      "stock": 2,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    {
+      "itemId": 1733,
+      "stock": 3,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1734,
+      "stock": 100,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1599,
+      "stock": 3,
+      "buy_price": 3,
+      "sell_price": 5
+    },
+    {
+      "itemId": 2976,
+      "stock": 6,
+      "buy_price": 6,
+      "sell_price": 10
+    },
+    {
+      "itemId": 5523,
+      "stock": 10,
+      "buy_price": 65,
+      "sell_price": 100
+    },
+    {
+      "itemId": 9434,
+      "stock": 10,
+      "buy_price": 16,
+      "sell_price": 25
+    },
+    {
+      "itemId": 11065,
+      "stock": 5,
+      "buy_price": 3,
+      "sell_price": 5
+    }
+  ]
+}
