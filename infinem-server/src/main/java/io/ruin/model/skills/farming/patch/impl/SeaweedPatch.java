@@ -26,7 +26,7 @@ public class SeaweedPatch extends Patch {
         if (isDead())
             return getStage() + 13;
         if (isFullyGrown())
-            return getPlantedCrop().getContainerIndex() + getStage() + (3 - getProduceCount());
+            return getPlantedCrop().getContainerIndex() + getStage() + Math.min(3, 3 - getProduceCount());
         return getPlantedCrop().getContainerIndex() + getStage();
     }
 
@@ -53,6 +53,9 @@ public class SeaweedPatch extends Patch {
                 removeProduce();
                 update();
                 if (getProduceCount() == 0) {
+                    rollPet();
+                    player.sendMessage("You've harvested the patch completely.");
+                    SeaweedPatch.this.reset(false);
                     return;
                 }
                 event.delay(2);
