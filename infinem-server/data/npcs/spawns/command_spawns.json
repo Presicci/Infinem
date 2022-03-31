@@ -528,5 +528,23 @@
 		"z": 1,
 		"direction": "S",
 		"walkRange": 3
+	},
+	{
+		"name": "Mernia",
+		"id": 7758,
+		"x": 3735,
+		"y": 10270,
+		"z": 1,
+		"direction": "W",
+		"walkRange": 0
+	},
+	{
+		"name": "Tool Leprechaun",
+		"id": 7757,
+		"x": 3732,
+		"y": 10270,
+		"z": 1,
+		"direction": "S",
+		"walkRange": 0
 	}
 ]
