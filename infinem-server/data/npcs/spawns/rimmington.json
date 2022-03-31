@@ -2,11 +2,11 @@
   //11826
   {
     "id": 1614,
-    "x": 2947,
-    "y": 3214,
+    "x": 2950,
+    "y": 3213,
     "z": 0,
-    "direction": "S",
-    "walkRange": 1,
+    "direction": "W",
+    "walkRange": 0,
     "world": "ECO",
     "npcName": "Phials"
   },
