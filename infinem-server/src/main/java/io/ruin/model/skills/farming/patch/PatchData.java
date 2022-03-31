@@ -109,7 +109,20 @@ public enum PatchData {
     PORT_SARIM_SPIRIT_TREE(8338, "saplings", Config.FARMING_PATCH_1, 7),
     ETCETERIA_SPIRIT_TREE(8382, "saplings", Config.FARMING_PATCH_2, 7),
     ZEAH_SPIRIT_TREE(27116, "saplings", Config.FARMING_PATCH_7904, 7),
-    FARMING_GUILD_SPIRIT_TREE(33733, "saplings", Config.FARMING_PATCH_1, 7);
+    FARMING_GUILD_SPIRIT_TREE(33733, "saplings", Config.FARMING_PATCH_1, 7),
+
+    VINERY_W1(11816, Config.VINERY_PATCH_7, 7),
+    VINERY_W2(11817, Config.VINERY_PATCH_8, 7),
+    VINERY_W3(11947, Config.VINERY_PATCH_9, 7),
+    VINERY_W4(12598, Config.VINERY_PATCH_10, 7),
+    VINERY_W5(12599, Config.VINERY_PATCH_11, 7),
+    VINERY_W6(12600, Config.VINERY_PATCH_12, 7),
+    VINERY_E1(11810, Config.VINERY_PATCH_1, 7),
+    VINERY_E2(11811, Config.VINERY_PATCH_2, 7),
+    VINERY_E3(11812, Config.VINERY_PATCH_3, 7),
+    VINERY_E4(11813, Config.VINERY_PATCH_4, 7),
+    VINERY_E5(11814, Config.VINERY_PATCH_5, 7),
+    VINERY_E6(11815, Config.VINERY_PATCH_6, 7);
 
     PatchData(int objectId, Config config, int guideChildId) {
         this.objectId = objectId;

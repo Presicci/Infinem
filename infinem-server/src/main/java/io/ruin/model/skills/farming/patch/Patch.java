@@ -29,7 +29,7 @@ public abstract class Patch {
 
     @Expose private boolean farmerProtected;
 
-    private Crop plantedCrop;
+    protected Crop plantedCrop;
     @Expose private int plantedSeed = -1;
 
     protected PatchData data;
@@ -544,10 +544,12 @@ public abstract class Patch {
     protected void inspect() {
         String msg = "";
         msg += "This is " + getPatchName() + " patch. ";
-        if (getCompost() == 0) {
+        if ((this instanceof VinePatch) && ((VinePatch) this).saltpetre) {
+            msg += "The soil has been treated with saltpetre. ";
+        } else if (getCompost() == 0) {
             msg += "The soil has not been treated. ";
         } else {
-            msg += "The soil has been trated with ";
+            msg += "The soil has been treated with ";
             msg += getCompost() == 1 ? "compost" : (getCompost() == 3 ? "ultracompost" : "supercompost");
             msg +=  ". ";
         }

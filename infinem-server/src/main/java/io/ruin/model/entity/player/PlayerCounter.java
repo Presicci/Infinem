@@ -298,6 +298,7 @@ public enum PlayerCounter {
     GROWN_CELASTRUS_TREE((p, amt) -> p.grownCelastrusTree = amt, p -> p.grownCelastrusTree),
     GROWN_REDWOOD_TREE((p, amt) -> p.grownRedwoodTree = amt, p -> p.grownRedwoodTree),
     GROWN_CRYSTAL_TREE((p, amt) -> p.grownCrystalTree = amt, p -> p.grownCrystalTree),
+    GROWN_GRAPE_VINES((p, amt) -> p.grownGrapeVines = amt, p -> p.grownGrapeVines),
 
     FARMING_CONTRACTS_COMPLETED((p, amt) -> p.farmingContractsCompleted = amt, p -> p.farmingContractsCompleted),
 

@@ -43,6 +43,8 @@ public class Farming {
     @Expose private BelladonnaPatch belladonnaPatch;
     @Expose private CrystalTreePatch crystalTreePatch;
     @Expose private HesporiPatch hesporiPatch;
+    @Expose private VinePatch vinePatchE1, vinePatchE2, vinePatchE3, vinePatchE4, vinePatchE5, vinePatchE6,
+            vinePatchW1, vinePatchW2, vinePatchW3, vinePatchW4, vinePatchW5, vinePatchW6;
 
     private PatchGroup visibleGroup;
 
@@ -196,6 +198,21 @@ public class Farming {
             hesporiPatch = new HesporiPatch();
         }
 
+        if (vinePatchE1 == null) {
+            vinePatchE1 = new VinePatch();
+            vinePatchE2 = new VinePatch();
+            vinePatchE3 = new VinePatch();
+            vinePatchE4 = new VinePatch();
+            vinePatchE5 = new VinePatch();
+            vinePatchE6 = new VinePatch();
+            vinePatchW1 = new VinePatch();
+            vinePatchW2 = new VinePatch();
+            vinePatchW3 = new VinePatch();
+            vinePatchW4 = new VinePatch();
+            vinePatchW5 = new VinePatch();
+            vinePatchW6 = new VinePatch();
+        }
+
         addPatch(faladorCompostBin.set(PatchData.FALADOR_COMPOST_BIN).setPlayer(player));
         addPatch(catherbyCompostBin.set(PatchData.CATHERBY_COMPOST_BIN).setPlayer(player));
         addPatch(canifisCompostBin.set(PatchData.CANIFIS_COMPOST_BIN).setPlayer(player));
@@ -292,6 +309,19 @@ public class Farming {
         addPatch(harmonyHerb.set(PatchData.HARMONY_HERB).setPlayer(player));
 
         addPatch(weissHerb.set(PatchData.WEISS_HERB).setPlayer(player));
+
+        addPatch(vinePatchE1.set(PatchData.VINERY_E1).setPlayer(player));
+        addPatch(vinePatchE2.set(PatchData.VINERY_E2).setPlayer(player));
+        addPatch(vinePatchE3.set(PatchData.VINERY_E3).setPlayer(player));
+        addPatch(vinePatchE4.set(PatchData.VINERY_E4).setPlayer(player));
+        addPatch(vinePatchE5.set(PatchData.VINERY_E5).setPlayer(player));
+        addPatch(vinePatchE6.set(PatchData.VINERY_E6).setPlayer(player));
+        addPatch(vinePatchW1.set(PatchData.VINERY_W1).setPlayer(player));
+        addPatch(vinePatchW2.set(PatchData.VINERY_W2).setPlayer(player));
+        addPatch(vinePatchW3.set(PatchData.VINERY_W3).setPlayer(player));
+        addPatch(vinePatchW4.set(PatchData.VINERY_W4).setPlayer(player));
+        addPatch(vinePatchW5.set(PatchData.VINERY_W5).setPlayer(player));
+        addPatch(vinePatchW6.set(PatchData.VINERY_W6).setPlayer(player));
 
         patches.forEach((id, patch) -> patch.onLoad()); // force ticks
         refresh();
@@ -433,6 +463,7 @@ public class Farming {
         Collections.addAll(CROPS, BelladonnaCrop.values());
         Collections.addAll(CROPS, CrystalTreeCrop.values());
         Collections.addAll(CROPS, HesporiCrop.INSTANCE);
+        Collections.addAll(CROPS, VineCrop.INSTANCE);
         ItemDef.cached.values().stream().filter(Objects::nonNull).forEach(def -> {
             def.produceOf = getCropForProduce(def.id);
             def.seedType = getCropForSeed(def.id);

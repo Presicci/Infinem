@@ -438,6 +438,8 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public int grownCrystalTree;
 
+    @Expose public int grownGrapeVines;
+
     @Expose public int farmingContractsCompleted;
 
     /**

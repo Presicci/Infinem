@@ -79,7 +79,10 @@ public enum PatchGroup {
     PRIFDDINAS_CRYSTAL_TREE(new Bounds(new Position(3293, 6118), 25),
             Collections.singletonList(PatchData.PRIF_CRYSTAL_TREE)),
     PRIFDDINAS(new Bounds(new Position(3292, 6101), 25),
-            Arrays.asList(PatchData.PRIF_NORTH, PatchData.PRIF_SOUTH, PatchData.PRIF_FLOWER, PatchData.PRIF_COMPOST_BIN));
+            Arrays.asList(PatchData.PRIF_NORTH, PatchData.PRIF_SOUTH, PatchData.PRIF_FLOWER, PatchData.PRIF_COMPOST_BIN)),
+    GRAPEVINES(Bounds.fromRegion(7223),
+            Arrays.asList(PatchData.VINERY_E1, PatchData.VINERY_E2, PatchData.VINERY_E3, PatchData.VINERY_E4, PatchData.VINERY_E5, PatchData.VINERY_E6,
+                    PatchData.VINERY_W1, PatchData.VINERY_W2, PatchData.VINERY_W3, PatchData.VINERY_W4, PatchData.VINERY_W5, PatchData.VINERY_W6));
 
     private Bounds bounds;
     private List<PatchData> patches;
