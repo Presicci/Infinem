@@ -37,9 +37,9 @@ public class CureOther extends Spell {
                 player.animate(4411);
                 player.publicSound(2886);
                 player.getStats().addXp(StatType.Magic, 65, true);
-                event.delay(4);
+                event.delay(3);
                 entity.graphics(738, 95, 0);
-                entity.player.curePoison(0);
+                entity.curePoison(0);
                 entity.player.sendMessage(player.getName() + " has cured your poison.");
                 player.unlock();
             });
