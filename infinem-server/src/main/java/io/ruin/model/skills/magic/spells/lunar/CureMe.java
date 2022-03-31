@@ -28,7 +28,7 @@ public class CureMe extends Spell {
             player.startEvent(e -> {
                 player.lock();
                 player.animate(4411);
-                e.delay(1);
+                e.delay(2);
                 player.publicSound(2886);
                 player.graphics(748, 120, 0);
                 player.curePoison(0);
