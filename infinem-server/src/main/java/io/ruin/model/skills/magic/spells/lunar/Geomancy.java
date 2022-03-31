@@ -125,8 +125,7 @@ public class Geomancy extends Spell {
         }
     }
 
-    private static void openPatchInterface(Player player) {
-        player.openInterface(InterfaceType.MAIN, Interface.GEOMANCY);
+    private static void updateInterface(Player player) {
         for (GeomancyData data : GeomancyData.values()) {
             Map<Integer, Integer> items = EnumMap.get(1236).ints();
             PatchData pd = data.patchData;
@@ -191,6 +190,11 @@ public class Geomancy extends Spell {
         }
     }
 
+    private static void openPatchInterface(Player player) {
+        player.openInterface(InterfaceType.MAIN, Interface.GEOMANCY);
+        updateInterface(player);
+    }
+
     private static int getItemId(Patch patch) {
         int produceId = patch.getPlantedCrop() == null ? 0 : patch.getPlantedCrop().getProduceId();
         if (patch instanceof AnimaPatch) {
@@ -207,21 +211,17 @@ public class Geomancy extends Spell {
     }
 
     Item[] runes = {
-            Rune.LAW.toItem(0),
-            Rune.ASTRAL.toItem(0),
-            Rune.COSMIC.toItem(0)
+            Rune.EARTH.toItem(8),
+            Rune.ASTRAL.toItem(3),
+            Rune.NATURE.toItem(3)
     };
 
     public Geomancy() {
-        registerClick(1, 1, true, runes, (player, integer) -> {
+        registerClick(65, 60, true, runes, (player, integer) -> {
+            player.graphics(724);
+            player.animate(4412);
             openPatchInterface(player);
-            return false;
+            return true;
         });
-    }
-
-    static {
-        //InterfaceHandler.register(Interface.MONSTER_EXAMINE, h -> {
-        //    h.actions[5] = (SimpleAction) MonsterExamine::overview;
-        //});
     }
 }
