@@ -1,5 +1,6 @@
 package io.ruin.model.skills.farming.patch.impl;
 
+import io.ruin.api.utils.Random;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.SeaweedCrop;
@@ -60,6 +61,26 @@ public class SeaweedPatch extends Patch {
     }
 
     @Override
+    public boolean removeProduce() {
+        if (hasGrowingAttas() && Random.get() < 0.05) {
+            player.sendFilteredMessage("<col=076900>Your Attas plant allow you to efficiently harvest the crop!");
+            return false;
+        }
+        /*
+         * The chance to not consume a life upon harvest is 64.1% at level 23 and 82% at level 99, using linear interpolation for other levels.
+         */
+        double initialSaveChance = 64.1;
+        int saveChance = (int) (initialSaveChance + (0.236 * (player.getStats().get(StatType.Farming).currentLevel - 23)));
+        if (Random.rollPercent(saveChance))
+            return false;
+        if (--produceCount <= 0) {
+            produceCount = 0;
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public boolean canPlant(Crop crop) {
         return crop instanceof SeaweedCrop;
     }
@@ -71,7 +92,16 @@ public class SeaweedPatch extends Patch {
 
     @Override
     public int calculateProduceAmount() {
-        return 3;
+        switch (getCompost()) {
+            case 3:
+                return 6;
+            case 2:
+                return 5;
+            case 1:
+                return 4;
+            default:
+                return 3;
+        }
     }
 
     @Override
