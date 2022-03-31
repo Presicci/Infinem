@@ -45,6 +45,7 @@ public class Farming {
     @Expose private HesporiPatch hesporiPatch;
     @Expose private VinePatch vinePatchE1, vinePatchE2, vinePatchE3, vinePatchE4, vinePatchE5, vinePatchE6,
             vinePatchW1, vinePatchW2, vinePatchW3, vinePatchW4, vinePatchW5, vinePatchW6;
+    @Expose private SeaweedPatch seaweedPatch1, seaweedPatch2;
 
     private PatchGroup visibleGroup;
 
@@ -213,6 +214,11 @@ public class Farming {
             vinePatchW6 = new VinePatch();
         }
 
+        if (seaweedPatch1 == null) {
+            seaweedPatch1 = new SeaweedPatch();
+            seaweedPatch2 = new SeaweedPatch();
+        }
+
         addPatch(faladorCompostBin.set(PatchData.FALADOR_COMPOST_BIN).setPlayer(player));
         addPatch(catherbyCompostBin.set(PatchData.CATHERBY_COMPOST_BIN).setPlayer(player));
         addPatch(canifisCompostBin.set(PatchData.CANIFIS_COMPOST_BIN).setPlayer(player));
@@ -322,6 +328,9 @@ public class Farming {
         addPatch(vinePatchW4.set(PatchData.VINERY_W4).setPlayer(player));
         addPatch(vinePatchW5.set(PatchData.VINERY_W5).setPlayer(player));
         addPatch(vinePatchW6.set(PatchData.VINERY_W6).setPlayer(player));
+
+        addPatch(seaweedPatch1.set(PatchData.SEAWEED_PATCH1).setPlayer(player));
+        addPatch(seaweedPatch2.set(PatchData.SEAWEED_PATCH2).setPlayer(player));
 
         patches.forEach((id, patch) -> patch.onLoad()); // force ticks
         refresh();
@@ -464,6 +473,7 @@ public class Farming {
         Collections.addAll(CROPS, CrystalTreeCrop.values());
         Collections.addAll(CROPS, HesporiCrop.INSTANCE);
         Collections.addAll(CROPS, VineCrop.INSTANCE);
+        Collections.addAll(CROPS, SeaweedCrop.INSTANCE);
         ItemDef.cached.values().stream().filter(Objects::nonNull).forEach(def -> {
             def.produceOf = getCropForProduce(def.id);
             def.seedType = getCropForSeed(def.id);
