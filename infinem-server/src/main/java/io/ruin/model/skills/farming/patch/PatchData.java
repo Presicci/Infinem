@@ -124,8 +124,9 @@ public enum PatchData {
     VINERY_E5(11814, Config.VINERY_PATCH_5, 7),
     VINERY_E6(11815, Config.VINERY_PATCH_6, 7),
 
-    SEAWEED_PATCH1(30501, Config.FARMING_PATCH_2, 7),
-    SEAWEED_PATCH2(30500, Config.FARMING_PATCH_1, 7);
+    SEAWEED_PATCH1(30500, Config.FARMING_PATCH_1, 7),
+    SEAWEED_PATCH2(30501, Config.FARMING_PATCH_2, 7);
+
 
     PatchData(int objectId, Config config, int guideChildId) {
         this.objectId = objectId;
