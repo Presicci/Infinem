@@ -6,6 +6,7 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.item.actions.impl.skillcapes.CookingSkillCape;
 import io.ruin.model.item.containers.Equipment;
@@ -56,7 +57,12 @@ public class Cooking {
 
                 player.animate(anim);
                 if (cookedFood(player, food, fire)) {
-                    rawFood.setId(food.cookedID);
+                    if (food == Food.GIANT_SEAWEED) {
+                        rawFood.remove();
+                        player.getInventory().addOrDrop(Items.SODA_ASH, 6);
+                    } else {
+                        rawFood.setId(food.cookedID);
+                    }
                     player.getStats().addXp(StatType.Cooking, food.experience * bonus(player, fire), true);
                     player.sendFilteredMessage(cookingMessage(food));
                     PlayerCounter.COOKED_FOOD.increment(player, 1);
@@ -64,7 +70,9 @@ public class Cooking {
                     // player.getTaskHandler().checkTaskProgress(0, 5, 11);
                 } else {
                     rawFood.setId(food.burntID);
-                    player.sendFilteredMessage("You accidentally burn the " + food.itemName + ".");
+                    if (food.burntID != food.cookedID) {
+                        player.sendFilteredMessage("You accidentally burn the " + food.itemName + ".");
+                    }
                     PlayerCounter.BURNT_FOOD.increment(player, 1);
                 }
 
@@ -89,7 +97,7 @@ public class Cooking {
             return "You successfully bake a tasty meat pie.";
         else if (food == Food.REDBERRY_PIE)
             return "You successfully bake a delicious redberry pie.";
-        else if (food == Food.SEAWEED)
+        else if (food == Food.SEAWEED || food == Food.GIANT_SEAWEED)
             return "You burn the seaweed to soda ash.";
         else
             return "You successfully cook " + food.descriptiveName + ".";
