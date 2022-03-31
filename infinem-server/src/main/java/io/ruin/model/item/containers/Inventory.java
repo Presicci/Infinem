@@ -20,10 +20,12 @@ public class Inventory extends ItemContainer {
     }
 
     public void addOrDrop(int id, int amount, Map<String, String> attributes) {
-        if(add(id, amount) > 0) {
+        int amountAdded = add(id, amount);
+        if(amountAdded >= amount) {
             /* added normally */
             return;
         }
+        amount -= amountAdded;
         if(player.isAdmin()) {
             player.sendMessage("Not enough space to spawn item (" + id + ", " + amount + ")");
 //            return;
