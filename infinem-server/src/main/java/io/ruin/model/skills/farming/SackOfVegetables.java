@@ -128,7 +128,7 @@ public class SackOfVegetables {
     }
 
     private static boolean isFull(Item item, Sacks sack) {
-        return item.getId() == sack.sackId + 8;
+        return item.getId() == sack.sackId + 18;
     }
 
     private static int getContainedAmount(Item item, Sacks sack) {
