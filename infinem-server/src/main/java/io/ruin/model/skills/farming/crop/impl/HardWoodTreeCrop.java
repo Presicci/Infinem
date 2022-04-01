@@ -3,6 +3,7 @@ package io.ruin.model.skills.farming.crop.impl;
 import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.skills.farming.crop.TreeCrop;
 import io.ruin.model.skills.woodcutting.Tree;
 import lombok.AllArgsConstructor;
@@ -13,8 +14,8 @@ import lombok.AllArgsConstructor;
  */
 @AllArgsConstructor
 public enum HardWoodTreeCrop implements TreeCrop {
-    TEAK(21486, 21477, 21469, 21473, Tree.TEAK, 35, 35, 7290, 7, TimeUtils.getMinutesToMillis(640), new Item(995,  4000), 8, PlayerCounter.GROWN_TEAK),
-    MAHOGANY(21488, 21480, 21471, 21475, Tree.MAHOGANY, 55, 68, 15720, 8, TimeUtils.getMinutesToMillis(730), new Item(995,  8000), 30, PlayerCounter.GROWN_MAHOGANY);
+    TEAK(21486, 21477, 21469, 21473, Tree.TEAK, 35, 35, 7290, 7, TimeUtils.getMinutesToMillis(640), new Item(Items.LIMPWURT_ROOT,  15), 8, PlayerCounter.GROWN_TEAK),
+    MAHOGANY(21488, 21480, 21471, 21475, Tree.MAHOGANY, 55, 68, 15720, 8, TimeUtils.getMinutesToMillis(730), new Item(Items.YANILLIAN_HOPS,  25), 30, PlayerCounter.GROWN_MAHOGANY);
 
     private final int seedId, sapling, seedling, wateredSeedling;
     private final Tree treeType;
