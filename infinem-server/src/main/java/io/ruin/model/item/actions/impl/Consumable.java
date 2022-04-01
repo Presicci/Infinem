@@ -27,15 +27,9 @@ public class Consumable {
     static {
         registerEat(24785, 5, p -> p.sendFilteredMessage("It heals some health, and tastes concerningly nice."));
         registerEat(Items.CHOPPED_ONION, 1, p -> p.sendFilteredMessage("It's sad to see a grown " + (p.getAppearance().isMale() ? "man" : "woman") + " cry."));
+        registerEat(1957, 1, p -> p.sendFilteredMessage("It's sad to see a grown " + (p.getAppearance().isMale() ? "man" : "woman") + " cry."));
         registerEat(1942, 1, p -> p.sendFilteredMessage("You eat the potato. Yuck!"));
         registerEat(1965, 1, p -> p.sendFilteredMessage("You eat the cabbage. Yuck!"));
-        registerEat(1957, 1, p -> {
-            if (p.getAppearance().isMale()) {
-                p.sendFilteredMessage("It's always sad to see a grown man cry.");
-            } else {
-                p.sendFilteredMessage("It's always sad to see a grown woman cry.");
-            }
-        });
         registerEat(10476, 1, 1, true, p -> p.getMovement().restoreEnergy(10));
         registerEat(1963, 2, "banana");
         registerEat(2162, 2, "king worm");
