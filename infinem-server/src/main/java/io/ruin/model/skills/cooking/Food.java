@@ -75,9 +75,10 @@ public enum Food {
     SEAWEED(1, 0.0, 401, 1781, 1781, "soda ash", "", 3, 1, 1, 1),
     GIANT_SEAWEED(1, 0.0, 21504, 1781, 1781, "soda ash", "", 3, 51, 51, 51),
     BAKED_POTATO(7, 15.0, Items.POTATO, Items.BAKED_POTATO, Items.BURNT_POTATO, "a potato", "", 3, 41, 41, 37),
-    SCRAMBLED_EGG(13, 50, Items.UNCOOKED_EGG, Items.SCRAMBLED_EGG, Items.BURNT_EGG, "scrambled egg", "", 3, 48, 48, 43),
-    FRIED_MUSHROOMS(46, 60, Items.SLICED_MUSHROOMS, Items.FRIED_MUSHROOMS, Items.BURNT_MUSHROOM, "fried mushrooms", "", 3, 90, 90, 86),
-    FRIED_ONIONS(42, 60, Items.CHOPPED_ONION, Items.FRIED_ONIONS, Items.BURNT_ONION, "fried onions", "", 3, 77, 77, 72),
+    SCRAMBLED_EGG(13, 50, Items.UNCOOKED_EGG, Items.SCRAMBLED_EGG, Items.BURNT_EGG, "a scrambled egg", "", 3, 48, 48, 43),
+    FRIED_MUSHROOMS(46, 60, Items.SLICED_MUSHROOMS, Items.FRIED_MUSHROOMS, Items.BURNT_MUSHROOM, "the fried mushrooms", "", 3, 90, 90, 86),
+    FRIED_ONIONS(42, 60, Items.CHOPPED_ONION, Items.FRIED_ONIONS, Items.BURNT_ONION, "the fried onions", "", 3, 77, 77, 72),
+    BARLEY_MALT(1, 0.0, Items.BARLEY, Items.BARLEY_MALT, Items.BARLEY_MALT, "the barley malt", "", 3, 1, 1, 1),
 
     //Raids fish
     PYSK(1, 10, 20855, 20856, 20854, "a pysk", "pysk", 3, 31, 31, 31),
