@@ -1,5 +1,6 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
+import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.map.Direction;
@@ -31,5 +32,8 @@ public class DorgeshKaanMine {
         // Squeeze through hole
         ObjectAction.register(6898, 1, ((player, obj) -> squeezeThrough(player, Direction.EAST)));
         ObjectAction.register(6899, 1, ((player, obj) -> squeezeThrough(player, Direction.WEST)));
+        // Dorgesh-Kaan entrance
+        ObjectAction.register(6919, "open", ((player, obj) -> Traveling.fadeTravel(player, new Position(2747, 5374))));
+        ObjectAction.register(22945, "open", ((player, obj) -> Traveling.fadeTravel(player, new Position(3318, 9602))));
     }
 }
