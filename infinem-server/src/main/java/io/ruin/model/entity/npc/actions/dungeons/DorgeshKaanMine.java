@@ -16,7 +16,8 @@ import io.ruin.model.map.Position;
 public class DorgeshKaanMine {
 
     private static final int MISTAG = 7298, KAZGAR = 7300, IRON_ORE = Items.IRON_ORE, SILVER_ORE = Items.SILVER_ORE;
-
+    private static final int[] ACTIVE_MINERS = { 5336, 5337, 5338, 5339 };
+    private static final int[] PASSIVE_MINERS = { 5330, 5331, 5332, 5333, 5334, 5335 };
 
     private static void sellOre(Player player, NPC npc, int itemId) {
         int amount = player.getInventory().getAmount(itemId);
@@ -47,6 +48,13 @@ public class DorgeshKaanMine {
         );
     }
 
+    private static void minerDialogue(Player player, NPC npc) {
+        player.dialogue(
+                new NPCDialogue(npc.getId(), "Won't you help us mine, adventurer? Master Mistag requires more and more of us each day. " +
+                        "We don't even produce anything at our forge!")
+        );
+    }
+
     static {
         // Mistag travel
         NPCAction.register(MISTAG, "follow", (player, npc) -> Traveling.fadeTravel(player, new Position(3229, 9610)));
@@ -54,5 +62,16 @@ public class DorgeshKaanMine {
         NPCAction.register(MISTAG, "talk-to", DorgeshKaanMine::mistagDialogue);
         // Kazgar travel
         NPCAction.register(KAZGAR, "follow", (player, npc) -> Traveling.fadeTravel(player, new Position(3312, 9612)));
+        // Miners
+        for (int id : PASSIVE_MINERS) {
+            NPCAction.register(id, "talk-to", DorgeshKaanMine::minerDialogue);
+        }
+        for (int id : ACTIVE_MINERS) {
+            NPCAction.register(id, "talk-to", (player, npc) -> {
+                player.dialogue(
+                        new MessageDialogue("This goblin is too busy mining to pay any attention to you.")
+                );
+            });
+        }
     }
 }
