@@ -573,5 +573,113 @@
 		"z": 0,
 		"direction": "S",
 		"walkRange": 3
+	},
+	{
+		"name": "Cave goblin miner",
+		"id": 5339,
+		"x": 3313,
+		"y": 9622,
+		"z": 0,
+		"direction": "W",
+		"walkRange": 0
+	},
+	{
+		"name": "Cave goblin miner",
+		"id": 5338,
+		"x": 3323,
+		"y": 9616,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 0
+	},
+	{
+		"name": "Cave goblin miner",
+		"id": 5338,
+		"x": 3312,
+		"y": 9628,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 0
+	},
+	{
+		"name": "Cave goblin miner",
+		"id": 5337,
+		"x": 3312,
+		"y": 9638,
+		"z": 0,
+		"direction": "W",
+		"walkRange": 0
+	},
+	{
+		"name": "Cave goblin miner",
+		"id": 5330,
+		"x": 3318,
+		"y": 9632,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 3
+	},
+	{
+		"name": "Cave goblin miner",
+		"id": 5339,
+		"x": 3310,
+		"y": 9646,
+		"z": 0,
+		"direction": "W",
+		"walkRange": 0
+	},
+	{
+		"name": "Cave goblin miner",
+		"id": 5338,
+		"x": 3312,
+		"y": 9645,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 0
+	},
+	{
+		"name": "Cave goblin miner",
+		"id": 5337,
+		"x": 3311,
+		"y": 9651,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 0
+	},
+	{
+		"name": "Cave goblin miner",
+		"id": 5333,
+		"x": 3318,
+		"y": 9652,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 3
+	},
+	{
+		"name": "Cave goblin guard",
+		"id": 5334,
+		"x": 3323,
+		"y": 9643,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 3
+	},
+	{
+		"name": "Cave goblin guard",
+		"id": 5335,
+		"x": 3323,
+		"y": 9635,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 3
+	},
+	{
+		"name": "Cave goblin miner",
+		"id": 5331,
+		"x": 3324,
+		"y": 9623,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 3
 	}
 ]
