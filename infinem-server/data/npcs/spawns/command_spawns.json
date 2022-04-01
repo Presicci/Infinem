@@ -546,5 +546,23 @@
 		"z": 1,
 		"direction": "S",
 		"walkRange": 0
+	},
+	{
+		"name": "Nardok",
+		"id": 996,
+		"x": 3324,
+		"y": 9607,
+		"z": 0,
+		"direction": "W",
+		"walkRange": 0
+	},
+	{
+		"name": "Mistag",
+		"id": 7298,
+		"x": 3315,
+		"y": 9613,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 3
 	}
 ]
