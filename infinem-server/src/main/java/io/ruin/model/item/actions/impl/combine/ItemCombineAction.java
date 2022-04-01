@@ -201,6 +201,8 @@ public class ItemCombineAction {
                 Arrays.asList(new ItemPair(Items.SPICY_SAUCE, Items.CHILLI_CON_CARNE), new ItemPair(Items.MINCED_MEAT, -1))),
         EGG_AND_TOMATO("You use the tomato on the scrambled eggs to make egg and tomato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 23, 0)),
                 Arrays.asList(new ItemPair(Items.SCRAMBLED_EGG, Items.EGG_AND_TOMATO), new ItemPair(Items.TOMATO, -1))),
+        ONION_AND_TOMATO("You use the tomato on the chopped onion to make onion and tomato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 1, 0)),
+                Arrays.asList(new ItemPair(Items.CHOPPED_ONION, Items.ONION_TOMATO), new ItemPair(Items.TOMATO, -1))),
         MUSHROOM_AND_ONION("You use the mushroom on the onion to make mushroom and onion.", Collections.singletonList(new SkillRequired(StatType.Cooking, 57, 0)),
                 Arrays.asList(new ItemPair(Items.FRIED_MUSHROOMS, Items.MUSHROOM_ONION), new ItemPair(Items.FRIED_ONIONS, -1))),
         TUNA_AND_CORN("You use the tuna on the sweetcorn to make tuna and corn.", Collections.singletonList(new SkillRequired(StatType.Cooking, 67, 0)),
