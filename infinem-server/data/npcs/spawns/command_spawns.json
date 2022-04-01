@@ -564,5 +564,14 @@
 		"z": 0,
 		"direction": "S",
 		"walkRange": 3
+	},
+	{
+		"name": "Kazgar",
+		"id": 7300,
+		"x": 3233,
+		"y": 9609,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 3
 	}
 ]
