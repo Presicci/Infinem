@@ -49,10 +49,10 @@ public class DorgeshKaanMine {
 
     static {
         // Mistag travel
-        NPCAction.register(MISTAG, "travel", (player, npc) -> Traveling.fadeTravel(player, new Position(3229, 9610)));
+        NPCAction.register(MISTAG, "follow", (player, npc) -> Traveling.fadeTravel(player, new Position(3229, 9610)));
         // Mistag dialogue
         NPCAction.register(MISTAG, "talk-to", DorgeshKaanMine::mistagDialogue);
         // Kazgar travel
-        NPCAction.register(KAZGAR, "travel", (player, npc) -> Traveling.fadeTravel(player, new Position(3312, 9612)));
+        NPCAction.register(KAZGAR, "follow", (player, npc) -> Traveling.fadeTravel(player, new Position(3312, 9612)));
     }
 }
