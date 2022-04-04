@@ -4,6 +4,7 @@ import com.google.common.collect.Multimap;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.database.DatabaseUtils;
+import io.ruin.api.utils.StringUtils;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.MapArea;
 
@@ -63,13 +64,14 @@ public class TaskManager {
         this.completedCategories = new ArrayList<>();
     }
 
-    public void doLookupByCategory(TaskCategory category, boolean incremental) {
-        doLookupByCategory(category, "", 0, null, incremental);
+    public void doLookupByCategory(TaskCategory category, int amount, boolean incremental) {
+        doLookupByCategory(category, "", amount, null, incremental);
     }
 
     public void doLookupByCategory(TaskCategory category, String trigger, int amount, MapArea mapArea, boolean incremental) {
         //  No tasks left for this category, abort
         if (completedCategories.contains(category)) {
+            System.out.println("category complete");
             return;
         }
         Server.gameDb.execute(connection -> {
@@ -78,20 +80,23 @@ public class TaskManager {
             boolean foundNotCompletedTask = false;
             try {
                 statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ?");
-                statement.setString(1, category.toString().toUpperCase());
+                statement.setString(1, StringUtils.capitalizeFirst(category.toString().toLowerCase()));
                 rs = statement.executeQuery();
                 while (rs.next()) {
                     int uuid = rs.getInt("uuid");
                     if (completeTasks.contains(uuid)) {
+                        System.out.println("exit on uuid");
                         continue;
                     }
                     foundNotCompletedTask = true;
                     String trig = rs.getString("required_object");
-                    if (trig.length() < 1 || trigger.contains(trig)) {
+                    if (trig.trim().length() > 0 && !trigger.contains(trig)) {
+                        System.out.println("exit on obj");
                         continue;
                     }
                     String area = rs.getString("maparea");
-                    if (area != null && (mapArea == null || !area.equalsIgnoreCase(mapArea.toString()))) {
+                    if (area.trim().length() > 0 && (mapArea == null || !area.equalsIgnoreCase(mapArea.toString()))) {
+                        System.out.println("exit on map");
                         continue;
                     }
                     int requiredAmount = rs.getInt("required_amount");
@@ -108,6 +113,7 @@ public class TaskManager {
                             }
                         } else {
                             if (amount < requiredAmount) {
+                                System.out.println("exit on amt");
                                 break;
                             }
                         }
@@ -195,8 +201,6 @@ public class TaskManager {
                     }
                     String name = rs.getString("name");
                     if (finalDifficulty == null || finalTaskarea == null) {
-                        System.out.println("TASK ERROR! diff=" + difficulty + ", area=" + taskArea);
-
                         System.out.println("TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
                     } else {
                         TaskArea finalTaskarea1 = finalTaskarea;
@@ -211,5 +215,13 @@ public class TaskManager {
                 System.out.println(System.currentTimeMillis() - currentTime);
             }
         });
+    }
+
+    public void doLevelUpLookup(int level, boolean hitpoints) {
+        if (!hitpoints) {
+            doLookupByCategory(TaskCategory.FIRSTLEVEL, level, false);
+        }
+        doLookupByCategory(TaskCategory.BASELEVEL, player.getStats().getBaseLevel(), false);
+        doLookupByCategory(TaskCategory.TOTALLEVEL, player.getStats().totalLevel, false);
     }
 }
