@@ -2,6 +2,7 @@ package io.ruin.model.skills.mining;
 
 public enum Rock {
 
+    BLURITE(668, "blurite", 10, 50, 17.5, 25, 1000000, 1),
     COPPER(436, "copper", 1, 50, 17.5, 5, 741600, 1.0/8),
     TIN(438, "tin", 1, 50, 17.5, 5, 741600, 1.0/8),
     IRON(440, "iron", 15, 150, 25.0, 10, 741600, 1.0/4),

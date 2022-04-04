@@ -314,6 +314,7 @@ public class Mining {
     static {
         Object[][] oreData = {
                 //rock, baseId, emptyId
+                {Rock.BLURITE, 11378, 11390, PlayerCounter.MINED_COPPER},
                 {Rock.COPPER, 11161, 11390, PlayerCounter.MINED_COPPER},
                 {Rock.COPPER, 10943, 11391, PlayerCounter.MINED_COPPER},
                 {Rock.TIN, 11360, 11390, PlayerCounter.MINED_TIN},
