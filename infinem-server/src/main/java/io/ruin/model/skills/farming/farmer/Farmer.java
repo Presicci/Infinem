@@ -59,7 +59,9 @@ public enum Farmer {
     LATLINK_FASTBELL(8537, PatchData.FARMING_GUILD_SPIRIT_TREE),
     NIKKIE(8533, PatchData.FARMING_GUILD_FRUIT),
     ALEXANDRA(8536, PatchData.FARMING_GUILD_REDWOOD),
-    ALAN(8535, PatchData.FARMING_GUILD_NORTH, PatchData.FARMING_GUILD_SOUTH);
+    ALAN(8535, PatchData.FARMING_GUILD_NORTH, PatchData.FARMING_GUILD_SOUTH),
+
+    MERNIA(7758, PatchData.SEAWEED_PATCH1, PatchData.SEAWEED_PATCH2);
 
     Farmer(int npcId, PatchData patch1, PatchData patch2) {
         this.npcId = npcId;
