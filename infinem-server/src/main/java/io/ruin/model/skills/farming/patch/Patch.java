@@ -95,6 +95,7 @@ public abstract class Patch {
                         }
                         if (isRaked()) {
                             player.resetAnimation();
+                            player.getTaskManager().doLookupByUUID(13, 1);  // Rake a Farming Patch
                             return;
                         }
                     }
