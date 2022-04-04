@@ -1,6 +1,7 @@
 package io.ruin.model.content.tasksystem.tasks;
 
 import com.google.common.collect.Multimap;
+import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.database.DatabaseUtils;
 import io.ruin.model.entity.player.Player;
@@ -11,6 +12,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -18,39 +20,59 @@ import java.util.HashMap;
  */
 public class TaskManager {
 
-    TaskManager(Player player) {
+    public TaskManager(Player player) {
         this.player = player;
+        this.globalTaskPoints = 0;
+        this.taskPoints = new HashMap<>();
         for (TaskArea area : TaskArea.values()) {
             this.taskPoints.put(area, 0);
         }
-        this.globalTaskPoints = 0;
-        this.taskPoints = new HashMap<>();
         this.inProgressTasks = new HashMap<>();
+        this.completeTasks = new HashSet<>();
+        this.completedCategories = new ArrayList<>();
     }
 
-    private final Player player;
-    private int globalTaskPoints;
-    private HashMap<TaskArea, Integer> taskPoints;
-    private HashMap<Integer, Integer> inProgressTasks;
-    private Multimap<TaskCategory, Integer> completeTasks;
-    private ArrayList<TaskCategory> completedCategories;
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 
-    private void completeTask(String taskName, int uuid, TaskCategory taskCategory, TaskArea taskArea, TaskDifficulty taskDifficulty) {
+    private Player player;
+    @Expose private int globalTaskPoints;
+    @Expose private HashMap<TaskArea, Integer> taskPoints;
+    @Expose private HashMap<Integer, Integer> inProgressTasks;
+    @Expose private HashSet<Integer> completeTasks;
+    @Expose private ArrayList<TaskCategory> completedCategories;
+
+    private void completeTask(String taskName, int uuid, TaskArea taskArea, TaskDifficulty taskDifficulty) {
         int pointGain = taskDifficulty.getPoints();
         taskPoints.put(taskArea, taskPoints.get(taskArea) + pointGain);
         globalTaskPoints += pointGain;
-        player.sendMessage("<990000>You've completed a task: " + taskName + "!");
+        player.sendMessage("<col=990000>You've completed a task: " + taskName + "!");
         player.sendMessage("You now have " + globalTaskPoints + " task points.");
-        completeTasks.put(taskCategory, uuid);
+        completeTasks.add(uuid);
     }
 
-    public void doLookupByCategory(TaskCategory category, int trigger, int amount, MapArea mapArea) {
+    public void resetTasks() {
+        this.globalTaskPoints = 0;
+        this.taskPoints = new HashMap<>();
+        for (TaskArea area : TaskArea.values()) {
+            this.taskPoints.put(area, 0);
+        }
+        this.inProgressTasks = new HashMap<>();
+        this.completeTasks = new HashSet<>();
+        this.completedCategories = new ArrayList<>();
+    }
+
+    public void doLookupByCategory(TaskCategory category, boolean incremental) {
+        doLookupByCategory(category, "", 0, null, incremental);
+    }
+
+    public void doLookupByCategory(TaskCategory category, String trigger, int amount, MapArea mapArea, boolean incremental) {
         //  No tasks left for this category, abort
         if (completedCategories.contains(category)) {
             return;
         }
         Server.gameDb.execute(connection -> {
-
             PreparedStatement statement = null;
             ResultSet rs = null;
             boolean foundNotCompletedTask = false;
@@ -58,22 +80,92 @@ public class TaskManager {
                 statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ?");
                 statement.setString(1, category.toString().toUpperCase());
                 rs = statement.executeQuery();
-                Collection<Integer> ignoredTasks = completeTasks.get(category);
                 while (rs.next()) {
                     int uuid = rs.getInt("uuid");
-                    if (ignoredTasks.contains(uuid)) {
+                    if (completeTasks.contains(uuid)) {
                         continue;
                     }
                     foundNotCompletedTask = true;
-                    int trig = rs.getInt("trigger");
-                    if (trig > 0 && trig != trigger) {
+                    String trig = rs.getString("required_object");
+                    if (trig.length() < 1 || trigger.contains(trig)) {
                         continue;
                     }
                     String area = rs.getString("maparea");
-                    if (area != null && !area.equalsIgnoreCase(mapArea.toString())) {
+                    if (area != null && (mapArea == null || !area.equalsIgnoreCase(mapArea.toString()))) {
                         continue;
                     }
-                    int requiredAmount = rs.getInt("amount");
+                    int requiredAmount = rs.getInt("required_amount");
+                    int currentAmount = inProgressTasks.get(uuid) == null ? 0 : inProgressTasks.get(uuid);
+                    if (requiredAmount > 1) {
+                        if (incremental) {
+                            currentAmount += amount;
+                            if (currentAmount < requiredAmount) {
+                                inProgressTasks.put(uuid, currentAmount);
+                                System.out.println("Task #" + uuid + " progress: " + currentAmount + "/" + requiredAmount);
+                                break;
+                            } else {
+                                inProgressTasks.remove(uuid);
+                            }
+                        } else {
+                            if (amount < requiredAmount) {
+                                break;
+                            }
+                        }
+                    }
+                    String name = rs.getString("name");
+                    String taskArea = rs.getString("region").toLowerCase();
+                    TaskArea finalTaskarea = null;
+                    for (TaskArea ta : TaskArea.values()) {
+                        if (taskArea.trim().equalsIgnoreCase(ta.toString().toLowerCase())) {
+                            finalTaskarea = ta;
+                            break;
+                        }
+                    }
+                    String difficulty = rs.getString("difficulty").toLowerCase();
+                    TaskDifficulty finalDifficulty = null;
+                    for (TaskDifficulty diff : TaskDifficulty.values()) {
+                        if (difficulty.equalsIgnoreCase(diff.toString().toLowerCase())) {
+                            finalDifficulty = diff;
+                            break;
+                        }
+                    }
+                    if (finalDifficulty == null || finalTaskarea == null) {
+                        System.out.println("TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
+                        break;
+                    } else {
+                        TaskArea finalTaskarea1 = finalTaskarea;
+                        TaskDifficulty finalDifficulty1 = finalDifficulty;
+                        player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
+                            completeTask(name, uuid, finalTaskarea1, finalDifficulty1);
+                        });
+                        break;
+                    }
+                }
+                if (!foundNotCompletedTask) {
+                    completedCategories.add(category);
+                }
+            } finally {
+                DatabaseUtils.close(statement, rs);
+            }
+        });
+    }
+
+    public void doLookupByUUID(int uuid, int amount) {
+        //  Task already completed, abort
+        if (completeTasks.contains(uuid)) {
+            return;
+        }
+        long currentTime = System.currentTimeMillis();
+        Server.gameDb.execute(connection -> {
+
+            PreparedStatement statement = null;
+            ResultSet rs = null;
+            try {
+                statement = connection.prepareStatement("SELECT * FROM task_list WHERE uuid = ?");
+                statement.setInt(1, uuid);
+                rs = statement.executeQuery();
+                while (rs.next()) {
+                    int requiredAmount = rs.getInt("required_amount");
                     int currentAmount = inProgressTasks.get(uuid) == null ? 0 : inProgressTasks.get(uuid);
                     if (requiredAmount > 1) {
                         currentAmount += amount;
@@ -85,16 +177,15 @@ public class TaskManager {
                             inProgressTasks.remove(uuid);
                         }
                     }
-                    String name = rs.getString("name");
-                    String taskArea = rs.getString("area");
+                    String taskArea = rs.getString("region");
                     TaskArea finalTaskarea = null;
                     for (TaskArea ta : TaskArea.values()) {
-                        if (taskArea.equalsIgnoreCase(ta.toString())) {
+                        if (taskArea.trim().equalsIgnoreCase(ta.toString())) {
                             finalTaskarea = ta;
                             break;
                         }
                     }
-                    String difficulty = rs.getString("area");
+                    String difficulty = rs.getString("difficulty");
                     TaskDifficulty finalDifficulty = null;
                     for (TaskDifficulty diff : TaskDifficulty.values()) {
                         if (difficulty.equalsIgnoreCase(diff.toString())) {
@@ -102,13 +193,22 @@ public class TaskManager {
                             break;
                         }
                     }
-                    completeTask(name, uuid, category, finalTaskarea, finalDifficulty);
-                }
-                if (!foundNotCompletedTask) {
-                    completedCategories.add(category);
+                    String name = rs.getString("name");
+                    if (finalDifficulty == null || finalTaskarea == null) {
+                        System.out.println("TASK ERROR! diff=" + difficulty + ", area=" + taskArea);
+
+                        System.out.println("TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
+                    } else {
+                        TaskArea finalTaskarea1 = finalTaskarea;
+                        TaskDifficulty finalDifficulty1 = finalDifficulty;
+                        player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
+                            completeTask(name, uuid, finalTaskarea1, finalDifficulty1);
+                        });
+                    }
                 }
             } finally {
                 DatabaseUtils.close(statement, rs);
+                System.out.println(System.currentTimeMillis() - currentTime);
             }
         });
     }
