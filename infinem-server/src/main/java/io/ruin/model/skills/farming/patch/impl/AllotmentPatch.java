@@ -162,6 +162,7 @@ public class AllotmentPatch extends Patch {
             player.getStats().addXp(StatType.Farming, crop.getPlantXP(), true);
             setTimePlanted(System.currentTimeMillis());
             player.sendFilteredMessage("You plant the seed in the patch.");
+            player.getTaskManager().doLookupByUUID(14, 1);  // Plant Seeds in an Allotment Patch
             send();
         });
     }
