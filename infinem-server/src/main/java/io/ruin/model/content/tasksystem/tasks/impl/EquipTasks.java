@@ -16,5 +16,8 @@ public class EquipTasks {
         EquipAction.register(Items.INFERNAL_CAPE, (player -> {
             player.getTaskManager().doLookupByUUID(429, 1);
         }));
+        EquipAction.register(Items.SPINY_HELMET, (player -> {
+            player.getTaskManager().doLookupByUUID(29, 1);
+        }));
     }
 }
