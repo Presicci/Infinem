@@ -55,7 +55,7 @@ public enum CoinPouch {
             ItemAction.registerInventory(pouch.pouchId, "open-all", (player, item) -> {
                 Inventory inventory = player.getInventory();
                 int amountOfPouches = inventory.getAmount(pouch.pouchId);
-                if (inventory.hasRoomFor(995, pouch.maxCoins * amountOfPouches) || (inventory.getAmount(pouch.pouchId) == 1 && !inventory.contains(995))) {
+                if (inventory.hasRoomFor(995, pouch.maxCoins * amountOfPouches) || (amountOfPouches == 1 && !inventory.contains(995))) {
                     if (pouch.minCoins != pouch.maxCoins) {
                         for (int index = 0; index < amountOfPouches; index++) {
                             if (inventory.contains(pouch.pouchId)) {
