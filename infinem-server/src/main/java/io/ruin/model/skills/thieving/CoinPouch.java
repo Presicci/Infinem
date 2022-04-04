@@ -56,18 +56,29 @@ public enum CoinPouch {
                 Inventory inventory = player.getInventory();
                 int amountOfPouches = inventory.getAmount(pouch.pouchId);
                 if (inventory.hasRoomFor(995, pouch.maxCoins * amountOfPouches) || (amountOfPouches == 1 && !inventory.contains(995))) {
+                    int amountAdded = 0;
                     if (pouch.minCoins != pouch.maxCoins) {
                         for (int index = 0; index < amountOfPouches; index++) {
                             if (inventory.contains(pouch.pouchId)) {
                                 inventory.remove(pouch.pouchId, 1);
-                                inventory.add(995, Random.get(pouch.minCoins, pouch.maxCoins));
+                                int amt = Random.get(pouch.minCoins, pouch.maxCoins);
+                                inventory.add(995, amt);
+                                amountAdded += amt;
                             } else {
                                 break;
                             }
                         }
                     } else {
                         inventory.remove(pouch.pouchId, amountOfPouches);
-                        inventory.add(995, pouch.minCoins * amountOfPouches);
+                        amountAdded = pouch.minCoins * amountOfPouches;
+                        inventory.add(995, amountAdded);
+                    }
+                    player.sendMessage("You open " + amountOfPouches + " pouches, finding a total of " + amountAdded + " coins!");
+                    if (amountOfPouches == 28) {
+                        player.getTaskManager().doLookupByUUID(11, 1);
+                    }
+                    if (amountAdded >= 800) {
+                        player.getTaskManager().doLookupByUUID(89, 1);
                     }
                 } else {
                     player.sendMessage("You don't have enough inventory space to open the coin pouches.");
