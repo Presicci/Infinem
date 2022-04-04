@@ -17,6 +17,7 @@ import io.ruin.model.activities.duelarena.DuelArena;
 import io.ruin.model.activities.pyramidplunder.PyramidPlunder;
 import io.ruin.model.activities.wilderness.BountyHunter;
 import io.ruin.model.content.UpgradeMachine;
+import io.ruin.model.content.tasksystem.tasks.TaskManager;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
@@ -1227,6 +1228,10 @@ public class Player extends PlayerAttributes {
         if (fremennikName == null)
             fremennikName = generateFremennikName();
 
+        if (taskManager == null)
+            taskManager = new TaskManager(this);
+        taskManager.setPlayer(this);
+
         checkMulti();
         Tile.occupy(this);
     }
@@ -1744,4 +1749,7 @@ public class Player extends PlayerAttributes {
     public String getFremennikName() {
         return fremennikName;
     }
+
+    @Expose @Getter
+    private TaskManager taskManager;
 }
