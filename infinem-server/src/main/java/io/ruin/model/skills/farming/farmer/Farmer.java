@@ -121,6 +121,7 @@ public enum Farmer {
         player.getInventory().remove(id, payment.getAmount());
         patch.setFarmerProtected(true);
         player.dialogue(new NPCDialogue(npc, "That'll do nicely, sir. Leave it with me - I'll make sure that patch grows for you."));
+        player.getTaskManager().doLookupByUUID(15, 1);  // Protect Your Crops
     }
 
     private static void attemptClearTreePatch(Player player, NPC npc, PatchData pd) {
