@@ -62,6 +62,7 @@ public class SawmillOperator {
                     player.getInventory().remove(COINS_995, plank.cost);
                     player.getInventory().remove(plank.woodId, 1);
                     player.getInventory().add(plank.plankId, 1);
+                    player.getTaskManager().doLookupByUUID(43, 1);  // Turn a Log Into a Plank
                 }
             });
 
