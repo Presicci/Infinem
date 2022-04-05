@@ -65,6 +65,18 @@ public class TaskManager {
         this.completedCategories = new ArrayList<>();
     }
 
+    /**
+     * Defaults:
+     *  - amount: 1
+     *  - mapArea: null
+     *  - incremental: true
+     * @param category Task category.
+     * @param trigger Trigger keywords.
+     */
+    public void doLookupByCategory(TaskCategory category, String trigger) {
+        doLookupByCategory(category, trigger, 1, null, true);
+    }
+
     public void doLookupByCategory(TaskCategory category, int amount, boolean incremental) {
         doLookupByCategory(category, "", amount, null, incremental);
     }
