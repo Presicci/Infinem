@@ -207,8 +207,8 @@ public class TaskManager {
                         continue;
                     }
                     String area = rs.getString("maparea");
-                    if (area.trim().length() > 0 && (mapArea == null || !area.toLowerCase().equalsIgnoreCase(mapArea.toString().toLowerCase()))) {
-                        System.out.println("exit on map");
+                    if (area.trim().length() > 0 && (mapArea == null || !area.toLowerCase().equalsIgnoreCase(mapArea.toString().toLowerCase().replace("_", " ")))) {
+                        System.out.println("TASK ERROR! area=" + area.trim() + " / " + mapArea.toString().toLowerCase());
                         continue;
                     }
                     int requiredAmount = rs.getInt("required_amount");
