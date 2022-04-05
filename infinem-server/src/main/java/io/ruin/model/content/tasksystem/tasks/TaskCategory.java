@@ -10,6 +10,7 @@ public enum TaskCategory {
 
     // General
     UNLOCKITEM, SKILLITEM,
+    EQUIP, EQUIPSET,
 
     NPCKILL, SLAYERKILL, SUPERIORKILL,
 
