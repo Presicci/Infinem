@@ -41,6 +41,7 @@ public enum Amulet {
         wool.remove();
         player.sendFilteredMessage("You put some string on your amulet.");
         player.getStats().addXp(StatType.Crafting, xp, true);
+        player.getTaskManager().doSkillItemLookup(strung);
     }
 
     static {
