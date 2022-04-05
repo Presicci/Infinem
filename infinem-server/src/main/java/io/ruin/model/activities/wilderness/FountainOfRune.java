@@ -34,6 +34,7 @@ public enum FountainOfRune {
                     if (amount - 1 > 0)
                         player.getInventory().add(fountainOfRune.chargedID, amount - 1);
                     player.dialogue(new ItemDialogue().one(19707, "The power of the fountain is transferred into an amulet of eternal glory. It will now have unlimited charges."));
+                    player.getTaskManager().doLookupByUUID(903, 1); // Create an Amulet of Eternal Glory
                 } else {
                     player.getInventory().add(fountainOfRune.chargedID, amount);
                     player.dialogue(new ItemDialogue().one(fountainOfRune.chargedID, "You feel a power emanating from the fountain as it recharges your jewellery."));
