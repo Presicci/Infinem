@@ -89,7 +89,7 @@ public class SlayerMaster {
         } else {
             Config.BOSS_TASK.set(player, 0);
         }
-
+        player.getTaskManager().doLookupByUUID(28, 1);  // Receive a Slayer Task
         return def;
     }
 
