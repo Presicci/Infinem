@@ -701,6 +701,11 @@ public abstract class NPCCombat extends Combat {
 
     private void handleDrop(Killer killer, Position dropPosition, Player pKiller, List<Item> items) {
         for(Item item : items) {
+            // Attempt a task unlock for each item dropped
+            pKiller.getTaskManager().doUnlockItemLookup(item);
+
+            pKiller.getTaskManager().doDropGroupLookup(item.getDef().name.toLowerCase(), null);
+
             /*
              * Ethereum auto collect
              */
