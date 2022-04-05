@@ -127,6 +127,7 @@ public enum Armour {
                 player.animate(1249);
                 player.sendFilteredMessage("You make " + armourType.leatherName + ".");
                 player.getStats().addXp(StatType.Crafting, armourType.exp, true);
+                player.getTaskManager().doSkillItemLookup(armourType.cutID);
                 event.delay(2);
             }
         });
