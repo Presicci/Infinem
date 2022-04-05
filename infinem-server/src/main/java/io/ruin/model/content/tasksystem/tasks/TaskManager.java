@@ -3,12 +3,14 @@ package io.ruin.model.content.tasksystem.tasks;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.database.DatabaseUtils;
+import io.ruin.api.utils.ServerWrapper;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.MapArea;
+import io.ruin.services.Loggers;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,6 +34,7 @@ public class TaskManager {
         this.inProgressTasks = new HashMap<>();
         this.completeTasks = new HashSet<>();
         this.completedCategories = new HashSet<>();
+        this.collectedItems = new HashSet<>();
     }
 
     public void setPlayer(Player player) {
@@ -44,6 +47,7 @@ public class TaskManager {
     @Expose private HashMap<Integer, Integer> inProgressTasks;
     @Expose private HashSet<Integer> completeTasks;
     @Expose private HashSet<Integer> completedCategories;
+    @Expose private HashSet<String> collectedItems;
 
     private void completeTask(String taskName, int uuid, TaskArea taskArea, TaskDifficulty taskDifficulty) {
         if (completeTasks.contains(uuid))
@@ -65,6 +69,7 @@ public class TaskManager {
         this.inProgressTasks = new HashMap<>();
         this.completeTasks = new HashSet<>();
         this.completedCategories = new HashSet<>();
+        this.collectedItems = new HashSet<>();
     }
 
     /**
@@ -243,6 +248,83 @@ public class TaskManager {
                     if (finalDifficulty == null || finalTaskarea == null) {
                         System.out.println("TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
                     } else {
+                        TaskArea finalTaskarea1 = finalTaskarea;
+                        TaskDifficulty finalDifficulty1 = finalDifficulty;
+                        player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
+                            completeTask(name, uuid, finalTaskarea1, finalDifficulty1);
+                        });
+                    }
+                }
+            } finally {
+                DatabaseUtils.close(statement, rs);
+                System.out.println(System.currentTimeMillis() - currentTime);
+            }
+        });
+    }
+
+    public void doDropGroupLookup(String trigger, MapArea mapArea) {
+        long currentTime = System.currentTimeMillis();
+        Server.gameDb.execute(connection -> {
+            PreparedStatement statement = null;
+            ResultSet rs = null;
+            try {
+                statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ? AND required_object LIKE ?");
+                statement.setString(1, StringUtils.capitalizeFirst("unlockitemset"));
+                statement.setString(2, "%" + trigger.trim().toLowerCase() + "%");
+                rs = statement.executeQuery();
+                while (rs.next()) {
+                    int uuid = rs.getInt("uuid");
+                    if (completeTasks.contains(uuid)) {
+                        continue;
+                    }
+                    String area = rs.getString("maparea");
+                    if (area.trim().length() > 0 && (mapArea == null || !area.toLowerCase().equalsIgnoreCase(mapArea.toString().toLowerCase()))) {
+                        System.out.println("exit on map");
+                        continue;
+                    }
+                    String trig = rs.getString("required_object");
+                    String[] trigs;
+                    if (trig.trim().length() > 0) {
+                        trigs = trig.trim().split(",");
+                        boolean complete = true;
+                        for (String s : trigs) {
+                            if (s.toLowerCase().contains(trigger.trim().toLowerCase())) {
+                                collectedItems.add(s);
+                            }
+                            if (!collectedItems.contains(s))
+                                complete = false;
+                        }
+                        if (!complete) {
+                            System.out.println("not complete set");
+                            continue;
+                        }
+                    } else {
+                        ServerWrapper.logError("Task#" + uuid + " does not have any valid item names listed for required_object");
+                        continue;
+                    }
+                    String name = rs.getString("name");
+                    String taskArea = rs.getString("region").toLowerCase();
+                    TaskArea finalTaskarea = null;
+                    for (TaskArea ta : TaskArea.values()) {
+                        if (taskArea.trim().equalsIgnoreCase(ta.toString().toLowerCase())) {
+                            finalTaskarea = ta;
+                            break;
+                        }
+                    }
+                    String difficulty = rs.getString("difficulty").toLowerCase();
+                    TaskDifficulty finalDifficulty = null;
+                    for (TaskDifficulty diff : TaskDifficulty.values()) {
+                        if (difficulty.equalsIgnoreCase(diff.toString().toLowerCase())) {
+                            finalDifficulty = diff;
+                            break;
+                        }
+                    }
+                    if (finalDifficulty == null || finalTaskarea == null) {
+                        System.out.println("TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
+                    } else {
+                        for (String s : trigs) {
+                            collectedItems.remove(s);
+                        }
                         TaskArea finalTaskarea1 = finalTaskarea;
                         TaskDifficulty finalDifficulty1 = finalDifficulty;
                         player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
