@@ -430,6 +430,7 @@ public enum Altars {
                         sb.deleteCharAt(sb.length() - 1);
                     }
                     player.sendMessage("The talisman pulls towards the " + sb.toString() + ".");
+                    player.getTaskManager().doLookupByUUID(46, 1);  // Locate a Runecrafting Altar With a Talisman
                 });
             }
         }
