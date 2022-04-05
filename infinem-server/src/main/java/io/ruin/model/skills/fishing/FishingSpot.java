@@ -177,7 +177,7 @@ public class FishingSpot {
                         }
 
                         player.getInventory().add(c.id, amount);
-
+                        player.getTaskManager().doSkillItemLookup(c.id);
                         if(npc.getId() != MINNOWS)
                             PlayerCounter.TOTAL_FISH.increment(player, 1);
 
