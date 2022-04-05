@@ -1,5 +1,6 @@
 package io.ruin.model.item.actions.impl;
 
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
@@ -40,8 +41,7 @@ public enum Lightables {
     private void light(Player player, Item item) {
         item.setId(litId);
         player.sendMessage("You light the " + item.getDef().name + ".");
-        if (this == Lightables.TORCH)
-            player.getTaskManager().doLookupByUUID(49, 1);  // Light a Torch
+        player.getTaskManager().doLookupByCategory(TaskCategory.LIGHTSOURCE, item.getDef().name);
     }
 
     private void extinguish(Player player, Item item) {
