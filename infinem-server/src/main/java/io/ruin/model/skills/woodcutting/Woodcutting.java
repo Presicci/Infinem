@@ -103,6 +103,8 @@ public class Woodcutting {
                             player.getTaskManager().doLookupByUUID(16, 1);  // Chop Some Logs
                             if (hatchet == Hatchet.STEEL)
                                 player.getTaskManager().doLookupByUUID(17, 1);  // Chop Some Logs With a Steel Axe
+                            if (hatchet == Hatchet.RUNE)
+                                player.getTaskManager().doLookupByUUID(95, 1);  // Chop Some Logs With a Rune Axe
                         }
                         player.collectResource(new Item(treeData.log, 1));
                     }
