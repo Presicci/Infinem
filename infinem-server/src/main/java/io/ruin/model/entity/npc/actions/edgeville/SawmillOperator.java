@@ -44,12 +44,11 @@ public class SawmillOperator {
             player.closeInterface(InterfaceType.MAIN);
             player.startEvent(event -> {
                 int amt = amount;
-                boolean isFree = isFree(player);
 
                 while (amt-- > 0) {
                     Item coins = player.getInventory().findItem(COINS_995);
 
-                    if (!isFree && (coins == null || coins.getAmount() < plank.cost)) {
+                    if (coins == null || coins.getAmount() < plank.cost) {
                         player.dialogue(new NPCDialogue(5422, "You'll need to bring me some more coins."));
                         return;
                     }
@@ -60,18 +59,12 @@ public class SawmillOperator {
                         return;
                     }
 
-                    if (!isFree)
-                        player.getInventory().remove(COINS_995, plank.cost);
-
+                    player.getInventory().remove(COINS_995, plank.cost);
                     player.getInventory().remove(plank.woodId, 1);
                     player.getInventory().add(plank.plankId, 1);
                 }
             });
 
-        }
-
-        private static boolean isFree(Player player) {
-            return player.getPosition().getRegion().id == 15148;
         }
 
         static {
