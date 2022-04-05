@@ -119,6 +119,7 @@ public enum FairyRing { //todo add favorite option
             player.graphics(569);
             event.delay(3);
             resetCombinationPanel(player);
+            player.getTaskManager().doLookupByUUID(338, 1); // Use a Fairy Ring
             if(entry != null) {
                 if (entry == PLAYER_OWNED_HOUSE) {
                     player.house.buildAndEnter(player, player.house.getFairyRingPosition(), false);
