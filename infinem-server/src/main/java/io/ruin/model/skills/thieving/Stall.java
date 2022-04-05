@@ -2,6 +2,7 @@ package io.ruin.model.skills.thieving;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -303,6 +304,7 @@ public enum Stall {
             replaceStall(stall, object, replacementID, player);
             Item loot = stall.lootTable.rollItem();
             player.getInventory().add(loot);
+            player.getTaskManager().doSkillItemLookup(loot);
             if(player.getPosition().inBounds(HOME))
                 player.edgevilleStallCooldown.delay(3);
             if (Random.rollDie(stall.petOdds - (player.getStats().get(StatType.Thieving).currentLevel * 25)))
