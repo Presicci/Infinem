@@ -64,6 +64,7 @@ public class EssenceMine {
             player.graphics(110);
             player.getMovement().teleport(Random.get(positions));
             player.putExposedAttribute(AttributeKey.ESSENCE_TELEPORT, npcName);
+            player.getTaskManager().doLookupByUUID(44, 1);  // Visit the Rune Essence Mine
         });
     }
 
