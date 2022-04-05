@@ -5,6 +5,7 @@ import io.ruin.Server;
 import io.ruin.api.database.DatabaseUtils;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.ItemDef;
+import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.MapArea;
@@ -235,6 +236,10 @@ public class TaskManager {
         doLookupByCategory(TaskCategory.BASELEVEL, player.getStats().getBaseLevel(), false);
         doLookupByCategory(TaskCategory.TOTALLEVEL, player.getStats().totalLevel, false);
         doLookupByCategory(TaskCategory.COMBATLEVEL, player.getCombat().getLevel(), false);
+    }
+
+    public void doKillLookup(int npcId) {
+        player.getTaskManager().doLookupByCategory(TaskCategory.SKILLITEM, NPCDef.get(npcId).name.toLowerCase(), 1, null, true);
     }
 
     public void doSkillItemLookup(int itemId) {
