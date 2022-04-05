@@ -166,7 +166,7 @@ public enum Burning {
                 player.sendFilteredMessage("The fire catches and the logs begin to burn.");
                 player.getStats().addXp(StatType.Firemaking, burning.exp * pyromancerBonus(player), true);
                 burning.counter.increment(player, 1);
-                player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDef.get(burning.itemId).name, 1, null, true);
+                player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDef.get(burning.itemId).name);
                 createFire(burning, fire);
                 player.face(fire);
                 player.unlock();

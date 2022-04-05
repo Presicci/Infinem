@@ -266,7 +266,7 @@ public class FaladorCourse {
             p.getStats().addXp(StatType.Agility, 180, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             AgilityPet.rollForPet(p, 26806);
-            p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "falador", 1, null, true);
+            p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "falador");
             PlayerCounter.FALADOR_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 50, MARK_SPAWNS);
             p.unlock();

@@ -138,7 +138,7 @@ public class RellekkaCourse {
             PlayerCounter.RELLEKKA_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 80, MARK_SPAWNS);
             AgilityPet.rollForPet(p, 31063);
-            p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "rellekka", 1, null, true);
+            p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "rellekka");
             e.delay(1);
             p.unlock();
         }));

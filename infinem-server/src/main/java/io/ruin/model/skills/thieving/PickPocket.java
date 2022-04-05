@@ -396,7 +396,7 @@ public enum PickPocket {
                 if (Random.rollDie(pickpocket.petOdds - (player.getStats().get(StatType.Thieving).currentLevel * 25)))
                     Pet.ROCKY.unlock(player);
                 player.getStats().addXp(StatType.Thieving, pickpocket.exp, true);
-                player.getTaskManager().doLookupByCategory(TaskCategory.PICKPOCKET, npc.getDef().name.toLowerCase(), 1, null, true);
+                player.getTaskManager().doLookupByCategory(TaskCategory.PICKPOCKET, npc.getDef().name.toLowerCase());
             } else {
                 player.sendFilteredMessage("You fail to pick the " + pickpocket.identifier + " pocket.");
                 npc.forceText("What do you think you're doing?");

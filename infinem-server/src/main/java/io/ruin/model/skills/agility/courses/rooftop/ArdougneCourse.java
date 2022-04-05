@@ -168,7 +168,7 @@ public class ArdougneCourse {
             p.getMovement().restoreEnergy(Random.get(1, 2));
             AgilityPet.rollForPet(p, 34440);
             PlayerCounter.ARDOUGNE_ROOFTOP.increment(p, 1);
-            p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "ardy", 1, null, true);
+            p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "ardy");
             MarkOfGrace.rollMark(p, 90, MARK_SPAWNS);
             e.delay(1);
             p.unlock();

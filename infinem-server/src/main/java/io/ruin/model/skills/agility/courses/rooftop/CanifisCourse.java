@@ -197,7 +197,7 @@ public class CanifisCourse {
             player.getStats().addXp(StatType.Agility, 175, true);
             player.getMovement().restoreEnergy(Random.get(1, 2));
             PlayerCounter.CANIFIS_ROOFTOP.increment(player, 1);
-            player.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "canifis", 1, null, true);
+            player.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "canifis");
             AgilityPet.rollForPet(player, 36842);
             MarkOfGrace.rollMark(player, 40, MARK_SPAWNS);
             player.unlock();

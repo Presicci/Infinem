@@ -128,7 +128,7 @@ public class SeersCourse {
                 PlayerCounter.SEERS_ROOFTOP.increment(p, 1);
                 AgilityPet.rollForPet(p, 35205);
                 MarkOfGrace.rollMark(p, 60, MARK_SPAWNS);
-                p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "seers", 1, null, true);
+                p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "seers");
                 p.preventSkippingCourse = false;
             }
             p.unlock();

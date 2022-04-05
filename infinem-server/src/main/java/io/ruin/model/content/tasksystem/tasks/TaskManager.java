@@ -81,20 +81,21 @@ public class TaskManager {
      * @param trigger Trigger keywords.
      */
     public void doLookupByCategory(TaskCategory category, String trigger) {
-        doLookupByCategory(category, trigger, 1, null, true);
+        doLookupByCategory(category, trigger, 1, true);
     }
 
     public void doLookupByCategory(TaskCategory category, int amount, boolean incremental) {
-        doLookupByCategory(category, "", amount, null, incremental);
+        doLookupByCategory(category, "", amount, incremental);
     }
 
-    public void doLookupByCategory(TaskCategory category, String trigger, int amount, MapArea mapArea, boolean incremental) {
+    public void doLookupByCategory(TaskCategory category, String trigger, int amount, boolean incremental) {
         //  No tasks left for this category, abort
         if (completedCategories.contains(category.ordinal())) {
             System.out.println("category complete");
             return;
         }
         long currentTime = System.currentTimeMillis();
+        MapArea mapArea = MapArea.getMapArea(player);
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;

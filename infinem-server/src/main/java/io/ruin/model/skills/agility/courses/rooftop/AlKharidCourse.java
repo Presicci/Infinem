@@ -210,7 +210,7 @@ public class AlKharidCourse {
             p.getStats().addXp(StatType.Agility, 30, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             PlayerCounter.ALKHARID_ROOFTOP.increment(p, 1);
-            p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "alkharid", 1, null, true);
+            p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "alkharid");
             AgilityPet.rollForPet(p, 26648);
             MarkOfGrace.rollMark(p, 20, MARK_SPAWNS);
             p.unlock();
