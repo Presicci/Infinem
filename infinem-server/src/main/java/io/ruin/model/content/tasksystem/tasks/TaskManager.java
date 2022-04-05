@@ -95,7 +95,7 @@ public class TaskManager {
                         String[] trigs = trig.trim().split(",");
                         boolean found = false;
                         for (String s : trigs) {
-                            if (trigger.toLowerCase().contains(s.toLowerCase())) {
+                            if (s.toLowerCase().contains(trigger.toLowerCase())) {
                                 found = true;
                                 break;
                             }
