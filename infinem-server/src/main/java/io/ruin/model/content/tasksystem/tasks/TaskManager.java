@@ -241,6 +241,10 @@ public class TaskManager {
         player.getTaskManager().doLookupByCategory(TaskCategory.SKILLITEM, ItemDef.get(itemId).name.toLowerCase(), 1, null, true);
     }
 
+    public void doSkillItemLookup(int itemId, int amount) {
+        player.getTaskManager().doLookupByCategory(TaskCategory.SKILLITEM, ItemDef.get(itemId).name.toLowerCase(), amount, null, true);
+    }
+
     public void doSkillItemLookup(Item item) {
         player.getTaskManager().doLookupByCategory(TaskCategory.SKILLITEM, item.getDef().name.toLowerCase(), item.getAmount(), null, true);
     }
