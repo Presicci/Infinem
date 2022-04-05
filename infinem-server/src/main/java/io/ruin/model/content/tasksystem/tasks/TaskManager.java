@@ -232,6 +232,7 @@ public class TaskManager {
         }
         doLookupByCategory(TaskCategory.BASELEVEL, player.getStats().getBaseLevel(), false);
         doLookupByCategory(TaskCategory.TOTALLEVEL, player.getStats().totalLevel, false);
+        doLookupByCategory(TaskCategory.COMBATLEVEL, player.getCombat().getLevel(), false);
     }
 
     public void doSkillItemLookup(int itemId) {

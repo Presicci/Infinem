@@ -6,7 +6,7 @@ package io.ruin.model.content.tasksystem.tasks;
  */
 public enum TaskCategory {
     //  Levels
-    FIRSTLEVEL, TOTALLEVEL, BASELEVEL,
+    FIRSTLEVEL, TOTALLEVEL, BASELEVEL, COMBATLEVEL,
 
     UNLOCKITEM, SKILLITEM,
 
