@@ -186,11 +186,12 @@ public class TaskManager {
     }
 
     public void doLookupByCategoryAndTrigger(TaskCategory category, String trigger) {
-        doLookupByCategoryAndTrigger(category, trigger, 1, null, true);
+        doLookupByCategoryAndTrigger(category, trigger, 1, true);
     }
 
-    public void doLookupByCategoryAndTrigger(TaskCategory category, String trigger, int amount, MapArea mapArea, boolean incremental) {
+    public void doLookupByCategoryAndTrigger(TaskCategory category, String trigger, int amount, boolean incremental) {
         long currentTime = System.currentTimeMillis();
+        MapArea mapArea = MapArea.getMapArea(player);
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;
@@ -410,22 +411,22 @@ public class TaskManager {
     }
 
     public void doKillLookup(int npcId) {
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.NPCKILL, NPCDef.get(npcId).name.toLowerCase(), 1, null, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.NPCKILL, NPCDef.get(npcId).name.toLowerCase(), 1, true);
     }
 
     public void doSkillItemLookup(int itemId) {
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, ItemDef.get(itemId).name.toLowerCase(), 1, null, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, ItemDef.get(itemId).name.toLowerCase(), 1, true);
     }
 
     public void doSkillItemLookup(int itemId, int amount) {
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, ItemDef.get(itemId).name.toLowerCase(), amount, null, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, ItemDef.get(itemId).name.toLowerCase(), amount, true);
     }
 
     public void doSkillItemLookup(Item item) {
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, item.getDef().name.toLowerCase(), item.getAmount(), null, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, item.getDef().name.toLowerCase(), item.getAmount(), true);
     }
 
     public void doUnlockItemLookup(Item item) {
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.UNLOCKITEM, item.getDef().name.toLowerCase(), item.getAmount(), null, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.UNLOCKITEM, item.getDef().name.toLowerCase(), item.getAmount(), true);
     }
 }
