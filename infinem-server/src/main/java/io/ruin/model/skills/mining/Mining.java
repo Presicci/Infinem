@@ -128,6 +128,7 @@ public class Mining {
                     if (Random.rollDie(250, 1)) {
                         player.getInventory().addOrDrop(Geode.getRandomGeode(), 1);
                         PlayerCounter.MINED_GEODE.increment(player, 1);
+                        player.getTaskManager().doLookupByUUID(102, 1);  // Obtain a Clue Geode While Mining
                     }
 
                     /* Rolling for mined minerals */
