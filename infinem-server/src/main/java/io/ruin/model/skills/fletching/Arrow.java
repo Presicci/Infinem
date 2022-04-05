@@ -44,6 +44,7 @@ public enum Arrow {
         player.animate(8480);
         player.getInventory().add(outcome, amount);
         player.getStats().addXp(StatType.Fletching, exp * amount, true);
+        player.getTaskManager().doSkillItemLookup(new Item(outcome, amount));
         boolean headless = shaft.getId() == 52 && tipItem.getId() == 314;
         if(headless) {
             player.sendFilteredMessage("You attach feathers to " + amount + " arrow shafts.");
