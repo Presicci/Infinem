@@ -118,14 +118,14 @@ public class TaskManager {
                             if (currentAmount < requiredAmount) {
                                 inProgressTasks.put(uuid, currentAmount);
                                 System.out.println("Task #" + uuid + " progress: " + currentAmount + "/" + requiredAmount);
-                                break;
+                                continue;
                             } else {
                                 inProgressTasks.remove(uuid);
                             }
                         } else {
                             if (amount < requiredAmount) {
                                 System.out.println("exit on amt");
-                                break;
+                                continue;
                             }
                         }
                     }
