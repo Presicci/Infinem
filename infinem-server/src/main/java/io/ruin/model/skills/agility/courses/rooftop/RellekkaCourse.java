@@ -1,6 +1,7 @@
 package io.ruin.model.skills.agility.courses.rooftop;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -137,6 +138,7 @@ public class RellekkaCourse {
             PlayerCounter.RELLEKKA_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 80, MARK_SPAWNS);
             AgilityPet.rollForPet(p, 31063);
+            p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "rellekka", 1, null, true);
             e.delay(1);
             p.unlock();
         }));

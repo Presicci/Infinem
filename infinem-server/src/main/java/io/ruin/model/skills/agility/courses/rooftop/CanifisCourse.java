@@ -1,6 +1,7 @@
 package io.ruin.model.skills.agility.courses.rooftop;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.StepType;
@@ -196,6 +197,7 @@ public class CanifisCourse {
             player.getStats().addXp(StatType.Agility, 175, true);
             player.getMovement().restoreEnergy(Random.get(1, 2));
             PlayerCounter.CANIFIS_ROOFTOP.increment(player, 1);
+            player.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "canifis", 1, null, true);
             AgilityPet.rollForPet(player, 36842);
             MarkOfGrace.rollMark(player, 40, MARK_SPAWNS);
             player.unlock();
