@@ -26,4 +26,12 @@ public enum MapArea {
     public boolean inArea(Player player) {
         return bounds.inBounds(player);
     }
+
+    public static MapArea getMapArea(Player player) {
+        for (MapArea mapArea : values()) {
+            if (mapArea.inArea(player))
+                return mapArea;
+        }
+        return null;
+    }
 }
