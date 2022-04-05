@@ -139,6 +139,7 @@ public class Mining {
                         player.getStats().addXp(StatType.Mining, rockData.experience * xpBonus(player, false), true);
                     } else if (gem != null) {   // No xp is earned and the ore is not depleted, just go next
                         player.sendFilteredMessage("You find an " + gem.getDef().name + ".");
+                        player.getTaskManager().doLookupByUUID(24, 1);  // Obtain a Gem While Mining
                         continue;
                     } else {
                         player.getStats().addXp(StatType.Mining, rockyOutcrop ? rockData.multiExp[random] : rockData.experience * xpBonus(player, multiple), true);
@@ -146,6 +147,8 @@ public class Mining {
                     player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
                             (rockData == Rock.GEM_ROCK ? ItemDef.get(itemId).name.toLowerCase() : rockData.rockName) + ".");
                     player.getTaskManager().doSkillItemLookup(itemId);
+                    if (pickaxe == Pickaxe.STEEL)
+                        player.getTaskManager().doLookupByUUID(23, 1);  // Mine some Ore With a Steel Pickaxe
 
                     /* Rolling for rock depletion */
                     double depleteChance = rockData.depleteChance * (1 - miningGloves(player, rockData));
