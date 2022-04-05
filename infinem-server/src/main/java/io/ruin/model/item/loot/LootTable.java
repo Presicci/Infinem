@@ -111,7 +111,6 @@ public class LootTable {
         if(tables != null) {
             double tableRand = Random.get() * totalWeight;
             for(ItemsTable table : tables) {
-                System.out.println("" + table.name);
                 if((tableRand -= table.weight) <= 0) {
                     double itemsRand = Random.get() * table.totalWeight;
                     for(LootItem item : table.items) {
