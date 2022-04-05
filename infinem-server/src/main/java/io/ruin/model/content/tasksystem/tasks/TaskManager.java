@@ -106,7 +106,7 @@ public class TaskManager {
                         }
                     }
                     String area = rs.getString("maparea");
-                    if (area.trim().length() > 0 && (mapArea == null || !area.equalsIgnoreCase(mapArea.toString()))) {
+                    if (area.trim().length() > 0 && (mapArea == null || !area.toLowerCase().equalsIgnoreCase(mapArea.toString().toLowerCase()))) {
                         System.out.println("exit on map");
                         continue;
                     }
