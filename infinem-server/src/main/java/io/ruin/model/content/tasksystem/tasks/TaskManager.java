@@ -85,14 +85,23 @@ public class TaskManager {
                 while (rs.next()) {
                     int uuid = rs.getInt("uuid");
                     if (completeTasks.contains(uuid)) {
-                        System.out.println("exit on uuid");
                         continue;
                     }
                     foundNotCompletedTask = true;
                     String trig = rs.getString("required_object");
-                    if (trig.trim().length() > 0 && !trigger.contains(trig)) {
-                        System.out.println("exit on obj");
-                        continue;
+                    if (trig.trim().length() > 0) {
+                        String[] trigs = trig.trim().split(",");
+                        boolean found = false;
+                        for (String s : trigs) {
+                            if (trigger.toLowerCase().contains(s.toLowerCase())) {
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (!found) {
+                            System.out.println("exit on obj");
+                            continue;
+                        }
                     }
                     String area = rs.getString("maparea");
                     if (area.trim().length() > 0 && (mapArea == null || !area.equalsIgnoreCase(mapArea.toString()))) {
