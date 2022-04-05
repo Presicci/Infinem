@@ -107,6 +107,7 @@ public enum LogCutting {
                 player.getInventory().add(log.item);
                 player.sendFilteredMessage("You carefully cut the wood into " + log.name + ".");
                 player.getStats().addXp(StatType.Fletching, log.exp, true);
+                player.getTaskManager().doSkillItemLookup(log.item);
                 player.animate(1248);
                 event.delay(2);
             }
