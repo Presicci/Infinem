@@ -61,6 +61,7 @@ public class MuseumCamp {
                 player.getInventory().remove(nail, buildable.getNails());
                 player.animate(3683);
                 player.getStats().addXp(StatType.Construction, buildable.getExperience(), true);
+                player.getTaskManager().doLookupByUUID(337, 1); // Build a Bank on Fossil Island
                 buildable.getConfig().set(player, 1);
                 return;
             }
