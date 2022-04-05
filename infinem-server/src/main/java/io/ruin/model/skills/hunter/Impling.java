@@ -103,6 +103,8 @@ public enum Impling {
                 if (barehands) {
                     ImplingJar jar = ImplingJar.forJarId(impling.jarId);
                     Item loot;
+                    if (impling == Impling.LUCKY)
+                        player.getTaskManager().doLookupByUUID(301, 1); // Catch a Lucky Impling Bare-Handed
                     if (jar != null) {
                         if (jar.equals(ImplingJar.LUCKY_IMPLING)) {
                             ClueType randomClue = Random.get(ClueType.values());
