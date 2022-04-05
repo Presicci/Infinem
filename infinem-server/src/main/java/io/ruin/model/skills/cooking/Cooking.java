@@ -66,6 +66,7 @@ public class Cooking {
                     player.getStats().addXp(StatType.Cooking, food.experience * bonus(player, fire), true);
                     player.sendFilteredMessage(cookingMessage(food));
                     PlayerCounter.COOKED_FOOD.increment(player, 1);
+                    player.getTaskManager().doSkillItemLookup(food.cookedID);
                     // player.getTaskHandler().checkTaskProgress(0);
                     // player.getTaskHandler().checkTaskProgress(0, 5, 11);
                 } else {
@@ -73,6 +74,7 @@ public class Cooking {
                     if (food.burntID != food.cookedID) {
                         player.sendFilteredMessage("You accidentally burn the " + food.itemName + ".");
                     }
+                    player.getTaskManager().doLookupByUUID(20, 1);  // Burn Some Food
                     PlayerCounter.BURNT_FOOD.increment(player, 1);
                 }
 
