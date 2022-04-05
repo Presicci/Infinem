@@ -91,6 +91,7 @@ public class SmeltBar {
                 if (bar == SmithBar.GOLD && (player.getEquipment().hasId(776) || SmithingSkillCape.wearingSmithingCape(player))) // goldsmith gauntlets
                     xp *= 2.5;
                 player.getStats().addXp(StatType.Smithing, xp, true);
+                player.getTaskManager().doSkillItemLookup(bar.itemId);
                 event.delay(2);
             }
         });
