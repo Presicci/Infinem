@@ -27,11 +27,11 @@ public class TaskManager {
         this.globalTaskPoints = 0;
         this.taskPoints = new HashMap<>();
         for (TaskArea area : TaskArea.values()) {
-            this.taskPoints.put(area, 0);
+            this.taskPoints.put(area.ordinal(), 0);
         }
         this.inProgressTasks = new HashMap<>();
         this.completeTasks = new HashSet<>();
-        this.completedCategories = new ArrayList<>();
+        this.completedCategories = new HashSet<>();
     }
 
     public void setPlayer(Player player) {
@@ -40,14 +40,14 @@ public class TaskManager {
 
     private Player player;
     @Expose private int globalTaskPoints;
-    @Expose private HashMap<TaskArea, Integer> taskPoints;
+    @Expose private HashMap<Integer, Integer> taskPoints;
     @Expose private HashMap<Integer, Integer> inProgressTasks;
     @Expose private HashSet<Integer> completeTasks;
-    @Expose private ArrayList<TaskCategory> completedCategories;
+    @Expose private HashSet<Integer> completedCategories;
 
     private void completeTask(String taskName, int uuid, TaskArea taskArea, TaskDifficulty taskDifficulty) {
         int pointGain = taskDifficulty.getPoints();
-        taskPoints.put(taskArea, taskPoints.get(taskArea) + pointGain);
+        taskPoints.put(taskArea.ordinal(), taskPoints.get(taskArea.ordinal()) + pointGain);
         globalTaskPoints += pointGain;
         player.sendMessage("<col=990000>You've completed a task: " + taskName + "!");
         player.sendMessage("You now have " + globalTaskPoints + " task points.");
@@ -58,11 +58,11 @@ public class TaskManager {
         this.globalTaskPoints = 0;
         this.taskPoints = new HashMap<>();
         for (TaskArea area : TaskArea.values()) {
-            this.taskPoints.put(area, 0);
+            this.taskPoints.put(area.ordinal(), 0);
         }
         this.inProgressTasks = new HashMap<>();
         this.completeTasks = new HashSet<>();
-        this.completedCategories = new ArrayList<>();
+        this.completedCategories = new HashSet<>();
     }
 
     /**
@@ -83,7 +83,7 @@ public class TaskManager {
 
     public void doLookupByCategory(TaskCategory category, String trigger, int amount, MapArea mapArea, boolean incremental) {
         //  No tasks left for this category, abort
-        if (completedCategories.contains(category)) {
+        if (completedCategories.contains(category.ordinal())) {
             System.out.println("category complete");
             return;
         }
@@ -169,7 +169,7 @@ public class TaskManager {
                     }
                 }
                 if (!foundNotCompletedTask) {
-                    completedCategories.add(category);
+                    completedCategories.add(category.ordinal());
                 }
             } finally {
                 DatabaseUtils.close(statement, rs);
