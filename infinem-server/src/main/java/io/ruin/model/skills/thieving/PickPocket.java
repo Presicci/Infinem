@@ -3,6 +3,7 @@ package io.ruin.model.skills.thieving;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -393,6 +394,7 @@ public enum PickPocket {
                 if (Random.rollDie(pickpocket.petOdds - (player.getStats().get(StatType.Thieving).currentLevel * 25)))
                     Pet.ROCKY.unlock(player);
                 player.getStats().addXp(StatType.Thieving, pickpocket.exp, true);
+                player.getTaskManager().doLookupByCategory(TaskCategory.PICKPOCKET, npc.getDef().name.toLowerCase(), 1, null, true);
             } else {
                 player.sendFilteredMessage("You fail to pick the " + pickpocket.identifier + " pocket.");
                 npc.forceText("What do you think you're doing?");
