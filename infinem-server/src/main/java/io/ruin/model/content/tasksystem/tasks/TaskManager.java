@@ -46,6 +46,8 @@ public class TaskManager {
     @Expose private HashSet<Integer> completedCategories;
 
     private void completeTask(String taskName, int uuid, TaskArea taskArea, TaskDifficulty taskDifficulty) {
+        if (completeTasks.contains(uuid))
+            return;
         int pointGain = taskDifficulty.getPoints();
         taskPoints.put(taskArea.ordinal(), taskPoints.get(taskArea.ordinal()) + pointGain);
         globalTaskPoints += pointGain;
