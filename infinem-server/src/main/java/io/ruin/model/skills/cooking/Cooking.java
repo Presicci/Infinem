@@ -67,8 +67,6 @@ public class Cooking {
                     player.sendFilteredMessage(cookingMessage(food));
                     PlayerCounter.COOKED_FOOD.increment(player, 1);
                     player.getTaskManager().doSkillItemLookup(food.cookedID);
-                    // player.getTaskHandler().checkTaskProgress(0);
-                    // player.getTaskHandler().checkTaskProgress(0, 5, 11);
                 } else {
                     rawFood.setId(food.burntID);
                     if (food.burntID != food.cookedID) {
