@@ -239,7 +239,7 @@ public class TaskManager {
     }
 
     public void doKillLookup(int npcId) {
-        player.getTaskManager().doLookupByCategory(TaskCategory.SKILLITEM, NPCDef.get(npcId).name.toLowerCase(), 1, null, true);
+        player.getTaskManager().doLookupByCategory(TaskCategory.NPCKILL, NPCDef.get(npcId).name.toLowerCase(), 1, null, true);
     }
 
     public void doSkillItemLookup(int itemId) {
