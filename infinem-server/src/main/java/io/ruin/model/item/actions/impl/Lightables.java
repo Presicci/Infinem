@@ -40,6 +40,8 @@ public enum Lightables {
     private void light(Player player, Item item) {
         item.setId(litId);
         player.sendMessage("You light the " + item.getDef().name + ".");
+        if (this == Lightables.TORCH)
+            player.getTaskManager().doLookupByUUID(49, 1);  // Light a Torch
     }
 
     private void extinguish(Player player, Item item) {
