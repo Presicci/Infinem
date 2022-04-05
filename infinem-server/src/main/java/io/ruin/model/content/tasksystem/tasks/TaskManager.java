@@ -324,18 +324,18 @@ public class TaskManager {
     }
 
     public void doKillLookup(int npcId) {
-        player.getTaskManager().doLookupByCategory(TaskCategory.NPCKILL, NPCDef.get(npcId).name.toLowerCase(), 1, null, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.NPCKILL, NPCDef.get(npcId).name.toLowerCase(), 1, null, true);
     }
 
     public void doSkillItemLookup(int itemId) {
-        player.getTaskManager().doLookupByCategory(TaskCategory.SKILLITEM, ItemDef.get(itemId).name.toLowerCase(), 1, null, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, ItemDef.get(itemId).name.toLowerCase(), 1, null, true);
     }
 
     public void doSkillItemLookup(int itemId, int amount) {
-        player.getTaskManager().doLookupByCategory(TaskCategory.SKILLITEM, ItemDef.get(itemId).name.toLowerCase(), amount, null, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, ItemDef.get(itemId).name.toLowerCase(), amount, null, true);
     }
 
     public void doSkillItemLookup(Item item) {
-        player.getTaskManager().doLookupByCategory(TaskCategory.SKILLITEM, item.getDef().name.toLowerCase(), item.getAmount(), null, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, item.getDef().name.toLowerCase(), item.getAmount(), null, true);
     }
 }
