@@ -180,6 +180,10 @@ public class TaskManager {
         });
     }
 
+    public void doLookupByCategoryAndTrigger(TaskCategory category, String trigger) {
+        doLookupByCategoryAndTrigger(category, trigger, 1, null, true);
+    }
+
     public void doLookupByCategoryAndTrigger(TaskCategory category, String trigger, int amount, MapArea mapArea, boolean incremental) {
         long currentTime = System.currentTimeMillis();
         Server.gameDb.execute(connection -> {
@@ -337,5 +341,9 @@ public class TaskManager {
 
     public void doSkillItemLookup(Item item) {
         player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, item.getDef().name.toLowerCase(), item.getAmount(), null, true);
+    }
+
+    public void doUnlockItemLookup(Item item) {
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.UNLOCKITEM, item.getDef().name.toLowerCase(), item.getAmount(), null, true);
     }
 }
