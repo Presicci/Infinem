@@ -67,12 +67,16 @@ public class Cooking {
                     player.sendFilteredMessage(cookingMessage(food));
                     PlayerCounter.COOKED_FOOD.increment(player, 1);
                     player.getTaskManager().doSkillItemLookup(food.cookedID);
+                    player.cookStreak++;
+                    if (player.cookStreak >= 5)
+                        player.getTaskManager().doLookupByUUID(21, 1);  // Cook 5 pieces of food in a row without burning them
                 } else {
                     rawFood.setId(food.burntID);
                     if (food.burntID != food.cookedID) {
                         player.sendFilteredMessage("You accidentally burn the " + food.itemName + ".");
                     }
                     player.getTaskManager().doLookupByUUID(20, 1);  // Burn Some Food
+                    player.cookStreak = 0;
                     PlayerCounter.BURNT_FOOD.increment(player, 1);
                 }
 
