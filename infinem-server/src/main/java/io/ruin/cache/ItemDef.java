@@ -14,6 +14,7 @@ import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.journal.presets.Preset;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemGroundItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
@@ -143,6 +144,12 @@ public class ItemDef {
     public Achievement achievement;
     public boolean achievementReqIsIronmanOnly;
 
+    public int soundid;
+
+    public int getSoundId() {
+        return soundid;
+    }
+
     /**
      * Custom data
      */
@@ -238,6 +245,7 @@ public class ItemDef {
 
     public boolean coxItem;
 
+
     /**
      * Cache data
      */
@@ -299,6 +307,22 @@ public class ItemDef {
                 break;
             decode(buffer, opcode);
         }
+        if (id == Items.ONIONS_10)
+            name = "Onions(10)";
+        if (id == Items.CABBAGES_10)
+            name = "Cabbages(10)";
+        if (id == Items.POTATOES_10)
+            name = "Potatoes(10)";
+        if (id == Items.APPLES_5)
+            name = "Apples(5)";
+        if (id == Items.ORANGES_5)
+            name = "Oranges(5)";
+        if (id == Items.STRAWBERRIES_5)
+            name = "Strawberries(5)";
+        if (id == Items.BANANAS_5)
+            name = "Bananas(5)";
+        if (id == Items.TOMATOES_5)
+            name = "Tomatoes(5)";
         if(id == 2742) {
             name = "Coin Casket (small)";
             inventoryOptions[1] = null;
@@ -571,7 +595,9 @@ public class ItemDef {
             yof2d = buffer.readUnsignedShort();
             if(yof2d > 32767)
                 yof2d -= 65536;
-        } else if(opcode == 11)
+        } else if(opcode == 9)
+            buffer.readString();
+        else if(opcode == 11)
             stackable = true;
         else if(opcode == 12)
             value = buffer.readInt();
@@ -623,6 +649,8 @@ public class ItemDef {
             anInt1501 = buffer.readUnsignedShort();
         else if(opcode == 93)
             anInt1503 = buffer.readUnsignedShort();
+        else if(opcode == 94)
+            buffer.readUnsignedShort();
         else if(opcode == 95)
             zan2d = buffer.readUnsignedShort();
         else if(opcode == 97)
