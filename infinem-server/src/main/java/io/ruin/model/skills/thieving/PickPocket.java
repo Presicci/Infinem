@@ -376,6 +376,7 @@ public enum PickPocket {
                                 hasGottenPouch = true;  // Prevents getting multiple pouches per pickpocket
                             } else {
                                 player.getInventory().addOrDrop(item);
+                                player.getTaskManager().doSkillItemLookup(item);
                             }
                         }
                     }
@@ -388,6 +389,7 @@ public enum PickPocket {
                             player.getInventory().add(pouchId, 1);
                         } else {
                             player.getInventory().add(item);
+                            player.getTaskManager().doSkillItemLookup(item);
                         }
                     }
                 }
