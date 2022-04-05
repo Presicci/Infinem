@@ -24,7 +24,7 @@ public enum FountainOfRune {
         for (FountainOfRune fountainOfRune : values()) {
             ItemObjectAction.register(fountainOfRune.unchargedID, 26782, (player, uncharged, obj) -> player.startEvent(event -> {
                 player.lock();
-                player.sendMessage("You hold the jewellery against the fountain..");
+                player.sendMessage("You hold the jewellery against the fountain...");
                 event.delay(1);
                 player.animate(832);
                 int amount = uncharged.count();
