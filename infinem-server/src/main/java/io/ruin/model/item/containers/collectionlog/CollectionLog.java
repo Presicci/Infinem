@@ -70,10 +70,13 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
      *
      * @param items The items.
      */
-    public void collect(Item...items) {
+    public boolean collect(Item...items) {
+        boolean added = false;
         for (Item item : items) {
-            collect(item);
+            if (collect(item))
+                added = true;
          }
+        return added;
     }
 
     /**
@@ -81,9 +84,9 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
      *
      * @param item The item being collected.
      */
-    private void collect(Item item) {
+    private boolean collect(Item item) {
         if (!item.getDef().collectable) {
-            return;
+            return false;
         }
 
         int amount = collected.getOrDefault(item.getId(),0);
@@ -94,6 +97,7 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
         player.getPacketSender().sendClientScript(3346, "iss", 0xff981f, "Collection log", "New item:" + Color.WHITE.wrap(item.getDef().name));
         player.getPacketSender().sendClientScript(3347, "iss", 0xff981f, "Collection log", "New item:" + Color.WHITE.wrap(item.getDef().name));
         player.getPacketSender().sendClientScript(3348, "iss", 0xff981f, "Collection log", "New item:" + Color.WHITE.wrap(item.getDef().name));
+        return true;
     }
 
     public void clearCollectedItems() {

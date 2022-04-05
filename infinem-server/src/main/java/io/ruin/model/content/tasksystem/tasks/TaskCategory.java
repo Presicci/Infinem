@@ -18,7 +18,7 @@ public enum TaskCategory {
 
     //Skilling
     PICKPOCKET, ROOFTOP, SLAYERPOINTS, BUILDROOM, RUNECRAFT, BURNLOG, IMPLING,
-    LIGHTSOURCE, BURYBONE
+    LIGHTSOURCE, BURYBONE, COMPLETECLUE, CLUEUNIQUE
     ;
 
     public final int[] uuids;
