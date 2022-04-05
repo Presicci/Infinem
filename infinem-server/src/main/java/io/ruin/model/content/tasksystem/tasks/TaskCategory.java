@@ -10,6 +10,8 @@ public enum TaskCategory {
 
     UNLOCKITEM, SKILLITEM,
 
+    NPCKILL, SLAYERKILL, SUPERIORKILL,
+
     UUIDLOOKUP,
 
     //  Skilling

@@ -12,6 +12,7 @@ import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.*;
 import io.ruin.model.content.PvmPoints;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.DoubleDrops;
@@ -448,6 +449,7 @@ public abstract class NPCCombat extends Combat {
         if (Random.rollDie(staffChance)) {
             handleDrop(killer, pos, player, Collections.singletonList(new Item(20736)));    // Dust battlestaff
         }
+        player.getTaskManager().doLookupByCategory(TaskCategory.SUPERIORKILL, 1, true);
     }
 
     /*
