@@ -174,6 +174,7 @@ public enum Altars {
             int amount = essenceCount * runesPerEssence;
             player.getInventory().add(altar.runeID, amount);
             player.getStats().addXp(StatType.Runecrafting, essenceCount * altar.experience, true);
+            player.getTaskManager().doSkillItemLookup(altar.runeID, amount);
             counter.increment(player, amount);
             player.unlock();
         });
