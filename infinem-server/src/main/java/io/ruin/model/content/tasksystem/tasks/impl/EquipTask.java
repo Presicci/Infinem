@@ -12,6 +12,7 @@ public enum EquipTask {
     FIRE_CAPE(Items.FIRE_CAPE, 418),
     INFERNAL_CAPE(Items.INFERNAL_CAPE, 429),
     SPINY_HELMET(Items.SPINY_HELMET, 29),
+    DRAGON_DEFENDER(Items.DRAGON_DEFENDER, 462)
     ;
 
     private final int itemId, uuid;
