@@ -124,6 +124,8 @@ public enum Impling {
                 player.getStats().addXp(StatType.Hunter, player.getPosition().inBounds(PURO_PURO) ? impling.puroExp : impling.worldExp, true);
                 PlayerCounter.IMPLINGS_CAUGHT.increment(player, 1);
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.IMPLING, npc.getDef().name);
+                if (isInPuroPuro(npc))
+                    player.getTaskManager().doLookupByCategory(TaskCategory.IMPLINGPURO, 1, true);
                 player.unlock();
             } else {
                 event.delay(1);
