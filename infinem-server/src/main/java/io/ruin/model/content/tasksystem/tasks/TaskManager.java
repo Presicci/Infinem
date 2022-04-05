@@ -1,17 +1,17 @@
 package io.ruin.model.content.tasksystem.tasks;
 
-import com.google.common.collect.Multimap;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.database.DatabaseUtils;
 import io.ruin.api.utils.StringUtils;
+import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.Item;
 import io.ruin.model.map.MapArea;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -232,5 +232,13 @@ public class TaskManager {
         }
         doLookupByCategory(TaskCategory.BASELEVEL, player.getStats().getBaseLevel(), false);
         doLookupByCategory(TaskCategory.TOTALLEVEL, player.getStats().totalLevel, false);
+    }
+
+    public void doSkillItemLookup(int itemId) {
+        player.getTaskManager().doLookupByCategory(TaskCategory.SKILLITEM, ItemDef.get(itemId).name.toLowerCase(), 1, null, true);
+    }
+
+    public void doSkillItemLookup(Item item) {
+        player.getTaskManager().doLookupByCategory(TaskCategory.SKILLITEM, item.getDef().name.toLowerCase(), item.getAmount(), null, true);
     }
 }
