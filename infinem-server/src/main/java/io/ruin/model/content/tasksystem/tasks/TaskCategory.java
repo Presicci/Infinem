@@ -16,7 +16,7 @@ public enum TaskCategory {
     UUIDLOOKUP,
 
     //Skilling
-    PICKPOCKET, ROOFTOP
+    PICKPOCKET, ROOFTOP, SLAYERPOINTS, BUILDROOM
     ;
 
     public final int[] uuids;
