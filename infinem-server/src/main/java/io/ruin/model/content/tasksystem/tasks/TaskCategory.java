@@ -8,7 +8,9 @@ public enum TaskCategory {
     //  Levels
     FIRSTLEVEL, TOTALLEVEL, BASELEVEL,
 
-    UNLOCKITEM,
+    UNLOCKITEM, SKILLITEM,
+
+    UUIDLOOKUP,
 
     //  Skilling
     TOOL,
