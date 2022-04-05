@@ -3,6 +3,7 @@ package io.ruin.model.skills.hunter;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
 import io.ruin.cache.NpcID;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -92,6 +93,7 @@ public enum Butterfly {
                 removeButterfly(npc);
                 player.getStats().addXp(StatType.Hunter, butterfly.experience, true);
                 PlayerCounter.BUTTERFLIES_CAUGHT.increment(player, 1);
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.BUTTERFLY, npc.getDef().name);
                 player.unlock();
             } else {
                 event.delay(1);
