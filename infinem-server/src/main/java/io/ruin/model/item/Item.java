@@ -293,6 +293,7 @@ public class Item {
         boolean stack;
         int moved;
         int hash = getAttributeHash();
+        ItemContainerG oldContainer = container;
         if (hash == 0) {
             long tempAmt;
             if ((stack = container.forceStack || getDef().stackable)) {
@@ -320,10 +321,14 @@ public class Item {
             return moved;
         }
         if (stack) {
+            if (amount - moved <= 0 && getDef().unequipAction != null)
+                getDef().unequipAction.handle(oldContainer.player);
             incrementAmount(-moved);
             return moved;
         }
         if (moved == 1) {
+            if (getDef().unequipAction != null)
+                getDef().unequipAction.handle(oldContainer.player);
             remove();
             return 1;
         }
