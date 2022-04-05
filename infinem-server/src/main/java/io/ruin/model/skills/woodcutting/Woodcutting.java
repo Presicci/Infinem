@@ -100,6 +100,9 @@ public class Woodcutting {
                         if (treeData != Tree.CRYSTAL) {
                             player.sendFilteredMessage("You get some " + treeData.treeName + ".");
                             player.getInventory().add(treeData.log, 1);
+                            player.getTaskManager().doLookupByUUID(16, 1);  // Chop Some Logs
+                            if (hatchet == Hatchet.STEEL)
+                                player.getTaskManager().doLookupByUUID(17, 1);  // Chop Some Logs With a Steel Axe
                         }
                         player.collectResource(new Item(treeData.log, 1));
                     }
@@ -109,6 +112,7 @@ public class Woodcutting {
                                 .owner(player).position(RouteFinder.findWalkable(player.getPosition()))
                                 .spawn();
                         player.sendFilteredMessage("A bird's nest falls out of the tree.");
+                        player.getTaskManager().doLookupByUUID(18, 1);  // Obtain a Bird Nest
                         PlayerCounter.ACQUIRED_BIRDS_NESTS.increment(player, 1);
                     }
                     if (Random.rollDie(treeData.petOdds - (player.getStats().get(StatType.Woodcutting).currentLevel * 25)))
