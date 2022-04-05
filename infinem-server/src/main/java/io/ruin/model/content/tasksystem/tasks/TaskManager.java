@@ -148,14 +148,12 @@ public class TaskManager {
                     }
                     if (finalDifficulty == null || finalTaskarea == null) {
                         System.out.println("TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
-                        break;
                     } else {
                         TaskArea finalTaskarea1 = finalTaskarea;
                         TaskDifficulty finalDifficulty1 = finalDifficulty;
                         player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
                             completeTask(name, uuid, finalTaskarea1, finalDifficulty1);
                         });
-                        break;
                     }
                 }
                 if (!foundNotCompletedTask) {
