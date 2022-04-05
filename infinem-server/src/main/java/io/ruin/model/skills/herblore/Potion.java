@@ -143,6 +143,7 @@ public enum Potion {
             secondaryItem.remove();
         player.getInventory().add(vialIds[2], 1);
         player.getStats().addXp(StatType.Herblore, xp, true);
+        player.getTaskManager().doSkillItemLookup(vialIds[2]);
         player.animate(363);
     }
 
