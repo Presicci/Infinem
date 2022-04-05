@@ -3,6 +3,7 @@ package io.ruin.model.skills.runecrafting;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -174,7 +175,7 @@ public enum Altars {
             int amount = essenceCount * runesPerEssence;
             player.getInventory().add(altar.runeID, amount);
             player.getStats().addXp(StatType.Runecrafting, essenceCount * altar.experience, true);
-            player.getTaskManager().doSkillItemLookup(altar.runeID, amount);
+            player.getTaskManager().doLookupByCategory(TaskCategory.RUNECRAFT, ItemDef.get(altar.runeID).name, 1, null, true);
             counter.increment(player, amount);
             player.unlock();
         });
