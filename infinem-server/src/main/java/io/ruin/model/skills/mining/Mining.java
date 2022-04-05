@@ -149,6 +149,8 @@ public class Mining {
                     player.getTaskManager().doSkillItemLookup(itemId);
                     if (pickaxe == Pickaxe.STEEL)
                         player.getTaskManager().doLookupByUUID(23, 1);  // Mine some Ore With a Steel Pickaxe
+                    if (pickaxe == Pickaxe.RUNE)
+                        player.getTaskManager().doLookupByUUID(101, 1);  // Mine some Ore With a Rune Pickaxe
 
                     /* Rolling for rock depletion */
                     double depleteChance = rockData.depleteChance * (1 - miningGloves(player, rockData));
