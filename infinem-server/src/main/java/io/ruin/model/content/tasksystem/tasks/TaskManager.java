@@ -74,6 +74,7 @@ public class TaskManager {
             System.out.println("category complete");
             return;
         }
+        long currentTime = System.currentTimeMillis();
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;
@@ -161,6 +162,7 @@ public class TaskManager {
                 }
             } finally {
                 DatabaseUtils.close(statement, rs);
+                System.out.println(System.currentTimeMillis() - currentTime);
             }
         });
     }
