@@ -312,6 +312,6 @@ public class SlayerMaster {
         } else {
             player.sendMessage("You need something new to hunt.");
         }
-
+        player.getTaskManager().doLookupByUUID(31, 1);  // Check Your Slayer Task
     }
 }
