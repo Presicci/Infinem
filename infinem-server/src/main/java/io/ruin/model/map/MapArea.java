@@ -11,7 +11,9 @@ import lombok.Getter;
 public enum MapArea {
     LUMBRIDGE_CASTLE(12850),
     VARROCK(3170, 3376, 3299, 3506, 0),
-    DRAGON_FORGE(1744, 5277, 1760, 5293, 1);
+    DRAGON_FORGE(1744, 5277, 1760, 5293, 1),
+    WIZARD_TOWER(12337),
+    ;
 
     private final Bounds bounds;
 
