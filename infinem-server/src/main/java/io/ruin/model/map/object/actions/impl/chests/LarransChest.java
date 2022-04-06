@@ -9,7 +9,8 @@ import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.actions.ObjectAction;
 
 /**
- * @author Adam Ali ("Kal-El") https://www.rune-server.ee/members/kal+el/
+ * @author Mrbennjerry - https://github.com/Mrbennjerry
+ * Created on 4/6/2022
  */
 public class LarransChest {
 
