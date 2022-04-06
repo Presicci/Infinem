@@ -26,6 +26,8 @@ public class IceBlitz extends TargetSpell {
     protected void beforeHit(Hit hit, Entity target) {
         if (hit.attacker.player != null && hit.attacker.player.getEquipment().hasId(22647)) // zuriel's staff
             hit.boostAttack(0.1);
+        if (hit.attacker.player != null)
+            hit.attacker.player.getTaskManager().doLookupByUUID(676, 1);    // Cast Ice Blitz
     }
 
     @Override
