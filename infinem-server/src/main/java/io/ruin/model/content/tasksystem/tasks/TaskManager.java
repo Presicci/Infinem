@@ -264,8 +264,9 @@ public class TaskManager {
         });
     }
 
-    public void doDropGroupLookup(String trigger, MapArea mapArea) {
+    public void doDropGroupLookup(String trigger) {
         long currentTime = System.currentTimeMillis();
+        MapArea mapArea = MapArea.getMapArea(player);
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;
