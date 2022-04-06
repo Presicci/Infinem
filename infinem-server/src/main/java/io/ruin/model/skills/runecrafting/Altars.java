@@ -246,6 +246,7 @@ public enum Altars {
             } else {
                 player.getInventory().add(runeCombination.combinationRuneId, amountToCombine);
                 player.sendMessage("You bind the Temple's power into " + runeCombination.runeName + ".");
+                player.getTaskManager().doLookupByCategory(TaskCategory.RUNECRAFTCOMBO, ItemDef.get(runeCombination.combinationRuneId).name, amountToCombine, true);
             }
 
             player.unlock();
