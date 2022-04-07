@@ -225,6 +225,9 @@ public class GroundItem {
         Loggers.logPickup(player.getUserId(), player.getName(), player.getIp(), id, amount, x, y, z);
         if (getTimeDropped() > 0) { // this item was manually dropped by someone, log as trade
             Loggers.logDropTrade(player.getUserId(), originalOwner, player.getIp(), getDropperIp(), player.getName(), getDropperName(), id, amount, x, y, z, getTimeDropped());
+        } else {
+            if (id == 11849)
+                player.getTaskManager().doLookupByUUID(52, 1);  // Obtain a Mark of Grace
         }
         if (id == 88 && !player.bootsOfLightnessTaken) {
             player.bootsOfLightnessTaken = true;
