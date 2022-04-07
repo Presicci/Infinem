@@ -40,11 +40,21 @@ public enum Prayer {
         p.level = 13;
         p.drain = 6;
         p.strengthBoost = 0.10;
+        p.activationCheck = player -> {
+            if (player.getPrayer().isActive(Prayer.values()[5]))
+                player.getTaskManager().doLookupByUUID(68, 1);  // Superhuman Strength and Improved Reflexes
+            return true;
+        };
     }),
     IMPROVED_REFLEXES(4109, 2662, p -> {
         p.level = 16;
         p.drain = 6;
         p.attackBoost = 0.10;
+        p.activationCheck = player -> {
+            if (player.getPrayer().isActive(Prayer.SUPERHUMAN_STRENGTH))
+                player.getTaskManager().doLookupByUUID(68, 1);  // Superhuman Strength and Improved Reflexes
+            return true;
+        };
     }),
     RAPID_RESTORE(4110, 2679, p -> {
         p.level = 19;
