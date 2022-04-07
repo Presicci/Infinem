@@ -36,42 +36,6 @@
     "walkRange": 0
   },
   {
-    "name": "Border Guard",
-    "id": 4287,
-    "x": 3267,
-    "y": 3226,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
-    "name": "Border Guard",
-    "id": 4287,
-    "x": 3267,
-    "y": 3229,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
-    "name": "Border Guard",
-    "id": 4288,
-    "x": 3268,
-    "y": 3226,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
-    "name": "Border Guard",
-    "id": 4288,
-    "x": 3268,
-    "y": 3229,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
     "name": "Goblin",
     "id": 3030,
     "x": 3231,
