@@ -19,5 +19,7 @@ public class FossilIsland {
         ObjectAction.register(30919, "dive", ((player, obj) -> Traveling.fadeTravel(player, new Position(3731, 10281, 1))));
         // Climb to island
         ObjectAction.register(30948, "climb", ((player, obj) -> Traveling.fadeTravel(player, new Position(3768, 3898))));
+        // Rowboat to mainland
+        ObjectAction.register(30914, "travel", ((player, obj) -> Traveling.fadeTravel(player, new Position(3362, 3445))));
     }
 }
