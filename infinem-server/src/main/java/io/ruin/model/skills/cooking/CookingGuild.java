@@ -60,6 +60,7 @@ public class CookingGuild {
                 opened.remove();
 
                 player.unlock();
+                player.getTaskManager().doLookupByUUID(346, 1); // Enter the Cooks' Guild
             });
         });
 
