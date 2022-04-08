@@ -265,6 +265,8 @@ public class ItemCombineAction {
                     player.getInventory().remove(i.required);
                 }
             }
+            if (this == ItemCombine.PINEAPPLE_PIZZA)
+                player.getTaskManager().doLookupByUUID(99, 1);  // Make a Pineapple Pizza
             player.resetAnimation();
         }
     }
