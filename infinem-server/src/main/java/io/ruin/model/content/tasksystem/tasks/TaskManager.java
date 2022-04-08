@@ -199,7 +199,7 @@ public class TaskManager {
             try {
                 statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ? AND required_object LIKE ?");
                 statement.setString(1, StringUtils.capitalizeFirst(category.toString().toLowerCase()));
-                statement.setString(2, "%" + trigger.trim().toLowerCase() + "%");
+                statement.setString(2, "%" + trigger.trim().toLowerCase().replace("_", " ") + "%");
                 rs = statement.executeQuery();
                 while (rs.next()) {
                     int uuid = rs.getInt("uuid");
