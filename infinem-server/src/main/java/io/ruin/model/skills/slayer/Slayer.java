@@ -121,7 +121,7 @@ public class Slayer {
 
                 player.sendMessage("<col=7F00FF>You've completed " + spree + " tasks in a row and received " + points + " points; return to a Slayer Master.");
                 Config.SLAYER_POINTS.set(player, current + points);
-                player.getTaskManager().doLookupByUUID(30, 1);  // Earn Some Slayer Points
+                player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERTASKCOMPL, 1, true);
             } else {
                 SuperiorSlayer.trySpawn(player, creature, npc);
             }
