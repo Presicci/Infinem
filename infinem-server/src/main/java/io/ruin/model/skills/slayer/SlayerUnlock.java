@@ -93,6 +93,8 @@ public enum SlayerUnlock {
             config.set(player, 1);
             Config.SLAYER_POINTS.set(player, Config.SLAYER_POINTS.get(player) - price);
             player.sendMessage((extension ? "Extension" : "Unlock") + " purchased.");
+            if (this == SlayerUnlock.BIGGER_AND_BADDER)
+                player.getTaskManager().doLookupByUUID(106, 1); // Unlock Bigger and Badder
             player.sendMessage("" + toString());
         }
     }
