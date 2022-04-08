@@ -15,6 +15,7 @@ public enum EquipTask {
     DRAGON_DEFENDER(Items.DRAGON_DEFENDER, 462),
     FANCY_BOOTS(Items.FANCY_BOOTS, 341),
     FIGHTING_BOOTS(Items.FIGHTING_BOOTS, 341),
+    BUG_LANTERN(Items.LIT_BUG_LANTERN, 125)
     ;
 
     private final int itemId, uuid;
