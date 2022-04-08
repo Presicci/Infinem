@@ -162,7 +162,7 @@ public class DraynorManor {
         ObjectAction.register(133, 3092, 3362, 0, "climb-down", ((player, obj) -> Ladder.climb(player, new Position(3117, 9753), false, true, false)));
         ObjectAction.register(132, 3117, 9754, 0, "climb-up", ((player, obj) -> Ladder.climb(player, new Position(3092, 3361), true, true, false)));
 
-        // Back door TODO temp door not working
-        ObjectAction.register(136, 3123, 3361, 0, "open", (player, obj) -> PassableDoor.passDoor(player, obj, Direction.SOUTH, 1, 11448));
+        // Back door
+        ObjectAction.register(136, 3123, 3361, 0, "open", (player, obj) -> PassableDoor.passDoor(player, obj, Direction.SOUTH, -4, 11448));
     }
 }
