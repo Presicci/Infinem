@@ -34,7 +34,8 @@ public enum Lightables {
     KANDARIN_HEADGEAR_2(-1, Items.KANDARIN_HEADGEAR_2),
     KANDARIN_HEADGEAR_3(-1, Items.KANDARIN_HEADGEAR_3),
     KANDARIN_HEADGEAR_4(-1, Items.KANDARIN_HEADGEAR_4),
-    BRUMA_TORCH(-1, Items.BRUMA_TORCH);
+    BRUMA_TORCH(-1, Items.BRUMA_TORCH),
+    BUG_LANTERN(Items.UNLIT_BUG_LANTERN, Items.LIT_BUG_LANTERN);
 
     public final int unlitId, litId;
 
