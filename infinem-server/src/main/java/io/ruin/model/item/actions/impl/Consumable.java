@@ -30,7 +30,10 @@ public class Consumable {
         registerEat(1957, 1, p -> p.sendFilteredMessage("It's sad to see a grown " + (p.getAppearance().isMale() ? "man" : "woman") + " cry."));
         registerEat(1942, 1, p -> p.sendFilteredMessage("You eat the potato. Yuck!"));
         registerEat(1965, 1, p -> p.sendFilteredMessage("You eat the cabbage. Yuck!"));
-        registerEat(10476, 1, 1, true, p -> p.getMovement().restoreEnergy(10));
+        registerEat(10476, 1, 1, true, p -> {
+            p.getMovement().restoreEnergy(10);
+            p.getTaskManager().doLookupByUUID(77, 1);   // Eat some Purple Sweets
+        });
         registerEat(1963, 2, "banana");
         registerEat(2162, 2, "king worm");
         registerEat(6883, 8, "peach");
