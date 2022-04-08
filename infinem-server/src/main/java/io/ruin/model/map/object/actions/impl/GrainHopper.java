@@ -123,6 +123,7 @@ public class GrainHopper {
                                 Config.FLOUR_BIN_FULL.set(player, 0);
                             }
                             player.sendMessage("You fill a pot with flour from the bin.");
+                            player.getTaskManager().doLookupByUUID(339, 1); // Make Some Flour in Lumbridge
                             e.delay(1);
                             player.unlock();
                         });
