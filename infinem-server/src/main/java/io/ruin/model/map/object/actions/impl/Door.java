@@ -443,7 +443,7 @@ public class Door {
                 {13346, 13352}, {13347, 13353}, // steel dungeon door
                 {13348, 13354}, {13349, 13355}, // marble dungeon door
                 {9038, 9039}, //Karamja teak tree entrance
-                {1511, 1511}, {1513, 1513}
+                {1511, 1511}, {1513, 1513}, {11470, 11471}
         };
         /**
          * These objects face 180 degrees different than others.
