@@ -401,6 +401,7 @@ public abstract class Room {
             house.calculate();
             player.getStats().addXp(StatType.Construction, selected.getXP(), true);
             event.delay(1);
+            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.BUILDFURNITURE, selected.toString());
             player.unlock();
             onBuildableChanged(player, definition.getHotspots()[hotspotIndex], selected);
         });
