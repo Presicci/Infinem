@@ -6,10 +6,11 @@ import io.ruin.model.item.actions.ItemAction;
 
 public enum Geode {
 
-    EASY(20358, ClueType.EASY.clueId),
-    MEDIUM(20360, ClueType.MEDIUM.clueId),
-    HARD(20362, ClueType.HARD.clueId),
-    ELITE(20364, ClueType.ELITE.clueId);
+    BEGINNER(23442, ClueType.BEGINNER.boxId),
+    EASY(20358, ClueType.EASY.boxId),
+    MEDIUM(20360, ClueType.MEDIUM.boxId),
+    HARD(20362, ClueType.HARD.boxId),
+    ELITE(20364, ClueType.ELITE.boxId);
 
     public final int itemID, reward;
 
