@@ -196,7 +196,7 @@ public class GroundItem {
             return;
         }
         ItemDef def = ItemDef.get(id);
-        if(def.clueType != null && player.getInventory().hasId(def.clueType.clueId)) {
+        if(def.clueType != null && player.getInventory().hasId(def.clueType.clueId) && id == def.clueType.clueId) {
             player.sendMessage("You already have one of those in your inventory!");
             return;
         }
