@@ -42,28 +42,33 @@ public enum BirdNest {
     }
 
     public static final LootTable ringNest = new LootTable().addTable(1,
-            new LootItem(1635, 1, 15), //Gold ring
-            new LootItem(1637, 1, 10), //Sapphire ring
-            new LootItem(1639, 1, 5),  //Emerald ring
-            new LootItem(1641, 1, 3),  //Ruby ring
+            new LootItem(1635, 1, 40), //Gold ring
+            new LootItem(1637, 1, 30), //Sapphire ring
+            new LootItem(1639, 1, 20),  //Emerald ring
+            new LootItem(1641, 1, 9),  //Ruby ring
             new LootItem(1643, 1, 1)   //Diamond ring
     );
 
     public static final LootTable seedNest = new LootTable().addTable(1,
-            new LootItem(5312, 1, 50), //Acorn
-            new LootItem(5283, 1, 50), //Apple tree seed
-            new LootItem(5284, 1, 50), //Banana tree seed
-            new LootItem(5285, 1, 30), //Orange tree seed
-            new LootItem(5313, 1, 30), //Willow seed
+            new LootItem(5312, 1, 100), //Acorn
+            new LootItem(5283, 1, 80), //Apple tree seed
+            new LootItem(5313, 1, 70), //Willow seed
+            new LootItem(5284, 1, 60), //Banana tree seed
+            new LootItem(5285, 1, 50), //Orange tree seed
             new LootItem(5286, 1, 30), //Curry tree seed
-            new LootItem(5314, 1, 5),  //Maple seed
-            new LootItem(5287, 1, 5),  //Pineapple seed
-            new LootItem(5288, 1, 5),  //Papaya tree seed
-            new LootItem(5289, 1, 5),  //Palm tree seed
-            new LootItem(5290, 1, 5),  //Calquat tree seed
-            new LootItem(5315, 1, 5),  //Yew seed
-            new LootItem(5316, 1, 1),  //Magic seed
-            new LootItem(5317, 1, 1)   //Spirit seed
+            new LootItem(5314, 1, 25),  //Maple seed
+            new LootItem(5287, 1, 20),  //Pineapple seed
+            new LootItem(5288, 1, 15),  //Papaya tree seed
+            new LootItem(5315, 1, 13),  //Yew seed
+            new LootItem(5289, 1, 11),  //Palm tree seed
+            new LootItem(5290, 1, 10),  //Calquat tree seed
+            new LootItem(5317, 1, 5),   //Spirit seed
+            new LootItem(22877, 1, 3),  // Dragonfruit tree seed
+            new LootItem(5316, 1, 3),  //Magic seed
+            new LootItem(21486, 1, 2),  // Teak seed
+            new LootItem(21488, 1, 2),  // Mahogany seed
+            new LootItem(22869, 1, 2),  // Celastrus seed
+            new LootItem(22871, 1, 1)  // Redwood tree seed
     );
 
     private static void openNest(Player player, Item item, Item reward, String descriptiveName) {
