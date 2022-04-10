@@ -44,7 +44,8 @@ public enum FishingClueBottle {
     static {
         for (FishingClueBottle clueBottle : values())
             ItemAction.registerInventory(clueBottle.bottleId, "open", (player, item) -> {
-                item.setId(clueBottle.clueType.boxId);
+                player.getInventory().remove(item);
+                player.getInventory().add(clueBottle.clueType.boxId, 1);
                 player.sendMessage("You crack the bottle and find a clue scroll inside!");
             });
     }

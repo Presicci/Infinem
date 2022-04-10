@@ -27,7 +27,8 @@ public enum Geode {
     static {
         for(Geode geode : values()) {
             ItemAction.registerInventory(geode.itemID, "open", (player, item) -> {
-                item.setId(geode.reward);
+                player.getInventory().remove(item);
+                player.getInventory().add(geode.reward, 1);
                 player.sendMessage("You open the geode and find a clue scroll.");
             });
         }
