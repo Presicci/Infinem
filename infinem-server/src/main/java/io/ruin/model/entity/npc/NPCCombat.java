@@ -703,8 +703,14 @@ public abstract class NPCCombat extends Combat {
         for(Item item : items) {
             // Attempt a task unlock for each item dropped
             pKiller.getTaskManager().doUnlockItemLookup(item);
-
             pKiller.getTaskManager().doDropGroupLookup(item.getDef().name.toLowerCase());
+
+            /*
+             * Convert clue scrolls into clue boxes
+             */
+            if (item.getDef().clueType != null) {
+                item.setId(item.getDef().clueType.boxId);
+            }
 
             /*
              * Ethereum auto collect
