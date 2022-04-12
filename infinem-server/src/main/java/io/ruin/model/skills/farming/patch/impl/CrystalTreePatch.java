@@ -41,6 +41,7 @@ public class CrystalTreePatch extends Patch {
         player.sendMessage("You examine the tree and find that it is in perfect health.");
         getPlantedCrop().getCounter().increment(player, 1);
         player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP(), true);
+        player.getTaskManager().doLookupByUUID(788, 1); // Check a grown Crystal Tree
         advanceStage();
         update();
     }
