@@ -195,6 +195,10 @@ public class StatList {
         double newXp = stat.experience + amount;
         if(newXp > Stat.MAX_XP)
             newXp = Stat.MAX_XP;
+        // TODO decide when we want master capes
+        if (newXp == Stat.LEVEL_EXPERIENCES[118] && stat.experience < Stat.LEVEL_EXPERIENCES[118]) {
+            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLMASTER, type.name());
+        }
         if(newXp == Stat.MAX_XP && stat.experience < Stat.MAX_XP) {
             Broadcast.GLOBAL.sendNews(Icon.GOLD_STAR, player.getName() + " has just reached 200 million experience in " + type.name() + "!");
             player.sendMessage("Congratulations, you have reached max experience in " + type.name() + "!");
