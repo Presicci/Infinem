@@ -43,6 +43,8 @@ public enum EssencePouch {
         if (pouchFull(player, pouch)) {
             player.getInventory().remove(Essence.PURE.id, amount);
             pouchMap.put(pouch, amount);
+            if (pouch == EssencePouch.LARGE_POUCH && pouchMap.get(pouch) >= pouch.capacity)
+                player.getTaskManager().doLookupByUUID(123, 1);   // Fill a Large Pouch
             if (pouch == EssencePouch.GIANT_POUCH && pouchMap.get(pouch) >= pouch.capacity)
                 player.getTaskManager().doLookupByUUID(199, 1);   // Fill a Giant Pouch
         }
@@ -122,6 +124,8 @@ public enum EssencePouch {
                 intercepted += withdraw;
                 entry.setValue(entry.getValue() + withdraw);
                 player.sendFilteredMessage("You withdraw " + withdraw + " essence directly into your " + pouch.toString().toLowerCase().replace("_", " ") + ".");
+                if (pouch == EssencePouch.LARGE_POUCH && entry.getValue() >= pouch.capacity)
+                    player.getTaskManager().doLookupByUUID(123, 1);   // Fill a Large Pouch
                 if (pouch == EssencePouch.GIANT_POUCH && entry.getValue() >= pouch.capacity)
                     player.getTaskManager().doLookupByUUID(199, 1);   // Fill a Giant Pouch
                 if (intercepted == amount)
