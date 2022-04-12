@@ -38,12 +38,6 @@ public class DoubleDrops {
                 rolls++;
             }
         }
-
-        if (player.getEquipment().contains(new Item(773))) { //5 rolls with pring
-            rolls += 5;
-        }
-
-
         if (Random.get(1, 100) <= gearCount(player) * 2) {
             rolls++;
         }
