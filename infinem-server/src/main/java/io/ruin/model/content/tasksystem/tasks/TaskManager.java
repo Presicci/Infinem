@@ -10,11 +10,9 @@ import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.MapArea;
-import io.ruin.services.Loggers;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -197,9 +195,10 @@ public class TaskManager {
             PreparedStatement statement = null;
             ResultSet rs = null;
             try {
-                statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ? AND required_object LIKE ?");
+                statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ? AND required_object REGEXP ?");
                 statement.setString(1, StringUtils.capitalizeFirst(category.toString().toLowerCase()));
-                statement.setString(2, "%" + trigger.trim().toLowerCase().replace("_", " ") + "%");
+                String replace = trigger.trim().toLowerCase().replace("_", " ");
+                statement.setString(2, "^" + replace + "|," + replace);
                 rs = statement.executeQuery();
                 while (rs.next()) {
                     int uuid = rs.getInt("uuid");
