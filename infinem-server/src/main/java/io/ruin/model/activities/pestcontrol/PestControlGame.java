@@ -7,6 +7,7 @@ import io.ruin.model.World;
 import io.ruin.model.activities.miscpvm.PassiveCombat;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.entity.shared.listeners.LogoutListener;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.NPCDialogue;
@@ -77,6 +78,11 @@ public class PestControlGame {
 	private boolean ended;
 
 	/**
+	 * A flag indicating if the Void knight has dropped below 150hp.
+	 */
+	private boolean voidKnightHealthTask = true;
+
+	/**
 	 * Constructs a {@link PestControlGame} instance with the specified mode.
 	 *
 	 * @param settings
@@ -103,6 +109,10 @@ public class PestControlGame {
 		knight = addNpc(settings.voidKnightId(), new Position(2656, 2592, 0));
 		knight.attackNpcListener = (player, npc, message) -> false;
 		knight.deathStartListener = (___, ____, _____) -> end(true);
+		knight.hitListener = new HitListener().postDefend(hit -> {
+			if (knight.getHp() <= 150)
+				voidKnightHealthTask = false;
+		});
 		players.addAll(participants);
 		players.forEach(player -> {
 			player.pestGame = this;
@@ -217,6 +227,8 @@ public class PestControlGame {
                         case VETERAN:
                             p.pestVeteranWins++;
 							p.getTaskManager().doLookupByUUID(471, 1);	// Complete a Game of Veteran Pest Control
+							if (voidKnightHealthTask)
+								p.getTaskManager().doLookupByUUID(470, 1);	// Keep the Veteran Void Knight Above 150 Hitpoints
                             break;
                     }
 					p.pestPoints += rewardedPoints;
