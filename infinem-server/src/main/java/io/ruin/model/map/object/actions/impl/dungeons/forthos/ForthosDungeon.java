@@ -8,7 +8,6 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.containers.Equipment;
-import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Region;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -24,8 +23,7 @@ import static io.ruin.model.map.object.actions.impl.Ladder.climb;
  */
 public class ForthosDungeon {
 
-    private static final Bounds SARACHNIS = new Bounds(1829, 9888, 1851, 9911, 0);
-    public static int KNIFE = 946;
+    private static final int KNIFE = 946;
 
     static {
         ObjectAction peekAction = (player, obj) -> {
