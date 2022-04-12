@@ -3,6 +3,7 @@ package io.ruin.model.skills.farming.crop.impl;
 import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.TreeCrop;
 
@@ -107,6 +108,6 @@ public class CelastrusCrop implements TreeCrop {
 
     @Override
     public Item getPayment() {
-        return new Item(COINS_995, 30000);
+        return new Item(Items.POTATO_CACTUS, 8);
     }
 }

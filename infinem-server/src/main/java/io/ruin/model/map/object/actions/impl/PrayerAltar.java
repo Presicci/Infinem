@@ -2,6 +2,7 @@ package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.World;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -20,11 +21,14 @@ public class PrayerAltar {
 
     public static void pray(Player player) {
         Stat prayer = player.getStats().get(StatType.Prayer);
+        int currentPoints = prayer.currentLevel;
         if(prayer.currentLevel == prayer.fixedLevel) {
             player.sendMessage("You already have full prayer points.");
             return;
         }
         prayer.restore();
+        int pointsRestored = prayer.currentLevel - currentPoints;
+        player.getTaskManager().doLookupByCategory(TaskCategory.PRAYERRESTORED, pointsRestored, true);
         player.animate(645);
         player.privateSound(2674);
     }

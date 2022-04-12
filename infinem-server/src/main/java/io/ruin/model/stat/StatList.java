@@ -235,6 +235,7 @@ public class StatList {
         }
         if(statId <= 6)
             player.getCombat().updateLevel();
+        player.getTaskManager().doLevelUpLookup(newLevel, type == StatType.Hitpoints);
     }
 
     public void process() {
@@ -280,5 +281,14 @@ public class StatList {
 
     public boolean check(StatRequirement statRequirement) {
         return statRequirement.hasRequirement(player);
+    }
+
+    public int getBaseLevel() {
+        int lowest = 99;
+        for (Stat stat : stats) {
+            if (stat.fixedLevel < lowest)
+                lowest = stat.fixedLevel;
+        }
+        return lowest;
     }
 }

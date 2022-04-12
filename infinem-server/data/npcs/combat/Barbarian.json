@@ -3,16 +3,16 @@
     "ids": [ 3072 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 18,
-    "aggressive_level": 18,
-    "max_damage": 3,
+    "hitpoints": 20,
+    "aggressive_level": 0,
+    "max_damage": 2,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 8,
+    "attack": 6,
     "strength": 7,
     "defence": 3,
     "ranged": 1,
@@ -21,34 +21,34 @@
     "stab_attack": 9,
     "slash_attack": 9,
     "crush_attack": 9,
-    "magic_attack": 9,
-    "ranged_attack": 9,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 0,
-    "slash_defence": 2,
-    "crush_defence": 2,
+    "stab_defence": 9,
+    "slash_defence": 10,
+    "crush_defence": 10,
     "magic_defence": -3,
-    "ranged_defence": 2,
+    "ranged_defence": 5,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 429,
+    "defend_animation": 422,
+    "death_animation": 836
   },
   { #Barbarian (10)
-    "ids": [ 3056, 3059, 3060, 3061, 3064, 3065, 3066, 3067, 3070, 3071 ],
+    "ids": [ 3056, 3059, 3060, 3061, 3064, 3065, 3066, 3067, 3071, 3070 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 25,
-    "aggressive_level": 20,
-    "max_damage": 3,
+    "hitpoints": 18,
+    "aggressive_level": 0,
+    "max_damage": 2,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
@@ -64,67 +64,67 @@
     "stab_attack": 9,
     "slash_attack": 9,
     "crush_attack": 9,
-    "magic_attack": 9,
-    "ranged_attack": 9,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 0,
-    "slash_defence": 2,
+    "slash_defence": 3,
     "crush_defence": 2,
     "magic_defence": -3,
     "ranged_defence": 2,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": 422,
+    "attack_animation": 406,
     "defend_animation": 424,
     "death_animation": 836
   },
   { #Barbarian (15)
     "ids": [ 3068 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.miscpvm.basic.BasicArcherCombat",
     //Combat Info
-    "hitpoints": 25,
-    "aggressive_level": 30,
-    "max_damage": 3,
-    "attack_style": "CRUSH",
+    "hitpoints": 24,
+    "aggressive_level": 0,
+    "max_damage": 1,
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 8,
-    "strength": 7,
-    "defence": 3,
-    "ranged": 1,
+    "attack": 15,
+    "strength": 3,
+    "defence": 10,
+    "ranged": 15,
     "magic": 1,
     //Aggressive Stats
     "stab_attack": 9,
     "slash_attack": 9,
     "crush_attack": 9,
-    "magic_attack": 9,
-    "ranged_attack": 9,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 0,
-    "slash_defence": 2,
+    "slash_defence": 3,
     "crush_defence": 2,
     "magic_defence": -3,
     "ranged_defence": 2,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": 422,
+    "attack_animation": 426,
     "defend_animation": 424,
     "death_animation": 836
   },
@@ -132,8 +132,8 @@
     "ids": [ 3055, 3057, 3058, 3062, 3069 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 25,
-    "aggressive_level": 34,
+    "hitpoints": 24,
+    "aggressive_level": 0,
     "max_damage": 3,
     "attack_style": "CRUSH",
     //Slayer Info
@@ -141,34 +141,34 @@
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 8,
-    "strength": 7,
-    "defence": 3,
+    "attack": 15,
+    "strength": 14,
+    "defence": 10,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
     "stab_attack": 9,
     "slash_attack": 9,
     "crush_attack": 9,
-    "magic_attack": 9,
-    "ranged_attack": 9,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 0,
-    "slash_defence": 2,
+    "slash_defence": 3,
     "crush_defence": 2,
     "magic_defence": -3,
     "ranged_defence": 2,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 406,
+    "defend_animation": 424,
+    "death_animation": 836
   }
 ]

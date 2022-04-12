@@ -23,6 +23,10 @@ public class PassableDoor {
         passDoor(player, obj, doorOpenDirection, 0);
     }
 
+    public static void passDoor(Player player, GameObject obj, Direction doorOpenDirection, int rotationOffset) {
+        passDoor(player, obj, doorOpenDirection, rotationOffset, -1);
+    }
+
     /**
      * Passes the player through the door, with a little animation.
      * @param player The player passing through the door.
@@ -30,13 +34,13 @@ public class PassableDoor {
      * @param doorOpenDirection The direction the door will be opening.
      * @param rotationOffset The offset for the rotation of the game in its open state, basically just trial and error to find this.
      */
-    public static void passDoor(Player player, GameObject obj, Direction doorOpenDirection, int rotationOffset) {
+    public static void passDoor(Player player, GameObject obj, Direction doorOpenDirection, int rotationOffset, int tempObjectId) {
         World.startEvent(e -> {
             e.delay(1);
-            GameObject tempGate = new GameObject(obj.id, obj.getPosition().translate(
+            GameObject tempGate = new GameObject(tempObjectId == -1 ? obj.id : tempObjectId, obj.getPosition().translate(
                     doorOpenDirection == Direction.EAST ? 1 : doorOpenDirection == Direction.WEST ? -1 : 0,
                     doorOpenDirection == Direction.NORTH ? 1 : doorOpenDirection == Direction.SOUTH ? -1 : 0),
-                    0, obj.direction + 1 + rotationOffset);
+                    obj.type, obj.direction + 1 + rotationOffset);
             GameObject tempRemove = new GameObject(-1, obj.getPosition(), 0, 0);
             tempRemove.spawn();
             tempGate.spawn();

@@ -3,6 +3,7 @@ package io.ruin.model.activities.fightcaves;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
 import io.ruin.model.activities.ActivityTimer;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerGroup;
@@ -131,6 +132,7 @@ public class FightCaves {
                     player.getInventory().addOrDrop(6570, 1);
                     player.getInventory().addOrDrop(6529, tokkul + 4000);
                     player.getCollectionLog().collect(6570);
+                    player.getTaskManager().doLookupByCategory(TaskCategory.FIGHTCAVES, 1, true);
                 }
             }
             player.fightCaves = null;

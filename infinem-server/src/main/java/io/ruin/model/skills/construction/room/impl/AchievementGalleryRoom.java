@@ -113,6 +113,7 @@ public class AchievementGalleryRoom extends Room {
         player.animate(833);
         player.sendMessage("You add the jar to the display.");
         bossDisplayed = type;
+        player.getTaskManager().doLookupByUUID(307, 1); // Add a Jar to a Display Case
         renderBossDisplay();
     }
 

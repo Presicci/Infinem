@@ -10,6 +10,7 @@ import io.ruin.model.World;
 import io.ruin.model.activities.ActivityTimer;
 import io.ruin.model.activities.miscpvm.PassiveCombat;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -182,6 +183,7 @@ public class Inferno {
                     player.getInventory().addOrDrop(21295, 1);
                     player.getInventory().addOrDrop(6529, 16440);
                     player.getCollectionLog().collect(21295);
+                    player.getTaskManager().doLookupByCategory(TaskCategory.INFERNO, 1, true);
                     Broadcast.WORLD.sendNews(player, Icon.GOLD_STAR, player.getName() + " has defeated the Inferno.");
                 }
             }

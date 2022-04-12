@@ -3,6 +3,7 @@ package io.ruin.model.skills.slayer;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
@@ -106,6 +107,7 @@ public class Slayer {
             final int xp = superior ? hp * 10 : hp;
 
             player.getStats().addXp(StatType.Slayer, xp, true);
+            player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERKILL, 1, true);
 
             Config.SLAYER_TASK_AMOUNT.set(player, Config.SLAYER_TASK_AMOUNT.get(player) - 1);
             player.slayerTaskRemaining = Config.SLAYER_TASK_AMOUNT.get(player);
@@ -119,6 +121,7 @@ public class Slayer {
 
                 player.sendMessage("<col=7F00FF>You've completed " + spree + " tasks in a row and received " + points + " points; return to a Slayer Master.");
                 Config.SLAYER_POINTS.set(player, current + points);
+                player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERTASKCOMPL, 1, true);
             } else {
                 SuperiorSlayer.trySpawn(player, creature, npc);
             }

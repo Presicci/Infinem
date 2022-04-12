@@ -1,5 +1,6 @@
 package io.ruin.model.item.actions.impl;
 
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
@@ -33,13 +34,15 @@ public enum Lightables {
     KANDARIN_HEADGEAR_2(-1, Items.KANDARIN_HEADGEAR_2),
     KANDARIN_HEADGEAR_3(-1, Items.KANDARIN_HEADGEAR_3),
     KANDARIN_HEADGEAR_4(-1, Items.KANDARIN_HEADGEAR_4),
-    BRUMA_TORCH(-1, Items.BRUMA_TORCH);
+    BRUMA_TORCH(-1, Items.BRUMA_TORCH),
+    BUG_LANTERN(Items.UNLIT_BUG_LANTERN, Items.LIT_BUG_LANTERN);
 
     public final int unlitId, litId;
 
     private void light(Player player, Item item) {
         item.setId(litId);
         player.sendMessage("You light the " + item.getDef().name + ".");
+        player.getTaskManager().doLookupByCategory(TaskCategory.LIGHTSOURCE, item.getDef().name);
     }
 
     private void extinguish(Player player, Item item) {

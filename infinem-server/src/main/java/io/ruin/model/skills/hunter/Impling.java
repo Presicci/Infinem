@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -102,6 +103,8 @@ public enum Impling {
                 if (barehands) {
                     ImplingJar jar = ImplingJar.forJarId(impling.jarId);
                     Item loot;
+                    if (impling == Impling.LUCKY)
+                        player.getTaskManager().doLookupByUUID(301, 1); // Catch a Lucky Impling Bare-Handed
                     if (jar != null) {
                         if (jar.equals(ImplingJar.LUCKY_IMPLING)) {
                             ClueType randomClue = Random.get(ClueType.values());
@@ -120,6 +123,9 @@ public enum Impling {
                 despawnImpling(npc);
                 player.getStats().addXp(StatType.Hunter, player.getPosition().inBounds(PURO_PURO) ? impling.puroExp : impling.worldExp, true);
                 PlayerCounter.IMPLINGS_CAUGHT.increment(player, 1);
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.IMPLING, npc.getDef().name);
+                if (isInPuroPuro(npc))
+                    player.getTaskManager().doLookupByCategory(TaskCategory.IMPLINGPURO, 1, true);
                 player.unlock();
             } else {
                 event.delay(1);

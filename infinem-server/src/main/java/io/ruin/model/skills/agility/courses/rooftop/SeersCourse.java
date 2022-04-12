@@ -1,6 +1,7 @@
 package io.ruin.model.skills.agility.courses.rooftop;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -127,6 +128,7 @@ public class SeersCourse {
                 PlayerCounter.SEERS_ROOFTOP.increment(p, 1);
                 AgilityPet.rollForPet(p, 35205);
                 MarkOfGrace.rollMark(p, 60, MARK_SPAWNS);
+                p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "seers");
                 p.preventSkippingCourse = false;
             }
             p.unlock();

@@ -3,6 +3,7 @@ package io.ruin.model.skills.farming.crop.impl;
 import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.skills.farming.crop.TreeCrop;
 
 import static io.ruin.cache.ItemID.COINS_995;
@@ -84,7 +85,7 @@ public class CalquatCrop implements TreeCrop {
         return PlayerCounter.GROWN_CALQUAT;
     }
 
-    private static final Item PAYMENT = new Item(COINS_995, 8000);
+    private static final Item PAYMENT = new Item(Items.POISON_IVY_BERRIES, 8);
 
     @Override
     public Item getPayment() {

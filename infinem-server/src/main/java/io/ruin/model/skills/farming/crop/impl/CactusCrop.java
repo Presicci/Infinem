@@ -3,6 +3,7 @@ package io.ruin.model.skills.farming.crop.impl;
 import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.skills.farming.crop.Crop;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,8 +17,8 @@ import static io.ruin.cache.ItemID.COINS_995;
 @AllArgsConstructor
 public enum CactusCrop implements Crop {
 
-    CACTUS(5280, 6016, 55, 66.5, 25, 374, 7, TimeUtils.getMinutesToMillis(80), 8, new Item(COINS_995, 5000), 7000, PlayerCounter.GROWN_CACTUS),
-    POTATO_CACTUS(22873, 3138, 64, 68, 68, 230, 7, TimeUtils.getMinutesToMillis(10), 32, new Item(COINS_995, 5000), 160594, PlayerCounter.GROWN_POTATO_CACTUS);
+    CACTUS(5280, 6016, 55, 66.5, 25, 374, 7, TimeUtils.getMinutesToMillis(80), 8, new Item(Items.CADAVA_BERRIES, 6), 7000, PlayerCounter.GROWN_CACTUS),
+    POTATO_CACTUS(22873, 3138, 64, 68, 68, 230, 7, TimeUtils.getMinutesToMillis(10), 32, new Item(Items.SNAPE_GRASS, 8), 160594, PlayerCounter.GROWN_POTATO_CACTUS);
 
     private final int seedId, produceId, levelReq;
     private final double plantXP, harvestXP, checkHealthXP;

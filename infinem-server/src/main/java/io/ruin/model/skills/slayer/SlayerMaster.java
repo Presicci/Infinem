@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableRangeMap;
 import com.google.common.collect.Range;
 import com.google.common.collect.RangeMap;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.NPCDef;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.skills.slayer.master.Krystilia;
@@ -89,7 +91,7 @@ public class SlayerMaster {
         } else {
             Config.BOSS_TASK.set(player, 0);
         }
-
+        player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERTASK, NPCDef.get(npcId).name);
         return def;
     }
 
@@ -312,6 +314,6 @@ public class SlayerMaster {
         } else {
             player.sendMessage("You need something new to hunt.");
         }
-
+        player.getTaskManager().doLookupByUUID(31, 1);  // Check Your Slayer Task
     }
 }

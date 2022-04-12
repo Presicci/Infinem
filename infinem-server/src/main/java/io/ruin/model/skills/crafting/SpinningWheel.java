@@ -60,6 +60,7 @@ public enum SpinningWheel {
         player.getInventory().remove(item.before, 1);
         player.getInventory().add(item.after, 1);
         player.getStats().addXp(StatType.Crafting, item.exp, true);
+        player.getTaskManager().doSkillItemLookup(item.after);
     }
 
     public static void spinningOptions(Player player) {

@@ -116,6 +116,8 @@ public enum CanoeStation {
             }
             player.resetAnimation();
             canoeStation.config.set(player, boatType);
+            if (boatType == 4)
+                player.getTaskManager().doLookupByUUID(96, 1);  // Build a Waka Canoe
             player.unlock();
         });
     }

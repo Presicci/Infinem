@@ -41,6 +41,7 @@ public enum Gem {
         player.privateSound(2586);
         uncutItem.setId(cutId);
         player.getStats().addXp(StatType.Crafting, xp, true);
+        player.getTaskManager().doSkillItemLookup(cutId);
     }
 
     static {

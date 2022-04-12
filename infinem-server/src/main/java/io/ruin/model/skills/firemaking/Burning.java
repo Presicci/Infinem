@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.raids.xeric.ChambersOfXeric;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
@@ -165,6 +166,7 @@ public enum Burning {
                 player.sendFilteredMessage("The fire catches and the logs begin to burn.");
                 player.getStats().addXp(StatType.Firemaking, burning.exp * pyromancerBonus(player), true);
                 burning.counter.increment(player, 1);
+                player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDef.get(burning.itemId).name);
                 createFire(burning, fire);
                 player.face(fire);
                 player.unlock();

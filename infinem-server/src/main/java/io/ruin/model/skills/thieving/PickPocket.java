@@ -3,6 +3,7 @@ package io.ruin.model.skills.thieving;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -375,6 +376,7 @@ public enum PickPocket {
                                 hasGottenPouch = true;  // Prevents getting multiple pouches per pickpocket
                             } else {
                                 player.getInventory().addOrDrop(item);
+                                player.getTaskManager().doSkillItemLookup(item);
                             }
                         }
                     }
@@ -387,12 +389,15 @@ public enum PickPocket {
                             player.getInventory().add(pouchId, 1);
                         } else {
                             player.getInventory().add(item);
+                            player.getTaskManager().doSkillItemLookup(item);
+                            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.PICKPOCKETLOOT, item.getDef().name, item.getAmount(), true);
                         }
                     }
                 }
                 if (Random.rollDie(pickpocket.petOdds - (player.getStats().get(StatType.Thieving).currentLevel * 25)))
                     Pet.ROCKY.unlock(player);
                 player.getStats().addXp(StatType.Thieving, pickpocket.exp, true);
+                player.getTaskManager().doLookupByCategory(TaskCategory.PICKPOCKET, npc.getDef().name.toLowerCase());
             } else {
                 player.sendFilteredMessage("You fail to pick the " + pickpocket.identifier + " pocket.");
                 npc.forceText("What do you think you're doing?");

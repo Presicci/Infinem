@@ -1,8 +1,8 @@
 package io.ruin.model.map;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.entity.player.Player;
 
-import java.awt.*;
 import java.util.function.Consumer;
 
 public class Bounds {
@@ -51,6 +51,14 @@ public class Bounds {
                     consumer.accept(new Position(x, y, z));
             }
         }
+    }
+
+    public boolean inBounds(Player player) {
+        return inBounds(player.getPosition());
+    }
+
+    public boolean inBounds(Position position) {
+        return inBounds(position.getX(), position.getY(), position.getZ(), 0);
     }
 
     public boolean inBounds(int x, int y, int z, int range) {

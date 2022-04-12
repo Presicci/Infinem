@@ -180,6 +180,7 @@ public class WildernessCourse {
                 player.getStats().addXp(StatType.Agility, 498.9, true);
                 AgilityPet.rollForPet(player, 34666);
                 PlayerCounter.WILDERNESS_COURSE.increment(player, 1);
+                player.getTaskManager().doLookupByUUID(848, 1);  // Complete the Wilderness Agility Course
                 player.lastAgilityObjId = -1;
             }
             player.unlock();

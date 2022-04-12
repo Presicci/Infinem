@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
@@ -240,6 +241,7 @@ public class ThievableChests {
                 player.getInventory().addOrDrop(item);
                 player.getStats().addXp(StatType.Thieving, chest.xp, true);
                 player.sendMessage("You steal some loot from the chest.");
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.THIEVECHEST, item.getDef().name, item.getAmount(), true);
                 if (chest == Chests.ROGUES_CASTLE && Random.rollDie(50)) {
                     rougesAttack(player);
                 }

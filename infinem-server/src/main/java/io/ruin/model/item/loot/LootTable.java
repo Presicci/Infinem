@@ -111,7 +111,6 @@ public class LootTable {
         if(tables != null) {
             double tableRand = Random.get() * totalWeight;
             for(ItemsTable table : tables) {
-                System.out.println("" + table.name);
                 if((tableRand -= table.weight) <= 0) {
                     double itemsRand = Random.get() * table.totalWeight;
                     for(LootItem item : table.items) {
@@ -124,17 +123,49 @@ public class LootTable {
                                 break;
                             }
                             items.add(item.toItem());
-                            if (table.name != null && table.name.equalsIgnoreCase("tertiary")) {  // tertiary items are rolled alongside, so reroll after hitting one
-                                List<Item> i = this.rollItems(false);
-                                if (i != null) {
-                                    i.removeIf(item1 -> item1.getId() == item.id);  // Makes sure we dont roll the same tertiary twice
-                                    if (i.isEmpty()) {
-                                        break;
-                                    }
-                                    items.addAll(i);
-                                }
-                            }
                             break;
+                        }
+                    }
+                    break;
+                }
+            }
+            List<Item> tertiaryRolls = rollTertiary(null);
+            if (tertiaryRolls != null)
+                items.addAll(tertiaryRolls);
+        }
+        return items.isEmpty() ? null : items;
+    }
+
+    public List<Item> rollTertiary(List<Item> rolledItems) {
+        List<Item> items = new ArrayList<>();
+        if(tables != null) {
+            tableLoop : for(ItemsTable table : tables) {
+                if (table.name != null && table.name.equalsIgnoreCase("tertiary")) {
+                    if (Random.rollDie((int) (totalWeight / table.weight))) {
+                        double itemsRand = Random.get() * table.totalWeight;
+                        for(LootItem item : table.items) {
+                            if(item.weight == 0) {  // weightless item landed, break
+                                items.add(item.toItem());
+                                break tableLoop;
+                            }
+                            if((itemsRand -= item.weight) <= 0) { // weighted item landed, add it and break loop
+                                if (rolledItems != null) {
+                                    for (Item i : rolledItems) {
+                                        if (i.getId() == item.id)
+                                            break tableLoop;
+                                    }
+                                }
+                                items.add(item.toItem());
+                                break;
+                            }
+                        }
+                        if (!items.isEmpty()) { // Just in case
+                            // Can roll multiple tertiaries in one drop
+                            if (rolledItems != null)
+                                rolledItems.addAll(items);
+                            List<Item> recursiveItems = rollTertiary(rolledItems);
+                            if (recursiveItems != null)
+                                items.addAll(recursiveItems);
                         }
                     }
                     break;

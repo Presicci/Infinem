@@ -54,6 +54,7 @@ public enum Glass {
                 player.getInventory().remove(MOLTEN_GLASS, 1);
                 player.getInventory().add(glass.itemID, 1);
                 player.getStats().addXp(StatType.Crafting, glass.exp, true);
+                player.getTaskManager().doSkillItemLookup(glass.itemID);
                 event.delay(2);
             }
         });

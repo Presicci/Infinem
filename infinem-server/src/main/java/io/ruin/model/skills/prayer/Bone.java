@@ -1,6 +1,7 @@
 package io.ruin.model.skills.prayer;
 
 import io.ruin.cache.ItemDef;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -89,6 +90,7 @@ public enum Bone {
             buryCounter.increment(player, 1);
             player.karamDelay.delay(2);
             player.sendMessage("You bury the bones.");
+            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.BURYBONE, bone.getDef().name.toLowerCase());
             KourendCatacombs.buriedBone(player, this);
         });
     }

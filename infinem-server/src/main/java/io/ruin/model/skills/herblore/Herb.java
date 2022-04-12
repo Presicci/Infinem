@@ -62,6 +62,7 @@ public enum Herb {
                 item.setId(herb.cleanId);
                 player.getStats().addXp(StatType.Herblore, herb.xp, true);
                 player.sendFilteredMessage("You clean the " + herbName + ".");
+                player.getTaskManager().doSkillItemLookup(herb.cleanId);
             });
             SkillItem skillItem = new SkillItem(herb.unfId).addAction((player, amount, event) -> {
                 while(amount-- > 0) {

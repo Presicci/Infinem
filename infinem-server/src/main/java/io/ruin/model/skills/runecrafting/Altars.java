@@ -3,6 +3,7 @@ package io.ruin.model.skills.runecrafting;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -174,6 +175,7 @@ public enum Altars {
             int amount = essenceCount * runesPerEssence;
             player.getInventory().add(altar.runeID, amount);
             player.getStats().addXp(StatType.Runecrafting, essenceCount * altar.experience, true);
+            player.getTaskManager().doLookupByCategory(TaskCategory.RUNECRAFT, ItemDef.get(altar.runeID).name, amount, true);
             counter.increment(player, amount);
             player.unlock();
         });
@@ -244,6 +246,7 @@ public enum Altars {
             } else {
                 player.getInventory().add(runeCombination.combinationRuneId, amountToCombine);
                 player.sendMessage("You bind the Temple's power into " + runeCombination.runeName + ".");
+                player.getTaskManager().doLookupByCategory(TaskCategory.RUNECRAFTCOMBO, ItemDef.get(runeCombination.combinationRuneId).name, amountToCombine, true);
             }
 
             player.unlock();
@@ -428,6 +431,7 @@ public enum Altars {
                         sb.deleteCharAt(sb.length() - 1);
                     }
                     player.sendMessage("The talisman pulls towards the " + sb.toString() + ".");
+                    player.getTaskManager().doLookupByUUID(46, 1);  // Locate a Runecrafting Altar With a Talisman
                 });
             }
         }

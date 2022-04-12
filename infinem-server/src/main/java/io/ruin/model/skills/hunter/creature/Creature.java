@@ -2,6 +2,7 @@ package io.ruin.model.skills.hunter.creature;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -9,8 +10,11 @@ import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.route.routes.ProjectileRoute;
+import io.ruin.model.skills.hunter.creature.impl.Bird;
+import io.ruin.model.skills.hunter.creature.impl.Chinchompa;
 import io.ruin.model.skills.hunter.traps.Trap;
 import io.ruin.model.skills.hunter.traps.TrapType;
+import io.ruin.model.skills.hunter.traps.impl.BoxTrap;
 import io.ruin.model.stat.StatType;
 import io.ruin.process.event.Event;
 import io.ruin.utility.Misc;
@@ -219,6 +223,10 @@ public abstract class Creature {
             event.delay(2);
             addLoot(player);
             player.getStats().addXp(StatType.Hunter, getCatchXP(), true);
+            player.getTaskManager().doLookupByCategoryAndTrigger(
+                    this instanceof Chinchompa ? TaskCategory.BOXTRAP
+                            : this instanceof Bird ? TaskCategory.BIRDSNARE
+                            : TaskCategory.NETTRAP, NPCDef.get(npcId).name);
             if (counter != null)
                 counter.increment(player, 1);
             obj.trap.getTrapType().onRemove(player, obj);

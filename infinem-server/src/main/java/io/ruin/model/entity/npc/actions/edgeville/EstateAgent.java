@@ -4,6 +4,7 @@ import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.Color;
 import io.ruin.model.World;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -47,6 +48,7 @@ public class EstateAgent {
                                                                 if (player.getInventory().contains(COINS_995, HOUSE_COST)) {
                                                                     player.getInventory().remove(COINS_995, HOUSE_COST);
                                                                     player.house = new House();
+                                                                    player.getTaskManager().doLookupByUUID(41, 1);  // Purchase a Player Owned House
                                                                     player.dialogue(new NPCDialogue(npc, "Congratulations, adventurer! You now have your very own house! Simply step through the portal south of me, or teleport to your house to visit it."),
                                                                             new PlayerDialogue("Will do, thank you."),
                                                                             new NPCDialogue(npc, "Come see me again if you'd like to move your house somewhere else, or have it redecorated."));
@@ -121,6 +123,7 @@ public class EstateAgent {
         }
         player.getInventory().remove(COINS_995, newLocation.getCost());
         player.house.setLocation(newLocation);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MOVEHOUSE, newLocation.toString().toLowerCase());
         player.dialogue(new NPCDialogue(ESTATE_AGENT, "Very well, I shall make the necessary arrangements to move your house to " + newLocation.getName() + "."),
                 new PlayerDialogue("Okay."),
                 new NPCDialogue(ESTATE_AGENT, "..."),

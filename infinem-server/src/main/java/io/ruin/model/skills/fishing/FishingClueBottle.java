@@ -7,8 +7,9 @@ import io.ruin.model.item.actions.ItemAction;
 
 public enum FishingClueBottle {
 
-    EASY(13648, ClueType.EASY, 1),
-    MEDIUM(13649, ClueType.MEDIUM, 20),
+    BEGINNER(23129, ClueType.BEGINNER, 1),
+    EASY(13648, ClueType.EASY, 20),
+    MEDIUM(13649, ClueType.MEDIUM, 40),
     HARD(13650, ClueType.HARD, 60),
     ELITE(13651, ClueType.ELITE, 80);
 
@@ -43,7 +44,8 @@ public enum FishingClueBottle {
     static {
         for (FishingClueBottle clueBottle : values())
             ItemAction.registerInventory(clueBottle.bottleId, "open", (player, item) -> {
-                item.setId(clueBottle.clueType.clueId);
+                player.getInventory().remove(item);
+                player.getInventory().add(clueBottle.clueType.boxId, 1);
                 player.sendMessage("You crack the bottle and find a clue scroll inside!");
             });
     }

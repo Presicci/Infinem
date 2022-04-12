@@ -235,6 +235,7 @@ public class PrifddinasCourse {
             p.resetAnimation();
             AgilityPet.rollForPet(p, 25146);
             p.getStats().addXp(StatType.Agility, 1037.1, true);
+            p.getTaskManager().doLookupByUUID(790, 1);  // Complete the Prifddinas Agility Course
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
         }));

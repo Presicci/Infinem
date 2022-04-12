@@ -123,6 +123,7 @@ public class BarbarianCourse {
                 player.getStats().addXp(StatType.Agility, 46.2, true);
                 PlayerCounter.BARBARIAN_COURSE.increment(player, 1);
                 AgilityPet.rollForPet(player, 44376);
+                player.getTaskManager().doLookupByUUID(571, 1);  // Complete the Barbarian Outpost Agility Course
             } else {
                 player.getStats().addXp(StatType.Agility, 13.7, true);
 

@@ -2,6 +2,7 @@ package io.ruin.model.activities.cluescrolls;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.ItemDef;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
@@ -59,6 +60,7 @@ public class Clue {
                 else if(def.clueType == ClueType.MASTER)
                     message += " You have now completed a total of " + NumberUtils.formatNumber(++player.masterClueCount) + " master clue scrolls!";
                 player.dialogue(new ItemDialogue().one(def.clueType.casketId, message));
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.COMPLETECLUE, def.clueType.toString().toLowerCase());
                 player.sendMessage(message);
             }
             return true;

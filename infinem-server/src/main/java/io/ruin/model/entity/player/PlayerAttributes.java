@@ -198,6 +198,7 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int burntFood;
     @Expose public int jugsOfWineMade;
     @Expose public int cookedOnFire;
+    public int cookStreak = 0;
 
     /**
      * Thieving

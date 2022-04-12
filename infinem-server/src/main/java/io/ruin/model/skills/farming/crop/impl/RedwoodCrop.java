@@ -105,6 +105,6 @@ public class RedwoodCrop implements TreeCrop {
 
     @Override
     public Item getPayment() {
-        return new Item(COINS_995, 30000);
+        return new Item(22929, 6);
     }
 }

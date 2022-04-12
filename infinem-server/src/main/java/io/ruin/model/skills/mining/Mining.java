@@ -128,6 +128,7 @@ public class Mining {
                     if (Random.rollDie(250, 1)) {
                         player.getInventory().addOrDrop(Geode.getRandomGeode(), 1);
                         PlayerCounter.MINED_GEODE.increment(player, 1);
+                        player.getTaskManager().doLookupByUUID(102, 1);  // Obtain a Clue Geode While Mining
                     }
 
                     /* Rolling for mined minerals */
@@ -139,12 +140,18 @@ public class Mining {
                         player.getStats().addXp(StatType.Mining, rockData.experience * xpBonus(player, false), true);
                     } else if (gem != null) {   // No xp is earned and the ore is not depleted, just go next
                         player.sendFilteredMessage("You find an " + gem.getDef().name + ".");
+                        player.getTaskManager().doLookupByUUID(24, 1);  // Obtain a Gem While Mining
                         continue;
                     } else {
                         player.getStats().addXp(StatType.Mining, rockyOutcrop ? rockData.multiExp[random] : rockData.experience * xpBonus(player, multiple), true);
                     }
                     player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
                             (rockData == Rock.GEM_ROCK ? ItemDef.get(itemId).name.toLowerCase() : rockData.rockName) + ".");
+                    player.getTaskManager().doSkillItemLookup(itemId);
+                    if (pickaxe == Pickaxe.STEEL)
+                        player.getTaskManager().doLookupByUUID(23, 1);  // Mine some Ore With a Steel Pickaxe
+                    if (pickaxe == Pickaxe.RUNE)
+                        player.getTaskManager().doLookupByUUID(101, 1);  // Mine some Ore With a Rune Pickaxe
 
                     /* Rolling for rock depletion */
                     double depleteChance = rockData.depleteChance * (1 - miningGloves(player, rockData));
@@ -314,6 +321,7 @@ public class Mining {
     static {
         Object[][] oreData = {
                 //rock, baseId, emptyId
+                {Rock.BLURITE, 11378, 11390, PlayerCounter.MINED_COPPER},
                 {Rock.COPPER, 11161, 11390, PlayerCounter.MINED_COPPER},
                 {Rock.COPPER, 10943, 11391, PlayerCounter.MINED_COPPER},
                 {Rock.TIN, 11360, 11390, PlayerCounter.MINED_TIN},

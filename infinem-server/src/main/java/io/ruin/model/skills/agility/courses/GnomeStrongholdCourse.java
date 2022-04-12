@@ -133,6 +133,7 @@ public class GnomeStrongholdCourse {
                     p.getStats().addXp(StatType.Agility, 46.5, true);
                     PlayerCounter.GNOME_STRONGHOLD_COURSE.increment(p, 1);
                     AgilityPet.rollForPet(p, 35609);
+                    p.getTaskManager().doLookupByUUID(559, 1);  // Complete the Gnome Stronghold Agility Course
                 } else {
                     p.getStats().addXp(StatType.Agility, 7.5, true);
                 }

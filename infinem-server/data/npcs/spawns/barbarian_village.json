@@ -2,7 +2,7 @@
   {
     "name": "Barbarian",
     "id": 3064,
-    "x": 3076,
+    "x": 3077,
     "y": 3416,
     "z": 0,
     "direction": "S",
@@ -47,8 +47,8 @@
   {
     "name": "Barbarian",
     "id": 3068,
-    "x": 3078,
-    "y": 3440,
+    "x": 3076,
+    "y": 3444,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -74,8 +74,8 @@
   {
     "name": "Barbarian",
     "id": 3055,
-    "x": 3078,
-    "y": 3439,
+    "x": 3082,
+    "y": 3438,
     "z": 0,
     "direction": "S",
     "walkRange": 5

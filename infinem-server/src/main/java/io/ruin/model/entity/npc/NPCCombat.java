@@ -12,6 +12,7 @@ import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.*;
 import io.ruin.model.content.PvmPoints;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.DoubleDrops;
@@ -265,6 +266,7 @@ public abstract class NPCCombat extends Combat {
             dropItems(killer);
 
             if (killer != null && killer.player != null) {
+                killer.player.getTaskManager().doKillLookup(npc.getId());
                 Slayer.handleNPCKilled(killer.player, npc);
                 if (npc.getDef().killCounter != null)
                     npc.getDef().killCounter.apply(killer.player).increment(killer.player);
@@ -447,6 +449,7 @@ public abstract class NPCCombat extends Combat {
         if (Random.rollDie(staffChance)) {
             handleDrop(killer, pos, player, Collections.singletonList(new Item(20736)));    // Dust battlestaff
         }
+        player.getTaskManager().doLookupByCategory(TaskCategory.SUPERIORKILL, 1, true);
     }
 
     /*
@@ -698,6 +701,17 @@ public abstract class NPCCombat extends Combat {
 
     private void handleDrop(Killer killer, Position dropPosition, Player pKiller, List<Item> items) {
         for(Item item : items) {
+            // Attempt a task unlock for each item dropped
+            pKiller.getTaskManager().doUnlockItemLookup(item);
+            pKiller.getTaskManager().doDropGroupLookup(item.getDef().name.toLowerCase());
+
+            /*
+             * Convert clue scrolls into clue boxes
+             */
+            if (item.getDef().clueType != null) {
+                item.setId(item.getDef().clueType.boxId);
+            }
+
             /*
              * Ethereum auto collect
              */

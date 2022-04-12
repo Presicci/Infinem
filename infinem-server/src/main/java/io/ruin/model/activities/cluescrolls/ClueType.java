@@ -3,6 +3,7 @@ package io.ruin.model.activities.cluescrolls;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.ItemDef;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
@@ -23,7 +24,7 @@ import java.util.List;
 public enum ClueType {
 
     BEGINNER(23182, 23245, 24361, 1, 3, -1, 1, 3, -1, new LootTable()
-            .addTable(2,    // Uniques
+            .addTable("beginnerclue", 2,    // Uniques
                     new LootItem(23285, 1, 1, 1),   // Mole slippers
                     new LootItem(23288, 1, 1, 1),   // Frog slippers
                     new LootItem(23291, 1, 1, 1),   // Bear feet
@@ -113,7 +114,7 @@ public enum ClueType {
             )
     ),
     EASY(2677, 20546, 24362, 2, 4, 16728, 2, 4, 50, new LootTable()
-                .addTable(8515,    // Uniques
+                .addTable("easyclue", 8515,    // Uniques
                         new LootItem(20211, 1, 1, 17),    //Team cape zero
                         new LootItem(20217, 1, 1, 17),    //Team cape i
                         new LootItem(20214, 1, 1, 17),    //Team cape x
@@ -282,7 +283,7 @@ public enum ClueType {
 
     MEDIUM(
             2801, 20545, 24363, 3, 5, 17607, 3, 5, 30, new LootTable()
-            .addTable(9071, // Uniques
+            .addTable("mediumclue", 9071, // Uniques
                     new LootItem(2577, 1, 1, 88),  //Ranger boots
                     new LootItem(2579, 1, 1, 88),  //Wizard boots
                     new LootItem(12598, 1, 1, 88),  //Holy sandals
@@ -432,7 +433,7 @@ public enum ClueType {
     ),
 
     HARD(2722, 20544, 24364, 4, 6, 22195, 4, 6, 15, new LootTable()
-            .addTable(7575, // Uniques
+            .addTable("hardclue", 7575, // Uniques
                     new LootItem(10354, 1, 1, 61),   //Amulet of glory (t4)
                     new LootItem(2581, 1, 1, 61),   //Robin hood hat
                     new LootItem(7400, 1, 1, 61),   //Enchanted hat
@@ -567,7 +568,7 @@ public enum ClueType {
                     new LootItem(23237, 1, 1, 61),   //Berserker necklace ornament kit
                     new LootItem(23232, 1, 1, 61)   //Tzhaar-ket-om ornament kit
             )
-            .addTable(72,    // Mega-rare
+            .addTable("hardclue", 72,    // Mega-rare
                     new LootItem(Items.SUPER_ENERGY_4_NOTE, 15, 15, 12),
                     new LootItem(Items.SUPER_RESTORE_4_NOTE, 15, 15, 12),
                     new LootItem(Items.ANTIFIRE_POTION_4_NOTE, 15, 15, 12),
@@ -628,7 +629,7 @@ public enum ClueType {
     ),
 
     ELITE(12073, 20543, 24365, 10, 12, 21680, 4, 6, 5, new LootTable()
-            .addTable(3920, // Uniques
+            .addTable("eliteclue", 3920, // Uniques
                     new LootItem(12538, 1, 1, 80),   //Dragon full helm ornament kit
                     new LootItem(12534, 1, 1, 80),   //Dragon chainbody ornament kit
                     new LootItem(12536, 1, 1, 80),   //Dragon legs/skirt ornament kit
@@ -688,7 +689,7 @@ public enum ClueType {
                     new LootItem(23252, 1, 1, 80),   //Giant boot
                     new LootItem(23246, 1, 1, 80)   //Fremennik kilt
             )
-            .addTable(80,    // Mega-rare
+            .addTable("eliteclue", 80,    // Mega-rare
                     new LootItem(Items.RING_OF_NATURE, 1, 1, 330),
                     new LootItem(Items.CRYSTAL_KEY, 1, 1, 330),
                     new LootItem(Items.LAVA_DRAGON_MASK, 1, 1, 330),
@@ -775,7 +776,7 @@ public enum ClueType {
     ),
 
     MASTER(19835, 19836, 24366, 6, 8, 23469, 5, 7, -1, new LootTable()
-            .addTable(3828, // Uniques
+            .addTable("masterclue", 3828, // Uniques
                     new LootItem(20065, 1, 1, 117),   //Occult ornament kit
                     new LootItem(20062, 1, 1, 117),   //Torture ornament kit
                     new LootItem(22246, 1, 1, 117),   //Anguish ornament kit
@@ -824,7 +825,7 @@ public enum ClueType {
                     new LootItem(20089, 1, 1, 7),   //Mummy's legs
                     new LootItem(20092, 1, 1, 7)   //Mummy's feet
             )
-            .addTable(97,    // Mega-rare
+            .addTable("masterclue", 97,    // Mega-rare
                     new LootItem(Items.BUCKET_HELM_G, 1, 1, 350),
                     new LootItem(Items.RING_OF_COINS, 1, 1, 350),
                     new LootItem(Items.CABBAGE, 3, 3, 350),
@@ -989,6 +990,62 @@ public enum ClueType {
         }
     }
 
+    private static final LootTable shared = new LootTable().addTable(1,
+            new LootItem(995, 20000, 35000, 3300),   //Coins
+                    new LootItem(995, 10000, 15000, 1150),   //Coins
+                    new LootItem(995, 15000, 30000, 262),   //Coins
+                    new LootItem(4561, 14, 33, 3300),   //Purple sweets
+                    new LootItem(4561, 8, 12, 1150),   //Purple sweets
+                    new LootItem(7329, 20, 38, 660),   //Red firelighter
+                    new LootItem(7330, 20, 38, 660),   //Green firelighter
+                    new LootItem(7331, 20, 38, 660),   //Blue firelighter
+                    new LootItem(10326, 20, 38, 660),   //Purple firelighter
+                    new LootItem(10327, 20, 38, 660),   //White firelighter
+                    new LootItem(20220, 1, 1, 165),   //Holy blessing
+                    new LootItem(20223, 1, 1, 165),   //Unholy blessing
+                    new LootItem(20226, 1, 1, 165),   //Peaceful blessing
+                    new LootItem(20232, 1, 1, 165),   //War blessing
+                    new LootItem(20229, 1, 1, 165),   //Honourable blessing
+                    new LootItem(20235, 1, 1, 165),   //Ancient blessing
+                    new LootItem(20238, 5, 15, 525),   //Charge dragonstone jewellery scroll
+                    new LootItem(12402, 5, 15, 525),   //Nardah teleport
+                    new LootItem(12411, 5, 15, 525),   //Mos le'harmless teleport
+                    new LootItem(12406, 5, 15, 525),   //Mort'ton teleport
+                    new LootItem(12404, 5, 15, 525),   //Feldip hills teleport
+                    new LootItem(12405, 5, 15, 525),   //Lunar isle teleport
+                    new LootItem(12403, 5, 15, 525),   //Digsite teleport
+                    new LootItem(12408, 5, 15, 525),   //Piscatoris teleport
+                    new LootItem(12407, 5, 15, 525),   //Pest control teleport
+                    new LootItem(12409, 5, 15, 525),   //Tai bwo wannai teleport
+                    new LootItem(12642, 5, 15, 525),   //Lumberyard teleport
+                    new LootItem(12410, 5, 15, 525),   //Iorwerth camp teleport
+                    new LootItem(21387, 1, 1, 300),   //Master scroll book (empty)
+                    new LootItem(3827, 1, 1, 141),   //Saradomin page 1
+                    new LootItem(3828, 1, 1, 141),   //Saradomin page 2
+                    new LootItem(3829, 1, 1, 141),   //Saradomin page 3
+                    new LootItem(3830, 1, 1, 141),   //Saradomin page 4
+                    new LootItem(3831, 1, 1, 141),   //Zamorak page 1
+                    new LootItem(3832, 1, 1, 141),   //Zamorak page 2
+                    new LootItem(3833, 1, 1, 141),   //Zamorak page 3
+                    new LootItem(3834, 1, 1, 141),   //Zamorak page 4
+                    new LootItem(3835, 1, 1, 141),   //Guthix page 1
+                    new LootItem(3836, 1, 1, 141),   //Guthix page 2
+                    new LootItem(3837, 1, 1, 141),   //Guthix page 3
+                    new LootItem(3838, 1, 1, 141),   //Guthix page 4
+                    new LootItem(12613, 1, 1, 141),   //Bandos page 1
+                    new LootItem(12614, 1, 1, 141),   //Bandos page 2
+                    new LootItem(12615, 1, 1, 141),   //Bandos page 3
+                    new LootItem(12616, 1, 1, 141),   //Bandos page 4
+                    new LootItem(12617, 1, 1, 141),   //Armadyl page 1
+                    new LootItem(12618, 1, 1, 141),   //Armadyl page 2
+                    new LootItem(12619, 1, 1, 141),   //Armadyl page 3
+                    new LootItem(12620, 1, 1, 141),   //Armadyl page 4
+                    new LootItem(12621, 1, 1, 141),   //Ancient page 1
+                    new LootItem(12622, 1, 1, 141),   //Ancient page 2
+                    new LootItem(12623, 1, 1, 141),   //Ancient page 3
+                    new LootItem(12624, 1, 1, 141)   //Ancient page 4
+            );
+
     private void open(Player player) {
         ClueSave save;
         if(this == MASTER) {
@@ -1049,7 +1106,9 @@ public enum ClueType {
         for(Item item : container.getItems()) {
             if(item != null) {
                 player.getInventory().addOrDrop(item.getId(), item.getAmount());
-                player.getCollectionLog().collect(item);
+                if (player.getCollectionLog().collect(item) && shared.getLootItems().stream().noneMatch(i -> i.id == item.getId())) {
+                    player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CLUEUNIQUE, this.toString());
+                }
             }
         }
         player.openInterface(InterfaceType.MAIN, 73);

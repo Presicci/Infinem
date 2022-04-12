@@ -56,6 +56,7 @@ public class HerbPatch extends Patch {
                 player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP(), true);
                 player.sendFilteredMessage("You pick a " + ItemDef.get(getPlantedCrop().getProduceId()).name + ".");
                 getPlantedCrop().getCounter().increment(player, 1);
+                player.getTaskManager().doSkillItemLookup(getPlantedCrop().getProduceId());
                 removeProduce();
                 event.delay(1);
             }

@@ -6,55 +6,22 @@ package io.ruin.model.content.tasksystem.tasks;
  */
 public enum TaskCategory {
     //  Levels
-    FIRSTLEVEL, TOTALLEVEL, BASELEVEL,
+    FIRSTLEVEL, TOTALLEVEL, BASELEVEL, COMBATLEVEL,
 
-    //  Skilling
-    TOOL,
+    // General
+    UNLOCKITEM, SKILLITEM,
+    EQUIP, EQUIPSET,
 
-    //  Items
-    EQUIP,
+    NPCKILL, SLAYERKILL, SUPERIORKILL, SLAYERTASK,
 
-    //  Thieving
-    PICKPOCKET, STALLS,
+    UUIDLOOKUP,
 
-    //  Farming
-    RAKE, PLANTALLOTMENT(14), PROTECTCROPS(15),
-
-    //  Woodcutting
-    WOODCUTTING, BIRDNEST,
-
-    // Cooking
-    COOKING, BURN,
-
-    // Mining
-    MINING, MINEGEM,
-
-    // Fletching
-    FLETCHING,
-
-    // Slayer
-    RECEIVESLAYER, SLAYERPOINTS, CHECKSLAYER(31),
-
-    // Crafting
-    SPINNING, CUTGEM, CRAFTING,
-
-    // Fishing
-    FISHING,
-
-    // Smithing
-    SMELT, SMITH,
-
-    // Construction
-    PURCHASEHOUSE(41), BUILDROOM, SAWMILL,
-
-    // Runecrafting
-    ESSENCEMINE(44), CRAFTRUNE, LOCATETALISMAN,
-
-    // Firemaking
-    FIREMAKING, LIGHT,
-
-    // Hunter
-    IMPLING, BIRDSNARE
+    //Skilling
+    PICKPOCKET, ROOFTOP, SLAYERPOINTS, BUILDROOM, RUNECRAFT, BURNLOG, IMPLING,
+    LIGHTSOURCE, BURYBONE, COMPLETECLUE, CLUEUNIQUE, UNLOCKITEMSET,
+    BOXTRAP, BIRDSNARE, NETTRAP, BUTTERFLY, IMPLINGBARE, PICKPOCKETLOOT,
+    IMPLINGPURO, THIEVECHEST, FIGHTCAVES, INFERNO, MOVEHOUSE, RUNECRAFTCOMBO,
+    PRAYERRESTORED, COOKITEM, SLAYERTASKCOMPL, BUILDFURNITURE
     ;
 
     public final int[] uuids;

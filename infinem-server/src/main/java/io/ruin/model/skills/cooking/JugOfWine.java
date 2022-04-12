@@ -1,5 +1,7 @@
 package io.ruin.model.skills.cooking;
 
+import io.ruin.cache.ItemDef;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
@@ -26,6 +28,7 @@ public class JugOfWine {
                 player.sendMessage("You squeeze the grapes into the jug. The wine begins to ferment.");
                 player.getStats().addXp(StatType.Cooking, 200.0, true);
                 PlayerCounter.JUGS_OF_WINE_MADE.increment(player, 1);
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.COOKITEM, ItemDef.get(JUG_OF_WINE).name);
                 event.delay(2);
             }
         });

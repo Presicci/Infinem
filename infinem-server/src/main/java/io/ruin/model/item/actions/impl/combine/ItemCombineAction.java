@@ -164,11 +164,11 @@ public class ItemCombineAction {
                 Arrays.asList(new ItemPair(Items.CHOPPED_UGTHANKI, Items.UGTHANKI_ONION), new ItemPair(Items.ONION, -1))),
         UGTHANKI_AND_TOMATO("You use the tomato on the chopped ugthanki to make ugthanki and tomato.",
                 Arrays.asList(new ItemPair(Items.CHOPPED_UGTHANKI, Items.UGTHANKI_TOMATO), new ItemPair(Items.TOMATO, -1))),
-        KEBAB_MIX_TOMATO("You use the tomato on the ugthanki and onion nto make a kebab mix.", Collections.singletonList(new SkillRequired(StatType.Cooking, 58, 0)),
+        KEBAB_MIX_TOMATO("You use the tomato on the ugthanki and onion to make a kebab mix.", Collections.singletonList(new SkillRequired(StatType.Cooking, 58, 0)),
                 Arrays.asList(new ItemPair(Items.UGTHANKI_ONION, Items.KEBAB_MIX), new ItemPair(Items.TOMATO, -1))),
-        KEBAB_MIX_ONION("You use the onion on the ugthanki and tomato nto make a kebab mix.", Collections.singletonList(new SkillRequired(StatType.Cooking, 58, 0)),
+        KEBAB_MIX_ONION("You use the onion on the ugthanki and tomato to make a kebab mix.", Collections.singletonList(new SkillRequired(StatType.Cooking, 58, 0)),
                 Arrays.asList(new ItemPair(Items.UGTHANKI_TOMATO, Items.KEBAB_MIX), new ItemPair(Items.ONION, -1))),
-        KEBAB_MIX_MEAT("You use the meat on the onion and tomato nto make a kebab mix.", Collections.singletonList(new SkillRequired(StatType.Cooking, 58, 0)),
+        KEBAB_MIX_MEAT("You use the meat on the onion and tomato to make a kebab mix.", Collections.singletonList(new SkillRequired(StatType.Cooking, 58, 0)),
                 Arrays.asList(new ItemPair(Items.ONION_TOMATO, Items.KEBAB_MIX), new ItemPair(Items.UGTHANKI_MEAT, -1))),
         KEBAB("You add the kebab mix to the pitta to make a kebab.", Collections.singletonList(new SkillRequired(StatType.Cooking, 58, 40)),
                 Arrays.asList(new ItemPair(Items.PITTA_BREAD, Items.UGTHANKI_KEBAB), new ItemPair(Items.KEBAB_MIX, -1))),
@@ -201,6 +201,8 @@ public class ItemCombineAction {
                 Arrays.asList(new ItemPair(Items.SPICY_SAUCE, Items.CHILLI_CON_CARNE), new ItemPair(Items.MINCED_MEAT, -1))),
         EGG_AND_TOMATO("You use the tomato on the scrambled eggs to make egg and tomato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 23, 0)),
                 Arrays.asList(new ItemPair(Items.SCRAMBLED_EGG, Items.EGG_AND_TOMATO), new ItemPair(Items.TOMATO, -1))),
+        ONION_AND_TOMATO("You use the tomato on the chopped onion to make onion and tomato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 1, 0)),
+                Arrays.asList(new ItemPair(Items.CHOPPED_ONION, Items.ONION_TOMATO), new ItemPair(Items.TOMATO, -1))),
         MUSHROOM_AND_ONION("You use the mushroom on the onion to make mushroom and onion.", Collections.singletonList(new SkillRequired(StatType.Cooking, 57, 0)),
                 Arrays.asList(new ItemPair(Items.FRIED_MUSHROOMS, Items.MUSHROOM_ONION), new ItemPair(Items.FRIED_ONIONS, -1))),
         TUNA_AND_CORN("You use the tuna on the sweetcorn to make tuna and corn.", Collections.singletonList(new SkillRequired(StatType.Cooking, 67, 0)),
@@ -263,6 +265,8 @@ public class ItemCombineAction {
                     player.getInventory().remove(i.required);
                 }
             }
+            if (this == ItemCombine.PINEAPPLE_PIZZA)
+                player.getTaskManager().doLookupByUUID(99, 1);  // Make a Pineapple Pizza
             player.resetAnimation();
         }
     }

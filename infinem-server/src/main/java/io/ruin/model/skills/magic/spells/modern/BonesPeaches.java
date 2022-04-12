@@ -31,6 +31,7 @@ public class BonesPeaches extends Spell {
         if(count > 0) {
             p.animate(722);
             p.graphics(141, 92, 0);
+            p.getTaskManager().doLookupByUUID(662, 1);  // Cast Bones to Peaches
             return true;
         }
         p.sendMessage("You don't have any bones in your inventory to turn to peaches.");

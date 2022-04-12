@@ -45,6 +45,7 @@ public enum StringBow {
         player.sendFilteredMessage("You add a string to the bow.");
         player.animate(animation);
         player.getStats().addXp(StatType.Fletching, exp, true);
+        player.getTaskManager().doSkillItemLookup(strung);
     }
 
     private static final int BOW_STRING = 1777;

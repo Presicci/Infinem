@@ -3,6 +3,7 @@ package io.ruin.model.skills.farming.crop.impl;
 import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.skills.farming.crop.Crop;
 import lombok.AllArgsConstructor;
 
@@ -10,14 +11,14 @@ import static io.ruin.cache.ItemID.COINS_995;
 
 @AllArgsConstructor
 public enum AllotmentCrop implements Crop {
-	POTATO(5318, 1942, 1, 8, 9, 4, FlowerCrop.MARIGOLDS, new Item(COINS_995,  50), 6, 281040, PlayerCounter.HARVESTED_POTATO),
-	ONION(5319, 1957, 5, 9.5, 10.5, 4, FlowerCrop.MARIGOLDS, new Item(COINS_995,  100), 13, 281040, PlayerCounter.HARVESTED_ONION),
-	CABBAGE(5324, 1965, 7, 10, 11.5, 4, FlowerCrop.ROSEMARY, new Item(COINS_995,  200), 20, 281040, PlayerCounter.HARVESTED_CABBAGE),
-	TOMATO(5322, 1982, 12, 12.5, 14, 4, FlowerCrop.MARIGOLDS, new Item(COINS_995,  300), 27, 281040, PlayerCounter.HARVESTED_TOMATO),
-	SWEETCORN(5320, 5986, 20, 17, 19, 6, null, new Item(COINS_995,  500), 34, 224832, PlayerCounter.HARVESTED_SWEETCORN),
-	STRAWBERRY(5323, 5504, 31, 26, 29, 6, null, new Item(COINS_995,  800), 43, 187360, PlayerCounter.HARVESTED_STRAWBERRY),
-	WATERMELON(5321, 5982, 47, 48.5, 54.5, 8, FlowerCrop.NASTURTIUM, new Item(COINS_995,  5000), 52, 160594, PlayerCounter.HARVESTED_WATERMELON),
-	SNAPE_GRASS(22879, 231, 61, 82, 82, 7, null, new Item(995, 7500), 128, 173977, PlayerCounter.HARVESTED_SNAPE_GRASS);
+	POTATO(5318, 1942, 1, 8, 9, 4, FlowerCrop.MARIGOLDS, new Item(Items.COMPOST,  2), 6, 281040, PlayerCounter.HARVESTED_POTATO),
+	ONION(5319, 1957, 5, 9.5, 10.5, 4, FlowerCrop.MARIGOLDS, new Item(Items.POTATOES_10,  1), 13, 281040, PlayerCounter.HARVESTED_ONION),
+	CABBAGE(5324, 1965, 7, 10, 11.5, 4, FlowerCrop.ROSEMARY, new Item(Items.ONIONS_10,  1), 20, 281040, PlayerCounter.HARVESTED_CABBAGE),
+	TOMATO(5322, 1982, 12, 12.5, 14, 4, FlowerCrop.MARIGOLDS, new Item(Items.CABBAGES_10,  1), 27, 281040, PlayerCounter.HARVESTED_TOMATO),
+	SWEETCORN(5320, 5986, 20, 17, 19, 6, null, new Item(Items.JUTE_FIBRE,  10), 34, 224832, PlayerCounter.HARVESTED_SWEETCORN),
+	STRAWBERRY(5323, 5504, 31, 26, 29, 6, null, new Item(Items.APPLES_5,  1), 43, 187360, PlayerCounter.HARVESTED_STRAWBERRY),
+	WATERMELON(5321, 5982, 47, 48.5, 54.5, 8, FlowerCrop.NASTURTIUM, new Item(Items.CURRY_LEAF,  10), 52, 160594, PlayerCounter.HARVESTED_WATERMELON),
+	SNAPE_GRASS(22879, 231, 61, 82, 82, 7, null, new Item(Items.JANGERBERRIES, 5), 128, 173977, PlayerCounter.HARVESTED_SNAPE_GRASS);
 
 	private final int seedId, produceId, levelReq;
 	private final double plantXP, harvestXP;

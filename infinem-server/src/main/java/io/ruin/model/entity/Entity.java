@@ -503,7 +503,7 @@ public abstract class Entity {
         if(activeEvent != null && !activeEvent.tick())
             activeEvent = null;
         if(backgroundEvents != null && !backgroundEvents.isEmpty())
-            backgroundEvents.removeIf(event -> !event.tick());
+            backgroundEvents.removeIf(event -> event == null || !event.tick());
     }
 
     public final void stopEvent(boolean resetCombat) {

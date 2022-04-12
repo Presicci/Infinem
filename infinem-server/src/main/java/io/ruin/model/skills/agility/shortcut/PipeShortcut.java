@@ -22,11 +22,11 @@ public enum PipeShortcut {
 
     ;
 
-    private int level;
-    private double exp;
-    private Position startPosition;
-    private Position endPosition;
-    private Position[] positions;
+    private final int level;
+    private final double exp;
+    private final Position startPosition;
+    private final Position endPosition;
+    private final Position[] positions;
 
     PipeShortcut(int level, double exp, Position startPosition, Position endPosition, Position... positions) {
         this.level = level;
@@ -61,8 +61,7 @@ public enum PipeShortcut {
                 posCopy.add(startPosition);
             }
 
-            for(int index = 0;index<posCopy.size();index++) {
-                Position pos = posCopy.get(index);
+            for (Position pos : posCopy) {
                 int xDiff = pos.getX() - player.getPosition().getX();
                 int yDiff = pos.getY() - player.getPosition().getY();
                 player.getMovement().force(xDiff, yDiff, 0, 0, 5, 95, Direction.getDirection(player.getPosition(), pos));
@@ -75,5 +74,4 @@ public enum PipeShortcut {
 
         });
     }
-
 }

@@ -24,15 +24,17 @@ public enum FountainOfRune {
         for (FountainOfRune fountainOfRune : values()) {
             ItemObjectAction.register(fountainOfRune.unchargedID, 26782, (player, uncharged, obj) -> player.startEvent(event -> {
                 player.lock();
-                player.sendMessage("You hold the jewellery against the fountain..");
+                player.sendMessage("You hold the jewellery against the fountain...");
                 event.delay(1);
                 player.animate(832);
                 int amount = uncharged.count();
                 player.getInventory().remove(uncharged.getId(), amount);
-                if(uncharged.getId() == GLORY.unchargedID && Random.rollDie(2500, 1)) {
+                if((uncharged.getId() == GLORY.unchargedID || uncharged.getId() == GLORY_T.unchargedID) && Random.rollDie(25000, amount)) {
                     player.getInventory().add(19707, 1);
-                    player.getInventory().add(fountainOfRune.chargedID, amount - 1);
-                    player.dialogue(new ItemDialogue().one(19707, "The power of the fountain is transferred into an amulet of eternal glory."));
+                    if (amount - 1 > 0)
+                        player.getInventory().add(fountainOfRune.chargedID, amount - 1);
+                    player.dialogue(new ItemDialogue().one(19707, "The power of the fountain is transferred into an amulet of eternal glory. It will now have unlimited charges."));
+                    player.getTaskManager().doLookupByUUID(903, 1); // Create an Amulet of Eternal Glory
                 } else {
                     player.getInventory().add(fountainOfRune.chargedID, amount);
                     player.dialogue(new ItemDialogue().one(fountainOfRune.chargedID, "You feel a power emanating from the fountain as it recharges your jewellery."));

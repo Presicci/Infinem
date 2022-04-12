@@ -49,6 +49,7 @@ public class SmithItem {
                 player.getInventory().add(makeId, makeAmount);
                 RingOfForging.onSmith(player, player.smithBar, this);
                 player.getStats().addXp(StatType.Smithing, xp, true);
+                player.getTaskManager().doSkillItemLookup(makeId, makeAmount);
                 if(++made >= amount)
                     return;
                 e.delay(2);

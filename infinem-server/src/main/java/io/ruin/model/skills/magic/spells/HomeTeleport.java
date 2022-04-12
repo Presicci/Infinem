@@ -37,6 +37,7 @@ public class HomeTeleport extends Spell {
                 }
             }
             Position override = getHomeTeleportOverride(p);
+            p.getTaskManager().doLookupByUUID(64, 1);   // Cast Home Teleport
             if (override != null) {
                 ModernTeleport.teleport(p, override.getX(), override.getY(), override.getZ());
             } else {

@@ -99,6 +99,7 @@ public enum Mould {
                 goldBar.remove();
                 player.getInventory().add(mould.jewellery, 1);
                 player.getStats().addXp(StatType.Crafting, mould.exp, true);
+                player.getTaskManager().doSkillItemLookup(mould.jewellery);
                 event.delay(1);
             }
         });

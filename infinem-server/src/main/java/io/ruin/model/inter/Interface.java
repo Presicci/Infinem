@@ -316,6 +316,8 @@ public class Interface {
 
     public static final int TELEPORTS = 719;
 
+    public static final int AVAS_DEVICES = 67;
+
     public static final int UPGRADE_MACHINE = 721;
 
     public static final int UPGRADE_MACHINE_INVENTORY = 722;
