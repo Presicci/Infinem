@@ -11,7 +11,10 @@ public class BrimhavenDungeon {
         /**
          * Entrance/exit
          */
-        ObjectAction.register(20878, 1, (player, obj) -> player.getMovement().teleport(2745, 3152, 0));
+        ObjectAction.register(20878, 1, (player, obj) -> {
+            player.getMovement().teleport(2745, 3152, 0);
+            player.getTaskManager().doLookupByUUID(394, 1); // Enter the Brimhaven Dungeon
+        });
         ObjectAction.register(20877, 1, (player, obj) -> player.getMovement().teleport(2713, 9564, 0));
 
         /**
