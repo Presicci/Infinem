@@ -1,6 +1,7 @@
 package io.ruin.model.skills.farming.patch.impl;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.WoodTreeCrop;
 import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
@@ -73,6 +74,7 @@ public class WoodTreePatch extends Patch {
         getPlantedCrop().getCounter().increment(player, 1);
         FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
         player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP(), true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHECKCROP, getPlantedCrop().name());
         advanceStage();
         update();
     }

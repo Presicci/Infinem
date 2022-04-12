@@ -2,6 +2,7 @@ package io.ruin.model.skills.farming.patch.impl;
 
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.TimeUtils;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.FruitTreeCrop;
 import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
@@ -37,6 +38,7 @@ public class FruitTreePatch extends RegrowPatch {
         FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
         getPlantedCrop().getCounter().increment(player, 1);
         player.getStats().addXp(StatType.Farming, getPlantedCrop().getCheckHealthXP(), true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHECKCROP, getPlantedCrop().name());
         advanceStage();
         update();
     }

@@ -1,6 +1,7 @@
 package io.ruin.model.skills.farming.patch.impl;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.HardWoodTreeCrop;
 import io.ruin.model.skills.farming.patch.Patch;
@@ -71,6 +72,7 @@ public class HardWoodTreePatch extends Patch {
         player.sendMessage("You examine the tree and find that it is in perfect health.");
         getPlantedCrop().getCounter().increment(player, 1);
         player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP(), true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHECKCROP, getPlantedCrop().name());
         advanceStage();
         update();
     }
