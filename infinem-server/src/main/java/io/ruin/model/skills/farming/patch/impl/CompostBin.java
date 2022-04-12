@@ -90,6 +90,8 @@ public class CompostBin extends Patch {
                         player.animate(832);
                         event.delay(1);
                         bucket.setId(PRODUCTS[currentType]);
+                        if (currentType == SUPER)
+                            player.getTaskManager().doLookupByUUID(92, 1);  // Fill a Bucket With Supercompost
                         removeProduce();
                         update();
                         player.unlock();
