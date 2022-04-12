@@ -38,7 +38,7 @@ public class FruitTreePatch extends RegrowPatch {
         FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
         getPlantedCrop().getCounter().increment(player, 1);
         player.getStats().addXp(StatType.Farming, getPlantedCrop().getCheckHealthXP(), true);
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHECKCROP, getPlantedCrop().name());
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHECKFRUIT, getPlantedCrop().name());
         advanceStage();
         update();
     }
