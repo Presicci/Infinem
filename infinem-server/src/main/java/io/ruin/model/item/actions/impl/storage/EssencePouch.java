@@ -38,7 +38,7 @@ public enum EssencePouch {
             player.sendFilteredMessage("You do not have any essence to fill your pouch with.");
             return;
         }
-        amount = amount > pouch.capacity ? pouch.capacity : amount;
+        amount = Math.min(amount, pouch.capacity);
         Map<EssencePouch, Integer> pouchMap = player.runeEssencePouches;
         if (pouchFull(player, pouch)) {
             player.getInventory().remove(Essence.PURE.id, amount);
