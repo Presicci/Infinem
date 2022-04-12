@@ -44,6 +44,8 @@ public class WoodTreePatch extends Patch {
             reset(false);
             if (getPlantedCrop() != null && getPlantedCrop().getRoots() != -1 && getStage() >= getPlantedCrop().getTotalStages()) {
                 player.getInventory().addOrDrop(getPlantedCrop().getRoots(), getRootAmount());
+                if (getPlantedCrop() == WoodTreeCrop.MAGIC)
+                    player.getTaskManager().doLookupByUUID(181, 1); // Dig Up Some Magic Roots
             }
             player.sendMessage("You clear the patch for new crops.");
         });
