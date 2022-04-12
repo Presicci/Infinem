@@ -272,7 +272,8 @@ public class TaskManager {
             try {
                 statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ? AND required_object LIKE ?");
                 statement.setString(1, StringUtils.capitalizeFirst("unlockitemset"));
-                statement.setString(2, "%" + trigger.trim().toLowerCase() + "%");
+                String replace = trigger.trim().toLowerCase().replace("_", " ");
+                statement.setString(2, "^" + replace + "|," + replace);
                 rs = statement.executeQuery();
                 while (rs.next()) {
                     int uuid = rs.getInt("uuid");
