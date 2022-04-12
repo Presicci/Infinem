@@ -6,6 +6,7 @@ import io.ruin.cache.Icon;
 import io.ruin.model.World;
 import io.ruin.model.activities.summerevent.SummerTokens;
 import io.ruin.model.activities.wilderness.Wilderness;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
@@ -232,6 +233,7 @@ public class StatList {
             player.sendMessage(Color.ORANGE_RED.tag() + "You may now purchase a skillcape from Mac at home.");
             Broadcast broadcast = type.defaultXpMultiplier == -1 ? Broadcast.FRIENDS : Broadcast.GLOBAL;
             broadcast.sendNews(player, Icon.SILVER_STAR, player.getName() + " has just achieved level 99 in " + type.name() + "!");
+            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILL99, type.name());
         }
         if(statId <= 6)
             player.getCombat().updateLevel();
