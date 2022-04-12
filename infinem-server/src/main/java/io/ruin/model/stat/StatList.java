@@ -192,9 +192,6 @@ public class StatList {
          */
         if(player.wildernessLevel > 1)
             amount *= 1.25;
-
-        if (player.getEquipment().contains(new Item(773)))
-            amount *= 10.0;
         /**
          * 25% weekend experience boost
          */
