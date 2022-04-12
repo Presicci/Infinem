@@ -64,6 +64,7 @@ public enum MysticStaff {
             }
         });
     }
+
     private static final int LEVEL_REQ = 93;
 
     private static final double XP = 20;

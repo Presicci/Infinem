@@ -5,9 +5,6 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.farming.crop.TreeCrop;
 
-import static io.ruin.cache.ItemID.COINS_995;
-
-
 public enum FruitTreeCrop implements TreeCrop {
 	APPLE(5283, 1955, 5496, 5480, 5488, 27, 22, 1199.5, 8.5, 8, PlayerCounter.GROWN_APPLE, new Item(5986,  9)),
 	BANANA(5284, 1963, 5497, 5481, 5489, 33, 28, 1750, 10.5, 35, PlayerCounter.GROWN_BANANA, new Item(5386,  4)),
@@ -34,11 +31,16 @@ public enum FruitTreeCrop implements TreeCrop {
 		this.wateredSeedling = wateredSeedling;
 	}
 
-	private double plantXP, checkHealthXP, harvestXP;
-	private int seedId;
-	private int produceId;
-	private int levelReq;
-	private int containerIndex;
+	private final double plantXP, checkHealthXP, harvestXP;
+	private final int seedId;
+	private final int produceId;
+	private final int levelReq;
+	private final int containerIndex;
+	private final int sapling;
+	private final int seedling;
+	private final int wateredSeedling;
+	private final PlayerCounter counter;
+	private final Item payment;
 
 	@Override
 	public int getPetOdds() {
@@ -59,14 +61,6 @@ public enum FruitTreeCrop implements TreeCrop {
 	public int getWateredSeedling() {
 		return wateredSeedling;
 	}
-
-	private int sapling;
-	private int seedling;
-	private int wateredSeedling;
-
-	private PlayerCounter counter;
-
-
 
 	@Override
 	public int getSeed() {
@@ -135,6 +129,4 @@ public enum FruitTreeCrop implements TreeCrop {
 	public Item getPayment() {
 		return payment;
 	}
-
-	private Item payment;
 }

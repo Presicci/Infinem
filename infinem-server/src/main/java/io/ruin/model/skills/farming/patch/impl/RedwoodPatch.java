@@ -162,7 +162,7 @@ public class RedwoodPatch extends Patch {
     }
 
     static {
-        /**
+        /*
          * Redwood tree entrance to upper level
          */
         ObjectAction.register(34477, 1224, 3755, 0, "climb-up", (player, obj) -> WoodcuttingGuild.ropeLadder(player, obj, 1, 828, 1));

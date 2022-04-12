@@ -54,7 +54,7 @@ public class RingOfForging {
     }
 
     static {
-        ItemAction.registerEquipment(RING_ID, 2,  RingOfForging::check);
+        ItemAction.registerEquipment(RING_ID, 2, RingOfForging::check);
     }
 
 }

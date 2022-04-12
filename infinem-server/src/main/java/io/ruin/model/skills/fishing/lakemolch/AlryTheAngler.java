@@ -18,11 +18,9 @@ public class AlryTheAngler {
                 new PlayerDialogue("Hello there."),
                 new NPCDialogue(ARLY_THE_ANGLER, "What brings you to these parts, stranger?"),
                 new OptionsDialogue(
-                        new Option("What is this place?", () -> {
-                            player.dialogue(new PlayerDialogue("What is this place?"),
-                                    new NPCDialogue(ARLY_THE_ANGLER, "This is Lake Molch! I train cormorants here and sell them to the locals."),
-                                    new PlayerDialogue("Oh.. well that's interesting!"));
-                        }),
+                        new Option("What is this place?", () -> player.dialogue(new PlayerDialogue("What is this place?"),
+                                new NPCDialogue(ARLY_THE_ANGLER, "This is Lake Molch! I train cormorants here and sell them to the locals."),
+                                new PlayerDialogue("Oh.. well that's interesting!"))),
                         new Option("Could I have a go with the bird?", () -> getBird(player, npc))
                 )
         ));

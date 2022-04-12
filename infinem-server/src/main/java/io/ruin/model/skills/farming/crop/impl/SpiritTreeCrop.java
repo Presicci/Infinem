@@ -6,8 +6,6 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.skills.farming.crop.TreeCrop;
 
-import static io.ruin.cache.ItemID.COINS_995;
-
 public class SpiritTreeCrop implements TreeCrop {
 
     public static final SpiritTreeCrop INSTANCE = new SpiritTreeCrop();
@@ -43,7 +41,7 @@ public class SpiritTreeCrop implements TreeCrop {
 
     @Override
     public double getDiseaseChance(int compostType) {
-        switch(compostType) {
+        switch (compostType) {
             case 3:
                 return 0.5 / 128.0;
             case 2:

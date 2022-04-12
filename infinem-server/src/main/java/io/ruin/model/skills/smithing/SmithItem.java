@@ -29,28 +29,28 @@ public class SmithItem {
 
     public void make(Player player, int amount) {
         player.closeInterface(InterfaceType.MAIN);
-        if(!player.getStats().check(StatType.Smithing, level, "make that"))
+        if (!player.getStats().check(StatType.Smithing, level, "make that"))
             return;
         player.startEvent(e -> {
             int made = 0;
-            while(true) {
+            while (true) {
                 ArrayList<Item> bars = player.getInventory().findItems(player.smithBar.itemId, barReq);
-                if(bars == null) {
-                    if(made == 0)
+                if (bars == null) {
+                    if (made == 0)
                         player.sendMessage("You don't have enough bars to make that.");
                     else
                         player.sendMessage("You don't have enough bars to make anymore.");
                     return;
                 }
-                if(made % 2 == 0)
+                if (made % 2 == 0)
                     player.animate(898);
-                for(Item bar : bars)
+                for (Item bar : bars)
                     bar.remove();
                 player.getInventory().add(makeId, makeAmount);
                 RingOfForging.onSmith(player, player.smithBar, this);
                 player.getStats().addXp(StatType.Smithing, xp, true);
                 player.getTaskManager().doSkillItemLookup(makeId, makeAmount);
-                if(++made >= amount)
+                if (++made >= amount)
                     return;
                 e.delay(2);
             }

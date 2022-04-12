@@ -9,7 +9,7 @@ import java.util.List;
 
 public enum PatchGroup {
 
-    FALADOR(new Bounds(new Position(3055,3308,0), 25),
+    FALADOR(new Bounds(new Position(3055, 3308, 0), 25),
             Arrays.asList(PatchData.FALADOR_FLOWER, PatchData.FALADOR_HERB, PatchData.FALADOR_NORTH, PatchData.FALADOR_SOUTH, PatchData.FALADOR_COMPOST_BIN)),
     CATHERBY(new Bounds(new Position(2810, 3464, 0), 25),
             Arrays.asList(PatchData.CATHERBY_FLOWER, PatchData.CATHERBY_HERB, PatchData.CATHERBY_NORTH, PatchData.CATHERBY_SOUTH, PatchData.CATHERBY_COMPOST_BIN)),
@@ -34,17 +34,17 @@ public enum PatchGroup {
             Collections.singletonList(PatchData.VARROCK_TREE)),
     TAVERLEY(new Bounds(new Position(2936, 3438, 0), 20),
             Collections.singletonList(PatchData.TAVERLEY_TREE)),
-    LUMBRIDGE(new Bounds(new Position(3193,3231, 0), 32),
+    LUMBRIDGE(new Bounds(new Position(3193, 3231, 0), 32),
             Collections.singletonList(PatchData.LUMBRIDGE_TREE)),
     GNOME_STRONGHOLD(new Bounds(new Position(2461, 3444, 0), 64),
             Arrays.asList(PatchData.GNOME_TREE, PatchData.GNOME_FRUIT)),
-    CATHERBY_BEACH(new Bounds(new Position(2860,3433, 0), 20),
+    CATHERBY_BEACH(new Bounds(new Position(2860, 3433, 0), 20),
             Collections.singletonList(PatchData.CATHERBY_FRUIT)),
-    BRIMHAVEN(new Bounds(new Position(2770,3213, 0), 30),
+    BRIMHAVEN(new Bounds(new Position(2770, 3213, 0), 30),
             Arrays.asList(PatchData.BRIMHAVEN_FRUIT, PatchData.BRIMHAVEN_SPIRIT_TREE)),
-    GNOME_VILLAGE(new Bounds( new Position(2490,3180,0), 25),
+    GNOME_VILLAGE(new Bounds(new Position(2490, 3180, 0), 25),
             Collections.singletonList(PatchData.VILLAGE_FRUIT)),
-    LLETYA(new Bounds( new Position(2347,3162,0), 25),
+    LLETYA(new Bounds(new Position(2347, 3162, 0), 25),
             Collections.singletonList(PatchData.LLETYA_FRUIT)),
     VARROCK_BUSH(new Bounds(new Position(3181, 3358, 0), 25),
             Collections.singletonList(PatchData.VARROCK_BUSH)),
@@ -86,8 +86,8 @@ public enum PatchGroup {
     SEAWEEDS(Bounds.fromRegion(15008),
             Arrays.asList(PatchData.SEAWEED_PATCH1, PatchData.SEAWEED_PATCH2));
 
-    private Bounds bounds;
-    private List<PatchData> patches;
+    private final Bounds bounds;
+    private final List<PatchData> patches;
 
     PatchGroup(Bounds bounds, List<PatchData> patches) {
         this.bounds = bounds;

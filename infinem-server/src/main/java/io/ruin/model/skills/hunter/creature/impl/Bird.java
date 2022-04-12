@@ -26,7 +26,7 @@ public class Bird extends Creature {
         Hunter.registerCreature(new Bird("tropical wagtail", 5548, 19, 95.8, 9347, 9348, 10087, 0.5, 30, PlayerCounter.CAUGHT_WAGTAIL));
     }
 
-    private int catchingObject, caughtObject, featherId;
+    private final int catchingObject, caughtObject, featherId;
 
     public Bird(String creatureName, int npcId, int levelReq, double catchXP, int catchingObject, int caughtObject, int featherId, double baseCatchChance, int respawnTicks, PlayerCounter counter) {
         super(creatureName, npcId, levelReq, catchXP, baseCatchChance, respawnTicks, counter);

@@ -50,7 +50,7 @@ public enum Dart {
     }
 
     private void make(Player player, Item tipItem, Item featherItem) {
-        if(!player.getStats().check(StatType.Fletching, lvlReq, finishedId, "make " + pluralName))
+        if (!player.getStats().check(StatType.Fletching, lvlReq, finishedId, "make " + pluralName))
             return;
         if (this == BROAD_BOLT && Config.BROADER_FLETCHING.get(player) == 0) {
             player.sendMessage("You haven't unlocked the ability to fletch broad bolts yet.");
@@ -67,7 +67,7 @@ public enum Dart {
     }
 
     static {
-        for(Dart dart : values())
+        for (Dart dart : values())
             ItemItemAction.register(dart.unfinishedId, FEATHER, dart::make);
     }
 

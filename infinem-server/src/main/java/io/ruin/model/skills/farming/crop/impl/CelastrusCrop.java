@@ -4,10 +4,7 @@ import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
-import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.TreeCrop;
-
-import static io.ruin.cache.ItemID.COINS_995;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -49,7 +46,7 @@ public class CelastrusCrop implements TreeCrop {
 
     @Override
     public double getDiseaseChance(int compostType) {
-        switch(compostType) {
+        switch (compostType) {
             case 3:
                 return 1.0 / 128.0;
             case 2:

@@ -42,14 +42,14 @@ public enum BoltTips {
     }
 
     static {
-        for(BoltTips boltTips : values()) {
+        for (BoltTips boltTips : values()) {
             SkillItem item = new SkillItem(boltTips.gem).addAction((player, amount, event) -> {
-                while(amount-- > 0) {
+                while (amount-- > 0) {
                     Item chisel = player.getInventory().findItem(Tool.CHISEL);
-                    if(chisel == null)
+                    if (chisel == null)
                         return;
                     Item gem = player.getInventory().findItem(boltTips.gem);
-                    if(gem == null) {
+                    if (gem == null) {
                         player.sendMessage("You have run out of gems.");
                         break;
                     }
@@ -60,7 +60,7 @@ public enum BoltTips {
             ItemItemAction.register(boltTips.gem, Tool.CHISEL, (player, gem, chisel) -> {
                 if (!player.getStats().check(StatType.Fletching, boltTips.levelReq, "do that"))
                     return;
-                if(player.getInventory().hasMultiple(gem.getId())) {
+                if (player.getInventory().hasMultiple(gem.getId())) {
                     SkillDialogue.make(player, item);
                     return;
                 }

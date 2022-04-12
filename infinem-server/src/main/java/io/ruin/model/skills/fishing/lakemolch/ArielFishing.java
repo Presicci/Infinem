@@ -30,7 +30,7 @@ public enum ArielFishing {
 
     private final int fishLevel, hunterLevel, fishId;
     private final double fishExp, hunterExp, cookingExp;
-    private String name;
+    private final String name;
 
     ArielFishing(int fishLevel, double fishExp, int hunterLevel, double hunterExp, double cookingExp, int fishId, String name) {
         this.fishLevel = fishLevel;
@@ -46,9 +46,9 @@ public enum ArielFishing {
     private static final Bounds SOUTH_BOUNDS = new Bounds(1360, 3618, 1378, 3624, 0);
     private static final Bounds WEST_BOUNDS = new Bounds(1351, 3623, 1358, 3637, 0);
     private static final Bounds EAST_BOUNDS = new Bounds(1377, 3622, 1384, 3637, 0);
-    private static List<NPC> SOUTH_SPAWNS = new ArrayList<>();
-    private static List<NPC> WEST_SPAWNS = new ArrayList<>();
-    private static List<NPC> EAST_SPAWNS = new ArrayList<>();
+    private static final List<NPC> SOUTH_SPAWNS = new ArrayList<>();
+    private static final List<NPC> WEST_SPAWNS = new ArrayList<>();
+    private static final List<NPC> EAST_SPAWNS = new ArrayList<>();
     private static final int FISH_CHUNKS = 22818;
     private static final int KING_WORM = 2162;
     private static final int CORMORANTS_GLOVES = 22816;
@@ -57,10 +57,10 @@ public enum ArielFishing {
     private static final int MOLCH_PEARL = 22820;
 
     static {
-        /**
+        /*
          * Fishing spot spawning
          */
-        for(int i = 0; i < 7; i ++) {
+        for (int i = 0; i < 7; i++) {
             SOUTH_SPAWNS.add(i, new NPC(FISHING_SPOT));
             WEST_SPAWNS.add(i, new NPC(FISHING_SPOT));
             EAST_SPAWNS.add(i, new NPC(FISHING_SPOT));
@@ -70,45 +70,45 @@ public enum ArielFishing {
         WEST_SPAWNS.forEach(it -> it.spawn(getRandomSpawn(WEST_BOUNDS)));
         EAST_SPAWNS.forEach(it -> it.spawn(getRandomSpawn(EAST_BOUNDS)));
 
-        SpawnListener.register(FISHING_SPOT, npc ->  {
+        SpawnListener.register(FISHING_SPOT, npc -> {
             npc.skipMovementCheck = true;
-            if(npc.getPosition().inBounds(SOUTH_BOUNDS))
+            if (npc.getPosition().inBounds(SOUTH_BOUNDS))
                 npc.spawnBounds = SOUTH_BOUNDS;
-            else if(npc.getPosition().inBounds(EAST_BOUNDS))
+            else if (npc.getPosition().inBounds(EAST_BOUNDS))
                 npc.spawnBounds = EAST_BOUNDS;
-            else if(npc.getPosition().inBounds(WEST_BOUNDS))
+            else if (npc.getPosition().inBounds(WEST_BOUNDS))
                 npc.spawnBounds = WEST_BOUNDS;
             npc.addEvent(e -> {
-                while(true) {
-                    if(!npc.isLocked())
+                while (true) {
+                    if (!npc.isLocked())
                         npc.getMovement().teleport(getRandomSpawn(npc.spawnBounds));
                     e.delay(Random.get(10, 15));
                 }
             });
         });
 
-        /**
+        /*
          * Catching
          */
         NPCAction.register(FISHING_SPOT, "catch", (player, npc) -> {
-            if(!player.getStats().check(StatType.Fishing, BLUEGILL.fishLevel, BLUEGILL.fishId, "attempt this"))
+            if (!player.getStats().check(StatType.Fishing, BLUEGILL.fishLevel, BLUEGILL.fishId, "attempt this"))
                 return;
-            if(!player.getStats().check(StatType.Hunter, BLUEGILL.hunterLevel, BLUEGILL.fishId, "attempt this"))
+            if (!player.getStats().check(StatType.Hunter, BLUEGILL.hunterLevel, BLUEGILL.fishId, "attempt this"))
                 return;
             int weapon = player.getEquipment().get(Equipment.SLOT_WEAPON) == null ? -1 : player.getEquipment().get(Equipment.SLOT_WEAPON).getId();
-            if(weapon != CORMORANTS_GLOVES && weapon != CORMORANTS_GLOVE_BIRD) {
+            if (weapon != CORMORANTS_GLOVES && weapon != CORMORANTS_GLOVE_BIRD) {
                 player.dialogue(new PlayerDialogue("I should speak with Alry the Angler before attempting this.."));
                 return;
             }
-            if(weapon == CORMORANTS_GLOVES) {
+            if (weapon == CORMORANTS_GLOVES) {
                 player.sendMessage("You need to wait for your cormorant to return before trying to catch any more fish.");
                 return;
             }
-            if(!player.getInventory().hasId(FISH_CHUNKS) && !player.getInventory().hasId(KING_WORM)) {
+            if (!player.getInventory().hasId(FISH_CHUNKS) && !player.getInventory().hasId(KING_WORM)) {
                 player.sendMessage("It wouldn't be fair to send the cormorant out to work with nothing to reward it.");
                 return;
             }
-            if(player.getInventory().isFull()) {
+            if (player.getInventory().isFull()) {
                 player.sendMessage("You don't have enough inventory space to do that.");
                 return;
             }
@@ -123,12 +123,12 @@ public enum ArielFishing {
                 player.sendFilteredMessage("You send your cormorant to try and catch a fish from out to sea.");
                 player.getEquipment().get(Equipment.SLOT_WEAPON).setId(CORMORANTS_GLOVES);
                 int playerTileDist = player.getPosition().distance(npcPos);
-                int sendDelay =  Math.max(1, (30 + (playerTileDist * 12)) / 35);
+                int sendDelay = Math.max(1, (30 + (playerTileDist * 12)) / 35);
                 new Projectile(1632, 30, 0, 0, 31, playerTileDist, 5, 64).send(player, npcPos);
                 World.sendGraphics(1633, 0, sendDelay * 25, npcPos);
                 npc.addEvent(npcEvent -> {
                     npcEvent.delay(sendDelay);
-                    if(!npc.isHidden()) {
+                    if (!npc.isHidden()) {
                         npc.setHidden(true);
                         npc.unlock();
                         npcEvent.delay(Random.get(4, 10));
@@ -145,21 +145,21 @@ public enum ArielFishing {
                 player.getStats().addXp(StatType.Fishing, reward.fishExp * anglerBonus(player), true);
                 player.getStats().addXp(StatType.Hunter, reward.hunterExp, true);
                 player.getInventory().add(reward.fishId, 1);
-                if(Random.rollDie(10, 3)) {
+                if (Random.rollDie(10, 3)) {
                     player.getInventory().addOrDrop(MOLCH_PEARL, 1);
                 }
                 rollToFeed(player);
-                if(player.getEquipment().get(Equipment.SLOT_WEAPON).getId() == CORMORANTS_GLOVES)
+                if (player.getEquipment().get(Equipment.SLOT_WEAPON).getId() == CORMORANTS_GLOVES)
                     player.getEquipment().get(Equipment.SLOT_WEAPON).setId(CORMORANTS_GLOVE_BIRD);
                 else {
                     Item cormorantGloves = player.getInventory().findItem(CORMORANTS_GLOVES);
-                    if(cormorantGloves != null)
+                    if (cormorantGloves != null)
                         cormorantGloves.setId(CORMORANTS_GLOVE_BIRD);
                 }
             });
         });
 
-        for(ArielFishing fish : ArielFishing.values()) {
+        for (ArielFishing fish : ArielFishing.values()) {
             ItemItemAction.register(fish.fishId, Tool.KNIFE, (player, primary, secondary) -> {
                 player.getInventory().remove(fish.fishId, 1);
                 player.getInventory().add(FISH_CHUNKS, 1);
@@ -168,7 +168,7 @@ public enum ArielFishing {
             });
         }
 
-        /**
+        /*
          * Region handler
          */
         MapListener.registerRegion(5432)
@@ -181,16 +181,16 @@ public enum ArielFishing {
     }
 
     private static void rollToFeed(Player player) {
-        if(Random.rollDie(3, 1)) {
+        if (Random.rollDie(3, 1)) {
             Item kingWorm = player.getInventory().findItem(KING_WORM);
-            if(kingWorm != null) {
+            if (kingWorm != null) {
                 kingWorm.remove(1);
                 player.sendMessage("You feed your cormorant a king worm as a reward.");
                 return;
             }
 
             Item fishChunks = player.getInventory().findItem(FISH_CHUNKS);
-            if(fishChunks != null) {
+            if (fishChunks != null) {
                 fishChunks.remove(1);
                 player.sendMessage("You feed your cormorant some fish chunks as a reward.");
             }
@@ -200,18 +200,18 @@ public enum ArielFishing {
     private static ArielFishing rollForFish(Player player) {
         int fishingLvl = player.getStats().get(StatType.Fishing).currentLevel;
         int hunterLvl = player.getStats().get(StatType.Hunter).currentLevel;
-        if(Random.rollDie(3, 1) && fishingLvl >= GREATER_SIRE.fishLevel && hunterLvl >= GREATER_SIRE.hunterLevel) {
+        if (Random.rollDie(3, 1) && fishingLvl >= GREATER_SIRE.fishLevel && hunterLvl >= GREATER_SIRE.hunterLevel) {
             return GREATER_SIRE;
-        } else if(Random.rollDie(3, 1) && fishingLvl >= MOTTLED_EEL.fishLevel && hunterLvl >= MOTTLED_EEL.hunterLevel) {
+        } else if (Random.rollDie(3, 1) && fishingLvl >= MOTTLED_EEL.fishLevel && hunterLvl >= MOTTLED_EEL.hunterLevel) {
             return MOTTLED_EEL;
-        } else if(Random.rollDie(3, 1) && fishingLvl >= COMMON_TENCH.fishLevel && hunterLvl >= COMMON_TENCH.hunterLevel) {
+        } else if (Random.rollDie(3, 1) && fishingLvl >= COMMON_TENCH.fishLevel && hunterLvl >= COMMON_TENCH.hunterLevel) {
             return COMMON_TENCH;
         }
         return BLUEGILL;
     }
 
     private static void rollForGoldenTench(Player player) {
-        if(Random.rollDie(5000, 1)) {
+        if (Random.rollDie(5000, 1)) {
             player.getInventory().add(GOLDEN_TENCH, 1);
             player.sendMessage(Color.COOL_BLUE.wrap("Your cormorant finds a golden tench!"));
         }
@@ -219,7 +219,7 @@ public enum ArielFishing {
 
     private static Position getRandomSpawn(Bounds bounds) {
         Position spawn = bounds.randomPosition();
-        while(spawn == null || spawn.getTile().npcCount > 0)
+        while (spawn == null || spawn.getTile().npcCount > 0)
             spawn = bounds.randomPosition();
         return spawn;
     }

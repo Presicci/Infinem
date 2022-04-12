@@ -41,29 +41,29 @@ public enum Crossbow {
     }
 
     static {
-        for(Crossbow crossbow : values()) {
+        for (Crossbow crossbow : values()) {
             SkillItem item = new SkillItem(crossbow.unfCrossbow).addAction((player, amount, event) -> {
-                while(amount-- > 0) {
+                while (amount-- > 0) {
                     Item limbs = player.getInventory().findItem(crossbow.limbs);
-                    if(limbs == null)
+                    if (limbs == null)
                         return;
                     Item stock = player.getInventory().findItem(crossbow.stock);
-                    if(stock == null)
+                    if (stock == null)
                         return;
                     crossbow.make(player, limbs, stock);
                     event.delay(2);
                 }
             });
             ItemItemAction.register(crossbow.limbs, crossbow.stock, (player, limbs, stock) -> {
-                if(!player.getStats().check(StatType.Fletching, crossbow.levelReq, crossbow.unfCrossbow, "do that"))
+                if (!player.getStats().check(StatType.Fletching, crossbow.levelReq, crossbow.unfCrossbow, "do that"))
                     return;
                 Item hammer = player.getInventory().findItem(Tool.HAMMER);
-                if(hammer == null) {
+                if (hammer == null) {
                     player.sendFilteredMessage("You'll need a hammer to do that.");
                     return;
                 }
                 boolean multiple = player.getInventory().hasMultiple(limbs.getId(), stock.getId());
-                if(multiple) {
+                if (multiple) {
                     SkillDialogue.make(player, item);
                     return;
                 }

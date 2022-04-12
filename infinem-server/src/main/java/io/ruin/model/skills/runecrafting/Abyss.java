@@ -230,7 +230,7 @@ public class Abyss {
             this.id = id;
             this.dest = dest;
         }
-        
+
     }
 
     private enum Blockage {
@@ -283,7 +283,7 @@ public class Abyss {
 
     }
 
-    private static final int[] ABYSS_CREATURES = new int[] {2586, 2584, 2585};
+    private static final int[] ABYSS_CREATURES = new int[]{2586, 2584, 2585};
 
     static {
         Entrance[] entrances = {
@@ -314,17 +314,17 @@ public class Abyss {
                 {Blockage.TENDRILS, Blockage.BOIL, Blockage.TENDRILS, Blockage.ROCKS, Blockage.PASSAGE, Blockage.ROCKS, Blockage.TENDRILS, Blockage.BOIL, Blockage.EYES, Blockage.GAP, Blockage.DEFAULT, Blockage.GAP},
                 {Blockage.ROCKS, Blockage.TENDRILS, Blockage.BOIL, Blockage.TENDRILS, Blockage.ROCKS, Blockage.PASSAGE, Blockage.ROCKS, Blockage.TENDRILS, Blockage.BOIL, Blockage.EYES, Blockage.GAP, Blockage.DEFAULT}
         };
-        for(int i = 0; i < entrances.length; i++) {
+        for (int i = 0; i < entrances.length; i++) {
             int idx = i;
             Entrance entrance = entrances[idx];
             ObjectAction.register(entrance.id, 1, (player, obj) -> {
                 int abyssMap = Config.ABYSS_MAP.get(player);
                 Blockage blockage = blockageOrders[abyssMap][idx];
-                if(blockage.consumer != null)
+                if (blockage.consumer != null)
                     blockage.consumer.accept(player, obj, entrance.dest);
             });
         }
-        for(Rift rift : Rift.values())
+        for (Rift rift : Rift.values())
             ObjectAction.register(rift.objectID, 1, (player, obj) -> player.getMovement().teleport(rift.position));
 
         /**
@@ -346,9 +346,9 @@ public class Abyss {
         }));
         SpawnListener.register(ABYSS_CREATURES, npc -> {
             npc.deathEndListener = (DeathListener.SimpleKiller) killer -> {
-              if(killer.player != null) {
-                  PlayerCounter.ABYSSAL_CREATURES_KC.increment(killer.player, 1);
-              }
+                if (killer.player != null) {
+                    PlayerCounter.ABYSSAL_CREATURES_KC.increment(killer.player, 1);
+                }
             };
         });
     }

@@ -57,7 +57,7 @@ public enum Impling {
 
         /* check for impling jar */
         Item impJar = player.getInventory().findItem(ImplingJar.IMPLING_JAR);
-        if(!barehands && impJar == null) {
+        if (!barehands && impJar == null) {
             player.sendFilteredMessage("You don't have an empty impling jar in which to keep an impling.");
             return;
         }
@@ -65,12 +65,12 @@ public enum Impling {
         /* check for level req */
         int hunterLevel = player.getStats().get(StatType.Hunter).currentLevel;
         int levelReq = barehands ? impling.bareHandLevelReq : impling.levelReq;
-        if(hunterLevel < levelReq) {
+        if (hunterLevel < levelReq) {
             player.sendFilteredMessage("You need a Hunter level of at least " + levelReq + " to catch this impling" + (barehands ? " barehanded." : "."));
             return;
         }
 
-        if(!player.getPosition().isWithinDistance(npc.getPosition(), 1))
+        if (!player.getPosition().isWithinDistance(npc.getPosition(), 1))
             return;
 
         attemptCatchEvent(player, npc, impling, barehands, impJar);
@@ -137,7 +137,7 @@ public enum Impling {
 
     private static boolean isCatch(Player player, Impling impling) {
         int hunterLevel = player.getStats().get(StatType.Hunter).currentLevel;
-        return Random.rollDie(4, Math.min(3, Math.max(1 , (int) ((hunterLevel - impling.levelReq) / 5))));
+        return Random.rollDie(4, Math.min(3, Math.max(1, (int) ((hunterLevel - impling.levelReq) / 5))));
     }
 
     private static boolean hasButterflyNet(Player player) {
@@ -265,7 +265,6 @@ public enum Impling {
             new Position(2068, 3621, 0),
 
 
-
             new Position(3170, 3454, 0), // varrock spawns
             new Position(3208, 3434, 0),
             new Position(3283, 3453, 0),
@@ -383,7 +382,6 @@ public enum Impling {
             }
         });
     }
-
 
 
 }

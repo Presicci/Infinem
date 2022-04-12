@@ -168,12 +168,12 @@ public enum FishingArea {
             new Position(1831, 3767, 0)
     ),
     BARBARIAN(
-           new Position(2504, 3497, 0),
-           new Position(2500, 3509, 0),
-           new Position(2500, 3506, 0),
-           new Position(2506, 3493, 0),
-           new Position(2500, 3512, 0),
-           new Position(2500, 3510, 0)
+            new Position(2504, 3497, 0),
+            new Position(2500, 3509, 0),
+            new Position(2500, 3506, 0),
+            new Position(2506, 3493, 0),
+            new Position(2500, 3512, 0),
+            new Position(2500, 3510, 0)
     ),
     INFERNAL_EEL(
             new Position(2540, 5088, 0),
@@ -236,10 +236,9 @@ public enum FishingArea {
             new Position(2044, 3590, 0),
             new Position(2044, 3589, 0),
             new Position(2044, 3588, 0)
-    )
-    ;
+    );
 
-    private ArrayDeque<Position> freePositions;
+    private final ArrayDeque<Position> freePositions;
 
     FishingArea(Position... positions) {
         List<Position> list = Arrays.asList(positions);
@@ -255,7 +254,7 @@ public enum FishingArea {
     }
 
     private void add(int npcId, int count) {
-        for(int i = 0; i < count; i++) {
+        for (int i = 0; i < count; i++) {
             NPC npc = new NPC(npcId);
             npc.fishingArea = this;
             npc.spawn(freePositions.pop());

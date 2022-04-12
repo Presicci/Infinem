@@ -30,8 +30,9 @@ public class Slayer {
     /**
      * Method called on each npc kill that the player makes.
      * Checks that the npc is part of the task, if passed, do slayer things.
+     *
      * @param player The player that killed the npc.
-     * @param npc The npc killed.
+     * @param npc    The npc killed.
      */
     public static void handleNPCKilled(Player player, NPC npc) {
         final int task = Config.SLAYER_TASK_1.get(player);
@@ -130,8 +131,9 @@ public class Slayer {
 
     /**
      * Checks if the npc is part of the player's task.
+     *
      * @param player The player that killed the npc.
-     * @param npc The npc being checked.
+     * @param npc    The npc being checked.
      * @return True if task is for npc, false if not.
      */
     public static boolean isTask(Player player, NPC npc) {
@@ -146,6 +148,7 @@ public class Slayer {
 
     /**
      * Checks whether the player is wearing a slayer helmet.
+     *
      * @param player The player being checked.
      * @return True if helmet is worn.
      */
@@ -156,6 +159,7 @@ public class Slayer {
 
     /**
      * Checks whether the player is wearing a face mask.
+     *
      * @param player The player being checked.
      * @return True if face mask is worn.
      */

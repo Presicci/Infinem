@@ -381,7 +381,7 @@ public enum PickPocket {
                         }
                     }
                     player.sendFilteredMessage("Your lightning-fast reactions allow you to steal " + (additionalRolls == 1 ? "double" : additionalRolls == 2 ? "triple" : "quadruple") + " the loot.");
-                } else  {
+                } else {
                     player.sendFilteredMessage("You pick the " + pickpocket.identifier + " pocket.");
                     List<Item> items = pickpocket.lootTable.rollItems(true);
                     for (Item item : items) {
@@ -403,9 +403,7 @@ public enum PickPocket {
                 npc.forceText("What do you think you're doing?");
                 npc.faceTemp(player);
                 npc.animate(pickpocket.stunAnimation);
-                player.hit(new Hit().randDamage(pickpocket.stunDamage).postDamage((hit) -> {
-                    hit.player.stun(pickpocket.stunSeconds, true);
-                }));
+                player.hit(new Hit().randDamage(pickpocket.stunDamage).postDamage((hit) -> hit.player.stun(pickpocket.stunSeconds, true)));
             }
             BotPrevention.attemptBlock(player);
             player.unlock();
@@ -417,7 +415,7 @@ public enum PickPocket {
     }
 
     private static final int GLOVES_OF_SILENCE = 10075;
-    private static final int[] MAX_CAPES = { 13280, 13329, 13331, 13333, 13335, 13337, 13342, 20760 };
+    private static final int[] MAX_CAPES = {13280, 13329, 13331, 13333, 13335, 13337, 13342, 20760};
 
     /*
      * Chance caps at 94 w/o any bonuses
@@ -449,7 +447,7 @@ public enum PickPocket {
                 }
             }
         });
-        final int[] HAM_MEMBERS = { 2540, 2541 };
+        final int[] HAM_MEMBERS = {2540, 2541};
         for (int hamMember : HAM_MEMBERS) {
             NPCAction.register(hamMember, "pickpocket", (player, npc) -> pickpocket(player, npc, HAM));
         }

@@ -34,7 +34,7 @@ public class SeaweedCrop implements Crop {
 
     @Override
     public double getDiseaseChance(int compostType) {
-        switch(compostType) {
+        switch (compostType) {
             case 3:
                 return 2.0 / 128.0;
             case 2:

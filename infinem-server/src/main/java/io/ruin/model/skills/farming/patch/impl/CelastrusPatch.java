@@ -35,7 +35,7 @@ public class CelastrusPatch extends Patch {
         player.sendMessage("You examine the tree and find that it is in perfect health.");
         FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
         getPlantedCrop().getCounter().increment(player, 1);
-        player.getStats().addXp(StatType.Farming, ((CelastrusCrop)getPlantedCrop()).getCheckHealthXP(), true);
+        player.getStats().addXp(StatType.Farming, ((CelastrusCrop) getPlantedCrop()).getCheckHealthXP(), true);
         advanceStage();
         update();
     }

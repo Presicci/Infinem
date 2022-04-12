@@ -40,7 +40,7 @@ public class CalquatTreePatch extends RegrowPatch {
         rollPet();
         player.sendMessage("You examine the tree and find that it is in perfect health.");
         getPlantedCrop().getCounter().increment(player, 1);
-        player.getStats().addXp(StatType.Farming, ((CalquatCrop)getPlantedCrop()).getCheckHealthXP(), true);
+        player.getStats().addXp(StatType.Farming, ((CalquatCrop) getPlantedCrop()).getCheckHealthXP(), true);
         player.getTaskManager().doLookupByUUID(405, 1); // Check a grown Calquat Tree
         advanceStage();
         update();

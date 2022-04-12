@@ -23,7 +23,7 @@ public class Hunter {
             player.sendMessage("You can only place up to " + getMaxTraps(player) + " at your current Hunter level.");
             return false;
         }
-        Region region  = player.getPosition().getRegion();
+        Region region = player.getPosition().getRegion();
         if (region.id != 15148 && !Tile.allowObjectPlacement(player.getPosition())) {
             player.sendMessage("You can't place a trap here.");
             return false;
@@ -49,7 +49,7 @@ public class Hunter {
                     .spawn();
             event.delay(2);
             player.resetAnimation();
-            if(!groundItem.isRemoved()) { //item should never be removed but this is just a safe check regardless
+            if (!groundItem.isRemoved()) { //item should never be removed but this is just a safe check regardless
                 groundItem.remove();
                 GameObject obj = GameObject.spawn(type.getActiveObjectId(), player.getAbsX(), player.getAbsY(), player.getHeight(), 10, 0);
                 Trap trap = new Trap(player, type, obj);
@@ -71,7 +71,7 @@ public class Hunter {
             player.animate(type.getPlaceAnimation());
             event.delay(2); // todo check if traps need different delays
             player.resetAnimation();
-            if(!groundItem.isRemoved()) { //item could be removed, so this check is important
+            if (!groundItem.isRemoved()) { //item could be removed, so this check is important
                 groundItem.remove();
                 GameObject obj = GameObject.spawn(type.getActiveObjectId(), player.getAbsX(), player.getAbsY(), player.getHeight(), 10, 0);
                 Trap trap = new Trap(player, type, obj);
@@ -105,7 +105,7 @@ public class Hunter {
             player.lock();
             player.animate(obj.trap.getTrapType().getDismantleAnimation());
             event.delay(2);
-            if(!obj.isRemoved()) {
+            if (!obj.isRemoved()) {
                 player.getInventory().add(obj.trap.getTrapType().getItemId(), 1);
                 obj.trap.getTrapType().onRemove(player, obj);
                 destroyTrap(obj);

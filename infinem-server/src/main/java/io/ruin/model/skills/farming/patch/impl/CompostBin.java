@@ -18,10 +18,11 @@ import java.util.List;
 public class CompostBin extends Patch {
 
     private static final int REGULAR = 0, SUPER = 1, TOMATOES = 2, ULTRA = 3;
-    private static final int[] PRODUCTS = { 6032, 6034, 2518, 21483 };
+    private static final int[] PRODUCTS = {6032, 6034, 2518, 21483};
     private static final int BUCKET = 1925;
     private static final int VOLCANIC_ASH = 21622;
-    @Expose private int currentType = 0;
+    @Expose
+    private int currentType = 0;
 
     @Override
     public int getVarpbitValue() {
@@ -33,7 +34,7 @@ public class CompostBin extends Patch {
                 value |= 1 << 5;
             else if (currentType == TOMATOES)
                 value |= 1 << 7;
-            value |= (data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount()/2 : getProduceCount());
+            value |= (data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount() / 2 : getProduceCount());
             if (data == PatchData.FARMING_GUILD_COMPOST_BIN && getProduceCount() == 30)
                 value = 77;
             return value;
@@ -41,9 +42,9 @@ public class CompostBin extends Patch {
             return 31;
         } else if (stage == 2) {
             if (currentType != TOMATOES)
-                return (1 << 5) | (1 << 4) | ((data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount() / 2: getProduceCount()) - 1);
+                return (1 << 5) | (1 << 4) | ((data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount() / 2 : getProduceCount()) - 1);
             else
-                return 144 | ((data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount() / 2: getProduceCount()) - 1);
+                return 144 | ((data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount() / 2 : getProduceCount()) - 1);
         }
         return 0;
     }
@@ -84,7 +85,7 @@ public class CompostBin extends Patch {
                 player.startEvent(event -> {
                     while (getProduceCount() > 0 && player.getInventory().contains(BUCKET)) {
                         Item bucket = player.getInventory().findItem(BUCKET);
-                        if(bucket == null)
+                        if (bucket == null)
                             break;
                         player.lock();
                         player.animate(832);
@@ -225,7 +226,7 @@ public class CompostBin extends Patch {
             player.startEvent(event -> {
                 while (getProduceCount() > 0) {
                     Item bucket = player.getInventory().findItem(BUCKET);
-                    if(bucket == null)
+                    if (bucket == null)
                         break;
                     player.lock();
                     player.animate(832);
@@ -273,7 +274,7 @@ public class CompostBin extends Patch {
 
     public int getProductId() {
         if ((stage == 0 && getProduceCount() == 0) || currentType < 0 || currentType > 3) {
-                return 1925;
+            return 1925;
         } else {
             return PRODUCTS[currentType];
         }

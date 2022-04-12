@@ -88,39 +88,39 @@ public class Chinchompa extends Creature {
         trap.getObject().setId(9385);
     }
 
-   private static int getDirection(NPC npc, Trap trap) {
-       int diffX = npc.getPosition().getX() - trap.getObject().x;
-       int diffY = npc.getPosition().getY() - trap.getObject().y;
-       if (diffY == 1)
-           return 0;
-       else if (diffY == -1)
-           return 2;
-       else if (diffX == 1)
-           return 1;
-       else
-           return 3;
+    private static int getDirection(NPC npc, Trap trap) {
+        int diffX = npc.getPosition().getX() - trap.getObject().x;
+        int diffY = npc.getPosition().getY() - trap.getObject().y;
+        if (diffY == 1)
+            return 0;
+        else if (diffY == -1)
+            return 2;
+        else if (diffX == 1)
+            return 1;
+        else
+            return 3;
 
-   }
+    }
 
-   @Override
-   public boolean hasRoomForLoot(Player player) {
+    @Override
+    public boolean hasRoomForLoot(Player player) {
         return player.getInventory().hasRoomFor(itemId);
-   }
+    }
 
-   @Override
-   protected void addLoot(Player player) {
-       getLoot().forEach(item -> {
-           player.collectResource(item);
-           if (player.blackChinchompaBoost.isDelayed()) {
-               boolean extra = Random.rollPercent(20);
-               if (extra) item.incrementAmount(1);
-           }
-           player.getInventory().add(item.getId(), item.getAmount());
-       });
-       player.getInventory().add(getTrapType().getItemId(), 1);
-       int petOdds = itemId == 11959 ? 82758 : itemId == 10034 ? 98373 : 131395;    // Pet odds based on type of chin
-       if (Random.rollDie(petOdds - (player.getStats().get(StatType.Hunter).currentLevel * 25)))
-           Pet.BABY_CHINCHOMPA_GREY.unlock(player);
-   }
+    @Override
+    protected void addLoot(Player player) {
+        getLoot().forEach(item -> {
+            player.collectResource(item);
+            if (player.blackChinchompaBoost.isDelayed()) {
+                boolean extra = Random.rollPercent(20);
+                if (extra) item.incrementAmount(1);
+            }
+            player.getInventory().add(item.getId(), item.getAmount());
+        });
+        player.getInventory().add(getTrapType().getItemId(), 1);
+        int petOdds = itemId == 11959 ? 82758 : itemId == 10034 ? 98373 : 131395;    // Pet odds based on type of chin
+        if (Random.rollDie(petOdds - (player.getStats().get(StatType.Hunter).currentLevel * 25)))
+            Pet.BABY_CHINCHOMPA_GREY.unlock(player);
+    }
 
 }

@@ -38,7 +38,7 @@ public class Ballista {
     }
 
     static {
-        /**
+        /*
          * Wrong actions
          */
         ItemItemAction.register(MONKEY_TAIL, SPRING, (player, primary, secondary) ->
@@ -59,7 +59,7 @@ public class Ballista {
         ItemItemAction.register(MONKEY_TAIL, INCOMPLETE_LIGHT, (player, primary, secondary) ->
                 player.sendMessage("You should add a ballista spring before attaching the tail."));
 
-        /**
+        /*
          * Attaching the limbs to a frame
          */
         ItemItemAction.register(LIMBS, LIGHT_FRAME, (player, primary, secondary) ->
@@ -67,7 +67,7 @@ public class Ballista {
         ItemItemAction.register(LIMBS, HEAVY_FRAME, (player, primary, secondary) ->
                 craft(player, 30.0, 72, primary, secondary, INCOMPLETE_HEAVY));
 
-        /**
+        /*
          * Adding the spring to an unfinished frame
          */
         ItemItemAction.register(SPRING, INCOMPLETE_LIGHT, (player, primary, secondary) ->
@@ -75,7 +75,7 @@ public class Ballista {
         ItemItemAction.register(SPRING, INCOMPLETE_HEAVY, (player, primary, secondary) ->
                 craft(player, 30.0, 72, primary, secondary, UNSTRUNG_HEAVY));
 
-        /**
+        /*
          * Finishing the ballista
          */
         ItemItemAction.register(MONKEY_TAIL, UNSTRUNG_LIGHT, (player, primary, secondary) ->

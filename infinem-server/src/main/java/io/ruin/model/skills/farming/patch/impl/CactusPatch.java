@@ -13,7 +13,7 @@ public class CactusPatch extends RegrowPatch {
 
     @Override
     public int getCropVarpbitValue() {
-        int val = 0;
+        int val;
         if (getPlantedCrop() == CactusCrop.CACTUS) {
             if (getStage() == getPlantedCrop().getTotalStages()) {
                 return 31;
@@ -61,7 +61,7 @@ public class CactusPatch extends RegrowPatch {
         player.sendMessage("You examine the cactus and find that it is in perfect health.");
         FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
         getPlantedCrop().getCounter().increment(player, 1);
-        player.getStats().addXp(StatType.Farming, ((CactusCrop)getPlantedCrop()).getCheckHealthXP(), true);
+        player.getStats().addXp(StatType.Farming, ((CactusCrop) getPlantedCrop()).getCheckHealthXP(), true);
         player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHECKCACTUS, ((CactusCrop) getPlantedCrop()).name());
         advanceStage();
         update();

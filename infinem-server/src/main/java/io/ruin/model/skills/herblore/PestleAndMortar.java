@@ -24,8 +24,7 @@ public enum PestleAndMortar {
     CRYSTAL_DUST(23962, 23867, "You grind the shards to dust."),
     KARAMBWAN_PASTE_R(Items.RAW_KARAMBWAN, 3152, "You grind the karambwan to a paste."),
     KARAMBWAN_PASTE_P(Items.POISON_KARAMBWAN, 3153, "You grind the karambwan to a paste."),
-    KARAMBWAN_PASTE_C(Items.COOKED_KARAMBWAN, 3154, "You grind the karambwan to a paste.")
-    ;
+    KARAMBWAN_PASTE_C(Items.COOKED_KARAMBWAN, 3154, "You grind the karambwan to a paste.");
 
     public final int before, after;
 
@@ -38,12 +37,12 @@ public enum PestleAndMortar {
     }
 
     static {
-        for(PestleAndMortar item : values()) {
+        for (PestleAndMortar item : values()) {
             ItemItemAction.register(item.before, Tool.PESTLE_AND_MORTAR, (player, before, pestleAndMortar) -> player.startEvent(event -> {
-                for(Item resource : player.getInventory().getItems()) {
-                    if(resource == null || resource.getId() != item.before)
+                for (Item resource : player.getInventory().getItems()) {
+                    if (resource == null || resource.getId() != item.before)
                         continue;
-                    if(item == LAVA_SCALE) {
+                    if (item == LAVA_SCALE) {
                         int amountOfShards = Random.get(3, 6);
                         resource.remove();
                         player.getInventory().add(item.after, amountOfShards);

@@ -62,7 +62,7 @@ public class Mining {
                     return;
                 }
 
-                if(player.getInventory().isFull()) {
+                if (player.getInventory().isFull()) {
                     player.resetAnimation();
                     player.privateSound(2277);
                     player.sendMessage("Your inventory is too full to hold any more " + rockData.rockName + ".");
@@ -74,7 +74,7 @@ public class Mining {
                 int itemId = 0;
                 int random = 0;
                 /* If the rock is granite or sandstone, grab a random size */
-                if(rockData == Rock.GRANITE || rockData == Rock.SANDSTONE) {
+                if (rockData == Rock.GRANITE || rockData == Rock.SANDSTONE) {
                     if (rockData.multiOre != null) {
                         random = Random.get(rockData.multiOre.length - 1);
                         itemId = rockData.multiOre[random];
@@ -83,7 +83,7 @@ public class Mining {
                 }
 
                 /* If the rock is a gem rock, grab a random size */
-                if(rockData == Rock.GEM_ROCK) {
+                if (rockData == Rock.GEM_ROCK) {
                     if (rockData.multiOre != null)
                         itemId = rockData.multiOre[Random.get(rockData.multiOre.length - 1)];
                     gemRock = true;
@@ -92,7 +92,7 @@ public class Mining {
                 Item gem = null;
                 Boolean multiple = false;
                 final int miningAnimation = rockData == Rock.AMETHYST ? pickaxe.crystalAnimationID : pickaxe.regularAnimationID;
-                if(attempts == 0) {
+                if (attempts == 0) {
                     player.sendFilteredMessage("You swing your pick at the rock.");
                     player.animate(miningAnimation);
                     attempts++;
@@ -136,7 +136,7 @@ public class Mining {
                         player.getInventory().addOrDrop(21341, 1);
 
                     counter.increment(player, 1);
-                    if(rockData == Rock.GEM_ROCK) {
+                    if (rockData == Rock.GEM_ROCK) {
                         player.getStats().addXp(StatType.Mining, rockData.experience * xpBonus(player, false), true);
                     } else if (gem != null) {   // No xp is earned and the ore is not depleted, just go next
                         player.sendFilteredMessage("You find an " + gem.getDef().name + ".");
@@ -170,7 +170,7 @@ public class Mining {
                     }
                 }
 
-                if(attempts++ % 4 == 0)
+                if (attempts++ % 4 == 0)
                     player.animate(miningAnimation);
 
                 event.delay(1);
@@ -191,24 +191,24 @@ public class Mining {
 
     private static double miningGloves(Player player, Rock rockData) {
         Item gloves = player.getEquipment().get(Equipment.SLOT_HANDS);
-        if(gloves == null)
+        if (gloves == null)
             return 0;
 
-        if(gloves.getId() == MINING_GLOVES || gloves.getId() == EXPERT_MINING_GLOVES) {
-            if(rockData == Rock.SILVER)
+        if (gloves.getId() == MINING_GLOVES || gloves.getId() == EXPERT_MINING_GLOVES) {
+            if (rockData == Rock.SILVER)
                 return 0.33;
-            if(rockData == Rock.COAL)
+            if (rockData == Rock.COAL)
                 return 0.5;
-            if(rockData == Rock.GOLD)
+            if (rockData == Rock.GOLD)
                 return 0.33;
         }
 
-        if(gloves.getId() == SUPERIOR_MINING_GLOVES || gloves.getId() == EXPERT_MINING_GLOVES) {
-            if(rockData == Rock.MITHRIL)
+        if (gloves.getId() == SUPERIOR_MINING_GLOVES || gloves.getId() == EXPERT_MINING_GLOVES) {
+            if (rockData == Rock.MITHRIL)
                 return 0.33;
-            if(rockData == Rock.ADAMANT)
+            if (rockData == Rock.ADAMANT)
                 return 0.25;
-            if(rockData == Rock.RUNE)
+            if (rockData == Rock.RUNE)
                 return 0.15;
         }
 
@@ -392,7 +392,7 @@ public class Mining {
                 {Rock.GEM_ROCK, 7463, 11390, PlayerCounter.MINED_GEM_ROCK},
                 {Rock.GEM_ROCK, 7464, 11391, PlayerCounter.MINED_GEM_ROCK}
         };
-        for(Object[] g : gemRock) {
+        for (Object[] g : gemRock) {
             Rock rock = (Rock) g[0];
             int baseId = (Integer) g[1];
             int emptyId = (Integer) g[2];

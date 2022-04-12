@@ -28,7 +28,7 @@ public enum Ashes {
     private void scatter(Player player, Item bone) {
         player.resetActions(true, false, true);
         player.startEvent(event -> {
-            if(player.boneBuryDelay.isDelayed())
+            if (player.boneBuryDelay.isDelayed())
                 return;
             bone.remove();
             player.animate(2295);
@@ -41,7 +41,7 @@ public enum Ashes {
     }
 
     static {
-        for(Ashes ashes : values()) {
+        for (Ashes ashes : values()) {
             ItemAction.registerInventory(ashes.itemId, "scatter", ashes::scatter);
         }
     }

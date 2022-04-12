@@ -63,9 +63,9 @@ public class WoodcuttingGuild {
             GameObject southGateReplacement = GameObject.spawn(23554, replacementX, replacementY - 1, 0, 0, 3);
             northGate.skipClipping(true).remove();
             southGate.skipClipping(true).remove();
-            if(player.getAbsX() == 1657)
+            if (player.getAbsX() == 1657)
                 player.dialogue(new NPCDialogue(7235, "Welcome to the woodcutting guild, adventurer."));
-            if(player.getAbsX() >= replacementX)
+            if (player.getAbsX() >= replacementX)
                 player.stepAbs(replacementX - 1, player.getAbsY(), StepType.FORCE_WALK);
             else
                 player.stepAbs(replacementX, player.getAbsY(), StepType.FORCE_WALK);
@@ -84,12 +84,12 @@ public class WoodcuttingGuild {
          * Guild entrance
          */
         int[] gate = {28851, 28852};
-        for(int id : gate) {
+        for (int id : gate) {
             ObjectAction.register(id, "open", (player, obj) -> {
-                if(!player.getStats().check(StatType.Woodcutting, 60, "access this guild"))
+                if (!player.getStats().check(StatType.Woodcutting, 60, "access this guild"))
                     return;
                 /* West entrance */
-                if(obj.x == 1562) {
+                if (obj.x == 1562) {
                     GameObject northGate = Tile.getObject(28851, 1562, 3488, 0);
                     GameObject southGate = Tile.getObject(28852, 1562, 3487, 0);
                     openGate(player, northGate, southGate, 1563, 3488);
@@ -127,7 +127,7 @@ public class WoodcuttingGuild {
         /**
          * Bird eggs on shrine
          */
-        for(Egg egg : Egg.values()) {
+        for (Egg egg : Egg.values()) {
             ItemObjectAction.register(egg.itemID, 29088, (player, item, obj) -> {
                 item.setId(BirdNest.SEED_ONE.itemID);
                 player.getStats().addXp(StatType.Prayer, 100.0, true);

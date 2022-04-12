@@ -7,7 +7,7 @@ import io.ruin.model.stat.StatType;
 public class Redemption {
 
     public static void check(Player player) {
-        if(DuelRule.NO_PRAYER.isToggled(player)) //pointless, won't be able to turn on if no prayer is on lol
+        if (DuelRule.NO_PRAYER.isToggled(player)) //pointless, won't be able to turn on if no prayer is on lol
             return;
         if (player.getHp() <= player.getMaxHp() * 0.10 && !player.getCombat().isDead() && player.getPrayer().isActive(Prayer.REDEMPTION)) {
             player.getPrayer().drain(99);

@@ -7,14 +7,21 @@ import io.ruin.model.map.object.GameObject;
 public interface TrapType {
 
     int getItemId(); // TODO will probably need support for multiple items for net traps, need to investigate
+
     int getLevelReq();
+
     int getActiveObjectId(); // trap state ready to catch creature
+
     int getFailedObjectId(); // after failing
+
     int getPlaceAnimation();
+
     int getDismantleAnimation();
+
     int[] getSuccessObjects();
 
     void onPlace(Player player, GameObject object);
+
     void onRemove(Player player, GameObject object);
 
     default void collapse(Player player, Trap trap, boolean remove) {

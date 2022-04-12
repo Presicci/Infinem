@@ -126,14 +126,14 @@ public enum ShootingStar {
                 if (starObject.id != currentStar.starId) {
                     currentStar = activeStar;
                 }
-                if(!player.getInventory().hasRoomFor(STARDUST)) {
+                if (!player.getInventory().hasRoomFor(STARDUST)) {
                     player.resetAnimation();
                     player.privateSound(2277);
                     player.sendMessage("Your inventory is too full to hold any more stardust.");
                     return;
                 }
                 final int miningAnimation = pickaxe.regularAnimationID;
-                if(attempts == 0) {
+                if (attempts == 0) {
                     player.sendFilteredMessage("You swing your pick at the rock.");
                     player.animate(miningAnimation);
                     attempts++;
@@ -156,7 +156,7 @@ public enum ShootingStar {
                     player.sendFilteredMessage("You manage to mine some stardust.");
                 }
 
-                if(attempts++ % 4 == 0)
+                if (attempts++ % 4 == 0)
                     player.animate(miningAnimation);
 
                 event.delay(1);
@@ -167,7 +167,7 @@ public enum ShootingStar {
     private static void prospect(Player player, ShootingStar star) {
         player.dialogue(new MessageDialogue("This is a size-" + (star.getLevelRequirement() / 10) + " star. A Mining level of at least "
                 + star.getLevelRequirement() + " is required to mine this layer. It has been mined "
-                +  new DecimalFormat("#.##").format((double)(star.stardust - stardustLeft)/star.stardust * 100) + "% of the way to the next layer"));
+                + new DecimalFormat("#.##").format((double) (star.stardust - stardustLeft) / star.stardust * 100) + "% of the way to the next layer"));
     }
 
     private static double chance(int level, ShootingStar star, Pickaxe pickaxe) {

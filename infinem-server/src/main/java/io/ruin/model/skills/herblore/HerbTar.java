@@ -38,7 +38,7 @@ public enum HerbTar {
     private static final int SWAMP_TAR = 1939;
 
     static {
-        for(HerbTar herbTar : values()) {
+        for (HerbTar herbTar : values()) {
             SkillItem item = new SkillItem(herbTar.herb).addAction((player, amount, event) -> {
                 while (amount-- > 0) {
                     Item herb = player.getInventory().findItem(herbTar.herb);
@@ -62,7 +62,7 @@ public enum HerbTar {
             });
             ItemItemAction.register(SWAMP_TAR, herbTar.herb, (player, primary, secondary) -> {
                 Item pestleAndMortar = player.getInventory().findItem(Tool.PESTLE_AND_MORTAR);
-                if(pestleAndMortar == null) {
+                if (pestleAndMortar == null) {
                     player.sendMessage("You need a pestle and mortar to mix " + herbTar.herbName + " with swamp tar.");
                     return;
                 }
@@ -72,7 +72,7 @@ public enum HerbTar {
                 if (!player.getStats().check(StatType.Herblore, herbTar.levelReq, "make " + herbTar.herbName + " tar."))
                     return;
                 int amount = Math.min(primary.count(), secondary.count());
-                if(amount > 1) {
+                if (amount > 1) {
                     SkillDialogue.make(player, item);
                     return;
                 }

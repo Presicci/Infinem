@@ -20,7 +20,7 @@ public class SmeltBar {
         /*
          * If a player has a mould in inventory and gold ore, Open mould interface rather than bars
          */
-        Integer[] moulds = { 1592, 1595, 1597, 11065 };
+        Integer[] moulds = {1592, 1595, 1597, 11065};
         for (int id : moulds) {
             if (player.getInventory().contains(new Item(id)) && player.getInventory().contains(new Item(2357))) {
                 player.openInterface(InterfaceType.MAIN, Interface.MOULD);
@@ -44,27 +44,27 @@ public class SmeltBar {
 
     public static void smelt(Player player, SmithBar bar, int smeltAmount) {
         player.closeInterface(InterfaceType.CHATBOX);
-        if(!player.getStats().check(StatType.Smithing, bar.smeltLevel, "smelt that bar"))
+        if (!player.getStats().check(StatType.Smithing, bar.smeltLevel, "smelt that bar"))
             return;
         boolean useCoalBag = player.getInventory().hasId(CoalBag.COAL_BAG);
         player.startEvent(event -> {
             int remaining = smeltAmount;
-            while(remaining-- > 0) {
+            while (remaining-- > 0) {
                 int baggedCoalUsed = 0;
-                for(Item item : bar.smeltItems) {
+                for (Item item : bar.smeltItems) {
                     int id = item.getId();
                     int amount = item.getAmount();
-                    if(id == CoalBag.COAL && useCoalBag) {
+                    if (id == CoalBag.COAL && useCoalBag) {
                         int baggedCoalRemaining = player.baggedCoal - baggedCoalUsed;
-                        if(baggedCoalRemaining >= amount) {
+                        if (baggedCoalRemaining >= amount) {
                             baggedCoalUsed += amount;
                             continue;
                         }
                         amount -= baggedCoalRemaining;
                         baggedCoalUsed = player.baggedCoal;
                     }
-                    if(!player.getInventory().contains(id, amount)) {
-                        if(remaining == (smeltAmount - 1))
+                    if (!player.getInventory().contains(id, amount)) {
+                        if (remaining == (smeltAmount - 1))
                             player.sendMessage("You don't have enough ore to make this.");
                         else
                             player.sendMessage("You've ran out of ores to continue smelting.");
@@ -72,13 +72,13 @@ public class SmeltBar {
                     }
                 }
                 player.animate(899);
-                for(Item item : bar.smeltItems) {
+                for (Item item : bar.smeltItems) {
                     int id = item.getId();
                     int amount = item.getAmount();
-                    if(id == CoalBag.COAL && baggedCoalUsed > 0) {
+                    if (id == CoalBag.COAL && baggedCoalUsed > 0) {
                         player.baggedCoal -= baggedCoalUsed;
                         amount -= baggedCoalUsed;
-                        if(amount == 0) {
+                        if (amount == 0) {
                             /* all required coal came from bag */
                             continue;
                         }
@@ -100,7 +100,7 @@ public class SmeltBar {
     static {
         ObjectAction.register("furnace", "smelt", (player, obj) -> open(player));
         ObjectAction.register("lava forge", "smelt", (player, obj) -> open(player));
-        for(SmithBar smithBar : SmithBar.values()) {
+        for (SmithBar smithBar : SmithBar.values()) {
             for (Item item : smithBar.smeltItems) {
                 ItemObjectAction.register(item.getId(), "furnace", (player, item1, obj) -> smelt(player, smithBar, 1));
                 ItemObjectAction.register(item.getId(), "lava forge", (player, item1, obj) -> smelt(player, smithBar, 1));

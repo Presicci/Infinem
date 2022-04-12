@@ -49,7 +49,7 @@ public class BirdSnare implements TrapType {
 
     @Override
     public int[] getSuccessObjects() {
-        return new int[] {9373, 9377, 9379, 9375, 9348};
+        return new int[]{9373, 9377, 9379, 9375, 9348};
     }
 
     @Override

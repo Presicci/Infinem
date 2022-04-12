@@ -35,9 +35,9 @@ public enum Stall {
     BAKERS_STALL(1, 2, 16.0, 124066, "baker's stall",
             PlayerCounter.BAKER_STALL_THIEVES,
             new int[][]{
-                    { 6163, 6984 },
-                    { 11730, 634 },
-                    { 6945, 6944 }
+                    {6163, 6984},
+                    {11730, 634},
+                    {6945, 6944}
             },
             new LootTable().addTable(1,
                     new LootItem(1891, 1, 3),                    //Cake
@@ -100,14 +100,14 @@ public enum Stall {
             new LootTable().addTable(1,
                     new LootItem(1937, 1, 2),                    //Jug of water
                     new LootItem(1993, 1, 1),                    //Jug of wine
-                    new LootItem(1988, 3,8, 4),    //Grapes
+                    new LootItem(1988, 3, 8, 4),    //Grapes
                     new LootItem(3732, 1, 1),                    //Empty jug
                     new LootItem(7919, 1, 1)                     //Bottle of wine
             )),
     FRUIT_STALL(25, 3, 28.5, 124066, "fruit stall",
             PlayerCounter.FRUIT_STALL_THIEVES,
-            new int[][] {
-                    { 28823, 6944 }
+            new int[][]{
+                    {28823, 6944}
             },
             new LootTable().addTable(1,
                     new LootItem(Items.COOKING_APPLE, 1, 40),
@@ -128,7 +128,7 @@ public enum Stall {
                     {7053, 634},
             },
             new LootTable().addTable(1,
-                    new LootItem(5318, 3,9, 8),      //Potato seed
+                    new LootItem(5318, 3, 9, 8),      //Potato seed
                     new LootItem(5096, 2, 8),                     //Marigold seed
                     new LootItem(5319, 3, 6, 8),     //Onion seed
                     new LootItem(5324, 3, 6, 6),     //Cabbage seed
@@ -163,9 +163,9 @@ public enum Stall {
                     {4707, 634},
             },
             new LootTable().addTable(1,
-                    new LootItem(331, 1,1, 4),                      //Raw salmon
-                    new LootItem(359, 1,1, 3),                      //Raw tuna
-                    new LootItem(377, 1, 1,2)                      //Raw lobster
+                    new LootItem(331, 1, 1, 4),                      //Raw salmon
+                    new LootItem(359, 1, 1, 3),                      //Raw tuna
+                    new LootItem(377, 1, 1, 2)                      //Raw lobster
             )),
     CROSSBOW_STALL(49, 5, 52.0, 36490, "crossbow stall",
             PlayerCounter.CROSSBOW_STALL_THIEVES,
@@ -288,10 +288,10 @@ public enum Stall {
             return;
         }*/
 
-        if(player.edgevilleStallCooldown.isDelayed())
+        if (player.edgevilleStallCooldown.isDelayed())
             return;
 
-        if(BotPrevention.isBlocked(player)) {
+        if (BotPrevention.isBlocked(player)) {
             player.sendMessage("You can't steal from a stall while a guard is watching you.");
             return;
         }
@@ -305,7 +305,7 @@ public enum Stall {
             Item loot = stall.lootTable.rollItem();
             player.getInventory().add(loot);
             player.getTaskManager().doSkillItemLookup(loot);
-            if(player.getPosition().inBounds(HOME))
+            if (player.getPosition().inBounds(HOME))
                 player.edgevilleStallCooldown.delay(3);
             if (Random.rollDie(stall.petOdds - (player.getStats().get(StatType.Thieving).currentLevel * 25)))
                 Pet.ROCKY.unlock(player);

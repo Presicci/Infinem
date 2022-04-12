@@ -41,24 +41,24 @@ public enum StringCrossbow {
     private static final int CROSSBOW_STRING = 9438;
 
     static {
-        for(StringCrossbow crossbow : values()) {
+        for (StringCrossbow crossbow : values()) {
             SkillItem item = new SkillItem(crossbow.strung).addAction((player, amount, event) -> {
-                while(amount-- > 0) {
+                while (amount-- > 0) {
                     Item unstrung = player.getInventory().findItem(crossbow.unstrung);
-                    if(unstrung == null)
+                    if (unstrung == null)
                         return;
                     Item crossbowString = player.getInventory().findItem(CROSSBOW_STRING);
-                    if(crossbowString == null)
+                    if (crossbowString == null)
                         return;
                     crossbow.make(player, unstrung, crossbowString);
                     event.delay(2);
                 }
             });
             ItemItemAction.register(crossbow.unstrung, CROSSBOW_STRING, (player, unstrung, crossbowString) -> {
-                if(!player.getStats().check(StatType.Fletching, crossbow.levelReq, crossbow.strung, "do that"))
+                if (!player.getStats().check(StatType.Fletching, crossbow.levelReq, crossbow.strung, "do that"))
                     return;
                 boolean multiple = player.getInventory().hasMultiple(unstrung.getId(), crossbowString.getId());
-                if(multiple) {
+                if (multiple) {
                     SkillDialogue.make(player, item);
                     return;
                 }

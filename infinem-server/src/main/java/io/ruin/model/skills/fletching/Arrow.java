@@ -21,8 +21,7 @@ public enum Arrow {
     RUNE_ARROW(53, 44, 892, 12.5, 75, "rune arrows", "rune"),
     DRAGON_ARROW(53, 11237, 11212, 15.0, 90, "dragon arrows", "dragon"),
     AMETHYST(53, 21350, 21326, 13.5, 82, "amethyst arrow", "amethyst"),
-    CORRUPTED_ARROW(30117, 30119, 30121, 15.5, 90, "corrupted arrow", "corrupted")
-    ;
+    CORRUPTED_ARROW(30117, 30119, 30121, 15.5, 90, "corrupted arrow", "corrupted");
 
     public final int shaft, tip, outcome, levelReq;
     public final Double exp;
@@ -46,7 +45,7 @@ public enum Arrow {
         player.getStats().addXp(StatType.Fletching, exp * amount, true);
         player.getTaskManager().doSkillItemLookup(outcome, amount);
         boolean headless = shaft.getId() == 52 && tipItem.getId() == 314;
-        if(headless) {
+        if (headless) {
             player.sendFilteredMessage("You attach feathers to " + amount + " arrow shafts.");
         } else {
             player.sendFilteredMessage("You attach arrow heads to " + amount + " arrow shafts.");
@@ -55,17 +54,17 @@ public enum Arrow {
     }
 
     static {
-        for(Arrow arrow : values()) {
+        for (Arrow arrow : values()) {
             SkillItem item = new SkillItem(arrow.outcome).addAction((player, amount, event) -> {
-                while(amount-- > 0) {
+                while (amount-- > 0) {
                     Item shaft = player.getInventory().findItem(arrow.shaft);
-                    if(shaft == null)
+                    if (shaft == null)
                         return;
                     Item tipItem = player.getInventory().findItem(arrow.tip);
-                    if(tipItem == null)
+                    if (tipItem == null)
                         return;
                     int maxAmount = Math.min(shaft.getAmount(), tipItem.getAmount());
-                    if(maxAmount > 15) {
+                    if (maxAmount > 15) {
                         arrow.make(player, shaft, tipItem, 15);
                         event.delay(2);
                         continue;
@@ -75,14 +74,14 @@ public enum Arrow {
                 }
             });
             ItemItemAction.register(arrow.shaft, arrow.tip, (player, shaft, tipItem) -> {
-                if(!player.getStats().check(StatType.Fletching, arrow.levelReq, arrow.outcome, "make " + arrow.itemName))
+                if (!player.getStats().check(StatType.Fletching, arrow.levelReq, arrow.outcome, "make " + arrow.itemName))
                     return;
                 if (arrow == BROAD_ARROW && Config.BROADER_FLETCHING.get(player) == 0) {
                     player.sendMessage("You haven't unlocked the ability to fletch broad arrows.");
                     return;
                 }
                 int maxAmount = Math.min(shaft.getAmount(), tipItem.getAmount());
-                if(maxAmount > 15) {
+                if (maxAmount > 15) {
                     SkillDialogue.make(player, item);
                     return;
                 }

@@ -21,7 +21,7 @@ public enum CrystalTreeCrop implements TreeCrop {
     private final double plantXP, checkHealthXP;
     private final int totalStages;
     private final long stagetime;
-    private Item payment;
+    private final Item payment;
     private final int containerIndex;
     private final int petOdds;
     private final PlayerCounter counter;
@@ -53,7 +53,7 @@ public enum CrystalTreeCrop implements TreeCrop {
 
     @Override
     public double getDiseaseChance(int compostType) {
-        switch(compostType) {
+        switch (compostType) {
             case 3:
                 return 1.0 / 128.0;
             case 2:

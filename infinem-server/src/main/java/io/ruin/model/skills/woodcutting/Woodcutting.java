@@ -34,7 +34,8 @@ public class Woodcutting {
 
     /**
      * This method was modified so farmed trees could share the same chopping code as normal trees in the world. Only differences should be in the parameters specified below
-     *  @param treeDeadCheck Checks if the tree was removed during the time in between the actions of the given player. Only relevant if the tree can lose logs through means other than the given player chopping it
+     *
+     * @param treeDeadCheck  Checks if the tree was removed during the time in between the actions of the given player. Only relevant if the tree can lose logs through means other than the given player chopping it
      * @param treeDeadAction What to do when the given player chops the tree's last logs. Should include changing the object into a stump and handle the respawning.
      */
     public static void chop(Tree treeData, Player player, Supplier<Boolean> treeDeadCheck, EventConsumer treeDeadAction) {

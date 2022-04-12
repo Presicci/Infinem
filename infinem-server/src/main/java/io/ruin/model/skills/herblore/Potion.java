@@ -61,14 +61,14 @@ public enum Potion {
     SUPER_ANTIFIRE(92, 130.0, "super antifire potion", "antifire potion(3)", "crushed superior dragon bones"),
     SUPER_ANTI_VENOM(94, 125.0, "anti-venom+", "anti-venom(3)", "torstol"),
     EXTENDED_SUPER_ANTIFIRE(98, 160.0, "extended super antifire", "super antifire potion(3)", "lava scale shard"),
-    DIVINE_SUPER_ATTACK(70,1.5,"divine super attack potion", "super attack(3)","crystal shard"),
-    DIVINE_SUPER_STRENGTH(70,1.5,"divine super strength potion","super strength(3)","crystal shard"),
-    DIVINE_SUPER_DEFENCE(70,1.5,"divine super defence potion","super defence(3)","crystal shard"),
-    DIVINE_RANGING(74,1.5,"divine ranging potion","ranging potion(3)","crystal shard"),
-    DIVINE_MAGIC(78,1.5,"divine magic potion","magic potion(3)","crystal shard"),
-    DIVINE_SUPER_COMBAT(97,1.5,"divine super combat potion","super combat potion(3)","crystal shard"),
-    DIVINE_BATTLEMAGE(86,1.5,"divine battlemage potion","battlemage potion(3)","crystal shard"),
-    DIVINE_BASTION(86,1.5,"divine bastion potion","bastion potion(3)","crystal shard"),
+    DIVINE_SUPER_ATTACK(70, 1.5, "divine super attack potion", "super attack(3)", "crystal shard"),
+    DIVINE_SUPER_STRENGTH(70, 1.5, "divine super strength potion", "super strength(3)", "crystal shard"),
+    DIVINE_SUPER_DEFENCE(70, 1.5, "divine super defence potion", "super defence(3)", "crystal shard"),
+    DIVINE_RANGING(74, 1.5, "divine ranging potion", "ranging potion(3)", "crystal shard"),
+    DIVINE_MAGIC(78, 1.5, "divine magic potion", "magic potion(3)", "crystal shard"),
+    DIVINE_SUPER_COMBAT(97, 1.5, "divine super combat potion", "super combat potion(3)", "crystal shard"),
+    DIVINE_BATTLEMAGE(86, 1.5, "divine battlemage potion", "battlemage potion(3)", "crystal shard"),
+    DIVINE_BASTION(86, 1.5, "divine bastion potion", "bastion potion(3)", "crystal shard"),
 
     /**
      * NMZ
@@ -139,7 +139,7 @@ public enum Potion {
 
     private void mix(Player player, Item primaryItem, List<Item> secondaryItems) {
         primaryItem.remove();
-        for(Item secondaryItem : secondaryItems)
+        for (Item secondaryItem : secondaryItems)
             secondaryItem.remove();
         player.getInventory().add(vialIds[2], 1);
         player.getStats().addXp(StatType.Herblore, xp, true);
@@ -151,13 +151,13 @@ public enum Potion {
         int fromDoses = fromPot.getDef().potionDoses;
         int toDoses = toPot.getDef().potionDoses;
         int doses = Math.min(fromDoses, 4 - toDoses);
-        if(doses == 0) {
+        if (doses == 0) {
             player.sendMessage("That potion is already full.");
             return;
         }
         fromDoses -= doses;
         toDoses += doses;
-        if(fromDoses <= 0)
+        if (fromDoses <= 0)
             fromPot.setId(this == Potion.GUTHIX_REST ? 1980 : raidsPotion ? 20800 : 229);
         else
             fromPot.setId(vialIds[fromDoses - 1]);
@@ -167,7 +167,7 @@ public enum Potion {
 
     private void divide(Player player, Item potionItem, Item vialItem) {
         int doses = potionItem.getDef().potionDoses;
-        if(doses == 1) {
+        if (doses == 1) {
             player.sendMessage("There's not enough liquid to divide.");
             return;
         }
@@ -185,22 +185,22 @@ public enum Potion {
     public static void decant(Player player, int dosage) {
         HashMap<Potion, Decant> potions = new HashMap<>();
         HashMap<Potion, Decant> notedPotions = new HashMap<>();
-        for(Item item : player.getInventory().getItems()) {
-            if(item == null)
+        for (Item item : player.getInventory().getItems()) {
+            if (item == null)
                 continue;
             boolean noted = false;
             ItemDef def = item.getDef();
-            if(def.isNote()) {
+            if (def.isNote()) {
                 noted = true;
                 def = def.fromNote();
             }
-            if(def.potion == null || def.potionDoses == dosage) {
+            if (def.potion == null || def.potionDoses == dosage) {
                 /* ignore this item */
                 continue;
             }
             HashMap<Potion, Decant> map = noted ? notedPotions : potions;
             Decant decant = map.get(def.potion);
-            if(decant == null)
+            if (decant == null)
                 map.put(def.potion, decant = new Decant());
             decant.doses += (item.getAmount() * def.potionDoses);
             item.remove();
@@ -216,13 +216,13 @@ public enum Potion {
 
         void decant(Player player, Potion potion, int dosage, boolean note) {
             int desired = (int) (doses / (double) dosage);
-            if(desired > 0) {
+            if (desired > 0) {
                 int addId = potion.vialIds[dosage - 1];
                 player.getInventory().addOrDrop(note ? ItemDef.get(addId).notedId : addId, desired);
                 doses -= (desired * dosage);
             }
             int remainingDoses = (int) doses;
-            if(remainingDoses > 0) {
+            if (remainingDoses > 0) {
                 int addId = potion.vialIds[remainingDoses - 1];
                 player.getInventory().addOrDrop(note ? ItemDef.get(addId).notedId : addId, 1);
             }
@@ -236,27 +236,27 @@ public enum Potion {
 
     private static void register(Potion potion, int primaryId, int[] secondaryIds) {
         SkillItem item = new SkillItem(potion.vialIds[2]).addAction((player, amount, event) -> {
-            while(amount-- > 0) {
+            while (amount-- > 0) {
                 Item primaryItem = player.getInventory().findItem(primaryId);
-                if(primaryItem == null)
+                if (primaryItem == null)
                     return;
                 List<Item> secondaryItems = player.getInventory().collectOneOfEach(secondaryIds);
-                if(secondaryItems == null)
+                if (secondaryItems == null)
                     return;
                 potion.mix(player, primaryItem, secondaryItems);
                 event.delay(2);
             }
         });
-        for(int secondaryId : secondaryIds) {
+        for (int secondaryId : secondaryIds) {
             ItemItemAction.register(primaryId, secondaryId, (player, primary, secondary) -> {
-                if(!player.getStats().check(StatType.Herblore, potion.lvlReq, "make this potion"))
+                if (!player.getStats().check(StatType.Herblore, potion.lvlReq, "make this potion"))
                     return;
-                if(player.getInventory().hasMultiple(secondaryIds)) {
+                if (player.getInventory().hasMultiple(secondaryIds)) {
                     SkillDialogue.make(player, item);
                     return;
                 }
                 List<Item> secondaries = player.getInventory().collectOneOfEach(secondaryIds);
-                if(secondaries == null) {
+                if (secondaries == null) {
                     player.sendMessage("You need more ingredients to make this potion.");
                     return;
                 }
@@ -270,15 +270,15 @@ public enum Potion {
         String secondaryName = ItemDef.get(secondaryId).name.toLowerCase().replace("'s", "");
         String secondaryPluralName = secondaryName + (secondaryName.endsWith("s") ? "" : "s");
         double xpPerDose = secondaryAmtPerDose == 0 ? (potion.xp / 2) / 4 : potion.xp / 4;
-        for(int i = 0; i < primaryPotion.vialIds.length; i++) {
+        for (int i = 0; i < primaryPotion.vialIds.length; i++) {
             int vialId = primaryPotion.vialIds[i];
             ItemItemAction.register(vialId, secondaryId, (player, primary, secondary) -> {
-                if(!player.getStats().check(StatType.Herblore, potion.lvlReq, "make this potion"))
+                if (!player.getStats().check(StatType.Herblore, potion.lvlReq, "make this potion"))
                     return;
                 int doses = primary.getDef().potionDoses;
                 int reqAmt = secondaryAmtPerDose == 0 ? 1 : doses * secondaryAmtPerDose;
-                if(secondary.getAmount() < reqAmt) {
-                    if(doses == 1)
+                if (secondary.getAmount() < reqAmt) {
+                    if (doses == 1)
                         player.sendMessage("You need at least " + reqAmt + " " + secondaryPluralName + " to upgrade 1 dose of that potion.");
                     else
                         player.sendMessage("You need at least " + reqAmt + " " + secondaryPluralName + " to upgrade " + doses + " doses of that potion.");
@@ -288,7 +288,7 @@ public enum Potion {
                 primary.setId(potion.vialIds[doses - 1]);
                 player.animate(363);
                 player.getStats().addXp(StatType.Herblore, secondaryAmtPerDose == 0 ? potion.xp + (xpPerDose * doses) : xpPerDose * doses, true);
-                if(reqAmt == 1)
+                if (reqAmt == 1)
                     player.sendFilteredMessage("You mix 1 " + secondaryName + " into your potion.");
                 else
                     player.sendFilteredMessage("You mix " + reqAmt + " " + secondaryPluralName + " into your potion.");
@@ -297,16 +297,16 @@ public enum Potion {
     }
 
     static {
-        for(Potion potion : values()) {
-            /**
+        for (Potion potion : values()) {
+            /*
              * Get data from names
              */
             int primaryId = -1;
             int[] secondaryIds = new int[potion.secondaryNames.length];
-            for(ItemDef def : ItemDef.cached.values()) {
-                if(def == null)
+            for (ItemDef def : ItemDef.cached.values()) {
+                if (def == null)
                     continue;
-                if(def.name.toLowerCase().startsWith(potion.potionName + "(") || def.name.toLowerCase().startsWith(potion.potionName + " (")) {
+                if (def.name.toLowerCase().startsWith(potion.potionName + "(") || def.name.toLowerCase().startsWith(potion.potionName + " (")) {
                     // Differentiates the nmz and raids overload potions
                     if (potion == Potion.OVERLOAD_NMZ && def.id > 20000) {
                         continue;
@@ -314,8 +314,8 @@ public enum Potion {
                         continue;
                     }
                     int doses = Character.getNumericValue(def.name.charAt(def.name.lastIndexOf("(") + 1));
-                    if(doses >= 1 && doses <= 4) {
-                        if(potion.vialIds[doses - 1] == 0) {
+                    if (doses >= 1 && doses <= 4) {
+                        if (potion.vialIds[doses - 1] == 0) {
                             def.potion = potion;
                             def.potionDoses = doses;
                             potion.vialIds[doses - 1] = def.id;
@@ -329,37 +329,37 @@ public enum Potion {
                     def.potionDoses = 1;
                     potion.vialIds[2] = def.id;
                 }
-                if(def.name.toLowerCase().equals(potion.primaryName)) {
-                    if(primaryId == -1)
+                if (def.name.toLowerCase().equals(potion.primaryName)) {
+                    if (primaryId == -1)
                         primaryId = def.id;
                     continue;
                 }
-                if(secondaryIds.length > 0)
-                    for(int i = 0; i < secondaryIds.length; i++) {
-                        if(secondaryIds[i] == 0 && def.name.toLowerCase().equals(potion.secondaryNames[i]))
+                if (secondaryIds.length > 0)
+                    for (int i = 0; i < secondaryIds.length; i++) {
+                        if (secondaryIds[i] == 0 && def.name.toLowerCase().equals(potion.secondaryNames[i]))
                             secondaryIds[i] = def.id;
-                }
+                    }
             }
-            /**
+            /*
              * Register mixes
              */
-            if(potion == STAMINA)
+            if (potion == STAMINA)
                 registerUpgrade(potion, primaryId, secondaryIds[0], 1);
-            else if(potion == EXTENDED_ANTIFIRE)
+            else if (potion == EXTENDED_ANTIFIRE)
                 registerUpgrade(potion, primaryId, secondaryIds[0], 1);
             else if (potion == EXTENDED_SUPER_ANTIFIRE)
                 registerUpgrade(potion, primaryId, secondaryIds[0], 1);
-            else if(potion == ANTI_VENOM)
+            else if (potion == ANTI_VENOM)
                 registerUpgrade(potion, primaryId, secondaryIds[0], 5);
             else if (potion == SANFEW_SERUM || potion == SANFEW_SERUM_1 || potion == SANFEW_SERUM_2)
                 registerUpgrade(potion, primaryId, secondaryIds[0], 0);
-            else if(!potion.raidsPotion)
+            else if (!potion.raidsPotion)
                 register(potion, primaryId, secondaryIds);
-            /**
+            /*
              * Register decant actions
              */
             if (Arrays.stream(potion.vialIds).noneMatch(id -> id == 0)) { // don't register for weapon poison and the like
-                for(int id1 : potion.vialIds) {
+                for (int id1 : potion.vialIds) {
                     for (int id2 : potion.vialIds)
                         ItemItemAction.register(id1, id2, potion::decant);
                     ItemItemAction.register(id1, potion == GUTHIX_REST ? 1980 : potion.raidsPotion ? 20800 : 229, potion::divide);

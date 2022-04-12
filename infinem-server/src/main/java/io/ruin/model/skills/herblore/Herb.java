@@ -54,10 +54,10 @@ public enum Herb {
     }
 
     static {
-        for(Herb herb : values()) {
+        for (Herb herb : values()) {
             String herbName = ItemDef.get(herb.cleanId).name.toLowerCase();
             ItemAction.registerInventory(herb.grimyId, "clean", (player, item) -> {
-                if(!player.getStats().check(StatType.Herblore, herb.lvlReq, item.getId(), "clean this"))
+                if (!player.getStats().check(StatType.Herblore, herb.lvlReq, item.getId(), "clean this"))
                     return;
                 item.setId(herb.cleanId);
                 player.getStats().addXp(StatType.Herblore, herb.xp, true);
@@ -65,9 +65,9 @@ public enum Herb {
                 player.getTaskManager().doSkillItemLookup(herb.cleanId);
             });
             SkillItem skillItem = new SkillItem(herb.unfId).addAction((player, amount, event) -> {
-                while(amount-- > 0) {
+                while (amount-- > 0) {
                     Item herbItem = player.getInventory().findItem(herb.cleanId);
-                    if(herbItem == null) {
+                    if (herbItem == null) {
                         if (HerbloreSkillCape.wearingHerbloreCape(player)) {
                             herbItem = player.getInventory().findItem(herb.grimyId);
                             if (herbItem == null) {
@@ -78,16 +78,16 @@ public enum Herb {
                         }
                     }
                     Item vialItem = player.getInventory().findItem(VIAL_OF_WATER);
-                    if(vialItem == null)
+                    if (vialItem == null)
                         return;
                     herb.mix(player, herbItem, vialItem);
                     event.delay(2);
                 }
             });
             ItemItemAction.register(herb.cleanId, VIAL_OF_WATER, (player, herbItem, vialItem) -> {
-                if(!player.getStats().check(StatType.Herblore, herb.lvlReq, VIAL_OF_WATER, herb.cleanId, "mix this"))
+                if (!player.getStats().check(StatType.Herblore, herb.lvlReq, VIAL_OF_WATER, herb.cleanId, "mix this"))
                     return;
-                if(player.getInventory().hasMultiple(herb.cleanId, VIAL_OF_WATER)) {
+                if (player.getInventory().hasMultiple(herb.cleanId, VIAL_OF_WATER)) {
                     SkillDialogue.make(player, skillItem);
                     return;
                 }
@@ -98,9 +98,9 @@ public enum Herb {
                     player.sendMessage("Nothing interesting happens.");
                     return;
                 }
-                if(!player.getStats().check(StatType.Herblore, herb.lvlReq, VIAL_OF_WATER, herb.grimyId, "mix this"))
+                if (!player.getStats().check(StatType.Herblore, herb.lvlReq, VIAL_OF_WATER, herb.grimyId, "mix this"))
                     return;
-                if(player.getInventory().hasMultiple(herb.grimyId, VIAL_OF_WATER)) {
+                if (player.getInventory().hasMultiple(herb.grimyId, VIAL_OF_WATER)) {
                     SkillDialogue.make(player, skillItem);
                     return;
                 }
@@ -110,7 +110,7 @@ public enum Herb {
     }
 
     public static Herb get(int id) {
-        for (Herb herb: values()) {
+        for (Herb herb : values()) {
             if (herb.cleanId == id || herb.grimyId == id)
                 return herb;
         }

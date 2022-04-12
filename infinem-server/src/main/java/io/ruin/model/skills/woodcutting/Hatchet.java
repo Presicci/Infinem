@@ -31,23 +31,23 @@ public enum Hatchet {
     }
 
     private static Hatchet compare(Player player, Item item, Hatchet best) {
-        if(item == null)
+        if (item == null)
             return best;
         Hatchet hatchet = item.getDef().hatchet;
-        if(hatchet == null)
+        if (hatchet == null)
             return best;
-        if(player.getStats().get(StatType.Woodcutting).fixedLevel < hatchet.levelReq)
+        if (player.getStats().get(StatType.Woodcutting).fixedLevel < hatchet.levelReq)
             return best;
-        if(best == null)
+        if (best == null)
             return hatchet;
-        if(hatchet.levelReq < best.levelReq)
+        if (hatchet.levelReq < best.levelReq)
             return best;
         return hatchet;
     }
 
     public static Hatchet find(Player player) {
         Hatchet bestHatchet = null;
-        for(Item item : player.getInventory().getItems())
+        for (Item item : player.getInventory().getItems())
             bestHatchet = Hatchet.compare(player, item, bestHatchet);
         Item weapon = player.getEquipment().get(Equipment.SLOT_WEAPON);
         return Hatchet.compare(player, weapon, bestHatchet);
@@ -56,8 +56,8 @@ public enum Hatchet {
     static {
         ItemDef.forEach(def -> {
             String name = def.name.toLowerCase();
-            for(Hatchet hatchet : Hatchet.values()) {
-                if(name.startsWith(hatchet.name().toLowerCase() + " axe"))
+            for (Hatchet hatchet : Hatchet.values()) {
+                if (name.startsWith(hatchet.name().toLowerCase() + " axe"))
                     def.hatchet = hatchet;
             }
         });

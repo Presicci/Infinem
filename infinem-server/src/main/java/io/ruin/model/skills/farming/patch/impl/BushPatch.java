@@ -34,6 +34,7 @@ public class BushPatch extends RegrowPatch {
     public int getMaxProduce() {
         return 4;
     }
+
     private void checkHealth() {
         rollPet();
         player.sendMessage("You examine the bush and find that it is in perfect health.");

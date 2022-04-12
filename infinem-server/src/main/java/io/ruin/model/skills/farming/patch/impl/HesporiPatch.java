@@ -27,6 +27,7 @@ import java.util.List;
 public class HesporiPatch extends Patch {
 
     public NPC hespori;
+
     /*
      * stage 1 = 4
      * stage 2 = 5
@@ -66,7 +67,7 @@ public class HesporiPatch extends Patch {
             inspect();
         else if (option == 3)
             clear();
-        else if(option == 4)
+        else if (option == 4)
             TabStats.openGuide(player, StatType.Farming, data.getGuideChildId());
     }
 
@@ -133,8 +134,8 @@ public class HesporiPatch extends Patch {
 
     static {
         // Cave entrance / exit
-        ObjectAction.register(34499,1231, 3728,0, "enter", (player, obj) -> Traveling.fadeTravel(player, new Position(1243, 10081)));
-        ObjectAction.register(34435, "exit", (player, obj) ->  {
+        ObjectAction.register(34499, 1231, 3728, 0, "enter", (player, obj) -> Traveling.fadeTravel(player, new Position(1243, 10081)));
+        ObjectAction.register(34435, "exit", (player, obj) -> {
             HesporiPatch patch = (HesporiPatch) player.getFarming().getPatch(PatchData.HESPORI);
             player.getMovement().teleport(new Position(1230, 3729, 0));
             if (patch != null && patch.hespori != null) {

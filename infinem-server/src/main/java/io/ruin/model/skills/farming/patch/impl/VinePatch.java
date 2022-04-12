@@ -2,13 +2,9 @@ package io.ruin.model.skills.farming.patch.impl;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
 import io.ruin.model.item.Item;
-import io.ruin.model.skills.farming.BottomlessCompostBucket;
 import io.ruin.model.skills.farming.crop.Crop;
-import io.ruin.model.skills.farming.crop.impl.BushCrop;
 import io.ruin.model.skills.farming.crop.impl.VineCrop;
-import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.stat.StatType;
 
@@ -18,7 +14,8 @@ import io.ruin.model.stat.StatType;
  */
 public class VinePatch extends Patch {
 
-    @Expose public boolean saltpetre;
+    @Expose
+    public boolean saltpetre;
 
     /*
      * 1 - saltpeter

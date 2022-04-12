@@ -37,7 +37,7 @@ public abstract class Creature {
         this.counter = counter;
     }
 
-    private String creatureName;
+    private final String creatureName;
     private final int npcId;
     private final int levelReq;
     private final int respawnTicks;
@@ -64,9 +64,9 @@ public abstract class Creature {
     public void register() {
         SpawnListener.register(npcId, npc -> {
             npc.addEvent(event -> {
-               while (true) {
-                   creatureLoop(npc, event);
-               }
+                while (true) {
+                    creatureLoop(npc, event);
+                }
             });
         });
         NPCDef.get(npcId).ignoreOccupiedTiles = true;

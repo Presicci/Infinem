@@ -1,12 +1,8 @@
 package io.ruin.model.skills.farming.patch.impl;
 
-import io.ruin.api.utils.Random;
-import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.AnimaCrop;
-import io.ruin.model.skills.farming.crop.impl.BushCrop;
 import io.ruin.model.skills.farming.patch.Patch;
-import io.ruin.model.stat.StatType;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -16,8 +12,7 @@ public class AnimaPatch extends Patch {
 
     @Override
     public int getCropVarpbitValue() {
-        int value = getPlantedCrop().getContainerIndex() + getStage();
-        return value;
+        return getPlantedCrop().getContainerIndex() + getStage();
     }
 
     @Override

@@ -40,12 +40,12 @@ public enum SlayerBoss {
     public final int[] ids;
     public final Function<Player, Boolean> canAssign;
 
-    SlayerBoss(int... ids){
+    SlayerBoss(int... ids) {
         this.ids = ids;
         this.canAssign = null;
     }
 
-    SlayerBoss(Function<Player, Boolean> canAssign, int... ids){
+    SlayerBoss(Function<Player, Boolean> canAssign, int... ids) {
         this.ids = ids;
         this.canAssign = canAssign;
     }

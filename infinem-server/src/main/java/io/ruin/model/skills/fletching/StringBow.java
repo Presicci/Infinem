@@ -51,24 +51,24 @@ public enum StringBow {
     private static final int BOW_STRING = 1777;
 
     static {
-        for(StringBow bow : values()) {
+        for (StringBow bow : values()) {
             SkillItem item = new SkillItem(bow.strung).addAction((player, amount, event) -> {
-                while(amount-- > 0) {
+                while (amount-- > 0) {
                     Item unstrung = player.getInventory().findItem(bow.unstrung);
-                    if(unstrung == null)
+                    if (unstrung == null)
                         return;
                     Item bowString = player.getInventory().findItem(BOW_STRING);
-                    if(bowString == null)
+                    if (bowString == null)
                         return;
                     bow.make(player, unstrung, bowString);
                     event.delay(2);
                 }
             });
             ItemItemAction.register(bow.unstrung, BOW_STRING, (player, unstrung, bowString) -> {
-                if(!player.getStats().check(StatType.Fletching, bow.levelReq, bow.strung, "do that"))
+                if (!player.getStats().check(StatType.Fletching, bow.levelReq, bow.strung, "do that"))
                     return;
                 boolean multiple = player.getInventory().hasMultiple(unstrung.getId(), bowString.getId());
-                if(multiple) {
+                if (multiple) {
                     SkillDialogue.make(player, item);
                     return;
                 }

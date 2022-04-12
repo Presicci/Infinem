@@ -58,10 +58,10 @@ public class Birdhouse {
             ItemDef.get(ItemID.GRIMY_AVANTOE).notedId, ItemDef.get(ItemID.GRIMY_KWUARM).notedId, ItemDef.get(ItemID.GRIMY_SNAPDRAGON).notedId, ItemDef.get(ItemID.GRIMY_CADANTINE).notedId, ItemDef.get(ItemID.GRIMY_LANTADYME).notedId, ItemDef.get(ItemID.GRIMY_DWARF_WEED).notedId, ItemDef.get(ItemID.GRIMY_TORSTOL).notedId,
             ItemDef.get(ItemID.BIRD_NEST_5075).notedId, ItemID.ACORN, ItemID.APPLE_TREE_SEED, ItemID.BANANA_TREE_SEED, ItemID.ORANGE_TREE_SEED, ItemID.WILLOW_SEED, ItemID.TEAK_SEED, ItemID.CURRY_TREE_SEED, ItemID.MAPLE_SEED, ItemID.PINEAPPLE_SEED, ItemID.MAHOGANY_SEED, ItemID.PAPAYA_TREE_SEED, ItemID.PALM_TREE_SEED, ItemID.CALQUAT_TREE_SEED,
             ItemID.YEW_SEED, ItemID.MAGIC_SEED, ItemID.SPIRIT_SEED);*/
-    static int[] SEEDS = { ItemID.BARLEY_SEED, ItemID.HAMMERSTONE_SEED, ItemID.ASGARNIAN_SEED, ItemID.JUTE_SEED, ItemID.YANILLIAN_SEED, ItemID.KRANDORIAN_SEED, ItemID.GUAM_SEED,
+    static int[] SEEDS = {ItemID.BARLEY_SEED, ItemID.HAMMERSTONE_SEED, ItemID.ASGARNIAN_SEED, ItemID.JUTE_SEED, ItemID.YANILLIAN_SEED, ItemID.KRANDORIAN_SEED, ItemID.GUAM_SEED,
             ItemID.MARRENTILL_SEED, ItemID.TARROMIN_SEED, ItemID.HARRALANDER_SEED, ItemID.WILDBLOOD_SEED, ItemID.RANARR_SEED, ItemID.TOADFLAX_SEED, ItemID.IRIT_SEED,
-            ItemID.AVANTOE_SEED, ItemID.KWUARM_SEED, ItemID.SNAPDRAGON_SEED, ItemID.CADANTINE_SEED, ItemID.LANTADYME_SEED, ItemID.DWARF_WEED_SEED, ItemID.TORSTOL_SEED };
-    static int[] TOOLS = { ItemID.CLOCKWORK, ItemID.HAMMER, ItemID.CHISEL };
+            ItemID.AVANTOE_SEED, ItemID.KWUARM_SEED, ItemID.SNAPDRAGON_SEED, ItemID.CADANTINE_SEED, ItemID.LANTADYME_SEED, ItemID.DWARF_WEED_SEED, ItemID.TORSTOL_SEED};
+    static int[] TOOLS = {ItemID.CLOCKWORK, ItemID.HAMMER, ItemID.CHISEL};
 
     private void handleObject(int obj, int option) {
         config = getVarbitId(obj);
@@ -340,7 +340,7 @@ public class Birdhouse {
                 ItemObjectAction.register(seed, i, (player, item, obj) -> {
                     player.getBirdhouse().config = player.getBirdhouse().getVarbitId(obj.id);
                     if (player.getBirdhouse().config == null) return;
-                   player.getBirdhouse().addSeeds();
+                    player.getBirdhouse().addSeeds();
                 });
             }
         }

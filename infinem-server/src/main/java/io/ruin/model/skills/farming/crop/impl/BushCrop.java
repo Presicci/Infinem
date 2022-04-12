@@ -9,16 +9,17 @@ import io.ruin.model.skills.farming.crop.Crop;
 import static io.ruin.cache.ItemID.COINS_995;
 
 public enum BushCrop implements Crop {
-    REDBERRY(5101, 1951, 10, 5, 11.5, 64, 4.5, 5, new Item(Items.CABBAGES_10,  4), 44966, PlayerCounter.GROWN_REDBERRY),
-    CADAVABERRY(5102, 753, 22, 6, 18, 102.5, 7, 15, new Item(Items.TOMATOES_5,  3), 37472, PlayerCounter.GROWN_CADAVABERRY),
-    DWELLBERRY(5103, 2126, 36, 7, 31.5, 177.5, 12, 26, new Item(Items.STRAWBERRIES_5,  3), 32119, PlayerCounter.GROWN_DWELLBERRY),
-    JANGERBERRY(5104, 247, 48, 8, 50.5, 284.5, 19, 38, new Item(Items.WATERMELON,  6), 28104, PlayerCounter.GROWN_JANGERBERRY),
-    WHITEBERRY(5105, 239, 59, 8, 78, 437.5, 4.5, 51, new Item(Items.MUSHROOM,  8), 28104, PlayerCounter.GROWN_WHITEBERRY),
+    REDBERRY(5101, 1951, 10, 5, 11.5, 64, 4.5, 5, new Item(Items.CABBAGES_10, 4), 44966, PlayerCounter.GROWN_REDBERRY),
+    CADAVABERRY(5102, 753, 22, 6, 18, 102.5, 7, 15, new Item(Items.TOMATOES_5, 3), 37472, PlayerCounter.GROWN_CADAVABERRY),
+    DWELLBERRY(5103, 2126, 36, 7, 31.5, 177.5, 12, 26, new Item(Items.STRAWBERRIES_5, 3), 32119, PlayerCounter.GROWN_DWELLBERRY),
+    JANGERBERRY(5104, 247, 48, 8, 50.5, 284.5, 19, 38, new Item(Items.WATERMELON, 6), 28104, PlayerCounter.GROWN_JANGERBERRY),
+    WHITEBERRY(5105, 239, 59, 8, 78, 437.5, 4.5, 51, new Item(Items.MUSHROOM, 8), 28104, PlayerCounter.GROWN_WHITEBERRY),
     POISON_IVY(5106, 6018, 70, 8, 120, 675, 4.5, 197, null, 28104, PlayerCounter.GROWN_POISON_IVY);
 
     private final int seed, levelReq, totalStages, containerIndex, produceId, petOdds;
     private final double plantXP, harvestXP, checkHealthXP;
     private final PlayerCounter counter;
+    private final Item payment;
 
     BushCrop(int seed, int produceId, int levelReq, int totalStages, double plantXP, double checkHealthXP, double harvestXP, int containerIndex, Item payment, int petOdds, PlayerCounter counter) {
         this.seed = seed;
@@ -38,8 +39,6 @@ public enum BushCrop implements Crop {
     public Item getPayment() {
         return payment;
     }
-
-    private Item payment;
 
     @Override
     public int getPetOdds() {
@@ -90,7 +89,6 @@ public enum BushCrop implements Crop {
         return counter;
     }
 
-
     @Override
     public long getStageTime() {
         return TimeUtils.getMinutesToMillis(20);
@@ -98,7 +96,7 @@ public enum BushCrop implements Crop {
 
     @Override
     public double getDiseaseChance(int compostType) {
-        switch(compostType) {
+        switch (compostType) {
             case 3:
                 return 2.0 / 128.0;
             case 2:

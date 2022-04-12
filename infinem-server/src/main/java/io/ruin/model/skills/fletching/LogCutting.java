@@ -10,8 +10,6 @@ import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 import io.ruin.process.event.Event;
 
-import java.util.ArrayList;
-
 public enum LogCutting {
     //Normal log
     ARROW_SHAFT(1511, 1, 5.0, new Item(52, 15), "15 arrow shafts", ""),
@@ -83,7 +81,7 @@ public enum LogCutting {
     }
 
     private static void cut(Player player, LogCutting log, int amount) {
-        if(!player.getStats().check(StatType.Fletching, log.levelReq, log.descriptionName))
+        if (!player.getStats().check(StatType.Fletching, log.levelReq, log.descriptionName))
             return;
         if (log.descriptionName.contains("shield") && !player.getInventory().contains(log.logID, 2)) {
             player.sendMessage("You need 2 logs to make a shield.");
@@ -93,11 +91,11 @@ public enum LogCutting {
             int made = 0;
             while (made++ < amount) {
                 Item knife = player.getInventory().findItem(Tool.KNIFE);
-                if(knife == null) {
+                if (knife == null) {
                     break;
                 }
                 Item logToCut = player.getInventory().findItem(log.logID);
-                if(logToCut == null) {
+                if (logToCut == null) {
                     break;
                 }
                 if (log.descriptionName.contains("shield") && !player.getInventory().contains(log.logID, 2)) {
@@ -124,94 +122,80 @@ public enum LogCutting {
     private static final int CELASTRUS_BARK = 22935;
 
     static {
-        /**
+        /*
          * Normal log
          */
-        ItemItemAction.register(Tool.KNIFE, NORMAL_LOG, (player, knife, normalLog) -> {
-            SkillDialogue.make(player,
-                    new SkillItem(ARROW_SHAFT.item.getId()).addAction((p, amount, event) -> cut(p, ARROW_SHAFT, amount)),
-                    new SkillItem(JAVELIN_SHAFT.item.getId()).addAction((p, amount, event) -> cut(p, JAVELIN_SHAFT, amount)),
-                    new SkillItem(SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, SHORTBOW, amount)),
-                    new SkillItem(LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, LONGBOW, amount)),
-                    new SkillItem(WOODEN_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, WOODEN_STOCK, amount)));
-        });
+        ItemItemAction.register(Tool.KNIFE, NORMAL_LOG, (player, knife, normalLog) -> SkillDialogue.make(player,
+                new SkillItem(ARROW_SHAFT.item.getId()).addAction((p, amount, event) -> cut(p, ARROW_SHAFT, amount)),
+                new SkillItem(JAVELIN_SHAFT.item.getId()).addAction((p, amount, event) -> cut(p, JAVELIN_SHAFT, amount)),
+                new SkillItem(SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, SHORTBOW, amount)),
+                new SkillItem(LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, LONGBOW, amount)),
+                new SkillItem(WOODEN_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, WOODEN_STOCK, amount))));
 
-        /**
+        /*
          * Oak log
          */
-        ItemItemAction.register(Tool.KNIFE, OAK_LOG, (player, knife, oakLog) -> {
-            SkillDialogue.make(player,
-                    item(OAK_SHAFT),
-                    new SkillItem(OAK_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, OAK_SHORTBOW, amount)),
-                    new SkillItem(OAK_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, OAK_LONGBOW, amount)),
-                    new SkillItem(OAK_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, OAK_STOCK, amount)),
-                    item(OAK_SHIELD));
-        });
+        ItemItemAction.register(Tool.KNIFE, OAK_LOG, (player, knife, oakLog) -> SkillDialogue.make(player,
+                item(OAK_SHAFT),
+                new SkillItem(OAK_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, OAK_SHORTBOW, amount)),
+                new SkillItem(OAK_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, OAK_LONGBOW, amount)),
+                new SkillItem(OAK_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, OAK_STOCK, amount)),
+                item(OAK_SHIELD)));
 
-        /**
+        /*
          * Willow log
          */
-        ItemItemAction.register(Tool.KNIFE, WILLOW_LOG, (player, knife, willowLog) -> {
-            SkillDialogue.make(player,
-                    item(WILLOW_SHAFT),
-                    new SkillItem(WILLOW_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, WILLOW_SHORTBOW, amount)),
-                    new SkillItem(WILLOW_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, WILLOW_LONGBOW, amount)),
-                    new SkillItem(WILLOW_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, WILLOW_STOCK, amount)),
-                    item(WILLOW_SHIELD));
-        });
+        ItemItemAction.register(Tool.KNIFE, WILLOW_LOG, (player, knife, willowLog) -> SkillDialogue.make(player,
+                item(WILLOW_SHAFT),
+                new SkillItem(WILLOW_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, WILLOW_SHORTBOW, amount)),
+                new SkillItem(WILLOW_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, WILLOW_LONGBOW, amount)),
+                new SkillItem(WILLOW_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, WILLOW_STOCK, amount)),
+                item(WILLOW_SHIELD)));
 
-        /**
+        /*
          * Maple log
          */
-        ItemItemAction.register(Tool.KNIFE, MAPLE_LOG, (player, knife, mapleLog) -> {
-            SkillDialogue.make(player,
-                    item(MAPLE_SHAFT),
-                    new SkillItem(MAPLE_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, MAPLE_SHORTBOW, amount)),
-                    new SkillItem(MAPLE_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, MAPLE_LONGBOW, amount)),
-                    new SkillItem(MAPLE_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, MAPLE_STOCK, amount)),
-                    item(MAPLE_SHIELD));
-        });
+        ItemItemAction.register(Tool.KNIFE, MAPLE_LOG, (player, knife, mapleLog) -> SkillDialogue.make(player,
+                item(MAPLE_SHAFT),
+                new SkillItem(MAPLE_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, MAPLE_SHORTBOW, amount)),
+                new SkillItem(MAPLE_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, MAPLE_LONGBOW, amount)),
+                new SkillItem(MAPLE_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, MAPLE_STOCK, amount)),
+                item(MAPLE_SHIELD)));
 
-        /**
+        /*
          * Yew log
          */
-        ItemItemAction.register(Tool.KNIFE, YEW_LOG, (player, knife, yewLog) -> {
-            SkillDialogue.make(player,
-                    item(YEW_SHAFT),
-                    new SkillItem(YEW_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, YEW_SHORTBOW, amount)),
-                    new SkillItem(YEW_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, YEW_LONGBOW, amount)),
-                    new SkillItem(YEW_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, YEW_STOCK, amount)),
-                    item(YEW_SHIELD));
-        });
+        ItemItemAction.register(Tool.KNIFE, YEW_LOG, (player, knife, yewLog) -> SkillDialogue.make(player,
+                item(YEW_SHAFT),
+                new SkillItem(YEW_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, YEW_SHORTBOW, amount)),
+                new SkillItem(YEW_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, YEW_LONGBOW, amount)),
+                new SkillItem(YEW_STOCK.item.getId()).addAction((p, amount, event) -> cut(p, YEW_STOCK, amount)),
+                item(YEW_SHIELD)));
 
-        /**
+        /*
          * Magic log
          */
-        ItemItemAction.register(Tool.KNIFE, MAGIC_LOG, (player, knife, magicLog) -> {
-            SkillDialogue.make(player,
-                    item(MAGIC_SHAFT),
-                    new SkillItem(MAGIC_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, MAGIC_SHORTBOW, amount)),
-                    new SkillItem(MAGIC_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, MAGIC_LONGBOW, amount)),
-                    item(MAGIC_STOCK),
-                    item(MAGIC_SHIELD));
-        });
+        ItemItemAction.register(Tool.KNIFE, MAGIC_LOG, (player, knife, magicLog) -> SkillDialogue.make(player,
+                item(MAGIC_SHAFT),
+                new SkillItem(MAGIC_SHORTBOW.item.getId()).addAction((p, amount, event) -> cut(p, MAGIC_SHORTBOW, amount)),
+                new SkillItem(MAGIC_LONGBOW.item.getId()).addAction((p, amount, event) -> cut(p, MAGIC_LONGBOW, amount)),
+                item(MAGIC_STOCK),
+                item(MAGIC_SHIELD)));
 
-        /**
+        /*
          * Redwood log
          */
-        ItemItemAction.register(Tool.KNIFE, 19669, (player, knife, magicLog) -> {
-            SkillDialogue.make(player,
-                    item(REDWOOD_SHAFT),
-                    item(REDWOOD_SHIELD));
-        });
+        ItemItemAction.register(Tool.KNIFE, 19669, (player, knife, magicLog) -> SkillDialogue.make(player,
+                item(REDWOOD_SHAFT),
+                item(REDWOOD_SHIELD)));
 
-        /**
+        /*
          * Corrupt log
          */
         ItemItemAction.register(Tool.KNIFE, CORRUPT_LOG, (player, knife, corruptLog) ->
                 SkillDialogue.make(player, item(CORRUPT_ARROW_SHAFT), item(CORRUPT_SHORTBOW), item(CORRUPT_LONGBOW), item(CORRUPT_PICKAXE_HANDLE)));
 
-        /**
+        /*
          * Celastrus bark
          */
         ItemItemAction.register(Tool.KNIFE, CELASTRUS_BARK, (player, knife, bark) ->

@@ -15,8 +15,7 @@ public class CrystalTreePatch extends Patch {
 
     @Override
     public int getCropVarpbitValue() {
-        int vb = getPlantedCrop().getContainerIndex() + stage;
-        return vb;
+        return getPlantedCrop().getContainerIndex() + stage;
     }
 
     @Override

@@ -22,15 +22,14 @@ import static io.ruin.model.skills.hunter.Hunter.isOwner;
 
 public class Salamander extends Creature {
 
-
     static {
-        Hunter.registerCreature(new Salamander("swamp lizard", NetTrap.SWAMP, 2906, 10149, 29, 152, 0.5, 20, PlayerCounter.CAUGHT_SWAMP_LIZARD ));
+        Hunter.registerCreature(new Salamander("swamp lizard", NetTrap.SWAMP, 2906, 10149, 29, 152, 0.5, 20, PlayerCounter.CAUGHT_SWAMP_LIZARD));
         Hunter.registerCreature(new Salamander("orange salamander", NetTrap.DESERT, 2903, 10146, 47, 224, 0.55, 20, PlayerCounter.CAUGHT_ORANGE_SALAMANDER));
         Hunter.registerCreature(new Salamander("red salamander", NetTrap.RED, 2904, 10147, 59, 272, 0.55, 20, PlayerCounter.CAUGHT_RED_SALAMANDER));
         Hunter.registerCreature(new Salamander("black salamander", NetTrap.BLACK, 2905, 10148, 67, 319.2, 0.6, 20, PlayerCounter.CAUGHT_BLACK_SALAMANDER));
         for (int i = 10146; i <= 10149; i++) {
             int finalI = i;
-            ItemAction.registerInventory(i, "release", (player, item) ->  {
+            ItemAction.registerInventory(i, "release", (player, item) -> {
                 item.remove();
                 player.sendMessage("You release the " + (finalI == 10149 ? "lizard" : "salamander") + ".");
             });
@@ -43,8 +42,8 @@ public class Salamander extends Creature {
         this.trapType = trapType;
     }
 
-    private NetTrap trapType;
-    private List<Item> loot;
+    private final NetTrap trapType;
+    private final List<Item> loot;
 
     @Override
     public NetTrap getTrapType() {
@@ -83,7 +82,7 @@ public class Salamander extends Creature {
     }
 
     @Override
-    protected void prepareForCatchAttempt(NPC npc, Trap trap, Event event) throws Pausable {
+    protected void prepareForCatchAttempt(NPC npc, Trap trap, Event event) {
         //nothing required
     }
 

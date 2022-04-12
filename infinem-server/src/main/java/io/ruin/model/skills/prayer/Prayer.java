@@ -69,7 +69,7 @@ public enum Prayer {
         p.drain = 2;
         p.activationCheck = player -> {
             RiskProtection.monitorRiskProtection(player);
-            if(player.getCombat().highRiskSkull) {
+            if (player.getCombat().highRiskSkull) {
                 player.sendMessage(Color.ORANGE_RED.wrap("Warning:") + " The Protect Item prayer is disabled when marked with a high-risk skull.");
                 return false;
             }
@@ -95,8 +95,8 @@ public enum Prayer {
         p.level = 37;
         p.drain = 12;
         p.headIcon = 2;
-        p.activationCheck = player ->  {
-            if(player.getPrayer().slashDelay.isDelayed()) {
+        p.activationCheck = player -> {
+            if (player.getPrayer().slashDelay.isDelayed()) {
                 player.sendMessage("Your protection prayers are currently slashed!");
                 return false;
             }
@@ -186,12 +186,12 @@ public enum Prayer {
         p.rangedStrengthBoost = 0.23;
         p.defenceBoost = 0.25;
         p.activationCheck = player -> {
-            if(!player.getStats().checkFixed(StatType.Defence, 70, "use this prayer"))
+            if (!player.getStats().checkFixed(StatType.Defence, 70, "use this prayer"))
                 return false;
             if (player.tempUseRaidPrayers) {
                 return true;
             }
-            if(Config.RIGOUR_UNLOCK.get(player) == 0 && !player.joinedTournament) {
+            if (Config.RIGOUR_UNLOCK.get(player) == 0 && !player.joinedTournament) {
                 player.dialogue(new MessageDialogue("You have to learn how to use <col=000080>Rigour</col> before activating it."));
                 return false;
             }
@@ -204,12 +204,12 @@ public enum Prayer {
         p.magicBoost = 0.25;
         p.defenceBoost = 0.25;
         p.activationCheck = player -> {
-            if(!player.getStats().checkFixed(StatType.Defence, 70, "use this prayer"))
+            if (!player.getStats().checkFixed(StatType.Defence, 70, "use this prayer"))
                 return false;
             if (player.tempUseRaidPrayers) {
                 return true;
             }
-            if(Config.AUGURY_UNLOCK.get(player) == 0 && !player.joinedTournament) {
+            if (Config.AUGURY_UNLOCK.get(player) == 0 && !player.joinedTournament) {
                 player.dialogue(new MessageDialogue("You have to learn how to use <col=000080>Augury</col> before activating it."));
                 return false;
             }
@@ -223,7 +223,7 @@ public enum Prayer {
             if (player.tempUseRaidPrayers) {
                 return true;
             }
-            if(Config.PRESERVE_UNLOCK.get(player) == 0) {
+            if (Config.PRESERVE_UNLOCK.get(player) == 0) {
                 player.dialogue(new MessageDialogue("You have to learn how to use <col=000080>Preserve</col> before activating it."));
                 return false;
             }
@@ -232,7 +232,7 @@ public enum Prayer {
     });
 
     public final String name;
-    
+
     public final Config config;
 
     public final int soundId;
@@ -256,9 +256,9 @@ public enum Prayer {
         String name = "";
         String[] s = name().split("_");
         name += StringUtils.capitalizeFirst(s[offset++].toLowerCase());
-        if(s.length >= 3)
+        if (s.length >= 3)
             name += " " + s[offset++].toLowerCase();
-        if(s.length >= 2)
+        if (s.length >= 2)
             name += " " + StringUtils.capitalizeFirst(s[offset].toLowerCase());
         this.name = name;
         this.config = Config.varpbit(varpbitId, false);
@@ -269,10 +269,10 @@ public enum Prayer {
     public ArrayList<Prayer> disallowed;
 
     private void disallow(Prayer... prayers) {
-        if(disallowed == null)
+        if (disallowed == null)
             disallowed = new ArrayList<>(1);
-        for(Prayer prayer : prayers) {
-            if(!disallowed.contains(prayer))
+        for (Prayer prayer : prayers) {
+            if (!disallowed.contains(prayer))
                 disallowed.add(prayer);
         }
         disallowed.trimToSize();
@@ -293,37 +293,37 @@ public enum Prayer {
         Prayer[] mixedPrayers = new Prayer[]{CHIVALRY, PIETY, RIGOUR, AUGURY};
         Prayer[] overheadPrayers = new Prayer[]{PROTECT_FROM_MAGIC, PROTECT_FROM_MISSILES, PROTECT_FROM_MELEE, RETRIBUTION, REDEMPTION, SMITE};
 
-        for(Prayer prayer : defencePrayers) {
+        for (Prayer prayer : defencePrayers) {
             prayer.disallow(defencePrayers);
             prayer.disallow(mixedPrayers);
         }
-        for(Prayer prayer : strengthPrayers) {
+        for (Prayer prayer : strengthPrayers) {
             prayer.disallow(strengthPrayers);
             prayer.disallow(rangedPrayers);
             prayer.disallow(magicPrayers);
             prayer.disallow(mixedPrayers);
         }
-        for(Prayer prayer : attackPrayers) {
+        for (Prayer prayer : attackPrayers) {
             prayer.disallow(attackPrayers);
             prayer.disallow(rangedPrayers);
             prayer.disallow(magicPrayers);
             prayer.disallow(mixedPrayers);
         }
-        for(Prayer prayer : rangedPrayers) {
+        for (Prayer prayer : rangedPrayers) {
             prayer.disallow(rangedPrayers);
             prayer.disallow(strengthPrayers);
             prayer.disallow(attackPrayers);
             prayer.disallow(magicPrayers);
             prayer.disallow(mixedPrayers);
         }
-        for(Prayer prayer : magicPrayers) {
+        for (Prayer prayer : magicPrayers) {
             prayer.disallow(magicPrayers);
             prayer.disallow(strengthPrayers);
             prayer.disallow(attackPrayers);
             prayer.disallow(rangedPrayers);
             prayer.disallow(mixedPrayers);
         }
-        for(Prayer prayer : mixedPrayers) {
+        for (Prayer prayer : mixedPrayers) {
             prayer.disallow(mixedPrayers);
             prayer.disallow(defencePrayers);
             prayer.disallow(strengthPrayers);
@@ -331,7 +331,7 @@ public enum Prayer {
             prayer.disallow(rangedPrayers);
             prayer.disallow(magicPrayers);
         }
-        for(Prayer prayer : overheadPrayers) {
+        for (Prayer prayer : overheadPrayers) {
             prayer.disallow(overheadPrayers);
         }
 
@@ -346,7 +346,7 @@ public enum Prayer {
     }
 
     public static Prayer getQuickPrayer(int slot) {
-        if(slot < 0 || slot >= QUICK_PRAYER_ORDER.length)
+        if (slot < 0 || slot >= QUICK_PRAYER_ORDER.length)
             return null;
         return QUICK_PRAYER_ORDER[slot];
     }

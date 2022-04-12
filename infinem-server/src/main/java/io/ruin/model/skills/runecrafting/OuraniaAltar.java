@@ -26,7 +26,7 @@ public class OuraniaAltar {
 
     //Need to take another look at a way to do this better.
     static {
-        ObjectAction.register(29631,"Craft-rune", (player, obj) -> {
+        ObjectAction.register(29631, "Craft-rune", (player, obj) -> {
             player.startEvent(event -> {
 
                 List<Altars> altars = Lists.newArrayList(Altars.values());
@@ -69,7 +69,7 @@ public class OuraniaAltar {
         });
         ObjectAction.register(29636, "Climb", ((player, obj) -> {
             player.startEvent((e) -> {
-                e.path(player,new Position(3015, 5629, 0));
+                e.path(player, new Position(3015, 5629, 0));
                 player.getMovement().teleport(2453, 3231, 0);
             });
         }));

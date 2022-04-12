@@ -47,7 +47,6 @@ public class HopsPatch extends Patch {
             } else {
                 water(item, can);
             }
-            return;
         } else {
             super.handleItem(item);
         }

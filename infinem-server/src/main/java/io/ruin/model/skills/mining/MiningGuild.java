@@ -27,7 +27,7 @@ public class MiningGuild {
 
     private static void openDoor(Player player, GameObject door) {
         int miningLevel = player.getStats().get(StatType.Mining).currentLevel;
-        if(miningLevel < 60) {
+        if (miningLevel < 60) {
             player.dialogue(
                     new NPCDialogue(7712, "Sorry, but you're not experienced enough to go in there.").animate(588),
                     new MessageDialogue("You need a Mining level of 60 to access the Mining Guild."));
@@ -37,13 +37,13 @@ public class MiningGuild {
         player.startEvent(event -> {
             player.lock();
 
-            if(!player.isAt(door.x, player.getAbsY())) {
+            if (!player.isAt(door.x, player.getAbsY())) {
                 player.stepAbs(door.x, player.getAbsY(), StepType.FORCE_WALK);
                 event.delay(1);
             }
             GameObject opened = GameObject.spawn(1539, door.x, door.y + 1, door.z, door.type, 2);
             door.skipClipping(true).remove();
-            if(player.getAbsY() > door.y)
+            if (player.getAbsY() > door.y)
                 player.stepAbs(player.getAbsX(), player.getAbsY() - 1, StepType.FORCE_WALK);
             else
                 player.stepAbs(player.getAbsX(), player.getAbsY() + 1, StepType.FORCE_WALK);

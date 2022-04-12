@@ -52,7 +52,8 @@ public enum Bone {
 
     Bone(int id, double exp, PlayerCounter buryCounter, PlayerCounter altarCounter) {
         this.id = id;
-        this.notedId = ItemDef.get(id).notedId;;
+        this.notedId = ItemDef.get(id).notedId;
+        ;
         this.exp = exp;
         this.buryCounter = buryCounter;
         this.altarCounter = altarCounter;
@@ -76,10 +77,10 @@ public enum Bone {
     private void bury(Player player, Item bone) {
         player.resetActions(true, false, true);
         player.startEvent(event -> {
-            if(player.boneBuryDelay.isDelayed())
+            if (player.boneBuryDelay.isDelayed())
                 return;
             ItemDef neckDef = player.getEquipment().getDef(Equipment.SLOT_AMULET);
-            if(neckDef != null && neckDef.id == DRAGONBONE_NECKLACE) {
+            if (neckDef != null && neckDef.id == DRAGONBONE_NECKLACE) {
                 boneNecklaceEffect(player, bone);
             }
             bone.remove();
@@ -98,21 +99,21 @@ public enum Bone {
     private void boneNecklaceEffect(Player player, Item bone) {
         int boneId = bone.getId();
         Stat prayer = player.getStats().get(StatType.Prayer);
-        if(boneId == REGULAR_BONES.id)
+        if (boneId == REGULAR_BONES.id)
             prayer.restore(1, 0);
-        else if(boneId == BIG_BONES.id)
+        else if (boneId == BIG_BONES.id)
             prayer.restore(2, 0);
-        else if(boneId == BABYDRAGON_BONES.id)
+        else if (boneId == BABYDRAGON_BONES.id)
             prayer.restore(3, 0);
-        else if(boneId == DRAGON_BONES.id || boneId == DAGANNOTH_BONES.id)
+        else if (boneId == DRAGON_BONES.id || boneId == DAGANNOTH_BONES.id)
             prayer.restore(4, 0);
-        else if(boneId == SUPERIOR_DRAGON_BONES.id)
+        else if (boneId == SUPERIOR_DRAGON_BONES.id)
             prayer.restore(5, 0);
     }
 
     static {
-        for(Bone bone : values()) {
-            if(bone.exp <= Bone.BIG_BONES.exp)
+        for (Bone bone : values()) {
+            if (bone.exp <= Bone.BIG_BONES.exp)
                 ItemDef.get(bone.id).allowFruit = true;
             ItemAction.registerInventory(bone.id, "bury", bone::checkBeforeBury);
         }

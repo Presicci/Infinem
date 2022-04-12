@@ -19,7 +19,8 @@ import java.util.List;
 public class AllotmentPatch extends Patch {
 
     private FlowerPatch associatedFlowerPatch;
-    @Expose private boolean watered;
+    @Expose
+    private boolean watered;
 
     public static final List<Integer> WATERING_CAN_IDS = Arrays.asList(5331, 5333, 5334, 5335, 5336, 5337, 5338, 5339, 5340);
 
@@ -64,7 +65,6 @@ public class AllotmentPatch extends Patch {
             } else {
                 water(item, can);
             }
-            return;
         } else {
             super.handleItem(item);
         }
@@ -76,16 +76,16 @@ public class AllotmentPatch extends Patch {
         watered = false;
     }
 
-    private static int[] snapeGrassDisease = { 0, 196, 197, 198, 202, 203, 204 };
-    private static int[] snapeGrassDead = { 0, 193, 194, 195, 209, 210, 211 };
+    private static final int[] snapeGrassDisease = {0, 196, 197, 198, 202, 203, 204};
+    private static final int[] snapeGrassDead = {0, 193, 194, 195, 209, 210, 211};
 
     @Override
     public int getCropVarpbitValue() {
         int value = getPlantedCrop().getContainerIndex() + getStage();
-        if (((AllotmentCrop) getPlantedCrop()) == AllotmentCrop.SNAPE_GRASS && getStage() == getPlantedCrop().getTotalStages()) {
+        if (getPlantedCrop() == AllotmentCrop.SNAPE_GRASS && getStage() == getPlantedCrop().getTotalStages()) {
             value = 138;
         }
-        if ((AllotmentCrop) getPlantedCrop() == AllotmentCrop.SNAPE_GRASS) {
+        if (getPlantedCrop() == AllotmentCrop.SNAPE_GRASS) {
             if (watered)
                 value -= 65;
             else if (getDiseaseStage() == 1)

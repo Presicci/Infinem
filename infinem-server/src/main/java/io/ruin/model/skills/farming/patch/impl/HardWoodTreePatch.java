@@ -18,9 +18,9 @@ public class HardWoodTreePatch extends Patch {
     public int getCropVarpbitValue() {
         int vb = getPlantedCrop().getContainerIndex() + stage;
         if (isDiseased())
-                return vb + 9;
+            return vb + 9;
         else if (isDead())
-                return vb + 15;
+            return vb + 15;
         return vb;
     }
 

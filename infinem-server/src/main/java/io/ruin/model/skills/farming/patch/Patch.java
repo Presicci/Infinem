@@ -19,18 +19,27 @@ import io.ruin.model.stat.StatType;
 public abstract class Patch {
 
     protected Player player;
-    @Expose protected int stage;
-    @Expose private int compost;
-    @Expose private int raked;
-    @Expose private long timePlanted;
-    @Expose private int diseaseStage;
-    @Expose protected int produceCount;
-    @Expose private long lastWeedGrowth;
+    @Expose
+    protected int stage;
+    @Expose
+    private int compost;
+    @Expose
+    private int raked;
+    @Expose
+    private long timePlanted;
+    @Expose
+    private int diseaseStage;
+    @Expose
+    protected int produceCount;
+    @Expose
+    private long lastWeedGrowth;
 
-    @Expose private boolean farmerProtected;
+    @Expose
+    private boolean farmerProtected;
 
     protected Crop plantedCrop;
-    @Expose private int plantedSeed = -1;
+    @Expose
+    private int plantedSeed = -1;
 
     protected PatchData data;
     private boolean update;
@@ -82,23 +91,23 @@ public abstract class Patch {
             }
             player.animate(2273);
             player.startEvent(event -> {
-                    while (true) {
-                        player.animate(2273);
-                        player.privateSound(2442);
-                        event.delay(4);
-                        if (Random.get() < 0.8) {
-                            raked++;
-                            player.getStats().addXp(StatType.Farming, 3, true);
-                            player.getInventory().addOrDrop(6055, 1);
-                            lastWeedGrowth = System.currentTimeMillis();
-                            send();
-                        }
-                        if (isRaked()) {
-                            player.resetAnimation();
-                            player.getTaskManager().doLookupByUUID(13, 1);  // Rake a Farming Patch
-                            return;
-                        }
+                while (true) {
+                    player.animate(2273);
+                    player.privateSound(2442);
+                    event.delay(4);
+                    if (Random.get() < 0.8) {
+                        raked++;
+                        player.getStats().addXp(StatType.Farming, 3, true);
+                        player.getInventory().addOrDrop(6055, 1);
+                        lastWeedGrowth = System.currentTimeMillis();
+                        send();
                     }
+                    if (isRaked()) {
+                        player.resetAnimation();
+                        player.getTaskManager().doLookupByUUID(13, 1);  // Rake a Farming Patch
+                        return;
+                    }
+                }
             });
         } else if (plantedCrop == null) {
             player.sendMessage("The patch is clear for new crops. " + (compost > 0 ? "It has been treated with " + (compost == 1 ? "regular" : "super") + " compost." : ""));
@@ -256,8 +265,7 @@ public abstract class Patch {
             compostType = 3;
         else if (item.getId() == 22997) {
             compostType = BottomlessCompostBucket.getType(item) + 1;
-        }
-        else
+        } else
             throw new IllegalArgumentException("Invalid compost");
 
         if (!isRaked()) {
@@ -298,7 +306,7 @@ public abstract class Patch {
             return;
         }
         if (!player.getInventory().contains(sapling ? 5325 : 5343, 1)) {
-            player.sendMessage("You need a " + (sapling ? "gardening trowel" : "seed dibber") + " to plant " + type +"s.");
+            player.sendMessage("You need a " + (sapling ? "gardening trowel" : "seed dibber") + " to plant " + type + "s.");
             return;
         }
         if (!isRaked()) {
@@ -363,11 +371,11 @@ public abstract class Patch {
             return;
         }
         player.startEvent(event -> {
-           player.animate(2272);
-           event.delay(4);
-           int amount = player.getInventory().remove(5350, 28);
-           if (amount > 0)
-               player.getInventory().add(5356, amount);
+            player.animate(2272);
+            event.delay(4);
+            int amount = player.getInventory().remove(5350, 28);
+            if (amount > 0)
+                player.getInventory().add(5356, amount);
         });
     }
 
@@ -447,26 +455,17 @@ public abstract class Patch {
 
     public boolean hasGrowingAttas() {
         Patch patch = player.getFarming().getPatch(PatchData.FARMING_GUILD_ANIMA.getObjectId());
-        if (patch.getPlantedCrop() == AnimaCrop.ATTAS && patch.getStage() != patch.getPlantedCrop().getTotalStages()) {
-            return true;
-        }
-        return false;
+        return patch.getPlantedCrop() == AnimaCrop.ATTAS && patch.getStage() != patch.getPlantedCrop().getTotalStages();
     }
 
     public boolean hasGrowingIasor() {
         Patch patch = player.getFarming().getPatch(PatchData.FARMING_GUILD_ANIMA.getObjectId());
-        if (patch.getPlantedCrop() == AnimaCrop.IASOR && patch.getStage() != patch.getPlantedCrop().getTotalStages()) {
-            return true;
-        }
-        return false;
+        return patch.getPlantedCrop() == AnimaCrop.IASOR && patch.getStage() != patch.getPlantedCrop().getTotalStages();
     }
 
     public boolean hasGrowingKronos() {
         Patch patch = player.getFarming().getPatch(PatchData.FARMING_GUILD_ANIMA.getObjectId());
-        if (patch.getPlantedCrop() == AnimaCrop.KRONOS && patch.getStage() != patch.getPlantedCrop().getTotalStages()) {
-            return true;
-        }
-        return false;
+        return patch.getPlantedCrop() == AnimaCrop.KRONOS && patch.getStage() != patch.getPlantedCrop().getTotalStages();
     }
 
     public boolean removeProduce() {
@@ -525,7 +524,7 @@ public abstract class Patch {
             else
                 reset(true); // invalid seed planted, reset patch
         }
-        while(isNextStageReady()) { // important to simulate natural growth so no cycles are skipped
+        while (isNextStageReady()) { // important to simulate natural growth so no cycles are skipped
             tick();
         }
     }
@@ -538,7 +537,7 @@ public abstract class Patch {
             inspect();
         else if (option == 3)
             clear();
-        else if(option == 4)
+        else if (option == 4)
             TabStats.openGuide(player, StatType.Farming, data.getGuideChildId());
     }
 
@@ -552,7 +551,7 @@ public abstract class Patch {
         } else {
             msg += "The soil has been treated with ";
             msg += getCompost() == 1 ? "compost" : (getCompost() == 3 ? "ultracompost" : "supercompost");
-            msg +=  ". ";
+            msg += ". ";
         }
         if (getPlantedCrop() == null) {
             if (isRaked())

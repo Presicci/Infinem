@@ -55,12 +55,12 @@ public class FishingGuild {
     }
 
     static {
-        /**
+        /*
          * Entrance
          */
         ObjectAction.register(20925, "open", (player, obj) -> {
-            if(player.getAbsY() <= 3393) {
-                if(player.getStats().get(StatType.Fishing).currentLevel < 68) {
+            if (player.getAbsY() <= 3393) {
+                if (player.getStats().get(StatType.Fishing).currentLevel < 68) {
                     player.dialogue(new NPCDialogue(MASTER_FISHER, "Hello, only the top fishers are allowed in here. You need a fishing level of 68 to enter."));
                     return;
                 }
@@ -69,7 +69,7 @@ public class FishingGuild {
             player.startEvent(event -> {
                 player.lock();
 
-                if(!player.isAt(obj.x, player.getAbsY() <= 3393 ? obj.y - 1 : obj.y)) {
+                if (!player.isAt(obj.x, player.getAbsY() <= 3393 ? obj.y - 1 : obj.y)) {
                     player.stepAbs(obj.x, player.getAbsY() <= 3393 ? obj.y - 1 : obj.y, StepType.FORCE_WALK);
                     event.delay(1);
                 }
@@ -84,12 +84,12 @@ public class FishingGuild {
             });
         });
 
-        /**
+        /*
          * Row boat
          */
         ObjectAction.register(30376, "travel to platform", (player, obj) -> {
             int fishingLevel = player.getStats().get(StatType.Fishing).currentLevel;
-            if(fishingLevel < 82) {
+            if (fishingLevel < 82) {
                 player.dialogue(new NPCDialogue(KYLIE_MINNOW_DOCK, "G'day, only the best fishers are allowed onto the fishing platform. You need a fishing level of 82."));
                 return;
             }
@@ -117,13 +117,13 @@ public class FishingGuild {
             player.unlock();
         }));
 
-        /**
+        /*
          * Kylie Minnow
          */
         NPCAction.register(KYLIE_MINNOW_DOCK, "talk-to", (player, npc) -> {
-            if(player.kylieMinnowDialogueStarted) {
+            if (player.kylieMinnowDialogueStarted) {
                 int fishingLevel = player.getStats().get(StatType.Fishing).currentLevel;
-                if(fishingLevel < 82)
+                if (fishingLevel < 82)
                     notExperiencedDialogue(player, npc);
                 else
                     experiencedDialogue(player, npc);
@@ -135,18 +135,18 @@ public class FishingGuild {
         NPCAction.register(KYLIE_MINNOW_PLATFORM, "trade", (player, npc) -> {
             String fishName = "shark";
             Item minnows = player.getInventory().findItem(21356);
-            if(minnows == null) {
+            if (minnows == null) {
                 player.dialogue(new NPCDialogue(npc, "You'll be needing at least 40 minnows to trade for a " + fishName + "! Come back and see me when you have some more!"));
                 return;
             }
             int amount = minnows.getAmount();
-            if(amount < 40) {
+            if (amount < 40) {
                 player.dialogue(new NPCDialogue(npc, "You'll be needing at least 40 minnows to trade for a " + fishName + "! Come back and see me when you have some more!"));
                 return;
             }
             int max = amount / 40;
             player.dialogue(
-                    new NPCDialogue(npc, "I can give you " + ("a shark") +  " for every 40 minnows that you give me. How many " + fishName + " would you like?"),
+                    new NPCDialogue(npc, "I can give you " + ("a shark") + " for every 40 minnows that you give me. How many " + fishName + " would you like?"),
                     new ActionDialogue(() -> player.integerInput("How many " + fishName + " would you like? (0 - " + max + ")", amt -> {
                         int exchange = Math.min(amt, max);
                         minnows.remove(exchange * 40);

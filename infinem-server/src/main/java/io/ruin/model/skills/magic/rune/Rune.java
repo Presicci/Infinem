@@ -40,13 +40,13 @@ public enum Rune {
     }
 
     public boolean accept(Rune rune) {
-        if(rune == null)
+        if (rune == null)
             return false;
-        if(rune == this)
+        if (rune == this)
             return true;
-        if(rune.combinations != null) {
-            for(Rune comboRune : rune.combinations) {
-                if(comboRune == this)
+        if (rune.combinations != null) {
+            for (Rune comboRune : rune.combinations) {
+                if (comboRune == this)
                     return true;
             }
         }
@@ -64,14 +64,14 @@ public enum Rune {
     static {
         ItemDef.forEach(def -> {
             String name = def.name.toLowerCase();
-            for(Rune rune : values()) {
-                if(name.replace(" (nz)", "").equalsIgnoreCase(rune.name() + " rune")) {
-                    if(rune.id == -1)
+            for (Rune rune : values()) {
+                if (name.replace(" (nz)", "").equalsIgnoreCase(rune.name() + " rune")) {
+                    if (rune.id == -1)
                         rune.id = def.id;
                     def.rune = rune;
                     break;
                 }
-                if(name.contains("staff") && name.contains(rune.name().toLowerCase())) {
+                if (name.contains("staff") && name.contains(rune.name().toLowerCase())) {
                     def.staffRune = rune;
                     break;
                 }

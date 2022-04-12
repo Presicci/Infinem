@@ -76,7 +76,7 @@ public enum Burning {
     }
 
     public static Burning get(int log) {
-        for (Burning b: values())
+        for (Burning b : values())
             if (b.itemId == log)
                 return b;
         return null;
@@ -160,7 +160,6 @@ public enum Burning {
             if (groundLog == null) {
                 player.sendMessage("The logs you were trying to light have disappeared.");
                 player.resetAnimation();
-                player.unlock();
             } else {
                 groundLog.remove();
                 player.sendFilteredMessage("The fire catches and the logs begin to burn.");
@@ -169,8 +168,8 @@ public enum Burning {
                 player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDef.get(burning.itemId).name);
                 createFire(burning, fire);
                 player.face(fire);
-                player.unlock();
             }
+            player.unlock();
         });
     }
 
@@ -218,25 +217,23 @@ public enum Burning {
     }
 
     static {
-        /**
+        /*
          * Log lighting
          */
         for (Burning log : values()) {
-            /**
+            /*
              * Tinderbox
              */
             ItemItemAction.register(log.itemId, TINDER_BOX, (player, primary, secondary) -> burn(player, primary, log, null, false, 733));
 
-            /**
+            /*
              * Barbarian
              */
             for (BarbarianBurning barbarianBurning : BarbarianBurning.values()) {
-                ItemItemAction.register(log.itemId, barbarianBurning.itemId, (player, primary, secondary) -> {
-                    burn(player, primary, log, null, true, barbarianBurning.animationId);
-                });
+                ItemItemAction.register(log.itemId, barbarianBurning.itemId, (player, primary, secondary) -> burn(player, primary, log, null, true, barbarianBurning.animationId));
             }
 
-            /**
+            /*
              * Ground item
              */
             GroundItemAction.register(log.itemId, "light", (player, groundItem, distance) -> {
@@ -260,14 +257,13 @@ public enum Burning {
                     bows.forEach(bow -> {
                         if (bow.getId() == barbarianBurning.itemId) {
                             burn(player, null, log, groundItem, false, barbarianBurning.animationId);
-                            return;
                         }
                     });
                 }
             });
         }
 
-        /**
+        /*
          * Firelighter
          */
         int[][] lighterData = {

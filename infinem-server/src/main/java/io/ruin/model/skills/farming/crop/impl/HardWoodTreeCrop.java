@@ -23,7 +23,7 @@ public enum HardWoodTreeCrop implements TreeCrop {
     private final double plantXP, checkHealthXP;
     private final int totalStages;
     private final long stagetime;
-    private Item payment;
+    private final Item payment;
     private final int containerIndex;
     private final PlayerCounter counter;
 

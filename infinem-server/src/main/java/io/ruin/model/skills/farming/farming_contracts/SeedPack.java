@@ -15,7 +15,7 @@ import io.ruin.model.item.loot.LootTable;
  */
 public class SeedPack {
     //0-6 t1, 7-14 t2, 15-23 t3, 24-33 t4, 34-44 t5
-    private static final int[] tierIndices = { 0, 7, 15, 24, 34 };
+    private static final int[] tierIndices = {0, 7, 15, 24, 34};
 
     private static final LootItem[] lowSeeds = {
             // Allotment
@@ -99,7 +99,7 @@ public class SeedPack {
 
             // Special
             new LootItem(5280, 2, 6, 2),     // Cactus
-            new LootItem(22873, 2, 6, 2) ,    // Potato cactus
+            new LootItem(22873, 2, 6, 2),    // Potato cactus
             new LootItem(5290, 3, 6, 1)     // Calquat
     };
 
@@ -124,12 +124,12 @@ public class SeedPack {
             new LootItem(22871, 1, 1),       // Redwood
             new LootItem(5317, 1, 1),       // Spirit
             new LootItem(22869, 1, 2),      // Celastrus
-            new LootItem(22875, 1,4)   // Hespori
+            new LootItem(22875, 1, 4)   // Hespori
     };
 
-    private static final LootTable low = new LootTable().addTable(5,  lowSeeds);
-    private static final LootTable medium = new LootTable().addTable(5,  mediumSeeds);
-    private static final LootTable high = new LootTable().addTable(5,  highSeeds);
+    private static final LootTable low = new LootTable().addTable(5, lowSeeds);
+    private static final LootTable medium = new LootTable().addTable(5, mediumSeeds);
+    private static final LootTable high = new LootTable().addTable(5, highSeeds);
 
     public static Item createSeedPack(int tier) {
         int charges = 5 + tier;

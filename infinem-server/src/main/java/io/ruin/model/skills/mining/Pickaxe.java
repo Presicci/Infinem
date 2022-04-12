@@ -24,9 +24,7 @@ public enum Pickaxe {
     DRAGON_OR(61, 12797, 42, 642, 335),
     INFERNAL(61, 13243, 42, 4482, 4481),
     CORRUPTED(90, 30098, 48, 8521, 8523),
-    CORRUPTED_IMBUED(90, 30101, 50, 8522, 8524)
-
-    ;
+    CORRUPTED_IMBUED(90, 30101, 50, 8522, 8524);
 
     public final int levelReq, id, points, regularAnimationID, crystalAnimationID;
 
@@ -39,23 +37,23 @@ public enum Pickaxe {
     }
 
     private static Pickaxe compare(Player player, Item item, Pickaxe best) {
-        if(item == null)
+        if (item == null)
             return best;
         Pickaxe pickaxe = item.getDef().pickaxe;
-        if(pickaxe == null)
+        if (pickaxe == null)
             return best;
-        if(player.getStats().get(StatType.Mining).fixedLevel < pickaxe.levelReq)
+        if (player.getStats().get(StatType.Mining).fixedLevel < pickaxe.levelReq)
             return best;
-        if(best == null)
+        if (best == null)
             return pickaxe;
-        if(pickaxe.levelReq < best.levelReq)
+        if (pickaxe.levelReq < best.levelReq)
             return best;
         return pickaxe;
     }
 
     public static Pickaxe find(Player player) {
         Pickaxe bestPickaxe = null;
-        for(Item item : player.getInventory().getItems())
+        for (Item item : player.getInventory().getItems())
             bestPickaxe = compare(player, item, bestPickaxe);
         Item weapon = player.getEquipment().get(Equipment.SLOT_WEAPON);
         return compare(player, weapon, bestPickaxe);
@@ -65,9 +63,9 @@ public enum Pickaxe {
         for (Pickaxe pickaxe : values())
             ItemDef.get(pickaxe.id).pickaxe = pickaxe;
         ItemItemAction.register(30095, 30092, (player, primary, secondary) -> {
-           player.getInventory().remove(primary.getId(), 1);
-           player.getInventory().remove(secondary.getId(), 1);
-           player.getInventory().add(30098, 1);
+            player.getInventory().remove(primary.getId(), 1);
+            player.getInventory().remove(secondary.getId(), 1);
+            player.getInventory().add(30098, 1);
         });
         ItemItemAction.register(30145, 30098, (player, primary, secondary) -> {
             player.dialogue(new YesNoDialogue(Color.RED.wrap("WARNING!"), "You will close your corrupt leaf, if you combine these items.", secondary, () -> {

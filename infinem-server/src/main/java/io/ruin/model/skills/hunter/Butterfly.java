@@ -17,6 +17,7 @@ import lombok.AllArgsConstructor;
 
 /**
  * Class that handles catching butterflies, very similar to imp catching.
+ *
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 1/18/2022
  */
@@ -34,8 +35,9 @@ public enum Butterfly {
 
     /**
      * Test whether the player is capable of catching the butterfly.
-     * @param player The player.
-     * @param npc The butterfly npc.
+     *
+     * @param player    The player.
+     * @param npc       The butterfly npc.
      * @param butterfly The butterfly object.
      */
     protected static void attemptCatch(Player player, NPC npc, Butterfly butterfly) {
@@ -61,10 +63,11 @@ public enum Butterfly {
 
     /**
      * Keep attempting to catch butterfly until it is caught.
-     * @param player The player catching the butterfly.
-     * @param npc The butterfly npc.
+     *
+     * @param player    The player catching the butterfly.
+     * @param npc       The butterfly npc.
      * @param butterfly The butterfly object.
-     * @param jar The jar item.
+     * @param jar       The jar item.
      */
     private static void recursiveAttemptCatch(Player player, NPC npc, Butterfly butterfly, Item jar) {
         TargetRoute.set(player, npc, () -> {
@@ -75,10 +78,11 @@ public enum Butterfly {
 
     /**
      * Attempt to catch the butterfly.
-     * @param player The player catching the butterfly.
-     * @param npc The butterfly npc.
+     *
+     * @param player    The player catching the butterfly.
+     * @param npc       The butterfly npc.
      * @param butterfly The butterfly object.
-     * @param jar The jar item.
+     * @param jar       The jar item.
      */
     private static void attemptCatchEvent(Player player, NPC npc, Butterfly butterfly, Item jar) {
         player.startEvent(event -> {
@@ -105,6 +109,7 @@ public enum Butterfly {
 
     /**
      * Remove the butterfly npc
+     *
      * @param npc The butterfly npc.
      */
     private static void removeButterfly(NPC npc) {
@@ -118,17 +123,19 @@ public enum Butterfly {
 
     /**
      * Rolls for a successful catch.
-     * @param player The player.
+     *
+     * @param player    The player.
      * @param butterfly The butterfly object.
      * @return True if the butterfly is caught.
      */
     private static boolean isCatch(Player player, Butterfly butterfly) {
         int hunterLevel = player.getStats().get(StatType.Hunter).currentLevel;
-        return Random.rollDie(4, Math.min(3, Math.max(1 , (int) ((hunterLevel - butterfly.levelReq) / 5))));
+        return Random.rollDie(4, Math.min(3, Math.max(1, (int) ((hunterLevel - butterfly.levelReq) / 5))));
     }
 
     /**
      * Tests if the player has a butterfly net equipped.
+     *
      * @param player The player.
      * @return True if a net is equipped.
      */
@@ -138,6 +145,7 @@ public enum Butterfly {
 
     /**
      * Test if the player has a magic butterfly net equipped.
+     *
      * @param player The player.
      * @return True if a magic net is equipped.
      */

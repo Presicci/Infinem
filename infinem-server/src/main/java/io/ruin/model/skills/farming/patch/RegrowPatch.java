@@ -8,7 +8,10 @@ import io.ruin.model.stat.StatType;
 public abstract class RegrowPatch extends Patch { // for patches that "restore" produce after a certain delay, like fruit trees
 
     public abstract long getRegrowDelay();
-    @Expose private long lastRegrow;
+
+    @Expose
+    private long lastRegrow;
+
     public abstract int getMaxProduce();
 
     @Override

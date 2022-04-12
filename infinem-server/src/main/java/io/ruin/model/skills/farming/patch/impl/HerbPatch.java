@@ -16,7 +16,7 @@ public class HerbPatch extends Patch {
 
     @Override
     public int getCropVarpbitValue() {
-        int index = 0;
+        int index;
         if (isDiseased()) {
             index = (getStage() - 1) | (1 << 7);
         } else if (isDead()) {

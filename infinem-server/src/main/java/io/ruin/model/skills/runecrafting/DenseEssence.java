@@ -49,7 +49,7 @@ public class DenseEssence {
             actions[1] = (player, item) -> player.sendMessage("There are " + player.darkEssFragments + " essence fragements in this pile.");
             actions[5] = (player, item) -> {
                 player.dialogue(
-                        new YesNoDialogue("Are you sure you want to do this?","If you select yes, your dark essence fragments will be destroyed.", item, () -> {
+                        new YesNoDialogue("Are you sure you want to do this?", "If you select yes, your dark essence fragments will be destroyed.", item, () -> {
                             item.remove();
                             player.darkEssFragments = 0;
                         })
@@ -79,21 +79,21 @@ public class DenseEssence {
          */
         ObjectAction.register(27984, "climb", (player, obj) -> {
             Position westShortcut = new Position(1742, 3854, 0);
-            if(player.getPosition().equals(westShortcut))
+            if (player.getPosition().equals(westShortcut))
                 climb(player, 52, 2, 0, 6, 6, Direction.EAST);
             else
                 climb(player, 49, 0, -3, Direction.SOUTH);
         });
         ObjectAction.register(27985, "climb", (player, obj) -> {
             Position westShortcut = new Position(1752, 3854, 0);
-            if(player.getPosition().equals(westShortcut))
+            if (player.getPosition().equals(westShortcut))
                 climb(player, 52, -2, 0, -6, 6, Direction.WEST);
             else
                 climb(player, 49, 0, 3, Direction.NORTH);
         });
         ObjectAction.register(34741, "climb", (player, obj) -> {
             Position northShortcut = new Position(1761, 3874, 0);
-            if(player.getPosition().equals(northShortcut))
+            if (player.getPosition().equals(northShortcut))
                 climb(player, 69, 0, -2, Direction.SOUTH);
             else
                 climb(player, 69, 0, 2, Direction.NORTH);

@@ -188,7 +188,7 @@ public enum Farmer {
     static {
         for (Farmer farmer : values()) {
             //NPCAction.register(farmer.npcId, 1, (player, npc) -> {
-                //TODO shop, navigate to payment
+            //TODO shop, navigate to payment
             //});
             if (farmer.patch1 != null) {
                 NPCAction.register(farmer.npcId, 3, (player, npc) -> {

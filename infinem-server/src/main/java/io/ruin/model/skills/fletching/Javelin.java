@@ -34,7 +34,7 @@ public enum Javelin {
         head.remove(amount);
         player.getInventory().add(outcome, amount);
         player.getStats().addXp(StatType.Fletching, exp * amount, true);
-        if(amount == 1)
+        if (amount == 1)
             player.sendFilteredMessage("You attach javelin head a to your javelin shaft.");
         else
             player.sendFilteredMessage("You attach javelin heads to " + amount + " javelin shafts.");

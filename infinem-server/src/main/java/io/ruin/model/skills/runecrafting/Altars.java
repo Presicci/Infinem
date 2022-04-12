@@ -212,7 +212,7 @@ public enum Altars {
 
     private static void runeCombining(Player player, RuneCombination runeCombination) {
         boolean magicImbued = player.magicImbueEffect.isDelayed();
-        if(!magicImbued) {
+        if (!magicImbued) {
             Item requiredTalisman = player.getInventory().findItem(runeCombination.requiredTalismanId);
             if (requiredTalisman == null) {
                 player.sendMessage("You need a " + runeCombination.requiredTalismanName + " to bind " + runeCombination.runeNameLowercase + ".");
@@ -351,7 +351,7 @@ public enum Altars {
                 proj.send(destX + offsetsX[i], destY + offsetsY[i], destX, destY);
             }
             event.delay(4);
-            player.sendMessage("The energy improves the " + (toMake > 1 ? "staves" : "staff") +"!");
+            player.sendMessage("The energy improves the " + (toMake > 1 ? "staves" : "staff") + "!");
             World.sendGraphics(type.imbueExplosion, 200, 0, destX, destY, altar.z);
             player.getStats().addXp(StatType.Runecrafting, 6.0 * toMake, true);
             event.delay(1);
@@ -407,7 +407,7 @@ public enum Altars {
                     }
                 }
 
-                if(item.getId() == altar.talisman) {
+                if (item.getId() == altar.talisman) {
                     altar.createTiara(player, altar);
                 }
             });

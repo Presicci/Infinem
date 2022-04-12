@@ -33,7 +33,7 @@ public enum SlayerCreature {
     FIRE_GIANTS(16, 1, 65, "fire giants"),
     MOSS_GIANTS(17, 1, 40, "moss giants"),
     TROLLS(18, 1, 60, "trolls"),
-    ICE_WARRIOR(19, 1, 45,  "ice warriors"),
+    ICE_WARRIOR(19, 1, 45, "ice warriors"),
     OGRES(20, 1, 40, "ogres"),
     HOBGOBLIN(21, 1, 20, "hobgoblins"),
     DOGS(22, 1, 15, "dogs"),
@@ -52,7 +52,7 @@ public enum SlayerCreature {
     DAGANNOTH(35, 1, 75, "dagannoth"),
     TUROTH(36, 55, 60, "turoth"),
     CAVE_CRAWLER(37, 10, 10, "cave crawlers"),
-    BANSHEE(38,15,20, "banshees"),
+    BANSHEE(38, 15, 20, "banshees"),
     CRAWLING_HANDS(39, 5, 10, "crawling hands"),
     INFERNAL_MAGES(40, 45, 40, "infernal mages"),
     ABERRANT_SPECRES(41, 60, 65, "aberrant spectres"),
@@ -165,14 +165,15 @@ public enum SlayerCreature {
 
     /**
      * Checks if npc is this slayer creature.
+     *
      * @param npc The npc being checked.
      * @return True if npc is this slayer creature.
      */
     public boolean contains(NPC npc) {
-        if(isSlayerCreature(npc))
+        if (isSlayerCreature(npc))
             return false;
-        for(String s : npc.getCombat().getInfo().slayer_tasks){
-            if(category.contains(s.toLowerCase()))
+        for (String s : npc.getCombat().getInfo().slayer_tasks) {
+            if (category.contains(s.toLowerCase()))
                 return true;
         }
 
@@ -181,14 +182,15 @@ public enum SlayerCreature {
 
     /**
      * Gets a slayer creature by uid.
+     *
      * @param uid The uid of the creature.
      * @return The SlayerCreature.
      */
     public static SlayerCreature lookup(int uid) {
-        if(lookup == null) {
+        if (lookup == null) {
             Map<Integer, SlayerCreature> temp = new HashMap<>();
 
-            for(SlayerCreature sc : values()) {
+            for (SlayerCreature sc : values()) {
                 temp.put(sc.uid, sc);
             }
 
@@ -212,6 +214,7 @@ public enum SlayerCreature {
 
     /**
      * Gets a tip for the provided task.
+     *
      * @param task The task that needs a tip.
      * @return The tip.
      */
@@ -380,7 +383,7 @@ public enum SlayerCreature {
             case 81:
                 return "Jungle Horrors can be found on Mos Le'Harmless.";
             //case 82:
-                //return "Goraks";
+            //return "Goraks";
             case 83:
                 return "Suqahs can be found on Lunar Isle.";
             case 84:
@@ -410,31 +413,31 @@ public enum SlayerCreature {
             case 96:
                 return "Tzhaar monsters can be found in Mor Ul Rek, beneath the Karamja Volcano.";
             //case 97:
-                //return "Jad";
+            //return "Jad";
             case 98:
                 return "This is a boss task. Head to the bosses lair to confront the challenge.";
             //case 99:
-                //return "Mammoths";
+            //return "Mammoths";
             //case 100:
-                //return "Rogue";
+            //return "Rogue";
             //case 102:
-                //return "Bandits";
+            //return "Bandits";
             //case 103:
-                //return "Dark Warriors";
+            //return "Dark Warriors";
             //case 104:
-                //return "Lava dragons are a strong breed located north-east of black chinchompas. A form of anti-dragon shield is strongly recommended.";
+            //return "Lava dragons are a strong breed located north-east of black chinchompas. A form of anti-dragon shield is strongly recommended.";
             //case 105:
-                //return "Zuk";
+            //return "Zuk";
             case 106:
                 return "Fossil Island Wyverns can be found in the Wyvern Cave on fossil island. Protect from Range, an elemental shield, and good armour/weapon is suggested when fighting these monsters.";
             //case 107:
-               // return "Revenants";
+            // return "Revenants";
             case 108:
                 return "Adamant Dragons can be found in the Lithkren Vault. An Anti-dragon shield or anti-fire is recommended, as well as a stab or magic weapon.";
             case 109:
                 return "Rune Dragons can be found in the Lithkren Vault. An Anti-dragon shield or anti-fire is recommended, as well as a stab or magic weapon.";
             //case 110:
-                //return "Chaos Druids";
+            //return "Chaos Druids";
             case 111:
                 return "Wyrms can be found in the Karuulm Slayer Dungeon. Magic-resistant armour is recommended and boots of stone are required to fight this monster.";
             case 112:
@@ -450,6 +453,7 @@ public enum SlayerCreature {
 
     /**
      * Gets a tip for the provided task.
+     *
      * @param task The task that needs a tip.
      * @return The tip.
      */
@@ -536,8 +540,9 @@ public enum SlayerCreature {
 
     /**
      * Gets the name for the task for the provided uid from enummaps.
+     *
      * @param player The player with the task.
-     * @param uid The uid of the slayer creature.
+     * @param uid    The uid of the slayer creature.
      * @return The task name.
      */
     public static String taskName(Player player, int uid) {
@@ -548,7 +553,7 @@ public enum SlayerCreature {
     }
 
     public static boolean isSlayerCreature(NPC npc) {
-        if(npc.getDef().combatInfo == null || npc.getCombat().getInfo().slayer_tasks == null || npc.getCombat().getInfo().slayer_tasks.length > 0)
+        if (npc.getDef().combatInfo == null || npc.getCombat().getInfo().slayer_tasks == null || npc.getCombat().getInfo().slayer_tasks.length > 0)
             return false;
         return true;
     }

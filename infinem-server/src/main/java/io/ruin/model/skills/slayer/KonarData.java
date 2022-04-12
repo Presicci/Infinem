@@ -16,12 +16,13 @@ public class KonarData {
 
     /**
      * Generates a location from the task's array of locations.
-     * @param player The player getting the task.
+     *
+     * @param player   The player getting the task.
      * @param taskUuid The task being assigned.
      */
     public static void assignLocation(Player player, int taskUuid) {
         Optional<Task> task = Arrays.stream(Task.values()).filter(s -> s.uid == taskUuid).findFirst();
-        if(!task.isPresent()) {
+        if (!task.isPresent()) {
             return;
         }
         TaskLocation location = Random.get(task.get().locations);

@@ -100,16 +100,13 @@ public enum SlayerUnlock {
     }
 
 
-
-
-
     private static final Map<Integer, SlayerUnlock> UNLOCKS = new HashMap<>();
 
     static {
         for (SlayerUnlock slayerUnlock : values()) {
             UNLOCKS.put(slayerUnlock.slot, slayerUnlock);
         }
-        InterfaceHandler.register(426, handler ->  {
+        InterfaceHandler.register(426, handler -> {
             handler.actions[8] = (SlotAction) SlayerUnlock::handleUnlock;
             handler.actions[23] = (DefaultAction) SlayerUnlock::buyItem;
         });
@@ -117,8 +114,9 @@ public enum SlayerUnlock {
 
     /**
      * Handles unlocking upgrades from the shop.
+     *
      * @param player The player unlocking something.
-     * @param slot The slot of the unlock.
+     * @param slot   The slot of the unlock.
      */
     private static void handleUnlock(Player player, int slot) {
         if (slot == 35) {
@@ -140,6 +138,7 @@ public enum SlayerUnlock {
 
     /**
      * Handles the extend all tasks button.
+     *
      * @param player The player extending all tasks.
      */
     private static void extendAll(Player player) {
@@ -165,6 +164,7 @@ public enum SlayerUnlock {
 
     /**
      * Handles the cancelling of a task.
+     *
      * @param player The player cancelling the task.
      */
     private static void cancelTask(Player player) {
@@ -186,6 +186,7 @@ public enum SlayerUnlock {
 
     /**
      * Handles the blocking of a task.
+     *
      * @param player The player blocking the task.
      */
     private static void blockTask(Player player) {
@@ -229,6 +230,7 @@ public enum SlayerUnlock {
 
     /**
      * Opens the reward shop.
+     *
      * @param player The player opening the shop.
      */
     public static void openRewards(Player player) {
@@ -242,6 +244,7 @@ public enum SlayerUnlock {
 
     /**
      * Checks if a task is blocked by the player.
+     *
      * @param player The player being checked.
      * @param taskId The task being checked.
      * @return Returns true if the given task is already blocked
@@ -257,9 +260,10 @@ public enum SlayerUnlock {
 
     /**
      * Handles the buying of an item from the reward shop.
+     *
      * @param player The player buying the item.
      * @param option The option of the interface call.
-     * @param slot The slot of the interface call.
+     * @param slot   The slot of the interface call.
      * @param itemId The itemId of the item.
      */
     private static void buyItem(Player player, int option, int slot, int itemId) {
@@ -293,8 +297,9 @@ public enum SlayerUnlock {
 
     /**
      * Opens the slayer gold shop.
+     *
      * @param player The player opening the shop.
-     * @param npc The slayer master.
+     * @param npc    The slayer master.
      */
     public static void openShop(Player player, NPC npc) {
         npc.getDef().shops.get(0).open(player);

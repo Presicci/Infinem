@@ -19,10 +19,10 @@ import static io.ruin.model.skills.hunter.Hunter.canPlaceTrap;
 
 public class NetTrap implements TrapType { // TODO net trap behavior is likely VERY buggy due to how the replacing works, needs thorough testing
 
-    public static NetTrap SWAMP = new NetTrap(29,9341, 9257, 9005,9158, 9003, 9004);
-    public static NetTrap DESERT = new NetTrap(47,8732,8730, 8974,8973, 8972, 8734);
-    public static NetTrap RED = new NetTrap(59,8990, 8989, 8987,8988, 8985, 8986);
-    public static NetTrap BLACK = new NetTrap(67,9000, 8999, 8997,8998, 8993, 8996);
+    public static NetTrap SWAMP = new NetTrap(29, 9341, 9257, 9005, 9158, 9003, 9004);
+    public static NetTrap DESERT = new NetTrap(47, 8732, 8730, 8974, 8973, 8972, 8734);
+    public static NetTrap RED = new NetTrap(59, 8990, 8989, 8987, 8988, 8985, 8986);
+    public static NetTrap BLACK = new NetTrap(67, 9000, 8999, 8997, 8998, 8993, 8996);
 
     static {
         for (NetTrap trap : Arrays.asList(SWAMP, DESERT, RED, BLACK)) {
@@ -140,7 +140,7 @@ public class NetTrap implements TrapType { // TODO net trap behavior is likely V
             object.setId(getDefaultTreeId());
         } else {
             if (!object.isRemoved())
-            object.remove();
+                object.remove();
         }
         new GroundItem(trap.getTrapType().getItemId(), 1)
                 .owner(player)

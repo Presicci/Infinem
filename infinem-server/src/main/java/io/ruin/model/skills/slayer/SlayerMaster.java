@@ -44,6 +44,7 @@ public class SlayerMaster {
 
     /**
      * Generates a random task for a player.
+     *
      * @param player The player getting a task.
      * @return The task being assigned.
      */
@@ -84,7 +85,7 @@ public class SlayerMaster {
             // Krystilia can only assign wilderness bosses
             List<SlayerBoss> validTasks = npcId == Krystilia.KRYSTILIA
                     ? Arrays.asList(SlayerBoss.SCORPIA, SlayerBoss.CALLISTO, SlayerBoss.VET_ION, SlayerBoss.CRAZY_ARCHAEOLOGIST, SlayerBoss.THE_CHAOS_ELEMENTAL,
-                        SlayerBoss.THE_CHAOS_FANATIC, SlayerBoss.THE_KING_BLACK_DRAGON, SlayerBoss.VENENATIS)
+                    SlayerBoss.THE_CHAOS_FANATIC, SlayerBoss.THE_KING_BLACK_DRAGON, SlayerBoss.VENENATIS)
                     : Arrays.stream(SlayerBoss.values()).filter((v) -> v.canAssign == null || v.canAssign.apply(player)).collect(Collectors.toList());
             SlayerBoss task = validTasks.get(Random.get(validTasks.size() - 1));
             Config.BOSS_TASK.set(player, task.ordinal() + 1);
@@ -97,6 +98,7 @@ public class SlayerMaster {
 
     /**
      * Returns a slayer master matching provided npcID.
+     *
      * @param npcId NpcID of the master.
      * @return SlayerMaster if found, null if no match.
      */
@@ -113,6 +115,7 @@ public class SlayerMaster {
      * Checks the best master for a player based on their
      * combat level and returns a string containing that
      * master with their location.
+     *
      * @param player The player being checked.
      * @return A string containing the best master for the player with their location.
      */
@@ -135,7 +138,7 @@ public class SlayerMaster {
 
     /**
      * @param master The slayer master for the current task.
-     * @param spree The task spree.
+     * @param spree  The task spree.
      * @return Amount of slayer points to be rewarded.
      * TODO: Hook diary rewards in the form of task points in an area up to slayer points for Konar and Nieve/Steve
      */
@@ -275,7 +278,7 @@ public class SlayerMaster {
 
     /**
      * @param player The player
-     * @param left Monsters left in current task
+     * @param left   Monsters left in current task
      * @return Message telling the player how much their current task is left
      */
     public static String getTaskText(Player player, int left) {
@@ -295,6 +298,7 @@ public class SlayerMaster {
      * Checks the player's current task.
      * Sends a message with either the monsters remaining,
      * or that they need a new task.
+     *
      * @param player The player being checked.
      */
     public static void checkTask(Player player) {

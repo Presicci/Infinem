@@ -91,7 +91,7 @@ public class RustyWeapons {
         }
     }
 
-    private static final int[] OBJECTS = { 6802, 6801 };
+    private static final int[] OBJECTS = {6802, 6801};
 
     static {
         for (int objectId : OBJECTS) {
@@ -101,13 +101,11 @@ public class RustyWeapons {
         ItemNPCAction.register(RUSTY_SWORD, TINDEL_MARCHANT, ((player, item, npc) -> refineWeapon(player, item, SWORDS, true)));
         ItemNPCAction.register(RUSTY_SCIMITAR, TINDEL_MARCHANT, ((player, item, npc) -> refineWeapon(player, item, SCIMITARS, true)));
 
-        NPCAction.register(TINDEL_MARCHANT, "talk-to", ((player, npc) -> {
-            player.dialogue(
-                    new PlayerDialogue("Hello there."),
-                    new NPCDialogue(TINDEL_MARCHANT, "Hello there friend, if you happen to find any rusty or discarded armaments, I would happily repair them for a price."),
-                    new PlayerDialogue("I'll keep that in mind...")
-            );
-        }));
+        NPCAction.register(TINDEL_MARCHANT, "talk-to", ((player, npc) -> player.dialogue(
+                new PlayerDialogue("Hello there."),
+                new NPCDialogue(TINDEL_MARCHANT, "Hello there friend, if you happen to find any rusty or discarded armaments, I would happily repair them for a price."),
+                new PlayerDialogue("I'll keep that in mind...")
+        )));
 
         NPCAction.register(TINDEL_MARCHANT, "give-sword", RustyWeapons::giveSword);
     }
