@@ -176,6 +176,8 @@ public enum Altars {
             player.getInventory().add(altar.runeID, amount);
             player.getStats().addXp(StatType.Runecrafting, essenceCount * altar.experience, true);
             player.getTaskManager().doLookupByCategory(TaskCategory.RUNECRAFT, ItemDef.get(altar.runeID).name, amount, true);
+            if (runesPerEssence >= 4)
+                player.getTaskManager().doLookupByUUID(121, 1); // Craft 4 Runes With 1 Essence
             counter.increment(player, amount);
             player.unlock();
         });
