@@ -208,12 +208,15 @@ public class PestControlGame {
 				    switch(settings) {
                         case NOVICE:
                             p.pestNoviceWins++;
+							p.getTaskManager().doLookupByUUID(440, 1);	// Complete a Game of Novice Pest Control
                             break;
                         case INTERMEDIATE:
                             p.pestIntermediateWins++;
+							p.getTaskManager().doLookupByUUID(454, 1);	// Complete a Game of Intermediate Pest Control
                             break;
                         case VETERAN:
                             p.pestVeteranWins++;
+							p.getTaskManager().doLookupByUUID(471, 1);	// Complete a Game of Veteran Pest Control
                             break;
                     }
 					p.pestPoints += rewardedPoints;
