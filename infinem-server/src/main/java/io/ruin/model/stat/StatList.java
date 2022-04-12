@@ -188,11 +188,6 @@ public class StatList {
         if (player.first3.isDelayed())
             amount *= 1.10;
         /**
-         * 25% experience boost inside the wilderness
-         */
-        if(player.wildernessLevel > 1)
-            amount *= 1.25;
-        /**
          * 25% weekend experience boost
          */
         if(World.weekendExpBoost)
