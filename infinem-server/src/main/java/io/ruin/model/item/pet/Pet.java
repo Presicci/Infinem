@@ -17,7 +17,9 @@ import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.map.route.routes.DumbRoute;
 import io.ruin.utility.Broadcast;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.Consumer;
 
 public enum Pet {
@@ -276,6 +278,32 @@ public enum Pet {
         return new Pet[] { this };
     }
 
+    /*
+     * Pet task handling
+     */
+    private static final List<Pet> BOSS_PETS = Arrays.asList(
+            Pet.ABYSSAL_ORPHAN, Pet.BABY_MOLE,
+            Pet.KRIL_TSUTSAROTH, Pet.KREEARRA, Pet.ZILYANA, Pet.GENERAL_GRAARDOR,    // Godwars
+            Pet.CALLISTO_CUB, Pet.HELLPUPPY,
+            Pet.IKKLE_HYDRA_GREEN, Pet.JAL_NIB_REK, Pet.KALPHITE_PRINCESS,
+            Pet.LIL_ZIK, Pet.NOON, Pet.OLMLET,
+            Pet.CHAOS_ELEMENTAL, Pet.DAGGANOTH_SUPREME, Pet.DAGANNOTH_PRIME, Pet.DAGANNOTH_REX,
+            Pet.DARK_CORE, Pet.KRAKEN, Pet.SMOKE_DEVIL, Pet.SNAKELING_GREEN,
+            Pet.PRINCE_BLACK_DRAGON, Pet.SCORPIAS_OFFSPRING, Pet.SKOTOS,
+            Pet.SRARACHA, Pet.TZREK_JAD, Pet.VENENATIS_SPIDERLING, Pet.VETION_JR_PURPLE,
+            Pet.VORKI
+            //TODO Little nightmare, nexling
+    );
+
+    private static final List<Pet> SKILLING_PETS = Arrays.asList(
+            Pet.BABY_CHINCHOMPA_RED, Pet.BABY_CHINCHOMPA_GREY, Pet.BABY_CHINCHOMPA_BLACK,
+            Pet.BEAVER, Pet.GIANT_SQUIRREL, Pet.HERON, Pet.ROCK_GOLEM, Pet.ROCKY, Pet.TANGLEROOT,
+            Pet.RIFT_GUARDIAN_FIRE, Pet.RIFT_GUARDIAN_AIR, Pet.RIFT_GUARDIAN_MIND, Pet.RIFT_GUARDIAN_WATER,
+            Pet.RIFT_GUARDIAN_EARTH, Pet.RIFT_GUARDIAN_BODY, Pet.RIFT_GUARDIAN_COSMIC, Pet.RIFT_GUARDIAN_CHAOS,
+            Pet.RIFT_GUARDIAN_NATURE, Pet.RIFT_GUARDIAN_LAW, Pet.RIFT_GUARDIAN_DEATH, Pet.RIFT_GUARDIAN_SOUL,
+            Pet.RIFT_GUARDIAN_ASTRAL, Pet.RIFT_GUARDIAN_BLOOD, Pet.RIFT_GUARDIAN_WRATH
+    );
+
     private int findRoamId() {
         NPCDef baseDef = NPCDef.get(npcId);
         for (NPCDef def : NPCDef.cached.values()) {
@@ -347,6 +375,10 @@ public enum Pet {
         /*  Lets us do duplicate protection for pets with different forms, like the rift
             guardian or baby chinchompa */
         player.getCollectionLog().collect(itemId);
+        if (!player.getTaskManager().hasCompletedTask(294) && SKILLING_PETS.contains(this))
+            player.getTaskManager().doLookupByUUID(294, 1); // Obtain a Skilling Pet
+        if (!player.getTaskManager().hasCompletedTask(303) && BOSS_PETS.contains(this))
+            player.getTaskManager().doLookupByUUID(303, 1); // Obtain a Boss Pet
         if (variant != null) {
             for (Pet pet : getVariantArray()) {
                 if (pet.variant != variant) {

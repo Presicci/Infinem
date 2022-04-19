@@ -431,4 +431,8 @@ public class TaskManager {
     public void doUnlockItemLookup(Item item) {
         player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.UNLOCKITEM, item.getDef().name.toLowerCase(), item.getAmount(), true);
     }
+
+    public boolean hasCompletedTask(int uuid) {
+        return completeTasks.contains(uuid);
+    }
 }
