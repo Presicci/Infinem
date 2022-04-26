@@ -30,6 +30,7 @@ public class TeleportToHouse extends Spell {
             player.graphics(111, 92, 0);
             player.publicSound(200);
             e.delay(2);
+            player.getTaskManager().doLookupByUUID(147, 1); // Teleport Using Law Runes
             if (Config.TELEPORT_INSIDE.get(player) == 0) {
                 player.house.buildAndEnter(player, false);
                 while (player.isLocked())

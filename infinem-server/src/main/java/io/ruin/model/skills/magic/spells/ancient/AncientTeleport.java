@@ -26,6 +26,7 @@ public class AncientTeleport extends Spell {
             player.publicSound(195);
             e.delay(4);
             player.getMovement().teleport(x, y, z);
+            player.getTaskManager().doLookupByUUID(147, 1); // Teleport Using Law Runes
         });
     }
 
