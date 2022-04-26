@@ -35,7 +35,7 @@ public class WysonTheGardener {
         }
         int nestCount = player.getInventory().removeAll(true, new Item(7416, 10000), new Item(7418, 10000));
         if (nestCount == 0) {
-            player.dialogue(new NPCDialogue(3253, "Doesn't look like you're caryring any mole parts.<br>Come back to me when you have some."));
+            player.dialogue(new NPCDialogue(3253, "Doesn't look like you're carrying any mole parts.<br>Come back to me when you have some."));
             return;
         }
         int ringNests = nestCount / 3;
