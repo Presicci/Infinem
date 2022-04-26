@@ -113,7 +113,14 @@ public enum Prayer {
         p.level = 43;
         p.drain = 12;
         p.headIcon = 0;
-        p.activationCheck = PROTECT_FROM_MAGIC.activationCheck;
+        p.activationCheck = player -> {
+            if (player.getPrayer().slashDelay.isDelayed()) {
+                player.sendMessage("Your protection prayers are currently slashed!");
+                return false;
+            }
+            player.getTaskManager().doLookupByUUID(150, 1); // Use the Protect from Melee Prayer
+            return true;
+        };
     }),
     RETRIBUTION(4119, 2682, p -> {
         p.level = 46;
