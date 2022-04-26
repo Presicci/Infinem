@@ -75,7 +75,6 @@ public class Alchemy extends Spell {
             player.sendMessage("You can't alchemise this item.");
             return false;
         }
-
         if (item.getDef().stackable)
             item.remove(1);
         else
@@ -85,6 +84,8 @@ public class Alchemy extends Spell {
         player.getInventory().add(COINS_995, value);
         player.getPacketSender().sendClientScript(915, "i", 6);
         player.alchDelay.delay(level.delay);
+        if (level == Level.HIGH)
+            player.getTaskManager().doLookupByUUID(148, 1); // Cast the High Level Alchemy spell
         return true;
     }
 
