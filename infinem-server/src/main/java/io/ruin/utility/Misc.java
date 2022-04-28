@@ -1,6 +1,7 @@
 package io.ruin.utility;
 
 import io.ruin.model.entity.Entity;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Position;
 
 import java.security.SecureRandom;
@@ -99,5 +100,9 @@ public class Misc {
 
     public static String format_string(String string, Object... params) {
         return params == null ? string : String.format(string, (Object[]) params);
+    }
+
+    public static String getGenderPronoun(Player player) {
+        return player.getAppearance().isMale() ? "him" :  "her";
     }
 }
