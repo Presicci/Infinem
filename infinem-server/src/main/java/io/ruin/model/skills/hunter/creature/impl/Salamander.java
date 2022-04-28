@@ -82,7 +82,7 @@ public class Salamander extends Creature {
     }
 
     @Override
-    protected void prepareForCatchAttempt(NPC npc, Trap trap, Event event) {
+    protected void prepareForCatchAttempt(NPC npc, Trap trap, Event event) throws Pausable {
         //nothing required
     }
 
