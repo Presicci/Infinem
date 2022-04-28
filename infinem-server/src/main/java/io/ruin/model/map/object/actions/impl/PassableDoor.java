@@ -4,6 +4,7 @@ import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 
 /**
@@ -24,7 +25,11 @@ public class PassableDoor {
     }
 
     public static void passDoor(Player player, GameObject obj, Direction doorOpenDirection, int rotationOffset) {
-        passDoor(player, obj, doorOpenDirection, rotationOffset, -1);
+        passDoor(player, obj, doorOpenDirection, rotationOffset, null, -1);
+    }
+
+    public static void passDoor(Player player, GameObject obj, Direction doorOpenDirection, int rotationOffset, int tempObjectId) {
+        passDoor(player, obj, doorOpenDirection, rotationOffset, null, tempObjectId);
     }
 
     /**
@@ -33,13 +38,18 @@ public class PassableDoor {
      * @param obj The door game object.
      * @param doorOpenDirection The direction the door will be opening.
      * @param rotationOffset The offset for the rotation of the game in its open state, basically just trial and error to find this.
+     * @param objectOffset The position offset for where the temp door is spawned.
+     * @param tempObjectId The id for the temp door.
      */
-    public static void passDoor(Player player, GameObject obj, Direction doorOpenDirection, int rotationOffset, int tempObjectId) {
+    public static void passDoor(Player player, GameObject obj, Direction doorOpenDirection, int rotationOffset, Position objectOffset, int tempObjectId) {
         World.startEvent(e -> {
             e.delay(1);
-            GameObject tempGate = new GameObject(tempObjectId == -1 ? obj.id : tempObjectId, obj.getPosition().translate(
+            Position tempGatePos = obj.getPosition().translate(
                     doorOpenDirection == Direction.EAST ? 1 : doorOpenDirection == Direction.WEST ? -1 : 0,
-                    doorOpenDirection == Direction.NORTH ? 1 : doorOpenDirection == Direction.SOUTH ? -1 : 0),
+                    doorOpenDirection == Direction.NORTH ? 1 : doorOpenDirection == Direction.SOUTH ? -1 : 0);
+            if (objectOffset != null)
+                tempGatePos = tempGatePos.translate(objectOffset.getX(), objectOffset.getY());
+            GameObject tempGate = new GameObject(tempObjectId == -1 ? obj.id : tempObjectId, tempGatePos,
                     obj.type, obj.direction + 1 + rotationOffset);
             GameObject tempRemove = new GameObject(-1, obj.getPosition(), 0, 0);
             tempRemove.spawn();
