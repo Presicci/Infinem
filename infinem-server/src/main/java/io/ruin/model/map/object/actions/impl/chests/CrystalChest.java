@@ -75,6 +75,7 @@ public class CrystalChest {
                 for(Item item : loot) {
                     player.getInventory().addOrDrop(item.getId(), item.getAmount());
                 }
+                player.getTaskManager().doLookupByUUID(453, 1); // Open the Crystal Chest
                 event.delay(1);
                 player.unlock();
             });

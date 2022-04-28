@@ -72,6 +72,7 @@ public class ModernTeleport extends Spell {
             player.publicSound(200);
             e.delay(3);
             player.getMovement().teleport(x, y, z);
+            player.getTaskManager().doLookupByUUID(147, 1); // Teleport Using Law Runes
         });
     }
 

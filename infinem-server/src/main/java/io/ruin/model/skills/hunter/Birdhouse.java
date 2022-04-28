@@ -3,6 +3,7 @@ package io.ruin.model.skills.hunter;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemID;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -162,7 +163,7 @@ public class Birdhouse {
                     }
                 }
             }
-
+            player.getTaskManager().doLookupByCategory(TaskCategory.BIRDHOUSEDISMANTLE, 1, true);
             config.set(player, 0);
             player.getInventory().addOrDrop(ItemID.CLOCKWORK, 1);
         });
@@ -236,6 +237,7 @@ public class Birdhouse {
                     player.animate(827);
                     player.getInventory().remove(b.birdhouse, 1);
                     config.set(player, b.built);
+                    player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.BIRDHOUSEBUILD, b.toString());
                     player.unlock();
                 });
                 return;

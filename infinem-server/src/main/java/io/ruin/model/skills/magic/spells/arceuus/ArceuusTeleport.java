@@ -25,6 +25,7 @@ public class ArceuusTeleport extends Spell {
             player.graphics(1296);
             e.delay(3);
             player.getMovement().teleport(x, y, z);
+            player.getTaskManager().doLookupByUUID(147, 1); // Teleport Using Law Runes
         });
     }
 
