@@ -75,7 +75,7 @@ public class Shantay {
                                 player.dialogue(
                                         new PlayerDialogue("I don't have five gold pieces."),
                                         new NPCDialogue(SHANTAY, "You are to be transported to a maximum security prison in Port Sarim. I hope you've learnt an important lesson from this."),
-                                        new ActionDialogue(() -> Traveling.fadeTravel(player, new Position(3014, 3180, 0)))
+                                        new ActionDialogue(() -> imprison(player))
                                 );
                             } else {
                                 pay(player);
@@ -91,7 +91,7 @@ public class Shantay {
                                                 player.dialogue(
                                                         new PlayerDialogue("I don't have five gold pieces."),
                                                         new NPCDialogue(SHANTAY, "You are to be transported to a maximum security prison in Port Sarim. I hope you've learnt an important lesson from this."),
-                                                        new ActionDialogue(() -> Traveling.fadeTravel(player, new Position(3014, 3180, 0)))
+                                                        new ActionDialogue(() -> imprison(player))
                                                 );
                                             } else {
                                                 pay(player);
@@ -100,12 +100,17 @@ public class Shantay {
                                         new Option("No, do your worst!", () -> player.dialogue(
                                                 new PlayerDialogue("No, do your worst!"),
                                                 new NPCDialogue(SHANTAY, "You are to be transported to a maximum security prison in Port Sarim. I hope you've learnt an important lesson from this."),
-                                                new ActionDialogue(() -> Traveling.fadeTravel(player, new Position(3014, 3180, 0)))
+                                                new ActionDialogue(() -> imprison(player))
                                         ))
                                 )
                         ))
                 )
         );
+    }
+
+    private static void imprison(Player player) {
+        player.getTaskManager().doLookupByUUID(904, 1);
+        Traveling.fadeTravel(player, new Position(3014, 3180, 0));
     }
 
     private static void pay(Player player) {
