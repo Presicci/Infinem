@@ -227,7 +227,7 @@
   {
     "name": "Dwarf",
     "id": 290,
-    "x": 3045,
+    "x": 3046,
     "y": 9823,
     "z": 0,
     "direction": "S",
@@ -333,15 +333,6 @@
     "walkRange": 1
   },
   {
-    "name": "Cave horror",
-    "id": 1051,
-    "x": 2995,
-    "y": 9829,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
-  },
-  {
     "name": "Scorpion",
     "id": 3024,
     "x": 3042,
@@ -398,7 +389,7 @@
   {
     "name": "Cart conductor",
     "id": 2391,
-    "x": 2996,
+    "x": 2997,
     "y": 9836,
     "z": 0,
     "direction": "S",
@@ -432,15 +423,6 @@
     "walkRange": 6
   },
   {
-    "name": "Sheep",
-    "id": 1301,
-    "x": 2998,
-    "y": 9840,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 7
-  },
-  {
     "name": "Scorpion",
     "id": 3024,
     "x": 3043,
@@ -453,7 +435,7 @@
     "name": "Dwarf",
     "id": 290,
     "x": 3002,
-    "y": 9816,
+    "y": 9815,
     "z": 0,
     "direction": "S",
     "walkRange": 5
@@ -552,7 +534,7 @@
     "name": "Dwarf",
     "id": 290,
     "x": 2999,
-    "y": 9803,
+    "y": 9804,
     "z": 0,
     "direction": "S",
     "walkRange": 7
