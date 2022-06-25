@@ -155,6 +155,8 @@ public class LootTable {
                                             break tableLoop;
                                     }
                                 }
+                                if (item.id == -1)  // Quit out if we roll a empty slot
+                                    break;
                                 items.add(item.toItem());
                                 break;
                             }
