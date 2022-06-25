@@ -163,7 +163,7 @@ public class Birdhouse {
                     }
                 }
             }
-            player.getTaskManager().doLookupByCategory(TaskCategory.BIRDHOUSEDISMANTLE, 1, true);
+            player.getTaskManager().doLookupByCategory(TaskCategory.BIRDHOUSEDIS, 1, true);
             config.set(player, 0);
             player.getInventory().addOrDrop(ItemID.CLOCKWORK, 1);
         });
