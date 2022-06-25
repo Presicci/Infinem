@@ -149,7 +149,7 @@ public class Wintertodt { // TODO make hits not reset events
             player.wintertodtHighscore = player.wintertodtPoints;
             player.sendMessage("You have a new high score! " + player.wintertodtHighscore);
         }
-        player.wintertodtKills.increment(player);
+        PlayerCounter.WINTERTODT_SUBDUED.increment(player, 1);
         player.sendMessage("Your subdued Wintertodt count is: <col=ff0000>" + PlayerCounter.WINTERTODT_SUBDUED.get(player) + "</col>.");
         if (player.wintertodtPoints >= 500) {
             int crates = player.wintertodtPoints / 500; // guaranteed crates
@@ -257,20 +257,20 @@ public class Wintertodt { // TODO make hits not reset events
         int baseX = player.getAbsX();
         int baseY = player.getAbsY();
         World.startEvent(event -> {
-            List<GameObject> suckMyDickHitler = new ArrayList<>();
-            suckMyDickHitler.add(GameObject.spawn(SNOW_EFFECT, baseX, baseY, 0, 10, 0));
+            List<GameObject> snowObjects = new ArrayList<>();
+            snowObjects.add(GameObject.spawn(SNOW_EFFECT, baseX, baseY, 0, 10, 0));
             if (Tile.allowObjectPlacement(baseX + 1, baseY + 1, 0))
-                suckMyDickHitler.add(GameObject.spawn(SNOW_EFFECT, baseX + 1, baseY+ 1, 0, 10, 0));
+                snowObjects.add(GameObject.spawn(SNOW_EFFECT, baseX + 1, baseY+ 1, 0, 10, 0));
             if (Tile.allowObjectPlacement(baseX + 1, baseY - 1, 0))
-                suckMyDickHitler.add(GameObject.spawn(SNOW_EFFECT, baseX + 1, baseY -1, 0, 10, 0));
+                snowObjects.add(GameObject.spawn(SNOW_EFFECT, baseX + 1, baseY -1, 0, 10, 0));
             if (Tile.allowObjectPlacement(baseX - 1, baseY + 1, 0))
-                suckMyDickHitler.add(GameObject.spawn(SNOW_EFFECT, baseX - 1, baseY + 1, 0, 10, 0));
+                snowObjects.add(GameObject.spawn(SNOW_EFFECT, baseX - 1, baseY + 1, 0, 10, 0));
             if (Tile.allowObjectPlacement(baseX - 1, baseY - 1, 0))
-                suckMyDickHitler.add(GameObject.spawn(SNOW_EFFECT, baseX - 1, baseY - 1, 0, 10, 0));
+                snowObjects.add(GameObject.spawn(SNOW_EFFECT, baseX - 1, baseY - 1, 0, 10, 0));
 
             event.delay(4);
 
-            suckMyDickHitler.forEach(o -> o.setId(o.x == baseX && o.y == baseY ? 29325 : 29324));
+            snowObjects.forEach(o -> o.setId(o.x == baseX && o.y == baseY ? 29325 : 29324));
             REGION.players.forEach(p -> {
                 if (Misc.getDistance(p.getPosition(), baseX, baseY) <= 1) {
                     p.sendMessage("The freezing cold attack of the Wintertodt's magic hits you.");
@@ -278,7 +278,7 @@ public class Wintertodt { // TODO make hits not reset events
                 }
             });
             event.delay(30);
-            suckMyDickHitler.forEach(GameObject::remove);
+            snowObjects.forEach(GameObject::remove);
 
         });
     }
