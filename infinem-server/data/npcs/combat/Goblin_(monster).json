@@ -4,7 +4,7 @@
     "handler": "",
     //Combat Info
     "hitpoints": 3,
-    "aggressive_level": 4,
+    "aggressive_level": 0,
     "max_damage": 1,
     "attack_style": "CRUSH",
     //Slayer Info
@@ -47,7 +47,7 @@
     "handler": "",
     //Combat Info
     "hitpoints": 5,
-    "aggressive_level": 10,
+    "aggressive_level": 0,
     "max_damage": 2,
     "attack_style": "CRUSH",
     //Slayer Info
@@ -90,7 +90,7 @@
     "handler": "",
     //Combat Info
     "hitpoints": 12,
-    "aggressive_level": 22,
+    "aggressive_level": 0,
     "max_damage": 3,
     "attack_style": "CRUSH",
     //Slayer Info
@@ -133,7 +133,7 @@
     "handler": "",
     //Combat Info
     "hitpoints": 3,
-    "aggressive_level": 24,
+    "aggressive_level": 0,
     "max_damage": 3,
     "attack_style": "CRUSH",
     //Slayer Info
@@ -176,7 +176,7 @@
     "handler": "",
     //Combat Info
     "hitpoints": 7,
-    "aggressive_level": 26,
+    "aggressive_level": 0,
     "max_damage": 3,
     "attack_style": "CRUSH",
     //Slayer Info
@@ -262,7 +262,7 @@
     "handler": "",
     //Combat Info
     "hitpoints": 15,
-    "aggressive_level": 32,
+    "aggressive_level": 0,
     "max_damage": 3,
     "attack_style": "CRUSH",
     //Slayer Info
@@ -305,7 +305,7 @@
     "handler": "",
     //Combat Info
     "hitpoints": 22,
-    "aggressive_level": 50,
+    "aggressive_level": 0,
     "max_damage": 3,
     "attack_style": "CRUSH",
     //Slayer Info
