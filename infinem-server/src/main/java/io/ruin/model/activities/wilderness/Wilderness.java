@@ -185,7 +185,7 @@ public class Wilderness {
         int targetCombatLevel = pTarget.getCombat().getLevel();
         if(!((combatLevel + wildernessLevel >= targetCombatLevel && combatLevel - wildernessLevel <= targetCombatLevel) && (targetCombatLevel + targetWildernessLevel) >= combatLevel && targetCombatLevel - targetWildernessLevel <= combatLevel)) {
             if(message)
-                player.sendMessage("Your combat level difference is to high to attack from here. Please move deeper into the wilderness");
+                player.sendMessage("Your combat level difference is to0 high to attack from here. Please move deeper into the wilderness");
             return false;
         }
 
