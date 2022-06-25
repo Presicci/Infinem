@@ -119,13 +119,13 @@ public class TaskManager {
                             }
                         }
                         if (!found) {
-                            System.out.println("exit on obj");
+                            System.out.println("[" + player.getName() + "]" + category + "/" + trigger + "/" + amount + "/" + incremental + ", exit on obj");
                             continue;
                         }
                     }
                     String area = rs.getString("maparea");
                     if (area.trim().length() > 0 && (mapArea == null || !area.toLowerCase().equalsIgnoreCase(mapArea.toString().toLowerCase()))) {
-                        System.out.println("exit on map");
+                        System.out.println("[" + player.getName() + "]" + category + "/" + trigger + "/" + amount + "/" + incremental + ", exit on map");
                         continue;
                     }
                     int requiredAmount = rs.getInt("required_amount");
@@ -142,7 +142,7 @@ public class TaskManager {
                             }
                         } else {
                             if (amount < requiredAmount) {
-                                System.out.println("exit on amt");
+                                System.out.println("[" + player.getName() + "]" + category + "/" + trigger + "/" + amount + "/" + incremental + ", exit on amt");
                                 continue;
                             }
                         }
@@ -165,7 +165,7 @@ public class TaskManager {
                         }
                     }
                     if (finalDifficulty == null || finalTaskarea == null) {
-                        System.out.println("TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
+                        System.out.println("cat TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
                     } else {
                         TaskArea finalTaskarea1 = finalTaskarea;
                         TaskDifficulty finalDifficulty1 = finalDifficulty;
@@ -207,7 +207,7 @@ public class TaskManager {
                     }
                     String area = rs.getString("maparea");
                     if (area.trim().length() > 0 && (mapArea == null || !area.toLowerCase().equalsIgnoreCase(mapArea.toString().toLowerCase().replace("_", " ")))) {
-                        System.out.println("TASK ERROR! area=" + area.trim() + " / " + mapArea.toString().toLowerCase());
+                        System.out.println("cat&trigger1 TASK ERROR! area=" + area.trim() + " / " + mapArea.toString().toLowerCase());
                         continue;
                     }
                     int requiredAmount = rs.getInt("required_amount");
@@ -224,7 +224,7 @@ public class TaskManager {
                             }
                         } else {
                             if (amount < requiredAmount) {
-                                System.out.println("exit on amt");
+                                System.out.println("[" + player.getName() + "]" + category + "/" + trigger + "/" + amount + "/" + incremental + ", exit on amt");
                                 continue;
                             }
                         }
@@ -247,7 +247,7 @@ public class TaskManager {
                         }
                     }
                     if (finalDifficulty == null || finalTaskarea == null) {
-                        System.out.println("TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
+                        System.out.println("cat&trigger2 TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
                     } else {
                         TaskArea finalTaskarea1 = finalTaskarea;
                         TaskDifficulty finalDifficulty1 = finalDifficulty;
@@ -282,7 +282,7 @@ public class TaskManager {
                     }
                     String area = rs.getString("maparea");
                     if (area.trim().length() > 0 && (mapArea == null || !area.toLowerCase().equalsIgnoreCase(mapArea.toString().toLowerCase()))) {
-                        System.out.println("exit on map");
+                        System.out.println("[" + player.getName() + "]" + "/" + trigger + "/" + "/" + ", exit on map");
                         continue;
                     }
                     String trig = rs.getString("required_object");
@@ -298,7 +298,7 @@ public class TaskManager {
                                 complete = false;
                         }
                         if (!complete) {
-                            System.out.println("not complete set");
+                            System.out.println("[" + player.getName() + "]" + "/" + trigger + "/"  + "/"  + ", not complete set");
                             continue;
                         }
                     } else {
@@ -387,7 +387,7 @@ public class TaskManager {
                     }
                     String name = rs.getString("name");
                     if (finalDifficulty == null || finalTaskarea == null) {
-                        System.out.println("TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
+                        System.out.println("uuid TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
                     } else {
                         TaskArea finalTaskarea1 = finalTaskarea;
                         TaskDifficulty finalDifficulty1 = finalDifficulty;
