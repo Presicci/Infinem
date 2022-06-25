@@ -173,7 +173,7 @@
   {
     "name": "Scorpion",
     "id": 3024,
-    "x": 3043,
+    "x": 3040,
     "y": 9804,
     "z": 0,
     "direction": "S",
@@ -353,8 +353,8 @@
   {
     "name": "Scorpion",
     "id": 3024,
-    "x": 3043,
-    "y": 9781,
+    "x": 3047,
+    "y": 9778,
     "z": 0,
     "direction": "S",
     "walkRange": 7
@@ -416,8 +416,8 @@
   {
     "name": "Scorpion",
     "id": 3024,
-    "x": 3051,
-    "y": 9771,
+    "x": 3055,
+    "y": 9767,
     "z": 0,
     "direction": "S",
     "walkRange": 6
@@ -461,8 +461,8 @@
   {
     "name": "Scorpion",
     "id": 3024,
-    "x": 3052,
-    "y": 9772,
+    "x": 3045,
+    "y": 9761,
     "z": 0,
     "direction": "S",
     "walkRange": 6
