@@ -86,7 +86,11 @@ public enum Bone {
             bone.remove();
             player.animate(827);
             player.sendMessage("You dig a hole in the ground...");
-            player.getStats().addXp(StatType.Prayer, exp, true);
+            if (this == Bone.LAVA_DRAGON_BONES && player.getPosition().inBounds(new Bounds(3173, 3799, 3235, 3855, 0))) {
+                player.getStats().addXp(StatType.Prayer, 340, true);
+            } else {
+                player.getStats().addXp(StatType.Prayer, exp, true);
+            }
             player.privateSound(2738);
             buryCounter.increment(player, 1);
             player.karamDelay.delay(2);
