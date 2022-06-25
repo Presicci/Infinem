@@ -298,29 +298,26 @@ public class StarterGuide {
     }
 
     private static void giveEcoStarter(Player player) {
-        player.getInventory().add(COINS_995, 10000); // gp
+        player.getInventory().add(COINS_995, 1000); // gp
         player.getInventory().add(558, 500); // Mind Rune
         player.getInventory().add(556, 1500); // Air Rune
         player.getInventory().add(554, 1000); // Fire Rune
         player.getInventory().add(555, 1000); // Water Rune
         player.getInventory().add(557, 1000); // Earth Rune
-        player.getInventory().add(562, 1000); // Chaos Rune
-        player.getInventory().add(560, 500); // Death Rune
-        player.getInventory().add(1381, 1); // Air Staff
+        player.getInventory().add(562, 300); // Chaos Rune
         player.getInventory().add(362, 50); // Tuna
-        player.getInventory().add(863, 300); // Iron Knives
-        player.getInventory().add(867, 150); // Adamant Knives
         player.getInventory().add(1169, 1); // Coif
         player.getInventory().add(1129, 1); // Leather body
         player.getInventory().add(1095, 1); // Leather Chaps
-        player.getInventory().add(13385, 1); // Xeric Hat
-        player.getInventory().add(12867, 1); // Blue d hide set
-        player.getInventory().add(13024, 1); // Rune set
-        player.getInventory().add(11978, 1); // Glory 6
-        player.getInventory().add(13387, 1); // Xerican Top
+        player.getInventory().add(863, 500); // Iron Knives
+        player.getInventory().add(579, 1); // Blue wizard hat
+        player.getInventory().add(577, 1); // Blue wizard robe
+        player.getInventory().add(1011, 1); // Blue skirt
+        player.getInventory().add(1381, 1); // Air Staff
+        player.getInventory().add(1153, 1); // Iron full helm
+        player.getInventory().add(1115, 1); // Iron platebody
+        player.getInventory().add(1075, 1); // Iron platelegs
         player.getInventory().add(1323, 1); // Iron scim
-        player.getInventory().add(1333, 1); // Rune scim
-        player.getInventory().add(4587, 1); // Dragon Scim
         switch (player.getGameMode()) {
             case IRONMAN:
                 player.getInventory().add(12810, 1);
@@ -338,7 +335,7 @@ public class StarterGuide {
                 player.getInventory().add(20796, 1);
                 break;
             case STANDARD:
-                player.getInventory().add(COINS_995, 115000);
+                player.getInventory().add(COINS_995, 24000);
                 break;
         }
     }
