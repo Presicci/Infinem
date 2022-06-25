@@ -45,6 +45,8 @@ public class AlkharidGate {
             // Respawn gates
             northGate.spawn();
             southGate.spawn();
+
+            player.getTaskManager().doLookupByUUID(637, 1);
         });
     }
 
