@@ -811,8 +811,15 @@ public abstract class NPCCombat extends Combat {
             /*
              * Spawn the item on the ground.
              */
-            if (dropItem)
-            new GroundItem(item).position(dropPosition).owner(pKiller).spawn();
+            if (dropItem) {
+                if (item.getAmount() > 1 && !item.getDef().stackable) {
+                    for (int index = 0; index < item.getAmount(); index++) {
+                        new GroundItem(new Item(item.getId())).position(dropPosition).owner(pKiller).spawn();
+                    }
+                } else {
+                    new GroundItem(item).position(dropPosition).owner(pKiller).spawn();
+                }
+            }
         }
     }
 
