@@ -110,7 +110,7 @@ public class Slayer {
             player.getStats().addXp(StatType.Slayer, xp, true);
             player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERKILL, 1, true);
 
-            Config.SLAYER_TASK_AMOUNT.set(player, Config.SLAYER_TASK_AMOUNT.get(player) - 1);
+            Config.SLAYER_TASK_AMOUNT.decrement(player, 1);
             player.slayerTaskRemaining = Config.SLAYER_TASK_AMOUNT.get(player);
 
             am -= 1;
