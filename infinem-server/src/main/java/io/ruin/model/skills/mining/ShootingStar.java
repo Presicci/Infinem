@@ -40,7 +40,7 @@ public enum ShootingStar {
     private final int stardust, petOdds, doubleDustChance, crashWeight;
 
     private static final int STARDUST = 25527;
-    private static final int SPAWN_TICKS = 6000;
+    private static final int SPAWN_TICKS = 6000;    // 1 hour
     private static StarLocation starLocation = getLocation();
     private static ShootingStar activeStar = null;
     public static GameObject starObject = null;
@@ -196,8 +196,8 @@ public enum ShootingStar {
         //  Spawn event loop
         World.startEvent(event -> {
             while (true) {
-                event.delay(SPAWN_TICKS);
                 spawnStar();
+                event.delay(SPAWN_TICKS);
             }
         });
     }
