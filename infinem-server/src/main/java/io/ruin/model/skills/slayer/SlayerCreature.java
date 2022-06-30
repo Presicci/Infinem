@@ -553,7 +553,7 @@ public enum SlayerCreature {
     }
 
     public static boolean isSlayerCreature(NPC npc) {
-        if (npc.getDef().combatInfo == null || npc.getCombat().getInfo().slayer_tasks == null || npc.getCombat().getInfo().slayer_tasks.length > 0)
+        if (npc.getDef().combatInfo == null || npc.getCombat().getInfo().slayer_tasks == null || npc.getCombat().getInfo().slayer_tasks.length <= 0)
             return false;
         return true;
     }
