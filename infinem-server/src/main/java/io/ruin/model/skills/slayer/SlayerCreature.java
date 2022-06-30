@@ -170,7 +170,7 @@ public enum SlayerCreature {
      * @return True if npc is this slayer creature.
      */
     public boolean contains(NPC npc) {
-        if (isSlayerCreature(npc))
+        if (!isSlayerCreature(npc) || npc.getCombat() == null || npc.getCombat().getInfo() == null)
             return false;
         for (String s : npc.getCombat().getInfo().slayer_tasks) {
             if (category.contains(s.toLowerCase()))
