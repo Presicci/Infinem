@@ -845,7 +845,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public KillCounter cerberusKills = new KillCounter();
     @Expose public KillCounter abyssalSireKills = new KillCounter();
     @Expose public KillCounter skotizoKills = new KillCounter();
-    @Expose public KillCounter wintertodtKills = new KillCounter();
     @Expose public KillCounter oborKills = new KillCounter();
     @Expose public KillCounter chambersofXericKills = new KillCounter();
     @Expose public KillCounter theatreOfBloodKills = new KillCounter();
