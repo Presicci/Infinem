@@ -160,7 +160,7 @@ public class SlayerMaster {
                 case KONAR_ID:
                     return 1000;    // 900 w/o diaries
                 default:
-                    return 0;
+                    return 5;
             }
         }
 
@@ -181,7 +181,7 @@ public class SlayerMaster {
                 case KONAR_ID:
                     return 700; // 630 w/o diaries
                 default:
-                    return 0;
+                    return 5;
             }
         }
 
@@ -202,7 +202,7 @@ public class SlayerMaster {
                 case KONAR_ID:
                     return 500; // 450 w/o diaries
                 default:
-                    return 0;
+                    return 4;
             }
         }
 
@@ -223,7 +223,7 @@ public class SlayerMaster {
                 case KONAR_ID:
                     return 300; // 270 w/o diaries
                 default:
-                    return 0;
+                    return 3;
             }
         }
 
@@ -244,7 +244,7 @@ public class SlayerMaster {
                 case KONAR_ID:
                     return 100; // 90 w/o diaries
                 default:
-                    return 0;
+                    return 2;
             }
         }
 
@@ -264,7 +264,7 @@ public class SlayerMaster {
             case KONAR_ID:
                 return 20; // 18 w/o diaries
             default:
-                return 0;
+                return 1;
         }
     }
 
