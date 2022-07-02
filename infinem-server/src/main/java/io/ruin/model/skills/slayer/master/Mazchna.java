@@ -158,10 +158,9 @@ public class Mazchna {
     }
 
     private static void giveTask(Player player) {
-        boolean talked = player.getStats().get(StatType.Slayer).experience > 0;
         int left = Config.SLAYER_TASK_AMOUNT.get(player);
 
-        if (left > 0 && SlayerCreature.taskName(player, Config.SLAYER_TASK_1.get(player)).equalsIgnoreCase("null")) {
+        if (left > 0 && !SlayerCreature.taskName(player, Config.SLAYER_TASK_1.get(player)).equalsIgnoreCase("null")) {
             String text = SlayerMaster.getTaskText(player, left);
             player.dialogue(new NPCDialogue(MAZCHNA, text));
             return;
