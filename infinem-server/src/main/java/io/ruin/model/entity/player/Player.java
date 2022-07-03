@@ -1425,6 +1425,22 @@ public class Player extends PlayerAttributes {
         packetSender.sendLogout();
     }
 
+    private void attemptIdleLogout() {
+        if(combat.isDead() || combat.isDefending(17)) {
+            return;
+        }
+        if(supplyChestRestricted) {
+            return;
+        }
+        if(isLockedExclude(LockType.FULL_ALLOW_LOGOUT) && player.getAppearance().getNpcId() == -1)
+            return;
+        if(logoutListener != null && logoutListener.attemptAction != null && !logoutListener.attemptAction.allow(this))
+            return;
+        logoutStage = 1;
+        packetSender.sendDiscordPresence("In Lobby");
+        packetSender.sendLogout();
+    }
+
     public void forceLogout() {
         logoutStage = -1;
         packetSender.sendDiscordPresence("In Lobby");
@@ -1602,11 +1618,13 @@ public class Player extends PlayerAttributes {
             }
         }
 
-        if(movement.hasMoved()) {
+        if (movement.hasMoved()) {
             idleTicks = 0;
             isIdle = false;
-        } else if(++idleTicks >= 1000) {
+        } else if (++idleTicks >= 1000 && !isIdle) {    // After 10 minutes, set to idle
             isIdle = true;
+        } else if (idleTicks >= 3000) {                 // After 30 minutes, log player out
+            attemptIdleLogout();
         }
         for (Item item : equipment.getItems()) {
             if (item != null && item.getDef() != null)
