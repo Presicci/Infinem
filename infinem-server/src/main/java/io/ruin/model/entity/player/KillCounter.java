@@ -130,7 +130,6 @@ public class KillCounter {
             p.cerberusKills.setName("Cerberus").messageOnKill();
             p.abyssalSireKills.setName("Abyssal Sire").messageOnKill();
             p.skotizoKills.setName("Skotizo").messageOnKill();
-            p.wintertodtKills.setName("Wintertodt").messageOnKill();
             p.oborKills.setName("Obor").messageOnKill();
             p.chambersofXericKills.setName("Chambers of Xeric").messageOnKill();
             p.derangedArchaeologistKills.setName("Deranged Archaeologist").messageOnKill();
@@ -212,7 +211,6 @@ public class KillCounter {
                 p -> p.cerberusKills,
                 p -> p.abyssalSireKills,
                 p -> p.skotizoKills,
-                p -> p.wintertodtKills,
                 p -> p.elvargKills,
 //                p -> p.oborKills,
                 p -> p.chambersofXericKills,
