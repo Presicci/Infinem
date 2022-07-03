@@ -1621,9 +1621,9 @@ public class Player extends PlayerAttributes {
         if (movement.hasMoved()) {
             idleTicks = 0;
             isIdle = false;
-        } else if (++idleTicks >= 1000 && !isIdle) {    // After 10 minutes, set to idle
+        } else if (++idleTicks >= 1000 && !isIdle) {            // After 10 minutes, set to idle
             isIdle = true;
-        } else if (idleTicks >= 3000) {                 // After 30 minutes, log player out
+        } else if (idleTicks >= 3000 && !player.isStaff()) {    // After 30 minutes, log player out
             attemptIdleLogout();
         }
         for (Item item : equipment.getItems()) {
