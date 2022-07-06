@@ -2,6 +2,7 @@ package io.ruin.model.skills.fishing;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.ItemAction;
 
@@ -34,7 +35,7 @@ public enum FishingClueBottle {
         }
         if (bottle == null)
             return;
-        double chance = (0.25 / fish.baseChance) / 160.0;
+        double chance = (0.25 / fish.baseChance) / (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_CLUE_BOTTLE_CHANCE) ? 80.0 : 160.0);
         if (Random.get() < chance) {
             player.getInventory().addOrDrop(bottle.bottleId, 1);
             player.sendMessage("You catch a bottle!");
