@@ -34,5 +34,4 @@ public class BasicPoisonCombat extends NPCCombat {
         }
         return false;
     }
-
 }
