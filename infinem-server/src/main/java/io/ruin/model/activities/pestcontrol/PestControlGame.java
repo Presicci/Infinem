@@ -5,6 +5,7 @@ import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.model.World;
 import io.ruin.model.activities.miscpvm.PassiveCombat;
+import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.HitListener;
@@ -199,6 +200,9 @@ public class PestControlGame {
 	private void end(boolean failed) {
 		players.forEach(p -> {
 			int rewardedPoints = settings.points() * 2;
+			if (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_PEST_CONTROL_POINTS)) {
+				rewardedPoints *= 2;
+			}
 			p.lock();
 			Position tile = settings.exitTile();
 			p.getMovement().teleport(tile.getX(), tile.getY());
