@@ -139,26 +139,9 @@ public class Woodcutting {
 
     protected static int nestChance(Player player) {
         int chance = 200;
-        if (player.isGroup(PlayerGroup.ZENYTE)) {
-            chance = 170;
-        } else if (player.isGroup(PlayerGroup.ONYX)) {
-            chance = 175;
-        } else if (player.isGroup(PlayerGroup.DRAGONSTONE)) {
-            chance = 180;
-        } else if (player.isGroup(PlayerGroup.DIAMOND)) {
-            chance = 185;
-        } else if (player.isGroup(PlayerGroup.RUBY)) {
-            chance = 190;
-        } else if (player.isGroup(PlayerGroup.EMERALD)) {
-            chance = 195;
-        } else if (player.isGroup(PlayerGroup.SAPPHIRE)) {
-            chance = 197;
-        }
-
         if (WoodcuttingSkillCape.wearsWoodcuttingCape(player)) {
             chance -= chance / 10;
         }
-
         return chance;
     }
 
