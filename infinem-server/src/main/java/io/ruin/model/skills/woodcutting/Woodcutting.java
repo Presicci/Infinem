@@ -138,7 +138,7 @@ public class Woodcutting {
     }
 
     protected static int nestChance(Player player) {
-        int chance = 200;
+        int chance = 256;
         if (WoodcuttingSkillCape.wearsWoodcuttingCape(player)) {
             chance -= chance / 10;
         }
