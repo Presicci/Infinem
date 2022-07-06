@@ -119,6 +119,11 @@ public class Woodcutting {
                         player.getTaskManager().doLookupByUUID(18, 1);  // Obtain a Bird Nest
                         PlayerCounter.ACQUIRED_BIRDS_NESTS.increment(player, 1);
                     }
+                    /* Rolling for a Clue nest */
+                    if (Random.rollDie(ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_CLUE_NEST_CHANCE) ? 125 : 250, 1)) {
+                        player.getInventory().addOrDrop(ClueNest.getRandomNest(), 1);
+                    }
+
                     if (Random.rollDie(treeData.petOdds - (player.getStats().get(StatType.Woodcutting).currentLevel * 25)))
                         Pet.BEAVER.unlock(player);
                     treeData.counter.increment(player, 1);
