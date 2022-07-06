@@ -3,6 +3,7 @@ package io.ruin.model.skills.mining;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
+import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -125,7 +126,7 @@ public class Mining {
                         Pet.ROCK_GOLEM.unlock(player);
 
                     /* Rolling for a Geode clue scroll */
-                    if (Random.rollDie(250, 1)) {
+                    if (Random.rollDie(ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_GEODE_CHANCE) ? 125 : 250, 1)) {
                         player.getInventory().addOrDrop(Geode.getRandomGeode(), 1);
                         PlayerCounter.MINED_GEODE.increment(player, 1);
                         player.getTaskManager().doLookupByUUID(102, 1);  // Obtain a Clue Geode While Mining
