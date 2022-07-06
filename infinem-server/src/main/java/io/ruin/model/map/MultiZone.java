@@ -99,6 +99,7 @@ public class MultiZone {
                 9023, // vorkath island
                 12889, // olm chamber
                 7322,   // Sarachnis
+                7991,   // Home
 
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, 12600, //Wilderness Ditch
