@@ -110,7 +110,7 @@ public class Woodcutting {
                         player.collectResource(new Item(treeData.log, 1));
                     }
 
-                    if (Random.rollDie(nestChance(player), 1)) {
+                    if (treeData != Tree.REDWOOD && Random.rollDie(nestChance(player), 1)) {
                         new GroundItem(BirdNest.getRandomNest(treeData), 1)
                                 .owner(player).position(RouteFinder.findWalkable(player.getPosition()))
                                 .spawn();
