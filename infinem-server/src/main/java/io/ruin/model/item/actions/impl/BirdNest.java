@@ -13,32 +13,23 @@ import io.ruin.model.skills.woodcutting.Tree;
 public enum BirdNest {
 
     /* Egg */
-    RED_EGG(5070, 5076, "search"),
-    GREEN_EGG(5071, 5078, "search"),
-    BLUE_EGG(5072, 5077, "search"),
+    RED_EGG(5070, 5076),
+    GREEN_EGG(5071, 5078),
+    BLUE_EGG(5072, 5077),
 
     /* Ring */
-    RING(5074, -1, "search"),
+    RING(5074, -1),
 
     /* Seeds */
-    SEED_ONE(5073, -1, "search"),
-    SEED_TWO(7413, -1, "search"),
-    SEED_THREE(13653, -1, "search"),
-
-    /* Clue scrolls */
-    BEGINNER_CLUE(23127, ClueType.BEGINNER.boxId, "open"),
-    EASY_CLUE(19712, ClueType.EASY.boxId, "open"),
-    MEDIUM_CLUE(19714, ClueType.MEDIUM.boxId, "open"),
-    HARD_CLUE(19716, ClueType.HARD.boxId, "open"),
-    ELITE_CLUE(19718, ClueType.ELITE.boxId, "open");
+    SEED_ONE(5073, -1),
+    SEED_TWO(7413, -1),
+    SEED_THREE(13653, -1);
 
     public final int itemID, result;
-    public final String optionName;
 
-    BirdNest(int itemID, int result, String optionName) {
+    BirdNest(int itemID, int result) {
         this.result = result;
         this.itemID = itemID;
-        this.optionName = optionName;
     }
 
     public static final LootTable ringNest = new LootTable().addTable(1,
@@ -76,7 +67,6 @@ public enum BirdNest {
             player.sendMessage("You don't have enough inventory space to do that.");
             return;
         }
-
         item.setId(5075);
         player.getInventory().add(reward);
         PlayerCounter.OPENED_BIRDS_NESTS.increment(player, 1);
@@ -91,12 +81,12 @@ public enum BirdNest {
     static {
         for (BirdNest nest : values()) {
             if (nest.result != -1) {
-                ItemAction.registerInventory(nest.itemID, nest.optionName, (player, item) -> {
+                ItemAction.registerInventory(nest.itemID, "search", (player, item) -> {
                     Item reward = new Item(nest.result, 1);
                     openNest(player, item, reward, reward.getDef().descriptiveName.toLowerCase());
                 });
             } else {
-                ItemAction.registerInventory(nest.itemID, nest.optionName, (player, item) -> {
+                ItemAction.registerInventory(nest.itemID, "search", (player, item) -> {
                     Item reward = nest == RING ? ringNest.rollItem() : seedNest.rollItem();
                     openNest(player, item, reward, reward.getDef().descriptiveName.toLowerCase());
                 });
