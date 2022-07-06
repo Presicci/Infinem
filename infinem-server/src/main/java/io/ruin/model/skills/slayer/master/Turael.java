@@ -54,7 +54,6 @@ public class Turael {
         int task_amt = Random.get(min, max);
 
         Config.SLAYER_TASK_AMOUNT.set(player, task_amt);
-        player.slayerTaskRemaining = Config.SLAYER_TASK_AMOUNT.get(player);
     }
 
     public static void handleInteraction(Player player, NPC npc, int option) {

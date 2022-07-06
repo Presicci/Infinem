@@ -52,7 +52,6 @@ public class Krystilia {
         int task_amt = Random.get(min, max);
 
         Config.SLAYER_TASK_AMOUNT.set(player, task_amt);
-        player.slayerTaskRemaining = Config.SLAYER_TASK_AMOUNT.get(player);
     }
 
     public static void handleInteraction(Player player, NPC npc, int option) {
@@ -180,7 +179,6 @@ public class Krystilia {
                                 i = 35;
 
                             Config.SLAYER_TASK_AMOUNT.set(player, i);
-                            player.slayerTaskRemaining = Config.SLAYER_TASK_AMOUNT.get(player);
 
                             player.dialogue(
                                     new NPCDialogue(KRYSTILIA, "Excellent. You're now assigned to kill " + SlayerCreature.taskName(player, task.getUid()) + " boss " + i + " times in the wilderness."),

@@ -723,7 +723,6 @@ public abstract class PlayerAttributes extends Entity {
      * Slayer
      */
     @Expose public String slayerTaskName;
-    @Expose public int slayerTaskRemaining;
     @Expose public int slayerTasksCompleted;
     @Expose public int slayerSpree = 0;
     @Expose public boolean slayerCombatCheck;

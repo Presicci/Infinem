@@ -180,7 +180,6 @@ public enum SlayerUnlock {
         Config.SLAYER_POINTS.set(player, Config.SLAYER_POINTS.get(player) - 30);
         Config.SLAYER_TASK_AMOUNT.set(player, 0);
         Config.SLAYER_TASK_1.set(player, 0);
-        player.slayerTaskRemaining = 0;
         player.sendMessage("You have successfully cancelled your task.");
     }
 
@@ -216,7 +215,6 @@ public enum SlayerUnlock {
                 i.set(player, taskId);
 
                 Config.SLAYER_TASK_AMOUNT.set(player, 0);
-                player.slayerTaskRemaining = 0;
                 Config.SLAYER_TASK_1.set(player, 0);
 
                 int pts = Config.SLAYER_POINTS.get(player) - 100;

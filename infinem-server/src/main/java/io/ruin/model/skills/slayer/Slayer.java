@@ -111,7 +111,6 @@ public class Slayer {
             player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERKILL, 1, true);
 
             Config.SLAYER_TASK_AMOUNT.decrement(player, 1);
-            player.slayerTaskRemaining = Config.SLAYER_TASK_AMOUNT.get(player);
 
             am -= 1;
 
