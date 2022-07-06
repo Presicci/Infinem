@@ -199,8 +199,6 @@ public class PestControlGame {
 	private void end(boolean failed) {
 		players.forEach(p -> {
 			int rewardedPoints = settings.points() * 2;
-			if (World.doublePest)
-			    rewardedPoints *= 2;
 			p.lock();
 			Position tile = settings.exitTile();
 			p.getMovement().teleport(tile.getX(), tile.getY());
