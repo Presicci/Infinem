@@ -1,6 +1,7 @@
 package io.ruin.model.skills.agility.courses;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.item.Item;
@@ -17,7 +18,7 @@ public class MarkOfGrace {
         double chance = levelReq / 2 / 100.0;
         if (Random.get() <= chance) {
             Position spawn = Random.get(spawns);
-            new GroundItem(new Item(11849, (Random.get(1, 4) + markOfGraceDonatorIncrease(player)))).owner(player).position(spawn).spawn(2);
+            new GroundItem(new Item(11849, (Random.get(1, 4) + markOfGraceDonatorIncrease(player)) * (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_MARKS_OF_GRACE) ? 2 : 1))).owner(player).position(spawn).spawn(2);
         }
     }
 
