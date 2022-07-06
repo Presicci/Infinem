@@ -6,6 +6,7 @@ import io.ruin.cache.ItemID;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -504,7 +505,7 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
                     case 31://vorkath
                         return player.vorkathKills.getKills();
                     case 32://wintertodt
-                        return player.wintertodtKills.getKills();
+                        return PlayerCounter.WINTERTODT_SUBDUED.get(player);
                     case 33://zalcano
                         return 0;
                        // return player.zalcanoKills.getKills();

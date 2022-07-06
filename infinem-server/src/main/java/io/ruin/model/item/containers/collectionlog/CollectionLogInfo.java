@@ -4,6 +4,7 @@ import io.ruin.cache.EnumMap;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.Struct;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
@@ -88,7 +89,7 @@ public enum CollectionLogInfo {
                 case 31://vorkath
                     return player.vorkathKills.getKills();
                 case 32://wintertodt
-                    return player.wintertodtKills.getKills();
+                    return PlayerCounter.WINTERTODT_SUBDUED.get(player);
                 case 33://zalcano
                     return 0;
                 case 34://zulrah
