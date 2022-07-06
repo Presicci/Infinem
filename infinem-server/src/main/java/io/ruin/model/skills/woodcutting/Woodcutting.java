@@ -3,11 +3,13 @@ package io.ruin.model.skills.woodcutting;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
+import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.BirdNest;
+import io.ruin.model.item.actions.impl.Geode;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.WoodcuttingSkillCape;
 import io.ruin.model.map.ground.GroundItem;
@@ -109,7 +111,6 @@ public class Woodcutting {
                         }
                         player.collectResource(new Item(treeData.log, 1));
                     }
-
                     if (treeData != Tree.REDWOOD && Random.rollDie(nestChance(player), 1)) {
                         new GroundItem(BirdNest.getRandomNest(), 1)
                                 .owner(player).position(RouteFinder.findWalkable(player.getPosition()))
@@ -142,6 +143,8 @@ public class Woodcutting {
         if (WoodcuttingSkillCape.wearsWoodcuttingCape(player)) {
             chance -= chance / 10;
         }
+        if (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_BIRD_NEST_CHANCE))
+            chance /= 2;
         return chance;
     }
 
