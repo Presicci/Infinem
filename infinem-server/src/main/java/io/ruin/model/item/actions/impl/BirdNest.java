@@ -83,15 +83,8 @@ public enum BirdNest {
         player.sendMessage("You take " + descriptiveName + " out of the bird's nest.");
     }
 
-    public static int getRandomNest(Tree tree) {
-        /* Redwood trees only give clue nests */
-        if (tree == Tree.REDWOOD) {
-            int[] clueNests = { 23127, 19712, 19714, 19716, 19718 };
-            return clueNests[Random.get(4)];
-        }
-
-        int randomNest;
-        randomNest = Random.get(BirdNest.values().length - 1);
+    public static int getRandomNest() {
+        int randomNest = Random.get(BirdNest.values().length - 1);
         return BirdNest.values()[randomNest].itemID;
     }
 

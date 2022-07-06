@@ -168,7 +168,7 @@ public class WoodcuttingGuild {
                         player.getInventory().add(Ent.getEntLog(player, axe));
                     }
                     if (Random.rollDie(Woodcutting.nestChance(player), 1)) {
-                        new GroundItem(BirdNest.getRandomNest(Tree.ENTTRUNK), 1)
+                        new GroundItem(BirdNest.getRandomNest(), 1)
                                 .owner(player).position(RouteFinder.findWalkable(player.getPosition()))
                                 .spawn();
                         player.sendFilteredMessage("A bird's nest falls out of the trunk.");

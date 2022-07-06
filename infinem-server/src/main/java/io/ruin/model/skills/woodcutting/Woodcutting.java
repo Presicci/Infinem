@@ -111,7 +111,7 @@ public class Woodcutting {
                     }
 
                     if (treeData != Tree.REDWOOD && Random.rollDie(nestChance(player), 1)) {
-                        new GroundItem(BirdNest.getRandomNest(treeData), 1)
+                        new GroundItem(BirdNest.getRandomNest(), 1)
                                 .owner(player).position(RouteFinder.findWalkable(player.getPosition()))
                                 .spawn();
                         player.sendFilteredMessage("A bird's nest falls out of the tree.");
