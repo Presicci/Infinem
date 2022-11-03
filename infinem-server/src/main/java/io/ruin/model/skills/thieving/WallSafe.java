@@ -18,11 +18,11 @@ import static io.ruin.cache.ItemID.COINS_995;
 public class WallSafe {
 
     public static final LootTable table = new LootTable().addTable(1,
-            new LootItem(COINS_995, 1800, 2200, 295),   //coins
+            new LootItem(COINS_995, 50, 200, 295),   //coins
             new LootItem(1623, 1, 100),     //sapphire 1/5
-            new LootItem(1621, 1, 50),      //emerald 1/10
-            new LootItem(1619, 1, 33),      //ruby 1/15
-            new LootItem(1617, 1, 16)      //diamond 1/30
+            new LootItem(1621, 1, 25),      //emerald 1/20
+            new LootItem(1619, 1, 15),      //ruby 1/30
+            new LootItem(1617, 1, 8)      //diamond 1/60
     );
 
     private static void attempt(Player player, GameObject wallSafe) {
