@@ -870,7 +870,7 @@ public class Config {
     /**
      * Silver jewellery
      */
-    public static final Config SILVER_QUANTITY = varpbit(2224, false);
+    public static final Config INTERFACE_QUANTITY = varpbit(2224, false);
 
     /**
      * Seed Vault
@@ -937,7 +937,6 @@ public class Config {
     public static final Config CAMP_COOKING_POT = varpbit(5803, true);
     public static final Config CAMP_SPINNING_WHEEL = varpbit(5804, true);
     public static final Config CAMP_LOOM = varpbit(5805, true);
-
 
     /**
      * Separator
