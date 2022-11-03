@@ -4,7 +4,9 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.OptionAction;
+import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.TeleportTab;
@@ -30,8 +32,8 @@ public class Study {
         TEAK_DEMON(TEAK_DEMON_LECTERN, 0, 2),
         MAHOGANY_DEMON(MAHOGANY_DEMON_LECTERN, 0, 3);
 
-        Buildable buildable;
-        int eagleSetting, demonSetting;
+        final Buildable buildable;
+        final int eagleSetting, demonSetting;
 
         Lectern(Buildable buildable, int eagleSetting, int demonSetting) {
             this.buildable = buildable;
@@ -41,11 +43,12 @@ public class Study {
 
         public void open(Player player) {
             player.startEvent(event -> {
-               //player.animate(Construction.READ_LECTERN); TODO Find proper reading animation
-               event.delay(1);
+                //player.animate(Construction.READ_LECTERN); TODO Find proper reading animation
+                event.delay(1);
                 Config.LECTERN_EAGLE.set(player, eagleSetting);
                 Config.LECTERN_DEMON.set(player, demonSetting);
-               player.openInterface(InterfaceType.MAIN, Interface.TABLET_MAKING);
+                Config.IQ.update(player);
+                player.openInterface(InterfaceType.MAIN, Interface.TABLET_MAKING);
             });
         }
     }
@@ -76,14 +79,10 @@ public class Study {
         BONES_TO_BANANAS(20, 8014, BonesBananas.LVL_REQ, BonesBananas.XP, 0, 1, BonesBananas.RUNES),
         BONES_TO_PEACHES(25, 8015, BonesPeaches.LVL_REQ, BonesPeaches.XP, 0, 3, BonesPeaches.RUNES);
 
-        int childId;
+        final int childId, tabId, magicLevel, eagleLevel, demonLevel;
+        final double xp;
+        final Item[] runes;
 
-        int tabId;
-
-        int magicLevel;
-        int eagleLevel, demonLevel;
-        double xp;
-        Item[] runes;
         Tablet(int childId, int tabId, int eagleLevel, int demonLevel, JewelleryEnchant.EnchantLevel enchant) {
             this(childId, tabId, enchant.levelReq, enchant.exp, eagleLevel, demonLevel, enchant.runes);
         }
@@ -129,7 +128,7 @@ public class Study {
                    r.remove();
                    player.getInventory().add(tabId, 1);
                    left--;
-                   event.delay(7);
+                   event.delay(5);
                }
             });
         }
@@ -138,14 +137,13 @@ public class Study {
     static {
         InterfaceHandler.register(Interface.TABLET_MAKING, h -> {
             for (Tablet tab : Tablet.values()) {
-                h.actions[tab.childId] = (OptionAction) (p, option) -> {
-                    switch (option) {
-                        case 1:
-                            p.integerInput("Enter amount:", amt -> tab.make(p, amt));
-                            break;
-                    }
-                };
+                h.actions[tab.childId] = (OptionAction) (p, option) -> tab.make(p, Config.IQ.get(p));
             }
+            h.actions[5] = (SimpleAction) (p) -> Config.IQ.set(p, 1);
+            h.actions[6] = (SimpleAction) (p) -> Config.IQ.set(p, 5);
+            h.actions[7] = (SimpleAction) (p) -> Config.IQ.set(p, 10);
+            h.actions[8] = (DefaultAction) (p, option, slot, itemId) -> p.integerInput("Enter amount:", amt -> Config.IQ.set(p, amt));
+            h.actions[9] = (SimpleAction) (p) -> Config.IQ.set(p, 28);
         });
     }
 
