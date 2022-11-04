@@ -1,0 +1,5 @@
+[
+  {"id": 2693, "x": 3220, "y": 3216, "z": 0, "type": 10, "direction": 1}, // Bank chest
+  {"id": 31675, "x": 3220, "y": 3221, "z": 0, "type": 10, "direction": 1},  // Death chest
+  {"id": 2031, "x": 3227, "y": 3252, "z": 0, "type": 10, "direction": 0}  // Anvil
+]
