@@ -241,6 +241,7 @@ public class Mining {
             player.lock();
             player.sendMessage(crystals ? "You inspect the crystals..." : "You examine the rock for ores...");
             event.delay(4);
+            player.getStats().addXp(StatType.Mining, 1, false);
             player.sendMessage(crystals ? "These crystals are made up of amethyst." : "This rock contains " + (rockData == Rock.GEM_ROCK ? "gems" : rockData.rockName) + ".");
             player.unlock();
         });
