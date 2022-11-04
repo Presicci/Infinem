@@ -1,0 +1,20 @@
+[
+  {
+    "name": "<col=00ffff>Combat dummy</col>",
+    "id": 15025,
+    "x": 3228,
+    "y": 3212,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Infinem Expert",
+    "id": 306,
+    "x": 3238,
+    "y": 3220,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  }
+]
