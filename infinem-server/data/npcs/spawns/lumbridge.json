@@ -126,15 +126,6 @@
     "walkRange": 4
   },
   {
-    "name": "Giant spider",
-    "id": 3017,
-    "x": 3241,
-    "y": 3256,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
     "name": "Duck",
     "id": 1838,
     "x": 3240,
