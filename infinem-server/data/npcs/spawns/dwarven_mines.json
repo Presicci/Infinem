@@ -507,15 +507,6 @@
     "name": "Dwarf",
     "id": 290,
     "x": 2997,
-    "y": 9844,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 6
-  },
-  {
-    "name": "Dwarf",
-    "id": 290,
-    "x": 2997,
     "y": 9828,
     "z": 0,
     "direction": "S",
@@ -586,5 +577,23 @@
     "z": 0,
     "direction": "S",
     "walkRange": 2
+  },
+  {
+    "name": "Nurmof",
+    "id": 8686,
+    "x": 2997,
+    "y": 9845,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Dwarf",
+    "id": 5904,
+    "x": 2995,
+    "y": 9827,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
