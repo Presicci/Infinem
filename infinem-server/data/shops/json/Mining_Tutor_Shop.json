@@ -1,0 +1,66 @@
+{
+  "name": "Mining Shop",
+  "currency": "COINS",
+  "npcs": [
+    3222
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1265,
+      "stock": 60,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1267,
+      "stock": 50,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1269,
+      "stock": 40,
+      "buy_price": 300,
+      "sell_price": 500
+    },
+    {
+      "itemId": 1273,
+      "stock": 30,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 1271,
+      "stock": 20,
+      "buy_price": 1920,
+      "sell_price": 3200
+    },
+    {
+      "itemId": 1275,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 0
+    },
+    {
+      "itemId": 436,
+      "stock": 0,
+      "buy_price": 5,
+      "sell_price": 10
+    },
+    {
+      "itemId": 438,
+      "stock": 0,
+      "buy_price": 5,
+      "sell_price": 10
+    },
+    {
+      "itemId": 440,
+      "stock": 0,
+      "buy_price": 15,
+      "sell_price": 30
+    }
+  ]
+}
