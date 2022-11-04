@@ -1,0 +1,66 @@
+{
+  "name": "Woodcutting Shop",
+  "currency": "COINS",
+  "npcs": [
+    3226
+  ],
+  "sellMultiplier": 3200,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1351,
+      "stock": 40,
+      "buy_price": 9,
+      "sell_price": 51
+    },
+    {
+      "itemId": 1349,
+      "stock": 30,
+      "buy_price": 33,
+      "sell_price": 179
+    },
+    {
+      "itemId": 1353,
+      "stock": 20,
+      "buy_price": 120,
+      "sell_price": 640
+    },
+    {
+      "itemId": 1355,
+      "stock": 10,
+      "buy_price": 312,
+      "sell_price": 1664
+    },
+    {
+      "itemId": 1357,
+      "stock": 10,
+      "buy_price": 768,
+      "sell_price": 4096
+    },
+    {
+      "itemId": 1359,
+      "stock": 10,
+      "buy_price": 7680,
+      "sell_price": 40960
+    },
+    {
+      "itemId": 590,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 3
+    },
+    {
+      "itemId": 1511,
+      "stock": 0,
+      "buy_price": 5,
+      "sell_price": 10
+    },
+    {
+      "itemId": 1521,
+      "stock": 0,
+      "buy_price": 10,
+      "sell_price": 20
+    }
+  ]
+}
