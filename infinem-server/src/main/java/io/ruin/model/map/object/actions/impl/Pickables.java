@@ -41,11 +41,7 @@ public class Pickables {
         }
 
         private void remove(GameObject obj) {
-            World.startEvent(event -> {
-                obj.remove();
-                event.delay(20);
-                obj.restore();
-            });
+            obj.removeFor(20);
         }
     }
 
