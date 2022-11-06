@@ -3,6 +3,7 @@ package io.ruin.model.map.object;
 import io.ruin.Server;
 import io.ruin.api.utils.AttributesHolder;
 import io.ruin.cache.ObjectDef;
+import io.ruin.model.World;
 import io.ruin.model.activities.cluescrolls.impl.CrypticClue;
 import io.ruin.model.activities.cluescrolls.impl.MapClue;
 import io.ruin.model.entity.player.Player;
@@ -91,6 +92,18 @@ public class GameObject extends AttributesHolder {
     public GameObject restore() {
         setId(originalId);
         return this;
+    }
+
+    public void removeFor(int ticks) {
+        ArrayList<Player> players = tile.region.players;
+        World.startEvent(event -> {
+            clip(true);
+            id = -1;
+            for(Player player : players)
+                send(player);
+            event.delay(ticks);
+            restore();
+        });
     }
 
     public void setId(int newId) {
