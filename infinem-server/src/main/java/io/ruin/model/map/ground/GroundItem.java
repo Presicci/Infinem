@@ -30,7 +30,7 @@ public class GroundItem {
 
     public Tile tile;
 
-    private int respawnMinutes;
+    private int respawnSeconds;
 
     private long timeDropped;
 
@@ -119,8 +119,8 @@ public class GroundItem {
         return this;
     }
 
-    public GroundItem spawnWithRespawn(int respawnMinutes) {
-        this.respawnMinutes = respawnMinutes;
+    public GroundItem spawnWithRespawn(int respawnSeconds) {
+        this.respawnSeconds = respawnSeconds;
         return spawn(0);
     }
 
@@ -216,10 +216,10 @@ public class GroundItem {
         if(distance > 0)
             player.animate(832);
         player.privateSound(2582);
-        if(respawnMinutes > 0) {
+        if(respawnSeconds > 0) {
             World.startTask(t -> {
-                t.sleep(respawnMinutes * 60000L);
-                t.sync(() -> this.spawnWithRespawn(respawnMinutes));
+                t.sleep(respawnSeconds * 1000L);
+                t.sync(() -> this.spawnWithRespawn(respawnSeconds));
             });
         }
         Loggers.logPickup(player.getUserId(), player.getName(), player.getIp(), id, amount, x, y, z);
