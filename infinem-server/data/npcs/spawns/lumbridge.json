@@ -3267,15 +3267,6 @@
     "walkRange": 5
   },
   {
-    "name": "Rat",
-    "id": 2854,
-    "x": 3196,
-    "y": 3207,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
-  },
-  {
     "name": "Farmer",
     "id": 3087,
     "x": 3193,
@@ -3285,28 +3276,10 @@
     "walkRange": 12
   },
   {
-    "name": "Giant rat",
-    "id": 2859,
-    "x": 3191,
-    "y": 3207,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 5
-  },
-  {
     "name": "Goblin",
     "id": 3033,
     "x": 3190,
     "y": 3243,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
-  },
-  {
-    "name": "Rat",
-    "id": 2854,
-    "x": 3189,
-    "y": 3206,
     "z": 0,
     "direction": "S",
     "walkRange": 8
@@ -3321,37 +3294,10 @@
     "walkRange": 5
   },
   {
-    "name": "Giant rat",
-    "id": 2861,
-    "x": 3195,
-    "y": 3202,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
     "name": "Goblin",
     "id": 3031,
     "x": 3190,
     "y": 3244,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 9
-  },
-  {
-    "name": "Giant rat",
-    "id": 2860,
-    "x": 3194,
-    "y": 3208,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 5
-  },
-  {
-    "name": "Rat",
-    "id": 2854,
-    "x": 3193,
-    "y": 3207,
     "z": 0,
     "direction": "S",
     "walkRange": 9
@@ -3364,24 +3310,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
-  },
-  {
-    "name": "Giant rat",
-    "id": 2859,
-    "x": 3196,
-    "y": 3202,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
-    "name": "Rat",
-    "id": 2854,
-    "x": 3197,
-    "y": 3205,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
   },
   {
     "name": "Goblin",
