@@ -13,7 +13,11 @@ import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.item.actions.impl.skillcapes.CookingSkillCape;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cooking {
 
@@ -134,14 +138,33 @@ public class Cooking {
         return cookingOnRange ? food.burnLevelRange : food.burnLevelFire;
     }
 
-    public static void findCookable(Player player, GameObject obj) {
+    public static void findCookable(Player player, GameObject obj, int anim, boolean fire) {
+        List<SkillItem> items = new ArrayList<>();
         for (Food food : Food.values()) {
-            if (player.getInventory().contains(food.rawID)) {
-                Cooking.cook(player, food, obj, 897, true);
-                return;
+            if (player.getInventory().contains(food.rawID) && food != Food.SINEW_BEAR_MEAT && food != Food.SINEW_MEAT) {
+                SkillItem i = new SkillItem(food.rawID).name(food.rawName).
+                        addAction((p, amount, event) -> startCooking(p, food, obj, amount, anim, fire));
+                items.add(i);
+                if (food.equals(Food.RAW_MEAT)) {
+                    SkillItem sinew = new SkillItem(Food.SINEW_MEAT.cookedID).name(Food.SINEW_MEAT.itemName).
+                            addAction((p, amount, event) -> startCooking(p, Food.SINEW_MEAT, obj, amount, anim, fire));
+                    items.add(sinew);
+                } else if (food.equals(Food.RAW_BEAR_MEAT)) {
+                    SkillItem sinew = new SkillItem(Food.SINEW_BEAR_MEAT.cookedID).name(Food.SINEW_BEAR_MEAT.itemName).
+                            addAction((p, amount, event) -> startCooking(p, Food.SINEW_BEAR_MEAT, obj, amount, anim, fire));
+                    items.add(sinew);
+                } else if (food.equals(Food.RAW_KARAMBWAN)) {
+                    SkillItem poison = new SkillItem(Food.RAW_KARAMBWAN_P.cookedID).name(Food.RAW_KARAMBWAN_P.itemName).
+                            addAction((p, amount, event) -> startCooking(p, Food.RAW_KARAMBWAN_P, obj, amount, anim, fire));
+                    items.add(poison);
+                }
             }
         }
-        player.sendMessage("You do not have anything to cook.");
+        if (items.size() > 0) {
+            SkillDialogue.cook(player, items.toArray(new SkillItem[0]));
+        } else {
+            player.sendMessage("You do not have anything to cook.");
+        }
     }
 
     static {
@@ -158,5 +181,8 @@ public class Cooking {
             ItemObjectAction.register(food.rawID, "cooking pot", (player, item, obj) -> Cooking.cook(player, food, obj, 897, true));
             ItemObjectAction.register(food.rawID, 5249, (player, item, obj) -> Cooking.cook(player, food, obj, 897, true));
         }
+        // Left click registration
+        ObjectAction.register("cooking range", "cook", (player, obj) -> findCookable(player, obj, 896, false));
+        ObjectAction.register("range", "cook", (player, obj) -> findCookable(player, obj, 896, false));
     }
 }

@@ -35,7 +35,7 @@ public class MuseumCamp {
                 case LOOM:  // TODO implement loom first
                     break;
                 case COOKING_POT:
-                    Cooking.findCookable(player, obj);
+                    Cooking.findCookable(player, obj, 897, true);
                     break;
                 case CLEANING_TABLE:    // TODO implement cleaning table
                     break;
