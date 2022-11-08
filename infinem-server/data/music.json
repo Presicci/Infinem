@@ -1227,7 +1227,10 @@
     "name": "Down to Earth",
     "hint": "unlocked at the Earth Altar.",
     "musicId": 143,
-    "duration": 416
+    "duration": 416,
+    "regionIds": [
+      10571
+    ]
   },
   {
     "name": "Scape Cave",
