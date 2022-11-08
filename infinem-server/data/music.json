@@ -1253,7 +1253,10 @@
     "name": "Zealot",
     "hint": "unlocked at the Water altar.",
     "musicId": 146,
-    "duration": 440
+    "duration": 440,
+    "regionIds": [
+      10827
+    ]
   },
   {
     "name": "Emotion",
