@@ -30,6 +30,7 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
+import io.ruin.model.inter.handlers.MusicPlayer;
 import io.ruin.model.inter.handlers.TeleportInterface;
 import io.ruin.model.inter.journal.presets.PresetCustom;
 import io.ruin.model.inter.utils.Config;
@@ -523,6 +524,13 @@ public class Player extends PlayerAttributes {
             packetSender.sendClientScript(299, "ii", 1, 1);
         }
     }
+
+    /**
+     * Music
+     */
+
+    @Getter
+    private MusicPlayer music = new MusicPlayer(this);
 
     /**
      * Dialogue
@@ -1232,6 +1240,8 @@ public class Player extends PlayerAttributes {
             taskManager = new TaskManager(this);
         taskManager.setPlayer(this);
 
+        music = new MusicPlayer(this);
+
         checkMulti();
         Tile.occupy(this);
     }
@@ -1551,14 +1561,17 @@ public class Player extends PlayerAttributes {
         TargetRoute.afterMovement(this);
 
         Region region;
-        if(movement.hasMoved() && lastRegion != (region = getPosition().getRegion()))
+        if(movement.hasMoved() && lastRegion != (region = getPosition().getRegion())) {
             lastRegion = region;
+            getMusic().unlock(region.id);
+        }
         validateMapListeners();
 
         combat.attack();
 
         prayer.process();
         stats.process();
+        music.processMusicPlayer();
 
         tick();
     }
