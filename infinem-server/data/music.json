@@ -1113,7 +1113,10 @@
     "name": "We are the Fairies",
     "hint": "unlocked at the Cosmic entity's plane.",
     "musicId": 126,
-    "duration": 477
+    "duration": 477,
+    "regionIds": [
+      8267
+    ],
   },
   {
     "name": "Nightfall",
