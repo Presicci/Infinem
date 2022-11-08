@@ -1187,7 +1187,10 @@
     "name": "La Mort",
     "hint": "unlocked at the Death altar.",
     "musicId": 134,
-    "duration": 460
+    "duration": 460,
+    "regionIds": [
+      8779
+    ],
   },
   {
     "name": "Emperor",
