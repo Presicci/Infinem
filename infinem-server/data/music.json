@@ -1163,7 +1163,10 @@
     "name": "Understanding",
     "hint": "unlocked at the Nature altar.",
     "musicId": 131,
-    "duration": 404
+    "duration": 404,
+    "regionIds": [
+      9547
+    ]
   },
   {
     "name": "Breeze",
