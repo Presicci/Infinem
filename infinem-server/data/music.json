@@ -1221,7 +1221,10 @@
     "name": "Complication",
     "hint": "unlocked at the Chaos altar.",
     "musicId": 142,
-    "duration": 291
+    "duration": 291,
+    "regionIds": [
+      9035
+    ]
   },
   {
     "name": "Down to Earth",
