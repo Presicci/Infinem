@@ -1344,7 +1344,10 @@
     "name": "Quest",
     "hint": "unlocked at the Fire altar.",
     "musicId": 158,
-    "duration": 293
+    "duration": 293,
+    "regionIds": [
+      10315
+    ]
   },
   {
     "name": "Gaol",
