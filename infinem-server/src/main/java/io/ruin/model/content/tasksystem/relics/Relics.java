@@ -1,4 +1,4 @@
-package io.ruin.model.content.tasksystem;
+package io.ruin.model.content.tasksystem.relics;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
