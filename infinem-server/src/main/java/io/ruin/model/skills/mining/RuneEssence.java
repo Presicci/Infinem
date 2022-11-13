@@ -105,24 +105,8 @@ public class RuneEssence {
         return 5;
     }
 
-    private static int getEffectiveMiningLevel(Player player) {
-        return player.getStats().get(StatType.Mining).currentLevel;
-    }
-
-    private static void exitPortal(Player player) {
-        player.startEvent(event -> {
-            player.lock(LockType.FULL_NULLIFY_DAMAGE);
-            player.graphics(110, 124, 30);
-            player.sendMessage("You step through the portal.");
-            event.delay(2);
-            player.getMovement().teleport(3253, 3401); //lol why these coords
-            player.unlock();
-        });
-    }
-
     static {
         ObjectAction.register(34773, "mine", (p, obj) -> mine(p, false));
-        ObjectAction.register(34825, "use", (p, obj) -> exitPortal(p));
         ObjectAction.register(8981, 1, (p, obj) -> mine(p, true));
         ObjectAction.register(10796, 1, (p, obj) -> mine(p, true));
     }
