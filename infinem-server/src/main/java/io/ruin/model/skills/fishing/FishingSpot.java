@@ -3,6 +3,7 @@ package io.ruin.model.skills.fishing;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -119,7 +120,10 @@ public class FishingSpot {
             return;
         }
 
-        if (player.getInventory().isFull()) {
+        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
+            player.sendMessage("Your inventory and bank are too full to hold any fish.");
+            return;
+        } else if (player.getInventory().isFull()) {
             player.sendMessage("Your inventory is too full to hold any fish.");
             return;
         }
@@ -175,13 +179,18 @@ public class FishingSpot {
                             if (Random.rollPercent(20))
                                 amount++;
                         }
-
-                        player.getInventory().add(c.id, amount);
-                        player.getTaskManager().doSkillItemLookup(c.id);
+                        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(c.id)) {
+                            amount *= 2;
+                            player.getBank().add(c.id, amount);
+                            player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(c.id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(c.id) + ".");
+                            player.getStats().addXp(StatType.Fishing, (c.xp * anglerBonus(player)) * (npc.getId() == MINNOWS ? 1 : 2), true);
+                        } else {
+                            player.getInventory().add(c.id, amount);
+                            player.getStats().addXp(StatType.Fishing, c.xp * anglerBonus(player), true);
+                        }
+                        player.getTaskManager().doSkillItemLookup(c.id, amount);
                         if (npc.getId() != MINNOWS)
-                            PlayerCounter.TOTAL_FISH.increment(player, 1);
-
-                        player.getStats().addXp(StatType.Fishing, c.xp * anglerBonus(player), true);
+                            PlayerCounter.TOTAL_FISH.increment(player, amount);
 
                         FishingClueBottle.roll(player, c, barehand);
 
@@ -208,7 +217,11 @@ public class FishingSpot {
                     if (Random.rollDie(c.petOdds - (player.getStats().get(StatType.Fishing).currentLevel * 25)))
                         Pet.HERON.unlock(player);
 
-                    if (player.getInventory().isFull()) {
+                    if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
+                        player.sendMessage("Your inventory and bank are too full to hold any fish.");
+                        player.resetAnimation();
+                        return;
+                    } else if (player.getInventory().isFull()) {
                         player.sendMessage("Your inventory is too full to hold any more fish.");
                         player.resetAnimation();
                         return;
