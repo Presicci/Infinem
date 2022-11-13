@@ -66,7 +66,7 @@ public class Mining {
                 if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
                     player.resetAnimation();
                     player.privateSound(2277);
-                    player.sendMessage("Your inventory is too full to hold any more " + rockData.rockName + ".");
+                    player.sendMessage("Your inventory and bank are too full to hold any more " + rockData.rockName + ".");
                 } else if (player.getInventory().isFull()) {
                     player.resetAnimation();
                     player.privateSound(2277);
@@ -150,7 +150,7 @@ public class Mining {
                     if (minedMineral(player, rockData))
                         player.getInventory().addOrDrop(21341, 1);
 
-                    counter.increment(player, 1);
+                    counter.increment(player, amount);
                     if (rockData == Rock.GEM_ROCK) {
                         player.getStats().addXp(StatType.Mining, rockData.experience * xpBonus(player, false), true);
                     } else if (gem != null) {   // No xp is earned and the ore is not depleted, just go next
@@ -160,7 +160,7 @@ public class Mining {
                         player.getTaskManager().doLookupByUUID(24, 1);  // Obtain a Gem While Mining
                         continue;
                     } else {
-                        player.getStats().addXp(StatType.Mining, rockyOutcrop ? rockData.multiExp[random] : rockData.experience * xpBonus(player, multiple), true);
+                        player.getStats().addXp(StatType.Mining, (rockyOutcrop ? rockData.multiExp[random] : rockData.experience * xpBonus(player, multiple)) * amount, true);
                     }
                     if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
                         player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
