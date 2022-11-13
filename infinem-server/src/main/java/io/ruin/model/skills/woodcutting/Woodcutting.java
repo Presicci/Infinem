@@ -2,8 +2,10 @@ package io.ruin.model.skills.woodcutting;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.content.ActivitySpotlight;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.player.PlayerGroup;
@@ -56,8 +58,12 @@ public class Woodcutting {
             return;
         }
 
-        if (player.getInventory().isFull()) {
-            player.sendMessage("Your inventory is too full to hold any logs.");
+        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
+            player.sendMessage("Your inventory and bank are too full to hold any more logs.");
+            player.privateSound(2277);
+            return;
+        } else if (player.getInventory().isFull()) {
+            player.sendMessage("Your inventory is too full to hold any more logs.");
             player.privateSound(2277);
             return;
         }
@@ -75,7 +81,11 @@ public class Woodcutting {
                     player.sendMessage("difficulty=" + treeData.difficulty + ", chance=" + NumberUtils.formatTwoPlaces(chance) + ", xp/tick=" + NumberUtils.formatNumber((long) xpPerTick) + "");
                     player.sendMessage("logsPerHour=" + NumberUtils.formatTwoPlaces(logsPerHour) + ", xpPerHour=" + NumberUtils.formatNumber((long) xpPerHour));
                 }
-                if (player.getInventory().isFull()) {
+                if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
+                    player.sendMessage("Your inventory and bank are too full to hold any more logs.");
+                    player.privateSound(2277);
+                    return;
+                } else if (player.getInventory().isFull()) {
                     player.sendMessage("Your inventory is too full to hold any more logs.");
                     player.resetAnimation();
                     return;
@@ -91,6 +101,7 @@ public class Woodcutting {
                     event.delay(1);
                 }
                 if (attempts % 4 == 0 && successfullyCutTree(effectiveLevel, treeData, hatchet)) {
+                    int amount = 1;
                     if (hatchet == Hatchet.INFERNAL && (Random.rollDie(3, 1))) {
                         Burning burning = Burning.get(treeData.log);
                         if (burning != null) {
@@ -101,9 +112,16 @@ public class Woodcutting {
                         }
                     } else {
                         if (treeData != Tree.CRYSTAL) {
-                            player.sendFilteredMessage("You get some " + treeData.treeName + ".");
-                            player.getInventory().add(treeData.log, 1);
-                            player.getTaskManager().doLookupByUUID(16, 1);  // Chop Some Logs
+                            if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(treeData.log)) {
+                                amount += 1;
+                                player.getBank().add(treeData.log, amount);
+                                player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(treeData.log) + ".");
+                            } else {
+                                player.sendFilteredMessage("You get some " + treeData.treeName + ".");
+                                player.getInventory().add(treeData.log, amount);
+                            }
+
+                            player.getTaskManager().doLookupByUUID(16, amount);  // Chop Some Logs
                             if (hatchet == Hatchet.STEEL)
                                 player.getTaskManager().doLookupByUUID(17, 1);  // Chop Some Logs With a Steel Axe
                             if (hatchet == Hatchet.RUNE)
@@ -126,9 +144,9 @@ public class Woodcutting {
 
                     if (Random.rollDie(treeData.petOdds - (player.getStats().get(StatType.Woodcutting).currentLevel * 25)))
                         Pet.BEAVER.unlock(player);
-                    treeData.counter.increment(player, 1);
+                    treeData.counter.increment(player, amount);
                     double xp = treeData.experience;
-                    player.getStats().addXp(StatType.Woodcutting, xp, true);
+                    player.getStats().addXp(StatType.Woodcutting, xp * amount, true);
                     if (treeData.single || Random.get(10) == 3) {
                         player.resetAnimation();
                         World.startEvent(treeDeadAction);
