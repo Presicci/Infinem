@@ -74,25 +74,16 @@ public class RuneEssence {
                     boolean pure = stat.currentLevel >= 30;
                     PlayerCounter counter = pure ? PlayerCounter.MINED_PURE_ESSENCE : PlayerCounter.MINED_RUNE_ESSENCE;
                     int itemId = pure ? 7936 : 1436;
-                    double average = getEssenceAverage(player, pickaxe);
-                    if (average < 1 && Random.get() > average)
-                        continue;
-                    int essenceCount = 1;
-                    if (average > 1) {
-                        double fixed = Math.floor(average);
-                        essenceCount = (int) fixed;
-                        double chance = average - fixed;
-                        if (Random.get() < chance)
-                            essenceCount += 1;
-                    }
+                    int amount = 1;
                     if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(itemId)) {
-                        player.getBank().add(itemId, essenceCount);
+                        amount += 1;
+                        player.getBank().add(itemId, amount);
                         player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(itemId).name + " you would have gained, giving you a total of " + player.getBank().getAmount(itemId) + ".");
                     } else {
-                        player.getInventory().add(itemId, essenceCount);
+                        player.getInventory().add(itemId, amount);
                     }
-                    counter.increment(player, essenceCount);
-                    player.getStats().addXp(StatType.Mining, 5 * essenceCount, true);
+                    counter.increment(player, amount);
+                    player.getStats().addXp(StatType.Mining, 5 * amount, true);
                 }
             }
         });
@@ -112,13 +103,6 @@ public class RuneEssence {
         if (power > 15)
             return 4;
         return 5;
-    }
-
-    private static double getEssenceAverage(Player player, Pickaxe pickaxe) {
-        double chance = 0.6;
-        chance *= 1 + (getEffectiveMiningLevel(player) * 0.03);
-        chance *= 1 + (pickaxe.points * pickaxe.points / 2000.0);
-        return chance;
     }
 
     private static int getEffectiveMiningLevel(Player player) {
