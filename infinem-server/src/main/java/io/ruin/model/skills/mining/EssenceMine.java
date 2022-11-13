@@ -1,4 +1,4 @@
-package io.ruin.model.skills.runecrafting;
+package io.ruin.model.skills.mining;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.entity.attributes.AttributeKey;
