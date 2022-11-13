@@ -2,6 +2,7 @@ package io.ruin.model.activities.wintertodt;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -254,11 +255,14 @@ public class WintertodtActions {
             while (!player.getInventory().isFull() && Wintertodt.isActive()) {
                 player.animate(hatchet.animationId);
                 event.delay(3);
+                int amount = 1;
+                if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST))
+                    amount *= 2;
                 if (Random.rollDie(100, 20 + hatchet.points)) {
-                    player.collectResource(Wintertodt.BRUMA_ROOT, 1);
-                    player.getInventory().add(Wintertodt.BRUMA_ROOT, 1);
+                    player.collectResource(Wintertodt.BRUMA_ROOT, amount);
+                    player.getInventory().add(Wintertodt.BRUMA_ROOT, amount);
                     player.sendMessage("You get a bruma root.");
-                    player.getStats().addXp(StatType.Woodcutting, player.getStats().get(StatType.Woodcutting).fixedLevel * 0.3, true);
+                    player.getStats().addXp(StatType.Woodcutting, (player.getStats().get(StatType.Woodcutting).fixedLevel * 0.3) * amount, true);
                 }
             }
         });
