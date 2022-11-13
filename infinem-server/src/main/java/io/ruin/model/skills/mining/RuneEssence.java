@@ -1,6 +1,8 @@
 package io.ruin.model.skills.mining;
 
 import io.ruin.api.utils.Random;
+import io.ruin.cache.ItemDef;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -20,7 +22,11 @@ public class RuneEssence {
             return;
         }
 
-        if (player.getInventory().isFull()) {
+        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
+            player.privateSound(2277);
+            player.sendMessage("Your inventory and bank are too full to hold any more rune stones.");
+            return;
+        } else if (player.getInventory().isFull()) {
             player.privateSound(2277);
             player.sendMessage("Your inventory is too full to hold any more rune stones.");
             return;
@@ -36,7 +42,12 @@ public class RuneEssence {
             player.sendMessage("You swing your pick at the rock.");
 
             while (true) {
-                if (player.getInventory().isFull()) {
+                if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull() && !darkEssence) {
+                    player.privateSound(2277);
+                    player.sendMessage("Your inventory and bank are too full to hold any more rune stones.");
+                    player.resetAnimation();
+                    return;
+                } else if (player.getInventory().isFull()) {
                     player.privateSound(2277);
                     player.sendMessage("Your inventory is too full to hold any more rune stones.");
                     player.resetAnimation();
@@ -74,9 +85,14 @@ public class RuneEssence {
                         if (Random.get() < chance)
                             essenceCount += 1;
                     }
-                    player.getInventory().add(itemId, essenceCount);
+                    if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(itemId)) {
+                        player.getBank().add(itemId, essenceCount);
+                        player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(itemId).name + " you would have gained, giving you a total of " + player.getBank().getAmount(itemId) + ".");
+                    } else {
+                        player.getInventory().add(itemId, essenceCount);
+                    }
                     counter.increment(player, essenceCount);
-                    player.getStats().addXp(StatType.Mining, 1.5 * essenceCount, true);
+                    player.getStats().addXp(StatType.Mining, 5 * essenceCount, true);
                 }
             }
         });
