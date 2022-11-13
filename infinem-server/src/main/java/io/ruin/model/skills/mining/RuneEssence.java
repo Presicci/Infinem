@@ -76,7 +76,7 @@ public class RuneEssence {
                     int itemId = pure ? 7936 : 1436;
                     int amount = 1;
                     if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(itemId)) {
-                        amount += 1;
+                        amount *= 2;
                         player.getBank().add(itemId, amount);
                         player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(itemId).name + " you would have gained, giving you a total of " + player.getBank().getAmount(itemId) + ".");
                     } else {

@@ -113,7 +113,7 @@ public class Woodcutting {
                     } else {
                         if (treeData != Tree.CRYSTAL) {
                             if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(treeData.log)) {
-                                amount += 1;
+                                amount *= 2;
                                 player.getBank().add(treeData.log, amount);
                                 player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(treeData.log) + ".");
                             } else {

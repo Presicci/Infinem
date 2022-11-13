@@ -122,7 +122,7 @@ public class Mining {
                         if (MiningSkillCape.wearsMiningCape(player)
                                 && rockData.ordinal() <= Rock.ADAMANT.ordinal()
                                 && Random.rollPercent(5)) {
-                            amount += 1;
+                            amount *= 2;
                             player.sendFilteredMessage("You manage to mine an additional ore.");
                             multiple = true;
                         }
