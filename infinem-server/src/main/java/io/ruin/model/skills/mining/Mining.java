@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.content.ActivitySpotlight;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -62,8 +63,11 @@ public class Mining {
                     player.resetAnimation();
                     return;
                 }
-
-                if (player.getInventory().isFull()) {
+                if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
+                    player.resetAnimation();
+                    player.privateSound(2277);
+                    player.sendMessage("Your inventory is too full to hold any more " + rockData.rockName + ".");
+                } else if (player.getInventory().isFull()) {
                     player.resetAnimation();
                     player.privateSound(2277);
                     player.sendMessage("Your inventory is too full to hold any more " + rockData.rockName + ".");
@@ -98,6 +102,7 @@ public class Mining {
                     player.animate(miningAnimation);
                     attempts++;
                 } else if (attempts % 2 == 0 && Random.get(100) <= chance(getEffectiveLevel(player), rockData, pickaxe)) {
+                    int amount = 1;
                     if (pickaxe == Pickaxe.INFERNAL && Random.rollDie(3, 1)) {//TODO: change back to bar smelting when charge consuming is added
                         player.graphics(580, 155, 0);
                         addBar(player, rockData.ore);
@@ -106,19 +111,28 @@ public class Mining {
                         gem = GEM_TABLE.rollItem();
 
                         player.collectResource(gem);
-                        player.getInventory().add(gem);
+                        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(gem)) {
+                            player.getBank().add(gem.getId(), gem.getAmount() * 2);
+                            player.sendFilteredMessage("Your Relic banks the " + gem.getDef().name + " you would have gained, giving you a total of " + player.getBank().getAmount(gem.getId()) + ".");
+                        } else {
+                            player.getInventory().add(gem);
+                        }
                     } else {
                         int id = rockyOutcrop || gemRock ? itemId : rockData.ore;
-
-                        player.collectResource(new Item(id, 1));
-                        player.getInventory().add(id, 1);
-
                         if (MiningSkillCape.wearsMiningCape(player)
                                 && rockData.ordinal() <= Rock.ADAMANT.ordinal()
                                 && Random.rollPercent(5)) {
-                            player.getInventory().add(id, 1);
+                            amount += 1;
                             player.sendFilteredMessage("You manage to mine an additional ore.");
                             multiple = true;
+                        }
+
+                        player.collectResource(new Item(id, amount));
+                        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(id)) {
+                            player.getBank().add(id, amount*2);
+                            player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
+                        } else {
+                            player.getInventory().add(id, amount);
                         }
                     }
 
@@ -140,15 +154,19 @@ public class Mining {
                     if (rockData == Rock.GEM_ROCK) {
                         player.getStats().addXp(StatType.Mining, rockData.experience * xpBonus(player, false), true);
                     } else if (gem != null) {   // No xp is earned and the ore is not depleted, just go next
-                        player.sendFilteredMessage("You find an " + gem.getDef().name + ".");
+                        if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
+                            player.sendFilteredMessage("You find an " + gem.getDef().name + ".");
+                        }
                         player.getTaskManager().doLookupByUUID(24, 1);  // Obtain a Gem While Mining
                         continue;
                     } else {
                         player.getStats().addXp(StatType.Mining, rockyOutcrop ? rockData.multiExp[random] : rockData.experience * xpBonus(player, multiple), true);
                     }
-                    player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
-                            (rockData == Rock.GEM_ROCK ? ItemDef.get(itemId).name.toLowerCase() : rockData.rockName) + ".");
-                    player.getTaskManager().doSkillItemLookup(itemId);
+                    if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
+                        player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
+                                (rockData == Rock.GEM_ROCK ? ItemDef.get(itemId).name.toLowerCase() : rockData.rockName) + ".");
+                    }
+                    player.getTaskManager().doSkillItemLookup(itemId, amount);
                     if (pickaxe == Pickaxe.STEEL)
                         player.getTaskManager().doLookupByUUID(23, 1);  // Mine some Ore With a Steel Pickaxe
                     if (pickaxe == Pickaxe.RUNE)
