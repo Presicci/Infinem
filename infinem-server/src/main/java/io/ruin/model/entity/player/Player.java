@@ -17,6 +17,7 @@ import io.ruin.model.activities.duelarena.DuelArena;
 import io.ruin.model.activities.pyramidplunder.PyramidPlunder;
 import io.ruin.model.activities.wilderness.BountyHunter;
 import io.ruin.model.content.UpgradeMachine;
+import io.ruin.model.content.tasksystem.relics.RelicManager;
 import io.ruin.model.content.tasksystem.tasks.TaskManager;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
@@ -1240,6 +1241,10 @@ public class Player extends PlayerAttributes {
             taskManager = new TaskManager(this);
         taskManager.setPlayer(this);
 
+        if (relicManager == null)
+            relicManager = new RelicManager(this);
+        relicManager.setPlayer(this);
+
         music = new MusicPlayer(this);
 
         checkMulti();
@@ -1783,4 +1788,7 @@ public class Player extends PlayerAttributes {
 
     @Expose @Getter
     private TaskManager taskManager;
+
+    @Expose @Getter
+    private RelicManager relicManager;
 }
