@@ -1,6 +1,7 @@
 package io.ruin.model.skills.herblore;
 
 import io.ruin.cache.ItemDef;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -59,10 +60,21 @@ public enum Herb {
             ItemAction.registerInventory(herb.grimyId, "clean", (player, item) -> {
                 if (!player.getStats().check(StatType.Herblore, herb.lvlReq, item.getId(), "clean this"))
                     return;
-                item.setId(herb.cleanId);
-                player.getStats().addXp(StatType.Herblore, herb.xp, true);
-                player.sendFilteredMessage("You clean the " + herbName + ".");
-                player.getTaskManager().doSkillItemLookup(herb.cleanId);
+                if (player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    int herbId = item.getId();
+                    for (Item invItem : player.getInventory().getItems()) { // Clean all herbs
+                        if (invItem != null && invItem.getId() == herbId) {
+                            invItem.setId(herb.cleanId);
+                            player.getStats().addXp(StatType.Herblore, herb.xp, true);
+                            player.getTaskManager().doSkillItemLookup(herb.cleanId);
+                        }
+                    }
+                } else {
+                    item.setId(herb.cleanId);
+                    player.getStats().addXp(StatType.Herblore, herb.xp, true);
+                    player.sendFilteredMessage("You clean the " + herbName + ".");
+                    player.getTaskManager().doSkillItemLookup(herb.cleanId);
+                }
             });
             SkillItem skillItem = new SkillItem(herb.unfId).addAction((player, amount, event) -> {
                 while (amount-- > 0) {
