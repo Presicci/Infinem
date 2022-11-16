@@ -1,6 +1,7 @@
 package io.ruin.model.skills.smithing;
 
 import io.ruin.cache.ItemID;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
@@ -92,7 +93,9 @@ public class SmeltBar {
                     xp *= 2.5;
                 player.getStats().addXp(StatType.Smithing, xp, true);
                 player.getTaskManager().doSkillItemLookup(bar.itemId);
-                event.delay(2);
+                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    event.delay(2);
+                }
             }
         });
     }
@@ -121,7 +124,6 @@ public class SmeltBar {
                             player.sendMessage("You don't have any steel bars.");
                             return;
                         }
-                        int balls_per_bar = 12;
                         player.animate(899);
                         player.sendMessage("You heat the steel bar into a liquid state.");
                         e.delay(1);
@@ -130,9 +132,20 @@ public class SmeltBar {
                         player.animate(827);
                         player.sendMessage("The molten metal cools slowly to form 4 cannonballs.");
                         e.delay(2);
-                        player.getInventory().remove(ItemID.STEEL_BAR, 1);
-                        player.getInventory().add(ItemID.CANNONBALL, balls_per_bar);
-                        player.getStats().addXp(StatType.Smithing, 6.4 * balls_per_bar, true);
+                        if (player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                            ++amt;
+                            int bars = player.getInventory().getAmount(ItemID.STEEL_BAR);
+                            if (bars < amt)
+                                amt = bars;
+                            player.getInventory().remove(ItemID.STEEL_BAR, amt);
+                            player.getInventory().add(ItemID.CANNONBALL, 4 * amt);
+                            player.getStats().addXp(StatType.Smithing, (6.4 * 4) * amt, true);
+                            amt = 0;
+                        } else {
+                            player.getInventory().remove(ItemID.STEEL_BAR, 1);
+                            player.getInventory().add(ItemID.CANNONBALL, 4);
+                            player.getStats().addXp(StatType.Smithing, 6.4 * 4, true);
+                        }
                         player.sendMessage("You remove the cannonballs from the mould.");
                     }
                 });
