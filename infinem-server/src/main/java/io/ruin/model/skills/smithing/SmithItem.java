@@ -1,5 +1,6 @@
 package io.ruin.model.skills.smithing;
 
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
@@ -52,7 +53,9 @@ public class SmithItem {
                 player.getTaskManager().doSkillItemLookup(makeId, makeAmount);
                 if (++made >= amount)
                     return;
-                e.delay(2);
+                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    e.delay(2);
+                }
             }
         });
     }
