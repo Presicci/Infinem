@@ -189,6 +189,8 @@ public class Config {
             varp(906, true),
             varp(1009, true),
             varp(1338, true),
+            varp(1681, true),
+            varp(2065, true),
     };
 
     public static final Config MUSIC_PREFERENCE = varp(18, true);
@@ -871,6 +873,7 @@ public class Config {
      * Silver jewellery
      */
     public static final Config INTERFACE_QUANTITY = varpbit(2224, false);
+    public static final Config IQ = varp(2224, true).defaultValue(28);
 
     /**
      * Seed Vault
