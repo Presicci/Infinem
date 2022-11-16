@@ -180,9 +180,16 @@ public class WintertodtActions {
             while (player.getInventory().contains(Wintertodt.BRUMA_ROOT, 1)) {
                 player.animate(1248);
                 event.delay(3);
-                player.getInventory().remove(Wintertodt.BRUMA_ROOT, 1);
-                player.getInventory().add(Wintertodt.BRUMA_KINDLING, 1);
-                player.getStats().addXp(StatType.Fletching, player.getStats().get(StatType.Fletching).fixedLevel * 0.6, true);
+                if (player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    int amt = player.getInventory().getAmount(Wintertodt.BRUMA_ROOT);
+                    player.getInventory().remove(Wintertodt.BRUMA_ROOT, amt);
+                    player.getInventory().add(Wintertodt.BRUMA_KINDLING, amt);
+                    player.getStats().addXp(StatType.Fletching, (player.getStats().get(StatType.Fletching).fixedLevel * 0.6) * amt, true);
+                } else {
+                    player.getInventory().remove(Wintertodt.BRUMA_ROOT, 1);
+                    player.getInventory().add(Wintertodt.BRUMA_KINDLING, 1);
+                    player.getStats().addXp(StatType.Fletching, player.getStats().get(StatType.Fletching).fixedLevel * 0.6, true);
+                }
             }
         });
     }
