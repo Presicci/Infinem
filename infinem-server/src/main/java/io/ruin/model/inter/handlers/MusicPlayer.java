@@ -54,7 +54,6 @@ public class MusicPlayer {
                 for (int region : regionIds) {
                     if (region <= Region.LOADED.length - 1) {
                         Region.get(region).getMusicTracks().add(music);
-                        //MapListener.registerRegions(region).onEnter((player) -> player.getMusic().unlock(region));
                     }
                 }
             }
