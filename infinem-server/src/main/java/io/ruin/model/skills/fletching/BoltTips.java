@@ -1,5 +1,6 @@
 package io.ruin.model.skills.fletching;
 
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -39,7 +40,9 @@ public enum BoltTips {
         player.getInventory().add(boltTips, amount);
         player.getStats().addXp(StatType.Fletching, exp * amount, true);
         player.animate(anim);
-        player.sendFilteredMessage("You use your chisel to fletch small bolt tips.");
+        if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+            player.sendFilteredMessage("You use your chisel to fletch small bolt tips.");
+        }
     }
 
     static {
@@ -55,7 +58,9 @@ public enum BoltTips {
                         break;
                     }
                     boltTips.make(player, gem);
-                    event.delay(4);
+                    if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                        event.delay(4);
+                    }
                 }
             });
             ItemItemAction.register(boltTips.gem, Tool.CHISEL, (player, gem, chisel) -> {
