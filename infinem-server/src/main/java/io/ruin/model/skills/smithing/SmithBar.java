@@ -8,13 +8,12 @@ import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
+import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.dialogue.MessageDialogue;
-import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.inter.utils.Config;
-import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -354,6 +353,7 @@ public enum SmithBar {
     private static void open(Player player, SmithBar bar) {
         player.smithBar = bar;
         Config.SMITHING_TYPE.set(player, bar.smithValue);
+        Config.IQ.update(player);
         player.openInterface(InterfaceType.MAIN, Interface.SMITHING);
     }
 
@@ -398,28 +398,9 @@ public enum SmithBar {
         SmithItem item = player.smithBar.smithItems[itemIndex];
         if (item == null)
             return;
-        item.make(player, Math.max(1, player.getInventory().getAmount(player.smithBar.itemId) / item.barReq));
-        /*if(option == 1) {
-            item.make(player, 1);
-            return;
-        }
-        if(option == 2) {
-            item.make(player, 5);
-            return;
-        }
-        if(option == 3) {
-            item.make(player, 10);
-            return;
-        }
-        if(option == 4) {
-            player.integerInput("Enter amount:", amt -> item.make(player, amt));
-            return;
-        }
-        if(option == 5) {
-            item.make(player, Math.max(1, player.getInventory().getAmount(player.smithBar.itemId) / item.barReq));
-            return;
-        }*/
-        //Item.examine(player, item.makeId);
+        int amount = Config.IQ.get(player);
+        int maxAmount = player.getInventory().getAmount(player.smithBar.itemId) / item.barReq;
+        item.make(player, Math.min(amount, maxAmount));
     }
 
     /**
@@ -439,6 +420,11 @@ public enum SmithBar {
                 int itemIndex = i - 9;
                 h.actions[i] = (DefaultAction) (p, option, slot, itemId) -> make(p, itemIndex, option);
             }
+            h.actions[3] = (SimpleAction) (p) -> Config.IQ.set(p, 1);
+            h.actions[4] = (SimpleAction) (p) -> Config.IQ.set(p, 5);
+            h.actions[5] = (SimpleAction) (p) -> Config.IQ.set(p, 10);
+            h.actions[6] = (DefaultAction) (p, option, slot, itemId) -> p.integerInput("Enter amount:", amt -> Config.IQ.set(p, amt));
+            h.actions[7] = (SimpleAction) (p) -> Config.IQ.set(p, 28);
         });
     }
 
