@@ -1,11 +1,15 @@
 package io.ruin.utility;
 
 import com.google.api.client.util.Strings;
+import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.item.Item;
+import lombok.NonNull;
+import lombok.val;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -131,5 +135,22 @@ public final class Utils {
             ++count;
         }
         return list.toString();
+    }
+
+    @NonNull
+    public static <E> E getRandomCollectionElement(final Collection<E> e) {
+        val size = e.size();
+        if (size == 0) {
+            throw new RuntimeException("Collection cannot be empty.");
+        }
+        val random = Random.get(e.size() - 1);
+        int i = 0;
+        for (final E value : e) {
+            if (i == random) {
+                return value;
+            }
+            i++;
+        }
+        throw new RuntimeException("Concurrent modification performed on the collection.");
     }
 }
