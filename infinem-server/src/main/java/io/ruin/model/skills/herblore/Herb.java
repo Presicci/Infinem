@@ -93,7 +93,9 @@ public enum Herb {
                     if (vialItem == null)
                         return;
                     herb.mix(player, herbItem, vialItem);
-                    event.delay(2);
+                    if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                        event.delay(2);
+                    }
                 }
             });
             ItemItemAction.register(herb.cleanId, VIAL_OF_WATER, (player, herbItem, vialItem) -> {
