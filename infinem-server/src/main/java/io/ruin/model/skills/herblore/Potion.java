@@ -1,6 +1,7 @@
 package io.ruin.model.skills.herblore;
 
 import io.ruin.cache.ItemDef;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -244,7 +245,9 @@ public enum Potion {
                 if (secondaryItems == null)
                     return;
                 potion.mix(player, primaryItem, secondaryItems);
-                event.delay(2);
+                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    event.delay(2);
+                }
             }
         });
         for (int secondaryId : secondaryIds) {
