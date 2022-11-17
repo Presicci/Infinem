@@ -287,14 +287,28 @@ public enum Potion {
                         player.sendMessage("You need at least " + reqAmt + " " + secondaryPluralName + " to upgrade " + doses + " doses of that potion.");
                     return;
                 }
-                secondary.remove(reqAmt);
-                primary.setId(potion.vialIds[doses - 1]);
-                player.animate(363);
-                player.getStats().addXp(StatType.Herblore, secondaryAmtPerDose == 0 ? potion.xp + (xpPerDose * doses) : xpPerDose * doses, true);
-                if (reqAmt == 1)
-                    player.sendFilteredMessage("You mix 1 " + secondaryName + " into your potion.");
-                else
-                    player.sendFilteredMessage("You mix " + reqAmt + " " + secondaryPluralName + " into your potion.");
+                double experience = secondaryAmtPerDose == 0 ? potion.xp + (xpPerDose * doses) : xpPerDose * doses;
+                if (player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    int amtPrimary = player.getInventory().getAmount(primaryId);
+                    int amtSecondary = player.getInventory().getAmount(secondaryId);
+                    int amt = amtPrimary;
+                    if (amtSecondary < amtPrimary * reqAmt)
+                        amt = (int) Math.floor((double) amtSecondary / (double) reqAmt);
+                    secondary.remove(reqAmt * amt);
+                    player.getInventory().remove(primaryId, amt);
+                    player.getInventory().add(potion.vialIds[doses - 1], amt);
+                    player.animate(363);
+                    player.getStats().addXp(StatType.Herblore, experience * amt, true);
+                } else {
+                    secondary.remove(reqAmt);
+                    primary.setId(potion.vialIds[doses - 1]);
+                    player.animate(363);
+                    player.getStats().addXp(StatType.Herblore, experience, true);
+                    if (reqAmt == 1)
+                        player.sendFilteredMessage("You mix 1 " + secondaryName + " into your potion.");
+                    else
+                        player.sendFilteredMessage("You mix " + reqAmt + " " + secondaryPluralName + " into your potion.");
+                }
             });
         }
     }
