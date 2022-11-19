@@ -1,5 +1,6 @@
 package io.ruin.model.skills.crafting;
 
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -71,7 +72,9 @@ public enum SilverCasting {
                     silverBar.remove();
                     player.getInventory().add(silverCasting.result, silverCasting.amount);
                     player.getStats().addXp(StatType.Crafting, silverCasting.exp, true);
-                    event.delay(1);
+                    if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                        event.delay(1);
+                    }
                 }
             });
         } else {
@@ -90,7 +93,9 @@ public enum SilverCasting {
                     silverBar.remove();
                     player.getInventory().add(silverCasting.result, 1);
                     player.getStats().addXp(StatType.Crafting, silverCasting.exp, true);
-                    event.delay(1);
+                    if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                        event.delay(1);
+                    }
                 }
             });
         }
