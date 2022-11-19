@@ -1,6 +1,7 @@
 package io.ruin.model.skills.crafting;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -125,10 +126,12 @@ public enum Armour {
                 player.getInventory().remove(armourType.leatherType.leather, armourType.required);
                 player.getInventory().add(armourType.cutID, 1);
                 player.animate(1249);
-                player.sendFilteredMessage("You make " + armourType.leatherName + ".");
                 player.getStats().addXp(StatType.Crafting, armourType.exp, true);
                 player.getTaskManager().doSkillItemLookup(armourType.cutID);
-                event.delay(2);
+                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    player.sendFilteredMessage("You make " + armourType.leatherName + ".");
+                    event.delay(2);
+                }
             }
         });
     }
