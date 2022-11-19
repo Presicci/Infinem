@@ -1,6 +1,7 @@
 package io.ruin.model.skills.crafting;
 
 import io.ruin.cache.ItemDef;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -65,10 +66,13 @@ public enum Pottery {
 
                 softClay.setId(pottery.unfired);
                 player.getStats().addXp(StatType.Crafting, pottery.unfiredExp, true);
-                player.sendMessage("You make the clay into a " + pottery.name);
                 player.animate(883);
                 player.privateSound(2588);
-                event.delay(5);
+                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    player.sendMessage("You make the clay into a " + pottery.name);
+                    event.delay(5);
+                }
+
             }
         });
     }
