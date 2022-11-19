@@ -1,5 +1,6 @@
 package io.ruin.model.skills.crafting;
 
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -44,7 +45,9 @@ public enum Battlestaff {
                         return;
                     if (player.getInventory().hasMultiple(staff.getId(), orb.getId())) {
                         battlestaff.make(player, staff, orb);
-                        event.delay(3);
+                        if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                            event.delay(3);
+                        }
                         continue;
                     }
                     battlestaff.make(player, staff, orb);
