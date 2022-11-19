@@ -2,6 +2,7 @@ package io.ruin.model.skills.cooking;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -88,8 +89,9 @@ public class Cooking {
 
                 if (fire)
                     PlayerCounter.COOKED_ON_FIRE.increment(player, 1);
-
-                e.delay(4);
+                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    e.delay(4);
+                }
             }
         });
     }
