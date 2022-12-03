@@ -88,6 +88,7 @@ public class SmeltBar {
                 }
                 bar.counter.increment(player, 1);
                 player.getInventory().add(bar.itemId, 1);
+                RingOfForging.onSmelt(player, bar);
                 double xp = bar.smeltXp;
                 if (bar == SmithBar.GOLD && (player.getEquipment().hasId(776) || SmithingSkillCape.wearingSmithingCape(player))) // goldsmith gauntlets
                     xp *= 2.5;

@@ -11,40 +11,45 @@ import io.ruin.model.item.containers.Equipment;
 public class RingOfForging {
 
     private static final int MAX_CHARGES = 60;
-    private static final double ACTIVATE_CHANCE = 0.2;
     private static final int RING_ID = 2568;
-
-    private static int getChargeCost(SmithBar bar) {
+    private static float getChance(SmithBar bar) {
         switch (bar) {
+            case BRONZE:
+                return .5f;
+            case IRON:
+                return .25f;
+            case STEEL:
+                return .2f;
             case MITHRIL:
-                return 2;
+                return .15f;
             case ADAMANT:
-                return 4;
+                return .1f;
             case RUNITE:
-                return 10;
+                return .05f;
             default:
-                return 1;
+                return 0f;
         }
     }
 
-    private static void spendCharge(Player player, SmithBar bar, Item item) {
-        AttributeExtensions.deincrementCharges(item, getChargeCost(bar));
+    private static void spendCharge(Player player, Item item) {
+        AttributeExtensions.incrementCharges(item, 1);
         if (AttributeExtensions.getCharges(item) >= MAX_CHARGES) {
             item.remove();
             player.sendMessage("<col=ff0000>Your ring of forging has shattered!");
         }
     }
 
-    public static boolean onSmith(Player player, SmithBar barType, SmithItem item) {
-        if (item.barReq == 1)
-            return false;
+    public static boolean onSmelt(Player player, SmithBar bar) {
         if (!player.getEquipment().hasId(RING_ID))
             return false;
-        if (Random.get() > ACTIVATE_CHANCE)
+        double random = Random.get();
+        System.out.println(random);
+        if (random > getChance(bar))
             return false;
-        spendCharge(player, barType, player.getEquipment().get(Equipment.SLOT_RING));
-        player.getInventory().add(barType.itemId, 1);
-        player.sendFilteredMessage(Color.GREEN.wrap("Your ring of forging saves a bar!"));
+        System.out.println("Success");
+        player.getBank().add(bar.itemId, 1);
+        player.sendFilteredMessage(Color.DARK_GREEN.wrap("Your ring of forging makes an extra bar! It has been sent to your bank."));
+        spendCharge(player, player.getEquipment().get(Equipment.SLOT_RING));
         return true;
     }
 
@@ -56,5 +61,4 @@ public class RingOfForging {
     static {
         ItemAction.registerEquipment(RING_ID, 2, RingOfForging::check);
     }
-
 }
