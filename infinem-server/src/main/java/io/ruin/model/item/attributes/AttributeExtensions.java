@@ -24,6 +24,12 @@ import static io.ruin.model.item.attributes.AttributeTypes.CHARGES;
  */
 public final class AttributeExtensions {
 
+    public static final int incrementCharges(Item item, int amount) {
+        int charges = getCharges(item);
+        setCharges(item, charges + amount);
+        return getCharges(item);
+    }
+
     public static final int deincrementCharges(Item item, int amount) {
         int charges = getCharges(item);
         setCharges(item, charges - amount);
