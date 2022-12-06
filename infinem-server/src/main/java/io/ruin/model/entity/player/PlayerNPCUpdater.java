@@ -78,7 +78,7 @@ public class PlayerNPCUpdater {
      */
 
     private boolean writeLocalUpdate(OutBuffer out, NPC npc) {
-        if(npc == null || npc.isHidden() || npc.getMovement().hasTeleportUpdate() || !npc.getPosition().isWithinDistance(player.getPosition(), getMaxDistance())) {
+        if(npc == null || npc.isHidden() || !npc.canPlayerSee(player) || npc.getMovement().hasTeleportUpdate() || !npc.getPosition().isWithinDistance(player.getPosition(), getMaxDistance())) {
             /**
              * Remove
              */
@@ -138,7 +138,7 @@ public class PlayerNPCUpdater {
      */
 
     private boolean writeGlobalUpdate(OutBuffer out, NPC npc) {
-        if(npc.isHidden() || !npc.getPosition().isWithinDistance(player.getPosition(), maxDistance) || localNpcs.contains(npc))
+        if(npc.isHidden() || !npc.canPlayerSee(player) || !npc.getPosition().isWithinDistance(player.getPosition(), maxDistance) || localNpcs.contains(npc))
             return false;
         int maskData = npc.getUpdateMaskData(false, true);
         int diffX = npc.getPosition().getX() - player.getPosition().getX();

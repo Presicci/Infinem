@@ -65,6 +65,21 @@ public class NPC extends NPCAttributes {
     public Bounds spawnBounds;
 
     /**
+     * Player specific visibility
+     */
+    private boolean playerSpecific;
+
+    public void setPlayerSpecific(Player player) {
+        this.playerSpecific = true;
+        this.ownerId = player.getUserId();
+        Tile.occupy(this);
+    }
+
+    public boolean canPlayerSee(Player player) {
+        return !playerSpecific || this.ownerId == player.getUserId();
+    }
+
+    /**
      * Local
      */
 
