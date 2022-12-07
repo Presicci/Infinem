@@ -546,10 +546,12 @@ public enum SlayerCreature {
      * @return The task name.
      */
     public static String taskName(Player player, int uid) {
+        String result = "";
         if (Config.BOSS_TASK.get(player) != 0) {
-            return EnumMap.get(1174).strings().get(Config.BOSS_TASK.get(player));
+            result = EnumMap.get(1174).strings().get(Config.BOSS_TASK.get(player));
         }
-        return EnumMap.get(693).strings().get(uid);
+        result = EnumMap.get(693).strings().get(uid);
+        return result == null ? "null" : result;
     }
 
     public static boolean isSlayerCreature(NPC npc) {
