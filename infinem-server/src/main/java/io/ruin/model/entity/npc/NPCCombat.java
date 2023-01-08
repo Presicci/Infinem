@@ -25,6 +25,7 @@ import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
+import io.ruin.model.item.loot.RareDropTable;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Graphic;
 import io.ruin.model.map.Position;
@@ -603,6 +604,11 @@ public abstract class NPCCombat extends Combat {
         }
 
         /*
+         * RDT roll
+         */
+        rollRareDropTable(killer, pKiller, dropPosition);
+
+        /*
          * Handle the chaos elemental minor drops
          */
         handleChaosEleDrops(killer, pKiller, dropPosition);
@@ -667,6 +673,11 @@ public abstract class NPCCombat extends Combat {
 
     }
 
+    private void rollRareDropTable(Killer killer, Player player, Position pos) {
+        Optional<Item> item = RareDropTable.rollRareDropTable(npc, player);
+        item.ifPresent(value -> handleDrop(killer, pos, player, value));
+    }
+
     private void vorkathHead(Position dropPosition, Player pKiller) {
         if (pKiller.vorkathKills.getKills() >= 50 && !pKiller.obtained50KCVorkathHead) {
             Item item = new Item(VORKATHS_HEAD);
@@ -697,6 +708,12 @@ public abstract class NPCCombat extends Combat {
     private void handleTableDrop(Killer killer, Position dropPosition, Player pKiller, LootTable.CommonTables table) {
         LootTable t = new LootTable().addTable(0, table.items);
         handleDrop(killer, dropPosition, pKiller, t.rollItems(false));
+    }
+
+    private void handleDrop(Killer killer, Position dropPosition, Player pKiller, Item item) {
+        List<Item> items = new ArrayList<>();
+        items.add(item);
+        handleDrop(killer, dropPosition, pKiller, items);
     }
 
     private void handleDrop(Killer killer, Position dropPosition, Player pKiller, List<Item> items) {
