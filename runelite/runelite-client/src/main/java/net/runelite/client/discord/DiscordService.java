@@ -158,8 +158,8 @@ public class DiscordService implements AutoCloseable
 		discordRichPresence.partySize = discordPresence.getPartySize();
 		discordRichPresence.partyMax = discordPresence.getPartyMax();
 		discordRichPresence.matchSecret = discordPresence.getMatchSecret();
-		discordRichPresence.joinSecret = discordPresence.getJoinSecret();
-		discordRichPresence.spectateSecret = discordPresence.getSpectateSecret();
+		//discordRichPresence.joinSecret = discordPresence.getJoinSecret();		Removes the ask to join button and ability to send invites
+		//discordRichPresence.spectateSecret = discordPresence.getSpectateSecret();
 		discordRichPresence.instance = (byte) (discordPresence.isInstance() ? 1 : 0);
 
 		log.debug("Sending presence update {}", discordPresence);
