@@ -996,4 +996,28 @@ public class Buffer extends Node implements RSBuffer {
    private static void rl$$clinit() {
       exponent = new BigInteger("10001", 16);
    }
+
+   public int method7383() {
+      int var1 = 0; // L: 302
+
+      int var2;
+      for (var2 = this.readUShortSmart(); var2 == 32767; var2 = this.readUShortSmart()) { // L: 303 304 306
+         var1 += 32767; // L: 305
+      }
+
+      var1 += var2; // L: 308
+      return var1; // L: 309
+   }
+   public int readUShortSmart() {
+      int var1 = this.array[this.offset] & 255; // L: 296
+      return var1 < 128 ? this.readUnsignedByte() : this.readUnsignedShort() - 32768; // L: 297 298
+   }
+   public void writeShort(int var1) {
+      this.array[++this.offset - 1] = (byte)(var1 >> 8); // L: 75
+      this.array[++this.offset - 1] = (byte)var1; // L: 76
+   }
+   public int readShortSmart() {
+      int var1 = this.array[this.offset] & 255; // L: 290
+      return var1 < 128 ? this.readUnsignedByte() - 64 : this.readUnsignedShort() - 49152; // L: 291 292
+   }
 }
