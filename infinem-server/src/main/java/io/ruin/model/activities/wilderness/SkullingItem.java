@@ -19,10 +19,10 @@ public enum SkullingItem {
     private final int itemId;
 
     public static boolean canSkullDeplete(Player player) {
-        if (Arrays.stream(SkullingItem.values()).anyMatch(skullingItem -> player.getEquipment().contains(skullingItem.itemId))) {
-            return false;
-        }
-        return true;
+        //if (Arrays.stream(SkullingItem.values()).anyMatch(skullingItem -> player.getEquipment().contains(skullingItem.itemId))) {
+        //    return false;
+        //}
+        return !player.getEquipment().contains(AMULET_OF_AVARICE.itemId);
     }
 
     static {
