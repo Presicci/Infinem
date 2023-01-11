@@ -200,6 +200,7 @@ public enum ArielFishing {
     private static ArielFishing rollForFish(Player player) {
         int fishingLvl = player.getStats().get(StatType.Fishing).currentLevel;
         int hunterLvl = player.getStats().get(StatType.Hunter).currentLevel;
+        rollForGoldenTench(player);
         if (Random.rollDie(3, 1) && fishingLvl >= GREATER_SIRE.fishLevel && hunterLvl >= GREATER_SIRE.hunterLevel) {
             return GREATER_SIRE;
         } else if (Random.rollDie(3, 1) && fishingLvl >= MOTTLED_EEL.fishLevel && hunterLvl >= MOTTLED_EEL.hunterLevel) {
@@ -211,9 +212,9 @@ public enum ArielFishing {
     }
 
     private static void rollForGoldenTench(Player player) {
-        if (Random.rollDie(5000, 1)) {
+        if (Random.rollDie(10000, 1)) {  // OSRS is 1/20,000
             player.getInventory().add(GOLDEN_TENCH, 1);
-            player.sendMessage(Color.COOL_BLUE.wrap("Your cormorant finds a golden tench!"));
+            player.sendMessage(Color.RED.wrap("The cormorant has brought you a very strange tench."));
         }
     }
 
