@@ -146,8 +146,8 @@
   {
     "name": "Giant spider",
     "id": 3017,
-    "x": 3245,
-    "y": 3246,
+    "x": 3244,
+    "y": 3243,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -227,8 +227,8 @@
   {
     "name": "Goblin",
     "id": 3032,
-    "x": 3245,
-    "y": 3246,
+    "x": 3244,
+    "y": 3245,
     "z": 0,
     "direction": "S",
     "walkRange": 2
@@ -308,8 +308,8 @@
   {
     "name": "Goblin",
     "id": 3031,
-    "x": 3247,
-    "y": 3243,
+    "x": 3245,
+    "y": 3242,
     "z": 0,
     "direction": "S",
     "walkRange": 8
@@ -2081,7 +2081,7 @@
   {
     "name": "Goblin",
     "id": 3035,
-    "x": 3153,
+    "x": 3151,
     "y": 3300,
     "z": 0,
     "direction": "S",
