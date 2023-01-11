@@ -2,6 +2,7 @@ package io.ruin.model.entity.npc.actions.edgeville;
 
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
+import io.ruin.model.activities.wilderness.SkullingItem;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
@@ -115,7 +116,10 @@ public class EmblemTrader {
                 new Option("<img=93> High-Risk <img=93>", () -> player.dialogue(new OptionsDialogue("This skull will prevent you from using the Protect Item prayer.",
                         new Option("Give me the high risk skull!", () -> player.getCombat().skullHighRisk()),
                         new Option("No, I want to use the Protect Item prayer.")))),
-                new Option("No Skull", () -> player.getCombat().resetSkull())
+                new Option("No Skull", () -> {
+                    if (SkullingItem.canSkullDeplete(player))
+                        player.getCombat().resetSkull();
+                })
         ));
     }
 
