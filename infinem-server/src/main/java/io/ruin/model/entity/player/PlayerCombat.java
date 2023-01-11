@@ -11,6 +11,7 @@ import io.ruin.model.activities.miscpvm.MaxHitDummy;
 import io.ruin.model.activities.pvp.leaderboard.Leaderboard;
 import io.ruin.model.activities.raids.xeric.ChambersOfXeric;
 import io.ruin.model.activities.wilderness.BloodyChest;
+import io.ruin.model.activities.wilderness.SkullingItem;
 import io.ruin.model.combat.*;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.combat.special.magic.StaffOfTheDead;
@@ -1527,6 +1528,8 @@ public class PlayerCombat extends Combat {
     }
 
     public void tickSkull() {
+        if (!SkullingItem.canSkullDeplete(player))
+            return;
         if(!highRiskSkull && skullDelay > 0 && --skullDelay == 0)
             player.getAppearance().setSkullIcon(-1);
     }
