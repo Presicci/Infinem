@@ -119,6 +119,8 @@ public class RareDropTable {
 
     private static int getLuckTier(Player player) {
         Item ring = player.getEquipment().get(Equipment.SLOT_RING);
+        if (ring == null)
+            return 0;
         switch (ring.getId()) {
             case Items.RING_OF_WEALTH_I5:
             case Items.RING_OF_WEALTH_I4:
