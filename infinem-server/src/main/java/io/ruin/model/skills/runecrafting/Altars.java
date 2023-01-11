@@ -30,7 +30,6 @@ public enum Altars {
     //earth = 139, 140
     //fire = 130, 131
     AIR(1, 5.0, 1438, 5527, 556, 34760, 34813, new Position(2841, 4830, 0), 34748, new Position(2983, 3293, 0), Essence.REGULAR, 11, 1795758, Pet.RIFT_GUARDIAN_AIR, PlayerCounter.CRAFTED_AIR, 133, 134),
-    // MIND ALTAR IS FUCKING BROKEN
     MIND(2, 5.5, 1448, 5529, 558, 34761, 34814, new Position(2792, 4827, 0), 34749, new Position(2984, 3512, 0), Essence.REGULAR, 14, 1795758, Pet.RIFT_GUARDIAN_MIND, PlayerCounter.CRAFTED_MIND, 133, 134),
     WATER(5, 6.0, 1444, 5531, 555, 34762, 34815, new Position(2726, 4832, 0), 34750, new Position(3183, 3167, 0), Essence.REGULAR, 19, 1795758, Pet.RIFT_GUARDIAN_WATER, PlayerCounter.CRAFTED_WATER, 136, 137),
     EARTH(9, 6.5, 1440, 5535, 557, 34763, 34816, new Position(2655, 4830, 0), 34751, new Position(3305, 3472, 0), Essence.REGULAR, 29, 1795758, Pet.RIFT_GUARDIAN_EARTH, PlayerCounter.CRAFTED_EARTH, 139, 140),
@@ -44,7 +43,7 @@ public enum Altars {
     ASTRAL(40, 8.7, -1, -1, 9075, 34771, 0, new Position(2156, 3863, 0), 14895, new Position(2156, 3863, 0), Essence.PURE, 82, 1795758, Pet.RIFT_GUARDIAN_ASTRAL, PlayerCounter.CRAFTED_ASTRAL, -1, -1),
     BLOOD(77, 23.8, -1, -1, 565, 27978, 0, new Position(1727, 3825, 0), 0, new Position(1727, 3825, 0), Essence.DARK, -1, 804984, Pet.RIFT_GUARDIAN_BLOOD, PlayerCounter.CRAFTED_BLOOD, -1, -1),
     SOUL(90, 29.7, -1, -1, 566, 27980, 0, new Position(1820, 3862, 0), 0, new Position(1820, 3862, 0), Essence.DARK, -1, 782999, Pet.RIFT_GUARDIAN_SOUL, PlayerCounter.CRAFTED_SOUL, -1, -1),
-    WRATH(95, 52.5, 22118, 22121, 21880, 34772, 34824, new Position(2335, 4827, 0), 34759, new Position(2447, 2823, 0), Essence.PURE, 99, 1795758, Pet.RIFT_GUARDIAN_WRATH, PlayerCounter.CRAFTED_WRATH, -1, -1);
+    WRATH(95, 52.5, 22118, 22121, 21880, 34772, 34824, new Position(2335, 4827, 0), 34759, new Position(2447, 2823, 0), Essence.PURE, 200, 1795758, Pet.RIFT_GUARDIAN_WRATH, PlayerCounter.CRAFTED_WRATH, -1, -1);
 
     public final int levelRequirement, talisman, tiara, runeID, altarObj, entranceObj, exitObj, multiplier, petOdds, imbueProjectile, imbueExplosion;
     public final double experience;
