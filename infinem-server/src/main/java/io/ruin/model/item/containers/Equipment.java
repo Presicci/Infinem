@@ -66,6 +66,11 @@ public class Equipment extends ItemContainer {
             return;
         }
 
+        if(get(SLOT_WEAPON) != null && get(SLOT_WEAPON).getId() == 22817 && (equipSlot == SLOT_HANDS || equipSlot == SLOT_WEAPON || equipSlot == SLOT_SHIELD)) {
+            player.sendMessage("You must return the cormorant to Alry before equipping this.");
+            return;
+        }
+
         if(selectedDef.achievement != null && !selectedDef.achievement.isFinished(player) && (!selectedDef.achievementReqIsIronmanOnly || player.getGameMode().isIronMan())) {
             player.sendMessage("You must complete the " + Color.RED.wrap(selectedDef.achievement.getListener().name()) + " achievement to equip this item.");
             return;
@@ -161,6 +166,10 @@ public class Equipment extends ItemContainer {
     public boolean unequip(Item equipped) {
         Inventory inventory = player.getInventory();
         Item inventoryStack = null;
+        if(equipped.getId() == 22817) {
+            player.sendMessage("You must return the cormorant to Alry.");
+            return false;
+        }
         if(equipped.getDef().stackable)
             inventoryStack = inventory.findItem(equipped.getId());
         if(inventoryStack != null) {
