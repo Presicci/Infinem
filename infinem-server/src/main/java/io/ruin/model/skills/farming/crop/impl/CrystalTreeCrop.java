@@ -53,17 +53,7 @@ public enum CrystalTreeCrop implements TreeCrop {
 
     @Override
     public double getDiseaseChance(int compostType) {
-        switch (compostType) {
-            case 3:
-                return 1.0 / 128.0;
-            case 2:
-                return 2.0 / 128.0;
-            case 1:
-                return 4.0 / 128.0;
-            case 0:
-            default:
-                return 8.0 / 128.0;
-        }
+        return 0;
     }
 
     @Override
