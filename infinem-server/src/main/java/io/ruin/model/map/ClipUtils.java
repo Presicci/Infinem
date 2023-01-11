@@ -589,6 +589,10 @@ public class ClipUtils {
         clearClipping(2123, 4833, 0, 16, 0);    // West side
         clearClipping(2142, 4837, 0, 0, 15);    // North side
         clearClipping(2142, 4814, 0, 0, 16);    // South side
+        // Body altar
+        clearClipping(2523, 4836, 0, 0, 2);    // South side
+        clearClipping(2521, 4836, 0, 0, 2);    // Southwest side
+        clearClipping(2522, 4838, 0, 0, 0);
     }
 
     public static void clearClipping(int x, int y, int z, int lengthX, int lengthY) {
