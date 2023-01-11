@@ -204,14 +204,7 @@ public class Server extends ServerWrapper {
             Special.load();
             Incoming.load();
 
-            // When packaged, priority messes up and these load too late.
-            StrongholdSecurity.register();
-            Trapdoor.register();
-
             PackageLoader.load("io.ruin"); //ensures all static blocks load
-
-            // When packaged, priority messes up and these load too late.
-            StrongholdSecurity.register();
 
             ClipUtils.fixClipping();
 
