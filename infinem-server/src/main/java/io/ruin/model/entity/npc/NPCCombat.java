@@ -23,13 +23,11 @@ import io.ruin.model.item.actions.impl.WildernessKey;
 import io.ruin.model.item.actions.impl.jewellery.BraceletOfEthereum;
 import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
 import io.ruin.model.item.attributes.AttributeExtensions;
+import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.loot.RareDropTable;
-import io.ruin.model.map.Bounds;
-import io.ruin.model.map.Graphic;
-import io.ruin.model.map.Position;
-import io.ruin.model.map.Projectile;
+import io.ruin.model.map.*;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.actions.impl.dungeons.KourendCatacombs;
 import io.ruin.model.map.route.routes.DumbRoute;
@@ -737,6 +735,15 @@ public abstract class NPCCombat extends Combat {
                     continue;
                 }
             }
+
+            /*
+             * Note drops in rev caves and wildy slayer cave while amulet of avarice is equipped.
+             */
+            if ((MapArea.REVENANT_CAVES.inArea(pKiller) || MapArea.WILDERNESS_SLAYER_CAVE.inArea(pKiller))
+                    && pKiller.getEquipment().contains(22557) && item.getDef().notedId > 0) {
+                item.setId(item.getDef().notedId);
+            }
+
             /*
              * Coin auto collect
              */
