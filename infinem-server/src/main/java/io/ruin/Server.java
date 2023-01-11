@@ -17,6 +17,7 @@ import io.ruin.model.World;
 import io.ruin.model.achievements.Achievement;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.map.ClipUtils;
 import io.ruin.model.map.object.actions.impl.Trapdoor;
 import io.ruin.model.map.object.actions.impl.dungeons.StrongholdSecurity;
 import io.ruin.model.map.object.actions.impl.edgeville.Giveaway;
@@ -212,6 +213,7 @@ public class Server extends ServerWrapper {
             // When packaged, priority messes up and these load too late.
             StrongholdSecurity.register();
 
+            ClipUtils.fixClipping();
 
             YamlLoader.initYamlFiles();
             Trapdoor.register();

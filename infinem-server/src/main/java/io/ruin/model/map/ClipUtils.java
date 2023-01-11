@@ -578,4 +578,26 @@ public class ClipUtils {
         return true;
     }
 
+    /**
+     * Jankily and forcibly fixes clipping on select tiles that shouldn't have them.
+     * Not ideal but it works.
+     * Update as needed
+     */
+    public static void fixClipping() {
+        // Cosmic altar
+        clearClipping(2146, 4833, 0, 15, 0);    // East side
+        clearClipping(2123, 4833, 0, 16, 0);    // West side
+        clearClipping(2142, 4837, 0, 0, 15);    // North side
+        clearClipping(2142, 4814, 0, 0, 16);    // South side
+    }
+
+    public static void clearClipping(int x, int y, int z, int lengthX, int lengthY) {
+        for (int width = 0; width < lengthX + 1; width++) {
+            for (int height = 0; height < lengthY + 1; height++) {
+                Tile tile = Tile.get(x + width, y + height, z, true);
+                tile.clipping = 0;
+            }
+        }
+    }
+
 }
