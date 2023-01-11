@@ -119,7 +119,6 @@ public class PlayerCombat extends Combat {
 
     public void preAttack() {
         depleteTb();
-        depleteSkull();
         depleteCharge();
         checkLastTarget();
         checkGraniteMaul();
@@ -1527,7 +1526,7 @@ public class PlayerCombat extends Combat {
         player.sendMessage(Color.ORANGE_RED.wrap("Warning:") + " The Protect Item prayer is disabled when marked with a high-risk skull.");
     }
 
-    private void depleteSkull() {
+    public void tickSkull() {
         if(!highRiskSkull && skullDelay > 0 && --skullDelay == 0)
             player.getAppearance().setSkullIcon(-1);
     }

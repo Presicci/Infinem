@@ -1648,6 +1648,7 @@ public class Player extends PlayerAttributes {
             if (item != null && item.getDef() != null)
                 item.getDef().onTick(this, item);
         }
+        combat.tickSkull();
 
         if(player.wildernessLevel <= 0 && !player.pvpAttackZone && player.snowballPeltOption &&
                 !player.getEquipment().hasId(Christmas.SNOWBALL) && !player.getPosition().inBounds(DuelArena.BOUNDS)
