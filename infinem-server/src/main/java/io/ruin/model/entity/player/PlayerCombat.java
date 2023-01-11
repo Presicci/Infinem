@@ -1509,11 +1509,15 @@ public class PlayerCombat extends Combat {
             pTarget.getCombat().skullers = new HashSet<>(5);
         pTarget.getCombat().skullers.add(player.getUserId());
         if(!highRiskSkull)
-            skullNormal();
+            skullNormal(3000); // 30 minute skull
     }
 
-    public void skullNormal() {
-        skullDelay = 1000;
+    /**
+     * Gives the player a skull for the provided amount of time in ticks.
+     * @param ticks Duration of skull. 100/minute so 1000 for 10 minutes
+     */
+    public void skullNormal(int ticks) {
+        skullDelay = ticks;
         highRiskSkull = false;
         player.getAppearance().setSkullIcon(KillingSpree.overheadId(player));
     }

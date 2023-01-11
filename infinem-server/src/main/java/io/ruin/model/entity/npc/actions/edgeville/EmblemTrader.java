@@ -112,7 +112,7 @@ public class EmblemTrader {
 
     public static void skull(Player player) {
         player.dialogue(new OptionsDialogue(
-                new Option("<img=46> Regular <img=46>", () -> player.getCombat().skullNormal()),
+                new Option("<img=46> Regular <img=46>", () -> player.getCombat().skullNormal(3000)),
                 new Option("<img=93> High-Risk <img=93>", () -> player.dialogue(new OptionsDialogue("This skull will prevent you from using the Protect Item prayer.",
                         new Option("Give me the high risk skull!", () -> player.getCombat().skullHighRisk()),
                         new Option("No, I want to use the Protect Item prayer.")))),

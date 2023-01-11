@@ -42,7 +42,7 @@ public class SkotizoPVPEvent extends NPCCombat {
     public void updateLastDefend(Entity attacker) {
         super.updateLastDefend(attacker);
         if(attacker.player != null && !attacker.player.getCombat().isSkulled()) {
-            attacker.player.getCombat().skullNormal();
+            attacker.player.getCombat().skullNormal(3000);
             attacker.player.sendMessage("<col=6f0000>You've been marked with a skull for attacking Skotizo!");
         }
     }

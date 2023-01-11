@@ -27,7 +27,7 @@ public enum SkullingItem {
 
     static {
         for (SkullingItem item : SkullingItem.values()) {
-            EquipAction.register(item.itemId, (player -> player.getCombat().skullNormal()));
+            EquipAction.register(item.itemId, (player -> player.getCombat().skullNormal(2000)));    // Skull for 20 mins
         }
     }
 }
