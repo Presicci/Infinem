@@ -207,12 +207,9 @@ public class Server extends ServerWrapper {
             PackageLoader.load("io.ruin"); //ensures all static blocks load
 
             ClipUtils.fixClipping();
-
             YamlLoader.initYamlFiles();
-            Trapdoor.register();
 
             backups.start();
-
         } catch (Throwable t) {
             logError("Error loading handlers", t);
             //return;
