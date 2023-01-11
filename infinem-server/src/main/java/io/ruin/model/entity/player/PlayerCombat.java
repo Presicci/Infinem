@@ -872,6 +872,27 @@ public class PlayerCombat extends Combat {
     }
 
     /**
+     * The Amulet of Avarice boosts the player's accuracy and damage by 20% when fighting revenants.
+     * <a href="https://oldschool.runescape.wiki/w/Amulet_of_avarice">Wiki link</a>
+     */
+    private boolean amuletOfAvariceBoost(Player player, Hit hit, Entity entity) {
+        final int amuletOfAvarice = 22557;
+        if (hit.attackStyle != null && target != null && target.isNpc()) {
+            Item amulet = player.getEquipment().get(Equipment.SLOT_AMULET);
+            if (amulet == null || amulet.getId() != amuletOfAvarice) {
+                return false;
+            }
+            if (!target.npc.getDef().name.toLowerCase().contains("revenant")) {
+                return false;
+            }
+            hit.boostAttack(0.2);
+            hit.boostDamage(0.2);
+            return true;
+        }
+        return false;
+    }
+
+    /**
      * Hits from this player
      */
 
@@ -880,6 +901,7 @@ public class PlayerCombat extends Combat {
         //If slayer helmet effect isn't active try salve amulet
         if (!slayerHelmEffectActive) {
             salveAmuletBoost(player, hit, target);
+            amuletOfAvariceBoost(player, hit, target);
         }
         boolean dharoksEffectActive = SetEffect.DHAROK.checkAndApply(player, target, hit);
         boolean veracsEffectActive = SetEffect.VERAC.checkAndApply(player, target, hit);
