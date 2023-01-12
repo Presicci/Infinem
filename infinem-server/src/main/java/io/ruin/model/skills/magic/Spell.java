@@ -24,7 +24,7 @@ public class Spell {
 
     public final void registerClick(int lvlReq, double xp, boolean useXpMultiplier, Item[] runeItems, BiPredicate<Player, Integer> check) {
         clickAction = (p, i) -> {
-            if (p.isLocked())
+            if(p.isLocked() && !p.getMovement().hasTeleportUpdate())
                 return;
             if (!p.getStats().check(StatType.Magic, lvlReq, "cast this spell"))
                 return;

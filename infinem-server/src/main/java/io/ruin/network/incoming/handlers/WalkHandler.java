@@ -13,7 +13,7 @@ public class WalkHandler implements Incoming {
 
     @Override
     public void handle(Player player, InBuffer in, int opcode) {
-        if (player.isLocked() || player.isStunned()) {
+        if ((player.isLocked() && !player.getMovement().hasTeleportUpdate()) || player.isStunned()) {
             /* is our player new to the game? */
             if(player.inTutorial) {
                 return;
