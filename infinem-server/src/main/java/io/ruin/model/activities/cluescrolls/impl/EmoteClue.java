@@ -67,14 +67,13 @@ public class EmoteClue extends Clue {
 
     //}
 
-    public static Item itemAlternatives(Player player, int itemId, boolean fromEquipment) {
-        if (fromEquipment) {
-            Equipment equipment = player.getEquipment();
-            return equipment.findItemIgnoringAttributes(itemId, false);
-        } else {
-            Inventory inventory = player.getInventory();
-            return inventory.findItemIgnoringAttributes(itemId, false);
+    public static Item itemAlternatives(Player player, int itemId) {
+        Item item = player.getInventory().findItemIgnoringAttributes(itemId, false);
+        if (item != null) {
+            return item;
         }
+        item = player.getEquipment().findItemIgnoringAttributes(itemId, false);
+        return item;
     }
 
     public boolean hasPerformedSecondEmote(Player player) {

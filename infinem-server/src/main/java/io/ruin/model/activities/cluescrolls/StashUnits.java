@@ -111,9 +111,9 @@ public class StashUnits {
             else {
                 List<Item> itemsToDeposit = new ArrayList<>();
                 for (int itemId : emoteClueData.equipment) {
-                    Item item = EmoteClue.itemAlternatives(player, itemId, false);
+                    Item item = EmoteClue.itemAlternatives(player, itemId);
                     if (item != null) {
-                        itemsToDeposit.add(item.copy());
+                        itemsToDeposit.add(item);
                     } else {    // If the player does not have all the items required to fill the stash
                         String message = "You need " + Utils.grammarCorrectListForItemIds(emoteClueData.equipment) +
                                 " to fill this stash.";
@@ -122,7 +122,7 @@ public class StashUnits {
                     }
                 }
                 for (Item item : itemsToDeposit) {
-                    player.getInventory().remove(item);
+                    item.remove();
                 }
                 if (player.getStashUnits().containsKey(emoteClueData)) {
                     player.getStashUnits().get(emoteClueData).addAll(itemsToDeposit);
