@@ -116,9 +116,9 @@ public class Bounds {
         Bounds sw = null, ne = null;
         for(int regionId : regionIds) {
             Bounds bounds = fromRegion(regionId);
-            if(sw == null || (bounds.swX < sw.swX && bounds.swY < sw.swY))
+            if(sw == null || (bounds.swX <= sw.swX && bounds.swY <= sw.swY))
                 sw = bounds;
-            if(ne == null || (bounds.neX > ne.neX && bounds.neY > ne.neY))
+            if(ne == null || (bounds.neX >= ne.neX && bounds.neY >= ne.neY))
                 ne = bounds;
         }
         return new Bounds(sw.swX, sw.swY, ne.neX, ne.neY, -1);
