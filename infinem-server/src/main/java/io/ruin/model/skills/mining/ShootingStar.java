@@ -1,6 +1,7 @@
 package io.ruin.model.skills.mining;
 
 import io.ruin.api.utils.Random;
+import io.ruin.api.utils.StringUtils;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -38,10 +39,10 @@ public enum ShootingStar {
     private final int starId, levelRequirement;
     private final double experience;
     private final int stardust, petOdds, doubleDustChance, crashWeight;
-
     private static final int STARDUST = 25527;
-    private static final int SPAWN_TICKS = 6000;    // 1 hour
+    private static int spawnMinutes = 60;    // 1 hour
     private static StarLocation starLocation = getLocation();
+    private static double splitMultiplier = 1;
     private static ShootingStar activeStar = null;
     public static GameObject starObject = null;
     private static boolean found = false;
@@ -86,6 +87,7 @@ public enum ShootingStar {
     }
 
     private static StarLocation getLocation() {
+        splitMultiplier = Random.get();
         return StarLocation.values()[Random.get(StarLocation.values().length - 1)];
     }
 
@@ -174,6 +176,15 @@ public enum ShootingStar {
         double points = ((level - star.getLevelRequirement()) + 1 + (double) pickaxe.points);
         double denominator = (double) 350;
         return (Math.min(0.80, points / denominator) * 100);
+    }
+
+    public static String getTelescopeString(int timeWindow) {
+        String location = StringUtils.fixCaps(starLocation.toString().toLowerCase().replace("_", " "));
+        int split = (int) (timeWindow * splitMultiplier); // starLocation
+        return "You see a shooting star! The star looks like it will land in " +
+                ((starLocation == StarLocation.FELDIP_HILLS_AND_THE_ISLE_OF_SOULS || starLocation == StarLocation.FREMENNIK_LANDS_AND_LUNAR_ISLE || starLocation == StarLocation.KEBOS_LOWLANDS
+                        || starLocation == StarLocation.KHARIDIAN_DESERT || starLocation == StarLocation.WILDERNESS) ? "the " : "")
+                + location + " in the next " + (spawnMinutes - (timeWindow - split)) + " to " + (spawnMinutes + split) + " minutes.";
     }
 
     @Getter
@@ -298,8 +309,11 @@ public enum ShootingStar {
         //  Spawn event loop
         World.startEvent(event -> {
             while (true) {
-                spawnStar();
-                event.delay(SPAWN_TICKS);
+                if (--spawnMinutes <= 0) {
+                    spawnStar();
+                } else {
+                    event.delay(100);
+                }
             }
         });
     }

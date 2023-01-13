@@ -7,6 +7,7 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.TeleportTab;
@@ -15,6 +16,7 @@ import io.ruin.model.skills.construction.Buildable;
 import io.ruin.model.skills.construction.Construction;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
 import io.ruin.model.skills.magic.spells.modern.*;
+import io.ruin.model.skills.mining.ShootingStar;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.model.skills.construction.Buildable.*;
@@ -44,7 +46,7 @@ public class Study {
         public void open(Player player) {
             player.startEvent(event -> {
                 //player.animate(Construction.READ_LECTERN); TODO Find proper reading animation
-                event.delay(1);
+                //event.delay(1);
                 Config.LECTERN_EAGLE.set(player, eagleSetting);
                 Config.LECTERN_DEMON.set(player, demonSetting);
                 Config.IQ.update(player);
@@ -57,6 +59,13 @@ public class Study {
         for (Lectern l : Lectern.values()) {
             ObjectAction.register(l.buildable.getBuiltObjects()[0], "study", (player, obj) -> l.open(player));
         }
+
+        /*
+         * Telescope
+         */
+        ObjectAction.register(Buildable.WOODEN_TELESCOPE.getBuiltObjects()[0], "observe", (player, obj) -> player.dialogue(new MessageDialogue(ShootingStar.getTelescopeString(24))));
+        ObjectAction.register(Buildable.TEAK_TELESCOPE.getBuiltObjects()[0], "observe", (player, obj) -> player.dialogue(new MessageDialogue(ShootingStar.getTelescopeString(9))));
+        ObjectAction.register(Buildable.MAHOGANY_TELESCOPE.getBuiltObjects()[0], "observe", (player, obj) -> player.dialogue(new MessageDialogue(ShootingStar.getTelescopeString(2))));
     }
 
     public enum Tablet {
