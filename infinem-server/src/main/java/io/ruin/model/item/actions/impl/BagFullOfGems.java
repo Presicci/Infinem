@@ -17,11 +17,11 @@ public class BagFullOfGems {
     private static final int NOTED_UNCUT_ONYX = 6572;
 
     private static final LootTable chanceTable = new LootTable().addTable(1,
-            new LootItem(NOTED_UNCUT_SAPPHIRE, 1, 2599),
-            new LootItem(NOTED_UNCUT_EMERALD, 1, 1500),
-            new LootItem(NOTED_UNCUT_RUBY, 1, 560),
-            new LootItem(NOTED_UNCUT_DIAMOND, 1, 230),
-            new LootItem(NOTED_UNCUT_DRAGONSTONE, 1, 110),
+            new LootItem(NOTED_UNCUT_SAPPHIRE, 1, 2599000),
+            new LootItem(NOTED_UNCUT_EMERALD, 1, 1500000),
+            new LootItem(NOTED_UNCUT_RUBY, 1, 560000),
+            new LootItem(NOTED_UNCUT_DIAMOND, 1, 230000),
+            new LootItem(NOTED_UNCUT_DRAGONSTONE, 1, 110000),
             new LootItem(NOTED_UNCUT_ONYX, 1, 1)
     );
 
