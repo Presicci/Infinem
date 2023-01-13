@@ -654,11 +654,7 @@ public abstract class PlayerAttributes extends Entity {
     /**
      * Gem bag
      */
-    @Expose public int gemBagDiamond;
-    @Expose public int gemBagRuby;
-    @Expose public int gemBagEmerald;
-    @Expose public int gemBagSapphire;
-    @Expose public int gemBagDragonstone;
+    @Expose public int[] gemBagContents = new int[5];
 
     /**
      * Herb sack
