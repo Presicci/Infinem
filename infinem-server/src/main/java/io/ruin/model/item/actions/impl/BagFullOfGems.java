@@ -9,6 +9,8 @@ import io.ruin.model.item.loot.LootTable;
 
 public class BagFullOfGems {
 
+    private static final int[] BAG_IDS = { 19473, 24853, 25537 };
+
     private static final int NOTED_UNCUT_SAPPHIRE = 1624;
     private static final int NOTED_UNCUT_EMERALD = 1622;
     private static final int NOTED_UNCUT_RUBY = 1620;
@@ -53,15 +55,17 @@ public class BagFullOfGems {
     }
 
     static {
-        ItemAction.registerInventory(19473, "open", BagFullOfGems::open);
-        ItemAction.registerInventory(19473, "destroy", (player, item) -> player.dialogue(
-                new YesNoDialogue("Are you sure you want to do this?", "The Bag full of gems will be destroyed.", item, () -> {
-                    item.remove();
-                    for (Item i : player.getLootingBag().getItems()) {
-                        if (i != null)
-                            i.remove();
-                    }
-                })
-        ));
+        for (int itemId : BAG_IDS) {
+            ItemAction.registerInventory(itemId, "open", BagFullOfGems::open);
+            ItemAction.registerInventory(itemId, "destroy", (player, item) -> player.dialogue(
+                    new YesNoDialogue("Are you sure you want to do this?", "The Bag full of gems will be destroyed.", item, () -> {
+                        item.remove();
+                        for (Item i : player.getLootingBag().getItems()) {
+                            if (i != null)
+                                i.remove();
+                        }
+                    })
+            ));
+        }
     }
 }
