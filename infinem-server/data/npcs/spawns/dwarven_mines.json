@@ -546,10 +546,7 @@
     "y": 9720,
     "z": 0,
     "direction": "S",
-    "walkRange": 2,
-    "shopOptions": {
-      "trade": "6ff99a2d-5a00-411c-8c04-664b14fe545f"
-    }
+    "walkRange": 2
   },
   {
     "name": "Dwarf",

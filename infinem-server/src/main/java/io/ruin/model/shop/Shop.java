@@ -239,7 +239,7 @@ public class Shop {
     }
 
     public void sellToShop(Player player, Item requestedItem){
-        if(!requestedItem.getDef().tradeable){
+        if(!requestedItem.getDef().tradeable && generalStore){
             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
             return;
         }
@@ -317,7 +317,7 @@ public class Shop {
 
     public int getBuyPrice(Item itemForSlot) {
         ItemDef itemDef = itemForSlot.getDef().isNote() ? itemForSlot.getDef().fromNote() : itemForSlot.getDef();
-        if(!itemDef.tradeable){
+        if(!itemDef.tradeable && generalStore){
             return -1;
         }
         if(itemDef.free){
