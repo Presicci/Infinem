@@ -201,6 +201,7 @@ public class Mining {
         int level = player.getStats().get(StatType.Mining).currentLevel;
         if (player.getPosition().inBounds(MiningGuild.MINERAL_AREA))
             level += 7;
+        level += getMiningBoost(player);
         return level;
     }
 
@@ -235,6 +236,14 @@ public class Mining {
         }
 
         return 0;
+    }
+
+    private static int getMiningBoost(Player player) {
+        int boost = 0;
+        Item ring = player.getEquipment().get(Equipment.SLOT_RING);
+        if (ring != null && (ring.getId() == 25539 || ring.getId() == 25541 || ring.getId() == 25543 || ring.getId() == 25545))
+            boost += 4;
+        return boost;
     }
 
     private static boolean minedMineral(Player player, Rock rockData) {
