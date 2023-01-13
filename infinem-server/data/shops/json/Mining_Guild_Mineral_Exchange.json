@@ -8,17 +8,29 @@
   "buyMultiplier": 800,
   "hideBuy": false,
   "items": [
-    {
+    { // Mining gloves
       "itemId": 21343,
       "stock": 100,
       "buy_price": 48,
       "sell_price": 60
     },
-    {
+    { // Superior mining gloves
       "itemId": 21345,
       "stock": 100,
       "buy_price": 96,
       "sell_price": 120
+    },
+    { // Soft clay pack
+      "itemId": 24851,
+      "stock": 1000,
+      "buy_price": 8,
+      "sell_price": 10
+    },
+    { // Bag full of gems
+      "itemId": 24853,
+      "stock": 100,
+      "buy_price": 16,
+      "sell_price": 20
     }
   ]
 }
