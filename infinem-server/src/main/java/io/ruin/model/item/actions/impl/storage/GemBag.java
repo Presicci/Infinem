@@ -90,17 +90,20 @@ public class GemBag {
             player.sendFilteredMessage("You have no gems to add to the bag.");
     }
 
-    private static void emptyBag(Player player, Item item) {
+    public static void emptyBag(Player player, boolean bank) {
         for (int gemId : GEMS) {
             int freeSlots = player.getInventory().getFreeSlots();
-            if (freeSlots == 0)
+            if (freeSlots == 0 && !bank)
                 return;
             int gemSize = amountStored(player, gemId);
             int amountToRemove = Math.min(gemSize, freeSlots);
             if (amountToRemove == 0)
                 continue;
             withdrawGem(player, gemId, amountToRemove);
-            player.getInventory().add(gemId, amountToRemove);
+            if (bank)
+                player.getBank().add(gemId, amountToRemove);
+            else
+                player.getInventory().add(gemId, amountToRemove);
         }
     }
 
@@ -146,7 +149,7 @@ public class GemBag {
     static {
         ItemAction.registerInventory(12020, "fill", GemBag::fillBag);
         ItemAction.registerInventory(12020, "check", GemBag::checkBag);
-        ItemAction.registerInventory(12020, "empty", GemBag::emptyBag);
+        ItemAction.registerInventory(12020, "empty", ((player, item) -> emptyBag(player, false)));
         ItemAction.registerInventory(12020, "destroy", GemBag::destroyBag);
 
         for (int gemId : GEMS) {

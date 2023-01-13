@@ -15,6 +15,8 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
 import io.ruin.model.item.ItemContainerG;
+import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.impl.storage.GemBag;
 import io.ruin.model.item.actions.impl.storage.LootingBag;
 import io.ruin.model.item.actions.impl.storage.RunePouch;
 import io.ruin.model.item.attributes.AttributeExtensions;
@@ -779,8 +781,10 @@ public class Bank extends ItemContainerG<BankItem> {
                         return;
                     }
                     if(option == 9) {
-                        if(item.getId() == RunePouch.RUNE_POUCH)
-                            player.getRunePouch().empty(false);
+                        if (item.getId() == RunePouch.RUNE_POUCH)
+                            player.getRunePouch().empty(true);
+                        if (item.getId() == Items.GEM_BAG)
+                            GemBag.emptyBag(player, true);
                         return;
                     }
                     item.examine(player);
