@@ -8,6 +8,7 @@ import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.item.attributes.AttributeTypes;
+import io.ruin.model.item.containers.Equipment;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -45,6 +46,21 @@ public class CelestialRing {
 
     private static void check(Player player, Item item) {
         player.sendMessage("Your Celestial " + (item.getId() == CHARGED_RING ? "ring" : "signet") + " currently has " + NumberUtils.formatNumber(item.getAttributeInt(AttributeTypes.CHARGES)) + " charges.");
+    }
+
+    public static boolean wearingChargedRing(Player player) {
+        Item ring = player.getEquipment().get(Equipment.SLOT_RING);
+        if (ring.getId() == CHARGED_RING || ring.getId() == CHARGED_SIGNET) {
+            return AttributeExtensions.getCharges(ring) > 0;
+        }
+        return false;
+    }
+
+    public static void removeChargeIfEquipped(Player player) {
+        Item ring = player.getEquipment().get(Equipment.SLOT_RING);
+        if (ring.getId() == CHARGED_RING || ring.getId() == CHARGED_SIGNET) {
+            AttributeExtensions.deincrementCharges(ring, 1);
+        }
     }
 
     static {

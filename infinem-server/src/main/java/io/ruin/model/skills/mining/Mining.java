@@ -13,6 +13,7 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.Geode;
+import io.ruin.model.item.actions.impl.chargable.CelestialRing;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.MiningSkillCape;
 import io.ruin.model.item.containers.Equipment;
@@ -95,7 +96,7 @@ public class Mining {
                 }
 
                 Item gem = null;
-                Boolean multiple = false;
+                boolean multiple = false;
                 final int miningAnimation = rockData == Rock.AMETHYST ? pickaxe.crystalAnimationID : pickaxe.regularAnimationID;
                 if (attempts == 0) {
                     player.sendFilteredMessage("You swing your pick at the rock.");
@@ -119,14 +120,12 @@ public class Mining {
                         }
                     } else {
                         int id = rockyOutcrop || gemRock ? itemId : rockData.ore;
-                        if (MiningSkillCape.wearsMiningCape(player)
-                                && rockData.ordinal() <= Rock.ADAMANT.ordinal()
-                                && Random.rollPercent(5)) {
+                        if (Random.rollPercent(getExtraOreChance(player, rockData))) {
                             amount *= 2;
                             player.sendFilteredMessage("You manage to mine an additional ore.");
                             multiple = true;
                         }
-
+                        CelestialRing.removeChargeIfEquipped(player);
                         player.collectResource(new Item(id, amount));
                         if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(id)) {
                             player.getBank().add(id, amount*2);
@@ -244,6 +243,33 @@ public class Mining {
         if (ring != null && (ring.getId() == 25539 || ring.getId() == 25541 || ring.getId() == 25543 || ring.getId() == 25545))
             boost += 4;
         return boost;
+    }
+
+    private static int getExtraOreChance(Player player, Rock rockData) {
+        int chance = 0;
+        int chest = player.getEquipment().get(Equipment.SLOT_CHEST).getId();
+        if (rockData.ordinal() <= Rock.GOLD.ordinal()) {
+            if (chest == Items.VARROCK_ARMOUR_1)
+                chance += 10;
+        }
+        if (rockData.ordinal() <= Rock.MITHRIL.ordinal()) {
+            if (chest == Items.VARROCK_ARMOUR_2)
+                chance += 10;
+        }
+        if (rockData.ordinal() <= Rock.ADAMANT.ordinal()) {
+            if (chest == Items.VARROCK_ARMOUR_3)
+                chance += 10;
+            if (MiningSkillCape.wearsMiningCape(player))
+                chance += 5;
+            if (CelestialRing.wearingChargedRing(player)) {
+                chance += 10;
+            }
+        }
+        if (rockData.ordinal() <= Rock.RUNE.ordinal()) {
+            if (chest == Items.VARROCK_ARMOUR_4)
+                chance += 10;
+        }
+        return chance;
     }
 
     private static boolean minedMineral(Player player, Rock rockData) {
