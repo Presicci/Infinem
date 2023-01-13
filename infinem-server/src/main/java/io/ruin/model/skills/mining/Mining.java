@@ -244,15 +244,15 @@ public class Mining {
             return false;
 
         if (rockData == Rock.IRON)
-            return Random.rollDie(150, 1);
+            return Random.rollDie(100, 1);
         if (rockData == Rock.COAL)
-            return Random.rollDie(90, 1);
-        if (rockData == Rock.MITHRIL)
             return Random.rollDie(60, 1);
+        if (rockData == Rock.MITHRIL)
+            return Random.rollDie(40, 1);
         if (rockData == Rock.ADAMANT)
-            return Random.rollDie(45, 1);
-        if (rockData == Rock.RUNE || rockData == Rock.AMETHYST)
             return Random.rollDie(30, 1);
+        if (rockData == Rock.RUNE || rockData == Rock.AMETHYST)
+            return Random.rollDie(20, 1);
 
         return false;
     }
