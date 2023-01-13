@@ -19,6 +19,7 @@ public enum Currency {
     WARRIOR_GUILD_TOKEN(new ItemCurrencyHandler(ItemID.WARRIOR_GUILD_TOKEN)),
     VOTE_TICKETS(new ItemCurrencyHandler(ItemID.VOTE_TICKETS)),
     UNIDENTIFIED_MINERALS(new ItemCurrencyHandler(ItemID.UNIDENTIFIED_MINERALS)),
+    STARDUST(new ItemCurrencyHandler(25527)),
     TASK_POINTS(new CurrencyHandler("daily task points") {
         @Override
         public int getCurrencyCount(Player player) {

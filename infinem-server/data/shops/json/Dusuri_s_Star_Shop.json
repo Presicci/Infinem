@@ -1,0 +1,36 @@
+{
+  "name": "Dunstan's Shop",
+  "currency": "STARDUST",
+  "npcs": [
+    10631
+  ],
+  "sellMultiplier": 0,
+  "buyMultiplier": 0,
+  "hideBuy": true,
+  "items": [
+    { // Celestial ring
+      "itemId": 25539,
+      "stock": 50,
+      "buy_price": 1600,
+      "sell_price": 2000
+    },
+    { // Star fragment
+      "itemId": 25547,
+      "stock": 50,
+      "buy_price": 2400,
+      "sell_price": 3000
+    },
+    { // Bag full of gems
+      "itemId": 25537,
+      "stock": 100,
+      "buy_price": 240,
+      "sell_price": 300
+    },
+    { // Soft clay pack
+      "itemId": 25533,
+      "stock": 1000,
+      "buy_price": 120,
+      "sell_price": 150
+    }
+  ]
+}
