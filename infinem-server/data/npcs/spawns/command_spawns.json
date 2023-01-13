@@ -717,5 +717,14 @@
 		"z": 0,
 		"direction": "S",
 		"walkRange": 5
+	},
+	{
+		"name": "Dusuri",
+		"id": 10631,
+		"x": 3022,
+		"y": 3342,
+		"z": 0,
+		"direction": "S",
+		"walkRange": 0
 	}
 ]
