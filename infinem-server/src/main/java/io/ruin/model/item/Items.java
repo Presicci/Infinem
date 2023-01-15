@@ -1692,10 +1692,10 @@ public interface Items {
     public static final int DRAGONSTONE_AMULET_U_NOTE = 1684;
     //public static final int NULL = 1685;
     public static final int KARAMJA_GLOVES = 1686;
-    public static final int SAPPHIRE_AMULET = 1687;
-    public static final int EMERALD_AMULET = 1688;
-    public static final int RUBY_AMULET = 1689;
-    public static final int DIAMOND_AMULET = 1690;
+    public static final int SAPPHIRE_AMULET = 1694;
+    public static final int EMERALD_AMULET = 1696;
+    public static final int RUBY_AMULET = 1698;
+    public static final int DIAMOND_AMULET = 1700;
     public static final int DRAGONSTONE_AMMY = 1691;
     public static final int GOLD_AMULET = 1692;
     public static final int GOLD_AMULET_NOTE = 1693;
