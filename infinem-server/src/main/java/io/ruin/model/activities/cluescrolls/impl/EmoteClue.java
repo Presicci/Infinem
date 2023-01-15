@@ -120,7 +120,7 @@ public class EmoteClue extends Clue {
         }
         for (int item : equipment) {
             if (!player.getEquipment().contains(item)) {
-                return false;
+                return itemAlternatives(player, item, true) != null;
             }
         }
         return true;
