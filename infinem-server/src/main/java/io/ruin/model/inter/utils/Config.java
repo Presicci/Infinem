@@ -897,38 +897,65 @@ public class Config {
      */
     //public static final Config
     public static final Config STASH_UNITS[] = {
-            varpbit(8254, true), // Gypsy Aris
-            varpbit(8256, true), // Bob's brilliant axes
-            varpbit(8255, true), // Iffie Nitter
-            varpbit(5213, true), // Monkey cage
-            varpbit(5216, true), // Keep Le Faye
-            varpbit(5220, true), // Duel arena office
-            varpbit(5200, true), // Legends' guild entrance
-            varpbit(5211, true), // druid circle
-            varpbit(5202, true), // port sarim
-            varpbit(5218, true), // exam center
-            varpbit(5197, true), // wizard tower bridge
-            varpbit(5209, true), // east ardy mill
-            varpbit(5215, true), // fishing guild
-            varpbit(5206, true), // draynor crossroads
-            varpbit(5223, true), // grand exhcange entrance
-            varpbit(5210, true), // party room
-            varpbit(5196, true), // lumbridge swamp shack
-            varpbit(5224, true), // varrock rune store
-            varpbit(5203, true), // al kharid mine
-            varpbit(5212, true), // beehives
-            varpbit(5217, true), // sinclair mansion crossroads
-            varpbit(5199, true), // limestone mine
-            varpbit(5207, true), // rimmingtom mine
-            varpbit(5214, true), // rimmington crossroads
-            varpbit(5204, true), // draynor manor courtyard
-            varpbit(5221, true), // varrock castle courtyard
-            varpbit(5205, true), // lumbridge mill
-            varpbit(5219, true), // lumber yard
-            varpbit(5222, true), // falador gem stall
-            varpbit(5201, true), // mudskipper point
-            varpbit(5198, true), // draynor marketplace
-            varpbit(5208, true) // varrock library
+            varpbit(8254, true), // Gypsy Aris 0
+            varpbit(8256, true), // Bob's brilliant axes 1
+            varpbit(8255, true), // Iffie Nitter 2
+            varpbit(5213, true), // Monkey cage 3
+            varpbit(5216, true), // Keep Le Faye 4
+            varpbit(5220, true), // Duel arena office 5
+            varpbit(5200, true), // Legends' guild entrance 6
+            varpbit(5211, true), // druid circle 7
+            varpbit(5202, true), // port sarim 8
+            varpbit(5218, true), // exam center 9
+            varpbit(5197, true), // wizard tower bridge 10
+            varpbit(5209, true), // east ardy mill 11
+            varpbit(5215, true), // fishing guild 12
+            varpbit(5206, true), // draynor crossroads 13
+            varpbit(5223, true), // grand exhcange entrance 14
+            varpbit(5210, true), // party room 15
+            varpbit(5196, true), // lumbridge swamp shack 16
+            varpbit(5224, true), // varrock rune store 17
+            varpbit(5203, true), // al kharid mine 18
+            varpbit(5212, true), // beehives 19
+            varpbit(5217, true), // sinclair mansion crossroads 20
+            varpbit(5199, true), // limestone mine 21
+            varpbit(5207, true), // rimmingtom mine 22
+            varpbit(5214, true), // rimmington crossroads 23
+            varpbit(5204, true), // draynor manor courtyard 24
+            varpbit(5221, true), // varrock castle courtyard 25
+            varpbit(5205, true), // lumbridge mill 26
+            varpbit(5219, true), // lumber yard 27
+            varpbit(5222, true), // falador gem stall 28
+            varpbit(5201, true), // mudskipper point 29
+            varpbit(5198, true), // draynor marketplace 30
+            varpbit(5208, true), // varrock library 31
+
+            /*
+             * Mediums
+             */
+            varpbit(5229, true), // tai bwo wannai 32
+            varpbit(5245, true), // shayzien combat ring 33
+            varpbit(5236, true), // digsite 34
+            varpbit(5231, true), // barbarian agility 35
+            varpbit(1, true), // edgeville general 36
+            varpbit(5235, true), // ogre pen 37
+            varpbit(5241, true), // court house 38
+            varpbit(7970, true), // mount karuulm 39
+            varpbit(5237, true), // catherby ranging 40
+            varpbit(5247, true), // draynor jail 41
+            varpbit(5242, true), // catherby beach 42
+            varpbit(5232, true), // gnome agility 43
+            varpbit(5238, true), // Shantay pass 44
+            varpbit(5226, true), // Canifis 45
+            varpbit(5239, true), // lumbridge swamp cave 46
+            varpbit(5243, true), // tzhaar sword shop 47
+            varpbit(5233, true), // yanille bank 48
+            varpbit(5227, true), // mausoleum 49
+            varpbit(5240, true), // catherby bank 50
+            varpbit(5228, true), // barb village bridge 51
+            varpbit(5234, true), // observatory 52
+            varpbit(5230, true), // castle wars 53
+            varpbit(5246, true), // arceuus library 54
     };
 
     /**
