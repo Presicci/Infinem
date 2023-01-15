@@ -14,6 +14,9 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.skills.herblore.Herb;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static io.ruin.model.skills.farming.patch.impl.AllotmentPatch.WATERING_CAN_IDS;
 
 public class ToolStorage {
@@ -163,6 +166,11 @@ public class ToolStorage {
     public void open(Player player) {
         player.openInterface(InterfaceType.MAIN, 125);
         player.openInterface(InterfaceType.INVENTORY, 126);
+        // Unlock quantity buttons
+        player.getPacketSender().sendAccessMask(125, 4, -1, -1, 1 << 1);
+        player.getPacketSender().sendAccessMask(125, 5, -1, -1, 1 << 1);
+        player.getPacketSender().sendAccessMask(125, 6, -1, -1, 1 << 1);
+        player.getPacketSender().sendAccessMask(125, 7, -1, -1, 1 << 1);
     }
 
     public void withdraw(Tool tool, int amount) {
@@ -215,53 +223,90 @@ public class ToolStorage {
         return 1;
     }
 
+    private static final int[] STATIC_OPTIONS = { 1, 2, 3, 4 };
+
+    private void getOption(int interfaceOption, int slot, boolean deposit) {
+        if ((slot == 4 || slot == 7) && interfaceOption != 10) {   // Bottomless bucket and Watering can, can only store 1 of each
+            if (deposit)
+                player.getFarming().getStorage().deposit(Tool.values()[slot], 1);
+            else
+                player.getFarming().getStorage().withdraw(Tool.values()[slot], 1);
+            return;
+        }
+        if (interfaceOption == 9 && !deposit) { // Banknote
+            return;
+        }
+        if (interfaceOption == 10) { // Examine
+            new Item(Tool.values()[slot].itemId).examine(player);
+            return;
+        }
+        List<Integer> options = new ArrayList<>(6);
+        int defaultOption = Config.TOOL_STORAGE_QUANTITY.get(player);
+        switch(defaultOption) {
+            case 0:
+                options.add(1);
+                break;
+            case 1:
+                options.add(2);
+                break;
+            case 2:
+                options.add(4);
+                break;
+            case 3:
+                options.add(3);
+                break;
+            default:
+                throw new IllegalStateException();
+        }
+        for (int o : STATIC_OPTIONS) {
+            if (!options.contains(o))
+                options.add(o);
+        }
+        int option = options.get(interfaceOption-1);
+        switch (option) {
+            case 1:     // Remove-1
+                if (deposit)
+                    player.getFarming().getStorage().deposit(Tool.values()[slot], 1);
+                else
+                    player.getFarming().getStorage().withdraw(Tool.values()[slot], 1);
+                break;
+            case 2:     // Remove-5
+                if (deposit)
+                    player.getFarming().getStorage().deposit(Tool.values()[slot], 5);
+                else
+                    player.getFarming().getStorage().withdraw(Tool.values()[slot], 5);
+                break;
+            case 3:     // Remove-X
+                if (deposit)
+                    player.integerInput("Enter amount:", amt -> player.getFarming().getStorage().deposit(Tool.values()[slot], amt));
+                else
+                    player.integerInput("Enter amount:", amt -> player.getFarming().getStorage().withdraw(Tool.values()[slot], amt));
+                break;
+            case 4:     // Remove-All
+                if (deposit)
+                    player.getFarming().getStorage().deposit(Tool.values()[slot], Integer.MAX_VALUE);
+                else
+                    player.getFarming().getStorage().withdraw(Tool.values()[slot], Integer.MAX_VALUE);
+                break;
+        }
+    }
+
     static {
         InterfaceHandler.register(125, h -> {
             for (int i = 8; i < 20; i++) {
                 final int slot = i - 8;
-                h.actions[i] = (OptionAction) (player, option) -> {
-                    if (option == 1 || slot < 6)    // Remove-1
-                        player.getFarming().getStorage().withdraw(Tool.values()[slot], 1);
-                    else
-                        switch (option) {
-                            case 2:     // Remove-5
-                                player.getFarming().getStorage().withdraw(Tool.values()[slot], 5);
-                                break;
-                            case 3:     // Remove-X
-                                player.integerInput("Enter amount:", amt -> player.getFarming().getStorage().withdraw(Tool.values()[slot], amt));
-                                break;
-                            case 4:     // Remove-All
-                                player.getFarming().getStorage().withdraw(Tool.values()[slot], Integer.MAX_VALUE);
-                                break;
-                            case 9:     // Banknote
-                                break;
-                            case 10:    // Examine
-                                new Item(Tool.values()[slot].itemId).examine(player);
-                                break;
-                        }
-                };
+                h.actions[i] = (OptionAction) (player, option) -> player.getFarming().getStorage().getOption(option, slot, false);
             }
+            h.actions[4] = (OptionAction) (player, option) -> Config.TOOL_STORAGE_QUANTITY.set(player, 0);
+            h.actions[5] = (OptionAction) (player, option) -> Config.TOOL_STORAGE_QUANTITY.set(player, 1);
+            h.actions[6] = (OptionAction) (player, option) -> Config.TOOL_STORAGE_QUANTITY.set(player, 3);
+            h.actions[7] = (OptionAction) (player, option) -> Config.TOOL_STORAGE_QUANTITY.set(player, 2);
         });
 
         InterfaceHandler.register(126, h -> {
             for (int i = 1; i < 13; i++) {
                 final int slot = i - 1;
-                h.actions[i] = (OptionAction) (player, option) -> {
-                    if (option == 1 || slot < 6)
-                        player.getFarming().getStorage().deposit(Tool.values()[slot], 1);
-                    else
-                        switch (option) {
-                            case 2:
-                                player.getFarming().getStorage().deposit(Tool.values()[slot], 5);
-                                break;
-                            case 3:
-                                player.integerInput("Enter amount:", amt -> player.getFarming().getStorage().deposit(Tool.values()[slot], amt));
-                                break;
-                            case 4:
-                                player.getFarming().getStorage().deposit(Tool.values()[slot], Integer.MAX_VALUE);
-                                break;
-                        }
-                };
+                h.actions[i] = (OptionAction) (player, option) -> player.getFarming().getStorage().getOption(option, slot, true);
             }
         });
         NPCAction.register("tool leprechaun", "talk-to", (player, npc) -> {
