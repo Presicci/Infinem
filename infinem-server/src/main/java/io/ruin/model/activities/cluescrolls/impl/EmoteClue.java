@@ -1,5 +1,7 @@
 package io.ruin.model.activities.cluescrolls.impl;
 
+import com.google.common.collect.ImmutableMap;
+import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.cluescrolls.StashUnits;
@@ -12,13 +14,11 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.containers.Equipment;
-import io.ruin.model.item.containers.Inventory;
 import io.ruin.model.map.Bounds;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -63,17 +63,33 @@ public class EmoteClue extends Clue {
         });
     }
 
-    //private int[][] alternatives {
+    private static final Map<Integer, List<Integer>> ITEM_ALTERNATIVES = ImmutableMap.of(
+            Items.TEAM1_CAPE, IntStream.range(Items.TEAM1_CAPE, Items.TEAM50_CAPE).boxed().collect(Collectors.toList()),
+            Items.RING_OF_DUELING_1, IntStream.range(Items.RING_OF_DUELING_8, Items.RING_OF_DUELING_1).boxed().collect(Collectors.toList())
+    );
 
-    //}
-
-    public static Item itemAlternatives(Player player, int itemId) {
+    public static Item itemAlternatives(Player player, int itemId, boolean ignoreIventory) {
         Item item = player.getInventory().findItemIgnoringAttributes(itemId, false);
-        if (item != null) {
+        if (item != null && !ignoreIventory) {
             return item;
         }
         item = player.getEquipment().findItemIgnoringAttributes(itemId, false);
-        return item;
+        if (item != null) {
+            return item;
+        }
+        List<Integer> alternatives = ITEM_ALTERNATIVES.get(itemId);
+        if (alternatives == null) {
+            return null;
+        }
+        item = player.getInventory().findFirst(alternatives.stream().mapToInt(Integer::intValue).toArray());
+        if (item != null)
+            return item;
+        Item equipped = player.getEquipment().get(ItemDef.get(itemId).equipSlot);
+        if (equipped != null && alternatives.contains(equipped.getId())) {
+            return equipped;
+        } else {
+            return null;
+        }
     }
 
     public boolean hasPerformedSecondEmote(Player player) {
