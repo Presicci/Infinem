@@ -117,6 +117,9 @@ public class StashUnits {
                     } else {    // If the player does not have all the items required to fill the stash
                         String message = "You need " + Utils.grammarCorrectListForItemIds(emoteClueData.equipment) +
                                 " to fill this stash.";
+                        for (String replacement : EmoteClue.STRING_REPLACEMENTS.keySet()) {
+                            message = message.replace(replacement, EmoteClue.STRING_REPLACEMENTS.get(replacement));
+                        }
                         player.dialogue(new ItemDialogue().one(itemId, message));
                         return;
                     }

@@ -63,6 +63,11 @@ public class EmoteClue extends Clue {
         });
     }
 
+    public static final Map<String, String> STRING_REPLACEMENTS = ImmutableMap.of(
+            "Team-1 cape", "Team cape",
+            "Ring of dueling(1)", "Ring of dueling"
+    );
+
     private static final Map<Integer, List<Integer>> ITEM_ALTERNATIVES = ImmutableMap.of(
             Items.TEAM1_CAPE, IntStream.range(Items.TEAM1_CAPE, Items.TEAM50_CAPE).boxed().collect(Collectors.toList()),
             Items.RING_OF_DUELING_1, IntStream.range(Items.RING_OF_DUELING_8, Items.RING_OF_DUELING_1).boxed().collect(Collectors.toList())
@@ -273,7 +278,7 @@ public class EmoteClue extends Clue {
          */
         TAI_BWO_WANNAI("Beckon in Tai Bwo Wannai. Clap before you talk to me. Equip green dragonhide chaps, a ring of dueling and a mithril medium helmet.",
                 Collections.singletonList(TabEmote.BECKON), new Bounds(2774, 3061, 2815, 3076, 0),
-                Arrays.asList(Items.GREEN_DHIDE_VAMB, Items.RING_OF_DUELING_8, Items.MITHRIL_MED_HELM), ClueType.MEDIUM, Config.STASH_UNITS[32],28990),
+                Arrays.asList(Items.GREEN_DHIDE_VAMB, Items.RING_OF_DUELING_1, Items.MITHRIL_MED_HELM), ClueType.MEDIUM, Config.STASH_UNITS[32],28990),
         SHAYZIEN_COMBAT_RING("Beckon in the combat ring of Shayzien. Show your anger before you talk to me. Equip an adamant platebody, adamant full helm and adamant platelegs.",
                 Collections.singletonList(TabEmote.BECKON), new Bounds(1536, 3585, 1552, 3602, 0),
                 Arrays.asList(Items.ADAMANT_PLATELEGS, Items.ADAMANT_PLATEBODY, Items.ADAMANT_FULL_HELM), ClueType.MEDIUM, Config.STASH_UNITS[33], 29006),
