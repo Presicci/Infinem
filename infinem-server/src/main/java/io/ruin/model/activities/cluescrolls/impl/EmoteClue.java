@@ -68,7 +68,7 @@ public class EmoteClue extends Clue {
             Items.RING_OF_DUELING_1, IntStream.range(Items.RING_OF_DUELING_8, Items.RING_OF_DUELING_1).boxed().collect(Collectors.toList())
     );
 
-    public static Item itemAlternatives(Player player, int itemId, boolean ignoreIventory) {
+    public static Item getAlternative(Player player, int itemId, boolean ignoreIventory) {
         Item item = player.getInventory().findItemIgnoringAttributes(itemId, false);
         if (item != null && !ignoreIventory) {
             return item;
@@ -120,7 +120,7 @@ public class EmoteClue extends Clue {
         }
         for (int item : equipment) {
             if (!player.getEquipment().contains(item)) {
-                return itemAlternatives(player, item, true) != null;
+                return getAlternative(player, item, true) != null;
             }
         }
         return true;

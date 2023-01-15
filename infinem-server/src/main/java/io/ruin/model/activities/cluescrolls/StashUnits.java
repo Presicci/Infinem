@@ -111,7 +111,7 @@ public class StashUnits {
             else {
                 List<Item> itemsToDeposit = new ArrayList<>();
                 for (int itemId : emoteClueData.equipment) {
-                    Item item = EmoteClue.itemAlternatives(player, itemId, false);
+                    Item item = EmoteClue.getAlternative(player, itemId, false);
                     if (item != null) {
                         itemsToDeposit.add(item);
                     } else {    // If the player does not have all the items required to fill the stash
