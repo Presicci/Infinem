@@ -220,18 +220,23 @@ public class ToolStorage {
             for (int i = 8; i < 20; i++) {
                 final int slot = i - 8;
                 h.actions[i] = (OptionAction) (player, option) -> {
-                    if (option == 1 || slot < 6)
+                    if (option == 1 || slot < 6)    // Remove-1
                         player.getFarming().getStorage().withdraw(Tool.values()[slot], 1);
                     else
                         switch (option) {
-                            case 2:
+                            case 2:     // Remove-5
                                 player.getFarming().getStorage().withdraw(Tool.values()[slot], 5);
                                 break;
-                            case 3:
+                            case 3:     // Remove-X
                                 player.integerInput("Enter amount:", amt -> player.getFarming().getStorage().withdraw(Tool.values()[slot], amt));
                                 break;
-                            case 4:
+                            case 4:     // Remove-All
                                 player.getFarming().getStorage().withdraw(Tool.values()[slot], Integer.MAX_VALUE);
+                                break;
+                            case 9:     // Banknote
+                                break;
+                            case 10:    // Examine
+                                new Item(Tool.values()[slot].itemId).examine(player);
                                 break;
                         }
                 };
