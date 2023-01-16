@@ -1,5 +1,14 @@
 [
   {
+    "name": "Francois",
+    "id": 7983,
+    "x": 2049,
+    "y": 9006,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
     "id": 7990,
     "x": 2009,
     "y": 8995,
@@ -38,5 +47,266 @@
     "walkRange": 4,
     "world": "ECO",
     "npcName": "Ogress Warrior"
+  },
+  {
+    "name": "Ogress Warrior",
+    "id": 7989,
+    "x": 2022,
+    "y": 8973,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Warrior",
+    "id": 7990,
+    "x": 2028,
+    "y": 8971,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Warrior",
+    "id": 7989,
+    "x": 2037,
+    "y": 8973,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Warrior",
+    "id": 7990,
+    "x": 1997,
+    "y": 8968,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Warrior",
+    "id": 7990,
+    "x": 1975,
+    "y": 9012,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Warrior",
+    "id": 7989,
+    "x": 1971,
+    "y": 9021,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Warrior",
+    "id": 7989,
+    "x": 1958,
+    "y": 9034,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Warrior",
+    "id": 7990,
+    "x": 1968,
+    "y": 9037,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Warrior",
+    "id": 7989,
+    "x": 1972,
+    "y": 9042,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Warrior",
+    "id": 7990,
+    "x": 1969,
+    "y": 9069,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Warrior",
+    "id": 7989,
+    "x": 1971,
+    "y": 9073,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Warrior",
+    "id": 7990,
+    "x": 1964,
+    "y": 9077,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7991,
+    "x": 1966,
+    "y": 9072,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7992,
+    "x": 1972,
+    "y": 9077,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7991,
+    "x": 1968,
+    "y": 9080,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7991,
+    "x": 1962,
+    "y": 9045,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7992,
+    "x": 1964,
+    "y": 9035,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7991,
+    "x": 1977,
+    "y": 9035,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7992,
+    "x": 1976,
+    "y": 9023,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7991,
+    "x": 1973,
+    "y": 9016,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7991,
+    "x": 2002,
+    "y": 8991,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7992,
+    "x": 2008,
+    "y": 8976,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7991,
+    "x": 2002,
+    "y": 8967,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7992,
+    "x": 2014,
+    "y": 8979,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7991,
+    "x": 2017,
+    "y": 8986,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7992,
+    "x": 2025,
+    "y": 8972,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7991,
+    "x": 2034,
+    "y": 8979,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogress Shaman",
+    "id": 7992,
+    "x": 2036,
+    "y": 8983,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chief Tess",
+    "id": 7988,
+    "x": 2013,
+    "y": 9004,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 0
   }
 ]
