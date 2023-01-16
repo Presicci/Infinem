@@ -48,5 +48,7 @@ public class ShipNPC {
         // Void Knight Outpost
         registerShipNPC(1770, "the Void Knights' Outpost", new Position(2659, 2676, 0));
         registerShipNPC(1769, "Port Sarim", new Position(3040, 3202, 0));
+        // Crandor
+        registerShipNPC(819, "Crandor", new Position(2853, 3238, 0));
     }
 }
