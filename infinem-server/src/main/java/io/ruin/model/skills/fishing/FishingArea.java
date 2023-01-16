@@ -219,6 +219,12 @@ public enum FishingArea {
             new Position(3076, 3877, 0),
             new Position(3077, 3877, 0)
     ),
+    AL_KHARID(
+            new Position(3267, 3148, 0),
+            new Position(3266, 3148, 0),
+            new Position(3276, 3140, 0),
+            new Position(3275, 3140, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -262,6 +268,7 @@ public enum FishingArea {
     }
 
     static {
+        AL_KHARID.add(FishingSpot.NET_BAIT, 2);
         KARAMBWAN_RIVER.add(FishingSpot.KARAMBWAN_SPOT, 1);
         LUMBRIDGE_TUTORIAL.add(FishingSpot.NET_BAIT, 3);
         LUMBRIDGE_RIVER.add(FishingSpot.LURE_BAIT, 2);
