@@ -508,6 +508,7 @@ public class Config {
     public static final Config STORAGE_TROWEL_2 = varpbit(8360, true);
     public static final Config STORAGE_EMPTY_BUCKET_1 = varpbit(1441, true); // 5 bits
     public static final Config STORAGE_EMPTY_BUCKET_2 = varpbit(4731, true); // 3 bits
+    public static final Config STORAGE_EMPTY_BUCKET_3 = varpbit(6265, true);
     public static final Config STORAGE_COMPOST_1 = varpbit(1442, true); // 8 bits
     public static final Config STORAGE_COMPOST_2 = varpbit(6266, true); // 2 bits
     public static final Config STORAGE_SUPERCOMPOST_1 = varpbit(1443, true); // 8 bits

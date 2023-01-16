@@ -82,7 +82,11 @@ public class ToolStorage {
 
             @Override
             public int addItem(Player player, int amount, boolean noted) {
-                int added = player.getInventory().add(Config.STORAGE_SECATEURS_TYPE.get(player) == 1 ? 7409 : 5329, amount);
+                int id = Config.STORAGE_SECATEURS_TYPE.get(player) == 1 ? 7409 : 5329;
+                if (noted) {
+                    return player.getInventory().add(ItemDef.get(id).notedId, amount);
+                }
+                int added = player.getInventory().add(id, amount);
                 if ((get(player) - added) <= 0)
                     Config.STORAGE_SECATEURS_TYPE.set(player, 0);
                 return added;
@@ -144,7 +148,7 @@ public class ToolStorage {
         EMPTY_BUCKET(1925, null) {
             @Override
             public int get(Player player) {
-                return (Config.STORAGE_EMPTY_BUCKET_2.get(player) << 5) | Config.STORAGE_EMPTY_BUCKET_1.get(player);
+                return (Config.STORAGE_EMPTY_BUCKET_3.get(player) << 8) | (Config.STORAGE_EMPTY_BUCKET_2.get(player) << 5) | Config.STORAGE_EMPTY_BUCKET_1.get(player);
             }
 
             @Override
@@ -152,6 +156,7 @@ public class ToolStorage {
                 int newValue = get(player) + amount;
                 Config.STORAGE_EMPTY_BUCKET_1.set(player, newValue & 31); // 5 bit | 31 max
                 Config.STORAGE_EMPTY_BUCKET_2.set(player, (newValue >> 5) & 7); // 3 bit | 7 max
+                Config.STORAGE_EMPTY_BUCKET_3.set(player, newValue >> 8); // 3 bit | 7 max
             }
         },
         COMPOST(6032, null) {
