@@ -497,11 +497,15 @@ public class Config {
     public static final Config STORAGE_RAKE = varpbit(1435, true);
     public static final Config STORAGE_RAKE_2 = varpbit(8357, true);
     public static final Config STORAGE_SEED_DIBBER = varpbit(1436, true);
+    public static final Config STORAGE_SEED_DIBBER_2 = varpbit(8358, true);
     public static final Config STORAGE_SPADE = varpbit(1437, true);
+    public static final Config STORAGE_SPADE_2 = varpbit(8361, true);
     public static final Config STORAGE_SECATEURS = varpbit(1438, true);
+    public static final Config STORAGE_SECATEURS_2 = varpbit(8359, true);
     public static final Config STORAGE_SECATEURS_TYPE = varpbit(1848, true); // 0 for normal, 1 for magic
     public static final Config STORAGE_WATERING_CAN = varpbit(1439, true);
     public static final Config STORAGE_TROWEL = varpbit(1440, true);
+    public static final Config STORAGE_TROWEL_2 = varpbit(8360, true);
     public static final Config STORAGE_EMPTY_BUCKET_1 = varpbit(1441, true); // 5 bits
     public static final Config STORAGE_EMPTY_BUCKET_2 = varpbit(4731, true); // 3 bits
     public static final Config STORAGE_COMPOST_1 = varpbit(1442, true); // 8 bits

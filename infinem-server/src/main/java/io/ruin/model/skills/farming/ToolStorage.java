@@ -35,9 +35,41 @@ public class ToolStorage {
                 Config.STORAGE_RAKE_2.set(player, newValue >> 1);
             }
         },
-        SEED_DIBBER(5343, Config.STORAGE_SEED_DIBBER),
-        SPADE(952, Config.STORAGE_SPADE),
+        SEED_DIBBER(5343, Config.STORAGE_SEED_DIBBER) {
+            @Override
+            public int get(Player player) {
+                return (Config.STORAGE_SEED_DIBBER_2.get(player) << 1) | Config.STORAGE_SEED_DIBBER.get(player);
+            }
+            @Override
+            public void update(Player player, int amount) {
+                int newValue = get(player) + amount;
+                Config.STORAGE_SEED_DIBBER.set(player, newValue & 1);
+                Config.STORAGE_SEED_DIBBER_2.set(player, newValue >> 1);
+            }
+        },
+        SPADE(952, Config.STORAGE_SPADE) {
+            @Override
+            public int get(Player player) {
+                return (Config.STORAGE_SPADE_2.get(player) << 1) | Config.STORAGE_SPADE.get(player);
+            }
+            @Override
+            public void update(Player player, int amount) {
+                int newValue = get(player) + amount;
+                Config.STORAGE_SPADE.set(player, newValue & 1);
+                Config.STORAGE_SPADE_2.set(player, newValue >> 1);
+            }
+        },
         SECATEURS(5329, Config.STORAGE_SECATEURS) {
+            @Override
+            public int get(Player player) {
+                return (Config.STORAGE_SECATEURS_2.get(player) << 1) | Config.STORAGE_SECATEURS.get(player);
+            }
+            @Override
+            public void update(Player player, int amount) {
+                int newValue = get(player) + amount;
+                Config.STORAGE_SECATEURS.set(player, newValue & 1);
+                Config.STORAGE_SECATEURS_2.set(player, newValue >> 1);
+            }
             @Override
             public boolean accept(int item) {
                 return item == 5329 || item == 7409;
@@ -51,7 +83,7 @@ public class ToolStorage {
             @Override
             public int addItem(Player player, int amount, boolean noted) {
                 int added = player.getInventory().add(Config.STORAGE_SECATEURS_TYPE.get(player) == 1 ? 7409 : 5329, amount);
-                if (added > 0)
+                if ((get(player) - added) <= 0)
                     Config.STORAGE_SECATEURS_TYPE.set(player, 0);
                 return added;
             }
@@ -72,7 +104,18 @@ public class ToolStorage {
                 return player.getInventory().add(WATERING_CAN_IDS.get(player.getFarming().getStorage().wateringCanCharges), amount);
             }
         },
-        GARDENING_TROWEL(5325, Config.STORAGE_TROWEL),
+        GARDENING_TROWEL(5325, Config.STORAGE_TROWEL) {
+            @Override
+            public int get(Player player) {
+                return (Config.STORAGE_TROWEL_2.get(player) << 1) | Config.STORAGE_TROWEL.get(player);
+            }
+            @Override
+            public void update(Player player, int amount) {
+                int newValue = get(player) + amount;
+                Config.STORAGE_TROWEL.set(player, newValue & 1);
+                Config.STORAGE_TROWEL_2.set(player, newValue >> 1);
+            }
+        },
         PLANT_CURE(6036, Config.STORAGE_PLANT_CURE),
         BOTTOMLESS_BUCKET(22997, Config.STORAGE_BOTTOMLESS_COMPOST) {
             @Override
@@ -221,17 +264,22 @@ public class ToolStorage {
             }
             player.sendMessage("You don't have any of that to deposit.");
         } else {
-            int notedId = ItemDef.get(tool.itemId).notedId;
-            int unnotedAmt = player.getInventory().getAmount(tool.itemId);
+            int itemId = tool == Tool.SECATEURS ? (player.getInventory().getAmount(7409) > 0 ? 7409 : tool.itemId) : tool.itemId;
+            if ((itemId == 5329 && Config.STORAGE_SECATEURS_TYPE.get(player) == 1) || (itemId == 7409 && Config.STORAGE_SECATEURS_TYPE.get(player) == 0 && tool.get(player) != 0)) {
+                player.sendMessage("You cannot mix different types of secateurs in the storage.");
+                return;
+            }
+            int notedId = ItemDef.get(itemId).notedId;
+            int unnotedAmt = player.getInventory().getAmount(itemId);
             int notedAmt = player.getInventory().getAmount(notedId);
             amount = Math.min(amount, Math.min(unnotedAmt + notedAmt, maxAmount - tool.get(player)));
             if (amount == 0) {
                 player.sendMessage("You don't have any of that to deposit.");
                 return;
             }
-            player.getInventory().remove(tool.itemId, amount, true);
+            player.getInventory().remove(itemId, amount, true);
             tool.update(player, amount);
-            tool.onDeposit(player, tool.itemId); // just in case
+            tool.onDeposit(player, itemId); // just in case
         }
     }
 
