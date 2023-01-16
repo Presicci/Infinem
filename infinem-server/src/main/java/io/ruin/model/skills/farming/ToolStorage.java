@@ -276,7 +276,7 @@ public class ToolStorage {
             }
             int notedId = ItemDef.get(itemId).notedId;
             int unnotedAmt = player.getInventory().getAmount(itemId);
-            int notedAmt = player.getInventory().getAmount(notedId);
+            int notedAmt = notedId == -1 ? 0 : player.getInventory().getAmount(notedId);
             amount = Math.min(amount, Math.min(unnotedAmt + notedAmt, maxAmount - tool.get(player)));
             if (amount == 0) {
                 player.sendMessage("You don't have any of that to deposit.");
