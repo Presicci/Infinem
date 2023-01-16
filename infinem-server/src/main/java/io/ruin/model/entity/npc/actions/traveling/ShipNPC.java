@@ -31,6 +31,7 @@ public class ShipNPC {
             );
         }));
         NPCAction.register(npcId, "travel", (player, npc) -> ShipNPC.setSail(player, destinationName, destination));
+        NPCAction.register(npcId, "pay-fare", (player, npc) -> ShipNPC.setSail(player, destinationName, destination));
     }
 
     /**
@@ -50,5 +51,10 @@ public class ShipNPC {
         registerShipNPC(1769, "Port Sarim", new Position(3040, 3202, 0));
         // Crandor
         registerShipNPC(819, "Crandor", new Position(2853, 3238, 0));
+        // Karamja
+        registerShipNPC(3644, "Karamja", new Position(2956, 3146, 0));
+        registerShipNPC(3645, "Karamja", new Position(2956, 3146, 0));
+        registerShipNPC(3646, "Karamja", new Position(2956, 3146, 0));
+        registerShipNPC(3648, "Port Sarim", new Position(3029, 3217, 0));
     }
 }
