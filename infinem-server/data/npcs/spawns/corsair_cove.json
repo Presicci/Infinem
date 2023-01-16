@@ -138,5 +138,14 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Trader Crewmember"
+  },
+  {
+    "name": "Cabin Boy Colin",
+    "id": 7965,
+    "x": 2579,
+    "y": 2840,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
   }
 ]
