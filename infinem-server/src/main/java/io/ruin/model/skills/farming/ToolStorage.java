@@ -1,6 +1,7 @@
 package io.ruin.model.skills.farming;
 
 import com.google.gson.annotations.Expose;
+import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceHandler;
@@ -48,7 +49,7 @@ public class ToolStorage {
             }
 
             @Override
-            public int addItem(Player player, int amount) {
+            public int addItem(Player player, int amount, boolean noted) {
                 int added = player.getInventory().add(Config.STORAGE_SECATEURS_TYPE.get(player) == 1 ? 7409 : 5329, amount);
                 if (added > 0)
                     Config.STORAGE_SECATEURS_TYPE.set(player, 0);
@@ -67,7 +68,7 @@ public class ToolStorage {
             }
 
             @Override
-            public int addItem(Player player, int amount) {
+            public int addItem(Player player, int amount, boolean noted) {
                 return player.getInventory().add(WATERING_CAN_IDS.get(player.getFarming().getStorage().wateringCanCharges), amount);
             }
         },
@@ -93,7 +94,7 @@ public class ToolStorage {
             }
 
             @Override
-            public int addItem(Player player, int amount) {
+            public int addItem(Player player, int amount, boolean noted) {
                 return player.getInventory().add(player.getFarming().getStorage().emptyBottomlessBucket ? 22994 : 22997, 1);
             }
         },
@@ -160,7 +161,10 @@ public class ToolStorage {
             return config.get(player);
         }
 
-        public int addItem(Player player, int amount) {
+        public int addItem(Player player, int amount, boolean noted) {
+            if (noted) {
+                return player.getInventory().add(ItemDef.get(itemId).notedId, amount);
+            }
             return player.getInventory().add(itemId, amount);
         }
 
@@ -184,13 +188,13 @@ public class ToolStorage {
         player.getPacketSender().sendAccessMask(125, 7, -1, -1, 1 << 1);
     }
 
-    public void withdraw(Tool tool, int amount) {
+    public void withdraw(Tool tool, int amount, boolean noted) {
         amount = Math.min(amount, tool.get(player));
         if (amount == 0) {
             player.sendMessage("Your " + tool.name + " storage is empty.");
             return;
         }
-        int added = tool.addItem(player, amount);
+        int added = tool.addItem(player, amount, noted);
         if (added == 0) {
             player.sendMessage("Not enough space in your inventory.");
             return;
@@ -217,12 +221,15 @@ public class ToolStorage {
             }
             player.sendMessage("You don't have any of that to deposit.");
         } else {
-            amount = Math.min(amount, Math.min(player.getInventory().getAmount(tool.itemId), maxAmount - tool.get(player)));
+            int notedId = ItemDef.get(tool.itemId).notedId;
+            int unnotedAmt = player.getInventory().getAmount(tool.itemId);
+            int notedAmt = player.getInventory().getAmount(notedId);
+            amount = Math.min(amount, Math.min(unnotedAmt + notedAmt, maxAmount - tool.get(player)));
             if (amount == 0) {
                 player.sendMessage("You don't have any of that to deposit.");
                 return;
             }
-            player.getInventory().remove(tool.itemId, amount);
+            player.getInventory().remove(tool.itemId, amount, true);
             tool.update(player, amount);
             tool.onDeposit(player, tool.itemId); // just in case
         }
@@ -243,10 +250,11 @@ public class ToolStorage {
             if (deposit)
                 player.getFarming().getStorage().deposit(Tool.values()[slot], 1);
             else
-                player.getFarming().getStorage().withdraw(Tool.values()[slot], 1);
+                player.getFarming().getStorage().withdraw(Tool.values()[slot], 1, false);
             return;
         }
         if (interfaceOption == 9 && !deposit) { // Banknote
+            player.getFarming().getStorage().withdraw(Tool.values()[slot], Integer.MAX_VALUE, true);
             return;
         }
         if (interfaceOption == 10) { // Examine
@@ -281,25 +289,25 @@ public class ToolStorage {
                 if (deposit)
                     player.getFarming().getStorage().deposit(Tool.values()[slot], 1);
                 else
-                    player.getFarming().getStorage().withdraw(Tool.values()[slot], 1);
+                    player.getFarming().getStorage().withdraw(Tool.values()[slot], 1, false);
                 break;
             case 2:     // Remove-5
                 if (deposit)
                     player.getFarming().getStorage().deposit(Tool.values()[slot], 5);
                 else
-                    player.getFarming().getStorage().withdraw(Tool.values()[slot], 5);
+                    player.getFarming().getStorage().withdraw(Tool.values()[slot], 5, false);
                 break;
             case 3:     // Remove-X
                 if (deposit)
                     player.integerInput("Enter amount:", amt -> player.getFarming().getStorage().deposit(Tool.values()[slot], amt));
                 else
-                    player.integerInput("Enter amount:", amt -> player.getFarming().getStorage().withdraw(Tool.values()[slot], amt));
+                    player.integerInput("Enter amount:", amt -> player.getFarming().getStorage().withdraw(Tool.values()[slot], amt, false));
                 break;
             case 4:     // Remove-All
                 if (deposit)
                     player.getFarming().getStorage().deposit(Tool.values()[slot], Integer.MAX_VALUE);
                 else
-                    player.getFarming().getStorage().withdraw(Tool.values()[slot], Integer.MAX_VALUE);
+                    player.getFarming().getStorage().withdraw(Tool.values()[slot], Integer.MAX_VALUE, false);
                 break;
         }
     }
