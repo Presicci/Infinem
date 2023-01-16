@@ -33,6 +33,7 @@ public class Grappling {
             return;
         }
         player.startEvent(e -> { //4455, 760
+            player.lock();
             e.path(player, position);
             player.animate(emoteId);
             player.graphics(gfxId, 100, 0);
@@ -41,6 +42,7 @@ public class Grappling {
             e.delay(3);
             player.getPacketSender().fadeIn();
             player.getMovement().teleport(destination);
+            player.unlock();
         });
     }
 
