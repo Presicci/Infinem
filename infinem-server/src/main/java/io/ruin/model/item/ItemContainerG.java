@@ -245,16 +245,14 @@ public abstract class ItemContainerG<I extends Item> {
         return remove(id, amount, false, null);
     }
 
-    /**
-     * Removing
-     */
+    public int remove(int id, int amount, boolean acceptNoted) {
+        return remove(id, amount, acceptNoted, null);
+    }
+
     public int remove(Item item) {
         return remove(item.getId(), item.getAmount(), false, item.copyOfAttributes());
     }
 
-    /**
-     * Removing
-     */
     public int remove(int id, int amount, boolean acceptNoted, Map<String, String> attributes) {
         if(amount <= 0) {
             System.err.println("Invalid remove amount: " + amount + " | " + new Throwable().getStackTrace()[1].toString());
