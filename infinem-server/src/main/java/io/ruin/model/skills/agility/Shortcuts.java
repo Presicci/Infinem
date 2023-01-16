@@ -1,7 +1,7 @@
 package io.ruin.model.skills.agility;
 
-import io.ruin.model.entity.shared.LockType;
-import io.ruin.model.map.Direction;
+import io.ruin.model.entity.npc.actions.traveling.Traveling;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -404,6 +404,22 @@ public class Shortcuts {
 
         Tile.getObject(23140, 2573, 9506, 0).walkTo =  new Position(2572, 9506, 0);
         ObjectAction.register(23140, 2573, 9506, 0, "Squeeze-through", PipeShortcut.YANILLE_PIPE::traverse);
+
+        Tile.getObject(31852, 2446, 3158, 0).walkTo =  new Position(2449, 3155, 0);
+        ObjectAction.register(31852, 2446, 3158, 0, 1, (p, obj) -> {
+            if (Config.OBSERVATORY_ROPE.get(p) == 1) {
+                Traveling.fadeTravel(p, 2444, 3165, 0);
+                return;
+            }
+            p.addEvent(e -> {
+                Grappling.grapple(p, obj, 24, 24, 28, 4455, -1, 4, Position.of(2449, 3155, 0), Position.of(2444, 3165, 0));
+                e.delay(4);
+                Config.OBSERVATORY_ROPE.set(p, 1);
+                e.delay(3);
+                p.animate(-1);
+            });
+        });
+        ObjectAction.register(31849, 2448, 3156, 0, 1, (p, obj) -> Traveling.fadeTravel(p, 2444, 3165, 0));
 
     }
 }
