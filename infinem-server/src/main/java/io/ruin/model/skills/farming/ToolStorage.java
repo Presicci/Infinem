@@ -22,7 +22,18 @@ import static io.ruin.model.skills.farming.patch.impl.AllotmentPatch.WATERING_CA
 public class ToolStorage {
 
     enum Tool {//order should be the same as on the interface
-        RAKE(5341, Config.STORAGE_RAKE),
+        RAKE(5341, Config.STORAGE_RAKE) {
+            @Override
+            public int get(Player player) {
+                return (Config.STORAGE_RAKE_2.get(player) << 1) | Config.STORAGE_RAKE.get(player);
+            }
+            @Override
+            public void update(Player player, int amount) {
+                int newValue = get(player) + amount;
+                Config.STORAGE_RAKE.set(player, newValue & 1);
+                Config.STORAGE_RAKE_2.set(player, newValue >> 1);
+            }
+        },
         SEED_DIBBER(5343, Config.STORAGE_SEED_DIBBER),
         SPADE(952, Config.STORAGE_SPADE),
         SECATEURS(5329, Config.STORAGE_SECATEURS) {
@@ -95,8 +106,8 @@ public class ToolStorage {
             @Override
             public void update(Player player, int amount) {
                 int newValue = get(player) + amount;
-                Config.STORAGE_EMPTY_BUCKET_1.set(player, newValue & 31);
-                Config.STORAGE_EMPTY_BUCKET_2.set(player, (newValue >> 5) & 7);
+                Config.STORAGE_EMPTY_BUCKET_1.set(player, newValue & 31); // 5 bit | 31 max
+                Config.STORAGE_EMPTY_BUCKET_2.set(player, (newValue >> 5) & 7); // 3 bit | 7 max
             }
         },
         COMPOST(6032, null) {
@@ -108,8 +119,8 @@ public class ToolStorage {
             @Override
             public void update(Player player, int amount) {
                 int newValue = get(player) + amount;
-                Config.STORAGE_COMPOST_1.set(player, newValue & 255);
-                Config.STORAGE_COMPOST_2.set(player, (newValue >> 8) & 3);
+                Config.STORAGE_COMPOST_1.set(player, newValue & 255); // 8 bit | 255 max
+                Config.STORAGE_COMPOST_2.set(player, (newValue >> 8) & 3); // 2 bit | 3 max
             }
         },
         SUPERCOMPOST(6034, null) {
@@ -121,8 +132,8 @@ public class ToolStorage {
             @Override
             public void update(Player player, int amount) {
                 int newValue = get(player) + amount;
-                Config.STORAGE_SUPERCOMPOST_1.set(player, newValue & 255);
-                Config.STORAGE_SUPERCOMPOST_2.set(player, (newValue >> 8) & 3);
+                Config.STORAGE_SUPERCOMPOST_1.set(player, newValue & 255); // 8 bit | 255 max
+                Config.STORAGE_SUPERCOMPOST_2.set(player, (newValue >> 8) & 3); // 2 bit | 3 max
             }
         },
         ULTRACOMPOST(21483, Config.STORAGE_ULTRACOMPOST);
@@ -220,6 +231,8 @@ public class ToolStorage {
     private int getMaxAmount(Tool tool) {
         if (tool == Tool.EMPTY_BUCKET || tool == Tool.COMPOST || tool == Tool.SUPERCOMPOST || tool == Tool.ULTRACOMPOST || tool == Tool.PLANT_CURE)
             return 1000;
+        if (tool == Tool.RAKE || tool == Tool.SPADE || tool == Tool.SEED_DIBBER || tool == Tool.SECATEURS || tool == Tool.GARDENING_TROWEL)
+            return 100;
         return 1;
     }
 
