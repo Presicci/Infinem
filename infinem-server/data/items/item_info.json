@@ -109494,6 +109494,38 @@
     "protect_value": 0,
     "destroy": "You may simply open the pouch instead to continue pickpocketing."
   },
+  { # Celestial ring (uncharged)
+    "id": 25539,
+    "tradeable": false,
+	"examine": "A ring forged in the heart of a shooting star. It provides some useful mining boosts.",
+    "weight": 0.006,
+	"protect_value": 2000,
+    "equip_slot": 12
+  },
+  { # Celestial ring
+    "id": 25541,
+    "tradeable": false,
+	"examine": "A ring forged in the heart of a shooting star. It provides some useful mining boosts.",
+    "weight": 0.006,
+	"protect_value": 2000,
+    "equip_slot": 12
+  },
+  { # Celestial signet (uncharged)
+    "id": 25543,
+    "tradeable": false,
+	"examine": "A ring forged in the heart of a shooting star. It provides some useful mining boosts.",
+    "weight": 0.006,
+	"protect_value": 2000,
+    "equip_slot": 12
+  },
+  { # Celestial signet
+    "id": 25545,
+    "tradeable": false,
+	"examine": "A ring forged in the heart of a shooting star. It provides some useful mining boosts.",
+    "weight": 0.006,
+	"protect_value": 2000,
+    "equip_slot": 12
+  },
   { # Torva full helm
     "id": 26382,
     "tradeable": true,
