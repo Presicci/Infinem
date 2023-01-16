@@ -904,9 +904,16 @@ public class Config {
      */
     //public static final Config
     public static final Config STASH_UNITS[] = {
+            /*
+             * Beginner
+             */
             varpbit(8254, true), // Gypsy Aris 0
             varpbit(8256, true), // Bob's brilliant axes 1
             varpbit(8255, true), // Iffie Nitter 2
+
+            /*
+             * Easy
+             */
             varpbit(5213, true), // Monkey cage 3
             varpbit(5216, true), // Keep Le Faye 4
             varpbit(5220, true), // Duel arena office 5
@@ -938,7 +945,7 @@ public class Config {
             varpbit(5208, true), // varrock library 31
 
             /*
-             * Mediums
+             * Medium
              */
             varpbit(5229, true), // tai bwo wannai 32
             varpbit(5245, true), // shayzien combat ring 33
@@ -963,6 +970,10 @@ public class Config {
             varpbit(5234, true), // observatory 52
             varpbit(5230, true), // castle wars 53
             varpbit(5246, true), // arceuus library 54
+
+            /*
+             * Hard
+             */
     };
 
     /**
@@ -974,6 +985,11 @@ public class Config {
     public static final Config CAMP_COOKING_POT = varpbit(5803, true);
     public static final Config CAMP_SPINNING_WHEEL = varpbit(5804, true);
     public static final Config CAMP_LOOM = varpbit(5805, true);
+
+    /**
+     * Shortcuts
+     */
+    public static final Config OBSERVATORY_ROPE = varpbit(5810, true);
 
     /**
      * Separator
