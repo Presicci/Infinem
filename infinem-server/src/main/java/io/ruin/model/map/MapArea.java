@@ -27,6 +27,24 @@ public enum MapArea {
         this.bounds = new Bounds(new Position(southWestX, southWestY), new Position(northEastX, northEastY), z);
     }
 
+    MapArea(int southWestX, int southWestY, int northEastX, int northEastY, int z, MapListener.EnteredAction enteredAction) {
+        this.bounds = new Bounds(new Position(southWestX, southWestY), new Position(northEastX, northEastY), z);
+        registerOnEnter(bounds, enteredAction);
+    }
+
+    MapArea(int southWestX, int southWestY, int northEastX, int northEastY, int z, MapListener.ExitAction exitAction) {
+        this.bounds = new Bounds(new Position(southWestX, southWestY), new Position(northEastX, northEastY), z);
+        registerOnExit(bounds, exitAction);
+    }
+
+    private void registerOnEnter(Bounds bounds, MapListener.EnteredAction enteredAction) {
+        MapListener.registerBounds(bounds).onEnter(enteredAction);
+    }
+
+    private void registerOnExit(Bounds bounds, MapListener.ExitAction exitAction) {
+        MapListener.registerBounds(bounds).onExit(exitAction);
+    }
+
     public boolean inArea(Player player) {
         return bounds.inBounds(player);
     }
