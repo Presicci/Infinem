@@ -14,7 +14,10 @@ public enum MapArea {
     DRAGON_FORGE(1744, 5277, 1760, 5293, 1),
     WIZARD_TOWER(12337),
     REVENANT_CAVES(12703, 12702, 12701, 12959, 12958, 12957),
-    WILDERNESS_SLAYER_CAVE(13470, 13469, 13726, 13725)
+    WILDERNESS_SLAYER_CAVE(13470, 13469, 13726, 13725),
+    FISHING_GUILD(2596, 3394, 2614, 3426, 0, (player -> {
+        player.getTaskManager().doLookupByUUID(575, 1); // Enter the Fishing Guild
+    }))
     ;
 
     private final Bounds bounds;
