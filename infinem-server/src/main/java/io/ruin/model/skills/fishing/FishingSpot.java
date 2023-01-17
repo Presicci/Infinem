@@ -278,7 +278,14 @@ public class FishingSpot {
             case BARBARIAN_ROD:
                 return getEquippableTool(player, FishingTool.PEARL_BARBARIA_ROD);
             case HARPOON:
-                return getEquippableTool(player, FishingTool.DRAGON_HARPOON);
+                FishingTool harpoon = getEquippableTool(player, FishingTool.CRYSTAL_HARPOON);
+                if (harpoon == null)
+                    harpoon = getEquippableTool(player, FishingTool.INFERNAL_HARPOON);
+                if (harpoon == null)
+                    harpoon = getEquippableTool(player, FishingTool.DRAGON_HARPOON);
+                if (harpoon == null)
+                    harpoon = getEquippableTool(player, FishingTool.BARB_TAIL_HARPOON);
+                return harpoon;
             default:
                 return null;
         }
