@@ -73,16 +73,18 @@ public class FishingSpot {
     private void fish(Player player, NPC npc) {
         boolean barehand;
         Stat fishing = player.getStats().get(StatType.Fishing);
-        if (tool == FishingTool.HARPOON && hasDragonHarpoon(player)) {
+        if (tool == FishingTool.HARPOON && hasEquippableTool(player, FishingTool.DRAGON_HARPOON)) {
             if (fishing.currentLevel < 61) {
-                player.sendMessage("You need a Fishing level of at least 61 to fish with a dragon harpoon.");
-                return;
+                if (!player.getInventory().contains(new Item(tool.id))) {
+                    player.sendMessage("You need a Fishing level of at least 61 to fish with a dragon harpoon.");
+                    return;
+                }
+            } else {
+                tool = FishingTool.DRAGON_HARPOON;
             }
-
-            tool = FishingTool.DRAGON_HARPOON;
         }
 
-        if (player.getInventory().contains(new Item(tool.id)) || (tool == FishingTool.HARPOON && hasDragonHarpoon(player))) {
+        if (player.getInventory().contains(new Item(tool.id)) || hasRelevantEquippableTool(player, tool)) {
             FishingCatch lowestCatch = regularCatches[0];
 
             if (fishing.currentLevel < lowestCatch.levelReq) {
@@ -257,12 +259,41 @@ public class FishingSpot {
         });
     }
 
-    private static boolean hasDragonHarpoon(Player player) {
-        if (player.getInventory().hasId(FishingTool.DRAGON_HARPOON.id))
+    /**
+     * Given a FishingTool, checks if the player has an upgraded variant equipped.
+     * @param player Player
+     * @param tool FishingTool
+     * @return True if equipped or in inventory
+     */
+    private static boolean hasRelevantEquippableTool(Player player, FishingTool tool) {
+        switch (tool) {
+            case FISHING_ROD:
+                return hasEquippableTool(player, FishingTool.PEARL_ROD);
+            case FLY_FISHING_ROD:
+                return hasEquippableTool(player, FishingTool.PEARL_FLY_ROD);
+            case OILY_FISHING_ROD:
+                return hasEquippableTool(player, FishingTool.PEARL_OILY_ROD);
+            case BARBARIAN_ROD:
+                return hasEquippableTool(player, FishingTool.PEARL_BARBARIA_ROD);
+            case DRAGON_HARPOON:
+                return hasEquippableTool(player, FishingTool.DRAGON_HARPOON);
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * Checks if the player has the provided tool in their inventory or equipped.
+     * @param player Player
+     * @param tool FishingTool
+     * @return True if equipped or in inventory
+     */
+    private static boolean hasEquippableTool(Player player, FishingTool tool) {
+        if (player.getInventory().hasId(tool.id))
             return true;
 
         ItemDef playerWeapon = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
-        return playerWeapon != null && playerWeapon.id == FishingTool.DRAGON_HARPOON.id;
+        return playerWeapon != null && playerWeapon.id == tool.id;
     }
 
     private void register(int npcId, String option) {
