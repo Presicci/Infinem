@@ -37,8 +37,8 @@ public class FishingSpot {
 
     private FishingCatch randomCatch(int level, boolean barehand, FishingTool tool) {
         FishingCatch[] catches = barehand ? barehandCatches : regularCatches;
-        double roll = Random.get();
         for (int i = catches.length - 1; i >= 0; i--) {
+            double roll = Random.get();
             FishingCatch c = catches[i];
             int levelDifference = level - c.levelReq;
             if (levelDifference < 0) {
