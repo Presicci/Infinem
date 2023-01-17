@@ -225,6 +225,33 @@ public enum FishingArea {
             new Position(3276, 3140, 0),
             new Position(3275, 3140, 0)
     ),
+    MORT_MYRE_SWAMP_WEST(
+            new Position(3443, 3272, 0),
+            new Position(3437, 3272, 0),
+            new Position(3439, 3276, 0),
+            new Position(3441, 3271, 0),
+            new Position(3440, 3281, 0)
+    ),
+    MORT_MYRE_SWAMP_NORTH_WEST(
+            new Position(3424, 3409, 0),
+            new Position(3425, 3407, 0),
+            new Position(3428, 3405, 0)
+    ),
+    MORT_MYRE_SWAMP_NORTH_WEST_2(
+            new Position(3431, 3415, 0),
+            new Position(3435, 3417, 0),
+            new Position(3434, 3417, 0)
+    ),
+    MORT_MYRE_SPAWP_NORTH(
+            new Position(3478, 3431, 0),
+            new Position(3479, 3430, 0),
+            new Position(3479, 3435, 0),
+            new Position(3483, 3438, 0)
+    ),
+    MORT_MYRE_SPAWP_NORTH_2(
+            new Position(3489, 3445, 0),
+            new Position(3487, 3446, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -298,6 +325,11 @@ public enum FishingArea {
         HOME.add(FishingSpot.SMALL_NET_HARPOON, 2);
         HOME.add(FishingSpot.LURE_BAIT, 1);
         HOME.add(FishingSpot.NET_BAIT, 1);
+        MORT_MYRE_SWAMP_WEST.add(FishingSpot.SLIMY_EEL, 2);
+        MORT_MYRE_SWAMP_NORTH_WEST.add(FishingSpot.SLIMY_EEL, 1);
+        MORT_MYRE_SWAMP_NORTH_WEST_2.add(FishingSpot.SLIMY_EEL, 1);
+        MORT_MYRE_SPAWP_NORTH.add(FishingSpot.SLIMY_EEL, 2);
+        MORT_MYRE_SPAWP_NORTH_2.add(FishingSpot.SLIMY_EEL, 1);
     }
 
 }

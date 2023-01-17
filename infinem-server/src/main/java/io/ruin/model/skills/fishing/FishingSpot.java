@@ -285,6 +285,8 @@ public class FishingSpot {
 
     public static final int MOLTEN_EEL = 15018;
 
+    public static final int SLIMY_EEL = 2653;
+
     static {
         new FishingSpot(FishingTool.KARAMBWAN_VESSEL)
                 .regularCatches(FishingCatch.KARAMBWAN)
@@ -386,6 +388,12 @@ public class FishingSpot {
         new FishingSpot(FishingTool.SMALL_FISHING_NET)
                 .regularCatches(FishingCatch.MOLTEN_EEL)
                 .register(MOLTEN_EEL, "bait");
+        /*
+         * Slimy eel
+         */
+        new FishingSpot(FishingTool.FISHING_ROD)
+                .regularCatches(FishingCatch.SLIMY_EEL)
+                .register(SLIMY_EEL, "bait");
     }
 
     private static void moveMinnow(NPC... minnows) {
