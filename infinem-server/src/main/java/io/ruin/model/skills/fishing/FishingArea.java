@@ -282,6 +282,16 @@ public enum FishingArea {
             new Position(3569, 3176, 0),
             new Position(3574, 3178, 0)
     ),
+    MUSA_POINT(
+            new Position(2996, 3157, 0),
+            new Position(2996, 3158, 0),
+            new Position(2996, 3159, 0)
+    ),
+    MUSA_POINT_2(
+            new Position(2986, 3176, 0),
+            new Position(2990, 3169, 0),
+            new Position(2985, 3179, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -364,6 +374,7 @@ public enum FishingArea {
         BURGH_DE_ROTT_2.add(FishingSpot.BIG_NET_HARPOON, 1);
         BURGH_DE_ROTT_3.add(FishingSpot.BIG_NET_HARPOON, 4);
         BURGH_DE_ROTT_4.add(FishingSpot.BIG_NET_HARPOON, 2);
+        MUSA_POINT.add(FishingSpot.NET_BAIT, 2);
+        MUSA_POINT_2.add(FishingSpot.NET_BAIT, 2);
     }
-
 }
