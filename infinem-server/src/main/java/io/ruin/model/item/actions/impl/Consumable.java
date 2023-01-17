@@ -25,6 +25,7 @@ public class Consumable {
      */
 
     static {
+        registerEat(Items.COOKED_SLIMY_EEL, 10, "slimy eel");
         registerEat(Items.SPINACH_ROLL, 2, "spinach roll");
         registerEat(24785, 5, p -> p.sendFilteredMessage("It heals some health, and tastes concerningly nice."));
         registerEat(Items.CHOPPED_ONION, 1, p -> p.sendFilteredMessage("It's sad to see a grown " + (p.getAppearance().isMale() ? "man" : "woman") + " cry."));
