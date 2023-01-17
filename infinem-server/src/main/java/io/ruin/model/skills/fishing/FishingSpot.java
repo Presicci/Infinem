@@ -263,7 +263,7 @@ public class FishingSpot {
 
     public static final int NET_BAIT = 1518;            //shrimps,anchovies / sardine,herring
 
-    public static final int LURE_BAIT = 1506;           //trout,salmon / pike
+    public static final int LURE_BAIT = 1508;           //trout,salmon / pike
 
     public static final int CAGE_HARPOON = 1519;        //lobster / tuna,swordfish
 
