@@ -12,8 +12,8 @@ public enum FishingArea {
 
     KARAMBWAN_RIVER(
             new Position(2899, 3119, 0),
-            new Position(2912, 3119, 0)
-
+            new Position(2912, 3119, 0),
+            new Position(2896, 3120, 0)
     ),
     LUMBRIDGE_TUTORIAL(
             new Position(3246, 3156, 0),
@@ -336,7 +336,7 @@ public enum FishingArea {
 
     static {
         AL_KHARID.add(FishingSpot.NET_BAIT, 2);
-        KARAMBWAN_RIVER.add(FishingSpot.KARAMBWAN_SPOT, 1);
+        KARAMBWAN_RIVER.add(FishingSpot.KARAMBWAN_SPOT, 2);
         LUMBRIDGE_TUTORIAL.add(FishingSpot.NET_BAIT, 3);
         LUMBRIDGE_RIVER.add(FishingSpot.LURE_BAIT, 2);
         DRAYNOR.add(FishingSpot.NET_BAIT, 2);
