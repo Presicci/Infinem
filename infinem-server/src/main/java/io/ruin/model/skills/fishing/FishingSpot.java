@@ -16,6 +16,8 @@ import io.ruin.model.map.MapArea;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 
+import java.util.Objects;
+
 public class FishingSpot {
 
     private FishingTool tool;
@@ -73,18 +75,18 @@ public class FishingSpot {
     private void fish(Player player, NPC npc) {
         boolean barehand;
         Stat fishing = player.getStats().get(StatType.Fishing);
-        if (tool == FishingTool.HARPOON && hasEquippableTool(player, FishingTool.DRAGON_HARPOON)) {
+        FishingTool equippableTool = getRelevantEquippableTool(player, tool);
+        if (equippableTool != null)
+            tool = equippableTool;
+        if (tool == FishingTool.DRAGON_HARPOON) {
             if (fishing.currentLevel < 61) {
-                if (!player.getInventory().contains(new Item(tool.id))) {
-                    player.sendMessage("You need a Fishing level of at least 61 to fish with a dragon harpoon.");
-                    return;
-                }
-            } else {
-                tool = FishingTool.DRAGON_HARPOON;
+                player.sendMessage("You need a Fishing level of at least 61 to fish with a dragon harpoon.");
+                return;
             }
         }
 
-        if (player.getInventory().contains(new Item(tool.id)) || hasRelevantEquippableTool(player, tool)) {
+        Item weapon = player.getEquipment().get(Equipment.SLOT_WEAPON);
+        if (player.getInventory().contains(new Item(tool.id)) || Objects.requireNonNull(weapon).getId() == tool.id) {
             FishingCatch lowestCatch = regularCatches[0];
 
             if (fishing.currentLevel < lowestCatch.levelReq) {
@@ -263,22 +265,22 @@ public class FishingSpot {
      * Given a FishingTool, checks if the player has an upgraded variant equipped.
      * @param player Player
      * @param tool FishingTool
-     * @return True if equipped or in inventory
+     * @return The equippable variant of the provided tool, if found, null if not
      */
-    private static boolean hasRelevantEquippableTool(Player player, FishingTool tool) {
+    private static FishingTool getRelevantEquippableTool(Player player, FishingTool tool) {
         switch (tool) {
             case FISHING_ROD:
-                return hasEquippableTool(player, FishingTool.PEARL_ROD);
+                return getEquippableTool(player, FishingTool.PEARL_ROD);
             case FLY_FISHING_ROD:
-                return hasEquippableTool(player, FishingTool.PEARL_FLY_ROD);
+                return getEquippableTool(player, FishingTool.PEARL_FLY_ROD);
             case OILY_FISHING_ROD:
-                return hasEquippableTool(player, FishingTool.PEARL_OILY_ROD);
+                return getEquippableTool(player, FishingTool.PEARL_OILY_ROD);
             case BARBARIAN_ROD:
-                return hasEquippableTool(player, FishingTool.PEARL_BARBARIA_ROD);
+                return getEquippableTool(player, FishingTool.PEARL_BARBARIA_ROD);
             case DRAGON_HARPOON:
-                return hasEquippableTool(player, FishingTool.DRAGON_HARPOON);
+                return getEquippableTool(player, FishingTool.DRAGON_HARPOON);
             default:
-                return false;
+                return null;
         }
     }
 
@@ -286,14 +288,15 @@ public class FishingSpot {
      * Checks if the player has the provided tool in their inventory or equipped.
      * @param player Player
      * @param tool FishingTool
-     * @return True if equipped or in inventory
+     * @return The tool if found, null if not
      */
-    private static boolean hasEquippableTool(Player player, FishingTool tool) {
+    private static FishingTool getEquippableTool(Player player, FishingTool tool) {
         if (player.getInventory().hasId(tool.id))
-            return true;
-
+            return tool;
         ItemDef playerWeapon = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
-        return playerWeapon != null && playerWeapon.id == tool.id;
+        if (playerWeapon != null && playerWeapon.id == tool.id)
+            return tool;
+        return null;
     }
 
     private void register(int npcId, String option) {
