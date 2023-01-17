@@ -120,10 +120,10 @@ public class FishingSpot {
             return;
         }
 
-        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
+        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
             player.sendMessage("Your inventory and bank are too full to hold any fish.");
             return;
-        } else if (player.getInventory().isFull()) {
+        } else if (player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
             player.sendMessage("Your inventory is too full to hold any fish.");
             return;
         }
@@ -172,7 +172,9 @@ public class FishingSpot {
                         if (npc.getId() == INFERNO_EEL)
                             player.sendFilteredMessage("You catch an infernal eel. It hardens as you handle it with your ice gloves.");
 
-                        int amount = npc.getId() == MINNOWS ? Random.get(10, 26) : 1;
+                        int amount = npc.getId() == MINNOWS ? Random.get(10, 26)
+                                : c.id == FishingCatch.KARAMBWANJI.id ? ((fishing.currentLevel / 5) + 1)
+                                : 1;
                         player.collectResource(new Item(c.id, amount));
 
                         if (player.darkCrabBoost.isDelayed()) {
@@ -185,7 +187,7 @@ public class FishingSpot {
                             player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(c.id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(c.id) + ".");
                             player.getStats().addXp(StatType.Fishing, (c.xp * anglerBonus(player)) * (npc.getId() == MINNOWS ? 1 : 2), true);
                         } else {
-                            player.getInventory().add(c.id, amount);
+                            player.getInventory().addOrDrop(c.id, amount);
                             player.getStats().addXp(StatType.Fishing, c.xp * anglerBonus(player), true);
                         }
                         player.getTaskManager().doSkillItemLookup(c.id, amount);
@@ -217,11 +219,11 @@ public class FishingSpot {
                     if (Random.rollDie(c.petOdds - (player.getStats().get(StatType.Fishing).currentLevel * 25)))
                         Pet.HERON.unlock(player);
 
-                    if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
+                    if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
                         player.sendMessage("Your inventory and bank are too full to hold any fish.");
                         player.resetAnimation();
                         return;
-                    } else if (player.getInventory().isFull()) {
+                    } else if (player.getInventory().isFull() && npc.getId() != KARAMBWANJI) {
                         player.sendMessage("Your inventory is too full to hold any more fish.");
                         player.resetAnimation();
                         return;
@@ -282,6 +284,8 @@ public class FishingSpot {
     public static final int INFERNO_EEL = 7676;        //infernal eel
 
     public static final int KARAMBWAN_SPOT = 4712;
+
+    public static final int KARAMBWANJI = 4710;
 
     public static final int MOLTEN_EEL = 15018;
 
@@ -394,6 +398,13 @@ public class FishingSpot {
         new FishingSpot(FishingTool.FISHING_ROD)
                 .regularCatches(FishingCatch.SLIMY_EEL)
                 .register(SLIMY_EEL, "bait");
+
+        /*
+         * Karambwanji
+         */
+        new FishingSpot(FishingTool.SMALL_FISHING_NET)
+                .regularCatches(FishingCatch.KARAMBWANJI, FishingCatch.SHRIMPS)
+                .register(KARAMBWANJI, "net");
     }
 
     private static void moveMinnow(NPC... minnows) {
@@ -439,5 +450,4 @@ public class FishingSpot {
 
         return bonus;
     }
-
 }
