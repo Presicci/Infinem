@@ -52,7 +52,7 @@ public class FishingSpot {
             }
             if (tool == FishingTool.DRAGON_HARPOON)
                 chance += 1.20;
-            chance += (double) levelDifference * 0.01;
+            chance += (double) levelDifference * 0.003;
             if (roll > Math.min(chance, 0.90)) {
                 /* failed to catch */
                 continue;
