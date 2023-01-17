@@ -403,7 +403,7 @@ public class FishingSpot {
          * Karambwanji
          */
         new FishingSpot(FishingTool.SMALL_FISHING_NET)
-                .regularCatches(FishingCatch.KARAMBWANJI, FishingCatch.SHRIMPS)
+                .regularCatches(FishingCatch.SHRIMPS, FishingCatch.KARAMBWANJI)
                 .register(KARAMBWANJI, "net");
     }
 
