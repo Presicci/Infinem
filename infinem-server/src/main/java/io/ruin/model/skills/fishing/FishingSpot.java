@@ -20,12 +20,12 @@ import java.util.Objects;
 
 public class FishingSpot {
 
-    private FishingTool tool;
+    private FishingTool defaultTool;
 
     private FishingCatch[] regularCatches, barehandCatches;
 
     private FishingSpot(FishingTool tool) {
-        this.tool = tool;
+        this.defaultTool = tool;
     }
 
     private FishingSpot regularCatches(FishingCatch... regularCatches) {
@@ -74,19 +74,18 @@ public class FishingSpot {
 
     private void fish(Player player, NPC npc) {
         boolean barehand;
+        FishingTool tool = defaultTool;
         Stat fishing = player.getStats().get(StatType.Fishing);
         FishingTool equippableTool = getRelevantEquippableTool(player, tool);
         if (equippableTool != null)
             tool = equippableTool;
-        if (tool == FishingTool.DRAGON_HARPOON) {
-            if (fishing.currentLevel < 61) {
-                player.sendMessage("You need a Fishing level of at least 61 to fish with a dragon harpoon.");
-                return;
-            }
+        if (tool == FishingTool.DRAGON_HARPOON && fishing.currentLevel < 61) {
+            player.sendMessage("You need a Fishing level of at least 61 to fish with a dragon harpoon.");
+            return;
         }
 
         Item weapon = player.getEquipment().get(Equipment.SLOT_WEAPON);
-        if (player.getInventory().contains(new Item(tool.id)) || Objects.requireNonNull(weapon).getId() == tool.id) {
+        if (player.getInventory().contains(new Item(tool.id)) || weapon != null && weapon.getId() == tool.id) {
             FishingCatch lowestCatch = regularCatches[0];
 
             if (fishing.currentLevel < lowestCatch.levelReq) {
@@ -153,6 +152,7 @@ public class FishingSpot {
          * Start event
          */
         player.animate(barehand ? 6703 : tool.startAnimationId);
+        FishingTool finalTool = tool;
         player.startEvent(event -> {
             int animTicks = 2;
             boolean firstBarehandAnim = true;
@@ -170,7 +170,7 @@ public class FishingSpot {
                     continue;
                 }
 
-                FishingCatch c = randomCatch(level, barehand, tool);
+                FishingCatch c = randomCatch(level, barehand, finalTool);
                 if (c != null) {
                     if (npc.getId() == MINNOWS && (npc.minnowsFish || (npc.minnowsFish = Random.rollDie(100)))) {
                         npc.graphics(1387);
@@ -243,18 +243,18 @@ public class FishingSpot {
                         return;
                     }
 
-                    if (!barehand && tool.secondaryId != -1) {
-                        Item requiredSecondary = player.getInventory().findItem(tool.secondaryId);
+                    if (!barehand && finalTool.secondaryId != -1) {
+                        Item requiredSecondary = player.getInventory().findItem(finalTool.secondaryId);
 
                         if (requiredSecondary == null) {
-                            player.sendMessage("You need at least one " + tool.secondaryName + " to fish at this spot.");
+                            player.sendMessage("You need at least one " + finalTool.secondaryName + " to fish at this spot.");
                             return;
                         }
                     }
                 }
 
                 if (animTicks == 0) {
-                    player.animate(barehand ? 6704 : tool.loopAnimationId);
+                    player.animate(barehand ? 6704 : finalTool.loopAnimationId);
                     animTicks = 3;
                 }
             }
@@ -277,7 +277,7 @@ public class FishingSpot {
                 return getEquippableTool(player, FishingTool.PEARL_OILY_ROD);
             case BARBARIAN_ROD:
                 return getEquippableTool(player, FishingTool.PEARL_BARBARIA_ROD);
-            case DRAGON_HARPOON:
+            case HARPOON:
                 return getEquippableTool(player, FishingTool.DRAGON_HARPOON);
             default:
                 return null;
