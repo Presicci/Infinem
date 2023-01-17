@@ -12,6 +12,7 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.map.MapArea;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 
@@ -60,6 +61,13 @@ public class FishingSpot {
             return c;
         }
         return null;
+    }
+
+    private int getLevelWithBoost(Player player, Stat fishing) {
+        int level = fishing.currentLevel;
+        if (MapArea.FISHING_GUILD.inArea(player))
+            level += 7;
+        return level;
     }
 
     private void fish(Player player, NPC npc) {
@@ -135,6 +143,8 @@ public class FishingSpot {
             }
         }
 
+        int level = getLevelWithBoost(player, fishing);
+
         /*
          * Start event
          */
@@ -156,7 +166,7 @@ public class FishingSpot {
                     continue;
                 }
 
-                FishingCatch c = randomCatch(fishing.currentLevel, barehand, tool);
+                FishingCatch c = randomCatch(level, barehand, tool);
                 if (c != null) {
                     if (npc.getId() == MINNOWS && (npc.minnowsFish || (npc.minnowsFish = Random.rollDie(100)))) {
                         npc.graphics(1387);
