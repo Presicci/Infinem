@@ -252,6 +252,36 @@ public enum FishingArea {
             new Position(3489, 3445, 0),
             new Position(3487, 3446, 0)
     ),
+    BURGH_DE_ROTT(
+            new Position(3476, 3191, 0),
+            new Position(3479, 3189, 0),
+            new Position(3486, 3184, 0),
+            new Position(3489, 3184, 0),
+            new Position(3490, 3183, 0),
+            new Position(3496, 3178, 0),
+            new Position(3497, 3175, 0),
+            new Position(3499, 3178, 0)
+    ),
+    BURGH_DE_ROTT_2(
+            new Position(3509, 3180, 0),
+            new Position(3512, 3178, 0),
+            new Position(3518, 3177, 0)
+    ),
+    BURGH_DE_ROTT_3(
+            new Position(3528, 3171, 0),
+            new Position(3526, 3169, 0),
+            new Position(3528, 3167, 0),
+            new Position(3531, 3171, 0),
+            new Position(3538, 3179, 0),
+            new Position(3540, 3178, 0),
+            new Position(3545, 3181, 0)
+    ),
+    BURGH_DE_ROTT_4(
+            new Position(3559, 3176, 0),
+            new Position(3562, 3174, 0),
+            new Position(3569, 3176, 0),
+            new Position(3574, 3178, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -330,6 +360,10 @@ public enum FishingArea {
         MORT_MYRE_SWAMP_NORTH_WEST_2.add(FishingSpot.SLIMY_EEL, 1);
         MORT_MYRE_SPAWP_NORTH.add(FishingSpot.SLIMY_EEL, 2);
         MORT_MYRE_SPAWP_NORTH_2.add(FishingSpot.SLIMY_EEL, 1);
+        BURGH_DE_ROTT.add(FishingSpot.BIG_NET_HARPOON, 4);
+        BURGH_DE_ROTT_2.add(FishingSpot.BIG_NET_HARPOON, 1);
+        BURGH_DE_ROTT_3.add(FishingSpot.BIG_NET_HARPOON, 4);
+        BURGH_DE_ROTT_4.add(FishingSpot.BIG_NET_HARPOON, 2);
     }
 
 }
