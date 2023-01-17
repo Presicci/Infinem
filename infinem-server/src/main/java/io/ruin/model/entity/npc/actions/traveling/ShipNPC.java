@@ -56,5 +56,8 @@ public class ShipNPC {
         registerShipNPC(3645, "Karamja", new Position(2956, 3146, 0));
         registerShipNPC(3646, "Karamja", new Position(2956, 3146, 0));
         registerShipNPC(3648, "Port Sarim", new Position(3029, 3217, 0));
+        // Corsair cove
+        registerShipNPC(7967, "Corsair Cove", new Position(2578, 2840, 0));
+        registerShipNPC(7965, "Port Sarim", new Position(2909, 3226, 0));
     }
 }
