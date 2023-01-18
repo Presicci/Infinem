@@ -2,10 +2,12 @@ package io.ruin.model.map.object.actions.impl.chests;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
+import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
 
 /**
@@ -16,6 +18,8 @@ import io.ruin.model.stat.StatType;
 public class BrimstoneChest {
 
     private static final int BRIMSTONE_KEY = 23083;
+
+    private static final PlayerCounter chestCounter = PlayerCounter.BRIMSTONE_CHESTS_OPENED;
 
     private static final LootTable LOOT_TABLE = new LootTable().addTable(0,
             new LootItem(Items.UNCUT_DIAMOND_NOTE, 25, 35, 52),
@@ -35,19 +39,19 @@ public class BrimstoneChest {
             new LootItem(Items.DRAGON_DART_TIP, 40, 160, 32),
             new LootItem(Items.PALM_TREE_SEED, 2, 4, 16),
             new LootItem(Items.MAGIC_SEED, 2, 4, 16),
-            new LootItem(-1, 2, 4, 16),  // TODO Celastrus seed
-            new LootItem(-1, 1, 4, 16),  // TODO Dragonfruit tree seed
-            new LootItem(-1, 1, 1, 16),  // TODO Redwood seed
+            new LootItem(22869, 2, 4, 16),
+            new LootItem(22877, 1, 4, 16),
+            new LootItem(22871, 1, 1, 16),
             new LootItem(Items.TORSTOL_SEED, 3, 5, 16),
             new LootItem(Items.SNAPDRAGON_SEED, 3, 5, 16),
             new LootItem(Items.RANARR_SEED, 3, 5, 16),
             new LootItem(Items.PURE_ESSENCE_NOTE, 3000, 6000, 16),
-            new LootItem(-1, 1, 1, 5),  // TODO Broken dragon hasta
-            new LootItem(-1, 1, 1, 1),  // TODO Dark mystic hat
-            new LootItem(-1, 1, 1, 1),  // TODO Dark mystic robe top
-            new LootItem(-1, 1, 1, 1),  // TODO Dark mystic robe bottom
-            new LootItem(-1, 1, 1, 1),  // TODO Dark mystic gloves
-            new LootItem(-1, 1, 1, 1)   // TODO Dark mystic boots
+            new LootItem(22963, 1, 1, 5),
+            new LootItem(23047, 1, 1, 1),
+            new LootItem(23050, 1, 1, 1),
+            new LootItem(23053, 1, 1, 1),
+            new LootItem(23056, 1, 1, 1),
+            new LootItem(23059, 1, 1, 1)
     );
 
     private static Item rollRawFood(Player player) {
@@ -76,7 +80,11 @@ public class BrimstoneChest {
     private static void openChest(Player player) {
         Item brimstoneKey = player.getInventory().findItem(BRIMSTONE_KEY);
         if (brimstoneKey == null) {
-            player.sendFilteredMessage("You need a Brimstone key to open this chest.");
+            player.sendFilteredMessage("You need a Brimstone key to open the chest.");
+            return;
+        }
+        if (player.getInventory().getFreeSlots() == 0 && brimstoneKey.getAmount() > 1) {
+            player.sendMessage("You need a free inventory slot to open the chest!");
             return;
         }
         player.startEvent(event -> {
@@ -85,9 +93,21 @@ public class BrimstoneChest {
             brimstoneKey.remove(1);
             player.animate(536);
             Item loot = LOOT_TABLE.rollItem();
+            if (loot.getId() == -1)
+                loot = rollRawFood(player);
             player.getInventory().addOrDrop(loot);
+            chestCounter.increment(player, 1);
             event.delay(1);
             player.unlock();
+        });
+    }
+
+    static {
+        ObjectAction.register(34662, 1, (player, obj) -> {
+            openChest(player);
+        });
+        ObjectAction.register(34662, 2, (player, obj) -> {
+            player.sendMessage("Your Brimstone chest count is: " + chestCounter.get(player));
         });
     }
 }
