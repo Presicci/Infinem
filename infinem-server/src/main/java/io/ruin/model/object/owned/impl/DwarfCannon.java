@@ -53,7 +53,7 @@ public class DwarfCannon extends OwnedObject {
     private static final int SETUP_ANIM = 827;
     private static final int BROKEN_CANNON = 5;
     private static final int MAX_AMMO = 30;
-    private static final int CANNON_RANGE = 12;
+    private static final int CANNON_RANGE = 8;
     private static final int MAX_HIT = 30;
     private static final int DECAY_TIME = 20;
     private static final int BROKEN_TIME = 25;
