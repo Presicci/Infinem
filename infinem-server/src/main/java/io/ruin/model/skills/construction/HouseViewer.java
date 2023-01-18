@@ -6,6 +6,7 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SimpleAction;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
@@ -109,6 +110,10 @@ public class HouseViewer { // mostly just converted jordan's code to work with m
     }
 
     public static void addRoom(Player player, RoomDefinition type) {
+        if (type == RoomDefinition.PORTAL_NEXUS) {
+            player.dialogue(new MessageDialogue("The portal nexus is not currently implemented."));
+            return;
+        }
         player.houseViewerRoom = type.create();
         player.houseViewerRoom.pointX = player.houseBuildPointX;
         player.houseViewerRoom.pointY = player.houseBuildPointY;
