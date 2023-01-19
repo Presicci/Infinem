@@ -10,6 +10,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.impl.chargable.CrystalEquipment;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.MapArea;
@@ -20,7 +21,7 @@ import java.util.Objects;
 
 public class FishingSpot {
 
-    private FishingTool defaultTool;
+    private final FishingTool defaultTool;
 
     private FishingCatch[] regularCatches, barehandCatches;
 
@@ -53,8 +54,10 @@ public class FishingSpot {
                 /* always catch this bad boy */
                 return c;
             }
-            if (tool == FishingTool.DRAGON_HARPOON)
-                chance += 1.20;
+            if (tool == FishingTool.DRAGON_HARPOON || tool == FishingTool.INFERNAL_HARPOON)
+                chance *= 1.20;
+            if (tool == FishingTool.CRYSTAL_HARPOON)
+                chance *= 1.35;
             chance += (double) levelDifference * 0.003;
             if (roll > Math.min(chance, 0.90)) {
                 /* failed to catch */
@@ -83,9 +86,21 @@ public class FishingSpot {
             player.sendMessage("You need a Fishing level of at least 61 to fish with a dragon harpoon.");
             return;
         }
+        if (tool == FishingTool.INFERNAL_HARPOON && fishing.currentLevel < 75) {
+            player.sendMessage("You need a Fishing level of at least 75 to fish with a infernal harpoon.");
+            return;
+        }
+        if (tool == FishingTool.CRYSTAL_HARPOON && fishing.currentLevel < 71) {
+            player.sendMessage("You need a Fishing level of at least 71 to fish with a crystal harpoon.");
+            return;
+        }
+        if (tool == FishingTool.BARB_TAIL_HARPOON && player.getStats().get(StatType.Hunter).currentLevel < 33) {
+            player.sendMessage("You need a Hunter level of at least 33 to fish with a barb-tail harpoon.");
+            return;
+        }
 
         Item weapon = player.getEquipment().get(Equipment.SLOT_WEAPON);
-        if (player.getInventory().contains(new Item(tool.id)) || weapon != null && weapon.getId() == tool.id) {
+        if (player.getInventory().contains(tool.id, 1, false, true) || (weapon != null && weapon.getId() == tool.id)) {
             FishingCatch lowestCatch = regularCatches[0];
 
             if (fishing.currentLevel < lowestCatch.levelReq) {
@@ -190,7 +205,8 @@ public class FishingSpot {
                                 : c.id == FishingCatch.KARAMBWANJI.id ? ((fishing.currentLevel / 5) + 1)
                                 : 1;
                         player.collectResource(new Item(c.id, amount));
-
+                        if (finalTool == FishingTool.CRYSTAL_HARPOON)
+                            CrystalEquipment.HARPOON.removeCharge(player);
                         if (player.darkCrabBoost.isDelayed()) {
                             if (Random.rollPercent(20))
                                 amount++;
@@ -298,7 +314,7 @@ public class FishingSpot {
      * @return The tool if found, null if not
      */
     private static FishingTool getEquippableTool(Player player, FishingTool tool) {
-        if (player.getInventory().hasId(tool.id))
+        if (player.getInventory().contains(tool.id, 1, false, true))
             return tool;
         ItemDef playerWeapon = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         if (playerWeapon != null && playerWeapon.id == tool.id)
