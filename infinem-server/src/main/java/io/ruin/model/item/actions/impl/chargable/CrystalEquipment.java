@@ -60,11 +60,25 @@ public enum CrystalEquipment {
             tool = player.getInventory().findItemIgnoringAttributes(activeId, false);
         if ((tool != null && tool.getId() == activeId)) {
             int currentCharges = AttributeExtensions.getCharges(tool);
+            if (currentCharges <= 0) {
+                System.err.println("Tried to remove charge with no available charges! player: " + player.getName() + ", tool: " + this.toString());
+                return;
+            }
             AttributeExtensions.deincrementCharges(tool, 1);
             if (currentCharges - 1 <= 0) {
                 tool.setId(inactiveId);
                 player.sendMessage("Your " + tool.getDef().name + " has run out of charges.");
             }
         }
+    }
+
+    public boolean hasCharge(Player player) {
+        Item tool = player.getEquipment().get(Equipment.SLOT_WEAPON);
+        if (tool == null || tool.getId() != activeId)
+            tool = player.getInventory().findItemIgnoringAttributes(activeId, false);
+        if ((tool != null && tool.getId() == activeId)) {
+            return AttributeExtensions.getCharges(tool) > 0;
+        }
+        return false;
     }
 }
