@@ -378,6 +378,8 @@ public enum PlayerCounter {
 
     IMPLINGS_CAUGHT((p, amt) -> p.implingCaught = amt, p -> p.implingCaught, Achievement.IMPLING_HUNTER),
     BUTTERFLIES_CAUGHT((p, amt) -> p.butterfliesCaught = amt, p -> p.butterfliesCaught),
+
+    BRIMSTONE_CHESTS_OPENED((p, amt) -> p.brimstoneChestsOpened = amt, p -> p.brimstoneChestsOpened)
     ;
 
     private final BiConsumer<Player, Integer> setAction;

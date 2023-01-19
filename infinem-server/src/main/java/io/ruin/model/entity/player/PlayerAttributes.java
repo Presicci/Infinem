@@ -1374,4 +1374,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose @Getter @Setter private boolean tanSoftLeather = true;
 
     @Getter @Setter private boolean dreaming = false;
+
+    @Expose public int brimstoneChestsOpened;
 }
