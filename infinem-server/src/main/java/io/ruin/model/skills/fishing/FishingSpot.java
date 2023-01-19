@@ -39,7 +39,7 @@ public class FishingSpot {
         return this;
     }
 
-    private FishingCatch randomCatch(int level, boolean barehand, FishingTool tool) {
+    private FishingCatch randomCatch(Player player, int level, boolean barehand, FishingTool tool) {
         FishingCatch[] catches = barehand ? barehandCatches : regularCatches;
         for (int i = catches.length - 1; i >= 0; i--) {
             double roll = Random.get();
@@ -56,8 +56,12 @@ public class FishingSpot {
             }
             if (tool == FishingTool.DRAGON_HARPOON || tool == FishingTool.INFERNAL_HARPOON)
                 chance *= 1.20;
-            if (tool == FishingTool.CRYSTAL_HARPOON)
-                chance *= 1.35;
+            if (tool == FishingTool.CRYSTAL_HARPOON) {
+                if (CrystalEquipment.HARPOON.hasCharge(player))
+                    chance *= 1.35;
+                else    // No charge, default to dragon bonus
+                    chance *= 1.20;
+            }
             chance += (double) levelDifference * 0.003;
             if (roll > Math.min(chance, 0.90)) {
                 /* failed to catch */
@@ -185,7 +189,7 @@ public class FishingSpot {
                     continue;
                 }
 
-                FishingCatch c = randomCatch(level, barehand, finalTool);
+                FishingCatch c = randomCatch(player, level, barehand, finalTool);
                 if (c != null) {
                     if (npc.getId() == MINNOWS && (npc.minnowsFish || (npc.minnowsFish = Random.rollDie(100)))) {
                         npc.graphics(1387);
@@ -205,7 +209,7 @@ public class FishingSpot {
                                 : c.id == FishingCatch.KARAMBWANJI.id ? ((fishing.currentLevel / 5) + 1)
                                 : 1;
                         player.collectResource(new Item(c.id, amount));
-                        if (finalTool == FishingTool.CRYSTAL_HARPOON)
+                        if (finalTool == FishingTool.CRYSTAL_HARPOON && CrystalEquipment.HARPOON.hasCharge(player))
                             CrystalEquipment.HARPOON.removeCharge(player);
                         if (player.darkCrabBoost.isDelayed()) {
                             if (Random.rollPercent(20))
