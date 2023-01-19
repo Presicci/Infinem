@@ -470,10 +470,16 @@ public abstract class ItemContainerG<I extends Item> {
     }
 
     public int count(int id, boolean acceptNoted) {
+        return count(id, acceptNoted, false);
+    }
+
+    public int count(int id, boolean acceptNoted, boolean ignoreAttributes) {
         int amount = 0;
         ItemDef def = ItemDef.get(id);
         for(Item item : items) {
-            if (item == null || item.hasAttributes())
+            if (item == null)
+                continue;
+            if (!ignoreAttributes && item.hasAttributes())
                 continue;
             if(item.getId() == id)
                 amount += item.getAmount();
@@ -497,6 +503,10 @@ public abstract class ItemContainerG<I extends Item> {
 
     public boolean contains(int id, int amount, boolean acceptNoted) {
         return count(id, acceptNoted) >= amount;
+    }
+
+    public boolean contains(int id, int amount, boolean acceptNoted, boolean ignoreAttributes) {
+        return count(id, acceptNoted, ignoreAttributes) >= amount;
     }
 
     public boolean contains(int id) {
