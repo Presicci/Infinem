@@ -96,8 +96,8 @@ public class SmoulderingStone {
     }
 
     static {
-        ItemItemAction.register(SMOULDERING_STONE, DRAGON_PICKAXE, (player, primary, secondary) -> makePickaxe(player, primary, secondary, INFERNAL_PICKAXE));
-        ItemItemAction.register(SMOULDERING_STONE, DRAGON_AXE, (player, primary, secondary) -> makeAxe(player, primary, secondary, INFERNAL_AXE));
+        //ItemItemAction.register(SMOULDERING_STONE, DRAGON_PICKAXE, (player, primary, secondary) -> makePickaxe(player, primary, secondary, INFERNAL_PICKAXE));
+        //ItemItemAction.register(SMOULDERING_STONE, DRAGON_AXE, (player, primary, secondary) -> makeAxe(player, primary, secondary, INFERNAL_AXE));
         ItemItemAction.register(PRIMORDIAL_CRYSTAL, DRAGON_BOOTS, (player, primary, secondary) -> makeBoots(player, primary, secondary, PRIMORDIAL_BOOTS));
         ItemItemAction.register(PEGASIAN_CRYSTAL, RANGER_BOOTS, (player, primary, secondary) -> makeBoots(player, primary, secondary, PEGASIAN_BOOTS));
         ItemItemAction.register(ETERNAL_CRYSTAL, INFINITY_BOOTS, (player, primary, secondary) -> makeBoots(player, primary, secondary, ETERNAL_BOOTS));
