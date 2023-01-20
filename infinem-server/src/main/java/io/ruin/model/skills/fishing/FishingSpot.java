@@ -81,11 +81,8 @@ public class FishingSpot {
 
     private void fish(Player player, NPC npc) {
         boolean barehand;
-        FishingTool tool = defaultTool;
+        FishingTool tool = FishingTool.getAlternative(player, defaultTool);
         Stat fishing = player.getStats().get(StatType.Fishing);
-        FishingTool equippableTool = getRelevantEquippableTool(player, tool);
-        if (equippableTool != null)
-            tool = equippableTool;
         if (tool == FishingTool.DRAGON_HARPOON && fishing.currentLevel < 61) {
             player.sendMessage("You need a Fishing level of at least 61 to fish with a dragon harpoon.");
             return;
@@ -283,51 +280,6 @@ public class FishingSpot {
                 }
             }
         });
-    }
-
-    /**
-     * Given a FishingTool, checks if the player has an upgraded variant equipped.
-     * @param player Player
-     * @param tool FishingTool
-     * @return The equippable variant of the provided tool, if found, null if not
-     */
-    private static FishingTool getRelevantEquippableTool(Player player, FishingTool tool) {
-        switch (tool) {
-            case FISHING_ROD:
-                return getEquippableTool(player, FishingTool.PEARL_ROD);
-            case FLY_FISHING_ROD:
-                return getEquippableTool(player, FishingTool.PEARL_FLY_ROD);
-            case OILY_FISHING_ROD:
-                return getEquippableTool(player, FishingTool.PEARL_OILY_ROD);
-            case BARBARIAN_ROD:
-                return getEquippableTool(player, FishingTool.PEARL_BARBARIA_ROD);
-            case HARPOON:
-                FishingTool harpoon = getEquippableTool(player, FishingTool.CRYSTAL_HARPOON);
-                if (harpoon == null)
-                    harpoon = getEquippableTool(player, FishingTool.INFERNAL_HARPOON);
-                if (harpoon == null)
-                    harpoon = getEquippableTool(player, FishingTool.DRAGON_HARPOON);
-                if (harpoon == null)
-                    harpoon = getEquippableTool(player, FishingTool.BARB_TAIL_HARPOON);
-                return harpoon;
-            default:
-                return null;
-        }
-    }
-
-    /**
-     * Checks if the player has the provided tool in their inventory or equipped.
-     * @param player Player
-     * @param tool FishingTool
-     * @return The tool if found, null if not
-     */
-    private static FishingTool getEquippableTool(Player player, FishingTool tool) {
-        if (player.getInventory().contains(tool.id, 1, false, true))
-            return tool;
-        ItemDef playerWeapon = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
-        if (playerWeapon != null && playerWeapon.id == tool.id)
-            return tool;
-        return null;
     }
 
     private void register(int npcId, String option) {
