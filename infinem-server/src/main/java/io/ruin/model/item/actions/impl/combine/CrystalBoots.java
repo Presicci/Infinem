@@ -8,7 +8,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.stat.StatType;
 
-public class SmoulderingStone {
+public class CrystalBoots {
 
     private static final int DRAGON_BOOTS = 11840;
     private static final int RANGER_BOOTS = 2577;
