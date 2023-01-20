@@ -11,13 +11,13 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.chargable.CrystalEquipment;
+import io.ruin.model.item.actions.impl.chargable.InfernalTools;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.MapArea;
+import io.ruin.model.skills.cooking.Food;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
-
-import java.util.Objects;
 
 public class FishingSpot {
 
@@ -215,7 +215,11 @@ public class FishingSpot {
                             if (Random.rollPercent(20))
                                 amount++;
                         }
-                        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(c.id)) {
+                        if (finalTool == FishingTool.INFERNAL_HARPOON && InfernalTools.INFERNAL_HARPOON.hasCharge(player) && Random.rollDie(3, 1) && Food.COOKING_EXPERIENCE.containsKey(c.id)) {
+                            InfernalTools.INFERNAL_HARPOON.removeCharge(player);
+                            player.getStats().addXp(StatType.Fishing, c.xp * anglerBonus(player), true);
+                            player.getStats().addXp(StatType.Cooking, Food.COOKING_EXPERIENCE.get(c.id) / 2, true);
+                        } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(c.id)) {
                             amount *= 2;
                             player.getBank().add(c.id, amount);
                             player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(c.id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(c.id) + ".");
