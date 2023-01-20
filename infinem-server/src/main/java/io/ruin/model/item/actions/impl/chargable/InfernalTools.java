@@ -77,8 +77,8 @@ public enum InfernalTools {
                 System.err.println("Tried to remove charge with no available charges! player: " + player.getName() + ", tool: " + this.toString());
                 return;
             }
-            AttributeExtensions.deincrementCharges(tool, 5000);
-            if (AttributeExtensions.getCharges(tool) <= 0) {
+            AttributeExtensions.deincrementCharges(tool, 1);
+            if (currentCharges - 1 <= 0) {
                 player.sendMessage("Your " + tool.getDef().name + " has run out of charges.");
                 tool.setId(unchargedTool);
             }
