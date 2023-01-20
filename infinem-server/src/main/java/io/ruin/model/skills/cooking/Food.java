@@ -3,6 +3,9 @@ package io.ruin.model.skills.cooking;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.item.Items;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public enum Food {
     //Raw Fish
     RAW_SHRIMPS(1, 30.0, 317, 315, 7954, "a shrimp", "shrimps", 3, 31, 31, 31),
@@ -117,5 +120,15 @@ public enum Food {
         this.burnLevelFire = burnLevelFire;
         this.burnLevelRange = burnLevelRange;
         this.burnLevelCookingGauntlets = burnLevelCookingGauntlets;
+    }
+
+    public static final Map<Integer, Double> COOKING_EXPERIENCE = new HashMap<>();
+
+    static {
+        for (Food food : Food.values()) {
+            if (food.ordinal() > 24)    // End of fish
+                break;
+            COOKING_EXPERIENCE.put(food.rawID, food.experience);
+        }
     }
 }
