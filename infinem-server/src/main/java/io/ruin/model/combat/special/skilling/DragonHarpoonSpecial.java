@@ -1,11 +1,11 @@
-package io.ruin.model.combat.special.melee;
+package io.ruin.model.combat.special.skilling;
 
 import io.ruin.cache.ItemDef;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.stat.StatType;
 
-public class DragonHarpoon implements Special {
+public class DragonHarpoonSpecial implements Special {
 
     @Override
     public boolean accept(ItemDef def, String name) {
