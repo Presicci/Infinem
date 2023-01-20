@@ -1,6 +1,7 @@
 package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.api.utils.Random;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
@@ -11,6 +12,8 @@ import io.ruin.model.item.attributes.AttributeTypes;
 import io.ruin.model.item.containers.Equipment;
 import lombok.AllArgsConstructor;
 
+import java.util.Arrays;
+
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 1/17/2023
@@ -18,12 +21,16 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum CrystalEquipment {
 
-    HARPOON(23762, 23764);
+    HARPOON(23762, 23764),
+
+    BLADE_OF_SAELDOR(23995, 23997),
+    BOW_OF_FAERDHINEN(25865, 25862);
 
     private final int activeId, inactiveId;
 
     private static final int SHARD = 23962;
     private static final int MAX_CHARGES = 20000;
+    private static final int[] SIGNETS = { 23943, 25543, 25545 };
 
     static {
         for (CrystalEquipment equipment : CrystalEquipment.values()) {
@@ -61,15 +68,26 @@ public enum CrystalEquipment {
         if ((tool != null && tool.getId() == activeId)) {
             int currentCharges = AttributeExtensions.getCharges(tool);
             if (currentCharges <= 0) {
-                System.err.println("Tried to remove charge with no available charges! player: " + player.getName() + ", tool: " + this.toString());
+                System.err.println("Tried to remove charge with no available charges! player: " + player.getName() + ", tool: " + this);
                 return;
             }
+            // Signet gives a 10% chance to not use charges
+            if (hasSignet(player) && Random.rollDie(10, 1))
+                return;
             AttributeExtensions.deincrementCharges(tool, 1);
             if (currentCharges - 1 <= 0) {
                 tool.setId(inactiveId);
                 player.sendMessage("Your " + tool.getDef().name + " has run out of charges.");
             }
         }
+    }
+
+    private boolean hasSignet(Player player) {
+        // Signet effect does not work on these
+        if (this == BOW_OF_FAERDHINEN || this == BLADE_OF_SAELDOR)
+            return false;
+        Item ring = player.getEquipment().get(Equipment.SLOT_RING);
+        return Arrays.stream(SIGNETS).anyMatch(s -> s == ring.getId());
     }
 
     public boolean hasCharge(Player player) {
