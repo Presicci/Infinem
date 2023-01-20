@@ -10,14 +10,13 @@ public class DragonPickaxeSpecial implements Special {
 
     @Override
     public boolean accept(ItemDef def, String name) {
-        return name.equals("dragon pickaxe");
+        return name.contains("dragon pickaxe") || name.contains("infernal pickaxe") || name.contains("crystal pickaxe");
     }
 
     @Override
     public boolean handleActivation(Player player) {
         if(!player.getCombat().useSpecialEnergy(100))
             return false;
-
         player.animate(2876);
         player.graphics(479);
         player.forceText("Smashing!");
@@ -29,5 +28,4 @@ public class DragonPickaxeSpecial implements Special {
     public int getDrainAmount() {
         return 100;
     }
-
 }

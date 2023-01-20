@@ -10,7 +10,7 @@ public class DragonAxeSpecial implements Special {
 
     @Override
     public boolean accept(ItemDef def, String name) {
-        return name.equals("dragon axe");
+        return name.contains("dragon axe") || name.contains("infernal axe") || name.contains("crystal axe");
     }
 
     @Override
@@ -28,5 +28,4 @@ public class DragonAxeSpecial implements Special {
     public int getDrainAmount() {
         return 100;
     }
-
 }
