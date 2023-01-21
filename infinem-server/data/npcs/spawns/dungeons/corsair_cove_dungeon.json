@@ -308,5 +308,77 @@
     "z": 1,
     "direction": "S",
     "walkRange": 0
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1982,
+    "y": 9005,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1978,
+    "y": 8991,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1995,
+    "y": 8985,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 2010,
+    "y": 8992,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 2018,
+    "y": 8980,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 2045,
+    "y": 8974,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 2054,
+    "y": 8989,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 2065,
+    "y": 8990,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
   }
 ]
