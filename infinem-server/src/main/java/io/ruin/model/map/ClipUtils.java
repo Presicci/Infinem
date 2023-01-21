@@ -595,6 +595,8 @@ public class ClipUtils {
         clearClipping(2522, 4838, 0, 0, 0);
         // Corsair cove
         clearClipping(2579, 2842, 0, 0, 0);     // South dock
+        // Catherby shore
+        clearClipping(2841, 3432, 0, 0, 0);     // South of crossbow tree
     }
 
     public static void clearClipping(int x, int y, int z, int lengthX, int lengthY) {
