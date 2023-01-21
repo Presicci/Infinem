@@ -122,6 +122,14 @@ public class Position {
         return y >> 3;
     }
 
+    public int getRegionX() {
+        return (this.x >> 3) - 6;
+    }
+
+    public int getRegionY() {
+        return (this.y >> 3) - 6;
+    }
+
     public int getLocalX() {
         return x - 8 * (getChunkX() - 6);
     }
