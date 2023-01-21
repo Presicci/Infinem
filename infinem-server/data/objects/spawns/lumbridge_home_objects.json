@@ -1,7 +1,7 @@
 [
-  {"id": 2693, "x": 3220, "y": 3216, "z": 0, "type": 10, "direction": 1}, // Bank chest
+  {"id": 2693, "x": 3220, "y": 3216, "z": 0, "type": 10, "direction": 1},   // Bank chest
   {"id": 31675, "x": 3220, "y": 3221, "z": 0, "type": 10, "direction": 1},  // Death chest
-  {"id": 2031, "x": 3227, "y": 3252, "z": 0, "type": 10, "direction": 0},  // Anvil
+  {"id": 2031, "x": 3227, "y": 3252, "z": 0, "type": 10, "direction": 0},   // Anvil
   {"id": 11365, "x": 3225, "y": 3150, "z": 0, "type": 10, "direction": 0},  // Iron ore
   {"id": 11365, "x": 3225, "y": 3149, "z": 0, "type": 10, "direction": 0},  // Iron ore
   {"id": 11365, "x": 3226, "y": 3151, "z": 0, "type": 10, "direction": 0},  // Iron ore
@@ -16,5 +16,6 @@
   {"id": 14896, "x": 3198, "y": 3200, "z": 0, "type": 10, "direction": 0},  // Flax
   {"id": 14896, "x": 3196, "y": 3201, "z": 0, "type": 10, "direction": 0},  // Flax
   {"id": 14896, "x": 3197, "y": 3202, "z": 0, "type": 10, "direction": 0},  // Flax
-  {"id": 14896, "x": 3199, "y": 3201, "z": 0, "type": 10, "direction": 0}  // Flax
+  {"id": 14896, "x": 3199, "y": 3201, "z": 0, "type": 10, "direction": 0},  // Flax
+  {"id": 40408, "x": 3233, "y": 3220, "z": 0, "type": 10, "direction": 0}   // Waystone
 ]
