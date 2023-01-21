@@ -1,0 +1,9 @@
+3587
+Player: Hi there.
+Bonafido: A'up, mate, how's it gowin'?
+Player: Not bad, thank you.
+Player: What are you building here?
+Bonafido: Nowt at moment. We're on strike!
+Player: You're on strike? Whatever for?
+Bonafido: Those strange alchemists are up ta somefin', best go ta one ov 'em.
+Player: Oh, okay.
