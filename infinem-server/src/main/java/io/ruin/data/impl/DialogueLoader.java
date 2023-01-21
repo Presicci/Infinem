@@ -66,7 +66,10 @@ public class DialogueLoader {
         Dialogue[] dialoguesArray = new Dialogue[dialogues.size()];
         dialoguesArray = dialogues.toArray(dialoguesArray);
         Dialogue[] finalDialoguesArray = dialoguesArray;
-        NPCAction.register(npcId, "talk-to", ((player, npc) -> player.dialogue(finalDialoguesArray)));
+        NPCAction.register(npcId, "talk-to", ((player, npc) -> {
+            npc.faceTemp(player);
+            player.dialogue(finalDialoguesArray);
+        }));
     }
 
     private static Dialogue parseLine(NPCDef npcDef, String[] dialogue, int  lineNumber) {
@@ -78,7 +81,7 @@ public class DialogueLoader {
         if (line.startsWith(npcName + ":")) {
             return new NPCDialogue(npcDef.id, line.substring(npcName.length() + 1));
         }
-        System.err.println(npcDef.name + " dialogue has invalid line prefix.");
+        System.err.println(npcDef.name + " dialogue has invalid line prefix. name:" + npcDef.name);
         return new MessageDialogue("");
     }
 
