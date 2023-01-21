@@ -1,0 +1,10 @@
+3596
+Player: What's going on?
+'Black-eye': Ah, we be building this 'ere tower. Lookin' good ain't it?
+Player: It does look pretty impressive, but what are you doing hanging around?
+'Black-eye': Tea break, naturally.
+Player: Naturally. Not sure why I asked.
+'Black-eye': Fancy some?
+Player: Tea? Sure.
+'Black-eye': You'll find a kettle in the box to the-
+Player: Erm...yeah...no...sorry...gotta go.
