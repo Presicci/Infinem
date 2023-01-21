@@ -6,6 +6,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 
 /**
@@ -15,35 +16,17 @@ import io.ruin.model.stat.StatType;
 public class CityEntrance {
 
     private static final int[] ELVES = {9151, 9084, 9114, 9109, 9116, 9085, 9115};
+    private static final StatType[] SKILLS = {
+            StatType.Agility, StatType.Construction, StatType.Farming, StatType.Herblore,
+            StatType.Hunter, StatType.Mining, StatType.Smithing, StatType.Woodcutting
+    };
 
     private static boolean skillCheck(Player player) {
-        if (player.getStats().get(StatType.Agility).currentLevel < 70) {
-            player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "Sorry, but you need level 70 Agility to enter Prifddinas.").animate(588));
-            return false;
-        } else if (player.getStats().get(StatType.Construction).currentLevel < 70) {
-            player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "Sorry, but you need level 70 Construction to enter Prifddinas.").animate(588));
-            return false;
-        } else if (player.getStats().get(StatType.Farming).currentLevel < 70) {
-            player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "Sorry, but you need level 70 Farming to enter Prifddinas.").animate(588));
-            return false;
-        } else if (player.getStats().get(StatType.Herblore).currentLevel < 70) {
-            player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "Sorry, but you need level 70 Herblore to enter Prifddinas.").animate(588));
-            return false;
-        } else if (player.getStats().get(StatType.Farming).currentLevel < 70) {
-            player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "Sorry, but you need level 70 Farming to enter Prifddinas.").animate(588));
-            return false;
-        } else if (player.getStats().get(StatType.Hunter).currentLevel < 70) {
-            player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "Sorry, but you need level 70 Hunter to enter Prifddinas.").animate(588));
-            return false;
-        } else if (player.getStats().get(StatType.Mining).currentLevel < 70) {
-            player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "Sorry, but you need level 70 Mining to enter Prifddinas.").animate(588));
-            return false;
-        } else if (player.getStats().get(StatType.Smithing).currentLevel < 70) {
-            player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "Sorry, but you need level 70 Smithing to enter Prifddinas.").animate(588));
-            return false;
-        } else if (player.getStats().get(StatType.Woodcutting).currentLevel < 70) {
-            player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "Sorry, but you need level 70 Woodcutting to enter Prifddinas.").animate(588));
-            return false;
+        for (StatType statType : SKILLS) {
+            if (player.getStats().get(statType).currentLevel < 70) {
+                player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "You need level 70 in " + statType.name() + " to enter Prifddinas.").animate(588));
+                return false;
+            }
         }
         return true;
     }
