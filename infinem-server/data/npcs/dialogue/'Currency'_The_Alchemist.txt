@@ -1,0 +1,8 @@
+3594
+Player: This is quite the tower.
+'Currency' The Alchemist: Yeah, it cost a fair bit.
+Player: How much?
+'Currency' The Alchemist: Well, I had to 'alch' a fair few belongings of my fellow alchemists to afford it.
+Player: I bet they love you for that.
+'Currency' The Alchemist: Everyone loves someone that can create money.
+Player: I don't.
