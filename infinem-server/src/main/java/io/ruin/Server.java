@@ -7,7 +7,6 @@ import io.ruin.api.database.DummyDatabase;
 import io.ruin.api.filestore.FileStore;
 import io.ruin.api.netty.NettyServer;
 import io.ruin.api.process.ProcessWorker;
-//import io.ruin.api.rest.KronosRest;
 import io.ruin.api.utils.*;
 import io.ruin.cache.*;
 import io.ruin.data.DataFile;
@@ -17,9 +16,8 @@ import io.ruin.model.World;
 import io.ruin.model.achievements.Achievement;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.player.Player;
+import io.ruin.data.impl.DialogueLoader;
 import io.ruin.model.map.ClipUtils;
-import io.ruin.model.map.object.actions.impl.Trapdoor;
-import io.ruin.model.map.object.actions.impl.dungeons.StrongholdSecurity;
 import io.ruin.model.map.object.actions.impl.edgeville.Giveaway;
 import io.ruin.model.shop.ShopManager;
 import io.ruin.network.LoginDecoder;
@@ -30,7 +28,6 @@ import io.ruin.process.LoginWorker;
 import io.ruin.process.event.EventWorker;
 import io.ruin.services.LatestUpdate;
 import io.ruin.services.Loggers;
-import io.ruin.services.discord.DiscordConnection;
 import io.ruin.utility.CharacterBackups;
 import io.ruin.utility.OfflineMode;
 import kilim.WeavingClassLoader;
@@ -139,6 +136,7 @@ public class Server extends ServerWrapper {
             NPCDef.load();
             ObjectDef.load();
             DataFile.load();
+            DialogueLoader.loadDialogues();
 
             /*
              * The following must come after DataFile.load
