@@ -382,10 +382,16 @@ public class ItemDefinition extends DualNode implements RSItemDefinition {
          if(this.offsetY2d > 32767) {
             this.offsetY2d -= 65536;
          }
+      } else if (var2 == 9) {
+         var1.readString();
       } else if(var2 == 11) {
          this.isStackable = 1;
       } else if(var2 == 12) {
          this.price = var1.readInt();
+      } else if(var2 == 13) { // wearPos1
+         var1.readByte();
+      } else if(var2 == 14) { // wearPos2
+         var1.readByte();
       } else if(var2 == 16) {
          this.isMembersOnly = true;
       } else if(var2 == 23) {
@@ -398,6 +404,8 @@ public class ItemDefinition extends DualNode implements RSItemDefinition {
          this.femaleOffset = var1.readUnsignedByte();
       } else if(var2 == 26) {
          this.femaleModel1 = var1.readUnsignedShort();
+      } else if(var2 == 27) { // wearPos3
+         var1.readByte();
       } else if(var2 >= 30 && var2 < 35) {
          this.groundActions[var2 - 30] = var1.readString();
          if(this.groundActions[var2 - 30].equalsIgnoreCase("Hidden")) {
@@ -430,6 +438,8 @@ public class ItemDefinition extends DualNode implements RSItemDefinition {
             this.shiftClickIndex = var1.readByte();
          } else if(var2 == 65) {
             this.isTradable = true;
+         } else if(var2 == 75) { // weight
+            var1.readShort();
          } else if(var2 == 78) {
             this.maleModel2 = var1.readUnsignedShort();
          } else if(var2 == 79) {
@@ -442,6 +452,8 @@ public class ItemDefinition extends DualNode implements RSItemDefinition {
             this.maleHeadModel2 = var1.readUnsignedShort();
          } else if(var2 == 93) {
             this.femaleHeadModel2 = var1.readUnsignedShort();
+         } else if (var2 == 94) {
+            var1.readUnsignedShort();
          } else if(var2 == 95) {
             this.zan2d = var1.readUnsignedShort();
          } else if(var2 == 97) {
