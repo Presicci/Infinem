@@ -601,6 +601,10 @@ public class ItemDef {
             stackable = true;
         else if(opcode == 12)
             value = buffer.readInt();
+        else if (opcode == 13) // wearPos1
+            buffer.readByte();
+        else if (opcode == 14) // wearPos2
+            buffer.readByte();
         else if(opcode == 16)
             members = true;
         else if(opcode == 23) {
@@ -613,6 +617,8 @@ public class ItemDef {
             femaleOffset = buffer.readUnsignedByte();
         } else if(opcode == 26)
             anInt1496 = buffer.readUnsignedShort();
+        else if (opcode == 27) // wearPos3
+            buffer.readByte();
         else if(opcode >= 30 && opcode < 35) {
             groundOptions[opcode - 30] = buffer.readString();
             if(groundOptions[opcode - 30].equalsIgnoreCase("Hidden"))
@@ -637,6 +643,8 @@ public class ItemDef {
             }
         } else if(opcode == 65)
             grandExchange = true;
+        else if (opcode == 75) // weight
+            buffer.readShort();
         else if(opcode == 78)
             anInt1498 = buffer.readUnsignedShort();
         else if(opcode == 79)
@@ -649,7 +657,7 @@ public class ItemDef {
             anInt1501 = buffer.readUnsignedShort();
         else if(opcode == 93)
             anInt1503 = buffer.readUnsignedShort();
-        else if(opcode == 94)
+        else if(opcode == 94) // category
             buffer.readUnsignedShort();
         else if(opcode == 95)
             zan2d = buffer.readUnsignedShort();
