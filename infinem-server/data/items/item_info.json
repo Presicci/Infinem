@@ -109594,6 +109594,20 @@
     "range_attack_bonus": 90,
     "ranged_strength_bonus": 25
   },
+  { # Venator bow (unchargeD)
+    "id": 27612,
+    "tradeable": true,
+    "examine": "A bow used by hunters from a forgotten empire.",
+    "weight": 4.5,
+    "weapon_type": "BOW",
+    "ranged_weapon": "NORMAL_BOW",
+    "protect_value": 750000,
+    "equip_slot": 3,
+    "two_handed": true,
+    "ranged_level": 80,
+    "range_attack_bonus": 90,
+    "ranged_strength_bonus": 25
+  },
    { #Founder hat
       "id": 30000,
       "tradeable": true,
