@@ -80,7 +80,19 @@ public enum ItemCombining {
     BRIMSTONE_BOOTS(23037, 22957, 22951, false),
     AVERNIC_DEFENDER(12954, 22477, 22322, true),
     SARADOMINS_LIGHT(11791, 13256, 22296, false),
-    DRAGON_HUNTER_LANCE(22966, 11889, 22978, false);
+    DRAGON_HUNTER_LANCE(22966, 11889, 22978, false),
+    /**
+     * Shattered Relic League Cosmetics
+     */
+    SHATTERED_WHIP(4151, 26421, 26482, true),
+    SHATTERED_TENTACLE(12006, 26421, 26484, true),
+    SHATTERED_CROSSBOW(9185, 26421, 26486, true),
+    SHATTERED_BALANCE_BOOK(3844, 26421, 26488, true),
+    SHATTERED_DARKNESS_BOOK(12612, 26421, 26490, true),
+    SHATTERED_LAW_BOOK(12610, 26421, 26492, true),
+    SHATTERED_WAR_BOOK(12608, 26421, 26494, true),
+    SHATTERED_HOLY_BOOK(3840, 26421, 26496, true),
+    SHATTERED_UNHOLY_BOOK(3842, 26421, 26498, true);
 
     public final int primaryId, secondaryId, combinedId;
     public final boolean reversible;
@@ -134,6 +146,7 @@ public enum ItemCombining {
             ItemItemAction.register(kit.primaryId, kit.secondaryId, (player, primary, secondary) -> make(player, primary, secondary, kit.combinedId, kit.reversible));
             ItemAction.registerInventory(kit.combinedId, "dismantle", (player, item) -> revert(player, item, kit.primaryId, kit.secondaryId));
             ItemAction.registerInventory(kit.combinedId, "revert", (player, item) -> revert(player, item, kit.primaryId, kit.secondaryId));
+            ItemAction.registerInventory(kit.combinedId, "dismantle kit", (player, item) -> revert(player, item, kit.primaryId, kit.secondaryId));
             int combinedProtect = ItemDef.get(kit.combinedId).protectValue;
             int componentsProtect = Math.max(ItemDef.get(kit.primaryId).protectValue, ItemDef.get(kit.secondaryId).protectValue);
             if (combinedProtect < componentsProtect)
