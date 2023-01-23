@@ -268,7 +268,7 @@ public class World extends EventWorker {
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO lost_cannons (user_id) VALUES (?)");
             statement.setInt(1, userId);
-            statement.executeQuery();
+            statement.executeUpdate();
         });
     }
 
