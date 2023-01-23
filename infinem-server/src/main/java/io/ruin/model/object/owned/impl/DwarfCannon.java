@@ -20,6 +20,7 @@ import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.ground.GroundItem;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.route.routes.ProjectileRoute;
 import io.ruin.model.object.owned.OwnedObject;
@@ -47,11 +48,15 @@ public class DwarfCannon extends OwnedObject {
 
     public static final String IDENTIFIER = "dwarfCannon";
     private static final int CANNON_BALL = 2;
-    public static final int BASE = 6, STAND = 8, BARRELS = 10, FURNACE = 12;
-    public static final int[] CANNON_PARTS = { BASE, STAND, BARRELS, FURNACE };
+    public static final int BASE = 0, STAND = 1, BARRELS = 2, FURNACE = 3;
+    public static final int[] ALL_PARTS = { BASE, STAND, BARRELS, FURNACE };
+    public static final int[] CANNON_PARTS = { 6, 8, 10, 12 };
+    public static final int[] ORNAMENT_CANNON_PARTS = { 26520, 26522, 26524, 26526 };
     private static final int[] CANNON_OBJECTS = { 7, 8, 9, 6 };
+    public static final int[] ORNAMENT_CANNON_OBJECTS = { 43029, 43030, 43031, 43027 };
     private static final int SETUP_ANIM = 827;
     private static final int BROKEN_CANNON = 5;
+    private static final int ORNAMENT_BROKEN_CANNON = 43028;
     private static final int MAX_AMMO = 30;
     private static final int CANNON_RANGE = 8;
     private static final int MAX_HIT = 30;
@@ -61,6 +66,7 @@ public class DwarfCannon extends OwnedObject {
     @Getter private Stopwatch decayTimer = Stopwatch.createUnstarted();
     @Getter @Setter private int ammo;
     @Getter private CannonStage stage;
+    private boolean isOrnament;
     @Getter @Setter private CannonDirection cannonDirection = CannonDirection.NORTH;
 
     private static final Bounds[] AREA_RESTRICTIONS = {
@@ -89,6 +95,7 @@ public class DwarfCannon extends OwnedObject {
 
     public DwarfCannon(Player owner, int id) {
         super(owner, IDENTIFIER, id, owner.getPosition(), 10, 0);
+        isOrnament = id == ORNAMENT_CANNON_OBJECTS[0];
         this.stage = CannonStage.BASE;
         setCannonDirection(CannonDirection.NORTH);
     }
@@ -129,7 +136,7 @@ public class DwarfCannon extends OwnedObject {
             spaces += getOwner().getInventory().hasAtLeastOneOf(CANNON_BALL) ? 0 : 1;
         }
         if (getOwner().getInventory().hasFreeSlots(spaces)) {
-            IntStream.of(getStage().parts).mapToObj(Item::new).forEach(getOwner().getInventory()::add);
+            IntStream.of(getStage().getParts(isOrnament)).mapToObj(Item::new).forEach(getOwner().getInventory()::add);
             if (getAmmo() > 0)
                 getOwner().getInventory().add(CANNON_BALL, getAmmo());
             getOwner().animate(SETUP_ANIM);
@@ -173,21 +180,22 @@ public class DwarfCannon extends OwnedObject {
             if (getPosition().inBounds(new Bounds(2240, 4672, 2303, 4735, -1))) { //king black dragon
                 getOwner().sendMessage("Your cannon has been destroyed for placing it in this area.");
                 destroy();
-                World.addCannonReclaim(getOwnerUID());
+                World.addCannonReclaim(getOwnerUID(), isOrnament);
                 return;
             }
         }
 
+        int animationId = isOrnament ? (cannonDirection.getOrnamentAnimationId() + (target.isPresent() ? 0 : 9)) : cannonDirection.getAnimationId();
         if (ownerOnline && getStage().equals(CannonStage.FIRING)) {
-            animate(cannonDirection.getAnimationId());
+            animate(animationId);
             cannonDirection = cannonDirection.next();
         } else if (getStage().equals(CannonStage.FURNACE) && getAmmo() <= 0 && getCannonDirection() != CannonDirection.NORTH) {
-            animate(cannonDirection.getAnimationId());
+            animate(animationId);
             cannonDirection = cannonDirection.next();
         }
 
         target.ifPresent(npc -> {
-            Projectile cannonBall = new Projectile(53, 50, 50, 0, 0, 10, 0, 64);
+            Projectile cannonBall = new Projectile(53, 50, 50, 0, 0, 10, 0, 64);  // 852 for flying dwarf
             Hit hit = new Hit(getOwner(), AttackStyle.CANNON, AttackType.RAPID_RANGED).randDamage(MAX_HIT).ignoreDefence();
             int delay = cannonBall.send(getCorrectedPosition(getPosition()), npc);
             int tickDelay = (((25 * delay)) / 600);
@@ -211,7 +219,7 @@ public class DwarfCannon extends OwnedObject {
         }
         if (needsDestroyed()) {
             getOwnerOpt().ifPresent(player -> player.sendMessage("<col=ff0000>Your cannon has decayed. Speak to Nulodion to get a new one!</col>"));
-            World.addCannonReclaim(getOwnerUID());
+            World.addCannonReclaim(getOwnerUID(), isOrnament);
             new GroundItem(CANNON_BALL, getAmmo()).owner(getOwnerUID()).spawn();
             setAmmo(0);
             destroy();
@@ -227,7 +235,7 @@ public class DwarfCannon extends OwnedObject {
     }
 
     public CannonStage incrementSetupStage() {
-        setStage(this.stage.next(), true);
+        setStage(this.stage.next(isOrnament), true);
         return stage;
     }
 
@@ -253,10 +261,14 @@ public class DwarfCannon extends OwnedObject {
     }
 
     public boolean hasParts() {
+        if (isOrnament)
+            return IntStream.of(ORNAMENT_CANNON_PARTS).allMatch(getOwner().getInventory()::contains);
         return IntStream.of(CANNON_PARTS).allMatch(getOwner().getInventory()::contains);
     }
 
     public boolean isPart(int id) {
+        if (isOrnament)
+            return IntStream.of(ORNAMENT_CANNON_PARTS).anyMatch(part -> part == id);
         return IntStream.of(CANNON_PARTS).anyMatch(part -> part == id);
     }
 
@@ -272,7 +284,7 @@ public class DwarfCannon extends OwnedObject {
             }
             for (int index = getStage().ordinal(); index < 4; index++) {
                 getOwner().face(this);
-                Item required = new Item(CANNON_PARTS[index], 1);
+                Item required = new Item(isOrnament ? ORNAMENT_CANNON_PARTS[index] : CANNON_PARTS[index], 1);
                 if (!getOwner().getInventory().contains(required)) {
                     getOwner().sendMessage("You don't have the required parts needed to complete your cannon.");
                     return;
@@ -293,8 +305,14 @@ public class DwarfCannon extends OwnedObject {
 
     public void setStage(CannonStage stage, boolean changeId) {
         this.stage = stage;
-        if (changeId)
-            setId(stage.getObjectId());
+        if (changeId) {
+            if (isOrnament) {
+                setId(stage.getOrnamentObjectId());
+            } else {
+                setId(stage.getObjectId());
+            }
+        }
+
     }
 
     public boolean handleAreaRestriction() {
@@ -350,154 +368,147 @@ public class DwarfCannon extends OwnedObject {
         return true;
     }
 
-    static {
-        ItemAction.registerInventory(BASE, 1, (player, item) -> {
-            World.doCannonReclaim(player.getUserId(), (reclaim) -> {
-                if (reclaim) {
-                    player.sendMessage("You can't deploy this cannon, you have one you need to reclaim.");
-                } else {
+    private static void setupCannon(Player player, Item item) {
+        World.doCannonReclaim(player.getUserId(), (reclaim) -> {
+            if (reclaim.first()) {
+                player.sendMessage("You can't deploy this cannon, you have one you need to reclaim.");
+            } else {
+                DwarfCannon cannon = new DwarfCannon(player, item.getId() == ORNAMENT_CANNON_PARTS[0] ? ORNAMENT_CANNON_OBJECTS[0] : CANNON_OBJECTS[0]);
+                cannon.isOrnament = item.getId() == ORNAMENT_CANNON_PARTS[0];
 
-                    DwarfCannon cannon = new DwarfCannon(player, CANNON_OBJECTS[0]);
-
-                    if (!cannon.hasParts()) {
-                        player.sendMessage("You don't have all the parts to build your cannon.");
-                        return;
-                    }
-                    if (!cannon.isValidSpot()) {
-                        player.sendMessage("There's not enough room to setup your cannon here.");
-                        return;
-                    }
-
-                    if (!cannon.handleAreaRestriction()) {
-                        return;
-                    }
-
-                    World.startEvent(event -> {
-
-                        if (World.getOwnedObject(player, DwarfCannon.IDENTIFIER) != null) {
-                            player.sendMessage("You already have a cannon deployed.");
-                            return;
-                        }
-
-                        World.registerOwnedObject(cannon);
-                        player.face(cannon);
-
-                        cannon.getDecayTimer().start();
-
-                        cannon.spawn();
-                        player.animate(SETUP_ANIM);
-                        player.getInventory().remove(CANNON_PARTS[cannon.getStage().ordinal()], 1);
-                        player.sendMessage("You place down the base.");
-                        player.lock(LockType.FULL_REGULAR_DAMAGE);
-                        event.delay(2);
-
-                        for (int index = 0; index < 3; index++) {
-                            player.face(cannon);
-                            player.animate(SETUP_ANIM);
-                            cannon.incrementSetupStage();
-                            Item cannonPart = new Item(CANNON_PARTS[cannon.getStage().ordinal()], 1);
-                            String name = cannonPart.getDef().name.toLowerCase().replace("cannon", "").trim();
-                            player.getInventory().remove(CANNON_PARTS[cannon.getStage().ordinal()], 1);
-                            player.sendMessage("You add the " + name + ".");
-                            event.delay(2);
-                        }
-
-                        cannon.fill();
-                        player.unlock();
-
-                    }).setCancelCondition(() -> !cannon.getOwnerOpt().isPresent() || cannon.getOwner().getCombat().isDead());
+                if (!cannon.hasParts()) {
+                    player.sendMessage("You don't have all the parts to build your cannon.");
+                    return;
                 }
-            });
-        });
-//        for (int partId : CANNON_PARTS) {
-//            for (int objectId : CANNON_OBJECTS) {
-//                ItemObjectAction.register(partId, objectId, (player, item, object) -> {
-//                    if (object.isOwnedObject() && object.asOwnedObject().isOwner(player)) {
-//                        ((DwarfCannon) object).addPart(item);
-//                    }
-//                });
-//            }
-//        }
-        ItemObjectAction.register(2, 6, (player, item, object) -> {
-            if (object.isOwnedObject() && object.asOwnedObject().isOwner(player)) {
-                ((DwarfCannon) object).fill();
-            } else {
-                player.sendMessage("Your not the owner of this cannon.");
-            }
-        });
-        ObjectAction.register(7, 1, (player, object) -> {
-            if (object.isOwnedObject() && object.asOwnedObject().isOwner(player)) {
-                ((DwarfCannon) object).pickup();
-            } else {
-                player.sendMessage("Your not the owner of this cannon.");
-            }
-        });
-        ObjectAction.register(8, 1, (player, object) -> {
-            if (object.isOwnedObject() && object.asOwnedObject().isOwner(player)) {
-                ((DwarfCannon) object).pickup();
-            } else {
-                player.sendMessage("Your not the owner of this cannon.");
-            }
-        });
-        ObjectAction.register(9, 1, (player, object) -> {
-            if (object.isOwnedObject() && object.asOwnedObject().isOwner(player)) {
-                ((DwarfCannon) object).pickup();
-            } else {
-                player.sendMessage("Your not the owner of this cannon.");
-            }
-        });
-        ObjectAction.register(6, 2, (player, object) -> {
-            if (object.isOwnedObject() && object.asOwnedObject().isOwner(player)) {
-                ((DwarfCannon) object).pickup();
-            } else {
-                player.sendMessage("Your not the owner of this cannon.");
-            }
-        });
-        ObjectAction.register(6, 1, (player, object) -> {
-            if (object.isOwnedObject() && object.asOwnedObject().isOwner(player)) {
-                ((DwarfCannon) object).fill();
-            } else {
-                player.sendMessage("Your not the owner of this cannon.");
-            }
-        });
-        //Repairing
-        ObjectAction.register(5, 1, (player, object) -> {
-            if (object.isOwnedObject() && object.asOwnedObject().isOwner(player)) {
-                DwarfCannon cannon = ((DwarfCannon) object);
-                player.startEvent((e) -> {
-                    cannon.getDecayTimer().reset();
+                if (!cannon.isValidSpot()) {
+                    player.sendMessage("There's not enough room to setup your cannon here.");
+                    return;
+                }
+
+                if (!cannon.handleAreaRestriction()) {
+                    return;
+                }
+
+                World.startEvent(event -> {
+
+                    if (World.getOwnedObject(player, DwarfCannon.IDENTIFIER) != null) {
+                        player.sendMessage("You already have a cannon deployed.");
+                        return;
+                    }
+
+                    World.registerOwnedObject(cannon);
+                    player.face(cannon);
+
                     cannon.getDecayTimer().start();
-                    player.animate(3684);
-                    e.delay(2);
-                    cannon.setStage(CannonStage.FIRING, true);
-                });
-            } else {
-                player.sendMessage("Your not the owner of this cannon.");
+
+                    cannon.spawn();
+                    player.animate(SETUP_ANIM);
+                    player.getInventory().remove(cannon.isOrnament ? ORNAMENT_CANNON_PARTS[cannon.getStage().ordinal()] : CANNON_PARTS[cannon.getStage().ordinal()], 1);
+                    player.sendMessage("You place down the base.");
+                    player.lock(LockType.FULL_REGULAR_DAMAGE);
+                    event.delay(2);
+
+                    for (int index = 0; index < 3; index++) {
+                        player.face(cannon);
+                        player.animate(SETUP_ANIM);
+                        cannon.incrementSetupStage();
+                        Item cannonPart = new Item(cannon.isOrnament ? ORNAMENT_CANNON_PARTS[cannon.getStage().ordinal()] : CANNON_PARTS[cannon.getStage().ordinal()], 1);
+                        String name = cannonPart.getDef().name.toLowerCase().replace("cannon", "").trim();
+                        player.getInventory().remove(cannon.isOrnament ? ORNAMENT_CANNON_PARTS[cannon.getStage().ordinal()] : CANNON_PARTS[cannon.getStage().ordinal()], 1);
+                        player.sendMessage("You add the " + name + ".");
+                        event.delay(2);
+                    }
+
+                    cannon.fill();
+                    player.unlock();
+
+                }).setCancelCondition(() -> !cannon.getOwnerOpt().isPresent() || cannon.getOwner().getCombat().isDead());
             }
         });
-        ObjectAction.register(6, 3, (player, object) -> {
-            if (!object.isOwnedObject()) {
-                return;
-            }
-            if (object.asOwnedObject().isOwner(player)) {
-                DwarfCannon cannon = ((DwarfCannon) object);
-                if (player.getInventory().hasFreeSlots(1) || player.getInventory().hasAtLeastOneOf(CANNON_BALL)) {
-                    if (cannon.getAmmo() > 0) {
-                        player.getInventory().add(CANNON_BALL, cannon.getAmmo());
-                        player.sendMessage("You unload your cannon and receive Cannonball x " + cannon.getAmmo());
-                        cannon.setAmmo(0);
-                        cannon.setStage(CannonStage.FURNACE, false);
-                    }
-                } else {
-                    player.sendMessage("You don't have enough inventory space to do that.");
+    }
+
+    private static void removeAmmo(Player player, GameObject object) {
+        if (!object.isOwnedObject()) {
+            return;
+        }
+        if (object.asOwnedObject().isOwner(player)) {
+            DwarfCannon cannon = ((DwarfCannon) object);
+            if (player.getInventory().hasFreeSlots(1) || player.getInventory().hasAtLeastOneOf(CANNON_BALL)) {
+                if (cannon.getAmmo() > 0) {
+                    player.getInventory().add(CANNON_BALL, cannon.getAmmo());
+                    player.sendMessage("You unload your cannon and receive Cannonball x " + cannon.getAmmo());
+                    cannon.setAmmo(0);
+                    cannon.setStage(CannonStage.FURNACE, false);
                 }
             } else {
-                player.sendMessage("Your not the owner of this cannon.");
+                player.sendMessage("You don't have enough inventory space to do that.");
             }
-        });
+        } else {
+            player.sendMessage("Your not the owner of this cannon.");
+        }
+    }
+
+    private static void repairCannon(Player player, GameObject object) {
+        if (object.isOwnedObject() && object.asOwnedObject().isOwner(player)) {
+            DwarfCannon cannon = ((DwarfCannon) object);
+            player.startEvent((e) -> {
+                cannon.getDecayTimer().reset();
+                cannon.getDecayTimer().start();
+                player.animate(3684);
+                e.delay(2);
+                cannon.setStage(CannonStage.FIRING, true);
+            });
+        } else {
+            player.sendMessage("Your not the owner of this cannon.");
+        }
+    }
+
+    private static void pickupCannon(Player player, GameObject object) {
+        if (object.isOwnedObject() && object.asOwnedObject().isOwner(player)) {
+            ((DwarfCannon) object).pickup();
+        } else {
+            player.sendMessage("Your not the owner of this cannon.");
+        }
+    }
+
+    private static void fillCannon(Player player, GameObject object) {
+        if (object.isOwnedObject() && object.asOwnedObject().isOwner(player)) {
+            ((DwarfCannon) object).fill();
+        } else {
+            player.sendMessage("Your not the owner of this cannon.");
+        }
+    }
+
+    static {
+        /*
+         * Normal cannon
+         */
+        ItemAction.registerInventory(CANNON_PARTS[BASE], 1, DwarfCannon::setupCannon);
+        ItemObjectAction.register(CANNON_BALL, CANNON_OBJECTS[3], (player, item, object) -> DwarfCannon.fillCannon(player, object));
+        ObjectAction.register(CANNON_OBJECTS[0], 1, DwarfCannon::pickupCannon);
+        ObjectAction.register(CANNON_OBJECTS[1], 1, DwarfCannon::pickupCannon);
+        ObjectAction.register(CANNON_OBJECTS[2], 1, DwarfCannon::pickupCannon);
+        ObjectAction.register(CANNON_OBJECTS[3], 2, DwarfCannon::pickupCannon);
+        ObjectAction.register(CANNON_OBJECTS[3], 1, DwarfCannon::fillCannon);
+        ObjectAction.register(BROKEN_CANNON, 1, DwarfCannon::repairCannon);
+        ObjectAction.register(CANNON_OBJECTS[3], 3, DwarfCannon::removeAmmo);
+
+        /*
+         * Ornamental cannon
+         */
+        ItemAction.registerInventory(ORNAMENT_CANNON_PARTS[BASE], 1, DwarfCannon::setupCannon);
+        ItemObjectAction.register(CANNON_BALL, ORNAMENT_CANNON_OBJECTS[3], (player, item, object) -> DwarfCannon.fillCannon(player, object));
+        ObjectAction.register(ORNAMENT_CANNON_OBJECTS[0], 1, DwarfCannon::pickupCannon);
+        ObjectAction.register(ORNAMENT_CANNON_OBJECTS[1], 1, DwarfCannon::pickupCannon);
+        ObjectAction.register(ORNAMENT_CANNON_OBJECTS[2], 1, DwarfCannon::pickupCannon);
+        ObjectAction.register(ORNAMENT_CANNON_OBJECTS[3], 2, DwarfCannon::pickupCannon);
+        ObjectAction.register(ORNAMENT_CANNON_OBJECTS[3], 1, DwarfCannon::fillCannon);
+        ObjectAction.register(ORNAMENT_BROKEN_CANNON, 1, DwarfCannon::repairCannon);
+        ObjectAction.register(ORNAMENT_CANNON_OBJECTS[3], 3, DwarfCannon::removeAmmo);
+
         LoginListener.register(player -> {
-            World.doCannonReclaim(player.getUserId(), (reclaim) -> {
-                if (reclaim)
+            World.doCannonReclaim(player.getUserId(), (reclaim) -> {    // TODO ADD ISORNAMENT TAG TO THIS!
+                if (reclaim.first())
                     player.sendMessage(Color.RED.wrap("Your cannon has been destoryed, you can reclaim it from the Drunken Dwarf at home."));
             });
         });
@@ -506,18 +517,20 @@ public class DwarfCannon extends OwnedObject {
     @Getter
     private enum CannonStage {
 
-        BASE(7, DwarfCannon.BASE),
-        STAND(8, DwarfCannon.BASE, DwarfCannon.STAND),
-        BARREL(9, DwarfCannon.BASE, DwarfCannon.STAND, DwarfCannon.BARRELS),
-        FURNACE(6, DwarfCannon.CANNON_PARTS),
-        FIRING(6, DwarfCannon.CANNON_PARTS),
-        BROKEN(5, DwarfCannon.CANNON_PARTS);
+        BASE(7, 43029, DwarfCannon.BASE),
+        STAND(8, 43030, DwarfCannon.BASE, DwarfCannon.STAND),
+        BARREL(9, 43031, DwarfCannon.BASE, DwarfCannon.STAND, DwarfCannon.BARRELS),
+        FURNACE(6, 43027, DwarfCannon.ALL_PARTS),
+        FIRING(6, 43027, DwarfCannon.ALL_PARTS),
+        BROKEN(5, 43028, DwarfCannon.ALL_PARTS);
 
         private int objectId;
+        private int ornamentObjectId;
         private int[] parts;
 
-        CannonStage(int objectId, int... parts){
+        CannonStage(int objectId, int ornamentObjectId, int... parts){
             this.objectId = objectId;
+            this.ornamentObjectId = ornamentObjectId;
             this.parts = parts;
         }
 
@@ -525,27 +538,55 @@ public class DwarfCannon extends OwnedObject {
             for (CannonStage stage : values()) {
                 if (stage.getObjectId() == objectId)
                     return stage;
+                if (stage.getOrnamentObjectId() == objectId)
+                    return stage;
             }
             return null;
         }
 
-        public CannonStage next() {
-            return values()[forId(objectId).ordinal() + 1];
+        public int[] getParts(boolean isOrnament) {
+            int[] partIds = new int[parts.length];
+            for (int index = 0; index < parts.length; index++) {
+                partIds[index] = isOrnament ? DwarfCannon.ORNAMENT_CANNON_PARTS[index] : DwarfCannon.CANNON_PARTS[index];
+            }
+            return partIds;
+        }
+
+        public CannonStage next(boolean isOrnament) {
+            return values()[forId(isOrnament ? ornamentObjectId : objectId).ordinal() + 1];
         }
 
     }
 
+    /**
+     * shattered anims
+     * 9255 idle
+     *
+     * 9245 west
+     * 9244 sw
+     * 9243 s
+     * 9242 se
+     * 9241 e
+     * 9240 ne
+     * 9239 n
+     * 9238 rotating
+     * 9237 shoot nw
+     * ...
+     * 9230 shoot n
+     * 9229 fire rotate
+     */
+
     @Getter @RequiredArgsConstructor
     public enum CannonDirection {
 
-        NORTH(0, 515),
-        NORTH_EAST(1, 516),
-        EAST(2, 517),
-        SOUTH_EAST(3, 518),
-        SOUTH(4, 519),
-        SOUTH_WEST(5, 520),
-        WEST(6, 521),
-        NORTH_WEST(7, 514);
+        NORTH(0, 515, 9230),
+        NORTH_EAST(1, 516, 9231),
+        EAST(2, 517, 9232),
+        SOUTH_EAST(3, 518, 9233),
+        SOUTH(4, 519, 9234),
+        SOUTH_WEST(5, 520, 9235),
+        WEST(6, 521, 9236),
+        NORTH_WEST(7, 514, 9237);
 
         public static CannonDirection forId(int direction) {
             for (CannonDirection facingState : CannonDirection.values()) {
@@ -585,6 +626,7 @@ public class DwarfCannon extends OwnedObject {
 
         private final int direction;
         private final int animationId;
+        private final int ornamentAnimationId;
 
     }
 

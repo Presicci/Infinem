@@ -10,6 +10,7 @@ import io.ruin.api.protocol.world.WorldSetting;
 import io.ruin.api.protocol.world.WorldStage;
 import io.ruin.api.protocol.world.WorldType;
 import io.ruin.api.utils.IPAddress;
+import io.ruin.api.utils.Tuple;
 import io.ruin.cache.Color;
 import io.ruin.cache.Icon;
 import io.ruin.content.activities.event.TimedEventManager;
@@ -21,6 +22,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerFile;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Region;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.object.owned.OwnedObject;
 import io.ruin.model.object.owned.impl.DwarfCannon;
 import io.ruin.process.event.EventWorker;
@@ -264,15 +266,16 @@ public class World extends EventWorker {
         ownedObjects.remove(object.getOwnerUID() + ":" + object.getIdentifier());
     }
 
-    public static void addCannonReclaim(int userId) {
+    public static void addCannonReclaim(int userId, boolean isOrnament) {
         Server.gameDb.execute(connection -> {
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO lost_cannons (user_id) VALUES (?)");
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO lost_cannons (user_id, ornament) VALUES (?, ?)");
             statement.setInt(1, userId);
+            statement.setBoolean(2, isOrnament);
             statement.executeUpdate();
         });
     }
 
-    public static void doCannonReclaim(int userId, Consumer<Boolean> consumer) {
+    public static void doCannonReclaim(int userId, Consumer<Tuple<Boolean, Boolean>> consumer) {
         Server.gameDb.execute(new DatabaseStatement() {
 
             private boolean result;
@@ -283,13 +286,16 @@ public class World extends EventWorker {
                 PreparedStatement statement = null;
                 ResultSet rs = null;
                 try {
-                    statement = connection.prepareStatement("SELECT count(user_id) FROM lost_cannons WHERE user_id = ?");
+                    statement = connection.prepareStatement("SELECT * FROM lost_cannons WHERE user_id = ?");
                     statement.setInt(1, userId);
                     rs = statement.executeQuery();
-                    while (rs.next()) {
-                        result = Integer.parseInt(rs.getString(1)) > 0;
+                    boolean isOrnament = false;
+                    if (rs.next()) {
+                        result = rs.getInt(1) == userId;
+                        isOrnament =  rs.getBoolean(2);
                     }
-                    Server.worker.execute(() -> consumer.accept(result));
+                    boolean finalIsOrnament = isOrnament;
+                    Server.worker.execute(() -> consumer.accept(new Tuple<>(result, finalIsOrnament)));
                 } finally {
                     DatabaseUtils.close(statement, rs);
                 }
@@ -341,8 +347,9 @@ public class World extends EventWorker {
         if(pCount > 0) {
             System.out.println("Attempting to remove " + pCount + " players...");
             for(Player player : players) {
-                if (World.getOwnedObject(player, DwarfCannon.IDENTIFIER) != null) {
-                    addCannonReclaim(player.getUserId());
+                GameObject cannon = World.getOwnedObject(player, DwarfCannon.IDENTIFIER);
+                if (cannon != null) {
+                    addCannonReclaim(player.getUserId(), Arrays.stream(DwarfCannon.ORNAMENT_CANNON_OBJECTS).anyMatch(e -> e == cannon.id));
                 }
                 player.forceLogout();
             }

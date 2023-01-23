@@ -300,13 +300,13 @@ public class UpgradeMachine {
         });
         NPCAction.register(2408, "talk-to", (player, npc) -> {
             World.doCannonReclaim(player.getUserId(), (reclaim) -> {
-                if (reclaim) {
+                if (reclaim.first()) {
                     boolean hasSpace = player.getInventory().hasFreeSlots(DwarfCannon.CANNON_PARTS.length);
                     player.dialogue(
                         new PlayerDialogue("I've lost my cannon, can i have another one?"),
                         !hasSpace ? new NPCDialogue(npc, "Come back when you at least 4 inventory spaces.") : new NPCDialogue(npc, "Yeah sure, here you go. Try not to do it again."),
                         !hasSpace ? new MessageDialogue("You need at least 4 inventory spaces to claim your cannon back.") : new ItemDialogue().one(DwarfCannon.BARRELS, "The Drunken dwarf gives you another cannon.").action(() -> {
-                            IntStream.of(DwarfCannon.CANNON_PARTS).forEach(player.getInventory()::add);
+                            IntStream.of(reclaim.second() ? DwarfCannon.ORNAMENT_CANNON_PARTS : DwarfCannon.CANNON_PARTS).forEach(player.getInventory()::add);
                             World.removeCannonReclaim(player.getUserId());
                         })
                     );
