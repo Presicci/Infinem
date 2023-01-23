@@ -37,30 +37,38 @@ public class DialogueLoader {
             unpackedFiles.add(unpackedFile);
         });
         for (File file : unpackedFiles) {
-            parseDialogue(file);
+            createDialogue(file);
         }
     }
 
-    private static void parseDialogue(File file) {
-        String[] dialogue;
-        int npcId;
+    private static void createDialogue(File file) {
+        List<String> dialogue = new ArrayList<>();;
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-            List<String> strings = new ArrayList<>();
-            br.lines().forEach(strings::add);
-            dialogue = strings.toArray(new String[0]);
+            br.lines().forEach(dialogue::add);
         } catch (IOException e) {
             System.err.println(file.getAbsolutePath() + " does not exist.");
             return;
         }
         try {
-            npcId = Integer.parseInt(dialogue[0]);
-        } catch (NumberFormatException e) {
-            System.err.println(file.getAbsolutePath() + " has invalid npcId.");
-            return;
-        }
+            int npcId = Integer.parseInt(dialogue.get(0));
+            if (npcId > 0) {
+                dialogue.remove(0);
+                parseDialogue(dialogue, npcId);
+                return;
+            }
+        } catch (NumberFormatException ignored) {}
+        NPCDef.forEach(def -> {
+            String name = file.getName().replace(".txt", "");
+            if(def.name.equalsIgnoreCase(name)) {
+                parseDialogue(dialogue, def.id);
+            }
+        });
+    }
+
+    private static void parseDialogue(List<String> dialogue, int npcId) {
         NPCDef npcDef = NPCDef.get(npcId);
         List<Dialogue> dialogues = new ArrayList<>();
-        for (int lineNumber = 1; lineNumber < dialogue.length; lineNumber++) {
+        for (int lineNumber = 0; lineNumber < dialogue.size(); lineNumber++) {
             dialogues.add(parseLine(npcDef, dialogue, lineNumber));
         }
         Dialogue[] dialoguesArray = new Dialogue[dialogues.size()];
@@ -72,8 +80,8 @@ public class DialogueLoader {
         }));
     }
 
-    private static Dialogue parseLine(NPCDef npcDef, String[] dialogue, int  lineNumber) {
-        String line = dialogue[lineNumber];
+    private static Dialogue parseLine(NPCDef npcDef, List<String> dialogue, int  lineNumber) {
+        String line = dialogue.get(lineNumber);
         if (line.startsWith("Player:")) {
             return new PlayerDialogue(line.substring(8));
         }
@@ -84,29 +92,4 @@ public class DialogueLoader {
         System.err.println(npcDef.name + " dialogue has invalid line prefix. name:" + npcDef.name);
         return new MessageDialogue("");
     }
-
-
-    /*private void readDialogue(Player player) {
-        try(BufferedReader br = new BufferedReader(new FileReader("C://Users//mrben//Desktop//test.txt"))) {
-            List<String> strings = new ArrayList<>();
-            br.lines().forEach(strings::add);
-            dialogue = strings.toArray(new String[0]);
-        } catch (IOException ignored) {
-
-        }
-        npcId = Integer.parseInt(dialogue[0]);
-        startDialogue(player);
-    }
-
-
-
-    private void startDialogue(Player player) {
-        List<Dialogue> dialogues = new ArrayList<>();
-        for (int index = 1; index < dialogue.length; index++) {
-            dialogues.add(parseLine(index));
-        }
-        Dialogue[] dialoguesArray = new Dialogue[dialogues.size()];
-        dialoguesArray = dialogues.toArray(dialoguesArray);
-        player.dialogue(dialoguesArray);
-    }*/
 }
