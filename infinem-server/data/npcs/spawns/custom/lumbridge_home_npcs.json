@@ -25,5 +25,41 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Baker",
+    "id": 3208,
+    "x": 3297,
+    "y": 3210,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Silver merchant",
+    "id": 8722,
+    "x": 3297,
+    "y": 3220,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Al-Kharid warrior",
+    "id": 3103,
+    "x": 3300,
+    "y": 3209,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Al-Kharid warrior",
+    "id": 3103,
+    "x": 3291,
+    "y": 3216,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
   }
 ]
