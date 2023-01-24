@@ -161,19 +161,19 @@
     {
       "itemId": 4675,
       "stock": 100,
-      "buy_price": 0,
+      "buy_price": -1,
       "sell_price": 80000
     },
     {
       "itemId": 1409,
       "stock": 100,
-      "buy_price": 0,
+      "buy_price": -1,
       "sell_price": 100000
     },
     {
       "itemId": 12658,
       "stock": 100,
-      "buy_price": 0,
+      "buy_price": -1,
       "sell_price": 200000
     },
     {
