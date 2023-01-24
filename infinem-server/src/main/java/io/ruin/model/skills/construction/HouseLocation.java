@@ -16,7 +16,8 @@ public enum HouseLocation {
     GREAT_KOUREND(28822, 25, 8750, new Position(1742, 3517, 0)),
     RELLEKKA(15480, 30, 10000, new Position(2670, 3631, 0)),
     BRIMHAVEN(15481, 40, 15000, new Position(2757, 3178, 0)),
-    YANILLE(15482, 50, 25000, new Position(2544, 3096, 0));
+    YANILLE(15482, 50, 25000, new Position(2544, 3096, 0)),
+    PRIFDDINAS(34947, 70, 50000, new Position(3239, 6076, 0));
 
     private final int portalId;
     private final int levelReq;
