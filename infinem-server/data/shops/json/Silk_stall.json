@@ -2,7 +2,8 @@
   "name": "Silk Stall",
   "currency": "COINS",
   "npcs": [
-    9162
+    9162,
+    2873
   ],
   "sellMultiplier": 1000,
   "buyMultiplier": 0,
