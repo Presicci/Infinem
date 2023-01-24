@@ -50,6 +50,8 @@ public class CelestialRing {
 
     public static boolean wearingChargedRing(Player player) {
         Item ring = player.getEquipment().get(Equipment.SLOT_RING);
+        if (ring == null)
+            return false;
         if (ring.getId() == CHARGED_RING || ring.getId() == CHARGED_SIGNET) {
             return AttributeExtensions.getCharges(ring) > 0;
         }
@@ -58,6 +60,8 @@ public class CelestialRing {
 
     public static void removeChargeIfEquipped(Player player) {
         Item ring = player.getEquipment().get(Equipment.SLOT_RING);
+        if (ring == null)
+            return;
         if (ring.getId() == CHARGED_RING || ring.getId() == CHARGED_SIGNET) {
             AttributeExtensions.deincrementCharges(ring, 1);
         }
