@@ -255,6 +255,10 @@ public class Shop {
             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
             return;
         }
+        if (getBuyPrice(requestedItem) < 0) {
+            player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
+            return;
+        }
         ShopItem matchingItem = shopItems.findItem(requestedItem.getId(), true);
         if(generalStore && (matchingItem == null || !matchingItem.defaultStockItem)){
             if(shopItems.getFreeSlots() == 0 && matchingItem == null){
