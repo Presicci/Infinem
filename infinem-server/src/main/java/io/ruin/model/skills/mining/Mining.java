@@ -14,6 +14,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.Geode;
 import io.ruin.model.item.actions.impl.chargable.CelestialRing;
+import io.ruin.model.item.actions.impl.chargable.InfernalTools;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.MiningSkillCape;
 import io.ruin.model.item.containers.Equipment;
@@ -104,11 +105,7 @@ public class Mining {
                     attempts++;
                 } else if (attempts % 2 == 0 && Random.get(100) <= chance(getEffectiveLevel(player), rockData, pickaxe)) {
                     int amount = 1;
-                    if (pickaxe == Pickaxe.INFERNAL && Random.rollDie(3, 1)) {//TODO: change back to bar smelting when charge consuming is added
-                        player.graphics(580, 155, 0);
-                        addBar(player, rockData.ore);
-                        //TODO: Get the proper message and take away charge
-                    } else if (rockData != Rock.GEM_ROCK && Random.rollDie(256)) {  // 1/256 chance to replace ore with a gem)
+                    if (rockData != Rock.GEM_ROCK && Random.rollDie(256)) {  // 1/256 chance to replace ore with a gem)
                         gem = GEM_TABLE.rollItem();
 
                         player.collectResource(gem);
@@ -127,7 +124,11 @@ public class Mining {
                         }
                         CelestialRing.removeChargeIfEquipped(player);
                         player.collectResource(new Item(id, amount));
-                        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(id)) {
+                        if (pickaxe == Pickaxe.INFERNAL && Random.rollDie(3, 1) && InfernalTools.INFERNAL_PICKAXE.hasCharge(player) && infernalPickProc(player, rockData.ore)) {
+                            player.graphics(580, 155, 0);
+                            InfernalTools.INFERNAL_PICKAXE.removeCharge(player);
+                            player.sendMessage("Your infernal pickaxe incinerates the " + ItemDef.get(id).name + ".");
+                        } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(id)) {
                             player.getBank().add(id, amount*2);
                             player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
                         } else {
@@ -247,17 +248,18 @@ public class Mining {
 
     private static int getExtraOreChance(Player player, Rock rockData) {
         int chance = 0;
-        int chest = player.getEquipment().get(Equipment.SLOT_CHEST).getId();
+        Item chest = player.getEquipment().get(Equipment.SLOT_CHEST);
+        int chestId = chest != null ? chest.getId() : 0;
         if (rockData.ordinal() <= Rock.GOLD.ordinal()) {
-            if (chest == Items.VARROCK_ARMOUR_1)
+            if (chestId == Items.VARROCK_ARMOUR_1)
                 chance += 10;
         }
         if (rockData.ordinal() <= Rock.MITHRIL.ordinal()) {
-            if (chest == Items.VARROCK_ARMOUR_2)
+            if (chestId == Items.VARROCK_ARMOUR_2)
                 chance += 10;
         }
         if (rockData.ordinal() <= Rock.ADAMANT.ordinal()) {
-            if (chest == Items.VARROCK_ARMOUR_3)
+            if (chestId == Items.VARROCK_ARMOUR_3)
                 chance += 10;
             if (MiningSkillCape.wearsMiningCape(player))
                 chance += 5;
@@ -266,7 +268,7 @@ public class Mining {
             }
         }
         if (rockData.ordinal() <= Rock.RUNE.ordinal()) {
-            if (chest == Items.VARROCK_ARMOUR_4)
+            if (chestId == Items.VARROCK_ARMOUR_4)
                 chance += 10;
         }
         return chance;
@@ -334,36 +336,46 @@ public class Mining {
         return bonus;
     }
 
-    private static Boolean addBar(Player player, int ore) { // TODO: consider changing back to actually smelting bars when charge consuming is added
+    private static Boolean infernalPickProc(Player player, int ore) {
         switch (ore) {
-            case 436:
-            case 438:
+            case Items.COPPER_ORE:
+            case Items.TIN_ORE:
 //                player.getInventory().add(2349, 1);
-                player.getStats().addXp(StatType.Smithing, 2.5, true);
+                player.getStats().addXp(StatType.Smithing, 3.6, true);
                 return true;
-            case 440:
+            case Items.IRON_ORE:
 //                player.getInventory().add(2351, 1);
-                player.getStats().addXp(StatType.Smithing, 5.0, true);
+                player.getStats().addXp(StatType.Smithing, 6.25, true);
                 return true;
-            case 442:
+            case Items.SILVER_ORE:
 //                player.getInventory().add(2355, 1);
-                player.getStats().addXp(StatType.Smithing, 5.5, true);
+                player.getStats().addXp(StatType.Smithing, 7.8, true);
                 return true;
-            case 444:
+            case Items.SANDSTONE_1KG:
+            case Items.SANDSTONE_2KG:
+            case Items.SANDSTONE_5KG:
+            case Items.SANDSTONE_10KG:
+            case Items.GRANITE_500G:
+            case Items.GRANITE_2KG:
+            case Items.GRANITE_5KG:
 //                player.getInventory().add(2357, 1);
+                player.getStats().addXp(StatType.Smithing, 8.0, true);
+                return true;
+            case Items.GOLD_ORE:
+//                player.getInventory().add(2359, 1);
                 player.getStats().addXp(StatType.Smithing, 9.0, true);
                 return true;
-            case 447:
-//                player.getInventory().add(2359, 1);
+            case Items.MITHRIL_ORE:
+//                player.getInventory().add(2362, 1);
                 player.getStats().addXp(StatType.Smithing, 12.0, true);
                 return true;
-            case 449:
-//                player.getInventory().add(2361, 1);
-                player.getStats().addXp(StatType.Smithing, 15.0, true);
-                return true;
-            case 451:
+            case Items.ADAMANTITE_ORE:
 //                player.getInventory().add(2362, 1);
-                player.getStats().addXp(StatType.Smithing, 20.0, true);
+                player.getStats().addXp(StatType.Smithing, 18.75, true);
+                return true;
+            case Items.RUNITE_ORE:
+//                player.getInventory().add(2362, 1);
+                player.getStats().addXp(StatType.Smithing, 25, true);
                 return true;
             default:
                 return false;
