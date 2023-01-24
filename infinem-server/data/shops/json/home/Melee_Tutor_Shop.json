@@ -1,0 +1,108 @@
+{
+  "name": "Melee Tutor Shop",
+  "currency": "COINS",
+  "npcs": [
+    3216
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1323,
+      "stock": 100,
+      "buy_price": 61,
+      "sell_price": 112
+    },
+    {
+      "itemId": 1325,
+      "stock": 100,
+      "buy_price": 220,
+      "sell_price": 400
+    },
+    {
+      "itemId": 1329,
+      "stock": 100,
+      "buy_price": 572,
+      "sell_price": 1040
+    },
+    {
+      "itemId": 1331,
+      "stock": 100,
+      "buy_price": 640,
+      "sell_price": 3840
+    },
+    {
+      "itemId": 1303,
+      "stock": 100,
+      "buy_price": 19200,
+      "sell_price": 32000
+    },
+    {
+      "itemId": 4587,
+      "stock": 100,
+      "buy_price": 50000,
+      "sell_price": 100000
+    },
+    {
+      "itemId": 1215,
+      "stock": 100,
+      "buy_price": 15000,
+      "sell_price": 32000
+    },
+    {
+      "itemId": 5574,
+      "stock": 100,
+      "buy_price": 3000,
+      "sell_price": 6000
+    },
+    {
+      "itemId": 5575,
+      "stock": 100,
+      "buy_price": 5000,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 5576,
+      "stock": 100,
+      "buy_price": 4000,
+      "sell_price": 8000
+    },
+    {
+      "itemId": 9672,
+      "stock": 100,
+      "buy_price": 4000,
+      "sell_price": 8000
+    },
+    {
+      "itemId": 9674,
+      "stock": 100,
+      "buy_price": 6000,
+      "sell_price": 12000
+    },
+    {
+      "itemId": 9676,
+      "stock": 100,
+      "buy_price": 5000,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 9678,
+      "stock": 100,
+      "buy_price": 5000,
+      "sell_price": 10000
+    },
+    {
+      "itemId": 3751,
+      "stock": 100,
+      "buy_price": 42000,
+      "sell_price": 78000
+    },
+    {
+      "itemId": 10828,
+      "stock": 100,
+      "buy_price": 42000,
+      "sell_price": 100000
+    }
+  ]
+}
