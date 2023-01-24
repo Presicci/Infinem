@@ -114,7 +114,7 @@ public class RareDropTable {
             );
 
     private static final int[] ROLL_CHANCE = { // 1 in x, index is luck tier
-            9, 500, 450, 350, 300
+            1000, 500, 450, 350, 300
     };
 
     private static int getLuckTier(Player player) {
@@ -146,18 +146,15 @@ public class RareDropTable {
     public static Optional<Item> rollRareDropTable(NPC npc, Player player) {
         // Combat level check
         if (npc.getDef().combatInfo == null || npc.getDef().combatInfo.hitpoints < 15) {
-            player.sendMessage("hp too low");
             return Optional.empty();
         }
         int luckTier = getLuckTier(player);
         int chance = ROLL_CHANCE[luckTier] - (int) Math.floor(npc.getDef().combatLevel * 0.35);
         if (Random.get(chance) != 1) {
-            player.sendMessage("failed roll");
             return Optional.empty();
         }
         Item item = RARE_DROP_TABLE.rollItem();
         if (item.getId() == -1) {
-            player.sendMessage("rolling mega");
             item = MEGA_RARE_DROP_TABLE.rollItem();
             if (item.getId() == -1) {
                 if (luckTier == 4) {
