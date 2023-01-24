@@ -114,7 +114,7 @@ public class RareDropTable {
             );
 
     private static final int[] ROLL_CHANCE = { // 1 in x, index is luck tier
-            1000, 500, 450, 350, 300
+            9, 500, 450, 350, 300
     };
 
     private static int getLuckTier(Player player) {
@@ -169,7 +169,7 @@ public class RareDropTable {
                 }
             }
         }
-        player.getTaskManager().doLookupByUUID(904, 1); // Get a Drop from the Rare Drop Table
+        player.getTaskManager().doLookupByUUID(905, 1); // Get a Drop from the Rare Drop Table
         return Optional.of(item);
     }
 }
