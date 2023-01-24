@@ -213,9 +213,11 @@ public class FishingSpot {
                                 amount++;
                         }
                         if (finalTool == FishingTool.INFERNAL_HARPOON && InfernalTools.INFERNAL_HARPOON.hasCharge(player) && Random.rollDie(3, 1) && Food.COOKING_EXPERIENCE.containsKey(c.id)) {
+                            player.graphics(580, 155, 0);
                             InfernalTools.INFERNAL_HARPOON.removeCharge(player);
                             player.getStats().addXp(StatType.Fishing, c.xp * anglerBonus(player), true);
                             player.getStats().addXp(StatType.Cooking, Food.COOKING_EXPERIENCE.get(c.id) / 2, true);
+                            player.sendMessage("Your infernal harpoon incinerates the " + c.name() + ".");
                         } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(c.id)) {
                             amount *= 2;
                             player.getBank().add(c.id, amount);
