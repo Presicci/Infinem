@@ -59,6 +59,7 @@ public class NPCDialogue extends Dialogue {
 
     @Override
     public void open(Player player) {
+        message = message.replace("[player name]", player.getName());
         player.openInterface(InterfaceType.CHATBOX, Interface.NPC_DIALOGUE);
         player.getPacketSender().sendNpcHead(Interface.NPC_DIALOGUE, 1, npcDef.id);
         player.getPacketSender().animateInterface(Interface.NPC_DIALOGUE, 1, animationId);
