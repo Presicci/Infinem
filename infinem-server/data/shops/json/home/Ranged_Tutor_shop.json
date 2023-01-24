@@ -1,0 +1,198 @@
+{
+  "name": "Ranged Tutor Shop",
+  "currency": "COINS",
+  "npcs": [
+    3217
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 882,
+      "stock": 50000,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 884,
+      "stock": 40000,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 886,
+      "stock": 30000,
+      "buy_price": 6,
+      "sell_price": 12
+    },
+    {
+      "itemId": 888,
+      "stock": 20000,
+      "buy_price": 17,
+      "sell_price": 32
+    },
+    {
+      "itemId": 890,
+      "stock": 10000,
+      "buy_price": 44,
+      "sell_price": 80
+    },
+    {
+      "itemId": 877,
+      "stock": 30000,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 9140,
+      "stock": 20000,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 9142,
+      "stock": 20000,
+      "buy_price": 3,
+      "sell_price": 12
+    },
+    {
+      "itemId": 841,
+      "stock": 100,
+      "buy_price": 27,
+      "sell_price": 50
+    },
+    {
+      "itemId": 843,
+      "stock": 100,
+      "buy_price": 55,
+      "sell_price": 100
+    },
+    {
+      "itemId": 849,
+      "stock": 100,
+      "buy_price": 110,
+      "sell_price": 200
+    },
+    {
+      "itemId": 853,
+      "stock": 100,
+      "buy_price": 220,
+      "sell_price": 400
+    },
+    {
+      "itemId": 857,
+      "stock": 100,
+      "buy_price": 320,
+      "sell_price": 2200
+    },
+    {
+      "itemId": 9177,
+      "stock": 100,
+      "buy_price": 78,
+      "sell_price": 565
+    },
+    {
+      "itemId": 9179,
+      "stock": 100,
+      "buy_price": 180,
+      "sell_price": 1296
+    },
+    {
+      "itemId": 9181,
+      "stock": 100,
+      "buy_price": 391,
+      "sell_price": 2818
+    },
+    {
+      "itemId": 9183,
+      "stock": 100,
+      "buy_price": 883,
+      "sell_price": 6361
+    },
+    {
+      "itemId": 8880,
+      "stock": 100,
+      "buy_price": 1200,
+      "sell_price": 2000
+    },
+    {
+      "itemId": 8882,
+      "stock": 10000,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 13193,
+      "stock": 100,
+      "buy_price": 210,
+      "sell_price": 350
+    },
+    {
+      "itemId": 1167,
+      "stock": 100,
+      "buy_price": 12,
+      "sell_price": 24
+    },
+    {
+      "itemId": 1169,
+      "stock": 100,
+      "buy_price": 100,
+      "sell_price": 200
+    },
+    {
+      "itemId": 1129,
+      "stock": 100,
+      "buy_price": 10,
+      "sell_price": 21
+    },
+    {
+      "itemId": 1131,
+      "stock": 100,
+      "buy_price": 85,
+      "sell_price": 170
+    },
+    {
+      "itemId": 1133,
+      "stock": 100,
+      "buy_price": 425,
+      "sell_price": 850
+    },
+    {
+      "itemId": 1095,
+      "stock": 100,
+      "buy_price": 10,
+      "sell_price": 20
+    },
+    {
+      "itemId": 1097,
+      "stock": 100,
+      "buy_price": 375,
+      "sell_price": 750
+    },
+    {
+      "itemId": 1063,
+      "stock": 100,
+      "buy_price": 9,
+      "sell_price": 18
+    },
+    {
+      "itemId": 1135,
+      "stock": 100,
+      "buy_price": 3120,
+      "sell_price": 10140
+    },
+    {
+      "itemId": 1099,
+      "stock": 100,
+      "buy_price": 2340,
+      "sell_price": 3900
+    },
+    {
+      "itemId": 1065,
+      "stock": 100,
+      "buy_price": 1500,
+      "sell_price": 2500
+    }
+  ]
+}
