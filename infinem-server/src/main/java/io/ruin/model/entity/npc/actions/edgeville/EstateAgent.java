@@ -26,10 +26,9 @@ import static io.ruin.cache.ItemID.COINS_995;
 public class EstateAgent {
 
     private static final int HOUSE_COST = 10_000;
-    private static final int ESTATE_AGENT = 5419;
 
     static {
-        NPCAction.register(ESTATE_AGENT, "talk-to", EstateAgent::agentDialogue);
+        NPCAction.register(5419, "talk-to", EstateAgent::agentDialogue);
         NPCAction.register(9137, "talk-to", EstateAgent::agentDialogue);
     }
 
@@ -82,119 +81,119 @@ public class EstateAgent {
                     new OptionsDialogue(
                             new Option("Move my house", () ->
                                     player.dialogue(new PlayerDialogue("I'd like to move my house, please!"),
-                                            new ActionDialogue(() -> selectLocation(player)))),
+                                            new ActionDialogue(() -> selectLocation(player, npc)))),
                             new Option("Redecorate my house", () ->
                                     player.dialogue(new PlayerDialogue("I'm interested in redecorating my house."),
-                                            new ActionDialogue(() -> selectStyle(player)))),
+                                            new ActionDialogue(() -> selectStyle(player, npc)))),
                             new Option("Demolish my house", () ->
                                     player.dialogue(new PlayerDialogue("I want to demolish my house."),
-                                            new ActionDialogue(() -> confirmDemolish(player))))
+                                            new ActionDialogue(() -> confirmDemolish(player, npc))))
                     ));
         }
     }
 
-    private static void selectLocation(Player player) {
+    private static void selectLocation(Player player, NPC npc) {
         OptionScroll.open(player, "Select a location", Arrays.stream(HouseLocation.values())
-                .map(loc -> new Option(loc.getName() + " (Level " + loc.getLevelReq() + ") - " + NumberUtils.formatNumber(loc.getCost()) + " gp", () -> moveHouse(player, loc)))
+                .map(loc -> new Option(loc.getName() + " (Level " + loc.getLevelReq() + ") - " + NumberUtils.formatNumber(loc.getCost()) + " gp", () -> moveHouse(player, loc, npc)))
                 .toArray(Option[]::new));
     }
 
-    private static void moveHouse(Player player, HouseLocation newLocation) {
+    private static void moveHouse(Player player, HouseLocation newLocation, NPC npc) {
         if (player.house == null) {
             return;
         }
         if (player.house.getLocation() == newLocation) {
-            player.dialogue(new NPCDialogue(ESTATE_AGENT, "Your house is already at that location. Would you like to move it somewhere else?"),
-                    new ActionDialogue(() -> selectLocation(player)));
+            player.dialogue(new NPCDialogue(npc, "Your house is already at that location. Would you like to move it somewhere else?"),
+                    new ActionDialogue(() -> selectLocation(player, npc)));
             return;
         }
         if (player.getStats().get(StatType.Construction).fixedLevel < newLocation.getLevelReq()) {
-            player.dialogue(new NPCDialogue(ESTATE_AGENT, "My apologies, but I'm only authorized to move your house to " + newLocation.getName() + " if you have a Construction level of at least " + newLocation.getLevelReq()),
-                    new NPCDialogue(ESTATE_AGENT, "Perhaps you'd like to move your house to a different location?"),
-                    new ActionDialogue(() -> selectLocation(player))
+            player.dialogue(new NPCDialogue(npc, "My apologies, but I'm only authorized to move your house to " + newLocation.getName() + " if you have a Construction level of at least " + newLocation.getLevelReq()),
+                    new NPCDialogue(npc, "Perhaps you'd like to move your house to a different location?"),
+                    new ActionDialogue(() -> selectLocation(player, npc))
             );
             return;
         }
         if (!player.getInventory().contains(COINS_995, newLocation.getCost())) {
-            player.dialogue(new NPCDialogue(ESTATE_AGENT, "I must charge a fee of " + NumberUtils.formatNumber(newLocation.getCost()) + " coins to move your house to " + newLocation.getName() + ", but you don't seem to have that much with you right now."),
-                    new NPCDialogue(ESTATE_AGENT, "Perhaps you'd like to move your house to a different location?"),
-                    new ActionDialogue(() -> selectLocation(player))
+            player.dialogue(new NPCDialogue(npc, "I must charge a fee of " + NumberUtils.formatNumber(newLocation.getCost()) + " coins to move your house to " + newLocation.getName() + ", but you don't seem to have that much with you right now."),
+                    new NPCDialogue(npc, "Perhaps you'd like to move your house to a different location?"),
+                    new ActionDialogue(() -> selectLocation(player, npc))
             );
             return;
         }
         player.getInventory().remove(COINS_995, newLocation.getCost());
         player.house.setLocation(newLocation);
         player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MOVEHOUSE, newLocation.toString().toLowerCase());
-        player.dialogue(new NPCDialogue(ESTATE_AGENT, "Very well, I shall make the necessary arrangements to move your house to " + newLocation.getName() + "."),
+        player.dialogue(new NPCDialogue(npc, "Very well, I shall make the necessary arrangements to move your house to " + newLocation.getName() + "."),
                 new PlayerDialogue("Okay."),
-                new NPCDialogue(ESTATE_AGENT, "..."),
+                new NPCDialogue(npc, "..."),
                 new PlayerDialogue("Hello?"),
-                new NPCDialogue(ESTATE_AGENT, "..."),
+                new NPCDialogue(npc, "..."),
                 new PlayerDialogue("...?"),
-                new NPCDialogue(ESTATE_AGENT, "Congratulations! Your house has been moved."),
+                new NPCDialogue(npc, "Congratulations! Your house has been moved."),
                 new PlayerDialogue("Uh... thanks...")
         );
     }
 
-    private static void selectStyle(Player player) {
+    private static void selectStyle(Player player, NPC npc) {
         OptionScroll.open(player, "Select a style", Arrays.stream(HouseStyle.values())
                 .map(style -> new Option(StringUtils.fixCaps(style.name().replace('_', ' ')) + " - " + NumberUtils.formatNumber(style.cost) + " gp",
-                        () -> redecorate(player, style)))
+                        () -> redecorate(player, style, npc)))
                 .toArray(Option[]::new));
     }
 
-    private static void redecorate(Player player, HouseStyle newStyle) {
+    private static void redecorate(Player player, HouseStyle newStyle, NPC npc) {
         if (player.house == null) {
             return;
         }
         if (player.house.getStyle() == newStyle) {
-            player.dialogue(new NPCDialogue(ESTATE_AGENT, "Your house is already decorated in that style. Would you like to choose a different one?"),
-                    new ActionDialogue(() -> selectStyle(player)));
+            player.dialogue(new NPCDialogue(npc, "Your house is already decorated in that style. Would you like to choose a different one?"),
+                    new ActionDialogue(() -> selectStyle(player, npc)));
             return;
         }
         if (player.getStats().get(StatType.Construction).fixedLevel < newStyle.level) {
-            player.dialogue(new NPCDialogue(ESTATE_AGENT, "My apologies, but I'm only authorized to redecorate your house with the " + StringUtils.getFormattedEnumName(newStyle) + " style if you have a Construction level of at least " + newStyle.level + "."),
-                    new NPCDialogue(ESTATE_AGENT, "Perhaps you'd like to choose a different style?"),
-                    new ActionDialogue(() -> selectStyle(player))
+            player.dialogue(new NPCDialogue(npc, "My apologies, but I'm only authorized to redecorate your house with the " + StringUtils.getFormattedEnumName(newStyle) + " style if you have a Construction level of at least " + newStyle.level + "."),
+                    new NPCDialogue(npc, "Perhaps you'd like to choose a different style?"),
+                    new ActionDialogue(() -> selectStyle(player, npc))
             );
             return;
         }
         if (!player.getInventory().contains(COINS_995, newStyle.cost)) {
-            player.dialogue(new NPCDialogue(ESTATE_AGENT, "I must charge a fee of " + NumberUtils.formatNumber(newStyle.cost) + " coins to redecorate your house with the " + StringUtils.getFormattedEnumName(newStyle) + " style, but you don't seem to have that much with you right now."),
-                    new NPCDialogue(ESTATE_AGENT, "Perhaps you'd like to choose a different style?"),
-                    new ActionDialogue(() -> selectStyle(player))
+            player.dialogue(new NPCDialogue(npc, "I must charge a fee of " + NumberUtils.formatNumber(newStyle.cost) + " coins to redecorate your house with the " + StringUtils.getFormattedEnumName(newStyle) + " style, but you don't seem to have that much with you right now."),
+                    new NPCDialogue(npc, "Perhaps you'd like to choose a different style?"),
+                    new ActionDialogue(() -> selectStyle(player, npc))
             );
             return;
         }
         player.getInventory().remove(COINS_995, newStyle.cost);
         player.house.setStyle(newStyle);
-        player.dialogue(new NPCDialogue(ESTATE_AGENT, "Very well, I shall make the necessary arrangements to redecorate your house with the " + StringUtils.getFormattedEnumName(newStyle) + " style..."),
-                new NPCDialogue(ESTATE_AGENT, "Congratulations! Your house has been redecorated."),
+        player.dialogue(new NPCDialogue(npc, "Very well, I shall make the necessary arrangements to redecorate your house with the " + StringUtils.getFormattedEnumName(newStyle) + " style..."),
+                new NPCDialogue(npc, "Congratulations! Your house has been redecorated."),
                 new PlayerDialogue("Thanks.")
         );
     }
 
-    private static void confirmDemolish(Player player) {
-        player.dialogue(new NPCDialogue(ESTATE_AGENT, "Are you sure you want to do that? Demolishing your house cannot be undone, and you will lose everything you've built in it."),
+    private static void confirmDemolish(Player player, NPC npc) {
+        player.dialogue(new NPCDialogue(npc, "Are you sure you want to do that? Demolishing your house cannot be undone, and you will lose everything you've built in it."),
                 new OptionsDialogue(
                         new Option("Nevermind"),
                         new Option("Yes, I'm sure", () -> {
                             player.stringInput("Your house will be demolished. THIS CANNOT BE UNDONE. Type \"I understand\" to confirm:", input -> {
                                 if (input.equalsIgnoreCase("i understand")) {
-                                    if (player.getBankPin().requiresVerification(p -> doDemolish(player))) {
+                                    if (player.getBankPin().requiresVerification(p -> doDemolish(player, npc))) {
                                         return;
                                     }
-                                    doDemolish(player);
+                                    doDemolish(player, npc);
                                 }
                             });
                         })
                 ));
     }
 
-    private static void doDemolish(Player player) {
+    private static void doDemolish(Player player, NPC npc) {
         player.house.expelGuests();
         player.house = new House();
-        player.dialogue(new NPCDialogue(ESTATE_AGENT, "As you wish. Your house has been demolished and returned to the default state."),
+        player.dialogue(new NPCDialogue(npc, "As you wish. Your house has been demolished and returned to the default state."),
                 new PlayerDialogue("Thank you."));
     }
 
