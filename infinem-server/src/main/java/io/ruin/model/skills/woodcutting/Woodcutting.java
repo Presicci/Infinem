@@ -12,6 +12,7 @@ import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.BirdNest;
 import io.ruin.model.item.actions.impl.Geode;
+import io.ruin.model.item.actions.impl.chargable.InfernalTools;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.WoodcuttingSkillCape;
 import io.ruin.model.map.ground.GroundItem;
@@ -102,14 +103,12 @@ public class Woodcutting {
                 }
                 if (attempts % 4 == 0 && successfullyCutTree(effectiveLevel, treeData, hatchet)) {
                     int amount = 1;
-                    if (hatchet == Hatchet.INFERNAL && (Random.rollDie(3, 1))) {
-                        Burning burning = Burning.get(treeData.log);
-                        if (burning != null) {
-                            player.sendFilteredMessage("The infernal axe incinerates some logs.");
-                            player.graphics(580, 50, 0);
-                            player.getStats().addXp(StatType.Firemaking, burning.exp / 2, true);
-                            //TODO: take away an item charge?
-                        }
+                    Burning burning = Burning.get(treeData.log);
+                    if (hatchet == Hatchet.INFERNAL && (Random.rollDie(3, 1)) && InfernalTools.INFERNAL_AXE.hasCharge(player) && burning != null) {
+                        player.sendFilteredMessage("The infernal axe incinerates some logs.");
+                        player.graphics(580, 50, 0);
+                        player.getStats().addXp(StatType.Firemaking, burning.exp / 2, true);
+                        InfernalTools.INFERNAL_AXE.removeCharge(player);
                     } else {
                         if (treeData != Tree.CRYSTAL) {
                             if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(treeData.log)) {
