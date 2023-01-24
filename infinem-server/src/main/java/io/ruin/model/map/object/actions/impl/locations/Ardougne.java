@@ -18,5 +18,8 @@ public class Ardougne {
         ObjectAction.register(17384, 2562, 3356, 0, "climb-down", (player, obj) -> Ladder.climb(player, 2563, 9756, 0, false, true, false));
         Stairs.registerStair(15645, new Position(2571, 3295, 0), Direction.SOUTH, 4);
         Stairs.registerStair(15648, new Position(2571, 3295, 1), Direction.NORTH, 4);
+
+        // Sewer ladder
+        ObjectAction.register(17385, 2632, 9694, 0, "climb-up", (player, obj) -> Ladder.climb(player, 2632, 3295, 0, true, true, false));
     }
 }
