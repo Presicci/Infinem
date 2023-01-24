@@ -79,5 +79,24 @@
     "z": 0,
     "direction": "S",
     "walkRange": 16
+  },
+
+  {
+    "name": "Grand Exchange Clerk",
+    "id": 2148,
+    "x": 3226,
+    "y": 3222,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Grand Exchange Clerk",
+    "id": 2149,
+    "x": 3226,
+    "y": 3215,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
   }
 ]
