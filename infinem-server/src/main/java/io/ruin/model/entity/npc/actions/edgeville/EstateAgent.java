@@ -30,6 +30,7 @@ public class EstateAgent {
 
     static {
         NPCAction.register(ESTATE_AGENT, "talk-to", EstateAgent::agentDialogue);
+        NPCAction.register(9137, "talk-to", EstateAgent::agentDialogue);
     }
 
     private static void agentDialogue(Player player, NPC npc) {
@@ -49,7 +50,7 @@ public class EstateAgent {
                                                                     player.getInventory().remove(COINS_995, HOUSE_COST);
                                                                     player.house = new House();
                                                                     player.getTaskManager().doLookupByUUID(41, 1);  // Purchase a Player Owned House
-                                                                    player.dialogue(new NPCDialogue(npc, "Congratulations, adventurer! You now have your very own house! Simply step through the portal south of me, or teleport to your house to visit it."),
+                                                                    player.dialogue(new NPCDialogue(npc, "Congratulations, adventurer! You now have your very own house! Simply step through the portal in Rimmington, or teleport to your house to visit it."),
                                                                             new PlayerDialogue("Will do, thank you."),
                                                                             new NPCDialogue(npc, "Come see me again if you'd like to move your house somewhere else, or have it redecorated."));
                                                                 } else {
