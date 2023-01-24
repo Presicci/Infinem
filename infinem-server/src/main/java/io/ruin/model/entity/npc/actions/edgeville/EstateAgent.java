@@ -25,7 +25,7 @@ import static io.ruin.cache.ItemID.COINS_995;
 
 public class EstateAgent {
 
-    private static final int HOUSE_COST = 100_000;
+    private static final int HOUSE_COST = 10_000;
     private static final int ESTATE_AGENT = 5419;
 
     static {
