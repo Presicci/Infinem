@@ -58,7 +58,7 @@ public class DialogueLoader {
             }
         } catch (NumberFormatException ignored) {}
         NPCDef.forEach(def -> {
-            String name = file.getName().replace(".txt", "");
+            String name = file.getName().replace(".txt", "").replace("_", " ");
             if(def.name.equalsIgnoreCase(name)) {
                 parseDialogue(dialogue, def.id);
             }
