@@ -1,5 +1,8 @@
 package io.ruin.model.map.object.actions.impl;
 
+import io.ruin.model.entity.player.Player;
+import io.ruin.model.map.Position;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 
 /**
@@ -7,6 +10,20 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 1/23/2023
  */
 public class Manhole {
+
+    private static final Position VARROCK = new Position(3237, 3458, 0),
+    ARDY = new Position(2632, 3294, 0);
+
+    /**
+     * Has to be done this way because of how manholes work.
+     */
+    private static void teleport(Player player, GameObject gameObject) {
+        if (gameObject.getPosition().equals(VARROCK)) {
+            player.getMovement().teleport(3237, 9858, 0);
+        } else if (gameObject.getPosition().equals(ARDY)) {
+            player.getMovement().teleport(2632, 9695, 0);
+        }
+    }
 
     static {
         ObjectAction.register(881, "open", (player, obj) -> {
@@ -17,9 +34,11 @@ public class Manhole {
             obj.setId(obj.originalId);
             player.sendFilteredMessage("You place the cover back over the manhole.");
         });
-        ObjectAction.register(882, 3237, 3458, 0, "climb-down", (player, obj) -> player.startEvent(event -> {
+        ObjectAction.register(882, "climb-down", (player, obj) -> player.startEvent(event -> {
             player.lock();
-            player.getMovement().teleport(3237, 9858, 0);
+            player.animate(827);
+            event.delay(1);
+            teleport(player, obj);
             player.sendFilteredMessage("You climb down through the manhole.");
             player.unlock();
         }));
