@@ -1,5 +1,7 @@
 package io.ruin.model.map.route;
 
+import com.google.api.client.util.Sets;
+import com.google.common.collect.ImmutableSet;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
 import io.ruin.cache.ObjectDef;
@@ -21,7 +23,9 @@ import io.ruin.model.map.route.types.RouteObject;
 import io.ruin.model.map.route.types.RouteRelative;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Consumer;
 
 public class RouteFinder {
@@ -39,6 +43,8 @@ public class RouteFinder {
     public static final int SOUTH_WEST_MASK = 0x124010e, NORTH_WEST_MASK = 0x1240138;
 
     public static final int SOUTH_EAST_MASK = 0x1240183, NORTH_EAST_MASK = 0x12401e0;
+
+    private static final Set<Integer> SKIP_REACH_OBJECTS = ImmutableSet.of(13143);
 
     /**
      * Separator
@@ -232,7 +238,7 @@ public class RouteFinder {
                 successAction.run();
                 return;
             }
-            if(gameObject.skipReachCheck != null && gameObject.skipReachCheck.test(entity.getPosition())) {
+            if((gameObject.skipReachCheck != null && gameObject.skipReachCheck.test(entity.getPosition())) || SKIP_REACH_OBJECTS.contains(gameObject.id)) {
                 successAction.run();
                 return;
             }
@@ -264,7 +270,7 @@ public class RouteFinder {
                     return;
                 }
             }
-            if(gameObject.skipReachCheck != null && gameObject.skipReachCheck.test(entity.getPosition())) {
+            if((gameObject.skipReachCheck != null && gameObject.skipReachCheck.test(entity.getPosition())) || SKIP_REACH_OBJECTS.contains(gameObject.id)) {
                 successAction.run();
                 return;
             }
