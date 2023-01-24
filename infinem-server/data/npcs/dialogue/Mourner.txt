@@ -1,0 +1,7 @@
+8971
+Player: Hello.
+Mourner: What are you up to?
+Player: Nothing.
+Mourner: I don't trust you.
+Player: You don't have to.
+Mourner: If I find you attempting to cross the wall I'll make sure you never return.

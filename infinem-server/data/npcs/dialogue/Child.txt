@@ -1,0 +1,2 @@
+Player: Hello there.
+Child: I'm not allowed to speak with strangers.
