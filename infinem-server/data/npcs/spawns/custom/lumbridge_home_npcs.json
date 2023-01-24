@@ -61,5 +61,23 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
+  },
+  {
+    "name": "Drunken Dwarf",
+    "id": 2408,
+    "x": 3229,
+    "y": 3241,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Stuart",
+    "id": 15009,
+    "x": 3223,
+    "y": 3219,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 16
   }
 ]
