@@ -122,16 +122,7 @@ public class DialogueLoader {
         List<Dialogue> branchDialogue = new ArrayList<>();
         String line = dialogue.get(lineNumber);
         while (!line.startsWith(">")) {
-            if (line.startsWith("<")) {
-                branchDialogue.add(parseOptions(npcDef, dialogue));
-            }
-            if (line.startsWith("Player:")) {
-                branchDialogue.add(new PlayerDialogue(line.substring(8)));
-            }
-            String npcName = npcDef.name;
-            if (line.startsWith(npcName + ":")) {
-                branchDialogue.add(new NPCDialogue(npcDef.id, line.substring(npcName.length() + 1)));
-            }
+            branchDialogue.add(parseLine(npcDef, dialogue));
             line = dialogue.get(++lineNumber);
         }
         Dialogue[] dialoguesArray = new Dialogue[branchDialogue.size()];
