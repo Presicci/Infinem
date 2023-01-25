@@ -93,6 +93,11 @@ public class DialogueLoader {
         if (line.startsWith(npcName + ":")) {
             return new NPCDialogue(npcDef.id, line.substring(npcName.length() + 1));
         }
+        for (DialogueLoaderAction action : DialogueLoaderAction.values()) {
+            if (line.startsWith(action.name())) {
+                return new ActionDialogue(action.getAction());
+            }
+        }
         System.err.println(npcDef.name + " dialogue has invalid line prefix. name:" + npcDef.name);
         return new MessageDialogue("");
     }
