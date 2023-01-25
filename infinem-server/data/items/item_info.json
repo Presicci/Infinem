@@ -109580,6 +109580,15 @@
     "melee_strength_bonus": 4,
     "prayer_bonus": 1
   },
+  { # Portable waystone
+    "id": 26549,
+    "tradeable": false,
+    "examine": "A small waystone which can whisk you to places of importance.",
+    "destroy": "You can get this item back by talking to the Sage near Catherby.",
+    "weight": 0.0002,
+	"protect_value": 400,
+    "equip_slot": 2
+  },
   { # Venator bow
     "id": 27610,
     "tradeable": false,
