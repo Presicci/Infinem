@@ -40,7 +40,7 @@ public class DialogueLoader {
     }
 
     private static void createDialogue(File file) {
-        List<String> dialogue = new ArrayList<>();;
+        List<String> dialogue = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             br.lines().forEach(dialogue::add);
         } catch (IOException e) {
@@ -83,7 +83,7 @@ public class DialogueLoader {
 
     private static Dialogue parseLine(NPCDef npcDef, List<String> dialogue) {
         String line = dialogue.get(lineNumber);
-        if (line.startsWith(">")) {
+        if (line.startsWith("<")) {
             return parseOptions(npcDef, dialogue);
         }
         if (line.startsWith("Player:")) {
@@ -99,16 +99,16 @@ public class DialogueLoader {
 
     /**
      * Loops through the options and gets their branching dialogue.
+     * < denotes the opening of an option
+     * > denotes the closing of an option
      * @return Complete OptionsDialogue
      */
     private static Dialogue parseOptions(NPCDef npcDef, List<String> dialogue) {
         List<Option> options = new ArrayList<>();
         String line = dialogue.get(lineNumber);
-        while (line.startsWith(">")) {
+        while (line.startsWith("<")) {
             lineNumber++;
-            options.add(new Option(line, (player) -> {
-                player.dialogue(parseOptionBranch(npcDef, dialogue));
-            }));
+            options.add(new Option(line, (player) -> player.dialogue(parseOptionBranch(npcDef, dialogue))));
             line = dialogue.get(lineNumber);
         }
         return new OptionsDialogue(options);
@@ -121,7 +121,10 @@ public class DialogueLoader {
     private static Dialogue[] parseOptionBranch(NPCDef npcDef, List<String> dialogue) {
         List<Dialogue> branchDialogue = new ArrayList<>();
         String line = dialogue.get(lineNumber);
-        while (!line.startsWith(">") && !line.startsWith("<")) {
+        while (!line.startsWith(">")) {
+            if (line.startsWith("<")) {
+                branchDialogue.add(parseOptions(npcDef, dialogue));
+            }
             if (line.startsWith("Player:")) {
                 branchDialogue.add(new PlayerDialogue(line.substring(8)));
             }
