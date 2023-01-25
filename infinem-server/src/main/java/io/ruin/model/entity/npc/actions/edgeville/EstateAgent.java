@@ -138,7 +138,8 @@ public class EstateAgent {
 
     private static void selectStyle(Player player, NPC npc) {
         OptionScroll.open(player, "Select a style", Arrays.stream(HouseStyle.values())
-                .map(style -> new Option(StringUtils.fixCaps(style.name().replace('_', ' ')) + " - " + NumberUtils.formatNumber(style.cost) + " gp",
+                .map(style -> new Option((player.getStats().get(StatType.Construction).currentLevel < style.level ? "<str>" : "")
+                                + StringUtils.fixCaps(style.name().replace('_', ' ')) + " (" + style.level + ") - " + NumberUtils.formatNumber(style.cost) + " gp",
                         () -> redecorate(player, style, npc)))
                 .toArray(Option[]::new));
     }
