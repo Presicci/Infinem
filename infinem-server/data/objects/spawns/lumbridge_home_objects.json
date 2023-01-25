@@ -17,7 +17,6 @@
   {"id": 14896, "x": 3196, "y": 3201, "z": 0, "type": 10, "direction": 0},  // Flax
   {"id": 14896, "x": 3197, "y": 3202, "z": 0, "type": 10, "direction": 0},  // Flax
   {"id": 14896, "x": 3199, "y": 3201, "z": 0, "type": 10, "direction": 0},  // Flax
-  {"id": 40408, "x": 3238, "y": 3222, "z": 0, "type": 10, "direction": 0},  // Waystone
   {"id": 11731, "x": 3286, "y": 3211, "z": 0, "type": 10, "direction": 0},  // Gem stall
   {"id": 11729, "x": 3298, "y": 3202, "z": 0, "type": 10, "direction": 1},  // Silk stall
   {"id": 11730, "x": 3296, "y": 3208, "z": 0, "type": 10, "direction": 1},  // Bakers stall

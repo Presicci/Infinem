@@ -1,0 +1,14 @@
+[
+  {"id": 40408, "x": 2968, "y": 3385, "z": 0, "type": 10, "direction": 0},  // Falador
+  {"id": 40409, "x": 3238, "y": 3222, "z": 0, "type": 10, "direction": 0},  // Lumbridge
+  {"id": 40410, "x": 2680, "y": 3308, "z": 0, "type": 10, "direction": 0},  // Ardy
+  {"id": 40411, "x": 2664, "y": 3648, "z": 0, "type": 10, "direction": 0},  // Rellekka
+  {"id": 40412, "x": 3355, "y": 2969, "z": 0, "type": 10, "direction": 0},  // Pollniv
+  {"id": 40413, "x": 3494, "y": 3493, "z": 0, "type": 10, "direction": 0},  // Canifis
+  {"id": 40414, "x": 3266, "y": 6068, "z": 0, "type": 10, "direction": 0},  // Prifddinas
+  {"id": -1, "x": 3267, "y": 6068, "z": 0, "type": 10, "direction": 0},     // remove a little tree that was inside the prif waystone
+  {"id": 40415, "x": 2804, "y": 3186, "z": 0, "type": 10, "direction": 0},  // Brimhaven
+  {"id": -1, "x": 2804, "y": 3187, "z": 0, "type": 10, "direction": 0},     // remove tree by brimhaven waystone
+  {"id": -1, "x": 2805, "y": 3186, "z": 0, "type": 10, "direction": 0},     // remove tree by brimhaven waystone
+  {"id": 40416, "x": 3146, "y": 3631, "z": 0, "type": 10, "direction": 0}   // Ferox enclave
+]
