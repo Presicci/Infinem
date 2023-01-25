@@ -4,10 +4,8 @@ import io.ruin.Server;
 import io.ruin.api.utils.FileUtils;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.npc.NPCAction;
-import io.ruin.model.inter.dialogue.Dialogue;
-import io.ruin.model.inter.dialogue.MessageDialogue;
-import io.ruin.model.inter.dialogue.NPCDialogue;
-import io.ruin.model.inter.dialogue.PlayerDialogue;
+import io.ruin.model.inter.dialogue.*;
+import io.ruin.model.inter.utils.Option;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -65,11 +63,14 @@ public class DialogueLoader {
         });
     }
 
+    private static int lineNumber = 0;
+
     private static void parseDialogue(List<String> dialogue, int npcId) {
+        lineNumber = 0;
         NPCDef npcDef = NPCDef.get(npcId);
         List<Dialogue> dialogues = new ArrayList<>();
-        for (int lineNumber = 0; lineNumber < dialogue.size(); lineNumber++) {
-            dialogues.add(parseLine(npcDef, dialogue, lineNumber));
+        for (int line = lineNumber; line < dialogue.size(); line++) {
+            dialogues.add(parseLine(npcDef, dialogue));
         }
         Dialogue[] dialoguesArray = new Dialogue[dialogues.size()];
         dialoguesArray = dialogues.toArray(dialoguesArray);
@@ -80,8 +81,11 @@ public class DialogueLoader {
         }));
     }
 
-    private static Dialogue parseLine(NPCDef npcDef, List<String> dialogue, int  lineNumber) {
+    private static Dialogue parseLine(NPCDef npcDef, List<String> dialogue) {
         String line = dialogue.get(lineNumber);
+        if (line.startsWith(">")) {
+            return parseOptions(npcDef, dialogue);
+        }
         if (line.startsWith("Player:")) {
             return new PlayerDialogue(line.substring(8));
         }
@@ -91,5 +95,44 @@ public class DialogueLoader {
         }
         System.err.println(npcDef.name + " dialogue has invalid line prefix. name:" + npcDef.name);
         return new MessageDialogue("");
+    }
+
+    /**
+     * Loops through the options and gets their branching dialogue.
+     * @return Complete OptionsDialogue
+     */
+    private static Dialogue parseOptions(NPCDef npcDef, List<String> dialogue) {
+        List<Option> options = new ArrayList<>();
+        String line = dialogue.get(lineNumber);
+        while (line.startsWith(">")) {
+            lineNumber++;
+            options.add(new Option(line, (player) -> {
+                player.dialogue(parseOptionBranch(npcDef, dialogue));
+            }));
+            line = dialogue.get(lineNumber);
+        }
+        return new OptionsDialogue(options);
+    }
+
+    /**
+     * Parses the dialogue tree under an option.
+     * @return Dialogue array containing option branch.
+     */
+    private static Dialogue[] parseOptionBranch(NPCDef npcDef, List<String> dialogue) {
+        List<Dialogue> branchDialogue = new ArrayList<>();
+        String line = dialogue.get(lineNumber);
+        while (!line.startsWith(">") && !line.startsWith("<")) {
+            if (line.startsWith("Player:")) {
+                branchDialogue.add(new PlayerDialogue(line.substring(8)));
+            }
+            String npcName = npcDef.name;
+            if (line.startsWith(npcName + ":")) {
+                branchDialogue.add(new NPCDialogue(npcDef.id, line.substring(npcName.length() + 1)));
+            }
+            line = dialogue.get(++lineNumber);
+        }
+        Dialogue[] dialoguesArray = new Dialogue[branchDialogue.size()];
+        dialoguesArray = branchDialogue.toArray(dialoguesArray);
+        return dialoguesArray;
     }
 }
