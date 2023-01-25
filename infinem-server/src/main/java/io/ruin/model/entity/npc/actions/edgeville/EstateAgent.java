@@ -94,7 +94,8 @@ public class EstateAgent {
 
     private static void selectLocation(Player player, NPC npc) {
         OptionScroll.open(player, "Select a location", Arrays.stream(HouseLocation.values())
-                .map(loc -> new Option(loc.getName() + " (Level " + loc.getLevelReq() + ") - " + NumberUtils.formatNumber(loc.getCost()) + " gp", () -> moveHouse(player, loc, npc)))
+                .map(loc -> new Option((player.getStats().get(StatType.Construction).currentLevel < loc.getLevelReq() ? "<str>" : "")
+                        + loc.getName() + " (Level " + loc.getLevelReq() + ") - " + NumberUtils.formatNumber(loc.getCost()) + " gp", () -> moveHouse(player, loc, npc)))
                 .toArray(Option[]::new));
     }
 
