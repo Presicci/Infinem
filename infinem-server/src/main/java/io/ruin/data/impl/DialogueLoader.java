@@ -2,6 +2,7 @@ package io.ruin.data.impl;
 
 import io.ruin.Server;
 import io.ruin.api.utils.FileUtils;
+import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.inter.dialogue.*;
@@ -101,12 +102,25 @@ public class DialogueLoader {
         }
         for (DialogueLoaderAction action : DialogueLoaderAction.values()) {
             if (line.startsWith(action.name())) {
-                String finalLine = line;
-                return new ActionDialogue((player) -> {
-                    action.getAction().accept(player);
-                    if (finalLine.length() > action.name().length() + 1)
-                        player.dialogue(new MessageDialogue(finalLine.substring(action.name().length() + 1)));
-                });
+                if (action == DialogueLoaderAction.ITEM) {
+                    int itemId = -1;
+                    try {
+                        itemId = Integer.parseInt(line.substring(action.name().length() + 1));
+                    } catch (NumberFormatException ignored) {
+                        System.err.println(npcDef.name + " has missing itemId for ITEM action on line " + lineNumber);
+                    }
+                    int finalItemId = itemId;
+                    return new ItemDialogue().one(finalItemId, npcDef.name + " hands you " + ItemDef.get(finalItemId).descriptiveName + ".").consumer((player) -> {
+                        player.getInventory().addOrDrop(finalItemId, 1);
+                    });
+                } else {
+                    String finalLine = line;
+                    return new ActionDialogue((player) -> {
+                        action.getAction().accept(player);
+                        if (finalLine.length() > action.name().length() + 1)
+                            player.dialogue(new MessageDialogue(finalLine.substring(action.name().length() + 1)));
+                    });
+                }
             }
         }
         System.err.println(npcDef.name + " dialogue has invalid line prefix. name:" + npcDef.name + ", line:" + lineNumber);

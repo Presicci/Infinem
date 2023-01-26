@@ -8,11 +8,18 @@ import lombok.Getter;
 import java.util.function.Consumer;
 
 @Getter
-@AllArgsConstructor
 public enum DialogueLoaderAction {
     HEAL((player) -> {
         player.getStats().get(StatType.Hitpoints).restore();
-    });
+    }),
+    ITEM(null)  // Handled specifically in the loader
+    ;
 
     private final Consumer<Player> action;
+
+    DialogueLoaderAction(Consumer<Player> action) {
+        this.action = action;
+    }
+
+
 }
