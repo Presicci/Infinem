@@ -6,6 +6,8 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SimpleAction;
 
+import java.util.function.Consumer;
+
 public class ItemDialogue extends Dialogue {
 
     private int itemId1, itemId2;
@@ -15,6 +17,8 @@ public class ItemDialogue extends Dialogue {
     private int lineHeight;
 
     private Runnable action;
+
+    private Consumer<Player> consumer;
 
     private boolean hideContinue;
 
@@ -34,6 +38,11 @@ public class ItemDialogue extends Dialogue {
 
     public ItemDialogue action(Runnable action) {
         this.action = action;
+        return this;
+    }
+
+    public ItemDialogue consumer(Consumer<Player> consumer) {
+        this.consumer = consumer;
         return this;
     }
 
@@ -70,6 +79,8 @@ public class ItemDialogue extends Dialogue {
         }
         if(action != null)
             action.run();
+        if(consumer != null)
+            consumer.accept(player);
     }
 
     static {
