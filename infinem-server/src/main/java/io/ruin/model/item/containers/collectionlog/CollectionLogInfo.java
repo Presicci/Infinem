@@ -204,7 +204,7 @@ public enum CollectionLogInfo {
     }
 
     public void sendKillCount(Player player, int slot) {
-        Config.COLLECTION_LOG_KC.set(player, getKillCount(player, slot));
+        Config.COLLECTION_LOG_KC.setInstant(player, getKillCount(player, slot));
     }
 
     public int getKillCount(Player player, int slot) {
