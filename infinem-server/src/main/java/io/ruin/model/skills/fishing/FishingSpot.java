@@ -233,9 +233,6 @@ public class FishingSpot {
 
                         FishingClueBottle.roll(player, c, barehand);
 
-                        if (npc.fishingArea != null && npc.fishingArea != FishingArea.RESOURCE_AREA && Random.rollDie(75))
-                            npc.fishingArea.move(npc);
-
                         if (c.barbarianXp > 0) {
                             player.getStats().addXp(StatType.Agility, c.barbarianXp, true);
                             player.getStats().addXp(StatType.Strength, c.barbarianXp, true);

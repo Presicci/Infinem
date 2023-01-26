@@ -1,12 +1,11 @@
 package io.ruin.model.skills.fishing;
 
+import io.ruin.api.utils.Random;
+import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.map.Position;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public enum FishingArea {
 
@@ -346,6 +345,7 @@ public enum FishingArea {
     );
 
     private final ArrayDeque<Position> freePositions;
+    private static final List<NPC> spots = new ArrayList<>();
 
     FishingArea(Position... positions) {
         List<Position> list = Arrays.asList(positions);
@@ -353,7 +353,9 @@ public enum FishingArea {
         freePositions = new ArrayDeque<>(list);
     }
 
-    protected void move(NPC npc) {
+    private void move(NPC npc) {
+        if (freePositions.isEmpty())
+            return;
         Position next = freePositions.pop();
         Position prev = npc.getPosition();
         freePositions.addLast(prev.copy());
@@ -365,8 +367,28 @@ public enum FishingArea {
             NPC npc = new NPC(npcId);
             npc.fishingArea = this;
             npc.spawn(freePositions.pop());
+            spots.add(npc);
         }
     }
+
+    /**
+     * World event that moves fishing spots every 350 to 450 ticks.
+     * Spots have a 50% chance of moving, could tune this in the future.
+     */
+    private static void fishingSpotTimer() {
+        World.startEvent(e -> {
+            while (true) {
+                e.delay(Random.get(350, 450));   // 3.5 - 4.5 minute delay
+                for (NPC npc : spots) {
+                    if (npc.fishingArea != null && Random.rollDie(2, 1)) {
+                        npc.fishingArea.move(npc);
+                    }
+                }
+            }
+        });
+    }
+
+    private static final List<FishingArea> fishingAreas = new ArrayList<>();
 
     static {
         AL_KHARID.add(FishingSpot.NET_BAIT, 2);
@@ -414,5 +436,8 @@ public enum FishingArea {
         KARAMBWANJI.add(FishingSpot.KARAMBWANJI, 2);
         ENTRANA_DOCK.add(FishingSpot.NET_BAIT, 4);
         ENTRANA_RIVER.add(FishingSpot.LURE_BAIT, 3);
+
+        fishingAreas.addAll(Arrays.asList(FishingArea.values()));
+        FishingArea.fishingSpotTimer();
     }
 }
