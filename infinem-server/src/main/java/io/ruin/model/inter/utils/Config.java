@@ -1061,6 +1061,11 @@ public class Config {
         }
     }
 
+    public void setInstant(Player player, int value) {
+        set(player, value);
+        player.sendVarps();
+    }
+
     public int get(Player player) {
         if(bit != null) {
             int varpId = bit.varpId;
