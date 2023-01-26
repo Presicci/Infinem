@@ -146,7 +146,7 @@ public class Woodcutting {
                     treeData.counter.increment(player, amount);
                     double xp = treeData.experience;
                     player.getStats().addXp(StatType.Woodcutting, xp * amount, true);
-                    if (treeData.single || Random.get(10) == 3) {
+                    if ((treeData.single || Random.get(10) == 3) && treeData != Tree.DRAMEN_TREE) {
                         player.resetAnimation();
                         World.startEvent(treeDeadAction);
                         return;
@@ -220,6 +220,7 @@ public class Woodcutting {
         ObjectAction.register(10821, "chop down", (player, obj) -> chop(Tree.HOLLOW_TREE, player, obj, 2310));
         ObjectAction.register(10830, "chop down", (player, obj) -> chop(Tree.HOLLOW_TREE, player, obj, 4061));
         ObjectAction.register(50008, "chop down", (player, obj) -> chop(Tree.CORRUPT_TREE, player, obj, 50009));
+        ObjectAction.register(1292, "chop down", (player, obj) -> chop(Tree.DRAMEN_TREE, player, obj, -1));
     }
 
 }
