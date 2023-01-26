@@ -69,8 +69,11 @@ public class DialogueLoader {
         lineNumber = 0;
         NPCDef npcDef = NPCDef.get(npcId);
         List<Dialogue> dialogues = new ArrayList<>();
-        for (int line = lineNumber; line < dialogue.size(); line++) {
+        while(lineNumber < dialogue.size()) {
+            if (dialogue.get(lineNumber).equals(">"))
+                break;
             dialogues.add(parseLine(npcDef, dialogue));
+            lineNumber++;
         }
         Dialogue[] dialoguesArray = new Dialogue[dialogues.size()];
         dialoguesArray = dialogues.toArray(dialoguesArray);
@@ -83,6 +86,9 @@ public class DialogueLoader {
 
     private static Dialogue parseLine(NPCDef npcDef, List<String> dialogue) {
         String line = dialogue.get(lineNumber);
+        if (line.startsWith(">")) {
+            line = line.substring(1);
+        }
         if (line.startsWith("<")) {
             return parseOptions(npcDef, dialogue);
         }
@@ -95,10 +101,15 @@ public class DialogueLoader {
         }
         for (DialogueLoaderAction action : DialogueLoaderAction.values()) {
             if (line.startsWith(action.name())) {
-                return new ActionDialogue(action.getAction());
+                String finalLine = line;
+                return new ActionDialogue((player) -> {
+                    action.getAction().accept(player);
+                    if (finalLine.length() > action.name().length() + 1)
+                        player.dialogue(new MessageDialogue(finalLine.substring(action.name().length() + 1)));
+                });
             }
         }
-        System.err.println(npcDef.name + " dialogue has invalid line prefix. name:" + npcDef.name);
+        System.err.println(npcDef.name + " dialogue has invalid line prefix. name:" + npcDef.name + ", line:" + lineNumber);
         return new MessageDialogue("");
     }
 
@@ -113,8 +124,11 @@ public class DialogueLoader {
         String line = dialogue.get(lineNumber);
         while (line.startsWith("<")) {
             lineNumber++;
-            options.add(new Option(line, (player) -> player.dialogue(parseOptionBranch(npcDef, dialogue))));
+            Dialogue[] dialogues = parseOptionBranch(npcDef, dialogue);
+            options.add(new Option(line.substring(1), (player) -> player.dialogue(dialogues)));
             line = dialogue.get(lineNumber);
+            if (line.startsWith(">"))
+                line = line.substring(1);
         }
         return new OptionsDialogue(options);
     }
