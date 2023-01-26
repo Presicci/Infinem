@@ -85,4 +85,10 @@ public class EnumMap {
         return map;
     }
 
+    public Map<String, Integer> valuesAsKeysStrings() {
+        Map<String, Integer> map = new HashMap<>(length);
+        for(int i = 0; i < length; i++)
+            map.put(stringValues[i], keys[i]);
+        return map;
+    }
 }
