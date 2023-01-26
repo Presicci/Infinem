@@ -1,0 +1,10 @@
+4068
+Monk: Greetings traveller.
+<Can you heal me? I'm injured.
+Player: Can you heal me? I'm injured.
+Monk: Ok.
+HEAL:
+><Isn't this place built a bit out of the way?
+Player: Isn't this place built a bit out of the way?
+Monk: We like it that way actually! We get disturbed less. We still get rather a large amount of travellers looking for sanctuary and healing here as it is!
+>
