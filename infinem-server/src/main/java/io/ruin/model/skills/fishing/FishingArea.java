@@ -306,6 +306,18 @@ public enum FishingArea {
             new Position(2791, 3019, 0),
             new Position(2801, 3010, 0)
     ),
+    ENTRANA_DOCK(
+            new Position(2879, 3335, 0),
+            new Position(2879, 3334, 0),
+            new Position(2876, 3331, 0),
+            new Position(2877, 3331, 0),
+            new Position(2875, 3331, 0),
+            new Position(2879, 3338, 0),
+            new Position(2879, 3339, 0),
+            new Position(2877, 3342, 0),
+            new Position(2876, 3342, 0),
+            new Position(2875, 3342, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -392,5 +404,6 @@ public enum FishingArea {
         MUSA_POINT_2.add(FishingSpot.NET_BAIT, 2);
         SHILO_VILLAGE.add(FishingSpot.LURE_BAIT, 4);
         KARAMBWANJI.add(FishingSpot.KARAMBWANJI, 2);
+        ENTRANA_DOCK.add(FishingSpot.NET_BAIT, 4);
     }
 }
