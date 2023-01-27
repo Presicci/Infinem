@@ -12,7 +12,8 @@ public enum DialogueLoaderAction {
     HEAL((player) -> {
         player.getStats().get(StatType.Hitpoints).restore();
     }),
-    ITEM(null)  // Handled specifically in the loader
+    ITEM(null),  // Handled specifically in the loader
+    SHOP(null),
     ;
 
     private final Consumer<Player> action;

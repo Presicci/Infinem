@@ -102,12 +102,17 @@ public class DialogueLoader {
         }
         for (DialogueLoaderAction action : DialogueLoaderAction.values()) {
             if (line.startsWith(action.name())) {
+                if (action == DialogueLoaderAction.SHOP) {
+                    return new ActionDialogue((player) -> {
+                        npcDef.shops.get(0).open(player);
+                    });
+                }
                 if (action == DialogueLoaderAction.ITEM) {
                     int itemId = -1;
                     try {
                         itemId = Integer.parseInt(line.substring(action.name().length() + 1));
                     } catch (NumberFormatException ignored) {
-                        System.err.println(npcDef.name + " has missing itemId for ITEM action on line " + lineNumber);
+                        System.err.println(npcDef.name + " has missing itemId for ITEM action on line " + lineNumber + 1);
                     }
                     int finalItemId = itemId;
                     return new ItemDialogue().one(finalItemId, npcDef.name + " hands you " + ItemDef.get(finalItemId).descriptiveName + ".").consumer((player) -> {
@@ -123,7 +128,7 @@ public class DialogueLoader {
                 }
             }
         }
-        System.err.println(npcDef.name + " dialogue has invalid line prefix. name:" + npcDef.name + ", line:" + lineNumber);
+        System.err.println(npcDef.name + " dialogue has invalid line prefix. name:" + npcDef.name + ", line:" + lineNumber + 1);
         return new MessageDialogue("");
     }
 
