@@ -96913,7 +96913,7 @@
     "slash_attack_bonus": -2,
     "crush_attack_bonus": 67,
     "melee_strength_bonus": 66,
-    "prayer_bonus": 5,
+    "prayer_bonus": 2,
     "weapon_type": "CHAINMACE"
   },
     { #Viggora's chainmace
@@ -96928,7 +96928,7 @@
     "slash_attack_bonus": -2,
     "crush_attack_bonus": 67,
     "melee_strength_bonus": 66,
-    "prayer_bonus": 5,
+    "prayer_bonus": 2,
     "weapon_type": "CHAINMACE"
   },
     { #Craw's bow uncharged
@@ -109616,6 +109616,63 @@
     "ranged_level": 80,
     "range_attack_bonus": 90,
     "ranged_strength_bonus": 25
+  },
+  { # Webweaver
+    "id": 27655,
+    "tradeable": false,
+    "examine": "A bow of a follower of Armadyl, corrupted by the power of Venenatis.",
+    "weight": 3.175,
+    "weapon_type": "BOW",
+    "protect_value": 175000,
+    "equip_slot": 3,
+    "two_handed": true,
+    "ranged_level": 70,
+    "range_attack_bonus": 85,
+    "ranged_strength_bonus": 65
+  },
+  { # Ursine chainmace
+    "id": 27660,
+    "tradeable": false,
+    "examine": "An ancient and peculiar chainmace, corrupted by the power of Callisto.",
+    "weight": 2,
+    "weapon_type": "CHAINMACE",
+    "protect_value": 175000,
+    "equip_slot": 3,
+    "attack_level": 70,
+    "stab_attack_bonus": 53,
+    "slash_attack_bonus": -2,
+    "crush_attack_bonus": 71,
+    "melee_strength_bonus": 74,
+    "prayer_bonus": 2
+  },
+  { # Accursed sceptre
+    "id": 27665,
+    "tradeable": false,
+    "examine": "A mighty sceptre from long forgotten battles, corrupted by the power of Vet'ion.",
+    "weight": 0.198,
+    "weapon_type": "WAND",
+    "protect_value": 120000,
+    "equip_slot": 3,
+    "magic_level": 70,
+    "magic_attack_bonus": 22,
+    "magic_defence_bonus": 20
+  },
+  { # Voidwaker
+    "id": 27690,
+    "tradeable": true,
+    "examine": "A truly fearsome weapon.",
+    "weight": 1.814,
+    "weapon_type": "LONGSWORD",
+    "protect_value": 2000000,
+    "equip_slot": 3,
+    "attack_level": 75,
+    "stab_attack_bonus": 70,
+    "slash_attack_bonus": 80,
+    "crush_attack_bonus": -2,
+    "magic_attack_bonus": 5,
+    "slash_defence_bonus": 1,
+    "magic_defence_bonus": 2,
+    "melee_strength_bonus": 80
   },
    { #Founder hat
       "id": 30000,
