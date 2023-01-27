@@ -74,7 +74,7 @@ public enum RangedAmmo {
     MITHRIL_JAVELIN(new RangedData(true, Projectile.javelin(203))),
     ADAMANT_JAVELIN(new RangedData(true, Projectile.javelin(204))),
     RUNE_JAVELIN(new RangedData(true, Projectile.javelin(205))),
-    AMETHYST_JAVELIN(new RangedData(true, Projectile.javelin(205))), //todo - find gfx
+    AMETHYST_JAVELIN(new RangedData(true, Projectile.javelin(1386))),
     DRAGON_JAVELIN(new RangedData(true, Projectile.javelin(1301)));
 
     public final RangedData data;
