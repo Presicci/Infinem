@@ -332,7 +332,6 @@ public enum CollectionLogInfo {
                 EnumMap group = EnumMap.get(subcategory.getInt(STRUCT_LOG_GROUP));
                 info.items.put(subcategory.getInt(STRUCT_LOG_GROUP), group.intValues);
                 info.enums.add(subcategory.getInt(STRUCT_LOG_GROUP));
-                System.err.println(info.name() + ": categoryStruct:" + category + ", group:" + group.intValues + ", subcatint:" + subcategory.getInt(STRUCT_LOG_GROUP));
                 for (int index = 0; index < group.intValues.length; index++) {
                     ItemDef.get(group.intValues[index]).collectable = true;
                     TOTAL_COLLECTABLES++;
