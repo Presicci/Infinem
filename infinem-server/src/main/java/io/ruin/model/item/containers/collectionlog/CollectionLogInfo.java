@@ -216,7 +216,7 @@ public enum CollectionLogInfo {
 
     public static int TOTAL_COLLECTABLES;
 
-    public static void collectAll(Player player, boolean isCollectionLog, boolean isBank, boolean isGIMStorage) {
+    public static void collectAll(Player player) {
         for (CollectionLogInfo info : values()) {
             Struct category = Struct.get(info.getCategoryStruct());
 
@@ -230,25 +230,6 @@ public enum CollectionLogInfo {
                 info.enums.add(subcategory.getInt(STRUCT_LOG_GROUP));
 
                 for (int index = 0; index < group.intValues.length; index++) {
-
-                    if (isCollectionLog == true) {
-                        player.getCollectionLog().collect(group.intValues[index], 1);
-                    } else {
-
-                    }
-
-                    if (isBank == true) {
-                        player.getBank().add(group.intValues[index], 1);
-                    } else {
-
-                    }
-
-                    //if (isGIMStorage == true) {
-                    //    player.getGIMStorage().add(group.intValues[index], 1);
-                    //} else {
-//
-                    //}
-
                     player.getCollectionLog().collect(group.intValues[index], 1);
                     ItemDef.get(group.intValues[index]).collectable = true;
                     TOTAL_COLLECTABLES++;
@@ -269,7 +250,6 @@ public enum CollectionLogInfo {
                 EnumMap group = EnumMap.get(subcategory.getInt(STRUCT_LOG_GROUP));
                 info.items.put(subcategory.getInt(STRUCT_LOG_GROUP), group.intValues);
                 info.enums.add(subcategory.getInt(STRUCT_LOG_GROUP));
-
                 for (int index = 0; index < group.intValues.length; index++) {
                     ItemDef.get(group.intValues[index]).collectable = true;
                     TOTAL_COLLECTABLES++;
