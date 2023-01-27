@@ -19,6 +19,88 @@ import java.util.Map;
 @Getter
 public enum CollectionLogInfo {
 
+    /**
+     * Enum - Page
+     * 2109 - Abyssal Sire
+     * 2110 - Barrows
+     * 2111 - Bryophyta
+     * 2112 - Callisto
+     * 2113 - Cerberus
+     * 2114 - Chaos elemental
+     * 2115 - Chaos fanatic
+     * 2116 - Commander zilyanna
+     * 2117 - Corp beast
+     * 2118 - Crazy archaeologist
+     * 2119 - Dag kings
+     * 2120 - General graardor
+     * 2121 - Giant mole
+     * 2122 - Grotesque Guardians
+     * 2123 - Kalphite queen
+     * 2124 - King black dragon
+     * 2125 - Kraken
+     * 2126 - Kree'arra
+     * 2127 - K'ril Tsutsaroth
+     * 2128 - Obor
+     * 2129 - Scorpia
+     * 2130 - Skotizo
+     * 2131 - Thermonuclear Smoke devil
+     * 2132 - Inferno
+     * 2133 - Fight cave
+     * 2134 - Venenatis
+     * 2135 - Vet'ion
+     * 2136 - Vorkath
+     * 2137 - Wintertodt
+     * 2138 - Zulrah
+     * 2173 - Alchemical hydra
+     * 2175 - Hespori
+     * 2344 - Sarachnis
+     * 2389 - Zulcano
+     * 2390 - The Gauntlet
+     *
+     * 2139 - Chambers of Xeric
+     * 2140 - Theatre of Blood
+     *
+     * 2141 - Easy Treasure Trails
+     * 2142 - Medium Treasure Trails
+     * 2143 - Hard Treasure Trails
+     * 2144 - Elite Treasure Trails
+     * 2145 - Master Treasure Trails
+     * 2146 - Shared Treasure Trails
+     * 2322 - Beginner Treasure Trails
+     *
+     * 2147 - Castle Wars
+     * 2148 - Mage Training Arena
+     * 2149 - Barbarian Assault
+     * 2150 - Gnome Restaurant
+     * 2151 - Shades of Mort'ton
+     * 2152 - Pest Control
+     * 2153 - Rogues' Den
+     * 2154 - Temple Trekking
+     * 2155 - Tithe Farm
+     * 2156 - Trouble Brewing
+     * 2157 - Fishing Trawler
+     *
+     * 2158 - All Pets
+     * 2159 - Chaos Druids
+     * 2160 - Revenants
+     * 2161 - Glough's Experiments
+     * 2162 - Slayer
+     * 2163 - Champion's Challenge
+     * 2164 - Cyclopes
+     * 2165 - Skilling pets
+     * 2166 - Motherlode Mine
+     * 2167 - Shayzien Armor
+     * 2168 - TzHaar
+     * 2169 - Miscellaneous
+     * 2171 - Chompy bird hunting
+     * 2172 - Random events
+     * 2174 - Aerial Fishing
+     * 2289 - Creature creation
+     * 2290 - Rooftop agility
+     * 2291 - Fossil Island Notes
+     * 2292 - My Notes
+     */
+
     BOSS(471, 36, new int[]{10, 11, 12, 29}, 40697866, 40697867, 40697868, 40697869) {
         @Override
         public int getKillCount(Player player, int slot) {
@@ -250,6 +332,7 @@ public enum CollectionLogInfo {
                 EnumMap group = EnumMap.get(subcategory.getInt(STRUCT_LOG_GROUP));
                 info.items.put(subcategory.getInt(STRUCT_LOG_GROUP), group.intValues);
                 info.enums.add(subcategory.getInt(STRUCT_LOG_GROUP));
+                System.err.println(info.name() + ": categoryStruct:" + category + ", group:" + group.intValues + ", subcatint:" + subcategory.getInt(STRUCT_LOG_GROUP));
                 for (int index = 0; index < group.intValues.length; index++) {
                     ItemDef.get(group.intValues[index]).collectable = true;
                     TOTAL_COLLECTABLES++;
