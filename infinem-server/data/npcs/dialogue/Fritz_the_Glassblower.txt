@@ -1,4 +1,5 @@
-Fritz the Glassblower: Hello adventurer, welcome to the Entrana furnace.
+HASTALKED:2053
+/Fritz the Glassblower: Hello adventurer, welcome to the Entrana furnace.
 Fritz the Glassblower: Would you like me to explain my craft to you?
 <Yes please. I'd be fascinated to hear what you do.
 Player: Yes please. I'd be fascinated to hear what you do.
@@ -11,9 +12,47 @@ ITEM:1925
 Fritz the Glassblower: Bring the sand and the soda ash back here and melt them together in the furnace, and there you have it - molten glass!
 Fritz the Glassblower: There are many things you can use the molten glass for once you have made it. Depending on how talented you are, you could try turning it into something, like a fishbowl, for example. If you'd like to try your hand at
 Fritz the Glassblower: the fine art of glassblowing you can use my spare glassblowing pipe. I think I left it on the chest of drawers in my house this morning.
-Player: I suppose I could give it a shot...
+Fritz the Glassblower: Alternatively I am always happy to buy the molten glass from you, saves me running about making it for myself.
+Player: That sounds good. How much will you pay me?
+*Fritz the Glassblower: Tell you what, because you've been interested in my art, I'll pay you the premium price of 20 gold pieces for each piece of molten glass you bring me.
 ><No thanks, I doubt I'll ever turn my hand to glassblowing.
 Player: No thanks, I doubt I'll ever turn my hand to glassblowing.
 Fritz the Glassblower: Ok, suit yourself. Nobody seems to be interested in the skilled crafts these days.
 Fritz the Glassblower: If you should change your mind, come back and talk to me.
+>
+/Fritz the Glassblower: Ah [player name], have you come to sell me some molten glass?
+<Yes
+Player: Yes.
+HASITEM:1775
+(FRITZ_SELL:
+(Fritz the Glassblower: Umm, not much point me trying to pay you for glass you don't have, is there?
+Player: Well, actually, if you don't mind... question then.
+Fritz the Glassblower: I'll make it simple for you. You bring glass, me pay shiny gold coins.
+)><No
+Player: No.
+Fritz the Glassblower: Oh.
+Fritz the Glassblower: ...errr, well should you get any I'm quite happy to pay for it. Remember, I'll pay you 20 gold pieces for each piece of molten glass you get for me.
+Fritz the Glassblower: So what did you want to talk to me about then?
+<Could you tell me how to make molten glass again, please?
+Player: Could you tell me how to make molten glass again, please?
+Fritz the Glassblower: Well, I am very busy at the moment, but I guess I can take 5 minutes off for my favourite student.
+Fritz the Glassblower: Glass is made from soda ash and silica. We get our soda ash by collecting seaweed from the rocks - the prevailing currents make the north-west corner of the island the best place to find it, it can also be found in
+Fritz the Glassblower: your nets sometimes when you're fishing, on Karamja island or at the Piscatoris Fishing Colony in the nets there. To turn seaweed into soda ash, all you need to do is burn it on a fire. Feel free to use the range in
+Fritz the Glassblower: Fritz the Glassblower: my house for that; it's the one directly west of here. Next we collect sand from the sandpit that you'll also find just west of here, there are others located in Yanille and Shilo Village.
+Fritz the Glassblower: You can use the bucket I gave you earlier.
+HASITEM:1925
+(Fritz the Glassblower: Bring the sand and the soda ash back here and melt them together in the furnace, and there you have it - molten glass!
+Fritz the Glassblower: There are many things you can use the molten glass for once you have made it. Depending on how talented you are, you could try turning it into something, like a fishbowl, for example. If you'd like to try your hand at
+Fritz the Glassblower: the fine art of glassblowing you can use my spare glassblowing pipe. I think I left it on the chest of drawers in my house this morning.
+Fritz the Glassblower: And remember, I'll pay you 20 gold pieces for each piece of molten glass you get for me.
+(Player: I'm afraid I don't have that bucket with me. Could you give me another one, please?
+Fritz the Glassblower: Do I look like I'm made of buckets? You'll just have to buy another from a general store.
+Fritz the Glassblower: Bring the sand and the soda ash back here and melt them together in the furnace, and there you have it - molten glass!
+Fritz the Glassblower: There are many things you can use the molten glass for once you have made it. Depending on how talented you are, you could try turning it into something, like a fishbowl, for example. If you'd like to try your hand at
+Fritz the Glassblower: the fine art of glassblowing you can use my spare glassblowing pipe. I think I left it on the chest of drawers in my house this morning.
+Fritz the Glassblower: And remember, I'll pay you 20 gold pieces for each piece of molten glass you get for me.
+)><I just thought I'd drop in and say hello.
+Player: I just thought I'd drop in and say hello.
+Fritz the Glassblower: Hello then. I'm afraid I don't have any time to chat though. The druids of Taverley have placed a huge order for glass vials, so I'm very busy.
+>
 >
