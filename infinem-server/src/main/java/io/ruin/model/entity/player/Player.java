@@ -571,8 +571,10 @@ public class Player extends PlayerAttributes {
     public void continueDialogue() {
         onDialogueContinued();
         if (dialogues == null || dialogueStage >= dialogues.length) {
+            lastDialogue.continueDialogue(this);
             closeDialogue();
         } else {
+            lastDialogue.continueDialogue(this);
             (lastDialogue = dialogues[dialogueStage++]).open(this);
         }
     }
@@ -581,6 +583,7 @@ public class Player extends PlayerAttributes {
         dialogues = null;
         if(lastDialogue != null) {
             lastDialogue.closed(this);
+            lastDialogue.continueDialogue(this);
             lastDialogue = null;
         }
         optionsDialogue = null;
@@ -1441,6 +1444,7 @@ public class Player extends PlayerAttributes {
     }
 
     private void attemptIdleLogout() {
+        System.err.println("IDLE LOGOUT");
         if(combat.isDead() || combat.isDefending(17)) {
             return;
         }
