@@ -1,0 +1,78 @@
+RAND
+/<Where am I?
+Player: Where am I?
+Donie: This is the town of Lumbridge my friend.
+<How are you today?
+Player: How are you today?
+Donie: Aye, not too bad thank you. Lovely weather in Gielinor this fine day.
+Player: Weather?
+Donie: Yes weather, you know.
+Donie: The state or condition of the atmosphere at a time and place, with respect to variables such as temperature, moisture, wind velocity, and barometric pressure.
+Player: ...
+Donie: Not just a pretty face eh? Ha ha ha.
+><Your shoe lace is untied.
+Player: Your shoe lace is untied.
+Donie: No it's not!
+Player: No you're right. I have nothing to back that up.
+Donie: Fool! Leave me alone!
+>
+><How are you today?
+Player: How are you today?
+Donie: Aye, not too bad thank you. Lovely weather in Gielinor this fine day.
+Player: Weather?
+Donie: Yes weather, you know.
+Donie: The state or condition of the atmosphere at a time and place, with respect to variables such as temperature, moisture, wind velocity, and barometric pressure.
+Player: ...
+Donie: Not just a pretty face eh? Ha ha ha.
+><Where can I get a haircut like yours?
+Player: Where can I get a haircut like yours?
+Donie: Yes, it does look like you need a hairdresser.
+Player: Oh thanks!
+Donie: No problem. The hairdresser in Falador will probably be able to sort you out.
+Donie: The Lumbridge general store sells useful maps if you don't know the way.
+>
+/<What's up?
+Player: What's up?
+Donie: I assume the sky is up..
+Player: You assume?
+Donie: Yeah, unfortunately I don't seem to be able to look up.
+><Can I buy your stick?
+Player: Can I buy your stick?
+Donie: It's not a stick! I'll have you know it's a very powerful staff!
+Player: Really? Show me what it can do!
+Donie: Um..It's a bit low on power at the moment..
+Player: It's a stick isn't it?
+Donie: ...Ok it's a stick.. But only while I save up for a staff. Zaff in Varrock square sells them in his shop.
+Player: Well good luck with that.
+>
+/<Do you have anything of value which I can have?
+Player: Do you have anything of value which I can have?
+Donie: Are you asking for free stuff?
+Player: Well... er... yes.
+Donie: No I do not have anything I can give you. If I did have anything of value I wouldn't want to give it away.
+><Can I buy your stick?
+Player: Can I buy your stick?
+Donie: It's not a stick! I'll have you know it's a very powerful staff!
+Player: Really? Show me what it can do!
+Donie: Um..It's a bit low on power at the moment..
+Player: It's a stick isn't it?
+Donie: ...Ok it's a stick.. But only while I save up for a staff. Zaff in Varrock square sells them in his shop.
+Player: Well good luck with that.
+>
+/<Where am I?
+Player: Where am I?
+Donie: This is the town of Lumbridge my friend.
+><How are you today?
+Player: How are you today?
+Donie: Aye, not too bad thank you. Lovely weather in Gielinor this fine day.
+Player: Weather?
+Donie: Yes weather, you know.
+Donie: The state or condition of the atmosphere at a time and place, with respect to variables such as temperature, moisture, wind velocity, and barometric pressure.
+Player: ...
+Donie: Not just a pretty face eh? Ha ha ha.
+><Your shoe lace is untied.
+Player: Your shoe lace is untied.
+Donie: No it's not!
+Player: No you're right. I have nothing to back that up.
+Donie: Fool! Leave me alone!
+>
