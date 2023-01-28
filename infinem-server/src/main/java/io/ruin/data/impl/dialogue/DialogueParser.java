@@ -116,7 +116,7 @@ public class DialogueParser {
             }
         }
         if (line.startsWith("<")) {
-            return parseOptions(dialogue);
+            return parseOptions(line, dialogue);
         }
         Dialogue checkDialogue = checkForSetting(dialogue);
         if (checkDialogue != null) {
@@ -199,9 +199,8 @@ public class DialogueParser {
      * > denotes the closing of an option
      * @return Complete OptionsDialogue
      */
-    public Dialogue parseOptions(List<String> dialogue) {
+    public Dialogue parseOptions(String line, List<String> dialogue) {
         List<Option> options = new ArrayList<>();
-        String line = dialogue.get(lineNumber);
         while (line.startsWith("<")) {
             if (++lineNumber >= dialogue.size())
                 break;
