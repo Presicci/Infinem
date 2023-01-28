@@ -34,7 +34,7 @@ public enum RangedAmmo {
     RUNITE_BOLTS(new RangedData(Projectile.BOLT)),
     AMETHYST_BROAD_BOLTS(new RangedData(Projectile.BOLT)),
     BLURITE_BOLTS(new RangedData(Projectile.BOLT)),
-    BONE_BOLTS(new RangedData(Projectile.BOLT)),
+    BONE_BOLTS(new RangedData(Projectile.bolt(696))),
     SILVER_BOLTS(new RangedData(Projectile.BOLT)),
     OPAL_BOLTS(new RangedData(Projectile.BOLT), new OpalBoltEffect()),
     JADE_BOLTS(new RangedData(Projectile.BOLT), new JadeBoltEffect()),

@@ -328,6 +328,10 @@ public class Projectile {
         };
     }
 
+    public static Projectile bolt(int gfxId) {
+        return new Projectile(gfxId, 38, 36, 41, 51, 5, 5, 11);
+    }
+
     public static final Projectile BOLT = new Projectile(27, 38, 36, 41, 51, 5, 5, 11);
 
     public static final Projectile DRAGON_BOLT = new Projectile(1468, 38, 36, 41, 51, 5, 5, 11);
