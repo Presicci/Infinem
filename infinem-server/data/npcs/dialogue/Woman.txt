@@ -1,0 +1,66 @@
+RAND
+/Player: Hello, how's it going?
+Woman: Not too bad, but I'm a little worried about the increase of goblins these days.
+Player: Don't worry, I'll kill them.
+/Player: Hello, how's it going?
+Woman: How can I help you?
+<Do you want to trade?
+Player: Do you want to trade?
+Woman: No, I have nothing I wish to get rid of. If you want to do some trading, there are plenty of shops and market stalls around though.
+><I'm in search of a quest.
+Player: I'm in search of a quest.
+Woman: I'm sorry I can't help you there.
+><I'm in search of enemies to kill.
+Player: I'm in search of enemies to kill.
+Woman: I've heard there are many fearsome creatures that dwell under the ground...
+>
+/Player: Hello, how's it going?
+Woman: Get out of my way, I'm in a hurry!
+/Player: Hello, how's it going?
+Woman: I'm fine, how are you?
+Player: Very well thank you.
+/Player: Hello, how's it going?
+Woman: Hello there! Nice weather we've been having.
+/Player: Hello, how's it going?
+Woman: I'm very well thank you.
+/Player: Hello, how's it going?
+Woman: Who are you?
+Player: I'm a bold adventurer.
+Woman: Ah, a very noble profession.
+/Player: Hello, how's it going?
+Woman: Do I know you? I'm in a hurry!
+/Player: Hello, how's it going?
+Woman: I think we need a new king. The one we've got isn't very good.
+/Player: Hello, how's it going?
+Woman: Not too bad thanks.
+/Player: Hello, how's it going?
+Woman: Are you asking for a fight?
+Woman: ATTACKS
+/Player: Hello, how's it going?
+Woman: I'm busy right now.
+/Player: Hello, how's it going?
+Woman: Hello.
+/Player: Hello, how's it going?
+Woman: None of your business.
+/Player: Hello, how's it going?
+Player: Do you wish to trade?
+Woman: No, I have nothing I wish to get rid of. If you want to do some trading, there are plenty of shops and market stalls around though.
+/Player: Hello, how's it going?
+Player: I'm in search of a quest.
+Woman: I'm sorry I can't help you there.
+/Player: Hello, how's it going?
+Player: I'm in search of enemies to kill.
+Woman: I've heard there are many fearsome creatures that dwell under the ground...
+/Player: Hello, how's it going?
+Woman: No I don't have any spare change.
+/Player: Hello, how's it going?
+Woman: I'm a little worried - I've heard there's lots of people going about, killing citizens at random.
+/Player: Hello, how's it going?
+Woman: No, I don't want to buy anything!
+/Player: Hello, how's it going?
+Woman: That is classified information.
+/Player: Hello, how's it going?
+Woman: Have this flier...
+ITEM:956
+/Player: Hello, how's it going?
+Woman: Yo, wassup!
