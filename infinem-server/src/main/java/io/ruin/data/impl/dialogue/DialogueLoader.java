@@ -73,7 +73,7 @@ public class DialogueLoader {
         for (DialogueLoaderSetting setting : DialogueLoaderSetting.values()) {
             if (lineOne.startsWith(setting.name())) {
                 if (setting == DialogueLoaderSetting.RAND) {
-                    registerRandomDialogue(new DialogueParser(npcDef, dialogue, 1).parseRandomDialogues(), npcDef.id);
+                    registerRandomDialogue(new DialogueParser(npcDef, dialogue, 1).parseRandomDialogues(false), npcDef.id);
                 } else {
                     registerPredicateDialogue(setting, lineOne, dialogue, npcDef);
                 }
@@ -98,7 +98,7 @@ public class DialogueLoader {
             System.err.println(NPCDef.get(npcDef.id).name + " has predicate reliant setting without an integer value afterwards.");
             return;
         }
-        List<Dialogue[]> dialogues = new DialogueParser(npcDef, dialogue, 1, new DialogueParserSettings(setting, value)).parseRandomDialogues();
+        List<Dialogue[]> dialogues = new DialogueParser(npcDef, dialogue, 1, new DialogueParserSettings(setting, value)).parseRandomDialogues(false);
         if (dialogues == null) {
             System.err.println(NPCDef.get(npcDef.id).name + " has predicate reliant setting but had an issue being read.");
             return;

@@ -1,5 +1,6 @@
 package io.ruin.data.impl.dialogue;
 
+import io.ruin.api.utils.Tuple;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.inter.dialogue.*;
@@ -15,7 +16,6 @@ import java.util.List;
  */
 @Slf4j
 public class DialogueParser {
-
     protected int lineNumber;
     protected NPCDef npcDef;
     protected List<String> dialogueLines;
@@ -52,6 +52,47 @@ public class DialogueParser {
         return dialogues.toArray(new Dialogue[0]);
     }
 
+    private Dialogue checkForSetting(List<String> dialogue) {
+        String line = dialogue.get(lineNumber);
+        for (DialogueLoaderSetting setting : DialogueLoaderSetting.values()) {
+            if (line.startsWith(setting.name())) {
+                System.out.println(lineNumber + 1 + ": " + line);
+                if (setting == DialogueLoaderSetting.RAND) {
+                    error("RAND setting mid file", dialogue);
+                } else {
+                    int leftIndex = lineNumber + 1;
+                    int rightIndex = dialogue.size();
+                    for (int index = lineNumber; index < dialogue.size(); index++) {
+                        if (dialogue.get(index).startsWith(")")) {
+                            dialogue.set(index, dialogue.get(index).substring(1));
+                            rightIndex = index;
+                            break;
+                        }
+                    }
+                    System.out.println(leftIndex + "-" + rightIndex);
+                    try {
+                        int value = Integer.parseInt(line.substring(setting.name().length() + 1));
+                        List<Dialogue[]> dialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, new DialogueParserSettings(setting, value)).parseRandomDialogues(true);
+                        if (dialogues == null) {
+                            error("predicate reliant setting but had an issue being read", dialogue);
+                            return null;
+                        }
+                        if (dialogues.size() > 2) {
+                            error("predicate reliant setting but has more than 2 dialogue sets denoted by '('", dialogue);
+                            return null;
+                        }
+                        lineNumber = rightIndex - 1;
+                        return new ConditionalDialogue(setting.getBiPredicate(), new Tuple<>(dialogues.get(0), dialogues.get(1)), value);
+                    } catch (NumberFormatException ignored) {
+                        error("predicate reliant setting without an integer value afterwards", dialogue);
+                        return null;
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
     protected Dialogue parseLineWithCheck(List<String> dialogue) {
         Dialogue d = parseLine(dialogue);
         if (settings != null && settings.isConsumerLine()) {
@@ -63,12 +104,12 @@ public class DialogueParser {
 
     protected Dialogue parseLine(List<String> dialogue) {
         String line = dialogue.get(lineNumber);
-        if (line.startsWith(">") || line.startsWith("(")) {
+        if (line.startsWith(">") || line.startsWith("/") || line.startsWith("(")) {
             line = line.substring(1);
         }
         if (line.startsWith("*")) {
             if (settings == null) {
-                error("use of '*' without settings object");
+                error("use of '*' without settings object", dialogue);
             } else {
                 line = line.substring(1);
                 settings.setConsumerLine(true);
@@ -76,6 +117,10 @@ public class DialogueParser {
         }
         if (line.startsWith("<")) {
             return parseOptions(dialogue);
+        }
+        Dialogue checkDialogue = checkForSetting(dialogue);
+        if (checkDialogue != null) {
+            return checkDialogue;
         }
         if (line.startsWith("Player:")) {
             return new PlayerDialogue(line.substring(8));
@@ -96,7 +141,7 @@ public class DialogueParser {
                     try {
                         itemId = Integer.parseInt(line.substring(action.name().length() + 1));
                     } catch (NumberFormatException ignored) {
-                        error("missing itemId for ITEM action");
+                        error("missing itemId for ITEM action", dialogue);
                     }
                     int finalItemId = itemId;
                     return new ItemDialogue().one(finalItemId, npcDef.name + " hands you " + ItemDef.get(finalItemId).descriptiveName + ".").consumer((player) -> {
@@ -112,16 +157,26 @@ public class DialogueParser {
                 }
             }
         }
-        error("invalid line prefix");
+        error("invalid line prefix", dialogue);
         return new MessageDialogue("");
     }
 
-    public List<Dialogue[]> parseRandomDialogues() {
+    public List<Dialogue[]> parseRandomDialogues(boolean inner) {
         List<Integer> optionLineNumbers = new ArrayList<>();
+        int rightLimit = dialogueLines.size();
         for (int index = lineNumber; index < dialogueLines.size(); index++) {
             String line = dialogueLines.get(index);
-            if (line.startsWith("(")) {
+            if (line.startsWith("(") && inner) {
                 optionLineNumbers.add(index);
+                if (settings!= null && settings.getSetting() != DialogueLoaderSetting.RAND && optionLineNumbers.size() >= 2) {
+                    break;
+                }
+            }
+            if (line.startsWith("/") && !inner) {
+                optionLineNumbers.add(index);
+                if (settings!= null && settings.getSetting() != DialogueLoaderSetting.RAND && optionLineNumbers.size() >= 2) {
+                    break;
+                }
             }
         }
         if (optionLineNumbers.size() == 0) {
@@ -131,7 +186,7 @@ public class DialogueParser {
         List<Dialogue[]> randomDialogues = new ArrayList<>();
         for (int index = 0; index < optionLineNumbers.size(); index++) {
             int leftBound = optionLineNumbers.get(index);
-            int rightBound = index == optionLineNumbers.size() - 1 ? dialogueLines.size() : optionLineNumbers.get(index + 1);
+            int rightBound = index == optionLineNumbers.size() - 1 ? rightLimit : optionLineNumbers.get(index + 1);
             Dialogue[] parsedDialogue = parseDialogue(dialogueLines.subList(leftBound, rightBound));
             randomDialogues.add(parsedDialogue);
         }
@@ -148,9 +203,12 @@ public class DialogueParser {
         List<Option> options = new ArrayList<>();
         String line = dialogue.get(lineNumber);
         while (line.startsWith("<")) {
-            lineNumber++;
+            if (++lineNumber >= dialogue.size())
+                break;
             Dialogue[] dialogues = parseOptionBranch(dialogue);
             options.add(new Option(line.substring(1), (player) -> player.dialogue(dialogues)));
+            if (lineNumber >= dialogue.size())
+                break;
             line = dialogue.get(lineNumber);
             if (line.startsWith(">"))
                 line = line.substring(1);
@@ -167,14 +225,25 @@ public class DialogueParser {
         String line = dialogue.get(lineNumber);
         while (!line.startsWith(">")) {
             branchDialogue.add(parseLineWithCheck(dialogue));
-            line = dialogue.get(++lineNumber);
+            if (++lineNumber >= dialogue.size())
+                break;
+            line = dialogue.get(lineNumber);
         }
         Dialogue[] dialoguesArray = new Dialogue[branchDialogue.size()];
         dialoguesArray = branchDialogue.toArray(dialoguesArray);
         return dialoguesArray;
     }
 
-    protected void error(String issue) {
-        log.error(npcDef.name + " error on line: " + (lineNumber + 1) + ". Error: " + issue + "\n" + dialogueLines.get(lineNumber));
+    protected void error(String issue, List<String> dialogue) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(npcDef.name).append(" error on line: ").append(lineNumber + 1).append(". Error: ").append(issue).append("\n");
+        for (String line : dialogue) {
+            if (dialogue.indexOf(line) == lineNumber)
+                sb.append("\u001B[35m").append(line).append("\u001B[0m\n");
+            else
+                sb.append("\u001B[34m").append(line).append("\u001B[0m\n");
+        }
+        sb.append("\u001B[0m");
+        log.error(sb.toString());
     }
 }
