@@ -53,10 +53,7 @@ import io.ruin.utility.TimedList;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 
 public abstract class PlayerAttributes extends Entity {
@@ -1376,4 +1373,6 @@ public abstract class PlayerAttributes extends Entity {
     @Getter @Setter private boolean dreaming = false;
 
     @Expose public int brimstoneChestsOpened;
+
+    @Expose @Getter private final Set<Integer> SpokenToNPCSet = new HashSet<>();
 }

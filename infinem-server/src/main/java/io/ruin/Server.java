@@ -16,7 +16,7 @@ import io.ruin.model.World;
 import io.ruin.model.achievements.Achievement;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.player.Player;
-import io.ruin.data.impl.DialogueLoader;
+import io.ruin.data.impl.dialogue.DialogueLoader;
 import io.ruin.model.map.ClipUtils;
 import io.ruin.model.map.object.actions.impl.edgeville.Giveaway;
 import io.ruin.model.shop.ShopManager;
