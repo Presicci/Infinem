@@ -1,0 +1,6 @@
+4268,4269,4270,4271,4272
+RAND
+/Player: Hello there.
+Man: Go away. People from the outside shut us in like animals. I have nothing to say to you.
+/Man: An outsider! Can you get me out of this hell hole?
+Player: Sorry, that's not what I'm here to do.
