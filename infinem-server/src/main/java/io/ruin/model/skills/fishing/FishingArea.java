@@ -388,8 +388,6 @@ public enum FishingArea {
         });
     }
 
-    private static final List<FishingArea> fishingAreas = new ArrayList<>();
-
     static {
         AL_KHARID.add(FishingSpot.NET_BAIT, 2);
         KARAMBWAN_RIVER.add(FishingSpot.KARAMBWAN_SPOT, 2);
@@ -437,7 +435,6 @@ public enum FishingArea {
         ENTRANA_DOCK.add(FishingSpot.NET_BAIT, 4);
         ENTRANA_RIVER.add(FishingSpot.LURE_BAIT, 3);
 
-        fishingAreas.addAll(Arrays.asList(FishingArea.values()));
         FishingArea.fishingSpotTimer();
     }
 }
