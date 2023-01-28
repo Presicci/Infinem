@@ -10,17 +10,16 @@ import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.shop.*;
 import io.ruin.process.event.Event;
 import io.ruin.process.event.EventConsumer;
 import io.ruin.process.event.EventType;
 import io.ruin.process.event.EventWorker;
-import io.ruin.process.task.TaskWorker;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -80,14 +79,14 @@ public class npc_shops extends DataFile {
 
     public static List<Shop> allShops = Lists.newArrayList();
 
-    private static final void talkToDialogue(Player player, NPC npc, Shop shop) {
+    private static void talkToDialogue(Player player, NPC npc, Shop shop) {
         player.dialogue(
-                new NPCDialogue(npc, "Interested in trading, adventurer?"),
+                new NPCDialogue(npc, "Can I help you at all?"),
                 new OptionsDialogue(
-                        new Option("Yes can you show me what you are selling?", () -> {
+                        new Option("Yes please. What are you selling?", () -> {
                             shop.open(player);
                         }),
-                        new Option("No thanks.")));
+                        new Option("No thanks.", () -> player.dialogue(new PlayerDialogue("No thanks.")))));
     }
 
     private static final class TempShop {
