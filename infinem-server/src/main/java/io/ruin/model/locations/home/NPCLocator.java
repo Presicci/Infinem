@@ -15,6 +15,10 @@ public class NPCLocator {
 
     public static NPC WOODSMAN_TUTOR;
 
+    /**
+     * Add a hint arrow towards the npc's location,
+     * then when the player gets in range, add a hint arrow on the npc.
+     */
     public static void locate(Player player, NPC npc) {
         player.sendHintArray(npc.getPosition());
         World.startEvent(e -> {
