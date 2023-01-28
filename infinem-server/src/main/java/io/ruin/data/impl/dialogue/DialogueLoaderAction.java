@@ -1,4 +1,4 @@
-package io.ruin.data.impl;
+package io.ruin.data.impl.dialogue;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.stat.StatType;
