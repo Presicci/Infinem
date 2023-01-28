@@ -1,0 +1,19 @@
+4626
+Cook: How is the adventuring going, my friend?
+<Do you have anything for sale?
+Cook: Only a few mixed ingredients and some cooking equipment.
+SHOP
+><I am getting strong and mighty.
+Player: I am getting strong and mighty. Grrr
+Cook: Glad to hear it.
+><I keep on dying.
+Player: I keep on dying.
+Cook: Ah well, at least you keep coming back to life!
+><Can I use your range?
+Player: Can I use your range?
+Cook: Go ahead - it's a very good range. It's easier to use than most other ranges.
+Cook: Its called the Cook-o-matic 100. It uses a combination of state of the art temperature regulation and magic.
+Player: Will it mean my food will burn less often?
+Cook: Well, that's what the salesman told us anyway...
+Player: Thanks?
+>
