@@ -1,1 +1,4 @@
-Mazion: Nice weather we're having today!
+RAND
+/Mazion: Nice weather we're having today!
+/Mazion: Hello [player name], fine day today!
+/Mazion: Please leave me alone, a parrot stole my banana.
