@@ -1,0 +1,7 @@
+1119,1130,1131,1139,1140,1141,1142
+RAND
+/Player: Good day.
+Woman: An outsider! Can you get me out of this hell hole?
+Player: Sorry, that's not what I'm here to do.
+/Player: Hello there.
+Woman: Go away. People from the outside shut us in like animals. I have nothing to say to you.
