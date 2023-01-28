@@ -2836,16 +2836,6 @@
     "npcName": "Man"
   },
   {
-    "id": 8968,
-    "x": 2519,
-    "y": 3314,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Clerk"
-  },
-  {
     "id": 9009,
     "x": 2544,
     "y": 3326,
