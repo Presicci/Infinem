@@ -52,11 +52,22 @@ public class DialogueLoader {
             return;
         }
         try {
-            int npcId = Integer.parseInt(dialogue.get(0));
-            if (npcId > 0) {
-                dialogue.remove(0);
-                NPCDef npcDef = NPCDef.get(npcId);
-                readAndRegisterDialogue(dialogue, npcDef);
+            String lineOne = dialogue.get(0);
+            if (lineOne.contains(",")) {
+                String[] idStrings = lineOne.split(",");
+                for (String string : idStrings) {
+                    int npcId = Integer.parseInt(string);
+                    if (npcId > 0) {
+                        NPCDef npcDef = NPCDef.get(npcId);
+                        readAndRegisterDialogue(dialogue.subList(1, dialogue.size()), npcDef);
+                    }
+                }
+            } else {
+                int npcId = Integer.parseInt(lineOne);
+                if (npcId > 0) {
+                    NPCDef npcDef = NPCDef.get(npcId);
+                    readAndRegisterDialogue(dialogue.subList(1, dialogue.size()), npcDef);
+                }
             }
         } catch (NumberFormatException ignored) {
             String name = file.getName().replace(".txt", "").replace("_", " ");
