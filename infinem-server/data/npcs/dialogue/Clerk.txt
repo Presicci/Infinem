@@ -1,0 +1,10 @@
+4255
+Clerk: Hello, welcome to the Civic Office of West Ardougne. How can I help you?
+<Who is through that door?
+Player: Who is through that door?
+Clerk: The city warder Bravek is in there.
+Player: Can I go in?
+Clerk: I suppose so.
+><I'm just looking thanks.
+Player: I'm just looking thanks.
+>
