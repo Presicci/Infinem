@@ -40,7 +40,7 @@ public class WaystoneNetwork {
         ItemAction.registerInventory(PORTABLE_WAYSTONE, "teleport", ((player, item) -> selectLocation(player)));
         ItemAction.registerEquipment(PORTABLE_WAYSTONE, "teleport", ((player, item) -> selectLocation(player)));
         for (Waystone waystone : Waystone.values()) {
-            ObjectAction.register(waystone.getObjectId(), 1, WaystoneNetwork::selectLocation);
+            ObjectAction.register(waystone.getObjectId(), waystone.getObjectPosition(), 1, WaystoneNetwork::selectLocation);
         }
     }
 }
