@@ -3521,23 +3521,13 @@
   },
   {
     "id": 7753,
-    "x": 2460,
-    "y": 3305,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Dark Mage"
-  },
-  {
-    "id": 1119,
-    "x": 2457,
+    "x": 2458,
     "y": 3308,
     "z": 0,
     "direction": "N",
-    "walkRange": 1,
+    "walkRange": 2,
     "world": "ECO",
-    "npcName": "Woman"
+    "npcName": "Dark Mage"
   },
   {
     "id": 1118,
