@@ -16,16 +16,17 @@
   },
   {
     "key": "item_purchasing",
-    "title": "Where do I purchase items?",
+    "title": "Where can I purchase items?",
     "message": [
-      "There's a variety of stores located around the map, but",
-      "the most common and most popular shops are located right at",
-      "the home! You can browse many popular stores, located just south of the Tradbing post",
-      "at home, where you can purchase all your necessities!",
+      "There are a variety of shops located around the world, offering a wide range",
+      "of goods. You can find shops and what type they are on the world map.",
+      "Additionally, the various tutors around Lumbridge offer limited goods that are",
+      "useful for their respective skill. Tutors should be your first stop if you're looking",
+      "for basic items. Keep in mind that shops have limited options and most items will need",
+      "to be acquired as drops or made, or even purchased on the Trading post (except for ironmen)",
       "",
-      "Some items can also be purchased through the <col=8e1414>voting shop</col>",
-      "or <col=8e1414>online store</col>. The commands ::vote  and  ::store",
-      "will tell you more about these shops!"
+      "Some items are locked behind voting or the online store. If you would like to know more,",
+      "::vote and ::store will give details."
     ]
   },
   {
