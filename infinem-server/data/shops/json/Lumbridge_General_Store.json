@@ -88,6 +88,12 @@
       "stock": 50,
       "buy_price": 0,
       "sell_price": 1
+    },
+    {
+      "itemId": 550,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
     }
   ]
 }
