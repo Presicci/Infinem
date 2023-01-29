@@ -16,10 +16,12 @@ public class BushPickables {
 
     @AllArgsConstructor
     public enum Nodes {
-        REDBERRY(23628, 1951),
-        CADAVABERRY(23625, 753);
+        REDBERRY(23628, 1951, 2, 30),
+        CADAVABERRY(23625, 753, 2, 30),
+        PINEAPPLE(1408, 2114, 5, 120),
+        PINEAPPLE_APE(4827, 2114, 1, 120);
 
-        private final int objectId, itemId;
+        private final int objectId, itemId, stages, respawnDelay;
 
         /**
          * Pick a berry from the bush.
@@ -27,7 +29,7 @@ public class BushPickables {
          * @param obj The bush game object.
          */
         private void pick(Player player, GameObject obj) {
-            if (obj.id == objectId + 2) {
+            if (obj.id == objectId + stages || (this == PINEAPPLE_APE && obj.id == 1413)) {
                 player.sendMessage("There is nothing left on the bush.");
                 return;
             }
@@ -37,10 +39,10 @@ public class BushPickables {
             }
             player.startEvent(event -> {
                 player.lock();
-                player.animate(2282);
+                player.animate(832);
                 event.delay(1);
                 player.getInventory().add(itemId, 1);
-                player.sendMessage("You pick some " + ItemDef.get(itemId).name.toLowerCase() + ".");
+                player.sendMessage("You pick " + (this == PINEAPPLE ? "a" : "some") + " " + ItemDef.get(itemId).name.toLowerCase() + ".");
                 changeObject(obj);
                 player.unlock();
             });
@@ -51,28 +53,22 @@ public class BushPickables {
          * If bush is half-full, remove berry with respawn timer.
          */
         private void changeObject(GameObject obj) {
-            if (obj.id == obj.originalId) {
-                World.startEvent(event -> {
-                    obj.setId(obj.id + 1);
-                    event.delay(20);
-                    if (obj.id == obj.originalId + 1) {
-                        obj.setId(obj.originalId);
-                    }
-                });
-            } else {
-                World.startEvent(event -> {
-                    obj.setId(obj.id + 1);
-                    event.delay(20);
+            World.startEvent(event -> {
+                int newId = this == PINEAPPLE_APE ? 1413 : obj.id + 1;
+                obj.setId(newId);
+                event.delay(respawnDelay);
+                if (obj.id == newId) {
                     obj.setId(obj.originalId);
-                });
-            }
+                }
+            });
         }
     }
 
     static {
         for (BushPickables.Nodes node : BushPickables.Nodes.values()) {
-            for (int index = 0; index <= 2; index++) {
+            for (int index = 0; index <= node.stages; index++) {
                 ObjectAction.register(node.objectId + index, "pick-from", node::pick);
+                ObjectAction.register(node.objectId + index, "pick", node::pick);
             }
         }
     }
