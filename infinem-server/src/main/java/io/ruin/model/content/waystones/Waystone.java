@@ -18,7 +18,7 @@ public enum Waystone {
     PRIFDDINAS(40414, new Position(3266, 6068), new Position(3265, 6068)),
     BRIMHAVEN(40415, new Position(2804, 3186), new Position(2805, 3185)),
     FEROX_ENCLAVE(40416, new Position(3146, 3631), new Position(3146, 3630)),
-    KOUREND(40414, new Position(1664, 3674), new Position(1662, 3676)),
+    KOUREND(40414, new Position(1663, 3676), new Position(1662, 3676)),
     VARROCK(40409, new Position(3223, 3426), new Position(3223, 3428)),
     CAMELOT(40410, new Position(2751, 3480), new Position(2751, 3479));
 

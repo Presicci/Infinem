@@ -11,7 +11,7 @@
   {"id": -1, "x": 2804, "y": 3187, "z": 0, "type": 10, "direction": 0},     // remove tree by brimhaven waystone
   {"id": -1, "x": 2805, "y": 3186, "z": 0, "type": 10, "direction": 0},     // remove tree by brimhaven waystone
   {"id": 40416, "x": 3146, "y": 3631, "z": 0, "type": 10, "direction": 0},  // Ferox enclave
-  {"id": 40414, "x": 1664, "y": 3676, "z": 0, "type": 10, "direction": 0},  // Kourend
-  {"id": 40409, "x": 3223, "y": 3429, "z": 0, "type": 10, "direction": 0},  // Varrock
+  {"id": 40414, "x": 1663, "y": 3676, "z": 0, "type": 10, "direction": 0},  // Kourend
+  {"id": 40409, "x": 3223, "y": 3426, "z": 0, "type": 10, "direction": 0},  // Varrock
   {"id": 40410, "x": 2751, "y": 3480, "z": 0, "type": 10, "direction": 0}   // Camelot
 ]
