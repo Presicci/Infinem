@@ -42,6 +42,20 @@ public enum Signpost {
             "East to Lumbridge.",
             "South to Draynor Village and the Wizards' Tower.",
             "West to Port Sarim, Falador and Rimmington."
+    ),
+
+    NORTH_OF_AL_KHARID(7141, 3283, 3333,
+            "North to one of Varrock's mines.",
+            "East to the Digsite's exam center.",
+            "South past the mine to Al Kharid.",
+            "West to Lumbridge and Varrock south gate."
+    ),
+
+    SOUTH_OF_FALADOR(18493, 2983, 3278,
+            "Mysterious ruins dominate the forest to the north.",
+            "East to Faldor and Port Sarim.",
+            "Rimmington lies to the south.",
+            "The Crafting Guild occupies the shore to the west."
     );
 
     private final int objectId, x, y;
@@ -57,7 +71,7 @@ public enum Signpost {
                 player.openInterface(InterfaceType.MAIN, 135);
                 // Move the camera so its facing north
                 player.getPacketSender().sendClientScript(143, "ii", 280, 0);
-                // No idea what this does but its here
+                // Tanned background behind interface
                 player.getPacketSender().sendClientScript(917, "ii", 10786175, 200);
                 // Assign the corresponding directions to the signpost
                 player.getPacketSender().sendString(135, 2, signpost.north);
