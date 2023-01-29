@@ -1,0 +1,7 @@
+3265
+Player: Hello.
+Man: Good day, [madam/sir]. What brings you to this end of town?
+Player: Well, what is there to do around here?
+Man: If you're into Mining, plenty! The dwarves have one of the largest mines in the world just under our feet. There's an entrance in the building just north-east of my house.
+Man: If you'd rather enjoy yourself, there's the party room just north of here! Or you might like to climb up onto the city wall - you can get a good view of Falador from there.
+Player: Thanks.
