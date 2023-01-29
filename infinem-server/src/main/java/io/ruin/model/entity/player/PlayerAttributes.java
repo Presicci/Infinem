@@ -21,6 +21,7 @@ import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.activities.wilderness.WildernessObelisk;
 import io.ruin.model.combat.WildernessRating;
 import io.ruin.model.content.UpgradeMachine;
+import io.ruin.model.content.waystones.Waystone;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.inter.handlers.OptionScroll;
@@ -1375,4 +1376,5 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int brimstoneChestsOpened;
 
     @Expose @Getter private final Set<Integer> SpokenToNPCSet = new HashSet<>();
+    @Expose @Getter private final EnumSet<Waystone> UnlockedWaystones = EnumSet.noneOf(Waystone.class);
 }
