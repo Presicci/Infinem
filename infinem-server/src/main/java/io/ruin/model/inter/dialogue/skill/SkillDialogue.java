@@ -60,6 +60,10 @@ public class SkillDialogue extends Dialogue {
         player.dialogue(new SkillDialogue(items).setAction(action));
     }
 
+    public static void make(String title, Player player, SkillItem... items) {
+        player.dialogue(new SkillDialogue(title, items));
+    }
+
     public static void make(Player player, SkillItem... items) {
         player.dialogue(new SkillDialogue(items));
     }
