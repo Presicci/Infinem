@@ -67,10 +67,7 @@ public class OptionScroll {
     static {
         InterfaceHandler.register(187, h -> {
             h.closedAction = (player, integer) -> {
-//                if(player.optionScroll.allowHotkeys)
-//                    player.getPacketSender().sendClientScript(1105, ""); // disables hotkeys so player can type in chat again etc
-//apparently the CS above isn't needed anymore in 171 (it has a different function, chatbox says the player doesn't have a name set and can't chat)
-//leaving the code here for now since I didn't look into it very much
+                player.getPacketSender().sendClientScript(927, "1",  1);
                 player.optionScroll = null;
             };
             h.actions[3] = (SlotAction) (player, slot) -> {
