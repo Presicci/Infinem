@@ -10,7 +10,7 @@
   "items": [
     {
       "itemId": 946,
-      "stock": 10000,
+      "stock": 100,
       "buy_price": 3,
       "sell_price": 6
     },
@@ -61,12 +61,6 @@
       "stock": 10000,
       "buy_price": 1,
       "sell_price": 2
-    },
-    {
-      "itemId": 590,
-      "stock": 10000,
-      "buy_price": 0,
-      "sell_price": 1
     },
     {
       "itemId": 1942,
