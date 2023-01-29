@@ -1,0 +1,66 @@
+RAND
+/Player: Hello, how's it going?
+Man: Not too bad, but I'm a little worried about the increase of goblins these days.
+Player: Don't worry, I'll kill them.
+/Player: Hello, how's it going?
+Man: How can I help you?
+<Do you want to trade?
+Player: Do you want to trade?
+Man: No, I have nothing I wish to get rid of. If you want to do some trading, there are plenty of shops and market stalls around though.
+><I'm in search of a quest.
+Player: I'm in search of a quest.
+Man: I'm sorry I can't help you there.
+><I'm in search of enemies to kill.
+Player: I'm in search of enemies to kill.
+Man: I've heard there are many fearsome creatures that dwell under the ground...
+>
+/Player: Hello, how's it going?
+Man: Get out of my way, I'm in a hurry!
+/Player: Hello, how's it going?
+Man: I'm fine, how are you?
+Player: Very well thank you.
+/Player: Hello, how's it going?
+Man: Hello there! Nice weather we've been having.
+/Player: Hello, how's it going?
+Man: I'm very well thank you.
+/Player: Hello, how's it going?
+Man: Who are you?
+Player: I'm a bold adventurer.
+Man: Ah, a very noble profession.
+/Player: Hello, how's it going?
+Man: Do I know you? I'm in a hurry!
+/Player: Hello, how's it going?
+Man: I think we need a new king. The one we've got isn't very good.
+/Player: Hello, how's it going?
+Man: Not too bad thanks.
+/Player: Hello, how's it going?
+Man: Are you asking for a fight?
+Man: ATTACKS
+/Player: Hello, how's it going?
+Man: I'm busy right now.
+/Player: Hello, how's it going?
+Man: Hello.
+/Player: Hello, how's it going?
+Man: None of your business.
+/Player: Hello, how's it going?
+Player: Do you wish to trade?
+Man: No, I have nothing I wish to get rid of. If you want to do some trading, there are plenty of shops and market stalls around though.
+/Player: Hello, how's it going?
+Player: I'm in search of a quest.
+Man: I'm sorry I can't help you there.
+/Player: Hello, how's it going?
+Player: I'm in search of enemies to kill.
+Man: I've heard there are many fearsome creatures that dwell under the ground...
+/Player: Hello, how's it going?
+Man: No I don't have any spare change.
+/Player: Hello, how's it going?
+Man: I'm a little worried - I've heard there's lots of people going about, killing citizens at random.
+/Player: Hello, how's it going?
+Man: No, I don't want to buy anything!
+/Player: Hello, how's it going?
+Man: That is classified information.
+/Player: Hello, how's it going?
+Man: Have this flier...
+ITEM:956
+/Player: Hello, how's it going?
+Man: Yo, wassup!
