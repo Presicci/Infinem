@@ -2044,6 +2044,15 @@
     "y": 3353,
     "z": 0,
     "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Man",
+    "id": 3265,
+    "x": 3047,
+    "y": 3364,
+    "z": 0,
+    "direction": "S",
     "walkRange": 4
   }
 ]
