@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Irwin Feaselbaum",
+    "id": 888,
+    "x": 2671,
+    "y": 3241,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Necromancer",
+    "id": 525,
+    "x": 2669,
+    "y": 3241,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Invrigar the Necromancer",
+    "id": 473,
+    "x": 2669,
+    "y": 3242,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 7
+  }
+]
