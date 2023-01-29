@@ -37,7 +37,7 @@ public class BushPickables {
             }
             player.startEvent(event -> {
                 player.lock();
-                player.animate(827);
+                player.animate(2282);
                 event.delay(1);
                 player.getInventory().add(itemId, 1);
                 player.sendMessage("You pick some " + ItemDef.get(itemId).name.toLowerCase() + ".");
