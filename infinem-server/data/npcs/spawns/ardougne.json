@@ -5129,5 +5129,14 @@
     "walkRange": 5,
     "world": "ECO",
     "npcName": "Imp"
+  },
+  {
+    "name": "Woman",
+    "id": 3110,
+    "x": 2573,
+    "y": 3323,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
   }
 ]
