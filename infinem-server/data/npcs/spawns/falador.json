@@ -2036,5 +2036,14 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Zandar Horfyre"
+  },
+  {
+    "name": "Man",
+    "id": 3109,
+    "x": 3028,
+    "y": 3353,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
   }
 ]
