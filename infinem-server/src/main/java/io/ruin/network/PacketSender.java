@@ -749,6 +749,34 @@ public class PacketSender {
         }
         write(out);
     }
+
+    public void sendTaskInterface(List<String> tasks, List<Integer> points, List<Boolean> completeTasks, List<Integer> areas) {
+        OutBuffer out = new OutBuffer(255).sendVarShortPacket(92).addShort(tasks.size());
+        for (String name : tasks) {
+            out.addString(name);
+        }
+        for (Integer point : points) {
+            out.addByte(point);
+        }
+        for (boolean complete : completeTasks) {
+            out.addByte(complete ? 1 : 0);
+        }
+        for (Integer area : areas) {
+            out.addByte(area);
+        }
+        System.out.println(out.position());
+        write(out);
+    }
+
+    public void sendTaskFilterInterface(String[] filters, String sort) {
+        OutBuffer out = new OutBuffer(255).sendVarShortPacket(93);
+        out.addString(sort);
+        for (String filter : filters) {
+            out.addString(filter);
+        }
+        write(out);
+    }
+
     //TODO: 184 Revision Fix Custom Packet
     public void sendLoyaltyRewards(int dayReward, int currentSpree, int highestSpree, int totalClaimedRewards, Item... loyaltyRewards) {
         /*OutBuffer out = new OutBuffer(3 + 1 + 12 + (loyaltyRewards.length * 8)).sendVarShortPacket(93)
