@@ -31,4 +31,12 @@ public enum TaskArea {
      public String toString() {
           return toString;
      }
+
+     public static TaskArea getTaskArea(String name) {
+          for (TaskArea area : TaskArea.values()) {
+               if (area.toString.equalsIgnoreCase(name))
+                    return area;
+          }
+          return null;
+     }
 }
