@@ -4,24 +4,66 @@ import java.util.List;
 
 public class CustomTaskInterface {
 
-    private static class Item {
-        public int itemId;
-        public int amount;
-
-        public Item(int itemId, int amount) {
-            this.itemId = itemId;
-            this.amount = amount;
+    private static String getDifficultyName(int points) {
+        switch (points) {
+            default:
+                return "Easy";
+            case 50:
+                return "Medium";
+            case 100:
+                return "Hard";
+            case 250:
+                return "Elite";
+            case 500:
+                return "Master";
         }
+    }
 
-        public Item(int itemId) {
-            this.itemId = itemId;
-            this.amount = 1;
+    private static int getDifficultyPoints(Integer diffId) {
+        switch (diffId) {
+            default:
+                return 10;
+            case 1:
+                return 50;
+            case 2:
+                return 100;
+            case 3:
+                return 250;
+            case 4:
+                return 500;
+        }
+    }
+
+    private static String getAreaName(Integer areaId) {
+        switch (areaId) {
+            default:
+                return "General/Multiple Regions";
+            case 1:
+                return "Misthalin";
+            case 2:
+                return "Karamja";
+            case 3:
+                return "Asgarnia";
+            case 4:
+                return "Fremennik Provinces";
+            case 5:
+                return "Kandarin";
+            case 6:
+                return "Kharidian Desert";
+            case 7:
+                return "Morytania";
+            case 8:
+                return "Tirannwn";
+            case 9:
+                return "Wilderness";
+            case 10:
+                return "Zeah";
         }
     }
 
     private static final int EASY_SPRITE = 2316, MEDIUM_SPRITE = 2317, HARD_SPRITE = 2318, ELITE_SPRITE = 2319, MASTER_SPRITE = 2320;
 
-    public static void init(List<String> tasks, List<Integer> pointsList, List<Byte> completeList) {
+    public static void init(List<String> tasks, List<Integer> pointsList, List<Integer> completeList, List<Integer> areas) {
         Widget infoX = Canvas.get(522, 17);
         if (infoX != null)
             infoX.onClick = null;
@@ -44,8 +86,9 @@ public class CustomTaskInterface {
         int childId = 0;
         for (int i = 0; i < tasks.size(); i++) {
             String name = tasks.get(i);
-            int points = pointsList.get(i);
+            int points = getDifficultyPoints(pointsList.get(i));
             boolean completed = completeList.get(i) == 1;
+            int areaId = areas.get(i);
 
             Widget bg = Widget.addChild(parent.id, 3, childId++);
             bg.rawX = 0;
@@ -99,7 +142,7 @@ public class CustomTaskInterface {
             examine.rawY = bg.rawY;
             examine.rawWidth = 424;
             examine.rawHeight = 25;
-            examine.setAction(0, "<col=ff9040>" + name + "</br>General/Multiple Regions</br>Easy - " + points + " points</col>");
+            examine.setAction(0, "<col=ff9040>" + name + "</br>" + getAreaName(areaId) + "</br>" + getDifficultyName(points) + " - " + points + " points</col>");
             WorldMapSectionType.method116(examine);
             ViewportMouse.client.revalidateWidget((net.runelite.api.widgets.Widget) examine);
 
