@@ -56,7 +56,7 @@ public class Alchemy extends Spell {
         if(item.getDef().isNote())
             value = item.getDef().fromNote().highAlchValue;
         if (value == 0 || item.getId() == COINS_995) {
-            player.sendMessage("You can't alchemise this item.");
+            player.sendMessage("You can't alchemize this item.");
             return false;
         }
         if (item.getAmount() == 1 && item.getDef().stackable && !player.getInventory().hasRoomFor(COINS_995)) {
@@ -69,11 +69,7 @@ public class Alchemy extends Spell {
             return false;
         }
         if(item.getDef().free) {
-            player.sendMessage("You can't alchemise this item.");
-            return false;
-        }
-        if(!item.getDef().tradeable) {
-            player.sendMessage("You can't alchemise this item.");
+            player.sendMessage("You can't alchemize this item.");
             return false;
         }
         if (player.getAlchValue() > 0 && item.getDef().value > player.getAlchValue()) {
