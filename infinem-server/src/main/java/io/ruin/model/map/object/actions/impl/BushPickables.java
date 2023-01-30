@@ -42,7 +42,7 @@ public class BushPickables {
                 player.animate(832);
                 event.delay(1);
                 player.getInventory().add(itemId, 1);
-                player.sendMessage("You pick " + (this == PINEAPPLE ? "a" : "some") + " " + ItemDef.get(itemId).name.toLowerCase() + ".");
+                player.sendMessage("You pick " + (this == PINEAPPLE || this == PINEAPPLE_APE ? "a" : "some") + " " + ItemDef.get(itemId).name.toLowerCase() + ".");
                 changeObject(obj);
                 player.unlock();
             });
