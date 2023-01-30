@@ -28,6 +28,10 @@ public class FruitCutting {
     }
 
     public static void startCutting(Player player, CuttableFruit cuttableFruit, Item item, int amount) {
+        if (!player.getInventory().hasFreeSlots(item.getAmount() - 1)) {
+            player.sendMessage("You don't have enough inventory space to cut it like that.");
+            return;
+        }
         player.startEvent(event -> {
             int made = 0;
             while (made++ < amount) {
@@ -39,9 +43,15 @@ public class FruitCutting {
                 if (fruit == null) {
                     break;
                 }
+                if (!player.getInventory().hasFreeSlots(item.getAmount() - 1)) {
+                    player.sendMessage("You have run out of inventory space.");
+                    break;
+                }
                 fruit.remove(1);
                 player.getInventory().add(item);
                 player.animate(1248);
+                player.sendFilteredMessage("You slice up the " + ItemDef.get(cuttableFruit.getItemId()).name + ".");
+                event.delay(2);
             }
         });
     }
