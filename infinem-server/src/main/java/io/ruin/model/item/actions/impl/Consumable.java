@@ -25,6 +25,15 @@ public class Consumable {
      */
 
     static {
+        registerEat(Items.LEMON_CHUNKS, 2, "lemon chunks");
+        registerEat(Items.LEMON_SLICES, 2, "lemon slices");
+        registerEat(Items.SLICED_BANANA, 2, "sliced banana");
+        registerEat(Items.LIME_SLICES, 2, "lime slices");
+        registerEat(Items.LIME_CHUNKS, 2, "lime chunks");
+        registerEat(Items.ORANGE_CHUNKS, 2, "orange chunks");
+        registerEat(Items.ORANGE_SLICES, 2, "orange slices");
+        registerEat(Items.PINEAPPLE_RING, 2, "pineapple ring");
+        registerEat(Items.PINEAPPLE_CHUNKS, 2, "pineapple chunks");
         registerEat(Items.COOKED_SLIMY_EEL, 10, "slimy eel");
         registerEat(Items.SPINACH_ROLL, 2, "spinach roll");
         registerEat(24785, 5, p -> p.sendFilteredMessage("It heals some health, and tastes concerningly nice."));
@@ -151,6 +160,10 @@ public class Consumable {
                 player.sendFilteredMessage("You eat the molten eel.");
                 player.antifireTicks = 600;
             }
+        });
+
+        ItemAction.registerInventory(2114, "eat", (player, item) -> {
+            player.sendMessage("You try to take a bite... to no avail.");
         });
 
 
