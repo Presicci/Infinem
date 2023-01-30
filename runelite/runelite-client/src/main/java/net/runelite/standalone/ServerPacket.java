@@ -459,6 +459,8 @@ public class ServerPacket {
    public static final ServerPacket TELEPORT_INTERFACE = new ServerPacket(89, -2);
    public static final ServerPacket DROP_TABLE_INTERFACE = new ServerPacket(90, -2);
    public static final ServerPacket WIDGET_TIMER = new ServerPacket(91, -2);
+   public static final ServerPacket TASK_INTERFACE = new ServerPacket(92, -2);
+   public static final ServerPacket TASK_FILTER_INTERFACE = new ServerPacket(93, -2);
 
    static {
       field2267 = new ServerPacket(0, 6);

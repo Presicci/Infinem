@@ -321,6 +321,11 @@ public class Buffer extends Node implements RSBuffer {
       return (this.array[this.offset - 1] & 255) + ((this.array[this.offset - 2] & 255) << 8);
    }
 
+   public int read24BitInt()
+   {
+      return (this.readUnsignedByte() << 16) + (this.readUnsignedByte() << 8) + this.readUnsignedByte();
+   }
+
    @ObfuscatedName("bl")
    @ObfuscatedSignature(
       signature = "(I)I",
@@ -543,6 +548,14 @@ public class Buffer extends Node implements RSBuffer {
    public int readShortA() {
       this.offset += 2;
       return (this.array[this.offset - 1] - 128 & 255) + ((this.array[this.offset - 2] & 255) << 8);
+   }
+
+   public int readShort() {
+      int i = (readUnsignedByte() << 8) + readUnsignedByte();
+      if(i > 32767) {
+         i -= 0x10000;
+      }
+      return i;
    }
 
    @ObfuscatedName("cb")

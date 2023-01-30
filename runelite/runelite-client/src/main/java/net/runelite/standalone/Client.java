@@ -8143,6 +8143,40 @@ public final class Client extends GameShell implements Usernamed, RSClient {
                   return true;
                }
 
+               if(ServerPacket.TASK_INTERFACE == var1.serverPacket) {
+                  List<String> tasks = new ArrayList<>();
+                  List<Integer> points = new ArrayList<>();
+                  List<Integer> completeTasks = new ArrayList<>();
+                  List<Integer> areas = new ArrayList<>();
+                  int size = var3.readUnsignedShort();
+                  for(int i = 0; i < size; i++) {
+                     tasks.add(var3.readString());
+                  }
+                  for(int i = 0; i < size; i++) {
+                     points.add(var3.readUnsignedByte());
+                  }
+                  for(int i = 0; i < size; i++) {
+                     completeTasks.add(var3.readUnsignedByte());
+                  }
+                  for(int i = 0; i < size; i++) {
+                     areas.add(var3.readUnsignedByte());
+                  }
+                  CustomTaskInterface.init(tasks, points, completeTasks, areas);
+                  var1.serverPacket = null;
+                  return true;
+               }
+
+               if(ServerPacket.TASK_FILTER_INTERFACE == var1.serverPacket) {
+                  String[] filters = new String[3];
+                  String sort = var3.readString();
+                  for(int i = 0; i < 3; i++) {
+                     filters[i] = var3.readString();
+                  }
+                  CustomTaskFilterInterface.init(filters, sort);
+                  var1.serverPacket = null;
+                  return true;
+               }
+
                if (ServerPacket.WIDGET_TIMER == var1.serverPacket) {
                   try {
                      int spriteId = var3.readUnsignedByte();
