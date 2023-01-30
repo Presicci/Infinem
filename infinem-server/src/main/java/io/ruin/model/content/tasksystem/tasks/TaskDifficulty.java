@@ -13,4 +13,12 @@ public enum TaskDifficulty {
     EASY(10), MEDIUM(50), HARD(100), ELITE(250), MASTER(500);
 
     private final int points;
+
+    public static TaskDifficulty getTaskDifficulty(String difficulty) {
+        for (TaskDifficulty taskDifficulty : TaskDifficulty.values()) {
+            if (taskDifficulty.name().equalsIgnoreCase(difficulty))
+                return taskDifficulty;
+        }
+        return null;
+    }
 }
