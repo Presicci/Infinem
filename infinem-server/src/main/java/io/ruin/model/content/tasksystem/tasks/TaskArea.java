@@ -5,7 +5,17 @@ package io.ruin.model.content.tasksystem.tasks;
  * Created on 8/17/2021
  */
 public enum TaskArea {
-     TIRANNWN, KANDARIN, FREMENNIK("fremennik provinces"), KARAMJA, ASGARNIA, MISTHALIN, WILDERNESS, DESERT("kharidian desert"), MORYTANIA, ZEAH, GENERAL("general/multiple regions");
+     GENERAL("general/multiple regions"),
+     MISTHALIN,
+     KARAMJA,
+     ASGARNIA,
+     FREMENNIK("fremennik provinces"),
+     KANDARIN,
+     DESERT("kharidian desert"),
+     MORYTANIA,
+     TIRANNWN,
+     WILDERNESS,
+     ZEAH;
 
      public final String toString;
 
