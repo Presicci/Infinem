@@ -1,6 +1,7 @@
 package io.ruin.model.skills.magic.spells.modern;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.inter.journal.presets.Preset;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.jewellery.BraceletOfEthereum;
@@ -41,11 +42,11 @@ public class Alchemy extends Spell {
                 });
                 return false;
             }
-            return alch(player, item, level);
+            return tryAlch(player, item, level);
         });
     }
 
-    private static boolean alch(Player player, Item item, Level level) {
+    private static boolean tryAlch(Player player, Item item, Level level) {
         if (item.getId() == 7462 || item.getId() == Preset.DRAGON_2H_SWORD || item.getId() == BraceletOfEthereum.REVENANT_ETHER) {
             player.sendMessage("You can't alchemise this item.");
             return false;
@@ -75,6 +76,19 @@ public class Alchemy extends Spell {
             player.sendMessage("You can't alchemise this item.");
             return false;
         }
+        if (player.getAlchValue() > 0 && item.getDef().value > player.getAlchValue()) {
+            int finalValue = value;
+            player.dialogue(new YesNoDialogue("Are you sure you want to alchemize that?",
+                    item.getDef().name + " is above your alchemy warning threshold.", item, () -> {
+                alch(player, item, level, finalValue);
+            }));
+        }
+        alch(player, item, level, value);
+        return true;
+    }
+
+
+    private static void alch(Player player, Item item, Level level, int value) {
         if (item.getDef().stackable)
             item.remove(1);
         else
@@ -86,7 +100,5 @@ public class Alchemy extends Spell {
         player.alchDelay.delay(level.delay);
         if (level == Level.HIGH)
             player.getTaskManager().doLookupByUUID(148, 1); // Cast the High Level Alchemy spell
-        return true;
     }
-
 }
