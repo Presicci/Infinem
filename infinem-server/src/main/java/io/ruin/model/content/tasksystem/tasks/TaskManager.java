@@ -8,13 +8,16 @@ import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.MapArea;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -68,6 +71,39 @@ public class TaskManager {
         this.completeTasks = new HashSet<>();
         this.completedCategories = new HashSet<>();
         this.collectedItems = new HashSet<>();
+    }
+
+    public void openTaskInterface() {
+        Server.gameDb.execute(connection -> {
+            PreparedStatement statement = null;
+            ResultSet rs = null;
+            List<String> tasks = new ArrayList<>();
+            List<Integer> points = new ArrayList<>();
+            List<Boolean> completedTasks = new ArrayList<>();
+            List<Integer> areas = new ArrayList<>();
+            try {
+                statement = connection.prepareStatement("SELECT * FROM task_list");
+                rs = statement.executeQuery();
+                while (rs.next()) {
+                    String name = rs.getString("name");
+                    String difficulty = rs.getString("difficulty");
+                    int uuid = rs.getInt("uuid");
+                    String region = rs.getString("region");
+                    tasks.add(name);
+                    TaskDifficulty taskDifficulty = TaskDifficulty.getTaskDifficulty(difficulty);
+                    points.add(taskDifficulty == null ? 0 : taskDifficulty.ordinal());
+                    completedTasks.add(completeTasks.contains(uuid));
+                    TaskArea taskArea = TaskArea.getTaskArea(region);
+                    areas.add(taskArea == null ? 0 : taskArea.ordinal());
+                }
+            } finally {
+                DatabaseUtils.close(statement, rs);
+                player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
+                    player.openInterface(InterfaceType.MAIN, 383);
+                    player.getPacketSender().sendTaskInterface(tasks, points, completedTasks, areas);
+                });
+            }
+        });
     }
 
     /**
