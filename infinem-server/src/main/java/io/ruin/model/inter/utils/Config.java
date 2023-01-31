@@ -831,12 +831,12 @@ public class Config {
     /**
      * Leagues
      */
-    public static final Config LEAGUE_FILTER = varpbit(2606, false);
-    public static final Config LEAGUE_AREA_FILTER = varpbit(2805, false);
+    public static final Config LEAGUE_TIER_FILTER = varpbit(2606, true);
+    public static final Config LEAGUE_AREA_FILTER = varpbit(2805, true);
     public static final Config LEAGUE_POINTS = varpbit(2614, false);
     public static final Config LEAGUE_POINTS2 = varpbit(2615, false);
     public static final Config LEAGUE_TASKS_COMPLETED = varpbit(2610, false);
-    public static final Config LEAGUE_THING = varpbit(2810, false);
+    public static final Config LEAGUE_SORT = varpbit(2810, true);
     public static final Config LEAGUE_A = varpbit(10032, false);
 
     /**
