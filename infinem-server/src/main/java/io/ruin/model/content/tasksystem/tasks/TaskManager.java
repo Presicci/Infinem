@@ -7,6 +7,7 @@ import io.ruin.api.utils.ServerWrapper;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
+import io.ruin.model.content.tasksystem.tasks.inter.TaskSQLBuilder;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
@@ -73,7 +74,7 @@ public class TaskManager {
         this.collectedItems = new HashSet<>();
     }
 
-    public void openTaskInterface() {
+    public void openTaskInterface(String searchString) {
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;
@@ -82,7 +83,7 @@ public class TaskManager {
             List<Boolean> completedTasks = new ArrayList<>();
             List<Integer> areas = new ArrayList<>();
             try {
-                statement = connection.prepareStatement("SELECT * FROM task_list");
+                statement = connection.prepareStatement(TaskSQLBuilder.getSelectQuery(player, searchString));
                 rs = statement.executeQuery();
                 while (rs.next()) {
                     String name = rs.getString("name");
