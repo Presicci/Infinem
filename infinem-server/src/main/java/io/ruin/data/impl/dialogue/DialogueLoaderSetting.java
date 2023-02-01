@@ -1,6 +1,7 @@
 package io.ruin.data.impl.dialogue;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
 import java.util.function.BiConsumer;
@@ -10,6 +11,7 @@ import java.util.function.BiPredicate;
 public enum DialogueLoaderSetting {
     HASITEM((p, i) -> p.getInventory().hasId(i)),
     HASTALKED((p, i) -> p.getSpokenToNPCSet().contains(i), (p, i) -> p.getSpokenToNPCSet().add(i)),
+    HASPRAYERLEVEL((p, i) -> p.getStats().get(StatType.Prayer).currentLevel >= i),
     RAND;
 
     private final BiPredicate<Player, Integer> biPredicate;
