@@ -115,12 +115,12 @@ public class DialogueLoader {
             return;
         }
         if (dialogues.size() > 2) {
-            System.err.println(NPCDef.get(npcDef.id).name + " has predicate reliant setting but has more than 2 dialogue sets denoted by '('.");
+            System.err.println(NPCDef.get(npcDef.id).name + " has predicate reliant setting but has more than 2 dialogue sets denoted by '/'.");
             return;
         }
         NPCAction.register(npcDef.id, "talk-to", ((player, npc) -> {
             npc.faceTemp(player);
-            player.dialogue(npc, dialogues.get(setting.getBiPredicate().test(player, value) ? 1 : 0));
+            player.dialogue(npc, dialogues.get(setting.getBiPredicate().test(player, value) ? 0 : 1));
         }));
     }
 
