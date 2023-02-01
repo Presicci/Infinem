@@ -74,6 +74,7 @@ public class ObjectActionHandler implements Incoming {
                             .add("varpId", def.varpId);
                     player.sendFilteredMessage("[ObjectAction] " + debug.toString());
                 }
+                def.examine(player);
             }
             return;
         }

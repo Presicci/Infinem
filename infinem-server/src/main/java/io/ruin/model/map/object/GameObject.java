@@ -274,4 +274,11 @@ public class GameObject extends AttributesHolder {
     public OwnedObject asOwnedObject() {
         return ((OwnedObject) this);
     }
+
+    public void examine(Player player) {
+        ObjectDef def = getDef();
+        if (def == null || def.examine == null)
+            return;
+        player.sendMessage(def.examine);
+    }
 }
