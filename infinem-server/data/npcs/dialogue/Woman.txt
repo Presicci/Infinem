@@ -35,7 +35,7 @@ Woman: I think we need a new king. The one we've got isn't very good.
 Woman: Not too bad thanks.
 /Player: Hello, how's it going?
 Woman: Are you asking for a fight?
-Woman: ATTACKS
+ATTACK:
 /Player: Hello, how's it going?
 Woman: I'm busy right now.
 /Player: Hello, how's it going?
