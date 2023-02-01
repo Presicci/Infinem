@@ -43,7 +43,7 @@ ITEMDIALOGUE:442:Silver can be mined to help you with your crafting. You can fin
 ITEMDIALOGUE:444:Gold requires quite a lot of experience in mining before you can successfully extract it from the rocks. It can be found in Al Kharid, the Crafting guild, Rimmington and other places.
 LASTOPTIONS:
 ><Mithril, Adamantite and Runite.
-ITEMDIALOGUE:447:Mithril and Adamantite rocks are fairly rare and require great skill to mine. You can find them in Al Kharid, the Dwarven mines, Lumbridge Swamps and other places.
+TWOITEMDIALOGUE:447:449:Mithril and Adamantite rocks are fairly rare and require great skill to mine. You can find them in Al Kharid, the Dwarven mines, Lumbridge Swamps and other places.
 ITEMDIALOGUE:451:Runite is the most prized of ores and is very rare. I'll leave you to find where to mine it.
 LASTOPTIONS:
 >
