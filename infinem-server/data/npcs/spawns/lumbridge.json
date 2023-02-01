@@ -2684,11 +2684,11 @@
   {
     "name": "Chicken",
     "id": 1173,
-    "x": 3186,
-    "y": 3277,
+    "x": 3185,
+    "y": 3278,
     "z": 0,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 2
   },
   {
     "name": "Goblin",
