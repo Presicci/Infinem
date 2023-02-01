@@ -1,0 +1,70 @@
+Player: Hello.
+Crafting tutor: Hello there! Are you interested in hearing all about crafting?
+<How can I train my crafting?
+Player: How can I train my crafting?
+Crafting tutor: To get started, you might like to try your hand at crafting some armour from cow's leather. There's a tanner just over in Al Kharid who could tan any hides for you.
+Crafting tutor: Once you've managed to get your hand on some kind of leather, you just need a needle and some thread to get to work!
+Crafting tutor: If that doesn't take your fancy, you could try your hand at spinning wool right here on the spinning wheel.
+Crafting tutor: Come to think of it... Farmer Fred, just north of here, sounds like he could use a hand shearing some of his sheep. Maybe you could help him out, and get some practice while you're at it.
+Crafting tutor: If you wanted to try your hand at making some jewellery, you'll want to get your hand on some gold and some kind of gem, with a mould to work with and a chisel at hand.
+Crafting tutor: But if that's not your thing, maybe you'd like to try making some more armour!
+Crafting tutor: Cow's leather's a good place to start, but you can try all other kinds of hides, like a dragon's!
+Crafting tutor: Glass blowing seems to be a popular trade, too. You can forge molten glass from some sand and soda ash, then make all kinds of things using a glassblowing pipe.
+Player: Thanks!
+Crafting tutor: Is there anything else you want to know?
+FIRSTOPTIONS:
+><What kinds of things can be crafted?
+Player: What kinds of things can be crafted?
+Crafting tutor: All kinds of things, really! You can make armour from leather, make some pottery, try your hand at glassblowing, make some jewellery, weapons even...
+Crafting tutor: What would you like to hear about?
+<Tell me about crafting armour.
+Player: Tell me about crafting armour.
+Crafting tutor: Sure thing! Most armour you can craft just involves taking a needle and some thread to whatever material you can get your hands on.
+Crafting tutor: You might like to try with different kinds of animal hide, from cows, yaks, snakes, dragons... Or any other sort of fabric you can find!
+Crafting tutor: Some crafty types have started making some leather-covered wooden shields recently, too!
+Crafting tutor: You might find some creatures make for a pretty sturdy helmet, too. The best way to make something like that's just to take a good old chisel to it!
+Player: That sounds great.
+Crafting tutor: Would you like to hear about anything else I mentioned?
+LASTOPTIONS:
+><Tell me about pottery.
+Player: Tell me about pottery.
+Crafting tutor: Of course! Pottery's all kind of the same, it just takes a lot of getting used to.
+Crafting tutor: All that there really is to it is getting your hands on some clay, getting it wet and getting to work on a potter's wheel.
+Crafting tutor: Once you've got the shape you want out of it, you want to put it in a pottery oven to fire it up.
+Crafting tutor: The barbarians west of Varrock seem to be pretty keen on their pottery. I'd take a look around there, if you wanted to try it out!
+Crafting tutor: Once you get the hang of it, you can make pots, pie dishes, bowls... You know.
+Player: Neat!
+Crafting tutor: Would you like to hear about anything else I mentioned?
+LASTOPTIONS:
+><Tell me about glass blowing.
+Player: Tell me about glass blowing.
+Crafting tutor: Glass blowing? Well, to get started you'll need to get yourself some molten glass. You can make some for yourself by heating sand and soda ash in a furnace.
+Crafting tutor: Once you've got a hold of that, you'll want a glass blowing pipe to blow it out in to shape, before it cools down.
+Crafting tutor: It's not the easiest thing to get to grips with, but it shouldn't be too difficult!
+Player: Nifty.
+Crafting tutor: Would you like to hear about anything else I mentioned?
+LASTOPTIONS:
+><Tell me about making jewellery.
+Player: Tell me about making jewellery.
+Crafting tutor: Sure. All it boils down to is a bar of gold or silver, some kind of cut gem if you're feeling fancy, and a mould to help shape the thing.
+Crafting tutor: You can use a chisel to make a gem really shine and sparkle. You wouldn't want to use an uncut one for any jewellery.
+Crafting tutor: Once you've got all of your materials together, you'll want to use a furnace to actually craft whatever it is you're trying to make!
+Crafting tutor: Wizards seem to like enchanting their jewellery to do all kinds of things, too, but I don't know a lot about that.
+Player: Sounds good!
+Crafting tutor: Would you like to hear about anything else I mentioned?
+LASTOPTIONS:
+><Tell me about crafting weapons.
+Player: Tell me about crafting weapons.
+Crafting tutor: Well, there aren't too many weapons that people tend to craft, but there are a couple worth noting!
+Crafting tutor: Battlestaves are probably the most common. It boils down to fastening an orb of some kind onto the end of a battlestaff.
+Crafting tutor: You do need to get the orb in the first place, though... You can make one through glassblowing, but it's not much use without being charged.
+Crafting tutor: I can't help much with crafting it, though! There's a little more magic involved there than I'm familiar with.
+Crafting tutor: Aside from battlestaves, there are a couple of weapons that people like to make from silver... Sickles and bolts, usually.
+Player: Interesting...
+Crafting tutor: Would you like to hear about anything else I mentioned?
+LASTOPTIONS:
+>
+><No, thank you.
+Player: No, thank you.
+Crafting tutor: Well, just come back any time you want to know anything!
+>
