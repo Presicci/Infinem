@@ -138,6 +138,10 @@ public class item_info extends DataFile {
          */
         if(def.isNote()) {
             ItemDef reg = ItemDef.get(def.notedId);
+            if (reg == null) {
+                System.err.println("ITEM NOTE ERROR! ID:" + def.id + "");
+                return;
+            }
             def.name = reg.name;
             def.tradeable = reg.tradeable;
             def.examine = "Swap this note at any bank for the equivalent item.";
