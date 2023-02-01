@@ -2,6 +2,7 @@
 Player: Hi!
 Sabreen: Hi. How can I help?
 <Can you heal me?
+Player: Can you heal me?
 HEAL:
 ><Do you see a lot of injured fighters?
 Player: Do you see a lot of injured fighters?
