@@ -16,10 +16,10 @@ import java.util.List;
  */
 @Slf4j
 public class DialogueParser {
-    protected int lineNumber;
-    protected NPCDef npcDef;
-    protected List<String> dialogueLines;
-    protected DialogueParserSettings settings;
+    private int lineNumber;
+    private NPCDef npcDef;
+    private List<String> dialogueLines;
+    private DialogueParserSettings settings;
 
     public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber, DialogueParserSettings settings) {
         this.npcDef = npcDef;
