@@ -61,9 +61,9 @@ public class NPCActionHandler implements Incoming {
             NPCDef def = NPCDef.get(id);
             if(def == null)
                 return;
-            player.sendMessage(def.name);
             if(player.debug)
                 debug(player, null, def, -1);
+            def.examine(player);
             return;
         }
         player.sendFilteredMessage("Unhandled npc action: option=" + option + " opcode=" + opcode);

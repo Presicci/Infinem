@@ -55,6 +55,11 @@ public class NPCDef {
 
 
     /**
+     * Stored data
+     */
+    public String examine;
+
+    /**
      * Custom data
      */
 
@@ -498,4 +503,9 @@ public class NPCDef {
         return -1;
     }
 
+    public void examine(Player player) {
+        if (examine == null)
+            return;
+        player.sendMessage(examine);
+    }
 }
