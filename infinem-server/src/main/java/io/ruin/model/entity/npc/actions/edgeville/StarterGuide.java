@@ -406,6 +406,7 @@ public class StarterGuide {
         player.getInventory().add(1115, 1); // Iron platebody
         player.getInventory().add(1075, 1); // Iron platelegs
         player.getInventory().add(1323, 1); // Iron scim
+        player.getInventory().add(757, 1); // Guide book
         switch (player.getGameMode()) {
             case IRONMAN:
                 player.getInventory().add(12810, 1);
