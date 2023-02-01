@@ -91,7 +91,13 @@
     },
     {
       "itemId": 550,
-      "stock": 5,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 757,
+      "stock": 15,
       "buy_price": 0,
       "sell_price": 1
     }
