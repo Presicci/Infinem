@@ -3,7 +3,7 @@ Player: Can you teach me the basics of fishing please?
 Fishing tutor: Ahoy, to fish, you click on the shrimp fishin' spot while ye'r carrying a net.
 Player: I see... is that it?
 Fishing tutor: There's far more as you progress - not just shrimps. You get more equipment, bigger fish and other things too...
-Fishing tutor: When you have a full inventory, you can cook it or take it to the bank. You can find a bank on the roof of the castle in Lumbridge and a cookin' range in the castle kitchen.
+Fishing tutor: When you have a full inventory, you can cook it or take it to the bank. You can find a bank in the courtyard of the castle in Lumbridge and a cookin' range in the castle kitchen.
 FIRSTOPTIONS:
 ><I already know about the basics of fishing, got any tips?
 Player: I already know about the basics of fishing, got any tips?
