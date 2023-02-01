@@ -97,7 +97,7 @@ public class DialogueLoader {
     private static void registerDialogue(Dialogue[] dialogue, int npcId) {
         NPCAction.register(npcId, "talk-to", ((player, npc) -> {
             npc.faceTemp(player);
-            player.dialogue(dialogue);
+            player.dialogue(npc, dialogue);
         }));
     }
 
@@ -120,7 +120,7 @@ public class DialogueLoader {
         }
         NPCAction.register(npcDef.id, "talk-to", ((player, npc) -> {
             npc.faceTemp(player);
-            player.dialogue(dialogues.get(setting.getBiPredicate().test(player, value) ? 1 : 0));
+            player.dialogue(npc, dialogues.get(setting.getBiPredicate().test(player, value) ? 1 : 0));
         }));
     }
 
@@ -133,7 +133,7 @@ public class DialogueLoader {
         NPCAction.register(npcId, "talk-to", ((player, npc) -> {
             Dialogue[] dialogues = Random.get(randomDialogues);
             npc.faceTemp(player);
-            player.dialogue(dialogues);
+            player.dialogue(npc, dialogues);
         }));
     }
 }

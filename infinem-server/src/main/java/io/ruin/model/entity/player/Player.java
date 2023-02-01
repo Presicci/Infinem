@@ -536,6 +536,7 @@ public class Player extends PlayerAttributes {
     /**
      * Dialogue
      */
+    @Getter private NPC dialogueNPC;
 
     private int dialogueStage;
 
@@ -560,6 +561,11 @@ public class Player extends PlayerAttributes {
         (lastDialogue = dialogues[0]).open(this);
     }
 
+    public void dialogue(NPC npc, Dialogue... dialogues) {
+        dialogueNPC = npc;
+        openDialogue(true, dialogues);
+    }
+
     public void dialogue(Dialogue... dialogues) {
         openDialogue(true, dialogues);
     }
@@ -580,6 +586,7 @@ public class Player extends PlayerAttributes {
     }
 
     public void closeDialogue() {
+        dialogueNPC = null;
         dialogues = null;
         if(lastDialogue != null) {
             lastDialogue.closed(this);
