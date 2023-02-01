@@ -57,8 +57,9 @@ public enum DialogueLoaderAction {
         }
     }),
     HEAL((player) -> player.getStats().get(StatType.Hitpoints).restore()),
-    ITEM(null),  // Handled specifically in the loader
-    SHOP(null),
+    LASTOPTIONS(null),  // Reopens the last option dialogue
+    ITEM(null),         // Gives the player an item
+    SHOP(null),         // Opens the npcs shop
     ;
 
     private final Consumer<Player> action;

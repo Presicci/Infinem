@@ -13,6 +13,7 @@ import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.KillCounter;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.Dialogue;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.shop.Shop;
@@ -86,6 +87,8 @@ public class NPCDef {
     public boolean ignoreOccupiedTiles;
 
     public double giantCasketChance; // only used for bosses atm, other npcs use a formula (see GoldCasket)
+
+    public Dialogue optionsDialogueLoop;
 
     public boolean dragon;
 

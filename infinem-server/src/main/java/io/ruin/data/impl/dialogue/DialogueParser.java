@@ -20,20 +20,26 @@ public class DialogueParser {
     private final NPCDef npcDef;
     private final List<String> dialogueLines;
     private final DialogueParserSettings settings;
+    private boolean recordDialogueLoop;
 
-    public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber, DialogueParserSettings settings) {
+    public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber, DialogueParserSettings settings, boolean recordDialogueLoop) {
         this.npcDef = npcDef;
         this.dialogueLines = dialogueLines;
         this.lineNumber = lineNumber;
         this.settings = settings;
+        this.recordDialogueLoop = recordDialogueLoop;
+    }
+
+    public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber, DialogueParserSettings settings) {
+        this(npcDef, dialogueLines, lineNumber, settings, false);
     }
 
     public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber) {
-        this(npcDef, dialogueLines, lineNumber, null);
+        this(npcDef, dialogueLines, lineNumber, null, false);
     }
 
     public DialogueParser(NPCDef npcDef, List<String> dialogueLines) {
-        this(npcDef, dialogueLines, 0, null);
+        this(npcDef, dialogueLines, 0, null, false);
     }
 
     public Dialogue[] parseDialogue() {
@@ -72,7 +78,7 @@ public class DialogueParser {
                     System.out.println(leftIndex + "-" + rightIndex);
                     try {
                         int value = Integer.parseInt(line.substring(setting.name().length() + 1));
-                        List<Dialogue[]> dialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, new DialogueParserSettings(setting, value)).parseRandomDialogues(true);
+                        List<Dialogue[]> dialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, new DialogueParserSettings(setting, value), true).parseRandomDialogues(true);
                         if (dialogues == null) {
                             error("predicate reliant setting but had an issue being read", dialogue);
                             return null;
@@ -134,6 +140,14 @@ public class DialogueParser {
                 if (action == DialogueLoaderAction.SHOP) {
                     return new ActionDialogue((player) -> {
                         npcDef.shops.get(0).open(player);
+                    });
+                }
+                if (action == DialogueLoaderAction.LASTOPTIONS) {
+                    recordDialogueLoop = true;
+                    return new ActionDialogue((player) -> {
+                        Dialogue loop = npcDef.optionsDialogueLoop;
+                        if (loop != null)
+                            player.dialogue(loop);
                     });
                 }
                 if (action == DialogueLoaderAction.ITEM) {
@@ -212,7 +226,10 @@ public class DialogueParser {
             if (line.startsWith(">"))
                 line = line.substring(1);
         }
-        return new OptionsDialogue(options);
+        Dialogue finalDialogue = new OptionsDialogue(options);
+        if (recordDialogueLoop)
+            npcDef.optionsDialogueLoop = finalDialogue;
+        return finalDialogue;
     }
 
     /**
