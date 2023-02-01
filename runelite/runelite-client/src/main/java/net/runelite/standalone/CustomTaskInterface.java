@@ -18,17 +18,7 @@ public class CustomTaskInterface {
         Widget filterParent = Canvas.getWidget(383 << 16 | 1);
         parent.children = null; //reset previous children
 
-        /*Widget progressBarDivider = Widget.addChild(filterParent.id, 5, 12);
-        progressBarDivider.rawX = 5;
-        progressBarDivider.rawY = 50;
-        progressBarDivider.rawWidth = 450;
-        progressBarDivider.rawHeight = 36;
-        progressBarDivider.spriteId2 = 173;
-        progressBarDivider.spriteTiling = true;
-        WorldMapSectionType.method116(progressBarDivider);
-        ViewportMouse.client.revalidateWidget(progressBarDivider);*/
         int filterChildId = 12;
-
         /**
          * Vertical divider
          */
@@ -576,9 +566,9 @@ public class CustomTaskInterface {
             case 5:
                 return "Kharidian Desert";
             case 6:
-                return "Morytania";
-            case 7:
                 return "Misthalin";
+            case 7:
+                return "Morytania";
             case 8:
                 return "Tirannwn";
             case 9:
@@ -604,10 +594,10 @@ public class CustomTaskInterface {
                 return "Karamja";
             case 6:
                 return "Desert";
-            case 8:
-                return "Morytania";
             case 7:
                 return "Misthalin";
+            case 8:
+                return "Morytania";
             case 9:
                 return "Tirannwn";
             case 10:
