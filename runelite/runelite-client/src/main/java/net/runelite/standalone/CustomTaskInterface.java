@@ -1,13 +1,12 @@
 package net.runelite.standalone;
 
-import net.runelite.api.widgets.JavaScriptCallback;
-
+import java.util.Arrays;
 import java.util.List;
 
 public class CustomTaskInterface {
     private static final int EASY_SPRITE = 2316, MEDIUM_SPRITE = 2317, HARD_SPRITE = 2318, ELITE_SPRITE = 2319, MASTER_SPRITE = 2320;
 
-    public static void init(List<String> tasks, List<Integer> pointsList, List<Integer> completeList, List<Integer> areas) {
+    public static void init(List<String> tasks, List<Integer> pointsList, List<Integer> completeList, List<Integer> areas, int playerPoints, int areaFilter, int skillFilter, int tierFilter, int completedFilter, int sortBy) {
         Widget infoX = Canvas.get(522, 17);
         if (infoX != null)
             infoX.onClick = null;
@@ -43,13 +42,14 @@ public class CustomTaskInterface {
         WorldMapSectionType.method116(progressBarDivider);
         ViewportMouse.client.revalidateWidget(progressBarDivider);
 
-        filterChildId = addProgressBar(filterParent, filterChildId);
+        filterChildId = addProgressBar(filterParent, filterChildId, playerPoints);
         filterChildId = addSearchButton(filterParent, filterChildId);
 
-        filterChildId = addFilterElement(filterParent, filterChildId, "Area:", 50);
-        filterChildId = addFilterElement(filterParent, filterChildId, "Tier:", 90);
-        filterChildId = addFilterElement(filterParent, filterChildId, "Skill:", 130);
-        filterChildId = addFilterElement(filterParent, filterChildId, "Sort by:", 170);
+        filterChildId = addFilterElement(filterParent, filterChildId, "Region:", 50, getAreaFilterText(areaFilter));
+        filterChildId = addFilterElement(filterParent, filterChildId, "Skill:", 90, getSkillFilterText(skillFilter));
+        filterChildId = addFilterElement(filterParent, filterChildId, "Tier:", 130, getTierFilterText(tierFilter));
+        filterChildId = addFilterElement(filterParent, filterChildId, "Completed:", 170, getCompletedFilterText(completedFilter));
+        filterChildId = addFilterElement(filterParent, filterChildId, "Sort by:", 210, getSortText(sortBy));
 
         int childId = 0;
         int xOffset = 82;
@@ -132,11 +132,29 @@ public class CustomTaskInterface {
             ViewportMouse.client.revalidateWidget(sprite);
         }
 
+        Widget areaParent = Canvas.getWidget(383 << 16 | 5);
+        areaParent.isHidden = true;
+        int areaChildren = drawPopup(areaParent, Arrays.asList("All", "General", "Asgarnia", "Fremennik", "Kandarin", "Karamja", "Desert", "Misthalin", "Morytania", "Tirannwn", "Wilderness", "Zeah"), 54);
+
+        Widget skillParent = Canvas.getWidget(383 << 16 | 6);
+        skillParent.isHidden = true;
+        int skillChildren = drawPopup(skillParent, Arrays.asList("All", "Combat", "Fishing", "Woodcutting", "Construction"), 94);
+
+        Widget tierParent = Canvas.getWidget(383 << 16 | 7);
+        tierParent.isHidden = true;
+        int tierChildren = drawPopup(tierParent, Arrays.asList("All", "Easy", "Medium", "Hard", "Elite", "Master"), 134);
+
+        Widget completedParent = Canvas.getWidget(383 << 16 | 8);
+        completedParent.isHidden = true;
+        int completedChildren = drawPopup(completedParent, Arrays.asList("All", "Completed", "Uncompleted"), 174);
+
+        Widget sortParent = Canvas.getWidget(383 << 16 | 9);
+        sortParent.isHidden = true;
+        int sortChildren = drawPopup(sortParent, Arrays.asList("Region", "Tier", "Name"), 214);
+
         /**
          * Scrolling
          */
-       // parent.rawY = parent.rawY + 30;
-        //parent.height = parent.height - 30;
         parent.scrollY = 0;
         parent.scrollHeight = Math.max(parent.rawHeight, tasks.size() * 25);
         final ScriptEvent scriptevent_0 = new ScriptEvent();
@@ -148,6 +166,11 @@ public class CustomTaskInterface {
          */
         CustomInterfaceEdits.unlock(parent.id, 0, childId, 0);
         CustomInterfaceEdits.unlock(filterParent.id, 12, filterChildId, 0);
+        CustomInterfaceEdits.unlock(areaParent.id, 0, areaChildren, 0);
+        CustomInterfaceEdits.unlock(tierParent.id, 0, tierChildren, 0);
+        CustomInterfaceEdits.unlock(skillParent.id, 0, skillChildren, 0);
+        CustomInterfaceEdits.unlock(completedParent.id, 0, completedChildren, 0);
+        CustomInterfaceEdits.unlock(sortParent.id, 0, sortChildren, 0);
 
         /**
          * Refresh
@@ -156,7 +179,63 @@ public class CustomTaskInterface {
         ViewportMouse.client.revalidateWidget(parent);
     }
 
-    private static int addFilterElement(Widget filterParent, int filterChildId, String name, int y) {
+    private static int drawPopup(Widget popupParent, List<String> elements, int originY) {
+        int childId = 0;
+        Widget border = Widget.addChild(popupParent.id, 3, childId++);
+        border.rawX = 5;
+        border.rawY = originY + 16;
+        border.rawWidth = 80;
+        border.rawHeight = (elements.size() * 18) + 4;
+        border.color = 0;
+        border.color2 = 0;
+        border.fill = true;
+        WorldMapSectionType.method116(border);
+        ViewportMouse.client.revalidateWidget(border);
+
+        Widget background = Widget.addChild(popupParent.id, 5, childId++);
+        background.rawX = 7;
+        background.rawY = originY + 18;
+        background.rawWidth = 76;
+        background.rawHeight = elements.size() * 18;
+        background.spriteId2 = 297;
+        background.fill = true;
+        WorldMapSectionType.method116(background);
+        ViewportMouse.client.revalidateWidget(background);
+
+        int child = 0;
+        for (String name : elements) {
+            Widget text = Widget.addChild(popupParent.id, 4, childId++);
+            text.rawX = 8;
+            text.rawY = background.rawY + (child * 18);
+            text.rawWidth = 76;
+            text.rawHeight = 20;
+            text.fontId = 494;
+            text.textShadowed = true;
+            text.color = 16750623;
+            text.text = name;
+            text.textXAlignment = 0;
+            text.textYAlignment = 1;
+            WorldMapSectionType.method116(text);
+            ViewportMouse.client.revalidateWidget(text);
+
+            Widget clickbox = Widget.addChild(popupParent.id, 5, childId++);
+            clickbox.rawX = 8;
+            clickbox.rawY = background.rawY + (child * 18);
+            clickbox.rawWidth = 80;
+            clickbox.rawHeight = 20;
+            clickbox.hasListener = true;
+            clickbox.clickMask = 0;
+            clickbox.noClickThrough = true;
+            clickbox.setAction(0, "Filter by");
+            clickbox.dataText = name;
+            WorldMapSectionType.method116(clickbox);
+            ViewportMouse.client.revalidateWidget(clickbox);
+            ++child;
+        }
+        return childId;
+    }
+
+    private static int addFilterElement(Widget filterParent, int filterChildId, String name, int y, String currentSelection) {
         int x = 5;
         Widget areaFilterLabel = Widget.addChild(filterParent.id, 4, filterChildId++);
         areaFilterLabel.rawX = x + 5;
@@ -200,7 +279,7 @@ public class CustomTaskInterface {
         areaFilterText.fontId = 495;
         areaFilterText.textShadowed = true;
         areaFilterText.color = 14069891;
-        areaFilterText.text = "All";
+        areaFilterText.text = currentSelection;
         areaFilterText.textXAlignment = 1;  // Center text
         WorldMapSectionType.method116(areaFilterText);
         ViewportMouse.client.revalidateWidget(areaFilterText);
@@ -219,7 +298,7 @@ public class CustomTaskInterface {
         return filterChildId;
     }
 
-    private static int addProgressBar(Widget filterParent, int filterChildId) {
+    private static int addProgressBar(Widget filterParent, int filterChildId, int points) {
         Widget progressBarBackground = Widget.addChild(filterParent.id, 3, filterChildId++);
         progressBarBackground.rawX = 9;
         progressBarBackground.rawY = 8;
@@ -234,7 +313,7 @@ public class CustomTaskInterface {
         Widget progressBarFill = Widget.addChild(filterParent.id, 3, filterChildId++);
         progressBarFill.rawX = 9;
         progressBarFill.rawY = 8;
-        progressBarFill.rawWidth = 300;
+        progressBarFill.rawWidth = getProgressWidth(points, 410);
         progressBarFill.rawHeight = 18;
         progressBarFill.color = 3452858;
         progressBarFill.color2 = 3452858;
@@ -285,7 +364,7 @@ public class CustomTaskInterface {
         progressBarText.fontId = 495;
         progressBarText.textShadowed = true;
         progressBarText.color = 16777215;
-        progressBarText.text = "35 / 100 until next Relic";
+        progressBarText.text = getProgressString(points);
         progressBarText.textXAlignment = 1;  // Center text
         progressBarText.textYAlignment = 1;  // Center text
         WorldMapSectionType.method116(progressBarText);
@@ -312,7 +391,6 @@ public class CustomTaskInterface {
         background.rawHeight = 30;
         background.spriteId2 = 297;
         background.fill = true;
-        background.clickMask = 0;
         WorldMapSectionType.method116(background);
         ViewportMouse.client.revalidateWidget(background);
 
@@ -419,6 +497,40 @@ public class CustomTaskInterface {
         return filterChildId;
     }
 
+    public static final int[] tierRequirements = {
+            15000,
+            7500,
+            4000,
+            2000,
+            500,
+            0
+    };
+
+    private static String getProgressString(int points) {
+        for (int index = 0; index < tierRequirements.length; index++) {
+            if (points > tierRequirements[index]) {
+                if (index == 0) {
+                    return points + " Points";
+                }
+                return points + " / " + tierRequirements[index - 1] + " Points until next Relic";
+            }
+        }
+        return points + " Points";
+    }
+
+    private static int getProgressWidth(int points, int maxWidth) {
+        for (int index = 0; index < tierRequirements.length; index++) {
+            if (points > tierRequirements[index]) {
+                if (index == 0) {
+                    return maxWidth;
+                }
+                points -= tierRequirements[index];
+                return (int) (maxWidth * ((double) points / (double) (tierRequirements[index-1] - tierRequirements[index])));
+            }
+        }
+        return 0;
+    }
+
     private static String getDifficultyName(int points) {
         switch (points) {
             default:
@@ -454,25 +566,108 @@ public class CustomTaskInterface {
             default:
                 return "General/Multiple Regions";
             case 1:
-                return "Misthalin";
-            case 2:
-                return "Karamja";
-            case 3:
                 return "Asgarnia";
-            case 4:
+            case 2:
                 return "Fremennik Provinces";
-            case 5:
+            case 3:
                 return "Kandarin";
-            case 6:
+            case 4:
+                return "Karamja";
+            case 5:
                 return "Kharidian Desert";
-            case 7:
+            case 6:
                 return "Morytania";
+            case 7:
+                return "Misthalin";
             case 8:
                 return "Tirannwn";
             case 9:
                 return "Wilderness";
             case 10:
                 return "Zeah";
+        }
+    }
+
+    private static String getAreaFilterText(Integer index) {
+        switch (index) {
+            default:
+                return "All";
+            case 1:
+                return "General";
+            case 2:
+                return "Asgarnia";
+            case 3:
+                return "Fremennik";
+            case 4:
+                return "Kandarin";
+            case 5:
+                return "Karamja";
+            case 6:
+                return "Desert";
+            case 8:
+                return "Morytania";
+            case 7:
+                return "Misthalin";
+            case 9:
+                return "Tirannwn";
+            case 10:
+                return "Wilderness";
+            case 11:
+                return "Zeah";
+        }
+    }
+
+    private static String getSkillFilterText(Integer index) {
+        switch (index) {
+            default:
+                return "All";
+            case 1:
+                return "Combat";
+            case 5:
+                return "Fishing";
+            case 2:
+                return "Woodcutting";
+            case 3:
+                return "Construction";
+        }
+    }
+
+    private static String getTierFilterText(int index) {
+        switch (index) {
+            default:
+                return "All";
+            case 1:
+                return "Easy";
+            case 2:
+                return "Medium";
+            case 3:
+                return "Hard";
+            case 4:
+                return "Elite";
+            case 5:
+                return "Master";
+        }
+    }
+
+    private static String getCompletedFilterText(int index) {
+        switch (index) {
+            default:
+                return "All";
+            case 1:
+                return "Completed";
+            case 2:
+                return "Uncompleted";
+        }
+    }
+
+    private static String getSortText(int index) {
+        switch (index) {
+            default:
+                return "Region";
+            case 1:
+                return "Tier";
+            case 2:
+                return "Name";
         }
     }
 
