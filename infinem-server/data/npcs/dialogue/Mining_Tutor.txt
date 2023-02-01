@@ -6,7 +6,7 @@ Mining tutor: If you want to know what ore's in a rock before you mine it, right
 Mining tutor: You can also tell the ore you'll get from the colour of the rock.
 Mining tutor: To mine, simply click on the rock to mine it, while you've got a pickaxe with you.
 Mining tutor: When you have a full inventory, take it to the bank. There's a bank in the courtyard of the castle in Lumbridge.
-ITEMDIALOGUE:5080:Look for this symbol on your minimap to find a bank.
+ITEMDIALOGUE:5080:Look for this symbol on your map to find a bank.
 FIRSTOPTIONS:
 ><I already know about the basics of mining, got any tips?
 Player: I already know about the basics of mining, got any tips?
