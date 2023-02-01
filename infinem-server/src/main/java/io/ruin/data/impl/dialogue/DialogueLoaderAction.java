@@ -73,7 +73,17 @@ public enum DialogueLoaderAction {
             //npc.attackTargetPlayer();
         }
     }),
-    HEAL((player) -> player.getStats().get(StatType.Hitpoints).restore()),
+    HEAL((player) -> {
+        player.getStats().get(StatType.Hitpoints).restore();
+        NPC npc = player.getDialogueNPC();
+        if (npc != null) {
+            npc.faceTemp(player);
+            player.dialogue(new NPCDialogue(npc, "There you go, you should be all set. Stay safe out there."));
+            npc.animate(1161);
+        }
+        player.graphics(436, 48, 0);
+        player.privateSound(958);
+    }),
     ITEMDIALOGUE(null),     // Opens an item dialogue with supplied itemId and message
     TWOITEMDIALOGUE(null),  // Opens a two item dialogue with supplied itemIds and message
     LASTOPTIONS(null),  // Reopens the last option dialogue
