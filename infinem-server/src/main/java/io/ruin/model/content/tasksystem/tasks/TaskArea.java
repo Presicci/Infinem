@@ -6,12 +6,12 @@ package io.ruin.model.content.tasksystem.tasks;
  */
 public enum TaskArea {
      GENERAL("General/Multiple Regions"),
-     MISTHALIN,
-     KARAMJA,
      ASGARNIA,
      FREMENNIK("Fremennik Provinces"),
      KANDARIN,
+     KARAMJA,
      DESERT("Kharidian Desert"),
+     MISTHALIN,
      MORYTANIA,
      TIRANNWN,
      WILDERNESS,
