@@ -39,7 +39,7 @@ Player: Is that all?
 LASTOPTIONS:
 ><Harpoon Fish
 ITEMDIALOGUE:311:Arrr, you can also use your harpoon from the pier on the island of Karamja.
-ITEMDIALOGUE:371:With it you can catch Tuna and Swordfish.
+TWOITEMDIALOGUE:359:371:With it you can catch Tuna and Swordfish.
 ITEMDIALOGUE:383:... and shark.
 Fishing tutor: Ahoy, there's also the fishin' guild if ya skilled enough, you can find it south west of Seers' Village.
 LASTOPTIONS:
