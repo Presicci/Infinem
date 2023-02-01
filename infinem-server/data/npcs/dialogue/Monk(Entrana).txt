@@ -2,7 +2,6 @@
 Monk: Greetings traveller.
 <Can you heal me? I'm injured.
 Player: Can you heal me? I'm injured.
-Monk: Ok.
 HEAL:
 ><Isn't this place built a bit out of the way?
 Player: Isn't this place built a bit out of the way?
