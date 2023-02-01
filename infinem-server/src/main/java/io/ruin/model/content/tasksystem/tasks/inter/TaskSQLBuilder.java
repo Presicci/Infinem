@@ -15,7 +15,7 @@ public class TaskSQLBuilder {
     public static final String DIFFICULTY_FIELD = "FIELD(difficulty, 'Easy', 'Medium', 'Hard', 'Elite', 'Master')";
 
     public static String getSelectQuery(Player player, String search) {
-        if (search.equalsIgnoreCase(""))
+        if (search == null || search.trim().isEmpty())
             return getSortQuery(player);
         System.out.println(getSearch(player, search));
         return getSearch(player, search);
@@ -40,7 +40,7 @@ public class TaskSQLBuilder {
      * @return ORDER BY string
      */
     private static String getOrder(Player player) {
-        int sort = Config.LEAGUE_SORT.get(player);
+        int sort = player.getTaskManager().getSortBy();
         String order = sort == 0 ? REGION_FIELD + "," + DIFFICULTY_FIELD
                 : sort == 1 ? DIFFICULTY_FIELD + "," + REGION_FIELD + ",name"
                 : "name," + REGION_FIELD + "," + DIFFICULTY_FIELD;
@@ -58,17 +58,18 @@ public class TaskSQLBuilder {
      * @return Filter string that should follow WHERE/OR
      */
     private static String getFilters(Player player) {
-        int tier = Config.LEAGUE_TIER_FILTER.get(player);
+        int tier = player.getTaskManager().getTierFilter();
         String tierString = tier == 0 ? "" : "difficulty = '" + TaskDifficulty.values()[tier - 1].name() + "' ";
-        int area = Config.LEAGUE_AREA_FILTER.get(player);
+        int area = player.getTaskManager().getRegionFilter();
         String areaString = area == 0 ? "" : "region = '" + TaskArea.values()[area - 1].toString() + "' ";
+        int skill = player.getTaskManager().getSkillFilter(); // TODO process this
         String filterString = "";
         if (!tierString.trim().isEmpty()) {
             filterString = filterString + tierString;
         }
         if (!areaString.trim().isEmpty()) {
             if (!filterString.trim().isEmpty())
-                filterString += "OR ";
+                filterString += "AND ";
             filterString = filterString + areaString;
         }
         return filterString;
