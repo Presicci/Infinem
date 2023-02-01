@@ -1,0 +1,31 @@
+921
+Father Aereck: Welcome to the church of holy Saradomin.
+<Who's Saradomin?
+Player: Who's Saradomin?
+Father Aereck: Surely you have heard of the god, Saradomin?
+Father Aereck: He who creates the forces of goodness and purity in this world? I cannot believe your ignorance!
+Father Aereck: This is the god with more followers than any other! ...At least in this part of the world.
+Father Aereck: He who created this world along with his brothers Guthix and Zamorak?
+<Oh, THAT Saradomin...
+Player: Oh, THAT Saradomin...
+Father Aereck: There... is only one Saradomin...
+Player: Yeah... I, uh, thought you said something else.
+><Oh, sorry. I'm not from this world.
+Player: Oh, sorry. I'm not from this world.
+Father Aereck: ...
+Father Aereck: That's... strange.
+Father Aereck: I thought things not from this world were all... You know. Slime and tentacles.
+<You don't understand. This is an online game!
+Player: You don't understand. This is an online game!
+Father Aereck: I... beg your pardon?
+Player: Never mind.
+><I am - do you like my disguise?
+Player: I am - do you like my disguise?
+Father Aereck: Aargh! Avaunt foul creature from another dimension! Avaunt! Begone in the name of Saradomin!
+Player: Ok, ok, I was only joking...
+>
+>
+><Nice place you've got here.
+Player: Nice place you've got here.
+Father Aereck: It is, isn't it? It was built over 230 years ago.
+>
