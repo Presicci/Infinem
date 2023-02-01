@@ -1,0 +1,18 @@
+3352
+Player: Hi!
+Hamid: Hello traveller. How can I be of assistance?
+<Can you heal me?
+Player: Can you heal me?
+Hamid: You'd be better off speaking to one of the nurses.
+Hamid: They are so... nice... afterall!
+><What's a Monk doing in a place such as this?
+Player: What's a Monk doing in a place such as this?
+Hamid: Well don't tell anyone but I came here because of the nurses!
+Player: Really?
+Hamid: It beats being stuck in the monastery!
+><Which monastery do you come from?
+Player: Which monastery do you come from?
+Hamid: I belong to the monastery north of Falador.
+Player: You're a long way from home?
+Hamid: Yeh. I miss the guys.
+>
