@@ -17,9 +17,9 @@ import java.util.List;
 @Slf4j
 public class DialogueParser {
     private int lineNumber;
-    private NPCDef npcDef;
-    private List<String> dialogueLines;
-    private DialogueParserSettings settings;
+    private final NPCDef npcDef;
+    private final List<String> dialogueLines;
+    private final DialogueParserSettings settings;
 
     public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber, DialogueParserSettings settings) {
         this.npcDef = npcDef;
