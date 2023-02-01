@@ -1,12 +1,10 @@
 package io.ruin.data.impl.dialogue;
 
+import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.dialogue.ItemDialogue;
-import io.ruin.model.inter.dialogue.NPCDialogue;
-import io.ruin.model.inter.dialogue.OptionsDialogue;
-import io.ruin.model.inter.dialogue.PlayerDialogue;
+import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Items;
 import io.ruin.model.stat.StatType;
@@ -43,6 +41,25 @@ public enum DialogueLoaderAction {
                         })
                 )
         );
+    })),
+    FISHING_HELP((player -> {
+        int fishingLevel = player.getStats().get(StatType.Fishing).fixedLevel;
+        int dialogueSize = NPCDef.get(3221).optionDialogues.size();
+        Dialogue dialogue = NPCDef.get(3221).optionDialogues.get(dialogueSize - 1);
+        if (fishingLevel > 50)
+            player.dialogue(new NPCDialogue(3221, "Tuna and Swordfish can be harpooned - if you're good enough - from the thrivin' fishing village of Catherby, or if you can get in try the Fishin' Guild. Level 35 for Tuna and 50 for Swordfish."), dialogue);
+        else if (fishingLevel > 46)
+            player.dialogue(new NPCDialogue(3221, "Bass can be caught at level 46 in your big net if you wander along to Catherby."), dialogue);
+        else if (fishingLevel > 38)
+            player.dialogue(new NPCDialogue(3221, "You can use your fishin' rod and some bait to catch Cave Eel in the caves below Lumbridge Swamp at level 38."), dialogue);
+        else if (fishingLevel > 28)
+            player.dialogue(new NPCDialogue(3221, "You can use your fishin' rod and some bait to catch Slimy Eel in the swamps at level 28."), dialogue);
+        else if (fishingLevel > 23)
+            player.dialogue(new NPCDialogue(3221, "Cod can be fished from Catherby and some other places once you reach level 23."), dialogue);
+        else if (fishingLevel > 16)
+            player.dialogue(new NPCDialogue(3221, "You can use a big net to catch Mackerel from Catherby when you reach level 16."), dialogue);
+        else if (fishingLevel > 10)
+            player.dialogue(new NPCDialogue(3221, "Herrin' can be fished from Catherby and some other places when you reach level 10."), dialogue);
     })),
     ATTACK((player) -> {
         NPC npc = player.getDialogueNPC();
