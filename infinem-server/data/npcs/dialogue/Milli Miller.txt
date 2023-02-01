@@ -1,0 +1,43 @@
+4627
+Millie Miller: Hello Adventurer. Welcome to Mill Lane Mill. Can I help you?
+<Who are you?
+Player: Who are you?
+Millie Miller: I'm Miss Millicent Miller the Miller of Mill Lane Mill. Our family have been milling flour for generations.
+Player: It's a good business to be in. People will always need flour.
+Player: How do I mill flour?
+Millie Miller: Making flour is pretty easy. First of all you need to get some grain. You can pick some from wheat fields. There is one just outside the Mill, but there are many others scattered across Gielinor. Feel free to pick wheat
+Millie Miller: from our field! There always seems to be plenty of wheat there.
+Player: Then I bring my wheat here?
+Millie Miller: Yes, or one of the other mills in Gielinor. They all work the same way. Just take your grain to the top floor of the mill (up two ladders, there are three floors including this one) and then place some grain into the hopper.
+Millie Miller: Then you need to start the grinding process by pulling the hopper lever. You can add more grain, but each time you add grain you have to pull the hopper lever again.
+Player: So where does the flour go then?
+Millie Miller: The flour appears in this room here, you'll need a pot to put the flour into. One pot will hold the flour made by one load of grain
+Millie Miller: And that's it! You now have some pots of finely ground flour of the highest quality. Ideal for making tasty cakes or delicous bread. I'm not a cook so you'll have to ask a cook to find out how to bake things.
+Player: Great! Thanks for your help.
+><What is this place?
+Player: What is this place?
+Millie Miller: This is Mill Lane Mill. Millers of the finest flour in Gielinor, and home to the Miller family for many generations
+Millie Miller: We take grain from the field nearby and mill into flour.
+Player: How do I mill flour?
+Millie Miller: Making flour is pretty easy. First of all you need to get some grain. You can pick some from wheat fields. There is one just outside the Mill, but there are many others scattered across Gielinor. Feel free to pick wheat
+Millie Miller: from our field! There always seems to be plenty of wheat there.
+Player: Then I bring my wheat here?
+Millie Miller: Yes, or one of the other mills in Gielinor. They all work the same way. Just take your grain to the top floor of the mill (up two ladders, there are three floors including this one) and then place some grain into the hopper.
+Millie Miller: Then you need to start the grinding process by pulling the hopper lever. You can add more grain, but each time you add grain you have to pull the hopper lever again.
+Player: So where does the flour go then?
+Millie Miller: The flour appears in this room here, you'll need a pot to put the flour into. One pot will hold the flour made by one load of grain
+Millie Miller: And that's it! You now have some pots of finely ground flour of the highest quality. Ideal for making tasty cakes or delicous bread. I'm not a cook so you'll have to ask a cook to find out how to bake things.
+Player: Great! Thanks for your help.
+><How do I mill flour?
+Player: How do I mill flour?
+Millie Miller: Making flour is pretty easy. First of all you need to get some grain. You can pick some from wheat fields. There is one just outside the Mill, but there are many others scattered across Gielinor. Feel free to pick wheat
+Millie Miller: from our field! There always seems to be plenty of wheat there.
+Player: Then I bring my wheat here?
+Millie Miller: Yes, or one of the other mills in Gielinor. They all work the same way. Just take your grain to the top floor of the mill (up two ladders, there are three floors including this one) and then place some grain into the hopper.
+Millie Miller: Then you need to start the grinding process by pulling the hopper lever. You can add more grain, but each time you add grain you have to pull the hopper lever again.
+Player: So where does the flour go then?
+Millie Miller: The flour appears in this room here, you'll need a pot to put the flour into. One pot will hold the flour made by one load of grain
+Millie Miller: And that's it! You now have some pots of finely ground flour of the highest quality. Ideal for making tasty cakes or delicous bread. I'm not a cook so you'll have to ask a cook to find out how to bake things.
+Player: Great! Thanks for your help.
+><I'm fine, thanks.
+Player: I'm fine, thanks.
