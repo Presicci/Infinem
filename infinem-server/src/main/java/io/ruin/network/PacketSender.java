@@ -750,7 +750,7 @@ public class PacketSender {
         write(out);
     }
 
-    public void sendTaskInterface(List<String> tasks, List<Integer> points, List<Boolean> completeTasks, List<Integer> areas) {
+    public void sendTaskInterface(List<String> tasks, List<Integer> points, List<Boolean> completeTasks, List<Integer> areas, int playerPoints, int areaFilter, int skillFilter, int tierFilter, int completedFilter, int sortBy) {
         OutBuffer out = new OutBuffer(255).sendVarShortPacket(92).addShort(tasks.size());
         for (String name : tasks) {
             out.addString(name);
@@ -764,7 +764,12 @@ public class PacketSender {
         for (Integer area : areas) {
             out.addByte(area);
         }
-        System.out.println(out.position());
+        out.addShort(playerPoints);
+        out.addByte(areaFilter);
+        out.addByte(skillFilter);
+        out.addByte(tierFilter);
+        out.addByte(completedFilter);
+        out.addByte(sortBy);
         write(out);
     }
 
