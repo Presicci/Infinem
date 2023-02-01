@@ -1,5 +1,7 @@
 package io.ruin.data.impl.dialogue;
 
+import io.ruin.model.entity.npc.NPC;
+import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
@@ -42,6 +44,18 @@ public enum DialogueLoaderAction {
                 )
         );
     })),
+    ATTACK((player) -> {
+        NPC npc = player.getDialogueNPC();
+        if (npc != null) {
+            NPCCombat npcCombat = npc.getCombat();
+            if (npcCombat == null) {
+                System.err.println("NPC:" + npc.getDef().name + " has ATTACK action in dialogue but no combat data.");
+                return;
+            }
+            npcCombat.setTarget(player);
+            //npc.attackTargetPlayer();
+        }
+    }),
     HEAL((player) -> player.getStats().get(StatType.Hitpoints).restore()),
     ITEM(null),  // Handled specifically in the loader
     SHOP(null),
