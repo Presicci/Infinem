@@ -1,0 +1,16 @@
+3344
+Player: Hi!
+Jaraah: What? Can't you see I'm busy?!
+<Can you heal me?
+Player: Can you heal me?
+HEAL:
+><You must see some gruesome things?
+Player: You must see some gruesome things?
+Jaraah: It's a gruesome business and with the tools they give me it gets more gruesome before it gets better!
+><Why do they call you 'The Butcher'?
+Player: Why do they call you 'The Butcher'?
+Jaraah: 'The Butcher'?
+Jaraah: Ha!
+Jaraah: Would you like me to demonstrate?
+Player: Er...I'll give it a miss, thanks.
+>
