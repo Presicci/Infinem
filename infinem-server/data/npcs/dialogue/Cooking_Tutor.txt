@@ -5,7 +5,7 @@ Cooking tutor: Fish can be caught, speak to the fishing tutor south of here in t
 ITEMDIALOGUE:5090:When you have a full inventory of meat or fish, find a range. Look for this icon on your minimap.
 Cooking tutor: You can use your own fire... but it's not as effective and you'll burn more. To build a fire use a tinderbox on logs.
 Cooking tutor: Once you've found your range, click on it. This will bring up a menu of the food you can cook.
-ITEMDIALOGUE:5080:When you have a full inventory of cooked food, drop the useless burnt food and find a bank. Look for this symbol on your minimap after climbing the stairs of the Lumbridge Castle to the top. There are numerous banks around the world, all marked with that symbol.
+ITEMDIALOGUE:5080:When you have a full inventory of cooked food, drop the useless burnt food and find a bank. Look for this symbol on your map to find a bank. There are numerous banks around the world, all marked with that symbol.
 FIRSTOPTIONS:
 ><I already know the basics of cooking. Got any tips?
 Player: I already know the basics of cooking. Got any tips?
