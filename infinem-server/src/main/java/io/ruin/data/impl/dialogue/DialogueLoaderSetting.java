@@ -10,10 +10,10 @@ import java.util.function.BiPredicate;
 @Getter
 public enum DialogueLoaderSetting {
     HASITEM((p, i) -> p.getInventory().hasId(i)),
+    HASEQUIPMENT((p, i) -> p.getEquipment().hasId(i)),
     HASTALKED((p, i) -> p.getSpokenToNPCSet().contains(i), (p, i) -> p.getSpokenToNPCSet().add(i)),
     HASPRAYERLEVEL((p, i) -> p.getStats().get(StatType.Prayer).currentLevel >= i),
     RAND;
-
     private final BiPredicate<Player, Integer> biPredicate;
     private final BiConsumer<Player, Integer> biConsumer;
 
