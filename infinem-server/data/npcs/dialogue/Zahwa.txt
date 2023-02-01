@@ -1,0 +1,26 @@
+RAND
+/Player: Hi!
+Zahwa: Hi!
+/Player: Hi!
+Zahwa: Ughhhh....
+/Player: Hi!
+Zahwa: I could've 'ad 'im!
+Player: Er...
+Zahwa: I was robbed!
+Player: Right.
+Zahwa: It was rigged I tell you!
+Player: Uh huh.
+Zahwa: Leave me alone!
+/Player: Are you alright?
+Zahwa: NURSE!
+/Player: Are you alright?
+Zahwa: Do I look alright?!
+/Player: Are you alright?
+Zahwa: Yeh. The nurses here are...wonderful!
+/Player: Are you alright?
+Zahwa: It's just a flesh wound!
+/Player: Are you alright?
+Zahwa: Can't....go....on!
+Zahwa: Leave me behind!
+Player: I'll leave you here, OK?
+Zahwa: Oh. OK.
