@@ -12,6 +12,8 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.MapArea;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -51,6 +53,12 @@ public class TaskManager {
     @Expose private HashSet<Integer> completedCategories;
     @Expose private HashSet<String> collectedItems;
 
+    public byte taskFilterDropdownOpen = 0;
+
+    public String searchString = "";
+
+    @Expose @Getter @Setter private byte regionFilter = 0, skillFilter = 0, tierFilter = 0, completedFilter = 0, sortBy = 0;
+
     private void completeTask(String taskName, int uuid, TaskArea taskArea, TaskDifficulty taskDifficulty) {
         if (completeTasks.contains(uuid))
             return;
@@ -74,7 +82,7 @@ public class TaskManager {
         this.collectedItems = new HashSet<>();
     }
 
-    public void openTaskInterface(String searchString) {
+    public void openTaskInterface() {
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;
@@ -86,14 +94,19 @@ public class TaskManager {
                 statement = connection.prepareStatement(TaskSQLBuilder.getSelectQuery(player, searchString));
                 rs = statement.executeQuery();
                 while (rs.next()) {
+                    int uuid = rs.getInt("uuid");
+                    boolean completed = completeTasks.contains(uuid);
+                    if (completed && getCompletedFilter() == 2)
+                        continue;
+                    if (!completed && getCompletedFilter() == 1)
+                        continue;
                     String name = rs.getString("name");
                     String difficulty = rs.getString("difficulty");
-                    int uuid = rs.getInt("uuid");
                     String region = rs.getString("region");
                     tasks.add(name);
                     TaskDifficulty taskDifficulty = TaskDifficulty.getTaskDifficulty(difficulty);
                     points.add(taskDifficulty == null ? 0 : taskDifficulty.ordinal());
-                    completedTasks.add(completeTasks.contains(uuid));
+                    completedTasks.add(completed);
                     TaskArea taskArea = TaskArea.getTaskArea(region);
                     areas.add(taskArea == null ? 0 : taskArea.ordinal());
                 }
@@ -101,7 +114,7 @@ public class TaskManager {
                 DatabaseUtils.close(statement, rs);
                 player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
                     player.openInterface(InterfaceType.MAIN, 383);
-                    player.getPacketSender().sendTaskInterface(tasks, points, completedTasks, areas);
+                    player.getPacketSender().sendTaskInterface(tasks, points, completedTasks, areas, globalTaskPoints, getRegionFilter(), getSkillFilter(), getTierFilter(), getCompletedFilter(), getSortBy());
                 });
             }
         });
