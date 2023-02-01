@@ -21,7 +21,7 @@ public class Nurse {
 
         if(npc != null) {
             npc.faceTemp(player);
-            npc.animate(881);
+            npc.animate(1161);
             player.dialogue(new NPCDialogue(npc, "There you go, you should be all set. Stay safe out there now."));
         }
         player.graphics(436, 48, 0);
