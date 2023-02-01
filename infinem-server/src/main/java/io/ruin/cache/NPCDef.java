@@ -349,6 +349,9 @@ public class NPCDef {
             walkBackAnimation = var1.readUnsignedShort();
             walkLeftAnimation = var1.readUnsignedShort();
             walkRightAnimation = var1.readUnsignedShort();
+        }
+        else if (var2 == 18) {
+            var1.readUnsignedShort();
         } else if(var2 >= 30 && var2 < 35) {
             options[var2 - 30] = var1.readString();
             if(options[var2 - 30].equalsIgnoreCase("Hidden"))
