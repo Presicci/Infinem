@@ -121,6 +121,10 @@ public class DialogueParser {
                 settings.setConsumerLine(true);
             }
         }
+        if (line.trim().isEmpty()) {
+            //lineNumber++;
+            //return parseLine(dialogue);
+        }
         if (line.startsWith("<")) {
             return parseOptions(line, dialogue);
         }
@@ -264,8 +268,13 @@ public class DialogueParser {
             if (lineNumber >= dialogue.size())
                 break;
             line = dialogue.get(lineNumber);
-            if (line.startsWith(">"))
+            if (line.startsWith(">")) {
                 line = line.substring(1);
+                if (line.trim().isEmpty() && dialogue.size() > lineNumber + 1 && dialogue.get(lineNumber + 1).startsWith("<")) {
+                    line = dialogue.get(++lineNumber);
+                }
+            }
+
         }
         Dialogue finalDialogue = new OptionsDialogue(options);
         if (recordDialogueLoop) {
