@@ -35,7 +35,7 @@ Man: I think we need a new king. The one we've got isn't very good.
 Man: Not too bad thanks.
 /Player: Hello, how's it going?
 Man: Are you asking for a fight?
-Man: ATTACKS
+ATTACK:
 /Player: Hello, how's it going?
 Man: I'm busy right now.
 /Player: Hello, how's it going?
