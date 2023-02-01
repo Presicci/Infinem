@@ -31,7 +31,10 @@ public class Nurses {
     }
 
     static {
-        NPCAction.register(3343, "heal", Nurses::heal);
+        NPCAction.register(3343, "heal", Nurses::heal); // Master surgeon tafani
+        NPCAction.register(3342, "heal", Nurses::heal); // Sabreen
+        NPCAction.register(3341, "heal", Nurses::heal); // A'abla
+        NPCAction.register(3344, "heal", Nurses::heal); // Jaraah
     }
 
 }
