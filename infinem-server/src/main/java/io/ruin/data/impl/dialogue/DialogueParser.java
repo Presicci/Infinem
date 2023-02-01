@@ -156,6 +156,22 @@ public class DialogueParser {
                     }
                     return new ItemDialogue().one(itemId, lineSegments[2]);
                 }
+                if (action == DialogueLoaderAction.TWOITEMDIALOGUE) {
+                    String[] lineSegments = line.split(":");
+                    if (lineSegments.length < 4) {
+                        error("improper syntax for TWOITEMDIALOGUE (TWOITEMDIALOGUE:ITEMID:ITEMID:MESSAGE)", dialogue);
+                        return new MessageDialogue("");
+                    }
+                    int itemId = -1;
+                    int itemId2 = -1;
+                    try {
+                        itemId = Integer.parseInt(lineSegments[1]);
+                        itemId2 = Integer.parseInt(lineSegments[2]);
+                    } catch (NumberFormatException ignored) {
+                        error("missing itemId for ITEMDIALOGUE action", dialogue);
+                    }
+                    return new ItemDialogue().two(itemId, itemId2, lineSegments[3]);
+                }
                 if (action == DialogueLoaderAction.LASTOPTIONS) {
                     recordDialogueLoop = true;
                     int index = npcDef.optionDialogues == null ? 0 : npcDef.optionDialogues.size() - 1;

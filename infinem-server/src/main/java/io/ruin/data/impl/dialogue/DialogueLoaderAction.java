@@ -74,7 +74,8 @@ public enum DialogueLoaderAction {
         }
     }),
     HEAL((player) -> player.getStats().get(StatType.Hitpoints).restore()),
-    ITEMDIALOGUE(null),
+    ITEMDIALOGUE(null),     // Opens an item dialogue with supplied itemId and message
+    TWOITEMDIALOGUE(null),  // Opens a two item dialogue with supplied itemIds and message
     LASTOPTIONS(null),  // Reopens the last option dialogue
     FIRSTOPTIONS(null), // Reopens the first option dialogue
     ITEM(null),         // Gives the player an item
