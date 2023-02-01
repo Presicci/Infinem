@@ -142,10 +142,35 @@ public class DialogueParser {
                         npcDef.shops.get(0).open(player);
                     });
                 }
+                if (action == DialogueLoaderAction.ITEMDIALOGUE) {
+                    String[] lineSegments = line.split(":");
+                    if (lineSegments.length < 3) {
+                        error("improper syntax for ITEMDIALOGUE (ITEMDIALOGUE:ITEMID:MESSAGE)", dialogue);
+                        return new MessageDialogue("");
+                    }
+                    int itemId = -1;
+                    try {
+                        itemId = Integer.parseInt(lineSegments[1]);
+                    } catch (NumberFormatException ignored) {
+                        error("missing itemId for ITEMDIALOGUE action", dialogue);
+                    }
+                    return new ItemDialogue().one(itemId, lineSegments[2]);
+                }
                 if (action == DialogueLoaderAction.LASTOPTIONS) {
                     recordDialogueLoop = true;
+                    int index = npcDef.optionDialogues == null ? 0 : npcDef.optionDialogues.size() - 1;
                     return new ActionDialogue((player) -> {
-                        Dialogue loop = npcDef.optionsDialogueLoop;
+                        Dialogue loop = npcDef.optionDialogues.get(index);
+                        if (loop != null)
+                            player.dialogue(loop);
+                    });
+                }
+                if (action == DialogueLoaderAction.FIRSTOPTIONS) {
+                    recordDialogueLoop = true;
+                    return new ActionDialogue((player) -> {
+                        if (npcDef.optionDialogues == null)
+                            return;
+                        Dialogue loop = npcDef.optionDialogues.get(npcDef.optionDialogues.size() - 1);
                         if (loop != null)
                             player.dialogue(loop);
                     });
@@ -227,8 +252,11 @@ public class DialogueParser {
                 line = line.substring(1);
         }
         Dialogue finalDialogue = new OptionsDialogue(options);
-        if (recordDialogueLoop)
-            npcDef.optionsDialogueLoop = finalDialogue;
+        if (recordDialogueLoop) {
+            if (npcDef.optionDialogues == null)
+                npcDef.optionDialogues = new ArrayList<>();
+            npcDef.optionDialogues.add(finalDialogue);
+        }
         return finalDialogue;
     }
 

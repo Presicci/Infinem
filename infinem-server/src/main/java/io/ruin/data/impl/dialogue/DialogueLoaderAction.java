@@ -57,7 +57,9 @@ public enum DialogueLoaderAction {
         }
     }),
     HEAL((player) -> player.getStats().get(StatType.Hitpoints).restore()),
+    ITEMDIALOGUE(null),
     LASTOPTIONS(null),  // Reopens the last option dialogue
+    FIRSTOPTIONS(null), // Reopens the first option dialogue
     ITEM(null),         // Gives the player an item
     SHOP(null),         // Opens the npcs shop
     ;
