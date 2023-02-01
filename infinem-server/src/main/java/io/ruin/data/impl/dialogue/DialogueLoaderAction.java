@@ -74,8 +74,14 @@ public enum DialogueLoaderAction {
         }
     }),
     HEAL((player) -> {
-        player.getStats().get(StatType.Hitpoints).restore();
         NPC npc = player.getDialogueNPC();
+        if (player.getStats().get(StatType.Hitpoints).currentLevel >= player.getStats().get(StatType.Hitpoints).fixedLevel) {
+            if (npc != null)
+                player.dialogue(new NPCDialogue(npc, "You look healthy to me!"));
+            return;
+        }
+        player.getStats().get(StatType.Hitpoints).restore();
+
         if (npc != null) {
             npc.faceTemp(player);
             player.dialogue(new NPCDialogue(npc, "There you go, you should be all set. Stay safe out there."));
