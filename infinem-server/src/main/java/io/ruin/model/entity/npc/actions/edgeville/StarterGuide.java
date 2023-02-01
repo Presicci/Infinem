@@ -1,9 +1,7 @@
 package io.ruin.model.entity.npc.actions.edgeville;
 
-import io.ruin.cache.Color;
 import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.Help;
-import io.ruin.data.impl.teleports;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -13,7 +11,6 @@ import io.ruin.model.entity.player.XpMode;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.entity.shared.listeners.LogoutListener;
-import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -22,6 +19,7 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.handlers.XpCounter;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.Direction;
 import io.ruin.model.stat.StatType;
 import io.ruin.network.central.CentralClient;
@@ -53,6 +51,7 @@ public class StarterGuide {
                 //player.getPacketSender().sendMessage("Latest Update: " + LatestUpdate.LATEST_UPDATE_TITLE + "|" + LatestUpdate.LATEST_UPDATE_URL, "", 14);
             }
 		});
+        ItemAction.registerInventory(757, "read", (player, item) -> Help.open(player));
 	}
 
     private static void optionsDialogue(Player player, NPC npc) {
