@@ -34,6 +34,7 @@ Ollie the Camel: If I could fly, I wouldn't want to do anything else! I'd just f
 >
 /<Ask the camel about its dung.
 Player: I'm sorry to bother you, but could you spare me a little dung?
+MESSAGE:The camel didn't seem to appreciate that question.
 ><Say something unpleasant.
 RAND
 (Player: If I go near that camel, it'll probably bite my hand off.
