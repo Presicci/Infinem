@@ -444,15 +444,6 @@
     "walkRange": 6
   },
   {
-    "name": "null",
-    "id": 6523,
-    "x": 3015,
-    "y": 3353,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
     "name": "White Knight",
     "id": 1798,
     "x": 2982,
