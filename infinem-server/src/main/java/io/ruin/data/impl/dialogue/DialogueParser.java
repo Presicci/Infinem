@@ -67,7 +67,6 @@ public class DialogueParser {
         String line = dialogue.get(lineNumber);
         for (DialogueLoaderSetting setting : DialogueLoaderSetting.values()) {
             if (line.startsWith(setting.name())) {
-                System.out.println(lineNumber + 1 + ": " + line);
                 int leftIndex = lineNumber + 1;
                 int rightIndex = dialogue.size();
                 for (int index = lineNumber; index < dialogue.size(); index++) {
