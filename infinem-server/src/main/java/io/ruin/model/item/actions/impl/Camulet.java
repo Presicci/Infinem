@@ -28,7 +28,7 @@ public class Camulet {
 
     private static void charge(Player player, Item dung) {
         int currentCharges = player.getCamuletCharges();
-        if (currentCharges >= 100) {
+        if (currentCharges >= MAX_CHARGES) {
             player.sendMessage("Your Camulet already has the maximum amount of charges.");
             return;
         }
@@ -37,7 +37,7 @@ public class Camulet {
             return;
         }
         dung.setId(Items.BUCKET);
-        player.setCamuletCharges(Math.min(100, currentCharges + 5));    // 5 per bucket
+        player.setCamuletCharges(Math.min(MAX_CHARGES, currentCharges + 5));    // 5 per bucket
         player.sendMessage("You add 5 charges to your Camulet. It now has " + player.getCamuletCharges() + " charges.");
     }
 
