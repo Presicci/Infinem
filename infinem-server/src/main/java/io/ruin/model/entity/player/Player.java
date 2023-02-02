@@ -553,6 +553,8 @@ public class Player extends PlayerAttributes {
     private void openDialogue(boolean closeInterfaces, Dialogue... dialogues) {
         if(closeInterfaces) //important to be true in almost every case to prevent dupes!
             closeInterfaces(true);
+        if (dialogues == null || dialogues.length == 0)
+            return;
         this.dialogueStage = 1;
         this.dialogues = dialogues;
         this.optionsDialogue = null;
