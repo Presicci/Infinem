@@ -1,0 +1,31 @@
+Mubariz: Welcome to the Duel Arena.
+<What is this place?
+Player: What is this place?
+Mubariz: The Duel Arena has four arenas and a boxing ring where you can fight other players in a controlled environment. Duels are available to free players and members.
+Mubariz: We have our own dedicated hospital where we guarantee to put you back together, even if you lose. In between the arenas are walkways where you can watch the fights and challenge other players.
+FIRSTOPTIONS:
+><How do I challenge someone to a duel?
+Player: How do I challenge someone to a duel?
+Mubariz: When you go to the arena, you'll go up an access ramp to the walkways that overlook the duels. From the walkways you can watch the fighting and challenge other players.
+Mubariz: You'll know you're in the right place as you'll have a 'Challenge' option when you right-click a player.
+Mubariz: There are two types of duels. There are 'Friendly' duels, in which you can duel against someone without staking anything, and there are 'Staked' duels, in which you can stake up to 50M coins.
+FIRSTOPTIONS:
+><What kind of options are there?
+Player: What kind of options are there?
+Mubariz: You and your opponent can offer coins as a stake. If you win, you receive what your opponent staked, but, if you lose, your opponent will get whatever coins you staked.
+Mubariz: You can choose to use rules to spice things up a bit. For instance, if you both agree to use the 'No Magic' rule, neither player can use Magic to attack. The fight will be restricted to Ranged and melee only.
+Mubariz: The rules are fairly self-evident, with lots of different combinations for you to try out!
+FIRSTOPTIONS:
+><This place looks really old. Where did it come from?
+Player: This place looks really old. Where did it come from?
+Mubariz: The archaeologists excavating the area east of Varrock have been working on this site as well. From these cliffs they uncovered this huge building. The experts think it may date back to the Second Age!
+Mubariz: Now that the archaeologists have moved out, a group of warriors, headed by myself, bought the land and converted it into the Duel Arena. The best fighters from around the world come here to fight!
+<I challenge you!
+Player: I challenge you!
+Mubariz: Ho, ho, ho!
+><Tell me about...
+FIRSTOPTIONS:
+>
+><Goodbye.
+Mubariz: May you duel with honour!
+>
