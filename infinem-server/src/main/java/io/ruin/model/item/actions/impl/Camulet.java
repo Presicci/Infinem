@@ -1,11 +1,6 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.model.entity.player.Player;
-<<<<<<< HEAD
-=======
-import io.ruin.model.inter.dialogue.OptionsDialogue;
-import io.ruin.model.inter.utils.Option;
->>>>>>> origin/master
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
