@@ -109473,6 +109473,14 @@
     "prayer_bonus": 3,
     "hide_hair": true
   },
+  { #Cat ears
+    "id": 24525,
+    "tradeable": false,
+    "examine": "Meeeooow.",
+    "weight": 0.09,
+	"protect_value": 2,
+    "equip_slot": 0
+  },
   { # Vyre coin pouch
     "id": 24703,
     "tradeable": false,
