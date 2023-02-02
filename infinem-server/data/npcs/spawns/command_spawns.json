@@ -726,5 +726,14 @@
 		"z": 0,
 		"direction": "S",
 		"walkRange": 0
+	},
+	{
+		"name": "Sphinx",
+		"id": 2637,
+		"x": 3297,
+		"y": 2781,
+		"z": 0,
+		"direction": "N",
+		"walkRange": 0
 	}
 ]
