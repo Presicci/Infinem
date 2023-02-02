@@ -1,0 +1,55 @@
+RAND
+/Player: Hi!
+Sabeil: Well. This beats doing the shopping!
+/Player: Hi!
+Sabeil: I wouldn't want to be the poor guy that has to clean up after the duels.
+Player: Me neither.
+/Player: Hi!
+Sabeil: Hi!
+/Player: Hi!
+Sabeil: What did the skeleton say before it ate?
+Player: I don't know?
+Sabeil: Bone-appetit.
+/Player: Hi!
+Sabeil: Ooh. This is exciting!
+Player: Yup!
+/Player: Hi!
+Sabeil: How can you make a very lively hankerchief?
+Player: I don't know?
+Sabeil: Put a little boogey in it.
+/Player: Hi!
+Sabeil: Why did the skeleton burp?
+Player: I don't know?
+Sabeil: 'Cause it didn't have the guts to fart!
+/Player: Hi!
+Sabeil: My son just won his first duel!
+Player: Congratulations!
+Sabeil: He ripped his opponent in half!
+Player: That's gotta hurt!
+Sabeil: He's only 10 as well!
+Player: You gotta start 'em young!
+/Player: Hi!
+Sabeil: Can't you see I'm watching the duels?
+Player: I'm sorry!
+/Player: Hi!
+Sabeil: Knock knock!
+Player: Who's there?
+Sabeil: Boo.
+Player: Boo who?
+Sabeil: Don't cry, it's just me!
+/Player: Hi!
+Sabeil: Waaaaassssssuuuuupp?!
+/Player: Hi!
+Sabeil: Hi! I'm here to watch the duels!
+Player: Me too!
+/Player: Hi!
+Sabeil: My favourite fighter is Mubariz!
+Player: The guy at the information kiosk?
+Sabeil: Yeah! He rocks!
+Player: Takes all sorts, I guess.
+/Player: Hi!
+Sabeil: Hmph.
+/Player: Hi!
+Sabeil: Did you know they think this place dates back to the second age?!
+Player: Really?
+Sabeil: Yeah. The guy at the information kiosk was telling me.
