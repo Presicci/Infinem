@@ -1,0 +1,14 @@
+Hassan: Greetings! I am Hassan, Chancellor to the Emir of Al Kharid.
+<It's just too hot here. How can you stand it?
+Player: It's just too hot here. How can you stand it?
+Hassan: We manage, in our humble way. We are a wealthy town and we have water. It cures many thirsts.
+ITEM:1937
+LASTOPTIONS
+><Do you mind if I just kill your warriors?
+Player: Do you mind if I just kill your warriors?
+Hassan: Kill our warriors? I assume this is some sort of joke?
+Player: I'll take that as a no. Forget I asked.
+LASTOPTIONS
+><I'd better be off.
+Player: I'd better be off.
+>
