@@ -1,12 +1,14 @@
 package io.ruin.data.impl.dialogue;
 
 import io.ruin.cache.NPCDef;
+import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Items;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
@@ -89,6 +91,26 @@ public enum DialogueLoaderAction {
         }
         player.graphics(436, 48, 0);
         player.privateSound(958);
+    }),
+    DUNG((player) -> {
+        player.startEvent(e -> {
+            player.lock();
+            player.getPacketSender().fadeOut();
+            GameObject obj = new GameObject(6257, player.getPosition(), 0, 0);
+            obj.spawn();
+            e.delay(5);
+            player.getPacketSender().fadeIn();
+            player.unlock();
+            player.dialogue(player.getDialogueNPC(),
+                    new NPCDialogue(player.getDialogueNPC(), "I hope that's what you wanted!"),
+                    new PlayerDialogue("Ohhh yes. Lovely.")
+            );
+            // Despawn dung after 1 minute
+            World.startEvent(we -> {
+                we.delay(100);
+                obj.remove();
+            });
+        });
     }),
     ITEMDIALOGUE(null),     // Opens an item dialogue with supplied itemId and message
     TWOITEMDIALOGUE(null),  // Opens a two item dialogue with supplied itemIds and message
