@@ -1,5 +1,6 @@
 package io.ruin.data.impl.dialogue;
 
+import io.ruin.api.utils.Random;
 import io.ruin.api.utils.Tuple;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
@@ -34,6 +35,10 @@ public class DialogueParser {
         this(npcDef, dialogueLines, lineNumber, settings, false);
     }
 
+    public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber, boolean recordDialogueLoop) {
+        this(npcDef, dialogueLines, lineNumber, null, recordDialogueLoop);
+    }
+
     public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber) {
         this(npcDef, dialogueLines, lineNumber, null, false);
     }
@@ -63,20 +68,17 @@ public class DialogueParser {
         for (DialogueLoaderSetting setting : DialogueLoaderSetting.values()) {
             if (line.startsWith(setting.name())) {
                 System.out.println(lineNumber + 1 + ": " + line);
-                if (setting == DialogueLoaderSetting.RAND) {
-                    error("RAND setting mid file", dialogue);
-                } else {
-                    int leftIndex = lineNumber + 1;
-                    int rightIndex = dialogue.size();
-                    for (int index = lineNumber; index < dialogue.size(); index++) {
-                        if (dialogue.get(index).startsWith(")")) {
-                            dialogue.set(index, dialogue.get(index).substring(1));
-                            rightIndex = index;
-                            break;
-                        }
+                int leftIndex = lineNumber + 1;
+                int rightIndex = dialogue.size();
+                for (int index = lineNumber; index < dialogue.size(); index++) {
+                    if (dialogue.get(index).startsWith(")")) {
+                        dialogue.set(index, dialogue.get(index).substring(1));
+                        rightIndex = index;
+                        break;
                     }
-                    System.out.println(leftIndex + "-" + rightIndex);
-                    try {
+                }
+                try {
+                    if (setting != DialogueLoaderSetting.RAND) {
                         int value = Integer.parseInt(line.substring(setting.name().length() + 1));
                         List<Dialogue[]> dialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, new DialogueParserSettings(setting, value), true).parseRandomDialogues(true);
                         if (dialogues == null) {
@@ -89,10 +91,16 @@ public class DialogueParser {
                         }
                         lineNumber = rightIndex - 1;
                         return new ConditionalDialogue(setting.getBiPredicate(), new Tuple<>(dialogues.get(0), dialogues.get(1)), value);
-                    } catch (NumberFormatException ignored) {
-                        error("predicate reliant setting without an integer value afterwards", dialogue);
-                        return null;
+                    } else {
+                        List<Dialogue[]> randomDialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, true).parseRandomDialogues(true);
+                        return new ActionDialogue((player) -> {
+                            Dialogue[] dialogues = Random.get(randomDialogues);
+                            player.dialogue(dialogues);
+                        });
                     }
+                } catch (NumberFormatException ignored) {
+                    error("predicate reliant setting without an integer value afterwards", dialogue);
+                    return null;
                 }
             }
         }
