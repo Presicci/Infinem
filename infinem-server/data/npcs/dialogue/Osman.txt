@@ -1,0 +1,8 @@
+Osman: Hello, I am Osman. With what can I assist you?
+<You don't seem very tough. Who are you?
+Player: You don't seem very tough. Who are you?
+Osman: I am in the employ of the Emir. That is all you need to know.
+><I am just being nosy.
+Player: I am just being nosy.
+Osman: That bothers me not. The secrets of Al-Kharid protect themselves.
+>
