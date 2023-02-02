@@ -108,7 +108,8 @@ public enum DialogueLoaderAction {
             // Despawn dung after 1 minute
             World.startEvent(we -> {
                 we.delay(100);
-                obj.remove();
+                if (!obj.isRemoved())
+                    obj.remove();
             });
         });
     }),
