@@ -1,0 +1,67 @@
+HASEQUIPMENT:24525
+/Player: Paw-don me, I have something to show mew.
+Sphinx: Human, you make a mockery of my kin.
+Player: Come on, don't be such a sour puss.
+Sphinx: You should leave, before I deliver retribution for your actions.
+/Sphinx: What do you need human?
+<Can you tell me about the gods of the Menaphites?
+Player: Can you tell me about the gods of the Menaphites?
+Sphinx: If you wish to know about the lesser gods, you should speak with Jex at the Temple of the Lesser Gods. I suppose I could spare a moment or two to tell you about the main four though.
+<Tell me about Tumeken.
+Player: Tell me about Tumeken.
+Sphinx: Tumeken is the god of light and husband to Elidinis. He is the leading god of the Menaphite Pantheon.
+Player: People don't seem to talk about him much. I'd have thought being the leading god would make him more popular.
+Sphinx: A common saying about Tumeken is that you see him wherever you look, but never actually notice him.
+Player: Okay... And what kind of god is he? The desert is a harsh place, so does that make him harsh as well?
+Sphinx: In some ways. You humans sometimes say that 'you have to be cruel to be kind'. That seems a fitting way to describe Tumeken.
+Player: So he's harsh, but for good reasons?
+Sphinx: Indeed.
+LASTOPTIONS
+><Tell me about Elidinis.
+Player: Tell me about Elidinis.
+Sphinx: Elidinis is the goddess of fertility. The River Elid is named in her honour, for it brings life to the whole region.
+Sphinx: There are some who even believe the river to be Elidinis herself.
+Player: That's an interesting take. I guess being a bringer of life makes her quite popular?
+Sphinx: More so than many others in the pantheon, but not as much as she once was.
+Player: Why not?
+Sphinx: Humans are fickle. Perhaps they grew bored of her?
+Player: That sounds unlikely.
+Sphinx: Well if you're after the human take on things, you'd be better off asking a human.
+LASTOPTIONS
+><Tell me about Icthlarin.
+Player: Tell me about Icthlarin.
+Sphinx: Icthlarin is the god of the dead. He is the son of Tumeken and Elidinis, and brother to the Devourer. As this is the city of the dead, he's quite popular here.
+Player: So are you a follower of Icthlarin?
+Sphinx: Nothing of the sort. I have no interest in the gods or their followers. Instead, Icthlarin and I have an understanding.
+Sphinx: Cats play a significant role when it comes to guarding the dead from the Devourer. As such, they are great allies to Icthlarin.
+Sphinx: As a thank you for looking after them, Icthlarin grants me eternal life.
+LASTOPTIONS
+><Tell me about the Devourer.
+Player: Tell me about the Devourer.
+Sphinx: I'd have thought you'd be more than familiar with her by now.
+Player: I'm interested in hearing your take.
+Sphinx: Very well. The Devourer is the goddess of destruction. As such, she is commonly considered an evil goddess, but this is an oversimplification.
+Player: How so?
+Sphinx: Not everything that destroys is evil. Destruction is often a necessity.
+Player: Isn't that also an oversimplification? Amascut is doing far more than just destroying. She's a murderer!
+Sphinx: Is causing death enough to make one evil? Icthlarin is the god of the dead. By your argument, surely he is the most evil of them all.
+Player: Icthlarin doesn't actually kill people though. He just looks after those that have died.
+Sphinx: You clearly know little of Icthlarin and his past. Are you aware of the Mahjarrat? They once served Icthlarin, before they left him for Zamorak.
+Sphinx: Or was it the Empty Lord they left him for... I forget.
+Sphinx: Regardless, they are a race that have regularly associated themselves with gods considered evil. Interesting company for one such as Icthlarin to keep.
+Player: How does that make Amascut good though?
+Sphinx: I never said it did. I'm just saying that things are often not as straightforward as they seem, especially when it comes to Icthlarin and the Devourer.
+Player: If you say so...
+LASTOPTIONS
+><Let's talk about something else.
+Player: Let's talk about something else.
+Sphinx: Very well. What do you want to discuss?
+FIRSTOPTIONS
+>
+><Do you have a spare amulet of catspeak?
+Player: Do you have a spare amulet of catspeak?
+Sphinx: Well, I suppose I do. Seeing as you're such a good guardian of cats, I'll give you one. Be careful with it, though.
+ITEM:4677
+><Nothing. I should go.
+Player: Nothing. I should go.
+>
