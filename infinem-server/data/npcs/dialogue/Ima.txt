@@ -1,0 +1,47 @@
+RAND
+/Player: Hi!
+Ima: Ooh. This is exciting!
+Player: Yup!
+/Player: Hi!
+Ima: I wouldn't want to be the poor guy that has to clean up after the duels.
+Player: Me neither.
+/Player: Hi!
+Ima: My son just won his first duel!
+Player: Congratulations!
+Ima: He ripped his opponent in half!
+Player: That's gotta hurt!
+Ima: He's only 10 as well!
+Player: You gotta start 'em young!
+/Player: Hi!
+Ima: Hmph.
+/Player: Hi!
+Ima: My favourite fighter is Mubariz!
+Player: The guy at the information kiosk?
+Ima: Yeah! He rocks!
+Player: Takes all sorts, I guess.
+/Player: Hi!
+Ima: Hi! I'm here to watch the duels!
+Player: Me too!
+/Player: Hi!
+Ima: Did you know they think this place dates back to the second age?!
+Player: Really?
+Ima: Yeah. The guy at the information kiosk was telling me.
+/Player: Hi!
+Ima: Can't you see I'm watching the duels?
+Player: I'm sorry!
+/Player: Hi!
+Ima: Well. This beats doing the shopping!
+/Player: Hi!
+Ima: Hi!
+/Player: Hi!
+Ima: Knock knock!
+Player: Who's there?
+Ima: Boo.
+Player: Boo who?
+Ima: Don't cry, it's just me!
+/Player: Hi!
+Ima: Why did the skeleton burp?
+Player: I don't know?
+Ima: 'Cause it didn't have the guts to fart!
+/Player: Hi!
+Ima: Waaaaassssssuuuuupp?!.
