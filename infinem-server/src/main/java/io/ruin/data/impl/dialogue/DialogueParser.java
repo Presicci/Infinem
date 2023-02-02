@@ -118,6 +118,9 @@ public class DialogueParser {
 
     protected Dialogue parseLine(List<String> dialogue) {
         String line = dialogue.get(lineNumber);
+        if (line.startsWith("#")) {     // Comment handling
+            line = dialogue.get(++lineNumber);
+        }
         if (line.startsWith(">") || line.startsWith("/") || line.startsWith("(")) {
             line = line.substring(1);
         }
@@ -128,10 +131,6 @@ public class DialogueParser {
                 line = line.substring(1);
                 settings.setConsumerLine(true);
             }
-        }
-        if (line.trim().isEmpty()) {
-            //lineNumber++;
-            //return parseLine(dialogue);
         }
         if (line.startsWith("<")) {
             return parseOptions(line, dialogue);
