@@ -201,6 +201,13 @@ public class DialogueParser {
                             player.dialogue(loop);
                     });
                 }
+                if (action == DialogueLoaderAction.MESSAGE) {
+                    String[] splitLine = line.split(":");
+                    if (splitLine.length != 2) {
+                        error("MESSAGE action with improper length, needs to be 2", dialogue);
+                    }
+                    return new MessageDialogue(splitLine[1]);
+                }
                 if (action == DialogueLoaderAction.ITEM) {
                     int itemId = -1;
                     try {

@@ -113,10 +113,24 @@ public enum DialogueLoaderAction {
             });
         });
     }),
+    KEBAB((player) -> {
+        if (player.getInventory().getAmount(995) > 0) {
+            player.getInventory().remove(995, 1);
+            player.getInventory().add(Items.KEBAB);
+            player.dialogue(new ItemDialogue().one(Items.KEBAB, "You pay a coin for the kebab."));
+        } else {
+            NPC npc = player.getDialogueNPC();
+            player.dialogue(
+                    new PlayerDialogue("Oops, I forgot to bring any money with me."),
+                    new NPCDialogue(npc.getId(), "Come back when you have some.")
+            );
+        }
+    }),
     ITEMDIALOGUE(null),     // Opens an item dialogue with supplied itemId and message
     TWOITEMDIALOGUE(null),  // Opens a two item dialogue with supplied itemIds and message
     LASTOPTIONS(null),  // Reopens the last option dialogue
     FIRSTOPTIONS(null), // Reopens the first option dialogue
+    MESSAGE(null),      // Message dialogue
     ITEM(null),         // Gives the player an item
     SHOP(null),         // Opens the npcs shop
     ;
