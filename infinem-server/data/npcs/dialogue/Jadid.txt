@@ -1,0 +1,55 @@
+RAND
+/Player: Hi!
+Jadid: Well. This beats doing the shopping!
+/Player: Hi!
+Jadid: I wouldn't want to be the poor guy that has to clean up after the duels.
+Player: Me neither.
+/Player: Hi!
+Jadid: Hi!
+/Player: Hi!
+Jadid: What did the skeleton say before it ate?
+Player: I don't know?
+Jadid: Bone-appetit.
+/Player: Hi!
+Jadid: Ooh. This is exciting!
+Player: Yup!
+/Player: Hi!
+Jadid: How can you make a very lively hankerchief?
+Player: I don't know?
+Jadid: Put a little boogey in it.
+/Player: Hi!
+Jadid: Why did the skeleton burp?
+Player: I don't know?
+Jadid: 'Cause it didn't have the guts to fart!
+/Player: Hi!
+Jadid: My son just won his first duel!
+Player: Congratulations!
+Jadid: He ripped his opponent in half!
+Player: That's gotta hurt!
+Jadid: He's only 10 as well!
+Player: You gotta start 'em young!
+/Player: Hi!
+Jadid: Can't you see I'm watching the duels?
+Player: I'm sorry!
+/Player: Hi!
+Jadid: Knock knock!
+Player: Who's there?
+Jadid: Boo.
+Player: Boo who?
+Jadid: Don't cry, it's just me!
+/Player: Hi!
+Jadid: Waaaaassssssuuuuupp?!
+/Player: Hi!
+Jadid: Hi! I'm here to watch the duels!
+Player: Me too!
+/Player: Hi!
+Jadid: My favourite fighter is Mubariz!
+Player: The guy at the information kiosk?
+Jadid: Yeah! He rocks!
+Player: Takes all sorts, I guess.
+/Player: Hi!
+Jadid: Hmph.
+/Player: Hi!
+Jadid: Did you know they think this place dates back to the second age?!
+Player: Really?
+Jadid: Yeah. The guy at the information kiosk was telling me.
