@@ -31,7 +31,7 @@ import okhttp3.HttpUrl;
 public enum HiscoreEndpoint
 {
 	
-	NORMAL("Normal", "http://api.kronos.rip:8080/hiscores"),
+	NORMAL("Normal", "http://ec2-18-191-123-116.us-east-2.compute.amazonaws.com/highscores/index.php"),
 	IRONMAN("Ironman", "https://services.runescape.com/m=hiscore_oldschool_ironman/index_lite.ws"),
 	HARDCORE_IRONMAN("Hardcore Ironman", "https://services.runescape.com/m=hiscore_oldschool_hardcore_ironman/index_lite.ws"),
 	ULTIMATE_IRONMAN("Ultimate Ironman", "https://services.runescape.com/m=hiscore_oldschool_ultimate/index_lite.ws"),

@@ -86,7 +86,9 @@ public class HiscoreClient
 	private HiscoreResultBuilder lookupUsername(String username, HttpUrl hiscoreUrl) throws IOException
 	{
 		HttpUrl url = hiscoreUrl.newBuilder()
-			.addQueryParameter("player", username)
+				.addQueryParameter("api", "1")
+				.addQueryParameter("user", username)
+			//.addQueryParameter("player", username)
 			.build();
 
 		log.debug("Built URL {}", url);
