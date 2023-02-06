@@ -79,6 +79,7 @@ public class Consumable {
         });
         registerPie(7218, 7220, 22, "summer pie", p -> p.getStats().get(StatType.Agility).boost(5, 0.0));
 
+        registerDrink(Items.JUG_OF_WINE, Items.JUG, 11, 3, p -> p.getStats().get(StatType.Attack).drain(2));
         registerEat(7082, 1923, 5, "fried mushrooms");
         registerEat(2011, 1923, 19, "curry");
 
@@ -158,7 +159,7 @@ public class Consumable {
             }
         });
 
-        ItemAction.registerInventory(2114, "eat", (player, item) -> {
+        ItemAction.registerInventory(Items.PINEAPPLE, "eat", (player, item) -> {
             player.sendMessage("You try to take a bite... to no avail.");
         });
 
