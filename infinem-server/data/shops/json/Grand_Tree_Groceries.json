@@ -163,12 +163,6 @@
       "stock": 5,
       "buy_price": 5,
       "sell_price": 10
-    },
-    {
-      "itemId": 4517,
-      "stock": 0,
-      "buy_price": 1000,
-      "sell_price": -1
     }
   ]
 }
