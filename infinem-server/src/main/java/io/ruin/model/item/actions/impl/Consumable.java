@@ -386,6 +386,54 @@ public class Consumable {
             p.sendMessage("You chug the keg. You feel reinvigorated...");
             p.sendMessage("...but extremely drunk, too.");
         });
+
+        /*
+         * Gnome drinks
+         */
+        registerDrink(Items.BLURBERRY_SPECIAL, Items.COCKTAIL_GLASS, 6, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(6, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.PREMADE_BLURB_SP, Items.COCKTAIL_GLASS, 6, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(6, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.CHOC_SATURDAY, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(7, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.PREMADE_CHOC_SDY, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(7, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.DRUNK_DRAGON, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(7, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.PREMADE_DR_DRAGON, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(7, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.FRUIT_BLAST, Items.COCKTAIL_GLASS, 9, 3, p -> {});
+        registerDrink(Items.PREMADE_FR_BLAST, Items.COCKTAIL_GLASS, 9, 3, p -> {});
+        registerDrink(Items.PINEAPPLE_PUNCH, Items.COCKTAIL_GLASS, 9, 3, p -> {});
+        registerDrink(Items.PREMADE_P_PUNCH, Items.COCKTAIL_GLASS, 9, 3, p -> {});
+        registerDrink(Items.SHORT_GREEN_GUY, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(4, 0);
+            p.getStats().get(StatType.Attack).drain(3);
+        });
+        registerDrink(Items.PREMADE_SGG, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(4, 0);
+            p.getStats().get(StatType.Attack).drain(3);
+        });
+        registerDrink(Items.WIZARD_BLIZZARD, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(6, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.PREMADE_WIZ_BLZD, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(6, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
     }
 
     private static void registerEat(int id, int heal, String name) {
