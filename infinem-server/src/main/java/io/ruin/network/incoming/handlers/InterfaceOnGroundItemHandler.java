@@ -22,15 +22,18 @@ public class InterfaceOnGroundItemHandler {
 
     @IdHolder(ids = {82}) //todo@@
     public static final class FromItem implements Incoming {
+        /*
+         * Int, Byte, short, LEInt, short, shortA
+         */
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int y = in.readUnsignedShortA();
-            int interfaceHash = in.readLEInt();
-            int itemId = in.readUnsignedShortA();
-            int slot = in.readUnsignedShortA();
-            int groundItemId = in.readUnsignedShortA();
-            int ctrlRun = in.readByteC();
-            int x = in.readUnsignedLEShortA();
+            int groundItemId = in.readLEShortA();
+            int interfaceHash = in.readInt();
+            int slot = in.readShortA();
+            int y = in.readLEShortA();
+            int ctrlRun = in.readByteS();
+            int x = in.readShortA();
+            int itemId = in.readShortA();
             handleAction(player, interfaceHash, slot, itemId, groundItemId, x, y, ctrlRun);
         }
     }
