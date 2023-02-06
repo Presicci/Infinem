@@ -162,6 +162,8 @@ public class Consumable {
             player.sendMessage("You try to take a bite... to no avail.");
         });
 
+        registerCrabMeat(2, "crab meat", 7521, 7523, 7524, 7525, 7526);
+
         /**
          * Combo foods
          */
@@ -440,6 +442,18 @@ public class Consumable {
         registerEat(thirdId, -1, heal, 3,false, p -> p.sendFilteredMessage("You eat the slice of " + name + "."));
     }
 
+    private static void registerCrabMeat(int heal, String name, int... itemIds) {
+        for (int itemId : itemIds) {
+            ItemDef.get(itemId).consumable = true;
+            ItemAction.registerInventory(itemId, "eat", (player, item) -> {
+                if (eat(player, item,
+                        item.getId() == 7526 ? -1 : item.getId() + (item.getId() == 7521 ? 2 : 1),
+                        heal, 2, 2, false))
+                    player.sendFilteredMessage("You eat some " + name + ".");
+            });
+        }
+    }
+
     private static void registerPizza(int fullId, int halfId, int heal, String name) {
         heal /= 2;
         registerEat(fullId, halfId, heal, 1,false, p -> p.sendFilteredMessage("You eat half of the " + name + "."));
@@ -461,6 +475,10 @@ public class Consumable {
     }
 
     private static boolean eat(Player player, Item item, int newId, int heal, int ticks, boolean stackable) {
+        return eat(player, item, newId, heal, ticks, 3, stackable);
+    }
+
+    private static boolean eat(Player player, Item item, int newId, int heal, int ticks, int attackTicks, boolean stackable) {
         if(player.isLocked() || player.isStunned())
             return false;
         if(player.eatDelay.isDelayed() || player.karamDelay.isDelayed() || player.potDelay.isDelayed())
@@ -478,7 +496,7 @@ public class Consumable {
         animEat(player);
         player.incrementHp(heal);
         player.eatDelay.delay(ticks);
-        player.getCombat().delayAttack(3);
+        player.getCombat().delayAttack(attackTicks);
         return true;
     }
 
