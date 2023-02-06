@@ -49,24 +49,6 @@
       "stock": 10,
       "buy_price": 7,
       "sell_price": 30
-    },
-    {
-      "itemId": 2102,
-      "stock": 2147483647,
-      "buy_price": -1,
-      "sell_price": 20
-    },
-    {
-      "itemId": 2108,
-      "stock": 2147483647,
-      "buy_price": -1,
-      "sell_price": 20
-    },
-    {
-      "itemId": 2025,
-      "stock": 2147483647,
-      "buy_price": -1,
-      "sell_price": 20
     }
   ]
 }
