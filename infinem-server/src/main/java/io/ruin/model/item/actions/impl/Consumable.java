@@ -144,7 +144,6 @@ public class Consumable {
         registerEat(403, 4, "seaweed");
         registerEat(2152, 3, "toad's legs");
 
-        registerEatComboFood(3144, 18, "karambwan");
 
         ItemDef.get(13441).consumable = true;
         ItemAction.registerInventory(13441, "eat", (player, item) -> {
@@ -163,6 +162,39 @@ public class Consumable {
             player.sendMessage("You try to take a bite... to no avail.");
         });
 
+        /**
+         * Combo foods
+         */
+        registerEatComboFood(3144, 18, "karambwan");
+        // Crunchies
+        registerEatComboFood(2217, 8, "toad crunchies");
+        registerEatComboFood(2243, 8, "toad crunchies");    // Premade
+        registerEatComboFood(2213, 7, "spicy crunchies");
+        registerEatComboFood(2241, 7, "spicy crunchies");   // Premade
+        registerEatComboFood(2205, 8, "worm crunchies");
+        registerEatComboFood(2237, 8, "worm crunchies");    // Premade
+        registerEatComboFood(2209, 7, "chocchip crunchies");
+        registerEatComboFood(2239, 7, "chocchip crunchies");    // Premade
+        // Batta
+        registerEatComboFood(2277, 11, "fruit batta");
+        registerEatComboFood(2225, 11, "fruit batta");  // Premade
+        registerEatComboFood(2255, 11, "toad batta");
+        registerEatComboFood(2221, 11, "toad batta");   // Premade
+        registerEatComboFood(2253, 11, "worm batta");
+        registerEatComboFood(2219, 11, "worm batta");   // Premade
+        registerEatComboFood(2281, 11, "vegetable batta");
+        registerEatComboFood(2227, 11, "vegetable batta");    // Premade
+        registerEatComboFood(2259, 11, "cheese and tomato batta");
+        registerEatComboFood(2223, 11, "cheese and tomato batta");  // Premade
+        // Misc gnome
+        registerEatComboFood(2191, 12, "worm hole");
+        registerEatComboFood(2233, 12, "worm hole");    // Premade
+        registerEatComboFood(2195, 12, "vegetable ball");
+        registerEatComboFood(2235, 12, "vegetable ball");   // Premade
+        registerEatComboFood(2185, 15, "chocolate bomb");
+        registerEatComboFood(2229, 15, "chocolate bomb");   // Premade
+        registerEatComboFood(2187, 15, "tangled toad's legs");
+        registerEatComboFood(2231, 15, "tangled toad's legs");  // Premade
 
         /**
          * Non-potion drinks
