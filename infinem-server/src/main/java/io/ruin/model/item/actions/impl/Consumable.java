@@ -144,11 +144,7 @@ public class Consumable {
         registerEat(403, 4, "seaweed");
         registerEat(2152, 3, "toad's legs");
 
-        ItemDef.get(3144).consumable = true;
-        ItemAction.registerInventory(3144, "eat", (player, item) -> {
-            if(eatKaram(player, item))
-                player.sendFilteredMessage("You eat the karambwan.");
-        });
+        registerEatComboFood(3144, 18, "karambwan");
 
         ItemDef.get(13441).consumable = true;
         ItemAction.registerInventory(13441, "eat", (player, item) -> {
@@ -397,6 +393,14 @@ public class Consumable {
         });
     }
 
+    private static void registerEatComboFood(int id, int heal, String name) {
+        ItemDef.get(id).consumable = true;
+        ItemAction.registerInventory(id, "eat", (player, item) -> {
+            if(eatComboFood(player, item, heal))
+                player.sendFilteredMessage("You eat the " + name + ".");
+        });
+    }
+
     private static void registerCake(int firstId, int secondId, int thirdId, int heal, String name) {
         heal /= 3;
         registerEat(firstId, secondId, heal, 2,false, p -> p.sendFilteredMessage("You eat part of the " + name + "."));
@@ -446,7 +450,7 @@ public class Consumable {
         return true;
     }
 
-    private static boolean eatKaram(Player player, Item item) {
+    private static boolean eatComboFood(Player player, Item item, int heal) {
         if(player.isLocked() || player.isStunned())
             return false;
         if(player.karamDelay.isDelayed())
@@ -457,7 +461,7 @@ public class Consumable {
         }
         item.remove();
         animEat(player);
-        player.incrementHp(18);
+        player.incrementHp(heal);
         player.karamDelay.delay(3);
         player.getCombat().delayAttack(player.eatDelay.isDelayed() ? 1 : 2); //delays combat 1 tick less than other food on rs
         return true;
