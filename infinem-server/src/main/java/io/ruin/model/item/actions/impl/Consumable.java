@@ -468,7 +468,7 @@ public class Consumable {
             if(postEffect != null)
                 postEffect.accept(p);
         });
-        registerEat(halfId, -1, heal, 2, false, p -> {
+        registerEat(halfId, Items.PIE_DISH, heal, 2, false, p -> {
             p.sendFilteredMessage("You eat the remaining " + name + ".");
             if(postEffect != null)
                 postEffect.accept(p);
