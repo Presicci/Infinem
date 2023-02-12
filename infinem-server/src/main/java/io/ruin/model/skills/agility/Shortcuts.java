@@ -71,12 +71,14 @@ public class Shortcuts {
         // Coal Truck log balance
 
         // Grand Exchange Agility Shortcut
-        ObjectAction.register(16529, "climb-into", (p, obj) -> UnderwallTunnel.shortcut(p, obj, 21));
-        ObjectAction.register(16530, "climb-into", (p, obj) -> UnderwallTunnel.shortcut(p, obj, 21));
+        ObjectAction.register(16529, "climb-into", (p, obj) -> UnderwallTunnel.shortcutNWToSE(p, obj, 21));
+        ObjectAction.register(16530, "climb-into", (p, obj) -> UnderwallTunnel.shortcutNWToSE(p, obj, 21));
 
         // Pipe contortion in Brimhaven Dungeon
         // Eagles' Peak Agility Shortcut
         // Underwall tunnel	Falador Agility Shortcut
+        ObjectAction.register(16528, "climb-into", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 26));
+        ObjectAction.register(16527, "climb-into", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 26));
         // Stepping stones in Brimhaven Dungeon
         // Draynor Manor stones to Champions' Guild
         // (Grapple) Scale Catherby cliffside

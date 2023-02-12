@@ -8,7 +8,7 @@ import io.ruin.model.stat.StatType;
 
 public class UnderwallTunnel {
 
-    public static void shortcut(Player p, GameObject wall, int levelReq) {
+    public static void shortcutNWToSE(Player p, GameObject wall, int levelReq) {
         if (!p.getStats().check(StatType.Agility, levelReq, "attempt this"))
             return;
         p.startEvent(e -> {
@@ -40,4 +40,35 @@ public class UnderwallTunnel {
         });
     }
 
+    public static void shortcutVertical(Player p, GameObject wall, int levelReq) {
+        if (!p.getStats().check(StatType.Agility, levelReq, "attempt this"))
+            return;
+        p.startEvent(e -> {
+            if(wall.id == 16527) {
+                p.lock(LockType.FULL_DELAY_DAMAGE);
+                p.animate(2589);
+                p.getMovement().force(0, 1, 0, 0, 0, 50, Direction.NORTH);
+                e.delay(2);
+                p.animate(2590);
+                p.getMovement().force(0, 2, 0, 0, 0, 100, Direction.NORTH);
+                e.delay(3);
+                p.animate(2591);
+                p.getMovement().force(0, 1, 0, 0, 15, 33, Direction.NORTH);
+                e.delay(1);
+                p.unlock();
+            } else {
+                p.lock(LockType.FULL_DELAY_DAMAGE);
+                p.animate(2589);
+                p.getMovement().force(0, -1, 0, 0, 0, 50, Direction.SOUTH);
+                e.delay(2);
+                p.animate(2590);
+                p.getMovement().force(0, -2, 0, 0, 0, 100, Direction.SOUTH);
+                e.delay(3);
+                p.animate(2591);
+                p.getMovement().force(0, -1, 0, 0, 15, 33, Direction.SOUTH);
+                e.delay(1);
+                p.unlock();
+            }
+        });
+    }
 }
