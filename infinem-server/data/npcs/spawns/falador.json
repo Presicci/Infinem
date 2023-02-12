@@ -130,24 +130,6 @@
   },
   {
     "name": "Cow",
-    "id": 2791,
-    "x": 2922,
-    "y": 3286,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
-    "name": "Sheep",
-    "id": 2691,
-    "x": 2923,
-    "y": 3285,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
-    "name": "Cow",
     "id": 2793,
     "x": 2925,
     "y": 3277,
@@ -158,8 +140,8 @@
   {
     "name": "Cow",
     "id": 2793,
-    "x": 2923,
-    "y": 3286,
+    "x": 2925,
+    "y": 3288,
     "z": 0,
     "direction": "S",
     "walkRange": 4
