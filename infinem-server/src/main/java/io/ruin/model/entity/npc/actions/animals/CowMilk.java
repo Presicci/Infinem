@@ -2,6 +2,7 @@ package io.ruin.model.entity.npc.actions.animals;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.item.Items;
@@ -42,7 +43,11 @@ public class CowMilk {
                     player.unlock();
                 });
             } else {
-                startDialogue(player);
+                if ((npc.x == 3254 && npc.y == 3272) || npc.x == 3252 && npc.y == 3275) {
+                    startDialogue(player);
+                } else {
+                    player.dialogue(new MessageDialogue("You need a bucket to properly milk the cow."));
+                }
             }
         });
         ItemObjectAction.register(Items.BUCKET, "Dairy cow", (player, item, npc) -> {
