@@ -2009,5 +2009,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
+  },
+  {
+    "name": "Tina",
+    "id": 1317,
+    "x": 2956,
+    "y": 3370,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 5
   }
 ]
