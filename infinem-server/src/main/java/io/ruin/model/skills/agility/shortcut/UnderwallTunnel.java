@@ -23,6 +23,7 @@ public class UnderwallTunnel {
                 p.animate(2591);
                 p.getMovement().force(-1, 0, 0, 0, 15, 33, Direction.WEST);
                 e.delay(1);
+                p.getStats().addXp(StatType.Agility, 1, true);
                 p.unlock();
             } else {
                 p.lock(LockType.FULL_DELAY_DAMAGE);
@@ -35,6 +36,7 @@ public class UnderwallTunnel {
                 p.animate(2591);
                 p.getMovement().force(1, 0, 0, 0, 15, 33, Direction.EAST);
                 e.delay(1);
+                p.getStats().addXp(StatType.Agility, 1, true);
                 p.unlock();
             }
         });
@@ -55,6 +57,7 @@ public class UnderwallTunnel {
                 p.animate(2591);
                 p.getMovement().force(0, 1, 0, 0, 15, 33, Direction.NORTH);
                 e.delay(1);
+                p.getStats().addXp(StatType.Agility, 1, true);
                 p.unlock();
             } else {
                 p.lock(LockType.FULL_DELAY_DAMAGE);
@@ -67,6 +70,7 @@ public class UnderwallTunnel {
                 p.animate(2591);
                 p.getMovement().force(0, -1, 0, 0, 15, 33, Direction.SOUTH);
                 e.delay(1);
+                p.getStats().addXp(StatType.Agility, 1, true);
                 p.unlock();
             }
         });
