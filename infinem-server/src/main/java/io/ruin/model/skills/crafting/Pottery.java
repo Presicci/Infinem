@@ -18,11 +18,11 @@ public enum Pottery {
     POT(1787, 1931, 1, 6.0, 3.0),
     PIE_DISH(1789, 2313, 7, 15.0, 10),
     BOWL(1791, 1923, 8, 18.0, 14.5),
-    PLANT_POT(5352, 5356, 19, 20.0, 17.5);
+    PLANT_POT(5352, 5350, 19, 20.0, 17.5);
 
     public final int unfired, fired, levelReq;
     public final double unfiredExp, firedExp;
-    public String name;
+    public final String name;
 
     Pottery(int unfired, int fired, int levelReq, double unfiredExp, double firedExp) {
         this.unfired = unfired;
@@ -101,7 +101,7 @@ public enum Pottery {
     }
 
     static {
-        /**
+        /*
          * Pottery wheel
          */
         ItemObjectAction.register(CLAY, POTTERS_WHEEL, (player, item, obj) -> {
@@ -113,7 +113,7 @@ public enum Pottery {
                 new SkillItem(BOWL.unfired).name(ItemDef.get(BOWL.fired).name).addAction((p, amount, event) -> spinClay(p, BOWL, amount)),
                 new SkillItem(PLANT_POT.unfired).name(ItemDef.get(PLANT_POT.fired).name).addAction((p, amount, event) -> spinClay(p, PLANT_POT, amount))));
 
-        /**
+        /*
          * Pottery oven
          */
         for(int oven : POTTERY_OVENS) {
@@ -125,7 +125,7 @@ public enum Pottery {
             for (Pottery pottery : values())
                 ItemObjectAction.register(pottery.unfired, oven, (player, item, obj) -> firePottery(player, pottery, 1));
         }
-        /**
+        /*
          * Water on clay
          */
         for (Containers waterContainers : Containers.values()) {
