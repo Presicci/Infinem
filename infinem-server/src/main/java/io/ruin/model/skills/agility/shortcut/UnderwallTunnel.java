@@ -40,11 +40,11 @@ public class UnderwallTunnel {
         });
     }
 
-    public static void shortcutVertical(Player p, GameObject wall, int levelReq) {
+    public static void shortcutVertical(Player p, GameObject wall, int levelReq, Direction moveDirection) {
         if (!p.getStats().check(StatType.Agility, levelReq, "attempt this"))
             return;
         p.startEvent(e -> {
-            if(wall.id == 16527) {
+            if(moveDirection == Direction.NORTH) {
                 p.lock(LockType.FULL_DELAY_DAMAGE);
                 p.animate(2589);
                 p.getMovement().force(0, 1, 0, 0, 0, 50, Direction.NORTH);

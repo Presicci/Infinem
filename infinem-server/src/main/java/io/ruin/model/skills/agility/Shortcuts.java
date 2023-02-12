@@ -2,6 +2,7 @@ package io.ruin.model.skills.agility;
 
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -77,8 +78,8 @@ public class Shortcuts {
         // Pipe contortion in Brimhaven Dungeon
         // Eagles' Peak Agility Shortcut
         // Underwall tunnel	Falador Agility Shortcut
-        ObjectAction.register(16528, "climb-into", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 26));
-        ObjectAction.register(16527, "climb-into", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 26));
+        ObjectAction.register(16528, "climb-into", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 26, Direction.SOUTH));
+        ObjectAction.register(16527, "climb-into", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 26, Direction.NORTH));
         // Stepping stones in Brimhaven Dungeon
         // Draynor Manor stones to Champions' Guild
         // (Grapple) Scale Catherby cliffside
