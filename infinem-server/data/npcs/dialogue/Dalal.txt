@@ -1,0 +1,55 @@
+RAND:
+/Player: Hi!
+Dalal: Well. This beats doing the shopping!
+/Player: Hi!
+Dalal: I wouldn't want to be the poor guy that has to clean up after the duels.
+Player: Me neither.
+/Player: Hi!
+Dalal: Hi!
+/Player: Hi!
+Dalal: What did the skeleton say before it ate?
+Player: I don't know?
+Dalal: Bone-appetit.
+/Player: Hi!
+Dalal: Ooh. This is exciting!
+Player: Yup!
+/Player: Hi!
+Dalal: How can you make a very lively hankerchief?
+Player: I don't know?
+Dalal: Put a little boogey in it.
+/Player: Hi!
+Dalal: Why did the skeleton burp?
+Player: I don't know?
+Dalal: 'Cause it didn't have the guts to fart!
+/Player: Hi!
+Dalal: My son just won his first duel!
+Player: Congratulations!
+Dalal: He ripped his opponent in half!
+Player: That's gotta hurt!
+Dalal: He's only 10 as well!
+Player: You gotta start 'em young!
+/Player: Hi!
+Dalal: Can't you see I'm watching the duels?
+Player: I'm sorry!
+/Player: Hi!
+Dalal: Knock knock!
+Player: Who's there?
+Dalal: Boo.
+Player: Boo who?
+Dalal: Don't cry, it's just me!
+/Player: Hi!
+Dalal: Waaaaassssssuuuuupp?!
+/Player: Hi!
+Dalal: Hi! I'm here to watch the duels!
+Player: Me too!
+/Player: Hi!
+Dalal: My favourite fighter is Mubariz!
+Player: The guy at the information kiosk?
+Dalal: Yeah! He rocks!
+Player: Takes all sorts, I guess.
+/Player: Hi!
+Dalal: Hmph.
+/Player: Hi!
+Dalal: Did you know they think this place dates back to the second age?!
+Player: Really?
+Dalal: Yeah. The guy at the information kiosk was telling me.

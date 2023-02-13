@@ -5443,15 +5443,6 @@
     "walkRange": 3
   },
   {
-    "name": "Kronos Nurse",
-    "id": 3343,
-    "x": 2539,
-    "y": 4718,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1
-  },
-  {
     "name": "Dark Crab Fishing Spot",
     "id": 1535,
     "x": 3186,

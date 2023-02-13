@@ -5,6 +5,7 @@ import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
 import io.ruin.api.utils.StringUtils;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -57,6 +58,10 @@ public class ObjectDef {
         return LOADED.get(id);
     }
 
+    /**
+     * Stored data
+     */
+    public String examine;
 
     /**
      * Custom data
@@ -124,7 +129,6 @@ public class ObjectDef {
     public short[] modifiedModelColors;
     short[] aShortArray1596;
     short[] aShortArray1563;
-    private int category;
     public boolean verticalFlip = false;
     public int render0x1 = 128;
     public int render0x2 = 128;
@@ -135,11 +139,8 @@ public class ObjectDef {
     public boolean someFlag = false;
     public int varpBitId = -1;
     public int varpId = -1;
-    public Map<Integer, Object> clientScriptData;
 
     public int someDirection;
-    private int anInt2167;
-    private boolean randomizeAnimStart = false;
 
     private void decode(InBuffer in) {
         for (;;) {
@@ -166,14 +167,14 @@ public class ObjectDef {
             options[1] = "Practice";
         } else if (id == 32758) {
             //rfd chest
-            name = "Loyalty Chest";
-            options[0] = "Loot";
-            options[1] = "About";
+            name = "Cosmetic Chest";
+            options[0] = "Open";
+            options[1] = null;
             options[2] = null;
             options[3] = null;
             options[4] = null;
         } else if(id == 32759) {
-            name = "Loyalty Chest";
+            name = "Cosmetic Chest";
             options[0] = null;
             options[1] = null;
             options[2] = null;
@@ -214,7 +215,7 @@ public class ObjectDef {
             varpBitId = -1;
         } else if (id == PORTAL_OF_CHAMPIONS) {
             //home teleport portal - where is this portal even used on real rs?
-            name = "Kronos Teleporter";
+            name = "Rift Teleporter";
             options[0] = "Teleport";
             options[1] = "Teleport-previous";
         } else if (id == 25203) {
@@ -261,8 +262,6 @@ public class ObjectDef {
             options[1] = "Information";
         } else if(id == 31622) {
             name = "Ket'ian Wilderness Boss Portal";
-        } else if(id == 31621) {
-            name = "Wilderness Portal";
         } else if(id == 31626) {
             name = "Tournament Entrance";
         } else if(id == 32573) {
@@ -290,7 +289,7 @@ public class ObjectDef {
         } else if (id >= 26502 && id <= 26505) { // GWD boss doors
             options[1] = "Instance";
             options[2] = "Peek";
-        } else if (id == 4407) { // pvm instance portal
+        } else if (id == 31621) { // pvm instance portal
             name = "Boss instance portal";
             options[0] = "Use";
         } else if(id == 19038) { //christmas tree
@@ -443,7 +442,7 @@ public class ObjectDef {
         } else if (i == 60) //this was removed
             mapMarkerId = in.readUnsignedShort();
         else if (i == 61)
-            category = in.readUnsignedShort();
+            in.readUnsignedShort();
         else if (i == 62)
             verticalFlip = true;
         else if (i == 64)
@@ -502,37 +501,12 @@ public class ObjectDef {
             anIntArray1597 = new int[i_15_];
             for (int i_16_ = 0; i_16_ < i_15_; i_16_++)
                 anIntArray1597[i_16_] = in.readUnsignedShort();
-        } else if (i == 81) {
+        } else if (i == 81)
             anInt1569 = in.readUnsignedByte() * 256;
-        } else if (i == 82) {
-            anInt2167 = in.readUnsignedShort();
-        } else if (i == 89) {
-            randomizeAnimStart = true;
-        } else if (i == 249) {
-            int length = in.readUnsignedByte();
-            int index;
-            if (clientScriptData == null) {
-                index = method32(length);
-                clientScriptData = new HashMap<>(index);
-            }
-            for (index = 0; index < length; index++) {
-                boolean stringData = in.readUnsignedByte() == 1;
-                int key = in.readMedium();
-                clientScriptData.put(key, stringData ? in.readString() : in.readInt());
-            }
-        } else {
-            throw new RuntimeException("cannot parse object definition, missing config code: " + i);
-        }
-    }
-
-    public static int method32(int var0) {
-        --var0;
-        var0 |= var0 >>> 1;
-        var0 |= var0 >>> 2;
-        var0 |= var0 >>> 4;
-        var0 |= var0 >>> 8;
-        var0 |= var0 >>> 16;
-        return var0 + 1;
+        else if (i == 82)
+            in.readUnsignedShort();
+        else if (i == 83)
+            in.readUnsignedShort();
     }
 
     public boolean isClippedDecoration() {
@@ -609,6 +583,12 @@ public class ObjectDef {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
+    }
+
+    public void examine(Player player) {
+        if (examine == null)
+            return;
+        player.sendMessage(examine);
     }
 
 }

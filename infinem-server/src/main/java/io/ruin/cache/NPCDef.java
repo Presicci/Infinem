@@ -13,6 +13,7 @@ import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.KillCounter;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.Dialogue;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.shop.Shop;
@@ -54,6 +55,11 @@ public class NPCDef {
 
 
     /**
+     * Stored data
+     */
+    public String examine;
+
+    /**
      * Custom data
      */
 
@@ -86,6 +92,8 @@ public class NPCDef {
     public boolean ignoreOccupiedTiles;
 
     public double giantCasketChance; // only used for bosses atm, other npcs use a formula (see GoldCasket)
+
+    public Dialogue optionsDialogueLoop;
 
     public boolean dragon;
 
@@ -349,6 +357,9 @@ public class NPCDef {
             walkBackAnimation = var1.readUnsignedShort();
             walkLeftAnimation = var1.readUnsignedShort();
             walkRightAnimation = var1.readUnsignedShort();
+        }
+        else if (var2 == 18) {
+            var1.readUnsignedShort();
         } else if(var2 >= 30 && var2 < 35) {
             options[var2 - 30] = var1.readString();
             if(options[var2 - 30].equalsIgnoreCase("Hidden"))
@@ -492,4 +503,9 @@ public class NPCDef {
         return -1;
     }
 
+    public void examine(Player player) {
+        if (examine == null)
+            return;
+        player.sendMessage(examine);
+    }
 }

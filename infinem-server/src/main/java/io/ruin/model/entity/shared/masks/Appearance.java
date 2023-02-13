@@ -56,6 +56,10 @@ public class Appearance extends UpdateMask {
         this.gender = gender;
     }
 
+    public String getGenderString() {
+        return gender == 0 ? "sir" : "madam";
+    }
+
     public boolean isMale() {
         return gender == 0;
     }

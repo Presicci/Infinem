@@ -25,6 +25,7 @@ public class Consumable {
      */
 
     static {
+        registerEat(Items.LIME, 2, "lime");
         registerEat(Items.LEMON_CHUNKS, 2, "lemon chunks");
         registerEat(Items.LEMON_SLICES, 2, "lemon slices");
         registerEat(Items.SLICED_BANANA, 2, "sliced banana");
@@ -52,7 +53,7 @@ public class Consumable {
         registerEat(2108, 2, "orange");
         registerEat(1985, 2, "cheese");
         registerEat(22929, 10, "dragonfruit");
-        registerEat(Items.STEW, 11, "stew");
+        registerEat(Items.STEW, Items.BOWL, 11, "stew");
 
         registerEat(2309, 5, "bread");
         registerCake(1891, 1893, 1895, 12, "cake");
@@ -78,6 +79,7 @@ public class Consumable {
         });
         registerPie(7218, 7220, 22, "summer pie", p -> p.getStats().get(StatType.Agility).boost(5, 0.0));
 
+        registerDrink(Items.JUG_OF_WINE, Items.JUG, 11, 3, p -> p.getStats().get(StatType.Attack).drain(2));
         registerEat(7082, 1923, 5, "fried mushrooms");
         registerEat(2011, 1923, 19, "curry");
 
@@ -143,11 +145,6 @@ public class Consumable {
         registerEat(403, 4, "seaweed");
         registerEat(2152, 3, "toad's legs");
 
-        ItemDef.get(3144).consumable = true;
-        ItemAction.registerInventory(3144, "eat", (player, item) -> {
-            if(eatKaram(player, item))
-                player.sendFilteredMessage("You eat the karambwan.");
-        });
 
         ItemDef.get(13441).consumable = true;
         ItemAction.registerInventory(13441, "eat", (player, item) -> {
@@ -162,10 +159,45 @@ public class Consumable {
             }
         });
 
-        ItemAction.registerInventory(2114, "eat", (player, item) -> {
+        ItemAction.registerInventory(Items.PINEAPPLE, "eat", (player, item) -> {
             player.sendMessage("You try to take a bite... to no avail.");
         });
 
+        registerCrabMeat(2, "crab meat", 7521, 7523, 7524, 7525, 7526);
+
+        /**
+         * Combo foods
+         */
+        registerEatComboFood(3144, 18, "karambwan");
+        // Crunchies
+        registerEatComboFood(2217, 8, "toad crunchies");
+        registerEatComboFood(2243, 8, "toad crunchies");    // Premade
+        registerEatComboFood(2213, 7, "spicy crunchies");
+        registerEatComboFood(2241, 7, "spicy crunchies");   // Premade
+        registerEatComboFood(2205, 8, "worm crunchies");
+        registerEatComboFood(2237, 8, "worm crunchies");    // Premade
+        registerEatComboFood(2209, 7, "chocchip crunchies");
+        registerEatComboFood(2239, 7, "chocchip crunchies");    // Premade
+        // Batta
+        registerEatComboFood(2277, 11, "fruit batta");
+        registerEatComboFood(2225, 11, "fruit batta");  // Premade
+        registerEatComboFood(2255, 11, "toad batta");
+        registerEatComboFood(2221, 11, "toad batta");   // Premade
+        registerEatComboFood(2253, 11, "worm batta");
+        registerEatComboFood(2219, 11, "worm batta");   // Premade
+        registerEatComboFood(2281, 11, "vegetable batta");
+        registerEatComboFood(2227, 11, "vegetable batta");    // Premade
+        registerEatComboFood(2259, 11, "cheese and tomato batta");
+        registerEatComboFood(2223, 11, "cheese and tomato batta");  // Premade
+        // Misc gnome
+        registerEatComboFood(2191, 12, "worm hole");
+        registerEatComboFood(2233, 12, "worm hole");    // Premade
+        registerEatComboFood(2195, 12, "vegetable ball");
+        registerEatComboFood(2235, 12, "vegetable ball");   // Premade
+        registerEatComboFood(2185, 15, "chocolate bomb");
+        registerEatComboFood(2229, 15, "chocolate bomb");   // Premade
+        registerEatComboFood(2187, 15, "tangled toad's legs");
+        registerEatComboFood(2231, 15, "tangled toad's legs");  // Premade
 
         /**
          * Non-potion drinks
@@ -354,6 +386,54 @@ public class Consumable {
             p.sendMessage("You chug the keg. You feel reinvigorated...");
             p.sendMessage("...but extremely drunk, too.");
         });
+
+        /*
+         * Gnome drinks
+         */
+        registerDrink(Items.BLURBERRY_SPECIAL, Items.COCKTAIL_GLASS, 6, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(6, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.PREMADE_BLURB_SP, Items.COCKTAIL_GLASS, 6, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(6, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.CHOC_SATURDAY, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(7, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.PREMADE_CHOC_SDY, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(7, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.DRUNK_DRAGON, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(7, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.PREMADE_DR_DRAGON, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(7, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.FRUIT_BLAST, Items.COCKTAIL_GLASS, 9, 3, p -> {});
+        registerDrink(Items.PREMADE_FR_BLAST, Items.COCKTAIL_GLASS, 9, 3, p -> {});
+        registerDrink(Items.PINEAPPLE_PUNCH, Items.COCKTAIL_GLASS, 9, 3, p -> {});
+        registerDrink(Items.PREMADE_P_PUNCH, Items.COCKTAIL_GLASS, 9, 3, p -> {});
+        registerDrink(Items.SHORT_GREEN_GUY, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(4, 0);
+            p.getStats().get(StatType.Attack).drain(3);
+        });
+        registerDrink(Items.PREMADE_SGG, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(4, 0);
+            p.getStats().get(StatType.Attack).drain(3);
+        });
+        registerDrink(Items.WIZARD_BLIZZARD, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(6, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
+        registerDrink(Items.PREMADE_WIZ_BLZD, Items.COCKTAIL_GLASS, 5, 3, p -> {
+            p.getStats().get(StatType.Strength).boost(6, 0);
+            p.getStats().get(StatType.Attack).drain(4);
+        });
     }
 
     private static void registerEat(int id, int heal, String name) {
@@ -396,11 +476,31 @@ public class Consumable {
         });
     }
 
+    private static void registerEatComboFood(int id, int heal, String name) {
+        ItemDef.get(id).consumable = true;
+        ItemAction.registerInventory(id, "eat", (player, item) -> {
+            if(eatComboFood(player, item, heal))
+                player.sendFilteredMessage("You eat the " + name + ".");
+        });
+    }
+
     private static void registerCake(int firstId, int secondId, int thirdId, int heal, String name) {
         heal /= 3;
         registerEat(firstId, secondId, heal, 2,false, p -> p.sendFilteredMessage("You eat part of the " + name + "."));
         registerEat(secondId, thirdId, heal, 2,false, p -> p.sendFilteredMessage("You eat some more of the " + name + "."));
         registerEat(thirdId, -1, heal, 3,false, p -> p.sendFilteredMessage("You eat the slice of " + name + "."));
+    }
+
+    private static void registerCrabMeat(int heal, String name, int... itemIds) {
+        for (int itemId : itemIds) {
+            ItemDef.get(itemId).consumable = true;
+            ItemAction.registerInventory(itemId, "eat", (player, item) -> {
+                if (eat(player, item,
+                        item.getId() == 7526 ? -1 : item.getId() + (item.getId() == 7521 ? 2 : 1),
+                        heal, 2, 2, false))
+                    player.sendFilteredMessage("You eat some " + name + ".");
+            });
+        }
     }
 
     private static void registerPizza(int fullId, int halfId, int heal, String name) {
@@ -416,7 +516,7 @@ public class Consumable {
             if(postEffect != null)
                 postEffect.accept(p);
         });
-        registerEat(halfId, -1, heal, 2, false, p -> {
+        registerEat(halfId, Items.PIE_DISH, heal, 2, false, p -> {
             p.sendFilteredMessage("You eat the remaining " + name + ".");
             if(postEffect != null)
                 postEffect.accept(p);
@@ -424,6 +524,10 @@ public class Consumable {
     }
 
     private static boolean eat(Player player, Item item, int newId, int heal, int ticks, boolean stackable) {
+        return eat(player, item, newId, heal, ticks, 3, stackable);
+    }
+
+    private static boolean eat(Player player, Item item, int newId, int heal, int ticks, int attackTicks, boolean stackable) {
         if(player.isLocked() || player.isStunned())
             return false;
         if(player.eatDelay.isDelayed() || player.karamDelay.isDelayed() || player.potDelay.isDelayed())
@@ -441,11 +545,11 @@ public class Consumable {
         animEat(player);
         player.incrementHp(heal);
         player.eatDelay.delay(ticks);
-        player.getCombat().delayAttack(3);
+        player.getCombat().delayAttack(attackTicks);
         return true;
     }
 
-    private static boolean eatKaram(Player player, Item item) {
+    private static boolean eatComboFood(Player player, Item item, int heal) {
         if(player.isLocked() || player.isStunned())
             return false;
         if(player.karamDelay.isDelayed())
@@ -456,7 +560,7 @@ public class Consumable {
         }
         item.remove();
         animEat(player);
-        player.incrementHp(18);
+        player.incrementHp(heal);
         player.karamDelay.delay(3);
         player.getCombat().delayAttack(player.eatDelay.isDelayed() ? 1 : 2); //delays combat 1 tick less than other food on rs
         return true;

@@ -1,9 +1,7 @@
 package io.ruin.model.entity.npc.actions.edgeville;
 
-import io.ruin.cache.Color;
 import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.Help;
-import io.ruin.data.impl.teleports;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -13,7 +11,6 @@ import io.ruin.model.entity.player.XpMode;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.entity.shared.listeners.LogoutListener;
-import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -22,6 +19,7 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.handlers.XpCounter;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.Direction;
 import io.ruin.model.stat.StatType;
 import io.ruin.network.central.CentralClient;
@@ -34,17 +32,15 @@ import static io.ruin.cache.ItemID.*;
 @Slf4j
 public class StarterGuide {
 
-	private static final NPC GUIDE = SpawnListener.first(306);
-
 	static {
 		NPCDef.get(307).ignoreOccupiedTiles = true;
-		NPCAction.register(GUIDE, "view-help", (player, npc) -> Help.open(player));
-		NPCAction.register(GUIDE, "view-guide", (player, npc) -> player.dialogue(
+		NPCAction.register(306, "view-help", (player, npc) -> Help.open(player));
+		NPCAction.register(306, "view-guide", (player, npc) -> player.dialogue(
                 new OptionsDialogue("Watch the guide?",
                         new Option("Yes", () -> tutorial(player)),
                         new Option("No", player::closeDialogue))
         ));
-		NPCAction.register(GUIDE, "talk-to", StarterGuide::optionsDialogue);
+		NPCAction.register(306, "talk-to", StarterGuide::optionsDialogue);
 
 		LoginListener.register(player -> {
             if (player.newPlayer) {
@@ -55,6 +51,7 @@ public class StarterGuide {
                 //player.getPacketSender().sendMessage("Latest Update: " + LatestUpdate.LATEST_UPDATE_TITLE + "|" + LatestUpdate.LATEST_UPDATE_URL, "", 14);
             }
 		});
+        ItemAction.registerInventory(757, "read", (player, item) -> Help.open(player));
 	}
 
     private static void optionsDialogue(Player player, NPC npc) {
@@ -205,8 +202,99 @@ public class StarterGuide {
 		});
 	}
 
-    private static void introCutscene(NPC guide, Player player) {
+    private static void oldIntroCutscene(NPC guide, Player player) {
 
+        guide.startEvent((e) -> {
+            player.getPacketSender().sendClientScript(39, "i", 100);
+            Config.LOCK_CAMERA.set(player, 1);
+            player.getPacketSender().moveCameraToLocation(2050, 3572, 600, 0, 12);
+            player.getPacketSender().turnCameraToLocation(2045, 3577, 400, 0, 25);
+            e.delay(1);
+            player.dialogue(new NPCDialogue(guide,
+                    "This is our teleporter. Using it will give you access<br>" +
+                            "to locations all around the world, and even in the<br>" +
+                            "wilderness. You can even access your most recent<br>" +
+                            "teleport by right-clicking on the teleporter!"));
+            e.waitForDialogue(player);
+
+            player.getMovement().teleport(2019, 3577, 0);
+            e.delay(1);
+            player.getPacketSender().moveCameraToLocation(2015, 3577, 750, 0, 12);
+            player.getPacketSender().turnCameraToLocation(2010, 3577, 500, 0, 30);
+            e.delay(1);
+            player.dialogue(new NPCDialogue(guide,
+                    "This is the bank. It houses the normal bank<br>" +
+                            "amenities but also inside are the vote point and<br>" +
+                            "donation managers."));
+            e.waitForDialogue(player);
+            player.getPacketSender().moveCameraToLocation(2013, 3577, 750, 0, 12);
+            player.getPacketSender().turnCameraToLocation(2019, 3577, 500, 0, 18);
+            e.delay(1);
+            player.dialogue(new NPCDialogue(guide,
+                    "Here we have the trading post.<br>" +
+                            "You can buy items from other players, much like<br>" +
+                            "the grand exchange."));
+            e.waitForDialogue(player);
+
+            player.getMovement().teleport(2031, 3577, 0);
+            player.getPacketSender().moveCameraToLocation(2026, 3573, 500, 0, 12);
+            player.getPacketSender().turnCameraToLocation(2032, 3571, 500, 0, 30);
+            e.delay(1);
+            player.dialogue(new NPCDialogue(guide,
+                    "Here is the construction portal. There are <br>" +
+                            "also NPC's here to sell you supplies to <br>" +
+                            "build your house and remodel it as well."));
+            e.waitForDialogue(player);
+
+            player.getMovement().teleport(2031, 3577, 0);
+            player.getPacketSender().turnCameraToLocation(2020, 3558, 400, 0, 30);
+            e.delay(1);
+            player.dialogue(new NPCDialogue(guide,
+                    "All of our basic shops are located in this building<br>" +
+                            "The ironman shop is in the small building to<br>" +
+                            "the east."));
+            e.waitForDialogue(player);
+
+            player.getPacketSender().moveCameraToLocation(2064, 3583, 1000, 0, 12);
+            player.getPacketSender().turnCameraToLocation(2062, 3570, 0, 0, 30);
+            e.delay(1);
+            player.dialogue(new NPCDialogue(guide,
+                    "There is a skilling area to the east of home<br>" +
+                            "just over the bridge. Fishing is also available<br>" +
+                            "to the north."));
+            e.delay(10);
+            player.getPacketSender().moveCameraToLocation(2064, 3572, 1200, 0, 12);
+            player.getPacketSender().turnCameraToLocation(2064, 3590, 0, 0, 32);
+            e.waitForDialogue(player);
+            Config.LOCK_CAMERA.set(player, 0);
+            player.getPacketSender().resetCamera();
+            player.setTutorialStage(1);
+
+            guide.getMovement().teleport(2031, 3577, 0);
+            player.getMovement().teleport(2032, 3577, 0);
+            guide.face(player);
+            player.face(guide);
+            player.getPacketSender().moveCameraToLocation(2032, 3582, 450, 0, 12);
+            player.getPacketSender().turnCameraToLocation(2032, 3577, 400, 0, 30);
+            player.dialogue(new NPCDialogue(guide,
+                    "If you have any other questions, there are always<br>" +
+                            "helpful users in the help clan chat"));
+            e.waitForDialogue(player);
+            guide.animate(863);
+            player.inTutorial = false;
+            player.unlock();
+            player.setTutorialStage(0);
+            guide.addEvent(evt -> {
+                evt.delay(2);
+                World.sendGraphics(86, 50, 0, guide.getPosition());
+                player.logoutListener = null;
+                guide.remove();
+            });
+            player.getPacketSender().resetCamera();
+        });
+    }
+
+    private static void introCutscene(NPC guide, Player player) {
         guide.startEvent((e) -> {
             player.getPacketSender().sendClientScript(39, "i", 100);
             Config.LOCK_CAMERA.set(player, 1);
@@ -318,6 +406,7 @@ public class StarterGuide {
         player.getInventory().add(1115, 1); // Iron platebody
         player.getInventory().add(1075, 1); // Iron platelegs
         player.getInventory().add(1323, 1); // Iron scim
+        player.getInventory().add(757, 1); // Guide book
         switch (player.getGameMode()) {
             case IRONMAN:
                 player.getInventory().add(12810, 1);

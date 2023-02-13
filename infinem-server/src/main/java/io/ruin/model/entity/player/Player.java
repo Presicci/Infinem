@@ -536,6 +536,7 @@ public class Player extends PlayerAttributes {
     /**
      * Dialogue
      */
+    @Getter private NPC dialogueNPC;
 
     private int dialogueStage;
 
@@ -552,12 +553,19 @@ public class Player extends PlayerAttributes {
     private void openDialogue(boolean closeInterfaces, Dialogue... dialogues) {
         if(closeInterfaces) //important to be true in almost every case to prevent dupes!
             closeInterfaces(true);
+        if (dialogues == null || dialogues.length == 0)
+            return;
         this.dialogueStage = 1;
         this.dialogues = dialogues;
         this.optionsDialogue = null;
         this.skillDialogue = null;
         this.yesNoDialogue = null;
         (lastDialogue = dialogues[0]).open(this);
+    }
+
+    public void dialogue(NPC npc, Dialogue... dialogues) {
+        dialogueNPC = npc;
+        openDialogue(true, dialogues);
     }
 
     public void dialogue(Dialogue... dialogues) {
@@ -580,6 +588,7 @@ public class Player extends PlayerAttributes {
     }
 
     public void closeDialogue() {
+        dialogueNPC = null;
         dialogues = null;
         if(lastDialogue != null) {
             lastDialogue.closed(this);
@@ -1645,6 +1654,8 @@ public class Player extends PlayerAttributes {
             isIdle = false;
         } else if (++idleTicks >= 1000 && !isIdle) {            // After 10 minutes, set to idle
             isIdle = true;
+            if (getCombat().getTarget() != null)
+                sendMessage("You are now idle and enemies will no longer be aggressive. Move to reset.");
         } else if (idleTicks >= 3000 && !player.isStaff()) {    // After 30 minutes, log player out
             attemptIdleLogout();
         }

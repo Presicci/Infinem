@@ -4,9 +4,7 @@ import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
 
-import java.util.HashSet;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.*;
 
 public class AnimDef {
 
@@ -50,6 +48,12 @@ public class AnimDef {
     public int delayType = 2;
     public int[] animationFlowControl;
     public int[] anIntArray3609;
+    public int animMayaID;
+    public int animMayaStart;
+    public int animMayaEnd;
+    public Map<Integer, Integer> animMayaFrameSounds;
+    public boolean[] animMayaMasks;
+
 
     void method4576(InBuffer var1) {
         for(; ; ) {
@@ -107,6 +111,34 @@ public class AnimDef {
             anIntArray3611 = new int[var4];
             for(int var5 = 0; var5 < var4; var5++)
                 anIntArray3611[var5] = buffer.readMedium();
+        } else if (opcode == 14)
+        {
+            animMayaID = buffer.readInt();
+        }
+        else if (opcode == 15)
+        {
+            int var3 = buffer.readUnsignedShort();
+            animMayaFrameSounds = new HashMap<>();
+            for (int var4 = 0; var4 < var3; ++var4)
+            {
+                int var5 = buffer.readUnsignedShort();
+                int var6 = buffer.read24BitInt();
+                animMayaFrameSounds.put(var5, var6);
+            }
+        }
+        else if (opcode == 16)
+        {
+            animMayaStart = buffer.readUnsignedShort();
+            animMayaEnd = buffer.readUnsignedShort();
+        }
+        else if (opcode == 17)
+        {
+            animMayaMasks = new boolean[256];
+            int var3 = buffer.readUnsignedByte();
+            for (int var4 = 0; var4 < var3; ++var4)
+            {
+                animMayaMasks[buffer.readUnsignedByte()] = true;
+            }
         }
     }
 

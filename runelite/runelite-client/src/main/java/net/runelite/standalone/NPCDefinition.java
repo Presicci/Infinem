@@ -377,6 +377,8 @@ public class NPCDefinition extends DualNode implements RSNPCDefinition {
          this.walkBackSequence = var1.readUnsignedShort();
          this.walkLeftSequence = var1.readUnsignedShort();
          this.walkRightSequence = var1.readUnsignedShort();
+      } else if(var2 == 18) {
+         var1.readUnsignedShort();
       } else if(var2 >= 30 && var2 < 35) {
          this.actions[var2 - 30] = var1.readString();
          this.actionsHook(var2 - 30);

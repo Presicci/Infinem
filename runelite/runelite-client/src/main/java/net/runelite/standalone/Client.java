@@ -8161,7 +8161,13 @@ public final class Client extends GameShell implements Usernamed, RSClient {
                   for(int i = 0; i < size; i++) {
                      areas.add(var3.readUnsignedByte());
                   }
-                  CustomTaskInterface.init(tasks, points, completeTasks, areas);
+                  int playerPoints = var3.readUnsignedShort();
+                  int areaFilter = var3.readUnsignedByte();
+                  int skillFilter = var3.readUnsignedByte();
+                  int tierFilter = var3.readUnsignedByte();
+                  int completedFilter = var3.readUnsignedByte();
+                  int sortBy = var3.readUnsignedByte();
+                  CustomTaskInterface.init(tasks, points, completeTasks, areas, playerPoints, areaFilter, skillFilter, tierFilter, completedFilter, sortBy);
                   var1.serverPacket = null;
                   return true;
                }

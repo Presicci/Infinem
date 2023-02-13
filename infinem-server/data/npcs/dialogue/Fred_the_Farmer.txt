@@ -1,0 +1,35 @@
+732
+Fred the Farmer: What are you doing on my land?
+<I'm looking for something to kill.
+Player: I'm looking for something to kill.
+Fred the Farmer: What, on my land? Leave my livestock alone you scoundrel!
+><How do you shear sheep?
+Player: How do you shear sheep?
+Fred the Farmer: Well, first things first, you need a pair of shears. I've got some here you can use.
+Fred the Farmer: You just need to go and use them on the sheep out in my field.
+Player: Sounds easy!
+Fred the Farmer: That's what they all say!
+Fred the Farmer: Some of the sheep don't like it too much... Persistence is the key.
+Fred the Farmer: Once you've collected some wool you can spin it into balls.
+Fred the Farmer: Do you know how to spin wool?
+Player: I don't know how to spin wool, sorry.
+Fred the Farmer: Don't worry, it's quite simple!
+Fred the Farmer: The nearest Spinning Wheel can be found on the first floor of Lumbridge Castle.
+Fred the Farmer: To get to Lumbridge Castle just follow the road east.
+Player: Thank you!
+><I'm lost.
+Player: I'm lost.
+Fred the Farmer: How can you be lost? Just follow the road east and south. You'll end up in Lumbridge fairly quickly.
+><Fred! Fred! I've seen The Thing!
+Player: Fred! Fred! I've seen The Thing!
+Fred the Farmer: You ... you actually saw it?
+Fred the Farmer: Run for the hills! [player name] grab as many chickens as you can! We have to ...
+Player: Fred!
+Fred the Farmer: ... flee! Oh, woe is me! The shapeshifter is coming! We're all ...
+Player: FRED!
+Fred the Farmer: ... doomed. What!
+Player: It's not a shapeshifter or any other kind of monster!
+Fred the Farmer: Well then what is it boy?
+Player: Well ... it's just two Penguins; Penguins disguised as a sheep.
+Fred the Farmer: ...
+Fred the Farmer: Have you been out in the sun too long?

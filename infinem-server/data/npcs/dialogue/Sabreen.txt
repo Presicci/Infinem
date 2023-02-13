@@ -1,0 +1,15 @@
+3342
+Player: Hi!
+Sabreen: Hi. How can I help?
+<Can you heal me?
+Player: Can you heal me?
+HEAL:
+><Do you see a lot of injured fighters?
+Player: Do you see a lot of injured fighters?
+Sabreen: Yes I do. Thankfully we can cope with almost anything. Jaraah really is a wonderful surgeon, his methods are a little unorthodox but he gets the job done.
+Sabreen: I shouldn't tell you this but his nickname is 'The Butcher'.
+Player: That's reassuring.
+><Do you come here often?
+Player: Do you come here often?
+Sabreen: I work here, so yes!
+Sabreen: You're silly!

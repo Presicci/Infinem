@@ -1,0 +1,44 @@
+<Can you teach me the basics of cooking please?
+Player: Can you teach me the basics of cooking please?
+Cooking tutor: The simplest thing to cook is raw meat or fish.
+Cooking tutor: Fish can be caught, speak to the fishing tutor south of here in the swamp. Killing cows or chickens will yield raw meat to cook too.
+ITEMDIALOGUE:5090:When you have a full inventory of meat or fish, find a range. Look for this icon on your minimap.
+Cooking tutor: You can use your own fire... but it's not as effective and you'll burn more. To build a fire use a tinderbox on logs.
+Cooking tutor: Once you've found your range, click on it. This will bring up a menu of the food you can cook.
+ITEMDIALOGUE:5080:When you have a full inventory of cooked food, drop the useless burnt food and find a bank. Look for this symbol on your map to find a bank. There are numerous banks around the world, all marked with that symbol.
+FIRSTOPTIONS:
+><I already know the basics of cooking. Got any tips?
+Player: I already know the basics of cooking. Got any tips?
+Cooking tutor: Using a range cuts down the possibility of burning the food. In fact, the range in the Lumbridge Castle is particularly good for some foods, I hear.
+Cooking tutor: Compare the skills you learn to the effort put into making the food and the health that it heals, find a good combination for you.
+FIRSTOPTIONS:
+><Any advice for an advanced chef?
+Player: Any advice for an advanced chef?
+Cooking tutor: As you get better and better you'll find that you can cook better food such as pizza! These are very good for healing you when fighting the big monsters.
+Cooking tutor: Of course, you can try making a curry or baked potato if you feel up to it.
+FIRSTOPTIONS:
+><Tell me about different food I can make.
+Player: Tell me about different foods.
+<Fish and Meat
+Cooking tutor: Fish and meat of most varieties can be cooked very simply on either a fire or range, expirement which one works for you.
+LASTOPTIONS:
+><Brewing
+Cooking tutor: You can brew your own beers using the fermenting vats in either Keldagrim or Port Phasmatys. Use two buckets of water, two handfuls of barley malt, 4 hops of your choice and a pot of ale yeast, then leave to ferment for a few days!
+Cooking tutor: Simply turn the tap and let the ale flow into the barrel next to the vat, then use empty beer glasses on the barrel.
+LASTOPTIONS:
+><Vegetables
+Cooking tutor: Baked potatoes are excellent foods and they are healthy too! You'll need to churn some butter and cheese. Look for the churn icon on the minimap. There is a churn in the farm building northwest of Lumbridge.
+Cooking tutor: The nearest dairy cow is north of the nearby water mill. Take buckets of milk with you to the churn and use the milk on the churn to make butter or cheese.
+LASTOPTIONS:
+><Pies and Pizza
+Cooking tutor: Use a pot of flour with a bucket of awter. You will then get an option to make bread dough, pitta bread dough, pastry dough, or pizza dough. Select pizza or pastry dough.
+Cooking tutor: Use the pastry dough with a pie dish then add your filling such as apple or red berries.
+Cooking tutor: Finally cook your pie by using the unbaked pie on a cooking range. Mmmm...pie.
+Cooking tutor: There's pizza too! Find yourself some tomato and cheese, use on the Pizza dough. Cook the pizza on a range then add any other toppings you want, such as anchovies.
+LASTOPTIONS:
+><Go back to teaching
+FIRSTOPTIONS:
+>
+><Goodbye.
+Player: Goodbye.
+>

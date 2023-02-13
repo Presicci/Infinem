@@ -8,6 +8,7 @@ import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.ItemGroundItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Tile;
@@ -18,6 +19,7 @@ import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static io.ruin.model.skills.Tool.TINDER_BOX;
 
@@ -225,7 +227,6 @@ public enum Burning {
              * Tinderbox
              */
             ItemItemAction.register(log.itemId, TINDER_BOX, (player, primary, secondary) -> burn(player, primary, log, null, false, 733));
-
             /*
              * Barbarian
              */
@@ -259,6 +260,26 @@ public enum Burning {
                             burn(player, null, log, groundItem, false, barbarianBurning.animationId);
                         }
                     });
+                }
+            });
+            /*
+             * Item on Ground item
+             */
+            ItemGroundItemAction.register(log.itemId, (player, item, groundItem, distance) -> {
+                if (distance != 0) {
+                    player.getMovement().outOfReach();
+                    return;
+                }
+                if (item.getId() == TINDER_BOX) {
+                    burn(player, null, log, groundItem, false, 733);
+                } else if (Arrays.stream(barbarianLighters).anyMatch(e -> e == item.getId())) {
+                    for (BarbarianBurning barbarianBurning : BarbarianBurning.values()) {
+                        if (item.getId() == barbarianBurning.itemId) {
+                            burn(player, null, log, groundItem, false, barbarianBurning.animationId);
+                        }
+                    }
+                } else {
+                    player.sendMessage("You can't light the logs with that.");
                 }
             });
         }

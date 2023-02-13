@@ -1,0 +1,55 @@
+RAND
+/Player: Hi!
+Afrah: Well. This beats doing the shopping!
+/Player: Hi!
+Afrah: I wouldn't want to be the poor guy that has to clean up after the duels.
+Player: Me neither.
+/Player: Hi!
+Afrah: Hi!
+/Player: Hi!
+Afrah: What did the skeleton say before it ate?
+Player: I don't know?
+Afrah: Bone-appetit.
+/Player: Hi!
+Afrah: Ooh. This is exciting!
+Player: Yup!
+/Player: Hi!
+Afrah: How can you make a very lively hankerchief?
+Player: I don't know?
+Afrah: Put a little boogey in it.
+/Player: Hi!
+Afrah: Why did the skeleton burp?
+Player: I don't know?
+Afrah: 'Cause it didn't have the guts to fart!
+/Player: Hi!
+Afrah: My son just won his first duel!
+Player: Congratulations!
+Afrah: He ripped his opponent in half!
+Player: That's gotta hurt!
+Afrah: He's only 10 as well!
+Player: You gotta start 'em young!
+/Player: Hi!
+Afrah: Can't you see I'm watching the duels?
+Player: I'm sorry!
+/Player: Hi!
+Afrah: Knock knock!
+Player: Who's there?
+Afrah: Boo.
+Player: Boo who?
+Afrah: Don't cry, it's just me!
+/Player: Hi!
+Afrah: Waaaaassssssuuuuupp?!
+/Player: Hi!
+Afrah: Hi! I'm here to watch the duels!
+Player: Me too!
+/Player: Hi!
+Afrah: My favourite fighter is Mubariz!
+Player: The guy at the information kiosk?
+Afrah: Yeah! He rocks!
+Player: Takes all sorts, I guess.
+/Player: Hi!
+Afrah: Hmph.
+/Player: Hi!
+Afrah: Did you know they think this place dates back to the second age?!
+Player: Really?
+Afrah: Yeah. The guy at the information kiosk was telling me.

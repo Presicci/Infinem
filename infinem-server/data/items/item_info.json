@@ -3684,7 +3684,7 @@
   { #Book
     "id": 757,
     "tradeable": false,
-    "examine": "The Shield of Arrav by A R Wright.",
+    "examine": "Contains lots of information about the world of Infinem.",
     "weight": 0.0,
 	"protect_value": 0
   },
@@ -109472,6 +109472,14 @@
     "melee_strength_bonus": 6,
     "prayer_bonus": 3,
     "hide_hair": true
+  },
+  { #Cat ears
+    "id": 24525,
+    "tradeable": false,
+    "examine": "Meeeooow.",
+    "weight": 0.09,
+	"protect_value": 2,
+    "equip_slot": 0
   },
   { # Vyre coin pouch
     "id": 24703,

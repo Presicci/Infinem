@@ -1523,7 +1523,7 @@
   {
     "name": "Gnome guard",
     "id": 6081,
-    "x": 2461,
+    "x": 2462,
     "y": 3469,
     "z": 0,
     "direction": "S",
@@ -2242,5 +2242,14 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Butterfly"
+  },
+  {
+    "name": "Barman",
+    "id": 6532,
+    "x": 2418,
+    "y": 3498,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
   }
 ]

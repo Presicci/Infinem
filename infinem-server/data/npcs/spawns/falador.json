@@ -129,42 +129,6 @@
     "walkRange": 4
   },
   {
-    "name": "Sheep",
-    "id": 2697,
-    "x": 2921,
-    "y": 3287,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
-    "name": "Sheep",
-    "id": 2691,
-    "x": 2920,
-    "y": 3291,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
-    "name": "Cow",
-    "id": 2791,
-    "x": 2922,
-    "y": 3286,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
-    "name": "Sheep",
-    "id": 2691,
-    "x": 2923,
-    "y": 3285,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
     "name": "Cow",
     "id": 2793,
     "x": 2925,
@@ -176,8 +140,8 @@
   {
     "name": "Cow",
     "id": 2793,
-    "x": 2923,
-    "y": 3286,
+    "x": 2925,
+    "y": 3288,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -444,15 +408,6 @@
     "walkRange": 6
   },
   {
-    "name": "null",
-    "id": 6523,
-    "x": 3015,
-    "y": 3353,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
     "name": "White Knight",
     "id": 1798,
     "x": 2982,
@@ -572,7 +527,7 @@
   {
     "name": "Dwarf",
     "id": 294,
-    "x": 3019,
+    "x": 3020,
     "y": 3346,
     "z": 0,
     "direction": "S",
@@ -805,7 +760,7 @@
   },
   {
     "name": "Shop Assistant",
-    "id": 2816,
+    "id": 2820,
     "x": 2958,
     "y": 3387,
     "z": 0,
@@ -841,7 +796,7 @@
   },
   {
     "name": "Shop keeper",
-    "id": 2817,
+    "id": 2819,
     "x": 2957,
     "y": 3387,
     "z": 0,

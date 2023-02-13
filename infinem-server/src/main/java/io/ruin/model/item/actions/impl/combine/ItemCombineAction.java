@@ -125,7 +125,9 @@ public class ItemCombineAction {
         ANCHOVY_PIZZA("You use the anchovy on the pizza to make an anchovy pizza.", Collections.singletonList(new SkillRequired(StatType.Cooking, 55, 39)),
                 Arrays.asList(new ItemPair(Items.PLAIN_PIZZA, Items.ANCHOVY_PIZZA), new ItemPair(Items.ANCHOVIES, -1))),
         PINEAPPLE_PIZZA("You use the pineapple the on pizza to make a pineapple pizza.", Collections.singletonList(new SkillRequired(StatType.Cooking, 65, 52)),
-                Arrays.asList(new ItemPair(Items.PLAIN_PIZZA, Items.PINEAPPLE_PIZZA), new ItemPair(Items.PINEAPPLE, -1))),
+                Arrays.asList(new ItemPair(Items.PLAIN_PIZZA, Items.PINEAPPLE_PIZZA), new ItemPair(Items.PINEAPPLE_CHUNKS, -1))),
+        PINEAPPLE_PIZZA2("You use the pineapple the on pizza to make a pineapple pizza.", Collections.singletonList(new SkillRequired(StatType.Cooking, 65, 52)),
+                Arrays.asList(new ItemPair(Items.PLAIN_PIZZA, Items.PINEAPPLE_PIZZA), new ItemPair(Items.PINEAPPLE_RING, -1))),
 
         /**
          * Potatoes

@@ -1,0 +1,47 @@
+RAND
+/Player: Hi!
+Jeed: Ooh. This is exciting!
+Player: Yup!
+/Player: Hi!
+Jeed: I wouldn't want to be the poor guy that has to clean up after the duels.
+Player: Me neither.
+/Player: Hi!
+Jeed: My son just won his first duel!
+Player: Congratulations!
+Jeed: He ripped his opponent in half!
+Player: That's gotta hurt!
+Jeed: He's only 10 as well!
+Player: You gotta start 'em young!
+/Player: Hi!
+Jeed: Hmph.
+/Player: Hi!
+Jeed: My favourite fighter is Mubariz!
+Player: The guy at the information kiosk?
+Jeed: Yeah! He rocks!
+Player: Takes all sorts, I guess.
+/Player: Hi!
+Jeed: Hi! I'm here to watch the duels!
+Player: Me too!
+/Player: Hi!
+Jeed: Did you know they think this place dates back to the second age?!
+Player: Really?
+Jeed: Yeah. The guy at the information kiosk was telling me.
+/Player: Hi!
+Jeed: Can't you see I'm watching the duels?
+Player: I'm sorry!
+/Player: Hi!
+Jeed: Well. This beats doing the shopping!
+/Player: Hi!
+Jeed: Hi!
+/Player: Hi!
+Jeed: Knock knock!
+Player: Who's there?
+Jeed: Boo.
+Player: Boo who?
+Jeed: Don't cry, it's just me!
+/Player: Hi!
+Jeed: Why did the skeleton burp?
+Player: I don't know?
+Jeed: 'Cause it didn't have the guts to fart!
+/Player: Hi!
+Jeed: Waaaaassssssuuuuupp?!.

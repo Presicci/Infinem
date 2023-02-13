@@ -209,6 +209,9 @@ public class ObjectDefinition extends DualNode implements RSObjectDefinition {
    )
    public int animationId;
 
+   public int category;
+   public boolean randomizeAnimStart;
+
    static {
       ObjectDefinition_isLowDetail = false;
       ObjectDefinition_cached = new EvictingDualNodeHashTable(4096);
@@ -252,6 +255,8 @@ public class ObjectDefinition extends DualNode implements RSObjectDefinition {
       this.int4 = 0;
       this.int5 = 0;
       this.int6 = 0;
+      this.randomizeAnimStart = false;
+      this.category = 0;
    }
 
    @ObfuscatedName("n")
@@ -471,10 +476,12 @@ public class ObjectDefinition extends DualNode implements RSObjectDefinition {
          this.retextureFrom = new short[var3];
          this.retextureTo = new short[var3];
 
-         for(var4 = 0; var4 < var3; ++var4) {
-            this.retextureFrom[var4] = (short)var1.readUnsignedShort();
-            this.retextureTo[var4] = (short)var1.readUnsignedShort();
+         for (var4 = 0; var4 < var3; ++var4) {
+            this.retextureFrom[var4] = (short) var1.readUnsignedShort();
+            this.retextureTo[var4] = (short) var1.readUnsignedShort();
          }
+      } else if (var2 == 61) {
+         this.category = var1.readUnsignedShort();
       } else if(var2 == 62) {
          this.isRotated = true;
       } else if(var2 == 64) {
@@ -519,6 +526,8 @@ public class ObjectDefinition extends DualNode implements RSObjectDefinition {
             this.clipType = var1.readUnsignedByte() * 256;
          } else if(var2 == 82) {
             this.mapIconId = var1.readUnsignedShort();
+         } else if (var2 == 89) {
+            this.randomizeAnimStart = true;
          } else if(var2 == 249) {
             this.params = UserComparator5.method3374(var1, this.params);
          }

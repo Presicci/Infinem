@@ -1,0 +1,72 @@
+<Can you teach me the basics of mining please?
+Player: Can you teach me the basics of mining please?
+ITEMDIALOGUE:5082:Look for this icon on your minimap to find mining rocks.
+Mining tutor: If you need a pickaxe, you can grab one from the barrel over there.
+Mining tutor: If you want to know what ore's in a rock before you mine it, right-click the rock and select prospect from the menu. It will take a little time, but you'll find out what's in the rock before you mine.
+Mining tutor: You can also tell the ore you'll get from the colour of the rock.
+Mining tutor: To mine, simply click on the rock to mine it, while you've got a pickaxe with you.
+Mining tutor: When you have a full inventory, take it to the bank. There's a bank in the courtyard of the castle in Lumbridge.
+ITEMDIALOGUE:5080:Look for this symbol on your map to find a bank.
+FIRSTOPTIONS:
+><I already know about the basics of mining, got any tips?
+Player: I already know about the basics of mining, got any tips?
+Mining tutor: You can get different rocks in different places throughout the land, explore and find them.
+Mining tutor: You could start by traveling to the Al Kharid mine. Follow the path north and pay the 10 coins toll to go through the gate. Head north after passing through the gate and you will find the mine.
+Mining tutor: Be careful though, the scorpions in the mine will attack you.
+FIRSTOPTIONS:
+><Any advice for an advanced miner?
+Player: Any advice for an advanced miner?
+Mining tutor: Investigate the mining guild, the entrance to this is in the east of Falador down some steps. It could be most useful to you!
+Mining tutor: You might also like to check out the coal mine west of Seers' village. This will enable you to use the coal trucks.
+Player: Thank you, I'll remember that.
+FIRSTOPTIONS:
+><Tell me about different rocks and picks.
+Player: Tell me about different rocks and picks.
+Mining tutor: Ok then.. here goes....
+<Rocks and Ores.
+<Clay and Rune Essence.
+ITEMDIALOGUE:434:Clay can be mined in many places. Try south west of Varrock or the crafting guild. See the crafting tutor upstairs in Lumbridge Castle for more information on what you can make with clay.
+ITEMDIALOGUE:1436:Rune Essence can only be mined at secret places... I don't know where these are but you can speak to the Duke of Lumbridge to find out more.
+Mining tutor: You can make all sorts of things from clay, if you have the crafting skill. Rune Essence is used for magic to cast spells.
+LASTOPTIONS:
+><Copper and Tin.
+ITEMDIALOGUE:436:Rocks which yield copper ore can be found around here, and other places such as Al Kharid, Rimmington or Varrock mines. They're quite common.
+ITEMDIALOGUE:438:Tin ore is much the same as copper. It can be found around this area as well as Varrock, Al Kharid and the Barbarian Village.
+LASTOPTIONS:
+><Iron and Coal.
+ITEMDIALOGUE:440:Iron can be mined around Rimmington, Al Kharid and Varrock. It's tricky to smelt though - see the boy at the furnace in Lumbridge for tips.
+ITEMDIALOGUE:5084:Look for this icon on your minimap to find the furnace.
+ITEMDIALOGUE:453:You'll need to be a fairly good miner before you can start mining coal. You can find it in the Dwarf mine, Al Kharid and quite a few other places.
+LASTOPTIONS:
+><Silver and Gold.
+ITEMDIALOGUE:442:Silver can be mined to help you with your crafting. You can find it in the Crafting guild, Al Kharid and many other mines.
+ITEMDIALOGUE:444:Gold requires quite a lot of experience in mining before you can successfully extract it from the rocks. It can be found in Al Kharid, the Crafting guild, Rimmington and other places.
+LASTOPTIONS:
+><Mithril, Adamantite and Runite.
+TWOITEMDIALOGUE:447:449:Mithril and Adamantite rocks are fairly rare and require great skill to mine. You can find them in Al Kharid, the Dwarven mines, Lumbridge Swamps and other places.
+ITEMDIALOGUE:451:Runite is the most prized of ores and is very rare. I'll leave you to find where to mine it.
+LASTOPTIONS:
+>
+><Pickaxes.
+<Bronze, Iron and Steel.
+ITEMDIALOGUE:1265:The Bronze Pick is your basic tool of the trade. You can find one in the barrel nearby.
+TWOITEMDIALOGUE:1267:1269:The Iron and Steel Picks are faster than the bronze pickaxe, but you will need to progress with your mining a little before you can use them. I happen to have these for sale if you'd like to see them.
+<Let me see your stock.
+SHOP:
+><No, thank you.
+FIRSTOPTIONS:
+>
+><Mithril, Adamantite and Runite.
+TWOITEMDIALOGUE:1273:1275:Mithril, Adamantite, and Rune Picks may be used as you progress with your skill of mining. I happen to have these for sale if you'd like to see them.
+<Let me see your stock.
+SHOP:
+><No, thank you.
+FIRSTOPTIONS:
+>
+><Teach me about mining.
+FIRSTOPTIONS:
+>
+>
+><Browse shop
+SHOP:
+>

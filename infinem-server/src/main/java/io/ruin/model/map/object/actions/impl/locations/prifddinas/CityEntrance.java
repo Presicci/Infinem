@@ -6,7 +6,6 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 
 /**
@@ -21,7 +20,7 @@ public class CityEntrance {
             StatType.Hunter, StatType.Mining, StatType.Smithing, StatType.Woodcutting
     };
 
-    private static boolean skillCheck(Player player) {
+    public static boolean prifSkillCheck(Player player) {
         for (StatType statType : SKILLS) {
             if (player.getStats().get(statType).currentLevel < 70) {
                 player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "You need level 70 in " + statType.name() + " to enter Prifddinas.").animate(588));
@@ -33,7 +32,7 @@ public class CityEntrance {
 
     private static void entrance(Player player, Position pos) {
         player.startEvent(e -> {
-            if (skillCheck(player)) {
+            if (prifSkillCheck(player)) {
                 Traveling.fadeTravel(player, pos);
             }
         });

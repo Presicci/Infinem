@@ -1,0 +1,17 @@
+6956
+Monk: Greetings traveller.
+<Can you heal me? I'm injured.
+Player: Can you heal me? I'm injured.
+HEAL:
+><What are you doing here?
+Player: What are you doing here?
+Monk: We offer sanctuary to those seeking the guidance of Saradomin.
+<What if I want guidance from another god?
+Player: What if I want guidance from another god?
+Monk: If Saradomin's not good enough for you, those otherworldly freaks from Arceuus are probably your kind of people.
+Monk: They're always looking for hidden knowledge about souls and spirits, when any sensible person would just trust in Saradomin.
+Player: I see.
+><Thanks.
+Player: Thanks.
+>
+>

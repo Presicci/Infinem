@@ -1,0 +1,31 @@
+Player: Good day, sister.
+Prayer tutor: Greetings, [player name]. Can I help you with anything, today?
+<How can I train my prayer?
+Player: How can I train my prayer?
+HASPRAYERLEVEL:99
+(Prayer tutor: I think you should be teaching me a thing or two, shouldn't you?
+Prayer tutor: Well, if you really want my advice...
+Prayer tutor: The most common way to train prayer is by either burying bones, or offering them to the gods at some kind of an altar.
+Prayer tutor: Lots of adventurers build such altars in their own homes, or there are a few frequent places of worship around the world.
+Prayer tutor: Different kinds of bones will help you to train faster. Generally speaking, the bigger they are and the more frightening a creature they come from, the better they are for it.
+Prayer tutor: Is there anything else you would like to know?
+FIRSTOPTIONS:
+(Prayer tutor: The most common way to train prayer is by either burying bones, or offering them to the gods at some kind of an altar.
+Prayer tutor: Lots of adventurers build such altars in their own homes, or there are a few frequent places of worship around the world.
+Prayer tutor: Different kinds of bones will help you to train faster. Generally speaking, the bigger they are and the more frightening a creature they come from, the better they are for it.
+Prayer tutor: Is there anything else you would like to know?
+FIRSTOPTIONS:
+)><What is prayer useful for?
+Player: What is prayer useful for?
+Prayer tutor: The gods look kindly upon their devout followers. There are all kinds of benefits they may provide, if you pray for them!
+Player: Really? What kind of benefits?
+Prayer tutor: They could help you in combat, help your wounds to heal more quickly, protect your belongings... There's a lot they can do for you!
+Prayer tutor: You can find out more by looking in your prayer book.
+Player: Wow! That sounds great.
+Prayer tutor: You need to be careful that your prayers don't run out, though. You can get prayer potions to help you recharge, or you can pray at an altar whenever one's nearby.
+Prayer tutor: Is there anything else you would like to know?
+FIRSTOPTIONS:
+><No, thank you.
+Player: No, thank you.
+Prayer tutor: Very well. Saradomin be with you!
+>

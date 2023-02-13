@@ -2,7 +2,7 @@ package io.ruin.model.map.object.actions.impl.dungeons;
 
 import io.ruin.model.map.object.actions.ObjectAction;
 
-public class GnomeStronghold {
+public class NieveSlayerDungeon {
 
     static {
         /**

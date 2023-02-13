@@ -97,7 +97,7 @@ public class DialogueLoader {
     private static void registerDialogue(Dialogue[] dialogue, int npcId) {
         NPCAction.register(npcId, "talk-to", ((player, npc) -> {
             npc.faceTemp(player);
-            player.dialogue(dialogue);
+            player.dialogue(npc, dialogue);
         }));
     }
 
@@ -115,12 +115,12 @@ public class DialogueLoader {
             return;
         }
         if (dialogues.size() > 2) {
-            System.err.println(NPCDef.get(npcDef.id).name + " has predicate reliant setting but has more than 2 dialogue sets denoted by '('.");
+            System.err.println(NPCDef.get(npcDef.id).name + " has predicate reliant setting but has more than 2 dialogue sets denoted by '/'.");
             return;
         }
         NPCAction.register(npcDef.id, "talk-to", ((player, npc) -> {
             npc.faceTemp(player);
-            player.dialogue(dialogues.get(setting.getBiPredicate().test(player, value) ? 1 : 0));
+            player.dialogue(npc, dialogues.get(setting.getBiPredicate().test(player, value) ? 0 : 1));
         }));
     }
 
@@ -133,7 +133,7 @@ public class DialogueLoader {
         NPCAction.register(npcId, "talk-to", ((player, npc) -> {
             Dialogue[] dialogues = Random.get(randomDialogues);
             npc.faceTemp(player);
-            player.dialogue(dialogues);
+            player.dialogue(npc, dialogues);
         }));
     }
 }

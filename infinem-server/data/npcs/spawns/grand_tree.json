@@ -87,7 +87,7 @@
     "y": 3488,
     "z": 1,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 3
   },
   {
     "name": "Gnome",
@@ -183,7 +183,7 @@
     "name": "Gnome Waiter",
     "id": 2657,
     "x": 2448,
-    "y": 3502,
+    "y": 3503,
     "z": 1,
     "direction": "S",
     "walkRange": 1
@@ -272,8 +272,8 @@
   {
     "name": "Gnome",
     "id": 6096,
-    "x": 2475,
-    "y": 3500,
+    "x": 2476,
+    "y": 3502,
     "z": 1,
     "direction": "S",
     "walkRange": 1
@@ -336,7 +336,7 @@
     "name": "Gnome",
     "id": 6094,
     "x": 2482,
-    "y": 3495,
+    "y": 3494,
     "z": 1,
     "direction": "S",
     "walkRange": 1
@@ -596,19 +596,10 @@
   {
     "name": "Gnome guard",
     "id": 6082,
-    "x": 2481,
+    "x": 2482,
     "y": 3497,
     "z": 2,
     "direction": "S",
     "walkRange": 1
-  },
-  {
-    "name": "Gnome guard",
-    "id": 6082,
-    "x": 2481,
-    "y": 3497,
-    "z": 2,
-    "direction": "S",
-    "walkRange": 2
   }
 ]

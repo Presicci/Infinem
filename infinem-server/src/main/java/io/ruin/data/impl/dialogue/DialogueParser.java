@@ -1,5 +1,6 @@
 package io.ruin.data.impl.dialogue;
 
+import io.ruin.api.utils.Random;
 import io.ruin.api.utils.Tuple;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
@@ -16,24 +17,34 @@ import java.util.List;
  */
 @Slf4j
 public class DialogueParser {
-    protected int lineNumber;
-    protected NPCDef npcDef;
-    protected List<String> dialogueLines;
-    protected DialogueParserSettings settings;
+    private int lineNumber;
+    private final NPCDef npcDef;
+    private final List<String> dialogueLines;
+    private final DialogueParserSettings settings;
+    private boolean recordDialogueLoop;
 
-    public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber, DialogueParserSettings settings) {
+    public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber, DialogueParserSettings settings, boolean recordDialogueLoop) {
         this.npcDef = npcDef;
         this.dialogueLines = dialogueLines;
         this.lineNumber = lineNumber;
         this.settings = settings;
+        this.recordDialogueLoop = recordDialogueLoop;
+    }
+
+    public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber, DialogueParserSettings settings) {
+        this(npcDef, dialogueLines, lineNumber, settings, false);
+    }
+
+    public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber, boolean recordDialogueLoop) {
+        this(npcDef, dialogueLines, lineNumber, null, recordDialogueLoop);
     }
 
     public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber) {
-        this(npcDef, dialogueLines, lineNumber, null);
+        this(npcDef, dialogueLines, lineNumber, null, false);
     }
 
     public DialogueParser(NPCDef npcDef, List<String> dialogueLines) {
-        this(npcDef, dialogueLines, 0, null);
+        this(npcDef, dialogueLines, 0, null, false);
     }
 
     public Dialogue[] parseDialogue() {
@@ -56,23 +67,19 @@ public class DialogueParser {
         String line = dialogue.get(lineNumber);
         for (DialogueLoaderSetting setting : DialogueLoaderSetting.values()) {
             if (line.startsWith(setting.name())) {
-                System.out.println(lineNumber + 1 + ": " + line);
-                if (setting == DialogueLoaderSetting.RAND) {
-                    error("RAND setting mid file", dialogue);
-                } else {
-                    int leftIndex = lineNumber + 1;
-                    int rightIndex = dialogue.size();
-                    for (int index = lineNumber; index < dialogue.size(); index++) {
-                        if (dialogue.get(index).startsWith(")")) {
-                            dialogue.set(index, dialogue.get(index).substring(1));
-                            rightIndex = index;
-                            break;
-                        }
+                int leftIndex = lineNumber + 1;
+                int rightIndex = dialogue.size();
+                for (int index = lineNumber; index < dialogue.size(); index++) {
+                    if (dialogue.get(index).startsWith(")")) {
+                        dialogue.set(index, dialogue.get(index).substring(1));
+                        rightIndex = index;
+                        break;
                     }
-                    System.out.println(leftIndex + "-" + rightIndex);
-                    try {
+                }
+                try {
+                    if (setting != DialogueLoaderSetting.RAND) {
                         int value = Integer.parseInt(line.substring(setting.name().length() + 1));
-                        List<Dialogue[]> dialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, new DialogueParserSettings(setting, value)).parseRandomDialogues(true);
+                        List<Dialogue[]> dialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, new DialogueParserSettings(setting, value), true).parseRandomDialogues(true);
                         if (dialogues == null) {
                             error("predicate reliant setting but had an issue being read", dialogue);
                             return null;
@@ -83,10 +90,16 @@ public class DialogueParser {
                         }
                         lineNumber = rightIndex - 1;
                         return new ConditionalDialogue(setting.getBiPredicate(), new Tuple<>(dialogues.get(0), dialogues.get(1)), value);
-                    } catch (NumberFormatException ignored) {
-                        error("predicate reliant setting without an integer value afterwards", dialogue);
-                        return null;
+                    } else {
+                        List<Dialogue[]> randomDialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, true).parseRandomDialogues(true);
+                        return new ActionDialogue((player) -> {
+                            Dialogue[] dialogues = Random.get(randomDialogues);
+                            player.dialogue(dialogues);
+                        });
                     }
+                } catch (NumberFormatException ignored) {
+                    error("predicate reliant setting without an integer value afterwards", dialogue);
+                    return null;
                 }
             }
         }
@@ -104,6 +117,9 @@ public class DialogueParser {
 
     protected Dialogue parseLine(List<String> dialogue) {
         String line = dialogue.get(lineNumber);
+        if (line.startsWith("#")) {     // Comment handling
+            line = dialogue.get(++lineNumber);
+        }
         if (line.startsWith(">") || line.startsWith("/") || line.startsWith("(")) {
             line = line.substring(1);
         }
@@ -135,6 +151,62 @@ public class DialogueParser {
                     return new ActionDialogue((player) -> {
                         npcDef.shops.get(0).open(player);
                     });
+                }
+                if (action == DialogueLoaderAction.ITEMDIALOGUE) {
+                    String[] lineSegments = line.split(":");
+                    if (lineSegments.length < 3) {
+                        error("improper syntax for ITEMDIALOGUE (ITEMDIALOGUE:ITEMID:MESSAGE)", dialogue);
+                        return new MessageDialogue("");
+                    }
+                    int itemId = -1;
+                    try {
+                        itemId = Integer.parseInt(lineSegments[1]);
+                    } catch (NumberFormatException ignored) {
+                        error("missing itemId for ITEMDIALOGUE action", dialogue);
+                    }
+                    return new ItemDialogue().one(itemId, lineSegments[2]);
+                }
+                if (action == DialogueLoaderAction.TWOITEMDIALOGUE) {
+                    String[] lineSegments = line.split(":");
+                    if (lineSegments.length < 4) {
+                        error("improper syntax for TWOITEMDIALOGUE (TWOITEMDIALOGUE:ITEMID:ITEMID:MESSAGE)", dialogue);
+                        return new MessageDialogue("");
+                    }
+                    int itemId = -1;
+                    int itemId2 = -1;
+                    try {
+                        itemId = Integer.parseInt(lineSegments[1]);
+                        itemId2 = Integer.parseInt(lineSegments[2]);
+                    } catch (NumberFormatException ignored) {
+                        error("missing itemId for ITEMDIALOGUE action", dialogue);
+                    }
+                    return new ItemDialogue().two(itemId, itemId2, lineSegments[3]);
+                }
+                if (action == DialogueLoaderAction.LASTOPTIONS) {
+                    recordDialogueLoop = true;
+                    int index = npcDef.optionDialogues == null ? 0 : npcDef.optionDialogues.size() - 1;
+                    return new ActionDialogue((player) -> {
+                        Dialogue loop = npcDef.optionDialogues.get(index);
+                        if (loop != null)
+                            player.dialogue(loop);
+                    });
+                }
+                if (action == DialogueLoaderAction.FIRSTOPTIONS) {
+                    recordDialogueLoop = true;
+                    return new ActionDialogue((player) -> {
+                        if (npcDef.optionDialogues == null)
+                            return;
+                        Dialogue loop = npcDef.optionDialogues.get(npcDef.optionDialogues.size() - 1);
+                        if (loop != null)
+                            player.dialogue(loop);
+                    });
+                }
+                if (action == DialogueLoaderAction.MESSAGE) {
+                    String[] splitLine = line.split(":");
+                    if (splitLine.length != 2) {
+                        error("MESSAGE action with improper length, needs to be 2", dialogue);
+                    }
+                    return new MessageDialogue(splitLine[1]);
                 }
                 if (action == DialogueLoaderAction.ITEM) {
                     int itemId = -1;
@@ -209,10 +281,21 @@ public class DialogueParser {
             if (lineNumber >= dialogue.size())
                 break;
             line = dialogue.get(lineNumber);
-            if (line.startsWith(">"))
+            if (line.startsWith(">")) {
                 line = line.substring(1);
+                if (line.trim().isEmpty() && dialogue.size() > lineNumber + 1 && dialogue.get(lineNumber + 1).startsWith("<")) {
+                    line = dialogue.get(++lineNumber);
+                }
+            }
+
         }
-        return new OptionsDialogue(options);
+        Dialogue finalDialogue = new OptionsDialogue(options);
+        if (recordDialogueLoop) {
+            if (npcDef.optionDialogues == null)
+                npcDef.optionDialogues = new ArrayList<>();
+            npcDef.optionDialogues.add(finalDialogue);
+        }
+        return finalDialogue;
     }
 
     /**

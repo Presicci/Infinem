@@ -2,6 +2,7 @@ package io.ruin.model.map.object.actions;
 
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 
@@ -65,6 +66,10 @@ public interface ObjectAction {
     /**
      * Specific - (Registers the given action for an object in the game with the given objectId, x, y, and z)
      */
+
+    static void register(int objectId, Position position, int option, ObjectAction action) {
+        register(Tile.getObject(objectId, position.getX(), position.getY(), position.getZ()), option, action);
+    }
 
     static void register(int objectId, int x, int y, int z, int option, ObjectAction action) {
         register(Tile.getObject(objectId, x, y, z), option, action);
