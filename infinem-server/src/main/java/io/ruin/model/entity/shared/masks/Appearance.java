@@ -10,6 +10,7 @@ import io.ruin.model.entity.player.Title;
 import io.ruin.model.entity.shared.UpdateMask;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
+import lombok.Getter;
 
 public class Appearance extends UpdateMask {
 
@@ -50,7 +51,7 @@ public class Appearance extends UpdateMask {
      * 1=female
      */
 
-    @Expose private int gender = 0;
+    @Expose @Getter private int gender = 0;
 
     public void setGender(int gender) {
         this.gender = gender;
