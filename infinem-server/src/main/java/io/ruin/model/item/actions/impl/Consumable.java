@@ -51,7 +51,6 @@ public class Consumable {
         registerEat(6883, 8, "peach");
         registerEat(1883, 19, "kebab");
         registerEat(2108, 2, "orange");
-        registerEat(1985, 2, "cheese");
         registerEat(22929, 10, "dragonfruit");
         registerEat(Items.STEW, Items.BOWL, 11, "stew");
 
@@ -164,6 +163,10 @@ public class Consumable {
         });
 
         registerCrabMeat(2, "crab meat", 7521, 7523, 7524, 7525, 7526);
+
+        // Dairy
+        registerEat(1985, 2, "cheese");
+        registerEat(2130, 1, "cream");
 
         /**
          * Combo foods
