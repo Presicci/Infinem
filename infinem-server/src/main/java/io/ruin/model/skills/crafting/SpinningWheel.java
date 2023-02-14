@@ -41,17 +41,14 @@ public enum SpinningWheel {
         player.startEvent(event -> {
             int amt = amount;
             while(amt --> 0) {
-                player.lock();
                 if(!player.getInventory().hasId(item.before)) {
                     player.unlock();
                     return;
                 }
                 spin(player, item);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
-                    event.delay(2);
+                    event.delay(3);
                 }
-
-                player.unlock();
             }
         });
         player.unlock();
