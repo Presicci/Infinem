@@ -42,7 +42,6 @@ public enum SpinningWheel {
             int amt = amount;
             while(amt --> 0) {
                 if(!player.getInventory().hasId(item.before)) {
-                    player.unlock();
                     return;
                 }
                 spin(player, item);
