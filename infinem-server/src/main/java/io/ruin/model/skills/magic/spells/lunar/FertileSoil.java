@@ -20,7 +20,7 @@ public class FertileSoil extends Spell {
         registerObject(83, runes, (p, obj) -> {
             Patch patch = p.getFarming().getPatch(obj);
             if (patch == null) {
-                p.sendMessage("This spell can only be cast on farming patches.");
+                p.sendMessage("Um... I don't want to fertilize that!");
                 return false;
             }
             if (patch instanceof CompostBin) {
