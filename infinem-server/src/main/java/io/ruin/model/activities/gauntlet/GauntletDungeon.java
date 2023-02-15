@@ -3,12 +3,14 @@ package io.ruin.model.activities.gauntlet;
 import io.ruin.model.activities.gauntlet.monsters.GauntletMonster;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Region;
 import io.ruin.utility.Misc;
 import lombok.Getter;
 
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -40,6 +42,49 @@ public class GauntletDungeon {
         this.rooms = new GauntletRoom[MAP_SIZE][MAP_SIZE];
         //    this.layout = new Palette(13, 13, 4);
         //    generateDungeon();
+    }
+
+    public void generateDungeon() {
+        /*Region.deleteRegion(minimum.getRegion().getId(), 2, 2);
+        Palette palette = new Palette(MAP_SIZE * 2, MAP_SIZE * 2, 4);
+        for (int x = 0; x < MAP_SIZE; x++) {
+            for (int y = 0; y < MAP_SIZE; y++) {
+                GauntletRoom room = generateRoom(x, y);
+                rooms[x][y] = room;
+                if (room.getRoom() == GauntletRooms.STARTER_ROOM || room.getRoom() == GauntletRooms.BOSS_ROOM) {
+                    if (room.getRoom() == GauntletRooms.BOSS_ROOM) {
+                        room.generateMonsterSpawns(this);
+                        room.setBoss(true);
+                    }
+                    room.setVisible(true);
+                }
+                int paletteRotation = room.getRotation();
+                for (int height = 0; height < 2; height++) {
+                    PaletteTile[][] roomChunks = {
+                            {
+                                    new PaletteTile(room.getLocation(), room.getRoom().getX(), room.getRoom().getY(), height, paletteRotation, room.isVisible()),//SW
+                                    new PaletteTile(room.getLocation(), room.getRoom().getX() + 8, room.getRoom().getY(), height, paletteRotation, room.isVisible()), //SE
+                            },
+                            {
+                                    new PaletteTile(room.getLocation(), room.getRoom().getX() + 8, room.getRoom().getY() + 8, height, paletteRotation, room.isVisible()), //NE
+                                    new PaletteTile(room.getLocation(), room.getRoom().getX(), room.getRoom().getY() + 8, height, paletteRotation, room.isVisible()) //NW
+                            }
+                    };
+                    PaletteTile[][] rotatedObjects = Misc.rotatePaletteClockwise(roomChunks, room.getRotation());
+
+                    int tileX = x * ROOM_TILE_SIZE / 8;
+                    int tileY = y * ROOM_TILE_SIZE / 8;
+                    room.getTiles().addAll(Stream.of(rotatedObjects).flatMap(Stream::of).collect(Collectors.toList()));
+                    palette.setTile(tileX, tileY, height, rotatedObjects[0][0]);
+                    palette.setTile(tileX + 1, tileY, height, rotatedObjects[0][1]);
+                    palette.setTile(tileX + 1, tileY + 1, height, rotatedObjects[1][0]);
+                    palette.setTile(tileX, tileY + 1, height, rotatedObjects[1][1]);
+
+                }
+
+            }
+        }
+        Region.loadPalette(minimum, palette);*/
     }
 
     /**
@@ -123,11 +168,11 @@ public class GauntletDungeon {
      * @param plrLocation
      * @return
      */
-/*    public Position getChunkRelativeTo(GauntletRoom room, Position plrLocation) {
+     public Position getChunkRelativeTo(GauntletRoom room, Position plrLocation) {
         int x = room.getLocation().getRegionX() - plrLocation.getRegionX() + 6;
         int y = room.getLocation().getRegionY() - plrLocation.getRegionY() + 6;
-        return new Location(x, y);
-    }*/
+        return new Position(x, y);
+    }
 
     /**
      * Gets a room by the location provided.
