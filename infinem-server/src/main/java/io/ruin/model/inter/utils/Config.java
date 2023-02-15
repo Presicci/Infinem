@@ -991,6 +991,10 @@ public class Config {
      */
     public static final Config OBSERVATORY_ROPE = varpbit(5810, true);
 
+
+
+    public static final Config HAIRDRESSDER = varpbit(4146, false);
+
     /**
      * Separator
      */
