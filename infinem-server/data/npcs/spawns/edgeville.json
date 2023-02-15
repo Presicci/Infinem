@@ -33,16 +33,6 @@
     "world": "ECO"
   },
   {
-    "name": "Horvik",
-    "id": 2882,
-    "x": 3076,
-    "y": 3511,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 0,
-    "world": "ECO"
-  },
-  {
     "name": "Man",
     "id": 3080,
     "x": 3080,
@@ -53,42 +43,6 @@
     "world": "ECO"
   },
   {
-    "name": "Portal Mage",
-    "id": 7064,
-    "x": 3084,
-    "y": 3498,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
-    "name": "Portal Mage",
-    "id": 7064,
-    "x": 3082,
-    "y": 3496,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 0
-  },
-  {
-    "name": "Portal Mage",
-    "id": 7064,
-    "x": 3084,
-    "y": 3494,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0
-  },
-  {
-    "name": "Portal Mage",
-    "id": 7064,
-    "x": 3086,
-    "y": 3496,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 0
-  },
-  {
     "name": "Tournament Manager",
     "id": 7316,
     "x": 3078,
@@ -96,72 +50,6 @@
     "z": 0,
     "direction": "E",
     "walkRange": 0
-  },
-  {
-    "name": "Donation Manager",
-    "id": 2108,
-    "x": 3095,
-    "y": 3499,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0,
-    "shopOptions": {
-      "Open-shop": "545d3f40-361e-42ce-84bc-4681264685de"
-    }
-  },
-  {
-    "name": "Vote Manager",
-    "id": 1815,
-    "x": 3096,
-    "y": 3499,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0,
-    "shopOptions": {
-      "trade": "aecef817-39c1-4a22-9ee9-2815da9dd3df"
-    }
-  },
-  {
-    "name": "Shop",
-    "id": 5081,
-    "x": 3077,
-    "y": 3513,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0,
-    "shopOptions": {
-      "magic": "c37bac0e-fbea-4dac-a943-cac6c84042c1",
-      "armour": "c37bac0e-fbea-4dac-a943-cac6c84042c1",
-      "ironman": "c37bac0e-fbea-4dac-a943-cac6c84042c1"
-    }
-  },
-  {
-    "name": "Shop",
-    "id": 5051,
-    "x": 3078,
-    "y": 3513,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0,
-    "shopOptions": {
-      "weapons": "994d3225-768e-4ea9-8aa4-d351910b26bb",
-      "armour": "994d3225-768e-4ea9-8aa4-d351910b26bb",
-      "ironman": "994d3225-768e-4ea9-8aa4-d351910b26bb"
-    }
-  },
-  {
-    "name": "Shop",
-    "id": 2153,
-    "x": 3079,
-    "y": 3513,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0,
-    "shopOptions": {
-      "melee": "183ba085-4bec-44e0-96b5-50752b4a7ec9",
-      "armour": "183ba085-4bec-44e0-96b5-50752b4a7ec9",
-      "ironman": "183ba085-4bec-44e0-96b5-50752b4a7ec9"
-    }
   },
   {
     "name": "Max hit dummy",
