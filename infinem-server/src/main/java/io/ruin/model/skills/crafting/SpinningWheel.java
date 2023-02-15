@@ -37,17 +37,22 @@ public enum SpinningWheel {
             player.sendMessage("You'll need " + before.getDef().name.toLowerCase() + " to make that.");
             return;
         }
-
         player.startEvent(event -> {
             int amt = amount;
             while(amt --> 0) {
                 if(!player.getInventory().hasId(item.before)) {
                     return;
                 }
-                spin(player, item);
+                player.animate(894);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     event.delay(3);
                 }
+                if(!player.getInventory().hasId(item.before))
+                    return;
+                player.getInventory().remove(item.before, 1);
+                player.getInventory().add(item.after, 1);
+                player.getStats().addXp(StatType.Crafting, item.exp, true);
+                player.getTaskManager().doSkillItemLookup(item.after);
             }
         });
         player.unlock();
