@@ -93,7 +93,7 @@ public class NPCDef {
 
     public double giantCasketChance; // only used for bosses atm, other npcs use a formula (see GoldCasket)
 
-    public Dialogue optionsDialogueLoop;
+    public List<Dialogue> optionDialogues;
 
     public boolean dragon;
 
@@ -212,8 +212,6 @@ public class NPCDef {
             options[2] = "Trade";
         } else if(id == 6481) {
             combatLevel = 0;
-        } else if(id == 3343) {
-            name = World.type.getWorldName() + " Nurse";
         } else if(id == 1603) {
             /* Kolodion */
             name = "Battle Point Exchange";
@@ -311,6 +309,8 @@ public class NPCDef {
             headIcon = 2;
         } else if (id == 5314) {
             name = "Wizard Cromperty";
+        } else if (id == 2897) {
+            size = 3;
         }
 
         if(name != null) {
