@@ -50,6 +50,8 @@ public enum Impling {
         this.overworldSpawnWeight = overworldSpawnWeight;
     }
 
+    public static boolean SPAWN_IMPLINGS = true;
+
     private static Bounds PURO_PURO = new Bounds(2562, 4290, 2621, 4349, 0);
 
     private static void attemptCatch(Player player, NPC npc, Impling impling) {
@@ -373,12 +375,14 @@ public enum Impling {
         //overworld spawns
         World.startEvent(event -> {
             //spawn a few on startup
-            for (int i = 0; i < 8; i++)
-                spawnRandomImplingOverworld();
-            while (true) {
-                if (ACTIVE_OVERWORLD_IMPLINGS < OVERWORLD_MAX_IMPLINGS)
+            if (SPAWN_IMPLINGS) {
+                for (int i = 0; i < 8; i++)
                     spawnRandomImplingOverworld();
-                event.delay(OVERWORLD_SPAWN_DELAY);
+                while (true) {
+                    if (ACTIVE_OVERWORLD_IMPLINGS < OVERWORLD_MAX_IMPLINGS)
+                        spawnRandomImplingOverworld();
+                    event.delay(OVERWORLD_SPAWN_DELAY);
+                }
             }
         });
     }
