@@ -8,7 +8,6 @@ import io.ruin.data.impl.login_set;
 import io.ruin.model.World;
 import io.ruin.network.central.CentralClient;
 import io.ruin.utility.OfflineMode;
-import io.ruin.utility.PlayerRestore;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -64,28 +63,20 @@ public class PlayerLogin extends LoginRequest {
     private void load(int index) {
         LOADING[index] = true;
         Server.worker.execute(() -> PlayerFile.load(this), player -> {
-
             if (player == null) {
                 deny(Response.ERROR_LOADING_ACCOUNT);
                 return;
             }
-
-            if(player.getPassword() != null) {
+            if(player.getPassword() != null) {  // TODO BCrypt encryption
                 if (!info.password.equalsIgnoreCase(player.getPassword())) {
                     deny(Response.INVALID_LOGIN);
                     return;
                 }
             }
-
             player.setIndex(index);
             player.init(info);
-
-            //reconstruct players if their before the char fuck up
-            //PlayerRestore.reconstructPlayer(player);
-
             World.players.set(index, player);
             LOADING[index] = false;
-
             player.getPacketSender().sendLogin(info);
             player.getChannel().pipeline().replace("decoder", "decoder", player.getDecoder());
         });
