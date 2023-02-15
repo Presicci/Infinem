@@ -5,7 +5,7 @@ import io.ruin.Server;
 import io.ruin.api.utils.JsonUtils;
 import io.ruin.data.DataFile;
 import io.ruin.model.World;
-import io.ruin.model.entity.npc.actions.edgeville.Nurse;
+import io.ruin.model.entity.npc.actions.Nurses;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -189,7 +189,7 @@ public class teleports extends DataFile {
             e.delay(2);
             player.getMovement().teleport(x, y, z);
             player.getPacketSender().clearFade();
-            Nurse.heal(player, null);
+            Nurses.heal(player, null);
             PlayerCounter.TELEPORT_PORTAL_USES.increment(player, 1);
             player.getPacketSender().fadeIn();
             player.unlock();
