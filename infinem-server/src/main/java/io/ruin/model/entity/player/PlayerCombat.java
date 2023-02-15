@@ -999,26 +999,28 @@ public class PlayerCombat extends Combat {
             AttackStyle style = hit.attackStyle;
             String weaponName = hit.attackWeapon != null ? hit.attackWeapon.name.toLowerCase() : "";
             String ammoName = hit.rangedAmmo != null ? hit.rangedAmmo.name.toLowerCase() : "";
-            if (style.isMelee()) {
-                if (Random.rollDie(4)) {
-                    if (weaponName.contains("(p++)")) {
-                        target.poison(6);
-                    } else if (weaponName.contains("(p+)")) {
-                        target.poison(5);
-                    } else if (weaponName.contains("(p)") || weaponName.contains("abyssal tentacle")) {
-                        target.poison(4);
-                    } else if (weaponName.contains("(kp)")) {
-                        target.poison(6);
+            if (style != null) {
+                if (style.isMelee()) {
+                    if (Random.rollDie(4)) {
+                        if (weaponName.contains("(p++)")) {
+                            target.poison(6);
+                        } else if (weaponName.contains("(p+)")) {
+                            target.poison(5);
+                        } else if (weaponName.contains("(p)") || weaponName.contains("abyssal tentacle")) {
+                            target.poison(4);
+                        } else if (weaponName.contains("(kp)")) {
+                            target.poison(6);
+                        }
                     }
-                }
-            } else if (style.isRanged()) {
-                if (Random.rollDie(8)) {
-                    if (weaponName.contains("(p++)") || ammoName.contains("(p++)")) {
-                        target.poison(4);
-                    } else if (weaponName.contains("(p+)") || ammoName.contains("(p+)")) {
-                        target.poison(3);
-                    } else if (weaponName.contains("(p)") || ammoName.contains("(p)")) {
-                        target.poison(2);
+                } else if (style.isRanged()) {
+                    if (Random.rollDie(8)) {
+                        if (weaponName.contains("(p++)") || ammoName.contains("(p++)")) {
+                            target.poison(4);
+                        } else if (weaponName.contains("(p+)") || ammoName.contains("(p+)")) {
+                            target.poison(3);
+                        } else if (weaponName.contains("(p)") || ammoName.contains("(p)")) {
+                            target.poison(2);
+                        }
                     }
                 }
             }
