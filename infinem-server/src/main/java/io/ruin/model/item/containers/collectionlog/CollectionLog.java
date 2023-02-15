@@ -90,11 +90,11 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
         int amount = collected.getOrDefault(item.getId(),0);
 
         collected.put(item.getId(), amount + item.getAmount());
-        player.openInterface(InterfaceType.SECONDARY_OVERLAY, 660);
+        /*player.openInterface(InterfaceType.SECONDARY_OVERLAY, 660);
         player.getPacketSender().sendClientScript(3343, "iss", 0xff981f, "Collection log", "New item:" + Color.WHITE.wrap(item.getDef().name));
         player.getPacketSender().sendClientScript(3346, "iss", 0xff981f, "Collection log", "New item:" + Color.WHITE.wrap(item.getDef().name));
         player.getPacketSender().sendClientScript(3347, "iss", 0xff981f, "Collection log", "New item:" + Color.WHITE.wrap(item.getDef().name));
-        player.getPacketSender().sendClientScript(3348, "iss", 0xff981f, "Collection log", "New item:" + Color.WHITE.wrap(item.getDef().name));
+        player.getPacketSender().sendClientScript(3348, "iss", 0xff981f, "Collection log", "New item:" + Color.WHITE.wrap(item.getDef().name));*/
         return true;
     }
 
