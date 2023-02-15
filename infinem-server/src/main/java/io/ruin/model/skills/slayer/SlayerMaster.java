@@ -314,10 +314,21 @@ public class SlayerMaster {
                 location = " at the " + KonarData.TaskLocation.values()[player.slayerLocation].getName();
             }
 
-            player.sendMessage("You're assigned to kill " + name + "" + location + ", only " + amount + " to go.");
+            player.sendMessage("You're assigned to kill " + name + "" + location + "; only " + amount + " more to go.");
         } else {
             player.sendMessage("You need something new to hunt.");
         }
+        if (player.debug)
+            player.sendMessage(
+                    "amt:" + Config.SLAYER_TASK_AMOUNT.get(player)
+                    + "<br>task_1:" + Config.SLAYER_TASK_1.get(player)
+                    + "<br>master:" + Config.SLAYER_MASTER.get(player)
+                    + "<br>points:" + Config.SLAYER_POINTS.get(player)
+            );
         player.getTaskManager().doLookupByUUID(31, 1);  // Check Your Slayer Task
+    }
+
+    public static void resetTask(Player player) {
+        Config.SLAYER_TASK_AMOUNT.set(player, 0);
     }
 }
