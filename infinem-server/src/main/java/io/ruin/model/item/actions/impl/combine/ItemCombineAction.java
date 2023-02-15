@@ -7,7 +7,6 @@ import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
-import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
@@ -22,6 +21,16 @@ import java.util.List;
 public class ItemCombineAction {
 
     private enum ItemCombine {
+        /**
+         * Gnome
+         */
+        RAW_BATTA("You use the dough on the tin to make a raw batta.",
+                Arrays.asList(new ItemPair(Items.BATTA_TIN, Items.RAW_BATTA), new ItemPair(Items.GIANNE_DOUGH, -1))),
+        RAW_CRUNCHIES("You use the dough on the tray to make a raw crunchies.",
+                Arrays.asList(new ItemPair(Items.CRUNCHY_TRAY, Items.RAW_CRUNCHIES), new ItemPair(Items.GIANNE_DOUGH, -1))),
+        RAW_GNOMEBOWL("You use the dough on the mould to make a raw gnomebowl.",
+                Arrays.asList(new ItemPair(Items.GNOMEBOWL_MOULD, Items.RAW_GNOMEBOWL), new ItemPair(Items.GIANNE_DOUGH, -1))),
+
         /**
          * Dough
          */
@@ -215,10 +224,10 @@ public class ItemCombineAction {
                 Arrays.asList(new ItemPair(Items.RAW_OOMLIE, Items.WRAPPED_OOMLIE), new ItemPair(Items.PALM_LEAF, -1))),
         ;
 
-        public int tickInterval, animation, graphics, inventorySpaceRequired;
-        public String combineMessage, warningMessage;
-        public List<SkillRequired> skillsRequired;
-        public List<ItemPair>[] items;
+        public final int tickInterval, animation, graphics, inventorySpaceRequired;
+        public final String combineMessage, warningMessage;
+        public final List<SkillRequired> skillsRequired;
+        public final List<ItemPair>[] items;
 
         ItemCombine(int tickInterval, int animation, int graphics, String combineMessage, String warningMessage, int inventorySpaceRequired, List<SkillRequired> skillsRequired, List<ItemPair>... items) {
             this.tickInterval = tickInterval;
