@@ -181,10 +181,12 @@ public class Cooking {
             ItemObjectAction.register(food.rawID, "stove", (player, item, obj) -> Cooking.cook(player, food, obj, 896, false));
             ItemObjectAction.register(food.rawID, "sulphur vent", (player, item, obj) -> Cooking.cook(player, food, obj, 896, false));
             ItemObjectAction.register(food.rawID, "cooking pot", (player, item, obj) -> Cooking.cook(player, food, obj, 897, true));
+            ItemObjectAction.register(food.rawID, "gnome cooker", (player, item, obj) -> Cooking.cook(player, food, obj, 896, false));
             ItemObjectAction.register(food.rawID, 5249, (player, item, obj) -> Cooking.cook(player, food, obj, 897, true));
         }
         // Left click registration
         ObjectAction.register("cooking range", "cook", (player, obj) -> findCookable(player, obj, 896, false));
         ObjectAction.register("range", "cook", (player, obj) -> findCookable(player, obj, 896, false));
+        ObjectAction.register("gnome cooker", "cook", (player, obj) -> findCookable(player, obj, 896, false));
     }
 }
