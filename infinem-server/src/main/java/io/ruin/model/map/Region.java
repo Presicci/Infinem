@@ -8,9 +8,12 @@ import io.ruin.model.item.containers.bank.BankActions;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.route.RouteFinder;
 import io.ruin.model.skills.construction.House;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Region {
 
@@ -58,6 +61,9 @@ public class Region {
     public int dynamicRegionBaseX, dynamicRegionBaseY;
 
     public boolean empty;
+
+    @Getter
+    private final Set<Music> musicTracks = new HashSet<>();
 
     public void init() { //not my favorite design, let's come back to this one day..
         byte[][][] tileData = new byte[4][64][64];
@@ -116,41 +122,41 @@ public class Region {
             System.err.println("Invalid Map Keys for Region (" + id + "): base=(" + baseX + ", " + baseY + ") keys=" + Arrays.toString(keys));
             invalidKeys = true;
         }
-        if(landscapeData != null) {
+        if (landscapeData != null) {
             try {
-            InBuffer landIn = new InBuffer(landscapeData);
-            int objectId = -1;
-            for(; ; ) {
-                int increment = landIn.readSmart();
-                if(increment == 0)
-                    break;
-                objectId += increment;
-                int positionHash = 0;
-                for(; ; ) {
-                    int increment2 = landIn.readSmart();
-                    if(increment2 == 0)
+                InBuffer landIn = new InBuffer(landscapeData);
+                int objectId = -1;
+                for (; ; ) {
+                    int increment = landIn.readUnsignedIntSmartShortCompat();
+                    if (increment == 0)
                         break;
-                    positionHash += increment2 - 1;
-                    int localX = (positionHash >> 6) & 0x3f;
-                    int localY = positionHash & 0x3f;
-                    int height = positionHash >> 12;
-                    int objectHash = landIn.readByteUnsafe() & 0xFF;
-                    int type = objectHash >> 2;
-                    int direction = objectHash & 0x3;
-                    if(localX < 0 || localX >= 64 || localY < 0 || localY >= 64)
-                        continue;
-                    if((tileData[1][localX][localY] & 0x2) == 2)
-                        height--;
-                    if(height >= 0) {
-                        int absX = baseX + localX;
-                        int absY = baseY + localY;
-                        GameObject obj = new GameObject(objectId, absX, absY, height, type, direction);
-                        getTile(absX, absY, height, true).addObject(obj);
-                        //BankActions.markTiles(obj);
+                    objectId += increment;
+                    int positionHash = 0;
+                    for (; ; ) {
+                        int increment2 = landIn.readSmart();
+                        if (increment2 == 0)
+                            break;
+                        positionHash += increment2 - 1;
+                        int localX = (positionHash >> 6) & 0x3f;
+                        int localY = positionHash & 0x3f;
+                        int height = positionHash >> 12 & 0x3;
+                        int objectHash = landIn.readUnsignedByte();
+                        int type = objectHash >> 2;
+                        int direction = objectHash & 0x3;
+                        if (localX < 0 || localX >= 64 || localY < 0 || localY >= 64)
+                            continue;
+                        if ((tileData[1][localX][localY] & 0x2) == 2)
+                            height--;
+                        if (height >= 0) {
+                            int absX = baseX + localX;
+                            int absY = baseY + localY;
+                            GameObject obj = new GameObject(objectId, absX, absY, height, type, direction);
+                            getTile(absX, absY, height, true).addObject(obj);
+                            BankActions.markTiles(obj);
+                        }
                     }
                 }
-            }
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.out.print("Error initializing region: " + id + " ");
                 e.printStackTrace();
             }
@@ -229,6 +235,7 @@ public class Region {
                 tile.destroy();
             activeTiles.clear();
         }
+        musicTracks.clear();
         tiles = null;
         dynamicIndex = -1;
         dynamicData = null;
