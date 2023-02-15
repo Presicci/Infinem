@@ -1,14 +1,15 @@
 package io.ruin.cache;
 
 public enum Icon {
+    RED_INFO_BADGE(83),
     YELLOW_INFO_BADGE(84),
     MYSTERY_BOX(33),
     BLUE_INFO_BADGE(85),
     GREEN_INFO_BADGE(86),
     WILDERNESS(46),
     ANNOUNCEMENT(55),
-    HCIM_DEATH(10),
-    DONATOR(19),
+    HCIM_DEATH(10),//32
+    DONATOR(19),//142
     INFO(15),
     RED_STAR(30),
     GOLD_STAR(32),
