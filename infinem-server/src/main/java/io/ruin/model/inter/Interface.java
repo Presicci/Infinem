@@ -209,6 +209,7 @@ public class Interface {
     public static final int TRADE_CONFIRMATION = 334;
 
     public static final int MAKE_OVER_MAGE = 269;
+    public static final int HAIRDRESSER = 82;
 
     public static final int MAGE_ARENA = 139;
 
