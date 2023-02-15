@@ -10,6 +10,7 @@ import io.ruin.data.DataFile;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
+import io.ruin.model.locations.home.NPCLocator;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Tile;
 import io.ruin.model.shop.ShopManager;
@@ -59,10 +60,17 @@ public class npc_spawns extends DataFile {
                         }
                     });
                 }
+                attemptSaveSpawnNPC(n);
             });
         }
 
         return spawns;
+    }
+
+    private void attemptSaveSpawnNPC(NPC npc) {
+        if (npc.getId() == 3226) {
+            NPCLocator.WOODSMAN_TUTOR = npc;
+        }
     }
 
     @Override
