@@ -83,6 +83,11 @@ public enum Food {
     FRIED_ONIONS(42, 60, Items.CHOPPED_ONION, Items.FRIED_ONIONS, Items.BURNT_ONION, "the fried onions", "", 3, 77, 77, 72),
     BARLEY_MALT(1, 0.0, Items.BARLEY, Items.BARLEY_MALT, Items.BARLEY_MALT, "the barley malt", "", 3, 1, 1, 1),
 
+    //Gnome
+    HALF_BAKED_BATTA(1, 30.0, Items.RAW_BATTA, Items.HALF_BAKED_BATTA, Items.BURNT_BATTA, "the batta", "", 3, 40, 38, 34),
+    HALF_BAKED_CRUNCHIES(1, 30.0, Items.RAW_CRUNCHIES, Items.HALF_BAKED_CRUNCHY, Items.BURNT_CRUNCHIES, "the crunchies", "", 3, 40, 38, 34),
+    HALF_BAKED_GNOMEBOWL(1, 30.0, Items.RAW_GNOMEBOWL, Items.HALF_BAKED_BOWL, Items.BURNT_GNOMEBOWL, "the gnomebowl", "", 3, 40, 38, 34),
+
     //Raids fish
     PYSK(1, 10, 20855, 20856, 20854, "a pysk", "pysk", 3, 31, 31, 31),
     SUPHI(15, 13.0, 20857, 20858, 20854, "a suphi", "suphi", 3, 35, 35, 35),
