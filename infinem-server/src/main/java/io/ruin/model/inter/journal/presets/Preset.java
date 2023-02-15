@@ -5,7 +5,7 @@ import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.content.activities.tournament.TournamentManager;
 import io.ruin.model.activities.clanwars.FFAClanWars;
-import io.ruin.model.entity.npc.actions.edgeville.Nurse;
+import io.ruin.model.entity.npc.actions.Nurses;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -170,7 +170,7 @@ public class Preset extends JournalEntry {
          */
         player.getPrayer().deactivateAll();
         player.getCombat().updateLevel();
-        Nurse.heal(player, null);
+        Nurses.heal(player, null);
         player.lastPresetUsed = this;
         PlayerCounter.PRESETS_LOADED.increment(player, 1);
     }
