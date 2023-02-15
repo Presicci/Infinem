@@ -1,7 +1,7 @@
 package io.ruin.model.map.object.actions.impl.edgeville;
 
 import io.ruin.cache.ObjectDef;
-import io.ruin.model.entity.npc.actions.edgeville.Nurse;
+import io.ruin.model.entity.npc.actions.Nurses;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.map.object.GameObject;
@@ -18,7 +18,7 @@ public class RejuvenationPool {
         player.startEvent(event -> {
             player.lock();
             player.animate(833);
-            Nurse.heal(player, null);
+            Nurses.heal(player, null);
             event.delay(1);
             if(delayCheck)
                 player.rejuvenationPool = System.currentTimeMillis();
