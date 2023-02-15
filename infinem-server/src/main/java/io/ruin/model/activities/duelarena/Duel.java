@@ -989,14 +989,13 @@ public class Duel extends ItemContainer {
 
         ObjectAction.register(3192, "view", (player, obj) -> {
 
-            //TODO
-            //int x = 48;
-            //for(String history : FIGHT_HISTORY)
-            //    player.getPacketSender().sendString(108, x++, history);
+            int x = 48;
+            for(String history : FIGHT_HISTORY)
+                player.getPacketSender().sendString(108, x++, history);
 
-            //player.getPacketSender().sendString(108, 16, "My Wins: " + player.duelWins);
-            //player.getPacketSender().sendString(108, 17, "My Losses: " + player.duelLosses);
-            //player.openInterface(InterfaceType.MAIN, 108);
+            player.getPacketSender().sendString(108, 16, "My Wins: " + player.duelWins);
+            player.getPacketSender().sendString(108, 17, "My Losses: " + player.duelLosses);
+            player.openInterface(InterfaceType.MAIN, 108);
         });
     }
 
