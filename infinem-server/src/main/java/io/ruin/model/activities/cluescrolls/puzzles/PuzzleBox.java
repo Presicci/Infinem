@@ -1,4 +1,4 @@
-package io.ruin.model.activities.cluescrolls.impl;
+package io.ruin.model.activities.cluescrolls.puzzles;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.EnumMap;
@@ -34,7 +34,7 @@ public final class PuzzleBox {
     /**
      * The puzzle that we're currently managing.
      */
-    private Puzzle puzzle;
+    private PuzzleBoxType puzzle;
 
     /**
      * The container of the current puzzle pieces.
@@ -185,7 +185,7 @@ public final class PuzzleBox {
      * @param id the puzzle box id to fill the puzzle with.
      */
     private void generatePuzzle(final int id) {
-        puzzle = Puzzle.getMap().get(id);
+        puzzle = PuzzleBoxType.getMap().get(id);
         currentPuzzle = new ItemContainer();
         currentPuzzle.init(player, 25, -1, 0, 140, false);
         currentPuzzle.sendAll = true;
@@ -244,7 +244,7 @@ public final class PuzzleBox {
 
 
     static {
-        for (Puzzle puz : Puzzle.values()) {
+        for (PuzzleBoxType puz : PuzzleBoxType.values()) {
             ItemAction.registerInventory(puz.getPuzzleBox(), "open", ((p, item) -> {
                 if (AttributeExtensions.getCharges(item) == 1) {
                     p.sendMessage("You've already completed this puzzle.");

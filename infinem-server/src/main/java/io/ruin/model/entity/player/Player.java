@@ -12,7 +12,7 @@ import io.ruin.cache.Varp;
 import io.ruin.event.GameEventProcessor;
 import io.ruin.model.World;
 import io.ruin.model.activities.cluescrolls.impl.EmoteClue;
-import io.ruin.model.activities.cluescrolls.impl.PuzzleBox;
+import io.ruin.model.activities.cluescrolls.puzzles.PuzzleBox;
 import io.ruin.model.activities.duelarena.Duel;
 import io.ruin.model.activities.duelarena.DuelArena;
 import io.ruin.model.activities.pyramidplunder.PyramidPlunder;
@@ -77,7 +77,6 @@ import io.ruin.services.XenGroup;
 import io.ruin.utility.CS2Script;
 import io.ruin.utility.TickDelay;
 import lombok.Getter;
-import lombok.val;
 
 import java.time.LocalDate;
 import java.util.*;

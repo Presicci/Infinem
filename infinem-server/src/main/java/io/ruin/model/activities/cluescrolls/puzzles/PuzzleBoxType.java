@@ -1,4 +1,4 @@
-package io.ruin.model.activities.cluescrolls.impl;
+package io.ruin.model.activities.cluescrolls.puzzles;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.activities.cluescrolls.ClueType;
@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
  */
 @Getter
 @AllArgsConstructor
-public enum Puzzle {
+public enum PuzzleBoxType {
 
     HARD_CASTLE(1354, 19911, ClueType.HARD),
     HARD_TREE(1355, 19887, ClueType.HARD),
@@ -29,13 +29,13 @@ public enum Puzzle {
 
     private final int enumId, puzzleBox;
     private final ClueType level;
-    private static final Puzzle[] values = values();
-    @Getter private static final Int2ObjectMap<Puzzle> map =
-            Int2ObjectMaps.unmodifiable((Int2ObjectMap<Puzzle>) Utils.populateMap(values, new Int2ObjectOpenHashMap<>(), Puzzle::getPuzzleBox));
+    private static final PuzzleBoxType[] values = values();
+    @Getter private static final Int2ObjectMap<PuzzleBoxType> map =
+            Int2ObjectMaps.unmodifiable((Int2ObjectMap<PuzzleBoxType>) Utils.populateMap(values, new Int2ObjectOpenHashMap<>(), PuzzleBoxType::getPuzzleBox));
     @Getter private static final int[] puzzleBoxArray = new IntOpenHashSet(new IntArrayList(map.int2ObjectEntrySet().stream().mapToInt(entry -> entry.getValue().getPuzzleBox()).toArray())).toIntArray();
 
-    public static Puzzle random(@NotNull final ClueType level) {
-        val list = new ObjectArrayList<Puzzle>();
+    public static PuzzleBoxType random(@NotNull final ClueType level) {
+        val list = new ObjectArrayList<PuzzleBoxType>();
         for (val value : values) {
             if (value.level == level) {
                 list.add(value);
