@@ -17,8 +17,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.BitSet;
 
 /**
- * @author Mrbennjerry - https://github.com/Presicci
- * Created on 2/16/2023
+ * @author Kris | 30. march 2018 : 3:51.56
+ * @see <a href="https://www.rune-server.ee/members/kris/">Rune-Server profile</a>
  */
 public final class LightBox {
 
