@@ -7,6 +7,8 @@ import io.ruin.model.map.Tile;
 
 public class NPCMovement extends Movement {
 
+    public static boolean ALLOW_RANDOM_WALK = true;
+
     private NPC npc;
 
     public NPCMovement(NPC npc) {
@@ -46,6 +48,8 @@ public class NPCMovement extends Movement {
     }
 
     private void randomWalk() {
+        if (!ALLOW_RANDOM_WALK)
+            return;
         if(!npc.isRandomWalkAllowed())
             return;
         if(!Random.rollDie(4, 1))
