@@ -4,13 +4,14 @@ import com.google.api.client.util.Strings;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.item.Item;
+import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.NonNull;
 import lombok.val;
 
 import java.security.SecureRandom;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 /**
  * Basic utility class for anything extra we need since the other one is in a separate dependency...
@@ -152,5 +153,67 @@ public final class Utils {
             i++;
         }
         throw new RuntimeException("Concurrent modification performed on the collection.");
+    }
+
+    public static <T, V> Map<V, T> populateMap(final T[] array, final Map<V, T> map, final Function<T, V> func) {
+        for (val t : array) {
+            map.put(func.apply(t), t);
+        }
+        return map;
+    }
+
+    /**
+     * Finds the first value in the array that matches the predicate. If none is found, returns null.
+     *
+     * @param array     the array to loop.
+     * @param predicate the predicate to test against each value.
+     * @return a matching value.
+     */
+    public static <T> T findMatching(final T[] array, final Predicate<T> predicate) {
+        return findMatching(array, predicate, null);
+    }
+
+    /**
+     * Finds the first value in the array that matches the predicate. If none is found, returns the default value.
+     *
+     * @param array        the array to loop.
+     * @param predicate    the predicate to test against each value.
+     * @param defaultValue the default value to return if no value matches the predicate.
+     * @return a matching value.
+     */
+    public static <T> T findMatching(final T[] array, final Predicate<T> predicate, final T defaultValue) {
+        for (int i = 0; i < array.length; i++) {
+            val object = array[i];
+            if (predicate.test(object)) {
+                return object;
+            }
+        }
+        return defaultValue;
+    }
+
+    public static <T> T findMatching(final Collection<T> list, final Predicate<T> predicate) {
+        return findMatching(list, predicate, null);
+    }
+
+    public static <T> T findMatching(final Collection<T> list, final Predicate<T> predicate, final T defaultValue) {
+        for (final T object : list) {
+            if (predicate.test(object)) {
+                return object;
+            }
+        }
+        return defaultValue;
+    }
+
+    public static <T> T findMatching(final Set<T> list, final Predicate<T> predicate) {
+        return findMatching(list, predicate, null);
+    }
+
+    public static <T> T findMatching(final Set<T> list, final Predicate<T> predicate, final T defaultValue) {
+        for (val object : list) {
+            if (predicate.test(object)) {
+                return object;
+            }
+        }
+        return defaultValue;
     }
 }
