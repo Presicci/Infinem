@@ -4,27 +4,16 @@ import io.ruin.cache.Color;
 import io.ruin.model.activities.pvminstances.InstanceDialogue;
 import io.ruin.model.activities.pvminstances.InstanceType;
 import io.ruin.model.combat.Hit;
-import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
-import io.ruin.model.item.Item;
-import io.ruin.model.item.actions.impl.combine.SlayerHelm;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.MapListener;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.slayer.Slayer;
 
 public class SmokeDevilDungeon {
-
-    private static boolean hasFaceMask(Player player) {
-        Item faceMask = player.getEquipment().findFirst(SlayerHelm.FACEMASK, SlayerHelm.SLAYER_HELM, SlayerHelm.SLAYER_HELM_IMBUE, SlayerHelm.BLACK_SLAYER_HELM,
-                SlayerHelm.BLACK_HELM_IMBUE, SlayerHelm.RED_HELM_IMBUE, SlayerHelm.RED_SLAYER_HELM, SlayerHelm.GREEN_HELM_IMBUE, SlayerHelm.GREEN_SLAYER_HELM,
-                SlayerHelm.PURPLE_HELM_IMBUE, SlayerHelm.PURPLE_SLAYER_HELM, SlayerHelm.HYDRA_SLAYER_HELM, SlayerHelm.HYDRA_HELM_IMBUE,
-                SlayerHelm.VORKATH_SLAYER_HELM, SlayerHelm.VORKATH_SLAYER_HELM_IMBUE);
-        return faceMask != null;
-    }
-
     private static final Bounds DUNGEON_BOUNDS = new Bounds(2317, 9418, 2431, 9471, -1);
     private static final Bounds DUNGEON_BOSS = new Bounds(2350, 9436, 2378, 9460, -1);
 
@@ -35,7 +24,7 @@ public class SmokeDevilDungeon {
          * Entrance/exit
          */
         ObjectAction.register(30176, 2411, 3061, 0, "enter", (player, obj) -> {
-            if (hasFaceMask(player)) {
+            if (Slayer.hasFaceMask(player)) {
                 player.getMovement().teleport(2404, 9415);
             } else {
                 player.dialogue(new NPCDialogue(7654, "Hey you don't " + Color.COOL_BLUE.wrap("*cough*") + " wanna go in there without " + Color.COOL_BLUE.wrap("*cough*") +
@@ -82,7 +71,7 @@ public class SmokeDevilDungeon {
 
         MapListener.registerBounds(DUNGEON_BOUNDS).onEnter(player -> player.addEvent(e -> {
             while(player.getPosition().inBounds(DUNGEON_BOUNDS)) {
-                if(hasFaceMask(player))
+                if(Slayer.hasFaceMask(player))
                     return;
                 player.hit(new Hit().fixedDamage(20));
                 e.delay(50);
