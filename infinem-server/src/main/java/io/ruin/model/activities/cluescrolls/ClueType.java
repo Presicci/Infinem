@@ -1196,7 +1196,7 @@ public enum ClueType {
             clueType.getSave(player).id = -1;
         }
         // Clear clue attributes
-        player.clearExposedAttribute(AttributeKey.FALO_SONG);
+        player.removeAttribute(AttributeKey.FALO_SONG);
         player.removeTemporaryAttribute(AttributeKey.SPAWNED_WIZARD);
         player.removeTemporaryAttribute(AttributeKey.KILLED_WIZARD);
         player.removeTemporaryAttribute(AttributeKey.URI_SPAWNED);
