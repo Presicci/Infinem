@@ -76,6 +76,7 @@ import io.ruin.services.XenGroup;
 import io.ruin.utility.CS2Script;
 import io.ruin.utility.TickDelay;
 import lombok.Getter;
+import lombok.val;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -1827,5 +1828,15 @@ public class Player extends PlayerAttributes {
 
     public void putAttribute(AttributeKey key, Object v) {
         attributes.put(key, v);
+    }
+
+    public int incrementNumericAttribute(AttributeKey key, int amount) {
+        Object object = attributes.get(key);
+        if (object != null && !(object instanceof Number)) {
+            throw new IllegalArgumentException("Attribute with key [" + key.name() + "] is not numeric.");
+        }
+        int newAmount = object == null ? amount : ((Number) object).intValue() + amount;
+        attributes.put(key, newAmount);
+        return newAmount;
     }
 }
