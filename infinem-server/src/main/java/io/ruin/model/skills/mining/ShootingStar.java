@@ -3,6 +3,7 @@ package io.ruin.model.skills.mining;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.model.World;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -95,7 +96,7 @@ public enum ShootingStar {
         if (!found) {
             found = true;
             player.dialogue(new MessageDialogue("Congratulations! You were the first person to find this star!"));
-            ++player.shootingStarsFound;
+            player.incrementNumericAttribute(AttributeKey.SHOOTING_STARS_FOUND, 1);
             //TODO Noticeboard
         }
         Pickaxe pickaxe = Pickaxe.find(player);

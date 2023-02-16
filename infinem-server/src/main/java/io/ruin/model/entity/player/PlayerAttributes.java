@@ -1363,8 +1363,6 @@ public abstract class PlayerAttributes extends Entity {
     /*  Stronghold of Security  */
     @Expose public boolean[] strongholdRewards = { false, false, false, false };
 
-    @Expose public int shootingStarsFound;
-
     @Expose @Getter @Setter public int collection_log_current_entry = 0;
     @Expose @Getter @Setter public int collection_log_current_struct = 471;//471-475
     @Expose @Getter @Setter public int collection_log_current_tab = 0;
