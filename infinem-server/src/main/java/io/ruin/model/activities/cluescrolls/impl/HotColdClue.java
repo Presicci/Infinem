@@ -50,12 +50,12 @@ public class HotColdClue extends Clue {
             HotColdClue clue = (HotColdClue) Clue.CLUES[player.beginnerClue.id];
             int distance = Math.max(Math.abs(player.getPosition().getX() - clue.position.getX()),
                     Math.abs(player.getPosition().getY() - clue.position.getY()));
-            int lastDistance = player.attributeOr(AttributeKey.HOT_AND_COLD, 0);
+            int lastDistance = player.getTemporaryAttributeOrDefault(AttributeKey.HOT_AND_COLD, 0);
             Temperature temperature = null;
             for (Temperature temp : Temperature.values()) {
                 if (distance >= temp.minDistance && distance <= temp.maxDistance) {
                     message += temp.message;
-                    player.putAttribute(AttributeKey.HOT_AND_COLD, distance);
+                    player.putTemporaryAttribute(AttributeKey.HOT_AND_COLD, distance);
                     temperature = temp;
                     break;
                 }
@@ -86,12 +86,12 @@ public class HotColdClue extends Clue {
             HotColdClue clue = (HotColdClue) Clue.CLUES[player.masterClue.id];
             int distance = Math.max(Math.abs(player.getPosition().getX() - clue.position.getX()),
                     Math.abs(player.getPosition().getY() - clue.position.getY()));
-            int lastDistance = player.attributeOr(AttributeKey.HOT_AND_COLD, 0);
+            int lastDistance = player.getTemporaryAttributeOrDefault(AttributeKey.HOT_AND_COLD, 0);
             Temperature temperature = null;
             for (Temperature temp : Temperature.values()) {
                 if (distance >= temp.minDistance && distance <= temp.maxDistance) {
                     message += temp.message;
-                    player.putAttribute(AttributeKey.HOT_AND_COLD, distance);
+                    player.putTemporaryAttribute(AttributeKey.HOT_AND_COLD, distance);
                     temperature = temp;
                     break;
                 }

@@ -38,11 +38,11 @@ public class GrainHopper {
                                 obj.setId(obj.originalId);
                             });
                         }
-                        if (player.attributeOr(AttributeKey.GRAIN_IN_HOPPER, false)) {
+                        if (player.getTemporaryAttributeOrDefault(AttributeKey.GRAIN_IN_HOPPER, false)) {
                             Config.FLOUR_BIN.increment(player, 1);
                             Config.FLOUR_BIN_FULL.set(player, 1);
                             player.sendMessage("You operate the hopper. The grain slides down the chute.");
-                            player.clearAttribute(AttributeKey.GRAIN_IN_HOPPER);
+                            player.removeTemporaryAttribute(AttributeKey.GRAIN_IN_HOPPER);
                         } else {
                             player.sendMessage("You operate the empty hopper. Nothing interesting happens.");
                         }
@@ -55,13 +55,13 @@ public class GrainHopper {
 
         for (int hopper : HOPPERS) {
             ItemObjectAction.register(GRAIN, hopper, (player, item, obj) -> {
-                if (!player.<Boolean>attributeOr(AttributeKey.GRAIN_IN_HOPPER, false)) {
+                if (!player.<Boolean>getTemporaryAttributeOrDefault(AttributeKey.GRAIN_IN_HOPPER, false)) {
                     if (player.getInventory().remove(GRAIN, 1) > 0) {
                         player.lock();
                         player.sendMessage("You put grain in the hopper.");
                         player.animate(3572);
                         player.privateSound(2567);
-                        player.putAttribute(AttributeKey.GRAIN_IN_HOPPER, true);
+                        player.putTemporaryAttribute(AttributeKey.GRAIN_IN_HOPPER, true);
                         player.unlock();
                     }
                 } else {
@@ -70,13 +70,13 @@ public class GrainHopper {
             });
             ObjectAction.register(hopper, "Fill", (player, obj) -> {
                 if (player.getInventory().contains(GRAIN, 1)) {
-                    if (!player.<Boolean>attributeOr(AttributeKey.GRAIN_IN_HOPPER, false)) {
+                    if (!player.<Boolean>getTemporaryAttributeOrDefault(AttributeKey.GRAIN_IN_HOPPER, false)) {
                         if (player.getInventory().remove(GRAIN, 1) > 0) {
                             player.lock();
                             player.sendMessage("You put grain in the hopper.");
                             player.animate(3572);
                             player.privateSound(2567);
-                            player.putAttribute(AttributeKey.GRAIN_IN_HOPPER, true);
+                            player.putTemporaryAttribute(AttributeKey.GRAIN_IN_HOPPER, true);
                             player.unlock();
                         }
                     } else {

@@ -29,7 +29,7 @@ public class FaloTheBardClue extends Clue {
 
     @Override
     public void open(Player player) {
-        if (player.hasExposedAttribute(AttributeKey.FALO_SONG)) {
+        if (player.hasAttribute(AttributeKey.FALO_SONG)) {
             player.getPacketSender().sendString(203, 2, clue);
             player.openInterface(InterfaceType.MAIN, 203);
         } else {    // If the player has yet to speek to falo
@@ -46,7 +46,7 @@ public class FaloTheBardClue extends Clue {
                     new MessageDialogue("Falo's eyes light up."),
                     new NPCDialogue(FALO, "Yes yes yes! That is it, thank you so much " + player.getFremennikName() + ". The memories have come flooding back. I get why the lyrics are what they are now."),
                     new ActionDialogue(() -> {
-                        player.clearExposedAttribute(AttributeKey.FALO_SONG);
+                        player.removeAttribute(AttributeKey.FALO_SONG);
                         clue.advance(player);
                     })
             );
@@ -59,14 +59,14 @@ public class FaloTheBardClue extends Clue {
         if (player.masterClue != null && player.masterClue.id >= 0 && player.getInventory().contains(ClueType.MASTER.clueId) &&
                 Clue.CLUES[player.masterClue.id] instanceof FaloTheBardClue) {
             FaloTheBardClue clue = (FaloTheBardClue) Clue.CLUES[player.masterClue.id];
-            if (player.hasExposedAttribute(AttributeKey.FALO_SONG)) {
+            if (player.hasAttribute(AttributeKey.FALO_SONG)) {
                 // Every other time
                 player.dialogue(
                         new NPCDialogue(FALO, "I really hope you can help me. Please show me the object my song is about!"),
                         new PlayerDialogue("Can you sing me the song again?"),
                         new NPCDialogue(FALO, "Okay, here goes... " + clue.clue),
                         new ActionDialogue(() -> {
-                            player.putExposedAttribute(AttributeKey.FALO_SONG, 1);
+                            player.putAttribute(AttributeKey.FALO_SONG, 1);
                         })
                 );
             } else {
@@ -76,7 +76,7 @@ public class FaloTheBardClue extends Clue {
                         new NPCDialogue(FALO, "I have one of my old songs stuck in my head, but I cannot remember what the object it refers to is. I am so forgetful. I'll sing it to you."),
                         new NPCDialogue(FALO, "Here goes... " + clue.clue),
                         new ActionDialogue(() -> {
-                            player.putExposedAttribute(AttributeKey.FALO_SONG, 1);
+                            player.putAttribute(AttributeKey.FALO_SONG, 1);
                             player.dialogue(
                                     new PlayerDialogue("What a beautiful song!"),
                                     new NPCDialogue(FALO, "You have very kind words. I would be extremely grateful if you could remind me which object the song was about.")

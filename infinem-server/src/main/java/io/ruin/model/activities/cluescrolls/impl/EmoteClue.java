@@ -46,7 +46,7 @@ public class EmoteClue extends Clue {
     }
 
     public void spawnUri(Player player, TabEmote emote) {
-        if (emote != this.emotes.get(0) || !equipmentCheck(player) || player.hasAttribute(AttributeKey.URI_SPAWNED)) {
+        if (emote != this.emotes.get(0) || !equipmentCheck(player) || player.hasTemporaryAttribute(AttributeKey.URI_SPAWNED)) {
             return;
         }
         Uri npc = new Uri(player, this);
@@ -98,7 +98,7 @@ public class EmoteClue extends Clue {
     }
 
     public boolean hasPerformedSecondEmote(Player player) {
-        TabEmote emote = player.attributeOr(AttributeKey.LAST_EMOTE, null);
+        TabEmote emote = player.getTemporaryAttributeOrDefault(AttributeKey.LAST_EMOTE, null);
         return emotes.size() == 1 || (emote != null && emote == emotes.get(1));
     }
 

@@ -27,7 +27,7 @@ public class EssenceMine {
 
     private static void leaveMine(Player player, GameObject obj) {
         player.getMovement().startTeleport(-1, event -> {
-            String destination = player.exposedAttribute(AttributeKey.ESSENCE_TELEPORT);
+            String destination = player.getAttribute(AttributeKey.ESSENCE_TELEPORT);
             Position teleportDest;
             switch (destination) {
                 case "SEDRIDOR":
@@ -50,7 +50,7 @@ public class EssenceMine {
             event.delay(2);
             player.graphics(110);
             player.getMovement().teleport(teleportDest);
-            player.clearExposedAttribute(AttributeKey.ESSENCE_TELEPORT);
+            player.removeAttribute(AttributeKey.ESSENCE_TELEPORT);
         });
     }
 
@@ -63,7 +63,7 @@ public class EssenceMine {
             event.delay(2);
             player.graphics(110);
             player.getMovement().teleport(Random.get(positions));
-            player.putExposedAttribute(AttributeKey.ESSENCE_TELEPORT, npcName);
+            player.putAttribute(AttributeKey.ESSENCE_TELEPORT, npcName);
             player.getTaskManager().doLookupByUUID(44, 1);  // Visit the Rune Essence Mine
         });
     }

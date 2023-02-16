@@ -31,10 +31,7 @@ import io.ruin.process.event.EventType;
 import io.ruin.process.event.EventWorker;
 import io.ruin.utility.TickDelay;
 
-import java.util.ArrayList;
-import java.util.EnumMap;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Consumer;
 
 // TODO replace entity.player != null checks with isPlayer (and one for npc)
@@ -52,7 +49,7 @@ public abstract class Entity {
         if(this instanceof Player) {
             player = (Player) this;
             npc = null;
-            attributes = new EnumMap<>(AttributeKey.class);
+            temporaryAttributes = new EnumMap<>(AttributeKey.class);
         } else {
             npc = (NPC) this;
             player = null;
@@ -1052,52 +1049,25 @@ public abstract class Entity {
         return !dead();
     }
 
-    protected Map<AttributeKey, Object> attributes;
-    @Expose protected Map<AttributeKey, Object> exposedAttributes;
+    protected Map<AttributeKey, Object> temporaryAttributes = Collections.synchronizedMap(new EnumMap<>(AttributeKey.class));
 
-    public boolean hasAttribute(AttributeKey key) {
-        return attributes != null && attributes.containsKey(key);
+    public boolean hasTemporaryAttribute(AttributeKey key) {
+        return temporaryAttributes != null && temporaryAttributes.containsKey(key);
     }
 
-    public <T> T attribute(AttributeKey key) {
-        return attributes == null ? null : (T) attributes.get(key);
+    public <T> T getTemporaryAttribute(AttributeKey key) {
+        return (T) temporaryAttributes.get(key);
     }
 
-    public <T> T attributeOr(AttributeKey key, Object defaultValue) {
-        return attributes == null ? (T) defaultValue : (T) attributes.getOrDefault(key, defaultValue);
+    public <T> T getTemporaryAttributeOrDefault(AttributeKey key, Object defaultValue) {
+        return (T) temporaryAttributes.getOrDefault(key, defaultValue);
     }
 
-    public void clearAttribute(AttributeKey key) {
-        if (attributes != null)
-            attributes.remove(key);
+    public void removeTemporaryAttribute(AttributeKey key) {
+        temporaryAttributes.remove(key);
     }
 
-    public void putAttribute(AttributeKey key, Object v) {
-        if (attributes == null)
-            attributes = new EnumMap<>(AttributeKey.class);
-        attributes.put(key, v);
-    }
-
-    public boolean hasExposedAttribute(AttributeKey key) {
-        return exposedAttributes != null && exposedAttributes.containsKey(key);
-    }
-
-    public <T> T exposedAttribute(AttributeKey key) {
-        return exposedAttributes == null ? null : (T) exposedAttributes.get(key);
-    }
-
-    public <T> T exposedAttributeOr(AttributeKey key, Object defaultValue) {
-        return exposedAttributes == null ? (T) defaultValue : (T) exposedAttributes.getOrDefault(key, defaultValue);
-    }
-
-    public void clearExposedAttribute(AttributeKey key) {
-        if (exposedAttributes != null)
-            exposedAttributes.remove(key);
-    }
-
-    public void putExposedAttribute(AttributeKey key, Object v) {
-        if (exposedAttributes == null)
-            exposedAttributes = new EnumMap<>(AttributeKey.class);
-        exposedAttributes.put(key, v);
+    public void putTemporaryAttribute(AttributeKey key, Object v) {
+        temporaryAttributes.put(key, v);
     }
 }

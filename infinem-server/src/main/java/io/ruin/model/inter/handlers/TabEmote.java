@@ -111,7 +111,7 @@ public enum TabEmote {
             }
 
             p.animate(emoteId);
-            p.putAttribute(AttributeKey.LAST_EMOTE, emote);
+            p.putTemporaryAttribute(AttributeKey.LAST_EMOTE, emote);
             if(emote.gfxId != -1)
                 p.graphics(emote.gfxId);
             Tile tile = p.getPosition().getTile();

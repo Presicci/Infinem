@@ -16,23 +16,23 @@ import io.ruin.model.map.route.routes.ProjectileRoute;
 public class ClueEnemies {
 
     public static void spawnSingleEnemyOnDig(Clue clue, Player player, int... possibleIds) {
-        int killedWizard = player.attributeOr(AttributeKey.KILLED_WIZARD, 0);
+        int killedWizard = player.getTemporaryAttributeOrDefault(AttributeKey.KILLED_WIZARD, 0);
         if (killedWizard == 1) {
-            player.clearAttribute(AttributeKey.KILLED_WIZARD);
+            player.removeTemporaryAttribute(AttributeKey.KILLED_WIZARD);
             clue.advance(player);
         } else {
-            boolean spawnedWizard = player.attributeOr(AttributeKey.SPAWNED_WIZARD, false);
+            boolean spawnedWizard = player.getTemporaryAttributeOrDefault(AttributeKey.SPAWNED_WIZARD, false);
             if (!spawnedWizard) {
-                player.putAttribute(AttributeKey.SPAWNED_WIZARD, true);
+                player.putTemporaryAttribute(AttributeKey.SPAWNED_WIZARD, true);
                 NPC npc = new NPC(Random.get(possibleIds));
                 npc.targetPlayer(player, true);
                 npc.removeOnDeath();
                 npc.removeIfIdle(player);
                 npc.removalAction = (p -> {
-                    p.clearAttribute(AttributeKey.SPAWNED_WIZARD);
+                    p.removeTemporaryAttribute(AttributeKey.SPAWNED_WIZARD);
                 });
                 npc.deathStartListener = (DeathListener.SimpleKiller) killer -> {
-                    player.putAttribute(AttributeKey.KILLED_WIZARD, 1);
+                    player.putTemporaryAttribute(AttributeKey.KILLED_WIZARD, 1);
                 };
                 Bounds bounds = new Bounds(player.getPosition(), 3);
                 boolean hasSpawned = false;
@@ -49,14 +49,14 @@ public class ClueEnemies {
     }
 
     public static void ancientOrBrassicanDig(Clue clue, Player player) {
-        int killedWizard = player.attributeOr(AttributeKey.KILLED_WIZARD, 0);
+        int killedWizard = player.getTemporaryAttributeOrDefault(AttributeKey.KILLED_WIZARD, 0);
         if (killedWizard == 3 || clue.type != ClueType.MASTER) {
-            player.clearAttribute(AttributeKey.KILLED_WIZARD);
+            player.removeTemporaryAttribute(AttributeKey.KILLED_WIZARD);
             clue.advance(player);
         } else {
-            boolean spawnedWizard = player.attributeOr(AttributeKey.SPAWNED_WIZARD, false);
+            boolean spawnedWizard = player.getTemporaryAttributeOrDefault(AttributeKey.SPAWNED_WIZARD, false);
             if (!spawnedWizard) {
-                player.putAttribute(AttributeKey.SPAWNED_WIZARD, true);
+                player.putTemporaryAttribute(AttributeKey.SPAWNED_WIZARD, true);
                 // Spawn a brassican mage in singles, ancient wizards in multi
                 if (player.inMulti()) {
                     NPC melee = new NPC(7309);
@@ -68,11 +68,11 @@ public class ClueEnemies {
                         wizard.removeOnDeath();
                         wizard.removeIfIdle(player);
                         wizard.removalAction = (p -> {
-                            p.clearAttribute(AttributeKey.SPAWNED_WIZARD);
+                            p.removeTemporaryAttribute(AttributeKey.SPAWNED_WIZARD);
                         });
                         wizard.deathStartListener = (DeathListener.SimpleKiller) killer -> {
-                            int killed = player.attributeOr(AttributeKey.KILLED_WIZARD, 0);
-                            player.putAttribute(AttributeKey.KILLED_WIZARD, killed + 1);
+                            int killed = player.getTemporaryAttributeOrDefault(AttributeKey.KILLED_WIZARD, 0);
+                            player.putTemporaryAttribute(AttributeKey.KILLED_WIZARD, killed + 1);
                         };
                     }
                     Position[] positions = new Position[2];
@@ -99,10 +99,10 @@ public class ClueEnemies {
                     npc.removeOnDeath();
                     npc.removeIfIdle(player);
                     npc.removalAction = (p -> {
-                        p.clearAttribute(AttributeKey.SPAWNED_WIZARD);
+                        p.removeTemporaryAttribute(AttributeKey.SPAWNED_WIZARD);
                     });
                     npc.deathStartListener = (DeathListener.SimpleKiller) killer -> {
-                        player.putAttribute(AttributeKey.KILLED_WIZARD, 3);
+                        player.putTemporaryAttribute(AttributeKey.KILLED_WIZARD, 3);
                     };
                     Bounds bounds = new Bounds(player.getPosition(), 3);
                     boolean hasSpawned = false;

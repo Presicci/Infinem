@@ -1197,10 +1197,10 @@ public enum ClueType {
         }
         // Clear clue attributes
         player.clearExposedAttribute(AttributeKey.FALO_SONG);
-        player.clearAttribute(AttributeKey.SPAWNED_WIZARD);
-        player.clearAttribute(AttributeKey.KILLED_WIZARD);
-        player.clearAttribute(AttributeKey.URI_SPAWNED);
-        player.clearAttribute(AttributeKey.URI_CLUE);
+        player.removeTemporaryAttribute(AttributeKey.SPAWNED_WIZARD);
+        player.removeTemporaryAttribute(AttributeKey.KILLED_WIZARD);
+        player.removeTemporaryAttribute(AttributeKey.URI_SPAWNED);
+        player.removeTemporaryAttribute(AttributeKey.URI_CLUE);
 
         player.getInventory().remove(clueType.boxId, 1);
         player.getInventory().add(clueType.clueId, 1);

@@ -23,6 +23,7 @@ import io.ruin.model.combat.WildernessRating;
 import io.ruin.model.content.UpgradeMachine;
 import io.ruin.model.content.waystones.Waystone;
 import io.ruin.model.entity.Entity;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.handlers.TeleportInterface;
@@ -1381,4 +1382,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose @Getter private final EnumSet<Waystone> UnlockedWaystones = EnumSet.noneOf(Waystone.class);
 
     @Expose @Getter @Setter private int camuletCharges = 0;
+
+    @Expose protected Map<AttributeKey, Object> attributes = Collections.synchronizedMap(new EnumMap<>(AttributeKey .class));
 }

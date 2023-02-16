@@ -21,6 +21,7 @@ import io.ruin.model.content.tasksystem.relics.RelicManager;
 import io.ruin.model.content.tasksystem.tasks.TaskManager;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.UpdateMask;
@@ -1807,4 +1808,24 @@ public class Player extends PlayerAttributes {
 
     @Expose @Getter
     private RelicManager relicManager;
+
+    public boolean hasAttribute(AttributeKey key) {
+        return attributes.containsKey(key);
+    }
+
+    public <T> T getAttribute(AttributeKey key) {
+        return (T) attributes.get(key);
+    }
+
+    public <T> T getAttributeOrDefault(AttributeKey key, Object defaultValue) {
+        return (T) attributes.getOrDefault(key, defaultValue);
+    }
+
+    public void removeAttribute(AttributeKey key) {
+        attributes.remove(key);
+    }
+
+    public void putAttribute(AttributeKey key, Object v) {
+        attributes.put(key, v);
+    }
 }

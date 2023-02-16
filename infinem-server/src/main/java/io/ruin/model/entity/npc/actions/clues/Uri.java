@@ -1,8 +1,6 @@
 package io.ruin.model.entity.npc.actions.clues;
 
-import io.ruin.Server;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.cluescrolls.impl.EmoteClue;
 import io.ruin.model.entity.attributes.AttributeKey;
@@ -10,10 +8,8 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ActionDialogue;
-import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
-import io.ruin.model.inter.handlers.TabEmote;
 
 import java.util.Optional;
 
@@ -28,8 +24,8 @@ public class Uri extends NPC {
     public Uri(Player player, EmoteClue clue) {
         super(URI);
         ownerId = player.getUserId();
-        putAttribute(AttributeKey.URI_CLUE, clue);
-        player.putAttribute(AttributeKey.URI_SPAWNED, true);
+        putTemporaryAttribute(AttributeKey.URI_CLUE, clue);
+        player.putTemporaryAttribute(AttributeKey.URI_SPAWNED, true);
         int x = player.getMovement().followX;
         int y = player.getMovement().followY;
         if (x == -1 || y == -1) {   // Just in case the player tries to do the emote after just logging in
@@ -44,7 +40,7 @@ public class Uri extends NPC {
     @Override
     public void remove() {
         Optional<Player> player = World.getPlayerByUid(ownerId);
-        player.ifPresent(value -> value.clearAttribute(AttributeKey.URI_SPAWNED));
+        player.ifPresent(value -> value.removeTemporaryAttribute(AttributeKey.URI_SPAWNED));
         graphics(86);
         super.remove();
     }
@@ -121,7 +117,7 @@ public class Uri extends NPC {
 
     static {
         NPCAction.register(URI, "talk-to", (player, npc) -> {
-            EmoteClue clue = npc.attributeOr(AttributeKey.URI_CLUE, null);
+            EmoteClue clue = npc.getTemporaryAttributeOrDefault(AttributeKey.URI_CLUE, null);
             if(npc.ownerId != player.getUserId()
                     || clue == null || !clue.equipmentCheck(player)
                     || !clue.hasPerformedSecondEmote(player)
