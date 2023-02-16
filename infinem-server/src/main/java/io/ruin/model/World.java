@@ -18,6 +18,7 @@ import io.ruin.model.activities.pvminstances.PVMInstance;
 import io.ruin.model.combat.Killer;
 import io.ruin.model.entity.EntityList;
 import io.ruin.model.entity.npc.NPC;
+import io.ruin.model.entity.npc.NPCMovement;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerFile;
 import io.ruin.model.map.Position;
@@ -25,6 +26,7 @@ import io.ruin.model.map.Region;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.object.owned.OwnedObject;
 import io.ruin.model.object.owned.impl.DwarfCannon;
+import io.ruin.model.skills.hunter.Impling;
 import io.ruin.process.event.EventWorker;
 import io.ruin.utility.Broadcast;
 import lombok.Getter;
@@ -468,5 +470,9 @@ public class World extends EventWorker {
         World.address = host + ":" + port;
 
         World.setCentralAddress(properties.getProperty("central_address"));
+
+        // Load misc property data
+        Impling.SPAWN_IMPLINGS = Boolean.parseBoolean(properties.getProperty("spawn_implings"));
+        NPCMovement.ALLOW_RANDOM_WALK = Boolean.parseBoolean(properties.getProperty("random_npc_movement"));
     }
 }
