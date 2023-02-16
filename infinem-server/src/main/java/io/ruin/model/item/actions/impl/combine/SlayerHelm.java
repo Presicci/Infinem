@@ -37,7 +37,7 @@ public class SlayerHelm {
     );
 
     private static final List<Integer> ALL_BOOST_HELMS = Arrays.asList(
-            8901, 8903, 8905, 8907, 8909, 8911, 8913, 8915, 8917, 8919, 8921, // black masks
+            11774, 11775, 11776, 11777, 11778, 11779, 11780, 11781, 11782, 11783, 11784, // black masks
             SLAYER_HELM_IMBUE
     );
 
