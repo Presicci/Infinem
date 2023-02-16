@@ -15,6 +15,7 @@ import io.ruin.content.activities.event.impl.eventboss.EventBoss;
 import io.ruin.content.activities.event.impl.eventboss.EventBossType;
 import io.ruin.content.areas.wilderness.DeadmanChestEvent;
 import io.ruin.data.DataFile;
+import io.ruin.data.impl.dialogue.DialogueLoader;
 import io.ruin.data.impl.Help;
 import io.ruin.data.impl.items.item_info;
 import io.ruin.data.impl.items.shield_types;
@@ -23,11 +24,13 @@ import io.ruin.data.impl.login_set;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.data.impl.npcs.npc_drops;
 import io.ruin.data.impl.npcs.npc_spawns;
+import io.ruin.data.impl.objects.object_examines;
 import io.ruin.data.impl.objects.object_spawns;
 import io.ruin.data.impl.teleports;
 import io.ruin.data.yaml.YamlLoader;
 import io.ruin.data.yaml.impl.ShopLoader;
 import io.ruin.model.World;
+import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.inferno.Inferno;
 import io.ruin.model.activities.raids.xeric.ChambersOfXeric;
 import io.ruin.model.activities.raids.xeric.chamber.Chamber;
@@ -35,7 +38,8 @@ import io.ruin.model.activities.raids.xeric.chamber.ChamberDefinition;
 import io.ruin.model.activities.raids.xeric.party.Party;
 import io.ruin.model.activities.wilderness.StaffBounty;
 import io.ruin.model.combat.Hit;
-import io.ruin.model.content.tasksystem.TasksInterface;
+import io.ruin.model.content.ActivitySpotlight;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.*;
@@ -74,13 +78,13 @@ import io.ruin.model.skills.construction.actions.Costume;
 import io.ruin.model.skills.construction.actions.CostumeStorage;
 import io.ruin.model.skills.construction.room.impl.PortalNexus;
 import io.ruin.model.skills.farming.farming_contracts.SeedPack;
+import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.hunter.Impling;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.mining.Mining;
 import io.ruin.model.skills.mining.Pickaxe;
 import io.ruin.model.skills.mining.Rock;
 import io.ruin.model.skills.mining.ShootingStar;
-import io.ruin.model.skills.slayer.SlayerTask;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 import io.ruin.network.central.CentralClient;
@@ -94,8 +98,14 @@ import io.ruin.utility.AttributePair;
 import io.ruin.utility.CS2Script;
 import org.apache.commons.lang3.RandomUtils;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
@@ -120,46 +130,14 @@ public class Administrator {
             case "setlvl":
             case "setlevels":
             case "setlevel": {
-//                player.dialogue(
-//                        new OptionsDialogue(
-//                                new Option("Set Attack", () -> TabStats.setLevel(player, StatType.Attack)),
-//                                new Option("Set Strength", () -> TabStats.setLevel(player, StatType.Strength)),
-//                                new Option("Set Defence", () -> TabStats.setLevel(player, StatType.Defence)),
-//                                new Option("Set Ranged", () -> TabStats.setLevel(player, StatType.Ranged)),
-//                                new Option("Next Page", () -> {
-//                                    player.dialogue(
-//                                            new OptionsDialogue(
-//                                                    new Option("Set Prayer", () -> TabStats.setLevel(player, StatType.Prayer)),
-//                                                    new Option("Set Magic", () -> TabStats.setLevel(player, StatType.Magic)),
-//                                                    new Option("Set Hitpoints", () -> TabStats.setLevel(player, StatType.Hitpoints))
-//                                            )
-//                                    );
-//                                })
-//                        )
-//                );
                 int id = Integer.parseInt(args[0]);
                 int level = Integer.parseInt(args[1]);
                 player.getStats().set(StatType.values()[id], level);
                 return true;
             }
-            case "spawnstar": {
-                ShootingStar.spawnStar();
-                Position pos = ShootingStar.starObject.getPosition();
-                player.sendMessage("Spawned star at: x:" + pos.getX() + " y:" + pos.getY() + " z:" + pos.getZ());
-                return true;
-            }
-            case "seedpack": {
-                Item item = SeedPack.createSeedPack(Integer.parseInt(args[0]));
-                player.getInventory().add(item);
-                return true;
-            }
-            case "portalnexus": {
-                PortalNexus.sendConfigure(player);
-                player.getPacketSender().sendAccessMask(19, 21, 0, 10, Integer.parseInt(args[0]));
-                return true;
-            }
-            case "leaguetask": {
-                TasksInterface.open(player);
+            case "geo": {
+                int stage = Integer.parseInt(args[0]);
+                player.getPacketSender().sendClientScript(1119, "iiii", 8, 1942, stage, 48);
                 return true;
             }
             case "checkclip": {
@@ -191,6 +169,54 @@ public class Administrator {
 
             case "tobfade": {
                 CS2Script.TOB_HUD_FADE.sendScript(player, 500, 10, "THIS IS TEXT");
+                return true;
+            }
+
+            case "cleardialogue": {
+                player.getSpokenToNPCSet().clear();
+                return true;
+            }
+
+            case "addtocl": {
+                if (args.length < 1) {
+                    return false;
+                }
+                player.openInterface(InterfaceType.UNUSED_OVERLAY2, 660);
+                //player.getCollectionLog().collect(Integer.parseInt(args[0]));
+                player.getPacketSender().sendClientScript(3345);
+                player.getPacketSender().sendClientScript(3343, "ssi", "test", "test", 0xFFFFFF);
+                player.getPacketSender().sendClientScript(3344);
+                World.startEvent(e -> {
+                    e.delay(1);
+                    player.getPacketSender().sendClientScript(3344);
+                    e.delay(1);
+                    player.getPacketSender().sendClientScript(3344);
+                    e.delay(1);
+                    player.getPacketSender().sendClientScript(3344);
+                    e.delay(1);
+                });
+                /*World.startEvent(e -> {
+                    player.openInterface(InterfaceType.UNUSED_OVERLAY2, 660);
+                    e.delay(10);
+                    player.closeInterface(InterfaceType.UNUSED_OVERLAY2);
+                });*/
+                //player.getPacketSender().sendClientScript(3343, "ss", "test", "test");
+                return true;
+            }
+
+            case "testpop": {
+                if (args.length < 1) {
+                    return false;
+                }
+                player.getPacketSender().sendClientScript(Integer.parseInt(args[0]));
+                return true;
+            }
+
+            case "testa": {
+                if (args.length < 1) {
+                    return false;
+                }
+                player.getPacketSender().sendClientScript(3343, "ssi", "test", "test", 0xFFFFFF);
                 return true;
             }
 
@@ -645,6 +671,12 @@ public class Administrator {
                 return true;
             }
 
+            case "struct": {
+                Struct struct = Struct.get(Integer.parseInt(args[0]));
+                System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(struct));
+                return true;
+            }
+
             case "housestyle": {
                 player.house.setStyle(HouseStyle.valueOf(String.join("_", args).toUpperCase()));
                 player.sendMessage("set!");
@@ -926,7 +958,7 @@ public class Administrator {
             }
 
             case "settask": {
-                if (args == null) {
+                /*if (args == null) {
                     OptionScroll.open(player, "Choose a task", SlayerTask.TASKS.entrySet().stream().map(e -> new Option(e.getKey(), () -> {
                         player.slayerTask = e.getValue();
                         player.slayerTaskRemaining = 100;
@@ -939,7 +971,7 @@ public class Administrator {
                     player.slayerTask = task;
                     player.slayerTaskRemaining = 100;
                     player.sendMessage("Task set to " + task.name + "!");
-                }
+                }*/
                 return true;
             }
 
@@ -1145,6 +1177,12 @@ public class Administrator {
                 return true;
             }
 
+            case "music": {
+                int id = Integer.parseInt(args[0]);
+                player.getPacketSender().sendMusic(id);
+                return true;
+            }
+
             /**
              * Interface commands
              */
@@ -1212,11 +1250,15 @@ public class Administrator {
             case "v":
             case "varp": {
                 int id = Integer.parseInt(args[0]);
-                int value = Integer.parseInt(args[1]);
-                if(id < 0 || id >= 2000) {
+                if(id < 0 || id >= 2050) {
                     player.sendFilteredMessage("Varp " + id + " does not exist.");
                     return true;
                 }
+                if (args.length < 2) {
+                    player.sendFilteredMessage("Varp " + id + ": " + Config.create(id, null, false, false).get(player));
+                    return true;
+                }
+                int value = Integer.parseInt(args[1]);
                 Config.create(id, null, false, false).set(player, value);
                 player.sendFilteredMessage("Updated varp " + id + "!");
                 return true;
@@ -1419,6 +1461,37 @@ public class Administrator {
                 return true;
             }
 
+            case "giverelic": {
+                int index = Integer.parseInt(args[0]);
+                player.getRelicManager().takeRelic(Relic.values()[index]);
+                return true;
+            }
+
+            case "removerelic": {
+                int index = Integer.parseInt(args[0]);
+                player.getRelicManager().relics[index] = null;
+                return true;
+            }
+
+            case "tt":
+            case "testtask": {
+                player.getTaskManager().openTaskInterface();
+                return true;
+            }
+
+            case "testfilter": {
+                String[] filters = { "Easy", "General", "Completed" };
+                String sort = "Difficulty";
+                player.openInterface(InterfaceType.MAIN, 383);
+                player.getPacketSender().sendTaskFilterInterface(filters, sort);
+                return true;
+            }
+
+            case "testtele": {
+                teleports.open(player);
+                return true;
+            }
+
             /**
              * Npc commands
              */
@@ -1434,6 +1507,62 @@ public class Administrator {
                     return true;
                 }
                 new NPC(npcId).spawn(player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ(), walkRange).getCombat().setAllowRespawn(false);
+                return true;
+            }
+
+            case "npcme": {
+                int npcId = Integer.parseInt(args[0]);
+                int walkRange = 0;
+                if (args.length > 1) {
+                    walkRange = Integer.parseInt(args[1]);
+                }
+                NPCDef def = NPCDef.get(npcId);
+                if(def == null) {
+                    player.sendMessage("Invalid npc id: " + npcId);
+                    return true;
+                }
+                NPC npc = new NPC(npcId);
+                npc.spawn(player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ(), walkRange);
+                npc.setPlayerSpecific(player);
+                return true;
+            }
+            /*
+             * Command that spawns an npc and writes that spawn to a file
+             * Args [id, walkRange]
+             */
+            case "spawn": {
+                int npcId = Integer.parseInt(args[0]);
+                int walkRange = args.length > 1 ? Integer.parseInt(args[1]) : 0;
+                NPCDef def = NPCDef.get(npcId);
+                if(def == null) {
+                    player.sendMessage("Invalid npc id: " + npcId);
+                    return true;
+                }
+                new NPC(npcId).spawn(player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ(), walkRange);
+                try {
+                    List<String> list = Files.readAllLines(Paths.get("data/npcs/spawns/command_spawns.json"));
+                    // If a prior entry exists, remove its trailing }
+                    list.remove(list.size() - 1);
+                    // Remove the ] and the end of file
+                    list.remove(list.size() - 1);
+                    // Replace the old } with a },
+                    list.add(list.size(), "\t},");
+                    // Start writing our new entry
+                    list.add(list.size(), "\t{");
+                    list.add(list.size(), "\t\t\"name\": \"" + def.name + "\",");
+                    list.add(list.size(), "\t\t\"id\": " + def.id + ",");
+                    list.add(list.size(), "\t\t\"x\": " + player.getPosition().getX() + ",");
+                    list.add(list.size(), "\t\t\"y\": " + player.getPosition().getY() + ",");
+                    list.add(list.size(), "\t\t\"z\": " + player.getPosition().getZ() + ",");
+                    list.add(list.size(), "\t\t\"direction\": \"S\",");
+                    list.add(list.size(), "\t\t\"walkRange\": " + walkRange + "");
+                    list.add(list.size(), "\t}");
+                    // Write the closing ]
+                    list.add(list.size(), "]");
+                    Files.write(Paths.get("data/npcs/spawns/command_spawns.json"), list);
+                } catch(IOException e) {
+                    player.sendMessage("Could not write spawn to file.");
+                }
                 return true;
             }
 
@@ -1523,7 +1652,7 @@ public class Administrator {
                     return true;
                 }
                 System.out.println("  {\"id\": " + id + ", \"x\": " + player.getAbsX() +", \"y\": " + player.getAbsY() + ", \"z\": " + player.getHeight() + "}, // " + def.name);
-                new GroundItem(new Item(id, 1)).position(player.getPosition()).spawnWithRespawn(2);
+                new GroundItem(new Item(id, 1)).position(player.getPosition()).spawnWithRespawn(120);
                 return true;
             }
 
@@ -1611,13 +1740,36 @@ public class Administrator {
                 player.sendMessage("Done");
             }
 
-            case "plsreloadnpcs": {
+            case "resettasks": {
+                player.getTaskManager().resetTasks();
+                return true;
+            }
+
+            case "cyclespotlight": {
+                ActivitySpotlight.cycleSpotlight();
+                return true;
+            }
+
+            case "currentspotlight": {
+                player.sendMessage(ActivitySpotlight.activeSpotlight.toString().toLowerCase());
+                return true;
+            }
+
+            case "reloadnpcs": {
                 World.npcs.forEach(NPC::remove); //todo fix this
                 DataFile.reload(player, npc_spawns.class);
                 return true;
             }
             case "reloadobjects": {
                 DataFile.reload(player, object_spawns.class);
+                return true;
+            }
+            case "reloadobjectinfo": {
+                DataFile.reload(player, object_examines.class);
+                return true;
+            }
+            case "reloaditeminfo": {
+                DataFile.reload(player, item_info.class);
                 return true;
             }
 
@@ -1632,6 +1784,32 @@ public class Administrator {
                 randomItems.forEach(player.getInventory()::add);
 
                 return true;
+            }
+
+            case "cluedrops": {
+                if(args == null || args.length > 0) {
+                    switch (args[0]) {
+                        case "beginner":
+                            ClueType.showClueDrops(player, ClueType.BEGINNER);
+                            break;
+                        case "easy":
+                            ClueType.showClueDrops(player, ClueType.EASY);
+                            break;
+                        case "medium":
+                            ClueType.showClueDrops(player, ClueType.MEDIUM);
+                            break;
+                        case "hard":
+                            ClueType.showClueDrops(player, ClueType.HARD);
+                            break;
+                        case "elite":
+                            ClueType.showClueDrops(player, ClueType.ELITE);
+                            break;
+                        default:
+                            ClueType.showClueDrops(player, ClueType.MASTER);
+                            break;
+                    }
+                    return true;
+                }
             }
 
             /**
@@ -1776,6 +1954,9 @@ public class Administrator {
             case "loc":
             case "coords": {
                 player.sendMessage("Abs: " + player.getPosition().getX() + ", " + player.getPosition().getY() + ", " + player.getPosition().getZ());
+                StringSelection stringSelection = new StringSelection(player.getPosition().getX() + ", " + player.getPosition().getY() + ", " + player.getPosition().getZ());
+                Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard.setContents(stringSelection, null);
                 return true;
             }
 
@@ -2040,17 +2221,14 @@ public class Administrator {
                 });
                 return true;
             }
-
             case "teleports": {
                 player.getTeleports().sendInterface();
                 return true;
             }
-
             case "upgrade": {
                 player.getUpgradeMachine().sendInterface();
                 return true;
             }
-
             case "maxplayer": {
                 String name = query.substring(command.length() + 1);
                 Player p2 = World.getPlayer(name);
@@ -2094,6 +2272,23 @@ public class Administrator {
                 for (int i = 0; i < StatType.values().length; i ++) {
                     Stat stat = player.getStats().get(i);
                     stat.currentLevel = stat.fixedLevel = 99;
+                    stat.experience = xp;
+                    stat.updated = true;
+                }
+
+                player.getCombat().updateLevel();
+                player.getAppearance().update();
+                return true;
+            }
+
+            case "resetlevels": {
+                if (isCommunityManager) {
+                    return false;
+                }
+                int xp = Stat.xpForLevel(1);
+                for (int i = 0; i < StatType.values().length; i ++) {
+                    Stat stat = player.getStats().get(i);
+                    stat.currentLevel = stat.fixedLevel = 1;
                     stat.experience = xp;
                     stat.updated = true;
                 }
@@ -2251,6 +2446,7 @@ public class Administrator {
                 return true;
             }
 
+            case "findo":
             case "findobj": {
                 ObjectDef.LOADED.values().stream()
                         .filter(Objects::nonNull)
@@ -2499,6 +2695,60 @@ public class Administrator {
                 return true;
             }
 
+            case "reloaddialogue": {
+                try {
+                    DialogueLoader.loadDialogues();
+                } catch (IOException e) {
+                    player.sendMessage("Something went wrong with dialogue load. Check log.");
+                }
+                return true;
+            }
+
+            /**
+             * Debug
+             */
+            case "spawnstar": {
+                ShootingStar.spawnStar();
+                Position pos = ShootingStar.starObject.getPosition();
+                player.sendMessage("Spawned star at: x:" + pos.getX() + " y:" + pos.getY() + " z:" + pos.getZ());
+                return true;
+            }
+            case "stressdb": {
+                ItemDef.forEach(def -> {
+                    player.getTaskManager().doSkillItemLookup(def.id);
+                });
+                return true;
+            }
+            case "additemset": {
+                player.getTaskManager().doDropGroupLookup(args[0]);
+                return true;
+            }
+            case "seedpack": {
+                Item item = SeedPack.createSeedPack(Integer.parseInt(args[0]));
+                player.getInventory().add(item);
+                return true;
+            }
+            case "setstage": {
+                Patch patch = player.getFarming().getPatch(Integer.parseInt(args[0]));
+                if (patch != null) {
+                    patch.setStage(Integer.parseInt(args[1]));
+                    patch.update();
+                }
+                return true;
+            }
+            case "diseasepatch": {
+                Patch patch = player.getFarming().getPatch(Integer.parseInt(args[0]));
+                if (patch != null) {
+                    patch.setDiseaseStage(1);
+                    patch.update();
+                }
+                return true;
+            }
+            case "portalnexus": {
+                PortalNexus.sendConfigure(player);
+                player.getPacketSender().sendAccessMask(19, 21, 0, 10, Integer.parseInt(args[0]));
+                return true;
+            }
         }
         return false;
     }
