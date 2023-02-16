@@ -34,10 +34,11 @@ public class SuperiorSlayer {
         int chance = 2;   // 1/200 chance of appearing by default
         if (Random.get(chance) == 1) {
             NPC monster = new NPC(superior);
-            monster.targetPlayer(player, false); // Targets player so no one can steal
             monster.spawn(npc.getPosition());
             monster.removeIfIdle(player);
             monster.removalAction = ((p) -> p.removeTemporaryAttribute(AttributeKey.SUPERIOR_SPAWNED));
+            monster.targetPlayer(player, false); // Targets player so no one can steal
+            monster.attackTargetPlayer(() -> !player.getPosition().isWithinDistance(npc.getPosition()));
             player.sendMessage("<col=ff0000>A superior foe has appeared...</col>");
             player.putTemporaryAttribute(AttributeKey.SUPERIOR_SPAWNED, null);
         }
