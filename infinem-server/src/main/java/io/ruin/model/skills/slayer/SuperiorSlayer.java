@@ -2,6 +2,7 @@ package io.ruin.model.skills.slayer;
 
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
@@ -20,6 +21,9 @@ public class SuperiorSlayer {
      * @param npc    The npc that the player killed.
      */
     static void trySpawn(Player player, SlayerCreature task, NPC npc) {
+        if (player.hasTemporaryAttribute(AttributeKey.SUPERIOR_SPAWNED)) {
+            return;
+        }
         if (Config.BIGGER_AND_BADDER.get(player) == 0) {
             return;
         }
@@ -33,7 +37,9 @@ public class SuperiorSlayer {
             monster.targetPlayer(player, false); // Targets player so no one can steal
             monster.spawn(npc.getPosition());
             monster.removeIfIdle(player);
+            monster.removalAction = ((p) -> p.removeTemporaryAttribute(AttributeKey.SUPERIOR_SPAWNED));
             player.sendMessage("<col=ff0000>A superior foe has appeared...</col>");
+            player.putTemporaryAttribute(AttributeKey.SUPERIOR_SPAWNED, null);
         }
     }
 

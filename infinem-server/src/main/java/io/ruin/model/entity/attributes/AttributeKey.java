@@ -13,5 +13,6 @@ public enum AttributeKey {
     HOT_AND_COLD,
     KILLED_WIZARD,
     SPAWNED_WIZARD,
-    FALO_SONG
+    FALO_SONG,
+    SUPERIOR_SPAWNED
 }
