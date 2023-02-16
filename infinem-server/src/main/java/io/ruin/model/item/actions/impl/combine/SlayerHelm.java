@@ -54,8 +54,8 @@ public class SlayerHelm {
             if (helm == null)
                 return false;
             if (hit.attackStyle.isMelee() && (helm.slayerBoostMelee || helm.slayerBoostAll)) {
-                hit.boostAttack((7.0/6) - 1);
-                hit.boostDamage((7.0/6) - 1);
+                hit.boostAttack(0.1667);
+                hit.boostDamage(0.1667);
                 return true;
             } else if (helm.slayerBoostAll) {
                 hit.boostAttack(0.15);
