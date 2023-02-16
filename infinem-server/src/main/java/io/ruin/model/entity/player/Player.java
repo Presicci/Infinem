@@ -12,6 +12,7 @@ import io.ruin.cache.Varp;
 import io.ruin.event.GameEventProcessor;
 import io.ruin.model.World;
 import io.ruin.model.activities.cluescrolls.impl.EmoteClue;
+import io.ruin.model.activities.cluescrolls.puzzles.LightBox;
 import io.ruin.model.activities.cluescrolls.puzzles.PuzzleBox;
 import io.ruin.model.activities.duelarena.Duel;
 import io.ruin.model.activities.duelarena.DuelArena;
@@ -1840,6 +1841,7 @@ public class Player extends PlayerAttributes {
         return newAmount;
     }
 
-    @Getter
-    private final transient PuzzleBox puzzleBox = new PuzzleBox(this);
+    @Getter private final transient PuzzleBox puzzleBox = new PuzzleBox(this);
+
+    @Getter private final transient LightBox lightBox = new LightBox(this);
 }

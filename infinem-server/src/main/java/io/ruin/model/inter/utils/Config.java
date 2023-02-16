@@ -996,6 +996,7 @@ public class Config {
     public static final Config HAIRDRESSDER = varpbit(4146, false);
 
     public static final Config PUZZLE_INDEX = varp(261, false);
+    public static final Config LIGHT_BOX_INDEX = varp(1356, false);
 
     /**
      * Separator
