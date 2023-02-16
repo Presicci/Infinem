@@ -337,6 +337,7 @@ public class NPC extends NPCAttributes {
                 targetPlayer.getPacketSender().resetHintIcon(true);
             if (removalAction != null)
                 removalAction.handle(targetPlayer);
+            removalAction = null;
             targetPlayer = null;
         }
         if(targetRemovalAction != null) {
