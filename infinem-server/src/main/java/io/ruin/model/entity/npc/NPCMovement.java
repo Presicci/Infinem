@@ -1,13 +1,12 @@
 package io.ruin.model.entity.npc;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.WorldConstants;
 import io.ruin.model.entity.shared.Movement;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Tile;
 
 public class NPCMovement extends Movement {
-
-    public static boolean ALLOW_RANDOM_WALK = true;
 
     private NPC npc;
 
@@ -48,7 +47,7 @@ public class NPCMovement extends Movement {
     }
 
     private void randomWalk() {
-        if (!ALLOW_RANDOM_WALK)
+        if (!WorldConstants.ALLOW_NPC_RANDOM_WALK)
             return;
         if(!npc.isRandomWalkAllowed())
             return;

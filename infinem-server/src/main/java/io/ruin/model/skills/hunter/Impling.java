@@ -3,6 +3,7 @@ package io.ruin.model.skills.hunter;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
+import io.ruin.model.WorldConstants;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.Entity;
@@ -49,8 +50,6 @@ public enum Impling {
         this.puroPuroSpawnWeight = puroPuroSpawnWeight;
         this.overworldSpawnWeight = overworldSpawnWeight;
     }
-
-    public static boolean SPAWN_IMPLINGS = true;
 
     private static Bounds PURO_PURO = new Bounds(2562, 4290, 2621, 4349, 0);
 
@@ -375,7 +374,7 @@ public enum Impling {
         //overworld spawns
         World.startEvent(event -> {
             //spawn a few on startup
-            if (SPAWN_IMPLINGS) {
+            if (WorldConstants.SPAWN_IMPLINGS) {
                 for (int i = 0; i < 8; i++)
                     spawnRandomImplingOverworld();
                 while (true) {

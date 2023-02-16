@@ -470,9 +470,5 @@ public class World extends EventWorker {
         World.address = host + ":" + port;
 
         World.setCentralAddress(properties.getProperty("central_address"));
-
-        // Load misc property data
-        Impling.SPAWN_IMPLINGS = Boolean.parseBoolean(properties.getProperty("spawn_implings"));
-        NPCMovement.ALLOW_RANDOM_WALK = Boolean.parseBoolean(properties.getProperty("random_npc_movement"));
     }
 }
