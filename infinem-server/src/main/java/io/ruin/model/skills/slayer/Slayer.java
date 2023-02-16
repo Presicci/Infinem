@@ -153,7 +153,7 @@ public class Slayer {
      */
     public static boolean hasSlayerHelmEquipped(Player player) {
         ItemDef def = player.getEquipment().getDef(Equipment.SLOT_HAT);
-        return def != null && def.slayerHelm;
+        return def != null && (def.slayerBoostMelee || def.slayerBoostAll);
     }
 
     /**
