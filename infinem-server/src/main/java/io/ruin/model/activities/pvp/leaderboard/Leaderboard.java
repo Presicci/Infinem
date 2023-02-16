@@ -58,8 +58,8 @@ public class Leaderboard {
 
         });
 
-        ObjectAction.register(3192, "Edge PKing", ((player, obj) -> openEdgeLeaderBoard(player)));
-        ObjectAction.register(3192, "Deep Wild PKing", ((player, obj) -> openDeepWildernessLeaderBoard(player)));
+        //ObjectAction.register(3192, "Edge PKing", ((player, obj) -> openEdgeLeaderBoard(player)));
+        //ObjectAction.register(3192, "Deep Wild PKing", ((player, obj) -> openDeepWildernessLeaderBoard(player)));
     }
 
     private static void openEdgeLeaderBoard(Player player) {
