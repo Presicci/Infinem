@@ -8,6 +8,7 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.combine.SlayerHelm;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.ground.GroundItem;
@@ -163,8 +164,7 @@ public class Slayer {
      * @return True if face mask is worn.
      */
     public static boolean hasFaceMask(Player player) {
-        Item faceMask = player.getEquipment().findFirst(SlayerHelm.FACEMASK, SlayerHelm.SLAYER_HELM, SlayerHelm.SLAYER_HELM_IMBUE, SlayerHelm.BLACK_SLAYER_HELM,
-                SlayerHelm.BLACK_HELM_IMBUE, SlayerHelm.RED_HELM_IMBUE, SlayerHelm.RED_SLAYER_HELM, SlayerHelm.GREEN_HELM_IMBUE, SlayerHelm.GREEN_SLAYER_HELM, SlayerHelm.PURPLE_HELM_IMBUE, SlayerHelm.PURPLE_SLAYER_HELM);
-        return faceMask != null;
+        Item helm = player.getEquipment().get(Equipment.SLOT_HAT);
+        return helm != null && (helm.getId() == Items.FACEMASK || helm.getDef().slayerBoostMelee || helm.getDef().slayerBoostAll);
     }
 }
