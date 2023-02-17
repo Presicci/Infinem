@@ -35,6 +35,8 @@ public enum Impling {
     MAGPIE(1642, 65, 75, 44, 95, 11252, 50, 20, 1652),
     NINJA(1643, 74, 85, 52, 125, 11254, 40, 15, 1653),
     DRAGON(1644, 83, 93, 65, 300, 11256, 15, 10, 1654),
+    CRYSTAL(8741, 80, 90, 0, 150, 23768, 0, 0,
+            8741, 8742, 8743, 8744, 8745, 8746, 8747, 8748, 8749, 8750, 8751, 8752, 8753, 8754, 8755, 8756, 8757),
     LUCKY(7233, 89, 99, 80, 380, 19732, 2, 1, 7302);
 
     public final int npcId, levelReq, bareHandLevelReq, jarId, puroPuroSpawnWeight, overworldSpawnWeight;
@@ -250,7 +252,39 @@ public enum Impling {
 
     private static final Position[] PURO_PURO_RANDOM_SPAWN_POSITIONS = {
             new Position(2569, 4342, 0), //nw
+            new Position(2569, 4337, 0),
+            new Position(2569, 4332, 0),
+            new Position(2569, 4327, 0),
+            new Position(2569, 4322, 0),
+            new Position(2569, 4317, 0),
+            new Position(2569, 4312, 0),
+            new Position(2569, 4307, 0),
+            new Position(2569, 4302, 0),
+            new Position(2569, 4297, 0), //sw
+
+            new Position(2614, 4342, 0), //ne
+            new Position(2614, 4337, 0),
+            new Position(2614, 4332, 0),
+            new Position(2614, 4327, 0),
+            new Position(2614, 4322, 0),
+            new Position(2614, 4317, 0),
+            new Position(2614, 4312, 0),
+            new Position(2614, 4307, 0),
+            new Position(2614, 4302, 0),
             new Position(2614, 4297, 0), //se
+
+            new Position(2560, 4342, 0),
+            new Position(2550, 4342, 0),
+            new Position(2540, 4342, 0),
+            new Position(2530, 4342, 0),
+            new Position(2520, 4342, 0),
+
+            new Position(2560, 4297, 0),
+            new Position(2550, 4297, 0),
+            new Position(2540, 4297, 0),
+            new Position(2530, 4297, 0),
+            new Position(2520, 4297, 0),
+
     };
 
     private static final Position[] OVERWORLD_RANDOM_SPAWN_POSITIONS = {
