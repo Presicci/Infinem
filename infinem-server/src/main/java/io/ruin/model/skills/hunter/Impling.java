@@ -32,10 +32,10 @@ public enum Impling {
     ESSENCE(1639, 42, 52, 27, 29, 11246, 100, 30, 1649),
     ECLECTIC(1640, 50, 60, 30, 32, 11248, 100, 30, 1650),
     NATURE(1641, 58, 68, 34, 36, 11250, 100, 25, 1651),
-    MAGPIE(1642, 65, 75, 44, 54, 11252, 50, 20, 1652),
-    NINJA(1643, 74, 85, 50, 60, 11254, 40, 15, 1653),
-    DRAGON(1644, 83, 93, 65, 75, 11256, 15, 10, 1654),
-    LUCKY(7233, 89, 99, 0, 0, 19732, 2, 1, 7302);
+    MAGPIE(1642, 65, 75, 44, 95, 11252, 50, 20, 1652),
+    NINJA(1643, 74, 85, 52, 125, 11254, 40, 15, 1653),
+    DRAGON(1644, 83, 93, 65, 300, 11256, 15, 10, 1654),
+    LUCKY(7233, 89, 99, 80, 380, 19732, 2, 1, 7302);
 
     public final int npcId, levelReq, bareHandLevelReq, jarId, puroPuroSpawnWeight, overworldSpawnWeight;
     public final double puroExp, worldExp;
