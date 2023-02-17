@@ -430,5 +430,59 @@
     "z": 0,
     "direction": "S",
     "walkRange": 5
+  },
+  {
+    "name": "Essence impling",
+    "id": 1639,
+    "x": 2569,
+    "y": 4314,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Essence impling",
+    "id": 1639,
+    "x": 2590,
+    "y": 4298,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Essence impling",
+    "id": 1639,
+    "x": 2608,
+    "y": 4294,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Essence impling",
+    "id": 1639,
+    "x": 2619,
+    "y": 4333,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Essence impling",
+    "id": 1639,
+    "x": 2603,
+    "y": 4345,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Essence impling",
+    "id": 1639,
+    "x": 2576,
+    "y": 4341,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
   }
 ]
