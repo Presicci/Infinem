@@ -25,17 +25,17 @@ import java.util.Arrays;
 
 public enum Impling {
 
-    BABY(1635, 17, 27, 18, 20, 11238, 0, 10, 1645),
-    YOUNG(1636, 22, 32, 20, 22, 11240, 0, 10, 1646),
-    GOURMET(1637, 28, 38, 22, 24, 11242, 0, 10 ,1647),
-    EARTH(1638, 36, 46, 25, 27, 11244, 0, 10, 1648),
+    BABY(1635, 17, 27, 18, 20, 11238, 100, 10, 1645),
+    YOUNG(1636, 22, 32, 20, 22, 11240, 130, 10, 1646),
+    GOURMET(1637, 28, 38, 22, 24, 11242, 150, 10 ,1647),
+    EARTH(1638, 36, 46, 25, 27, 11244, 130, 10, 1648),
     ESSENCE(1639, 42, 52, 27, 29, 11246, 100, 10, 1649),
-    ECLECTIC(1640, 50, 60, 30, 32, 11248, 0, 10, 1650),
+    ECLECTIC(1640, 50, 60, 30, 32, 11248, 100, 10, 1650),
     NATURE(1641, 58, 68, 34, 36, 11250, 100, 10, 1651),
     MAGPIE(1642, 65, 75, 44, 54, 11252, 50, 10, 1652),
     NINJA(1643, 74, 85, 50, 60, 11254, 40, 10, 1653),
-    DRAGON(1644, 83, 93, 65, 75, 11256, 10, 10, 1654),
-    LUCKY(7233, 89, 99, 0, 0, 19732, 1, 1, 7302);
+    DRAGON(1644, 83, 93, 65, 75, 11256, 15, 10, 1654),
+    LUCKY(7233, 89, 99, 0, 0, 19732, 2, 1, 7302);
 
     public final int npcId, levelReq, bareHandLevelReq, jarId, puroPuroSpawnWeight, overworldSpawnWeight;
     public final double puroExp, worldExp;
@@ -157,7 +157,7 @@ public enum Impling {
 
     private static final int PURO_PURO_STATIC_RESPAWN_DELAY = 50; // respawn time for static spawns in puro puro (baby, young gourmet, earth, eclectic)
     private static final int PURO_PURO_RANDOM_SPAWN_DELAY = 20; // respawn time for random spawns in puro puro (other implings)
-    private static final int PURO_PURO_MAX_RANDOM_IMPLINGS = 6; // maximum number of random spawns that can be active at a time
+    private static final int PURO_PURO_MAX_RANDOM_IMPLINGS = 20; // maximum number of random spawns that can be active at a time
     private static final int PURO_PURO_TOTAL_SPAWN_WEIGHT = Arrays.stream(values()).mapToInt(imp -> imp.puroPuroSpawnWeight).sum();
 
     private static final int OVERWORLD_SPAWN_DELAY = 200; // spawn time for random spawns in the overworld (implings will attempt to spawn at this interval, if the active number is below maximum)
