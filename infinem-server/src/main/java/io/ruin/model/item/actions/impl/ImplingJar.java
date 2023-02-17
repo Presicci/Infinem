@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
@@ -197,6 +198,29 @@ public enum ImplingJar {
             new LootItem(6156, 3, 4),         //Dagannoth hide
             new LootItem(2722, 1, 10)         //Clue scroll (hard)
     )),
+    CRYSTAL_IMPLING_JAR(23768, new LootTable().addTable(1,
+            new LootItem(Items.AMULET_OF_POWER_NOTE, 5, 7, 7),
+            new LootItem(23661, 1, 1, 7),   // Crystal acorn
+            new LootItem(Items.CRYSTAL_SHARD, 5, 10, 7),
+            new LootItem(Items.DRAGONSTONE_AMULET, 1, 7),
+            new LootItem(Items.DRAGONSTONE_NOTE, 2, 7),
+            new LootItem(Items.RUBY_BOLT_TIPS, 50, 125, 7),
+            new LootItem(Items.ONYX_BOLT_TIPS, 6, 10, 7),
+            new LootItem(Items.RUNE_ARROWTIPS, 150, 250, 7),
+            new LootItem(Items.RUNE_ARROW, 400, 750, 7),
+            new LootItem(Items.RUNE_JAVELIN_HEADS, 20, 60, 7),
+            new LootItem(Items.RUNE_DART_TIP, 25, 75, 7),
+            new LootItem(Items.RUNE_DART, 50, 100, 7),
+            new LootItem(Items.DRAGON_DART_TIP, 10, 15, 7),
+            new LootItem(Items.DRAGON_DAGGER_NOTE, 2, 7),
+            new LootItem(Items.RUNE_SCIMITAR_NOTE, 3, 6, 7),
+            new LootItem(Items.BABYDRAGON_BONES_NOTE, 75, 125, 7),
+            new LootItem(Items.RANARR_SEED, 3, 8, 7),
+            new LootItem(Items.YEW_SEED, 1, 7),
+            new LootItem(24365, 1, 3),  // Elite clue
+            new LootItem(23943, 1, 1)   // Elven signet
+        )
+    ),
     DRAGON_IMPLING_JAR(11256, new LootTable().addTable(1,
             new LootItem(4093, 1, 3),         //Mystic robe bottom
             new LootItem(1705, 3, 3),         //Amulet of glory
@@ -217,7 +241,6 @@ public enum ImplingJar {
             new LootItem(5300, 6, 3),         //Snapdragon seed
             new LootItem(7219, 15, 3),        //Summer pie
             new LootItem(4093, 1, 3)          //Clue scroll (elite)
-
     )),
     LUCKY_IMPLING(19732, new LootTable()), // Handled manually
     ;
