@@ -165,10 +165,15 @@ public enum Impling {
     private static final int OVERWORLD_SPAWN_DELAY = 200; // spawn time for random spawns in the overworld (implings will attempt to spawn at this interval, if the active number is below maximum)
     private static final int OVERWORLD_MAX_IMPLINGS = 30; // maximum number of overworld spawns that can be active at one time
     private static final int OVERWORLD_TOTAL_SPAWN_WEIGHT = Arrays.stream(values()).mapToInt(imp -> imp.overworldSpawnWeight).sum();
+
+    private static final int CRYSTAL_SPAWN_DELAY = 10000; // 10 min respawn
+    private static final int CRYSTAL_MAX_IMPLINGS = 2;
     @Getter
     private static int ACTIVE_PURO_PURO_IMPLINGS = 0;
     @Getter
     private static int ACTIVE_OVERWORLD_IMPLINGS = 0;
+    @Getter
+    private static int ACTIVE_CRYSTAL_IMPLINGS = 0;
 
     private static void despawnImpling(NPC npc) {
         Impling type = get(npc.getId());
@@ -186,6 +191,9 @@ public enum Impling {
                 ACTIVE_PURO_PURO_IMPLINGS--;
                 npc.remove();
             }
+        } else if (type == CRYSTAL) {
+            ACTIVE_CRYSTAL_IMPLINGS--;
+            npc.remove();
         } else {
             ACTIVE_OVERWORLD_IMPLINGS--;
             npc.remove();
@@ -244,6 +252,13 @@ public enum Impling {
         NPC impling = new NPC(type.npcId).spawn(spawnPosition.getX(), spawnPosition.getY(), spawnPosition.getZ(), 16);
         impling.getRouteFinder().routeAbsolute(impling.walkBounds.randomX(), impling.walkBounds.randomY());
         ACTIVE_OVERWORLD_IMPLINGS++;
+    }
+
+    private static void spawnRandomCrystal() {
+        Position spawnPosition = Random.get(CRYSTAL_RANDOM_SPAWN_POSITIONS);
+        NPC impling = new NPC(Impling.CRYSTAL.npcId).spawn(spawnPosition.getX(), spawnPosition.getY(), spawnPosition.getZ(), 16);
+        impling.getRouteFinder().routeAbsolute(impling.walkBounds.randomX(), impling.walkBounds.randomY());
+        ACTIVE_CRYSTAL_IMPLINGS++;
     }
 
     /**
@@ -390,6 +405,34 @@ public enum Impling {
 
     };
 
+    private static final Position[] CRYSTAL_RANDOM_SPAWN_POSITIONS = {
+            new Position(3230, 6049, 0),
+            new Position(3213, 6051, 0),
+            new Position(3212, 6083, 0),
+            new Position(3214, 6116, 0),
+            new Position(3231, 6122, 0),
+            new Position(3250, 6132, 0),
+            new Position(3282, 6133, 0),
+            new Position(3309, 6117, 0),
+            new Position(3317, 6095, 0),
+            new Position(3314, 6065, 0),
+            new Position(3315, 6047, 0),
+            new Position(3294, 6031, 0),
+            new Position(3275, 6027, 0),
+            new Position(3252, 6028, 0),
+            new Position(3240, 6047, 0),
+            new Position(3274, 6055, 0),
+            new Position(3303, 6056, 0),
+            new Position(3300, 6084, 0),
+            new Position(3297, 6104, 0),
+            new Position(3271, 6121, 0),
+            new Position(3250, 6107, 0),
+            new Position(3226, 6099, 0),
+            new Position(3234, 6071, 0),
+            new Position(3231, 6049, 0),
+            new Position(3255, 6043, 0)
+    };
+
     static {
         for (Impling impling : values()) {
             NPCAction.register(impling.npcId, "catch", (player, npc) -> attemptCatch(player, npc, impling));
@@ -422,6 +465,14 @@ public enum Impling {
                         spawnRandomImplingOverworld();
                     event.delay(OVERWORLD_SPAWN_DELAY);
                 }
+            }
+        });
+        // crystal spawns
+        World.startEvent(event -> {
+            while (true) {
+                if (ACTIVE_CRYSTAL_IMPLINGS < CRYSTAL_MAX_IMPLINGS)
+                    spawnRandomCrystal();
+                event.delay(CRYSTAL_SPAWN_DELAY);
             }
         });
     }
