@@ -289,6 +289,7 @@ public enum ImplingJar {
         }
 
         player.getInventory().addOrDrop(loot);
+        player.getCollectionLog().collect(loot);
     }
 
     static {
