@@ -25,22 +25,23 @@ import java.util.Arrays;
 
 public enum Impling {
 
-    BABY(1635, 17, 27, 18, 20, 11238, 0, 10),
-    YOUNG(1636, 22, 32, 20, 22, 11240, 0, 10),
-    GOURMET(1637, 28, 38, 22, 24, 11242, 0, 10),
-    EARTH(1638, 36, 46, 25, 27, 11244, 0, 10),
-    ESSENCE(1639, 42, 52, 27, 29, 11246, 100, 10),
-    ECLECTIC(1640, 50, 60, 30, 32, 11248, 0, 10),
-    NATURE(1641, 58, 68, 34, 36, 11250, 100, 10),
-    MAGPIE(1642, 65, 75, 44, 54, 11252, 50, 10),
-    NINJA(1643, 74, 85, 50, 60, 11254, 40, 10),
-    DRAGON(1644, 83, 93, 65, 75, 11256, 10, 10),
-    LUCKY(7233, 89, 99, 0, 0, 19732, 1, 1);
+    BABY(1635, 17, 27, 18, 20, 11238, 0, 10, 1645),
+    YOUNG(1636, 22, 32, 20, 22, 11240, 0, 10, 1646),
+    GOURMET(1637, 28, 38, 22, 24, 11242, 0, 10 ,1647),
+    EARTH(1638, 36, 46, 25, 27, 11244, 0, 10, 1648),
+    ESSENCE(1639, 42, 52, 27, 29, 11246, 100, 10, 1649),
+    ECLECTIC(1640, 50, 60, 30, 32, 11248, 0, 10, 1650),
+    NATURE(1641, 58, 68, 34, 36, 11250, 100, 10, 1651),
+    MAGPIE(1642, 65, 75, 44, 54, 11252, 50, 10, 1652),
+    NINJA(1643, 74, 85, 50, 60, 11254, 40, 10, 1653),
+    DRAGON(1644, 83, 93, 65, 75, 11256, 10, 10, 1654),
+    LUCKY(7233, 89, 99, 0, 0, 19732, 1, 1, 7302);
 
     public final int npcId, levelReq, bareHandLevelReq, jarId, puroPuroSpawnWeight, overworldSpawnWeight;
     public final double puroExp, worldExp;
+    public final int[] altIds;
 
-    Impling(int npcId, int levelReq, int bareHandLevelReq, double puroExp, double worldExp, int jarId, int puroPuroSpawnWeight, int overworldSpawnWeight) {
+    Impling(int npcId, int levelReq, int bareHandLevelReq, double puroExp, double worldExp, int jarId, int puroPuroSpawnWeight, int overworldSpawnWeight, int... altIds) {
         this.npcId = npcId;
         this.levelReq = levelReq;
         this.bareHandLevelReq = bareHandLevelReq;
@@ -49,9 +50,10 @@ public enum Impling {
         this.jarId = jarId;
         this.puroPuroSpawnWeight = puroPuroSpawnWeight;
         this.overworldSpawnWeight = overworldSpawnWeight;
+        this.altIds = altIds;
     }
 
-    private static Bounds PURO_PURO = new Bounds(2562, 4290, 2621, 4349, 0);
+    private static final Bounds PURO_PURO = new Bounds(2562, 4290, 2621, 4349, 0);
 
     private static void attemptCatch(Player player, NPC npc, Impling impling) {
         boolean barehands = !hasButterflyNet(player) && !hasMagicButterflyNet(player);
@@ -358,6 +360,10 @@ public enum Impling {
         for (Impling impling : values()) {
             NPCAction.register(impling.npcId, "catch", (player, npc) -> attemptCatch(player, npc, impling));
             NPCDef.get(impling.npcId).flightClipping = true;
+            for (int altId : impling.altIds) {
+                NPCAction.register(altId, "catch", (player, npc) -> attemptCatch(player, npc, impling));
+                NPCDef.get(altId).flightClipping = true;
+            }
         }
 
         //puro-puro random spawns
