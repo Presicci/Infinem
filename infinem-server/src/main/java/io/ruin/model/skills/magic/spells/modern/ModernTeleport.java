@@ -36,21 +36,39 @@ public class ModernTeleport extends Spell {
         this.lvlReq = lvlReq;
         this.xp = xp;
         this.runes = runes;
-        registerClick(lvlReq, xp, true, runes, (p, i) -> teleport(p, bounds));
+        registerClick(lvlReq, xp, true, runes, (p, i) -> {
+            if (teleport(p, bounds)) {
+                p.getTaskManager().doLookupByUUID(147, 1); // Teleport Using Law Runes
+                return true;
+            }
+            return false;
+        });
     }
 
     public ModernTeleport(int lvlReq, double xp, Bounds[] bounds, Item... runes) {
         this.lvlReq = lvlReq;
         this.xp = xp;
         this.runes = runes;
-        registerClick(lvlReq, xp, true, runes, (p, i) -> teleport(p, bounds[i]));
+        registerClick(lvlReq, xp, true, runes, (p, i) -> {
+            if (teleport(p, bounds[i])) {
+                p.getTaskManager().doLookupByUUID(147, 1); // Teleport Using Law Runes
+                return true;
+            }
+            return false;
+        });
     }
 
     public ModernTeleport(int lvlReq, double xp, int x, int y, int z, Item... runes) {
         this.lvlReq = lvlReq;
         this.xp = xp;
         this.runes = runes;
-        registerClick(lvlReq, xp, true, runes, (p, i) -> teleport(p, x, y, z));
+        registerClick(lvlReq, xp, true, runes, (p, i) -> {
+            if (teleport(p, x, y, z)) {
+                p.getTaskManager().doLookupByUUID(147, 1); // Teleport Using Law Runes
+                return true;
+            }
+            return false;
+        });
     }
 
     private final int lvlReq;
@@ -72,7 +90,6 @@ public class ModernTeleport extends Spell {
             player.publicSound(200);
             e.delay(3);
             player.getMovement().teleport(x, y, z);
-            player.getTaskManager().doLookupByUUID(147, 1); // Teleport Using Law Runes
         });
     }
 
