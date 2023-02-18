@@ -1062,7 +1062,6 @@ public class Config {
             player.varps[varpId] = ((varpValue & (~shift)) | value << least & shift);
             player.updateVarp(varpId);
         } else {
-            System.out.println("" + player.varps.length);
             player.varps[id] = value;
             player.updateVarp(id);
         }
