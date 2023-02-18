@@ -248,7 +248,7 @@ public class TaskManager {
                 statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ? AND required_object REGEXP ?");
                 statement.setString(1, StringUtils.capitalizeFirst(category.toString().toLowerCase()));
                 String replace = trigger.trim().toLowerCase().replace("_", " ");
-                statement.setString(2, "^" + replace + "|," + replace);
+                statement.setString(2, "^" + replace + "$|," + replace + "$|," + replace + ",|^" + replace + ",");
                 rs = statement.executeQuery();
                 while (rs.next()) {
                     int uuid = rs.getInt("uuid");
