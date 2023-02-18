@@ -331,11 +331,21 @@ public class RouteFinder {
      * Step check
      */
 
+    private int maxSteps = 5;
+
     public boolean allowStep(int stepX, int stepY) {
         if(targetRoute != null && !targetRoute.allowStep(entity, stepX, stepY)) {
             entity.getMovement().reset();
             return false;
         }
+        if (entity.player != null) {
+            //if (entity.player.getTileman() != null) {
+            //    if (!entity.player.getTileman().processTileMove(new Position(stepX, stepY, entity.getPosition().getZ()))) {
+            //        return false;
+            //    }
+            //}
+        }
+
         if(entity.getMovement().stepType == StepType.NORMAL) {
             if(entity.player != null) {
                 if(Wilderness.stopFollowing(entity.player, stepX, stepY))
