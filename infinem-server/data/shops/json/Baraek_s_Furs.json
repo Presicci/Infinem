@@ -1,0 +1,30 @@
+{
+  "name": "Baraek's Furs",
+  "currency": "COINS",
+  "npcs": [
+    2881
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 948,
+      "stock": 20,
+      "buy_price": 12,
+      "sell_price": 20
+    },
+    {
+      "itemId": 6814,
+      "stock": 0,
+      "buy_price": 12,
+      "sell_price": 20
+    },
+    {
+      "itemId": 958,
+      "stock": 0,
+      "buy_price": 120,
+      "sell_price": 200
+    }
+  ]
+}
