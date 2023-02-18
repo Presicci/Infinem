@@ -181,8 +181,14 @@ public class Administrator {
                 if (args.length < 1) {
                     return false;
                 }
+                player.getCollectionLog().collect(Integer.parseInt(args[0]));
+                return true;
+            }
+            case "clpopup": {
+                if (args.length < 1) {
+                    return false;
+                }
                 player.openInterface(InterfaceType.UNUSED_OVERLAY2, 660);
-                //player.getCollectionLog().collect(Integer.parseInt(args[0]));
                 player.getPacketSender().sendClientScript(3345);
                 player.getPacketSender().sendClientScript(3343, "ssi", "test", "test", 0xFFFFFF);
                 player.getPacketSender().sendClientScript(3344);
