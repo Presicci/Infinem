@@ -229,7 +229,7 @@ public class TaskManager {
                 }
             } finally {
                 DatabaseUtils.close(statement, rs);
-                System.out.println(System.currentTimeMillis() - currentTime);
+                System.out.println("Lookup time for normal " + category + "," + trigger + "," + amount + ":" + (System.currentTimeMillis() - currentTime));
             }
         });
     }
@@ -308,7 +308,7 @@ public class TaskManager {
                 }
             } finally {
                 DatabaseUtils.close(statement, rs);
-                System.out.println(System.currentTimeMillis() - currentTime);
+                System.out.println("Lookup time for " + category + "," + trigger + "," + amount + ":" + (System.currentTimeMillis() - currentTime));
             }
         });
     }
@@ -387,7 +387,7 @@ public class TaskManager {
                 }
             } finally {
                 DatabaseUtils.close(statement, rs);
-                System.out.println(System.currentTimeMillis() - currentTime);
+                System.out.println("Lookup time for " + trigger + ":" + (System.currentTimeMillis() - currentTime));
             }
         });
     }
@@ -448,7 +448,7 @@ public class TaskManager {
                 }
             } finally {
                 DatabaseUtils.close(statement, rs);
-                System.out.println(System.currentTimeMillis() - currentTime);
+                System.out.println("Lookup time for " + uuid + ":" + (System.currentTimeMillis() - currentTime));
             }
         });
     }
