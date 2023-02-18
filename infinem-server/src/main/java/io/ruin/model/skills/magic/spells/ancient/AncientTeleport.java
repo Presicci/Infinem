@@ -19,7 +19,7 @@ public class AncientTeleport extends Spell {
         return teleport(player, bounds.randomX(), bounds.randomY(), bounds.z);
     }
 
-    public static boolean teleport(Player player, int x, int y, int z) {
+    private static boolean teleport(Player player, int x, int y, int z) {
         return player.getMovement().startTeleport(e -> {
             player.animate(1979);
             player.graphics(392);

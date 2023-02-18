@@ -19,7 +19,7 @@ public class ArceuusTeleport extends Spell {
         return teleport(player, bounds.randomX(), bounds.randomY(), bounds.z);
     }
 
-    public static boolean teleport(Player player, int x, int y, int z) {
+    private static boolean teleport(Player player, int x, int y, int z) {
         return player.getMovement().startTeleport(e -> {
             player.animate(3865);
             player.graphics(1296);

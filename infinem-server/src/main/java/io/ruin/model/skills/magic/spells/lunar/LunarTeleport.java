@@ -15,11 +15,11 @@ public class LunarTeleport extends Spell {
         registerClick(lvlReq, xp, true, runeItems, (p, i) -> teleport(p, x, y, z));
     }
 
-    public static boolean teleport(Player player, Bounds bounds) {
+    private static boolean teleport(Player player, Bounds bounds) {
         return teleport(player, bounds.randomX(), bounds.randomY(), bounds.z);
     }
 
-    public static boolean teleport(Player player, int x, int y, int z) {
+    private static boolean teleport(Player player, int x, int y, int z) {
         return player.getMovement().startTeleport(e -> {
             player.animate(1816);
             player.graphics(747, 120, 0);

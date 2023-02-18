@@ -16,7 +16,7 @@ public class TeleportToHouse extends Spell {
         registerClick(LVL_REQ, XP, true, RUNES, TeleportToHouse::teleport);
     }
 
-    public static boolean teleport(Player player, Integer i) {
+    private static boolean teleport(Player player, Integer i) {
         if (player.house == null) {
             player.sendMessage("You don't have a house to teleport to.");
             return false;
