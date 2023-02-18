@@ -61,7 +61,7 @@ public abstract class ChapteredBook extends Book {
                 }
             }
             context = list.toArray(new String[list.size()]);
-            maxPages = (int) (Math.ceil(context.length / 30));
+            maxPages = (int) (Math.ceil((double) context.length / 30));
         }
         player.getPacketSender().setHidden(27, 95, page == 1);  // Hide back button
         player.getPacketSender().setHidden(27, 97, page == maxPages);   // Hide next button
