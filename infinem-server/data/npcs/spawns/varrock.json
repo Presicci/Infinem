@@ -216,15 +216,6 @@
     "walkRange": 3
   },
   {
-    "name": "Romeo",
-    "id": 5037,
-    "x": 3211,
-    "y": 3424,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
     "name": "Baraek",
     "id": 2881,
     "x": 3217,
