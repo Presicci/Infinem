@@ -14056,7 +14056,7 @@
   { #Ring of forging
     "id": 2568,
     "tradeable": true,
-    "examine": "A ring that gives a chance to save a bar when smithing items.",
+    "examine": "A ring that gives a chance to get an extra bar when smelting.",
     "weight": 0.0,
 	"protect_value": 1083,
     "equip_slot": 12
