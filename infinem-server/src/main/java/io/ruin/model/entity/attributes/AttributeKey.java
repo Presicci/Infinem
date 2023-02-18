@@ -15,5 +15,6 @@ public enum AttributeKey {
     SPAWNED_WIZARD,
     FALO_SONG,
     SUPERIOR_SPAWNED,
-    SHOOTING_STARS_FOUND
+    SHOOTING_STARS_FOUND,
+    BOOK
 }
