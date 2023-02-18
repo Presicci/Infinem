@@ -1,0 +1,7 @@
+Player: Hello.
+OTHERNPC:3503:You think you're tough do you?
+Player: Pardon?
+OTHERNPC:3503:I can beat anyone up!
+Shilop: He can you know!
+Player: Really?
+MESSAGE:The boy begins to jump around with his fists up. You decide it's best not to kill him just yet.

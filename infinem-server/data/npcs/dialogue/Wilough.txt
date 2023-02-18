@@ -1,0 +1,7 @@
+Player: Hello.
+Wilough: You think you're tough do you?
+Player: Pardon?
+Wilough: I can beat anyone up!
+OTHERNPC:3501:He can you know!
+Player: Really?
+MESSAGE:The boy begins to jump around with his fists up. You decide it's best not to kill him just yet.
