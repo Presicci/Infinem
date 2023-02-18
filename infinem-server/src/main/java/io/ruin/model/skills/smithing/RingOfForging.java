@@ -43,10 +43,8 @@ public class RingOfForging {
         if (!player.getEquipment().hasId(RING_ID))
             return false;
         double random = Random.get();
-        System.out.println(random);
         if (random > getChance(bar))
             return false;
-        System.out.println("Success");
         player.getBank().add(bar.itemId, 1);
         player.sendFilteredMessage(Color.DARK_GREEN.wrap("Your ring of forging makes an extra bar! It has been sent to your bank."));
         spendCharge(player, player.getEquipment().get(Equipment.SLOT_RING));
