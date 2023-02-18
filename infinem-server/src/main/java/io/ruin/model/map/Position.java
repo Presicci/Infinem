@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Predicate;
 
 public class Position {
@@ -313,5 +314,21 @@ public class Position {
 
     public Position center(int size) {
         return translate((int) Math.ceil(size / 2.0), (int) Math.ceil(size / 2.0), 0);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object)
+            return true;
+        if (object == null)
+            return false;
+        if (getClass() != object.getClass())
+            return false;
+        return equals((Position) object);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y, z);
     }
 }
