@@ -152,7 +152,20 @@ public class DialogueParser {
                         npcDef.shops.get(0).open(player);
                     });
                 }
-                if (action == DialogueLoaderAction.ITEMDIALOGUE) {
+                if (action == DialogueLoaderAction.OTHERNPC) {
+                    String[] lineSegments = line.split(":");
+                    if (lineSegments.length < 3) {
+                        error("improper syntax for OTHERNPC (OTHERNPC:NPCID:MESSAGE)", dialogue);
+                        return new MessageDialogue("");
+                    }
+                    int npcId = -1;
+                    try {
+                        npcId = Integer.parseInt(lineSegments[1]);
+                    } catch (NumberFormatException ignored) {
+                        error("missing npcId for OTHERNPC action", dialogue);
+                    }
+                    return new NPCDialogue(npcId, lineSegments[2]);
+                } else if (action == DialogueLoaderAction.ITEMDIALOGUE) {
                     String[] lineSegments = line.split(":");
                     if (lineSegments.length < 3) {
                         error("improper syntax for ITEMDIALOGUE (ITEMDIALOGUE:ITEMID:MESSAGE)", dialogue);
@@ -165,8 +178,7 @@ public class DialogueParser {
                         error("missing itemId for ITEMDIALOGUE action", dialogue);
                     }
                     return new ItemDialogue().one(itemId, lineSegments[2]);
-                }
-                if (action == DialogueLoaderAction.TWOITEMDIALOGUE) {
+                } else if (action == DialogueLoaderAction.TWOITEMDIALOGUE) {
                     String[] lineSegments = line.split(":");
                     if (lineSegments.length < 4) {
                         error("improper syntax for TWOITEMDIALOGUE (TWOITEMDIALOGUE:ITEMID:ITEMID:MESSAGE)", dialogue);
@@ -181,8 +193,7 @@ public class DialogueParser {
                         error("missing itemId for ITEMDIALOGUE action", dialogue);
                     }
                     return new ItemDialogue().two(itemId, itemId2, lineSegments[3]);
-                }
-                if (action == DialogueLoaderAction.LASTOPTIONS) {
+                } else if (action == DialogueLoaderAction.LASTOPTIONS) {
                     recordDialogueLoop = true;
                     int index = npcDef.optionDialogues == null ? 0 : npcDef.optionDialogues.size() - 1;
                     return new ActionDialogue((player) -> {
@@ -190,8 +201,7 @@ public class DialogueParser {
                         if (loop != null)
                             player.dialogue(loop);
                     });
-                }
-                if (action == DialogueLoaderAction.FIRSTOPTIONS) {
+                } else if (action == DialogueLoaderAction.FIRSTOPTIONS) {
                     recordDialogueLoop = true;
                     return new ActionDialogue((player) -> {
                         if (npcDef.optionDialogues == null)
@@ -200,15 +210,13 @@ public class DialogueParser {
                         if (loop != null)
                             player.dialogue(loop);
                     });
-                }
-                if (action == DialogueLoaderAction.MESSAGE) {
+                } else if (action == DialogueLoaderAction.MESSAGE) {
                     String[] splitLine = line.split(":");
                     if (splitLine.length != 2) {
                         error("MESSAGE action with improper length, needs to be 2", dialogue);
                     }
                     return new MessageDialogue(splitLine[1]);
-                }
-                if (action == DialogueLoaderAction.ITEM) {
+                } else if (action == DialogueLoaderAction.ITEM) {
                     int itemId = -1;
                     try {
                         itemId = Integer.parseInt(line.substring(action.name().length() + 1));
