@@ -4,6 +4,7 @@ import io.ruin.model.content.Book;
 import io.ruin.model.content.ChapteredBook;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.map.object.actions.ObjectAction;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -88,5 +89,18 @@ public class StrongholdNotes extends ChapteredBook {
 
     static {
         ItemAction.registerInventory(9004, "read", ((p, item) -> Book.openBook(new StrongholdNotes(p))));
+        ObjectAction.register(20788, "search", ((p, obj) -> {
+            if (p.getInventory().contains(9004)) {
+                p.sendMessage("You don't find anything.");
+                return;
+            }
+            p.sendMessage("You rummage around in the dead explorer's bag.....");
+            if (p.getInventory().getFreeSlots() < 1) {
+                p.sendMessage("...and find a book, but your inventory is full.");
+                return;
+            }
+            p.sendMessage("...and find a collection of notes.");
+            p.getInventory().add(9004);
+        }));
     }
 }
