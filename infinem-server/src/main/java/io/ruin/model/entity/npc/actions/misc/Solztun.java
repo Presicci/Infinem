@@ -21,9 +21,12 @@ public class Solztun {
     private static final String textColor = "<col=000080>";
 
     private static void dialogue(Player player, NPC npc) {
+        Item amulet = player.getEquipment().get(Equipment.SLOT_AMULET);
         player.dialogue(
                 new NPCDialogue(npc.getId(), textColor + "Can you hear me?"),
-                new PlayerDialogue("...I can, but I'm not wearing an amulet of ghostspeak... A-am I dead?"),
+                (amulet != null && amulet.getId() == Items.GHOSTSPEAK_AMULET)
+                        ? (new PlayerDialogue("Of course! I'm wearing an amulet of ghostspeak."))
+                        : (new PlayerDialogue("...I can, but I'm not wearing an amulet of ghostspeak... A-am I dead?")),
                 new NPCDialogue(npc.getId(), textColor + "I'm no ghost! I'm a spirit, I'm injecting my thoughts into your head."),
                 new PlayerDialogue("Oh, that's... interesting. Also rather disturbing..."),
                 new NPCDialogue(npc.getId(), textColor + "Try not to think about it."),
