@@ -25,6 +25,7 @@ import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
+import io.ruin.model.entity.player.gamemode.Tileman;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.UpdateMask;
 import io.ruin.model.entity.shared.listeners.*;
@@ -1668,12 +1669,12 @@ public class Player extends PlayerAttributes {
         }
         combat.tickSkull();
 
-        if(player.wildernessLevel <= 0 && !player.pvpAttackZone && player.snowballPeltOption &&
+        /*if(player.wildernessLevel <= 0 && !player.pvpAttackZone && player.snowballPeltOption &&
                 !player.getEquipment().hasId(Christmas.SNOWBALL) && !player.getPosition().inBounds(DuelArena.BOUNDS)
                 && !player.getPosition().inBounds(DuelArena.CUSTOM_EDGE)) {
             player.setAction(1, null);
             player.snowballPeltOption = false;
-        }
+        }*/
 
     }
 
@@ -1844,4 +1845,6 @@ public class Player extends PlayerAttributes {
     @Getter private final transient PuzzleBox puzzleBox = new PuzzleBox(this);
 
     @Getter private final transient LightBox lightBox = new LightBox(this);
+
+    @Getter private final Tileman tileman = new Tileman(this);
 }
