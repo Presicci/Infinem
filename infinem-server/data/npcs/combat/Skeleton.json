@@ -55,9 +55,9 @@
     "slayer_xp": 24.0,
     "slayer_tasks": [ "Skeletons" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 17,
+    "strength": 17,
+    "defence": 17,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
@@ -67,18 +67,18 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 0,
-    "slash_defence": 0,
-    "crush_defence": 0,
+    "stab_defence": 5,
+    "slash_defence": 5,
+    "crush_defence": -5,
     "magic_defence": 0,
-    "ranged_defence": 0,
+    "ranged_defence": 5,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
-    "death_ticks": 5,
-    "respawn_ticks": 50,
+    "death_ticks": 2,
+    "respawn_ticks": 35,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 5485,
@@ -98,9 +98,9 @@
     "slayer_xp": 29.0,
     "slayer_tasks": [ "Skeletons" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 15,
+    "strength": 18,
+    "defence": 17,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
@@ -110,18 +110,18 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 0,
-    "slash_defence": 0,
-    "crush_defence": 0,
+    "stab_defence": 5,
+    "slash_defence": 5,
+    "crush_defence": -5,
     "magic_defence": 0,
-    "ranged_defence": 0,
+    "ranged_defence": 5,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
-    "death_ticks": 5,
-    "respawn_ticks": 50,
+    "death_ticks": 2,
+    "respawn_ticks": 70,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 5485,
@@ -180,36 +180,36 @@
     "hitpoints": 17,
     "aggressive_level": 50,
     "max_damage": 4,
-    "attack_style": "CRUSH",
+    "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 17.0,
     "slayer_tasks": [ "Skeletons" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 24,
+    "strength": 24,
+    "defence": 24,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
+    "stab_attack": 15,
+    "slash_attack": 15,
+    "crush_attack": 15,
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 0,
-    "slash_defence": 0,
-    "crush_defence": 0,
-    "magic_defence": 0,
-    "ranged_defence": 0,
+    "stab_defence": 9,
+    "slash_defence": 11,
+    "crush_defence": -2,
+    "magic_defence": 1,
+    "ranged_defence": 4,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
-    "death_ticks": 5,
-    "respawn_ticks": 50,
+    "death_ticks": 2,
+    "respawn_ticks": 60,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 5485,
@@ -255,9 +255,9 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+  "attack_animation": 5499,
+  "defend_animation": 5501,
+  "death_animation": 5503
   },
   { #Skeleton (45)
     "ids": [ 82, 83 ],
@@ -266,36 +266,36 @@
     "hitpoints": 59,
     "aggressive_level": 90,
     "max_damage": 5,
-    "attack_style": "CRUSH",
+    "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 59.0,
     "slayer_tasks": [ "Skeletons" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 32,
+    "strength": 35,
+    "defence": 36,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
+    "stab_attack": 15,
+    "slash_attack": 15,
+    "crush_attack": 15,
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 0,
-    "slash_defence": 0,
-    "crush_defence": 0,
-    "magic_defence": 0,
-    "ranged_defence": 0,
+    "stab_defence": 9,
+    "slash_defence": 11,
+    "crush_defence": -2,
+    "magic_defence": 1,
+    "ranged_defence": 4,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
-    "death_ticks": 5,
-    "respawn_ticks": 50,
+    "death_ticks": 2,
+    "respawn_ticks": 60,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 5499,
@@ -315,9 +315,9 @@
     "slayer_xp": 70.0,
     "slayer_tasks": [ "Skeletons" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 50,
+    "strength": 50,
+    "defence": 40,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
@@ -327,23 +327,23 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 0,
-    "slash_defence": 0,
-    "crush_defence": 0,
+    "stab_defence": 35,
+    "slash_defence": 35,
+    "crush_defence": -5,
     "magic_defence": 0,
-    "ranged_defence": 0,
+    "ranged_defence": 35,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 2,
-    "respawn_ticks": 50,
+    "respawn_ticks": 70,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 5485,
+    "defend_animation": 5489,
+    "death_animation": 5491
   },
   { #Skeleton (68)
     "ids": [ 2520 ],
@@ -351,16 +351,16 @@
     //Combat Info
     "hitpoints": 70,
     "aggressive_level": 136,
-    "max_damage": 7,
+    "max_damage": 6,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 70.0,
     "slayer_tasks": [ "Skeletons" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 60,
+    "strength": 50,
+    "defence": 60,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
@@ -370,23 +370,23 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 0,
-    "slash_defence": 0,
-    "crush_defence": 0,
+    "stab_defence": 35,
+    "slash_defence": 35,
+    "crush_defence": -5,
     "magic_defence": 0,
-    "ranged_defence": 0,
+    "ranged_defence": 35,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 2,
-    "respawn_ticks": 50,
+    "respawn_ticks": 70,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+  "attack_animation": 5485,
+  "defend_animation": 5489,
+  "death_animation": 5491
   },
   { #Skeleton (77)
     "ids": [ 1685, 1686, 1687, 1688, 6442 ],
@@ -427,9 +427,9 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+  "attack_animation": 5485,
+  "defend_animation": 5489,
+  "death_animation": 5491
   },
   { #Skeleton (85)
     "ids": [ 2524, 2525, 2526 ],
@@ -438,40 +438,40 @@
     "hitpoints": 77,
     "aggressive_level": 170,
     "max_damage": 10,
-    "attack_style": "CRUSH",
+    "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 77.0,
     "slayer_tasks": [ "Skeletons" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 74,
+    "strength": 74,
+    "defence": 74,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
+    "stab_attack": 15,
+    "slash_attack": 15,
+    "crush_attack": 15,
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 0,
-    "slash_defence": 0,
-    "crush_defence": 0,
-    "magic_defence": 0,
-    "ranged_defence": 0,
+    "stab_defence": 79,
+    "slash_defence": 31,
+    "crush_defence": 20,
+    "magic_defence": 5,
+    "ranged_defence": 70,
     //Immunites
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 2,
-    "respawn_ticks": 50,
+    "respawn_ticks": 60,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+  "attack_animation": 5485,
+  "defend_animation": 5489,
+  "death_animation": 5491
   }
 ]
