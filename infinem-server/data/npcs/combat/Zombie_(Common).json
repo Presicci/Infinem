@@ -35,7 +35,7 @@
     //Speeds
     "attack_ticks": 6,
     "death_ticks": 2,
-    "respawn_ticks": 50,
+    "respawn_ticks": 35,
     //Animations
     "spawn_animation": -1,
     "attack_animation": -1,
@@ -61,9 +61,9 @@
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
+    "stab_attack": 5,
+    "slash_attack": 5,
+    "crush_attack": 5,
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
@@ -78,7 +78,7 @@
     //Speeds
     "attack_ticks": 6,
     "death_ticks": 5,
-    "respawn_ticks": 50,
+    "respawn_ticks": 35,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 5578,
@@ -86,7 +86,7 @@
     "death_animation": 5580
   },
   { #Zombie (24)
-    "ids": [ 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 3980, 3981, 2501, 2502, 2503 ],
+    "ids": [ 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 3980, 3981 ],
     "handler": "",
     //Combat Info
     "hitpoints": 30,
@@ -107,8 +107,8 @@
     "stab_attack": 5,
     "slash_attack": 5,
     "crush_attack": 5,
-    "magic_attack": 5,
-    "ranged_attack": 5,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 9,
     "slash_defence": 8,
@@ -121,11 +121,140 @@
     //Speeds
     "attack_ticks": 5,
     "death_ticks": 5,
-    "respawn_ticks": 50,
+    "respawn_ticks": 35,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 5578,
     "defend_animation": 5579,
     "death_animation": 5580
+  },
+  { #Zombie (30)
+  "ids": [ 2501, 2502, 2503 ],
+  "handler": "",
+  //Combat Info
+  "hitpoints": 30,
+  "aggressive_level": 60,
+  "max_damage": 4,
+  "attack_style": "CRUSH",
+  //Slayer Info
+  "slayer_level": 1,
+  "slayer_xp": 30.0,
+  "slayer_tasks": [ "Zombies" ],
+  //Combat Stats
+  "attack": 25,
+  "strength": 29,
+  "defence": 20,
+  "ranged": 1,
+  "magic": 1,
+  //Aggressive Stats
+  "stab_attack": 5,
+  "slash_attack": 5,
+  "crush_attack": 5,
+  "magic_attack": 0,
+  "ranged_attack": 0,
+  //Defensive Stats
+  "stab_defence": 0,
+  "slash_defence": 0,
+  "crush_defence": 0,
+  "magic_defence": 0,
+  "ranged_defence": 0,
+  //Immunites
+  "poison_immunity": false,
+  "venom_immunity": false,
+  //Speeds
+  "attack_ticks": 5,
+  "death_ticks": 5,
+  "respawn_ticks": 35,
+  //Animations
+  "spawn_animation": -1,
+  "attack_animation": 5568,
+  "defend_animation": 5579,
+  "death_animation": 5569
+  },
+  { #Zombie (44)
+  "ids": [ 2504, 2505, 2506 ],
+  "handler": "",
+  //Combat Info
+  "hitpoints": 40,
+  "aggressive_level": 88,
+  "max_damage": 5,
+  "attack_style": "SLASH",
+  //Slayer Info
+  "slayer_level": 1,
+  "slayer_xp": 40.0,
+  "slayer_tasks": [ "Zombies" ],
+  //Combat Stats
+  "attack": 35,
+  "strength": 40,
+  "defence": 40,
+  "ranged": 1,
+  "magic": 1,
+  //Aggressive Stats
+  "stab_attack": 5,
+  "slash_attack": 5,
+  "crush_attack": 5,
+  "magic_attack": 0,
+  "ranged_attack": 0,
+  //Defensive Stats
+  "stab_defence": 0,
+  "slash_defence": 0,
+  "crush_defence": 22,
+  "magic_defence": 0,
+  "ranged_defence": 0,
+  //Immunites
+  "poison_immunity": false,
+  "venom_immunity": false,
+  //Speeds
+  "attack_ticks": 5,
+  "death_ticks": 5,
+  "respawn_ticks": 35,
+  //Animations
+  "spawn_animation": -1,
+  "attack_animation": 5571,
+  "defend_animation": 5567,
+  "death_animation": 5580,
+  },
+  { #Zombie (53)
+  "ids": [ 2507, 2508, 2509 ],
+  "handler": "",
+  //Combat Info
+  "hitpoints": 50,
+  "aggressive_level": 106,
+  "max_damage": 5,
+  "attack_style": "SLASH",
+  //Slayer Info
+  "slayer_level": 1,
+  "slayer_xp": 50.0,
+  "slayer_tasks": [ "Zombies" ],
+  //Combat Stats
+  "attack": 55,
+  "strength": 40,
+  "defence": 48,
+  "ranged": 1,
+  "magic": 1,
+  //Aggressive Stats
+  "stab_attack": 5,
+  "slash_attack": 5,
+  "crush_attack": 5,
+  "magic_attack": 0,
+  "ranged_attack": 0,
+  //Defensive Stats
+  "stab_defence": 19,
+  "slash_defence": 18,
+  "crush_defence": 0,
+  "magic_defence": 0,
+  "ranged_defence": 0,
+  //Immunites
+  "poison_immunity": false,
+  "venom_immunity": false,
+  //Speeds
+  "attack_ticks": 5,
+  "death_ticks": 5,
+  "respawn_ticks": 35,
+  //Animations
+  "spawn_animation": -1,
+  "attack_animation": 5571,
+  "defend_animation": 5567,
+  "death_animation": 5580,
   }
 ]
