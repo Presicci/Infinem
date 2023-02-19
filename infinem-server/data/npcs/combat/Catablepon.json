@@ -83,7 +83,7 @@
     "spawn_animation": -1,
   "attack_animation": 4271,
   "defend_animation": 4273,
-  "death_animation": 4270,
+  "death_animation": 4270
   },
   { #Catablepon (68)
     "ids": [ 2476 ],
@@ -126,6 +126,6 @@
     "spawn_animation": -1,
   "attack_animation": 4271,
   "defend_animation": 4273,
-  "death_animation": 4270,
+  "death_animation": 4270
   }
 ]

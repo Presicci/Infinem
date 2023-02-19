@@ -83,7 +83,7 @@
     "spawn_animation": -1,
   "attack_animation": 5540,
   "defend_animation": 5541,
-  "death_animation": 5542,
+  "death_animation": 5542
   },
   { #Ghost (76)
   "ids": [ 2531, 2532, 2533, 2534 ],
@@ -127,7 +127,7 @@
   "attack_animation": 5540,
   "defend_animation": 5541,
   "death_animation": 5542
-  }
+  },
   { #Ghost (77)
     "ids": [ 2527, 2528, 2529, 2530 ],
     "handler": "",
