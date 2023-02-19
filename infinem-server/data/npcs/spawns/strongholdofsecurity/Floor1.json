@@ -12,7 +12,7 @@
     "name": "Goblin",
     "id": 2485,
     "x": 1862,
-    "y": 5204,
+    "y": 5202,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -21,7 +21,7 @@
     "name": "Rat",
     "id": 2492,
     "x": 1862,
-    "y": 5204,
+    "y": 5203,
     "z": 0,
     "direction": "S",
     "walkRange": 5
@@ -29,8 +29,8 @@
   {
     "name": "Goblin",
     "id": 2486,
-    "x": 1862,
-    "y": 5220,
+    "x": 1860,
+    "y": 5224,
     "z": 0,
     "direction": "S",
     "walkRange": 7
@@ -38,8 +38,8 @@
   {
     "name": "Goblin",
     "id": 2484,
-    "x": 1862,
-    "y": 5202,
+    "x": 1859,
+    "y": 5201,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -47,8 +47,8 @@
   {
     "name": "Goblin",
     "id": 2485,
-    "x": 1862,
-    "y": 5219,
+    "x": 1864,
+    "y": 5217,
     "z": 0,
     "direction": "S",
     "walkRange": 6
@@ -81,15 +81,6 @@
     "walkRange": 4
   },
   {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1862,
-    "y": 5204,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 5
-  },
-  {
     "name": "Goblin",
     "id": 2486,
     "x": 1862,
@@ -101,8 +92,8 @@
   {
     "name": "Rat",
     "id": 2492,
-    "x": 1861,
-    "y": 5227,
+    "x": 1862,
+    "y": 5228,
     "z": 0,
     "direction": "S",
     "walkRange": 6
@@ -137,8 +128,8 @@
   {
     "name": "Goblin",
     "id": 2484,
-    "x": 1862,
-    "y": 5204,
+    "x": 1860,
+    "y": 5203,
     "z": 0,
     "direction": "S",
     "walkRange": 5
@@ -146,7 +137,7 @@
   {
     "name": "Rat",
     "id": 2492,
-    "x": 1862,
+    "x": 1865,
     "y": 5203,
     "z": 0,
     "direction": "S",
@@ -191,7 +182,7 @@
   {
     "name": "Goblin",
     "id": 2485,
-    "x": 1862,
+    "x": 1859,
     "y": 5219,
     "z": 0,
     "direction": "S",
@@ -209,8 +200,8 @@
   {
     "name": "Rat",
     "id": 2492,
-    "x": 1862,
-    "y": 5202,
+    "x": 1860,
+    "y": 5200,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -227,29 +218,11 @@
   {
     "name": "Goblin",
     "id": 2485,
-    "x": 1862,
-    "y": 5219,
+    "x": 1861,
+    "y": 5215,
     "z": 0,
     "direction": "S",
     "walkRange": 5
-  },
-  {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1867,
-    "y": 5191,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
-  },
-  {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1862,
-    "y": 5203,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
   },
   {
     "name": "Minotaur",
@@ -261,13 +234,13 @@
     "walkRange": 2
   },
   {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1868,
-    "y": 5191,
+    "name": "Minotaur",
+    "id": 2481,
+    "x": 1875,
+    "y": 5188,
     "z": 0,
     "direction": "S",
-    "walkRange": 9
+    "walkRange": 2
   },
   {
     "name": "Rat",
@@ -299,8 +272,8 @@
   {
     "name": "Minotaur",
     "id": 2481,
-    "x": 1871,
-    "y": 5233,
+    "x": 1870,
+    "y": 5236,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -345,7 +318,7 @@
     "name": "Minotaur",
     "id": 2481,
     "x": 1871,
-    "y": 5240,
+    "y": 5242,
     "z": 0,
     "direction": "S",
     "walkRange": 2
@@ -371,8 +344,8 @@
   {
     "name": "Minotaur",
     "id": 2481,
-    "x": 1871,
-    "y": 5228,
+    "x": 1872,
+    "y": 5227,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -416,8 +389,8 @@
   {
     "name": "Minotaur",
     "id": 2481,
-    "x": 1872,
-    "y": 5238,
+    "x": 1874,
+    "y": 5239,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -477,19 +450,10 @@
     "walkRange": 4
   },
   {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1874,
-    "y": 5190,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
     "name": "Goblin",
     "id": 2488,
-    "x": 1881,
-    "y": 5201,
+    "x": 1885,
+    "y": 5205,
     "z": 0,
     "direction": "S",
     "walkRange": 8
@@ -497,8 +461,8 @@
   {
     "name": "Rat",
     "id": 2492,
-    "x": 1875,
-    "y": 5217,
+    "x": 1873,
+    "y": 5219,
     "z": 0,
     "direction": "S",
     "walkRange": 5
@@ -506,8 +470,8 @@
   {
     "name": "Goblin",
     "id": 2489,
-    "x": 1881,
-    "y": 5201,
+    "x": 1883,
+    "y": 5199,
     "z": 0,
     "direction": "S",
     "walkRange": 8
@@ -529,15 +493,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 5
-  },
-  {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1881,
-    "y": 5201,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
   },
   {
     "name": "Minotaur",
@@ -565,15 +520,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 5
-  },
-  {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1882,
-    "y": 5201,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
   },
   {
     "name": "Minotaur",
@@ -633,15 +579,6 @@
     "name": "Rat",
     "id": 2492,
     "x": 1882,
-    "y": 5202,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
-  },
-  {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1882,
     "y": 5201,
     "z": 0,
     "direction": "S",
@@ -660,28 +597,10 @@
     "name": "Rat",
     "id": 2492,
     "x": 1882,
-    "y": 5202,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
-  },
-  {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1882,
     "y": 5230,
     "z": 0,
     "direction": "S",
     "walkRange": 4
-  },
-  {
-    "name": "Goblin",
-    "id": 2488,
-    "x": 1881,
-    "y": 5201,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
   },
   {
     "name": "Goblin",
@@ -713,20 +632,20 @@
   {
     "name": "Goblin",
     "id": 2487,
-    "x": 1881,
-    "y": 5202,
+    "x": 1877,
+    "y": 5199,
     "z": 0,
     "direction": "S",
     "walkRange": 8
   },
   {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1882,
-    "y": 5202,
+    "name": "Goblin",
+    "id": 2487,
+    "x": 1875,
+    "y": 5197,
     "z": 0,
     "direction": "S",
-    "walkRange": 7
+    "walkRange": 8
   },
   {
     "name": "Wolf",
@@ -747,15 +666,6 @@
     "walkRange": 5
   },
   {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1882,
-    "y": 5202,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 7
-  },
-  {
     "name": "Goblin",
     "id": 2488,
     "x": 1884,
@@ -767,8 +677,8 @@
   {
     "name": "Wolf",
     "id": 2491,
-    "x": 1889,
-    "y": 5222,
+    "x": 1888,
+    "y": 5223,
     "z": 0,
     "direction": "S",
     "walkRange": 2
@@ -866,8 +776,8 @@
   {
     "name": "Wolf",
     "id": 2491,
-    "x": 1890,
-    "y": 5218,
+    "x": 1892,
+    "y": 5217,
     "z": 0,
     "direction": "S",
     "walkRange": 5
@@ -875,8 +785,26 @@
   {
     "name": "Wolf",
     "id": 2491,
-    "x": 1891,
-    "y": 5221,
+    "x": 1889,
+    "y": 5215,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Wolf",
+    "id": 2491,
+    "x": 1872,
+    "y": 5232,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Wolf",
+    "id": 2491,
+    "x": 1893,
+    "y": 5219,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -947,8 +875,8 @@
   {
     "name": "Goblin",
     "id": 2487,
-    "x": 1892,
-    "y": 5232,
+    "x": 1894,
+    "y": 5229,
     "z": 0,
     "direction": "S",
     "walkRange": 12
@@ -974,8 +902,8 @@
   {
     "name": "Goblin",
     "id": 2488,
-    "x": 1892,
-    "y": 5225,
+    "x": 1896,
+    "y": 5231,
     "z": 0,
     "direction": "S",
     "walkRange": 9
@@ -1019,8 +947,17 @@
   {
     "name": "Minotaur",
     "id": 2483,
-    "x": 1898,
-    "y": 5242,
+    "x": 1896,
+    "y": 5244,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Minotaur",
+    "id": 2483,
+    "x": 1894,
+    "y": 5243,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -1071,24 +1008,6 @@
     "walkRange": 4
   },
   {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1896,
-    "y": 5237,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
-  },
-  {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1895,
-    "y": 5239,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
-  },
-  {
     "name": "Minotaur",
     "id": 2483,
     "x": 1900,
@@ -1109,8 +1028,8 @@
   {
     "name": "Minotaur",
     "id": 2483,
-    "x": 1900,
-    "y": 5202,
+    "x": 1901,
+    "y": 5201,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -1154,8 +1073,8 @@
   {
     "name": "Minotaur",
     "id": 2483,
-    "x": 1901,
-    "y": 5206,
+    "x": 1900,
+    "y": 5211,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -1179,10 +1098,20 @@
     "walkRange": 4
   },
   {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1914,
-    "y": 5238,
+    "name": "Goblin",
+    "id": 2489,
+    "x": 1905,
+    "y": 5235,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+
+  {
+    "name": "Goblin",
+    "id": 2488,
+    "x": 1910,
+    "y": 5236,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -1190,8 +1119,44 @@
   {
     "name": "Goblin",
     "id": 2489,
-    "x": 1914,
+    "x": 1912,
+    "y": 5235,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Goblin",
+    "id": 2488,
+    "x": 1913,
     "y": 5238,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Goblin",
+    "id": 2488,
+    "x": 1911,
+    "y": 5241,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Goblin",
+    "id": 2488,
+    "x": 1913,
+    "y": 5242,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Goblin",
+    "id": 2489,
+    "x": 1912,
+    "y": 5244,
     "z": 0,
     "direction": "S",
     "walkRange": 4
@@ -1215,15 +1180,6 @@
     "walkRange": 7
   },
   {
-    "name": "Rat",
-    "id": 2492,
-    "x": 1909,
-    "y": 5204,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
     "name": "Butterfly",
     "id": 235,
     "x": 1907,
@@ -1244,8 +1200,8 @@
   {
     "name": "Rat",
     "id": 2492,
-    "x": 1909,
-    "y": 5204,
+    "x": 1911,
+    "y": 5203,
     "z": 0,
     "direction": "S",
     "walkRange": 2
