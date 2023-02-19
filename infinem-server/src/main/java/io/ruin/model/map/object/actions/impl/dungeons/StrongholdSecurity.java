@@ -334,5 +334,8 @@ public class StrongholdSecurity {
         ObjectAction.register(19000, "search", (player, obj) -> grainOfPlenty(player));
         ObjectAction.register(23709, "open", (player, obj) -> boxOfHealth(player));
         ObjectAction.register(23731, "search", (player, obj) -> cradleOfLife(player));
+
+        // Notice
+        ObjectAction.register(7054, "read", ((player, obj) -> player.sendMessage("You let out a long, deep sign, as you do not know how to read.")));
     }
 }
