@@ -97,6 +97,7 @@ public enum ShootingStar {
             found = true;
             player.dialogue(new MessageDialogue("Congratulations! You were the first person to find this star!"));
             player.incrementNumericAttribute(AttributeKey.SHOOTING_STARS_FOUND, 1);
+            return;
             //TODO Noticeboard
         }
         Pickaxe pickaxe = Pickaxe.find(player);
