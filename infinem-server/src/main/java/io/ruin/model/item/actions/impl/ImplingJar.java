@@ -36,23 +36,26 @@ public enum ImplingJar {
             new LootItem(24362, 1, 1)         //Clue scroll (easy)
     )),
     YOUNG_IMPLING_JAR(11240, new LootTable().addTable(1,
+            new LootItem(1539, 5, 10),        //Steel nails
+            new LootItem(1523, 1, 10),        //Lockpick
+            new LootItem(7936, 1, 10),        //Pure essence
             new LootItem(361, 1, 10),         //Tuna
             new LootItem(1901, 1, 10),        //Chocolate slice
-            new LootItem(1523, 1, 10),        //Lockpick
-            new LootItem(1539, 5, 10),        //Steel nails
-            new LootItem(7936, 1, 10),        //Pure essence
-            new LootItem(855, 1, 5),          //Yew longbow
-            new LootItem(1353, 1, 5),         //Steel axe
-            new LootItem(453, 1, 5),          //Coal
-            new LootItem(1777, 1, 5),         //Bow string
-            new LootItem(231, 1, 5),          //Snape grass
-            new LootItem(1761, 1, 5),         //Soft clay
-            new LootItem(24362, 1, 5),         //Clue scroll (easy)
+            new LootItem(1353, 1, 10),         //Steel axe
+            new LootItem(Items.MEAT_PIZZA, 1, 10),
+            new LootItem(453, 1, 10),          //Coal
+            new LootItem(1777, 1, 10),         //Bow string
+            new LootItem(231, 1, 1),          //Snape grass
+            new LootItem(1761, 1, 1),         //Soft clay
             new LootItem(1097, 1, 1),         //Studded chaps
             new LootItem(1157, 1, 1),         //Steel full helm
             new LootItem(8778, 1, 1),         //Oak plank
             new LootItem(133, 1, 1),          //Defence potion(3)
-            new LootItem(2359, 1, 1)          //Mithril bar
+            new LootItem(2359, 1, 1),         //Mithril bar
+            new LootItem(855, 1, 1),          //Yew longbow
+            new LootItem(Items.GARDEN_PIE, 1, 1),
+            new LootItem(24361, 1, 3),         //Clue scroll (beginner)
+            new LootItem(24362, 1, 2)         //Clue scroll (easy)
     )),
     GOURMET_IMPLING_JAR(11242, new LootTable().addTable(1,
             new LootItem(365, 1, 10),         //Bass
