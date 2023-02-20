@@ -58,25 +58,26 @@ public enum ImplingJar {
             new LootItem(24362, 1, 2)         //Clue scroll (easy)
     )),
     GOURMET_IMPLING_JAR(11242, new LootTable().addTable(1,
-            new LootItem(361, 1, 10),         //Tuna
-            new LootItem(365, 1, 10),         //Bass
-            new LootItem(2011, 1, 10),        //Curry
-            new LootItem(2327, 1, 10),        //Meat pie
-            new LootItem(1897, 1, 10),        //Chocolate cake
-            new LootItem(5004, 1, 10),        //Frog spawn
-            new LootItem(2007, 1, 10),        //Spice
-            new LootItem(5970, 1, 10),        //Curry leaf
-            new LootItem(1883, 1, 1),         //Ugthanki kebab
-            new LootItem(380, 4, 1),          //Lobster
-            new LootItem(386, 3, 1),          //Shark
-            new LootItem(7188, 1, 1),         //Fish pie
-            new LootItem(Items.CHEFS_DELIGHT, 1, 1),
-            new LootItem(Items.RAINBOW_FISH_NOTE, 5, 1),
-            new LootItem(7179, 6, 1),         //Garden pie
-            new LootItem(374, 3, 1),          //Swordfish
-            new LootItem(Items.STRAWBERRIES_5, 1, 1),
-            new LootItem(3145, 2, 1),         //Cooked Karambwan
-            new LootItem(24362, 1, 3)         //Clue scroll (easy)
+            new LootItem(361, 1, 50),         //Tuna
+            new LootItem(365, 1, 50),         //Bass
+            new LootItem(2011, 1, 50),        //Curry
+            new LootItem(2327, 1, 50),        //Meat pie
+            new LootItem(1897, 1, 50),        //Chocolate cake
+            new LootItem(5004, 1, 50),        //Frog spawn
+            new LootItem(2007, 1, 50),        //Spice
+            new LootItem(5970, 1, 50),        //Curry leaf
+            new LootItem(1883, 1, 5),         //Ugthanki kebab
+            new LootItem(380, 4, 5),          //Lobster
+            new LootItem(386, 3, 5),          //Shark
+            new LootItem(7188, 1, 5),         //Fish pie
+            new LootItem(Items.CHEFS_DELIGHT, 1, 5),
+            new LootItem(Items.RAINBOW_FISH_NOTE, 5, 5),
+            new LootItem(7179, 6, 5),         //Garden pie
+            new LootItem(374, 3, 5),          //Swordfish
+            new LootItem(Items.STRAWBERRIES_5, 1, 5),
+            new LootItem(3145, 2, 5),         //Cooked Karambwan
+            new LootItem(24362, 1, 15),         //Clue scroll (easy)
+            new LootItem(23499, 1, 1)         //Grubby key
     )),
     EARTH_IMPLING_JAR(11244, new LootTable().addTable(1,
             new LootItem(1442, 1, 10),        //Fire talisman
