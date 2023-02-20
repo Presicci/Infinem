@@ -9,27 +9,31 @@ import io.ruin.model.item.containers.equipment.EquipAction;
  */
 public enum EquipTask {
 
-    FIRE_CAPE(Items.FIRE_CAPE, 418),
-    INFERNAL_CAPE(Items.INFERNAL_CAPE, 429),
-    SPINY_HELMET(Items.SPINY_HELMET, 29),
-    DRAGON_DEFENDER(Items.DRAGON_DEFENDER, 462),
-    FANCY_BOOTS(Items.FANCY_BOOTS, 341),
-    FIGHTING_BOOTS(Items.FIGHTING_BOOTS, 341),
-    BUG_LANTERN(Items.LIT_BUG_LANTERN, 125)
+    FIRE_CAPE(418, Items.FIRE_CAPE),
+    INFERNAL_CAPE(429, Items.INFERNAL_CAPE),
+    SPINY_HELMET(29, Items.SPINY_HELMET),
+    DRAGON_DEFENDER(462, Items.DRAGON_DEFENDER),
+    FANCY_BOOTS(341, Items.FANCY_BOOTS),
+    FIGHTING_BOOTS(341, Items.FIGHTING_BOOTS),
+    BUG_LANTERN(125, Items.LIT_BUG_LANTERN)
     ;
 
-    private final int itemId, uuid;
+    private final int uuid;
+    private final int[] itemIds;
 
-    EquipTask(int itemId, int uuid) {
-        this.itemId = itemId;
+    EquipTask(int uuid, int... itemIds) {
+        this.itemIds = itemIds;
         this.uuid = uuid;
     }
 
     static {
         for (EquipTask task : values()) {
-            EquipAction.register(task.itemId, (player -> {
-                player.getTaskManager().doLookupByUUID(task.uuid, 1);
-            }));
+            for (int itemId : task.itemIds) {
+                EquipAction.register(itemId, (player -> {
+                    player.getTaskManager().doLookupByUUID(task.uuid, 1);
+                }));
+            }
+
         }
     }
 }
