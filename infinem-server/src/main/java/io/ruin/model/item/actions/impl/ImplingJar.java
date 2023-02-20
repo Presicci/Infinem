@@ -84,19 +84,19 @@ public enum ImplingJar {
             new LootItem(1440, 1, 10),        //Earth talisman
             new LootItem(5535, 1, 10),        //Earth tiara
             new LootItem(557, 32, 10),        //Earth rune
-            new LootItem(447, 1, 3, 10),      //Mithril ore
+            new LootItem(447, 1, 10),         //Mithril ore
+            new LootItem(Items.BUCKET_OF_SAND_NOTE, 4, 10),
             new LootItem(237, 1, 10),         //Unicorn horn
-            new LootItem(2353, 1, 10),        //Steel bar
-            new LootItem(1273, 1, 10),        //Mithril Pickaxe
-            new LootItem(5311, 2, 10),        //Wildblood seed
-            new LootItem(5104, 2, 10),        //Jangerberry seed
             new LootItem(6033, 6, 10),        //Compost
-            new LootItem(6035, 2, 5),         //Super compost
-            new LootItem(1784, 4, 5),         //Bucket of sand
-            new LootItem(5294, 2, 5),         //Harralander seed
-            new LootItem(454, 2, 5),          //Coal
-            new LootItem(444, 1, 1),          //Gold ore
-            new LootItem(1622, 2, 1),         //Uncut emerald
+            new LootItem(444, 1, 10),          //Gold ore
+            new LootItem(2353, 1, 1),        //Steel bar
+            new LootItem(1273, 1, 1),        //Mithril Pickaxe
+            new LootItem(5311, 2, 1),        //Wildblood seed
+            new LootItem(5104, 2, 1),        //Jangerberry seed
+            new LootItem(6035, 2, 1),         //Super compost
+            new LootItem(448, 3, 1),         //Mithril ore noted
+            new LootItem(5294, 2, 1),         //Harralander seed
+            new LootItem(454, 6, 1),          //Coal
             new LootItem(1606, 2, 1),         //Emerald
             new LootItem(1603, 1, 1),         //Ruby
             new LootItem(24363, 1, 1)          //Clue scroll (medium)
