@@ -156,6 +156,9 @@ public class Equipment extends ItemContainer {
         if (selectedDef.equipAction != null) {
             selectedDef.equipAction.handle(player);
         }
+        if (selectedDef.name.contains("mithril") && equipSlot == SLOT_WEAPON) {
+            player.getTaskManager().doLookupByUUID(59, 1);  // Equip a mithril weapon
+        }
         if(!player.recentlyEquipped.isDelayed() && equipSlot == Equipment.SLOT_WEAPON) {
             player.recentlyEquipped.delay(1);
            // player.resetAnimation();
