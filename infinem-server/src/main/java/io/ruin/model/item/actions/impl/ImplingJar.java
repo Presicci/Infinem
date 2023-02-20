@@ -21,7 +21,7 @@ public enum ImplingJar {
             new LootItem(2347, 1, 10),        //Hammer
             new LootItem(1759, 1, 10),        //Ball of wool
             new LootItem(Items.ANCHOVIES, 1, 10),
-            new LootItem(Items.BOW_STRING, 1, 10),
+            new LootItem(Items.BRONZE_PICKAXE, 1, 10),
             new LootItem(2007, 1, 1),         //Spice
             new LootItem(1779, 1, 1),         //Flax
             new LootItem(7170, 1, 1),         //Mud pie
