@@ -128,22 +128,23 @@ public enum ImplingJar {
             new LootItem(1273, 1, 10),        //Mithril Pickaxe
             new LootItem(5970, 1, 10),        //Curry leaf
             new LootItem(231, 1, 10),         //Snape grass
-            new LootItem(556, 30, 60, 10),    //Air rune
-            new LootItem(8779, 4, 10),        //Oak plank
-            new LootItem(2358, 5, 10),        //Gold bar
-            new LootItem(444, 1, 10),         //Gold ore
+            new LootItem(556, 30, 58, 10),    //Air rune
             new LootItem(4527, 1, 10),        //Empty candle lantern
+            new LootItem(8779, 4, 10),        //Oak plank
+            new LootItem(444, 1, 10),         //Gold ore
+            new LootItem(2358, 5, 10),        //Gold bar
             new LootItem(237, 1, 10),         //Unicorn horn
-            new LootItem(24363, 1, 5),         //Clue scroll (medium)
             new LootItem(1199, 1, 1),         //Adamant kiteshield
             new LootItem(2493, 1, 1),         //Blue d'hide chaps
             new LootItem(10083, 1, 1),        //Red spiky vambs
             new LootItem(1213, 1, 1),         //Rune dagger
             new LootItem(1391, 1, 1),         //Battlestaff
+            new LootItem(450, 10, 1),         //Adamant ore
+            new LootItem(Items.SLAYERS_RESPITE_NOTE, 2, 1),
             new LootItem(7208, 1, 1),         //Wild pie
             new LootItem(5321, 3, 1),         //Watermelon seed
-            new LootItem(450, 10, 1),         //Adamant ore
-            new LootItem(1601, 1, 1)          //Diamond
+            new LootItem(1601, 1, 1),          //Diamond
+            new LootItem(24363, 1, 3)         //Clue scroll (medium)
     )),
     NATURE_IMPLING_JAR(11250, new LootTable().addTable(1,
             new LootItem(5100, 1, 10),        //Limpwurt seed
