@@ -133,6 +133,10 @@ public class StashUnits {
                     player.getStashUnits().put(emoteClueData, itemsToDeposit);
                 }
                 player.sendMessage("You stash the items.");
+                if (emoteClueData.type == ClueType.HARD)
+                    player.getTaskManager().doLookupByUUID(196, 1); // Fill a Hard S.T.A.S.H. Unit
+                if (emoteClueData.type == ClueType.MEDIUM)
+                    player.getTaskManager().doLookupByUUID(119, 1); // Fill a Medium S.T.A.S.H. Unit
             }
         });
     }
