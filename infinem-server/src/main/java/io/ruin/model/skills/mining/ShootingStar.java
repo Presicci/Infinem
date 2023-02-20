@@ -71,6 +71,7 @@ public enum ShootingStar {
         stardustLeft = star.stardust;
         activeStar = star;
         starLocation = getLocation();
+        spawnMinutes = 60;
     }
 
     private static void nextTier() {
@@ -313,9 +314,8 @@ public enum ShootingStar {
             while (true) {
                 if (--spawnMinutes <= 0) {
                     spawnStar();
-                } else {
-                    event.delay(100);
                 }
+                event.delay(100);
             }
         });
     }
