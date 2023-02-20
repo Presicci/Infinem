@@ -62,7 +62,8 @@ public enum Impling {
 
         /* check for impling jar */
         Item impJar = player.getInventory().findItem(ImplingJar.IMPLING_JAR);
-        if (!barehands && impJar == null) {
+        if ((impJar == null && isInPuroPuro(player)) // Still need jar if barehanding in puro
+                || !barehands && impJar == null) {
             player.sendFilteredMessage("You don't have an empty impling jar in which to keep an impling.");
             return;
         }
@@ -110,7 +111,7 @@ public enum Impling {
                     Item loot;
                     if (impling == Impling.LUCKY)
                         player.getTaskManager().doLookupByUUID(301, 1); // Catch a Lucky Impling Bare-Handed
-                    if (jar != null) {
+                    if (jar != null && !isInPuroPuro(player)) {
                         if (jar.equals(ImplingJar.LUCKY_IMPLING)) {
                             ClueType randomClue = Random.get(ClueType.values());
                             loot = randomClue.lootTable.rollItem();
@@ -120,7 +121,7 @@ public enum Impling {
                         player.getInventory().addOrDrop(loot);
                         player.getCollectionLog().collect(loot);
                     } else {
-                        player.getInventory().add(impling.jarId);
+                        impJar.setId(impling.jarId);
                     }
                 } else {
                     impJar.setId(impling.jarId);
