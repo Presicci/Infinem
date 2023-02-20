@@ -191,26 +191,26 @@ public enum ImplingJar {
             new LootItem(24364, 1, 1)          //Clue scroll (hard)
     )),
     NINJA_IMPLING_JAR(11254, new LootTable().addTable(1,
-            new LootItem(6328, 1, 4),         //Snakeskin boots
-            new LootItem(3385, 1, 4),         //Splitbark helm
-            new LootItem(4097, 1, 4),         //Mystic boots
-            new LootItem(1113, 1, 4),         //Rune chainbody
-            new LootItem(4095, 1, 4),         //Mystic gloves
-            new LootItem(6313, 1, 4),         //Opal machete
-            new LootItem(3101, 1, 4),         //Rune claws
-            new LootItem(1333, 1, 4),         //Rune scimitar
-            new LootItem(5680, 1, 4),         //Dragon dagger(p+)
-            new LootItem(892, 70, 4),         //Rune arrow
-            new LootItem(811, 70, 4),         //Rune dart
-            new LootItem(868, 40, 4),         //Rune knife
-            new LootItem(805, 50, 4),         //Rune thrownaxe
-            new LootItem(9342, 2, 4),         //Onyx bolts
-            new LootItem(9194, 4, 4),         //Onyx bolt tips
-            new LootItem(1748, 10, 16, 4),    //Black dragonhide
-            new LootItem(2435, 4, 4),         //Prayer potion(3)
-            new LootItem(5938, 4, 4),         //Weapon poison(+)
-            new LootItem(6156, 3, 4),         //Dagannoth hide
-            new LootItem(24364, 1, 3)         //Clue scroll (hard)
+            new LootItem(6328, 1, 100),         //Snakeskin boots
+            new LootItem(3385, 1, 100),         //Splitbark helm
+            new LootItem(4097, 1, 100),         //Mystic boots
+            new LootItem(1113, 1, 100),         //Rune chainbody
+            new LootItem(4095, 1, 100),         //Mystic gloves
+            new LootItem(6313, 1, 100),         //Opal machete
+            new LootItem(3101, 1, 100),         //Rune claws
+            new LootItem(1333, 1, 100),         //Rune scimitar
+            new LootItem(5680, 1, 100),         //Dragon dagger(p+)
+            new LootItem(892, 70, 100),         //Rune arrow
+            new LootItem(811, 70, 100),         //Rune dart
+            new LootItem(868, 40, 100),         //Rune knife
+            new LootItem(805, 50, 100),         //Rune thrownaxe
+            new LootItem(9342, 2, 100),         //Onyx bolts
+            new LootItem(9194, 4, 100),         //Onyx bolt tips
+            new LootItem(1748, 10, 16, 100),    //Black dragonhide
+            new LootItem(2435, 4, 100),         //Prayer potion(3)
+            new LootItem(5938, 4, 100),         //Weapon poison(+)
+            new LootItem(6156, 3, 100),         //Dagannoth hide
+            new LootItem(24364, 1, 76)         //Clue scroll (hard)
     )),
     CRYSTAL_IMPLING_JAR(23768, new LootTable().addTable(1,
             new LootItem(Items.AMULET_OF_POWER_NOTE, 5, 7, 7),
