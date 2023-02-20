@@ -102,19 +102,27 @@ public enum ImplingJar {
             new LootItem(24363, 1, 1)          //Clue scroll (medium)
     )),
     ESSENCE_IMPLING_JAR(11246, new LootTable().addTable(1,
-            new LootItem(7937, 20, 35, 10),   //Pure essence
+            new LootItem(7937, 20, 10),       //Pure essence
             new LootItem(555, 30, 10),        //Water rune
             new LootItem(556, 30, 10),        //Air rune
+            new LootItem(554, 30, 10),        //Fire rune
             new LootItem(558, 25, 10),        //Mind rune
             new LootItem(559, 28, 10),        //Body rune
             new LootItem(562, 4, 10),         //Chaos rune
+            new LootItem(564, 4, 10),         //Cosmic rune
             new LootItem(1448, 1, 10),        //Mind talisman
-            new LootItem(564, 4, 5),          //Cosmic rune
-            new LootItem(24363, 1, 5),         //Clue scroll (medium)
+
+            new LootItem(7937, 35, 1),       //Pure essence
+            new LootItem(Items.LAVA_RUNE, 4, 1),
+            new LootItem(Items.MUD_RUNE, 4, 1),
+            new LootItem(Items.SMOKE_RUNE, 4, 1),
+            new LootItem(Items.STEAM_RUNE, 4, 1),
+            new LootItem(Items.DEATH_RUNE, 13, 1),
             new LootItem(563, 13, 1),         //Law rune
             new LootItem(565, 7, 1),          //Blood rune
             new LootItem(566, 11, 1),         //Soul rune
-            new LootItem(561, 13, 1)          //Nature rune
+            new LootItem(561, 13, 1),          //Nature rune
+            new LootItem(24363, 1, 2)         //Clue scroll (medium)
     )),
     ECLECTIC_IMPLING_JAR(11248, new LootTable().addTable(1,
             new LootItem(1273, 1, 10),        //Mithril Pickaxe
