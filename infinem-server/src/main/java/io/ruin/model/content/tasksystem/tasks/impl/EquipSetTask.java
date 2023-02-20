@@ -23,6 +23,10 @@ public enum EquipSetTask {
     STUDDED(61, // Equip a Studded Body and Chaps
             SetPiece.STUDDED_BODY,
             SetPiece.STUDDED_CHAPS
+    ),
+    WIZARD(65, // Equip a Wizard Robe and Hat
+            SetPiece.WIZARD_HAT,
+            SetPiece.WIZARD_ROBE
     );
 
     private final int uuid;
@@ -42,7 +46,9 @@ public enum EquipSetTask {
         MITHRIL_CHEST(Items.MITHRIL_PLATEBODY),
         MITHRIL_LEGS(Items.MITHRIL_PLATELEGS, Items.MITHRIL_PLATESKIRT),
         STUDDED_BODY(Items.STUDDED_BODY),
-        STUDDED_CHAPS(Items.STUDDED_CHAPS);
+        STUDDED_CHAPS(Items.STUDDED_CHAPS),
+        WIZARD_ROBE(Items.BLUE_WIZARD_ROBE, Items.BLACK_ROBE, Items.BLUE_WIZARD_ROBE_G, Items.BLUE_WIZARD_ROBE_T, Items.BLACK_WIZARD_ROBE_G, Items.BLACK_WIZARD_ROBE_T),
+        WIZARD_HAT(Items.BLUE_WIZARD_HAT, Items.WIZARD_HAT, Items.BLUE_WIZARD_HAT_G, Items.BLUE_WIZARD_HAT_T, Items.BLACK_WIZARD_HAT_G, Items.BLACK_WIZARD_HAT_T);
 
         public final int[] itemIds;
 
