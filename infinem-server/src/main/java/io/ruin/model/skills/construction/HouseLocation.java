@@ -57,6 +57,7 @@ public enum HouseLocation {
             return;
         }
         player.house.buildAndEnter(player, buildingMode);
+        player.getTaskManager().doLookupByUUID(78, 1);  // Enter your Player Owned House
     }
 
     public void friendsHouse(Player player, String friend) {
