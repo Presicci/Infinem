@@ -32,7 +32,7 @@ public enum ImplingJar {
             new LootItem(1743, 1, 1),         //Hard leather
             new LootItem(379, 1, 1),          //Lobster
             new LootItem(1761, 1, 1),         //Soft clay
-            new LootItem(2677, 1, 1)          //Clue scroll (easy)
+            new LootItem(24362, 1, 1)          //Clue scroll (easy)
     )),
     YOUNG_IMPLING_JAR(11240, new LootTable().addTable(1,
             new LootItem(361, 1, 10),         //Tuna
@@ -46,7 +46,7 @@ public enum ImplingJar {
             new LootItem(1777, 1, 5),         //Bow string
             new LootItem(231, 1, 5),          //Snape grass
             new LootItem(1761, 1, 5),         //Soft clay
-            new LootItem(2677, 1, 5),         //Clue scroll (easy)
+            new LootItem(24362, 1, 5),         //Clue scroll (easy)
             new LootItem(1097, 1, 1),         //Studded chaps
             new LootItem(1157, 1, 1),         //Steel full helm
             new LootItem(8778, 1, 1),         //Oak plank
@@ -69,7 +69,7 @@ public enum ImplingJar {
             new LootItem(7178, 1, 5),         //Garden pie
             new LootItem(7188, 1, 5),         //Fish pie
             new LootItem(3145, 2, 5),         //Cooked Karambwan
-            new LootItem(2677, 1, 5),         //Clue scroll (easy)
+            new LootItem(24362, 1, 5),         //Clue scroll (easy)
             new LootItem(7179, 6, 1),         //Garden pie
             new LootItem(374, 3, 1),          //Swordfish
             new LootItem(7218, 1, 1)          //Summer pie
@@ -94,7 +94,7 @@ public enum ImplingJar {
             new LootItem(1622, 2, 1),         //Uncut emerald
             new LootItem(1606, 2, 1),         //Emerald
             new LootItem(1603, 1, 1),         //Ruby
-            new LootItem(2801, 1, 1)          //Clue scroll (medium)
+            new LootItem(24363, 1, 1)          //Clue scroll (medium)
     )),
     ESSENCE_IMPLING_JAR(11246, new LootTable().addTable(1,
             new LootItem(7937, 20, 35, 10),   //Pure essence
@@ -105,7 +105,7 @@ public enum ImplingJar {
             new LootItem(562, 4, 10),         //Chaos rune
             new LootItem(1448, 1, 10),        //Mind talisman
             new LootItem(564, 4, 5),          //Cosmic rune
-            new LootItem(2801, 1, 5),         //Clue scroll (medium)
+            new LootItem(24363, 1, 5),         //Clue scroll (medium)
             new LootItem(563, 13, 1),         //Law rune
             new LootItem(565, 7, 1),          //Blood rune
             new LootItem(566, 11, 1),         //Soul rune
@@ -121,7 +121,7 @@ public enum ImplingJar {
             new LootItem(444, 1, 10),         //Gold ore
             new LootItem(4527, 1, 10),        //Empty candle lantern
             new LootItem(237, 1, 10),         //Unicorn horn
-            new LootItem(2801, 1, 5),         //Clue scroll (medium)
+            new LootItem(24363, 1, 5),         //Clue scroll (medium)
             new LootItem(1199, 1, 1),         //Adamant kiteshield
             new LootItem(2493, 1, 1),         //Blue d'hide chaps
             new LootItem(10083, 1, 1),        //Red spiky vambs
@@ -147,7 +147,7 @@ public enum ImplingJar {
             new LootItem(3000, 1, 1),         //Snapdragon
             new LootItem(263, 1, 1),          //Kwuarm seed
             new LootItem(261, 1, 1),          //Avantoe seed
-            new LootItem(2722, 1, 1),         //Clue scroll (hard)
+            new LootItem(24364, 1, 1),         //Clue scroll (hard)
             new LootItem(5313, 1, 1),         //Willow seed
             new LootItem(5304, 1, 1),         //Torstol seed
             new LootItem(5295, 1, 1),         //Ranarr seed
@@ -174,7 +174,7 @@ public enum ImplingJar {
             new LootItem(985, 1, 5),          //Tooth half of key
             new LootItem(993, 1, 5),          //Sinister key
             new LootItem(5300, 1, 5),         //Snapdragon seed
-            new LootItem(2722, 1, 1)          //Clue scroll (hard)
+            new LootItem(24364, 1, 1)          //Clue scroll (hard)
     )),
     NINJA_IMPLING_JAR(11254, new LootTable().addTable(1,
             new LootItem(6328, 1, 4),         //Snakeskin boots
@@ -196,7 +196,7 @@ public enum ImplingJar {
             new LootItem(2435, 4, 4),         //Prayer potion(3)
             new LootItem(5938, 4, 4),         //Weapon poison(+)
             new LootItem(6156, 3, 4),         //Dagannoth hide
-            new LootItem(2722, 1, 10)         //Clue scroll (hard)
+            new LootItem(24364, 1, 10)         //Clue scroll (hard)
     )),
     CRYSTAL_IMPLING_JAR(23768, new LootTable().addTable(1,
             new LootItem(Items.AMULET_OF_POWER_NOTE, 5, 7, 7),
@@ -240,7 +240,7 @@ public enum ImplingJar {
             new LootItem(5316, 1, 3),         //Magic seed
             new LootItem(5300, 6, 3),         //Snapdragon seed
             new LootItem(7219, 15, 3),        //Summer pie
-            new LootItem(4093, 1, 3)          //Clue scroll (elite)
+            new LootItem(24365, 1, 3)          //Clue scroll (elite)
     )),
     LUCKY_IMPLING(19732, new LootTable()), // Handled manually
     ;
