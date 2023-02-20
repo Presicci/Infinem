@@ -169,26 +169,26 @@ public enum ImplingJar {
             new LootItem(5303, 1, 1)          //Dwarf weed seed
     )),
     MAGPIE_IMPLING_JAR(11252, new LootTable().addTable(1,
-            new LootItem(1748, 6, 3),         //Black dragonhide
-            new LootItem(1701, 3, 3),         //Diamond amulet
-            new LootItem(1732, 3, 3),         //Amulet of power
-            new LootItem(2569, 3, 3),         //Ring of forging
-            new LootItem(3391, 1, 3),         //Splitbark gauntlets
-            new LootItem(4097, 1, 3),         //Mystic boots
-            new LootItem(4095, 1, 3),         //Mystic gloves
-            new LootItem(1347, 1, 3),         //Rune warhammer
-            new LootItem(2571, 4, 3),         //Ring of life
-            new LootItem(1185, 1, 3),         //Rune sq shield
-            new LootItem(1215, 1, 3),         //Dragon dagger
-            new LootItem(5541, 1, 3),         //Nature tiara
-            new LootItem(2364, 2, 3),         //Runite bar
-            new LootItem(1602, 4, 3),         //Diamond
-            new LootItem(5287, 1, 3),         //Pineapple seed
-            new LootItem(987, 1, 3),          //Loop half of key
-            new LootItem(985, 1, 3),          //Tooth half of key
-            new LootItem(993, 1, 3),          //Sinister key
-            new LootItem(5300, 1, 3),         //Snapdragon seed
-            new LootItem(24364, 1, 1)          //Clue scroll (hard)
+            new LootItem(1748, 6, 100),         //Black dragonhide
+            new LootItem(1701, 3, 100),         //Diamond amulet
+            new LootItem(1732, 3, 100),         //Amulet of power
+            new LootItem(2569, 3, 100),         //Ring of forging
+            new LootItem(3391, 1, 100),         //Splitbark gauntlets
+            new LootItem(4097, 1, 100),         //Mystic boots
+            new LootItem(4095, 1, 100),         //Mystic gloves
+            new LootItem(1347, 1, 100),         //Rune warhammer
+            new LootItem(2571, 4, 100),         //Ring of life
+            new LootItem(1185, 1, 100),         //Rune sq shield
+            new LootItem(1215, 1, 100),         //Dragon dagger
+            new LootItem(5541, 1, 100),         //Nature tiara
+            new LootItem(2364, 2, 100),         //Runite bar
+            new LootItem(1602, 4, 100),         //Diamond
+            new LootItem(5287, 1, 100),         //Pineapple seed
+            new LootItem(987, 1, 100),          //Loop half of key
+            new LootItem(985, 1, 100),          //Tooth half of key
+            new LootItem(993, 1, 100),          //Sinister key
+            new LootItem(5300, 1, 100),         //Snapdragon seed
+            new LootItem(24364, 1, 40)          //Clue scroll (hard)
     )),
     NINJA_IMPLING_JAR(11254, new LootTable().addTable(1,
             new LootItem(6328, 1, 100),         //Snakeskin boots
