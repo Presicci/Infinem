@@ -32,7 +32,7 @@ public enum ImplingJar {
             new LootItem(1743, 1, 1),         //Hard leather
             new LootItem(379, 1, 1),          //Lobster
             new LootItem(1761, 1, 1),         //Soft clay
-            new LootItem(24361, 1, 1),        //Clue scroll (beginner)
+            new LootItem(24361, 1, 2),        //Clue scroll (beginner)
             new LootItem(24362, 1, 1)         //Clue scroll (easy)
     )),
     YOUNG_IMPLING_JAR(11240, new LootTable().addTable(1,
