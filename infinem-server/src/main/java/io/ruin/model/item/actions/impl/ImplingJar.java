@@ -210,7 +210,7 @@ public enum ImplingJar {
             new LootItem(2435, 4, 4),         //Prayer potion(3)
             new LootItem(5938, 4, 4),         //Weapon poison(+)
             new LootItem(6156, 3, 4),         //Dagannoth hide
-            new LootItem(24364, 1, 10)         //Clue scroll (hard)
+            new LootItem(24364, 1, 3)         //Clue scroll (hard)
     )),
     CRYSTAL_IMPLING_JAR(23768, new LootTable().addTable(1,
             new LootItem(Items.AMULET_OF_POWER_NOTE, 5, 7, 7),
