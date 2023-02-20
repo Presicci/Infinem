@@ -20,19 +20,20 @@ public enum ImplingJar {
             new LootItem(1985, 1, 10),        //Cheese
             new LootItem(2347, 1, 10),        //Hammer
             new LootItem(1759, 1, 10),        //Ball of wool
-            new LootItem(1927, 1, 5),         //Bucket of milk
-            new LootItem(319, 1, 5),          //Anchovies
-            new LootItem(2007, 1, 5),         //Spice
-            new LootItem(1779, 1, 5),         //Flax
-            new LootItem(7170, 1, 5),         //Mud pie
-            new LootItem(401, 1, 5),          //Seaweed
-            new LootItem(1438, 1, 5),         //Air talisman
+            new LootItem(Items.ANCHOVIES, 1, 10),
+            new LootItem(Items.BOW_STRING, 1, 10),
+            new LootItem(2007, 1, 1),         //Spice
+            new LootItem(1779, 1, 1),         //Flax
+            new LootItem(7170, 1, 1),         //Mud pie
+            new LootItem(401, 1, 1),          //Seaweed
+            new LootItem(1438, 1, 1),         //Air talisman
             new LootItem(2355, 1, 1),         //Silver bar
             new LootItem(1607, 1, 1),         //Sapphire
             new LootItem(1743, 1, 1),         //Hard leather
             new LootItem(379, 1, 1),          //Lobster
             new LootItem(1761, 1, 1),         //Soft clay
-            new LootItem(24362, 1, 1)          //Clue scroll (easy)
+            new LootItem(24361, 1, 1),        //Clue scroll (beginner)
+            new LootItem(24362, 1, 1)         //Clue scroll (easy)
     )),
     YOUNG_IMPLING_JAR(11240, new LootTable().addTable(1,
             new LootItem(361, 1, 10),         //Tuna
