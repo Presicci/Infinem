@@ -5,6 +5,8 @@ import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.WebTable;
 import io.ruin.cache.ItemDef;
+import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import lombok.AllArgsConstructor;
@@ -264,6 +266,57 @@ public class LootTable {
         }
         System.out.println("Tables: " + tablesTable.getURL());
         System.out.println("Items: " + itemsTable.getURL());
+    }
+
+    public void showDrops(Player player, String title) {
+        int petId = -1, petAverage = 0;
+        List<Integer[]> drops = new ArrayList<>();
+        if(guaranteed != null) {
+            for(LootItem item : guaranteed) {
+                Integer[] drop = new Integer[5];
+                drop[0] = item.id;
+                drop[1] = item.broadcast == null ? 0 : (item.broadcast.ordinal() + 1);
+                drop[2] = item.min;
+                drop[3] = item.max;
+                drop[4] = 1; //average 1/1
+                drops.add(drop);
+            }
+        }
+        if(tables != null) {
+            for(LootTable.ItemsTable table : tables) {
+                if(table != null) {
+                    double tableChance;
+                    if (totalWeight == 0) {
+                        tableChance = 1;
+                    } else {
+                        tableChance = table.weight / totalWeight;
+                    }
+                    if(table.items.length == 0) {
+                        //Nothing!
+                        //nothingPercentage = tableChance * 100D;
+                    } else {
+                        for(LootItem item : table.items) {
+                            if (item.id == 0 || item.id == -1) {
+                                continue;
+                            }
+                            Integer[] drop = new Integer[5];
+                            drop[0] = item.id;
+                            drop[1] = item.broadcast == null ? 0 : (item.broadcast.ordinal() + 1);
+                            drop[2] = item.min;
+                            drop[3] = item.max;
+                            if (item.weight == 0)
+                                drop[4] = (int) Math.ceil(1D / tableChance);
+                            else
+                                drop[4] = (int) Math.ceil(1D / (tableChance * (item.weight / table.totalWeight)));
+                            drops.add(drop);
+                        }
+                    }
+                }
+            }
+        }
+        //todo - some how generate this string in the constructor! ^^^ :)
+        player.openInterface(InterfaceType.MAIN, 383);
+        player.getPacketSender().sendDropTable(title, petId, petAverage, drops);
     }
 
     /**

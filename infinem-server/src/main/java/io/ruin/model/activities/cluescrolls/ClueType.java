@@ -1131,55 +1131,7 @@ public enum ClueType {
     }
 
     public static void showClueDrops(Player player, ClueType clue) {
-        int petId = -1, petAverage = 0;
-        List<Integer[]> drops = new ArrayList<>();
-        double totalTablesWeight = clue.lootTable.totalWeight;
-        if(clue.lootTable.guaranteed != null) {
-            for(LootItem item : clue.lootTable.guaranteed) {
-                Integer[] drop = new Integer[5];
-                drop[0] = item.id;
-                drop[1] = item.broadcast == null ? 0 : (item.broadcast.ordinal() + 1);
-                drop[2] = item.min;
-                drop[3] = item.max;
-                drop[4] = 1; //average 1/1
-                drops.add(drop);
-            }
-        }
-        if(clue.lootTable.tables != null) {
-            for(LootTable.ItemsTable table : clue.lootTable.tables) {
-                if(table != null) {
-                    double tableChance;
-                    if (totalTablesWeight == 0) {
-                        tableChance = 1;
-                    } else {
-                        tableChance = table.weight / totalTablesWeight;
-                    }
-                    if(table.items.length == 0) {
-                        //Nothing!
-                        //nothingPercentage = tableChance * 100D;
-                    } else {
-                        for(LootItem item : table.items) {
-                            if (item.id == 0 || item.id == -1) {
-                                continue;
-                            }
-                            Integer[] drop = new Integer[5];
-                            drop[0] = item.id;
-                            drop[1] = item.broadcast == null ? 0 : (item.broadcast.ordinal() + 1);
-                            drop[2] = item.min;
-                            drop[3] = item.max;
-                            if (item.weight == 0)
-                                drop[4] = (int) Math.ceil(1D / tableChance);
-                            else
-                                drop[4] = (int) Math.ceil(1D / (tableChance * (item.weight / table.totalWeight)));
-                            drops.add(drop);
-                        }
-                    }
-                }
-            }
-        }
-        //todo - some how generate this string in the constructor! ^^^ :)
-        player.openInterface(InterfaceType.MAIN, 383);
-        player.getPacketSender().sendDropTable("Clue Scroll", petId, petAverage, drops);
+        clue.lootTable.showDrops(player, "Clue Scroll");
     }
 
     private static void openClueBox(Player player, Item item, ClueType clueType) {
