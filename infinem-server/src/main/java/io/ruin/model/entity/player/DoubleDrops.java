@@ -3,6 +3,7 @@ package io.ruin.model.entity.player;
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
 import io.ruin.model.content.upgrade.ItemEffect;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.attributes.AttributeExtensions;
 
@@ -18,7 +19,7 @@ public class DoubleDrops {
     /*
      * Math to retrieve loot rolls after a kill
      */
-    public static int getRolls(Player player) {
+    public static int getRolls(Player player, NPC npc) {
         int doubleDropChance = getDoubleDropChance(player);
         int rolls = 1;
         if (World.doubleDrops)
@@ -27,6 +28,10 @@ public class DoubleDrops {
             if (Random.get(1, 100) <= doubleDropChance) {
                 rolls++;
             }
+        }
+        double bestiaryChance = player.getBestiary().getDropPerkChance(npc.getDef().name);
+        if (bestiaryChance > 0 && Random.get() < bestiaryChance) {
+            rolls++;
         }
 //        if (player.pet.npcId == 20000) { //20% chance to double roll with founders pet
 //            if(Random.get(1, 100) <= 20) {

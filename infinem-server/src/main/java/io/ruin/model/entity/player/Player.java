@@ -19,6 +19,7 @@ import io.ruin.model.activities.duelarena.DuelArena;
 import io.ruin.model.activities.pyramidplunder.PyramidPlunder;
 import io.ruin.model.activities.wilderness.BountyHunter;
 import io.ruin.model.content.UpgradeMachine;
+import io.ruin.model.content.bestiary.Bestiary;
 import io.ruin.model.content.tasksystem.relics.RelicManager;
 import io.ruin.model.content.tasksystem.tasks.TaskManager;
 import io.ruin.model.content.upgrade.ItemEffect;
@@ -1847,4 +1848,6 @@ public class Player extends PlayerAttributes {
     @Getter private final transient LightBox lightBox = new LightBox(this);
 
     @Getter private final Tileman tileman = new Tileman(this);
+
+    @Expose @Getter private final Bestiary bestiary = new Bestiary(this);
 }

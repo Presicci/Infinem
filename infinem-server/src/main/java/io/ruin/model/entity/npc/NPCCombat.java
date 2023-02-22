@@ -265,6 +265,7 @@ public abstract class NPCCombat extends Combat {
             dropItems(killer);
 
             if (killer != null && killer.player != null) {
+                killer.player.getBestiary().incrementKillCount(npc.getDef().name);
                 killer.player.getTaskManager().doKillLookup(npc.getId());
                 Slayer.handleNPCKilled(killer.player, npc);
                 if (npc.getDef().killCounter != null)
@@ -523,7 +524,7 @@ public abstract class NPCCombat extends Combat {
          */
         LootTable t = def.lootTable;
         if(t != null) {
-            int rolls = DoubleDrops.getRolls(killer.player);
+            int rolls = DoubleDrops.getRolls(killer.player, npc);
             if (npc.isSuperior) {
                 rolls += 3; // Superiors drop minimum of 4 items
             }
