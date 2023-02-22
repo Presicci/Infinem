@@ -10,21 +10,21 @@
   "items": [
     {
       "itemId": 113,
-      "stock": 2147483647,
-      "buy_price": -1,
-      "sell_price": 5
+      "stock": 250,
+      "buy_price": 1,
+      "sell_price": 105
     },
     {
       "itemId": 3008,
-      "stock": 2147483647,
-      "buy_price": -1,
-      "sell_price": 0
+      "stock": 250,
+      "buy_price": 5,
+      "sell_price": 600
     },
     {
       "itemId": 2446,
-      "stock": 2147483647,
-      "buy_price": -1,
-      "sell_price": 5
+      "stock": 250,
+      "buy_price": 72,
+      "sell_price": 432
     }
   ]
 }
