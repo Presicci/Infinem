@@ -29,7 +29,7 @@ public class Bob {
         /*
          * Upgrading
          */
-        List<String> upgradeInfo = new ArrayList<>();
+        /*List<String> upgradeInfo = new ArrayList<>();
         upgradeInfo.add("To upgrade/imbue an item, simply use the required item on");
         upgradeInfo.add("Bob. These are the items he's able to assist you with:");
         upgradeInfo.add("");
@@ -58,7 +58,7 @@ public class Bob {
             });
         }
         String[] upgradeInfoArray = upgradeInfo.toArray(new String[0]);
-        NPCAction.register(BOB_2812, "imbue", (player, item) -> player.sendScroll("<col=800000>Item Imbues", upgradeInfoArray));
+        NPCAction.register(BOB_2812, "imbue", (player, item) -> player.sendScroll("<col=800000>Item Imbues", upgradeInfoArray));*/
         /*
          * Repairing
          */
