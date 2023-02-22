@@ -181,10 +181,6 @@ public class NPCDef {
             name = "Security Advisor";
             options[2] = "Check Pin Settings";
             options[3] = "Check 2FA Settings";
-        } else if(id == 2882) {
-            /* Horvik */
-            options[0] = "Repair-items";
-            options[2] = "Upgrade-items";
         } else if(id == 3894) {
             /* Sigmund the Merchant */
             options[0] = "Buy-items";
