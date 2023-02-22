@@ -55,6 +55,12 @@
       "stock": 0,
       "buy_price": 936,
       "sell_price": 1560
+    },
+    {
+      "itemId": 1540,
+      "stock": 5,
+      "buy_price": 8,
+      "sell_price": 26
     }
   ]
 }
