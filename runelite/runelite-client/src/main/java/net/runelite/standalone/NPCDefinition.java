@@ -692,10 +692,6 @@ public class NPCDefinition extends DualNode implements RSNPCDefinition {
          name = "Security Advisor";
          actions[2] = "Check Pin Settings";
          actions[3] = "Check 2FA Settings";
-      } else if (id == 535) {
-         /* Horvik */
-         actions[0] = "Repair-items";
-         actions[2] = "Upgrade-items";
       } else if (id == 3894) {
          /* Sigmund the Merchant */
          actions[0] = "Buy-items";
@@ -720,8 +716,6 @@ public class NPCDefinition extends DualNode implements RSNPCDefinition {
       } else if (id == 2462) {
          /* Shanomi */
          actions[2] = "Trade";
-      } else if (id == 3343) {
-         name = CustomMain.worldType.getName() + " Nurse";
       } else if (id == 1603) {
          /* Kolodion */
          name = "Battle Point Exchange";
