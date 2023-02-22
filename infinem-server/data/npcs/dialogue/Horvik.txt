@@ -1,0 +1,7 @@
+Horvik: Hello, do you need any help?
+<No thanks. I'm just looking around.
+Player: No thanks. I'm just looking around.
+Horvik: Well, come and see me if you're ever in need of armour!
+><Do you want to trade?
+SHOP
+>
