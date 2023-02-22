@@ -23,6 +23,7 @@ import io.ruin.data.impl.items.weapon_types;
 import io.ruin.data.impl.login_set;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.data.impl.npcs.npc_drops;
+import io.ruin.data.impl.npcs.npc_shops;
 import io.ruin.data.impl.npcs.npc_spawns;
 import io.ruin.data.impl.objects.object_examines;
 import io.ruin.data.impl.objects.object_spawns;
@@ -59,6 +60,7 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.inter.utils.Unlock;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.GoldCasket;
+import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.actions.impl.ItemBreaking;
 import io.ruin.model.item.actions.impl.ItemUpgrading;
 import io.ruin.model.item.attributes.AttributeExtensions;
@@ -1818,6 +1820,11 @@ public class Administrator {
                 }
             }
 
+            case "impdrops": {
+                ImplingJar.BABY_IMPLING_JAR.getLootTable().showDrops(player, "Baby Impling");
+                return true;
+            }
+
             /**
              * Drop commands
              */
@@ -1884,6 +1891,7 @@ public class Administrator {
             }
 
             case "reloadshops": {
+                DataFile.reload(player, npc_shops.class);
                 YamlLoader.load(Arrays.asList(new ShopLoader()));
                 return true;
             }
