@@ -137,23 +137,26 @@ public class Bob {
         }));
     }
 
-    private static void convertZamorakianWeapon(Player player, Item item, NPC npc) {
-        int currencyId;
-        String currencyName;
-        int price;
-        currencyId = COINS_995;
-        currencyName = "coins";
-        price = coinPrice(player, 1500000);
-        player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Convert your " + item.getDef().name + " for " + NumberUtils.formatNumber(price) + " " + currencyName + "?", item, () -> {
-            Item currency = player.getInventory().findItem(currencyId);
-            if(currency == null || currency.getAmount() < price) {
-                player.dialogue(new NPCDialogue(npc, "You don't have enough " + currencyName + " for me to upgrade that."));
-                return;
-            }
-            currency.remove(price);
-            item.setId(item.getId() == 11824 ? 11889 : 11824);
-            player.dialogue(new NPCDialogue(npc, "I've converted your item for you."));
-        }));
+    public static void convertZamorakianWeapon(Player player, Item item, NPC npc) {
+        if (item.getId() == 11824) {
+            String currencyName = "coins";
+            int price = 300000;
+            player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Convert your " + item.getDef().name + " for " + NumberUtils.formatNumber(price) + " " + currencyName + "?", item, () -> {
+                Item currency = player.getInventory().findItem(COINS_995);
+                if(currency == null || currency.getAmount() < price) {
+                    player.dialogue(new NPCDialogue(npc, "You don't have enough " + currencyName + " for me to convert that."));
+                    return;
+                }
+                currency.remove(price);
+                item.setId(item.getId() == 11824 ? 11889 : 11824);
+                player.dialogue(new NPCDialogue(npc, "I've converted your item for you."));
+            }));
+        } else {
+            player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "You will have to pay again if you want to turn it back into a hasta?", item, () -> {
+                item.setId(item.getId() == 11824 ? 11889 : 11824);
+                player.dialogue(new NPCDialogue(npc, "I've converted your item for you."));
+            }));
+        }
     }
 
     private static int coinPrice(Player player, int basePrice) {
