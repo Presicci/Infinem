@@ -2,7 +2,6 @@ package io.ruin.model.entity.npc.actions;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.model.entity.npc.NPC;
-import io.ruin.model.entity.npc.actions.edgeville.Bob;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
@@ -10,7 +9,6 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemNPCAction;
 
 import static io.ruin.cache.ItemID.COINS_995;
-import static io.ruin.cache.NpcID.BOB_2812;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
