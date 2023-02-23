@@ -1,11 +1,9 @@
-package io.ruin.model.entity.npc.actions.edgeville;
+package io.ruin.model.entity.npc.actions;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
@@ -14,61 +12,18 @@ import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.item.actions.impl.ItemBreaking;
-import io.ruin.model.item.actions.impl.ItemUpgrading;
 import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static io.ruin.cache.ItemID.COINS_995;
-import static io.ruin.cache.NpcID.*;
+import static io.ruin.cache.NpcID.BOB_2812;
 
-public class Bob {
-
-    static {
-        /*
-         * Upgrading
-         */
-        /*List<String> upgradeInfo = new ArrayList<>();
-        upgradeInfo.add("To upgrade/imbue an item, simply use the required item on");
-        upgradeInfo.add("Bob. These are the items he's able to assist you with:");
-        upgradeInfo.add("");
-        for(ItemUpgrading upgrade : ItemUpgrading.values()) {
-            String currencyName = "Coins";
-            int cost = upgrade.coinUpgradeCost;
-            int currencyId = COINS_995;
-            upgradeInfo.add(ItemDef.get(upgrade.regularId).name + " -> " + ItemDef.get(upgrade.upgradeId).name + "  <col=800000> " + NumberUtils.formatNumber(cost));
-            ItemAction.registerInventory(upgrade.upgradeId, "uncharge", (player, item) -> {
-                player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "You will NOT get your " + currencyName + " back.", item, () -> {
-                    item.setId(upgrade.regularId);
-                    player.dialogue(new ItemDialogue().one(upgrade.regularId, "You release the energy from the item."));
-                }));
-            });
-            ItemNPCAction.register(upgrade.regularId, BOB_2812, (player, item, npc) -> {
-                player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Upgrade your " + item.getDef().name + " for " + cost + " " + currencyName + "?", new Item(upgrade.upgradeId, 1), () -> {
-                    Item bloodMoney = player.getInventory().findItem(currencyId);
-                    if(bloodMoney == null || bloodMoney.getAmount() < cost) {
-                        player.dialogue(new NPCDialogue(npc, "You don't have enough " + currencyName + " for me to upgrade that."));
-                        return;
-                    }
-                    bloodMoney.incrementAmount(-cost);
-                    item.setId(upgrade.upgradeId);
-                    player.dialogue(new ItemDialogue().one(upgrade.upgradeId, "Your " + item.getDef().name + " has been upgraded."));
-                }));
-            });
-        }
-        String[] upgradeInfoArray = upgradeInfo.toArray(new String[0]);
-        NPCAction.register(BOB_2812, "imbue", (player, item) -> player.sendScroll("<col=800000>Item Imbues", upgradeInfoArray));*/
-        /*
-         * Repairing
-         */
-        NPCAction.register(BOB_2812, "repair", Bob::repairAll);
-        for(ItemBreaking brokenItem : ItemBreaking.values()) {
-            ItemAction.registerInventory(brokenItem.brokenId, "fix", (player, item) -> repairItem(player, item, brokenItem));
-            ItemItemAction.register(COINS_995, brokenItem.brokenId, (player, primary, secondary) -> repairItem(player, secondary, brokenItem));
-            ItemNPCAction.register(brokenItem.brokenId, BOB_2812, (player, item, npc) -> repairItem(player, item, brokenItem));
-        }
-    }
+/**
+ * @author Mrbennjerry - https://github.com/Presicci
+ * Created on 2/22/2023
+ */
+public class RepairNPC {
 
     private static void repairAll(Player player, NPC npc) {
         int totalPrice = 0;
@@ -92,7 +47,7 @@ public class Bob {
         currencyId = COINS_995;
         currencyName = "coins";
         price = coinPrice(player, totalPrice);
-        
+
         player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Repair all your items for " + NumberUtils.formatNumber(price) + " " + currencyName + "?", 2347, 1, () -> {
             Item currency = player.getInventory().findItem(currencyId);
             if(currency == null || currency.getAmount() < price) {
@@ -138,4 +93,18 @@ public class Bob {
         return (int) (smithingMultiplier * basePrice);
     }
 
+    private static final int[] REPAIR_NPCS = { BOB_2812 };
+
+    static {
+        for (int npcId : REPAIR_NPCS) {
+            NPCAction.register(npcId, "repair", RepairNPC::repairAll);
+        }
+        for(ItemBreaking brokenItem : ItemBreaking.values()) {
+            ItemAction.registerInventory(brokenItem.brokenId, "fix", (player, item) -> repairItem(player, item, brokenItem));
+            ItemItemAction.register(COINS_995, brokenItem.brokenId, (player, primary, secondary) -> repairItem(player, secondary, brokenItem));
+            for (int npcId : REPAIR_NPCS) {
+                ItemNPCAction.register(brokenItem.brokenId, npcId, (player, item, npc) -> repairItem(player, item, brokenItem));
+            }
+        }
+    }
 }
