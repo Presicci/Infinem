@@ -93,7 +93,13 @@ public class RepairNPC {
         return (int) (smithingMultiplier * basePrice);
     }
 
-    private static final int[] REPAIR_NPCS = { BOB_2812 };
+    private static final int[] REPAIR_NPCS = {
+            BOB_2812,
+            4105,   // Dunstan
+            1358,   // Tindel merchant
+            // TODO Squire
+            9157    // Aneirin
+    };
 
     static {
         for (int npcId : REPAIR_NPCS) {
