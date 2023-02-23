@@ -68,11 +68,6 @@ public class Bob {
             ItemItemAction.register(COINS_995, brokenItem.brokenId, (player, primary, secondary) -> repairItem(player, secondary, brokenItem));
             ItemNPCAction.register(brokenItem.brokenId, BOB_2812, (player, item, npc) -> repairItem(player, item, brokenItem));
         }
-        /*
-         * Zamorakian spear/hasta conversion
-         */
-        for(int id : new int[]{11824, 11889})
-            ItemNPCAction.register(id, BOB_2812, Bob::convertZamorakianWeapon);
     }
 
     private static void repairAll(Player player, NPC npc) {
@@ -135,28 +130,6 @@ public class Bob {
             item.setId(brokenItem.fixedId);
             player.dialogue(new MessageDialogue("You have repaired your " + item.getDef().name + "."));
         }));
-    }
-
-    public static void convertZamorakianWeapon(Player player, Item item, NPC npc) {
-        if (item.getId() == 11824) {
-            String currencyName = "coins";
-            int price = 300000;
-            player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Convert your " + item.getDef().name + " for " + NumberUtils.formatNumber(price) + " " + currencyName + "?", item, () -> {
-                Item currency = player.getInventory().findItem(COINS_995);
-                if(currency == null || currency.getAmount() < price) {
-                    player.dialogue(new NPCDialogue(npc, "You don't have enough " + currencyName + " for me to convert that."));
-                    return;
-                }
-                currency.remove(price);
-                item.setId(item.getId() == 11824 ? 11889 : 11824);
-                player.dialogue(new NPCDialogue(npc, "I've converted your item for you."));
-            }));
-        } else {
-            player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "You will have to pay again if you want to turn it back into a hasta?", item, () -> {
-                item.setId(item.getId() == 11824 ? 11889 : 11824);
-                player.dialogue(new NPCDialogue(npc, "I've converted your item for you."));
-            }));
-        }
     }
 
     private static int coinPrice(Player player, int basePrice) {
