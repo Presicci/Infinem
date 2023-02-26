@@ -16635,7 +16635,7 @@
     "id": 2952,
     "tradeable": false,
     "examine": "A silver dagger that can prevent werewolves changing form.",
-    "weight": 0.4,
+    "weight": 0.453,
 	"protect_value": 0,
     "equip_slot": 3,
     "stab_attack_bonus": 11,
@@ -16644,7 +16644,8 @@
     "magic_attack_bonus": 1,
     "magic_defence_bonus": 1,
     "melee_strength_bonus": 10,
-    "prayer_bonus": 5
+    "prayer_bonus": 5,
+    "weapon_type": "DAGGER"
   },
   { #Murky water
     "id": 2953,
