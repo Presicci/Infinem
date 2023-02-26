@@ -480,7 +480,7 @@ public class NPC extends NPCAttributes {
      * @param timePerCycle The seconds per timer cycle
      * @param cycles The amount of cycles before the npc is removed.
      */
-    public void removeIfIdle(Player player, int timePerCycle, int cycles) {
+    public void doIfIdle(Player player, int timePerCycle, int cycles, Runnable runnable) {
         npc.startEvent(e -> {   // If the player leaves or ignores the superior for x*y seconds, remove npc
             int loops = 0;
             int lastHealth = npc.getHp();
@@ -496,8 +496,16 @@ public class NPC extends NPCAttributes {
                 }
                 lastHealth = npc.getHp();
             }
-            npc.remove();
+            runnable.run();
         });
+    }
+
+    public void doIfIdle(Player player, Runnable runnable) {
+        doIfIdle(player, 30, 4, runnable);
+    }
+
+    public void removeIfIdle(Player player, int timePerCycle, int cycles) {
+        doIfIdle(player, timePerCycle, cycles, () -> npc.remove());
     }
 
     public void removeIfIdle(Player player) {
