@@ -1262,6 +1262,10 @@ public class Player extends PlayerAttributes {
             relicManager = new RelicManager(this);
         relicManager.setPlayer(this);
 
+        if (bestiary == null)
+            bestiary = new Bestiary(this);
+        bestiary.setPlayer(this);
+
         music = new MusicPlayer(this);
 
         checkMulti();
@@ -1813,6 +1817,9 @@ public class Player extends PlayerAttributes {
     @Expose @Getter
     private RelicManager relicManager;
 
+    @Expose @Getter
+    private Bestiary bestiary;
+
     public boolean hasAttribute(AttributeKey key) {
         return attributes.containsKey(key);
     }
@@ -1848,6 +1855,4 @@ public class Player extends PlayerAttributes {
     @Getter private final transient LightBox lightBox = new LightBox(this);
 
     @Getter private final Tileman tileman = new Tileman(this);
-
-    @Expose @Getter private final Bestiary bestiary = new Bestiary(this);
 }

@@ -12,12 +12,13 @@ import java.util.Map;
  */
 public class Bestiary {
 
-    private final Player player;
+    private Player player;
 
-    private final Map<String, Integer> killCounts = new HashMap<>();
+    @Expose private final Map<String, Integer> killCounts;
 
     public Bestiary(Player player) {
         this.player = player;
+        killCounts = new HashMap<>();
     }
 
     private static final String[] CATEGORIES = {
@@ -27,6 +28,10 @@ public class Bestiary {
     private static final String[] TRIM = {
             "superior"
     };
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 
     /**
      * Gets the bestiary entry name that matches the provided npcName.
@@ -58,6 +63,8 @@ public class Bestiary {
     }
 
     public int getKillCount(String npcName) {
+        if (killCounts == null)
+            return 0;
         return killCounts.getOrDefault(getBestiaryName(npcName), 0);
     }
 
