@@ -265,7 +265,7 @@ public abstract class NPCCombat extends Combat {
             dropItems(killer);
 
             if (killer != null && killer.player != null) {
-                killer.player.getBestiary().incrementKillCount(npc.getDef().name);
+                killer.player.getBestiary().incrementKillCount(npc.getDef());
                 killer.player.getTaskManager().doKillLookup(npc.getId());
                 Slayer.handleNPCKilled(killer.player, npc);
                 if (npc.getDef().killCounter != null)

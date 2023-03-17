@@ -69,6 +69,8 @@ public class NPCDef {
 
     public LootTable lootTable;
 
+    public String bestiaryEntry;
+
     public NPCAction[] defaultActions;
 
     public HashMap<Integer, ItemNPCAction> itemActions;

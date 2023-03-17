@@ -1,6 +1,7 @@
 package io.ruin.model.content.bestiary;
 
 import com.google.gson.annotations.Expose;
+import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.player.Player;
 
 import java.util.HashMap;
@@ -21,56 +22,31 @@ public class Bestiary {
         killCounts = new HashMap<>();
     }
 
-    private static final String[] CATEGORIES = {
-            "goblin",
-    };
-
-    private static final String[] TRIM = {
-            "superior"
-    };
-
     public void setPlayer(Player player) {
         this.player = player;
     }
 
     /**
-     * Gets the bestiary entry name that matches the provided npcName.
-     * @param npcName raw name of the NPC that was killed
-     * @return bestiary entry compatible name
-     */
-    private String getBestiaryName(String npcName) {
-        String lowercaseName = npcName.toLowerCase();
-        for (String trim : TRIM) {
-            lowercaseName = lowercaseName.replace(trim, "");
-        }
-        for (String category : CATEGORIES) {
-            if (lowercaseName.contains(category))
-                return category;
-        }
-        return lowercaseName;
-    }
-
-    /**
      * Called on NPC death, increments the player's kill count for bestiary entry
      * matching npcName.
-     * @param npcName raw name of the NPC that was killed
+     * @param def NPCDef for npc
      */
-    public void incrementKillCount(String npcName) {
-         String bestiaryName = getBestiaryName(npcName);
+    public void incrementKillCount(NPCDef def) {
+        String bestiaryName = def.name.toLowerCase();
          int currentCount = killCounts.getOrDefault(bestiaryName, 0);
          killCounts.put(bestiaryName, currentCount + 1);
-         player.sendMessage("You have now killed " + (currentCount + 1) + "<col=ff0000> " + npcName + "s</col>.");
+         player.sendMessage("You have now killed " + (currentCount + 1) + "<col=ff0000> " + def.name + "s</col>.");
     }
 
-    public int getKillCount(String npcName) {
+    public int getKillCount(NPCDef def) {
         if (killCounts == null)
             return 0;
-        return killCounts.getOrDefault(getBestiaryName(npcName), 0);
+        return killCounts.getOrDefault(def.bestiaryEntry, 0);
     }
 
-    public double getDropPerkChance(String npcName) {
-        double chance = BestiaryEntry.getDropPerk(getKillCount(npcName)).getChance();
-        player.sendMessage("Your extra drop chance from " + npcName + " is " + chance + ".");
+    public double getDropPerkChance(NPCDef def) {
+        double chance = BestiaryEntry.getDropPerk(getKillCount(def)).getChance();
+        player.sendMessage("Your extra drop chance from " + def.name + " is " + chance + ".");
         return chance;
     }
 }
