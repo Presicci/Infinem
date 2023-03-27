@@ -6,7 +6,7 @@
     "hitpoints": 22,
     "aggressive_level": 42,
     "max_damage": 4,
-    "attack_style": "CRUSH",
+    "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
@@ -38,8 +38,8 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": 422,
-    "defend_animation": 424,
+    "attack_animation": 390,
+    "defend_animation": 1156,
     "death_animation": 836
   }
 ]
