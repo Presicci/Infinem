@@ -1,0 +1,23 @@
+Player: Hello there.
+Barfy Bill: Oh! Hello there.
+<Who are you?
+Player: Who are you?
+Barfy Bill: My name is Ex Sea Captain Barfy Bill.
+Player: Ex sea captain?
+Barfy Bill: Yeah, I bought a lovely ship and was planning to make a fortune running her as a merchant vessel.
+Player: Why are you not still sailing?
+Barfy Bill: Chronic sea sickness. My first, and only, voyage was spent dry heaving over the rails.
+Barfy Bill: If I had known about the sea sickness I could have saved myself a lot of money.
+Player: What are you up to now then?
+Barfy Bill: Well my ship had a little fire related problem. Fortunately it was well insured.
+Barfy Bill: Anyway, I don't have to work anymore so I've taken to canoeing on the river.
+Barfy Bill: I don't get river sick!
+Barfy Bill: Would you like to know how to make a canoe?
+<Yes
+CANOE_HELP:
+><No
+Player: No thanks, not right now.
+>
+><Can you teach me about Canoeing?
+CANOE_HELP:
+>

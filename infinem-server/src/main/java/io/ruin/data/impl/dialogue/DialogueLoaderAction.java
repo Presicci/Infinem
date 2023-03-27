@@ -63,6 +63,44 @@ public enum DialogueLoaderAction {
         else if (fishingLevel > 10)
             player.dialogue(new NPCDialogue(3221, "Herrin' can be fished from Catherby and some other places when you reach level 10."), dialogue);
     })),
+    CANOE_HELP((player -> {
+        int woodcuttingLevel = player.getStats().get(StatType.Woodcutting).fixedLevel;
+        if (woodcuttingLevel >= 57) {
+            player.dialogue(
+                    new NPCDialogue(1326, "Hoo! You look like you know which end of an axe is which!"),
+                    new NPCDialogue(1326, "You can easily build one of those Wakas. Be careful if you travel into the Wilderness though."),
+                    new NPCDialogue(1326, "I've heard tell of great evil in that blasted wasteland."),
+                    new PlayerDialogue("Thanks for the warning Bill.")
+            );
+        } else if (woodcuttingLevel >= 42) {
+            player.dialogue(
+                    new NPCDialogue(1326, "The best canoe you can make is a Stable Dugout, one step beyond a normal Dugout."),
+                    new NPCDialogue(1326, "With a Stable Dugout you can travel to any place on the river."),
+                    new PlayerDialogue("Even into the Wilderness?"),
+                    new NPCDialogue(1326, "Not likely! I've heard tell of a man up near Edgeville who claims he can use a Waka to get up into the Wilderness."),
+                    new NPCDialogue(1326, "I can't think why anyone would wish to venture into that hellish landscape though.")
+            );
+        } else if (woodcuttingLevel >= 27) {
+            player.dialogue(
+                    new NPCDialogue(1326, "With your skill in woodcutting you could make my favourite canoe, the Dugout. They might not be the best canoe on the river, but they get you where you're going."),
+                    new PlayerDialogue("How far will I be able to go in a Dugout canoe?"),
+                    new NPCDialogue(1326, "You will be able to travel 2 stops on the river.")
+            );
+        } else if (woodcuttingLevel >= 12) {
+            player.dialogue(
+                    new NPCDialogue(1326, "Hah! I can tell just by looking that you lack talent in woodcutting."),
+                    new PlayerDialogue("What do you mean?"),
+                    new NPCDialogue(1326, "No Callouses! No Splinters! No camp fires littering the trail behind you."),
+                    new NPCDialogue(1326, "Anyway, the only 'canoe' you can make is a log. You'll be able to travel 1 stop along the river with a log canoe.")
+            );
+        } else {
+            player.dialogue(
+                    new NPCDialogue(1326, "It's really quite simple. Just walk down to that tree on the bank and chop it down."),
+                    new NPCDialogue(1326, "When you have done that you can shape the log further with your axe to make a canoe.")
+            );
+        }
+
+    })),
     ATTACK((player) -> {
         NPC npc = player.getDialogueNPC();
         if (npc != null) {
