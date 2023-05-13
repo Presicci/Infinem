@@ -67,48 +67,57 @@ public abstract class Book {
     }
 
     protected void sendBook(final boolean open) {
-        player.openInterface(InterfaceType.MAIN, 26);
-        player.getPacketSender().sendString(26,3, getTitle());
+        player.openInterface(InterfaceType.MAIN, 680);
+        player.getPacketSender().sendString(680,6, getTitle());
         clearInterface();
         sendPageNumbers();
         if (open) {
-            context = splitIntoLine(getString(), 25);
-            maxPages = (int) (1 + Math.ceil(context.length / 29));
+            context = splitIntoLine(getString(), 27);
+            maxPages = (int) (Math.ceil((double) context.length / 30));
         }
-        player.getPacketSender().setHidden(26, 65, page == 1);
-        player.getPacketSender().setHidden(26, 67, page == maxPages);
-        final int offset = (page - 1) * 29;
-        player.getPacketSender().sendString(26, 102, context[0 + offset]);
-        for (int i = 74; i < 102; i++) {
-            if ((i - 73 + offset) >= context.length) {
+        player.getPacketSender().setHidden(680, 108, page == 1);  // Hide back button
+        player.getPacketSender().setHidden(680, 110, page == maxPages);   // Hide next button
+        player.getPacketSender().setHidden(680, 9, page == 1); // Hide 'First Page' button
+        final int offset = (page - 1) * 30;
+
+        //player.getPacketSender().sendString(26, 102, context[0 + offset]);
+        player.getPacketSender().setHidden(680, 76, true);
+        player.getPacketSender().setHidden(680, 92, true);
+        for (int i = 45; i <= 75; i++) {
+            if (i == 60) continue;
+            if ((i - 45 + offset) >= context.length) {
+                player.getPacketSender().sendString(680, i, "");
                 break;
             }
-            player.getPacketSender().sendString(26, i - 1, context[i - 73 + offset]);
+            player.getPacketSender().sendString(680, i, context[i - 45 + offset - (i > 60 ? 1 : 0)]);
         }
     }
 
     public void handleButtons(final int componentId) {
-        if (componentId == 64) {
+        if (componentId == 108) {
             if (page > 1) {
                 page--;
             }
-        } else if (componentId == 66) {
+        } else if (componentId == 110) {
             if (page < maxPages) {
                 page++;
             }
+        } else if (componentId == 9) {
+            page = 1;
         }
         sendBook(false);
     }
 
     private void clearInterface() {
-        for (int i = 73; i < 103; i++) {
-            player.getPacketSender().sendString(26, i, "");
+        for (int i = 45; i <= 75; i++) {
+            if (i == 60) continue;
+            player.getPacketSender().sendString(680, i, "");
         }
     }
 
     protected void sendPageNumbers() {
-        player.getPacketSender().sendString(26, 68, "" + ((page * 2) - 1));
-        player.getPacketSender().sendString(26, 69, "" + (page * 2));
+        player.getPacketSender().sendString(680, 10, "" + ((page * 2) - 1));
+        player.getPacketSender().sendString(680, 11, "" + (page * 2));
     }
 
     public static void openBook(final Book book) {
@@ -123,13 +132,5 @@ public abstract class Book {
             ((Book) object).handleButtons(component);
             return;
         }
-    }
-
-    static {
-        InterfaceHandler.register(26, (h -> {
-            h.closedAction = ((p, integer) -> p.resetAnimation());
-            h.actions[64] = (SimpleAction) p -> handleComponent(p, 64);
-            h.actions[66] = (SimpleAction) p -> handleComponent(p, 66);
-        }));
     }
 }
