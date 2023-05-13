@@ -25,7 +25,7 @@ public class SecurityBook extends ChapteredBook {
     @Override
     public String[] getContent() {
         return new String[]{
-                "<col=000080> Password Tips </col>  <br>  A good password should be easily remembered by yourself but not easily guessed by anyone else. <br> " +
+                "<col=000080> Password Tips </col> <br> A good password should be easily remembered by yourself but not easily guessed by anyone else. <br> " +
                         " <br> " +
                         "Choose a password that has both letters and numbers in it for the best security but don't make it so hard that you'll forget it! <br> " +
                         " <br> " +

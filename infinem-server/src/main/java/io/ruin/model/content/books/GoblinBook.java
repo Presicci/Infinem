@@ -58,7 +58,7 @@ public class GoblinBook extends ChapteredBook {
                         "Not to doubt Big High War God. Doubters must die! <br> " +
                         " <br> " +
                         "Not to make own plans. Thinkers must die!",
-                "<col=800000> The end of the war and the prophecy </col> <br> " +
+                "<col=800000> The end of the war and the <col=800000>prophecy </col> <br> " +
                         "The war of gods last many lifetimes. Battle is glorious and many heroes live and die! Then all gods leave world, leave their armies behind. " +
                         "But goblins still soldiers, still fight! Goblins fight against tall people with keen blades. But tall people build cities with walls, they not " +
                         "want to fight. They not true soldiers like goblins! But now goblins not have enough to eat, and have no commanders to tell them who to fight. So goblin " +
