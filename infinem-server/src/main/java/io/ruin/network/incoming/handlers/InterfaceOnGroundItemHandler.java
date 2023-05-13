@@ -20,41 +20,39 @@ import io.ruin.utility.IdHolder;
 
 public class InterfaceOnGroundItemHandler {
 
-    @IdHolder(ids = {82}) //todo@@
+    @IdHolder(ids = {20})//@IdHolder(ids = {39}) //todo@@
     public static final class FromItem implements Incoming {
-        /*
-         * Int, Byte, short, LEInt, short, shortA
-         */
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int groundItemId = in.readLEShortA();
-            int interfaceHash = in.readInt();
-            int slot = in.readShortA();
-            int y = in.readLEShortA();
-            int ctrlRun = in.readByteS();
-            int x = in.readShortA();
-            int itemId = in.readShortA();
+            int y = in.readLEShort();
+            int interfaceHash = in.readInt1();
+            int x = in.readLEShortA();
+            int slot = in.readLEShortA();
+            int groundItemId = in.readLEShort();
+            int itemId = in.readShort();
+            int ctrlRun = in.readByteC();
             handleAction(player, interfaceHash, slot, itemId, groundItemId, x, y, ctrlRun);
         }
     }
 
 
 
-    @IdHolder(ids = {34}) //todo@@
+    @IdHolder(ids = {3})//@IdHolder(ids = {0}) //todo@@
     public static final class FromInterface implements Incoming {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int y = in.readShortA();
-            int interfaceHash = in.readLEInt();
-            int groundItemId = in.readLEShortA();
-            int slot = in.readShortA();
+            int slot = in.readLEShortA();
+            int interfaceHash = in.readInt();
+            int groundItemId = in.readLEShort();
+            int y = in.readShort();
             int x = in.readLEShort();
-            int ctrlRun = in.readByteA();
+            int ctrlRun = in.readByteS();
+            int itemId = in.readLEShort();
             int telegrabHash = 14286871;
             if(interfaceHash == telegrabHash) {
                 handleTelegrab(player, groundItemId, x, y, ctrlRun == 1);
             } else {
-                handleAction(player, interfaceHash, slot, -1, groundItemId, x, y, ctrlRun);
+                handleAction(player, interfaceHash, slot, itemId, groundItemId, x, y, ctrlRun);
             }
         }
     }

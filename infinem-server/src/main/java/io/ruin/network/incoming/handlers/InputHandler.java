@@ -7,12 +7,12 @@ import io.ruin.utility.IdHolder;
 
 import java.util.function.Consumer;
 
-@IdHolder(ids = {100, 8, 54, 39})
+@IdHolder(ids = {32, 25, 85, 59})//@IdHolder(ids = {100, 8, 54, 39})
 public class InputHandler implements Incoming {
 
     @Override
     public void handle(Player player, InBuffer in, int opcode) {
-        if(opcode == 8) {
+        if(opcode == 25) {
             Consumer<Integer> consumer = player.consumerInt;
             if(consumer != null) {
                 player.consumerInt = null;
@@ -22,7 +22,7 @@ public class InputHandler implements Incoming {
                     player.retryIntConsumer = false;
                 }
             }
-        } else if(opcode == 54) {
+        } else if(opcode == 85) {
             Consumer<Integer> consumer = player.consumerInt;
             if(consumer != null) {
                 player.consumerInt = null;

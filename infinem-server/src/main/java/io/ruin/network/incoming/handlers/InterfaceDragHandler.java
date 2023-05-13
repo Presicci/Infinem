@@ -10,31 +10,31 @@ import io.ruin.utility.IdHolder;
 
 public class InterfaceDragHandler {
 
-    @IdHolder(ids = {38})
+    @IdHolder(ids = {62})//@IdHolder(ids = {38})
     public static final class SingleInterface implements Incoming {
 
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int interfaceHash = in.readInt1();
-            int toSlot = in.readShort();
-            int unknownInt = in.readByte(); //Always 0 or 1
+            int interfaceHash = in.readIntME();
             int fromSlot = in.readLEShort();
+            int unknownInt = in.readByteC(); //Always 0 or 1
+            int toSlot = in.readShortA();
             handleDrag(player, interfaceHash, fromSlot, -1, interfaceHash, toSlot, -1);
         }
 
     }
 
-    @IdHolder(ids = {94})
+    @IdHolder(ids = {4})//@IdHolder(ids = {94})
     public static final class TwoInterfaces implements Incoming {
 
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int toSlot = in.readLEShortA();
+            int fromInterfaceHash = in.readInt1();
+            int toSlot = in.readLEShort();
+            int fromSlot = in.readLEShortA();
+            int fromItemId = in.readLEShortA();
             int toItemId = in.readLEShortA();
-            int fromSlot = in.readLEShort();
-            int toInterfaceHash = in.readInt1();
-            int fromItemId = in.readShortA();
-            int fromInterfaceHash = in.readInt();
+            int toInterfaceHash = in.readLEInt();
             handleDrag(player, fromInterfaceHash, fromSlot, fromItemId, toInterfaceHash, toSlot, toItemId);
         }
 

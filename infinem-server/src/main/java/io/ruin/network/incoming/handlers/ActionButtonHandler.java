@@ -20,7 +20,7 @@ import java.util.Objects;
 @Slf4j
 public class ActionButtonHandler {
 
-    @IdHolder(ids = {60, 65, 73, 10, 20, 16, 87, 19, 29, 2})
+    @IdHolder(ids = {39, 104, 83, 10, 98, 28, 51, 23, 92, 31})//@IdHolder(ids = {60, 65, 73, 10, 20, 16, 87, 19, 29, 2})
     public static final class DefaultHandler implements Incoming {
 
         @Override
@@ -34,49 +34,49 @@ public class ActionButtonHandler {
 
     }
 
-    @IdHolder(ids = {88, 70, 5, 14, 76, 28})
+    @IdHolder(ids={47, 54, 78, 56, 2, 38})//@IdHolder(ids = {88, 70, 5, 14, 76, 28})
     public static final class InventoryHandler implements Incoming {
 
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
             int option = OPTIONS[opcode];
             if(option == 1) {
-                int interfaceHash = in.readInt();
-                int slot = in.readLEShort();
-                int itemId = in.readLEShort();
+                int interfaceHash = in.readIntME();
+                int itemId = in.readShort();
+                int slot = in.readLEShortA();
                 handleAction(player, option, interfaceHash, slot, itemId, false);
                 return;
             }
             if(option == 2) {
+                int slot = in.readShortA();
+                int itemId = in.readShort();
                 int interfaceHash = in.readInt();
-                int slot = in.readLEShort();
-                int itemId = in.readShortA();
                 handleAction(player, option, interfaceHash, slot, itemId, false);
                 return;
             }
             if(option == 3) {
-                int itemId = in.readLEShort();
-                int interfaceHash = in.readLEInt();
-                int slot = in.readShort();
+                int slot = in.readLEShortA();
+                int interfaceHash = in.readIntME();
+                int itemId = in.readShort();
                 handleAction(player, option, interfaceHash, slot, itemId, false);
                 return;
             }
             if(option == 4) {
+                int slot = in.readShort();
                 int itemId = in.readLEShortA();
-                int slot = in.readLEShort();
                 int interfaceHash = in.readInt1();
                 handleAction(player, option, interfaceHash, slot, itemId, false);
                 return;
             }
             if(option == 5) {
-                int slot = in.readShortA();
+                int itemId = in.readShort();
                 int interfaceHash = in.readInt1();
-                int itemId = in.readShortA();
+                int slot = in.readLEShortA();
                 handleAction(player, option, interfaceHash, slot, itemId, false);
                 return;
             }
             if(option == 6) {
-                int itemId = in.readLEShort();
+                int itemId = in.readShortA();
                 int interfaceHash = in.readLEInt();
                 int slot = in.readShort();
                 handleAction(player, 10, interfaceHash, slot, itemId, false);
@@ -87,13 +87,13 @@ public class ActionButtonHandler {
 
     }
 
-    @IdHolder(ids = {1})
+    @IdHolder(ids = {33})//@IdHolder(ids = {1})
     public static final class DialogueHandler implements Incoming {
 
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int interfaceHash = in.readLEInt();
-            int slot = in.readShort();
+            int slot = in.readLEShort();
+            int interfaceHash = in.readIntME();
             if (GameEventProcessor.resumeWith(player, slot)) {
                 return;
             }
@@ -102,7 +102,7 @@ public class ActionButtonHandler {
 
     }
 
-    @IdHolder(ids = {99})
+    @IdHolder(ids = {22})//@IdHolder(ids = {99})
     public static final class OtherHandler implements Incoming {
 
         @Override

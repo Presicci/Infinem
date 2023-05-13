@@ -29,7 +29,8 @@ public class PlayerNPCUpdater {
      */
 
     public void process() {
-        OutBuffer out = new OutBuffer(0xff).sendVarShortPacket(isLargeView() ? 36 : 53)
+        OutBuffer out = new OutBuffer(0xff)
+                .sendVarShortPacket(isLargeView() ? 41 : 43)
                 .initBitAccess();
         /**
          * Local (Updating visible npcs)
@@ -149,16 +150,19 @@ public class PlayerNPCUpdater {
             diffY += isLargeView() ? 256 : 32;
         out.addBits(15, npc.getIndex());
         out.addBits(isLargeView() ? 8 : 5, diffX);
-        out.addBits(isLargeView() ? 8 : 5, diffY);
         out.addBits(3, npc.spawnDirection.ordinal());
+        out.addBits(1, npc.getMovement().hasTeleportUpdate() ? 1 : 0);
         if(maskData != 0) {
             out.addBits(1, 1);
             writeMasks(npc, maskData);
         } else {
             out.addBits(1, 0);
         }
-        out.addBits(1, npc.getMovement().hasTeleportUpdate() ? 1 : 0);
+        out.addBits(isLargeView() ? 8 : 5, diffY);
         out.addBits(14, npc.getId());
+
+        // new OSRS placeholder shit??
+        out.addBits(1, 0);
         return true;
     }
 
@@ -170,6 +174,7 @@ public class PlayerNPCUpdater {
         maskBuffer.addByte(maskData);
         for(UpdateMask updateMask : npc.getMasks()) {
             if((maskData & updateMask.get(false)) != 0) {
+                System.out.println("NPC mask " + maskData + " for " + npc + " type " + updateMask);
                 updateMask.send(maskBuffer, false);
                 updateMask.setSent(true);
             }

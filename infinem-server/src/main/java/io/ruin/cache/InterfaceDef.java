@@ -26,6 +26,14 @@ public class InterfaceDef {
         COUNTS[259] += 7;
     }
 
+    public static boolean valid(int interfaceID) {
+        return interfaceID >= 0 && interfaceID < COUNTS.length;
+    }
+
+    public static boolean valid(int parentID, int childID) {
+        return valid(parentID) && childID >= 0 && childID < COUNTS[parentID];
+    }
+
     public static void printConfigs(int interfaceId, boolean recursiveSearch) {
         Set<ScriptDef> scripts = getScripts(interfaceId, recursiveSearch);
         if(scripts == null) {
@@ -101,7 +109,7 @@ public class InterfaceDef {
                         }
                         int scriptId = (int) objects[0];
                         ScriptDef script = ScriptDef.get(scriptId);
-                        if(script == null || intCount - 1 != script.anInt1364 || strCount != script.anInt1365)
+                        if(script == null || intCount - 1 != script.intStackCount || strCount != script.stringStackCount)
                             continue c;
                         childScripts.add(script);
                     } catch(Throwable t) {

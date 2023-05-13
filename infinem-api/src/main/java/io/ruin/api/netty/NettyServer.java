@@ -8,6 +8,8 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.ruin.api.utils.ServerWrapper;
 import io.ruin.api.utils.ThreadUtils;
 
+import java.util.function.Function;
+
 public class NettyServer {
 
     private final EventLoopGroup bossGroup, workerGroup;
@@ -22,7 +24,7 @@ public class NettyServer {
         workerGroup.shutdownGracefully();
     }
 
-    public static NettyServer start(String name, int port, Class<? extends ChannelHandler> c, int gcs, boolean local) {
+    public static NettyServer start(String name, int port, Function<ChannelPipeline, ? extends ChannelHandler> channelHandlerFunction, int gcs, boolean local) {
         NettyServer server = new NettyServer(new NioEventLoopGroup(), new NioEventLoopGroup());
         ServerBootstrap bootstrap = new ServerBootstrap();
         bootstrap.group(server.bossGroup, server.workerGroup);
@@ -31,7 +33,10 @@ public class NettyServer {
             @Override
             public void initChannel(SocketChannel ch) throws Exception {
                 ChannelPipeline pipeline = ch.pipeline();
-                pipeline.addLast("decoder", c.newInstance());
+                ChannelHandler decoder = channelHandlerFunction.apply(pipeline);
+                if (decoder == null)
+                    throw new IllegalArgumentException("Must have a non-null (valid) decoder");
+                pipeline.addLast("decoder", decoder);
                 pipeline.addLast("exception_handler", new ExceptionHandler());
             }
         });
@@ -44,19 +49,9 @@ public class NettyServer {
                 System.gc();
             ThreadUtils.sleep(1000L);
         }
+        bootstrap.bind(port);
 
-        String host = "127.0.0.1";
-        if (!local) {
-            host = "0.0.0.0";
-            if (name.toLowerCase().contains("beta")) {
-                host = "0.0.0.0";
-            }
-            bootstrap.bind(host, port);
-        } else {
-            bootstrap.bind(port);
-        }
-
-        ServerWrapper.println(name + " is now listening on " + host + ":" + port);
+        ServerWrapper.println(name + " is now listening on " + port);
         return server;
     }
 

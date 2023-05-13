@@ -48,7 +48,7 @@ public class PlayerUpdater {
     }
 
     public void process() {
-        OutBuffer out = new OutBuffer(0xff).sendVarShortPacket(4);
+        OutBuffer out = new OutBuffer(0xff).sendVarShortPacket(47);
         /**
          * Local
          */
@@ -159,6 +159,7 @@ public class PlayerUpdater {
     private int getLocalUpdateHash(Player localPlayer) {
         if(localPlayer == null || !isVisible(localPlayer))
             return -1;
+        int updateMaskData = localPlayer.getUpdateMaskData(true, false);
         int updateType = 0;
         if(localPlayer.getMovement().hasTeleportUpdate())
             updateType = 3;
@@ -166,7 +167,7 @@ public class PlayerUpdater {
             updateType = 2;
         else if(localPlayer.getMovement().getWalkDirection() != -1)
             updateType = 1;
-        return localPlayer.getUpdateMaskData(true, false) << 16 | updateType;
+        return updateMaskData << 16 | updateType;
     }
 
     private boolean writeLocalUpdate(OutBuffer out, Player localPlayer, int updateHash) {
@@ -332,17 +333,19 @@ public class PlayerUpdater {
      */
 
     private void writeMasks(Player localPlayer, int maskData) {
+        boolean shortLength = maskData > 0xff;
 
-        if(maskData > 0xff)
-            maskData |= 1;
+        if(shortLength)
+            maskData |= 4;
 
         maskBuffer.addByte(maskData);
 
-        if(maskData > 0xff)
+        if(shortLength)
             maskBuffer.addByte(maskData >> 8);
 
         for(UpdateMask updateMask : localPlayer.getMasks()) {
             if((maskData & updateMask.get(true)) != 0) {
+                System.out.println("Player mask " + maskData + " for " + localPlayer.getName() + " type " + updateMask);
                 updateMask.send(maskBuffer, true);
                 updateMask.setSent(true);
             }

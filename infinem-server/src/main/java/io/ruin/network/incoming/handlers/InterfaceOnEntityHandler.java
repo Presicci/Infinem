@@ -12,59 +12,60 @@ import io.ruin.utility.IdHolder;
 
 public class InterfaceOnEntityHandler {
 
-    @IdHolder(ids = {59})
+    @IdHolder(ids = {53})//@IdHolder(ids = {59})
     public static final class ItemOnPlayer implements Incoming {
 
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int targetIndex = in.readLEShortA();
-            int interfaceHash = in.readInt1();
-            int itemId = in.readShort();
-            int slot = in.readLEShort();
-            int ctrlRun = in.readByte();
+            int targetIndex = in.readLEShort();
+            int slot = in.readShort();
+            int itemId = in.readShortA();
+            int interfaceHash = in.readIntME();
+            int ctrlRun = in.readByteC();
             handleAction(player, World.getPlayer(targetIndex), interfaceHash, slot, itemId, ctrlRun);
         }
 
     }
 
-    @IdHolder(ids = {55})
+    @IdHolder(ids = {105})//@IdHolder(ids = {55})
     public static final class InterfaceOnPlayer implements Incoming {
 
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int targetIndex = in.readLEShort();
-            int slot = in.readShortA();
+            int itemId = in.readShort();
             int ctrlRun = in.readByte();
-            int interfaceHash = in.readInt2();
-            handleAction(player, World.getPlayer(targetIndex), interfaceHash, slot, -1, ctrlRun);
+            int interfaceHash = in.readInt();
+            int slot = in.readLEShortA();
+            int targetIndex = in.readShort();
+            handleAction(player, World.getPlayer(targetIndex), interfaceHash, slot, itemId/*-1*/, ctrlRun);
         }
 
     }
 
-    @IdHolder(ids = {11})
+    @IdHolder(ids = {40})//@IdHolder(ids = {11})
     public static final class ItemOnNpc implements Incoming {
 
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int interfaceHash = in.readLEInt();
+            int targetIndex = in.readShort();
+            int ctrlRun = in.readByteA();
             int itemId = in.readLEShortA();
-            int targetIndex = in.readShortA();
+            int interfaceHash = in.readInt1();
             int slot = in.readLEShortA();
-            int ctrlRun = in.readByteS();
             handleAction(player, World.getNpc(targetIndex), interfaceHash, slot, itemId, ctrlRun);
         }
 
     }
 
-    @IdHolder(ids = {77})
+    @IdHolder(ids = {103})//@IdHolder(ids = {77})
     public static final class InterfaceOnNpc implements Incoming {
 
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int slot = in.readLEShort();
-            int targetIndex = in.readLEShort();
-            int interfaceHash = in.readLEInt();
-            int ctrlRun = in.readByte();
+            int interfaceHash = in.readIntME();
+            int targetIndex = in.readShortA();
+            int ctrlRun = in.readShortA();
+            int slot = in.readShort();
             handleAction(player, World.getNpc(targetIndex), interfaceHash, slot, -1, ctrlRun);
         }
 

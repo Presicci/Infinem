@@ -50,16 +50,16 @@ public class MapDirectionUpdate extends UpdateMask {
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
         if(playerUpdate) {
-            out.addShort(direction);
+            out.addLEShort(direction);
         } else {
             out.addShortA(faceX);
-            out.addLEShortA(faceY);
+            out.addShortA(faceY);
         }
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 32 : 4;
+        return playerUpdate ? 128 : 1;
     }
 
 }

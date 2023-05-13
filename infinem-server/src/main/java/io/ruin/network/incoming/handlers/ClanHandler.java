@@ -6,20 +6,20 @@ import io.ruin.network.central.CentralClient;
 import io.ruin.network.incoming.Incoming;
 import io.ruin.utility.IdHolder;
 
-@IdHolder(ids = {53, 22})
+@IdHolder(ids = {87, 74})//@IdHolder(ids = {53, 22})
 public class ClanHandler implements Incoming {
 
     @Override
     public void handle(Player player, InBuffer in, int opcode) {
         String username = in.readString();
-        if(opcode == 53) {
+        if(opcode == 87) {
             /**
              * Join / Leave
              */
             CentralClient.sendClanRequest(player.getUserId(), username);
             return;
         }
-        if(opcode == 22) {
+        if(opcode == 74) {
             /**
              * Kick
              */

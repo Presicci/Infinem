@@ -234,7 +234,7 @@ public class WorldDecoder extends MessageDecoder<World> {
         }
         if (opcode == 16) {
             String ip = in.readString();
-            int userId = in.readInt();
+            String userId = in.readString();
             Player player = Server.getPlayer(userId);
             if (player == null) {
                 return;
@@ -255,7 +255,7 @@ public class WorldDecoder extends MessageDecoder<World> {
     }
 
     @Override
-    public int getSize(int opcode) {
+    protected int getSize(int opcode) {
         switch (opcode) {
             case 0:
             case 14: {
@@ -313,4 +313,3 @@ public class WorldDecoder extends MessageDecoder<World> {
         return -128;
     }
 }
-

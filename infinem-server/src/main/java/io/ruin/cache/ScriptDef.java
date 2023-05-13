@@ -58,21 +58,21 @@ public class ScriptDef {
     public String[] stringArgs;
     public int[] instructions;
     int stringArgumentCount;
-    int anInt1364;
-    int anInt1365;
+    int intStackCount;
+    int stringStackCount;
     public int[] intArgs;
 
     private void decode(byte[] data) {
         InBuffer buffer = new InBuffer(data);
         buffer.position(data.length - 2);
-        int i_13_ = buffer.readUnsignedShort();
-        int i_14_ = data.length - 2 - i_13_ - 12;
-        buffer.position(i_14_);
-        int i_32_ = buffer.readInt();
+        int switchLength = buffer.readUnsignedShort();
+        int endIdx = data.length - 2 - switchLength - 12;
+        buffer.position(endIdx);
+        int numOpcodes = buffer.readInt();
         intArgumentCount = buffer.readUnsignedShort();
         stringArgumentCount = buffer.readUnsignedShort();
-        anInt1364 = buffer.readUnsignedShort();
-        anInt1365 = buffer.readUnsignedShort();
+        intStackCount = buffer.readUnsignedShort();
+        stringStackCount = buffer.readUnsignedShort();
         int someCount = buffer.readUnsignedByte();
         if(someCount > 0) {
             for(int i = 0; i < someCount; i++) {
@@ -85,11 +85,11 @@ public class ScriptDef {
         }
         buffer.position(0);
         buffer.readSafeString();
-        instructions = new int[i_32_];
-        intArgs = new int[i_32_];
-        stringArgs = new String[i_32_];
+        instructions = new int[numOpcodes];
+        intArgs = new int[numOpcodes];
+        stringArgs = new String[numOpcodes];
         int i_33_ = 0;
-        while(buffer.position() < i_14_) {
+        while(buffer.position() < endIdx) {
             int i_34_ = buffer.readUnsignedShort();
             if(i_34_ == 3)
                 stringArgs[i_33_] = buffer.readString();

@@ -28,17 +28,17 @@ public class GraphicsUpdate extends UpdateMask {
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
         if(playerUpdate) {
-            out.addShort(id);
+            out.addLEShort(id);
             out.addInt(height << 16 | delay);
         } else {
-            out.addLEShortA(id);
-            out.addInt1(height << 16 | delay);
+            out.addShort(id);
+            out.addInt(height << 16 | delay);
         }
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 2048 : 8;
+        return playerUpdate ? 2048 : 32;
     }
 
 }

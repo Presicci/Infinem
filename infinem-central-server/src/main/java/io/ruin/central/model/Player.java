@@ -63,7 +63,7 @@ public class Player {
     }
 
     public void sendPrivacy(int privacy) {
-        OutBuffer out = new OutBuffer(2).sendFixedPacket(17).addByte(privacy);
+        OutBuffer out = new OutBuffer(2).sendFixedPacket(12).addByte(privacy);
         this.write(out);
     }
 
@@ -76,7 +76,7 @@ public class Player {
     }
 
     private void sendFriends(SocialMember ... friends) {
-        OutBuffer out = new OutBuffer(friends == null ? 3 : 255).sendVarShortPacket(61);
+        OutBuffer out = new OutBuffer(friends == null ? 3 : 255).sendVarShortPacket(17);
         if (friends != null) {
             for (SocialMember friend : friends) {
                 if (friend == null) continue;
@@ -96,7 +96,7 @@ public class Player {
     }
 
     private void sendIgnores(SocialMember ... ignores) {
-        OutBuffer out = new OutBuffer(255).sendVarShortPacket(59);
+        OutBuffer out = new OutBuffer(255).sendVarShortPacket(7);
         if (ignores != null) {
             for (SocialMember ignore : ignores) {
                 if (ignore == null) continue;
@@ -114,7 +114,7 @@ public class Player {
     }
 
     public void sendReceivePM(String fromName, int fromRank, String message) {
-        OutBuffer out = new OutBuffer(255).sendVarShortPacket(45)
+        OutBuffer out = new OutBuffer(255).sendVarShortPacket(21)
                 .addString(fromName);
         for (int i = 0; i < 5; ++i) {
             out.addByte(Random.get(255));

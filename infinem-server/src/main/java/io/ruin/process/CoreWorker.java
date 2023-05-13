@@ -48,14 +48,6 @@ public class CoreWorker extends World {
 
     private static void index() {
         /**
-         * Player indexing
-         */
-        players.resetCount();
-        for(Player player : players.entityList) {
-            if(player != null)
-                players.index(player);
-        }
-        /**
          * Npc indexing
          */
         npcs.resetCount();
@@ -63,13 +55,21 @@ public class CoreWorker extends World {
             if(npc != null)
                 npcs.index(npc);
         }
+        /**
+         * Player indexing
+         */
+        players.resetCount();
+        for(Player player : players.entityList) {
+            if (player != null)
+                players.index(player);
+        }
         /*
          * Scrambling
          */
         if(--scrambleTicks <= 0) {
             scrambleTicks = Random.get(40, 60);
-            players.scramble();
             npcs.scramble();
+            players.scramble();
         }
     }
 
@@ -78,6 +78,14 @@ public class CoreWorker extends World {
      */
     private static void logic() {
         GameEventProcessor.pulse();
+        for(NPC npc : npcs) {
+            try {
+                npc.processed = true;
+                npc.process();
+            } catch(Throwable t) {
+                Server.logError("", t);
+            }
+        }
         for(Player player : players) {
             try {
                 player.checkLogout();
@@ -91,14 +99,6 @@ public class CoreWorker extends World {
                     player.processed = true;
                     player.process();
                 }
-            } catch(Throwable t) {
-                Server.logError("", t);
-            }
-        }
-        for(NPC npc : npcs) {
-            try {
-                npc.processed = true;
-                npc.process();
             } catch(Throwable t) {
                 Server.logError("", t);
             }
@@ -117,6 +117,14 @@ public class CoreWorker extends World {
      */
 
     private static void update() {
+        for(NPC npc : npcs) {
+            try {
+                npc.resetUpdates();
+                npc.processed = false;
+            } catch(Throwable t) {
+                Server.logError("", t);
+            }
+        }
         for(Player player : players) {
             try {
                 if(player.isOnline()) {
@@ -135,14 +143,6 @@ public class CoreWorker extends World {
                     player.resetUpdates();
                 player.getChannel().flush();
                 player.processed = false;
-            } catch(Throwable t) {
-                Server.logError("", t);
-            }
-        }
-        for(NPC npc : npcs) {
-            try {
-                npc.resetUpdates();
-                npc.processed = false;
             } catch(Throwable t) {
                 Server.logError("", t);
             }

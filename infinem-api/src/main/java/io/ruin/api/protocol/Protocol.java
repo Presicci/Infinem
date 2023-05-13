@@ -180,7 +180,7 @@ public class Protocol {
 
     public static OutBuffer messagePacket(String message, String extension, int type) {
         int estimatedSize = 4 + Protocol.strLen(extension) + Protocol.strLen(message);
-        OutBuffer out = new OutBuffer(estimatedSize).sendVarBytePacket(62)
+        OutBuffer out = new OutBuffer(estimatedSize).sendVarBytePacket(66/*62*/)
                 .addSmart(type);
         if(extension == null) {
             out.addByte(0);
@@ -193,7 +193,7 @@ public class Protocol {
     }
 
     public static OutBuffer outgoingPm(String toUsername, String message) {
-        OutBuffer out = new OutBuffer(255).sendVarShortPacket(82)
+        OutBuffer out = new OutBuffer(255).sendVarShortPacket(56)
                 .addString(toUsername);
         Huffman.encrypt(out, message);
         return out;

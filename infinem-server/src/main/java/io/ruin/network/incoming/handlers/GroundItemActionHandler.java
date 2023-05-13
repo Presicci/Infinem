@@ -9,7 +9,7 @@ import io.ruin.model.map.ground.GroundItemAction;
 import io.ruin.network.incoming.Incoming;
 import io.ruin.utility.IdHolder;
 
-@IdHolder(ids = {97, 27, 18, 63, 24})
+@IdHolder(ids = {84, 44, 19, 29, 100})//@IdHolder(ids = {97, 27, 18, 63, 24})
 public class GroundItemActionHandler implements Incoming {
 
     @Override
@@ -20,41 +20,41 @@ public class GroundItemActionHandler implements Incoming {
         int option = OPTIONS[opcode];
         if(option == 1) {
             int ctrlRun = in.readByteS();
-            int y = in.readLEShort();
-            int x = in.readShortA();
-            int id = in.readLEShortA();
+            int y = in.readShortA();
+            int x = in.readLEShortA();
+            int id = in.readShortA();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if(option == 2) {
-            int ctrlRun = in.readByteA();
             int x = in.readShortA();
+            int id = in.readLEShort();
+            int y = in.readLEShortA();
+            int ctrlRun = in.readByteC();
+            handleAction(player, option, id, x, y, ctrlRun);
+            return;
+        }
+        if(option == 3) {
+            int ctrlRun = in.readByteA();
+            int y = in.readShortA();
+            int id = in.readShortA();
+            int x = in.readShort();
+            handleAction(player, option, id, x, y, ctrlRun);
+            return;
+        }
+        if(option == 4) {
+            int ctrlRun = in.readByteS();
+            int x = in.readLEShort();
             int id = in.readShortA();
             int y = in.readShortA();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
-        if(option == 3) {
-            int ctrlRun = in.readByteC();
-            int x = in.readLEShortA();
-            int y = in.readShortA();
-            int id = in.readLEShort();
-            handleAction(player, option, id, x, y, ctrlRun);
-            return;
-        }
-        if(option == 4) {
-            int x = in.readLEShortA();
-            int y = in.readShortA();
-            int ctrlRun = in.readByteS();
-            int id = in.readShort();
-            handleAction(player, option, id, x, y, ctrlRun);
-            return;
-        }
         if(option == 5) {
-            int x = in.readLEShort();
-            int y = in.readLEShort();
-            int id = in.readLEShortA();
+            int id = in.readLEShort();
+            int x = in.readShortA();
             int ctrlRun = in.readByteS();
+            int y = in.readLEShort();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }

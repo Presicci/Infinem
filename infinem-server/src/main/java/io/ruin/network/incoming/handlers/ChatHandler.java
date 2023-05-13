@@ -13,7 +13,7 @@ import io.ruin.utility.IdHolder;
 import java.util.Arrays;
 import java.util.List;
 
-@IdHolder(ids = {32})
+@IdHolder(ids = {14})//@IdHolder(ids = {32})
 public class ChatHandler implements Incoming {
 
     @Override

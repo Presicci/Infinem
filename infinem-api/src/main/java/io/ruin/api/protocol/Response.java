@@ -1,5 +1,6 @@
 package io.ruin.api.protocol;
 
+import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFutureListener;
@@ -49,13 +50,15 @@ public enum Response {
     UNEXPECTED(Byte.MAX_VALUE);
 
     public final int code;
+    private final ByteBuf buf;
 
     Response(int code) {
         this.code = code;
+        this.buf = Unpooled.unreleasableBuffer(Unpooled.directBuffer(1, 1).writeByte(code));
     }
 
     public void send(Channel channel) {
-        channel.writeAndFlush(Unpooled.buffer(1).writeByte(code)).addListener(ChannelFutureListener.CLOSE);
+        channel.writeAndFlush(buf).addListener(ChannelFutureListener.CLOSE);
     }
 
     public static Response valueOf(int ordinal) {

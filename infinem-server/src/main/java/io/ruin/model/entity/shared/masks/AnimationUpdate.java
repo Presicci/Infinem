@@ -27,17 +27,17 @@ public class AnimationUpdate extends UpdateMask {
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
         if(playerUpdate) {
-            out.addLEShortA(id);
-            out.addByte(delay);
+            out.addShortA(id);
+            out.addByteA(id < 0 ? 0 : delay);
         } else {
-            out.addShort(id);
-            out.addByteS(delay);
+            out.addLEShort(id);
+            out.addByte(id < 0 ? 0 : delay);
         }
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 16 : 16;
+        return playerUpdate ? 16 : 128;
     }
 
 }

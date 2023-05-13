@@ -7,7 +7,7 @@ import io.ruin.model.entity.player.PlayerAction;
 import io.ruin.network.incoming.Incoming;
 import io.ruin.utility.IdHolder;
 
-@IdHolder(ids={81, 43, 61, 71, 58, 52, 90, 78})
+@IdHolder(ids = {30, 45, 11, 52, 8, 101, 36, 90})//@IdHolder(ids={81, 43, 61, 71, 58, 52, 90, 78})
 public class PlayerActionHandler implements Incoming {
 
     @Override
@@ -18,32 +18,32 @@ public class PlayerActionHandler implements Incoming {
 
         int option = OPTIONS[opcode];
         if(option == 1) {
-            int targetIndex = in.readShortA();
             int ctrlRun = in.readByteA();
+            int targetIndex = in.readShortA();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }
         if(option == 2) {
-            int targetIndex = in.readLEShortA();
             int ctrlRun = in.readByte();
-            handle(player, option, targetIndex, ctrlRun);
-            return;
-        }
-        if(option == 3) {
-            int ctrlRun = in.readByteS();
             int targetIndex = in.readLEShort();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }
+        if(option == 3) {
+            int ctrlRun = in.readByteA();
+            int targetIndex = in.readShortA();
+            handle(player, option, targetIndex, ctrlRun);
+            return;
+        }
         if(option == 4) {
-            int targetIndex = in.readLEShortA();
+            int targetIndex = in.readShortA();
             int ctrlRun = in.readByteC();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }
         if(option == 5) {
-            int ctrlRun = in.readByteC();
-            int targetIndex = in.readLEShort();
+            int targetIndex = in.readShort();
+            int ctrlRun = in.readByte();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }
@@ -55,13 +55,13 @@ public class PlayerActionHandler implements Incoming {
         }
         if(option == 7) {
             int targetIndex = in.readLEShort();
-            int ctrlRun = in.readByteA();
+            int ctrlRun = in.readByteC();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }
         if(option == 8) {
-            int ctrlRun = in.readByteA();
-            int targetIndex = in.readShortA();
+            int ctrlRun = in.readByteS();
+            int targetIndex = in.readLEShort();
             handle(player, option, targetIndex, ctrlRun);
             return;
         }

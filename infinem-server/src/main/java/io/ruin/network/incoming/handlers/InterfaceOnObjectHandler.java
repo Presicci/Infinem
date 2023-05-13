@@ -12,32 +12,33 @@ import io.ruin.utility.IdHolder;
 
 public class InterfaceOnObjectHandler {
 
-    @IdHolder(ids = {46})
+    @IdHolder(ids = {43})//@IdHolder(ids = {46})
     public static final class FromItem implements Incoming {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int objectX = in.readLEShort();
-            int objectY = in.readShort();
-            int itemId = in.readShortA();
-            int interfaceHash = in.readInt1();
+            int interfaceHash = in.readInt();
             int itemSlot = in.readShort();
-            int objectId = in.readLEInt();
-            int ctrlRun = in.readByteC();
+            int objectX = in.readLEShortA();
+            int objectY = in.readShort();
+            int objectId = in.readShort();
+            int ctrlRun = in.readByteS();
+            int itemId = in.readShort();
             handleAction(player, interfaceHash, itemSlot, itemId, objectId, objectX, objectY, ctrlRun);
         }
     }
 
-    @IdHolder(ids = {68})
+    @IdHolder(ids = {102})//@IdHolder(ids = {68})
     public static final class FromInterface implements Incoming {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int interfaceHash = in.readInt();
-            int ctrlRun = in.readByte();
+            int objectId = in.readShortA();
             int objectY = in.readShort();
-            int objectId = in.readLEInt();
-            int objectX = in.readShort();
-            int slot = in.readShortA();
-            handleAction(player, interfaceHash, slot, -1, objectId, objectX, objectY, ctrlRun);
+            int objectX = in.readLEShort();
+            int slot = in.readLEShort();
+            int ctrlRun = in.readByte();
+            int itemId = in.readLEShort();
+            int interfaceHash = in.readInt();
+            handleAction(player, interfaceHash, slot, itemId, objectId, objectX, objectY, ctrlRun);
         }
     }
 

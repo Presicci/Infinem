@@ -408,6 +408,10 @@ public class Player extends PlayerAttributes {
         this.displayMode = displayMode;
     }
 
+    public int getDisplayMode() {
+        return displayMode;
+    }
+
     public boolean hasDisplay() {
         return displayMode != -1;
     }
@@ -1296,7 +1300,7 @@ public class Player extends PlayerAttributes {
         /*
          * Messages
          */
-        sendMessage("Welcome to " + World.type.getWorldName() + "." + (" Have fun!"));
+        sendMessage("Welcome to " + World.type.getWorldName() + "!" + (" Have fun!"));
 
         packetSender.sendDiscordPresence("Idle");
         if(World.weekendExpBoost)
@@ -1364,6 +1368,8 @@ public class Player extends PlayerAttributes {
         packetSender.sendClientScript(828, "i", 1);
         packetSender.sendClientScript(233, "ImiiiiiiA", 24772664, 38864, 15, 200, 81, 1885, 0, 2000, 8498);
         packetSender.sendClientScript(233, "ImiiiiiiA", 24772665, 38864, 10, 180, 78, 158, 0, 2000, 8500);
+        // TODO look at this
+        packetSender.sendClientScript(3954, "IIi", 712 << 16 | 2, 712 << 16 | 3, player.getCombat().getLevel());
         if (World.isDev())
             player.join(PlayerGroup.OWNER);
     }
@@ -1826,6 +1832,13 @@ public class Player extends PlayerAttributes {
 
     public <T> T getAttribute(AttributeKey key) {
         return (T) attributes.get(key);
+    }
+
+    public int getAttributeIntOrZero(AttributeKey key) {
+        Object value = attributes.get(key);
+        if (value == null) return 0;
+        if (!(value instanceof Integer)) return 0;
+        return (int) value;
     }
 
     public <T> T getAttributeOrDefault(AttributeKey key, Object defaultValue) {

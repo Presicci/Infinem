@@ -42,7 +42,7 @@ public class Server extends ServerWrapper {
                    Server.logError("Error", ex);
                }
             }).start();*/
-            NettyServer nettyServer = NettyServer.start("Update Server", 7304, HandshakeDecoder.class, 5, Boolean.parseBoolean(properties.getProperty("offline_mode")));
+            NettyServer nettyServer = NettyServer.start("Update Server", 443, pipeline -> new HandshakeDecoder(fileStore), 5, Boolean.parseBoolean(properties.getProperty("offline_mode")));
             Runtime.getRuntime().addShutdownHook(new Thread(nettyServer::shutdown));
         }
         catch (Exception e) {

@@ -133,7 +133,7 @@ public class Appearance extends UpdateMask {
 
     private boolean update = true;
 
-    private OutBuffer data = new OutBuffer(255);
+    private final OutBuffer data = new OutBuffer(255);
 
     public void update() {
         update = true;
@@ -190,8 +190,8 @@ public class Appearance extends UpdateMask {
             }
             for(int id : renders)
                 data.addShort(id);
-            data.addString(player.getName());
-            if (player.getTitle() == null) { //TODO: Custom Edits
+            data.writeStringCp1252NullTerminated(player.getName());
+           /* if (player.getTitle() == null) { //TODO: Custom Edits
                 data.addString("");
                 data.addString("");
             } else {
@@ -204,13 +204,15 @@ public class Appearance extends UpdateMask {
                 }
                 data.addString(title);
                 data.addString(player.getTitle().getSuffix() == null ? "" : player.getTitle().getSuffix());
-            }
+            }*/
             data.addByte(player.getCombat().getLevel());
-            data.addShort(0);
-            data.addByte(0);
+            data.addShort(0); // skillLevel
+            data.addByte(0); // isHidden if this == 1
+            data.addShort(0); // Vex (clan hub) shit.
         }
-        out.addByteC(data.position());
-        out.addBytes184(data.payload(), 0, data.position());
+        int length = data.position();
+        out.addByte(length);
+        out.addBytesSpecial(data.payload(), 0, length);
     }
 
     private void append(Player player, OutBuffer out, int slot, int styleIndex) {
@@ -244,7 +246,7 @@ public class Appearance extends UpdateMask {
 
     @Override
     public int get(boolean playerUpdate) {
-        return 8;
+        return 2;
     }
 
 }

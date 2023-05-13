@@ -55,28 +55,39 @@ public class HitsUpdate extends UpdateMask {
         if(playerUpdate)
             out.addByteA(splats.size());
         else
-            out.addByteC(splats.size());
+            out.addByteS(splats.size());
         for(Splat splat : splats) {
             out.addSmart(splat.type);
             out.addSmart(splat.damage);
             out.addSmart(splat.delay);
         }
+
         if(playerUpdate)
-            out.addByteS(1); //hp bar count
+            out.addByte(1); //hp bar count
         else
-            out.addByteS(1); //hp bar count
+            out.addByteA(1); //hp bar count
         out.addSmart(hpBarType);
-        out.addSmart(0); //second bar type
-        out.addSmart(0); //hp bar delay
-        if(playerUpdate)
-            out.addByteA(hpBarRatio);
-        else
-            out.addByteC(hpBarRatio);
+        int timespan = 0;
+        out.addSmart(timespan);
+        if (timespan != 0x7FFF) {
+            out.addSmart(0); //hp bar delay
+            if (playerUpdate)
+                out.addByteA(hpBarRatio);
+            else
+                out.addByteC(hpBarRatio);
+            if (timespan > 0) {
+                int destinationFillAmount = hpBarRatio;
+                if (playerUpdate)
+                    out.addByteS(destinationFillAmount);
+                else
+                    out.addByteA(destinationFillAmount);
+            }
+        }
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 4 : 1;
+        return playerUpdate ? 1 : 2;
     }
 
     private static final class Splat {

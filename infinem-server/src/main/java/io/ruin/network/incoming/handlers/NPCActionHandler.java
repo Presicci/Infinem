@@ -16,7 +16,7 @@ import io.ruin.utility.IdHolder;
 import java.util.Arrays;
 import java.util.HashSet;
 
-@IdHolder(ids = {89, 96, 35, 79, 37, 9})
+@IdHolder(ids = {70, 88, 95, 6, 18, 81})//@IdHolder(ids = {89, 96, 35, 79, 37, 9})
 public class NPCActionHandler implements Incoming {
 
     @Override
@@ -27,37 +27,37 @@ public class NPCActionHandler implements Incoming {
 
         int option = OPTIONS[opcode];
         if(option == 1) {
-            int ctrlRun = in.readByteS();
+            int ctrlRun = in.readByte();
             int targetIndex = in.readLEShort();
             handleAction(player, option, targetIndex, ctrlRun);
             return;
         }
         if(option == 2) {
+            int targetIndex = in.readShort();
             int ctrlRun = in.readByteS();
-            int targetIndex = in.readShortA();
             handleAction(player, option, targetIndex, ctrlRun);
             return;
         }
         if(option == 3) {
-            int ctrlRun = in.readByte();
             int targetIndex = in.readLEShort();
+            int ctrlRun = in.readByte();
             handleAction(player, option, targetIndex, ctrlRun);
             return;
         }
         if(option == 4) {
-            int ctrlRun = in.readByte();
-            int targetIndex = in.readLEShort();
+            int ctrlRun = in.readByteC();
+            int targetIndex = in.readShort();
             handleAction(player, option, targetIndex, ctrlRun);
             return;
         }
         if(option == 5) {
-            int ctrlRun = in.readByteS();
-            int targetIndex = in.readLEShort();
+            int ctrlRun = in.readByte();
+            int targetIndex = in.readShortA();
             handleAction(player, option, targetIndex, ctrlRun);
             return;
         }
         if(option == 6) {
-            int id = in.readShortA();
+            int id = in.readLEShortA();
             NPCDef def = NPCDef.get(id);
             if(def == null)
                 return;

@@ -31,7 +31,7 @@ public class Server extends ServerWrapper {
         WorldList.start();
         try {
             Properties properties = new Properties();
-            NettyServer nettyServer = NettyServer.start("Infinem Central Server", PORT, DefaultDecoder.class, 5,
+            NettyServer nettyServer = NettyServer.start("Central Server", PORT, pipeline -> new DefaultDecoder(), 5,
                     Boolean.parseBoolean(properties.getProperty("offline_mode")));
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {
                 System.out.println();

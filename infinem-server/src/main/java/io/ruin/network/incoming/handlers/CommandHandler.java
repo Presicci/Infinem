@@ -18,7 +18,7 @@ import java.io.*;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-@IdHolder(ids = {17})
+@IdHolder(ids = {21})//@IdHolder(ids = {17})
 public class CommandHandler implements Incoming {
 
     public static final Bounds EDGEVILLE = new Bounds(3036, 3478, 3144, 3524, -1);

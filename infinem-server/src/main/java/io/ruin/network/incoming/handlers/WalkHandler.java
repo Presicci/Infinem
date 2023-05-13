@@ -8,7 +8,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.network.incoming.Incoming;
 import io.ruin.utility.IdHolder;
 
-@IdHolder(ids = {98, 91})
+@IdHolder(ids = {57, 66})//@IdHolder(ids = {98, 91})
 public class WalkHandler implements Incoming {
 
     @Override
@@ -39,9 +39,10 @@ public class WalkHandler implements Incoming {
         }
 
         player.resetActions(true, true, true);
-        int x = in.readLEShortA();
-        int y = in.readLEShort();
-        int type = in.readByteC();
+        int type = in.readUnsignedByteA(); // key 81 pressed ? 2 : key 82 pressed ? 1 : 0;
+        int x = in.readLEShort();
+        int y = in.readLEShortA();
+
         if (player.isAdmin() || World.isDev()) {
             NPC npc = player.get("CONTROLLING_NPC");
             if (npc != null) {

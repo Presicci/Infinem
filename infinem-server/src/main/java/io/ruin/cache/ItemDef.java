@@ -639,6 +639,8 @@ public class ItemDef {
                 textureFind[i_3_] = (short) buffer.readUnsignedShort();
                 textureReplace[i_3_] = (short) buffer.readUnsignedShort();
             }
+        } else if (opcode == 42) {
+            buffer.readByte(); // shiftClickDropIndex
         } else if(opcode == 65)
             grandExchange = true;
         else if (opcode == 75) // weight
@@ -702,7 +704,8 @@ public class ItemDef {
                 else
                     attributes.put(key, buffer.readInt());
             }
-        }
+        } else
+            System.err.println("MISSING ITEM OPCODE " + opcode + " FOR ID " + id);
     }
 
     public int getOption(String... options) {

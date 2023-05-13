@@ -23,12 +23,12 @@ public class ForceTextUpdate extends UpdateMask {
 
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
-        out.addString(forceText);
+        out.writeStringCp1252NullTerminated(forceText);
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 2 : 64;
+        return playerUpdate ? 32 : 16;
     }
 
 }

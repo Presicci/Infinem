@@ -40,16 +40,17 @@ public class ChatUpdate extends UpdateMask {
 
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
-        out.addShort(effects);
-        out.addByte(rankId);
-        out.addByteC(type);
-        out.addByteC(messageData.length);
-        out.addBytes184(messageData);
+        out.addShortA(effects);
+        out.addByteA(rankId);
+        out.addByte(type); // 1 if autochatting
+        int length = messageData.length;
+        out.addByteC(length);
+        out.addBytesSpecial(messageData, 0, length);
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return 128;
+        return 64;
     }
 
 }

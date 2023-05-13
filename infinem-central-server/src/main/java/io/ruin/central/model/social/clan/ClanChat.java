@@ -3,6 +3,7 @@ package io.ruin.central.model.social.clan;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.buffer.OutBuffer;
 import io.ruin.api.filestore.utility.Huffman;
+import io.ruin.api.protocol.Protocol;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.central.Server;
@@ -34,12 +35,40 @@ public class ClanChat extends ClanContainer {
         }
     }
 
+    private static final String[] settingsActions = {"Anyone", "Any friends", "Recruit+", "Corporal+", "Sergeant+", "Lieutenant+", "Captain+", "General+", "Only me"};
+
     private void sendSettings(Player player) {
+        sendNameSetting(player);
+        sendEnterRank(player);
+        sendTalkRank(player);
+        sendKickRank(player);
+    }
+
+    public void sendNameSetting(Player player) {
         String name = this.name == null ? "Chat disabled" : this.name;
+        sendString(player, 94, 10, name);
+    }
+
+    public void sendEnterRank(Player player) {
         int enterRank = this.enterRank == null ? -1 : this.enterRank.id;
+        sendString(player, 94, 13, settingsActions[enterRank == -1 ? 0 : enterRank + 1]);
+    }
+
+    public void sendTalkRank(Player player) {
         int talkRank = this.talkRank == null ? -1 : this.talkRank.id;
+        sendString(player, 94, 16, settingsActions[talkRank == -1 ? 0 : talkRank + 1]);
+    }
+
+    public void sendKickRank(Player player) {
         int kickRank = this.kickRank.id;
-        OutBuffer out = new OutBuffer(2 + (name.length() + 1) + 3).sendVarBytePacket(86).addString(name).addByte(enterRank).addByte(talkRank).addByte(kickRank);
+        sendString(player, 94, 19, settingsActions[kickRank + 1]);
+    }
+
+    public void sendString(Player player, int interfaceId, int childId, String string) {
+        OutBuffer out = new OutBuffer(3 + 4 + Protocol.strLen(string))
+                .sendVarShortPacket(23)
+                .writeStringCp1252NullTerminated(string)
+                .addInt(interfaceId << 16 | childId);
         player.write(out);
     }
 
@@ -220,7 +249,7 @@ public class ClanChat extends ClanContainer {
     private OutBuffer getMessageBuffer(String senderName, int rankId, String message) {
         OutBuffer out = new OutBuffer(255).sendVarBytePacket(22);
         out.addString(senderName);
-        out.addString(this.name);
+        out.addLong(StringUtils.stringToLong(this.name));
         for (int i = 0; i < 5; ++i) {
             out.addByte(Random.get(255));
         }
@@ -231,12 +260,12 @@ public class ClanChat extends ClanContainer {
 
     private OutBuffer getBuffer(int type) {
         if (type == 0) {
-            return new OutBuffer(3).sendVarShortPacket(48);
+            return new OutBuffer(3).sendVarShortPacket(42);
         }
-        OutBuffer out = new OutBuffer(255).sendVarShortPacket(48).
+        OutBuffer out = new OutBuffer(255).sendVarShortPacket(42).
                 addString(this.owner).
-                addString(this.name).
-                addByte(ClanChat.getRankId(this.kickRank));
+                addLong(StringUtils.stringToLong(this.name)).//addString(this.name).
+                        addByte(ClanChat.getRankId(this.kickRank));
         if (type == 2) {
             out.addByte(255);
             return out;

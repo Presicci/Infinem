@@ -227,7 +227,7 @@ public class Server extends ServerWrapper {
         /*
          * Network
          */
-        NettyServer nettyServer = NettyServer.start(World.type.getWorldName() + " World (" + World.id + ") Server", World.port, LoginDecoder.class, 5, Boolean.parseBoolean(properties.getProperty("offline_mode")));
+        NettyServer nettyServer = NettyServer.start(World.type.getWorldName() + " World (" + World.id + ") Server", World.port, pipeline -> new LoginDecoder(fileStore), 5, Boolean.parseBoolean(properties.getProperty("offline_mode")));
 
         /*
          * Central server

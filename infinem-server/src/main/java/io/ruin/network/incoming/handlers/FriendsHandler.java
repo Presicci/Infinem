@@ -10,13 +10,13 @@ import io.ruin.services.Loggers;
 import io.ruin.services.Punishment;
 import io.ruin.utility.IdHolder;
 
-@IdHolder(ids = {84, 80, 48, 56, 93, 67})
+@IdHolder(ids = {5, 93, 55, 27, 91, 79})//@IdHolder(ids = {84, 80, 48, 56, 93, 67})
 public class FriendsHandler implements Incoming {
 
     @Override
     public void handle(Player player, InBuffer in, int opcode) {
         String name;
-        if(opcode == 67) {
+        if(opcode == 79) {
             /**
              * Rank friend
              */
@@ -26,35 +26,35 @@ public class FriendsHandler implements Incoming {
             return;
         }
         name = in.readString();
-        if(opcode == 80) {
+        if(opcode == 93) {
             /**
              * Add friend
              */
             CentralClient.sendSocialRequest(player.getUserId(), name, 1);
             return;
         }
-        if(opcode == 48) {
+        if(opcode == 55) {
             /**
              * Delete friend
              */
             CentralClient.sendSocialRequest(player.getUserId(), name, 2);
             return;
         }
-        if(opcode == 84) {
+        if(opcode == 5) {
             /**
              * Add ignore
              */
             CentralClient.sendSocialRequest(player.getUserId(), name, 3);
             return;
         }
-        if(opcode == 56) {
+        if(opcode == 27) {
             /**
              * Delete ignore
              */
             CentralClient.sendSocialRequest(player.getUserId(), name, 4);
             return;
         }
-        if(opcode == 93) {
+        if(opcode == 91) {
             /**
              * Private message
              */

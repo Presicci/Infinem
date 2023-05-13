@@ -10,29 +10,29 @@ import io.ruin.utility.IdHolder;
 
 public class InterfaceOnInterfaceHandler {
 
-    @IdHolder(ids = {85})
+    @IdHolder(ids = {12})//@IdHolder(ids = {85})
     public static final class OnItem implements Incoming {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int toInterfaceHash = in.readInt1();
-            int fromSlot = in.readLEShortA();
+            int toSlot = in.readLEShort();
+            int toInterfaceHash = in.readLEInt();
+            int fromItemId = in.readLEShort();
             int fromInterfaceHash = in.readInt();
-            int fromItemId = in.readShort();
-            int toSlot = in.readShort();
-            int toItemId = in.readShort();
+            int fromSlot = in.readShortA();
+            int toItemId = in.readLEShortA();
             handleAction(player, fromInterfaceHash, fromSlot, fromItemId, toInterfaceHash, toSlot, toItemId);
         }
     }
 
-    @IdHolder(ids = {62})
+    @IdHolder(ids = {75})//@IdHolder(ids = {62})
     public static final class OnInterface implements Incoming {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int fromSlot = in.readLEShortA();
+            int fromInterfaceHash = in.readIntME();
+            int fromSlot = in.readShort();
+            int toInterfaceHash = in.readInt();
+            int toItemId = in.readLEShortA();
             int toSlot = in.readLEShort();
-            int toItemId = in.readLEShort();
-            int toInterfaceHash = in.readInt1();
-            int fromInterfaceHash = in.readInt2();
             handleAction(player, fromInterfaceHash, fromSlot, -1, toInterfaceHash, toSlot, toItemId);
         }
     }

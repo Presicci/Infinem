@@ -6,7 +6,7 @@ import io.ruin.network.central.CentralClient;
 import io.ruin.network.incoming.Incoming;
 import io.ruin.utility.IdHolder;
 
-@IdHolder(ids = {21})
+@IdHolder(ids = {46})//@IdHolder(ids = {21})
 public class PrivacyHandler implements Incoming {
 
     @Override

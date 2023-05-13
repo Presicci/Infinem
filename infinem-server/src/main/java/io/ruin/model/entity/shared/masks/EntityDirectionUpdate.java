@@ -56,14 +56,14 @@ public class EntityDirectionUpdate extends UpdateMask {
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
         if(playerUpdate)
-            out.addLEShortA(direction);
-        else
             out.addShortA(direction);
+        else
+            out.addShort(direction);
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return playerUpdate ? 64 : 2;
+        return playerUpdate ? 8 : 8;
     }
 
 }

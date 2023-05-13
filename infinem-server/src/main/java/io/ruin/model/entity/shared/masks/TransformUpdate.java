@@ -23,12 +23,13 @@ public class TransformUpdate extends UpdateMask {
 
     @Override
     public void send(OutBuffer out, boolean playerUpdate) {
-        out.addLEShortA(id);
+        out.addLEShort(id);
     }
 
     @Override
     public int get(boolean playerUpdate) {
-        return 32;
+        if (playerUpdate) throw new UnsupportedOperationException("only for NPCs...");
+        return 64;
     }
 
 }

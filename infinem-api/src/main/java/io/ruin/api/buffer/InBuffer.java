@@ -85,6 +85,11 @@ public class InBuffer {
         return (readUnsignedByte() << 8) + readUnsignedByte();
     }
 
+    public int read24BitInt()
+    {
+        return (this.readUnsignedByte() << 16) + (this.readUnsignedByte() << 8) + this.readUnsignedByte();
+    }
+
     public int readShortA() {
         int i = (readUnsignedByte() << 8) + readUnsignedByteA();
         if(i > 32767) {
@@ -119,6 +124,10 @@ public class InBuffer {
 
     public int readUnsignedLEShortA() {
         return readUnsignedByteA() + (readUnsignedByte() << 8);
+    }
+
+    public int readIntME() {
+        return (readUnsignedByte() << 16) + (readUnsignedByte() << 24) + readUnsignedByte() + (readUnsignedByte() << 8);
     }
 
     public int readMedium() {
@@ -252,4 +261,31 @@ public class InBuffer {
         return payload;
     }
 
+    public int readUnsignedIntSmartShortCompat() {
+        int var1 = 0;
+
+        int var2;
+        for (var2 = this.readUSmart(); var2 == 32767; var2 = this.readUSmart()) {
+            var1 += 32767;
+        }
+
+        var1 += var2;
+        return var1;
+    }
+
+    public int readUSmart() {
+        int peek = payload[position] & 0xFF;
+        return peek < 128 ? this.readUnsignedByte() : this.readUnsignedShort() - 0x8000;
+    }
+
+    public byte peek()
+    {
+        return payload[position];
+    }
+
+    public int readUnsignedShortSmart()
+    {
+        int peek = this.peek() & 0xFF;
+        return peek < 128 ? this.readUnsignedByte() : this.readUnsignedShort() - 0x8000;
+    }
 }

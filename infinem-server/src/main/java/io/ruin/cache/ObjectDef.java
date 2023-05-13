@@ -507,6 +507,27 @@ public class ObjectDef {
             in.readUnsignedShort();
         else if (i == 83)
             in.readUnsignedShort();
+        else if (i == 89); // setRandomizeAnimStart(true);
+        else if (i == 249) {
+            int length = in.readUnsignedByte();
+
+            Map<Integer, Object> params = new HashMap<>(length);
+            for (i = 0; i < length; i++) {
+                boolean isString = in.readUnsignedByte() == 1;
+                int key = in.read24BitInt();
+                Object value;
+
+                if (isString) {
+                    value = in.readString();
+                } else {
+                    value = in.readInt();
+                }
+
+                params.put(key, value);
+            }
+        }
+        else
+            System.err.println("MISSING OBJECT OPCODE " + i + " FOR ID " + id);
     }
 
     public boolean isClippedDecoration() {

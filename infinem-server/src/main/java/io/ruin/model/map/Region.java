@@ -1,8 +1,10 @@
 package io.ruin.model.map;
 
+import com.google.common.collect.Maps;
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
+import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.containers.bank.BankActions;
 import io.ruin.model.map.object.GameObject;
@@ -119,46 +121,41 @@ public class Region {
         try {
             landscapeData = getLandscapeData();
         } catch(Throwable t) {
-            System.err.println("Invalid Map Keys for Region (" + id + "): base=(" + baseX + ", " + baseY + ") keys=" + Arrays.toString(keys));
+            //System.err.println("Invalid Map Keys for Region (" + id + "): base=(" + baseX + ", " + baseY + ") keys=" + Arrays.toString(keys));
             invalidKeys = true;
         }
-        if (landscapeData != null) {
-            try {
-                InBuffer landIn = new InBuffer(landscapeData);
-                int objectId = -1;
-                for (; ; ) {
-                    int increment = landIn.readUnsignedIntSmartShortCompat();
-                    if (increment == 0)
+        if(landscapeData != null) {
+            InBuffer landIn = new InBuffer(landscapeData);
+            int objectId = -1;
+            for(; ; ) {
+                int idOffset = landIn.readUnsignedIntSmartShortCompat();
+                if(idOffset == 0)
+                    break;
+                objectId += idOffset;
+                int position = 0;
+                for(; ; ) {
+                    int positionOffset = landIn.readUnsignedShortSmart();
+                    if(positionOffset == 0)
                         break;
-                    objectId += increment;
-                    int positionHash = 0;
-                    for (; ; ) {
-                        int increment2 = landIn.readSmart();
-                        if (increment2 == 0)
-                            break;
-                        positionHash += increment2 - 1;
-                        int localX = (positionHash >> 6) & 0x3f;
-                        int localY = positionHash & 0x3f;
-                        int height = positionHash >> 12 & 0x3;
-                        int objectHash = landIn.readUnsignedByte();
-                        int type = objectHash >> 2;
-                        int direction = objectHash & 0x3;
-                        if (localX < 0 || localX >= 64 || localY < 0 || localY >= 64)
-                            continue;
-                        if ((tileData[1][localX][localY] & 0x2) == 2)
-                            height--;
-                        if (height >= 0) {
-                            int absX = baseX + localX;
-                            int absY = baseY + localY;
-                            GameObject obj = new GameObject(objectId, absX, absY, height, type, direction);
-                            getTile(absX, absY, height, true).addObject(obj);
-                            BankActions.markTiles(obj);
-                        }
+                    position += positionOffset - 1;
+                    int localY = position & 0x3f;
+                    int localX = (position >> 6) & 0x3f;
+                    int height = position >> 12;
+
+                    int attributes = landIn.readUnsignedByte();
+                    int type = attributes >> 2;
+                    int direction = attributes & 0x3;
+
+                    if((tileData[1][localX][localY] & 0x2) == 2)
+                        height--;
+                    if(height >= 0) {
+                        int absX = baseX + localX;
+                        int absY = baseY + localY;
+                        GameObject obj = new GameObject(objectId, absX, absY, height, type, direction);
+                        getTile(absX, absY, height, true).addObject(obj);
+                        BankActions.markTiles(obj);
                     }
                 }
-            } catch (Exception e) {
-                System.out.print("Error initializing region: " + id + " ");
-                e.printStackTrace();
             }
         }
         empty = !invalidKeys && mapData == null && landscapeData == null;

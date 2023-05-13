@@ -12,7 +12,7 @@ import io.ruin.utility.IdHolder;
 
 import java.util.Arrays;
 
-@IdHolder(ids={51, 6, 42, 95, 50, 36 })
+@IdHolder(ids={69, 72, 37, 41, 9, 50})//@IdHolder(ids={51, 6, 42, 95, 50, 36 })
 public class ObjectActionHandler implements Incoming {
 
     @Override
@@ -23,46 +23,46 @@ public class ObjectActionHandler implements Incoming {
         int option = OPTIONS[opcode];
         if(option == 1) {
             int ctrlRun = in.readByteC();
+            int x = in.readShortA();
+            int y = in.readLEShort();
             int id = in.readUnsignedShort();
-            int y = in.readShortA();
-            int x = in.readLEShortA();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if(option == 2) {
-            int id = in.readUnsignedLEShortA();
-            int x = in.readShort();
-            int ctrlRun = in.readByteS();
+            int id = in.readLEShort();
             int y = in.readShortA();
-            handleAction(player, option, id, x, y, ctrlRun);
-            return;
-        }
-        if(option == 3) {
-            int id = in.readUnsignedShort();
-            int x = in.readShortA();
-            int y = in.readLEShortA();
+            int x = in.readLEShort();
             int ctrlRun = in.readByteA();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
+        if(option == 3) {
+            int ctrlRun = in.readByteA();
+            int id = in.readLEShortA();
+            int y = in.readLEShortA();
+            int x = in.readLEShort();
+            handleAction(player, option, id, x, y, ctrlRun);
+            return;
+        }
         if(option == 4) {
-            int x = in.readShort();
-            int ctrlRun = in.readByteC();
-            int id = in.readUnsignedShortA();
+            int x = in.readLEShortA();
+            int ctrlRun = in.readByteA();
+            int id = in.readLEShort();
             int y = in.readShortA();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if(option == 5) {
-            int y = in.readShort();
-            int x = in.readShort();
+            int x = in.readLEShort();
+            int y = in.readShortA();
             int id = in.readUnsignedShort();
-            int ctrlRun = in.readByteA();
+            int ctrlRun = in.readByte();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
         if(option == 6) {
-            int id = in.readLEShort();
+            int id = in.readShortA();
             ObjectDef def = ObjectDef.get(id);
             if(def != null) {
                 if(player.debug) {
