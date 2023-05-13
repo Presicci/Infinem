@@ -6,6 +6,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
@@ -20,10 +21,32 @@ public class TabOptions {
 
     static {
         InterfaceHandler.register(Interface.OPTIONS, h -> {
-            h.actions[5] = (SimpleAction) Config.ZOOMING_DISABLED::toggle;
+            h.actions[73] = (SimpleAction) AdvancedOptions::open;
+            h.actions[85] = (SimpleAction) Config.ZOOMING_DISABLED::toggle;
+
             /**
              * Display
              */
+            h.actions[82] = (DefaultAction) (p, option, slot, itemId) -> {
+                //System.out.println("CHANGE DISPLAY MODE " + slot);
+                DisplayHandler.setDisplayMode(p, slot);
+            };
+
+            /**
+             * Controls
+             */
+            h.actions[70] = (SimpleAction) Config.ACCEPT_AID::toggle;
+            h.actions[71] = (SimpleAction) p -> p.getMovement().toggleRunning();
+            h.actions[72] = (SimpleAction) HouseOptions::open;
+            h.actions[74] = (SimpleAction) p -> p.sendMessage("Bonds");
+            h.actions[79] = (SlotAction) (p, slot) -> Config.PLAYER_ATTACK_OPTION.set(p, slot - 1);
+            h.actions[80] = (SlotAction) (p, slot) -> Config.NPC_ATTACK_OPTION.set(p, slot - 1);
+        });
+        /*InterfaceHandler.register(Interface.OPTIONS, h -> {
+            h.actions[5] = (SimpleAction) Config.ZOOMING_DISABLED::toggle;
+            /**
+             * Display
+             *
             for(int i = 18; i <= 21; i++) {
                 int setting = i - 17;
                 h.actions[i] = (SimpleAction) p -> Config.BRIGHTNESS.set(p, setting);
@@ -31,7 +54,7 @@ public class TabOptions {
             h.actions[35] = (SimpleAction) AdvancedOptions::open;
             /**
              * Audio
-             */
+             *
             for(int i = 45; i <= 49; i++) {
                 int setting = 49 - i;
                 h.actions[i] = (SimpleAction) p -> Config.MUSIC_VOLUME.set(p, setting);
@@ -46,7 +69,7 @@ public class TabOptions {
             }
             /**
              * Chat
-             */
+             *
             h.actions[63] = (SimpleAction) Config.CHAT_EFFECTS::toggle;
             h.actions[65] = (SimpleAction) p -> {
                 Config.SPLIT_PRIVATE_CHAT.toggle(p);
@@ -54,7 +77,7 @@ public class TabOptions {
             };
             h.actions[67] = (SimpleAction) p -> {
                 if(p.isFixedScreen() || Config.SPLIT_PRIVATE_CHAT.get(p) == 0) {
-                    /* not applicable! */
+                    /* not applicable!
                     return;
                 }
                 Config.HIDE_PRIVATE_CHAT.toggle(p);
@@ -65,7 +88,7 @@ public class TabOptions {
             h.actions[75] = (SimpleAction) DisplayName::open;
             /**
              * Controls
-             */
+             *
             h.actions[77] = (SimpleAction) Config.MOUSE_BUTTONS::toggle;
             h.actions[79] = (SimpleAction) Config.MOUSE_CAMERA::toggle;
             h.actions[81] = (SimpleAction) Config.FOLLOWER_PRIORITY::toggle;
@@ -75,12 +98,12 @@ public class TabOptions {
             h.actions[107] = (SlotAction) (p, slot) -> Config.NPC_ATTACK_OPTION.set(p, slot - 1);
             /**
              * Bottom
-             */
+             *
             h.actions[92] = (SimpleAction) Config.ACCEPT_AID::toggle;
             h.actions[95] = (SimpleAction) p -> p.getMovement().toggleRunning();
             h.actions[98] = (SimpleAction) HouseOptions::open;
             h.actions[100] = (SimpleAction) p -> p.openUrl(World.type.getWorldName() + " Store", World.type.getWebsiteUrl() + "/store");
-        });
+        });*/
     }
 
     /**
@@ -90,7 +113,7 @@ public class TabOptions {
     private static final class AdvancedOptions {
 
         static {
-            InterfaceHandler.register(Interface.ADVANCED_OPTIONS, h -> {
+            /*InterfaceHandler.register(Interface.ADVANCED_OPTIONS, h -> {
                 h.actions[4] = (SimpleAction) Config.CHATBOX_SCROLLBAR::toggle;
                 h.actions[6] = (SimpleAction) Config.TRANSPARENT_SIDE_PANEL::toggle;
                 h.actions[8] = (SimpleAction) Config.REMAINING_XP_TOOLTIP::toggle;
@@ -120,11 +143,11 @@ public class TabOptions {
                     }
                 };
                 h.actions[23] = (SimpleAction) Config.HOTKEY_CLOSING_PANELS::toggle;
-            });
+            });*/
         }
 
         private static void open(Player player) {
-            player.openInterface(InterfaceType.MAIN, Interface.ADVANCED_OPTIONS);
+            Settings.openSettings(player);
         }
 
     }
@@ -136,13 +159,13 @@ public class TabOptions {
     private static final class Notifications {
 
         static {
-            InterfaceHandler.register(Interface.NOTIFICATIONS, h -> {
+           /* InterfaceHandler.register(Interface.NOTIFICATIONS, h -> {
                 h.actions[2] = (SimpleAction) p -> p.closeInterface(InterfaceType.INVENTORY_OVERLAY);
                 h.actions[7] = (OptionAction) (p, option) -> alterThreshold(p, option, Config.LOOT_DROP_NOTIFICATION_ENABLED, Config.LOOT_DROP_NOTIFICATION_VALUE);
                 h.actions[11] = (SlotAction) Config.UNTRADEABLE_LOOT_NOTIFICATIONS::set;
                 h.actions[12] = (SlotAction) Config.BOSS_KC_UPDATE::set;
                 h.actions[14] = (OptionAction) (p, option) -> alterThreshold(p, option, Config.DROP_ITEM_WARNING_ENABLED, Config.DROP_ITEM_WARNING_VALUE);
-            });
+            });*/
         }
 
         private static void alterThreshold(Player player, int option, Config enabledConfig, Config valueConfig) {

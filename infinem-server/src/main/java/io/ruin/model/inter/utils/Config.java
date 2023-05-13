@@ -72,6 +72,18 @@ public class Config {
 
     public static final Config FRIEND_NOTIFICATION_TIMEOUT = varpbit(1627, true);
 
+    public static final Config SETTINGS_SEARCH = varpbit(9638, false);
+
+    public static final Config CHAT_COLOR = varpbit(9656, false);
+
+    public static final Config CHAT_COLOR1 = varpbit(9657, false);
+
+    public static final Config CHAT_COLOR2 = varpbit(12284, false);
+
+    public static final Config HIDE_ROOFS = varpbit(12378, true);
+
+    public static final Config PET_OPTIONS = varpbit(5599, true);
+
     public static final Config MOUSE_BUTTONS = varp(170, true);
 
     public static final Config MOUSE_CAMERA = varpbit(4134, true);
@@ -102,6 +114,8 @@ public class Config {
     public static final Config SPECIAL_ATTACK_TOOLTIPS = varpbit(5712, true);
 
     public static final Config DATA_ORBS = varpbit(4084, true);
+
+    public static final Config STORE_ORB = varpbit(13037, true);
 
     public static final Config TRANSPARENT_CHATBOX = varpbit(4608, true);
 
@@ -235,6 +249,9 @@ public class Config {
     };
 
     public static final Config ESCAPE_CLOSES = varpbit(4681, true);
+
+    public static final Config SettingSearch = varpbit(9638, false);
+    public static final Config SettingSearch1 = varpbit(9639, false);
 
 
     /**
