@@ -183,7 +183,9 @@ final class GrandExchangeOfferWorldComparator implements Comparator {
          } else if(var2 == 2) {
             var16 = (int)(1.04D * (double)var16);
          }
-
+         if (var9.xan2d > 2047) {
+            var9.xan2d = var9.xan2d % 2047;
+         }
          int var17 = var16 * Rasterizer3D.Rasterizer3D_sine[var9.xan2d] >> 16;
          int var18 = var16 * Rasterizer3D.Rasterizer3D_cosine[var9.xan2d] >> 16;
          var19.method2359();
