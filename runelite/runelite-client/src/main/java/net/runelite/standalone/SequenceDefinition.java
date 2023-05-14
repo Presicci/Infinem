@@ -7,6 +7,9 @@ import net.runelite.rs.api.RSFrames;
 import net.runelite.rs.api.RSModel;
 import net.runelite.rs.api.RSSequenceDefinition;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @ObfuscatedName("ix")
 public class SequenceDefinition extends DualNode implements RSSequenceDefinition {
    @ObfuscatedName("n")
@@ -83,6 +86,12 @@ public class SequenceDefinition extends DualNode implements RSSequenceDefinition
    public int frameCount;
    @ObfuscatedName("m")
    public int[] frameLengths;
+
+   public int animMayaID;
+   public int animMayaStart;
+   public int animMayaEnd;
+   public Map<Integer, Integer> animMayaFrameSounds;
+   public boolean[] animMayaMasks;
 
    static {
       SequenceDefinition_cached = new EvictingDualNodeHashTable(64);
@@ -287,6 +296,37 @@ public class SequenceDefinition extends DualNode implements RSSequenceDefinition
 
          for(var4 = 0; var4 < var3; ++var4) {
             this.soundEffects[var4] = var1.method5500();
+         }
+      } else if (var2 == 14)
+      {
+         animMayaID = var1.readInt();
+      }
+      else if (var2 == 15)
+      {
+         var3 = var1.readUnsignedShort();
+         animMayaFrameSounds = new HashMap<>();
+
+         for (var4 = 0; var4 < var3; ++var4)
+         {
+            int var5 = var1.readUnsignedShort();
+            int var6 = var1.read24BitInt();
+            animMayaFrameSounds.put(var5, var6);
+         }
+      }
+      else if (var2 == 16)
+      {
+         animMayaStart = var1.readUnsignedShort();
+         animMayaEnd = var1.readUnsignedShort();
+      }
+      else if (var2 == 17)
+      {
+         animMayaMasks = new boolean[256];
+
+         var3 = var1.readUnsignedByte();
+
+         for (var4 = 0; var4 < var3; ++var4)
+         {
+            animMayaMasks[var1.readUnsignedByte()] = true;
          }
       }
 
