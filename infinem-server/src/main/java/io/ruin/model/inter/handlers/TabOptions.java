@@ -33,6 +33,11 @@ public class TabOptions {
             };
 
             /**
+             * Brightness
+             */
+            h.actions[23] = (SlotAction) (p, slot) -> Config.BRIGHTNESS.set(p, slot*5);
+
+            /**
              * Controls
              */
             h.actions[70] = (SimpleAction) Config.ACCEPT_AID::toggle;

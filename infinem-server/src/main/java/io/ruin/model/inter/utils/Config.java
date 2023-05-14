@@ -54,7 +54,7 @@ public class Config {
      * Default options
      */
 
-    public static final Config BRIGHTNESS = varp(166, true).defaultValue(4);
+    public static final Config BRIGHTNESS = varp(166, true).defaultValue(50);
 
     public static final Config MUSIC_VOLUME = varp(168, true);
 
