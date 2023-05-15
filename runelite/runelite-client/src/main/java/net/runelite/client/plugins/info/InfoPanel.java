@@ -132,7 +132,7 @@ public class InfoPanel extends PluginPanel
 		JLabel rlVersion = new JLabel(htmlLabel("RuneLite version: ", runeliteVersion));
 		rlVersion.setFont(smallFont);
 
-		JLabel oprsVersion = new JLabel(htmlLabel("kronos version: ", OpenOSRS.SYSTEM_VERSION));
+		JLabel oprsVersion = new JLabel(htmlLabel("Infinem version: ", OpenOSRS.SYSTEM_VERSION));
 		oprsVersion.setFont(smallFont);
 
 		JLabel revision = new JLabel();
