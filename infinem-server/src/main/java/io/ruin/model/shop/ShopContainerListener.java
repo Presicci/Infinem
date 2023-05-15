@@ -19,12 +19,12 @@ public class ShopContainerListener {
 
 
     public void open(){
-        shopContainer.send(player, 300 << 16 | 16, 2);
+        shopContainer.send(player, -1258, 24);
     }
 
 
     public void update(){
-        shopContainer.sendUpdates(player, 300 << 16 | 16, 2);
+        shopContainer.sendUpdates(player, -1258, 24);
     }
 
 

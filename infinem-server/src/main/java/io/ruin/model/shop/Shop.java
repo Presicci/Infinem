@@ -91,7 +91,7 @@ public class Shop {
             restockRules = RestockRules.generateDefault();
 
         shopItems = new ShopItemContainer();
-        shopItems.init(null, ShopManager.SHOP_MAX_CAPACITY, 300, 16, 2, true);
+        shopItems.init(null, ShopManager.SHOP_MAX_CAPACITY, 300, 16, 24, true);
         if(currency != null)
             currencyHandler = currency.getCurrencyHandler();
     }
@@ -146,7 +146,7 @@ public class Shop {
 
         player.getPacketSender().sendClientScript(1074, "isii",4, title, -1, 0);
         player.getPacketSender().sendClientScript(149, "iiiiiisssss",301 << 16, 93, 4, 7, 0, -1, "Value<col=ff9040>", "Sell 1<col=ff9040>", "Sell 5<col=ff9040>", "Sell 10<col=ff9040>", "Sell 50<col=ff9040>");
-        player.getPacketSender().sendClientScript(149, "iiiiiisssss",300 << 16 | 16, 2, 8, 5, 0, -1, "Value<col=ff9040>", "Buy 1<col=ff9040>", "Buy 5<col=ff9040>", "Buy 10<col=ff9040>", "Buy 50<col=ff9040>");
+        player.getPacketSender().sendClientScript(149, "iiiiiisssss",300 << 16 | 16, 24, 8, 5, 0, -1, "Value<col=ff9040>", "Buy 1<col=ff9040>", "Buy 5<col=ff9040>", "Buy 10<col=ff9040>", "Buy 50<col=ff9040>");
 
         player.getPacketSender().sendAccessMask(300, 16, 0, ShopManager.SHOP_MAX_CAPACITY, 1086);
         player.getPacketSender().sendAccessMask(301, 0, 0, 27, 1086);
