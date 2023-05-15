@@ -76,7 +76,7 @@ public interface LoginScreenConfig extends Config
 	)
 	default LoginScreenOverride loginScreen()
 	{
-		return LoginScreenOverride.CUSTOM;
+		return LoginScreenOverride.OFF;
 	}
 
 	@ConfigItem(
@@ -86,6 +86,6 @@ public interface LoginScreenConfig extends Config
 	)
 	default boolean showLoginFire()
 	{
-		return false;
+		return true;
 	}
 }
