@@ -69,7 +69,7 @@ import static net.runelite.api.widgets.WidgetInfo.TO_GROUP;
 @Slf4j
 public class ChatHistoryPlugin extends Plugin implements KeyListener
 {
-	private static final String WELCOME_MESSAGE = "Welcome to RuneRogue!";
+	private static final String WELCOME_MESSAGE = "Welcome to Infinem!";
 	private static final String CLEAR_HISTORY = "Clear history";
 	private static final String COPY_TO_CLIPBOARD = "Copy to clipboard";
 	private static final int CYCLE_HOTKEY = KeyEvent.VK_TAB;

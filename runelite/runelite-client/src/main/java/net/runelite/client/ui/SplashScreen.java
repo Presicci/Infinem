@@ -63,7 +63,7 @@ public class SplashScreen extends JFrame implements ActionListener
 	{
 		BufferedImage logo = ImageUtil.loadImageResource(SplashScreen.class, "openosrs_transparent.png");
 
-		setTitle("RuneRogue Launcher");
+		setTitle("Infinem Launcher");
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setUndecorated(true);
