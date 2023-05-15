@@ -581,6 +581,10 @@ public class Player extends PlayerAttributes {
         openDialogue(true, dialogues);
     }
 
+    public void dialogue(boolean closeInterfaces, Dialogue... dialogues) {
+        openDialogue(closeInterfaces, dialogues);
+    }
+
     public void unsafeDialogue(Dialogue... dialogues) {
         openDialogue(false, dialogues);
     }
@@ -1132,17 +1136,17 @@ public class Player extends PlayerAttributes {
         appearance.setPlayer(this);
 
         masks = new UpdateMask[]{ //order same way as client reads
-                graphicsUpdate = new GraphicsUpdate(),
-                forceTextUpdate = new ForceTextUpdate(),
-                appearance,
-                chatUpdate = new ChatUpdate(),
-                movementModeUpdate = new MovementModeUpdate(),
-                animationUpdate = new AnimationUpdate(),
                 teleportModeUpdate = new TeleportModeUpdate(),
                 forceMovementUpdate = new ForceMovementUpdate(),
-                hitsUpdate = new HitsUpdate(),
+                movementModeUpdate = new MovementModeUpdate(),
+                animationUpdate = new AnimationUpdate(),
+                forceTextUpdate = new ForceTextUpdate(),
                 entityDirectionUpdate = new EntityDirectionUpdate(),
+                chatUpdate = new ChatUpdate(),
+                graphicsUpdate = new GraphicsUpdate(),
+                appearance,
                 mapDirectionUpdate = new MapDirectionUpdate(),
+                hitsUpdate = new HitsUpdate(),
         };
 
         if(inventory == null)
