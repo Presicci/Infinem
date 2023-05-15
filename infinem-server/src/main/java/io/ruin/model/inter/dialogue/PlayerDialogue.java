@@ -46,22 +46,22 @@ public class PlayerDialogue extends Dialogue {
     public void open(Player player) {
         message = message.replace("[player name]", player.getName());
         player.openInterface(InterfaceType.CHATBOX, Interface.PLAYER_DIALOGUE);
-        player.getPacketSender().sendPlayerHead(Interface.PLAYER_DIALOGUE, 1);
-        player.getPacketSender().animateInterface(Interface.PLAYER_DIALOGUE, 1, animationId);
-        player.getPacketSender().sendString(Interface.PLAYER_DIALOGUE, 2, player.getName());
-        player.getPacketSender().sendString(Interface.PLAYER_DIALOGUE, 4, message);
-        player.getPacketSender().setTextStyle(Interface.PLAYER_DIALOGUE, 4, 1, 1, lineHeight);
-        player.getPacketSender().sendAccessMask(Interface.PLAYER_DIALOGUE, 3, -1, -1, 1);
+        player.getPacketSender().sendPlayerHead(Interface.PLAYER_DIALOGUE, 6);
+        player.getPacketSender().animateInterface(Interface.PLAYER_DIALOGUE, 6, animationId);
+        player.getPacketSender().sendString(Interface.PLAYER_DIALOGUE, 3, player.getName());
+        player.getPacketSender().sendString(Interface.PLAYER_DIALOGUE, 5, message);
+        player.getPacketSender().setTextStyle(Interface.PLAYER_DIALOGUE, 5, 1, 1, lineHeight);
+        player.getPacketSender().sendAccessMask(Interface.PLAYER_DIALOGUE, 4, -1, -1, 1);
         if(hideContinue)
-            player.getPacketSender().setHidden(Interface.PLAYER_DIALOGUE, 3, true);
+            player.getPacketSender().setHidden(Interface.PLAYER_DIALOGUE, 4, true);
         else
-            player.getPacketSender().sendString(Interface.PLAYER_DIALOGUE, 3, "Click here to continue");
+            player.getPacketSender().sendString(Interface.PLAYER_DIALOGUE, 4, "Click here to continue");
         if(action != null)
             action.run();
     }
 
     static {
-        InterfaceHandler.register(Interface.PLAYER_DIALOGUE, h -> h.actions[3] = (SimpleAction) Player::continueDialogue);
+        InterfaceHandler.register(Interface.PLAYER_DIALOGUE, h -> h.actions[4] = (SimpleAction) Player::continueDialogue);
     }
 
 }
