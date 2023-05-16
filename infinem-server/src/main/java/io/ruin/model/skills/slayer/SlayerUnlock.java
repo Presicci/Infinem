@@ -124,9 +124,7 @@ public enum SlayerUnlock {
      * @param slot   The slot of the unlock.
      */
     private static void handleUnlock(Player player, int slot) {
-        if (slot == 35) {
-            player.sendMessage("Superior slayer monsters are not yet available.");
-        } else if (slot == 60) {
+        if (slot == 60) {
             extendAll(player);
         } else if (slot == 52) {
             cancelTask(player);
