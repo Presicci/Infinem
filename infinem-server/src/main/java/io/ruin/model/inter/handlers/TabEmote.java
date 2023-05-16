@@ -54,14 +54,16 @@ public enum TabEmote {
     PUSH_UP(37, 2762),
     STAR_JUMP(38, 2761),
     JOG(39, 2764),
-    ZOMBIE_HAND(40, 1708, 320),
-    HYPER_MOBILE_DRINKER(41, 7131),
-    SKILL_CAPE(42, -1, -1),
-    AIR_GUITAR(43, 4751, 1239),
-    URI_TRANSFORM(44, -1, -1),
-    SMOOTH_DANCE(45, 7533, -1),
-    CRAZY_DANCE(46, -1, -1),
-    PREMIER_SHIELD(47, 7751, 1412);
+    FLEX(40, 915),
+    ZOMBIE_HAND(41, 1708, 320),
+    HYPER_MOBILE_DRINKER(42, 7131),
+    SKILL_CAPE(43, -1, -1),
+    AIR_GUITAR(44, 4751, 1239),
+    URI_TRANSFORM(45, -1, -1),
+    SMOOTH_DANCE(46, 7533, -1),
+    CRAZY_DANCE(47, -1, -1),
+    PREMIER_SHIELD(48, 7751, 1412);
+    // 49 explore, 50 relic unlock
 
     public int slot, animationID, gfxId;
 
