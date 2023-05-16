@@ -24,7 +24,7 @@ public enum SlayerHelmVariant {
     PURPLE(21264, 21266, 21275, Config.DARK_MANTLE),
     TURQUOISE(21888, 21890, 2425, Config.UNDEAD_HEAD),
     HYDRA(23073, 23075, 23077, Config.USE_MORE_HEAD),
-    TWISTED(24370, 24444, 24466, null),   // Twisted Vision
+    TWISTED(24370, 24444, 24466, Config.TWISTED_VISION),
     TZTOK(25898, 25900, -1, null),
     VAMPYRIC(25904, 25906, -1, null),
     TZKAL(25910, 25912, -1, null);
