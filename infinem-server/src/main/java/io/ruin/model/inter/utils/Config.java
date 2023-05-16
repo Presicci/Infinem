@@ -461,10 +461,10 @@ public class Config {
     public static final Config USE_MORE_HEAD = varpbit(6570, true);
     public static final Config STOP_THE_WYVERN = varpbit(240, true);
     public static final Config DOUBLE_TROUBLE = varpbit(6485, true);
-    public static final Config ADA_MIND_SOME_MORE = varpbit(1, true);
-    public static final Config RUUUUUNE = varpbit(1, true);
-    public static final Config BASILOCKED = varpbit(1, true);
-    public static final Config BASILONGER = varpbit(1, true);
+    public static final Config ADA_MIND_SOME_MORE = varpbit(6094, true);
+    public static final Config RUUUUUNE = varpbit(6095, true);
+    public static final Config BASILOCKED = varpbit(9456, true);
+    public static final Config BASILONGER = varpbit(9455, true);
     public static final Config MORE_AT_STAKE = varpbit(10389, true);
     public static final Config TWISTED_VISION = varpbit(10104, true);
     public static final Config ACTUAL_VAMPYRE_SLAYER = varpbit(10388, true);
