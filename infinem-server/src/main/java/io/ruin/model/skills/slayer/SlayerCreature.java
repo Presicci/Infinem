@@ -4,6 +4,8 @@ import io.ruin.cache.EnumMap;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.skills.slayer.master.Mazchna;
+import io.ruin.model.skills.slayer.master.Vannaka;
 import io.ruin.model.stat.StatType;
 
 import java.util.HashMap;
@@ -48,7 +50,7 @@ public enum SlayerCreature {
     HELLHOUNDS(31, 1, 75, "hellhounds"),
     SHADOW_WARRIORS(32, 1, 60, "shadow warriors"),
     WEREWOLVES(33, 1, 60, "werewolves"),
-    VAMPYRES(34, 1, 35, "vampyres"), // TODO if get new interface add
+    VAMPYRES(34, 1, 35, "vampyres", (p, s) -> s.getNpcId() == Mazchna.MAZCHNA || s.getNpcId() == Vannaka.VANNAKA || Config.ACTUAL_VAMPYRE_SLAYER.get(p) != 0),
     DAGANNOTH(35, 1, 75, "dagannoth"),
     TUROTH(36, 55, 60, "turoth"),
     CAVE_CRAWLER(37, 10, 10, "cave crawlers"),
