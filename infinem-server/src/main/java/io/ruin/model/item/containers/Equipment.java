@@ -257,7 +257,7 @@ public class Equipment extends ItemContainer {
          * Update equipment stats interface
          */
         if(player.isVisibleInterface(Interface.EQUIPMENT_STATS))
-            EquipmentStats.update(player);
+            EquipmentStats.update(player, Interface.EQUIPMENT_STATS, 24);
         return true;
     }
 

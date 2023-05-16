@@ -28,34 +28,75 @@ public class EquipmentStats {
     }
 
     public static void open(Player player) {
-        player.getMovement().reset();
         player.getPacketSender().sendClientScript(917, "ii", -1, -1);
         player.openInterface(InterfaceType.MAIN, Interface.EQUIPMENT_STATS);
         player.openInterface(InterfaceType.INVENTORY, Interface.EQUIPMENT_STATS_INVENTORY);
         player.getPacketSender().sendClientScript(149, "IviiiIsssss", 5570560, 93, 4, 7, 1, -1, "Equip", "", "", "", "");
         player.getPacketSender().sendAccessMask(Interface.EQUIPMENT_STATS_INVENTORY, 0, 0, 27, 1180674);
-        update(player);
+        update(player, Interface.EQUIPMENT_STATS, 24);
     }
 
-    public static void update(Player player) {
-        int i = 0;
+    /**
+     * @author Jire
+     */
+    public enum Stat {
+        STAB_ATTACK("Stab"),
+        SLASH_ATTACK("Slash"),
+        CRUSH_ATTACK("Crush"),
+        MAGIC_ATTACK("Magic"),
+        RANGE_ATTACK("Range", false, true),
+
+        STAB_DEFEND("Stab"),
+        SLASH_DEFEND("Slash"),
+        CRUSH_DEFEND("Crush"),
+        MAGIC_DEFEND("Magic"),
+        RANGE_DEFEND("Range", false, true),
+
+        MELEE_STRENGTH("Melee strength"),
+        RANGED_STRENGTH("Ranged strength"),
+        MAGIC_DAMAGE("Magic damage", true),
+        PRAYER("Prayer", false, true),
+
+        UNDEAD("Undead", true),
+        SLAYER("Slayer", true);
+
+        public final String stringName;
+        public final boolean percent;
+        public final boolean skipChild;
+
+        public final String string;
+
+        Stat(String stringName, boolean percent, boolean skipChild) {
+            this.stringName = stringName;
+            this.percent = percent;
+            this.skipChild = skipChild;
+
+            string = stringName + ": ";
+        }
+
+        Stat(String stringName, boolean percent) {
+            this(stringName, percent, false);
+        }
+
+        Stat(String stringName) {
+            this(stringName, false);
+        }
+
+        public void sendString(Player player, int bonus, int interfaceID, int childID) {
+            player.getPacketSender().sendString(interfaceID, childID, string + asBonus(bonus, percent));
+        }
+    }
+
+    public static void update(Player player, int interfaceID, int startChildID) {
         int[] bonuses = player.getEquipment().bonuses;
-        player.getPacketSender().sendString(84, 23, "Stab: " + asBonus(bonuses[i++], false));
-        player.getPacketSender().sendString(84, 24, "Slash: " + asBonus(bonuses[i++], false));
-        player.getPacketSender().sendString(84, 25, "Crush: " + asBonus(bonuses[i++], false));
-        player.getPacketSender().sendString(84, 26, "Magic: " + asBonus(bonuses[i++], false));
-        player.getPacketSender().sendString(84, 27, "Range: " + asBonus(bonuses[i++], false));
-        player.getPacketSender().sendString(84, 29, "Stab: " + asBonus(bonuses[i++], false));
-        player.getPacketSender().sendString(84, 30, "Slash: " + asBonus(bonuses[i++], false));
-        player.getPacketSender().sendString(84, 31, "Crush: " + asBonus(bonuses[i++], false));
-        player.getPacketSender().sendString(84, 32, "Magic: " + asBonus(bonuses[i++], false));
-        player.getPacketSender().sendString(84, 33, "Range: " + asBonus(bonuses[i++], false));
-        player.getPacketSender().sendString(84, 35, "Melee strength: " + asBonus(bonuses[i++], false));
-        player.getPacketSender().sendString(84, 36, "Ranged strength: " + asBonus(bonuses[i++], false));
-        player.getPacketSender().sendString(84, 37, "Magic damage: " + asBonus(bonuses[i++], true));
-        player.getPacketSender().sendString(84, 38, "Prayer: " + asBonus(bonuses[i++], false));
-        player.getPacketSender().sendString(84, 40, "Undead: " + asBonus(bonuses[i++], true));
-        player.getPacketSender().sendString(84, 41, "Slayer: " + asBonus(bonuses[i], true));
+        Stat[] stats = Stat.values();
+        int childID = startChildID;
+        for (int i = 0; i < bonuses.length; i++) {
+            int bonus = bonuses[i];
+            Stat stat = stats[i];
+            stat.sendString(player, bonus, interfaceID, childID);
+            childID += stat.skipChild ? 2 : 1;
+        }
         player.getPacketSender().sendWeight((int) (player.getInventory().weight + player.getEquipment().weight));
     }
 
@@ -72,17 +113,17 @@ public class EquipmentStats {
 
     static {
         InterfaceHandler.register(Interface.EQUIPMENT_STATS, h -> {
-            h.actions[11] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_HAT);
-            h.actions[12] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_CAPE);
-            h.actions[13] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_AMULET);
-            h.actions[14] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_WEAPON);
-            h.actions[15] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_CHEST);
-            h.actions[16] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_SHIELD);
-            h.actions[17] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_LEGS);
-            h.actions[18] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_HANDS);
-            h.actions[19] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_FEET);
-            h.actions[20] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_RING);
-            h.actions[21] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_AMMO);
+            h.actions[10] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_HAT);
+            h.actions[11] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_CAPE);
+            h.actions[12] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_AMULET);
+            h.actions[13] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_WEAPON);
+            h.actions[14] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_CHEST);
+            h.actions[15] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_SHIELD);
+            h.actions[16] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_LEGS);
+            h.actions[17] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_HANDS);
+            h.actions[18] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_FEET);
+            h.actions[19] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_RING);
+            h.actions[20] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_AMMO);
         });
         InterfaceHandler.register(Interface.EQUIPMENT_STATS_INVENTORY, h -> {
             h.actions[0] = (DefaultAction) (player, option, slot, itemId) -> {
