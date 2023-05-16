@@ -83,10 +83,8 @@ object Settings {
                                     val config = Config.COLLECTION_LOG_SETTINGS[p];
                                     if (config and 1 == 1) {
                                         Config.COLLECTION_LOG_SETTINGS[p] = config and 1.inv();
-                                        print(Config.COLLECTION_LOG_SETTINGS[p])
                                     } else {
                                         Config.COLLECTION_LOG_SETTINGS[p] = config or 1;
-                                        print(Config.COLLECTION_LOG_SETTINGS[p])
                                     }
                                 }
                                 19 -> {
@@ -149,10 +147,8 @@ object Settings {
                                     val config = Config.COLLECTION_LOG_SETTINGS[p];
                                     if (config and 2 == 2) {
                                         Config.COLLECTION_LOG_SETTINGS[p] = config and 2.inv();
-                                        print(Config.COLLECTION_LOG_SETTINGS[p])
                                     } else {
                                         Config.COLLECTION_LOG_SETTINGS[p] = config or 2;
-                                        print(Config.COLLECTION_LOG_SETTINGS[p])
                                     }
                                 }
                                 16 -> Config.REMAINING_XP_TOOLTIP.toggle(p)
