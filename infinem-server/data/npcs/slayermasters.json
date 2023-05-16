@@ -276,6 +276,15 @@
 		},
 		// Wolves
 		{
+			"weighing": 6,
+			"min": 10,
+			"max": 20,
+			"minExtended": 200,
+			"maxExtended": 250,
+			"creatureUid": 34
+		},
+		// Vampyres
+		{
 			"weighing": 7,
 			"min": 40,
 			"max": 70,
@@ -544,8 +553,17 @@
 			"min": 60,
 			"max": 120,
 			"creatureUid": 36
-		}
+		},
 		// Turoth
+		{
+			"weighing": 7,
+			"min": 10,
+			"max": 20,
+			"minExtended": 200,
+			"maxExtended": 250,
+			"creatureUid": 34
+		},
+		// Vampyres
 	]
   },
   {
@@ -826,6 +844,15 @@
 			"creatureUid": 96
 		},
 		// Tzhaar
+		{
+			"weighing": 6,
+			"min": 80,
+			"max": 120,
+			"minExtended": 200,
+			"maxExtended": 250,
+			"creatureUid": 34
+		},
+		// Vampyres
 		{
 			"weighing": 6,
 			"min": 60,
@@ -1449,6 +1476,15 @@
 		},
 		// Tzhaar
 		{
+			"weighing": 6,
+			"min": 110,
+			"max": 170,
+			"minExtended": 200,
+			"maxExtended": 250,
+			"creatureUid": 34
+		},
+		// Vampyres
+		{
 			"weighing": 7,
 			"min": 80,
 			"max": 145,
@@ -1752,6 +1788,15 @@
 			"creatureUid": 96
 		},
 		// Tzhaar
+		{
+			"weighing": 8,
+			"min": 100,
+			"max": 210,
+			"minExtended": 200,
+			"maxExtended": 250,
+			"creatureUid": 34
+		},
+		// Vampyres
 		{
 			"weighing": 8,
 			"min": 100,
@@ -2061,6 +2106,15 @@
 				"creatureUid": 36
 			},
 			// Turoth
+			{
+				"weighing": 4,
+				"min": 100,
+				"max": 160,
+				"minExtended": 200,
+				"maxExtended": 250,
+				"creatureUid": 34
+			},
+			// Vampyres
 			{
 				"weighing": 10,
 				"min": 125,
