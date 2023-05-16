@@ -1,14 +1,5 @@
 [
   {
-    "name": "<col=00ffff>Combat dummy</col>",
-    "id": 15025,
-    "x": 3228,
-    "y": 3212,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0
-  },
-  {
     "name": "Infinem Expert",
     "id": 306,
     "x": 3238,
@@ -46,7 +37,7 @@
   },
   {
     "name": "Al-Kharid warrior",
-    "id": 3103,
+    "id": 3292,
     "x": 3300,
     "y": 3209,
     "z": 0,
@@ -55,7 +46,7 @@
   },
   {
     "name": "Al-Kharid warrior",
-    "id": 3103,
+    "id": 3292,
     "x": 3291,
     "y": 3216,
     "z": 0,
@@ -70,15 +61,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
-  },
-  {
-    "name": "Stuart",
-    "id": 15009,
-    "x": 3223,
-    "y": 3219,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 16
   },
 
   {
