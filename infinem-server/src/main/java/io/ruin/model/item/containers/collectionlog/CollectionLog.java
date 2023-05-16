@@ -93,7 +93,7 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
         collected.put(item.getId(), amount + item.getAmount());
         if (amount == 0 && (Config.COLLECTION_LOG_SETTINGS.get(player) & 2) == 2) {
                 player.openInterface(InterfaceType.SECONDARY_OVERLAY, 660);
-                player.getPacketSender().sendClientScript(3343, "iss", 0xff981f, "Collection log", "New item:" + Color.WHITE.wrap(item.getDef().name));
+                player.getPacketSender().sendClientScript(3343, "iss", 0xff981f, "Collection log", "New item:<br><br>" + Color.WHITE.wrap(item.getDef().name));
         }
         return true;
     }
