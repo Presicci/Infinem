@@ -10,7 +10,7 @@ import io.ruin.network.central.CentralSender;
 public class TabClanChat {
 
     static {
-        InterfaceHandler.register(Interface.CLAN_CHAT, h -> h.actions[24] = (SimpleAction) p -> p.openInterface(InterfaceType.MAIN, Interface.CLAN_CHAT_SETTINGS));
+        InterfaceHandler.register(Interface.CLAN_CHAT, h -> h.actions[20] = (SimpleAction) p -> p.openInterface(InterfaceType.MAIN, Interface.CLAN_CHAT_SETTINGS));
         InterfaceHandler.register(Interface.CLAN_CHAT_SETTINGS, h -> {
             h.actions[10] = (OptionAction) (player, option) -> {
                 if(option == 1) {
