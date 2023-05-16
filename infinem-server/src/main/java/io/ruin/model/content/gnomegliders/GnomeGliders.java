@@ -24,15 +24,15 @@ public class GnomeGliders {
         player.closeInterface(InterfaceType.MAIN);
     }
 
-    private static final int npcs[] = {
-            7517, 6092, 6091, 6090, 6089, 7178
+    private static final int[] npcs = {
+            10467, 10479, 10459, 10452, 10467, 7517, 7178
     };
 
     static {
         for (int index : npcs) {
             NPCAction.register(index, "glider", ((player, npc) -> {
                 Config.varp(416, false).set(player, 200);       // Unlocks feldip
-                //Config.varp(1339, true).set(player, 195);      // Unlocks ape atoll
+                Config.varp(1339, true).set(player, 195);      // Unlocks ape atoll
                 player.openInterface(InterfaceType.MAIN, Interface.GLIDER);
             }));
         }
