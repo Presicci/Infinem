@@ -126,14 +126,14 @@ public enum SlayerUnlock {
     private static void handleUnlock(Player player, int slot) {
         if (slot == 35) {
             player.sendMessage("Superior slayer monsters are not yet available.");
-        } else if (slot == 56) {
+        } else if (slot == 60) {
             extendAll(player);
-        } else if (slot == 48) {
+        } else if (slot == 52) {
             cancelTask(player);
-        } else if (slot == 49) {
+        } else if (slot == 53) {
             blockTask(player);
-        } else if (slot >= 50 && slot <= 55) {
-            unblockTask(player, slot - 50);
+        } else if (slot >= 54 && slot <= 60) {
+            unblockTask(player, slot - 54);
         }
         SlayerUnlock unlock = UNLOCKS.get(slot);
         if (unlock != null) {
@@ -241,7 +241,7 @@ public enum SlayerUnlock {
         //Slayer.sendRewardInfo(player);
         player.getPacketSender().sendClientScript(917, "ii", -1, -1);
         player.openInterface(InterfaceType.MAIN, 426);
-        player.getPacketSender().sendAccessMask(426, 8, 0, 56, 2);
+        player.getPacketSender().sendAccessMask(426, 8, 0, 60, 2);
         player.getPacketSender().sendAccessMask(426, 23, 0, 5, 1052);
     }
 
