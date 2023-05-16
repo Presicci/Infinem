@@ -21,7 +21,7 @@ public class TabMagic {
                 for(int i = 0; i < book.spells.length; i++)
                     h.actions[book.spellIdOffset + i] = createAction(book, book.spells[i]);
             }
-            h.actions[184] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[194] = (DefaultAction) (player, option, slot, itemId) -> {
                 if(slot == 0)
                     Config.SHOW_COMBAT_SPELLS.toggle(player);
                 if(slot == 1)
