@@ -86,9 +86,10 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
         if (!item.getDef().collectable) {
             return false;
         }
-
+        if (item.getAmount() <= 0) {
+            return false;
+        }
         int amount = collected.getOrDefault(item.getId(),0);
-
         collected.put(item.getId(), amount + item.getAmount());
         /*player.openInterface(InterfaceType.SECONDARY_OVERLAY, 660);
         player.getPacketSender().sendClientScript(3343, "iss", 0xff981f, "Collection log", "New item:" + Color.WHITE.wrap(item.getDef().name));
@@ -102,6 +103,11 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
         collected.clear();
         CollectionLogInfo.TOTAL_COLLECTABLES = 0;
         //Config.COLLECTION_COUNT.set(player, 0);
+    }
+
+    public static void handleClose(Player player) {
+        player.closeInterface(InterfaceType.MAIN);
+        player.getPacketSender().sendClientScript(101, "i", 11);
     }
 
     private void selectEntry(Player player, int slot, CollectionLogInfo info) {
@@ -160,21 +166,21 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
                 player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.RAIDS);
             };
 
-            h.actions[30] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[31] = (DefaultAction) (player, option, slot, itemId) -> {
                 player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.CLUES);
             };
 
-            h.actions[25] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[26] = (DefaultAction) (player, option, slot, itemId) -> {
                 player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.MINIGAMES);
             };
 
-            h.actions[32] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[33] = (DefaultAction) (player, option, slot, itemId) -> {
                 player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.OTHER);
             };
 
             //h.actions[20] = (SimpleAction) p -> handleCombatAchievementsButton(p);
 
-            //h.actions[79] = (SimpleAction) p -> CollectionLog.handleClose(p);
+            h.actions[79] = (SimpleAction) CollectionLog::handleClose;
 
             h.closedAction = (p, i) -> {
                 p.getPacketSender().sendClientScript(101, "i", 11);

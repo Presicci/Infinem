@@ -181,7 +181,7 @@ public enum CollectionLogInfo {
             }
         }
     },
-    RAIDS(472, 2, new int[]{14, 15, 16}, 40697870, 40697871, 40697872, 40697877) {
+    RAIDS(472, 2, new int[]{14, 15, 16}, 40697870, 40697871, 40697872, 40697878) {
         @Override
         public int getKillCount(Player player, int slot) {
             switch (slot) {
@@ -194,7 +194,7 @@ public enum CollectionLogInfo {
             }
         }
     },
-    CLUES(473, 9, new int[]{22, 30, 31}, 40697878, 40697886, 40697887, 40697879) {
+    CLUES(473, 9, new int[]{22, 30, 31}, 40697879, 40697887, 40697888, 40697880) {
         @Override
         public int getKillCount(Player player, int slot) {
             switch (slot) {
@@ -219,13 +219,13 @@ public enum CollectionLogInfo {
             }
         }
     },
-    MINIGAMES(474, 17, new int[]{25, 26, 35}, 40697880, 40697881, 40697890, 40697882) {
+    MINIGAMES(474, 17, new int[]{25, 26, 35}, 40697881, 40697882, 40697891, 40697883) {
         @Override
         public int getKillCount(Player player, int slot) {
             return 0;
         }
     },
-    OTHER(475, 21, new int[]{27, 32, 33}, 40697883, 40697888, 40697889, 40697884) {
+    OTHER(475, 21, new int[]{27, 32, 33}, 40697884, 40697889, 40697890, 40697885) {
         @Override
         public int getKillCount(Player player, int slot) {
             switch (slot) {
