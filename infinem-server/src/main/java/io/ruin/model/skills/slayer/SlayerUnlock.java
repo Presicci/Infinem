@@ -41,6 +41,9 @@ public enum SlayerUnlock {
     STOP_THE_WYVERN(Config.STOP_THE_WYVERN, 500, 43),
     DOUBLE_TROUBLE(Config.DOUBLE_TROUBLE, 500, 44),
     BASILOCKED(Config.BASILOCKED, 80, 47),
+    TWISTED_VISION(Config.TWISTED_VISION, 1000, 48),
+    ACTUAL_VAMPYRE_SLAYER(Config.ACTUAL_VAMPYRE_SLAYER, 80, 50),
+    TASK_STORAGE(Config.TASK_STORAGE, 1000, 51),
 
     NEED_MORE_DARKNESS(Config.NEED_MORE_DARKNESS, 100, 4, true),
     ANKOU_VERY_MUCH(Config.ANKOU_VERY_MUCH, 100, 8, true),
@@ -65,7 +68,9 @@ public enum SlayerUnlock {
     KRACK_ON(Config.KRACK_ON, 100, 29, true),
     GET_SCABARIGHT_ON_IT(Config.GET_SCABARIGHT_ON_IT, 50, 36, true),
     WYVERNOTHER_TWO(Config.WYVER_NOTHER_TWO, 100, 39, true),
-    BASILONGER(Config.BASILONGER, 100, 46, true);
+    BASILONGER(Config.BASILONGER, 100, 46, true),
+    MORE_AT_STAKE(Config.MORE_AT_STAKE, 100, 49, true),
+    ;
 
     final Config config;
     final int price;
@@ -314,7 +319,8 @@ public enum SlayerUnlock {
             new Tuple<>(42, Config.AUGMENT_MY_ABBIES), new Tuple<>(30, Config.ITS_DARK_IN_HERE), new Tuple<>(29, Config.GREATER_CHALLENGE),
             new Tuple<>(48, Config.BLEED_ME_DRY), new Tuple<>(41, Config.SMELL_YA_LATER), new Tuple<>(94, Config.BIRDS_OF_A_FEATHER),
             new Tuple<>(93, Config.I_REALLY_MITH_YOU), new Tuple<>(80, Config.HORRORIFIC), new Tuple<>(72, Config.WYVER_NOTHER_ONE),
-            new Tuple<>(46, Config.GET_SMASHED), new Tuple<>(52, Config.NECHS_PLEASE), new Tuple<>(92, Config.KRACK_ON)
+            new Tuple<>(46, Config.GET_SMASHED), new Tuple<>(52, Config.NECHS_PLEASE), new Tuple<>(92, Config.KRACK_ON),
+            new Tuple<>(34, Config.MORE_AT_STAKE)
     );
 
     private enum ShopItem {

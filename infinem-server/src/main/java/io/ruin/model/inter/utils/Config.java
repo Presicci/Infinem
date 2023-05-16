@@ -465,6 +465,10 @@ public class Config {
     public static final Config RUUUUUNE = varpbit(1, true);
     public static final Config BASILOCKED = varpbit(1, true);
     public static final Config BASILONGER = varpbit(1, true);
+    public static final Config MORE_AT_STAKE = varpbit(10389, true);
+    public static final Config TWISTED_VISION = varpbit(10104, true);
+    public static final Config ACTUAL_VAMPYRE_SLAYER = varpbit(10388, true);
+    public static final Config TASK_STORAGE = varpbit(12442, true);
 
     public static final Config SLAYER_TASK_AMOUNT = varp(261, true);
     public static final Config SLAYER_TASK_1 = varp(262, true);
