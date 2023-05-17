@@ -45,11 +45,11 @@ public class Bank extends ItemContainerG<BankItem> {
         player.setInterfaceUnderlay(-1, -2);
         player.openInterface(InterfaceType.MAIN, Interface.BANK);
         player.openInterface(InterfaceType.INVENTORY, Interface.BANK_INVENTORY);
-        player.getPacketSender().sendAccessMask(Interface.BANK, 13, 0, 815, 1312766);
-        player.getPacketSender().sendAccessMask(Interface.BANK, 13, 825, 833, 2);
-        player.getPacketSender().sendAccessMask(Interface.BANK, 13, 834, 843, 1048576);
-        player.getPacketSender().sendAccessMask(Interface.BANK, 11, 10, 10, 1048706);
-        player.getPacketSender().sendAccessMask(Interface.BANK, 11, 11, 19, 1179842);
+        player.getPacketSender().sendAccessMask(Interface.BANK, 12, 0, 815, 1312766);
+        player.getPacketSender().sendAccessMask(Interface.BANK, 12, 825, 833, 2);
+        player.getPacketSender().sendAccessMask(Interface.BANK, 12, 834, 843, 1048576);
+        player.getPacketSender().sendAccessMask(Interface.BANK, 10, 10, 10, 1048706);
+        player.getPacketSender().sendAccessMask(Interface.BANK, 10, 11, 19, 1179842);
         player.getPacketSender().sendAccessMask(Interface.BANK_INVENTORY, 3, 0, 27, 1181694);
         player.getPacketSender().sendAccessMask(Interface.BANK_INVENTORY, 10, 0, 27, 1054);
         player.getPacketSender().sendAccessMask(Interface.BANK, 46, 1, 816, 2);
@@ -576,18 +576,18 @@ public class Bank extends ItemContainerG<BankItem> {
          * Main
          */
         InterfaceHandler.register(Interface.BANK, h -> {
-            h.actions[11] = new InterfaceAction() {
+            h.actions[10] = new InterfaceAction() {
                 @Override
                 public void handleClick(Player player, int option, int slot, int itemId) {
                     player.getBank().selectTab(option, slot);
                 }
                 @Override
                 public void handleDrag(Player player, int fromSlot, int fromItemId, int toInterfaceId, int toChildId, int toSlot, int toItemId) {
-                    if(toChildId == 11)
+                    if(toChildId == 10)
                         player.getBank().swapTabs(fromSlot, toSlot);
                 }
             };
-            h.actions[13] = new InterfaceAction() {
+            h.actions[12] = new InterfaceAction() {
                 @Override
                 public void handleClick(Player player, int option, int slot, int itemId) {
                     BankItem item = player.getBank().get(slot, itemId);
@@ -662,11 +662,11 @@ public class Bank extends ItemContainerG<BankItem> {
                 }
                 @Override
                 public void handleDrag(Player player, int fromSlot, int fromItemId, int toInterfaceId, int toChildId, int toSlot, int toItemId) {
-                    if(toChildId == 11) {
-                        player.getBank().changeTab(fromSlot, fromItemId, toSlot);
+                    if(toChildId == 10) {
+                        player.getBank().changeTab(fromSlot, toItemId, toSlot);
                         return;
                     }
-                    if(toChildId == 13) {
+                    if(toChildId == 12) {
                         if(toSlot >= 818)
                             player.getBank().changeTab(fromSlot, fromItemId, toSlot - 808);
                         else
@@ -675,14 +675,14 @@ public class Bank extends ItemContainerG<BankItem> {
                     }
                 }
             };
-            h.actions[17] = (SimpleAction) p -> Config.BANK_INSERT_MODE.set(p, 0);
-            h.actions[19] = (SimpleAction) p -> Config.BANK_INSERT_MODE.set(p, 1);
-            h.actions[22] = (SimpleAction) p -> p.getBank().asNote = false;
-            h.actions[24] = (SimpleAction) p -> p.getBank().asNote = true;
-            h.actions[28] = (SimpleAction) p -> Config.BANK_DEFAULT_QUANTITY.set(p, 0);
-            h.actions[30] = (SimpleAction) p -> Config.BANK_DEFAULT_QUANTITY.set(p, 1);
-            h.actions[32] = (SimpleAction) p -> Config.BANK_DEFAULT_QUANTITY.set(p, 2);
-            h.actions[34] = (OptionAction) (p, option) -> {
+            h.actions[16] = (SimpleAction) p -> Config.BANK_INSERT_MODE.set(p, 0);
+            h.actions[18] = (SimpleAction) p -> Config.BANK_INSERT_MODE.set(p, 1);
+            h.actions[21] = (SimpleAction) p -> p.getBank().asNote = false;
+            h.actions[23] = (SimpleAction) p -> p.getBank().asNote = true;
+            h.actions[27] = (SimpleAction) p -> Config.BANK_DEFAULT_QUANTITY.set(p, 0);
+            h.actions[29] = (SimpleAction) p -> Config.BANK_DEFAULT_QUANTITY.set(p, 1);
+            h.actions[31] = (SimpleAction) p -> Config.BANK_DEFAULT_QUANTITY.set(p, 2);
+            h.actions[33] = (OptionAction) (p, option) -> {
                 switch (option) {
                     case 1:
                         Config.BANK_DEFAULT_QUANTITY.set(p, 3);
@@ -695,15 +695,15 @@ public class Bank extends ItemContainerG<BankItem> {
                         break;
                 }
             };
-            h.actions[36] = (SimpleAction) p -> Config.BANK_DEFAULT_QUANTITY.set(p, 4);
-            h.actions[38] = (SimpleAction) Config.BANK_ALWAYS_PLACEHOLDERS::toggle;
-            h.actions[42] = (SimpleAction) p -> p.getBank().deposit(p.getInventory(), true);
-            h.actions[46] = (DefaultAction) (p, option, slot, itemId) -> p.getBank().incinerate(slot, itemId);
-            h.actions[44] = (SimpleAction) p -> p.getBank().deposit(p.getEquipment(), true);
-            h.actions[51] = (SimpleAction) Config.BANK_INCINERATOR::toggle;
-            h.actions[52] = (SimpleAction) Config.BANK_DEPOSIT_EQUIPMENT::toggle;
-            h.actions[53] = (SimpleAction) p -> p.getBank().releasePlaceholders();
-            h.actions[66] = (SimpleAction) p -> p.getBank().fillBank(); //todo@@ add support for amt
+            h.actions[35] = (SimpleAction) p -> Config.BANK_DEFAULT_QUANTITY.set(p, 4);
+            h.actions[37] = (SimpleAction) Config.BANK_ALWAYS_PLACEHOLDERS::toggle;
+            h.actions[41] = (SimpleAction) p -> p.getBank().deposit(p.getInventory(), true);
+            h.actions[45] = (DefaultAction) (p, option, slot, itemId) -> p.getBank().incinerate(slot, itemId);
+            h.actions[43] = (SimpleAction) p -> p.getBank().deposit(p.getEquipment(), true);
+            h.actions[52] = (SimpleAction) Config.BANK_INCINERATOR::toggle;
+            h.actions[53] = (SimpleAction) Config.BANK_DEPOSIT_EQUIPMENT::toggle;
+            h.actions[55] = (SimpleAction) p -> p.getBank().releasePlaceholders();
+            h.actions[67] = (SimpleAction) p -> p.getBank().fillBank(); //todo@@ add support for amt
 
             h.closedAction = (p, i) -> {
                 p.getBank().removeBlankItems();
@@ -797,7 +797,7 @@ public class Bank extends ItemContainerG<BankItem> {
             /**
              * Looting bag
              */
-            h.actions[5] = (SimpleAction) p -> {
+            h.actions[8] = (SimpleAction) p -> {
                 boolean messaged = false;
                 for (Item item : p.getLootingBag().getItems()) {
                     if (item != null) {
@@ -805,7 +805,7 @@ public class Bank extends ItemContainerG<BankItem> {
                     }
                 }
             };
-            h.actions[10] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[13] = (DefaultAction) (player, option, slot, itemId) -> {
                 Item item = player.getLootingBag().get(slot, itemId);
                 if(item == null)
                     return;

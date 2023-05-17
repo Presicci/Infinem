@@ -131,6 +131,8 @@ public class WidgetID
     public static final int TRADING_SCREEN = 335;
     public static final int SEED_VAULT_GROUP_ID = 631;
     public static final int EXPLORERS_RING_ALCH_GROUP_ID = 483;
+    public static final int SETTINGS_SIDE_GROUP_ID = 116;
+    public static final int SETTINGS_GROUP_ID = 134;
     public static final int LMS_GROUP_ID = 333;
     public static final int LMS_INGAME_GROUP_ID = 328;
     public static final int JEWELLERY_BOX_GROUP_ID = 590;
