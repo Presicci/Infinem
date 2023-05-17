@@ -1,6 +1,6 @@
 [
   { #Al-Kharid warrior (9)
-    "ids": [ 7323, 3103 ],
+    "ids": [ 3103 ],
     "handler": "",
     //Combat Info
     "hitpoints": 19,
