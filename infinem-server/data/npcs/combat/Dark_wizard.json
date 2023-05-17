@@ -1,6 +1,6 @@
 [
   { #Dark wizard (7)
-    "ids": [ 474, 5086, 5087 ],
+    "ids": [ 512, 5086, 5087 ],
     "handler": "io.ruin.model.activities.miscpvm.magic.DarkWizardLevelSeven",
     //Combat Info
     "hitpoints": 12,
@@ -86,7 +86,7 @@
     "death_animation": 836
   },
   { #Dark wizard (20)
-    "ids": [ 472, 5088, 5089 ],
+    "ids": [ 510, 5088, 5089 ],
     "handler": "io.ruin.model.activities.miscpvm.magic.DarkWizard",
     //Combat Info
     "hitpoints": 24,
