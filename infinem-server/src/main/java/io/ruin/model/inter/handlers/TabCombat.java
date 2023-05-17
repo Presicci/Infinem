@@ -34,7 +34,7 @@ public class TabCombat {
 
     private static void open(Player player, int interfaceId) {//meehhhh (Todo better interface positioning system..)
         final int parentId = player.getGameFrameId();// Do we need 67?
-        final int childId = parentId == 548 ? 66 : 68;
+        final int childId = parentId == Interface.FIXED_SCREEN ? 75 : 79;
         player.getPacketSender().sendInterface(interfaceId, parentId, childId, 1);
     }
 
