@@ -1,4 +1,3 @@
-2812
 <Give me a quest!
 Player: Give me a quest!
 Bob: Get yer own!
