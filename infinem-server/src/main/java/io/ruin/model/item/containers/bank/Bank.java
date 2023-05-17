@@ -10,6 +10,7 @@ import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
+import io.ruin.model.inter.handlers.EquipmentStats;
 import io.ruin.model.inter.handlers.TabInventory;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
@@ -56,6 +57,9 @@ public class Bank extends ItemContainerG<BankItem> {
         player.getPacketSender().sendAccessMask(Interface.BANK, 49, 0, 3, 2);
         player.getPacketSender().sendString(Interface.BANK, 7, "" + getItems().length);
         player.getPacketSender().sendString(Interface.BANK, 8, "800");
+
+        sendWornItemBonuses();
+
         sendAll = true;
     }
 
@@ -867,4 +871,7 @@ public class Bank extends ItemContainerG<BankItem> {
 
     }
 
+    private void sendWornItemBonuses() {
+        EquipmentStats.update(player, Interface.BANK, 89);
+    }
 }
