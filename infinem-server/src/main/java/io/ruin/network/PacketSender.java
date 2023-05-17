@@ -12,10 +12,8 @@ import io.ruin.model.World;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.ai.AIPlayer;
-import io.ruin.model.inter.InterfaceType;
-import io.ruin.model.inter.Widget;
+import io.ruin.model.inter.*;
 //import io.ruin.model.inter.handlers.BuyCredits;
-import io.ruin.model.inter.WidgetInfo;
 import io.ruin.model.inter.journal.JournalCategory;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.attributes.AttributeExtensions;
@@ -82,7 +80,6 @@ public class PacketSender {
     }
 
     public void sendLogout() {
-        new Exception("SENDING LOGOUT FOR " + player.getName()).printStackTrace();
         OutBuffer out = new OutBuffer(1).sendFixedPacket(29);
         player.getChannel().writeAndFlush(out.encode(cipher).toBuffer()).addListener(ChannelFutureListener.CLOSE);
     }
@@ -342,11 +339,33 @@ public class PacketSender {
      * 2 - 1 - Option 1
      * 1 - 0 - Option 0
      */
-    public void sendAccessMask(int interfaceId, int childParentId, int minChildId, int maxChildId, int mask) {
+    public void sendAccessMask(WidgetInfo widgetInfo, int minChildID, int maxChildID, AccessMask... accessMask) {
+        sendAccessMask(widgetInfo, minChildID, maxChildID, AccessMasks.combine(accessMask));
+    }
+
+    public void sendAccessMask(WidgetInfo widgetInfo, int minChildID, int maxChildID, int... masks) {
+        sendAccessMask(widgetInfo.getGroupId(), widgetInfo.getChildId(), minChildID, maxChildID, masks);
+    }
+
+    public void sendAccessMask(boolean debug, int interfaceId, int childParentId, int minChildId, int maxChildId, AccessMask... accessMask) {
+        sendAccessMask(debug, interfaceId, childParentId, minChildId, maxChildId, AccessMasks.combine(accessMask));
+    }
+
+    public void sendAccessMask(int interfaceId, int childParentId, int minChildId, int maxChildId, AccessMask... accessMask) {
+        sendAccessMask(true, interfaceId, childParentId, minChildId, maxChildId, accessMask);
+    }
+
+    public void sendAccessMask(int interfaceId, int childParentId, int minChildId, int maxChildId, int... masks) {
+        sendAccessMask(true, interfaceId, childParentId, minChildId, maxChildId, masks);
+    }
+
+    public void sendAccessMask(boolean debug, int interfaceId, int childParentId, int minChildId, int maxChildId, int... masks) {
         if (!InterfaceDef.valid(interfaceId, childParentId/*Math.max(childParentId, Math.max(minChildId, maxChildId))*/)) {
-            new Exception("INVALID sendAccessMask " + interfaceId + ":" + childParentId + " (" + minChildId + ".." + maxChildId + ")").printStackTrace();
+            if (debug)
+                new Exception("INVALID sendAccessMask " + interfaceId + ":" + childParentId + " (" + minChildId + ".." + maxChildId + ")").printStackTrace();
             return;
         }
+        int mask = AccessMasks.combine(masks);
         OutBuffer out = new OutBuffer(13).sendFixedPacket(91)
                 .addInt(interfaceId << 16 | childParentId)
                 .addLEInt(mask)
