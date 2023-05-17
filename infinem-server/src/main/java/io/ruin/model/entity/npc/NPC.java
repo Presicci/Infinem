@@ -252,13 +252,13 @@ public class NPC extends NPCAttributes {
     protected void init() {
         this.movement = new NPCMovement(this);
         this.masks = new UpdateMask[]{
-                animationUpdate = new AnimationUpdate(),
-                hitsUpdate = new HitsUpdate(),
-                entityDirectionUpdate = new EntityDirectionUpdate(),
                 transformUpdate = new TransformUpdate(),
+                animationUpdate = new AnimationUpdate(),
                 mapDirectionUpdate = new MapDirectionUpdate(),
                 graphicsUpdate = new GraphicsUpdate(),
                 forceTextUpdate = new ForceTextUpdate(),
+                entityDirectionUpdate = new EntityDirectionUpdate(),
+                hitsUpdate = new HitsUpdate(),
         };
     }
 
