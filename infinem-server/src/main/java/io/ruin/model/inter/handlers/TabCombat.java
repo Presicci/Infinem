@@ -8,6 +8,7 @@ import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.item.attributes.AttributeTypes;
 import io.ruin.model.item.containers.Equipment;
@@ -93,11 +94,11 @@ public class TabCombat {
                 return SpellBook.MODERN.isActive(player) ? -1 : null;
             }
         }
-        if (staffId == 4675) //ancient staff
+        if (staffId == Items.ANCIENT_STAFF)
             return SpellBook.ANCIENT.isActive(player) ? 4675 : null;
-        if (staffId == 6914) //master wand
+        if (staffId == Items.MASTER_WAND)
             return SpellBook.ANCIENT.isActive(player) ? 4675 : staffId;
-        if (staffId == 11791 || staffId == 12904) { //staff of the dead
+        if (staffId == Items.STAFF_OF_THE_DEAD || staffId == Items.TOXIC_STAFF_OF_THE_DEAD) {
             boolean augmented = AttributeExtensions.hasAttribute(item, AttributeTypes.AUGMENTED);
             if (SpellBook.MODERN.isActive(player)) {
                 return 11791;
@@ -106,11 +107,11 @@ public class TabCombat {
             }
             return null;
         }
-        if((staffId == 21006 || staffId == 30181) && SpellBook.ANCIENT.isActive(player)) //kodai wand
+        if((staffId == Items.KODAI_WAND || staffId == 30181) && SpellBook.ANCIENT.isActive(player))
             return 4675;
-        if (staffId == 1409 || staffId == 12658) //ibans staff
+        if (staffId == Items.IBANS_STAFF || staffId == Items.IBANS_STAFF_U)
             return SpellBook.MODERN.isActive(player) ? 1409 : null;
-        if(staffId == 22296) //staff of light
+        if(staffId == Items.STAFF_OF_LIGHT)
             return SpellBook.MODERN.isActive(player) ? 22296 : null;
         return SpellBook.MODERN.isActive(player) ? -1 : null;
     }
