@@ -21,6 +21,14 @@ public enum NPCCombatSpells {
             132, 1,
             98, 124,
             133),
+
+    FIRE_STRIKE(new Projectile(100, 43, 31, 51, 56, 10, 16, 64),
+            1162,
+            99, 92,
+            160, 1,
+            101, 124,
+            161),
+
     CONFUSE(new Projectile(103, 36, 31, 61, 56, 10, 16, 64),
             1163,
             102,92,
