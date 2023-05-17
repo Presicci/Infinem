@@ -4,18 +4,18 @@
     "handler": "io.ruin.model.activities.miscpvm.magic.Wizard",
     //Combat Info
     "hitpoints": 14,
-    "aggressive_level": 18,
+    "aggressive_level": 0,
     "max_damage": 6,
-    "attack_style": "CRUSH",
+    "attack_style": "MAGIC",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 10.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
-    "ranged": 1,
+    "attack": 8,
+    "strength": 8,
+    "defence": 5,
+    "ranged": 10,
     "magic": 1,
     //Aggressive Stats
     "stab_attack": 0,
@@ -31,7 +31,7 @@
     "ranged_defence": 0,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
     "attack_ticks": 3,
     "death_ticks": 2,
