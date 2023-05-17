@@ -1,6 +1,6 @@
 [
   { #Black knight (33)
-    "ids": [ 1545, 516, 4331 ],
+    "ids": [ 516, 517, 1545, 4331, 4959 ],
     "handler": "",
     //Combat Info
     "hitpoints": 42,
