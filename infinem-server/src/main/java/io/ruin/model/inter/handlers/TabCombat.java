@@ -46,7 +46,7 @@ public class TabCombat {
             return;
         }
         open(player, Interface.AUTOCAST_SELECTION);
-        player.getPacketSender().sendAccessMask(Interface.AUTOCAST_SELECTION, 1, 0, 52, 2);
+        player.getPacketSender().sendAccessMask(Interface.AUTOCAST_SELECTION, 1, 0, 58, 2);
         Config.AUTOCAST_SET.set(player, autocastId);
         Config.DEFENSIVE_CAST.set(player, defensive ? 1 : 0);
     }
@@ -84,6 +84,7 @@ public class TabCombat {
 
     /*
      * https://oldschool.runescape.wiki/w/Autocast
+     * CS2 script 243
      */
     private static Integer getAutocastId(Player player) {
         Item item = player.getEquipment().get(Equipment.SLOT_WEAPON);
