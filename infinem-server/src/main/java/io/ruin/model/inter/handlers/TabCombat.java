@@ -95,7 +95,7 @@ public class TabCombat {
             }
         }
         if (staffId == Items.ANCIENT_STAFF)
-            return SpellBook.ANCIENT.isActive(player) ? 4675 : null;
+            return SpellBook.ANCIENT.isActive(player) ? 4675 : SpellBook.MODERN.isActive(player) ? -1 : null;
         if (staffId == Items.MASTER_WAND)
             return SpellBook.ANCIENT.isActive(player) ? 4675 : staffId;
         if (staffId == Items.STAFF_OF_THE_DEAD || staffId == Items.TOXIC_STAFF_OF_THE_DEAD) {
