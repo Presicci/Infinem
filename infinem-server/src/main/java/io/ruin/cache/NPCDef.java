@@ -440,6 +440,8 @@ public class NPCDef {
                 else
                     attributes.put(key, var1.readInt());
             }
+        } else {
+            System.err.println("MISSING NPC OPCODE " + var2 + " FOR ID " + id);
         }
 
     }
