@@ -129,6 +129,10 @@ public enum SlayerUnlock {
             cancelTask(player);
         } else if (slot == 53) {
             blockTask(player);
+        } else if (slot == 61) {
+            storeTask(player);
+        } else if (slot == 62) {
+            unstoreTask(player);
         } else if (slot >= 54 && slot <= 60) {
             unblockTask(player, slot - 54);
         }
@@ -229,6 +233,53 @@ public enum SlayerUnlock {
     }
 
     /**
+     * Handles the storing of a task.
+     *
+     * @param player The player storing the task.
+     */
+    private static void storeTask(Player player) {
+        int taskID = Config.SLAYER_TASK_1.get(player);
+        int taskAmount = Config.SLAYER_TASK_AMOUNT.get(player);
+        SlayerCreature task = SlayerCreature.lookup(taskID);
+        if (task == null || taskAmount <= 0) {
+            player.sendMessage("You don't have a slayer task to store.");
+            return;
+        }
+        if (Config.SLAYER_POINTS.get(player) < 50) {
+            player.sendMessage("You need 50 points to store your task.");
+            return;
+        }
+        Config.STORED_TASK.set(player, taskID);
+        Config.STORED_TASK_AMOUNT.set(player, taskAmount);
+        Config.STORED_BOSS_TASK.set(player, Config.BOSS_TASK.get(player));
+
+        Slayer.resetTask(player);
+        int pts = Config.SLAYER_POINTS.get(player) - 50;
+        Config.SLAYER_POINTS.set(player, pts);
+    }
+
+    private static void unstoreTask(Player player) {
+        int taskID = Config.STORED_TASK.get(player);
+        int taskAmount = Config.STORED_TASK_AMOUNT.get(player);
+        SlayerCreature task = SlayerCreature.lookup(taskID);
+        if (task == null || taskAmount <= 0) {
+            player.sendMessage("You don't have a slayer task stored.");
+            return;
+        }
+        task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
+        if (task != null) {
+            player.sendMessage("You already have a slayer task.");
+            return;
+        }
+        Config.SLAYER_TASK_1.set(player, taskID);
+        Config.SLAYER_TASK_AMOUNT.set(player, taskAmount);
+        Config.BOSS_TASK.set(player, Config.STORED_BOSS_TASK.get(player));
+
+        Config.STORED_TASK.set(player, 0);
+        Config.STORED_TASK_AMOUNT.set(player, 0);
+    }
+
+    /**
      * Opens the reward shop.
      *
      * @param player The player opening the shop.
@@ -238,8 +289,9 @@ public enum SlayerUnlock {
         //Slayer.sendRewardInfo(player);
         player.getPacketSender().sendClientScript(917, "ii", -1, -1);
         player.openInterface(InterfaceType.MAIN, 426);
-        player.getPacketSender().sendAccessMask(426, 8, 0, 60, 2);
+        player.getPacketSender().sendAccessMask(426, 8, 0, 62, 2);
         player.getPacketSender().sendAccessMask(426, 23, 0, 5, 1052);
+        player.getPacketSender().sendString(426, 45, "29 x Cave crawlers");
     }
 
     /**

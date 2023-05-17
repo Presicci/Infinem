@@ -129,6 +129,11 @@ public class Slayer {
         }
     }
 
+    public static void resetTask(Player player) {
+        Config.SLAYER_TASK_1.set(player, 0);
+        Config.SLAYER_TASK_AMOUNT.set(player, 0);
+    }
+
     /**
      * Checks if the npc is part of the player's task.
      *
