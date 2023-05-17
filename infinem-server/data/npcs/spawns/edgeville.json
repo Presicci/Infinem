@@ -52,33 +52,6 @@
     "walkRange": 0
   },
   {
-    "name": "Max hit dummy",
-    "id": 15025,
-    "x": 3085,
-    "y": 3508,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 0
-  },
-  {
-    "name": "Max hit dummy",
-    "id": 15025,
-    "x": 3085,
-    "y": 3510,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 0
-  },
-  {
-    "name": "Max hit dummy",
-    "id": 15025,
-    "x": 3085,
-    "y": 3512,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 0
-  },
-  {
     "name": "Banker",
     "id": 3888,
     "x": 3096,
