@@ -82,38 +82,77 @@ public class TabCombat {
         player.getCombat().updateCombatLevel();
     }
 
+    /*
+     * https://oldschool.runescape.wiki/w/Autocast
+     */
     private static Integer getAutocastId(Player player) {
         Item item = player.getEquipment().get(Equipment.SLOT_WEAPON);
         int staffId = item == null ? -1 : player.getEquipment().getId(Equipment.SLOT_WEAPON);
         if (staffId == -1) //shouldn't happen
             return null;
-        if (staffId == 4710 || staffId == 4862 || staffId == 4863 || staffId == 4864 || staffId == 4865) {
-            if (SetEffect.AHRIM_DAMNED.hasPieces(player) && SpellBook.ANCIENT.isActive(player)) {
-                return 4675;
-            } else {
-                return SpellBook.MODERN.isActive(player) ? -1 : null;
+        if (SpellBook.ANCIENT.isActive(player)) {
+            switch (staffId) {
+                case Items.AHRIMS_STAFF:
+                case Items.AHRIMS_STAFF_25:
+                case Items.AHRIMS_STAFF_50:
+                case Items.AHRIMS_STAFF_75:
+                case Items.AHRIMS_STAFF_100:
+                    return SetEffect.AHRIM_DAMNED.hasPieces(player) ? 4675 : null;
+                case Items.ANCIENT_STAFF:
+                case Items.MASTER_WAND:
+                case Items.KODAI_WAND:
+                case 24422: // Nightmare staff
+                case 24424: // Volatile nightmare staff
+                case 24425: // Eldritch nightmare staff
+                    return 4675;
+                default:
+                    return null;
             }
-        }
-        if (staffId == Items.ANCIENT_STAFF)
-            return SpellBook.ANCIENT.isActive(player) ? 4675 : SpellBook.MODERN.isActive(player) ? -1 : null;
-        if (staffId == Items.MASTER_WAND)
-            return SpellBook.ANCIENT.isActive(player) ? 4675 : staffId;
-        if (staffId == Items.STAFF_OF_THE_DEAD || staffId == Items.TOXIC_STAFF_OF_THE_DEAD) {
-            boolean augmented = AttributeExtensions.hasAttribute(item, AttributeTypes.AUGMENTED);
-            if (SpellBook.MODERN.isActive(player)) {
-                return 11791;
-            } else if (SpellBook.ANCIENT.isActive(player) && augmented) {
-                return 4675;
+        } else if (SpellBook.ARCEUUS.isActive(player)) {
+            switch (staffId) {
+                case Items.SKULL_SCEPTRE:
+                case 21276: // Skull sceptre (i)
+                case Items.MASTER_WAND:
+                case Items.KODAI_WAND:
+                case Items.AHRIMS_STAFF:
+                case Items.AHRIMS_STAFF_25:
+                case Items.AHRIMS_STAFF_50:
+                case Items.AHRIMS_STAFF_75:
+                case Items.AHRIMS_STAFF_100:
+                case Items.SLAYERS_STAFF:
+                case 21255: // Slayer's staff (e)
+                case Items.STAFF_OF_THE_DEAD:
+                case Items.TOXIC_STAFF_OF_THE_DEAD:
+                    return 9013;
+                default:
+                    return null;
             }
+        } else if (SpellBook.MODERN.isActive(player)) {
+            switch (staffId) {
+                case Items.STAFF_OF_THE_DEAD:
+                case Items.TOXIC_STAFF_OF_THE_DEAD:
+                    return 11791;
+                case Items.IBANS_STAFF:
+                case Items.IBANS_STAFF_U:
+                    return 1409;
+                case Items.SLAYERS_STAFF:
+                case 21255: // Slayer's staff (e)
+                    return 4170;
+                case Items.STAFF_OF_LIGHT:
+                    return 22296;
+                case 24144: // Staff of balance
+                    return 24144;
+                case Items.VOID_KNIGHT_MACE:
+                    return 8841;
+                case Items.SKULL_SCEPTRE:
+                case 21276: // Skull sceptre (i)
+                    return null;
+                default:
+                    return -1;
+            }
+        } else {
             return null;
         }
-        if((staffId == Items.KODAI_WAND || staffId == 30181) && SpellBook.ANCIENT.isActive(player))
-            return 4675;
-        if (staffId == Items.IBANS_STAFF || staffId == Items.IBANS_STAFF_U)
-            return SpellBook.MODERN.isActive(player) ? 1409 : null;
-        if(staffId == Items.STAFF_OF_LIGHT)
-            return SpellBook.MODERN.isActive(player) ? 22296 : null;
-        return SpellBook.MODERN.isActive(player) ? -1 : null;
     }
 
 }
