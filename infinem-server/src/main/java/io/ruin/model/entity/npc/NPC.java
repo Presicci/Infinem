@@ -481,7 +481,7 @@ public class NPC extends NPCAttributes {
      * @param cycles The amount of cycles before the npc is removed.
      */
     public void doIfIdle(Player player, int timePerCycle, int cycles, Runnable runnable) {
-        npc.startEvent(e -> {   // If the player leaves or ignores the superior for x*y seconds, remove npc
+        npc.addEvent(e -> {   // If the player leaves or ignores the superior for x*y seconds, remove npc
             int loops = 0;
             int lastHealth = npc.getHp();
             while (loops < cycles) { // x y second loops
