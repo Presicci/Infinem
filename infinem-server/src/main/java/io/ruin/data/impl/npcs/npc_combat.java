@@ -55,6 +55,10 @@ public class npc_combat extends DataFile {
             list.forEach(info -> {
                 for (int id : info.ids) {
                     NPCDef def = NPCDef.get(id);
+                    if (def == null) {
+                        System.err.println("[NPC_COMBAT] " + id + " is invalid npc id.");
+                        continue;
+                    }
 //                    if (def.combatInfo != null) {
 //                        System.err.println(def.id + ": " + def.name + " already has combat info set!");
 //                    }
