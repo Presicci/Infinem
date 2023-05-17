@@ -251,11 +251,11 @@ class Tournament(var attributes: TournamentAttributes) {
         val damage = IntRange(3, 5).random()
         fights.filter(TournamentFightPair::valid).forEach { fight ->
             if (fight.first != null && fight.first().alive() && !fight.immune(fight.first())) {
-                fight.second().hit(Hit(HitType.DISEASE1).fixedDamage(damage))
+                fight.second().hit(Hit(HitType.DISEASE).fixedDamage(damage))
                 fight.first().message("The noxious fog causes you to take some damage.")
             }
             if (fight.second != null && fight.second().alive() && !fight.immune(fight.second())) {
-                fight.second().hit(Hit(HitType.DISEASE1).fixedDamage(damage))
+                fight.second().hit(Hit(HitType.DISEASE).fixedDamage(damage))
                 fight.second().message("The noxious fog causes you to take some damage.")
             }
         }
