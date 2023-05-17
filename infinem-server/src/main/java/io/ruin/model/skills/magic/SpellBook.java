@@ -168,7 +168,7 @@ public enum SpellBook {
             new ArceuusTeleport(6, 10.0, new Bounds(3241, 3195, 3242, 3196, 0), Rune.LAW.toItem(1), Rune.EARTH.toItem(2)),
             new TodoSpell("Basic Reanimation"),
             new ArceuusTeleport(17, 16.0, new Bounds(3108, 3350, 3109, 3351, 0), Rune.LAW.toItem(1), Rune.EARTH.toItem(1), Rune.WATER.toItem(1)),
-            new TodoSpell("Battlefront Teleport"),
+            new ArceuusTeleport(23, 19.0, new Bounds(1345, 3740, 1347, 3741, 0), Rune.LAW.toItem(1), Rune.EARTH.toItem(1), Rune.FIRE.toItem(1)),
             new TodoSpell("Mind Altar Teleport"),
             new ArceuusTeleport(28, 22.0, new Bounds(2979, 3509, 2980, 3510, 0), Rune.LAW.toItem(1), Rune.MIND.toItem(2)),
             new ArceuusTeleport(34, 27.0, new Bounds(3084, 3489, 3088, 3492, 0), Rune.LAW.toItem(1), Rune.SOUL.toItem(1)),
