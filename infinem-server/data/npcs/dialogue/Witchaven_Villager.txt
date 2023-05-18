@@ -1,0 +1,35 @@
+RAND
+/Player: Hello there.
+Witchaven villager: What have you got to be so cheerful about?
+Player: Well, it's another nice day.
+Witchaven villager: Ha! Try worrying about how you feed a family with no job. Then tell me how nice the day is!
+Player: Okay, I guess I've caught you at a bad time. Goodbye.
+/Player: Hello there.
+Witchaven villager: Hmm? Oh, hello there.
+Player: Are you okay? You seem a bit preoccupied.
+Witchaven villager: It's nothing stranger. No need to concern yourself.
+/Player: Hello there.
+Witchaven villager: Spare a coin mister?
+Player: What do you need it for?
+Witchaven villager: For a poor unemployed fisherman what needs to eat.
+Player: Why don't you just fish for some food?
+Witchaven villager: Err... Goodbye mister.
+/Witchaven villager: Can you believe they did this to us?
+Player: Wha...
+Witchaven villager: I mean, what did they think would happen?
+Player: Who...
+Witchaven villager: Building that whacking great Fishing Platform just off the coast.
+Player: Fish...
+Witchaven villager: Dratted thing stole all of our trade.
+Player: Excuse...
+Witchaven villager: I'm sorry, I'm too angry to speak right now. Goodbye
+/Player: Hello there.
+Witchaven villager: With our nets and gear we're faring,
+Witchaven villager: On the wild and wasteful ocean,
+Witchaven villager: It's there on the deep that we harvest and reap our bread,
+Witchaven villager: As we hunt the bonny shoals of herring.
+Player: That's a lovely song.
+Witchaven villager: Aye lad, and sing it every day we did.
+Witchaven villager: 'Till the Fishing Platform came and ruined everything.
+Player: Oh, I'm sorry.
+Witchaven villager: No need lad, it not be your fault.
