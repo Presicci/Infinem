@@ -449,13 +449,13 @@ public class NPC extends NPCAttributes {
     public void process() {
         if(removed)
             return;
-        processHits();
         processEvent();
         if(combat != null)
             combat.follow0();
         movement.process();
         if(combat != null)
             combat.attack0();
+        processHits();
     }
 
     public Position getSpawnPosition() {
