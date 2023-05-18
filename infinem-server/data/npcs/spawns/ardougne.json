@@ -9,8 +9,8 @@
     "walkRange": 2
   },
   {
-    "name": "null",
-    "id": 6245,
+    "name": "Witchaven villager",
+    "id": 4790,
     "x": 2721,
     "y": 3293,
     "z": 0,
@@ -63,8 +63,8 @@
     "walkRange": 3
   },
   {
-    "name": "null",
-    "id": 6247,
+    "name": "Witchaven villager",
+    "id": 4794,
     "x": 2729,
     "y": 3276,
     "z": 0,
@@ -126,10 +126,10 @@
     "walkRange": 5
   },
   {
-    "name": "null",
-    "id": 6246,
+    "name": "Witchaven villager",
+    "id": 4792,
     "x": 2734,
-    "y": 3282,
+    "y": 3283,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -162,8 +162,8 @@
     "walkRange": 0
   },
   {
-    "name": "null",
-    "id": 6247,
+    "name": "Witchaven villager",
+    "id": 4794,
     "x": 2736,
     "y": 3301,
     "z": 0,
@@ -1809,8 +1809,8 @@
     "walkRange": 2
   },
   {
-    "name": "null",
-    "id": 6243,
+    "name": "Mayor hobb",
+    "id": 4783,
     "x": 2708,
     "y": 3291,
     "z": 0,
@@ -1827,8 +1827,8 @@
     "walkRange": 2
   },
   {
-    "name": "null",
-    "id": 6245,
+    "name": "Witchaven villager",
+    "id": 4790,
     "x": 2715,
     "y": 3279,
     "z": 0,
@@ -1854,8 +1854,8 @@
     "walkRange": 4
   },
   {
-    "name": "null",
-    "id": 6246,
+    "name": "Witchaven villager",
+    "id": 4792,
     "x": 2716,
     "y": 3289,
     "z": 0,
@@ -1899,8 +1899,8 @@
     "walkRange": 4
   },
   {
-    "name": "null",
-    "id": 6252,
+    "name": "Jeb",
+    "id": 4802,
     "x": 2716,
     "y": 3304,
     "z": 0,
@@ -1917,8 +1917,8 @@
     "walkRange": 8
   },
   {
-    "name": "null",
-    "id": 5071,
+    "name": "Holgart",
+    "id": 5069,
     "x": 2720,
     "y": 3305,
     "z": 0,
