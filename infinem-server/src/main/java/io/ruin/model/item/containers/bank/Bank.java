@@ -26,6 +26,8 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.ArrayList;
 import java.util.Map;
 
+import static io.ruin.model.inter.AccessMasks.*;
+
 @Slf4j
 public class Bank extends ItemContainerG<BankItem> {
 
@@ -53,6 +55,7 @@ public class Bank extends ItemContainerG<BankItem> {
         player.getPacketSender().sendAccessMask(Interface.BANK, 10, 11, 19, 1179842);
         player.getPacketSender().sendAccessMask(Interface.BANK_INVENTORY, 3, 0, 27, 1181694);
         player.getPacketSender().sendAccessMask(Interface.BANK_INVENTORY, 10, 0, 27, 1054);
+        player.getPacketSender().sendAccessMask(Interface.BANK_INVENTORY, 13, 0, 27, ClickOp1, ClickOp2, ClickOp3, ClickOp4);
         player.getPacketSender().sendAccessMask(Interface.BANK, 46, 1, 816, 2);
         player.getPacketSender().sendAccessMask(Interface.BANK, 49, 0, 3, 2);
         player.getPacketSender().sendString(Interface.BANK, 7, "" + getItems().length);
