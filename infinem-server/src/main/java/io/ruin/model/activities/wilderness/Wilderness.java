@@ -82,8 +82,8 @@ public class Wilderness {
         } else {
             player.getPacketSender().sendVarp(20002, 0);
         }
-        player.getPacketSender().setHidden(Interface.WILDERNESS_OVERLAY, 63, true); //hide safe area sprite
-        player.getPacketSender().setHidden(Interface.WILDERNESS_OVERLAY, 66, false); //show wilderness level
+        player.getPacketSender().setHidden(Interface.WILDERNESS_OVERLAY, 47, true); //hide safe area sprite
+        player.getPacketSender().setHidden(Interface.WILDERNESS_OVERLAY, 53, false); //show wilderness level
         Config.IN_PVP_AREA.set(player, 1);
         player.setAction(1, PlayerAction.ATTACK);
         player.getEquipment().update(0); //force a slot update
@@ -286,7 +286,7 @@ public class Wilderness {
         setLevels(new Bounds(3003, 3537, 3004, 3538, -1), 0); //black knight fortress part 5
         setLevel(2997, 3525, 0, 0);
 
-        ItemAction.registerInventory(30104, "open", (player, item) -> {
+        /*ItemAction.registerInventory(30104, "open", (player, item) -> {
             Item reward = Random.get(RESOURCE_PACK_LOOT);
             player.getInventory().remove(item.getId(), 1);
             player.getInventory().add(reward);
@@ -300,7 +300,7 @@ public class Wilderness {
             player.darkCrabBoost.addDelaySeconds((int) TimeUnit.MINUTES.toSeconds(30));
             player.getInventory().remove(item);
             player.sendMessage("You now have " + player.darkCrabBoost.remainingToMins() + " minutes of Dark crab skilling boost.");
-        });
+        });*/
 
         LoginListener.register(player -> {
             if (player.blackChinchompaBoostTimeLeft > 0) {
