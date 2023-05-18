@@ -841,7 +841,7 @@ public class Bank extends ItemContainerG<BankItem> {
                 Item item = player.getInventory().get(slot, itemId);
                 if (item == null)
                     return;
-                if(option == 2) {
+                if(option == 1) {
                     player.getBank().deposit(item, 1, true);
                     return;
                 }
@@ -857,6 +857,7 @@ public class Bank extends ItemContainerG<BankItem> {
                     player.getBank().deposit(item, Integer.MAX_VALUE, true);
                     return;
                 }
+                item.examine(player);
             };
 
             h.actions[4] = (SimpleAction) p -> p.getBank().deposit(p.getInventory(), true);
