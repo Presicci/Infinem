@@ -72,6 +72,12 @@ public class npc_shops extends DataFile {
                     fShop.open(player);
                 });
             }
+            tradeOption = npcDef.getOption("Shop");
+            if (tradeOption > 0) {
+                NPCAction.register(n, tradeOption, (player, npc) -> {
+                    fShop.open(player);
+                });
+            }
         }
 
         return s;
