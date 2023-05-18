@@ -1658,8 +1658,8 @@
   {
     "name": "Knight of Ardougne",
     "id": 3297,
-    "x": 2663,
-    "y": 3321,
+    "x": 2671,
+    "y": 3313,
     "z": 0,
     "direction": "S",
     "walkRange": 2
