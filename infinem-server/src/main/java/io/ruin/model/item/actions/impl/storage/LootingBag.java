@@ -32,7 +32,7 @@ public class LootingBag extends ItemContainer {
 
     private void openCheck() {
         deposit = false;
-        player.openInterface(InterfaceType.INVENTORY_OVERLAY, Interface.LOOTING_BAG);
+        player.openInterface(InterfaceType.INVENTORY, Interface.LOOTING_BAG);
         player.getPacketSender().sendAccessMask(Interface.LOOTING_BAG, 5, 0, 27, 1024);
         player.getPacketSender().sendClientScript(495, "s1", "Looting bag", 0);
         sendAll = true;
@@ -40,7 +40,7 @@ public class LootingBag extends ItemContainer {
 
     private void openDeposit() {
         deposit = true;
-        player.openInterface(InterfaceType.INVENTORY_OVERLAY, Interface.LOOTING_BAG);
+        player.openInterface(InterfaceType.INVENTORY, Interface.LOOTING_BAG);
         player.getPacketSender().sendAccessMask(Interface.LOOTING_BAG, 5, 0, 27, 542);
         player.getPacketSender().sendClientScript(495, "s1", "Add to bag", 1);
         player.getPacketSender().setHidden(Interface.LOOTING_BAG, 7, true);
