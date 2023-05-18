@@ -17,19 +17,19 @@ public class MainFrame {
     static {
         InterfaceHandler.register(Interface.ORBS, h -> {
             h.actions[1] = (OptionAction) XpCounter::select;
-            h.actions[14] = (OptionAction) (p, option) -> {
+            h.actions[15] = (OptionAction) (p, option) -> {
                 if(option == 1)
                     p.getPrayer().toggleQuickPrayers();
                 else
                     TabPrayer.setupQuickPrayers(p, true);
             };
-            h.actions[22] = (SimpleAction) p -> p.getMovement().toggleRunning();
-            h.actions[43] = (SimpleAction) p -> {
+            h.actions[23] = (SimpleAction) p -> p.getMovement().toggleRunning();
+            h.actions[48] = (SimpleAction) p -> {
                 p.getPacketSender().sendClientScript(1749, "c", p.getPosition().getTileHash());
                 p.openInterface(InterfaceType.WORLD_MAP, Interface.WORLD_MAP);
                 p.getPacketSender().sendAccessMask(595, 17, 0, 4, 2);
             };
-            h.actions[30] = (SimpleAction) p -> p.getCombat().toggleSpecial();
+            h.actions[31] = (SimpleAction) p -> p.getCombat().toggleSpecial();
         });
         InterfaceHandler.register(Interface.CHAT_BAR, h -> {
             h.actions[7] = (OptionAction) (player, option) -> {
@@ -53,7 +53,7 @@ public class MainFrame {
             };
         });
         InterfaceHandler.register(Interface.FIXED_SCREEN, actions -> {
-            actions.actions[54] = (DefaultAction) (player, option, slot, itemId) -> {
+            actions.actions[62] = (DefaultAction) (player, option, slot, itemId) -> {
                 if(option == 2)
                     Config.DISABLE_SPELL_FILTERING.toggle(player);
             };
@@ -81,7 +81,7 @@ public class MainFrame {
 //            };
         });
         InterfaceHandler.register(Interface.RESIZED_SCREEN, actions -> {
-            actions.actions[57] = (DefaultAction) (player, option, slot, itemId) -> {
+            actions.actions[68] = (DefaultAction) (player, option, slot, itemId) -> {
                 if(option == 2)
                     Config.DISABLE_SPELL_FILTERING.toggle(player);
             };
@@ -109,7 +109,7 @@ public class MainFrame {
 //            };
         });
         InterfaceHandler.register(Interface.RESIZED_STACKED_SCREEN, actions -> {
-            actions.actions[56] = (DefaultAction) (player, option, slot, itemId) -> {
+            actions.actions[65] = (DefaultAction) (player, option, slot, itemId) -> {
                 if(option == 2)
                     Config.DISABLE_SPELL_FILTERING.toggle(player);
             };
