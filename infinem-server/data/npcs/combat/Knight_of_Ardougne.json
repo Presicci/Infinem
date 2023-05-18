@@ -1,6 +1,6 @@
 [
   { #Knight of Ardougne (46)
-    "ids": [ 3108, 3111 ],
+    "ids": [ 3297, 3300 ],
     "handler": "",
     //Combat Info
     "hitpoints": 52,
