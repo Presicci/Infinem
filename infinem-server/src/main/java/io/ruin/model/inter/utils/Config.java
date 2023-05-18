@@ -310,6 +310,10 @@ public class Config {
 
     public static final Config BANK_DEFAULT_QUANTITY = varpbit(6590, true);
 
+    public static final Config DEPOSIT_BOX_DEFAULT_QUANTITY = varpbit(4430, true);
+
+    public static final Config DEPOSIT_BOX_LAST_X = varp(1794, true);
+
     /**
      * Prayer
      */

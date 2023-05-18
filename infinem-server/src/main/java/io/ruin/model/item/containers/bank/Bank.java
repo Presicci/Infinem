@@ -842,7 +842,30 @@ public class Bank extends ItemContainerG<BankItem> {
                 if (item == null)
                     return;
                 if(option == 1) {
-                    player.getBank().deposit(item, 1, true);
+                    switch(Config.DEPOSIT_BOX_DEFAULT_QUANTITY.get(player)) {
+                        case 1:
+                            player.getBank().deposit(item, 5, true);
+                            break;
+                        case 2:
+                            player.getBank().deposit(item, 10, true);
+                            break;
+                        case 3:
+                            if (Config.DEPOSIT_BOX_LAST_X.get(player) > 0) {
+                                player.getBank().deposit(item, Config.DEPOSIT_BOX_LAST_X.get(player), true);
+                            } else {
+                                player.integerInput("Enter amount:", amount -> {
+                                    player.getBank().deposit(item, amount, true);
+                                    Config.DEPOSIT_BOX_LAST_X.set(player, amount);
+                                });
+                            }
+                            break;
+                        case 4:
+                            player.getBank().deposit(item, Integer.MAX_VALUE, true);
+                            break;
+                        default:
+                            player.getBank().deposit(item, 1, true);
+                            break;
+                    }
                     return;
                 }
                 if(option == 3) {
@@ -863,7 +886,23 @@ public class Bank extends ItemContainerG<BankItem> {
             h.actions[4] = (SimpleAction) p -> p.getBank().deposit(p.getInventory(), true);
             h.actions[6] = (SimpleAction) p -> p.getBank().deposit(p.getEquipment(), true);
             h.actions[8] = (SimpleAction) p -> p.getBank().deposit(p.getLootingBag(), true);
-
+            h.actions[11] = (SimpleAction) p -> Config.DEPOSIT_BOX_DEFAULT_QUANTITY.set(p, 0);
+            h.actions[13] = (SimpleAction) p -> Config.DEPOSIT_BOX_DEFAULT_QUANTITY.set(p, 1);
+            h.actions[15] = (SimpleAction) p -> Config.DEPOSIT_BOX_DEFAULT_QUANTITY.set(p, 2);
+            h.actions[17] = (OptionAction) (p, option) -> {
+                switch (option) {
+                    case 1:
+                        Config.DEPOSIT_BOX_DEFAULT_QUANTITY.set(p, 3);
+                        if (Config.DEPOSIT_BOX_LAST_X.get(p) <= 0) {
+                            p.integerInput("Enter amount:", amount -> Config.DEPOSIT_BOX_LAST_X.set(p, amount));
+                        }
+                        break;
+                    case 2:
+                        p.integerInput("Enter amount:", amount -> Config.DEPOSIT_BOX_LAST_X.set(p, amount));
+                        break;
+                }
+            };
+            h.actions[19] = (SimpleAction) p -> Config.DEPOSIT_BOX_DEFAULT_QUANTITY.set(p, 4);
             h.closedAction = (p, i) -> {
                 p.getPacketSender().sendClientScript(915, "i", 3);
                 p.getPacketSender().sendClientScript(917, "ii", -1, -1);
