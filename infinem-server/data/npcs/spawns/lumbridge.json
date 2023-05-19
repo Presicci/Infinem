@@ -1494,15 +1494,6 @@
     "walkRange": 1
   },
   {
-    "name": "Gee",
-    "id": 3261,
-    "x": 3255,
-    "y": 3263,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 9
-  },
-  {
     "name": "Melee combat tutor",
     "id": 3216,
     "x": 3219,
