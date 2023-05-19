@@ -1,0 +1,84 @@
+{
+  "name": "Frenita's Cookery Shop",
+  "currency": "COINS",
+  "npcs": [
+    8685
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2313,
+      "stock": 25,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    {
+      "itemId": 1955,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1887,
+      "stock": 15,
+      "buy_price": 5,
+      "sell_price": 10
+    },
+    {
+      "itemId": 1923,
+      "stock": 15,
+      "buy_price": 2,
+      "sell_price": 4
+    },
+    {
+      "itemId": 1942,
+      "stock": 25,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 590,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1935,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 20742,
+      "stock": 20,
+      "buy_price": 77,
+      "sell_price": 140
+    },
+    {
+      "itemId": 1931,
+      "stock": 30,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1973,
+      "stock": 15,
+      "buy_price": 5,
+      "sell_price": 10
+    },
+    {
+      "itemId": 1933,
+      "stock": 30,
+      "buy_price": 5,
+      "sell_price": 10
+    },
+    {
+      "itemId": 1980,
+      "stock": 100,
+      "buy_price": 1,
+      "sell_price": 2
+    }
+  ]
+}
