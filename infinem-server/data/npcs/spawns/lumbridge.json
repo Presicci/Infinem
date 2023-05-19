@@ -267,7 +267,7 @@
     "y": 3234,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 40
   },
   {
     "name": "Goblin",
@@ -1455,7 +1455,7 @@
     "y": 3237,
     "z": 0,
     "direction": "S",
-    "walkRange": 15
+    "walkRange": 40
   },
   {
     "name": "Woman",
