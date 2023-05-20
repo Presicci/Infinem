@@ -39,11 +39,11 @@ public class CombatUtils {
      * Attack calcs
      */
 
-    private static double getEffectiveAttack(Entity entity, StatType statType, AttackType attackType) {
-        double effectiveAttack = entity.getCombat().getLevel(statType);
+    private static int getEffectiveAttack(Entity entity, StatType statType, AttackType attackType) {
+        int effectiveAttack = (int) entity.getCombat().getLevel(statType);
         if(statType == StatType.Magic) {
             if(entity.player != null) {
-                effectiveAttack *= (1D + entity.player.getPrayer().magicBoost);
+                effectiveAttack = (int) Math.floor((double) effectiveAttack * (1D + entity.player.getPrayer().magicBoost));
             }
             if(attackType != null)
                 effectiveAttack += (attackType == AttackType.ACCURATE ? 3 : 1);
