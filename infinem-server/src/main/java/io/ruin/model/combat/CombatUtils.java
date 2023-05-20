@@ -113,19 +113,23 @@ public class CombatUtils {
         return effectiveDefence;
     }
 
-    private static double getEffectiveMagicDefence(Entity entity) {
-        double effectiveDefence = entity.getCombat().getLevel(StatType.Magic);
-        if(entity.player != null)
-            effectiveDefence *= (1D + entity.player.getPrayer().magicBoost);
-        return effectiveDefence;
+    private static int getEffectiveMagicDefence(Entity entity) {
+        if (entity.player != null) {
+            double effectiveMagicDefence = Math.floor(entity.getCombat().getLevel(StatType.Magic) * 0.7);
+            double effectiveDefence = Math.floor(entity.getCombat().getLevel(StatType.Defence) * 0.3);
+            effectiveMagicDefence *= (1D + entity.player.getPrayer().magicBoost);
+            effectiveDefence *= (1D + entity.player.getPrayer().defenceBoost);
+            return (int) Math.floor(effectiveMagicDefence) + (int) Math.floor(effectiveDefence) + 8;
+        } else {
+            return (int) entity.getCombat().getLevel(StatType.Magic) + 9;
+        }
     }
 
     public static double getDefenceBonus(Entity entity, AttackStyle attackStyle) {
         double effectiveDefence = getEffectiveDefence(entity);
         double bonus = 0;
         if(attackStyle == AttackStyle.MAGIC || attackStyle == AttackStyle.MAGICAL_RANGED || attackStyle == AttackStyle.MAGICAL_MELEE) {
-            effectiveDefence *= 0.30;
-            effectiveDefence += getEffectiveMagicDefence(entity) * 0.70;
+            effectiveDefence = getEffectiveMagicDefence(entity);
             bonus = entity.getCombat().getBonus(EquipmentStats.MAGIC_DEFENCE);
         } else {
             if(attackStyle == AttackStyle.STAB)
