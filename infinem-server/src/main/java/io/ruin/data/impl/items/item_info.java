@@ -26,6 +26,7 @@ public class item_info extends DataFile {
         List<Temp> temps = JsonUtils.fromJson(json, List.class, Temp.class);
         temps.forEach(temp -> {
             ItemDef def = ItemDef.get(temp.id);
+            if (def == null) return;
             def.tradeable = temp.tradeable;
             def.examine = temp.examine;
             def.dropAnnounce = temp.dropAnnounce;
