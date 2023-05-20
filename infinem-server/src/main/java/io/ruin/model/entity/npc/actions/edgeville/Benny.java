@@ -22,7 +22,7 @@ public class Benny {
     static {
         NPCAction.register(5216, "talk-to", (player, npc) -> {
             player.dialogue(
-                    new NPCDialogue(npc, "Would you like a " + World.type.getWorldName() + " Herald?"),
+                    new NPCDialogue(npc, "Would you like an " + World.type.getWorldName() + " Herald?"),
                     new OptionsDialogue(
                             new Option("Yes please.", () -> player.dialogue(new PlayerDialogue("Yes please."),
                                     new ActionDialogue(() -> {
