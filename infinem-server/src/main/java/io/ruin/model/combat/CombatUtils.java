@@ -44,9 +44,6 @@ public class CombatUtils {
         if(statType == StatType.Magic) {
             if(entity.player != null) {
                 effectiveAttack *= (1D + entity.player.getPrayer().magicBoost);
-                double interference = getMagicInterference(entity.player);
-                if(interference > 0)
-                    effectiveAttack *= (1D - interference);
             }
             if(attackType != null)
                 effectiveAttack += (attackType == AttackType.ACCURATE ? 3 : 1);
