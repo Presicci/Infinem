@@ -45,8 +45,6 @@ public class CombatUtils {
             if(entity.player != null) {
                 effectiveAttack = (int) Math.floor((double) effectiveAttack * (1D + entity.player.getPrayer().magicBoost));
             }
-            if(attackType != null)
-                effectiveAttack += (attackType == AttackType.ACCURATE ? 3 : 1);
         } else if(statType == StatType.Ranged) {
             if(entity.player != null)
                 effectiveAttack *= (1D + entity.player.getPrayer().rangedAttackBoost);
