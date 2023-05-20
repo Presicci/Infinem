@@ -1841,8 +1841,8 @@ public class Player extends PlayerAttributes {
     public int getAttributeIntOrZero(AttributeKey key) {
         Object value = attributes.get(key);
         if (value == null) return 0;
-        if (!(value instanceof Integer)) return 0;
-        return (int) value;
+        if (!(value instanceof Number)) return 0;
+        return ((Number) value).intValue();
     }
 
     public <T> T getAttributeOrDefault(AttributeKey key, Object defaultValue) {
