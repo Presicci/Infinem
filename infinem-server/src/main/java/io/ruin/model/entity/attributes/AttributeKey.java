@@ -16,5 +16,6 @@ public enum AttributeKey {
     FALO_SONG,
     SUPERIOR_SPAWNED,
     SHOOTING_STARS_FOUND,
-    BOOK
+    BOOK,
+    SLAUGHTER_CHARGES
 }

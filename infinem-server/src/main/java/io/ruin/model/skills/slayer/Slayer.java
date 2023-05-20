@@ -10,6 +10,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.combine.SlayerHelm;
+import io.ruin.model.item.actions.impl.jewellery.BraceletOfSlaughter;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.stat.StatType;
@@ -111,7 +112,9 @@ public class Slayer {
             player.getStats().addXp(StatType.Slayer, xp, true);
             player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERKILL, 1, true);
 
-            Config.SLAYER_TASK_AMOUNT.decrement(player, 1);
+            if (!BraceletOfSlaughter.checkSlaughter(player)) {
+                Config.SLAYER_TASK_AMOUNT.decrement(player, 1);
+            }
 
             am -= 1;
 
