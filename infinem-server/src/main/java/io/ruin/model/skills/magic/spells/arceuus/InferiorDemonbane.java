@@ -1,5 +1,7 @@
 package io.ruin.model.skills.magic.spells.arceuus;
 
+import io.ruin.model.combat.Hit;
+import io.ruin.model.entity.Entity;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.spells.TargetSpell;
 
@@ -26,5 +28,11 @@ public class InferiorDemonbane extends TargetSpell {
             p.player.sendMessage("Demonbane can only be cast on demons.");
             return false;
         });
+    }
+
+    @Override
+    protected void beforeHit(Hit hit, Entity target) {
+        super.beforeHit(hit, target);
+        hit.boostAttack(0.20);
     }
 }
