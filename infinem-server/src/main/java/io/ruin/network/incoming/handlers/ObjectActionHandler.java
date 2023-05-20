@@ -30,7 +30,7 @@ public class ObjectActionHandler implements Incoming {
             return;
         }
         if(option == 2) {
-            int id = in.readLEShort();
+            int id = in.readUnsignedLEShort();
             int y = in.readShortA();
             int x = in.readLEShort();
             int ctrlRun = in.readByteA();
@@ -75,6 +75,10 @@ public class ObjectActionHandler implements Incoming {
                     player.sendFilteredMessage("[ObjectAction] " + debug.toString());
                 }
                 def.examine(player);
+            } else {
+                if(player.debug) {
+                    player.sendFilteredMessage("[ObjectAction] Object with ID: " + id + " is null.");
+                }
             }
             return;
         }
@@ -84,14 +88,14 @@ public class ObjectActionHandler implements Incoming {
     public static void handleAction(Player player, int option, int objectId, int objectX, int objectY, int ctrlRun) {
         if(objectId == -1) {
             if(player.debug) {
-                player.sendFilteredMessage("[ObjectAction] ObjectId is -1.");
+                player.sendFilteredMessage("[ObjectAction] ObjectId is -1. Option=" + option);
             }
             return;
         }
         GameObject gameObject = Tile.getObject(objectId, objectX, objectY, player.getPosition().getZ());
         if(gameObject == null) {
             if(player.debug) {
-                player.sendFilteredMessage("[ObjectAction] Object is null.");
+                player.sendFilteredMessage("[ObjectAction] Object with ID: " + objectId + " is null. Option=" + option);
             }
             return;
         }
