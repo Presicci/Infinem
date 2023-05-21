@@ -1,0 +1,30 @@
+Traiborn: Ello young thingummywut.
+<What's a thingummywut?
+Player: What's a thingummywut?
+Traiborn: A thingummywut? Where? Where?
+Traiborn: Those pesky thingummywuts. They get everywhere. They leave a terrible mess too.
+<Err you just called me a thingummywut.
+Player: Err you just called me thingummywut.
+Traiborn: You're a thingummywut? I've never seen one up close before. They said I was mad!
+Traiborn: Now you are my proof! There ARE thingummywuts in this tower. Now where can I find a cage big enough to keep you?
+<Err I'd better be off really.
+Player: Err I'd better be off really.
+Traiborn: Oh ok, have a good time, and watch out for sheep! They're more cunning than they look.
+><They're right, you are mad.
+Player: They're right, you are mad.
+Traiborn: That's a pity. I thought maybe they were winding me up.
+>
+><Tell me what they look like and I'll mash 'em.
+Player: Tell me what they look like and I'll mash 'em.
+Traiborn: Don't be ridiculous. No-one has ever seen one.
+Traiborn: They're invisible, or a myth, or a figment of my imagination. Can't remember which right now.
+>
+><Teach me to be a mighty and powerful wizard.
+Player: Teach me to be a mighty and powerful wizard.
+Traiborn: Wizard eh? You don't want any truck with that sort. They're not to be trusted. That's what I've heard anyways.
+<So aren't you a wizard?
+Player: So aren't you a wizard?
+Traiborn: How dare you? Of course I'm a wizard. Now don't be so cheeky or I'll turn you into a frog.
+><Oh I'd better stop talking to you then.
+Player: Oh I'd better stop talking to you then.
+Traiborn: Cheerio then. It was nice chatting to you.
