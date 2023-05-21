@@ -222,21 +222,6 @@ public class NPCDef {
             options[2] = "Skin-unlocks";
             options[3] = "Title-unlocks";
             options[4] = null;
-        } else if(id == 4225) {
-            name = "Shop";
-            options[0] = "Untradeable";
-        } else if(id == 1199) {
-            name = "Shop";
-            options[0] = "Consumable";
-        } else if(id == 5081) {
-            name = "Shop";
-            options[0] = "Magic";
-        } else if(id == 2153) {
-            name = "Shop";
-            options[0] = "Melee";
-        } else if(id == 4579) {
-            name = "Shop";
-            options[0] = "Misc";
         } else if (id == 6118) {
             name = "Elvarg";
             combatLevel = 280;
