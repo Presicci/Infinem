@@ -28,7 +28,7 @@ public class EstateAgent {
     private static final int HOUSE_COST = 10_000;
 
     static {
-        NPCAction.register(5419, "talk-to", EstateAgent::agentDialogue);
+        NPCAction.register(3097, "talk-to", EstateAgent::agentDialogue);
         NPCAction.register(9137, "talk-to", EstateAgent::agentDialogue);
     }
 
