@@ -42,7 +42,8 @@ public class Ladder {
 
     static {
         ObjectDef.forEach(def -> {
-            if (def.name.equalsIgnoreCase("ladder") && def.defaultActions == null) {
+            if ((def.name.equalsIgnoreCase("ladder") || def.name.equalsIgnoreCase("bamboo ladder"))
+                    && def.defaultActions == null) {
                 /**
                  * Climb up
                  */
@@ -111,8 +112,8 @@ public class Ladder {
         ObjectAction.register(16673, 2573, 3325, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2573, 3324, 0));
 
         //Home
-        ObjectAction.register(25801, 2021, 3566, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2021, 3567, 0));
-        ObjectAction.register(25935, 2020, 3565, 0, "climb-up", (player, obj) -> player.getMovement().teleport(2021, 3567, 1));
+        //ObjectAction.register(25801, 2021, 3566, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2021, 3567, 0));
+        //ObjectAction.register(25935, 2020, 3565, 0, "climb-up", (player, obj) -> player.getMovement().teleport(2021, 3567, 1));
 
         /**
          * Ladders we don't want to work!
