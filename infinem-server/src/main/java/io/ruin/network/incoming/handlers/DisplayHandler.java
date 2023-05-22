@@ -4,6 +4,7 @@ import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.cache.EnumMap;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.journal.Journal;
 import io.ruin.model.inter.utils.Config;
@@ -55,11 +56,14 @@ public class DisplayHandler implements Incoming {
         }
         Map<Integer, Integer> newComponents = getToplevelComponents(p).ints();
         moveSubInterfaces(oldComponents, newComponents, p);
-        //ps.sendAccessMask(Interface.QUEST, 7, 0, 19, 2);
-        //ps.sendAccessMask(Interface.QUEST, 8, 0, 118, 2);
-        //ps.sendAccessMask(Interface.QUEST, 9, 0, 11, 2);
-        //ps.sendAccessMask(Interface.OPTIONS, 106, 1, 4, 2);
-        //ps.sendAccessMask(Interface.OPTIONS, 107, 1, 4, 2);
+        ps.sendAccessMask(Interface.OPTIONS, 39, 0, 21, AccessMasks.ClickOp1);
+        ps.sendAccessMask(Interface.OPTIONS, 53, 0, 21, AccessMasks.ClickOp1);
+        ps.sendAccessMask(Interface.OPTIONS, 67, 0, 21, AccessMasks.ClickOp1);
+        ps.sendAccessMask(Interface.OPTIONS, 79, 1, 5, AccessMasks.ClickOp1);
+        ps.sendAccessMask(Interface.OPTIONS, 80, 1, 4, AccessMasks.ClickOp1);
+        ps.sendAccessMask(Interface.OPTIONS, 82, 1, 3, AccessMasks.ClickOp1);
+        ps.sendAccessMask(Interface.OPTIONS, 23, 0, 21, AccessMasks.ClickOp1);
+        ps.sendAccessMask(Interface.OPTIONS, 81, 1, 5, AccessMasks.ClickOp1);
         ps.sendAccessMask(Interface.EMOTE, 1, 0, 47, 2);
         ps.sendAccessMask(Interface.MUSIC_PLAYER, 3, 0, 665, 6);
         ps.sendAccessMask(Interface.MAGIC_BOOK, 184, 0, 4, 2);
@@ -172,15 +176,6 @@ public class DisplayHandler implements Incoming {
                 ps.moveInterface(from >> 16, from & 0xffff, to >> 16, to & 0xffff);
             }
         }
-        // Temporary fix for broken access masks
-        /*ps.sendAccessMask(Interface.QUEST, 7, 0, 19, 2);
-        ps.sendAccessMask(Interface.QUEST, 8, 0, 118, 2);
-        ps.sendAccessMask(Interface.QUEST, 9, 0, 11, 2);
-        ps.sendAccessMask(Interface.OPTIONS, 106, 1, 4, 2);
-        ps.sendAccessMask(Interface.OPTIONS, 107, 1, 4, 2);
-        ps.sendAccessMask(Interface.EMOTE, 1, 0, 47, 2);
-        ps.sendAccessMask(Interface.MUSIC_PLAYER, 3, 0, 625, 6);
-        ps.sendAccessMask(Interface.MAGIC_BOOK, 184, 0, 4, 2);*/
     }
 
     public static int getGameFrameFor(int displayMode) {
