@@ -175,12 +175,6 @@
       "stock": 200,
       "buy_price": -1,
       "sell_price": 50
-    },
-    {
-      "itemId": 2801,
-      "stock": 2147483647,
-      "buy_price": -1,
-      "sell_price": 5000
     }
   ]
 }
