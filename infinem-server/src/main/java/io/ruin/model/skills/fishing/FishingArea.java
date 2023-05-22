@@ -208,16 +208,6 @@ public enum FishingArea {
             new Position(3828, 2872, 0),
             new Position(3826, 2872, 0)
     ),
-    LAVA_MAZE(
-            new Position(3070, 3877, 0),
-            new Position(3071, 3877, 0),
-            new Position(3072, 3877, 0),
-            new Position(3073, 3877, 0),
-            new Position(3074, 3877, 0),
-            new Position(3075, 3877, 0),
-            new Position(3076, 3877, 0),
-            new Position(3077, 3877, 0)
-    ),
     AL_KHARID(
             new Position(3267, 3148, 0),
             new Position(3266, 3148, 0),
@@ -412,7 +402,6 @@ public enum FishingArea {
         DONATOR_ZONE.add(FishingSpot.CAGE_HARPOON, 2);
         DONATOR_ZONE.add(FishingSpot.BIG_NET_HARPOON, 2);
         PVP_WORLD_37S.add(FishingSpot.CAGE, 3);
-        LAVA_MAZE.add(FishingSpot.MOLTEN_EEL, 3);
         HOME.add(FishingSpot.BIG_NET_HARPOON, 2);
         HOME.add(FishingSpot.KARAMBWAN_SPOT, 1);
         HOME.add(FishingSpot.CAGE_HARPOON, 1);
