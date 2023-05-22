@@ -128,18 +128,20 @@ public class NPCActionHandler implements Incoming {
 
     private static void debug(Player player, NPC npc, NPCDef def, int option) {
         int configId = def.id;
+        if(npc == null) {
+            player.sendFilteredMessage("[NpcAction] option: " + option + " NULL NPC");
+            return;
+        }
         def = npc.getDef();
         DebugMessage debug = new DebugMessage();
         if(option != -1)
             debug.add("option", option);
         debug.add("id", def.id);
         debug.add("name", def.name);
-        if(npc != null) {
-            debug.add("index", npc.getIndex());
-            debug.add("x", npc.getAbsX());
-            debug.add("y", npc.getAbsY());
-            debug.add("z", npc.getHeight());
-        }
+        debug.add("index", npc.getIndex());
+        debug.add("x", npc.getAbsX());
+        debug.add("y", npc.getAbsY());
+        debug.add("z", npc.getHeight());
         debug.add("options", Arrays.toString(def.options));
         debug.add("varpbitId", def.varpbitId);
         debug.add("varpId", def.varpId);
