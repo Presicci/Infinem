@@ -16,6 +16,7 @@ public class OutOfRangeNPC {
             4022,   // Mike (mos le'harmless)
             4020,   // Mama (mos le'harmless)
             4019,   // Joe (mos le'harmless)
+            4017,   // Charley (mos le`harmless)
     };
 
     private static void addWalkException(NPC npc) {
