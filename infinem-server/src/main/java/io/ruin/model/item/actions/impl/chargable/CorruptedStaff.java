@@ -61,12 +61,12 @@ public class CorruptedStaff {
     }
 
     static {
-        ItemDef.get(CHARGED).addPreTargetDefendListener(CorruptedStaff::onStaffHit);
+       /* ItemDef.get(CHARGED).addPreTargetDefendListener(CorruptedStaff::onStaffHit);
         ItemAction.registerInventory(CHARGED, "check", CorruptedStaff::check);
         ItemAction.registerInventory(CHARGED, "uncharge", CorruptedStaff::uncharge);
         ItemAction.registerEquipment(CHARGED, "check", CorruptedStaff::check);
         ItemItemAction.register(UNCHARGED, ESSENCE, CorruptedStaff::charge);
-        ItemItemAction.register(CHARGED, ESSENCE, CorruptedStaff::charge);
+        ItemItemAction.register(CHARGED, ESSENCE, CorruptedStaff::charge);*/
     }
 
     private static void uncharge(Player player, Item javelin) {
