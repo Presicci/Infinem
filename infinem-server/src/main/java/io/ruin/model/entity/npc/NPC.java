@@ -21,10 +21,7 @@ import io.ruin.model.map.Tile;
 import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.stat.StatType;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
@@ -47,6 +44,10 @@ public class NPC extends NPCAttributes {
 
     public NPCDef getDef() {
         return NPCDef.cached.get(id);
+    }
+
+    public NPCDef getConfigDef(Player player) {
+        return NPCDef.getConfigDef(id, player);
     }
 
     /**

@@ -14,10 +14,12 @@ import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.KillCounter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.Dialogue;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.shop.Shop;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -51,6 +53,15 @@ public class NPCDef {
 
     public static NPCDef get(int id) {
         return cached.get(id);
+    }
+
+    public static NPCDef getConfigDef(int id, Player player) {
+        NPCDef def = NPCDef.cached.get(id);
+        if (def.varpbitId != -1) {// || def.varpId != -1) {
+            int value = Config.varpbit(def.varpbitId, false).get(player);
+            def = NPCDef.get(def.showIds[value]);
+        }
+        return def;
     }
 
 

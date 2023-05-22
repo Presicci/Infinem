@@ -73,7 +73,7 @@ public class NPCActionHandler implements Incoming {
         NPC npc = World.getNpc(npcIndex);
         if(npc == null)
             return;
-        NPCDef def = npc.getDef();
+        NPCDef def = npc.getConfigDef(player);
         if(player.debug)
             debug(player, npc, def, option);
         player.face(npc);
@@ -88,7 +88,7 @@ public class NPCActionHandler implements Incoming {
             if(i < 0 || i >= 5)
                 return;
             NPCAction action = null;
-            NPCAction[] actions = npc.actions;
+            NPCAction[] actions = def.varpbitId != -1 ? def.defaultActions : npc.actions;
             if(actions != null)
                 action = actions[i];
             if(action == null && (actions = def.defaultActions) != null)
@@ -104,7 +104,7 @@ public class NPCActionHandler implements Incoming {
             if(i < 0 || i >= 5)
                 return;
             NPCAction action = null;
-            NPCAction[] actions = npc.actions;
+            NPCAction[] actions = def.varpbitId != -1 ? def.defaultActions : npc.actions;
             if(actions != null)
                 action = actions[i];
             if(def.cryptic != null && def.cryptic.advance(player))
@@ -127,16 +127,12 @@ public class NPCActionHandler implements Incoming {
     }
 
     private static void debug(Player player, NPC npc, NPCDef def, int option) {
-        HashSet<Integer> showIds = new HashSet<>();
-        if(def.showIds != null) {
-            for(int id : def.showIds)
-                showIds.add(id);
-            showIds.remove(-1);
-        }
+        int configId = def.id;
+        def = npc.getDef();
         DebugMessage debug = new DebugMessage();
         if(option != -1)
             debug.add("option", option);
-        debug.add("id", def.id + (showIds.isEmpty() ? "" : (" " + showIds.toString())));
+        debug.add("id", def.id);
         debug.add("name", def.name);
         if(npc != null) {
             debug.add("index", npc.getIndex());
@@ -147,8 +143,19 @@ public class NPCActionHandler implements Incoming {
         debug.add("options", Arrays.toString(def.options));
         debug.add("varpbitId", def.varpbitId);
         debug.add("varpId", def.varpId);
-        if (def.varpbitId != -1 || def.varpId != -1)
-            debug.add("variants", Arrays.toString(def.showIds));
+        if ((def.varpbitId != -1 || def.varpId != -1) && def.showIds != null) {
+            StringBuilder variants = new StringBuilder("[");
+            for(int id : def.showIds) {
+                if (id == -1) continue;
+                if (variants.length() > 1)
+                    variants.append(", ");
+                if (id == configId)
+                    variants.append("C:");
+                variants.append(id);
+            }
+            debug.add("variants", variants);
+        }
+
         player.sendFilteredMessage("[NpcAction] " + debug.toString());
     }
 
