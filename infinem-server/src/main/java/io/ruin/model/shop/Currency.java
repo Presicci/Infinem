@@ -2,6 +2,7 @@ package io.ruin.model.shop;
 
 import io.ruin.cache.ItemID;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.Items;
 import lombok.Getter;
 
 import java.util.stream.Stream;
@@ -20,6 +21,7 @@ public enum Currency {
     VOTE_TICKETS(new ItemCurrencyHandler(ItemID.VOTE_TICKETS)),
     UNIDENTIFIED_MINERALS(new ItemCurrencyHandler(ItemID.UNIDENTIFIED_MINERALS)),
     STARDUST(new ItemCurrencyHandler(25527)),
+    PIECES_OF_EIGHT(new ItemCurrencyHandler(Items.PIECES_OF_EIGHT)),
     TASK_POINTS(new CurrencyHandler("daily task points") {
         @Override
         public int getCurrencyCount(Player player) {
