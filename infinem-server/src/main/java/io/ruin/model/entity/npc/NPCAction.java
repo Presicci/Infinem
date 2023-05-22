@@ -84,4 +84,16 @@ public interface NPCAction {
         npc.actions = Arrays.copyOfRange(actions, 1, actions.length);
     }
 
+    static void registerIncludeVariants(int npcId, String optionName, NPCAction action) {
+        NPCDef def = NPCDef.get(npcId);
+        if ((def.varpbitId != -1 || def.varpId != -1) && def.showIds != null) {
+            int[] ids = def.showIds;
+            for (int id : ids) {
+                if (id == -1) continue;
+                register(id, optionName, action);
+            }
+        } else {
+            register(npcId, optionName, action);
+        }
+    }
 }

@@ -66,17 +66,21 @@ public class npc_shops extends DataFile {
 
             String npcOption = s.npcOption != null ? s.npcOption : "Trade";
             int tradeOption = npcDef.getOption(npcOption);
-
             if (tradeOption > 0) {
                 NPCAction.register(n, tradeOption, (player, npc) -> {
                     fShop.open(player);
                 });
-            }
-            tradeOption = npcDef.getOption("Shop");
-            if (tradeOption > 0) {
-                NPCAction.register(n, tradeOption, (player, npc) -> {
-                    fShop.open(player);
-                });
+            } else {
+                tradeOption = npcDef.getOption("Shop");
+                if (tradeOption > 0) {
+                    NPCAction.register(n, tradeOption, (player, npc) -> {
+                        fShop.open(player);
+                    });
+                } else {
+                    NPCAction.registerIncludeVariants(n, "Trade", ((player, npc) -> {
+                        fShop.open(player);
+                    }));
+                }
             }
         }
 
