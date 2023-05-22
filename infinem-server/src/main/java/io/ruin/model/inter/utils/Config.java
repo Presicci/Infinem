@@ -1030,6 +1030,8 @@ public class Config {
     public static final Config PUZZLE_INDEX = varp(261, false);
     public static final Config LIGHT_BOX_INDEX = varp(1356, false);
 
+    public static final Config CHARTER_PREVIOUS = varpbit(10068, false);
+
     /**
      * Separator
      */

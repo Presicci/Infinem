@@ -26,26 +26,41 @@ public class CharterShips {
             player.sendMessage("You are already here!");
             return;
         }
+        if (ship != CharterPoints.CRANDOR)
+            Config.CHARTER_PREVIOUS.set(player, ship.ordinal() + 1);
         Traveling.fadeTravel(player, ship.pos);
         player.closeInterface(InterfaceType.MAIN);
     }
 
-    private static final int npcs[] = {
-        1334, 1331, 1333, 1330
+    private static final int[] CREWMEMBERS = {
+        9312, 9324, 9336, 9348, 9360, 9372
     };
 
     static {
-        for (int index : npcs) {
-            NPCAction.register(index, "charter", ((player, npc) -> {
-                Config.varp(302, false).set(player, 61);        // Unlocks port phasmatys
-                Config.varp(655, false).set(player, 140);       // Unlocks mos le'harmless
-                Config.varp(365, false).set(player, 2);         // Unlocks shipyard
-                Config.varp(150, false).set(player, 160);       // Unlocks shipyard
-                Config.varp(328, false).set(player, 15);        // Unlocks port tyras
-                //Config.varp(176, false).set(player, 2);         // Unlocks crandor
-                Config.varpbit(9016, false).set(player, 200);   // Unlocks prif
-                player.openInterface(InterfaceType.MAIN, Interface.CHARTER);
-            }));
+        for (int member : CREWMEMBERS) {
+            for (int index = member; index < member + 12; index++) {
+                NPCAction.register(index, "charter", ((player, npc) -> {
+                    Config.varp(302, false).set(player, 61);        // Unlocks port phasmatys
+                    Config.varp(655, false).set(player, 140);       // Unlocks mos le'harmless
+                    Config.varp(365, false).set(player, 2);         // Unlocks shipyard
+                    Config.varp(150, false).set(player, 160);       // Unlocks shipyard
+                    Config.varp(328, false).set(player, 15);        // Unlocks port tyras
+                    //Config.varp(176, false).set(player, 2);         // Unlocks crandor
+                    Config.varpbit(9016, false).set(player, 200);   // Unlocks prif
+                    player.openInterface(InterfaceType.MAIN, Interface.CHARTER);
+                }));
+            }
+            NPCAction.register(member + 1, "Charter-to Brimhaven", ((player, npc) -> travel(player, CharterPoints.BRIMHAVEN)));
+            NPCAction.register(member + 2, "Charter-to Catherby", ((player, npc) -> travel(player, CharterPoints.CATHERBY)));
+            NPCAction.register(member + 3, "Charter-to Mos Le`Harmless", ((player, npc) -> travel(player, CharterPoints.MOS_LEHARMLESS)));
+            NPCAction.register(member + 4, "Charter-to Musa Point", ((player, npc) -> travel(player, CharterPoints.MUSA_POINT)));
+            NPCAction.register(member + 5, "Charter-to Port Khazard", ((player, npc) -> travel(player, CharterPoints.PORT_KHAZARD)));
+            NPCAction.register(member + 6, "Charter-to Port Phasmatys", ((player, npc) -> travel(player, CharterPoints.PORT_PHASMATYS)));
+            NPCAction.register(member + 7, "Charter-to Port Sarim", ((player, npc) -> travel(player, CharterPoints.PORT_SARIM)));
+            NPCAction.register(member + 8, "Charter-to Shipyard", ((player, npc) -> travel(player, CharterPoints.SHIP_YARD)));
+            NPCAction.register(member + 9, "Charter-to Port Tyras", ((player, npc) -> travel(player, CharterPoints.PORT_TYRAS)));
+            NPCAction.register(member + 10, "Charter-to Corsair Cove", ((player, npc) -> travel(player, CharterPoints.CORSAIR_COVE)));
+            NPCAction.register(member + 11, "Charter-to Priffddinas", ((player, npc) -> travel(player, CharterPoints.PRIF)));
         }
 
         InterfaceHandler.register(Interface.CHARTER, h -> {
