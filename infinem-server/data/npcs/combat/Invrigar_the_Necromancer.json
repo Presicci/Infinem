@@ -1,6 +1,6 @@
 [
   { #Invrigar the Necromancer (20)
-    "ids": [ 473 ],
+    "ids": [ 511 ],
     "handler": "",
     //Combat Info
     "hitpoints": 24,
