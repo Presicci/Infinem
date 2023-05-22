@@ -35,7 +35,8 @@ public enum CrystalEquipment {
     static {
         for (CrystalEquipment equipment : CrystalEquipment.values()) {
             ItemAction.registerInventory(equipment.activeId, "check", CrystalEquipment::check);
-            ItemAction.registerEquipment(equipment.activeId, "check", CrystalEquipment::check);
+            if (equipment != BLADE_OF_SAELDOR)  // Blade of saeldor doesn't have equip options for some reason
+                ItemAction.registerEquipment(equipment.activeId, "check", CrystalEquipment::check);
             ItemItemAction.register(equipment.activeId, SHARD, equipment::charge);
             ItemItemAction.register(equipment.inactiveId, SHARD, equipment::charge);
         }
