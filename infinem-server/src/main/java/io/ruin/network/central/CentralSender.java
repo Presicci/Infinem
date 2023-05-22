@@ -3,7 +3,6 @@ package io.ruin.network.central;
 import io.netty.channel.Channel;
 import io.ruin.api.buffer.OutBuffer;
 import io.ruin.api.protocol.Protocol;
-import io.ruin.api.utils.PunishmentType;
 
 public class CentralSender {
 
@@ -57,6 +56,13 @@ public class CentralSender {
         OutBuffer out = new OutBuffer(6 + Protocol.strLen(message)).sendVarBytePacket(4)
                 .addInt(userId)
                 .addString(message);
+        write(out);
+    }
+
+    public static void sendUpdateDisplayName(int userId, String newName) {
+        OutBuffer out = new OutBuffer(4 + Protocol.strLen(newName)).sendVarBytePacket(23)
+                .addInt(userId)
+                .addString(newName);
         write(out);
     }
 
