@@ -567,15 +567,6 @@
     "walkRange": 3
   },
   {
-    "name": "Abyssal leech",
-    "id": 2584,
-    "x": 3040,
-    "y": 4870,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1
-  },
-  {
     "name": "Abyssal walker",
     "id": 2586,
     "x": 3023,
@@ -637,15 +628,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
-  },
-  {
-    "name": "Abyssal leech",
-    "id": 2584,
-    "x": 3051,
-    "y": 4871,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
   },
   {
     "name": "Abyssal walker",
