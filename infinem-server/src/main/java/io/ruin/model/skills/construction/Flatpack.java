@@ -141,7 +141,7 @@ public enum Flatpack {
     private static Flatpack[] TOY_BOXES = {OAK_TOY_BOX,TEAK_TOY_BOX,MAHOGANY_TOY_BOX};
 
     static {
-        InterfaceHandler.register(Interface.CONSTRUCTION_FLATPACK_CREATION, h -> {
+        /*InterfaceHandler.register(Interface.CONSTRUCTION_FLATPACK_CREATION, h -> {
             h.actions[111] = (SimpleAction) p -> openCategory(p, ARMCHAIRS);
             h.actions[112] = (SimpleAction) p -> openCategory(p, BOOKCASES);
             h.actions[113] = (SimpleAction) p -> openCategory(p, BARRELS);
@@ -158,13 +158,13 @@ public enum Flatpack {
             h.actions[124] = (SimpleAction) p -> openCategory(p, TREASURE_CHESTS);
             h.actions[125] = (SimpleAction) p -> openCategory(p, FANCY_DRESS_BOXES);
             h.actions[126] = (SimpleAction) p -> openCategory(p, TOY_BOXES);
-        });
+        });*/
     }
 
     public static void openFlatpackCategories(Player player, int maxLevel) {
-       player.openInterface(InterfaceType.MAIN, Interface.CONSTRUCTION_FLATPACK_CREATION);
-       player.set("WORKBENCH_LEVEL", maxLevel);
-
+        player.sendMessage("Flatpacks aren't implemented yet.");
+       //player.openInterface(InterfaceType.MAIN, Interface.CONSTRUCTION_FLATPACK_CREATION);
+       //player.set("WORKBENCH_LEVEL", maxLevel);
     }
 
     private static void openCategory(Player p, Flatpack[] set) {
