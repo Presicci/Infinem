@@ -1,0 +1,66 @@
+RAND
+/Player: Hello!
+Pirate: Yo ho ho and bottle of alcopop!
+/Player: Hello!
+Pirate: Oooh arrh!
+Pirate: No wait. That's a farmer.
+/Player: Hello!
+Pirate: Good day to you my dear sir!
+/Player: Hello!
+Pirate: Arrh be off with ye!
+/Player: Hello!
+Pirate: 3 days at port for resupply then out on the high sea!
+/Player: Hello!
+Pirate: Arrh arrh!
+/Player: Hello!
+Pirate: Arrh ye scurvy sea dog!
+/Player: Hello!
+Pirate: A pox on ye!
+/Player: Hello!
+Pirate: Arrh! I be in search of buried treasure!
+/Player: Hello!
+Pirate: Ahoy there!
+/Player: Hello!
+Pirate: Avast me hearties!
+/Player: Hello!
+Pirate: Shiver me timbers!
+/Player: Hello!
+Pirate: You'll be joining Davey Jones in his locker!
+/Player: Hello!
+Pirate: Arrrh ye lily livered landlubber!
+/Player: Hello!
+Pirate: Arrh!
+/Player: Hello!
+Pirate: Avast behind!
+Player: I'm not that fat!
+/Player: Hello!
+Pirate: Batton down the hatches there's a storm a brewin!
+/Player: Hello!
+Pirate: All hands on deck!
+/Player: Hello!
+Pirate: Yo ho ho me hearties!
+/Player: Hello!
+Pirate: Avast behind!
+/Player: Hello!
+Pirate: Man overboard!
+/Player: Hello!
+Pirate: Keel haul them I say!
+/Player: Hello!
+Pirate: I think ye'll be taking a long walk off a short plank!
+/Player: Hello!
+Pirate: Splice the mainbrace!
+/Player: Hello!
+Pirate: I'm the scourge of the seven seas!
+/Player: Hello!
+Pirate: Yo ho ho and a bottle of rum!
+/Player: Hello!
+Pirate: Pieces of eight! pieces of eight!
+Pirate: Oh wait that's the parrot's line.
+/Player: Hello!
+Pirate: Great blackbeard's beard!
+/Player: Hello!
+Pirate: I'm the scourge of the six seas!
+Player: Don't you mean seven seas?
+Pirate: I'm the scourge of the seven seas!
+/Player: Hello!
+Pirate: Arrh I'll keel haul ye!
