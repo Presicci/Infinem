@@ -1,5 +1,6 @@
 package io.ruin.model.item.actions.impl;
 
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
@@ -16,18 +17,18 @@ public class Camulet {
     private static final int MAX_CHARGES = 100;
 
     private static void teleport(Player player) {
-        int currentCharges = player.getCamuletCharges();
+        int currentCharges = player.getAttributeIntOrZero(AttributeKey.CAMULET_CHARGES);
         if (currentCharges <= 0) {
             player.sendMessage("Your Camulet doesn't have any charges remaining.");
             return;
         }
-        player.setCamuletCharges(currentCharges - 1);
+        player.putAttribute(AttributeKey.CAMULET_CHARGES, currentCharges - 1);    // 5 per bucket
         player.sendMessage("Your Camulet now has " + (currentCharges - 1) + " charges remaining.");
         ModernTeleport.teleport(player, 3189, 2923, 0);
     }
 
     private static void charge(Player player, Item dung) {
-        int currentCharges = player.getCamuletCharges();
+        int currentCharges = player.getAttributeIntOrZero(AttributeKey.CAMULET_CHARGES);
         if (currentCharges >= MAX_CHARGES) {
             player.sendMessage("Your Camulet already has the maximum amount of charges.");
             return;
@@ -37,12 +38,12 @@ public class Camulet {
             return;
         }
         dung.setId(Items.BUCKET);
-        player.setCamuletCharges(Math.min(MAX_CHARGES, currentCharges + 5));    // 5 per bucket
-        player.sendMessage("You add 5 charges to your Camulet. It now has " + player.getCamuletCharges() + " charges.");
+        player.putAttribute(AttributeKey.CAMULET_CHARGES, Math.min(MAX_CHARGES, currentCharges + 5));    // 5 per bucket
+        player.sendMessage("You add 5 charges to your Camulet. It now has " + player.getAttributeIntOrZero(AttributeKey.CAMULET_CHARGES) + " charges.");
     }
 
     private static void inspect(Player player) {
-        player.sendMessage("Your Camulet has " + player.getCamuletCharges() + " charges remaining.");
+        player.sendMessage("Your Camulet has " + player.getAttributeIntOrZero(AttributeKey.CAMULET_CHARGES) + " charges remaining.");
     }
 
     static {

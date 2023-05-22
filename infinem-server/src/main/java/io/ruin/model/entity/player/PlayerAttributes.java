@@ -1382,7 +1382,5 @@ public abstract class PlayerAttributes extends Entity {
     @Expose @Getter private final Set<Integer> SpokenToNPCSet = new HashSet<>();
     @Expose @Getter private final EnumSet<Waystone> UnlockedWaystones = EnumSet.noneOf(Waystone.class);
 
-    @Expose @Getter @Setter private int camuletCharges = 0;
-
     @Expose protected Map<AttributeKey, Object> attributes = Collections.synchronizedMap(new EnumMap<>(AttributeKey .class));
 }
