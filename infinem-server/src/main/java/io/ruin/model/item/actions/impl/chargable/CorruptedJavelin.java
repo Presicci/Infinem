@@ -63,12 +63,12 @@ public class CorruptedJavelin {
     }
 
     static {
-        ItemDef.get(CHARGED).addPreTargetDefendListener(CorruptedJavelin::onJavelinHit);
+        /* ItemDef.get(CHARGED).addPreTargetDefendListener(CorruptedJavelin::onJavelinHit);
         ItemAction.registerInventory(CHARGED, "check", CorruptedJavelin::check);
         ItemAction.registerInventory(CHARGED, "uncharge", CorruptedJavelin::uncharge);
         ItemAction.registerEquipment(CHARGED, "check", CorruptedJavelin::check);
         ItemItemAction.register(UNCHARGED, ESSENCE, CorruptedJavelin::charge);
-        ItemItemAction.register(CHARGED, ESSENCE, CorruptedJavelin::charge);
+        ItemItemAction.register(CHARGED, ESSENCE, CorruptedJavelin::charge);*/
     }
 
     private static void uncharge(Player player, Item javelin) {
