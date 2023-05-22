@@ -12,7 +12,7 @@ import io.ruin.model.inter.utils.Option;
 public class ChiefServant {
 
     static {
-        NPCAction.register(5417, "talk-to", ChiefServant::talk);
+        NPCAction.register(3095, "talk-to", ChiefServant::talk);
     }
 
     private static void talk(Player player, NPC npc) {
