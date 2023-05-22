@@ -52,6 +52,10 @@ public interface ItemAction {
         ItemDef def = ItemDef.get(itemId);
         int option = -1;
         for(int i = 451; i < 459; i++) { //tbh might go past 458, but doubt it..
+            if (def.attributes == null) {
+                System.err.println(itemId + " doesn't have equip params and trying to register equipment action!");
+                return false;
+            }
             String s = (String) def.attributes.get(i);
             if(optionName.equalsIgnoreCase(s)) {
                 option = (i - 451) + 2; //plus two because "Remove" is always 1
