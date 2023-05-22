@@ -13,7 +13,8 @@ public enum Direction {
     EAST(1, 0, 1536),           //4
     SOUTH_WEST(-1, -1, 256),    //5
     SOUTH(0, -1, 0),            //6
-    SOUTH_EAST(1, -1, 1792);    //7
+    SOUTH_EAST(1, -1, 1792),    //7
+    NONE(-1, 0, 0);
 
     public final int deltaX, deltaY;
 
