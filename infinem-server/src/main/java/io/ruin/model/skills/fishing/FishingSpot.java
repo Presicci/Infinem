@@ -413,12 +413,6 @@ public class FishingSpot {
                 .regularCatches(FishingCatch.INFERNAL_EEL)
                 .register(INFERNO_EEL, "bait");
         /*
-         * Molten eel
-         */
-        new FishingSpot(FishingTool.SMALL_FISHING_NET)
-                .regularCatches(FishingCatch.MOLTEN_EEL)
-                .register(MOLTEN_EEL, "bait");
-        /*
          * Slimy eel
          */
         new FishingSpot(FishingTool.FISHING_ROD)
