@@ -2048,5 +2048,14 @@
     "direction": "W",
     "walkRange": "30",
     "world": "ECO"
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 2947,
+    "y": 3330,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 30
   }
 ]
