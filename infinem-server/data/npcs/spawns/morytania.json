@@ -517,16 +517,6 @@
     "npcName": "Feral Vampyre"
   },
   {
-    "id": 3235,
-    "x": 3589,
-    "y": 3460,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3,
-    "world": "ECO",
-    "npcName": "Spider"
-  },
-  {
     "id": 3237,
     "x": 3602,
     "y": 3490,
@@ -599,16 +589,6 @@
     "walkRange": 3,
     "world": "ECO",
     "npcName": "Feral Vampyre"
-  },
-  {
-    "id": 3235,
-    "x": 3614,
-    "y": 3443,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3,
-    "world": "ECO",
-    "npcName": "Spider"
   },
   {
     "id": 8299,
@@ -2106,5 +2086,15 @@
     "walkRange": 3,
     "world": "ECO",
     "npcName": "Bat"
+  },
+  {
+    "name": "Old man",
+    "id": "2997",
+    "x": "3617",
+    "y": "3544",
+    "z": "1",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
   }
 ]
