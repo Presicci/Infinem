@@ -16,6 +16,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum CreviceShortcut {
 
+    HEROES_GUILD(67, 1, new Position(2898, 9902), new Position(2915, 9894)),
     FALADOR(1, 1, Position.of(3028, 9806), Position.of(3035, 9806));
 
     private int levelReq, xp;

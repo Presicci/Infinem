@@ -131,6 +131,8 @@ public class Shortcuts {
         // Cosmic Temple advanced narrow walkway
         // Lumbridge Swamp to Al Kharid narrow crevice
         // Heroes' Guild tunnel
+        ObjectAction.register(9739, 2899, 9901, 0, "use", CreviceShortcut.HEROES_GUILD::squeeze);
+        ObjectAction.register(9740, 2914, 9895, 0, "use", CreviceShortcut.HEROES_GUILD::squeeze);
         // Yanille Dungeon's rubble climb
         // Elven Overpass (Arandar) medium cliffside scramble
         // Arceuus essence mine northern scramble
