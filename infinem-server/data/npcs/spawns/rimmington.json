@@ -333,5 +333,15 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Rat"
+  },
+  {
+    "name": "Imp",
+    "id": "5007",
+    "x": "2941",
+    "y": "3236",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "30",
+    "world": "ECO"
   }
 ]
