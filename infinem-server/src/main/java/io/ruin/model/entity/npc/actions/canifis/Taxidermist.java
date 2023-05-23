@@ -16,7 +16,7 @@ import java.util.Optional;
  */
 public class Taxidermist {
 
-    public final static int TAXIDERMIST = 5418;
+    public final static int TAXIDERMIST = 3518;
 
     private static void nevermind(Player player, NPC npc) {
         player.dialogue(
