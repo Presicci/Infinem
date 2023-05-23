@@ -2018,5 +2018,35 @@
     "z": 1,
     "direction": "S",
     "walkRange": 5
+  },
+  {
+    "name": "Imp",
+    "id": "5007",
+    "x": "3009",
+    "y": "3307",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "30",
+    "world": "ECO"
+  },
+  {
+    "name": "Imp",
+    "id": "5007",
+    "x": "3011",
+    "y": "3314",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "30",
+    "world": "ECO"
+  },
+  {
+    "name": "Imp",
+    "id": "5007",
+    "x": "3015",
+    "y": "3314",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "30",
+    "world": "ECO"
   }
 ]
