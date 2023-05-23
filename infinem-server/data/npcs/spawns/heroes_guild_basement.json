@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Giant bat",
+    "id": "2834",
+    "x": "2936",
+    "y": "9896",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Giant bat",
+    "id": "2834",
+    "x": "2939",
+    "y": "9892",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Giant bat",
+    "id": "2834",
+    "x": "2934",
+    "y": "9887",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Giant bat",
+    "id": "2834",
+    "x": "2889",
+    "y": "9907",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Giant bat",
+    "id": "2834",
+    "x": "2896",
+    "y": "9911",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Blue dragon",
+    "id": "266",
+    "x": "2908",
+    "y": "9905",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  }
+]
