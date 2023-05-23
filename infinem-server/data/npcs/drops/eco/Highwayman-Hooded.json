@@ -1,6 +1,6 @@
 [
   {
-    "ids": [ 510 ],
+    "ids": [ 518 ],
     "guaranteed": [
       { "id": 526, "min": 1, "max": 1 },   //Bones
       { "id": 1019, "min": 1, "max": 1 }   //Black cape
