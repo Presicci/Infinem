@@ -1,0 +1,8 @@
+Achietties: Greetings. Welcome to the Heroes' Guild.
+Achietties: Only the greatest heroes of this land may gain entrance to this guild.
+<I'm a hero, may I apply to join?
+Player: I'm a hero - may I apply to join?
+Achietties: You're a hero? I've never heard of YOU. You are required to have at least 53 cooking, 53 fishing, 25 herblore and 50 mining to join.
+><Good for the foremost heroes of the land.
+Player: Good for the foremost heroes of the land.
+Achietties: Yes. Yes it is.
