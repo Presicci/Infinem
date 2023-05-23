@@ -16,13 +16,16 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum CreviceShortcut {
 
+    FALADOR(42, 1, Position.of(3028, 9806), Position.of(3035, 9806)),
     HEROES_GUILD(67, 1, new Position(2899, 9902), new Position(2914, 9894)),
-    FALADOR(1, 1, Position.of(3028, 9806), Position.of(3035, 9806));
+    ;
 
-    private int levelReq, xp;
-    private Position startPosition, endPosition;
+    private final int levelReq, xp;
+    private final Position startPosition, endPosition;
 
     public void squeeze(Player player, GameObject obj){
+        if (!player.getStats().check(StatType.Agility, levelReq, "attempt this"))
+            return;
         player.startEvent( e -> {
             player.lock(LockType.FULL_DELAY_DAMAGE);
             player.face(obj);
@@ -37,9 +40,8 @@ public enum CreviceShortcut {
             player.getMovement().teleport(target);
             player.animate(2595);
             e.delay(1);
-            if(World.isEco())
-                player.getStats().addXp(StatType.Agility, xp, true);
+            player.getStats().addXp(StatType.Agility, xp, true);
             player.unlock();
-        })
-        ;}
+        });
+    }
 }
