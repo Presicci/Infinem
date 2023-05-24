@@ -136,6 +136,9 @@ public class ModelData extends Renderable {
 		ModelData_cosine = Rasterizer3D.Rasterizer3D_cosine;
 	}
 
+	private int[][] field2180;
+	private int[][] field2181;
+
 	ModelData() {
 		this.verticesCount = 0;
 		this.faceCount = 0;
@@ -157,36 +160,38 @@ public class ModelData extends Renderable {
 		boolean var6 = false;
 		boolean var7 = false;
 		boolean var8 = false;
+		boolean var9 = false;
 		this.verticesCount = 0;
 		this.faceCount = 0;
 		this.textureTriangleCount = 0;
 		this.priority = -1;
 
-		int var9;
-		ModelData var10;
-		for (var9 = 0; var9 < var2; ++var9) {
-			var10 = var1[var9];
-			if (var10 != null) {
-				this.verticesCount += var10.verticesCount;
-				this.faceCount += var10.faceCount;
-				this.textureTriangleCount += var10.textureTriangleCount;
-				if (var10.faceRenderPriorities != null) {
+		int var10;
+		ModelData var11;
+		for (var10 = 0; var10 < var2; ++var10) {
+			var11 = var1[var10];
+			if (var11 != null) {
+				this.verticesCount += var11.verticesCount;
+				this.faceCount += var11.faceCount;
+				this.textureTriangleCount += var11.textureTriangleCount;
+				if (var11.faceRenderPriorities != null) {
 					var4 = true;
 				} else {
 					if (this.priority == -1) {
-						this.priority = var10.priority;
+						this.priority = var11.priority;
 					}
 
-					if (this.priority != var10.priority) {
+					if (this.priority != var11.priority) {
 						var4 = true;
 					}
 				}
 
-				var3 |= var10.faceRenderTypes != null;
-				var5 |= var10.faceAlphas != null;
-				var6 |= var10.faceSkins != null;
-				var7 |= var10.faceTextures != null;
-				var8 |= var10.textureCoords != null;
+				var3 |= var11.faceRenderTypes != null;
+				var5 |= var11.faceAlphas != null;
+				var6 |= var11.faceSkins != null;
+				var7 |= var11.faceTextures != null;
+				var8 |= var11.textureCoords != null;
+				var9 |= var11.field2180 != null;
 			}
 		}
 
@@ -221,6 +226,11 @@ public class ModelData extends Renderable {
 			this.textureCoords = new byte[this.faceCount];
 		}
 
+
+		if (var9) {
+			this.field2180 = new int[this.verticesCount][];
+			this.field2181 = new int[this.verticesCount][];
+		}
 		this.faceColors = new short[this.faceCount];
 		if (this.textureTriangleCount > 0) {
 			this.textureRenderTypes = new byte[this.textureTriangleCount];
@@ -233,60 +243,60 @@ public class ModelData extends Renderable {
 		this.faceCount = 0;
 		this.textureTriangleCount = 0;
 
-		for (var9 = 0; var9 < var2; ++var9) {
-			var10 = var1[var9];
-			if (var10 != null) {
-				int var11;
-				for (var11 = 0; var11 < var10.faceCount; ++var11) {
-					if (var3 && var10.faceRenderTypes != null) {
-						this.faceRenderTypes[this.faceCount] = var10.faceRenderTypes[var11];
+		for (var10 = 0; var10 < var2; ++var10) {
+			var11 = var1[var10];
+			if (var11 != null) {
+				int var12;
+				for (var12 = 0; var12 < var11.faceCount; ++var12) {
+					if (var3 && var11.faceRenderTypes != null) {
+						this.faceRenderTypes[this.faceCount] = var11.faceRenderTypes[var12];
 					}
 
 					if (var4) {
-						if (var10.faceRenderPriorities != null) {
-							this.faceRenderPriorities[this.faceCount] = var10.faceRenderPriorities[var11];
+						if (var11.faceRenderPriorities != null) {
+							this.faceRenderPriorities[this.faceCount] = var11.faceRenderPriorities[var12];
 						} else {
-							this.faceRenderPriorities[this.faceCount] = var10.priority;
+							this.faceRenderPriorities[this.faceCount] = var11.priority;
 						}
 					}
 
-					if (var5 && var10.faceAlphas != null) {
-						this.faceAlphas[this.faceCount] = var10.faceAlphas[var11];
+					if (var5 && var11.faceAlphas != null) {
+						this.faceAlphas[this.faceCount] = var11.faceAlphas[var12];
 					}
 
-					if (var6 && var10.faceSkins != null) {
-						this.faceSkins[this.faceCount] = var10.faceSkins[var11];
+					if (var6 && var11.faceSkins != null) {
+						this.faceSkins[this.faceCount] = var11.faceSkins[var12];
 					}
 
 					if (var7) {
-						if (var10.faceTextures != null) {
-							this.faceTextures[this.faceCount] = var10.faceTextures[var11];
+						if (var11.faceTextures != null) {
+							this.faceTextures[this.faceCount] = var11.faceTextures[var12];
 						} else {
 							this.faceTextures[this.faceCount] = -1;
 						}
 					}
 
 					if (var8) {
-						if (var10.textureCoords != null && var10.textureCoords[var11] != -1) {
-							this.textureCoords[this.faceCount] = (byte)(this.textureTriangleCount + var10.textureCoords[var11]);
+						if (var11.textureCoords != null && var11.textureCoords[var12] != -1) {
+							this.textureCoords[this.faceCount] = (byte)(this.textureTriangleCount + var11.textureCoords[var12]);
 						} else {
 							this.textureCoords[this.faceCount] = -1;
 						}
 					}
 
-					this.faceColors[this.faceCount] = var10.faceColors[var11];
-					this.indices1[this.faceCount] = this.method3993(var10, var10.indices1[var11]);
-					this.indices2[this.faceCount] = this.method3993(var10, var10.indices2[var11]);
-					this.indices3[this.faceCount] = this.method3993(var10, var10.indices3[var11]);
+					this.faceColors[this.faceCount] = var11.faceColors[var12];
+					this.indices1[this.faceCount] = this.method3993(var11, var11.indices1[var12]);
+					this.indices2[this.faceCount] = this.method3993(var11, var11.indices2[var12]);
+					this.indices3[this.faceCount] = this.method3993(var11, var11.indices3[var12]);
 					++this.faceCount;
 				}
 
-				for (var11 = 0; var11 < var10.textureTriangleCount; ++var11) {
-					byte var12 = this.textureRenderTypes[this.textureTriangleCount] = var10.textureRenderTypes[var11];
-					if (var12 == 0) {
-						this.texTriangleX[this.textureTriangleCount] = (short)this.method3993(var10, var10.texTriangleX[var11]);
-						this.texTriangleY[this.textureTriangleCount] = (short)this.method3993(var10, var10.texTriangleY[var11]);
-						this.texTriangleZ[this.textureTriangleCount] = (short)this.method3993(var10, var10.texTriangleZ[var11]);
+				for (var12 = 0; var12 < var11.textureTriangleCount; ++var12) {
+					byte var13 = this.textureRenderTypes[this.textureTriangleCount] = var11.textureRenderTypes[var12];
+					if (var13 == 0) {
+						this.texTriangleX[this.textureTriangleCount] = (short)this.method3993(var11, var11.texTriangleX[var12]);
+						this.texTriangleY[this.textureTriangleCount] = (short)this.method3993(var11, var11.texTriangleY[var12]);
+						this.texTriangleZ[this.textureTriangleCount] = (short)this.method3993(var11, var11.texTriangleZ[var12]);
 					}
 
 					++this.textureTriangleCount;
@@ -301,12 +311,17 @@ public class ModelData extends Renderable {
 		this.faceCount = 0;
 		this.priority = 0;
 		this.isBoundsCalculated = false;
-		if (var1[var1.length - 1] == -1 && var1[var1.length - 2] == -1) {
-			this.method3952(var1);
+		Buffer var2 = new Buffer(10); // L: 64
+		var2.writeShort(-2); // L: 65
+		if (var1[var1.length - 1] == -3 && var1[var1.length - 2] == -1) { // L: 66
+			this.method3700(var1);
+		} else if (var1[var1.length - 1] == -2 && var1[var1.length - 2] == -1) { // L: 67
+			this.method3753(var1);
+		} else if (var1[var1.length - 1] == -1 && var1[var1.length - 2] == -1) { // L: 68
+			this.method3702(var1);
 		} else {
-			this.method3953(var1);
+			this.method3703(var1);
 		}
-
 	}
 
 	@ObfuscatedSignature(
@@ -380,6 +395,1205 @@ public class ModelData extends Renderable {
 		this.ambient = var1.ambient;
 		this.contrast = var1.contrast;
 	}
+
+	void method3700(byte[] var1) {
+		Buffer var2 = new Buffer(var1); // L: 73
+		Buffer var3 = new Buffer(var1); // L: 74
+		Buffer var4 = new Buffer(var1); // L: 75
+		Buffer var5 = new Buffer(var1); // L: 76
+		Buffer var6 = new Buffer(var1); // L: 77
+		Buffer var7 = new Buffer(var1); // L: 78
+		Buffer var8 = new Buffer(var1); // L: 79
+		var2.offset = var1.length - 26; // L: 80
+		int var9 = var2.readUnsignedShort(); // L: 81
+		int var10 = var2.readUnsignedShort(); // L: 82
+		int var11 = var2.readUnsignedByte(); // L: 83
+		int var12 = var2.readUnsignedByte(); // L: 84
+		int var13 = var2.readUnsignedByte(); // L: 85
+		int var14 = var2.readUnsignedByte(); // L: 86
+		int var15 = var2.readUnsignedByte(); // L: 87
+		int var16 = var2.readUnsignedByte(); // L: 88
+		int var17 = var2.readUnsignedByte(); // L: 89
+		int var18 = var2.readUnsignedByte(); // L: 90
+		int var19 = var2.readUnsignedShort(); // L: 91
+		int var20 = var2.readUnsignedShort(); // L: 92
+		int var21 = var2.readUnsignedShort(); // L: 93
+		int var22 = var2.readUnsignedShort(); // L: 94
+		int var23 = var2.readUnsignedShort(); // L: 95
+		int var24 = var2.readUnsignedShort(); // L: 96
+		int var25 = 0; // L: 97
+		int var26 = 0; // L: 98
+		int var27 = 0; // L: 99
+		int var28;
+		if (var11 > 0) { // L: 100
+			this.textureRenderTypes = new byte[var11]; // L: 101
+			var2.offset = 0; // L: 102
+
+			for (var28 = 0; var28 < var11; ++var28) { // L: 103
+				byte var29 = this.textureRenderTypes[var28] = var2.readByte(); // L: 104
+				if (var29 == 0) { // L: 105
+					++var25;
+				}
+
+				if (var29 >= 1 && var29 <= 3) { // L: 106
+					++var26;
+				}
+
+				if (var29 == 2) { // L: 107
+					++var27;
+				}
+			}
+		}
+
+		var28 = var11 + var9; // L: 112
+		int var30 = var28; // L: 113
+		if (var12 == 1) { // L: 114
+			var28 += var10;
+		}
+
+		int var31 = var28; // L: 115
+		var28 += var10; // L: 116
+		int var32 = var28; // L: 117
+		if (var13 == 255) { // L: 118
+			var28 += var10;
+		}
+
+		int var33 = var28; // L: 119
+		if (var15 == 1) { // L: 120
+			var28 += var10;
+		}
+
+		int var34 = var28; // L: 121
+		var28 += var24; // L: 122
+		int var35 = var28; // L: 123
+		if (var14 == 1) { // L: 124
+			var28 += var10;
+		}
+
+		int var36 = var28; // L: 125
+		var28 += var22; // L: 126
+		int var37 = var28; // L: 127
+		if (var16 == 1) { // L: 128
+			var28 += var10 * 2;
+		}
+
+		int var38 = var28; // L: 129
+		var28 += var23; // L: 130
+		int var39 = var28; // L: 131
+		var28 += var10 * 2; // L: 132
+		int var40 = var28; // L: 133
+		var28 += var19; // L: 134
+		int var41 = var28; // L: 135
+		var28 += var20; // L: 136
+		int var42 = var28; // L: 137
+		var28 += var21; // L: 138
+		int var43 = var28; // L: 139
+		var28 += var25 * 6; // L: 140
+		int var44 = var28; // L: 141
+		var28 += var26 * 6; // L: 142
+		int var45 = var28; // L: 143
+		var28 += var26 * 6; // L: 144
+		int var46 = var28; // L: 145
+		var28 += var26 * 2; // L: 146
+		int var47 = var28; // L: 147
+		var28 += var26; // L: 148
+		int var48 = var28; // L: 149
+		var28 += var26 * 2 + var27 * 2; // L: 150
+		this.verticesCount = var9; // L: 152
+		this.faceCount = var10; // L: 153
+		this.textureTriangleCount = var11; // L: 154
+		this.verticesX = new int[var9]; // L: 155
+		this.verticesY = new int[var9]; // L: 156
+		this.verticesZ = new int[var9]; // L: 157
+		this.indices1 = new int[var10]; // L: 158
+		this.indices2 = new int[var10]; // L: 159
+		this.indices3 = new int[var10]; // L: 160
+		if (var17 == 1) { // L: 161
+			this.vertexSkins = new int[var9];
+		}
+
+		if (var12 == 1) { // L: 162
+			this.faceRenderTypes = new byte[var10];
+		}
+
+		if (var13 == 255) { // L: 163
+			this.faceRenderPriorities = new byte[var10];
+		} else {
+			this.priority = (byte)var13; // L: 164
+		}
+
+		if (var14 == 1) { // L: 165
+			this.faceAlphas = new byte[var10];
+		}
+
+		if (var15 == 1) { // L: 166
+			this.faceSkins = new int[var10];
+		}
+
+		if (var16 == 1) { // L: 167
+			this.faceTextures = new short[var10];
+		}
+
+		if (var16 == 1 && var11 > 0) { // L: 168
+			this.textureCoords = new byte[var10];
+		}
+
+		if (var18 == 1) { // L: 169
+			this.field2180 = new int[var9][]; // L: 170
+			this.field2181 = new int[var9][]; // L: 171
+		}
+
+		this.faceColors = new short[var10]; // L: 173
+		if (var11 > 0) { // L: 174
+			this.texTriangleX = new short[var11]; // L: 175
+			this.texTriangleY = new short[var11]; // L: 176
+			this.texTriangleZ = new short[var11]; // L: 177
+		}
+
+		var2.offset = var11; // L: 179
+		var3.offset = var40; // L: 180
+		var4.offset = var41; // L: 181
+		var5.offset = var42; // L: 182
+		var6.offset = var34; // L: 183
+		int var50 = 0; // L: 184
+		int var51 = 0; // L: 185
+		int var52 = 0; // L: 186
+
+		int var53;
+		int var54;
+		int var55;
+		int var56;
+		int var57;
+		for (var53 = 0; var53 < var9; ++var53) { // L: 187
+			var54 = var2.readUnsignedByte(); // L: 188
+			var55 = 0; // L: 189
+			if ((var54 & 1) != 0) { // L: 190
+				var55 = var3.readShortSmart();
+			}
+
+			var56 = 0; // L: 191
+			if ((var54 & 2) != 0) { // L: 192
+				var56 = var4.readShortSmart();
+			}
+
+			var57 = 0; // L: 193
+			if ((var54 & 4) != 0) { // L: 194
+				var57 = var5.readShortSmart();
+			}
+
+			this.verticesX[var53] = var50 + var55; // L: 195
+			this.verticesY[var53] = var51 + var56; // L: 196
+			this.verticesZ[var53] = var52 + var57; // L: 197
+			var50 = this.verticesX[var53]; // L: 198
+			var51 = this.verticesY[var53]; // L: 199
+			var52 = this.verticesZ[var53]; // L: 200
+			if (var17 == 1) { // L: 201
+				this.vertexSkins[var53] = var6.readUnsignedByte();
+			}
+		}
+
+		if (var18 == 1) { // L: 203
+			for (var53 = 0; var53 < var9; ++var53) { // L: 204
+				var54 = var6.readUnsignedByte(); // L: 205
+				this.field2180[var53] = new int[var54]; // L: 206
+				this.field2181[var53] = new int[var54]; // L: 207
+
+				for (var55 = 0; var55 < var54; ++var55) { // L: 208
+					this.field2180[var53][var55] = var6.readUnsignedByte(); // L: 209
+					this.field2181[var53][var55] = var6.readUnsignedByte(); // L: 210
+				}
+			}
+		}
+
+		var2.offset = var39; // L: 214
+		var3.offset = var30; // L: 215
+		var4.offset = var32; // L: 216
+		var5.offset = var35; // L: 217
+		var6.offset = var33; // L: 218
+		var7.offset = var37; // L: 219
+		var8.offset = var38; // L: 220
+
+		for (var53 = 0; var53 < var10; ++var53) { // L: 221
+			this.faceColors[var53] = (short)var2.readUnsignedShort(); // L: 222
+			if (var12 == 1) { // L: 223
+				this.faceRenderTypes[var53] = var3.readByte();
+			}
+
+			if (var13 == 255) { // L: 224
+				this.faceRenderPriorities[var53] = var4.readByte();
+			}
+
+			if (var14 == 1) { // L: 225
+				this.faceAlphas[var53] = var5.readByte();
+			}
+
+			if (var15 == 1) { // L: 226
+				this.faceSkins[var53] = var6.readUnsignedByte();
+			}
+
+			if (var16 == 1) { // L: 227
+				this.faceTextures[var53] = (short)(var7.readUnsignedShort() - 1);
+			}
+
+			if (this.textureCoords != null && this.faceTextures[var53] != -1) { // L: 228
+				this.textureCoords[var53] = (byte)(var8.readUnsignedByte() - 1);
+			}
+		}
+
+		var2.offset = var36; // L: 230
+		var3.offset = var31; // L: 231
+		var53 = 0; // L: 232
+		var54 = 0; // L: 233
+		var55 = 0; // L: 234
+		var56 = 0; // L: 235
+
+		int var58;
+		for (var57 = 0; var57 < var10; ++var57) { // L: 236
+			var58 = var3.readUnsignedByte(); // L: 237
+			if (var58 == 1) { // L: 238
+				var53 = var2.readShortSmart() + var56; // L: 239
+				var54 = var2.readShortSmart() + var53; // L: 241
+				var55 = var2.readShortSmart() + var54; // L: 243
+				var56 = var55; // L: 244
+				this.indices1[var57] = var53; // L: 245
+				this.indices2[var57] = var54; // L: 246
+				this.indices3[var57] = var55; // L: 247
+			}
+
+			if (var58 == 2) { // L: 249
+				var54 = var55; // L: 250
+				var55 = var2.readShortSmart() + var56; // L: 251
+				var56 = var55; // L: 252
+				this.indices1[var57] = var53; // L: 253
+				this.indices2[var57] = var54; // L: 254
+				this.indices3[var57] = var55; // L: 255
+			}
+
+			if (var58 == 3) { // L: 257
+				var53 = var55; // L: 258
+				var55 = var2.readShortSmart() + var56; // L: 259
+				var56 = var55; // L: 260
+				this.indices1[var57] = var53; // L: 261
+				this.indices2[var57] = var54; // L: 262
+				this.indices3[var57] = var55; // L: 263
+			}
+
+			if (var58 == 4) { // L: 265
+				int var59 = var53; // L: 266
+				var53 = var54; // L: 267
+				var54 = var59; // L: 268
+				var55 = var2.readShortSmart() + var56; // L: 269
+				var56 = var55; // L: 270
+				this.indices1[var57] = var53; // L: 271
+				this.indices2[var57] = var59; // L: 272
+				this.indices3[var57] = var55; // L: 273
+			}
+		}
+
+		var2.offset = var43; // L: 276
+		var3.offset = var44; // L: 277
+		var4.offset = var45; // L: 278
+		var5.offset = var46; // L: 279
+		var6.offset = var47; // L: 280
+		var7.offset = var48; // L: 281
+
+		for (var57 = 0; var57 < var11; ++var57) { // L: 282
+			var58 = this.textureRenderTypes[var57] & 255; // L: 283
+			if (var58 == 0) { // L: 284
+				this.texTriangleX[var57] = (short)var2.readUnsignedShort(); // L: 285
+				this.texTriangleY[var57] = (short)var2.readUnsignedShort(); // L: 286
+				this.texTriangleZ[var57] = (short)var2.readUnsignedShort(); // L: 287
+			}
+		}
+
+		var2.offset = var28; // L: 290
+		var57 = var2.readUnsignedByte(); // L: 291
+		if (var57 != 0) { // L: 292
+			new ModelData0();
+			var2.readUnsignedShort(); // L: 294
+			var2.readUnsignedShort(); // L: 295
+			var2.readUnsignedShort(); // L: 296
+			var2.readInt(); // L: 297
+		}
+
+	} // L: 299
+
+	@ObfuscatedName("e")
+	void method3753(byte[] var1) {
+		boolean var2 = false; // L: 302
+		boolean var3 = false; // L: 303
+		Buffer var4 = new Buffer(var1); // L: 304
+		Buffer var5 = new Buffer(var1); // L: 305
+		Buffer var6 = new Buffer(var1); // L: 306
+		Buffer var7 = new Buffer(var1); // L: 307
+		Buffer var8 = new Buffer(var1); // L: 308
+		var4.offset = var1.length - 23; // L: 309
+		int var9 = var4.readUnsignedShort(); // L: 310
+		int var10 = var4.readUnsignedShort(); // L: 311
+		int var11 = var4.readUnsignedByte(); // L: 312
+		int var12 = var4.readUnsignedByte(); // L: 313
+		int var13 = var4.readUnsignedByte(); // L: 314
+		int var14 = var4.readUnsignedByte(); // L: 315
+		int var15 = var4.readUnsignedByte(); // L: 316
+		int var16 = var4.readUnsignedByte(); // L: 317
+		int var17 = var4.readUnsignedByte(); // L: 318
+		int var18 = var4.readUnsignedShort(); // L: 319
+		int var19 = var4.readUnsignedShort(); // L: 320
+		int var20 = var4.readUnsignedShort(); // L: 321
+		int var21 = var4.readUnsignedShort(); // L: 322
+		int var22 = var4.readUnsignedShort(); // L: 323
+		byte var23 = 0; // L: 324
+		int var47 = var23 + var9; // L: 326
+		int var25 = var47; // L: 327
+		var47 += var10; // L: 328
+		int var26 = var47; // L: 329
+		if (var13 == 255) { // L: 330
+			var47 += var10;
+		}
+
+		int var27 = var47; // L: 331
+		if (var15 == 1) { // L: 332
+			var47 += var10;
+		}
+
+		int var28 = var47; // L: 333
+		if (var12 == 1) { // L: 334
+			var47 += var10;
+		}
+
+		int var29 = var47; // L: 335
+		var47 += var22; // L: 336
+		int var30 = var47; // L: 337
+		if (var14 == 1) { // L: 338
+			var47 += var10;
+		}
+
+		int var31 = var47; // L: 339
+		var47 += var21; // L: 340
+		int var32 = var47; // L: 341
+		var47 += var10 * 2; // L: 342
+		int var33 = var47; // L: 343
+		var47 += var11 * 6; // L: 344
+		int var34 = var47; // L: 345
+		var47 += var18; // L: 346
+		int var35 = var47; // L: 347
+		var47 += var19; // L: 348
+		int var10000 = var47 + var20; // L: 350
+		this.verticesCount = var9; // L: 351
+		this.faceCount = var10; // L: 352
+		this.textureTriangleCount = var11; // L: 353
+		this.verticesX = new int[var9]; // L: 354
+		this.verticesY = new int[var9]; // L: 355
+		this.verticesZ = new int[var9]; // L: 356
+		this.indices1 = new int[var10]; // L: 357
+		this.indices2 = new int[var10]; // L: 358
+		this.indices3 = new int[var10]; // L: 359
+		if (var11 > 0) { // L: 360
+			this.textureRenderTypes = new byte[var11]; // L: 361
+			this.texTriangleX = new short[var11]; // L: 362
+			this.texTriangleY = new short[var11]; // L: 363
+			this.texTriangleZ = new short[var11]; // L: 364
+		}
+
+		if (var16 == 1) { // L: 366
+			this.vertexSkins = new int[var9];
+		}
+
+		if (var12 == 1) { // L: 367
+			this.faceRenderTypes = new byte[var10]; // L: 368
+			this.textureCoords = new byte[var10]; // L: 369
+			this.faceTextures = new short[var10]; // L: 370
+		}
+
+		if (var13 == 255) { // L: 372
+			this.faceRenderPriorities = new byte[var10];
+		} else {
+			this.priority = (byte)var13; // L: 373
+		}
+
+		if (var14 == 1) { // L: 374
+			this.faceAlphas = new byte[var10];
+		}
+
+		if (var15 == 1) { // L: 375
+			this.faceSkins = new int[var10];
+		}
+
+		if (var17 == 1) { // L: 376
+			this.field2180 = new int[var9][]; // L: 377
+			this.field2181 = new int[var9][]; // L: 378
+		}
+
+		this.faceColors = new short[var10]; // L: 380
+		var4.offset = var23; // L: 381
+		var5.offset = var34; // L: 382
+		var6.offset = var35; // L: 383
+		var7.offset = var47; // L: 384
+		var8.offset = var29; // L: 385
+		int var37 = 0; // L: 386
+		int var38 = 0; // L: 387
+		int var39 = 0; // L: 388
+
+		int var40;
+		int var41;
+		int var42;
+		int var43;
+		int var44;
+		for (var40 = 0; var40 < var9; ++var40) { // L: 389
+			var41 = var4.readUnsignedByte(); // L: 390
+			var42 = 0; // L: 391
+			if ((var41 & 1) != 0) { // L: 392
+				var42 = var5.readShortSmart();
+			}
+
+			var43 = 0; // L: 393
+			if ((var41 & 2) != 0) { // L: 394
+				var43 = var6.readShortSmart();
+			}
+
+			var44 = 0; // L: 395
+			if ((var41 & 4) != 0) { // L: 396
+				var44 = var7.readShortSmart();
+			}
+
+			this.verticesX[var40] = var37 + var42; // L: 397
+			this.verticesY[var40] = var38 + var43; // L: 398
+			this.verticesZ[var40] = var39 + var44; // L: 399
+			var37 = this.verticesX[var40]; // L: 400
+			var38 = this.verticesY[var40]; // L: 401
+			var39 = this.verticesZ[var40]; // L: 402
+			if (var16 == 1) { // L: 403
+				this.vertexSkins[var40] = var8.readUnsignedByte();
+			}
+		}
+
+		if (var17 == 1) { // L: 405
+			for (var40 = 0; var40 < var9; ++var40) { // L: 406
+				var41 = var8.readUnsignedByte(); // L: 407
+				this.field2180[var40] = new int[var41]; // L: 408
+				this.field2181[var40] = new int[var41]; // L: 409
+
+				for (var42 = 0; var42 < var41; ++var42) { // L: 410
+					this.field2180[var40][var42] = var8.readUnsignedByte(); // L: 411
+					this.field2181[var40][var42] = var8.readUnsignedByte(); // L: 412
+				}
+			}
+		}
+
+		var4.offset = var32; // L: 416
+		var5.offset = var28; // L: 417
+		var6.offset = var26; // L: 418
+		var7.offset = var30; // L: 419
+		var8.offset = var27; // L: 420
+
+		for (var40 = 0; var40 < var10; ++var40) { // L: 421
+			this.faceColors[var40] = (short)var4.readUnsignedShort(); // L: 422
+			if (var12 == 1) { // L: 423
+				var41 = var5.readUnsignedByte(); // L: 424
+				if ((var41 & 1) == 1) { // L: 425
+					this.faceRenderTypes[var40] = 1; // L: 426
+					var2 = true; // L: 427
+				} else {
+					this.faceRenderTypes[var40] = 0; // L: 429
+				}
+
+				if ((var41 & 2) == 2) { // L: 430
+					this.textureCoords[var40] = (byte)(var41 >> 2); // L: 431
+					this.faceTextures[var40] = this.faceColors[var40]; // L: 432
+					this.faceColors[var40] = 127; // L: 433
+					if (this.faceTextures[var40] != -1) { // L: 434
+						var3 = true;
+					}
+				} else {
+					this.textureCoords[var40] = -1; // L: 437
+					this.faceTextures[var40] = -1; // L: 438
+				}
+			}
+
+			if (var13 == 255) { // L: 441
+				this.faceRenderPriorities[var40] = var6.readByte();
+			}
+
+			if (var14 == 1) { // L: 442
+				this.faceAlphas[var40] = var7.readByte();
+			}
+
+			if (var15 == 1) { // L: 443
+				this.faceSkins[var40] = var8.readUnsignedByte();
+			}
+		}
+
+		var4.offset = var31; // L: 445
+		var5.offset = var25; // L: 446
+		var40 = 0; // L: 447
+		var41 = 0; // L: 448
+		var42 = 0; // L: 449
+		var43 = 0; // L: 450
+
+		int var45;
+		int var46;
+		for (var44 = 0; var44 < var10; ++var44) { // L: 451
+			var45 = var5.readUnsignedByte(); // L: 452
+			if (var45 == 1) { // L: 453
+				var40 = var4.readShortSmart() + var43; // L: 454
+				var41 = var4.readShortSmart() + var40; // L: 456
+				var42 = var4.readShortSmart() + var41; // L: 458
+				var43 = var42; // L: 459
+				this.indices1[var44] = var40; // L: 460
+				this.indices2[var44] = var41; // L: 461
+				this.indices3[var44] = var42; // L: 462
+			}
+
+			if (var45 == 2) { // L: 464
+				var41 = var42; // L: 465
+				var42 = var4.readShortSmart() + var43; // L: 466
+				var43 = var42; // L: 467
+				this.indices1[var44] = var40; // L: 468
+				this.indices2[var44] = var41; // L: 469
+				this.indices3[var44] = var42; // L: 470
+			}
+
+			if (var45 == 3) { // L: 472
+				var40 = var42; // L: 473
+				var42 = var4.readShortSmart() + var43; // L: 474
+				var43 = var42; // L: 475
+				this.indices1[var44] = var40; // L: 476
+				this.indices2[var44] = var41; // L: 477
+				this.indices3[var44] = var42; // L: 478
+			}
+
+			if (var45 == 4) { // L: 480
+				var46 = var40; // L: 481
+				var40 = var41; // L: 482
+				var41 = var46; // L: 483
+				var42 = var4.readShortSmart() + var43; // L: 484
+				var43 = var42; // L: 485
+				this.indices1[var44] = var40; // L: 486
+				this.indices2[var44] = var46; // L: 487
+				this.indices3[var44] = var42; // L: 488
+			}
+		}
+
+		var4.offset = var33; // L: 491
+
+		for (var44 = 0; var44 < var11; ++var44) { // L: 492
+			this.textureRenderTypes[var44] = 0; // L: 493
+			this.texTriangleX[var44] = (short)var4.readUnsignedShort(); // L: 494
+			this.texTriangleY[var44] = (short)var4.readUnsignedShort(); // L: 495
+			this.texTriangleZ[var44] = (short)var4.readUnsignedShort(); // L: 496
+		}
+
+		if (this.textureCoords != null) { // L: 498
+			boolean var48 = false; // L: 499
+
+			for (var45 = 0; var45 < var10; ++var45) { // L: 500
+				var46 = this.textureCoords[var45] & 255; // L: 501
+				if (var46 != 255) { // L: 502
+					if (this.indices1[var45] == (this.texTriangleX[var46] & '\uffff') && this.indices2[var45] == (this.texTriangleY[var46] & '\uffff') && this.indices3[var45] == (this.texTriangleZ[var46] & '\uffff')) { // L: 503
+						this.textureCoords[var45] = -1;
+					} else {
+						var48 = true; // L: 504
+					}
+				}
+			}
+
+			if (!var48) { // L: 507
+				this.textureCoords = null;
+			}
+		}
+
+		if (!var3) { // L: 509
+			this.faceTextures = null;
+		}
+
+		if (!var2) { // L: 510
+			this.faceRenderTypes = null;
+		}
+
+	} // L: 511
+
+	@ObfuscatedName("r")
+	void method3702(byte[] var1) {
+		Buffer var2 = new Buffer(var1); // L: 514
+		Buffer var3 = new Buffer(var1); // L: 515
+		Buffer var4 = new Buffer(var1); // L: 516
+		Buffer var5 = new Buffer(var1); // L: 517
+		Buffer var6 = new Buffer(var1); // L: 518
+		Buffer var7 = new Buffer(var1); // L: 519
+		Buffer var8 = new Buffer(var1); // L: 520
+		var2.offset = var1.length - 23; // L: 521
+		int var9 = var2.readUnsignedShort(); // L: 522
+		int var10 = var2.readUnsignedShort(); // L: 523
+		int var11 = var2.readUnsignedByte(); // L: 524
+		int var12 = var2.readUnsignedByte(); // L: 525
+		int var13 = var2.readUnsignedByte(); // L: 526
+		int var14 = var2.readUnsignedByte(); // L: 527
+		int var15 = var2.readUnsignedByte(); // L: 528
+		int var16 = var2.readUnsignedByte(); // L: 529
+		int var17 = var2.readUnsignedByte(); // L: 530
+		int var18 = var2.readUnsignedShort(); // L: 531
+		int var19 = var2.readUnsignedShort(); // L: 532
+		int var20 = var2.readUnsignedShort(); // L: 533
+		int var21 = var2.readUnsignedShort(); // L: 534
+		int var22 = var2.readUnsignedShort(); // L: 535
+		int var23 = 0; // L: 536
+		int var24 = 0; // L: 537
+		int var25 = 0; // L: 538
+		int var26;
+		if (var11 > 0) { // L: 539
+			this.textureRenderTypes = new byte[var11]; // L: 540
+			var2.offset = 0; // L: 541
+
+			for (var26 = 0; var26 < var11; ++var26) { // L: 542
+				byte var27 = this.textureRenderTypes[var26] = var2.readByte(); // L: 543
+				if (var27 == 0) { // L: 544
+					++var23;
+				}
+
+				if (var27 >= 1 && var27 <= 3) { // L: 545
+					++var24;
+				}
+
+				if (var27 == 2) { // L: 546
+					++var25;
+				}
+			}
+		}
+
+		var26 = var11 + var9; // L: 551
+		int var28 = var26; // L: 552
+		if (var12 == 1) { // L: 553
+			var26 += var10;
+		}
+
+		int var29 = var26; // L: 554
+		var26 += var10; // L: 555
+		int var30 = var26; // L: 556
+		if (var13 == 255) { // L: 557
+			var26 += var10;
+		}
+
+		int var31 = var26; // L: 558
+		if (var15 == 1) { // L: 559
+			var26 += var10;
+		}
+
+		int var32 = var26; // L: 560
+		if (var17 == 1) { // L: 561
+			var26 += var9;
+		}
+
+		int var33 = var26; // L: 562
+		if (var14 == 1) { // L: 563
+			var26 += var10;
+		}
+
+		int var34 = var26; // L: 564
+		var26 += var21; // L: 565
+		int var35 = var26; // L: 566
+		if (var16 == 1) { // L: 567
+			var26 += var10 * 2;
+		}
+
+		int var36 = var26; // L: 568
+		var26 += var22; // L: 569
+		int var37 = var26; // L: 570
+		var26 += var10 * 2; // L: 571
+		int var38 = var26; // L: 572
+		var26 += var18; // L: 573
+		int var39 = var26; // L: 574
+		var26 += var19; // L: 575
+		int var40 = var26; // L: 576
+		var26 += var20; // L: 577
+		int var41 = var26; // L: 578
+		var26 += var23 * 6; // L: 579
+		int var42 = var26; // L: 580
+		var26 += var24 * 6; // L: 581
+		int var43 = var26; // L: 582
+		var26 += var24 * 6; // L: 583
+		int var44 = var26; // L: 584
+		var26 += var24 * 2; // L: 585
+		int var45 = var26; // L: 586
+		var26 += var24; // L: 587
+		int var46 = var26; // L: 588
+		var26 += var24 * 2 + var25 * 2; // L: 589
+		this.verticesCount = var9; // L: 591
+		this.faceCount = var10; // L: 592
+		this.textureTriangleCount = var11; // L: 593
+		this.verticesX = new int[var9]; // L: 594
+		this.verticesY = new int[var9]; // L: 595
+		this.verticesZ = new int[var9]; // L: 596
+		this.indices1 = new int[var10]; // L: 597
+		this.indices2 = new int[var10]; // L: 598
+		this.indices3 = new int[var10]; // L: 599
+		if (var17 == 1) { // L: 600
+			this.vertexSkins = new int[var9];
+		}
+
+		if (var12 == 1) { // L: 601
+			this.faceRenderTypes = new byte[var10];
+		}
+
+		if (var13 == 255) { // L: 602
+			this.faceRenderPriorities = new byte[var10];
+		} else {
+			this.priority = (byte)var13; // L: 603
+		}
+
+		if (var14 == 1) { // L: 604
+			this.faceAlphas = new byte[var10];
+		}
+
+		if (var15 == 1) { // L: 605
+			this.faceSkins = new int[var10];
+		}
+
+		if (var16 == 1) { // L: 606
+			this.faceTextures = new short[var10];
+		}
+
+		if (var16 == 1 && var11 > 0) { // L: 607
+			this.textureCoords = new byte[var10];
+		}
+
+		this.faceColors = new short[var10]; // L: 608
+		if (var11 > 0) { // L: 609
+			this.texTriangleX = new short[var11]; // L: 610
+			this.texTriangleY = new short[var11]; // L: 611
+			this.texTriangleZ = new short[var11]; // L: 612
+		}
+
+		var2.offset = var11; // L: 614
+		var3.offset = var38; // L: 615
+		var4.offset = var39; // L: 616
+		var5.offset = var40; // L: 617
+		var6.offset = var32; // L: 618
+		int var48 = 0; // L: 619
+		int var49 = 0; // L: 620
+		int var50 = 0; // L: 621
+
+		int var51;
+		int var52;
+		int var53;
+		int var54;
+		int var55;
+		for (var51 = 0; var51 < var9; ++var51) { // L: 622
+			var52 = var2.readUnsignedByte(); // L: 623
+			var53 = 0; // L: 624
+			if ((var52 & 1) != 0) { // L: 625
+				var53 = var3.readShortSmart();
+			}
+
+			var54 = 0; // L: 626
+			if ((var52 & 2) != 0) { // L: 627
+				var54 = var4.readShortSmart();
+			}
+
+			var55 = 0; // L: 628
+			if ((var52 & 4) != 0) { // L: 629
+				var55 = var5.readShortSmart();
+			}
+
+			this.verticesX[var51] = var48 + var53; // L: 630
+			this.verticesY[var51] = var49 + var54; // L: 631
+			this.verticesZ[var51] = var50 + var55; // L: 632
+			var48 = this.verticesX[var51]; // L: 633
+			var49 = this.verticesY[var51]; // L: 634
+			var50 = this.verticesZ[var51]; // L: 635
+			if (var17 == 1) { // L: 636
+				this.vertexSkins[var51] = var6.readUnsignedByte();
+			}
+		}
+
+		var2.offset = var37; // L: 638
+		var3.offset = var28; // L: 639
+		var4.offset = var30; // L: 640
+		var5.offset = var33; // L: 641
+		var6.offset = var31; // L: 642
+		var7.offset = var35; // L: 643
+		var8.offset = var36; // L: 644
+
+		for (var51 = 0; var51 < var10; ++var51) { // L: 645
+			this.faceColors[var51] = (short)var2.readUnsignedShort(); // L: 646
+			if (var12 == 1) { // L: 647
+				this.faceRenderTypes[var51] = var3.readByte();
+			}
+
+			if (var13 == 255) { // L: 648
+				this.faceRenderPriorities[var51] = var4.readByte();
+			}
+
+			if (var14 == 1) { // L: 649
+				this.faceAlphas[var51] = var5.readByte();
+			}
+
+			if (var15 == 1) { // L: 650
+				this.faceSkins[var51] = var6.readUnsignedByte();
+			}
+
+			if (var16 == 1) { // L: 651
+				this.faceTextures[var51] = (short)(var7.readUnsignedShort() - 1);
+			}
+
+			if (this.textureCoords != null && this.faceTextures[var51] != -1) { // L: 652
+				this.textureCoords[var51] = (byte)(var8.readUnsignedByte() - 1);
+			}
+		}
+
+		var2.offset = var34; // L: 654
+		var3.offset = var29; // L: 655
+		var51 = 0; // L: 656
+		var52 = 0; // L: 657
+		var53 = 0; // L: 658
+		var54 = 0; // L: 659
+
+		int var56;
+		for (var55 = 0; var55 < var10; ++var55) { // L: 660
+			var56 = var3.readUnsignedByte(); // L: 661
+			if (var56 == 1) { // L: 662
+				var51 = var2.readShortSmart() + var54; // L: 663
+				var52 = var2.readShortSmart() + var51; // L: 665
+				var53 = var2.readShortSmart() + var52; // L: 667
+				var54 = var53; // L: 668
+				this.indices1[var55] = var51; // L: 669
+				this.indices2[var55] = var52; // L: 670
+				this.indices3[var55] = var53; // L: 671
+			}
+
+			if (var56 == 2) { // L: 673
+				var52 = var53; // L: 674
+				var53 = var2.readShortSmart() + var54; // L: 675
+				var54 = var53; // L: 676
+				this.indices1[var55] = var51; // L: 677
+				this.indices2[var55] = var52; // L: 678
+				this.indices3[var55] = var53; // L: 679
+			}
+
+			if (var56 == 3) { // L: 681
+				var51 = var53; // L: 682
+				var53 = var2.readShortSmart() + var54; // L: 683
+				var54 = var53; // L: 684
+				this.indices1[var55] = var51; // L: 685
+				this.indices2[var55] = var52; // L: 686
+				this.indices3[var55] = var53; // L: 687
+			}
+
+			if (var56 == 4) { // L: 689
+				int var57 = var51; // L: 690
+				var51 = var52; // L: 691
+				var52 = var57; // L: 692
+				var53 = var2.readShortSmart() + var54; // L: 693
+				var54 = var53; // L: 694
+				this.indices1[var55] = var51; // L: 695
+				this.indices2[var55] = var57; // L: 696
+				this.indices3[var55] = var53; // L: 697
+			}
+		}
+
+		var2.offset = var41; // L: 700
+		var3.offset = var42; // L: 701
+		var4.offset = var43; // L: 702
+		var5.offset = var44; // L: 703
+		var6.offset = var45; // L: 704
+		var7.offset = var46; // L: 705
+
+		for (var55 = 0; var55 < var11; ++var55) { // L: 706
+			var56 = this.textureRenderTypes[var55] & 255; // L: 707
+			if (var56 == 0) { // L: 708
+				this.texTriangleX[var55] = (short)var2.readUnsignedShort(); // L: 709
+				this.texTriangleY[var55] = (short)var2.readUnsignedShort(); // L: 710
+				this.texTriangleZ[var55] = (short)var2.readUnsignedShort(); // L: 711
+			}
+		}
+
+		var2.offset = var26; // L: 714
+		var55 = var2.readUnsignedByte(); // L: 715
+		if (var55 != 0) { // L: 716
+			new ModelData0();
+			var2.readUnsignedShort(); // L: 718
+			var2.readUnsignedShort(); // L: 719
+			var2.readUnsignedShort(); // L: 720
+			var2.readInt(); // L: 721
+		}
+
+	} // L: 723
+
+	@ObfuscatedName("o")
+	void method3703(byte[] var1) {
+		boolean var2 = false; // L: 726
+		boolean var3 = false; // L: 727
+		Buffer var4 = new Buffer(var1); // L: 728
+		Buffer var5 = new Buffer(var1); // L: 729
+		Buffer var6 = new Buffer(var1); // L: 730
+		Buffer var7 = new Buffer(var1); // L: 731
+		Buffer var8 = new Buffer(var1); // L: 732
+		var4.offset = var1.length - 18; // L: 733
+		int var9 = var4.readUnsignedShort(); // L: 734
+		int var10 = var4.readUnsignedShort(); // L: 735
+		int var11 = var4.readUnsignedByte(); // L: 736
+		int var12 = var4.readUnsignedByte(); // L: 737
+		int var13 = var4.readUnsignedByte(); // L: 738
+		int var14 = var4.readUnsignedByte(); // L: 739
+		int var15 = var4.readUnsignedByte(); // L: 740
+		int var16 = var4.readUnsignedByte(); // L: 741
+		int var17 = var4.readUnsignedShort(); // L: 742
+		int var18 = var4.readUnsignedShort(); // L: 743
+		int var19 = var4.readUnsignedShort(); // L: 744
+		int var20 = var4.readUnsignedShort(); // L: 745
+		byte var21 = 0; // L: 746
+		int var45 = var21 + var9; // L: 748
+		int var23 = var45; // L: 749
+		var45 += var10; // L: 750
+		int var24 = var45; // L: 751
+		if (var13 == 255) { // L: 752
+			var45 += var10;
+		}
+
+		int var25 = var45; // L: 753
+		if (var15 == 1) { // L: 754
+			var45 += var10;
+		}
+
+		int var26 = var45; // L: 755
+		if (var12 == 1) { // L: 756
+			var45 += var10;
+		}
+
+		int var27 = var45; // L: 757
+		if (var16 == 1) { // L: 758
+			var45 += var9;
+		}
+
+		int var28 = var45; // L: 759
+		if (var14 == 1) { // L: 760
+			var45 += var10;
+		}
+
+		int var29 = var45; // L: 761
+		var45 += var20; // L: 762
+		int var30 = var45; // L: 763
+		var45 += var10 * 2; // L: 764
+		int var31 = var45; // L: 765
+		var45 += var11 * 6; // L: 766
+		int var32 = var45; // L: 767
+		var45 += var17; // L: 768
+		int var33 = var45; // L: 769
+		var45 += var18; // L: 770
+		int var10000 = var45 + var19; // L: 772
+		this.verticesCount = var9; // L: 773
+		this.faceCount = var10; // L: 774
+		this.textureTriangleCount = var11; // L: 775
+		this.verticesX = new int[var9]; // L: 776
+		this.verticesY = new int[var9]; // L: 777
+		this.verticesZ = new int[var9]; // L: 778
+		this.indices1 = new int[var10]; // L: 779
+		this.indices2 = new int[var10]; // L: 780
+		this.indices3 = new int[var10]; // L: 781
+		if (var11 > 0) { // L: 782
+			this.textureRenderTypes = new byte[var11]; // L: 783
+			this.texTriangleX = new short[var11]; // L: 784
+			this.texTriangleY = new short[var11]; // L: 785
+			this.texTriangleZ = new short[var11]; // L: 786
+		}
+
+		if (var16 == 1) { // L: 788
+			this.vertexSkins = new int[var9];
+		}
+
+		if (var12 == 1) { // L: 789
+			this.faceRenderTypes = new byte[var10]; // L: 790
+			this.textureCoords = new byte[var10]; // L: 791
+			this.faceTextures = new short[var10]; // L: 792
+		}
+
+		if (var13 == 255) { // L: 794
+			this.faceRenderPriorities = new byte[var10];
+		} else {
+			this.priority = (byte)var13; // L: 795
+		}
+
+		if (var14 == 1) { // L: 796
+			this.faceAlphas = new byte[var10];
+		}
+
+		if (var15 == 1) { // L: 797
+			this.faceSkins = new int[var10];
+		}
+
+		this.faceColors = new short[var10]; // L: 798
+		var4.offset = var21; // L: 799
+		var5.offset = var32; // L: 800
+		var6.offset = var33; // L: 801
+		var7.offset = var45; // L: 802
+		var8.offset = var27; // L: 803
+		int var35 = 0; // L: 804
+		int var36 = 0; // L: 805
+		int var37 = 0; // L: 806
+
+		int var38;
+		int var39;
+		int var40;
+		int var41;
+		int var42;
+		for (var38 = 0; var38 < var9; ++var38) { // L: 807
+			var39 = var4.readUnsignedByte(); // L: 808
+			var40 = 0; // L: 809
+			if ((var39 & 1) != 0) { // L: 810
+				var40 = var5.readShortSmart();
+			}
+
+			var41 = 0; // L: 811
+			if ((var39 & 2) != 0) { // L: 812
+				var41 = var6.readShortSmart();
+			}
+
+			var42 = 0; // L: 813
+			if ((var39 & 4) != 0) { // L: 814
+				var42 = var7.readShortSmart();
+			}
+
+			this.verticesX[var38] = var35 + var40; // L: 815
+			this.verticesY[var38] = var36 + var41; // L: 816
+			this.verticesZ[var38] = var37 + var42; // L: 817
+			var35 = this.verticesX[var38]; // L: 818
+			var36 = this.verticesY[var38]; // L: 819
+			var37 = this.verticesZ[var38]; // L: 820
+			if (var16 == 1) { // L: 821
+				this.vertexSkins[var38] = var8.readUnsignedByte();
+			}
+		}
+
+		var4.offset = var30; // L: 823
+		var5.offset = var26; // L: 824
+		var6.offset = var24; // L: 825
+		var7.offset = var28; // L: 826
+		var8.offset = var25; // L: 827
+
+		for (var38 = 0; var38 < var10; ++var38) { // L: 828
+			this.faceColors[var38] = (short)var4.readUnsignedShort(); // L: 829
+			if (var12 == 1) { // L: 830
+				var39 = var5.readUnsignedByte(); // L: 831
+				if ((var39 & 1) == 1) { // L: 832
+					this.faceRenderTypes[var38] = 1; // L: 833
+					var2 = true; // L: 834
+				} else {
+					this.faceRenderTypes[var38] = 0; // L: 836
+				}
+
+				if ((var39 & 2) == 2) { // L: 837
+					this.textureCoords[var38] = (byte)(var39 >> 2); // L: 838
+					this.faceTextures[var38] = this.faceColors[var38]; // L: 839
+					this.faceColors[var38] = 127; // L: 840
+					if (this.faceTextures[var38] != -1) { // L: 841
+						var3 = true;
+					}
+				} else {
+					this.textureCoords[var38] = -1; // L: 844
+					this.faceTextures[var38] = -1; // L: 845
+				}
+			}
+
+			if (var13 == 255) { // L: 848
+				this.faceRenderPriorities[var38] = var6.readByte();
+			}
+
+			if (var14 == 1) { // L: 849
+				this.faceAlphas[var38] = var7.readByte();
+			}
+
+			if (var15 == 1) { // L: 850
+				this.faceSkins[var38] = var8.readUnsignedByte();
+			}
+		}
+
+		var4.offset = var29; // L: 852
+		var5.offset = var23; // L: 853
+		var38 = 0; // L: 854
+		var39 = 0; // L: 855
+		var40 = 0; // L: 856
+		var41 = 0; // L: 857
+
+		int var43;
+		int var44;
+		for (var42 = 0; var42 < var10; ++var42) { // L: 858
+			var43 = var5.readUnsignedByte(); // L: 859
+			if (var43 == 1) { // L: 860
+				var38 = var4.readShortSmart() + var41; // L: 861
+				var39 = var4.readShortSmart() + var38; // L: 863
+				var40 = var4.readShortSmart() + var39; // L: 865
+				var41 = var40; // L: 866
+				this.indices1[var42] = var38; // L: 867
+				this.indices2[var42] = var39; // L: 868
+				this.indices3[var42] = var40; // L: 869
+			}
+
+			if (var43 == 2) { // L: 871
+				var39 = var40; // L: 872
+				var40 = var4.readShortSmart() + var41; // L: 873
+				var41 = var40; // L: 874
+				this.indices1[var42] = var38; // L: 875
+				this.indices2[var42] = var39; // L: 876
+				this.indices3[var42] = var40; // L: 877
+			}
+
+			if (var43 == 3) { // L: 879
+				var38 = var40; // L: 880
+				var40 = var4.readShortSmart() + var41; // L: 881
+				var41 = var40; // L: 882
+				this.indices1[var42] = var38; // L: 883
+				this.indices2[var42] = var39; // L: 884
+				this.indices3[var42] = var40; // L: 885
+			}
+
+			if (var43 == 4) { // L: 887
+				var44 = var38; // L: 888
+				var38 = var39; // L: 889
+				var39 = var44; // L: 890
+				var40 = var4.readShortSmart() + var41; // L: 891
+				var41 = var40; // L: 892
+				this.indices1[var42] = var38; // L: 893
+				this.indices2[var42] = var44; // L: 894
+				this.indices3[var42] = var40; // L: 895
+			}
+		}
+
+		var4.offset = var31; // L: 898
+
+		for (var42 = 0; var42 < var11; ++var42) { // L: 899
+			this.textureRenderTypes[var42] = 0; // L: 900
+			this.texTriangleX[var42] = (short)var4.readUnsignedShort(); // L: 901
+			this.texTriangleY[var42] = (short)var4.readUnsignedShort(); // L: 902
+			this.texTriangleZ[var42] = (short)var4.readUnsignedShort(); // L: 903
+		}
+
+		if (this.textureCoords != null) { // L: 905
+			boolean var46 = false; // L: 906
+
+			for (var43 = 0; var43 < var10; ++var43) { // L: 907
+				var44 = this.textureCoords[var43] & 255; // L: 908
+				if (var44 != 255) { // L: 909
+					if (this.indices1[var43] == (this.texTriangleX[var44] & '\uffff') && this.indices2[var43] == (this.texTriangleY[var44] & '\uffff') && this.indices3[var43] == (this.texTriangleZ[var44] & '\uffff')) { // L: 910
+						this.textureCoords[var43] = -1;
+					} else {
+						var46 = true; // L: 911
+					}
+				}
+			}
+
+			if (!var46) { // L: 914
+				this.textureCoords = null;
+			}
+		}
+
+		if (!var3) { // L: 916
+			this.faceTextures = null;
+		}
+
+		if (!var2) { // L: 917
+			this.faceRenderTypes = null;
+		}
+
+	} // L: 918
 
 	@ObfuscatedName("m")
 	void method3952(byte[] var1) {
