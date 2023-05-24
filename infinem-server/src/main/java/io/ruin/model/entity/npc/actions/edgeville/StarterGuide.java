@@ -61,7 +61,7 @@ public class StarterGuide {
                         new Option("Replay tutorial", () -> ecoTutorial(player)),
                         new Option("Change home point", () -> {
                             npc.startEvent(event -> {
-                                if (!player.edgeHome) {
+                                if (false) {//!player.edgeHome) {
                                     player.dialogue(new NPCDialogue(npc, "I can move your spawn point and <br>" +
                                             "home teleport location to Edgeville.<br>" +
                                             "it will cost 5,000,000 GP.<br>" +

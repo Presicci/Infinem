@@ -81,7 +81,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public boolean restored;
     @Expose public boolean beforeFuckup;
     @Expose public int wildernessSlayerPoints;
-    @Expose public boolean edgeHome;
 
     @Expose public int theatreOfBloodCompleted;
     public int viewingTheatreSlot;
