@@ -6,6 +6,7 @@ import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemObjectAction;
+import io.ruin.model.map.object.GameObject;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,14 +28,15 @@ public enum JewelleryCharging {
         this.chargeableJewellery = chargeableJewellery;
     }
 
-    private static void charge(Player player, JewelleryCharging chargeable, boolean fountainOfRune) {
+    private static void charge(Player player, JewelleryCharging chargeable, GameObject object) {
+        boolean fountainOfRune = object.id == 26782;
         if (!fountainOfRune && chargeable.charged == -1) {
             player.sendMessage("This jewellery can only be recharged at the fountain of rune.");
             return;
         }
         player.startEvent(event -> {
             player.lock();
-            player.sendMessage("You hold the jewellery against the fountain...");
+            player.sendMessage("You hold the jewellery against the " + (object.id == 2638 ? "totem..." : "fountain..."));
             event.delay(1);
             player.animate(832);
             int[] chargeableJewellery = Arrays.copyOfRange(chargeable.chargeableJewellery, 0, 3);
@@ -56,7 +58,7 @@ public enum JewelleryCharging {
                         new ItemDialogue().one(Items.AMULET_OF_ETERNAL_GLORY, "The power of the fountain is transferred into an amulet of eternal glory. It will now have unlimited charges.")
                 );
             } else {
-                player.dialogue(new ItemDialogue().one(chargeable.charged, "You feel a power emanating from the fountain as it recharges your jewellery."));
+                player.dialogue(new ItemDialogue().one(chargeable.charged, "You feel a power emanating from the " + (object.id == 2638 ? "totem" : "fountain") + " as it recharges your jewellery."));
             }
             player.unlock();
         });
@@ -66,15 +68,22 @@ public enum JewelleryCharging {
         // Fountain of Rune
         for (JewelleryCharging jewelleryCharging : values()) {
             for (int itemId : jewelleryCharging.chargeableJewellery) {
-                ItemObjectAction.register(itemId, 26782, (player, uncharged, obj) -> charge(player, jewelleryCharging, true));
+                ItemObjectAction.register(itemId, 26782, (player, uncharged, obj) -> charge(player, jewelleryCharging, obj));
             }
         }
         // Fountain of Heroes
         for (int itemId : Arrays.copyOfRange(GLORY.chargeableJewellery, 0, 3)) {
-            ItemObjectAction.register(itemId, 2939, (player, uncharged, obj) -> charge(player, GLORY, false));
+            ItemObjectAction.register(itemId, 2939, (player, uncharged, obj) -> charge(player, GLORY, obj));
         }
         for (int itemId : Arrays.copyOfRange(GLORY_T.chargeableJewellery, 0, 3)) {
-            ItemObjectAction.register(itemId, 2939, (player, uncharged, obj) -> charge(player, GLORY_T, false));
+            ItemObjectAction.register(itemId, 2939, (player, uncharged, obj) -> charge(player, GLORY_T, obj));
+        }
+        // Totem pole
+        for (int itemId : Arrays.copyOfRange(SKILLS_NECKLACE.chargeableJewellery, 0, 3)) {
+            ItemObjectAction.register(itemId, 2638, (player, uncharged, obj) -> charge(player, SKILLS_NECKLACE, obj));
+        }
+        for (int itemId : Arrays.copyOfRange(COMBAT_BRACELET.chargeableJewellery, 0, 3)) {
+            ItemObjectAction.register(itemId, 2638, (player, uncharged, obj) -> charge(player, COMBAT_BRACELET, obj));
         }
     }
 }
