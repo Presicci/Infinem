@@ -67,7 +67,7 @@ public class RuneRemoval {
                  */
                 continue;
             }
-            if (reqRune == Rune.WATER && (player.getEquipment().hasId(21006) || player.getEquipment().hasId(30181))) {
+            if (reqRune == Rune.WATER && (player.getEquipment().hasId(21006))) {
                 /**
                  * Kodai wand
                  */
