@@ -11,6 +11,7 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.impl.jewellery.DodgyNecklace;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.ThievingSkillCape;
 import io.ruin.model.item.loot.LootItem;
@@ -403,7 +404,11 @@ public enum PickPocket {
                 npc.forceText("What do you think you're doing?");
                 npc.faceTemp(player);
                 npc.animate(pickpocket.stunAnimation);
-                player.hit(new Hit().randDamage(pickpocket.stunDamage).postDamage((hit) -> hit.player.stun(pickpocket.stunSeconds, true)));
+                player.hit(new Hit().randDamage(pickpocket.stunDamage).postDamage((hit) -> {
+                    if (!DodgyNecklace.test(player)) {
+                        hit.player.stun(pickpocket.stunSeconds, true);
+                    }
+                }));
             }
             BotPrevention.attemptBlock(player);
             player.unlock();
