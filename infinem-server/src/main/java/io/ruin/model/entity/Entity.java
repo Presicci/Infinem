@@ -1059,6 +1059,13 @@ public abstract class Entity {
         return (T) temporaryAttributes.get(key);
     }
 
+    public int getTemporaryAttributeIntOrZero(AttributeKey key) {
+        Object value = temporaryAttributes.get(key);
+        if (value == null) return 0;
+        if (!(value instanceof Number)) return 0;
+        return ((Number) value).intValue();
+    }
+
     public <T> T getTemporaryAttributeOrDefault(AttributeKey key, Object defaultValue) {
         return (T) temporaryAttributes.getOrDefault(key, defaultValue);
     }

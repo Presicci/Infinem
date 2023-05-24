@@ -628,10 +628,9 @@ public class Config {
     public static final Config XP_COUNTER_COUNTER = varpbit(4697, true);
     public static final Config XP_COUNTER_PROGRESS_BAR = varpbit(4698, true);
     public static final Config XP_COUNTER_SPEED = varpbit(4722, true);
+    public static final Config XP_FAKE_DROPS = varpbit(8120, true);
     public static final Config XP_COUNTER_TRACKER_STAT_VIEWING = varpbit(4703, true);
     public static final Config XP_COUNTER_TRACKER_TYPE_ACTIVE = varpbit(4704, true);
-    public static final Config XP_COUNTER_TRACKER_START = varp(261, true);
-    public static final Config XP_COUNTER_TRACKER_GOAL = varp(262, true);
 
     public static final Config[] XP_COUNTER_TRACKER_SKILL_START = {
             varp(1228, true),
