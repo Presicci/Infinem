@@ -1,10 +1,14 @@
 package io.ruin.model.content;
 
+import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.MessageDialogue;
+import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.object.GameObject;
 
@@ -88,6 +92,33 @@ public enum JewelleryCharging {
         });
     }
 
+    private static void chargeScroll(Player player) {
+        player.dialogue(new YesNoDialogue("Charge jewellery?", "This scroll will charge all dragonstone jewellery in your inventory.", Items.CHARGE_DRAGONSTONE_JEWELLERY_SCROLL, 1, () -> {
+            int firstItem = -1;
+            for (JewelleryCharging jewelleryCharging : values()) {
+                if (jewelleryCharging == COMBAT_BRACELET_N || jewelleryCharging == SKILLS_NECKLACE_N || jewelleryCharging == GLORY || jewelleryCharging == GLORY_T)
+                    continue;
+                int[] chargeableJewellery = Arrays.copyOfRange(jewelleryCharging.chargeableJewellery, 0, 4);
+                for (int itemId : chargeableJewellery) {
+                    List<Item> inventoryJewellery = player.getInventory().collectItems(itemId);
+                    if (inventoryJewellery != null && inventoryJewellery.size() > 0) {
+                        if (firstItem == -1)
+                            firstItem = jewelleryCharging.charged;
+                        for (Item item : inventoryJewellery) {
+                            item.setId(jewelleryCharging.charged);
+                        }
+                    }
+                }
+            }
+            if (firstItem != -1) {
+                player.getInventory().remove(Items.CHARGE_DRAGONSTONE_JEWELLERY_SCROLL, 1);
+                player.dialogue(new ItemDialogue().one(firstItem, "Your scroll disintegrates as it recharges your jewellery."));
+            } else {
+                player.dialogue(new MessageDialogue("You don't have any jewellery that the scroll can recharge."));
+            }
+        }));
+    }
+
     static {
         // Fountain of Rune
         for (JewelleryCharging jewelleryCharging : values()) {
@@ -133,5 +164,7 @@ public enum JewelleryCharging {
             // Fountain of Uhld
             ItemObjectAction.register(itemId, 31625, (player, uncharged, obj) -> chargeNoted(player, COMBAT_BRACELET_N));
         }
+        // Charge dragonstone jewellery scroll
+        ItemAction.registerInventory(Items.CHARGE_DRAGONSTONE_JEWELLERY_SCROLL, "read", ((player, item) -> chargeScroll(player)));
     }
 }
