@@ -17,7 +17,9 @@ public enum JewelleryCharging {
     RING_OF_WEALTH(11980, -1, 2572, 11988, 11986, 11984, 11982),
     RING_OF_WEALTH_I(20786, -1, 12785, 20790, 20789, 20788, 20787),
     SKILLS_NECKLACE(11968, 11105, 11113, 11111, 11109, 11107, 11105, 11970),
-    COMBAT_BRACELET(11972, 11118, 11126, 11124, 11122, 11120, 11118, 11974);
+    SKILLS_NECKLACE_N(-1, 11106, 11114, 11112, 11110, 11108),
+    COMBAT_BRACELET(11972, 11118, 11126, 11124, 11122, 11120, 11118, 11974),
+    COMBAT_BRACELET_N(-1, 11119, 11127, 11125, 11123, 11121);
 
     private final int runeCharged, charged;
     private final int[] chargeableJewellery;
@@ -64,9 +66,32 @@ public enum JewelleryCharging {
         });
     }
 
+    private static void chargeNoted(Player player, JewelleryCharging chargeable) {
+        if (chargeable.charged == -1) {
+            player.sendMessage("This jewellery can only be recharged at the fountain of rune.");
+            return;
+        }
+        player.startEvent(event -> {
+            player.lock();
+            player.sendMessage("You hold the jewellery against the fountain...");
+            event.delay(1);
+            player.animate(832);
+            List<Item> inventoryJewellery = player.getInventory().collectItems(chargeable.chargeableJewellery);
+            int amount = 0;
+            for (Item item : inventoryJewellery) {
+                amount += item.getAmount();
+                item.remove();
+            }
+            player.getInventory().add(chargeable.charged, amount);
+            player.dialogue(new ItemDialogue().one(chargeable.charged - 1, "You feel a power emanating from the fountain as it recharges your jewellery."));
+            player.unlock();
+        });
+    }
+
     static {
         // Fountain of Rune
         for (JewelleryCharging jewelleryCharging : values()) {
+            if (jewelleryCharging == COMBAT_BRACELET_N) continue;
             for (int itemId : jewelleryCharging.chargeableJewellery) {
                 ItemObjectAction.register(itemId, 26782, (player, uncharged, obj) -> charge(player, jewelleryCharging, obj));
             }
@@ -91,12 +116,22 @@ public enum JewelleryCharging {
             // Fountain of Uhld
             ItemObjectAction.register(itemId, 31625, (player, uncharged, obj) -> charge(player, SKILLS_NECKLACE, obj));
         }
+        // Skills necklace (noted)
+        for (int itemId : Arrays.copyOfRange(SKILLS_NECKLACE_N.chargeableJewellery, 0, 4)) {
+            // Fountain of Uhld
+            ItemObjectAction.register(itemId, 31625, (player, uncharged, obj) -> chargeNoted(player, SKILLS_NECKLACE_N));
+        }
         // Combat bracelet
         for (int itemId : Arrays.copyOfRange(COMBAT_BRACELET.chargeableJewellery, 0, 4)) {
             // Totem pole
             ItemObjectAction.register(itemId, 2638, (player, uncharged, obj) -> charge(player, COMBAT_BRACELET, obj));
             // Fountain of Uhld
             ItemObjectAction.register(itemId, 31625, (player, uncharged, obj) -> charge(player, COMBAT_BRACELET, obj));
+        }
+        // Combat bracelet (noted)
+        for (int itemId : Arrays.copyOfRange(COMBAT_BRACELET_N.chargeableJewellery, 0, 4)) {
+            // Fountain of Uhld
+            ItemObjectAction.register(itemId, 31625, (player, uncharged, obj) -> chargeNoted(player, COMBAT_BRACELET_N));
         }
     }
 }
