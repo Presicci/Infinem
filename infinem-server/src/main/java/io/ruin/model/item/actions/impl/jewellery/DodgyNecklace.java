@@ -21,7 +21,7 @@ public class DodgyNecklace {
     private static void breakAction(Player player, Item item) {
         int charges = player.getAttributeIntOrZero(AttributeKey.DODGY_NECKLACE_CHARGES);
         if (charges == 0) {
-            newBracelet(player);
+            fullCharges(player);
             charges = MAX_CHARGES;
         }
         if (charges == MAX_CHARGES) {
@@ -33,7 +33,7 @@ public class DodgyNecklace {
                         "Status: " + charges + " charges left.",
                         new Option("Break the necklace.", () -> {
                             item.remove();
-                            newBracelet(player);
+                            fullCharges(player);
                             player.sendMessage("Your dodgy necklace has crumbled to dust.");
                             player.dialogue(new ItemDialogue().one(DODGY_NECKLACE, "Your dodgy necklace has crumbled to dust."));
                         }),
@@ -45,7 +45,7 @@ public class DodgyNecklace {
     private static void checkAction(Player player, Item item) {
         int charges = player.getAttributeIntOrZero(AttributeKey.DODGY_NECKLACE_CHARGES);
         if (charges == 0) {
-            newBracelet(player);
+            fullCharges(player);
             charges = MAX_CHARGES;
         }
         if (charges == 1)
@@ -54,7 +54,7 @@ public class DodgyNecklace {
             player.sendMessage("Your dodgy necklace has " + charges + " charges left.");
     }
 
-    public static void newBracelet(Player player) {
+    public static void fullCharges(Player player) {
         player.putAttribute(AttributeKey.DODGY_NECKLACE_CHARGES, MAX_CHARGES);
     }
 
@@ -65,7 +65,7 @@ public class DodgyNecklace {
             return false;
         int charges = player.getAttributeIntOrZero(AttributeKey.DODGY_NECKLACE_CHARGES);
         if (charges == 0) {
-            newBracelet(player);
+            fullCharges(player);
             charges = MAX_CHARGES;
         }
         if (charges > 1) {
@@ -73,7 +73,7 @@ public class DodgyNecklace {
             player.sendFilteredMessage("Your dodgy necklace protects you. It has " + (charges == 1 ? "1 charge" : charges + " charges") + " left.");
         } else {
             player.getEquipment().remove(DODGY_NECKLACE, 1);
-            newBracelet(player);
+            fullCharges(player);
             player.sendFilteredMessage("Your dodgy necklace protects you. It then crumbles to dust.");
         }
         return true;
