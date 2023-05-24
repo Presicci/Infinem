@@ -39,7 +39,7 @@ public enum JewelleryCharging {
             player.sendMessage("You hold the jewellery against the " + (object.id == 2638 ? "totem..." : "fountain..."));
             event.delay(1);
             player.animate(832);
-            int[] chargeableJewellery = Arrays.copyOfRange(chargeable.chargeableJewellery, 0, 3);
+            int[] chargeableJewellery = Arrays.copyOfRange(chargeable.chargeableJewellery, 0, 4);
             List<Item> inventoryJewellery = player.getInventory().collectItems(fountainOfRune ? chargeable.chargeableJewellery : chargeableJewellery);
             boolean eternal = false;
             for (Item item : inventoryJewellery) {
@@ -72,17 +72,17 @@ public enum JewelleryCharging {
             }
         }
         // Fountain of Heroes
-        for (int itemId : Arrays.copyOfRange(GLORY.chargeableJewellery, 0, 3)) {
+        for (int itemId : Arrays.copyOfRange(GLORY.chargeableJewellery, 0, 4)) {
             ItemObjectAction.register(itemId, 2939, (player, uncharged, obj) -> charge(player, GLORY, obj));
         }
-        for (int itemId : Arrays.copyOfRange(GLORY_T.chargeableJewellery, 0, 3)) {
+        for (int itemId : Arrays.copyOfRange(GLORY_T.chargeableJewellery, 0, 4)) {
             ItemObjectAction.register(itemId, 2939, (player, uncharged, obj) -> charge(player, GLORY_T, obj));
         }
         // Totem pole
-        for (int itemId : Arrays.copyOfRange(SKILLS_NECKLACE.chargeableJewellery, 0, 3)) {
+        for (int itemId : Arrays.copyOfRange(SKILLS_NECKLACE.chargeableJewellery, 0, 4)) {
             ItemObjectAction.register(itemId, 2638, (player, uncharged, obj) -> charge(player, SKILLS_NECKLACE, obj));
         }
-        for (int itemId : Arrays.copyOfRange(COMBAT_BRACELET.chargeableJewellery, 0, 3)) {
+        for (int itemId : Arrays.copyOfRange(COMBAT_BRACELET.chargeableJewellery, 0, 4)) {
             ItemObjectAction.register(itemId, 2638, (player, uncharged, obj) -> charge(player, COMBAT_BRACELET, obj));
         }
     }
