@@ -36,7 +36,7 @@ public enum TeleportTab {
     SALVE_GRAVEYARD(19619, 3431, 3460, 0),
     FENKENSTRAIN(19621, 3549, 3529, 0),
     WEST_ARDOUGNE(19623, 3502, 3292, 0),
-    HARMONY_ISLAND(19625, World.HOME.getX(), World.HOME.getY(), World.HOME.getZ()),
+    HARMONY_ISLAND(19625, 3798, 2865, 0),
     CEMENTERY(19627, 2979, 3763, 0),
     BARROWS(19629, 3564, 3312, 0),
     APE_ATOLL(19631, 3212, 3424, 0),
@@ -70,19 +70,7 @@ public enum TeleportTab {
             player.animate(4071);
             player.graphics(678);
             event.delay(2);
-            if (this == HARMONY_ISLAND) {
-                Position override = HomeTeleport.getHomeTeleportOverride(player);
-                if (override != null) {
-                    player.getMovement().teleport(override);
-                } else {
-                    if (!player.edgeHome) {
-                        player.getMovement().teleport(x, y, z);
-                    } else {
-                        player.getMovement().teleport(World.EDGEHOME);
-                    }
-                }
-            } else
-                player.getMovement().teleport(x, y, z);
+            player.getMovement().teleport(x, y, z);
         });
     }
 
