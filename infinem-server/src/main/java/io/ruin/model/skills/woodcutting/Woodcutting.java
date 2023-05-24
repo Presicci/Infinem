@@ -8,10 +8,8 @@ import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
-import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.BirdNest;
-import io.ruin.model.item.actions.impl.Geode;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.WoodcuttingSkillCape;
@@ -216,10 +214,8 @@ public class Woodcutting {
         ObjectAction.register(29670, "cut", (player, obj) -> chop(Tree.REDWOOD, player, obj, 29671));
         ObjectAction.register(29763, "chop", (player, obj) -> chop(Tree.SAPLING, player, obj, 29764));
         ObjectAction.register(9034, "chop down", (player, obj) -> chop(Tree.MAHOGANY, player, obj, 9035));
-        ObjectAction.register(50008, "chop down", (player, obj) -> chop(Tree.CORRUPT_TREE, player, obj, 50009));
         ObjectAction.register(10821, "chop down", (player, obj) -> chop(Tree.HOLLOW_TREE, player, obj, 2310));
         ObjectAction.register(10830, "chop down", (player, obj) -> chop(Tree.HOLLOW_TREE, player, obj, 4061));
-        ObjectAction.register(50008, "chop down", (player, obj) -> chop(Tree.CORRUPT_TREE, player, obj, 50009));
         ObjectAction.register(1292, "chop down", (player, obj) -> chop(Tree.DRAMEN_TREE, player, obj, -1));
     }
 
