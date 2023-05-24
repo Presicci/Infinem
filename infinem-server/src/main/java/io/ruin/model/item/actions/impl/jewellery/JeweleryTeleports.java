@@ -101,7 +101,7 @@ public class JeweleryTeleports {
 
     }
 
-    private static final String[] CHARGES = {
+    public static final String[] CHARGES = {
             "one charge",
             "two charges",
             "three charges",
