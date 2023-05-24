@@ -9,7 +9,6 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
-import io.ruin.model.item.actions.impl.combine.SlayerHelm;
 import io.ruin.model.item.actions.impl.jewellery.BraceletOfSlaughter;
 import io.ruin.model.item.actions.impl.jewellery.ExpeditiousBracelet;
 import io.ruin.model.item.containers.Equipment;
@@ -114,9 +113,9 @@ public class Slayer {
             player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERKILL, 1, true);
 
             int killsCounted = 1;
-            if (BraceletOfSlaughter.checkSlaughter(player)) {
+            if (BraceletOfSlaughter.test(player)) {
                 killsCounted = 0;
-            } else if (Config.SLAYER_TASK_AMOUNT.get(player) > 1 && ExpeditiousBracelet.checkExpeditious(player)) {
+            } else if (Config.SLAYER_TASK_AMOUNT.get(player) > 1 && ExpeditiousBracelet.test(player)) {
                 killsCounted = 2;
             }
             Config.SLAYER_TASK_AMOUNT.decrement(player, killsCounted);

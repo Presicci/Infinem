@@ -15,15 +15,16 @@ import io.ruin.model.item.actions.ItemAction;
  */
 public class ExpeditiousBracelet {
 
-    public static final int EXPEDITIOUS_BRACELET = 21177;
+    private static final int EXPEDITIOUS_BRACELET = 21177;
+    private static final int MAX_CHARGES = 30;
 
-    private static void breakBracelet(Player player, Item item) {
+    private static void breakAction(Player player, Item item) {
         int charges = player.getAttributeIntOrZero(AttributeKey.EXPEDITIOUS_CHARGES);
         if (charges == 0) {
-            newBracelet(player);
-            charges = 30;
+            fullCharges(player);
+            charges = MAX_CHARGES;
         }
-        if (charges == 30) {
+        if (charges == MAX_CHARGES) {
             player.dialogue(new ItemDialogue().one(EXPEDITIOUS_BRACELET, "The bracelet is fully charged.<br>There would be no point in breaking it."));
             return;
         }
@@ -32,7 +33,7 @@ public class ExpeditiousBracelet {
                         "Status: " + charges + " slayer kill skips left.",
                         new Option("Break the bracelet.", () -> {
                             item.remove();
-                            newBracelet(player);
+                            fullCharges(player);
                             player.sendMessage("Your Expeditious Bracelet has crumbled to dust.");
                             player.dialogue(new ItemDialogue().one(EXPEDITIOUS_BRACELET, "Your Expeditious Bracelet has crumbled to dust."));
                         }),
@@ -41,11 +42,11 @@ public class ExpeditiousBracelet {
         );
     }
 
-    private static void check(Player player, Item item) {
+    private static void checkAction(Player player, Item item) {
         int charges = player.getAttributeIntOrZero(AttributeKey.EXPEDITIOUS_CHARGES);
         if (charges == 0) {
-            newBracelet(player);
-            charges = 30;
+            fullCharges(player);
+            charges = MAX_CHARGES;
         }
         if (charges == 1)
             player.sendMessage("Your expeditious bracelet has 1 charge left.");
@@ -53,15 +54,15 @@ public class ExpeditiousBracelet {
             player.sendMessage("Your expeditious bracelet has " + charges + " charges left.");
     }
 
-    public static void newBracelet(Player player) {
-        player.putAttribute(AttributeKey.EXPEDITIOUS_CHARGES, 30);
+    public static void fullCharges(Player player) {
+        player.putAttribute(AttributeKey.EXPEDITIOUS_CHARGES, MAX_CHARGES);
     }
 
-    public static boolean checkExpeditious(Player player) {
+    public static boolean test(Player player) {
         int charges = player.getAttributeIntOrZero(AttributeKey.EXPEDITIOUS_CHARGES);
         if (charges == 0) {
-            newBracelet(player);
-            charges = 30;
+            fullCharges(player);
+            charges = MAX_CHARGES;
         }
         if (player.getEquipment().hasId(EXPEDITIOUS_BRACELET) && Random.rollDie(4)) {
             if (charges > 1) {
@@ -69,7 +70,7 @@ public class ExpeditiousBracelet {
                 player.sendFilteredMessage("Your expeditious bracelet helps you progress your slayer task faster. It has " + (charges == 1 ? "1 charge" : charges + " charges") + " left.");
             } else {
                 player.getEquipment().remove(EXPEDITIOUS_BRACELET, 1);
-                newBracelet(player);
+                fullCharges(player);
                 player.sendFilteredMessage("Your expeditious bracelet helps you progress your slayer task faster. It then crumbles to dust.");
             }
             return true;
@@ -78,8 +79,8 @@ public class ExpeditiousBracelet {
     }
 
     static {
-        ItemAction.registerInventory(EXPEDITIOUS_BRACELET, "break", ExpeditiousBracelet::breakBracelet);
-        ItemAction.registerInventory(EXPEDITIOUS_BRACELET, "check", ExpeditiousBracelet::check);
-        ItemAction.registerEquipment(EXPEDITIOUS_BRACELET, "check", ExpeditiousBracelet::check);
+        ItemAction.registerInventory(EXPEDITIOUS_BRACELET, "break", ExpeditiousBracelet::breakAction);
+        ItemAction.registerInventory(EXPEDITIOUS_BRACELET, "check", ExpeditiousBracelet::checkAction);
+        ItemAction.registerEquipment(EXPEDITIOUS_BRACELET, "check", ExpeditiousBracelet::checkAction);
     }
 }

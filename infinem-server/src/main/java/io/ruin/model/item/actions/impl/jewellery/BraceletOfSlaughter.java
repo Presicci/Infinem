@@ -15,15 +15,16 @@ import io.ruin.model.item.actions.ItemAction;
  */
 public class BraceletOfSlaughter {
 
-    public static final int BRACELET_OF_SLAUGHTER = 21183;
+    private static final int BRACELET_OF_SLAUGHTER = 21183;
+    private static final int MAX_CHARGES = 30;
 
-    private static void breakBracelet(Player player, Item item) {
+    private static void breakAction(Player player, Item item) {
         int charges = player.getAttributeIntOrZero(AttributeKey.SLAUGHTER_CHARGES);
         if (charges == 0) {
-            newBracelet(player);
-            charges = 30;
+            fullCharges(player);
+            charges = MAX_CHARGES;
         }
-        if (charges == 30) {
+        if (charges == MAX_CHARGES) {
             player.dialogue(new ItemDialogue().one(BRACELET_OF_SLAUGHTER, "The bracelet is fully charged.<br>There would be no point in breaking it."));
             return;
         }
@@ -32,7 +33,7 @@ public class BraceletOfSlaughter {
                         "Status: " + charges + " slayer kill saves left.",
                         new Option("Break the bracelet.", () -> {
                             item.remove();
-                            newBracelet(player);
+                            fullCharges(player);
                             player.sendMessage("Your Bracelet of Slaughter has crumbled to dust.");
                             player.dialogue(new ItemDialogue().one(BRACELET_OF_SLAUGHTER, "Your Bracelet of Slaughter has crumbled to dust."));
                         }),
@@ -41,11 +42,11 @@ public class BraceletOfSlaughter {
         );
     }
 
-    private static void check(Player player, Item item) {
+    private static void checkAction(Player player, Item item) {
         int charges = player.getAttributeIntOrZero(AttributeKey.SLAUGHTER_CHARGES);
         if (charges == 0) {
-            newBracelet(player);
-            charges = 30;
+            fullCharges(player);
+            charges = MAX_CHARGES;
         }
         if (charges == 1)
             player.sendMessage("Your bracelet of slaughter has 1 charge left.");
@@ -53,15 +54,15 @@ public class BraceletOfSlaughter {
             player.sendMessage("Your bracelet of slaughter has " + charges + " charges left.");
     }
 
-    public static void newBracelet(Player player) {
-        player.putAttribute(AttributeKey.SLAUGHTER_CHARGES, 30);
+    public static void fullCharges(Player player) {
+        player.putAttribute(AttributeKey.SLAUGHTER_CHARGES, MAX_CHARGES);
     }
 
-    public static boolean checkSlaughter(Player player) {
+    public static boolean test(Player player) {
         int charges = player.getAttributeIntOrZero(AttributeKey.SLAUGHTER_CHARGES);
         if (charges == 0) {
-            newBracelet(player);
-            charges = 30;
+            fullCharges(player);
+            charges = MAX_CHARGES;
         }
         if (player.getEquipment().hasId(BRACELET_OF_SLAUGHTER) && Random.rollDie(4)) {
             if (charges > 1) {
@@ -69,7 +70,7 @@ public class BraceletOfSlaughter {
                 player.sendFilteredMessage("Your bracelet of slaughter prevents your slayer count from decreasing. It has " + (charges == 1 ? "1 charge" : charges + " charges") + " left.");
             } else {
                 player.getEquipment().remove(BRACELET_OF_SLAUGHTER, 1);
-                newBracelet(player);
+                fullCharges(player);
                 player.sendFilteredMessage("Your bracelet of slaughter prevents your slayer count from decreasing. It then crumbles to dust.");
             }
             return true;
@@ -78,8 +79,8 @@ public class BraceletOfSlaughter {
     }
 
     static {
-        ItemAction.registerInventory(BRACELET_OF_SLAUGHTER, "break", BraceletOfSlaughter::breakBracelet);
-        ItemAction.registerInventory(BRACELET_OF_SLAUGHTER, "check", BraceletOfSlaughter::check);
-        ItemAction.registerEquipment(BRACELET_OF_SLAUGHTER, "check", BraceletOfSlaughter::check);
+        ItemAction.registerInventory(BRACELET_OF_SLAUGHTER, "break", BraceletOfSlaughter::breakAction);
+        ItemAction.registerInventory(BRACELET_OF_SLAUGHTER, "check", BraceletOfSlaughter::checkAction);
+        ItemAction.registerEquipment(BRACELET_OF_SLAUGHTER, "check", BraceletOfSlaughter::checkAction);
     }
 }
