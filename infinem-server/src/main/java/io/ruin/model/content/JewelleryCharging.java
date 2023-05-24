@@ -71,19 +71,32 @@ public enum JewelleryCharging {
                 ItemObjectAction.register(itemId, 26782, (player, uncharged, obj) -> charge(player, jewelleryCharging, obj));
             }
         }
-        // Fountain of Heroes
+        // Glory
         for (int itemId : Arrays.copyOfRange(GLORY.chargeableJewellery, 0, 4)) {
+            // Fountain of Heroes
             ItemObjectAction.register(itemId, 2939, (player, uncharged, obj) -> charge(player, GLORY, obj));
+            // Fountain of Uhld
+            ItemObjectAction.register(itemId, 31625, (player, uncharged, obj) -> charge(player, GLORY, obj));
         }
         for (int itemId : Arrays.copyOfRange(GLORY_T.chargeableJewellery, 0, 4)) {
+            // Fountain of Heroes
             ItemObjectAction.register(itemId, 2939, (player, uncharged, obj) -> charge(player, GLORY_T, obj));
+            // Fountain of Uhld
+            ItemObjectAction.register(itemId, 31625, (player, uncharged, obj) -> charge(player, GLORY_T, obj));
         }
-        // Totem pole
+        // Skills necklace
         for (int itemId : Arrays.copyOfRange(SKILLS_NECKLACE.chargeableJewellery, 0, 4)) {
+            // Totem pole
             ItemObjectAction.register(itemId, 2638, (player, uncharged, obj) -> charge(player, SKILLS_NECKLACE, obj));
+            // Fountain of Uhld
+            ItemObjectAction.register(itemId, 31625, (player, uncharged, obj) -> charge(player, SKILLS_NECKLACE, obj));
         }
+        // Combat bracelet
         for (int itemId : Arrays.copyOfRange(COMBAT_BRACELET.chargeableJewellery, 0, 4)) {
+            // Totem pole
             ItemObjectAction.register(itemId, 2638, (player, uncharged, obj) -> charge(player, COMBAT_BRACELET, obj));
+            // Fountain of Uhld
+            ItemObjectAction.register(itemId, 31625, (player, uncharged, obj) -> charge(player, COMBAT_BRACELET, obj));
         }
     }
 }
