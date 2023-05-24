@@ -57,7 +57,7 @@ public enum SilverCasting {
 
     private static void craft(Player player, SilverCasting silverCasting) {
         player.closeInterfaces();
-        int amount = Config.INTERFACE_QUANTITY.get(player);
+        int amount = Config.IQ.get(player);
         if (!player.getStats().check(StatType.Crafting, silverCasting.levelReq, "make this"))
             return;
         if(silverCasting.gem == -1) {
@@ -112,11 +112,11 @@ public enum SilverCasting {
             for (SilverCasting item : values()) {
                 h.actions[item.child] = (DefaultAction) (p, option, slot, itemId) -> craft(p, item);
             }
-            h.actions[32] = (DefaultAction) (p, option, slot, itemId) -> Config.INTERFACE_QUANTITY.set(p, 1);
-            h.actions[33] = (DefaultAction) (p, option, slot, itemId) -> Config.INTERFACE_QUANTITY.set(p, 5);
-            h.actions[34] = (DefaultAction) (p, option, slot, itemId) -> Config.INTERFACE_QUANTITY.set(p, 10);
-            h.actions[35] = (DefaultAction) (p, option, slot, itemId) -> p.integerInput("Enter amount:", amt -> Config.INTERFACE_QUANTITY.set(p, amt));    // TODO find var
-            h.actions[36] = (DefaultAction) (p, option, slot, itemId) -> Config.INTERFACE_QUANTITY.set(p, 28);
+            h.actions[32] = (DefaultAction) (p, option, slot, itemId) -> Config.IQ.set(p, 1);
+            h.actions[33] = (DefaultAction) (p, option, slot, itemId) -> Config.IQ.set(p, 5);
+            h.actions[34] = (DefaultAction) (p, option, slot, itemId) -> Config.IQ.set(p, 10);
+            h.actions[35] = (DefaultAction) (p, option, slot, itemId) -> p.integerInput("Enter amount:", amt -> Config.IQ.set(p, amt));    // TODO find var
+            h.actions[36] = (DefaultAction) (p, option, slot, itemId) -> Config.IQ.set(p, 28);
         });
     }
 }

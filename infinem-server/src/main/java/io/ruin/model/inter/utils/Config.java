@@ -910,7 +910,6 @@ public class Config {
     /**
      * Silver jewellery
      */
-    public static final Config INTERFACE_QUANTITY = varpbit(2224, false);
     public static final Config IQ = varp(2224, true).defaultValue(28);
     public static final Config TOOL_STORAGE_QUANTITY = varpbit(7792, false).defaultValue(0);
 
