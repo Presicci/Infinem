@@ -859,6 +859,8 @@ public class Config {
      */
     public static final Config COLLECTION_LOG_TAB = varpbit(6905, false);
     public static final Config COLLECTION_LOG_KC = varp(2048, false);
+    public static final Config COLLECTION_LOG_MAX = varp(2944, false);
+    public static final Config COLLECTION_LOG_COLLECTED = varp(2943, true);
 
     /**
      * Leagues
