@@ -126,6 +126,7 @@ public class XpCounter {
             h.actions[55] = (SlotAction) (player, slot) -> Config.XP_COUNTER_PROGRESS_BAR.set(player, slot - 1);
             h.actions[56] = (SlotAction) (player, slot) -> Config.XP_COUNTER_COLOUR.set(player, slot - 1);
             h.actions[57] = (SlotAction) (player, slot) -> Config.XP_COUNTER_GROUP.set(player, slot - 1);
+            h.actions[59] = (SlotAction) (player, slot) -> Config.XP_COUNTER_FAKE_DROPS.set(player, slot -1);
             // Open tracker for skill
             h.actions[17] = (SlotAction) (player, slot) -> {
                 int realSlot = slot + 1;
