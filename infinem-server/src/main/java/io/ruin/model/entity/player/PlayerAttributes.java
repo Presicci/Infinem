@@ -1383,4 +1383,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose @Getter private final EnumSet<Waystone> UnlockedWaystones = EnumSet.noneOf(Waystone.class);
 
     @Expose protected Map<AttributeKey, Object> attributes = Collections.synchronizedMap(new EnumMap<>(AttributeKey .class));
+
+    @Expose @Getter @Setter private RespawnPoint respawnPoint = RespawnPoint.LUMBRIDGE;
 }

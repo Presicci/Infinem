@@ -20,6 +20,7 @@ import io.ruin.model.combat.special.ranged.DragonThrownaxe;
 import io.ruin.model.combat.special.ranged.ToxicBlowpipe;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.inter.Widget;
@@ -1184,12 +1185,7 @@ public class PlayerCombat extends Combat {
                 player.sendMessage("Oh dear, you are dead!");
                 if(player.wildernessLevel > 15)
                     player.presetDelay.delaySeconds(10);
-                if (player.edgeHome) {
-                    player.getMovement().teleport(World.EDGEHOME);
-                } else {
-                    player.getMovement().teleport(2017, 3577, 0);
-                }
-
+                player.getMovement().teleport(player.getRespawnPoint().getRandomPosition());
 
                 /**
                  * HCIM - revoke status
