@@ -71,7 +71,6 @@ public class StarterGuide {
                                         new Option("Yes! I want to respawn in Edgeville!", () -> {
                                             if (player.getInventory().hasItem(995, 5000000)) {
                                                 player.getInventory().remove(995, 5000000);
-                                                player.edgeHome = true;
                                                 player.dialogue(new NPCDialogue(npc, "Your spawn point has been changed<br>" +
                                                         "to Edgeville! If you'd like to change<br>" +
                                                         "it back, just speak to me again."));
@@ -90,7 +89,6 @@ public class StarterGuide {
                                             new Option("Yes please!", () -> {
                                                 if (player.getInventory().hasItem(995, 5000000)) {
                                                     player.getInventory().remove(995, 5000000);
-                                                    player.edgeHome = false;
                                                     player.dialogue(new NPCDialogue(npc, "Your spawn point has been changed<br>" +
                                                             "back to home. If you'd like it changed,<br>" +
                                                             "just speak to me again!"));
