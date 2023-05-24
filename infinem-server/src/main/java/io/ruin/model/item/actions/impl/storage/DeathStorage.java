@@ -236,7 +236,32 @@ public class DeathStorage extends ItemContainer {
         reset();
         IKOD.forLostItem(player, killer, this::add);
         if (!isEmpty()) {
-            player.getPacketSender().sendHintIcon(3090, 3492);
+            switch (player.getRespawnPoint()) {
+                case EDGEVILLE:
+                    player.getPacketSender().sendHintIcon(3093, 3487);
+                    break;
+                case FALADOR:
+                    player.getPacketSender().sendHintIcon(2943, 3371);
+                    break;
+                case CAMELOT:
+                    player.getPacketSender().sendHintIcon(2760, 3481);
+                    break;
+                case ARDOUGNE:
+                    player.getPacketSender().sendHintIcon(2651, 3287);
+                    break;
+                case PRIFDDINAS:
+                    player.getPacketSender().sendHintIcon(3261, 6068);
+                    break;
+                case FEROX_ENCLAVE:
+                    player.getPacketSender().sendHintIcon(3137, 3636);
+                    break;
+                case KOUREND_CASTLE:
+                    player.getPacketSender().sendHintIcon(1633, 3673);
+                    break;
+                default:
+                    player.getPacketSender().sendHintIcon(3220, 3221);
+                    break;
+            }
         }
     }
 }

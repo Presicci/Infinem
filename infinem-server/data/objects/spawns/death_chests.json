@@ -1,3 +1,10 @@
 [
-  {"id": 31675, "x": 3220, "y": 3221, "z": 0, "type": 10, "direction": 1},  // Death chest
+  {"id": 31675, "x": 3220, "y": 3221, "z": 0, "type": 10, "direction": 1},  // Lumbridge
+  {"id": 31675, "x": 3093, "y": 3487, "z": 0, "type": 10, "direction": 2},  // Edgeville
+  {"id": 31675, "x": 2943, "y": 3371, "z": 0, "type": 10, "direction": 1},  // Falador
+  {"id": 31675, "x": 2760, "y": 3481, "z": 0, "type": 10, "direction": 2},  // Camelot
+  {"id": 31675, "x": 2651, "y": 3287, "z": 0, "type": 10, "direction": 2},  // Ardy
+  {"id": 31675, "x": 3261, "y": 6068, "z": 0, "type": 10, "direction": 1},  // Prif
+  {"id": 31675, "x": 3137, "y": 3636, "z": 0, "type": 10, "direction": 1},  // Ferox
+  {"id": 31675, "x": 1633, "y": 3673, "z": 0, "type": 10, "direction": 3}   // Kourend castle
 ]
