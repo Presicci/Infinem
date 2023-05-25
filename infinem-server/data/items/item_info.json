@@ -97686,15 +97686,16 @@
     "prayer_bonus": 0
   },
   {
+    "name": "Ivandis flail",
     "id": 22398,
     "tradeable": false,
     "alchable": false,
     "examine": "A legendary flail.",
-    "weight": 0.0,
-    "weight_equipped": 0.0,
-    "protect_value": 0,
-    "destroy": "Drop",
+    "protectValue": 20000,
     "equip_slot": 3,
+    "attack_level": 40,
+    "weight": 0.001,
+    "destroy": "Drop",
     "stab_attack_bonus": 24,
     "slash_attack_bonus": 38,
     "crush_attack_bonus": 62,
@@ -97708,7 +97709,8 @@
     "melee_strength_bonus": 42,
     "ranged_strength_bonus": 0,
     "magic_damage_bonus": 0,
-    "prayer_bonus": 5
+    "prayer_bonus": 5,
+    "weapon_type": "VAMPYRE_FLAIL"
   },
   {
     "id": 22400,

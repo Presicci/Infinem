@@ -1718,6 +1718,41 @@
       824
     ]
   },
+  "VAMPYRE_FLAIL": {
+    "config": 18,
+    "maxDistance": 1,
+    "attackTicks": 4,
+    "attackAnimation": 8010,
+    "defendAnimation": 8017,
+    "equipSound": 2247,
+    "attackSound": 1713,
+    "attackSets": [
+      {
+        "child": 3,
+        "type": "ACCURATE",
+        "style": "CRUSH"
+      },
+      {
+        "child": 7,
+        "type": "AGGRESSIVE",
+        "style": "CRUSH"
+      },
+      {
+        "child": 15,
+        "type": "DEFENSIVE",
+        "style": "CRUSH"
+      }
+    ],
+    "renderAnimations": [
+      8009,
+      8012,
+      8011,
+      8012,
+      8013,
+      8014,
+      8016
+    ]
+  },
     "CHAINMACE": {
     "config": 16,
     "maxDistance": 1,
