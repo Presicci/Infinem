@@ -1,7 +1,7 @@
 [
   { #Vampyre Juvinate (50)
     "ids": [ 4443, 4486 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.miscpvm.Vampyre",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 100,
@@ -9,8 +9,8 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 60.0,
+    "slayer_tasks": [ "Vampyres" ],
     //Combat Stats
     "attack": 50,
     "strength": 37,
@@ -42,9 +42,52 @@
     "defend_animation": 424,
     "death_animation": 836
   },
+  { #Vampyre juvinate (54) (darkmeyer)
+    "ids": [ 3694, 3695 ],
+    "handler": "io.ruin.model.activities.miscpvm.Vampyre",
+    //Combat Info
+    "hitpoints": 85,
+    "aggressive_level": 108,
+    "max_damage": 5,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 85.0,
+    "slayer_tasks": [ "Vampyres" ],
+    //Combat Stats
+    "attack": 40,
+    "strength": 40,
+    "defence": 30,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": true,
+    "venom_immunity": true,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 2,
+    "respawn_ticks": 26,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 8034,
+    "defend_animation": 8036,
+    "death_animation": 8033
+  },
   { #Vampyre juvinate (54)
-    "ids": [ 3694, 3695, 4427, 4428, 4429, 4430, 4487 ],
-    "handler": "",
+    "ids": [ 4427, 4428, 4429, 4430, 4487 ],
+    "handler": "io.ruin.model.activities.miscpvm.Vampyre",
     //Combat Info
     "hitpoints": 65,
     "aggressive_level": 108,
@@ -52,8 +95,8 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 65.0,
+    "slayer_tasks": [ "Vampyres" ],
     //Combat Stats
     "attack": 55,
     "strength": 40,
@@ -78,16 +121,16 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 2,
-    "respawn_ticks": 50,
+    "respawn_ticks": 26,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 422,
+    "defend_animation": 424,
+    "death_animation": 836
   },
   { #Vampyre Juvinate (75)
     "ids": [ 4442 ],
-    "handler": "",
+    "handler": "io.ruin.model.activities.miscpvm.Vampyre",
     //Combat Info
     "hitpoints": 110,
     "aggressive_level": 150,
@@ -95,14 +138,100 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 110.0,
+    "slayer_tasks": [ "Vampyres" ],
     //Combat Stats
     "attack": 70,
     "strength": 50,
     "defence": 35,
     "ranged": 1,
     "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": true,
+    "venom_immunity": true,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 2,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 422,
+    "defend_animation": 424,
+    "death_animation": 836
+  },
+  { #Vampyre Juvinate (90)
+    "ids": [ 5635, 5638 ],
+    "handler": "io.ruin.model.activities.miscpvm.Vampyre",
+    //Combat Info
+    "hitpoints": 100,
+    "aggressive_level": 180,
+    "max_damage": 6,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 100.0,
+    "slayer_tasks": [ "Vampyres" ],
+    //Combat Stats
+    "attack": 113,
+    "strength": 46,
+    "defence": 55,
+    "ranged": 50,
+    "magic": 50,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": true,
+    "venom_immunity": true,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 2,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 422,
+    "defend_animation": 424,
+    "death_animation": 836
+  },
+  { #Vampyre Juvinate (119)
+    "ids": [ 5636, 5639 ],
+    "handler": "io.ruin.model.activities.miscpvm.Vampyre",
+    //Combat Info
+    "hitpoints": 150,
+    "aggressive_level": 238,
+    "max_damage": 9,
+    "attack_style": "SLASH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 150.0,
+    "slayer_tasks": [ "Vampyres" ],
+    //Combat Stats
+    "attack": 127,
+    "strength": 76,
+    "defence": 65,
+    "ranged": 50,
+    "magic": 50,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
