@@ -11,9 +11,13 @@ import io.ruin.model.inter.dialogue.ActionDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
+import io.ruin.model.inter.dialogue.skill.SkillDialogue;
+import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.shop.ShopManager;
+import io.ruin.model.skills.Tool;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
@@ -39,26 +43,38 @@ public class SawmillOperator {
             return null;
         }
 
+        private static void skillDialogue(Player player) {
+            SkillDialogue.make(player,
+                    new SkillItem(WOOD.woodId).addAction((p, amount, event) -> convertPlank(p, WOOD, amount)),
+                    new SkillItem(OAK.woodId).addAction((p, amount, event) -> convertPlank(p, OAK, amount)),
+                    new SkillItem(TEAK.woodId).addAction((p, amount, event) -> convertPlank(p, TEAK, amount)),
+                    new SkillItem(MAHOGANY.woodId).addAction((p, amount, event) -> convertPlank(p, MAHOGANY, amount)));
+        }
 
         private static void convertPlank(Player player, Plank plank, int amount) {
             player.closeInterface(InterfaceType.MAIN);
             player.startEvent(event -> {
                 int amt = amount;
-
+                Item wood = player.getInventory().findItem(plank.woodId);
+                if (wood == null) {
+                    player.sendFilteredMessage("You don't have any logs.");
+                    return;
+                }
+                Item coins = player.getInventory().findItem(COINS_995);
+                if (coins == null || coins.getAmount() < plank.cost) {
+                    player.dialogue(new NPCDialogue(3101, "You don't have enough coins."));
+                    return;
+                }
                 while (amt-- > 0) {
-                    Item coins = player.getInventory().findItem(COINS_995);
-
-                    if (coins == null || coins.getAmount() < plank.cost) {
-                        player.dialogue(new NPCDialogue(5422, "You'll need to bring me some more coins."));
-                        return;
-                    }
-
-                    Item wood = player.getInventory().findItem(plank.woodId);
+                    wood = player.getInventory().findItem(plank.woodId);
                     if (wood == null) {
-                        player.dialogue(new NPCDialogue(5422, "You'll need to bring me some more logs."));
                         return;
                     }
-
+                    coins = player.getInventory().findItem(COINS_995);
+                    if (coins == null || coins.getAmount() < plank.cost) {
+                        player.dialogue(new NPCDialogue(3101, "You'll need to bring me some more coins."));
+                        return;
+                    }
                     player.getInventory().remove(COINS_995, plank.cost);
                     player.getInventory().remove(plank.woodId, 1);
                     player.getInventory().add(plank.plankId, 1);
@@ -69,14 +85,13 @@ public class SawmillOperator {
         }
 
         static {
-            SpawnListener.register(5422, npc -> npc.skipReachCheck = p -> p.equals(1624, 3500));
-            NPCAction.register(5422, "talk-to", (player, npc) -> player.dialogue(
+            NPCAction.register(3101, "talk-to", (player, npc) -> player.dialogue(
                     new NPCDialogue(npc, "Do you want me to make some planks for you? Or would you be interested in some other housing supplies?"),
                     new OptionsDialogue(
                             new Option("Planks please!", () -> player.dialogue(
                                     new PlayerDialogue("Planks please!"),
                                     new NPCDialogue(npc, "What kind of planks do you want?"),
-                                    new ActionDialogue(() -> player.openInterface(InterfaceType.MAIN, Interface.CONVERTING_PLANKS))
+                                    new ActionDialogue(() -> skillDialogue(player))
                             )),
                             new Option("What kind of planks can you make?", () -> player.dialogue(
                                     new PlayerDialogue("What kind of planks can you make?"),
@@ -85,51 +100,13 @@ public class SawmillOperator {
                                     new NPCDialogue(npc, "Wood and oak are all over the place, but teak and mahogany can only be found in a few places " +
                                             "like Karamja and Etceteria.")
                             )),
-                            new Option("Can I buy some housing supplies?", () -> ShopManager.openIfExists(player, "")),//TODO Fill this in
+                            new Option("Can I buy some housing supplies?", () -> npc.openShop(player)),
                             new Option("Nothing, thanks.", () -> player.dialogue(
                                     new PlayerDialogue("Nothing, thanks."),
                                     new NPCDialogue(npc, "Well come back when you want some. You can't get good quality planks anywhere but here!")))
                     )
             ));
-            NPCAction.register(5422, "buy-plank", (player, npc) -> player.openInterface(InterfaceType.MAIN, Interface.CONVERTING_PLANKS));
-
-            InterfaceHandler.register(Interface.CONVERTING_PLANKS, h -> {
-                /**
-                 * Wood
-                 */
-                h.actions[106] = (SimpleAction) p -> convertPlank(p, WOOD, 1);
-                h.actions[104] = (SimpleAction) p -> convertPlank(p, WOOD, 5);
-                h.actions[103] = (SimpleAction) p -> convertPlank(p, WOOD, 10);
-                h.actions[102] = (SimpleAction) p -> p.integerInput("Enter amount:", amt -> convertPlank(p, WOOD, amt));
-                h.actions[93] = (SimpleAction) p -> convertPlank(p, WOOD, p.getInventory().count(WOOD.woodId));
-
-                /**
-                 * Oak
-                 */
-                h.actions[111] = (SimpleAction) p -> convertPlank(p, OAK, 1);
-                h.actions[110] = (SimpleAction) p -> convertPlank(p, OAK, 5);
-                h.actions[109] = (SimpleAction) p -> convertPlank(p, OAK, 10);
-                h.actions[108] = (SimpleAction) p -> p.integerInput("Enter amount:", amt -> convertPlank(p, OAK, amt));
-                h.actions[94] = (SimpleAction) p -> convertPlank(p, OAK, p.getInventory().count(OAK.woodId));
-
-                /**
-                 * Teak
-                 */
-                h.actions[116] = (SimpleAction) p -> convertPlank(p, TEAK, 1);
-                h.actions[115] = (SimpleAction) p -> convertPlank(p, TEAK, 5);
-                h.actions[114] = (SimpleAction) p -> convertPlank(p, TEAK, 10);
-                h.actions[113] = (SimpleAction) p -> p.integerInput("Enter amount:", amt -> convertPlank(p, TEAK, amt));
-                h.actions[95] = (SimpleAction) p -> convertPlank(p, TEAK, p.getInventory().count(TEAK.woodId));
-
-                /**
-                 * Mahogany
-                 */
-                h.actions[121] = (SimpleAction) p -> convertPlank(p, MAHOGANY, 1);
-                h.actions[120] = (SimpleAction) p -> convertPlank(p, MAHOGANY, 5);
-                h.actions[119] = (SimpleAction) p -> convertPlank(p, MAHOGANY, 10);
-                h.actions[118] = (SimpleAction) p -> p.integerInput("Enter amount:", amt -> convertPlank(p, MAHOGANY, amt));
-                h.actions[96] = (SimpleAction) p -> convertPlank(p, MAHOGANY, p.getInventory().count(MAHOGANY.woodId));
-            });
+            NPCAction.register(3101, "buy-plank", (player, npc) -> skillDialogue(player));
         }
     }
 }
