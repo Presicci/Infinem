@@ -1,12 +1,8 @@
 package io.ruin.model.skills.mining;
 
-import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.dialogue.YesNoDialogue;
-import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
-import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.stat.StatType;
 
@@ -23,9 +19,7 @@ public enum Pickaxe {
     THIRD_AGE(61, 20014, 42, 7283, 7282),
     DRAGON_OR(61, 12797, 42, 642, 335),
     INFERNAL(61, 13243, 42, 4482, 4481),
-    INFERNAL_UNCHARGED(61, 13244, 42, 4482, 4481),
-    CORRUPTED(90, 30098, 48, 8521, 8523),
-    CORRUPTED_IMBUED(90, 30101, 50, 8522, 8524);
+    INFERNAL_UNCHARGED(61, 13244, 42, 4482, 4481);
 
     public final int levelReq, id, points, regularAnimationID, crystalAnimationID;
 
@@ -63,17 +57,5 @@ public enum Pickaxe {
     static {
         for (Pickaxe pickaxe : values())
             ItemDef.get(pickaxe.id).pickaxe = pickaxe;
-        ItemItemAction.register(30095, 30092, (player, primary, secondary) -> {
-            player.getInventory().remove(primary.getId(), 1);
-            player.getInventory().remove(secondary.getId(), 1);
-            player.getInventory().add(30098, 1);
-        });
-        ItemItemAction.register(30145, 30098, (player, primary, secondary) -> {
-            player.dialogue(new YesNoDialogue(Color.RED.wrap("WARNING!"), "You will close your corrupt leaf, if you combine these items.", secondary, () -> {
-                player.getInventory().remove(primary.getId(), 1);
-                player.getInventory().remove(secondary.getId(), 1);
-                player.getInventory().add(30101, 1);
-            }));
-        });
     }
 }
