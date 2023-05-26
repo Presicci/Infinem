@@ -10,9 +10,7 @@ import io.ruin.model.skills.magic.spells.BountyTeleport;
 import io.ruin.model.skills.magic.spells.HomeTeleport;
 import io.ruin.model.skills.magic.spells.TodoSpell;
 import io.ruin.model.skills.magic.spells.ancient.*;
-import io.ruin.model.skills.magic.spells.arceuus.ArceuusTeleport;
-import io.ruin.model.skills.magic.spells.arceuus.InferiorDemonbane;
-import io.ruin.model.skills.magic.spells.arceuus.Reanimate;
+import io.ruin.model.skills.magic.spells.arceuus.*;
 import io.ruin.model.skills.magic.spells.lunar.*;
 import io.ruin.model.skills.magic.spells.modern.*;
 
@@ -185,8 +183,8 @@ public enum SpellBook {
             new ArceuusTeleport(90, 100.0, new Bounds(2768, 2702, 2769, 2704, 0), Rune.LAW.toItem(2), Rune.SOUL.toItem(2), Rune.BLOOD.toItem(2)),   // Ape atoll
             new ArceuusTeleport(23, 19.0, new Bounds(1345, 3740, 1347, 3741, 0), Rune.LAW.toItem(1), Rune.EARTH.toItem(1), Rune.FIRE.toItem(1)),    // Battlefront
             new InferiorDemonbane(),
-            new TodoSpell("Superior Demonbane"),
-            new TodoSpell("Dark Demonbane"),
+            new SuperiorDemonbane(),
+            new DarkDemonbane(),
             new TodoSpell("Mark of Darkness"),
             new TodoSpell("Ghostly Grasp"),
             new TodoSpell("Skeletal Grasp"),
