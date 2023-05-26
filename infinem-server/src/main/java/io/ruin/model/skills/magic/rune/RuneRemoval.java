@@ -4,25 +4,33 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.impl.chargable.BryophytasStaff;
 import io.ruin.model.item.actions.impl.storage.RunePouch;
 import io.ruin.model.item.containers.Equipment;
 
 import java.util.ArrayList;
+import java.util.function.Consumer;
 
 public class RuneRemoval {
 
     private ArrayList<Removal> toRemove;
-
     private boolean keep;
+    private Player player;
 
-    private RuneRemoval(ArrayList<Removal> toRemove) {
+    private RuneRemoval(ArrayList<Removal> toRemove, Player player) {
         this.toRemove = toRemove;
+        this.player = player;
     }
 
     public void remove() {
         if (!keep) {
-            for (Removal r : toRemove)
+            for (Removal r : toRemove) {
+                if (r.item.getId() == 22370) {
+                    BryophytasStaff.removeCharges(player, r.amount);
+                    continue;
+                }
                 r.remove();
+            }
         }
         toRemove.clear();
     }
@@ -73,6 +81,15 @@ public class RuneRemoval {
                  */
                 continue;
             }
+            if (reqRune == Rune.NATURE && player.getEquipment().hasId(22370)) {
+                int charges = BryophytasStaff.getCharges(player);
+                if (charges >= reqAmount) {
+                    toRemove.add(new Removal(new Item(22370), reqAmount));
+                    continue;
+                }
+                toRemove.add(new Removal(new Item(22370), charges));
+                reqAmount -= charges;
+            }
             for (Item item : pItems) {
                 ItemDef def = item.getDef();
                 if (reqRune != null) {
@@ -98,7 +115,7 @@ public class RuneRemoval {
                 return null;
             }
         }
-        RuneRemoval removal = new RuneRemoval(toRemove);
+        RuneRemoval removal = new RuneRemoval(toRemove, player);
         if (wepDef != null && (wepDef.id == 11791 || wepDef.id == 12902 || wepDef.id == 12904 || wepDef.id == 21006 || wepDef.id == 30181))
             removal.keep = Random.get() <= 0.125;
         return removal;

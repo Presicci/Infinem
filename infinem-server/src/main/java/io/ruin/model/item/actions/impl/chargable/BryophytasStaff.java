@@ -23,13 +23,30 @@ public class BryophytasStaff extends ChargeableItem {
         register(chargeableItem);
     }
 
-    public static boolean hasCharged(Player player) {
+    public static void removeCharges(Player player, int amount) {
         Item staff = player.getEquipment().get(Equipment.SLOT_WEAPON);
-        if (staff == null || staff.getId() != CHARGED)
-            return false;
-        if (!Random.rollDie(15, 1))
-            staff.setCharges(staff.getCharges() - 1);
-        return true;
+        if (staff == null) {
+            System.err.println("Bryophyta's staff: Tried to remove charge with no available charges! player: " + player.getName());
+            return;
+        }
+        if (!Random.rollDie(15, 1)) {
+            if (amount >= staff.getCharges()) {
+                staff.removeCharges();
+                staff.setId(UNCHARGED);
+            } else {
+                staff.setCharges(staff.getCharges() - amount);
+            }
+
+        }
+    }
+
+    public static int getCharges(Player player) {
+        Item staff = player.getEquipment().get(Equipment.SLOT_WEAPON);
+        if (staff == null)
+            return 0;
+        if (staff.getId() != CHARGED)
+            return 0;
+        return staff.getCharges();
     }
 
     private static void createStaff(Player player, Item staff, Item essence) {
