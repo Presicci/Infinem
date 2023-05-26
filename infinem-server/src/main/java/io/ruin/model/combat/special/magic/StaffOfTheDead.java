@@ -5,11 +5,6 @@ import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.dialogue.YesNoDialogue;
-import io.ruin.model.item.actions.ItemItemAction;
-import io.ruin.model.item.attributes.AttributeExtensions;
-import io.ruin.model.item.attributes.AttributeTypes;
-import io.ruin.model.item.attributes.AugmentType;
 import io.ruin.model.item.containers.Equipment;
 
 //Power of Death: Reduce all melee damage you receive by 50% for the next
@@ -40,28 +35,4 @@ public class StaffOfTheDead implements Special {
         player.sendMessage("<col=3d5d2b>Spirits of deceased evildoers offer you their protection.");
         return true;
     }
-
-    static {
-        ItemItemAction.register(30129, 11921, (player, primary, secondary) -> {
-            if (!AttributeExtensions.hasAttribute(secondary, AttributeTypes.AUGMENTED)) {
-                player.dialogue(new YesNoDialogue(Color.RED.wrap("WARNING!"), "This will consume the augment and make your staff untradeable.", primary, () -> {
-                    player.getInventory().remove(primary.getId(), 1);
-                    secondary.putAttribute(AttributeTypes.AUGMENTED, AugmentType.CORRUPT);
-                }));
-            } else {
-                player.sendMessage("Your staff is already augmented.");
-            }
-        });
-        ItemItemAction.register(30129, 12904, (player, primary, secondary) -> {
-            if (!AttributeExtensions.hasAttribute(secondary, AttributeTypes.AUGMENTED)) {
-                player.dialogue(new YesNoDialogue(Color.RED.wrap("WARNING!"), "This will consume the augment and make your staff untradeable.", primary, () -> {
-                    player.getInventory().remove(primary.getId(), 1);
-                    secondary.putAttribute(AttributeTypes.AUGMENTED, AugmentType.CORRUPT);
-                }));
-            } else {
-                player.sendMessage("Your staff is already augmented.");
-            }
-        });
-    }
-
 }
