@@ -233,6 +233,18 @@ public class Item {
         return attributes.remove(key.name()) != null;
     }
 
+    public int getCharges() {
+        return getAttributeInt(AttributeTypes.CHARGES, 0);
+    }
+
+    public void setCharges(int amount) {
+        putAttribute(AttributeTypes.CHARGES, amount);
+    }
+
+    public void removeCharges() {
+        clearAttribute(AttributeTypes.CHARGES);
+    }
+
     /**
      * Adds the desired amount to this item's quantity.
      * @param amount
