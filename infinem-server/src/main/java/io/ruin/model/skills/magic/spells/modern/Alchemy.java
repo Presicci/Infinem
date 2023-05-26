@@ -122,6 +122,14 @@ public class Alchemy extends Spell {
             }));
             return;
         }
+        if (Config.ALCH_UNTRADEABLES.get(player) == 1 && !item.getDef().tradeable) {
+            int finalValue = value;
+            player.dialogue(new YesNoDialogue("Are you sure you want to alchemize that?",
+                    item.getDef().name + " is untradeable.", item, () -> {
+                alch(player, item, runes, level, finalValue);
+            }));
+            return;
+        }
         alch(player, item, runes, level, value);
     }
 
