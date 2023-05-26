@@ -49,8 +49,8 @@ public class Karuulm {
         ObjectAction.register(34530, 1314, 10188, 1, 1, (player, obj) -> player.getMovement().teleport(1318, 10188, 2));
         ObjectAction.register(34531, 1314, 10188, 2, 1, (player, obj) -> player.getMovement().teleport(1313, 10188, 1));
 
-        ObjectAction.register(4469, 1357, 10206, 1, 1, Karuulm::handleBarrier);
-        ObjectAction.register(4469, 1357, 10207, 1, 1, Karuulm::handleBarrier);
+        //ObjectAction.register(4469, 1357, 10206, 1, 1, Karuulm::handleBarrier);
+        //ObjectAction.register(4469, 1357, 10207, 1, 1, Karuulm::handleBarrier);
 
         // Elevator
         ObjectAction.register(34359, "activate", Karuulm::moveDownElevator);
