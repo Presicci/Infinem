@@ -1032,6 +1032,8 @@ public class Config {
 
     public static final Config CHARTER_PREVIOUS = varpbit(10068, false);
 
+    public static final Config REV_JUMP_DOWN = varpbit(3857, true); // This is actually for the wilderness ditch warning counter
+
     /**
      * Character Summary
      */
