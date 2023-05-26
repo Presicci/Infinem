@@ -80,7 +80,7 @@ public class SummerShrine {
 
 
     static {
-        ObjectAction.register(SHRINE, "Sacrifice", (player, obj) -> {
+        /*ObjectAction.register(SHRINE, "Sacrifice", (player, obj) -> {
             if (!EVENT_ENABLED) {
                 player.dialogue(new PlayerDialogue("It looks like the event has ended...").animate(567));
                 return;
@@ -97,6 +97,6 @@ public class SummerShrine {
                     )
             );
 
-        });
+        });*/
     }
 }
