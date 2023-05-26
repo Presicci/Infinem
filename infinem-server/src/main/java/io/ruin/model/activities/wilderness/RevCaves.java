@@ -3,6 +3,9 @@ package io.ruin.model.activities.wilderness;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.utils.Config;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
@@ -46,20 +49,28 @@ public class RevCaves { //todo add the agility requirements for this (for the ec
         }));
 
         /**
-         * Middle entrance/exit
+         * Middle entrance
          */
-        ObjectAction.register(40387, 3188, 10127, 0, "exit", (player, obj) -> player.startEvent(event -> {
-            player.lock();
-            player.getMovement().teleport(3067, 3740, 0);
-            player.sendFilteredMessage("You exit the cave.");
-            player.unlock();
-        }));
-        ObjectAction.register(40386, 3065, 3739, 0, "enter", (player, obj) -> player.startEvent(event -> {
-            player.lock();
-            player.getMovement().teleport(3187, 10128, 0);
-            player.sendFilteredMessage("You enter the cave.");
-            player.unlock();
-        }));
+        ObjectAction.register(40386, 3067, 3740, 0, "jump down", (player, obj) -> {
+            if (Config.REV_JUMP_DOWN.get(player) == 0) {
+                player.dialogue(new OptionsDialogue("This is a one way entrance, are you sure you want to jump down?",
+                                new Option("Yes, and don't warn me again!", () -> player.startEvent(event -> {
+                                    player.lock();
+                                    player.getMovement().teleport(3187, 10128, 0);
+                                    player.sendFilteredMessage("You enter the cave.");
+                                    Config.REV_JUMP_DOWN.set(player, 1);
+                                    player.unlock();
+                                })),
+                                new Option("Not a chance.")
+                        )
+                );
+            } else {
+                player.lock();
+                player.getMovement().teleport(3187, 10128, 0);
+                player.sendFilteredMessage("You enter the cave.");
+                player.unlock();
+            }
+        });
 
         /**
          * North entrance/exit
