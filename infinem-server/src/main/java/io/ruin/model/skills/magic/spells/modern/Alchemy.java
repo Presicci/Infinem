@@ -90,7 +90,7 @@ public class Alchemy extends Spell {
 
     private static void tryAlch(Player player, Item item, RuneRemoval runes, Level level) {
         if (item.getId() == 7462 || item.getId() == Preset.DRAGON_2H_SWORD || item.getId() == BraceletOfEthereum.REVENANT_ETHER) {
-            player.sendMessage("You can't alchemise this item.");
+            player.sendMessage("You can't alchemize this item.");
             return;
         }
 
