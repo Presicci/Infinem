@@ -43,17 +43,7 @@ public enum Piles {
     GOLD_BAR(2355),
     MITHRIL_BAR(2357),
     ADAMANT_BAR(2359),
-    RUNITE_BAR(2363),
-
-    /*
-     * Wilderness Resources
-     */
-
-    RAW_MOLTEN_EEL(30086),
-    COOKED_MOLTEN_EEL(30089),
-    CORRUPTED_ORE(30109),
-    CORRUPTED_BAR(30112)
-    ;
+    RUNITE_BAR(2363);
 
 
     public final int itemID;
