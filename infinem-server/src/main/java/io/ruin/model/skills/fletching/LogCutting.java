@@ -58,11 +58,6 @@ public enum LogCutting {
     REDWOOD_SHAFT(19669, 90, 35.0, new Item(52, 105), "105 arrow shafts", "make shafts from redwood logs"),
     REDWOOD_SHIELD(19669, 92, 216.0, new Item(22266, 1), "a shield", "make a redwood shield"),
 
-    CORRUPT_ARROW_SHAFT(30105, 90, 50.0, new Item(30115, 5), "5 corrupted arrow shafts", "makes corrupted arrows shafts from corrupted logs"),
-    CORRUPT_SHORTBOW(30105, 92, 70.0, new Item(30151, 1), "a corrupt short", "makes a corrupt shortbow from corrupted logs"),
-    CORRUPT_LONGBOW(30105, 92, 70.0, new Item(30157, 1), "a corrupt longbow", "makes a corrupt longbow from corrupted logs"),
-    CORRUPT_PICKAXE_HANDLE(30105, 90, 50.0, new Item(30092, 1), "a corrupt pickaxe handle", "makes a corrupt pickaxe handle from corrupted logs"),
-
     BATTLESTAFF(22935, 40, 80, new Item(1391, 1), "a battlestaff", "make a battlestaff"),
     ;
 
@@ -121,7 +116,6 @@ public enum LogCutting {
     private static final int MAPLE_LOG = 1517;
     private static final int YEW_LOG = 1515;
     private static final int MAGIC_LOG = 1513;
-    private static final int CORRUPT_LOG = 30105;
     private static final int CELASTRUS_BARK = 22935;
 
     static {
@@ -191,12 +185,6 @@ public enum LogCutting {
         ItemItemAction.register(Tool.KNIFE, 19669, (player, knife, magicLog) -> SkillDialogue.make(player,
                 item(REDWOOD_SHAFT),
                 item(REDWOOD_SHIELD)));
-
-        /*
-         * Corrupt log
-         */
-        ItemItemAction.register(Tool.KNIFE, CORRUPT_LOG, (player, knife, corruptLog) ->
-                SkillDialogue.make(player, item(CORRUPT_ARROW_SHAFT), item(CORRUPT_SHORTBOW), item(CORRUPT_LONGBOW), item(CORRUPT_PICKAXE_HANDLE)));
 
         /*
          * Celastrus bark
