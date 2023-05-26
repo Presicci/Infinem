@@ -3,6 +3,7 @@ package io.ruin.model.skills.magic.spells.modern;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.inter.journal.presets.Preset;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.jewellery.BraceletOfEthereum;
 import io.ruin.model.skills.magic.Spell;
@@ -72,7 +73,7 @@ public class Alchemy extends Spell {
             player.sendMessage("You can't alchemize this item.");
             return false;
         }
-        if (player.getAlchValue() > 0 && item.getDef().value > player.getAlchValue()) {
+        if (Config.ALCH_THRESHOLD.get(player) > 0 && item.getDef().value > Config.ALCH_THRESHOLD.get(player)) {
             int finalValue = value;
             player.dialogue(new YesNoDialogue("Are you sure you want to alchemize that?",
                     item.getDef().name + " is above your alchemy warning threshold.", item, () -> {

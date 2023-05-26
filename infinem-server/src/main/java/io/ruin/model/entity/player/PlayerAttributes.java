@@ -748,8 +748,6 @@ public abstract class PlayerAttributes extends Entity {
      */
     public TickDelay alchDelay = new TickDelay();
 
-    @Expose @Getter @Setter private int alchValue = 5000;
-
     /**
      * Jail
      */
