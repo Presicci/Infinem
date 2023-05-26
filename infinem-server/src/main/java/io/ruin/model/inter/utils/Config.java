@@ -1033,6 +1033,12 @@ public class Config {
     public static final Config CHARTER_PREVIOUS = varpbit(10068, false);
 
     /**
+     * Character Summary
+     */
+    public static final Config SHOW_TIME_PLAYED = varpbit(12933, false);
+    public static final Config ASK_TIME_PLAYED = varpbit(12962, true);
+
+    /**
      * Separator
      */
 
