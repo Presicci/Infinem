@@ -62,21 +62,9 @@ public enum ItemCombining {
     LIGHT_INFINITY_TOP(12530, 6916, 12420, true),
     LIGHT_INFINITY_BOTTOMS(12530, 6924, 12421, true),
     /**
-     * Custom recolors
-     */
-    ANCESTRAL_HAT_LIMITED(30160, 21018, 30175, false),
-    ANCESTRAL_TOP_LIMITED(30163, 21021, 30177, false),
-    ANCESTRAL_BOTTOM_LIMITED(30166, 21024, 30179, false),
-    KODAI_WAND_LIMITED(30169, 21006, 30181, false),
-    TWISTED_BOW_LIMITED(30172, 20997, 30183, false),
-    TWISTED_BOW_ELDER(30039, 20997, 30036, true),
-    TWISTED_BOW_KODAI(30040, 20997, 30037, true),
-    PRIMORDIAL_BOOTS_G(30046, 13239, 30038, true),
-    /**
      * Items
      */
     KODAI_WAND(21043, 6914, 21006, false),
-    CORRUPTED_PICKAXEI(30098, 30145, 30101, false),
     BRIMSTONE_BOOTS(23037, 22957, 22951, false),
     AVERNIC_DEFENDER(12954, 22477, 22322, true),
     SARADOMINS_LIGHT(11791, 13256, 22296, false),
@@ -92,7 +80,8 @@ public enum ItemCombining {
     SHATTERED_LAW_BOOK(12610, 26421, 26492, true),
     SHATTERED_WAR_BOOK(12608, 26421, 26494, true),
     SHATTERED_HOLY_BOOK(3840, 26421, 26496, true),
-    SHATTERED_UNHOLY_BOOK(3842, 26421, 26498, true);
+    SHATTERED_UNHOLY_BOOK(3842, 26421, 26498, true)
+    ;
 
     public final int primaryId, secondaryId, combinedId;
     public final boolean reversible;
