@@ -2,7 +2,7 @@
   "name": "Sawmill Operator's Shop",
   "currency": "COINS",
   "npcs": [
-    5422
+    3101
   ],
   "sellMultiplier": 1300,
   "buyMultiplier": 500,
