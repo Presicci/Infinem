@@ -22,7 +22,7 @@ import java.util.function.BiPredicate;
 
 public class TargetSpell extends Spell {
 
-    public static final TargetSpell[] AUTOCASTS = new TargetSpell[53];
+    public static final TargetSpell[] AUTOCASTS = new TargetSpell[59];
 
     protected int lvlReq;
 
