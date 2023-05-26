@@ -364,7 +364,7 @@ public class TeleportInterface {
     }
 
     static {
-        InterfaceHandler.register(Interface.TELEPORTS, (interfaceHandler -> {
+        /*InterfaceHandler.register(Interface.TELEPORTS, (interfaceHandler -> {
             for (int component = 35; component < 41; component++) {
                 int finalComponent = component;
                 interfaceHandler.actions[component] = (SimpleAction) player -> player.getTeleports().selectCatagory(finalComponent);
@@ -376,7 +376,7 @@ public class TeleportInterface {
             interfaceHandler.actions[TELEPORT_BUTTON] = (SimpleAction) player -> player.getTeleports().teleport();
         }));
         ObjectAction.register(ObjectID.KRONOS_TELEPORTER, "teleport", (player, object) -> player.getTeleports().sendInterface());
-        ObjectAction.register(ObjectID.KRONOS_TELEPORTER, "previous teleport", (player, object) -> player.getTeleports().teleportPrevious());
+        ObjectAction.register(ObjectID.KRONOS_TELEPORTER, "previous teleport", (player, object) -> player.getTeleports().teleportPrevious());*/
     }
 
 }
