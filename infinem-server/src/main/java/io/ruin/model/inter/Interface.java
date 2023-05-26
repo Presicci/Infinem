@@ -16,7 +16,7 @@ public class Interface {
 
     public static final int RESIZED_STACKED_SCREEN = 164;
 
-    public static final int OPTIONS = 261;
+    public static final int OPTIONS = 116;
 
     public static final int ADVANCED_OPTIONS = 60;
 
