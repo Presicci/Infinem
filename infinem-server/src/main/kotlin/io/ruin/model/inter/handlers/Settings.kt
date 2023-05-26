@@ -6,8 +6,10 @@ import io.ruin.model.inter.actions.DefaultAction
 import io.ruin.model.inter.dialogue.OptionsDialogue
 import io.ruin.model.inter.utils.Config
 import io.ruin.model.inter.utils.Option
+import io.ruin.model.skills.magic.spells.modern.Alchemy
 import io.ruin.network.incoming.handlers.DisplayHandler
 import java.util.function.BiConsumer
+import java.util.function.Consumer
 
 /**
  * @author Jire
@@ -160,6 +162,14 @@ object Settings {
                                 }
                                 22 -> Config.TRANSPARENT_CHATBOX.toggle(p)
                                 23 -> Config.TRANSPARENT_SIDE_PANEL.toggle(p)
+                            }
+                        }
+                        7 -> {
+                            when (slot) {
+                                23 -> Config.ALCH_UNTRADEABLES.toggle(p)
+                                24 -> p.integerInput("Set value threshold for alchemy warnings:", Consumer { i ->
+                                    Config.ALCH_THRESHOLD[p] = i
+                                })
                             }
                         }
                     }
