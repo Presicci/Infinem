@@ -1,6 +1,7 @@
 package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.Random;
+import io.ruin.cache.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
@@ -33,6 +34,7 @@ public class BryophytasStaff extends ChargeableItem {
             if (amount >= staff.getCharges()) {
                 staff.removeCharges();
                 staff.setId(UNCHARGED);
+                player.sendMessage(Color.RED.wrap("Your Bryophyta's staff has run out of charges."));
             } else {
                 staff.setCharges(staff.getCharges() - amount);
             }
