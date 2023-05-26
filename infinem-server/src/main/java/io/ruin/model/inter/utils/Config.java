@@ -103,6 +103,9 @@ public class Config {
 
     public static final Config COLLECTION_LOG_SETTINGS = varpbit(11959, true);
 
+    public static final Config ALCH_UNTRADEABLES = varpbit(6092, true).defaultValue(1);
+    public static final Config ALCH_THRESHOLD = varpbit(6091, true).defaultValue(1000);
+
     /**
      * Advanced options
      */
