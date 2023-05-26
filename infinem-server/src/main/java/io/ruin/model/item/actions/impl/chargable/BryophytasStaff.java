@@ -53,7 +53,7 @@ public class BryophytasStaff extends ChargeableItem {
 
     private static void createStaff(Player player, Item staff, Item essence) {
         player.animate(7981);
-        player.graphics(264, 0, 184);
+        player.graphics(264, 184, 30);
         essence.remove();
         staff.setId(UNCHARGED);
     }
