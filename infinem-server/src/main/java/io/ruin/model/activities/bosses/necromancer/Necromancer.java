@@ -221,7 +221,7 @@ public class Necromancer extends NPCCombat {
     }
     
     static {
-        ObjectAction.register(20839, 2270, 5520, 0, 1, (player, obj) -> createAndEnter(player));
+        //ObjectAction.register(20839, 2270, 5520, 0, 1, (player, obj) -> createAndEnter(player));
     }
 
 }
