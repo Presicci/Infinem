@@ -19,6 +19,7 @@ import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.route.routes.TargetRoute;
+import io.ruin.model.shop.Shop;
 import io.ruin.model.stat.StatType;
 
 import java.util.*;
@@ -511,5 +512,13 @@ public class NPC extends NPCAttributes {
 
     public void removeIfIdle(Player player) {
         removeIfIdle(player, 30, 4);
+    }
+
+    public void openShop(Player player) {
+        NPCDef def = getDef();
+        List<Shop> shops = def.shops;
+        if (shops != null && shops.size() > 0) {
+            shops.get(0).open(player);
+        }
     }
 }
