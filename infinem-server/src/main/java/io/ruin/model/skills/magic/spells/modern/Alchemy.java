@@ -1,10 +1,16 @@
 package io.ruin.model.skills.magic.spells.modern;
 
+import io.ruin.api.utils.NumberUtils;
+import io.ruin.cache.Color;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.inter.journal.presets.Preset;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.jewellery.BraceletOfEthereum;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
@@ -45,6 +51,32 @@ public class Alchemy extends Spell {
             }
             return tryAlch(player, item, level);
         });
+        clickAction = (p, i) -> {
+            p.sendMessage("" + i);
+            if (i == 9) {
+                alchemyWarningDialogue(p);
+            }
+        };
+    }
+
+    private static void alchemyWarningDialogue(Player player) {
+        player.dialogue(
+                new ItemDialogue().two(Items.NATURE_RUNE, Items.FIRE_RUNE, "A warning will be shown if the item is worth at least: " + Color.RED.wrap("" + NumberUtils.formatNumber(Config.ALCH_THRESHOLD.get(player)))
+                        + "<br>Untradeable items " + (Config.ALCH_UNTRADEABLES.get(player) == 0 ? (Color.RED.wrap("may not") + " trigger such a") : "will " + Color.RED.wrap("always") + " trigger a") + " warning."),
+                new OptionsDialogue(
+                        new Option("Set value threshold", () -> {
+                            player.integerInput("Set value threshold for alchemy warnings:", value -> {
+                                Config.ALCH_THRESHOLD.set(player, value);
+                                alchemyWarningDialogue(player);
+                            });
+                        }),
+                        new Option((Config.ALCH_UNTRADEABLES.get(player) == 0 ? "Enable" : "Disable") + " untradeable item warning", () -> {
+                            Config.ALCH_UNTRADEABLES.toggle(player);
+                            alchemyWarningDialogue(player);
+                        }),
+                        new Option("Cancel")
+                )
+        );
     }
 
     private static boolean tryAlch(Player player, Item item, Level level) {
