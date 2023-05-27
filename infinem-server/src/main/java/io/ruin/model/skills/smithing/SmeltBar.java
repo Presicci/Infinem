@@ -39,8 +39,7 @@ public class SmeltBar {
                 new SkillItem(2357),
                 new SkillItem(2359),
                 new SkillItem(2361),
-                new SkillItem(2363),
-                new SkillItem(30112));
+                new SkillItem(2363));
     }
 
     public static void smelt(Player player, SmithBar bar, int smeltAmount) {
