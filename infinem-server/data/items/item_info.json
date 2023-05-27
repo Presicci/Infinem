@@ -97450,7 +97450,7 @@
   {
     "id": 22368,
     "tradeable": true,
-    "alchable": false,
+    "alchable": true,
     "weight": 1.5,
     "weight_equipped": 1.5,
     "protect_value": 65000,
@@ -97475,7 +97475,7 @@
   {
     "id": 22370,
     "tradeable": false,
-    "alchable": false,
+    "alchable": true,
     "weight": 1.5,
     "weight_equipped": 1.5,
     "protect_value": 65000,
