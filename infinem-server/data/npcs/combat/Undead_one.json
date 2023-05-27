@@ -5,16 +5,59 @@
     //Combat Info
     "hitpoints": 47,
     "aggressive_level": 122,
-    "max_damage": 1,
-    "attack_style": "CRUSH",
+    "max_damage": 7,
+    "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 73.0,
+    "slayer_tasks": [ "Skeletons" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 55,
+    "strength": 55,
+    "defence": 55,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 7,
+    "slash_attack": 7,
+    "crush_attack": 7,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 5,
+    "slash_defence": 5,
+    "crush_defence": 3,
+    "magic_defence": 1,
+    "ranged_defence": 4,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 2,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": 3994,
+    "attack_animation": 5485,
+    "defend_animation": 5489,
+    "death_animation": 1444
+  },
+  { #Undead one (skeletons 68)
+    "ids": [ 5342, 5343 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 47,
+    "aggressive_level": 136,
+    "max_damage": 7,
+    "attack_style": "SLASH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 50.0,
+    "slayer_tasks": [ "Skeletons" ],
+    //Combat Stats
+    "attack": 63,
+    "strength": 63,
+    "defence": 63,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
@@ -42,22 +85,22 @@
     "defend_animation": 5489,
     "death_animation": 1444
   },
-  { #Undead one (68)
-    "ids": [ 5342, 5343, 5346, 5347, 5348 ],
+  { #Undead one (zombies 68)
+    "ids": [ 5346, 5347, 5348 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 60,
-    "aggressive_level": 136,
-    "max_damage": 1,
-    "attack_style": "CRUSH",
+    "hitpoints": 47,
+    "aggressive_level": 0,
+    "max_damage": 7,
+    "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 47.0,
+    "slayer_tasks": [ "Zombies" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 63,
+    "strength": 63,
+    "defence": 63,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
@@ -80,33 +123,33 @@
     "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
-    "spawn_animation": 3994,
-    "attack_animation": 5485,
-    "defend_animation": 5489,
-    "death_animation": 1444
+    "spawn_animation": -1,
+    "attack_animation": 5568,
+    "defend_animation": 5567,
+    "death_animation": 5569
   },
   { #Undead one (73)
     "ids": [ 5349, 5350, 5351 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 60,
+    "hitpoints": 59,
     "aggressive_level": 146,
-    "max_damage": 1,
-    "attack_style": "CRUSH",
+    "max_damage": 8,
+    "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 0.0,
-    "slayer_tasks": [],
+    "slayer_xp": 59.0,
+    "slayer_tasks": [ "Zombies" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 65,
+    "strength": 65,
+    "defence": 65,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
+    "stab_attack": 4,
+    "slash_attack": 4,
+    "crush_attack": 4,
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
