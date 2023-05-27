@@ -3,6 +3,7 @@ package io.ruin.model.activities.miscpvm;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.shared.listeners.HitListener;
+import io.ruin.model.item.actions.impl.jewellery.EfaritaysAid;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -29,6 +30,10 @@ public class Vampyre extends NPCCombat {
                 block = true;
             } else if (hit.attackStyle.isMagic()) {
                 block = true;
+            }
+            if (block && EfaritaysAid.test(hit.attacker.player)) {
+                block = false;
+                hit.maxDamage = 10;
             }
             if (block) {
                 hit.block();
