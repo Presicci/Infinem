@@ -59,12 +59,14 @@ public class BraceletOfSlaughter {
     }
 
     public static boolean test(Player player) {
+        if (!player.getEquipment().hasId(BRACELET_OF_SLAUGHTER))
+            return false;
         int charges = player.getAttributeIntOrZero(AttributeKey.SLAUGHTER_CHARGES);
         if (charges == 0) {
             fullCharges(player);
             charges = MAX_CHARGES;
         }
-        if (player.getEquipment().hasId(BRACELET_OF_SLAUGHTER) && Random.rollDie(4)) {
+        if (Random.rollDie(4)) {
             if (charges > 1) {
                 player.putAttribute(AttributeKey.SLAUGHTER_CHARGES, --charges);
                 player.sendFilteredMessage("Your bracelet of slaughter prevents your slayer count from decreasing. It has " + (charges == 1 ? "1 charge" : charges + " charges") + " left.");

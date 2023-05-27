@@ -59,12 +59,14 @@ public class ExpeditiousBracelet {
     }
 
     public static boolean test(Player player) {
+        if (!player.getEquipment().hasId(EXPEDITIOUS_BRACELET))
+            return false;
         int charges = player.getAttributeIntOrZero(AttributeKey.EXPEDITIOUS_CHARGES);
         if (charges == 0) {
             fullCharges(player);
             charges = MAX_CHARGES;
         }
-        if (player.getEquipment().hasId(EXPEDITIOUS_BRACELET) && Random.rollDie(4)) {
+        if (Random.rollDie(4)) {
             if (charges > 1) {
                 player.putAttribute(AttributeKey.EXPEDITIOUS_CHARGES, --charges);
                 player.sendFilteredMessage("Your expeditious bracelet helps you progress your slayer task faster. It has " + (charges == 1 ? "1 charge" : charges + " charges") + " left.");
