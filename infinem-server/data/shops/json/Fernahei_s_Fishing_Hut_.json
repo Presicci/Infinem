@@ -61,60 +61,6 @@
       "stock": 0,
       "buy_price": 21,
       "sell_price": 30
-    },
-    {
-      "itemId": 307,
-      "stock": 5,
-      "buy_price": 3,
-      "sell_price": 5
-    },
-    {
-      "itemId": 309,
-      "stock": 5,
-      "buy_price": 3,
-      "sell_price": 5
-    },
-    {
-      "itemId": 313,
-      "stock": 200,
-      "buy_price": 2,
-      "sell_price": 3
-    },
-    {
-      "itemId": 11883,
-      "stock": 30,
-      "buy_price": 210,
-      "sell_price": 300
-    },
-    {
-      "itemId": 314,
-      "stock": 800,
-      "buy_price": 1,
-      "sell_price": 2
-    },
-    {
-      "itemId": 11881,
-      "stock": 50,
-      "buy_price": 140,
-      "sell_price": 200
-    },
-    {
-      "itemId": 335,
-      "stock": 0,
-      "buy_price": 7,
-      "sell_price": 10
-    },
-    {
-      "itemId": 349,
-      "stock": 0,
-      "buy_price": 14,
-      "sell_price": 20
-    },
-    {
-      "itemId": 331,
-      "stock": 0,
-      "buy_price": 21,
-      "sell_price": 30
     }
   ]
 }
