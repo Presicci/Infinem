@@ -2020,7 +2020,7 @@
     "y": 2866,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
+    "walkRange": 4,
     "world": "ECO",
     "npcName": "Seagull"
   },
