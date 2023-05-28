@@ -44,16 +44,7 @@ public class FremennikSlayerDungeon {
         ObjectAction.register(16539, 2734, 10008, 0, "squeeze-through", (player, obj) -> squeezeThroughCrack(player, obj, new Position(2730, 10008, 0), 62)); // crack
         ObjectAction.register(16539, 2731, 10008, 0, "squeeze-through", (player, obj) -> squeezeThroughCrack(player, obj, new Position(2735, 10008, 0), 62)); // crack
 
-        ObjectAction.register(29993, 2703, 9990, 0, "climb", (player, obj) -> {
-            final int task = Config.SLAYER_TASK_1.get(player);
-            int am = Config.SLAYER_TASK_AMOUNT.get(player);
-            SlayerCreature creature = SlayerCreature.lookup(task);
-            if ((creature == SlayerCreature.KURASK && am > 0) || player.getPosition().getY() < obj.getPosition().getY()) {
-                Stile.shortcutN(player, obj, 1);
-            } else {
-                player.dialogue(new NPCDialogue(7518, "Naughty human! You not hunting the Kurask! Jelly's Kurasks only for people on Slayer tasks."));
-            }
-        });
+        ObjectAction.register(29993, 2703, 9990, 0, "climb", (player, obj) -> Stile.shortcutN(player, obj, 1));
 
         ObjectAction.register(2123,2797, 3614,0, "enter", (player, obj) -> Traveling.fadeTravel(player, new Position(2808, 10002, 0)));
         ObjectAction.register(2141,2809, 10001, 0, "enter", (player, obj) -> Traveling.fadeTravel(player, new Position(2796, 3615, 0)));
