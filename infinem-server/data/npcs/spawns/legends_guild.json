@@ -7,5 +7,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Fionella",
+    "id": 3960,
+    "x": 2729,
+    "y": 3378,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 6
   }
 ]
