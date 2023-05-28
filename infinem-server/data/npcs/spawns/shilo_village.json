@@ -16,5 +16,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
+  },
+  {
+    "name": "Yanni Salika",
+    "id": 5361,
+    "x": 2836,
+    "y": 2985,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
   }
 ]
