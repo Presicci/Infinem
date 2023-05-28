@@ -582,7 +582,9 @@
     "y": 9974,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnly": true,
+    "taskOnlyNPC": "JELLY"
   },
   {
     "name": "Kurask",
@@ -591,7 +593,9 @@
     "y": 9968,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnly": true,
+    "taskOnlyNPC": "JELLY"
   },
   {
     "name": "Kurask",
@@ -600,7 +604,9 @@
     "y": 9974,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnly": true,
+    "taskOnlyNPC": "JELLY"
   },
   {
     "name": "Kurask",
@@ -609,7 +615,9 @@
     "y": 9966,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnly": true,
+    "taskOnlyNPC": "JELLY"
   },
   {
     "name": "Kurask",
@@ -618,7 +626,9 @@
     "y": 9959,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnly": true,
+    "taskOnlyNPC": "JELLY"
   },
   {
     "name": "Kurask",
@@ -627,7 +637,9 @@
     "y": 9961,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnly": true,
+    "taskOnlyNPC": "JELLY"
   },
   {
     "name": "Kurask",
@@ -636,7 +648,9 @@
     "y": 9969,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnly": true,
+    "taskOnlyNPC": "JELLY"
   },
   {
     "name": "Kurask",
@@ -645,6 +659,8 @@
     "y": 9975,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnly": true,
+    "taskOnlyNPC": "JELLY"
   }
 ]
