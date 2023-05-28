@@ -2,10 +2,10 @@
   {
     "name": "Trader Crewmember",
     "id": 1334,
-    "x": 3001,
-    "y": 3035,
+    "x": 3002,
+    "y": 3036,
     "z": 0,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 3
   }
 ]
