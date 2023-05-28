@@ -16,5 +16,14 @@
     "z": 1,
     "direction": "S",
     "walkRange": 6
+  },
+  {
+    "name": "Siegfried Erkle",
+    "id": 3961,
+    "x": 2725,
+    "y": 3379,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
