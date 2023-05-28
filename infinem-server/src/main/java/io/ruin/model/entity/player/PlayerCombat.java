@@ -47,6 +47,7 @@ import io.ruin.model.skills.magic.spells.lunar.Vengeance;
 import io.ruin.model.skills.prayer.Prayer;
 import io.ruin.model.skills.prayer.Redemption;
 import io.ruin.model.skills.prayer.Retribution;
+import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.stat.StatType;
 import io.ruin.utility.Misc;
 import io.ruin.utility.Utils;
@@ -172,7 +173,11 @@ public class PlayerCombat extends Combat {
                     player.sendMessage("You need a Slayer level of at least " + target.npc.getCombat().getInfo().slayer_level + " to attack this monster.");
                 return false;
             }
-
+            if (target.npc.isTaskOnly() && !Slayer.isTask(player, target.npc)) {
+                if(message)
+                    target.npc.getTaskOnlyNPC().sendDialogue(player);
+                return false;
+            }
             if(target.npc.hasTarget() && !target.npc.isTargeting(player)) {
                 if(message)
                     player.sendMessage("That monster isn't after you!");

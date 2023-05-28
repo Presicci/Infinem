@@ -8,12 +8,14 @@ import io.ruin.api.utils.ArrayUtils;
 import io.ruin.api.utils.JsonUtils;
 import io.ruin.data.DataFile;
 import io.ruin.model.World;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.locations.home.NPCLocator;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Tile;
 import io.ruin.model.shop.ShopManager;
+import io.ruin.model.skills.slayer.TaskOnlyNPC;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
@@ -44,6 +46,12 @@ public class npc_spawns extends DataFile {
                 if (spawn.walkRange == 0) Tile.get(spawn.x, spawn.y, spawn.z, true).flagUnmovable();
                 NPC n = new NPC(spawn.id).spawn(spawn.x, spawn.y, spawn.z, Direction.get(spawn.direction), spawn.walkRange);
                 n.defaultSpawn = true;
+                if (spawn.taskOnly) {
+                    if (spawn.taskOnlyNPC != null)
+                        n.putTemporaryAttribute(AttributeKey.TASK_ONLY, spawn.taskOnlyNPC);
+                    else
+                        n.putTemporaryAttribute(AttributeKey.TASK_ONLY, TaskOnlyNPC.NONE);
+                }
                 spawn.name = n.getDef().name;
                 if(spawn.shopOptions != null && n.getDef().options != null){
                     spawn.shopOptions.forEach((rightClickOption, shopUUID) -> {
@@ -84,6 +92,8 @@ public class npc_spawns extends DataFile {
         @Expose public String direction = "S";
         @Expose public int walkRange;
         @Expose public WorldType world;
+        @Expose public boolean taskOnly;
+        @Expose public TaskOnlyNPC taskOnlyNPC;
         @Expose public Map<String, String> shopOptions;
     }
 
