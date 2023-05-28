@@ -239,7 +239,7 @@ public class Shop {
     }
 
     public void sellToShop(Player player, Item requestedItem){
-        if(!requestedItem.getDef().tradeable && generalStore){
+        if(!requestedItem.getDef().tradeable && generalStore && defaultStock.stream().noneMatch(i -> i.getId() == requestedItem.getId())){
             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
             return;
         }
@@ -321,7 +321,7 @@ public class Shop {
 
     public int getBuyPrice(Item itemForSlot) {
         ItemDef itemDef = itemForSlot.getDef().isNote() ? itemForSlot.getDef().fromNote() : itemForSlot.getDef();
-        if(!itemDef.tradeable && generalStore){
+        if(!itemDef.tradeable && generalStore && defaultStock.stream().noneMatch(i -> i.getId() == itemDef.id)){
             return -1;
         }
         if(itemDef.free){
@@ -330,7 +330,7 @@ public class Shop {
         if(itemDef.isCurrency()){
             return -1;
         }
-        if(generalStore){
+        if(generalStore && defaultStock.stream().noneMatch(i -> i.getId() == itemDef.id)){
             return Math.max(itemDef.lowAlchValue, 1);
         }
         if(!canSellToStore){
