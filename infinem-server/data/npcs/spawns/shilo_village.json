@@ -7,5 +7,14 @@
     "z": 1,
     "direction": "S",
     "walkRange": 5
+  },
+  {
+    "name": "Obli",
+    "id": 5362,
+    "x": 2825,
+    "y": 2958,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
   }
 ]
