@@ -26,7 +26,7 @@ public class LegendsGuild {
                 || stats.get(StatType.Mining).currentLevel < 52 || stats.get(StatType.Prayer).currentLevel < 42
                 || stats.get(StatType.Smithing).currentLevel < 50 || stats.get(StatType.Strength).currentLevel < 50
                 || stats.get(StatType.Thieving).currentLevel < 50 || stats.get(StatType.Woodcutting).currentLevel < 50)) {
-            player.dialogue(new MessageDialogue("You need 45 herblore, 56 magic, 52 mining, 42 prayer, as well as level 50 in agility, crafting, smithing, strength, thieving, and woodcutting to enter the Heroes guild."));
+            player.dialogue(new MessageDialogue("You need 45 herblore, 56 magic, 52 mining, 42 prayer, as well as level 50 in agility, crafting, smithing, strength, thieving, and woodcutting to enter the Legends' guild."));
             return;
         }
         PassableDoor.passDoor(player, obj, Direction.NORTH, offset);

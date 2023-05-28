@@ -21,7 +21,7 @@ public class HeroesGuild {
         if (player.getPosition().getX() == 2902
                 && (stats.get(StatType.Cooking).currentLevel < 53 || stats.get(StatType.Fishing).currentLevel < 53
                 || stats.get(StatType.Herblore).currentLevel < 25 || stats.get(StatType.Mining).currentLevel < 50)) {
-            player.dialogue(new MessageDialogue("You need 53 cooking, 53 fishing, 25 herblore, and 50 mining to enter the Heroes guild."));
+            player.dialogue(new MessageDialogue("You need 53 cooking, 53 fishing, 25 herblore, and 50 mining to enter the Heroes' guild."));
             return;
         }
         PassableDoor.passDoor(player, obj, Direction.WEST, offset);
