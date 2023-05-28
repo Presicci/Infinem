@@ -1037,6 +1037,8 @@ public class Config {
 
     public static final Config REV_JUMP_DOWN = varpbit(3857, true); // This is actually for the wilderness ditch warning counter
 
+    public static final Config SHILO_VILLAGE = varp(116, false);
+
     /**
      * Character Summary
      */
