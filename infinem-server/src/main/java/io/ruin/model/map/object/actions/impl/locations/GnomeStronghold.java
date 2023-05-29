@@ -1,6 +1,8 @@
 package io.ruin.model.map.object.actions.impl.locations;
 
+import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.map.object.actions.impl.Ladder;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -53,5 +55,8 @@ public class GnomeStronghold {
         ObjectAction.register(16677, 2445, 3415, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2446, 3415, 0));
         ObjectAction.register(16675, 2445, 3434, 0, "climb-up", (player, obj) -> player.getMovement().teleport(2445, 3433, 1));
         ObjectAction.register(16677, 2445, 3434, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2444, 3434, 0));
+        // Glough's house Tree climbs
+        ObjectAction.register(2447, 2484, 3464, 1, "climb-up", ((player, obj) -> Ladder.climb(player, new Position(2485, 3465, 2), true, true, false)));
+        ObjectAction.register(28800, 2485, 3464, 2, 1, ((player, obj) -> Ladder.climb(player, new Position(2484, 3463, 1), false, true, false)));
     }
 }
