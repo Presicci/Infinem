@@ -1629,15 +1629,6 @@
     "walkRange": 3
   },
   {
-    "name": "Gnome",
-    "id": 6095,
-    "x": 2468,
-    "y": 3498,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
     "name": "Gnome guard",
     "id": 6081,
     "x": 2471,
