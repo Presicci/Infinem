@@ -1,6 +1,7 @@
 package io.ruin.model.shop;
 
 import com.google.common.collect.Maps;
+import io.ruin.api.utils.NumberUtils;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.actions.DefaultAction;
@@ -83,7 +84,7 @@ public class ShopManager {
                         if(sellToShopPrice < 0){
                             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);
                         } else
-                            player.sendMessage("Shop will buy " + playerItem.getDef().name + " for " + sellToShopPrice + " " + shop.currencyHandler.name());
+                            player.sendMessage("Shop will buy " + playerItem.getDef().name + " for " + NumberUtils.formatNumber(sellToShopPrice) + " " + shop.currencyHandler.name());
                         return;
                     case ONE:
                         buyAmt = 1;
@@ -128,7 +129,7 @@ public class ShopManager {
                     return;
                 switch(option){
                     case PRICE_CHECK:
-                        player.sendMessage("Shop sells " + itemForSlot.getDef().name + " for " + shop.getSellPrice(itemForSlot) + " " + shop.currencyHandler.name());
+                        player.sendMessage("Shop sells " + itemForSlot.getDef().name + " for " + NumberUtils.formatNumber(shop.getSellPrice(itemForSlot)) + " " + shop.currencyHandler.name());
                         if(!itemForSlot.hasRequirements(player)) {
                             itemForSlot.printRequirements(player);
                             return;
