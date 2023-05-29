@@ -27,7 +27,8 @@ public enum Material {
     CLOCKWORK(8792),
     MAGIC_STONE(8788),
     COINS(COINS_995),
-    MALLIGNUM_ROOT_PLANK(21036);
+    MALLIGNUM_ROOT_PLANK(21036),
+    CONDENSED_GOLD(26266);
 
     Material(int itemId) {
         this.itemId = itemId;
