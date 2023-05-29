@@ -3,7 +3,7 @@
     "ids": [ 1834 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 115,
+    "hitpoints": 112,
     "aggressive_level": 290,
     "max_damage": 14,
     "attack_style": "CRUSH",
@@ -38,9 +38,9 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 4300,
+    "defend_animation": 4301,
+    "death_animation": 4302
   },
   { #Gorak (149)
     "ids": [ 3141 ],
@@ -78,7 +78,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 5,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 4300,
