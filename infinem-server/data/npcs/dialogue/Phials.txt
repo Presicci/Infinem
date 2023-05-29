@@ -1,0 +1,15 @@
+Phials: Hello. Do you wish me to exchange banknotes for you? I charge only 5 coins for each banknote.
+<Yes please.
+Player: Yes please.
+Phials: Hand me the banknotes you wish me to exchange.
+><Who are you?
+Player: Who are you?
+Phials: I am Phials. I can exchange banknotes for real items. Do you want any banknotes converted?
+<Yes please.
+Player: Yes please.
+Phials: Hand me the banknotes you wish me to exchange.
+><No thanks.
+Player: No thanks.
+>
+><No thanks.
+Player: No thanks.
