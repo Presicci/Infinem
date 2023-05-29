@@ -1,0 +1,133 @@
+[
+  {
+    "name": "Dwarf",
+    "id": "292",
+    "x": "2870",
+    "y": "9874",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cart conductor",
+    "id": "2390",
+    "x": "2874",
+    "y": "9872",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "292",
+    "x": "2869",
+    "y": "9879",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "292",
+    "x": "2867",
+    "y": "9879",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "292",
+    "x": "2868",
+    "y": "9874",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Captain Ninto",
+    "id": "2569",
+    "x": "2869",
+    "y": "9877",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+
+  {
+    "name": "Dwarf",
+    "id": "292",
+    "x": "2860",
+    "y": "9874",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "292",
+    "x": "2860",
+    "y": "9877",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "292",
+    "x": "2862",
+    "y": "9874",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "292",
+    "x": "2862",
+    "y": "9877",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Khorvak, a dwarven engineer",
+    "id": "4895",
+    "x": "2864",
+    "y": "9876",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Holoy",
+    "id": "2784",
+    "x": "2865",
+    "y": "9871",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Rohak",
+    "id": "6254",
+    "x": "2865",
+    "y": "9876",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  }
+]
