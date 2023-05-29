@@ -142,6 +142,7 @@ public enum Burning {
                     player.resetAnimation();
                 } else if (attempts++ % 12 == 0) {
                     player.animate(animationId);
+                    player.privateSound(2597);
                     event.delay(2);
                 } else {
                     event.delay(1);
@@ -159,6 +160,7 @@ public enum Burning {
             } else {
                 groundLog.remove();
                 player.sendFilteredMessage("The fire catches and the logs begin to burn.");
+                player.privateSound(2596);
                 player.getStats().addXp(StatType.Firemaking, burning.exp * pyromancerBonus(player), true);
                 burning.counter.increment(player, 1);
                 player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDef.get(burning.itemId).name);
