@@ -1,5 +1,6 @@
 RAND
-/<Where am I?
+/Donie: Hello there, can I help you?
+<Where am I?
 Player: Where am I?
 Donie: This is the town of Lumbridge my friend.
 <How are you today?
@@ -31,7 +32,8 @@ Player: Oh thanks!
 Donie: No problem. The hairdresser in Falador will probably be able to sort you out.
 Donie: The Lumbridge general store sells useful maps if you don't know the way.
 >
-/<What's up?
+/Donie: Hello there, can I help you?
+<What's up?
 Player: What's up?
 Donie: I assume the sky is up..
 Player: You assume?
@@ -45,7 +47,8 @@ Player: It's a stick isn't it?
 Donie: ...Ok it's a stick.. But only while I save up for a staff. Zaff in Varrock square sells them in his shop.
 Player: Well good luck with that.
 >
-/<Do you have anything of value which I can have?
+/Donie: Hello there, can I help you?
+<Do you have anything of value which I can have?
 Player: Do you have anything of value which I can have?
 Donie: Are you asking for free stuff?
 Player: Well... er... yes.
@@ -59,7 +62,8 @@ Player: It's a stick isn't it?
 Donie: ...Ok it's a stick.. But only while I save up for a staff. Zaff in Varrock square sells them in his shop.
 Player: Well good luck with that.
 >
-/<Where am I?
+/Donie: Hello there, can I help you?
+<Where am I?
 Player: Where am I?
 Donie: This is the town of Lumbridge my friend.
 ><How are you today?
