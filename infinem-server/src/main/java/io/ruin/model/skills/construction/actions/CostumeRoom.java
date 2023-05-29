@@ -25,7 +25,7 @@ public class CostumeRoom {
             int open = closed + 1;
             ObjectAction.register(closed, "open", (player, obj) -> open(player, obj, open));
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
-            ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.FANCY_DRESS_BOX.open(player));
+            ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.FANCY_DRESS_BOX.open(player, -1));
             ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.FANCY_DRESS_BOX));
             //b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.FANCY_DRESS_BOX));
         }
@@ -35,7 +35,7 @@ public class CostumeRoom {
             int open = closed + 1;
             ObjectAction.register(closed, "open", (player, obj) -> open(player, obj, open));
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
-            ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.TOY_BOX_1.open(player));
+            ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.TOY_BOX_1.open(player, -1));
             ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.TOY_BOX_1, CostumeStorage.TOY_BOX_2));
             //b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.TOY_BOX_1));
         }
@@ -45,7 +45,7 @@ public class CostumeRoom {
             int open = closed + 1;
             ObjectAction.register(closed, "open", (player, obj) -> open(player, obj, open));
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
-            ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.ARMOUR_CASE.open(player));
+            ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.ARMOUR_CASE.open(player, -1));
             ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.ARMOUR_CASE));
             //b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.ARMOUR_CASE));
 
@@ -56,7 +56,7 @@ public class CostumeRoom {
             int open = closed + 1;
             ObjectAction.register(closed, "open", (player, obj) -> open(player, obj, open));
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
-            ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.MAGIC_WARDROBE.open(player));
+            ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.MAGIC_WARDROBE.open(player, -1));
             ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.MAGIC_WARDROBE));
             //b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.MAGIC_WARDROBE));
 
@@ -64,7 +64,7 @@ public class CostumeRoom {
 
         for (Buildable b : Hotspot.CAPE_RACK.getBuildables()) {
             int open = b.getBuiltObjects()[0];
-            ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.CAPE_RACK.open(player));
+            ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.CAPE_RACK.open(player, -1));
             ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.CAPE_RACK));
             //b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.CAPE_RACK));
 
@@ -78,21 +78,26 @@ public class CostumeRoom {
             //b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.EASY_TREASURE_TRAILS, CostumeStorage.MEDIUM_TREASURE_TRAILS, CostumeStorage.HARD_TREASURE_TRAILS_1, CostumeStorage.ELITE_TREASURE_TRAILS, CostumeStorage.MASTER_TREASURE_TRAILS));
 
         }
-        ObjectAction.register(18805, "search", (player, obj) -> CostumeStorage.EASY_TREASURE_TRAILS.open(player));
+        ObjectAction.register(18805, "search", (player, obj) -> player.dialogue(new OptionsDialogue(
+                new Option("Beginner treasure trails", () -> CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, 1)),
+                new Option("Easy treasure trails", () -> CostumeStorage.EASY_TREASURE_TRAILS.open(player, 1))
+        )));
         ItemObjectAction.register(18805, (player, item, obj) -> depositCostume(player, item, Buildable.OAK_TREASURE_CHEST, CostumeStorage.EASY_TREASURE_TRAILS));
 
         ObjectAction.register(18807, "search", (player, obj) -> player.dialogue(new OptionsDialogue(
-                new Option("Easy treasure trails", () -> CostumeStorage.EASY_TREASURE_TRAILS.open(player)),
-                new Option("Medium treasure trails", () -> CostumeStorage.MEDIUM_TREASURE_TRAILS.open(player))
+                new Option("Beginner treasure trails", () -> CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, 2)),
+                new Option("Easy treasure trails", () -> CostumeStorage.EASY_TREASURE_TRAILS.open(player, 2)),
+                new Option("Medium treasure trails", () -> CostumeStorage.MEDIUM_TREASURE_TRAILS.open(player, 2))
         )));
         ItemObjectAction.register(18807, (player, item, obj) -> depositCostume(player, item, Buildable.TEAK_TREASURE_CHEST, CostumeStorage.EASY_TREASURE_TRAILS, CostumeStorage.MEDIUM_TREASURE_TRAILS));
 
         ObjectAction.register(18809, "search", (player, obj) -> player.dialogue(new OptionsDialogue(
-                new Option("Easy treasure trails", () -> CostumeStorage.EASY_TREASURE_TRAILS.open(player)),
-                new Option("Medium treasure trails", () -> CostumeStorage.MEDIUM_TREASURE_TRAILS.open(player)),
-                new Option("Hard treasure trails", () -> CostumeStorage.HARD_TREASURE_TRAILS_1.open(player)),
-                new Option("Elite treasure trails", () -> CostumeStorage.ELITE_TREASURE_TRAILS.open(player)),
-                new Option("Master treasure trails", () -> CostumeStorage.MASTER_TREASURE_TRAILS.open(player))
+                new Option("Beginner treasure trails", () -> CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, 5)),
+                new Option("Easy treasure trails", () -> CostumeStorage.EASY_TREASURE_TRAILS.open(player, 5)),
+                new Option("Medium treasure trails", () -> CostumeStorage.MEDIUM_TREASURE_TRAILS.open(player, 5)),
+                new Option("Hard treasure trails", () -> CostumeStorage.HARD_TREASURE_TRAILS_1.open(player, 5)),
+                new Option("Elite treasure trails", () -> CostumeStorage.ELITE_TREASURE_TRAILS.open(player, 5)),
+                new Option("Master treasure trails", () -> CostumeStorage.MASTER_TREASURE_TRAILS.open(player, 5))
         )));
         ItemObjectAction.register(18809, (player, item, obj) -> depositCostume(player, item, Buildable.MAHOGANY_TREASURE_CHEST, CostumeStorage.EASY_TREASURE_TRAILS, CostumeStorage.MEDIUM_TREASURE_TRAILS, CostumeStorage.HARD_TREASURE_TRAILS_1, CostumeStorage.HARD_TREASURE_TRAILS_2, CostumeStorage.ELITE_TREASURE_TRAILS, CostumeStorage.MASTER_TREASURE_TRAILS));
 
@@ -135,16 +140,16 @@ public class CostumeRoom {
         }
         if (type.display[slot].getId() == 10165) { // more...
             if (type == CostumeStorage.HARD_TREASURE_TRAILS_1) {
-                CostumeStorage.HARD_TREASURE_TRAILS_2.open(player);
+                CostumeStorage.HARD_TREASURE_TRAILS_2.open(player, -1);
             } else if (type == CostumeStorage.TOY_BOX_1) {
-                CostumeStorage.TOY_BOX_2.open(player);
+                CostumeStorage.TOY_BOX_2.open(player, -1);
             }
             return;
         } else if (type.display[slot].getId() == 10166) {
             if (type == CostumeStorage.HARD_TREASURE_TRAILS_2) {
-                CostumeStorage.HARD_TREASURE_TRAILS_1.open(player);
+                CostumeStorage.HARD_TREASURE_TRAILS_1.open(player, -1);
             } else if (type == CostumeStorage.TOY_BOX_2) {
-                CostumeStorage.TOY_BOX_1.open(player);
+                CostumeStorage.TOY_BOX_1.open(player, -1);
             }
             return;
         }

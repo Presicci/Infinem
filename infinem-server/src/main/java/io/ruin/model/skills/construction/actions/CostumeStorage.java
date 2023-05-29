@@ -4,6 +4,7 @@ import io.ruin.api.utils.StringUtils;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 
 import java.util.Arrays;
@@ -12,7 +13,7 @@ import java.util.Map;
 import static io.ruin.model.skills.construction.actions.Costume.*;
 
 public enum CostumeStorage {
-    FANCY_DRESS_BOX(448, new int[]{
+    FANCY_DRESS_BOX(3291, new int[]{
             10630,
             10631,
             10722,
@@ -22,7 +23,7 @@ public enum CostumeStorage {
             10635,
     }, MIME_OUTFIT, ROYAL_FROG_OUTFIT, FROG_MASK, ZOMBIE_OUTFIT, CAMO_OUTFIT, LEDERHOSEN_OUTFIT, SHADE_ROBES),
 
-    ARMOUR_CASE(447, new int[] {
+    ARMOUR_CASE(3290, new int[] {
             10611,
             10612,
             13073,
@@ -125,7 +126,7 @@ public enum CostumeStorage {
             PENANCE_HEALER_HAT,
             JUSTICIAR_ARMOUR),
 
-    MAGIC_WARDROBE(446, new int[] {
+    MAGIC_WARDROBE(3289, new int[] {
             10602,
             10603,
             10604,
@@ -182,7 +183,7 @@ public enum CostumeStorage {
             EVIL_CHICKEN_COSTUME,
             PYROMANCER_OUTFIT),
 
-    CAPE_RACK(452, new int[] {
+    CAPE_RACK(3292, new int[] {
             10636,
             10637,
             10638,
@@ -290,7 +291,9 @@ public enum CostumeStorage {
             SINHAZA_SHROUD_5
     ),
 
-    EASY_TREASURE_TRAILS(449,
+    BEGINNER_TREASURE_TRAILS(3293, new int[] {}),
+
+    EASY_TREASURE_TRAILS(3294,
             new int[]{
                     10666,
                     10669,
@@ -401,7 +404,7 @@ public enum CostumeStorage {
             MONK_ROBES_GOLD
     ),
 
-    MEDIUM_TREASURE_TRAILS(450,
+    MEDIUM_TREASURE_TRAILS(3295,
             new int[] {
                     10759,
                     10761,
@@ -526,7 +529,7 @@ public enum CostumeStorage {
             CABBAGE_ROUND_SHIELD
     ),
 
-    HARD_TREASURE_TRAILS_1(451, new int[] {
+    HARD_TREASURE_TRAILS_1(3296, new int[] {
             10668,
             10671,
             10674,
@@ -669,7 +672,7 @@ public enum CostumeStorage {
             THIRD_AGE_MAGE_ARMOUR,
             THIRD_AGE_MELEE_ARMOUR),
 
-    ELITE_TREASURE_TRAILS(496, new int[] {
+    ELITE_TREASURE_TRAILS(3297, new int[] {
             12374,
             12336,
             12338,
@@ -747,7 +750,7 @@ public enum CostumeStorage {
             LIGHT_TUXEDO_OUTFIT
     ),
 
-    MASTER_TREASURE_TRAILS(498, new int[] {
+    MASTER_TREASURE_TRAILS(3298, new int[] {
             20009,
             20012,
             20015,
@@ -797,7 +800,7 @@ public enum CostumeStorage {
             ROBES_OF_DARKNESS
     ),
 
-    TOY_BOX_1(453, new int[] {
+    TOY_BOX_1(3299, new int[] {
             10735,
             10736,
             796,
@@ -915,7 +918,7 @@ public enum CostumeStorage {
             AMUR_LEOPARD_TOY,
             ANTIPANTIES
     ),
-    TOY_BOX_2(497, new int[] {
+    TOY_BOX_2(3299, new int[] {
             10167,
             13284,
             13285,
@@ -1003,32 +1006,31 @@ public enum CostumeStorage {
         this.setCostumes(costumes);
     }
 
-    public void open(Player player) {
-        player.openInterface(InterfaceType.MAIN, Interface.CONSTRUCTION_COSTUME_STORAGE);
-        long owned = 0;
+    public void open(Player player, int clueScrollLevel) {
+        player.openInterface(InterfaceType.MAIN, 675);
+        changeInventoryAccess(player);
         Map<Costume, int[]> stored = getSets(player);
-        int slot = 0;
-        if (display[slot].getId() == 10166) { // back...
-            owned |= 1;
-            slot++;
+
+        //player.getPacketSender().sendItems(-1,-1, 33405, display);
+        if (this == BEGINNER_TREASURE_TRAILS || this == EASY_TREASURE_TRAILS || this == MEDIUM_TREASURE_TRAILS
+                || this == HARD_TREASURE_TRAILS_1 || this == ELITE_TREASURE_TRAILS || this == MASTER_TREASURE_TRAILS) {
+            player.getPacketSender().sendClientScript(3532, "iii", containerId, 1, 1);
+        } else {
+            player.getPacketSender().sendClientScript(3532, "iii", containerId, 1, 0);
         }
-        for (int i = 0; i < getCostumes().length; i++) {
-            int shift = slot;
-            if (shift > 30)
-                shift++;
-            if (stored.get(getCostumes()[i]) != null) {
-                owned |= 1L << shift;
-            }
-            slot++;
-        }
-        if (slot < display.length && display[slot].getId() == 10165) { // more...
-            owned |= 1L << (slot+1);
-        }
-        player.getPacketSender().sendClientScript(417, "svii1", StringUtils.fixCaps(name().replace("_", " ")), containerId, (int) (owned & 0xffffffff),
-                (int)(owned >> 32), 1);
-        player.getPacketSender().sendItems(-1,400, containerId, display);
-        player.getPacketSender().sendAccessMask(592, 2, 0, 239, 1026);
+        player.getPacketSender().sendVarp(262, clueScrollLevel);
+        player.getPacketSender().sendAccessMask(675, 4, 0, 287, 1026);
         player.set("COSTUME_STORAGE", this);
+    }
+
+    private void changeInventoryAccess(Player player) {
+        if (player.isVisibleInterface(674)) {
+            return;
+        }
+
+        player.openInterface(InterfaceType.INVENTORY, 674);
+        player.getPacketSender().sendClientScript(149, "iiiiiisssss", 44171264, 93, 4, 7, 1, -1, "Store<col=ff9040>", "", "", "", "");
+        player.getPacketSender().sendAccessMask(674, 0, 0, 27, 1086);
     }
 
     int containerId;
