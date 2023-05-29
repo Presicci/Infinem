@@ -117,7 +117,13 @@ public class npc_drops extends DataFile {
                 loaded.put(id, loadedTable == null ? t : loadedTable.combine(t));
             }
         }
-        loaded.forEach((id, table) -> NPCDef.get(id).lootTable = table);
+        loaded.forEach((id, table) -> {
+            if (NPCDef.get(id) == null) {
+                System.err.println("[npc_drops] NPC with ID: " + id + " has invalid cache def.");
+                return;
+            }
+            NPCDef.get(id).lootTable = table;
+        });
         return tables;
     }
 

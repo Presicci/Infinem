@@ -6,6 +6,7 @@ import io.ruin.Server;
 import io.ruin.api.protocol.world.WorldType;
 import io.ruin.api.utils.ArrayUtils;
 import io.ruin.api.utils.JsonUtils;
+import io.ruin.cache.NPCDef;
 import io.ruin.data.DataFile;
 import io.ruin.model.World;
 import io.ruin.model.entity.attributes.AttributeKey;
@@ -44,6 +45,10 @@ public class npc_spawns extends DataFile {
             spawns.forEach(spawn -> {
                 if (spawn.world != null && spawn.world != World.type) return;
                 if (spawn.walkRange == 0) Tile.get(spawn.x, spawn.y, spawn.z, true).flagUnmovable();
+                if (NPCDef.get(spawn.id) == null) {
+                    System.err.println("[npc_spawns] NPC with ID: " + spawn.id + " has invalid cache def.");
+                    return;
+                }
                 NPC n = new NPC(spawn.id).spawn(spawn.x, spawn.y, spawn.z, Direction.get(spawn.direction), spawn.walkRange);
                 n.defaultSpawn = true;
                 if (spawn.taskOnly) {
