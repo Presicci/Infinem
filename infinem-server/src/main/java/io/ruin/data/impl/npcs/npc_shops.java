@@ -90,6 +90,7 @@ public class npc_shops extends DataFile {
     public static List<Shop> allShops = Lists.newArrayList();
 
     private static void talkToDialogue(Player player, NPC npc, Shop shop) {
+        npc.faceTemp(player);
         player.dialogue(
                 new NPCDialogue(npc, "Can I help you at all?"),
                 new OptionsDialogue(
