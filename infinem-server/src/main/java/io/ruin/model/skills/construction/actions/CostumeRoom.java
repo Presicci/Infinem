@@ -27,7 +27,7 @@ public class CostumeRoom {
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
             ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.FANCY_DRESS_BOX.open(player));
             ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.FANCY_DRESS_BOX));
-            b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.FANCY_DRESS_BOX));
+            //b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.FANCY_DRESS_BOX));
         }
 
         for (Buildable b : Hotspot.TOY_BOX.getBuildables()) {
@@ -37,7 +37,7 @@ public class CostumeRoom {
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
             ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.TOY_BOX_1.open(player));
             ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.TOY_BOX_1, CostumeStorage.TOY_BOX_2));
-            b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.TOY_BOX_1));
+            //b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.TOY_BOX_1));
         }
 
         for (Buildable b :Hotspot.ARMOUR_CASE.getBuildables()) {
@@ -47,7 +47,7 @@ public class CostumeRoom {
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
             ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.ARMOUR_CASE.open(player));
             ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.ARMOUR_CASE));
-            b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.ARMOUR_CASE));
+            //b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.ARMOUR_CASE));
 
         }
 
@@ -58,7 +58,7 @@ public class CostumeRoom {
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
             ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.MAGIC_WARDROBE.open(player));
             ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.MAGIC_WARDROBE));
-            b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.MAGIC_WARDROBE));
+            //b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.MAGIC_WARDROBE));
 
         }
 
@@ -66,7 +66,7 @@ public class CostumeRoom {
             int open = b.getBuiltObjects()[0];
             ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.CAPE_RACK.open(player));
             ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.CAPE_RACK));
-            b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.CAPE_RACK));
+            //b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.CAPE_RACK));
 
         }
 
@@ -75,7 +75,7 @@ public class CostumeRoom {
             int open = closed + 1;
             ObjectAction.register(closed, "open", (player, obj) -> open(player, obj, open));
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
-            b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.EASY_TREASURE_TRAILS, CostumeStorage.MEDIUM_TREASURE_TRAILS, CostumeStorage.HARD_TREASURE_TRAILS_1, CostumeStorage.ELITE_TREASURE_TRAILS, CostumeStorage.MASTER_TREASURE_TRAILS));
+            //b.setRemoveTest((player, room) -> checkStorageEmpty(player, CostumeStorage.EASY_TREASURE_TRAILS, CostumeStorage.MEDIUM_TREASURE_TRAILS, CostumeStorage.HARD_TREASURE_TRAILS_1, CostumeStorage.ELITE_TREASURE_TRAILS, CostumeStorage.MASTER_TREASURE_TRAILS));
 
         }
         ObjectAction.register(18805, "search", (player, obj) -> CostumeStorage.EASY_TREASURE_TRAILS.open(player));
