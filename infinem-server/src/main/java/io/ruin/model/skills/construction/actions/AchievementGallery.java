@@ -153,6 +153,10 @@ public class AchievementGallery {
         ));
     }
 
-
+    /* Admiring */
+    static {
+        ObjectAction.register(MOUNTED_EMBLEM.getBuiltObjects()[0], "admire", (player, obj) -> player.animate(6937));
+        ObjectAction.register(MOUNTED_COINS.getBuiltObjects()[0], "admire", (player, obj) -> player.animate(6937));
+    }
 
 }
