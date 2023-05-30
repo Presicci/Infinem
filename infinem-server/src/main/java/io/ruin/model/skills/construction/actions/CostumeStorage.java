@@ -111,6 +111,8 @@ public enum CostumeStorage {
             INFINITY_LIGHT,
             INFINITY_DARK,
             SPLITBARK,
+            SWAMPBARK,
+            BLOODBARK,
             GHOSTLY,
             MOONCLAN_ROBES,
             LUNAR_ROBES,
