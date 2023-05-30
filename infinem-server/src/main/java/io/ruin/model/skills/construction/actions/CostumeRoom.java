@@ -29,7 +29,7 @@ public class CostumeRoom {
             ObjectAction.register(closed, "open", (player, obj) -> open(player, obj, open));
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
             ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.FANCY_DRESS_BOX.open(player, -1, b));
-            ItemObjectAction.register(open, (player, item, obj) -> depositItem(player, item, b, CostumeStorage.FANCY_DRESS_BOX));
+            ItemObjectAction.register(open, (player, item, obj) -> depositItem(player, item, true, b, CostumeStorage.FANCY_DRESS_BOX));
         }
         for (Buildable b : Hotspot.TOY_BOX.getBuildables()) {
             int closed = b.getBuiltObjects()[0];
@@ -37,7 +37,7 @@ public class CostumeRoom {
             ObjectAction.register(closed, "open", (player, obj) -> open(player, obj, open));
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
             ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.TOY_BOX.open(player, -1, b));
-            ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.TOY_BOX));
+            ItemObjectAction.register(open, (player, item, obj) -> depositItem(player, item, true, b, CostumeStorage.TOY_BOX));
         }
         for (Buildable b :Hotspot.ARMOUR_CASE.getBuildables()) {
             int closed = b.getBuiltObjects()[0];
@@ -45,7 +45,7 @@ public class CostumeRoom {
             ObjectAction.register(closed, "open", (player, obj) -> open(player, obj, open));
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
             ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.ARMOUR_CASE.open(player, -1, b));
-            ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.ARMOUR_CASE));
+            ItemObjectAction.register(open, (player, item, obj) -> depositItem(player, item, true, b, CostumeStorage.ARMOUR_CASE));
         }
         for (Buildable b :Hotspot.MAGIC_WARDROBE.getBuildables()) {
             int closed = b.getBuiltObjects()[0];
@@ -53,14 +53,12 @@ public class CostumeRoom {
             ObjectAction.register(closed, "open", (player, obj) -> open(player, obj, open));
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
             ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.MAGIC_WARDROBE.open(player, -1, b));
-            ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.MAGIC_WARDROBE));
-
+            ItemObjectAction.register(open, (player, item, obj) -> depositItem(player, item, true, b, CostumeStorage.MAGIC_WARDROBE));
         }
         for (Buildable b : Hotspot.CAPE_RACK.getBuildables()) {
             int open = b.getBuiltObjects()[0];
             ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.CAPE_RACK.open(player, -1, b));
-            ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.CAPE_RACK));
-
+            ItemObjectAction.register(open, (player, item, obj) -> depositItem(player, item, true, b, CostumeStorage.CAPE_RACK));
         }
         for (Buildable b : Hotspot.TREASURE_CHEST.getBuildables()) {
             int closed = b.getBuiltObjects()[0];
@@ -72,14 +70,14 @@ public class CostumeRoom {
                 new Option("Beginner treasure trails", () -> CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, 1, Buildable.OAK_TREASURE_CHEST)),
                 new Option("Easy treasure trails", () -> CostumeStorage.EASY_TREASURE_TRAILS.open(player, 1, Buildable.OAK_TREASURE_CHEST))
         )));
-        ItemObjectAction.register(18805, (player, item, obj) -> depositCostume(player, item, Buildable.OAK_TREASURE_CHEST, CostumeStorage.EASY_TREASURE_TRAILS));
+        ItemObjectAction.register(18805, (player, item, obj) -> depositItem(player, item, true, Buildable.OAK_TREASURE_CHEST, CostumeStorage.EASY_TREASURE_TRAILS));
 
         ObjectAction.register(18807, "search", (player, obj) -> player.dialogue(new OptionsDialogue(
                 new Option("Beginner treasure trails", () -> CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, 2, Buildable.TEAK_TREASURE_CHEST)),
                 new Option("Easy treasure trails", () -> CostumeStorage.EASY_TREASURE_TRAILS.open(player, 2, Buildable.TEAK_TREASURE_CHEST)),
                 new Option("Medium treasure trails", () -> CostumeStorage.MEDIUM_TREASURE_TRAILS.open(player, 2, Buildable.TEAK_TREASURE_CHEST))
         )));
-        ItemObjectAction.register(18807, (player, item, obj) -> depositCostume(player, item, Buildable.TEAK_TREASURE_CHEST, CostumeStorage.EASY_TREASURE_TRAILS, CostumeStorage.MEDIUM_TREASURE_TRAILS));
+        ItemObjectAction.register(18807, (player, item, obj) -> depositItem(player, item, true, Buildable.TEAK_TREASURE_CHEST, CostumeStorage.EASY_TREASURE_TRAILS, CostumeStorage.MEDIUM_TREASURE_TRAILS));
 
         ObjectAction.register(18809, "search", (player, obj) -> player.dialogue(new OptionsDialogue(
                 new Option("Beginner treasure trails", () -> CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST)),
@@ -89,7 +87,7 @@ public class CostumeRoom {
                 new Option("Elite treasure trails", () -> CostumeStorage.ELITE_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST)),
                 new Option("Master treasure trails", () -> CostumeStorage.MASTER_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST))
         )));
-        ItemObjectAction.register(18809, (player, item, obj) -> depositCostume(player, item, Buildable.MAHOGANY_TREASURE_CHEST, CostumeStorage.BEGINNER_TREASURE_TRAILS, CostumeStorage.EASY_TREASURE_TRAILS, CostumeStorage.MEDIUM_TREASURE_TRAILS, CostumeStorage.HARD_TREASURE_TRAILS, CostumeStorage.ELITE_TREASURE_TRAILS, CostumeStorage.MASTER_TREASURE_TRAILS));
+        ItemObjectAction.register(18809, (player, item, obj) -> depositItem(player, item, true, Buildable.MAHOGANY_TREASURE_CHEST, CostumeStorage.BEGINNER_TREASURE_TRAILS, CostumeStorage.EASY_TREASURE_TRAILS, CostumeStorage.MEDIUM_TREASURE_TRAILS, CostumeStorage.HARD_TREASURE_TRAILS, CostumeStorage.ELITE_TREASURE_TRAILS, CostumeStorage.MASTER_TREASURE_TRAILS));
 
     }
 
@@ -143,12 +141,19 @@ public class CostumeRoom {
         type.sendItems(player);
     }
 
-    private static void depositItem(Player player, Item item, Buildable b, CostumeStorage type) {
+    private static void depositItem(Player player, Item item, boolean messages, Buildable b, CostumeStorage... validTypes) {
         if (item == null)
             return;
+        CostumeStorage type = null;
         Costume costume = null;
-        costume = type.getByItem(item.getId());
-        if (costume == null) {
+        for (CostumeStorage cs : CostumeStorage.values()) {
+            costume = cs.getByItem(item.getId());
+            if (costume != null) {
+                type = cs;
+                break;
+            }
+        }
+        if (costume == null || !Arrays.asList(validTypes).contains(type)) {
             player.sendMessage("You can't store that item there.");
             return;
         }
@@ -179,19 +184,11 @@ public class CostumeRoom {
         player.sendFilteredMessage("You place the item in the " + getStorageName(type) + ".");
     }
 
-    private static void depositCostume(Player player, Item item, Buildable b, CostumeStorage... validTypes) {
+    private static void depositCostume(Player player, Item item, Buildable b, CostumeStorage type) {
         if (item == null)
             return;
-        CostumeStorage type = null;
-        Costume costume = null;
-        for (CostumeStorage cs : CostumeStorage.values()) {
-            costume = cs.getByItem(item.getId());
-            if (costume != null) {
-                type = cs;
-                break;
-            }
-        }
-        if (costume == null || !Arrays.asList(validTypes).contains(type)) {
+        Costume costume = type.getByItem(item.getId());
+        if (costume == null) {
             player.sendMessage("You can't store that item there.");
             return;
         }
@@ -216,6 +213,17 @@ public class CostumeRoom {
             }
         }
         player.sendFilteredMessage("You place the set in the " + getStorageName(type) + ".");
+    }
+
+    private static void depositInventory(Player player) {
+        CostumeStorage costumeStorage = player.getTemporaryAttribute(AttributeKey.COSTUME_STORAGE);
+        Buildable buildable = player.getTemporaryAttribute(AttributeKey.COSTUME_BUILDABLE);
+        for (Item item : player.getInventory().getItems()) {
+            if (item == null)
+                continue;
+            depositItem(player, item, false, buildable, costumeStorage);
+        }
+        costumeStorage.sendItems(player);
     }
 
     private static boolean hasStorageSpace(Player player, Buildable buildable, CostumeStorage type) {
@@ -365,13 +373,14 @@ public class CostumeRoom {
                 }
             };
             h.actions[8] = (SimpleAction) Config.COSTUME_DEPOSIT_SET::toggle;
+            h.actions[10] = (SimpleAction) CostumeRoom::depositInventory;
         });
         InterfaceHandler.register(674, h -> {
             h.actions[0] = (DefaultAction) (p, option, slot, itemId) -> {
                 if (option == 1) {
                     if (Config.COSTUME_DEPOSIT_SET.get(p) == 0) {
                         CostumeStorage costumeStorage = p.getTemporaryAttribute(AttributeKey.COSTUME_STORAGE);
-                        depositItem(p, p.getInventory().get(slot), p.getTemporaryAttribute(AttributeKey.COSTUME_BUILDABLE), costumeStorage);
+                        depositItem(p, p.getInventory().get(slot), true, p.getTemporaryAttribute(AttributeKey.COSTUME_BUILDABLE), costumeStorage);
                         costumeStorage.sendItems(p);
                     } else {
                         CostumeStorage costumeStorage = p.getTemporaryAttribute(AttributeKey.COSTUME_STORAGE);
