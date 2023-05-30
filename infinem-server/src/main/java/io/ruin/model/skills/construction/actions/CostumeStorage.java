@@ -384,7 +384,8 @@ public enum CostumeStorage {
             ADAMANT_PLATEBODY_H3,
             ADAMANT_PLATEBODY_H4,
             ADAMANT_PLATEBODY_H5,
-            WOLF_MASK
+            WOLF_MASK,
+            WOLF_CLOAK
     ),
 
     HARD_TREASURE_TRAILS(3296,

@@ -409,6 +409,7 @@ public enum Costume {
     ADAMANT_PLATEBODY_H4(23401),
     ADAMANT_PLATEBODY_H5(23404),
     WOLF_MASK(23407),
+    WOLF_CLOAK(23410),
 
     //Hard treasure trails
     RUNE_HERALDIC_KITESHIELD_1(7336),
