@@ -520,7 +520,8 @@ public enum CostumeStorage {
             RUNE_SCIMITAR_GILDED,
             RUNE_PICKAXE_GILDED,
             RUNE_AXE_GILDED,
-            SPADE_GILDED
+            SPADE_GILDED,
+            URIS_HAT
     ),
 
     MASTER_TREASURE_TRAILS(3298,
