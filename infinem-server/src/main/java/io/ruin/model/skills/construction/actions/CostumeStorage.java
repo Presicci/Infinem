@@ -318,7 +318,8 @@ public enum CostumeStorage {
             VESTMENTS_BANDOS,
             VESTMENTS_SARADOMIN,
             VESTMENTS_GUTHIX,
-            VESTMENTS_ZAMORAK
+            VESTMENTS_ZAMORAK,
+            WILLOW_COMPOSITE_BOW
     ),
 
     MEDIUM_TREASURE_TRAILS(3295,

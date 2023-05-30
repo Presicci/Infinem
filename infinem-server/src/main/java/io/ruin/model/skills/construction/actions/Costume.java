@@ -344,6 +344,7 @@ public enum Costume {
             Items.GUTHIX_STOLE, Items.GUTHIX_CROZIER),
     VESTMENTS_ZAMORAK(Items.ZAMORAK_MITRE, Items.ZAMORAK_ROBE_TOP, Items.ZAMORAK_ROBE_LEGS, Items.ZAMORAK_CLOAK,
             Items.ZAMORAK_STOLE, Items.ZAMORAK_CROZIER),
+    WILLOW_COMPOSITE_BOW(Items.WILLOW_COMP_BOW),
 
     //Medium treasure trails
     RED_STRAW_BOATER(7319),
