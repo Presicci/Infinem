@@ -312,7 +312,13 @@ public enum CostumeStorage {
             BLESSING_UNHOLY,
             BLESSING_HONOURABLE,
             BLESSING_WAR,
-            BLESSING_ANCIENT
+            BLESSING_ANCIENT,
+            VESTMENTS_ARMADYL,
+            VESTMENTS_ANCIENT,
+            VESTMENTS_BANDOS,
+            VESTMENTS_SARADOMIN,
+            VESTMENTS_GUTHIX,
+            VESTMENTS_ZAMORAK
     ),
 
     MEDIUM_TREASURE_TRAILS(3295,
