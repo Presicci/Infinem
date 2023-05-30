@@ -223,15 +223,20 @@ public class CostumeRoom {
             pieces = new Item[costume.pieces.length];
         }
         for (int index = 0; index < pieces.length; index++) {
-            int id = costume.pieces[index][0].getId();
-            int amount = player.getInventory().getAmount(costume.pieces[index][0].getId());
-            if (amount > 0) {
-                if (pieces[index] == null) {
-                    pieces[index] = new Item(id, amount);
-                    player.getInventory().remove(id, amount);
-                } else {
-                    pieces[index].incrementAmount(amount);
-                    player.getInventory().remove(id, amount);
+            for (Item piece : costume.pieces[index]) {
+                int id = piece.getId();
+                int amount = player.getInventory().getAmount(id);
+                if (amount > 0) {
+                    if (pieces[index] == null) {
+                        pieces[index] = new Item(id, amount);
+                        player.getInventory().remove(id, amount);
+                    } else {
+                        if (pieces[index].getId() != id)
+                            continue;
+                        pieces[index].incrementAmount(amount);
+                        player.getInventory().remove(id, amount);
+                    }
+                    break;
                 }
             }
         }
