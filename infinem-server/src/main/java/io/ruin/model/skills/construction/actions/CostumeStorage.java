@@ -306,7 +306,13 @@ public enum CostumeStorage {
             BLACK_PLATEBODY_H2,
             BLACK_PLATEBODY_H3,
             BLACK_PLATEBODY_H4,
-            BLACK_PLATEBODY_H5
+            BLACK_PLATEBODY_H5,
+            BLESSING_PEACEFUL,
+            BLESSING_HOLY,
+            BLESSING_UNHOLY,
+            BLESSING_HONOURABLE,
+            BLESSING_WAR,
+            BLESSING_ANCIENT
     ),
 
     MEDIUM_TREASURE_TRAILS(3295,
