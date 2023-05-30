@@ -103,46 +103,44 @@ public class CostumeRoom {
         obj.setId(closed);
     }
 
-    private static void withdrawCostume(Player player, int slot) {
-        /*CostumeStorage type = player.get("COSTUME_STORAGE");
+    private static void withdrawSet(Player player, int slot) {
+        CostumeStorage type = player.getTemporaryAttribute(AttributeKey.COSTUME_STORAGE);
         if (type == null)
             return;
-        slot /= 4;
+        slot /= 36;
         if (slot < 0 || slot > type.getCostumes().length) {
             throw new IllegalArgumentException(""+slot);
         }
-        if (type.display[slot].getId() == 10165) { // more...
-            if (type == CostumeStorage.HARD_TREASURE_TRAILS_1) {
-                CostumeStorage.HARD_TREASURE_TRAILS_2.open(player, -1);
-            } else if (type == CostumeStorage.TOY_BOX_1) {
-                CostumeStorage.TOY_BOX_2.open(player, -1);
-            }
-            return;
-        } else if (type.display[slot].getId() == 10166) {
-            if (type == CostumeStorage.HARD_TREASURE_TRAILS_2) {
-                CostumeStorage.HARD_TREASURE_TRAILS_1.open(player, -1);
-            } else if (type == CostumeStorage.TOY_BOX_2) {
-                CostumeStorage.TOY_BOX_1.open(player, -1);
-            }
-            return;
-        }
-        if (type.display[0].getId() == 10166) // back...
-            slot--;
         Map<Costume, Item[]> storedSets = type.getSets(player);
         if (storedSets == null)
             throw new IllegalArgumentException();
         Costume costume = type.getCostumes()[slot];
-        int[] stored = storedSets.get(costume);
+        Item[] stored = storedSets.get(costume);
         if (stored == null) {
             return;
         }
         if (!player.getInventory().hasFreeSlots(stored.length)) {
-            player.sendMessage("You'll need at least " + stored.length + " free inventory slots to withdraw that costume.");
+            player.sendMessage("You'll need at least " + stored.length + " free inventory slots to withdraw that set.");
             return;
         }
-        for (int id : stored) player.getInventory().add(id, 1);
-        storedSets.remove(costume);
-        player.closeInterfaces();*/
+        int index = 0;
+        for (Item piece : stored) {
+            if (piece == null) {
+                ++index;
+                continue;
+            }
+            if (piece.getAmount() > 1) {
+                Item itemCopy = piece.copy();
+                itemCopy.setAmount(1);
+                player.getInventory().add(itemCopy);
+                stored[index].incrementAmount(-1);
+            } else {
+                player.getInventory().add(piece);
+                stored[index] = null;
+            }
+            ++index;
+        }
+        type.sendItems(player);
     }
 
     private static void depositItem(Player player, Item item, Buildable b, CostumeStorage... validTypes) {
@@ -285,6 +283,10 @@ public class CostumeRoom {
     static {
         InterfaceHandler.register(675, h -> {
             h.actions[4] = (DefaultAction) (p, option, slot, itemId) -> {
+                if (slot % 36 == 0) {
+                    withdrawSet(p, slot);
+                    return;
+                }
                 if (option == 1) {
                     CostumeStorage cs = p.getTemporaryAttribute(AttributeKey.COSTUME_STORAGE);
                     Costume costume = cs.getByItem(itemId);
