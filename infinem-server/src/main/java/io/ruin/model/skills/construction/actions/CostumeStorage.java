@@ -470,7 +470,19 @@ public enum CostumeStorage {
             DUAL_SAI,
             THIEVING_BAG,
             DRAGON_BOOTS_GOLD,
-            MAGIC_COMPOSITE_BOW
+            MAGIC_COMPOSITE_BOW,
+            THIRD_AGE_RANGE_COIF,
+            THIRD_AGE_RANGE_TOP,
+            THIRD_AGE_RANGE_LEGS,
+            THIRD_AGE_RANGE_VAMBS,
+            THIRD_AGE_MAGE_HAT,
+            THIRD_AGE_MAGE_TOP,
+            THIRD_AGE_MAGE_BOTTOMS,
+            THIRD_AGE_MAGE_AMULET,
+            THIRD_AGE_MELEE_HELMET,
+            THIRD_AGE_MELEE_PLATEBODY,
+            THIRD_AGE_MELEE_LEGS,
+            THIRD_AGE_MELEE_KITESHIELD
     ),
 
     ELITE_TREASURE_TRAILS(3297,
