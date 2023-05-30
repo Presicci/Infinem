@@ -99,6 +99,9 @@ public enum CollectionLogInfo {
      * 2290 - Rooftop agility
      * 2291 - Fossil Island Notes
      * 2292 - My Notes
+     *
+     *
+     * Script 4103 controls green names for categories
      */
 
     BOSS(471, 36, new int[]{10, 11, 12, 29}, 40697866, 40697867, 40697868, 40697869) {
@@ -260,6 +263,7 @@ public enum CollectionLogInfo {
         for (int i = 0; i < childIds.length; i++) {
             player.getPacketSender().sendAccessMask(Interface.COLLECTION_LOG, childIds[i], 0, count, 2);
         }
+        player.getPacketSender().sendAccessMask(Interface.COLLECTION_LOG, 77, 0, 90, 2);
     }
 
     public void sendItems(Player player, int slot) {
