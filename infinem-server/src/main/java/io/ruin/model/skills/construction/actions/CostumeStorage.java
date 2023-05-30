@@ -300,7 +300,8 @@ public enum CostumeStorage {
             AMULET_OF_POWER_TRIMMED,
             RAIN_BOW,
             HAM_JOINT,
-            LEATHER_ARMOUR_GOLD
+            LEATHER_ARMOUR_GOLD,
+            STAFF_OF_BOB_THE_CAT
     ),
 
     MEDIUM_TREASURE_TRAILS(3295,

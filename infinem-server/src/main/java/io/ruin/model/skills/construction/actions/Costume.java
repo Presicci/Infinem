@@ -320,6 +320,7 @@ public enum Costume {
     RAIN_BOW(23357),
     HAM_JOINT(23360),
     LEATHER_ARMOUR_GOLD(23381, 23384),
+    STAFF_OF_BOB_THE_CAT(23363),
 
     //Medium treasure trails
     RED_STRAW_BOATER(7319),
