@@ -101,6 +101,35 @@ public class CostumeRoom {
         obj.setId(closed);
     }
 
+    private static void withdrawItem(Player player, int itemId) {
+        CostumeStorage cs = player.getTemporaryAttribute(AttributeKey.COSTUME_STORAGE);
+        Costume costume = cs.getByItem(itemId);
+        Map<Costume, Item[]> sets = cs.getSets(player);
+        Item[] pieces = sets.get(costume);
+        if (pieces == null || costume == null) {
+            return;
+        }
+        for (int index = 0; index < pieces.length; index++) {
+            Item[] pieceSet = costume.pieces[index];
+            for (Item piece : pieceSet) {
+                if (itemId == piece.getId()) {
+                    if (pieces[index] == null) {
+                        return;
+                    } else {
+                        player.getInventory().add(itemId, 1);
+                        int newAmount = pieces[index].getAmount() - 1;
+                        if (newAmount == 0)
+                            pieces[index] = null;
+                        else
+                            pieces[index].setAmount(newAmount);
+                    }
+                    break;
+                }
+            }
+        }
+        cs.sendItems(player);
+    }
+
     private static void withdrawSet(Player player, int slot) {
         CostumeStorage type = player.getTemporaryAttribute(AttributeKey.COSTUME_STORAGE);
         if (type == null)
@@ -318,32 +347,7 @@ public class CostumeRoom {
                     return;
                 }
                 if (option == 1) {
-                    CostumeStorage cs = p.getTemporaryAttribute(AttributeKey.COSTUME_STORAGE);
-                    Costume costume = cs.getByItem(itemId);
-                    Map<Costume, Item[]> sets = cs.getSets(p);
-                    Item[] pieces = sets.get(costume);
-                    if (pieces == null || costume == null) {
-                        return;
-                    }
-                    for (int index = 0; index < pieces.length; index++) {
-                        Item[] pieceSet = costume.pieces[index];
-                        for (Item piece : pieceSet) {
-                            if (itemId == piece.getId()) {
-                                if (pieces[index] == null) {
-                                    return;
-                                } else {
-                                    p.getInventory().add(itemId, 1);
-                                    int newAmount = pieces[index].getAmount() - 1;
-                                    if (newAmount == 0)
-                                        pieces[index] = null;
-                                    else
-                                        pieces[index].setAmount(newAmount);
-                                }
-                                break;
-                            }
-                        }
-                    }
-                    cs.sendItems(p);
+                    withdrawItem(p, itemId);
                 } else {
                     new Item(itemId).examine(p);
                 }
