@@ -503,7 +503,7 @@ public enum CostumeStorage {
             SHAYZIEN_HOUSE_SCARF,
             BLACKSMITHS_HELM,
             BUCKET_HELM,
-            RANGER_GLOVES,
+            RANGER_KIT,
             HOLY_WRAPS,
             RING_OF_NATURE,
             THIRD_AGE_WAND,
