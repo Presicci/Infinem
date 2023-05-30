@@ -361,7 +361,7 @@ public enum Costume {
     GREEN_DRAGONHIDE_TRIM(7372, 7380),
     RANGER_BOOTS(2577),
     TRIMMED_ADAMANTITE_ARMOUR(single(2605), single(2599), multiple(2601, 3474), single(2603)),
-    GOLD_TRIMMED_ADAMANTITE_ARMOUR(single(2613), single(2607), multiple(2609, 3482), single(2611)),
+    GOLD_TRIMMED_ADAMANTITE_ARMOUR(single(2613), single(2607), multiple(2609, 3475), single(2611)),
     RED_HEADBAND(2645),
     BLACK_HEADBAND(2647),
     BROWN_HEADBAND(2649),
