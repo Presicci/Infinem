@@ -319,6 +319,7 @@ public enum Costume {
     AMULET_OF_POWER_TRIMMED(23354),
     RAIN_BOW(23357),
     HAM_JOINT(23360),
+    LEATHER_ARMOUR_GOLD(23381, 23384),
 
     //Medium treasure trails
     RED_STRAW_BOATER(7319),

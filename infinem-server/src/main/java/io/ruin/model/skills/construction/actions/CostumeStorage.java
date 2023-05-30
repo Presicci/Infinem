@@ -299,7 +299,8 @@ public enum CostumeStorage {
             CAPE_OF_SKULLS,
             AMULET_OF_POWER_TRIMMED,
             RAIN_BOW,
-            HAM_JOINT
+            HAM_JOINT,
+            LEATHER_ARMOUR_GOLD
     ),
 
     MEDIUM_TREASURE_TRAILS(3295,
