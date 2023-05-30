@@ -92,7 +92,10 @@ public enum CostumeStorage {
             CANE_TRAILBLAZER,
             INQUISITOR_ARMOUR,
             VYRE_NOBLE_OUTFIT,
-            SNAKESKIN_ARMOUR),
+            SNAKESKIN_ARMOUR,
+            CASTLE_WARS_DECORATIVE_SWORD_1,
+            CASTLE_WARS_DECORATIVE_SWORD_2,
+            CASTLE_WARS_DECORATIVE_SWORD_3),
 
     MAGIC_WARDROBE(3289,
             BLUE_MYSTIC,
