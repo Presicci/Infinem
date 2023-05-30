@@ -167,7 +167,8 @@ public enum CostumeStorage {
             TRIBAL_OUTFIT_YELLOW,
             TRIBAL_OUTFIT_PINK,
             BRUMA_TORCH,
-            ZEALOT_PRAYER_ROBES
+            ZEALOT_PRAYER_ROBES,
+            IMCANDO_HAMMER
     ),
 
     CAPE_RACK(3292,
