@@ -136,7 +136,9 @@ public enum CostumeStorage {
             GREY_NAVAL,
             ELDER_CHAOS_DRUID,
             EVIL_CHICKEN_COSTUME,
-            PYROMANCER_OUTFIT),
+            PYROMANCER_OUTFIT,
+            GOLDEN_TENCH
+    ),
 
     CAPE_RACK(3292,
             CAPE_OF_LEGENDS,
