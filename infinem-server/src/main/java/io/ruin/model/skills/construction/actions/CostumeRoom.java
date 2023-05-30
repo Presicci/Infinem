@@ -184,7 +184,7 @@ public class CostumeRoom {
         player.sendFilteredMessage("You place the item in the " + getStorageName(type) + ".");
     }
 
-    private static void depositCostume(Player player, Item item, Buildable b, CostumeStorage type) {
+    private static void depositSet(Player player, Item item, Buildable b, CostumeStorage type) {
         if (item == null)
             return;
         Costume costume = type.getByItem(item.getId());
@@ -384,7 +384,7 @@ public class CostumeRoom {
                         costumeStorage.sendItems(p);
                     } else {
                         CostumeStorage costumeStorage = p.getTemporaryAttribute(AttributeKey.COSTUME_STORAGE);
-                        depositCostume(p, p.getInventory().get(slot), p.getTemporaryAttribute(AttributeKey.COSTUME_BUILDABLE), costumeStorage);
+                        depositSet(p, p.getInventory().get(slot), p.getTemporaryAttribute(AttributeKey.COSTUME_BUILDABLE), costumeStorage);
                         costumeStorage.sendItems(p);
                     }
                 } else {
