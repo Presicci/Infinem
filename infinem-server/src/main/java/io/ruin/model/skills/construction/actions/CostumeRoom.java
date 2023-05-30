@@ -176,18 +176,36 @@ public class CostumeRoom {
         if (pieces == null) {
             pieces = new Item[costume.pieces.length];
         }
+        boolean added = false;
         for (int index = 0; index < pieces.length; index++) {
-            if (item.getId() == costume.pieces[index][0].getId()) {
-                if (pieces[index] == null) {
-                    pieces[index] = new Item(item.getId(), 1);
-                    player.getInventory().remove(item.getId(), 1);
-                } else {
+            if (pieces[index] != null) {
+                if (item.getId() == pieces[index].getId()) {
                     pieces[index].incrementAmount(1);
                     player.getInventory().remove(item.getId(), 1);
+                    added = true;
+                    break;
+                }
+            } else {
+                Item[] pieceSet = costume.pieces[index];
+                for (Item piece : pieceSet) {
+                    if (item.getId() == piece.getId()) {
+                        if (pieces[index] == null) {
+                            pieces[index] = new Item(item.getId(), 1);
+                            player.getInventory().remove(item.getId(), 1);
+                        } else {
+                            pieces[index].incrementAmount(1);
+                            player.getInventory().remove(item.getId(), 1);
+                        }
+                        added = true;
+                        break;
+                    }
                 }
             }
         }
-        System.out.println(Arrays.toString(pieces));
+        if (!added) {
+            player.sendMessage("You have a different item of that type stored already.");
+            return;
+        }
         type.getSets(player).put(costume, pieces);
         player.sendMessage("You place the costume in the treasure chest.");
     }
@@ -290,16 +308,20 @@ public class CostumeRoom {
                         return;
                     }
                     for (int index = 0; index < pieces.length; index++) {
-                        if (itemId == costume.pieces[index][0].getId()) {
-                            if (pieces[index] == null) {
-                                return;
-                            } else {
-                                p.getInventory().add(itemId, 1);
-                                int newAmount = pieces[index].getAmount() - 1;
-                                if (newAmount == 0)
-                                    pieces[index] = null;
-                                else
-                                    pieces[index].setAmount(newAmount);
+                        Item[] pieceSet = costume.pieces[index];
+                        for (Item piece : pieceSet) {
+                            if (itemId == piece.getId()) {
+                                if (pieces[index] == null) {
+                                    return;
+                                } else {
+                                    p.getInventory().add(itemId, 1);
+                                    int newAmount = pieces[index].getAmount() - 1;
+                                    if (newAmount == 0)
+                                        pieces[index] = null;
+                                    else
+                                        pieces[index].setAmount(newAmount);
+                                }
+                                break;
                             }
                         }
                     }
