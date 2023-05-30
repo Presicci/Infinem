@@ -144,7 +144,13 @@ public enum CostumeStorage {
             OILY_PEARL_FISHING_ROD,
             FISH_SACK,
             MUDSKIPPER_KIT,
-            DARK_FLIPPERS
+            DARK_FLIPPERS,
+            BOUNTY_HUNTER_HAT_1,
+            BOUNTY_HUNTER_HAT_2,
+            BOUNTY_HUNTER_HAT_3,
+            BOUNTY_HUNTER_HAT_4,
+            BOUNTY_HUNTER_HAT_5,
+            BOUNTY_HUNTER_HAT_6
     ),
 
     CAPE_RACK(3292,
