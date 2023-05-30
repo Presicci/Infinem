@@ -95,7 +95,8 @@ public enum CostumeStorage {
             SNAKESKIN_ARMOUR,
             CASTLE_WARS_DECORATIVE_SWORD_1,
             CASTLE_WARS_DECORATIVE_SWORD_2,
-            CASTLE_WARS_DECORATIVE_SWORD_3),
+            CASTLE_WARS_DECORATIVE_SWORD_3,
+            FEDORA),
 
     MAGIC_WARDROBE(3289,
             BLUE_MYSTIC,
