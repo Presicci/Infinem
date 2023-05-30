@@ -227,7 +227,13 @@ public enum CostumeStorage {
             SINHAZA_SHROUD_3,
             SINHAZA_SHROUD_4,
             SINHAZA_SHROUD_5,
-            GAUNTLET_CAPE
+            GAUNTLET_CAPE,
+            VICTOR_CAPE_1,
+            VICTOR_CAPE_10,
+            VICTOR_CAPE_50,
+            VICTOR_CAPE_100,
+            VICTOR_CAPE_500,
+            VICTOR_CAPE_1000
     ),
 
     BEGINNER_TREASURE_TRAILS(3293),
