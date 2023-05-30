@@ -378,7 +378,12 @@ public enum CostumeStorage {
             PISCARILIUS_BANNER,
             SHAYZIEN_BANNER,
             CABBAGE_ROUND_SHIELD,
-            SPIKED_MANACLES
+            SPIKED_MANACLES,
+            ADAMANT_PLATEBODY_H1,
+            ADAMANT_PLATEBODY_H2,
+            ADAMANT_PLATEBODY_H3,
+            ADAMANT_PLATEBODY_H4,
+            ADAMANT_PLATEBODY_H5
     ),
 
     HARD_TREASURE_TRAILS(3296,
