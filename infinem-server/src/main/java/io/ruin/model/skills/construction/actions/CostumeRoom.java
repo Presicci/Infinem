@@ -176,7 +176,7 @@ public class CostumeRoom {
             }
         }
         type.getSets(player).put(costume, pieces);
-        player.sendMessage("You place the costume in the treasure chest.");
+        player.sendFilteredMessage("You place the item in the " + getStorageName(type) + ".");
     }
 
     private static void depositCostume(Player player, Item item, Buildable b, CostumeStorage... validTypes) {
@@ -215,7 +215,7 @@ public class CostumeRoom {
                 }
             }
         }
-        player.sendMessage("You place the costume in the treasure chest.");
+        player.sendFilteredMessage("You place the set in the " + getStorageName(type) + ".");
     }
 
     private static boolean hasStorageSpace(Player player, Buildable buildable, CostumeStorage type) {
@@ -272,6 +272,30 @@ public class CostumeRoom {
 
             default:
                 return Integer.MAX_VALUE;
+        }
+    }
+
+    public static String getStorageName(CostumeStorage costumeStorage) {
+        switch (costumeStorage) {
+            case TOY_BOX:
+                return "toy box";
+            case ARMOUR_CASE:
+                return "armour case";
+            case MAGIC_WARDROBE:
+                return "magic wardrobe";
+            case BEGINNER_TREASURE_TRAILS:
+            case EASY_TREASURE_TRAILS:
+            case MEDIUM_TREASURE_TRAILS:
+            case HARD_TREASURE_TRAILS:
+            case ELITE_TREASURE_TRAILS:
+            case MASTER_TREASURE_TRAILS:
+                return "treasure chest";
+            case CAPE_RACK:
+                return "cape rack";
+            case FANCY_DRESS_BOX:
+                return "fancy dress box";
+            default:
+                return "storage container";
         }
     }
 
