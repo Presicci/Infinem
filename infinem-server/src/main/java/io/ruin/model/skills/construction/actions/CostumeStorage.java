@@ -160,7 +160,8 @@ public enum CostumeStorage {
             FLAG_TREASURE,
             FLAG_PHASMATYS,
             CARPENTERS_OUTFIT,
-            AMYS_SAW
+            AMYS_SAW,
+            WARM_GLOVES
     ),
 
     CAPE_RACK(3292,
