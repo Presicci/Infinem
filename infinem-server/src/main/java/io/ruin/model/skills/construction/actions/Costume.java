@@ -411,6 +411,7 @@ public enum Costume {
     WOLF_MASK(23407),
     WOLF_CLOAK(23410),
     CLIMBING_BOOTS_GOLD(23413),
+    YEW_COMPOSITE_BOW(10282),
 
     //Hard treasure trails
     RUNE_HERALDIC_KITESHIELD_1(7336),
