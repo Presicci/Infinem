@@ -377,7 +377,8 @@ public enum CostumeStorage {
             LOVAKENGJ_BANNER,
             PISCARILIUS_BANNER,
             SHAYZIEN_BANNER,
-            CABBAGE_ROUND_SHIELD
+            CABBAGE_ROUND_SHIELD,
+            SPIKED_MANACLES
     ),
 
     HARD_TREASURE_TRAILS(3296,
