@@ -18,6 +18,7 @@ import io.ruin.model.skills.construction.Buildable;
 import io.ruin.model.skills.construction.Hotspot;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 public class CostumeRoom {
@@ -178,6 +179,11 @@ public class CostumeRoom {
                 player.sendMessage("You can't store that item there.");
             return;
         }
+        if (item.getAttributeHash() != 0) {
+            if (messages)
+                player.sendMessage("You can't store modified items in there.");
+            return;
+        }
         if (!hasStorageSpace(player, b, type))
             return;
         Map<Costume, Item[]> sets = type.getSets(player);
@@ -225,21 +231,22 @@ public class CostumeRoom {
         for (int index = 0; index < pieces.length; index++) {
             for (Item piece : costume.pieces[index]) {
                 int id = piece.getId();
-                int amount = player.getInventory().getAmount(id);
-                if (amount > 0) {
+                List<Item> items = player.getInventory().collectItemsWithoutAttributes(id);
+                if (items != null && items.size() > 0) {
                     if (pieces[index] == null) {
-                        pieces[index] = new Item(id, amount);
-                        player.getInventory().remove(id, amount);
+                        pieces[index] = new Item(id, items.size());
+                        player.getInventory().removeAll(items.toArray(new Item[0]));
                     } else {
                         if (pieces[index].getId() != id)
                             continue;
-                        pieces[index].incrementAmount(amount);
-                        player.getInventory().remove(id, amount);
+                        pieces[index].incrementAmount(items.size());
+                        player.getInventory().removeAll(items.toArray(new Item[0]));
                     }
                     break;
                 }
             }
         }
+        type.getSets(player).put(costume, pieces);
         player.sendFilteredMessage("You place the set in the " + getStorageName(type) + ".");
     }
 
