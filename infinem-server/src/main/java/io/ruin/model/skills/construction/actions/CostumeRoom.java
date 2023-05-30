@@ -143,32 +143,17 @@ public class CostumeRoom {
         type.sendItems(player);
     }
 
-    private static void depositItem(Player player, Item item, Buildable b, CostumeStorage... validTypes) {
+    private static void depositItem(Player player, Item item, Buildable b, CostumeStorage type) {
         if (item == null)
             return;
-        CostumeStorage type = null;
         Costume costume = null;
-        for (CostumeStorage cs : CostumeStorage.values()) {
-            costume = cs.getByItem(item.getId());
-            if (costume != null) {
-                type = cs;
-                break;
-            }
-        }
-        if (costume == null || !Arrays.asList(validTypes).contains(type)) {
+        costume = type.getByItem(item.getId());
+        if (costume == null) {
             player.sendMessage("You can't store that item there.");
             return;
         }
-        int maxStored = getMaxStorage(b);
-        int currentStored = type.countSpaceUsed(player);
-        if (currentStored >= maxStored) {
-            if (type == CostumeStorage.CAPE_RACK) {
-                player.sendMessage("That cape rack can only hold up to " + maxStored + " capes of accomplishment.");
-            } else {
-                player.sendMessage("There's no more space in there.");
-            }
+        if (!hasStorageSpace(player, b, type))
             return;
-        }
         Map<Costume, Item[]> sets = type.getSets(player);
         Item[] pieces = sets.get(costume);
         int pieceIndex = costume.getPieceIndex(item.getId());
@@ -210,16 +195,8 @@ public class CostumeRoom {
             player.sendMessage("You can't store that item there.");
             return;
         }
-        int maxStored = getMaxStorage(b);
-        int currentStored = type.countSpaceUsed(player);
-        if (currentStored >= maxStored) {
-            if (type == CostumeStorage.CAPE_RACK) {
-                player.sendMessage("That cape rack can only hold up to " + maxStored + " capes of accomplishment.");
-            } else {
-                player.sendMessage("There's no more space in there.");
-            }
+        if (!hasStorageSpace(player, b, type))
             return;
-        }
         Map<Costume, Item[]> sets = type.getSets(player);
         Item[] pieces = sets.get(costume);
         if (pieces == null) {
@@ -241,25 +218,43 @@ public class CostumeRoom {
         player.sendMessage("You place the costume in the treasure chest.");
     }
 
+    private static boolean hasStorageSpace(Player player, Buildable buildable, CostumeStorage type) {
+        int maxStored = getMaxStorage(buildable);
+        int currentStored = type.countSpaceUsed(player);
+        if (currentStored >= maxStored) {
+            if (type == CostumeStorage.CAPE_RACK) {
+                if (maxStored == 0) {
+                    player.sendMessage("The oak cape rack can not hold capes of accomplishment.");
+                } else {
+                    player.sendMessage("That cape rack can only hold up to " + maxStored + " capes of accomplishment.");
+                }
+            } else {
+                player.sendMessage("There's no more space in there.");
+            }
+            return false;
+        }
+        return true;
+    }
+
     public static int getMaxStorage(Buildable b) {
         switch (b) {
             case OAK_ARMOUR_CASE:
-                return 2;
+                return 25;
             case TEAK_ARMOUR_CASE:
-                return 4;
+                return 50;
 
             case OAK_MAGIC_WARDROBE:
-                return 1;
+                return 7;
             case CARVED_OAK_MAGIC_WARDROBE:
-                return 2;
+                return 14;
             case TEAK_MAGIC_WARDROBE:
-                return 3;
+                return 21;
             case CARVED_TEAK_MAGIC_WARDROBE:
-                return 4;
+                return 28;
             case MAHOGANY_MAGIC_WARDROBE:
-                return 5;
+                return 35;
             case GILDED_MAGIC_WARDROBE:
-                return 6;
+                return 42;
 
             case OAK_CAPE_RACK:
                 return 0;
