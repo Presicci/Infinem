@@ -301,7 +301,12 @@ public enum CostumeStorage {
             RAIN_BOW,
             HAM_JOINT,
             LEATHER_ARMOUR_GOLD,
-            STAFF_OF_BOB_THE_CAT
+            STAFF_OF_BOB_THE_CAT,
+            BLACK_PLATEBODY_H1,
+            BLACK_PLATEBODY_H2,
+            BLACK_PLATEBODY_H3,
+            BLACK_PLATEBODY_H4,
+            BLACK_PLATEBODY_H5
     ),
 
     MEDIUM_TREASURE_TRAILS(3295,
