@@ -289,7 +289,7 @@ public enum Costume {
     RED_ELEGANT(multiple(10404, 10424), multiple(10406, 10426)),
     GREEN_ELEGANT(multiple(10412, 10432), multiple(10414, 10434)),
     BLUE_ELEGANT(multiple(10408, 10428), multiple(10410, 10430)),
-    BERET_MASK(11278),
+    BERET_MASK(11282),
     TRIMMED_BRONZE(single(12221), single(12215), multiple(12217, 12219), single(12223)),
     GOLD_BRONZE(single(12211), single(12205), multiple(12207, 12209), single(12213)),
     TRIMMED_IRON(single(12231), single(12225), multiple(12227, 12229), single(12223)),
