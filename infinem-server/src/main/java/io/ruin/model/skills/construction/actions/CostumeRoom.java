@@ -109,24 +109,15 @@ public class CostumeRoom {
         if (pieces == null || costume == null) {
             return;
         }
-        for (int index = 0; index < pieces.length; index++) {
-            Item[] pieceSet = costume.pieces[index];
-            for (Item piece : pieceSet) {
-                if (itemId == piece.getId()) {
-                    if (pieces[index] == null) {
-                        return;
-                    } else {
-                        player.getInventory().add(itemId, 1);
-                        int newAmount = pieces[index].getAmount() - 1;
-                        if (newAmount == 0)
-                            pieces[index] = null;
-                        else
-                            pieces[index].setAmount(newAmount);
-                    }
-                    break;
-                }
-            }
-        }
+        int pieceIndex = costume.getPieceIndex(itemId);
+        if (pieces[pieceIndex] == null)
+            return;
+        player.getInventory().add(itemId, 1);
+        int newAmount = pieces[pieceIndex].getAmount() - 1;
+        if (newAmount == 0)
+            pieces[pieceIndex] = null;
+        else
+            pieces[pieceIndex].setAmount(newAmount);
         cs.sendItems(player);
     }
 
