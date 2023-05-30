@@ -5,6 +5,7 @@ import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.actions.DefaultAction;
+import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Config;
@@ -305,6 +306,33 @@ public class CostumeRoom {
                     cs.sendItems(p);
                 } else {
                     new Item(itemId).examine(p);
+                }
+            };
+            h.actions[7] = (OptionAction) (player, option) -> {
+                Buildable buildable = player.getTemporaryAttribute(AttributeKey.COSTUME_BUILDABLE);
+                int clueScrollLevel = buildable == Buildable.OAK_TREASURE_CHEST ? 1 : buildable == Buildable.TEAK_TREASURE_CHEST ? 2 : 5;
+                switch (option) {
+                    default:
+                        // Dialogue
+                        break;
+                    case 2:
+                        CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, clueScrollLevel, buildable);
+                        break;
+                    case 3:
+                        CostumeStorage.EASY_TREASURE_TRAILS.open(player, clueScrollLevel, buildable);
+                        break;
+                    case 4:
+                        CostumeStorage.MEDIUM_TREASURE_TRAILS.open(player, clueScrollLevel, buildable);
+                        break;
+                    case 5:
+                        CostumeStorage.HARD_TREASURE_TRAILS.open(player, clueScrollLevel, buildable);
+                        break;
+                    case 6:
+                        CostumeStorage.ELITE_TREASURE_TRAILS.open(player, clueScrollLevel, buildable);
+                        break;
+                    case 7:
+                        CostumeStorage.MASTER_TREASURE_TRAILS.open(player, clueScrollLevel, buildable);
+                        break;
                 }
             };
             h.actions[8] = (SimpleAction) Config.COSTUME_DEPOSIT_SET::toggle;
