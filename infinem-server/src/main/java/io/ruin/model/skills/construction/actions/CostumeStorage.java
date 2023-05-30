@@ -126,6 +126,7 @@ public enum CostumeStorage {
             GRACEFUL_KOUREND,
             GRACEFUL_AGILITY_ARENA,
             GRACEFUL_HALLOWED,
+            GRACEFUL_TRAILBLAZER,
             BLUE_NAVAL,
             GREEN_NAVAL,
             RED_NAVAL,
