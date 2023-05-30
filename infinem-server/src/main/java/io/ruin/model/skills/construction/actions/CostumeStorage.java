@@ -511,7 +511,8 @@ public enum CostumeStorage {
             THIRD_AGE_LONGSWORD,
             THIRD_AGE_CLOAK,
             DARK_TUXEDO_OUTFIT,
-            LIGHT_TUXEDO_OUTFIT
+            LIGHT_TUXEDO_OUTFIT,
+            FREMENNIK_KILT
     ),
 
     MASTER_TREASURE_TRAILS(3298,
