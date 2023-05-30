@@ -59,7 +59,6 @@ public enum CostumeStorage {
             FARMERS_OUTFIT,
             CLUE_HUNTER_OUTFIT,
             CORRUPTED_ARMOUR,
-            ANCESTRAL_ROBES,
             OBSIDIAN_ARMOUR,
             HELM_OF_RAEDWALD,
             FIGHTER_TORSO,
