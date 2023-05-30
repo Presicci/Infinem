@@ -470,10 +470,8 @@ public enum CostumeStorage {
             DUAL_SAI,
             THIEVING_BAG,
             DRAGON_BOOTS_GOLD,
-            MAGIC_COMPOSITE_BOW,
-            THIRD_AGE_RANGER_ARMOUR,
-            THIRD_AGE_MAGE_ARMOUR,
-            THIRD_AGE_MELEE_ARMOUR),
+            MAGIC_COMPOSITE_BOW
+    ),
 
     ELITE_TREASURE_TRAILS(3297,
             DRAGON_CANE,
