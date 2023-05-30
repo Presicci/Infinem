@@ -165,7 +165,8 @@ public enum CostumeStorage {
             TRIBAL_OUTFIT_BROWN,
             TRIBAL_OUTFIT_BLUE,
             TRIBAL_OUTFIT_YELLOW,
-            TRIBAL_OUTFIT_PINK
+            TRIBAL_OUTFIT_PINK,
+            BRUMA_TORCH
     ),
 
     CAPE_RACK(3292,
