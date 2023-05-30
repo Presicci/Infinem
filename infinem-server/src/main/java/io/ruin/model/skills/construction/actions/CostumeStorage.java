@@ -161,7 +161,11 @@ public enum CostumeStorage {
             FLAG_PHASMATYS,
             CARPENTERS_OUTFIT,
             AMYS_SAW,
-            WARM_GLOVES
+            WARM_GLOVES,
+            TRIBAL_OUTFIT_BROWN,
+            TRIBAL_OUTFIT_BLUE,
+            TRIBAL_OUTFIT_YELLOW,
+            TRIBAL_OUTFIT_PINK
     ),
 
     CAPE_RACK(3292,
