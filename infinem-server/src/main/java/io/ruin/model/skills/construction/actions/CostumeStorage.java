@@ -71,7 +71,8 @@ public enum CostumeStorage {
             PENANCE_HEALER_HAT,
             JUSTICIAR_ARMOUR,
             ORNATE_ARMOUR,
-            DRAGONSTONE_ARMOUR),
+            DRAGONSTONE_ARMOUR,
+            ARDOUGNE_KNIGHT_ARMOUR),
 
     MAGIC_WARDROBE(3289,
             BLUE_MYSTIC,
