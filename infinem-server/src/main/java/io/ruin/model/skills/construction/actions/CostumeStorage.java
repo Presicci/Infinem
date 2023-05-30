@@ -98,7 +98,8 @@ public enum CostumeStorage {
             CASTLE_WARS_DECORATIVE_SWORD_3,
             FEDORA,
             SWIFT_BLADE,
-            PROSPECTOR_KIT_GOLDEN),
+            PROSPECTOR_KIT_GOLDEN,
+            ANGLER_OUTFIT_SPIRIT),
 
     MAGIC_WARDROBE(3289,
             BLUE_MYSTIC,
