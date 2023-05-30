@@ -468,6 +468,7 @@ public enum CostumeStorage {
             RUNE_PLATEBODY_H4,
             RUNE_PLATEBODY_H5,
             DUAL_SAI,
+            THIEVING_BAG,
             THIRD_AGE_RANGER_ARMOUR,
             THIRD_AGE_MAGE_ARMOUR,
             THIRD_AGE_MELEE_ARMOUR),
