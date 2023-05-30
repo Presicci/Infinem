@@ -116,6 +116,7 @@ public enum CostumeStorage {
             GHOSTLY,
             MOONCLAN_ROBES,
             LUNAR_ROBES,
+            DAGONHAI_ROBES,
             GRACEFUL,
             GRACEFUL_ARCEUUS,
             GRACEFUL_HOSIDIUS,
