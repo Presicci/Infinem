@@ -143,7 +143,8 @@ public enum CostumeStorage {
             PEARL_FLY_FISHING_ROD,
             OILY_PEARL_FISHING_ROD,
             FISH_SACK,
-            MUDSKIPPER_KIT
+            MUDSKIPPER_KIT,
+            DARK_FLIPPERS
     ),
 
     CAPE_RACK(3292,

@@ -148,6 +148,7 @@ public enum Costume {
     OILY_PEARL_FISHING_ROD(23122),
     FISH_SACK(multiple(22838, 25585)),
     MUDSKIPPER_KIT(6665, 6666),
+    DARK_FLIPPERS(25557),
 
     //cape rack
     CAPE_OF_LEGENDS(1052),
