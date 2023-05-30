@@ -12,7 +12,7 @@ import java.util.Arrays;
 public enum Costume {
     //fancy dress box
     MIME_COSTUME(3057, 3058, 3059, 3060, 3061),
-    FROG_COSTUME(new Item[] { new Item(6188) }, multiple(6184,6186), multiple(6185, 6187)),
+    FROG_COSTUME(single(6188), multiple(6184,6186), multiple(6185, 6187)),
     ZOMBIE_OUTFIT(7594, 7592, 7593, 7595, 7596),
     CAMO_OUTFIT(6656, 6654, 6655),
     LEDERHOSEN_OUTFIT(6180, 6181, 6182),
@@ -39,7 +39,7 @@ public enum Costume {
     TRIBAL_MASK_COMBAT(6339),
     WHITE_KNIGHT_ARMOUR(single(6623), single(6617), multiple(6625, 6627), single(6629), single(6619), single(6633)),
     INITIATE_ARMOUR(5574, 5575, 5576),
-    PROSELYTE_ARMOUR(single(9672), single(9674), multiple(9676, 9768)),
+    PROSELYTE_ARMOUR(single(9672), single(9674), multiple(9676, 9778)),
     MOURNER_GEAR(1506, 6065, 6067, 6068, 6069, 6070),
     GRAAHK_GEAR(10051, 10049, 10047),
     LARUPIA_GEAR(10045, 10043, 10041),
