@@ -297,7 +297,8 @@ public enum CostumeStorage {
             GOLDEN_APRON,
             MONK_ROBES_GOLD,
             CAPE_OF_SKULLS,
-            AMULET_OF_POWER_TRIMMED
+            AMULET_OF_POWER_TRIMMED,
+            RAIN_BOW
     ),
 
     MEDIUM_TREASURE_TRAILS(3295,
