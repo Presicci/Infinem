@@ -176,6 +176,9 @@ public enum CostumeStorage {
             OBSIDIAN_CAPE,
             FIRE_CAPE,
             WILDERNESS_CAPES,
+            WILDERNESS_CAPE_0,
+            WILDERNESS_CAPE_X,
+            WILDERNESS_CAPE_I,
             SARADOMIN_CAPE,
             GUTHIX_CAPE,
             ZAMORAK_CAPE,
@@ -223,7 +226,8 @@ public enum CostumeStorage {
             SINHAZA_SHROUD_2,
             SINHAZA_SHROUD_3,
             SINHAZA_SHROUD_4,
-            SINHAZA_SHROUD_5
+            SINHAZA_SHROUD_5,
+            GAUNTLET_CAPE
     ),
 
     BEGINNER_TREASURE_TRAILS(3293),
