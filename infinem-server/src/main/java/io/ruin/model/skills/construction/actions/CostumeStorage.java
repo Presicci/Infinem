@@ -137,7 +137,11 @@ public enum CostumeStorage {
             ELDER_CHAOS_DRUID,
             EVIL_CHICKEN_COSTUME,
             PYROMANCER_OUTFIT,
-            GOLDEN_TENCH
+            GOLDEN_TENCH,
+            PEARL_FISHING_ROD,
+            PEARL_BARBARIAN_ROD,
+            PEARL_FLY_FISHING_ROD,
+            OILY_PEARL_FISHING_ROD
     ),
 
     CAPE_RACK(3292,
