@@ -105,6 +105,7 @@ public enum CostumeStorage {
             BLUE_MYSTIC,
             DARK_MYSTIC,
             LIGHT_MYSTIC,
+            DUSK_MYSTIC,
             SKELETAL,
             INFINITY,
             SPLITBARK,
