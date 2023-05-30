@@ -89,7 +89,8 @@ public enum CostumeStorage {
             TRAILBLAZER_RELICHUNTER_T1,
             TRAILBLAZER_RELICHUNTER_T2,
             TRAILBLAZER_RELICHUNTER_T3,
-            CANE_TRAILBLAZER),
+            CANE_TRAILBLAZER,
+            INQUISITOR_ARMOUR),
 
     MAGIC_WARDROBE(3289,
             BLUE_MYSTIC,
