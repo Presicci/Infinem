@@ -154,7 +154,8 @@ public class CostumeRoom {
             }
         }
         if (costume == null || !Arrays.asList(validTypes).contains(type)) {
-            player.sendMessage("You can't store that item there.");
+            if (messages)
+                player.sendMessage("You can't store that item there.");
             return;
         }
         if (!hasStorageSpace(player, b, type))
@@ -175,13 +176,15 @@ public class CostumeRoom {
                     pieces[pieceIndex].incrementAmount(1);
                     player.getInventory().remove(item.getId(), 1);
                 } else {
-                    player.sendMessage("You have a different item of that type stored already.");
+                    if (messages)
+                        player.sendMessage("You have a different item of that type stored already.");
                     return;
                 }
             }
         }
         type.getSets(player).put(costume, pieces);
-        player.sendFilteredMessage("You place the item in the " + getStorageName(type) + ".");
+        if (messages)
+            player.sendFilteredMessage("You place the item in the " + getStorageName(type) + ".");
     }
 
     private static void depositSet(Player player, Item item, Buildable b, CostumeStorage type) {
