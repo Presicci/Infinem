@@ -552,6 +552,7 @@ public enum CostumeStorage {
             JUNGLE_DEMON_MASK,
             OBSIDIAN_CAPE_R,
             HALF_MOON_SPECTACLES,
+            EYE_PATCH,
             ALE_OF_THE_GODS,
             BUCKET_HELM_G,
             BOWL_WIG,
@@ -563,7 +564,12 @@ public enum CostumeStorage {
             SAMURAI_OUTFIT,
             MUMMY_OUTFIT,
             ANKOU_OUTFIT,
-            ROBES_OF_DARKNESS
+            ROBES_OF_DARKNESS,
+            SCROLL_SACK,
+            THIRD_AGE_DRUIDIC_TOP,
+            THIRD_AGE_DRUIDIC_BOTTOMS,
+            THIRD_AGE_DRUIDIC_STAFF,
+            THIRD_AGE_DRUIDIC_CLOAK
     ),
 
     TOY_BOX(3299,
