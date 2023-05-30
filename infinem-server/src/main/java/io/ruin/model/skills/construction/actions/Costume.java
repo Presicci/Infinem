@@ -146,6 +146,7 @@ public enum Costume {
     PEARL_BARBARIAN_ROD(22842),
     PEARL_FLY_FISHING_ROD(22844),
     OILY_PEARL_FISHING_ROD(23122),
+    FISH_SACK(multiple(22838, 25585)),
 
     //cape rack
     CAPE_OF_LEGENDS(1052),
