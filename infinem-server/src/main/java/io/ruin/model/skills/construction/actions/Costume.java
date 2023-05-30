@@ -559,6 +559,7 @@ public enum Costume {
     URIS_HAT(23255),
     GIANT_BOOT(23252),
     RING_OF_THRID_AGE(23185),
+    DRAGON_ARMOUR_GILDED(single(12417), multiple(22242, 12414), multiple(12415, 12416), multiple(22244, 12418)),
 
     //ELITE_TREASURE_TRAILS
     FANCY_TIARA(20008),

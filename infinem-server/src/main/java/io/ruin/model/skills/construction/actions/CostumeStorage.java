@@ -523,7 +523,8 @@ public enum CostumeStorage {
             SPADE_GILDED,
             URIS_HAT,
             GIANT_BOOT,
-            RING_OF_THRID_AGE
+            RING_OF_THRID_AGE,
+            DRAGON_ARMOUR_GILDED
     ),
 
     MASTER_TREASURE_TRAILS(3298,
