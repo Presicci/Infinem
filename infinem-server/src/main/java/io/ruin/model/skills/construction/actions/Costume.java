@@ -690,7 +690,7 @@ public enum Costume {
     Costume(MaxCapeVariants.MaxCapes c) { // max cape
         pieces = new Item[2][MaxCapeVariants.MaxCapes.values().length + 1];
         pieces[0][0] = new Item(13281);
-        pieces[1][0] = new Item(13342);
+        pieces[1][0] = new Item(13280);
         for (int i = 0; i < MaxCapeVariants.MaxCapes.values().length; i++) {
             c = MaxCapeVariants.MaxCapes.values()[i];
             pieces[0][i + 1] = new Item(c.newHoodId);
