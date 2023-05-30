@@ -8,6 +8,7 @@ import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
+import java.util.Map;
 
 public enum Costume {
     //fancy dress box

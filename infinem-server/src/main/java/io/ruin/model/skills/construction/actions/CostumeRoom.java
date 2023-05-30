@@ -3,11 +3,13 @@ package io.ruin.model.skills.construction.actions;
 
 import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
@@ -113,6 +115,10 @@ public class CostumeRoom {
         int pieceIndex = costume.getPieceIndex(itemId);
         if (pieces[pieceIndex] == null)
             return;
+        if (player.getGameMode().isUltimateIronman() && !cs.fullSetStored(player, costume) && pieces.length > 1) {
+            player.sendMessage("Ultimate ironman can only withdraw complete sets from storage.");
+            return;
+        }
         player.getInventory().add(itemId, 1);
         int newAmount = pieces[pieceIndex].getAmount() - 1;
         if (newAmount == 0)
@@ -136,6 +142,10 @@ public class CostumeRoom {
         Costume costume = type.getCostumes()[slot];
         Item[] stored = storedSets.get(costume);
         if (stored == null) {
+            return;
+        }
+        if (player.getGameMode().isUltimateIronman() && !type.fullSetStored(player, costume)) {
+            player.sendMessage("Ultimate ironman can only withdraw from complete sets from storage.");
             return;
         }
         if (!player.getInventory().hasFreeSlots(stored.length)) {
@@ -186,6 +196,27 @@ public class CostumeRoom {
         }
         if (!hasStorageSpace(player, b, type))
             return;
+        if (player.getGameMode().isUltimateIronman() && costume.pieces.length > 1 && !type.willCompleteSet(player, costume, item)) {
+            CostumeStorage finalType = type;
+            Costume finalCostume = costume;
+            boolean reopen = player.isVisibleInterface(675);
+            player.dialogue(new OptionsDialogue("You can only withdraw this item once you complete the set, continue?",
+                    new Option("Deposit", () -> {
+                        handleItemDeposit(player, item, messages, finalType, finalCostume);
+                        if (reopen)
+                            finalType.open(player, b == Buildable.OAK_TREASURE_CHEST ? 1 : b == Buildable.TEAK_TREASURE_CHEST ? 2 : b == Buildable.MAHOGANY_TREASURE_CHEST ? 5 : -1, b);
+                    }),
+                    new Option("Do not deposit", () -> {
+                        if (reopen)
+                            finalType.open(player, b == Buildable.OAK_TREASURE_CHEST ? 1 : b == Buildable.TEAK_TREASURE_CHEST ? 2 : b == Buildable.MAHOGANY_TREASURE_CHEST ? 5 : -1, b);
+                    })
+            ));
+        } else {
+            handleItemDeposit(player, item, messages, type, costume);
+        }
+    }
+
+    private static void handleItemDeposit(Player player, Item item, boolean messages, CostumeStorage type, Costume costume) {
         Map<Costume, Item[]> sets = type.getSets(player);
         Item[] pieces = sets.get(costume);
         int pieceIndex = costume.getPieceIndex(item.getId());
@@ -198,6 +229,11 @@ public class CostumeRoom {
                 pieces[pieceIndex] = new Item(item.getId(), 1);
                 player.getInventory().remove(item.getId(), 1);
             } else {
+                if (player.getGameMode().isUltimateIronman()) {
+                    if (messages)
+                        player.sendMessage("As an Ultimate ironman you can only store one of each item.");
+                    return;
+                }
                 if (pieces[pieceIndex].getId() == item.getId()) {
                     pieces[pieceIndex].incrementAmount(1);
                     player.getInventory().remove(item.getId(), 1);
@@ -223,6 +259,25 @@ public class CostumeRoom {
         }
         if (!hasStorageSpace(player, b, type))
             return;
+        if (player.getGameMode().isUltimateIronman() &&  !type.hasFullSet(player, costume)) {
+            boolean reopen = player.isVisibleInterface(675);
+            player.dialogue(new OptionsDialogue("You can only withdraw this item once you complete the set, continue?",
+                    new Option("Deposit", () -> {
+                        handleSetDeposit(player, costume, type);
+                        if (reopen)
+                            type.open(player, b == Buildable.OAK_TREASURE_CHEST ? 1 : b == Buildable.TEAK_TREASURE_CHEST ? 2 : b == Buildable.MAHOGANY_TREASURE_CHEST ? 5 : -1, b);
+                    }),
+                    new Option("Do not deposit", () -> {
+                        if (reopen)
+                            type.open(player, b == Buildable.OAK_TREASURE_CHEST ? 1 : b == Buildable.TEAK_TREASURE_CHEST ? 2 : b == Buildable.MAHOGANY_TREASURE_CHEST ? 5 : -1, b);
+                    })
+            ));
+        } else {
+            handleSetDeposit(player, costume, type);
+        }
+    }
+
+    private static void handleSetDeposit(Player player, Costume costume, CostumeStorage type) {
         Map<Costume, Item[]> sets = type.getSets(player);
         Item[] pieces = sets.get(costume);
         if (pieces == null) {
@@ -234,11 +289,19 @@ public class CostumeRoom {
                 List<Item> items = player.getInventory().collectItemsWithoutAttributes(id);
                 if (items != null && items.size() > 0) {
                     if (pieces[index] == null) {
-                        pieces[index] = new Item(id, items.size());
-                        player.getInventory().removeAll(items.toArray(new Item[0]));
+                        if (player.getGameMode().isUltimateIronman()) {
+                            pieces[index] = new Item(id, 1);
+                            player.getInventory().remove(id, 1);
+                        } else {
+                            pieces[index] = new Item(id, items.size());
+                            player.getInventory().removeAll(items.toArray(new Item[0]));
+                        }
                     } else {
                         if (pieces[index].getId() != id)
                             continue;
+                        if (player.getGameMode().isUltimateIronman()) {
+                            continue;
+                        }
                         pieces[index].incrementAmount(items.size());
                         player.getInventory().removeAll(items.toArray(new Item[0]));
                     }
@@ -383,7 +446,23 @@ public class CostumeRoom {
                 }
             };
             h.actions[8] = (SimpleAction) Config.COSTUME_DEPOSIT_SET::toggle;
-            h.actions[10] = (SimpleAction) CostumeRoom::depositInventory;
+            h.actions[10] = (SimpleAction) (player) -> {
+                if (player.getGameMode().isUltimateIronman()) {
+                    Buildable buildable = player.getTemporaryAttribute(AttributeKey.COSTUME_BUILDABLE);
+                    CostumeStorage costumeStorage = player.getTemporaryAttribute(AttributeKey.COSTUME_STORAGE);
+                    player.dialogue(new OptionsDialogue("You can only withdraw this item once you complete the set, continue?",
+                            new Option("Deposit", () -> {
+                                depositInventory(player);
+                                costumeStorage.open(player, buildable == Buildable.OAK_TREASURE_CHEST ? 1 : buildable == Buildable.TEAK_TREASURE_CHEST ? 2 : buildable == Buildable.MAHOGANY_TREASURE_CHEST ? 5 : -1, buildable);
+                            }),
+                            new Option("Do not deposit", () -> {
+                                costumeStorage.open(player, buildable == Buildable.OAK_TREASURE_CHEST ? 1 : buildable == Buildable.TEAK_TREASURE_CHEST ? 2 : buildable == Buildable.MAHOGANY_TREASURE_CHEST ? 5 : -1, buildable);
+                            })
+                    ));
+                } else {
+                    depositInventory(player);
+                }
+            };
         });
         InterfaceHandler.register(674, h -> {
             h.actions[0] = (DefaultAction) (p, option, slot, itemId) -> {

@@ -183,6 +183,48 @@ public enum CostumeStorage {
         return null;
     }
 
+    public boolean fullSetStored(Player player, Costume costume) {
+        Map<Costume, Item[]> stored = getSets(player);
+        Item[] pieces = stored.get(costume);
+        if (pieces == null)
+            return false;
+        for (Item item : pieces) {
+            if (item == null)
+                return false;
+        }
+        return true;
+    }
+
+    public boolean willCompleteSet(Player player, Costume costume, Item itemToBeAdded) {
+        Map<Costume, Item[]> stored = getSets(player);
+        Item[] pieces = stored.get(costume);
+        if (pieces == null)
+            return false;
+        int index = 0;
+        for (Item item : pieces) {
+            if (item == null) {
+                Item[] costumePieces = costume.getPieces()[index];
+                if (Arrays.stream(costumePieces).noneMatch(i -> i.getId() == itemToBeAdded.getId()))
+                    return false;
+            }
+            ++index;
+        }
+        return true;
+    }
+
+    public boolean hasFullSet(Player player, Costume costume) {
+        for (int index = 0; index < costume.getPieces().length; index++) {
+            boolean found = false;
+            for (Item item : costume.getPieces()[index]) {
+                if (player.getInventory().contains(item.getId()))
+                    found = true;
+            }
+            if (!found)
+                return false;
+        }
+        return true;
+    }
+
     public Map<Costume, Item[]> getSets(Player player) {
         switch (this) {
             case FANCY_DRESS_BOX:
