@@ -158,7 +158,8 @@ public enum CostumeStorage {
             FLAG_BRONZE_FIST,
             FLAG_LUCKY_SHOT,
             FLAG_TREASURE,
-            FLAG_PHASMATYS
+            FLAG_PHASMATYS,
+            CARPENTERS_OUTFIT
     ),
 
     CAPE_RACK(3292,
