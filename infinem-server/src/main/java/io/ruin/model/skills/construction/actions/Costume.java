@@ -3,6 +3,7 @@ package io.ruin.model.skills.construction.actions;
 import io.ruin.cache.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.stat.StatType;
 
@@ -10,13 +11,14 @@ import java.util.Arrays;
 
 public enum Costume {
     //fancy dress box
-    MIME_OUTFIT(3057, 3058, 3059, 3060, 3061),
-    ROYAL_FROG_OUTFIT(multiple(6184,6186), multiple(6185, 6187)),
-    FROG_MASK(6188),
+    MIME_COSTUME(3057, 3058, 3059, 3060, 3061),
+    FROG_COSTUME(new Item[] { new Item(6188) }, multiple(6184,6186), multiple(6185, 6187)),
     ZOMBIE_OUTFIT(7594, 7592, 7593, 7595, 7596),
     CAMO_OUTFIT(6656, 6654, 6655),
     LEDERHOSEN_OUTFIT(6180, 6181, 6182),
     SHADE_ROBES(546, 548),
+    STALE_BAGUETTE(Items.STALE_BAGUETTE),
+    BEEKEEPER_OUTFIT(25129, 25131, 25133, 25135, 25137),
 
     //armour case
     CASTLE_WARS_ARMOUR(multiple(4071, 4506, 4511), multiple(4069, 4504, 4509), multiple(4070, 4505, 4510)),
