@@ -69,29 +69,46 @@ public class CostumeRoom {
             ObjectAction.register(closed, "open", (player, obj) -> open(player, obj, open));
             ObjectAction.register(open, "close", (player, obj) -> close(player, obj, closed));
         }
-        ObjectAction.register(18805, "search", (player, obj) -> player.dialogue(new OptionsDialogue(
-                new Option("Beginner treasure trails", () -> CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, 1, Buildable.OAK_TREASURE_CHEST)),
-                new Option("Easy treasure trails", () -> CostumeStorage.EASY_TREASURE_TRAILS.open(player, 1, Buildable.OAK_TREASURE_CHEST))
-        )));
+        ObjectAction.register(18805, "search", (player, obj) -> clueDialogue(player, Buildable.OAK_TREASURE_CHEST));
         ItemObjectAction.register(18805, (player, item, obj) -> depositItem(player, item, true, Buildable.OAK_TREASURE_CHEST, CostumeStorage.EASY_TREASURE_TRAILS));
 
-        ObjectAction.register(18807, "search", (player, obj) -> player.dialogue(new OptionsDialogue(
-                new Option("Beginner treasure trails", () -> CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, 2, Buildable.TEAK_TREASURE_CHEST)),
-                new Option("Easy treasure trails", () -> CostumeStorage.EASY_TREASURE_TRAILS.open(player, 2, Buildable.TEAK_TREASURE_CHEST)),
-                new Option("Medium treasure trails", () -> CostumeStorage.MEDIUM_TREASURE_TRAILS.open(player, 2, Buildable.TEAK_TREASURE_CHEST))
-        )));
+        ObjectAction.register(18807, "search", (player, obj) -> clueDialogue(player, Buildable.TEAK_TREASURE_CHEST));
         ItemObjectAction.register(18807, (player, item, obj) -> depositItem(player, item, true, Buildable.TEAK_TREASURE_CHEST, CostumeStorage.EASY_TREASURE_TRAILS, CostumeStorage.MEDIUM_TREASURE_TRAILS));
 
-        ObjectAction.register(18809, "search", (player, obj) -> player.dialogue(new OptionsDialogue(
-                new Option("Beginner treasure trails", () -> CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST)),
-                new Option("Easy treasure trails", () -> CostumeStorage.EASY_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST)),
-                new Option("Medium treasure trails", () -> CostumeStorage.MEDIUM_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST)),
-                new Option("Hard treasure trails", () -> CostumeStorage.HARD_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST)),
-                new Option("Elite treasure trails", () -> CostumeStorage.ELITE_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST)),
-                new Option("Master treasure trails", () -> CostumeStorage.MASTER_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST))
-        )));
+        ObjectAction.register(18809, "search", (player, obj) -> clueDialogue(player, Buildable.MAHOGANY_TREASURE_CHEST));
         ItemObjectAction.register(18809, (player, item, obj) -> depositItem(player, item, true, Buildable.MAHOGANY_TREASURE_CHEST, CostumeStorage.BEGINNER_TREASURE_TRAILS, CostumeStorage.EASY_TREASURE_TRAILS, CostumeStorage.MEDIUM_TREASURE_TRAILS, CostumeStorage.HARD_TREASURE_TRAILS, CostumeStorage.ELITE_TREASURE_TRAILS, CostumeStorage.MASTER_TREASURE_TRAILS));
 
+    }
+
+    private static void clueDialogue(Player player, Buildable buildable) {
+        switch (buildable) {
+            default:
+                player.dialogue(new OptionsDialogue(
+                        new Option("Beginner treasure trails", () -> CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, 1, Buildable.OAK_TREASURE_CHEST)),
+                        new Option("Easy treasure trails", () -> CostumeStorage.EASY_TREASURE_TRAILS.open(player, 1, Buildable.OAK_TREASURE_CHEST))
+                ));
+                break;
+            case TEAK_TREASURE_CHEST:
+                player.dialogue(new OptionsDialogue(
+                        new Option("Beginner treasure trails", () -> CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, 2, Buildable.TEAK_TREASURE_CHEST)),
+                        new Option("Easy treasure trails", () -> CostumeStorage.EASY_TREASURE_TRAILS.open(player, 2, Buildable.TEAK_TREASURE_CHEST)),
+                        new Option("Medium treasure trails", () -> CostumeStorage.MEDIUM_TREASURE_TRAILS.open(player, 2, Buildable.TEAK_TREASURE_CHEST))
+                ));
+                break;
+            case MAHOGANY_TREASURE_CHEST:
+                player.dialogue(new OptionsDialogue(
+                        new Option("Beginner treasure trails", () -> CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST)),
+                        new Option("Easy treasure trails", () -> CostumeStorage.EASY_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST)),
+                        new Option("Medium treasure trails", () -> CostumeStorage.MEDIUM_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST)),
+                        new Option("Hard treasure trails", () -> CostumeStorage.HARD_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST)),
+                        new Option("More...", () -> player.dialogue(new OptionsDialogue(
+                                new Option("Elite treasure trails", () -> CostumeStorage.ELITE_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST)),
+                                new Option("Master treasure trails", () -> CostumeStorage.MASTER_TREASURE_TRAILS.open(player, 5, Buildable.MAHOGANY_TREASURE_CHEST)),
+                                new Option("More...", () -> clueDialogue(player, buildable))
+                        )))
+                ));
+                break;
+        }
     }
 
     private static void open(Player player, GameObject obj, int open) {
@@ -423,7 +440,7 @@ public class CostumeRoom {
                 int clueScrollLevel = buildable == Buildable.OAK_TREASURE_CHEST ? 1 : buildable == Buildable.TEAK_TREASURE_CHEST ? 2 : 5;
                 switch (option) {
                     default:
-                        // Dialogue
+                        clueDialogue(player, buildable);
                         break;
                     case 2:
                         CostumeStorage.BEGINNER_TREASURE_TRAILS.open(player, clueScrollLevel, buildable);
