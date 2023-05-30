@@ -108,6 +108,8 @@ public enum CostumeStorage {
             DUSK_MYSTIC,
             SKELETAL,
             INFINITY,
+            INFINITY_LIGHT,
+            INFINITY_DARK,
             SPLITBARK,
             GHOSTLY,
             MOONCLAN_ROBES,
