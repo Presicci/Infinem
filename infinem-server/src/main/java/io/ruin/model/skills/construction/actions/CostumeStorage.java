@@ -28,7 +28,7 @@ public enum CostumeStorage {
             VOID_RANGER_HELM,
             VOID_MAGE_HELM,
             ROGUE_ARMOUR,
-            SPINED_HELM,
+            SPINED_ARMOUR,
             ROCKSHELL_ARMOUR,
             TRIBAL_MASK_POISON,
             TRIBAL_MASK_DISEASE,
