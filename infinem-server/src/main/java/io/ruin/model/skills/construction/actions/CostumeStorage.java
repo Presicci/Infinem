@@ -84,7 +84,8 @@ public enum CostumeStorage {
             HALO_BRASSICA,
             TWISTED_RELICHUNTER_T1,
             TWISTED_RELICHUNTER_T2,
-            TWISTED_RELICHUNTER_T3),
+            TWISTED_RELICHUNTER_T3,
+            CANE_TWISTED),
 
     MAGIC_WARDROBE(3289,
             BLUE_MYSTIC,
