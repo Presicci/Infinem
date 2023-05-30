@@ -239,6 +239,7 @@ public enum Costume {
     VICTOR_CAPE_100(24213),
     VICTOR_CAPE_500(24215),
     VICTOR_CAPE_1000(24520),
+    SOUL_CAPE(multiple(25344, 25346)),
 
     //Easy treasure trails
     BLACK_HERALD_SHIELD_1(7332),

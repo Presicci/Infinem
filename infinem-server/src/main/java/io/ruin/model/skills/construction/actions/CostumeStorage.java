@@ -233,7 +233,8 @@ public enum CostumeStorage {
             VICTOR_CAPE_50,
             VICTOR_CAPE_100,
             VICTOR_CAPE_500,
-            VICTOR_CAPE_1000
+            VICTOR_CAPE_1000,
+            SOUL_CAPE
     ),
 
     BEGINNER_TREASURE_TRAILS(3293),
