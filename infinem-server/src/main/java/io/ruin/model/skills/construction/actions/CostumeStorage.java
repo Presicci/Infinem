@@ -509,6 +509,7 @@ public enum CostumeStorage {
             THIRD_AGE_WAND,
             THIRD_AGE_BOW,
             THIRD_AGE_LONGSWORD,
+            THIRD_AGE_CLOAK,
             DARK_TUXEDO_OUTFIT,
             LIGHT_TUXEDO_OUTFIT
     ),
