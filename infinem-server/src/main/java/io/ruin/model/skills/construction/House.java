@@ -13,6 +13,7 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.MultiZone;
@@ -81,16 +82,17 @@ public class House {
 
     @Expose private ServantSave servantSave = new ServantSave();
 
-    @Expose private Map<Costume, int[]> fancyDressStorage = new HashMap<>();
-    @Expose private Map<Costume, int[]> armourCaseStorage = new HashMap<>();
-    @Expose private Map<Costume, int[]> magicWardrobeStorage = new HashMap<>();
-    @Expose private Map<Costume, int[]> capeRackStorage = new HashMap<>();
-    @Expose private Map<Costume, int[]> easyTreasureTrailsStorage = new HashMap<>();
-    @Expose private Map<Costume, int[]> mediumTreasureTrailsStorage = new HashMap<>();
-    @Expose private Map<Costume, int[]> hardTreasureTrailsStorage = new HashMap<>();
-    @Expose private Map<Costume, int[]> eliteTreasureTrailsStorage = new HashMap<>();
-    @Expose private Map<Costume, int[]> masterTreasureTrailsStorage = new HashMap<>();
-    @Expose private Map<Costume, int[]> toyBoxStorage = new HashMap<>();
+    @Expose private Map<Costume, Item[]> fancyDressStorage = new HashMap<>();
+    @Expose private Map<Costume, Item[]> armourCaseStorage = new HashMap<>();
+    @Expose private Map<Costume, Item[]> magicWardrobeStorage = new HashMap<>();
+    @Expose private Map<Costume, Item[]> capeRackStorage = new HashMap<>();
+    @Expose private Map<Costume, Item[]> beginnerTreasureTrailsStorage = new HashMap<>();
+    @Expose private Map<Costume, Item[]> easyTreasureTrailsStorage = new HashMap<>();
+    @Expose private Map<Costume, Item[]> mediumTreasureTrailsStorage = new HashMap<>();
+    @Expose private Map<Costume, Item[]> hardTreasureTrailsStorage = new HashMap<>();
+    @Expose private Map<Costume, Item[]> eliteTreasureTrailsStorage = new HashMap<>();
+    @Expose private Map<Costume, Item[]> masterTreasureTrailsStorage = new HashMap<>();
+    @Expose private Map<Costume, Item[]> toyBoxStorage = new HashMap<>();
 
     private Servant servant;
 
@@ -786,43 +788,47 @@ public class House {
         }
     }
 
-    public Map<Costume, int[]> getFancyDressStorage() {
+    public Map<Costume, Item[]> getFancyDressStorage() {
         return fancyDressStorage;
     }
 
-    public Map<Costume, int[]> getArmourCaseStorage() {
+    public Map<Costume, Item[]> getArmourCaseStorage() {
         return armourCaseStorage;
     }
 
-    public Map<Costume, int[]> getMagicWardrobeStorage() {
+    public Map<Costume, Item[]> getMagicWardrobeStorage() {
         return magicWardrobeStorage;
     }
 
-    public Map<Costume, int[]> getCapeRackStorage() {
+    public Map<Costume, Item[]> getCapeRackStorage() {
         return capeRackStorage;
     }
 
-    public Map<Costume, int[]> getEasyTreasureTrailsStorage() {
+    public Map<Costume, Item[]> getBeginnerTreasureTrailsStorage() {
+        return beginnerTreasureTrailsStorage;
+    }
+
+    public Map<Costume, Item[]> getEasyTreasureTrailsStorage() {
         return easyTreasureTrailsStorage;
     }
 
-    public Map<Costume, int[]> getMediumTreasureTrailsStorage() {
+    public Map<Costume, Item[]> getMediumTreasureTrailsStorage() {
         return mediumTreasureTrailsStorage;
     }
 
-    public Map<Costume, int[]> getHardTreasureTrailsStorage() {
+    public Map<Costume, Item[]> getHardTreasureTrailsStorage() {
         return hardTreasureTrailsStorage;
     }
 
-    public Map<Costume, int[]> getEliteTreasureTrailsStorage() {
+    public Map<Costume, Item[]> getEliteTreasureTrailsStorage() {
         return eliteTreasureTrailsStorage;
     }
 
-    public Map<Costume, int[]> getMasterTreasureTrailsStorage() {
+    public Map<Costume, Item[]> getMasterTreasureTrailsStorage() {
         return masterTreasureTrailsStorage;
     }
 
-    public Map<Costume, int[]> getToyBoxStorage() {
+    public Map<Costume, Item[]> getToyBoxStorage() {
         return toyBoxStorage;
     }
 }

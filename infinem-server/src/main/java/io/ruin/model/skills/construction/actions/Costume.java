@@ -1,8 +1,8 @@
 package io.ruin.model.skills.construction.actions;
 
 import io.ruin.cache.Color;
-import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.stat.StatType;
 
@@ -103,9 +103,9 @@ public enum Costume {
     CAPE_OF_LEGENDS(1052),
     OBSIDIAN_CAPE(6568),
     FIRE_CAPE(6570),
-    WILDERNESS_CAPES(new int[][]{
+    WILDERNESS_CAPES(
             multiple(4315,4317,4319,4321,4323,4325,4327,4329,4331,4333,4335,4337,4339,4341,4343,4345,4347,4349,4351,4353,4355,4357,4359,4361,4363,4365,4367,4369,4371,4373,4375,4377,4379,4381,4383,4385,4387,4389,4391,4393,4395,4397,4399,4401,4403,4405,4407,4409,4411,4413)
-    }),
+    ),
     SARADOMIN_CAPE(2412),
     GUTHIX_CAPE(2413),
     ZAMORAK_CAPE(2414),
@@ -508,17 +508,17 @@ public enum Costume {
 
     ;
 
-    public int[][] getPieces() {
+    public Item[][] getPieces() {
         return pieces;
     }
 
-    int[][] pieces;
+    Item[][] pieces;
 
     Costume(int... pieces) { // for simple sets
-        this(Arrays.stream(pieces).mapToObj(Costume::single).toArray(int[][]::new));
+        this(Arrays.stream(pieces).mapToObj(Costume::single).toArray(Item[][]::new));
     }
 
-    Costume(int[]... pieces) {
+    Costume(Item[]... pieces) {
         this.pieces = pieces;
     }
 
@@ -527,30 +527,30 @@ public enum Costume {
     }
 
     Costume(MaxCapeVariants.MaxCapes c) { // max cape
-        pieces = new int[2][MaxCapeVariants.MaxCapes.values().length + 1];
-        pieces[0][0] = 13281;
-        pieces[1][0] = 13342;
+        pieces = new Item[2][MaxCapeVariants.MaxCapes.values().length + 1];
+        pieces[0][0] = new Item(13281);
+        pieces[1][0] = new Item(13342);
         for (int i = 0; i < MaxCapeVariants.MaxCapes.values().length; i++) {
             c = MaxCapeVariants.MaxCapes.values()[i];
-            pieces[0][i + 1] = c.newHoodId;
-            pieces[1][i + 1] = c.newCapeId;
+            pieces[0][i + 1] = new Item(c.newHoodId);
+            pieces[1][i + 1] = new Item(c.newCapeId);
         }
     }
 
-    private static int[] single(int id) {
-        return new int[]{id};
+    private static Item[] single(int id) {
+        return new Item[]{new Item(id)};
     }
 
-    private static int[] multiple(int... id) {
-        return id;
+    private static Item[] multiple(int... id) {
+        return Arrays.stream(id).mapToObj(Item::new).toArray(Item[]::new);
     }
 
     public void sendRequiredItems(Player player) {
         player.sendMessage("You do not have all the items required to store this costume. You will need:");
-        for (int[] piece : pieces) {
+        for (Item[] piece : pieces) {
             StringBuilder sb = new StringBuilder("    ");
             for (int i = 0; i < piece.length; i++) {
-                sb.append(Color.RED.wrap(ItemDef.get(piece[i]).name));
+                sb.append(Color.RED.wrap(piece[i].getDef().name));
                 if (i < piece.length - 1)
                     sb.append(" or ");
             }

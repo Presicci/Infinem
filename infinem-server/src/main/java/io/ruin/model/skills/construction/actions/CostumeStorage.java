@@ -1,80 +1,22 @@
 package io.ruin.model.skills.construction.actions;
 
-import io.ruin.api.utils.StringUtils;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
-import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
+import io.ruin.model.skills.construction.Buildable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import static io.ruin.model.skills.construction.actions.Costume.*;
 
 public enum CostumeStorage {
-    FANCY_DRESS_BOX(3291, new int[]{
-            10630,
-            10631,
-            10722,
-            10632,
-            10633,
-            10634,
-            10635,
-    }, MIME_OUTFIT, ROYAL_FROG_OUTFIT, FROG_MASK, ZOMBIE_OUTFIT, CAMO_OUTFIT, LEDERHOSEN_OUTFIT, SHADE_ROBES),
+    FANCY_DRESS_BOX(3291, MIME_OUTFIT, ROYAL_FROG_OUTFIT, FROG_MASK, ZOMBIE_OUTFIT, CAMO_OUTFIT, LEDERHOSEN_OUTFIT, SHADE_ROBES),
 
-    ARMOUR_CASE(3290, new int[] {
-            10611,
-            10612,
-            13073,
-            11677,
-            11676,
-            11675,
-            10613,
-            10615,
-            10614,
-            10616,
-            10617,
-            10618,
-            10619,
-            10620,
-            10621,
-            10622,
-            10625,
-            10624,
-            10623,
-            10629,
-            10627,
-            10626,
-            10628,
-            10884,
-            10946,
-            11136,
-            11275,
-            12014,
-            13259,
-            13360,
-            13365,
-            13370,
-            13375,
-            13380,
-            13386,
-            13647,
-            19690,
-            20839,
-            21019,
-            21299,
-            19688,
-            10552,
-            10553,
-            10554,
-            10556,
-            10549,
-            10551,
-            10550,
-            10548,
-            22327,
-    },
+    ARMOUR_CASE(3290,
             CASTLE_WARS_ARMOUR,
             VOID_KNIGHT_ARMOUR,
             ELITE_VOID_ARMOUR,
@@ -126,35 +68,7 @@ public enum CostumeStorage {
             PENANCE_HEALER_HAT,
             JUSTICIAR_ARMOUR),
 
-    MAGIC_WARDROBE(3289, new int[] {
-            10602,
-            10603,
-            10604,
-            10605,
-            10606,
-            10607,
-            10608,
-            10609,
-            10610,
-            11851,
-            13580,
-            13628,
-            13604,
-            13592,
-            13616,
-            13668,
-            21062,
-            8960,
-            8961,
-            8962,
-            8963,
-            8964,
-            8965,
-            8966,
-            20596,
-            20440,
-            20709,
-    },
+    MAGIC_WARDROBE(3289,
             BLUE_MYSTIC,
             DARK_MYSTIC,
             LIGHT_MYSTIC,
@@ -183,60 +97,7 @@ public enum CostumeStorage {
             EVIL_CHICKEN_COSTUME,
             PYROMANCER_OUTFIT),
 
-    CAPE_RACK(3292, new int[] {
-            10636,
-            10637,
-            10638,
-            10639,
-            2413,
-            2414,
-            2415,
-            10640,
-            10642,
-            10641,
-            10648,
-            10649,
-            10659,
-            10655,
-            10652,
-            10662,
-            10660,
-            10658,
-            10653,
-            10650,
-            10645,
-            10656,
-            10644,
-            10643,
-            10646,
-            10654,
-            10657,
-            10651,
-            10661,
-            10647,
-            10663,
-            19477,
-            13225,
-            10664,
-            10665,
-            13283,
-            21296,
-            21440,
-            21792,
-            21794,
-            21796,
-            22115,
-            22389,
-            22391,
-            22393,
-            22395,
-            22397,
-            22495,
-            22497,
-            22499,
-            22501,
-            22503,
-    },
+    CAPE_RACK(3292,
             CAPE_OF_LEGENDS,
             OBSIDIAN_CAPE,
             FIRE_CAPE,
@@ -291,64 +152,9 @@ public enum CostumeStorage {
             SINHAZA_SHROUD_5
     ),
 
-    BEGINNER_TREASURE_TRAILS(3293, new int[] {}),
+    BEGINNER_TREASURE_TRAILS(3293),
 
     EASY_TREASURE_TRAILS(3294,
-            new int[]{
-                    10666,
-                    10669,
-                    10672,
-                    10675,
-                    10678,
-                    10681,
-                    10682,
-                    10687,
-                    10688,
-                    10691,
-                    10692,
-                    10693,
-                    10694,
-                    10695,
-                    10696,
-                    10700,
-                    10701,
-                    10702,
-                    10703,
-                    10704,
-                    10739,
-                    10745,
-                    10741,
-                    10743,
-                    10747,
-                    10715,
-                    10716,
-                    10717,
-                    10718,
-                    10719,
-                    10751,
-                    10755,
-                    10753,
-                    11279,
-                    12216,
-                    12206,
-                    12226,
-                    12236,
-                    20185,
-                    20170,
-                    12246,
-                    12248,
-                    12250,
-                    12252,
-                    12376,
-                    12298,
-                    12454,
-                    12456,
-                    20165,
-                    20167,
-                    20206,
-                    20209,
-                    20200
-            },
             BLACK_HERALD_SHIELD_1,
             BLACK_HERALD_SHIELD_2,
             BLACK_HERALD_SHIELD_3,
@@ -405,68 +211,6 @@ public enum CostumeStorage {
     ),
 
     MEDIUM_TREASURE_TRAILS(3295,
-            new int[] {
-                    10759,
-                    10761,
-                    10763,
-                    10765,
-                    10767,
-                    10667,
-                    10670,
-                    10673,
-                    10676,
-                    10679,
-                    10683,
-                    10684,
-                    10697,
-                    10698,
-                    10699,
-                    10769,
-                    10771,
-                    10773,
-                    10710,
-                    10711,
-                    10712,
-                    10713,
-                    10714,
-                    10737,
-                    10749,
-                    10757,
-                    12316,
-                    12348,
-                    10690,
-                    12278,
-                    12288,
-                    12360,
-                    20247,
-                    12300,
-                    12302,
-                    12304,
-                    12306,
-                    12308,
-                    12310,
-                    12312,
-                    12314,
-                    12362,
-                    12429,
-                    20267,
-                    20270,
-                    12254,
-                    12194,
-                    12266,
-                    12320,
-                    20244,
-                    20241,
-                    12378,
-                    12599,
-                    20250,
-                    20252,
-                    20255,
-                    20258,
-                    20261,
-                    20264,
-                    20273,
-            },
             RED_STRAW_BOATER,
             ORANGE_STRAW_BOATER,
             GREEN_STRAW_BOATER,
@@ -529,68 +273,7 @@ public enum CostumeStorage {
             CABBAGE_ROUND_SHIELD
     ),
 
-    HARD_TREASURE_TRAILS_1(3296, new int[] {
-            10668,
-            10671,
-            10674,
-            10677,
-            10680,
-            10685,
-            10686,
-            10689,
-            10797,
-            10799,
-            10801,
-            10803,
-            10805,
-            10807,
-            10775,
-            10777,
-            10779,
-            10781,
-            10783,
-            10705,
-            10706,
-            10707,
-            10708,
-            10709,
-            10720,
-            10785,
-            10789,
-            10787,
-            10793,
-            10795,
-            10791,
-            11278,
-            12328,
-            12332,
-            12324,
-            12326,
-            12322,
-            12517,
-            12515,
-            12471,
-            12481,
-            12461,
-            12509,
-            12501,
-            12493,
-            12519,
-            12521,
-            12523,
-            12525,
-            12380,
-            19913,
-            19916,
-            20147,
-            20150,
-            20153,
-            20156,
-            20159,
-            20162,
-            19919,
-            10166,
-    },
+    HARD_TREASURE_TRAILS(3296,
             RUNE_HERALDIC_KITESHIELD_1,
             RUNE_HERALDIC_KITESHIELD_2,
             RUNE_HERALDIC_KITESHIELD_3,
@@ -649,19 +332,7 @@ public enum CostumeStorage {
             GILDED_RUNE_2H_SWORD,
             GILDED_RUNE_SPEAR,
             GILDED_RUNE_HASTA,
-            NUNCHAKU),
-    HARD_TREASURE_TRAILS_2(487, new int[] {
-            10167,
-            19934,
-            19925,
-            19931,
-            19928,
-            19937,
-            19922,
-            10331,
-            10339,
-            10349,
-    },
+            NUNCHAKU,
             SARADOMIN_DHIDE_BOOTS,
             BANDOS_DHIDE_BOOTS,
             ARMADYL_DHIDE_BOOTS,
@@ -672,45 +343,7 @@ public enum CostumeStorage {
             THIRD_AGE_MAGE_ARMOUR,
             THIRD_AGE_MELEE_ARMOUR),
 
-    ELITE_TREASURE_TRAILS(3297, new int[] {
-            12374,
-            12336,
-            12338,
-            12394,
-            12364,
-            12366,
-            12368,
-            12370,
-            12372,
-            12431,
-            12358,
-            12356,
-            12433,
-            12354,
-            12382,
-            12386,
-            12442,
-            12400,
-            12413,
-            12435,
-            12541,
-            19942,
-            19944,
-            19947,
-            19950,
-            19953,
-            19956,
-            19989,
-            19992,
-            19995,
-            19998,
-            20006,
-            12423,
-            12425,
-            12427,
-            19971,
-            19986,
-    },
+    ELITE_TREASURE_TRAILS(3297,
             DRAGON_CANE,
             BRIEFCASE,
             SAGACIOUS_SPECTACLES,
@@ -750,31 +383,7 @@ public enum CostumeStorage {
             LIGHT_TUXEDO_OUTFIT
     ),
 
-    MASTER_TREASURE_TRAILS(3298, new int[] {
-            20009,
-            20012,
-            20015,
-            20018,
-            20021,
-            20024,
-            20027,
-            20030,
-            20033,
-            20051,
-            20054,
-            20057,
-            20060,
-            20111,
-            20126,
-            20117,
-            20114,
-            20123,
-            20120,
-            20039,
-            20081,
-            20096,
-            20129,
-    },
+    MASTER_TREASURE_TRAILS(3298,
             FANCY_TIARA,
             THIRD_AGE_AXE,
             THIRD_AGE_PICKAXE,
@@ -800,66 +409,7 @@ public enum CostumeStorage {
             ROBES_OF_DARKNESS
     ),
 
-    TOY_BOX_1(3299, new int[] {
-            10735,
-            10736,
-            796,
-            10734,
-            10733,
-            10732,
-            10731,
-            6868,
-            6867,
-            9816,
-            9817,
-            6859,
-            6860,
-            6861,
-            6862,
-            6863,
-            6864,
-            10730,
-            10724,
-            10725,
-            10726,
-            10727,
-            10728,
-            10729,
-            10723,
-            11016,
-            11017,
-            11018,
-            11019,
-            11848,
-            11863,
-            11864,
-            11920,
-            12957,
-            12958,
-            12959,
-            12960,
-            4566,
-            12601,
-            12846,
-            12888,
-            12889,
-            12890,
-            12891,
-            12892,
-            12893,
-            12894,
-            12895,
-            12896,
-            12897,
-            13183,
-            13204,
-            13216,
-            13217,
-            13218,
-            13219,
-            13289,
-            10166,
-    },
+    TOY_BOX(3299,
             BUNNY_EARS,
             SCYTHE,
             WAR_SHIP,
@@ -916,49 +466,7 @@ public enum CostumeStorage {
             LION_TOY,
             SNOW_LEOPARD_TOY,
             AMUR_LEOPARD_TOY,
-            ANTIPANTIES
-    ),
-    TOY_BOX_2(3299, new int[] {
-            10167,
-            13284,
-            13285,
-            13286,
-            13287,
-            13288,
-            13344,
-            13345,
-            13656,
-            13664,
-            13665,
-            13666,
-            13680,
-            13682,
-            19700,
-            20774,
-            20776,
-            20778,
-            20780,
-            20833,
-            20835,
-            20837,
-            21212,
-            21210,
-            21215,
-            21315,
-            21355,
-            21696,
-            21721,
-            21848,
-            21850,
-            21852,
-            21854,
-            21856,
-            21858,
-            21860,
-            22317,
-            22352,
-            22354,
-    },
+            ANTIPANTIES,
             GRAVEDIGGER_HAT,
             GRAVEDIGGER_TOP,
             GRAVEDIGGER_LEGS,
@@ -997,51 +505,56 @@ public enum CostumeStorage {
             PROP_SWORD,
             EGGSHELL_PLATEBODY,
             EGGSHELL_PLATELEGS
-    )
-    ;
+    );
 
-    CostumeStorage(int containerId, int[] display, Costume... costumes) {
-        this.containerId = containerId;
-        this.display = Arrays.stream(display).mapToObj(i -> new Item(i - 1)).toArray(Item[]::new);
+
+    private final int enumId;
+    private Costume[] costumes;
+
+    CostumeStorage(int enumId, Costume... costumes) {
+        this.enumId = enumId;
         this.setCostumes(costumes);
     }
 
-    public void open(Player player, int clueScrollLevel) {
+    public void open(Player player, int clueScrollLevel, Buildable buildable) {
         player.openInterface(InterfaceType.MAIN, 675);
         changeInventoryAccess(player);
-        Map<Costume, int[]> stored = getSets(player);
-
-        //player.getPacketSender().sendItems(-1,-1, 33405, display);
         if (this == BEGINNER_TREASURE_TRAILS || this == EASY_TREASURE_TRAILS || this == MEDIUM_TREASURE_TRAILS
-                || this == HARD_TREASURE_TRAILS_1 || this == ELITE_TREASURE_TRAILS || this == MASTER_TREASURE_TRAILS) {
-            player.getPacketSender().sendClientScript(3532, "iii", containerId, 1, 1);
+                || this == HARD_TREASURE_TRAILS || this == ELITE_TREASURE_TRAILS || this == MASTER_TREASURE_TRAILS) {
+            player.getPacketSender().sendClientScript(3532, "iii", enumId, 1, 1);
         } else {
-            player.getPacketSender().sendClientScript(3532, "iii", containerId, 1, 0);
+            player.getPacketSender().sendClientScript(3532, "iii", enumId, 1, 0);
         }
         player.getPacketSender().sendVarp(262, clueScrollLevel);
-        player.getPacketSender().sendAccessMask(675, 4, 0, 287, 1026);
-        player.set("COSTUME_STORAGE", this);
+        player.getPacketSender().sendAccessMask(675, 4, 0, 5000, 1026);
+        sendItems(player);
+        player.putTemporaryAttribute(AttributeKey.COSTUME_STORAGE, this);
+        player.putTemporaryAttribute(AttributeKey.COSTUME_BUILDABLE, buildable);
     }
 
     private void changeInventoryAccess(Player player) {
         if (player.isVisibleInterface(674)) {
             return;
         }
-
         player.openInterface(InterfaceType.INVENTORY, 674);
         player.getPacketSender().sendClientScript(149, "iiiiiisssss", 44171264, 93, 4, 7, 1, -1, "Store<col=ff9040>", "", "", "", "");
         player.getPacketSender().sendAccessMask(674, 0, 0, 27, 1086);
     }
 
-    int containerId;
-    Item[] display;
-    private Costume[] costumes;
+    public void sendItems(Player player) {
+        List<Item> items = new ArrayList<>();
+        Map<Costume, Item[]> stored = getSets(player);
+        for (Item[] costume : stored.values()) {
+            items.addAll(Arrays.asList(costume));
+        }
+        player.getPacketSender().sendItems(-1,-1, 33405, items.toArray(new Item[0]));
+    }
 
     public Costume getByItem(int id) {
         for (Costume costume : getCostumes()) {
-            for (int[] piece : costume.pieces) {
-                for (int option : piece) {
-                    if (option == id) {
+            for (Item[] piece : costume.pieces) {
+                for (Item option : piece) {
+                    if (option.getId() == id) {
                         return costume;
                     }
                 }
@@ -1050,7 +563,7 @@ public enum CostumeStorage {
         return null;
     }
 
-    public Map<Costume, int[]> getSets(Player player) {
+    public Map<Costume, Item[]> getSets(Player player) {
         switch (this) {
             case FANCY_DRESS_BOX:
                 return player.house.getFancyDressStorage();
@@ -1060,19 +573,19 @@ public enum CostumeStorage {
                 return player.house.getMagicWardrobeStorage();
             case CAPE_RACK:
                 return player.house.getCapeRackStorage();
+            case BEGINNER_TREASURE_TRAILS:
+                return player.house.getBeginnerTreasureTrailsStorage();
             case EASY_TREASURE_TRAILS:
                 return player.house.getEasyTreasureTrailsStorage();
             case MEDIUM_TREASURE_TRAILS:
                 return player.house.getMediumTreasureTrailsStorage();
-            case HARD_TREASURE_TRAILS_1:
-            case HARD_TREASURE_TRAILS_2:
+            case HARD_TREASURE_TRAILS:
                 return player.house.getHardTreasureTrailsStorage();
             case ELITE_TREASURE_TRAILS:
                 return player.house.getEliteTreasureTrailsStorage();
             case MASTER_TREASURE_TRAILS:
                 return player.house.getMasterTreasureTrailsStorage();
-            case TOY_BOX_1:
-            case TOY_BOX_2:
+            case TOY_BOX:
                 return player.house.getToyBoxStorage();
             default:
                 throw new IllegalArgumentException();
@@ -1080,7 +593,7 @@ public enum CostumeStorage {
     }
 
     public int countSpaceUsed(Player player) {
-        Map<Costume, int[]> stored = getSets(player);
+        Map<Costume, Item[]> stored = getSets(player);
         switch (this) {
             case FANCY_DRESS_BOX:
             case ARMOUR_CASE:
@@ -1089,14 +602,13 @@ public enum CostumeStorage {
                 return stored.size();
             case CAPE_RACK:
                 return (int) stored.keySet().stream().filter(costume -> costume.ordinal() >= ATTACK_CAPE.ordinal() && costume.ordinal() <= MUSIC_CAPE.ordinal()).count();
+            case BEGINNER_TREASURE_TRAILS:
             case EASY_TREASURE_TRAILS:
             case MEDIUM_TREASURE_TRAILS:
-            case HARD_TREASURE_TRAILS_1:
-            case HARD_TREASURE_TRAILS_2:
+            case HARD_TREASURE_TRAILS:
             case ELITE_TREASURE_TRAILS:
             case MASTER_TREASURE_TRAILS:
-            case TOY_BOX_1:
-            case TOY_BOX_2:
+            case TOY_BOX:
                 return 0;
         }
     }
