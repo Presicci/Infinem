@@ -173,38 +173,24 @@ public class CostumeRoom {
         }
         Map<Costume, Item[]> sets = type.getSets(player);
         Item[] pieces = sets.get(costume);
+        int pieceIndex = costume.getPieceIndex(item.getId());
         if (pieces == null) {
             pieces = new Item[costume.pieces.length];
-        }
-        boolean added = false;
-        for (int index = 0; index < pieces.length; index++) {
-            if (pieces[index] != null) {
-                if (item.getId() == pieces[index].getId()) {
-                    pieces[index].incrementAmount(1);
-                    player.getInventory().remove(item.getId(), 1);
-                    added = true;
-                    break;
-                }
+            pieces[pieceIndex] = new Item(item.getId(), 1);
+            player.getInventory().remove(item.getId(), 1);
+        } else {
+            if (pieces[pieceIndex] == null) {
+                pieces[pieceIndex] = new Item(item.getId(), 1);
+                player.getInventory().remove(item.getId(), 1);
             } else {
-                Item[] pieceSet = costume.pieces[index];
-                for (Item piece : pieceSet) {
-                    if (item.getId() == piece.getId()) {
-                        if (pieces[index] == null) {
-                            pieces[index] = new Item(item.getId(), 1);
-                            player.getInventory().remove(item.getId(), 1);
-                        } else {
-                            pieces[index].incrementAmount(1);
-                            player.getInventory().remove(item.getId(), 1);
-                        }
-                        added = true;
-                        break;
-                    }
+                if (pieces[pieceIndex].getId() == item.getId()) {
+                    pieces[pieceIndex].incrementAmount(1);
+                    player.getInventory().remove(item.getId(), 1);
+                } else {
+                    player.sendMessage("You have a different item of that type stored already.");
+                    return;
                 }
             }
-        }
-        if (!added) {
-            player.sendMessage("You have a different item of that type stored already.");
-            return;
         }
         type.getSets(player).put(costume, pieces);
         player.sendMessage("You place the costume in the treasure chest.");

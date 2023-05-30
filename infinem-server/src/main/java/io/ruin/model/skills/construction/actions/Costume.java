@@ -706,6 +706,17 @@ public enum Costume {
         return Arrays.stream(id).mapToObj(Item::new).toArray(Item[]::new);
     }
 
+    public int getPieceIndex(int itemId) {
+        for (int index = 0; index < pieces.length; index++) {
+            for (Item piece : pieces[index]) {
+                if (piece.getId() == itemId) {
+                    return index;
+                }
+            }
+        }
+        return -1;
+    }
+
     public void sendRequiredItems(Player player) {
         player.sendMessage("You do not have all the items required to store this costume. You will need:");
         for (Item[] piece : pieces) {
