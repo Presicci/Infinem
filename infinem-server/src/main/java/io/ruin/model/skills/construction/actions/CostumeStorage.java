@@ -20,6 +20,8 @@ public enum CostumeStorage {
             CASTLE_WARS_DECORATIVE_ARMOUR_1,
             CASTLE_WARS_DECORATIVE_ARMOUR_2,
             CASTLE_WARS_DECORATIVE_ARMOUR_3,
+            CASTLE_WARS_MAGE_ARMOUR,
+            CASTLE_WARS_RANGER_ARMOUR,
             VOID_KNIGHT_ARMOUR,
             ELITE_VOID_ARMOUR,
             VOID_MELEE_HELM,
