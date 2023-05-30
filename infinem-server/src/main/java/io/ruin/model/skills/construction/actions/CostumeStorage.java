@@ -151,7 +151,8 @@ public enum CostumeStorage {
             BOUNTY_HUNTER_HAT_4,
             BOUNTY_HUNTER_HAT_5,
             BOUNTY_HUNTER_HAT_6,
-            ANCESTRAL_ROBES
+            ANCESTRAL_ROBES,
+            ANCESTRAL_ROBES_TWISTED
     ),
 
     CAPE_RACK(3292,
