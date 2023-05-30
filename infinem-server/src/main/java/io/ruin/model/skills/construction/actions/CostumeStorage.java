@@ -295,7 +295,8 @@ public enum CostumeStorage {
             WOODEN_SHIELD_G,
             GOLDEN_CHEFS_HAT,
             GOLDEN_APRON,
-            MONK_ROBES_GOLD
+            MONK_ROBES_GOLD,
+            CAPE_OF_SKULLS
     ),
 
     MEDIUM_TREASURE_TRAILS(3295,
