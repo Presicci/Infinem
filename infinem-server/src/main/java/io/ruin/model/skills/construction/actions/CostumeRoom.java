@@ -22,6 +22,8 @@ import io.ruin.model.skills.construction.Hotspot;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class CostumeRoom {
 
@@ -165,8 +167,9 @@ public class CostumeRoom {
             player.sendMessage("Ultimate ironman can only withdraw from complete sets from storage.");
             return;
         }
-        if (!player.getInventory().hasFreeSlots(stored.length)) {
-            player.sendMessage("You'll need at least " + stored.length + " free inventory slots to withdraw that set.");
+        int requiredSpace = (int) Arrays.stream(stored).filter(Objects::nonNull).distinct().count();
+        if (!player.getInventory().hasFreeSlots(requiredSpace)) {
+            player.sendMessage("You'll need at least " + requiredSpace + " free inventory slots to withdraw that set.");
             return;
         }
         int index = 0;
