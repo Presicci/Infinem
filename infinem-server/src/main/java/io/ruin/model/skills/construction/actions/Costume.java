@@ -316,6 +316,7 @@ public enum Costume {
     GOLDEN_APRON(20208),
     MONK_ROBES_GOLD(20199, 20202),
     CAPE_OF_SKULLS(23351),
+    AMULET_OF_POWER_TRIMMED(23354),
 
     //Medium treasure trails
     RED_STRAW_BOATER(7319),
