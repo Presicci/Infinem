@@ -521,7 +521,8 @@ public enum CostumeStorage {
             RUNE_PICKAXE_GILDED,
             RUNE_AXE_GILDED,
             SPADE_GILDED,
-            URIS_HAT
+            URIS_HAT,
+            GIANT_BOOT
     ),
 
     MASTER_TREASURE_TRAILS(3298,
