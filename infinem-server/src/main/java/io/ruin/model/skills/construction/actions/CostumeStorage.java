@@ -515,7 +515,11 @@ public enum CostumeStorage {
             FREMENNIK_KILT,
             ADAMANT_DRAGON_MASK,
             RUNE_DRAGON_MASK,
-            DRAGONHIDE_GILDED
+            DRAGONHIDE_GILDED,
+            RUNE_BOOTS_GILDED,
+            RUNE_SCIMITAR_GILDED,
+            RUNE_PICKAXE_GILDED,
+            RUNE_AXE_GILDED
     ),
 
     MASTER_TREASURE_TRAILS(3298,
