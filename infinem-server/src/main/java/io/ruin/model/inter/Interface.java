@@ -344,4 +344,9 @@ public class Interface {
     public static final int SINGING_BOWL_RECIPE = 640;
 
     public static final int MUSH_TREE = 608;
+
+    /**
+     * Custom
+     */
+    public static final int DROP_VIEWER = 1000;
 }

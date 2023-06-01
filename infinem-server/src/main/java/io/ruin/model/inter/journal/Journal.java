@@ -258,7 +258,7 @@ public enum Journal {
         /*
          * Bestiary
          */
-        BESTIARY.addCategory("Search");
+        /*BESTIARY.addCategory("Search");
         BESTIARY.addEntry(BestiarySearchDrop.INSTANCE);
         BESTIARY.addEntry(BestiarySearchMonster.INSTANCE);
         BESTIARY.addCategory("");
@@ -275,6 +275,7 @@ public enum Journal {
         BESTIARY.addEntry(new BestiarySearchResult(3129)); //K'ril Tsutsaroth
         BESTIARY.addEntry(new BestiarySearchResult(6503)); //Callisto
         BESTIARY.addEntry(new BestiarySearchResult(2265)); //Dagannoth Supreme
+        */
 
         /*
          * Updating
