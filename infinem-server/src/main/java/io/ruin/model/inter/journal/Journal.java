@@ -280,8 +280,8 @@ public enum Journal {
          * Updating
          */
         LoginListener.register(player -> {
-            TOGGLES.entries.forEach(entry -> entry.send(player));   // Sending these on login forces the custom varp based settings to be updated
-            MAIN.send(player);  // First tab displayed
+            //TOGGLES.entries.forEach(entry -> entry.send(player));   // Sending these on login forces the custom varp based settings to be updated
+            //MAIN.send(player);  // First tab displayed
 //            player.journal.send(player);
 //            player.addEvent(event -> {
 //                while(true) {
