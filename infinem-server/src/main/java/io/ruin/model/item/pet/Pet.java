@@ -66,13 +66,6 @@ public enum Pet {
     IKKLE_HYDRA_RED(22750, 8494, 8495, null),
     IKKLE_HYDRA_BLACK(22752, 8495, 8492, null),
     SRARACHA(23495, 2143, null, 3000),
-    ABYYSALSIRE(30047, 15006, 5884, null),
-    CERBERUS(30045, 15007, 3099, null),
-    JALTOKJAD(30044, 15008, 5893, null),
-    Necromancer(30033, 15005, null),
-    Nech(30018, 15002, null),
-    LAVADRAGON(30131, 15017, null),
-    KAAL_KET_JOR(30211, 15022, null, 2000),
 
     /**
      * Skilling pets
@@ -139,9 +132,6 @@ public enum Pet {
     VANGUARD(22380, 8203, 8204, null),
     VASA(22382, 8204, 8205, null),
     VESPINE(22384, 8205, 7520, null),
-    FOUNDER(30016, 15000, null),
-    KRONOS_MINION(30194, 15020, null),
-    SUMMER_PET(30217, 15023, null),
 
     /**
      * Cats
@@ -467,12 +457,12 @@ public enum Pet {
                     );
                     return;
                 }
-                if (pet == CERBERUS) {
+                /*if (pet == CERBERUS) {
                     if (!player.cerberusMetamorphisis) {
                         player.sendMessage("You need to use Cerberus paws on this first before you can use metamorphosis.");
                         return;
                     }
-                }
+                }*/
                 if (pet == ABYSSAL_ORPHAN) {
                     if (!player.abyssalSireMetamorphisis) {
                         player.sendMessage("You need to use a Sires tendral on this first before you can use metamorphosis.");
