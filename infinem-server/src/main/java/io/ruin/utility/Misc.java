@@ -105,4 +105,17 @@ public class Misc {
     public static String getGenderPronoun(Player player) {
         return player.getAppearance().isMale() ? "him" :  "her";
     }
+
+    public static String abbreviateItemQuantity(final long quantity) {
+        if (quantity >= 1000 && quantity < 1_000_000) {
+            return quantity / 1000 + "K";
+        } else if (quantity >= 1_000_000 && quantity <= 9999999999L) {
+            return quantity / 1000000 + "M";
+        } else if (quantity >= 10000000000L && quantity <= 9999999999999L) {
+            return quantity / 1000000000L + "B";
+        } else if (quantity >= 10000000000000L) {
+            return quantity / 10000000000000L + "T";
+        }
+        return String.valueOf(quantity);
+    }
 }
