@@ -27,45 +27,45 @@ public enum Pet {
     /**
      * Boss pets
      */
-    ABYSSAL_ORPHAN(13262, 5884, 15006, null, 1000),
-    BABY_MOLE(12646, 6635, null, 3000),
-    CALLISTO_CUB(13178, 5558, null, 2000),
-    HELLPUPPY(13247, 3099, 15007, null, 3000),
-    KALPHITE_PRINCESS(12647, 6638, 6637, null, 3000),
+    ABYSSAL_ORPHAN(13262, 5884, null),
+    BABY_MOLE(12646, 6635, null, 3000, 600),
+    CALLISTO_CUB(13178, 5558, null, 2000, 400),
+    HELLPUPPY(13247, 3099, null, 3000, 600),
+    KALPHITE_PRINCESS(12647, 6638, 6637, null, 3000, 600),
     KALPHITE_PRINCESS_2(12654, 6637, 6638, null),
-    CHAOS_ELEMENTAL(11995, 2055, null, 300),
-    DAGANNOTH_PRIME(12644, 6629, null, 5000),
-    DAGANNOTH_REX(12645, 6630, null, 5000),
-    DAGGANOTH_SUPREME(12643, 6628, null, 5000),
-    DARK_CORE(12816, 318, 8010, null, 5000),
-    GENERAL_GRAARDOR(12650, 6632, null, 5000),
+    CHAOS_ELEMENTAL(11995, 2055, null, 300, 300),
+    DAGANNOTH_PRIME(12644, 6629, null, 5000, 1500),
+    DAGANNOTH_REX(12645, 6630, null, 5000, 1500),
+    DAGGANOTH_SUPREME(12643, 6628, null, 5000, 1500),
+    DARK_CORE(12816, 318, 8010, null, 5000, 1000),
+    GENERAL_GRAARDOR(12650, 6632, null, 5000, 1000),
     JAL_NIB_REK(21291, 7675, 8009, null),
-    KRIL_TSUTSAROTH(12652, 6634, null, 5000),
-    KRAKEN(12655, 6640, null, 3000),
-    KREEARRA(12649, 6631, null, 5000),
-    MIDNIGHT(21750, 7893, 7892, null, 1000),
+    KRIL_TSUTSAROTH(12652, 6634, null, 5000, 1000),
+    KRAKEN(12655, 6640, null, 3000, 600),
+    KREEARRA(12649, 6631, null, 5000, 1000),
+    MIDNIGHT(21750, 7893, 7892, null, 1000, 600),
     NOON(21748, 7892, 7893, null),
-    SMOKE_DEVIL(12648, 6639, null, 3000),
-    SNAKELING_GREEN(12921, 2130, 2131, null, 4000),
+    SMOKE_DEVIL(12648, 6639, null, 3000, 600),
+    SNAKELING_GREEN(12921, 2130, 2131, null, 4000, 800),
     SNAKELING_RED(12939, 2131, 2132, null),
     SNAKELING_BLUE(12940, 2132, 2130, null),
-    ZILYANA(12651, 6633, null, 5000),
-    PRINCE_BLACK_DRAGON(12653, 6636, null, 3000),
-    SCORPIAS_OFFSPRING(13181, 5561, null, 2016),
-    TZREK_JAD(13225, 5893, 15008, null, 100),
-    VENENATIS_SPIDERLING(13177, 5557, null, 2000),
-    VETION_JR_PURPLE(13179, 5559, 5560, null, 2000),
+    ZILYANA(12651, 6633, null, 5000, 1000),
+    PRINCE_BLACK_DRAGON(12653, 6636, null, 3000, 600),
+    SCORPIAS_OFFSPRING(13181, 5561, null, 2016, 400),
+    TZREK_JAD(13225, 5893, 15008, null, 100, 50),
+    VENENATIS_SPIDERLING(13177, 5557, null, 2000, 400),
+    VETION_JR_PURPLE(13179, 5559, 5560, null, 2000, 400),
     VETION_JR_ORANGE(13180, 5560, 5559, null),
-    SKOTOS(21273, 7671, null, 65),
-    VORKI(21992, 8029, null, 3000),
-    LIL_ZIK(22473, 8337, null, 500),
-    TZREK_ZUK(22319, 8009, 7675, null, 100),
+    SKOTOS(21273, 7671, null, 65, 65),
+    VORKI(21992, 8029, null, 3000, 1500),
+    LIL_ZIK(22473, 8337, null, 500, 250),
+    TZREK_ZUK(22319, 8009, 7675, null, 100, 50),
     CORPOREAL_CRITTER(22318, 8010, 318, null),
-    IKKLE_HYDRA_GREEN(22746, 8492, 8493, null, 3000),
+    IKKLE_HYDRA_GREEN(22746, 8492, 8493, null, 3000, 600),
     IKKLE_HYDRA_BLUE(22748, 8493, 8494, null),
     IKKLE_HYDRA_RED(22750, 8494, 8495, null),
     IKKLE_HYDRA_BLACK(22752, 8495, 8492, null),
-    SRARACHA(23495, 2143, null, 3000),
+    SRARACHA(23495, 2143, null, 3000, 600),
 
     /**
      * Skilling pets
@@ -189,24 +189,31 @@ public enum Pet {
 
     public final int dropAverage; //1 out of X
 
+    public final int dropThreshold;
+
     Pet(int itemId, int npcId, PetVariants variant) {
-        this(itemId, npcId, -1, variant, 0);
+        this(itemId, npcId, -1, variant, 0, -1);
     }
 
     Pet(int itemId, int npcId, int metaId, PetVariants variant) {
-        this(itemId, npcId, metaId, variant, 0);
+        this(itemId, npcId, metaId, variant, 0, -1);
     }
 
     Pet(int itemId, int npcId, PetVariants variant, int dropAverage) {
-        this(itemId, npcId, -1, variant, dropAverage);
+        this(itemId, npcId, -1, variant, dropAverage, -1);
     }
 
-    Pet(int itemId, int npcId, int metaId, PetVariants variant, int dropAverage) {
+    Pet(int itemId, int npcId, PetVariants variant, int dropAverage, int dropThreshold) {
+        this(itemId, npcId, -1, variant, dropAverage, dropThreshold);
+    }
+
+    Pet(int itemId, int npcId, int metaId, PetVariants variant, int dropAverage, int dropThreshold) {
         this.itemId = itemId;
         this.npcId = npcId;
         this.metaId = metaId;
         this.variant = variant;
         this.dropAverage = dropAverage;
+        this.dropThreshold = dropThreshold;
         this.roamId = findRoamId();
     }
 
