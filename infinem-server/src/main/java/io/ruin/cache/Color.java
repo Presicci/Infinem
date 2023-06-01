@@ -8,6 +8,7 @@ public enum Color {
     RED("FF0000"),
     YELLOW("f4d03f"),
     GREEN("27ae60"),
+    BLACK("000000"),
 
     ORANGE("FFA500"),
     ORANGE_RED("FF4500"),
