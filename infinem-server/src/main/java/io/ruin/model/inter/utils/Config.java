@@ -1084,6 +1084,18 @@ public class Config {
         }
     }
 
+    public int toggleBit(Player player, int bit) {
+        int value = get(player);
+        if ((value & bit) == bit) {
+            value = value & ~bit;
+            set(player, value);
+        } else {
+            value = value | bit;
+            set(player, value);
+        }
+        return value;
+    }
+
     public int increment(Player player, int amount) {
         int newValue = get(player) + amount;
         set(player, newValue);
