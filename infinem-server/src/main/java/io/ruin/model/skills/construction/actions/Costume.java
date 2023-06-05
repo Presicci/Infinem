@@ -40,7 +40,7 @@ public enum Costume {
     TRIBAL_MASK_COMBAT(6339),
     WHITE_KNIGHT_ARMOUR(single(6623), single(6617), multiple(6625, 6627), single(6629), single(6619), single(6633)),
     INITIATE_ARMOUR(5574, 5575, 5576),
-    PROSELYTE_ARMOUR(single(9672), single(9674), multiple(9676, 9778)),
+    PROSELYTE_ARMOUR(single(9672), single(9674), multiple(9676, 9678)),
     MOURNER_GEAR(1506, 6065, 6067, 6068, 6069, 6070),
     GRAAHK_GEAR(10051, 10049, 10047),
     LARUPIA_GEAR(10045, 10043, 10041),
