@@ -272,6 +272,7 @@ public abstract class NPCCombat extends Combat {
                     npc.getDef().killCounter.apply(killer.player).increment(killer.player);
                 if(info.pet != null) {
                     int dropAverage = info.pet.dropAverage;
+                    int threshold = info.pet.dropThreshold; // TODO Threshold handling
                     if (npc.getId() == 6619) {  // Manual override for chaos fanatic sharing boss pet w/ chaos ele
                         dropAverage = 1000;
                     }
@@ -322,7 +323,7 @@ public abstract class NPCCombat extends Combat {
         return allowRespawn;
     }
 
-    private final HashMap<String, Item[][]> groupedDrops = new HashMap<String, Item[][]>() {{
+    public static final HashMap<String, Item[][]> groupedDrops = new HashMap<String, Item[][]>() {{
         put("alchemical hydra", new Item[][] {
                 { new Item(1401), new Item(1403) }, // Mystic fire and water staff
                 { new Item(1079), new Item(1127) }, // Rune platelegs and platebody
@@ -416,18 +417,15 @@ public abstract class NPCCombat extends Combat {
      * Drops the next part that the player needs to make the brimstone ring.
      */
     private int generateBrimstoneRingPart(Player player) {
-        if (player.findItem(22973) != null) {   // Hydra's Eye
-            if (player.findItem(22971) != null) {   // Hydra's Fang
-                if (player.findItem(22969) != null) {   // Hydra's Heart
-                    return brimstoneRingParts[Random.get(0, 2)];   // Player has all parts, so drop the first again
-                } else {
-                    return 22969;   // Player has first 2 parts, drop last
-                }
-            } else {
-                return 22971;   // Player has first part, drop second
-            }
+        int eyes = player.getItemAmount(22973);
+        int fangs = player.getItemAmount(22971);
+        int hearts = player.getItemAmount(22969);
+        if (fangs < eyes && fangs < hearts) {
+            return 22971;
+        } else if (hearts < eyes && hearts < fangs) {
+            return 22969;
         } else {
-            return 22973;   // Player has no parts, drop first
+            return 22973;
         }
     }
 

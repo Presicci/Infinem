@@ -1810,6 +1810,21 @@ public class Player extends PlayerAttributes {
         }
     }
 
+    /**
+     * Finds the amount of an item in all containers connected to the player.
+     */
+    public int getItemAmount(int itemId) {
+        int count = 0;
+        count += getInventory().getAmount(itemId);
+        count += getEquipment().getAmount(itemId);
+        count += getBank().getAmount(itemId);
+        count += getLootingBag().getAmount(itemId);
+        count += getSeedVault().getAmount(itemId);
+        count += getDeathStorage().getAmount(itemId);
+        count += getPrivateRaidStorage().getAmount(itemId);
+        return count;
+    }
+
     private static final String[] PREFIX = { "Bal", "Bar", "Dal", "Dar", "Den", "Dok", "Jar", "Jik", "Lar", "Rak", "Ral", "Ril", "Sig", "Tal", "Thor", "Ton" };
     private static final String[] SUFFIX = { "dar", "dor", "dur", "kal", "kar", "kir", "kur", "lah", "lak", "lim", "lor", "rak", "tin", "ton", "tor", "vald" };
 
