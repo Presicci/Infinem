@@ -11,7 +11,6 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.handlers.TabJournal;
-import io.ruin.model.inter.journal.bestiary.*;
 import io.ruin.model.inter.journal.main.*;
 import io.ruin.model.inter.journal.presets.PresetCustom;
 import io.ruin.model.inter.journal.presets.main.Hybrid;
