@@ -1,6 +1,7 @@
 package io.ruin.model.content.waystones;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Option;
@@ -64,5 +65,12 @@ public class WaystoneNetwork {
         for (Waystone waystone : Waystone.values()) {
             ObjectAction.register(waystone.getObjectId(), waystone.getObjectPosition(), 1, (player, obj) -> selectLocation(player, obj, waystone));
         }
+        // Start the player with some waystones
+        LoginListener.register(player -> {
+            player.getUnlockedWaystones().add(Waystone.LUMBRIDGE);
+            player.getUnlockedWaystones().add(Waystone.VARROCK);
+            player.getUnlockedWaystones().add(Waystone.FALADOR);
+            player.getUnlockedWaystones().add(Waystone.ARDOUGNE);
+        });
     }
 }
