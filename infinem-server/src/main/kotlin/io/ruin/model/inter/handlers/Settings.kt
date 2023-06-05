@@ -82,12 +82,7 @@ object Settings {
                                 }
                                 5 -> Config.HIDE_PRIVATE_CHAT.toggle(p)
                                 9 -> {
-                                    val config = Config.COLLECTION_LOG_SETTINGS[p];
-                                    if (config and 1 == 1) {
-                                        Config.COLLECTION_LOG_SETTINGS[p] = config and 1.inv();
-                                    } else {
-                                        Config.COLLECTION_LOG_SETTINGS[p] = config or 1;
-                                    }
+                                    Config.COLLECTION_LOG_SETTINGS.toggleBit(p, 1)
                                 }
                                 19 -> {
                                     //Config.CHAT_COLOR[p] = 87;
@@ -145,14 +140,7 @@ object Settings {
                             when (slot) {
                                 8 -> Config.DATA_ORBS.toggle(p)
                                 11 -> Config.STORE_ORB.toggle(p)
-                                13 -> {
-                                    val config = Config.COLLECTION_LOG_SETTINGS[p];
-                                    if (config and 2 == 2) {
-                                        Config.COLLECTION_LOG_SETTINGS[p] = config and 2.inv();
-                                    } else {
-                                        Config.COLLECTION_LOG_SETTINGS[p] = config or 2;
-                                    }
-                                }
+                                13 -> Config.COLLECTION_LOG_SETTINGS.toggleBit(p, 2)
                                 16 -> Config.REMAINING_XP_TOOLTIP.toggle(p)
                                 18 -> Config.PRAYER_TOOLTIPS.toggle(p)
                                 19 -> Config.SPECIAL_ATTACK_TOOLTIPS.toggle(p)

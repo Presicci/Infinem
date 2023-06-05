@@ -33,7 +33,7 @@ public class PlayerFile {
             Config.save(player);
             String json;
             try {
-                json = JsonUtils.GSON_EXPOSE.toJson(player);
+                json = JsonUtils.GSON_EXPOSE_PRETTY.toJson(player);
             } catch(Exception e) {
                 Server.logError("", e);
                 return;
