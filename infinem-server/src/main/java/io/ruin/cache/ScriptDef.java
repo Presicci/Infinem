@@ -63,6 +63,7 @@ public class ScriptDef {
     public int[] intArgs;
 
     private void decode(byte[] data) {
+        if (id == 6775) return; // No idea how to read this one
         InBuffer buffer = new InBuffer(data);
         buffer.position(data.length - 2);
         int switchLength = buffer.readUnsignedShort();
