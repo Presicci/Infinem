@@ -180,11 +180,11 @@ public class VoteMysteryBox {
     static {
         ItemAction.registerInventory(6829, "open", VoteMysteryBox::open);
 
-        InterfaceHandler.register(VIEW_REWARDS_WIDGET, h -> {
+       /* InterfaceHandler.register(VIEW_REWARDS_WIDGET, h -> {
             h.actions[96] = (SimpleAction) VoteMysteryBox::openRewards;
             h.actions[100] = (SimpleAction) SuperMysteryBox::openRewards;
             h.actions[412] = (SimpleAction) SummerMysteryBox::openRewards;
-        });
+        });*/
     }
 
     static void updateRewards(Player player, LootTable rewardsTable) {

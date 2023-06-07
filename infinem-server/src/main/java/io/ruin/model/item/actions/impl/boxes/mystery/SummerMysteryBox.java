@@ -190,6 +190,6 @@ public class SummerMysteryBox {
     }
 
     static {
-        ItemAction.registerInventory(SUMMER_MYSTERY_BOX, "open", SummerMysteryBox::open);
+        //ItemAction.registerInventory(SUMMER_MYSTERY_BOX, "open", SummerMysteryBox::open);
     }
 }
