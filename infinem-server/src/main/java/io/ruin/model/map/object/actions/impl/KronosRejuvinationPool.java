@@ -11,7 +11,7 @@ import io.ruin.model.map.object.actions.ObjectAction;
 public class KronosRejuvinationPool {
 
     static {
-        ObjectAction.register(50004, "Drink", ((player, obj) -> heal(player)));
+        //ObjectAction.register(50004, "Drink", ((player, obj) -> heal(player)));
     }
 
     private static void heal(Player player) {
