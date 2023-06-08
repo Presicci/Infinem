@@ -227,11 +227,13 @@ public class Interface {
 
     public static final int DUEL_ARENA_RULES = 482;
 
-    public static final int DUEL_ARENA_STAKE = 704;
+    public static final int DUEL_ARENA_STAKE = 1001;
 
-    public static final int DUEL_ARENA_CONFIRM = 705;
+    public static final int DUEL_ARENA_CONFIRM = 1002;
 
-    public static final int DUEL_ARENA_REWARD = 707;
+    public static final int DUEL_ARENA_STAKE_INVENTORY = 1004;
+
+    public static final int DUEL_ARENA_REWARD = 1004;
 
     public static final int PET_INSURANCE = 148;
 

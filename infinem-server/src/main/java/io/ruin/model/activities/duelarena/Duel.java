@@ -171,7 +171,7 @@ public class Duel extends ItemContainer {
 
         /* display and update duel state */
         player.openInterface(InterfaceType.MAIN, Interface.DUEL_ARENA_RULES);
-        player.openInterface(InterfaceType.INVENTORY, 706);
+        player.openInterface(InterfaceType.INVENTORY, Interface.DUEL_ARENA_STAKE_INVENTORY);
         updateState();
     }
 
@@ -385,14 +385,14 @@ public class Duel extends ItemContainer {
         accepted = false;
         targetDuel.accepted = false;
 
-        player.openInterface(InterfaceType.INVENTORY, 706);
+        player.openInterface(InterfaceType.INVENTORY, Interface.DUEL_ARENA_STAKE_INVENTORY);
         player.openInterface(InterfaceType.MAIN, Interface.DUEL_ARENA_STAKE);
 
         player.getPacketSender().sendString(Interface.DUEL_ARENA_STAKE, 21, targetDuel.player.getName() + "'s stake:");
 
         player.getPacketSender().sendClientScript(917, "ii", -1, -1);
         player.getPacketSender().sendClientScript(149, "IviiiIsssss", 46268416, 93, 4, 7, 0, -1, "Stake 1", "Stake 5", "Stake 10", "Stake All", "Stake X");
-        player.getPacketSender().sendAccessMask(706, 0, 0, 27, 1086);
+        player.getPacketSender().sendAccessMask(Interface.DUEL_ARENA_STAKE_INVENTORY, 0, 0, 27, 1086);
 
         player.getPacketSender().sendClientScript(149, "IviiiIsssss", Interface.DUEL_ARENA_STAKE << 16 | 18, 134, 4, 7, 0, Interface.DUEL_ARENA_STAKE << 16 | 19, "Remove 1", "Remove 5", "Remove 10", "Remove All", "Remove X");
         player.getPacketSender().sendAccessMask(Interface.DUEL_ARENA_STAKE, 18, 0, 27, 1086);
@@ -935,7 +935,7 @@ public class Duel extends ItemContainer {
             h.actions[80] = (SimpleAction) p -> p.getDuel().close();
         });
 
-        InterfaceHandler.register(706, h -> h.actions[0] = (DefaultAction) (p, option, slot, itemId) -> {
+        InterfaceHandler.register(Interface.DUEL_ARENA_STAKE_INVENTORY, h -> h.actions[0] = (DefaultAction) (p, option, slot, itemId) -> {
             Item item = p.getInventory().get(slot, itemId);
             if(item == null)
                 return;
