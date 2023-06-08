@@ -351,4 +351,10 @@ public class Interface {
      * Custom
      */
     public static final int DROP_VIEWER = 1000;
+
+    public static final int TRADING_POST_VIEW = 1005;
+
+    public static final int TRADING_POST_MY_OFFERS = 1006;
+
+    public static final int TRADING_POST_INVENTORY = 1007;
 }

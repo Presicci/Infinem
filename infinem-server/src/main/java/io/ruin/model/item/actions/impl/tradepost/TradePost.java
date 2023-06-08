@@ -7,6 +7,7 @@ import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
+import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceAction;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -34,10 +35,6 @@ public class TradePost {
     private static final int MAX_MY_OFFERS = 6;
     private static final int MAX_VIEW_OFFERS = 50;
 
-    private static final int VIEW_OFFERS_WIDGET = 710;
-    private static final int MY_OFFERS_WIDGET = 711;
-    private static final int MY_OFFERS_INVENTORY_WIDGET = 712;
-
     private Player player;
     private String searchText;
     private TradePostSort sort = TradePostSort.AGE_ASCENDING;
@@ -54,13 +51,13 @@ public class TradePost {
     }
 
     public void openViewOffers() {
-        player.openInterface(InterfaceType.MAIN, VIEW_OFFERS_WIDGET);
+        player.openInterface(InterfaceType.MAIN, Interface.TRADING_POST_VIEW);
         player.closeInterface(InterfaceType.INVENTORY);
         resetSearch();
     }
 
     public void openMyOffers() {
-        player.openInterface(InterfaceType.MAIN, MY_OFFERS_WIDGET);
+        player.openInterface(InterfaceType.MAIN, Interface.TRADING_POST_MY_OFFERS);
         changeInventoryAccess();
         updateMyOffers();
     }
@@ -137,10 +134,10 @@ public class TradePost {
     }
 
     private void changeInventoryAccess() {
-        player.openInterface(InterfaceType.INVENTORY, MY_OFFERS_INVENTORY_WIDGET);
-        player.getPacketSender().sendClientScript(149, "IviiiIsssss", MY_OFFERS_INVENTORY_WIDGET << 16, 93, 4, 7, 0, -1,
+        player.openInterface(InterfaceType.INVENTORY, Interface.TRADING_POST_INVENTORY);
+        player.getPacketSender().sendClientScript(149, "IviiiIsssss", Interface.TRADING_POST_INVENTORY << 16, 93, 4, 7, 0, -1,
                 "Select", "", "", "", "");
-        player.getPacketSender().sendAccessMask(MY_OFFERS_INVENTORY_WIDGET, 0, 0, 27, 1086);
+        player.getPacketSender().sendAccessMask(Interface.TRADING_POST_INVENTORY, 0, 0, 27, 1086);
     }
 
     private void updateMyOffers() {
@@ -164,23 +161,23 @@ public class TradePost {
 
         player.getPacketSender().sendClientScript(
                 149, "IviiiIsssss",
-                MY_OFFERS_WIDGET << 16 | containerWidgetId, itemContainerId,
+                Interface.TRADING_POST_MY_OFFERS << 16 | containerWidgetId, itemContainerId,
                 4, 7, 1, -1, "", "", "", "", ""
         );
         player.getPacketSender().sendItems(
-                MY_OFFERS_WIDGET,
+                Interface.TRADING_POST_MY_OFFERS,
                 containerWidgetId,
                 itemContainerId,
                 offer == null ? null : offer.getItem()
         );
         player.getPacketSender().sendString(
-                MY_OFFERS_WIDGET,
+                Interface.TRADING_POST_MY_OFFERS,
                 titleWidgetId, offer == null ? "Empty Slot" : offer.getItem().getDef().name
         );
-        player.getPacketSender().sendString(MY_OFFERS_WIDGET, priceWidgetId, price);
-        player.getPacketSender().sendString(MY_OFFERS_WIDGET, totalPriceWidgetId, totalPrice);
-        player.getPacketSender().sendClientScript(69, "ii", offer != null ? 0 : 1, MY_OFFERS_WIDGET << 16 | adjustButtonWidgetId);
-        player.getPacketSender().sendClientScript(69, "ii", offer != null ? 0 : 1, MY_OFFERS_WIDGET << 16 | resetButtonWidgetId);
+        player.getPacketSender().sendString(Interface.TRADING_POST_MY_OFFERS, priceWidgetId, price);
+        player.getPacketSender().sendString(Interface.TRADING_POST_MY_OFFERS, totalPriceWidgetId, totalPrice);
+        player.getPacketSender().sendClientScript(69, "ii", offer != null ? 0 : 1, Interface.TRADING_POST_MY_OFFERS << 16 | adjustButtonWidgetId);
+        player.getPacketSender().sendClientScript(69, "ii", offer != null ? 0 : 1, Interface.TRADING_POST_MY_OFFERS << 16 | resetButtonWidgetId);
     }
 
     private List<TradePostOffer> findViewOffers() {
@@ -246,7 +243,7 @@ public class TradePost {
             search = search.substring(0, 18) + "...";
         }
 
-        player.getPacketSender().sendString(VIEW_OFFERS_WIDGET, 32, search);
+        player.getPacketSender().sendString(Interface.TRADING_POST_VIEW, 32, search);
     }
 
     private void buy(int index) {
@@ -373,14 +370,14 @@ public class TradePost {
         int scrollContainerWidgetId = 43;
         player.getPacketSender().sendClientScript(
                 30, "ii",
-                VIEW_OFFERS_WIDGET << 16 | scrollBarWidgetId,
-                VIEW_OFFERS_WIDGET << 16 | scrollContainerWidgetId
+                Interface.TRADING_POST_VIEW << 16 | scrollBarWidgetId,
+                Interface.TRADING_POST_VIEW << 16 | scrollContainerWidgetId
         );
 
     }
 
     private void hideViewOffer(int index, boolean hidden) {
-        player.getPacketSender().sendClientScript(69, "ii", hidden ? 1 : 0, VIEW_OFFERS_WIDGET << 16 | (44 + (9 * index)));
+        player.getPacketSender().sendClientScript(69, "ii", hidden ? 1 : 0, Interface.TRADING_POST_VIEW << 16 | (44 + (9 * index)));
     }
 
     private void updateViewOffer(int index, TradePostOffer offer) {
@@ -397,14 +394,14 @@ public class TradePost {
 
         player.getPacketSender().sendClientScript(
                 149, "IviiiIsssss",
-                VIEW_OFFERS_WIDGET << 16 | containerWidgetId, itemContainerId,
+                Interface.TRADING_POST_VIEW << 16 | containerWidgetId, itemContainerId,
                 4, 7, 1, -1, "", "", "", "", ""
         );
-        player.getPacketSender().sendItems(VIEW_OFFERS_WIDGET, containerWidgetId, itemContainerId, offer.getItem());
-        player.getPacketSender().sendString(VIEW_OFFERS_WIDGET, priceWidgetId, price);
-        player.getPacketSender().sendString(VIEW_OFFERS_WIDGET, totalPriceWidgetId, totalPrice);
-        player.getPacketSender().sendString(VIEW_OFFERS_WIDGET, usernameWidgetId, offer.getUsername());
-        player.getPacketSender().sendString(VIEW_OFFERS_WIDGET, ageWidgetId, formatAge(offer.getTimestamp()));
+        player.getPacketSender().sendItems(Interface.TRADING_POST_VIEW, containerWidgetId, itemContainerId, offer.getItem());
+        player.getPacketSender().sendString(Interface.TRADING_POST_VIEW, priceWidgetId, price);
+        player.getPacketSender().sendString(Interface.TRADING_POST_VIEW, totalPriceWidgetId, totalPrice);
+        player.getPacketSender().sendString(Interface.TRADING_POST_VIEW, usernameWidgetId, offer.getUsername());
+        player.getPacketSender().sendString(Interface.TRADING_POST_VIEW, ageWidgetId, formatAge(offer.getTimestamp()));
     }
 
     private static String formatPrice(long price) {
@@ -459,7 +456,7 @@ public class TradePost {
     }
 
     static {
-        InterfaceHandler.register(MY_OFFERS_INVENTORY_WIDGET, handler -> {
+        InterfaceHandler.register(Interface.TRADING_POST_INVENTORY, handler -> {
             handler.actions[0] = new InterfaceAction() {
                 public void handleClick(Player player, int option, int slot, int itemId) {
                     Item item = player.getInventory().get(slot);
@@ -472,7 +469,7 @@ public class TradePost {
             };
         });
 
-        InterfaceHandler.register(MY_OFFERS_WIDGET, handler -> {
+        InterfaceHandler.register(Interface.TRADING_POST_MY_OFFERS, handler -> {
             handler.actions[19] = (SimpleAction) player -> {
                 player.getTradePost().openViewOffers();
             };
@@ -487,7 +484,7 @@ public class TradePost {
             }
         });
 
-        InterfaceHandler.register(VIEW_OFFERS_WIDGET, handler -> {
+        InterfaceHandler.register(Interface.TRADING_POST_VIEW, handler -> {
             handler.actions[42] = (SimpleAction) player -> {
                 player.getTradePost().openMyOffers();
             };
