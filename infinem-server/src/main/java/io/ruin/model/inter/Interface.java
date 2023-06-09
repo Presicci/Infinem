@@ -231,7 +231,7 @@ public class Interface {
 
     public static final int DUEL_ARENA_CONFIRM = 1002;
 
-    public static final int DUEL_ARENA_STAKE_INVENTORY = 1004;
+    public static final int DUEL_ARENA_STAKE_INVENTORY = 1003;
 
     public static final int DUEL_ARENA_REWARD = 1004;
 
