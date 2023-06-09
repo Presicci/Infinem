@@ -64,7 +64,7 @@ public class TradePost {
 
     private void promptCreateOffer(int itemId) {
         if (tradePostOffers.size() > 5) {
-            player.sendMessage("You cannot create more offers.");
+            player.sendMessage("You cannot create more sell offers.");
             return;
         }
 
@@ -77,7 +77,7 @@ public class TradePost {
         final int unnotedId = !itemDef.isNote() ? itemId : itemDef.fromNote().id;
 
         if (tradePostOffers.stream().anyMatch(offer -> offer.getItem().getId() == unnotedId)) {
-            player.sendMessage("You already have offer for this item.");
+            player.sendMessage("You are already selling this item.");
             return;
         }
 
