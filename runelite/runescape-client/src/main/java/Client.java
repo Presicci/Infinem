@@ -5452,8 +5452,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthTokens {
 				}
 
 				if (ServerPacket.field2782 == var1.serverPacket) {
-					var17 = var3.readInt();
-					var5 = var3.readUnsignedShort();
+					var17 = var3.readInt();	// Interface hash
+					var5 = var3.readUnsignedShort();	// Container ID
 					System.out.println("SEND ITEM " + var17 + "("+(var17 >> 16)+":"+(var17 & 0xFFFF) + "), " + var5);
 					if (var17 < -70000) {
 						var5 += 32768;
@@ -5466,7 +5466,10 @@ public final class Client extends GameEngine implements Usernamed, OAuthTokens {
 					}
 
 					if (var18 != null) {
-						System.out.println(var18.id + ", " + var18.parentId);
+						if (var18.itemIds == null) {
+							var18.itemIds = new int[28];
+							var18.itemQuantities = new int[28];
+						}
 						for (var19 = 0; var19 < var18.itemIds.length; ++var19) {
 							var18.itemIds[var19] = 0;
 							var18.itemQuantities[var19] = 0;
@@ -5474,15 +5477,15 @@ public final class Client extends GameEngine implements Usernamed, OAuthTokens {
 					}
 
 					UserComparator4.clearItemContainer(var5);
-					var19 = var3.readUnsignedShort();
+					var19 = var3.readUnsignedShort();	// Items length
 
 					for (var39 = 0; var39 < var19; ++var39) {
-						var40 = var3.readUnsignedByteC();
+						var40 = var3.readUnsignedByteC();	// Item quantity
 						if (var40 == 255) {
 							var40 = var3.readLEInt();
 						}
 
-						var41 = var3.readShortA();
+						var41 = var3.readShortA();	// Item ID
 						if (var18 != null && var39 < var18.itemIds.length) {
 							System.out.println("ITEM: " + var41 + "x" + var40);
 							var18.itemIds[var39] = var41;
