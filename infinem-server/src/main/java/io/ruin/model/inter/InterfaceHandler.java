@@ -2,6 +2,7 @@ package io.ruin.model.inter;
 
 import io.ruin.cache.InterfaceDef;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.actions.SimpleAction;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
@@ -33,6 +34,22 @@ public class InterfaceHandler {
         InterfaceHandler handler = new InterfaceHandler(interfaceId);
         consumer.accept(handler);
         HANDLERS[interfaceId] = handler;
+    }
+
+    public void action(int childID, InterfaceAction action) {
+        actions[childID] = action;
+    }
+
+    public void action(WidgetInfo widgetInfo, InterfaceAction action) {
+        action(widgetInfo.getChildId(), action);
+    }
+
+    public void simpleAction(int childID, SimpleAction action) {
+        action(childID, action);
+    }
+
+    public void simpleAction(WidgetInfo widgetInfo, SimpleAction action) {
+        simpleAction(widgetInfo.getChildId(), action);
     }
 
     public static InterfaceAction getAction(Player player, int interfaceHash) {
