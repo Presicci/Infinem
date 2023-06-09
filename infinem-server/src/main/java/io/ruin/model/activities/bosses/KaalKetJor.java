@@ -174,8 +174,8 @@ public class KaalKetJor extends NPCCombat {
     }
 
     static {
-        NPCDef.get(15021).ignoreOccupiedTiles = true;
-        NPCDef.get(15024).ignoreOccupiedTiles = true;
+        //NPCDef.get(15021).ignoreOccupiedTiles = true;
+        //NPCDef.get(15024).ignoreOccupiedTiles = true;
     }
 
 }
