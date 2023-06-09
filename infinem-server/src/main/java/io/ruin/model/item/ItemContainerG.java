@@ -337,6 +337,18 @@ public abstract class ItemContainerG<I extends Item> {
     /**
      * Misc
      */
+    public ArrayList<I> collectItemsWithoutAttributes(int... ids) {
+        ArrayList<I> list = new ArrayList<>(ids.length);
+        for(I item : items) {
+            if(item == null)
+                continue;
+            for(int id : ids) {
+                if(item.getId() == id && item.getAttributeHash() == 0)
+                    list.add(item);
+            }
+        }
+        return list.isEmpty() ? null : list;
+    }
 
     public ArrayList<I> collectItems(int... ids) {
         ArrayList<I> list = new ArrayList<>(ids.length);
@@ -586,6 +598,13 @@ public abstract class ItemContainerG<I extends Item> {
                 return true;
         }
         return false;
+    }
+
+    public int removeAll(I... items) {
+        int removed = 0;
+        for (Item item: items)
+            removed += remove(item);
+        return removed;
     }
 
     public int removeAll(boolean acceptNoted, I... items) {
