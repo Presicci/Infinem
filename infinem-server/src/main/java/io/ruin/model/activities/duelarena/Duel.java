@@ -391,7 +391,7 @@ public class Duel extends ItemContainer {
         player.getPacketSender().sendString(Interface.DUEL_ARENA_STAKE, 21, targetDuel.player.getName() + "'s stake:");
 
         player.getPacketSender().sendClientScript(917, "ii", -1, -1);
-        player.getPacketSender().sendClientScript(149, "IviiiIsssss", 46268416, 93, 4, 7, 0, -1, "Stake 1", "Stake 5", "Stake 10", "Stake All", "Stake X");
+        player.getPacketSender().sendClientScript(149, "IviiiIsssss", Interface.DUEL_ARENA_STAKE_INVENTORY << 16, 93, 4, 7, 0, -1, "Stake 1", "Stake 5", "Stake 10", "Stake All", "Stake X");
         player.getPacketSender().sendAccessMask(Interface.DUEL_ARENA_STAKE_INVENTORY, 0, 0, 27, 1086);
 
         player.getPacketSender().sendClientScript(149, "IviiiIsssss", Interface.DUEL_ARENA_STAKE << 16 | 18, 134, 4, 7, 0, Interface.DUEL_ARENA_STAKE << 16 | 19, "Remove 1", "Remove 5", "Remove 10", "Remove All", "Remove X");
