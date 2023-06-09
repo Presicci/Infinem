@@ -65,7 +65,7 @@ public class PrayerAltar {
         /**
          * Custom Edgeville altar
          */
-        final int[] ALTARS = new int[] { 18258, 31858, 33524, 50001};
+        final int[] ALTARS = new int[] { 18258, 31858, 33524 };
         for(int altar : ALTARS){
             ObjectAction.register(altar, actions -> {
                 actions[1] = (player, obj) -> pray(player);
@@ -104,13 +104,13 @@ public class PrayerAltar {
                 }
                 bonesOnAltar(player, boneItem, bone);
             });
-            ItemObjectAction.register(bone.id, 50001, (player, boneItem, obj) -> {
+            /*ItemObjectAction.register(bone.id, 50001, (player, boneItem, obj) -> {
                 if (player.getInventory().hasMultiple(boneItem.getId())) {
                     SkillDialogue.make(player, item);
                     return;
                 }
                 bonesOnAltar(player, boneItem, bone);
-            });
+            });*/
         }
     }
 
