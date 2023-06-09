@@ -81,25 +81,33 @@ public class TradePost {
             return;
         }
 
-        player.integerInput("Enter item amount you would like to sell:", amount -> {
-            if (!player.getInventory().contains(itemId, amount)) {
-                player.sendMessage("You do not have that many of this item!");
-                player.closeDialogue();
-                return;
-            }
-            player.integerInput("Enter price per item:", price -> {
-                player.getInventory().remove(itemId, amount);
-                tradePostOffers.add(
-                        new TradePostOffer(
-                                player.getName(),
-                                new Item(unnotedId, amount),
-                                price,
-                                System.currentTimeMillis()
-                        )
-
-                );
-                updateMyOffers();
+        if (player.getInventory().getAmount(itemId) > 1) {
+            player.integerInput("Enter item amount you would like to sell:", amount -> {
+                if (!player.getInventory().contains(itemId, amount)) {
+                    player.sendMessage("You do not have that many of this item!");
+                    player.closeDialogue();
+                    return;
+                }
+                promptPrice(itemId, unnotedId, amount);
             });
+        } else {
+            promptPrice(itemId, unnotedId, 1);
+        }
+    }
+
+    private void promptPrice(int itemId, int unnotedId, int amount) {
+        player.integerInput("Enter price per item:", price -> {
+            player.getInventory().remove(itemId, amount);
+            tradePostOffers.add(
+                    new TradePostOffer(
+                            player.getName(),
+                            new Item(unnotedId, amount),
+                            price,
+                            System.currentTimeMillis()
+                    )
+
+            );
+            updateMyOffers();
         });
     }
 
