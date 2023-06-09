@@ -136,8 +136,12 @@ public class TradePost {
         }
 
         TradePostOffer offer = tradePostOffers.remove(index);
-        player.getBank().add(offer.getItem().getId(), offer.getItem().getAmount());
-        player.sendMessage(offer.getItem().getAmount() + "x " + offer.getItem().getDef().name + " has been send to your bank!");
+        if (player.getInventory().hasRoomFor(offer.getItem())) {
+            player.getInventory().add(offer.getItem().getId(), offer.getItem().getAmount());
+        } else {
+            player.getBank().add(offer.getItem().getId(), offer.getItem().getAmount());
+            player.sendMessage(offer.getItem().getAmount() + "x " + offer.getItem().getDef().name + " has been send to your bank!");
+        }
         updateMyOffers();
     }
 
