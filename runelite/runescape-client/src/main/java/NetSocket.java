@@ -485,6 +485,7 @@ public final class NetSocket extends AbstractSocket implements Runnable {
 							}
 
 							if ((var6 & 32) != 0) {
+								var5.overheadText = var0.readStringCp1252NullTerminated();
 								if (var5.overheadText.charAt(0) == '~') {
 									var5.overheadText = var5.overheadText.substring(1);
 									SecureRandomCallable.addGameMessage(2, var5.username.getName(), var5.overheadText);
