@@ -113,12 +113,10 @@ public enum ClimbingSpots {
         this.positions = Arrays.asList(steps);
     }
 
-    private List<Position> positions;
-    private Position startPosition, endPosition;
-    private int xp;
-    private int levelReq;
-
-    private Direction faceDir;
+    private final List<Position> positions;
+    private final Position startPosition, endPosition;
+    private final int xp, levelReq;
+    private final Direction faceDir;
 
     public void traverse(Player p, GameObject obj){
         if(!p.getStats().check(StatType.Agility, levelReq, " to use this")){
@@ -127,8 +125,6 @@ public enum ClimbingSpots {
         p.startEvent(e -> {
             p.lock(LockType.FULL_DELAY_DAMAGE);
             List<Position> posCopy = Lists.newArrayList(positions);
-
-            Position first = posCopy.get(0);
             if(posCopy.size() == 1){
                 if(startPosition.equals(p.getPosition())){
                     posCopy.add(endPosition);
@@ -180,21 +176,19 @@ public enum ClimbingSpots {
             case NORTH:
             case SOUTH:
                 if (p.getPosition().getY() > obj.getPosition().getY()) {
-                    traverseStatic(p, obj, Direction.SOUTH, tiles, direction == Direction.NORTH ? true : false);
+                    traverseStatic(p, obj, Direction.SOUTH, tiles, direction == Direction.NORTH);
                 } else {
-                    traverseStatic(p, obj, Direction.NORTH, tiles, direction == Direction.SOUTH ? true : false);
+                    traverseStatic(p, obj, Direction.NORTH, tiles, direction == Direction.SOUTH);
                 }
                 break;
             case EAST:
             case WEST:
                 if (p.getPosition().getX() > obj.getPosition().getX()) {
-                    traverseStatic(p, obj, Direction.WEST, tiles, direction == Direction.EAST ? true : false);
+                    traverseStatic(p, obj, Direction.WEST, tiles, direction == Direction.EAST);
                 } else {
-                    traverseStatic(p, obj, Direction.EAST, tiles, direction == Direction.WEST ? true : false);
+                    traverseStatic(p, obj, Direction.EAST, tiles, direction == Direction.WEST);
                 }
                 break;
-            default:
-                return;
         }
     }
 }
