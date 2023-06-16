@@ -147,6 +147,8 @@ public class Shortcuts {
         // Island crossing near Zul-Andra
         // Shilo Village stepping stones over the river
         // Kharazi Jungle vine climb
+        ObjectAction.register(26886, 2899, 2938, 0, 1, ClimbingSpots.KHARAZI_VINE::traverse);
+        ObjectAction.register(26884, 2899, 2941, 0, 1, ClimbingSpots.KHARAZI_VINE::traverse);
         // Cave crossing south of Dorgesh-Kaan
         // Taverley Dungeon spiked blades jump
         // Fremennik Slayer Dungeon chasm jump
