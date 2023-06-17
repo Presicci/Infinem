@@ -1009,6 +1009,21 @@ public class Config {
             /*
              * Hard
              */
+            varpbit(5259, true), // Kharazi jungle 55
+            varpbit(5257, true), // Shilo village bank 56
+            varpbit(5250, true), // Fishing guild bank 57
+            varpbit(5251, true), // Lighthouse 58
+            varpbit(5262, true), // Agility pyramid 59
+            varpbit(5252, true), // Sophanem 60
+            varpbit(5258, true), // Exame centre 61
+            varpbit(5261, true), // Jiggig 62
+            varpbit(5255, true), // Jokul's Hut 63
+            varpbit(5256, true), // White wolf mountain 64
+            varpbit(5260, true), // Wilderness bolcano bridge 65
+            varpbit(5254, true), // Banana plantation 66
+            varpbit(5263, true), // Mess hall 67
+            varpbit(5249, true), // Chaos temple 68
+            varpbit(5253, true)  // Rogue general store 69
     };
 
     /**

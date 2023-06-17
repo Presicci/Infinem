@@ -63,15 +63,25 @@ public class EmoteClue extends Clue {
         });
     }
 
-    public static final Map<String, String> STRING_REPLACEMENTS = ImmutableMap.of(
-            "Team-1 cape", "Team cape",
-            "Ring of dueling(1)", "Ring of dueling"
-    );
+    public static final Map<String, String> STRING_REPLACEMENTS = ImmutableMap.<String, String>builder()
+            .put("Team-1 cape", "Team cape")
+            .put("Ring of dueling(1)", "Ring of dueling")
+            .put("Saradomin stole", "vestment stole")
+            .put("Rune shield (h1)", "rune heraldic shield")
+            .put("Rune helm (h1)", "rune heraldic helm")
+            .put("Red headband", "headband")
+            .put("Saradomin crozier", "crozier")
+            .build();
 
-    private static final Map<Integer, List<Integer>> ITEM_ALTERNATIVES = ImmutableMap.of(
-            Items.TEAM1_CAPE, IntStream.range(Items.TEAM1_CAPE, Items.TEAM50_CAPE).boxed().collect(Collectors.toList()),
-            Items.RING_OF_DUELING_1, IntStream.range(Items.RING_OF_DUELING_8, Items.RING_OF_DUELING_1).boxed().collect(Collectors.toList())
-    );
+    private static final Map<Integer, List<Integer>> ITEM_ALTERNATIVES = ImmutableMap.<Integer, List<Integer>>builder()
+            .put(Items.TEAM1_CAPE, IntStream.range(Items.TEAM1_CAPE, Items.TEAM50_CAPE).boxed().collect(Collectors.toList()))
+            .put(Items.RING_OF_DUELING_1, IntStream.range(Items.RING_OF_DUELING_8, Items.RING_OF_DUELING_1).boxed().collect(Collectors.toList()))
+            .put(Items.SARADOMIN_STOLE, Arrays.asList(Items.SARADOMIN_STOLE, Items.GUTHIX_STOLE, Items.ZAMORAK_STOLE, Items.ANCIENT_STOLE, Items.ARMADYL_STOLE, Items.BANDOS_STOLE))
+            .put(Items.RUNE_SHIELD_H1, Arrays.asList(Items.RUNE_SHIELD_H1, Items.RUNE_SHIELD_H2, Items.RUNE_SHIELD_H3, Items.RUNE_SHIELD_H4, Items.RUNE_SHIELD_H5))
+            .put(Items.RUNE_HELM_H1, Arrays.asList(Items.RUNE_HELM_H1, Items.RUNE_HELM_H2, Items.RUNE_HELM_H3, Items.RUNE_HELM_H4, Items.RUNE_HELM_H5))
+            .put(Items.RED_HEADBAND, Arrays.asList(Items.RED_HEADBAND, Items.BLACK_HEADBAND, Items.BROWN_HEADBAND, Items.WHITE_HEADBAND, Items.BLUE_HEADBAND, Items.GOLD_HEADBAND, Items.PINK_HEADBAND, Items.GREEN_HEADBAND))
+            .put(Items.SARADOMIN_CROZIER, Arrays.asList(Items.SARADOMIN_CROZIER, Items.GUTHIX_CROZIER, Items.ZAMORAK_CROZIER, Items.ANCIENT_CROZIER, Items.ARMADYL_CROZIER, Items.BANDOS_CROZIER))
+            .build();
 
     public static Item getAlternative(Player player, int itemId, boolean ignoreIventory) {
         Item item = player.getInventory().findItemIgnoringAttributes(itemId, false);
@@ -345,7 +355,61 @@ public class EmoteClue extends Clue {
                 Arrays.asList(Items.RUBY_AMULET, Items.MITHRIL_SCIMITAR, Items.TEAM1_CAPE), ClueType.MEDIUM, Config.STASH_UNITS[53], 28991),
         ARCEUUS_LIBRARY("Yawn in the centre of Arceuus library. Nod your head before you talk to me. Equip blue dragonhide vambraces, adamant boots and an adamant dagger.",
                 Arrays.asList(TabEmote.YAWN, TabEmote.YES), new Bounds(1621, 3795, 1644, 3819, 0),
-                Arrays.asList(Items.BLUE_DHIDE_VAMB, Items.ADAMANT_BOOTS, Items.ADAMANT_DAGGER), ClueType.MEDIUM, Config.STASH_UNITS[54], 29007)
+                Arrays.asList(Items.BLUE_DHIDE_VAMB, Items.ADAMANT_BOOTS, Items.ADAMANT_DAGGER), ClueType.MEDIUM, Config.STASH_UNITS[54], 29007),
+
+        /*
+         * Hard
+         */
+        KHARAZI_JUNGLE("Beckon on the east coast of the Kharazi Jungle. Beware of double agents! Equip any vestment stole and a heraldic rune shield.",
+                Collections.singletonList(TabEmote.BECKON), new Bounds(2953, 2932, 2955, 2934, 0),
+                Arrays.asList(Items.SARADOMIN_STOLE, Items.RUNE_SHIELD_H1), ClueType.HARD, Config.STASH_UNITS[55], 29019),
+        SHILO_VILLAGE_BANK("Blow a kiss between the tables in Shilo Village bank. Beware of double agents! Equip a blue mystic hat, bone spear and rune platebody.",
+                Collections.singletonList(TabEmote.BLOW_KISS), new Bounds(2851, 2952, 2853, 2954, 0),
+                Arrays.asList(Items.MYSTIC_HAT, Items.BONE_SPEAR, Items.RUNE_PLATEBODY), ClueType.HARD, Config.STASH_UNITS[56], 29017),
+        FISHING_GUILD_BANK("Blow a raspberry in the Fishing Guild bank. Beware of double agents! Equip an elemental shield, blue dragonhide chaps and a rune warhammer.",
+                Collections.singletonList(TabEmote.RASPBERRY), new Bounds(2586, 3418, 2589, 3422, 0),
+                Arrays.asList(Items.ELEMENTAL_SHIELD, Items.BLUE_DHIDE_CHAPS, Items.RUNE_WARHAMMER), ClueType.HARD, Config.STASH_UNITS[57], 29010),
+        LIGHTHOUSE("Bow at the top of the lighthouse. Beware of double agents! Equip a blue dragonhide body, blue dragonhide vambraces and no jewelry.",
+                Collections.singletonList(TabEmote.BOW), new Bounds(2504, 3635, 2514, 3646, 2),
+                Arrays.asList(Items.BLUE_DHIDE_BODY, Items.BLUE_DHIDE_VAMB), Collections.singletonList(Equipment.SLOT_AMULET),
+                ClueType.HARD, Config.STASH_UNITS[58], 29011),
+        //AGILITY_PYRAMID("Cheer at the top of the agility pyramid. Beware of double agents! Equip a blue mystic robe top, and any rune heraldic shield.",
+        //        Collections.singletonList(TabEmote.), new Bounds(, 0),
+        //        Arrays.asList(Items., Items.), ClueType.HARD, Config.STASH_UNITS[59], 29022),
+        SOPHANEM("Dance at the cat-doored pyramid in Sophanem. Beware of double agents! Equip a ring of life, an uncharged amulet of glory and an adamant two-handed sword.",
+                Collections.singletonList(TabEmote.DANCE), new Bounds(3291, 2781, 3296, 2783, 0),
+                Arrays.asList(Items.RING_OF_LIFE, Items.AMULET_OF_GLORY, Items.ADAMANT_2H_SWORD), ClueType.HARD, Config.STASH_UNITS[60], 29012),
+        EXAM_CENTRE_HEADBANG("Headbang at the exam centre. Beware of double agents! Equip a mystic fire staff, a diamond bracelet and rune boots.",
+                Collections.singletonList(TabEmote.HEAD_BANG), new Bounds(3357, 3332, 3367, 3348, 0),
+                Arrays.asList(Items.MYSTIC_FIRE_STAFF, Items.DIAMOND_BRACELET, Items.RUNE_BOOTS), ClueType.HARD, Config.STASH_UNITS[61], 29018),
+        JIGGIG("Jig at Jiggig. Beware of double agents! Equip a Rune spear, rune platelegs and any rune heraldic helm.",
+                Collections.singletonList(TabEmote.JIG), new Bounds(2460, 3040, 2491, 3053, 0),
+                Arrays.asList(Items.RUNE_SPEAR, Items.RUNE_PLATELEGS, Items.RUNE_HELM_H1), ClueType.HARD, Config.STASH_UNITS[62], 29021),
+        JOKULS_TENT("Laugh in Jokul's tent in the Mountain Camp. Beware of double agents! Equip a rune full helmet, blue dragonhide chaps and a fire battlestaff.",
+                Collections.singletonList(TabEmote.LAUGH), new Bounds(2811, 3680, 2813, 3681, 0),
+                Arrays.asList(Items.RUNE_FULL_HELM, Items.BLUE_DHIDE_CHAPS, Items.FIRE_BATTLESTAFF), ClueType.HARD, Config.STASH_UNITS[63], 29015),
+        WHITE_WOLF_MOUNTAIN("Panic by the pilot on White Wolf Mountain. Beware of double agents! Equip mithril platelegs, a ring of life and a rune axe.",
+                Collections.singletonList(TabEmote.PANIC), new Bounds(2845, 3497, 2848, 3499, 0),
+                Arrays.asList(Items.MITHRIL_PLATELEGS, Items.RING_OF_LIFE, Items.RUNE_AXE), ClueType.HARD, Config.STASH_UNITS[64], 29016),
+        HAUNTED_WOODS("Panic in the heart of the Haunted Woods. Beware of double agents! Have no items equipped when you do.",
+                Collections.singletonList(TabEmote.PANIC), new Bounds(3607, 3487, 3617, 3497, 0),
+                Collections.emptyList(), allSlots, ClueType.HARD, null, -1),
+        WILDERNESS_VOLCANO_BRIDGE("Panic on the Wilderness volcano bridge. Beware of double agents! Equip any headband and crozier.",
+                Collections.singletonList(TabEmote.PANIC), new Bounds(3362, 3935, 3372, 3936, 0),
+                Arrays.asList(Items.RED_HEADBAND, Items.SARADOMIN_CROZIER), ClueType.HARD, Config.STASH_UNITS[65], 29020),
+        BANANA_PLANTATION("Salute in the banana plantation. Beware of double agents! Equip a diamond ring, amulet of power, and nothing on your chest and legs.",
+                Collections.singletonList(TabEmote.SALUTE), new Bounds(2910, 3163, 2920, 3172, 0),
+                Arrays.asList(Items.DIAMOND_RING, Items.AMULET_OF_POWER), Arrays.asList(Equipment.SLOT_LEGS, Equipment.SLOT_CHEST),
+                ClueType.HARD, Config.STASH_UNITS[66], 29014),
+        MESS_HALL("Salute in the centre of the mess hall. Beware of double agents! Equip a rune halberd rune platebody, and an amulet of strength.",
+                Collections.singletonList(TabEmote.SALUTE), new Bounds(1639, 3618, 1646, 3635, 0),
+                Arrays.asList(Items.RUNE_HALBERD, Items.RUNE_PLATEBODY, Items.AMULET_OF_STRENGTH), ClueType.HARD, Config.STASH_UNITS[67], 29023),
+        CHAOS_TEMPLE("Shrug in the Zamorak temple found in the Eastern Wilderness. Beware of double agents! Equip rune platelegs, an iron platebody and blue dragonhide vambraces.",
+                Collections.singletonList(TabEmote.SHRUG), new Bounds(3235, 3604, 3244, 3613, 0),
+                Arrays.asList(Items.RUNE_PLATEBODY, Items.IRON_PLATEBODY, Items.BLACK_DHIDE_VAMB), ClueType.HARD, Config.STASH_UNITS[68], 29009),
+        ROGUES_GENERAL_STORE("Yawn in the rogues' general store. Beware of double agents! Equip an adamant square shield, blue dragon vambraces and a rune pickaxe.",
+                Collections.singletonList(TabEmote.YAWN), new Bounds(3024, 3699, 3027, 3704, 0),
+                Arrays.asList(Items.ADAMANT_SQ_SHIELD, Items.BLUE_DHIDE_VAMB, Items.RUNE_PICKAXE), ClueType.HARD, Config.STASH_UNITS[69], 29013)
         ;
 
         public final String clueText;
