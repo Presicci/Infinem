@@ -1023,7 +1023,29 @@ public class Config {
             varpbit(5254, true), // Banana plantation 66
             varpbit(5263, true), // Mess hall 67
             varpbit(5249, true), // Chaos temple 68
-            varpbit(5253, true)  // Rogue general store 69
+            varpbit(5253, true), // Rogue general store 69
+
+            /*
+             * Elite
+             */
+            varpbit(5267, true), // Lava maze 70
+            varpbit(5278, true), // Legends guild 71
+            varpbit(5270, true), // Edgeville monastary 72
+            //varpbit(5270, true), // Shadow dungeon 73
+            varpbit(5271, true), // Fishing platform 74
+            varpbit(5272, true), // Slayer tower 75
+            varpbit(5280, true), // Fight arena pub 76
+            varpbit(5266, true), // Neitiznot rune rock 77
+            varpbit(5275, true), // Ancient cavern 78
+            varpbit(5274, true), // Fountain of heroes 79
+            varpbit(5279, true), // Ardy gem stall 80
+            varpbit(5276, true), // Trollweiss 81
+            varpbit(12295, true), // Charcoal burners 82
+            varpbit(5269, true), // Warrior's guild bank 83
+            varpbit(5277, true), // Shayzien war tent 84
+            varpbit(5265, true), // West ardougne church 85
+            varpbit(5273, true), // Trollheim 86
+
     };
 
     /**
