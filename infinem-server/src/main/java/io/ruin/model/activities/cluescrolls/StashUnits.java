@@ -36,6 +36,8 @@ public class StashUnits {
     }
 
     public static void registerStashUnit(EmoteClue.EmoteClueData emoteClueData, Config config, int obj) {
+        if (obj == -1 || config == null)
+            return;
         /*
          * Registers the building of the stash unit, only done once per account.
          */
