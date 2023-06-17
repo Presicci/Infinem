@@ -71,6 +71,11 @@ public class EmoteClue extends Clue {
             .put("Rune helm (h1)", "rune heraldic helm")
             .put("Red headband", "headband")
             .put("Saradomin crozier", "crozier")
+            .put("Amulet of glory(1)", "Amulet of glory")
+            .put("Holy book", "completed god book")
+            .put("Saradomin mitre", "mitre")
+            .put("Castle wars bracelet(1)", "Castle wars bracelet")
+            .put("Bob's red shirt", "bob shirt")
             .build();
 
     private static final Map<Integer, List<Integer>> ITEM_ALTERNATIVES = ImmutableMap.<Integer, List<Integer>>builder()
@@ -81,6 +86,14 @@ public class EmoteClue extends Clue {
             .put(Items.RUNE_HELM_H1, Arrays.asList(Items.RUNE_HELM_H1, Items.RUNE_HELM_H2, Items.RUNE_HELM_H3, Items.RUNE_HELM_H4, Items.RUNE_HELM_H5))
             .put(Items.RED_HEADBAND, Arrays.asList(Items.RED_HEADBAND, Items.BLACK_HEADBAND, Items.BROWN_HEADBAND, Items.WHITE_HEADBAND, Items.BLUE_HEADBAND, Items.GOLD_HEADBAND, Items.PINK_HEADBAND, Items.GREEN_HEADBAND))
             .put(Items.SARADOMIN_CROZIER, Arrays.asList(Items.SARADOMIN_CROZIER, Items.GUTHIX_CROZIER, Items.ZAMORAK_CROZIER, Items.ANCIENT_CROZIER, Items.ARMADYL_CROZIER, Items.BANDOS_CROZIER))
+            .put(Items.AMULET_OF_GLORY_1, Arrays.asList(Items.AMULET_OF_GLORY, Items.AMULET_OF_GLORY_1, Items.AMULET_OF_GLORY_2, Items.AMULET_OF_GLORY_3, Items.AMULET_OF_GLORY_4, Items.AMULET_OF_ETERNAL_GLORY))
+            .put(Items.HOLY_BOOK, Arrays.asList(Items.HOLY_BOOK, Items.UNHOLY_BOOK, Items.BOOK_OF_BALANCE, Items.BOOK_OF_WAR, Items.BOOK_OF_LAW, Items.BOOK_OF_DARKNESS))
+            .put(Items.SARADOMIN_MITRE, Arrays.asList(Items.SARADOMIN_MITRE, Items.GUTHIX_MITRE, Items.ZAMORAK_MITRE, Items.ANCIENT_MITRE, Items.ARMADYL_MITRE, Items.BANDOS_MITRE))
+            .put(Items.COMBAT_BRACELET, Arrays.asList(Items.COMBAT_BRACELET, Items.COMBAT_BRACELET_1, Items.COMBAT_BRACELET_2, Items.COMBAT_BRACELET_3, Items.COMBAT_BRACELET_4, Items.COMBAT_BRACELET_5, Items.COMBAT_BRACELET_6))
+            .put(Items.PIRATE_BANDANA, Arrays.asList(Items.PIRATE_BANDANA, Items.PIRATE_BANDANA_2, Items.PIRATE_BANDANA_3, Items.PIRATE_BANDANA_4, Items.PIRATE_BANDANA_5))
+            .put(Items.CASTLE_WARS_BRACELET_1, Arrays.asList(Items.CASTLE_WARS_BRACELET_1, Items.CASTLE_WARS_BRACELET_2, Items.CASTLE_WARS_BRACELET_3))
+            .put(Items.BOBS_RED_SHIRT, Arrays.asList(Items.BOBS_RED_SHIRT, Items.BOBS_BLUE_SHIRT, Items.BOBS_GREEN_SHIRT, Items.BOBS_BLACK_SHIRT, Items.BOBS_PURPLE_SHIRT))
+            .put(Items.LAVA_BATTLESTAFF, Arrays.asList(Items.LAVA_BATTLESTAFF, 21198))
             .build();
 
     public static Item getAlternative(Player player, int itemId, boolean ignoreIventory) {
@@ -409,7 +422,68 @@ public class EmoteClue extends Clue {
                 Arrays.asList(Items.RUNE_PLATEBODY, Items.IRON_PLATEBODY, Items.BLACK_DHIDE_VAMB), ClueType.HARD, Config.STASH_UNITS[68], 29009),
         ROGUES_GENERAL_STORE("Yawn in the rogues' general store. Beware of double agents! Equip an adamant square shield, blue dragon vambraces and a rune pickaxe.",
                 Collections.singletonList(TabEmote.YAWN), new Bounds(3024, 3699, 3027, 3704, 0),
-                Arrays.asList(Items.ADAMANT_SQ_SHIELD, Items.BLUE_DHIDE_VAMB, Items.RUNE_PICKAXE), ClueType.HARD, Config.STASH_UNITS[69], 29013)
+                Arrays.asList(Items.ADAMANT_SQ_SHIELD, Items.BLUE_DHIDE_VAMB, Items.RUNE_PICKAXE), ClueType.HARD, Config.STASH_UNITS[69], 29013),
+
+        /*
+         * Elite
+         */
+        LAVA_MAZE("Blow a kiss in the heart of the lava maze. Equip black dragonhide chaps, a spotted cape and a rolling pin.",
+                Collections.singletonList(TabEmote.BLOW_KISS), new Bounds(3063, 3852, 3071, 3863, 0),
+                Arrays.asList(Items.BLACK_DHIDE_CHAPS, Items.SPOTTED_CAPE, Items.ROLLING_PIN), ClueType.ELITE, Config.STASH_UNITS[70], 29026),
+        LEGENDS_GUILD("Bow on the ground floor of the Legend's guild. Equip Legend's cape, a dragon battleaxe and an amulet of glory.",
+                Collections.singletonList(TabEmote.BOW), new Bounds(2723, 3374, 2735, 3381, 0),
+                Arrays.asList(Items.CAPE_OF_LEGENDS, Items.DRAGON_BATTLEAXE, Items.AMULET_OF_GLORY_1), ClueType.ELITE, Config.STASH_UNITS[71], 29037),
+        EDGEVILLE_MONASTERY("Bow upstairs in the Edgeville Monastery. Equip a completed prayer book.",
+                Collections.singletonList(TabEmote.BOW), new Bounds(3055, 3482, 3059, 3485, 1),
+                Collections.singletonList(Items.HOLY_BOOK), ClueType.ELITE, Config.STASH_UNITS[72], 29029),
+        //SHADOW_DUNGEON("Cheer in the Shadow dungeon. Equip a rune crossbow, climbing boots and any mitre.",
+        //        Collections.singletonList(TabEmote.CHEER), new Bounds(, 0),
+        //        Arrays.asList(Items.RUNE_CROSSBOW, Items.CLIMBING_BOOTS, Items.SARADOMIN_MITRE), ClueType.ELITE, Config.STASH_UNITS[73], 0),
+        FISHING_PLATFORM("Dance on the Fishing Platform. Equip barrows gloves, an amulet of glory and a dragon med helm.",
+                Collections.singletonList(TabEmote.DANCE), new Bounds(2779, 3273, 2787, 3279, 0),
+                Arrays.asList(Items.AMULET_OF_GLORY_1, Items.BARROWS_GLOVES, Items.DRAGON_MED_HELM), ClueType.ELITE, Config.STASH_UNITS[74], 29030),
+        SLAYER_TOWER("Headbang at the top of Slayer Tower. Equip a seercull, a combat bracelet and helm of Neitiznot.",
+                Collections.singletonList(TabEmote.HEAD_BANG), new Bounds(3416, 3534, 3425, 3544, 2),
+                Arrays.asList(Items.SEERCULL, Items.COMBAT_BRACELET, Items.HELM_OF_NEITIZNOT), ClueType.ELITE, Config.STASH_UNITS[75], 29031),
+        FIGHT_ARENA_PUB("Headbang in the Fight Arena pub. Equip a pirate bandana, a dragonstone necklace and and a magic longbow.",
+                Collections.singletonList(TabEmote.HEAD_BANG), new Bounds(2563, 3139, 2570, 3150, 0),
+                Arrays.asList(Items.PIRATE_BANDANA, Items.DRAGON_NECKLACE, Items.MAGIC_LONGBOW), ClueType.ELITE, Config.STASH_UNITS[76], 29039),
+        NEITIZNOT_RUNE("Jump for joy at the Neitiznot rune rock. Equip Rune boots, a proselyte hauberk and a dragonstone ring.",
+                Collections.singletonList(TabEmote.JUMP_FOR_JOY), new Bounds(2371, 3846, 2378, 3852, 0),
+                Arrays.asList(Items.RUNE_BOOTS, Items.PROSELYTE_HAUBERK, Items.DRAGONSTONE_RING), ClueType.ELITE, Config.STASH_UNITS[77], 29025),
+        ANCIENT_CAVERN("Jump for joy in the Ancient Cavern. Equip a granite shield, splitbark body and any rune heraldic helm.",
+                Collections.singletonList(TabEmote.JUMP_FOR_JOY), new Bounds(1762, 5364, 1768, 5367, 1),
+                Arrays.asList(Items.GRANITE_SHIELD, Items.SPLITBARK_BODY, Items.RUNE_HELM_H1), ClueType.ELITE, Config.STASH_UNITS[78], 29034),
+        FOUNTAIN_OF_HEROES("Laugh by the fountain of heroes. Equip splitbark legs, dragon boots and a Rune longsword.",
+                Collections.singletonList(TabEmote.LAUGH), new Bounds(2913, 9891, 2922, 9896, 0),
+                Arrays.asList(Items.SPLITBARK_LEGS, Items.DRAGON_BOOTS, Items.RUNE_LONGSWORD), ClueType.ELITE, Config.STASH_UNITS[79], 29033),
+        ARDY_GEM_STALL("Laugh in front of the gem store in Ardougne market. Equip a Castlewars bracelet, a dragonstone amulet and a ring of forging.",
+                Collections.singletonList(TabEmote.LAUGH), new Bounds(2664, 3301, 2666, 3304, 0),
+                Arrays.asList(Items.CASTLE_WARS_BRACELET_1, Items.DRAGONSTONE_AMULET, Items.RING_OF_FORGING), ClueType.ELITE, Config.STASH_UNITS[80], 29038),
+        TROLLWEISS("Panic at the area flowers meet snow. Equip Blue D'hide vambraces, a dragon spear and a rune plateskirt.",
+          Collections.singletonList(TabEmote.PANIC), new Bounds(2775, 3780, 2782, 3785, 0),
+                Arrays.asList(Items.BLUE_DHIDE_VAMB, Items.DRAGON_SPEAR, Items.RUNE_PLATESKIRT), ClueType.ELITE, Config.STASH_UNITS[81], 29035),
+        CHARCOAL_BURNERS("Salute by the Charcoal Burners. Equip a Farmer's strawhat, Shayzien platebody (5) and Pyromancer robes.",
+          Collections.singletonList(TabEmote.SALUTE), new Bounds(1710, 3465, 1724, 3468, 0),
+                Arrays.asList(Items.FARMERS_STRAWHAT, Items.SHAYZIEN_PLATEBODY_5, Items.PYROMANCER_ROBE), ClueType.ELITE, Config.STASH_UNITS[82], 41758),
+        WARRIOR_GUILD_BANK("Salute in the Warriors' guild bank. Equip only a black salamander.",
+          Collections.singletonList(TabEmote.SALUTE), new Bounds(2843, 3537, 2848, 3545, 0),
+                Arrays.asList(Items.BLACK_SALAMANDER),
+                Arrays.asList(Equipment.SLOT_HAT, Equipment.SLOT_AMMO, Equipment.SLOT_AMULET, Equipment.SLOT_CAPE, Equipment.SLOT_CHEST, Equipment.SLOT_FEET,
+                Equipment.SLOT_HANDS, Equipment.SLOT_LEGS, Equipment.SLOT_RING, Equipment.SLOT_SHIELD),
+                ClueType.ELITE, Config.STASH_UNITS[83], 29028),
+        SHAYZIEN_WAR_TENT("Shrug in the Shayzien war tent. Equip a blue mystic robe bottom, a rune kiteshield and any bob shirt.",
+          Collections.singletonList(TabEmote.SHRUG), new Bounds(1481, 3632, 1488, 3639, 0),
+                Arrays.asList(Items.MYSTIC_ROBE_BOTTOM, Items.RUNE_KITESHIELD, Items.BOBS_RED_SHIRT), ClueType.ELITE, Config.STASH_UNITS[84], 29036),
+        WEST_ARDY_CHURCH("Spin in West Ardougne Church. Equip a dragon spear and red dragonhide chaps.",
+          Collections.singletonList(TabEmote.SPIN), new Bounds(2527, 3285, 2532, 3295, 0),
+                Arrays.asList(Items.DRAGON_SPEAR, Items.RED_DHIDE_VAMB), ClueType.ELITE, Config.STASH_UNITS[85], 29024),
+        TROLLHEIM("Yawn at the top of Trollheim. Equip a lava battlestaff, black dragonhide vambraces and a mind shield.",
+          Collections.singletonList(TabEmote.YAWN), new Bounds(2886, 3673, 2895, 3681, 0),
+                Arrays.asList(Items.LAVA_BATTLESTAFF, Items.BLACK_DHIDE_VAMB, Items.MIND_SHIELD), ClueType.ELITE, Config.STASH_UNITS[86], 29032),
+        /*A("",
+          Collections.singletonList(TabEmote.), new Bounds(, 0),
+                Arrays.asList(Items., Items.), ClueType.ELITE, Config.STASH_UNITS[72], 0),*/
         ;
 
         public final String clueText;
