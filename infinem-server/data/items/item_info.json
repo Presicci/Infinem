@@ -43129,8 +43129,7 @@
     "weight": 0.1,
 	"protect_value": 972,
     "equip_slot": 0,
-    "hide_hair": true,
-    "hide_beard": true
+    "hide_hair": true
   },
   { #Pirate boots
     "id": 7114,
@@ -43191,8 +43190,7 @@
     "weight": 0.1,
 	"protect_value": 892,
     "equip_slot": 0,
-    "hide_hair": true,
-    "hide_beard": true
+    "hide_hair": true
   },
   { #Pirate leggings
     "id": 7126,
@@ -43217,8 +43215,7 @@
     "weight": 0.1,
 	"protect_value": 672,
     "equip_slot": 0,
-    "hide_hair": true,
-    "hide_beard": true
+    "hide_hair": true
   },
   { #Pirate leggings
     "id": 7132,
@@ -43243,8 +43240,7 @@
     "weight": 0.1,
 	"protect_value": 650,
     "equip_slot": 0,
-    "hide_hair": true,
-    "hide_beard": true
+    "hide_hair": true
   },
   { #Pirate leggings
     "id": 7138,
@@ -54901,8 +54897,7 @@
     "weight": 0.1,
 	"protect_value": 0,
     "equip_slot": 0,
-    "hide_hair": true,
-    "hide_beard": true
+    "hide_hair": true
   },
   { #Pirate hat
     "id": 8950,
