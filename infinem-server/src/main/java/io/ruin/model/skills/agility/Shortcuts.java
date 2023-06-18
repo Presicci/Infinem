@@ -246,6 +246,14 @@ public class Shortcuts {
         ObjectAction.register(16524, 2902, 3680, 0, "Climb", ClimbingSpots.TROLL_CLIMB47::traverse);
         ObjectAction.register(16524, 2901, 3680, 0, "Climb", ClimbingSpots.TROLL_CLIMB47::traverse);
 
+        // Wilderness Rocks Lv. 64
+        ObjectAction.register(16545, 2916, 3672, 0, "Climb", ClimbingSpots.TROLL_WILDERNESS1::traverse);
+        ObjectAction.register(16545, 2917, 3672, 0, "Climb", ClimbingSpots.TROLL_WILDERNESS1::traverse);
+        ObjectAction.register(16545, 2923, 3673, 0, "Climb", ClimbingSpots.TROLL_WILDERNESS2::traverse);
+        ObjectAction.register(16545, 2922, 3672, 0, "Climb", ClimbingSpots.TROLL_WILDERNESS2::traverse);
+        ObjectAction.register(16545, 2947, 3678, 0, "Climb", ClimbingSpots.TROLL_WILDERNESS3::traverse);
+        ObjectAction.register(16545, 2948, 3679, 0, "Climb", ClimbingSpots.TROLL_WILDERNESS3::traverse);
+        ObjectAction.register(16545, 2949, 3680, 0, "Climb", ClimbingSpots.TROLL_WILDERNESS4::traverse);
 
         // Climbing Rocks Lv. 59
         ObjectAction.register(16515, 2344, 3295, 0, "Climb", ClimbingSpots.ARANDAR_CLIMB59::traverse);
@@ -264,7 +272,7 @@ public class Shortcuts {
         ObjectAction.register(16514, 2333, 3252, 0, "Climb", ClimbingSpots.ARANDAR_CLIMB85::traverse);
 
         // Climb vine Lv. 79
-        ObjectAction.register(26884, 2899, 2941, 0, "Climb", ClimbingSpots.KHARAZI_VINE::traverse); // TODO null protecting this?
+        ObjectAction.register(26884, 2899, 2941, 0, "Climb", ClimbingSpots.KHARAZI_VINE::traverse);
         ObjectAction.register(26886, 2899, 2938, 0, "Climb", ClimbingSpots.KHARAZI_VINE::traverse);
 
 

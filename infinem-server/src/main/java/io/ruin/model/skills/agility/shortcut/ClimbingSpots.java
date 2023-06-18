@@ -88,6 +88,21 @@ public enum ClimbingSpots {
             Position.of(2844, 3693), Position.of(2838, 3693),
             Position.of(2842, 3693), Position.of(2840, 3693)),
 
+    TROLL_WILDERNESS1(Direction.EAST, 64, 0,
+            Position.of(2915, 3672),  Position.of(2918, 3672), Position.of(2916, 3672),
+            Position.of(2917, 3672)),
+
+    TROLL_WILDERNESS2(Direction.WEST, 64, 0,
+            Position.of(2921, 3672), Position.of(2924, 3673), Position.of(2922, 3672),
+            Position.of(2923, 3672), Position.of(2923, 3673)),
+
+    TROLL_WILDERNESS3(Direction.WEST, 64, 0,
+            Position.of(2946, 3678), Position.of(2949, 3679), Position.of(2947, 3678),
+            Position.of(2948, 3678), Position.of(2948, 3679)),
+
+    TROLL_WILDERNESS4(Direction.SOUTH, 64, 0,
+            Position.of(2949, 3679), Position.of(2949, 3681), Position.of(2949, 3680)),
+
     ARANDAR_CLIMB59(Direction.NORTH, 59,1,
             Position.of(2344, 3294), Position.of(2346, 3300),
             Position.of(2344, 3295), Position.of(2345, 3297), Position.of(2346, 3299)),
