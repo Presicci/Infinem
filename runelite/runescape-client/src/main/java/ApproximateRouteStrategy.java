@@ -358,7 +358,7 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 				short var23;
 				if (Login.loginIndex == 0) {
 					var31 = 251;
-					var0.drawCentered("Welcome to RuneRogue!", Login.loginBoxX + 180, var31, 16776960, 0);
+					var0.drawCentered("Welcome to Infinem!", Login.loginBoxX + 180, var31, 16776960, 0);
 					var32 = var31 + 30;
 					var4 = Login.loginBoxX + 180 - 80;
 					var23 = 291;
@@ -575,7 +575,7 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 					} else if (Login.loginIndex == 10) {
 						var32 = Login.loginBoxX + 180;
 						var33 = 209;
-						var0.drawCentered("Welcome to RuneRogue!", Login.loginBoxX + 180, var33, 16776960, 0);
+						var0.drawCentered("Welcome to Infinem!", Login.loginBoxX + 180, var33, 16776960, 0);
 						var4 = var33 + 20;
 						UserComparator8.field1312.drawAt(var32 - 109, var4);
 						class14.field69.drawAt(var32 - 48, var4 + 18);
