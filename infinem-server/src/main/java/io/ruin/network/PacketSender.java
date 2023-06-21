@@ -432,11 +432,62 @@ public class PacketSender {
 
     public void fadeIn() {
         sendClientScript(948, "iiiii", 0, 0, 0, 255, 50);
+        player.addEvent(e -> {
+            e.delay(2);
+            InterfaceType.SECONDARY_OVERLAY.close(player);
+        });
     }
 
     public void fadeOut() {
         InterfaceType.SECONDARY_OVERLAY.open(player, 174);
         sendClientScript(951, "");
+    }
+
+    public void pohFadeIn() {
+        InterfaceType.SECONDARY_OVERLAY.close(player);
+    }
+
+    public void pohFadeOut() {
+        InterfaceType.SECONDARY_OVERLAY.open(player, Interface.CONSTRUCTION_LOADING);
+    }
+
+    public void prifFadeIn() {
+        sendClientScript(2922);
+        player.addEvent(e -> {
+            e.delay(2);
+            InterfaceType.SECONDARY_OVERLAY.close(player);
+        });
+    }
+
+    public void prifFadeOut() {
+        InterfaceType.SECONDARY_OVERLAY.open(player, 641);
+        sendClientScript(2921);
+    }
+
+    public void nightmareFadeIn() {
+        sendClientScript(2894, "iiii", 41549825, 41549826, 0, 200);
+        player.addEvent(e -> {
+            e.delay(2);
+            InterfaceType.SECONDARY_OVERLAY.close(player);
+        });
+    }
+
+    public void nightmareFadeOut() {
+        InterfaceType.SECONDARY_OVERLAY.open(player, 634);
+        sendClientScript(2893, "iiiiii", 41549825, 41549826, 39504, 13109328, -1, -1);
+    }
+
+    public void deathFadeIn() {
+        sendClientScript(2894, "iiii", 41549825, 41549826, -1, -1);
+        player.addEvent(e -> {
+            e.delay(2);
+            InterfaceType.SECONDARY_OVERLAY.close(player);
+        });
+    }
+
+    public void deathFadeOut() {
+        InterfaceType.SECONDARY_OVERLAY.open(player, 634);
+        sendClientScript(2893, "iiiiii", 41549825, 41549826, 39504, 4128927, -1, -1);
     }
 
     public void clearFade() {
