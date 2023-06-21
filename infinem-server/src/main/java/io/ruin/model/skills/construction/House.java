@@ -132,7 +132,7 @@ public class House {
         player.startEvent(event -> {
             player.lock();
             player.setHidden(true);
-            player.openInterface(InterfaceType.SECONDARY_OVERLAY, Interface.CONSTRUCTION_LOADING);
+            player.getPacketSender().pohFadeOut();
             player.getPacketSender().sendMapState(2);
             for (int z = 0; z < 3; z++) { // this is actually really hilarious but it's required
                 player.getMovement().teleport(map.swRegion.baseX + 31, map.swRegion.baseY + 31, z);
@@ -141,7 +141,7 @@ public class House {
             event.delay(1);
             player.getPacketSender().sendMapState(0);
             teleportInside(player, localToEnter);
-            player.closeInterface(InterfaceType.SECONDARY_OVERLAY);
+            player.getPacketSender().pohFadeIn();
             player.closeInterfaces();
             player.setHidden(false);
             assignListener(player);
@@ -179,7 +179,7 @@ public class House {
         Config.BUILDING_MODE.set(player, buildingMode ? 1 : 0);
         player.lock();
         player.startEvent(event -> {
-            player.openInterface(InterfaceType.POH_LOADING, Interface.CONSTRUCTION_LOADING);
+            player.getPacketSender().pohFadeOut();
             player.getPacketSender().sendMapState(2);
             build(); // may be worth investigating doing this off the main thread in the future
             for (int z = 0; z < 3; z++) { // this is actually really hilarious but it's required
@@ -189,7 +189,7 @@ public class House {
             teleportInside(player, localToEnter);
             event.delay(1);
             player.getPacketSender().sendMapState(0);
-            player.closeInterface(InterfaceType.POH_LOADING);
+            player.getPacketSender().pohFadeIn();
             player.closeInterfaces();
             player.unlock();
             assignListener(player);
