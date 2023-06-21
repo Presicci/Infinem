@@ -41,8 +41,8 @@ public class ShipNPC {
      * @param destination The coordinates of the destination.
      */
     private static void setSail(Player player, String destinationName, Position destination) {
-        player.dialogue(new MessageDialogue("You set sail for " + destinationName + "."));
-        Traveling.fadeTravel(player, destination);
+        player.dialogue(new MessageDialogue("You set sail for " + destinationName + ".").hideContinue());
+        Traveling.fadeTravel(player, destination, player::closeDialogue);
     }
 
     static {
@@ -59,5 +59,8 @@ public class ShipNPC {
         // Corsair cove
         registerShipNPC(7967, "Corsair Cove", new Position(2578, 2840, 0));
         registerShipNPC(7965, "Port Sarim", new Position(2909, 3226, 0));
+        // Fishing platform
+        registerShipNPC(5069, "the Fishing Platform", new Position(2782, 3274, 0));
+        registerShipNPC(5070, "Witchaven", new Position(2719, 3303, 0));
     }
 }
