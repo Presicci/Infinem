@@ -29,7 +29,7 @@ public class Traveling {
             player.getPacketSender().fadeOut();
             e.delay(2);
             player.getMovement().teleport(x, y, z);
-            player.getPacketSender().clearFade();
+            //player.getPacketSender().clearFade();
             player.getPacketSender().fadeIn();
             player.unlock();
             if (onComplete != null)

@@ -14,7 +14,6 @@ public class FeroxEnclave {
             player.getPacketSender().fadeOut();
             e.delay(1);
             player.getMovement().teleport(x, y, z);
-            player.getPacketSender().clearFade();
             player.getPacketSender().fadeIn();
             player.unlock();
         });

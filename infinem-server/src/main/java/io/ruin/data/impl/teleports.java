@@ -188,7 +188,6 @@ public class teleports extends DataFile {
             player.getPacketSender().fadeOut();
             e.delay(2);
             player.getMovement().teleport(x, y, z);
-            player.getPacketSender().clearFade();
             Nurses.heal(player, null);
             PlayerCounter.TELEPORT_PORTAL_USES.increment(player, 1);
             player.getPacketSender().fadeIn();
