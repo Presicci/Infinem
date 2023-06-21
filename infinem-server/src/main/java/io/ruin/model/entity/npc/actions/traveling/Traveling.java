@@ -11,11 +11,19 @@ import io.ruin.model.map.Position;
  */
 public class Traveling {
 
+    public static void fadeTravel(Player player, Position positon, Runnable onComplete) {
+        fadeTravel(player, positon.getX(), positon.getY(), positon.getZ(), onComplete);
+    }
+
     public static void fadeTravel(Player player, Position positon) {
-        fadeTravel(player, positon.getX(), positon.getY(), positon.getZ());
+        fadeTravel(player, positon.getX(), positon.getY(), positon.getZ(), null);
     }
 
     public static void fadeTravel(Player player, int x, int y, int z) {
+        fadeTravel(player, x, y, z, null);
+    }
+
+    public static void fadeTravel(Player player, int x, int y, int z, Runnable onComplete) {
         player.lock(LockType.FULL_NULLIFY_DAMAGE); //keep lock outside of event!
         player.startEvent(e -> {
             player.getPacketSender().fadeOut();
@@ -24,6 +32,8 @@ public class Traveling {
             player.getPacketSender().clearFade();
             player.getPacketSender().fadeIn();
             player.unlock();
+            if (onComplete != null)
+                onComplete.run();
         });
     }
 
