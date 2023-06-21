@@ -66,8 +66,8 @@ public enum InterfaceType {
      */
     SECONDARY_OVERLAY( //fading, castle wars game, snow falling
             new Component(548, 14 + DEFAULT_SCREEN_CHILD_OFFSET),
-            new Component(161, 3 + DEFAULT_SCREEN_CHILD_OFFSET),
-            new Component(164, 3 + DEFAULT_SCREEN_CHILD_OFFSET),
+            new Component(161, 3),
+            new Component(164, 3),
             true
     ),
     PRIMARY_OVERLAY( //castle wars wait lobby, duel challenge area, gnomeball, puro puro imp view, mage training arena, lms lobby, tut
