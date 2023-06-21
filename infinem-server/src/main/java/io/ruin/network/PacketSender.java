@@ -432,10 +432,7 @@ public class PacketSender {
 
     public void fadeIn() {
         sendClientScript(948, "iiiii", 0, 0, 0, 255, 50);
-        player.addEvent(e -> {
-            e.delay(2);
-            InterfaceType.SECONDARY_OVERLAY.close(player);
-        });
+        clearFade();
     }
 
     public void fadeOut() {
@@ -453,10 +450,7 @@ public class PacketSender {
 
     public void prifFadeIn() {
         sendClientScript(2922);
-        player.addEvent(e -> {
-            e.delay(2);
-            InterfaceType.SECONDARY_OVERLAY.close(player);
-        });
+        clearFade();
     }
 
     public void prifFadeOut() {
@@ -466,10 +460,7 @@ public class PacketSender {
 
     public void nightmareFadeIn() {
         sendClientScript(2894, "iiii", 41549825, 41549826, 0, 200);
-        player.addEvent(e -> {
-            e.delay(2);
-            InterfaceType.SECONDARY_OVERLAY.close(player);
-        });
+        clearFade();
     }
 
     public void nightmareFadeOut() {
@@ -479,10 +470,7 @@ public class PacketSender {
 
     public void deathFadeIn() {
         sendClientScript(2894, "iiii", 41549825, 41549826, -1, -1);
-        player.addEvent(e -> {
-            e.delay(2);
-            InterfaceType.SECONDARY_OVERLAY.close(player);
-        });
+        clearFade();
     }
 
     public void deathFadeOut() {
@@ -491,7 +479,10 @@ public class PacketSender {
     }
 
     public void clearFade() {
-        sendClientScript(948, "iiiii", 0, 0, 0, 255, 0);
+        player.addEvent(e -> {
+            e.delay(2);
+            InterfaceType.SECONDARY_OVERLAY.close(player);
+        });
     }
 
     public void sendMessage(String message, String extension, int type) {
