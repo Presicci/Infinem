@@ -15,6 +15,10 @@ public class Traveling {
         fadeTravel(player, positon.getX(), positon.getY(), positon.getZ(), onComplete);
     }
 
+    public static void fadeTravel(Player player, Position positon, int ticks) {
+        fadeTravel(player, positon.getX(), positon.getY(), positon.getZ(), ticks, null);
+    }
+
     public static void fadeTravel(Player player, Position positon) {
         fadeTravel(player, positon.getX(), positon.getY(), positon.getZ(), null);
     }
@@ -24,12 +28,15 @@ public class Traveling {
     }
 
     public static void fadeTravel(Player player, int x, int y, int z, Runnable onComplete) {
+        fadeTravel(player, x, y, z, 2, onComplete);
+    }
+
+    public static void fadeTravel(Player player, int x, int y, int z, int ticks, Runnable onComplete) {
         player.lock(LockType.FULL_NULLIFY_DAMAGE); //keep lock outside of event!
         player.startEvent(e -> {
             player.getPacketSender().fadeOut();
-            e.delay(2);
+            e.delay(ticks);
             player.getMovement().teleport(x, y, z);
-            //player.getPacketSender().clearFade();
             player.getPacketSender().fadeIn();
             player.unlock();
             if (onComplete != null)
