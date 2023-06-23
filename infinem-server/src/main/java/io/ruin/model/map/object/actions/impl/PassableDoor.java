@@ -6,12 +6,37 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.map.object.actions.ObjectAction;
+import lombok.AllArgsConstructor;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 1/18/2022
  */
-public class PassableDoor {
+public enum PassableDoor {
+    TROLL_STRONGHOLD_PRISON_DOOR(3780, "unlock", new Position(2848, 10107, 1), Direction.WEST);
+
+    private final int id, rotationOffset, tempObjectId;
+    private final String option;
+    private final Position objectPos;
+    private final Direction direction;
+
+    PassableDoor(int id, String option, Position objectPos, Direction direction) {
+        this(id, option, objectPos, direction, -1, -1);
+    }
+
+    PassableDoor(int id, String option, Position objectPos, Direction direction, int rotationOffset) {
+        this(id, option, objectPos, direction, rotationOffset, -1);
+    }
+
+    PassableDoor(int id, String option, Position objectPos, Direction direction, int rotationOffset, int tempObjectId) {
+        this.id = id;
+        this.option = option;
+        this.objectPos = objectPos;
+        this.direction = direction;
+        this.rotationOffset = rotationOffset;
+        this.tempObjectId = tempObjectId;
+    }
 
     /**
      * Passes the player through the door, with a little animation.
@@ -63,5 +88,17 @@ public class PassableDoor {
             tempRemove.remove();
             obj.spawn();
         });
+    }
+
+    static {
+        for (PassableDoor entry : values()) {
+            if (entry.rotationOffset == -1) {
+                ObjectAction.register(entry.id, entry.objectPos.getX(), entry.objectPos.getY(), entry.objectPos.getZ(), entry.option, ((player, obj) -> passDoor(player, obj, entry.direction)));
+            } else if (entry.tempObjectId == -1) {
+                ObjectAction.register(entry.id, entry.objectPos.getX(), entry.objectPos.getY(), entry.objectPos.getZ(), entry.option, ((player, obj) -> passDoor(player, obj, entry.direction, entry.rotationOffset)));
+            } else {
+                ObjectAction.register(entry.id, entry.objectPos.getX(), entry.objectPos.getY(), entry.objectPos.getZ(), entry.option, ((player, obj) -> passDoor(player, obj, entry.direction, entry.rotationOffset, entry.tempObjectId)));
+            }
+        }
     }
 }
