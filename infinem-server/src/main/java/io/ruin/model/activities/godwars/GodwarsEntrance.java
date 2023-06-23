@@ -1,5 +1,6 @@
 package io.ruin.model.activities.godwars;
 
+import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
@@ -57,6 +58,14 @@ public class GodwarsEntrance {
                 obj.animate(6986);
                 player.unlock();
             });
+        }));
+        ObjectAction.register(26382, "crawl-through", ((player, obj) -> {
+            if (player.getStats().get(StatType.Agility).currentLevel < 60) {
+                player.sendMessage("You need an Agility level of at least 60 to use this shortcut.");
+                return;
+            }
+            player.animate(844, 10);
+            Traveling.fadeTravel(player, player.getPosition().getX() == 2899 ? new Position(2904, 3720) : new Position(2899, 3713), 4);
         }));
     }
 }
