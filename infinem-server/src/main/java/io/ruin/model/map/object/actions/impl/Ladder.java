@@ -8,8 +8,17 @@ import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
+import lombok.AllArgsConstructor;
 
-public class Ladder {
+@AllArgsConstructor
+public enum Ladder {
+    TROLL_STRONGHOLD_EXIT(18834, "climb-up", new Position(2831, 10077, 2), new Position(2831, 3678), true),
+    TROLL_STRONGHOLD_ENTRANCE(18833, "climb-down", new Position(2831, 3677, 0), new Position(2831, 10077, 2), false);
+
+    private final int id;
+    private final String option;
+    private final Position objectPos, destinationPos;
+    private final boolean up;
 
     public static void climb(Player player, Position position, boolean climbingUp, boolean animate, boolean tileCheck) {
         climb(player, position.getX(), position.getY(), position.getZ(), climbingUp, animate, tileCheck);
@@ -41,6 +50,9 @@ public class Ladder {
     }
 
     static {
+        for (Ladder entry : values()) {
+            ObjectAction.register(entry.id, entry.objectPos.getX(), entry.objectPos.getY(), entry.objectPos.getZ(), entry.option, ((player, obj) -> climb(player, entry.destinationPos, entry.up, true, false)));
+        }
         ObjectDef.forEach(def -> {
             if ((def.name.equalsIgnoreCase("ladder") || def.name.equalsIgnoreCase("bamboo ladder"))
                     && def.defaultActions == null) {
