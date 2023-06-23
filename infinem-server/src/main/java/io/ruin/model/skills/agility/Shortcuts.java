@@ -197,6 +197,10 @@ public class Shortcuts {
         // Dwarven mine crevice
         ObjectAction.register(16543, "Squeeze-through", CreviceShortcut.FALADOR::squeeze);
 
+        // Death plateau
+        ObjectAction.register(3748,2856,3612, 0, "Climb", JumpShortcut.DEATH_PLATEAU_JUMP1::traverse);
+        ObjectAction.register(3748,2857,3612, 0, "Climb", JumpShortcut.DEATH_PLATEAU_JUMP2::traverse);
+
         /**
          *                                              CLIMBING ROCKS
          * _____________________________________________________________________________________________________________
