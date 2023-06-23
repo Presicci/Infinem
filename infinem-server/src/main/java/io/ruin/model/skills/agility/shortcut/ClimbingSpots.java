@@ -48,6 +48,21 @@ public enum ClimbingSpots {
             Position.of(3302, 3315), Position.of(3306, 3315),
             Position.of(3303, 3315), Position.of(3305, 3315)),
 
+    DEATH_PLATEAU_EAST1(Direction.EAST, 1, 1,
+            Position.of(2880, 3623), Position.of(2877, 3623),
+            Position.of(2879, 3623), Position.of(2878, 3623)),
+
+    DEATH_PLATEAU_EAST2(Direction.EAST, 1, 1,
+            Position.of(2880, 3622), Position.of(2877, 3622),
+            Position.of(2879, 3622), Position.of(2878, 3622)),
+
+    DEATH_PLATEAU_WEST1(Direction.WEST, 1, 1,
+            Position.of(2861, 3627), Position.of(2858, 3627),
+            Position.of(2860, 3627), Position.of(2859, 3627)),
+
+    DEATH_PLATEAU_WEST2(Direction.WEST, 1, 1,
+            Position.of(2861, 3626), Position.of(2858, 3626),
+            Position.of(2860, 3626), Position.of(2859, 3626)),
     TROLL_CLIMB41(Direction.EAST, 41,1,
             Position.of(2869, 3671), Position.of(2872, 3671),
             Position.of(2870, 3671), Position.of(2871, 3671)),

@@ -275,6 +275,17 @@ public class Shortcuts {
         ObjectAction.register(26884, 2899, 2941, 0, "Climb", ClimbingSpots.KHARAZI_VINE::traverse);
         ObjectAction.register(26886, 2899, 2938, 0, "Climb", ClimbingSpots.KHARAZI_VINE::traverse);
 
+        //Death Plateau Lv. 0
+        ObjectAction.register(3791, 2878, 3623, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_EAST1::traverse);
+        ObjectAction.register(3790, 2879, 3623, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_EAST1::traverse);
+        ObjectAction.register(3791, 2878, 3622, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_EAST2::traverse);
+        ObjectAction.register(3790, 2879, 3622, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_EAST2::traverse);
+
+        //Death Plateau Lv. 0
+        ObjectAction.register(3791, 2860, 3627, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_WEST1::traverse);
+        ObjectAction.register(3790, 2859, 3627, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_WEST1::traverse);
+        ObjectAction.register(3791, 2860, 3626, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_WEST2::traverse);
+        ObjectAction.register(3790, 2859, 3626, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_WEST2::traverse);
 
         /**
          *                                              STEPPING STONES
