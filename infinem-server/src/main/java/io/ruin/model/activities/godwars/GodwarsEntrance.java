@@ -1,8 +1,13 @@
 package io.ruin.model.activities.godwars;
 
+import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
+import io.ruin.model.map.Direction;
+import io.ruin.model.map.Position;
+import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.stat.StatType;
 
 public class GodwarsEntrance {
 
@@ -33,6 +38,25 @@ public class GodwarsEntrance {
             event.delay(1);
             player.getMovement().teleport(2916, 3746, 0);
             player.unlock();
+        }));
+        // Boulder
+        Tile.getObject(26415, 2898, 3716, 0).nearPosition = (p, obj) -> p.getPosition().getY() <= 3715 ? Position.of(2898, 3715) : Position.of(2898, 3719);
+        ObjectAction.register(26415, "Move", ((player, obj) -> {
+            if (player.getStats().get(StatType.Strength).currentLevel < 60) {
+                player.sendMessage("You need a Strength level of at least 60 to move this boulder.");
+                return;
+            }
+            boolean north = player.getAbsY() <= 3715;
+            player.startEvent(e -> {
+                player.lock();
+                player.animate(north ? 6983 : 6984);
+                e.delay(1);
+                obj.animate(6985);
+                player.getMovement().force(0, north ? 4 : -4, 0, 0, 0, 400, north ? Direction.NORTH : Direction.SOUTH);
+                e.delay(12);
+                obj.animate(6986);
+                player.unlock();
+            });
         }));
     }
 }
