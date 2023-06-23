@@ -17,7 +17,7 @@ public class GodwarsEntrance {
             if (Config.GODWARS_DUNGEON.get(player) == 0) {
                 Item rope = player.getInventory().findItem(954);
                 if(rope == null) {
-                    player.sendFilteredMessage("You aren't carrying a rope with you.");
+                    player.sendFilteredMessage("You are not carrying a rope with you.");
                     return;
                 }
 
