@@ -291,6 +291,12 @@ public class Shortcuts {
         ObjectAction.register(3791, 2860, 3626, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_WEST2::traverse);
         ObjectAction.register(3790, 2859, 3626, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_WEST2::traverse);
 
+        //Death Plateau Lv. 0
+        ObjectAction.register(3722, 2880, 3595, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_NORTH1::traverse);
+        ObjectAction.register(3723, 2880, 3594, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_NORTH1::traverse);
+        ObjectAction.register(3722, 2881, 3595, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_NORTH2::traverse);
+        ObjectAction.register(3723, 2881, 3594, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_NORTH2::traverse);
+
         /**
          *                                              STEPPING STONES
          * _____________________________________________________________________________________________________________
