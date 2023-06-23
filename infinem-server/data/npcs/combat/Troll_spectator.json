@@ -21,8 +21,8 @@
     "stab_attack": 20,
     "slash_attack": 20,
     "crush_attack": 20,
-    "magic_attack": 20,
-    "ranged_attack": 20,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 0,
     "slash_defence": 0,
@@ -38,8 +38,8 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 1142,
+    "defend_animation": 4988,
+    "death_animation": 287
   }
 ]
