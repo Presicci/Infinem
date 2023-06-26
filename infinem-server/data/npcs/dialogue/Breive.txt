@@ -1,0 +1,17 @@
+Breive: <col=0040ff>*cough*</col> whatcha want? <col=0040ff>*hack*</col>
+<What is this place?
+Player: What is this place?
+Breive: Smoke dungeon. <col=0040ff>*wheeze*</col> Got smoke devils in it. For killing. <col=0040ff>*splutter*</col>
+Breive: My nephew Steve <col=0040ff>*hack hack*</col> is one of those Slayer Masters. You know, they tell people what to go kill. <col=0040ff>*cough*</col> I look after this cave for people on assignments like that.
+Player: But... that's what they're for?
+Breive: They have lives too. They were created for a purpose. But whatever, you can only kill these ones if the Slayer Masters say you can.
+FIRSTOPTIONS
+><Are you alright?
+Player: Are you alright?
+Breive: Of course I'm <col=0040ff>*wheeze*</col> alright. I'm fed up with you young folk asking <col=0040ff>*cough cough*</col> if I'm alright just because I like a bit of smoke <col=0040ff>*splutter*</col> in my tubes.
+Breive: Don't you come lecturing me on <col=0040ff>*cough*</col> air quality, young man - I've breathed smoke all my life, man and boy and <col=0040ff>*euuurgh*</col> and there's no <col=0040ff>*ghhuk*</col> scientific evidence that it's harmful.
+FIRSTOPTIONS
+><I think I'll leave you alone.
+Player: I think I'll leave you alone.
+Breive: <col=0040ff>*cough cough cough ghhuk*</col>
+>
