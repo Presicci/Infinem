@@ -51,7 +51,7 @@ public class npc_spawns extends DataFile {
                 }
                 NPC n = new NPC(spawn.id).spawn(spawn.x, spawn.y, spawn.z, Direction.get(spawn.direction), spawn.walkRange);
                 n.defaultSpawn = true;
-                if (spawn.taskOnly) {
+                if (spawn.taskOnly || spawn.taskOnlyNPC != null) {
                     if (spawn.taskOnlyNPC != null)
                         n.putTemporaryAttribute(AttributeKey.TASK_ONLY, spawn.taskOnlyNPC);
                     else
