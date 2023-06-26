@@ -6,7 +6,8 @@
     "y": 9441,
     "z": 0,
     "direction": "EAST",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -15,7 +16,8 @@
     "y": 9446,
     "z": 0,
     "direction": "SOUTH",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -24,7 +26,8 @@
     "y": 9427,
     "z": 0,
     "direction": "EAST",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -33,7 +36,8 @@
     "y": 9457,
     "z": 0,
     "direction": "EAST",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -42,7 +46,8 @@
     "y": 9447,
     "z": 0,
     "direction": "EAST",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -51,7 +56,8 @@
     "y": 9433,
     "z": 0,
     "direction": "SOUTH",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -60,7 +66,8 @@
     "y": 9450,
     "z": 0,
     "direction": "EAST",
-    "walkRange": 5
+    "walkRange": 5,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -69,7 +76,8 @@
     "y": 9456,
     "z": 0,
     "direction": "WEST",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -78,7 +86,8 @@
     "y": 9423,
     "z": 0,
     "direction": "SOUTH",
-    "walkRange": 7
+    "walkRange": 7,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -87,7 +96,8 @@
     "y": 9440,
     "z": 0,
     "direction": "EAST",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -96,7 +106,8 @@
     "y": 9453,
     "z": 0,
     "direction": "WEST",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -105,7 +116,8 @@
     "y": 9435,
     "z": 0,
     "direction": "NORTH",
-    "walkRange": 7
+    "walkRange": 7,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -114,7 +126,8 @@
     "y": 9451,
     "z": 0,
     "direction": "NORTH",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -123,7 +136,8 @@
     "y": 9451,
     "z": 0,
     "direction": "EAST",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -132,7 +146,8 @@
     "y": 9445,
     "z": 0,
     "direction": "SOUTH",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -141,7 +156,8 @@
     "y": 9428,
     "z": 0,
     "direction": "WEST",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Thermonuclear smoke devil",
@@ -150,7 +166,8 @@
     "y": 9452,
     "z": 0,
     "direction": "NORTH",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -159,7 +176,8 @@
     "y": 9445,
     "z": 0,
     "direction": "WEST",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -168,7 +186,8 @@
     "y": 9456,
     "z": 0,
     "direction": "NORTH",
-    "walkRange": 5
+    "walkRange": 5,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -177,7 +196,8 @@
     "y": 9457,
     "z": 0,
     "direction": "WEST",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -186,7 +206,8 @@
     "y": 9420,
     "z": 0,
     "direction": "EAST",
-    "walkRange": 5
+    "walkRange": 5,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -195,7 +216,8 @@
     "y": 9446,
     "z": 0,
     "direction": "NORTH",
-    "walkRange": 7
+    "walkRange": 7,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -204,7 +226,8 @@
     "y": 9453,
     "z": 0,
     "direction": "NORTH",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -213,7 +236,8 @@
     "y": 9436,
     "z": 0,
     "direction": "WEST",
-    "walkRange": 5
+    "walkRange": 5,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -222,7 +246,8 @@
     "y": 9432,
     "z": 0,
     "direction": "WEST",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -231,7 +256,8 @@
     "y": 9460,
     "z": 0,
     "direction": "WEST",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -240,7 +266,8 @@
     "y": 9451,
     "z": 0,
     "direction": "SOUTH",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -249,7 +276,8 @@
     "y": 9422,
     "z": 0,
     "direction": "NORTH",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -258,7 +286,8 @@
     "y": 9423,
     "z": 0,
     "direction": "SOUTH",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -267,7 +296,8 @@
     "y": 9431,
     "z": 0,
     "direction": "NORTH",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -276,7 +306,8 @@
     "y": 9442,
     "z": 0,
     "direction": "SOUTH",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -285,7 +316,8 @@
     "y": 9452,
     "z": 0,
     "direction": "SOUTH",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -294,7 +326,8 @@
     "y": 9436,
     "z": 0,
     "direction": "NORTH",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -303,7 +336,8 @@
     "y": 9458,
     "z": 0,
     "direction": "WEST",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   },
   {
     "name": "Smoke devil",
@@ -312,6 +346,7 @@
     "y": 9445,
     "z": 0,
     "direction": "EAST",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "BRIEVE"
   }
 ]

@@ -13,7 +13,8 @@ public enum TaskOnlyNPC {
     NONE(-1, ""),
     JELLY(7518, "Naughty human! You not hunting the Kurask! Jelly's Kurasks only for people on Slayer tasks."),
     SLIEVE(7653, "Hey, go and train somewhere else! I'm not having people mess with my dragons unless a Slayer Master's told them to do it."),
-    BUGGY(491, "wooooo ooo woo-woo");
+    BUGGY(491, "wooooo ooo woo-woo"),
+    BRIEVE(7654, "<col=0040ff>*cough*</col> that isn't your assignment <col=0040ff>*wheeze*</col>");
 
     private final int npcId;
     private final String dialogue;
