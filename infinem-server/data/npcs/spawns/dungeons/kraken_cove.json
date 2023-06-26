@@ -358,5 +358,14 @@
     "z": 0,
     "direction": "W",
     "walkRange": 2
+  },
+  {
+    "name": "Lieve McCracken",
+    "id": 7412,
+    "x": 2280,
+    "y": 3610,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
