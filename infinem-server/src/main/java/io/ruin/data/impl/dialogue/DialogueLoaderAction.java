@@ -2,6 +2,7 @@ package io.ruin.data.impl.dialogue;
 
 import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
@@ -16,6 +17,22 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    LIEVE_TRIDENTS((player -> {
+        int tentacles = player.getAttributeIntOrZero(AttributeKey.LIEVE_KRAKEN_TENTACLES);
+        int dialogueSize = NPCDef.get(7412).optionDialogues.size();
+        Dialogue optionDialogue = NPCDef.get(7412).optionDialogues.get(dialogueSize - 1);
+        player.dialogue(
+                new NPCDialogue(7412, "If ya brings me a trident, I can enhance it for ya. It'll store 20,000 charges, not just 2,500. "
+                        + (tentacles == 0 ? "But I wants payin' fer the job."
+                        : tentacles == 10 ? "Ya brought me " + tentacles + " tentacles; I'll use up 10 of 'em to do the job."
+                        : "Ya brought me " + tentacles + " tentacles so far, but I'll want 10 of 'em to do the job.")),
+                new NPCDialogue(7412, tentacles == 0 ? "Give me 10 kraken tentacles first. I'll hold onto 'em for ya. Then ya can bring me a trident to enhance, an' I'll get to work for ya."
+                        : tentacles == 9 ? "Just pass me one more tentacle, then give me yer trident an' I'll get to work for ya."
+                        : tentacles >= 10 ? "Just pass me yer trident an' I'll get to work for ya."
+                        : "Just pass me " + (10 - tentacles) + " more tentacles, then give me yer trident an' I'll get to work for ya."),
+                optionDialogue
+        );
+    })),
     FRITZ_SELL((player -> {
         player.dialogue(
                 new NPCDialogue(2053, "Fantastic! Let's see, for that much glass I could pay you ..."),
