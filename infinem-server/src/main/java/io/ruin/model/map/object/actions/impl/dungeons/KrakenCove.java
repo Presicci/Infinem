@@ -5,6 +5,7 @@ import io.ruin.model.activities.pvminstances.InstanceDialogue;
 import io.ruin.model.activities.pvminstances.InstanceType;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.dialogue.MessageDialogue;
+import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
@@ -23,7 +24,7 @@ public class KrakenCove {
                         if(n.getId() == 2917 || (task != null && task.name().contains("cave kraken") && npc.getId() == 5534) || npc.getId() == 5535)
                             return true;
                         if (message)
-                            player.sendMessage("You cannot attack monsters in this cave unless they are assigned to you by a slayer master.");
+                            player.dialogue(new NPCDialogue(7412, "Oi, I'm Lieve McCracken and I say leave m' Kraken alone!"));
                         return false;
                     }
                     return true;
