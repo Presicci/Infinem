@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Swamp toad",
+    "id": 1473,
+    "x": 2389,
+    "y": 3050,
+    "z": 0,
+    "direction": "EAST",
+    "walkRange": 4
+  },
+  {
+    "name": "Swamp toad",
+    "id": 1473,
+    "x": 2393,
+    "y": 3047,
+    "z": 0,
+    "direction": "WEST",
+    "walkRange": 5
+  },
+  {
+    "name": "Swamp toad",
+    "id": 1473,
+    "x": 2391,
+    "y": 3046,
+    "z": 0,
+    "direction": "WEST",
+    "walkRange": 3
+  },
+  {
+    "name": "Swamp toad",
+    "id": 1473,
+    "x": 2399,
+    "y": 3047,
+    "z": 0,
+    "direction": "EAST",
+    "walkRange": 3
+  },
+  {
+    "name": "Swamp toad",
+    "id": 1473,
+    "x": 2398,
+    "y": 3048,
+    "z": 0,
+    "direction": "EAST",
+    "walkRange": 3
+  },
+  {
+    "name": "Swamp toad",
+    "id": 1473,
+    "x": 2394,
+    "y": 3059,
+    "z": 0,
+    "direction": "EAST",
+    "walkRange": 2
+  },
+  {
+    "name": "Swamp toad",
+    "id": 1473,
+    "x": 2397,
+    "y": 3039,
+    "z": 0,
+    "direction": "WEST",
+    "walkRange": 2
+  },
+  {
+    "name": "Swamp toad",
+    "id": 1473,
+    "x": 2395,
+    "y": 3049,
+    "z": 0,
+    "direction": "SOUTH",
+    "walkRange": 4
+  },
+  {
+    "name": "Swamp toad",
+    "id": 1473,
+    "x": 2398,
+    "y": 3047,
+    "z": 0,
+    "direction": "SOUTH",
+    "walkRange": 2
+  },
+  {
+    "name": "Swamp toad",
+    "id": 1473,
+    "x": 2399,
+    "y": 3048,
+    "z": 0,
+    "direction": "EAST",
+    "walkRange": 2
+  },
+  {
+    "name": "Swamp toad",
+    "id": 1473,
+    "x": 2399,
+    "y": 3036,
+    "z": 0,
+    "direction": "NORTH",
+    "walkRange": 3
+  },
+  {
+    "name": "Swamp toad",
+    "id": 1473,
+    "x": 2403,
+    "y": 3043,
+    "z": 0,
+    "direction": "NORTH",
+    "walkRange": 3
+  },
+  {
+    "name": "Breive",
+    "id": 7654,
+    "x": 2410,
+    "y": 3060,
+    "z": 0,
+    "direction": "EAST",
+    "walkRange": 3
+  },
+  {
+    "name": "Gargh",
+    "id": 885,
+    "x": 2404,
+    "y": 3042,
+    "z": 0,
+    "direction": "EAST",
+    "walkRange": 3
+  }
+]
