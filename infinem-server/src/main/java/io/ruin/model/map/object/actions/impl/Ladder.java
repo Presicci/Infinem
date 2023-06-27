@@ -12,6 +12,9 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public enum Ladder {
+    WATCHTOWER_UP(2796, "climb-up", new Position(2549, 3111, 1), new Position(2933, 4712, 2), true),
+    WATCHTOWER_DOWN(2797, "climb-down", new Position(2933, 4711, 2), new Position(2549, 3112, 1), false),
+
     TROLL_STRONGHOLD_EXIT(18834, "climb-up", new Position(2831, 10077, 2), new Position(2831, 3678), true),
     TROLL_STRONGHOLD_ENTRANCE(18833, "climb-down", new Position(2831, 3677, 0), new Position(2831, 10077, 2), false);
 
