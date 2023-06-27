@@ -16,6 +16,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Bounds;
 
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -30,6 +31,7 @@ public class EmoteClue extends Clue {
     public List<Integer> equipment;
     List<Integer> emptyEquipmentSlots;
     List<TabEmote> emotes;
+    int setSize;
 
     public EmoteClue(String clue, ClueType type, List<Integer> equipment, List<Integer> emptyEquipmentSlots, List<TabEmote> emotes) {
         super(type);
@@ -37,6 +39,14 @@ public class EmoteClue extends Clue {
         this.equipment = equipment;
         this.emptyEquipmentSlots = emptyEquipmentSlots;
         this.emotes = emotes;
+    }
+    public EmoteClue(String clue, ClueType type, List<Integer> equipment, List<Integer> emptyEquipmentSlots, List<TabEmote> emotes, int setSize) {
+        super(type);
+        this.clue = clue;
+        this.equipment = equipment;
+        this.emptyEquipmentSlots = emptyEquipmentSlots;
+        this.emotes = emotes;
+        this.setSize = setSize;
     }
 
     @Override
@@ -76,6 +86,7 @@ public class EmoteClue extends Clue {
             .put("Saradomin mitre", "mitre")
             .put("Castle wars bracelet(1)", "Castle wars bracelet")
             .put("Bob's red shirt", "bob shirt")
+            .put("New crystal bow", "Crystal bow")
             .build();
 
     private static final Map<Integer, List<Integer>> ITEM_ALTERNATIVES = ImmutableMap.<Integer, List<Integer>>builder()
@@ -94,6 +105,32 @@ public class EmoteClue extends Clue {
             .put(Items.CASTLE_WARS_BRACELET_1, Arrays.asList(Items.CASTLE_WARS_BRACELET_1, Items.CASTLE_WARS_BRACELET_2, Items.CASTLE_WARS_BRACELET_3))
             .put(Items.BOBS_RED_SHIRT, Arrays.asList(Items.BOBS_RED_SHIRT, Items.BOBS_BLUE_SHIRT, Items.BOBS_GREEN_SHIRT, Items.BOBS_BLACK_SHIRT, Items.BOBS_PURPLE_SHIRT))
             .put(Items.LAVA_BATTLESTAFF, Arrays.asList(Items.LAVA_BATTLESTAFF, 21198))
+            .put(22370, Arrays.asList(22370, 22368))
+            .put(Items.DRAGON_DEFENDER, Arrays.asList(Items.DRAGON_DEFENDER, 22322, Items.DRAGON_DEFENDER_T))
+            .put(Items.SLAYER_HELMET, Arrays.asList(Items.SLAYER_HELMET, Items.SLAYER_HELMET_I, Items.BLACK_SLAYER_HELMET, Items.BLACK_SLAYER_HELMET_I, Items.GREEN_SLAYER_HELMET, Items.GREEN_SLAYER_HELMET_I, Items.RED_SLAYER_HELMET, Items.RED_SLAYER_HELMET_I,
+                    Items.PURPLE_SLAYER_HELMET, 21266, // Purple
+                    21888, 21890, // Turquoise
+                    23073, 23075, // Hydra
+                    24370, 24444, // Twisted
+                    25898, 25900, // Tztok
+                    25904, 25906, // Vampyric
+                    25910, 25912)) // Tzkal
+            .put(23983, Arrays.asList(23983, 23985, // Crystal bows
+                    25862, 25865, 25867, 25869, 25884, 25886, 25888, 25890, 25892, 25894, 25896))   // Bow of Faerdhinen
+            .put(Items.IBANS_STAFF, Arrays.asList(Items.IBANS_STAFF, Items.IBANS_STAFF_U))
+            .put(Items.RING_OF_WEALTH, Arrays.asList(Items.RING_OF_WEALTH, Items.RING_OF_WEALTH_1, Items.RING_OF_WEALTH_2, Items.RING_OF_WEALTH_3, Items.RING_OF_WEALTH_4, Items.RING_OF_WEALTH_5,
+                    Items.RING_OF_WEALTH_I, Items.RING_OF_WEALTH_I1, Items.RING_OF_WEALTH_I2, Items.RING_OF_WEALTH_I3, Items.RING_OF_WEALTH_I4, Items.RING_OF_WEALTH_I5))
+            .put(Items.BANDOS_GODSWORD, Arrays.asList(Items.BANDOS_GODSWORD, Items.BANDOS_GODSWORD_OR))
+            .put(Items.ABYSSAL_WHIP, Arrays.asList(Items.ABYSSAL_WHIP, Items.FROZEN_ABYSSAL_WHIP, Items.VOLCANIC_ABYSSAL_WHIP, 26482))
+            .put(Items.ZAMORAK_GODSWORD, Arrays.asList(Items.ZAMORAK_GODSWORD, Items.ZAMORAK_GODSWORD_OR))
+            .put(Items.AMULET_OF_THE_DAMNED, Arrays.asList(Items.AMULET_OF_THE_DAMNED, Items.AMULET_OF_THE_DAMNED_FULL))
+            .put(Items.DRAGON_PICKAXE, Arrays.asList(Items.DRAGON_PICKAXE, Items.DRAGON_PICKAXE_OR, Items.CRYSTAL_PICKAXE, 23682))
+            .put(Items.DRAGON_AXE, Arrays.asList(Items.DRAGON_AXE, Items.CRYSTAL_AXE, 23675))
+            .put(Items.DRAGON_PLATESKIRT, Arrays.asList(Items.DRAGON_PLATESKIRT, Items.DRAGON_PLATESKIRT_G))
+            .put(Items.DRAGON_CHAINBODY, Arrays.asList(Items.DRAGON_CHAINBODY, Items.DRAGON_CHAINBODY_G))
+            .put(Items.DRAGON_SQ_SHIELD, Arrays.asList(Items.DRAGON_SQ_SHIELD, Items.DRAGON_SQ_SHIELD_G))
+            .put(Items.RED_BOATER, Arrays.asList(Items.RED_BOATER, Items.ORANGE_BOATER, Items.GREEN_BOATER, Items.BLUE_BOATER, Items.BLACK_BOATER, Items.PINK_BOATER, Items.PURPLE_BOATER, Items.WHITE_BOATER))
+            .put(Items.PHARAOHS_SCEPTRE, Arrays.asList(Items.PHARAOHS_SCEPTRE, Items.PHARAOHS_SCEPTRE_1, Items.PHARAOHS_SCEPTRE_2, Items.PHARAOHS_SCEPTRE_3, Items.PHARAOHS_SCEPTRE_4, Items.PHARAOHS_SCEPTRE_5, Items.PHARAOHS_SCEPTRE_6, Items.PHARAOHS_SCEPTRE_7, Items.PHARAOHS_SCEPTRE_8))
             .build();
 
     public static Item getAlternative(Player player, int itemId, boolean ignoreIventory) {
@@ -146,9 +183,27 @@ public class EmoteClue extends Clue {
         if (equipment.isEmpty()) {
             return true;
         }
-        for (int item : equipment) {
-            if (!player.getEquipment().contains(item)) {
-                return getAlternative(player, item, true) != null;
+        if (setSize > 0) {
+            setLoop: for (int index = 0; index < equipment.size() / setSize; index++) {
+                int leftIndex = index * setSize;
+                List<Integer> set = equipment.subList(leftIndex, leftIndex + setSize);
+                int count = 0;
+                for (int item : set) {
+                    if (!player.getEquipment().contains(item) && getAlternative(player, item, true) == null) {
+                        continue setLoop;
+                    }
+                    count++;
+                }
+                if (count == setSize) {
+                    return true;
+                }
+            }
+            return false;
+        } else {
+            for (int item : equipment) {
+                if (!player.getEquipment().contains(item)) {
+                    return getAlternative(player, item, true) != null;
+                }
             }
         }
         return true;
@@ -461,30 +516,108 @@ public class EmoteClue extends Clue {
                 Collections.singletonList(TabEmote.LAUGH), new Bounds(2664, 3301, 2666, 3304, 0),
                 Arrays.asList(Items.CASTLE_WARS_BRACELET_1, Items.DRAGONSTONE_AMULET, Items.RING_OF_FORGING), ClueType.ELITE, Config.STASH_UNITS[80], 29038),
         TROLLWEISS("Panic at the area flowers meet snow. Equip Blue D'hide vambraces, a dragon spear and a rune plateskirt.",
-          Collections.singletonList(TabEmote.PANIC), new Bounds(2775, 3780, 2782, 3785, 0),
+                Collections.singletonList(TabEmote.PANIC), new Bounds(2775, 3780, 2782, 3785, 0),
                 Arrays.asList(Items.BLUE_DHIDE_VAMB, Items.DRAGON_SPEAR, Items.RUNE_PLATESKIRT), ClueType.ELITE, Config.STASH_UNITS[81], 29035),
         CHARCOAL_BURNERS("Salute by the Charcoal Burners. Equip a Farmer's strawhat, Shayzien platebody (5) and Pyromancer robes.",
-          Collections.singletonList(TabEmote.SALUTE), new Bounds(1710, 3465, 1724, 3468, 0),
+                Collections.singletonList(TabEmote.SALUTE), new Bounds(1710, 3465, 1724, 3468, 0),
                 Arrays.asList(Items.FARMERS_STRAWHAT, Items.SHAYZIEN_PLATEBODY_5, Items.PYROMANCER_ROBE), ClueType.ELITE, Config.STASH_UNITS[82], 41758),
         WARRIOR_GUILD_BANK("Salute in the Warriors' guild bank. Equip only a black salamander.",
-          Collections.singletonList(TabEmote.SALUTE), new Bounds(2843, 3537, 2848, 3545, 0),
-                Arrays.asList(Items.BLACK_SALAMANDER),
+                Collections.singletonList(TabEmote.SALUTE), new Bounds(2843, 3537, 2848, 3545, 0),
+                Collections.singletonList(Items.BLACK_SALAMANDER),
                 Arrays.asList(Equipment.SLOT_HAT, Equipment.SLOT_AMMO, Equipment.SLOT_AMULET, Equipment.SLOT_CAPE, Equipment.SLOT_CHEST, Equipment.SLOT_FEET,
-                Equipment.SLOT_HANDS, Equipment.SLOT_LEGS, Equipment.SLOT_RING, Equipment.SLOT_SHIELD),
+                        Equipment.SLOT_HANDS, Equipment.SLOT_LEGS, Equipment.SLOT_RING, Equipment.SLOT_SHIELD),
                 ClueType.ELITE, Config.STASH_UNITS[83], 29028),
         SHAYZIEN_WAR_TENT("Shrug in the Shayzien war tent. Equip a blue mystic robe bottom, a rune kiteshield and any bob shirt.",
-          Collections.singletonList(TabEmote.SHRUG), new Bounds(1481, 3632, 1488, 3639, 0),
+                Collections.singletonList(TabEmote.SHRUG), new Bounds(1481, 3632, 1488, 3639, 0),
                 Arrays.asList(Items.MYSTIC_ROBE_BOTTOM, Items.RUNE_KITESHIELD, Items.BOBS_RED_SHIRT), ClueType.ELITE, Config.STASH_UNITS[84], 29036),
         WEST_ARDY_CHURCH("Spin in West Ardougne Church. Equip a dragon spear and red dragonhide chaps.",
-          Collections.singletonList(TabEmote.SPIN), new Bounds(2527, 3285, 2532, 3295, 0),
+                Collections.singletonList(TabEmote.SPIN), new Bounds(2527, 3285, 2532, 3295, 0),
                 Arrays.asList(Items.DRAGON_SPEAR, Items.RED_DHIDE_VAMB), ClueType.ELITE, Config.STASH_UNITS[85], 29024),
         TROLLHEIM("Yawn at the top of Trollheim. Equip a lava battlestaff, black dragonhide vambraces and a mind shield.",
-          Collections.singletonList(TabEmote.YAWN), new Bounds(2886, 3673, 2895, 3681, 0),
+                Collections.singletonList(TabEmote.YAWN), new Bounds(2886, 3673, 2895, 3681, 0),
                 Arrays.asList(Items.LAVA_BATTLESTAFF, Items.BLACK_DHIDE_VAMB, Items.MIND_SHIELD), ClueType.ELITE, Config.STASH_UNITS[86], 29032),
-        /*A("",
-          Collections.singletonList(TabEmote.), new Bounds(, 0),
-                Arrays.asList(Items., Items.), ClueType.ELITE, Config.STASH_UNITS[72], 0),*/
-        ;
+
+        /*
+         * Master
+         */
+        CRYSTALLINE_MAPLE_TREES("Beckon by a collection of crystalline maple trees. Beware of double agents! Equip Bryophyta's staff and a nature tiara.",
+                Collections.singletonList(TabEmote.BECKON), new Bounds(2208, 3424, 2214, 3429, 0),
+                Arrays.asList(22370, Items.NATURE_TIARA), ClueType.MASTER, Config.STASH_UNITS[87], 34953),
+        KRIL_TSUTSAROTH("Blow a kiss outside K'ril Tsutsaroth's chamber. Beware of double agents! Equip a Zamorak full helm and the shadow sword.",
+                Collections.singletonList(TabEmote.BLOW_KISS), new Bounds(2924, 5333, 2926, 5336, 2),
+                Arrays.asList(Items.ZAMORAK_FULL_HELM, Items.SHADOW_SWORD), ClueType.MASTER, Config.STASH_UNITS[88], 29054),
+        WARRIORS_GUILD_BANK("Blow a raspberry in the bank of the Warriors' Guild. Beware of double agents! Equip a dragon battleaxe, a slayer helm of any kind and a dragon defender or avernic defender.",
+                Collections.singletonList(TabEmote.RASPBERRY), new Bounds(2843, 3537, 2848, 3545, 0),
+                Arrays.asList(Items.DRAGON_BATTLEAXE, Items.DRAGON_DEFENDER, Items.SLAYER_HELMET), ClueType.MASTER, Config.STASH_UNITS[89], 29047),
+        IORWERTH_CAMP("Bow in the Iorwerth Camp. Beware of double agents! Equip a charged crystal bow.",
+                Collections.singletonList(TabEmote.BOW), new Bounds(2192, 3246, 2211, 3259, 0),
+                Collections.singletonList(23983), // Crystal bow
+                ClueType.MASTER, Config.STASH_UNITS[90], 29050),
+        ENTRANA_CHURCH("Cheer in the Entrana church. Beware of double agents! Equip a full set of black dragonhide armour.",
+                Collections.singletonList(TabEmote.CHEER), new Bounds(2849, 3342, 2853, 3355, 0),
+                Arrays.asList(Items.BLACK_DHIDE_BODY, Items.BLACK_DHIDE_CHAPS, Items.BLACK_DHIDE_VAMB), ClueType.MASTER, Config.STASH_UNITS[91], 29048),
+        MAGIC_AXE_HUT("Clap in the magic axe hut. Beware of double agents! Equip only some flared trousers.",
+                Collections.singletonList(TabEmote.CLAP), new Bounds(3187, 3958, 3194, 3962, 0),
+                Collections.singletonList(Items.FLARED_TROUSERS), Arrays.asList(Equipment.SLOT_HAT, Equipment.SLOT_AMMO, Equipment.SLOT_AMULET, Equipment.SLOT_CAPE, Equipment.SLOT_CHEST, Equipment.SLOT_FEET,
+                Equipment.SLOT_HANDS, Equipment.SLOT_RING, Equipment.SLOT_SHIELD, Equipment.SLOT_WEAPON),
+                ClueType.MASTER, Config.STASH_UNITS[92], 29056),
+        TZHAAR_GEM_STORE("Cry in the TzHaar gem store. Beware of double agents! Equip a fire cape and TokTz-Xil-Ul.",
+                Collections.singletonList(TabEmote.CRY), new Bounds(2463, 5147, 2465, 5150, 0),
+                Arrays.asList(Items.FIRE_CAPE, Items.TOKTZ_XIL_UL), ClueType.MASTER, Config.STASH_UNITS[93], 29049),
+        IBANS_TEMPLE("Dance in Iban's temple. Beware of double agents! Equip Iban's staff, a black mystic top and a black mystic bottom.",
+                Collections.singletonList(TabEmote.DANCE), new Bounds(2003, 4705, 2015, 4718, 1),
+                Arrays.asList(Items.IBANS_STAFF, Items.MYSTIC_ROBE_TOP_DARK, Items.MYSTIC_ROBE_BOTTOM_DARK), ClueType.MASTER, Config.STASH_UNITS[94], 29043),
+        KING_BLACK_DRAGON_LAIR("Dance in the King Black Dragon's lair. Beware of double agents! Equip a black dragonhide body, black dragonhide vambraces and a black dragon mask.",
+                Collections.singletonList(TabEmote.DANCE), new Bounds(2252, 4678, 2290, 4713, 0),
+                Arrays.asList(Items.BLACK_DHIDE_BODY, Items.BLACK_DHIDE_VAMB, Items.BLACK_DRAGON_MASK), ClueType.MASTER, Config.STASH_UNITS[95], 29053),
+        BARROWS("Do a jig at the barrows chest. Beware of double agents! Equip any full barrows set.",
+                Collections.singletonList(TabEmote.JIG), new Bounds(3549, 9692, 3554, 9697, 0),
+                Arrays.asList(
+                        Items.AHRIMS_HOOD, Items.AHRIMS_ROBETOP, Items.AHRIMS_ROBESKIRT, Items.AHRIMS_STAFF,
+                        Items.DHAROKS_HELM, Items.DHAROKS_PLATEBODY, Items.DHAROKS_PLATELEGS, Items.DHAROKS_GREATAXE,
+                        Items.GUTHANS_HELM, Items.GUTHANS_PLATEBODY, Items.GUTHANS_CHAINSKIRT, Items.GUTHANS_WARSPEAR,
+                        Items.KARILS_COIF, Items.KARILS_LEATHERTOP, Items.KARILS_LEATHERSKIRT, Items.KARILS_CROSSBOW,
+                        Items.TORAGS_HELM, Items.TORAGS_PLATEBODY, Items.TORAGS_PLATELEGS, Items.TORAGS_HAMMERS,
+                        Items.VERACS_HELM, Items.VERACS_BRASSARD, Items.VERACS_PLATESKIRT, Items.VERACS_FLAIL
+                ),
+                ClueType.ELITE, Config.STASH_UNITS[96], 29042, 4),
+        DEATH_ALTAR("Flap at the Death Altar. Beware of double agents! Equip a death tiara, a legend's cape and any ring of wealth.",
+                Collections.singletonList(TabEmote.FLAP), new Bounds(2200, 4831, 2211, 4841, 0),
+                Arrays.asList(Items.DEATH_TIARA, Items.CAPE_OF_LEGENDS, Items.RING_OF_WEALTH), ClueType.MASTER, Config.STASH_UNITS[97], 29058),
+        GOBLIN_VILLAGE("Goblin Salute in the Goblin Village. Beware of double agents! Equip a bandos godsword, a bandos cloak and a bandos platebody.",
+                Collections.singletonList(TabEmote.GOBLIN_SALUTE), new Bounds(2949, 3498, 2964, 3512, 0),
+                Arrays.asList(Items.BANDOS_PLATEBODY, Items.BANDOS_CLOAK, Items.BANDOS_GODSWORD), ClueType.MASTER, Config.STASH_UNITS[98], 29051),
+        ZUL_ANDRA("Jump for joy in the centre of Zul-Andra. Beware of double agents! Equip a dragon 2h sword, bandos boots and an obsidian cape.",
+                Collections.singletonList(TabEmote.JUMP_FOR_JOY), new Bounds(2195, 3052, 2205, 3059, 0),
+                Arrays.asList(Items.DRAGON_2H_SWORD, Items.BANDOS_BOOTS, Items.OBSIDIAN_CAPE), ClueType.MASTER, Config.STASH_UNITS[99], 29041),
+        LAVA_DRAGON_ISLE("Panic by the big egg where no one dare goes and the ground is burnt. Beware of double agents! Equip a dragon med helm, a TokTz-Ket-Xil, a brine sabre, rune platebody and an uncharged amulet of glory.",
+                Collections.singletonList(TabEmote.PANIC), new Bounds(3220, 3826, 3230, 3835, 0),
+                Arrays.asList(Items.DRAGON_MED_HELM, Items.TOKTZ_KET_XIL, Items.BRINE_SABRE, Items.RUNE_PLATEBODY, Items.AMULET_OF_GLORY), ClueType.MASTER, Config.STASH_UNITS[100], 29040),
+        WISE_OLD_MAN("Show your anger at the Wise old man. Beware of double agents! Equip an abyssal whip, a legend's cape and some spined chaps.",
+                Collections.singletonList(TabEmote.ANGRY), new Bounds(3087, 3251, 3094, 3255, 0),
+                Arrays.asList(Items.ABYSSAL_WHIP, Items.CAPE_OF_LEGENDS, Items.SPINED_CHAPS), ClueType.MASTER, Config.STASH_UNITS[101], 29059),
+        ELLAMARIAS_GARDEN("Show your anger towards the Statue of Saradomin in Ellamaria's garden. Beware of double agents! Equip a zamorak godsword.",
+                Collections.singletonList(TabEmote.ANGRY), new Bounds(3228, 3476, 3233, 3481, 0),
+                Collections.singletonList(Items.ZAMORAK_GODSWORD), ClueType.MASTER, Config.STASH_UNITS[102], 29055),
+        KOUREND_CATACOMBS("Slap your head in the centre of the Kourend catacombs. Beware of double agents! Equip the arclight and the amulet of the damned.",
+                Collections.singletonList(TabEmote.SLAP_HEAD), new Bounds(1660, 10044, 1667, 10051, 0),
+                Arrays.asList(Items.ARCLIGHT, Items.AMULET_OF_THE_DAMNED), ClueType.MASTER, Config.STASH_UNITS[103], 29052),
+        SOUL_ALTAR("Spin in front of the Soul Altar. Beware of double agents! Equip a dragon pickaxe, helm of neitiznot and a pair of rune boots.",
+                Collections.singletonList(TabEmote.SPIN), new Bounds(1810, 3850, 1819, 3859, 0),
+                Arrays.asList(Items.DRAGON_PICKAXE, Items.HELM_OF_NEITIZNOT, Items.RUNE_BOOTS), ClueType.MASTER, Config.STASH_UNITS[104], 29046),
+        ENCHANTED_VALLEY("Stamp in the Enchanted valley west of the waterfall. Beware of double agents! Equip a dragon axe.",
+                Collections.singletonList(TabEmote.STOMP), new Bounds(3025, 4517, 3035, 4523, 0),
+                Collections.singletonList(Items.DRAGON_AXE), ClueType.MASTER, Config.STASH_UNITS[105], 29060),
+        WATCHTOWER("Swing a bullroarer at the top of the watchtower. Beware of double agents! Equip a dragon plateskirt, climbing boots and a dragon chainbody.",
+                Collections.singletonList(TabEmote.BULL_ROARER), new Bounds(2927, 4711, 2934, 4718, 0),
+                Arrays.asList(Items.DRAGON_PLATESKIRT, Items.CLIMBING_BOOTS, Items.DRAGON_CHAINBODY), ClueType.MASTER, Config.STASH_UNITS[106], 29057),
+        CASTLE_DRAKAN("Wave on the northern wall of Castle Drakan. Beware of double agents! Wear a dragon sq shield, splitbark body and any boater.",
+                Collections.singletonList(TabEmote.WAVE), new Bounds(3558, 3379, 3562, 3379, 0),
+                Arrays.asList(Items.DRAGON_SQ_SHIELD, Items.SPLITBARK_BODY, Items.RED_BOATER), ClueType.MASTER, Config.STASH_UNITS[107], 29044),
+        PYRAMID_PLUNDER("Yawn in the 7th room of Pyramid Plunder. Beware of double agents! Equip a pharaoh sceptre and a full set of menaphite robes.",
+                Collections.singletonList(TabEmote.YAWN), new Bounds(1941, 4421, 1954, 4431, 0),
+                Arrays.asList(Items.PHARAOHS_SCEPTRE, Items.MENAPHITE_PURPLE_HAT, Items.MENAPHITE_PURPLE_TOP, Items.MENAPHITE_PURPLE_ROBE, Items.PHARAOHS_SCEPTRE, Items.MENAPHITE_RED_HAT, Items.MENAPHITE_RED_TOP, Items.MENAPHITE_RED_ROBE),
+                ClueType.MASTER, Config.STASH_UNITS[108], 29045, 4);
 
         public final String clueText;
         public final List<TabEmote> emotes;
@@ -494,6 +627,7 @@ public class EmoteClue extends Clue {
         public final ClueType type;
         public final Config stashUnitConfig;
         public final int objectId;
+        public int setSize;
 
         EmoteClueData(String clue, List<TabEmote> emotes, Bounds bounds, List<Integer> equipment, ClueType type, Config stashUnitConfig, int objectId) {
             this.clueText = clue;
@@ -505,6 +639,21 @@ public class EmoteClue extends Clue {
             this.stashUnitConfig = stashUnitConfig;
             this.objectId = objectId;
             EmoteClue emoteClue = new EmoteClue(clue, type, equipment, Collections.emptyList(), emotes);
+            bounds.forEachPos(pos -> pos.getTile().emoteAction = emoteClue::spawnUri);
+            StashUnits.registerStashUnit(this, stashUnitConfig, objectId);
+        }
+
+        EmoteClueData(String clue, List<TabEmote> emotes, Bounds bounds, List<Integer> equipment, ClueType type, Config stashUnitConfig, int objectId, int setSize) {
+            this.clueText = clue;
+            this.emotes = emotes;
+            this.bounds = bounds;
+            this.equipment = equipment;
+            this.emptySlots = null;
+            this.type = type;
+            this.stashUnitConfig = stashUnitConfig;
+            this.objectId = objectId;
+            this.setSize = setSize;
+            EmoteClue emoteClue = new EmoteClue(clue, type, equipment, Collections.emptyList(), emotes, setSize);
             bounds.forEachPos(pos -> pos.getTile().emoteAction = emoteClue::spawnUri);
             StashUnits.registerStashUnit(this, stashUnitConfig, objectId);
         }

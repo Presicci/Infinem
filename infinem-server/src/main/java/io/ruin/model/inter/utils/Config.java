@@ -1031,7 +1031,7 @@ public class Config {
             varpbit(5267, true), // Lava maze 70
             varpbit(5278, true), // Legends guild 71
             varpbit(5270, true), // Edgeville monastary 72
-            //varpbit(5270, true), // Shadow dungeon 73
+            varpbit(5270, true), // Shadow dungeon 73
             varpbit(5271, true), // Fishing platform 74
             varpbit(5272, true), // Slayer tower 75
             varpbit(5280, true), // Fight arena pub 76
@@ -1046,6 +1046,31 @@ public class Config {
             varpbit(5265, true), // West ardougne church 85
             varpbit(5273, true), // Trollheim 86
 
+            /*
+             * Master
+             */
+            varpbit(8443, true), // Crystalline maple trees 87
+            varpbit(5296, true), // Kril Tsutsaroth 88
+            varpbit(5289, true), // Warriors guild bank raspberry 89
+            varpbit(5292, true), // Iorworth camp 90
+            varpbit(5290, true), // Entrana 91
+            varpbit(5298, true), // Magic axe hut 92
+            varpbit(5291, true), // Tzhaar gem store 93
+            varpbit(5285, true), // Iban's Temple 94
+            varpbit(5295, true), // King black dragon lair 95
+            varpbit(5284, true), // Barrows 96
+            varpbit(5300, true), // Death Altar 97
+            varpbit(5293, true), // Goblin Village 98
+            varpbit(5283, true), // Zul-Andra 99
+            varpbit(5282, true), // Lava Dragon Isle 100
+            varpbit(5301, true), // Wise Old Man 101
+            varpbit(5297, true), // Ellamaria's Garden 102
+            varpbit(5294, true), // Kourend catacomb's 103
+            varpbit(5288, true), // Soul Altar 104
+            varpbit(5302, true), // Enchanted valley 105
+            varpbit(5299, true), // Watchtower 106
+            varpbit(5286, true), // Castle Drakan 107
+            varpbit(5287, true), // Pyramid Plunder 108
     };
 
     /**
