@@ -26,6 +26,8 @@ public class TridentOfTheSeas {
     public static final int FULLY_CHARGED = 11905;
     public static final int CHARGED = 11907;
     public static final int UNCHARGED = 11908;
+    public static final int ENHANCED_CHARGED = 22288;
+    public static final int ENHANCED_UNCHARGED = 22290;
     private static List<Item> CHARGE_ITEMS;
 
     static {
@@ -33,14 +35,17 @@ public class TridentOfTheSeas {
         for (Item item : CHARGE_ITEMS) {
             ItemItemAction.register(CHARGED, item.getId(), TridentOfTheSeas::charge);
             ItemItemAction.register(UNCHARGED, item.getId(), TridentOfTheSeas::charge);
+            ItemItemAction.register(ENHANCED_UNCHARGED, item.getId(), TridentOfTheSeas::charge);
+            ItemItemAction.register(ENHANCED_CHARGED, item.getId(), TridentOfTheSeas::charge);
         }
-        for (int id : Arrays.asList(FULLY_CHARGED, CHARGED)) {
+        for (int id : Arrays.asList(FULLY_CHARGED, CHARGED, ENHANCED_CHARGED)) {
             ItemAction.registerInventory(id, "check", TridentOfTheSeas::check);
             ItemAction.registerEquipment(id, "check", TridentOfTheSeas::check);
             ItemAction.registerInventory(id, "uncharge", TridentOfTheSeas::uncharge);
             ItemDef.get(id).addPreTargetDefendListener(TridentOfTheSeas::consumeCharge);
         }
         ItemAction.registerInventory(CHARGED, "drop", TridentOfTheSeas::drop);
+        ItemAction.registerInventory(ENHANCED_CHARGED, "drop", TridentOfTheSeas::drop);
     }
 
     private static void consumeCharge(Player player, Item item, Hit hit, Entity entity) {
@@ -52,7 +57,7 @@ public class TridentOfTheSeas {
             int charges = AttributeExtensions.getCharges(item);
             AttributeExtensions.deincrementCharges(item, 1);
             if (charges <= 0) {
-                item.setId(UNCHARGED);
+                item.setId(item.getId() == ENHANCED_CHARGED ? ENHANCED_UNCHARGED : UNCHARGED);
                 item.clearAttribute(AttributeTypes.CHARGES);
                 player.sendMessage(Color.RED.wrap("Your Trident of the Seas has ran out of charges!"));
                 player.getCombat().updateWeapon(false);
@@ -77,25 +82,29 @@ public class TridentOfTheSeas {
         String lostItem = CHARGE_ITEMS.get(3).getDef().name.toLowerCase();
         player.dialogue(new OptionsDialogue("You will NOT get the " + lostItem + " back.",
                 new Option("Okay. uncharge it.", () -> {
-                    if (player.getInventory().getFreeSlots() < 3) {
-                        player.sendMessage("You'll need at least 3 free inventory spaces to do this.");
-                        return;
-                    }
                     int charges = AttributeExtensions.getCharges(item);
+                    for (Item i : CHARGE_ITEMS) {
+                        if (i.getId() == 995) continue;
+                        if (!player.getInventory().hasRoomFor(i.getId(), i.getAmount() * charges)) {
+                            player.sendMessage("You do not have enough inventory space to do this.");
+                            return;
+                        }
+                    }
                     for (int i = 0; i < CHARGE_ITEMS.size() - 1; i++) { // dont refund the last item
                         Item rune = CHARGE_ITEMS.get(i);
                         player.getInventory().add(rune.getId(), rune.getAmount() * charges);
                     }
                     AttributeExtensions.setCharges(item, 0);
-                    item.setId(UNCHARGED);
+                    item.setId(item.getId() == ENHANCED_CHARGED ? ENHANCED_UNCHARGED : UNCHARGED);
                 }),
                 new Option("No, don't uncharge it.")
         ));
     }
 
     public static void charge(Player p, Item trident, Item other) {
-        int currentCharges = trident.getId() == 11908 ? 0 : AttributeExtensions.getCharges(trident);
-        if (currentCharges >= 2500) {
+        int currentCharges = (trident.getId() == UNCHARGED || trident.getId() == ENHANCED_UNCHARGED) ? 0 : AttributeExtensions.getCharges(trident);
+        int maxCharges = (trident.getId() == ENHANCED_CHARGED || trident.getId() == ENHANCED_UNCHARGED) ? 20000 : 2500;
+        if (currentCharges >= maxCharges) {
             p.sendMessage("Your trident can't hold any more charges.");
             return;
         }
@@ -104,16 +113,16 @@ public class TridentOfTheSeas {
             p.sendMessage("The Trident of the Seas requires 1 death rune, 1 chaos rune, 5 fire runes and " + NumberUtils.formatNumber(CHARGE_ITEMS.get(3).getAmount()) + " " + CHARGE_ITEMS.get(3).getDef().name.toLowerCase() + " for each charge.");
             return;
         }
-        int chargesToAdd = Math.min(inventoryCharges, 2500 - currentCharges);
+        int chargesToAdd = Math.min(inventoryCharges, maxCharges - currentCharges);
         CHARGE_ITEMS.forEach(i -> p.getInventory().remove(i.getId(), i.getAmount() * chargesToAdd));
         p.animate(1979);
         p.graphics(1250, 25, 0);
-        if (chargesToAdd + currentCharges == 2500) {
+        if (chargesToAdd + currentCharges == 2500 && maxCharges == 2500) {
             trident.clearAttribute(AttributeTypes.CHARGES);
             trident.setId(FULLY_CHARGED);
             p.dialogue(new ItemDialogue().one(CHARGED, "Your Trident of the Seas is now fully charged."));
         } else {
-            trident.setId(CHARGED);
+            trident.setId((trident.getId() == ENHANCED_UNCHARGED || trident.getId() == ENHANCED_CHARGED) ? ENHANCED_CHARGED : CHARGED);
             trident.putAttribute(AttributeTypes.CHARGES, chargesToAdd + currentCharges);
             p.dialogue(new ItemDialogue().one(CHARGED, "You charge your Trident of the Seas. It now has " + NumberUtils.formatNumber(chargesToAdd+currentCharges) + " charges."));
         }
