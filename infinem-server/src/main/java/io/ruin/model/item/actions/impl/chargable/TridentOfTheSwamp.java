@@ -13,7 +13,6 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.attributes.AttributeExtensions;
-import io.ruin.model.item.attributes.AttributeTypes;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.stat.StatType;
 
@@ -26,10 +25,9 @@ public class TridentOfTheSwamp {
     public static final int UNCHARGED = 12900;
     public static final int ENHANCED_CHARGED = 22292;
     public static final int ENHANCED_UNCHARGED = 22294;
-    private static List<Item> CHARGE_ITEMS;
+    private static final List<Item> CHARGE_ITEMS = Arrays.asList(Rune.DEATH.toItem(1), Rune.CHAOS.toItem(1), Rune.FIRE.toItem(5), new Item(12934, 1));
 
     static {
-        CHARGE_ITEMS = Arrays.asList(Rune.DEATH.toItem(1), Rune.CHAOS.toItem(1), Rune.FIRE.toItem(5), new Item(12934, 1));
         for (Item item : CHARGE_ITEMS) {
             ItemItemAction.register(CHARGED, item.getId(), TridentOfTheSwamp::charge);
             ItemItemAction.register(UNCHARGED, item.getId(), TridentOfTheSwamp::charge);
