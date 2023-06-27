@@ -90,7 +90,7 @@ public enum FairyRing { //todo add favorite option
             return;
         }
 
-        if (entry != null && (entry == FISHER_KING || entry == ENCHANTED_VALLEY || entry.position.equals(0, 0))) {
+        if (entry != null && (entry == FISHER_KING || entry.position.equals(0, 0))) {
             player.sendMessage("This area is currently not accessible.");
             return;
         }
