@@ -28,10 +28,9 @@ public class TridentOfTheSeas {
     public static final int UNCHARGED = 11908;
     public static final int ENHANCED_CHARGED = 22288;
     public static final int ENHANCED_UNCHARGED = 22290;
-    private static List<Item> CHARGE_ITEMS;
+    private static final List<Item> CHARGE_ITEMS = Arrays.asList(Rune.DEATH.toItem(1), Rune.CHAOS.toItem(1), Rune.FIRE.toItem(5), new Item(COINS_995, 10));
 
     static {
-        CHARGE_ITEMS = Arrays.asList(Rune.DEATH.toItem(1), Rune.CHAOS.toItem(1), Rune.FIRE.toItem(5), new Item(COINS_995, 250)); //250gp
         for (Item item : CHARGE_ITEMS) {
             ItemItemAction.register(CHARGED, item.getId(), TridentOfTheSeas::charge);
             ItemItemAction.register(UNCHARGED, item.getId(), TridentOfTheSeas::charge);
