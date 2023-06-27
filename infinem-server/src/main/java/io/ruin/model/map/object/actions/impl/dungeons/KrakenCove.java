@@ -3,34 +3,14 @@ package io.ruin.model.map.object.actions.impl.dungeons;
 import io.ruin.cache.Color;
 import io.ruin.model.activities.pvminstances.InstanceDialogue;
 import io.ruin.model.activities.pvminstances.InstanceType;
-import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.dialogue.MessageDialogue;
-import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
-import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.skills.slayer.Slayer;
-import io.ruin.model.skills.slayer.SlayerCreature;
 
 public class KrakenCove {
 
     static {
-        SpawnListener.forEach(n -> {
-            if (n.getCombat() != null && n.spawnPosition.getRegion().id == 9116) {
-                n.attackNpcListener = (player, npc, message) -> {
-                    if (!Slayer.isTask(player, npc)) {
-                        SlayerCreature task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
-                        if(n.getId() == 2917 || (task != null && task.name().contains("cave kraken") && npc.getId() == 5534) || npc.getId() == 5535)
-                            return true;
-                        if (message)
-                            player.dialogue(new NPCDialogue(7412, "Oi, I'm Lieve McCracken and I say leave m' Kraken alone!"));
-                        return false;
-                    }
-                    return true;
-                };
-            }
-        });
         /*
          * Entrance/exit
          */
