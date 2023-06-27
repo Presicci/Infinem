@@ -198,64 +198,10 @@
     "walkRange": 3
   },
   {
-    "name": "Waterfiend",
-    "id": 2917,
-    "x": 2248,
-    "y": 9996,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 2
-  },
-  {
-    "name": "Waterfiend",
-    "id": 2917,
-    "x": 2248,
-    "y": 9998,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 2
-  },
-  {
-    "name": "Waterfiend",
-    "id": 2917,
-    "x": 2249,
-    "y": 9993,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 2
-  },
-  {
-    "name": "Waterfiend",
-    "id": 2917,
-    "x": 2252,
-    "y": 9994,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 2
-  },
-  {
-    "name": "Waterfiend",
-    "id": 2917,
-    "x": 2256,
-    "y": 9988,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
     "name": "Brimstail",
     "id": 4913,
     "x": 2410,
     "y": 9819,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 2
-  },
-  {
-    "name": "Waterfiend",
-    "id": 2917,
-    "x": 2259,
-    "y": 9989,
     "z": 0,
     "direction": "N",
     "walkRange": 2
@@ -268,15 +214,6 @@
     "z": 0,
     "direction": "W",
     "walkRange": 1
-  },
-  {
-    "name": "Waterfiend",
-    "id": 2917,
-    "x": 2259,
-    "y": 9991,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 3
   },
   {
     "name": "Hellhound",
@@ -294,60 +231,6 @@
     "y": 9795,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
-  },
-  {
-    "name": "Waterfiend",
-    "id": 2917,
-    "x": 2264,
-    "y": 9987,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Waterfiend",
-    "id": 2917,
-    "x": 2280,
-    "y": 9988,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Waterfiend",
-    "id": 2917,
-    "x": 2282,
-    "y": 9988,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 3
-  },
-  {
-    "name": "Waterfiend",
-    "id": 2917,
-    "x": 2283,
-    "y": 9988,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 3
-  },
-  {
-    "name": "Waterfiend",
-    "id": 2917,
-    "x": 2287,
-    "y": 9988,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
-    "name": "Waterfiend",
-    "id": 2917,
-    "x": 2285,
-    "y": 9989,
-    "z": 0,
-    "direction": "W",
     "walkRange": 2
   },
   {
