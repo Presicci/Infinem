@@ -1,0 +1,17 @@
+Player: Hello!
+Alyssa: Hello, if you've something important to tell me, be out with it! I'm a busy woman.
+<Just making small talk.
+Player: Just making small talk.
+Alyssa: How very nice of you. However, I'm sure there are less busy people who'd love to chat.
+Player: Oh, okay.
+Alyssa: Chin up love and go adventure, that's what you lot do right?
+Player: I suppose we do, bye!
+><Who are you?
+Player: Who are you?
+Alyssa: I'm Alyssa the housekeeper and this castle needs constant attention! I've enough trouble with the guards messing up my carpets without you adding to the problem.
+Player: Hmm, yeah sorry about that. Speaking of carpets, ever thought how strange that there are carpets beneath the stairs?
+Alyssa: It's cut to fit! If I had a gold piece for everytime I was asked that question!
+Player: Sure... Cut to fit... Not an oversight at all.
+Alyssa: Alright, believe what you like. I've a castle to clean.
+><Bye.
+Player: Bye.
