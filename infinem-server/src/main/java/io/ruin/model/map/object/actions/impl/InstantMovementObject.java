@@ -10,6 +10,15 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    KOUREND_CASTLE_STAIRS_ENTRY_BOTTOM_1(11807, new Position(1615, 3665, 0), new Position(1614, 3665, 1)),
+    KOUREND_CASTLE_STAIRS_ENTRY_BOTTOM_2(11807, new Position(1615, 3680, 0), new Position(1614, 3681, 1)),
+    KOUREND_CASTLE_STAIRS_DOWN_1(11799, new Position(1615, 3665, 1), new Position(1618, 3665, 0)),
+    KOUREND_CASTLE_STAIRS_DOWN_2(11799, new Position(1615, 3680, 1), new Position(1618, 3680, 0)),
+    KOUREND_CASTLE_STAIRS_NORTH(12536, new Position(1616, 3687, 1), new Position(1616, 3686, 2)),
+    KOUREND_CASTLE_STAIRS_NORTH_DOWN(12538, new Position(1616, 3687, 2), new Position(1615, 3687, 1)),
+    KOUREND_CASTLE_STAIRS_SOUTH(12536, new Position(1616, 3658, 1), new Position(1617, 3660, 2)),
+    KOUREND_CASTLE_STAIRS_SOUTH_DOWN(12538, new Position(1617, 3659, 2), new Position(1618, 3659, 1)),
+
     WITCHHAVEN_DUNGEON_ENTRANCE(18270, "climb-down", new Position(2696, 3283, 0), new Position(2696, 9683, 0)),
     WITCHHAVEN_DUNGEON_EXIT(18354, "climb-up", new Position(2696, 9682, 0), new Position(2697, 3283, 0)),
 
