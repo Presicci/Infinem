@@ -10435,5 +10435,14 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Sand Crab"
+  },
+  {
+    "name": "Councillor Andrews",
+    "id": 11152,
+    "x": 1623,
+    "y": 3673,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
