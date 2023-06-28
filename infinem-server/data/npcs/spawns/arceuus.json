@@ -1,0 +1,832 @@
+[
+  //6972
+  {
+    "id": 74,
+    "x": 1733,
+    "y": 3877,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 2827,
+    "x": 1739,
+    "y": 3872,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1762,
+    "y": 3852,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 7040,
+    "x": 1761,
+    "y": 3854,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Clerris"
+  },
+  {
+    "id": 2827,
+    "x": 1739,
+    "y": 3854,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1735,
+    "y": 3853,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+
+
+
+
+
+
+
+
+
+
+
+  //6458
+  {
+    "id": 11107,
+    "x": 1626,
+    "y": 3713,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  {
+    "id": 8543,
+    "x": 1623,
+    "y": 3717,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Royal Guard"
+  },
+  {
+    "id": 8543,
+    "x": 1631,
+    "y": 3714,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Royal Guard"
+  },
+  {
+    "id": 7058,
+    "x": 1622,
+    "y": 3749,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7058,
+    "x": 1622,
+    "y": 3746,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7058,
+    "x": 1622,
+    "y": 3743,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7057,
+    "x": 1637,
+    "y": 3749,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7057,
+    "x": 1637,
+    "y": 3743,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7059,
+    "x": 1637,
+    "y": 3746,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7059,
+    "x": 1637,
+    "y": 3740,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 7060,
+    "x": 1622,
+    "y": 3740,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6824,
+    "x": 1627,
+    "y": 3759,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 6824,
+    "x": 1635,
+    "y": 3759,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2827,
+    "x": 1638,
+    "y": 3757,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 6770,
+    "x": 1651,
+    "y": 3758,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Arcis"
+  },
+  {
+    "id": 7065,
+    "x": 1651,
+    "y": 3730,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 7065,
+    "x": 1649,
+    "y": 3722,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 7065,
+    "x": 1651,
+    "y": 3719,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+
+
+
+
+
+
+
+
+
+
+
+  //6459
+  {
+    "id": 7049,
+    "x": 1639,
+    "y": 3800,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sam"
+  },
+  {
+    "id": 7048,
+    "x": 1625,
+    "y": 3803,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Professor Gracklebone"
+  },
+  {
+    "id": 7614,
+    "x": 1619,
+    "y": 3809,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Archeio"
+  },
+  {
+    "id": 7047,
+    "x": 1629,
+    "y": 3815,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Villia"
+  },
+  {
+    "id": 7044,
+    "x": 1633,
+    "y": 3808,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Logosia"
+  },
+  {
+    "id": 7046,
+    "x": 1638,
+    "y": 3816,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Horphis"
+  },
+  {
+    "id": 7902,
+    "x": 1655,
+    "y": 3830,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Galana"
+  },
+  {
+    "id": 7067,
+    "x": 1646,
+    "y": 3824,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 7045,
+    "x": 1641,
+    "y": 3825,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Biblia"
+  },
+  {
+    "id": 7065,
+    "x": 1612,
+    "y": 3822,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 7066,
+    "x": 1610,
+    "y": 3792,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 2827,
+    "x": 1630,
+    "y": 3839,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+
+
+
+
+
+
+
+
+
+
+  //6460
+  {
+    "id": 2827,
+    "x": 1625,
+    "y": 3842,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1612,
+    "y": 3848,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 6824,
+    "x": 1614,
+    "y": 3846,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 7051,
+    "x": 1636,
+    "y": 3868,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Trossa"
+  },
+  {
+    "id": 6858,
+    "x": 1627,
+    "y": 3877,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Look-out"
+  },
+  {
+    "id": 6824,
+    "x": 1635,
+    "y": 3877,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2827,
+    "x": 1660,
+    "y": 3882,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+
+
+
+
+
+
+
+
+  //6714
+  {
+    "id": 7204,
+    "x": 1667,
+    "y": 3729,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Filamina"
+  },
+  {
+    "id": 2827,
+    "x": 1671,
+    "y": 3721,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 7053,
+    "x": 1686,
+    "y": 3726,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rassain"
+  },
+  {
+    "id": 6824,
+    "x": 1707,
+    "y": 3713,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Giant bat"
+  },
+  {
+    "id": 2827,
+    "x": 1707,
+    "y": 3716,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 8501,
+    "x": 1698,
+    "y": 3742,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mori"
+  },
+  {
+    "id": 7056,
+    "x": 1719,
+    "y": 3726,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Regath"
+  },
+  {
+    "id": 7203,
+    "x": 1722,
+    "y": 3746,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Thyria"
+  },
+  {
+    "id": 7061,
+    "x": 1703,
+    "y": 3771,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Batt Mellamy"
+  },
+  {
+    "id": 7062,
+    "x": 1704,
+    "y": 3772,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Freald"
+  },
+  {
+    "id": 7066,
+    "x": 1686,
+    "y": 3770,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 7066,
+    "x": 1686,
+    "y": 3766,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Wizard"
+  },
+  {
+    "id": 7064,
+    "x": 1677,
+    "y": 3767,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 2827,
+    "x": 1666,
+    "y": 3762,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+  //6715
+  {
+    "id": 7055,
+    "x": 1696,
+    "y": 3783,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Novice"
+  },
+  {
+    "id": 7055,
+    "x": 1687,
+    "y": 3796,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Novice"
+  },
+  {
+    "id": 7055,
+    "x": 1709,
+    "y": 3783,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Novice"
+  },
+  {
+    "id": 7055,
+    "x": 1712,
+    "y": 3801,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Novice"
+  },
+  {
+    "id": 7054,
+    "x": 1691,
+    "y": 3793,
+    "z": 2,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mofina"
+  },
+  {
+    "id": 2827,
+    "x": 1671,
+    "y": 3788,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 7225,
+    "x": 1670,
+    "y": 3834,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Loinur"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+  //6716
+  {
+    "id": 2827,
+    "x": 1713,
+    "y": 3903,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1672,
+    "y": 3878,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1679,
+    "y": 3878,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 74,
+    "x": 1686,
+    "y": 3879,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 74,
+    "x": 1689,
+    "y": 3879,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 74,
+    "x": 1700,
+    "y": 3881,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 74,
+    "x": 1718,
+    "y": 3881,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 7050,
+    "x": 1713,
+    "y": 3883,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Tyss"
+  },
+  {
+    "id": 2827,
+    "x": 1720,
+    "y": 3887,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 74,
+    "x": 1726,
+    "y": 3891,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+
+
+
+
+
+
+
+
+
+  //7228
+  {
+    "name": "Aretha",
+    "id": 7042,
+    "x": 1817,
+    "y": 3858,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  }
+]

@@ -1,0 +1,338 @@
+[
+  {
+    "name": "Forester",
+    "id": 7238,
+    "x": 1626,
+    "y": 3514,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Duck",
+    "id": 1838,
+    "x": 1636,
+    "y": 3501,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Duck",
+    "id": 1839,
+    "x": 1636,
+    "y": 3502,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ducklings",
+    "id": 2002,
+    "x": 1636,
+    "y": 3502,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guildmaster Lars",
+    "id": 7236,
+    "x": 1650,
+    "y": 3499,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Perry",
+    "id": 7240,
+    "x": 1654,
+    "y": 3500,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Berry",
+    "id": 7235,
+    "x": 1657,
+    "y": 3506,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Murfet",
+    "id": 7237,
+    "x": 1607,
+    "y": 3508,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Forester",
+    "id": 7238,
+    "x": 1614,
+    "y": 3491,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sawmill operator",
+    "id": 3101,
+    "x": 1623,
+    "y": 3500,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "a1e55885-3aa4-4d63-8a5e-5808c01f54e0"
+    }
+  },
+  {
+    "name": "Forester",
+    "id": 7238,
+    "x": 1582,
+    "y": 3479,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Forester",
+    "id": 7238,
+    "x": 1596,
+    "y": 3489,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Nesty",
+    "id": 7321,
+    "x": 1615,
+    "y": 3514,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1558,
+    "y": 9902,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1566,
+    "y": 9908,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1561,
+    "y": 9866,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1566,
+    "y": 9901,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1563,
+    "y": 9903,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1571,
+    "y": 9882,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1570,
+    "y": 9880,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1575,
+    "y": 9872,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1574,
+    "y": 9888,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1576,
+    "y": 9896,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1577,
+    "y": 9886,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1578,
+    "y": 9879,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1578,
+    "y": 9910,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1579,
+    "y": 9905,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1585,
+    "y": 9866,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1589,
+    "y": 9864,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1591,
+    "y": 9866,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Kai",
+    "id": 7239,
+    "x": 1593,
+    "y": 9900,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1547,
+    "y": 9888,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1551,
+    "y": 9888,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1552,
+    "y": 9899,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1554,
+    "y": 9895,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1559,
+    "y": 9866,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ent",
+    "id": 7234,
+    "x": 1561,
+    "y": 9866,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  }
+]

@@ -1,0 +1,1706 @@
+[
+  //5689
+  {
+    "name": "Lizardman shaman",
+    "id": 6767,
+    "x": 1436,
+    "y": 3713,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Lizardman shaman",
+    "id": 6767,
+    "x": 1424,
+    "y": 3717,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Lizardman shaman",
+    "id": 6767,
+    "x": 1424,
+    "y": 3702,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Lizardman",
+    "id": 6915,
+    "x": 1442,
+    "y": 3697,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Lizardman",
+    "id": 6915,
+    "x": 1442,
+    "y": 3711,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Lizardman",
+    "id": 6915,
+    "x": 1437,
+    "y": 3712,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Lizardman",
+    "id": 6915,
+    "x": 1423,
+    "y": 3707,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Lizardman",
+    "id": 6915,
+    "x": 1433,
+    "y": 3717,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Lizardman",
+    "id": 6916,
+    "x": 1430,
+    "y": 3703,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Lizardman",
+    "id": 6916,
+    "x": 1445,
+    "y": 3701,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Lizardman",
+    "id": 6916,
+    "x": 1422,
+    "y": 3722,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Lizardman",
+    "id": 6916,
+    "x": 1427,
+    "y": 3701,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 6918,
+    "x": 1442,
+    "y": 3704,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 6918,
+    "x": 1437,
+    "y": 3719,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+
+
+
+
+
+
+
+
+
+
+
+  //5688
+  {
+    "id": 2827,
+    "x": 1450,
+    "y": 3595,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1463,
+    "y": 3605,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1459,
+    "y": 3587,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2101,
+    "x": 1449,
+    "y": 3603,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2101,
+    "x": 1444,
+    "y": 3603,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2101,
+    "x": 1441,
+    "y": 3606,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2101,
+    "x": 1447,
+    "y": 3610,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2101,
+    "x": 1448,
+    "y": 3603,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 2101,
+    "x": 1441,
+    "y": 3602,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Hill Giant"
+  },
+  {
+    "id": 8189,
+    "x": 1427,
+    "y": 3592,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Grave digger"
+  },
+
+
+
+  //5687
+  {
+    "id": 7482,
+    "x": 1423,
+    "y": 3532,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Sdiar"
+  },
+  {
+    "id": 77,
+    "x": 1420,
+    "y": 3523,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 80,
+    "x": 1437,
+    "y": 3520,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 11106,
+    "x": 1417,
+    "y": 3534,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11102,
+    "x": 1420,
+    "y": 3533,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11104,
+    "x": 1420,
+    "y": 3538,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11092,
+    "x": 1416,
+    "y": 3538,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11096,
+    "x": 1424,
+    "y": 3533,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11093,
+    "x": 1418,
+    "y": 3535,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  {
+    "id": 11095,
+    "x": 1420,
+    "y": 3539,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  //5686
+  {
+    "id": 79,
+    "x": 1427,
+    "y": 3518,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 78,
+    "x": 1431,
+    "y": 3517,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  {
+    "id": 81,
+    "x": 1437,
+    "y": 3516,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Skeleton"
+  },
+  //5944
+  {
+    "id": 11093,
+    "x": 1524,
+    "y": 3635,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  {
+    "id": 11094,
+    "x": 1530,
+    "y": 3633,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11100,
+    "x": 1528,
+    "y": 3625,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11098,
+    "x": 1518,
+    "y": 3620,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 7999,
+    "x": 1512,
+    "y": 3629,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Phileas Rimor"
+  },
+  {
+    "id": 11102,
+    "x": 1512,
+    "y": 3625,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11096,
+    "x": 1503,
+    "y": 3627,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11098,
+    "x": 1505,
+    "y": 3633,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11092,
+    "x": 1508,
+    "y": 3632,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 6864,
+    "x": 1512,
+    "y": 3617,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6861,
+    "x": 1512,
+    "y": 3616,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6862,
+    "x": 1506,
+    "y": 3613,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6859,
+    "x": 1505,
+    "y": 3613,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6862,
+    "x": 1504,
+    "y": 3613,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 6883,
+    "x": 1496,
+    "y": 3616,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6860,
+    "x": 1496,
+    "y": 3617,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Banker"
+  },
+  {
+    "id": 11094,
+    "x": 1494,
+    "y": 3610,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11092,
+    "x": 1489,
+    "y": 3603,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11096,
+    "x": 1491,
+    "y": 3620,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11100,
+    "x": 1481,
+    "y": 3626,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11097,
+    "x": 1475,
+    "y": 3626,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  {
+    "id": 11102,
+    "x": 1478,
+    "y": 3637,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11092,
+    "x": 1486,
+    "y": 3637,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11104,
+    "x": 1481,
+    "y": 3643,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11097,
+    "x": 1483,
+    "y": 3641,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend head guard"
+  },
+  {
+    "id": 11094,
+    "x": 1505,
+    "y": 3638,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 6781,
+    "x": 1496,
+    "y": 3631,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Shayda"
+  },
+  {
+    "id": 11096,
+    "x": 1516,
+    "y": 3606,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11092,
+    "x": 1514,
+    "y": 3585,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11098,
+    "x": 1508,
+    "y": 3598,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 8180,
+    "x": 1496,
+    "y": 3597,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Amelia"
+  },
+  {
+    "id": 11106,
+    "x": 1474,
+    "y": 3598,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+
+
+
+  //5943
+  {
+    "id": 2827,
+    "x": 1522,
+    "y": 3548,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1522,
+    "y": 3551,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1507,
+    "y": 3542,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 6872,
+    "x": 1500,
+    "y": 3544,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "New recruit Tony"
+  },
+  {
+    "id": 7486,
+    "x": 1477,
+    "y": 3533,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie"
+  },
+  {
+    "id": 7488,
+    "x": 1482,
+    "y": 3531,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie"
+  },
+  {
+    "id": 7487,
+    "x": 1483,
+    "y": 3535,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie"
+  },
+  {
+    "id": 510,
+    "x": 1484,
+    "y": 3532,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 7485,
+    "x": 1479,
+    "y": 3532,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Zombie"
+  },
+  {
+    "id": 2827,
+    "x": 1500,
+    "y": 3551,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1495,
+    "y": 3561,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+  {
+    "id": 2827,
+    "x": 1478,
+    "y": 3565,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bat"
+  },
+
+
+
+  //5942
+  {
+    "id": 2856,
+    "x": 1505,
+    "y": 3457,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2856,
+    "x": 1497,
+    "y": 3460,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2856,
+    "x": 1511,
+    "y": 3456,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2864,
+    "x": 1495,
+    "y": 3461,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2864,
+    "x": 1493,
+    "y": 3469,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 7474,
+    "x": 1506,
+    "y": 3469,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Reginald"
+  },
+  {
+    "id": 7475,
+    "x": 1506,
+    "y": 3466,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Roy jr."
+  },
+  {
+    "id": 1173,
+    "x": 1510,
+    "y": 3471,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1173,
+    "x": 1504,
+    "y": 3465,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1173,
+    "x": 1510,
+    "y": 3465,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 1418,
+    "x": 1502,
+    "y": 3470,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1508,
+    "y": 3465,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1509,
+    "y": 3473,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1515,
+    "y": 3474,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1418,
+    "x": 1515,
+    "y": 3468,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1523,
+    "y": 3476,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1521,
+    "y": 3469,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1514,
+    "y": 3468,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1504,
+    "y": 3479,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1488,
+    "y": 3476,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 1416,
+    "x": 1496,
+    "y": 3484,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Squirrel"
+  },
+  {
+    "id": 2910,
+    "x": 1494,
+    "y": 3497,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 2910,
+    "x": 1487,
+    "y": 3496,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 2910,
+    "x": 1481,
+    "y": 3498,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 2910,
+    "x": 1485,
+    "y": 3506,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 2910,
+    "x": 1487,
+    "y": 3504,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Chinchompa"
+  },
+  {
+    "id": 2090,
+    "x": 1515,
+    "y": 3501,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 2090,
+    "x": 1513,
+    "y": 3507,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 2090,
+    "x": 1520,
+    "y": 3509,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 2090,
+    "x": 1522,
+    "y": 3502,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 2090,
+    "x": 1517,
+    "y": 3497,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Moss giant"
+  },
+  {
+    "id": 5556,
+    "x": 1522,
+    "y": 3476,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 5556,
+    "x": 1515,
+    "y": 3464,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 5556,
+    "x": 1498,
+    "y": 3469,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  {
+    "id": 5556,
+    "x": 1499,
+    "y": 3475,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4,
+    "world": "ECO",
+    "npcName": "Ruby harvest"
+  },
+  //5941
+  {
+    "id": 7471,
+    "x": 1504,
+    "y": 3403,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Captain Magoro"
+  },
+  {
+    "id": 7478,
+    "x": 1509,
+    "y": 3417,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Hugor"
+  },
+  {
+    "id": 7479,
+    "x": 1498,
+    "y": 3422,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Lan the Butcher"
+  },
+  {
+    "id": 7476,
+    "x": 1529,
+    "y": 3422,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 2,
+    "world": "ECO",
+    "npcName": "Robert Boss"
+  },
+  {
+    "id": 3908,
+    "x": 1518,
+    "y": 3438,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bear Cub"
+  },
+  {
+    "id": 3908,
+    "x": 1511,
+    "y": 3444,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bear Cub"
+  },
+  {
+    "id": 3908,
+    "x": 1509,
+    "y": 3441,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Bear Cub"
+  },
+  {
+    "id": 2838,
+    "x": 1519,
+    "y": 3449,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Grizzly bear"
+  },
+  {
+    "id": 2838,
+    "x": 1515,
+    "y": 3443,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Grizzly bear"
+  },
+  {
+    "id": 7459,
+    "x": 1494,
+    "y": 3443,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 7459,
+    "x": 1493,
+    "y": 3442,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 7459,
+    "x": 1497,
+    "y": 3448,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 7459,
+    "x": 1485,
+    "y": 3433,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 7459,
+    "x": 1485,
+    "y": 3431,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 7459,
+    "x": 1485,
+    "y": 3432,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Fishing spot"
+  },
+  {
+    "id": 2856,
+    "x": 1498,
+    "y": 3454,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2864,
+    "x": 1503,
+    "y": 3454,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+  {
+    "id": 2864,
+    "x": 1496,
+    "y": 3454,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "world": "ECO",
+    "npcName": "Giant rat"
+  },
+
+
+
+
+
+
+
+
+  //6199
+  {
+    "id": 6875,
+    "x": 1573,
+    "y": 3582,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Nurse Boubou"
+  },
+  {
+    "id": 6867,
+    "x": 1549,
+    "y": 3536,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Kilian"
+  },
+  {
+    "id": 6866,
+    "x": 1542,
+    "y": 3531,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Babacus"
+  },
+  {
+    "id": 6865,
+    "x": 1550,
+    "y": 3527,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Salara"
+  },
+
+
+
+
+
+
+
+
+
+
+  //6200
+  {
+    "id": 3909,
+    "x": 1591,
+    "y": 3633,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bear Cub"
+  },
+  {
+    "id": 3909,
+    "x": 1598,
+    "y": 3628,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Bear Cub"
+  },
+  {
+    "id": 2838,
+    "x": 1598,
+    "y": 3634,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Grizzly bear"
+  },
+  {
+    "id": 7223,
+    "x": 1591,
+    "y": 3620,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Mogrim"
+  },
+  {
+    "id": 6878,
+    "x": 1565,
+    "y": 3616,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6879,
+    "x": 1565,
+    "y": 3613,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6880,
+    "x": 1565,
+    "y": 3610,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 6880,
+    "x": 1558,
+    "y": 3616,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Soldier"
+  },
+  {
+    "id": 7201,
+    "x": 1543,
+    "y": 3630,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Quartermaster Briget"
+  },
+  {
+    "id": 305,
+    "x": 1545,
+    "y": 3627,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Jennifer"
+  },
+  {
+    "id": 11104,
+    "x": 1538,
+    "y": 3614,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11094,
+    "x": 1547,
+    "y": 3604,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11092,
+    "x": 1550,
+    "y": 3619,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 11096,
+    "x": 1540,
+    "y": 3600,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kourend guard"
+  },
+  {
+    "id": 6906,
+    "x": 1547,
+    "y": 3600,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Soldier (tier 2)"
+  },
+  {
+    "id": 6908,
+    "x": 1547,
+    "y": 3590,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Soldier (tier 3)"
+  },
+  {
+    "id": 6912,
+    "x": 1538,
+    "y": 3591,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Soldier (tier 5)"
+  },
+  {
+    "id": 6904,
+    "x": 1538,
+    "y": 3597,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Soldier (tier 1)"
+  },
+  {
+    "id": 6895,
+    "x": 1561,
+    "y": 3602,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Captain Ginea"
+  },
+  {
+    "id": 6873,
+    "x": 1581,
+    "y": 3591,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Nurse Wooned"
+  },
+  {
+    "id": 6828,
+    "x": 1582,
+    "y": 3593,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6842,
+    "x": 1585,
+    "y": 3593,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6830,
+    "x": 1588,
+    "y": 3593,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6836,
+    "x": 1582,
+    "y": 3589,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6834,
+    "x": 1585,
+    "y": 3589,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6838,
+    "x": 1588,
+    "y": 3589,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6846,
+    "x": 1582,
+    "y": 3585,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6844,
+    "x": 1585,
+    "y": 3585,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  },
+  {
+    "id": 6826,
+    "x": 1588,
+    "y": 3585,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Wounded soldier"
+  }
+]

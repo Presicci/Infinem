@@ -1,0 +1,1269 @@
+[
+  //6970
+  {
+    "id": 6985,
+    "x": 1787,
+    "y": 3775,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Poor looking woman"
+  },
+  {
+    "id": 6977,
+    "x": 1766,
+    "y": 3773,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Patrolman"
+  },
+  {
+    "id": 6976,
+    "x": 1764,
+    "y": 3766,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Patrolwoman"
+  },
+  {
+    "id": 330,
+    "x": 1767,
+    "y": 3762,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swarm"
+  },
+  {
+    "id": 6995,
+    "x": 1772,
+    "y": 3754,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 6975,
+    "x": 1770,
+    "y": 3756,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Patrolman"
+  },
+  {
+    "id": 6980,
+    "x": 1777,
+    "y": 3747,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Patrolman"
+  },
+  {
+    "id": 6980,
+    "x": 1770,
+    "y": 3745,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Patrolman"
+  },
+  {
+    "id": 6994,
+    "x": 1764,
+    "y": 3752,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 6992,
+    "x": 1756,
+    "y": 3753,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 6988,
+    "x": 1754,
+    "y": 3749,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 6987,
+    "x": 1755,
+    "y": 3746,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 330,
+    "x": 1753,
+    "y": 3744,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swarm"
+  },
+  {
+    "id": 6973,
+    "x": 1757,
+    "y": 3765,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Patrolman"
+  },
+  {
+    "id": 2855,
+    "x": 1751,
+    "y": 3760,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 330,
+    "x": 1747,
+    "y": 3769,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swarm"
+  },
+  {
+    "id": 6984,
+    "x": 1754,
+    "y": 3773,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Poor looking woman"
+  },
+  {
+    "id": 6996,
+    "x": 1778,
+    "y": 3738,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mugger"
+  },
+  {
+    "id": 2854,
+    "x": 1770,
+    "y": 3735,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 6978,
+    "x": 1775,
+    "y": 3738,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Patrolwoman"
+  },
+  {
+    "id": 6980,
+    "x": 1780,
+    "y": 3729,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Patrolman"
+  },
+  {
+    "id": 330,
+    "x": 1763,
+    "y": 3734,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swarm"
+  },
+  {
+    "id": 6995,
+    "x": 1766,
+    "y": 3731,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 330,
+    "x": 1787,
+    "y": 3729,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swarm"
+  },
+  {
+    "id": 6985,
+    "x": 1791,
+    "y": 3723,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Poor looking woman"
+  },
+  {
+    "id": 2854,
+    "x": 1788,
+    "y": 3722,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 1784,
+    "y": 3715,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 7202,
+    "x": 1783,
+    "y": 3758,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Kenelme"
+  },
+  {
+    "id": 1838,
+    "x": 1746,
+    "y": 3716,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1745,
+    "y": 3718,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1742,
+    "y": 3716,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1744,
+    "y": 3716,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1772,
+    "y": 3726,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1783,
+    "y": 3735,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1779,
+    "y": 3743,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+  {
+    "id": 1838,
+    "x": 1767,
+    "y": 3743,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Duck"
+  },
+
+
+
+
+  //6971
+  {
+    "id": 2854,
+    "x": 1787,
+    "y": 3789,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 1778,
+    "y": 3781,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 6983,
+    "x": 1787,
+    "y": 3779,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Poor looking man"
+  },
+  {
+    "id": 330,
+    "x": 1785,
+    "y": 3778,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swarm"
+  },
+  {
+    "id": 2855,
+    "x": 1787,
+    "y": 3778,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 1766,
+    "y": 3781,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2855,
+    "x": 1756,
+    "y": 3776,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+
+
+
+
+
+  //7225
+  {
+    "id": 6968,
+    "x": 1808,
+    "y": 3710,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dock worker"
+  },
+  {
+    "id": 6999,
+    "x": 1808,
+    "y": 3707,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Port Official"
+  },
+  {
+    "id": 1338,
+    "x": 1805,
+    "y": 3708,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 1338,
+    "x": 1805,
+    "y": 3705,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 3019,
+    "x": 1807,
+    "y": 3702,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 1807,
+    "y": 3701,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 1338,
+    "x": 1812,
+    "y": 3689,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 1338,
+    "x": 1807,
+    "y": 3694,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 7009,
+    "x": 1808,
+    "y": 3695,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Andrea"
+  },
+  {
+    "id": 6995,
+    "x": 1806,
+    "y": 3690,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 3019,
+    "x": 1806,
+    "y": 3686,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 7007,
+    "x": 1803,
+    "y": 3691,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Melvin"
+  },
+  {
+    "id": 7001,
+    "x": 1793,
+    "y": 3689,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Port worker"
+  },
+  {
+    "id": 6994,
+    "x": 1807,
+    "y": 3675,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 6994,
+    "x": 1806,
+    "y": 3683,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 7006,
+    "x": 1812,
+    "y": 3690,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Darren"
+  },
+  {
+    "id": 6997,
+    "x": 1816,
+    "y": 3689,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dark wizard"
+  },
+  {
+    "id": 7003,
+    "x": 1816,
+    "y": 3689,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Cheryl"
+  },
+  {
+    "id": 7004,
+    "x": 1820,
+    "y": 3689,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Charles"
+  },
+  {
+    "id": 2147,
+    "x": 1824,
+    "y": 3690,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Veos"
+  },
+  {
+    "id": 3019,
+    "x": 1820,
+    "y": 3684,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 3019,
+    "x": 1820,
+    "y": 3680,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 6987,
+    "x": 1822,
+    "y": 3682,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 6996,
+    "x": 1819,
+    "y": 3681,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mugger"
+  },
+  {
+    "id": 6988,
+    "x": 1821,
+    "y": 3677,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 6992,
+    "x": 1834,
+    "y": 3689,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 1338,
+    "x": 1841,
+    "y": 3690,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Seagull"
+  },
+  {
+    "id": 6998,
+    "x": 1829,
+    "y": 3690,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 6988,
+    "x": 1839,
+    "y": 3691,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 7000,
+    "x": 1845,
+    "y": 3691,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Janaway"
+  },
+  {
+    "id": 7005,
+    "x": 1840,
+    "y": 3688,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Sarah"
+  },
+  {
+    "id": 7010,
+    "x": 1843,
+    "y": 3689,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Elizabeth"
+  },
+  {
+    "id": 3019,
+    "x": 1841,
+    "y": 3690,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+
+
+
+
+  //7226
+  {
+    "id": 6987,
+    "x": 1793,
+    "y": 3730,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 6994,
+    "x": 1801,
+    "y": 3730,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 6780,
+    "x": 1792,
+    "y": 3737,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Piliar"
+  },
+  {
+    "id": 2854,
+    "x": 1793,
+    "y": 3740,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2855,
+    "x": 1802,
+    "y": 3737,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 330,
+    "x": 1806,
+    "y": 3768,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swarm"
+  },
+  {
+    "id": 7905,
+    "x": 1794,
+    "y": 3756,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Robert O\u0027Reilly"
+  },
+  {
+    "id": 6993,
+    "x": 1792,
+    "y": 3749,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 6989,
+    "x": 1793,
+    "y": 3746,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 2854,
+    "x": 1804,
+    "y": 3747,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 1813,
+    "y": 3757,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 1813,
+    "y": 3756,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 1811,
+    "y": 3757,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 3019,
+    "x": 1815,
+    "y": 3747,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 6968,
+    "x": 1824,
+    "y": 3746,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dock worker"
+  },
+  {
+    "id": 6966,
+    "x": 1819,
+    "y": 3741,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dockmaster"
+  },
+  {
+    "id": 6967,
+    "x": 1830,
+    "y": 3760,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dock worker"
+  },
+  {
+    "id": 6967,
+    "x": 1832,
+    "y": 3736,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dock worker"
+  },
+  {
+    "id": 2854,
+    "x": 1840,
+    "y": 3743,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 3019,
+    "x": 1842,
+    "y": 3753,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 6994,
+    "x": 1845,
+    "y": 3752,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 6989,
+    "x": 1845,
+    "y": 3757,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 6988,
+    "x": 1852,
+    "y": 3744,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 6993,
+    "x": 1842,
+    "y": 3737,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 6993,
+    "x": 1845,
+    "y": 3738,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 6971,
+    "x": 1845,
+    "y": 3748,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Captain Khaled"
+  },
+  {
+    "id": 3019,
+    "x": 1849,
+    "y": 3747,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Spider"
+  },
+  {
+    "id": 6996,
+    "x": 1839,
+    "y": 3736,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mugger"
+  },
+  {
+    "id": 6968,
+    "x": 1849,
+    "y": 3723,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dock worker"
+  },
+  {
+    "id": 2854,
+    "x": 1846,
+    "y": 3724,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 6963,
+    "x": 1831,
+    "y": 3718,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Frankie"
+  },
+  {
+    "id": 330,
+    "x": 1826,
+    "y": 3721,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Swarm"
+  },
+  {
+    "id": 6994,
+    "x": 1824,
+    "y": 3715,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Pirate"
+  },
+  {
+    "id": 6967,
+    "x": 1817,
+    "y": 3727,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dock worker"
+  },
+  {
+    "id": 2854,
+    "x": 1811,
+    "y": 3724,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 6986,
+    "x": 1807,
+    "y": 3722,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Leenz"
+  },
+  {
+    "id": 6991,
+    "x": 1802,
+    "y": 3722,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Woman"
+  },
+  {
+    "id": 6968,
+    "x": 1809,
+    "y": 3716,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Dock worker"
+  },
+  {
+    "id": 6988,
+    "x": 1805,
+    "y": 3712,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Man"
+  },
+  {
+    "id": 6983,
+    "x": 1793,
+    "y": 3723,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Poor looking man"
+  },
+  {
+    "id": 2854,
+    "x": 1795,
+    "y": 3756,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+  {
+    "id": 2854,
+    "x": 1799,
+    "y": 3756,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Rat"
+  },
+
+
+
+
+  //7227
+  {
+    "id": 6965,
+    "x": 1843,
+    "y": 3802,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "npcName": "Nicholas"
+  },
+  {
+    "id": 7904,
+    "x": 1796,
+    "y": 3781,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Tomas Lawry"
+  },
+  {
+    "name": "Banker",
+    "id": 6969,
+    "x": 1796,
+    "y": 3792,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 6970,
+    "x": 1800,
+    "y": 3792,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 6969,
+    "x": 1804,
+    "y": 3792,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 6970,
+    "x": 1808,
+    "y": 3792,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Tynan",
+    "id": 6964,
+    "x": 1841,
+    "y": 3786,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
