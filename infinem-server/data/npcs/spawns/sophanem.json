@@ -7,5 +7,41 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 3888,
+    "x": 2798,
+    "y": 5171,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 3887,
+    "x": 2799,
+    "y": 5171,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 3888,
+    "x": 2800,
+    "y": 5171,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 3887,
+    "x": 2801,
+    "y": 5171,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   }
 ]
