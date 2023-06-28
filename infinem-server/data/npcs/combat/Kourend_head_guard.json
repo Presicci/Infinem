@@ -1,6 +1,6 @@
 [
   { #Kourend head guard (84)
-    "ids": [ 7017 ],
+    "ids": [ 11093, 11095, 11097, 11099, 11101, 11103, 11105, 11107 ],
     "handler": "",
     //Combat Info
     "hitpoints": 86,
@@ -21,8 +21,8 @@
     "stab_attack": 17,
     "slash_attack": 17,
     "crush_attack": 17,
-    "magic_attack": 17,
-    "ranged_attack": 17,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 16,
     "slash_defence": 16,
@@ -35,7 +35,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 2,
-    "respawn_ticks": 50,
+    "respawn_ticks": 30,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 390,
