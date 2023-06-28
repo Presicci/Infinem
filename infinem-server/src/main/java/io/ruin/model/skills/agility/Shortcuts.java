@@ -435,6 +435,7 @@ public class Shortcuts {
         /**
          * Pipes
          */
+        ObjectAction.register(18416, 2331, 5096, 0, "climb-through", PipeShortcut.WITCHAVEN_DUNGEON_PIPE::traverse);
         Tile.getObject(23140, 2576, 9506, 0).walkTo = new Position(2578, 9506, 0);
         ObjectAction.register(23140, 2576, 9506, 0, "Squeeze-through", PipeShortcut.YANILLE_PIPE::traverse);
 

@@ -7,6 +7,7 @@ import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.stat.StatType;
+import javafx.geometry.Pos;
 
 import java.util.Collections;
 import java.util.List;
@@ -18,9 +19,7 @@ import java.util.List;
 public enum PipeShortcut {
 
     YANILLE_PIPE(49, 1, Position.of(2578, 9506), Position.of(2572, 9506), Position.of(2575, 9506)),
-//    YANILLE_PIPE_2(49, 1, Position.of(2572, 9506), Position.of(2575, 9506), Position.of(2578, 9506)),
-
-    ;
+    WITCHAVEN_DUNGEON_PIPE(30, 1, Position.of(2330, 5096), Position.of(2333, 5096));
 
     private final int level;
     private final double exp;
@@ -43,12 +42,13 @@ public enum PipeShortcut {
 
             player.lock(LockType.FULL_DELAY_DAMAGE);
 
-            event.path(player, object.walkTo);
+            if (object.walkTo != null)
+                event.path(player, object.walkTo);
 
             List<Position> posCopy = Lists.newArrayList(positions);
 
-            Position first = posCopy.get(0);
-            if(posCopy.size() == 1){
+            Position first = posCopy.size() > 0 ? posCopy.get(0) : null;
+            if(posCopy.size() == 1 || first == null){
                 if(startPosition.equals(player.getPosition())){
                     posCopy.add(endPosition);
                 } else {
