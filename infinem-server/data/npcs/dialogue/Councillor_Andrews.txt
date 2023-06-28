@@ -1,0 +1,20 @@
+Player: Hi there.
+Councillor Andrews: Good day to you.
+<Who are you?
+Player: Who are you?
+Councillor Andrews: My name is David Andrews. I'm the Head Councillor of the Kourend Council.
+FIRSTOPTIONS
+><Tell me about the Kourend Council.
+Player: Tell me about the Kourend Council.
+Councillor Andrews: Kourend's last King, Kharedst IV, had only one child when he died. She was too young to take the throne, so the Kourend Council was formed to look after things until she came of age.
+Councillor Andrews: Alas, she was very close to her father and his sudden death drove her to insanity. With no suitable ruler, the Kourend Council was made permanent.
+Player: How is the Council structured?
+Councillor Andrews: The Kourend Council is made up of four councillors. Every four years there is an election for the people to decide who the councillors should be.
+Councillor Andrews: One of the councillors holds the position of Head Councillor and this rotates every year. I am the current Head Councillor.
+Player: So where do the five houses fit in?
+Councillor Andrews: The five houses of Kourend each have their own leader who rules over their city. The leaders of the individual houses must enforce and obey the laws set out by the Kourend Council, but can otherwise rule as they see fit.
+Councillor Andrews: I hope that helps.
+Player: Yes, thank you.
+><Time for me to go.
+Player: Time for me to go.
+Councillor Andrews: Good day citizen.
