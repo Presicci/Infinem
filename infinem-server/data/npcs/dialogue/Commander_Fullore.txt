@@ -1,0 +1,25 @@
+Player: Hello.
+Commander Fullore: Good day.
+<Who are you?
+Player: Who are you?
+Commander Fullore: I'm Commander Lydia Fullore, leader of the Kourend Royal Guard.
+FIRSTOPTIONS
+><What do you do here?
+Player: What do you do here?
+Commander Fullore: The Kourend Royal Guard protect and serve the ruler of Kourend. As their leader, I am responsible for ensuring that the Royal Guard are well trained and well supplied.
+<Are the Royal Guard part of the Shayzien Army?
+Player: Are the Royal Guard part of the Shayzien Army?
+Commander Fullore: No. Unlike the Shayzien Army, the Royal Guard serve the ruler of the kingdom directly.
+Commander Fullore: The Royal Guard was established by King Byrne I. He felt that it was dangerous for Shayzien House to control the only military in the kingdom, so he decided to establish a small one of his own.
+Commander Fullore: Ever since then, the Royal Guard have served Kourend's ruler.
+LASTOPTIONS
+><Who's the current ruler of Kourend?
+Player: Who's the current ruler of Kourend?
+Commander Fullore: The current ruler, or rulers as I should say, are the Kourend Council. They've ruled the kingdom for the past twenty years, ever since the last King died.
+LASTOPTIONS
+><Goodbye.
+Player: Goodbye.
+>
+>
+<Goodbye.
+Player: Goodbye.
