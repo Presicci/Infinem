@@ -3,6 +3,20 @@
     "ids": [ 3107, 4076, 7238 ],
     "guaranteed": [
       { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Axes",
+        "weight": 1,
+        "items": [
+          { "id": 1351, "min": 1, "max": 1, "weight": 1028 },  //Bronze axe
+          { "id": 1349, "min": 1, "max": 1, "weight": 128 },   //Iron axe
+          { "id": 1353, "min": 1, "max": 1, "weight": 64 },   //Steel axe
+          { "id": 1355, "min": 1, "max": 1, "weight": 32 },   //Mithril axe
+          { "id": 1357, "min": 1, "max": 1, "weight": 16 },   //Adamant axe
+          { "id": 1359, "min": 1, "max": 1, "weight": 1 }    //Rune axe
+        ]
+      }
     ]
   }
 ]
