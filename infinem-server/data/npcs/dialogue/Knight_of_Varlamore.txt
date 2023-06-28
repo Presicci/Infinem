@@ -1,0 +1,16 @@
+Knight of Varlamore: Ah, hello!
+Player: Hello to you too!
+<Tell me about yourself.
+Player: Tell me about yourself.
+Knight of Varlamore: I'm a Knight of Varlamore, the Kingdom of Sun. I venture to Kourend on a mission, one I can say very little of.
+Player: How come?
+Knight of Varlamore: I'm afraid you must accept my secrecy adventurer, for who knows what the future holds.
+FIRSTOPTIONS
+><Where's the Kingdom of Varlamore?
+Player: Where's the Kingdom of Varlamore?
+Knight of Varlamore: To the south west, beyond Mount Quidamortem... A glorious land where the sun forever shines.
+Player: Sounds wonderfull!
+FIRSTOPTIONS
+><I have to go.
+Player: I have to go.
+Knight of Varlamore: Stay vigilant, friend.
