@@ -350,7 +350,7 @@
   "hitpoints": 22,
   "aggressive_level": 0,
   "max_damage": 3,
-  "attack_style": "CRUSH",
+  "attack_style": "SLASH",
   //Slayer Info
   "slayer_level": 1,
   "slayer_xp": 0.0,
