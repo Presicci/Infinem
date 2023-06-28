@@ -10,7 +10,10 @@ import io.ruin.model.map.object.actions.ObjectAction;
 public enum InstantMovementObject {
     WITCHHAVEN_DUNGEON_ENTRANCE(18270, "climb-down", new Position(2696, 3283, 0), new Position(2696, 9683, 0)),
     WITCHHAVEN_DUNGEON_EXIT(18354, "climb-up", new Position(2696, 9682, 0), new Position(2697, 3283, 0)),
-    
+
+    WITCHHAVEN_DUNGEON_WALL(19124, new Position(2701, 9688, 0), new Position(2323, 5104, 0)),
+    WITCHHAVEN_DUNGEON_PASSAGE(18412, new Position(2322, 5104, 0), new Position(2700, 9688, 0)),
+
     TROLL_STRONGHOLD_ENTRACE(3771, "enter", new Position(2839, 3689, 0), new Position(2837, 10090, 2)),
     TROLL_STRONGHOLD_EXIT(3772, "use", new Position(2838, 10091, 2), new Position(2840, 3690, 0)),
     TROLL_STRONGHOLD_EXIT2(3773, "leave", new Position(2838, 10089, 2), new Position(2840, 3690, 0)),
