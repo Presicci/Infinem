@@ -1,0 +1,237 @@
+[
+
+  {
+    "name": "Ogre",
+    "id": 2095,
+    "x": 2718,
+    "y": 9668,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ogre",
+    "id": 2096,
+    "x": 2722,
+    "y": 9670,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ogre",
+    "id": 2095,
+    "x": 2720,
+    "y": 9700,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ogre",
+    "id": 2096,
+    "x": 2723,
+    "y": 9706,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ogre",
+    "id": 2095,
+    "x": 2718,
+    "y": 9715,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ogre",
+    "id": 2096,
+    "x": 2722,
+    "y": 9713,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hobgoblin",
+    "id": 3049,
+    "x": 2696,
+    "y": 9692,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hobgoblin",
+    "id": 3286,
+    "x": 2699,
+    "y": 9689,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hobgoblin",
+    "id": 3049,
+    "x": 2697,
+    "y": 9688,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hobgoblin",
+    "id": 3287,
+    "x": 2695,
+    "y": 9685,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hellhound",
+    "id": 104,
+    "x": 2733,
+    "y": 9683,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Hellhound",
+    "id": 105,
+    "x": 2737,
+    "y": 9680,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Hellhound",
+    "id": 104,
+    "x": 2744,
+    "y": 9682,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Hellhound",
+    "id": 105,
+    "x": 2739,
+    "y": 9687,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Hellhound",
+    "id": 104,
+    "x": 2743,
+    "y": 9692,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Hellhound",
+    "id": 104,
+    "x": 2739,
+    "y": 9698,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Hellhound",
+    "id": 104,
+    "x": 2733,
+    "y": 9695,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Hellhound",
+    "id": 104,
+    "x": 2732,
+    "y": 9688,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Giant Lobster",
+    "id": 4800,
+    "x": 2325,
+    "y": 5092,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Giant Lobster",
+    "id": 4800,
+    "x": 2312,
+    "y": 5084,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Giant Lobster",
+    "id": 4800,
+    "x": 2313,
+    "y": 5066,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Giant Lobster",
+    "id": 4800,
+    "x": 2326,
+    "y": 5064,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Giant Lobster",
+    "id": 4800,
+    "x": 2339,
+    "y": 5075,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Giant Lobster",
+    "id": 4800,
+    "x": 2334,
+    "y": 5087,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Giant Lobster",
+    "id": 4800,
+    "x": 2337,
+    "y": 5106,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Slug Prince",
+    "id": 4797,
+    "x": 2351,
+    "y": 5069,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  }
+]
