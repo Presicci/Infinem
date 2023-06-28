@@ -1,5 +1,7 @@
 package io.ruin.model.map.object.actions.impl;
 
+import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -33,40 +35,59 @@ public enum InstantMovementObject {
     DEATH_PLATEAU_PATHWAY_DUNGEON_NORTH_EXIT(3758, "exit", new Position(2906, 10036, 0), new Position(2908, 3654, 0)),
     DEATH_PLATEAU_PATHWAY_DUNGEON_NORTH_ENTRANCE(3757, "enter", new Position(2907, 3652, 0), new Position(2907, 10035, 0));
 
-    private final int id, optionInt;
+    private final int id;
     private final String option;
     private final Position objectPos, destinationPos;
+    private int emote = -1, optionInt = -1;
 
     InstantMovementObject(int id, String option, Position objectPos, Position destinationPos) {
         this.id = id;
         this.option = option;
-        this.optionInt = -1;
         this.objectPos = objectPos;
         this.destinationPos = destinationPos;
     }
 
     InstantMovementObject(int id, Position objectPos, Position destinationPos) {
-        this.id = id;
-        this.option = "";
-        this.optionInt = 1;
-        this.objectPos = objectPos;
-        this.destinationPos = destinationPos;
+        this(id, 1, objectPos, destinationPos);
+    }
+
+    InstantMovementObject(int id, Position objectPos, Position destinationPos, int emote) {
+        this(id, 1, objectPos, destinationPos, emote);
     }
 
     InstantMovementObject(int id, int optionInt, Position objectPos, Position destinationPos) {
+        this(id, optionInt, objectPos, destinationPos, -1);
+    }
+
+    InstantMovementObject(int id, int optionInt, Position objectPos, Position destinationPos, int emote) {
         this.id = id;
         this.option = "";
         this.optionInt = optionInt;
         this.objectPos = objectPos;
+        this.emote = emote;
         this.destinationPos = destinationPos;
+    }
+
+    private static void movement(Player player, InstantMovementObject entry) {
+        if (entry.emote > -1) {
+            player.startEvent(e -> {
+                player.lock(LockType.FULL_DELAY_DAMAGE);
+                player.animate(entry.emote);
+                e.delay(1);
+                player.getMovement().teleport(entry.destinationPos);
+                player.unlock();
+            });
+        } else {
+            player.getMovement().teleport(entry.destinationPos);
+        }
     }
 
     static {
         for (InstantMovementObject entry : values()) {
             if (entry.optionInt > -1) {
-                ObjectAction.register(entry.id, entry.objectPos.getX(), entry.objectPos.getY(), entry.objectPos.getZ(), entry.optionInt, ((player, obj) -> player.getMovement().teleport(entry.destinationPos)));
+                ObjectAction.register(entry.id, entry.objectPos.getX(), entry.objectPos.getY(), entry.objectPos.getZ(), entry.optionInt, ((player, obj) -> movement(player, entry)));
             } else {
-                ObjectAction.register(entry.id, entry.objectPos.getX(), entry.objectPos.getY(), entry.objectPos.getZ(), entry.option, ((player, obj) -> player.getMovement().teleport(entry.destinationPos)));
+                ObjectAction.register(entry.id, entry.objectPos.getX(), entry.objectPos.getY(), entry.objectPos.getZ(), entry.option, ((player, obj) -> movement(player, entry)));
             }
         }
     }
