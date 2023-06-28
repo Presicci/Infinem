@@ -5040,10 +5040,10 @@
     "npcName": "Lesser demon"
   },
   {
-    "id": 8541,
-    "x": 1615,
-    "y": 3662,
-    "z": 2,
+    "id": 10922,
+    "x": 1609,
+    "y": 3667,
+    "z": 1,
     "direction": "N",
     "walkRange": 1,
     "world": "ECO",
