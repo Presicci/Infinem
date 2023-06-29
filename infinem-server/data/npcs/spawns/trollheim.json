@@ -543,5 +543,41 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Mountain goat"
+  },
+
+
+
+
+
+  //11063
+  {
+    "id": 4117,
+    "x": 2792,
+    "y": 3565,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Mountain goat"
+  },
+  {
+    "id": 1173,
+    "x": 2815,
+    "y": 3559,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Chicken"
+  },
+  {
+    "id": 4116,
+    "x": 2814,
+    "y": 3557,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 1,
+    "world": "ECO",
+    "npcName": "Billy"
   }
 ]
