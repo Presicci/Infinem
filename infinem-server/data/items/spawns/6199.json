@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1279,
+    "amount": 1,
+    "x": 1569,
+    "y": 3547,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Iron sword",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1137,
+    "amount": 1,
+    "x": 1538,
+    "y": 3545,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Iron med helm",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 970,
+    "amount": 1,
+    "x": 1542,
+    "y": 3544,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Papyrus",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1925,
+    "amount": 1,
+    "x": 1541,
+    "y": 3542,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Bucket",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 690,
+    "amount": 1,
+    "x": 1591,
+    "y": 3530,
+    "z": 2,
+    "world": "ECO",
+    "itemName": "Broken glass",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 690,
+    "amount": 1,
+    "x": 1594,
+    "y": 3530,
+    "z": 2,
+    "world": "ECO",
+    "itemName": "Broken glass",
+    "respawnSeconds": 60
+  }
+]
