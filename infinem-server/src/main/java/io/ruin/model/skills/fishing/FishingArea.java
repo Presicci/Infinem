@@ -315,6 +315,18 @@ public enum FishingArea {
             new Position(2847, 3361, 0),
             new Position(2849, 3361, 0)
     ),
+    SHAYZIEN(
+            new Position(1591, 3564, 0),
+            new Position(1586, 3566, 0),
+            new Position(1585, 3566, 0),
+            new Position(1584, 3566, 0),
+            new Position(1581, 3563, 0),
+            new Position(1581, 3562, 0),
+            new Position(1581, 3561, 0),
+            new Position(1580, 3559, 0),
+            new Position(1580, 3558, 0),
+            new Position(1580, 3557, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -423,7 +435,7 @@ public enum FishingArea {
         KARAMBWANJI.add(FishingSpot.KARAMBWANJI, 2);
         ENTRANA_DOCK.add(FishingSpot.NET_BAIT, 4);
         ENTRANA_RIVER.add(FishingSpot.LURE_BAIT, 3);
-
+        SHAYZIEN.add(FishingSpot.LURE_BAIT, 3);
         FishingArea.fishingSpotTimer();
     }
 }
