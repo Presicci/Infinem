@@ -10,6 +10,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    SHAYZIEN_PRISON_ENTRANCE(41922, new Position(1464, 3568), new Position(1444, 9960)),
+    SHAYZIEN_PRISON_EXIT(41923, new Position(1445, 9960), new Position(1466, 3568)),
+
     KOUREND_CASTLE_STAIRS_ENTRY_BOTTOM_1(11807, new Position(1615, 3665, 0), new Position(1614, 3665, 1)),
     KOUREND_CASTLE_STAIRS_ENTRY_BOTTOM_2(11807, new Position(1615, 3680, 0), new Position(1614, 3681, 1)),
     KOUREND_CASTLE_STAIRS_DOWN_1(11799, new Position(1615, 3665, 1), new Position(1618, 3665, 0)),
