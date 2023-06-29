@@ -1218,5 +1218,14 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Jossik"
+  },
+  {
+    "name": "Falo the Bard",
+    "id": 7306,
+    "x": 2689,
+    "y": 3550,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   }
 ]
