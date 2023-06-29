@@ -1,14 +1,5 @@
 [
 	{
-		"name": "Sedridor",
-		"id": 5034,
-		"x": 3101,
-		"y": 9570,
-		"z": 0,
-		"direction": "S",
-		"walkRange": 4
-	},
-	{
 		"name": "Torfinn",
 		"id": 8131,
 		"x": 2278,
