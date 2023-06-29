@@ -7,5 +7,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+  {
+    "name": "Torfinn",
+    "id": 8131,
+    "x": 2278,
+    "y": 4034,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
   }
 ]

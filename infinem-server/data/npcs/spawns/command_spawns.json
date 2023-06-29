@@ -1,14 +1,5 @@
 [
 	{
-		"name": "Torfinn",
-		"id": 8131,
-		"x": 2278,
-		"y": 4034,
-		"z": 0,
-		"direction": "W",
-		"walkRange": 0
-	},
-	{
 		"name": "Falo the Bard",
 		"id": 7306,
 		"x": 2689,
