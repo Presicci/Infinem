@@ -1,41 +1,5 @@
 [
 	{
-		"name": "Mugger",
-		"id": 513,
-		"x": 2994,
-		"y": 9546,
-		"z": 0,
-		"direction": "S",
-		"walkRange": 5
-	},
-	{
-		"name": "Mugger",
-		"id": 513,
-		"x": 2998,
-		"y": 9545,
-		"z": 0,
-		"direction": "S",
-		"walkRange": 5
-	},
-	{
-		"name": "Mugger",
-		"id": 513,
-		"x": 3000,
-		"y": 9551,
-		"z": 0,
-		"direction": "S",
-		"walkRange": 5
-	},
-	{
-		"name": "Mugger",
-		"id": 513,
-		"x": 2995,
-		"y": 9550,
-		"z": 0,
-		"direction": "S",
-		"walkRange": 5
-	},
-	{
 		"name": "Dusuri",
 		"id": 10631,
 		"x": 3022,
