@@ -502,5 +502,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
+  },
+  {
+    "name": "Steve",
+    "id": 6799,
+    "x": 3060,
+    "y": 9558,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]
