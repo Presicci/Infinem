@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Head Guard",
+    "id": 11097,
+    "x": 1438,
+    "y": 9962,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Guard",
+    "id": 11096,
+    "x": 1440,
+    "y": 9960,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Guard",
+    "id": 11102,
+    "x": 1440,
+    "y": 9947,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 11100,
+    "x": 1439,
+    "y": 9951,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 11092,
+    "x": 1438,
+    "y": 9944,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 11106,
+    "x": 1440,
+    "y": 9941,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Mugger",
+    "id": 8732,
+    "x": 1434,
+    "y": 9944,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
