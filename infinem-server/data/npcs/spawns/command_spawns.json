@@ -1,14 +1,5 @@
 [
 	{
-		"name": "Dusuri",
-		"id": 10631,
-		"x": 3022,
-		"y": 3342,
-		"z": 0,
-		"direction": "S",
-		"walkRange": 0
-	},
-	{
 		"name": "Sphinx",
 		"id": 2637,
 		"x": 3297,
