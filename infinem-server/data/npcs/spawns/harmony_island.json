@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Brother Tranquility",
+    "id": 550,
+    "x": 3786,
+    "y": 2824,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 561,
+    "x": 3808,
+    "y": 2845,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 561,
+    "x": 3810,
+    "y": 2843,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 562,
+    "x": 3811,
+    "y": 2846,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 561,
+    "x": 3815,
+    "y": 2845,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 562,
+    "x": 3815,
+    "y": 2842,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 562,
+    "x": 3819,
+    "y": 2840,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 562,
+    "x": 3822,
+    "y": 2837,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 561,
+    "x": 3819,
+    "y": 2851,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 561,
+    "x": 3819,
+    "y": 2851,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 561,
+    "x": 3823,
+    "y": 2846,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 562,
+    "x": 3819,
+    "y": 2839,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 561,
+    "x": 3820,
+    "y": 2836,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 561,
+    "x": 3823,
+    "y": 2835,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sorebones",
+    "id": 561,
+    "x": 3822,
+    "y": 2838,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
