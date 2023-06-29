@@ -1,14 +1,5 @@
 [
 	{
-		"name": "Captain Shoracks",
-		"id": 7178,
-		"x": 2710,
-		"y": 2802,
-		"z": 0,
-		"direction": "S",
-		"walkRange": 0
-	},
-	{
 		"name": "Swamp lizard",
 		"id": 2906,
 		"x": 3680,

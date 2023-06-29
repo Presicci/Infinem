@@ -1546,5 +1546,14 @@
     "z": 1,
     "direction": "S",
     "walkRange": 4
+  },
+  {
+    "name": "Captain Shoracks",
+    "id": 7178,
+    "x": 2710,
+    "y": 2802,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   }
 ]
