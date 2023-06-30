@@ -1,6 +1,366 @@
 [
   //6201
   {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1545,
+    "y": 3672,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1549,
+    "y": 3669,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Boar",
+    "id": 11067,
+    "x": 1553,
+    "y": 3676,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1559,
+    "y": 3674,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1558,
+    "y": 3671,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1560,
+    "y": 3672,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Boar",
+    "id": 11067,
+    "x": 1555,
+    "y": 3667,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1552,
+    "y": 3667,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1542,
+    "y": 3681,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11074,
+    "x": 1546,
+    "y": 3682,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sergeant",
+    "id": 11073,
+    "x": 1539,
+    "y": 3683,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Captain Rachelle",
+    "id": 6876,
+    "x": 1544,
+    "y": 3687,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1552,
+    "y": 3686,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1544,
+    "y": 3689,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11078,
+    "x": 1543,
+    "y": 3695,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11084,
+    "x": 1544,
+    "y": 3693,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11074,
+    "x": 1544,
+    "y": 3697,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11080,
+    "x": 1541,
+    "y": 3700,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11074,
+    "x": 1546,
+    "y": 3704,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1545,
+    "y": 3708,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sergeant",
+    "id": 11085,
+    "x": 1540,
+    "y": 3707,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11076,
+    "x": 1539,
+    "y": 3705,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1553,
+    "y": 3697,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1551,
+    "y": 3694,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1556,
+    "y": 3691,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1562,
+    "y": 3685,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Boar",
+    "id": 11067,
+    "x": 1574,
+    "y": 3685,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Boar",
+    "id": 11067,
+    "x": 1578,
+    "y": 3687,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1577,
+    "y": 3684,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1577,
+    "y": 3691,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1581,
+    "y": 3682,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1570,
+    "y": 3687,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1572,
+    "y": 3678,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1574,
+    "y": 3665,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1578,
+    "y": 3663,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1576,
+    "y": 3659,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1571,
+    "y": 3658,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Boar",
+    "id": 11067,
+    "x": 1569,
+    "y": 3659,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Boar",
+    "id": 11066,
+    "x": 1566,
+    "y": 3655,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Boar",
+    "id": 11067,
+    "x": 1577,
+    "y": 3659,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
     "id": 11092,
     "x": 1599,
     "y": 3668,
