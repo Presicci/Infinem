@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1017,
+    "amount": 1,
+    "x": 1505,
+    "y": 3591,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Wizard hat",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1734,
+    "amount": 1,
+    "x": 1511,
+    "y": 3591,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Thread",
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Orange dye",
+    "amount": 0,
+    "id": 1769,
+    "x": 1512,
+    "y": 3589,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Tinderbox",
+    "amount": 0,
+    "id": 590,
+    "x": 1521,
+    "y": 3591,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Bucket",
+    "amount": 0,
+    "id": 1925,
+    "x": 1521,
+    "y": 3587,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Pot",
+    "amount": 0,
+    "id": 1931,
+    "x": 1517,
+    "y": 3587,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Spade",
+    "amount": 0,
+    "id": 952,
+    "x": 1500,
+    "y": 3655,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Spade",
+    "amount": 0,
+    "id": 952,
+    "x": 1514,
+    "y": 3613,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Saw",
+    "amount": 0,
+    "id": 8794,
+    "x": 1522,
+    "y": 3638,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Coins",
+    "amount": 4,
+    "id": 995,
+    "x": 1531,
+    "y": 3637,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Beer glass",
+    "amount": 0,
+    "id": 1919,
+    "x": 1531,
+    "y": 3638,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Needle",
+    "amount": 0,
+    "id": 1733,
+    "x": 1529,
+    "y": 3645,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Leather",
+    "amount": 0,
+    "id": 1741,
+    "x": 1529,
+    "y": 3646,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
