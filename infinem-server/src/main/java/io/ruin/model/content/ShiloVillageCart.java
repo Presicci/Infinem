@@ -21,10 +21,11 @@ public class ShiloVillageCart {
                 player.getPacketSender().fadeOut();
                 player.getInventory().remove(995, 200);
                 player.dialogue(new MessageDialogue("You hop into the cart and the driver urges the horses on. You take a taxing journey through the jungle to " + (npc == 5357 ? "Brimhaven" : "Shilo Village") + ". " +
-                        "You feel tired from the journey, but at least you didn't have to walk all that distance."));
+                        "You feel tired from the journey, but at least you didn't have to walk all that distance.").hideContinue());
                 e.delay(5);
                 player.getMovement().teleport(npc == 5357 ? new Position(2776, 3212) : new Position(2832, 2954));
                 player.getPacketSender().fadeIn();
+                player.closeDialogue();
                 player.unlock();
             });
         } else {
