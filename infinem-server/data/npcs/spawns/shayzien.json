@@ -1,6 +1,186 @@
 [
   //5689
   {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1411,
+    "y": 3704,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1413,
+    "y": 3709,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1413,
+    "y": 3671,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1454,
+    "y": 3662,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 45
+  },
+  {
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1469,
+    "y": 3649,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Disciple of Yama",
+    "id": 7669,
+    "x": 1439,
+    "y": 3668,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1434,
+    "y": 3671,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1438,
+    "y": 3664,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1423,
+    "y": 3678,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1415,
+    "y": 3678,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Soldier",
+    "id": 11082,
+    "x": 1465,
+    "y": 3709,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11074,
+    "x": 1467,
+    "y": 3710,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ranger",
+    "id": 11089,
+    "x": 1467,
+    "y": 3706,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Ranger",
+    "id": 11089,
+    "x": 1467,
+    "y": 3703,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Sergeant",
+    "id": 11073,
+    "x": 1466,
+    "y": 3698,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1465,
+    "y": 3692,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sergeant",
+    "id": 11073,
+    "x": 1466,
+    "y": 3690,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1465,
+    "y": 3687,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sergeant",
+    "id": 11083,
+    "x": 1468,
+    "y": 3686,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 6877,
+    "x": 1468,
+    "y": 3682,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
     "name": "Lizardman shaman",
     "id": 6767,
     "x": 1436,
@@ -139,684 +319,2444 @@
 
   //5688
   {
-    "id": 2827,
-    "x": 1450,
-    "y": 3595,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Bat"
-  },
-  {
-    "id": 2827,
-    "x": 1463,
-    "y": 3605,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Bat"
-  },
-  {
-    "id": 2827,
-    "x": 1459,
-    "y": 3587,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Bat"
-  },
-  {
-    "id": 2101,
-    "x": 1449,
-    "y": 3603,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Hill Giant"
-  },
-  {
-    "id": 2101,
-    "x": 1444,
-    "y": 3603,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Hill Giant"
-  },
-  {
-    "id": 2101,
-    "x": 1441,
-    "y": 3606,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Hill Giant"
-  },
-  {
-    "id": 2101,
-    "x": 1447,
-    "y": 3610,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Hill Giant"
-  },
-  {
-    "id": 2101,
-    "x": 1448,
-    "y": 3603,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Hill Giant"
-  },
-  {
-    "id": 2101,
-    "x": 1441,
-    "y": 3602,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Hill Giant"
-  },
-  {
-    "id": 8189,
-    "x": 1427,
-    "y": 3592,
+    "name": "Soldier",
+    "id": 11080,
+    "x": 1429,
+    "y": 3609,
     "z": 0,
     "direction": "S",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Grave digger"
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1429,
+    "y": 3612,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sergeant",
+    "id": 11077,
+    "x": 1427,
+    "y": 3614,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11074,
+    "x": 1427,
+    "y": 3610,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Hill Giant",
+    "id": 2102,
+    "x": 1441,
+    "y": 3618,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Hill Giant",
+    "id": 2098,
+    "x": 1447,
+    "y": 3618,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Hill Giant",
+    "id": 2099,
+    "x": 1445,
+    "y": 3614,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 2100,
+    "x": 1440,
+    "y": 3613,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 2098,
+    "x": 1442,
+    "y": 3610,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Hill Giant",
+    "id": 2101,
+    "x": 1444,
+    "y": 3606,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 2103,
+    "x": 1440,
+    "y": 3607,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 2102,
+    "x": 1449,
+    "y": 3608,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 2099,
+    "x": 1446,
+    "y": 3610,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 2099,
+    "x": 1449,
+    "y": 3613,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 2098,
+    "x": 1444,
+    "y": 3619,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hill Giant",
+    "id": 2100,
+    "x": 1443,
+    "y": 3614,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Grave digger",
+    "id": 8189,
+    "x": 1428,
+    "y": 3592,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Jessie",
+    "id": 11062,
+    "x": 1461,
+    "y": 3599,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
   },
 
 
 
   //5687
   {
-    "id": 7482,
-    "x": 1423,
-    "y": 3532,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Captain Sdiar"
-  },
-  {
-    "id": 77,
-    "x": 1420,
-    "y": 3523,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Skeleton"
-  },
-  {
-    "id": 80,
-    "x": 1437,
-    "y": 3520,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Skeleton"
-  },
-  {
-    "id": 11106,
-    "x": 1417,
-    "y": 3534,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
-  },
-  {
-    "id": 11102,
-    "x": 1420,
-    "y": 3533,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
-  },
-  {
-    "id": 11104,
-    "x": 1420,
-    "y": 3538,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
-  },
-  {
-    "id": 11092,
-    "x": 1416,
-    "y": 3538,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
-  },
-  {
+    "name": "Guard",
     "id": 11096,
-    "x": 1424,
-    "y": 3533,
+    "x": 1471,
+    "y": 3556,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "walkRange": 5
   },
   {
+    "name": "Head Guard",
     "id": 11093,
-    "x": 1418,
-    "y": 3535,
+    "x": 1471,
+    "y": 3559,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend head guard"
+    "walkRange": 5
   },
   {
-    "id": 11095,
+    "name": "Giant spider",
+    "id": 3018,
+    "x": 1468,
+    "y": 3561,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Guard",
+    "id": 11102,
+    "x": 1467,
+    "y": 3569,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lynx",
+    "id": 11069,
+    "x": 1438,
+    "y": 3576,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lynx",
+    "id": 11068,
+    "x": 1433,
+    "y": 3578,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lynx",
+    "id": 11069,
+    "x": 1432,
+    "y": 3573,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lynx",
+    "id": 11069,
+    "x": 1435,
+    "y": 3573,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lynx",
+    "id": 11069,
+    "x": 1437,
+    "y": 3571,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lynx",
+    "id": 11068,
+    "x": 1435,
+    "y": 3569,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lynx",
+    "id": 11069,
+    "x": 1429,
+    "y": 3571,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lynx",
+    "id": 11068,
+    "x": 1430,
+    "y": 3576,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lynx",
+    "id": 11069,
+    "x": 1428,
+    "y": 3575,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lynx",
+    "id": 11069,
+    "x": 1432,
+    "y": 3570,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Captain Sdiar",
+    "id": 7482,
     "x": 1420,
+    "y": 3540,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 11078,
+    "x": 1422,
     "y": 3539,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend head guard"
+    "walkRange": 4
   },
+  {
+    "name": "Sergeant",
+    "id": 11077,
+    "x": 1419,
+    "y": 3535,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Soldier",
+    "id": 11082,
+    "x": 1416,
+    "y": 3531,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sergeant",
+    "id": 11081,
+    "x": 1417,
+    "y": 3536,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11084,
+    "x": 1427,
+    "y": 3538,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Soldier",
+    "id": 11076,
+    "x": 1427,
+    "y": 3534,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1422,
+    "y": 3532,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sergeant",
+    "id": 11081,
+    "x": 1419,
+    "y": 3538,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+
+
+
+
   //5686
   {
-    "id": 79,
-    "x": 1427,
-    "y": 3518,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Skeleton"
-  },
-  {
-    "id": 78,
-    "x": 1431,
-    "y": 3517,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Skeleton"
-  },
-  {
+    "name": "Skeleton",
     "id": 81,
-    "x": 1437,
+    "x": 1430,
     "y": 3516,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Skeleton"
+    "walkRange": 6
   },
+  {
+    "name": "Skeleton",
+    "id": 78,
+    "x": 1426,
+    "y": 3517,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Skeleton",
+    "id": 77,
+    "x": 1423,
+    "y": 3518,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Skeleton",
+    "id": 80,
+    "x": 1426,
+    "y": 3514,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Skeleton",
+    "id": 79,
+    "x": 1430,
+    "y": 3512,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+
+
+  //5945
+  {
+    "name": "Sergeant",
+    "id": 11087,
+    "x": 1496,
+    "y": 3648,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lynx",
+    "id": 11070,
+    "x": 1494,
+    "y": 3652,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Lynx Tamer",
+    "id": 11071,
+    "x": 1496,
+    "y": 3653,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Soldier",
+    "id": 11080,
+    "x": 1500,
+    "y": 3652,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11080,
+    "x": 1474,
+    "y": 3650,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sergeant",
+    "id": 11073,
+    "x": 1477,
+    "y": 3649,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1482,
+    "y": 3650,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1489,
+    "y": 3660,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Soldier",
+    "id": 11076,
+    "x": 1485,
+    "y": 3659,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11078,
+    "x": 1483,
+    "y": 3657,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1481,
+    "y": 3660,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lynx Tamer",
+    "id": 11071,
+    "x": 1479,
+    "y": 3665,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lynx",
+    "id": 11070,
+    "x": 1477,
+    "y": 3665,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1482,
+    "y": 3665,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sergeant",
+    "id": 11079,
+    "x": 1477,
+    "y": 3662,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Sergeant",
+    "id": 11081,
+    "x": 1488,
+    "y": 3665,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1491,
+    "y": 3663,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1481,
+    "y": 3671,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11074,
+    "x": 1484,
+    "y": 3673,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ranger",
+    "id": 6881,
+    "x": 1483,
+    "y": 3677,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Cob",
+    "id": 7063,
+    "x": 1488,
+    "y": 3683,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Soldier",
+    "id": 11076,
+    "x": 1503,
+    "y": 3659,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11074,
+    "x": 1505,
+    "y": 3660,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Soldier",
+    "id": 11080,
+    "x": 1503,
+    "y": 3663,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sergeant",
+    "id": 11075,
+    "x": 1503,
+    "y": 3661,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Lynx",
+    "id": 11070,
+    "x": 1515,
+    "y": 3662,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Lynx Tamer",
+    "id": 11071,
+    "x": 1514,
+    "y": 3662,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1512,
+    "y": 3661,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11082,
+    "x": 1511,
+    "y": 3658,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Sergeant",
+    "id": 11073,
+    "x": 1520,
+    "y": 3660,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sergeant",
+    "id": 11085,
+    "x": 1520,
+    "y": 3665,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11076,
+    "x": 1523,
+    "y": 3652,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Soldier",
+    "id": 11074,
+    "x": 1520,
+    "y": 3656,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11078,
+    "x": 1526,
+    "y": 3656,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11084,
+    "x": 1529,
+    "y": 3657,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11084,
+    "x": 1527,
+    "y": 3660,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Soldier",
+    "id": 11078,
+    "x": 1523,
+    "y": 3668,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ranger",
+    "id": 6881,
+    "x": 1523,
+    "y": 3672,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 6919,
+    "x": 1506,
+    "y": 3681,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 6870,
+    "x": 1509,
+    "y": 3687,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1507,
+    "y": 3689,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 6919,
+    "x": 1506,
+    "y": 3692,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1510,
+    "y": 3694,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1514,
+    "y": 3696,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1518,
+    "y": 3694,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1522,
+    "y": 3697,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 6919,
+    "x": 1519,
+    "y": 3700,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 6919,
+    "x": 1522,
+    "y": 3694,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1512,
+    "y": 3703,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1506,
+    "y": 3706,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1503,
+    "y": 3710,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1503,
+    "y": 3716,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1511,
+    "y": 3715,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1496,
+    "y": 3720,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1487,
+    "y": 3720,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1481,
+    "y": 3724,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1481,
+    "y": 3719,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1482,
+    "y": 3715,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1483,
+    "y": 3710,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1483,
+    "y": 3703,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1488,
+    "y": 3697,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1494,
+    "y": 3695,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1494,
+    "y": 3704,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1491,
+    "y": 3711,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 6914,
+    "x": 1500,
+    "y": 3701,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 6919,
+    "x": 1498,
+    "y": 3695,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 6919,
+    "x": 1490,
+    "y": 3709,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 6919,
+    "x": 1490,
+    "y": 3718,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 6919,
+    "x": 1508,
+    "y": 3714,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 6919,
+    "x": 1515,
+    "y": 3703,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 6919,
+    "x": 1490,
+    "y": 3704,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 6871,
+    "x": 1511,
+    "y": 3692,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 6868,
+    "x": 1506,
+    "y": 3694,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 6869,
+    "x": 1503,
+    "y": 3703,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 6869,
+    "x": 1492,
+    "y": 3703,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 6869,
+    "x": 1484,
+    "y": 3705,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 6871,
+    "x": 1478,
+    "y": 3694,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 6870,
+    "x": 1492,
+    "y": 3714,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 6868,
+    "x": 1503,
+    "y": 3714,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 6870,
+    "x": 1515,
+    "y": 3699,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Soldier",
+    "id": 6871,
+    "x": 1521,
+    "y": 3696,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+
+
+
   //5944
   {
-    "id": 11093,
-    "x": 1524,
-    "y": 3635,
+    "name": "Banker",
+    "id": 6860,
+    "x": 1486,
+    "y": 3591,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend head guard"
+    "direction": "E",
+    "walkRange": 0
   },
   {
+    "name": "Banker",
+    "id": 6863,
+    "x": 1486,
+    "y": 3592,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 6860,
+    "x": 1486,
+    "y": 3593,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "null",
+    "id": 9747,
+    "x": 1495,
+    "y": 3587,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "null",
+    "id": 9747,
+    "x": 1500,
+    "y": 3592,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Woman",
+    "id": 6992,
+    "x": 1500,
+    "y": 3587,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 11106,
+    "x": 1498,
+    "y": 3585,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
     "id": 11094,
-    "x": 1530,
-    "y": 3633,
+    "x": 1502,
+    "y": 3592,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "S",
+    "walkRange": 5
   },
   {
+    "name": "Guard",
+    "id": 11096,
+    "x": 1497,
+    "y": 3596,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 11092,
+    "x": 1493,
+    "y": 3595,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 11094,
+    "x": 1498,
+    "y": 3600,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
     "id": 11100,
-    "x": 1528,
-    "y": 3625,
+    "x": 1494,
+    "y": 3600,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "S",
+    "walkRange": 5
   },
   {
-    "id": 11098,
-    "x": 1518,
+    "name": "Head Guard",
+    "id": 11093,
+    "x": 1498,
+    "y": 3602,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Kaston",
+    "id": 11055,
+    "x": 1497,
+    "y": 3594,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Osten",
+    "id": 6769,
+    "x": 1511,
+    "y": 3593,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Robyn",
+    "id": 11042,
+    "x": 1506,
+    "y": 3591,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Man",
+    "id": 11057,
+    "x": 1510,
+    "y": 3586,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Jennifer",
+    "id": 305,
+    "x": 1519,
+    "y": 3589,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1497,
     "y": 3620,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "S",
+    "walkRange": 4
   },
   {
-    "id": 7999,
-    "x": 1512,
+    "name": "Soldier",
+    "id": 11084,
+    "x": 1494,
+    "y": 3619,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1489,
+    "y": 3620,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11080,
+    "x": 1494,
+    "y": 3623,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sergeant",
+    "id": 11075,
+    "x": 1498,
+    "y": 3626,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11076,
+    "x": 1498,
     "y": 3629,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Phileas Rimor"
+    "direction": "S",
+    "walkRange": 6
   },
   {
-    "id": 11102,
-    "x": 1512,
-    "y": 3625,
+    "name": "Ranger",
+    "id": 6881,
+    "x": 1492,
+    "y": 3628,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "S",
+    "walkRange": 3
   },
   {
-    "id": 11096,
+    "name": "Ranger",
+    "id": 6881,
+    "x": 1492,
+    "y": 3643,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ranger",
+    "id": 6881,
+    "x": 1477,
+    "y": 3643,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ranger",
+    "id": 6881,
+    "x": 1477,
+    "y": 3628,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "General Babacus",
+    "id": 6866,
+    "x": 1482,
+    "y": 3636,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "General Salara",
+    "id": 6865,
+    "x": 1485,
+    "y": 3635,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "General Kilian",
+    "id": 6867,
+    "x": 1484,
+    "y": 3638,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 11074,
+    "x": 1496,
+    "y": 3636,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Drill Sergeant",
+    "id": 6882,
+    "x": 1510,
+    "y": 3647,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6890,
     "x": 1503,
-    "y": 3627,
+    "y": 3645,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "N",
+    "walkRange": 0
   },
   {
-    "id": 11098,
+    "name": "Soldier",
+    "id": 6891,
     "x": 1505,
-    "y": 3633,
+    "y": 3645,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "N",
+    "walkRange": 0
   },
   {
-    "id": 11092,
-    "x": 1508,
+    "name": "Soldier",
+    "id": 6892,
+    "x": 1507,
+    "y": 3645,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6893,
+    "x": 1509,
+    "y": 3645,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6894,
+    "x": 1511,
+    "y": 3645,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6889,
+    "x": 1513,
+    "y": 3645,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6893,
+    "x": 1515,
+    "y": 3645,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6891,
+    "x": 1517,
+    "y": 3645,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6889,
+    "x": 1517,
+    "y": 3643,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6890,
+    "x": 1515,
+    "y": 3643,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6891,
+    "x": 1513,
+    "y": 3643,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6892,
+    "x": 1511,
+    "y": 3643,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6890,
+    "x": 1509,
+    "y": 3643,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6894,
+    "x": 1507,
+    "y": 3643,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6889,
+    "x": 1505,
+    "y": 3643,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6892,
+    "x": 1503,
+    "y": 3643,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6886,
+    "x": 1503,
+    "y": 3641,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6889,
+    "x": 1505,
+    "y": 3641,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6887,
+    "x": 1507,
+    "y": 3641,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6884,
+    "x": 1509,
+    "y": 3641,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6885,
+    "x": 1511,
+    "y": 3641,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6883,
+    "x": 1513,
+    "y": 3641,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6888,
+    "x": 1515,
+    "y": 3641,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6886,
+    "x": 1517,
+    "y": 3641,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6884,
+    "x": 1517,
+    "y": 3639,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6887,
+    "x": 1515,
+    "y": 3639,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6884,
+    "x": 1513,
+    "y": 3639,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6888,
+    "x": 1511,
+    "y": 3639,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6885,
+    "x": 1509,
+    "y": 3639,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6883,
+    "x": 1507,
+    "y": 3639,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6886,
+    "x": 1505,
+    "y": 3639,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 6888,
+    "x": 1503,
+    "y": 3639,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Captain Ginea",
+    "id": 6895,
+    "x": 1504,
     "y": 3632,
     "z": 0,
     "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "walkRange": 0
   },
   {
-    "id": 6864,
-    "x": 1512,
-    "y": 3617,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Banker"
-  },
-  {
-    "id": 6861,
-    "x": 1512,
-    "y": 3616,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Banker"
-  },
-  {
-    "id": 6862,
+    "name": "Soldier",
+    "id": 11078,
     "x": 1506,
-    "y": 3613,
+    "y": 3627,
     "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Banker"
+    "direction": "S",
+    "walkRange": 4
   },
   {
-    "id": 6859,
-    "x": 1505,
-    "y": 3613,
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1511,
+    "y": 3627,
     "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Banker"
+    "direction": "S",
+    "walkRange": 4
   },
   {
-    "id": 6862,
-    "x": 1504,
-    "y": 3613,
+    "name": "Sergeant",
+    "id": 11081,
+    "x": 1516,
+    "y": 3632,
     "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Banker"
+    "direction": "S",
+    "walkRange": 4
   },
   {
-    "id": 6883,
-    "x": 1496,
-    "y": 3616,
+    "name": "Wounded soldier",
+    "id": 6856,
+    "x": 1509,
+    "y": 3623,
     "z": 0,
     "direction": "E",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Soldier"
+    "walkRange": 0
   },
   {
-    "id": 6860,
-    "x": 1496,
+    "name": "Wounded soldier",
+    "id": 6828,
+    "x": 1515,
+    "y": 3623,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Wounded soldier",
+    "id": 6836,
+    "x": 1516,
+    "y": 3623,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Nurse Wooned",
+    "id": 6873,
+    "x": 1510,
+    "y": 3618,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Wounded soldier",
+    "id": 6826,
+    "x": 1509,
+    "y": 3614,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Wounded soldier",
+    "id": 6834,
+    "x": 1510,
+    "y": 3614,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Wounded soldier",
+    "id": 6842,
+    "x": 1515,
+    "y": 3614,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Wounded soldier",
+    "id": 6850,
+    "x": 1516,
+    "y": 3614,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Wounded soldier",
+    "id": 6848,
+    "x": 1521,
+    "y": 3613,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Wounded soldier",
+    "id": 6830,
+    "x": 1527,
     "y": 3617,
     "z": 0,
-    "direction": "E",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Banker"
+    "direction": "W",
+    "walkRange": 0
   },
   {
-    "id": 11094,
-    "x": 1494,
-    "y": 3610,
+    "name": "Wounded soldier",
+    "id": 6838,
+    "x": 1527,
+    "y": 3616,
     "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "W",
+    "walkRange": 0
   },
   {
-    "id": 11092,
-    "x": 1489,
-    "y": 3603,
+    "name": "Nurse Inn'Juree",
+    "id": 6874,
+    "x": 1520,
+    "y": 3621,
     "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "S",
+    "walkRange": 5
   },
   {
-    "id": 11096,
-    "x": 1491,
-    "y": 3620,
+    "name": "Wounded soldier",
+    "id": 6844,
+    "x": 1523,
+    "y": 3622,
     "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "S",
+    "walkRange": 0
   },
   {
-    "id": 11100,
-    "x": 1481,
-    "y": 3626,
+    "name": "Wounded soldier",
+    "id": 6852,
+    "x": 1524,
+    "y": 3622,
     "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "S",
+    "walkRange": 0
   },
   {
-    "id": 11097,
-    "x": 1475,
-    "y": 3626,
+    "name": "Soldier",
+    "id": 11076,
+    "x": 1520,
+    "y": 3627,
     "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend head guard"
+    "direction": "S",
+    "walkRange": 5
   },
   {
-    "id": 11102,
-    "x": 1478,
-    "y": 3637,
+    "name": "Wounded soldier",
+    "id": 6840,
+    "x": 1520,
+    "y": 3630,
     "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "S",
+    "walkRange": 0
   },
   {
-    "id": 11092,
-    "x": 1486,
-    "y": 3637,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
-  },
-  {
-    "id": 11104,
-    "x": 1481,
-    "y": 3643,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
-  },
-  {
-    "id": 11097,
-    "x": 1483,
-    "y": 3641,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend head guard"
-  },
-  {
-    "id": 11094,
-    "x": 1505,
-    "y": 3638,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
-  },
-  {
-    "id": 6781,
-    "x": 1496,
+    "name": "Wounded soldier",
+    "id": 6832,
+    "x": 1520,
     "y": 3631,
     "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Shayda"
+    "direction": "S",
+    "walkRange": 0
   },
   {
-    "id": 11096,
-    "x": 1516,
-    "y": 3606,
+    "name": "Soldier",
+    "id": 11078,
+    "x": 1530,
+    "y": 3633,
     "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "S",
+    "walkRange": 4
   },
   {
-    "id": 11092,
-    "x": 1514,
-    "y": 3585,
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1525,
+    "y": 3633,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "S",
+    "walkRange": 4
   },
   {
-    "id": 11098,
-    "x": 1508,
-    "y": 3598,
+    "name": "Soldier",
+    "id": 11082,
+    "x": 1527,
+    "y": 3631,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "S",
+    "walkRange": 4
   },
   {
-    "id": 8180,
-    "x": 1496,
-    "y": 3597,
+    "name": "Soldier",
+    "id": 11084,
+    "x": 1523,
+    "y": 3637,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Amelia"
+    "direction": "S",
+    "walkRange": 4
   },
   {
-    "id": 11106,
-    "x": 1474,
-    "y": 3598,
+    "name": "Wounded soldier",
+    "id": 6847,
+    "x": 1531,
+    "y": 3629,
     "z": 0,
     "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "walkRange": 0
   },
-
+  {
+    "name": "Wounded soldier",
+    "id": 6855,
+    "x": 1531,
+    "y": 3628,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Nurse Boubou",
+    "id": 6875,
+    "x": 1528,
+    "y": 3628,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sergeant",
+    "id": 11073,
+    "x": 1521,
+    "y": 3641,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11076,
+    "x": 1522,
+    "y": 3647,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11082,
+    "x": 1530,
+    "y": 3645,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11080,
+    "x": 1529,
+    "y": 3642,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1534,
+    "y": 3645,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11076,
+    "x": 1533,
+    "y": 3647,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ranger",
+    "id": 6881,
+    "x": 1532,
+    "y": 3615,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Soldier",
+    "id": 11074,
+    "x": 1532,
+    "y": 3613,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sergeant",
+    "id": 11079,
+    "x": 1533,
+    "y": 3620,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
 
 
   //5943
   {
-    "id": 2827,
-    "x": 1522,
-    "y": 3548,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Bat"
-  },
-  {
-    "id": 2827,
-    "x": 1522,
-    "y": 3551,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Bat"
-  },
-  {
-    "id": 2827,
-    "x": 1507,
-    "y": 3542,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Bat"
-  },
-  {
-    "id": 6872,
-    "x": 1500,
+    "name": "Shayda",
+    "id": 6781,
+    "x": 1532,
     "y": 3544,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "New recruit Tony"
+    "direction": "S",
+    "walkRange": 5
   },
   {
-    "id": 7486,
+    "name": "Woman",
+    "id": 6990,
+    "x": 1530,
+    "y": 3551,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Guard",
+    "id": 11096,
+    "x": 1525,
+    "y": 3554,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Commissioner Anwar",
+    "id": 11059,
+    "x": 1519,
+    "y": 3558,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 11092,
+    "x": 1530,
+    "y": 3558,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Man",
+    "id": 6987,
+    "x": 1535,
+    "y": 3563,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Captain Bruce",
+    "id": 11060,
+    "x": 1530,
+    "y": 3567,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 11098,
+    "x": 1524,
+    "y": 3567,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 11102,
+    "x": 1522,
+    "y": 3566,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 11106,
+    "x": 1527,
+    "y": 3567,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 11092,
+    "x": 1529,
+    "y": 3560,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Guard",
+    "id": 11094,
+    "x": 1521,
+    "y": 3558,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sergeant Ricardo",
+    "id": 11061,
+    "x": 1529,
+    "y": 3564,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 11104,
+    "x": 1530,
+    "y": 3558,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 11094,
+    "x": 1521,
+    "y": 3563,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 11098,
+    "x": 1520,
+    "y": 3569,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Phileas Rimor",
+    "id": 7999,
+    "x": 1543,
+    "y": 3570,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 11104,
+    "x": 1538,
+    "y": 3576,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Man",
+    "id": 11058,
+    "x": 1534,
+    "y": 3580,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Woman",
+    "id": 6991,
+    "x": 1523,
+    "y": 3575,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Guard",
+    "id": 11102,
+    "x": 1523,
+    "y": 3579,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 11092,
+    "x": 1509,
+    "y": 3581,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Man",
+    "id": 6988,
+    "x": 1509,
+    "y": 3569,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Father Eysseric",
+    "id": 11050,
+    "x": 1498,
+    "y": 3564,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Mia",
+    "id": 11051,
+    "x": 1497,
+    "y": 3569,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bat",
+    "id": 10888,
+    "x": 1487,
+    "y": 3565,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Guard",
+    "id": 11104,
+    "x": 1476,
+    "y": 3558,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bat",
+    "id": 10888,
+    "x": 1476,
+    "y": 3566,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Bat",
+    "id": 10888,
+    "x": 1482,
+    "y": 3561,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Guard",
+    "id": 11094,
+    "x": 1498,
+    "y": 3545,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Old man",
+    "id": 11056,
+    "x": 1510,
+    "y": 3551,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "New Recruit Tony",
+    "id": 6872,
+    "x": 1509,
+    "y": 3559,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Guard",
+    "id": 11106,
+    "x": 1499,
+    "y": 3538,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Dark warrior",
+    "id": 11111,
+    "x": 1481,
+    "y": 3528,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Zombie",
+    "id": 7488,
+    "x": 1479,
+    "y": 3530,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Dark warrior",
+    "id": 11109,
+    "x": 1485,
+    "y": 3532,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Zombie",
+    "id": 7487,
+    "x": 1487,
+    "y": 3532,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Necromancer",
+    "id": 11088,
+    "x": 1481,
+    "y": 3533,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Zombie",
+    "id": 7485,
     "x": 1477,
     "y": 3533,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Zombie"
+    "direction": "S",
+    "walkRange": 5
   },
   {
-    "id": 7488,
-    "x": 1482,
-    "y": 3531,
+    "name": "Zombie",
+    "id": 7486,
+    "x": 1481,
+    "y": 3536,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Zombie"
-  },
-  {
-    "id": 7487,
-    "x": 1483,
-    "y": 3535,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Zombie"
-  },
-  {
-    "id": 510,
-    "x": 1484,
-    "y": 3532,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Dark wizard"
-  },
-  {
-    "id": 7485,
-    "x": 1479,
-    "y": 3532,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Zombie"
-  },
-  {
-    "id": 2827,
-    "x": 1500,
-    "y": 3551,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Bat"
-  },
-  {
-    "id": 2827,
-    "x": 1495,
-    "y": 3561,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Bat"
-  },
-  {
-    "id": 2827,
-    "x": 1478,
-    "y": 3565,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Bat"
+    "direction": "S",
+    "walkRange": 5
   },
 
 
@@ -1215,8 +3155,8 @@
   },
   {
     "id": 3908,
-    "x": 1518,
-    "y": 3438,
+    "x": 1510,
+    "y": 3454,
     "z": 0,
     "direction": "N",
     "walkRange": 3,
@@ -1245,8 +3185,8 @@
   },
   {
     "id": 2838,
-    "x": 1519,
-    "y": 3449,
+    "x": 1500,
+    "y": 3443,
     "z": 0,
     "direction": "N",
     "walkRange": 3,
@@ -1255,8 +3195,8 @@
   },
   {
     "id": 2838,
-    "x": 1515,
-    "y": 3443,
+    "x": 1505,
+    "y": 3448,
     "z": 0,
     "direction": "N",
     "walkRange": 3,
@@ -1363,50 +3303,299 @@
 
   //6199
   {
-    "id": 6875,
-    "x": 1573,
-    "y": 3582,
+    "name": "Guard",
+    "id": 11106,
+    "x": 1553,
+    "y": 3528,
     "z": 0,
-    "direction": "W",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Nurse Boubou"
+    "direction": "S",
+    "walkRange": 3
   },
   {
-    "id": 6867,
-    "x": 1549,
-    "y": 3536,
+    "name": "Guard",
+    "id": 11094,
+    "x": 1559,
+    "y": 3530,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 11092,
+    "x": 1548,
+    "y": 3530,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 11100,
+    "x": 1552,
+    "y": 3534,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 11094,
+    "x": 1545,
+    "y": 3549,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Guard",
+    "id": 11092,
+    "x": 1558,
+    "y": 3550,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Guard",
+    "id": 11104,
+    "x": 1558,
+    "y": 3559,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Guard",
+    "id": 11102,
+    "x": 1557,
+    "y": 3580,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 11092,
+    "x": 1538,
+    "y": 3564,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "id": 7201,
+    "x": 1567,
+    "y": 3546,
     "z": 0,
     "direction": "W",
     "walkRange": 1,
     "world": "ECO",
-    "npcName": "Captain Kilian"
+    "npcName": "Briget"
   },
   {
-    "id": 6866,
-    "x": 1542,
-    "y": 3531,
+    "name": "Head Guard",
+    "id": 11093,
+    "x": 1553,
+    "y": 3537,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Captain Babacus"
+    "direction": "S",
+    "walkRange": 4
   },
   {
-    "id": 6865,
+    "name": "Woman",
+    "id": 11053,
+    "x": 1552,
+    "y": 3543,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Man",
+    "id": 6988,
+    "x": 1554,
+    "y": 3552,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Elijah",
+    "id": 11052,
+    "x": 1570,
+    "y": 3551,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Imp",
+    "id": 5007,
+    "x": 1564,
+    "y": 3552,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 35
+  },
+  {
+    "name": "Woman",
+    "id": 11054,
+    "x": 1560,
+    "y": 3562,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Man",
+    "id": 6989,
+    "x": 1557,
+    "y": 3565,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Oswald",
+    "id": 11043,
     "x": 1550,
-    "y": 3527,
+    "y": 3562,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Captain Salara"
+    "direction": "N",
+    "walkRange": 1
+  },
+  {
+    "name": "Soldier",
+    "id": 11046,
+    "x": 1548,
+    "y": 3568,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 11047,
+    "x": 1548,
+    "y": 3566,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Drunken soldier",
+    "id": 11048,
+    "x": 1550,
+    "y": 3566,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sheryl",
+    "id": 11044,
+    "x": 1549,
+    "y": 3564,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Farmer",
+    "id": 11045,
+    "x": 1551,
+    "y": 3566,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Blair",
+    "id": 11040,
+    "x": 1566,
+    "y": 3571,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Woman",
+    "id": 6992,
+    "x": 1545,
+    "y": 3559,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Daryl",
+    "id": 11041,
+    "x": 1539,
+    "y": 3556,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Amelia",
+    "id": 8180,
+    "x": 1540,
+    "y": 3543,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Phileas Rimor",
+    "id": 7999,
+    "x": 1543,
+    "y": 3570,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   },
 
 
 
 
-
+  //6200
+  {
+    "name": "Guard",
+    "id": 11098,
+    "x": 1558,
+    "y": 3587,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 11096,
+    "x": 1555,
+    "y": 3590,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 11100,
+    "x": 1560,
+    "y": 3588,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Guard",
+    "id": 11102,
+    "x": 1554,
+    "y": 3588,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
 
 
 
@@ -1414,293 +3603,1152 @@
 
   //6200
   {
-    "id": 3909,
-    "x": 1591,
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1535,
+    "y": 3621,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier (tier 4)",
+    "id": 6910,
+    "x": 1541,
+    "y": 3620,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier (tier 2)",
+    "id": 6906,
+    "x": 1544,
+    "y": 3620,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier (tier 2)",
+    "id": 6906,
+    "x": 1546,
+    "y": 3622,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier (tier 5)",
+    "id": 6912,
+    "x": 1543,
+    "y": 3625,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier (tier 1)",
+    "id": 6904,
+    "x": 1541,
+    "y": 3623,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11049,
+    "x": 1552,
     "y": 3633,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Bear Cub"
+    "direction": "S",
+    "walkRange": 0
   },
   {
-    "id": 3909,
-    "x": 1598,
-    "y": 3628,
+    "name": "Soldier",
+    "id": 11082,
+    "x": 1550,
+    "y": 3640,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Bear Cub"
+    "direction": "S",
+    "walkRange": 4
   },
   {
-    "id": 2838,
-    "x": 1598,
-    "y": 3634,
+    "name": "Soldier",
+    "id": 11074,
+    "x": 1544,
+    "y": 3642,
     "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Grizzly bear"
+    "direction": "S",
+    "walkRange": 0
   },
   {
+    "name": "Sergeant",
+    "id": 11085,
+    "x": 1552,
+    "y": 3638,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11078,
+    "x": 1558,
+    "y": 3636,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11084,
+    "x": 1557,
+    "y": 3642,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1541,
+    "y": 3639,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Mogrim",
     "id": 7223,
     "x": 1591,
     "y": 3620,
     "z": 0,
-    "direction": "W",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Mogrim"
+    "direction": "S",
+    "walkRange": 0
   },
   {
-    "id": 6878,
-    "x": 1565,
-    "y": 3616,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Soldier"
-  },
-  {
-    "id": 6879,
-    "x": 1565,
-    "y": 3613,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Soldier"
-  },
-  {
-    "id": 6880,
-    "x": 1565,
-    "y": 3610,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Soldier"
-  },
-  {
-    "id": 6880,
-    "x": 1558,
-    "y": 3616,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Soldier"
-  },
-  {
-    "id": 7201,
-    "x": 1543,
-    "y": 3630,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Quartermaster Briget"
-  },
-  {
-    "id": 305,
-    "x": 1545,
-    "y": 3627,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Jennifer"
-  },
-  {
-    "id": 11104,
-    "x": 1538,
-    "y": 3614,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
-  },
-  {
-    "id": 11094,
-    "x": 1547,
-    "y": 3604,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
-  },
-  {
-    "id": 11092,
-    "x": 1550,
-    "y": 3619,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
-  },
-  {
-    "id": 11096,
-    "x": 1540,
+    "name": "Bandit",
+    "id": 11065,
+    "x": 1576,
     "y": 3600,
     "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Kourend guard"
+    "direction": "S",
+    "walkRange": 4
   },
   {
-    "id": 6906,
-    "x": 1547,
-    "y": 3600,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Soldier (tier 2)"
-  },
-  {
-    "id": 6908,
-    "x": 1547,
-    "y": 3590,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Soldier (tier 3)"
-  },
-  {
-    "id": 6912,
-    "x": 1538,
-    "y": 3591,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Soldier (tier 5)"
-  },
-  {
-    "id": 6904,
-    "x": 1538,
+    "name": "Bandit",
+    "id": 11063,
+    "x": 1574,
     "y": 3597,
     "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Soldier (tier 1)"
+    "direction": "S",
+    "walkRange": 4
   },
   {
-    "id": 6895,
-    "x": 1561,
-    "y": 3602,
+    "name": "Bandit",
+    "id": 11063,
+    "x": 1579,
+    "y": 3596,
     "z": 0,
     "direction": "S",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Captain Ginea"
+    "walkRange": 4
   },
   {
-    "id": 6873,
+    "name": "Bandit",
+    "id": 11063,
     "x": 1581,
-    "y": 3591,
+    "y": 3599,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Nurse Wooned"
+    "walkRange": 4
   },
   {
-    "id": 6828,
-    "x": 1582,
-    "y": 3593,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Wounded soldier"
-  },
-  {
-    "id": 6842,
+    "name": "Bandit",
+    "id": 11064,
     "x": 1585,
-    "y": 3593,
+    "y": 3596,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+
+
+
+
+
+
+
+
+  //6201
+  {
+    "name": "Sergeant",
+    "id": 11077,
+    "x": 1541,
+    "y": 3654,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1544,
+    "y": 3655,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1547,
+    "y": 3653,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1538,
+    "y": 3659,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+
+
+
+
+
+
+
+
+  //5433
+  {
+    "name": "Lizardman brute",
+    "id": 8564,
+    "x": 1347,
+    "y": 3707,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1344,
+    "y": 3703,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1349,
+    "y": 3704,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1349,
+    "y": 3698,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1354,
+    "y": 3695,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1407,
+    "y": 3707,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1408,
+    "y": 3703,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1401,
+    "y": 3710,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1401,
+    "y": 3675,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1399,
+    "y": 3673,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1395,
+    "y": 3679,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1390,
+    "y": 3673,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Doyen",
+    "id": 8570,
+    "x": 1390,
+    "y": 3681,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1387,
+    "y": 3685,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1383,
+    "y": 3684,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1380,
+    "y": 3692,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1388,
+    "y": 3690,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1386,
+    "y": 3695,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1393,
+    "y": 3690,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lovakengj Engineer",
+    "id": 8576,
+    "x": 1378,
+    "y": 3700,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Ranger",
+    "id": 8566,
+    "x": 1373,
+    "y": 3695,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1373,
+    "y": 3691,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1374,
+    "y": 3687,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Doyen",
+    "id": 8570,
+    "x": 1370,
+    "y": 3698,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1369,
+    "y": 3700,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1385,
+    "y": 3704,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ranger",
+    "id": 8566,
+    "x": 1385,
+    "y": 3701,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ranger",
+    "id": 8566,
+    "x": 1383,
+    "y": 3706,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1379,
+    "y": 3707,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ranger",
+    "id": 8566,
+    "x": 1376,
+    "y": 3706,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ranger",
+    "id": 8566,
+    "x": 1366,
+    "y": 3698,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1368,
+    "y": 3693,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1365,
+    "y": 3695,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ranger",
+    "id": 8566,
+    "x": 1373,
+    "y": 3700,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 8564,
+    "x": 1371,
+    "y": 3705,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 8564,
+    "x": 1365,
+    "y": 3704,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1359,
+    "y": 3702,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1360,
+    "y": 3698,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1357,
+    "y": 3707,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1361,
+    "y": 3710,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1356,
+    "y": 3711,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 8564,
+    "x": 1373,
+    "y": 3710,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 8564,
+    "x": 1378,
+    "y": 3711,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1385,
+    "y": 3710,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+  //5434
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1408,
+    "y": 3716,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Doyen",
+    "id": 8569,
+    "x": 1405,
+    "y": 3718,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1406,
+    "y": 3721,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1402,
+    "y": 3715,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1399,
+    "y": 3719,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1394,
+    "y": 3721,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 8564,
+    "x": 1389,
+    "y": 3724,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 8564,
+    "x": 1383,
+    "y": 3722,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 8564,
+    "x": 1371,
+    "y": 3723,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1364,
+    "y": 3720,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1371,
+    "y": 3717,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1388,
+    "y": 3719,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1387,
+    "y": 3732,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ranger",
+    "id": 8566,
+    "x": 1384,
+    "y": 3731,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1381,
+    "y": 3733,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1393,
+    "y": 3731,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ranger",
+    "id": 8566,
+    "x": 1391,
+    "y": 3729,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1393,
+    "y": 3739,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1392,
+    "y": 3749,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1389,
+    "y": 3753,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lovakengj Engineer",
+    "id": 8576,
+    "x": 1381,
+    "y": 3744,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 8575,
+    "x": 1384,
+    "y": 3744,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 8575,
+    "x": 1382,
+    "y": 3760,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Lovakengj Engineer",
+    "id": 8576,
+    "x": 1377,
+    "y": 3755,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "General Vir",
+    "id": 8577,
+    "x": 1382,
+    "y": 3765,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Wounded soldier",
+    "id": 8572,
+    "x": 1372,
+    "y": 3763,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Wounded soldier",
+    "id": 8573,
+    "x": 1370,
+    "y": 3761,
     "z": 0,
     "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Wounded soldier"
+    "walkRange": 0
   },
   {
-    "id": 6830,
-    "x": 1588,
-    "y": 3593,
+    "name": "Wounded soldier",
+    "id": 8574,
+    "x": 1372,
+    "y": 3759,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Nurse Emma Gentsy",
+    "id": 8571,
+    "x": 1374,
+    "y": 3762,
     "z": 0,
     "direction": "S",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Wounded soldier"
+    "walkRange": 4
   },
   {
-    "id": 6836,
-    "x": 1582,
-    "y": 3589,
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1373,
+    "y": 3750,
     "z": 0,
     "direction": "S",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Wounded soldier"
+    "walkRange": 5
   },
   {
-    "id": 6834,
-    "x": 1585,
-    "y": 3589,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Wounded soldier"
-  },
-  {
-    "id": 6838,
-    "x": 1588,
-    "y": 3589,
+    "name": "Doyen",
+    "id": 8569,
+    "x": 1372,
+    "y": 3747,
     "z": 0,
     "direction": "S",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Wounded soldier"
+    "walkRange": 5
   },
   {
-    "id": 6846,
-    "x": 1582,
-    "y": 3585,
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1370,
+    "y": 3744,
     "z": 0,
     "direction": "S",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Wounded soldier"
+    "walkRange": 5
   },
   {
-    "id": 6844,
-    "x": 1585,
-    "y": 3585,
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1374,
+    "y": 3740,
     "z": 0,
     "direction": "S",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Wounded soldier"
+    "walkRange": 5
   },
   {
-    "id": 6826,
-    "x": 1588,
-    "y": 3585,
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1369,
+    "y": 3737,
     "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Wounded soldier"
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ranger",
+    "id": 8566,
+    "x": 1368,
+    "y": 3734,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ranger",
+    "id": 8566,
+    "x": 1374,
+    "y": 3732,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ranger",
+    "id": 8566,
+    "x": 1371,
+    "y": 3731,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1375,
+    "y": 3729,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1372,
+    "y": 3727,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 8564,
+    "x": 1366,
+    "y": 3713,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1376,
+    "y": 3714,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1377,
+    "y": 3720,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1367,
+    "y": 3723,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1361,
+    "y": 3717,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+
+
+
+
+
+
+  //5690
+  {
+    "name": "Soldier",
+    "id": 8567,
+    "x": 1412,
+    "y": 3713,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Soldier",
+    "id": 8568,
+    "x": 1413,
+    "y": 3718,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+  //5177
+  {
+    "name": "Lizardman brute",
+    "id": 8564,
+    "x": 1339,
+    "y": 3701,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 8564,
+    "x": 1334,
+    "y": 3691,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman brute",
+    "id": 8564,
+    "x": 1338,
+    "y": 3685,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1334,
+    "y": 3687,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1330,
+    "y": 3687,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1336,
+    "y": 3695,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1341,
+    "y": 3695,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1343,
+    "y": 3690,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lizardman",
+    "id": 8563,
+    "x": 1346,
+    "y": 3694,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
   }
 ]
