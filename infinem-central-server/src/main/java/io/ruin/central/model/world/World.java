@@ -94,6 +94,18 @@ public class World extends WorldSender {
         return null;
     }
 
+    public Player get(String name) {
+        for (Player player : this.players) {
+            if (!player.name.equalsIgnoreCase(name)) continue;
+            return player;
+        }
+        return null;
+    }
+
+    public boolean hasPlayer(String name) {
+        return this.get(name) != null;
+    }
+
     public boolean hasPlayer(int userId) {
         return this.get(userId) != null;
     }
@@ -154,18 +166,6 @@ public class World extends WorldSender {
             world.players.add(new Player(userId, name, groupIds, world));
         }
         return world;
-    }
-
-    public Player get(String name) {
-        for (Player player : this.players) {
-            if (!player.name.equalsIgnoreCase(name)) continue;
-            return player;
-        }
-        return null;
-    }
-
-    public boolean hasPlayer(String name) {
-        return this.get(name) != null;
     }
 }
 
