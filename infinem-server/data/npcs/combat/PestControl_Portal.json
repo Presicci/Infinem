@@ -1,0 +1,88 @@
+[
+  { #Portal EAST/WEST FACING
+  "ids": [ 1747, 1748 ],
+  "handler": "",
+  //Combat Info
+  "hitpoints": 200,
+  "aggressive_level": 0,
+  "max_damage": 0,
+  "attack_style": "CRUSH",
+  //Slayer Info
+  "slayer_level": 1,
+  "slayer_xp": 0.0,
+  "slayer_tasks": [],
+  //Combat Stats
+  "attack": 1,
+  "strength": 1,
+  "defence": 120,
+  "ranged": 1,
+  "magic": 1,
+  //Aggressive Stats
+  "stab_attack": 0,
+  "slash_attack": 0,
+  "crush_attack": 0,
+  "magic_attack": 0,
+  "ranged_attack": 0,
+  //Defensive Stats
+  "stab_defence": 100,
+  "slash_defence": 100,
+  "crush_defence": 100,
+  "magic_defence": 100,
+  "ranged_defence": 100,
+  //Immunites
+  "poison_immunity": true,
+  "venom_immunity": true,
+  //Speeds
+  "attack_ticks": 0,
+  "death_ticks": 0,
+  "respawn_ticks": 0,
+  //Animations
+  "spawn_animation": -1,
+  "attack_animation": -1,
+  "defend_animation": -1,
+  "death_animation": 3935
+  },
+  { #Portal NORTH/SOUTH FACING
+  "ids": [ 1749, 1750 ],
+  "handler": "",
+  //Combat Info
+  "hitpoints": 200,
+  "aggressive_level": 0,
+  "max_damage": 0,
+  "attack_style": "CRUSH",
+  //Slayer Info
+  "slayer_level": 1,
+  "slayer_xp": 0.0,
+  "slayer_tasks": [],
+  //Combat Stats
+  "attack": 1,
+  "strength": 1,
+  "defence": 120,
+  "ranged": 1,
+  "magic": 1,
+  //Aggressive Stats
+  "stab_attack": 0,
+  "slash_attack": 0,
+  "crush_attack": 0,
+  "magic_attack": 0,
+  "ranged_attack": 0,
+  //Defensive Stats
+  "stab_defence": 100,
+  "slash_defence": 100,
+  "crush_defence": 100,
+  "magic_defence": 100,
+  "ranged_defence": 100,
+  //Immunites
+  "poison_immunity": true,
+  "venom_immunity": true,
+  //Speeds
+  "attack_ticks": 0,
+  "death_ticks": 2,
+  "respawn_ticks": 0,
+  //Animations
+  "spawn_animation": -1,
+  "attack_animation": -1,
+  "defend_animation": -1,
+  "death_animation": 3930
+  }
+]
