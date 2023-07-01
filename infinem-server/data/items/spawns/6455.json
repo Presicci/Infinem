@@ -1,0 +1,29 @@
+[
+  {
+    "itemName": "Bowl of water",
+    "amount": 0,
+    "id": 1921,
+    "x": 1639,
+    "y": 3572,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Shears",
+    "amount": 0,
+    "id": 1735,
+    "x": 1653,
+    "y": 3571,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Spade",
+    "amount": 0,
+    "id": 952,
+    "x": 1657,
+    "y": 3569,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
