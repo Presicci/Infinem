@@ -3553,5 +3553,61 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Man"
+  },
+
+
+
+
+
+
+
+
+
+
+  //6453
+  {
+    "name": "Unicorn",
+    "id": 2837,
+    "x": 1629,
+    "y": 3454,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Unicorn",
+    "id": 2837,
+    "x": 1626,
+    "y": 3449,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Unicorn",
+    "id": 2837,
+    "x": 1620,
+    "y": 3455,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Unicorn",
+    "id": 2837,
+    "x": 1619,
+    "y": 3437,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Unicorn",
+    "id": 2837,
+    "x": 1610,
+    "y": 3435,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
   }
 ]
