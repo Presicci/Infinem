@@ -2763,6 +2763,33 @@
 
   //5942
   {
+    "name": "Ruby harvest",
+    "id": 5556,
+    "x": 1531,
+    "y": 3470,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Ruby harvest",
+    "id": 5556,
+    "x": 1534,
+    "y": 3478,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Ruby harvest",
+    "id": 5556,
+    "x": 1529,
+    "y": 3485,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
     "name": "Gull",
     "id": 11297,
     "x": 1483,
