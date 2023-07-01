@@ -327,6 +327,13 @@ public enum FishingArea {
             new Position(1580, 3558, 0),
             new Position(1580, 3557, 0)
     ),
+    KOUREND_WOODLAND_1(
+            new Position(1485, 3432, 0),
+            new Position(1485, 3431, 0),
+            new Position(1485, 3433, 0),
+            new Position(1493, 3442, 0),
+            new Position(1494, 3443, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -436,6 +443,7 @@ public enum FishingArea {
         ENTRANA_DOCK.add(FishingSpot.NET_BAIT, 4);
         ENTRANA_RIVER.add(FishingSpot.LURE_BAIT, 3);
         SHAYZIEN.add(FishingSpot.LURE_BAIT, 3);
+        KOUREND_WOODLAND_1.add(FishingSpot.CAGE_HARPOON, 3);
         FishingArea.fishingSpotTimer();
     }
 }

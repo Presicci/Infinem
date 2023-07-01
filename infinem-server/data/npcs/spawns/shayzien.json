@@ -3204,66 +3204,6 @@
     "npcName": "Grizzly bear"
   },
   {
-    "id": 7459,
-    "x": 1494,
-    "y": 3443,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Fishing spot"
-  },
-  {
-    "id": 7459,
-    "x": 1493,
-    "y": 3442,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Fishing spot"
-  },
-  {
-    "id": 7459,
-    "x": 1497,
-    "y": 3448,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Fishing spot"
-  },
-  {
-    "id": 7459,
-    "x": 1485,
-    "y": 3433,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Fishing spot"
-  },
-  {
-    "id": 7459,
-    "x": 1485,
-    "y": 3431,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Fishing spot"
-  },
-  {
-    "id": 7459,
-    "x": 1485,
-    "y": 3432,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Fishing spot"
-  },
-  {
     "id": 2856,
     "x": 1498,
     "y": 3454,
