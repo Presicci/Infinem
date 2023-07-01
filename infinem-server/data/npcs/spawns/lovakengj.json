@@ -1,6 +1,105 @@
 [
   //5690
   {
+    "name": "Soldier",
+    "id": 11082,
+    "x": 1466,
+    "y": 3737,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1467,
+    "y": 3739,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11076,
+    "x": 1466,
+    "y": 3733,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11074,
+    "x": 1468,
+    "y": 3729,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11082,
+    "x": 1463,
+    "y": 3726,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sergeant",
+    "id": 11075,
+    "x": 1467,
+    "y": 3725,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ranger",
+    "id": 11089,
+    "x": 1467,
+    "y": 3720,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Ranger",
+    "id": 11089,
+    "x": 1467,
+    "y": 3717,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Soldier",
+    "id": 11072,
+    "x": 1465,
+    "y": 3713,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11076,
+    "x": 1466,
+    "y": 3714,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Soldier",
+    "id": 11086,
+    "x": 1466,
+    "y": 3712,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
     "id": 3019,
     "x": 1469,
     "y": 3760,
@@ -441,7 +540,7 @@
   {
     "id": 1407,
     "x": 1503,
-    "y": 3775,
+    "y": 3770,
     "z": 0,
     "direction": "E",
     "walkRange": 1,
@@ -529,7 +628,7 @@
     "npcName": "Dwarf"
   },
   {
-    "id": 8497,
+    "id": 11035,
     "x": 1484,
     "y": 3747,
     "z": 0,
@@ -539,7 +638,7 @@
     "npcName": "Lady Vulcana Lovakengj"
   },
   {
-    "id": 8498,
+    "id": 11036,
     "x": 1483,
     "y": 3745,
     "z": 0,
@@ -549,7 +648,7 @@
     "npcName": "Councillor Unkar"
   },
   {
-    "id": 8499,
+    "id": 11037,
     "x": 1487,
     "y": 3748,
     "z": 0,
@@ -704,6 +803,240 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Dwarf",
+    "id": 1403,
+    "x": 1543,
+    "y": 3808,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Dwarf",
+    "id": 1403,
+    "x": 1538,
+    "y": 3808,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 1545,
+    "y": 3810,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 1541,
+    "y": 3806,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Dwarf",
+    "id": 1408,
+    "x": 1528,
+    "y": 3828,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Dwarf",
+    "id": 1405,
+    "x": 1527,
+    "y": 3831,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 1545,
+    "y": 3827,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 1557,
+    "y": 3824,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bat",
+    "id": 2827,
+    "x": 1559,
+    "y": 3812,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Thirus",
+    "id": 8546,
+    "x": 1517,
+    "y": 3834,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Dwarf",
+    "id": 1407,
+    "x": 1516,
+    "y": 3833,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 1510,
+    "y": 3834,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bat",
+    "id": 2827,
+    "x": 1508,
+    "y": 3837,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Dwarf",
+    "id": 1405,
+    "x": 1499,
+    "y": 3832,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Bat",
+    "id": 2827,
+    "x": 1495,
+    "y": 3837,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bat",
+    "id": 2827,
+    "x": 1502,
+    "y": 3821,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lovada",
+    "id": 6772,
+    "x": 1485,
+    "y": 3834,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Dwarf",
+    "id": 1401,
+    "x": 1486,
+    "y": 3833,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant bat",
+    "id": 2834,
+    "x": 1480,
+    "y": 3837,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 1488,
+    "y": 3821,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 1486,
+    "y": 3810,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Dwarf",
+    "id": 1406,
+    "x": 1490,
+    "y": 3808,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bat",
+    "id": 2827,
+    "x": 1497,
+    "y": 3812,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bat",
+    "id": 2827,
+    "x": 1503,
+    "y": 3806,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bat",
+    "id": 2827,
+    "x": 1516,
+    "y": 3810,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Dwarf",
+    "id": 1403,
+    "x": 1526,
+    "y": 3811,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
   },
 
 
