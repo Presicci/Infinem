@@ -164,6 +164,15 @@
     "npcName": "Watson"
   },
   {
+    "name": "Farmer",
+    "id": 3114,
+    "x": 1645,
+    "y": 3577,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
     "id": 2697,
     "x": 1649,
     "y": 3567,
