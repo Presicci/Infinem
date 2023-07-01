@@ -2763,6 +2763,42 @@
 
   //5942
   {
+    "name": "Gull",
+    "id": 11297,
+    "x": 1483,
+    "y": 3456,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
+  },
+  {
+    "name": "Gull",
+    "id": 11297,
+    "x": 1477,
+    "y": 3459,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Gull",
+    "id": 11297,
+    "x": 1484,
+    "y": 3444,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Floki",
+    "id": 9195,
+    "x": 1474,
+    "y": 3473,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
     "id": 2856,
     "x": 1505,
     "y": 3457,
