@@ -1,0 +1,29 @@
+[
+  {
+    "itemName": "Lit candle",
+    "amount": 0,
+    "id": 33,
+    "x": 1500,
+    "y": 3431,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Bones",
+    "amount": 0,
+    "id": 526,
+    "x": 1497,
+    "y": 3425,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Crossbow",
+    "amount": 0,
+    "id": 837,
+    "x": 1512,
+    "y": 3423,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
