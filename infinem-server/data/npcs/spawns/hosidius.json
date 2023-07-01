@@ -3609,5 +3609,121 @@
     "z": 0,
     "direction": "S",
     "walkRange": 6
+  },
+
+
+
+
+
+
+
+  //6197
+  {
+    "name": "Barbarian",
+    "id": 10984,
+    "x": 1584,
+    "y": 3435,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Barbarian",
+    "id": 10987,
+    "x": 1585,
+    "y": 3431,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Barbarian",
+    "id": 10988,
+    "x": 1581,
+    "y": 3430,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Barbarian",
+    "id": 10986,
+    "x": 1578,
+    "y": 3433,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Barbarian",
+    "id": 10985,
+    "x": 1579,
+    "y": 3435,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1561,
+    "y": 3431,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1566,
+    "y": 3428,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1554,
+    "y": 3437,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1550,
+    "y": 3431,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1549,
+    "y": 3434,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1551,
+    "y": 3439,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Copper longtail",
+    "id": 5552,
+    "x": 1546,
+    "y": 3433,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
   }
 ]
