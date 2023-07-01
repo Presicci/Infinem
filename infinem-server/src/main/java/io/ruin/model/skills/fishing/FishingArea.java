@@ -344,6 +344,13 @@ public enum FishingArea {
             new Position(1534, 3414, 0),
             new Position(1525, 3415, 0)
     ),
+    ISLE_OF_SOULS_SOUTH(
+            new Position(2164, 2782, 0),
+            new Position(2163, 2782, 0),
+            new Position(2162, 2782, 0),
+            new Position(2161, 2782, 0),
+            new Position(2166, 2781, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -455,6 +462,7 @@ public enum FishingArea {
         SHAYZIEN.add(FishingSpot.LURE_BAIT, 3);
         KOUREND_WOODLAND_1.add(FishingSpot.CAGE_HARPOON, 3);
         KOUREND_WOODLAND_2.add(FishingSpot.NET_BAIT, 3);
+        ISLE_OF_SOULS_SOUTH.add(FishingSpot.NET_BAIT, 3);
         FishingArea.fishingSpotTimer();
     }
 }
