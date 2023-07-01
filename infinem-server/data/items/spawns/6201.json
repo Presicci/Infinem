@@ -1,0 +1,47 @@
+[
+  {
+    "itemName": "Logs",
+    "amount": 0,
+    "id": 1511,
+    "x": 1541,
+    "y": 3678,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Logs",
+    "amount": 0,
+    "id": 1511,
+    "x": 1538,
+    "y": 3677,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Logs",
+    "amount": 0,
+    "id": 1511,
+    "x": 1538,
+    "y": 3676,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Logs",
+    "amount": 0,
+    "id": 1511,
+    "x": 1540,
+    "y": 3673,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Bronze arrow",
+    "amount": 0,
+    "id": 882,
+    "x": 1541,
+    "y": 3700,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
