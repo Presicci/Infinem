@@ -1,0 +1,47 @@
+[
+  {
+    "itemName": "Burnt bones",
+    "amount": 0,
+    "id": 528,
+    "x": 1337,
+    "y": 3700,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Burnt bones",
+    "amount": 0,
+    "id": 528,
+    "x": 1333,
+    "y": 3695,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Burnt bones",
+    "amount": 0,
+    "id": 528,
+    "x": 1341,
+    "y": 3688,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Broken arrow",
+    "amount": 0,
+    "id": 687,
+    "x": 1337,
+    "y": 3692,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Broken arrow",
+    "amount": 0,
+    "id": 687,
+    "x": 1344,
+    "y": 3697,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
