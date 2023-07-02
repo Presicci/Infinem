@@ -1,0 +1,290 @@
+[
+  {
+    "name": "Skeleton",
+    "id": 79,
+    "x": 2157,
+    "y": 9312,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Greater demon",
+    "id": 2029,
+    "x": 2168,
+    "y": 9325,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Greater demon",
+    "id": 2027,
+    "x": 2166,
+    "y": 9325,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Greater demon",
+    "id": 2028,
+    "x": 2168,
+    "y": 9330,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Greater demon",
+    "id": 2025,
+    "x": 2166,
+    "y": 9333,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Greater demon",
+    "id": 2026,
+    "x": 2163,
+    "y": 9336,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Greater demon",
+    "id": 2025,
+    "x": 2162,
+    "y": 9330,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lesser demon",
+    "id": 2006,
+    "x": 2165,
+    "y": 9330,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Greater demon",
+    "id": 2027,
+    "x": 2159,
+    "y": 9336,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lesser demon",
+    "id": 2005,
+    "x": 2156,
+    "y": 9336,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Lesser demon",
+    "id": 2007,
+    "x": 2156,
+    "y": 9331,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Lesser demon",
+    "id": 2018,
+    "x": 2153,
+    "y": 9332,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Skeleton",
+    "id": 80,
+    "x": 2128,
+    "y": 9318,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Fire giant",
+    "id": 2079,
+    "x": 2118,
+    "y": 9329,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Fire giant",
+    "id": 2079,
+    "x": 2121,
+    "y": 9330,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fire giant",
+    "id": 2080,
+    "x": 2123,
+    "y": 9329,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fire giant",
+    "id": 2080,
+    "x": 2121,
+    "y": 9325,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fire giant",
+    "id": 2078,
+    "x": 2117,
+    "y": 9323,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fire giant",
+    "id": 2080,
+    "x": 2116,
+    "y": 9320,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fire giant",
+    "id": 2080,
+    "x": 2118,
+    "y": 9326,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fire giant",
+    "id": 2078,
+    "x": 2124,
+    "y": 9326,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Blue dragon",
+    "id": 268,
+    "x": 2121,
+    "y": 9305,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Blue dragon",
+    "id": 265,
+    "x": 2123,
+    "y": 9299,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Blue dragon",
+    "id": 266,
+    "x": 2128,
+    "y": 9301,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Baby blue dragon",
+    "id": 241,
+    "x": 2129,
+    "y": 9306,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Baby blue dragon",
+    "id": 242,
+    "x": 2125,
+    "y": 9305,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Baby blue dragon",
+    "id": 242,
+    "x": 2130,
+    "y": 9299,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Skeleton",
+    "id": 77,
+    "x": 2143,
+    "y": 9296,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Skeleton",
+    "id": 78,
+    "x": 2145,
+    "y": 9294,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Iron dragon",
+    "id": 272,
+    "x": 2148,
+    "y": 9293,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Iron dragon",
+    "id": 272,
+    "x": 2153,
+    "y": 9290,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Iron dragon",
+    "id": 272,
+    "x": 2158,
+    "y": 9293,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  }
+]
