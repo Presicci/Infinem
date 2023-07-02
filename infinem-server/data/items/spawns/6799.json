@@ -1,0 +1,38 @@
+[
+  {
+    "itemName": "Leather gloves",
+    "amount": 0,
+    "id": 1059,
+    "x": 1936,
+    "y": 9449,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Bones",
+    "amount": 0,
+    "id": 526,
+    "x": 1936,
+    "y": 9448,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Bucket",
+    "amount": 0,
+    "id": 1925,
+    "x": 1931,
+    "y": 9446,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Bronze pickaxe",
+    "amount": 0,
+    "id": 1265,
+    "x": 1935,
+    "y": 9453,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
