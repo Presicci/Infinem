@@ -62,7 +62,7 @@ public class ObjectActionHandler implements Incoming {
             return;
         }
         if(option == 6) {
-            int id = in.readShortA();
+            int id = in.readUnsignedShortA();
             ObjectDef def = ObjectDef.get(id);
             if(def != null) {
                 if(player.debug) {
