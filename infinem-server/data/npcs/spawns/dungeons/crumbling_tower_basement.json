@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 1933,
+    "y": 9448,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 1936,
+    "y": 9446,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Spider",
+    "id": 3019,
+    "x": 1939,
+    "y": 9451,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  }
+]
