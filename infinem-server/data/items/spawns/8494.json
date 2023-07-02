@@ -1,0 +1,47 @@
+[
+  {
+    "itemName": "Knife",
+    "amount": 0,
+    "id": 946,
+    "x": 2163,
+    "y": 2979,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Box trap",
+    "amount": 0,
+    "id": 10008,
+    "x": 2162,
+    "y": 2982,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Bird snare",
+    "amount": 0,
+    "id": 10006,
+    "x": 2167,
+    "y": 2981,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Rope",
+    "amount": 0,
+    "id": 954,
+    "x": 2137,
+    "y": 2993,
+    "z": 1,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Pestle and mortar",
+    "amount": 0,
+    "id": 233,
+    "x": 2132,
+    "y": 2998,
+    "z": 2,
+    "respawnSeconds": 60
+  }
+]
