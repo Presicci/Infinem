@@ -1,0 +1,20 @@
+[
+  {
+    "itemName": "Beer",
+    "amount": 0,
+    "id": 1917,
+    "x": 1729,
+    "y": 3618,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Beer",
+    "amount": 0,
+    "id": 1917,
+    "x": 1730,
+    "y": 3614,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
