@@ -15,6 +15,7 @@ import io.ruin.model.content.PvmPoints;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.DoubleDrops;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
@@ -954,10 +955,15 @@ public abstract class NPCCombat extends Combat {
     }
 
     public final void checkAggression() {
-        if (target == null && isAggressive()) {
+        if (target == null && isAggressive() && !npc.isLocked()) {
             target = findAggressionTarget();
-            if (target != null)
+            if (target != null) {
+                int crabId = npc.getTemporaryAttributeIntOrZero(AttributeKey.CRAB_TRANSFORM);
+                if (crabId > 0 && npc.getId() != crabId) {
+                    npc.transform(crabId);
+                }
                 faceTarget();
+            }
         }
     }
 
@@ -1001,7 +1007,7 @@ public abstract class NPCCombat extends Combat {
     }
 
     public int getAggressionRange() {
-        return npc.wildernessSpawnLevel > 0 ? 2 : 4;
+        return npc.wildernessSpawnLevel > 0 ? 2 : npc.hasTemporaryAttribute(AttributeKey.CRAB_TRANSFORM) ? 2 : 4;
     }
 
     public int getAttackBoundsRange() {

@@ -1,7 +1,7 @@
 [
   { #Sand Crab (15)
-    "ids": [ 5935, 7206 ],
-    "handler": "",
+    "ids": [ 5935, 5936, 7206, 7207 ],
+    "handler": "io.ruin.model.activities.miscpvm.CrabCombat",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 126,
