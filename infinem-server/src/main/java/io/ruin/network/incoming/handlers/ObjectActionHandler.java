@@ -39,7 +39,7 @@ public class ObjectActionHandler implements Incoming {
         }
         if(option == 3) {
             int ctrlRun = in.readByteA();
-            int id = in.readLEShortA();
+            int id = in.readUnsignedLEShortA();
             int y = in.readLEShortA();
             int x = in.readLEShort();
             handleAction(player, option, id, x, y, ctrlRun);
