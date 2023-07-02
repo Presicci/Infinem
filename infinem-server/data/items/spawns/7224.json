@@ -1,0 +1,29 @@
+[
+  {
+    "itemName": "Jug of water",
+    "amount": 0,
+    "id": 1937,
+    "x": 1794,
+    "y": 3611,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Papyrus",
+    "amount": 0,
+    "id": 970,
+    "x": 1794,
+    "y": 3612,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Candle",
+    "amount": 0,
+    "id": 36,
+    "x": 1794,
+    "y": 3613,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
