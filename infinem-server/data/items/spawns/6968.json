@@ -1,0 +1,74 @@
+[
+  {
+    "itemName": "Tinderbox",
+    "amount": 0,
+    "id": 590,
+    "x": 1742,
+    "y": 3604,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Grain",
+    "amount": 0,
+    "id": 1947,
+    "x": 1773,
+    "y": 3605,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Grain",
+    "amount": 0,
+    "id": 1947,
+    "x": 1773,
+    "y": 3602,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Grain",
+    "amount": 0,
+    "id": 1947,
+    "x": 1775,
+    "y": 3604,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Grain",
+    "amount": 0,
+    "id": 1947,
+    "x": 1774,
+    "y": 3601,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Bowl",
+    "amount": 0,
+    "id": 1923,
+    "x": 1768,
+    "y": 3589,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Vial",
+    "amount": 0,
+    "id": 229,
+    "x": 1767,
+    "y": 3589,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Pot",
+    "amount": 0,
+    "id": 1931,
+    "x": 1766,
+    "y": 3589,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
