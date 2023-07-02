@@ -1,0 +1,20 @@
+[
+  {
+    "itemName": "Hammer",
+    "amount": 0,
+    "id": 2347,
+    "x": 2157,
+    "y": 2803,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Big fishing net",
+    "amount": 0,
+    "id": 305,
+    "x": 2161,
+    "y": 2802,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
