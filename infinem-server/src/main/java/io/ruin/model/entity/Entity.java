@@ -753,7 +753,8 @@ public abstract class Entity {
                         if(!isLocked() && !getCombat().retaliating && getCombat().allowRetaliate(hit.attacker)) {
                             getCombat().retaliating = true;
                             addEvent(e -> {
-                                e.delay(1);
+                                if (isPlayer())
+                                    e.delay(1);
                                 if(!getCombat().isDead() && !hit.attacker.getCombat().isDead()) {
                                     getCombat().setTarget(hit.attacker);
                                     getCombat().faceTarget();
