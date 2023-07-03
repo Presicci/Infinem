@@ -188,6 +188,7 @@ public enum DialogueLoaderAction {
     FIRSTOPTIONS(null), // Reopens the first option dialogue
     MESSAGE(null),      // Message dialogue
     ITEM(null),         // Gives the player an item
+    TRAVEL(null),       // Fade transitions the player to the new location
     SHOP(null),         // Opens the npcs shop
     ;
 
