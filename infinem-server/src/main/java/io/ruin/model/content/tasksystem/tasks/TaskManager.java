@@ -261,7 +261,7 @@ public class TaskManager {
                     }
                     String area = rs.getString("maparea");
                     if (area.trim().length() > 0 && (mapArea == null || !area.toLowerCase().equalsIgnoreCase(mapArea.toString().toLowerCase().replace("_", " ")))) {
-                        System.out.println("cat&trigger1 TASK ERROR! area=" + area.trim() + " / " + mapArea.toString().toLowerCase());
+                        System.out.println("cat&trigger1 TASK ERROR! area=" + area.trim() + " / " + (mapArea == null ? "null" : mapArea.toString().toLowerCase()));
                         continue;
                     }
                     int requiredAmount = rs.getInt("required_amount");
