@@ -1,0 +1,6 @@
+RAND
+/Black Guard: Obey the law!
+/Black Guard: Stay out of trouble!
+/Black Guard: Out of the way, human!
+/Black Guard: I'm keeping an eye on you!
+/MESSAGE:The guard ignores you.
