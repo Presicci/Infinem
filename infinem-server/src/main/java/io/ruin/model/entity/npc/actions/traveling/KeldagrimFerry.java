@@ -16,10 +16,10 @@ public class KeldagrimFerry {
             Traveling.fadeTravel(player, new Position(2854, 10142));
         } else if (npc.getId() == 4897) {
             Traveling.fadeTravel(player, new Position(2840, 10132));
-        } else if (npc.getId() == 7726) {
-            Traveling.fadeTravel(player, new Position(2887, 10224));
-        } else {
+        } else if (npc.getId() == 2433) {
             Traveling.fadeTravel(player, new Position(2840, 10132));
+        } else {
+            Traveling.fadeTravel(player, new Position(2887, 10224));
         }
 
     }
