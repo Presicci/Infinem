@@ -9,7 +9,7 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 50.0,
+    "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
     "attack": 1,
