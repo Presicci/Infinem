@@ -1268,5 +1268,14 @@
     "direction": "W",
     "walkRange": "1",
     "world": "ECO"
+  },
+  {
+    "name": "Gulldamar",
+    "id": 2364,
+    "x": 2885,
+    "y": 10195,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]
