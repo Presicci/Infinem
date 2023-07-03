@@ -174,6 +174,10 @@ public abstract class NPCCombat extends Combat {
             Bounds attackBounds = npc.attackBounds;
             if(attackBounds != null && !npc.getPosition().inBounds(attackBounds)) {
                 DumbRoute.route(npc, npc.spawnPosition.getX(), npc.spawnPosition.getY());
+                int crabId = npc.getTemporaryAttributeIntOrZero(AttributeKey.CRAB_TRANSFORM);
+                if (crabId > 0 && npc.getId() != (crabId + 1)) {
+                    npc.transform(crabId + 1);
+                }
                 //possibly consider resetting the monster to prevent abusing this mechanic
                 return false;
             }
