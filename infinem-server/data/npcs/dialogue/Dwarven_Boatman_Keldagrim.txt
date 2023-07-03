@@ -1,0 +1,10 @@
+2433
+Dwarven Boatman: Want me to take you back to the mines?
+<Yes, please take me.
+Player: Yes, please take me.
+TRAVEL:2840,10132
+><What, on your ship? No way.
+Player: What, on your ship? No thanks! I don't want to crash into any more things!
+Dwarven Boatman: Hey now, it was only a slight accident!
+Player: A slight accident?? Have you any idea how much time I spent rebuilding that statue?
+Dwarven Boatman: Calm down, calm down! You got what you paid for the trip, didn't you?

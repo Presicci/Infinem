@@ -1,0 +1,18 @@
+4896
+Dwarven Ferryman: Hello there, want a ride?
+Player: A ride, where to?
+Dwarven Ferryman: Across the river, across the river! It's just a short ride!
+Player: How much will that cost me?
+Dwarven Ferryman: Haha, you understand us dwarves well, human!
+Dwarven Ferryman: But for a human like you, it's free! Want to go?
+<I'd like to go further downstream.
+Player: I'd like to go further downstream.
+Dwarven Ferryman: You mean to the city of Keldagrim?
+Player: Ehm, yes, I think so.
+Dwarven Ferryman: Sorry, I'm just a simple ferryman, I only go across.
+Dwarven Ferryman: But talk to my friend here, he sometimes goes to the city in his ship.
+Player: Thanks.
+><Yes please.
+TRAVEL:2854,10142
+><No thanks.
+Player: No thanks.
