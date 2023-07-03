@@ -1103,6 +1103,7 @@ public class Config {
     public static final Config JIGGIG = varpbit(496, false).defaultValue(1);
     public static final Config WITCHAVEN_DUNGEON = varpbit(2618, false).defaultValue(1);
     public static final Config KOUREND_STATUE = varpbit(4982, false).defaultValue(3);
+    public static final Config KELDAGRIM_BOATMAN = varpbit(571, false).defaultValue(1); // Changes caves boatman to variant with travel option
     public static final Config COSTUME_DEPOSIT_SET = varpbit(10581, false);
 
     /**
