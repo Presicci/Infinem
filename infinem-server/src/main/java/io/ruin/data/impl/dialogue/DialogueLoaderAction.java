@@ -18,14 +18,13 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
-    SELL_SKILLCAPE((player -> {
+    BUY_SKILLCAPE((player -> {
         NPC npc = player.getDialogueNPC();
         if (player.getInventory().getAmount(995) < 99000) {
             player.dialogue(
                     new PlayerDialogue("But, unfortunately, I don't have enough money with me."),
                     new NPCDialogue(npc, "Well, come back and see me when you do.")
             );
-            player.removeTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
             return;
         }
         if (!player.getInventory().hasFreeSlots(2) && !(player.getInventory().getAmount(995) == 99000 && player.getInventory().hasFreeSlots(1))) {
@@ -70,7 +69,6 @@ public enum DialogueLoaderAction {
                         new Option("Nevermind")
                 )
         );
-        player.removeTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
     })),
     TRAVEL((player) -> {
         int z = 0;
@@ -82,7 +80,6 @@ public enum DialogueLoaderAction {
             if (coords.length > 2)
                 z = Integer.parseInt(coords[2]);
             Traveling.fadeTravel(player, x, y, z);
-            player.removeTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
         } catch (Exception ignored) {
             System.out.println("Missing TRAVEL arguments");
         }
