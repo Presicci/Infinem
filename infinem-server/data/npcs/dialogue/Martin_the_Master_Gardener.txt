@@ -1,0 +1,16 @@
+<Hello.
+Player: Hello.
+Martin the Master Gardener: I can't chat right now, I have too many things to worry about.
+><Ask about the Skillcape of Farming.
+HASLEVEL:99:FARMING
+(Player: Can I buy a Skillcape of Farming from you?
+Martin the Master Gardener: Of course, fellow farmer. If you wear this cape you'll receive increased yields from your herbs. That'll be 99000 coins.
+<I'm not paying that!
+Player: I'm not paying that.
+Martin the Master Gardener: No skin off my teeth, but if you change your mind, the price will still be the same.
+><Sure, not many people own one.
+BUY_SKILLCAPE:FARMING
+>
+(Player: What is that cape you're wearing?
+Martin the Master Gardener: This is a Skillcape of Farming, isn't it incredible? It's a symbol of my ability as the finest farmer in the land and wearing it increases my herb yield!
+)

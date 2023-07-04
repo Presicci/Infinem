@@ -18,6 +18,8 @@ public enum DialogueLoaderSetting {
         switch (skillString) {
             case "PRAYER":
                 return p.getStats().get(StatType.Prayer).currentLevel >= i;
+            case "FARMING":
+                return p.getStats().get(StatType.Farming).currentLevel >= i;
             default:
                 return true;
         }
