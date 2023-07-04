@@ -112,18 +112,50 @@ public class StashUnits {
              */
             else {
                 List<Item> itemsToDeposit = new ArrayList<>();
-                for (int itemId : emoteClueData.equipment) {
-                    Item item = EmoteClue.getAlternative(player, itemId, false);
-                    if (item != null) {
-                        itemsToDeposit.add(item);
-                    } else {    // If the player does not have all the items required to fill the stash
-                        String message = "You need " + Utils.grammarCorrectListForItemIds(emoteClueData.equipment) +
-                                " to fill this stash.";
-                        for (String replacement : EmoteClue.STRING_REPLACEMENTS.keySet()) {
-                            message = message.replace(replacement, EmoteClue.STRING_REPLACEMENTS.get(replacement));
+                if (emoteClueData.setSize > 0) {
+                    setLoop: for (int index = 0; index < emoteClueData.equipment.size() / emoteClueData.setSize; index++) {
+                        int leftIndex = index * emoteClueData.setSize;
+                        List<Integer> set = emoteClueData.equipment.subList(leftIndex, leftIndex + emoteClueData.setSize);
+                        int count = 0;
+                        for (int itemId : set) {
+                            Item item = EmoteClue.getAlternative(player, itemId, false);
+                            if (item != null) {
+                                count++;
+                            } else {
+                                continue setLoop;
+                            }
                         }
-                        player.dialogue(new ItemDialogue().one(itemId, message));
+                        if (count == emoteClueData.setSize) {
+                            for (int itemId : set) {
+                                Item item = EmoteClue.getAlternative(player, itemId, false);
+                                if (item != null) {
+                                    itemsToDeposit.add(item);
+                                } else {    // If the player does not have all the items required to fill the stash
+                                    player.dialogue(new ItemDialogue().one(itemId, "You need a full barrows set to fill the stash."));
+                                    return;
+                                }
+                            }
+                            break;
+                        }
+                    }
+                    if (itemsToDeposit.size() < emoteClueData.setSize) {
+                        player.dialogue(new ItemDialogue().one(Items.DHAROKS_HELM, "You need a full barrows set to fill the stash."));
                         return;
+                    }
+                } else {
+                    for (int itemId : emoteClueData.equipment) {
+                        Item item = EmoteClue.getAlternative(player, itemId, false);
+                        if (item != null) {
+                            itemsToDeposit.add(item);
+                        } else {    // If the player does not have all the items required to fill the stash
+                            String message = "You need " + Utils.grammarCorrectListForItemIds(emoteClueData.equipment) +
+                                    " to fill this stash.";
+                            for (String replacement : EmoteClue.STRING_REPLACEMENTS.keySet()) {
+                                message = message.replace(replacement, EmoteClue.STRING_REPLACEMENTS.get(replacement));
+                            }
+                            player.dialogue(new ItemDialogue().one(itemId, message));
+                            return;
+                        }
                     }
                 }
                 for (Item item : itemsToDeposit) {
