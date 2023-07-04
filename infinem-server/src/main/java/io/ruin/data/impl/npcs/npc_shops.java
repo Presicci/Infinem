@@ -92,7 +92,7 @@ public class npc_shops extends DataFile {
     private static void talkToDialogue(Player player, NPC npc, Shop shop) {
         npc.faceTemp(player);
         player.dialogue(
-                new NPCDialogue(npc, "Can I help you at all?"),
+                new NPCDialogue(npc, "Hello, would you like to browse my shop?"),
                 new OptionsDialogue(
                         new Option("Yes please. What are you selling?", () -> {
                             shop.open(player);
