@@ -62,8 +62,9 @@ public enum TabEmote {
     URI_TRANSFORM(45, -1, -1),
     SMOOTH_DANCE(46, 7533, -1),
     CRAZY_DANCE(47, -1, -1),
-    PREMIER_SHIELD(48, 7751, 1412);
-    // 49 explore, 50 relic unlock
+    PREMIER_SHIELD(48, 7751, 1412),
+    EXPLORE(49, -1, -1),
+    RELIC_UNLOCK(50, -1, -1);
 
     public int slot, animationID, gfxId;
 
