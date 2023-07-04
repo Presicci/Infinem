@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.api.utils.Tuple;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
@@ -228,32 +229,13 @@ public class DialogueParser {
                     return new ItemDialogue().one(finalItemId, npcDef.name + " hands you " + ItemDef.get(finalItemId).descriptiveName + ".").consumer((player) -> {
                         player.getInventory().addOrDrop(finalItemId, 1);
                     });
-                } else if (action == DialogueLoaderAction.TRAVEL) {
-                    int x = -1;
-                    int y = -1;
-                    int z = 0;
-                    try {
-                        String substring = line.substring(action.name().length() + 1);
-                        String[] coords = substring.split(",");
-                        x = Integer.parseInt(coords[0]);
-                        y = Integer.parseInt(coords[1]);
-                        if (coords.length > 2)
-                            z = Integer.parseInt(coords[2]);
-                    } catch (Exception ignored) {
-                        error("missing coordinates for TRAVEL action", dialogue);
-                    }
-                    int finalX = x;
-                    int finalY = y;
-                    int finalZ = z;
-                    return new ActionDialogue((p) -> {
-                        Traveling.fadeTravel(p, finalX, finalY, finalZ);
-                    });
                 } else {
                     String finalLine = line;
                     return new ActionDialogue((player) -> {
+                        String substring = finalLine.substring(action.name().length() + 1);
+                        if (substring.length() > 0)
+                            player.putTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS, substring);
                         action.getAction().accept(player);
-                        if (finalLine.length() > action.name().length() + 1)
-                            player.dialogue(new MessageDialogue(finalLine.substring(action.name().length() + 1)));
                     });
                 }
             }

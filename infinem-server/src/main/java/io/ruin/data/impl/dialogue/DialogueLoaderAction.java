@@ -5,6 +5,7 @@ import io.ruin.model.World;
 import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
+import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
@@ -17,6 +18,75 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    SELL_SKILLCAPE((player -> {
+        NPC npc = player.getDialogueNPC();
+        if (player.getInventory().getAmount(995) < 99000) {
+            player.dialogue(
+                    new PlayerDialogue("But, unfortunately, I don't have enough money with me."),
+                    new NPCDialogue(npc, "Well, come back and see me when you do.")
+            );
+            player.removeTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
+            return;
+        }
+        if (!player.getInventory().hasFreeSlots(2) && !(player.getInventory().getAmount(995) == 99000 && player.getInventory().hasFreeSlots(1))) {
+            player.dialogue(
+                    new NPCDialogue(npc, "Come back when you have enough space for the cape and hood.")
+            );
+            return;
+        }
+        String substring = player.getTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
+        String dialogue = "";
+        int trimmedId = -1;
+        int capeId = -1;
+        int hoodId = -1;
+        switch (substring) {
+            case "FARMING":
+                dialogue = "That's true; us Master Farmers are a unique breed.";
+                capeId = 9810;
+                trimmedId = 9811;
+                hoodId = 9812;
+                break;
+        }
+        int finalHoodId = hoodId;
+        int finalTrimmedId = trimmedId;
+        int finalCapeId = capeId;
+        String finalDialogue = dialogue;
+        player.dialogue(
+                new NPCDialogue(npc, finalDialogue),
+                new NPCDialogue(npc, "Would you like the trimmed or untrimmed cape?"),
+                new OptionsDialogue(
+                        new Option("Trimmed", () -> {
+                            player.getInventory().remove(995, 99000);
+                            player.getInventory().add(finalTrimmedId, 1);
+                            player.getInventory().add(finalHoodId, 1);
+                            player.dialogue(new NPCDialogue(npc, "Here you are."));
+                        }),
+                        new Option("Untrimmed", () -> {
+                            player.getInventory().remove(995, 99000);
+                            player.getInventory().add(finalCapeId, 1);
+                            player.getInventory().add(finalHoodId, 1);
+                            player.dialogue(new NPCDialogue(npc, "Here you are."));
+                        }),
+                        new Option("Nevermind")
+                )
+        );
+        player.removeTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
+    })),
+    TRAVEL((player) -> {
+        int z = 0;
+        try {
+            String substring = player.getTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
+            String[] coords = substring.split(",");
+            int x = Integer.parseInt(coords[0]);
+            int y = Integer.parseInt(coords[1]);
+            if (coords.length > 2)
+                z = Integer.parseInt(coords[2]);
+            Traveling.fadeTravel(player, x, y, z);
+            player.removeTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
+        } catch (Exception ignored) {
+            System.out.println("Missing TRAVEL arguments");
+        }
+    }),
     LIEVE_TRIDENTS((player -> {
         int tentacles = player.getAttributeIntOrZero(AttributeKey.LIEVE_KRAKEN_TENTACLES);
         int dialogueSize = NPCDef.get(7412).optionDialogues.size();
@@ -188,7 +258,6 @@ public enum DialogueLoaderAction {
     FIRSTOPTIONS(null), // Reopens the first option dialogue
     MESSAGE(null),      // Message dialogue
     ITEM(null),         // Gives the player an item
-    TRAVEL(null),       // Fade transitions the player to the new location
     SHOP(null),         // Opens the npcs shop
     ;
 
