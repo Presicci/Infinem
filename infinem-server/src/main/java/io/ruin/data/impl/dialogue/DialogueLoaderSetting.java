@@ -1,5 +1,6 @@
 package io.ruin.data.impl.dialogue;
 
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
@@ -12,7 +13,15 @@ public enum DialogueLoaderSetting {
     HASITEM((p, i) -> p.getInventory().hasId(i)),
     HASEQUIPMENT((p, i) -> p.getEquipment().hasId(i)),
     HASTALKED((p, i) -> p.getSpokenToNPCSet().contains(i), (p, i) -> p.getSpokenToNPCSet().add(i)),
-    HASPRAYERLEVEL((p, i) -> p.getStats().get(StatType.Prayer).currentLevel >= i),
+    HASLEVEL((p, i) -> {
+        String skillString = p.getTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
+        switch (skillString) {
+            case "PRAYER":
+                return p.getStats().get(StatType.Prayer).currentLevel >= i;
+            default:
+                return true;
+        }
+    }),
     RAND;
     private final BiPredicate<Player, Integer> biPredicate;
     private final BiConsumer<Player, Integer> biConsumer;

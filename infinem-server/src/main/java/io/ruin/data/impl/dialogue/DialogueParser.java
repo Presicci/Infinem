@@ -80,7 +80,14 @@ public class DialogueParser {
                 }
                 try {
                     if (setting != DialogueLoaderSetting.RAND) {
-                        int value = Integer.parseInt(line.substring(setting.name().length() + 1));
+                        String substring = line.substring(setting.name().length() + 1);
+                        String arguments = "";
+                        if (substring.contains(":")) {
+                            String[] split = substring.split(":");
+                            substring = split[0];
+                            arguments = split[1];
+                        }
+                        int value = Integer.parseInt(substring);
                         List<Dialogue[]> dialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, new DialogueParserSettings(setting, value), true).parseRandomDialogues(true);
                         if (dialogues == null) {
                             error("predicate reliant setting but had an issue being read", dialogue);
@@ -91,7 +98,7 @@ public class DialogueParser {
                             return null;
                         }
                         lineNumber = rightIndex - 1;
-                        return new ConditionalDialogue(setting.getBiPredicate(), new Tuple<>(dialogues.get(0), dialogues.get(1)), value);
+                        return new ConditionalDialogue(setting.getBiPredicate(), new Tuple<>(dialogues.get(0), dialogues.get(1)), value, arguments);
                     } else {
                         List<Dialogue[]> randomDialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, true).parseRandomDialogues(true);
                         return new ActionDialogue((player) -> {

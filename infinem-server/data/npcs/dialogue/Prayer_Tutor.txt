@@ -2,7 +2,7 @@ Player: Good day, sister.
 Prayer tutor: Greetings, [player name]. Can I help you with anything, today?
 <How can I train my prayer?
 Player: How can I train my prayer?
-HASPRAYERLEVEL:99
+HASLEVEL:99:PRAYER
 (Prayer tutor: I think you should be teaching me a thing or two, shouldn't you?
 Prayer tutor: Well, if you really want my advice...
 Prayer tutor: The most common way to train prayer is by either burying bones, or offering them to the gods at some kind of an altar.
