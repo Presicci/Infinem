@@ -3,7 +3,7 @@
     "ids": [ 100, 101, 102, 103 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 50,
+    "hitpoints": 60,
     "aggressive_level": 126,
     "max_damage": 1,
     "attack_style": "CRUSH",
