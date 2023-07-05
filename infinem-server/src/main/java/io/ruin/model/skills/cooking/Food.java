@@ -73,6 +73,7 @@ public enum Food {
     CAKE(40, 180.0, 1889, 1891, 1903, "a cake", "", 3, 40, 40, 40),
 
     //Random
+    NETTLE_TEA(20, 52.0, Items.NETTLEWATER, Items.NETTLE_TEA, Items.BOWL, "some nettle tea", "", 3, 54, 54, 48),
     SWEET_CORN(28, 104.0, 5986, 5988, 5990, "a piece of sweet corn", "", 3, 28, 28, 28),
     SEAWEED(1, 0.0, 401, 1781, 1781, "soda ash", "", 3, 1, 1, 1),
     GIANT_SEAWEED(1, 0.0, 21504, 1781, 1781, "soda ash", "", 3, 51, 51, 51),
