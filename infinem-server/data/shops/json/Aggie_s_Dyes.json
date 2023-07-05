@@ -1,0 +1,30 @@
+{
+  "name": "Aggie's Dyes",
+  "currency": "COINS",
+  "npcs": [
+    5622
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1763,
+      "stock": 100,
+      "buy_price": 60,
+      "sell_price": 100
+    },
+    {
+      "itemId": 1765,
+      "stock": 100,
+      "buy_price": 60,
+      "sell_price": 100
+    },
+    {
+      "itemId": 1767,
+      "stock": 100,
+      "buy_price": 60,
+      "sell_price": 100
+    }
+  ]
+}
