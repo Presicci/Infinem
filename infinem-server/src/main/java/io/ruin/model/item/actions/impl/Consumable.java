@@ -410,6 +410,10 @@ public class Consumable {
             p.getStats().get(StatType.Strength).boost(7, 0);
             p.getStats().get(StatType.Attack).drain(4);
         });
+        registerDrink(Items.NETTLEWATER, Items.BOWL, 1, 3, p -> {});
+        registerDrink(Items.NETTLE_TEA, Items.BOWL, 3, 3, p -> {
+            p.getMovement().restoreEnergy(5);
+        });
         registerDrink(Items.FRUIT_BLAST, Items.COCKTAIL_GLASS, 9, 3, p -> {});
         registerDrink(Items.PREMADE_FR_BLAST, Items.COCKTAIL_GLASS, 9, 3, p -> {});
         registerDrink(Items.PINEAPPLE_PUNCH, Items.COCKTAIL_GLASS, 9, 3, p -> {});
