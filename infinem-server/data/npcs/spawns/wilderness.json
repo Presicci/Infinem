@@ -437,116 +437,17 @@
   {
     "name": "Mammoth",
     "id": 6604,
-    "x": 3134,
-    "y": 3621,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 9
-  },
-  {
-    "name": "Mammoth",
-    "id": 6604,
-    "x": 3145,
-    "y": 3606,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 9
-  },
-  {
-    "name": "Mammoth",
-    "id": 6604,
-    "x": 3141,
-    "y": 3592,
+    "x": 3163,
+    "y": 3599,
     "z": 0,
     "direction": "S",
     "walkRange": 6
-  },
-  {
-    "name": "Mammoth",
-    "id": 6604,
-    "x": 3147,
-    "y": 3639,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
-  },
-  {
-    "name": "Mammoth",
-    "id": 6604,
-    "x": 3151,
-    "y": 3621,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
-  },
-  {
-    "name": "Mammoth",
-    "id": 6604,
-    "x": 3151,
-    "y": 3615,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 9
-  },
-  {
-    "name": "Mammoth",
-    "id": 6604,
-    "x": 3150,
-    "y": 3592,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 9
-  },
-  {
-    "name": "Mammoth",
-    "id": 6604,
-    "x": 3161,
-    "y": 3615,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 9
-  },
-  {
-    "name": "Mammoth",
-    "id": 6604,
-    "x": 3155,
-    "y": 3622,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 9
-  },
-  {
-    "name": "Mammoth",
-    "id": 6604,
-    "x": 3163,
-    "y": 3588,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 9
   },
   {
     "name": "Mammoth",
     "id": 6604,
     "x": 3169,
-    "y": 3594,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 9
-  },
-  {
-    "name": "Mammoth",
-    "id": 6604,
-    "x": 3168,
-    "y": 3625,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 8
-  },
-  {
-    "name": "Mammoth",
-    "id": 6604,
-    "x": 3164,
-    "y": 3617,
+    "y": 3599,
     "z": 0,
     "direction": "S",
     "walkRange": 6
@@ -554,17 +455,53 @@
   {
     "name": "Mammoth",
     "id": 6604,
-    "x": 3175,
-    "y": 3584,
+    "x": 3167,
+    "y": 3595,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 6
   },
   {
     "name": "Mammoth",
     "id": 6604,
-    "x": 3188,
-    "y": 3585,
+    "x": 3162,
+    "y": 3593,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Mammoth",
+    "id": 6604,
+    "x": 3160,
+    "y": 3589,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Mammoth",
+    "id": 6604,
+    "x": 3168,
+    "y": 3589,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Mammoth",
+    "id": 6604,
+    "x": 3176,
+    "y": 3590,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Mammoth",
+    "id": 6604,
+    "x": 3173,
+    "y": 3593,
     "z": 0,
     "direction": "S",
     "walkRange": 6
