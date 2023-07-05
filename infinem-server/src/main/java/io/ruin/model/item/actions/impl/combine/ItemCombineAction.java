@@ -222,6 +222,9 @@ public class ItemCombineAction {
                 Arrays.asList(new ItemPair(Items.BREADCRUMBS, Items.RAW_FISHCAKE), new ItemPair(Items.GROUND_COD, -1), new ItemPair(Items.GROUND_KELP, -1), new ItemPair(Items.GROUND_CRAB_MEAT, -1))),
         WRAPPED_OOMLIE("You use the palm leaf on the raw oomlie to make wrapped oomlie.", Collections.singletonList(new SkillRequired(StatType.Cooking, 50, 10)),
                 Arrays.asList(new ItemPair(Items.RAW_OOMLIE, Items.WRAPPED_OOMLIE), new ItemPair(Items.PALM_LEAF, -1))),
+
+        NETTLE_WATER("You add the nettles to the water.", Collections.singletonList(new SkillRequired(StatType.Cooking, 20, 1)),
+                Arrays.asList(new ItemPair(Items.BOWL_OF_WATER, Items.NETTLEWATER), new ItemPair(Items.NETTLES, -1)))
         ;
 
         public final int tickInterval, animation, graphics, inventorySpaceRequired;
