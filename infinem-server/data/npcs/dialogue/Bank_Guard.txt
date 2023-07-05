@@ -1,0 +1,32 @@
+Bank guard: Yes?
+<Can I deposit my stuff here?
+Player: Hello. Can I deposit my stuff here?
+Bank guard: No. I'm a security guard, not a bank clerk.
+><That wall doesn't look very good.
+Player: That wall doesn't look very good.
+Bank guard: No, it doesn't.
+<Are you going to tell me what happened?
+Player: Are you going to tell me what happened?
+Bank guard: I could do.
+Player: Ok, go on!
+Bank guard: Someone smashed the wall when they were robbing the bank.
+Player: Someone's robbed the bank?
+Bank guard: Yes.
+Player: But... was anyone hurt? Did they get anything valuable?
+Bank guard: Yes, but we were able to get more staff and mend the wall easily enough.
+Bank guard: The Bank has already replaced all the stolen items that belonged to customers.
+Player: Oh, good... but the bank staff got hurt?
+Bank guard: Yes, but the new ones are just as good.
+Player: You're not very nice, are you?
+Bank guard: No-one's expecting me to be nice.
+Player: Anyway... So, someone's robbed the bank?
+Bank guard: Yes.
+Player: So who was the robber?
+Bank guard: I can't disclose that information.
+><Alright, I'll stop bothering you now.
+Player: Alright, I'll stop bothering you now.
+Bank guard: Good day, [madam/sir].
+>
+><Sorry, I don't want anything.
+Player: Sorry, I don't want anything.
+Bank guard: Ok.
