@@ -338,6 +338,11 @@ public enum PlayerCounter {
     CAUGHT_RED_SALAMANDER((p, amt) -> p.caughtRedSalamander = amt, p -> p.caughtRedSalamander),
     CAUGHT_BLACK_SALAMANDER((p, amt) -> p.caughtBlackSalamander = amt, p -> p.caughtBlackSalamander),
 
+    CAUGHT_WILD_KEBBIT((p, amt) -> p.caughtWildKebbit = amt, p -> p.caughtWildKebbit),
+    CAUGHT_BARB_KEBBIT((p, amt) -> p.caughtBarbKebbit = amt, p -> p.caughtBarbKebbit),
+    CAUGHT_PRICKLY_KEBBIT((p, amt) -> p.caughtPricklyKebbit = amt, p -> p.caughtPricklyKebbit),
+    CAUGHT_SABRE_KEBBIT((p, amt) -> p.caughtSabreKebbit = amt, p -> p.caughtSabreKebbit),
+
     /**
      * PVM
      */

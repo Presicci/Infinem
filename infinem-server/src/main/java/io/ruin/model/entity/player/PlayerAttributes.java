@@ -710,6 +710,7 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int caughtSwift, caughtWarbler, caughtLongtail, caughtTwitch, caughtWagtail;
     @Expose public int caughtGreyChinchompa, caughtRedChinchompa, caughtBlackChinchompa;
     @Expose public int caughtSwampLizard, caughtOrangeSalamander, caughtRedSalamander, caughtBlackSalamander;
+    @Expose public int caughtWildKebbit, caughtBarbKebbit, caughtPricklyKebbit, caughtSabreKebbit;
 
     /**
      * Godwars
