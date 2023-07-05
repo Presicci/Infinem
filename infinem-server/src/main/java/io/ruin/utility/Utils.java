@@ -216,4 +216,24 @@ public final class Utils {
         }
         return defaultValue;
     }
+
+    public static String getAOrAn(final String s) {
+        if (s == null) {
+            return null;
+        }
+        if (s.length() == 0) {
+            return "";
+        }
+        final char fc = Character.toLowerCase(s.charAt(0));
+        if (fc == 'a' || fc == 'e' || fc == 'i' || fc == 'u' || fc == 'o') {
+            return "an";
+        } else {
+            final char sc = (s.length() > 1) ? s.charAt(1) : '\0';
+            if (fc == 'x' && !(sc == 'a' || sc == 'e' || sc == 'i' || sc == 'o' || sc == 'u')) {
+                return "an";
+            } else {
+                return "a";
+            }
+        }
+    }
 }
