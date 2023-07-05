@@ -12,6 +12,7 @@ import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.hunter.creature.Creature;
 import io.ruin.model.skills.hunter.traps.Trap;
 import io.ruin.model.skills.hunter.traps.TrapType;
+import io.ruin.model.skills.hunter.traps.impl.DeadfallTrap;
 import io.ruin.model.stat.StatType;
 
 public class Hunter {
@@ -94,7 +95,8 @@ public class Hunter {
             destroyTrap(obj);
             return;
         }
-        if (!player.getInventory().hasRoomFor(obj.trap.getTrapType().getItemId())) {
+        int itemId = obj.trap.getTrapType().getItemId();
+        if (itemId != -1 && !player.getInventory().hasRoomFor(itemId)) {
             player.sendMessage("Not enough space in your inventory.");
             return;
         }
@@ -106,7 +108,8 @@ public class Hunter {
             player.animate(obj.trap.getTrapType().getDismantleAnimation());
             event.delay(2);
             if (!obj.isRemoved()) {
-                player.getInventory().add(obj.trap.getTrapType().getItemId(), 1);
+                if (itemId != -1)
+                    player.getInventory().add(itemId, 1);
                 obj.trap.getTrapType().onRemove(player, obj);
                 destroyTrap(obj);
             }
@@ -115,7 +118,7 @@ public class Hunter {
     }
 
     public static void destroyTrap(GameObject obj) {
-        if (!obj.isRemoved())
+        if (!obj.isRemoved() && !(obj.trap.getTrapType() instanceof DeadfallTrap))
             obj.remove();
         if (obj.trap != null) {
             if (obj.trap.getOwner() != null)
