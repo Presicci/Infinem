@@ -40,7 +40,7 @@
     "spawn_animation": -1,
     "attack_animation": 99,
     "defend_animation": 100,
-    "death_animation": 102,
+    "death_animation": 102
   },
   { #Black Guard (48)
     "ids": [ 6046, 6047, 6048, 6049 ],
@@ -83,6 +83,6 @@
     "spawn_animation": -1,
     "attack_animation": 99,
     "defend_animation": 100,
-    "death_animation": 102,
+    "death_animation": 102
   }
 ]
