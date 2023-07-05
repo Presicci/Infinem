@@ -446,7 +446,8 @@ public class Door {
                 {1511, 1511}, {1513, 1513},
                 {11470, 11471}, // Draynor manor
                 {11620, 11624}, // Longhall door 1
-                {11621, 11625}  // Longhall door 2
+                {11621, 11625}, // Longhall door 2
+                {2051, 15513}
         };
         /**
          * These objects face 180 degrees different than others.
@@ -491,8 +492,12 @@ public class Door {
             String name = def.name.toLowerCase();
             if (name.contains("gate")) {
                 def.gateType = true;
-                if (def.modelIds[0] == 7371 || (def.modelIds[0] == 966 && def.modelIds[1] == 967 && def.modelIds[2] == 968)) {
+                if (def.modelIds[0] == 7371 || def.modelIds[0] == 25029 || (def.modelIds[0] == 966 && def.modelIds[1] == 967 && def.modelIds[2] == 968)) {
                     def.longGate = true;
+                    setSound(def, 67, 66);
+                } else if (def.modelIds[0] == 25030) {
+                    def.longGate = true;
+                    def.verticalFlip = true;
                     setSound(def, 67, 66);
                 } else {
                     setSound(def, 69, 68);
