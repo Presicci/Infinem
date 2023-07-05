@@ -241,5 +241,14 @@
     "z": 2,
     "direction": "S",
     "walkRange": 4
+  },
+  {
+    "name": "Madam Sikaro",
+    "id": 11991,
+    "x": 3175,
+    "y": 10040,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
   }
 ]
