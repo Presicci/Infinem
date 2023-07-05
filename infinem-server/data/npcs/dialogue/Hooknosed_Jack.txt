@@ -1,0 +1,27 @@
+<Can you tell me where I would find...
+<Grimesquit and Phingspet
+Player: Can you tell me where I could find Phingspet and Grimesquit?
+Hooknosed Jack: Oh the girls? You'll find them down in the sewers here in Varrock.
+><Jimmy Dazzler
+Player: Can you tell me where I would find Jimmy Dazzler?
+Hooknosed Jack: That conceited popinjay?
+Player: You could call him that. But where would I find him?
+Hooknosed Jack: Probably cowering in his apartment at the back of the Flying Horse in Ardougne, praying that I don't go looking for him.
+Player: So you two know each other?
+MESSAGE:Jack shoots you a look that could rout a regiment of black knights.
+><Smokin' Joe
+Player: Can you tell me where I could find Smokin Joe?
+Hooknosed Jack: He should be in Keldagrim, the city of the dwarves.
+><The face
+Player: Can you tell me where I would find 'The Face'?
+Hooknosed Jack: She'll be in Port Sarim, scaring people away from the entrance of the pits with her face.
+><Felkrash
+Player: Can you tell me where I would find Felkrash?
+Hooknosed Jack: Her nibs? She'll be in the pits of Port Sarim.
+>
+><Can you tell me more about the pits?
+Player: Can you tell me more about the pits?
+Hooknosed Jack: We got busted. Had to shut them down, but feel free to head down there and see what is left.
+><Can you show me to the rat pits?
+Player: Can you show me to the rat pits?
+Hooknosed Jack: Argh you just don't listen do you? See that manhole yonder? Well climb down and you'll find the pits.
