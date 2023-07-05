@@ -1,0 +1,245 @@
+[
+  {
+    "name": "Derse Venator",
+    "id": 10387,
+    "x": 3152,
+    "y": 3644,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Phabelle Bile",
+    "id": 10386,
+    "x": 3152,
+    "y": 3642,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Camarst",
+    "id": 10392,
+    "x": 3148,
+    "y": 3643,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 3151,
+    "y": 3639,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Andros Mai",
+    "id": 10388,
+    "x": 3150,
+    "y": 3644,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 3150,
+    "y": 3634,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 3148,
+    "y": 3629,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Marten",
+    "id": 10370,
+    "x": 3154,
+    "y": 3631,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 3145,
+    "y": 3629,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Lisa",
+    "id": 7317,
+    "x": 3141,
+    "y": 3636,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Justine",
+    "id": 8721,
+    "x": 3143,
+    "y": 3634,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 3142,
+    "y": 3635,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Zamorakian Acolyte",
+    "id": 10381,
+    "x": 3136,
+    "y": 3636,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Zamorakian Acolyte",
+    "id": 10379,
+    "x": 3137,
+    "y": 3634,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ferox",
+    "id": 10377,
+    "x": 3127,
+    "y": 3637,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sister Scarophia",
+    "id": 6590,
+    "x": 3127,
+    "y": 3634,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Zamorakian Acolyte",
+    "id": 10380,
+    "x": 3129,
+    "y": 3628,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Refugee",
+    "id": 10383,
+    "x": 3129,
+    "y": 3622,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sigismund",
+    "id": 10378,
+    "x": 3134,
+    "y": 3617,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Refugee",
+    "id": 10382,
+    "x": 3139,
+    "y": 3626,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Rat",
+    "id": 2854,
+    "x": 3134,
+    "y": 3623,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Banker",
+    "id": 10389,
+    "x": 3134,
+    "y": 3629,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Mercenary",
+    "id": 10390,
+    "x": 3135,
+    "y": 3627,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Wizard",
+    "id": 10373,
+    "x": 3141,
+    "y": 3644,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Wizard",
+    "id": 10371,
+    "x": 3141,
+    "y": 3641,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Wizard",
+    "id": 10372,
+    "x": 3142,
+    "y": 3642,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Refugee",
+    "id": 10384,
+    "x": 3134,
+    "y": 3628,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 4
+  }
+]
