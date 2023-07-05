@@ -222,9 +222,28 @@ public class ItemCombineAction {
                 Arrays.asList(new ItemPair(Items.BREADCRUMBS, Items.RAW_FISHCAKE), new ItemPair(Items.GROUND_COD, -1), new ItemPair(Items.GROUND_KELP, -1), new ItemPair(Items.GROUND_CRAB_MEAT, -1))),
         WRAPPED_OOMLIE("You use the palm leaf on the raw oomlie to make wrapped oomlie.", Collections.singletonList(new SkillRequired(StatType.Cooking, 50, 10)),
                 Arrays.asList(new ItemPair(Items.RAW_OOMLIE, Items.WRAPPED_OOMLIE), new ItemPair(Items.PALM_LEAF, -1))),
-
         NETTLE_WATER("You add the nettles to the water.", Collections.singletonList(new SkillRequired(StatType.Cooking, 20, 1)),
-                Arrays.asList(new ItemPair(Items.BOWL_OF_WATER, Items.NETTLEWATER), new ItemPair(Items.NETTLES, -1)))
+                Arrays.asList(new ItemPair(Items.BOWL_OF_WATER, Items.NETTLEWATER), new ItemPair(Items.NETTLES, -1))),
+
+        /**
+         * Crafting
+         */
+        SPIKY_VAMBRACES("You stitch the claws into the vambraces.", 1249, -1,
+                Collections.singletonList(new SkillRequired(StatType.Crafting, 32, 6)),
+                Arrays.asList(new ItemPair(Items.LEATHER_VAMBRACES, Items.SPIKY_VAMBRACES), new ItemPair(Items.KEBBIT_CLAWS, -1))),
+        GREEN_SPIKY_VAMBRACES("You stitch the claws into the vambraces.", 1249, -1,
+                Collections.singletonList(new SkillRequired(StatType.Crafting, 32, 6)),
+                Arrays.asList(new ItemPair(Items.GREEN_DHIDE_VAMB, Items.GREEN_SPIKY_VAMBS), new ItemPair(Items.KEBBIT_CLAWS, -1))),
+        BLUE_SPIKY_VAMBRACES("You stitch the claws into the vambraces.", 1249, -1,
+                Collections.singletonList(new SkillRequired(StatType.Crafting, 32, 6)),
+                Arrays.asList(new ItemPair(Items.BLUE_DHIDE_VAMB, Items.BLUE_SPIKY_VAMBS), new ItemPair(Items.KEBBIT_CLAWS, -1))),
+        RED_SPIKY_VAMBRACES("You stitch the claws into the vambraces.", 1249, -1,
+                Collections.singletonList(new SkillRequired(StatType.Crafting, 32, 6)),
+                Arrays.asList(new ItemPair(Items.RED_DHIDE_VAMB, Items.RED_SPIKY_VAMBS), new ItemPair(Items.KEBBIT_CLAWS, -1))),
+        BLACK_SPIKY_VAMBRACES("You stitch the claws into the vambraces.", 1249, -1,
+                Collections.singletonList(new SkillRequired(StatType.Crafting, 32, 6)),
+                Arrays.asList(new ItemPair(Items.BLACK_DHIDE_VAMB, Items.BLACK_SPIKY_VAMBS), new ItemPair(Items.KEBBIT_CLAWS, -1))),
+
         ;
 
         public final int tickInterval, animation, graphics, inventorySpaceRequired;
@@ -241,6 +260,10 @@ public class ItemCombineAction {
             this.inventorySpaceRequired = inventorySpaceRequired;
             this.skillsRequired = skillsRequired;
             this.items = items;
+        }
+
+        ItemCombine(String combineMessage, int animation, int graphics, List<SkillRequired> skillsRequired, List<ItemPair>... items) {
+            this(2, animation, graphics, combineMessage, "", 0, skillsRequired, items);
         }
 
         ItemCombine(String combineMessage, int inventorySpaceRequired, List<SkillRequired> skillsRequired, List<ItemPair>... items) {
