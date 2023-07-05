@@ -13,4 +13,3 @@ BUY_SKILLCAPE:FARMING
 >
 (Player: What is that cape you're wearing?
 Martin the Master Gardener: This is a Skillcape of Farming, isn't it incredible? It's a symbol of my ability as the finest farmer in the land and wearing it increases my herb yield!
-)
