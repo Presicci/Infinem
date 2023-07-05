@@ -1,0 +1,74 @@
+[
+  {
+    "itemName": "Beer",
+    "amount": 0,
+    "id": 1917,
+    "x": 3148,
+    "y": 3645,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Bucket of water",
+    "amount": 0,
+    "id": 1929,
+    "x": 3148,
+    "y": 3642,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Broken glass",
+    "amount": 0,
+    "id": 1469,
+    "x": 3150,
+    "y": 3640,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Broken glass",
+    "amount": 0,
+    "id": 1469,
+    "x": 3151,
+    "y": 3644,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Broken glass",
+    "amount": 0,
+    "id": 1469,
+    "x": 3154,
+    "y": 3646,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Broken glass",
+    "amount": 0,
+    "id": 1469,
+    "x": 3152,
+    "y": 3638,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Broken arrow",
+    "amount": 0,
+    "id": 687,
+    "x": 3129,
+    "y": 3621,
+    "z": 2,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Bronze dagger",
+    "amount": 0,
+    "id": 1205,
+    "x": 3140,
+    "y": 3622,
+    "z": 2,
+    "respawnSeconds": 60
+  }
+]
