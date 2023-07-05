@@ -333,7 +333,7 @@ public enum PickPocket {
             player.sendMessage("You can't pickpocket an NPC while a guard is watching you.");
             return false;
         }
-        if (player.getInventory().getAmount(pickpocket.pouchId) >= 28) {
+        if (pickpocket.pouchId > 1 && player.getInventory().getAmount(pickpocket.pouchId) >= 28) {
             player.sendMessage("You need to open your coin pouches before you pick any more pockets.");
             return false;
         }
