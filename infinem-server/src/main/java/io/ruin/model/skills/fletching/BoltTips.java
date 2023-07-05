@@ -13,6 +13,7 @@ public enum BoltTips {
 
     OPAL(11, 1609, 45, 890, 12, 1.5),
     JADE(26, 1611, 9187, 891, 12, 2.0),
+    KEBBIT(32, 10105, 10158, 890, 6, 5.8),
     PEARL(41, 411, 46, 886, 6, 3.2),
     PEARLS(41, 413, 46, 886, 24, 3.2),
     RED_TOPAZ(48, 1613, 9188, 892, 12, 3.9),
@@ -41,7 +42,10 @@ public enum BoltTips {
         player.getStats().addXp(StatType.Fletching, exp * amount, true);
         player.animate(anim);
         if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
-            player.sendFilteredMessage("You use your chisel to fletch small bolt tips.");
+            if (this == KEBBIT)
+                player.sendFilteredMessage("You use your chisel to fletch some bolts.");
+            else
+                player.sendFilteredMessage("You use your chisel to fletch small bolt tips.");
         }
     }
 
