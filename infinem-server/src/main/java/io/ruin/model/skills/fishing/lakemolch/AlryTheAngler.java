@@ -7,7 +7,7 @@ import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
-import io.ruin.model.shop.ShopManager;
+import io.ruin.model.skills.hunter.falconry.Falconry;
 
 public class AlryTheAngler {
 
@@ -121,7 +121,7 @@ public class AlryTheAngler {
                         player.dialogue(new NPCDialogue(ARLY_THE_ANGLER, "I don't know, I doubt that your type's up to the task..."),
                                 new NPCDialogue(ARLY_THE_ANGLER, "But it would be quite the amusing sight. Go on!"),
                                 new ActionDialogue(() -> {
-                                    if (freeHands(player)) {
+                                    if (Falconry.freeHands(player)) {
                                         player.getEquipment().set(Equipment.SLOT_WEAPON, new Item(CORMORANTS_GLOVE_BIRD, 1));
                                         player.dialogue(
                                                 new MessageDialogue("Arly gives you a large leather glove and summons a cormorant who lands on it."),
@@ -171,12 +171,4 @@ public class AlryTheAngler {
                 )
         );
     }
-
-    private static boolean freeHands(Player player) {
-        Item gloves = player.getEquipment().get(Equipment.SLOT_HANDS);
-        Item weapon = player.getEquipment().get(Equipment.SLOT_WEAPON);
-        Item shield = player.getEquipment().get(Equipment.SLOT_SHIELD);
-        return gloves == null && weapon == null && shield == null;
-    }
-
 }

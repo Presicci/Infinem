@@ -62348,23 +62348,25 @@
     "equip_slot": 3,
     "slash_defence_bonus": 1,
     "crush_defence_bonus": 1,
-    "two_handed": true
+    "two_handed": true,
+    "weapon_type": "CORMORANT"
   },
   { #Falconer's glove
     "id": 10024,
     "tradeable": false,
-    "examine": "A magical catching box.",
+    "examine": "A very large, single leather glove.",
     "weight": 1.8,
 	"protect_value": 0,
     "equip_slot": 3,
     "slash_defence_bonus": 1,
     "crush_defence_bonus": 1,
-    "two_handed": true
+    "two_handed": true,
+    "weapon_type": "CORMORANT"
   },
   { #Magic box
     "id": 10025,
     "tradeable": true,
-    "examine": "Magic box - Examine not set.",
+    "examine": "A magical catching box.",
     "weight": 1.0,
 	"protect_value": 229
   },
