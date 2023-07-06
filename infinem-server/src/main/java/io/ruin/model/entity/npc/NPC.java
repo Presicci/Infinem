@@ -482,6 +482,11 @@ public class NPC extends NPCAttributes {
     }
 
     /**
+     * Clipping
+     */
+    public boolean clip = false;
+
+    /**
      * Register a remove clause if the provided player logs out, leaves the area for too long,
      * or simply if out of combat for too long.
      * @param player The player the npc is 'tied' to.

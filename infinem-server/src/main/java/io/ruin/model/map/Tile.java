@@ -343,8 +343,16 @@ public class Tile {
                 Tile tile = Tile.get(x, y, z, true);
                 if(entity.player != null)
                     tile.playerCount += increment;
-                else
+                else {
                     tile.npcCount += increment;
+                    if (entity.npc.clip) {
+                        if (increment > 0) {
+                            tile.flagUnmovable();
+                        } else {
+                            tile.unflagUnmovable();
+                        }
+                    }
+                }
             }
         }
     }
