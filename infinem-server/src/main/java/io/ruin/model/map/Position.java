@@ -70,6 +70,12 @@ public class Position {
         this.z = z;
     }
 
+    public Position translate(Direction direction, int distance) {
+        x += direction.deltaX * distance;
+        y += direction.deltaY * distance;
+        return this;
+    }
+
     public Position translate(int changeX, int changeY, int changeZ) {
         x += changeX;
         y += changeY;
@@ -85,6 +91,10 @@ public class Position {
 
     public int getDistance(Position other) {
         return (int) Math.sqrt(Math.pow(x - other.x, 2) + Math.pow(y - other.y, 2) + Math.pow(z - other.z, 2));
+    }
+
+    public Position relative(Direction direction, int distance) {
+        return copy().translate(direction, distance);
     }
 
     public Position relative(int changeX, int changeY, int changeZ) {
