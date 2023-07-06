@@ -341,4 +341,10 @@ public class Position {
     public int hashCode() {
         return Objects.hash(x, y, z);
     }
+
+    public static boolean collides(final int x1, final int y1, final int size1, final int x2, final int y2, final int size2) {
+        final int distanceX = x1 - x2;
+        final int distanceY = y1 - y2;
+        return distanceX < size2 && distanceX > -size1 && distanceY < size2 && distanceY > -size1;
+    }
 }
