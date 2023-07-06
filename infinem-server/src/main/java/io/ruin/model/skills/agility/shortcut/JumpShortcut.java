@@ -42,7 +42,9 @@ public enum JumpShortcut {
 
     ZEAH_JUMP49(49,1, Position.of(1776, 3884), Position.of(1776, 3880)),
 
-    ZEAH_JUMP69(69,1, new Position(1761, 3874), new Position(1761, 3872))
+    ZEAH_JUMP69(69,1, new Position(1761, 3874), new Position(1761, 3872)),
+
+    FALCONRY(1, 0, new Position(2371, 3622), new Position(2371, 3619))
     ;
 
     private JumpShortcut(int levelReq, int xp, Position startPosition, Position endPosition){
