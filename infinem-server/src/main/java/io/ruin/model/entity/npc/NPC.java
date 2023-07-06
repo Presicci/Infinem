@@ -150,6 +150,8 @@ public class NPC extends NPCAttributes {
         return walkBounds != null && !isHidden() && getMovement().isAtDestination() && !isLocked() && localPlayers().size() != 0 && !isMovementBlocked(false, false);
     }
 
+    protected void onMovement() {}
+
     /**
      * Combat
      */

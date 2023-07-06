@@ -43,6 +43,7 @@ public class NPCMovement extends Movement {
         }
         npc.getPosition().updateRegion();
         npc.checkMulti();
+        npc.onMovement();
         Tile.occupy(npc);
     }
 
