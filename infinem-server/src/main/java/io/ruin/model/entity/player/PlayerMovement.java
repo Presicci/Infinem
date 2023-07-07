@@ -119,6 +119,16 @@ public class PlayerMovement extends Movement {
      * Misc methods
      */
 
+    public void force(Position destination, int speed1, int speed2, Direction faceDirection) {
+        Position pos = player.getPosition();
+        int diffX1 = destination.getX() - pos.getX();
+        int diffX2 = 0;
+        int diffY1 = destination.getY() - pos.getY();
+        int diffY2 = 0;
+        teleport(pos.getX() + (diffX1 + diffX2), pos.getY() + (diffY1 + diffY2), pos.getZ());
+        player.forceMovementUpdate.set(-diffX1, -diffY1, -diffX2, -diffY2, speed1, speed2, faceDirection.clientValue);
+    }
+
     public void force(int diffX1, int diffY1, int diffX2, int diffY2, int speed1, int speed2, Direction faceDirection) {
         Position pos = player.getPosition();
         teleport(pos.getX() + (diffX1 + diffX2), pos.getY() + (diffY1 + diffY2), pos.getZ());
