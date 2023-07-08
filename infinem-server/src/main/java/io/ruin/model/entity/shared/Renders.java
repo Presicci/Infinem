@@ -10,6 +10,10 @@ public class Renders {
 
     public static final int[] MONKEY_BARS = {744, 744, 744, 744, 744, 744, -1};
 
+    public static final int[] AGILITY_HANG = {3060, 3060, 3060, 3060, 3060, 3060, -1};
+
+    public static final int[] AGILITY_HANG2 = {3059, 3059, 3059, 3059, 3059, 3059, -1};
+
     public static final int[] DREAM = {6296, 6296, 6296, 6296, 6296, 6296, -1};
 
     public static final int[] LOOSE_RAILINGS = {1237, 1237, 1237, 1237, 1237, 1237, -1};

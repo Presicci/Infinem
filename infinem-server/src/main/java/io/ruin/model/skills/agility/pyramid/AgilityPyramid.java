@@ -20,8 +20,9 @@ import lombok.val;
 public class AgilityPyramid {
 
     private static final int[] STAIRS = { 10857, 10858 };
-    private static final int[] LEDGES = { 10860, 10886, 10888 };
+    private static final int[] LEDGES = { 10860, 10886, 10887, 10888, 10889 };
     private static final int[] PLANKS = { 10867, 10868 };
+    private static final int[] GAPS = { 10861, 10862, 10882, 10883, 10884, 10885 };
 
     static {
         for (int stairId : STAIRS) {
@@ -32,6 +33,9 @@ public class AgilityPyramid {
         }
         for (int plankId : PLANKS) {
             ObjectAction.register(plankId, 1, AgilityPyramid::crossPlank);
+        }
+        for (int gapId : GAPS) {
+            ObjectAction.register(gapId, 1, AgilityPyramid::crossGap);
         }
         ObjectAction.register(10865, "climb-over", AgilityPyramid::climbLowWall);
     }
@@ -46,6 +50,66 @@ public class AgilityPyramid {
         if (player.debug)
             player.sendMessage("Chance:" + successChance);
         return Random.get(100) < successChance;
+    }
+
+    private static void crossGap(Player player, GameObject object) {
+        if (!player.getStats().check(StatType.Agility, 30, "cross this"))
+            return;
+        player.startEvent(e -> {
+            player.lock();
+            Position startPos = new Position(
+                    object.getFaceDirection() == Direction.EAST ? object.getPosition().getX() : object.getFaceDirection() == Direction.WEST ? object.getPosition().getX() + 1: player.getPosition().getX(),
+                    object.getFaceDirection() == Direction.NORTH ? object.getPosition().getY() : object.getFaceDirection() == Direction.SOUTH ? object.getPosition().getY() + 1 : player.getPosition().getY(),
+                    player.getPosition().getZ());
+            if (!player.getPosition().equals(startPos)) {
+                player.stepAbs(startPos.getX(), startPos.getY(), StepType.FORCE_WALK);
+                e.delay(1);
+            }
+            player.face(object);
+            e.delay(1);
+            boolean success = isSuccessful(player, 70);
+            Direction walkDirection = object.getFaceDirection().getCounterClockwiseDirection(6);
+            boolean reverse = walkDirection != Direction.getDirection(player.getPosition(),
+                    object.getPosition().relative(object.getFaceDirection() == Direction.WEST ? 1 : 0, object.getFaceDirection() == Direction.SOUTH ? 1 : 0));
+            Position destination = player.getPosition().relative(walkDirection, reverse ? -5 : 5);
+            player.sendFilteredMessage("You get a firm grip and start to edge across...");
+            player.animate(reverse ? 3053 : 3057);
+            e.delay(1);
+            player.stepAbs(
+                    object.getFaceDirection() == Direction.WEST ? object.getPosition().getX() + 1 : object.getPosition().getX(),
+                    object.getFaceDirection() == Direction.SOUTH ? object.getPosition().getY() + 1 : object.getPosition().getY(),
+                    StepType.FORCE_WALK);
+            player.getAppearance().setCustomRenders(reverse ? Renders.AGILITY_HANG2 : Renders.AGILITY_HANG);
+            e.delay(1);
+            int stepsNeeded = object.getPosition().distance(destination);
+            for (int step = 0; step < stepsNeeded; step++) {
+                if (step == 1 && !success) {
+                    Position fallDestination = getLowerTile(player.getPosition().relative(object.getFaceDirection(), 2));
+                    player.getMovement().reset();
+                    player.getAppearance().removeCustomRenders();
+                    player.animate(reverse ? 3055 : 3056);
+                    e.delay(1);
+                    player.getMovement().force(fallDestination, 0, 30, walkDirection);
+                    e.delay(1);
+                    player.getMovement().teleport(fallDestination);
+                    Hit hit = new Hit(HitType.DAMAGE);
+                    hit.fixedDamage(8);
+                    player.hit(hit);
+                    player.sendFilteredMessage("Your hand slips and you fall to the level below.");
+                    player.unlock();
+                    return;
+                }
+                player.stepAbs(destination.getX(), destination.getY(), StepType.FORCE_WALK);
+                player.privateSound(2450, 1, 0);
+                e.delay(1);
+            }
+            e.delay(1);
+            player.getAppearance().removeCustomRenders();
+            player.animate(reverse ? 3054 : 3058);
+            player.getStats().addXp(StatType.Agility, 56.4, true);
+            player.sendFilteredMessage("You skillfully cross the gap.");
+            player.unlock();
+        });
     }
 
     private static void crossPlank(Player player, GameObject object) {
@@ -92,20 +156,27 @@ public class AgilityPyramid {
         if (!player.getStats().check(StatType.Agility, 30, "attempt this"))
             return;
         player.startEvent(e -> {
-            player.lock();
             Position startPos = new Position(
-                    (object.getFaceDirection() == Direction.EAST || object.getFaceDirection() == Direction.WEST) ? object.getPosition().getX() : player.getPosition().getX(),
-                    (object.getFaceDirection() == Direction.NORTH || object.getFaceDirection() == Direction.SOUTH) ? object.getPosition().getY() : player.getPosition().getY(),
+                    object.getFaceDirection() == Direction.EAST ? object.getPosition().getX() : object.getFaceDirection() == Direction.WEST ? object.getPosition().getX() + 1: player.getPosition().getX(),
+                    object.getFaceDirection() == Direction.NORTH ? object.getPosition().getY() : object.getFaceDirection() == Direction.SOUTH ? object.getPosition().getY() + 1 : player.getPosition().getY(),
                     player.getPosition().getZ());
-            player.stepAbs(startPos.getX(), startPos.getY(), StepType.FORCE_WALK);
+            if (!player.getPosition().equals(startPos)) {
+                player.stepAbs(startPos.getX(), startPos.getY(), StepType.FORCE_WALK);
+                e.delay(1);
+            }
+            player.face(object);
             e.delay(1);
             boolean success = isSuccessful(player, 70);
             Direction walkDirection = object.getFaceDirection().getCounterClockwiseDirection(6);
-            boolean reverse = walkDirection != Direction.getDirection(player.getPosition(), object.getPosition());
+            boolean reverse = walkDirection != Direction.getDirection(player.getPosition(),
+                    object.getPosition().relative(object.getFaceDirection() == Direction.WEST ? 1 : 0, object.getFaceDirection() == Direction.SOUTH ? 1 : 0));
             Position destination = player.getPosition().relative(walkDirection, reverse ? -5 : 5);
             player.sendFilteredMessage("You put your foot on the ledge and try to edge across...");
             player.animate(reverse ? 752 : 753);
-            player.stepAbs(object.getPosition().getX(), object.getPosition().getY(), StepType.FORCE_WALK);
+            player.stepAbs(
+                    object.getFaceDirection() == Direction.WEST ? object.getPosition().getX() + 1 : object.getPosition().getX(),
+                    object.getFaceDirection() == Direction.SOUTH ? object.getPosition().getY() + 1 : object.getPosition().getY(),
+                    StepType.FORCE_WALK);
             player.getAppearance().setCustomRenders(reverse ? Renders.AGILITY_JUMP : Renders.AGILITY_WALL);
             e.delay(2);
             int stepsNeeded = object.getPosition().distance(destination);
