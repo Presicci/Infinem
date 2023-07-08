@@ -9,15 +9,6 @@ import io.ruin.model.map.Position;
  */
 public class AgilityPyramidArea {
 
-    static {
-        World.startEvent(e -> {
-            while (true) {
-                e.delay(16);
-                MovingBlock.moveBlocks();
-            }
-        });
-    }
-
     public static Position getHigherTile(Position position) {
         if(position.getZ() == 3) {
             return position.relative(-320, 1856, -1);

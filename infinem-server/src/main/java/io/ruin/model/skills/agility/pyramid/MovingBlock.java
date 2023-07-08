@@ -32,6 +32,12 @@ public enum MovingBlock {
             MovingBlockNPC npc = new MovingBlockNPC(block.npcId, block.spawn, block.direction, 2);
             map.put(block, npc);
         }
+        World.startEvent(e -> {
+            while (true) {
+                e.delay(16);
+                moveBlocks();
+            }
+        });
     }
 
     protected static void moveBlocks() {
