@@ -6,6 +6,12 @@ import io.ruin.model.combat.HitType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.Renders;
 import io.ruin.model.entity.shared.StepType;
+import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.MessageDialogue;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.utils.Config;
+import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.Items;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
@@ -39,6 +45,9 @@ public class AgilityPyramid {
         }
         ObjectAction.register(10865, "climb-over", AgilityPyramid::climbLowWall);
         ObjectAction.register(10859, 1, AgilityPyramid::jumpGap);
+        ObjectAction.register(10855, "enter", AgilityPyramid::doorway);
+        ObjectAction.register(10856, "enter", AgilityPyramid::doorway);
+        ObjectAction.register(10851, "climb", AgilityPyramid::climbingRocks);
     }
 
     private static boolean isSuccessful(Player player, int neverFailLevel) {
@@ -273,6 +282,46 @@ public class AgilityPyramid {
             e.delay(2);
             player.getStats().addXp(StatType.Agility, 8, true);
             player.sendFilteredMessage("... and make it over.");
+            player.unlock();
+        });
+    }
+
+    private static void doorway(Player player, GameObject object) {
+        if (Config.HIDE_PYRAMID.get(player) == 0) {
+            player.dialogue(
+                    new MessageDialogue("You did not grab the pyramid top, are you sure you want to continue through the passge?"),
+                    new OptionsDialogue("Leave?",
+                            new Option("Continue.", () -> {
+                                player.getMovement().teleport(3364, 2830, 0);
+                                player.dialogue(new MessageDialogue("You climb down the steep passage. It leads to the base of the<br>pyramid"));
+                                Config.HIDE_PYRAMID.set(player, 0);
+                            }),
+                            new Option("No, I want my pyramid top!"))
+            );
+            return;
+        }
+        player.getMovement().teleport(3364, 2830, 0);
+        player.dialogue(new MessageDialogue("You climb down the steep passage. It leads to the base of the<br>pyramid"));
+        Config.HIDE_PYRAMID.set(player, 0);
+    }
+
+    private static void climbingRocks(Player player, GameObject object) {
+        player.startEvent(e -> {
+            player.lock();
+            player.animate(3063);
+            player.privateSound(2454);
+            e.delay(2);
+            if (Config.HIDE_PYRAMID.get(player) == 1) {
+                player.sendMessage("You find nothing on top of the pyramid.");
+            } else {
+                if (player.getInventory().hasFreeSlots(1)) {
+                    player.dialogue(new ItemDialogue().one(Items.PYRAMID_TOP, "You find a golden pyramid!"));
+                    player.getInventory().add(Items.PYRAMID_TOP);
+                    Config.HIDE_PYRAMID.set(player, 1);
+                } else {
+                    player.sendMessage("You don't have enough inventory space to pick up the pyramid top.");
+                }
+            }
             player.unlock();
         });
     }
