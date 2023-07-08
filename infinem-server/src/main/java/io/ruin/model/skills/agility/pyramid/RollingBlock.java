@@ -90,11 +90,16 @@ public class RollingBlock {
             player.animate(slipAnim);
             val dir = blockObject.direction == 1 ? Direction.WEST : blockObject.direction == 0 ? Direction.SOUTH :
                     blockObject.direction == 2 ? Direction.NORTH : Direction.EAST;
-            val destination = player.getPosition().relative(dir, 2).relative(0, 0, -1);
-            player.getMovement().force(destination, 0, 60, dir);
+            val destination = player.getPosition().relative(dir, 2);
+            if ((AgilityPyramid.upperPyramid.inBounds(player) && player.getPosition().getZ() == 2)) {
+                player.face(dir);
+            } else {
+                player.getMovement().force(destination, 0, 60, dir);
+            }
             e.delay(1);
+            player.getMovement().reset();
             Config.varpbit(blockObject.getDef().varpBitId, false).set(player, 0);
-            player.getMovement().teleport(AgilityPyramid.getLowerTile(destination.relative(0, 0, 1)));
+            player.getMovement().teleport(AgilityPyramid.getLowerTile(destination));
             Hit hit = new Hit(HitType.DAMAGE);
             hit.fixedDamage(reverse ? 1 : 6);
             player.hit(hit);
