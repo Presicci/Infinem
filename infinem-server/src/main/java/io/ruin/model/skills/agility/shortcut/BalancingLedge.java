@@ -42,7 +42,7 @@ public enum BalancingLedge {
                 player.privateSound(2451, 2, 0);
                 event.delay(1);
             }
-            player.animate(758);
+            player.animate(reverse ? 759 : 758);
             player.getAppearance().removeCustomRenders();
             player.getStats().addXp(StatType.Agility, exp, true);
             player.unlock();
