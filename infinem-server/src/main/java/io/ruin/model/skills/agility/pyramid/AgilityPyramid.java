@@ -21,6 +21,7 @@ public class AgilityPyramid {
 
     private static final int[] STAIRS = { 10857, 10858 };
     private static final int[] LEDGES = { 10860, 10886, 10888 };
+    private static final int[] PLANKS = { 10867, 10868 };
 
     static {
         for (int stairId : STAIRS) {
@@ -28,6 +29,9 @@ public class AgilityPyramid {
         }
         for (int ledgeId : LEDGES) {
             ObjectAction.register(ledgeId, 1, AgilityPyramid::crossLedge);
+        }
+        for (int plankId : PLANKS) {
+            ObjectAction.register(plankId, 1, AgilityPyramid::crossPlank);
         }
         ObjectAction.register(10865, "climb-over", AgilityPyramid::climbLowWall);
     }
@@ -42,6 +46,46 @@ public class AgilityPyramid {
         if (player.debug)
             player.sendMessage("Chance:" + successChance);
         return Random.get(100) < successChance;
+    }
+
+    private static void crossPlank(Player player, GameObject object) {
+        if (!player.getStats().check(StatType.Agility, 30, "cross this"))
+            return;
+        player.startEvent(e -> {
+            player.lock();
+            player.stepAbs(object.getPosition().getX(), object.getPosition().getY(), StepType.FORCE_WALK);
+            e.delay(1);
+            boolean success = isSuccessful(player, 70);
+            Direction walkDirection = object.getFaceDirection().getCounterClockwiseDirection(4);
+            boolean reverse = object.id == 10867;
+            Position destination = player.getPosition().relative(walkDirection, 5);
+            player.getAppearance().setCustomRenders(Renders.AGILITY_BALANCE);
+            player.stepAbs(destination.getX(), destination.getY(), StepType.FORCE_WALK);
+            //sound loop
+            player.privateSound(2470, 1, 0, success ? 4 : 2);
+            e.delay(success ? 6 : 3);
+            if (!success) {
+                player.getMovement().reset();
+                Direction fallDirection = object.getFaceDirection().getCounterClockwiseDirection(reverse ? 2 : 6);
+                Position fallDestination = player.getPosition().relative(fallDirection, 2).relative(0, 0, -1);
+                player.getAppearance().removeCustomRenders();
+                player.animate(reverse ? 3069 : 764);
+                e.delay(1);
+                player.getMovement().force(fallDestination, 0, 30, walkDirection);
+                e.delay(1);
+                player.getMovement().teleport(fallDestination);
+                Hit hit = new Hit(HitType.DAMAGE);
+                hit.fixedDamage(10);
+                player.hit(hit);
+                player.sendFilteredMessage("You slip and fall to the level below.");
+                player.unlock();
+                return;
+            }
+            player.getStats().addXp(StatType.Agility, 56.4, true);
+            player.getAppearance().removeCustomRenders();
+            player.sendFilteredMessage("You walk carefully across the slippery plank...");
+            player.unlock();
+        });
     }
 
     private static void crossLedge(Player player, GameObject object) {
