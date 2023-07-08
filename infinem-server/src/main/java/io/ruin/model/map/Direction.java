@@ -118,4 +118,8 @@ public enum Direction {
         return null;
     }
 
+    public Direction getCounterClockwiseDirection(int cycles) {
+        int targetDirection = (clientValue - (cycles << 8)) & 0x7FF;
+        return getFromClientValue(targetDirection);
+    }
 }
