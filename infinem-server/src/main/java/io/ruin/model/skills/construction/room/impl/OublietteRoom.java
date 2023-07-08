@@ -35,14 +35,14 @@ public class OublietteRoom extends DungeonGuardedRoom {
             case SPIKES:
                 for (int x = getBaseAbsolutePosition().getX() + 2; x <= getBaseAbsolutePosition().getX() + 5; x++) {
                     for (int y = getBaseAbsolutePosition().getY() + 2; y <= getBaseAbsolutePosition().getY() + 5; y++) {
-                        Tile.get(x,y,getChunkZ(), true).addPlayerTrigger(p -> p.hit(new Hit().randDamage(2)));
+                        Tile.get(x,y,getChunkZ(), true).addLazyPlayerTrigger(p -> p.hit(new Hit().randDamage(2)));
                     }
                 }
                 break;
             case TENTACLE_POOL:
                 for (int x = getBaseAbsolutePosition().getX() + 2; x <= getBaseAbsolutePosition().getX() + 5; x++) {
                     for (int y = getBaseAbsolutePosition().getY() + 2; y <= getBaseAbsolutePosition().getY() + 5; y++) {
-                        Tile.get(x,y,getChunkZ(), true).addPlayerTrigger(p -> {
+                        Tile.get(x,y,getChunkZ(), true).addLazyPlayerTrigger(p -> {
                             if (p.get("TENTACLE_POOL") == null) {
                                 p.set("TENTACLE_POOL", Boolean.TRUE);
                                 p.getAppearance().setCustomRenders(Renders.SWIM);
@@ -60,7 +60,7 @@ public class OublietteRoom extends DungeonGuardedRoom {
             case FLAME_PIT:
                 for (int x = getBaseAbsolutePosition().getX() + 2; x <= getBaseAbsolutePosition().getX() + 5; x++) {
                     for (int y = getBaseAbsolutePosition().getY() + 2; y <= getBaseAbsolutePosition().getY() + 5; y++) {
-                        Tile.get(x,y,getChunkZ(), true).addPlayerTrigger(p -> {
+                        Tile.get(x,y,getChunkZ(), true).addLazyPlayerTrigger(p -> {
                             if (p.get("FLAME_PIT_ACTIVE") == null) {
                                 p.set("FLAME_PIT_ACTIVE", Boolean.TRUE);
                                 p.addEvent(event -> {
@@ -84,7 +84,7 @@ public class OublietteRoom extends DungeonGuardedRoom {
         if (hotspot == Hotspot.OUBLIETTE_FLOOR_SPACE) {
             for (int x = getBaseAbsolutePosition().getX() + 2; x <= getBaseAbsolutePosition().getX() + 5; x++) {
                 for (int y = getBaseAbsolutePosition().getY() + 2; y <= getBaseAbsolutePosition().getY() + 5; y++) {
-                    Tile.get(x,y,getChunkZ(), true).clearTriggers();
+                    Tile.get(x,y,getChunkZ(), true).clearLazyTriggers();
                 }
             }
             registerFloorTrap();

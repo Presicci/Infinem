@@ -33,7 +33,7 @@ public class DungeonRoom extends DungeonGuardedRoom { // rooms with floor traps 
             switch (trap) {
                 case SPIKE_TRAP:
                     objs.forEach(o -> {
-                        o.tile.addPlayerTrigger(p -> {
+                        o.tile.addLazyPlayerTrigger(p -> {
                             if (p.getCurrentHouse() == null || p.getCurrentHouse().getChallengeMode() == ChallengeMode.OFF)
                                 return;
                             World.sendGraphics(615, 0, 0, o.x, o.y, o.z);
@@ -57,7 +57,7 @@ public class DungeonRoom extends DungeonGuardedRoom { // rooms with floor traps 
                     break;
                 case MAN_TRAP:
                     objs.forEach(o -> {
-                        o.tile.addPlayerTrigger(p -> {
+                        o.tile.addLazyPlayerTrigger(p -> {
                             if (p.getCurrentHouse() == null || p.getCurrentHouse().getChallengeMode() == ChallengeMode.OFF)
                                 return;
                             World.sendGraphics(616, 0, 0, o.x, o.y, o.z);
@@ -80,7 +80,7 @@ public class DungeonRoom extends DungeonGuardedRoom { // rooms with floor traps 
                     break;
                 case TANGLE_VINE:
                     objs.forEach(o -> {
-                        o.tile.addPlayerTrigger(p -> {
+                        o.tile.addLazyPlayerTrigger(p -> {
                             if (p.getCurrentHouse() == null || p.getCurrentHouse().getChallengeMode() == ChallengeMode.OFF)
                                 return;
                             if (Random.get(255) < 70 + p.getStats().get(StatType.Agility).currentLevel) {
@@ -109,7 +109,7 @@ public class DungeonRoom extends DungeonGuardedRoom { // rooms with floor traps 
                     break;
                 case MARBLE_TRAP:
                     objs.forEach(o -> {
-                        o.tile.addPlayerTrigger(p -> {
+                        o.tile.addLazyPlayerTrigger(p -> {
                             if (p.getCurrentHouse() == null || p.getCurrentHouse().getChallengeMode() == ChallengeMode.OFF)
                                 return;
                             World.sendGraphics(620, 0, 0, o.x, o.y, o.z);
@@ -135,7 +135,7 @@ public class DungeonRoom extends DungeonGuardedRoom { // rooms with floor traps 
                     break;
                 case TELEPORT_TRAP:
                     objs.forEach(o -> {
-                        o.tile.addPlayerTrigger(p -> {
+                        o.tile.addLazyPlayerTrigger(p -> {
                             if (p.getCurrentHouse() == null || p.getCurrentHouse().getChallengeMode() == ChallengeMode.OFF)
                                 return;
                             if (Random.get(255) < 135 + p.getStats().get(StatType.Agility).currentLevel) {
@@ -168,8 +168,8 @@ public class DungeonRoom extends DungeonGuardedRoom { // rooms with floor traps 
     protected void onBuildableChanged(Player player, Hotspot hotspot, Buildable newBuildable) {
         super.onBuildableChanged(player, hotspot, newBuildable);
         if (hotspot == Hotspot.DUNGEON_TRAP_1 || hotspot == Hotspot.DUNGEON_TRAP_2) {
-            getHotspotObjects(Hotspot.DUNGEON_TRAP_1).forEach(o -> o.tile.clearTriggers());
-            getHotspotObjects(Hotspot.DUNGEON_TRAP_2).forEach(o -> o.tile.clearTriggers());
+            getHotspotObjects(Hotspot.DUNGEON_TRAP_1).forEach(o -> o.tile.clearLazyTriggers());
+            getHotspotObjects(Hotspot.DUNGEON_TRAP_2).forEach(o -> o.tile.clearLazyTriggers());
             registerFloorTraps();
         }
     }

@@ -25,6 +25,7 @@ public class NPCMovement extends Movement {
         walkDirection = runDirection = -1;
         if(finishTeleport(npc.getPosition())) {
             npc.getPosition().getTile().checkTriggers(npc);
+            npc.getPosition().getTile().checkLazyTriggers(npc);
         } else {
             if(!step(npc))
                 return;
@@ -39,6 +40,7 @@ public class NPCMovement extends Movement {
             } else {
                 walkDirection = getDirection(diffX, diffY);
             }
+            npc.getPosition().getTile().checkLazyTriggers(npc);
         }
         npc.getPosition().updateRegion();
         npc.checkMulti();

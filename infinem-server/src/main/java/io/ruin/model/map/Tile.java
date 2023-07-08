@@ -320,6 +320,8 @@ public class Tile {
 
     private List<Consumer<Entity>> triggers;
 
+    private List<Consumer<Entity>> lazyTriggers;
+
     public static void occupy(Entity entity) {
         if(entity.occupyingTiles) {
             fill(entity, entity.getLastPosition(), -1);
@@ -414,7 +416,26 @@ public class Tile {
         });
     }
 
+    public void addLazyTrigger(Consumer<Entity> trigger) {
+        if (lazyTriggers == null)
+            lazyTriggers = new ArrayList<>();
+        lazyTriggers.add(trigger);
+    }
+
+    public void addLazyPlayerTrigger(Consumer<Player> trigger) {
+        addLazyTrigger((e) -> {
+            if (e instanceof Player)
+                trigger.accept(e.player);
+        });
+    }
+
     public void checkTriggers(Entity entity) {
+        if (triggers == null)
+            return;
+        triggers.forEach(t -> t.accept(entity));
+    }
+
+    public void checkLazyTriggers(Entity entity) {
         if (triggers == null)
             return;
         triggers.forEach(t -> t.accept(entity));
@@ -430,7 +451,12 @@ public class Tile {
         if (triggers == null)
             return;
         triggers.clear();
+    }
 
+    public void clearLazyTriggers() {
+        if (lazyTriggers == null)
+            return;
+        lazyTriggers.clear();
     }
 
     public boolean isActive() {

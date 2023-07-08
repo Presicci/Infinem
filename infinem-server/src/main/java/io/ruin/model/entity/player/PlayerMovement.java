@@ -157,6 +157,7 @@ public class PlayerMovement extends Movement {
             followX = followY = -1;
             lastFollowX = lastFollowY = -1;
             player.getPosition().getTile().checkTriggers(player);
+            player.getPosition().getTile().checkLazyTriggers(player);
         } else {
             if(following != null) {
                 if(!following.isOnline() || !player.isLocal(following)) {
@@ -209,6 +210,7 @@ public class PlayerMovement extends Movement {
                 followY++;
             else if(diffY <= -2)
                 followY--;
+            player.getPosition().getTile().checkLazyTriggers(player);
         }
         player.getUpdater().updateRegion = player.getPosition().updateRegion();
         player.checkMulti();
