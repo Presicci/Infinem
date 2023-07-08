@@ -4,13 +4,14 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.Renders;
+import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
 import lombok.val;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -19,10 +20,14 @@ import org.jetbrains.annotations.NotNull;
 public class AgilityPyramid {
 
     private static final int[] STAIRS = { 10857, 10858 };
+    private static final int[] LEDGES = { 10860, 10886, 10888 };
 
     static {
         for (int stairId : STAIRS) {
             ObjectAction.register(stairId, 1, AgilityPyramid::climbStairs);
+        }
+        for (int ledgeId : LEDGES) {
+            ObjectAction.register(ledgeId, 1, AgilityPyramid::crossLedge);
         }
         ObjectAction.register(10865, "climb-over", AgilityPyramid::climbLowWall);
     }
@@ -37,6 +42,58 @@ public class AgilityPyramid {
         if (player.debug)
             player.sendMessage("Chance:" + successChance);
         return Random.get(100) < successChance;
+    }
+
+    private static void crossLedge(Player player, GameObject object) {
+        if (!player.getStats().check(StatType.Agility, 30, "attempt this"))
+            return;
+        player.startEvent(e -> {
+            player.lock();
+            Position startPos = new Position(
+                    (object.getFaceDirection() == Direction.EAST || object.getFaceDirection() == Direction.WEST) ? object.getPosition().getX() : player.getPosition().getX(),
+                    (object.getFaceDirection() == Direction.NORTH || object.getFaceDirection() == Direction.SOUTH) ? object.getPosition().getY() : player.getPosition().getY(),
+                    player.getPosition().getZ());
+            player.stepAbs(startPos.getX(), startPos.getY(), StepType.FORCE_WALK);
+            e.delay(1);
+            boolean success = isSuccessful(player, 70);
+            Direction walkDirection = object.getFaceDirection().getCounterClockwiseDirection(6);
+            boolean reverse = walkDirection != Direction.getDirection(player.getPosition(), object.getPosition());
+            Position destination = player.getPosition().relative(walkDirection, reverse ? -5 : 5);
+            player.sendFilteredMessage("You put your foot on the ledge and try to edge across...");
+            player.animate(reverse ? 752 : 753);
+            player.stepAbs(object.getPosition().getX(), object.getPosition().getY(), StepType.FORCE_WALK);
+            player.getAppearance().setCustomRenders(reverse ? Renders.AGILITY_JUMP : Renders.AGILITY_WALL);
+            e.delay(2);
+            int stepsNeeded = object.getPosition().distance(destination);
+            for (int step = 0; step < stepsNeeded; step++) {
+                if (step == 1 && !success) {
+                    player.getMovement().reset();
+                    e.delay(2);
+                    Position fallDestination = getLowerTile(player.getPosition().relative(object.getFaceDirection(), 2));
+                    player.getMovement().reset();
+                    player.getAppearance().removeCustomRenders();
+                    player.animate(reverse ? 3061 : 3062);
+                    e.delay(1);
+                    player.getMovement().force(fallDestination, 0, 30, walkDirection);
+                    e.delay(1);
+                    player.getMovement().teleport(fallDestination);
+                    Hit hit = new Hit(HitType.DAMAGE);
+                    hit.fixedDamage(10);
+                    player.hit(hit);
+                    player.sendFilteredMessage("You slip and fall to the level below.");
+                    player.unlock();
+                    return;
+                }
+                player.stepAbs(destination.getX(), destination.getY(), StepType.FORCE_WALK);
+                player.privateSound(2451, 2, 0);
+                e.delay(1);
+            }
+            player.getAppearance().removeCustomRenders();
+            player.animate(reverse ? 758 : 759);
+            player.getStats().addXp(StatType.Agility, 52, true);
+            player.sendFilteredMessage("You skillfully edge across the gap.");
+            player.unlock();
+        });
     }
 
     private static void climbLowWall(Player player, GameObject object) {
