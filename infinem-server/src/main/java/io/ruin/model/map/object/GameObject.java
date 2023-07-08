@@ -9,6 +9,7 @@ import io.ruin.model.activities.cluescrolls.impl.MapClue;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.ClipUtils;
+import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -280,5 +281,12 @@ public class GameObject extends AttributesHolder {
         if (def == null || def.examine == null)
             return;
         player.sendMessage(def.examine);
+    }
+
+    public Direction getFaceDirection() {
+        return direction == 1 ? Direction.NORTH : direction == 0 ?
+                Direction.WEST : direction == 2 ?
+                Direction.EAST :
+                Direction.SOUTH;
     }
 }
