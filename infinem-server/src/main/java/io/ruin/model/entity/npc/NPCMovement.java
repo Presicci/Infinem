@@ -39,7 +39,6 @@ public class NPCMovement extends Movement {
             } else {
                 walkDirection = getDirection(diffX, diffY);
             }
-            npc.getPosition().getTile().checkTriggers(npc);
         }
         npc.getPosition().updateRegion();
         npc.checkMulti();

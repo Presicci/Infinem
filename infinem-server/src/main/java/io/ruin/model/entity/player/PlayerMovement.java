@@ -209,7 +209,6 @@ public class PlayerMovement extends Movement {
                 followY++;
             else if(diffY <= -2)
                 followY--;
-            player.getPosition().getTile().checkTriggers(player);
         }
         player.getUpdater().updateRegion = player.getPosition().updateRegion();
         player.checkMulti();

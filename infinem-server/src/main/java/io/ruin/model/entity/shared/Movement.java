@@ -3,6 +3,7 @@ package io.ruin.model.entity.shared;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Tile;
 
 public class Movement {
 
@@ -66,6 +67,10 @@ public class Movement {
 
         if(!entity.getRouteFinder().allowStep(newX, newY))
             return false;
+
+        Tile tile = Tile.get(newX, newY, entity.getPosition().getZ());
+        if (tile != null)
+            tile.checkTriggers(entity);
 
         position.set(newX, newY);
         if(newX == stepX && newY == stepY)
