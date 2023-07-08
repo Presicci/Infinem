@@ -39,6 +39,14 @@ public enum Direction {
         }
     }
 
+    public static Direction getFromClientValue(int cv) {
+        for (Direction dir : values()) {
+            if (dir.clientValue == cv)
+                return dir;
+        }
+        return NONE;
+    }
+
     public static Direction getFromObjectDirection(int direction) {
         switch (direction) {
             case 0:
