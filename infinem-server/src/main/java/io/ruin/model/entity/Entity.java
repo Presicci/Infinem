@@ -818,6 +818,16 @@ public abstract class Entity {
             player.getPacketSender().sendSoundEffect(id, type, delay);
     }
 
+    public void privateSound(int id, int type, int delay, int repetitions) {
+        privateSound(id, type ,delay);
+        player.addEvent(e -> {
+            for (int index = 0; index < repetitions; index++) {
+                e.delay(1);
+                privateSound(id, type ,delay);
+            }
+        });
+    }
+
     public void publicSound(int id) {
         publicSound(id, 1, 0);
     }
