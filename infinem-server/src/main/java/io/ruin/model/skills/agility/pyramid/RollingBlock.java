@@ -56,14 +56,7 @@ public class RollingBlock {
             e.delay(distance < 2 ? 0 : 1);
             Config.varpbit(stoneObject.getDef().varpBitId, false).set(player, 1);
             player.privateSound(1396);
-            int level = player.getStats().get(StatType.Agility).currentLevel;
-            int baseRequirement = 30;
-            int baseChance = 75;//Base chance % to not fail minimum level.
-            int neverFailLevel = 70;
-            int adjustmentPercentage = 100 - baseChance;
-            float successPerLevel = (float) adjustmentPercentage / ((float) neverFailLevel - baseRequirement);
-            float successChance = baseChance + Math.max(0, (level - baseRequirement)) * successPerLevel;
-            boolean success = Random.get(100) < successChance;
+            boolean success = AgilityPyramid.isSuccessful(player, 70);
             boolean forward = stoneObject.getFaceDirection() == Direction.NORTH ? player.getAbsY() == stoneObject.getPosition().getY()
                     : stoneObject.getFaceDirection() == Direction.EAST ? player.getAbsX() == stoneObject.getPosition().getX()
                     : stoneObject.getFaceDirection() == Direction.SOUTH ? player.getAbsY() == stoneObject.getPosition().getY() + 1
