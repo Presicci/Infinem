@@ -122,4 +122,12 @@ public enum Direction {
         int targetDirection = (clientValue - (cycles << 8)) & 0x7FF;
         return getFromClientValue(targetDirection);
     }
+
+    public static boolean similarDirection(Direction dir1, Direction dir2, int marginOfError) {
+        int min = dir1.clientValue - (marginOfError * 256);
+        int max = (dir1.clientValue + (marginOfError * 256)) % 2048;
+        if (min < 0)
+            min += 2048;
+        return min <= dir2.clientValue && dir2.clientValue <= max;
+    }
 }
