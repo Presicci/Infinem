@@ -1,7 +1,6 @@
 package io.ruin.model.skills.agility.pyramid;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
 import io.ruin.model.entity.player.Player;
@@ -102,7 +101,7 @@ public class RollingBlock {
             player.getMovement().force(destination, 0, 60, dir);
             e.delay(1);
             Config.varpbit(blockObject.getDef().varpBitId, false).set(player, 0);
-            player.getMovement().teleport(AgilityPyramidArea.getLowerTile(destination.relative(0, 0, 1)));
+            player.getMovement().teleport(AgilityPyramid.getLowerTile(destination.relative(0, 0, 1)));
             Hit hit = new Hit(HitType.DAMAGE);
             hit.fixedDamage(reverse ? 1 : 6);
             player.hit(hit);
