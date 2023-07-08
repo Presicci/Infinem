@@ -96,10 +96,12 @@ public abstract class Book {
     public void handleButtons(final int componentId) {
         if (componentId == 108) {
             if (page > 1) {
+                player.privateSound(2417);
                 page--;
             }
         } else if (componentId == 110) {
             if (page < maxPages) {
+                player.privateSound(2417);
                 page++;
             }
         } else if (componentId == 9) {
