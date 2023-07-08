@@ -38,6 +38,7 @@ public class AgilityPyramid {
             ObjectAction.register(gapId, 1, AgilityPyramid::crossGap);
         }
         ObjectAction.register(10865, "climb-over", AgilityPyramid::climbLowWall);
+        ObjectAction.register(10859, 1, AgilityPyramid::jumpGap);
     }
 
     private static boolean isSuccessful(Player player, int neverFailLevel) {
@@ -50,6 +51,39 @@ public class AgilityPyramid {
         if (player.debug)
             player.sendMessage("Chance:" + successChance);
         return Random.get(100) < successChance;
+    }
+
+    private static void jumpGap(Player player, GameObject object) {
+        if (!player.getStats().check(StatType.Agility, 30, "jump this"))
+            return;
+        player.startEvent(e -> {
+            player.lock();
+            e.delay(1);
+            boolean success = isSuccessful(player, 75);
+            player.privateSound(success ? 2465 : 2463, 1, 20);
+            player.sendFilteredMessage("You jump the gap...");
+            player.animate(success ? 3067 : 3068, 15);
+            val direction = object.getFaceDirection().getCounterClockwiseDirection(6);
+            boolean reverse = !Direction.similarDirection(direction, Direction.getDirection(player.getPosition(), object.getPosition()), 1);
+            val destination = player.getPosition().relative(direction, success ? reverse ? -3 : 3 : reverse ? -1 : 1);
+            player.getMovement().force(destination, 0, 80, reverse ? direction.getCounterClockwiseDirection(4) : direction);
+            if (!success) {
+                e.delay(5);
+                player.resetAnimation();
+                player.sendFilteredMessage("... and miss your footing.");
+                Hit hit = new Hit(HitType.DAMAGE);
+                hit.fixedDamage(8);
+                player.hit(hit);
+                player.getMovement().teleport(getLowerTile(destination.relative(object.getFaceDirection(), 2)));
+                player.unlock();
+                return;
+            }
+            e.delay(3);
+            player.getMovement().teleport(destination);
+            player.getStats().addXp(StatType.Agility, 22, true);
+            player.sendFilteredMessage("... and make it over.");
+            player.unlock();
+        });
     }
 
     private static void crossGap(Player player, GameObject object) {
@@ -240,7 +274,6 @@ public class AgilityPyramid {
             player.getStats().addXp(StatType.Agility, 8, true);
             player.sendFilteredMessage("... and make it over.");
             player.unlock();
-
         });
     }
 
