@@ -46,6 +46,7 @@ public class SimonTempleton {
                                 int amt = player.getInventory().getAmount(Items.PYRAMID_TOP);
                                 player.getInventory().remove(Items.PYRAMID_TOP, amt);
                                 player.getInventory().add(995, PYRAMID_TOP_REWARD);
+                                player.getTaskManager().doLookupByUUID(653, 1); // Turn in a Pyramid Top to Simon Templeton
                                 player.dialogue(
                                         new ItemDialogue().one(Items.PYRAMID_TOP, "You hand over the artefact" + ((amt > 1) ? "s" : "") + " and Simon hands you " + NumberUtils.formatNumber((long) amt * PYRAMID_TOP_REWARD) + " coins."),
                                         new NPCDialogue(SIMON, "Ripper! Thanks a bundle, mate! Thanks to you I can fulfill me contract. You're a true blue! The boss will be pleased."),
