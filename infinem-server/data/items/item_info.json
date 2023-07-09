@@ -69675,28 +69675,28 @@
   { #Roe
     "id": 11324,
     "tradeable": true,
-    "examine": "Wrong examine lol",
+    "examine": "Roe, or cheap fishy eggs.",
     "weight": 0.05,
 	"protect_value": 24
   },
   { #Caviar
     "id": 11326,
     "tradeable": true,
-    "examine": "Wrong examine lol",
+    "examine": "Caviar, or expensive fishy eggs.",
     "weight": 0.05,
 	"protect_value": 166
   },
   { #Leaping trout
     "id": 11328,
     "tradeable": true,
-    "examine": "Wrong examine lol",
+    "examine": "A sad-looking trout.",
     "weight": 0.0,
 	"protect_value": 5
   },
   { #Leaping salmon
     "id": 11330,
     "tradeable": true,
-    "examine": "Leaping salmon - Examine not set.",
+    "examine": "Some non-tasty salmon.",
     "weight": 0.0,
 	"protect_value": 5
   },
