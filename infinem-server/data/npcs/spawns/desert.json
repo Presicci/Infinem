@@ -2367,5 +2367,17 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Monkey"
+  },
+
+
+  //13356
+  {
+    "name": "Simon Templeton",
+    "id": 5786,
+    "x": 3343,
+    "y": 2827,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
   }
 ]
