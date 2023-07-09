@@ -518,6 +518,10 @@ public class PacketSender {
         sendItems(widgetInfo.getPackedId(), containerId, items, length);
     }
 
+    public void sendItems(int containerId, List<Item> items) {
+        sendItems(-1, containerId, items.toArray(new Item[0]), items.size());
+    }
+
     public void sendItems(int interfaceHash, int containerId, Item[] items, int length) {
         OutBuffer out = new OutBuffer(255).sendVarShortPacket(13)
                 .addInt(interfaceHash)
