@@ -30,7 +30,7 @@ public class SimonTempleton {
     }
 
     private static void dialogue(Player player, NPC npc) {
-        if (player.getInventory().hasId(Items.PYRAMID_TOP)) {
+        if (!player.getInventory().hasId(Items.PYRAMID_TOP)) {
             player.dialogue(
                     new NPCDialogue(SIMON, "G'day, mate. Got any new pyramid artefacts for me?"),
                     new PlayerDialogue("No, I haven't."),
@@ -45,8 +45,10 @@ public class SimonTempleton {
                             new Option("Sell them.", () -> {
                                 int amt = player.getInventory().getAmount(Items.PYRAMID_TOP);
                                 player.getInventory().remove(Items.PYRAMID_TOP, amt);
-                                player.getInventory().add(995, PYRAMID_TOP_REWARD);
+                                player.getInventory().add(995, PYRAMID_TOP_REWARD * amt);
                                 player.getTaskManager().doLookupByUUID(653, 1); // Turn in a Pyramid Top to Simon Templeton
+                                player.getTaskManager().doLookupByUUID(906, amt); // Turn in 50 Pyramid Tops to Simon Templeton
+                                player.getTaskManager().doLookupByUUID(907, amt); // Turn in 100 Pyramid Tops to Simon Templeton
                                 player.dialogue(
                                         new ItemDialogue().one(Items.PYRAMID_TOP, "You hand over the artefact" + ((amt > 1) ? "s" : "") + " and Simon hands you " + NumberUtils.formatNumber((long) amt * PYRAMID_TOP_REWARD) + " coins."),
                                         new NPCDialogue(SIMON, "Ripper! Thanks a bundle, mate! Thanks to you I can fulfill me contract. You're a true blue! The boss will be pleased."),
