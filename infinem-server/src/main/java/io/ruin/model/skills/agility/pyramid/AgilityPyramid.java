@@ -12,6 +12,7 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Items;
+import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
@@ -50,7 +51,7 @@ public class AgilityPyramid {
         ObjectAction.register(10851, "climb", AgilityPyramid::climbingRocks);
     }
 
-    private static boolean isSuccessful(Player player, int neverFailLevel) {
+    protected static boolean isSuccessful(Player player, int neverFailLevel) {
         val level = player.getStats().get(StatType.Agility).currentLevel;
         val baseRequirement = 30;
         val baseChance = 75;//Base chance % to not fail minimum level.
@@ -74,7 +75,7 @@ public class AgilityPyramid {
             player.animate(success ? 3067 : 3068, 15);
             val direction = object.getFaceDirection().getCounterClockwiseDirection(6);
             boolean reverse = !Direction.similarDirection(direction, Direction.getDirection(player.getPosition(), object.getPosition()), 1);
-            val destination = player.getPosition().relative(direction, success ? reverse ? -3 : 3 : reverse ? -1 : 1);
+            val destination = player.getPosition().relative(direction, success ? reverse ? -3 : 3 : reverse ? -2 : 2);
             player.getMovement().force(destination, 0, 80, reverse ? direction.getCounterClockwiseDirection(4) : direction);
             if (!success) {
                 e.delay(5);
@@ -112,8 +113,7 @@ public class AgilityPyramid {
             e.delay(1);
             boolean success = isSuccessful(player, 70);
             Direction walkDirection = object.getFaceDirection().getCounterClockwiseDirection(6);
-            boolean reverse = walkDirection != Direction.getDirection(player.getPosition(),
-                    object.getPosition().relative(object.getFaceDirection() == Direction.WEST ? 1 : 0, object.getFaceDirection() == Direction.SOUTH ? 1 : 0));
+            boolean reverse = !Direction.similarDirection(walkDirection, Direction.getDirection(player.getPosition(), object.getPosition()), 1);
             Position destination = player.getPosition().relative(walkDirection, reverse ? -5 : 5);
             player.sendFilteredMessage("You get a firm grip and start to edge across...");
             player.animate(reverse ? 3053 : 3057);
@@ -211,8 +211,7 @@ public class AgilityPyramid {
             e.delay(1);
             boolean success = isSuccessful(player, 70);
             Direction walkDirection = object.getFaceDirection().getCounterClockwiseDirection(6);
-            boolean reverse = walkDirection != Direction.getDirection(player.getPosition(),
-                    object.getPosition().relative(object.getFaceDirection() == Direction.WEST ? 1 : 0, object.getFaceDirection() == Direction.SOUTH ? 1 : 0));
+            boolean reverse = !Direction.similarDirection(walkDirection, Direction.getDirection(player.getPosition(), object.getPosition()), 1);
             Position destination = player.getPosition().relative(walkDirection, reverse ? -5 : 5);
             player.sendFilteredMessage("You put your foot on the ledge and try to edge across...");
             player.animate(reverse ? 752 : 753);
@@ -328,9 +327,13 @@ public class AgilityPyramid {
 
     private static void climbStairs(Player player, GameObject object) {
         if (object.id == 10857) {
-            player.getMovement().teleport(AgilityPyramid.getHigherTile(player.getPosition().relative(Direction.NORTH, 3)));
+            Position destination = AgilityPyramid.getHigherTile(player.getPosition().relative(Direction.NORTH, 3));
+            player.getMovement().teleport(destination);
+            Config.MOVING_BLOCK.set(player, lowerPyramid.inBounds(player) ? destination.getZ() : upperPyramid.inBounds(player) ? destination.getZ() + 2 : 0);
         } else {
-            player.getMovement().teleport(AgilityPyramid.getLowerTile(player.getPosition().relative(Direction.SOUTH, 3)));
+            Position destination = AgilityPyramid.getLowerTile(player.getPosition().relative(Direction.SOUTH, 3));
+            player.getMovement().teleport(destination);
+            Config.MOVING_BLOCK.set(player, lowerPyramid.inBounds(player) ? destination.getZ() : upperPyramid.inBounds(player) ? destination.getZ() + 2 : 0);
         }
     }
 
@@ -347,4 +350,7 @@ public class AgilityPyramid {
         }
         return position.relative(0, 0, -1);
     }
+
+    protected static final Bounds lowerPyramid = Bounds.fromRegion(13356);
+    protected static final Bounds upperPyramid = Bounds.fromRegion(12105);
 }
