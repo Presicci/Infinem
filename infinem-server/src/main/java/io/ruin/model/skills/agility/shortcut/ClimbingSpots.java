@@ -139,7 +139,24 @@ public enum ClimbingSpots {
             Position.of(2337, 3253), Position.of(2335, 3253), Position.of(2333, 3252)),
 
     KHARAZI_VINE(Direction.SOUTH, 79, 1,
-            Position.of(2899, 2942), Position.of(2899, 2937), Position.of(2899, 2940))
+            Position.of(2899, 2942), Position.of(2899, 2937), Position.of(2899, 2940)),
+
+    AGILITY_PYRAMID_1(Direction.WEST, 1, 0,
+            Position.of(3352, 2827), Position.of(3348, 2827), Position.of(3351, 2827), Position.of(3350, 2827), Position.of(3349, 2827)),
+    AGILITY_PYRAMID_2(Direction.WEST, 1, 0,
+            Position.of(3352, 2828), Position.of(3348, 2828), Position.of(3351, 2828), Position.of(3350, 2828), Position.of(3349, 2828)),
+    AGILITY_PYRAMID_3(Direction.WEST, 1, 0,
+            Position.of(3352, 2829), Position.of(3348, 2829), Position.of(3351, 2829), Position.of(3350, 2829), Position.of(3349, 2829)),
+
+    AGILITY_PYRAMID_4(Direction.WEST, 1, 0,
+            Position.of(3338, 2829), Position.of(3334, 2829), Position.of(3337, 2829), Position.of(3336, 2829), Position.of(3335, 2829)),
+    AGILITY_PYRAMID_5(Direction.WEST, 1, 0,
+            Position.of(3338, 2828), Position.of(3334, 2828), Position.of(3337, 2828), Position.of(3336, 2828), Position.of(3335, 2828)),
+    AGILITY_PYRAMID_6(Direction.WEST, 1, 0,
+            Position.of(3338, 2827), Position.of(3334, 2827), Position.of(3337, 2827), Position.of(3336, 2827), Position.of(3335, 2827)),
+    AGILITY_PYRAMID_7(Direction.WEST, 1, 0,
+            Position.of(3338, 2826), Position.of(3334, 2826), Position.of(3337, 2826), Position.of(3336, 2826), Position.of(3335, 2826)),
+
     ;
 
     private ClimbingSpots(Direction faceDir, int levelReq, int xp, Position startPosition, Position endPosition, Position... steps){
