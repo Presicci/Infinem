@@ -405,6 +405,7 @@ public enum Impling {
             new Position(1825, 3487, 0),
             new Position(1632, 3666, 0),
 
+            new Position(2135, 2962, 0), // Isle of souls
     };
 
     private static final Position[] CRYSTAL_RANDOM_SPAWN_POSITIONS = {
