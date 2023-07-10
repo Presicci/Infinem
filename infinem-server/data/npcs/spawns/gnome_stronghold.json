@@ -1818,15 +1818,6 @@
     "walkRange": 1
   },
   {
-    "name": "null",
-    "id": 4297,
-    "x": 2370,
-    "y": 3483,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
     "name": "Butterfly",
     "id": 237,
     "x": 2378,
