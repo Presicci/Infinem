@@ -11,6 +11,10 @@ import io.ruin.model.map.Position;
  */
 public class Traveling {
 
+    public static void fadeTravel(Player player, Position positon, int ticks, Runnable onComplete) {
+        fadeTravel(player, positon.getX(), positon.getY(), positon.getZ(), ticks, onComplete);
+    }
+
     public static void fadeTravel(Player player, Position positon, Runnable onComplete) {
         fadeTravel(player, positon.getX(), positon.getY(), positon.getZ(), onComplete);
     }
