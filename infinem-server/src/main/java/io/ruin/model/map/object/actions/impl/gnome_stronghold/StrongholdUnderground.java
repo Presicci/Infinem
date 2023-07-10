@@ -11,6 +11,7 @@ public class StrongholdUnderground {
 
     static {
         ObjectAction.register(17209, "enter", (player, obj) -> Traveling.fadeTravel(player ,2409, 9812, 0));
+        ObjectAction.register(17222, "exit", (player, obj) -> Traveling.fadeTravel(player ,2402, 3419, 0));
         ObjectAction.register(17223, "exit", (player, obj) -> Traveling.fadeTravel(player ,2402, 3419, 0));
     }
 }
