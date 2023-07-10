@@ -16,7 +16,7 @@
     "y": 3485,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
+    "walkRange": 3,
     "world": "ECO",
     "npcName": "Eagle"
   },
@@ -26,7 +26,7 @@
     "y": 3473,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
+    "walkRange": 3,
     "world": "ECO",
     "npcName": "Eagle"
   },
@@ -36,7 +36,7 @@
     "y": 3484,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
+    "walkRange": 3,
     "world": "ECO",
     "npcName": "Eagle"
   },
@@ -46,7 +46,7 @@
     "y": 3496,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
+    "walkRange": 3,
     "world": "ECO",
     "npcName": "Eagle"
   },
@@ -56,7 +56,7 @@
     "y": 3490,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
+    "walkRange": 3,
     "world": "ECO",
     "npcName": "Eagle"
   },
