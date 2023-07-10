@@ -5,6 +5,11 @@ import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.ActionDialogue;
+import io.ruin.model.inter.dialogue.NPCDialogue;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.dialogue.PlayerDialogue;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.map.object.GameObject;
@@ -68,6 +73,20 @@ public class EssenceMine {
         });
     }
 
+    private static void dialogue(Player player, NPC npc, String npcName) {
+        player.dialogue(
+                new NPCDialogue(npc, "Hello, would you like me to teleport you to the Essence mine?"),
+                new OptionsDialogue(
+                        new Option("I need to mine some rune essence.", () -> player.dialogue(
+                                new PlayerDialogue("Can you teleport me to the Rune Essence?"),
+                                new NPCDialogue(npc, "Okay. Hold onto your hat!"),
+                                new ActionDialogue(() -> enterMine(player, npc, npcName))
+                        )),
+                        new Option("No, thank you.")
+                )
+        );
+    }
+
     static {
         ObjectAction.register(34825, 1, EssenceMine::leaveMine);
         NPCAction.register(2886, "teleport", (player, npc) -> enterMine(player, npc, "AUBURY"));
@@ -75,5 +94,6 @@ public class EssenceMine {
         NPCAction.register(3248, "teleport", (player, npc) -> enterMine(player, npc, "DISTENTOR"));
         NPCAction.register(5314, 3, (player, npc) -> enterMine(player, npc, "CROMPERTY"));
         NPCAction.register(4913, "teleport", (player, npc) -> enterMine(player, npc, "BRIMSTAIL"));
+        NPCAction.register(4913, "talk-to", (player, npc) -> dialogue(player, npc, "BRIMSTAIL"));
     }
 }
