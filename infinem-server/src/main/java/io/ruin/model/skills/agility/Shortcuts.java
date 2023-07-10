@@ -68,6 +68,9 @@ public class Shortcuts {
         // Yanille Agility Shortcut
         ObjectAction.register(16519, "climb-under", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 16, Direction.NORTH, 5));
         ObjectAction.register(16520, "climb-into", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 16, Direction.SOUTH, 5));
+        // Piscatoris entrance
+        ObjectAction.register(12656, 2344, 3651, 0, "enter", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 1, Direction.NORTH, 5));
+        ObjectAction.register(12656, 2344, 3654, 0, "enter", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 1, Direction.SOUTH, 5));
         // Watchtower wall climb
         // Coal Truck log balance
 
