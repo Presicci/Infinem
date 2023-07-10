@@ -62,5 +62,8 @@ public class ShipNPC {
         // Fishing platform
         registerShipNPC(5069, "the Fishing Platform", new Position(2782, 3274, 0));
         registerShipNPC(5070, "Witchaven", new Position(2719, 3303, 0));
+        // Piscatoris -> Gnome rowboat
+        registerShipNPC(4298, "the Fishing Colony", new Position(2356, 3640));
+        registerShipNPC(4299, "the Gnome Stronghold", new Position(2367, 3485));
     }
 }
