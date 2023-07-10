@@ -11,7 +11,7 @@ import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
-import io.ruin.model.inter.handlers.IKOD;
+import io.ruin.model.inter.handlers.itemskeptondeath.IKODInterface;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.inter.utils.Unlock;
@@ -234,7 +234,7 @@ public class DeathStorage extends ItemContainer {
 
     public void death(Killer killer) {
         reset();
-        IKOD.forLostItem(player, killer, this::add);
+        IKODInterface.forLostItem(player, killer, this::add);
         if (!isEmpty()) {
             switch (player.getRespawnPoint()) {
                 case EDGEVILLE:

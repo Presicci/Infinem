@@ -1,12 +1,14 @@
-package io.ruin.model.inter.handlers;
+package io.ruin.model.inter.handlers.itemskeptondeath;
 
-import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.EnumMap;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.combat.Killer;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
+import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
 import io.ruin.model.item.actions.impl.ItemBreaking;
@@ -25,13 +27,24 @@ import java.util.stream.Collectors;
 import static io.ruin.cache.ItemID.BLOOD_MONEY;
 import static io.ruin.cache.ItemID.COINS_995;
 
-public class IKOD {
+public class IKODInterface {
 
     public static void open(Player player) {
         if(player.isVisibleInterface(Interface.ITEMS_KEPT_ON_DEATH))
             player.closeInterface(InterfaceType.MAIN);
         player.openInterface(InterfaceType.MAIN, Interface.ITEMS_KEPT_ON_DEATH);
-        player.getPacketSender().sendAccessMask(Interface.ITEMS_KEPT_ON_DEATH, 18, 0, 4, 2);
+
+        boolean protect = player.getPrayer().isActive(Prayer.PROTECT_ITEM);
+        boolean skull = player.getCombat().isSkulled();
+        boolean wilderness = player.wildernessLevel >= 21;
+        player.putTemporaryAttribute(AttributeKey.IKOD_PROTECT_ITEM, protect);
+        player.putTemporaryAttribute(AttributeKey.IKOD_SKULL, skull);
+        player.putTemporaryAttribute(AttributeKey.IKOD_WILDY, wilderness);
+        player.putTemporaryAttribute(AttributeKey.IKOD_PK, false);
+        IKODInterfaceFlags flags = new IKODInterfaceFlags(protect, skull, wilderness, false);
+        IKODInterfaceUpdater itemKeptInterfaceState = IKODInterfaceUpdater.create(player, flags);
+        itemKeptInterfaceState.update(player);
+        /*player.getPacketSender().sendAccessMask(Interface.ITEMS_KEPT_ON_DEATH, 18, 0, 4, 2);
         player.getPacketSender().sendAccessMask(Interface.ITEMS_KEPT_ON_DEATH, 21, 0, 42, 2);
 
         boolean skulled = player.getCombat().isSkulled();
@@ -60,6 +73,7 @@ public class IKOD {
         player.getPacketSender().sendItems(-1, 63834, 468, items.toArray(new Item[items.size()]));
         player.getPacketSender().sendItems(-1, 63718, 584, keepItems.toArray(new Item[keepItems.size()]));
         player.getPacketSender().sendClientScript(118, "isii1s", 0, "", keepCount, skulled ? 1 : 0, ultimateIronMan ? 1 : 0, NumberUtils.formatNumber(value) + " " + ("gp"));
+        */
     }
 
     private static final List<Integer> CHARGED_UNTRADEABLES = Arrays.asList(
@@ -475,8 +489,8 @@ public class IKOD {
 
     static {
         EnumMap map = EnumMap.get(879);
-        for(int id : map.keys)
-            ItemDef.get(id).neverProtect = id != 13190 && id != 13192; //true when not bonds
+        //for(int id : map.keys)
+         //   ItemDef.get(id).neverProtect = id != 13190 && id != 13192; //true when not bonds
 
         /**
          * Custom protect items
@@ -501,6 +515,39 @@ public class IKOD {
         ItemDef.get(20714).protectValue = (int) Math.min(Integer.MAX_VALUE, 6000 * 1000L); //Tome of fire
         ItemDef.get(19550).protectValue = (int) Math.min(Integer.MAX_VALUE, 15000 * 1000L); //Ring of suffering
         ItemDef.get(22613).protectValue = (int) Math.min(Integer.MAX_VALUE, 120000 * 1000L); //Vesta long
+
+        InterfaceHandler.register(Interface.ITEMS_KEPT_ON_DEATH, h -> {
+            h.actions[12] = (DefaultAction) (p, option, slot, itemId) -> {
+                boolean protect = p.getTemporaryAttribute(AttributeKey.IKOD_PROTECT_ITEM);
+                boolean skull = p.getTemporaryAttribute(AttributeKey.IKOD_SKULL);
+                boolean wilderness = p.getTemporaryAttribute(AttributeKey.IKOD_WILDY);
+                boolean pk = p.getTemporaryAttribute(AttributeKey.IKOD_PK);
+                switch (slot) {
+                    case 0:
+                        protect = !protect;
+                        p.putTemporaryAttribute(AttributeKey.IKOD_PROTECT_ITEM, protect);
+                        break;
+                    case 1:
+                        skull = !skull;
+                        p.putTemporaryAttribute(AttributeKey.IKOD_SKULL, skull);
+                        break;
+                    case 2:
+                        pk = !pk;
+                        p.putTemporaryAttribute(AttributeKey.IKOD_PK, pk);
+                        break;
+                    case 3:
+                        wilderness = !wilderness;
+                        p.putTemporaryAttribute(AttributeKey.IKOD_WILDY, wilderness);
+                        break;
+                }
+                IKODInterfaceFlags flags = new IKODInterfaceFlags(protect, skull, wilderness, pk);
+                IKODInterfaceUpdater updater = IKODInterfaceUpdater.create(p, flags);
+                updater.update(p);
+            };
+            h.closedAction = (player, integer) -> {
+
+            };
+        });
     }
 
     private static boolean isLootingBag(Item item) {
