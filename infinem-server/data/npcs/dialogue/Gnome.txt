@@ -1,0 +1,27 @@
+RAND
+/Player: Hello.
+Gnome: Can't stop sorry! Busy, busy, busy!
+MESSAGE:The gnome is too busy to talk.
+/Player: Hello.
+Gnome: Hello traveller. Are you enjoying your stay?
+Player: It's a nice place.
+Gnome: Yes, we try to keep it that way.
+/Player: Hello.
+Player: Are you OK?
+MESSAGE:The gnome seems a little drunk.
+Gnome: Youssh go gesshh em.
+Player: Pardon?
+Gnome: Gessh ush a cosshtail.
+Player: A what?
+Gnome: Blurssh berry.
+MESSAGE:I think he's had enough!
+/Player: Hello.
+Gnome: I don't think I can take much more!
+Player: What's wrong?
+Gnome: It's just the wife, she won't stop moaning!
+Player: Maybe you should give her less to moan about.
+Gnome: She'll always find something.
+/Player: Hello.
+Gnome: How's life treating you?
+Player: Not bad, not bad at all.
+Gnome: It's good to see a human with a positive attitude.
