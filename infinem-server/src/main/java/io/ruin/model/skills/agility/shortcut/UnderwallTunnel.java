@@ -43,6 +43,10 @@ public class UnderwallTunnel {
     }
 
     public static void shortcutVertical(Player p, GameObject wall, int levelReq, Direction moveDirection) {
+        shortcutVertical(p, wall, levelReq, moveDirection, 4);
+    }
+
+    public static void shortcutVertical(Player p, GameObject wall, int levelReq, Direction moveDirection, int moveTiles) {
         if (!p.getStats().check(StatType.Agility, levelReq, "attempt this"))
             return;
         p.startEvent(e -> {
@@ -52,7 +56,7 @@ public class UnderwallTunnel {
                 p.getMovement().force(0, 1, 0, 0, 0, 50, Direction.NORTH);
                 e.delay(2);
                 p.animate(2590);
-                p.getMovement().force(0, 2, 0, 0, 0, 100, Direction.NORTH);
+                p.getMovement().force(0, moveTiles - 2, 0, 0, 0, 100, Direction.NORTH);
                 e.delay(3);
                 p.animate(2591);
                 p.getMovement().force(0, 1, 0, 0, 15, 33, Direction.NORTH);
@@ -65,7 +69,7 @@ public class UnderwallTunnel {
                 p.getMovement().force(0, -1, 0, 0, 0, 50, Direction.SOUTH);
                 e.delay(2);
                 p.animate(2590);
-                p.getMovement().force(0, -2, 0, 0, 0, 100, Direction.SOUTH);
+                p.getMovement().force(0, -(moveTiles - 2), 0, 0, 0, 100, Direction.SOUTH);
                 e.delay(3);
                 p.animate(2591);
                 p.getMovement().force(0, -1, 0, 0, 15, 33, Direction.SOUTH);
