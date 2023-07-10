@@ -151,32 +151,5 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
-  },
-  {
-    "name": "Fishing spot",
-    "id": 5233,
-    "x": 2310,
-    "y": 3704,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
-    "name": "Fishing spot",
-    "id": 5233,
-    "x": 2312,
-    "y": 3704,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
-    "name": "Fishing spot",
-    "id": 5233,
-    "x": 2307,
-    "y": 3701,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
   }
 ]
