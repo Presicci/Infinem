@@ -483,7 +483,8 @@ public class Player extends PlayerAttributes {
     private InterfaceHandler[] activeInterfaceHandlers = new InterfaceHandler[InterfaceType.values().length];
 
     public void openInterface(InterfaceType type, int interfaceId, InterfaceHandler handler) {
-        closeChatbox(type == InterfaceType.CHATBOX); //dupe prevention
+        if (type != InterfaceType.PRIMARY_OVERLAY && type != InterfaceType.SECONDARY_OVERLAY)
+            closeChatbox(type == InterfaceType.CHATBOX); //dupe prevention
         InterfaceHandler activeHandler = activeInterfaceHandlers[type.ordinal()];
         if(activeHandler != null && activeHandler.closedAction != null)
             activeHandler.closedAction.accept(this, interfaceId);
