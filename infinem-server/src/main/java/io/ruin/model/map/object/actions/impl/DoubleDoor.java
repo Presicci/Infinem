@@ -5,12 +5,19 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.map.object.actions.ObjectAction;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 6/16/2023
  */
 public class DoubleDoor {
+
+    static {
+        // Piscatoris fishing colony entrance
+        ObjectAction.register(12725, "open", ((player, obj) -> passThroughLongitudinal(player, obj, 12723, 12725, new Position(2343, 3662), new Position(2344, 3662))));
+        ObjectAction.register(12723, "open", ((player, obj) -> passThroughLongitudinal(player, obj, 12723, 12725, new Position(2343, 3662), new Position(2344, 3662))));
+    }
 
     /**
      * Passes the player through a set of double doors going east to west/west to east.
