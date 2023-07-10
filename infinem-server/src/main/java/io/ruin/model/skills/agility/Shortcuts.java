@@ -66,8 +66,8 @@ public class Shortcuts {
         // Scale Goblin Village wall
         // Monkey bars under Edgeville
         // Yanille Agility Shortcut
-        ObjectAction.register(16519, "climb-under", (p, obj) -> Hole.shortcut(p, obj, 16));
-        ObjectAction.register(16520, "climb-into", (p, obj) -> Hole.shortcut(p, obj, 16));
+        ObjectAction.register(16519, "climb-under", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 16, Direction.NORTH, 5));
+        ObjectAction.register(16520, "climb-into", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 16, Direction.SOUTH, 5));
         // Watchtower wall climb
         // Coal Truck log balance
 
