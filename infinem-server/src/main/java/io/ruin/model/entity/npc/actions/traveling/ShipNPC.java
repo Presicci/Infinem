@@ -42,7 +42,7 @@ public class ShipNPC {
      */
     private static void setSail(Player player, String destinationName, Position destination) {
         player.dialogue(new MessageDialogue("You set sail for " + destinationName + ".").hideContinue());
-        Traveling.fadeTravel(player, destination, player::closeDialogue);
+        Traveling.fadeTravel(player, destination, 4, player::closeDialogue);
     }
 
     static {
