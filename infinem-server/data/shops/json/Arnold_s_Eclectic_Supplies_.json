@@ -1,6 +1,7 @@
 {
   "name": "Arnold's Eclectic Supplies",
   "currency": "COINS",
+  "generalStore": true,
   "npcs": [
     4293
   ],
