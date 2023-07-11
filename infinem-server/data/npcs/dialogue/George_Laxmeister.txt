@@ -1,0 +1,20 @@
+George Laxmeister: Can I help you?
+<What can you tell me about the people here?
+Player: What can you tell me about the people here?
+George Laxmeister: Let's see... We currently have Herman & Franklin Caranos, Arnold Lydspor, Devin Mendelberg and Ramara du Croissant. And me, of course.
+George Laxmeister: Herman and Franklin are brothers, as you'll know. Herman's always been a fishing nut. Franklin's not all that bothered about fishing, but he does like tinkering with machinery. They're originally from East Ardougne.
+George Laxmeister: Arnold's a bit more of a mystery. We think he might be from one of the barbarian tribes, but he never talks about that. He's always up for a chat, if you can understand his accent.
+George Laxmeister: Devin Mendelberg comes from some town in Morytania - ghastly place! I'm not surprised he moved about as far west as he could go! He helps Franklin with the machinery, among other things.
+George Laxmeister: Ramara's another Ardougnian. Her father's a baker there, but she didn't want to spend her whole life baking and doing his accounts. Also, you probably know what Ardougne's crime rate is like - it can't be easy running
+George Laxmeister: a market stall in that city! I went there once, and some wannabe adventurer started following me around trying to pick my pockets! I kept hitting him, but he kept coming back again and again!
+Player: You haven't told me about yourself yet.
+George Laxmeister: Oh, I used to work with my sister, Emily, in the Rising Sun in Falador, but I wanted an outdoor job. The pay's better out here too, and the work's not too bad.
+><What is there for me to do here?
+Player: What is there for me to do here?
+George Laxmeister: You can fish! But I'd be very glad if you could go and do something about the skeletal magi in the dormitories. They've kept appearing there ever since the trolls left.
+George Laxmeister: Also, if you're into glassbowing, you'll probably want a bit of seaweed. It catches in our nets all the time, so you'll usually find some in the machinery down by the shore.
+Player: Thanks.
+><No thanks, I'm fine.
+Player: No thanks, I'm fine.
+George Laxmeister: Ok, but come and talk to me anytime.
+>
