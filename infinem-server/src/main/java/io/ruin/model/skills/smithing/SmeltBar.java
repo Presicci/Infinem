@@ -100,19 +100,18 @@ public class SmeltBar {
         });
     }
 
+    private static String[] FURNACE_NAMES = { "furnace", "small furnace", "lava forge" };
+
     static {
-        ObjectAction.register("furnace", "smelt", (player, obj) -> open(player));
-        ObjectAction.register("small furnace", "smelt", (player, obj) -> open(player));
-        ObjectAction.register("lava forge", "smelt", (player, obj) -> open(player));
-        for (SmithBar smithBar : SmithBar.values()) {
-            for (Item item : smithBar.smeltItems) {
-                ItemObjectAction.register(item.getId(), "furnace", (player, item1, obj) -> smelt(player, smithBar, 1));
-                ItemObjectAction.register(item.getId(), "small furnace", (player, item1, obj) -> smelt(player, smithBar, 1));
-                ItemObjectAction.register(item.getId(), "lava forge", (player, item1, obj) -> smelt(player, smithBar, 1));
+        for (String name : FURNACE_NAMES) {
+            ObjectAction.register(name, "smelt", (player, obj) -> open(player));
+            ItemObjectAction.register(ItemID.AMMO_MOULD, name, SmeltBar::makeCannonballs);
+            for (SmithBar smithBar : SmithBar.values()) {
+                for (Item item : smithBar.smeltItems) {
+                    ItemObjectAction.register(item.getId(), name, (player, item1, obj) -> smelt(player, smithBar, 1));
+                }
             }
         }
-        ItemObjectAction.register(ItemID.AMMO_MOULD, "furnace", SmeltBar::makeCannonballs);
-        ItemObjectAction.register(ItemID.STEEL_BAR, "furnace", SmeltBar::makeCannonballs);
     }
 
     private static void makeCannonballs(Player player, Item item, GameObject object) {
