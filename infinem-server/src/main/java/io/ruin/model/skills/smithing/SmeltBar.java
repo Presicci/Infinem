@@ -102,10 +102,12 @@ public class SmeltBar {
 
     static {
         ObjectAction.register("furnace", "smelt", (player, obj) -> open(player));
+        ObjectAction.register("small furnace", "smelt", (player, obj) -> open(player));
         ObjectAction.register("lava forge", "smelt", (player, obj) -> open(player));
         for (SmithBar smithBar : SmithBar.values()) {
             for (Item item : smithBar.smeltItems) {
                 ItemObjectAction.register(item.getId(), "furnace", (player, item1, obj) -> smelt(player, smithBar, 1));
+                ItemObjectAction.register(item.getId(), "small furnace", (player, item1, obj) -> smelt(player, smithBar, 1));
                 ItemObjectAction.register(item.getId(), "lava forge", (player, item1, obj) -> smelt(player, smithBar, 1));
                 ItemObjectAction.register(item.getId(), "sulphur vent", (player, item1, obj) -> smelt(player, smithBar, 1));
             }
