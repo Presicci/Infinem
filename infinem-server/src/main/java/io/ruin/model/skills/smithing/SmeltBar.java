@@ -51,6 +51,10 @@ public class SmeltBar {
                 return;
             }
         }
+        if (player.getInventory().contains(Items.AMMO_MOULD) && player.getInventory().contains(Items.STEEL_BAR)) {
+            makeCannonballs(player);
+            return;
+        }
         List<SkillItem> items = new ArrayList<>();
         out: for (SmithBar bar : SmithBar.values()) {
             for (Item item : bar.smeltItems) {
@@ -132,8 +136,8 @@ public class SmeltBar {
     static {
         for (String name : FURNACE_NAMES) {
             ObjectAction.register(name, "smelt", (player, obj) -> open(player));
-            ItemObjectAction.register(ItemID.AMMO_MOULD, name, SmeltBar::makeCannonballs);
-            ItemObjectAction.register(ItemID.STEEL_BAR, name, SmeltBar::makeCannonballs);
+            ItemObjectAction.register(ItemID.AMMO_MOULD, name, (player, item, object) -> makeCannonballs(player));
+            ItemObjectAction.register(ItemID.STEEL_BAR, name, (player, item, object) -> makeCannonballs(player));
             for (SmithBar smithBar : SmithBar.values()) {
                 for (Item item : smithBar.smeltItems) {
                     ItemObjectAction.register(item.getId(), name, (player, item1, obj) -> smelt(player, smithBar, 1));
@@ -142,7 +146,7 @@ public class SmeltBar {
         }
     }
 
-    private static void makeCannonballs(Player player, Item item, GameObject object) {
+    private static void makeCannonballs(Player player) {
         SkillDialogue.make(player, new SkillItem(ItemID.CANNONBALL).addAction((p, amount, event) -> {
             if (player.getStats().get(StatType.Smithing).currentLevel < 35) {
                 player.dialogue(new MessageDialogue("You need a Smithing level of at least 35 to smith cannonballs."));
