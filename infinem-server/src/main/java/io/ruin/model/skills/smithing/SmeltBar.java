@@ -39,7 +39,24 @@ public class SmeltBar {
                     ItemObjectAction.register(item.getId(), name, (player, item1, obj) -> smelt(player, smithBar, 1));
                 }
             }
+            for (int id : MOULDS) {
+                ItemObjectAction.register(id, name, (player, item, object) -> openFromMould(player));
+            }
+            for (int id : SILVER_ONLY_MOULDS) {
+                ItemObjectAction.register(id, name, (player, item, object) -> SilverCasting.open(player));
+            }
         }
+    }
+
+    private static void openFromMould(Player player) {
+        if (player.getInventory().contains(Items.SILVER_BAR)) {
+            for (int id : SILVER_GEMS) {
+                if (player.getInventory().contains(id)) {
+                    SilverCasting.open(player);
+                }
+            }
+        }
+        player.openInterface(InterfaceType.MAIN, Interface.MOULD);
     }
 
     private static void open(Player player) {
