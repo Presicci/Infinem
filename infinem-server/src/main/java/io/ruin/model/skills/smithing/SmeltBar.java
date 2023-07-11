@@ -18,6 +18,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.crafting.SilverCasting;
 import io.ruin.model.stat.StatType;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SmeltBar {
 
     private static final int[] MOULDS = { Items.AMULET_MOULD, Items.NECKLACE_MOULD, Items.BRACELET_MOULD, Items.RING_MOULD };
@@ -48,18 +51,21 @@ public class SmeltBar {
                 return;
             }
         }
-
-        SkillDialogue.make(player,
-                (p, item) -> smelt(player, item.getDef().smithBar, item.getAmount()),
-                new SkillItem(2349),
-                //new SkillItem(9467),
-                new SkillItem(2351),
-                new SkillItem(2353),
-                new SkillItem(2355),
-                new SkillItem(2357),
-                new SkillItem(2359),
-                new SkillItem(2361),
-                new SkillItem(2363));
+        List<SkillItem> items = new ArrayList<>();
+        out: for (SmithBar bar : SmithBar.values()) {
+            for (Item item : bar.smeltItems) {
+                if (!player.getInventory().contains(item))
+                    continue out;
+            }
+            items.add(new SkillItem(bar.itemId));
+        }
+        if (items.size() > 0) {
+            SkillDialogue.make(player,
+                    (p, item) -> smelt(player, item.getDef().smithBar, item.getAmount()),
+                    items.toArray(new SkillItem[0]));
+        } else {
+            player.dialogue(new MessageDialogue("You don't have any ores you can smelt."));
+        }
     }
 
     public static void smelt(Player player, SmithBar bar, int smeltAmount) {
