@@ -5,6 +5,7 @@ import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
@@ -117,6 +118,10 @@ public class SmeltBar {
 
     private static void makeCannonballs(Player player, Item item, GameObject object) {
         SkillDialogue.make(player, new SkillItem(ItemID.CANNONBALL).addAction((p, amount, event) -> {
+            if (player.getStats().get(StatType.Smithing).currentLevel < 35) {
+                player.dialogue(new MessageDialogue("You need a Smithing level of at least 35 to smith cannonballs."));
+                return;
+            }
             if (player.getInventory().hasId(ItemID.STEEL_BAR)) {
                 player.sendMessage("You need a steel bar to make cannonballs.");
                 return;
