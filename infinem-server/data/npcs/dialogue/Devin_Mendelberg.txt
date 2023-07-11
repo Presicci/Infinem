@@ -1,0 +1,21 @@
+Devin Mendelberg: Hello! What can I do for you?
+<How are things going for the Colony?
+Player: How are things going for the Colony now the trolls have all gone away?
+Devin Mendelberg: Well, it's been fairly quiet around here, but there's always repair work to keep us busy.
+Player: Catching plenty of fish?
+Devin Mendelberg: Oh yes, lots of them. Their population's been swelling ever since you wiped out the trolls in the area. They've hardly got any natural predators now.
+Player: Oh... I suppose that's good...
+><What are you doing?
+Player: I was just wondering what you're doing.
+Devin Mendelberg: Franklin's got me fixing this wall. You did a pretty good patch-job, but it could do with some work.
+Player: I'm not surprised - iron sheets won't last any time at all with all that salt water around.
+Devin Mendelberg: Yes, that's right. I'll probably get Arnold to order some fancy protective paint from the dwarves.
+Player: Good luck with that.
+><You know all your doors get stuck open?
+Player: You know all your doors get stuck open?
+Devin Mendelberg: Yes, the salt does terrible things to the hinges. I've been meaning to deal with them, but I never seem to get around to it.
+Player: Fair enough.
+><Nothing, I'm fine.
+Player: Nothing, I'm fine.
+Devin Mendelberg: Enjoy your fishing.
+>
