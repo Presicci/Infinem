@@ -109,7 +109,6 @@ public class SmeltBar {
                 ItemObjectAction.register(item.getId(), "furnace", (player, item1, obj) -> smelt(player, smithBar, 1));
                 ItemObjectAction.register(item.getId(), "small furnace", (player, item1, obj) -> smelt(player, smithBar, 1));
                 ItemObjectAction.register(item.getId(), "lava forge", (player, item1, obj) -> smelt(player, smithBar, 1));
-                ItemObjectAction.register(item.getId(), "sulphur vent", (player, item1, obj) -> smelt(player, smithBar, 1));
             }
         }
         ItemObjectAction.register(ItemID.AMMO_MOULD, "furnace", SmeltBar::makeCannonballs);
