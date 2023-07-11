@@ -81788,7 +81788,8 @@
     "slash_defence_bonus": 31,
     "crush_defence_bonus": 24,
     "magic_defence_bonus": -6,
-    "range_defence_bonus": 31
+    "range_defence_bonus": 31,
+    "hide_arms": true
   },
   { #Varrock armour 2
     "id": 13105,
@@ -81803,7 +81804,8 @@
     "slash_defence_bonus": 40,
     "crush_defence_bonus": 30,
     "magic_defence_bonus": -6,
-    "range_defence_bonus": 40
+    "range_defence_bonus": 40,
+    "hide_arms": true
   },
   { #Varrock armour 3
     "id": 13106,
@@ -81818,7 +81820,8 @@
     "slash_defence_bonus": 44,
     "crush_defence_bonus": 38,
     "magic_defence_bonus": -6,
-    "range_defence_bonus": 44
+    "range_defence_bonus": 44,
+    "hide_arms": true
   },
   { #Varrock armour 4
     "id": 13107,
