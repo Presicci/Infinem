@@ -90,15 +90,6 @@
     "walkRange": 0
   },
   {
-    "name": "Cat",
-    "id": 1620,
-    "x": 2335,
-    "y": 3806,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
     "name": "Honour guard",
     "id": 1890,
     "x": 2316,
