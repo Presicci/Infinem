@@ -72,7 +72,8 @@ public class SmeltBar {
                         return;
                     }
                 }
-                player.animate(899);
+                player.animate(3243);
+                player.privateSound(2725);
                 for (Item item : bar.smeltItems) {
                     int id = item.getId();
                     int amount = item.getAmount();
