@@ -38,7 +38,8 @@ public abstract class WizardCombat extends NPCCombat {
         } else {
             if (!withinDistance(1))
                 return false;
-            super.attack0();
+            basicAttack();
+            return true;
         }
         return true;
     }
@@ -46,6 +47,8 @@ public abstract class WizardCombat extends NPCCombat {
     protected boolean playCastEffects() {
         return true;
     }
+
+    protected void onCast(boolean standard) {}
 
     private void cast(NPCCombatSpells spell) {
         if (playCastEffects()) {
@@ -59,6 +62,7 @@ public abstract class WizardCombat extends NPCCombat {
         Hit hit = new Hit(npc, AttackStyle.MAGIC)
                 .randDamage(spell.getOnHitAction() != null ? 0 : info.max_damage)
                 .clientDelay(delay);
+        onCast(spell == standardCast);
         hit.postDamage(t -> {
             if (spell.getOnHitAction() != null) {
                 if (!hit.isBlocked()) {
