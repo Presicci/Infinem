@@ -108,7 +108,6 @@ public enum SilverCasting {
     }
 
     static {
-        ItemObjectAction.register(SILVER_BAR, "furnace", (player, item, object) -> open(player));
         InterfaceHandler.register(Interface.SILVER_CASTING, h -> {
             for (SilverCasting item : values()) {
                 h.actions[item.child] = (DefaultAction) (p, option, slot, itemId) -> craft(p, item);

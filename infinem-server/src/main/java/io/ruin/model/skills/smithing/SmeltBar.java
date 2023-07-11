@@ -23,9 +23,24 @@ import java.util.List;
 
 public class SmeltBar {
 
+    private static final String[] FURNACE_NAMES = { "furnace", "small furnace", "lava forge", "clay forge" };
     private static final int[] MOULDS = { Items.AMULET_MOULD, Items.NECKLACE_MOULD, Items.BRACELET_MOULD, Items.RING_MOULD };
     private static final int[] SILVER_ONLY_MOULDS = { Items.SICKLE_MOULD, Items.TIARA_MOULD, Items.BOLT_MOULD, Items.UNHOLY_MOULD, Items.HOLY_MOULD };
     private static final int[] SILVER_GEMS = { Items.OPAL, Items.JADE, Items.RED_TOPAZ };
+
+    static {
+        for (String name : FURNACE_NAMES) {
+            ObjectAction.register(name, "smelt", (player, obj) -> open(player));
+            ItemObjectAction.register(Items.SILVER_BAR, name, (player, item, object) -> SilverCasting.open(player));
+            ItemObjectAction.register(ItemID.AMMO_MOULD, name, (player, item, object) -> makeCannonballs(player));
+            ItemObjectAction.register(ItemID.STEEL_BAR, name, (player, item, object) -> makeCannonballs(player));
+            for (SmithBar smithBar : SmithBar.values()) {
+                for (Item item : smithBar.smeltItems) {
+                    ItemObjectAction.register(item.getId(), name, (player, item1, obj) -> smelt(player, smithBar, 1));
+                }
+            }
+        }
+    }
 
     private static void open(Player player) {
         // Open mould interface if player has a mould and a gold bar or silver casting interface if player has silver bar, gem, and mould
@@ -130,21 +145,6 @@ public class SmeltBar {
                 }
             }
         });
-    }
-
-    private static final String[] FURNACE_NAMES = { "furnace", "small furnace", "lava forge", "clay forge" };
-
-    static {
-        for (String name : FURNACE_NAMES) {
-            ObjectAction.register(name, "smelt", (player, obj) -> open(player));
-            ItemObjectAction.register(ItemID.AMMO_MOULD, name, (player, item, object) -> makeCannonballs(player));
-            ItemObjectAction.register(ItemID.STEEL_BAR, name, (player, item, object) -> makeCannonballs(player));
-            for (SmithBar smithBar : SmithBar.values()) {
-                for (Item item : smithBar.smeltItems) {
-                    ItemObjectAction.register(item.getId(), name, (player, item1, obj) -> smelt(player, smithBar, 1));
-                }
-            }
-        }
     }
 
     private static void makeCannonballs(Player player) {
