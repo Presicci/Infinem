@@ -15,6 +15,7 @@ public enum Tree {
     JUNIPER(13355, "juniper logs", 42, 150, 35.0, 30, false, 360000, PlayerCounter.CHOPPED_JUNIPER),
     MAPLE(1517, "maple logs", 45, 180, 100.0, 60, false, 221918, PlayerCounter.CHOPPED_MAPLE),
     MAHOGANY(6332, "mahogany logs", 50, 200, 125.0, 80, false, 220623, PlayerCounter.CHOPPED_MAHOGANY),
+    ARCTIC_PINE(10810, "arctic pine logs", 54, 120, 40.0, 80, false, 317647, PlayerCounter.CHOPPED_REGULAR),
     YEW(1515, "yew logs", 60, 225, 175.0, 100, false, 145013, PlayerCounter.CHOPPED_YEW),
     MAGIC(1513, "magic logs", 75, 340, 250.0, 100, false, 72321, PlayerCounter.CHOPPED_MAGIC),
     REDWOOD(19669, "redwood logs", 90, 460, 380.0, 200, false, 72321, PlayerCounter.CHOPPED_REDWOOD),
