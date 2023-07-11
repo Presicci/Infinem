@@ -20,7 +20,11 @@ public abstract class WizardCombat extends NPCCombat {
 
     @Override
     public void follow() {
-        follow(8);
+        if (standardCast != null)
+            follow(8);
+        else {
+            follow(1);
+        }
     }
 
     @Override
@@ -29,8 +33,12 @@ public abstract class WizardCombat extends NPCCombat {
             return false;
         if (altCast != null && Random.get(altCastChance) == 1) {
             cast(altCast);
-        } else {
+        } else if (standardCast != null){
             cast(standardCast);
+        } else {
+            if (!withinDistance(1))
+                return false;
+            super.attack0();
         }
         return true;
     }
