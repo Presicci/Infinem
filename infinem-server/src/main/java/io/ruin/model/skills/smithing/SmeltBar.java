@@ -106,6 +106,7 @@ public class SmeltBar {
         for (String name : FURNACE_NAMES) {
             ObjectAction.register(name, "smelt", (player, obj) -> open(player));
             ItemObjectAction.register(ItemID.AMMO_MOULD, name, SmeltBar::makeCannonballs);
+            ItemObjectAction.register(ItemID.STEEL_BAR, name, SmeltBar::makeCannonballs);
             for (SmithBar smithBar : SmithBar.values()) {
                 for (Item item : smithBar.smeltItems) {
                     ItemObjectAction.register(item.getId(), name, (player, item1, obj) -> smelt(player, smithBar, 1));
