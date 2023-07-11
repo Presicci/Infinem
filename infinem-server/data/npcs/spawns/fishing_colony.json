@@ -151,5 +151,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+  {
+    "name": "George Laxmeister",
+    "id": 4295,
+    "x": 2319,
+    "y": 3670,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
