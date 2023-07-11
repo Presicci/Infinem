@@ -9,23 +9,42 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.item.actions.impl.skillcapes.SmithingSkillCape;
 import io.ruin.model.item.actions.impl.storage.CoalBag;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.crafting.SilverCasting;
 import io.ruin.model.stat.StatType;
 
 public class SmeltBar {
 
+    private static final int[] MOULDS = { Items.AMULET_MOULD, Items.NECKLACE_MOULD, Items.BRACELET_MOULD, Items.RING_MOULD };
+    private static final int[] SILVER_ONLY_MOULDS = { Items.SICKLE_MOULD, Items.TIARA_MOULD, Items.BOLT_MOULD, Items.UNHOLY_MOULD, Items.HOLY_MOULD };
+    private static final int[] SILVER_GEMS = { Items.OPAL, Items.JADE, Items.RED_TOPAZ };
+
     private static void open(Player player) {
         /*
-         * If a player has a mould in inventory and gold ore, Open mould interface rather than bars
+         * If a player has a mould in inventory and gold or iron bar, open mould interface rather than bars
          */
-        Integer[] moulds = {1592, 1595, 1597, 11065};
-        for (int id : moulds) {
-            if (player.getInventory().contains(new Item(id)) && player.getInventory().contains(new Item(2357))) {
+        for (int id : MOULDS) {
+            if (player.getInventory().contains(id) && player.getInventory().contains(Items.GOLD_BAR)) {
                 player.openInterface(InterfaceType.MAIN, Interface.MOULD);
+                return;
+            }
+            if (player.getInventory().contains(id) && player.getInventory().contains(Items.SILVER_BAR)) {
+                for (int gemId : SILVER_GEMS) {
+                    if (player.getInventory().contains(gemId)) {
+                        SilverCasting.open(player);
+                        return;
+                    }
+                }
+            }
+        }
+        for (int id : SILVER_ONLY_MOULDS) {
+            if (player.getInventory().contains(id) && player.getInventory().contains(Items.SILVER_BAR)) {
+                SilverCasting.open(player);
                 return;
             }
         }
