@@ -44,6 +44,10 @@ public abstract class WizardCombat extends NPCCombat {
         return true;
     }
 
+    protected int getCastAnimation() {
+        return -1;
+    }
+
     protected boolean playCastEffects() {
         return true;
     }
@@ -51,12 +55,13 @@ public abstract class WizardCombat extends NPCCombat {
     protected void onCast(boolean standard) {}
 
     private void cast(NPCCombatSpells spell) {
-        if (playCastEffects()) {
+        int castAnim = getCastAnimation();
+        if (castAnim != -1)
+            npc.animate(castAnim);
+        else
             npc.animate(spell.getAnimId());
+        if (playCastEffects())
             npc.graphics(spell.getCastGfxId(), spell.getCastGfxHeight(), 0);
-        } else {
-            npc.animate(npc.getCombat().getInfo().attack_animation);
-        }
         npc.publicSound(spell.getCastSoundId(), spell.getCastSoundType(), 0);
         int delay = spell.getProjectile().send(npc, target);
         Hit hit = new Hit(npc, AttackStyle.MAGIC)
