@@ -28,9 +28,7 @@ public class SmeltBar {
     private static final int[] SILVER_GEMS = { Items.OPAL, Items.JADE, Items.RED_TOPAZ };
 
     private static void open(Player player) {
-        /*
-         * If a player has a mould in inventory and gold or iron bar, open mould interface rather than bars
-         */
+        // Open mould interface if player has a mould and a gold bar or silver casting interface if player has silver bar, gem, and mould
         for (int id : MOULDS) {
             if (player.getInventory().contains(id) && player.getInventory().contains(Items.GOLD_BAR)) {
                 player.openInterface(InterfaceType.MAIN, Interface.MOULD);
@@ -45,16 +43,19 @@ public class SmeltBar {
                 }
             }
         }
+        // Open silver casting interface if player has mould and silver bar
         for (int id : SILVER_ONLY_MOULDS) {
             if (player.getInventory().contains(id) && player.getInventory().contains(Items.SILVER_BAR)) {
                 SilverCasting.open(player);
                 return;
             }
         }
+        // Open cannonball skill menu if player has ammo mould and steel bar
         if (player.getInventory().contains(Items.AMMO_MOULD) && player.getInventory().contains(Items.STEEL_BAR)) {
             makeCannonballs(player);
             return;
         }
+        // Populate skill items list if player has ore to make bar
         List<SkillItem> items = new ArrayList<>();
         out: for (SmithBar bar : SmithBar.values()) {
             for (Item item : bar.smeltItems) {
