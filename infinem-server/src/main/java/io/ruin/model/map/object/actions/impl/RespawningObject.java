@@ -16,6 +16,21 @@ import java.util.function.Predicate;
 @AllArgsConstructor
 public enum RespawningObject {
 
+    SPADE(9662, 10626, 50, 1, (player) -> {
+        if (!player.getInventory().hasFreeSlots(1)) {
+            player.sendMessage("You do not have enough inventory space to take this.");
+            return false;
+        }
+        player.startEvent(e -> {
+            player.lock();
+            player.animate(832);
+            e.delay(1);
+            player.sendFilteredMessage("You take the spade from the dirt.");
+            player.getInventory().add(Items.SPADE);
+            player.unlock();
+        });
+        return true;
+    }),
     SEAWEED_NET(13609, 13608, 4, 1, (player -> {
         if (!player.getInventory().hasFreeSlots(1)) {
             player.sendMessage("You do not have enough inventory space to take this.");
