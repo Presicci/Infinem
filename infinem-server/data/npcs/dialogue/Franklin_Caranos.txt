@@ -1,0 +1,4 @@
+Franklin Caranos: Hello again, [player name].
+Player: Hello. How's the repair work going?
+Franklin Caranos: I'm working on it.
+Player: Good luck with that.
