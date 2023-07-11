@@ -58,7 +58,7 @@ public class DeadfallTrap implements TrapType {
 
     @Override
     public int[] getSuccessObjects() {
-        return new int[] { 20651 };
+        return new int[] { 20648, 20649, 20650, 20651 };
     }
 
     @Override
