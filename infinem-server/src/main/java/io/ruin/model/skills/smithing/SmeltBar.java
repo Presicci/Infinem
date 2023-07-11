@@ -138,6 +138,7 @@ public class SmeltBar {
                         return;
                     }
                     player.animate(3243);
+                    player.privateSound(2725);
                     player.sendMessage("You heat the steel bar into a liquid state.");
                     e.delay(1);
                     player.sendMessage("You pour the molten metal into your cannonball mould.");
