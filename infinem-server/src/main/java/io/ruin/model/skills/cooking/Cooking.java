@@ -22,7 +22,22 @@ import java.util.List;
 
 public class Cooking {
 
+    private static final String[] FIRE_NAMES = { "fire", "cooking pot" };
+    private static final String[] RANGE_NAMES = { "range", "cooking range", "stove", "sulphur vent", "gnome cooker" };
     public static final int COOKING_GAUNLETS = 775;
+
+    static {
+        for (Food food : Food.values()) {
+            for (String name : FIRE_NAMES) {
+                ItemObjectAction.register(food.rawID, name, (player, item, obj) -> Cooking.cook(player, food, obj, 897, true));
+                ObjectAction.register(name, "cook", (player, obj) -> findCookable(player, obj, 897, true));
+            }
+            for (String name : RANGE_NAMES) {
+                ItemObjectAction.register(food.rawID, name, (player, item, obj) -> Cooking.cook(player, food, obj, 896, false));
+                ObjectAction.register(name, "cook", (player, obj) -> findCookable(player, obj, 896, false));
+            }
+        }
+    }
 
     public static void cook(Player player, Food food, GameObject obj, int anim, boolean fire) {
         if (!player.getStats().check(StatType.Cooking, food.levelRequirement, "cook " + food.descriptiveName))
@@ -167,22 +182,5 @@ public class Cooking {
         } else {
             player.sendMessage("You do not have anything to cook.");
         }
-    }
-
-    static {
-        for (Food food : Food.values()) {
-            ItemObjectAction.register(food.rawID, "range", (player, item, obj) -> Cooking.cook(player, food, obj, 896, false));
-            ItemObjectAction.register(food.rawID, "cooking range", (player, item, obj) -> Cooking.cook(player, food, obj, 896, false));
-            ItemObjectAction.register(food.rawID, "fire", (player, item, obj) -> Cooking.cook(player, food, obj, 897, true));
-            ItemObjectAction.register(food.rawID, "stove", (player, item, obj) -> Cooking.cook(player, food, obj, 896, false));
-            ItemObjectAction.register(food.rawID, "sulphur vent", (player, item, obj) -> Cooking.cook(player, food, obj, 896, false));
-            ItemObjectAction.register(food.rawID, "cooking pot", (player, item, obj) -> Cooking.cook(player, food, obj, 897, true));
-            ItemObjectAction.register(food.rawID, "gnome cooker", (player, item, obj) -> Cooking.cook(player, food, obj, 896, false));
-            ItemObjectAction.register(food.rawID, 5249, (player, item, obj) -> Cooking.cook(player, food, obj, 897, true));
-        }
-        // Left click registration
-        ObjectAction.register("cooking range", "cook", (player, obj) -> findCookable(player, obj, 896, false));
-        ObjectAction.register("range", "cook", (player, obj) -> findCookable(player, obj, 896, false));
-        ObjectAction.register("gnome cooker", "cook", (player, obj) -> findCookable(player, obj, 896, false));
     }
 }
