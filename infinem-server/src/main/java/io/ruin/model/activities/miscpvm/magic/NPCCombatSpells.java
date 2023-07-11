@@ -42,6 +42,19 @@ public enum NPCCombatSpells {
                     entity.npc.getCombat().getStat(StatType.Attack).drain(0.05);
                 }
             })),
+    VULNERABILITY(new Projectile(168, 36, 31, 34, 56, 10, 16, 64),
+            1165,
+            167,92,
+            3009, 1,
+            169, 124,
+            3008,
+            (entity -> {
+                if (entity.player != null) {
+                    entity.player.getStats().get(StatType.Defence).drain(0.1);
+                } else {
+                    entity.npc.getCombat().getStat(StatType.Defence).drain(0.1);
+                }
+            })),
     WEAKEN(new Projectile(106, 36, 31, 44, 56, 10, 16, 64),
             1164,
             105, 92,
