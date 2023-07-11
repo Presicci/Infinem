@@ -10,7 +10,7 @@
         "weight": 1,
         "items": [
           { "id": -1, "min": 1, "max": 1, "weight": 4999 },   //Nothing
-          { "id": 6808, "min": 1, "max": 1, "weight": 1 }   //Skeleton champion scroll
+          { "id": 6806, "min": 1, "max": 1, "weight": 1 }   //Skeleton champion scroll
         ]
       }
     ]
