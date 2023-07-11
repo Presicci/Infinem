@@ -100,7 +100,7 @@ public class SmeltBar {
         });
     }
 
-    private static String[] FURNACE_NAMES = { "furnace", "small furnace", "lava forge" };
+    private static final String[] FURNACE_NAMES = { "furnace", "small furnace", "lava forge", "clay forge" };
 
     static {
         for (String name : FURNACE_NAMES) {
