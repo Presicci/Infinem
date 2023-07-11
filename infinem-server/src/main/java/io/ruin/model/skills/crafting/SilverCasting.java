@@ -101,13 +101,14 @@ public enum SilverCasting {
         }
     }
 
-    static {
-        ItemObjectAction.register(SILVER_BAR, "furnace", (player, item, object) -> {
-            player.openInterface(InterfaceType.MAIN, Interface.SILVER_CASTING);
-            player.getPacketSender().sendAccessMask(Interface.SILVER_CASTING, 4, 0, 11, 62);
-            player.getPacketSender().sendAccessMask(Interface.SILVER_CASTING, 6, 0, 7, 62);
-        });
+    public static void open(Player player) {
+        player.openInterface(InterfaceType.MAIN, Interface.SILVER_CASTING);
+        player.getPacketSender().sendAccessMask(Interface.SILVER_CASTING, 4, 0, 11, 62);
+        player.getPacketSender().sendAccessMask(Interface.SILVER_CASTING, 6, 0, 7, 62);
+    }
 
+    static {
+        ItemObjectAction.register(SILVER_BAR, "furnace", (player, item, object) -> open(player));
         InterfaceHandler.register(Interface.SILVER_CASTING, h -> {
             for (SilverCasting item : values()) {
                 h.actions[item.child] = (DefaultAction) (p, option, slot, itemId) -> craft(p, item);
