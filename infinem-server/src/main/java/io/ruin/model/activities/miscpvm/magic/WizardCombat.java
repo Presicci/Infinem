@@ -35,9 +35,17 @@ public abstract class WizardCombat extends NPCCombat {
         return true;
     }
 
+    protected boolean playCastEffects() {
+        return true;
+    }
+
     private void cast(NPCCombatSpells spell) {
-        npc.animate(spell.getAnimId());
-        npc.graphics(spell.getCastGfxId(), spell.getCastGfxHeight(), 0);
+        if (playCastEffects()) {
+            npc.animate(spell.getAnimId());
+            npc.graphics(spell.getCastGfxId(), spell.getCastGfxHeight(), 0);
+        } else {
+            npc.animate(npc.getCombat().getInfo().attack_animation);
+        }
         npc.publicSound(spell.getCastSoundId(), spell.getCastSoundType(), 0);
         int delay = spell.getProjectile().send(npc, target);
         Hit hit = new Hit(npc, AttackStyle.MAGIC)
