@@ -67,6 +67,26 @@ public enum NPCCombatSpells {
                 } else {
                     entity.npc.getCombat().getStat(StatType.Strength).drain(0.05);
                 }
+            })),
+
+
+    /* NPC Specific */
+    SKELETON_MAGE_WEAKEN(new Projectile(106, 36, 31, 44, 56, 10, 16, 64),
+            1164,
+            105, 92,
+            3011, 1,
+            107, 200,
+            3010,
+            (entity -> {
+                if (entity.player != null) {
+                    entity.player.getStats().get(StatType.Attack).drain(4);
+                    entity.player.getStats().get(StatType.Strength).drain(4);
+                    entity.player.getStats().get(StatType.Defence).drain(4);
+                } else {
+                    entity.npc.getCombat().getStat(StatType.Attack).drain(4);
+                    entity.npc.getCombat().getStat(StatType.Strength).drain(4);
+                    entity.npc.getCombat().getStat(StatType.Defence).drain(4);
+                }
             }));
 
     private final Projectile projectile;
