@@ -1,0 +1,21 @@
+8442
+Boulder: Hey, human.
+<Who are you?
+Player: Who are you?
+Boulder: We met at entry gate, remember? Boulder sent you away, 'cos we not trust humans here in Weiss, an' also you sound crazy. But you our friend now, an' you always welcome.
+Boulder: Boulder used to guard entry gate, but now Snowflake trusted Boulder with important farming job. Much more fun.
+Boulder: Boulder gotta grow goutweed for tribe, an' also make sure your herbs stay healthy. Snowflake's husband troll very strict on it.
+FIRSTOPTIONS
+><Tell me about this place.
+Player: Tell me about this place.
+Boulder: This here is Weiss. Trolls built it years ago, after we got kicked out from caves further south. Now Weiss is our home.
+Boulder: It great here, now Snowflake an' her husband troll taught us goutweed farming. Food so much better now.
+FIRSTOPTIONS
+><Do you like it here?
+Player: Do you like it here?
+Boulder: Eh, it kinda rough, but it getting better. Snowflake, she taught us goutweed farming. Goat, wolf, human all taste so much nicer with goutweed in.
+Boulder: So yeah, Weiss is good place to live, now Snowflake in charge. All trolls like Snowflake. Her husband troll kinda weird, but that not our problem.
+FIRSTOPTIONS
+><I'll be off.
+Player: I'll be off.
+>
