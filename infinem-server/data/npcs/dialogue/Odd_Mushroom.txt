@@ -1,0 +1,25 @@
+8434
+Odd Mushroom: Hey, human.
+<Who are you?
+Odd Mushroom: I am an inventor and an advisor.
+Player: Woah, a troll inventor? Haven't heard of those before.
+Odd Mushroom: Yes, well I'm right here. Anyway, I noticed you aren't an inventor.
+Odd Mushroom: What happened? No invention skill?
+Player: That hasn't been invented yet...
+Odd Mushroom: Right...
+FIRSTOPTIONS
+><Can you tell me about your research?
+Player: Can you tell me about your research?
+Odd Mushroom: I spend most of my time in the mines experimenting with the salt.
+Odd Mushroom: Would you like a copy of my notes?
+<Yes, please.
+Player: Yes, please.
+ITEM:22591
+><I'd rather not'.
+Player: I'd rather not.
+Odd Mushroom: Very well.
+FIRSTOPTIONS
+>
+><I'll be off.
+Player: I'll be off.
+>
