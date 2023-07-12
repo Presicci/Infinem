@@ -27,11 +27,11 @@ public class Spade {
         player.startEvent(e -> {
             player.lock();
             e.delay(2);
+            player.unlock();
             if(tile == null || tile.digAction == null)
                 player.sendMessage("Nothing interesting happens.");
             else
                 tile.digAction.accept(player);
-            player.unlock();
         });
     }
 
