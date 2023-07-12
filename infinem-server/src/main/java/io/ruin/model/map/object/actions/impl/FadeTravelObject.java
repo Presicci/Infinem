@@ -9,6 +9,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
+    WEISS_BOAT_TO(21176, new Position(2708, 3732), new Position(2850, 3968)),
+    WEISS_BOAT_FROM(21177, new Position(2843, 3967), new Position(2707, 3735)),
     ISLE_OF_SOULS_DUNGEON_ENTRANCE(40736, new Position(2308, 2918), new Position(2167, 9308), 2796),
     ISLE_OF_SOULS_DUNGEON_EXIT(40737, new Position(2168, 9307), new Position(2310, 2919), 2796),
     GIANTS_DEN_ENTRANCE(42248, new Position(1421, 3587), new Position(1432, 9913), 2796),
