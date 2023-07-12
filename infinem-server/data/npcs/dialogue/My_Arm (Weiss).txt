@@ -1,0 +1,12 @@
+8411
+My Arm: Hey, friend.
+<How are you two doing?
+Player: How are you two doing?
+My Arm: Snowflake an' My Arm very happy. Maybe new herbie patch not da only place where new life gonna be growin' soon!
+OTHERNPC:8431:Let's not get ahead of ourselves, dear! But the town is thriving; my people are much happier now they are no longer terrified of Father.
+My Arm: Dem trolls likin' da goutweed too!
+Player: That's nice.
+><I'll be off.
+Player: I'll be off.
+My Arm: Goodbye, friend.
+>
