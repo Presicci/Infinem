@@ -1,0 +1,20 @@
+8456
+Butterfly: Hey, human.
+<Who are you?
+Player: Who are you?
+Butterfly: Not much to say. Came to Weiss with other trolls when we got kicked out of caves further south, but I was just young troll then.
+Butterfly: Mostly been enjoying living round Weiss, 'cos wildlife is interesting here.
+FIRSTOPTIONS
+><Tell me about this place.
+Player: Tell me about this place.
+Butterfly: This here is Weiss. Trolls built it years ago, after we got kicked out from caves further south. Now Weiss is our home.
+Butterfly: It great here, now Snowflake an' her husband troll taught us goutweed farming. Food so much better now.
+FIRSTOPTIONS
+><Do you like it here?
+Player: Do you like it here?
+Butterfly: Eh, it kinda rough, but it getting better. Snowflake, she taught us goutweed farming. Goat, wolf, human all taste so much nicer with goutweed in.
+Butterfly: So yeah, Weiss is good place to live, now Snowflake in charge. All trolls like Snowflake. Her husband troll kinda weird, but that not our problem.
+FIRSTOPTIONS
+><I'll be off.
+Player: I'll be off.
+>
