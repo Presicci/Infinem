@@ -300,6 +300,15 @@ public class Shortcuts {
         ObjectAction.register(3722, 2881, 3595, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_NORTH2::traverse);
         ObjectAction.register(3723, 2881, 3594, 0, "Climb", ClimbingSpots.DEATH_PLATEAU_NORTH2::traverse);
 
+        //Weiss Lv. 68
+        ObjectAction.register(33184, 2852, 3965, 0, "Climb", ClimbingSpots.WEISS_DOCK_1::traverse);
+        ObjectAction.register(33185, 2853, 3964, 0, "Climb", ClimbingSpots.WEISS_DOCK_2::traverse);
+        ObjectAction.register(33185, 2854, 3964, 0, "Climb", ClimbingSpots.WEISS_DOCK_2::traverse);
+        ObjectAction.register(33328, 2854, 3962, 0, 1, ClimbingSpots.WEISS_DOCK_3::traverse);
+        ObjectAction.register(33327, 2853, 3962, 0, 1, ClimbingSpots.WEISS_DOCK_3::traverse);
+        ObjectAction.register(33191, 2859, 3961, 0, "Climb", ClimbingSpots.WEISS_DOCK_4::traverse);
+
+
         /**
          *                                              STEPPING STONES
          * _____________________________________________________________________________________________________________
@@ -424,8 +433,22 @@ public class Shortcuts {
         /**
          * Balancing Ledges
          */
+        // Yanille dungeon
         ObjectAction.register(23548, 2580, 9519, 0, "Walk-across", BalancingLedge.YANILLE_DUNGEON_ENTRANCE_1::traverse);
         ObjectAction.register(23548, 2580, 9513, 0, "Walk-across", BalancingLedge.YANILLE_DUNGEON_ENTRANCE_2::traverse);
+
+        // Weiss
+        ObjectAction.register(33190, 2854, 3961, 0, "Cross", (player, obj) -> {
+            if (player.getAbsX() > obj.getPosition().getX())
+                BalancingLedge.WEISS_DOCK_2.traverse(player, obj);
+            else
+                BalancingLedge.WEISS_DOCK_1.traverse(player, obj);
+        });
+
+        /**
+         * Crawl under
+         */
+        ObjectAction.register(33192, 2857, 3955, 0, "pass", CrawlUnder.WEISS_DOCK_TREE::traverse);
 
         /**
          * Monkeybars

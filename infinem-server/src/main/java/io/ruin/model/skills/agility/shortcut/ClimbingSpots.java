@@ -157,6 +157,15 @@ public enum ClimbingSpots {
     AGILITY_PYRAMID_7(Direction.WEST, 1, 0,
             Position.of(3338, 2826), Position.of(3334, 2826), Position.of(3337, 2826), Position.of(3336, 2826), Position.of(3335, 2826)),
 
+    WEISS_DOCK_1(Direction.SOUTH, 68, 1,
+            Position.of(2852, 3966), Position.of(2852, 3964), Position.of(2852, 3965)),
+    WEISS_DOCK_2(Direction.EAST, 68, 1,
+            Position.of(2852, 3964), Position.of(2855, 3964), Position.of(2853, 3964), Position.of(2854, 3964)),
+    WEISS_DOCK_3(Direction.SOUTH, 68, 1,
+            Position.of(2855, 3964), Position.of(2853, 3961), Position.of(2855, 3963), Position.of(2854, 3962)),
+    WEISS_DOCK_4(Direction.SOUTH, 68, 1,
+            Position.of(2859, 3962), Position.of(2859, 3960), Position.of(2859, 3961)),
+
     ;
 
     private ClimbingSpots(Direction faceDir, int levelReq, int xp, Position startPosition, Position endPosition, Position... steps){

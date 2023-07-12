@@ -17,6 +17,8 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum BalancingLedge {
 
+    WEISS_DOCK_1(68, 1, Position.of(2857, 3961)),
+    WEISS_DOCK_2(68, 1, Position.of(2853, 3961)),
     YANILLE_DUNGEON_ENTRANCE_1(40, 1, Position.of(2580, 9512)),
     YANILLE_DUNGEON_ENTRANCE_2(40, 1, Position.of(2580, 9520)),
     ;
