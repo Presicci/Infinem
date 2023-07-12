@@ -1,0 +1,15 @@
+8431
+Snowflake: Hey, human.
+<How are you two doing?
+Player: How are you two doing?
+OTHERNPC:8411:Snowflake an' My Arm very happy. Maybe new herbie patch not da only place where new life gonna be growin' soon!
+Snowflake: Let's not get ahead of ourselves, dear! But the town is thriving; my people are much happier now they are no longer terrified of Father.
+OTHERNPC:8411:Dem trolls likin' da goutweed too!
+Player: That's nice.
+><Can you note this basalt for me?
+Player: Can you note my basalt for me?
+NOTE_BASALT:
+><I'll be off.
+Player: I'll be off.
+Snowflake: You will always be welcome back.
+>

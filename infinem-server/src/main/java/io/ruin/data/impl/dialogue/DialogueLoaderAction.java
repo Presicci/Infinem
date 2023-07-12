@@ -18,6 +18,16 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    NOTE_BASALT((player -> {
+        if (!player.getInventory().contains(22603)) {
+            player.dialogue(new NPCDialogue(player.getDialogueNPC(), "You aren't carrying any basalt."));
+            return;
+        }
+        int amt = player.getInventory().getAmount(22603);
+        player.getInventory().remove(22603, amt);
+        player.getInventory().add(22604, amt);
+        player.dialogue(new ItemDialogue().one(22603, "Snowflake converts your " + (amt > 1 ? "items" : "item") + " to " + (amt > 1 ? "banknotes" : "a banknote") + "."));
+    })),
     BUY_SKILLCAPE((player -> {
         NPC npc = player.getDialogueNPC();
         if (player.getInventory().getAmount(995) < 99000) {
