@@ -196,12 +196,12 @@
   },
   {
     "name": "Rock Crab",
-    "id": "100",
+    "id": "101",
     "x": "2706",
     "y": "10159",
     "z": "0",
     "direction": "W",
-    "walkRange": "1",
+    "walkRange": "0",
     "world": "ECO"
   },
   {
@@ -276,12 +276,12 @@
   },
   {
     "name": "Rock Crab",
-    "id": "102",
+    "id": "103",
     "x": "2710",
     "y": "10168",
     "z": "0",
     "direction": "W",
-    "walkRange": "1",
+    "walkRange": "0",
     "world": "ECO"
   },
   {
@@ -456,12 +456,12 @@
   },
   {
     "name": "Rock Crab",
-    "id": "102",
+    "id": "103",
     "x": "2739",
     "y": "10153",
     "z": "0",
     "direction": "W",
-    "walkRange": "1",
+    "walkRange": "0",
     "world": "ECO"
   },
   {
@@ -486,12 +486,12 @@
   },
   {
     "name": "Rock Crab",
-    "id": "100",
+    "id": "101",
     "x": "2748",
     "y": "10166",
     "z": "0",
     "direction": "W",
-    "walkRange": "1",
+    "walkRange": "0",
     "world": "ECO"
   }
 ]
