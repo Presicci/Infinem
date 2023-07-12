@@ -1,5 +1,14 @@
 [
   {
+    "name": "Larry",
+    "id": 828,
+    "x": 2707,
+    "y": 3736,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
     "name": "Black unicorn",
     "id": 2849,
     "x": 2708,
