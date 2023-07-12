@@ -10,7 +10,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  */
 public enum MessageObject {
     CRUMBLING_TOWER(1796, new Position(1936, 9444),
-            "Someone has crudely carved a message into the wall:<br><br>'The Soul Stone was here. Where is it now?");
+            "Someone has crudely carved a message into the wall:<br><br>'The Soul Stone was here. Where is it now?"),
+    BRINE_RAT_CAVE_CHEST(14197, new Position(2740, 10164),
+            "An etching on the chest reads 'Titan.' There is nothing here to indicate how the ship got here or what they were searching for.");
 
     private final int objectId, option;
     private final Position position;
