@@ -30,13 +30,21 @@ public abstract class Book {
         final StringTokenizer tok = new StringTokenizer(input, " ");
         final StringBuilder output = new StringBuilder(input.length());
         int lineLen = 0;
+        String color = "";
         while (tok.hasMoreTokens()) {
             String word = tok.nextToken();
-            if (word.startsWith("<col")) {
-                if (lineLen > 0) {
+            if (word.startsWith("<col=")) {
+                color = word;
+                output.append(word);
+                /*if (lineLen > 0) {
                     output.append("\n");
                     lineLen = 0;
                 }
+                output.append(word);*/
+                continue;
+            }
+            if (word.startsWith("</col")) {
+                color = "";
                 output.append(word);
                 continue;
             }
@@ -47,13 +55,13 @@ public abstract class Book {
                 continue;
             }
             while(word.length() > maxCharInLine){
-                output.append(word.substring(0, maxCharInLine-lineLen) + "\n");
+                output.append(word, 0, maxCharInLine - lineLen).append("\n").append(color);
                 word = word.substring(maxCharInLine-lineLen);
                 lineLen = 0;
             }
-            final int wordLength = word.startsWith("<col") ? 0 : word.length();
+            final int wordLength = word.startsWith("<") ? 0 : word.length();
             if (lineLen + wordLength > maxCharInLine) {
-                output.append("\n");
+                output.append("\n").append(color);
                 lineLen = 0;
             }
             if (wordLength > 0) {
