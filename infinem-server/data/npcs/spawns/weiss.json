@@ -1,0 +1,299 @@
+[
+  {
+    "name": "Boulder",
+    "id": 8442,
+    "x": 2845,
+    "y": 3934,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Butterfly",
+    "id": 8456,
+    "x": 2860,
+    "y": 3935,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Driftwood",
+    "id": 8448,
+    "x": 2887,
+    "y": 3924,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Goat Poo",
+    "id": 8452,
+    "x": 2875,
+    "y": 3922,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Icicle",
+    "id": 8446,
+    "x": 2881,
+    "y": 3930,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Snowflake",
+    "id": 8431,
+    "x": 2872,
+    "y": 3935,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "My Arm",
+    "id": 8411,
+    "x": 2869,
+    "y": 3936,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Odd Mushroom",
+    "id": 8434,
+    "x": 2876,
+    "y": 3934,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Odd Stone",
+    "id": 8460,
+    "x": 2867,
+    "y": 3926,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Pebble",
+    "id": 8450,
+    "x": 2857,
+    "y": 3931,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Root",
+    "id": 8444,
+    "x": 2886,
+    "y": 3940,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Squirrel",
+    "id": 8464,
+    "x": 2856,
+    "y": 3939,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Yellow Snow",
+    "id": 8454,
+    "x": 2853,
+    "y": 3934,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Ice wolf",
+    "id": 710,
+    "x": 2849,
+    "y": 3926,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ice wolf",
+    "id": 711,
+    "x": 2848,
+    "y": 3924,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ice wolf",
+    "id": 712,
+    "x": 2849,
+    "y": 3922,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ice wolf",
+    "id": 713,
+    "x": 2851,
+    "y": 3923,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ice wolf",
+    "id": 714,
+    "x": 2852,
+    "y": 3926,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4117,
+    "x": 2871,
+    "y": 3954,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4145,
+    "x": 2879,
+    "y": 3952,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4147,
+    "x": 2845,
+    "y": 3940,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4117,
+    "x": 2845,
+    "y": 3937,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4146,
+    "x": 2837,
+    "y": 3924,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4145,
+    "x": 2840,
+    "y": 3915,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4117,
+    "x": 2846,
+    "y": 3914,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4147,
+    "x": 2854,
+    "y": 3914,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4146,
+    "x": 2862,
+    "y": 3914,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4147,
+    "x": 2869,
+    "y": 3917,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4117,
+    "x": 2885,
+    "y": 3944,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Mountain goat",
+    "id": 4145,
+    "x": 2887,
+    "y": 3945,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Squirrel",
+    "id": 8422,
+    "x": 2845,
+    "y": 3940,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Squirrel",
+    "id": 8422,
+    "x": 2871,
+    "y": 3953,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Squirrel",
+    "id": 8422,
+    "x": 2881,
+    "y": 3918,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  }
+]
