@@ -166,6 +166,8 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int minedSandstone;
     @Expose public int minedGranite;
     @Expose public int minedGemRock;
+
+    @Expose public int minedSalt;
     @Expose public int minedCorrupt;
     @Expose public int minedStardust;
 

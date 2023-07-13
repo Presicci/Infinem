@@ -17,7 +17,11 @@ public enum Rock {
     LOVAKITE(13356, "lovakite", 65, 350, 10.0, 40, 245562, 1),
     AMETHYST(21347, "amethyst", 92, 1000, 246.0, 120, 46350, 1),
     RUNE(451, "rune", 85, 300, 100.0, 30, 42377, 2.0 / 5),
-    GEM_ROCK(new int[]{1625, 1627, 1629, 1623, 1621, 1619, 1617}, "gem", 40, 300, 65.0, 35, 211886, 1.0 / 3);
+    GEM_ROCK(new int[]{1625, 1627, 1629, 1623, 1621, 1619, 1617}, "gem", 40, 300, 65.0, 35, 211886, 1.0 / 3),
+    TE_SALT(22593, "te salt", 72, 250, 5.0, 9, 1000000, 1),
+    EFH_SALT(22595, "efh salt", 72, 250, 5.0, 9, 1000000, 1),
+    URT_SALT(22597, "urt salt", 72, 250, 5.0, 9, 1000000, 1),
+    BASALT(22603, "basalt", 72, 250, 5.0, 9, 1000000, 1);
 
     public final int ore, levelReq, difficulty, respawnTime, petOdds;
     public final String rockName;

@@ -104,7 +104,7 @@ public class Mining {
                     player.animate(miningAnimation);
                     attempts++;
                 } else if (attempts % 2 == 0 && Random.get(100) <= chance(getEffectiveLevel(player), rockData, pickaxe)) {
-                    int amount = 1;
+                    int amount = (isSalt(rockData)) ? getSaltAmount(player) : 1;
                     if (rockData != Rock.GEM_ROCK && Random.rollDie(256)) {  // 1/256 chance to replace ore with a gem)
                         gem = GEM_TABLE.rollItem();
 
@@ -336,6 +336,22 @@ public class Mining {
         return bonus;
     }
 
+    private static boolean isSalt(Rock rockdata) {
+        return rockdata == Rock.TE_SALT || rockdata == Rock.URT_SALT || rockdata == Rock.EFH_SALT;
+    }
+
+    private static int getSaltAmount(Player player) {
+        int level = player.getStats().get(StatType.Mining).currentLevel;
+        if (level < 81)
+            return Random.get(2, 4);
+        else if (level < 90)
+            return Random.get(3, 5);
+        else if (level < 99)
+            return Random.get(4, 6);
+        else
+            return Random.get(5, 7);
+    }
+
     private static Boolean infernalPickProc(Player player, int ore) {
         switch (ore) {
             case Items.COPPER_ORE:
@@ -417,7 +433,11 @@ public class Mining {
                 {Rock.SANDSTONE, 11387, 11390, PlayerCounter.MINED_SANDSTONE},
                 {Rock.GRANITE, 11386, 11391, PlayerCounter.MINED_GRANITE},
                 {Rock.GEM_ROCK, 11380, 11390, PlayerCounter.MINED_GEM_ROCK},
-                {Rock.GEM_ROCK, 11381, 11391, PlayerCounter.MINED_GEM_ROCK}
+                {Rock.GEM_ROCK, 11381, 11391, PlayerCounter.MINED_GEM_ROCK},
+                {Rock.TE_SALT, 33256, 33253, PlayerCounter.MINE_SALT},
+                {Rock.EFH_SALT, 33255, 33253, PlayerCounter.MINE_SALT},
+                {Rock.URT_SALT, 33254, 33253, PlayerCounter.MINE_SALT},
+                {Rock.BASALT, 33257, 33253, PlayerCounter.MINE_SALT}
         };
         for (Object[] d : oreData) {
             Rock rock = (Rock) d[0];
