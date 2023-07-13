@@ -122,7 +122,8 @@ public class Mining {
                             player.sendFilteredMessage("You manage to mine an additional ore.");
                             multiple = true;
                         }
-                        CelestialRing.removeChargeIfEquipped(player);
+                        if (rockData.ordinal() <= Rock.ADAMANT.ordinal())
+                            CelestialRing.removeChargeIfEquipped(player);
                         player.collectResource(new Item(id, amount));
                         if (pickaxe == Pickaxe.INFERNAL && Random.rollDie(3, 1) && InfernalTools.INFERNAL_PICKAXE.hasCharge(player) && infernalPickProc(player, rockData.ore)) {
                             player.graphics(580, 155, 0);
