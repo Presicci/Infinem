@@ -4,10 +4,13 @@ import io.ruin.cache.Varpbit;
 import io.ruin.model.entity.player.Player;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
 public class Config {
 
-    private static final ArrayList<Config> CONFIGS = new ArrayList<>();
+    private static final HashMap<Integer, Config> VARPBITS = new HashMap<>();
+    private static final HashMap<Integer, Config> VARPS = new HashMap<>();
 
     private static final int[] SHIFTS = new int[32];
 
@@ -1229,13 +1232,19 @@ public class Config {
     }
 
     public static Config create(int id, Varpbit bit, boolean save, boolean store) {
-        Config config = new Config();
+        Config config = bit == null ? VARPS.get(id) : VARPBITS.get(id);
+        if (config != null) {
+            return config;
+        }
+        config = new Config();
         config.id = id;
         config.bit = bit;
         config.save = save;
         if(store) {
-            CONFIGS.add(config);
-            CONFIGS.trimToSize();
+            if (bit == null)
+                VARPS.put(id, config);
+            else
+                VARPBITS.put(id, config);
         }
         return config;
     }
@@ -1245,7 +1254,12 @@ public class Config {
      */
 
     public static void save(Player player) {
-        for(Config config : CONFIGS) {
+        saveConfigs(player, VARPS.values());
+        saveConfigs(player, VARPBITS.values());
+    }
+
+    private static void saveConfigs(Player player, Collection<Config> configs) {
+        for(Config config : configs) {
             if(!config.save)
                 continue;
             int saveId = config.id << 16 | (config.bit != null ? 1 : 0);
@@ -1254,7 +1268,13 @@ public class Config {
     }
 
     public static void load(Player player) {
-        for(Config config : CONFIGS) {
+        loadConfigs(player, VARPS.values());
+        loadConfigs(player, VARPBITS.values());
+        player.savedConfigs.clear();
+    }
+
+    private static void loadConfigs(Player player, Collection<Config> configs) {
+        for(Config config : configs) {
             if(!config.save) {
                 if(config.defaultValue != 0)
                     config.set(player, config.defaultValue);
@@ -1278,7 +1298,6 @@ public class Config {
             }
             config.set(player, savedValue);
         }
-        player.savedConfigs.clear();
     }
 
 }
