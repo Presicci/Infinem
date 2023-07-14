@@ -71,10 +71,11 @@ public class OldFirePit {
                 val builder = new StringBuilder();
                 for (int i = 0; i < requiredItems.length; i++) {
                     val item = requiredItems[i];
-                    builder.append(item.getAmount()).append(" x ").append(item.getDef().name).append(i == requiredItems.length - 2 ? " and " : ", ");
+                    if (item.getAmount() > 1)
+                        builder.append(item.getAmount()).append(" x ").append(item.getDef().name).append(i == requiredItems.length - 2 ? " and " : ", ");
                 }
                 builder.delete(builder.length() - 2, builder.length());
-                player.dialogue(new MessageDialogue("You need " + builder + " to build the fire pit."));
+                player.dialogue(new MessageDialogue("You need a hammer, saw, tinderbox, " + builder + " to build the fire pit."));
                 player.unlock();
                 return;
             }
