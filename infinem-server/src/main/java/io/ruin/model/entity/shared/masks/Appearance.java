@@ -65,6 +65,16 @@ public class Appearance extends UpdateMask {
         return gender == 0;
     }
 
+    public void modifyAppearance(byte index, short value) {
+        styles[index] = value;
+        update();
+    }
+
+    public void modifyColor(byte index, short value) {
+        colors[index] = value;
+        update();
+    }
+
     /**
      * Skull icon
      */

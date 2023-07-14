@@ -3,7 +3,6 @@ package io.ruin.model.inter.utils;
 import io.ruin.cache.Varpbit;
 import io.ruin.model.entity.player.Player;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
@@ -1093,7 +1092,8 @@ public class Config {
 
 
 
-    public static final Config HAIRDRESSDER = varpbit(4146, false);
+    public static final Config HAIRCUT = varpbit(4146, false);
+    public static final Config HAIRSTYLES = varpbit(3945, false);
 
     public static final Config PUZZLE_INDEX = varp(261, false);
     public static final Config LIGHT_BOX_INDEX = varp(1356, false);
