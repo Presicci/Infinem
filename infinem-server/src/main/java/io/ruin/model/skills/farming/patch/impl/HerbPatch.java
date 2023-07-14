@@ -74,7 +74,7 @@ public class HerbPatch extends Patch {
     @Override
     public boolean isDiseaseImmune() {
         return getObjectId() == 18816 // trollheim patch
-                || getObjectId() == 18819; // weiss patch
+                || getObjectId() == 33176; // weiss patch
     }
 
     @Override
