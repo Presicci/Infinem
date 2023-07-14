@@ -74,7 +74,7 @@ public enum Containers {
         }
     }
 
-    private static final int[] FULL_BUCKETS = {1783, 1927, 1929, 4286, 4687, 4693, 7622, 7624, 7626, 9659, 4601};
+    private static final int[] FULL_BUCKETS = { 1783, 1927, 1929, 4286, 4687, 4693, 7622, 7624, 7626, 9659, 4601, 22590 };
 
     static {
         /**
