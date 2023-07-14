@@ -64,26 +64,28 @@ public class OldFirePit {
             player.dialogue(new MessageDialogue("You've already built this fire pit."));
             return;
         }
+        Item[] requiredItems = pit.type.requiredItems;
+        if (!player.getInventory().containsAll(false, requiredItems)) {
+            val builder = new StringBuilder();
+            for (int i = 0; i < requiredItems.length; i++) {
+                val item = requiredItems[i];
+                if (item.getAmount() > 1)
+                    builder.append(item.getAmount()).append(" x ").append(item.getDef().name).append(i == requiredItems.length - 2 ? " and " : ", ");
+            }
+            builder.delete(builder.length() - 2, builder.length());
+            player.dialogue(new MessageDialogue("You need a hammer, saw, tinderbox, " + builder + " to build the fire pit."));
+            return;
+        }
+        if (player.getStats().get(StatType.Firemaking).currentLevel < 66) {
+            player.dialogue(new MessageDialogue("You need a Firemaking level of at least 66 to build the fire pit."));
+            return;
+        }
+        if (player.getStats().get(StatType.Construction).currentLevel < pit.type.level) {
+            player.dialogue(new MessageDialogue("You need a Construction level of at least " + pit.type.level + " to build the fire pit."));
+            return;
+        }
         player.startEvent(e -> {
             player.lock();
-            Item[] requiredItems = pit.type.requiredItems;
-            if (!player.getInventory().containsAll(false, requiredItems)) {
-                val builder = new StringBuilder();
-                for (int i = 0; i < requiredItems.length; i++) {
-                    val item = requiredItems[i];
-                    if (item.getAmount() > 1)
-                        builder.append(item.getAmount()).append(" x ").append(item.getDef().name).append(i == requiredItems.length - 2 ? " and " : ", ");
-                }
-                builder.delete(builder.length() - 2, builder.length());
-                player.dialogue(new MessageDialogue("You need a hammer, saw, tinderbox, " + builder + " to build the fire pit."));
-                player.unlock();
-                return;
-            }
-            if (player.getStats().get(StatType.Construction).currentLevel < pit.type.level) {
-                player.dialogue(new MessageDialogue("You need a Construction level of at least " + pit.type.level + " to build the fire pit."));
-                player.unlock();
-                return;
-            }
             player.animate(733);
             e.delay(4);
             for (val item : pit.type.requiredItems) {
