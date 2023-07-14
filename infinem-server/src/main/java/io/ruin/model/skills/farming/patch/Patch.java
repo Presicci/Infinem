@@ -9,6 +9,7 @@ import io.ruin.model.inter.handlers.TabStats;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.map.object.actions.impl.OldFirePit;
 import io.ruin.model.skills.farming.BottomlessCompostBucket;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.TreeCrop;
@@ -84,6 +85,10 @@ public abstract class Patch {
     }
 
     public void interact() {
+        if (getObjectId() == 33176 && !OldFirePit.FirePit.WEISS_FIRE.isBuilt(player)) {
+            player.sendMessage("The crops can't grow in areas of extreme cold. Perhaps you should look into warming up the area around first.");
+            return;
+        }
         if (!isRaked()) {
             if (!player.getInventory().contains(5341, 1)) {
                 player.sendMessage("You need a rake to weed a farming patch.");
