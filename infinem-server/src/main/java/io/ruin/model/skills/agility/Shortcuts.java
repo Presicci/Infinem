@@ -204,6 +204,9 @@ public class Shortcuts {
         ObjectAction.register(3748,2856,3612, 0, "Climb", JumpShortcut.DEATH_PLATEAU_JUMP1::traverse);
         ObjectAction.register(3748,2857,3612, 0, "Climb", JumpShortcut.DEATH_PLATEAU_JUMP2::traverse);
 
+        // Weiss
+        ObjectAction.register(33312,2851,3936, 0, "cross", JumpShortcut.WEISS::traverse);
+
         /**
          *                                              CLIMBING ROCKS
          * _____________________________________________________________________________________________________________
