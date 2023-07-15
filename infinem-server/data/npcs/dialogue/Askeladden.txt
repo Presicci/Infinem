@@ -1,0 +1,11 @@
+Player: Hello again Askeladden.
+Askeladden: Hey buddy! That ain't my name no more! My new Fremennik name is Larravak! What's yours?
+Player: My Fremennik name is [Fremennik name].
+Askeladden: Ha! Ain't as good as my name buddy! So what can I do ya for?
+<Ask about things to do
+Player: So, Askeladd- sorry, Larravak; What is there to do around here now that we are both Fremenniks?
+Askeladden: I guess you could do a bit of shopping. We got fresh fish at the docks, and some armour and weapons at Skulgrimen's place.
+Player: Okay, thanks.
+><Ask for a new pet rock
+Player: Can I have another pet rock?
+PET_ROCK

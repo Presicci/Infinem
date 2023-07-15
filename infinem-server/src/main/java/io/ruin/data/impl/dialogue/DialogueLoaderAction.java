@@ -18,6 +18,18 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    PET_ROCK((player -> {
+        if (!player.getInventory().hasFreeSlots(1)) {
+            player.dialogue(new NPCDialogue(player.getDialogueNPC(), "Sure thing, but you'd better free up some space first."));
+            return;
+        }
+        player.getInventory().add(Items.PET_ROCK);
+        if (player.findItem(Items.PET_ROCK) != null) {
+            player.dialogue(new NPCDialogue(player.getDialogueNPC(), "Sure, have as many as you like. I've plenty more!"));
+        } else {
+            player.dialogue(new NPCDialogue(player.getDialogueNPC(), "Sure thing buddy! I'd say take better care of this one, but it's just a rock! I have hundreds of them! Go wild!"));
+        }
+    })),
     NOTE_BASALT((player -> {
         if (!player.getInventory().contains(22603)) {
             player.dialogue(new NPCDialogue(player.getDialogueNPC(), "You aren't carrying any basalt."));
