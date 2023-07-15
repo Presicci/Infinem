@@ -1,6 +1,7 @@
 package io.ruin.model.inter.utils;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.Dialogue;
 
 import java.util.function.Consumer;
 
@@ -9,6 +10,10 @@ public class Option {
     public final String name;
 
     public final Consumer<Player> consumer;
+
+    public Option(String name, Dialogue... dialogues) {
+        this(name, p -> p.dialogue(dialogues));
+    }
 
     public Option(String name) {
         this(name, p -> {});
