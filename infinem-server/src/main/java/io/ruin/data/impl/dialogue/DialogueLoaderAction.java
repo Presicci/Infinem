@@ -24,7 +24,7 @@ public enum DialogueLoaderAction {
             return;
         }
         player.getInventory().add(Items.PET_ROCK);
-        if (player.findItem(Items.PET_ROCK) != null) {
+        if (player.getBank().contains(Items.PET_ROCK) || player.getBank().contains(Items.PET_ROCK)) {
             player.dialogue(new NPCDialogue(player.getDialogueNPC(), "Sure, have as many as you like. I've plenty more!"));
         } else {
             player.dialogue(new NPCDialogue(player.getDialogueNPC(), "Sure thing buddy! I'd say take better care of this one, but it's just a rock! I have hundreds of them! Go wild!"));
