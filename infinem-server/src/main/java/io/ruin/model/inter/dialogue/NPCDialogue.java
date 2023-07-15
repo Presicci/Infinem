@@ -62,6 +62,7 @@ public class NPCDialogue extends Dialogue {
         npcDef = NPCDef.getConfigDef(npcDef.id, player);
         message = message.replace("[player name]", player.getName());
         message = message.replace("[madam/sir]", player.getAppearance().getGenderString());
+        message = message.replace("[brother/sister]", player.getAppearance().isMale() ? "brother" : "sister");
         message = message.replace("[monsieur/mademoiselle]", player.getAppearance().isMale() ? "monsieur" : "mademoiselle");
         message = message.replace("[Fremennik name]", player.getFremennikName());
         player.openInterface(InterfaceType.CHATBOX, Interface.NPC_DIALOGUE);
