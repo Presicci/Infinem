@@ -228,11 +228,6 @@ public class NPCDef {
             options[3] = "Check-points";
         } else if(id == 3278) {
             name = "Construction Worker";
-        } else if(id == 1307) {
-            options[0] = "Change-looks";
-            options[2] = "Skin-unlocks";
-            options[3] = "Title-unlocks";
-            options[4] = null;
         } else if (id == 6118) {
             name = "Elvarg";
             combatLevel = 280;
