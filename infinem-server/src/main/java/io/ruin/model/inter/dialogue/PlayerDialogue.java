@@ -45,6 +45,7 @@ public class PlayerDialogue extends Dialogue {
     @Override
     public void open(Player player) {
         message = message.replace("[player name]", player.getName());
+        message = message.replace("[Fremennik name]", player.getFremennikName());
         player.openInterface(InterfaceType.CHATBOX, Interface.PLAYER_DIALOGUE);
         player.getPacketSender().sendPlayerHead(Interface.PLAYER_DIALOGUE, 6);
         player.getPacketSender().animateInterface(Interface.PLAYER_DIALOGUE, 6, animationId);
