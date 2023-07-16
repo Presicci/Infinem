@@ -130,7 +130,7 @@ public class Makeover {
         SpawnListener.register(1307, (npc -> {
             World.startEvent(e -> {
                 while (true) {
-                    e.delay(300);
+                    e.delay(17);
                     npc.forceText(Random.rollDie(2, 1) ? "Ahah!" : "Ooh!");
                     npc.graphics(86);
                     npc.transform(npc.getId() == 1306 ? 1307 : 1306);
