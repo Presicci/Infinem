@@ -28,7 +28,7 @@ public class AppearanceHandler implements Incoming {
                 style = 255;
             } else {
                 IdentityKit identitykit = IdentityKit.get(style);
-                if(identitykit == null || identitykit.aBool53 || identitykit.anInt405 != (female ? 7 : 0) + i) {
+                if(identitykit == null || identitykit.selectable || identitykit.bodyPartId != (female ? 7 : 0) + i) {
                     Server.logWarning("Invalid Appearance Style: [" + i + "]=" + style + " player=" + player.getName());
                     continue;
                 }

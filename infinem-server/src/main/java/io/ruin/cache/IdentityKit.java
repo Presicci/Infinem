@@ -35,14 +35,14 @@ public class IdentityKit {
      */
 
     public int id;
-    public int anInt405 = -1;
-    public boolean aBool53 = false;
-    int[] anIntArray84;
-    short[] aShortArray3;
-    short[] aShortArray2;
-    short[] aShortArray4;
-    short[] aShortArray5;
-    int[] anIntArray85 = {-1, -1, -1, -1, -1};
+    public int bodyPartId = -1;
+    public boolean selectable = false;
+    int[] models;
+    short[] recolorToFind;
+    short[] recolorToReplace;
+    short[] textureToFind;
+    short[] textureToReplace;
+    int[] chatheadModels = {-1, -1, -1, -1, -1};
 
     void decode(InBuffer stream) {
         for(; ; ) {
@@ -55,32 +55,32 @@ public class IdentityKit {
 
     void method707(InBuffer stream, int i) {
         if(i == 1)
-            anInt405 = stream.readUnsignedByte();
+            bodyPartId = stream.readUnsignedByte();
         else if(i == 2) {
             int i_7_ = stream.readUnsignedByte();
-            anIntArray84 = new int[i_7_];
+            models = new int[i_7_];
             for(int i_8_ = 0; i_8_ < i_7_; i_8_++)
-                anIntArray84[i_8_] = stream.readUnsignedShort();
+                models[i_8_] = stream.readUnsignedShort();
         } else if(i == 3)
-            aBool53 = true;
+            selectable = true;
         else if(i == 40) {
             int i_9_ = stream.readUnsignedByte();
-            aShortArray3 = new short[i_9_];
-            aShortArray2 = new short[i_9_];
+            recolorToFind = new short[i_9_];
+            recolorToReplace = new short[i_9_];
             for(int i_10_ = 0; i_10_ < i_9_; i_10_++) {
-                aShortArray3[i_10_] = (short) stream.readUnsignedShort();
-                aShortArray2[i_10_] = (short) stream.readUnsignedShort();
+                recolorToFind[i_10_] = (short) stream.readUnsignedShort();
+                recolorToReplace[i_10_] = (short) stream.readUnsignedShort();
             }
         } else if(i == 41) {
             int i_11_ = stream.readUnsignedByte();
-            aShortArray4 = new short[i_11_];
-            aShortArray5 = new short[i_11_];
+            textureToFind = new short[i_11_];
+            textureToReplace = new short[i_11_];
             for(int i_12_ = 0; i_12_ < i_11_; i_12_++) {
-                aShortArray4[i_12_] = (short) stream.readUnsignedShort();
-                aShortArray5[i_12_] = (short) stream.readUnsignedShort();
+                textureToFind[i_12_] = (short) stream.readUnsignedShort();
+                textureToReplace[i_12_] = (short) stream.readUnsignedShort();
             }
         } else if(i >= 60 && i < 70)
-            anIntArray85[i - 60] = stream.readUnsignedShort();
+            chatheadModels[i - 60] = stream.readUnsignedShort();
     }
 
 }

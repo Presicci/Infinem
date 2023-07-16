@@ -2,10 +2,8 @@ package io.ruin.model.entity.player
 
 import io.ruin.Server
 import io.ruin.api.filestore.FileStore
-import io.ruin.cache.EnumMap
 import io.ruin.cache.IdentityKit
 import io.ruin.cache.Varpbit
-import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.system.exitProcess
 
@@ -105,8 +103,8 @@ enum class Style(
         val bodyParts by lazy {
             val result = Array(14) { mutableListOf<IdentityKit>() }
             for (kit in IdentityKit.LOADED) {
-                if(!kit.aBool53) {
-                    result[kit.anInt405].add(kit);
+                if(!kit.selectable) {
+                    result[kit.bodyPartId].add(kit);
                 }
             }
             return@lazy result
