@@ -157,14 +157,14 @@ public class Makeover {
             h.actions[10] = (SimpleAction) (player) -> {
                 boolean male = player.getTemporaryAttribute(AttributeKey.SELECTED_GENDER);
                 int skinColor = player.getTemporaryAttributeIntOrZero(AttributeKey.SELECTED_SKIN_COLOR);
-                int npcId = 1305;
+                int npcId = 1306;
                 if (male == player.getAppearance().isMale() && skinColor == player.getAppearance().colors[4]) {
                     player.sendMessage("You haven't changed anything yet.");
                     return;
                 }
                 if (!player.getInventory().contains(995, PRICE)) {
                     player.closeInterface(InterfaceType.MAIN);
-                    player.dialogue(new NPCDialogue(npcId, "You don't have enough money for a haircut."));
+                    player.dialogue(new NPCDialogue(npcId, "You don't have enough money for a makeover."));
                     return;
                 }
                 player.getAppearance().setGender(male ? 0 : 1);
@@ -172,6 +172,38 @@ public class Makeover {
                 player.getAppearance().modifyColor((byte) 4, (byte) skinColor);
                 player.getInventory().remove(995, PRICE);
                 player.closeInterface(InterfaceType.MAIN);
+                switch (Random.get(4)) {
+                    case 1:
+                        player.dialogue(
+                                new NPCDialogue(npcId, "Woah!"),
+                                new PlayerDialogue("What?"),
+                                new NPCDialogue(npcId, "You still look human!"),
+                                new PlayerDialogue("Uh... Thanks, I guess.")
+                        );
+                        break;
+                    case 2:
+                        player.dialogue(
+                                new NPCDialogue(npcId, "Hmm... you didn't feel any unexpected growths anywhere around your head just then did you?"),
+                                new PlayerDialogue("Uh... no...?"),
+                                new NPCDialogue(npcId, "Good, good! I was worried for a second there!"),
+                                new PlayerDialogue("Uh... Thanks, I guess.")
+                        );
+                        break;
+                    case 3:
+                        player.dialogue(
+                                new NPCDialogue(npcId, "Whew! That was lucky!"),
+                                new PlayerDialogue("What was?"),
+                                new NPCDialogue(npcId, "Nothing! It's all fine! You seem alive anyway!"),
+                                new PlayerDialogue("Uh... Thanks, I guess.")
+                        );
+                        break;
+                    default:
+                        player.dialogue(
+                                new NPCDialogue(npcId, "Two arms... two legs... one head... it seems that spell finally worked okay!"),
+                                new PlayerDialogue("Uh... Thanks, I guess.")
+                        );
+                        break;
+                }
             };
         });
     }
