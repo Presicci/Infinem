@@ -71,7 +71,7 @@ public class Hairdresser {
         player.getPacketSender().sendVarp(261, 0);
         player.getPacketSender().sendVarp(263, 0);
         Config.HAIRCUT.set(player, haircut ? 1 : 2);
-        Config.HAIRSTYLES.set(player, player.getAppearance().isMale() ? 0 : 1);
+        Config.MAKEOVER_INTERFACE.set(player, player.getAppearance().isMale() ? 0 : 1);
         player.openInterface(InterfaceType.MAIN, Interface.HAIRDRESSER);
         player.getPacketSender().sendAccessMask(Interface.HAIRDRESSER, 2, 0, 23, 2);
         player.getPacketSender().sendAccessMask(Interface.HAIRDRESSER, 8, 0, 24, 2);
