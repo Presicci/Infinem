@@ -113,7 +113,7 @@ public class Makeover {
         player.putTemporaryAttribute(AttributeKey.SELECTED_GENDER, player.getAppearance().isMale());
         player.putTemporaryAttribute(AttributeKey.SELECTED_SKIN_COLOR, player.getAppearance().colors[4]);
         player.getPacketSender().sendVarp(261, player.getAppearance().isMale() ? 0 : 1);
-        player.getPacketSender().sendVarp(263, player.getAppearance().colors[4]);
+        player.getPacketSender().sendVarp(262, player.getAppearance().colors[4]);
         Config.varpbit(4803, false).set(player, 1);
         Config.varpbit(4804, false).set(player, 1);
         Config.varpbit(6007, false).set(player, 1);
