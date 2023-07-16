@@ -7,6 +7,7 @@ import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.Style;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
@@ -167,6 +168,7 @@ public class Makeover {
                     return;
                 }
                 player.getAppearance().setGender(male ? 0 : 1);
+                Style.Companion.updateAll(player);
                 player.getAppearance().modifyColor((byte) 4, (byte) skinColor);
                 player.getInventory().remove(995, PRICE);
                 player.closeInterface(InterfaceType.MAIN);
