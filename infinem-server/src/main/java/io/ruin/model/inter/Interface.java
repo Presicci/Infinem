@@ -12,7 +12,7 @@ public class Interface {
 
     public static final int IRON_MAN_SETTINGS = 215;
 
-    public static final int APPEARANCE_CUSTOMIZATION = 269;
+    public static final int APPEARANCE_CUSTOMIZATION = 679;
 
     public static final int RESIZED_STACKED_SCREEN = 164;
 

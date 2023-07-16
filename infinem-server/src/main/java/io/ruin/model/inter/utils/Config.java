@@ -1091,7 +1091,7 @@ public class Config {
     public static final Config OBSERVATORY_ROPE = varpbit(5810, true);
 
 
-
+    public static final Config CHARACTER_CREATOR_GENDER = varpbit(11697, false);
     public static final Config HAIRCUT = varpbit(4146, false);
     public static final Config HAIRSTYLES = varpbit(3945, false);
 
