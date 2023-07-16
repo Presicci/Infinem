@@ -81,6 +81,7 @@ public class Makeover {
                                                                     new ActionDialogue(() -> {
                                                                         player.getInventory().remove(995, 100);
                                                                         player.getInventory().add(Items.YIN_YANG_AMULET);
+                                                                        player.getTaskManager().doLookupByUUID(436, 1); // Purchase a Yin Yang Amulet From the Make-Over Mage
                                                                         player.dialogue(
                                                                                 new ItemDialogue().one(Items.YIN_YANG_AMULET, "You receive an amulet in exchange for 100 coins."),
                                                                                 new NPCDialogue(npc, "Anyway, would you like me to alter your physical form?"),
