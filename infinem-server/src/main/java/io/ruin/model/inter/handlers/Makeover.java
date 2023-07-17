@@ -110,6 +110,41 @@ public class Makeover {
         );
     }
 
+    private static void randomConfirmationDialogue(Player player, int npcId) {
+        switch (Random.get(4)) {
+            case 1:
+                player.dialogue(
+                        new NPCDialogue(npcId, "Woah!"),
+                        new PlayerDialogue("What?"),
+                        new NPCDialogue(npcId, "You still look human!"),
+                        new PlayerDialogue("Uh... Thanks, I guess.")
+                );
+                break;
+            case 2:
+                player.dialogue(
+                        new NPCDialogue(npcId, "Hmm... you didn't feel any unexpected growths anywhere around your head just then did you?"),
+                        new PlayerDialogue("Uh... no...?"),
+                        new NPCDialogue(npcId, "Good, good! I was worried for a second there!"),
+                        new PlayerDialogue("Uh... Thanks, I guess.")
+                );
+                break;
+            case 3:
+                player.dialogue(
+                        new NPCDialogue(npcId, "Whew! That was lucky!"),
+                        new PlayerDialogue("What was?"),
+                        new NPCDialogue(npcId, "Nothing! It's all fine! You seem alive anyway!"),
+                        new PlayerDialogue("Uh... Thanks, I guess.")
+                );
+                break;
+            default:
+                player.dialogue(
+                        new NPCDialogue(npcId, "Two arms... two legs... one head... it seems that spell finally worked okay!"),
+                        new PlayerDialogue("Uh... Thanks, I guess.")
+                );
+                break;
+        }
+    }
+
     private static void open(Player player, NPC npc) {
         player.putTemporaryAttribute(AttributeKey.SELECTED_GENDER, player.getAppearance().isMale());
         player.putTemporaryAttribute(AttributeKey.SELECTED_SKIN_COLOR, player.getAppearance().colors[4]);
@@ -173,38 +208,7 @@ public class Makeover {
                 player.getAppearance().modifyColor((byte) 4, (byte) skinColor);
                 player.getInventory().remove(995, PRICE);
                 player.closeInterface(InterfaceType.MAIN);
-                switch (Random.get(4)) {
-                    case 1:
-                        player.dialogue(
-                                new NPCDialogue(npcId, "Woah!"),
-                                new PlayerDialogue("What?"),
-                                new NPCDialogue(npcId, "You still look human!"),
-                                new PlayerDialogue("Uh... Thanks, I guess.")
-                        );
-                        break;
-                    case 2:
-                        player.dialogue(
-                                new NPCDialogue(npcId, "Hmm... you didn't feel any unexpected growths anywhere around your head just then did you?"),
-                                new PlayerDialogue("Uh... no...?"),
-                                new NPCDialogue(npcId, "Good, good! I was worried for a second there!"),
-                                new PlayerDialogue("Uh... Thanks, I guess.")
-                        );
-                        break;
-                    case 3:
-                        player.dialogue(
-                                new NPCDialogue(npcId, "Whew! That was lucky!"),
-                                new PlayerDialogue("What was?"),
-                                new NPCDialogue(npcId, "Nothing! It's all fine! You seem alive anyway!"),
-                                new PlayerDialogue("Uh... Thanks, I guess.")
-                        );
-                        break;
-                    default:
-                        player.dialogue(
-                                new NPCDialogue(npcId, "Two arms... two legs... one head... it seems that spell finally worked okay!"),
-                                new PlayerDialogue("Uh... Thanks, I guess.")
-                        );
-                        break;
-                }
+                randomConfirmationDialogue(player, npcId);
             };
         });
     }
