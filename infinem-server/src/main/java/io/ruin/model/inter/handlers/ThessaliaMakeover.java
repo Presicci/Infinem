@@ -164,6 +164,7 @@ public class ThessaliaMakeover {
                 player.getAppearance().modifyColor((byte) (topwear ? 1 : 2), (byte) colour);
                 player.getInventory().remove(995, PRICE);
                 player.closeInterface(InterfaceType.MAIN);
+                player.getTaskManager().doLookupByUUID(908, 1); // Change Clothes at Thessalia's Makeovers in Varrock
                 randomConfirmationDialogue(player, 534);
             };
         });
