@@ -22,9 +22,8 @@ public interface NPCAction {
     }
 
     static boolean register(int npcId, String optionName, NPCAction action) {
-        NPCDef def = NPCDef.get(npcId);
-        int option = def.getOption(optionName);
-        if(option > -1)
+        int option = NPCDef.get(npcId).getOption(optionName);
+        if(option == -1)
             return false;
         register(npcId, option, action);
         return true;
