@@ -1094,6 +1094,7 @@ public class Config {
     public static final Config CHARACTER_CREATOR_GENDER = varpbit(11697, false);
     public static final Config HAIRCUT = varpbit(4146, false);
     public static final Config MAKEOVER_INTERFACE = varpbit(3945, false);
+    public static final Config THESSALIA_GENDER = varpbit(3944, false);
 
     public static final Config PUZZLE_INDEX = varp(261, false);
     public static final Config LIGHT_BOX_INDEX = varp(1356, false);
