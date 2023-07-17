@@ -19,6 +19,7 @@ import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import lombok.val;
+import org.w3c.dom.Attr;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -64,12 +65,15 @@ public class Hairdresser {
     }
 
     private static void open(Player player, NPC npc, boolean haircut) {
-        player.removeTemporaryAttribute(AttributeKey.SELECTED_HAIR_STYLE);
-        player.removeTemporaryAttribute(AttributeKey.SELECTED_HAIR_COLOR);
-        player.removeTemporaryAttribute(AttributeKey.SELECTED_BEARD_STYLE);
+        int hair = player.getAppearance().styles[0];
+        int hairC = player.getAppearance().colors[0];
+        int beard = player.getAppearance().styles[1];
+        player.putTemporaryAttribute(AttributeKey.SELECTED_HAIR_STYLE, hair);
+        player.putTemporaryAttribute(AttributeKey.SELECTED_HAIR_COLOR, hairC);
+        player.putTemporaryAttribute(AttributeKey.SELECTED_BEARD_STYLE, beard);
         player.removeTemporaryAttribute(AttributeKey.SELECTED_BEARD_COLOR);
-        player.getPacketSender().sendVarp(261, 0);
-        player.getPacketSender().sendVarp(263, 0);
+        player.getPacketSender().sendVarp(261, haircut ? hair : beard);
+        player.getPacketSender().sendVarp(263, hairC);
         Config.HAIRCUT.set(player, haircut ? 1 : 2);
         Config.MAKEOVER_INTERFACE.set(player, player.getAppearance().isMale() ? 0 : 1);
         player.openInterface(InterfaceType.MAIN, Interface.HAIRDRESSER);
@@ -80,7 +84,16 @@ public class Hairdresser {
 
     static {
         NPCAction.register(1305, "talk-to", Hairdresser::dialogue);
-        NPCAction.register(1305, "haircut", ((player, npc) -> open(player, npc, true)));
+        NPCAction.register(1305, "haircut", ((player, npc) -> {
+            if (player.getAppearance().isMale()) {
+                player.dialogue(new OptionsDialogue("What would you like?",
+                        new Option("Haircut", () -> open(player, npc, true)),
+                        new Option("Shave", () -> open(player, npc, false))
+                ));
+            } else {
+                open(player, npc, true);
+            }
+        }));
         InterfaceHandler.register(Interface.HAIRDRESSER, h -> {
             h.actions[2] = (DefaultAction) (player, option, slot, itemId) -> {
                 boolean haircut = Config.HAIRCUT.get(player) == 1;
