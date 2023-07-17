@@ -22,10 +22,21 @@ public interface NPCAction {
     }
 
     static boolean register(int npcId, String optionName, NPCAction action) {
-        int option = NPCDef.get(npcId).getOption(optionName);
-        if(option == -1)
-            return false;
-        register(npcId, option, action);
+        NPCDef def = NPCDef.get(npcId);
+        int option = def.getOption(optionName);
+        if(option > -1)
+            register(npcId, option, action);
+        if (def.varpbitId != -1 || def.varpId != -1) {
+            for (int id : def.showIds) {
+                def = NPCDef.get(id);
+                if (def == null)
+                    continue;
+                option = def.getOption(optionName);
+                if(option == -1)
+                    continue;
+                register(id, NPCDef.get(id).getOption(optionName), action);
+            }
+        }
         return true;
     }
 
