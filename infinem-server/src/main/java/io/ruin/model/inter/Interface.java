@@ -347,6 +347,8 @@ public class Interface {
 
     public static final int MUSH_TREE = 608;
 
+    public static final int THESSALIA_MAKEOVER = 591;
+
     /**
      * Custom
      */
