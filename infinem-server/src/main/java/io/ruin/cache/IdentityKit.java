@@ -86,7 +86,7 @@ public class IdentityKit {
             for(int i_8_ = 0; i_8_ < i_7_; i_8_++)
                 models[i_8_] = stream.readUnsignedShort();
         } else if(i == 3)
-            selectable = true;
+            selectable = false;
         else if(i == 40) {
             int i_9_ = stream.readUnsignedByte();
             recolorToFind = new short[i_9_];
@@ -122,6 +122,7 @@ public class IdentityKit {
     }
 
     public static int getBodystyle(final int index) {
+        System.out.println(BODYSTYLES.size() + " / " + index);
         if (index < 0 || index >= BODYSTYLES.size()) {
             return 0;
         }
@@ -129,6 +130,7 @@ public class IdentityKit {
     }
 
     public static int getLegsstyle(final int index) {
+        System.out.println(LEGSSTYLES.size() + " / " + index);
         if (index < 0 || index >= LEGSSTYLES.size()) {
             return 0;
         }
@@ -136,6 +138,7 @@ public class IdentityKit {
     }
 
     public static int getArmstyle(final int index) {
+        System.out.println(ARMSTYLES.size() + " / " + index);
         if (index < 0 || index >= ARMSTYLES.size()) {
             return 0;
         }

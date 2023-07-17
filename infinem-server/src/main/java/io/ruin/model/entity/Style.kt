@@ -103,7 +103,7 @@ enum class Style(
         val bodyParts by lazy {
             val result = Array(14) { mutableListOf<IdentityKit>() }
             for (kit in IdentityKit.LOADED) {
-                if(!kit.selectable) {
+                if(kit.selectable) {
                     result[kit.bodyPartId].add(kit);
                 }
             }
