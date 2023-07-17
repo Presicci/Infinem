@@ -44,4 +44,12 @@ public enum BeardStyle {
     public static int getStyle(final int slotId) {
         return STYLES.get(slotId);
     }
+
+    public static int getSlot(final int style) {
+        for (BeardStyle s : values()) {
+            if (s.id == style)
+                return s.slotId;
+        }
+        return -1;
+    }
 }

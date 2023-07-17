@@ -66,14 +66,13 @@ public class Hairdresser {
 
     private static void open(Player player, NPC npc, boolean haircut) {
         int hair = player.getAppearance().styles[0];
-        int hairC = player.getAppearance().colors[0];
-        int beard = player.getAppearance().styles[1];
+        int beard = BeardStyle.getSlot(player.getAppearance().styles[1]);
+        int color = player.getAppearance().colors[0];
         player.putTemporaryAttribute(AttributeKey.SELECTED_HAIR_STYLE, hair);
-        player.putTemporaryAttribute(AttributeKey.SELECTED_HAIR_COLOR, hairC);
         player.putTemporaryAttribute(AttributeKey.SELECTED_BEARD_STYLE, beard);
-        player.removeTemporaryAttribute(AttributeKey.SELECTED_BEARD_COLOR);
+        player.putTemporaryAttribute(AttributeKey.SELECTED_HAIR_COLOR, color);
         player.getPacketSender().sendVarp(261, haircut ? hair : beard);
-        player.getPacketSender().sendVarp(263, hairC);
+        player.getPacketSender().sendVarp(263, color);
         Config.MAKEOVER_INTERFACE.set(player, player.getAppearance().isMale() ? 0 : 1);
         Config.HAIRCUT.set(player, haircut ? 1 : 2);
         player.openInterface(InterfaceType.MAIN, Interface.HAIRDRESSER);
@@ -109,7 +108,7 @@ public class Hairdresser {
                     haircut = true;
                 }
                 player.getPacketSender().sendVarp(263, slot);
-                player.putTemporaryAttribute(haircut ? AttributeKey.SELECTED_HAIR_COLOR : AttributeKey.SELECTED_BEARD_COLOR, slot);
+                player.putTemporaryAttribute(AttributeKey.SELECTED_HAIR_COLOR, slot);
             };
             h.actions[9] = (SimpleAction)  (player) -> {
                 boolean haircut = Config.HAIRCUT.get(player) == 1;
@@ -118,7 +117,7 @@ public class Hairdresser {
                 }
                 val slot = player.getTemporaryAttributeIntOrZero(haircut ? AttributeKey.SELECTED_HAIR_STYLE : AttributeKey.SELECTED_BEARD_STYLE);
                 val style = haircut ? HairStyle.getStyle(slot, player.getAppearance().isMale()) : BeardStyle.getStyle(slot);
-                val colour = player.getTemporaryAttributeIntOrZero(haircut ? AttributeKey.SELECTED_HAIR_COLOR : AttributeKey.SELECTED_BEARD_COLOR);
+                val colour = player.getTemporaryAttributeIntOrZero(AttributeKey.SELECTED_HAIR_COLOR);
                 val npcId = 1305;
                 if (style == -1 || slot == -1 || colour == -1) {
                     player.dialogue(new NPCDialogue(npcId, "You must select a hair style and colour first!"));
