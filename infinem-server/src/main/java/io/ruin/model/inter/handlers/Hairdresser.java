@@ -74,8 +74,8 @@ public class Hairdresser {
         player.removeTemporaryAttribute(AttributeKey.SELECTED_BEARD_COLOR);
         player.getPacketSender().sendVarp(261, haircut ? hair : beard);
         player.getPacketSender().sendVarp(263, hairC);
-        Config.HAIRCUT.set(player, haircut ? 1 : 2);
         Config.MAKEOVER_INTERFACE.set(player, player.getAppearance().isMale() ? 0 : 1);
+        Config.HAIRCUT.set(player, haircut ? 1 : 2);
         player.openInterface(InterfaceType.MAIN, Interface.HAIRDRESSER);
         player.getPacketSender().sendAccessMask(Interface.HAIRDRESSER, 2, 0, 23, 2);
         player.getPacketSender().sendAccessMask(Interface.HAIRDRESSER, 8, 0, 24, 2);
