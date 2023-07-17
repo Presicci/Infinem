@@ -3,7 +3,6 @@ package io.ruin.cache;
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
-import lombok.val;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +15,6 @@ public class IdentityKit {
 
     public static IdentityKit[] LOADED;
 
-    private static final List<Integer> HAIRSTYLES = new ArrayList<>(25);
-    private static final List<Integer> BEARDSTYLES = new ArrayList<>(16);
-    private static final List<Integer> BODYSTYLES = new ArrayList<>(15);
-    private static final List<Integer> ARMSTYLES = new ArrayList<>(13);
-    private static final List<Integer> LEGSSTYLES = new ArrayList<>(12);
-
     public static void load() {
         IndexFile index = Server.fileStore.get(2);
         LOADED = new IdentityKit[index.getLastFileId(3) + 1];
@@ -31,20 +24,6 @@ public class IdentityKit {
             def.id = id;
             def.decode(new InBuffer(data));
             LOADED[id] = def;
-            if (def.selectable) {
-                int part = def.bodyPartId;
-                if (part == 0) {
-                    HAIRSTYLES.add(id);
-                } else if (part == 1) {
-                    BEARDSTYLES.add(id);
-                } else if (part == 2) {
-                    BODYSTYLES.add(id);
-                } else if (part == 3) {
-                    ARMSTYLES.add(id);
-                } else if (part == 5) {
-                    LEGSSTYLES.add(id);
-                }
-            }
         }
     }
 
@@ -60,7 +39,7 @@ public class IdentityKit {
 
     public int id;
     public int bodyPartId = -1;
-    public boolean selectable = false;
+    public boolean selectable = true;
     int[] models;
     short[] recolorToFind;
     short[] recolorToReplace;
@@ -105,43 +84,5 @@ public class IdentityKit {
             }
         } else if(i >= 60 && i < 70)
             chatheadModels[i - 60] = stream.readUnsignedShort();
-    }
-
-    public static int getHairstyle(final int index) {
-        if (index < 0 || index >= HAIRSTYLES.size()) {
-            return 0;
-        }
-        return HAIRSTYLES.get(index);
-    }
-
-    public static int getBeardstyle(final int index) {
-        if (index < 0 || index >= BEARDSTYLES.size()) {
-            return 0;
-        }
-        return BEARDSTYLES.get(index);
-    }
-
-    public static int getBodystyle(final int index) {
-        System.out.println(BODYSTYLES.size() + " / " + index);
-        if (index < 0 || index >= BODYSTYLES.size()) {
-            return 0;
-        }
-        return BODYSTYLES.get(index);
-    }
-
-    public static int getLegsstyle(final int index) {
-        System.out.println(LEGSSTYLES.size() + " / " + index);
-        if (index < 0 || index >= LEGSSTYLES.size()) {
-            return 0;
-        }
-        return LEGSSTYLES.get(index);
-    }
-
-    public static int getArmstyle(final int index) {
-        System.out.println(ARMSTYLES.size() + " / " + index);
-        if (index < 0 || index >= ARMSTYLES.size()) {
-            return 0;
-        }
-        return ARMSTYLES.get(index);
     }
 }

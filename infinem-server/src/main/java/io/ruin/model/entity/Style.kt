@@ -1,5 +1,6 @@
 package io.ruin.model.entity.player
 
+import com.sun.org.apache.xpath.internal.operations.Bool
 import io.ruin.Server
 import io.ruin.api.filestore.FileStore
 import io.ruin.cache.IdentityKit
@@ -98,6 +99,22 @@ enum class Style(
 
     fun next(player: Player) = change(player, 1)
     fun previous(player: Player) = change(player, -1)
+
+    fun getIdAtIndex(male: Boolean, index: Int): Int {
+        val kits = availableIdentityKits(male)
+        if (kits.isEmpty())
+            return -1;
+        val part = kits[index]
+        return part.id
+    }
+
+    fun getIndexById(male: Boolean, style: Int): Int {
+        val kits = availableIdentityKits(male)
+        if (kits.isEmpty())
+            return -1;
+        val part = kits.find { it.id == style } ?: return -1
+        return part.id
+    }
 
     companion object {
         val bodyParts by lazy {
