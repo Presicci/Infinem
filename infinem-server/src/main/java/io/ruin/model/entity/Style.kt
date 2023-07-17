@@ -113,7 +113,7 @@ enum class Style(
         if (kits.isEmpty())
             return -1;
         val part = kits.find { it.id == style } ?: return -1
-        return part.id
+        return kits.indexOf(part)
     }
 
     companion object {
