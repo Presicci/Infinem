@@ -25,18 +25,8 @@ public interface NPCAction {
         NPCDef def = NPCDef.get(npcId);
         int option = def.getOption(optionName);
         if(option > -1)
-            register(npcId, option, action);
-        if (def.varpbitId != -1 || def.varpId != -1) {
-            for (int id : def.showIds) {
-                def = NPCDef.get(id);
-                if (def == null)
-                    continue;
-                option = def.getOption(optionName);
-                if(option == -1)
-                    continue;
-                register(id, NPCDef.get(id).getOption(optionName), action);
-            }
-        }
+            return false;
+        register(npcId, option, action);
         return true;
     }
 
@@ -94,6 +84,10 @@ public interface NPCAction {
         actionsConsumer.accept(actions);
         npc.actions = Arrays.copyOfRange(actions, 1, actions.length);
     }
+
+    /**
+     * Varpbit/varp recursive registers
+     */
 
     static void registerIncludeVariants(int npcId, String optionName, NPCAction action) {
         NPCDef def = NPCDef.get(npcId);
