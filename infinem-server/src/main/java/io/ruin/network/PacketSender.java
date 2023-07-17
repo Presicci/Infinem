@@ -497,6 +497,8 @@ public class PacketSender {
             }
             return; // ignore the custom varps.
         }
+        if (id < 0)
+            id = 0;
         OutBuffer out;
         if (value < Byte.MIN_VALUE || value > Byte.MAX_VALUE)
             out = new OutBuffer(7).sendFixedPacket(31).addLEShortA(id).addLEInt(value);
