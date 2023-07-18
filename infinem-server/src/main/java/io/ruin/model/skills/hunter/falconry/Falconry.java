@@ -61,14 +61,6 @@ public class Falconry {
                     player.getInventory().remove(FALCONERS_GLOVES_BIRD, Integer.MAX_VALUE);
                     player.getEquipment().remove(FALCONERS_GLOVES_BIRD, Integer.MAX_VALUE);
                 });
-
-        // Stile
-        Tile.getObject(19222, 2371, 3620, 0).skipReachCheck = p -> p.equals(2371, 3619) || p.equals(2371, 3622);
-        Tile.getObject(19222, 2371, 3620, 0).nearPosition = (p, obj) -> {
-            int val = Integer.compare(p.getPosition().distance(Position.of(2371, 3619)), p.getPosition().distance(Position.of(2371, 3622)));
-            return val < 0 ? Position.of(2371, 3619) : Position.of(2371, 3622);
-        };
-        ObjectAction.register(19222,2371,3620, 0, "Climb-over", JumpShortcut.FALCONRY::traverse);
     }
 
     private static boolean rollCatch(Player player, FalconryCatch kebbit) {

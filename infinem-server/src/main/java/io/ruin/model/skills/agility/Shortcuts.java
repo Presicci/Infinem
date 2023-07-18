@@ -10,25 +10,6 @@ import io.ruin.model.skills.agility.shortcut.*;
 
 public class Shortcuts {
     static {
-        // Ardy stile
-        Tile.getObject(993, 2647, 3375, 0).skipReachCheck = p -> p.equals(2649, 3375) || p.equals(2646, 3375);
-        Tile.getObject(993, 2647, 3375, 0).nearPosition = (p, obj) -> {
-            int val = Integer.compare(p.getPosition().distance(Position.of(2649, 3375)), p.getPosition().distance(Position.of(2646, 3375)));
-            return val < 0 ? Position.of(2649, 3375) : Position.of(2646, 3375);
-        };
-        ObjectAction.register(993,2647,3375, 0, "Climb-over", JumpShortcut.ARDY_JUMP1::traverse);
-
-        // Draynor Stile into cabbage field
-        Tile.getObject(7527, 3063, 3282, 0).skipReachCheck = p -> p.equals(3063, 3281) || p.equals(3063, 3284);
-        Tile.getObject(7527, 3063, 3282, 0).nearPosition = (p, obj) -> {
-            int val = Integer.compare(p.getPosition().distance(Position.of(3063, 3281)), p.getPosition().distance(Position.of(3063, 3284)));
-            return val < 0 ? Position.of(3063, 3281) : Position.of(3063, 3284);
-        };
-        ObjectAction.register(7527,3063,3282, 0, "Climb-over", JumpShortcut.CABBAGE_JUMP1::traverse);
-
-        // Falador Agility Shortcut
-        ObjectAction.register(24222,2935,3355, 0, "Climb-over", JumpShortcut.FALADOR_JUMP5::traverse);
-
         // (Grapple) Over the River Lum to Al Kharid (FUCK THAT)
 
         // (Grapple) Scale Falador wall
@@ -155,45 +136,8 @@ public class Shortcuts {
         ObjectAction.register(34396, 1324, 3788, 0, "climb",  ClimbingRocks::climb);
         ObjectAction.register(34396, 1324, 3794, 0, "climb",  ClimbingRocks::climb);
 
-        // SW of Trollheim rocks
-        ObjectAction.register(3748,2834,3628, 0, "Climb", JumpShortcut.TROLL_E_JUMP1::traverse);
-        ObjectAction.register(3748,2833,3628, 0, "Climb", JumpShortcut.TROLL_W_JUMP1::traverse);
-        ObjectAction.register(3748,2821,3635, 0, "Climb", JumpShortcut.TROLL_FAR_W_JUMP1::traverse);
-
-        // Lumbridge sheep pen
-        Tile.getObject(12982, 3197, 3276, 0).skipReachCheck = p -> p.equals(3197, 3278) || p.equals(3197, 3275);
-        Tile.getObject(12982, 3197, 3276, 0).nearPosition = (p, obj) -> {
-            int val = Integer.compare(p.getPosition().distance(Position.of(3197, 3278)), p.getPosition().distance(Position.of(3197, 3275)));
-            return val < 0 ? Position.of(3197, 3278) : Position.of(3197, 3275);
-        };
-        ObjectAction.register(12982,3197,3276, 0, "Climb-over", JumpShortcut.SHEEP_JUMP1::traverse);
-
-        // Burgh de Rott low fence
-        ObjectAction.register(12776,3474,3221, 0, "Jump-over", JumpShortcut.BURGH_JUMP1::traverse);
-
-        // Corsair cove rocks
-        ObjectAction.register(31757,2546,2872, 0, "Climb", JumpShortcut.CORSAIR_JUMP10::traverse);
-
-        // Lumbridge to varrock fence
-        ObjectAction.register(16518,3240,3335, 0, "Jump-over", JumpShortcut.VARROCK_JUMP13::traverse);
-
-        // Trollheim
-        ObjectAction.register(3748,2910,3687, 0, "Climb", JumpShortcut.TROLL_N_JUMP44::traverse);
-        ObjectAction.register(3748,2910,3686, 0, "Climb", JumpShortcut.TROLL_S_JUMP44::traverse);
-
-        // Zeah runecrafting
-        ObjectAction.register(27990,1776,3883, 0, "Jump", JumpShortcut.ZEAH_JUMP49::traverse);
-        ObjectAction.register(34741,1761,3873, 0, "Jump", JumpShortcut.ZEAH_JUMP69::traverse);
-
         // Dwarven mine crevice
         ObjectAction.register(16543, "Squeeze-through", CreviceShortcut.FALADOR::squeeze);
-
-        // Death plateau
-        ObjectAction.register(3748,2856,3612, 0, "Climb", JumpShortcut.DEATH_PLATEAU_JUMP1::traverse);
-        ObjectAction.register(3748,2857,3612, 0, "Climb", JumpShortcut.DEATH_PLATEAU_JUMP2::traverse);
-
-        // Weiss
-        ObjectAction.register(33312,2851,3936, 0, "cross", JumpShortcut.WEISS::traverse);
 
         /**
          *                                              CLIMBING ROCKS
