@@ -41,6 +41,9 @@ public class Shortcuts {
         // Camelot loose railing
         ObjectAction.register(51, 2662, 3500, 0, "squeeze-through", (p, obj) -> LooseRailing.shortcut(p, obj, 1));
 
+        // Ogre pen loose railing
+        ObjectAction.register(19171, 2522, 3375, 0, "squeeze-through", (p, obj) -> LooseRailing.shortcut(p, obj, 1));
+
         // (Grapple) Over the River Lum to Al Kharid (FUCK THAT)
 
         // (Grapple) Scale Falador wall
