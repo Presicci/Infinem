@@ -14,6 +14,8 @@ import lombok.AllArgsConstructor;
 public enum Ladder {
     //UP(1, "climb-up", new Position(), new Position(), true),
     //DOWN(1, "climb-down", new Position(), new Position(), false),
+    PETERDOMUS_BASEMENT_EAST_EXIT(17385, "climb-up", new Position(3405, 9907), new Position(3405, 3506), true),
+
     PORT_SARIM_RAT_UP(10309, "climb-up", new Position(2962, 9651), new Position(3017, 3232, 0), true),
     PORT_SARIM_RAT_DOWN(10321, "climb-down", new Position(3018, 3232), new Position(2962, 9650, 0), false),
 
