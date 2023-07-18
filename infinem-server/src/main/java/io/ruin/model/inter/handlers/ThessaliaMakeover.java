@@ -156,6 +156,11 @@ public class ThessaliaMakeover {
                     player.sendMessage("You must make a selection from " + (topwear ? "three" : "two") + " categories.");
                     return;
                 }
+                if (!player.getInventory().contains(995, PRICE)) {
+                    player.closeInterface(InterfaceType.MAIN);
+                    player.dialogue(new NPCDialogue(534, "You don't have enough money for a makeover."));
+                    return;
+                }
                 boolean male = player.getAppearance().isMale();
                 if (topwear) {
                     player.getAppearance().modifyAppearance((byte) 3, (short) Style.ARMS.getIdAtIndex(male, armStyle));
