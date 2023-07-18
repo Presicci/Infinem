@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public enum LooseRailing {
-    MCGRUBER_WOODS(52, 1, new Position(2662, 3500)),
+    MCGRUBOR_WOODS(51, 1, new Position(2662, 3500)),
     OGRE_PEN(19171, 1, new Position(2522, 3375));
 
     private final int id, levelRequirement;
