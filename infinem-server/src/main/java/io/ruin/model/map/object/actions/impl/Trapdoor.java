@@ -5,8 +5,19 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import lombok.AllArgsConstructor;
 
-public class Trapdoor {
+import java.util.HashSet;
+import java.util.Set;
+
+@AllArgsConstructor
+public enum Trapdoor {
+
+    EDGEVILLE_DUNGEON(1581, new Position(3098, 3468), new Position(3096, 9867)),
+    PATERDOMUS_DUNGEON(1581, new Position(3405, 3507), new Position(3405, 9906));
+
+    private final int id;
+    private final Position objectPos, destinationPos;
 
     public static void open(Player player, GameObject trapdoor, int openedId) {
         World.startEvent(event -> {
@@ -29,12 +40,24 @@ public class Trapdoor {
     }
 
     public static void register() {
+        Set<Integer> ids = new HashSet<>();
+        for (Trapdoor trapdoor : values()) {
+            ids.add(trapdoor.id);
+        }
+        for (int id : ids) {
+            ObjectAction.register(id, "climb-down", (player, obj) -> {
+                for (Trapdoor trapdoor : values()) {
+                    if (obj.getPosition().equals(trapdoor.objectPos)) {
+                        climbDown(player, trapdoor.destinationPos);
+                    }
+                }
+            });
+        }
 
         /*
          * Edgeville dungeon
          */
         ObjectAction.register(1579, "open", (player, obj) -> open(player, obj, 1581));
-        ObjectAction.register(1581, "climb-down", (player, obj) -> climbDown(player, new Position(3096, 9867)));
         ObjectAction.register(1581, "close", Trapdoor::close);
 
         /*
