@@ -26,15 +26,6 @@ public class Shortcuts {
         };
         ObjectAction.register(7527,3063,3282, 0, "Climb-over", JumpShortcut.CABBAGE_JUMP1::traverse);
 
-        // lumberyard stile
-        ObjectAction.register(2618, "climb-over", (p, obj) -> Stile.shortcutN(p, obj, 1));
-
-        // Ardy stiles
-        ObjectAction.register(993, "climb-over", (p, obj) -> Stile.shortcut(p, obj, 1));
-
-        // Lumbridge Stile into sheep farm
-        ObjectAction.register(12892, "climb-over", (p, obj) -> Stile.shortcut(p, obj, 1));
-
         // Falador Agility Shortcut
         ObjectAction.register(24222,2935,3355, 0, "Climb-over", JumpShortcut.FALADOR_JUMP5::traverse);
 
