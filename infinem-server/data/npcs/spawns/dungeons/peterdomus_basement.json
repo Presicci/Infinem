@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Temple guardian",
+    "id": 7620,
+    "x": 3405,
+    "y": 9900,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Drezel",
+    "id": 9636,
+    "x": 3440,
+    "y": 9898,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  }
+]
