@@ -71,6 +71,10 @@ public interface ObjectAction {
         register(Tile.getObject(objectId, position.getX(), position.getY(), position.getZ()), option, action);
     }
 
+    static void register(int objectId, Position position, String option, ObjectAction action) {
+        register(Tile.getObject(objectId, position.getX(), position.getY(), position.getZ()), option, action);
+    }
+
     static void register(int objectId, int x, int y, int z, int option, ObjectAction action) {
         register(Tile.getObject(objectId, x, y, z), option, action);
     }
