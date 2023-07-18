@@ -86,6 +86,18 @@ public class Hairdresser {
         player.getPacketSender().sendString(82, 9, "CONFIRM - (" + (PRICE == 0 ? "Free!" : NumberUtils.formatNumber(PRICE) + " coins") + ")");
     }
 
+    private static void confimDialogue(Player player, int npcId, boolean haircut) {
+        if (haircut) {
+            if (player.getAppearance().isMale()) {
+                player.dialogue(new NPCDialogue(npcId, "Hope you like the new do!"));
+            } else {
+                player.dialogue(new NPCDialogue(npcId, "It really suits you!"));
+            }
+        } else {
+            player.dialogue(new NPCDialogue(npcId, "Mmm... very distinguished!"));
+        }
+    }
+
     static {
         NPCAction.register(1305, "talk-to", Hairdresser::dialogue);
         NPCAction.register(1305, "haircut", ((player, npc) -> {
@@ -137,9 +149,9 @@ public class Hairdresser {
                 player.getAppearance().modifyAppearance((byte) (haircut ? 0 : 1), (short) style);
                 player.getAppearance().modifyColor((byte) 0, (byte) colour);
                 player.closeInterface(InterfaceType.MAIN);
-                player.dialogue(new NPCDialogue(npcId, "Hope you like the new look!"));
                 player.getInventory().remove(995, PRICE);
                 player.getTaskManager().doLookupByUUID(435, 1); // Get a Haircut at the Barber in Falador
+                confimDialogue(player, npcId, haircut);
             };
         });
     }
