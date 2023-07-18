@@ -14,12 +14,12 @@ public class Stile {
         p.startEvent(e -> {
             p.lock(LockType.FULL_DELAY_DAMAGE);
             p.animate(839);
-            if(p.getAbsX() > stile.x)
-                p.getMovement().force(-2, 0, 0, 0, 0, 60, Direction.WEST);
-            else
-                p.getMovement().force(2, 0, 0, 0, 0, 60, Direction.EAST);
+            boolean vertical = stile.direction == 0 || stile.direction == 2;
+            int diffX = vertical ? 0 : p.getAbsX() > stile.x ? -2 : 2;
+            int diffY = vertical ? p.getAbsY() > stile.y ? -2 : 2 : 0;
+            p.getMovement().force(diffX,  diffY, 0, 0, 0, 60, Direction.getDirection(p.getPosition(), stile.getPosition()));
             e.delay(2);
-            p.getStats().addXp(StatType.Agility, 0.5, true);
+            p.getStats().addXp(StatType.Agility, levelReq > 1 ? 1 : 0.5, true);
             p.unlock();
         });
     }
