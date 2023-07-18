@@ -50,20 +50,6 @@ public class AgilityPyramid {
         ObjectAction.register(10855, "enter", AgilityPyramid::doorway);
         ObjectAction.register(10856, "enter", AgilityPyramid::doorway);
         ObjectAction.register(10851, "climb", AgilityPyramid::climbingRocks);
-        ObjectAction.register(11949, 3351, 2827, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_1::traverse);
-        ObjectAction.register(11949, 3349, 2827, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_1::traverse);
-        ObjectAction.register(11949, 3351, 2828, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_2::traverse);
-        ObjectAction.register(11949, 3349, 2828, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_2::traverse);
-        ObjectAction.register(11949, 3351, 2829, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_3::traverse);
-        ObjectAction.register(11949, 3349, 2829, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_3::traverse);
-        ObjectAction.register(11948, 3335, 2829, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_4::traverse);
-        ObjectAction.register(11948, 3337, 2829, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_4::traverse);
-        ObjectAction.register(11948, 3335, 2828, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_5::traverse);
-        ObjectAction.register(11948, 3337, 2828, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_5::traverse);
-        ObjectAction.register(11948, 3335, 2827, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_6::traverse);
-        ObjectAction.register(11948, 3337, 2827, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_6::traverse);
-        ObjectAction.register(11948, 3335, 2826, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_7::traverse);
-        ObjectAction.register(11948, 3337, 2826, 0, "climb", ClimbingSpots.AGILITY_PYRAMID_7::traverse);
     }
 
     protected static boolean isSuccessful(Player player, int neverFailLevel) {
