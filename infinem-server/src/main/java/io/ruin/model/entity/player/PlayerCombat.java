@@ -5,7 +5,6 @@ import io.ruin.Server;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
-import io.ruin.model.World;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.activities.miscpvm.MaxHitDummy;
 import io.ruin.model.activities.pvp.leaderboard.Leaderboard;
@@ -20,12 +19,11 @@ import io.ruin.model.combat.special.ranged.DragonThrownaxe;
 import io.ruin.model.combat.special.ranged.ToxicBlowpipe;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
-import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.inter.Widget;
 import io.ruin.model.inter.handlers.EquipmentStats;
-import io.ruin.model.inter.handlers.IKOD;
+import io.ruin.model.inter.handlers.itemskeptondeath.IKODInterface;
 import io.ruin.model.inter.handlers.TabCombat;
 import io.ruin.model.inter.journal.toggles.TargetOverlay;
 import io.ruin.model.inter.utils.Config;
@@ -1148,7 +1146,7 @@ public class PlayerCombat extends Combat {
                 if (useDeathStorage) {
                     player.getDeathStorage().death(killer);
                 } else {
-                    IKOD.forLostItem(player, killer, item -> {
+                    IKODInterface.forLostItem(player, killer, item -> {
                         ItemDef def = item.getDef();
                         if (pKiller != null && pKiller.hideFreeItems && def.free) {
                             return;

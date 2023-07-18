@@ -5,6 +5,7 @@ import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
+import io.ruin.model.inter.handlers.itemskeptondeath.IKODInterface;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.containers.Equipment;
@@ -26,7 +27,7 @@ public class TabEquipment {
             h.actions[25] = (OptionAction) (player, option) -> itemAction(player, option, Equipment.SLOT_AMMO);
             h.actions[1] = (SimpleAction) EquipmentStats::open;
             //l0l oops h.actions[19] = (SimpleAction) p -> p.sendMessage("This feature will be added with the release of the Grand Exchange!");
-            h.actions[5] = (SimpleAction) IKOD::open;
+            h.actions[5] = (SimpleAction) IKODInterface::open;
             h.actions[7] = (SimpleAction) p -> {
                 if(p.pet == null)
                     p.sendMessage("You don't have a follower.");
