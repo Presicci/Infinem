@@ -21,6 +21,13 @@ public class WaystoneNetwork {
 
     private static final int PORTABLE_WAYSTONE = 26549;
 
+    private static void checkTasks(Player player) {
+        player.getTaskManager().doLookupByUUID(909, 1); // Unlock a Waystone
+        if (player.getUnlockedWaystones().size() == Waystone.values().length) {
+            player.getTaskManager().doLookupByUUID(910, 1); // Unlock All Waystones
+        }
+    }
+
     private static void channelWaystone(Player player, Waystone waystone) {
         if (waystone == Waystone.PRIFDDINAS && !CityEntrance.prifSkillCheck(player)) {
             return;
@@ -35,6 +42,7 @@ public class WaystoneNetwork {
     private static void unlockWaystone(Player player, Waystone waystone) {
         player.animate(832);
         player.getUnlockedWaystones().add(waystone);
+        checkTasks(player);
     }
 
     private static boolean isWaystoneUnlocked(Player player, Waystone waystone) {
