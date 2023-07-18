@@ -73,8 +73,13 @@ public class Hairdresser {
         player.putTemporaryAttribute(AttributeKey.SELECTED_HAIR_COLOR, color);
         player.getPacketSender().sendVarp(261, haircut ? hair : beard);
         player.getPacketSender().sendVarp(263, color);
-        Config.HAIRCUT.set(player, haircut ? 1 : 2);
-        Config.MAKEOVER_INTERFACE.set(player, male ? 0 : 1);
+        if (haircut) {  // Order matters here for some reason, so send differently based on hair/beard
+            Config.HAIRCUT.set(player, 1);
+            Config.MAKEOVER_INTERFACE.set(player, male ? 0 : 1);
+        } else {
+            Config.MAKEOVER_INTERFACE.set(player, male ? 0 : 1);
+            Config.HAIRCUT.set(player, 2);
+        }
         player.openInterface(InterfaceType.MAIN, Interface.HAIRDRESSER);
         player.getPacketSender().sendAccessMask(Interface.HAIRDRESSER, 2, 0, 23, 2);
         player.getPacketSender().sendAccessMask(Interface.HAIRDRESSER, 8, 0, 24, 2);
