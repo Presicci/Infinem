@@ -4,10 +4,25 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
+import lombok.AllArgsConstructor;
 
-public class LooseRailing {
+@AllArgsConstructor
+public enum LooseRailing {
+    MCGRUBER_WOODS(52, 1, new Position(2662, 3500)),
+    OGRE_PEN(19171, 1, new Position(2522, 3375));
+
+    private final int id, levelRequirement;
+    private final Position objectPos;
+
+    static {
+        for (LooseRailing railing : values()) {
+            ObjectAction.register(railing.id, railing.objectPos, "squeeze-through", (player, obj) -> shortcut(player, obj, railing.levelRequirement));
+        }
+    }
 
     public static void shortcut(Player player, GameObject obj, int levelReq) {
         if (!player.getStats().check(StatType.Agility, levelReq, "attempt this"))
