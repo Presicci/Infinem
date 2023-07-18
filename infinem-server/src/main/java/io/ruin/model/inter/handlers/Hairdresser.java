@@ -1,12 +1,11 @@
 package io.ruin.model.inter.handlers;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.model.content.BeardStyle;
-import io.ruin.model.content.HairStyle;
 import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.Style;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -65,16 +64,17 @@ public class Hairdresser {
     }
 
     private static void open(Player player, NPC npc, boolean haircut) {
-        int hair = player.getAppearance().styles[0];
-        int beard = BeardStyle.getSlot(player.getAppearance().styles[1]);
+        boolean male = player.getAppearance().isMale();
+        int hair = Style.HAIR.getIndexById(male, player.getAppearance().styles[0]);
+        int beard = Style.JAW.getIndexById(male, player.getAppearance().styles[1]);
         int color = player.getAppearance().colors[0];
         player.putTemporaryAttribute(AttributeKey.SELECTED_HAIR_STYLE, hair);
         player.putTemporaryAttribute(AttributeKey.SELECTED_BEARD_STYLE, beard);
         player.putTemporaryAttribute(AttributeKey.SELECTED_HAIR_COLOR, color);
         player.getPacketSender().sendVarp(261, haircut ? hair : beard);
         player.getPacketSender().sendVarp(263, color);
-        Config.MAKEOVER_INTERFACE.set(player, player.getAppearance().isMale() ? 0 : 1);
         Config.HAIRCUT.set(player, haircut ? 1 : 2);
+        Config.MAKEOVER_INTERFACE.set(player, male ? 0 : 1);
         player.openInterface(InterfaceType.MAIN, Interface.HAIRDRESSER);
         player.getPacketSender().sendAccessMask(Interface.HAIRDRESSER, 2, 0, 23, 2);
         player.getPacketSender().sendAccessMask(Interface.HAIRDRESSER, 8, 0, 24, 2);
@@ -112,11 +112,12 @@ public class Hairdresser {
             };
             h.actions[9] = (SimpleAction)  (player) -> {
                 boolean haircut = Config.HAIRCUT.get(player) == 1;
-                if (!haircut && !player.getAppearance().isMale()) {
+                boolean male = player.getAppearance().isMale();
+                if (!haircut && !male) {
                     haircut = true;
                 }
                 val slot = player.getTemporaryAttributeIntOrZero(haircut ? AttributeKey.SELECTED_HAIR_STYLE : AttributeKey.SELECTED_BEARD_STYLE);
-                val style = haircut ? HairStyle.getStyle(slot, player.getAppearance().isMale()) : BeardStyle.getStyle(slot);
+                val style = haircut ? Style.HAIR.getIdAtIndex(male, slot) : Style.JAW.getIdAtIndex(true, slot);
                 val colour = player.getTemporaryAttributeIntOrZero(AttributeKey.SELECTED_HAIR_COLOR);
                 val npcId = 1305;
                 if (style == -1 || slot == -1 || colour == -1) {
