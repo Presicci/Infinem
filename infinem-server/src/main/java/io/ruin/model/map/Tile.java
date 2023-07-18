@@ -160,6 +160,10 @@ public class Tile {
         checkActive();
     }
 
+    public static GameObject getObject(int id, Position position) {
+        return getObject(id, position.getX(), position.getY(), position.getZ(), -1, -1);
+    }
+
     public static GameObject getObject(int id, int x, int y, int z) {
         return getObject(id, x, y, z, -1, -1);
     }
