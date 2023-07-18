@@ -1,16 +1,12 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
-import io.ruin.data.impl.teleports;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.dialogue.NPCDialogue;
-import io.ruin.model.inter.utils.Config;
+import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.skills.agility.shortcut.Stile;
-import io.ruin.model.skills.slayer.SlayerCreature;
 import io.ruin.model.stat.StatType;
 
 public class FremennikSlayerDungeon {
@@ -44,7 +40,18 @@ public class FremennikSlayerDungeon {
         ObjectAction.register(16539, 2734, 10008, 0, "squeeze-through", (player, obj) -> squeezeThroughCrack(player, obj, new Position(2730, 10008, 0), 62)); // crack
         ObjectAction.register(16539, 2731, 10008, 0, "squeeze-through", (player, obj) -> squeezeThroughCrack(player, obj, new Position(2735, 10008, 0), 62)); // crack
 
-        ObjectAction.register(29993, 2703, 9990, 0, "climb", (player, obj) -> Stile.shortcutN(player, obj, 1));
+        ObjectAction.register(29993, 2703, 9990, 0, "climb", (player, obj) -> {
+            player.lock();
+            player.startEvent(e -> {
+                if (player.getAbsY() > obj.getPosition().getY()) {
+                    player.step(0, -2, StepType.FORCE_WALK);
+                } else {
+                    player.step(0, 2, StepType.FORCE_WALK);
+                }
+                e.delay(2);
+                player.unlock();
+            });
+        });
 
         ObjectAction.register(2123,2797, 3614,0, "enter", (player, obj) -> Traveling.fadeTravel(player, new Position(2808, 10002, 0)));
         ObjectAction.register(2141,2809, 10001, 0, "enter", (player, obj) -> Traveling.fadeTravel(player, new Position(2796, 3615, 0)));
