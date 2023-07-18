@@ -8,33 +8,7 @@ import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
 
-public enum Stile {
-    LUMBERYARD(2618, 1),
-    LUMBRIDGE(12892, 1),
-    ARDOUGNE(993, 1);
-
-    private final int id, levelRequirement;
-    private final Position objectPos;
-
-    Stile(int id, int levelRequirement) {
-        this(id, levelRequirement, null);
-    }
-
-    Stile(int id, int levelRequirement, Position objectPos) {
-        this.id = id;
-        this.levelRequirement = levelRequirement;
-        this.objectPos = objectPos;
-    }
-
-    static {
-        for (Stile stile : values()) {
-            if (stile.objectPos == null) {
-                ObjectAction.register(stile.id, "climb-over", (player, obj) -> shortcut(player, obj, stile.levelRequirement));
-            } else {
-                ObjectAction.register(stile.id, stile.objectPos, "climb-over", (player, obj) -> shortcut(player, obj, stile.levelRequirement));
-            }
-        }
-    }
+public class Stile {
 
     public static void shortcut(Player p, GameObject stile, int levelReq) {
         if (!p.getStats().check(StatType.Agility, levelReq, "attempt this"))
