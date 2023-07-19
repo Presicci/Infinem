@@ -1,8 +1,6 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
-import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
-import io.ruin.model.activities.pvminstances.InstanceDialogue;
 import io.ruin.model.activities.pvminstances.InstanceType;
 import io.ruin.model.activities.pvminstances.PVMInstance;
 import io.ruin.model.entity.player.Player;
@@ -12,9 +10,7 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.dialogue.ItemDialogue;
-import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
-import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Direction;
@@ -24,9 +20,7 @@ import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.Ladder;
-import io.ruin.model.skills.agility.shortcut.ClimbingSpots;
-
-import static io.ruin.cache.ItemID.COINS_995;
+import io.ruin.model.skills.agility.shortcut.ClimbingSpot;
 
 public class Edgeville {
 
@@ -170,7 +164,7 @@ public class Edgeville {
         });
 
         ObjectAction.register(29491, "Climb", (player, obj) -> {
-            ClimbingSpots.traverseStaticBidirectional(player, obj, Direction.SOUTH, 3);
+            ClimbingSpot.traverseStaticBidirectional(player, obj, Direction.SOUTH, 3);
         });
     }
 }

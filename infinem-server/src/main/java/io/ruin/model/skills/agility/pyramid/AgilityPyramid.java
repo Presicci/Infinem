@@ -17,7 +17,6 @@ import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.skills.agility.shortcut.ClimbingSpots;
 import io.ruin.model.stat.StatType;
 import lombok.val;
 

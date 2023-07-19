@@ -19,7 +19,7 @@ import java.util.List;
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 5/20/2021
  */
-public enum ClimbingSpots {
+public enum ClimbingSpot {
 
     CAIRN_S_CLIMB1(new RegisterObject[] {
             new RegisterObject(2231, new Position(2794, 2978)),
@@ -276,7 +276,7 @@ public enum ClimbingSpots {
 
     ;
 
-    ClimbingSpots(RegisterObject[] objects, Direction faceDir, int levelReq, int xp, Position startPosition, Position endPosition, Position... steps){
+    ClimbingSpot(RegisterObject[] objects, Direction faceDir, int levelReq, int xp, Position startPosition, Position endPosition, Position... steps){
         this.objects = objects;
         this.faceDir = faceDir;
         this.xp = xp;
@@ -367,7 +367,7 @@ public enum ClimbingSpots {
     }
 
     static {
-        for (ClimbingSpots spot : values()) {
+        for (ClimbingSpot spot : values()) {
             for (RegisterObject object : spot.objects) {
                 ObjectAction.register(object.getObjectId(), object.getPosition(), 1, spot::traverse);
             }
