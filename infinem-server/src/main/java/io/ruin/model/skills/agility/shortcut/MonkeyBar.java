@@ -60,7 +60,7 @@ public enum MonkeyBar {
     static {
         for (MonkeyBar bar : values()) {
             for (RegisterObject object : bar.objects) {
-                ObjectAction.register(object.getObjectId(), object.getPosition(), "swing across", bar::traverse);
+                object.register("swing across", bar::traverse);
             }
         }
     }
