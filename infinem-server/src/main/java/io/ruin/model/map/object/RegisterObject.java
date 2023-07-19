@@ -32,4 +32,11 @@ public class RegisterObject {
         else
             ObjectAction.register(getObjectId(), getPosition(), option, objectAction);
     }
+
+    public void register(int option, ObjectAction objectAction) {
+        if (getPosition().getY() == 0 && getPosition().getX() == 0)
+            ObjectAction.register(getObjectId(), option, objectAction);
+        else
+            ObjectAction.register(getObjectId(), getPosition(), option, objectAction);
+    }
 }
