@@ -16,7 +16,7 @@ import lombok.AllArgsConstructor;
  * Created on 5/20/2021
  */
 @AllArgsConstructor
-public enum MonkeyBars {
+public enum MonkeyBar {
 
     YANILLE_DUNGEON_BARS_1(new RegisterObject[]{
             new RegisterObject(23567, 2597, 9494),
@@ -58,7 +58,7 @@ public enum MonkeyBars {
     }
 
     static {
-        for (MonkeyBars bar : values()) {
+        for (MonkeyBar bar : values()) {
             for (RegisterObject object : bar.objects) {
                 ObjectAction.register(object.getObjectId(), object.getPosition(), "swing across", bar::traverse);
             }
