@@ -39,10 +39,10 @@ public enum LinearClimbingSpot {
             player.lock(LockType.FULL_DELAY_DAMAGE);
             player.animate(4435);
             if (object.getPosition().equals(bottomPos))
-                player.getMovement().force(0, distance, 0, 0, 0, 90, Direction.NORTH);
+                player.getMovement().force(0, distance, 0, 0, 0, 180, Direction.NORTH);
             else
-                player.getMovement().force(0, -distance, 0, 0, 0, 90, Direction.NORTH);
-            e.delay(distance);
+                player.getMovement().force(0, -distance, 0, 0, 0, 180, Direction.NORTH);
+            e.delay(distance - 2);
             player.animate(-1);
             player.getStats().addXp(StatType.Agility, experience, true);
             player.unlock();

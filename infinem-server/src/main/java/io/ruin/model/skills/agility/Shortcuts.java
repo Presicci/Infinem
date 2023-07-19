@@ -129,13 +129,6 @@ public class Shortcuts {
         // Elven Overpass (Arandar) advanced cliffside scramble
         // Kalphite Lair wall shortcut
         // Brimhaven Dungeon vine to baby green dragons
-
-
-        ObjectAction.register(34397, 1324, 3778, 0, "climb", ClimbingRocks::climb);
-        ObjectAction.register(34397, 1324, 3784, 0, "climb", ClimbingRocks::climb);
-        ObjectAction.register(34396, 1324, 3788, 0, "climb",  ClimbingRocks::climb);
-        ObjectAction.register(34396, 1324, 3794, 0, "climb",  ClimbingRocks::climb);
-
         // Dwarven mine crevice
         ObjectAction.register(16543, "Squeeze-through", CreviceShortcut.FALADOR::squeeze);
 
