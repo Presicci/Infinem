@@ -14,12 +14,10 @@ public class RegisterObject {
     }
 
     public RegisterObject(int objectId, int x, int y) {
-        this.objectId = objectId;
-        this.position = new Position(x, y, 0);
+        this(objectId, new Position(x, y, 0));
     }
 
     public RegisterObject(int objectId, int x, int y, int z) {
-        this.objectId = objectId;
-        this.position = new Position(x, y, z);
+        this(objectId, new Position(x, y, z));
     }
 }
