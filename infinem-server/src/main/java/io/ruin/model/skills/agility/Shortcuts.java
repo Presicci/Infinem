@@ -272,16 +272,6 @@ public class Shortcuts {
          */
         ObjectAction.register(33192, 2857, 3955, 0, "pass", CrawlUnder.WEISS_DOCK_TREE::traverse);
 
-        /**
-         * Pipes
-         */
-        ObjectAction.register(18416, 2331, 5096, 0, "climb-through", PipeShortcut.WITCHAVEN_DUNGEON_PIPE::traverse);
-        Tile.getObject(23140, 2576, 9506, 0).walkTo = new Position(2578, 9506, 0);
-        ObjectAction.register(23140, 2576, 9506, 0, "Squeeze-through", PipeShortcut.YANILLE_PIPE::traverse);
-
-        Tile.getObject(23140, 2573, 9506, 0).walkTo =  new Position(2572, 9506, 0);
-        ObjectAction.register(23140, 2573, 9506, 0, "Squeeze-through", PipeShortcut.YANILLE_PIPE::traverse);
-
         Tile.getObject(31852, 2446, 3158, 0).walkTo =  new Position(2449, 3155, 0);
         ObjectAction.register(31852, 2446, 3158, 0, 1, (p, obj) -> {
             if (Config.OBSERVATORY_ROPE.get(p) == 1) {

@@ -5,9 +5,11 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.map.object.RegisterObject;
+import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
-import javafx.geometry.Pos;
 
 import java.util.Collections;
 import java.util.List;
@@ -18,18 +20,29 @@ import java.util.List;
  */
 public enum PipeShortcut {
 
-    YANILLE_PIPE(49, 1, Position.of(2578, 9506), Position.of(2572, 9506), Position.of(2575, 9506)),
-    WITCHAVEN_DUNGEON_PIPE(30, 1, Position.of(2330, 5096), Position.of(2333, 5096));
+    YANILLE_PIPE(new RegisterObject[]{ 
+            new RegisterObject(23140, 2573, 9506), 
+            new RegisterObject(23140, 2576, 9506) },
+            49, 1, "squeeze-through",
+            new Position(2578, 9506), new Position(2572, 9506), new Position(2575, 9506)),
+    WITCHAVEN_DUNGEON_PIPE(new RegisterObject[]{
+            new RegisterObject(18416, 2331, 5096) },
+            30, 1, "climb-throu",
+            new Position(2330, 5096), new Position(2333, 5096));
 
+    private final RegisterObject[] objects;
     private final int level;
     private final double exp;
+    private final String option;
     private final Position startPosition;
     private final Position endPosition;
     private final Position[] positions;
 
-    PipeShortcut(int level, double exp, Position startPosition, Position endPosition, Position... positions) {
+    PipeShortcut(RegisterObject[] objects, int level, double exp, String option, Position startPosition, Position endPosition, Position... positions) {
+        this.objects = objects;
         this.level = level;
         this.exp = exp;
+        this.option = option;
         this.startPosition = startPosition;
         this.endPosition = endPosition;
         this.positions = positions;
@@ -73,5 +86,17 @@ public enum PipeShortcut {
             player.unlock();
 
         });
+    }
+
+    static {
+        for (PipeShortcut pipe : values()) {
+            for (RegisterObject object : pipe.objects) {
+                ObjectAction.register(object.getObjectId(), object.getPosition(), pipe.option, pipe::traverse);
+            }
+        }
+
+        // Yanille Pipe
+        Tile.getObject(23140, 2576, 9506, 0).walkTo = new Position(2578, 9506, 0);
+        Tile.getObject(23140, 2573, 9506, 0).walkTo =  new Position(2572, 9506, 0);
     }
 }
