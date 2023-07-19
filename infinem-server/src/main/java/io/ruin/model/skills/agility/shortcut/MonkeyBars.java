@@ -6,6 +6,8 @@ import io.ruin.model.entity.shared.Renders;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.map.object.RegisterObject;
+import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 
@@ -16,13 +18,18 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum MonkeyBars {
 
-    YANILLE_DUNGEON_BARS_1(57, 1, Position.of(2598, 9494), Position.of(2598, 9489)),
-    YANILLE_DUNGEON_BARS_2(57, 1, Position.of(2599, 9489), Position.of(2599, 9494));
+    YANILLE_DUNGEON_BARS_1(new RegisterObject[]{
+            new RegisterObject(23567, 2597, 9494),
+            new RegisterObject(23567, 2598, 9494) },
+            57, 1, Position.of(2598, 9494), Position.of(2598, 9489)),
+    YANILLE_DUNGEON_BARS_2(new RegisterObject[]{
+            new RegisterObject(23567, 2597, 9489),
+            new RegisterObject(23567, 2598, 9489) },57, 1, Position.of(2599, 9489), Position.of(2599, 9494));
 
-    private int level;
-    private double exp;
-    private Position from;
-    private Position to;
+    private final RegisterObject[] objects;
+    private final int level;
+    private final double exp;
+    private final Position from, to;
 
     public void traverse(Player player, GameObject object) {
         if (!player.getStats().check(StatType.Agility, level, "Swing across"))
@@ -50,4 +57,11 @@ public enum MonkeyBars {
         });
     }
 
+    static {
+        for (MonkeyBars bar : values()) {
+            for (RegisterObject object : bar.objects) {
+                ObjectAction.register(object.getObjectId(), object.getPosition(), "swing across", bar::traverse);
+            }
+        }
+    }
 }

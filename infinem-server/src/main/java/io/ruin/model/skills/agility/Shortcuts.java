@@ -273,14 +273,6 @@ public class Shortcuts {
         ObjectAction.register(33192, 2857, 3955, 0, "pass", CrawlUnder.WEISS_DOCK_TREE::traverse);
 
         /**
-         * Monkeybars
-         */
-        ObjectAction.register(23567, 2597, 9494, 0, "Swing across", MonkeyBars.YANILLE_DUNGEON_BARS_1::traverse);
-        ObjectAction.register(23567, 2598, 9494, 0, "Swing across", MonkeyBars.YANILLE_DUNGEON_BARS_1::traverse);
-        ObjectAction.register(23567, 2597, 9489, 0, "Swing across", MonkeyBars.YANILLE_DUNGEON_BARS_2::traverse);
-        ObjectAction.register(23567, 2598, 9489, 0, "Swing across", MonkeyBars.YANILLE_DUNGEON_BARS_2::traverse);
-
-        /**
          * Pipes
          */
         ObjectAction.register(18416, 2331, 5096, 0, "climb-through", PipeShortcut.WITCHAVEN_DUNGEON_PIPE::traverse);
