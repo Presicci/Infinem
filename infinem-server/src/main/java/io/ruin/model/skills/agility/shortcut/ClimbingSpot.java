@@ -369,7 +369,7 @@ public enum ClimbingSpot {
     static {
         for (ClimbingSpot spot : values()) {
             for (RegisterObject object : spot.objects) {
-                ObjectAction.register(object.getObjectId(), object.getPosition(), 1, spot::traverse);
+                object.register(1, spot::traverse);
             }
         }
     }
