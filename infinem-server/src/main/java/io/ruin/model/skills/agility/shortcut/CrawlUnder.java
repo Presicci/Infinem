@@ -7,6 +7,7 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 
@@ -17,8 +18,10 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum CrawlUnder {
 
-    WEISS_DOCK_TREE(68, 1, Position.of(2857, 3957), Position.of(2857, 3954));
+    WEISS_DOCK_TREE(33192, new Position(2857, 3955), 68, 1, Position.of(2857, 3957), Position.of(2857, 3954));
 
+    private final int objectId;
+    private final Position objectPos;
     private final int level;
     private final double exp;
     private final Position to, from;
@@ -36,5 +39,11 @@ public enum CrawlUnder {
             player.getStats().addXp(StatType.Agility, exp, true);
             player.unlock();
         });
+    }
+
+    static {
+        for (CrawlUnder crawl : values()) {
+            ObjectAction.register(crawl.objectId, crawl.objectPos, "pass", crawl::traverse);
+        }
     }
 }

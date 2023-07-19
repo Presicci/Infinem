@@ -267,11 +267,6 @@ public class Shortcuts {
                 BalancingLedge.WEISS_DOCK_1.traverse(player, obj);
         });
 
-        /**
-         * Crawl under
-         */
-        ObjectAction.register(33192, 2857, 3955, 0, "pass", CrawlUnder.WEISS_DOCK_TREE::traverse);
-
         Tile.getObject(31852, 2446, 3158, 0).walkTo =  new Position(2449, 3155, 0);
         ObjectAction.register(31852, 2446, 3158, 0, 1, (p, obj) -> {
             if (Config.OBSERVATORY_ROPE.get(p) == 1) {
