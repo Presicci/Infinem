@@ -5,12 +5,14 @@ import lombok.Getter;
 
 public class RegisterObject {
 
-    @Getter private int objectId;
-    @Getter private Position position;
+    @Getter private final int objectId;
+    @Getter private final Position position;
 
     public RegisterObject(int objectId, Position position) {
         this.objectId = objectId;
         this.position = position;
+        if (position.getX() == 0 || position.getY() == 0)
+            System.err.println("ObjectID " + objectId + " being registered with missing coords: " + position);
     }
 
     public RegisterObject(int objectId, int x, int y) {
