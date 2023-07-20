@@ -1,4 +1,4 @@
-package io.ruin.model.content;
+package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.Color;
