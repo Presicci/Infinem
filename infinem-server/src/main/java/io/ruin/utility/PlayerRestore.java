@@ -33,7 +33,7 @@ public class PlayerRestore {
     private static final String CLAIMED_RESTORES = "claimed_restores.txt";
 
     public static void reconstructPlayer(Player player) {
-        if (player.getUserId() <= 1660 && !player.restored) {
+        /*if (player.getUserId() <= 1660 && !player.restored) {
             log.info("Reconstructing player data for {}, {}", player.getName(), player.getUserId());
             player.inTutorial = false;
             player.newPlayer = false;
@@ -42,9 +42,9 @@ public class PlayerRestore {
             //reconstructItemContainers(player); //forget about items
             reconstructStats(player);
             giveRestoreStarter(player);
-            player.beforeFuckup = true;
-        }
-        player.restored = true;
+            //player.beforeFuckup = true;
+        }*/
+        //player.restored = true;
     }
 
     private static boolean reconstructStats(Player player) {

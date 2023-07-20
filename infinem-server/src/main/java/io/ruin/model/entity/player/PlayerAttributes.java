@@ -76,8 +76,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public XpMode xpMode = XpMode.MEDIUM;
 
-    @Expose public boolean restored;
-    @Expose public boolean beforeFuckup;
     @Expose public int wildernessSlayerPoints;
 
     @Expose public int theatreOfBloodCompleted;
