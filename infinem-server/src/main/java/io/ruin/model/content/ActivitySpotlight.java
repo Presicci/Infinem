@@ -9,7 +9,7 @@ import io.ruin.model.World;
  * Created on 6/25/2022
  */
 public enum ActivitySpotlight {
-
+    // Double key chance
     DOUBLE_MARKS_OF_GRACE,
     DOUBLE_PEST_CONTROL_POINTS,
     DOUBLE_BIRD_NEST_CHANCE,
