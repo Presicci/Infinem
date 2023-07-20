@@ -1,6 +1,6 @@
 package io.ruin.model.content.books.impl;
 
-import io.ruin.model.content.Book;
+import io.ruin.model.content.books.Book;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.ItemAction;
 

@@ -1,7 +1,7 @@
 package io.ruin.model.content.books.impl;
 
-import io.ruin.model.content.Book;
-import io.ruin.model.content.ChapteredBook;
+import io.ruin.model.content.books.Book;
+import io.ruin.model.content.books.ChapteredBook;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.object.actions.ObjectAction;
