@@ -1,4 +1,4 @@
-package io.ruin.model.content.gnomegliders;
+package io.ruin.model.content.transportation.gnomegliders;
 
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;

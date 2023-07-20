@@ -1,4 +1,4 @@
-package io.ruin.model.content.waystones;
+package io.ruin.model.content.transportation.waystones;
 
 import io.ruin.api.utils.StringUtils;
 import io.ruin.model.map.Position;

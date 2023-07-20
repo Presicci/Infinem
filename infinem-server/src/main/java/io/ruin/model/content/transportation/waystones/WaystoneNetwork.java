@@ -1,4 +1,4 @@
-package io.ruin.model.content.waystones;
+package io.ruin.model.content.transportation.waystones;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;

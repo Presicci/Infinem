@@ -21,7 +21,7 @@ import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.activities.wilderness.WildernessObelisk;
 import io.ruin.model.combat.WildernessRating;
 import io.ruin.model.content.UpgradeMachine;
-import io.ruin.model.content.waystones.Waystone;
+import io.ruin.model.content.transportation.waystones.Waystone;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.npc.NPC;

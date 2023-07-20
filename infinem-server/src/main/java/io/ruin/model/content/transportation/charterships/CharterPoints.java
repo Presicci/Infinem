@@ -1,4 +1,4 @@
-package io.ruin.model.content.charterships;
+package io.ruin.model.content.transportation.charterships;
 
 import io.ruin.model.map.Position;
 import lombok.AllArgsConstructor;

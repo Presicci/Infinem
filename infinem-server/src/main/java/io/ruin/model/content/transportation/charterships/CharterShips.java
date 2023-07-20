@@ -1,6 +1,5 @@
-package io.ruin.model.content.charterships;
+package io.ruin.model.content.transportation.charterships;
 
-import io.ruin.model.content.gnomegliders.GliderSpots;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;

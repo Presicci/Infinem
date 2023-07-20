@@ -1,4 +1,4 @@
-package io.ruin.model.content;
+package io.ruin.model.content.transportation;
 
 import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.npc.NPCAction;
