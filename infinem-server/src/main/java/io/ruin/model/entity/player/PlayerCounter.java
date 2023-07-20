@@ -394,7 +394,6 @@ public enum PlayerCounter {
 
     private final Achievement[] achievements;
 
-    @SuppressWarnings("ConfusingArgumentToVarargsMethod")
     PlayerCounter(BiConsumer<Player, Integer> setAction, Function<Player, Integer> getAction) {
         this(setAction, getAction, (Achievement[]) null);
     }
