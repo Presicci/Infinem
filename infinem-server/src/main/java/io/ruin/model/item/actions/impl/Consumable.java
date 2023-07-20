@@ -5,6 +5,7 @@ import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
@@ -1008,7 +1009,7 @@ public class Consumable {
             player.sendMessage("You can only drink this potion while dreaming.");
             return false;
         }
-        if(newId == -1 || (newId == 229 && player.breakVials))
+        if(newId == -1 || (newId == 229 && player.hasAttribute(AttributeKey.BREAK_VIALS)))
             item.remove();
         else if (potion == Potion.GUTHIX_REST)
             item.setId(newId == 229 ? 1980 : newId);
