@@ -6,6 +6,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.RegisterObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -20,6 +21,13 @@ import java.util.List;
  * Created on 5/20/2021
  */
 public enum ClimbingSpot {
+
+    PATERDOMUS_CLIMB65(new RegisterObject[]{
+            new RegisterObject(16998, 3425, 3476),
+            new RegisterObject(16999, 3426, 3477) },
+            Direction.WEST, 65, 1,
+            new Position(3427, 3477, 0), new Position(3424, 3476, 0),
+            new Position(3426, 3477, 0), new Position(3425, 3476, 0)),
 
     CAIRN_S_CLIMB1(new RegisterObject[] {
             new RegisterObject(2231, new Position(2794, 2978)),
@@ -372,5 +380,7 @@ public enum ClimbingSpot {
                 object.register(1, spot::traverse);
             }
         }
+        // Paterdomus
+        Tile.getObject(16999, 3426, 3477, 0).nearPosition = (player, object) -> new Position(3427, 3477, 0);
     }
 }
