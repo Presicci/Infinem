@@ -7,7 +7,7 @@ import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.journal.toggles.TargetOverlay;
-import io.ruin.model.object.owned.OwnedObject;
+import io.ruin.model.map.object.owned.OwnedObject;
 
 public class CoreWorker extends World {
 

@@ -1,4 +1,4 @@
-package io.ruin.model.object.owned;
+package io.ruin.model.map.object.owned;
 
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;

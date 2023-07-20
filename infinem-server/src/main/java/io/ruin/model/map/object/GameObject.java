@@ -13,7 +13,7 @@ import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.object.owned.OwnedObject;
+import io.ruin.model.map.object.owned.OwnedObject;
 import io.ruin.model.skills.hunter.traps.Trap;
 
 import java.util.ArrayList;

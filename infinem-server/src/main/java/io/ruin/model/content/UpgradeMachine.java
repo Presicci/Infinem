@@ -23,7 +23,7 @@ import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.object.owned.impl.DwarfCannon;
+import io.ruin.model.map.object.owned.impl.DwarfCannon;
 import lombok.Getter;
 import lombok.Setter;
 
