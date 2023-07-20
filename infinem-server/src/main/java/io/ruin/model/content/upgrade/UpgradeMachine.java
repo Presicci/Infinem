@@ -1,4 +1,4 @@
-package io.ruin.model.content;
+package io.ruin.model.content.upgrade;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.StringUtils;

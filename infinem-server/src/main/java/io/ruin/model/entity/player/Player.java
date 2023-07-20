@@ -17,7 +17,7 @@ import io.ruin.model.activities.cluescrolls.puzzles.PuzzleBox;
 import io.ruin.model.activities.duelarena.Duel;
 import io.ruin.model.activities.pyramidplunder.PyramidPlunder;
 import io.ruin.model.activities.wilderness.BountyHunter;
-import io.ruin.model.content.UpgradeMachine;
+import io.ruin.model.content.upgrade.UpgradeMachine;
 import io.ruin.model.content.bestiary.Bestiary;
 import io.ruin.model.content.tasksystem.relics.RelicManager;
 import io.ruin.model.content.tasksystem.tasks.TaskManager;
