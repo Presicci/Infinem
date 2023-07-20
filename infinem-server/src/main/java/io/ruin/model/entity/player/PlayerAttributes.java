@@ -74,8 +74,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public boolean breakVials;
     @Expose public boolean discardBuckets;
 
-    @Expose public int combatXpRate = 100;
-
     @Expose public XpMode xpMode = XpMode.MEDIUM;
 
     @Expose public boolean restored;
