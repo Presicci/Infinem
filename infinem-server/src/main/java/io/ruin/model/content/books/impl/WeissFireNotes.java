@@ -1,4 +1,4 @@
-package io.ruin.model.content.books;
+package io.ruin.model.content.books.impl;
 
 import io.ruin.model.content.Book;
 import io.ruin.model.entity.player.Player;

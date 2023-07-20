@@ -1,11 +1,10 @@
-package io.ruin.model.content.books;
+package io.ruin.model.content.books.impl;
 
 import io.ruin.model.content.Book;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
-import io.ruin.model.map.object.actions.ObjectAction;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
