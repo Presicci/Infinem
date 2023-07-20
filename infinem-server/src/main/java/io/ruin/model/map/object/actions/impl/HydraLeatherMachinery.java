@@ -1,4 +1,4 @@
-package io.ruin.model.content;
+package io.ruin.model.map.object.actions.impl;
 
 
 import io.ruin.model.entity.player.Player;
@@ -10,14 +10,13 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.map.object.actions.impl.Vine;
 
 /*
  * @project Kronos
  * @author Patrity - https://github.com/Patrity
  * Created on - 7/8/2020
  */
-public class HydraLeather {
+public class HydraLeatherMachinery {
 
     private static void inspectMachine(Player player, GameObject machine) {
         player.dialogue(
@@ -56,8 +55,8 @@ public class HydraLeather {
     }
 
     static {
-        ObjectAction.register(32161, "inspect", HydraLeather::inspectMachine);
-        ItemObjectAction.register(22983, 32161, HydraLeather::craftGloves);
-        ItemObjectAction.register(22981, 32161, HydraLeather::revertGloves);
+        ObjectAction.register(32161, "inspect", HydraLeatherMachinery::inspectMachine);
+        ItemObjectAction.register(22983, 32161, HydraLeatherMachinery::craftGloves);
+        ItemObjectAction.register(22981, 32161, HydraLeatherMachinery::revertGloves);
     }
 }
