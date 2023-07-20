@@ -1,6 +1,5 @@
 package io.ruin.model.entity.player;
 
-import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
 import lombok.AllArgsConstructor;

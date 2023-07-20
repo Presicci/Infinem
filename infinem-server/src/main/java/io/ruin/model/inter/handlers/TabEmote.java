@@ -2,7 +2,7 @@ package io.ruin.model.inter.handlers;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.AnimDef;
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.Interface;

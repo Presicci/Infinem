@@ -23,7 +23,7 @@ import io.ruin.model.combat.WildernessRating;
 import io.ruin.model.content.UpgradeMachine;
 import io.ruin.model.content.waystones.Waystone;
 import io.ruin.model.entity.Entity;
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.handlers.TeleportInterface;

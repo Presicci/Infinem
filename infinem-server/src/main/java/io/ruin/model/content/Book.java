@@ -1,10 +1,8 @@
 package io.ruin.model.content;
 
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
-import io.ruin.model.inter.actions.SimpleAction;
 import lombok.val;
 
 import java.util.StringTokenizer;

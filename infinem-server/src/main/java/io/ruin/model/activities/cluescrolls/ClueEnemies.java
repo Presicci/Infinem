@@ -1,7 +1,7 @@
 package io.ruin.model.activities.cluescrolls;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DeathListener;

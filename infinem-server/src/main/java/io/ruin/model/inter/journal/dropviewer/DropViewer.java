@@ -2,7 +2,7 @@ package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.cache.Color;
 import io.ruin.cache.NPCDef;
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;

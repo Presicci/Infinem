@@ -1,15 +1,13 @@
 package io.ruin.model.skills.construction.actions;
 
 
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.player.PlayerGroup;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
-import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
@@ -23,7 +21,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class CostumeRoom {
 

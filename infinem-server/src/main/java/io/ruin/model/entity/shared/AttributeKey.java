@@ -1,4 +1,4 @@
-package io.ruin.model.entity.attributes;
+package io.ruin.model.entity.shared;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry

@@ -7,7 +7,7 @@ import io.ruin.model.activities.miscpvm.BasicCombat;
 import io.ruin.model.activities.miscpvm.basic.BasicArcherCombat;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.AttackStyle;
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.UpdateMask;
 import io.ruin.model.entity.shared.listeners.DeathListener;
@@ -23,8 +23,6 @@ import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.shop.Shop;
 import io.ruin.model.skills.slayer.TaskOnlyNPC;
 import io.ruin.model.stat.StatType;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.*;
 import java.util.function.Predicate;

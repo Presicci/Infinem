@@ -1,7 +1,7 @@
 package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.model.World;
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.object.actions.ObjectAction;

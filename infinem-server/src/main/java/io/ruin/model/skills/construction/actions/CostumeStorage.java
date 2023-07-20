@@ -1,6 +1,6 @@
 package io.ruin.model.skills.construction.actions;
 
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;

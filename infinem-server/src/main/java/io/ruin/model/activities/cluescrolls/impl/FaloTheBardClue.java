@@ -2,7 +2,7 @@ package io.ruin.model.activities.cluescrolls.impl;
 
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;

@@ -4,7 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.ItemDialogue;
@@ -19,7 +19,6 @@ import io.ruin.model.item.pet.Pet;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public enum ClueType {
 

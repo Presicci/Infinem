@@ -5,7 +5,7 @@ import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.cluescrolls.StashUnits;
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.npc.actions.clues.Uri;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
@@ -16,7 +16,6 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Bounds;
 
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;

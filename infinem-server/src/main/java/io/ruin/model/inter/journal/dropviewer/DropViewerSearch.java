@@ -4,7 +4,7 @@ import io.ruin.Server;
 import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.process.task.TaskWorker;
 

@@ -3,7 +3,7 @@ package io.ruin.model.inter.handlers.itemskeptondeath;
 import io.ruin.cache.EnumMap;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.combat.Killer;
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;

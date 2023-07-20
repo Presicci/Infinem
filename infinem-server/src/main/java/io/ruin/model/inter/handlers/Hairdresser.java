@@ -1,7 +1,7 @@
 package io.ruin.model.inter.handlers;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -18,7 +18,6 @@ import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import lombok.val;
-import org.w3c.dom.Attr;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci

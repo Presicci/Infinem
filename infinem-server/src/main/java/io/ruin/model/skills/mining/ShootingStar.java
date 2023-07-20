@@ -3,7 +3,7 @@ package io.ruin.model.skills.mining;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.model.World;
-import io.ruin.model.entity.attributes.AttributeKey;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
