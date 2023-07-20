@@ -1,5 +1,6 @@
 package io.ruin.model.skills.crafting;
 
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -140,7 +141,7 @@ public enum Mould {
                     player.sendMessage("You need some sand to make glass.");
                     break;
                 }
-                if (!player.discardBuckets && !player.getInventory().hasRoomFor(MOLTEN_GLASS)) {
+                if (!player.hasAttribute(AttributeKey.DISCARD_BUCKETS) && !player.getInventory().hasRoomFor(MOLTEN_GLASS)) {
                     player.sendMessage("Not enough space in your inventory.");
                     player.sendMessage("You can avoid this by toggling on the \"Discard Buckets\" setting.");
                     break;
@@ -148,7 +149,7 @@ public enum Mould {
                 player.animate(899);
                 event.delay(2);
                 sodaAsh.remove();
-                if (player.discardBuckets)
+                if (player.hasAttribute(AttributeKey.DISCARD_BUCKETS))
                     bucketOfSand.setId(MOLTEN_GLASS);
                 else {
                     bucketOfSand.setId(EMPTY_BUCKET);

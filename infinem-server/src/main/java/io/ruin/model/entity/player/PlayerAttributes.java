@@ -71,8 +71,6 @@ public abstract class PlayerAttributes extends Entity {
     public Entity targetOverlayTarget;
     public int targetOverlayResetTicks;
 
-    @Expose public boolean discardBuckets;
-
     @Expose public XpMode xpMode = XpMode.MEDIUM;
 
     @Expose public int wildernessSlayerPoints;

@@ -1,5 +1,6 @@
 package io.ruin.model.skills.construction.actions;
 
+import io.ruin.model.entity.attributes.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
@@ -100,7 +101,7 @@ public class Kitchen {
             // cup of tea + milk
             ItemItemAction.register(tea.cupOfTea, 1927, (player, primary, secondary) -> {
                 primary.setId(tea.milkyTea);
-                if (player.discardBuckets)
+                if (player.hasAttribute(AttributeKey.DISCARD_BUCKETS))
                     secondary.remove();
                 else
                     secondary.setId(1925);
