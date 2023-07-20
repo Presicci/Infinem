@@ -1,6 +1,5 @@
-package io.ruin.model.content;
+package io.ruin.model.map.object.actions.impl;
 
-import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
