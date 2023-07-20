@@ -1,14 +1,11 @@
-package io.ruin.model.content;
+package io.ruin.model.map.object.actions.impl.locations;
 
-import io.ruin.cache.ObjectDef;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.map.object.actions.impl.Door;
-import io.ruin.model.map.route.types.RouteObject;
 
 /**
  * 770
@@ -18,7 +15,7 @@ import io.ruin.model.map.route.types.RouteObject;
  * https://www.rune-server.ee/members/reverenddread/
  * @project Kronos
  */
-public class Obstacle {
+public class Lighthouse {
 
     static {
 
