@@ -60,7 +60,7 @@ import java.util.function.Function;
 
 public abstract class PlayerAttributes extends Entity {
 
-    @Expose public boolean debug;
+    public boolean debug;
     @Expose @Getter @Setter
     public int tutorialStage;
     @Setter protected Runnable onDialogueContinued;
