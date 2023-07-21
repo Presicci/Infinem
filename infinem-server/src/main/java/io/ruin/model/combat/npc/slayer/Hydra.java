@@ -2,7 +2,7 @@ package io.ruin.model.combat.npc.slayer;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
-import io.ruin.model.activities.bosses.hydra.AlchemicalHydra;
+import io.ruin.model.activities.combat.bosses.hydra.AlchemicalHydra;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;

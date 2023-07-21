@@ -1,7 +1,7 @@
 [
   {
     "ids": [ 8715],
-    "handler": "io.ruin.model.activities.bosses.sarachnis.SarachnisSpawn",
+    "handler": "io.ruin.model.activities.combat.bosses.sarachnis.SarachnisSpawn",
     //Combat Info
     "hitpoints": 30,
     "aggressive_level": 450,

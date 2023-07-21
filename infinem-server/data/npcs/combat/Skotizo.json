@@ -47,7 +47,7 @@
   },
   { #Skotizo (321) (Catacombs boss version!)
     "ids": [ 7297 ],
-    "handler": "io.ruin.model.activities.bosses.Skotizo",
+    "handler": "io.ruin.model.activities.combat.bosses.Skotizo",
     //Combat Info
     "hitpoints": 450,
     "aggressive_level": 642,

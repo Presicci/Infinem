@@ -1,6 +1,6 @@
 package io.ruin.model.entity.player;
 
-import io.ruin.model.activities.raids.xeric.party.RecruitingBoard;
+import io.ruin.model.activities.combat.raids.xeric.party.RecruitingBoard;
 import io.ruin.model.map.object.actions.impl.edgeville.Christmas;
 import io.ruin.model.map.route.routes.TargetRoute;
 

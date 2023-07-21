@@ -1,6 +1,6 @@
 package io.ruin.model.activities.donatorzone;
 
-import io.ruin.model.activities.pvminstances.InstanceDialogue;
+import io.ruin.model.activities.combat.pvminstance.InstanceDialogue;
 import io.ruin.model.map.object.actions.ObjectAction;
 
 public class BossInstancePortal {

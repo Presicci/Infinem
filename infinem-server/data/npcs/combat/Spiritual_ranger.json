@@ -1,7 +1,7 @@
 [
   { #Spiritual ranger zammy (118)
     "ids": [ 3160 ],
-    "handler": "io.ruin.model.activities.godwars.combat.zamorak.ZamorakSpiritualRanger",
+    "handler": "io.ruin.model.activities.combat.godwars.combat.zamorak.ZamorakSpiritualRanger",
     //Combat Info
     "hitpoints": 120,
     "aggressive_level": 236,
@@ -44,7 +44,7 @@
   },
   { #Spiritual ranger sara (122)
     "ids": [ 2211 ],
-    "handler": "io.ruin.model.activities.godwars.combat.saradomin.SaradominSpiritualRanger",
+    "handler": "io.ruin.model.activities.combat.godwars.combat.saradomin.SaradominSpiritualRanger",
     //Combat Info
     "hitpoints": 106,
     "aggressive_level": 244,
@@ -87,7 +87,7 @@
   },
   { #Spiritual ranger bandos(115)
     "ids": [ 2242 ],
-    "handler": "io.ruin.model.activities.godwars.combat.bandos.BandosSpiritualRanger",
+    "handler": "io.ruin.model.activities.combat.godwars.combat.bandos.BandosSpiritualRanger",
     //Combat Info
     "hitpoints": 131,
     "aggressive_level": 230,
@@ -130,7 +130,7 @@
   },
   { #Spiritual ranger (127)
     "ids": [ 3167 ],
-    "handler": "io.ruin.model.activities.godwars.combat.armadyl.Aviansie",
+    "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
     "hitpoints": 89,
     "aggressive_level": 254,

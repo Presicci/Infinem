@@ -1,7 +1,7 @@
 [
   { #Obor (106)
     "ids": [ 7416 ],
-    "handler": "io.ruin.model.activities.bosses.Obor",
+    "handler": "io.ruin.model.activities.combat.bosses.Obor",
     //Combat Info
     "hitpoints": 120,
     "aggressive_level": 212,

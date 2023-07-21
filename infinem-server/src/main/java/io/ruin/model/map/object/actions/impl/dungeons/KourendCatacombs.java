@@ -2,7 +2,7 @@ package io.ruin.model.map.object.actions.impl.dungeons;
 
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
-import io.ruin.model.activities.bosses.Skotizo;
+import io.ruin.model.activities.combat.bosses.Skotizo;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;

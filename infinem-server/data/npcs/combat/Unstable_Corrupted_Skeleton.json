@@ -1,7 +1,7 @@
 [
   { #Unstable_Corrupted_Skeleton, (15004),
   "ids": [ 15004 ],
-  "handler": "io.ruin.model.activities.bosses.necromancer.Necrominion",
+  "handler": "io.ruin.model.activities.combat.bosses.necromancer.Necrominion",
   //Combat Info
   "hitpoints": 50,
   "aggressive_level": 200,

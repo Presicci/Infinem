@@ -1,7 +1,7 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
-import io.ruin.model.activities.pvminstances.InstanceDialogue;
-import io.ruin.model.activities.pvminstances.InstanceType;
+import io.ruin.model.activities.combat.pvminstance.InstanceDialogue;
+import io.ruin.model.activities.combat.pvminstance.InstanceType;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.actions.impl.Spade;

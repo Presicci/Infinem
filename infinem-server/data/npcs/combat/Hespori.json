@@ -1,7 +1,7 @@
 [
   { #Hespori (284)
   "ids": [ 8583 ],
-  "handler": "io.ruin.model.activities.bosses.hespori.Hespori",
+  "handler": "io.ruin.model.activities.combat.bosses.hespori.Hespori",
   //Combat Info
   "hitpoints": 300,
   "aggressive_level": 156,

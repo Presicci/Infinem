@@ -1,7 +1,7 @@
 [
   { #Jal-MejRah (85)
     "ids": [ 7692 ],
-    "handler": "io.ruin.model.activities.inferno.monsters.JalMejRah",
+    "handler": "io.ruin.model.activities.combat.inferno.monsters.JalMejRah",
     //Combat Info
     "hitpoints": 25,
     "aggressive_level": 0,

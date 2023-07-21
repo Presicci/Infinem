@@ -13,7 +13,7 @@ import io.ruin.api.utils.Tuple;
 import io.ruin.cache.Color;
 import io.ruin.cache.Icon;
 import io.ruin.content.activities.event.TimedEventManager;
-import io.ruin.model.activities.pvminstances.PVMInstance;
+import io.ruin.model.activities.combat.pvminstance.PVMInstance;
 import io.ruin.model.combat.Killer;
 import io.ruin.model.entity.EntityList;
 import io.ruin.model.entity.npc.NPC;

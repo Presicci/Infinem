@@ -1,8 +1,8 @@
 package io.ruin.model.skills.farming.patch.impl;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.activities.bosses.hespori.HesporiLoot;
-import io.ruin.model.activities.pvminstances.PVMInstance;
+import io.ruin.model.activities.combat.bosses.hespori.HesporiLoot;
+import io.ruin.model.activities.combat.pvminstance.PVMInstance;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.inter.handlers.TabStats;

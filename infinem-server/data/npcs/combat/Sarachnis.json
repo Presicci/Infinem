@@ -1,7 +1,7 @@
 [
   { #Sarachnis (318)
   "ids": [ 8713 ],
-  "handler": "io.ruin.model.activities.bosses.sarachnis.Sarachnis",
+  "handler": "io.ruin.model.activities.combat.bosses.sarachnis.Sarachnis",
   //Combat Info
   "hitpoints": 400,
   "aggressive_level": 450,

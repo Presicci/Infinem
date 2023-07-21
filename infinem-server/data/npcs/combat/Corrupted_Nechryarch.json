@@ -1,7 +1,7 @@
 [
   { #Nechryarch (15001)
     "ids": [ 15001 ],
-    "handler": "io.ruin.model.activities.bosses.eventboss.CorruptedNechryarch",
+    "handler": "io.ruin.model.activities.combat.bosses.eventboss.CorruptedNechryarch",
     //Combat Info
     "hitpoints": 5000,
     "aggressive_level": 50,

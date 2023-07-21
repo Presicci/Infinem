@@ -3,7 +3,7 @@ package io.ruin.model.skills.firemaking;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
-import io.ruin.model.activities.raids.xeric.ChambersOfXeric;
+import io.ruin.model.activities.combat.raids.xeric.ChambersOfXeric;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;

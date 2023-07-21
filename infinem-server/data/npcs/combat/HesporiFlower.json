@@ -1,7 +1,7 @@
 [
   { #Hespori Flower (0)
   "ids": [ 8584],
-  "handler": "io.ruin.model.activities.bosses.hespori.HesporiFlower",
+  "handler": "io.ruin.model.activities.combat.bosses.hespori.HesporiFlower",
   //Combat Info
   "hitpoints": 10,
   "aggressive_level": 0,

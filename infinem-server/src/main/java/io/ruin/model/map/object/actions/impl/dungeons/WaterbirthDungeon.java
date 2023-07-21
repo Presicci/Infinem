@@ -2,8 +2,8 @@ package io.ruin.model.map.object.actions.impl.dungeons;
 
 import io.ruin.cache.Color;
 import io.ruin.model.World;
-import io.ruin.model.activities.pvminstances.InstanceDialogue;
-import io.ruin.model.activities.pvminstances.InstanceType;
+import io.ruin.model.activities.combat.pvminstance.InstanceDialogue;
+import io.ruin.model.activities.combat.pvminstance.InstanceType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.entity.shared.listeners.SpawnListener;

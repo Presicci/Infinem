@@ -1,7 +1,7 @@
 [
   { #Bryophyta (128)
     "ids": [ 8195 ],
-    "handler": "io.ruin.model.activities.bosses.bryophyta.Bryophyta",
+    "handler": "io.ruin.model.activities.combat.bosses.bryophyta.Bryophyta",
     //Combat Info
     "hitpoints": 115,
     "aggressive_level": 212,
@@ -47,7 +47,7 @@
     "ids": [
       8194
     ],
-	"handler": "io.ruin.model.activities.bosses.bryophyta.Growthling",
+	"handler": "io.ruin.model.activities.combat.bosses.bryophyta.Growthling",
 	
     "hitpoints": 10,
     "aggressive_level": 212,

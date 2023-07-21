@@ -1,7 +1,7 @@
 [
   { #Brutal black dragon (15018)
   "ids": [ 15019 ],
-  "handler": "io.ruin.model.activities.bosses.BrutalLavaDragon",
+  "handler": "io.ruin.model.activities.combat.bosses.BrutalLavaDragon",
   //Combat Info
   "hitpoints": 5000,
   "aggressive_level": 636,

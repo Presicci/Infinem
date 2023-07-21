@@ -1,7 +1,7 @@
 package io.ruin.model.activities.wilderness;
 
-import io.ruin.model.activities.pvminstances.InstanceDialogue;
-import io.ruin.model.activities.pvminstances.InstanceType;
+import io.ruin.model.activities.combat.pvminstance.InstanceDialogue;
+import io.ruin.model.activities.combat.pvminstance.InstanceType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;

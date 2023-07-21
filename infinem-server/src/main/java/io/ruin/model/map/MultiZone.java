@@ -1,6 +1,6 @@
 package io.ruin.model.map;
 
-import io.ruin.model.activities.bosses.zulrah.Zulrah;
+import io.ruin.model.activities.combat.bosses.zulrah.Zulrah;
 import io.ruin.model.activities.wilderness.BloodyChest;
 
 public class MultiZone {

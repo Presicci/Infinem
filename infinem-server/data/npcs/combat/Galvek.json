@@ -1,7 +1,7 @@
 [
   { #Galvek (608)
   "ids": [ 8095, 8096, 8097, 8098 ],
-  "handler": "io.ruin.model.activities.bosses.galvek.Galvek",
+  "handler": "io.ruin.model.activities.combat.bosses.galvek.Galvek",
   //Combat Info
   "hitpoints": 1200,
   "aggressive_level": 48,

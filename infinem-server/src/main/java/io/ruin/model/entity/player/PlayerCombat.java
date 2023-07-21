@@ -8,7 +8,7 @@ import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.npc.MaxHitDummy;
 import io.ruin.model.activities.pvp.leaderboard.Leaderboard;
-import io.ruin.model.activities.raids.xeric.ChambersOfXeric;
+import io.ruin.model.activities.combat.raids.xeric.ChambersOfXeric;
 import io.ruin.model.activities.wilderness.BloodyChest;
 import io.ruin.model.activities.wilderness.SkullingItem;
 import io.ruin.model.combat.*;

@@ -1,7 +1,7 @@
 [
   { #Jal-ImKot (240)
     "ids": [ 7697 ],
-    "handler": "io.ruin.model.activities.inferno.monsters.JalImKot",
+    "handler": "io.ruin.model.activities.combat.inferno.monsters.JalImKot",
     //Combat Info
     "hitpoints": 75,
     "aggressive_level": 480,

@@ -1,7 +1,7 @@
 [
   { #Necromancer (15003)
   "ids": [ 15003 ],
-  "handler": "io.ruin.model.activities.bosses.necromancer.Necromancer",
+  "handler": "io.ruin.model.activities.combat.bosses.necromancer.Necromancer",
   //Combat Info
   "hitpoints": 1200,
   "aggressive_level": 150,
