@@ -1,7 +1,7 @@
 [
   { #Vitreous Jelly (206)
     "ids": [ 7399 ],
-    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.VitreousJelly",
+    "handler": "io.ruin.model.combat.npc.slayer.superiors.VitreousJelly",
     //Combat Info
     "hitpoints": 190,
     "aggressive_level": 0,

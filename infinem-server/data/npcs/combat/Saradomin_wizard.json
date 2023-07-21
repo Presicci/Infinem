@@ -1,7 +1,7 @@
 [
   { #Saradomin wizard (108)
     "ids": [ 2955 ],
-    "handler": "io.ruin.model.activities.miscpvm.clues.SaradominWizard",
+    "handler": "io.ruin.model.combat.npc.clues.SaradominWizard",
     //Combat Info
     "hitpoints": 120,
     "aggressive_level": 216,

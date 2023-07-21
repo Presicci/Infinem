@@ -216,7 +216,7 @@
   },
   { #Guard (21) CROSSBOW
   "ids": [ 3270 ],
-  "handler": "io.ruin.model.activities.miscpvm.basic.BasicCrossbowCombat",
+  "handler": "io.ruin.model.combat.npc.basic.BasicCrossbowCombat",
   //Combat Info
   "hitpoints": 22,
   "aggressive_level": 0,

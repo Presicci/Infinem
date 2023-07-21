@@ -1,7 +1,7 @@
 [
   { #Armadylian guard (97)
     "ids": [ 6587 ],
-    "handler": "io.ruin.model.activities.miscpvm.clues.ArmadyleanGuard",
+    "handler": "io.ruin.model.combat.npc.clues.ArmadyleanGuard",
     //Combat Info
     "hitpoints": 132,
     "aggressive_level": 194,

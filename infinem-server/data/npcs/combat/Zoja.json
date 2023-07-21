@@ -1,7 +1,7 @@
 [
   { #Zoja (24)
     "ids": [ 2631 ],
-  "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Zoja",
+  "handler": "io.ruin.model.combat.npc.werewolves.canifis.Zoja",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

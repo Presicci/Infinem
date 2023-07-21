@@ -1,7 +1,7 @@
 [
   { #Screaming twisted banshee (144)
   "ids": [ 7391 ],
-  "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.ScreamingBanshee",
+  "handler": "io.ruin.model.combat.npc.slayer.superiors.ScreamingBanshee",
   //Combat Info
   "hitpoints": 61,
   "aggressive_level": 0,

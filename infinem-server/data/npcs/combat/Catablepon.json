@@ -1,7 +1,7 @@
 [
   { #Catablepon (49)
     "ids": [ 2474 ],
-    "handler": "io.ruin.model.activities.miscpvm.Catablepon",
+    "handler": "io.ruin.model.combat.npc.Catablepon",
     //Combat Info
     "hitpoints": 40,
     "aggressive_level": 98,
@@ -44,7 +44,7 @@
   },
   { #Catablepon (64)
     "ids": [ 2475 ],
-    "handler": "io.ruin.model.activities.miscpvm.Catablepon",
+    "handler": "io.ruin.model.combat.npc.Catablepon",
     //Combat Info
     "hitpoints": 70,
     "aggressive_level": 128,
@@ -87,7 +87,7 @@
   },
   { #Catablepon (68)
     "ids": [ 2476 ],
-    "handler": "io.ruin.model.activities.miscpvm.Catablepon",
+    "handler": "io.ruin.model.combat.npc.Catablepon",
     //Combat Info
     "hitpoints": 50,
     "aggressive_level": 136,

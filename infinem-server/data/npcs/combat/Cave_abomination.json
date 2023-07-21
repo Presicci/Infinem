@@ -1,7 +1,7 @@
 [
   { #Cave abomination (206)
     "ids": [ 7401 ],
-    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.CaveAbomination",
+    "handler": "io.ruin.model.combat.npc.slayer.superiors.CaveAbomination",
     //Combat Info
     "hitpoints": 130,
     "aggressive_level": 0,

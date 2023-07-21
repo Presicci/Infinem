@@ -1,7 +1,7 @@
 [
   { #Ancient Wizard (98) MAGE
     "ids": [ 7307 ],
-    "handler": "io.ruin.model.activities.miscpvm.clues.AncientWizard",
+    "handler": "io.ruin.model.combat.npc.clues.AncientWizard",
     //Combat Info
     "hitpoints": 80,
     "aggressive_level": 196,
@@ -44,7 +44,7 @@
   },
   { #Ancient Wizard (98) RANGE
     "ids": [ 7308 ],
-    "handler": "io.ruin.model.activities.miscpvm.basic.BasicCrossbowCombat",
+    "handler": "io.ruin.model.combat.npc.basic.BasicCrossbowCombat",
     //Combat Info
     "hitpoints": 80,
     "aggressive_level": 196,
@@ -87,7 +87,7 @@
   },
   { #Ancient Wizard (112)
     "ids": [ 7309 ],
-    "handler": "io.ruin.model.activities.miscpvm.basic.BasicPoisonCombat",
+    "handler": "io.ruin.model.combat.npc.basic.BasicPoisonCombat",
     //Combat Info
     "hitpoints": 80,
     "aggressive_level": 224,

@@ -1,7 +1,7 @@
 [
   { #Vera (24)
     "ids": [ 2630 ],
-  "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Vera",
+  "handler": "io.ruin.model.combat.npc.werewolves.canifis.Vera",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

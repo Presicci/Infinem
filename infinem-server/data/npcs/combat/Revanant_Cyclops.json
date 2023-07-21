@@ -1,7 +1,7 @@
 [
     { #Rev cyclops
     "ids": [ 7934 ],
-    "handler": "io.ruin.model.activities.miscpvm.Revenant",
+    "handler": "io.ruin.model.combat.npc.Revenant",
     //Combat Info
     "hitpoints": 44,
     "aggressive_level": 135,

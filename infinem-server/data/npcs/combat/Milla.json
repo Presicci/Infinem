@@ -1,7 +1,7 @@
 [
   { #Milla (24)
     "ids": [ 2624 ],
-  "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Milla",
+  "handler": "io.ruin.model.combat.npc.werewolves.canifis.Milla",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

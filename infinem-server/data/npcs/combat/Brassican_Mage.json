@@ -1,7 +1,7 @@
 [
   { #Brassican Mage (140)
     "ids": [ 7310 ],
-    "handler": "io.ruin.model.activities.miscpvm.clues.BrassicanMage",
+    "handler": "io.ruin.model.combat.npc.clues.BrassicanMage",
     //Combat Info
     "hitpoints": 150,
     "aggressive_level": 280,

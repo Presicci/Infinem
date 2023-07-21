@@ -1,7 +1,7 @@
 [
   { #Boris (24)
     "ids": [ 2613 ],
-    "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Boris",
+    "handler": "io.ruin.model.combat.npc.werewolves.canifis.Boris",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

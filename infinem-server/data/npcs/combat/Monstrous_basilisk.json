@@ -1,7 +1,7 @@
 [
   { #Monstrous basilisk (135)
     "ids": [ 7395 ],
-    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.MonstrousBasilisk",
+    "handler": "io.ruin.model.combat.npc.slayer.superiors.MonstrousBasilisk",
     //Combat Info
     "hitpoints": 170,
     "aggressive_level": 0,

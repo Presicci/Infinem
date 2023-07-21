@@ -1,7 +1,7 @@
 [
   { #Gnome (1)
     "ids": [ 5969, 6094, 6095, 6096 ],
-    "handler": "io.ruin.model.activities.miscpvm.basic.BasicArcherCombat",
+    "handler": "io.ruin.model.combat.npc.basic.BasicArcherCombat",
     //Combat Info
     "hitpoints": 3,
     "aggressive_level": 2,
@@ -44,7 +44,7 @@
   },
   { #Gnome (3)
     "ids": [ 5968, 5970 ],
-    "handler": "io.ruin.model.activities.miscpvm.basic.BasicArcherCombat",
+    "handler": "io.ruin.model.combat.npc.basic.BasicArcherCombat",
     //Combat Info
     "hitpoints": 3,
     "aggressive_level": 6,

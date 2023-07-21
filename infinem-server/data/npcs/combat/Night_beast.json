@@ -1,7 +1,7 @@
 [
   { #Night beast (374)
     "ids": [ 7409 ],
-    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.NightBeast",
+    "handler": "io.ruin.model.combat.npc.slayer.superiors.NightBeast",
     //Combat Info
     "hitpoints": 550,
     "aggressive_level": 0,

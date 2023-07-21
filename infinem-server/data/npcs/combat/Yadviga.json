@@ -1,7 +1,7 @@
 [
   { #Yadviga (24)
     "ids": [ 2628 ],
-  "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Yadviga",
+  "handler": "io.ruin.model.combat.npc.werewolves.canifis.Yadviga",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

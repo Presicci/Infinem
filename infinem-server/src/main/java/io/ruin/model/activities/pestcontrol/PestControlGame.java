@@ -4,7 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.model.World;
-import io.ruin.model.activities.miscpvm.PassiveCombat;
+import io.ruin.model.combat.npc.PassiveCombat;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;

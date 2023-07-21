@@ -1,7 +1,7 @@
 package io.ruin.model.activities.bosses.slayer;
 
 import io.ruin.cache.NPCDef;
-import io.ruin.model.activities.miscpvm.slayer.CaveKraken;
+import io.ruin.model.combat.npc.slayer.CaveKraken;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.map.Projectile;

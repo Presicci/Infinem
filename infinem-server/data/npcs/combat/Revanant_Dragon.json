@@ -1,7 +1,7 @@
 [
     { #Rev dragon
     "ids": [ 7940 ],
-    "handler": "io.ruin.model.activities.miscpvm.Revenant",
+    "handler": "io.ruin.model.combat.npc.Revenant",
     //Combat Info
     "hitpoints": 140,
     "aggressive_level": 135,

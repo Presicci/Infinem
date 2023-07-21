@@ -1,7 +1,7 @@
 [
   { #Irina (24)
     "ids": [ 2622 ],
-  "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Irina",
+  "handler": "io.ruin.model.combat.npc.werewolves.canifis.Irina",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

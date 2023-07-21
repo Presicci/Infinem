@@ -1,7 +1,7 @@
 [
   { #Sofiya (24)
     "ids": [ 2626 ],
-  "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Sofiya",
+  "handler": "io.ruin.model.combat.npc.werewolves.canifis.Sofiya",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

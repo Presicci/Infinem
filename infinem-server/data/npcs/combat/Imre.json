@@ -1,7 +1,7 @@
 [
   { #Imre (24)
     "ids": [ 2614 ],
-    "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Imre",
+    "handler": "io.ruin.model.combat.npc.werewolves.canifis.Imre",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

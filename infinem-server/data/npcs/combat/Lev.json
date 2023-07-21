@@ -1,7 +1,7 @@
 [
   { #Lev (24)
     "ids": [ 2619 ],
-  "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Lev",
+  "handler": "io.ruin.model.combat.npc.werewolves.canifis.Lev",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

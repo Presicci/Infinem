@@ -1,7 +1,7 @@
 [
   { #Rune dragon (380)
     "ids": [ 8031, 8091 ],
-    "handler": "io.ruin.model.activities.miscpvm.dragons.RuneDragon",
+    "handler": "io.ruin.model.combat.npc.dragons.RuneDragon",
     //Combat Info
     "hitpoints": 330,
     "aggressive_level": 608,

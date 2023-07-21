@@ -1,6 +1,6 @@
 package io.ruin.model.activities.inferno.monsters;
 
-import io.ruin.model.activities.miscpvm.BasicCombat;
+import io.ruin.model.combat.npc.BasicCombat;
 import io.ruin.model.entity.Entity;
 import io.ruin.utility.Misc;
 

@@ -1,7 +1,7 @@
 [
   { #Infernal pyrelord (134)
   "ids": [ 9465 ],
-  "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.Pyrelord",
+  "handler": "io.ruin.model.combat.npc.slayer.superiors.Pyrelord",
   //Combat Info
   "hitpoints": 184,
   "aggressive_level": 0,

@@ -1,7 +1,7 @@
 [
   { #Spitting Wyvern (139)
   "ids": [ 7794 ],
-  "handler": "io.ruin.model.activities.miscpvm.slayer.wyverns.SpittingWyvern",
+  "handler": "io.ruin.model.combat.npc.slayer.wyverns.SpittingWyvern",
   //Combat Info
   "hitpoints": 200,
   "aggressive_level": 280,

@@ -8,7 +8,7 @@ import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.model.World;
 import io.ruin.model.activities.ActivityTimer;
-import io.ruin.model.activities.miscpvm.PassiveCombat;
+import io.ruin.model.combat.npc.PassiveCombat;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.Entity;

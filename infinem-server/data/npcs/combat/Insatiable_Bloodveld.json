@@ -1,7 +1,7 @@
 [
   { #Insatiable Bloodveld (202)
     "ids": [ 7397 ],
-    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.InsatiableBloodveld",
+    "handler": "io.ruin.model.combat.npc.slayer.superiors.InsatiableBloodveld",
     //Combat Info
     "hitpoints": 380,
     "aggressive_level": 0,

@@ -1,7 +1,7 @@
 [
   { #Chaotic death spawn (215) MELEE
     "ids": [ 6716 ],
-    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.nechryarch.MeleeDeathSpawn",
+    "handler": "io.ruin.model.combat.npc.slayer.superiors.nechryarch.MeleeDeathSpawn",
     //Combat Info
     "hitpoints": 50,
     "aggressive_level": 0,
@@ -44,7 +44,7 @@
   },
   { #Chaotic death spawn (215) RANGE
   "ids": [ 6723 ],
-  "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.nechryarch.RangeDeathSpawn",
+  "handler": "io.ruin.model.combat.npc.slayer.superiors.nechryarch.RangeDeathSpawn",
   //Combat Info
   "hitpoints": 50,
   "aggressive_level": 0,
@@ -87,7 +87,7 @@
   },
   { #Chaotic death spawn (215) MAGIC
   "ids": [ 7649 ],
-  "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.nechryarch.MagicDeathSpawn",
+  "handler": "io.ruin.model.combat.npc.slayer.superiors.nechryarch.MagicDeathSpawn",
   //Combat Info
   "hitpoints": 50,
   "aggressive_level": 0,

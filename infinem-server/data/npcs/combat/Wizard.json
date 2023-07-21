@@ -1,7 +1,7 @@
 [
   { #Wizard (9)
     "ids": [ 3257 ],
-    "handler": "io.ruin.model.activities.miscpvm.magic.Wizard",
+    "handler": "io.ruin.model.combat.npc.magic.Wizard",
     //Combat Info
     "hitpoints": 14,
     "aggressive_level": 0,

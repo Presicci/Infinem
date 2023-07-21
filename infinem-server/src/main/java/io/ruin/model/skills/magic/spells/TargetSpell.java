@@ -1,7 +1,7 @@
 package io.ruin.model.skills.magic.spells;
 
 import io.ruin.model.activities.duelarena.DuelRule;
-import io.ruin.model.activities.miscpvm.MaxHitDummy;
+import io.ruin.model.combat.npc.MaxHitDummy;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.CombatUtils;

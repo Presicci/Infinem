@@ -1,7 +1,7 @@
 [
   { #Vampyre Juvinate (50)
     "ids": [ 4443, 4486 ],
-    "handler": "io.ruin.model.activities.miscpvm.Vampyre",
+    "handler": "io.ruin.model.combat.npc.Vampyre",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 100,
@@ -44,7 +44,7 @@
   },
   { #Vampyre juvinate (54) (darkmeyer)
     "ids": [ 3694, 3695 ],
-    "handler": "io.ruin.model.activities.miscpvm.Vampyre",
+    "handler": "io.ruin.model.combat.npc.Vampyre",
     //Combat Info
     "hitpoints": 85,
     "aggressive_level": 108,
@@ -87,7 +87,7 @@
   },
   { #Vampyre juvinate (54)
     "ids": [ 4427, 4428, 4429, 4430, 4487 ],
-    "handler": "io.ruin.model.activities.miscpvm.Vampyre",
+    "handler": "io.ruin.model.combat.npc.Vampyre",
     //Combat Info
     "hitpoints": 65,
     "aggressive_level": 108,
@@ -130,7 +130,7 @@
   },
   { #Vampyre Juvinate (75)
     "ids": [ 4442 ],
-    "handler": "io.ruin.model.activities.miscpvm.Vampyre",
+    "handler": "io.ruin.model.combat.npc.Vampyre",
     //Combat Info
     "hitpoints": 110,
     "aggressive_level": 150,
@@ -173,7 +173,7 @@
   },
   { #Vampyre Juvinate (90)
     "ids": [ 5635, 5638 ],
-    "handler": "io.ruin.model.activities.miscpvm.Vampyre",
+    "handler": "io.ruin.model.combat.npc.Vampyre",
     //Combat Info
     "hitpoints": 100,
     "aggressive_level": 180,
@@ -216,7 +216,7 @@
   },
   { #Vampyre Juvinate (119)
     "ids": [ 5636, 5639 ],
-    "handler": "io.ruin.model.activities.miscpvm.Vampyre",
+    "handler": "io.ruin.model.combat.npc.Vampyre",
     //Combat Info
     "hitpoints": 150,
     "aggressive_level": 238,

@@ -6,7 +6,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.duelarena.DuelRule;
-import io.ruin.model.activities.miscpvm.MaxHitDummy;
+import io.ruin.model.combat.npc.MaxHitDummy;
 import io.ruin.model.activities.pvp.leaderboard.Leaderboard;
 import io.ruin.model.activities.raids.xeric.ChambersOfXeric;
 import io.ruin.model.activities.wilderness.BloodyChest;

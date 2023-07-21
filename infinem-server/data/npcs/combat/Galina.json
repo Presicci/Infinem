@@ -1,7 +1,7 @@
 [
   { #Galina (24)
     "ids": [ 2625 ],
-  "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Galina",
+  "handler": "io.ruin.model.combat.npc.werewolves.canifis.Galina",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

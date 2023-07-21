@@ -1,7 +1,7 @@
 [
   { #Cockathrice (89)
     "ids": [ 7393 ],
-    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.Cockathrice",
+    "handler": "io.ruin.model.combat.npc.slayer.superiors.Cockathrice",
     //Combat Info
     "hitpoints": 95,
     "aggressive_level": 0,

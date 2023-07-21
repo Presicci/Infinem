@@ -1,7 +1,7 @@
 package io.ruin.model.combat;
 
 import io.ruin.cache.ItemDef;
-import io.ruin.model.activities.miscpvm.MaxHitDummy;
+import io.ruin.model.combat.npc.MaxHitDummy;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.EquipmentStats;

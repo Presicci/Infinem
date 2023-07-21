@@ -44,7 +44,7 @@
   },
   { #Elvarg (hard) (214)
     "ids": [ 6118 ],
-    "handler": "io.ruin.model.activities.miscpvm.dragons.Elvarg",
+    "handler": "io.ruin.model.combat.npc.dragons.Elvarg",
     //Combat Info
     "hitpoints": 300,
     "aggressive_level": 428,

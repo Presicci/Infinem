@@ -87,7 +87,7 @@
   },
   { #Barbarian (15)
     "ids": [ 3068 ],
-    "handler": "io.ruin.model.activities.miscpvm.basic.BasicArcherCombat",
+    "handler": "io.ruin.model.combat.npc.basic.BasicArcherCombat",
     //Combat Info
     "hitpoints": 24,
     "aggressive_level": 0,

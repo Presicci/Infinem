@@ -1,7 +1,7 @@
 [
   { #Crushing hand (45)
     "ids": [ 7388 ],
-    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.CrushingHand",
+    "handler": "io.ruin.model.combat.npc.slayer.superiors.CrushingHand",
     //Combat Info
     "hitpoints": 55,
     "aggressive_level": 0,

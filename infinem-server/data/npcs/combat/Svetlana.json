@@ -1,7 +1,7 @@
 [
   { #Svetlana (24)
     "ids": [ 2621 ],
-  "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Svetlana",
+  "handler": "io.ruin.model.combat.npc.werewolves.canifis.Svetlana",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

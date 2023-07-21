@@ -2,7 +2,7 @@ package io.ruin.model.activities.warriorsguild;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
-import io.ruin.model.activities.miscpvm.BasicCombat;
+import io.ruin.model.combat.npc.BasicCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.item.Item;

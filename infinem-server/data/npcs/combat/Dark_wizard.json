@@ -1,7 +1,7 @@
 [
   { #Dark wizard (7)
     "ids": [ 512, 5086, 5087 ],
-    "handler": "io.ruin.model.activities.miscpvm.magic.DarkWizardLevelSeven",
+    "handler": "io.ruin.model.combat.npc.magic.DarkWizardLevelSeven",
     //Combat Info
     "hitpoints": 12,
     "aggressive_level": 14,
@@ -44,7 +44,7 @@
   },
   { #Dark wizard (11)
     "ids": [ 2058, 2059 ],
-    "handler": "io.ruin.model.activities.miscpvm.magic.DarkWizard",
+    "handler": "io.ruin.model.combat.npc.magic.DarkWizard",
     //Combat Info
     "hitpoints": 24,
     "aggressive_level": 22,
@@ -87,7 +87,7 @@
   },
   { #Dark wizard (20)
     "ids": [ 510, 5088, 5089 ],
-    "handler": "io.ruin.model.activities.miscpvm.magic.DarkWizard",
+    "handler": "io.ruin.model.combat.npc.magic.DarkWizard",
     //Combat Info
     "hitpoints": 24,
     "aggressive_level": 40,
@@ -130,7 +130,7 @@
   },
   { #Dark wizard (22)
     "ids": [ 2057 ],
-    "handler": "io.ruin.model.activities.miscpvm.magic.DarkWizard",
+    "handler": "io.ruin.model.combat.npc.magic.DarkWizard",
     //Combat Info
     "hitpoints": 24,
     "aggressive_level": 44,
@@ -173,7 +173,7 @@
   },
   { #Dark wizard (23)
     "ids": [ 2056 ],
-    "handler": "io.ruin.model.activities.miscpvm.magic.DarkWizard",
+    "handler": "io.ruin.model.combat.npc.magic.DarkWizard",
     //Combat Info
     "hitpoints": 24,
     "aggressive_level": 46,

@@ -1,7 +1,7 @@
 [
   { #Ksenia (24)
     "ids": [ 2627 ],
-  "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Ksenia",
+  "handler": "io.ruin.model.combat.npc.werewolves.canifis.Ksenia",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

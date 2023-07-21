@@ -1,7 +1,7 @@
 [
   { #Repugnant spectre (335)
     "ids": [ 7403 ],
-    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.AbhorrentSpectre",
+    "handler": "io.ruin.model.combat.npc.slayer.superiors.AbhorrentSpectre",
     //Combat Info
     "hitpoints": 390,
     "aggressive_level": 0,

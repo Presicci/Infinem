@@ -1,6 +1,6 @@
 package io.ruin.model.activities.bosses.slayer;
 
-import io.ruin.model.activities.miscpvm.slayer.SmokeDevil;
+import io.ruin.model.combat.npc.slayer.SmokeDevil;
 import io.ruin.model.combat.Hit;
 
 public class ThermonuclearSmokeDevil extends SmokeDevil {

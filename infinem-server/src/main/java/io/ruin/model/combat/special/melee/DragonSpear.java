@@ -2,7 +2,7 @@ package io.ruin.model.combat.special.melee;
 
 import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.duelarena.DuelRule;
-import io.ruin.model.activities.miscpvm.MaxHitDummy;
+import io.ruin.model.combat.npc.MaxHitDummy;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.Hit;

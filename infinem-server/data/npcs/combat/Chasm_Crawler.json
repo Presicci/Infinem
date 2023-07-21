@@ -1,7 +1,7 @@
 [
   { #Chasm Crawler (68)
     "ids": [ 7389 ],
-    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.ChasmCrawler",
+    "handler": "io.ruin.model.combat.npc.slayer.superiors.ChasmCrawler",
     //Combat Info
     "hitpoints": 64,
     "aggressive_level": 0,
