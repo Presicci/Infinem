@@ -67,5 +67,25 @@ public class ShipNPC {
         registerShipNPC(4299, "the Gnome Stronghold", new Position(2367, 3485));
         // Fremmy Province -> Weiss
         registerShipNPC(828, "Weiss", new Position(2851, 3968));
+        // Morton
+        NPCAction.register(5046, "talk-to", ((player, npc) -> {
+            if (npc.getAbsY() > 3373) {
+                player.dialogue(
+                        new NPCDialogue(npc.getId(), "Would you like me to take you to Mort'ton?"),
+                        new OptionsDialogue(
+                                new Option("Yes", () -> ShipNPC.setSail(player, "Mort'ton", new Position(3522, 3285, 0))),
+                                new Option("No")
+                        )
+                );
+            } else {
+                player.dialogue(
+                        new NPCDialogue(npc.getId(), "Would you like me to take you to Mort Myre?"),
+                        new OptionsDialogue(
+                                new Option("Yes", () -> ShipNPC.setSail(player, "Mort Myre", new Position(3498, 3380, 0))),
+                                new Option("No")
+                        )
+                );
+            }
+        }));
     }
 }

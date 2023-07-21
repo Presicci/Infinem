@@ -2216,5 +2216,19 @@
     "z": 0,
     "direction": "S",
     "walkRange": 5
+  },
+
+
+
+
+  //13876
+  {
+    "name": "Cyreg Paddlehorn",
+    "id": 5046,
+    "x": 3499,
+    "y": 3381,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]
