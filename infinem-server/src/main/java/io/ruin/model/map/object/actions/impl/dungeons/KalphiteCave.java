@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
-import io.ruin.model.activities.motherlodemine.MotherlodeMine;
+import io.ruin.model.activities.skilling.motherlodemine.MotherlodeMine;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.map.object.actions.ObjectAction;

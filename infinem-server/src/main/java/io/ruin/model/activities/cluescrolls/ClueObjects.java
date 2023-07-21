@@ -2,7 +2,7 @@ package io.ruin.model.activities.cluescrolls;
 
 import io.ruin.cache.ObjectDef;
 import io.ruin.content.activities.lms.LastManStanding;
-import io.ruin.model.activities.motherlodemine.MotherlodeMine;
+import io.ruin.model.activities.skilling.motherlodemine.MotherlodeMine;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;

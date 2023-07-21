@@ -1,4 +1,4 @@
-package io.ruin.model.activities.pyramidplunder;
+package io.ruin.model.activities.skilling.pyramidplunder;
 
 import com.google.common.base.Stopwatch;
 import io.ruin.model.entity.player.Player;

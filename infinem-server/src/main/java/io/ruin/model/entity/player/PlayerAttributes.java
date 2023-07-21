@@ -15,7 +15,7 @@ import io.ruin.model.activities.combat.fightcaves.FightCaves;
 import io.ruin.model.activities.combat.inferno.Inferno;
 import io.ruin.model.activities.combat.pestcontrol.PestControlGame;
 import io.ruin.model.activities.combat.pvminstance.PVMInstance;
-import io.ruin.model.activities.pyramidplunder.PyramidPlunderGame;
+import io.ruin.model.activities.skilling.pyramidplunder.PyramidPlunderGame;
 import io.ruin.model.activities.combat.raids.xeric.party.Party;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.activities.wilderness.WildernessObelisk;

@@ -1,4 +1,4 @@
-package io.ruin.model.activities.wintertodt;
+package io.ruin.model.activities.skilling.wintertodt;
 
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.map.object.GameObject;

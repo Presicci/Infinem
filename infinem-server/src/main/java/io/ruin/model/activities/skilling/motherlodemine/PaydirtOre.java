@@ -1,4 +1,4 @@
-package io.ruin.model.activities.motherlodemine;
+package io.ruin.model.activities.skilling.motherlodemine;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.skills.mining.Rock;

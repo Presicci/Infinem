@@ -1,4 +1,4 @@
-package io.ruin.model.activities.pyramidplunder;
+package io.ruin.model.activities.skilling.pyramidplunder;
 
 /**
  * @author ReverendDread on 2/29/2020

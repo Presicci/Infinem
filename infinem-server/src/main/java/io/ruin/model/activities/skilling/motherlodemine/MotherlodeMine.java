@@ -1,4 +1,4 @@
-package io.ruin.model.activities.motherlodemine;
+package io.ruin.model.activities.skilling.motherlodemine;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
@@ -506,8 +506,8 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
 
     static {
         MapListener.registerRegion(14936)
-                .onEnter(io.ruin.model.activities.motherlodemine.MotherlodeMine::entered)
-                .onExit(io.ruin.model.activities.motherlodemine.MotherlodeMine::exited);
+                .onEnter(MotherlodeMine::entered)
+                .onExit(MotherlodeMine::exited);
     }
 
 }

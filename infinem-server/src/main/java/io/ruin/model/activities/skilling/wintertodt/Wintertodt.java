@@ -1,4 +1,4 @@
-package io.ruin.model.activities.wintertodt;
+package io.ruin.model.activities.skilling.wintertodt;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;

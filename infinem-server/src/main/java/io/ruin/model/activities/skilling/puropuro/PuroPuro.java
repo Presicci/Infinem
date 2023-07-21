@@ -1,4 +1,4 @@
-package io.ruin.model.activities.puropuro;
+package io.ruin.model.activities.skilling.puropuro;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
