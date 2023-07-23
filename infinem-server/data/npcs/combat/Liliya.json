@@ -1,7 +1,7 @@
 [
   { #Liliya (24)
     "ids": [ 2632 ],
-  "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Liliya",
+  "handler": "io.ruin.model.combat.npc.werewolves.canifis.Liliya",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

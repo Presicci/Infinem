@@ -1,7 +1,7 @@
 [
   { #Battle mage (54) (Zamorak)
     "ids": [ 1610 ],
-    "handler": "io.ruin.model.activities.miscpvm.ZamorakBattlemage",
+    "handler": "io.ruin.model.combat.npc.ZamorakBattlemage",
     //Combat Info
     "hitpoints": 100,
   "aggressive_level": 40,
@@ -44,7 +44,7 @@
   },
     { #Battle mage (54) (Saradomin)
     "ids": [ 1611 ],
-    "handler": "io.ruin.model.activities.miscpvm.SaradominBattlemage",
+    "handler": "io.ruin.model.combat.npc.SaradominBattlemage",
     //Combat Info
     "hitpoints": 100,
   "aggressive_level": 40,
@@ -87,7 +87,7 @@
   },
     { #Battle mage (54) (Guthix)
     "ids": [ 1612 ],
-    "handler": "io.ruin.model.activities.miscpvm.GuthixBattlemage",
+    "handler": "io.ruin.model.combat.npc.GuthixBattlemage",
     //Combat Info
     "hitpoints": 100,
   "aggressive_level": 40,

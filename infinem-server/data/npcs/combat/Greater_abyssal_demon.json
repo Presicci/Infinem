@@ -1,7 +1,7 @@
 [
   { #Greater abyssal demon (342)
     "ids": [ 7410 ],
-    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.GreaterAbyssalDemon",
+    "handler": "io.ruin.model.combat.npc.slayer.superiors.GreaterAbyssalDemon",
     //Combat Info
     "hitpoints": 400,
     "aggressive_level": 0,

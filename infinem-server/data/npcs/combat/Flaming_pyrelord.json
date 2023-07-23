@@ -1,7 +1,7 @@
 [
   { #Flaming pyrelord (97)
     "ids": [ 7394 ],
-    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.Pyrelord",
+    "handler": "io.ruin.model.combat.npc.slayer.superiors.Pyrelord",
     //Combat Info
     "hitpoints": 126,
     "aggressive_level": 0,

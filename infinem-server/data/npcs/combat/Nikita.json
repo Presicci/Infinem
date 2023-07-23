@@ -1,7 +1,7 @@
 [
   { #Nikita (24)
     "ids": [ 2629 ],
-  "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Nikita",
+  "handler": "io.ruin.model.combat.npc.werewolves.canifis.Nikita",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

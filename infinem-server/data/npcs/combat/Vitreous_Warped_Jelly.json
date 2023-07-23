@@ -1,7 +1,7 @@
 [
   { #Vitreous Warped Jelly (241)
   "ids": [ 7400 ],
-  "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.VitreousJelly",
+  "handler": "io.ruin.model.combat.npc.slayer.superiors.VitreousJelly",
   //Combat Info
   "hitpoints": 220,
   "aggressive_level": 0,

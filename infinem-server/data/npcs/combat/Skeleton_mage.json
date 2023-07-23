@@ -1,7 +1,7 @@
 [
   { #Skeleton Mage (16)
     "ids": [ 84 ],
-    "handler": "io.ruin.model.activities.miscpvm.magic.SkeletonMage16",
+    "handler": "io.ruin.model.combat.npc.magic.SkeletonMage16",
     //Combat Info
     "hitpoints": 17,
     "aggressive_level": 32,
@@ -44,7 +44,7 @@
   },
   { #Skeleton Mage (83)
     "ids": [ 4319 ],
-    "handler": "io.ruin.model.activities.miscpvm.magic.SkeletonMage83",
+    "handler": "io.ruin.model.combat.npc.magic.SkeletonMage83",
     //Combat Info
     "hitpoints": 80,
     "aggressive_level": 0,

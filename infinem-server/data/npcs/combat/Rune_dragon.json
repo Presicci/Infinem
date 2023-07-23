@@ -44,7 +44,7 @@
   },
     { #Rune dragon (POH)
     "ids": [ 8027 ],
-    "handler": "io.ruin.model.activities.miscpvm.dragons.RuneDragon",
+    "handler": "io.ruin.model.combat.npc.dragons.RuneDragon",
     //Combat Info
     "hitpoints": 330,
     "aggressive_level": 608,

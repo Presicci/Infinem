@@ -1,7 +1,7 @@
 [
   { #Eduard (24)
     "ids": [ 2618 ],
-    "handler": "io.ruin.model.activities.miscpvm.werewolves.canifis.Eduard",
+    "handler": "io.ruin.model.combat.npc.werewolves.canifis.Eduard",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,

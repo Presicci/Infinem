@@ -1,7 +1,7 @@
 [
   { #Nuclear smoke devil (280)
     "ids": [ 7406 ],
-    "handler": "io.ruin.model.activities.miscpvm.slayer.superiors.NuclearSmokeDevil",
+    "handler": "io.ruin.model.combat.npc.slayer.superiors.NuclearSmokeDevil",
     //Combat Info
     "hitpoints": 240,
     "aggressive_level": 0,

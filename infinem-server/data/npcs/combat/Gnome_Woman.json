@@ -1,7 +1,7 @@
 [
   { #Gnome woman (1)
   "ids": [ 6086, 6087 ],
-  "handler": "io.ruin.model.activities.miscpvm.basic.BasicArcherCombat",
+  "handler": "io.ruin.model.combat.npc.basic.BasicArcherCombat",
   //Combat Info
   "hitpoints": 2,
   "aggressive_level": 2,
