@@ -49,7 +49,6 @@ public abstract class Entity {
         if(this instanceof Player) {
             player = (Player) this;
             npc = null;
-            temporaryAttributes = new EnumMap<>(AttributeKey.class);
         } else {
             npc = (NPC) this;
             player = null;
@@ -1060,32 +1059,56 @@ public abstract class Entity {
         return !dead();
     }
 
-    protected Map<AttributeKey, Object> temporaryAttributes = Collections.synchronizedMap(new EnumMap<>(AttributeKey.class));
+    protected Map<String, Object> temporaryAttributes = Collections.synchronizedMap(new HashMap<>());
 
-    public boolean hasTemporaryAttribute(AttributeKey key) {
+    public boolean hasTemporaryAttribute(String key) {
         return temporaryAttributes != null && temporaryAttributes.containsKey(key);
     }
 
-    public <T> T getTemporaryAttribute(AttributeKey key) {
+    public boolean hasTemporaryAttribute(AttributeKey key) {
+        return hasTemporaryAttribute(key.name());
+    }
+
+    public <T> T getTemporaryAttribute(String key) {
         return (T) temporaryAttributes.get(key);
     }
 
-    public int getTemporaryAttributeIntOrZero(AttributeKey key) {
+    public <T> T getTemporaryAttribute(AttributeKey key) {
+        return getTemporaryAttribute(key.name());
+    }
+
+    public int getTemporaryAttributeIntOrZero(String key) {
         Object value = temporaryAttributes.get(key);
         if (value == null) return 0;
         if (!(value instanceof Number)) return 0;
         return ((Number) value).intValue();
     }
 
-    public <T> T getTemporaryAttributeOrDefault(AttributeKey key, Object defaultValue) {
+    public int getTemporaryAttributeIntOrZero(AttributeKey key) {
+        return getTemporaryAttributeIntOrZero(key.name());
+    }
+
+    public <T> T getTemporaryAttributeOrDefault(String key, Object defaultValue) {
         return (T) temporaryAttributes.getOrDefault(key, defaultValue);
     }
 
-    public void removeTemporaryAttribute(AttributeKey key) {
+    public <T> T getTemporaryAttributeOrDefault(AttributeKey key, Object defaultValue) {
+        return getTemporaryAttributeOrDefault(key.name(), defaultValue);
+    }
+
+    public void removeTemporaryAttribute(String key) {
         temporaryAttributes.remove(key);
     }
 
-    public void putTemporaryAttribute(AttributeKey key, Object v) {
+    public void removeTemporaryAttribute(AttributeKey key) {
+        removeTemporaryAttribute(key.name());
+    }
+
+    public void putTemporaryAttribute(String key, Object v) {
         temporaryAttributes.put(key, v);
+    }
+
+    public void putTemporaryAttribute(AttributeKey key, Object v) {
+        putTemporaryAttribute(key.name(), v);
     }
 }
