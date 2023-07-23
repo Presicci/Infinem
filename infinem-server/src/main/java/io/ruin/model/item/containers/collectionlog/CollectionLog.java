@@ -194,12 +194,12 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
 
     /* adds up all the clue count from beginner -> master */
     public static int addSumMultipleClues(Player player) {
-        int sum1 = player.beginnerClueCount;
-        int sum2 = player.easyClueCount;
-        int sum3 = player.medClueCount;
-        int sum4 = player.hardClueCount;
-        int sum5 = player.eliteClueCount;
-        int sum6 = player.masterClueCount;
+        int sum1 = PlayerCounter.BEGINNER_CLUES_COMPLETED.get(player);
+        int sum2 = PlayerCounter.EASY_CLUES_COMPLETED.get(player);
+        int sum3 = PlayerCounter.MEDIUM_CLUES_COMPLETED.get(player);
+        int sum4 = PlayerCounter.HARD_CLUES_COMPLETED.get(player);
+        int sum5 = PlayerCounter.ELITE_CLUES_COMPLETED.get(player);
+        int sum6 = PlayerCounter.MASTER_CLUES_COMPLETED.get(player);
         return sum1+sum2+sum3+sum4+sum5+sum6;
     }
 

@@ -141,13 +141,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public ClueSave eliteClue;
     @Expose public ClueSave masterClue;
 
-    @Expose public int beginnerClueCount;
-    @Expose public int easyClueCount;
-    @Expose public int medClueCount;
-    @Expose public int hardClueCount;
-    @Expose public int eliteClueCount;
-    @Expose public int masterClueCount;
-
 
     /**
      * Motherlode mine

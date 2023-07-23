@@ -376,6 +376,16 @@ public enum PlayerCounter {
      */
     DAILY_TASKS_COMPLETED,
 
+    /**
+     * Clues
+     */
+    BEGINNER_CLUES_COMPLETED,
+    EASY_CLUES_COMPLETED,
+    MEDIUM_CLUES_COMPLETED,
+    HARD_CLUES_COMPLETED,
+    ELITE_CLUES_COMPLETED,
+    MASTER_CLUES_COMPLETED,
+
     DEMON_KILLS,
 
     IMPLINGS_CAUGHT,
@@ -383,8 +393,9 @@ public enum PlayerCounter {
 
     BRIMSTONE_CHESTS_OPENED;
 
-    public final void increment(Player player, int amount) {
+    public final int increment(Player player, int amount) {
         set(player, get(player) + amount);
+        return get(player);
     }
 
     public final void decrement(Player player, int amount) {
