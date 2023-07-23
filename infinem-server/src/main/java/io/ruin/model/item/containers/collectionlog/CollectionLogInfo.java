@@ -202,20 +202,20 @@ public enum CollectionLogInfo {
         public int getKillCount(Player player, int slot) {
             switch (slot) {
                 case 0://beginner treasure trails
-                    return player.beginnerClueCount;
+                    return PlayerCounter.BEGINNER_CLUES_COMPLETED.get(player);
                 case 1://easy treasure trails
-                    return player.easyClueCount;
+                    return PlayerCounter.EASY_CLUES_COMPLETED.get(player);
                 case 2://medium treasure trails
-                    return player.medClueCount;
+                    return PlayerCounter.MEDIUM_CLUES_COMPLETED.get(player);
                 case 3://hard treasure trails
                 case 6://shared hard
-                    return player.hardClueCount;
+                    return PlayerCounter.HARD_CLUES_COMPLETED.get(player);
                 case 4://elite treasure trails
                 case 7://shared elite
-                    return 5;
+                    return PlayerCounter.ELITE_CLUES_COMPLETED.get(player);
                 case 5://master treasure trails
                 case 8://shared master
-                    return 6;
+                    return PlayerCounter.MASTER_CLUES_COMPLETED.get(player);
                 case 9://shared treasure trail rewards
                     return CollectionLog.addSumMultipleClues(player);
                 default: return 0;
