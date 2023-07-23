@@ -438,7 +438,10 @@ public class Mining {
                 {Rock.TE_SALT, 33256, 33253, PlayerCounter.MINE_SALT},
                 {Rock.EFH_SALT, 33255, 33253, PlayerCounter.MINE_SALT},
                 {Rock.URT_SALT, 33254, 33253, PlayerCounter.MINE_SALT},
-                {Rock.BASALT, 33257, 33253, PlayerCounter.MINE_SALT}
+                {Rock.BASALT, 33257, 33253, PlayerCounter.MINE_SALT},
+                {Rock.LIMESTONE, 11382, 11383, PlayerCounter.MINED_LIMESTONE},
+                {Rock.LIMESTONE, 11383, 11384, PlayerCounter.MINED_LIMESTONE},
+                {Rock.LIMESTONE, 11384, 11385, PlayerCounter.MINED_LIMESTONE}
         };
         for (Object[] d : oreData) {
             Rock rock = (Rock) d[0];
