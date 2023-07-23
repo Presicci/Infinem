@@ -1844,41 +1844,69 @@ public class Player extends PlayerAttributes {
     @Expose @Getter
     private Bestiary bestiary;
 
-    public boolean hasAttribute(AttributeKey key) {
+    public boolean hasAttribute(String key) {
         return attributes.containsKey(key);
     }
 
-    public <T> T getAttribute(AttributeKey key) {
+    public boolean hasAttribute(AttributeKey key) {
+        return hasAttribute(key.name());
+    }
+
+    public <T> T getAttribute(String key) {
         return (T) attributes.get(key);
     }
 
-    public int getAttributeIntOrZero(AttributeKey key) {
+    public <T> T getAttribute(AttributeKey key) {
+        return getAttribute(key.name());
+    }
+
+    public int getAttributeIntOrZero(String key) {
         Object value = attributes.get(key);
         if (value == null) return 0;
         if (!(value instanceof Number)) return 0;
         return ((Number) value).intValue();
     }
 
-    public <T> T getAttributeOrDefault(AttributeKey key, Object defaultValue) {
+    public int getAttributeIntOrZero(AttributeKey key) {
+        return getAttributeIntOrZero(key.name());
+    }
+
+    public <T> T getAttributeOrDefault(String key, Object defaultValue) {
         return (T) attributes.getOrDefault(key, defaultValue);
     }
 
-    public void removeAttribute(AttributeKey key) {
+    public <T> T getAttributeOrDefault(AttributeKey key, Object defaultValue) {
+        return getAttributeOrDefault(key.name(), defaultValue);
+    }
+
+    public void removeAttribute(String key) {
         attributes.remove(key);
     }
 
-    public void putAttribute(AttributeKey key, Object v) {
+    public void removeAttribute(AttributeKey key) {
+        removeAttribute(key.name());
+    }
+
+    public void putAttribute(String key, Object v) {
         attributes.put(key, v);
     }
 
-    public int incrementNumericAttribute(AttributeKey key, int amount) {
+    public void putAttribute(AttributeKey key, Object v) {
+        putAttribute(key.name(), v);
+    }
+
+    public int incrementNumericAttribute(String key, int amount) {
         Object object = attributes.get(key);
         if (object != null && !(object instanceof Number)) {
-            throw new IllegalArgumentException("Attribute with key [" + key.name() + "] is not numeric.");
+            throw new IllegalArgumentException("Attribute with key [" + key + "] is not numeric.");
         }
         int newAmount = object == null ? amount : ((Number) object).intValue() + amount;
         attributes.put(key, newAmount);
         return newAmount;
+    }
+
+    public int incrementNumericAttribute(AttributeKey key, int amount) {
+        return incrementNumericAttribute(key.name(), amount);
     }
 
     @Getter private final transient PuzzleBox puzzleBox = new PuzzleBox(this);
