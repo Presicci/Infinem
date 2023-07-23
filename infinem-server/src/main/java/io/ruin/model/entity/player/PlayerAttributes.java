@@ -85,8 +85,6 @@ public abstract class PlayerAttributes extends Entity {
      */
     @Expose public int absorptionPoints = 0;
 
-    @Expose public int nightmareZonePoints = 0;
-
     @Expose public int nmzRewardPoints;
 
     @Expose public int nmzCofferCoins;
@@ -187,19 +185,11 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public boolean miningGuildMinerals;
 
-    @Expose public int gluttony;
-
-    @Expose public int yesEmote;
-
-    @Expose public int noEmote;
-
     public TickDelay yesDelay = new TickDelay();
 
     public TickDelay noDelay = new TickDelay();
 
     public TickDelay emoteDelay = new TickDelay();
-
-    @Expose public int teleportTabsBroken;
 
     @Expose public boolean beginnerParkourEnergyBoost;
 
@@ -217,17 +207,11 @@ public abstract class PlayerAttributes extends Entity {
 
     public NPC examineMonster;
 
-    @Expose public int runForestRun;
-
-    @Expose public boolean runForestRunUnlockable;
-
     @Expose public BarrowsBrother barrowsChestBrother;
 
     @Expose public int barrowsChestsOpened;
 
     public TickDelay magicImbueEffect = new TickDelay();
-
-    public NPC teleportsWizard;
 
     @Expose public int teleportCategoryIndex, teleportSubcategoryIndex;
 
@@ -244,8 +228,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public boolean edgevilleLeverWarning = true;
 
     @Expose public int mageArenaPoints;
-
-    public boolean teleportsInterface;
 
     @Expose public int previousTeleportX = -1, previousTeleportY, previousTeleportZ;
 
@@ -291,8 +273,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public int recoilDamageRemaining = 40;
 
-    @Expose public int sufferingCharges;
-
     /**
      * Dueling stuff
      */
@@ -302,12 +282,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int duelWins, duelLosses;
 
     public TickDelay acceptDelay = new TickDelay();
-
-    public int totalStaked = 0;
-
-    public int bloodMoneyStaked = 0;
-
-    public int bloodyTokensStaked = 0;
 
     @Expose public boolean experienceLock;
 
@@ -385,10 +359,6 @@ public abstract class PlayerAttributes extends Entity {
      * Hunter
      */
     public ArrayList<Trap> traps = new ArrayList<>(5);
-    @Expose public int caughtSwift, caughtWarbler, caughtLongtail, caughtTwitch, caughtWagtail;
-    @Expose public int caughtGreyChinchompa, caughtRedChinchompa, caughtBlackChinchompa;
-    @Expose public int caughtSwampLizard, caughtOrangeSalamander, caughtRedSalamander, caughtBlackSalamander;
-    @Expose public int caughtWildKebbit, caughtBarbKebbit, caughtPricklyKebbit, caughtSabreKebbit;
 
     /**
      * Godwars
@@ -398,12 +368,10 @@ public abstract class PlayerAttributes extends Entity {
     /**
      * Slayer
      */
-    @Expose public String slayerTaskName;
     @Expose public int slayerTasksCompleted;
     @Expose public int slayerSpree = 0;
     @Expose public boolean slayerCombatCheck;
     @Expose public int slayerLocation = 0;
-    @Expose public int wildernessTasksCompleted;
 
     public TickDelay blackChinchompaBoost = new TickDelay();
     @Expose public int blackChinchompaBoostTimeLeft;
@@ -477,7 +445,6 @@ public abstract class PlayerAttributes extends Entity {
      * Runecrafting achievement thingies
      */
     @Expose public boolean enteredAbyss;
-    @Expose public int abyssCreaturesKilled;
 
     @Expose public boolean morytaniaFarmAchievement;
 
@@ -666,12 +633,10 @@ public abstract class PlayerAttributes extends Entity {
      */
 
     @Expose public int storeAmountSpent;
-    @Expose public List<Item> claimedStoreItems;
 
     /**
      * Resting
      */
-    @Expose public boolean resting;
 
     /**
      * Elder chaos druid teleport
@@ -728,7 +693,6 @@ public abstract class PlayerAttributes extends Entity {
     /**
      * Buy Credits
      */
-    public int selectedCreditPackage, selectedPaymentMethod;
 
     /**
      *
@@ -752,8 +716,6 @@ public abstract class PlayerAttributes extends Entity {
      * Intro achievements fields
      */
     @Expose public boolean bestiaryIntro = false;
-    @Expose public int teleportPortalUses = 0;
-    @Expose public int presetsLoaded = 0;
 
     /**
      * New con code
@@ -822,7 +784,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public DailyTask[] dailyTasks = new DailyTask[3];
     @Expose public int[] dailyTaskProgress = new int[3];
-    @Expose public int dailyTasksCompleted;
     @Expose public int dailyTaskPoints;
 
     /**
@@ -835,12 +796,10 @@ public abstract class PlayerAttributes extends Entity {
      * Supply chest wilderness event
      */
     public boolean supplyChestRestricted = false;
-    @Expose public boolean supplyChestWarning = true;
 
     /**
      * Blood money key wilderness event
      */
-    public boolean bloodyKeyRestricted = false;
     @Expose public boolean bloodyKeyWarning = true;
 
     /**
@@ -853,8 +812,6 @@ public abstract class PlayerAttributes extends Entity {
      */
     public boolean dragonfireShieldSpecial = false;
     public TickDelay dragonfireShieldCooldown = new TickDelay();
-
-    @Expose public ArrayList<Item> unlockedIronmanItems = new ArrayList<>();
 
     /**
      * Ring of wealth attributes for features
@@ -926,7 +883,6 @@ public abstract class PlayerAttributes extends Entity {
 
 
     @Expose public boolean bootsOfLightnessTaken = false;
-    @Expose public int demonKills = 0;
 
     /**
      * Nest boxes
@@ -958,11 +914,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int claimedVotes;
 
     @Expose public int voteMysteryBoxReward;
-
-    @Expose public int implingCaught = 0;
-    @Expose public int butterfliesCaught = 0;
-
-    @Expose public boolean startedEggHunt = false;
 
     @Expose public boolean preventSkippingCourse = false;
 
@@ -1010,7 +961,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int lmsKills;
     @Expose public int lmsWins;
     @Expose public int lmsGamesPlayed;
-    @Expose public int lmsRank;
 
     public Tournament tournament;
     public TournamentFightPair tournamentFight;
@@ -1021,13 +971,7 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public Position cannonPosition;
     @Expose public int cannonBallsLoaded;
 
-    public int pkModeTutorialOp;
-
-    @Expose public int bossPoints;
-
     @Expose public boolean bountyHunterOverlay = true;
-
-    public PyramidPlunderGame pyramidPlunderGame;
 
     @Expose @Getter
     public TeleportInterface teleports;
@@ -1052,8 +996,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose @Getter @Setter private boolean tanSoftLeather = true;
 
     @Getter @Setter private boolean dreaming = false;
-
-    @Expose public int brimstoneChestsOpened;
 
     @Expose @Getter private final Set<Integer> SpokenToNPCSet = new HashSet<>();
     @Expose @Getter private final EnumSet<Waystone> UnlockedWaystones = EnumSet.noneOf(Waystone.class);
