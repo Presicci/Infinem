@@ -1569,9 +1569,9 @@ public class Administrator {
                 }
                 return true;
             }
-
+            case "fn":
             case "fnpc": {
-                String search = query.substring(5);
+                String search = command.equals("fn") ? query.substring(3) : query.substring(5);
                 int combat = -1;
                 if(search.contains(":")) {
                     String[] s = search.split(":");
