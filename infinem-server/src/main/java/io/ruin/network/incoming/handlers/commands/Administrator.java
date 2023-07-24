@@ -1585,6 +1585,27 @@ public class Administrator {
                 return true;
             }
 
+            case "fvn":
+            case "fvnpc": {
+                int id = Integer.parseInt(args[0]);
+                for (NPCDef def : NPCDef.cached.values()) {
+                    if (def != null && def.id == id) {
+                        player.sendMessage("Main ID: " + def.id + " (" + def.name + "): combat=" + def.combatLevel + " options=" + Arrays.toString(def.options) +" size=" + def.size);
+                        break;
+                    }
+                }
+                for (NPCDef def : NPCDef.cached.values()) {
+                    if (def.showIds == null || def.showIds.length == 0)
+                        continue;
+                    for (int vId : def.showIds) {
+                        if (vId == id) {
+                            player.sendMessage("varp ID: " + def.id + " (" + def.name + "): combat=" + def.combatLevel + " options=" + Arrays.toString(def.options) +" size=" + def.size);
+                        }
+                    }
+                }
+                return true;
+            }
+
             case "pnpc": {
                 int npcId = Integer.parseInt(args[0]);
                 if(npcId > 0) {
