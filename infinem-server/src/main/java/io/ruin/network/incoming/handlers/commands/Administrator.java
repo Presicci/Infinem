@@ -1876,24 +1876,6 @@ public class Administrator {
                 return true;
             }
 
-            case "fn":
-            case "findnpc": {
-                int l = command.length() + 1;
-                if(query.length() > l) {
-                    String search = query.substring(l).toLowerCase();
-
-                    for (NPCDef def : NPCDef.cached.values()) {
-                        if (def == null || def.name == null)
-                            continue;
-
-                        if (def.name.toLowerCase().contains(search)) {
-                            player.sendMessage("    " + def.id + ": " + def.name);
-                        }
-                    }
-                }
-                return true;
-            }
-
 
             case "b":
             case "bank":
