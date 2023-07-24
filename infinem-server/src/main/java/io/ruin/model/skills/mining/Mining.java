@@ -451,7 +451,7 @@ public class Mining {
             ObjectAction.register(baseId, "mine", (player, obj) -> mine(rock, player, obj, emptyId, counter, null));
             ObjectAction.register(baseId, "prospect", (player, obj) -> prospect(rock, player, false));
         }
-        int[] emptyOreIds = {11390, 11391};
+        int[] emptyOreIds = {11390, 11391, 11385};
         for (int id : emptyOreIds) {
             ObjectAction.register(id, "mine", (player, obj) -> player.sendMessage("There is no ore currently available in this rock."));
             ObjectAction.register(id, "prospect", (player, obj) -> player.sendMessage("There is no ore currently available in this rock."));
