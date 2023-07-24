@@ -5,6 +5,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.stat.StatType;
 
@@ -13,6 +14,7 @@ import static io.ruin.model.skills.Tool.CHISEL;
 public enum Gem {
 
     OPAL(1, 15.0, 1625, 1609, 886, "Opal", "Opals"),
+    LIMESTONE(12, 6.0, Items.LIMESTONE, Items.LIMESTONE_BRICK, 1309, "Limestone", "Limestone"),
     JADE(13, 20.0, 1627, 1611, 886, "Jade", "Jades"),
     RED_TOPAZ(16, 25.0, 1629, 1613, 887, "Red topaz", "Red topazes"),
     SAPPHIRE(20, 50.0, 1623, 1607, 888, "Sapphire", "Sapphires"),
