@@ -4,15 +4,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.google.common.collect.Lists;
 import com.google.gson.GsonBuilder;
-import io.ruin.api.utils.IPMute;
-import io.ruin.api.utils.JsonUtils;
-import io.ruin.api.utils.NumberUtils;
-import io.ruin.api.utils.ServerWrapper;
+import io.ruin.api.utils.*;
 import io.ruin.cache.*;
 import io.ruin.cache.EnumMap;
 import io.ruin.content.activities.event.TimedEventManager;
-import io.ruin.content.activities.event.impl.eventboss.EventBoss;
-import io.ruin.content.activities.event.impl.eventboss.EventBossType;
 import io.ruin.content.areas.wilderness.DeadmanChestEvent;
 import io.ruin.data.DataFile;
 import io.ruin.data.impl.dialogue.DialogueLoader;
@@ -54,6 +49,7 @@ import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.inter.handlers.OptionScroll;
+import io.ruin.model.inter.journal.dropviewer.DropViewer;
 import io.ruin.model.inter.journal.presets.PresetCustom;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
@@ -73,6 +69,7 @@ import io.ruin.model.map.*;
 import io.ruin.model.map.dynamic.DynamicMap;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.map.object.actions.impl.PrayerAltar;
 import io.ruin.model.map.route.RouteFinder;
 import io.ruin.model.shop.ShopManager;
 import io.ruin.model.skills.construction.*;
@@ -82,6 +79,7 @@ import io.ruin.model.skills.construction.room.impl.PortalNexus;
 import io.ruin.model.skills.farming.farming_contracts.SeedPack;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.hunter.Impling;
+import io.ruin.model.skills.magic.SpellBook;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.mining.Mining;
 import io.ruin.model.skills.mining.Pickaxe;
@@ -93,16 +91,15 @@ import io.ruin.network.central.CentralClient;
 import io.ruin.network.incoming.handlers.CommandHandler;
 import io.ruin.services.LatestUpdate;
 import io.ruin.services.Punishment;
-import io.ruin.services.discord.impl.EventBossEmbedMessage;
-import io.ruin.services.discord.impl.RareDropEmbedMessage;
-import io.ruin.services.discord.impl.ShutdownEmbedMessage;
 import io.ruin.utility.AttributePair;
 import io.ruin.utility.CS2Script;
 import org.apache.commons.lang3.RandomUtils;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -122,7 +119,7 @@ public class Administrator {
 
     private static Position relativeBase;
 
-    public static boolean handleAdmin(Player player, String query, String command, String[] args) {
+    public static boolean handleAdmin(Player player, String query, String command, String[] args) throws IOException, UnsupportedFlavorException {
         if(!player.isAdmin()) {
             return false;
         }
@@ -320,14 +317,14 @@ public class Administrator {
             }
 
             case "startevent":
-                EventBossType boss;
-                switch (args[0]) {
+                //EventBossType boss;
+                //switch (args[0]) {
                     /*case "corrupted":
                     case "nech":
                     case "nechryarch":
                     case "corrupt":
                         boss = EventBossType.CORRUPTED_NECHRYARCH;
-                        break;*/
+                        break;
                     case "lava":
                     case "brutal":
                     case "drag":
@@ -336,7 +333,7 @@ public class Administrator {
                     default:
                         boss = EventBossType.CORRUPTED_NECHRYARCH;
                 }
-                TimedEventManager.INSTANCE.setEvent(new EventBoss(boss));
+                TimedEventManager.INSTANCE.setEvent(new EventBoss(boss));*/
                 return true;
 
             case "stopevent":
@@ -414,25 +411,22 @@ public class Administrator {
             }
 
             case "testdiscord": {
-                EventBossEmbedMessage.sendDiscordMessage(EventBossType.CORRUPTED_NECHRYARCH, "The Corrupted Nechryarch has spawned south of Wintertodt.");
+                /*EventBossEmbedMessage.sendDiscordMessage(EventBossType.CORRUPTED_NECHRYARCH, "The Corrupted Nechryarch has spawned south of Wintertodt.");
                 ShutdownEmbedMessage.sendDiscordMessage("test");
                 Item item = new Item(4151);
                 NPC npc = new NPC(415);
-                RareDropEmbedMessage.sendDiscordMessage(player.getName() + " just received " + item.getDef().descriptiveName, npc.getDef().descriptiveName, item.getId());
+                RareDropEmbedMessage.sendDiscordMessage(player.getName() + " just received " + item.getDef().descriptiveName, npc.getDef().descriptiveName, item.getId());*/
                 return true;
             }
 
             case "testclue": {
-                StringBuilder content = new StringBuilder();
-                for (String string : args) {
-                    if (args[args.length -1].equalsIgnoreCase(string)) {
-                        content.append(string);
-                    } else {
-                        content.append(string).append(" ");
-                    }
-                }
-                player.getPacketSender().sendString(203, 2, content.toString());
-                player.openInterface(InterfaceType.MAIN, 203);
+                try {
+                    player.getPacketSender().sendString(203, 2, Toolkit.getDefaultToolkit()
+                            .getSystemClipboard()
+                            .getData(DataFlavor.stringFlavor)
+                            .toString());
+                    player.openInterface(InterfaceType.MAIN, 203);
+                } catch (Exception e) {}
                 return true;
             }
 
@@ -450,7 +444,7 @@ public class Administrator {
                 return true;
 
             case "testitem": {
-                Item item = new Item(4151, 1);
+                Item item = new Item(6623, 1);
                 item.putAttributes(AttributeExtensions.attributeMapTypes(
                         new AttributePair<>(AttributeTypes.UPGRADE_2, ItemEffect.RECOIL)
                 ));
@@ -628,7 +622,7 @@ public class Administrator {
 
             case "clearcostumeroom": {
                 for (CostumeStorage s : CostumeStorage.values()) {
-                    Map<Costume, int[]> stored = s.getSets(player);
+                    Map<Costume, Item[]> stored = s.getSets(player);
                     stored.clear();
                 }
                 return true;
@@ -640,13 +634,13 @@ public class Administrator {
                     s.getSets(player).clear();
                 }
                 for (CostumeStorage s : CostumeStorage.values()) {
-                    Map<Costume, int[]> stored = s.getSets(player);
+                    Map<Costume, Item[]> stored = s.getSets(player);
                     for (Costume costume : s.getCostumes()) {
                         if (stored.get(costume) != null)
                             continue;
-                        int[] set = new int[costume.getPieces().length];
+                        Item[] set = new Item[costume.getPieces().length];
                         for (int i = 0; i < costume.getPieces().length; i++) {
-                            set[i] = costume.getPieces()[i][0];
+                            set[i] = new Item(costume.getPieces()[i][0].getId(), 1);
                         }
                         stored.put(costume, set);
                         count++;
@@ -1258,7 +1252,7 @@ public class Administrator {
             case "v":
             case "varp": {
                 int id = Integer.parseInt(args[0]);
-                if(id < 0 || id >= 2050) {
+                if(id < 0) {
                     player.sendFilteredMessage("Varp " + id + " does not exist.");
                     return true;
                 }
@@ -1269,6 +1263,7 @@ public class Administrator {
                 int value = Integer.parseInt(args[1]);
                 Config.create(id, null, false, false).set(player, value);
                 player.sendFilteredMessage("Updated varp " + id + "!");
+                player.sendFilteredMessage("Value: " + Config.create(id, null, false, false).get(player));
                 return true;
             }
 
@@ -1306,6 +1301,7 @@ public class Administrator {
                 }
                 Config.create(id, bit, false, false).set(player, value);
                 player.sendFilteredMessage("Updated varp " + bit.varpId + " with varpbit " + id + "!");
+                player.sendFilteredMessage("Value: " + Config.create(id, bit, false, false).get(player));
                 return true;
             }
 
@@ -1651,16 +1647,43 @@ public class Administrator {
                 def.lootTable.calculate(def.name + " Loot Probability Table");
                 return true;
             }
-
+            /*
+             * Command that spawns an npc and writes that spawn to a file
+             * Args [id, walkRange]
+             */
             case "ispawn": {
-                int id = Integer.parseInt(args[0]);
-                ItemDef def = ItemDef.get(id);
-                if (def == null) {
-                    player.sendMessage("Invalid id!");
+                int itemId = Integer.parseInt(args[0]);
+                int amt = args.length > 1 ? Integer.parseInt(args[1]) : 0;
+                ItemDef def = ItemDef.get(itemId);
+                if(def == null) {
+                    player.sendMessage("Invalid item id: " + itemId);
                     return true;
                 }
-                System.out.println("  {\"id\": " + id + ", \"x\": " + player.getAbsX() +", \"y\": " + player.getAbsY() + ", \"z\": " + player.getHeight() + "}, // " + def.name);
-                new GroundItem(new Item(id, 1)).position(player.getPosition()).spawnWithRespawn(120);
+                new GroundItem(new Item(itemId, amt)).position(player.getPosition()).spawnWithRespawn(120);
+                try {
+                    List<String> list = Files.readAllLines(Paths.get("data/items/spawns/command_item_spawns.json"));
+                    // If a prior entry exists, remove its trailing }
+                    list.remove(list.size() - 1);
+                    // Remove the ] and the end of file
+                    list.remove(list.size() - 1);
+                    // Replace the old } with a },
+                    list.add(list.size(), "\t},");
+                    // Start writing our new entry
+                    list.add(list.size(), "\t{");
+                    list.add(list.size(), "\t\t\"itemName\": \"" + def.name + "\",");
+                    list.add(list.size(), "\t\t\"amount\": " + amt + ",");
+                    list.add(list.size(), "\t\t\"id\": " + def.id + ",");
+                    list.add(list.size(), "\t\t\"x\": " + player.getPosition().getX() + ",");
+                    list.add(list.size(), "\t\t\"y\": " + player.getPosition().getY() + ",");
+                    list.add(list.size(), "\t\t\"z\": " + player.getPosition().getZ() + ",");
+                    list.add(list.size(), "\t\t\"respawnSeconds\": 60");
+                    list.add(list.size(), "\t}");
+                    // Write the closing ]
+                    list.add(list.size(), "]");
+                    Files.write(Paths.get("data/items/spawns/command_item_spawns.json"), list);
+                } catch(IOException e) {
+                    player.sendMessage("Could not write spawn to file.");
+                }
                 return true;
             }
 
@@ -2761,6 +2784,63 @@ public class Administrator {
             case "portalnexus": {
                 PortalNexus.sendConfigure(player);
                 player.getPacketSender().sendAccessMask(19, 21, 0, 10, Integer.parseInt(args[0]));
+                return true;
+            }
+            case "spellbook": {
+                player.dialogue(
+                        new OptionsDialogue("Select which prayer book you'd like to switch to:",
+                                new Option("Modern", () -> PrayerAltar.switchBook(player, SpellBook.MODERN, true)),
+                                new Option("Ancient", () -> PrayerAltar.switchBook(player, SpellBook.ANCIENT, true)),
+                                new Option("Lunar", () -> PrayerAltar.switchBook(player, SpellBook.LUNAR, true)),
+                                new Option("Arceuus", () -> PrayerAltar.switchBook(player, SpellBook.ARCEUUS, true))
+                        )
+                );
+                return true;
+            }
+            case "autocast": {
+                final int parentId = player.getGameFrameId();// Do we need 67?
+                final int childId = parentId == Interface.FIXED_SCREEN ? 75 : 79;
+                player.getPacketSender().sendInterface(Interface.AUTOCAST_SELECTION, parentId, childId, 1);
+                player.getPacketSender().sendAccessMask(Interface.AUTOCAST_SELECTION, 1, 0, 52, 2);
+                Config.AUTOCAST_SET.set(player, Integer.parseInt(args[0]));
+                return true;
+            }
+            case "loadpackage": {
+                try {
+                    PackageLoader.load("io.ruin." + args[0]);
+                } catch (Throwable t) {
+                    System.err.println("Error loading handler: io.ruin." + args[0]);
+                }
+                return true;
+            }
+            case "dropviewer": {
+                DropViewer.open(player);
+                return true;
+            }
+            case "decodeshort": {
+                if (args.length < 2) {
+                    player.sendMessage("Need 2 bytes as perams");
+                    return false;
+                }
+                byte a = Byte.parseByte(args[0]), b = Byte.parseByte(args[1]);
+                int unsignedA = (a & 0xff), unsignedB = (b & 0xff);
+                player.sendMessage("Unsigned byte: a=" + unsignedA + ", b=" + unsignedB);
+                byte byteAA = (byte) (a - 128), byteAB = (byte) (b - 128);
+                player.sendMessage("ByteA: a=" + byteAA + ", b=" + byteAB);
+                int unsignedAA = (byteAA & 0xff), unsignedAB = (byteAB & 0xff);
+                player.sendMessage("Unsigned ByteA: a=" + unsignedAA + ", b=" + unsignedAB);
+                int us = (unsignedA << 8) + unsignedB;
+                int s = us > 32767 ? us - 0x10000 : us;
+                player.sendMessage("Short: signed=" + s + ", unsigned=" + us);
+                int usa = (unsignedA << 8) + unsignedAB;
+                int sa = usa > 32767 ? usa - 0x10000 : usa;
+                player.sendMessage("ShortA: signed=" + sa + ", unsigned=" + usa);
+                int ules = unsignedA + (unsignedB << 8);
+                int les = ules > 32767 ? ules - 0x10000 : ules;
+                player.sendMessage("LEShort: signed=" + les + ", unsigned=" + ules);
+                int ulesa = unsignedAA + (unsignedB << 8);
+                int lesa = ulesa > 32767 ? ulesa - 0x10000 : ulesa;
+                player.sendMessage("LEShortA: signed=" + lesa + ", unsigned=" + ulesa);
                 return true;
             }
         }
