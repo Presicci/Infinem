@@ -22,7 +22,7 @@ public enum Rock {
     EFH_SALT(22595, "efh salt", 72, 250, 5.0, 9, 1000000, 1),
     URT_SALT(22597, "urt salt", 72, 250, 5.0, 9, 1000000, 1),
     BASALT(22603, "basalt", 72, 250, 5.0, 9, 1000000, 1),
-    LIMESTONE(3211, "limestone", 10, 100, 26.5, 9, 1000000, 1);
+    LIMESTONE(3211, "limestone", 10, 100, 26.5, 20, 1000000, 1);
 
     public final int ore, levelReq, difficulty, respawnTime, petOdds;
     public final String rockName;
