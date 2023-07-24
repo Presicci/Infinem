@@ -167,7 +167,7 @@ public class Mining {
                         player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
                                 (rockData == Rock.GEM_ROCK ? ItemDef.get(itemId).name.toLowerCase() : rockData.rockName) + ".");
                     }
-                    player.getTaskManager().doSkillItemLookup(itemId, amount);
+                    player.getTaskManager().doSkillItemLookup(itemId, amount);  // Fix this looking up id 0 all the time
                     if (pickaxe == Pickaxe.STEEL)
                         player.getTaskManager().doLookupByUUID(23, 1);  // Mine some Ore With a Steel Pickaxe
                     if (pickaxe == Pickaxe.RUNE)
@@ -181,7 +181,9 @@ public class Mining {
                             if (rock != null) {
                                 rock.setId(emptyId);
                                 worldEvent.delay(rockData.respawnTime);
-                                rock.setId(rock.originalId);
+                                if (rock.id == emptyId) {
+                                    rock.setId(rock.originalId);
+                                }
                             } else if (npc != null) {
                                 npc.remove();
                             }
