@@ -386,12 +386,18 @@ public enum PlayerCounter {
     ELITE_CLUES_COMPLETED,
     MASTER_CLUES_COMPLETED,
 
+    /**
+     * Chests
+     */
+    BRIMSTONE_CHESTS_OPENED,
+    DARK_CHEST_OPENED,
+
     DEMON_KILLS,
 
     IMPLINGS_CAUGHT,
     BUTTERFLIES_CAUGHT,
 
-    BRIMSTONE_CHESTS_OPENED;
+    ;
 
     public final int increment(Player player, int amount) {
         set(player, get(player) + amount);
