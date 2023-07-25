@@ -84,6 +84,7 @@ public class DarkChest {
                     player.getInventory().addOrDrop(item.getId(), item.getAmount());
                 }
                 PlayerCounter.DARK_CHEST_OPENED.increment(player, 1);
+                player.getTaskManager().doLookupByUUID(911, 1); // Open the Dark Chest
                 player.getStats().addXp(StatType.Thieving, 1500, true);
                 event.delay(1);
                 player.unlock();
