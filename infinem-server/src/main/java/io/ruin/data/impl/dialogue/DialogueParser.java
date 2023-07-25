@@ -64,8 +64,7 @@ public class DialogueParser {
         return dialogues.toArray(new Dialogue[0]);
     }
 
-    private Dialogue checkForSetting(List<String> dialogue) {
-        String line = dialogue.get(lineNumber);
+    private Dialogue checkForSetting(String line, List<String> dialogue) {
         for (DialogueLoaderSetting setting : DialogueLoaderSetting.values()) {
             if (line.startsWith(setting.name())) {
                 int leftIndex = lineNumber + 1;
@@ -142,7 +141,7 @@ public class DialogueParser {
         if (line.startsWith("<")) {
             return parseOptions(line, dialogue);
         }
-        Dialogue checkDialogue = checkForSetting(dialogue);
+        Dialogue checkDialogue = checkForSetting(line, dialogue);
         if (checkDialogue != null) {
             return checkDialogue;
         }
