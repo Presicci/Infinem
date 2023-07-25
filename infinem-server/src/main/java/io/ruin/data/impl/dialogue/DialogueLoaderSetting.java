@@ -11,7 +11,13 @@ import java.util.function.BiPredicate;
 @Getter
 public enum DialogueLoaderSetting {
     HASITEM((p, i) -> p.getInventory().hasId(i)),
-    HASEQUIPMENT((p, i) -> p.getEquipment().hasId(i)),
+    HASEQUIPMENT((p, i) -> {
+        int secondary = p.getTemporaryAttributeIntOrZero(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
+        System.out.println(secondary + "," + i);
+        if (secondary > 0)
+            return p.getEquipment().hasId(i) || p.getEquipment().hasId(secondary);
+        return p.getEquipment().hasId(i);
+    }),
     HASTALKED((p, i) -> p.getSpokenToNPCSet().contains(i), (p, i) -> p.getSpokenToNPCSet().add(i)),
     HASLEVEL((p, i) -> {
         String skillString = p.getTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
