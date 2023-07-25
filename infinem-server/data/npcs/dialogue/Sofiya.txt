@@ -1,0 +1,34 @@
+RAND
+/HASEQUIPMENT:4202:6465
+(Sofiya: I bet you have wonderful paws.
+(Sofiya: If I were as ugly as you, I would not dare to show my face in public!
+/HASEQUIPMENT:4202:6465
+(Sofiya: A very miserable day, altogether... enjoy it while it lasts.
+(Sofiya: Out of my way, punk.
+/HASEQUIPMENT:4202:6465
+(Sofiya: If you catch anyone promise me you'll share.
+(Sofiya: Hmm... you smell strange...
+Player: Strange how?
+Sofiya: Like a human!
+Player: Oh! Er... I just ate one is why!
+/HASEQUIPMENT:4202:6465
+(Sofiya: I haven't smelt you around here before...
+(Sofiya: Leave me alone.
+/HASEQUIPMENT:4202:6465
+(Sofiya: You smell familiar...
+(Sofiya: Don't talk to me again if you value your life!
+/HASEQUIPMENT:4202:6465
+(Sofiya: Seen any humans around here? I'm v-e-r-y hungry.
+(Sofiya: Get lost!
+/HASEQUIPMENT:4202:6465
+(Sofiya: You look to me like someone with a healthy taste for blood.
+(Sofiya: I don't have anything to give you so leave me alone, mendicant.
+/HASEQUIPMENT:4202:6465
+(Sofiya: Good day to you, my friend.
+(Sofiya: Have you no manners?
+/HASEQUIPMENT:4202:6465
+(Sofiya: Fancy going up to the castle for a bit of a snack?
+(Sofiya: I don't have time for this right now.
+/HASEQUIPMENT:4202:6465
+(Sofiya: Give me a moment, I have a bit of someone stuck in my teeth...
+(Sofiya: I have no interest in talking to a pathetic meat bag like yourself.

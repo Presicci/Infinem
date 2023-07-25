@@ -1,0 +1,34 @@
+RAND
+/HASEQUIPMENT:4202:6465
+(Yuri: I bet you have wonderful paws.
+(Yuri: If I were as ugly as you, I would not dare to show my face in public!
+/HASEQUIPMENT:4202:6465
+(Yuri: A very miserable day, altogether... enjoy it while it lasts.
+(Yuri: Out of my way, punk.
+/HASEQUIPMENT:4202:6465
+(Yuri: If you catch anyone promise me you'll share.
+(Yuri: Hmm... you smell strange...
+Player: Strange how?
+Yuri: Like a human!
+Player: Oh! Er... I just ate one is why!
+/HASEQUIPMENT:4202:6465
+(Yuri: I haven't smelt you around here before...
+(Yuri: Leave me alone.
+/HASEQUIPMENT:4202:6465
+(Yuri: You smell familiar...
+(Yuri: Don't talk to me again if you value your life!
+/HASEQUIPMENT:4202:6465
+(Yuri: Seen any humans around here? I'm v-e-r-y hungry.
+(Yuri: Get lost!
+/HASEQUIPMENT:4202:6465
+(Yuri: You look to me like someone with a healthy taste for blood.
+(Yuri: I don't have anything to give you so leave me alone, mendicant.
+/HASEQUIPMENT:4202:6465
+(Yuri: Good day to you, my friend.
+(Yuri: Have you no manners?
+/HASEQUIPMENT:4202:6465
+(Yuri: Fancy going up to the castle for a bit of a snack?
+(Yuri: I don't have time for this right now.
+/HASEQUIPMENT:4202:6465
+(Yuri: Give me a moment, I have a bit of someone stuck in my teeth...
+(Yuri: I have no interest in talking to a pathetic meat bag like yourself.

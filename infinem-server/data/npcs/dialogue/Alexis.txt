@@ -1,0 +1,34 @@
+RAND
+/HASEQUIPMENT:4202:6465
+(Alexis: I bet you have wonderful paws.
+(Alexis: If I were as ugly as you, I would not dare to show my face in public!
+/HASEQUIPMENT:4202:6465
+(Alexis: A very miserable day, altogether... enjoy it while it lasts.
+(Alexis: Out of my way, punk.
+/HASEQUIPMENT:4202:6465
+(Alexis: If you catch anyone promise me you'll share.
+(Alexis: Hmm... you smell strange...
+Player: Strange how?
+Alexis: Like a human!
+Player: Oh! Er... I just ate one is why!
+/HASEQUIPMENT:4202:6465
+(Alexis: I haven't smelt you around here before...
+(Alexis: Leave me alone.
+/HASEQUIPMENT:4202:6465
+(Alexis: You smell familiar...
+(Alexis: Don't talk to me again if you value your life!
+/HASEQUIPMENT:4202:6465
+(Alexis: Seen any humans around here? I'm v-e-r-y hungry.
+(Alexis: Get lost!
+/HASEQUIPMENT:4202:6465
+(Alexis: You look to me like someone with a healthy taste for blood.
+(Alexis: I don't have anything to give you so leave me alone, mendicant.
+/HASEQUIPMENT:4202:6465
+(Alexis: Good day to you, my friend.
+(Alexis: Have you no manners?
+/HASEQUIPMENT:4202:6465
+(Alexis: Fancy going up to the castle for a bit of a snack?
+(Alexis: I don't have time for this right now.
+/HASEQUIPMENT:4202:6465
+(Alexis: Give me a moment, I have a bit of someone stuck in my teeth...
+(Alexis: I have no interest in talking to a pathetic meat bag like yourself.

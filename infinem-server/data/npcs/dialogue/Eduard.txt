@@ -1,0 +1,34 @@
+RAND
+/HASEQUIPMENT:4202:6465
+(Eduard: I bet you have wonderful paws.
+(Eduard: If I were as ugly as you, I would not dare to show my face in public!
+/HASEQUIPMENT:4202:6465
+(Eduard: A very miserable day, altogether... enjoy it while it lasts.
+(Eduard: Out of my way, punk.
+/HASEQUIPMENT:4202:6465
+(Eduard: If you catch anyone promise me you'll share.
+(Eduard: Hmm... you smell strange...
+Player: Strange how?
+Eduard: Like a human!
+Player: Oh! Er... I just ate one is why!
+/HASEQUIPMENT:4202:6465
+(Eduard: I haven't smelt you around here before...
+(Eduard: Leave me alone.
+/HASEQUIPMENT:4202:6465
+(Eduard: You smell familiar...
+(Eduard: Don't talk to me again if you value your life!
+/HASEQUIPMENT:4202:6465
+(Eduard: Seen any humans around here? I'm v-e-r-y hungry.
+(Eduard: Get lost!
+/HASEQUIPMENT:4202:6465
+(Eduard: You look to me like someone with a healthy taste for blood.
+(Eduard: I don't have anything to give you so leave me alone, mendicant.
+/HASEQUIPMENT:4202:6465
+(Eduard: Good day to you, my friend.
+(Eduard: Have you no manners?
+/HASEQUIPMENT:4202:6465
+(Eduard: Fancy going up to the castle for a bit of a snack?
+(Eduard: I don't have time for this right now.
+/HASEQUIPMENT:4202:6465
+(Eduard: Give me a moment, I have a bit of someone stuck in my teeth...
+(Eduard: I have no interest in talking to a pathetic meat bag like yourself.

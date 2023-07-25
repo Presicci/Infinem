@@ -1,0 +1,34 @@
+RAND
+/HASEQUIPMENT:4202:6465
+(Zoja: I bet you have wonderful paws.
+(Zoja: If I were as ugly as you, I would not dare to show my face in public!
+/HASEQUIPMENT:4202:6465
+(Zoja: A very miserable day, altogether... enjoy it while it lasts.
+(Zoja: Out of my way, punk.
+/HASEQUIPMENT:4202:6465
+(Zoja: If you catch anyone promise me you'll share.
+(Zoja: Hmm... you smell strange...
+Player: Strange how?
+Zoja: Like a human!
+Player: Oh! Er... I just ate one is why!
+/HASEQUIPMENT:4202:6465
+(Zoja: I haven't smelt you around here before...
+(Zoja: Leave me alone.
+/HASEQUIPMENT:4202:6465
+(Zoja: You smell familiar...
+(Zoja: Don't talk to me again if you value your life!
+/HASEQUIPMENT:4202:6465
+(Zoja: Seen any humans around here? I'm v-e-r-y hungry.
+(Zoja: Get lost!
+/HASEQUIPMENT:4202:6465
+(Zoja: You look to me like someone with a healthy taste for blood.
+(Zoja: I don't have anything to give you so leave me alone, mendicant.
+/HASEQUIPMENT:4202:6465
+(Zoja: Good day to you, my friend.
+(Zoja: Have you no manners?
+/HASEQUIPMENT:4202:6465
+(Zoja: Fancy going up to the castle for a bit of a snack?
+(Zoja: I don't have time for this right now.
+/HASEQUIPMENT:4202:6465
+(Zoja: Give me a moment, I have a bit of someone stuck in my teeth...
+(Zoja: I have no interest in talking to a pathetic meat bag like yourself.
