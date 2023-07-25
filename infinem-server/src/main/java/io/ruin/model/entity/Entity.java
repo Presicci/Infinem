@@ -1080,6 +1080,13 @@ public abstract class Entity {
     public int getTemporaryAttributeIntOrZero(String key) {
         Object value = temporaryAttributes.get(key);
         if (value == null) return 0;
+        if (value instanceof String) {
+            try {
+                return Integer.parseInt((String) value);
+            } catch (NumberFormatException e) {
+                return 0;
+            }
+        }
         if (!(value instanceof Number)) return 0;
         return ((Number) value).intValue();
     }
