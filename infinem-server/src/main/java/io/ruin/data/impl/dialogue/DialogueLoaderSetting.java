@@ -13,7 +13,6 @@ public enum DialogueLoaderSetting {
     HASITEM((p, i) -> p.getInventory().hasId(i)),
     HASEQUIPMENT((p, i) -> {
         int secondary = p.getTemporaryAttributeIntOrZero(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
-        System.out.println(secondary + "," + i);
         if (secondary > 0)
             return p.getEquipment().hasId(i) || p.getEquipment().hasId(secondary);
         return p.getEquipment().hasId(i);
