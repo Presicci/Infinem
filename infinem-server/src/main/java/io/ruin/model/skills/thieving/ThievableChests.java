@@ -9,6 +9,7 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.Position;
@@ -25,69 +26,50 @@ import static io.ruin.cache.ItemID.COINS_995;
  */
 public class ThievableChests {
 
-    public static class Loot {
-        public Loot(int item, int amt) {
-            this(item, amt, amt);
-        }
-
-        public Loot(int item) {
-            this(item, 1, 1);
-        }
-
-        public Loot(int item, int min, int max) {
-            this.item = item;
-            this.min = min;
-            this.max = max;
-        }
-
-        public int item;
-        public int min, max;
-    }
-
     @AllArgsConstructor
     public enum Chests {
-        COINS_10(11737, 13, 7.8, 7,
+        COINS_10(11737, 13, 7.8, 7, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 3000, 3250, 0)
                 ),
                 new Position[]{new Position(2671, 3299, 1)}),
-        COINS_101(11735, 13, 7.8, 7,
+        COINS_101(11735, 13, 7.8, 7, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 3000, 3250, 0)
                 ),
                 new Position[]{new Position(2612, 3314, 1), new Position(2630, 3655), new Position(2673, 3307)}),
 
-        NATURE(11736, 28, 25.0, 8,
+        NATURE(11736, 28, 25.0, 8, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 1000, 1250, 0),
                         new LootItem(561, 3, 8, 0)
                 ),
                 new Position[]{new Position(2671, 3301, 1), new Position(2614, 3314, 1)}),
 
-        COINS_50(11735, 43, 125.0, 50,
+        COINS_50(11735, 43, 125.0, 50, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 5000, 6500, 0)
                 ),
                 new Position[]{new Position(3188, 3962), new Position(3189, 3962), new Position(3193, 3962), new Position(3044, 3951)}),
-        COINS_501(11736, 43, 125.0, 50,
+        COINS_501(11736, 43, 125.0, 50, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 5000, 6500, 0)
                 ),
                 new Position[]{new Position(3042, 3949)}),
-        COINS_502(11737, 43, 125.0, 50,
+        COINS_502(11737, 43, 125.0, 50, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 5000, 6500, 0)
                 ),
                 new Position[]{new Position(3040, 3949)}),
 
-        ARROWTIP(11742, 47, 150.0, 210,
+        ARROWTIP(11742, 47, 150.0, 210, false,
                 new LootTable().addTable(1,
                         new LootItem(41, 25, 30, 0),
                         new LootItem(995, 1000, 1250, 0)
                 ),
                 new Position[]{new Position(2650, 3659), new Position(2639, 3424)}),
 
-        DORGESH_KAAN(22697, 52, 200.0, 210,
+        DORGESH_KAAN(22697, 52, 200.0, 210, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 1500, 1750, 1),
                         new LootItem(4548, 1, 1),
@@ -98,14 +80,14 @@ public class ThievableChests {
                 ),
                 new Position[]{}),
 
-        BLOOD(11738, 59, 250.0, 135,
+        BLOOD(11738, 59, 250.0, 135, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 1750, 2000, 0),
                         new LootItem(565, 15, 25, 0)
                 ),
                 new Position[]{new Position(2586, 9737), new Position(2586, 9734)}),
 
-        STONE_CHEST(34429, 64, 280, 0,
+        STONE_CHEST(34429, 64, 280, 0, true,
                 new LootTable().addTable(15, LootTable.CommonTables.UNCOMMON_SEED.items)
                         .addTable(270,
                                 new LootItem(995, 20, 260, 99), // Coins
@@ -129,7 +111,7 @@ public class ThievableChests {
                 ),
                 new Position[]{new Position(1302, 10087), new Position(1300, 10085), new Position(1300, 10089)}),
 
-        PALADIN(11739, 72, 500.0, 400,
+        PALADIN(11739, 72, 500.0, 400, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 2500, 3500, 0),
                         new LootItem(384, 1, 2, 0),
@@ -138,7 +120,7 @@ public class ThievableChests {
                 ),
                 new Position[]{new Position(2588, 3302, 1), new Position(2588, 3291, 1)}),
 
-        DORG_RICH(22681, 78, 650.0, 300,
+        DORG_RICH(22681, 78, 650.0, 300, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 500, 2500, 1),
                         new LootItem(1623, 1, 1),
@@ -159,7 +141,7 @@ public class ThievableChests {
                 ),
                 new Position[]{}),
 
-        ROGUES_CASTLE(26757, 84, 100, 10,
+        ROGUES_CASTLE(26757, 84, 100, 10, false,
                 new LootTable().addTable(1,
                         new LootItem(1622, 7, 12, 5),          // Uncut emerald
                         new LootItem(1624, 9, 15, 5),          // Uncut sapphire
@@ -181,12 +163,13 @@ public class ThievableChests {
                 ),
                 new Position[]{new Position(3297, 3940), new Position(3287, 3946), new Position(3283, 3946)});   // TODO add one to home
 
-        public int objectId;
-        public int level;
-        public double xp;
-        public int respawnTime;
-        public LootTable lootTable;
-        public Position[] positions;
+        public final int objectId;
+        public final int level;
+        public final double xp;
+        public final int respawnTime;
+        public final boolean failable;
+        public final LootTable lootTable;
+        public final Position[] positions;
     }
 
     private static void replaceChest(GameObject chest) {
@@ -222,9 +205,30 @@ public class ThievableChests {
         });
     }
 
+    private static boolean isSuccessful(Player player, Chests chest) {
+        if (!chest.failable)
+            return true;
+        int level = player.getStats().get(StatType.Thieving).currentLevel;
+        int reqLevel = chest.level;
+        double chance = 0.3;
+        int levelDiff = level - reqLevel;
+        double levels = 99 - reqLevel;
+        double step = 1/levels;
+        chance *= 1 + (levelDiff * step);
+        if (player.getInventory().contains(Items.LOCKPICK))
+            chance += 0.1;
+        if (player.debug)
+            player.sendFilteredMessage("Chance: " + chance);
+        return Random.get() <= Math.min(0.80, chance);
+    }
+
     private static void disarm(Player player, Chests chest, GameObject object) {
         if (!player.getStats().check(StatType.Thieving, chest.level)) {
             player.sendMessage("You need a thieving level of " + chest.level + "to disarm this trap.");
+            return;
+        }
+        if (!isSuccessful(player, chest)) {
+            open(player);
             return;
         }
         player.startEvent(e -> {
