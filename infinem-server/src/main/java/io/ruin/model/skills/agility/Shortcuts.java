@@ -34,24 +34,12 @@ public class Shortcuts {
         // Varrock south fence jump
         // Scale Goblin Village wall
         // Monkey bars under Edgeville
-        // Yanille Agility Shortcut
-        ObjectAction.register(16519, "climb-under", (p, obj) -> UnderwallTunnel.shortcut(p, 16, Direction.NORTH, 5));
-        ObjectAction.register(16520, "climb-into", (p, obj) -> UnderwallTunnel.shortcut(p, 16, Direction.SOUTH, 5));
         // Piscatoris entrance
-        ObjectAction.register(12656, 2344, 3651, 0, "enter", (p, obj) -> UnderwallTunnel.shortcut(p, 1, Direction.NORTH, 5));
-        ObjectAction.register(12656, 2344, 3654, 0, "enter", (p, obj) -> UnderwallTunnel.shortcut(p, 1, Direction.SOUTH, 5));
         // Watchtower wall climb
         // Coal Truck log balance
-
-        // Grand Exchange Agility Shortcut
-        ObjectAction.register(16529, "climb-into", (p, obj) -> UnderwallTunnel.shortcutNWToSE(p, obj, 21));
-        ObjectAction.register(16530, "climb-into", (p, obj) -> UnderwallTunnel.shortcutNWToSE(p, obj, 21));
-
         // Pipe contortion in Brimhaven Dungeon
         // Eagles' Peak Agility Shortcut
         // Underwall tunnel	Falador Agility Shortcut
-        ObjectAction.register(16528, "climb-into", (p, obj) -> UnderwallTunnel.shortcut(p, 26, Direction.SOUTH));
-        ObjectAction.register(16527, "climb-into", (p, obj) -> UnderwallTunnel.shortcut(p, 26, Direction.NORTH));
         // Stepping stones in Brimhaven Dungeon
         // Draynor Manor stones to Champions' Guild
         // (Grapple) Scale Catherby cliffside
@@ -61,20 +49,13 @@ public class Shortcuts {
         // Trollweiss/Rellekka Hunter area cliff scramble
         // (Grapple) Escape from the Water Obelisk Island
         // Gnome Stronghold Shortcut
-
         // Al Kharid mining pit cliffside scramble
-
-
         // (Grapple) Scale Yanille wall
         // Yanille Agility dungeon balance ledge
         // Kourend lake isle jump
         // Trollheim easy cliffside scramble
         // Dwarven Mine narrow crevice
         // Draynor narrow tunnel
-        Tile.getObject(19036, 3069, 3260, 0).nearPosition = (player, object) -> new Position(3070, 3260, 0);
-        Tile.getObject(19032, 3066, 3260, 0).nearPosition = (player, object) -> new Position(3065, 3260, 0);
-        ObjectAction.register(19036, 3069, 3260, 0, "climb-into", (p, obj) -> UnderwallTunnel.shortcut(p, 42, Direction.WEST, 5));
-        ObjectAction.register(19032, 3066, 3260, 0, "climb-into", (p, obj) -> UnderwallTunnel.shortcut(p, 42, Direction.EAST, 5));
         // Trollheim medium cliffside scramble
         // Trollheim advanced cliffside scramble
         // Kourend river jump
