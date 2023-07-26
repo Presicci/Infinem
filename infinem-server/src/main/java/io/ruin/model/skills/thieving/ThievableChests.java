@@ -46,6 +46,31 @@ public class ThievableChests {
                 ),
                 new Position[]{new Position(2671, 3301, 1), new Position(2614, 3314, 1)}),
 
+        ISLE_OF_SOULS(40739, 28, 150.0, 0, true,
+                new LootTable().addTable(1,
+                        new LootItem(Items.COINS, 90, 190, 11),
+                        new LootItem(Items.FEATHER, 30, 80, 11),
+                        new LootItem(Items.GRIMY_GUAM_LEAF, 1, 2, 11),
+                        new LootItem(Items.NATURE_RUNE, 1, 2, 11),
+                        new LootItem(Items.DEATH_RUNE, 1, 2, 11),
+                        new LootItem(Items.MIND_RUNE, 1, 10, 11),
+                        new LootItem(Items.GRIMY_LANTADYME, 1, 10),
+                        new LootItem(Items.GRIMY_RANARR_WEED, 1, 9),
+                        new LootItem(Items.UNCUT_SAPPHIRE, 1, 2, 8),
+                        new LootItem(Items.UNCUT_EMERALD, 1, 2, 8),
+                        new LootItem(Items.CHOCOLATE_BAR, 1, 7),
+                        new LootItem(Items.BIRD_SNARE, 1, 2, 7),
+                        new LootItem(Items.BOX_TRAP, 1, 2, 7),
+                        new LootItem(Items.UNCUT_RUBY, 1, 2, 7),
+                        new LootItem(Items.MITHRIL_PICKAXE, 1, 7),
+                        new LootItem(Items.MITHRIL_AXE, 1, 7),
+                        new LootItem(Items.UNCUT_DIAMOND, 1, 2, 4),
+                        new LootItem(Items.ADAMANT_SCIMITAR, 1, 4),
+                        new LootItem(24363, 1, 2),  // Medium clue
+                        new LootItem(25244, 1, 1)   // Dark key
+                ),
+                new Position[]{ new Position(2139, 9299) }),
+
         COINS_50(11735, 43, 125.0, 50, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 5000, 6500, 0)
@@ -174,7 +199,7 @@ public class ThievableChests {
 
     private static void replaceChest(GameObject chest) {
         World.startEvent(event -> {
-            chest.setId(26758);
+            chest.setId(chest.id == 40739 ? 40740 : 26758);
             event.delay(6);
             chest.setId(chest.originalId);
         });
