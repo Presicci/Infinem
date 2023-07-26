@@ -279,7 +279,7 @@ public class ThievableChests {
                 player.getInventory().addOrDrop(item);
                 player.getStats().addXp(StatType.Thieving, chest.xp, true);
                 player.sendMessage("You steal some loot from the chest.");
-                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.THIEVECHEST, item.getDef().name, item.getAmount(), true);
+                lookupTask(player, chest, item);
                 replaceChest(object, chest.replacementId, chest.respawnTime);
                 if (chest == Chest.ROGUES_CASTLE && Random.rollDie(50)) {
                     rougesAttack(player);
@@ -288,9 +288,16 @@ public class ThievableChests {
                 player.sendMessage("You trigger a trap!");
                 e.delay(1);
                 player.hit(new Hit().randDamage(2, 3));
+                // Currently don't teleport the player out, consider if this is needed in future
             }
             player.unlock();
         });
+    }
+
+    private static void lookupTask(Player player, Chest chest, Item item) {
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.THIEVECHEST, item.getDef().name, item.getAmount(), true);
+        if (chest == Chest.ISLE_OF_SOULS)
+            player.getTaskManager().doLookupByUUID(912, 1); // Steal from the Isle of Souls Dungeon Chest
     }
 
     static {
