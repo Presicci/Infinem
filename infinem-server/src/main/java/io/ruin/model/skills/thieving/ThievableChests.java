@@ -89,7 +89,7 @@ public class ThievableChests {
                 ),
                 new Position[]{new Position(2650, 3659), new Position(2639, 3424)}),
 
-        DORGESH_KAAN(22697, 52, 200.0, 210, false,
+        DORGESH_KAAN(22697, 52, 200.0, 210, 22699, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 1500, 1750, 1),
                         new LootItem(4548, 1, 1),
@@ -140,7 +140,7 @@ public class ThievableChests {
                 ),
                 new Position[]{new Position(2588, 3302, 1), new Position(2588, 3291, 1)}),
 
-        DORG_RICH(22681, 78, 650.0, 300, false,
+        DORG_RICH(22681, 78, 650.0, 300, 22683, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 500, 2500, 1),
                         new LootItem(1623, 1, 1),
@@ -282,11 +282,9 @@ public class ThievableChests {
                 player.getStats().addXp(StatType.Thieving, chest.xp, true);
                 player.sendMessage("You steal some loot from the chest.");
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.THIEVECHEST, item.getDef().name, item.getAmount(), true);
+                replaceChest(object, chest.replacementId, chest.respawnTime);
                 if (chest == Chest.ROGUES_CASTLE && Random.rollDie(50)) {
                     rougesAttack(player);
-                }
-                if (chest != Chest.DORG_RICH && chest != Chest.DORGESH_KAAN) {
-                    replaceChest(object, chest.replacementId, chest.respawnTime);
                 }
             } else {
                 player.sendMessage("You trigger a trap!");
