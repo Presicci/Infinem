@@ -19,6 +19,7 @@ public class PickaxeBarrel {
                 return;
             }
             player.animate(832);
+            player.privateSound(2582);
             player.getInventory().add(Items.BRONZE_PICKAXE);
         });
     }
