@@ -34,6 +34,7 @@ public class DorgeshKaanMine {
         ObjectAction.register(6899, 1, ((player, obj) -> squeezeThrough(player, Direction.WEST)));
         // Dorgesh-Kaan entrance
         ObjectAction.register(6919, "open", ((player, obj) -> Traveling.fadeTravel(player, new Position(2747, 5374))));
+        ObjectAction.register(6920, "open", ((player, obj) -> Traveling.fadeTravel(player, new Position(2747, 5374))));
         ObjectAction.register(22945, "open", ((player, obj) -> Traveling.fadeTravel(player, new Position(3318, 9602))));
     }
 }
