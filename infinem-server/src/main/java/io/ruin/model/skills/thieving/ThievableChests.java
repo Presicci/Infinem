@@ -25,19 +25,19 @@ public class ThievableChests {
     public enum Chest {
         COINS_10(11737, 13, 7.8, 7, false,
                 new LootTable().addTable(1,
-                        new LootItem(995, 3000, 3250, 0)
+                        new LootItem(995, 10, 0)
                 ),
                 new Position[]{new Position(2671, 3299, 1)}),
         COINS_101(11735, 13, 7.8, 7, false,
                 new LootTable().addTable(1,
-                        new LootItem(995, 3000, 3250, 0)
+                        new LootItem(995, 10, 0)
                 ),
                 new Position[]{new Position(2612, 3314, 1), new Position(2630, 3655), new Position(2673, 3307)}),
 
         NATURE(11736, 28, 25.0, 13, false,
                 new LootTable().addTable(1,
-                        new LootItem(995, 1000, 1250, 0),
-                        new LootItem(561, 3, 8, 0)
+                        new LootItem(995, 10, 0),
+                        new LootItem(561, 2, 0)
                 ),
                 new Position[]{new Position(2671, 3301, 1), new Position(2614, 3314, 1)}),
 
@@ -68,30 +68,30 @@ public class ThievableChests {
 
         COINS_50(11735, 43, 125.0, 50, false,
                 new LootTable().addTable(1,
-                        new LootItem(995, 5000, 6500, 0)
+                        new LootItem(995, 50, 0)
                 ),
                 new Position[]{new Position(3188, 3962), new Position(3189, 3962), new Position(3193, 3962), new Position(3044, 3951)}),
         COINS_501(11736, 43, 125.0, 50, false,
                 new LootTable().addTable(1,
-                        new LootItem(995, 5000, 6500, 0)
+                        new LootItem(995, 50, 0)
                 ),
                 new Position[]{new Position(3042, 3949)}),
         COINS_502(11737, 43, 125.0, 50, false,
                 new LootTable().addTable(1,
-                        new LootItem(995, 5000, 6500, 0)
+                        new LootItem(995, 50, 0)
                 ),
                 new Position[]{new Position(3040, 3949)}),
 
         ARROWTIP(11742, 47, 150.0, 60, false,
                 new LootTable().addTable(1,
-                        new LootItem(41, 25, 30, 0),
-                        new LootItem(995, 1000, 1250, 0)
+                        new LootItem(41, 5, 10, 0),
+                        new LootItem(995, 30, 0)
                 ),
                 new Position[]{new Position(2650, 3659), new Position(2639, 3424)}),
 
         DORGESH_KAAN(22697, 52, 200.0, 100, 22699, false,
                 new LootTable().addTable(1,
-                        new LootItem(995, 1500, 1750, 1),
+                        new LootItem(995, 1, 250, 1),
                         new LootItem(4548, 1, 1),
                         new LootItem(4537, 1, 1),
                         new LootItem(10981, 1, 1),
@@ -102,8 +102,8 @@ public class ThievableChests {
 
         BLOOD(11738, 59, 250.0, 100, false,
                 new LootTable().addTable(1,
-                        new LootItem(995, 1750, 2000, 0),
-                        new LootItem(565, 15, 25, 0)
+                        new LootItem(995, 500, 0),
+                        new LootItem(565, 2, 3, 0)
                 ),
                 new Position[]{new Position(2586, 9737), new Position(2586, 9734)}),
 
@@ -133,16 +133,15 @@ public class ThievableChests {
 
         PALADIN(11739, 72, 500.0, 125, false,
                 new LootTable().addTable(1,
-                        new LootItem(995, 2500, 3500, 0),
-                        new LootItem(384, 1, 2, 0),
-                        new LootItem(450, 1, 2, 0),
+                        new LootItem(995, 1000, 0),
+                        new LootItem(383, 1, 2, 0),
+                        new LootItem(449, 1, 2, 0),
                         new LootItem(1623, 1, 2, 0)
                 ),
                 new Position[]{new Position(2588, 3302, 1), new Position(2588, 3291, 1)}),
 
         DORG_RICH(22681, 78, 650.0, 200, 22683, false,
                 new LootTable().addTable(1,
-                        new LootItem(995, 500, 2500, 1),
                         new LootItem(1623, 1, 1),
                         new LootItem(1621, 1, 1),
                         new LootItem(1619, 1, 1),
@@ -154,8 +153,8 @@ public class ThievableChests {
                         new LootItem(5013, 1, 1),
                         new LootItem(10954, 1, 1),
                         new LootItem(10956, 1, 1),
-                        new LootItem(10958, 1, 1),
                         new LootItem(2351, 1, 1),
+                        new LootItem(Items.CAVE_GOBLIN_WIRE, 1, 1),
                         new LootItem(10973, 1, 1),
                         new LootItem(10980, 1, 1)
                 ),
@@ -166,7 +165,7 @@ public class ThievableChests {
                         new LootItem(1622, 7, 12, 5),          // Uncut emerald
                         new LootItem(1624, 9, 15, 5),          // Uncut sapphire
                         new LootItem(360, 25, 35, 5),          // Raw tuna
-                        new LootItem(995, 10000, 15000, 5),    // Coins
+                        new LootItem(995, 1250, 2250, 5),    // Coins
                         new LootItem(593, 35, 45, 5),          // Ashes
                         new LootItem(454, 20, 30, 5),          // Coal
                         new LootItem(558, 30, 50, 5),          // Mind rune
@@ -181,7 +180,8 @@ public class ThievableChests {
                         new LootItem(1616, 2, 2, 1),            // Dragonstone
                         new LootItem(2722, 1, 1, 1)             // Clue scroll (hard)
                 ),
-                new Position[]{new Position(3297, 3940), new Position(3287, 3946), new Position(3283, 3946)});   // TODO add one to home
+                new Position[]{new Position(3297, 3940), new Position(3287, 3946), new Position(3283, 3946)}
+        );
 
         public final int objectId;
         public final int level;
