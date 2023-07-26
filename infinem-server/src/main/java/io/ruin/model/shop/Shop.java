@@ -12,6 +12,10 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.ShopItemContainer;
+import io.ruin.process.event.Event;
+import io.ruin.process.event.EventConsumer;
+import io.ruin.process.event.EventType;
+import io.ruin.process.event.EventWorker;
 import io.ruin.utility.Utils;
 import lombok.Builder;
 import lombok.ToString;
@@ -20,6 +24,7 @@ import org.apache.commons.lang3.builder.ToStringExclude;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.util.HashMap;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -29,6 +34,8 @@ import java.util.function.Consumer;
 @JsonIgnoreProperties({"currencyHandler", "viewingPlayers", "shopItems", "generatedByBuilder", "onTick"})
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class Shop {
+
+    public static HashMap<Integer, Shop> shops = new HashMap<>();
 
     public Shop(){
 
@@ -85,6 +92,14 @@ public class Shop {
     public ShopItemContainer shopItems;
     public boolean accessibleByIronMan;
 
+
+    public void startup() {
+        init();
+        populate();
+        EventConsumer eventConsumer = event -> ShopManager.shopTick(event, this);
+        Event event = EventWorker.startEvent(eventConsumer);
+        event.eventType = EventType.PERSISTENT;
+    }
 
     public void init() {
         if(restockRules == null)

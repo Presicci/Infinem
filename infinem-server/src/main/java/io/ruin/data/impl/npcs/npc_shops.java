@@ -19,6 +19,7 @@ import io.ruin.process.event.EventType;
 import io.ruin.process.event.EventWorker;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -38,7 +39,6 @@ public class npc_shops extends DataFile {
         for (TempItem i : s.items)
             items.add(new ShopItem(i.itemId, i.stock, i.sell_price, i.buy_price));
         Shop shop = new Shop(s.name, s.currency, s.generalStore, RestockRules.generateDefault(), items, s.ironman);
-        allShops.add(shop);
         for (int n : s.npcs) {
             if(s.uniquePerNpc){
                 shop = new Shop(s.name, s.currency, s.generalStore, RestockRules.generateDefault(), items, s.ironman);
@@ -50,14 +50,7 @@ public class npc_shops extends DataFile {
                 npcDef.shops = Lists.newArrayList();
             }
             npcDef.shops.add(shop);
-
-            shop.init();
-            shop.populate();
-
-            EventConsumer eventConsumer = event -> ShopManager.shopTick(event, fShop);
-            Event event = EventWorker.startEvent(eventConsumer);
-            event.eventType = EventType.PERSISTENT;
-
+            shop.startup();
             int talkToOption = npcDef.getOption("Talk-to");
             if (talkToOption < 0)
                 talkToOption = npcDef.getOption("Talk");
@@ -83,11 +76,13 @@ public class npc_shops extends DataFile {
                 }
             }
         }
-
+        if (s.uuid >= 0) {
+            if (s.npcs.length == 0)
+                shop.startup();
+            Shop.shops.put(s.uuid, shop);
+        }
         return s;
     }
-
-    public static List<Shop> allShops = Lists.newArrayList();
 
     private static void talkToDialogue(Player player, NPC npc, Shop shop) {
         npc.faceTemp(player);
@@ -112,7 +107,9 @@ public class npc_shops extends DataFile {
         @Expose
         TempItem[] items;
         @Expose
-        private int[] npcs;
+        private int[] npcs = {};
+        @Expose
+        private int uuid = -1;
         @Expose
         private String npcOption;
         @Expose
