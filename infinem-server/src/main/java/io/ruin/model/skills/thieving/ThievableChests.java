@@ -1,7 +1,6 @@
 package io.ruin.model.skills.thieving;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
@@ -16,9 +15,6 @@ import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
-import lombok.AllArgsConstructor;
-
-import static io.ruin.cache.ItemID.COINS_995;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -26,7 +22,7 @@ import static io.ruin.cache.ItemID.COINS_995;
  */
 public class ThievableChests {
 
-    public enum Chests {
+    public enum Chest {
         COINS_10(11737, 13, 7.8, 7, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 3000, 3250, 0)
@@ -195,9 +191,9 @@ public class ThievableChests {
         public final LootTable lootTable;
         public final Position[] positions;
 
-        public int replacementId;
+        public final int replacementId;
 
-        Chests(int objectId, int level, double xp, int respawnTime, int replacementId, boolean failable, LootTable lootTable, Position[] positions) {
+        Chest(int objectId, int level, double xp, int respawnTime, int replacementId, boolean failable, LootTable lootTable, Position[] positions) {
             this.objectId = objectId;
             this.level = level;
             this.xp = xp;
@@ -208,7 +204,7 @@ public class ThievableChests {
             this.positions = positions;
         }
 
-        Chests(int objectId, int level, double xp, int respawnTime, boolean failable, LootTable lootTable, Position[] positions) {
+        Chest(int objectId, int level, double xp, int respawnTime, boolean failable, LootTable lootTable, Position[] positions) {
             this(objectId, level, xp, respawnTime, 26758, failable, lootTable, positions);
         }
     }
@@ -246,7 +242,7 @@ public class ThievableChests {
         });
     }
 
-    private static boolean isSuccessful(Player player, Chests chest) {
+    private static boolean isSuccessful(Player player, Chest chest) {
         if (!chest.failable)
             return true;
         int level = player.getStats().get(StatType.Thieving).currentLevel;
@@ -263,7 +259,7 @@ public class ThievableChests {
         return Random.get() <= Math.min(0.80, chance);
     }
 
-    private static void disarm(Player player, Chests chest, GameObject object) {
+    private static void disarm(Player player, Chest chest, GameObject object) {
         if (!player.getStats().check(StatType.Thieving, chest.level)) {
             player.sendMessage("You need a thieving level of " + chest.level + "to disarm this trap.");
             return;
@@ -286,10 +282,10 @@ public class ThievableChests {
                 player.getStats().addXp(StatType.Thieving, chest.xp, true);
                 player.sendMessage("You steal some loot from the chest.");
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.THIEVECHEST, item.getDef().name, item.getAmount(), true);
-                if (chest == Chests.ROGUES_CASTLE && Random.rollDie(50)) {
+                if (chest == Chest.ROGUES_CASTLE && Random.rollDie(50)) {
                     rougesAttack(player);
                 }
-                if (chest != Chests.DORG_RICH && chest != Chests.DORGESH_KAAN) {
+                if (chest != Chest.DORG_RICH && chest != Chest.DORGESH_KAAN) {
                     replaceChest(object, chest.replacementId, chest.respawnTime);
                 }
             } else {
@@ -305,8 +301,8 @@ public class ThievableChests {
     }
 
     static {
-        for (Chests chest : Chests.values()) {
-            if (chest == Chests.DORGESH_KAAN || chest == Chests.DORG_RICH) {    // So many spawns, just blanket cover all of them
+        for (Chest chest : Chest.values()) {
+            if (chest == Chest.DORGESH_KAAN || chest == Chest.DORG_RICH) {    // So many spawns, just blanket cover all of them
                 ObjectAction.register(chest.objectId, "open", (player, object) -> open(player));
                 ObjectAction.register(chest.objectId, "pick-lock", (player, object) -> disarm(player, chest, object));
                 continue;
