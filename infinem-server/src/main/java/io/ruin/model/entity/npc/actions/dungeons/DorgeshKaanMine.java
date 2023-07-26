@@ -48,6 +48,16 @@ public class DorgeshKaanMine {
         );
     }
 
+    private static void kazgarDialogue(Player player, NPC npc) {
+        player.dialogue(
+                new NPCDialogue(npc.getId(), "Greetings friend, would you like me to escort you to the mines?"),
+                new OptionsDialogue(
+                        new Option("Yes, please.", () -> Traveling.fadeTravel(player, new Position(3312, 9612))),
+                        new Option("No, thank you.")
+                )
+        );
+    }
+
     private static void minerDialogue(Player player, NPC npc) {
         player.dialogue(
                 new NPCDialogue(npc.getId(), "Won't you help us mine, adventurer? Master Mistag requires more and more of us each day. " +
@@ -62,6 +72,8 @@ public class DorgeshKaanMine {
         NPCAction.register(MISTAG, "talk-to", DorgeshKaanMine::mistagDialogue);
         // Kazgar travel
         NPCAction.register(KAZGAR, "follow", (player, npc) -> Traveling.fadeTravel(player, new Position(3312, 9612)));
+        // Kazgar dialogue
+        NPCAction.register(KAZGAR, "talk-to", DorgeshKaanMine::kazgarDialogue);
         // Miners
         for (int id : PASSIVE_MINERS) {
             NPCAction.register(id, "talk-to", DorgeshKaanMine::minerDialogue);
