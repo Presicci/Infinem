@@ -30,6 +30,7 @@ public class DorgeshKaanMine {
             int payout = (itemId == SILVER_ORE ? 60 : 13) * amount;
             player.getInventory().remove(itemId, amount);
             player.getInventory().add(995, payout);
+            player.getTaskManager().doLookupByUUID(913, 1); // Sell Some Ore to Mistag in the Dorgesh-Kaan Mine
             player.dialogue(
                     new ItemDialogue().one(itemId, "The goblin quickly devours every last rock. Food must be hard to come by down here..."),
                     new NPCDialogue(npc.getId(), "Please! More!")
