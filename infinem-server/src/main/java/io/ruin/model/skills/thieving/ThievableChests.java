@@ -271,7 +271,7 @@ public class ThievableChests {
             player.lock(LockType.FULL_REGULAR_DAMAGE);
             player.sendMessage("You begin to open the chest...");
             player.animate(537);
-            e.delay(5);
+            e.delay(2);
             if (Random.rollDie(100, 85)) {
                 player.animate(536);
                 player.sendMessage("You successfully disarm the trap.");
