@@ -34,7 +34,7 @@ public class ThievableChests {
                 ),
                 new Position[]{new Position(2612, 3314, 1), new Position(2630, 3655), new Position(2673, 3307)}),
 
-        NATURE(11736, 28, 25.0, 8, false,
+        NATURE(11736, 28, 25.0, 13, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 1000, 1250, 0),
                         new LootItem(561, 3, 8, 0)
@@ -82,14 +82,14 @@ public class ThievableChests {
                 ),
                 new Position[]{new Position(3040, 3949)}),
 
-        ARROWTIP(11742, 47, 150.0, 210, false,
+        ARROWTIP(11742, 47, 150.0, 60, false,
                 new LootTable().addTable(1,
                         new LootItem(41, 25, 30, 0),
                         new LootItem(995, 1000, 1250, 0)
                 ),
                 new Position[]{new Position(2650, 3659), new Position(2639, 3424)}),
 
-        DORGESH_KAAN(22697, 52, 200.0, 210, 22699, false,
+        DORGESH_KAAN(22697, 52, 200.0, 100, 22699, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 1500, 1750, 1),
                         new LootItem(4548, 1, 1),
@@ -100,7 +100,7 @@ public class ThievableChests {
                 ),
                 new Position[]{}),
 
-        BLOOD(11738, 59, 250.0, 135, false,
+        BLOOD(11738, 59, 250.0, 100, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 1750, 2000, 0),
                         new LootItem(565, 15, 25, 0)
@@ -131,7 +131,7 @@ public class ThievableChests {
                 ),
                 new Position[]{new Position(1302, 10087), new Position(1300, 10085), new Position(1300, 10089)}),
 
-        PALADIN(11739, 72, 500.0, 400, false,
+        PALADIN(11739, 72, 500.0, 125, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 2500, 3500, 0),
                         new LootItem(384, 1, 2, 0),
@@ -140,7 +140,7 @@ public class ThievableChests {
                 ),
                 new Position[]{new Position(2588, 3302, 1), new Position(2588, 3291, 1)}),
 
-        DORG_RICH(22681, 78, 650.0, 300, 22683, false,
+        DORG_RICH(22681, 78, 650.0, 200, 22683, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 500, 2500, 1),
                         new LootItem(1623, 1, 1),
