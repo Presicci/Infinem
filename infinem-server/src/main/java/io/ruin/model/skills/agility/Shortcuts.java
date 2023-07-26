@@ -35,11 +35,11 @@ public class Shortcuts {
         // Scale Goblin Village wall
         // Monkey bars under Edgeville
         // Yanille Agility Shortcut
-        ObjectAction.register(16519, "climb-under", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 16, Direction.NORTH, 5));
-        ObjectAction.register(16520, "climb-into", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 16, Direction.SOUTH, 5));
+        ObjectAction.register(16519, "climb-under", (p, obj) -> UnderwallTunnel.shortcut(p, 16, Direction.NORTH, 5));
+        ObjectAction.register(16520, "climb-into", (p, obj) -> UnderwallTunnel.shortcut(p, 16, Direction.SOUTH, 5));
         // Piscatoris entrance
-        ObjectAction.register(12656, 2344, 3651, 0, "enter", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 1, Direction.NORTH, 5));
-        ObjectAction.register(12656, 2344, 3654, 0, "enter", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 1, Direction.SOUTH, 5));
+        ObjectAction.register(12656, 2344, 3651, 0, "enter", (p, obj) -> UnderwallTunnel.shortcut(p, 1, Direction.NORTH, 5));
+        ObjectAction.register(12656, 2344, 3654, 0, "enter", (p, obj) -> UnderwallTunnel.shortcut(p, 1, Direction.SOUTH, 5));
         // Watchtower wall climb
         // Coal Truck log balance
 
@@ -50,8 +50,8 @@ public class Shortcuts {
         // Pipe contortion in Brimhaven Dungeon
         // Eagles' Peak Agility Shortcut
         // Underwall tunnel	Falador Agility Shortcut
-        ObjectAction.register(16528, "climb-into", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 26, Direction.SOUTH));
-        ObjectAction.register(16527, "climb-into", (p, obj) -> UnderwallTunnel.shortcutVertical(p, obj, 26, Direction.NORTH));
+        ObjectAction.register(16528, "climb-into", (p, obj) -> UnderwallTunnel.shortcut(p, 26, Direction.SOUTH));
+        ObjectAction.register(16527, "climb-into", (p, obj) -> UnderwallTunnel.shortcut(p, 26, Direction.NORTH));
         // Stepping stones in Brimhaven Dungeon
         // Draynor Manor stones to Champions' Guild
         // (Grapple) Scale Catherby cliffside
