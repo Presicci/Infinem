@@ -2740,5 +2740,40 @@
       1208,
       1210
     ]
+  },
+  "MEAT_TENDERISER": {
+    "config": 2,
+    "maxDistance": 1,
+    "attackTicks": 6,
+    "attackAnimation": 401,
+    "defendAnimation": 403,
+    "equipSound": 2246,
+    "attackSound": 2567,
+    "attackSets": [
+      {
+        "child": 3,
+        "type": "ACCURATE",
+        "style": "CRUSH"
+      },
+      {
+        "child": 7,
+        "type": "AGGRESSIVE",
+        "style": "CRUSH"
+      },
+      {
+        "child": 15,
+        "type": "DEFENSIVE",
+        "style": "CRUSH"
+      }
+    ],
+    "renderAnimations": [
+      2065,
+      823,
+      2064,
+      2064,
+      2064,
+      2064,
+      824
+    ]
   }
 }

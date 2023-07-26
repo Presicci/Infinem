@@ -45077,7 +45077,8 @@
     "crush_attack_bonus": -2,
     "slash_defence_bonus": 3,
     "crush_defence_bonus": 2,
-    "melee_strength_bonus": 7
+    "melee_strength_bonus": 7,
+    "weapon_type": "LONGSWORD"
   },
   { #Egg whisk
     "id": 7435,
@@ -45091,7 +45092,8 @@
     "crush_attack_bonus": -4,
     "magic_attack_bonus": 1,
     "magic_defence_bonus": 1,
-    "melee_strength_bonus": 4
+    "melee_strength_bonus": 4,
+    "weapon_type": "SWORD"
   },
   { #Spork
     "id": 7437,
@@ -45106,7 +45108,8 @@
     "crush_attack_bonus": -2,
     "slash_defence_bonus": 2,
     "crush_defence_bonus": 1,
-    "melee_strength_bonus": 12
+    "melee_strength_bonus": 12,
+    "weapon_type": "SWORD"
   },
   { #Spatula
     "id": 7439,
@@ -45121,8 +45124,9 @@
     "crush_attack_bonus": 21,
     "magic_attack_bonus": -4,
     "range_defence_bonus": -1,
-    "melee_strength_bonus": 22,
-    "two_handed": true
+    "melee_strength_bonus": 26,
+    "two_handed": true,
+    "weapon_type": "TWO_HANDED"
   },
   { #Frying pan
     "id": 7441,
@@ -45136,7 +45140,8 @@
     "slash_attack_bonus": -4,
     "crush_attack_bonus": 25,
     "magic_attack_bonus": -4,
-    "melee_strength_bonus": 20
+    "melee_strength_bonus": 20,
+    "weapon_type": "WARHAMMER"
   },
   { #Skewer
     "id": 7443,
@@ -45151,7 +45156,8 @@
     "crush_attack_bonus": -2,
     "slash_defence_bonus": 3,
     "crush_defence_bonus": 2,
-    "melee_strength_bonus": 31
+    "melee_strength_bonus": 31,
+    "weapon_type": "LONGSWORD"
   },
   { #Rolling pin
     "id": 7445,
@@ -45165,7 +45171,8 @@
     "slash_attack_bonus": -2,
     "crush_attack_bonus": 39,
     "melee_strength_bonus": 36,
-    "prayer_bonus": 4
+    "prayer_bonus": 4,
+    "weapon_type": "WARHAMMER"
   },
   { #Kitchen knife
     "id": 7447,
@@ -45181,7 +45188,7 @@
     "magic_attack_bonus": 1,
     "magic_defence_bonus": 1,
     "melee_strength_bonus": 24,
-    "weapon_type": "THROWING_KNIFE"
+    "weapon_type": "SWORD"
   },
   { #Meat tenderiser
     "id": 7449,
@@ -45195,7 +45202,8 @@
     "slash_attack_bonus": -4,
     "crush_attack_bonus": 53,
     "magic_attack_bonus": -4,
-    "melee_strength_bonus": 48
+    "melee_strength_bonus": 48,
+    "weapon_type": "MEAT_TENDERISER"
   },
   { #Cleaver
     "id": 7451,
@@ -45209,7 +45217,8 @@
     "slash_attack_bonus": 45,
     "crush_attack_bonus": -2,
     "slash_defence_bonus": 1,
-    "melee_strength_bonus": 44
+    "melee_strength_bonus": 44,
+    "weapon_type": "LONGSWORD"
   },
   { #Hardleather gloves
     "id": 7453,
