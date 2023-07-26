@@ -91,12 +91,12 @@ public class ThievableChests {
 
         DORGESH_KAAN(22697, 52, 200.0, 100, 22699, false,
                 new LootTable().addTable(1,
-                        new LootItem(995, 1, 250, 1),
-                        new LootItem(4548, 1, 1),
-                        new LootItem(4537, 1, 1),
-                        new LootItem(10981, 1, 1),
-                        new LootItem(5013, 1, 1),
-                        new LootItem(10192, 1, 1)
+                        new LootItem(995, 1, 250, 10),
+                        new LootItem(4548, 1, 10),
+                        new LootItem(4537, 1, 10),
+                        new LootItem(10981, 1, 10),
+                        new LootItem(5013, 1, 10),
+                        new LootItem(24362, 1, 1)
                 ),
                 new Position[]{}),
 
