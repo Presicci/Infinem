@@ -164,23 +164,24 @@ public class ThievableChests {
 
         ROGUES_CASTLE(26757, 84, 100, 10, false,
                 new LootTable().addTable(1,
-                        new LootItem(1622, 7, 12, 5),          // Uncut emerald
-                        new LootItem(1624, 9, 15, 5),          // Uncut sapphire
-                        new LootItem(360, 25, 35, 5),          // Raw tuna
-                        new LootItem(995, 1250, 2250, 5),    // Coins
-                        new LootItem(593, 35, 45, 5),          // Ashes
-                        new LootItem(454, 20, 30, 5),          // Coal
-                        new LootItem(558, 30, 50, 5),          // Mind rune
-                        new LootItem(1602, 4, 6, 3),           // Diamond
-                        new LootItem(562, 35, 50, 3),          // Chaos rune
-                        new LootItem(560, 25, 35, 3),          // Death rune
-                        new LootItem(554, 25, 40, 3),          // Fire rune
-                        new LootItem(352, 10, 15, 3),          // Pike
-                        new LootItem(591, 4, 5, 3),            // Tinderbox
-                        new LootItem(441, 15, 25, 3),          // Iron ore
-                        new LootItem(386, 15, 20, 1),           // Shark
-                        new LootItem(1616, 2, 2, 1),            // Dragonstone
-                        new LootItem(2722, 1, 1, 1)             // Clue scroll (hard)
+                        new LootItem(Items.MIND_RUNE, 25, 70),
+                        new LootItem(Items.RAW_TUNA_NOTE, 15, 35),
+                        new LootItem(Items.COAL_NOTE, 13, 25),
+                        new LootItem(Items.COINS, 1250, 2250, 20),
+                        new LootItem(Items.ASHES_NOTE, 25, 10),
+                        new LootItem(Items.DIAMOND_NOTE, 3, 10),
+                        new LootItem(Items.UNCUT_EMERALD_NOTE, 5, 8),
+                        new LootItem(Items.DIAMOND_NOTE, 2, 8),
+                        new LootItem(Items.FIRE_RUNE, 30, 8),
+                        new LootItem(Items.TINDERBOX_NOTE, 3, 8),
+                        new LootItem(Items.UNCUT_SAPPHIRE_NOTE, 6, 4),
+                        new LootItem(Items.CHAOS_RUNE, 40, 4),
+                        new LootItem(Items.DEATH_RUNE, 30, 4),
+                        new LootItem(Items.PIKE_NOTE, 20, 4),
+                        new LootItem(Items.IRON_ORE_NOTE, 10, 4),
+                        new LootItem(Items.SHARK_NOTE, 10, 4),
+                        new LootItem(Items.DRAGONSTONE_NOTE, 2, 4),
+                        new LootItem(24364, 1, 2)   // Hard clue
                 ),
                 new Position[]{new Position(3297, 3940), new Position(3287, 3946), new Position(3283, 3946)}
         );
