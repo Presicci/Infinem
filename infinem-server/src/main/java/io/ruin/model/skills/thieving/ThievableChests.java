@@ -234,9 +234,8 @@ public class ThievableChests {
             player.lock(LockType.FULL_REGULAR_DAMAGE);
             player.sendMessage("You begin to open the chest...");
             player.animate(537);
-            e.delay(5);
+            e.delay(2);
             player.sendMessage("You trigger a trap!");
-            e.delay(1);
             player.hit(new Hit().randDamage(2, 3));
             player.unlock();
         });
