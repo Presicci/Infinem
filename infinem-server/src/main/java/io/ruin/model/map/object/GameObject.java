@@ -283,6 +283,18 @@ public class GameObject extends AttributesHolder {
         player.sendMessage(def.examine);
     }
 
+    public void publicSound(int id) {
+        publicSound(id, 1, 0);
+    }
+
+    public void publicSound(int id, int type, int delay) {
+        int x = getPosition().getX();
+        int y = getPosition().getY();
+        int distance = 15; //idk how to calc
+        for (Player p : tile.region.players)
+            p.getPacketSender().sendAreaSound(id, type, delay, x, y, distance);
+    }
+
     public Direction getFaceDirection() {
         return direction == 1 ? Direction.NORTH : direction == 0 ?
                 Direction.WEST : direction == 2 ?
