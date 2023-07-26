@@ -260,7 +260,7 @@ public class ThievableChests {
 
     private static void disarm(Player player, Chest chest, GameObject object) {
         if (!player.getStats().check(StatType.Thieving, chest.level)) {
-            player.sendMessage("You need a thieving level of " + chest.level + "to disarm this trap.");
+            player.sendMessage("You need a thieving level of " + chest.level + " to disarm this trap.");
             return;
         }
         if (!isSuccessful(player, chest)) {
