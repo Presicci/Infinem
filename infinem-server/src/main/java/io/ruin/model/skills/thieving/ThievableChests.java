@@ -26,7 +26,6 @@ import static io.ruin.cache.ItemID.COINS_995;
  */
 public class ThievableChests {
 
-    @AllArgsConstructor
     public enum Chests {
         COINS_10(11737, 13, 7.8, 7, false,
                 new LootTable().addTable(1,
@@ -46,7 +45,7 @@ public class ThievableChests {
                 ),
                 new Position[]{new Position(2671, 3301, 1), new Position(2614, 3314, 1)}),
 
-        ISLE_OF_SOULS(40739, 28, 150.0, 0, true,
+        ISLE_OF_SOULS(40739, 28, 150.0, 0, 40740, true,
                 new LootTable().addTable(1,
                         new LootItem(Items.COINS, 90, 190, 11),
                         new LootItem(Items.FEATHER, 30, 80, 11),
@@ -112,7 +111,7 @@ public class ThievableChests {
                 ),
                 new Position[]{new Position(2586, 9737), new Position(2586, 9734)}),
 
-        STONE_CHEST(34429, 64, 280, 0, true,
+        STONE_CHEST(34429, 64, 280, 0, 34430, true,
                 new LootTable().addTable(15, LootTable.CommonTables.UNCOMMON_SEED.items)
                         .addTable(270,
                                 new LootItem(995, 20, 260, 99), // Coins
@@ -195,12 +194,29 @@ public class ThievableChests {
         public final boolean failable;
         public final LootTable lootTable;
         public final Position[] positions;
+
+        public int replacementId;
+
+        Chests(int objectId, int level, double xp, int respawnTime, int replacementId, boolean failable, LootTable lootTable, Position[] positions) {
+            this.objectId = objectId;
+            this.level = level;
+            this.xp = xp;
+            this.respawnTime = respawnTime;
+            this.replacementId = replacementId;
+            this.failable = failable;
+            this.lootTable = lootTable;
+            this.positions = positions;
+        }
+
+        Chests(int objectId, int level, double xp, int respawnTime, boolean failable, LootTable lootTable, Position[] positions) {
+            this(objectId, level, xp, respawnTime, 26758, failable, lootTable, positions);
+        }
     }
 
-    private static void replaceChest(GameObject chest) {
+    private static void replaceChest(GameObject chest, int replacementId, int respawnTime) {
         World.startEvent(event -> {
-            chest.setId(chest.id == 40739 ? 40740 : 26758);
-            event.delay(6);
+            chest.setId(replacementId);
+            event.delay(respawnTime);
             chest.setId(chest.originalId);
         });
     }
@@ -273,8 +289,8 @@ public class ThievableChests {
                 if (chest == Chests.ROGUES_CASTLE && Random.rollDie(50)) {
                     rougesAttack(player);
                 }
-                if (chest != Chests.DORG_RICH && chest != Chests.DORGESH_KAAN && chest != Chests.STONE_CHEST) {
-                    replaceChest(object);
+                if (chest != Chests.DORG_RICH && chest != Chests.DORGESH_KAAN) {
+                    replaceChest(object, chest.replacementId, chest.respawnTime);
                 }
             } else {
                 player.sendMessage("You trigger a trap!");
