@@ -266,16 +266,12 @@ public class ThievableChests {
             player.sendMessage("You need a thieving level of " + chest.level + " to disarm this trap.");
             return;
         }
-        if (!isSuccessful(player, chest)) {
-            open(player);
-            return;
-        }
         player.startEvent(e -> {
             player.lock(LockType.FULL_REGULAR_DAMAGE);
             player.sendMessage("You begin to open the chest...");
             player.animate(537);
             e.delay(2);
-            if (Random.rollDie(100, 85)) {
+            if (isSuccessful(player, chest)) {
                 player.animate(536);
                 player.sendMessage("You successfully disarm the trap.");
                 e.delay(1);
@@ -292,9 +288,6 @@ public class ThievableChests {
                 player.sendMessage("You trigger a trap!");
                 e.delay(1);
                 player.hit(new Hit().randDamage(2, 3));
-                if (Random.rollDie(100, 15)) {
-                    player.poison(2);
-                }
             }
             player.unlock();
         });
