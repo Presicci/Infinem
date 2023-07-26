@@ -71,6 +71,10 @@ public class Shortcuts {
         // Trollheim easy cliffside scramble
         // Dwarven Mine narrow crevice
         // Draynor narrow tunnel
+        Tile.getObject(19036, 3069, 3260, 0).nearPosition = (player, object) -> new Position(3070, 3260, 0);
+        Tile.getObject(19032, 3066, 3260, 0).nearPosition = (player, object) -> new Position(3065, 3260, 0);
+        ObjectAction.register(19036, 3069, 3260, 0, "climb-into", (p, obj) -> UnderwallTunnel.shortcut(p, 42, Direction.WEST, 5));
+        ObjectAction.register(19032, 3066, 3260, 0, "climb-into", (p, obj) -> UnderwallTunnel.shortcut(p, 42, Direction.EAST, 5));
         // Trollheim medium cliffside scramble
         // Trollheim advanced cliffside scramble
         // Kourend river jump
