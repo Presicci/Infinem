@@ -115,7 +115,7 @@ public class ThievableChests {
                                 new LootItem(13383, 1, 22000), // Xerician fabric
                                 new LootItem(1623, 1, 4000),  // Uncut sapphire
                                 new LootItem(1619, 1, 2670),   // Uncut ruby
-                                new LootItem(2801, 1, 1000),   // Clue scroll (medium)
+                                new LootItem(24363, 1, 1000),   // Clue scroll (medium)
                                 new LootItem(13392, 1, 333)   // Xeric's talisman
                         ).addTable(3335,  // Bolt tip table
                                 new LootItem(45, 4, 12, 541), // Opal
