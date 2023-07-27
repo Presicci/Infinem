@@ -441,7 +441,7 @@ public class EmoteClue extends Clue {
                 Arrays.asList(Items.BLUE_DHIDE_BODY, Items.BLUE_DHIDE_VAMB), Collections.singletonList(Equipment.SLOT_AMULET),
                 ClueType.HARD, Config.STASH_UNITS[58], 29011),
         AGILITY_PYRAMID("Cheer at the top of the agility pyramid. Beware of double agents! Equip a blue mystic robe top, and any rune heraldic shield.",
-                Collections.singletonList(TabEmote.CHEER), new Bounds(3042, 4695, 3047, 4700, 0),
+                Collections.singletonList(TabEmote.CHEER), new Bounds(3042, 4695, 3047, 4700, 3),
                 Arrays.asList(Items.MYSTIC_ROBE_TOP, Items.RUNE_SHIELD_H1), ClueType.HARD, Config.STASH_UNITS[59], 29022),
         SOPHANEM("Dance at the cat-doored pyramid in Sophanem. Beware of double agents! Equip a ring of life, an uncharged amulet of glory and an adamant two-handed sword.",
                 Collections.singletonList(TabEmote.DANCE), new Bounds(3291, 2781, 3296, 2783, 0),
