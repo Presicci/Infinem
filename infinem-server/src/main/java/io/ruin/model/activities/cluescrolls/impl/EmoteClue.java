@@ -611,7 +611,7 @@ public class EmoteClue extends Clue {
                 Collections.singletonList(TabEmote.BULL_ROARER), new Bounds(2927, 4711, 2934, 4718, 0),
                 Arrays.asList(Items.DRAGON_PLATESKIRT, Items.CLIMBING_BOOTS, Items.DRAGON_CHAINBODY), ClueType.MASTER, Config.STASH_UNITS[106], 29057),
         CASTLE_DRAKAN("Wave on the northern wall of Castle Drakan. Beware of double agents! Wear a dragon sq shield, splitbark body and any boater.",
-                Collections.singletonList(TabEmote.WAVE), new Bounds(3558, 3379, 3562, 3379, 0),
+                Collections.singletonList(TabEmote.WAVE), new Bounds(3558, 3379, 3572, 3385, 0),
                 Arrays.asList(Items.DRAGON_SQ_SHIELD, Items.SPLITBARK_BODY, Items.RED_BOATER), ClueType.MASTER, Config.STASH_UNITS[107], 29044),
         PYRAMID_PLUNDER("Yawn in the 7th room of Pyramid Plunder. Beware of double agents! Equip a pharaoh sceptre and a full set of menaphite robes.",
                 Collections.singletonList(TabEmote.YAWN), new Bounds(1941, 4421, 1954, 4431, 0),
