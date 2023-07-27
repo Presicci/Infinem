@@ -603,6 +603,9 @@ public class ClipUtils {
         clearClipping(2484, 3490, 1, 0, 0);     // Bar area
         // Darkmeyer
         clearClipping(3594, 3385, 0, 0, 0);     // Custom shortcut
+        clearClipping(3565, 3380, 0, 0, 0);     // Rocks by clue step
+        clearClipping(3565, 3379, 0, 0, 0);     // Rocks by clue step
+        clearClipping(3564, 3379, 0, 0, 0);     // Rocks by clue step
     }
 
     public static void clearClipping(int x, int y, int z, int lengthX, int lengthY) {
