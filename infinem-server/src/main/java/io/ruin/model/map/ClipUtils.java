@@ -601,6 +601,8 @@ public class ClipUtils {
         clearClipping(2483, 3490, 1, 0, 0);     // Bar area
         clearClipping(2484, 3489, 1, 0, 0);     // Bar area
         clearClipping(2484, 3490, 1, 0, 0);     // Bar area
+        // Darkmeyer
+        clearClipping(3594, 3385, 0, 0, 0);     // Custom shortcut
     }
 
     public static void clearClipping(int x, int y, int z, int lengthX, int lengthY) {

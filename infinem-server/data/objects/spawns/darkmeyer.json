@@ -1,0 +1,4 @@
+[
+  {"id": -1, "x": 3593, "y": 3385, "z": 0, "type": 10, "direction": 0},    // Remove tree
+  {"id": 39168, "x": 3592, "y": 3385, "z": 0, "type": 10, "direction": 2}  // Rope wall up
+]

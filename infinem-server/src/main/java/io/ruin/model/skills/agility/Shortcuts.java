@@ -6,6 +6,7 @@ import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.map.object.actions.impl.Ladder;
 import io.ruin.model.skills.agility.shortcut.*;
 
 public class Shortcuts {
@@ -159,6 +160,10 @@ public class Shortcuts {
             });
         });
         ObjectAction.register(31849, 2448, 3156, 0, 1, (p, obj) -> Traveling.fadeTravel(p, 2444, 3165, 0));
-
+        ObjectAction.register(39168, 3592, 3385, 0, "climb", ((player, obj) -> {
+            boolean up = player.getAbsX() > obj.getPosition().getX();
+            Position dest = up ? new Position(3591, 3385) : new Position(3594, 3385);
+            Ladder.climb(player, dest, up, true, false);
+        }));
     }
 }
