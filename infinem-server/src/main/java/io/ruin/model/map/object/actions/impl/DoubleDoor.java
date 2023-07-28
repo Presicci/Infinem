@@ -15,8 +15,11 @@ public class DoubleDoor {
 
     static {
         // Piscatoris fishing colony entrance
-        ObjectAction.register(12725, "open", ((player, obj) -> passThroughLongitudinal(player, obj, 12723, 12725, new Position(2343, 3662), new Position(2344, 3662))));
-        ObjectAction.register(12723, "open", ((player, obj) -> passThroughLongitudinal(player, obj, 12723, 12725, new Position(2343, 3662), new Position(2344, 3662))));
+        ObjectAction.register(12725, 2344, 3662, 0, "open", ((player, obj) -> passThroughLongitudinal(player, obj, 12723, 12725, new Position(2343, 3662), new Position(2344, 3662))));
+        ObjectAction.register(12723, 2343, 3662, 0, "open", ((player, obj) -> passThroughLongitudinal(player, obj, 12723, 12725, new Position(2343, 3662), new Position(2344, 3662))));
+        // Dwarf Cannon Camp
+        ObjectAction.register(15605, 2568, 3456, 0, "open", ((player, obj) -> passThroughLongitudinal(player, obj, 15604, 15605, new Position(2567, 3456), new Position(2568, 3456), false)));
+        ObjectAction.register(15604, 2567, 3456, 0, "open", ((player, obj) -> passThroughLongitudinal(player, obj, 15604, 15605, new Position(2567, 3456), new Position(2568, 3456), false)));
     }
 
     /**
