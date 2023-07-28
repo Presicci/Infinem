@@ -3,5 +3,5 @@
   {"id": 39168, "x": 3592, "y": 3385, "z": 0, "type": 10, "direction": 2}, // Rope wall up
   {"id": -1, "x": 3565, "y": 3380, "z": 0, "type": 10, "direction": 0},    // Remove rock
   {"id": -1, "x": 3565, "y": 3379, "z": 0, "type": 10, "direction": 0},    // Remove rock
-  {"id": -1, "x": 3564, "y": 3379, "z": 0, "type": 10, "direction": 0},    // Remove rock
+  {"id": -1, "x": 3564, "y": 3379, "z": 0, "type": 10, "direction": 0}    // Remove rock
 ]
