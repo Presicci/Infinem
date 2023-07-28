@@ -10,7 +10,7 @@
   "items": [
     {
       "itemId": 1969,
-      "stock": 1,
+      "stock": 5,
       "buy_price": 0,
       "sell_price": 2
     },
@@ -34,7 +34,7 @@
     },
     {
       "itemId": 550,
-      "stock": 1,
+      "stock": 20,
       "buy_price": 0,
       "sell_price": 2
     },
@@ -58,7 +58,7 @@
     },
     {
       "itemId": 970,
-      "stock": 1,
+      "stock": 5,
       "buy_price": 0,
       "sell_price": 20
     },
@@ -100,13 +100,13 @@
     },
     {
       "itemId": 2524,
-      "stock": 1,
+      "stock": 10,
       "buy_price": 0,
       "sell_price": 200
     },
     {
       "itemId": 3377,
-      "stock": 1,
+      "stock": 10,
       "buy_price": 0,
       "sell_price": 10
     },
@@ -130,7 +130,7 @@
     },
     {
       "itemId": 3711,
-      "stock": 1,
+      "stock": 20,
       "buy_price": 0,
       "sell_price": 2
     },
@@ -142,13 +142,13 @@
     },
     {
       "itemId": 3424,
-      "stock": 1,
+      "stock": 2,
       "buy_price": 0,
       "sell_price": 0
     },
     {
       "itemId": 3420,
-      "stock": 1,
+      "stock": 2,
       "buy_price": 0,
       "sell_price": 40
     },
