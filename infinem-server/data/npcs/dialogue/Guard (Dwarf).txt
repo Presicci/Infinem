@@ -1,0 +1,5 @@
+5186,5187
+Player: Hello.
+Guard: Don't distract me while I'm on duty! This mine has to be protected!
+Player: What's going to attack a mine?
+Guard: Goblins! They wander everywhere, attacking anyone they think is small enough to be an easy victim. We need more cannons to fight them off properly.
