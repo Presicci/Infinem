@@ -1,0 +1,3 @@
+5185
+Player: Hello.
+Guard: Don't distract me while I'm on duty! This mine has to be protected!
