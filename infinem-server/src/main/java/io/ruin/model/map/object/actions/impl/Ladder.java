@@ -8,12 +8,13 @@ import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
-import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 public enum Ladder {
     //UP(1, "climb-up", new Position(), new Position(), true),
     //DOWN(1, "climb-down", new Position(), new Position(), false),
+    SHADOW_DUNGEON_ENTRANCE(6560, 1, new Position(2547, 3421), new Position(2630, 5072, 0), false),
+    SHADOW_DUNGEON_EXIT(6450, "climb-up", new Position(2629, 5072), new Position(2546, 3421, 0), true),
+
     PETERDOMUS_BASEMENT_EAST_EXIT(17385, "climb-up", new Position(3405, 9907), new Position(3405, 3506), true),
 
     PORT_SARIM_RAT_UP(10309, "climb-up", new Position(2962, 9651), new Position(3017, 3232, 0), true),
@@ -35,9 +36,26 @@ public enum Ladder {
     TROLL_STRONGHOLD_ENTRANCE(18833, "climb-down", new Position(2831, 3677, 0), new Position(2831, 10077, 2), false);
 
     private final int id;
-    private final String option;
+    private String optionString = "";
+    private int option = -1;
     private final Position objectPos, destinationPos;
     private final boolean up;
+
+    Ladder(int id, String option, Position objectPos, Position destinationPos, boolean up) {
+        this.id = id;
+        this.optionString = option;
+        this.objectPos = objectPos;
+        this.destinationPos = destinationPos;
+        this.up = up;
+    }
+
+    Ladder(int id, int option, Position objectPos, Position destinationPos, boolean up) {
+        this.id = id;
+        this.option = option;
+        this.objectPos = objectPos;
+        this.destinationPos = destinationPos;
+        this.up = up;
+    }
 
     public static void climb(Player player, Position position, boolean climbingUp, boolean animate, boolean tileCheck) {
         climb(player, position.getX(), position.getY(), position.getZ(), climbingUp, animate, tileCheck);
@@ -70,7 +88,11 @@ public enum Ladder {
 
     static {
         for (Ladder entry : values()) {
-            ObjectAction.register(entry.id, entry.objectPos.getX(), entry.objectPos.getY(), entry.objectPos.getZ(), entry.option, ((player, obj) -> climb(player, entry.destinationPos, entry.up, true, false)));
+            if (entry.option > 0) {
+                ObjectAction.register(entry.id, entry.objectPos.getX(), entry.objectPos.getY(), entry.objectPos.getZ(), entry.option, ((player, obj) -> climb(player, entry.destinationPos, entry.up, true, false)));
+            } else {
+                ObjectAction.register(entry.id, entry.objectPos.getX(), entry.objectPos.getY(), entry.objectPos.getZ(), entry.optionString, ((player, obj) -> climb(player, entry.destinationPos, entry.up, true, false)));
+            }
         }
         ObjectDef.forEach(def -> {
             if ((def.name.equalsIgnoreCase("ladder") || def.name.equalsIgnoreCase("bamboo ladder"))
