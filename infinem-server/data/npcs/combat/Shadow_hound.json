@@ -6,10 +6,10 @@
     "hitpoints": 62,
     "aggressive_level": 126,
     "max_damage": 6,
-    "attack_style": "CRUSH",
+    "attack_style": "STAB",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 58.0,
+    "slayer_xp": 62.0,
     "slayer_tasks": [],
     //Combat Stats
     "attack": 53,
@@ -38,8 +38,8 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 6562,
+    "defend_animation": 6563,
+    "death_animation": 6564
   }
 ]
