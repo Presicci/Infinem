@@ -31,6 +31,7 @@ public class CoalTruck {
                 player.getInventory().remove(Items.COAL, amt);
                 player.getBank().add(Items.COAL, amt);
                 player.dialogue(new ItemDialogue().one(Items.COAL, "You deposit " + amt + " coal.<br>Your bank now has " + (bankAmt + amt) + " coal stored."));
+                player.getTaskManager().doLookupByUUID(914, 1); // Use a Coal Truck at the Coal Mine
                 player.unlock();
             });
         }));
