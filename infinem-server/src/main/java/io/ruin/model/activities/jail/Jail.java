@@ -65,7 +65,8 @@ public class Jail {
         /**
          * Mine care
          */
-        ObjectAction.register(6045, 1, (player, obj) -> {
+        // TODO Redo this if we wanna still use jail
+        /*ObjectAction.register(6045, 1, (player, obj) -> {
             if(player.jailOresAssigned > 0) {
                 Item rock = player.getInventory().findItem(ROCK);
                 if(rock == null) {
@@ -83,7 +84,7 @@ public class Jail {
                     player.unlock();
                 });
             }
-        });
+        });*
         /**
          * Listener
          */
