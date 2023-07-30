@@ -45,6 +45,7 @@ public class DwarvenMineCart {
                     player.getInventory().remove(995, finalAmt*10);
                     player.getBank().add(ore, finalAmt);
                     player.dialogue(new ItemDialogue().one(ore, "You deposit " + finalAmt + " " + oreName + ".<br>Your bank now has " + (bankAmt + amt) + " " + oreName + " stored."));
+                    player.getTaskManager().doLookupByUUID(915, 1); // Bank Some Ore at a Mine Cart in the Dwarven Mine
                     player.unlock();
                 });
             })));
