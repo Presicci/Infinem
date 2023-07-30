@@ -1,0 +1,18 @@
+{
+  "name": "Candles",
+  "currency": "COINS",
+  "npcs": [
+    1896
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 0,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 36,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 1000
+    }
+  ]
+}
