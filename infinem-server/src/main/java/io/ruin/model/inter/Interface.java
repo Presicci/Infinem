@@ -237,7 +237,7 @@ public class Interface {
 
     public static final int PET_INSURANCE = 148;
 
-    public static final int SCROLL = 116;
+    public static final int SCROLL = 95;
 
     public static final int VIEWING_ORB_INTERFACE = 374;
 
