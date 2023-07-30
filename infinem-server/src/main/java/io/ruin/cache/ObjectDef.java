@@ -225,9 +225,6 @@ public class ObjectDef {
             //pet list
             name = "Pet list";
             options[4] = null;
-        } else if (id == 6045) {
-            //jail mine cart
-            options[0] = "Dump-ore";
         } else if (id == 3581) {
             //tournament ticket exchange
             name = "Ticket exchange";
