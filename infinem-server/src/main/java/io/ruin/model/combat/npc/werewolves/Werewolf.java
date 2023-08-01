@@ -26,7 +26,7 @@ public abstract class Werewolf extends NPCCombat {
                     //npc.animate();    // Pre werewolf
                     npc.transform(getWerewolfId());
                     npc.setHp(hp);
-                    //npc.animate(6543);  // Post werewolf
+                    npc.animate(6543);  // Post werewolf
                     npc.doIfIdle(hit.attacker.player, () -> {
                         npc.transform(originalId);
                     });
