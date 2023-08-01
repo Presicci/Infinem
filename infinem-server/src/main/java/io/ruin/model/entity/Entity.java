@@ -330,17 +330,7 @@ public abstract class Entity {
             animTick = Server.currentTick() + def.getDuration();
         }
         animationUpdate.set(id, delay);
-        if(id == -1) {
-            //if(animationDelay != null)
-            //    animationDelay.reset();
-            return 0;
-        }
         return 0;
-        //int ticks = AnimationDefinition.get(id).ticks;
-        //if(animationDelay == null)
-        //    animationDelay = new WorldDelay();
-        //animationDelay.delay(ticks);
-        //return ticks;
     }
 
     public boolean hasAnimationUpdate() {
