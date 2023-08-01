@@ -55,7 +55,7 @@ public enum Lightables {
      * @param player The player to check
      * @return True if the player has a light source, false if not
      */
-    private static boolean hasLightSource(Player player) {
+    public static boolean hasLightSource(Player player) {
         for (Lightables lightable : values()) {
             if (player.getInventory().hasId(lightable.litId) || player.getEquipment().hasId(lightable.litId)) {
                 return true;
