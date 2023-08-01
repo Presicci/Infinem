@@ -1108,4 +1108,18 @@ public abstract class Entity {
     public void putTemporaryAttribute(AttributeKey key, Object v) {
         putTemporaryAttribute(key.name(), v);
     }
+
+    public int incrementTemporaryNumericAttribute(String key, int amount) {
+        Object object = temporaryAttributes.get(key);
+        if (object != null && !(object instanceof Number)) {
+            throw new IllegalArgumentException("Temporary Attribute with key [" + key + "] is not numeric.");
+        }
+        int newAmount = object == null ? amount : ((Number) object).intValue() + amount;
+        temporaryAttributes.put(key, newAmount);
+        return newAmount;
+    }
+
+    public int incrementTemporaryNumericAttribute(AttributeKey key, int amount) {
+        return incrementTemporaryNumericAttribute(key.name(), amount);
+    }
 }
