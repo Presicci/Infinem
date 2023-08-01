@@ -20,7 +20,12 @@ public class Hunter {
         if (!player.getStats().check(StatType.Hunter, type.getLevelReq(), "place this trap")) {
             return false;
         }
-        if (player.traps.size() >= getMaxTraps(player)) {
+        int traps = player.traps.size();
+        if (type instanceof DeadfallTrap && traps >= 1) {
+            player.sendMessage("You can only have one deadfall trap active.");
+            return false;
+        }
+        if (!(type instanceof DeadfallTrap) || traps >= getMaxTraps(player)) {
             player.sendMessage("You can only place up to " + getMaxTraps(player) + " at your current Hunter level.");
             return false;
         }
