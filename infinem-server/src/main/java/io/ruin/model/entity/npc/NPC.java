@@ -497,7 +497,7 @@ public class NPC extends NPCAttributes {
             int lastHealth = npc.getHp();
             while (loops < cycles) { // x y second loops
                 e.delay(Server.toTicks(timePerCycle));    // Check if the player is offline/out of range every 30 seconds
-                if (lastHealth < npc.getHp()) { // Reset timer if is 'in combat'
+                if (lastHealth > npc.getHp()) { // Reset timer if is 'in combat'
                     loops = 0;
                 }
                 if (player == null || !player.isOnline() || player.getPosition() == null || npc.getPosition().distance(player.getPosition()) > 15) {
