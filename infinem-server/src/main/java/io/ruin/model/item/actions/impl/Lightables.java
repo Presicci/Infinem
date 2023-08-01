@@ -57,7 +57,7 @@ public enum Lightables {
      */
     public static boolean hasLightSource(Player player) {
         for (Lightables lightable : values()) {
-            if (player.getInventory().hasId(lightable.litId) || player.getEquipment().hasId(lightable.litId)) {
+            if (player.getInventory().contains(lightable.litId) || player.getEquipment().contains(lightable.litId)) {
                 return true;
             }
         }
