@@ -6,6 +6,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.map.MapArea;
 import io.ruin.model.skills.Tool;
 import lombok.AllArgsConstructor;
 
@@ -61,6 +62,8 @@ public enum Lightables {
                 return true;
             }
         }
+        if (MapArea.LUMBRIDGE_SWAMP_CAVE.hasFirePitInArea(player))
+            return true;
         return false;
     }
 
