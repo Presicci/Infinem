@@ -2,6 +2,7 @@ package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.utils.Config;
@@ -46,7 +47,10 @@ public class OldFirePit {
         WEISS_FIRE(33334, FireType.FIRE_OF_NOURISHMENT, null),
         GODWARS_DUNGEON_FIRE(33335, FireType.FIRE_OF_UNSEASONAL_WARMTH, player -> player.closeInterface(InterfaceType.PRIMARY_OVERLAY)),
         GIANT_MOLE_FIRE(33336, FireType.FIRE_OF_ETERNAL_LIGHT, player -> player.closeInterface(InterfaceType.PRIMARY_OVERLAY)),
-        LUMBRIDGE_SWAMP_CAVES_FIRE(33337, FireType.FIRE_OF_ETERNAL_LIGHT, player -> player.closeInterface(InterfaceType.PRIMARY_OVERLAY)),
+        LUMBRIDGE_SWAMP_CAVES_FIRE(33337, FireType.FIRE_OF_ETERNAL_LIGHT, player -> {
+            player.putTemporaryAttribute(AttributeKey.DARKNESS_TICKS, -1);
+            player.closeInterface(InterfaceType.SECONDARY_OVERLAY);
+        }),
         MOS_LE_HARMLESS_FIRE(33338, FireType.FIRE_OF_ETERNAL_LIGHT, player -> player.closeInterface(InterfaceType.PRIMARY_OVERLAY)),
         MORT_MYRE_SWAMP_FIRE(33339, FireType.FIRE_OF_DEHUMIDIFICATION, null);
 
