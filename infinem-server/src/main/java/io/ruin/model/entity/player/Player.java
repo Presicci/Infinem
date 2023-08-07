@@ -17,6 +17,8 @@ import io.ruin.model.activities.cluescrolls.puzzles.PuzzleBox;
 import io.ruin.model.activities.duelarena.Duel;
 import io.ruin.model.activities.pyramidplunder.PyramidPlunder;
 import io.ruin.model.activities.wilderness.BountyHunter;
+import io.ruin.model.combat.Hit;
+import io.ruin.model.combat.HitType;
 import io.ruin.model.content.upgrade.UpgradeMachine;
 import io.ruin.model.content.bestiary.Bestiary;
 import io.ruin.model.content.tasksystem.relics.RelicManager;
@@ -44,6 +46,7 @@ import io.ruin.model.item.ItemContainer;
 import io.ruin.model.item.ItemContainerG;
 import io.ruin.model.item.actions.impl.AshSanctifier;
 import io.ruin.model.item.actions.impl.BoneCrusher;
+import io.ruin.model.item.actions.impl.Lightables;
 import io.ruin.model.item.actions.impl.boxes.mystery.SuperMysteryBox;
 import io.ruin.model.item.actions.impl.chargable.SerpentineHelm;
 import io.ruin.model.item.actions.impl.storage.DeathStorage;
@@ -1682,7 +1685,7 @@ public class Player extends PlayerAttributes {
                 item.getDef().onTick(this, item);
         }
         combat.tickSkull();
-
+        tickDarkness();
         /*if(player.wildernessLevel <= 0 && !player.pvpAttackZone && player.snowballPeltOption &&
                 !player.getEquipment().hasId(Christmas.SNOWBALL) && !player.getPosition().inBounds(DuelArena.BOUNDS)
                 && !player.getPosition().inBounds(DuelArena.CUSTOM_EDGE)) {
@@ -1690,6 +1693,38 @@ public class Player extends PlayerAttributes {
             player.snowballPeltOption = false;
         }*/
 
+    }
+
+    private void tickDarkness() {
+        // -1 is disabled, but still in the cave
+        // -2 means out of cave
+        int ticks = getTemporaryAttributeOrDefault(AttributeKey.DARKNESS_TICKS, -2);
+        if (ticks < -1) {
+            return;
+        }
+        if (ticks == -1) {
+            // If the player loses their light source while in a dark cave
+            if (!Lightables.hasLightSource(this)) {
+                putTemporaryAttribute(AttributeKey.DARKNESS_TICKS, 0);
+                player.openInterface(InterfaceType.SECONDARY_OVERLAY, 96);
+            }
+        }
+        // If the player obtains a light source while in a dark cave
+        if (Lightables.hasLightSource(this)) {
+            putTemporaryAttribute(AttributeKey.DARKNESS_TICKS, -1);
+            player.closeInterface(InterfaceType.SECONDARY_OVERLAY);
+            return;
+        }
+        if (ticks == 5)
+            player.sendMessage("You hear tiny insects skittering over the ground...");
+        if (ticks == 25)
+            player.sendMessage("Tiny biting insects swarm all over you!");
+        if (ticks >= 25) {
+            Hit hit = new Hit(HitType.DAMAGE);
+            hit.fixedDamage(1);
+            player.hit(hit);
+        }
+        incrementTemporaryNumericAttribute(AttributeKey.DARKNESS_TICKS, 1);
     }
 
     /**
