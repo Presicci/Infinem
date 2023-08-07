@@ -73,7 +73,8 @@ public enum CoinPouch {
                         amountAdded = pouch.minCoins * amountOfPouches;
                         inventory.add(995, amountAdded);
                     }
-                    player.sendMessage("You open " + amountOfPouches + " pouches, finding a total of " + amountAdded + " coins!");
+                    player.sendMessage("You open " + (amountOfPouches > 1 ? amountOfPouches + " pouches" : "a coin pouch") + ""
+                            + (amountOfPouches > 1 ? ", finding a total of " : " and find ") + amountAdded + " coins!");
                     if (amountOfPouches == 28) {
                         player.getTaskManager().doLookupByUUID(11, 1);
                     }
