@@ -41,8 +41,9 @@ public enum Lightables {
     public final int unlitId, litId;
 
     private void light(Player player, Item item) {
+        String itemName = item.getDef().name;
         item.setId(litId);
-        player.sendMessage("You light the " + item.getDef().name + ".");
+        player.sendMessage("You light the " + itemName + ".");
         player.getTaskManager().doLookupByCategory(TaskCategory.LIGHTSOURCE, item.getDef().name);
     }
 
