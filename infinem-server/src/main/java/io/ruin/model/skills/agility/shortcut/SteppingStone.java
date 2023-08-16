@@ -20,7 +20,16 @@ import java.util.List;
  */
 public enum SteppingStone {
 
-
+    LUMBRIDGE_SWAMP_CAVE1(new RegisterObject[]{
+            new RegisterObject(5948)},
+            1, 0, "jump-across",
+            Position.of(3204, 9572), Position.of(3208, 9572),
+            Position.of(3206, 9572)),
+    LUMBRIDGE_SWAMP_CAVE2(new RegisterObject[]{
+            new RegisterObject(5949)},
+            1, 0, "jump-across",
+            Position.of(3221, 9556), Position.of(3222, 9553),
+            Position.of(3221, 9554)),
     BRIMHAVEN_STONES12(new RegisterObject[]{
             new RegisterObject(21738, 2649, 9561),
             new RegisterObject(21739, 2647, 9558) },
@@ -190,7 +199,9 @@ public enum SteppingStone {
                 object.register(stone.option, stone::traverse);
             }
         }
-
+        // Lumbridge Swamp Cave
+        Tile.getObject(5948, 3206, 9572, 0).skipReachCheck = p -> p.equals(3208, 9572) || p.equals(3204, 9572);
+        Tile.getObject(5949, 3221, 9554, 0).skipReachCheck = p -> p.equals(3221, 9556) || p.equals(3222, 9553);
         // Brimhaven stones
         Tile.getObject(19040, 2695, 9531, 0).skipReachCheck = p -> p.equals(2695, 9533);
         Tile.getObject(19040, 2696, 9527, 0).skipReachCheck = p -> p.equals(2697, 9525);
