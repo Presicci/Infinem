@@ -22,12 +22,12 @@ public enum SteppingStone {
 
     LUMBRIDGE_SWAMP_CAVE1(new RegisterObject[]{
             new RegisterObject(5948)},
-            1, 0, "jump-across",
+            1, 0.5, "jump-across",
             Position.of(3204, 9572), Position.of(3208, 9572),
             Position.of(3206, 9572)),
     LUMBRIDGE_SWAMP_CAVE2(new RegisterObject[]{
             new RegisterObject(5949)},
-            1, 0, "jump-across",
+            1, 0.5, "jump-across",
             Position.of(3221, 9556), Position.of(3222, 9553),
             Position.of(3221, 9554)),
     BRIMHAVEN_STONES12(new RegisterObject[]{
@@ -136,7 +136,7 @@ public enum SteppingStone {
             Position.of(2695, 9531), Position.of(2695, 9529), Position.of(2696, 9527)),
     ;
 
-    SteppingStone(RegisterObject[] objects, int levelReq, int xp, String option, Position startPosition, Position endPosition, Position... steps){
+    SteppingStone(RegisterObject[] objects, int levelReq, double xp, String option, Position startPosition, Position endPosition, Position... steps){
         this.objects = objects;
         this.xp = xp;
         this.levelReq = levelReq;
@@ -149,7 +149,8 @@ public enum SteppingStone {
     private final RegisterObject[] objects;
     private final List<Position> positions;
     private final Position startPosition, endPosition;
-    private final int xp, levelReq;
+    private final double xp;
+    private final int levelReq;
     private final String option;
 
     public void traverse(Player p, GameObject obj){
