@@ -2,6 +2,7 @@ package io.ruin.data.impl.dialogue;
 
 import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
+import io.ruin.model.content.transportation.charterships.CharterShips;
 import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
@@ -18,6 +19,7 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    CHARTER((CharterShips::openInterface)),
     PET_ROCK((player -> {
         if (!player.getInventory().hasFreeSlots(1)) {
             player.dialogue(new NPCDialogue(player.getDialogueNPC(), "Sure thing, but you'd better free up some space first."));
