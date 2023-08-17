@@ -147,7 +147,10 @@ public class Falconry {
             npc.remove();
             player.getStats().addXp(StatType.Hunter, kebbit.experience, true);
             player.getInventory().addOrDrop(kebbit.furId, 1);
-            player.getInventory().addOrDrop(Items.BONES, 1);
+            Item bone = new Item(Items.BONES, 1);
+            if (!player.getBoneCrusher().handleBury(bone)) {
+                player.getInventory().addOrDrop(bone);
+            }
             if (player.getEquipment().get(Equipment.SLOT_WEAPON).getId() == FALCONERS_GLOVES)
                 player.getEquipment().get(Equipment.SLOT_WEAPON).setId(FALCONERS_GLOVES_BIRD);
             else {
