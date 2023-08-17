@@ -8,6 +8,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.route.routes.ProjectileRoute;
 import io.ruin.model.skills.hunter.creature.impl.Bird;
@@ -243,7 +244,13 @@ public abstract class Creature {
                 boolean extra = Random.rollPercent(20);
                 if (extra) item.incrementAmount(1);
             }
-            player.getInventory().add(item.getId(), item.getAmount());
+            if (item.getId() == Items.BONES) {
+                if (!player.getBoneCrusher().handleBury(item)) {
+                    player.getInventory().add(item.getId(), item.getAmount());
+                }
+            } else {
+                player.getInventory().add(item.getId(), item.getAmount());
+            }
         });
         player.getInventory().add(getTrapType().getItemId(), 1);
     }
