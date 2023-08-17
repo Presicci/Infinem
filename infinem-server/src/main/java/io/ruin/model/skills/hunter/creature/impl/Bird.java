@@ -5,6 +5,7 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.skills.hunter.Hunter;
 import io.ruin.model.skills.hunter.creature.Creature;
 import io.ruin.model.skills.hunter.traps.Trap;
@@ -42,7 +43,7 @@ public class Bird extends Creature {
 
     @Override
     public List<Item> getLoot() {
-        return Arrays.asList(new Item(featherId, Random.get(6, 12)), new Item(9978, 1), new Item(526, 1));
+        return Arrays.asList(new Item(featherId, Random.get(6, 12)), new Item(Items.RAW_BIRD_MEAT, 1), new Item(Items.BONES, 1));
     }
 
     @Override
