@@ -1,0 +1,27 @@
+Trader Stan: Can I help you?
+<Yes, who are you?
+Player: Yes, who are you?
+Trader Stan: Why, I'm Trader Stan, owner and operator of the largest fleet of trading ships and chartered vessels to ever sail the seas!
+Trader Stan: If you want to get to a port in a hurry then you can charter one of my ships to take you there - if the price is right...
+Player: So, where exactly can I go with your ships?
+Trader Stan: We run ships from Port Phasmatys over to Port Tyras, stopping at Port Sarim, Catherby, Brimhaven, Musa Point, the Shipyard and Port Khazard.
+Trader Stan: We might dock at Mos Le'Harmless once in a while, as well, if you catch my meaning...
+Player: Wow, that's a lot of ports. I take it you have some exotic stuff to trade?
+Trader Stan: We certainly do! I and my crewmen have access to items bought and sold from around the world. Would you like to take a look? Or would you like to charter a ship?
+<Yes, let's see what you're trading.
+Player: Yes, let's see what you're trading.
+SHOP
+><Yes, I would like to charter a ship.
+Player: Yes, I would like to charter a ship.
+Trader Stan: Certainly [sir/madam]. Where would you like to go?
+CHARTER:
+><No thanks.
+Player: No thanks.
+>
+><Yes, I would like to charter a ship.
+Player: Yes, I would like to charter a ship.
+Trader Stan: Certainly [sir/madam]. Where would you like to go?
+CHARTER:
+><No thanks.
+Player: No thanks.
+>
