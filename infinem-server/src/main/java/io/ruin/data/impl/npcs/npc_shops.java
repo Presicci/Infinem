@@ -13,14 +13,14 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.shop.*;
+import io.ruin.model.shop.Currency;
 import io.ruin.process.event.Event;
 import io.ruin.process.event.EventConsumer;
 import io.ruin.process.event.EventType;
 import io.ruin.process.event.EventWorker;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -39,7 +39,14 @@ public class npc_shops extends DataFile {
         for (TempItem i : s.items)
             items.add(new ShopItem(i.itemId, i.stock, i.sell_price, i.buy_price));
         Shop shop = new Shop(s.name, s.currency, s.generalStore, RestockRules.generateDefault(), items, s.ironman);
+        List<Integer> npcs = Arrays.stream(s.npcs).boxed().collect(Collectors.toList());
         for (int n : s.npcs) {
+            NPCDef def = NPCDef.get(n);
+            if ((def.varpbitId != -1 || def.varpId != -1) && def.showIds.length > 0) {
+                npcs.addAll(Arrays.stream(def.showIds).filter(e -> e != -1).boxed().collect(Collectors.toList()));
+            }
+        }
+        for (int n : npcs) {
             if(s.uniquePerNpc){
                 shop = new Shop(s.name, s.currency, s.generalStore, RestockRules.generateDefault(), items, s.ironman);
             }
