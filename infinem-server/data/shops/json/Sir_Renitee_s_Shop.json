@@ -2,7 +2,7 @@
   "name": "Sir Renitee's Shop",
   "currency": "COINS",
   "npcs": [
-    5421
+    3100
   ],
   "sellMultiplier": 0,
   "buyMultiplier": 0,
@@ -10,73 +10,73 @@
   "items": [
     {
       "itemId": 8004,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 1000
     },
     {
       "itemId": 8005,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 1000
     },
     {
       "itemId": 8006,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 1000
     },
     {
       "itemId": 7996,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 1000
     },
     {
       "itemId": 7995,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 1000
     },
     {
       "itemId": 7998,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 1000
     },
     {
       "itemId": 7997,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 1000
     },
     {
       "itemId": 8002,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 2000
     },
     {
       "itemId": 7999,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 2000
     },
     {
       "itemId": 8003,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 2000
     },
     {
       "itemId": 8001,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 2000
     },
     {
       "itemId": 8000,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 2000
     }
