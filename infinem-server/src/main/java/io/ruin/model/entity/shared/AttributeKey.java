@@ -48,5 +48,6 @@ public enum AttributeKey {
     BREAK_VIALS,
     DISCARD_BUCKETS,
     DARKNESS_TICKS,
-    OBJECT_TRAP
+    OBJECT_TRAP,
+    OBJECT_DEPLETING
 }

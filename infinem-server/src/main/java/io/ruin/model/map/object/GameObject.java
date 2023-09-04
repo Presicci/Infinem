@@ -51,8 +51,6 @@ public class GameObject extends AttributesHolder {
     public GameObject doorReplaced;
     public int conOwner = -1;
 
-    public boolean depleting;
-
     private long lastAnimationTick;
 
     public GameObject(int id, int x, int y, int z, int type, int direction) {

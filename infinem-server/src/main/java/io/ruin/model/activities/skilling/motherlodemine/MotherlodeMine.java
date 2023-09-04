@@ -9,6 +9,7 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.ItemDialogue;
@@ -269,14 +270,14 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                     player.resetAnimation();
                     return;
                 }
-                if (upperLevel && !obj.depleting) {
-                    obj.depleting = true;
+                if (upperLevel && !obj.hasTemporaryAttribute(AttributeKey.OBJECT_DEPLETING)) {
+                    obj.putTemporaryAttribute(AttributeKey.OBJECT_DEPLETING, 1);
                     World.startEvent(worldEvent -> {
                         worldEvent.delay(Random.get(25, 45));
                         obj.setId(obj.originalId);
                         worldEvent.delay(Random.get(10, 25));
                         obj.setId(obj.id - 4);
-                        obj.depleting = false;
+                        obj.removeTemporaryAttribute(AttributeKey.OBJECT_DEPLETING);
                     });
                 }
                 if(attempts == 0) {
