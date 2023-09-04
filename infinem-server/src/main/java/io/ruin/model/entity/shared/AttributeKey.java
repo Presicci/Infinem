@@ -47,5 +47,6 @@ public enum AttributeKey {
     SELECTED_LEG_COLOR,
     BREAK_VIALS,
     DISCARD_BUCKETS,
-    DARKNESS_TICKS
+    DARKNESS_TICKS,
+    OBJECT_TRAP
 }

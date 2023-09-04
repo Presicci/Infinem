@@ -3,6 +3,7 @@ package io.ruin.model.skills.hunter.creature.impl;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.object.GameObject;
@@ -63,18 +64,19 @@ public class Salamander extends Creature {
         }
         player.startEvent(event -> {
             player.lock();
-            player.animate(obj.trap.getTrapType().getDismantleAnimation());
+            Trap trap = obj.getTemporaryAttribute(AttributeKey.OBJECT_TRAP);
+            player.animate(trap.getTrapType().getDismantleAnimation());
             event.delay(2);
             addLoot(player);
             player.getStats().addXp(StatType.Hunter, getCatchXP(), true);
             if (getCounter() != null)
                 getCounter().increment(player, 1);
-            obj.trap.getTrapType().onRemove(player, obj);
+            trap.getTrapType().onRemove(player, obj);
             if (obj.direction >= 2) {
                 destroyTrap(obj);
             } else {
-                obj.trap.getOwner().traps.remove(obj.trap);
-                obj.trap = null;
+                trap.getOwner().traps.remove(trap);
+                obj.removeTemporaryAttribute(AttributeKey.OBJECT_TRAP);
             }
             player.unlock();
         });
@@ -132,7 +134,7 @@ public class Salamander extends Creature {
     private void swap(Trap trap) { // need to do this because it's initially split into 2 different objects..
         GameObject other = NetTrap.getTreeObject(trap.getObject());
         trap.setObject(other);
-        other.trap = trap;
+        other.putTemporaryAttribute(AttributeKey.OBJECT_TRAP, trap);
     }
 
     @Override
@@ -146,28 +148,29 @@ public class Salamander extends Creature {
             player.sendMessage("This isn't your trap.");
             return;
         }
-        if (obj.trap == null) {
+        Trap trap = obj.getTemporaryAttribute(AttributeKey.OBJECT_TRAP);
+        if (trap == null) {
             destroyTrap(obj);
             return;
         }
-        if (!player.getInventory().hasRoomFor(obj.trap.getTrapType().getItemId())) {
+        if (!player.getInventory().hasRoomFor(trap.getTrapType().getItemId())) {
             player.sendMessage("Not enough space in your inventory.");
             return;
         }
-        if (obj.trap.isBusy()) {
+        if (trap.isBusy()) {
             return;
         }
         player.startEvent(event -> {
             player.lock();
-            player.animate(obj.trap.getTrapType().getDismantleAnimation());
+            player.animate(trap.getTrapType().getDismantleAnimation());
             event.delay(2);
-            player.getInventory().add(obj.trap.getTrapType().getItemId(), 1);
-            obj.trap.getTrapType().onRemove(player, obj);
+            player.getInventory().add(trap.getTrapType().getItemId(), 1);
+            trap.getTrapType().onRemove(player, obj);
             if (obj.direction >= 2) {
                 destroyTrap(obj);
             } else {
-                obj.trap.getOwner().traps.remove(obj.trap);
-                obj.trap = null;
+                trap.getOwner().traps.remove(trap);
+                obj.removeTemporaryAttribute(AttributeKey.OBJECT_TRAP);
             }
             player.unlock();
         });

@@ -1,6 +1,7 @@
 package io.ruin.model.skills.hunter.traps;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.skills.hunter.creature.Creature;
 
@@ -18,7 +19,7 @@ public class Trap {
         this.owner = owner;
         this.trapType = trapType;
         this.object = object;
-        object.trap = this;
+        object.putTemporaryAttribute(AttributeKey.OBJECT_TRAP, this);
     }
 
     public Player getOwner() {

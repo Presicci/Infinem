@@ -1,6 +1,7 @@
 package io.ruin.model.skills.hunter;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.Region;
@@ -96,26 +97,27 @@ public class Hunter {
             player.sendMessage("This isn't your trap.");
             return;
         }
-        if (obj.trap == null) {
+        Trap trap = obj.getTemporaryAttribute(AttributeKey.OBJECT_TRAP);
+        if (trap == null) {
             destroyTrap(obj);
             return;
         }
-        int itemId = obj.trap.getTrapType().getItemId();
+        int itemId = trap.getTrapType().getItemId();
         if (itemId != -1 && !player.getInventory().hasRoomFor(itemId)) {
             player.sendMessage("Not enough space in your inventory.");
             return;
         }
-        if (obj.trap.isBusy()) {
+        if (trap.isBusy()) {
             return;
         }
         player.startEvent(event -> {
             player.lock();
-            player.animate(obj.trap.getTrapType().getDismantleAnimation());
+            player.animate(trap.getTrapType().getDismantleAnimation());
             event.delay(2);
             if (!obj.isRemoved()) {
                 if (itemId != -1)
                     player.getInventory().add(itemId, 1);
-                obj.trap.getTrapType().onRemove(player, obj);
+                trap.getTrapType().onRemove(player, obj);
                 destroyTrap(obj);
             }
             player.unlock();
@@ -123,20 +125,22 @@ public class Hunter {
     }
 
     public static void destroyTrap(GameObject obj) {
-        if (!obj.isRemoved() && !(obj.trap.getTrapType() instanceof DeadfallTrap))
+        Trap trap = obj.getTemporaryAttribute(AttributeKey.OBJECT_TRAP);
+        if (!obj.isRemoved() && !(trap.getTrapType() instanceof DeadfallTrap))
             obj.remove();
-        if (obj.trap != null) {
-            if (obj.trap.getOwner() != null)
-                obj.trap.getOwner().traps.remove(obj.trap);
-            obj.trap.setRemoved(true);
-            obj.trap = null;
+        if (trap != null) {
+            if (trap.getOwner() != null)
+                trap.getOwner().traps.remove(trap);
+            trap.setRemoved(true);
+            obj.removeTemporaryAttribute(AttributeKey.OBJECT_TRAP);
         }
     }
 
     public static boolean isOwner(Player player, GameObject obj) {
-        if (obj.trap == null)
+        Trap trap = obj.getTemporaryAttribute(AttributeKey.OBJECT_TRAP);
+        if (trap == null)
             return true;
-        return obj.trap.getOwner() == player;
+        return trap.getOwner() == player;
     }
 
     public static void registerTrap(TrapType type, boolean registerItemActions) {
@@ -157,11 +161,12 @@ public class Hunter {
             player.sendMessage("This isn't your trap.");
             return;
         }
-        if (obj.trap == null || obj.trap.getTrappedCreature() == null) {
+        Trap trap = obj.getTemporaryAttribute(AttributeKey.OBJECT_TRAP);
+        if (trap == null || trap.getTrappedCreature() == null) {
             dismantleTrap(player, obj);
             return;
         }
-        obj.trap.getTrappedCreature().check(player, obj);
+        trap.getTrappedCreature().check(player, obj);
     }
 
 

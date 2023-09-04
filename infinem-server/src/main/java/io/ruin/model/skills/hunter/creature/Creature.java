@@ -6,6 +6,7 @@ import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
+import io.ruin.model.entity.shared.AttributeKey;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
@@ -218,9 +219,10 @@ public abstract class Creature {
             player.sendMessage("Not enough space in your inventory.");
             return;
         }
+        Trap trap = obj.getTemporaryAttribute(AttributeKey.OBJECT_TRAP);
         player.startEvent(event -> {
             player.lock();
-            player.animate(obj.trap.getTrapType().getDismantleAnimation());
+            player.animate(trap.getTrapType().getDismantleAnimation());
             event.delay(2);
             addLoot(player);
             player.getStats().addXp(StatType.Hunter, getCatchXP(), true);
@@ -230,7 +232,7 @@ public abstract class Creature {
                             : TaskCategory.NETTRAP, NPCDef.get(npcId).name);
             if (counter != null)
                 counter.increment(player, 1);
-            obj.trap.getTrapType().onRemove(player, obj);
+            trap.getTrapType().onRemove(player, obj);
             destroyTrap(obj);
             player.unlock();
         });

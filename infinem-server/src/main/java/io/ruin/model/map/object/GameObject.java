@@ -52,7 +52,6 @@ public class GameObject extends AttributesHolder {
     public int conOwner = -1;
 
     public boolean depleting;
-    public Trap trap; // object attributes when? idk i like to hog memory
 
     private long lastAnimationTick;
 
