@@ -1,7 +1,7 @@
 package io.ruin.model.map;
 
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.actions.impl.Lightables;
 import io.ruin.model.map.object.actions.impl.OldFirePit;

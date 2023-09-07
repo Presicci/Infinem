@@ -1,7 +1,7 @@
 package io.ruin.model.inter.dialogue;
 
 import io.ruin.api.utils.Tuple;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
 
 import java.util.function.BiPredicate;

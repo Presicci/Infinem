@@ -2,7 +2,7 @@ package io.ruin.model.inter.handlers;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.AnimDef;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.Interface;
@@ -64,7 +64,9 @@ public enum TabEmote {
     CRAZY_DANCE(47, -1, -1),
     PREMIER_SHIELD(48, 7751, 1412),
     EXPLORE(49, -1, -1),
-    RELIC_UNLOCK(50, -1, -1);
+    RELIC_UNLOCK(50, -1, -1),
+    // Custom for clue
+    BULL_ROARER(51, -1, 81);
 
     public int slot, animationID, gfxId;
 

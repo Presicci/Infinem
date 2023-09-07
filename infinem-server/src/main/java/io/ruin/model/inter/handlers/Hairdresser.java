@@ -1,7 +1,7 @@
 package io.ruin.model.inter.handlers;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;

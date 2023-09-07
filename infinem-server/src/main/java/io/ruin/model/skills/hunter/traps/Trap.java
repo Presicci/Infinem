@@ -1,7 +1,7 @@
 package io.ruin.model.skills.hunter.traps;
 
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.skills.hunter.creature.Creature;
 

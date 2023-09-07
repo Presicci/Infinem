@@ -15,7 +15,7 @@ import io.ruin.model.content.PvmPoints;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.DoubleDrops;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;

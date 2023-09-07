@@ -7,7 +7,7 @@ import io.ruin.model.combat.npc.BasicCombat;
 import io.ruin.model.combat.npc.basic.BasicArcherCombat;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.AttackStyle;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.UpdateMask;
 import io.ruin.model.entity.shared.listeners.DeathListener;

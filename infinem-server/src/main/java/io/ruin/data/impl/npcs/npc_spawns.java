@@ -9,7 +9,7 @@ import io.ruin.api.utils.JsonUtils;
 import io.ruin.cache.NPCDef;
 import io.ruin.data.DataFile;
 import io.ruin.model.World;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.locations.home.NPCLocator;

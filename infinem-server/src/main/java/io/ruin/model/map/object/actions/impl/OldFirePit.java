@@ -2,7 +2,7 @@ package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.utils.Config;
@@ -14,7 +14,6 @@ import lombok.AllArgsConstructor;
 import lombok.val;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Objects;
 import java.util.function.Consumer;
 
 /**

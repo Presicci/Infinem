@@ -11,7 +11,7 @@ import io.ruin.model.combat.Combat;
 import io.ruin.model.combat.CombatUtils;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;

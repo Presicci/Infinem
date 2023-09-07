@@ -7,7 +7,7 @@ import io.ruin.model.World;
 import io.ruin.model.activities.cluescrolls.impl.CrypticClue;
 import io.ruin.model.activities.cluescrolls.impl.MapClue;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.ClipUtils;
 import io.ruin.model.map.Direction;
@@ -15,7 +15,6 @@ import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.owned.OwnedObject;
-import io.ruin.model.skills.hunter.traps.Trap;
 
 import java.util.ArrayList;
 import java.util.Collections;

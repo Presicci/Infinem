@@ -4,7 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.api.utils.Tuple;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
 import lombok.extern.slf4j.Slf4j;

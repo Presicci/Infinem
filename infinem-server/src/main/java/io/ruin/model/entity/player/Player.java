@@ -25,7 +25,7 @@ import io.ruin.model.content.tasksystem.relics.RelicManager;
 import io.ruin.model.content.tasksystem.tasks.TaskManager;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.gamemode.Tileman;
 import io.ruin.model.entity.shared.LockType;

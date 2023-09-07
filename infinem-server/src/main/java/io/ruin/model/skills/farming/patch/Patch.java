@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.TimeUtils;
 import io.ruin.cache.ItemDef;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.TabStats;
 import io.ruin.model.item.Item;

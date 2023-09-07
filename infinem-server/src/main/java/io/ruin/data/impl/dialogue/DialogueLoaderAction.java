@@ -3,7 +3,7 @@ package io.ruin.data.impl.dialogue;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
 import io.ruin.model.content.transportation.charterships.CharterShips;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;

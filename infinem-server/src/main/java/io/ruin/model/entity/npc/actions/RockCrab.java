@@ -1,6 +1,6 @@
 package io.ruin.model.entity.npc.actions;
 
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
 import lombok.AllArgsConstructor;
 

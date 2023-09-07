@@ -5,7 +5,7 @@ import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.Hit;
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
