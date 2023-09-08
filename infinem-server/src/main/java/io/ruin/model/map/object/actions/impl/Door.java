@@ -226,10 +226,10 @@ public class Door {
         if (obj.doorReplaced != null) {
             if (obj.doorReplaced.id == -1) {
                 obj.remove();
-                int prev = obj.doorReplaced.get("DOOR_ORIG_ID", -1);
+                int prev = obj.doorReplaced.getTemporaryAttributeOrDefault("DOOR_ORIG_ID", -1);
                 if (prev != -1) {
                     obj.doorReplaced.setId(prev);
-                    obj.remove("DOOR_ORIG_ID");
+                    obj.removeTemporaryAttribute("DOOR_ORIG_ID");
                 } else {
                     obj.doorReplaced.restore();
                 }
@@ -419,7 +419,7 @@ public class Door {
             obj.clip(true);
         else {
             if (obj.id != obj.originalId)
-                obj.set("DOOR_ORIG_ID", obj.id);
+                obj.putTemporaryAttribute("DOOR_ORIG_ID", obj.id);
             obj.remove();
         }
         GameObject replacement = GameObject.spawn(def.doorOppositeId, obj.x + diffX, obj.y + diffY, obj.z, obj.type, (dir + diffDir) & 0x3);

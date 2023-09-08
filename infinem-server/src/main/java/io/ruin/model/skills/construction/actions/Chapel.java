@@ -33,16 +33,16 @@ public class Chapel {
                         return;
                     }
                     player.getInventory().remove(Herb.MARRENTILL.cleanId, 1);
-                    obj.set("BURNER_TIME", 250);
+                    obj.putTemporaryAttribute("BURNER_TIME", 250);
                     player.animate(3687);
                     player.sendFilteredMessage("You light the burner.");
                     if (obj.id == burner.getBuiltObjects()[0]) {
                         obj.setId(obj.id + 1);
                         World.startEvent(event -> {
                             while (true) {
-                                int timeLeft = obj.get("BURNER_TIME", 0);
+                                int timeLeft = obj.getTemporaryAttributeIntOrZero("BURNER_TIME");
                                 if (timeLeft > 0) {
-                                    obj.set("BURNER_TIME", timeLeft - 1);
+                                    obj.incrementTemporaryNumericAttribute("BURNER_TIME", -1);
                                     event.delay(1);
                                 } else
                                     break;
@@ -63,15 +63,15 @@ public class Chapel {
                         player.sendMessage("You'll need a tinderbox and a clean marrentill to light the burner.");
                         return;
                     }
-                    obj.set("BURNER_TIME", 250);
+                    obj.putTemporaryAttribute("BURNER_TIME", 250);
                     player.animate(3687);
                     if (obj.id == lamp.getBuiltObjects()[0]) {
                         obj.setId(obj.id + 1);
                         World.startEvent(event -> {
                             while (true) {
-                                int timeLeft = obj.get("BURNER_TIME", 0);
+                                int timeLeft = obj.getTemporaryAttributeIntOrZero("BURNER_TIME");
                                 if (timeLeft > 0) {
-                                    obj.set("BURNER_TIME", timeLeft - 1);
+                                    obj.incrementTemporaryNumericAttribute("BURNER_TIME", -1);
                                     event.delay(1);
                                 } else
                                     break;

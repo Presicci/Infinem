@@ -1,13 +1,12 @@
 package io.ruin.model.map.object;
 
 import io.ruin.Server;
-import io.ruin.api.utils.AttributesHolder;
+import io.ruin.api.utils.TemporaryAttributesHolder;
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.cluescrolls.impl.CrypticClue;
 import io.ruin.model.activities.cluescrolls.impl.MapClue;
 import io.ruin.model.entity.player.Player;
-import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.ClipUtils;
 import io.ruin.model.map.Direction;
@@ -17,14 +16,12 @@ import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.owned.OwnedObject;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class GameObject extends AttributesHolder {
+public class GameObject extends TemporaryAttributesHolder {
 
     public int id, originalId;
     public final int originalDirection;
@@ -299,79 +296,5 @@ public class GameObject extends AttributesHolder {
                 Direction.WEST : direction == 2 ?
                 Direction.EAST :
                 Direction.SOUTH;
-    }
-
-    protected Map<String, Object> temporaryAttributes = Collections.synchronizedMap(new HashMap<>());
-
-    public boolean hasTemporaryAttribute(String key) {
-        return temporaryAttributes != null && temporaryAttributes.containsKey(key);
-    }
-
-    public boolean hasTemporaryAttribute(AttributeKey key) {
-        return hasTemporaryAttribute(key.name());
-    }
-
-    public <T> T getTemporaryAttribute(String key) {
-        return (T) temporaryAttributes.get(key);
-    }
-
-    public <T> T getTemporaryAttribute(AttributeKey key) {
-        return getTemporaryAttribute(key.name());
-    }
-
-    public int getTemporaryAttributeIntOrZero(String key) {
-        Object value = temporaryAttributes.get(key);
-        if (value == null) return 0;
-        if (value instanceof String) {
-            try {
-                return Integer.parseInt((String) value);
-            } catch (NumberFormatException e) {
-                return 0;
-            }
-        }
-        if (!(value instanceof Number)) return 0;
-        return ((Number) value).intValue();
-    }
-
-    public int getTemporaryAttributeIntOrZero(AttributeKey key) {
-        return getTemporaryAttributeIntOrZero(key.name());
-    }
-
-    public <T> T getTemporaryAttributeOrDefault(String key, Object defaultValue) {
-        return (T) temporaryAttributes.getOrDefault(key, defaultValue);
-    }
-
-    public <T> T getTemporaryAttributeOrDefault(AttributeKey key, Object defaultValue) {
-        return getTemporaryAttributeOrDefault(key.name(), defaultValue);
-    }
-
-    public void removeTemporaryAttribute(String key) {
-        temporaryAttributes.remove(key);
-    }
-
-    public void removeTemporaryAttribute(AttributeKey key) {
-        removeTemporaryAttribute(key.name());
-    }
-
-    public void putTemporaryAttribute(String key, Object v) {
-        temporaryAttributes.put(key, v);
-    }
-
-    public void putTemporaryAttribute(AttributeKey key, Object v) {
-        putTemporaryAttribute(key.name(), v);
-    }
-
-    public int incrementTemporaryNumericAttribute(String key, int amount) {
-        Object object = temporaryAttributes.get(key);
-        if (object != null && !(object instanceof Number)) {
-            throw new IllegalArgumentException("Temporary Attribute with key [" + key + "] is not numeric.");
-        }
-        int newAmount = object == null ? amount : ((Number) object).intValue() + amount;
-        temporaryAttributes.put(key, newAmount);
-        return newAmount;
-    }
-
-    public int incrementTemporaryNumericAttribute(AttributeKey key, int amount) {
-        return incrementTemporaryNumericAttribute(key.name(), amount);
     }
 }

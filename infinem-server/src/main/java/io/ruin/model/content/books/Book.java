@@ -1,6 +1,6 @@
 package io.ruin.model.content.books;
 
-import io.ruin.model.entity.shared.AttributeKey;
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import lombok.val;

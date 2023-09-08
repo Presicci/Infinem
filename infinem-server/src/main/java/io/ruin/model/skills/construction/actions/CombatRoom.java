@@ -172,16 +172,16 @@ public class CombatRoom {
             for (Dummy dummy : values()) {
                 ObjectAction.register(dummy.objId, "attach", (player, obj) -> {
                     House house = player.getCurrentHouse();
-                    if (house == null || obj.get("DUMMY_REMOVED") != null) {
+                    if (house == null || obj.getTemporaryAttribute("DUMMY_REMOVED") != null) {
                         return;
                     }
-                    obj.set("DUMMY_REMOVED", true);
+                    obj.putTemporaryAttribute("DUMMY_REMOVED", true);
                     NPC npc = new NPC(dummy.npcId);
                     house.addNPC(npc.spawn(obj.x, obj.y, obj.z, Direction.getFromObjectDirection(obj.direction), 0));
                     World.startEvent(event -> { // since the npc will only become visible to the player in the next tick, wait 1 tick to remove the object too
                         event.delay(1);
                         obj.remove();
-                        obj.remove("DUMMY_REMOVED");
+                        obj.removeTemporaryAttribute("DUMMY_REMOVED");
                     });
                     NPCAction.register(npc, "detach", (p, n) -> {
                         n.remove();

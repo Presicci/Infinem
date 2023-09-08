@@ -2,6 +2,7 @@ package io.ruin.model.entity;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
+import io.ruin.api.utils.TemporaryAttributesHolder;
 import io.ruin.cache.AnimDef;
 import io.ruin.cache.Color;
 import io.ruin.cache.ObjectDef;
@@ -35,7 +36,7 @@ import java.util.*;
 import java.util.function.Consumer;
 
 // TODO replace entity.player != null checks with isPlayer (and one for npc)
-public abstract class Entity {
+public abstract class Entity extends TemporaryAttributesHolder {
 
     public Player player;
 
@@ -1049,77 +1050,4 @@ public abstract class Entity {
         return !dead();
     }
 
-    protected Map<String, Object> temporaryAttributes = Collections.synchronizedMap(new HashMap<>());
-
-    public boolean hasTemporaryAttribute(String key) {
-        return temporaryAttributes != null && temporaryAttributes.containsKey(key);
-    }
-
-    public boolean hasTemporaryAttribute(AttributeKey key) {
-        return hasTemporaryAttribute(key.name());
-    }
-
-    public <T> T getTemporaryAttribute(String key) {
-        return (T) temporaryAttributes.get(key);
-    }
-
-    public <T> T getTemporaryAttribute(AttributeKey key) {
-        return getTemporaryAttribute(key.name());
-    }
-
-    public int getTemporaryAttributeIntOrZero(String key) {
-        Object value = temporaryAttributes.get(key);
-        if (value == null) return 0;
-        if (value instanceof String) {
-            try {
-                return Integer.parseInt((String) value);
-            } catch (NumberFormatException e) {
-                return 0;
-            }
-        }
-        if (!(value instanceof Number)) return 0;
-        return ((Number) value).intValue();
-    }
-
-    public int getTemporaryAttributeIntOrZero(AttributeKey key) {
-        return getTemporaryAttributeIntOrZero(key.name());
-    }
-
-    public <T> T getTemporaryAttributeOrDefault(String key, Object defaultValue) {
-        return (T) temporaryAttributes.getOrDefault(key, defaultValue);
-    }
-
-    public <T> T getTemporaryAttributeOrDefault(AttributeKey key, Object defaultValue) {
-        return getTemporaryAttributeOrDefault(key.name(), defaultValue);
-    }
-
-    public void removeTemporaryAttribute(String key) {
-        temporaryAttributes.remove(key);
-    }
-
-    public void removeTemporaryAttribute(AttributeKey key) {
-        removeTemporaryAttribute(key.name());
-    }
-
-    public void putTemporaryAttribute(String key, Object v) {
-        temporaryAttributes.put(key, v);
-    }
-
-    public void putTemporaryAttribute(AttributeKey key, Object v) {
-        putTemporaryAttribute(key.name(), v);
-    }
-
-    public int incrementTemporaryNumericAttribute(String key, int amount) {
-        Object object = temporaryAttributes.get(key);
-        if (object != null && !(object instanceof Number)) {
-            throw new IllegalArgumentException("Temporary Attribute with key [" + key + "] is not numeric.");
-        }
-        int newAmount = object == null ? amount : ((Number) object).intValue() + amount;
-        temporaryAttributes.put(key, newAmount);
-        return newAmount;
-    }
-
-    public int incrementTemporaryNumericAttribute(AttributeKey key, int amount) {
-        return incrementTemporaryNumericAttribute(key.name(), amount);
-    }
 }

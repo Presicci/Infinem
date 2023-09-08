@@ -78,7 +78,7 @@ public class CorruptedScavengerChamber extends Chamber {
                     return;
                 }
 
-                ChestType type = obj.get("GRUB_CHEST_TYPE", roll());
+                ChestType type = obj.getTemporaryAttributeOrDefault("GRUB_CHEST_TYPE", roll());
                 ChestType nextType = type;
                 obj.setId(type.objId);
                 switch (type) {
@@ -103,7 +103,7 @@ public class CorruptedScavengerChamber extends Chamber {
                         player.dialogue(new ItemDialogue().one(CAVERN_GRUBS, "Some cavern grubs have hatched."));
                         break;
                 }
-                obj.set("GRUB_CHEST_TYPE", nextType);
+                obj.getTemporaryAttributeOrDefault("GRUB_CHEST_TYPE", nextType);
                 World.startEvent(worldEvent -> {
                     worldEvent.delay(12);
                     obj.restore();

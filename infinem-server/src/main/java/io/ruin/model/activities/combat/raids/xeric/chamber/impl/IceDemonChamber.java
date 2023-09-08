@@ -135,7 +135,7 @@ public class IceDemonChamber extends Chamber {
                     int damage = 0;
                     for (int i = 0; i < 4; i++) {
                         GameObject obj = braziers.get(i);
-                        int kindling = obj.get("KINDLING", 0);
+                        int kindling = obj.getTemporaryAttributeOrDefault("KINDLING", 0);
                         if (kindling >= remove) {
                             damage += 10;
                             if (i < Math.min(3, getRaid().getPartySize())) { // if guarded by icefiend, consume more
@@ -144,7 +144,7 @@ public class IceDemonChamber extends Chamber {
                             }
                             kindling -= remove;
                             if (kindling < 0) kindling = 0;
-                            obj.set("KINDLING", kindling);
+                            obj.putTemporaryAttribute("KINDLING", kindling);
                             if (kindling == 0)
                                 obj.restore();
                         }
@@ -189,7 +189,7 @@ public class IceDemonChamber extends Chamber {
         player.animate(832);
         player.sendMessage("You add some kindling to the brazier.");
         player.getInventory().remove(KINDLING, amount);
-        gameObject.set("KINDLING", gameObject.get("KINDLING", 0) + amount);
+        gameObject.putTemporaryAttribute("KINDLING", gameObject.getTemporaryAttributeOrDefault("KINDLING", 0) + amount);
         if (gameObject.id == UNLIT_BRAZIER)
             gameObject.setId(LIT_BRAZIER);
         ChambersOfXeric.addPoints(player, amount * 25);
