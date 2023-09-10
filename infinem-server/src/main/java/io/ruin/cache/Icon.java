@@ -162,7 +162,8 @@ public enum Icon {
     RED_STAR(30),
     GOLD_STAR(32),
     SILVER_STAR(31),
-    SKULL(9)
+    SKULL(9),
+    PET(66),
     ;
 
     public final int imgId;
