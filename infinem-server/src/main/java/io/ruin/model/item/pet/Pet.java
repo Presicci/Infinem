@@ -1,5 +1,6 @@
 package io.ruin.model.item.pet;
 
+import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
@@ -15,6 +16,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.map.route.routes.DumbRoute;
+import io.ruin.model.stat.StatType;
 import io.ruin.utility.Broadcast;
 
 import java.util.ArrayList;
@@ -412,7 +414,50 @@ public enum Pet {
     }
 
     private void unlockBroadcast(Player player) {
-        Broadcast.WORLD.sendNews(player.getName() + " just unlocked the following pet: " + ItemDef.get(itemId).name);
+        switch (this) {
+            // Skilling pets
+            case ROCK_GOLEM:
+                Broadcast.WORLD.sendNews(player.getName() + " has received Rock Golem, the Mining pet at " + NumberUtils.formatNumber((long) player.getStats().get(StatType.Mining).experience) + " XP!");
+                break;
+            case BABY_CHINCHOMPA_GREY:
+                Broadcast.WORLD.sendNews(player.getName() + " has received Baby Chinchompa, the Hunter pet at " + NumberUtils.formatNumber((long) player.getStats().get(StatType.Hunter).experience) + " XP!");
+                break;
+            case BEAVER:
+                Broadcast.WORLD.sendNews(player.getName() + " has received Beaver, the Woodcutting pet at " + NumberUtils.formatNumber((long) player.getStats().get(StatType.Woodcutting).experience) + " XP!");
+                break;
+            case GIANT_SQUIRREL:
+                Broadcast.WORLD.sendNews(player.getName() + " has received Giant Squirrel, the Agility pet at " + NumberUtils.formatNumber((long) player.getStats().get(StatType.Agility).experience) + " XP!");
+                break;
+            case HERON:
+                Broadcast.WORLD.sendNews(player.getName() + " has received Heron, the Fishing pet at " + NumberUtils.formatNumber((long) player.getStats().get(StatType.Fishing).experience) + " XP!");
+                break;
+            case RIFT_GUARDIAN_AIR:
+            case RIFT_GUARDIAN_WATER:
+            case RIFT_GUARDIAN_EARTH:
+            case RIFT_GUARDIAN_FIRE:
+            case RIFT_GUARDIAN_MIND:
+            case RIFT_GUARDIAN_BODY:
+            case RIFT_GUARDIAN_COSMIC:
+            case RIFT_GUARDIAN_LAW:
+            case RIFT_GUARDIAN_NATURE:
+            case RIFT_GUARDIAN_CHAOS:
+            case RIFT_GUARDIAN_DEATH:
+            case RIFT_GUARDIAN_ASTRAL:
+            case RIFT_GUARDIAN_BLOOD:
+            case RIFT_GUARDIAN_SOUL:
+            case RIFT_GUARDIAN_WRATH:
+                Broadcast.WORLD.sendNews(player.getName() + " has received Rift Guardian, the Runecrafting pet at " + NumberUtils.formatNumber((long) player.getStats().get(StatType.Runecrafting).experience) + " XP!");
+                break;
+            case ROCKY:
+                Broadcast.WORLD.sendNews(player.getName() + " has received Rocky, the Thieving pet at " + NumberUtils.formatNumber((long) player.getStats().get(StatType.Thieving).experience) + " XP!");
+                break;
+            case TANGLEROOT:
+                Broadcast.WORLD.sendNews(player.getName() + " has received Tangleroot, the Farming pet at " + NumberUtils.formatNumber((long) player.getStats().get(StatType.Farming).experience) + " XP!");
+                break;
+            default:
+                Broadcast.WORLD.sendNews(player.getName() + " just unlocked the following pet: " + ItemDef.get(itemId).name);
+                break;
+        }
     }
 
     static {
