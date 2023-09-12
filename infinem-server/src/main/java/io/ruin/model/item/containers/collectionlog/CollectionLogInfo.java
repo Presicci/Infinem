@@ -3,8 +3,10 @@ package io.ruin.model.item.containers.collectionlog;
 import io.ruin.cache.EnumMap;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.Struct;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
+import io.ruin.model.entity.player.killcount.BossKillCounter;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
@@ -110,75 +112,77 @@ public enum CollectionLogInfo {
 
             switch (slot) {
                 case 0://abyssal sire
-                    return player.abyssalSireKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.ABYSSAL_SIRE);
                 case 1://alchemical hydra
-                    return player.alchemicalHydraKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.ALCHEMICAL_HYDRA);
                 case 2://barrows
-                    return player.barrowsChestsLooted.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.BARROWS);
                 case 3://bryophyta
-                    return player.bryophytaKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.BRYOPHYTA);
                 case 4://callisto
-                    return player.callistoKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.CALLISTO);
                 case 5://cerberus
-                    return player.cerberusKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.CERBERUS);
                 case 6://chaos ele
-                    return player.chaosElementalKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.CHAOS_ELE);
                 case 7://chaos fanatic
-                    return player.chaosFanaticKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.CHAOS_FANATIC);
                 case 8://commander zilyana
-                    return player.commanderZilyanaKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.COMMANDER_ZILYANA);
                 case 9://corporeal beast
-                    return player.corporealBeastKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.CORP_BEAST);
                 case 10://crazy archaeologist
-                    return player.crazyArchaeologistKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.CRAZY_ARCHAEOLOGIST);
                 case 11://dagannoth kings
-                    return player.dagannothRexKills.getKills() + player.dagannothPrimeKills.getKills() + player.dagannothSupremeKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.DAG_PRIME)
+                            + KillCounter.getKillCount(player, BossKillCounter.DAG_REX)
+                            + KillCounter.getKillCount(player, BossKillCounter.DAG_SUPREME);
                 case 12://the fight caves
-                    return 0;
+                    return KillCounter.getKillCount(player, BossKillCounter.JAD);
                 case 13://the gauntlet
                     return 0;
                 case 14://general graardor
-                    return player.generalGraardorKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.GENERAL_GRAARDOR);
                 case 15://giant mole
-                    return player.giantMoleKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.GIANT_MOLE);
                 case 16://grotesque guardians
-                    return player.grotesqueGuardianKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.GROTESQUE_GUARDIANS);
                 case 17://hespori
-                    return player.hesporiKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.HESPORI);
                 case 18://inferno
-                    return player.zukKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.ZUK);
                 case 19://kalphite queen
-                    return player.kalphiteQueenKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.KALPHITE_QUEEN);
                 case 20://king black dragon
-                    return player.kingBlackDragonKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.KING_BLACK_DRAGON);
                 case 21://kraken
-                    return player.krakenKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.KRAKEN);
                 case 22://kree'ara
-                    return player.kreeArraKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.KREEARRA);
                 case 23://k'ril
-                    return player.krilTsutsarothKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.KRIL_TSUTSAROTH);
                 case 24://obor
-                    return player.oborKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.OBOR);
                 case 25://sarachnis
-                    return player.sarachnisKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.SARACHNIS);
                 case 26://scorpia
-                    return player.scorpiaKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.SCORPIA);
                 case 27://skotizo
-                    return player.skotizoKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.SKOTIZO);
                 case 28://thermo devil
-                    return player.thermonuclearSmokeDevilKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.THERMONUCLEAR_SMOKE_DEVIL);
                 case 29://venenatis
-                    return player.venenatisKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.VENENATIS);
                 case 30://vet'ion
-                    return player.vetionKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.VETION);
                 case 31://vorkath
-                    return player.vorkathKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.VORKATH);
                 case 32://wintertodt
                     return PlayerCounter.WINTERTODT_SUBDUED.get(player);
                 case 33://zalcano
                     return 0;
                 case 34://zulrah
-                    return player.zulrahKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.ZULRAH);
                 default:
                     return 0;
             }
@@ -189,9 +193,9 @@ public enum CollectionLogInfo {
         public int getKillCount(Player player, int slot) {
             switch (slot) {
                 case 0://cox
-                    return player.chambersofXericKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.COX);
                 case 1://tob
-                    return player.theatreOfBloodKills.getKills();
+                    return KillCounter.getKillCount(player, BossKillCounter.TOB);
                 default:
                     return 0;
             }

@@ -23,6 +23,7 @@ import io.ruin.model.content.upgrade.UpgradeMachine;
 import io.ruin.model.content.transportation.waystones.Waystone;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.handlers.TeleportInterface;
 import io.ruin.model.inter.journal.Journal;
@@ -53,7 +54,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.*;
-import java.util.function.Function;
 
 public abstract class PlayerAttributes extends Entity {
 
@@ -446,106 +446,9 @@ public abstract class PlayerAttributes extends Entity {
     public OptionScroll optionScroll;
 
     /**
-     * Kill counter interface handler stuff (I dont like this)
+     * Kill counters
      */
-    public List<Function<Player, KillCounter>> activeKillLogList = null;
-    public int activeKillLogSlot = -1;
-
-
-    /**
-     * Boss kill counters
-     */
-    @Expose public KillCounter kreeArraKills = new KillCounter();
-    @Expose public KillCounter commanderZilyanaKills = new KillCounter();
-    @Expose public KillCounter generalGraardorKills = new KillCounter();
-    @Expose public KillCounter krilTsutsarothKills = new KillCounter();
-    @Expose public KillCounter dagannothRexKills = new KillCounter();
-    @Expose public KillCounter dagannothPrimeKills = new KillCounter();
-    @Expose public KillCounter dagannothSupremeKills = new KillCounter();
-    @Expose public KillCounter giantMoleKills = new KillCounter();
-    @Expose public KillCounter kalphiteQueenKills = new KillCounter();
-    @Expose public KillCounter kingBlackDragonKills = new KillCounter();
-    @Expose public KillCounter callistoKills = new KillCounter();
-    @Expose public KillCounter venenatisKills = new KillCounter();
-    @Expose public KillCounter vetionKills = new KillCounter();
-    @Expose public KillCounter chaosElementalKills = new KillCounter();
-    @Expose public KillCounter chaosFanaticKills = new KillCounter();
-    @Expose public KillCounter crazyArchaeologistKills = new KillCounter();
-    @Expose public KillCounter scorpiaKills = new KillCounter();
-    @Expose public KillCounter barrowsChestsLooted = new KillCounter();
-    @Expose public KillCounter corporealBeastKills = new KillCounter();
-    @Expose public KillCounter zulrahKills = new KillCounter();
-    @Expose public KillCounter jadCounter = new KillCounter();
-    @Expose public KillCounter zukKills = new KillCounter();
-    @Expose public KillCounter krakenKills = new KillCounter();
-    @Expose public KillCounter thermonuclearSmokeDevilKills = new KillCounter();
-    @Expose public KillCounter cerberusKills = new KillCounter();
-    @Expose public KillCounter abyssalSireKills = new KillCounter();
-    @Expose public KillCounter skotizoKills = new KillCounter();
-    @Expose public KillCounter oborKills = new KillCounter();
-    @Expose public KillCounter chambersofXericKills = new KillCounter();
-    @Expose public KillCounter theatreOfBloodKills = new KillCounter();
-    @Expose public KillCounter derangedArchaeologistKills = new KillCounter();
-    @Expose public KillCounter elvargKills = new KillCounter();
-    @Expose public KillCounter vorkathKills = new KillCounter();
-    @Expose public KillCounter sarachnisKills = new KillCounter();
-    @Expose public KillCounter alchemicalHydraKills = new KillCounter();
-    @Expose public KillCounter bryophytaKills = new KillCounter();
-    @Expose public KillCounter grotesqueGuardianKills = new KillCounter();
-    @Expose public KillCounter hesporiKills = new KillCounter();
-
-    /**
-     * Slayer kill counters
-     */
-    @Expose public KillCounter crawlingHandKills = new KillCounter();
-    @Expose public KillCounter caveBugKills = new KillCounter();
-    @Expose public KillCounter caveCrawlerKills = new KillCounter();
-    @Expose public KillCounter bansheeKills = new KillCounter();
-    @Expose public KillCounter caveSlimeKills = new KillCounter();
-    @Expose public KillCounter rockslugKills = new KillCounter();
-    @Expose public KillCounter desertLizardKills = new KillCounter();
-    @Expose public KillCounter cockatriceKills = new KillCounter();
-    @Expose public KillCounter pyrefiendKills = new KillCounter();
-    @Expose public KillCounter mogreKills = new KillCounter();
-    @Expose public KillCounter harpieBugSwarmKills = new KillCounter();
-    @Expose public KillCounter wallBeastKills = new KillCounter();
-    @Expose public KillCounter killerwattKills = new KillCounter();
-    @Expose public KillCounter molaniskKills = new KillCounter();
-    @Expose public KillCounter basiliskKills = new KillCounter();
-    @Expose public KillCounter seaSnakeKills = new KillCounter();
-    @Expose public KillCounter terrorDogKills = new KillCounter();
-    @Expose public KillCounter feverSpiderKills = new KillCounter();
-    @Expose public KillCounter infernalMageKills = new KillCounter();
-    @Expose public KillCounter brineRatKills = new KillCounter();
-    @Expose public KillCounter bloodveldKills = new KillCounter();
-    @Expose public KillCounter jellyKills = new KillCounter();
-    @Expose public KillCounter turothKills = new KillCounter();
-    @Expose public KillCounter mutatedZygomiteKills = new KillCounter();
-    @Expose public KillCounter caveHorrorKills = new KillCounter();
-    @Expose public KillCounter aberrantSpectreKills = new KillCounter();
-    @Expose public KillCounter spiritualRangerKills = new KillCounter();
-    @Expose public KillCounter dustDevilKills = new KillCounter();
-    @Expose public KillCounter spiritualWarriorKills = new KillCounter();
-    @Expose public KillCounter kuraskKills = new KillCounter();
-    @Expose public KillCounter skeletalWyvernKills = new KillCounter();
-    @Expose public KillCounter gargoyleKills = new KillCounter();
-    @Expose public KillCounter nechryaelKills = new KillCounter();
-    @Expose public KillCounter spiritualMageKills = new KillCounter();
-    @Expose public KillCounter abyssalDemonKills = new KillCounter();
-    @Expose public KillCounter caveKrakenKills = new KillCounter();
-    @Expose public KillCounter darkBeastKills = new KillCounter();
-    @Expose public KillCounter smokeDevilKills = new KillCounter();
-    @Expose public KillCounter superiorCreatureKills = new KillCounter();
-    @Expose public KillCounter brutalBlackDragonKills = new KillCounter();
-    @Expose public KillCounter fossilIslandWyvernsKills = new KillCounter();
-
-    /**
-     * Misc kill counters
-     */
-    @Expose public KillCounter demonicGorillaKills = new KillCounter();
-    @Expose public KillCounter adamantDragonKills = new KillCounter();
-    @Expose public KillCounter runeDragonKills = new KillCounter();
-    @Expose public KillCounter jungleDemonKills = new KillCounter();
+    @Expose public Map<String, KillCounter> killCounterMap = new HashMap<>();
 
 
     public ActivityTimer zulrahTimer;

@@ -11,20 +11,18 @@ import io.ruin.model.activities.cluescrolls.impl.AnagramClue;
 import io.ruin.model.activities.cluescrolls.impl.CrypticClue;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.npc.NPCCombat;
-import io.ruin.model.entity.player.KillCounter;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.killcount.KillCounterType;
 import io.ruin.model.inter.dialogue.Dialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.shop.Shop;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 public class NPCDef {
 
@@ -114,7 +112,7 @@ public class NPCDef {
 
     public boolean ignoreMultiCheck = false;
 
-    public Function<Player, KillCounter> killCounter;
+    public KillCounterType killCounterType;
 
     /**
      * Cache data

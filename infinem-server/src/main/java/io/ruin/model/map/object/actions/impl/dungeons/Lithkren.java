@@ -1,6 +1,7 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -42,7 +43,7 @@ public class Lithkren {
             });
 
         });
-        ObjectAction.register(32144, "read", (player, obj) -> player.dialogue(new MessageDialogue("You have killed " + NumberUtils.formatNumber(player.adamantDragonKills.getKills()) + " adamant dragons and " + NumberUtils.formatNumber(player.runeDragonKills.getKills()) + " rune dragons.")));
+        ObjectAction.register(32144, "read", (player, obj) -> player.dialogue(new MessageDialogue("You have killed " + NumberUtils.formatNumber(player.getBestiary().getKillCount(NPCDef.get(8030))) + " adamant dragons and " + NumberUtils.formatNumber(player.getBestiary().getKillCount(NPCDef.get(8027))) + " rune dragons.")));
         ObjectAction.register(32117, "enter", (player, obj) -> player.getMovement().teleport(1568, 5060, 0));
         ObjectAction.register(32132, 1, (player, obj) -> player.getMovement().teleport(3549, 10482, 0));
         ObjectAction.register(32113, 1, (player, obj) -> {

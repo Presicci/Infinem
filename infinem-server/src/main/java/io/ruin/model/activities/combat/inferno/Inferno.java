@@ -15,6 +15,8 @@ import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerGroup;
+import io.ruin.model.entity.player.killcount.BossKillCounter;
+import io.ruin.model.entity.player.killcount.KillCounterType;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.entity.shared.listeners.HitListener;
@@ -55,6 +57,8 @@ public class Inferno {
     public static final int PILLAR_ALIVE = 7709;
     public static final int PILLAR_DEAD = 7710;
     public static final int SHIELD = 7707;
+
+    private static final KillCounterType killCounter = new KillCounterType(BossKillCounter.ZUK);
 
     static {
         List<Position> spawns = Arrays.asList(
@@ -178,7 +182,7 @@ public class Inferno {
                     player.getInventory().addOrDrop(6529, tokkul);
                 } else {
                     player.dialogue(new NPCDialogue(HOST, "You are very impressive for a JalYt. You managed to defeat TzKal-Zuk! Please accept this cape as a token of appreciation.").animate(615));
-                    player.zukKills.increment(player);
+                    killCounter.increment(player);
                     player.infernoBestTime = timer.stop(player, player.infernoBestTime);
                     player.getInventory().addOrDrop(21295, 1);
                     player.getInventory().addOrDrop(6529, 16440);

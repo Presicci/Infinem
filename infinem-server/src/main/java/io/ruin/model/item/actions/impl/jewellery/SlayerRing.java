@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.jewellery;
 
-import io.ruin.model.entity.player.KillCounter;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.skills.slayer.SlayerMaster;

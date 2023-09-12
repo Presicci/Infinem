@@ -5,6 +5,8 @@ import io.ruin.api.utils.ServerWrapper;
 import io.ruin.cache.Color;
 import io.ruin.model.World;
 import io.ruin.model.achievements.Achievement;
+import io.ruin.model.entity.player.killcount.BossKillCounter;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.handlers.OptionScroll;
@@ -49,7 +51,7 @@ public class Title {
             prefixTitle(colorAndShadow("858585", "00000", "Ironman ")).setPredicate(p -> p.getGameMode() == GameMode.IRONMAN).setUnlockDescription("Play as an Ironman"),
             prefixTitle(colorAndShadow("d2d2d2", "00000", "Ultimate ")).setPredicate(p -> p.getGameMode() == GameMode.ULTIMATE_IRONMAN).setUnlockDescription("Play as an Ultimate Ironman"),
             prefixTitle(colorAndShadow("5e2121", "00000", "Hardcore ")).setPredicate(p -> p.getGameMode() == GameMode.HARDCORE_IRONMAN).setUnlockDescription("Play as a Hardcore Ironman"),
-            prefixTitle(colorAndShadow("b36b00", "00000", "JalYt ")).setPredicate(p -> p.zukKills.getKills() > 0).setUnlockDescription("Complete the Inferno minigame"),
+            prefixTitle(colorAndShadow("b36b00", "00000", "JalYt ")).setPredicate(p -> KillCounter.getKillCount(p, BossKillCounter.ZUK) > 0).setUnlockDescription("Complete the Inferno minigame"),
             prefixTitle(colorAndShadow("a01111", "00000", "Slayer Master ")).setPredicate(p-> p.slayerTasksCompleted >= 50).setUnlockDescription("Complete 50 slayer tasks"),
             prefixTitle(colorAndShadow("FF2d00", "000000", "Custom Title ")).setPredicate(p -> p.hasCustomTitle).setUnlockDescription("Purchase Custom Title from the Store")
     };

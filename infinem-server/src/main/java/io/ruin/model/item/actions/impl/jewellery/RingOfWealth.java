@@ -1,7 +1,7 @@
 package io.ruin.model.item.actions.impl.jewellery;
 
 import io.ruin.cache.Color;
-import io.ruin.model.entity.player.KillCounter;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;

@@ -2,7 +2,9 @@ package io.ruin.model.skills.construction.room.impl;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.StringUtils;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.killcount.BossKillCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.handlers.OptionScroll;
@@ -19,13 +21,13 @@ import java.util.stream.Collectors;
 public class SuperiorGardenRoom extends Room {
 
     enum Topiary {
-        KRAKEN(29231, p -> p.krakenKills.getKills()),
-        ZULRAH(29232, p -> p.zulrahKills.getKills()),
-        KALPHITE_QUEEN(29233, p-> p.kalphiteQueenKills.getKills()),
-        CERBERUS(29234, p -> p.cerberusKills.getKills()),
-        ABYSSAL_SIRE(29235, p -> p.abyssalSireKills.getKills()),
-        SKOTIZO(29236, p -> p.skotizoKills.getKills()),
-        VORKATH(31985, p -> p.vorkathKills.getKills());
+        KRAKEN(29231, p -> KillCounter.getKillCount(p, BossKillCounter.KRAKEN)),
+        ZULRAH(29232, p -> KillCounter.getKillCount(p, BossKillCounter.ZULRAH)),
+        KALPHITE_QUEEN(29233, p-> KillCounter.getKillCount(p, BossKillCounter.KALPHITE_QUEEN)),
+        CERBERUS(29234, p -> KillCounter.getKillCount(p, BossKillCounter.CERBERUS)),
+        ABYSSAL_SIRE(29235, p -> KillCounter.getKillCount(p, BossKillCounter.ABYSSAL_SIRE)),
+        SKOTIZO(29236, p -> KillCounter.getKillCount(p, BossKillCounter.SKOTIZO)),
+        VORKATH(31985, p -> KillCounter.getKillCount(p, BossKillCounter.VORKATH));
 
         int objectId;
         Function<Player, Integer> killsFunction;

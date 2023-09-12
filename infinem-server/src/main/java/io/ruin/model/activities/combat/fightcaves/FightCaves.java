@@ -7,6 +7,8 @@ import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerGroup;
+import io.ruin.model.entity.player.killcount.BossKillCounter;
+import io.ruin.model.entity.player.killcount.KillCounterType;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.entity.shared.listeners.LoginListener;
@@ -45,6 +47,8 @@ public class FightCaves {
     private static final Position SE = new Position(2418, 5082, 0);
 
     private static final Position[] ROTATIONS = {SE, SW, C, NW, SW, SE, S, NW, C, SE, SW, S, NW, C, S}; //https://vgy.me/ItO1Db.png
+
+    private static final KillCounterType killCounter = new KillCounterType(BossKillCounter.JAD);
 
     /**
      * Separator
@@ -163,7 +167,7 @@ public class FightCaves {
             if(!practice) {
                 player.sendMessage("<col=ef1020>Final Challenge!");
                 jad.deathStartListener = (DeathListener.Simple) () -> {
-                    player.jadCounter.increment(player);
+                    killCounter.increment(player);
                     player.fightCavesBestTime = timer.stop(player, player.fightCavesBestTime);
                 };
             }

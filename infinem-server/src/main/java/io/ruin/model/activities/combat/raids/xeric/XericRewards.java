@@ -3,7 +3,9 @@ package io.ruin.model.activities.combat.raids.xeric;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
 import io.ruin.cache.Icon;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.killcount.BossKillCounter;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -134,7 +136,7 @@ public class XericRewards {
                 Player lucker = getPlayerToReceiveUnique(raid);
                 Item item = rollUnique();
                 lucker.getRaidRewards().add(item);
-                Loggers.logRaidsUnique(lucker.getName(), item.getDef().name, lucker.chambersofXericKills.getKills());
+                Loggers.logRaidsUnique(lucker.getName(), item.getDef().name, KillCounter.getKillCount(lucker, BossKillCounter.COX));
                 if (uniques == 1) {
                     raid.getParty().forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap("Special loot:")));
                 }

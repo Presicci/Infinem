@@ -12,6 +12,8 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.killcount.BossKillCounter;
+import io.ruin.model.entity.player.killcount.KillCounterType;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
@@ -41,6 +43,8 @@ import java.util.stream.Collectors;
  * @author Edu
  */
 public class ChambersOfXeric {
+
+    private static KillCounterType killCounter = new KillCounterType(BossKillCounter.COX);
 
     static {
 
@@ -905,7 +909,7 @@ public class ChambersOfXeric {
         String[] playerNames = party.getMembers().stream().map(player -> player.getName()).collect(Collectors.toList()).toArray(new String[1]);
         party.forPlayers(p -> {
             p.sendMessage(Color.RAID_PURPLE.wrap("Congratulations - your raid is complete! Duration: " + Color.RED.wrap(time) + "."));
-            p.chambersofXericKills.increment(p);
+            killCounter.increment(p);
             Party.updatePartyStage(p, Party.GET_OUT);
         });
         Loggers.logRaidsCompletion(playerNames, time, party.getPoints());

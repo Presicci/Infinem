@@ -1,7 +1,7 @@
 package io.ruin.model.skills.construction.actions;
 
 import io.ruin.api.utils.StringUtils;
-import io.ruin.model.entity.player.KillCounter;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;

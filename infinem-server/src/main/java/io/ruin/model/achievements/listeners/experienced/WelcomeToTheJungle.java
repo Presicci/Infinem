@@ -15,7 +15,7 @@ public class WelcomeToTheJungle implements AchievementListener {
 
     @Override
     public AchievementStage stage(Player player) {
-        return player.jungleDemonKills.getKills() > 0 ? AchievementStage.FINISHED : AchievementStage.NOT_STARTED;
+        return AchievementStage.NOT_STARTED;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class WelcomeToTheJungle implements AchievementListener {
                 Achievement.slashIf("<col=000080>Assignment</col>: Kill a jungle demon.", finished),
                 Achievement.slashIf("<col=000080>Reward</col>: " + (player.getGameMode().isIronMan() ? "Unlocks the ability to purchase and equip the Dragon Scimitar." : "100,000 coins."), finished),
                 "",
-                "<col=000080>Jungle demons slain: <col=800000>" + NumberUtils.formatNumber(player.jungleDemonKills.getKills()),
+                "<col=000080>Jungle demons slain: <col=800000>",
         };
     }
 
