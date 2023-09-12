@@ -17,7 +17,9 @@ import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.DoubleDrops;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.killcount.BossKillCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.WildernessKey;
@@ -272,8 +274,8 @@ public abstract class NPCCombat extends Combat {
                 killer.player.getBestiary().incrementKillCount(npc.getDef());
                 killer.player.getTaskManager().doKillLookup(npc.getId());
                 Slayer.handleNPCKilled(killer.player, npc);
-                if (npc.getDef().killCounter != null)
-                    npc.getDef().killCounter.apply(killer.player).increment(killer.player);
+                if (npc.getDef().killCounterType != null)
+                    npc.getDef().killCounterType.increment(killer.player);
                 if(info.pet != null) {
                     int dropAverage = info.pet.dropAverage;
                     int threshold = info.pet.dropThreshold; // TODO Threshold handling
@@ -680,11 +682,11 @@ public abstract class NPCCombat extends Combat {
     }
 
     private void vorkathHead(Position dropPosition, Player pKiller) {
-        if (pKiller.vorkathKills.getKills() >= 50 && !pKiller.obtained50KCVorkathHead) {
+        if (KillCounter.getKillCount(pKiller, BossKillCounter.VORKATH) >= 50 && !pKiller.hasAttribute(AttributeKey.OBTAINED_VORKATH_HEAD)) {
             Item item = new Item(VORKATHS_HEAD);
             GroundItem groundItem = new GroundItem(item).position(dropPosition);
             groundItem.spawn();
-            pKiller.obtained50KCVorkathHead = true;
+            pKiller.putAttribute(AttributeKey.OBTAINED_VORKATH_HEAD, 1);
         }
     }
 

@@ -835,8 +835,6 @@ public abstract class PlayerAttributes extends Entity {
     public boolean divineBastionBoostActive = false;
     public boolean divineBattlemageBoostActive = false;
 
-    @Expose public boolean obtained50KCVorkathHead = false;
-
     public PestControlGame pestGame;
     @Expose public int pestPoints;
     @Expose public int pestNoviceWins;
