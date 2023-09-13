@@ -180,11 +180,13 @@ public class KillCounter {
     }
 
     public static int getKillCount(Player player, BossKillCounter counter) {
-        return getKillCounter(player, counter).kills;
+        KillCounter kc = getKillCounter(player, counter);
+        return kc == null ? 0 : kc.kills;
     }
 
     public static int getKillCount(Player player, SlayerKillCounter counter) {
-        return getKillCounter(player, counter).kills;
+        KillCounter kc = getKillCounter(player, counter);
+        return kc == null ? 0 : kc.kills;
     }
 
     @Expose private int kills;
