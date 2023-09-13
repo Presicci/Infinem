@@ -1,7 +1,7 @@
 package io.ruin.model.item.actions.impl.combine;
 
 import io.ruin.cache.ItemDef;
-import io.ruin.model.entity.player.KillCounter;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.inter.utils.Config;

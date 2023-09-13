@@ -4,7 +4,7 @@ import io.ruin.cache.ItemDef;
 import io.ruin.cache.ItemID;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
-import io.ruin.model.entity.player.KillCounter;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
