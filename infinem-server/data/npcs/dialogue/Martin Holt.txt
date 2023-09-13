@@ -1,0 +1,11 @@
+Player: What's all this about?
+Martin Holt: Ah, hello and welcome. I'm Martin Holt, leader of Kourend's Royal Society. This is our little protest against the Kourend Council.
+Player: Pleased to meet you. I'm [player name]. So, what's wrong with the Council?
+Martin Holt: Now there's a question! I have a better one. What's right with the Council?
+Martin Holt: I bet you didn't know that the Council was originally only temporary. After the last King died, they were only supposed to rule until his daughter came of age.
+Martin Holt: However, according to the Council, the King's daughter went mad. Such a wonderful convenience for them of course. With her out of the picture, the Council became permanent.
+Player: Interesting. What else don't you like about the Council?
+Martin Holt: Democracy! That's meant to be the big thing for the Council. Funny thing is, although they're meant to be elected by the people, the same four people have won every single election. Little odd, no?
+Player: That is a bit suspicious, I suppose.
+Martin Holt: Indeed it is. So, do you want to join our protest?
+Player: Not right now. But thanks for the information.
