@@ -2066,5 +2066,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+  {
+    "name": "Assistant Brock",
+    "id": 4720,
+    "x": 2922,
+    "y": 3303,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
   }
 ]
