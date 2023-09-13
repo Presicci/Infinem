@@ -682,7 +682,9 @@ public abstract class NPCCombat extends Combat {
     }
 
     private void vorkathHead(Position dropPosition, Player pKiller) {
-        if (KillCounter.getKillCount(pKiller, BossKillCounter.VORKATH) >= 50 && !pKiller.hasAttribute(AttributeKey.OBTAINED_VORKATH_HEAD)) {
+        if ((npc.getId() == 8059 || npc.getId() == 8061)
+                && KillCounter.getKillCount(pKiller, BossKillCounter.VORKATH) >= 50
+                && !pKiller.hasAttribute(AttributeKey.OBTAINED_VORKATH_HEAD)) {
             Item item = new Item(VORKATHS_HEAD);
             GroundItem groundItem = new GroundItem(item).position(dropPosition);
             groundItem.spawn();
