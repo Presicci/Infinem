@@ -396,6 +396,10 @@ public class TaskManager {
         });
     }
 
+    public void doLookupByUUID(int uuid) {
+        doLookupByUUID(uuid, 1);
+    }
+
     public void doLookupByUUID(int uuid, int amount) {
         //  Task already completed, abort
         if (completeTasks.contains(uuid)) {
