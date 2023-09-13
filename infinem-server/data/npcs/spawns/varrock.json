@@ -2201,6 +2201,15 @@
     "world": "ECO",
     "npcName": "Black Knight"
   },
+  {
+    "name": "Assistant Serf",
+    "id": 4719,
+    "x": 3299,
+    "y": 3481,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
 
 
 
