@@ -8,7 +8,9 @@ import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.killcount.BossKillCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Config;
@@ -20,7 +22,6 @@ import io.ruin.model.map.route.routes.DumbRoute;
 import io.ruin.model.stat.StatType;
 import io.ruin.utility.Broadcast;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
@@ -454,6 +455,103 @@ public enum Pet {
                 break;
             case TANGLEROOT:
                 Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received Tangleroot, the Farming pet at " + NumberUtils.formatNumber((long) player.getStats().get(StatType.Farming).experience) + " XP!");
+                break;
+            // Boss pets
+            case ABYSSAL_ORPHAN:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Abyssal Orphan pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.ABYSSAL_SIRE)) + " kill count!");
+                break;
+            case BABY_MOLE:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Baby Mole pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.GIANT_MOLE)) + " kill count!");
+                break;
+            case CALLISTO_CUB:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Callisto Cub pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.CALLISTO)) + " kill count!");
+                break;
+            case HELLPUPPY:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Hell Puppy pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.CERBERUS)) + " kill count!");
+                break;
+            case IKKLE_HYDRA_GREEN:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Ikkle Hydra pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.ALCHEMICAL_HYDRA)) + " kill count!");
+                break;
+            case JAL_NIB_REK:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Jal-Nib-Rek pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.ZUK)) + " kill count!");
+                break;
+            case KALPHITE_PRINCESS:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Kalphite Princess pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.KALPHITE_QUEEN)) + " kill count!");
+                break;
+            case LIL_ZIK:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Lil' Zik pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.TOB)) + " kill count!");
+                break;
+            case NOON:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Noon pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.GROTESQUE_GUARDIANS)) + " kill count!");
+                break;
+            case OLMLET:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Olmlet pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.COX)) + " kill count!");
+                break;
+            case CHAOS_ELEMENTAL:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Chaos Elemental pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.CHAOS_ELE)) + " kill count!");
+                break;
+            case DAGANNOTH_PRIME:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Dagannoth Prime pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.DAG_PRIME)) + " kill count!");
+                break;
+            case DAGANNOTH_REX:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Dagannoth Rex pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.DAG_REX)) + " kill count!");
+                break;
+            case DAGGANOTH_SUPREME:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Dagannoth Supreme pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.DAG_SUPREME)) + " kill count!");
+                break;
+            case DARK_CORE:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Dark Core pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.CORP_BEAST)) + " kill count!");
+                break;
+            case GENERAL_GRAARDOR:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the General Graardor pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.GENERAL_GRAARDOR)) + " kill count!");
+                break;
+            case KRIL_TSUTSAROTH:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the K'ril Tsutsaroth pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.KRIL_TSUTSAROTH)) + " kill count!");
+                break;
+            case KRAKEN:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Kraken pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.KRAKEN)) + " kill count!");
+                break;
+            case KREEARRA:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Kree'arra pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.KREEARRA)) + " kill count!");
+                break;
+            case SMOKE_DEVIL:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Smoke Devil pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.THERMONUCLEAR_SMOKE_DEVIL)) + " kill count!");
+                break;
+            case SNAKELING_GREEN:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Snakeling pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.ZULRAH)) + " kill count!");
+                break;
+            case ZILYANA:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Zilyana pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.COMMANDER_ZILYANA)) + " kill count!");
+                break;
+            case PHOENIX:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Phoenix pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.WINTERTODT)) + " kill count!");
+                break;
+            case PRINCE_BLACK_DRAGON:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Prince Black Dragon pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.KING_BLACK_DRAGON)) + " kill count!");
+                break;
+            case SCORPIAS_OFFSPRING:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Scoripa's Offspring pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.SCORPIA)) + " kill count!");
+                break;
+            case SKOTOS:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Skotos pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.SKOTIZO)) + " kill count!");
+                break;
+            case SMOLCANO:
+                //Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Smolcano pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.ZULCANO)) + " kill count!");
+                break;
+            //case SARACHA:
+                //Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Scoripa's Offspring pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.SCORPIA)) + " kill count!");
+                //break;
+            case TZREK_JAD:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Tzrek-Jad pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.JAD)) + " kill count!");
+                break;
+            case VENENATIS_SPIDERLING:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Venenatis Spiderling pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.VENENATIS)) + " kill count!");
+                break;
+            case VETION_JR_PURPLE:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Vet'ion Jr. pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.VETION)) + " kill count!");
+                break;
+            case VORKI:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Vorki pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.VORKATH)) + " kill count!");
                 break;
             default:
                 Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " just unlocked the following pet: " + ItemDef.get(itemId).name);
