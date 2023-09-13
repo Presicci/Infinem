@@ -99,6 +99,8 @@ public enum Pottery {
                 unfiredPottery.setId(pottery.fired);
                 player.getStats().addXp(StatType.Crafting, pottery.firedExp, true);
                 player.sendMessage("You remove the " + pottery.name + " from the oven.");
+                if (pottery == PLANT_POT)
+                    player.getTaskManager().doLookupByUUID(917);   // Mould and Fire a Plant Pot
                 event.delay(1);
             }
         });
