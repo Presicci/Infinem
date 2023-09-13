@@ -892,6 +892,15 @@
     "world": "ECO",
     "npcName": "Lanthus"
   },
+  {
+    "name": "Assistant Marrow",
+    "id": 4721,
+    "x": 2460,
+    "y": 3108,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
 
 
 
