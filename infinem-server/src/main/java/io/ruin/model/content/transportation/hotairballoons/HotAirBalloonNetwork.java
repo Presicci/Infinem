@@ -72,6 +72,8 @@ public class HotAirBalloonNetwork {
                                                         balloon.getConfig().set(player, 1);
                                                         e.delay(1);
                                                         player.getPacketSender().fadeIn();
+                                                        e.delay(1);
+                                                        checkTask(player);
                                                         player.unlock();
                                                     });
                                                 })
@@ -137,6 +139,8 @@ public class HotAirBalloonNetwork {
                                             balloon.getConfig().set(player, 1);
                                             e.delay(1);
                                             player.getPacketSender().fadeIn();
+                                            e.delay(1);
+                                            checkTask(player);
                                             player.dialogue(
                                                     new OptionsDialogue("Would you like to fly to that location?",
                                                             new Option("Yes", new ActionDialogue(() -> travel(player, balloon))),
@@ -151,6 +155,16 @@ public class HotAirBalloonNetwork {
         } else {
             player.dialogue(new MessageDialogue("To build this balloon location would cost " + unlockItem.getAmount() + "x " + unlockItem.getDef().name + "."));
         }
+    }
+
+    private static void checkTask(Player player) {
+        if (player.getTaskManager().hasCompletedTask(916))
+            return;
+        for (HotAirBalloon balloon : HotAirBalloon.values()) {
+            if (balloon.getConfig().get(player) == 0)
+                return;
+        }
+        player.getTaskManager().doLookupByUUID(916);    // Build All Hot Air Balloons
     }
 
     private static boolean isBalloonUnlocked(Player player, HotAirBalloon balloon) {
