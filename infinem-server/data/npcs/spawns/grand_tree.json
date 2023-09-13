@@ -601,5 +601,14 @@
     "z": 2,
     "direction": "S",
     "walkRange": 1
+  },
+  {
+    "name": "Assistant Le Smith",
+    "id": 4722,
+    "x": 2480,
+    "y": 3456,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
