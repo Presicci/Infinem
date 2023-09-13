@@ -538,9 +538,9 @@ public enum Pet {
             case SMOLCANO:
                 //Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Smolcano pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.ZULCANO)) + " kill count!");
                 break;
-            //case SARACHA:
-                //Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Scoripa's Offspring pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.SCORPIA)) + " kill count!");
-                //break;
+            case SRARACHA:
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Sraracha pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.SARACHNIS)) + " kill count!");
+                break;
             case TZREK_JAD:
                 Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Tzrek-Jad pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.JAD)) + " kill count!");
                 break;
