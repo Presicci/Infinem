@@ -55,6 +55,10 @@ public enum Pottery {
     private static void spinClay(Player player, Pottery pottery, int amount) {
         if (!player.getStats().check(StatType.Crafting, pottery.levelReq, "spin this"))
             return;
+        if (player.getInventory().findItem(SOFT_CLAY) == null) {
+            player.sendMessage("You need soft clay to make pottery.");
+            return;
+        }
         player.startEvent(event -> {
             int made = 0;
             while (made++ < amount) {
@@ -112,7 +116,11 @@ public enum Pottery {
                 new SkillItem(PIE_DISH.unfired).name(ItemDef.get(PIE_DISH.fired).name).addAction((p, amount, event) -> spinClay(p, PIE_DISH, amount)),
                 new SkillItem(BOWL.unfired).name(ItemDef.get(BOWL.fired).name).addAction((p, amount, event) -> spinClay(p, BOWL, amount)),
                 new SkillItem(PLANT_POT.unfired).name(ItemDef.get(PLANT_POT.fired).name).addAction((p, amount, event) -> spinClay(p, PLANT_POT, amount))));
-
+        ObjectAction.register(POTTERS_WHEEL, "use", ((player, obj) -> SkillDialogue.make(player,
+                new SkillItem(POT.unfired).name(ItemDef.get(POT.fired).name).addAction((p, amount, event) -> spinClay(p, POT, amount)),
+                new SkillItem(PIE_DISH.unfired).name(ItemDef.get(PIE_DISH.fired).name).addAction((p, amount, event) -> spinClay(p, PIE_DISH, amount)),
+                new SkillItem(BOWL.unfired).name(ItemDef.get(BOWL.fired).name).addAction((p, amount, event) -> spinClay(p, BOWL, amount)),
+                new SkillItem(PLANT_POT.unfired).name(ItemDef.get(PLANT_POT.fired).name).addAction((p, amount, event) -> spinClay(p, PLANT_POT, amount)))));
         /*
          * Pottery oven
          */
