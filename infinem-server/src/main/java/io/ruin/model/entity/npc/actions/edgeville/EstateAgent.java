@@ -29,7 +29,11 @@ public class EstateAgent {
 
     static {
         NPCAction.register(3097, "talk-to", EstateAgent::agentDialogue);
+        NPCAction.register(3097, "relocate", EstateAgent::selectLocation);
+        NPCAction.register(3097, "redecorate", EstateAgent::selectStyle);
         NPCAction.register(9137, "talk-to", EstateAgent::agentDialogue);
+        NPCAction.register(9137, "relocate", EstateAgent::selectLocation);
+        NPCAction.register(9137, "redecorate", EstateAgent::selectStyle);
     }
 
     private static void agentDialogue(Player player, NPC npc) {
