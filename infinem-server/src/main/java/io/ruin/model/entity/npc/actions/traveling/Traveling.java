@@ -43,6 +43,7 @@ public class Traveling {
             player.getMovement().teleport(x, y, z);
             player.getPacketSender().fadeIn();
             player.unlock();
+            e.delay(1);
             if (onComplete != null)
                 onComplete.run();
         });
