@@ -159,7 +159,7 @@ public class StatList {
         if(useMultiplier) {
             if(World.xpMultiplier > 0)
                 amount += baseAmount * (World.xpMultiplier - 1);
-            amount += baseAmount * (Wilderness.getXPModifier(player, type));
+            //amount += baseAmount * (Wilderness.getXPModifier(player, type));
         }
         /*
          * XP Modes
