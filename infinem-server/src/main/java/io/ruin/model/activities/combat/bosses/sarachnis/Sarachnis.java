@@ -130,10 +130,7 @@ public class Sarachnis extends NPCCombat {
             default:
                 throw new IllegalStateException("Unexpected value: " + roll);
         }
-        target.player.sendMessage("CURRENT POS:" + currentPos);
-        target.player.sendMessage("NEW POS:" + newPos);
-
-        if (currentPos != newPos) {
+        if (currentPos != newPos) { // TODO She is supposed to sprint
             npc.stepAbs(newPos.getX(), newPos.getY(), StepType.FORCE_WALK);
             return;
         }
