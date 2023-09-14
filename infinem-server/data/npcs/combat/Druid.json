@@ -1,7 +1,7 @@
 [
   { #Druid (33)
     "ids": [ 3258 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.magic.Druid",
     //Combat Info
     "hitpoints": 30,
     "aggressive_level": 0,

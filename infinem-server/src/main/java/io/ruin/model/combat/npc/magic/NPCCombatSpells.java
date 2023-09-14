@@ -87,7 +87,13 @@ public enum NPCCombatSpells {
                     entity.npc.getCombat().getStat(StatType.Strength).drain(4);
                     entity.npc.getCombat().getStat(StatType.Defence).drain(4);
                 }
-            }));
+            })),
+    DRUID_FAKE_ENTANGLE(new Projectile(178, 45, 0, 75, 56, 10, 16, 64),
+            1161,
+            177, 120,
+            151, 1,
+            179, 100,
+            153);
 
     private final Projectile projectile;
     private final int animId, castGfxId, castGfxHeight, castSoundId, castSoundType, hitGfxId, hitGfxHeight, hitSound;
