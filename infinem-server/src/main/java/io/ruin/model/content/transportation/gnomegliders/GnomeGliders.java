@@ -20,9 +20,8 @@ public class GnomeGliders {
             player.sendMessage("You are already here!");
             return;
         }
-        Traveling.fadeTravel(player, spot.pos);
+        Traveling.fadeTravel(player, spot.pos, () -> player.getTaskManager().doLookupByUUID(919));  // Fly on a Gnome Glider
         player.closeInterface(InterfaceType.MAIN);
-        player.getTaskManager().doLookupByUUID(919);    // Fly on a Gnome Glider
     }
 
     private static final int[] npcs = {
