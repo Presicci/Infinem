@@ -4,31 +4,22 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+
+import static io.ruin.cache.ItemID.KNIFE;
 
 public class Web {
 
     private static final int KNIFE = 946;
 
     public static void slashWeb(Player player, GameObject web) {
-        boolean knife, wildernessSword;
-        ItemDef wepDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
-        if(wepDef != null && wepDef.sharpWeapon) {
-            knife = false;
-            wildernessSword = wepDef.id == 13111;
-        } else {
-            if(!player.getInventory().hasId(KNIFE)) {
-                player.sendMessage("Only a sharp blade can cut through this sticky web.");
-                return;
-            }
-            knife = true;
-            wildernessSword = false;
-        }
+        int sharpTier = sharpItemChance(player);
         player.startEvent(event -> {
-            player.animate(knife ? 911 : player.getCombat().weaponType.attackAnimation);
-            if(wildernessSword || Random.rollDie(2, 1)) {
+            player.animate(sharpTier == 1 ? 911 : player.getCombat().weaponType.attackAnimation);
+            if (sharpTier == 3 || Random.rollDie(2, 1)) {
                 player.lock();
                 player.sendMessage("You slash the web apart.");
                 event.delay(1);
@@ -42,6 +33,31 @@ public class Web {
             }
             player.sendMessage("You fail to cut through it.");
         });
+    }
+
+    /**
+     * Gets the player's sharp item quality
+     * @return
+     * 0 - No sharp item
+     * 1 - Knife
+     * 2 - Normal sharp item
+     * 3 - Wilderness sword (only in wilderness)
+     */
+    private static int sharpItemChance(Player player) {
+        ItemDef weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+        if(weaponDef != null && weaponDef.sharpWeapon) {
+            return (weaponDef.id >= 13108 && weaponDef.id <= 13111 && player.wildernessLevel > 0) ? 3 : 2;
+        } else {
+            for (Item item : player.getInventory().getItems()) {
+                if (item != null && item.getDef() != null && item.getDef().sharpWeapon)
+                    return (item.getDef().id >= 13108 && item.getDef().id <= 13111 && player.wildernessLevel > 0) ? 3 : 2;
+            }
+            if(!player.getInventory().hasId(KNIFE)) {
+                player.sendMessage("Only a sharp blade can cut through this sticky web.");
+                return 0;
+            }
+            return 1;
+        }
     }
 
     static {
