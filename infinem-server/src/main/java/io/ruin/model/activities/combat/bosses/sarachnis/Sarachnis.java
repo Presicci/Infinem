@@ -65,16 +65,18 @@ public class Sarachnis extends NPCCombat {
 
     public void spawnFirstMinions() {
         final Entity e = target;
+        if (npc.getHp() <= 0)
+            return;
         List<Position> positions = e.getPosition().area(3, pos -> !pos.equals(e.getPosition()) && (pos.getTile() == null || pos.getTile().clipping == 0));
         if (!spawned) {
             NPC mage = new NPC(8715).spawn(Random.get(positions));
             NPC melee = new NPC(8714).spawn(Random.get(positions));
             Player p = Random.get(npc.localPlayers());
             mage.deathEndListener = (DeathListener.SimpleKiller) killer -> {
-                npc.remove();
+                mage.remove();
             };
             melee.deathEndListener = (DeathListener.SimpleKiller) killer -> {
-                npc.remove();
+                melee.remove();
             };
             mage.face(p);
             melee.face(p);
@@ -86,19 +88,22 @@ public class Sarachnis extends NPCCombat {
 
     private void spawnSecondMinions() {
         final Entity e = target;
+        if (npc.getHp() <= 0)
+            return;
         List<Position> positions = e.getPosition().area(3, pos -> !pos.equals(e.getPosition()) && (pos.getTile() == null || pos.getTile().clipping == 0));
         if (!spawnedSecond) {
             NPC mage = new NPC(8715).spawn(Random.get(positions));
             NPC melee = new NPC(8714).spawn(Random.get(positions));
             Player p = Random.get(npc.localPlayers());
             mage.deathEndListener = (DeathListener.SimpleKiller) killer -> {
-                npc.remove();
+                mage.remove();
             };
             melee.deathEndListener = (DeathListener.SimpleKiller) killer -> {
-                npc.remove();
+                melee.remove();
             };
             mage.face(p);
             melee.face(p);
+            target = p;
             spawnedSecond = true;
         }
     }
