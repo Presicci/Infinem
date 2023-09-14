@@ -170,8 +170,9 @@ public class Sarachnis extends NPCCombat {
         npc.addEvent(event -> {
             event.setCancelCondition(this::isDead);
             npc.forceText("Hsss");
+            npc.animate(RANGED_ANIM);
             npc.localPlayers().forEach(plr -> {
-                plr.freeze(6, npc);
+                plr.freeze(5, npc);
                 RANGED_PROJECTILE.send(npc, plr);
                 Position pos = plr.getPosition().copy();
                 GameObject web = GameObject.spawn(34895, pos, 10, 0);
