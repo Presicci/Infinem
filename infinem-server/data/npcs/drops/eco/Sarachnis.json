@@ -76,13 +76,13 @@
       },
       {
         "name": "Tertiary",
-        "weight": 80064,
+        "weight": 15064,
         "items": [
           { "id": 23517, "min": 1, "max": 1, "weight": 5000 },   //Giant egg sac(full)
           { "id": 23499, "min": 1, "max": 1, "weight": 6669 },   //Grubby key
           { "id": 2722, "min": 1, "max": 1, "weight": 2500 },   //Clue scroll (hard)
           { "id": 12073, "min": 1, "max": 1, "weight": 1670 },   //Clue scroll (elite)
-          { "id": 23525, "min": 1, "max": 1, "weight": 50 }   //Jar of eyes
+          { "id": 23525, "min": 1, "max": 1, "weight": 35 }   //Jar of eyes
         ]
       }
     ]
