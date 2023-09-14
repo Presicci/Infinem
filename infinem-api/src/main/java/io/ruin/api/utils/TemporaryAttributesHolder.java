@@ -108,7 +108,12 @@ public class TemporaryAttributesHolder {
      * @return The new value stored at the given key.
      */
     public int incrementTemporaryNumericAttribute(String key, int amount) {
-        Object object = temporaryAttributes.get(key);
+        Object object;
+        if (temporaryAttributes == null) {
+            temporaryAttributes = Collections.synchronizedMap(new HashMap<>());
+            object = null;
+        } else
+            object = temporaryAttributes.get(key);
         if (object != null && !(object instanceof Number)) {
             throw new IllegalArgumentException("Temporary Attribute with key [" + key + "] is not numeric.");
         }
@@ -127,6 +132,8 @@ public class TemporaryAttributesHolder {
      * @return The integer stored at given key, or 0.
      */
     public int getTemporaryAttributeIntOrZero(String key) {
+        if (temporaryAttributes == null)
+            return 0;
         Object value = temporaryAttributes.get(key);
         if (value == null) return 0;
         if (value instanceof String) {
