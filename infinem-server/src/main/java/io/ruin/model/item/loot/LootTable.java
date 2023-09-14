@@ -92,6 +92,18 @@ public class LootTable {
         }
     }
 
+    public void checkForTertiaryWeight(String name) {
+        if(tables != null) {
+            for(ItemsTable table : tables) {
+                if (table.name.equalsIgnoreCase("tertiary")) {
+                    double percentage = ((double) table.weight / (double) totalWeight);
+                    if (percentage > 0.5)
+                        System.out.println(name + ": " + percentage);
+                }
+            }
+        }
+    }
+
     /**
      * Item selection
      */

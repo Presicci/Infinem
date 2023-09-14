@@ -107,6 +107,7 @@ public class npc_drops extends DataFile {
         Map<Integer, LootTable> loaded = new HashMap<>();
         for(DropTable t : tables) {
             t.calculateWeight();
+            //t.checkForTertiaryWeight(Arrays.toString(t.ids));
             if(t.guaranteed == null && t.totalWeight == 0) {
                 //System.err.println("Drop table " + fileName + " has no drops.");
                 //ServerWrapper.logWarning("Drop table " + fileName + " has no drops.");
