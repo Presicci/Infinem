@@ -1,7 +1,9 @@
 package io.ruin.model.combat.npc.werewolves;
 
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.shared.listeners.HitListener;
+import io.ruin.model.entity.shared.listeners.RespawnListener;
 import io.ruin.model.item.Items;
 
 /**
@@ -17,6 +19,10 @@ public abstract class Werewolf extends NPCCombat {
     @Override
     public void init() {
         originalId = npc.getId();
+        npc.deathEndListener = (entity, killer, killHit) -> {
+            if (killer.player != null)
+                killer.player.getTaskManager().doLookupByUUID(918); // Defeat a Werewolf Before It Transforms
+        };
         npc.hitListener = new HitListener().preDefend(((hit) -> {
             if (hit.attacker == null || hit.attacker.player == null)
                 return;
@@ -30,7 +36,9 @@ public abstract class Werewolf extends NPCCombat {
                     npc.doIfIdle(hit.attacker.player, () -> {
                         npc.transform(originalId);
                     });
-                    npc.deathEndListener = (entity, killer, killHit) -> npc.transform(originalId);
+                    npc.deathEndListener = (entity, killer, killHit) -> {
+                        npc.transform(originalId);
+                    };
                 }
             }
         }));
