@@ -40,6 +40,8 @@ public enum PlayerCounter {
     SEERS_ROOFTOP,
     RELLEKKA_ROOFTOP,
     ARDOUGNE_ROOFTOP,
+    POLLNIVNEACH_ROOFTOP,
+    PRIFDDINAS_COURSE,
 
     /**
      * Woodcutting
