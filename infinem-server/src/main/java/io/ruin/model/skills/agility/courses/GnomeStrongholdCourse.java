@@ -1,5 +1,7 @@
 package io.ruin.model.skills.agility.courses;
 
+import io.ruin.api.utils.AttributeKey;
+import io.ruin.cache.Color;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -131,9 +133,11 @@ public class GnomeStrongholdCourse {
                 p.getMovement().teleport(obj.x, obj.y + 6, 0);
                 if(p.lastAgilityObjId == 23135) {
                     p.getStats().addXp(StatType.Agility, 46.5, true);
-                    PlayerCounter.GNOME_STRONGHOLD_COURSE.increment(p, 1);
+                    int laps = PlayerCounter.GNOME_STRONGHOLD_COURSE.increment(p, 1);
                     AgilityPet.rollForPet(p, 35609);
                     p.getTaskManager().doLookupByUUID(559, 1);  // Complete the Gnome Stronghold Agility Course
+                    if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
+                        p.sendFilteredMessage("Your Gnome Agility lap count is: " + Color.RED.wrap(laps + "") + ".");
                 } else {
                     p.getStats().addXp(StatType.Agility, 7.5, true);
                 }

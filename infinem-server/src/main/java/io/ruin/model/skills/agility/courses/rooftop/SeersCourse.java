@@ -1,6 +1,8 @@
 package io.ruin.model.skills.agility.courses.rooftop;
 
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.Color;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -125,10 +127,12 @@ public class SeersCourse {
             if (p.preventSkippingCourse) {
                 p.getStats().addXp(StatType.Agility, 435, true);
                 p.getMovement().restoreEnergy(Random.get(1, 2));
-                PlayerCounter.SEERS_ROOFTOP.increment(p, 1);
+                int laps = PlayerCounter.SEERS_ROOFTOP.increment(p, 1);
                 AgilityPet.rollForPet(p, 35205);
                 MarkOfGrace.rollMark(p, 60, MARK_SPAWNS);
                 p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "seers");
+                if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
+                    p.sendFilteredMessage("Your Seer's Village Rooftop lap count is: " + Color.RED.wrap(laps + "") + ".");
                 p.preventSkippingCourse = false;
             }
             p.unlock();

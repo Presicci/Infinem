@@ -1,6 +1,9 @@
 package io.ruin.model.entity.npc.actions;
 
+import io.ruin.api.utils.AttributeKey;
+import io.ruin.cache.Color;
 import io.ruin.model.entity.npc.NPCAction;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
@@ -24,5 +27,14 @@ public class Grace {
                             }
                         }))
         ));
+        NPCAction.register(5919, "toggle counter", ((player, npc) -> {
+            if (player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT)) {
+                player.removeAttribute(AttributeKey.HIDE_AGILITY_COUNT);
+                player.dialogue(new MessageDialogue("Lap counters will now be displayed after completing an agility course lap."));
+            } else {
+                player.putAttribute(AttributeKey.HIDE_AGILITY_COUNT, 1);
+                player.dialogue(new MessageDialogue("Lap counters will " + Color.RED.wrap("NOT") + " be displayed after completing an agility course lap."));
+            }
+        }));
     }
 }

@@ -1,6 +1,9 @@
 package io.ruin.model.skills.agility.courses.rooftop;
 
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.Color;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
 import io.ruin.model.entity.shared.StepType;
@@ -237,6 +240,9 @@ public class PrifddinasCourse {
             p.getStats().addXp(StatType.Agility, 1037.1, true);
             p.getTaskManager().doLookupByUUID(790, 1);  // Complete the Prifddinas Agility Course
             p.getMovement().restoreEnergy(Random.get(1, 2));
+            int laps = PlayerCounter.PRIFDDINAS_COURSE.increment(p, 1);
+            if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
+                p.sendFilteredMessage("Your Prifddinas Agility lap count is: " + Color.RED.wrap(laps + "") + ".");
             p.unlock();
         }));
 

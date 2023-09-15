@@ -1,6 +1,8 @@
 package io.ruin.model.skills.agility.courses.rooftop;
 
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.Color;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -196,10 +198,12 @@ public class CanifisCourse {
             player.getMovement().teleport(3510, 3485, 0);
             player.getStats().addXp(StatType.Agility, 175, true);
             player.getMovement().restoreEnergy(Random.get(1, 2));
-            PlayerCounter.CANIFIS_ROOFTOP.increment(player, 1);
+            int laps = PlayerCounter.CANIFIS_ROOFTOP.increment(player, 1);
             player.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "canifis");
             AgilityPet.rollForPet(player, 36842);
             MarkOfGrace.rollMark(player, 40, MARK_SPAWNS);
+            if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
+                player.sendFilteredMessage("Your Canifis Rooftop lap count is: " + Color.RED.wrap(laps + "") + ".");
             player.unlock();
         }));
         Tile.get(3508, 3480, 2, true).flagUnmovable();

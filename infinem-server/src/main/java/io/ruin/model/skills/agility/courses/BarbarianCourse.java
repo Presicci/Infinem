@@ -1,5 +1,7 @@
 package io.ruin.model.skills.agility.courses;
 
+import io.ruin.api.utils.AttributeKey;
+import io.ruin.cache.Color;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -121,9 +123,11 @@ public class BarbarianCourse {
             event.delay(1);
             if (player.lastAgilityObjId == 1948) {
                 player.getStats().addXp(StatType.Agility, 46.2, true);
-                PlayerCounter.BARBARIAN_COURSE.increment(player, 1);
+                int laps = PlayerCounter.BARBARIAN_COURSE.increment(player, 1);
                 AgilityPet.rollForPet(player, 44376);
                 player.getTaskManager().doLookupByUUID(571, 1);  // Complete the Barbarian Outpost Agility Course
+                if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
+                    player.sendFilteredMessage("Your Barbarian Agility lap count is: " + Color.RED.wrap(laps + "") + ".");
             } else {
                 player.getStats().addXp(StatType.Agility, 13.7, true);
 

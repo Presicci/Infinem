@@ -1,6 +1,8 @@
 package io.ruin.model.skills.agility.courses.rooftop;
 
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.Color;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -152,10 +154,12 @@ public class DraynorCourse {
             p.resetAnimation();
             p.getStats().addXp(StatType.Agility, 79.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
-            PlayerCounter.DRAYNOR_ROOFTOP.increment(p, 1);
+            int laps = PlayerCounter.DRAYNOR_ROOFTOP.increment(p, 1);
             p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "draynor");
             AgilityPet.rollForPet(p, 33005);
             MarkOfGrace.rollMark(p, 10, MARK_SPAWNS);
+            if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
+                p.sendFilteredMessage("Your Draynor Rooftop lap count is: " + Color.RED.wrap(laps + "") + ".");
             p.unlock();
         }));
     }

@@ -1,6 +1,8 @@
 package io.ruin.model.skills.agility.courses.rooftop;
 
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.Color;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -167,9 +169,11 @@ public class ArdougneCourse {
             p.getStats().addXp(StatType.Agility, 529, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             AgilityPet.rollForPet(p, 34440);
-            PlayerCounter.ARDOUGNE_ROOFTOP.increment(p, 1);
+            int laps = PlayerCounter.ARDOUGNE_ROOFTOP.increment(p, 1);
             p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "ardy");
             MarkOfGrace.rollMark(p, 90, MARK_SPAWNS);
+            if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
+                p.sendFilteredMessage("Your Ardougne Rooftop lap count is: " + Color.RED.wrap(laps + "") + ".");
             e.delay(1);
             p.unlock();
         }));

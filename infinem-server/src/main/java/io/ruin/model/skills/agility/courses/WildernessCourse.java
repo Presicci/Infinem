@@ -1,5 +1,7 @@
 package io.ruin.model.skills.agility.courses;
 
+import io.ruin.api.utils.AttributeKey;
+import io.ruin.cache.Color;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -179,8 +181,10 @@ public class WildernessCourse {
             if (player.lastAgilityObjId == 23542) {
                 player.getStats().addXp(StatType.Agility, 498.9, true);
                 AgilityPet.rollForPet(player, 34666);
-                PlayerCounter.WILDERNESS_COURSE.increment(player, 1);
+                int laps = PlayerCounter.WILDERNESS_COURSE.increment(player, 1);
                 player.getTaskManager().doLookupByUUID(848, 1);  // Complete the Wilderness Agility Course
+                if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
+                    player.sendFilteredMessage("Your Wilderness Agility lap count is: " + Color.RED.wrap(laps + "") + ".");
                 player.lastAgilityObjId = -1;
             }
             player.unlock();

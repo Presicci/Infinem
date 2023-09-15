@@ -1,6 +1,8 @@
 package io.ruin.model.skills.agility.courses.rooftop;
 
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.Color;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -209,10 +211,12 @@ public class AlKharidCourse {
             p.resetAnimation();
             p.getStats().addXp(StatType.Agility, 30, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
-            PlayerCounter.ALKHARID_ROOFTOP.increment(p, 1);
+            int laps = PlayerCounter.ALKHARID_ROOFTOP.increment(p, 1);
             p.getTaskManager().doLookupByCategory(TaskCategory.ROOFTOP, "alkharid");
             AgilityPet.rollForPet(p, 26648);
             MarkOfGrace.rollMark(p, 20, MARK_SPAWNS);
+            if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
+                p.sendFilteredMessage("Your Al Kharid Rooftop lap count is: " + Color.RED.wrap(laps + "") + ".");
             p.unlock();
         }));
     }
