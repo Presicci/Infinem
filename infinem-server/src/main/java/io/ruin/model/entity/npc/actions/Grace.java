@@ -2,13 +2,19 @@ package io.ruin.model.entity.npc.actions;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.cache.Color;
+import io.ruin.model.content.scroll.Scroll;
+import io.ruin.model.content.scroll.ScrollLine;
+import io.ruin.model.content.scroll.ScrollingScroll;
 import io.ruin.model.entity.npc.NPCAction;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.shop.ShopManager;
+
+import java.util.Arrays;
 
 public class Grace {
     static {
@@ -35,6 +41,27 @@ public class Grace {
                 player.putAttribute(AttributeKey.HIDE_AGILITY_COUNT, 1);
                 player.dialogue(new MessageDialogue("Lap counters will " + Color.RED.wrap("NOT") + " be displayed after completing an agility course lap."));
             }
+        }));
+        NPCAction.register(5919, "view laps", ((player, npc) -> {
+            ScrollingScroll scroll = new ScrollingScroll("Agility Course Lap Counts",
+                    "~~~Rooftop Agility Laps~~~",
+                    "Draynor Village - " + PlayerCounter.DRAYNOR_ROOFTOP.get(player) + " Laps",
+                    "Al Kharid - " + PlayerCounter.ALKHARID_ROOFTOP.get(player) + " Laps",
+                    "Varrock - " + PlayerCounter.VARROCK_ROOFTOP.get(player) + " Laps",
+                    "Canifis - " + PlayerCounter.CANIFIS_ROOFTOP.get(player) + " Laps",
+                    "Falador - " + PlayerCounter.FALADOR_ROOFTOP.get(player) + " Laps",
+                    "Seers' Village - " + PlayerCounter.SEERS_ROOFTOP.get(player) + " Laps",
+                    "Pollnivneach - " + PlayerCounter.POLLNIVNEACH_ROOFTOP.get(player) + " Laps",
+                    "Rellekka - " + PlayerCounter.RELLEKKA_ROOFTOP.get(player) + " Laps",
+                    "Ardougne - " + PlayerCounter.ARDOUGNE_ROOFTOP.get(player) + " Laps",
+                    "~~~Miscellaneous Courses~~~",
+                    "Agility Pyramid - " + PlayerCounter.AGILITY_PYRAMID.get(player) + " Laps",
+                    "Gnome Agility - " + PlayerCounter.GNOME_STRONGHOLD_COURSE.get(player) + " Laps",
+                    "Barbarian Outpost Agility - " + PlayerCounter.BARBARIAN_COURSE.get(player) + " Laps",
+                    "Wilderness Agility - " + PlayerCounter.WILDERNESS_COURSE.get(player) + " Laps",
+                    "Prifddinas Agility - " + PlayerCounter.PRIFDDINAS_COURSE.get(player) + " Laps"
+            );
+            scroll.open(player);
         }));
     }
 }
