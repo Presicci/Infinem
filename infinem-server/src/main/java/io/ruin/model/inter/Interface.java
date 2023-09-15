@@ -239,6 +239,8 @@ public class Interface {
 
     public static final int SCROLL = 95;
 
+    public static final int SCROLLING_SCROLL = 625;
+
     public static final int VIEWING_ORB_INTERFACE = 374;
 
     public static final int TOURNAMENT_VIEWER = 120;
