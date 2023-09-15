@@ -1,9 +1,12 @@
 package io.ruin.model.skills.agility.pyramid;
 
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.Color;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.Renders;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.ItemDialogue;
@@ -316,6 +319,9 @@ public class AgilityPyramid {
                 if (player.getInventory().hasFreeSlots(1)) {
                     player.dialogue(new ItemDialogue().one(Items.PYRAMID_TOP, "You find a golden pyramid!"));
                     player.getInventory().add(Items.PYRAMID_TOP);
+                    int laps = PlayerCounter.AGILITY_PYRAMID.increment(player, 1);
+                    if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
+                        player.sendFilteredMessage("Your Agility Pyramid lap count is: " + Color.RED.wrap(laps + "") + ".");
                     Config.HIDE_PYRAMID.set(player, 1);
                 } else {
                     player.sendMessage("You don't have enough inventory space to pick up the pyramid top.");

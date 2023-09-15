@@ -42,6 +42,7 @@ public enum PlayerCounter {
     ARDOUGNE_ROOFTOP,
     POLLNIVNEACH_ROOFTOP,
     PRIFDDINAS_COURSE,
+    AGILITY_PYRAMID,
 
     /**
      * Woodcutting
