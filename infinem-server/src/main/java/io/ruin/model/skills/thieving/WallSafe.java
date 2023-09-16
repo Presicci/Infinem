@@ -7,10 +7,12 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.cache.ItemID.COINS_995;
@@ -36,31 +38,52 @@ public class WallSafe {
             if (!player.isAt(wallSafe.x, wallSafe.y))
                 event.delay(1);
             player.privateSound(1243);
-            player.sendFilteredMessage("You start cracking the safe.");
+            player.sendFilteredMessage("You start cracking the safe...");
             player.animate(2247);
-            event.delay(2);
-            double chance = 0.5 + (double) (player.getStats().get(StatType.Thieving).currentLevel - 50) * 0.01;
-            if (Random.get() > Math.min(chance, 0.85)) {
-                player.lock();
-                player.privateSound(1242);
-                player.sendFilteredMessage("You slip and trigger a trap!");
-                player.hit(new Hit().randDamage(6));
-                player.animate(1113);
-                event.delay(2);
-                player.resetAnimation();
-                player.unlock();
-            } else {
-                player.privateSound(1243);
+            event.delay(1);
+            double chance = 0.35 + (double) (player.getStats().get(StatType.Thieving).currentLevel - 50) * 0.006;
+            if (player.getInventory().contains(Items.STETHOSCOPE)) {  // Stethoscope gives the player a flat 10% boost
+                if (player.getStats().get(StatType.Agility).fixedLevel >= 50
+                        || player.getStats().get(StatType.Thieving).fixedLevel >= 99)
+                    chance += 0.1;
+                else
+                    player.sendMessage("You need an agility level of 50 or a thieving level of 99 to use a stethoscope properly.");
+            }
+            int attempts = 0;
+            while (attempts++ < 10) {
                 player.animate(2248);
-                event.delay(2);
-                player.sendFilteredMessage("You get some loot.");
-                player.privateSound(1238);
-                player.getStats().addXp(StatType.Thieving, 70, true);
-                player.getInventory().add(getLoot(player));
-                if (Achievement.QUICK_HANDS.isFinished(player) && Random.rollPercent(10))
+                if (Random.get() <= Math.min(chance, 0.75)) {
+                    player.privateSound(1243);
+                    player.animate(2249);
+                    event.delay(2);
+                    player.sendFilteredMessage("You get some loot.");
+                    player.privateSound(1238);
+                    player.getStats().addXp(StatType.Thieving, 70, true);
                     player.getInventory().add(getLoot(player));
-                PlayerCounter.WALL_SAFES_CRACKED.increment(player, 1);
-                openSafe(wallSafe);
+                    if (Achievement.QUICK_HANDS.isFinished(player) && Random.rollPercent(10))
+                        player.getInventory().add(getLoot(player));
+                    PlayerCounter.WALL_SAFES_CRACKED.increment(player, 1);
+                    openSafe(wallSafe);
+                    break;
+                }
+                if (Random.rollDie(8)) {
+                    player.lock();
+                    player.privateSound(1242);
+                    player.sendFilteredMessage("You slip and trigger a trap!");
+                    player.hit(new Hit().randDamage(6));
+                    player.animate(1113);
+                    event.delay(2);
+                    player.resetAnimation();
+                    player.unlock();
+                    break;
+                }
+                event.delay(1);
+                player.animate(2248);
+                event.delay(1);
+                player.animate(2248);
+                event.delay(1);
+                player.animate(2248);
+                event.delay(1);
             }
         });
     }
