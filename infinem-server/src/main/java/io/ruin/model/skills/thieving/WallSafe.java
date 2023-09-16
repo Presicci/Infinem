@@ -63,6 +63,7 @@ public class WallSafe {
                     if (Achievement.QUICK_HANDS.isFinished(player) && Random.rollPercent(10))
                         player.getInventory().add(getLoot(player));
                     PlayerCounter.WALL_SAFES_CRACKED.increment(player, 1);
+                    player.getTaskManager().doLookupByUUID(920);    // Crack a Wall Safe
                     openSafe(wallSafe);
                     break;
                 }
