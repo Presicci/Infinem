@@ -3,12 +3,15 @@ package io.ruin.model.map.object.actions.impl.dungeons;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
 import io.ruin.model.entity.shared.StepType;
+import io.ruin.model.item.Items;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.map.object.actions.impl.Door;
 import io.ruin.model.map.object.actions.impl.Ladder;
+import io.ruin.model.map.object.actions.impl.PassableDoor;
 import io.ruin.model.stat.StatType;
 
 public class Taverly {
@@ -202,6 +205,22 @@ public class Taverly {
             player.resetAnimation();
             player.getMovement().teleport(2873, 9847, 0);
             player.unlock();
+        }));
+
+        /**
+         * Jail cells
+         */
+        ObjectAction.register(2631, 2931, 9690, 0, "open", ((player, obj) -> {
+            if (player.getInventory().hasId(Items.JAIL_KEY) || player.getAbsY() == obj.y + 1 || player.getAbsY() == obj.y - 1)
+                PassableDoor.passDoor(player, obj, Direction.SOUTH, -2);
+            else
+                player.sendMessage("It's locked.");
+        }));
+        ObjectAction.register(2631, 2931, 9694, 0, "open", ((player, obj) -> {
+            if (player.getInventory().hasId(Items.JAIL_KEY) || player.getAbsY() == obj.y + 1 || player.getAbsY() == obj.y - 1)
+                PassableDoor.passDoor(player, obj, Direction.NORTH);
+            else
+                player.sendMessage("It's locked.");
         }));
     }
 }
