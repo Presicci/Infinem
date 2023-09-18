@@ -14,6 +14,7 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
+import io.ruin.model.entity.npc.actions.StaticFacingNPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Movement;
@@ -435,6 +436,8 @@ public abstract class Entity extends TemporaryAttributesHolder {
         int direction = entityDirectionUpdate.direction;
         int newDirection = target == null ? -1 : target.getClientIndex();
         if(direction == newDirection && !temp)
+            return;
+        if (isNpc() && StaticFacingNPC.NPCS.contains(npc.getId()))
             return;
         entityDirectionUpdate.set(newDirection, temp);
     }
