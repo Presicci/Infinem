@@ -37,6 +37,8 @@ public class Taverly {
                 player.lock(LockType.FULL);
                 obj.remove();
                 GameObject openDoor = GameObject.spawn(2623, 2923, 9803, 0, 0, 1);
+                if (player.getPosition().equals(obj.getPosition()))
+                    player.getTaskManager().doLookupByUUID(438);    // Unlock a Gate in Taverley Dungeon
                 player.step(player.getAbsX() < 2924 ? 1 : -1, 0, StepType.FORCE_WALK);
                 event.delay(delay);
                 openDoor.remove();
