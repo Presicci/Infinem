@@ -1,26 +1,10 @@
 [
   {
-    "itemName": "Blue dragon scale",
-    "id": 243,
+    "itemName": "Dusty key",
     "amount": 0,
-    "x": 2925,
-    "y": 9813,
-    "z": 1
-  },
-  {
-    "itemName": "Blue dragon scale",
-    "id": 243,
-    "amount": 0,
-    "x": 2891,
-    "y": 9816,
-    "z": 1
-  },
-  {
-    "itemName": "Blue dragon scale",
-    "amount": 0,
-    "id": 243,
+    "id": 1590,
     "x": 2901,
-    "y": 9806,
+    "y": 9765,
     "z": 0,
     "respawnSeconds": 60
   },
@@ -28,8 +12,8 @@
     "itemName": "Blue dragon scale",
     "amount": 0,
     "id": 243,
-    "x": 2910,
-    "y": 9810,
+    "x": 2924,
+    "y": 9790,
     "z": 0,
     "respawnSeconds": 60
   },
@@ -37,17 +21,8 @@
     "itemName": "Blue dragon scale",
     "amount": 0,
     "id": 243,
-    "x": 2908,
-    "y": 9804,
-    "z": 0,
-    "respawnSeconds": 60
-  },
-  {
-    "itemName": "Blue dragon scale",
-    "amount": 0,
-    "id": 243,
-    "x": 2904,
-    "y": 9800,
+    "x": 2918,
+    "y": 9786,
     "z": 0,
     "respawnSeconds": 60
   },
@@ -56,7 +31,43 @@
     "amount": 0,
     "id": 243,
     "x": 2906,
-    "y": 9796,
+    "y": 9789,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Blue dragon scale",
+    "amount": 0,
+    "id": 243,
+    "x": 2902,
+    "y": 9784,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Blue dragon scale",
+    "amount": 0,
+    "id": 243,
+    "x": 2905,
+    "y": 9777,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Blue dragon scale",
+    "amount": 0,
+    "id": 243,
+    "x": 2910,
+    "y": 9781,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Blue dragon scale",
+    "amount": 0,
+    "id": 243,
+    "x": 2912,
+    "y": 9785,
     "z": 0,
     "respawnSeconds": 60
   }
