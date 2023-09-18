@@ -11,6 +11,7 @@ import java.util.Set;
 public class StaticFacingNPC {
 
     private static final Integer[] VALUES = new Integer[] {
+            3596,   // 'Black-eye'
             4766    // Tegid
     };
     public static final Set<Integer> NPCS = new HashSet<>(Arrays.asList(VALUES));
