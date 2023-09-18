@@ -217,15 +217,29 @@ public class Taverly {
          * Jail cells
          */
         ObjectAction.register(2631, 2931, 9690, 0, "open", ((player, obj) -> {
-            if (player.getInventory().hasId(Items.JAIL_KEY) || player.getAbsY() == obj.y + 1 || player.getAbsY() == obj.y - 1)
-                PassableDoor.passDoor(player, obj, Direction.SOUTH, -2);
-            else
+            if (player.getInventory().hasId(Items.JAIL_KEY) || player.getAbsY() == obj.y + 1 || player.getAbsY() == obj.y - 1) {
+                player.startEvent(e -> {
+                    if (player.getAbsX() != obj.x) {
+                        player.stepAbs(obj.x, player.getAbsY(), StepType.FORCE_WALK);
+                        e.delay(2);
+                    }
+                    PassableDoor.passDoor(player, obj, Direction.SOUTH, -2);
+                });
+            } else
                 player.sendMessage("It's locked.");
         }));
         ObjectAction.register(2631, 2931, 9694, 0, "open", ((player, obj) -> {
-            if (player.getInventory().hasId(Items.JAIL_KEY) || player.getAbsY() == obj.y + 1 || player.getAbsY() == obj.y - 1)
-                PassableDoor.passDoor(player, obj, Direction.NORTH);
-            else
+            if (player.getInventory().hasId(Items.JAIL_KEY) || player.getAbsY() == obj.y + 1 || player.getAbsY() == obj.y - 1) {
+                player.startEvent(e -> {
+                    if (player.getAbsX() != obj.x) {
+                        player.stepAbs(obj.x, player.getAbsY(), StepType.FORCE_WALK);
+                        e.delay(1);
+                        player.face(obj);
+                        e.delay(1);
+                    }
+                    PassableDoor.passDoor(player, obj, Direction.NORTH);
+                });
+            } else
                 player.sendMessage("It's locked.");
         }));
     }
