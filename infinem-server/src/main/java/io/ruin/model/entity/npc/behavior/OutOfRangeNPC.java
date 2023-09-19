@@ -1,4 +1,4 @@
-package io.ruin.model.entity.npc.actions;
+package io.ruin.model.entity.npc.behavior;
 
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
