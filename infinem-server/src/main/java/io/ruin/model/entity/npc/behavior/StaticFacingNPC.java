@@ -1,4 +1,4 @@
-package io.ruin.model.entity.npc.actions;
+package io.ruin.model.entity.npc.behavior;
 
 import java.util.Arrays;
 import java.util.HashSet;
