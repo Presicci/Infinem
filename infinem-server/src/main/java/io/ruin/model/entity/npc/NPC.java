@@ -110,9 +110,9 @@ public class NPC extends NPCAttributes {
     }
 
     @Override
-    public Iterable<NPC> localNpcs() {
+    public List<NPC> localNpcs() {
         //ehh
-        HashSet<NPC> set = new HashSet<>();
+        List<NPC> set = new ArrayList<>();
         for(Player player : localPlayers)
             set.addAll(player.localNpcs());
         return set;
