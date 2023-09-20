@@ -1,0 +1,21 @@
+HASITEM:1590
+/Player: Are you still here?
+Velrak the explorer: Yes... I'm still plucking up the courage to run out past those Black Knights.
+Player: Oh, go on. You can do it. I'll watch your back.
+Velrak the explorer: Well, I'll try.
+/Velrak the explorer: Thank you for rescuing me! It isn't very comfy in this cell.
+<So...do you know anywhere good to explore?
+Player: So...do you know anywhere good to explore?
+Velrak the explorer: Well, this dungeon was quite good to explore...until I got captured, anyway. I was given a key to an inner part of this dungeon by a mysterious cloaked stranger!
+Velrak the explorer: It's rather tough for me to get that far into the dungeon however. I just keep getting captured! Would you like to give it a go?
+<Yes, please!
+Player: Yes, please!
+ITEM:1590
+><No, it's too dangerous for me too.
+Player: No, it's too dangerous for me too.
+Velrak the explorer: I don't blame you!
+>
+><Do I get a reward for freeing you?
+Player: Do I get a reward for freeing you?
+Velrak the explorer: Well, not really. The Black Knights took all of my stuff before throwing me in here to rot!
+LASTOPTIONS
