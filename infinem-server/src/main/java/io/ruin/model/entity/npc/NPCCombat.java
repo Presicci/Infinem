@@ -16,6 +16,7 @@ import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.entity.npc.behavior.FightingNPC;
 import io.ruin.model.entity.player.DoubleDrops;
 import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
@@ -962,7 +963,7 @@ public abstract class NPCCombat extends Combat {
     }
 
     public final void checkAggression() {
-        if (target == null && isAggressive() && !npc.isLocked()) {
+        if (target == null && !npc.isLocked()) {
             target = findAggressionTarget();
             if (target != null) {
                 int crabId = npc.getTemporaryAttributeIntOrZero(AttributeKey.CRAB_TRANSFORM);
@@ -979,9 +980,25 @@ public abstract class NPCCombat extends Combat {
             return null;
         if (npc.hasTarget())
             return null;
+        if (!isAggressive()) {
+            return findAggressionTargetNPC();
+        }
         List<Player> targets = npc.localPlayers().stream()
                 .filter(this::canAggro)
                 .collect(Collectors.toList()); // i don't mind if this is done in a different way as long as it picks a RANDOM target that passes the canAggro check
+        if (targets.isEmpty())
+            return findAggressionTargetNPC();
+        return Random.get(targets);
+    }
+
+    protected Entity findAggressionTargetNPC() {
+        Set<Integer> t = FightingNPC.TARGETS.get(npc.getId());
+        if (t == null)
+            return null;
+        List<Entity> targets = npc.localNpcs().stream()
+                .filter(n -> t.contains(n.getId()))
+                .filter(this::canAggro)
+                .collect(Collectors.toList());
         if (targets.isEmpty())
             return null;
         return Random.get(targets);
@@ -1010,6 +1027,12 @@ public abstract class NPCCombat extends Combat {
                 && (npc.inMulti() || (StreamSupport.stream(npc.localNpcs().spliterator(), false)
                 .noneMatch(n -> n.getCombat() != null && n.getCombat().getTarget() == player && !n.getCombat().isAttacking(10) && !n.getMovement().isAtDestination()))) // not 100% sure how i feel about this check, but it ensures multiple npcs don't try to go for the same player at the same time in a single-way zone since they wouldn't be able to attack upon reaching
                 && (npc.aggressionImmunity == null || !npc.aggressionImmunity.test(player));
+    }
+
+    protected boolean canAggro(NPC n) {
+        return canAttack(n) // can attack
+                && DumbRoute.withinDistance(npc, n, getAggressionRange()) // distance and line of sight
+                && (npc.aggressionImmunity == null || !npc.aggressionImmunity.test(n));
 
     }
 
