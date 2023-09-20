@@ -8,6 +8,7 @@ import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
+import io.ruin.model.entity.player.PlayerBoolean;
 import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.killcount.BossKillCounter;
@@ -608,20 +609,20 @@ public enum Pet {
                     );
                     return;
                 }
-                /*if (pet == CERBERUS) {
-                    if (!player.cerberusMetamorphisis) {
+                if (pet == HELLPUPPY) {
+                    if (!PlayerBoolean.CERBERUS_METAMORPH.has(player)) {
                         player.sendMessage("You need to use Cerberus paws on this first before you can use metamorphosis.");
                         return;
                     }
-                }*/
+                }
                 if (pet == ABYSSAL_ORPHAN) {
-                    if (!player.abyssalSireMetamorphisis) {
+                    if (!PlayerBoolean.SIRE_METAMORPH.has(player)) {
                         player.sendMessage("You need to use a Sires tendral on this first before you can use metamorphosis.");
                         return;
                     }
                 }
                 if (pet == TZREK_JAD) {
-                    if (!player.infernalJadMetamorphisis) {
+                    if (!PlayerBoolean.JAD_METAMORPH.has(player)) {
                         player.sendMessage("You need to use Infernal shard on this first before you can use metamorphosis.");
                         return;
                     }
@@ -653,25 +654,31 @@ public enum Pet {
             }
         }
         ItemNPCAction.register(30043, HELLPUPPY.npcId, (player, item, npc) -> {
-            if (!player.cerberusMetamorphisis) {
+            PlayerBoolean bool = PlayerBoolean.CERBERUS_METAMORPH;
+            if (!bool.has(player)) {
                 player.sendMessage("You've unlocked the cerberus metamorphosis for your hell puppy.");
                 item.remove(1);
+                bool.setTrue(player);
             } else {
                 player.sendMessage("You've already unlocked the cerberus metamorphosis.");
             }
         });
         ItemNPCAction.register(30042, ABYSSAL_ORPHAN.npcId, (player, item, npc) -> {
-            if (!player.abyssalSireMetamorphisis) {
+            PlayerBoolean bool = PlayerBoolean.SIRE_METAMORPH;
+            if (!bool.has(player)) {
                 player.sendMessage("You've unlocked the abyssal sire metamorphosis for your Abyssal orphan.");
                 item.remove(1);
+                bool.setTrue(player);
             } else {
                 player.sendMessage("You've already unlocked the abyssal sire metamorphosis.");
             }
         });
         ItemNPCAction.register(30041, TZREK_JAD.npcId, (player, item, npc) -> {
-            if (!player.infernalJadMetamorphisis) {
+            PlayerBoolean bool = PlayerBoolean.JAD_METAMORPH;
+            if (!bool.has(player)) {
                 player.sendMessage("You've unlocked the JalTok-Jad metamorphosis for your Tzrek Jad.");
                 item.remove(1);
+                bool.setTrue(player);
             } else {
                 player.sendMessage("You've already unlocked the JalTok-Jad metamorphosis.");
             }

@@ -875,10 +875,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose @Getter
     public UpgradeMachine upgradeMachine;
 
-    @Expose public boolean cerberusMetamorphisis;
-    @Expose public boolean infernalJadMetamorphisis;
-    @Expose public boolean abyssalSireMetamorphisis;
-
     /*  Stronghold of Security  */
     @Expose public boolean[] strongholdRewards = { false, false, false, false };
 
