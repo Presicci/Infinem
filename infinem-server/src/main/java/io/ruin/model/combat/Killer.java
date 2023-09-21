@@ -18,7 +18,6 @@ import io.ruin.model.item.actions.impl.WildernessDeadmanKey;
 import io.ruin.model.item.actions.impl.WildernessKey;
 import io.ruin.model.item.actions.impl.boxes.WildernessRewardBox;
 import io.ruin.model.map.Bounds;
-import io.ruin.model.stat.StatType;
 import io.ruin.services.Loggers;
 import io.ruin.services.discord.impl.KillingSpreeEmbedMessage;
 import io.ruin.services.discord.impl.ShutdownEmbedMessage;
@@ -181,11 +180,6 @@ public class Killer {
 
         if (World.wildernessDeadmanKeyEvent) {
             WildernessDeadmanKey.rollForDeadmanKey(player, pKilled);
-        }
-
-        if (player.getPosition().inBounds(ResourceArea.BOUNDS)) {
-            player.getInventory().addOrDrop(SkillLamp.SKILL_CAMP, 1);
-            player.sendFilteredMessage("<col=6f0000> You receive a skill lamp for killing a player inside the Resource Area.");
         }
 
         /*
