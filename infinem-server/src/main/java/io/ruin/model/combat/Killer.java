@@ -183,12 +183,6 @@ public class Killer {
             WildernessDeadmanKey.rollForDeadmanKey(player, pKilled);
         }
 
-        if (player.insideWildernessAgilityCourse) {
-            player.getStats().addXp(StatType.Agility, 50000, false);
-            player.getInventory().addOrDrop(11849, 10);
-            player.sendFilteredMessage("<col=6f0000> You receive 50,000 agility experience and 10 marks of grace for killing a player inside the Agility course.");
-        }
-
         if (player.getPosition().inBounds(ResourceArea.BOUNDS)) {
             player.getInventory().addOrDrop(SkillLamp.SKILL_CAMP, 1);
             player.sendFilteredMessage("<col=6f0000> You receive a skill lamp for killing a player inside the Resource Area.");
