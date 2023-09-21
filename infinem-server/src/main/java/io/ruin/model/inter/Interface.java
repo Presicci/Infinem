@@ -269,7 +269,7 @@ public class Interface {
 
     public static final int LOYALTY_CHEST = 264;
 
-    public static final int SKILL_LAMP = 134;
+    public static final int SKILL_LAMP = 240;
 
     public static final int SUPER_MYSTERY_BOX = 702;
 

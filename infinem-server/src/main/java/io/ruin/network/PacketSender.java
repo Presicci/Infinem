@@ -809,12 +809,6 @@ public class PacketSender {
         write(out);*/
     }
     //TODO: 184 Revision Fix Custom Packet
-    public void sendSkillinterface(String donatorStatus) {
-        /*OutBuffer out = new OutBuffer(2 + Protocol.strLen(donatorStatus)).sendVarShortPacket(95)
-                .addString(donatorStatus);
-        write(out);*/
-    }
-    //TODO: 184 Revision Fix Custom Packet
     public void sendDiscordPresence(String discordStatus) {
         /*OutBuffer out = new OutBuffer(2 + Protocol.strLen(discordStatus)).sendVarShortPacket(94)
                 .addString(discordStatus);

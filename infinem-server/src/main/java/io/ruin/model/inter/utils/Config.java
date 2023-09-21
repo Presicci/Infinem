@@ -1112,6 +1112,9 @@ public class Config {
     public static final Config RECIPE_FOR_DISASTER = varpbit(1850, false).defaultValue(3);      // Lets players see the Culinaromancer's chest
     public static final Config SHADOW_DUNGEON_ENTRANCE = varpbit(393, false).defaultValue(1);   // Lets players see the shadow dungeon entrance
     public static final Config COSTUME_DEPOSIT_SET = varpbit(10581, false);
+    public static final Config DRUIDIC_RITUAL = varp(80, false).defaultValue(4);    // Lets skill lamps be used on herblore
+    public static final Config RUNE_MYSTERIES = varp(63, false).defaultValue(6);    // Lets skill lamps be used on runecrafting
+    public static final Config OWNS_A_HOUSE = varpbit(2187, false).defaultValue(1); // Lets skill lamps be used on construction
 
     /**
      * Agility Pyramid

@@ -724,8 +724,6 @@ public abstract class PlayerAttributes extends Entity {
 
     public TickDelay presetDelay = new TickDelay();
 
-    public StatType selectedSkillLampSkill;
-
     /**
      * Risk protection toggle
      */
