@@ -198,6 +198,13 @@ public abstract class NPCCombat extends Combat {
     protected Hit basicAttack(int animation, AttackStyle attackStyle, int maxDamage) {
         npc.animate(animation);
         Hit hit = new Hit(npc, attackStyle, null).randDamage(maxDamage);
+        if (npc.hasTemporaryAttribute("POISON")) {
+            hit.postDefend((entity) -> {    // 25% chance on successful attack to poison
+                if (entity.player != null && !hit.isBlocked() && Random.rollDie(4)) {
+                    entity.player.poison(npc.getTemporaryAttributeIntOrZero("POISON"));
+                }
+            });
+        }
         target.hit(hit);
         return hit;
     }
@@ -215,6 +222,13 @@ public abstract class NPCCombat extends Combat {
             npc.animate(animation);
         int delay = projectile.send(npc, target);
         Hit hit = new Hit(npc, attackStyle, null).randDamage(maxDamage).clientDelay(delay);
+        if (npc.hasTemporaryAttribute("POISON")) {
+            hit.postDefend((entity) -> {    // 25% chance on successful attack to poison
+                if (entity.player != null && !hit.isBlocked() && Random.rollDie(4)) {
+                    entity.player.poison(npc.getTemporaryAttributeIntOrZero("POISON"));
+                }
+            });
+        }
         hit.afterPostDamage(e -> {
             boolean splash = hit.isBlocked();
             if (target != null) {
@@ -1047,6 +1061,10 @@ public abstract class NPCCombat extends Combat {
     @Override
     public void faceTarget() {
         npc.face(target);
+    }
+
+    protected void setPoison(int poison) {
+        npc.putTemporaryAttribute("POISON", poison);
     }
 
     /**
