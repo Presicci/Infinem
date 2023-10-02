@@ -99,7 +99,7 @@ public interface ItemStatConfig extends Config
 	)
 	default boolean showWeight()
 	{
-		return true;
+		return false;
 	}
 
 	@ConfigItem(
