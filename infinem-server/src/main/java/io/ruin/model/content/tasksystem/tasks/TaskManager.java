@@ -11,6 +11,7 @@ import io.ruin.cache.NPCDef;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskSQLBuilder;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.MapArea;
 import lombok.Getter;
@@ -54,11 +55,7 @@ public class TaskManager {
     @Expose private HashSet<Integer> completedCategories;
     @Expose private HashSet<String> collectedItems;
 
-    public byte taskFilterDropdownOpen = 0;
-
     public String searchString = "";
-
-    @Expose @Getter @Setter private byte regionFilter = 0, skillFilter = 0, tierFilter = 0, completedFilter = 0, sortBy = 0;
 
     private void completeTask(String taskName, int uuid, TaskArea taskArea, TaskDifficulty taskDifficulty) {
         if (completeTasks.contains(uuid))
@@ -84,44 +81,6 @@ public class TaskManager {
         this.completeTasks = new HashSet<>();
         this.completedCategories = new HashSet<>();
         this.collectedItems = new HashSet<>();
-    }
-
-    public void openTaskInterface() {
-        Server.gameDb.execute(connection -> {
-            PreparedStatement statement = null;
-            ResultSet rs = null;
-            List<String> tasks = new ArrayList<>();
-            List<Integer> points = new ArrayList<>();
-            List<Boolean> completedTasks = new ArrayList<>();
-            List<Integer> areas = new ArrayList<>();
-            try {
-                statement = connection.prepareStatement(TaskSQLBuilder.getSelectQuery(player, searchString));
-                rs = statement.executeQuery();
-                while (rs.next()) {
-                    int uuid = rs.getInt("uuid");
-                    boolean completed = completeTasks.contains(uuid);
-                    if (completed && getCompletedFilter() == 2)
-                        continue;
-                    if (!completed && getCompletedFilter() == 1)
-                        continue;
-                    String name = rs.getString("name");
-                    String difficulty = rs.getString("difficulty");
-                    String region = rs.getString("region");
-                    tasks.add(name);
-                    TaskDifficulty taskDifficulty = TaskDifficulty.getTaskDifficulty(difficulty);
-                    points.add(taskDifficulty == null ? 0 : taskDifficulty.ordinal());
-                    completedTasks.add(completed);
-                    TaskArea taskArea = TaskArea.getTaskArea(region);
-                    areas.add(taskArea == null ? 0 : taskArea.ordinal());
-                }
-            } finally {
-                DatabaseUtils.close(statement, rs);
-                player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
-                    player.openInterface(InterfaceType.MAIN, 383);
-                    player.getPacketSender().sendTaskInterface(tasks, points, completedTasks, areas, globalTaskPoints, getRegionFilter(), getSkillFilter(), getTierFilter(), getCompletedFilter(), getSortBy());
-                });
-            }
-        });
     }
 
     /**
@@ -492,5 +451,69 @@ public class TaskManager {
 
     public boolean hasCompletedTask(int uuid) {
         return completeTasks.contains(uuid);
+    }
+
+    /**
+     * Name|Difficulty|Completed|Area
+     * - Difficulty:
+     *      0 - Easy
+     *      1 - Medium
+     *      2 - Hard
+     *      3 - Elite
+     *      4 - Master
+     * - Completed:
+     *      0 - No
+     *      1 - Yes
+     * - Area:
+     *      0 - General/Multiple Regions
+     *      1 - Asgarnia
+     *      2 - Fremennik Provinces
+     *      3 - Kandarin
+     *      4 - Karamja
+     *      5 - Kharidian Desert
+     *      6 - Misthalin
+     *      7 - Morytania
+     *      8 - Tirannwn
+     *      9 - Wilderness
+     *      10 - Zeah
+     */
+    public void sendTasksToInterface() {
+        Server.gameDb.execute(connection -> {
+            PreparedStatement statement = null;
+            ResultSet rs = null;
+            StringBuilder sb = new StringBuilder();
+            int count = 0;
+            try {
+                statement = connection.prepareStatement(TaskSQLBuilder.getSelectQuery(player, searchString));
+                rs = statement.executeQuery();
+                while (rs.next()) {
+                    int uuid = rs.getInt("uuid");
+                    boolean completed = completeTasks.contains(uuid);
+                    if (completed && Config.TASK_INTERFACE_COMPLETED.get(player) == 1)
+                        continue;
+                    if (!completed && Config.TASK_INTERFACE_COMPLETED.get(player) == 2)
+                        continue;
+                    String name = rs.getString("name");
+                    String difficulty = rs.getString("difficulty");
+                    String region = rs.getString("region");
+                    if (count++ > 0) {
+                        sb.append("|");
+                    }
+                    sb.append(name).append("|");
+                    TaskDifficulty taskDifficulty = TaskDifficulty.getTaskDifficulty(difficulty);
+                    sb.append(taskDifficulty == null ? 0 : taskDifficulty.ordinal()).append("|");
+                    sb.append(completed ? "1" : "0").append("|");
+                    TaskArea taskArea = TaskArea.getTaskArea(region);
+                    sb.append(taskArea == null ? 0 : taskArea.ordinal());
+                }
+            } finally {
+                DatabaseUtils.close(statement, rs);
+                int finalCount = count;
+                player.addEvent(e -> {
+                    player.getPacketSender().sendClientScript(10060, "is", finalCount, sb.toString());
+                    player.getPacketSender().sendAccessMask(1008, 24, 0, finalCount * 3, 2);
+                });
+            }
+        });
     }
 }

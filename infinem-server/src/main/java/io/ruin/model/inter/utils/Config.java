@@ -1129,6 +1129,15 @@ public class Config {
     public static final Config ASK_TIME_PLAYED = varpbit(12962, true);
 
     /**
+     * Task Interface Filters/Sort
+     */
+    public static final Config TASK_INTERFACE_AREA = varpbit(11689, false);
+    public static final Config TASK_INTERFACE_SKILL = varpbit(11692, false);
+    public static final Config TASK_INTERFACE_TIER = varpbit(10033, false);
+    public static final Config TASK_INTERFACE_COMPLETED = varpbit(10034, false);
+    public static final Config TASK_INTERFACE_SORT = varpbit(10032, false);
+
+    /**
      * Separator
      */
 

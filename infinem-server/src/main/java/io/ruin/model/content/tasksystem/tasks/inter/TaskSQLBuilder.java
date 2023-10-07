@@ -40,7 +40,7 @@ public class TaskSQLBuilder {
      * @return ORDER BY string
      */
     private static String getOrder(Player player) {
-        int sort = player.getTaskManager().getSortBy();
+        int sort = Config.TASK_INTERFACE_SORT.get(player);
         String order = sort == 0 ? REGION_FIELD + "," + DIFFICULTY_FIELD
                 : sort == 1 ? DIFFICULTY_FIELD + "," + REGION_FIELD + ",name"
                 : "name," + REGION_FIELD + "," + DIFFICULTY_FIELD;
@@ -58,11 +58,11 @@ public class TaskSQLBuilder {
      * @return Filter string that should follow WHERE/OR
      */
     private static String getFilters(Player player) {
-        int tier = player.getTaskManager().getTierFilter();
+        int tier = Config.TASK_INTERFACE_TIER.get(player);
         String tierString = tier == 0 ? "" : "difficulty = '" + TaskDifficulty.values()[tier - 1].name() + "' ";
-        int area = player.getTaskManager().getRegionFilter();
+        int area = Config.TASK_INTERFACE_AREA.get(player);
         String areaString = area == 0 ? "" : "region = '" + TaskArea.values()[area - 1].toString() + "' ";
-        int skill = player.getTaskManager().getSkillFilter(); // TODO process this
+        int skill = Config.TASK_INTERFACE_SKILL.get(player); // TODO process this
         String filterString = "";
         if (!tierString.trim().isEmpty()) {
             filterString = filterString + tierString;
