@@ -8,7 +8,6 @@ import io.ruin.model.inter.InterfaceType;
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 9/15/2023
  */
-//TODO Actual scrolling lol
 public class ScrollingScroll {
     private final String title;
     private final String lines;
@@ -29,7 +28,6 @@ public class ScrollingScroll {
 
     public void open(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.SCROLLING_SCROLL);
-        player.getPacketSender().sendString(Interface.SCROLLING_SCROLL, 4, title);
-        player.getPacketSender().sendString(Interface.SCROLLING_SCROLL, 7, lines);
+        player.getPacketSender().sendClientScript(418, "ss", title, lines);
     }
 }

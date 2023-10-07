@@ -40,6 +40,7 @@ public class Grace {
         NPCAction.register(5919, "view laps", ((player, npc) -> {
             ScrollingScroll scroll = new ScrollingScroll("Agility Course Lap Counts",
                     "~~~Rooftop Agility Laps~~~",
+                    "",
                     "Draynor Village - " + PlayerCounter.DRAYNOR_ROOFTOP.get(player) + " Laps",
                     "Al Kharid - " + PlayerCounter.ALKHARID_ROOFTOP.get(player) + " Laps",
                     "Varrock - " + PlayerCounter.VARROCK_ROOFTOP.get(player) + " Laps",
@@ -49,7 +50,9 @@ public class Grace {
                     "Pollnivneach - " + PlayerCounter.POLLNIVNEACH_ROOFTOP.get(player) + " Laps",
                     "Rellekka - " + PlayerCounter.RELLEKKA_ROOFTOP.get(player) + " Laps",
                     "Ardougne - " + PlayerCounter.ARDOUGNE_ROOFTOP.get(player) + " Laps",
+                    "",
                     "~~~Miscellaneous Courses~~~",
+                    "",
                     "Agility Pyramid - " + PlayerCounter.AGILITY_PYRAMID.get(player) + " Laps",
                     "Gnome Agility - " + PlayerCounter.GNOME_STRONGHOLD_COURSE.get(player) + " Laps",
                     "Barbarian Outpost Agility - " + PlayerCounter.BARBARIAN_COURSE.get(player) + " Laps",
