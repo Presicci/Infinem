@@ -21,7 +21,7 @@ public class Server extends ServerWrapper {
     public static void main(String[] args) throws Exception {
         try {
             Properties properties = new Properties();
-            File systemProps = new File("E:\\Projects\\Runescape\\Infinem\\infinem-server\\server.properties");
+            File systemProps = new File("..\\infinem-server\\server.properties");
             log.info("Looking for system.properties in {}", systemProps.getAbsolutePath());
             try (InputStream in = new FileInputStream(systemProps)) {
                 properties.load(in);
