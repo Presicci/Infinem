@@ -1,6 +1,7 @@
 package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.cache.NPCDef;
+import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 
 /**
@@ -20,5 +21,14 @@ public class DropViewerEntry {
     public DropViewerEntry(String name, LootTable table) {
         this.name = name;
         this.table = table;
+    }
+
+    public DropViewerEntry(String name, LootTable... tables) {
+        LootTable finalTable = new LootTable();
+        for (LootTable table : tables) {
+            finalTable.addTable(0, table.getLootItems().toArray(new LootItem[0]));
+        }
+        this.name = name;
+        this.table = finalTable;
     }
 }

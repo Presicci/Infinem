@@ -18,14 +18,14 @@ import java.util.List;
  */
 public class GrubbyChest {
 
-    private static final LootTable FOOD = new LootTable().addTable(0,
+    public static final LootTable FOOD = new LootTable().addTable(0,
             new LootItem(Items.EGG_POTATO, 4, 11),
             new LootItem(Items.SHARK, 4, 7),
             new LootItem(Items.SARADOMIN_BREW_2, 3, 1),
             new LootItem(Items.SUPER_RESTORE_2, 1, 1)
     );
 
-    private static final LootTable POTION = new LootTable().addTable(0,
+    public static final LootTable POTION = new LootTable().addTable(0,
             new LootItem(Items.SUPER_DEFENCE_2, 1, 8),
             new LootItem(Items.SUPER_ATTACK_2, 1, 3),
             new LootItem(Items.SUPER_STRENGTH_2, 1, 3),
@@ -34,7 +34,7 @@ public class GrubbyChest {
             new LootItem(Items.SUPER_RESTORE_3, 2, 1)
     );
 
-    private static final LootTable MAIN = new LootTable().addTable(0,
+    public static final LootTable MAIN = new LootTable().addTable(0,
             new LootItem(Items.LAW_RUNE, 200, 6),
             new LootItem(Items.DEATH_RUNE, 200, 6),
             new LootItem(Items.ASTRAL_RUNE, 200, 6),
