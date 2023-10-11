@@ -45,7 +45,7 @@ public class CrystalChest {
                     new LootItem(Items.RAW_SWORDFISH, 5, 0)
             ).addTable(2,   // Adamant sq shield
                     new LootItem(Items.ADAMANT_SQ_SHIELD, 1, 0)
-            ).addTable(12,   // Rune platelegs or plateskirt
+            ).addTable(1,   // Rune platelegs or plateskirt
                     new LootItem(Items.RUNE_PLATELEGS, 1, 1),
                     new LootItem(Items.RUNE_PLATESKIRT, 1, 1)
             ).addTable(17,   // "NOTHING"
