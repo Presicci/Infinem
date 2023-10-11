@@ -1,7 +1,6 @@
 package io.ruin.model.map.object.actions.impl.chests;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.World;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.loot.LootItem;
@@ -12,7 +11,7 @@ import java.util.List;
 
 public class ElvenCrystalChest {
 
-    private static final LootTable LOOT = new LootTable()
+    public static final LootTable LOOT_TABLE = new LootTable()
             .addTable(128,   // Crystal key halves
                     new LootItem(Items.UNCUT_DRAGONSTONE, 1, 0),
                     new LootItem(Items.COINS, 10000, 15000, 0),
@@ -90,7 +89,7 @@ public class ElvenCrystalChest {
                     player.getInventory().addOrDrop(Items.UNCUT_ONYX, 1);
                     player.getCollectionLog().collect(Items.UNCUT_ONYX);
                 } else {
-                    List<Item> loot = LOOT.rollItems(true);
+                    List<Item> loot = LOOT_TABLE.rollItems(true);
                     for(Item item : loot) {
                         player.getInventory().addOrDrop(item.getId(), item.getAmount());
                         player.getCollectionLog().collect(item);
