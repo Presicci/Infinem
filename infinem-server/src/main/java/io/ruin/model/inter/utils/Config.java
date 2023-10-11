@@ -112,7 +112,7 @@ public class Config {
      * Advanced options
      */
 
-    public static final Config TRANSPARENT_SIDE_PANEL = varpbit(4609, true);
+    public static final Config TRANSPARENT_SIDE_PANEL = varpbit(4609, true).defaultValue(1);
 
     public static final Config REMAINING_XP_TOOLTIP = varpbit(4181, true);
 
@@ -1116,6 +1116,8 @@ public class Config {
     public static final Config DRUIDIC_RITUAL = varp(80, false).defaultValue(4);    // Lets skill lamps be used on herblore
     public static final Config RUNE_MYSTERIES = varp(63, false).defaultValue(6);    // Lets skill lamps be used on runecrafting
     public static final Config OWNS_A_HOUSE = varpbit(2187, false).defaultValue(1); // Lets skill lamps be used on construction
+    public static final Config ADVENTURE_PATHS_QUEST_TAB = varpbit(9340, false).defaultValue(1);    // Enables the adventurer's path tab in the quest panel
+    public static final Config ACTIVE_QUEST_TAB = varpbit(8168, false);
 
     /**
      * Agility Pyramid
