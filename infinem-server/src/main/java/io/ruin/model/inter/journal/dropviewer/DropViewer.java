@@ -16,6 +16,7 @@ import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.actions.impl.chests.BrimstoneChest;
 import io.ruin.model.map.object.actions.impl.chests.CrystalChest;
+import io.ruin.model.map.object.actions.impl.chests.DarkChest;
 import io.ruin.model.map.object.actions.impl.chests.ElvenCrystalChest;
 
 import java.util.*;
@@ -37,7 +38,8 @@ public class DropViewer {
             new DropViewerEntry("Master Clue Casket", ClueType.MASTER.lootTable),
             new DropViewerEntry("Crystal Chest", CrystalChest.LOOT_TABLE),
             new DropViewerEntry("Elven Crystal Chest", ElvenCrystalChest.LOOT_TABLE),
-            new DropViewerEntry("Brimstone Chest", BrimstoneChest.LOOT_TABLE)
+            new DropViewerEntry("Brimstone Chest", BrimstoneChest.LOOT_TABLE),
+            new DropViewerEntry("Dark Chest", DarkChest.LOOT_TABLE)
     };
 
     public static void open(Player player) {

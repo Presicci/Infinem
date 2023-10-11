@@ -9,7 +9,6 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.skills.thieving.ThievableChests;
 import io.ruin.model.stat.StatType;
 
 import java.util.List;
@@ -22,7 +21,7 @@ public class DarkChest {
 
     private static final int DARK_KEY = 25244;
 
-    private static final LootTable LOOT = new LootTable()
+    public static final LootTable LOOT_TABLE = new LootTable()
             .addTable(9021, // Equipment
                     new LootItem(Items.RUNE_PICKAXE, 1, 2590),
                     new LootItem(Items.RUNE_AXE, 1, 2200),
@@ -79,7 +78,7 @@ public class DarkChest {
                     obj.setId(obj.originalId);
                 });
                 player.getInventory().remove(DARK_KEY, 1);
-                List<Item> loot = LOOT.rollItems(true);
+                List<Item> loot = LOOT_TABLE.rollItems(true);
                 for(Item item : loot) {
                     player.getInventory().addOrDrop(item.getId(), item.getAmount());
                 }
