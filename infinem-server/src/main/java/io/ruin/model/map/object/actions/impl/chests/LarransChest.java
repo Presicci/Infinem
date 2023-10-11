@@ -14,15 +14,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  */
 public class LarransChest {
 
-    private static final LootTable rareTable = new LootTable()
-            .addTable(1,
-                    new LootItem(24288, 1, 1),  // Hat
-                    new LootItem(24291, 1, 1),  // Robe top
-                    new LootItem(24294, 1, 1)   // Robe bottom
-            );
-
-    private static final LootTable bigTable = new LootTable()
-            .addTable(1,
+    public static final LootTable bigTable = new LootTable()
+            .addTable(253,
                     new LootItem(Items.UNCUT_DIAMOND_NOTE, 35, 45, 5),
                     new LootItem(Items.UNCUT_RUBY_NOTE, 35, 45, 5),
                     new LootItem(Items.COAL_NOTE, 450, 650, 5),
@@ -49,9 +42,13 @@ public class LarransChest {
                     new LootItem(Items.TORSTOL_SEED, 4, 6, 1),
                     new LootItem(Items.SNAPDRAGON_SEED, 4, 6, 1),
                     new LootItem(Items.RANARR_SEED, 4, 6, 1)
+            ).addTable(3,
+                    new LootItem(24288, 1, 1),  // Hat
+                    new LootItem(24291, 1, 1),  // Robe top
+                    new LootItem(24294, 1, 1)   // Robe bottom
             );
 
-    private static final LootTable smallTable = new LootTable()
+    public static final LootTable smallTable = new LootTable()
             .addTable(1,
                     new LootItem(Items.UNCUT_DIAMOND_NOTE, 15, 25, 5),
                     new LootItem(Items.UNCUT_RUBY_NOTE, 20, 30, 5),
@@ -104,12 +101,8 @@ public class LarransChest {
             player.animate(536);
             Item loot = big ? bigTable.rollItem() : smallTable.rollItem();
             player.getInventory().addOrDrop(loot);
-            if (big && Random.rollDie(256)) {
-                loot = rareTable.rollItem();
-                player.getInventory().addOrDrop(loot);
-                player.getTaskManager().doUnlockItemLookup(loot);
-                player.getTaskManager().doDropGroupLookup(loot.getDef().name.toLowerCase());
-            }
+            player.getTaskManager().doUnlockItemLookup(loot);
+            player.getTaskManager().doDropGroupLookup(loot.getDef().name.toLowerCase());
             event.delay(1);
             player.unlock();
         });
