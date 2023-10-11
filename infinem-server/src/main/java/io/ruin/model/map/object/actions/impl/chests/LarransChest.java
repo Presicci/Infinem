@@ -103,6 +103,7 @@ public class LarransChest {
             player.getInventory().addOrDrop(loot);
             player.getTaskManager().doUnlockItemLookup(loot);
             player.getTaskManager().doDropGroupLookup(loot.getDef().name.toLowerCase());
+            player.getCollectionLog().collect(loot);
             event.delay(1);
             player.unlock();
         });
