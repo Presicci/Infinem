@@ -11,7 +11,7 @@ import java.util.List;
 
 public class CrystalChest {
 
-    private static final LootTable LOOT = new LootTable()
+    public static final LootTable LOOT_TABLE = new LootTable().guaranteedItems(new LootItem(Items.UNCUT_DRAGONSTONE, 1, 0))
             .addTable(34,   // Spinach Roll
                     new LootItem(Items.SPINACH_ROLL, 1, 0),
                     new LootItem(Items.COINS, 2000, 0)
@@ -70,8 +70,9 @@ public class CrystalChest {
                     e.delay(2);
                     obj.setId(obj.originalId);
                 });
-                crystalKey.setId(1631); //dragonstone
-                List<Item> loot = LOOT.rollItems(true);
+                crystalKey.remove();
+                //crystalKey.setId(1631); //dragonstone
+                List<Item> loot = LOOT_TABLE.rollItems(true);
                 for(Item item : loot) {
                     player.getInventory().addOrDrop(item.getId(), item.getAmount());
                 }
