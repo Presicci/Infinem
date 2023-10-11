@@ -402,7 +402,7 @@ public class StarterGuide {
         player.getInventory().add(1381, 1); // Air Staff
         player.getInventory().add(1153, 1); // Iron full helm
         player.getInventory().add(1115, 1); // Iron platebody
-        player.getInventory().add(1075, 1); // Iron platelegs
+        player.getInventory().add(1067, 1); // Iron platelegs
         player.getInventory().add(1323, 1); // Iron scim
         player.getInventory().add(757, 1); // Guide book
         switch (player.getGameMode()) {
