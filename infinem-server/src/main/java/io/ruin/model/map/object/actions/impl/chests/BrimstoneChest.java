@@ -21,18 +21,18 @@ public class BrimstoneChest {
 
     private static final PlayerCounter chestCounter = PlayerCounter.BRIMSTONE_CHESTS_OPENED;
 
-    private static final LootTable LOOT_TABLE = new LootTable().addTable(0,
-            new LootItem(Items.UNCUT_DIAMOND_NOTE, 25, 35, 52),
-            new LootItem(Items.UNCUT_RUBY_NOTE, 25, 35, 52),
-            new LootItem(Items.COAL_NOTE, 300, 500, 52),
-            new LootItem(Items.COINS, 50000, 150000, 52),
-            new LootItem(Items.GOLD_ORE_NOTE, 100, 200,52),
-            new LootItem(Items.DRAGON_ARROWTIPS, 50, 200, 42),
-            new LootItem(Items.IRON_ORE_NOTE, 350, 500, 42),
-            new LootItem(Items.RUNE_FULL_HELM_NOTE, 2, 4, 42),
-            new LootItem(Items.RUNE_PLATEBODY_NOTE, 1, 2, 42),
-            new LootItem(Items.RUNE_PLATELEGS_NOTE, 1, 2, 42),
-            new LootItem(-1, 1, 1, 42), // RAW FOOD ROLL
+    public static final LootTable LOOT_TABLE = new LootTable().addTable(0,
+            new LootItem(Items.UNCUT_DIAMOND_NOTE, 25, 35, 80),
+            new LootItem(Items.UNCUT_RUBY_NOTE, 25, 35, 80),
+            new LootItem(Items.COAL_NOTE, 300, 500, 80),
+            new LootItem(Items.COINS, 50000, 150000, 80),
+            new LootItem(Items.GOLD_ORE_NOTE, 100, 200,64),
+            new LootItem(Items.DRAGON_ARROWTIPS, 50, 200, 64),
+            new LootItem(Items.IRON_ORE_NOTE, 350, 500, 48),
+            new LootItem(Items.RUNE_FULL_HELM_NOTE, 2, 4, 48),
+            new LootItem(Items.RUNE_PLATEBODY_NOTE, 1, 2, 48),
+            new LootItem(Items.RUNE_PLATELEGS_NOTE, 1, 2, 48),
+            new LootItem(Items.RAW_TUNA_NOTE, 80, 350, 48), // RAW FOOD ROLL
             new LootItem(Items.RUNITE_ORE_NOTE, 10, 15, 32),
             new LootItem(Items.STEEL_BAR_NOTE, 300, 500, 32),
             new LootItem(Items.MAGIC_LOGS_NOTE, 120, 160, 32),
@@ -93,7 +93,7 @@ public class BrimstoneChest {
             brimstoneKey.remove(1);
             player.animate(536);
             Item loot = LOOT_TABLE.rollItem();
-            if (loot.getId() == -1)
+            if (loot.getId() == Items.RAW_TUNA_NOTE)
                 loot = rollRawFood(player);
             player.getInventory().addOrDrop(loot);
             chestCounter.increment(player, 1);
