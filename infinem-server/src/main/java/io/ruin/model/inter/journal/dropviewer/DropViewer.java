@@ -3,6 +3,7 @@ package io.ruin.model.inter.journal.dropviewer;
 import io.ruin.cache.Color;
 import io.ruin.cache.NPCDef;
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -23,6 +24,9 @@ import java.util.*;
 public class DropViewer {
 
     protected static final HashMap<Integer, LinkedHashSet<NPCDef>> drops = new HashMap<>();
+    protected static final HashMap<Integer, LinkedHashSet<DropViewerEntry>> NON_NPC_DROPS = new HashMap<>();
+    protected static final DropViewerEntry[] CUSTOM_ENTRIES = new DropViewerEntry[] {
+    };
 
     public static void open(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.DROP_VIEWER);
@@ -169,6 +173,11 @@ public class DropViewer {
             if (def != null && def.combatInfo != null && def.combatInfo.pet != null)
                 drops.computeIfAbsent(def.combatInfo.pet.itemId, k -> new LinkedHashSet<>()).add(def);
         });
+        for (DropViewerEntry entry : CUSTOM_ENTRIES) {
+            for (LootItem item : entry.table.getLootItems()) {
+                NON_NPC_DROPS.computeIfAbsent(item.id, k -> new LinkedHashSet<>()).add(entry);
+            }
+        }
         InterfaceHandler.register(Interface.DROP_VIEWER, h -> {
             h.actions[16] = (SlotAction) DropViewer::clickEntry;
             h.actions[17] = (SimpleAction) player -> player.stringInput("<img=108> Enter monster name to search for:", name -> DropViewerSearch.search(player, name, true));

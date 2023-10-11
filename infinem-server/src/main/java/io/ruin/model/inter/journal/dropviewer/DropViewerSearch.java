@@ -38,14 +38,21 @@ public class DropViewerSearch {
                             return;
                         map.computeIfAbsent(searchName, k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef);
                     });
+                    for (DropViewerEntry entry : DropViewer.CUSTOM_ENTRIES) {
+                        if (formatForSearch(entry.name).contains(search))
+                            results.add(entry);
+                    }
                 } else {
                     ItemDef.forEach(itemDef -> {
                         if (!formatForSearch(itemDef.name).contains(search))
                             return;
                         HashSet<NPCDef> npcDefs = DropViewer.drops.get(itemDef.id);
-                        if (npcDefs == null)
-                            return;
-                        npcDefs.forEach(npcDef -> map.computeIfAbsent(formatForSearch(npcDef.name), k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef));
+                        if (npcDefs != null)
+                            npcDefs.forEach(npcDef -> map.computeIfAbsent(formatForSearch(npcDef.name), k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef));
+                        HashSet<DropViewerEntry> nonNPCEntries = DropViewer.NON_NPC_DROPS.get(itemDef.id);
+                        if (nonNPCEntries != null) {
+                            nonNPCEntries.stream().filter(e -> !results.contains(e)).forEach(results::add);
+                        }
                     });
                 }
                 map.values().forEach(levelsMap -> {
