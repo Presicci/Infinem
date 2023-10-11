@@ -26,6 +26,12 @@ public class DropViewer {
     protected static final HashMap<Integer, LinkedHashSet<NPCDef>> drops = new HashMap<>();
     protected static final HashMap<Integer, LinkedHashSet<DropViewerEntry>> NON_NPC_DROPS = new HashMap<>();
     protected static final DropViewerEntry[] CUSTOM_ENTRIES = new DropViewerEntry[] {
+            new DropViewerEntry("Beginner Clue Casket", ClueType.BEGINNER.lootTable),
+            new DropViewerEntry("Easy Clue Casket", ClueType.EASY.lootTable),
+            new DropViewerEntry("Medium Clue Casket", ClueType.MEDIUM.lootTable),
+            new DropViewerEntry("Hard Clue Casket", ClueType.HARD.lootTable),
+            new DropViewerEntry("Elite Clue Casket", ClueType.ELITE.lootTable),
+            new DropViewerEntry("Master Clue Casket", ClueType.MASTER.lootTable)
     };
 
     public static void open(Player player) {
