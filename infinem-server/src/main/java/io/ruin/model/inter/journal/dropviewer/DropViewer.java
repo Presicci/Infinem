@@ -15,8 +15,10 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
+import io.ruin.model.map.object.actions.impl.Pickables;
 import io.ruin.model.map.object.actions.impl.chests.*;
 import io.ruin.model.map.object.actions.impl.chests.CrystalChest;
+import io.ruin.model.skills.thieving.PickPocket;
 
 import java.util.*;
 
@@ -53,6 +55,24 @@ public class DropViewer {
             new DropViewerEntry("Ninja Impling", ImplingJar.NINJA_IMPLING_JAR.getLootTable()),
             new DropViewerEntry("Crystal Impling", ImplingJar.CRYSTAL_IMPLING_JAR.getLootTable()),
             new DropViewerEntry("Dragon Impling", ImplingJar.DRAGON_IMPLING_JAR.getLootTable()),
+            new DropViewerEntry("Man (Pickpocket)", PickPocket.MAN.lootTable),
+            new DropViewerEntry("Woman (Pickpocket)", PickPocket.WOMAN.lootTable),
+            new DropViewerEntry("Farmer (Pickpocket)", PickPocket.FARMER.lootTable),
+            new DropViewerEntry("H.A.M Members (Pickpocket)", PickPocket.HAM.lootTable),
+            new DropViewerEntry("Warrior (Pickpocket)", PickPocket.WARRIOR.lootTable),
+            new DropViewerEntry("Rogue (Pickpocket)", PickPocket.ROGUE.lootTable),
+            new DropViewerEntry("Cave Goblin (Pickpocket)", PickPocket.CAVE_GOBLIN.lootTable),
+            new DropViewerEntry("Master Farmer (Pickpocket)", PickPocket.MASTER_FARMER.lootTable),
+            new DropViewerEntry("Guard (Pickpocket)", PickPocket.GUARD.lootTable),
+            new DropViewerEntry("Bandit (Pickpocket)", PickPocket.BANDIT.lootTable),
+            new DropViewerEntry("Knight (Pickpocket)", PickPocket.KNIGHT.lootTable),
+            new DropViewerEntry("Watchman (Pickpocket)", PickPocket.WATCHMAN.lootTable),
+            new DropViewerEntry("Paladin (Pickpocket)", PickPocket.PALADIN.lootTable),
+            new DropViewerEntry("Gnome (Pickpocket)", PickPocket.GNOME.lootTable),
+            new DropViewerEntry("Hero (Pickpocket)", PickPocket.HERO.lootTable),
+            new DropViewerEntry("Vyre (Pickpocket)", PickPocket.VYRE.lootTable),
+            new DropViewerEntry("TzHaar-Hur (Pickpocket)", PickPocket.TZHAAR_HUR.lootTable),
+
     };
 
     public static void open(Player player) {
