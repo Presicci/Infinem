@@ -12,14 +12,13 @@ import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.cache.ItemID.COINS_995;
 
 public class WallSafe {
 
-    public static final LootTable table = new LootTable().addTable(1,
+    public static final LootTable LOOT_TABLE = new LootTable().addTable(1,
             new LootItem(COINS_995, 50, 200, 295),   //coins
             new LootItem(1623, 1, 100),     //sapphire 1/5
             new LootItem(1621, 1, 25),      //emerald 1/20
@@ -98,7 +97,7 @@ public class WallSafe {
     }
 
     private static Item getLoot(Player player) {
-        Item item = table.rollItem();
+        Item item = LOOT_TABLE.rollItem();
         if (item.getId() == COINS_995) {
             item.setAmount((int) (item.getAmount() * ((1 + (player.getStats().get(StatType.Thieving).fixedLevel - 49) * 0.02))));
         }
