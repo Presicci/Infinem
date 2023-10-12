@@ -19,6 +19,7 @@ import io.ruin.model.map.object.actions.impl.Pickables;
 import io.ruin.model.map.object.actions.impl.chests.*;
 import io.ruin.model.map.object.actions.impl.chests.CrystalChest;
 import io.ruin.model.skills.thieving.PickPocket;
+import io.ruin.model.skills.thieving.Stall;
 
 import java.util.*;
 
@@ -72,6 +73,25 @@ public class DropViewer {
             new DropViewerEntry("Hero (Pickpocket)", PickPocket.HERO.lootTable),
             new DropViewerEntry("Vyre (Pickpocket)", PickPocket.VYRE.lootTable),
             new DropViewerEntry("TzHaar-Hur (Pickpocket)", PickPocket.TZHAAR_HUR.lootTable),
+            new DropViewerEntry("Vegetable Stall", Stall.VEGETABLE_STALL.lootTable),
+            new DropViewerEntry("Baker's Stall", Stall.BAKERS_STALL.lootTable),
+            new DropViewerEntry("Crafting Stall", Stall.CRAFTING_STALL.lootTable),
+            new DropViewerEntry("Monkey Food Stall", Stall.MONKEY_FOOD_STALL.lootTable),
+            new DropViewerEntry("Monkey General Stall", Stall.MONKEY_GENERAL_STALL.lootTable),
+            new DropViewerEntry("Tea Stall", Stall.TEA_STALL.lootTable),
+            new DropViewerEntry("Silk Stall", Stall.SILK_STALL.lootTable),
+            new DropViewerEntry("Wine Stall", Stall.WINE_STALL.lootTable),
+            new DropViewerEntry("Fruit Stall", Stall.FRUIT_STALL.lootTable),
+            new DropViewerEntry("Seed Stall", Stall.SEED_STALL.lootTable),
+            new DropViewerEntry("Fur Stall", Stall.FUR_STALL.lootTable),
+            new DropViewerEntry("Fish Stall", Stall.FISH_STALL.lootTable),
+            new DropViewerEntry("Crossbow Stall", Stall.CROSSBOW_STALL.lootTable),
+            new DropViewerEntry("Silver Stall", Stall.SILVER_STALL.lootTable),
+            new DropViewerEntry("Spice Stall", Stall.SPICE_STALL.lootTable),
+            new DropViewerEntry("Magic Stall", Stall.MAGIC_STALL.lootTable),
+            new DropViewerEntry("Scimitar Stall", Stall.SCIMITAR_STALL.lootTable),
+            new DropViewerEntry("Gem Stall", Stall.GEM_STALL.lootTable),
+            new DropViewerEntry("Ore Stall", Stall.ORE_STALL.lootTable),
 
     };
 
