@@ -85,7 +85,7 @@ public class ThievableChests {
         ARROWTIP(11742, 47, 150.0, 60, false,
                 new LootTable().addTable(1,
                         new LootItem(41, 5, 10, 0),
-                        new LootItem(995, 30, 0)
+                        new LootItem(995, 20, 0)
                 ),
                 new Position[]{new Position(2650, 3659), new Position(2639, 3424)}),
 
