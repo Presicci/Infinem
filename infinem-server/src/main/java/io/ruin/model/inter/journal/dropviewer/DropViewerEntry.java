@@ -23,10 +23,12 @@ public class DropViewerEntry {
         this.table = table;
     }
 
-    public DropViewerEntry(String name, LootTable... tables) {
+    public DropViewerEntry(String name, boolean preserveWeight, LootTable... tables) {
         LootTable finalTable = new LootTable();
         for (LootTable table : tables) {
-            finalTable.addTable(0, table.getLootItems().toArray(new LootItem[0]));
+            for (LootTable.ItemsTable iTable : table.tables) {
+                finalTable.addTable(preserveWeight ? iTable.weight : 0, iTable.items);
+            }
         }
         this.name = name;
         this.table = finalTable;
