@@ -196,7 +196,11 @@ public enum PickPocket {
             22533,
             42.97,
             0.5859,
-            new LootTable().guaranteedItems(new LootItem(995, 60, 1), new LootItem(Items.BREAD, 1, 1))),
+            new LootTable().addTable(1,
+                    new LootItem(995, 60, 0),
+                    new LootItem(Items.BREAD, 1, 0)
+            )
+    ),
     PALADIN(70, 151.75, 386, 5, 3, "paladin's", PlayerCounter.PICKPOCKETED_PALADIN,
             127056,
             22535,
