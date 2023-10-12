@@ -20,6 +20,7 @@ import io.ruin.model.map.object.actions.impl.chests.*;
 import io.ruin.model.map.object.actions.impl.chests.CrystalChest;
 import io.ruin.model.skills.thieving.PickPocket;
 import io.ruin.model.skills.thieving.Stall;
+import io.ruin.model.skills.thieving.ThievableChests;
 
 import java.util.*;
 
@@ -59,7 +60,7 @@ public class DropViewer {
             new DropViewerEntry("Man (Pickpocket)", PickPocket.MAN.lootTable),
             new DropViewerEntry("Woman (Pickpocket)", PickPocket.WOMAN.lootTable),
             new DropViewerEntry("Farmer (Pickpocket)", PickPocket.FARMER.lootTable),
-            new DropViewerEntry("H.A.M Members (Pickpocket)", PickPocket.HAM.lootTable),
+            new DropViewerEntry("H.A.M Member (Pickpocket)", PickPocket.HAM.lootTable),
             new DropViewerEntry("Warrior (Pickpocket)", PickPocket.WARRIOR.lootTable),
             new DropViewerEntry("Rogue (Pickpocket)", PickPocket.ROGUE.lootTable),
             new DropViewerEntry("Cave Goblin (Pickpocket)", PickPocket.CAVE_GOBLIN.lootTable),
@@ -92,6 +93,15 @@ public class DropViewer {
             new DropViewerEntry("Scimitar Stall", Stall.SCIMITAR_STALL.lootTable),
             new DropViewerEntry("Gem Stall", Stall.GEM_STALL.lootTable),
             new DropViewerEntry("Ore Stall", Stall.ORE_STALL.lootTable),
+            new DropViewerEntry("Isle of Souls Chest", ThievableChests.Chest.ISLE_OF_SOULS.lootTable),
+            new DropViewerEntry("Ardougne Castle Chest", ThievableChests.Chest.ARDOUGNE_CASTLE.lootTable),
+            new DropViewerEntry("Stone Chest", ThievableChests.Chest.STONE_CHEST.lootTable),
+            new DropViewerEntry("Dorgesh-Kaan Avg Chest", ThievableChests.Chest.DORGESH_KAAN.lootTable),
+            new DropViewerEntry("Dorgesh-Kaan Rich Chest", ThievableChests.Chest.DORG_RICH.lootTable),
+            new DropViewerEntry("Rogue's Castle Chest", ThievableChests.Chest.ROGUES_CASTLE.lootTable),
+            new DropViewerEntry("East Ardougne Chest", ThievableChests.Chest.NATURE.lootTable),
+            new DropViewerEntry("Chaos Druid Tower Chest", ThievableChests.Chest.BLOOD.lootTable)
+            new DropViewerEntry("Steel Arrowtip Chest", ThievableChests.Chest.ARROWTIP.lootTable)
 
     };
 
@@ -242,6 +252,7 @@ public class DropViewer {
         });
         for (DropViewerEntry entry : CUSTOM_ENTRIES) {
             for (LootItem item : entry.table.getLootItems()) {
+                System.out.println(entry.name + ": " + item.id);
                 NON_NPC_DROPS.computeIfAbsent(item.id, k -> new LinkedHashSet<>()).add(entry);
             }
         }
