@@ -12,6 +12,7 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.actions.impl.chests.*;
@@ -40,7 +41,18 @@ public class DropViewer {
             new DropViewerEntry("Dark Chest", DarkChest.LOOT_TABLE),
             new DropViewerEntry("Grubby Chest", GrubbyChest.MAIN, GrubbyChest.FOOD, GrubbyChest.POTION),
             new DropViewerEntry("Larrans Chest (Big)", LarransChest.bigTable),
-            new DropViewerEntry("Larrans Chest (Small)", LarransChest.smallTable)
+            new DropViewerEntry("Larrans Chest (Small)", LarransChest.smallTable),
+            new DropViewerEntry("Baby Impling", ImplingJar.BABY_IMPLING_JAR.getLootTable()),
+            new DropViewerEntry("Young Impling", ImplingJar.YOUNG_IMPLING_JAR.getLootTable()),
+            new DropViewerEntry("Gourmet Impling", ImplingJar.GOURMET_IMPLING_JAR.getLootTable()),
+            new DropViewerEntry("Earth Impling", ImplingJar.EARTH_IMPLING_JAR.getLootTable()),
+            new DropViewerEntry("Essence Impling", ImplingJar.ESSENCE_IMPLING_JAR.getLootTable()),
+            new DropViewerEntry("Eclectic Impling", ImplingJar.ECLECTIC_IMPLING_JAR.getLootTable()),
+            new DropViewerEntry("Nature Impling", ImplingJar.NATURE_IMPLING_JAR.getLootTable()),
+            new DropViewerEntry("Magpie Impling", ImplingJar.MAGPIE_IMPLING_JAR.getLootTable()),
+            new DropViewerEntry("Ninja Impling", ImplingJar.NINJA_IMPLING_JAR.getLootTable()),
+            new DropViewerEntry("Crystal Impling", ImplingJar.CRYSTAL_IMPLING_JAR.getLootTable()),
+            new DropViewerEntry("Dragon Impling", ImplingJar.DRAGON_IMPLING_JAR.getLootTable()),
     };
 
     public static void open(Player player) {
