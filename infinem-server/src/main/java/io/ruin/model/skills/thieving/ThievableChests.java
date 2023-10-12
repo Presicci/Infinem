@@ -133,7 +133,7 @@ public class ThievableChests {
                         ),
                 new Position[]{new Position(1302, 10087), new Position(1300, 10085), new Position(1300, 10089)}),
 
-        PALADIN(11739, 72, 500.0, 125, false,
+        ARDOUGNE_CASTLE(11739, 72, 500.0, 125, false,
                 new LootTable().addTable(1,
                         new LootItem(995, 1000, 0),
                         new LootItem(383, 1, 2, 0),
