@@ -21,6 +21,7 @@ import io.ruin.model.map.object.actions.impl.chests.CrystalChest;
 import io.ruin.model.skills.thieving.PickPocket;
 import io.ruin.model.skills.thieving.Stall;
 import io.ruin.model.skills.thieving.ThievableChests;
+import io.ruin.model.skills.thieving.WallSafe;
 
 import java.util.*;
 
@@ -100,8 +101,9 @@ public class DropViewer {
             new DropViewerEntry("Dorgesh-Kaan Rich Chest", ThievableChests.Chest.DORG_RICH.lootTable),
             new DropViewerEntry("Rogue's Castle Chest", ThievableChests.Chest.ROGUES_CASTLE.lootTable),
             new DropViewerEntry("East Ardougne Chest", ThievableChests.Chest.NATURE.lootTable),
-            new DropViewerEntry("Chaos Druid Tower Chest", ThievableChests.Chest.BLOOD.lootTable)
-            new DropViewerEntry("Steel Arrowtip Chest", ThievableChests.Chest.ARROWTIP.lootTable)
+            new DropViewerEntry("Chaos Druid Tower Chest", ThievableChests.Chest.BLOOD.lootTable),
+            new DropViewerEntry("Steel Arrowtip Chest", ThievableChests.Chest.ARROWTIP.lootTable),
+            new DropViewerEntry("Wall Safe", WallSafe.table),
 
     };
 
