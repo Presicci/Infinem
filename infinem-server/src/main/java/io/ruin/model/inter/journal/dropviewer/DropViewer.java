@@ -1,9 +1,11 @@
 package io.ruin.model.inter.journal.dropviewer;
 
+import io.ruin.api.utils.Tuple;
 import io.ruin.cache.Color;
 import io.ruin.cache.NPCDef;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.activities.combat.barrows.BarrowsRewards;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -12,6 +14,7 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
@@ -103,8 +106,11 @@ public class DropViewer {
             new DropViewerEntry("Chaos Druid Tower Chest", ThievableChests.Chest.BLOOD.lootTable),
             new DropViewerEntry("Steel Arrowtip Chest", ThievableChests.Chest.ARROWTIP.lootTable),
             new DropViewerEntry("Wall Safe", WallSafe.LOOT_TABLE),
-
     };
+
+    public static final HashMap<String, Tuple<Integer, String>[]> descriptionDrops = new HashMap<String, Tuple<Integer, String>[]>() {{
+        //put("barrows", new Tuple[]{ new Tuple(Items.DHAROKS_HELM, "Barrows unique|Random from brothers killed") });
+    }};
 
     public static void open(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.DROP_VIEWER);
@@ -178,8 +184,11 @@ public class DropViewer {
                             else
                                 chance = (int) (1D / (tableChance * (item.weight / table.totalWeight)));
                             List<Item> groupDrops = getGroupDrop(item.id, name);
+                            String dropDescription = getDropDescription(item.id, name);
                             if (groupDrops != null && groupDrops.size() > 1) {
                                 drops.add(new DropViewerResultPair(groupDrops.get(0), groupDrops.get(1), chance));
+                            } else if (dropDescription != null) {
+                                drops.add(new DropViewerResultDescription(item.id, dropDescription, chance));
                             } else {
                                 drops.add(new DropViewerResultItem(item.id, item.min, item.max, chance));
                             }
@@ -216,6 +225,19 @@ public class DropViewer {
         for (Item[] group : groups) {
             if (item == group[0].getId()) {
                 return (Arrays.asList(group));
+            }
+        }
+        return null;
+    }
+
+    private static String getDropDescription(int item, String name) {
+        Tuple<Integer, String>[] descriptons = descriptionDrops.get(name.toLowerCase());
+        if (descriptons == null) {
+            return null;
+        }
+        for (Tuple<Integer, String> description : descriptons) {
+            if (item == description.first()) {
+                return description.second();
             }
         }
         return null;
