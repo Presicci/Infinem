@@ -35,82 +35,6 @@ public class DropViewer {
 
     protected static final HashMap<Integer, LinkedHashSet<NPCDef>> drops = new HashMap<>();
     protected static final HashMap<Integer, LinkedHashSet<DropViewerEntry>> NON_NPC_DROPS = new HashMap<>();
-    protected static final DropViewerEntry[] CUSTOM_ENTRIES = new DropViewerEntry[] {
-            new DropViewerEntry("Beginner Clue Casket", ClueType.BEGINNER.lootTable),
-            new DropViewerEntry("Easy Clue Casket", ClueType.EASY.lootTable),
-            new DropViewerEntry("Medium Clue Casket", ClueType.MEDIUM.lootTable),
-            new DropViewerEntry("Hard Clue Casket", ClueType.HARD.lootTable),
-            new DropViewerEntry("Elite Clue Casket", ClueType.ELITE.lootTable),
-            new DropViewerEntry("Master Clue Casket", ClueType.MASTER.lootTable),
-            new DropViewerEntry("Crystal Chest", CrystalChest.LOOT_TABLE),
-            new DropViewerEntry("Elven Crystal Chest", ElvenCrystalChest.LOOT_TABLE),
-            new DropViewerEntry("Brimstone Chest", BrimstoneChest.LOOT_TABLE),
-            new DropViewerEntry("Dark Chest", DarkChest.LOOT_TABLE),
-            new DropViewerEntry("Grubby Chest", false, GrubbyChest.MAIN, GrubbyChest.FOOD, GrubbyChest.POTION),
-            new DropViewerEntry("Larrans Chest (Big)", LarransChest.bigTable),
-            new DropViewerEntry("Larrans Chest (Small)", LarransChest.smallTable),
-            new DropViewerEntry("Baby Impling", ImplingJar.BABY_IMPLING_JAR.getLootTable()),
-            new DropViewerEntry("Young Impling", ImplingJar.YOUNG_IMPLING_JAR.getLootTable()),
-            new DropViewerEntry("Gourmet Impling", ImplingJar.GOURMET_IMPLING_JAR.getLootTable()),
-            new DropViewerEntry("Earth Impling", ImplingJar.EARTH_IMPLING_JAR.getLootTable()),
-            new DropViewerEntry("Essence Impling", ImplingJar.ESSENCE_IMPLING_JAR.getLootTable()),
-            new DropViewerEntry("Eclectic Impling", ImplingJar.ECLECTIC_IMPLING_JAR.getLootTable()),
-            new DropViewerEntry("Nature Impling", ImplingJar.NATURE_IMPLING_JAR.getLootTable()),
-            new DropViewerEntry("Magpie Impling", ImplingJar.MAGPIE_IMPLING_JAR.getLootTable()),
-            new DropViewerEntry("Ninja Impling", ImplingJar.NINJA_IMPLING_JAR.getLootTable()),
-            new DropViewerEntry("Crystal Impling", ImplingJar.CRYSTAL_IMPLING_JAR.getLootTable()),
-            new DropViewerEntry("Dragon Impling", ImplingJar.DRAGON_IMPLING_JAR.getLootTable()),
-            new DropViewerEntry("Man (Pickpocket)", PickPocket.MAN.lootTable),
-            new DropViewerEntry("Woman (Pickpocket)", PickPocket.WOMAN.lootTable),
-            new DropViewerEntry("Farmer (Pickpocket)", PickPocket.FARMER.lootTable),
-            new DropViewerEntry("H.A.M Member (Pickpocket)", PickPocket.HAM.lootTable),
-            new DropViewerEntry("Warrior (Pickpocket)", PickPocket.WARRIOR.lootTable),
-            new DropViewerEntry("Rogue (Pickpocket)", PickPocket.ROGUE.lootTable),
-            new DropViewerEntry("Cave Goblin (Pickpocket)", PickPocket.CAVE_GOBLIN.lootTable),
-            new DropViewerEntry("Master Farmer (Pickpocket)", PickPocket.MASTER_FARMER.lootTable),
-            new DropViewerEntry("Guard (Pickpocket)", PickPocket.GUARD.lootTable),
-            new DropViewerEntry("Bandit (Pickpocket)", PickPocket.BANDIT.lootTable),
-            new DropViewerEntry("Knight (Pickpocket)", PickPocket.KNIGHT.lootTable),
-            new DropViewerEntry("Watchman (Pickpocket)", PickPocket.WATCHMAN.lootTable),
-            new DropViewerEntry("Paladin (Pickpocket)", PickPocket.PALADIN.lootTable),
-            new DropViewerEntry("Gnome (Pickpocket)", PickPocket.GNOME.lootTable),
-            new DropViewerEntry("Hero (Pickpocket)", PickPocket.HERO.lootTable),
-            new DropViewerEntry("Vyre (Pickpocket)", PickPocket.VYRE.lootTable),
-            new DropViewerEntry("TzHaar-Hur (Pickpocket)", PickPocket.TZHAAR_HUR.lootTable),
-            new DropViewerEntry("Vegetable Stall", Stall.VEGETABLE_STALL.lootTable),
-            new DropViewerEntry("Baker's Stall", Stall.BAKERS_STALL.lootTable),
-            new DropViewerEntry("Crafting Stall", Stall.CRAFTING_STALL.lootTable),
-            new DropViewerEntry("Monkey Food Stall", Stall.MONKEY_FOOD_STALL.lootTable),
-            new DropViewerEntry("Monkey General Stall", Stall.MONKEY_GENERAL_STALL.lootTable),
-            new DropViewerEntry("Tea Stall", Stall.TEA_STALL.lootTable),
-            new DropViewerEntry("Silk Stall", Stall.SILK_STALL.lootTable),
-            new DropViewerEntry("Wine Stall", Stall.WINE_STALL.lootTable),
-            new DropViewerEntry("Fruit Stall", Stall.FRUIT_STALL.lootTable),
-            new DropViewerEntry("Seed Stall", Stall.SEED_STALL.lootTable),
-            new DropViewerEntry("Fur Stall", Stall.FUR_STALL.lootTable),
-            new DropViewerEntry("Fish Stall", Stall.FISH_STALL.lootTable),
-            new DropViewerEntry("Crossbow Stall", Stall.CROSSBOW_STALL.lootTable),
-            new DropViewerEntry("Silver Stall", Stall.SILVER_STALL.lootTable),
-            new DropViewerEntry("Spice Stall", Stall.SPICE_STALL.lootTable),
-            new DropViewerEntry("Magic Stall", Stall.MAGIC_STALL.lootTable),
-            new DropViewerEntry("Scimitar Stall", Stall.SCIMITAR_STALL.lootTable),
-            new DropViewerEntry("Gem Stall", Stall.GEM_STALL.lootTable),
-            new DropViewerEntry("Ore Stall", Stall.ORE_STALL.lootTable),
-            new DropViewerEntry("Isle of Souls Chest", ThievableChests.Chest.ISLE_OF_SOULS.lootTable),
-            new DropViewerEntry("Ardougne Castle Chest", ThievableChests.Chest.ARDOUGNE_CASTLE.lootTable),
-            new DropViewerEntry("Stone Chest", ThievableChests.Chest.STONE_CHEST.lootTable),
-            new DropViewerEntry("Dorgesh-Kaan Avg Chest", ThievableChests.Chest.DORGESH_KAAN.lootTable),
-            new DropViewerEntry("Dorgesh-Kaan Rich Chest", ThievableChests.Chest.DORG_RICH.lootTable),
-            new DropViewerEntry("Rogue's Castle Chest", ThievableChests.Chest.ROGUES_CASTLE.lootTable),
-            new DropViewerEntry("East Ardougne Chest", ThievableChests.Chest.NATURE.lootTable),
-            new DropViewerEntry("Chaos Druid Tower Chest", ThievableChests.Chest.BLOOD.lootTable),
-            new DropViewerEntry("Steel Arrowtip Chest", ThievableChests.Chest.ARROWTIP.lootTable),
-            new DropViewerEntry("Wall Safe", WallSafe.LOOT_TABLE),
-    };
-
-    public static final HashMap<String, Tuple<Integer, String>[]> descriptionDrops = new HashMap<String, Tuple<Integer, String>[]>() {{
-        //put("barrows", new Tuple[]{ new Tuple(Items.DHAROKS_HELM, "Barrows unique_Random from brothers killed") });
-    }};
 
     public static void open(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.DROP_VIEWER);
@@ -273,7 +197,7 @@ public class DropViewer {
             if (def != null && def.combatInfo != null && def.combatInfo.pet != null)
                 drops.computeIfAbsent(def.combatInfo.pet.itemId, k -> new LinkedHashSet<>()).add(def);
         });
-        for (DropViewerEntry entry : CUSTOM_ENTRIES) {
+        for (DropViewerEntry entry : DropViewerCustomEntries.ENTRIES) {
             for (LootItem item : entry.table.getLootItems()) {
                 System.out.println(entry.name + ": " + item.id);
                 NON_NPC_DROPS.computeIfAbsent(item.id, k -> new LinkedHashSet<>()).add(entry);

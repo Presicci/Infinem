@@ -38,7 +38,7 @@ public class DropViewerSearch {
                             return;
                         map.computeIfAbsent(searchName, k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef);
                     });
-                    for (DropViewerEntry entry : DropViewer.CUSTOM_ENTRIES) {
+                    for (DropViewerEntry entry : DropViewerCustomEntries.ENTRIES) {
                         if (formatForSearch(entry.name).contains(search))
                             results.add(entry);
                     }
