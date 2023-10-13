@@ -45,7 +45,7 @@ public class Bestiary {
     }
 
     public int getKillCount(String entry) {
-        if (killCounts == null)
+        if (killCounts == null || entry == null || entry.equals(""))
             return 0;
         return killCounts.getOrDefault(entry, 0);
     }
