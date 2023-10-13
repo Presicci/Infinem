@@ -85,8 +85,34 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Chaos Druid Tower Chest", ThievableChests.Chest.BLOOD.lootTable),
             new DropViewerEntry("Steel Arrowtip Chest", ThievableChests.Chest.ARROWTIP.lootTable),
             new DropViewerEntry("Wall Safe", WallSafe.LOOT_TABLE),
-            new DropViewerEntry("Barrows", false, BarrowsRewards.MAIN_TABLE, BarrowsRewards.TERTIARY_TABLE,
+            new DropViewerEntry("Barrows (Per brother)", false, BarrowsRewards.MAIN_TABLE, BarrowsRewards.TERTIARY_TABLE,
                     new LootTable().addTable(1,
-                            new LootItem(-1, 1, 101), new LootItem(Items.DHAROKS_HELM, 1, 1)))
+                            new LootItem(-1, 1, 2448),
+                            new LootItem(Items.AHRIMS_HOOD, 1, 1),
+                            new LootItem(Items.AHRIMS_ROBETOP, 1, 1),
+                            new LootItem(Items.AHRIMS_ROBESKIRT, 1, 1),
+                            new LootItem(Items.AHRIMS_STAFF, 1, 1),
+                            new LootItem(Items.DHAROKS_HELM, 1, 1),
+                            new LootItem(Items.DHAROKS_PLATEBODY, 1, 1),
+                            new LootItem(Items.DHAROKS_PLATELEGS, 1, 1),
+                            new LootItem(Items.DHAROKS_GREATAXE, 1, 1),
+                            new LootItem(Items.GUTHANS_HELM, 1, 1),
+                            new LootItem(Items.GUTHANS_PLATEBODY, 1, 1),
+                            new LootItem(Items.GUTHANS_CHAINSKIRT, 1, 1),
+                            new LootItem(Items.GUTHANS_WARSPEAR, 1, 1),
+                            new LootItem(Items.KARILS_COIF, 1, 1),
+                            new LootItem(Items.KARILS_LEATHERTOP, 1, 1),
+                            new LootItem(Items.KARILS_LEATHERSKIRT, 1, 1),
+                            new LootItem(Items.KARILS_CROSSBOW, 1, 1),
+                            new LootItem(Items.TORAGS_HELM, 1, 1),
+                            new LootItem(Items.TORAGS_PLATEBODY, 1, 1),
+                            new LootItem(Items.TORAGS_PLATELEGS, 1, 1),
+                            new LootItem(Items.TORAGS_HAMMERS, 1, 1),
+                            new LootItem(Items.VERACS_HELM, 1, 1),
+                            new LootItem(Items.VERACS_BRASSARD, 1, 1),
+                            new LootItem(Items.VERACS_PLATESKIRT, 1, 1),
+                            new LootItem(Items.VERACS_FLAIL, 1, 1)
+                    )
+            )
     };
 }
