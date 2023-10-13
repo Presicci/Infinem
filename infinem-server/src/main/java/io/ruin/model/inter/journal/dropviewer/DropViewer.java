@@ -189,7 +189,6 @@ public class DropViewer {
         });
         for (DropViewerEntry entry : DropViewerCustomEntries.ENTRIES) {
             for (LootItem item : entry.table.getLootItems()) {
-                System.out.println(entry.name + ": " + item.id);
                 NON_NPC_DROPS.computeIfAbsent(item.id, k -> new LinkedHashSet<>()).add(entry);
             }
         }
