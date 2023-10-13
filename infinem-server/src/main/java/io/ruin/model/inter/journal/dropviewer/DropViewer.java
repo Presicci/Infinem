@@ -4,8 +4,6 @@ import io.ruin.api.utils.Tuple;
 import io.ruin.cache.Color;
 import io.ruin.cache.NPCDef;
 import io.ruin.api.utils.AttributeKey;
-import io.ruin.model.activities.cluescrolls.ClueType;
-import io.ruin.model.activities.combat.barrows.BarrowsRewards;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -14,16 +12,8 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.item.Item;
-import io.ruin.model.item.Items;
-import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
-import io.ruin.model.map.object.actions.impl.chests.*;
-import io.ruin.model.map.object.actions.impl.chests.CrystalChest;
-import io.ruin.model.skills.thieving.PickPocket;
-import io.ruin.model.skills.thieving.Stall;
-import io.ruin.model.skills.thieving.ThievableChests;
-import io.ruin.model.skills.thieving.WallSafe;
 
 import java.util.*;
 
@@ -155,7 +145,7 @@ public class DropViewer {
     }
 
     private static String getDropDescription(int item, String name) {
-        Tuple<Integer, String>[] descriptons = descriptionDrops.get(name.toLowerCase());
+        Tuple<Integer, String>[] descriptons = DropViewerResultDescription.descriptionDrops.get(name.toLowerCase());
         if (descriptons == null) {
             return null;
         }
