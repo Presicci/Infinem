@@ -87,7 +87,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Wall Safe", WallSafe.LOOT_TABLE),
             new DropViewerEntry("Barrows (Per brother)", false, BarrowsRewards.MAIN_TABLE, BarrowsRewards.TERTIARY_TABLE,
                     new LootTable().addTable(1,
-                            new LootItem(-1, 1, 2448),
+                            new LootItem(-1, 1, 2420 / 2),
                             new LootItem(Items.AHRIMS_HOOD, 1, 1),
                             new LootItem(Items.AHRIMS_ROBETOP, 1, 1),
                             new LootItem(Items.AHRIMS_ROBESKIRT, 1, 1),
