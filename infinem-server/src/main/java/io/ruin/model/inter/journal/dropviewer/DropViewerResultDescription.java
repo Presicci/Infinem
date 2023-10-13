@@ -15,9 +15,11 @@ public class DropViewerResultDescription extends DropViewerResult {
     }
 
     public String get() {
-        String name = ItemDef.get(item).name;
+        String[] split = description.split("_");
+        String name = split[0];
+        String desc = split[1];
         String c = chance == 1 ? "Always" : ("1 / " + (chance == 0 ? "?" : chance));
-        return name + "|" + description + "|" + c;
+        return name + "|" + desc + "|" + c;
     }
 
     public Item getItem() {

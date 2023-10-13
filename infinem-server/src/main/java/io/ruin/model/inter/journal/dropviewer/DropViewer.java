@@ -109,7 +109,7 @@ public class DropViewer {
     };
 
     public static final HashMap<String, Tuple<Integer, String>[]> descriptionDrops = new HashMap<String, Tuple<Integer, String>[]>() {{
-        //put("barrows", new Tuple[]{ new Tuple(Items.DHAROKS_HELM, "Barrows unique|Random from brothers killed") });
+        //put("barrows", new Tuple[]{ new Tuple(Items.DHAROKS_HELM, "Barrows unique_Random from brothers killed") });
     }};
 
     public static void open(Player player) {
