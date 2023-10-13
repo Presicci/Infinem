@@ -60,16 +60,26 @@ public class Bestiary {
         int sortType = Config.BESTIARY_SORT.get(player);
         int totalEntries = BestiaryDef.ENTRIES.size();
         StringBuilder sb = new StringBuilder();
-        BestiaryDef.ENTRIES.stream().filter(killCounts::containsKey).sorted().forEach(entry -> {
-            sb.append(StringUtils.capitalizeFirst(entry));
-            sb.append("|");
-            sb.append(getKillCount(entry));
-        });
-        for (int index = killCounts.size(); index < totalEntries; index++) {
-            if (killCounts.size() != 0 || index > 0)
+        if (player.debug) {
+            BestiaryDef.ENTRIES.stream().sorted().forEach(entry -> {
+                sb.append(StringUtils.capitalizeFirst(entry));
                 sb.append("|");
-            sb.append("???|0");
+                sb.append(getKillCount(entry));
+                sb.append("|");
+            });
+        } else {
+            BestiaryDef.ENTRIES.stream().filter(killCounts::containsKey).sorted().forEach(entry -> {
+                sb.append(StringUtils.capitalizeFirst(entry));
+                sb.append("|");
+                sb.append(getKillCount(entry));
+            });
+            for (int index = killCounts.size(); index < totalEntries; index++) {
+                if (killCounts.size() != 0 || index > 0)
+                    sb.append("|");
+                sb.append("???|0");
+            }
         }
+
         return sb.toString();
     }
 }
