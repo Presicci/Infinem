@@ -32,7 +32,7 @@ public class Bestiary {
      * @param def NPCDef for npc
      */
     public void incrementKillCount(NPCDef def) {
-        String bestiaryName = def.name.toLowerCase();
+        String bestiaryName = def.bestiaryEntry;
          int currentCount = killCounts.getOrDefault(bestiaryName, 0);
          killCounts.put(bestiaryName, currentCount + 1);
          player.sendMessage("You have now killed " + (currentCount + 1) + "<col=ff0000> " + def.name + "s</col>.");
