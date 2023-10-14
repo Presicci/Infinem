@@ -1141,6 +1141,11 @@ public class Config {
     public static final Config TASK_INTERFACE_SORT = varpbit(10032, false);
 
     /**
+     * Bestiary
+     */
+    public static final Config BESTIARY_SORT = varpbit(9334, true);
+
+    /**
      * Separator
      */
 
