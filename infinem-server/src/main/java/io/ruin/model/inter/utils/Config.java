@@ -1118,6 +1118,9 @@ public class Config {
     public static final Config OWNS_A_HOUSE = varpbit(2187, false).defaultValue(1); // Lets skill lamps be used on construction
     public static final Config ADVENTURE_PATHS_QUEST_TAB = varpbit(9340, false).defaultValue(1);    // Enables the adventurer's path tab in the quest panel
     public static final Config ACTIVE_QUEST_TAB = varpbit(8168, false);
+    public static final Config NEITIZNOT_BRIDGE_1 = varpbit(3313, false).defaultValue(1);
+    public static final Config NEITIZNOT_BRIDGE_2 = varpbit(3314, false).defaultValue(1);
+    public static final Config NEITIZNOT_BRIDGE_3 = varpbit(3315, false).defaultValue(1);
 
     /**
      * Agility Pyramid
