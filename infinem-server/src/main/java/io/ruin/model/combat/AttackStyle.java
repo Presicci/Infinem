@@ -40,4 +40,8 @@ public enum AttackStyle {
         return this == CANNON;
     }
 
+    public boolean isMagical() {
+        return this == MAGIC || this == MAGICAL_MELEE || this == MAGICAL_RANGED;
+    }
+
 }
