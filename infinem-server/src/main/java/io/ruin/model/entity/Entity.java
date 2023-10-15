@@ -318,7 +318,7 @@ public abstract class Entity extends TemporaryAttributesHolder {
     Whether we are currently animating or not
      */
     public boolean isAnimating() {
-        return Server.currentTick() < animTick;
+        return animationUpdate.id >= 0 && Server.currentTick() < animTick;
     }
 
     public int resetAnimation() {
@@ -722,7 +722,6 @@ public abstract class Entity extends TemporaryAttributesHolder {
             return;
         checkPoison();
         if(queuedHits != null && !queuedHits.isEmpty()) {
-            boolean defendAnim = false;
             //noinspection ForLoopReplaceableByForEach (foreach will cause concurrentmodification exceptions!)
             for(int i = 0; i < queuedHits.size(); i++) {
                 Hit hit = queuedHits.get(i);
@@ -735,11 +734,12 @@ public abstract class Entity extends TemporaryAttributesHolder {
                     if(!hit.isHidden())
                         hitsUpdate.add(hit, getHp(), getMaxHp());
                     if(hit.attacker != null && hit.attackStyle != null) {
-                        if(!defendAnim && !hit.attackStyle.isMagic()) {
-                            defendAnim = true;
+                        if (!isAnimating() && !hit.attackStyle.isMagical()) {
                             int animId = getCombat().getDefendAnimation();
-                            if(animId != -1)
-                                animate(animId);
+                            if (animId >= 0) {
+                                if (getCombat().canAnimateDefence(1) || isPlayer())
+                                    animate(animId);
+                            }
                         }
                         //todo - honestly this retaliate system is so bad...
                         if(!isLocked() && !getCombat().retaliating && getCombat().allowRetaliate(hit.attacker)) {

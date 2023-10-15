@@ -76,6 +76,13 @@ public abstract class Combat {
         return false;
     }
 
+    public boolean canAnimateDefence(int animTicks) {
+        if (!isAttacking(lastAttackTickDelay + attackDelayTicks) || animTicks <= lastAttackTick - Server.currentTick()) {
+            return true;
+        }
+        return false;
+    }
+
     /**
      * Defending
      */
