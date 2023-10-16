@@ -1,6 +1,7 @@
 package io.ruin.model.skills.magic.spells.lunar;
 
 import io.ruin.model.World;
+import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.magic.Spell;
@@ -37,10 +38,13 @@ public class Dream extends Spell {
             }
             r.remove();
             player.getStats().addXp(StatType.Magic, 76, true);
-            player.startEvent(e -> {
+            player.startPersistableEvent(e -> {
+                player.lock(LockType.MOVEMENT);
                 int count = 0;
-                while (true) {  // TODO find yawning animation before you sit down
-                    player.getAppearance().setCustomRenders(Renders.DREAM);
+                player.animate(7627);
+                while (true) {
+                    e.delay(1);
+                    player.animate(7627);
                     player.graphics(1056);
                     if (count >= 15) {
                         if (player.getHp() >= player.getMaxHp())
@@ -50,12 +54,13 @@ public class Dream extends Spell {
                     } else {
                         ++count;
                     }
-                    World.startEvent(we -> {
-                        e.delay(2);
-                        player.getAppearance().removeCustomRenders();
-                    });
-                    e.delay(1);
                 }
+            }).setCancelCondition(() -> player.hasTemporaryAttribute("LOCKED_MOVEMENT"), () -> {
+                player.startEvent(e -> {
+                    player.animate(7628);
+                    e.delay(1);
+                    player.unlock();
+                });
             });
         };
     }
