@@ -30,9 +30,10 @@ public class WalkHandler implements Incoming {
             }
 
             // Return always if locked why let them move?
+            player.putTemporaryAttribute("LOCKED_MOVEMENT", 1);
             return;
         }
-
+        player.removeTemporaryAttribute("LOCKED_MOVEMENT");
         if(player.emoteDelay.isDelayed()) {
             player.resetAnimation();
             player.emoteDelay.reset();
