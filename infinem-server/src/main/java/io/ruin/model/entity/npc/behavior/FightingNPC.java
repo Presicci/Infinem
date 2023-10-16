@@ -13,6 +13,10 @@ public class FightingNPC {
                 constructSet(8563, 8564), // Lizardmen
                 constructSet(8566, 8567, 8568)// Shayzien warriors
         );
+        put(
+                constructSet(3114, 3243), // Farmers
+                constructSet(3029, 3030, 3031, 3033, 3034, 3035, 3036)  // Goblins
+        );
     }};
 
     private static Set<Integer> constructSet(Integer... ids) {
