@@ -10,6 +10,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/1/2023
  */
 public enum DialogueObject {
+    LUMBRIDGE_COW_PEN_CRATES(358, new Position(3244, 3279),
+            new MessageDialogue("You thoroughly search the crates, yet you fail to find any potential reason for why the fence was built around them. Cheap labor potentially.")),
     CRUMBLING_TOWER(1796, new Position(1936, 9444),
             new MessageDialogue("Someone has crudely carved a message into the wall:<br><br>'The Soul Stone was here. Where is it now?")),
     BRINE_RAT_CAVE_CHEST(14197, new Position(2740, 10164),
