@@ -15,7 +15,21 @@ import java.util.function.Predicate;
  */
 @AllArgsConstructor
 public enum RespawningObject {
-
+    AXE_LOG(5581, 5582, 25, 1, (player) -> {
+        if (!player.getInventory().hasFreeSlots(1)) {
+            player.sendMessage("You do not have enough inventory space to take this.");
+            return false;
+        }
+        player.startEvent(e -> {
+            player.lock();
+            player.animate(832);
+            e.delay(1);
+            player.sendFilteredMessage("You take the axe from the log.");
+            player.getInventory().add(Items.BRONZE_AXE);
+            player.unlock();
+        });
+        return true;
+    }),
     SPADE(9662, 10626, 50, 1, (player) -> {
         if (!player.getInventory().hasFreeSlots(1)) {
             player.sendMessage("You do not have enough inventory space to take this.");
