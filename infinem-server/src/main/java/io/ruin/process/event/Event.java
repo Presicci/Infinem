@@ -21,6 +21,8 @@ public class Event {
 
     private Supplier<Boolean> cancelCondition;
 
+    private Runnable cancelAction;
+
     public EventType eventType = EventType.DEFAULT;
 
     public Event(EventConsumer consumer) {
@@ -43,6 +45,8 @@ public class Event {
             if (--delayTicks > 0)
                 return true;
             if (cancelCondition != null && cancelCondition.get()) {
+                if (cancelAction != null)
+                    cancelAction.run();
                 return false;
             }
         }
@@ -111,5 +115,10 @@ public class Event {
      */
     public final void setCancelCondition(Supplier<Boolean> cancelCondition) {
         this.cancelCondition = cancelCondition;
+    }
+
+    public final void setCancelCondition(Supplier<Boolean> cancelCondition, Runnable cancelAction) {
+        this.cancelCondition = cancelCondition;
+        this.cancelAction = cancelAction;
     }
 }
