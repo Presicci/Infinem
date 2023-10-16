@@ -1006,7 +1006,7 @@ public abstract class NPCCombat extends Combat {
     }
 
     protected Entity findAggressionTargetNPC() {
-        Set<Integer> t = FightingNPC.TARGETS.get(npc.getId());
+        Set<Integer> t = FightingNPC.getTargets(npc.getId());
         if (t == null)
             return null;
         List<Entity> targets = npc.localNpcs().stream()

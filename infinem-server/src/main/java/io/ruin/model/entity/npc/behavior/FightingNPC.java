@@ -8,31 +8,23 @@ import java.util.*;
  */
 public class FightingNPC {
 
-    public static final Map<Integer, Set<Integer>> TARGETS = new HashMap<>();
+    private static final Map<Set<Integer>, Set<Integer>> PAIRINGS = new HashMap<Set<Integer>, Set<Integer>>() {{
+        put(
+                constructSet(8563, 8564), // Lizardmen
+                constructSet(8566, 8567, 8568)// Shayzien warriors
+        );
+    }};
 
-    private static final Integer[] LIZARDMAN = { 8563, 8564 };
-    private static final Integer[] SHAYZIEN = { 8566, 8567, 8568 };
-
-    private static void registerTargets(int id, Integer[] newTargets) {
-        registerTargets(id, new HashSet<>(Arrays.asList(newTargets)));
+    private static Set<Integer> constructSet(Integer... ids) {
+        return new HashSet<Integer>() {{ addAll(Arrays.asList(ids)); }};
     }
 
-    private static void registerTargets(int id, Set<Integer> newTargets) {
-        if (TARGETS.containsKey(id)) {
-            Set<Integer> targets = TARGETS.get(id);
-            targets.addAll(newTargets);
-            TARGETS.put(id, targets);
-        } else {
-            TARGETS.put(id, newTargets);
+    public static Set<Integer> getTargets(int npcId) {
+        for (Map.Entry<Set<Integer>, Set<Integer>> pair : PAIRINGS.entrySet()) {
+            if (pair.getKey().contains(npcId)) {
+                return pair.getValue();
+            }
         }
-    }
-
-    static {
-        for (Integer id : LIZARDMAN) {
-            registerTargets(id, SHAYZIEN);
-        }
-        for (Integer id : SHAYZIEN) {
-            registerTargets(id, LIZARDMAN);
-        }
+        return null;
     }
 }
