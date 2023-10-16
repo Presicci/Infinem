@@ -11,6 +11,7 @@ import java.util.Set;
 public class StaticFacingNPC {
 
     private static final Integer[] VALUES = new Integer[] {
+            2542,   // Sitting H.A.M. member
             3596,   // 'Black-eye'
             4766    // Tegid
     };
