@@ -72,9 +72,10 @@ public class Bestiary {
                 sb.append(StringUtils.capitalizeFirst(entry));
                 sb.append("|");
                 sb.append(getKillCount(entry));
+                sb.append("|");
             });
-            for (int index = killCounts.size(); index < totalEntries; index++) {
-                if (killCounts.size() != 0 || index > 0)
+            for (int index = 0; index < totalEntries - killCounts.size(); index++) {
+                if (index > 0)
                     sb.append("|");
                 sb.append("???|0");
             }
