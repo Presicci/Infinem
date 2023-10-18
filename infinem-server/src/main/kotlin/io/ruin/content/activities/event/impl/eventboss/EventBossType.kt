@@ -8,7 +8,7 @@ import io.ruin.model.map.Position
 
 enum class EventBossType(val id: Int, val positions: MutableList<Position>, val hitpoints: Int, val message: MutableList<String>, val rolls: Int, val lootTable: LootTable, val embedUrl: String, val pet: Pet, val petChance: Int) {
 
-    CORRUPTED_NECHRYARCH(15001, mutableListOf(
+    /*CORRUPTED_NECHRYARCH(15001, mutableListOf(
             Position.of(1609, 3886, 0),
             Position.of(3545, 3268, 0),
             Position.of(1235, 3526, 0)
@@ -20,5 +20,5 @@ enum class EventBossType(val id: Int, val positions: MutableList<Position>, val 
     BRUTAL_LAVA_DRAGON(15016, mutableListOf(
             Position.of(3225, 3884, 0)
     ), 5000, mutableListOf("The Brutal Lava Dragon has appeared North of Lava Dragon Isle!"), 1, BrutalLavaDragonLoot(),
-    "https://i.imgur.com/uZWY3ap.png", Pet.LAVADRAGON, 150)
+    "https://i.imgur.com/uZWY3ap.png", Pet.LAVADRAGON, 150)*/
 }
