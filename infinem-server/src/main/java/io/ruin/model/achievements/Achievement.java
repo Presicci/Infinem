@@ -137,11 +137,4 @@ public enum Achievement {
             if(achievement.listener != null) achievement.listener.init();
         }
     }
-    static {
-        LoginListener.register(player -> {
-            for (Achievement achievement : values()) {
-                player.achievementStages[achievement.ordinal()] = achievement.getListener().stage(player); // forces achievements to have the correct state on login
-            }
-        });
-    }
 }
