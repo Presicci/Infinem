@@ -17,6 +17,11 @@ slepe
 ice mountain cave entrance
 TODO get water near tempeross
 ~~~
+CS2
+1470 Champions
+1405 BA stuff
+1739 Special tooltips
+
 
 
 sendClientScript(917
