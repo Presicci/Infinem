@@ -6,6 +6,7 @@ import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,6 +57,10 @@ public class Bestiary {
         return chance;
     }
 
+    private String getEntryString(Map.Entry<String, Integer> entry) {
+        return StringUtils.capitalizeFirst(entry.getKey()) + "|" + entry.getValue() + "|";
+    }
+
     public String generateBestiaryInterfaceString() {
         int sortType = Config.BESTIARY_SORT.get(player);
         int totalEntries = BestiaryDef.ENTRIES.size();
@@ -68,12 +73,15 @@ public class Bestiary {
                 sb.append("|");
             });
         } else {
-            BestiaryDef.ENTRIES.stream().filter(killCounts::containsKey).sorted().forEach(entry -> {
-                sb.append(StringUtils.capitalizeFirst(entry));
-                sb.append("|");
-                sb.append(getKillCount(entry));
-                sb.append("|");
-            });
+            if (sortType == 0) {    // Sort by kills (highest->lowest)
+                killCounts.entrySet().stream().sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).forEach(entry -> {
+                    sb.append(getEntryString(entry));
+                });
+            } else if (sortType == 1) { // Sort alphabetically
+                killCounts.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(entry -> {
+                    sb.append(getEntryString(entry));
+                });
+            }
             for (int index = 0; index < totalEntries - killCounts.size(); index++) {
                 if (index > 0)
                     sb.append("|");
