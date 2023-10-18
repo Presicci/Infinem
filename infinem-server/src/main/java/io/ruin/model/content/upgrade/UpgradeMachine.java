@@ -270,7 +270,7 @@ public class UpgradeMachine {
     }
 
     static {
-        ObjectAction.register(ObjectID.UPGRADE_MACHINE, "Upgrade", (player, object) -> player.getUpgradeMachine().sendInterface());
+        /*ObjectAction.register(ObjectID.UPGRADE_MACHINE, "Upgrade", (player, object) -> player.getUpgradeMachine().sendInterface());
         ItemObjectAction.register(ObjectID.UPGRADE_MACHINE, ((player, item, obj) -> player.getUpgradeMachine().scrap(item)));
         InterfaceHandler.register(Interface.UPGRADE_MACHINE, interfaceHandler -> {
             interfaceHandler.actions[UPGRADE_BUTTON] = (SimpleAction) (player) -> player.getUpgradeMachine().upgrade();
@@ -297,7 +297,7 @@ public class UpgradeMachine {
             } else {
                 player.sendMessage("This item doesn't have any upgrades.");
             }
-        });
+        });*/
         NPCAction.register(2408, "talk-to", (player, npc) -> {
             World.doCannonReclaim(player.getUserId(), (reclaim) -> {
                 if (reclaim.first()) {
