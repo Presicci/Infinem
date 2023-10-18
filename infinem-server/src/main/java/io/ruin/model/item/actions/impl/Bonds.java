@@ -29,12 +29,12 @@ public class Bonds {
     }
 
     static {
-        ItemAction.registerInventory(30276, 1, ((player, item) -> redeem(player, 5, item)));
+        /*ItemAction.registerInventory(30276, 1, ((player, item) -> redeem(player, 5, item)));
         ItemAction.registerInventory(30279, 1, ((player, item) -> redeem(player, 10, item)));
         ItemAction.registerInventory(30282, 1, ((player, item) -> redeem(player, 25, item)));
         ItemAction.registerInventory(30285, 1, ((player, item) -> redeem(player, 50, item)));
         ItemAction.registerInventory(30288, 1, ((player, item) -> redeem(player, 100, item)));
         ItemAction.registerInventory(30291, 1, ((player, item) -> redeem(player, 250, item)));
-        ItemAction.registerInventory(30294, 1, ((player, item) -> redeem(player, 500, item)));
+        ItemAction.registerInventory(30294, 1, ((player, item) -> redeem(player, 500, item)));*/
     }
 }
