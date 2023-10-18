@@ -16,11 +16,11 @@ public class Random {
     public static int get(int minRange, int maxRange) {
         return minRange + get(maxRange - minRange);
     }
-/*
+
     public static int get(int... values) {
         return values[get(values.length - 1)];
     }
-*/
+
     public static <T> T get(T[] values) {
         return values[get(values.length - 1)];
     }
