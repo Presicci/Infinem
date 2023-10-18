@@ -243,9 +243,9 @@ public enum Armour {
         /**
          * Lava dragon hide
          */
-        ItemItemAction.register(NEEDLE, LAVA_DRAGON_LEATHER, (player, needle, blackDragonLeather) -> SkillDialogue.make(player,
+        /*ItemItemAction.register(NEEDLE, LAVA_DRAGON_LEATHER, (player, needle, blackDragonLeather) -> SkillDialogue.make(player,
                 new SkillItem(LAVA_COIF.cutID).addAction((p, amount, event) -> craft(p, LAVA_COIF, amount)),
                 new SkillItem(LAVA_CHAPS.cutID).addAction((p, amount, event) -> craft(p, LAVA_CHAPS, amount)),
-                new SkillItem(LAVA_BODY.cutID).addAction((p, amount, event) -> craft(p, LAVA_BODY, amount))));
+                new SkillItem(LAVA_BODY.cutID).addAction((p, amount, event) -> craft(p, LAVA_BODY, amount))));*/
     }
 }
