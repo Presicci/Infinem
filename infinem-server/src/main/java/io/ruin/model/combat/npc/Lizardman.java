@@ -11,6 +11,7 @@ public class Lizardman extends NPCCombat {
 
     @Override
     public void init() {
+        setPoison(3);
     }
 
     @Override
