@@ -134,8 +134,12 @@ public class IndexFile {
         }
         byte[][] filesData = new byte[filesCount][];
         for(int i = 0; i < filesCount; i++) {
-            filesData[i] = new byte[filesSize[i]];
-            filesSize[i] = 0;
+            try {
+                filesData[i] = new byte[filesSize[i]];
+                filesSize[i] = 0;
+            } catch (NegativeArraySizeException e) {
+                System.err.println("NegativeArraySizeException for archive " + archiveId + " at index " + i + ", filesize: " + filesSize[i]);
+            }
         }
         in.position(readPosition);
         int sourceOffset = 0;
