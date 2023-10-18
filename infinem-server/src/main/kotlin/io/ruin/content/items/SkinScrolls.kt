@@ -18,9 +18,9 @@ object SkinScrolls {
 
     init {
         scrolls.forEach {
-            whenInvClick(it, 1) { player, item ->
-                player.redeem(item)
-            }
+            //whenInvClick(it, 1) { player, item ->
+                //player.redeem(item)
+            //}
         }
     }
 
