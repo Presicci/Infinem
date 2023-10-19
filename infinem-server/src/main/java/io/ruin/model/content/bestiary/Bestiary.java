@@ -4,11 +4,10 @@ import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.handlers.TabBestiary;
 import io.ruin.model.inter.utils.Config;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -22,7 +21,7 @@ public class Bestiary {
 
     public Bestiary(Player player) {
         this.player = player;
-        killCounts = new HashMap<>();
+        killCounts = new LinkedHashMap<>();
     }
 
     public void setPlayer(Player player) {
@@ -37,6 +36,7 @@ public class Bestiary {
     public void incrementKillCount(NPCDef def) {
         String bestiaryName = def.bestiaryEntry;
          int currentCount = killCounts.getOrDefault(bestiaryName, 0);
+         killCounts.remove(bestiaryName);   // Reset order in map, for recent sort
          killCounts.put(bestiaryName, currentCount + 1);
          player.sendMessage("You have now killed " + (currentCount + 1) + "<col=ff0000> " + def.name + "s</col>.");
     }
@@ -58,7 +58,11 @@ public class Bestiary {
     }
 
     private String getEntryString(Map.Entry<String, Integer> entry) {
-        return StringUtils.capitalizeFirst(entry.getKey()) + "|" + entry.getValue() + "|";
+        return getEntryString(entry.getKey(), entry.getValue());
+    }
+
+    private String getEntryString(String entry, int kc) {
+        return StringUtils.capitalizeFirst(entry) + "|" + kc + "|";
     }
 
     public String generateBestiaryInterfaceString() {
@@ -81,6 +85,14 @@ public class Bestiary {
                 killCounts.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(entry -> {
                     sb.append(getEntryString(entry));
                 });
+            } else if (sortType == 2) { // Bosses first
+
+            } else if (sortType == 3) { // Recent first
+                List<String> keys = new ArrayList<>(killCounts.keySet());
+                Collections.reverse(keys);
+                for (String key : keys) {
+                    sb.append(getEntryString(key, killCounts.get(key)));
+                }
             }
             for (int index = 0; index < totalEntries - killCounts.size(); index++) {
                 if (index > 0)
