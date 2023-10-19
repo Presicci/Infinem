@@ -1,12 +1,8 @@
 package io.ruin.model.inter.journal;
 
 import io.ruin.Server;
-import io.ruin.api.utils.TimeUtils;
 import io.ruin.cache.Color;
 import io.ruin.model.World;
-import io.ruin.model.activities.duelarena.Duel;
-import io.ruin.model.activities.pvp.PVPInstance;
-import io.ruin.model.content.bestiary.BestiaryDef;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;
@@ -14,8 +10,6 @@ import io.ruin.model.inter.*;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.handlers.TabBestiary;
-import io.ruin.model.inter.journal.dropviewer.DropViewer;
-import io.ruin.model.inter.journal.toggles.*;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.containers.collectionlog.CollectionLogInfo;
 import lombok.Getter;
@@ -433,7 +427,7 @@ public class JournalTab {
             interfaceHandler.actions[8] = (SimpleAction) player -> setTab(player, Tab.TASK);
             interfaceHandler.actions[13] = (SimpleAction) player -> {
                 setTab(player, Tab.BESTIARY);
-                TabBestiary.sendBestiaryTab(player);
+                TabBestiary.sendTab(player);
             };
             interfaceHandler.actions[18] = (SimpleAction) player -> setTab(player, Tab.ACHIEVEMENT);
             interfaceHandler.actions[23] = (SimpleAction) player -> setTab(player, Tab.INFORMATION);
