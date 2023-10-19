@@ -38,6 +38,7 @@ public class Bestiary {
          int currentCount = killCounts.getOrDefault(bestiaryName, 0);
          killCounts.remove(bestiaryName);   // Reset order in map, for recent sort
          killCounts.put(bestiaryName, currentCount + 1);
+         TabBestiary.attemptRefresh(player);
          player.sendMessage("You have now killed " + (currentCount + 1) + "<col=ff0000> " + def.name + "s</col>.");
     }
 

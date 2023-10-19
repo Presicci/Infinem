@@ -15,6 +15,12 @@ public class TabBestiary {
         player.getPacketSender().sendAccessMask(1009, 14, 0, 12, 2);
     }
 
+    public static void attemptRefresh(Player player) {
+        if (player.isVisibleInterface(1009)) {
+            sendBestiaryTab(player);
+        }
+    }
+
     static {
         InterfaceHandler.register(1009, interfaceHandler -> {
             interfaceHandler.actions[6] = (SimpleAction) DropViewer::open;
