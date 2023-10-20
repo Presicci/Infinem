@@ -10,6 +10,7 @@ import io.ruin.model.inter.journal.dropviewer.DropViewer;
 import io.ruin.model.inter.utils.Config;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class TabBestiary {
@@ -22,7 +23,7 @@ public class TabBestiary {
 
     private static void populateList(Player player) {
         Bestiary bestiary = player.getBestiary();
-        player.getPacketSender().sendClientScript(10067, "iis", bestiary.getKillCounts().size(), BestiaryDef.ENTRIES.size(), bestiary.generateInterfaceString());
+        player.getPacketSender().sendClientScript(10067, "iis", bestiary.getKillCounts().size(), BestiaryDef.ENTRIES.size(), bestiary.generateBaseInterfaceList());
     }
 
     public static void attemptRefresh(Player player) {
@@ -38,8 +39,12 @@ public class TabBestiary {
             if (entry.toLowerCase().contains(searchRegex))
                 searchEntries.add(entry);
         }
-        String searchString = player.getBestiary().generateInterfaceString(searchEntries, searchEntries.size());
-        player.getPacketSender().sendClientScript(10067, "is", searchEntries.size(), searchString);
+        Bestiary bestiary = player.getBestiary();
+        bestiary.setEntries(searchEntries);
+        String searchString = bestiary.generateInterfaceString();
+        Map<String, Integer> killcounts = bestiary.getKillCounts();
+        int size = (int) searchEntries.stream().filter(killcounts::containsKey).count();
+        player.getPacketSender().sendClientScript(10067, "iis", size, size, searchString);
     }
 
     static {
