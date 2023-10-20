@@ -96,6 +96,7 @@ public class Bestiary {
                     sb.append(getEntryString(key, killCounts.get(key)));
             }
         }
+        sb.deleteCharAt(sb.length() - 1);   // Trim trailing |
         return sb.toString();
     }
 }
