@@ -8,6 +8,9 @@ import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.journal.dropviewer.DropViewer;
 import io.ruin.model.inter.utils.Config;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class TabBestiary {
 
     public static void sendTab(Player player) {
@@ -26,10 +29,21 @@ public class TabBestiary {
         }
     }
 
+    public static void processSearch(Player player, String searchRegex) {
+        searchRegex = searchRegex.toLowerCase();
+        Set<String> searchEntries = new HashSet<>();
+        for (String entry : BestiaryDef.ENTRIES) {
+            if (entry.toLowerCase().contains(searchRegex))
+                searchEntries.add(entry);
+        }
+        String searchString = player.getBestiary().generateInterfaceString(searchEntries, searchEntries.size());
+        player.getPacketSender().sendClientScript(10067, "is", searchEntries.size(), searchString);
+    }
+
     static {
         InterfaceHandler.register(1009, interfaceHandler -> {
             interfaceHandler.actions[6] = (SimpleAction) DropViewer::open;
-            interfaceHandler.actions[8] = (SimpleAction) DropViewer::open;
+            interfaceHandler.actions[8] = (SimpleAction) (player) -> player.stringInput("Search:", search -> processSearch(player, search));
             interfaceHandler.actions[14] = (SlotAction) (player, slot) -> {
                 Config.BESTIARY_SORT.set(player, slot-1);
                 sendTab(player);
