@@ -7,6 +7,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.TabBestiary;
 import io.ruin.model.inter.utils.Config;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.*;
 
@@ -62,6 +63,8 @@ public class Bestiary {
     /*
      * Interface
      */
+    @Setter private Set<String> entries = new HashSet<>();
+
     private String getEntryString(Map.Entry<String, Integer> entry) {
         return getEntryString(entry.getKey(), entry.getValue());
     }
@@ -70,12 +73,12 @@ public class Bestiary {
         return StringUtils.capitalizeFirst(entry) + "|" + kc + "|";
     }
 
-    public String generateInterfaceString() {
-        int totalEntries = BestiaryDef.ENTRIES.size();
-        return generateInterfaceString(BestiaryDef.ENTRIES, totalEntries);
+    public String generateBaseInterfaceList() {
+        entries = BestiaryDef.ENTRIES;
+        return generateInterfaceString();
     }
 
-    public String generateInterfaceString(Set<String> entries, int totalEntries) {
+    public String generateInterfaceString() {
         int sortType = Config.BESTIARY_SORT.get(player);
         StringBuilder sb = new StringBuilder();
         if (sortType == 0) {    // Sort by kills (highest->lowest)
