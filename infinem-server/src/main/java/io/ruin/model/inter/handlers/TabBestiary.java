@@ -17,7 +17,7 @@ public class TabBestiary {
     public static void sendTab(Player player) {
         populateList(player);
         player.getPacketSender().sendAccessMask(1009, 14, 0, 12, 2);
-        player.getPacketSender().sendAccessMask(1009, 2, 0, BestiaryDef.ENTRIES.size(), 2);
+        player.getPacketSender().sendAccessMask(1009, 2, 0, BestiaryDef.ENTRIES.size() * 4, 2);
     }
 
     private static void populateList(Player player) {
