@@ -66,42 +66,37 @@ public class Bestiary {
         return StringUtils.capitalizeFirst(entry) + "|" + kc + "|";
     }
 
-    public String generateBestiaryInterfaceString() {
-        int sortType = Config.BESTIARY_SORT.get(player);
+    public String generateInterfaceString() {
         int totalEntries = BestiaryDef.ENTRIES.size();
-        StringBuilder sb = new StringBuilder();
-        if (player.debug) {
-            BestiaryDef.ENTRIES.stream().sorted().forEach(entry -> {
-                sb.append(StringUtils.capitalizeFirst(entry));
-                sb.append("|");
-                sb.append(getKillCount(entry));
-                sb.append("|");
-            });
-        } else {
-            if (sortType == 0) {    // Sort by kills (highest->lowest)
-                killCounts.entrySet().stream().sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).forEach(entry -> {
-                    sb.append(getEntryString(entry));
-                });
-            } else if (sortType == 1) { // Sort alphabetically
-                killCounts.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(entry -> {
-                    sb.append(getEntryString(entry));
-                });
-            } else if (sortType == 2) { // Bosses first
+        return generateInterfaceString(BestiaryDef.ENTRIES, totalEntries);
+    }
 
-            } else if (sortType == 3) { // Recent first
-                List<String> keys = new ArrayList<>(killCounts.keySet());
-                Collections.reverse(keys);
-                for (String key : keys) {
+    public String generateInterfaceString(Set<String> entries, int totalEntries) {
+        int sortType = Config.BESTIARY_SORT.get(player);
+        StringBuilder sb = new StringBuilder();
+        if (sortType == 0) {    // Sort by kills (highest->lowest)
+            killCounts.entrySet().stream().filter(e -> entries.contains(e.getKey())).sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).forEach(entry -> {
+                sb.append(getEntryString(entry));
+            });
+        } else if (sortType == 1) { // Sort alphabetically
+            killCounts.entrySet().stream().filter(e -> entries.contains(e.getKey())).sorted(Map.Entry.comparingByKey()).forEach(entry -> {
+                sb.append(getEntryString(entry));
+            });
+        } else if (sortType == 2) { // Bosses first
+
+        } else if (sortType == 3) { // Recent first
+            List<String> keys = new ArrayList<>(killCounts.keySet());
+            Collections.reverse(keys);
+            for (String key : keys) {
+                if (entries.contains(key))
                     sb.append(getEntryString(key, killCounts.get(key)));
-                }
-            }
-            for (int index = 0; index < totalEntries - killCounts.size(); index++) {
-                if (index > 0)
-                    sb.append("|");
-                sb.append("???|0");
             }
         }
-
+        for (int index = 0; index < totalEntries - killCounts.size(); index++) {
+            if (index > 0)
+                sb.append("|");
+            sb.append("???|0");
+        }
         return sb.toString();
     }
 }
