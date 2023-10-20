@@ -1,5 +1,6 @@
 package io.ruin.model.inter.handlers;
 
+import io.ruin.model.content.bestiary.Bestiary;
 import io.ruin.model.content.bestiary.BestiaryDef;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceHandler;
@@ -20,7 +21,8 @@ public class TabBestiary {
     }
 
     private static void populateList(Player player) {
-        player.getPacketSender().sendClientScript(10067, "is", BestiaryDef.ENTRIES.size(), player.getBestiary().generateInterfaceString());
+        Bestiary bestiary = player.getBestiary();
+        player.getPacketSender().sendClientScript(10067, "iis", bestiary.getKillCounts().size(), BestiaryDef.ENTRIES.size(), bestiary.generateInterfaceString());
     }
 
     public static void attemptRefresh(Player player) {

@@ -6,6 +6,7 @@ import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.TabBestiary;
 import io.ruin.model.inter.utils.Config;
+import lombok.Getter;
 
 import java.util.*;
 
@@ -17,7 +18,7 @@ public class Bestiary {
 
     private Player player;
 
-    @Expose private final Map<String, Integer> killCounts;
+    @Expose @Getter private final Map<String, Integer> killCounts;
 
     public Bestiary(Player player) {
         this.player = player;
@@ -58,6 +59,9 @@ public class Bestiary {
         return chance;
     }
 
+    /*
+     * Interface
+     */
     private String getEntryString(Map.Entry<String, Integer> entry) {
         return getEntryString(entry.getKey(), entry.getValue());
     }
@@ -91,11 +95,6 @@ public class Bestiary {
                 if (entries.contains(key))
                     sb.append(getEntryString(key, killCounts.get(key)));
             }
-        }
-        for (int index = 0; index < totalEntries - killCounts.size(); index++) {
-            if (index > 0)
-                sb.append("|");
-            sb.append("???|0");
         }
         return sb.toString();
     }
