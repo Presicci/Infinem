@@ -63,7 +63,7 @@ public class Bestiary {
     /*
      * Interface
      */
-    @Setter private Set<String> entries = new HashSet<>();
+    @Setter @Getter private Set<String> entries = new HashSet<>();
 
     private String getEntryString(Map.Entry<String, Integer> entry) {
         return getEntryString(entry.getKey(), entry.getValue());
@@ -73,13 +73,10 @@ public class Bestiary {
         return StringUtils.capitalizeFirst(entry) + "|" + kc + "|";
     }
 
-    public String generateBaseInterfaceList() {
-        entries = BestiaryDef.ENTRIES;
-        return generateInterfaceString();
-    }
-
     public String generateInterfaceString() {
         int sortType = Config.BESTIARY_SORT.get(player);
+        if (entries == null || entries.isEmpty())
+            entries = BestiaryDef.ENTRIES;
         StringBuilder sb = new StringBuilder();
         if (sortType == 0) {    // Sort by kills (highest->lowest)
             killCounts.entrySet().stream().filter(e -> entries.contains(e.getKey())).sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).forEach(entry -> {
