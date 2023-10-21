@@ -87,7 +87,12 @@ public class Bestiary {
                 sb.append(getEntryString(entry));
             });
         } else if (sortType == 2) { // Bosses first
-
+            killCounts.entrySet().stream().filter(e -> entries.contains(e.getKey()) && BestiaryDef.isBoss(e.getKey())).sorted(Map.Entry.comparingByKey()).forEach(entry -> {
+                sb.append(getEntryString(entry));
+            });
+            killCounts.entrySet().stream().filter(e -> entries.contains(e.getKey()) && !BestiaryDef.isBoss(e.getKey())).sorted(Map.Entry.comparingByKey()).forEach(entry -> {
+                sb.append(getEntryString(entry));
+            });
         } else if (sortType == 3) { // Recent first
             List<String> keys = new ArrayList<>(killCounts.keySet());
             Collections.reverse(keys);
