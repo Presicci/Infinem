@@ -23,7 +23,13 @@ public class TabBestiary {
 
     private static void populateList(Player player) {
         Bestiary bestiary = player.getBestiary();
-        player.getPacketSender().sendClientScript(10067, "iis", bestiary.getKillCounts().size(), BestiaryDef.ENTRIES.size(), bestiary.generateBaseInterfaceList());
+        if (bestiary.getEntries() == null)
+            bestiary.setEntries(BestiaryDef.ENTRIES);
+        Set<String> entries = bestiary.getEntries();
+        Map<String, Integer> killcounts = bestiary.getKillCounts();
+        int size = entries == BestiaryDef.ENTRIES ? killcounts.size() : (int) entries.stream().filter(killcounts::containsKey).count();
+        int totalSize = entries == BestiaryDef.ENTRIES ? BestiaryDef.ENTRIES.size() : size;
+        player.getPacketSender().sendClientScript(10067, "iis", size, totalSize, bestiary.generateInterfaceString());
     }
 
     public static void attemptRefresh(Player player) {
