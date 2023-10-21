@@ -302,6 +302,10 @@ public class BestiaryDef {
             "superior"
     };
 
+    public static boolean isBoss(String entry) {
+        return BOSS.contains(entry);
+    }
+
     static {
         System.out.println("Loading Bestiary..." + System.currentTimeMillis());
         NPCDef.forEach(e -> {
