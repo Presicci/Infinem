@@ -3,10 +3,7 @@ package io.ruin.model.content.bestiary;
 import io.ruin.api.utils.Tuple;
 import io.ruin.cache.NPCDef;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -173,52 +170,54 @@ public class BestiaryDef {
         put("albino bat", "bat");
     }};
 
-    private static final String[] BOSS = {
-            "general graardor",
-            "commander zilyana",
-            "k'ril tsutsaroth",
-            "kree'arra",
-            "kaal-ket-jor",
-            "dagannoth supreme",
-            "dagannoth prime",
-            "dagannoth rex",
-            "brutal lava dragon",
-            "hespori",
-            "abyssal sire",
-            "callisto",
-            "king black dragon",
-            "tekton",
-            "muttadile",
-            "great olm",
-            "vespula",
-            "vasa nistirio",
-            "alchemical hydra",
-            "corrupted nechryarch",
-            "the maiden of sugadinti",
-            "tztok-jad",
-            "obor",
-            "galvek",
-            "scorpia",
-            "vet'ion",
-            "venenatis",
-            "chaos fanatic",
-            "chaos elemental",
-            "sarachnis",
-            "vorkath",
-            "giant mole",
-            "bryophyta",
-            "ket'ian",
-            "kraken",
-            "thermonuclear smoke devil",
-            "corporeal beast",
-            "elvarg",
-            "cerberus",
-            "skotizo",
-            "kalphite queen",
-            "tzkal-zuk",
-            "crazy archaeologist",
-            "zulrah"
-    };
+    private static final Set<String> BOSS = new HashSet<String>() {{
+        addAll(Arrays.asList(
+                "general graardor",
+                "commander zilyana",
+                "k'ril tsutsaroth",
+                "kree'arra",
+                "kaal-ket-jor",
+                "dagannoth supreme",
+                "dagannoth prime",
+                "dagannoth rex",
+                "brutal lava dragon",
+                "hespori",
+                "abyssal sire",
+                "callisto",
+                "king black dragon",
+                "tekton",
+                "muttadile",
+                "great olm",
+                "vespula",
+                "vasa nistirio",
+                "alchemical hydra",
+                "corrupted nechryarch",
+                "the maiden of sugadinti",
+                "tztok-jad",
+                "obor",
+                "galvek",
+                "scorpia",
+                "vet'ion",
+                "venenatis",
+                "chaos fanatic",
+                "chaos elemental",
+                "sarachnis",
+                "vorkath",
+                "giant mole",
+                "bryophyta",
+                "ket'ian",
+                "kraken",
+                "thermonuclear smoke devil",
+                "corporeal beast",
+                "elvarg",
+                "cerberus",
+                "skotizo",
+                "kalphite queen",
+                "tzkal-zuk",
+                "crazy archaeologist",
+                "zulrah"
+        ));
+    }};
 
     private static final String[] IGNORED = {
             "angry bear",
