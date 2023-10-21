@@ -89,7 +89,7 @@ public abstract class ChapteredBook extends Book {
             }
             player.getPacketSender().sendString(680, i, context[i - 45 + offset - (i > 60 ? 1 : 0)]);
         }
-
+        player.getTaskManager().doLookupByUUID(921);    // Read a Book
     }
 
     public static final ArrayList<String[]> splitIntoLine(final String[] strings, final int maxCharInLine) {
