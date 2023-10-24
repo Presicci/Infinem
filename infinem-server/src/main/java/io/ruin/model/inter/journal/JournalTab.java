@@ -329,6 +329,7 @@ public class JournalTab {
         } else if (slot == 4) {
             if (option == 1) {
                 setTab(player, Tab.BESTIARY);
+                TabBestiary.sendTab(player);
             } else {
                 DropViewer.open(player);
             }
