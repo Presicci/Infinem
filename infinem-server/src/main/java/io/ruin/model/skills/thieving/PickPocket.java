@@ -330,7 +330,7 @@ public enum PickPocket {
                     new LootItem(Items.JUG, 1, 3),
                     new LootItem(Items.KNIFE, 1, 3),
                     new LootItem(Items.POT, 1, 3),
-                    new LootItem(Items.TOKKUL, 1, 16, 10),
+                    new LootItem(Items.TOKKUL, 1, 32, 10),
                     new LootItem(Items.UNCUT_SAPPHIRE, 1, 2),
                     new LootItem(Items.UNCUT_EMERALD, 1, 2),
                     new LootItem(Items.UNCUT_RUBY, 1, 2),
