@@ -289,14 +289,16 @@ public enum PickPocket {
             64.06,
             1.60667,
             new LootTable().addTable(1,
-                    new LootItem(1755, 1, 6),                    //Chisel
-                    new LootItem(2347, 1, 5),                    //Hammer
-                    new LootItem(1935, 1, 5),                    //Jug
-                    new LootItem(946, 1, 2),                     //Knife
-                    new LootItem(1931, 1, 2),                    //Pot
-                    new LootItem(6529, 1, 16, 2),  //Tokkul
-                    new LootItem(1623, 1, 1),                    //Uncut Sapphire
-                    new LootItem(1619, 1, 1)                     //Uncut Ruby
+                    new LootItem(Items.CHISEL, 1, 3),
+                    new LootItem(Items.HAMMER, 1, 3),
+                    new LootItem(Items.JUG, 1, 3),
+                    new LootItem(Items.KNIFE, 1, 3),
+                    new LootItem(Items.POT, 1, 3),
+                    new LootItem(Items.TOKKUL, 1, 16, 10),
+                    new LootItem(Items.UNCUT_SAPPHIRE, 1, 2),
+                    new LootItem(Items.UNCUT_EMERALD, 1, 2),
+                    new LootItem(Items.UNCUT_RUBY, 1, 2),
+                    new LootItem(Items.UNCUT_DIAMOND, 1, 1)
             ));
 
     public final int levelReq, stunAnimation, stunSeconds, stunDamage, petOdds, pouchId;
