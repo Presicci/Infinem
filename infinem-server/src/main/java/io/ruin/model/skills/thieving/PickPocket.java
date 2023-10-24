@@ -31,7 +31,7 @@ public enum PickPocket {
             70.70,
             0.2424,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 150, 450, 1)  //Coins
+                    new LootItem(COINS_995, 3, 3, 1)  //Coins
             )),
     WOMAN(1, 8.0, 422, 5, 1, "woman's", PlayerCounter.PICKPOCKETED_MAN,
             257211,
@@ -39,7 +39,7 @@ public enum PickPocket {
             70.70,
             0.2424,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 150, 450, 1)  //Coins
+                    new LootItem(COINS_995, 3, 3, 1)  //Coins
             )),
     FARMER(10, 14.5, 433, 5, 1, "farmer's", PlayerCounter.PICKPOCKETED_FARMER,
             257211,
@@ -47,7 +47,7 @@ public enum PickPocket {
             60.55,
             0.365,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 200, 500, 6), //Coins
+                    new LootItem(COINS_995, 9, 9, 24), //Coins
                     new LootItem(5318, 1, 1) //Potato seed
             )),
     HAM(15, 18.5, 433, 4, 1, "H.A.M member's", PlayerCounter.PICKPOCKETED_HAM_MEMBER,
@@ -72,7 +72,7 @@ public enum PickPocket {
                     new LootItem(4306, 1, 1), //Coins
                     new LootItem(4308, 1, 1), //Coins
                     new LootItem(4310, 1, 1), //Coins
-                    new LootItem(COINS_995, 300, 1), //Coins
+                    new LootItem(COINS_995, 1, 21, 1), //Coins
                     new LootItem(319, 1, 1), //Coins
                     new LootItem(2138, 1, 1), //Coins
                     new LootItem(453, 1, 1), //Coins
@@ -96,7 +96,7 @@ public enum PickPocket {
             52.34,
             0.5649,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 350, 800, 1) //Coins
+                    new LootItem(COINS_995, 18, 18, 1) //Coins
             )),
     ROGUE(32, 35.5, 422, 5, 2, "rogue's", PlayerCounter.PICKPOCKETED_ROGUE,
             257211,
@@ -104,7 +104,7 @@ public enum PickPocket {
             49.22,
             0.67,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 1500, 5000, 10), //Coins
+                    new LootItem(COINS_995, 25, 40, 10), //Coins
                     new LootItem(556, 8, 5),  //Air runes
                     new LootItem(1933, 1, 4), //Jug of wine
                     new LootItem(1219, 1, 3), //Iron dagger(p)
@@ -171,7 +171,7 @@ public enum PickPocket {
             49.22,
             0.761,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 300, 900, 1) //Coins
+                    new LootItem(COINS_995, 30, 30, 1) //Coins
             )),
     BANDIT(53, 79.5, 422, 5, 3, "bandit's", PlayerCounter.PICKPOCKETED_BANDIT,
             257211,
@@ -179,7 +179,7 @@ public enum PickPocket {
             58.98,
             0.764,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 300, 900, 8), //Coins
+                    new LootItem(COINS_995, 30, 30, 8), //Coins
                     new LootItem(175, 1, 3),  //Antipoison
                     new LootItem(1523, 1, 1)  //Lockpick
             )),
@@ -189,7 +189,7 @@ public enum PickPocket {
             60.55,
             0.763,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 400, 1000, 1) //Coins
+                    new LootItem(COINS_995, 50, 50, 1) //Coins
             )),
     WATCHMAN(65, 137.5, 433, 5, 3, "watchman's", PlayerCounter.PICKPOCKETED_WATCHMAN,
             134625,
@@ -207,8 +207,8 @@ public enum PickPocket {
             46.88,
             0.417,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 500, 1500, 6), //Coins
-                    new LootItem(562, 2, 3)   //Chaos runes
+                    new LootItem(COINS_995, 80, 80, 0), //Coins
+                    new LootItem(562, 2, 0)   //Chaos runes
             )),
     GNOME(75, 198.5, 201, 5, 1, "gnome's", PlayerCounter.PICKPOCKETED_GNOME,
             108718,
@@ -216,7 +216,7 @@ public enum PickPocket {
             35.94,
             0.472,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 500, 1500, 16), //Coins
+                    new LootItem(COINS_995, 300, 300, 16), //Coins
                     new LootItem(5321, 3, 8),   //Watermelon seed
                     new LootItem(5100, 1, 8),   //Limpwurt seed
                     new LootItem(5295, 1, 7),   //Ranarr seed
@@ -246,7 +246,7 @@ public enum PickPocket {
             32.03,
             0.391,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 1000, 2000, 16),  //Coins
+                    new LootItem(COINS_995, 200, 300, 16),  //Coins
                     new LootItem(565, 1, 5),  //Blood rune
                     new LootItem(560, 2, 5),  //Death runes
                     new LootItem(1933, 1, 2), //Jug of wine
@@ -275,7 +275,7 @@ public enum PickPocket {
             33.59,
             0.4186,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 1500, 2500, 16), //Coins
+                    new LootItem(COINS_995, 280, 350, 16), //Coins
                     new LootItem(561, 3, 5),  //Nature runes
                     new LootItem(560, 2, 5),  //Death runes
                     new LootItem(1933, 1, 2), //Jug of wine
