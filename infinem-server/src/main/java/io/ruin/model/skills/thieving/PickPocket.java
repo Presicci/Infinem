@@ -149,31 +149,57 @@ public enum PickPocket {
             57.42,
             0.6019,
             new LootTable().addTable(1,
-                    new LootItem(5318, 1, 4, 8), //Potato seed
-                    new LootItem(5319, 1, 3, 5), //Onion seed
-                    new LootItem(5324, 1, 3, 5), //Cabbage seed
-                    new LootItem(5322, 1, 2, 5), //Tomato seed
-                    new LootItem(5320, 1, 2, 5), //Sweetcorn seed
-                    new LootItem(5096, 1, 5), //Marigold seed
-                    new LootItem(5097, 1, 5), //Rosemary seed
-                    new LootItem(5098, 1, 5), //Nasturtium seed
-                    new LootItem(5291, 1, 5), //Guam seed
-                    new LootItem(5292, 1, 5), //Marrentill seed
-                    new LootItem(5293, 1, 5), //Tarromin seed
-                    new LootItem(5294, 1, 5), //Harralander seed
-                    new LootItem(5323, 1, 3), //Strawberry seed
-                    new LootItem(5321, 1, 3), //Watermelon seed
-                    new LootItem(5100, 1, 3), //Limpwurt seed
-                    new LootItem(5295, 1, 2), //Ranarr seed
-                    new LootItem(5296, 1, 2), //Toadflax seed
-                    new LootItem(5297, 1, 2), //Irit seed
-                    new LootItem(5298, 1, 1), //Avantoe seed
-                    new LootItem(5299, 1, 1), //Kwuarm seed
-                    new LootItem(5300, 1, 1), //Snapdragon seed
-                    new LootItem(5301, 1, 1), //Cadantine seed
-                    new LootItem(5302, 1, 1), //Lantadyme seed
-                    new LootItem(5303, 1, 1), //Dwarf weed seed
-                    new LootItem(5304, 1, 1)  //Torstol seed
+                    new LootItem(5318, 1, 4, 1785), //Potato seed
+                    new LootItem(5319, 1, 3, 1338), //Onion seed
+                    new LootItem(5324, 1, 3, 714), //Cabbage seed
+                    new LootItem(5322, 1, 2, 666), //Tomato seed
+                    new LootItem(5320, 1, 2, 227), //Sweetcorn seed
+                    new LootItem(5323, 1, 121), //Strawberry seed
+                    new LootItem(5321, 1, 53), //Watermelon seed
+                    new LootItem(22879, 1, 38), //Snape grass seed
+                    // Hops
+                    new LootItem(Items.BARLEY_SEED, 1, 12, 555),
+                    new LootItem(Items.HAMMERSTONE_SEED, 1, 9, 555),
+                    new LootItem(Items.ASGARNIAN_SEED, 1, 6, 417),
+                    new LootItem(Items.JUTE_SEED, 1, 9, 416),
+                    new LootItem(Items.YANILLIAN_SEED, 1, 6, 277),
+                    new LootItem(Items.KRANDORIAN_SEED, 1, 6, 131),
+                    new LootItem(Items.WILDBLOOD_SEED, 1, 3, 70),
+                    // Flowers
+                    new LootItem(5096, 1, 476), //Marigold seed
+                    new LootItem(5098, 1, 312), //Nasturtium seed
+                    new LootItem(5097, 1, 200), //Rosemary seed
+                    new LootItem(Items.WOAD_SEED, 1, 147),
+                    new LootItem(5100, 1, 116), //Limpwurt seed
+                    // Bush seeds
+                    new LootItem(Items.REDBERRY_SEED, 1, 400),
+                    new LootItem(Items.CADAVABERRY_SEED, 1, 277),
+                    new LootItem(Items.DWELLBERRY_SEED, 1, 196),
+                    new LootItem(Items.JANGERBERRY_SEED, 1, 77),
+                    new LootItem(Items.WHITEBERRY_SEED, 1, 28),
+                    new LootItem(Items.POISON_IVY_SEED, 1, 11),
+                    // Herb seeds
+                    new LootItem(Items.GUAM_SEED, 1, 153),
+                    new LootItem(Items.MARRENTILL_SEED, 1, 105),
+                    new LootItem(Items.TARROMIN_SEED, 1, 71),
+                    new LootItem(Items.HARRALANDER_SEED, 1, 50),
+                    new LootItem(5295, 1, 33), //Ranarr seed
+                    new LootItem(5296, 1, 21), //Toadflax seed
+                    new LootItem(5297, 1, 18), //Irit seed
+                    new LootItem(5298, 1, 10), //Avantoe seed
+                    new LootItem(5299, 1, 10), //Kwuarm seed
+                    new LootItem(5300, 1, 5), //Snapdragon seed
+                    new LootItem(5301, 1, 4), //Cadantine seed
+                    new LootItem(5302, 1, 2), //Lantadyme seed
+                    new LootItem(5303, 1, 2), //Dwarf weed seed
+                    new LootItem(5304, 1, 1),  //Torstol seed
+                    // Special
+                    new LootItem(Items.MUSHROOM_SPORE, 1, 22),
+                    new LootItem(Items.BELLADONNA_SEED, 1, 28),
+                    new LootItem(Items.CACTUS_SEED, 1, 10),
+                    new LootItem(21490, 1, 5),  // Seaweed spore
+                    new LootItem(22873, 1, 5)   // Potato cactus seed
+
             )),
     GUARD(40, 46.8, 386, 5, 2, "guard's", PlayerCounter.PICKPOCKETED_GUARD,
             257211,
