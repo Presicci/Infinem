@@ -217,29 +217,12 @@ public enum PickPocket {
             35.94,
             0.472,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 300, 300, 16), //Coins
-                    new LootItem(5321, 3, 8),   //Watermelon seed
-                    new LootItem(5100, 1, 8),   //Limpwurt seed
-                    new LootItem(5295, 1, 7),   //Ranarr seed
-                    new LootItem(5296, 1, 7),   //Toadflax seed
-                    new LootItem(5297, 1, 7),   //Irit seed
-                    new LootItem(5298, 1, 7),   //Avantoe seed
-                    new LootItem(5299, 1, 7),   //Kwuarm seed
-                    new LootItem(5300, 1, 7),   //Snapdragon seed
-                    new LootItem(5301, 1, 7),   //Cadantine seed
-                    new LootItem(5302, 1, 6),   //Lantadyme seed
-                    new LootItem(5303, 1, 5),   //Dwarf weed seed
-                    new LootItem(5304, 1, 4),   //Torstol seed
-                    new LootItem(5312, 1, 4),   //Acorn
-                    new LootItem(5313, 1, 3),   //Willow seed
-                    new LootItem(5314, 1, 4),   //Maple seed
-                    new LootItem(5315, 1, 1),   //Yew seed
-                    new LootItem(5283, 1, 9),   //Apple tree seed
-                    new LootItem(5284, 1, 8),   //Banana tree seed
-                    new LootItem(5285, 1, 7),   //Orange tree seed
-                    new LootItem(5286, 1, 6),   //Curry tree seed
-                    new LootItem(5287, 1, 3),   //Pineapple seed
-                    new LootItem(5288, 1, 2)    //Papaya tree seed
+                    new LootItem(Items.KING_WORM, 1, 1, 24),
+                    new LootItem(Items.COINS, 300, 300, 17),
+                    new LootItem(Items.SWAMP_TOAD, 1, 1, 16),
+                    new LootItem(Items.GOLD_ORE, 1, 1, 4),
+                    new LootItem(Items.EARTH_RUNE, 1, 1, 2),
+                    new LootItem(Items.FIRE_ORB, 1, 1, 1)
             )),
     HERO(80, 275.0, 386, 6, 4, "hero's", PlayerCounter.PICKPOCKETED_HERO,
             99175,
