@@ -161,27 +161,29 @@ public enum CollectionLogInfo {
                     return KillCounter.getKillCount(player, BossKillCounter.KREEARRA);
                 case 23://k'ril
                     return KillCounter.getKillCount(player, BossKillCounter.KRIL_TSUTSAROTH);
-                case 24://obor
-                    return KillCounter.getKillCount(player, BossKillCounter.OBOR);
-                case 25://sarachnis
-                    return KillCounter.getKillCount(player, BossKillCounter.SARACHNIS);
-                case 26://scorpia
-                    return KillCounter.getKillCount(player, BossKillCounter.SCORPIA);
-                case 27://skotizo
-                    return KillCounter.getKillCount(player, BossKillCounter.SKOTIZO);
-                case 28://thermo devil
-                    return KillCounter.getKillCount(player, BossKillCounter.THERMONUCLEAR_SMOKE_DEVIL);
-                case 29://venenatis
-                    return KillCounter.getKillCount(player, BossKillCounter.VENENATIS);
-                case 30://vet'ion
-                    return KillCounter.getKillCount(player, BossKillCounter.VETION);
-                case 31://vorkath
-                    return KillCounter.getKillCount(player, BossKillCounter.VORKATH);
-                case 32://wintertodt
-                    return PlayerCounter.WINTERTODT_SUBDUED.get(player);
-                case 33://zalcano
+                case 24://nightmare
                     return 0;
-                case 34://zulrah
+                case 25://obor
+                    return KillCounter.getKillCount(player, BossKillCounter.OBOR);
+                case 26://sarachnis
+                    return KillCounter.getKillCount(player, BossKillCounter.SARACHNIS);
+                case 27://scorpia
+                    return KillCounter.getKillCount(player, BossKillCounter.SCORPIA);
+                case 28://skotizo
+                    return KillCounter.getKillCount(player, BossKillCounter.SKOTIZO);
+                case 29://thermo devil
+                    return KillCounter.getKillCount(player, BossKillCounter.THERMONUCLEAR_SMOKE_DEVIL);
+                case 30://venenatis
+                    return KillCounter.getKillCount(player, BossKillCounter.VENENATIS);
+                case 31://vet'ion
+                    return KillCounter.getKillCount(player, BossKillCounter.VETION);
+                case 32://vorkath
+                    return KillCounter.getKillCount(player, BossKillCounter.VORKATH);
+                case 33://wintertodt
+                    return PlayerCounter.WINTERTODT_SUBDUED.get(player);
+                case 34://zalcano
+                    return 0;
+                case 35://zulrah
                     return KillCounter.getKillCount(player, BossKillCounter.ZULRAH);
                 default:
                     return 0;
