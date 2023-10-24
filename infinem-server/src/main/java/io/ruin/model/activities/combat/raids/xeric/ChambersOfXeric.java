@@ -19,7 +19,7 @@ import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
-import io.ruin.model.inter.handlers.TabJournal;
+import io.ruin.model.inter.journal.JournalTab;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
@@ -710,7 +710,7 @@ public class ChambersOfXeric {
             player.getMovement().teleport(1233, 3566, 0);
         } else {
             //TODO CoX quest tab interface
-            TabJournal.restore(player);
+            JournalTab.setTab(player, JournalTab.Tab.SUMMARY);
             player.getPacketSender().resetCamera();
             player.closeInterface(InterfaceType.PRIMARY_OVERLAY);
         }

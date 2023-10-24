@@ -10,15 +10,7 @@ import io.ruin.model.activities.wilderness.Hotspot;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.Interface;
-import io.ruin.model.inter.handlers.TabJournal;
 import io.ruin.model.inter.journal.main.*;
-import io.ruin.model.inter.journal.presets.PresetCustom;
-import io.ruin.model.inter.journal.presets.main.Hybrid;
-import io.ruin.model.inter.journal.presets.main.MainNoHonorTribrid;
-import io.ruin.model.inter.journal.presets.main.Melee;
-import io.ruin.model.inter.journal.presets.pure.PureMelee;
-import io.ruin.model.inter.journal.presets.pure.PureNoHonorTribrid;
-import io.ruin.model.inter.journal.presets.pure.RangeDDS;
 import io.ruin.model.inter.journal.toggles.*;
 import io.ruin.network.incoming.handlers.DisplayHandler;
 
@@ -71,7 +63,7 @@ public enum Journal {
      */
     public void send(Player player) {
         player.journal = this;
-        TabJournal.swap(player, Interface.SERVER_TAB);
+        //TabJournal.swap(player, Interface.SERVER_TAB);
         for(int childId = 9; childId <= 47; childId++) {
             player.getPacketSender().sendClientScript(135, "ii", Interface.SERVER_TAB << 16 | childId, 494);
             player.getPacketSender().sendString(Interface.SERVER_TAB, childId, "");

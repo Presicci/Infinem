@@ -7,7 +7,7 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
-import io.ruin.model.inter.handlers.TabJournal;
+import io.ruin.model.inter.journal.JournalTab;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 
@@ -109,7 +109,7 @@ public class Party {
 
     public static void sendRaidJournal(Player player, Party party) {
         /* set the journal interface */
-        TabJournal.swap(player, Interface.RAIDING_JOURNAL);
+        JournalTab.setTab(player, JournalTab.Tab.RAIDING_JOURNAL);
 
         player.getPacketSender().sendClientScript(1547, "i", party.getMembers().size());
         /* party members information */
