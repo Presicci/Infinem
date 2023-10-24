@@ -275,13 +275,13 @@ public enum PickPocket {
             33.59,
             0.4186,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 280, 350, 16), //Coins
-                    new LootItem(561, 3, 5),  //Nature runes
-                    new LootItem(560, 2, 5),  //Death runes
-                    new LootItem(1933, 1, 2), //Jug of wine
-                    new LootItem(569, 1, 2),  //Fire orb
-                    new LootItem(444, 1, 2),  //Gold ore
-                    new LootItem(1617, 1, 1)  //Uncut diamond
+                    new LootItem(Items.COINS, 280, 350, 105),
+                    new LootItem(Items.DEATH_RUNE, 2, 8),
+                    new LootItem(Items.JUG_OF_WINE, 1, 6),
+                    new LootItem(Items.NATURE_RUNE, 3, 5),
+                    new LootItem(Items.FIRE_ORB, 1, 2),
+                    new LootItem(Items.GOLD_ORE, 1, 1),
+                    new LootItem(Items.DIAMOND, 1, 1)
             )),
     TZHAAR_HUR(90, 103.0, 2609, 6, 4, "tzhaar-hur's", PlayerCounter.PICKPOCKETED_TZHAAR_HUR,
             176743,
