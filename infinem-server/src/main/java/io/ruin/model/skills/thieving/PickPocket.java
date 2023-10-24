@@ -180,8 +180,8 @@ public enum PickPocket {
             58.98,
             0.764,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 30, 30, 8), //Coins
-                    new LootItem(175, 1, 3),  //Antipoison
+                    new LootItem(COINS_995, 30, 30, 5), //Coins
+                    new LootItem(175, 1, 1),  //Antipoison
                     new LootItem(1523, 1, 1)  //Lockpick
             )),
     KNIGHT(55, 84.3, 386, 5, 3, "knight's", PlayerCounter.PICKPOCKETED_KNIGHT,
