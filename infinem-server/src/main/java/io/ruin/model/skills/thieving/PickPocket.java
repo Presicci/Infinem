@@ -247,13 +247,13 @@ public enum PickPocket {
             32.03,
             0.391,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 200, 300, 16),  //Coins
-                    new LootItem(565, 1, 5),  //Blood rune
-                    new LootItem(560, 2, 5),  //Death runes
-                    new LootItem(1933, 1, 2), //Jug of wine
-                    new LootItem(569, 1, 2),  //Fire orb
-                    new LootItem(444, 1, 2),  //Gold ore
-                    new LootItem(1617, 1, 1)  //Uncut diamond
+                    new LootItem(Items.COINS, 200, 300, 105),
+                    new LootItem(Items.DEATH_RUNE, 2, 8),
+                    new LootItem(Items.JUG_OF_WINE, 1, 6),
+                    new LootItem(Items.NATURE_RUNE, 3, 5),
+                    new LootItem(Items.FIRE_ORB, 1, 2),
+                    new LootItem(Items.GOLD_ORE, 1, 1),
+                    new LootItem(Items.DIAMOND, 1, 1)
             )),
     VYRE(82, 306.9, -1, 6, 5, "vyre's", PlayerCounter.PICKPOCKETED_VYRE,
             99175,
@@ -261,7 +261,7 @@ public enum PickPocket {
             41.8,
             0.505,
             new LootTable().addTable(1,
-                    new LootItem(995, 250, 315, 4129),
+                    new LootItem(Items.COINS, 250, 315, 4129),
                     new LootItem(Items.DEATH_RUNE, 2, 303),
                     new LootItem(24774, 1, 227), // Blood pint
                     new LootItem(Items.UNCUT_RUBY, 1, 189),
