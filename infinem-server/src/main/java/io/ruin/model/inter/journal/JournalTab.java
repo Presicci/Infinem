@@ -7,9 +7,10 @@ import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.*;
+import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SimpleAction;
-import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.handlers.TabBestiary;
+import io.ruin.model.inter.journal.dropviewer.DropViewer;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.containers.collectionlog.CollectionLogInfo;
 import lombok.Getter;
@@ -96,11 +97,11 @@ public class JournalTab {
          * Journal tab
          */
         SUMMARY(Tab.SUMMARY, player -> {
-            player.getPacketSender().sendAccessMask(712, 3, 3, 6, 2);
+            player.getPacketSender().sendAccessMask(712, 3, 3, 6, AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3, AccessMasks.ClickOp4);
         }) {
             @Override
             public void init() {
-                InterfaceHandler.register(getTab().getId(), h -> h.actions[3] = (SlotAction) JournalTab::handleSummaryClick);
+                InterfaceHandler.register(getTab().getId(), h -> h.actions[3] = (DefaultAction) JournalTab::handleSummaryClick);
             }
         },
         SUMMARY_ACHIEVEMENTS(Tab.SUMMARY, player -> {
@@ -322,11 +323,15 @@ public class JournalTab {
         player.getPacketSender().sendString(c.getTab().getId(), c.getComponentId(), " - " + c.getText().send(player));
     }
 
-    private static void handleSummaryClick(Player player, int slot) {
+    private static void handleSummaryClick(Player player, int option, int slot, int itemId) {
         if (slot == 3) {
             TaskInterface.openTaskInterface(player);
         } else if (slot == 4) {
-            setTab(player, Tab.ACHIEVEMENT);
+            if (option == 1) {
+                setTab(player, Tab.BESTIARY);
+            } else {
+                DropViewer.open(player);
+            }
         } else if (slot == 5) {
             //CombatAchievements.openOverview(player);
         } else if (slot == 6) {
