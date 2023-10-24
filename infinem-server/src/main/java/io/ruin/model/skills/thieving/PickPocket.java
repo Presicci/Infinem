@@ -105,11 +105,11 @@ public enum PickPocket {
             49.22,
             0.67,
             new LootTable().addTable(1,
-                    new LootItem(COINS_995, 25, 40, 10), //Coins
-                    new LootItem(556, 8, 5),  //Air runes
-                    new LootItem(1933, 1, 4), //Jug of wine
-                    new LootItem(1219, 1, 3), //Iron dagger(p)
-                    new LootItem(1523, 1, 1)  //Lockpick
+                    new LootItem(COINS_995, 25, 40, 108),
+                    new LootItem(Items.AIR_RUNE, 8, 8),
+                    new LootItem(Items.JUG_OF_WINE, 1, 6),
+                    new LootItem(Items.LOCKPICK, 1, 5),
+                    new LootItem(Items.IRON_DAGGER_P, 1, 1)
             )),
     //  TODO stunAnimation
     // Only record with chances not sourced from osrs wiki data
