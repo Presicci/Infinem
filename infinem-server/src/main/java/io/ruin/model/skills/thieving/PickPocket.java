@@ -16,6 +16,7 @@ import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.ThievingSkillCape;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
+import io.ruin.model.map.MapArea;
 import io.ruin.model.skills.BotPrevention;
 import io.ruin.model.stat.StatType;
 
@@ -283,6 +284,23 @@ public enum PickPocket {
                     new LootItem(Items.GOLD_ORE, 1, 1),
                     new LootItem(Items.DIAMOND, 1, 1)
             )),
+    ELF_PRIF(85, 353.0, 422, 6, 5, "elf's", PlayerCounter.PICKPOCKETED_ELF,
+            99175,
+            22538,
+            33.59,
+            0.4186,
+            new LootTable().addTable(34,
+                    new LootItem(Items.COINS, 280, 350, 102),
+                    new LootItem(Items.DEATH_RUNE, 2, 8),
+                    new LootItem(Items.JUG_OF_WINE, 1, 6),
+                    new LootItem(Items.NATURE_RUNE, 3, 5),
+                    new LootItem(Items.FIRE_ORB, 1, 2),
+                    new LootItem(Items.GOLD_ORE, 1, 1),
+                    new LootItem(Items.DIAMOND, 1, 1)
+            ).addTable(1,
+                    new LootItem(Items.CRYSTAL_SHARD, 1, 29),
+                    new LootItem(Items.ENHANCED_CRYSTAL_TELEPORT_SEED, 1, 1)
+            )),
     TZHAAR_HUR(90, 103.0, 2609, 6, 4, "tzhaar-hur's", PlayerCounter.PICKPOCKETED_TZHAAR_HUR,
             176743,
             -1,
@@ -372,10 +390,11 @@ public enum PickPocket {
                 int pouchId = pickpocket.pouchId;
                 player.animate(881);
                 player.privateSound(2581);
+                LootTable lootTable = pickpocket == ELF && MapArea.PRIFDDINAS.inArea(player) ? ELF_PRIF.lootTable : pickpocket.lootTable;
                 if (additionalRolls > 0) {
                     boolean hasGottenPouch = false;
                     for (int index = additionalRolls + 1; index > 0; index--) {
-                        List<Item> items = pickpocket.lootTable.rollItems(true);
+                        List<Item> items = lootTable.rollItems(true);
                         for (Item item : items) {
                             //  Coin pouch handling
                             if (item.getId() == 995 && pouchId != -1 && !hasGottenPouch) {
@@ -390,7 +409,7 @@ public enum PickPocket {
                     player.sendFilteredMessage("Your lightning-fast reactions allow you to steal " + (additionalRolls == 1 ? "double" : additionalRolls == 2 ? "triple" : "quadruple") + " the loot.");
                 } else {
                     player.sendFilteredMessage("You pick the " + pickpocket.identifier + " pocket.");
-                    List<Item> items = pickpocket.lootTable.rollItems(true);
+                    List<Item> items = lootTable.rollItems(true);
                     for (Item item : items) {
                         if (item.getId() == 995 && pouchId != -1) {
                             player.getInventory().add(pouchId, 1);
