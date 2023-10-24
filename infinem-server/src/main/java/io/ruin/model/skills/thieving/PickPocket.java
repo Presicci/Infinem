@@ -295,9 +295,9 @@ public enum PickPocket {
             0.4186,
             new LootTable().addTable(1,
                     new LootItem(Items.COINS, 280, 350, 105),
-                    new LootItem(Items.DEATH_RUNE, 2, 8),
+                    new LootItem(Items.DEATH_RUNE, 3, 8),
                     new LootItem(Items.JUG_OF_WINE, 1, 6),
-                    new LootItem(Items.NATURE_RUNE, 3, 5),
+                    new LootItem(Items.NATURE_RUNE, 4, 5),
                     new LootItem(Items.FIRE_ORB, 1, 2),
                     new LootItem(Items.GOLD_ORE, 1, 1),
                     new LootItem(Items.DIAMOND, 1, 1)
@@ -309,9 +309,9 @@ public enum PickPocket {
             0.4186,
             new LootTable().addTable(34,
                     new LootItem(Items.COINS, 280, 350, 102),
-                    new LootItem(Items.DEATH_RUNE, 2, 8),
+                    new LootItem(Items.DEATH_RUNE, 3, 8),
                     new LootItem(Items.JUG_OF_WINE, 1, 6),
-                    new LootItem(Items.NATURE_RUNE, 3, 5),
+                    new LootItem(Items.NATURE_RUNE, 4, 5),
                     new LootItem(Items.FIRE_ORB, 1, 2),
                     new LootItem(Items.GOLD_ORE, 1, 1),
                     new LootItem(Items.DIAMOND, 1, 1)
