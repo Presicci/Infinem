@@ -2,6 +2,7 @@ package io.ruin.model.skills.thieving;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
+import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
@@ -57,39 +58,47 @@ public enum PickPocket {
             58.59,
             0.4232,
             new LootTable().addTable(1,
-                    new LootItem(882, 16, 60), //Coins
-                    new LootItem(1351, 1, 1), //Coins
-                    new LootItem(1265, 1, 1), //Coins
-                    new LootItem(1349, 1, 1), //Coins
-                    new LootItem(1267, 1, 1), //Coins
-                    new LootItem(886, 20, 1), //Coins
-                    new LootItem(1353, 1, 1), //Coins
-                    new LootItem(1207, 1, 1), //Coins
-                    new LootItem(1129, 1, 1), //Coins
-                    new LootItem(4302, 1, 1), //Coins
-                    new LootItem(4298, 1, 1), //Coins
-                    new LootItem(4300, 1, 1), //Coins
-                    new LootItem(4304, 1, 1), //Coins
-                    new LootItem(4306, 1, 1), //Coins
-                    new LootItem(4308, 1, 1), //Coins
-                    new LootItem(4310, 1, 1), //Coins
-                    new LootItem(COINS_995, 1, 21, 1), //Coins
-                    new LootItem(319, 1, 1), //Coins
-                    new LootItem(2138, 1, 1), //Coins
-                    new LootItem(453, 1, 1), //Coins
-                    new LootItem(440, 1, 1), //Coins
-                    new LootItem(1739, 1, 1), //Coins
-                    new LootItem(314, 5, 1), //Coins
-                    new LootItem(1734, 6, 1), //Coins
-                    new LootItem(1733, 1, 1), //Coins
-                    new LootItem(1511, 1, 1), //Coins
-                    new LootItem(686, 1, 1), //Coins
-                    new LootItem(697, 1, 1), //Coins
-                    new LootItem(1625, 1, 1), //Coins
-                    new LootItem(1627, 1, 1), //Coins
-                    new LootItem(199, 5, 1), //Coins
-                    new LootItem(201, 6, 1), //Coins
-                    new LootItem(203, 1, 1) //Coins
+                    new LootItem(Items.BRONZE_ARROW, 1, 13, 10),
+                    new LootItem(Items.BRONZE_AXE, 1, 10),
+                    new LootItem(Items.BRONZE_DAGGER, 1, 10),
+                    new LootItem(Items.BRONZE_PICKAXE, 1, 10),
+                    new LootItem(Items.IRON_AXE, 1, 10),
+                    new LootItem(Items.IRON_DAGGER, 1, 10),
+                    new LootItem(Items.IRON_PICKAXE, 1, 10),
+                    new LootItem(Items.LEATHER_BODY, 1, 10),
+                    new LootItem(Items.STEEL_ARROW, 1, 13, 7),
+                    new LootItem(Items.STEEL_AXE, 1, 7),
+                    new LootItem(Items.STEEL_DAGGER, 1, 7),
+                    new LootItem(Items.STEEL_PICKAXE, 1, 7),
+                    new LootItem(Items.HAM_BOOTS, 1, 4),
+                    new LootItem(Items.HAM_CLOAK, 1, 4),
+                    new LootItem(Items.HAM_GLOVES, 1, 4),
+                    new LootItem(Items.HAM_HOOD, 1, 4),
+                    new LootItem(Items.HAM_LOGO, 1, 4),
+                    new LootItem(Items.HAM_ROBE, 1, 4),
+                    new LootItem(Items.HAM_SHIRT, 1, 4),
+                    new LootItem(Items.COINS, 1, 21, 49),
+                    new LootItem(Items.BUTTONS, 1, 13),
+                    new LootItem(Items.DAMAGED_ARMOUR, 1, 13),
+                    new LootItem(Items.RUSTY_SWORD, 1, 13),
+                    new LootItem(Items.FEATHER, 1, 7, 10),
+                    new LootItem(Items.LOGS, 1, 10),
+                    new LootItem(Items.THREAD, 1, 10, 10),
+                    new LootItem(Items.COWHIDE, 1, 10),
+                    new LootItem(Items.KNIFE, 1, 7),
+                    new LootItem(Items.NEEDLE, 1, 7),
+                    new LootItem(Items.RAW_ANCHOVIES, 1, 7),
+                    new LootItem(Items.RAW_CHICKEN, 1, 7),
+                    new LootItem(Items.TINDERBOX, 1, 7),
+                    new LootItem(Items.UNCUT_OPAL, 1, 7),
+                    new LootItem(ClueType.EASY.boxId, 1, 7),
+                    new LootItem(Items.COAL, 1, 7),
+                    new LootItem(Items.IRON_ORE, 1, 7),
+                    new LootItem(Items.UNCUT_JADE, 1, 7),
+                    new LootItem(Items.GRIMY_GUAM_LEAF, 1, 4),
+                    new LootItem(Items.GRIMY_MARRENTILL, 1, 2),
+                    new LootItem(Items.GRIMY_TARROMIN, 1, 1)
+
             )),
     WARRIOR(25, 26.0, 386, 5, 2, "warrior's", PlayerCounter.PICKPOCKETED_WARRIOR,
             257211,
