@@ -2,15 +2,15 @@ package io.ruin.model.skills.farming;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.cache.ItemDef;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.OptionAction;
-import io.ruin.model.inter.dialogue.ItemDialogue;
-import io.ruin.model.inter.dialogue.MessageDialogue;
-import io.ruin.model.inter.dialogue.NPCDialogue;
+import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.skills.herblore.Herb;
@@ -365,6 +365,63 @@ public class ToolStorage {
         }
     }
 
+    private static void inquireTools(Player player, NPC npc) {
+        player.dialogue(
+                new PlayerDialogue("What do you do with the tools you're storing?<br>" +
+                        "They can't possibly all fit in your pockets!"),
+                new NPCDialogue(npc, "We leprechauns have a shed where we keep 'em. It's a magic shed, so ye can get yer items back from any of us leprechauns whenever ye want. " +
+                        "Saves ye havin' to carry loads of stuff around the country!"),
+                new NPCDialogue(npc, "So... do ye want to be using the store?"),
+                new OptionsDialogue(
+                        new Option("Yes please.", () -> player.getFarming().getStorage().open(player)),
+                        new Option("What can you store?", () -> inquireStorage(player, npc)),
+                        new Option("No thanks, I'll keep hold of my stuff.", () -> farewell(player, npc))
+
+                )
+        );
+    }
+
+    private static void inquireStorage(Player player, NPC npc) {
+        player.dialogue(
+                new PlayerDialogue("What can you store?"),
+                new NPCDialogue(npc, "We'll hold onto yer rake, yer seed dibber, yer spade,<br>" +
+                        "yer secateurs, yer waterin' can and yer trowel - but<br>" +
+                        "mind it's not oen of them fancy trowels only<br>" +
+                        "archaeologists use!"),
+                new NPCDialogue(npc, "We'll take a few buckets off yer hands too, and even<br>" +
+                        "yer compost, supercompost an' ultracompost! Also plant<br>" +
+                        "cure vials."),
+                new NPCDialogue(npc, "Aside from that, if ye hands me yer farming produce, I<br>" +
+                        "can mebbe change it into banknotes for ye."),
+                new NPCDialogue(npc, "So... do ye want to be using the store?"),
+                new OptionsDialogue(
+                        new Option("Yes please.", () -> player.getFarming().getStorage().open(player)),
+                        new Option("What do you do with the tools you're storing?", () -> inquireTools(player, npc)),
+                        new Option("No thanks, I'll keep hold of my stuff.", () -> farewell(player, npc))
+                )
+        );
+    }
+
+    private static void farewell(Player player, NPC npc) {
+        player.dialogue(
+                new PlayerDialogue("No thanks, I'll keep hold of my stuff."),
+                new NPCDialogue(npc, "Ye must be dafter than ye look if ye likes luggin' yer tools everywhere ye goes!")
+        );
+    }
+
+    private static void dialogue(Player player, NPC npc) {
+        player.dialogue(
+                new NPCDialogue(npc, "Ah, 'tis a foine day to be sure! Were yez wantin' me to<br>" +
+                        "store yer tools, or maybe ye might be wantin' yer stuff<br>back from me?"),
+                new OptionsDialogue(
+                        new Option("Yes please.", () -> player.getFarming().getStorage().open(player)),
+                        new Option("What can you store?", () -> inquireStorage(player, npc)),
+                        new Option("What do you do with the tools you're storing?", () -> inquireTools(player, npc)),
+                        new Option("No thanks, I'll keep hold of my stuff.", () -> farewell(player, npc))
+                )
+        );
+    }
+
     static {
         InterfaceHandler.register(125, h -> {
             for (int i = 8; i < 20; i++) {
@@ -383,10 +440,7 @@ public class ToolStorage {
                 h.actions[i] = (OptionAction) (player, option) -> player.getFarming().getStorage().getOption(option, slot, true);
             }
         });
-        NPCAction.register("tool leprechaun", "talk-to", (player, npc) -> {
-            player.dialogue(new NPCDialogue(npc, "Ah, 'tis a foine day to be sure! Were yez wantin' me to<br>" +
-                    "store yer tools, or maybe ye might be wantin' yer stuff<br>back from me?"));
-        });
+        NPCAction.register("tool leprechaun", "talk-to", ToolStorage::dialogue);
         NPCAction.register("tool leprechaun", "exchange", (player, npc) -> player.getFarming().getStorage().open(player));
         ItemNPCAction.register("tool leprechaun", (player, item, npc) -> {
             if (item.getDef().notedId > 0 && (item.getDef().produceOf != null || Herb.get(item.getId()) != null)) {
