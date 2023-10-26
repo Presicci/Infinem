@@ -170,5 +170,14 @@
     "z": 0,
     "direction": "W",
     "walkRange": 0
+  },
+  {
+    "name": "Garden supplier",
+    "id": 3102,
+    "x": 1247,
+    "y": 3736,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   }
 ]
