@@ -1,0 +1,10 @@
+Drunken Dwarf's Leg: What you want, human? Me got goutweed to grow here, an' got to protect other herb patch for you, an' me supposed to read big farming book My Arm gave me. Busy!
+<How's your farming coming along?
+Player: How's your farming coming along?
+Drunken Dwarf's Leg: Me learn from My Arm. He smart. Me learn good, grow lots of goutweed. Me not let your herb patch get sick either.
+Player: Thank you.
+FIRSTOPTIONS
+><I'll leave you to it.
+Player: I'll leave you to it.
+Drunken Dwarf's Leg: Good. Me busy.
+>
