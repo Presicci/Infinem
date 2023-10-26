@@ -1,6 +1,9 @@
 package io.ruin.model.entity.npc.actions.animals;
 
+import io.ruin.api.utils.ArrayUtils;
+import io.ruin.api.utils.Random;
 import io.ruin.model.entity.npc.NPCAction;
+import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.item.Items;
 
@@ -25,6 +28,16 @@ public class PetCat {
                     }
                 });
             }));
+            SpawnListener.register(npcId, npc -> {
+                npc.addEvent(e -> {
+                    while(true) {
+                        e.delay(Random.get(30, 100));
+                        npc.forceText("Zzz");
+                    }
+                });
+            });
         }
+
+
     }
 }
