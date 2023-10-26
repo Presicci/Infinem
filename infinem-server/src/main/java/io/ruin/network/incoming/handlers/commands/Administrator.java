@@ -36,6 +36,8 @@ import io.ruin.model.activities.wilderness.StaffBounty;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.areas.MisthalinTask;
+import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.*;
@@ -1476,13 +1478,6 @@ public class Administrator {
                 player.getRelicManager().relics[index] = null;
                 return true;
             }
-
-            case "tt":
-            case "testtask": {
-                player.getTaskManager().openTaskInterface();
-                return true;
-            }
-
             case "testfilter": {
                 String[] filters = { "Easy", "General", "Completed" };
                 String sort = "Difficulty";
@@ -2844,6 +2839,15 @@ public class Administrator {
                 int ulesa = unsignedAA + (unsignedB << 8);
                 int lesa = ulesa > 32767 ? ulesa - 0x10000 : ulesa;
                 player.sendMessage("LEShortA: signed=" + lesa + ", unsigned=" + ulesa);
+                return true;
+            }
+            case "areatask": {
+                MisthalinTask.openRewards(player);
+                return true;
+            }
+            case "btest": {
+                player.openInterface(InterfaceType.MAIN, 1010);
+                player.getPacketSender().sendClientScript(10070, "is", 1, "Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000");
                 return true;
             }
         }
