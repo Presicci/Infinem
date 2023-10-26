@@ -97,6 +97,7 @@ public abstract class Book {
             }
             player.getPacketSender().sendString(680, i, context[i - 45 + offset - (i > 60 ? 1 : 0)]);
         }
+        player.getTaskManager().doLookupByUUID(921);    // Read a Book
     }
 
     public void handleButtons(final int componentId) {
