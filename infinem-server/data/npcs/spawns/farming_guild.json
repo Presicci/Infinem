@@ -161,5 +161,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+  {
+    "name": "Arno",
+    "id": 8588,
+    "x": 1230,
+    "y": 3728,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
   }
 ]
