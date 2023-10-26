@@ -30,6 +30,15 @@
     }
   },
   {
+    "name": "Drunken Dwarf's Leg",
+    "id": 760,
+    "x": 2829,
+    "y": 3696,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
     "name": "Soldier",
     "id": 4092,
     "x": 2840,
