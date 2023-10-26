@@ -225,6 +225,18 @@ public enum Farmer {
                     new PlayerDialogue("Would you look after my crops for me?"),
                     new ActionDialogue(() -> attemptPayment(player, npc, farmer.patch1))
             );
+        } else if (farmer == ALAN) {
+            player.dialogue(
+                    new PlayerDialogue("Would you look after my crops for me?"),
+                    new NPCDialogue(npc, "I might - which patch were you thinking of?"),
+                    new OptionsDialogue(
+                            new Option("The cactus patch", () -> attemptPayment(player, npc, PatchData.FARMING_GUILD_CACTUS)),
+                            new Option("The " + farmer.patchOneName + " allotment", () -> attemptPayment(player, npc, farmer.patch1)),
+                            new Option("The " + farmer.patchTwoName + " allotment", () -> attemptPayment(player, npc, farmer.patch2)),
+                            new Option("The bush patch", () -> attemptPayment(player, npc, PatchData.FARMING_GUILD_BUSH))
+                    ),
+                    new ActionDialogue(() -> attemptPayment(player, npc, farmer.patch1))
+            );
         } else {
             player.dialogue(
                     new PlayerDialogue("Would you look after my crops for me?"),
