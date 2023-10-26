@@ -1,13 +1,16 @@
 package io.ruin.model.skills.farming.farmer;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.ActionDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.farming.crop.impl.WoodTreeCrop;
@@ -18,11 +21,11 @@ import io.ruin.model.skills.farming.patch.impl.WoodTreePatch;
 import static io.ruin.cache.ItemID.COINS_995;
 
 public enum Farmer {
-    ELSTAN(2663, PatchData.FALADOR_NORTH, PatchData.FALADOR_SOUTH),
-    LYRA(2666, PatchData.CANIFIS_NORTH, PatchData.CANIFIS_SOUTH),
-    DANTAERA(2664, PatchData.CATHERBY_NORTH, PatchData.CATHERBY_SOUTH),
-    KRAGEN(2665, PatchData.ARDOUGNE_NORTH, PatchData.ARDOUGNE_SOUTH),
-    MARISI(6921, PatchData.ZEAH_NORTH, PatchData.ZEAH_SOUTH),
+    ELSTAN(2663, PatchData.FALADOR_NORTH, PatchData.FALADOR_SOUTH, "northwestern", "southeastern"),
+    LYRA(2666, PatchData.CANIFIS_NORTH, PatchData.CANIFIS_SOUTH, "northwestern", "southeastern"),
+    DANTAERA(2664, PatchData.CATHERBY_NORTH, PatchData.CATHERBY_SOUTH, "northern", "southern"),
+    KRAGEN(2665, PatchData.ARDOUGNE_NORTH, PatchData.ARDOUGNE_SOUTH, "northern", "southern"),
+    MARISI(6921, PatchData.ZEAH_NORTH, PatchData.ZEAH_SOUTH, "northeastern", "southwestern"),
 
     FAYETH(2681, PatchData.LUMBRIDGE_TREE),
     TREZNOR(2680, PatchData.VARROCK_TREE),
@@ -59,24 +62,26 @@ public enum Farmer {
     LATLINK_FASTBELL(8537, PatchData.FARMING_GUILD_SPIRIT_TREE),
     NIKKIE(8533, PatchData.FARMING_GUILD_FRUIT),
     ALEXANDRA(8536, PatchData.FARMING_GUILD_REDWOOD),
-    ALAN(8535, PatchData.FARMING_GUILD_NORTH, PatchData.FARMING_GUILD_SOUTH),
+    ALAN(8535, PatchData.FARMING_GUILD_NORTH, PatchData.FARMING_GUILD_SOUTH, "northern", "southern"),
 
-    MERNIA(7758, PatchData.SEAWEED_PATCH1, PatchData.SEAWEED_PATCH2);
+    MERNIA(7758, PatchData.SEAWEED_PATCH1, PatchData.SEAWEED_PATCH2, "northern", "southern");
 
-    Farmer(int npcId, PatchData patch1, PatchData patch2) {
+    Farmer(int npcId, PatchData patch1, PatchData patch2, String patchOneName, String patchTwoName) {
         this.npcId = npcId;
         this.patch1 = patch1;
         this.patch2 = patch2;
+        this.patchOneName = patchOneName;
+        this.patchTwoName = patchTwoName;
     }
 
     Farmer(int npcId, PatchData patch1) {
-        this(npcId, patch1, null);
+        this(npcId, patch1, null, "", "");
     }
 
     private final int npcId;
 
-    private final PatchData patch1;
-    private final PatchData patch2;
+    private final PatchData patch1, patch2;
+    private final String patchOneName, patchTwoName;
 
     public static void attemptPayment(Player player, NPC npc, PatchData pd) {
         Patch patch = player.getFarming().getPatch(pd.getObjectId());
@@ -185,11 +190,67 @@ public enum Farmer {
         }
     }
 
+    private static final String[] ADVICE = new String[] {
+            "The only way to cure a bush or tree of disease is to prune away the diseased leaves with a pair of secateurs. For all other crops I would just apply some plant-cure.",
+            "Tree seeds must be grown in a plantpot of soil into a sapling, and then transferred to a tree patch to continue growing to adulthood.",
+            "You can put up to ten potatoes, cabbages or onions in vegetable sacks, although you can't have a mix in the same sack.",
+            "You can buy all the farming tools from farming shops, which can be found close to the allotments.",
+            "Bittercap mushrooms can only be grown in a special patch in Morytania, near the Mort Myre swamp. There the ground is especially dank and suited to growing poisonous fungii.",
+            "Supercompost is far better than normal compost, but more expensive to make. You need to rot the right type of item; show me an item, and I'll tell you if it's super- compostable or not.",
+            "There is a special patch for growing Belladonna - I believe that it is somewhere near Draynor Manor, where the ground is a tad 'unblessed'.",
+            "Applying compost to a patch will not only reduce the chance that your crops will get diseased, but you will also grow more crops to harvest.",
+            "If you want to grow fruit trees you could try a few places: Catherby, Brimhaven, Gnome Stronghold and the Farming Guild all have fruit tree patches.",
+            "You can fill plantpots with soil from any empty patch, if you have a gardening trowel.",
+            "Hops are good for brewing ales. I believe there's a brewery up in Keldagrim somewhere, and I've heard rumours that a place called Phasmatys used to be good for that type of thing. 'Fore they all died, of course.",
+            "Vegetables, hops and flowers need constant watering - if you ignore my advice, you will sooner or later find yourself in possession of a dead farming patch.",
+            "You can put up to five tomatoes, strawberries, apples, bananas or oranges into a fruit basket, although you can't have a mix in the same basket.",
+            "Don't just throw away your weeds after you've raked a patch - put them in a compost bin and make some compost.",
+            "There are five other Farming areas like this one - Elstan's area near Falador, Dantaera's area near Catherby, Lyra's area in Morytania, Marisi's area in Hosidius and Alan's area in the Farming Guild.",
+            "If you want to make your own sacks and baskets you'll need to use the loom that's near the Farming shop in Falador. If you're a good enough [craftsman/craftswoman], that is.",
+            "You don't have to buy all your plantpots you know, you can make them yourself on a pottery wheel. If you're a good enough [craftsman/craftswoman], that is."
+    };
+
+    private static void randomAdvice(Player player, NPC npc, Farmer farmer) {
+        player.dialogue(
+                new PlayerDialogue("Can you give me any farming advice?"),
+                new NPCDialogue(npc, Random.get(ADVICE)),
+                new ActionDialogue(() -> dialogue(player, npc, farmer))
+        );
+    }
+
+    private static void lookAfterDialogue(Player player, NPC npc, Farmer farmer) {
+        if (farmer.patch2 == null) {
+            player.dialogue(
+                    new PlayerDialogue("Would you look after my crops for me?"),
+                    new ActionDialogue(() -> attemptPayment(player, npc, farmer.patch1))
+            );
+        } else {
+            player.dialogue(
+                    new PlayerDialogue("Would you look after my crops for me?"),
+                    new NPCDialogue(npc, "I might - which patch were you thinking of?"),
+                    new OptionsDialogue(
+                            new Option("The " + farmer.patchOneName + " allotment", () -> attemptPayment(player, npc, farmer.patch1)),
+                            new Option("The " + farmer.patchTwoName + " allotment", () -> attemptPayment(player, npc, farmer.patch2))
+                    ),
+                    new ActionDialogue(() -> attemptPayment(player, npc, farmer.patch1))
+            );
+        }
+    }
+
+    private static void dialogue(Player player, NPC npc, Farmer farmer) {
+        player.dialogue(
+                new OptionsDialogue(
+                        new Option("Would you look after my crops for me?", () -> lookAfterDialogue(player, npc, farmer)),
+                        new Option("Can you give me any farming advice?", () -> randomAdvice(player, npc, farmer)),
+                        new Option("Do you have anything for sale?", new PlayerDialogue("Do you have anything for sale?"), new NPCDialogue(npc, "Sure, take a look."), new ActionDialogue(() -> npc.openShop(player))),
+                        new Option("I'll come back another time.", new PlayerDialogue("I'll come back another time."))
+                )
+        );
+    }
+
     static {
         for (Farmer farmer : values()) {
-            //NPCAction.register(farmer.npcId, 1, (player, npc) -> {
-            //TODO shop, navigate to payment
-            //});
+            NPCAction.register(farmer.npcId, 1, (player, npc) -> dialogue(player, npc, farmer));
             if (farmer.patch1 != null) {
                 NPCAction.register(farmer.npcId, 3, (player, npc) -> {
                     if (farmer.npcId == 8535) { // Farming guild east wing farmer
