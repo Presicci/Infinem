@@ -34,7 +34,8 @@ public class JournalTab {
         TASK(656),
         BESTIARY(1009),
         ACHIEVEMENT(Interface.ACHIEVEMENT),
-        INFORMATION(-1);
+        INFORMATION(-1),
+        RAIDING_JOURNAL(Interface.RAIDING_JOURNAL);
 
         private final int id;
 
