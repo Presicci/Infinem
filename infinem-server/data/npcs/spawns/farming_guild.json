@@ -179,5 +179,23 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 8589,
+    "x": 1248,
+    "y": 3760,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 8590,
+    "x": 1249,
+    "y": 3760,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   }
 ]
