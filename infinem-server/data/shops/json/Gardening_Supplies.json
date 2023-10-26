@@ -1,8 +1,39 @@
 {
-  "name": "Prissy Scilla's Shop",
+  "name": "Gardening Supplies",
   "currency": "COINS",
   "npcs": [
-    2687
+    310,
+    2663,
+    2664,
+    2665,
+    2666,
+    2667,
+    2669,
+    2670,
+    2671,
+    2672,
+    2673,
+    2674,
+    2675,
+    2677,
+    2678,
+    2679,
+    2680,
+    2681,
+    2682,
+    2683,
+    2684,
+    2686,
+    2687,
+    2688,
+    2689,
+    8533,
+    8534,
+    8535,
+    8536,
+    8537,
+    8629,
+    9138
   ],
   "sellMultiplier": 0,
   "buyMultiplier": 0,
@@ -10,43 +41,43 @@
   "items": [
     {
       "itemId": 6036,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 25
     },
     {
       "itemId": 6032,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 35
     },
     {
       "itemId": 5341,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 15
     },
     {
       "itemId": 5350,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 40
     },
     {
       "itemId": 5331,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 25
     },
     {
       "itemId": 5325,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 15
     },
     {
       "itemId": 5343,
-      "stock": 2147483647,
+      "stock": 5000,
       "buy_price": -1,
       "sell_price": 15
     }
