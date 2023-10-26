@@ -26,6 +26,7 @@ public enum Farmer {
     DANTAERA(2664, PatchData.CATHERBY_NORTH, PatchData.CATHERBY_SOUTH, "northern", "southern"),
     KRAGEN(2665, PatchData.ARDOUGNE_NORTH, PatchData.ARDOUGNE_SOUTH, "northern", "southern"),
     MARISI(6921, PatchData.ZEAH_NORTH, PatchData.ZEAH_SOUTH, "northeastern", "southwestern"),
+    OSWALLT(9138, PatchData.PRIF_NORTH, PatchData.PRIF_SOUTH, "northern", "southern"),
 
     FAYETH(2681, PatchData.LUMBRIDGE_TREE),
     TREZNOR(2680, PatchData.VARROCK_TREE),
