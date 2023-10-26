@@ -1,0 +1,12 @@
+Arno: Hello there.
+<What's in this cave?
+Player: What's in this cave?
+Arno: A unique farming patch. This cave is the only place we've successfully been able to grow a Hespori.
+Player: What's a Hespori?
+Arno: A rare carnivorous plant originally from Morytania. When grown, the plant becomes conscious and highly aggressive. They are truly fascinating.
+Player: Can I grow one?
+Arno: Of course. Just plant some Hespori seeds in the cave below, and it will grow like any other plant. A Hespori is pretty tough, so you don't need to worry about it getting diseased.
+Arno: Do be careful though. A fully grown Hespori can be quite troublesome to deal with.
+><Goodbye.
+Player: Goodbye.
+>
