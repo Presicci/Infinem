@@ -1,0 +1,16 @@
+Felfiz Yaryus: Hello tall person.
+Player: Hello short person.
+<What's this patch for?
+Player: What's this patch for?
+Felfiz Yaryus: This is an Anima patch, the only one of its kind. Here, you can grow Iasor, Kronos and Attas plants.
+Player: What are they?
+Felfiz Yaryus: Three unique plants with a special affinity to the Anima Mundi, the life force of our world.
+Felfiz Yaryus: When planted, all three of these plants have a unique impact on the Anima Mundi. Their effects will likely be very useful to you when farming.
+Player: What are the effects?
+Felfiz Yaryus: Iasor plants will reduce the chance of your other crops becoming diseased, Kronos plants will increase the speed at which they grow and Attas plants will improve the yield when harvesting.
+Felfiz Yaryus: Choose wisely though, as you can only have one of them at a time.
+Felfiz Yaryus: Eventually, they'll start to wither and die as their impact on the Anima Mundi is limited. You'll have to plant another when they do.
+Player: Awesome! Thanks for the information.
+><See you later.
+Player: See you later.
+>
