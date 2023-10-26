@@ -197,5 +197,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+  {
+    "name": "Cat",
+    "id": 8594,
+    "x": 1256,
+    "y": 3758,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   }
 ]
