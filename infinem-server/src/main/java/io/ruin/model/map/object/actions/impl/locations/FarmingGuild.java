@@ -2,10 +2,13 @@ package io.ruin.model.map.object.actions.impl.locations;
 
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.map.Position;
+import io.ruin.model.map.TileTrigger;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.farming.farmer.Farmer;
@@ -41,10 +44,24 @@ public class FarmingGuild {
         });
     }
 
+    private static void checkRequirement(Player player, int levelReq) {
+        if (player.getStats().get(StatType.Farming).fixedLevel >= levelReq) return;
+        player.lock();
+        player.getMovement().reset();
+        player.startEvent(e -> {
+            player.dialogue(new NPCDialogue(8587, "You need a farming level of " + levelReq + " to enter the " + (levelReq == 65 ? "west" : "north") + " wing of the guild. Come back when you are more experienced."));
+            e.delay(1);
+            player.stepAbs(player.getAbsX() + (levelReq == 65 ? 2 : 0), player.getAbsY() - (levelReq == 65 ? 0 : 2), StepType.FORCE_WALK);
+            e.delay(2);
+            player.unlock();
+        });
+    }
+
     static {
         ObjectAction.register(34463, "open", FarmingGuild::enterGuild);
         ObjectAction.register(34464, "open", FarmingGuild::enterGuild);
-
+        TileTrigger.registerPlayerTrigger(new Position(1242, 3729), 2, p -> checkRequirement(p, 65));
+        TileTrigger.registerPlayerTrigger(new Position(1248, 3745), 2, p -> checkRequirement(p, 85));
         NPCAction.register(8536, 1, (player, npc) -> {
             Patch patch = player.getFarming().getPatch(PatchData.FARMING_GUILD_REDWOOD.getObjectId());
             if (patch.isFullyGrown()) {
