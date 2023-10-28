@@ -448,6 +448,7 @@ public class ToolStorage {
                                 }
                                 player.getInventory().remove(995, SEED_VAULT_COST);
                                 player.putAttribute(AttributeKey.LEP_SEED_VAULT, 1);
+                                player.getTaskManager().doLookupByUUID(922);    // Purchase Leprechaun Seed Vault Access
                                 player.dialogue(
                                         new MessageDialogue("The leprechaun collects your coins."),
                                         new NPCDialogue(npc, "Thank yee for yer service. Ye can now access yer seeds from me at anytime."),
