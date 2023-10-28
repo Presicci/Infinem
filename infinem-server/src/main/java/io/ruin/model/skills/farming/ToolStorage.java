@@ -1,6 +1,8 @@
 package io.ruin.model.skills.farming;
 
 import com.google.gson.annotations.Expose;
+import io.ruin.api.utils.AttributeKey;
+import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -14,6 +16,7 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.skills.herblore.Herb;
+import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +24,8 @@ import java.util.List;
 import static io.ruin.model.skills.farming.patch.impl.AllotmentPatch.WATERING_CAN_IDS;
 
 public class ToolStorage {
+
+    private static final int SEED_VAULT_COST = 100_000;
 
     enum Tool {//order should be the same as on the interface
         RAKE(5341, Config.STORAGE_RAKE) {
@@ -422,6 +427,39 @@ public class ToolStorage {
         );
     }
 
+    private static void seedVault(Player player, NPC npc) {
+        if (player.hasAttribute(AttributeKey.LEP_SEED_VAULT))
+            player.getSeedVault().sendVault();
+        else if (player.getStats().get(StatType.Farming).fixedLevel < 45) {
+            player.dialogue(
+                    new NPCDialogue(npc, "Yer gonna wants ta be more experienced in farmin an' pay a wee fee if yer wantin' ta access yer seed vault."),
+                    new MessageDialogue("Accessing your seed vault through the leprechaun requires level 45 farming and a one time payment of " + NumberUtils.formatNumber(SEED_VAULT_COST) + " coins.")
+            );
+        } else {
+            player.dialogue(
+                    new NPCDialogue(npc, "Yer gonna needs ta pay a wee fee if yer wantin' ta access yer seed vault."),
+                    new PlayerDialogue("How much?"),
+                    new NPCDialogue(npc, "Me back be hurtin' from all yer tools. " + NumberUtils.formatNumber(SEED_VAULT_COST) + " gold pieces should do."),
+                    new OptionsDialogue("Pay " + NumberUtils.formatNumber(SEED_VAULT_COST) + " to unlock seed vault access through leprechauns?",
+                            new Option("Sounds fair, I'll pay up.", new PlayerDialogue("Sounds fair, I'll pay up."), new ActionDialogue(() -> {
+                                if (player.getInventory().getAmount(995) < SEED_VAULT_COST) {
+                                    player.dialogue(new PlayerDialogue("I haven't enough coin..."), new NPCDialogue(npc, "Well get to farmin' so ya can pay me."));
+                                    return;
+                                }
+                                player.getInventory().remove(995, SEED_VAULT_COST);
+                                player.putAttribute(AttributeKey.LEP_SEED_VAULT, 1);
+                                player.dialogue(
+                                        new MessageDialogue("The leprechaun collects your coins."),
+                                        new NPCDialogue(npc, "Thank yee for yer service. Ye can now access yer seeds from me at anytime."),
+                                        new ActionDialogue(() -> player.getSeedVault().sendVault())
+                                );
+                            })),
+                            new Option("That's absurd, I can bring my own seeds.", new PlayerDialogue("That's absurd, I can bring my own seeds."), new NPCDialogue(npc, "Suit yer self."))
+                    )
+            );
+        }
+    }
+
     static {
         InterfaceHandler.register(125, h -> {
             for (int i = 8; i < 20; i++) {
@@ -442,6 +480,7 @@ public class ToolStorage {
         });
         NPCAction.register("tool leprechaun", "talk-to", ToolStorage::dialogue);
         NPCAction.register("tool leprechaun", "exchange", (player, npc) -> player.getFarming().getStorage().open(player));
+        NPCAction.register("tool leprechaun", "seed vault", ToolStorage::seedVault);
         ItemNPCAction.register("tool leprechaun", (player, item, npc) -> {
             if (item.getDef().notedId > 0 && (item.getDef().produceOf != null || Herb.get(item.getId()) != null)) {
                 int amount = player.getInventory().getAmount(item.getId());
