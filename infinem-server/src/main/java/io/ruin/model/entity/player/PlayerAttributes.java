@@ -163,9 +163,6 @@ public abstract class PlayerAttributes extends Entity {
 
     public Config selectedKeybindConfig;
 
-    public int selectedSettingMenu = -1;
-    public int selectedSettingChild = -1;
-
     public TickDelay eatDelay = new TickDelay();
 
     public TickDelay karamDelay = new TickDelay();
