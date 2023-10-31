@@ -1255,5 +1255,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+  {
+    "name": "Fossegrimen",
+    "id": 808,
+    "x": 2626,
+    "y": 3596,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
   }
 ]
