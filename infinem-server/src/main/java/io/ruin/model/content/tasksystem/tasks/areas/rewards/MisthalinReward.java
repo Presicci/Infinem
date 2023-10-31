@@ -1,7 +1,8 @@
-package io.ruin.model.content.tasksystem.tasks.areas;
+package io.ruin.model.content.tasksystem.tasks.areas.rewards;
 
 import io.ruin.cache.Color;
 import io.ruin.model.content.scroll.DiaryScroll;
+import io.ruin.model.content.tasksystem.tasks.areas.AreaTaskTier;
 import io.ruin.model.entity.player.Player;
 
 import java.util.ArrayList;
