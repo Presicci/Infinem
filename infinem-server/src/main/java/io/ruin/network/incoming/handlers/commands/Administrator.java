@@ -36,8 +36,7 @@ import io.ruin.model.activities.wilderness.StaffBounty;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
-import io.ruin.model.content.tasksystem.tasks.areas.MisthalinTask;
-import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
+import io.ruin.model.content.tasksystem.tasks.areas.MisthalinReward;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.*;
@@ -2842,7 +2841,7 @@ public class Administrator {
                 return true;
             }
             case "areatask": {
-                MisthalinTask.openRewards(player);
+                MisthalinReward.openRewards(player);
                 return true;
             }
             case "btest": {

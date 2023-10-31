@@ -12,7 +12,7 @@ import java.util.List;
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 10/7/2023
  */
-public enum MisthalinTask {
+public enum MisthalinReward {
     EXPLORER_RING_1(AreaTaskTier.EASY, "Unlocks the Explorer's Ring 1",
             "30 casts of Low Level Alchemy per day without runes",
             "50% run energy replenish twice a day"),
@@ -64,7 +64,7 @@ public enum MisthalinTask {
     private final String description;
     private final String[] additionalDescription;
 
-    MisthalinTask(AreaTaskTier tier, String description, String... additionalDescription) {
+    MisthalinReward(AreaTaskTier tier, String description, String... additionalDescription) {
         this.tier = tier;
         this.description = description;
         this.additionalDescription = additionalDescription;
@@ -73,7 +73,7 @@ public enum MisthalinTask {
     public static void openRewards(Player player) {
         List<String> lines = new ArrayList<>();
         AreaTaskTier tier = null;
-        for (MisthalinTask task : values()) {
+        for (MisthalinReward task : values()) {
             if (tier != task.tier) {
                 tier = task.tier;
                 lines.add(Color.YELLOW.wrap(tier.toString()));
