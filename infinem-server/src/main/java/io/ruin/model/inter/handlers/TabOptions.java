@@ -1,13 +1,11 @@
 package io.ruin.model.inter.handlers;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
-import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -152,7 +150,7 @@ public class TabOptions {
         }
 
         private static void open(Player player) {
-            Settings.openSettings(player);
+            Settings.open(player);
         }
 
     }
