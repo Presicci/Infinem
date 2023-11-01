@@ -193,6 +193,18 @@ public class AchievementGalleryRoom extends Room {
         INFERNAL_CAPE(26713, 21295),
         MYTHICAL_CAPE(31983, player -> MythicalCape.teleport(player), 22114),
         CHAMPIONS_CAPE(30403, 21439),
+        XERIC_GUARD(32537, 22388),
+        XERIC_WARRIOR(32538, 22390),
+        XERIC_SENTINEL(32539, 22392),
+        XERIC_GENERAL(32540, 22394),
+        XERIC_CHAMPION(32541, 22396),
+
+        ACHIVEMENT_DIARY(29167, 19476, 13070),
+        ACHIVEMENT_DIARY_T(29168, 13069, 13070),
+        QUEST_POINT(29178, 9813, 9814),
+        QUEST_POINT_T(29179, 13068, 9814),
+        MUSIC(29176, 13221, 13223),
+        MUSIC_T(29177, 13222, 13223),
 
         MAX(29170, player -> MaxCape.teleports(player), 13342, 13281),
         INFERNAL_MAX(26714, player -> MaxCape.teleports(player), INFERNAL),
@@ -250,7 +262,9 @@ public class AchievementGalleryRoom extends Room {
         RUNECRAFTING(29214, 9765, 9767),
         RUNECRAFTING_TRIMMED(29215, 9766, 9767),
         CONSTRUCTION(29184, player -> ConstructionSkillCape.teleport(player), 9789, 9791),
-        CONSTRUCTION_TRIMMED(29185, player -> ConstructionSkillCape.teleport(player), 9790, 9791);
+        CONSTRUCTION_TRIMMED(29185, player -> ConstructionSkillCape.teleport(player), 9790, 9791),
+        HUNTER(29204, player -> HunterSkillCape.teleport(player), 9948, 9950),
+        HUNTER_TRIMMED(29205, player -> HunterSkillCape.teleport(player), 9949, 9950);
 
         Cape(int objId, Consumer<Player> action, int... items) {
             this.objId = objId;

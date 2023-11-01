@@ -23,7 +23,7 @@ public class HunterSkillCape {
         ItemAction.registerEquipment(TRIMMED_CAPE, "Teleport", (player, item) -> teleport(player));
     }
 
-    protected static void teleport(Player player) {
+    public static void teleport(Player player) {
         player.dialogue(new OptionsDialogue("Choose an option",
                 new Option("Carnivorous chinchompas", () -> ModernTeleport.teleport(player, new Bounds(2548, 2908, 2551, 2912, 0))),
                 new Option("Black chinchompas (33 Wilderness)", () -> ModernTeleport.teleport(player, new Bounds(3135, 3780, 3141, 3787, 0)))));
