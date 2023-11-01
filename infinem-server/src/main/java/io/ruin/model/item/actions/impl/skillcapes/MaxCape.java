@@ -3,12 +3,9 @@ package io.ruin.model.item.actions.impl.skillcapes;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
-import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
-import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
-import io.ruin.model.stat.StatType;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -17,42 +14,42 @@ import io.ruin.model.stat.StatType;
 public class MaxCape {
     private static final int CAPE = 13342;
 
-    private static void teleports(Player player, Item item) {
+    public static void teleports(Player player) {
         player.dialogue(new OptionsDialogue("Choose a location:",
-                new Option("Warrior's Guild", () -> StrengthSkillCape.strengthTeleport(player, item)),
-                new Option("Fishing Teleports", () -> fishingTeleports(player, item)),
-                new Option("Crafting Guild", () -> CraftingSkillCape.craftingTeleport(player, item)),
-                new Option("Teleport to POH", () -> ConstructionSkillCape.telePOH(player, item)),
-                new Option("More...", () -> teleportsPageTwo(player, item))
+                new Option("Warrior's Guild", () -> StrengthSkillCape.teleport(player)),
+                new Option("Fishing Teleports", () -> fishingTeleports(player)),
+                new Option("Crafting Guild", () -> CraftingSkillCape.teleport(player)),
+                new Option("Teleport to POH", () -> ConstructionSkillCape.teleport(player)),
+                new Option("More...", () -> teleportsPageTwo(player))
         ));
     }
 
-    private static void teleportsPageTwo(Player player, Item item) {
+    private static void teleportsPageTwo(Player player) {
         player.dialogue(new OptionsDialogue("Choose a location:",
-                new Option("POH Portals", () -> ConstructionSkillCape.selectTeleport(player, item)),
-                new Option("Farming Guild", () -> FarmingSkillCape.teleportToFarmingGuild(player, item)),
-                new Option("Chinchompas", () -> HunterSkillCape.hunterTeleport(player, item)),
-                new Option("Back...", () -> teleports(player, item))
+                new Option("POH Portals", () -> ConstructionSkillCape.selectTeleport(player)),
+                new Option("Farming Guild", () -> FarmingSkillCape.teleport(player)),
+                new Option("Chinchompas", () -> HunterSkillCape.teleport(player)),
+                new Option("Back...", () -> teleports(player))
                 ));
     }
 
-    private static void features(Player player, Item item) {
+    private static void features(Player player) {
         player.dialogue(new OptionsDialogue("Choose an option:",
                 new Option("Search", () -> player.dialogue(new OptionsDialogue("Choose an option:",
-                        new Option("Pestle and mortar", () -> HerbloreSkillCape.herbloreSearch(player, item)),
-                        new Option("Mithril grapple", () -> FletchingSkillCape.search(player, item))))),
-                new Option("Stamina boost", () -> AgilitySkillCape.staminaBoost(player, item))
+                        new Option("Pestle and mortar", () -> HerbloreSkillCape.search(player)),
+                        new Option("Mithril grapple", () -> FletchingSkillCape.search(player))))),
+                new Option("Stamina boost", () -> AgilitySkillCape.staminaBoost(player))
         ));
     }
 
-    private static void otherTeleports(Player player, Item item) {
+    private static void otherTeleports(Player player) {
         player.dialogue(new OptionsDialogue("Choose a location:",
-                new Option("Farming Guild", () -> FarmingSkillCape.teleportToFarmingGuild(player, item)),
-                new Option("Chinchompas", () -> HunterSkillCape.hunterTeleport(player, item))
+                new Option("Farming Guild", () -> FarmingSkillCape.teleport(player)),
+                new Option("Chinchompas", () -> HunterSkillCape.teleport(player))
         ));
     }
 
-    private static void fishingTeleports(Player player, Item item) {
+    private static void fishingTeleports(Player player) {
         player.dialogue(new OptionsDialogue("Choose a location:",
                 new Option("Fishing Guild", () -> ModernTeleport.teleport(player, new Bounds(2493,3414,2595,3416,0))),
                 new Option("Otto's Grotto", () -> ModernTeleport.teleport(player, new Bounds(2501,3493,2502,3495,0)))
@@ -60,16 +57,16 @@ public class MaxCape {
     }
 
     static {
-        ItemAction.registerEquipment(CAPE, "Warriors' Guild", StrengthSkillCape::strengthTeleport);
-        ItemAction.registerEquipment(CAPE, "Crafting Guild", CraftingSkillCape::craftingTeleport);
-        ItemAction.registerEquipment(CAPE, "Tele to POH", ConstructionSkillCape::telePOH);
-        ItemAction.registerEquipment(CAPE, "POH Portals", ConstructionSkillCape::selectTeleport);
-        ItemAction.registerEquipment(CAPE, "Fishing Teleports", MaxCape::fishingTeleports);
-        ItemAction.registerEquipment(CAPE, "spellbook", MagicSkillcape::swapSelection);
-        ItemAction.registerEquipment(CAPE, "Features", MaxCape::features);
-        ItemAction.registerEquipment(CAPE, "Other Teleports", MaxCape::otherTeleports);
+        ItemAction.registerEquipment(CAPE, "Warriors' Guild", (player, item) -> StrengthSkillCape.teleport(player));
+        ItemAction.registerEquipment(CAPE, "Crafting Guild", (player, item) -> CraftingSkillCape.teleport(player));
+        ItemAction.registerEquipment(CAPE, "Tele to POH", (player, item) -> ConstructionSkillCape.teleport(player));
+        ItemAction.registerEquipment(CAPE, "POH Portals", (player, item) -> ConstructionSkillCape.selectTeleport(player));
+        ItemAction.registerEquipment(CAPE, "Fishing Teleports", (player, item) -> fishingTeleports(player));
+        ItemAction.registerEquipment(CAPE, "spellbook", (player, item) -> MagicSkillcape.swapSelection(player));
+        ItemAction.registerEquipment(CAPE, "Features", (player, item) -> features(player));
+        ItemAction.registerEquipment(CAPE, "Other Teleports", (player, item) -> otherTeleports(player));
 
-        ItemAction.registerInventory(CAPE, "Features", MaxCape::features);
-        ItemAction.registerInventory(CAPE, "Teleports", MaxCape::teleports);
+        ItemAction.registerInventory(CAPE, "Features", (player, item) -> features(player));
+        ItemAction.registerInventory(CAPE, "Teleports", (player, item) -> teleports(player));
     }
 }

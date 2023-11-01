@@ -10,7 +10,6 @@ import io.ruin.model.stat.StatType;
  * Created on - 7/31/2020
  */
 public class AttackSkillCape {
-
     private static final int CAPE = StatType.Attack.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Attack.trimmedCapeId;
     private static final int MASTER_CAPE = StatType.Attack.masterCapeId;

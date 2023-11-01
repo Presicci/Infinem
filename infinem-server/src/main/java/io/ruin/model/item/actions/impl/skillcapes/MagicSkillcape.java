@@ -4,7 +4,6 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
-import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.object.actions.impl.PrayerAltar;
 import io.ruin.model.skills.magic.SpellBook;
@@ -17,19 +16,17 @@ import java.util.concurrent.TimeUnit;
  * Created on 5/17/2021
  */
 public class MagicSkillcape {
-
     private static final int CAPE = StatType.Magic.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Magic.trimmedCapeId;
 
     static {
-        ItemAction.registerInventory(CAPE, "spellbook", MagicSkillcape::swapSelection);
-        ItemAction.registerEquipment(CAPE, "spellbook", MagicSkillcape::swapSelection);
-
-        ItemAction.registerInventory(TRIMMED_CAPE, "spellbook", MagicSkillcape::swapSelection);
-        ItemAction.registerEquipment(TRIMMED_CAPE, "spellbook", MagicSkillcape::swapSelection);
+        ItemAction.registerInventory(CAPE, "spellbook", (player, item) -> swapSelection(player));
+        ItemAction.registerEquipment(CAPE, "spellbook", (player, item) -> swapSelection(player));
+        ItemAction.registerInventory(TRIMMED_CAPE, "spellbook", (player, item) -> swapSelection(player));
+        ItemAction.registerEquipment(TRIMMED_CAPE, "spellbook", (player, item) -> swapSelection(player));
     }
 
-    protected static void swapSelection(Player player, Item item) {
+    protected static void swapSelection(Player player) {
         if(player.mageSkillcapeSpecial < System.currentTimeMillis()) {
             player.mageSkillcapeSpecial = System.currentTimeMillis() + TimeUnit.HOURS.toMillis(player.isSapphire() ? 6 : 12);
             player.magicSkillcapeUses = 0;

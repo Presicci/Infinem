@@ -1,7 +1,6 @@
 package io.ruin.model.item.actions.impl.skillcapes;
 
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.stat.StatType;
@@ -18,14 +17,14 @@ public class HerbloreSkillCape {
     private static final int PESTLE = 233;
 
     static {
-        ItemAction.registerInventory(CAPE, "Search", HerbloreSkillCape::herbloreSearch);
-        ItemAction.registerEquipment(CAPE, "Search", HerbloreSkillCape::herbloreSearch);
+        ItemAction.registerInventory(CAPE, "Search", (player, item) -> search(player));
+        ItemAction.registerEquipment(CAPE, "Search", (player, item) -> search(player));
 
-        ItemAction.registerInventory(TRIMMED_CAPE, "Search", HerbloreSkillCape::herbloreSearch);
-        ItemAction.registerEquipment(TRIMMED_CAPE, "Search", HerbloreSkillCape::herbloreSearch);
+        ItemAction.registerInventory(TRIMMED_CAPE, "Search", (player, item) -> search(player));
+        ItemAction.registerEquipment(TRIMMED_CAPE, "Search", (player, item) -> search(player));
     }
 
-    protected static void herbloreSearch(Player player, Item item) {
+    protected static void search(Player player) {
         if (player.getInventory().hasFreeSlots(1) && !player.getInventory().contains(PESTLE)) {
             player.getInventory().add(PESTLE, 1);
             player.sendMessage("You search your cape for a Pestle and mortar.");

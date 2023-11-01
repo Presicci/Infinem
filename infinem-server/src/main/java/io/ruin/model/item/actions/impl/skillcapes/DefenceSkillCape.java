@@ -13,20 +13,19 @@ import io.ruin.model.stat.StatType;
  * Created on - 7/23/2020
  */
 public class DefenceSkillCape {
-
     private static final int CAPE = StatType.Defence.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Defence.trimmedCapeId;
 
     static {
-        ItemAction.registerInventory(CAPE, "Toggle Effect", DefenceSkillCape::defenceToggle);
-        ItemAction.registerInventory(CAPE, "Toggle Respawn", DefenceSkillCape::defenceRespawn);
-        ItemAction.registerEquipment(CAPE, "Toggle Effect", DefenceSkillCape::defenceToggle);
-        ItemAction.registerEquipment(CAPE, "Toggle Respawn", DefenceSkillCape::defenceRespawn);
+        ItemAction.registerInventory(CAPE, "Toggle Effect", (player, item) -> defenceToggle(player));
+        ItemAction.registerInventory(CAPE, "Toggle Respawn", (player, item) -> defenceRespawn(player));
+        ItemAction.registerEquipment(CAPE, "Toggle Effect", (player, item) -> defenceToggle(player));
+        ItemAction.registerEquipment(CAPE, "Toggle Respawn", (player, item) -> defenceRespawn(player));
 
-        ItemAction.registerInventory(TRIMMED_CAPE, "Toggle Effect", DefenceSkillCape::defenceToggle);
-        ItemAction.registerInventory(TRIMMED_CAPE, "Toggle Respawn", DefenceSkillCape::defenceRespawn);
-        ItemAction.registerEquipment(TRIMMED_CAPE, "Toggle Effect", DefenceSkillCape::defenceToggle);
-        ItemAction.registerEquipment(TRIMMED_CAPE, "Toggle Respawn", DefenceSkillCape::defenceRespawn);
+        ItemAction.registerInventory(TRIMMED_CAPE, "Toggle Effect", (player, item) -> defenceToggle(player));
+        ItemAction.registerInventory(TRIMMED_CAPE, "Toggle Respawn", (player, item) -> defenceRespawn(player));
+        ItemAction.registerEquipment(TRIMMED_CAPE, "Toggle Effect", (player, item) -> defenceToggle(player));
+        ItemAction.registerEquipment(TRIMMED_CAPE, "Toggle Respawn", (player, item) -> defenceRespawn(player));
     }
 
     public static void check(Player player) {
@@ -40,10 +39,10 @@ public class DefenceSkillCape {
         }
     }
 
-    private static void defenceToggle(Player player, Item item) {
+    private static void defenceToggle(Player player) {
         player.sendMessage("The cape doesn't wish to see you harmed and will remain active always.");
     }
-    private static void defenceRespawn(Player player, Item item) {
+    private static void defenceRespawn(Player player) {
         player.sendMessage("The cape will only see you safely to home.");
     }
 }

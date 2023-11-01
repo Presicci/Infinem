@@ -1,15 +1,14 @@
 package io.ruin.model.item.actions.impl.skillcapes;
 
+import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.stat.StatType;
+
 /*
  * @project Kronos
  * @author Patrity - https://github.com/Patrity
  * Created on - 7/31/2020
  */
-
-import io.ruin.model.entity.player.Player;
-import io.ruin.model.item.containers.Equipment;
-import io.ruin.model.stat.StatType;
-
 public class HitpointsSkillCape {
 
     private static final int CAPE = StatType.Hitpoints.regularCapeId;

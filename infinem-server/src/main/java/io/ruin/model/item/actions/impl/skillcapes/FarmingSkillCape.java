@@ -1,7 +1,6 @@
 package io.ruin.model.item.actions.impl.skillcapes;
 
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Position;
@@ -23,14 +22,14 @@ public class FarmingSkillCape {
         return cape == CAPE || cape == TRIMMED_CAPE || cape == MASTER_CAPE || cape == 13342;
     }
 
-    protected static void teleportToFarmingGuild(Player player, Item item) {
+    protected static void teleport(Player player) {
         ModernTeleport.teleport(player, new Position(1248, 3721, 0));
     }
 
     static {
-        ItemAction.registerInventory(9810, "Teleport", FarmingSkillCape::teleportToFarmingGuild);
-        ItemAction.registerInventory(9811, "Teleport", FarmingSkillCape::teleportToFarmingGuild);
-        ItemAction.registerEquipment(9810, "Teleport", FarmingSkillCape::teleportToFarmingGuild);
-        ItemAction.registerEquipment(9811, "Teleport", FarmingSkillCape::teleportToFarmingGuild);
+        ItemAction.registerInventory(9810, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerInventory(9811, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerEquipment(9810, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerEquipment(9811, "Teleport", (player, item) -> teleport(player));
     }
 }
