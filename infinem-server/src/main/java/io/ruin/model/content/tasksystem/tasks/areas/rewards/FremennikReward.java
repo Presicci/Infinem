@@ -2,6 +2,7 @@ package io.ruin.model.content.tasksystem.tasks.areas.rewards;
 
 import io.ruin.cache.Color;
 import io.ruin.model.content.scroll.DiaryScroll;
+import io.ruin.model.content.tasksystem.tasks.TaskArea;
 import io.ruin.model.content.tasksystem.tasks.areas.AreaTaskTier;
 import io.ruin.model.entity.player.Player;
 
@@ -45,6 +46,15 @@ public enum FremennikReward {
         this.tier = tier;
         this.description = description;
         this.additionalDescription = additionalDescription;
+    }
+
+    public boolean hasUnlocked(Player player) {
+        int points = player.getTaskManager().getAreaTaskPoints(TaskArea.FREMENNIK.ordinal());
+        return false;
+    }
+
+    public String notUnlockedMessage() {
+        return "You need to unlock the " + this.tier.name().toLowerCase() + " tier of rewards for the Fremennik area to do this.";
     }
 
     public static void openRewards(Player player) {
