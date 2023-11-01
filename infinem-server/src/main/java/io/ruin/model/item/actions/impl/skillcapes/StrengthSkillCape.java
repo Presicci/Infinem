@@ -22,7 +22,7 @@ public class StrengthSkillCape {
         ItemAction.registerEquipment(TRIMMED_CAPE, "Warriors' Guild", (player, item) -> teleport(player));
     }
 
-    protected static void teleport(Player player) {
+    public static void teleport(Player player) {
         ModernTeleport.teleport(player, new Bounds(2850, 3547, 2852, 3549, 0));
     }
 }

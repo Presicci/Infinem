@@ -9,6 +9,8 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.item.actions.impl.MaxCapeVariants;
+import io.ruin.model.item.actions.impl.skillcapes.*;
+import io.ruin.model.item.actions.impl.teleport.MythicalCape;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.construction.Buildable;
@@ -189,79 +191,88 @@ public class AchievementGalleryRoom extends Room {
     public enum Cape {
         FIRE_CAPE(29169, 6570),
         INFERNAL_CAPE(26713, 21295),
-        MYTHICAL_CAPE(31983, 22114),
+        MYTHICAL_CAPE(31983, player -> MythicalCape.teleport(player), 22114),
         CHAMPIONS_CAPE(30403, 21439),
 
-        MAX(29170, 13342, 13281),
-        INFERNAL_MAX(26714, INFERNAL),
-        FIRE_MAX(29171, FIRE),
-        SARADOMIN_MAX(29172, SARADOMIN),
-        ZAMORAK_MAX(29173, ZAMORAK),
-        GUTHIX_MAX(29174, GUTHIX),
-        AVAS_ACCUMULATOR_MAX(29175, AVA),
-        ARDOUGNE_MAX(29625, ARDOUGNE),
-        SARADOMIN_IMBUED_MAX(31979, SARADOMIN_IMBUED),
-        ZAMORAK_IMBUED_MAX(31980, ZAMORAK_IMBUED),
-        GUTHIX_IMBUED_MAX(31981, GUTHIX_IMBUED),
-        AVAS_ASSEMBLER_MAX(31982, ASSEMBLER),
+        MAX(29170, player -> MaxCape.teleports(player), 13342, 13281),
+        INFERNAL_MAX(26714, player -> MaxCape.teleports(player), INFERNAL),
+        FIRE_MAX(29171, player -> MaxCape.teleports(player), FIRE),
+        SARADOMIN_MAX(29172, player -> MaxCape.teleports(player), SARADOMIN),
+        ZAMORAK_MAX(29173, player -> MaxCape.teleports(player), ZAMORAK),
+        GUTHIX_MAX(29174, player -> MaxCape.teleports(player), GUTHIX),
+        AVAS_ACCUMULATOR_MAX(29175, player -> MaxCape.teleports(player), AVA),
+        ARDOUGNE_MAX(29625, player -> MaxCape.teleports(player), ARDOUGNE),
+        SARADOMIN_IMBUED_MAX(31979, player -> MaxCape.teleports(player), SARADOMIN_IMBUED),
+        ZAMORAK_IMBUED_MAX(31980, player -> MaxCape.teleports(player), ZAMORAK_IMBUED),
+        GUTHIX_IMBUED_MAX(31981, player -> MaxCape.teleports(player), GUTHIX_IMBUED),
+        AVAS_ASSEMBLER_MAX(31982, player -> MaxCape.teleports(player), ASSEMBLER),
 
         ATTACK(29182, 9747, 9749),
         ATTACK_TRIMMED(29183, 9748, 9749),
         DEFENCE(29190, 9753, 9755),
         DEFENCE_TRIMMED(29191, 9754, 9755),
-        STRENGTH(29220, 9750, 9752),
-        STRENGTH_TRIMMED(29221, 9751, 9752),
+        STRENGTH(29220, player -> StrengthSkillCape.teleport(player), 9750, 9752),
+        STRENGTH_TRIMMED(29221, player -> StrengthSkillCape.teleport(player), 9751, 9752),
         HITPOINTS(29202, 9768, 9770),
         HITPOINTS_TRIMMED(29203, 9769, 9770),
         RANGED(29212, 9756, 9758),
         RANGED_TRIMMED(29213, 9757, 9758),
         PRAYER(29210, 9759, 9761),
         PRAYER_TRIMMED(29211, 9760, 9761),
-        MAGIC(29206, 9762, 9764),
-        MAGIC_TRIMMED(29207, 9763, 9764),
+        MAGIC(29206, player -> MagicSkillcape.swapSelection(player), 9762, 9764),
+        MAGIC_TRIMMED(29207, player -> MagicSkillcape.swapSelection(player), 9763, 9764),
         COOKING(29186, 9801, 9803),
         COOKING_TRIMMED(29187, 9802, 9803),
         WOODCUTTING(29224, 9807, 9809),
         WOODCUTTING_TRIMMED(29225, 9808, 9809),
-        FLETCHING(29198, 9783, 9785),
-        FLETCHING_TRIMMED(29199, 9784, 9785),
-        FISHING(29196, 9798, 9800),
-        FISHING_TRIMMED(29197, 9799, 9800),
+        FLETCHING(29198, player -> FletchingSkillCape.search(player), 9783, 9785),
+        FLETCHING_TRIMMED(29199, player -> FletchingSkillCape.search(player), 9784, 9785),
+        FISHING(29196, player -> FishingSkillCape.teleport(player), 9798, 9800),
+        FISHING_TRIMMED(29197, player -> FishingSkillCape.teleport(player), 9799, 9800),
         FIREMAKING(29194, 9804, 9806),
         FIREMAKING_TRIMMED(29195, 9805, 9806),
-        CRAFTING(29188, 9780, 9782),
-        CRAFTING_TRIMMED(29189, 9781, 9782),
+        CRAFTING(29188, player -> CraftingSkillCape.teleport(player), 9780, 9782),
+        CRAFTING_TRIMMED(29189, player -> CraftingSkillCape.teleport(player), 9781, 9782),
         SMITHING(29218, 9795, 9797),
         SMITHING_TRIMMED(29219, 9796, 9797),
         MINING(29208, 9792, 9794),
         MINING_TRIMMED(29209, 9793, 9794),
-        HERBLORE(29200, 9774, 9776),
-        HERBLORE_TRIMMED(29201, 9775, 9776),
+        HERBLORE(29200, player -> HerbloreSkillCape.search(player), 9774, 9776),
+        HERBLORE_TRIMMED(29201, player -> HerbloreSkillCape.search(player), 9775, 9776),
         AGILITY(29180, 9771, 9773),
         AGILITY_TRIMMED(29181, 9772, 9773),
         THIEVING(29222, 9777, 9779),
         THIEVING_TRIMMED(29223, 9778, 9779),
         SLAYER(29216, 9786, 9788),
         SLAYER_TRIMMED(29217, 9787, 9788),
-        FARMING(29192, 9810, 9812),
-        FARMING_TRIMMED(29193, 9811, 9812),
+        FARMING(29192, player -> FarmingSkillCape.teleport(player), 9810, 9812),
+        FARMING_TRIMMED(29193, player -> FarmingSkillCape.teleport(player), 9811, 9812),
         RUNECRAFTING(29214, 9765, 9767),
         RUNECRAFTING_TRIMMED(29215, 9766, 9767),
-        CONSTRUCTION(29184, 9789, 9791),
-        CONSTRUCTION_TRIMMED(29185, 9790, 9791);
+        CONSTRUCTION(29184, player -> ConstructionSkillCape.teleport(player), 9789, 9791),
+        CONSTRUCTION_TRIMMED(29185, player -> ConstructionSkillCape.teleport(player), 9790, 9791);
+
+        Cape(int objId, Consumer<Player> action, int... items) {
+            this.objId = objId;
+            this.action = action;
+            this.items = items;
+        }
 
         Cape(int objId, int... items) {
-            this.objId = objId;
-            this.items = items;
+            this(objId, null, items);
         }
 
         Cape(int objId, MaxCapeVariants.MaxCapes maxCapes) {
             this(objId, maxCapes.newCapeId, maxCapes.newHoodId);
         }
 
-        int objId;
+        Cape(int objId, Consumer<Player> action, MaxCapeVariants.MaxCapes maxCapes) {
+            this(objId, action, maxCapes.newCapeId, maxCapes.newHoodId);
+        }
 
-        int[] items;
+        private final int objId;
+        private final int[] items;
+        private final Consumer<Player> action;
 
         static {
             for (Cape cape : values()) {
@@ -284,6 +295,9 @@ public class AchievementGalleryRoom extends Room {
                         }
                     }));
                     ObjectAction.register(cape.objId, "admire", (player, obj) -> player.animate(6937));
+                    ObjectAction.register(cape.objId, "perks", (player, obj) -> {
+                        if (cape.action != null) cape.action.accept(player);
+                    });
                 }
             }
         }

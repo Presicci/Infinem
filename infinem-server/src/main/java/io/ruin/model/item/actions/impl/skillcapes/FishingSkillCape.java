@@ -1,6 +1,8 @@
 package io.ruin.model.item.actions.impl.skillcapes;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
@@ -18,9 +20,17 @@ public class FishingSkillCape {
     static {
         ItemAction.registerInventory(CAPE, "Fishing Guild", (player, item) -> teleportToFishingGuild(player));
         ItemAction.registerEquipment(CAPE, "Fishing Guild", (player, item) -> teleportToFishingGuild(player));
-
         ItemAction.registerInventory(TRIMMED_CAPE, "Otto's Grotto", (player, item) -> teleportToOttosGrotto(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Otto's Grotto", (player, item) -> teleportToOttosGrotto(player));
+    }
+
+    public static void teleport(Player player) {
+        player.dialogue(
+                new OptionsDialogue(
+                        new Option("Fishing Guild", () -> teleportToFishingGuild(player)),
+                        new Option("Otto's Grotto", () -> teleportToOttosGrotto(player))
+                )
+        );
     }
 
     private static void teleportToFishingGuild(Player player) {

@@ -15,7 +15,7 @@ public class FletchingSkillCape {
     private static final int CAPE = StatType.Fletching.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Fletching.trimmedCapeId;
 
-    protected static void search(Player player) {
+    public static void search(Player player) {
         if (player.getInventory().hasFreeSlots(1) && !player.getInventory().contains(MITHRIL_GRAPPLE)) {
             player.getInventory().add(MITHRIL_GRAPPLE, 1);
             player.sendMessage("You search your cape for a mithril grapple...");

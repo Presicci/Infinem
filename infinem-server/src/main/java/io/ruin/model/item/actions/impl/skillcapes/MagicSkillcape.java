@@ -26,7 +26,7 @@ public class MagicSkillcape {
         ItemAction.registerEquipment(TRIMMED_CAPE, "spellbook", (player, item) -> swapSelection(player));
     }
 
-    protected static void swapSelection(Player player) {
+    public static void swapSelection(Player player) {
         if(player.mageSkillcapeSpecial < System.currentTimeMillis()) {
             player.mageSkillcapeSpecial = System.currentTimeMillis() + TimeUnit.HOURS.toMillis(player.isSapphire() ? 6 : 12);
             player.magicSkillcapeUses = 0;

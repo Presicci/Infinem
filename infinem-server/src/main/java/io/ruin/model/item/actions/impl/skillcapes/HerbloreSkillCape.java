@@ -19,12 +19,11 @@ public class HerbloreSkillCape {
     static {
         ItemAction.registerInventory(CAPE, "Search", (player, item) -> search(player));
         ItemAction.registerEquipment(CAPE, "Search", (player, item) -> search(player));
-
         ItemAction.registerInventory(TRIMMED_CAPE, "Search", (player, item) -> search(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Search", (player, item) -> search(player));
     }
 
-    protected static void search(Player player) {
+    public static void search(Player player) {
         if (player.getInventory().hasFreeSlots(1) && !player.getInventory().contains(PESTLE)) {
             player.getInventory().add(PESTLE, 1);
             player.sendMessage("You search your cape for a Pestle and mortar.");

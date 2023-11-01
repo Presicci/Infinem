@@ -22,7 +22,7 @@ public class FarmingSkillCape {
         return cape == CAPE || cape == TRIMMED_CAPE || cape == MASTER_CAPE || cape == 13342;
     }
 
-    protected static void teleport(Player player) {
+    public static void teleport(Player player) {
         ModernTeleport.teleport(player, new Position(1248, 3721, 0));
     }
 

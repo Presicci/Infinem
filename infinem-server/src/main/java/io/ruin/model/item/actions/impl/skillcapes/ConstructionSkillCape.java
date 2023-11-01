@@ -23,7 +23,6 @@ public class ConstructionSkillCape {
         ItemAction.registerEquipment(CAPE, "Teleport", (player, item) -> selectTeleport(player));
         ItemAction.registerInventory(CAPE, "Tele to POH", (player, item) -> teleport(player));
         ItemAction.registerEquipment(CAPE, "Tele to POH", (player, item) -> teleport(player));
-
         ItemAction.registerInventory(TRIMMED_CAPE, "Teleport", (player, item) -> selectTeleport(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Teleport", (player, item) -> selectTeleport(player));
         ItemAction.registerInventory(TRIMMED_CAPE, "Tele to POH", (player, item) -> teleport(player));
@@ -48,7 +47,7 @@ public class ConstructionSkillCape {
         ));
     }
 
-    protected static void teleport(Player player) {
+    public static void teleport(Player player) {
         player.getMovement().startTeleport(e -> {
             player.animate(714);
             player.graphics(111, 92, 0);

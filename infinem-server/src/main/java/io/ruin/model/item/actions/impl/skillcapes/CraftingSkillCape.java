@@ -22,7 +22,7 @@ public class CraftingSkillCape {
         ItemAction.registerEquipment(TRIMMED_CAPE, "Teleport", (player, item) -> teleport(player));
     }
 
-    protected static void teleport(Player player) {
+    public static void teleport(Player player) {
         ModernTeleport.teleport(player, new Bounds(2935, 3282, 2936, 3283, 0));
     }
 }
