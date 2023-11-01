@@ -25,11 +25,9 @@ public class FishingSkillCape {
     }
 
     public static void teleport(Player player) {
-        player.dialogue(
-                new OptionsDialogue(
-                        new Option("Fishing Guild", () -> teleportToFishingGuild(player)),
-                        new Option("Otto's Grotto", () -> teleportToOttosGrotto(player))
-                )
+        player.dialogue(new OptionsDialogue("Choose a location:",
+                new Option("Fishing Guild", () -> teleportToFishingGuild(player)),
+                new Option("Otto's Grotto", () -> teleportToOttosGrotto(player)))
         );
     }
 

@@ -14,7 +14,7 @@ import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 public class MaxCape {
     private static final int CAPE = 13342;
 
-    public static void teleports(Player player) {
+    private static void teleports(Player player) {
         player.dialogue(new OptionsDialogue("Choose a location:",
                 new Option("Warrior's Guild", () -> StrengthSkillCape.teleport(player)),
                 new Option("Fishing Teleports", () -> fishingTeleports(player)),
@@ -53,6 +53,13 @@ public class MaxCape {
         player.dialogue(new OptionsDialogue("Choose a location:",
                 new Option("Fishing Guild", () -> ModernTeleport.teleport(player, new Bounds(2493,3414,2595,3416,0))),
                 new Option("Otto's Grotto", () -> ModernTeleport.teleport(player, new Bounds(2501,3493,2502,3495,0)))
+        ));
+    }
+
+    public static void selectPerk(Player player) {
+        player.dialogue(new OptionsDialogue("Choose an option:",
+                new Option("Features", () -> features(player)),
+                new Option("Teleports", () -> teleports(player))
         ));
     }
 

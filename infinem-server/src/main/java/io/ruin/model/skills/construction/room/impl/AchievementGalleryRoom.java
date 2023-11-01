@@ -206,18 +206,18 @@ public class AchievementGalleryRoom extends Room {
         MUSIC(29176, 13221, 13223),
         MUSIC_T(29177, 13222, 13223),
 
-        MAX(29170, player -> MaxCape.teleports(player), 13342, 13281),
-        INFERNAL_MAX(26714, player -> MaxCape.teleports(player), INFERNAL),
-        FIRE_MAX(29171, player -> MaxCape.teleports(player), FIRE),
-        SARADOMIN_MAX(29172, player -> MaxCape.teleports(player), SARADOMIN),
-        ZAMORAK_MAX(29173, player -> MaxCape.teleports(player), ZAMORAK),
-        GUTHIX_MAX(29174, player -> MaxCape.teleports(player), GUTHIX),
-        AVAS_ACCUMULATOR_MAX(29175, player -> MaxCape.teleports(player), AVA),
-        ARDOUGNE_MAX(29625, player -> MaxCape.teleports(player), ARDOUGNE),
-        SARADOMIN_IMBUED_MAX(31979, player -> MaxCape.teleports(player), SARADOMIN_IMBUED),
-        ZAMORAK_IMBUED_MAX(31980, player -> MaxCape.teleports(player), ZAMORAK_IMBUED),
-        GUTHIX_IMBUED_MAX(31981, player -> MaxCape.teleports(player), GUTHIX_IMBUED),
-        AVAS_ASSEMBLER_MAX(31982, player -> MaxCape.teleports(player), ASSEMBLER),
+        MAX(29170, player -> MaxCape.selectPerk(player), 13342, 13281),
+        INFERNAL_MAX(26714, player -> MaxCape.selectPerk(player), INFERNAL),
+        FIRE_MAX(29171, player -> MaxCape.selectPerk(player), FIRE),
+        SARADOMIN_MAX(29172, player -> MaxCape.selectPerk(player), SARADOMIN),
+        ZAMORAK_MAX(29173, player -> MaxCape.selectPerk(player), ZAMORAK),
+        GUTHIX_MAX(29174, player -> MaxCape.selectPerk(player), GUTHIX),
+        AVAS_ACCUMULATOR_MAX(29175, player -> MaxCape.selectPerk(player), AVA),
+        ARDOUGNE_MAX(29625, player -> MaxCape.selectPerk(player), ARDOUGNE),
+        SARADOMIN_IMBUED_MAX(31979, player -> MaxCape.selectPerk(player), SARADOMIN_IMBUED),
+        ZAMORAK_IMBUED_MAX(31980, player -> MaxCape.selectPerk(player), ZAMORAK_IMBUED),
+        GUTHIX_IMBUED_MAX(31981, player -> MaxCape.selectPerk(player), GUTHIX_IMBUED),
+        AVAS_ASSEMBLER_MAX(31982, player -> MaxCape.selectPerk(player), ASSEMBLER),
 
         ATTACK(29182, 9747, 9749),
         ATTACK_TRIMMED(29183, 9748, 9749),
@@ -261,8 +261,8 @@ public class AchievementGalleryRoom extends Room {
         FARMING_TRIMMED(29193, player -> FarmingSkillCape.teleport(player), 9811, 9812),
         RUNECRAFTING(29214, 9765, 9767),
         RUNECRAFTING_TRIMMED(29215, 9766, 9767),
-        CONSTRUCTION(29184, player -> ConstructionSkillCape.teleport(player), 9789, 9791),
-        CONSTRUCTION_TRIMMED(29185, player -> ConstructionSkillCape.teleport(player), 9790, 9791),
+        CONSTRUCTION(29184, player -> ConstructionSkillCape.selectTeleport(player), 9789, 9791),
+        CONSTRUCTION_TRIMMED(29185, player -> ConstructionSkillCape.selectTeleport(player), 9790, 9791),
         HUNTER(29204, player -> HunterSkillCape.teleport(player), 9948, 9950),
         HUNTER_TRIMMED(29205, player -> HunterSkillCape.teleport(player), 9949, 9950);
 
@@ -309,7 +309,7 @@ public class AchievementGalleryRoom extends Room {
                         }
                     }));
                     ObjectAction.register(cape.objId, "admire", (player, obj) -> player.animate(6937));
-                    ObjectAction.register(cape.objId, "perks", (player, obj) -> {
+                    ObjectAction.register(cape.objId, 2, (player, obj) -> {
                         if (cape.action != null) cape.action.accept(player);
                     });
                 }

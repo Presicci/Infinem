@@ -29,7 +29,7 @@ public class ConstructionSkillCape {
         ItemAction.registerEquipment(TRIMMED_CAPE, "Tele to POH", (player, item) -> teleport(player));
     }
 
-    protected static void selectTeleport(Player player) {
+    public static void selectTeleport(Player player) {
         player.dialogue(new OptionsDialogue("Choose Location:",
                 new Option("Rimmington", () -> ModernTeleport.teleport(player, new Bounds(2953,3223,2955,3225,0))),
                 new Option("Taverley", () -> ModernTeleport.teleport(player, new Bounds(2893,3464,2895,3466,0))),
@@ -47,7 +47,7 @@ public class ConstructionSkillCape {
         ));
     }
 
-    public static void teleport(Player player) {
+    protected static void teleport(Player player) {
         player.getMovement().startTeleport(e -> {
             player.animate(714);
             player.graphics(111, 92, 0);
