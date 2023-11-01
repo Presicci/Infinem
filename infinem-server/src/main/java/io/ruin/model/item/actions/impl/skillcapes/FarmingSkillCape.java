@@ -24,7 +24,6 @@ public class FarmingSkillCape {
     }
 
     protected static void teleportToFarmingGuild(Player player, Item item) {
-        player.sendMessage("Please note that the farming guild is not operated at this time.");
         ModernTeleport.teleport(player, new Position(1248, 3721, 0));
     }
 
