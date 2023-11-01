@@ -83,6 +83,10 @@ public class TaskManager {
         this.collectedItems = new HashSet<>();
     }
 
+    public int getAreaTaskPoints(int areaIndex) {
+        return taskPoints.get(areaIndex);
+    }
+
     /**
      * Defaults:
      *  - amount: 1
