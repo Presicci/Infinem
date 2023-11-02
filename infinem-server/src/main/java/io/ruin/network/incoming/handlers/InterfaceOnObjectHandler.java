@@ -20,7 +20,7 @@ public class InterfaceOnObjectHandler {
             int itemSlot = in.readShort();
             int objectX = in.readLEShortA();
             int objectY = in.readShort();
-            int objectId = in.readShort();
+            int objectId = in.readUnsignedShort();
             int ctrlRun = in.readByteS();
             int itemId = in.readShort();
             handleAction(player, interfaceHash, itemSlot, itemId, objectId, objectX, objectY, ctrlRun);
