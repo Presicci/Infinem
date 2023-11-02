@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Liliwen",
+    "id": 2689,
+    "x": 2345,
+    "y": 3162,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Tool Leprechaun",
+    "id": 0,
+    "x": 2349,
+    "y": 3162,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  }
+]
