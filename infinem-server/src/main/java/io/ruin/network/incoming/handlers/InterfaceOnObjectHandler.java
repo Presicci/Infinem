@@ -43,14 +43,6 @@ public class InterfaceOnObjectHandler {
     }
 
     private static void handleAction(Player player, int interfaceHash, int slot, int itemId, int objectId, int objectX, int objectY, int ctrlRun) {
-        if(player.isLocked())
-            return;
-        player.resetActions(true, true, true);
-        if(objectId == -1)
-            return;
-        GameObject gameObject = Tile.getObject(objectId, objectX, objectY, player.getPosition().getZ());
-        if(gameObject == null)
-            return;
         if(player.debug) {
             DebugMessage debug = new DebugMessage()
                     .add("interfaceHash", interfaceHash)
@@ -61,6 +53,14 @@ public class InterfaceOnObjectHandler {
                     .add("objectY", objectY);
             player.sendFilteredMessage("[ObjectAction] " + debug.toString());
         }
+        if(player.isLocked())
+            return;
+        player.resetActions(true, true, true);
+        if(objectId == -1)
+            return;
+        GameObject gameObject = Tile.getObject(objectId, objectX, objectY, player.getPosition().getZ());
+        if(gameObject == null)
+            return;
         player.getMovement().setCtrlRun(ctrlRun == 1);
         player.getRouteFinder().routeObject(gameObject, () -> action(player, interfaceHash, slot, itemId, gameObject));
     }
