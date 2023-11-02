@@ -47,15 +47,20 @@ public class AchievementGalleryRoom extends Room {
         ABYSSAL_SIRE(29162, 13277),
         SKOTIZO(29163, 19701),
         GROTESQUE_GUARDIANS(31689, 21745),
-        VORKATH(31978, 22106);
+        VORKATH(31978, 22106),
+        ALCHEMICAL_HYDRA(34653, 23064),
+        SARACHNIS(34833, 23525),
+        NIGHTMARE(37629, 24495),
+        CORPOREAL_BEAST(41017, 25521),
+        THERMONUCLEAR_SMOKE_DEVIL(41018, 25524);
+
+        private final int objectId;
+        private final int jarId;
 
         BossDisplay(int objectId, int jarId) {
             this.objectId = objectId;
             this.jarId = jarId;
         }
-
-        int objectId;
-        int jarId;
 
         static BossDisplay find(int jarId) {
             for (BossDisplay d : values()) {
@@ -75,6 +80,7 @@ public class AchievementGalleryRoom extends Room {
     protected void onBuild() {
         renderBossDisplay();
         getHotspotObjects(Hotspot.BOSS_LAIR_DISPLAY).forEach(obj -> {
+            System.out.println(obj.id);
             ObjectAction.register(obj, 1, this::configureBossDisplay);
             ObjectAction.register(obj, 2, this::viewJars);
             ItemObjectAction.register(obj, this::addJar);
@@ -266,6 +272,10 @@ public class AchievementGalleryRoom extends Room {
         HUNTER(29204, player -> HunterSkillCape.teleport(player), 9948, 9950),
         HUNTER_TRIMMED(29205, player -> HunterSkillCape.teleport(player), 9949, 9950);
 
+        private final int objId;
+        private final int[] items;
+        private final Consumer<Player> action;
+
         Cape(int objId, Consumer<Player> action, int... items) {
             this.objId = objId;
             this.action = action;
@@ -283,10 +293,6 @@ public class AchievementGalleryRoom extends Room {
         Cape(int objId, Consumer<Player> action, MaxCapeVariants.MaxCapes maxCapes) {
             this(objId, action, maxCapes.newCapeId, maxCapes.newHoodId);
         }
-
-        private final int objId;
-        private final int[] items;
-        private final Consumer<Player> action;
 
         static {
             for (Cape cape : values()) {
