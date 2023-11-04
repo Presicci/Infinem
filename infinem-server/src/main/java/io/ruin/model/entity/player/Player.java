@@ -515,6 +515,19 @@ public class Player extends PlayerAttributes {
         closeInterfaces(false);
     }
 
+    public void closeInterfacesExcluding(InterfaceType type) {
+        for(InterfaceType t : InterfaceType.values()) {
+            if(t.overlaySetting != 1 && type != t)
+                closeInterface(t);
+        }
+        if(trade != null)
+            trade.close();
+        if(duel != null)
+            duel.close();
+        if (type != InterfaceType.CHATBOX)
+            closeChatbox(false);
+    }
+
     public void closeInterfaces(boolean skipDialogues) {
         for(InterfaceType type : InterfaceType.values()) {
             if(type.overlaySetting != 1)
