@@ -38,8 +38,9 @@ public class AchievementGallery {
     }
 
     static {
+        // TODO Recent teleport handling, VB 2308
         for (Buildable b : Arrays.asList(BASIC_JEWELLERY_BOX, FANCY_JEWELLERY_BOX, ORNATE_JEWELLERY_BOX)) {
-            ObjectAction.register(b.getBuiltObjects()[0], "teleport", (player, obj) -> {
+            ObjectAction.register(b.getBuiltObjects()[0], 2, (player, obj) -> {
                 openJewelleryBox(player, b.getBuiltObjects()[0] - 29153);
             });
         }
