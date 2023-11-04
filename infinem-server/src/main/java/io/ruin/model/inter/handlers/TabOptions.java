@@ -329,7 +329,7 @@ public class TabOptions {
 
         static {
             InterfaceHandler.register(Interface.HOUSE_OPTIONS, h -> {
-                h.actions[17] = (SimpleAction) p -> p.closeInterface(InterfaceType.INVENTORY_OVERLAY);
+                h.actions[21] = (SimpleAction) p -> p.closeInterface(InterfaceType.INVENTORY_OVERLAY);
                 h.actions[1] = (SimpleAction) HouseViewer::open;
                 h.actions[5] = (SimpleAction) p -> setBuildingMode(p, 1);
                 h.actions[6] = (SimpleAction) p -> setBuildingMode(p, 0);

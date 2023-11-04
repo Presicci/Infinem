@@ -190,7 +190,7 @@ public class House {
             event.delay(1);
             player.getPacketSender().sendMapState(0);
             player.getPacketSender().pohFadeIn();
-            player.closeInterfaces();
+            player.closeInterfacesExcluding(InterfaceType.INVENTORY);
             player.unlock();
             assignListener(player);
             entered(player);
