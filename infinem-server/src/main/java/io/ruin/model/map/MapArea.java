@@ -28,7 +28,8 @@ public enum MapArea {
     CHASM_OF_TEARS(null, 2, 12948),
     HAUNTED_MINE_FLOOR_6(null, 1, 11077),
     DORGESH_KAAN_CAVE(null, 3, 3221, 9603, 3307, 9662, 0),
-    DORGESH_KAAN_DUNGEON(null, 3, 10833)
+    DORGESH_KAAN_DUNGEON(null, 3, 10833),
+    MOLE_LAIR(null, 3, 6992, 6993)
     ;
 
     private OldFirePit.FirePit firePit;
