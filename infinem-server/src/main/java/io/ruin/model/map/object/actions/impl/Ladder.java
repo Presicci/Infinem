@@ -34,8 +34,8 @@ public enum Ladder {
     SOPHANEM_UP(20356, "climb-up", new Position(3308, 2803, 0), new Position(3307, 2803, 2), true),
     SOPHANEM_DOWN(20357, "climb-down", new Position(3308, 2803, 2), new Position(3309, 2803, 0), false),
 
-    SOPHANEM_SLAYER_DUNGEON_UP(20281, "climb-up", new Position(3318, 9274, 2), new Position(2800, 5160, 0), true),
-    SOPHANEM_SLAYER_DUNGEON_DOWN(20278, "climb-down", new Position(2800, 5159), new Position(3318, 9273, 2), false),
+    SOPHANEM_DUNGEON_UP(20281, "climb-up", new Position(3318, 9274, 2), new Position(2800, 5160, 0), true),
+    SOPHANEM_DUNGEON_DOWN(20278, "climb-down", new Position(2800, 5159), new Position(3318, 9273, 2), false),
 
     TROLL_STRONGHOLD_EXIT(18834, "climb-up", new Position(2831, 10077, 2), new Position(2831, 3678), true),
     TROLL_STRONGHOLD_ENTRANCE(18833, "climb-down", new Position(2831, 3677, 0), new Position(2831, 10077, 2), false);
