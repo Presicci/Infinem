@@ -14,15 +14,11 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.MapArea;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -66,7 +62,7 @@ public class TaskManager {
         player.sendMessage("<col=990000>You've completed a task: " + taskName + "!");
         player.sendMessage("You now have " + globalTaskPoints + " task points.");
         completeTasks.add(uuid);
-        player.openInterface(InterfaceType.SECONDARY_OVERLAY, 660);
+        player.openInterface(InterfaceType.POPUP_NOTIFICATION_OVERLAY, 660);
         player.getPacketSender().sendClientScript(3343, "iss", 0xff981f, "Task Complete!", "Task Completed: " + Color.WHITE.wrap(taskName)
                 + "<br><br>Points Earned: " + Color.WHITE.wrap(pointGain + ""));
     }

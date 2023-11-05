@@ -53,7 +53,7 @@ public enum InterfaceType {
             new Component(164, 7 + DEFAULT_SCREEN_CHILD_OFFSET),
             true
     ),
-    UNUSED_OVERLAY2(
+    POPUP_NOTIFICATION_OVERLAY(
             new Component(548, 18 + DEFAULT_SCREEN_CHILD_OFFSET),
             new Component(161, 8 + DEFAULT_SCREEN_CHILD_OFFSET),
             new Component(164, 8 + DEFAULT_SCREEN_CHILD_OFFSET),
