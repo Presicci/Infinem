@@ -62,8 +62,7 @@ public class TaskManager {
         player.sendMessage("<col=990000>You've completed a task: " + taskName + "!");
         player.sendMessage("You now have " + globalTaskPoints + " task points.");
         completeTasks.add(uuid);
-        player.openInterface(InterfaceType.POPUP_NOTIFICATION_OVERLAY, 660);
-        player.getPacketSender().sendClientScript(3343, "iss", 0xff981f, "Task Complete!", "Task Completed: " + Color.WHITE.wrap(taskName)
+        player.getPacketSender().sendPopupNotification(0xff981f, "Task Complete!", "Task Completed: " + Color.WHITE.wrap(taskName)
                 + "<br><br>Points Earned: " + Color.WHITE.wrap(pointGain + ""));
     }
 

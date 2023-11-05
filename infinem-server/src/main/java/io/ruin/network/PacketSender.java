@@ -430,6 +430,11 @@ public class PacketSender {
         sendClientScript(600, "iiiI", horizontalAlignment, verticalAlignment, lineHeight, parentId << 16 | childId);
     }
 
+    public void sendPopupNotification(int color, String title, String text) {
+        player.openInterface(InterfaceType.POPUP_NOTIFICATION_OVERLAY, 660);
+        player.getPacketSender().sendClientScript(3343, "iss", color, title, text);
+    }
+
     public void fadeIn() {
         sendClientScript(948, "iiiii", 0, 0, 0, 255, 50);
         clearFade();
