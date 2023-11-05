@@ -184,48 +184,6 @@ public class Administrator {
                 player.getCollectionLog().collect(Integer.parseInt(args[0]));
                 return true;
             }
-            case "clpopup": {
-                if (args.length < 1) {
-                    return false;
-                }
-                player.openInterface(InterfaceType.UNUSED_OVERLAY2, 660);
-                player.getPacketSender().sendClientScript(3345);
-                player.getPacketSender().sendClientScript(3343, "ssi", "test", "test", 0xFFFFFF);
-                player.getPacketSender().sendClientScript(3344);
-                World.startEvent(e -> {
-                    e.delay(1);
-                    player.getPacketSender().sendClientScript(3344);
-                    e.delay(1);
-                    player.getPacketSender().sendClientScript(3344);
-                    e.delay(1);
-                    player.getPacketSender().sendClientScript(3344);
-                    e.delay(1);
-                });
-                /*World.startEvent(e -> {
-                    player.openInterface(InterfaceType.UNUSED_OVERLAY2, 660);
-                    e.delay(10);
-                    player.closeInterface(InterfaceType.UNUSED_OVERLAY2);
-                });*/
-                //player.getPacketSender().sendClientScript(3343, "ss", "test", "test");
-                return true;
-            }
-
-            case "testpop": {
-                if (args.length < 1) {
-                    return false;
-                }
-                player.getPacketSender().sendClientScript(Integer.parseInt(args[0]));
-                return true;
-            }
-
-            case "testa": {
-                if (args.length < 1) {
-                    return false;
-                }
-                player.getPacketSender().sendClientScript(3343, "ssi", "test", "test", 0xFFFFFF);
-                return true;
-            }
-
             case "reloadmutes": {
                 IPMute.refreshMutes();
                 return true;
