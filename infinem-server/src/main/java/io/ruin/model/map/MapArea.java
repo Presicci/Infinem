@@ -33,8 +33,16 @@ public enum MapArea {
     private OldFirePit.FirePit firePit;
     private final Bounds bounds;
 
+    MapArea(OldFirePit.FirePit firepit, int darknessLevel, int southWestX, int southWestY, int northEastX, int northEastY, int z) {
+        this(firepit, darknessLevel, new Bounds(new Position(southWestX, southWestY), new Position(northEastX, northEastY), z));
+    }
+
     MapArea(OldFirePit.FirePit firepit, int darknessLevel, int... regionId) {
-        this.bounds = Bounds.fromRegions(regionId);
+        this(firepit, darknessLevel, Bounds.fromRegions(regionId));
+    }
+
+    MapArea(OldFirePit.FirePit firepit, int darknessLevel, Bounds bounds) {
+        this.bounds = bounds;
         this.firePit = firepit;
         registerOnEnter(bounds, (player -> {
             player.putTemporaryAttribute(AttributeKey.DARKNESS_LEVEL, darknessLevel);
