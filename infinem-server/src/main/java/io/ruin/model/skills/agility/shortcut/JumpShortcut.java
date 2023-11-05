@@ -17,7 +17,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum JumpShortcut {
     LUMBERYARD1(2618, new Position(3308, 3492), 1, 1, "climb-over",
-            new Position(3308, 3491, 0), new Position(3308, 3493, 0)),
+            new Position(3308, 3491), new Position(3308, 3493)),
     SHEEP_JUMP1(12982, new Position(3197, 3276), 1,1, "climb-over",
             new Position(3197, 3278), new Position(3197, 3275)),
     TROLL_W_JUMP1(3748, new Position(2833, 3628), 1,1, "climb",
@@ -38,6 +38,8 @@ public enum JumpShortcut {
             new Position(2546, 2873), new Position(2546, 2871)),
     VARROCK_JUMP13(16518, new Position(3240, 3335), 13,1, "jump-over",
             new Position(3240, 3334), new Position(3240, 3335)),
+    HAUNTED_MINE_ENTRANCE15(4918, new Position(3445, 3236), 15, 1, "climb-over",
+            new Position(3446, 3236), new Position(3444, 3236)),
     TROLL_S_JUMP44(3748, new Position(2910, 3686), 44,1, "climb",
             new Position(2911, 3686), new Position(2909, 3686)),
     TROLL_N_JUMP44(3748, new Position(2910, 3687), 44,1, "climb",
