@@ -69,27 +69,5 @@ public enum DarkCaveEntrance {
         for (DarkCaveEntrance entry : values()) {
             ObjectAction.register(entry.objectId, entry.objectPos.getX(), entry.objectPos.getY(), entry.objectPos.getZ(), entry.option, (player, obj) -> use(player, obj, entry));
         }
-        // Lumbridge swamp cave northern passage
-        ObjectAction.register(6912, 3224, 9601, 0, "squeeze-through", ((player, obj) -> {
-            if (player.getAbsY() > obj.getPosition().getY()) {
-                use(player, obj, (p) -> {
-                    p.startEvent(e -> {
-                        p.lock(LockType.FULL_DELAY_DAMAGE);
-                        p.animate(749);
-                        e.delay(2);
-                        p.getMovement().teleport(3224, 9600);
-                        p.unlock();
-                    });
-                });
-            } else {
-                player.startEvent(e -> {
-                    player.lock(LockType.FULL_DELAY_DAMAGE);
-                    player.animate(749);
-                    e.delay(2);
-                    player.getMovement().teleport(3224, 9604);
-                    player.unlock();
-                });
-            }
-        }));
     }
 }
