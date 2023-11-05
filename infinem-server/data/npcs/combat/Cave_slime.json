@@ -1,12 +1,12 @@
 [
   { #Cave slime (23)
     "ids": [ 480 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.basic.BasicThreePoisonCombat",
     //Combat Info
     "hitpoints": 25,
-    "aggressive_level": 46,
+    "aggressive_level": 0,
     "max_damage": 2,
-    "attack_style": "CRUSH",
+    "attack_style": "STAB",
     //Slayer Info
     "slayer_level": 17,
     "slayer_xp": 25.0,
@@ -38,8 +38,8 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 1789,
+    "defend_animation": 1791,
+    "death_animation": 1792
   }
 ]
