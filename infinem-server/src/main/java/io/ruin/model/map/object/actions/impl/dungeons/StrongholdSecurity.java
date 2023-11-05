@@ -124,9 +124,11 @@ public class StrongholdSecurity {
                             new OptionsDialogue("Choose your style of boots",
                                     new Option("I'll take the colourful ones!", () -> {
                                         player.getInventory().add(Items.FANCY_BOOTS, 1);
+                                        player.getTaskManager().doLookupByUUID(924);    // Get a Pair of Boots from the Stronghold Of Security
                                     }),
                                     new Option("I'll take the fighting ones!", () -> {
                                         player.getInventory().add(Items.FIGHTING_BOOTS, 1);
+                                        player.getTaskManager().doLookupByUUID(924);    // Get a Pair of Boots from the Stronghold Of Security
                                     })
                             )
                     );
@@ -153,9 +155,11 @@ public class StrongholdSecurity {
                         new OptionsDialogue("Choose your style of boots",
                                 new Option("I'll take the colourful ones!", () -> {
                                     player.getInventory().add(Items.FANCY_BOOTS, 1);
+                                    player.getTaskManager().doLookupByUUID(924);    // Get a Pair of Boots from the Stronghold Of Security
                                 }),
                                 new Option("I'll take the fighting ones!", () -> {
                                     player.getInventory().add(Items.FIGHTING_BOOTS, 1);
+                                    player.getTaskManager().doLookupByUUID(924);    // Get a Pair of Boots from the Stronghold Of Security
                                 })
                         )
                 );
