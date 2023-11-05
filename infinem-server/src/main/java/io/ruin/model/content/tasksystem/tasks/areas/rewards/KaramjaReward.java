@@ -10,7 +10,7 @@ public enum KaramjaReward {
     KARAMJA_GLOVES_1(AreaTaskTier.EASY, "Unlocks the Karamja Gloves 1",
             "Better deals in shops on Karamja when worn"),
     KARAMJA_GLOVES_2(AreaTaskTier.MEDIUM, "Unlocks the Karamja Gloves 2",
-            "")
+            "");
 
 
 
