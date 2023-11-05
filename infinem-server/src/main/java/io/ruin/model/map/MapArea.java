@@ -32,7 +32,9 @@ public enum MapArea {
     DORGESH_KAAN_CAVE(null, 3, 3221, 9603, 3307, 9662, 0),
     DORGESH_KAAN_DUNGEON(null, 3, 10833),
     SHAYZIEN_CRYPT(null, 3, 5786, 5787, 5788, 5789, 6042, 6043, 6044, 6045),
-    SLAYER_TOWER_BASEMENT(null, 1, 13723)
+    SLAYER_TOWER_BASEMENT(null, 1, 13723),
+    SOPHANEM_DUNGEON(null, 3, 13200),
+    TEMPLE_OF_IKOV_LOWER_LEVEL(null, 1, 2639, 9760, 2654, 9767, 0)
     ;
 
     private OldFirePit.FirePit firePit;
