@@ -35,7 +35,7 @@ public enum MapArea {
         this.bounds = Bounds.fromRegions(regionId);
         this.firePit = firepit;
         registerOnEnter(bounds, (player -> {
-            player.putTemporaryAttribute(AttributeKey.DARKNESS_TICKS, darknessLevel);
+            player.putTemporaryAttribute(AttributeKey.DARKNESS_LEVEL, darknessLevel);
             if (!Lightables.hasLightSource(player) && (firepit == null || !firepit.isBuilt(player))) {
                 player.putTemporaryAttribute(AttributeKey.DARKNESS_TICKS, 0);
                 player.openInterface(InterfaceType.SECONDARY_OVERLAY, darknessLevel == 1 ? 97 : darknessLevel == 2 ? 98 : 96);
