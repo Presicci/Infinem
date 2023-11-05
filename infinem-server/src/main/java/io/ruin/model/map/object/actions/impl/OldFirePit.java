@@ -10,7 +10,6 @@ import io.ruin.model.item.Item;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
-import lombok.AllArgsConstructor;
 import lombok.val;
 import org.jetbrains.annotations.NotNull;
 
@@ -41,7 +40,6 @@ public class OldFirePit {
         }
     }
 
-    @AllArgsConstructor
     public enum FirePit {
         WEISS_FIRE(33334, FireType.FIRE_OF_NOURISHMENT, null),
         GODWARS_DUNGEON_FIRE(33335, FireType.FIRE_OF_UNSEASONAL_WARMTH, player -> player.closeInterface(InterfaceType.PRIMARY_OVERLAY)),
@@ -62,9 +60,17 @@ public class OldFirePit {
         private final int objectId;
         private final FireType type;
         private final Consumer<Player> onBuild;
+        private final Config config;
+
+        FirePit(int objectId, FireType type, Consumer<Player> onBuild) {
+            this.objectId = objectId;
+            this.type = type;
+            this.onBuild = onBuild;
+            this.config = Config.varpbit(ObjectDef.get(objectId).varpBitId, true);
+        }
 
         public boolean isBuilt(@NotNull final Player player) {
-            return Config.varpbit(ObjectDef.get(objectId).varpBitId, false).get(player) == (this == WEISS_FIRE ? 205 : 1);
+            return config.get(player) == (this == WEISS_FIRE ? 205 : 1);
         }
     }
 
@@ -106,7 +112,7 @@ public class OldFirePit {
             if (pit.onBuild != null) {
                 pit.onBuild.accept(player);
             }
-            Config.varpbit(object.getDef().varpBitId, true).set(player, pit == FirePit.WEISS_FIRE ? 205 : 1);
+            pit.config.set(player, pit == FirePit.WEISS_FIRE ? 205 : 1);
             player.getStats().addXp(StatType.Firemaking, 300, true);
             player.getStats().addXp(StatType.Construction, pit.type.level * 10, true);
             player.resetAnimation();
