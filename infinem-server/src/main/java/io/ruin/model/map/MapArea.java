@@ -14,7 +14,6 @@ import lombok.Getter;
 @Getter
 public enum MapArea {
     LUMBRIDGE_CASTLE(12850),
-    LUMBRIDGE_SWAMP_CAVE(OldFirePit.FirePit.LUMBRIDGE_SWAMP_CAVES_FIRE, 3, 12693, 12949),
     VARROCK(12598, 12597, 12596, 12854, 12853, 12852, 13107, 13109, 13108),
     DRAGON_FORGE(1744, 5277, 1760, 5293, 1),
     WIZARD_TOWER(12337),
@@ -24,6 +23,9 @@ public enum MapArea {
     FISHING_GUILD(2596, 3394, 2614, 3426, 0, (player -> {
         player.getTaskManager().doLookupByUUID(575, 1); // Enter the Fishing Guild
     })),
+    // Dark caves
+    LUMBRIDGE_SWAMP_CAVE(OldFirePit.FirePit.LUMBRIDGE_SWAMP_CAVES_FIRE, 3, 12693, 12949),
+    CHASM_OF_TEARS(null, 2, 12948)
     ;
 
     private OldFirePit.FirePit firePit;
@@ -34,7 +36,7 @@ public enum MapArea {
         this.firePit = firepit;
         registerOnEnter(bounds, (player -> {
             player.putTemporaryAttribute(AttributeKey.DARKNESS_TICKS, darknessLevel);
-            if (!Lightables.hasLightSource(player) && !firepit.isBuilt(player)) {
+            if (!Lightables.hasLightSource(player) && (firepit == null || !firepit.isBuilt(player))) {
                 player.putTemporaryAttribute(AttributeKey.DARKNESS_TICKS, 0);
                 player.openInterface(InterfaceType.SECONDARY_OVERLAY, darknessLevel == 1 ? 97 : darknessLevel == 2 ? 98 : 96);
             } else {
