@@ -1718,8 +1718,9 @@ public class Player extends PlayerAttributes {
         if (ticks == -1) {
             // If the player loses their light source while in a dark cave
             if (!Lightables.hasLightSource(this)) {
+                int darknessLevel = getTemporaryAttributeIntOrZero(AttributeKey.DARKNESS_LEVEL);
                 putTemporaryAttribute(AttributeKey.DARKNESS_TICKS, 0);
-                player.openInterface(InterfaceType.SECONDARY_OVERLAY, 96);
+                player.openInterface(InterfaceType.SECONDARY_OVERLAY, darknessLevel == 1 ? 97 : darknessLevel == 2 ? 98 : 96);
             }
         }
         // If the player obtains a light source while in a dark cave
