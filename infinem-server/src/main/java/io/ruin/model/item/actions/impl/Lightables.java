@@ -63,7 +63,7 @@ public enum Lightables {
                 return true;
             }
         }
-        if (MapArea.LUMBRIDGE_SWAMP_CAVE.hasFirePitInArea(player) || MapArea.CAVE_OF_HORROR.hasFirePitInArea(player))
+        if (MapArea.LUMBRIDGE_SWAMP_CAVE.hasFirePitInArea(player) || MapArea.CAVE_OF_HORROR.hasFirePitInArea(player) || MapArea.MOLE_LAIR.hasFirePitInArea(player))
             return true;
         return false;
     }
