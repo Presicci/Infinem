@@ -1,0 +1,5 @@
+[
+  {"id": 7028, "x": 2911, "y": 10175, "z": 0, "type": 10, "direction": 0},  // Ice mountain minecart
+  {"id": 7029, "x": 2909, "y": 10171, "z": 0, "type": 10, "direction": 0},  // GE minecart
+  {"id": 7030, "x": 2911, "y": 10169, "z": 0, "type": 10, "direction": 0}   // White wold mountain minecart
+]
