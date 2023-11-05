@@ -282,6 +282,32 @@ public enum ClimbingSpot {
             Direction.SOUTH, 68, 1,
             Position.of(2859, 3962), Position.of(2859, 3960), Position.of(2859, 3961)),
 
+    CHASM_OF_TEARS_1(new RegisterObject[]{
+            new RegisterObject(6673, 3240, 9525, 2)},
+            Direction.WEST, 1, 0,
+            new Position(3241, 9525, 2), new Position(3239, 9525, 2),
+            new Position(3240, 9525, 2)),
+    CHASM_OF_TEARS_2(new RegisterObject[]{
+            new RegisterObject(6673, 3240, 9524, 2)},
+            Direction.WEST, 1, 0,
+            new Position(3241, 9524, 2), new Position(3239, 9524, 2),
+            new Position(3240, 9524, 2)),
+    CHASM_OF_TEARS_3(new RegisterObject[]{
+            new RegisterObject(6672, 3239, 9499, 2)},
+            Direction.WEST, 1, 0,
+            new Position(3240, 9499, 2), new Position(3238, 9499, 2),
+            new Position(3239, 9499, 2)),
+    CHASM_OF_TEARS_4(new RegisterObject[]{
+            new RegisterObject(6672, 3239, 9498, 2)},
+            Direction.WEST, 1, 0,
+            new Position(3240, 9498, 2), new Position(3238, 9498, 2),
+            new Position(3239, 9498, 2)),
+    CHASM_OF_TEARS_5(new RegisterObject[]{
+            new RegisterObject(6672, 3239, 9497, 2)},
+            Direction.WEST, 1, 0,
+            new Position(3240, 9497, 2), new Position(3238, 9497, 2),
+            new Position(3239, 9497, 2)),
+
     ;
 
     ClimbingSpot(RegisterObject[] objects, Direction faceDir, int levelReq, int xp, Position startPosition, Position endPosition, Position... steps){
