@@ -468,15 +468,6 @@
     "walkRange": 4
   },
   {
-    "name": "Austri",
-    "id": 4077,
-    "x": 2876,
-    "y": 3484,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1
-  },
-  {
     "name": "Druid",
     "id": 3258,
     "x": 2901,
