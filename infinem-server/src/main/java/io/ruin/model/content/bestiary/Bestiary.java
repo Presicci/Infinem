@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.handlers.TabBestiary;
 import io.ruin.model.inter.utils.Config;
 import lombok.Getter;
@@ -65,6 +66,8 @@ public class Bestiary {
      */
     @Setter @Getter private Set<String> entries = new HashSet<>();
 
+    private List<String> orderedEntries;
+
     private String getEntryString(Map.Entry<String, Integer> entry) {
         return getEntryString(entry.getKey(), entry.getValue());
     }
@@ -78,20 +81,25 @@ public class Bestiary {
         if (entries == null || entries.isEmpty())
             entries = BestiaryDef.ENTRIES;
         StringBuilder sb = new StringBuilder();
+        orderedEntries = new ArrayList<>();
         if (sortType == 0) {    // Sort by kills (highest->lowest)
             killCounts.entrySet().stream().filter(e -> entries.contains(e.getKey())).sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).forEach(entry -> {
                 sb.append(getEntryString(entry));
+                orderedEntries.add(entry.getKey());
             });
         } else if (sortType == 1) { // Sort alphabetically
             killCounts.entrySet().stream().filter(e -> entries.contains(e.getKey())).sorted(Map.Entry.comparingByKey()).forEach(entry -> {
                 sb.append(getEntryString(entry));
+                orderedEntries.add(entry.getKey());
             });
         } else if (sortType == 2) { // Bosses first
             killCounts.entrySet().stream().filter(e -> entries.contains(e.getKey()) && BestiaryDef.isBoss(e.getKey())).sorted(Map.Entry.comparingByKey()).forEach(entry -> {
                 sb.append(getEntryString(entry));
+                orderedEntries.add(entry.getKey());
             });
             killCounts.entrySet().stream().filter(e -> entries.contains(e.getKey()) && !BestiaryDef.isBoss(e.getKey())).sorted(Map.Entry.comparingByKey()).forEach(entry -> {
                 sb.append(getEntryString(entry));
+                orderedEntries.add(entry.getKey());
             });
         } else if (sortType == 3) { // Recent first
             List<String> keys = new ArrayList<>(killCounts.keySet());
@@ -103,5 +111,23 @@ public class Bestiary {
         }
         sb.deleteCharAt(sb.length() - 1);   // Trim trailing |
         return sb.toString();
+    }
+
+    /*
+     * Entry interface
+     */
+    public void displayEntry(int slot) {
+        int index = slot / 4;
+        if (index > orderedEntries.size() - 1) {
+            // ??? handling
+            return;
+        }
+        System.out.println(Arrays.toString(orderedEntries.toArray(new String[0])));
+        System.out.println("Slot: " + slot + ", index:" + index);
+        String entry = orderedEntries.toArray(new String[0])[index];
+        player.openInterface(InterfaceType.MAIN, 1010);
+        player.getPacketSender().sendString(1010, 7, StringUtils.capitalizeFirst(entry));
+        player.getPacketSender().sendClientScript(10070, "is", getKillCount(entry), "Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000");
+
     }
 }

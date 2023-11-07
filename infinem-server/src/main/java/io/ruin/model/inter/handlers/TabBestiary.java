@@ -55,6 +55,7 @@ public class TabBestiary {
 
     static {
         InterfaceHandler.register(1009, interfaceHandler -> {
+            interfaceHandler.actions[2] = (SlotAction) (player, slot) -> player.getBestiary().displayEntry(slot);
             interfaceHandler.actions[6] = (SimpleAction) DropViewer::open;
             interfaceHandler.actions[8] = (SimpleAction) (player) -> player.stringInput("Search:", search -> processSearch(player, search));
             interfaceHandler.actions[14] = (SlotAction) (player, slot) -> {
