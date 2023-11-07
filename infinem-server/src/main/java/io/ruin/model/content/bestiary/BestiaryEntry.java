@@ -8,6 +8,8 @@ import java.util.*;
  */
 public class BestiaryEntry {
 
+    private final int killCount;
+
     private static final Map<Integer, Double> damageBreakpoints = new HashMap<Integer, Double>() {{
             put(100, 1.1);
             put(1000, 1.15);
@@ -23,16 +25,16 @@ public class BestiaryEntry {
     }};
 
     private static final Map<Integer, Double> reducedEnemyAccuracyBreakpoints = new HashMap<Integer, Double>() {{
-            put(125, 1.01);
-            put(300, 1.02);
-            put(450, 1.03);
-            put(600, 1.04);
-            put(725, 1.05);
-            put(875, 1.06);
-            put(950, 1.07);
-            put(1100, 1.08);
-            put(1200, 1.09);
-            put(1450, 1.1);
+            put(125, 0.99);
+            put(300, 0.98);
+            put(450, 0.97);
+            put(600, 0.96);
+            put(725, 0.95);
+            put(875, 0.94);
+            put(950, 0.93);
+            put(1100, 0.92);
+            put(1200, 0.91);
+            put(1450, 0.90);
     }};
 
     private static final Map<Integer, Double> extraDropChanceBreakpoints = new HashMap<Integer, Double>() {{
@@ -46,16 +48,52 @@ public class BestiaryEntry {
     private static final int extraDropChanceInterval = 100;
     private static final double extraDropChanceIncrement = 0.02;
 
+    private static final int respawnInterval = 25;
+    private static final double respawnDecrement = 0.01;
+
     private static final int notedItemInterval = 1500;
     private static final double notedItemIncrement = 0.2;
 
-    public static double getExtraDropChance(int killCount) {
-        Optional<Integer> breakpoint = extraDropChanceBreakpoints.keySet().stream().filter(b -> b < killCount).max(Comparator.naturalOrder());
+    public BestiaryEntry(int killCount) {
+        this.killCount = killCount;
+    }
+
+    public static double getBreakpointMultiplier(Map<Integer, Double> breakpoints, int killCount) {
+        Optional<Integer> breakpoint = breakpoints.keySet().stream().filter(b -> b < killCount).max(Comparator.naturalOrder());
         if (!breakpoint.isPresent())
             return 1;
+        return breakpoints.get(breakpoint.get());
+    }
+
+    public double getDamageMultiplier() {
+        return getBreakpointMultiplier(damageBreakpoints, killCount);
+    }
+
+    public double getAccuracyMultiplier() {
+        return getBreakpointMultiplier(accuracyBreakpoints, killCount);
+    }
+
+    public double getReducedEnemyAccuracyMultiplier() {
+        return getBreakpointMultiplier(reducedEnemyAccuracyBreakpoints, killCount);
+    }
+
+    public double getExtraDropChance() {
+        Optional<Integer> breakpoint = extraDropChanceBreakpoints.keySet().stream().filter(b -> b < killCount).max(Comparator.naturalOrder());
+        if (!breakpoint.isPresent())
+            return 0;
         double dropChance = extraDropChanceBreakpoints.get(breakpoint.get());
         int incrementalKillCount = killCount - 100;
         if (incrementalKillCount < 100) return dropChance;
         return dropChance + (extraDropChanceIncrement * (int) (incrementalKillCount / extraDropChanceInterval));
+    }
+
+    public double getRespawnMultiplier() {
+        if (killCount < respawnInterval) return 1;
+        return 1 - (respawnDecrement * (int) (killCount / respawnInterval));
+    }
+
+    public double getNotedItemChance() {
+        if (killCount < notedItemInterval) return 0;
+        return notedItemIncrement * (int) (killCount / notedItemInterval);
     }
 }

@@ -29,7 +29,7 @@ public class DoubleDrops {
                 rolls++;
             }
         }
-        double bestiaryChance = player.getBestiary().getExtraDropChance(npc.getDef());
+        double bestiaryChance = player.getBestiary().getBestiaryEntry(npc.getDef()).getExtraDropChance();
         if (bestiaryChance > 0 && Random.get() < bestiaryChance) {
             rolls++;
         }
