@@ -55,8 +55,8 @@ public class Bestiary {
         return killCounts.getOrDefault(entry, 0);
     }
 
-    public double getDropPerkChance(NPCDef def) {
-        double chance = BestiaryEntry.getDropPerk(getKillCount(def)).getChance();
+    public double getExtraDropChance(NPCDef def) {
+        double chance = BestiaryEntry.getExtraDropChance(getKillCount(def));
         player.sendMessage("Your extra drop chance from " + def.name + " is " + chance + ".");
         return chance;
     }
