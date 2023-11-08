@@ -921,6 +921,13 @@ public class PlayerCombat extends Combat {
         boolean berserkerNecklaceEffectActive = SetEffect.BERSERKER_NECKLACE.checkAndApply(player, target, hit);
         boolean obsidianEffectActive = SetEffect.OBSIDIAN_ARMOUR.checkAndApply(player, target, hit);
 
+        // Bestiary damage perk handling
+        if (target != null && target.isNpc()) {
+            double damage = player.getBestiary().getBestiaryEntry(target.npc.getDef()).getPerkMultiplier(DamagePerk.class);
+            hit.boostDamage(damage);
+            double accuracy = player.getBestiary().getBestiaryEntry(target.npc.getDef()).getPerkMultiplier(AccuracyPerk.class);
+            hit.boostAttack(accuracy);
+        }
 
         if(target.npc != null && target.npc.getDef().dragon && hit.attackStyle != null) {
             //dragon hunter crossbow
