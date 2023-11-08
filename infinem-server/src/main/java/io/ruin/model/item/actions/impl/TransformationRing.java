@@ -27,13 +27,13 @@ public enum TransformationRing {
         player.lock();
         player.getMovement().reset();
         player.getAppearance().setNpcId(ring.npcIds[Random.get(ring.npcIds.length - 1)]);
-        player.openInterface(InterfaceType.INVENTORY_OVERLAY, Interface.TRANSFORMATION_RING);
+        player.openInterface(InterfaceType.INVENTORY, Interface.TRANSFORMATION_RING);
         player.getAppearance().setCustomRenders(-1, -1, -1, -1, -1, -1, -1);
     }
 
     public static void unmorph(Player player) {
         player.getAppearance().setNpcId(-1);
-        player.closeInterface(InterfaceType.INVENTORY_OVERLAY);
+        player.closeInterface(InterfaceType.INVENTORY);
         player.getAppearance().removeCustomRenders();
         player.unlock();
     }
@@ -46,7 +46,7 @@ public enum TransformationRing {
     static {
         for (TransformationRing ring : values())
             ItemAction.registerInventory(ring.itemId, 2, (player, item) -> morph(player, ring));
-        InterfaceHandler.register(Interface.TRANSFORMATION_RING, h -> h.actions[5] = (SimpleAction) TransformationRing::unmorph);
+        InterfaceHandler.register(Interface.TRANSFORMATION_RING, h -> h.actions[0] = (SimpleAction) TransformationRing::unmorph);
     }
 
 }
