@@ -13,6 +13,7 @@ import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.*;
 import io.ruin.model.content.PvmPoints;
 import io.ruin.model.content.bestiary.perks.impl.AccuracyPerk;
+import io.ruin.model.content.bestiary.perks.impl.NotedDropPerk;
 import io.ruin.model.content.bestiary.perks.impl.RespawnPerk;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.content.upgrade.ItemEffect;
@@ -850,6 +851,11 @@ public abstract class NPCCombat extends Combat {
              */
             if(item.lootBroadcast != null || item.getDef().dropAnnounce) {
                 getRareDropAnnounce(pKiller, item);
+            }
+
+            double chance = pKiller.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(NotedDropPerk.class);
+            if (item.getDef().notedId > -1 && chance > 0 && Random.get() < chance) {
+                item.setId(item.getDef().notedId);
             }
 
             /*
