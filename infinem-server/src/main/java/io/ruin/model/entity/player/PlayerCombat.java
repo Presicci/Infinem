@@ -17,6 +17,8 @@ import io.ruin.model.combat.special.magic.StaffOfTheDead;
 import io.ruin.model.combat.special.melee.VestasSpear;
 import io.ruin.model.combat.special.ranged.DragonThrownaxe;
 import io.ruin.model.combat.special.ranged.ToxicBlowpipe;
+import io.ruin.model.content.bestiary.perks.impl.AccuracyPerk;
+import io.ruin.model.content.bestiary.perks.impl.DamagePerk;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
@@ -812,7 +814,6 @@ public class PlayerCombat extends Combat {
         RingOfLife.check(player);
         DefenceSkillCape.check(player);
         SetEffect.DHAROK_DAMNED.checkAndApply(player, target, hit);
-
         for(Item item : player.getEquipment().getItems()) {
             if(item != null && item.getDef() != null) {
                 item.getDef().postDamage(player, item, hit);
@@ -837,12 +838,15 @@ public class PlayerCombat extends Combat {
         }
     }
 
-    public static List<String> UNDEAD_NPCS = Arrays.asList("Aberrant spectre", "Ankou",
-            "Banshee", "Crawling Hand", "Ghast", "Ghost", "Mummy", "Revenant", "Shade",
-            "Skeleton", "Skogre", "Summoned Zombie", "Tortured Soul", "Undead Chicken",
-            "Undead Cow", "Undead One", "Zogre", "Zombified Spawn", "Zombie", "Vet'ion",
-            "Pestilent Bloat", "Tree spirit", "Mi-Gor", "Treus Dayth", "Nazastarool",
-            "Slash Bash", "Ulfric", "Vorkath");
+    public static List<String> UNDEAD_NPCS = Arrays.asList("Aberrant spectre", "Abhorrent spectre",
+            "Ankou", "Banshee", "Calvar'ion", "Crawling Hand", "Crushing hand", "Dark ankou",
+            "Deviant spectre", "Forgotten Soul", "Ghast", "Ghost", "Giant skeleton", "Headless Beast",
+            "Headless Beast (hard)", "Monkey Zombie", "Mummy", "Pestilent Bloat", "Repugnant spectre",
+            "Revenant", "Screaming banshee", "Screaming twisted banshee", "Shade", "Skeletal",
+            "Skeleton", "Skogre", "Slash Bash", "Summoned Zombie", "Tarn", "The Draugen", "Tormented Soul", "Tortured Soul",
+            "Trapped soul", "Tree spirit", "Twisted banshee", "Undead Chicken", "Undead Druid",
+            "Undead Cow", "Undead lumberjack", "Undead One", "Zogre", "Zombified Spawn", "Zombie", "Vet'ion", "Zombified Spawn",
+            "Mi-Gor", "Treus Dayth", "Nazastarool", "Ulfric", "Vorkath");
 
 
     private boolean salveAmuletBoost(Player player, Hit hit, Entity entity) {
