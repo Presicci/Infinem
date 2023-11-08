@@ -13,11 +13,11 @@ public class AccuracyPerk extends BreakpointPerk {
     @Override
     protected Map<Integer, Double> getBreakpoints() {
         return new LinkedHashMap<Integer, Double>() {{
-            put(50, 1.01);
-            put(250, 1.02);
-            put(500, 1.03);
-            put(750, 1.04);
-            put(1500, 1.05);
+            put(50, 0.01);
+            put(250, 0.02);
+            put(500, 0.03);
+            put(750, 0.04);
+            put(1500, 0.05);
         }};
     }
 
