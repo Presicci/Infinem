@@ -12,6 +12,8 @@ import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.*;
 import io.ruin.model.content.PvmPoints;
+import io.ruin.model.content.bestiary.perks.impl.AccuracyPerk;
+import io.ruin.model.content.bestiary.perks.impl.RespawnPerk;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
@@ -319,7 +321,12 @@ public abstract class NPCCombat extends Combat {
             if (!allowRespawn())
                 return;
 
-            event.delay(info.respawn_ticks);
+            int respawnTicks = info.respawn_ticks;
+            if (killer != null && killer.player != null) {
+                double multiplier = killer.player.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(RespawnPerk.class);
+                respawnTicks *= multiplier;
+            }
+            event.delay(respawnTicks);
             respawn();
         });
     }
