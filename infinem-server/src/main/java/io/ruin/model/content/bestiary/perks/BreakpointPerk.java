@@ -16,7 +16,7 @@ public abstract class BreakpointPerk extends BestiaryPerk {
         Map<Integer, Double> breakpoints = getBreakpoints();
         Optional<Integer> breakpoint = breakpoints.keySet().stream().filter(b -> b <= killCount).max(Comparator.naturalOrder());
         if (!breakpoint.isPresent())
-            return 1;
+            return 0;
         return breakpoints.get(breakpoint.get());
     }
 
