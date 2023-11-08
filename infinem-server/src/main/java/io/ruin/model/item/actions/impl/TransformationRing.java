@@ -6,6 +6,7 @@ import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SimpleAction;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.actions.ItemAction;
 
 public enum TransformationRing {
@@ -24,6 +25,10 @@ public enum TransformationRing {
     }
 
     private static void morph(Player player, TransformationRing ring) {
+        if (player.wildernessLevel > 0) {
+            player.dialogue(new MessageDialogue("You can't use morphs in the wilderness."));
+            return;
+        }
         player.lock();
         player.getMovement().reset();
         player.getAppearance().setNpcId(ring.npcIds[Random.get(ring.npcIds.length - 1)]);
