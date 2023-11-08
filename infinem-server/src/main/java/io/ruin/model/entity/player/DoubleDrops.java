@@ -2,6 +2,7 @@ package io.ruin.model.entity.player;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
+import io.ruin.model.content.bestiary.perks.impl.DamagePerk;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.item.Item;
@@ -29,7 +30,7 @@ public class DoubleDrops {
                 rolls++;
             }
         }
-        double bestiaryChance = player.getBestiary().getBestiaryEntry(npc.getDef()).getExtraDropChance();
+        double bestiaryChance = player.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(DamagePerk.class);
         if (bestiaryChance > 0 && Random.get() < bestiaryChance) {
             rolls++;
         }

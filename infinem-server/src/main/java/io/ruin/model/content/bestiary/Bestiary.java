@@ -59,6 +59,10 @@ public class Bestiary {
         return new BestiaryEntry(getKillCount(def));
     }
 
+    public BestiaryEntry getBestiaryEntry(String entry) {
+        return new BestiaryEntry(getKillCount(entry));
+    }
+
     /*
      * Interface
      */
@@ -125,7 +129,7 @@ public class Bestiary {
         String entry = orderedEntries.toArray(new String[0])[index];
         player.openInterface(InterfaceType.MAIN, 1010);
         player.getPacketSender().sendString(1010, 7, StringUtils.capitalizeFirst(entry));
-        player.getPacketSender().sendClientScript(10070, "is", getKillCount(entry), "Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000");
+        player.getPacketSender().sendClientScript(10070, "is", getKillCount(entry), getBestiaryEntry(entry).generateRewardString());
 
     }
 }
