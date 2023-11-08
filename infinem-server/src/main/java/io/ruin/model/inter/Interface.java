@@ -196,7 +196,7 @@ public class Interface {
 
     public static final int CONVERTING_PLANKS = 403;
 
-    public static final int TRANSFORMATION_RING = 375;
+    public static final int TRANSFORMATION_RING = 136;
 
     public static final int CANOE_SELECTION = 416;
 
