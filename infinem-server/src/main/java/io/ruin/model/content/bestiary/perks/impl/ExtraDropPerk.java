@@ -2,6 +2,7 @@ package io.ruin.model.content.bestiary.perks.impl;
 
 import io.ruin.model.content.bestiary.perks.MixedPerk;
 
+import java.text.DecimalFormat;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -33,6 +34,6 @@ public class ExtraDropPerk extends MixedPerk {
 
     @Override
     protected String getLabel(int killCount) {
-        return (getMultiplier(killCount) * 100f) + "% Extra Loot Chance";
+        return new DecimalFormat("#").format(getMultiplier(killCount) * 100f) + "% Extra Loot Chance";
     }
 }

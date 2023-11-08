@@ -2,6 +2,8 @@ package io.ruin.model.content.bestiary.perks.impl;
 
 import io.ruin.model.content.bestiary.perks.IntervalPerk;
 
+import java.text.DecimalFormat;
+
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 11/7/2023
@@ -25,6 +27,6 @@ public class NotedDropPerk extends IntervalPerk {
 
     @Override
     protected String getLabel(int killCount) {
-        return (getMultiplier(killCount) * 100f) + "% Noted Drop Chance";
+        return new DecimalFormat("#").format(getMultiplier(killCount) * 100f) + "% Noted Drop Chance";
     }
 }
