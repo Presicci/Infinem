@@ -1,12 +1,12 @@
 [
   { #Scarab mage (93)
     "ids": [ 794 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.magic.ScarabMage",
     //Combat Info
     "hitpoints": 50,
     "aggressive_level": 186,
     "max_damage": 17,
-    "attack_style": "CRUSH",
+    "attack_style": "MAGIC",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 51.2,
@@ -31,15 +31,15 @@
     "ranged_defence": 0,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
-    "attack_ticks": 10,
+    "attack_ticks": 15,
     "death_ticks": 2,
-    "respawn_ticks": 50,
+    "respawn_ticks": 10,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 1161,
+    "defend_animation": 424,
+    "death_animation": 836
   }
 ]

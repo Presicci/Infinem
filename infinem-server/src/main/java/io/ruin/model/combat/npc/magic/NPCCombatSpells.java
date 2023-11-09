@@ -93,6 +93,12 @@ public enum NPCCombatSpells {
             177, 120,
             151, 1,
             179, 100,
+            153),
+    SCARAB_MAGE_SPELL(new Projectile(178, 45, 0, 75, 56, 10, 16, 65),   // TODO get proper info
+            1161,
+            177, 120,
+            151, 1,
+            179, 100,
             153);
 
     private final Projectile projectile;
