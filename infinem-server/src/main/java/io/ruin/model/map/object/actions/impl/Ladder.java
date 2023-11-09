@@ -37,6 +37,33 @@ public enum Ladder {
     SOPHANEM_DUNGEON_UP(20281, "climb-up", new Position(3318, 9274, 2), new Position(2800, 5160, 0), true),
     SOPHANEM_DUNGEON_DOWN(20278, "climb-down", new Position(2800, 5159), new Position(3318, 9273, 2), false),
 
+    SOPHANEM_DUNGEON_MAZE_KALEEF_UP(20286, "climb-up", new Position(3257, 9225, 0), new Position(3268, 9228, 2), true),
+    SOPHANEM_DUNGEON_MAZE_KALEEF_DOWN(20287, "climb-down", new Position(3268, 9229, 2), new Position(3257, 9226, 0), false),
+
+    SOPHANEM_DUNGEON_MAZE_1_UP(20284, "climb-up", new Position(3271, 9274, 0), new Position(3270, 9274, 2), true),
+    SOPHANEM_DUNGEON_MAZE_1_DOWN(20285, "climb-down", new Position(3271, 9274, 2), new Position(3272, 9274, 0), false),
+
+    SOPHANEM_DUNGEON_MAZE_2_UP(20284, "climb-up", new Position(3286, 9274, 0), new Position(3286, 9275, 2), true),
+    SOPHANEM_DUNGEON_MAZE_2_DOWN(20285, "climb-down", new Position(3286, 9274, 2), new Position(3286, 9273, 0), false),
+
+    SOPHANEM_DUNGEON_MAZE_3_UP(20284, "climb-up", new Position(3317, 9250, 0), new Position(3317, 9249, 2), true),
+    SOPHANEM_DUNGEON_MAZE_3_DOWN(20285, "climb-down", new Position(3317, 9250, 2), new Position(3317, 9251, 0), false),
+
+    SOPHANEM_DUNGEON_MAZE_4_UP(20284, "climb-up", new Position(3280, 9255, 0), new Position(3280, 9256, 2), true),
+    SOPHANEM_DUNGEON_MAZE_4_DOWN(20285, "climb-down", new Position(3280, 9255, 2), new Position(3280, 9254, 0), false),
+
+    SOPHANEM_DUNGEON_MAZE_5_UP(20284, "climb-up", new Position(3271, 9235, 0), new Position(3272, 9235, 2), true),
+    SOPHANEM_DUNGEON_MAZE_5_DOWN(20285, "climb-down", new Position(3271, 9235, 2), new Position(3270, 9235, 0), false),
+
+    SOPHANEM_DUNGEON_MAZE_6_UP(20284, "climb-up", new Position(3323, 9241, 0), new Position(3323, 9242, 2), true),
+    SOPHANEM_DUNGEON_MAZE_6_DOWN(20285, "climb-down", new Position(3323, 9241, 2), new Position(3323, 9240, 0), false),
+
+    SOPHANEM_DUNGEON_MAZE_7_UP(20284, "climb-up", new Position(3267, 9221, 0), new Position(3267, 9220, 2), true),
+    SOPHANEM_DUNGEON_MAZE_7_DOWN(20285, "climb-down", new Position(3267, 9221, 2), new Position(3267, 9222, 0), false),
+
+    SOPHANEM_DUNGEON_MAZE_8_UP(20284, "climb-up", new Position(3317, 9224, 0), new Position(3317, 9225, 2), true),
+    SOPHANEM_DUNGEON_MAZE_8_DOWN(20285, "climb-down", new Position(3317, 9224, 2), new Position(3317, 9223, 0), false),
+
     TROLL_STRONGHOLD_EXIT(18834, "climb-up", new Position(2831, 10077, 2), new Position(2831, 3678), true),
     TROLL_STRONGHOLD_ENTRANCE(18833, "climb-down", new Position(2831, 3677, 0), new Position(2831, 10077, 2), false);
 
