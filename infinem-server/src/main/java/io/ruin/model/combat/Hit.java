@@ -347,6 +347,11 @@ public class Hit {
 						attacker.player.sendFilteredMessage("Chance: " + hitChance);
 						attacker.player.sendFilteredMessage("Max Damage: " + maxDamage);
 					}
+					if (target.player != null && target.player.debug) {
+						target.player.sendFilteredMessage("Enemy Hit:");
+						target.player.sendFilteredMessage("Chance: " + hitChance);
+						target.player.sendFilteredMessage("Max Damage: " + maxDamage);
+					}
 					if (Random.get() > hitChance)
 						block();
 				}
