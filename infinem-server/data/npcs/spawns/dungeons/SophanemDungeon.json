@@ -568,15 +568,5 @@
     "direction": "W",
     "walkRange": "1",
     "world": "ECO"
-  },
-  {
-    "name": "Maisa",
-    "id": "6164",
-    "x": "3213",
-    "y": "9246",
-    "z": "0",
-    "direction": "W",
-    "walkRange": "1",
-    "world": "ECO"
   }
 ]
