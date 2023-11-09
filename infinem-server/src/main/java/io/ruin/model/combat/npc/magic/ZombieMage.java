@@ -8,5 +8,11 @@ public class ZombieMage extends WizardCombat {
     @Override
     public void init() {
         standardCast = NPCCombatSpells.EARTH_STRIKE;
+        useBaseAnimation = true;
+    }
+
+    @Override
+    protected boolean playCastEffects() {
+        return false;
     }
 }
