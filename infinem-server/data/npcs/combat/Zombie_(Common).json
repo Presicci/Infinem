@@ -388,7 +388,7 @@
   },
   { // Zombie - Shayzien crypts - Magic (132)
     "ids": [ 8069 ],
-    "handler": "io.ruin.model.combat.npc.magic.ZombieMage",
+    "handler": "io.ruin.model.combat.npc.magic.EarthStrikeMage",
     //Combat Info
     "hitpoints": 54,
     "aggressive_level": 264,
