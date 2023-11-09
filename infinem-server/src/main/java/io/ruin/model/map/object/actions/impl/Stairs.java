@@ -70,5 +70,9 @@ public class Stairs {
         registerSpiralStair(12536, new Position(3103, 3159, 0));
         registerSpiralStair(12537, new Position(3103, 3159, 1));
         registerSpiralStair(12538, new Position(3104, 3160, 2));
+        // Isle of souls crumbling tower
+        registerSpiralStair(14735, new Position(2134, 2995, 0));
+        registerSpiralStair(14736, new Position(2134, 2995, 1));
+        registerSpiralStair(14737, new Position(2135, 2996, 2));
     }
 }
