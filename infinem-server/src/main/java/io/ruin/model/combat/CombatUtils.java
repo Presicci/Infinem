@@ -107,7 +107,7 @@ public class CombatUtils {
             else if(type == AttackType.CONTROLLED)
                 effectiveDefence += 1;
         }
-        effectiveDefence += entity.player != null ? 8 : 9;
+        effectiveDefence += entity.player != null ? 0 : 9;
         return effectiveDefence;
     }
 
