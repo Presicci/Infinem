@@ -10,6 +10,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/1/2023
  */
 public enum DialogueObject {
+    KALEEFS_BODY(20288, new Position(3239, 9243),
+            new MessageDialogue("He's dead.")),
     LUMBRIDGE_COW_PEN_CRATES(358, new Position(3244, 3279),
             new MessageDialogue("You thoroughly search the crates, yet you fail to find any potential reason for why the fence was built around them. Cheap labor potentially.")),
     CRUMBLING_TOWER(1796, new Position(1936, 9444),
