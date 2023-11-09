@@ -1,5 +1,5 @@
 [
-  { #Abyssal Sire (350)
+  { // Abyssal Sire (350)
     "ids": [ 5914 ],
     "handler": "io.ruin.model.combat.npc.PassiveCombat",
     //Combat Info

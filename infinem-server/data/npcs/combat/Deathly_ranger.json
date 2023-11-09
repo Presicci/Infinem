@@ -1,5 +1,5 @@
 [
-  { #Deathly ranger
+  { // Deathly ranger
     "ids": [ 7559 ],
     "handler": "io.ruin.model.activities.combat.raids.xeric.chamber.combat.DeathlyRanger",
     //Combat Info

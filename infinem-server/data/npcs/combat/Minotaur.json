@@ -1,5 +1,5 @@
 [
-  { #Minotaur (12)
+  { // Minotaur (12)
     "ids": [ 2481 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 4267,
     "death_animation": 4265
   },
-  { #Minotaur (27)
+  { // Minotaur (27)
     "ids": [ 2483 ],
     "handler": "",
     //Combat Info

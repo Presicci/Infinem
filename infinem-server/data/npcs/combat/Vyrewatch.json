@@ -1,5 +1,5 @@
 [
-  { #Vyrewatch (105)
+  { // Vyrewatch (105)
     "ids": [ 3709, 3717, 3721, 3725, 3729, 3748, 3752, 3756, 3760, 3768 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Vyrewatch (110)
+  { // Vyrewatch (110)
     "ids": [ 3710, 3718, 3722, 3726, 3730, 3749, 3753, 3757, 3761, 3769 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Vyrewatch (120)
+  { // Vyrewatch (120)
     "ids": [ 3711, 3719, 3723, 3727, 3731, 3750, 3754, 3758, 3762, 3770 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Vyrewatch (125)
+  { // Vyrewatch (125)
     "ids": [ 3712, 3720, 3724, 3728, 3732, 3751, 3755, 3759, 3763, 3771 ],
     "handler": "",
     //Combat Info

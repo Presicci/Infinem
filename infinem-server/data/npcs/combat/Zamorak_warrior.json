@@ -1,5 +1,5 @@
 [
-  { #Zamorak warrior (84)
+  { // Zamorak warrior (84)
     "ids": [ 7418 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Zamorak warrior (85)
+  { // Zamorak warrior (85)
     "ids": [ 7419 ],
     "handler": "",
     //Combat Info

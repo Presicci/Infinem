@@ -1,5 +1,5 @@
 [
-  { #Hespori Flower (0)
+  { // Hespori Flower (0)
   "ids": [ 8584],
   "handler": "io.ruin.model.activities.combat.bosses.hespori.HesporiFlower",
   //Combat Info

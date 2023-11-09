@@ -1,5 +1,5 @@
 [
-  { #Guthan the Infested (115)
+  { // Guthan the Infested (115)
     "ids": [ 1674 ],
     "handler": "io.ruin.model.activities.combat.barrows.brothers.Guthan",
     //Combat Info

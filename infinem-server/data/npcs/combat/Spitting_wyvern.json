@@ -1,5 +1,5 @@
 [
-  { #Spitting Wyvern (139)
+  { // Spitting Wyvern (139)
   "ids": [ 7794 ],
   "handler": "io.ruin.model.combat.npc.slayer.wyverns.SpittingWyvern",
   //Combat Info

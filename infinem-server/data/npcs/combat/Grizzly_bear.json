@@ -1,5 +1,5 @@
 [
-  { #Grizzly bear (21)
+  { // Grizzly bear (21)
     "ids": [ 2838 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 4927,
     "death_animation": 4929
   },
-  { #Grizzly bear (42)
+  { // Grizzly bear (42)
     "ids": [ 3423 ],
     "handler": "",
     //Combat Info

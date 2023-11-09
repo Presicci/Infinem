@@ -1,5 +1,5 @@
 [
-  { #Blue dragon (111)
+  { // Blue dragon (111)
     "ids": [ 265, 266, 267, 268, 269, 5878, 5879, 5880, 5881, 5882 ],
     "handler": "io.ruin.model.combat.npc.dragons.ChromaticDragon",
     //Combat Info

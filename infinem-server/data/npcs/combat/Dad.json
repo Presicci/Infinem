@@ -1,5 +1,5 @@
 [
-  { #Dad (101)
+  { // Dad (101)
     "ids": [ 4130, 6391 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 285,
     "death_animation": 287
   },
-  { #Dad (hard) (201)
+  { // Dad (hard) (201)
     "ids": [ 6330 ],
     "handler": "",
     //Combat Info

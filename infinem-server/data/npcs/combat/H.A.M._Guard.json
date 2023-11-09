@@ -1,5 +1,5 @@
 [
-  { #H.A.M. Guard (12)
+  { // H.A.M. Guard (12)
     "ids": [ 2536 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #H.A.M. Guard (18)
+  { // H.A.M. Guard (18)
     "ids": [ 2537 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #H.A.M. Guard (22)
+  { // H.A.M. Guard (22)
     "ids": [ 2538 ],
     "handler": "",
     //Combat Info

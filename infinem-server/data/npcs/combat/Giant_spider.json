@@ -1,5 +1,5 @@
 [
-  { #Giant spider (2)
+  { // Giant spider (2)
     "ids": [ 3017 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 5328,
     "death_animation": 5329
   },
-  { #Giant spider (27)
+  { // Giant spider (27)
     "ids": [ 3018 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 5328,
     "death_animation": 5329
   },
-  { #Giant spider (50)
+  { // Giant spider (50)
     "ids": [ 2477 ],
     "handler": "",
     //Combat Info

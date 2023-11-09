@@ -1,5 +1,5 @@
 [
-  { #Adamant dragon (338)
+  { // Adamant dragon (338)
     "ids": [ 8030, 8090 ],
     "handler": "io.ruin.model.combat.npc.dragons.AdamantDragon",
     //Combat Info

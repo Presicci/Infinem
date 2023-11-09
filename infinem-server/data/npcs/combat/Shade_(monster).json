@@ -1,5 +1,5 @@
 [
-  { #Shade (159)
+  { // Shade (159)
     "ids": [ 6740 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 399,
     "death_animation": 843
   },
-  { #Shade (140)
+  { // Shade (140)
     "ids": [ 5633, 7258 ],
     "handler": "",
     //Combat Info

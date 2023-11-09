@@ -1,5 +1,5 @@
 [
-  { #Deviant spectre (169)
+  { // Deviant spectre (169)
     "ids": [ 7279 ],
     "handler": "io.ruin.model.combat.npc.slayer.AberrantSpectre",
     //Combat Info

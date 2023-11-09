@@ -1,5 +1,5 @@
 [
-  { #Mountain troll (69)
+  { // Mountain troll (69)
     "ids": [ 936, 937, 938, 939, 940, 941, 942 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 285,
     "death_animation": 287
   },
-  { #Mountain troll (71)
+  { // Mountain troll (71)
     "ids": [ 4143 ],
     "handler": "",
     //Combat Info

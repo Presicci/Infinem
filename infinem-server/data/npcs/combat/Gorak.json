@@ -1,5 +1,5 @@
 [
-  { #Gorak (145)
+  { // Gorak (145)
     "ids": [ 1834 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 4301,
     "death_animation": 4302
   },
-  { #Gorak (149)
+  { // Gorak (149)
     "ids": [ 3141 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Billy Goat (33)
+  { // Billy Goat (33)
     "ids": [ 1794, 1797 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Billy Goat (33)
+  { // Billy Goat (33)
     "ids": [ 1794, 1797 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Dust devil (93)
+  { // Dust devil (93)
     "ids": [ 423 ],
     "handler": "io.ruin.model.combat.npc.slayer.DustDevil",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 1555,
     "death_animation": 1558
   },
-  { #Dust devil (110)
+  { // Dust devil (110)
     "ids": [ 7249 ],
     "handler": "io.ruin.model.combat.npc.slayer.DustDevil",
     //Combat Info

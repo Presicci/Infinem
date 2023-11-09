@@ -1,5 +1,5 @@
 [
-  { #Ogre (53)
+  { // Ogre (53)
     "ids": [ 136, 2095, 2096 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 360,
     "death_animation": 361
   },
-  { #Ogre (58)
+  { // Ogre (58)
     "ids": [ 2233 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 360,
     "death_animation": 361
   },
-  { #Ogre (63)
+  { // Ogre (63)
     "ids": [ 1153 ],
     "handler": "",
     //Combat Info

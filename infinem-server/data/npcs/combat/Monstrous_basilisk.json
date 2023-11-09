@@ -1,5 +1,5 @@
 [
-  { #Monstrous basilisk (135)
+  { // Monstrous basilisk (135)
     "ids": [ 7395 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.MonstrousBasilisk",
     //Combat Info

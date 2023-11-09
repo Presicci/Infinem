@@ -1,5 +1,5 @@
 [
-  { #Spinner (36)
+  { // Spinner (36)
     "ids": [ 1709 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Spinner",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 3909,
     "death_animation": 3910
   },
-  { #Spinner (55)
+  { // Spinner (55)
     "ids": [ 1710 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Spinner",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 3909,
     "death_animation": 3910
   },
-  { #Spinner (74)
+  { // Spinner (74)
     "ids": [ 1711 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Spinner",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 3909,
     "death_animation": 3910
   },
-  { #Spinner (88)
+  { // Spinner (88)
     "ids": [ 1713 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Spinner",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": 3909,
     "death_animation": 3910
   },
-  { #Spinner (92)
+  { // Spinner (92)
     "ids": [ 1712 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Spinner",
     //Combat Info

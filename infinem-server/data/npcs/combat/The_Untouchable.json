@@ -1,5 +1,5 @@
 [
-  { #The Untouchable (274)
+  { // The Untouchable (274)
     "ids": [ 3475, 6352 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #The Untouchable (hard) (440)
+  { // The Untouchable (hard) (440)
     "ids": [ 6121 ],
     "handler": "",
     //Combat Info

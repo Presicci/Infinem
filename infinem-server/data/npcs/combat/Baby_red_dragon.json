@@ -1,5 +1,5 @@
 [
-  { #Baby dragon (48) (red)
+  { // Baby dragon (48) (red)
     "ids": [ 244, 245, 246  ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 26,
     "death_animation": 28
   },
-    { #Baby dragon (65) (red, POH)
+    { // Baby dragon (65) (red, POH)
     "ids": [ 137 ],
     "handler": "",
     //Combat Info
@@ -87,7 +87,7 @@
 	//Misc
 	"combat_xp_modifier": 0
   },
-    { #Baby dragon (48) (blue)
+    { // Baby dragon (48) (blue)
     "ids": [ 241, 242, 243 ],
     "handler": "",
     //Combat Info
@@ -130,7 +130,7 @@
     "defend_animation": 26,
     "death_animation": 28
   },
-    { #Baby dragon (48) (green)
+    { // Baby dragon (48) (green)
     "ids": [ 5194, 5872, 5873],
     "handler": "",
     //Combat Info

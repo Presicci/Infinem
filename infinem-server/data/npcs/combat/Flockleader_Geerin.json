@@ -1,5 +1,5 @@
 [
-  { #Flockleader Geerin (149)
+  { // Flockleader Geerin (149)
     "ids": [ 3164 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.impl.armadyl.FlockleaderGeerin",
     //Combat Info

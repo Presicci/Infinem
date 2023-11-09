@@ -1,5 +1,5 @@
 [
-  { #Mourner (11)
+  { // Mourner (11)
     "ids": [ 1114, 5285, 5286, 5287 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Mourner (13)
+  { // Mourner (13)
     "ids": [ 1149 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Mourner (18)
+  { // Mourner (18)
     "ids": [ 1136 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Mourner (24)
+  { // Mourner (24)
     "ids": [ 1115, 1148 ],
     "handler": "",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Mourner (108)
+  { // Mourner (108)
     "ids": [ 5311 ],
     "handler": "",
     //Combat Info

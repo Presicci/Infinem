@@ -1,5 +1,5 @@
 [
-  { #Black Guard (25)
+  { // Black Guard (25)
     "ids": [ 1409, 1410, 1411, 1412 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 100,
     "death_animation": 102
   },
-  { #Black Guard (48)
+  { // Black Guard (48)
     "ids": [ 6046, 6047, 6048, 6049 ],
     "handler": "",
     //Combat Info

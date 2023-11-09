@@ -1,5 +1,5 @@
 [
-  { #Greater demon (92)
+  { // Greater demon (92)
     "ids": [ 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 65,
     "death_animation": 67
   },
-  { #Greater demon (100)
+  { // Greater demon (100)
     "ids": [ 7245 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 65,
     "death_animation": 67
   },
-  { #Greater demon (101)
+  { // Greater demon (101)
     "ids": [ 7244, 7871, 7872, 7873 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 65,
     "death_animation": 67
   },
-  { #Greater demon (113)
+  { // Greater demon (113)
     "ids": [ 7246 ],
     "handler": "",
     //Combat Info

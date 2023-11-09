@@ -1,5 +1,5 @@
 [
-  { #Steel dragon (246)
+  { // Steel dragon (246)
     "ids": [ 274, 275 ],
     "handler": "io.ruin.model.combat.npc.dragons.MetalDragon",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 89,
     "death_animation": 92
   },
-    { #Steel dragon (POH)
+    { // Steel dragon (POH)
     "ids": [ 139 ],
     "handler": "io.ruin.model.combat.npc.dragons.MetalDragon",
     //Combat Info
@@ -87,7 +87,7 @@
 	//Misc
 	"combat_xp_modifier": 0
   },
-  { #Steel dragon (274)
+  { // Steel dragon (274)
     "ids": [ 7255 ],
     "handler": "io.ruin.model.combat.npc.dragons.MetalDragon",
     //Combat Info

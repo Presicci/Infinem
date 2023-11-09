@@ -1,5 +1,5 @@
 [
-  { #Tok-Xil (90)
+  { // Tok-Xil (90)
     "ids": [ 2193, 2194, 3121, 3122 ],
     "handler": "io.ruin.model.activities.combat.fightcaves.monsters.TokXil",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 2629,
     "death_animation": 2630
   },
-    { #Tok-Xil (90) POH
+    { // Tok-Xil (90) POH
     "ids": [ 141 ],
     "handler": "io.ruin.model.activities.combat.fightcaves.monsters.TokXil",
     //Combat Info

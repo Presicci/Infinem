@@ -1,5 +1,5 @@
 [
-  { #Druid (33)
+  { // Druid (33)
     "ids": [ 3258 ],
     "handler": "io.ruin.model.combat.npc.magic.Druid",
     //Combat Info

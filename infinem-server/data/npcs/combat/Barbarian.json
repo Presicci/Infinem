@@ -1,5 +1,5 @@
 [
-  { #Barbarian (9)
+  { // Barbarian (9)
     "ids": [ 3072 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Barbarian (10)
+  { // Barbarian (10)
     "ids": [ 3056, 3059, 3060, 3061, 3064, 3065, 3066, 3067, 3071, 3070 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Barbarian (15)
+  { // Barbarian (15)
     "ids": [ 3068 ],
     "handler": "io.ruin.model.combat.npc.basic.BasicArcherCombat",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Barbarian (17)
+  { // Barbarian (17)
     "ids": [ 3055, 3057, 3058, 3062, 3069 ],
     "handler": "",
     //Combat Info

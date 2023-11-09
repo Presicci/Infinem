@@ -1,5 +1,5 @@
 [
-  { #Screaming twisted banshee (144)
+  { // Screaming twisted banshee (144)
   "ids": [ 7391 ],
   "handler": "io.ruin.model.combat.npc.slayer.superiors.ScreamingBanshee",
   //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Skotizo (321) (WILDERNESS PVP WORLD EVENT VERSION!)
+  { // Skotizo (321) (WILDERNESS PVP WORLD EVENT VERSION!)
     "ids": [ 7286 ],
     "handler": "io.ruin.model.activities.wilderness.bosses.custom.SkotizoPVPEvent",
     //Combat Info
@@ -45,7 +45,7 @@
 	//Other
 	"local_loot": true
   },
-  { #Skotizo (321) (Catacombs boss version!)
+  { // Skotizo (321) (Catacombs boss version!)
     "ids": [ 7297 ],
     "handler": "io.ruin.model.activities.combat.bosses.Skotizo",
     //Combat Info

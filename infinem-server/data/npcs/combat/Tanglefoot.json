@@ -1,5 +1,5 @@
 [
-  { #Tanglefoot (111)
+  { // Tanglefoot (111)
     "ids": [ 5848, 6353 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Tanglefoot (hard) (199)
+  { // Tanglefoot (hard) (199)
     "ids": [ 6291 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Vespine soldier (raids) (flying)
+  { // Vespine soldier (raids) (flying)
     "ids": [ 7538, 7539 ],
     "handler": "io.ruin.model.activities.combat.raids.xeric.chamber.combat.VespineSoldier",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 7456,
     "death_animation": 7459
   },
-    { #Vespine Soldier (raids) (grounded)
+    { // Vespine Soldier (raids) (grounded)
     "ids": [ 7539 ],
     "handler": "io.ruin.model.activities.combat.raids.xeric.chamber.combat.VespineSoldier",
     //Combat Info

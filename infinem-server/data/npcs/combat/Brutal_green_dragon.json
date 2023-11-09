@@ -1,5 +1,5 @@
 [
-  { #Brutal green dragon (227)
+  { // Brutal green dragon (227)
     "ids": [ 2918 ],
     "handler": "io.ruin.model.combat.npc.dragons.BrutalDragon",
     //Combat Info

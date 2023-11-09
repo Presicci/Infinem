@@ -1,5 +1,5 @@
 [
-  { #Gnome (1)
+  { // Gnome (1)
     "ids": [ 5969, 6094, 6095, 6096 ],
     "handler": "io.ruin.model.combat.npc.basic.BasicArcherCombat",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 193,
     "death_animation": 196
   },
-  { #Gnome (3)
+  { // Gnome (3)
     "ids": [ 5968, 5970 ],
     "handler": "io.ruin.model.combat.npc.basic.BasicArcherCombat",
     //Combat Info

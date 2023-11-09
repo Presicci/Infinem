@@ -1,5 +1,5 @@
 [
-  { #Growler (139)
+  { // Growler (139)
     "ids": [ 2207 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.impl.saradomin.Growler",
     //Combat Info

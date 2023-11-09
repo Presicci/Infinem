@@ -1,5 +1,5 @@
 [
-  { #Pirate (23)
+  { // Pirate (23)
     "ids": [ 1447, 521, 522, 524, 6993, 6994, 6995 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Pirate (26)
+  { // Pirate (26)
     "ids": [ 523 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 404,
     "death_animation": 2304
   },
-  { #Pirate (57)
+  { // Pirate (57)
     "ids": [ 4043, 4044, 4045, 4046, 4047, 4048, 4049, 4050, 4051, 4052 ],
     "handler": "",
     //Combat Info

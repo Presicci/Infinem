@@ -1,5 +1,5 @@
 [
-  { #Armadylian guard (97)
+  { // Armadylian guard (97)
     "ids": [ 6587 ],
     "handler": "io.ruin.model.combat.npc.clues.ArmadyleanGuard",
     //Combat Info

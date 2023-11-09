@@ -1,5 +1,5 @@
 [
-  { #Tree spirit (14)
+  { // Tree spirit (14)
     "ids": [ 1861 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Tree spirit (29)
+  { // Tree spirit (29)
     "ids": [ 1862 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Tree spirit (49)
+  { // Tree spirit (49)
     "ids": [ 1863 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Tree spirit (79)
+  { // Tree spirit (79)
     "ids": [ 1864 ],
     "handler": "",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Tree spirit (120)
+  { // Tree spirit (120)
     "ids": [ 1865 ],
     "handler": "",
     //Combat Info
@@ -214,7 +214,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Tree spirit (159)
+  { // Tree spirit (159)
     "ids": [ 1866 ],
     "handler": "",
     //Combat Info

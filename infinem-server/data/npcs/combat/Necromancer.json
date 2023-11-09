@@ -1,5 +1,5 @@
 [
-  { #Necromancer (15003)
+  { // Necromancer (15003)
   "ids": [ 15003 ],
   "handler": "io.ruin.model.activities.combat.bosses.necromancer.Necromancer",
   //Combat Info

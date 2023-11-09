@@ -1,5 +1,5 @@
 [
-  { #Khazard warlord (112)
+  { // Khazard warlord (112)
     "ids": [ 6390, 7621, 7622 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Khazard warlord (hard) (192)
+  { // Khazard warlord (hard) (192)
     "ids": [ 6329 ],
     "handler": "",
     //Combat Info

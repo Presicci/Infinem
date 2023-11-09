@@ -1,5 +1,5 @@
 [
-  { #Juvinate (59)
+  { // Juvinate (59)
     "ids": [ 5634 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Juvinate (90)
+  { // Juvinate (90)
     "ids": [ 5635 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Juvinate (119)
+  { // Juvinate (119)
     "ids": [ 5636 ],
     "handler": "",
     //Combat Info

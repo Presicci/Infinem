@@ -1,5 +1,5 @@
 [
-  { #Bree (146)
+  { // Bree (146)
     "ids": [ 2208 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.impl.saradomin.Bree",
     //Combat Info

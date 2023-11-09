@@ -1,5 +1,5 @@
 [
-  { #Dark wizard (7)
+  { // Dark wizard (7)
     "ids": [ 512, 5086, 5087 ],
     "handler": "io.ruin.model.combat.npc.magic.DarkWizardLevelSeven",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Dark wizard (11)
+  { // Dark wizard (11)
     "ids": [ 2058, 2059 ],
     "handler": "io.ruin.model.combat.npc.magic.DarkWizard",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Dark wizard (20)
+  { // Dark wizard (20)
     "ids": [ 510, 5088, 5089 ],
     "handler": "io.ruin.model.combat.npc.magic.DarkWizard",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Dark wizard (22)
+  { // Dark wizard (22)
     "ids": [ 2057 ],
     "handler": "io.ruin.model.combat.npc.magic.DarkWizard",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Dark wizard (23)
+  { // Dark wizard (23)
     "ids": [ 2056 ],
     "handler": "io.ruin.model.combat.npc.magic.DarkWizard",
     //Combat Info

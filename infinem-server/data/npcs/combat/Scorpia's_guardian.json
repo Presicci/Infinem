@@ -1,5 +1,5 @@
 [
-  { #Scorpia\u0027s guardian (47)
+  { // Scorpia\u0027s guardian (47)
     "ids": [ 6617 ],
     "handler": "io.ruin.model.activities.wilderness.bosses.scorpia.ScorpiasGuardian",
     //Combat Info

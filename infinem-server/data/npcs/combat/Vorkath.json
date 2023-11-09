@@ -1,5 +1,5 @@
 [
-  { #Vorkath (792)
+  { // Vorkath (792)
     "ids": [ 8059, 8061 ],
     "handler": "io.ruin.model.activities.combat.bosses.vorkath.Vorkath",
     //Combat Info

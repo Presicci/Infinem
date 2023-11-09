@@ -1,5 +1,5 @@
 [
-  { #Giant rockslug (86)
+  { // Giant rockslug (86)
     "ids": [ 7392 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.GiantRockslug",
     //Combat Info

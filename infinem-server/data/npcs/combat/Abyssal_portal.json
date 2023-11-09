@@ -1,5 +1,5 @@
 [
-  { #Abyssal portal (Raids, Vespula)
+  { // Abyssal portal (Raids, Vespula)
     "ids": [ 7533 ],
     "handler": "io.ruin.model.combat.npc.PassiveCombat",
     //Combat Info

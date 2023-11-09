@@ -1,5 +1,5 @@
 [
-  { #Chasm Crawler (68)
+  { // Chasm Crawler (68)
     "ids": [ 7389 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.ChasmCrawler",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Afflicted (30)
+  { // Afflicted (30)
     "ids": [ 1298 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Afflicted (32)
+  { // Afflicted (32)
     "ids": [ 1297 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Afflicted (34)
+  { // Afflicted (34)
     "ids": [ 1294 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Afflicted (37)
+  { // Afflicted (37)
     "ids": [ 1293 ],
     "handler": "",
     //Combat Info

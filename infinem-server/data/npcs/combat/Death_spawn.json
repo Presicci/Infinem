@@ -1,5 +1,5 @@
 [
-  { #Death spawn (46)
+  { // Death spawn (46)
     "ids": [ 10 ],
     "handler": "io.ruin.model.combat.npc.slayer.DeathSpawn",
     //Combat Info

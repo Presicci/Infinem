@@ -1,5 +1,5 @@
 [
-  { #Torag the Corrupted (115)
+  { // Torag the Corrupted (115)
     "ids": [ 1676 ],
     "handler": "io.ruin.model.activities.combat.barrows.brothers.Torag",
     //Combat Info

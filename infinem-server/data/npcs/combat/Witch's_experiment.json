@@ -1,5 +1,5 @@
 [
-  { #Witch\u0027s experiment (19)
+  { // Witch\u0027s experiment (19)
     "ids": [ 3996, 6394 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Witch\u0027s experiment (hard) (47)
+  { // Witch\u0027s experiment (hard) (47)
     "ids": [ 6333 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Witch\u0027s experiment (second form) (30)
+  { // Witch\u0027s experiment (second form) (30)
     "ids": [ 3997, 6395 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Witch\u0027s experiment (second form) (hard) (77)
+  { // Witch\u0027s experiment (second form) (hard) (77)
     "ids": [ 6334 ],
     "handler": "",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Witch\u0027s experiment (third form) (42)
+  { // Witch\u0027s experiment (third form) (42)
     "ids": [ 3998, 6396 ],
     "handler": "",
     //Combat Info
@@ -214,7 +214,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Witch\u0027s experiment (third form) (hard) (90)
+  { // Witch\u0027s experiment (third form) (hard) (90)
     "ids": [ 6335 ],
     "handler": "",
     //Combat Info
@@ -257,7 +257,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Witch\u0027s experiment (fourth form) (53)
+  { // Witch\u0027s experiment (fourth form) (53)
     "ids": [ 3999, 6397 ],
     "handler": "",
     //Combat Info
@@ -300,7 +300,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Witch\u0027s experiment (fourth form) (hard) (103)
+  { // Witch\u0027s experiment (fourth form) (hard) (103)
     "ids": [ 6336 ],
     "handler": "",
     //Combat Info

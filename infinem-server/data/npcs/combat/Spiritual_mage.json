@@ -1,5 +1,5 @@
 [
-  { #Spiritual bandos mage (121)
+  { // Spiritual bandos mage (121)
     "ids": [ 2244 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.bandos.BandosSpiritualMage",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 4322,
     "death_animation": 4321
   },
-  { #Spiritual mage sara (120)
+  { // Spiritual mage sara (120)
     "ids": [ 2212 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.saradomin.SaradominSpiritualMage",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Spiritual mage zammy (121)
+  { // Spiritual mage zammy (121)
     "ids": [ 3161 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.zamorak.ZamorakSpiritualMage",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Spiritual mage arma (122)
+  { // Spiritual mage arma (122)
     "ids": [ 3168 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.ArmadylSpiritualMage",
     //Combat Info

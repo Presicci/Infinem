@@ -1,5 +1,5 @@
 [
-  { #Jal-Xil (370)
+  { // Jal-Xil (370)
     "ids": [ 7698, 7702 ],
     "handler": "io.ruin.model.activities.combat.inferno.monsters.JalXil",
     //Combat Info

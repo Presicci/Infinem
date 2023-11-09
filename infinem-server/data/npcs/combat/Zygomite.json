@@ -1,5 +1,5 @@
 [
-  { #Zygomite (74)
+  { // Zygomite (74)
     "ids": [ 537 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Zygomite (86)
+  { // Zygomite (86)
     "ids": [ 1024 ],
     "handler": "",
     //Combat Info

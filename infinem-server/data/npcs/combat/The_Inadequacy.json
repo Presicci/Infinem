@@ -1,5 +1,5 @@
 [
-  { #The Inadequacy (343)
+  { // The Inadequacy (343)
     "ids": [ 3473, 6350 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #The Inadequacy (hard) (600)
+  { // The Inadequacy (hard) (600)
     "ids": [ 6119 ],
     "handler": "",
     //Combat Info

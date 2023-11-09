@@ -1,5 +1,5 @@
 [
-  { #Hopeless creature (40)
+  { // Hopeless creature (40)
     "ids": [ 1072, 1073, 1074 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Hopeless creature (71)
+  { // Hopeless creature (71)
     "ids": [ 4695 ],
     "handler": "",
     //Combat Info

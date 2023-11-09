@@ -1,5 +1,5 @@
 [
-  { #Nikita (24)
+  { // Nikita (24)
     "ids": [ 2629 ],
   "handler": "io.ruin.model.combat.npc.werewolves.canifis.Nikita",
     //Combat Info

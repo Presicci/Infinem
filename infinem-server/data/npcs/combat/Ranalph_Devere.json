@@ -1,5 +1,5 @@
 [
-  { #Ranalph Devere (92)
+  { // Ranalph Devere (92)
     "ids": [ 3966, 8300, 8301, 8302 ],
     "handler": "io.ruin.model.activities.combat.bosses.Ranalph",
     //Combat Info

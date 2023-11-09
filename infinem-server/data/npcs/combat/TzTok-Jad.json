@@ -1,5 +1,5 @@
 [
-  { #TzTok-Jad (702)
+  { // TzTok-Jad (702)
     "ids": [ 3127, 6506 ],
     "handler": "io.ruin.model.activities.combat.fightcaves.monsters.TzTokJad",
     "pet": "TZREK_JAD",

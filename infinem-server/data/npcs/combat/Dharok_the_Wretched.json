@@ -1,5 +1,5 @@
 [
-  { #Dharok the Wretched (115)
+  { // Dharok the Wretched (115)
     "ids": [ 1673 ],
     "handler": "io.ruin.model.activities.combat.barrows.brothers.Dharok",
     //Combat Info

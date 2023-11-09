@@ -1,5 +1,5 @@
 [
-  { #Gangster (45)
+  { // Gangster (45)
     "ids": [ 6896, 6897 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Gangster (50)
+  { // Gangster (50)
     "ids": [ 6898, 6899 ],
     "handler": "",
     //Combat Info

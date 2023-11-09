@@ -1,5 +1,5 @@
 [
-  { #Mercenary (45)
+  { // Mercenary (45)
     "ids": [ 4656, 4657, 4658, 4659, 4678 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Mercenary (45)
+  { // Mercenary (45)
     "ids": [ 4656, 4657, 4658, 4659, 4678 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Mercenary (45)
+  { // Mercenary (45)
     "ids": [ 4656, 4657, 4658, 4659, 4678 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Mercenary (45)
+  { // Mercenary (45)
     "ids": [ 4656, 4657, 4658, 4659, 4678 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #King Black Dragon (276)
+  { // King Black Dragon (276)
     "ids": [ 239, 6502 ],
     "handler": "io.ruin.model.combat.npc.dragons.KingBlackDragon",
     //Combat Info

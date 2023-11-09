@@ -1,5 +1,5 @@
 [
-  { #Saradomin wizard (108)
+  { // Saradomin wizard (108)
     "ids": [ 2955 ],
     "handler": "io.ruin.model.combat.npc.clues.SaradominWizard",
     //Combat Info

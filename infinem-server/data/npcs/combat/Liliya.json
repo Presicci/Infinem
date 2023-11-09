@@ -1,5 +1,5 @@
 [
-  { #Liliya (24)
+  { // Liliya (24)
     "ids": [ 2632 ],
   "handler": "io.ruin.model.combat.npc.werewolves.canifis.Liliya",
     //Combat Info

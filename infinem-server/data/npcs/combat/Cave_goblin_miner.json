@@ -1,5 +1,5 @@
 [
-  { #Cave goblin miner (11)
+  { // Cave goblin miner (11)
     "ids": [ 5330, 5331, 5332, 5333, 5336, 5337, 5338, 5339 ],
     "handler": "",
     //Combat Info

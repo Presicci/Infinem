@@ -1,5 +1,5 @@
 [
-  { #Ice wolf (96)
+  { // Ice wolf (96)
     "ids": [ 645, 646 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 6557,
     "death_animation": 6558
   },
-  { #Ice wolf (132)
+  { // Ice wolf (132)
     "ids": [ 647, 710, 711, 712, 713, 714, 715 ],
     "handler": "",
     //Combat Info

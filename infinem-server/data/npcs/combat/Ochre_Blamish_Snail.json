@@ -1,5 +1,5 @@
 [
-  { #Ochre Blamish Snail (10)
+  { // Ochre Blamish Snail (10)
     "ids": [ 2646 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Ochre Blamish Snail (15)
+  { // Ochre Blamish Snail (15)
     "ids": [ 2651 ],
     "handler": "",
     //Combat Info

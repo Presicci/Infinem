@@ -1,5 +1,5 @@
 [
-  { #Skeletal mystic (raids)
+  { // Skeletal mystic (raids)
     "ids": [ 7604, 7605, 7606 ],
     "handler": "io.ruin.model.activities.combat.raids.xeric.chamber.combat.SkeletalMystic",
     //Combat Info

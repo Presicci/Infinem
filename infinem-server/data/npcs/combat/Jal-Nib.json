@@ -1,5 +1,5 @@
 [
-  { #Jal-Nib (32)
+  { // Jal-Nib (32)
     "ids": [ 7691 ],
     "handler": "io.ruin.model.activities.combat.inferno.monsters.JalNib",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Ahrim the Blighted (98)
+  { // Ahrim the Blighted (98)
     "ids": [ 1672 ],
     "handler": "io.ruin.model.activities.combat.barrows.brothers.Ahrim",
     //Combat Info

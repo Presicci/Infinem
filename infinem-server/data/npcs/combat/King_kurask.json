@@ -1,5 +1,5 @@
 [
-  { #King kurask (295)
+  { // King kurask (295)
     "ids": [ 7405 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.KingKurask",
     //Combat Info

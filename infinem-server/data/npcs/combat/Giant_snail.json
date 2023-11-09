@@ -1,5 +1,5 @@
 [
-  { #Giant snail (80)
+  { // Giant snail (80)
     "ids": [ 5628 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Giant snail (109)
+  { // Giant snail (109)
     "ids": [ 5629 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Giant snail (139)
+  { // Giant snail (139)
     "ids": [ 5630 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Giant Skeleton (80)
+  { // Giant Skeleton (80)
     "ids": [ 680, 681 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 5501,
     "death_animation": 5503
   },
-  { #Giant Skeleton (100)
+  { // Giant Skeleton (100)
     "ids": [ 6440 ],
     "handler": "",
     //Combat Info

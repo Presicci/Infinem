@@ -1,5 +1,5 @@
 [
-  { #White Knight (36)
+  { // White Knight (36)
     "ids": [ 1798, 4114 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #White Knight (38)
+  { // White Knight (38)
     "ids": [ 1799 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #White Knight (39)
+  { // White Knight (39)
     "ids": [ 1800 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #White Knight (42)
+  { // White Knight (42)
     "ids": [ 1829 ],
     "handler": "",
     //Combat Info

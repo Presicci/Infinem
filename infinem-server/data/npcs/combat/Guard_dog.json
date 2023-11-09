@@ -1,5 +1,5 @@
 [
-  { #Guard dog (44)
+  { // Guard dog (44)
     "ids": [ 114, 7209 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 6557,
     "death_animation": 6558
   },
-  { #Guard dog POH
+  { // Guard dog POH
     "ids": [ 131 ],
     "handler": "",
     //Combat Info

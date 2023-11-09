@@ -1,5 +1,5 @@
 [
-  { #Marble gargoyle (349)
+  { // Marble gargoyle (349)
     "ids": [ 7407, 7408 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.MarbleGargoyle",
     //Combat Info

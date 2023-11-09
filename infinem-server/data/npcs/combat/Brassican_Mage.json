@@ -1,5 +1,5 @@
 [
-  { #Brassican Mage (140)
+  { // Brassican Mage (140)
     "ids": [ 7310 ],
     "handler": "io.ruin.model.combat.npc.clues.BrassicanMage",
     //Combat Info

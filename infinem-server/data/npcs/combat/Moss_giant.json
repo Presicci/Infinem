@@ -1,5 +1,5 @@
 [
-  { #Moss giant (42)
+  { // Moss giant (42)
     "ids": [ 2090, 2091, 2092, 2093, 7262 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 4657,
     "death_animation": 4659
   },
-  { #Moss giant (48)
+  { // Moss giant (48)
     "ids": [ 3851, 3852 ],
     "handler": "",
     //Combat Info

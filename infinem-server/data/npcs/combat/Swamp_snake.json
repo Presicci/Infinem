@@ -1,5 +1,5 @@
 [
-  { #Swamp snake (80)
+  { // Swamp snake (80)
     "ids": [ 5615 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Swamp snake (109)
+  { // Swamp snake (109)
     "ids": [ 5616 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Swamp snake (139)
+  { // Swamp snake (139)
     "ids": [ 5617 ],
     "handler": "",
     //Combat Info

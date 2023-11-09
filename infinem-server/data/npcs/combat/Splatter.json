@@ -1,5 +1,5 @@
 [
-  { #Splatter (22)
+  { // Splatter (22)
     "ids": [ 1689 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Splatter",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 3890,
     "death_animation": -1
   },
-  { #Splatter (33)
+  { // Splatter (33)
     "ids": [ 1690 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Splatter",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 3890,
     "death_animation": -1
   },
-  { #Splatter (44)
+  { // Splatter (44)
     "ids": [ 1691 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Splatter",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 3890,
     "death_animation": -1
   },
-  { #Splatter (54)
+  { // Splatter (54)
     "ids": [ 1692 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Splatter",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": 3890,
     "death_animation": -1
   },
-  { #Splatter (65)
+  { // Splatter (65)
     "ids": [ 1693 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Splatter",
     //Combat Info

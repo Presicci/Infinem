@@ -1,5 +1,5 @@
 [
-  { #Lava dragon (252)
+  { // Lava dragon (252)
     "ids": [ 6593 ],
     "handler": "io.ruin.model.combat.npc.dragons.ChromaticDragon",
     //Combat Info

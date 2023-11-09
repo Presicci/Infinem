@@ -1,5 +1,5 @@
 [
-  { #Galvek (608)
+  { // Galvek (608)
   "ids": [ 8095, 8096, 8097, 8098 ],
   "handler": "io.ruin.model.activities.combat.bosses.galvek.Galvek",
   //Combat Info

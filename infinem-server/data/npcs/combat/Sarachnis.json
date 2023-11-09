@@ -1,5 +1,5 @@
 [
-  { #Sarachnis (318)
+  { // Sarachnis (318)
   "ids": [ 8713 ],
   "handler": "io.ruin.model.activities.combat.bosses.sarachnis.Sarachnis",
   //Combat Info

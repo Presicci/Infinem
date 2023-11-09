@@ -1,5 +1,5 @@
 [
-  { #Gardener (3)
+  { // Gardener (3)
     "ids": [ 3276 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Gardener (4)
+  { // Gardener (4)
     "ids": [ 3275, 3651 ],
     "handler": "",
     //Combat Info

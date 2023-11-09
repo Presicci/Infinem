@@ -1,5 +1,5 @@
 [
-  { #Attack dummy
+  { // Attack dummy
     "ids": [ 2668, 7413, 8598, 10507, 10508, 10509, 10510, 10511, 10512, 15025 ],
     "handler": "io.ruin.model.combat.npc.MaxHitDummy",
     //Combat Info

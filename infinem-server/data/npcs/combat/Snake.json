@@ -1,5 +1,5 @@
 [
-  { #Snake (5)
+  { // Snake (5)
     "ids": [ 2845 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Snake (35)
+  { // Snake (35)
     "ids": [ 1037 ],
     "handler": "",
     //Combat Info

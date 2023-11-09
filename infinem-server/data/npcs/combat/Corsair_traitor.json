@@ -1,5 +1,5 @@
 [
-  { #Corsair traitor (35)
+  { // Corsair traitor (35)
   "ids": [ 7949 ],
   "handler": "",
   //Combat Info
@@ -42,7 +42,7 @@
   "defend_animation": 424,
   "death_animation": 836
   },
-  { #Corsair traitor (103)
+  { // Corsair traitor (103)
   "ids": [ 7948 ],
   "handler": "",
   //Combat Info

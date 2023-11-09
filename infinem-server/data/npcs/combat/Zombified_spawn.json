@@ -1,5 +1,5 @@
 [
-  { #Zombified spawn (64) - Vorkath spawn
+  { // Zombified spawn (64) - Vorkath spawn
     "ids": [ 8063 ],
     "handler": "io.ruin.model.activities.combat.bosses.vorkath.ZombifiedSpawn",
     //Combat Info

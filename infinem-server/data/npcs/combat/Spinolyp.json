@@ -1,5 +1,5 @@
 [
-  { #Spinolyp (76)
+  { // Spinolyp (76)
     "ids": [ 5947, 5961, 5963, 5946, 5948, 5962 ],
     "handler": "io.ruin.model.activities.combat.bosses.dagannothkings.Spinolyp",
     //Combat Info

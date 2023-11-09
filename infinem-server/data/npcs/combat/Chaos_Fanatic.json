@@ -1,5 +1,5 @@
 [
-  { #Chaos Fanatic (202)
+  { // Chaos Fanatic (202)
     "ids": [ 6619 ],
     "handler": "io.ruin.model.activities.wilderness.bosses.ChaosFanatic",
     //Combat Info

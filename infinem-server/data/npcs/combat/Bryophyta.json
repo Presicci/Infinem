@@ -1,5 +1,5 @@
 [
-  { #Bryophyta (128)
+  { // Bryophyta (128)
     "ids": [ 8195 ],
     "handler": "io.ruin.model.activities.combat.bosses.bryophyta.Bryophyta",
     //Combat Info
@@ -43,7 +43,7 @@
     "death_animation": 4653
   },
   
-  { #Growthling (37)
+  { // Growthling (37)
     "ids": [
       8194
     ],

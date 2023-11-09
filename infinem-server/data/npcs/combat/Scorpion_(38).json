@@ -1,5 +1,5 @@
 [
-  { #Scorpion (14)
+  { // Scorpion (14)
     "ids": [ 3024 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 6255,
     "death_animation": 6256
   },
-  { #Scorpion (37)
+  { // Scorpion (37)
     "ids": [ 2480 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Scorpion (59)
+  { // Scorpion (59)
     "ids": [ 2479 ],
     "handler": "",
     //Combat Info

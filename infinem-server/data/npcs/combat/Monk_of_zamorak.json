@@ -1,5 +1,5 @@
 [
-  { #Monk of Zamorak (17)
+  { // Monk of Zamorak (17)
     "ids": [ 520, 3485 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Monk of Zamorak (22)
+  { // Monk of Zamorak (22)
     "ids": [ 519, 3484 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Monk of Zamorak (30)
+  { // Monk of Zamorak (30)
     "ids": [ 3486 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Monk of Zamorak (45)
+  { // Monk of Zamorak (45)
     "ids": [ 521 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Scarab mage (93)
+  { // Scarab mage (93)
     "ids": [ 794 ],
     "handler": "io.ruin.model.combat.npc.magic.ScarabMage",
     //Combat Info

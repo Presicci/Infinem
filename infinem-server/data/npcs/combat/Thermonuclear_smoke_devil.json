@@ -1,5 +1,5 @@
 [
-  { #Thermonuclear smoke devil (301)
+  { // Thermonuclear smoke devil (301)
     "ids": [ 499 ],
     "handler": "io.ruin.model.activities.combat.bosses.slayer.ThermonuclearSmokeDevil",
     //Combat Info

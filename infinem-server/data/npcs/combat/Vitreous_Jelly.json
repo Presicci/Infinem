@@ -1,5 +1,5 @@
 [
-  { #Vitreous Jelly (206)
+  { // Vitreous Jelly (206)
     "ids": [ 7399 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.VitreousJelly",
     //Combat Info

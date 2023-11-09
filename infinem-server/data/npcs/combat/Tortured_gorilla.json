@@ -1,5 +1,5 @@
 [
-  { #Tortured gorilla (141)
+  { // Tortured gorilla (141)
     "ids": [ 7150, 7151, 7153 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 7236,
     "death_animation": 7237
   },
-  { #Tortured gorilla (142)
+  { // Tortured gorilla (142)
     "ids": [ 7095, 7096, 7097 ],
     "handler": "",
     //Combat Info

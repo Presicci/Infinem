@@ -1,5 +1,5 @@
 [
-  { #Sea troll (65)
+  { // Sea troll (65)
     "ids": [ 4309 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Sea troll (79)
+  { // Sea troll (79)
     "ids": [ 4308 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Sea troll (87)
+  { // Sea troll (87)
     "ids": [ 4310 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Sea troll (101)
+  { // Sea troll (101)
     "ids": [ 4311 ],
     "handler": "",
     //Combat Info

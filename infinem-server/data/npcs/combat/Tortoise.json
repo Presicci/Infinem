@@ -1,5 +1,5 @@
 [
-  { #Tortoise (79)
+  { // Tortoise (79)
     "ids": [ 6075 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Tortoise (92)
+  { // Tortoise (92)
     "ids": [ 6076 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Nechryarch (300)
+  { // Nechryarch (300)
     "ids": [ 7411, 7412, 7414, 7415 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.nechryarch.Nechryarch",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Dwarf gang member (44)
+  { // Dwarf gang member (44)
     "ids": [ 1354 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Dwarf gang member (48)
+  { // Dwarf gang member (48)
     "ids": [ 1355 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Dwarf gang member (49)
+  { // Dwarf gang member (49)
     "ids": [ 1356 ],
     "handler": "",
     //Combat Info

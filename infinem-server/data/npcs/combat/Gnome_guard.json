@@ -1,5 +1,5 @@
 [
-  { #Gnome guard sword (23)
+  { // Gnome guard sword (23)
     "ids": [ 6082 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 193,
     "death_animation": 196
   },
-  { #Gnome guard halberd (23)
+  { // Gnome guard halberd (23)
   "ids": [ 6081 ],
   "handler": "",
   //Combat Info

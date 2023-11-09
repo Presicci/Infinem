@@ -1,5 +1,5 @@
 [
-    { #Rev knight
+    { // Rev knight
     "ids": [ 7939 ],
     "handler": "io.ruin.model.combat.npc.Revenant",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Guard (21) WARHAMMER(BLACKJACK)
+  { // Guard (21) WARHAMMER(BLACKJACK)
     "ids": [ 1546, 1549, 1550 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 403,
     "death_animation": 836
   },
-  { #Guard (21) UNARMED
+  { // Guard (21) UNARMED
   "ids": [ 1547, 1548 ],
   "handler": "",
   //Combat Info
@@ -85,7 +85,7 @@
   "defend_animation": 424,
   "death_animation": 836
   },
-  { #Guard (21) SWORD/SHIELD
+  { // Guard (21) SWORD/SHIELD
   "ids": [ 3269, 3254 ],
   "handler": "",
   //Combat Info
@@ -128,7 +128,7 @@
   "defend_animation": 1156,
   "death_animation": 836
   },
-  { #Guard (21) BATTLEAXE/SHIELD
+  { // Guard (21) BATTLEAXE/SHIELD
   "ids": [ 3271 ],
   "handler": "",
   //Combat Info
@@ -171,7 +171,7 @@
   "defend_animation": 1156,
   "death_animation": 836
   },
-  { #Guard (21) BOW
+  { // Guard (21) BOW
   "ids": [ 3272 ],
   "handler": "",
   //Combat Info
@@ -214,7 +214,7 @@
   "defend_animation": 424,
   "death_animation": 836
   },
-  { #Guard (21) CROSSBOW
+  { // Guard (21) CROSSBOW
   "ids": [ 3270 ],
   "handler": "io.ruin.model.combat.npc.basic.BasicCrossbowCombat",
   //Combat Info
@@ -257,7 +257,7 @@
   "defend_animation": 424,
   "death_animation": 836
   },
-  { #Guard (21) EASTARDY
+  { // Guard (21) EASTARDY
   "ids": [ 5418 ],
   "handler": "",
   //Combat Info
@@ -300,7 +300,7 @@
   "defend_animation": 403,
   "death_animation": 836
   },
-  { #Guard (21) VARROCK
+  { // Guard (21) VARROCK
   "ids": [ 3010, 3011 ],
   "handler": "",
   //Combat Info
@@ -343,7 +343,7 @@
   "defend_animation": 6488,
   "death_animation": 6490
   },
-  { #Guard (1337)
+  { // Guard (1337)
     "ids": [ 6575, 6576, 6579, 6580, 6581, 6582, 6583, 6699, 6700, 6701, 6702 ],
     "handler": "",
     //Combat Info
@@ -386,7 +386,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Dwarf Guard (10)
+  { // Dwarf Guard (10)
     "ids": [ 5185, 5186, 5187 ],
     "handler": "",
     //Combat Info

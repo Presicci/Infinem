@@ -1,5 +1,5 @@
 [
-  { #Nechryarch (15001)
+  { // Nechryarch (15001)
     "ids": [ 15001 ],
     "handler": "io.ruin.model.activities.combat.bosses.eventboss.CorruptedNechryarch",
     //Combat Info

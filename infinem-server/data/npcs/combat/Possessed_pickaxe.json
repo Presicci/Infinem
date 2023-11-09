@@ -1,5 +1,5 @@
 [
-  { #Possessed pickaxe (50)
+  { // Possessed pickaxe (50)
     "ids": [ 3612, 6469, 7268 ],
     "handler": "",
     //Combat Info

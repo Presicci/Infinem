@@ -1,5 +1,5 @@
 [
-  { #Ancient Wizard (98) MAGE
+  { // Ancient Wizard (98) MAGE
     "ids": [ 7307 ],
     "handler": "io.ruin.model.combat.npc.clues.AncientWizard",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 1156,
     "death_animation": 836
   },
-  { #Ancient Wizard (98) RANGE
+  { // Ancient Wizard (98) RANGE
     "ids": [ 7308 ],
     "handler": "io.ruin.model.combat.npc.basic.BasicCrossbowCombat",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 1156,
     "death_animation": 836
   },
-  { #Ancient Wizard (112)
+  { // Ancient Wizard (112)
     "ids": [ 7309 ],
     "handler": "io.ruin.model.combat.npc.basic.BasicPoisonCombat",
     //Combat Info

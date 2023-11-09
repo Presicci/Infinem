@@ -1,5 +1,5 @@
 [
-  { #Giant scarab (191)
+  { // Giant scarab (191)
     "ids": [ 797, 6343 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Giant scarab (hard) (316)
+  { // Giant scarab (hard) (316)
     "ids": [ 1127 ],
     "handler": "",
     //Combat Info

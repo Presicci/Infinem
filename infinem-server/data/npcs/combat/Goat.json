@@ -1,5 +1,5 @@
 [
-  { #Goat (23)
+  { // Goat (23)
     "ids": [ 1792, 1793, 1795, 1796 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Goat (23)
+  { // Goat (23)
     "ids": [ 1792, 1793, 1795, 1796 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Rogue (15)
+  { // Rogue (15)
     "ids": [ 518 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 404,
     "death_animation": 2304
   },
-  { #Rogue (135)
+  { // Rogue (135)
     "ids": [ 6603 ],
     "handler": "",
     //Combat Info

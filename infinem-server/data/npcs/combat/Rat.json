@@ -1,5 +1,5 @@
 [
-  { #Rat (1)
+  { // Rat (1)
     "ids": [ 2492, 2513, 2854, 2855 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 2706,
     "death_animation": 2707
   },
-  { #Rat (1)
+  { // Rat (1)
     "ids": [ 2492, 2513, 2854, 2855 ],
     "handler": "",
     //Combat Info

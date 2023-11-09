@@ -1,5 +1,5 @@
 [
-  { #Ungadulu (70)
+  { // Ungadulu (70)
     "ids": [ 3957 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Ungadulu (169)
+  { // Ungadulu (169)
     "ids": [ 3958 ],
     "handler": "",
     //Combat Info

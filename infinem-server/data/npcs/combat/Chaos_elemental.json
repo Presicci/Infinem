@@ -1,5 +1,5 @@
 [
-  { #Chaos Elemental (305)
+  { // Chaos Elemental (305)
     "ids": [ 2054, 6505 ],
     "handler": "io.ruin.model.activities.wilderness.bosses.ChaosElemental",
     //Combat Info

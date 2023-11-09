@@ -1,5 +1,5 @@
 [
-  { #Unstable_Corrupted_Skeleton, (15004),
+  { // Unstable_Corrupted_Skeleton, (15004),
   "ids": [ 15004 ],
   "handler": "io.ruin.model.activities.combat.bosses.necromancer.Necrominion",
   //Combat Info

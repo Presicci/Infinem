@@ -1,5 +1,5 @@
 [
-  { #Treus Dayth (95)
+  { // Treus Dayth (95)
     "ids": [ 3616, 6359 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Treus Dayth (hard) (194)
+  { // Treus Dayth (hard) (194)
     "ids": [ 6298 ],
     "handler": "",
     //Combat Info

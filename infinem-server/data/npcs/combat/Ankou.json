@@ -1,5 +1,5 @@
 [
-  { #Ankou (75)
+  { // Ankou (75)
     "ids": [ 2514, 2517 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 2304
   },
-  { #Ankou (82)
+  { // Ankou (82)
     "ids": [ 2515, 2518 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 2304
   },
-  { #Ankou (86)
+  { // Ankou (86)
     "ids": [ 2516, 2519, 6608 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 424,
     "death_animation": 2304
   },
-  { #Ankou (95)
+  { // Ankou (95)
     "ids": [ 7257, 7864  ],
     "handler": "",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Ankou (98)
+  { // Ankou (98)
   "ids": [ 7864  ],
   "handler": "",
   //Combat Info

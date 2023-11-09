@@ -1,5 +1,5 @@
 [
-  { #Experiment (25) (human/spider)
+  { // Experiment (25) (human/spider)
     "ids": [ 1274 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 1617,
     "death_animation": 1618
   },
-  { #Experiment (25) (sheep/wolf)
+  { // Experiment (25) (sheep/wolf)
     "ids": [ 1275 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 1613,
     "death_animation": 1611
   },
-  { #Experiment (51)
+  { // Experiment (51)
     "ids": [ 1273 ],
     "handler": "",
     //Combat Info

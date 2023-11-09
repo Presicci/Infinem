@@ -1,5 +1,5 @@
 [
-  { #Dark warrior (8)
+  { // Dark warrior (8)
     "ids": [ 523 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Dark warrior (145)
+  { // Dark warrior (145)
     "ids": [ 6606 ],
     "handler": "",
     //Combat Info

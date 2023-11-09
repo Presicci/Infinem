@@ -1,5 +1,5 @@
 [
-  { #Dagannoth (88) ( ranged)
+  { // Dagannoth (88) ( ranged)
     "ids": [ 5942 ],
     "handler": "io.ruin.model.combat.npc.waterbirth.RangedDagannoth",
     //Combat Info

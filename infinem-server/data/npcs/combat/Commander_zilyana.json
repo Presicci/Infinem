@@ -1,5 +1,5 @@
 [
-  { #Commander Zilyana (596)
+  { // Commander Zilyana (596)
     "ids": [ 2205, 6493 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.impl.saradomin.CommanderZilyana",
     //Combat Info

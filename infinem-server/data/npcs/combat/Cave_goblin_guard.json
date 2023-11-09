@@ -1,5 +1,5 @@
 [
-  { #Cave goblin guard (24)
+  { // Cave goblin guard (24)
     "ids": [ 5335 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 6008,
     "death_animation": 6003
   },
-  { #Cave goblin guard (26)
+  { // Cave goblin guard (26)
     "ids": [ 5334 ],
     "handler": "",
     //Combat Info

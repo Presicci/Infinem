@@ -1,5 +1,5 @@
 [
-  { #Flambeed (149)
+  { // Flambeed (149)
     "ids": [ 4881, 6370 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Flambeed (hard) (238)
+  { // Flambeed (hard) (238)
     "ids": [ 6309 ],
     "handler": "",
     //Combat Info

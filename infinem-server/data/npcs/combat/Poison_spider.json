@@ -1,5 +1,5 @@
 [
-  { #Poison spider (31)
+  { // Poison spider (31)
     "ids": [ 5373 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 5328,
     "death_animation": 5329
   },
-  { #Poison spider (64)
+  { // Poison spider (64)
     "ids": [ 3023 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Gelatinnoth Mother (130)
+  { // Gelatinnoth Mother (130)
     "ids": [ 4884, 4885, 4886, 4887, 4888, 4889, 6373, 6374, 6375, 6376, 6377, 6378 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Gelatinnoth Mother (hard) (201)
+  { // Gelatinnoth Mother (hard) (201)
     "ids": [ 6312, 6313, 6314, 6315, 6316, 6317 ],
     "handler": "",
     //Combat Info

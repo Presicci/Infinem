@@ -1,5 +1,5 @@
 [
-  { #Aviansie (69)
+  { // Aviansie (69)
     "ids": [ 3169 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (71)
+  { // Aviansie (71)
     "ids": [ 3177 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (73)
+  { // Aviansie (73)
     "ids": [ 3178 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (79)
+  { // Aviansie (79)
     "ids": [ 3170, 3179 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (79)
+  { // Aviansie (79)
     "ids": [ 3170, 3179 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -214,7 +214,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (83)
+  { // Aviansie (83)
     "ids": [ 3172 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -257,7 +257,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (84)
+  { // Aviansie (84)
     "ids": [ 3171 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -300,7 +300,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (89)
+  { // Aviansie (89)
     "ids": [ 3180 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -343,7 +343,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (92)
+  { // Aviansie (92)
     "ids": [ 3173 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -386,7 +386,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (94)
+  { // Aviansie (94)
     "ids": [ 3181 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -429,7 +429,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (97)
+  { // Aviansie (97)
     "ids": [ 3174, 3182 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -472,7 +472,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (97)
+  { // Aviansie (97)
     "ids": [ 3174, 3182 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -515,7 +515,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (131)
+  { // Aviansie (131)
     "ids": [ 3183 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -558,7 +558,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (137)
+  { // Aviansie (137)
     "ids": [ 3175 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
@@ -601,7 +601,7 @@
     "defend_animation": 6955,
     "death_animation": 6959
   },
-  { #Aviansie (148)
+  { // Aviansie (148)
     "ids": [ 3176 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info

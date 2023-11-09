@@ -1,5 +1,5 @@
 [
-  { #Giant Roc (172)
+  { // Giant Roc (172)
     "ids": [ 763, 6384 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Giant Roc (hard) (257)
+  { // Giant Roc (hard) (257)
     "ids": [ 6323 ],
     "handler": "",
     //Combat Info

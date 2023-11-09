@@ -1,5 +1,5 @@
 [
-  { #Hespori (284)
+  { // Hespori (284)
   "ids": [ 8583 ],
   "handler": "io.ruin.model.activities.combat.bosses.hespori.Hespori",
   //Combat Info

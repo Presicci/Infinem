@@ -1,5 +1,5 @@
 [
-  { #Flesh Crawler (28)
+  { // Flesh Crawler (28)
     "ids": [ 2498 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 1186,
     "death_animation": 1190
   },
-  { #Flesh Crawler (35)
+  { // Flesh Crawler (35)
     "ids": [ 2499 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Flesh Crawler (41)
+  { // Flesh Crawler (41)
     "ids": [ 2500 ],
     "handler": "",
     //Combat Info

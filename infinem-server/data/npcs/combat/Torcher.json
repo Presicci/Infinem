@@ -1,5 +1,5 @@
 [
-  { #Torcher (33)
+  { // Torcher (33)
     "ids": [ 1714, 1715 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Torcher",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 3880,
     "death_animation": 3881
   },
-  { #Torcher (49)
+  { // Torcher (49)
     "ids": [ 1716, 1717 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Torcher",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 3880,
     "death_animation": 3881
   },
-  { #Torcher (66)
+  { // Torcher (66)
     "ids": [ 1718, 1719 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Torcher",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 3880,
     "death_animation": 3881
   },
-  { #Torcher (79)
+  { // Torcher (79)
     "ids": [ 1720, 1721 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Torcher",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": 3880,
     "death_animation": 3881
   },
-  { #Torcher (92)
+  { // Torcher (92)
     "ids": [ 1723 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Torcher",
     //Combat Info

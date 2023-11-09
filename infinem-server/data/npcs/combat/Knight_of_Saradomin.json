@@ -1,5 +1,5 @@
 [
-  { #Knight of Saradomin (101)
+  { // Knight of Saradomin (101)
     "ids": [ 2214 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 403,
     "death_animation": 836
   },
-  { #Knight of Saradomin (103)
+  { // Knight of Saradomin (103)
     "ids": [ 2213 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Undead one (61)
+  { // Undead one (61)
     "ids": [ 5344, 5345 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 5489,
     "death_animation": 1444
   },
-  { #Undead one (skeletons 68)
+  { // Undead one (skeletons 68)
     "ids": [ 5342, 5343 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 5489,
     "death_animation": 1444
   },
-  { #Undead one (zombies 68)
+  { // Undead one (zombies 68)
     "ids": [ 5346, 5347, 5348 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 5567,
     "death_animation": 5569
   },
-  { #Undead one (73)
+  { // Undead one (73)
     "ids": [ 5349, 5350, 5351 ],
     "handler": "",
     //Combat Info

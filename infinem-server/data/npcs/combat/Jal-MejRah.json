@@ -1,5 +1,5 @@
 [
-  { #Jal-MejRah (85)
+  { // Jal-MejRah (85)
     "ids": [ 7692 ],
     "handler": "io.ruin.model.activities.combat.inferno.monsters.JalMejRah",
     //Combat Info

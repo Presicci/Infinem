@@ -1,5 +1,5 @@
 [
-  { #King roald (47)
+  { // King roald (47)
   "ids": [ 6389 ],
   "handler": "",
   //Combat Info
@@ -42,7 +42,7 @@
   "defend_animation": 425,
   "death_animation": 836
   },
-  { #King roald (188)
+  { // King roald (188)
   "ids": [ 6328 ],
   "handler": "",
   //Combat Info

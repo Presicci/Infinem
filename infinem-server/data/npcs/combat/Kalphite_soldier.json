@@ -1,5 +1,5 @@
 [
-  { #Kalphite Soldier (85)
+  { // Kalphite Soldier (85)
     "ids": [ 138, 957, 958 ],
     "handler": "io.ruin.model.combat.npc.PoisonousKalphite",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 6227,
     "death_animation": 6228
   },
-    { #Kalphite Soldier (POH)
+    { // Kalphite Soldier (POH)
     "ids": [ 138 ],
     "handler": "io.ruin.model.combat.npc.PoisonousKalphite",
     //Combat Info

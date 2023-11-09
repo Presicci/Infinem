@@ -1,5 +1,5 @@
 [
-  { #Wolf (11)
+  { // Wolf (11)
     "ids": [ 2491 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 6569,
     "death_animation": 6567
   },
-  { #Wolf (14)
+  { // Wolf (14)
     "ids": [ 2490 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 6569,
     "death_animation": 6567
   },
-  { #Wolf (25)
+  { // Wolf (25)
     "ids": [ 110, 116, 117, 231 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 6569,
     "death_animation": 6567
   },
-  { #Wolf (64)
+  { // Wolf (64)
     "ids": [ 106, 3912 ],
     "handler": "",
     //Combat Info

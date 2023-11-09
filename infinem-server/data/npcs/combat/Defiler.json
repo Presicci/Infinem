@@ -1,5 +1,5 @@
 [
-  { #Defiler (33)
+  { // Defiler (33)
     "ids": [ 1724, 1725 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Defiler",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 3921,
     "death_animation": 3922
   },
-  { #Defiler (50)
+  { // Defiler (50)
     "ids": [ 1726, 1727 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Defiler",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 3921,
     "death_animation": 3922
   },
-  { #Defiler (66)
+  { // Defiler (66)
     "ids": [ 1728 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Defiler",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 3921,
     "death_animation": 3922
   },
-  { #Defiler (67)
+  { // Defiler (67)
     "ids": [ 1729 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Defiler",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": 3921,
     "death_animation": 3922
   },
-  { #Defiler (80)
+  { // Defiler (80)
     "ids": [ 1730, 1731 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Defiler",
     //Combat Info
@@ -214,7 +214,7 @@
     "defend_animation": 3921,
     "death_animation": 3922
   },
-  { #Defiler (97)
+  { // Defiler (97)
     "ids": [ 1732, 1733 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Defiler",
     //Combat Info

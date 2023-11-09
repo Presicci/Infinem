@@ -1,5 +1,5 @@
 [
-  { #Nuclear smoke devil (280)
+  { // Nuclear smoke devil (280)
     "ids": [ 7406 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.NuclearSmokeDevil",
     //Combat Info

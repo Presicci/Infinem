@@ -1,5 +1,5 @@
 [
-  { #Vera (24)
+  { // Vera (24)
     "ids": [ 2630 ],
   "handler": "io.ruin.model.combat.npc.werewolves.canifis.Vera",
     //Combat Info

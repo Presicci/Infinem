@@ -1,5 +1,5 @@
 [
-  { #Cave slime (23)
+  { // Cave slime (23)
     "ids": [ 480 ],
     "handler": "io.ruin.model.combat.npc.basic.BasicThreePoisonCombat",
     //Combat Info

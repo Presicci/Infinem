@@ -1,5 +1,5 @@
 [
-  { #Karamel (136)
+  { // Karamel (136)
     "ids": [ 4882, 6371 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Karamel (hard) (186)
+  { // Karamel (hard) (186)
     "ids": [ 6310 ],
     "handler": "",
     //Combat Info

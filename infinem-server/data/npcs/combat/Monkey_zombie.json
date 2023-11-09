@@ -1,5 +1,5 @@
 [
-  { #Monkey Zombie (82)
+  { // Monkey Zombie (82)
     "ids": [ 5283 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Monkey Zombie (98)
+  { // Monkey Zombie (98)
     "ids": [ 5281 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Monkey Zombie (129)
+  { // Monkey Zombie (129)
     "ids": [ 5282 ],
     "handler": "",
     //Combat Info

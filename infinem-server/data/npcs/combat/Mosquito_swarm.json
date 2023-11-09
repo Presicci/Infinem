@@ -1,5 +1,5 @@
 [
-  { #Mosquito swarm (17)
+  { // Mosquito swarm (17)
     "ids": [ 6273 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Mosquito swarm (20)
+  { // Mosquito swarm (20)
     "ids": [ 6402 ],
     "handler": "",
     //Combat Info

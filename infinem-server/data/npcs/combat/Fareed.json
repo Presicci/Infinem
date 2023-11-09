@@ -1,5 +1,5 @@
 [
-  { #Fareed (167)
+  { // Fareed (167)
     "ids": [ 3456, 6348 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Fareed (hard) (299)
+  { // Fareed (hard) (299)
     "ids": [ 4115 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Elf warrior (108)
+  { // Elf warrior (108)
     "ids": [ 3429, 5293, 5294 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Elf warrior (90)
+  { // Elf warrior (90)
     "ids": [ 3428, 5295, 5296 ],
     "handler": "",
     //Combat Info

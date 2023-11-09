@@ -1,5 +1,5 @@
 [
-  { #Portal EAST/WEST FACING
+  { // Portal EAST/WEST FACING
   "ids": [ 1747, 1748 ],
   "handler": "",
   //Combat Info
@@ -42,7 +42,7 @@
   "defend_animation": -1,
   "death_animation": 3935
   },
-  { #Portal NORTH/SOUTH FACING
+  { // Portal NORTH/SOUTH FACING
   "ids": [ 1749, 1750 ],
   "handler": "",
   //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Vampyre Juvinate (50)
+  { // Vampyre Juvinate (50)
     "ids": [ 4443, 4486 ],
     "handler": "io.ruin.model.combat.npc.Vampyre",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Vampyre juvinate (54) (darkmeyer)
+  { // Vampyre juvinate (54) (darkmeyer)
     "ids": [ 3694, 3695 ],
     "handler": "io.ruin.model.combat.npc.Vampyre",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 8036,
     "death_animation": 8033
   },
-  { #Vampyre juvinate (54)
+  { // Vampyre juvinate (54)
     "ids": [ 4427, 4428, 4429, 4430, 4487 ],
     "handler": "io.ruin.model.combat.npc.Vampyre",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Vampyre Juvinate (75)
+  { // Vampyre Juvinate (75)
     "ids": [ 4442 ],
     "handler": "io.ruin.model.combat.npc.Vampyre",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Vampyre Juvinate (90)
+  { // Vampyre Juvinate (90)
     "ids": [ 5635, 5638 ],
     "handler": "io.ruin.model.combat.npc.Vampyre",
     //Combat Info
@@ -214,7 +214,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Vampyre Juvinate (119)
+  { // Vampyre Juvinate (119)
     "ids": [ 5636, 5639 ],
     "handler": "io.ruin.model.combat.npc.Vampyre",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Turoth (83)
+  { // Turoth (83)
     "ids": [ 430 ],
     "handler": "io.ruin.model.combat.npc.slayer.LeafVulnerableMonster",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 1596,
     "death_animation": 1597
   },
-  { #Turoth (85)
+  { // Turoth (85)
     "ids": [ 429 ],
     "handler": "io.ruin.model.combat.npc.slayer.LeafVulnerableMonster",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 1596,
     "death_animation": 1597
   },
-  { #Turoth (87)
+  { // Turoth (87)
     "ids": [ 428 ],
     "handler": "io.ruin.model.combat.npc.slayer.LeafVulnerableMonster",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 1596,
     "death_animation": 1597
   },
-  { #Turoth (89)
+  { // Turoth (89)
     "ids": [ 427 ],
     "handler": "io.ruin.model.combat.npc.slayer.LeafVulnerableMonster",
     //Combat Info

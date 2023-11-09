@@ -1,5 +1,5 @@
 [
-  { #Vampire (61)
+  { // Vampire (61)
     "ids": [ 3237 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Vampire (72)
+  { // Vampire (72)
     "ids": [ 3234 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Vampire (77)
+  { // Vampire (77)
     "ids": [ 3137 ],
     "handler": "",
     //Combat Info

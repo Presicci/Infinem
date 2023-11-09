@@ -1,5 +1,5 @@
 [
-  { #Nechryael (115)
+  { // Nechryael (115)
     "ids": [ 8, 11 ],
     "handler": "io.ruin.model.combat.npc.slayer.Nechryael",
     //Combat Info

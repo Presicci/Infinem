@@ -1,5 +1,5 @@
 [
-  { #Jewelled Crab (raids)
+  { // Jewelled Crab (raids)
     "ids": [ 7576, 7577, 7578, 7579],
     "handler": "io.ruin.model.activities.combat.raids.xeric.chamber.combat.JewelledCrab",
     //Combat Info

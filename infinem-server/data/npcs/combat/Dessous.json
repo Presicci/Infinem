@@ -1,5 +1,5 @@
 [
-  { #Dessous (139)
+  { // Dessous (139)
     "ids": [ 3459, 3460, 6344 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Dessous (hard) (217)
+  { // Dessous (hard) (217)
     "ids": [ 1128 ],
     "handler": "",
     //Combat Info

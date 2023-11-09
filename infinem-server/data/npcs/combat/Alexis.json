@@ -1,5 +1,5 @@
 [
-  { #Alexis (24)
+  { // Alexis (24)
     "ids": [ 2623 ],
   "handler": "io.ruin.model.combat.npc.werewolves.canifis.Alexis",
     //Combat Info

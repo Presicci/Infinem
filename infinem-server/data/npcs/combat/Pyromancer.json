@@ -1,5 +1,5 @@
  [
-  { #Pyromancer (0)
+  { // Pyromancer (0)
     "ids": [ 7371, 7372 ],
 	"handler": "io.ruin.model.activities.skilling.wintertodt.Pyromancer",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Imp (2)
+  { // Imp (2)
     "ids": [ 5007 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 170,
     "death_animation": 172
   },
-  { #Imp (7)
+  { // Imp (7)
     "ids": [ 3134 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 170,
     "death_animation": 172
   },
-    { #Imp Rev (7)
+    { // Imp Rev (7)
     "ids": [ 7881 ],
     "handler": "io.ruin.model.combat.npc.Revenant",
     //Combat Info

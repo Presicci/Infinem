@@ -1,5 +1,5 @@
 [
-  { #Banshee (23)
+  { // Banshee (23)
     "ids": [ 414 ],
     "handler": "io.ruin.model.combat.npc.slayer.Banshee",
     //Combat Info

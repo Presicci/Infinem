@@ -1,5 +1,5 @@
 [
-  { #Giant frog (13)
+  { // Giant frog (13)
     "ids": [ 2143 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 1794,
     "death_animation": 1795
   },
-  { #Giant frog (99)
+  { // Giant frog (99)
     "ids": [ 477 ],
     "handler": "",
     //Combat Info

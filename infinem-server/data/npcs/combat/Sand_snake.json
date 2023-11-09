@@ -1,5 +1,5 @@
 [
-  { #Sand snake (36)
+  { // Sand snake (36)
   "ids": [ 7895 ],
   "handler": "",
   //Combat Info
@@ -42,7 +42,7 @@
   "defend_animation": 3539,
   "death_animation": 3540
   },
-  { #Sand snake (154)
+  { // Sand snake (154)
   "ids": [ 7894 ],
   "handler": "",
   //Combat Info

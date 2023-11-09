@@ -1,5 +1,5 @@
 [
-  { #Night beast (374)
+  { // Night beast (374)
     "ids": [ 7409 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.NightBeast",
     //Combat Info

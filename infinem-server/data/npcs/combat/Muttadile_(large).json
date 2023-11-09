@@ -1,5 +1,5 @@
 [
-  { #Muttadile (large) (raids)
+  { // Muttadile (large) (raids)
     "ids": [ 7561, 7563 ],
     "handler": "io.ruin.model.activities.combat.raids.xeric.chamber.combat.LargeMuttadile",
     //Combat Info

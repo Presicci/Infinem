@@ -1,5 +1,5 @@
 [
-  { #Infernal pyrelord (134)
+  { // Infernal pyrelord (134)
   "ids": [ 9465 ],
   "handler": "io.ruin.model.combat.npc.slayer.superiors.Pyrelord",
   //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Sergeant Steelwill (142)
+  { // Sergeant Steelwill (142)
     "ids": [ 2217 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.impl.bandos.SergeantSteelwill",
     //Combat Info

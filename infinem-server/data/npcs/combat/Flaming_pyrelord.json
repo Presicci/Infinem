@@ -1,5 +1,5 @@
 [
-  { #Flaming pyrelord (97)
+  { // Flaming pyrelord (97)
     "ids": [ 7394 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.Pyrelord",
     //Combat Info

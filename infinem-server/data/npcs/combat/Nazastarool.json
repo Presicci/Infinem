@@ -1,5 +1,5 @@
 [
-  { #Nazastarool (91)
+  { // Nazastarool (91)
     "ids": [ 5353, 6398 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Nazastarool (hard) (176)
+  { // Nazastarool (hard) (176)
     "ids": [ 6337 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Nazastarool (68)
+  { // Nazastarool (68)
     "ids": [ 5354, 6399 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Nazastarool (hard) (153)
+  { // Nazastarool (hard) (153)
     "ids": [ 6338 ],
     "handler": "",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Nazastarool (93)
+  { // Nazastarool (93)
     "ids": [ 5355, 6400 ],
     "handler": "",
     //Combat Info
@@ -214,7 +214,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Nazastarool (hard) (181)
+  { // Nazastarool (hard) (181)
     "ids": [ 6339 ],
     "handler": "",
     //Combat Info

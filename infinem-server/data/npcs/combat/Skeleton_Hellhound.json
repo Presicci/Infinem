@@ -1,5 +1,5 @@
 [
-    { #Skeleton Hellhound (214) [vetion spawn]
+    { // Skeleton Hellhound (214) [vetion spawn]
     "ids": [ 6613 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 6557,
     "death_animation": 6558
   },
-  { #Skeleton Hellhound (97)
+  { // Skeleton Hellhound (97)
     "ids": [ 5054, 6387 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 6557,
     "death_animation": 6558
   },
-  { #Skeleton Hellhound (hard) (198)
+  { // Skeleton Hellhound (hard) (198)
     "ids": [ 6326 ],
     "handler": "",
     //Combat Info

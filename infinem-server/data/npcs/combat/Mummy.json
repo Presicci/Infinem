@@ -1,5 +1,5 @@
 [
-  { #Mummy (84)
+  { // Mummy (84)
     "ids": [ 949, 950, 951, 952, 953, 7658, 7659, 7660, 7661, 7662 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Mummy (96)
+  { // Mummy (96)
     "ids": [ 717 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Mummy (103)
+  { // Mummy (103)
     "ids": [ 720, 721, 722, 723, 725, 726, 727, 728 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Black demon (172)
+  { // Black demon (172)
     "ids": [ 240, 1432, 2048, 2049, 2050, 2051, 2052, 5874, 5875, 5876, 5877, 6357 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 65,
     "death_animation": 67
   },
-  { #Black demon (178)
+  { // Black demon (178)
     "ids": [ 7243 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 65,
     "death_animation": 67
   },
-  { #Black demon (184)
+  { // Black demon (184)
     "ids": [ 7242, 7874, 7875, 7876 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 65,
     "death_animation": 67
   },
-  { #Black demon (hard) (292)
+  { // Black demon (hard) (292)
     "ids": [ 6295 ],
     "handler": "",
     //Combat Info

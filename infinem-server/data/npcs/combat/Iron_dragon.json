@@ -1,5 +1,5 @@
 [
-  { #Iron dragon (189)
+  { // Iron dragon (189)
     "ids": [ 272, 273 ],
     "handler": "io.ruin.model.combat.npc.dragons.MetalDragon",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 89,
     "death_animation": 92
   },
-  { #Iron dragon (215)
+  { // Iron dragon (215)
     "ids": [ 7254 ],
     "handler": "io.ruin.model.combat.npc.dragons.MetalDragon",
     //Combat Info

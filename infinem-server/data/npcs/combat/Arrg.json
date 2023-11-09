@@ -1,5 +1,5 @@
 [
-  { #Arrg (113)
+  { // Arrg (113)
     "ids": [ 642, 643, 6392 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Arrg (hard) (210)
+  { // Arrg (hard) (210)
     "ids": [ 6331 ],
     "handler": "",
     //Combat Info

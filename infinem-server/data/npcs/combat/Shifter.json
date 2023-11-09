@@ -1,5 +1,5 @@
 [
-  { #Shifter (38)
+  { // Shifter (38)
     "ids": [ 1694, 1695 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Shifter",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 3902,
     "death_animation": 3903
   },
-  { #Shifter (57)
+  { // Shifter (57)
     "ids": [ 1696, 1697 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Shifter",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 3902,
     "death_animation": 3903
   },
-  { #Shifter (76)
+  { // Shifter (76)
     "ids": [ 1698, 1699 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Shifter",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 3902,
     "death_animation": 3903
   },
-  { #Shifter (90)
+  { // Shifter (90)
     "ids": [ 1700, 1701 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Shifter",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": 3902,
     "death_animation": 3903
   },
-  { #Shifter (104)
+  { // Shifter (104)
     "ids": [ 1702, 1703 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Shifter",
     //Combat Info

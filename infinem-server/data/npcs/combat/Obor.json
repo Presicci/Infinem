@@ -1,5 +1,5 @@
 [
-  { #Obor (106)
+  { // Obor (106)
     "ids": [ 7416 ],
     "handler": "io.ruin.model.activities.combat.bosses.Obor",
     //Combat Info

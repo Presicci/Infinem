@@ -1,5 +1,5 @@
 [
-  { #Skeleton fremennik (40)
+  { // Skeleton fremennik (40)
     "ids": [ 4491, 4492, 4493 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
   "defend_animation": 6129,
   "death_animation": 6124
   },
-  { #Skeleton fremennik (50)
+  { // Skeleton fremennik (50)
     "ids": [ 4494, 4495, 4496 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 6129,
     "death_animation": 6124
   },
-  { #Skeleton fremennik (60)
+  { // Skeleton fremennik (60)
     "ids": [ 4497, 4498, 4499 ],
     "handler": "",
     //Combat Info

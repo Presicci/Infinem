@@ -1,5 +1,5 @@
 [
-  { #Glod (138)
+  { // Glod (138)
     "ids": [ 5129, 6358 ],
     "handler": "io.ruin.model.activities.wilderness.bosses.custom.Glod",
     //Combat Info
@@ -44,7 +44,7 @@
 	//Other
 	"local_loot": true
   },
-  { #Glod (hard) (276)
+  { // Glod (hard) (276)
     "ids": [ 6297 ],
     "handler": "",
     //Combat Info

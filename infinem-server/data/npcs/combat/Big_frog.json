@@ -1,5 +1,5 @@
 [
-  { #Big frog (10)
+  { // Big frog (10)
     "ids": [ 2144 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 1794,
     "death_animation": 1795
   },
-  { #Big frog (24)
+  { // Big frog (24)
     "ids": [ 478 ],
     "handler": "",
     //Combat Info

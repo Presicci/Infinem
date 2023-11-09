@@ -1,5 +1,5 @@
 [
-  { #Snakeling (90)
+  { // Snakeling (90)
     "ids": [ 2045, 2046 ],
     "handler": "io.ruin.model.activities.combat.bosses.zulrah.ZulrahSnakeling",
     //Combat Info

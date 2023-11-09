@@ -1,5 +1,5 @@
 [
-  { #Bouncer (137)
+  { // Bouncer (137)
     "ids": [ 1224, 6355 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 6557,
     "death_animation": 6558
   },
-  { #Bouncer (hard) (244)
+  { // Bouncer (hard) (244)
     "ids": [ 6293 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Cave kraken (127)
+  { // Cave kraken (127)
     "ids": [ 492, 493 ],
     "handler": "io.ruin.model.combat.npc.slayer.CaveKraken",
     //Combat Info

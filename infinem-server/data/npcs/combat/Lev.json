@@ -1,5 +1,5 @@
 [
-  { #Lev (24)
+  { // Lev (24)
     "ids": [ 2619 ],
   "handler": "io.ruin.model.combat.npc.werewolves.canifis.Lev",
     //Combat Info

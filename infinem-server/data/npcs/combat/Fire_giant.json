@@ -1,5 +1,5 @@
 [
-  { #Fire giant (86)
+  { // Fire giant (86)
     "ids": [ 2075, 2076, 2077, 2078, 2079, 2080, 2081, 2082, 2083, 2084 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 4665,
     "death_animation": 4668
   },
-  { #Fire giant (104)
+  { // Fire giant (104)
     "ids": [ 7252 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Fire giant (109)
+  { // Fire giant (109)
     "ids": [ 7251 ],
     "handler": "",
     //Combat Info

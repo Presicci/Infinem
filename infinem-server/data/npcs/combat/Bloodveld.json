@@ -1,5 +1,5 @@
 [
-  { #Bloodveld (76)
+  { // Bloodveld (76)
     "ids": [ 484, 485, 486, 487 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 1550,
     "death_animation": 1553
   },
-  { #Bloodveld (81)
+  { // Bloodveld (81)
     "ids": [ 3138 ],
     "handler": "",
     //Combat Info

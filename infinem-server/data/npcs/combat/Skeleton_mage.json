@@ -1,5 +1,5 @@
 [
-  { #Skeleton Mage (16)
+  { // Skeleton Mage (16)
     "ids": [ 84 ],
     "handler": "io.ruin.model.combat.npc.magic.SkeletonMage16",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 5489,
     "death_animation": 5491
   },
-  { #Skeleton Mage (83)
+  { // Skeleton Mage (83)
     "ids": [ 4319 ],
     "handler": "io.ruin.model.combat.npc.magic.SkeletonMage83",
     //Combat Info

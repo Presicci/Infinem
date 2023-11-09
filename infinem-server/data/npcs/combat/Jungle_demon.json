@@ -1,5 +1,5 @@
 [
-  { #Jungle Demon (195)
+  { // Jungle Demon (195)
     "ids": [ 1443, 6382 ],
     "handler": "io.ruin.model.combat.npc.JungleDemon",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 65,
     "death_animation": 67
   },
-  { #Jungle Demon (hard) (327)
+  { // Jungle Demon (hard) (327)
     "ids": [ 6321 ],
     "handler": "io.ruin.model.combat.npc.JungleDemon",
     //Combat Info

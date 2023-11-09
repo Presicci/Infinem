@@ -1,5 +1,5 @@
 [
-  { #Cockatrice (37)
+  { // Cockatrice (37)
     "ids": [ 419, 420 ],
     "handler": "io.ruin.model.combat.npc.slayer.Cockatrice",
     //Combat Info

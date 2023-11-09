@@ -1,5 +1,5 @@
 [
-  { #Ent (86)
+  { // Ent (86)
     "ids": [ 7234 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 7144,
     "death_animation": 7146
   },
-  { #Ent (101)
+  { // Ent (101)
     "ids": [ 6594 ],
     "handler": "",
     //Combat Info

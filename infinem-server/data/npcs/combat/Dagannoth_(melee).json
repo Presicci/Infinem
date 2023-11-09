@@ -1,5 +1,5 @@
 [
-  { #Dagannoth (90)
+  { // Dagannoth (90)
     "ids": [ 3185, 7259, 7260 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 1340,
     "death_animation": 1342
   },
-    { #Dagannoth (POH)
+    { // Dagannoth (POH)
     "ids": [ 140 ],
     "handler": "",
     //Combat Info

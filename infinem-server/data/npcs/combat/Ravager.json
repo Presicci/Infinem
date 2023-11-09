@@ -1,5 +1,5 @@
 [
-  { #Ravager (36)
+  { // Ravager (36)
     "ids": [ 1704 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Ravager",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 3916,
     "death_animation": 3917
   },
-  { #Ravager (53)
+  { // Ravager (53)
     "ids": [ 1705 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Ravager",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 3916,
     "death_animation": 3917
   },
-  { #Ravager (71)
+  { // Ravager (71)
     "ids": [ 1706 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Ravager",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 3916,
     "death_animation": 3917
   },
-  { #Ravager (89)
+  { // Ravager (89)
     "ids": [ 1707 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Ravager",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": 3916,
     "death_animation": 3917
   },
-  { #Ravager (106)
+  { // Ravager (106)
     "ids": [ 1708 ],
     "handler": "io.ruin.model.activities.combat.pestcontrol.npcs.Ravager",
     //Combat Info

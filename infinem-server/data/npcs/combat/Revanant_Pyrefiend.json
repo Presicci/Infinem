@@ -1,5 +1,5 @@
 [
-    { #Rev Pyre
+    { // Rev Pyre
     "ids": [ 7932 ],
     "handler": "io.ruin.model.combat.npc.Revenant",
     //Combat Info

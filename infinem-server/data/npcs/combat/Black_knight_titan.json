@@ -1,5 +1,5 @@
 [
-  { #Black Knight Titan (120)
+  { // Black Knight Titan (120)
     "ids": [ 4067, 6360 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Black Knight Titan (hard) (210)
+  { // Black Knight Titan (hard) (210)
     "ids": [ 6299 ],
     "handler": "",
     //Combat Info

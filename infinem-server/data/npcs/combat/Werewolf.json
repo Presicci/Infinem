@@ -1,5 +1,5 @@
 [
-  { #Werewolf (88)
+  { // Werewolf (88)
     "ids": [ 2593, 2594, 2595, 2596, 2597, 2598, 2599, 2600, 2601, 2602, 2603, 2604, 2605, 2606, 2607, 2608, 2609, 2610, 2611, 2612 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 6538,
     "death_animation": 6537
   },
-  { #Werewolf (93)
+  { // Werewolf (93)
   "ids": [ 3136, 3135 ],
   "handler": "",
   //Combat Info

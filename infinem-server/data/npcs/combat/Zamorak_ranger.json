@@ -1,5 +1,5 @@
 [
-  { #Zamorak ranger (81)
+  { // Zamorak ranger (81)
     "ids": [ 7420 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Zamorak ranger (82)
+  { // Zamorak ranger (82)
     "ids": [ 7421 ],
     "handler": "",
     //Combat Info

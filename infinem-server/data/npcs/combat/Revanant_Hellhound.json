@@ -1,5 +1,5 @@
 [
-    { #Rev hellhound
+    { // Rev hellhound
     "ids": [ 7935 ],
     "handler": "io.ruin.model.combat.npc.Revenant",
     //Combat Info

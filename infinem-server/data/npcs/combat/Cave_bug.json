@@ -1,5 +1,5 @@
 [
-  { #Cave bug (6)
+  { // Cave bug (6)
     "ids": [ 481 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 6080,
     "death_animation": 6082
   },
-  { #Cave bug (96)
+  { // Cave bug (96)
     "ids": [ 483 ],
     "handler": "",
     //Combat Info

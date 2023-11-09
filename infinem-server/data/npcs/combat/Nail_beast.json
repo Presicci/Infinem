@@ -1,5 +1,5 @@
 [
-  { #Nail beast (69)
+  { // Nail beast (69)
     "ids": [ 2946 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Nail beast (98)
+  { // Nail beast (98)
     "ids": [ 2947 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Nail beast (141)
+  { // Nail beast (141)
     "ids": [ 2948 ],
     "handler": "",
     //Combat Info

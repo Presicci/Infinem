@@ -1,5 +1,5 @@
 [
-  { #Ice Troll (120)
+  { // Ice Troll (120)
     "ids": [ 650, 652, 653, 701, 703, 704 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Ice Troll (121)
+  { // Ice Troll (121)
     "ids": [ 651, 654, 702, 705 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Ice Troll (123)
+  { // Ice Troll (123)
     "ids": [ 649, 700 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Ice Troll (124)
+  { // Ice Troll (124)
     "ids": [ 648, 699 ],
     "handler": "",
     //Combat Info

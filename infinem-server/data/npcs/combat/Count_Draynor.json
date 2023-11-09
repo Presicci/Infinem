@@ -1,5 +1,5 @@
 [
-  { #Count Draynor (34)
+  { // Count Draynor (34)
     "ids": [ 3481, 3482, 6393 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Count Draynor (hard) (177)
+  { // Count Draynor (hard) (177)
     "ids": [ 6332 ],
     "handler": "",
     //Combat Info

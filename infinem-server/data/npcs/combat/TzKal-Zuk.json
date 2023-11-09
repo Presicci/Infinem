@@ -1,5 +1,5 @@
 [
-  { #TzKal-Zuk (1400)
+  { // TzKal-Zuk (1400)
     "ids": [ 7706 ],
     "handler": "io.ruin.model.activities.combat.inferno.monsters.TzKalZuk",
 	"pet": TZREK_ZUK,

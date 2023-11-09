@@ -1,5 +1,5 @@
 [
-  { #Crushing hand (45)
+  { // Crushing hand (45)
     "ids": [ 7388 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.CrushingHand",
     //Combat Info

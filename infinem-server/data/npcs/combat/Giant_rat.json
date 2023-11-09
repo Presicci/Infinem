@@ -1,5 +1,5 @@
 [
-  { #Giant rat (3)
+  { // Giant rat (3)
     "ids": [ 2856, 2857, 2858, 2859, 2860, 2861, 3313, 3314, 3315 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 4934,
     "death_animation": 4935
   },
-  { #Giant rat (6)
+  { // Giant rat (6)
     "ids": [ 2862, 2863, 2864 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 4934,
     "death_animation": 4935
   },
-  { #Giant rat (26)
+  { // Giant rat (26)
     "ids": [ 2510, 2511, 2512 ],
     "handler": "",
     //Combat Info

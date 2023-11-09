@@ -1,5 +1,5 @@
 [
-  { #Spider (1)
+  { // Spider (1)
     "ids": [ 3019, 4561, 5238 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 6250,
     "death_animation": 6251
   },
-  { #Spider (24)
+  { // Spider (24)
     "ids": [ 2478 ],
     "handler": "",
     //Combat Info

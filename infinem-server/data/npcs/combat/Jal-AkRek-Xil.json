@@ -1,5 +1,5 @@
 [
-  { #Jal-AkRek-Xil (70)
+  { // Jal-AkRek-Xil (70)
     "ids": [ 7695 ],
     "handler": "io.ruin.model.activities.combat.inferno.monsters.JalAkRekXil",
     //Combat Info

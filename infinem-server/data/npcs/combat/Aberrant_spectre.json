@@ -1,5 +1,5 @@
 [
-  { #Aberrant spectre (96)
+  { // Aberrant spectre (96)
     "ids": [ 2, 3, 4, 5, 6, 7 ],
     "handler": "io.ruin.model.combat.npc.slayer.AberrantSpectre",
     //Combat Info

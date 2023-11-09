@@ -1,5 +1,5 @@
 [
-  { #Dagannoth Rex (303)
+  { // Dagannoth Rex (303)
     "ids": [ 2267, 6498 ],
     "handler": "io.ruin.model.activities.combat.bosses.dagannothkings.DagannothRex",
     //Combat Info

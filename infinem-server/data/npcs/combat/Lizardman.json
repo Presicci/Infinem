@@ -1,5 +1,5 @@
 [
-  { #Lizardman (53)
+  { // Lizardman (53)
     "ids": [ 6914, 6915 ],
     "handler": "io.ruin.model.combat.npc.Lizardman",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 7194,
     "death_animation": 7196
   },
-  { #Lizardman (62)
+  { // Lizardman (62)
     "ids": [ 6916, 6917, 8563 ],
     "handler": "io.ruin.model.combat.npc.Lizardman",
     //Combat Info

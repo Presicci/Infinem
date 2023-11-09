@@ -1,5 +1,5 @@
 [
-  { #Abhorrent spectre (253)
+  { // Abhorrent spectre (253)
     "ids": [ 7402 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.AbhorrentSpectre",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Cyclops (56)
+  { // Cyclops (56)
     "ids": [ 2097, 2463, 2465, 2467, 7271 ],
     "handler": "io.ruin.model.activities.warriorsguild.Cyclops",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 4651,
     "death_animation": 4653
   },
-  { #Cyclops (76)
+  { // Cyclops (76)
     "ids": [ 2464, 2466, 2468, 7270 ],
     "handler": "io.ruin.model.activities.warriorsguild.Cyclops",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 4651,
     "death_animation": 4653
   },
-  { #Cyclops (81)
+  { // Cyclops (81)
     "ids": [ 2235, 2236 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 4651,
     "death_animation": 4653
   },
-  { #Cyclops (106)
+  { // Cyclops (106)
     "ids": [ 2137, 2138, 2139, 2140, 2141, 2142 ],
     "handler": "io.ruin.model.activities.warriorsguild.Cyclops",
     //Combat Info

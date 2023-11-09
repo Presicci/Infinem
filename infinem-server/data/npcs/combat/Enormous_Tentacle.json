@@ -1,5 +1,5 @@
 [
-  { #Enormous Tentacle (112)
+  { // Enormous Tentacle (112)
     "ids": [ 5535, 5534 ],
     "handler": "io.ruin.model.activities.combat.bosses.slayer.KrakenTentacle",
     //Combat Info

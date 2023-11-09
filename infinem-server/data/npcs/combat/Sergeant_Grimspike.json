@@ -1,5 +1,5 @@
 [
-  { #Sergeant Grimspike (142)
+  { // Sergeant Grimspike (142)
     "ids": [ 2218 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.impl.bandos.SergeantGrimspike",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Barrelchest (190)
+  { // Barrelchest (190)
     "ids": [ 600, 6342 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 0,
     "death_animation": 5898
   },
-  { #Barrelchest (hard) (380)
+  { // Barrelchest (hard) (380)
     "ids": [ 1126 ],
     "handler": "",
     //Combat Info

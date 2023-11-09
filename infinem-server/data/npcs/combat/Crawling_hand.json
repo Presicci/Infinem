@@ -1,5 +1,5 @@
 [
-  { #Crawling Hand (8)
+  { // Crawling Hand (8)
     "ids": [ 448, 449, 451, 452 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 1591,
     "death_animation": 1590
   },
-  { #Crawling Hand (12)
+  { // Crawling Hand (12)
     "ids": [ 453, 454, 456, 457 ],
     "handler": "",
     //Combat Info

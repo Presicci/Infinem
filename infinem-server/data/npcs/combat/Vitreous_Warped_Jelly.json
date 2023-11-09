@@ -1,5 +1,5 @@
 [
-  { #Vitreous Warped Jelly (241)
+  { // Vitreous Warped Jelly (241)
   "ids": [ 7400 ],
   "handler": "io.ruin.model.combat.npc.slayer.superiors.VitreousJelly",
   //Combat Info

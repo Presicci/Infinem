@@ -1,5 +1,5 @@
 [
-  { #Dungeon rat (12)
+  { // Dungeon rat (12)
     "ids": [ 2865, 2866, 2867, 3607, 3608, 3609 ],
     "handler": "",
     //Combat Info

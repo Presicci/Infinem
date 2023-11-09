@@ -1,5 +1,5 @@
 [
-  { #Corporeal Beast (785)
+  { // Corporeal Beast (785)
     "ids": [ 319 ],
     "handler": "io.ruin.model.activities.combat.bosses.corp.CorporealBeast",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Hobgoblin (28)
+  { // Hobgoblin (28)
     "ids": [ 3049, 3286, 3287, 3288, 3289, 4805 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 165,
     "death_animation": 167
   },
-  { #Hobgoblin (42)
+  { // Hobgoblin (42)
     "ids": [ 3050 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 165,
     "death_animation": 167
   },
-  { #Hobgoblin (47)
+  { // Hobgoblin (47)
     "ids": [ 2241 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 165,
     "death_animation": 167
   },
-  { #Hobgoblin (POH)
+  { // Hobgoblin (POH)
     "ids": [ 132 ],
     "handler": "",
     //Combat Info

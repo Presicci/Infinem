@@ -1,5 +1,5 @@
 [
-  { #Rockslug (29)
+  { // Rockslug (29)
     "ids": [ 421, 422 ],
     "handler": "io.ruin.model.combat.npc.slayer.Rockslug",
     //Combat Info

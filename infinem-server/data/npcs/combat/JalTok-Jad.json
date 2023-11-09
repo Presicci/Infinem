@@ -1,5 +1,5 @@
 [
-  { #JalTok-Jad (900)
+  { // JalTok-Jad (900)
     "ids": [ 7700, 7704 ],
     "handler": "io.ruin.model.activities.combat.inferno.monsters.JalTokJad",
     //Combat Info

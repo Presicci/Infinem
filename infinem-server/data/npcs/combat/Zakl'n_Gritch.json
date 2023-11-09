@@ -1,5 +1,5 @@
 [
-  { #Zakl\u0027n Gritch (142)
+  { // Zakl\u0027n Gritch (142)
     "ids": [ 3131 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.impl.zamorak.ZaklnGritch",
     //Combat Info

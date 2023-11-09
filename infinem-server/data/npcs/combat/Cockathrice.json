@@ -1,5 +1,5 @@
 [
-  { #Cockathrice (89)
+  { // Cockathrice (89)
     "ids": [ 7393 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.Cockathrice",
     //Combat Info

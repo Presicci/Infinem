@@ -1,5 +1,5 @@
 [
-  { #Muttadile (small) (raids)
+  { // Muttadile (small) (raids)
     "ids": [ 7562 ],
     "handler": "io.ruin.model.activities.combat.raids.xeric.chamber.combat.SmallMuttadile",
     //Combat Info

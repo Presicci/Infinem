@@ -1,5 +1,5 @@
 [
-  { #Twisted Banshee (89)
+  { // Twisted Banshee (89)
     "ids": [ 7272 ],
     "handler": "io.ruin.model.combat.npc.slayer.Banshee",
     //Combat Info

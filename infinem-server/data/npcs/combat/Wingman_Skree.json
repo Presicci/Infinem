@@ -1,5 +1,5 @@
 [
-  { #Wingman Skree (143)
+  { // Wingman Skree (143)
     "ids": [ 3163 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.impl.armadyl.WingmanSkree",
     //Combat Info

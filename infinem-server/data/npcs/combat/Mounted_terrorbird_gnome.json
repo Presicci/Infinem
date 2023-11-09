@@ -1,5 +1,5 @@
 [
-  { #Mounted terrorbird gnome (31)
+  { // Mounted terrorbird gnome (31)
     "ids": [ 2067 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Mounted terrorbird gnome (49)
+  { // Mounted terrorbird gnome (49)
     "ids": [ 2068, 5971, 5972, 5973 ],
     "handler": "",
     //Combat Info

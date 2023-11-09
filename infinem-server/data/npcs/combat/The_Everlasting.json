@@ -1,5 +1,5 @@
 [
-  { #The Everlasting (223)
+  { // The Everlasting (223)
     "ids": [ 3474, 6351 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #The Everlasting (hard) (365)
+  { // The Everlasting (hard) (365)
     "ids": [ 6120 ],
     "handler": "",
     //Combat Info

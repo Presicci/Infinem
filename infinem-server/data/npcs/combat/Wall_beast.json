@@ -1,5 +1,5 @@
 [
-  { #Wall beast (49)
+  { // Wall beast (49)
     "ids": [ 475, 476 ],
     "handler": "io.ruin.model.combat.npc.WallBeastCombat",
     //Combat Info

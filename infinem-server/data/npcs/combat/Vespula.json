@@ -1,5 +1,5 @@
 [
-  { #Vespula (raids) (flying)
+  { // Vespula (raids) (flying)
     "ids": [ 7530, 7531 ],
     "handler": "io.ruin.model.activities.combat.raids.xeric.chamber.combat.Vespula",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 7456,
     "death_animation": 7459
   },
-    { #Vespula (raids) (grounded)
+    { // Vespula (raids) (grounded)
     "ids": [ 7532 ],
     "handler": "io.ruin.model.activities.combat.raids.xeric.chamber.combat.Vespula",
     //Combat Info

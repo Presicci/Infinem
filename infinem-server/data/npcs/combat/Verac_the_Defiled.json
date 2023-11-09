@@ -1,5 +1,5 @@
 [
-  { #Verac the Defiled (115)
+  { // Verac the Defiled (115)
     "ids": [ 1677 ],
     "handler": "io.ruin.model.activities.combat.barrows.brothers.Verac",
     //Combat Info

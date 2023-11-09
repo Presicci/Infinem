@@ -1,5 +1,5 @@
 [
-  { #Locust rider (98)
+  { // Locust rider (98)
     "ids": [ 796 ],
     "handler": "io.ruin.model.combat.npc.basic.BasicArcherCombat",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 5448,
     "death_animation": 5449
   },
-  { #Locust rider (106)
+  { // Locust rider (106)
     "ids": [ 795 ],
     "handler": "",
     //Combat Info

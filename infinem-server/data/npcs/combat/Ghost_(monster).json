@@ -1,5 +1,5 @@
 [
-  { #Ghost (19)
+  { // Ghost (19)
     "ids": [ 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 472, 473, 474, 505, 506, 507, 3975, 3976, 3977, 3978, 3979, 7263, 7264 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 5533,
     "death_animation": 5534
   },
-  { #Ghost (24)
+  { // Ghost (24)
     "ids": [ 5370 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
   "defend_animation": 5541,
   "death_animation": 5542
   },
-  { #Ghost (76)
+  { // Ghost (76)
   "ids": [ 2531, 2532, 2533, 2534 ],
   "handler": "",
   //Combat Info
@@ -128,7 +128,7 @@
   "defend_animation": 5541,
   "death_animation": 5542
   },
-  { #Ghost (77)
+  { // Ghost (77)
     "ids": [ 2527, 2528, 2529, 2530 ],
     "handler": "",
     //Combat Info

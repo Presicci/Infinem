@@ -1,5 +1,5 @@
 [
-  { #Basilisk (61)
+  { // Basilisk (61)
     "ids": [ 417, 418 ],
     "handler": "io.ruin.model.combat.npc.slayer.Basilisk",
     //Combat Info

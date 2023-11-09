@@ -1,5 +1,5 @@
 [
-  { #Bird (5)
+  { // Bird (5)
     "ids": [ 5241 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Bird (11)
+  { // Bird (11)
     "ids": [ 5240 ],
     "handler": "",
     //Combat Info

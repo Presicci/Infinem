@@ -1,5 +1,5 @@
 [
-  { #K\u0027ril Tsutsaroth (650)
+  { // K\u0027ril Tsutsaroth (650)
     "ids": [ 3129, 6495 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.impl.zamorak.KrilTsutsaroth",
     //Combat Info

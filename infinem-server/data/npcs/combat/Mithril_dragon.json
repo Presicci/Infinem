@@ -1,5 +1,5 @@
 [
-  { #Mithril dragon (304)
+  { // Mithril dragon (304)
     "ids": [ 2919 ],
     "handler": "io.ruin.model.combat.npc.dragons.MithrilDragon",
     //Combat Info

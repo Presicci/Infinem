@@ -1,5 +1,5 @@
 [
-  { #Me (79)
+  { // Me (79)
     "ids": [ 785, 786, 6381 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Me (hard) (201)
+  { // Me (hard) (201)
     "ids": [ 6320 ],
     "handler": "",
     //Combat Info

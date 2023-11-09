@@ -1,5 +1,5 @@
 [
-  { #Yt-HurKot (108)
+  { // Yt-HurKot (108)
     "ids": [ 3128 ],
     "handler": "io.ruin.model.activities.combat.fightcaves.monsters.YtHurKot",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 2635,
     "death_animation": 2638
   },
-  { #Yt-HurKot (141)
+  { // Yt-HurKot (141)
     "ids": [ 7701, 7705 ],
     "handler": "",
     //Combat Info

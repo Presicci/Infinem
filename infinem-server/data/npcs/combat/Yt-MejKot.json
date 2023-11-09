@@ -1,5 +1,5 @@
 [
-  { #Yt-MejKot (180)
+  { // Yt-MejKot (180)
     "ids": [ 3123, 3124 ],
     "handler": "io.ruin.model.activities.combat.fightcaves.monsters.YtMejKot",
     //Combat Info

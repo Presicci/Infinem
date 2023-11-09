@@ -1,5 +1,5 @@
 [
-  { #Jal-Ak (165)
+  { // Jal-Ak (165)
     "ids": [ 7693 ],
     "handler": "io.ruin.model.activities.combat.inferno.monsters.JalAk",
     //Combat Info

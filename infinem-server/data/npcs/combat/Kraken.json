@@ -1,5 +1,5 @@
 [
-  { #Kraken (291)
+  { // Kraken (291)
     "ids": [ 494, 496 ],
     "handler": "io.ruin.model.activities.combat.bosses.slayer.Kraken",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-    { #Rev cyclops
+    { // Rev cyclops
     "ids": [ 7934 ],
     "handler": "io.ruin.model.combat.npc.Revenant",
     //Combat Info

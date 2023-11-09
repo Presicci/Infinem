@@ -1,5 +1,5 @@
 [
-  { #Insatiable mutated Bloodveld (278)
+  { // Insatiable mutated Bloodveld (278)
     "ids": [ 7398 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.InsatiableBloodveld",
     //Combat Info

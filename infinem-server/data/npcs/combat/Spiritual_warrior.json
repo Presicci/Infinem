@@ -1,5 +1,5 @@
 [
-  { #Spiritual warrior (115)
+  { // Spiritual warrior (115)
     "ids": [ 3159 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 1156,
     "death_animation": 836
   },
-  { #Spiritual warrior (125)
+  { // Spiritual warrior (125)
     "ids": [ 2210 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 410,
     "death_animation": 836
   },
-  { #Spiritual warrior (134)
+  { // Spiritual warrior (134)
     "ids": [ 2243 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 4322,
     "death_animation": 4321
   },
-  { #Spiritual warrior (123)
+  { // Spiritual warrior (123)
     "ids": [ 3166 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.ArmadylSpiritualWarrior",
     //Combat Info

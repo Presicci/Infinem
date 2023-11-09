@@ -1,5 +1,5 @@
 [
-  { #Callisto (470)
+  { // Callisto (470)
     "ids": [ 6503, 6609 ],
     "handler": "io.ruin.model.activities.wilderness.bosses.Callisto",
     //Combat Info

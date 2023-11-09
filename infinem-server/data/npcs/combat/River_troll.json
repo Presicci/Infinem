@@ -1,5 +1,5 @@
 [
-  { #River troll (14)
+  { // River troll (14)
     "ids": [ 6732 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #River troll (49)
+  { // River troll (49)
     "ids": [ 6734 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #River troll (79)
+  { // River troll (79)
     "ids": [ 6735 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #River troll (120)
+  { // River troll (120)
     "ids": [ 6736 ],
     "handler": "",
     //Combat Info
@@ -171,7 +171,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #River troll (159)
+  { // River troll (159)
     "ids": [ 6737 ],
     "handler": "",
     //Combat Info

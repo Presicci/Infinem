@@ -1,5 +1,5 @@
 [
-  { #Karil the Tainted (98)
+  { // Karil the Tainted (98)
     "ids": [ 1675 ],
     "handler": "io.ruin.model.activities.combat.barrows.brothers.Karil",
     //Combat Info

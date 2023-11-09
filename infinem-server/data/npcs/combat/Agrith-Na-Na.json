@@ -1,5 +1,5 @@
 [
-  { #Agrith-Na-Na (146)
+  { // Agrith-Na-Na (146)
     "ids": [ 4880, 6369 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Agrith-Na-Na (hard) (235)
+  { // Agrith-Na-Na (hard) (235)
     "ids": [ 6308 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Catablepon (49)
+  { // Catablepon (49)
     "ids": [ 2474 ],
     "handler": "io.ruin.model.combat.npc.Catablepon",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 4273,
     "death_animation": 4270
   },
-  { #Catablepon (64)
+  { // Catablepon (64)
     "ids": [ 2475 ],
     "handler": "io.ruin.model.combat.npc.Catablepon",
     //Combat Info
@@ -85,7 +85,7 @@
   "defend_animation": 4273,
   "death_animation": 4270
   },
-  { #Catablepon (68)
+  { // Catablepon (68)
     "ids": [ 2476 ],
     "handler": "io.ruin.model.combat.npc.Catablepon",
     //Combat Info

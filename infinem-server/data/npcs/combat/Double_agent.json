@@ -1,5 +1,5 @@
 [
-  { #Double agent (65)
+  { // Double agent (65)
     "ids": [ 1777 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Double agent (108)
+  { // Double agent (108)
     "ids": [ 1778 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Double agent (141)
+  { // Double agent (141)
     "ids": [ 7312 ],
     "handler": "",
     //Combat Info

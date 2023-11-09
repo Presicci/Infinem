@@ -1,5 +1,5 @@
 [
-  { #Soldier (tier 5) (99)
+  { // Soldier (tier 5) (99)
     "ids": [ 6912, 6913 ],
     "handler": "",
     //Combat Info

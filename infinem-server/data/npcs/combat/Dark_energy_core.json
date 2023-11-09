@@ -1,5 +1,5 @@
 [
-  { #Dark energy core (75)
+  { // Dark energy core (75)
     "ids": [ 320 ],
     "handler": "io.ruin.model.activities.combat.bosses.corp.DarkCore",
     //Combat Info

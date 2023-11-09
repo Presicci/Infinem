@@ -1,5 +1,5 @@
 [
-  { #Culinaromancer (75)
+  { // Culinaromancer (75)
     "ids": [ 4878, 6368 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Culinaromancer (hard) (209)
+  { // Culinaromancer (hard) (209)
     "ids": [ 6307 ],
     "handler": "",
     //Combat Info

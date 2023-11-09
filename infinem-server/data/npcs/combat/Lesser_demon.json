@@ -1,5 +1,5 @@
 [
-  { #Lesser demon (82)
+  { // Lesser demon (82)
     "ids": [ 2005, 2006, 2007, 2008, 2018, 3982, 7656, 7657, 7664 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 65,
     "death_animation": 67
   },
-    { #Demon (POH)
+    { // Demon (POH)
     "ids": [ 142 ],
     "handler": "",
     //Combat Info
@@ -87,7 +87,7 @@
 	//Misc
 	"combat_xp_modifier": 0
   },
-  { #Lesser demon (87)
+  { // Lesser demon (87)
     "ids": [ 7247, 7865, 7866, 7867 ],
     "handler": "",
     //Combat Info
@@ -130,7 +130,7 @@
     "defend_animation": 65,
     "death_animation": 67
   },
-  { #Lesser demon (94)
+  { // Lesser demon (94)
     "ids": [ 7248 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Joseph (24)
+  { // Joseph (24)
     "ids": [ 2616 ],
     "handler": "io.ruin.model.combat.npc.werewolves.canifis.Joseph",
     //Combat Info

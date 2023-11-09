@@ -1,5 +1,5 @@
 [
-  { #Slagilith (92)
+  { // Slagilith (92)
     "ids": [ 1362, 6385 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Slagilith (hard) (202)
+  { // Slagilith (hard) (202)
     "ids": [ 6324 ],
     "handler": "",
     //Combat Info

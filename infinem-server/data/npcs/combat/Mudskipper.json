@@ -1,5 +1,5 @@
 [
-  { #Mudskipper (30)
+  { // Mudskipper (30)
     "ids": [ 4820 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Mudskipper (31)
+  { // Mudskipper (31)
     "ids": [ 4821 ],
     "handler": "",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Tz-Kih (22)
+  { // Tz-Kih (22)
     "ids": [ 2189, 2190, 3116, 3117 ],
     "handler": "io.ruin.model.activities.combat.fightcaves.monsters.TzKih",
     //Combat Info

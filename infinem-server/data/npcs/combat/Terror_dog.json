@@ -1,5 +1,5 @@
 [
-  { #Terror dog (100)
+  { // Terror dog (100)
     "ids": [ 6474 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Terror dog (110)
+  { // Terror dog (110)
     "ids": [ 6473 ],
     "handler": "",
     //Combat Info

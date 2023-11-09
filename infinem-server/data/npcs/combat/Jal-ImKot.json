@@ -1,5 +1,5 @@
 [
-  { #Jal-ImKot (240)
+  { // Jal-ImKot (240)
     "ids": [ 7697 ],
     "handler": "io.ruin.model.activities.combat.inferno.monsters.JalImKot",
     //Combat Info

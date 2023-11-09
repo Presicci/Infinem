@@ -1,5 +1,5 @@
 [
-  { #General Graardor (624)
+  { // General Graardor (624)
     "ids": [ 2215, 6494 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.impl.bandos.GeneralGraardor",
     //Combat Info

@@ -1,5 +1,5 @@
 [
-  { #Spiritual ranger zammy (118)
+  { // Spiritual ranger zammy (118)
     "ids": [ 3160 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.zamorak.ZamorakSpiritualRanger",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Spiritual ranger sara (122)
+  { // Spiritual ranger sara (122)
     "ids": [ 2211 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.saradomin.SaradominSpiritualRanger",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Spiritual ranger bandos(115)
+  { // Spiritual ranger bandos(115)
     "ids": [ 2242 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.bandos.BandosSpiritualRanger",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 4322,
     "death_animation": 4321
   },
-  { #Spiritual ranger (127)
+  { // Spiritual ranger (127)
     "ids": [ 3167 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info

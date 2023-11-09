@@ -1,5 +1,5 @@
 [
-  { #Wizard (9)
+  { // Wizard (9)
     "ids": [ 3257 ],
     "handler": "io.ruin.model.combat.npc.magic.Wizard",
     //Combat Info

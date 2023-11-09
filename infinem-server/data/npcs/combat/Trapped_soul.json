@@ -1,5 +1,5 @@
 [
-  { #Trapped soul (30)
+  { // Trapped soul (30)
   "ids": [ 8528 ],
   "handler": "",
   //Combat Info
@@ -42,7 +42,7 @@
   "defend_animation": 5567,
   "death_animation": 5569
   },
-  { #Trapped soul (101)
+  { // Trapped soul (101)
   "ids": [ 8529 ],
   "handler": "",
   //Combat Info

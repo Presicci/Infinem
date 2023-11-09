@@ -1,5 +1,5 @@
 [
-  { #Elvarg (83)
+  { // Elvarg (83)
     "ids": [ 816, 817, 6349 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Elvarg (hard) (214)
+  { // Elvarg (hard) (214)
     "ids": [ 6118 ],
     "handler": "io.ruin.model.combat.npc.dragons.Elvarg",
     //Combat Info

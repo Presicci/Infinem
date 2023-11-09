@@ -1,5 +1,5 @@
 [
-  { #Ghast (30)
+  { // Ghast (30)
     "ids": [ 946 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Ghast (79)
+  { // Ghast (79)
     "ids": [ 5625 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Ghast (109)
+  { // Ghast (109)
     "ids": [ 5626 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Ghast (139)
+  { // Ghast (139)
     "ids": [ 5627 ],
     "handler": "",
     //Combat Info

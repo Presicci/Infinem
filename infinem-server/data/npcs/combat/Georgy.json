@@ -1,5 +1,5 @@
 [
-  { #Georgy (24)
+  { // Georgy (24)
     "ids": [ 2620 ],
   "handler": "io.ruin.model.combat.npc.werewolves.canifis.Georgy",
     //Combat Info

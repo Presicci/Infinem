@@ -1,5 +1,5 @@
 [
-  { #Balfrug Kreeyath (151)
+  { // Balfrug Kreeyath (151)
     "ids": [ 3132 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.impl.zamorak.BalfrugKreeyath",
     //Combat Info

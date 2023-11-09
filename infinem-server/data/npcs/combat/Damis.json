@@ -1,5 +1,5 @@
 [
-  { #Damis (103)
+  { // Damis (103)
     "ids": [ 682, 6346 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Damis (hard) (200)
+  { // Damis (hard) (200)
     "ids": [ 1134 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Damis (174)
+  { // Damis (174)
     "ids": [ 683, 6347 ],
     "handler": "",
     //Combat Info
@@ -128,7 +128,7 @@
     "defend_animation": 424,
     "death_animation": 836
   },
-  { #Damis (hard) (272)
+  { // Damis (hard) (272)
     "ids": [ 1135 ],
     "handler": "",
     //Combat Info

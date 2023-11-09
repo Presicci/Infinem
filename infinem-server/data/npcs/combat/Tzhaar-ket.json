@@ -1,5 +1,5 @@
 [
-  { #TzHaar-Ket (149)
+  { // TzHaar-Ket (149)
     "ids": [ 2173, 2174, 2175, 2176, 2177, 2178, 2179 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": 2607
   },
-  { #TzHaar-Ket (221)
+  { // TzHaar-Ket (221)
     "ids": [ 7679 ],
     "handler": "",
     //Combat Info

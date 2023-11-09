@@ -1,5 +1,5 @@
 [
-  { #Undead Lumberjack (40)
+  { // Undead Lumberjack (40)
     "ids": [ 5660, 5665, 5666, 5667, 5668, 5669, 5670, 5671, 5672 ],
     "handler": "",
     //Combat Info
@@ -42,7 +42,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Undead Lumberjack (45)
+  { // Undead Lumberjack (45)
     "ids": [ 5673, 5674, 5675, 5676, 5677, 5678, 5679, 5680 ],
     "handler": "",
     //Combat Info
@@ -85,7 +85,7 @@
     "defend_animation": -1,
     "death_animation": -1
   },
-  { #Undead Lumberjack (50)
+  { // Undead Lumberjack (50)
     "ids": [ 5681, 5682, 5683, 5684, 5685, 5686, 5687, 5688 ],
     "handler": "",
     //Combat Info

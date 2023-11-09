@@ -1,5 +1,5 @@
 [
-  { #Choke devil (264)
+  { // Choke devil (264)
     "ids": [ 7404 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.ChokeDevil",
     //Combat Info

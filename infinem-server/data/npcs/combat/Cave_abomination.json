@@ -1,5 +1,5 @@
 [
-  { #Cave abomination (206)
+  { // Cave abomination (206)
     "ids": [ 7401 ],
     "handler": "io.ruin.model.combat.npc.slayer.superiors.CaveAbomination",
     //Combat Info
