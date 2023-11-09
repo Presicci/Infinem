@@ -47,6 +47,7 @@ public class BrokenSpinningWheel {
                 player.getStats().addXp(StatType.Construction, 200, true);
                 SPINNING_WHEEL.set(player, 1);
                 player.dialogue(new MessageDialogue("You manage to fully repair the spinning wheel to working order."));
+                player.getTaskManager().doLookupByUUID(925);    // Repair the Spinning Wheel on the Isle of Souls
                 player.unlock();
             });
         });
