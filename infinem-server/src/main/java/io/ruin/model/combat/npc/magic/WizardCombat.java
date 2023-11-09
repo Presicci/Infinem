@@ -15,6 +15,8 @@ public abstract class WizardCombat extends NPCCombat {
 
     protected int altCastChance = 3;
 
+    protected boolean useBaseAnimation = false;
+
     @Override
     public void init() {}
 
@@ -58,6 +60,8 @@ public abstract class WizardCombat extends NPCCombat {
         int castAnim = getCastAnimation();
         if (castAnim != -1)
             npc.animate(castAnim);
+        else if (useBaseAnimation)
+            npc.animate(info.attack_animation);
         else
             npc.animate(spell.getAnimId());
         if (playCastEffects())
