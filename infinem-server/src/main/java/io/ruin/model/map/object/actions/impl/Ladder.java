@@ -12,6 +12,15 @@ import io.ruin.model.map.object.actions.ObjectAction;
 public enum Ladder {
     //UP(1, "climb-up", new Position(), new Position(), true),
     //DOWN(1, "climb-down", new Position(), new Position(), false),
+    SHAYZIEN_CRYPT_ENTRANCE(32403, "enter", new Position(1483, 3548), new Position(1483, 9951, 3), false),
+    SHAYZIEN_CRYPT_EXIT(32401, "climb-up", new Position(1483, 9950, 3), new Position(1483, 3549), true),
+
+    SHAYZIEN_CRYPT_1_UP(32398, "climb-up", new Position(1524, 9967, 2), new Position(1524, 9966, 3), true),
+    SHAYZIEN_CRYPT_1_DOWN(32397, "climb-down", new Position(1524, 9967, 3), new Position(1523, 9967, 2), false),
+
+    SHAYZIEN_CRYPT_2_UP(32400, "climb-up", new Position(1483, 9933, 2), new Position(1483, 9934, 3), true),
+    SHAYZIEN_CRYPT_2_DOWN(32399, "climb-down", new Position(1483, 9933, 3), new Position(1484, 9933, 2), false),
+
     LUMBRIDGE_SWAMP_CAVE_EXIT(5946, "climb", new Position(3169, 9572), new Position(3169, 3171), true),
 
     SHADOW_DUNGEON_ENTRANCE(6560, 1, new Position(2547, 3421), new Position(2630, 5072, 0), false),
@@ -22,7 +31,7 @@ public enum Ladder {
     PORT_SARIM_RAT_UP(10309, "climb-up", new Position(2962, 9651), new Position(3017, 3232, 0), true),
     PORT_SARIM_RAT_DOWN(10321, "climb-down", new Position(3018, 3232), new Position(2962, 9650, 0), false),
 
-    CRUMBLING_TOWER_UP(40746, "climb-up", new Position(1941, 9451, 0), new Position(2132, 2994, 0), true),
+    CRUMBLING_TOWER_UP(40746, "climb-up", new Position(1941, 9451, 0), new Position(2132,  2994, 0), true),
     CRUMBLING_TOWER_DOWN(40745, "climb-down", new Position(2131, 2994, 0), new Position(1940, 9451, 0), false),
 
     WATCHTOWER_UP(2796, "climb-up", new Position(2549, 3111, 1), new Position(2933, 4712, 2), true),
