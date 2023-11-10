@@ -12,6 +12,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
 public enum Ladder {
     //UP(1, "climb-up", new Position(), new Position(), true),
     //DOWN(1, "climb-down", new Position(), new Position(), false),
+    TREE_GNOME_VILLAGE_DUNGEON_ENTRANCE(5250, "climb-down", new Position(2533, 3155), new Position(2597, 4434, 0), false),
+    TREE_GNOME_VILLAGE_DUNGEON_EXIT(5251, "climb-up", new Position(2597, 4435), new Position(2533, 3156, 0), true),
+
     SHAYZIEN_CRYPT_ENTRANCE(32403, "enter", new Position(1483, 3548), new Position(1483, 9951, 3), false),
     SHAYZIEN_CRYPT_EXIT(32401, "climb-up", new Position(1483, 9950, 3), new Position(1483, 3549), true),
 
