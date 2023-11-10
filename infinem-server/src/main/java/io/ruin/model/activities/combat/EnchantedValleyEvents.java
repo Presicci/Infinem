@@ -13,7 +13,7 @@ import io.ruin.model.stat.StatType;
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 11/10/2023
  */
-public class EnchantedValleyEvent {
+public class EnchantedValleyEvents {
 
     private static final int TREE = 16265, FISHING_SPOT = 6731;
     private static final int[] ROCKS = { 26873, 26874 };
