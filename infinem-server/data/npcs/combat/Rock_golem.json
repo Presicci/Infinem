@@ -1,0 +1,260 @@
+[
+  { // Rock golem (14)
+    "ids": [ 6725 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 25,
+    "aggressive_level": 28,
+    "max_damage": 2,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 0.0,
+    "slayer_tasks": [],
+    //Combat Stats
+    "attack": 9,
+    "strength": 9,
+    "defence": 9,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 2,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 153,
+    "defend_animation": 154,
+    "death_animation": 156
+  },
+  { // Rock golem (29)
+    "ids": [ 6726 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 40,
+    "aggressive_level": 58,
+    "max_damage": 3,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 0.0,
+    "slayer_tasks": [],
+    //Combat Stats
+    "attack": 22,
+    "strength": 22,
+    "defence": 22,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 2,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 153,
+    "defend_animation": 154,
+    "death_animation": 156
+  },
+  { // Rock golem (49)
+    "ids": [ 6727 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 60,
+    "aggressive_level": 98,
+    "max_damage": 4,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 0.0,
+    "slayer_tasks": [],
+    //Combat Stats
+    "attack": 38,
+    "strength": 38,
+    "defence": 38,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 2,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 153,
+    "defend_animation": 154,
+    "death_animation": 156
+  },
+  { // Rock golem (79)
+    "ids": [ 6728 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 85,
+    "aggressive_level": 158,
+    "max_damage": 8,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 0.0,
+    "slayer_tasks": [],
+    //Combat Stats
+    "attack": 65,
+    "strength": 65,
+    "defence": 65,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 2,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 153,
+    "defend_animation": 154,
+    "death_animation": 156
+  },
+  { // Rock golem (120)
+    "ids": [ 6729 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 120,
+    "aggressive_level": 240,
+    "max_damage": 8,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 0.0,
+    "slayer_tasks": [],
+    //Combat Stats
+    "attack": 100,
+    "strength": 100,
+    "defence": 100,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 2,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 153,
+    "defend_animation": 154,
+    "death_animation": 156
+  },
+  { // Rock golem (159)
+    "ids": [ 6730 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 170,
+    "aggressive_level": 318,
+    "max_damage": 9,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 0.0,
+    "slayer_tasks": [],
+    //Combat Stats
+    "attack": 130,
+    "strength": 130,
+    "defence": 130,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 2,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 153,
+    "defend_animation": 154,
+    "death_animation": 156
+  }
+]
