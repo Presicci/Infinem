@@ -1,0 +1,132 @@
+[
+  {
+    "name": "Pheasant",
+    "id": "373",
+    "x": "2597",
+    "y": "4779",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Pheasant",
+    "id": "374",
+    "x": "2598",
+    "y": "4774",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Pheasant",
+    "id": "5500",
+    "x": "2598",
+    "y": "4777",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Pheasant",
+    "id": "5502",
+    "x": "2599",
+    "y": "4772",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Freaky Forester",
+    "id": "372",
+    "x": "2599",
+    "y": "4775",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Pheasant",
+    "id": "5500",
+    "x": "2600",
+    "y": "4777",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Pheasant",
+    "id": "5502",
+    "x": "2603",
+    "y": "4769",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Pheasant",
+    "id": "373",
+    "x": "2603",
+    "y": "4774",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Pheasant",
+    "id": "373",
+    "x": "2605",
+    "y": "4777",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Pheasant",
+    "id": "374",
+    "x": "2606",
+    "y": "4778",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Pheasant",
+    "id": "374",
+    "x": "2607",
+    "y": "4775",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Pheasant",
+    "id": "5500",
+    "x": "2608",
+    "y": "4772",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Pheasant",
+    "id": "373",
+    "x": "2610",
+    "y": "4774",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  }
+]
