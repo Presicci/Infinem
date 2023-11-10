@@ -1,0 +1,302 @@
+[
+  {
+    "name": "Stone Guardian",
+    "id": "8066",
+    "x": "2819",
+    "y": "9258",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8065",
+    "x": "2820",
+    "y": "9228",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8065",
+    "x": "2820",
+    "y": "9273",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8064",
+    "x": "2826",
+    "y": "9231",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8066",
+    "x": "2828",
+    "y": "9240",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8064",
+    "x": "2828",
+    "y": "9252",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8064",
+    "x": "2829",
+    "y": "9275",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8066",
+    "x": "2831",
+    "y": "9219",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8065",
+    "x": "2832",
+    "y": "9247",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8066",
+    "x": "2839",
+    "y": "9267",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8066",
+    "x": "2840",
+    "y": "9251",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8064",
+    "x": "2841",
+    "y": "9239",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8065",
+    "x": "2843",
+    "y": "9260",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8064",
+    "x": "2844",
+    "y": "9223",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8065",
+    "x": "2848",
+    "y": "9235",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8065",
+    "x": "2850",
+    "y": "9220",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8064",
+    "x": "2851",
+    "y": "9264",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8066",
+    "x": "2856",
+    "y": "9267",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8065",
+    "x": "2856",
+    "y": "9274",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8065",
+    "x": "2858",
+    "y": "9251",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8064",
+    "x": "2859",
+    "y": "9244",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8066",
+    "x": "2860",
+    "y": "9256",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8064",
+    "x": "2863",
+    "y": "9223",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8064",
+    "x": "2864",
+    "y": "9274",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8065",
+    "x": "2868",
+    "y": "9241",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8065",
+    "x": "2870",
+    "y": "9263",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8066",
+    "x": "2874",
+    "y": "9275",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8066",
+    "x": "2875",
+    "y": "9221",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8066",
+    "x": "2875",
+    "y": "9234",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Stone Guardian",
+    "id": "8064",
+    "x": "2875",
+    "y": "9255",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  }
+]
