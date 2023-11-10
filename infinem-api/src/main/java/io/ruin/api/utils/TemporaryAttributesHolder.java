@@ -1,5 +1,7 @@
 package io.ruin.api.utils;
 
+import java.security.KeyPair;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -149,5 +151,18 @@ public class TemporaryAttributesHolder {
 
     public int getTemporaryAttributeIntOrZero(AttributeKey key) {
         return getTemporaryAttributeIntOrZero(key.name());
+    }
+
+    public String temporaryAttributesString() {
+        if (temporaryAttributes == null) return "No temp attributes.";
+        StringBuilder sb = new StringBuilder();
+        for (String key : temporaryAttributes.keySet()) {
+            sb.append("{");
+            sb.append(key);
+            sb.append(", ");
+            sb.append(temporaryAttributes.get(key));
+            sb.append("}\n");
+        }
+        return sb.toString();
     }
 }
