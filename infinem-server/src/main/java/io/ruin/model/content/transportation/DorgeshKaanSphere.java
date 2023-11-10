@@ -14,5 +14,6 @@ public class DorgeshKaanSphere {
 
     static {
         NPCAction.register(2303, "buy-sphere", (player, npc) -> npc.openShop(player));
+        ItemAction.registerInventory(Items.DORGESHKAAN_SPHERE, "break", (player, item) -> TeleportTab.tabletTeleport(player, item, new Position(2703, 5365, 0)));
     }
 }

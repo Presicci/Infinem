@@ -61,6 +61,19 @@ public enum TeleportTab {
         this.z = z;
     }
 
+    public static void tabletTeleport(Player player, Item item, Position destination) {
+        player.getMovement().startTeleport(event -> {
+            player.animate(4069, 16);
+            player.privateSound(965, 1, 15);
+            event.delay(2);
+            if (item != null) item.remove(1);
+            player.animate(4071);
+            player.graphics(678);
+            event.delay(2);
+            player.getMovement().teleport(destination);
+        });
+    }
+
     private void teleport(Player player, Item tab) {
         player.getMovement().startTeleport(event -> {
             player.animate(4069, 16);
