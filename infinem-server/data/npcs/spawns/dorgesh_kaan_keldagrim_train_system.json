@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Dwarf",
+    "id": "5173",
+    "x": "2436",
+    "y": "5526",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "5171",
+    "x": "2436",
+    "y": "5540",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cave goblin",
+    "id": "5166",
+    "x": "2436",
+    "y": "5553",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "5172",
+    "x": "2437",
+    "y": "5549",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Ticket dwarf",
+    "id": "5176",
+    "x": "2438",
+    "y": "5535",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "5174",
+    "x": "2439",
+    "y": "5520",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cave goblin",
+    "id": "5165",
+    "x": "2439",
+    "y": "5525",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cave goblin",
+    "id": "5166",
+    "x": "2439",
+    "y": "5532",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cave goblin",
+    "id": "5167",
+    "x": "2439",
+    "y": "5539",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "5170",
+    "x": "2439",
+    "y": "5544",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cave goblin",
+    "id": "5168",
+    "x": "2439",
+    "y": "5549",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cave goblin",
+    "id": "5167",
+    "x": "2483",
+    "y": "5539",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cave goblin",
+    "id": "5164",
+    "x": "2484",
+    "y": "5522",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "5172",
+    "x": "2484",
+    "y": "5531",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cave goblin",
+    "id": "5168",
+    "x": "2484",
+    "y": "5544",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cave goblin",
+    "id": "5167",
+    "x": "2484",
+    "y": "5552",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "5170",
+    "x": "2485",
+    "y": "5535",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Ticket goblin",
+    "id": "5169",
+    "x": "2485",
+    "y": "5540",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "5173",
+    "x": "2486",
+    "y": "5525",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cave goblin",
+    "id": "5164",
+    "x": "2486",
+    "y": "5548",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cave goblin",
+    "id": "5163",
+    "x": "2487",
+    "y": "5519",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cave goblin",
+    "id": "5166",
+    "x": "2487",
+    "y": "5530",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Dwarf",
+    "id": "5175",
+    "x": "2487",
+    "y": "5538",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Cave goblin",
+    "id": "5165",
+    "x": "2487",
+    "y": "5542",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  }
+]
