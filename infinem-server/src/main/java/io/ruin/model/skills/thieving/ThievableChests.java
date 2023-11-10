@@ -212,6 +212,55 @@ public class ThievableChests {
         }
     }
 
+    private static final LootTable ZANIK_CHEST = new LootTable().addTable(1,
+            new LootItem(24362, 1, 1),
+            new LootItem(Items.ROPE, 1, 1),
+            new LootItem(Items.MINING_HELMET, 1, 1),
+            new LootItem(Items.FROGLEATHER_BODY, 1, 1),
+            new LootItem(Items.FROGLEATHER_CHAPS, 1, 1),
+            new LootItem(Items.OIL_LANTERN, 1, 1),
+            new LootItem(Items.BULLSEYE_LANTERN, 1, 1),
+            new LootItem(Items.NEWCOMER_MAP, 1, 1),
+            new LootItem(Items.BONE_BOLTS, 1, 89, 1),
+            new LootItem(Items.DORGESHUUN_CROSSBOW, 1, 1),
+            new LootItem(Items.BONE_DAGGER, 1, 1),
+            new LootItem(Items.HAMMER, 1, 1),
+            new LootItem(Items.BIG_BONES, 1, 1),
+            new LootItem(Items.HAM_HOOD, 1, 1),
+            new LootItem(Items.HAM_LOGO, 1, 1),
+            new LootItem(Items.HAM_SHIRT, 1, 1),
+            new LootItem(Items.HAM_ROBE, 1, 1),
+            new LootItem(Items.HAM_GLOVES, 1, 1),
+            new LootItem(Items.HAM_CLOAK, 1, 1),
+            new LootItem(Items.HAM_BOOTS, 1, 1),
+            new LootItem(Items.SPADE, 1, 1),
+            new LootItem(Items.BUCKET, 1, 1),
+            new LootItem(Items.CAVE_GOBLIN_WIRE, 1, 1)
+    );
+    private static final LootTable OLDAK_CHEST = new LootTable().addTable(1,
+            new LootItem(Items.AIR_RUNE, 10, 19, 1),
+            new LootItem(Items.MIND_RUNE, 10, 19, 1),
+            new LootItem(Items.WATER_RUNE, 10, 19, 1),
+            new LootItem(Items.EARTH_RUNE, 10, 19, 1),
+            new LootItem(Items.FIRE_RUNE, 10, 19, 1),
+            new LootItem(Items.BODY_RUNE, 10, 19, 1),
+            new LootItem(Items.COSMIC_RUNE, 5, 9, 1),
+            new LootItem(Items.CHAOS_RUNE, 5, 9, 1),
+            new LootItem(Items.LAW_RUNE, 5, 9, 1),
+            new LootItem(Items.NATURE_RUNE, 2, 4, 1),
+            new LootItem(Items.DEATH_RUNE, 2, 4, 1),
+            new LootItem(Items.DORGESHKAAN_SPHERE, 1, 1),
+            new LootItem(Items.DORGESHKAAN_SPHERE, 1, 1),
+            new LootItem(Items.UNPOWERED_ORB, 1, 1),
+            new LootItem(Items.CAVE_GOBLIN_WIRE, 1, 1),
+            new LootItem(Items.EMPTY_LIGHT_ORB, 1, 1),
+            new LootItem(Items.LIGHT_ORB, 1, 1),
+            new LootItem(Items.AIR_TALISMAN, 1, 1),
+            new LootItem(Items.WATER_TALISMAN, 1, 1),
+            new LootItem(Items.EARTH_TALISMAN, 1, 1),
+            new LootItem(Items.FIRE_TALISMAN, 1, 1)
+    );
+
     private static void replaceChest(GameObject chest, int replacementId, int respawnTime) {
         World.startEvent(event -> {
             chest.setId(replacementId);
@@ -276,6 +325,13 @@ public class ThievableChests {
                 player.sendMessage("You successfully disarm the trap.");
                 e.delay(1);
                 Item item = chest.lootTable.rollItem();
+                if (chest == Chest.DORGESH_KAAN) {
+                    if (object.getPosition().equals(2706, 5364)) {
+                        item = OLDAK_CHEST.rollItem();
+                    } else if (object.getPosition().equals(2746, 5350) || object.getPosition().equals(2743, 5350)) {
+                        item = ZANIK_CHEST.rollItem();
+                    }
+                }
                 player.getInventory().addOrDrop(item);
                 player.getStats().addXp(StatType.Thieving, chest.xp, true);
                 player.sendMessage("You steal some loot from the chest.");
