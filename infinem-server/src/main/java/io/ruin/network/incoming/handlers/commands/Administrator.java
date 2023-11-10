@@ -2807,6 +2807,10 @@ public class Administrator {
                 player.getPacketSender().sendClientScript(10070, "is", 1, "Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000");
                 return true;
             }
+            case "checktemps": {
+                player.sendMessage(player.temporaryAttributesString());
+                return true;
+            }
         }
         return false;
     }
