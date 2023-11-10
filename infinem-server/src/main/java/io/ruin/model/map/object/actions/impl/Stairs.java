@@ -33,8 +33,15 @@ public class Stairs {
         player.getMovement().teleport(player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ() - 1);
     }
 
+    public static void registerStair(int objectId, final int tiles, final int offset) {
+        ObjectAction.register(objectId, "climb-up", (player, obj) ->
+                climbUp(player, Direction.getFromObjectDirection(obj.direction + offset > 3 ? obj.direction + offset - 4 : obj.direction + offset < 0 ? obj.direction + offset + 4 : obj.direction + offset), tiles));
+        ObjectAction.register(objectId, "climb-down", (player, obj) ->
+                climbDown(player, Direction.getFromObjectDirection(obj.direction + offset > 3 ? obj.direction + offset - 4 : obj.direction + offset < 0 ? obj.direction + offset + 4 : obj.direction + offset), tiles));
+    }
+
     public static void registerStair(int objectId, Position position, final Direction direction, final int tiles) {
-        ObjectAction.register(objectId, position.getX(), position.getY(), position.getZ(), "climb-up", (player, obj) -> climbUp(player, direction ,tiles));
+        ObjectAction.register(objectId, position.getX(), position.getY(), position.getZ(), "climb-up", (player, obj) -> climbUp(player, direction, tiles));
         ObjectAction.register(objectId, position.getX(), position.getY(), position.getZ(), "climb-down", (player, obj) -> climbDown(player, direction, tiles));
     }
 
@@ -74,5 +81,17 @@ public class Stairs {
         registerSpiralStair(14735, new Position(2134, 2995, 0));
         registerSpiralStair(14736, new Position(2134, 2995, 1));
         registerSpiralStair(14737, new Position(2135, 2996, 2));
+        // Dorgesh-kaan
+        registerStair(22942, 3, 1);
+        registerStair(22941, 3, -1);
+        registerStair(22940, 3, 1);
+        registerStair(22939, 3, -1);
+        registerStair(22937, 4, -1);
+        registerStair(22938, 4, 1);
+        registerStair(22933, 3, 0);
+        registerStair(22932, 3, 0);
+        registerStair(22931, 3, 2);
+
+
     }
 }
