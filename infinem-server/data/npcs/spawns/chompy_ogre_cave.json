@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Bugs",
+    "id": "1472",
+    "x": "2640",
+    "y": "9391",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Fycie",
+    "id": "1471",
+    "x": "2650",
+    "y": "9393",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  }
+]
