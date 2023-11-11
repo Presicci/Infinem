@@ -414,8 +414,6 @@ public class Config {
 
     public static final Config PVP_KD_OVERLAY = varpbit(4143, true).defaultValue(1);
 
-    public static final Config IN_PVP_AREA = varpbit(8121, true).defaultValue(1);
-
     public static final Config WILDERNESS_TIMER = varpbit(877, false);
 
     public static final Config ARDOUGNE_LEVER_UNLOCK = varpbit(4470, false).defaultValue(1);

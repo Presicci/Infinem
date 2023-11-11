@@ -84,7 +84,7 @@ public class Wilderness {
         }
         player.getPacketSender().setHidden(Interface.WILDERNESS_OVERLAY, 47, true); //hide safe area sprite
         player.getPacketSender().setHidden(Interface.WILDERNESS_OVERLAY, 53, false); //show wilderness level
-        Config.IN_PVP_AREA.set(player, 1);
+        Config.SPECIAL_ORB_STATE.set(player, 1);
         player.setAction(1, PlayerAction.ATTACK);
         player.getEquipment().update(0); //force a slot update
         player.getEquipment().sendUpdates();
@@ -119,7 +119,7 @@ public class Wilderness {
             player.getCombat().resetKillers(); //important
             //TODO: - clear hits???????????????
             player.getPacketSender().sendDiscordPresence("Idle");
-            Config.IN_PVP_AREA.set(player, 0);
+            Config.SPECIAL_ORB_STATE.set(player, 2);
             if(player.getBountyHunter().returnTicks == 0)
                 player.closeInterface(InterfaceType.WILDERNESS_OVERLAY);
             player.setAction(1, null);

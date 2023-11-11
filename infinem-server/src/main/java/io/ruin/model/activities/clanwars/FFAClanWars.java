@@ -63,7 +63,7 @@ public class FFAClanWars {
                         player.getMovement().teleport(FFA_DEATH_BOUNDS.randomPosition());
                         player.sendMessage("Oh dear, you have died!");
                     };
-                    Config.IN_PVP_AREA.set(player, 0);
+                    Config.SPECIAL_ORB_STATE.set(player, 1);
                     player.getPacketSender().setHidden(90, 57, true);
 
                 })
@@ -73,7 +73,7 @@ public class FFAClanWars {
                         player.getCombat().resetTb();
                         player.getCombat().resetKillers();
                         player.getPacketSender().setHidden(90, 57, false);
-                        Config.IN_PVP_AREA.set(player, 0);
+                        Config.SPECIAL_ORB_STATE.set(player, 2);
                         player.clearHits();
                         player.pvpAttackZone = false;
                         player.attackPlayerListener = null;
