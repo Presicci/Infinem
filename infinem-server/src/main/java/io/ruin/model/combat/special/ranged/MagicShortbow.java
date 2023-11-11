@@ -38,8 +38,12 @@ public class MagicShortbow implements Special {
         Hit[] hits = new Hit[2];
         FIRST.send(player, target);
         int delay = SECOND.send(player, target);
-        hits[0] = new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setRangedAmmo(ammoDef);
-        hits[1] = new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setRangedAmmo(ammoDef);
+        hits[0] = new Hit(player, style, type).randDamage(maxDamage)
+                .boostAttack(0.43)  // Tooltip says 55% accuracy but apparently it actually has 143%
+                .clientDelay(delay).setRangedAmmo(ammoDef);
+        hits[1] = new Hit(player, style, type).randDamage(maxDamage)
+                .boostAttack(0.43)  // Tooltip says 55% accuracy but apparently it actually has 143%
+                .clientDelay(delay).setRangedAmmo(ammoDef);
         player.getCombat().removeAmmo(ammo, hits);
         target.hit(hits);
         return true;
