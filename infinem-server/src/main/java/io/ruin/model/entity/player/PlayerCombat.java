@@ -523,11 +523,11 @@ public class PlayerCombat extends Combat {
         } else {
             if(rangedData.doubleDrawbackId != -1)
                 player.graphics(rangedData.doubleDrawbackId, 96, 0);
-            int delay1 = rangedData.projectiles[1].send(player, target);
-            int delay2 = rangedData.projectiles[2].send(player, target);
+            int delay = rangedData.projectiles[1].send(player, target);
+            rangedData.projectiles[2].send(player, target);
             Hit[] hits = {
-                    new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay1).setRangedAmmo(ammo.getDef()).setAttackWeapon(wepDef),
-                    new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay2).setRangedAmmo(ammo.getDef()).setAttackWeapon(wepDef),
+                    new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setRangedAmmo(ammo.getDef()).setAttackWeapon(wepDef),
+                    new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setRangedAmmo(ammo.getDef()).setAttackWeapon(wepDef),
             };
             removeAmmo(ammo, hits);
             target.hit(hits);
