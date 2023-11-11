@@ -65,7 +65,6 @@ public class DarkBow implements Special {
             Hit hit = new Hit(player, style, type)
                     .randDamage(maxDamage)
                     .boostDamage(damageBoost)
-                    .boostAttack(0.45)
                     .clientDelay(delay);
             hit.postDefend(t -> {
                 hit.type = HitType.DAMAGE;
