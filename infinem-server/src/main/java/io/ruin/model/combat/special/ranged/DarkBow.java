@@ -60,16 +60,18 @@ public class DarkBow implements Special {
         player.graphics(data.doubleDrawbackId, 96, 0);
 
         Hit[] hits = new Hit[projectiles.length];
+        int delay = projectiles[0].send(player, target);
+        projectiles[1].send(player, target);
         for(int i = 0; i < projectiles.length; i++) {
-            int delay = projectiles[i].send(player, target);
             Hit hit = new Hit(player, style, type)
                     .randDamage(maxDamage)
                     .boostDamage(damageBoost)
-                    .clientDelay(delay);
+                    .clientDelay(delay)
+                    .setRangedAmmo(ammoDef);
             hit.postDefend(t -> {
                 hit.type = HitType.DAMAGE;
                 hit.damage = Math.max(minDamage, hit.damage);
-            }).postDamage(t -> t.graphics(gfxId, 96, 0)).setRangedAmmo(ammoDef);
+            }).postDamage(t -> t.graphics(gfxId, 96, 0));
             hits[i] = hit;
         }
         player.getCombat().removeAmmo(ammo, hits);
