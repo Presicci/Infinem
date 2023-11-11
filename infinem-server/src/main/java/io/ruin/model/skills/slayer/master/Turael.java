@@ -172,12 +172,10 @@ public class Turael {
 
         player.dialogue(
                 new NPCDialogue(TURAEL, "Excellent, you're doing great. Your new task is to kill " + left + " " + SlayerCreature.taskName(player, task.getUid()) + "."),
-                new OptionsDialogue(new Option("Got any tips for me?", () -> player.dialogue(
-                        new PlayerDialogue("Got any tips for me?"),
-                        new NPCDialogue(TURAEL, SlayerCreature.getTipFor(task)),
-                        new PlayerDialogue("Great, thanks!"))), new Option("Great, thanks!", () -> {
-                    player.dialogue(new PlayerDialogue("Okay, great!"));
-                }))
+                new OptionsDialogue(
+                        new Option("Got any tips for me?", new PlayerDialogue("Got any tips for me?"), new NPCDialogue(TURAEL, SlayerCreature.getTipFor(task)), new PlayerDialogue("Great, thanks!")),
+                        new Option("Great, thanks!", new PlayerDialogue("Okay, great!"))
+                )
         );
     }
 

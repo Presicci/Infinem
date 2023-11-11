@@ -200,15 +200,29 @@ public class Konar {
                     })
             );
         } else {
-            player.dialogue(
-                    new NPCDialogue(KONAR, "You are to bring balance to " + left + " " + SlayerCreature.taskName(player, task.getUid()) + " at the " + location + "."),
-                    new OptionsDialogue(new Option("Got any tips for me?", () -> player.dialogue(
-                            new PlayerDialogue("Got any tips for me?"),
-                            new NPCDialogue(KONAR, SlayerCreature.getTipFor(task)),
-                            new PlayerDialogue("Great, thanks!"))), new Option("Great, thanks!", () -> {
-                        player.dialogue(new PlayerDialogue("Okay, great!"));
-                    }))
-            );
+            if (Config.SLAYER_POINTS.get(player) >= 30) {
+                player.dialogue(
+                        new NPCDialogue(KONAR, "You are to bring balance to " + left + " " + SlayerCreature.taskName(player, task.getUid()) + " at the " + location + "."),
+                        new OptionsDialogue(
+                                new Option("Got any tips for me?", new PlayerDialogue("Got any tips for me?"), new NPCDialogue(KONAR, SlayerCreature.getTipFor(task)), new PlayerDialogue("Great, thanks!")),
+                                new Option("Great, thanks!", new PlayerDialogue("Okay, great!")),
+                                new Option("No thanks. (Reroll task, costs 30 Slayer points)", new NPCDialogue(KONAR, "Very well."), new ActionDialogue(() -> {
+                                    Config.SLAYER_POINTS.set(player, Config.SLAYER_POINTS.get(player) - 30);
+                                    Config.SLAYER_TASK_AMOUNT.set(player, 0);
+                                    Config.SLAYER_TASK_1.set(player, 0);
+                                    giveTask(player);
+                                }))
+                        )
+                );
+            } else {
+                player.dialogue(
+                        new NPCDialogue(KONAR, "You are to bring balance to " + left + " " + SlayerCreature.taskName(player, task.getUid()) + " at the " + location + "."),
+                        new OptionsDialogue(
+                                new Option("Got any tips for me?", new PlayerDialogue("Got any tips for me?"), new NPCDialogue(KONAR, SlayerCreature.getTipFor(task)), new PlayerDialogue("Great, thanks!")),
+                                new Option("Great, thanks!", new PlayerDialogue("Okay, great!"))
+                        )
+                );
+            }
         }
     }
 
