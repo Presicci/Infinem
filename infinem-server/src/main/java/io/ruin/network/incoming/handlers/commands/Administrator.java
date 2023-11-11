@@ -2811,6 +2811,10 @@ public class Administrator {
                 player.sendMessage(player.temporaryAttributesString());
                 return true;
             }
+            case "special": {
+                player.getCombat().restoreSpecial(100);
+                return true;
+            }
         }
         return false;
     }
