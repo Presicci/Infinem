@@ -15,10 +15,8 @@ import io.ruin.model.map.Projectile;
 //succession, but with reduced accuracy. (55%)
 public class MagicShortbow implements Special {
 
-    private static final Projectile[] PROJECTILES = {
-            new Projectile(249, 40, 36, 20, 33, 3, 15, 11),
-            new Projectile(249, 40, 36, 50, 53, 3, 15, 11),
-    };
+    private static final Projectile FIRST = new Projectile(249, 40, 36, 20, 33, 3, 15, 11);
+    private static final Projectile SECOND = new Projectile(249, 40, 36, 50, 53, 3, 15, 11);
 
     @Override
     public boolean accept(ItemDef def, String name) {
@@ -37,11 +35,11 @@ public class MagicShortbow implements Special {
         }
         player.animate(1074);
         player.graphics(256, 92, 30);
-        Hit[] hits = new Hit[PROJECTILES.length];
-        for(int i = 0; i < PROJECTILES.length; i++) {
-            int delay = PROJECTILES[i].send(player, target);
-            hits[i] = new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setRangedAmmo(ammoDef);
-        }
+        Hit[] hits = new Hit[2];
+        FIRST.send(player, target);
+        int delay = SECOND.send(player, target);
+        hits[0] = new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setRangedAmmo(ammoDef);
+        hits[1] = new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setRangedAmmo(ammoDef);
         player.getCombat().removeAmmo(ammo, hits);
         target.hit(hits);
         return true;
