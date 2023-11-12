@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Boulder",
+    "id": "1496",
+    "x": "3419",
+    "y": "9564",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Desert eagle",
+    "id": "1491",
+    "x": "3422",
+    "y": "9568",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Desert eagle",
+    "id": "1491",
+    "x": "3428",
+    "y": "9565",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  }
+]
