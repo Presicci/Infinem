@@ -1,0 +1,23 @@
+1158
+Warrior: Hello there traveller.
+<What are you camped out here for?
+Player: What are you camped here for?
+Warrior: We're not here for any particular reason at all.
+><Do you know any good adventures I can go on?
+Player: Do you know any good adventures I can go on?
+Warrior: Well we're on an adventure right now. Mind you, this is OUR adventure and we don't want to share it - find your own!
+<Please tell me.
+Player: Please tell me?
+Warrior: No.
+Player: Please?
+Warrior: No!
+Player: PLEEEEEEEEEEEEEEEEEEEEEASE?
+Warrior: NO!
+><I don't think you've found a good adventure at all!
+Player: I don't think you've found a good adventure at all!
+Warrior: Hah! Adventurers of our calibre don't just hang around in forests for fun, whelp!
+Player: Oh really?
+Player: What are you camped here for?
+Warrior: We're not here for any particular reason at all.
+>
+>

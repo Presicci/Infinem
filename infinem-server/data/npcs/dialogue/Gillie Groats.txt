@@ -1,0 +1,18 @@
+Gillie Groats: Hello, I'm Gillie the Milkmaid. What can I do for you?
+<Who are you?
+Player: Who are you?
+Gillie Groats: My name is Gillie Groats. My father is a farmer and I milk the cows for him.
+Player: Do you have any buckets of milk spare?
+Gillie Groats: I'm afraid not. We need all of our milk to sell to market, but you can milk the cow yourself if you need the milk.
+Player: Thanks.
+><Can you tell me how to milk a cow?
+Player: So how do you milk a cow then?
+Gillie Groats: It's very easy. First you need an empty bucket to hold the milk.
+Gillie Groats: Then find a dairy cow to milk - you can't milk just any cow.
+Player: How do I find a dairy cow?
+Gillie Groats: They are easy to spot - they are dark brown and white, unlike beef cows, which are light brown and white. We also tether them to a post to stop them wandering around all over the place.
+Gillie Groats: There are a couple very near, in this field.
+Gillie Groats: Then just milk the cow and your bucket will fill with tasty, nutritious milk.
+><I'm fine, thanks.
+Player: I'm fine, thanks.
+>
