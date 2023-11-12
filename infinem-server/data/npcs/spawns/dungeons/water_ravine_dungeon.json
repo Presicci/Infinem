@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Nirrie",
+    "id": "4739",
+    "x": "3367",
+    "y": "9586",
+    "z": "0",
+    "direction": "E",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Hallak",
+    "id": "4741",
+    "x": "3368",
+    "y": "9585",
+    "z": "0",
+    "direction": "N",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Tirrie",
+    "id": "4740",
+    "x": "3368",
+    "y": "9587",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Target",
+    "id": "4765",
+    "x": "3379",
+    "y": "9556",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  }
+]
