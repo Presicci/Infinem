@@ -61,7 +61,7 @@ public class DraynorManor {
         Direction dir = Direction.WEST;
         World.startEvent(e -> {
             player.lock();
-            player.animate(834);
+            player.animate(2140);
             e.delay(1);
             player.getMovement().force(0, 1, 0, 0, 1, 0, dir);
             e.delay(2);
