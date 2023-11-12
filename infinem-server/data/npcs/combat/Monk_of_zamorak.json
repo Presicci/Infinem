@@ -1,11 +1,11 @@
 [
   { // Monk of Zamorak (17)
-    "ids": [ 520, 3485 ],
+    "ids": [ 528, 3485, 8401 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 11,
-    "aggressive_level": 0,
-    "max_damage": 12,
+    "hitpoints": 10,
+    "aggressive_level": 34,
+    "max_damage": 5,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
@@ -33,7 +33,7 @@
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
-    "attack_ticks": 5,
+    "attack_ticks": 4,
     "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
@@ -43,21 +43,21 @@
     "death_animation": 836
   },
   { // Monk of Zamorak (22)
-    "ids": [ 519, 3484 ],
+    "ids": [ 527, 3484, 8400 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 25,
+    "hitpoints": 20,
     "aggressive_level": 44,
-    "max_damage": 12,
+    "max_damage": 3,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 8,
-    "strength": 8,
-    "defence": 12,
+    "attack": 18,
+    "strength": 18,
+    "defence": 22,
     "ranged": 1,
     "magic": 25,
     //Aggressive Stats
@@ -76,9 +76,52 @@
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
-    "attack_ticks": 5,
+    "attack_ticks": 4,
     "death_ticks": 2,
     "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 422,
+    "defend_animation": 424,
+    "death_animation": 836
+  },
+  { // Monk of Zamorak (23)
+    "ids": [ 8698 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 16,
+    "aggressive_level": 46,
+    "max_damage": 2,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 0.0,
+    "slayer_tasks": [],
+    //Combat Stats
+    "attack": 15,
+    "strength": 13,
+    "defence": 18,
+    "ranged": 1,
+    "magic": 30,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 5,
+    "death_ticks": 2,
+    "respawn_ticks": 250,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 422,
@@ -89,7 +132,7 @@
     "ids": [ 3486 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 26,
+    "hitpoints": 25,
     "aggressive_level": 60,
     "max_damage": 12,
     "attack_style": "CRUSH",
@@ -98,11 +141,11 @@
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 8,
-    "strength": 8,
-    "defence": 12,
+    "attack": 25,
+    "strength": 25,
+    "defence": 25,
     "ranged": 1,
-    "magic": 25,
+    "magic": 40,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
@@ -119,9 +162,9 @@
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
-    "attack_ticks": 5,
+    "attack_ticks": 4,
     "death_ticks": 2,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 422,
@@ -129,23 +172,23 @@
     "death_animation": 836
   },
   { // Monk of Zamorak (45)
-    "ids": [ 521 ],
+    "ids": [ 529 ],
     "handler": "",
     //Combat Info
     "hitpoints": 40,
     "aggressive_level": 90,
-    "max_damage": 12,
+    "max_damage": 5,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 8,
-    "strength": 8,
-    "defence": 12,
+    "attack": 38,
+    "strength": 38,
+    "defence": 42,
     "ranged": 1,
-    "magic": 25,
+    "magic": 40,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
@@ -162,13 +205,13 @@
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
-    "attack_ticks": 5,
-    "death_ticks": 5,
+    "attack_ticks": 4,
+    "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": 707,
-    "defend_animation": 390,
+    "attack_animation": 422,
+    "defend_animation": 424,
     "death_animation": 836
   }
 ]
