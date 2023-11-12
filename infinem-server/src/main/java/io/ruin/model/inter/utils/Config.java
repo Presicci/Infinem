@@ -1113,6 +1113,7 @@ public class Config {
     public static final Config COSTUME_DEPOSIT_SET = varpbit(10581, false);
     public static final Config DRUIDIC_RITUAL = varp(80, false).defaultValue(4);    // Lets skill lamps be used on herblore
     public static final Config RUNE_MYSTERIES = varp(63, false).defaultValue(6);    // Lets skill lamps be used on runecrafting
+    public static final Config TARNS_LAIR_ENTRANCE = varp(382, false).defaultValue(11);     // Lets players enter tarn's lair
     public static final Config OWNS_A_HOUSE = varpbit(2187, false).defaultValue(1); // Lets skill lamps be used on construction
     public static final Config ADVENTURE_PATHS_QUEST_TAB = varpbit(9340, false).defaultValue(1);    // Enables the adventurer's path tab in the quest panel
     public static final Config ACTIVE_QUEST_TAB = varpbit(8168, false);
