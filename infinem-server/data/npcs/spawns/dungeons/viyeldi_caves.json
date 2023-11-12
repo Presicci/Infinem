@@ -88,5 +88,185 @@
     "direction": "W",
     "walkRange": "1",
     "world": "ECO"
+  },
+  {
+    "name": "Boulder",
+    "id": "3967",
+    "x": "2373",
+    "y": "4692",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "San Tojalon",
+    "id": "3964",
+    "x": "2384",
+    "y": "4706",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Boulder",
+    "id": "3967",
+    "x": "2386",
+    "y": "4689",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Boulder",
+    "id": "3967",
+    "x": "2392",
+    "y": "4678",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "San Tojalon",
+    "id": "3964",
+    "x": "2393",
+    "y": "4713",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "San Tojalon",
+    "id": "3964",
+    "x": "2394",
+    "y": "4731",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "San Tojalon",
+    "id": "3964",
+    "x": "2395",
+    "y": "4721",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Irvig Senay",
+    "id": "3965",
+    "x": "2401",
+    "y": "4705",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Irvig Senay",
+    "id": "3965",
+    "x": "2405",
+    "y": "4712",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Ranalph Devere",
+    "id": "3966",
+    "x": "2408",
+    "y": "4698",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Lesser demon",
+    "id": "2007",
+    "x": "2412",
+    "y": "4677",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Irvig Senay",
+    "id": "3965",
+    "x": "2412",
+    "y": "4723",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Lesser demon",
+    "id": "2006",
+    "x": "2413",
+    "y": "4681",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Irvig Senay",
+    "id": "3965",
+    "x": "2414",
+    "y": "4731",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Lesser demon",
+    "id": "2005",
+    "x": "2416",
+    "y": "4684",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Ranalph Devere",
+    "id": "3966",
+    "x": "2417",
+    "y": "4699",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Ranalph Devere",
+    "id": "3966",
+    "x": "2424",
+    "y": "4701",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Ranalph Devere",
+    "id": "3966",
+    "x": "2428",
+    "y": "4696",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
   }
 ]
