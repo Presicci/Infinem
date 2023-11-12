@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Homunculus",
+    "id": "3588",
+    "x": "3038",
+    "y": "4395",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  }
+]
