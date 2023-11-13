@@ -1,6 +1,6 @@
 [
   { // Chaos druid warrior (37)
-    "ids": [ 524 ],
+    "ids": [ 532 ],
     "handler": "",
     //Combat Info
     "hitpoints": 40,
@@ -18,11 +18,11 @@
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
-    "stab_attack": 9,
-    "slash_attack": 9,
+    "stab_attack": 0,
+    "slash_attack": 0,
     "crush_attack": 9,
-    "magic_attack": 9,
-    "ranged_attack": 9,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 13,
     "slash_defence": 17,
