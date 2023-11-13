@@ -1,7 +1,7 @@
 [
   { // Highwayman (5)
     "ids": [ 518, 519 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.Highwayman",
     //Combat Info
     "hitpoints": 13,
     "aggressive_level": 10,
