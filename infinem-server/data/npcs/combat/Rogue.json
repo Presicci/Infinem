@@ -1,6 +1,6 @@
 [
   { // Rogue (15)
-    "ids": [ 518 ],
+    "ids": [ 526 ],
     "handler": "",
     //Combat Info
     "hitpoints": 17,
