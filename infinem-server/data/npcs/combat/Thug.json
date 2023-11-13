@@ -1,6 +1,6 @@
 [
   { // Thug (10)
-    "ids": [ 517 ],
+    "ids": [ 525 ],
     "handler": "",
     //Combat Info
     "hitpoints": 18,
