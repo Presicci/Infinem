@@ -38,7 +38,7 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": 422,
+    "attack_animation": 401,
     "defend_animation": 424,
     "death_animation": 836
   }
