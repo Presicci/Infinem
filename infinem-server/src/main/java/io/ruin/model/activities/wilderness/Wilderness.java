@@ -276,6 +276,7 @@ public class Wilderness {
         setLevels(new Bounds(2944, 3525, 3391, 4351, -1), y -> ((y - 3520) / 8) + 1); //main
         setLevels(new Bounds(3008, 10112, 3071, 10175, -1), y -> ((y - 9920) / 8) - 1); //gwd
         setLevels(new Bounds(2944, 9920, 3391, 10879, -1), y -> ((y - 9920) / 8) + 1); //idk
+        setLevels(new Bounds(3328, 10048, 3455, 10175, -1), y -> ((y - 9920) / 8) + 1); // Wilderness slayer cave
 
         //Unset certain areas
         setLevels(new Bounds(2941, 3676, 2947, 3681, -1), 0); //trollheim shortcut
