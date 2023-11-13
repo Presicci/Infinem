@@ -1,6 +1,6 @@
 [
   { // Necromancer (26)
-    "ids": [ 525 ],
+    "ids": [ 1025 ],
     "handler": "",
     //Combat Info
     "hitpoints": 40,
