@@ -1,6 +1,6 @@
 [
   { // Guard Bandit (22)
-    "ids": [ 527, 526, 6605 ],
+    "ids": [ 1027 ],
     "handler": "",
     //Combat Info
     "hitpoints": 27,
