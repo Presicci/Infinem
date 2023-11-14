@@ -1,6 +1,6 @@
 [
   {
-    "ids": [ 2514, 2515, 2516 ],
+    "ids": [ 6608 ],
     "guaranteed": [
       { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
@@ -48,25 +48,24 @@
       },
       {
         "name": "Coins",
-        "weight": 192,
+        "weight": 40,
         "items": [
-          { "id": 995, "min": 8, "max": 8, "weight": 33000 },   //Coins
           { "id": 995, "min": 5, "max": 204, "weight": 10000 }   //Coins
         ]
       },
       {
         "name": "Other",
-        "weight": 40,
+        "weight": 140,
         "items": [
+          { "id": 11940, "min": 60, "max": 60, "weight": 33000 },   //Dark fishing bait
           { "id": 365, "min": 1, "max": 1, "weight": 2000 },   //Bass
           { "id": 187, "min": 1, "max": 1, "weight": 2000 },   //Weapon poison
-          { "id": 9008, "min": 1, "max": 1, "weight": 3900 },   //Skull left half
           { "id": 7082, "min": 1, "max": 1, "weight": 1000 }   //Fried mushrooms
         ]
       },
       {
         "name": "Tertiary",
-        "weight": 3,
+        "weight": 2,
         "items": [
           { "id": 2722, "min": 1, "max": 1, "weight": 195 }   //Clue scroll (hard)
         ]
