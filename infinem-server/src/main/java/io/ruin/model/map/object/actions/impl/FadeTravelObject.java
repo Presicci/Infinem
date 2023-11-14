@@ -9,8 +9,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
-    //HAUNTED_MINE_ENTRANCE(4913, new Position(3440, 3232), new Position(), 2796),
-    //HAUNTED_MINE_EXIT(1, new Position(1, 1), new Position(3441, 3232), 2796),
+    HAUNTED_MINE_ENTRANCE(4913, new Position(3440, 3232), new Position(3436, 9637, 0), 2796),
+    HAUNTED_MINE_EXIT(4920, new Position(3437, 9637), new Position(3441, 3232), 2796),
     TARNS_LAIR_ENTRANCE(20822, new Position(3424, 9661), new Position(3166, 4547, 0)),
     TARNS_LAIR_EXIT(20482, new Position(3166, 4546), new Position(3424, 9660, 0)),
     TRAIN_STATION_DORGESH_KAAN_ENTRANCE(23052, new Position(2695, 5277, 1), new Position(2488, 5536, 0)),
