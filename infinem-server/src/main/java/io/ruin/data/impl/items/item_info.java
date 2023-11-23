@@ -128,7 +128,7 @@ public class item_info extends DataFile {
 
     private void loadMisc(ItemDef def) {
         def.dropOption = def.getOption("drop", "release");
-        def.equipOption = def.getOption("wield", "equip", "wear", "ride", "hold");
+        def.equipOption = def.getOption("wield", "equip", "wear", "ride", "hold", "chill");
         def.pickupOption = def.getGroundOption("take", "pickup");
         if(def.value > 0) {
             def.highAlchValue = (def.value * 3) / 5;
