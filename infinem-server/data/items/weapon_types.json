@@ -2775,5 +2775,40 @@
       2064,
       824
     ]
+  },
+  "HAND_FAN": {
+    "config": 2,
+    "maxDistance": 1,
+    "attackTicks": 4,
+    "attackAnimation": 401,
+    "defendAnimation": 424,
+    "equipSound": 2241,
+    "attackSound": 2524,
+    "attackSets": [
+      {
+        "child": 3,
+        "type": "ACCURATE",
+        "style": "CRUSH"
+      },
+      {
+        "child": 7,
+        "type": "AGGRESSIVE",
+        "style": "CRUSH"
+      },
+      {
+        "child": 15,
+        "type": "DEFENSIVE",
+        "style": "CRUSH"
+      }
+    ],
+    "renderAnimations": [
+      6297,
+      1209,
+      7629,
+      7630,
+      7631,
+      7632,
+      7633
+    ]
   }
 }

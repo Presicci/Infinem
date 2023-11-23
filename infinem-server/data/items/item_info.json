@@ -95529,9 +95529,16 @@
   { #Hand fan
     "id": 21354,
     "tradeable": false,
-    "examine": "Hand fan - Examine not set.",
-    "weight": 0.0,
-	"protect_value": 0
+    "examine": "I'm not a huge fan.",
+    "weight": 0.02,
+	"protect_value": 0,
+	"equip_slot": 3,
+	"weapon_type": "HAND_FAN",
+	"stab_attack_bonus": -100,
+    "slash_attack_bonus": -100,
+    "crush_attack_bonus": -50,
+    "melee_strength_bonus": -10,
+	"destroy": "You can get a replacement from Diango."
   },
   { #Minnow
     "id": 21356,
