@@ -79326,7 +79326,8 @@
     "weight": 1.0,
 	"protect_value": 0,
     "equip_slot": 3,
-    "weapon_type": "RPG"
+    "weapon_type": "RPG",
+    "two_handed": true
   },
   { #Air rune pack
     "id": 12728,
