@@ -82771,31 +82771,35 @@
   },
   { #Tiger toy
     "id": 13215,
-    "tradeable": true,
-    "examine": "Use it on a banker or bankbooth to exchange it for 1,000 blood money per token.",
-    "weight": 0.0,
-	"protect_value": 0
+    "tradeable": false,
+    "examine": "A tiger toy.",
+    "weight": 0.05,
+	"protect_value": 0,
+	"destroy": "You can get another from Diango."
   },
   { #Lion toy
     "id": 13216,
     "tradeable": false,
-    "examine": "Some stone.",
-    "weight": 0.0,
-	"protect_value": 0
+    "examine": "A lion toy.",
+    "weight": 0.05,
+	"protect_value": 0,
+	"destroy": "You can get another from Diango."
   },
   { #Snow leopard toy
     "id": 13217,
     "tradeable": false,
-    "examine": "[ph]",
-    "weight": 0.0,
-	"protect_value": 0
+    "examine": "A snow leopard toy.",
+    "weight": 0.05,
+	"protect_value": 0,
+	"destroy": "You can get another from Diango."
   },
   { #Amur leopard toy
     "id": 13218,
     "tradeable": false,
-    "examine": "Amur leopard toy - Examine not set.",
-    "weight": 0.0,
-	"protect_value": 0
+    "examine": "An amur leopard toy.",
+    "weight": 0.05,
+	"protect_value": 0,
+	"destroy": "You can get another from Diango."
   },
   { #Null
     "id": 13219,
