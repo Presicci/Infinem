@@ -17,6 +17,7 @@ public class Web {
 
     public static void slashWeb(Player player, GameObject web) {
         int sharpTier = sharpItemChance(player);
+        if (sharpTier == 0) return;
         player.startEvent(event -> {
             player.animate(sharpTier == 1 ? 911 : player.getCombat().weaponType.attackAnimation);
             if (sharpTier == 3 || Random.rollDie(2, 1)) {
