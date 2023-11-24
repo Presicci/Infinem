@@ -1,0 +1,9 @@
+Wizard Distentor: Welcome to the Magicians' Guild!
+Player: Hello there.
+Wizard Distentor: What can I do for you?
+<Nothing thanks, I'm just looking around.
+Player: Nothing thanks, I'm just looking around.
+Wizard Distentor: That's fine with me.
+><Can you teleport me to the Rune Essence?
+Player: Can you teleport me to the Rune Essence?
+ESSENCE_MINE:
