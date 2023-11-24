@@ -1,15 +1,18 @@
 package io.ruin.model.item.containers;
 
-import io.ruin.model.inter.Interface;
-import io.ruin.model.inter.InterfaceHandler;
-import io.ruin.model.inter.InterfaceType;
+import io.ruin.cache.InventoryDef;
+import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.*;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
 import io.ruin.model.map.object.actions.ObjectAction;
+import lombok.val;
+import org.apache.commons.lang3.math.NumberUtils;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 
 /**
@@ -141,8 +144,14 @@ public class SeedVault extends ItemContainer {
         player.openInterface(InterfaceType.MAIN, Interface.SEED_VAULT);
         player.openInterface(InterfaceType.INVENTORY, Interface.SEED_VAULT_INVENTORY);
         player.getPacketSender().sendItems(Interface.SEED_VAULT, 15, 626, this.items);
-        player.getPacketSender().sendAccessMask(Interface.SEED_VAULT, 15, 0, 90, 1312510);
-        player.getPacketSender().sendAccessMask(Interface.SEED_VAULT_INVENTORY, 1, 0, 27, 2046);
+        player.getPacketSender().sendAccessMask(Interface.SEED_VAULT, 15, 0, 90,
+                AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3, AccessMasks.ClickOp4, AccessMasks.ClickOp5,
+                AccessMasks.ClickOp6, AccessMasks.ClickOp7, AccessMasks.ClickOp8, AccessMasks.ClickOp9, AccessMasks.ClickOp10,
+                AccessMasks.DragDepth2, AccessMasks.DragTargetable);
+        player.getPacketSender().sendAccessMask(Interface.SEED_VAULT_INVENTORY, 1, 0, 27,
+                AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3, AccessMasks.ClickOp4, AccessMasks.ClickOp5,
+                AccessMasks.ClickOp6, AccessMasks.ClickOp7, AccessMasks.ClickOp8, AccessMasks.ClickOp9, AccessMasks.ClickOp10,
+                AccessMasks.DragDepth1, AccessMasks.DragTargetable);
     }
 
     public void deposit(Item item, int amount) {
@@ -192,32 +201,32 @@ public class SeedVault extends ItemContainer {
         }
     }
 
-    public void favorite(int slot) {
+    public boolean favorite(int slot) {
         // Remove from favorites
         if (Config.SEED_VAULT_FAVORITE_1.get(player) == slot) {
             Config.SEED_VAULT_FAVORITE_1.set(player, 255);
-            return;
+            return true;
         } else if (Config.SEED_VAULT_FAVORITE_2.get(player) == slot) {
             Config.SEED_VAULT_FAVORITE_2.set(player, 255);
-            return;
+            return true;
         } else if (Config.SEED_VAULT_FAVORITE_3.get(player) == slot) {
             Config.SEED_VAULT_FAVORITE_3.set(player, 255);
-            return;
+            return true;
         } else if (Config.SEED_VAULT_FAVORITE_4.get(player) == slot) {
             Config.SEED_VAULT_FAVORITE_4.set(player, 255);
-            return;
+            return true;
         } else if (Config.SEED_VAULT_FAVORITE_5.get(player) == slot) {
             Config.SEED_VAULT_FAVORITE_5.set(player, 255);
-            return;
+            return true;
         } else if (Config.SEED_VAULT_FAVORITE_6.get(player) == slot) {
             Config.SEED_VAULT_FAVORITE_6.set(player, 255);
-            return;
+            return true;
         } else if (Config.SEED_VAULT_FAVORITE_7.get(player) == slot) {
             Config.SEED_VAULT_FAVORITE_7.set(player, 255);
-            return;
+            return true;
         } else if (Config.SEED_VAULT_FAVORITE_8.get(player) == slot) {
             Config.SEED_VAULT_FAVORITE_8.set(player, 255);
-            return;
+            return true;
         }
         // Add to favorites
         if (Config.SEED_VAULT_FAVORITE_1.get(player) == 255) {
@@ -238,7 +247,30 @@ public class SeedVault extends ItemContainer {
             Config.SEED_VAULT_FAVORITE_8.set(player, slot);
         } else {
             player.sendMessage("Your favorite slots are full.  Unfavorite something to make space.");
+            return false;
         }
+        return true;
+    }
+
+    private boolean isFavorite(int slot) {
+        if (Config.SEED_VAULT_FAVORITE_1.get(player) == slot) {
+            return true;
+        } else if (Config.SEED_VAULT_FAVORITE_2.get(player) == slot) {
+            return true;
+        } else if (Config.SEED_VAULT_FAVORITE_3.get(player) == slot) {
+            return true;
+        } else if (Config.SEED_VAULT_FAVORITE_4.get(player) == slot) {
+            return true;
+        } else if (Config.SEED_VAULT_FAVORITE_5.get(player) == slot) {
+            return true;
+        } else if (Config.SEED_VAULT_FAVORITE_6.get(player) == slot) {
+            return true;
+        } else if (Config.SEED_VAULT_FAVORITE_7.get(player) == slot) {
+            return true;
+        } else if (Config.SEED_VAULT_FAVORITE_8.get(player) == slot) {
+            return true;
+        }
+        return false;
     }
 
     static {
@@ -249,28 +281,53 @@ public class SeedVault extends ItemContainer {
             h.actions[22] = (DefaultAction) (p, option, slot, itemId) -> p.integerInput("Enter amount:", amt -> Config.SEED_VAULT_QUANTITY.set(p, amt));
             h.actions[23] = (DefaultAction) (p, option, slot, itemId) -> Config.SEED_VAULT_QUANTITY.set(p, Integer.MAX_VALUE);
 
-            h.actions[15] = (DefaultAction) (player, option, slot, itemId) -> {
-                Item item = player.getSeedVault().get(slot, itemId);
-                SeedVault vault = player.getSeedVault();
-                if (item == null)
-                    return;
-                if (option == 1)
-                    vault.withdraw(item, Config.SEED_VAULT_QUANTITY.get(player));
-                else if (option == 2)
-                    vault.withdraw(item, 1);
-                else if (option == 3)
-                    vault.withdraw(item, 5);
-                else if (option == 4)
-                    vault.withdraw(item, 10);
-                else if (option == 5)
-                    player.integerInput("Enter amount:", amt -> vault.withdraw(item, amt));
-                else if (option == 6)
-                    vault.withdraw(item, Integer.MAX_VALUE);
-                else if (option == 7)
-                    vault.favorite(slot);
-                else
-                    item.examine(player);
+            h.actions[15] = new InterfaceAction() {
+                @Override
+                public void handleClick(Player player, int option, int slot, int itemId) {
+                    Item item = player.getSeedVault().get(slot, itemId);
+                    SeedVault vault = player.getSeedVault();
+                    if (item == null)
+                        return;
+                    if (option == 1)
+                        vault.withdraw(item, Config.SEED_VAULT_QUANTITY.get(player));
+                    else if (option == 2)
+                        vault.withdraw(item, 1);
+                    else if (option == 3)
+                        vault.withdraw(item, 5);
+                    else if (option == 4)
+                        vault.withdraw(item, 10);
+                    else if (option == 5)
+                        player.integerInput("Enter amount:", amt -> vault.withdraw(item, amt));
+                    else if (option == 6)
+                        vault.withdraw(item, Integer.MAX_VALUE);
+                    else if (option == 7)
+                        vault.favorite(slot);
+                    else
+                        item.examine(player);
+                }
+
+                @Override
+                public void handleDrag(Player player, int fromSlot, int fromItemId, int toInterfaceId, int toChildId, int toSlot, int toItemId) {
+                    Item fromItem = player.getSeedVault().getSafe(fromSlot);
+                    Item toItem = player.getSeedVault().getSafe(toSlot);
+                    SeedVault vault = player.getSeedVault();
+                    // Favorite slot
+                    if (toSlot == InventoryDef.getSize(626)) {
+                        vault.favorite(fromSlot);
+                        vault.send(player);
+                        return;
+                    }
+                    if (fromItem == null || toItem == null) return;
+                    if (!isSameCategory(fromItem, toItem) && !(vault.isFavorite(fromSlot) && vault.isFavorite(toSlot))) {
+                        player.sendMessage("You can only swap seeds and saplings within their category.");
+                        return;
+                    }
+                    vault.set(fromSlot, toItem);
+                    vault.set(toSlot, fromItem);
+                    vault.send(player);
+                }
             };
+
             h.actions[25] = (DefaultAction) (p, option, slot, itemId) -> p.getSeedVault().depositAll();
         });
 
@@ -298,5 +355,23 @@ public class SeedVault extends ItemContainer {
         });
 
         ObjectAction.register(26206, "open", (p, o) -> p.getSeedVault().sendVault());
+    }
+
+    private static boolean isSameCategory(Item from, Item to) {
+        return getCategory(from) == getCategory(to);
+    }
+
+    private static int getCategory(Item item) {
+        String catString = getCategoryString(item).orElse("NAN");
+        if (!NumberUtils.isDigits(catString)) return -1;
+        return Integer.parseInt(catString);
+    }
+
+    private static Optional<String> getCategoryString(Item item) {
+        val attributes = item.getDef().attributes;
+        if (attributes == null) return Optional.empty();
+        val category = attributes.get(709);
+        if (category == null) return Optional.empty();
+        return Optional.of(category.toString());
     }
 }
