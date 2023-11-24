@@ -10,6 +10,11 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    YANILLE_DUNGEON_NORTH_UP(16665, new Position(2569, 9522), new Position(2570, 3121, 0)),
+    YANILLE_DUNGEON_NORTH_DOWN(16664, new Position(2569, 3122), new Position(2570, 9525, 0)),
+    YANILLE_DUNGEON_SOUTH_UP(16665, new Position(2603, 9478), new Position(2606, 3079, 0)),
+    YANILLE_DUNGEON_SOUTH_DOWN(16664, new Position(2603, 3078), new Position(2602, 9479, 0)),
+
     // https://oldschool.runescape.wiki/w/Tarn%27s_Lair#/media/File:Tarn's_Lair_map.png
     TARNS_LAIR_A_UP(16132, new Position(3158, 4553), new Position(3158, 4557, 1)),
     TARNS_LAIR_A_DOWN(17098, new Position(3158, 4556, 1), new Position(3158, 4552, 0)),
