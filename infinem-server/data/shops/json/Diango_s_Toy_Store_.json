@@ -27,8 +27,26 @@
       "sell_price": 150
     },
     {
+      "itemId": 2526,
+      "stock": 5,
+      "buy_price": 50,
+      "sell_price": 150
+    },
+    {
       "itemId": 4613,
       "stock": 250,
+      "buy_price": -1,
+      "sell_price": 75
+    },
+    {
+      "itemId": 11705,
+      "stock": 5,
+      "buy_price": -1,
+      "sell_price": 75
+    },
+    {
+      "itemId": 11706,
+      "stock": 5,
       "buy_price": -1,
       "sell_price": 75
     },
