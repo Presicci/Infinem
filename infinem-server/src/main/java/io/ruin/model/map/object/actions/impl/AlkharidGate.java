@@ -17,5 +17,13 @@ public class AlkharidGate {
             DoubleDoor.passThroughLateral(player, obj, 2883, 2882, new Position(3268, 3228), new Position(3268, 3227));
             player.getTaskManager().doLookupByUUID(637, 1);
         }));
+        ObjectAction.register(2883, 3268, 3228, 0, "pay-toll(10gp)", ((player, obj) -> {
+            DoubleDoor.passThroughLateral(player, obj, 2883, 2882, new Position(3268, 3228), new Position(3268, 3227));
+            player.getTaskManager().doLookupByUUID(637, 1);
+        }));
+        ObjectAction.register(2882, 3268, 3227, 0, "pay-toll(10gp)", ((player, obj) -> {
+            DoubleDoor.passThroughLateral(player, obj, 2883, 2882, new Position(3268, 3228), new Position(3268, 3227));
+            player.getTaskManager().doLookupByUUID(637, 1);
+        }));
     }
 }
