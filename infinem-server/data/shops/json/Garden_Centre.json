@@ -2,8 +2,8 @@
   "name": "Garden Centre",
   "currency": "COINS",
   "npcs": [
-    5423,
-    8516
+    3102,
+    3103
   ],
   "sellMultiplier": 1000,
   "buyMultiplier": 400,
