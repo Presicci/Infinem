@@ -21,6 +21,7 @@ public class MagicGuild {
     }
 
     static {
+        // Entrances
         ObjectAction.register(1732, 2584, 3088, 0, "open", (player, obj) -> {
             if (cantEnter(player)) return;
             DoubleDoor.passThroughLateral(player, obj, 1732, 1733, new Position(2584, 3088), new Position(2584, 3087), true);
@@ -37,5 +38,8 @@ public class MagicGuild {
             if (cantEnter(player)) return;
             DoubleDoor.passThroughLateral(player, obj, 1733, 1732, new Position(2597, 3088), new Position(2597, 3087), false);
         });
+        // Basement gates
+        ObjectAction.register(2155, 2592, 9490, 0, "open", (player, obj) -> player.dialogue(new NPCDialogue(3246, "You can't attack the Zombies in the room, my Zombies are for magic target practice only and should be attacked from the other side of the fence.")));
+        ObjectAction.register(2154, 2593, 9490, 0, "open", (player, obj) -> player.dialogue(new NPCDialogue(3246, "You can't attack the Zombies in the room, my Zombies are for magic target practice only and should be attacked from the other side of the fence.")));
     }
 }
