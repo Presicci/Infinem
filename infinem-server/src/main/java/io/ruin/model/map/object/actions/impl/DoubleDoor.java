@@ -32,17 +32,30 @@ public class DoubleDoor {
      * @param doorBottomPosition Position of the bottom door.
      */
     public static void passThroughLateral(Player player, GameObject obj, int doorTopId, int doorBottomId, Position doorTopPosition, Position doorBottomPosition) {
-        Direction dir = player.getPosition().getX() == obj.getPosition().getX() ? Direction.WEST : Direction.EAST;
+        passThroughLateral(player, obj, doorTopId, doorBottomId, doorTopPosition, doorBottomPosition, false);
+    }
+
+    /**
+     * Passes the player through a set of double doors going east to west/west to east.
+     * @param player The player moving through the door.
+     * @param obj The door game object.
+     * @param doorTopId Object ID for the top door.
+     * @param doorBottomId Object ID for the bottom door.
+     * @param doorTopPosition Position of the top door.
+     * @param doorBottomPosition Position of the bottom door.
+     */
+    public static void passThroughLateral(Player player, GameObject obj, int doorTopId, int doorBottomId, Position doorTopPosition, Position doorBottomPosition, boolean openEast) {
+        Direction dir = player.getPosition().getX() == (openEast ? obj.getPosition().getX() + 1 : obj.getPosition().getX()) ? Direction.WEST : Direction.EAST;
         World.startEvent(e -> {
             e.delay(1);
             // Temp objects used for the animation
-            GameObject temp = new GameObject(doorTopId, doorTopPosition.getX() - 1, doorTopPosition.getY(), doorTopPosition.getZ(), 0, 1);
+            GameObject temp = new GameObject(doorTopId, doorTopPosition.getX() + (openEast ? 1 : -1), doorTopPosition.getY(), doorTopPosition.getZ(), 0, 1);
             GameObject tempRemove = new GameObject(-1, doorTopPosition, 0, 0);
-            GameObject temp2 = new GameObject(doorBottomId, doorBottomPosition.getX() - 1, doorBottomPosition.getY(), doorBottomPosition.getZ(), 0, 3);
+            GameObject temp2 = new GameObject(doorBottomId, doorBottomPosition.getX() + (openEast ? 1 : -1), doorBottomPosition.getY(), doorBottomPosition.getZ(), 0, 3);
             GameObject tempRemove2 = new GameObject(-1, doorBottomPosition, 0, 0);
             // Naturally spawns for the gates, for respawning after the player walks through
-            GameObject north = new GameObject(doorTopId, doorTopPosition, 0, 0);
-            GameObject south = new GameObject(doorBottomId, doorBottomPosition, 0, 0);
+            GameObject north = new GameObject(doorTopId, doorTopPosition, 0, openEast ? 2 : 0);
+            GameObject south = new GameObject(doorBottomId, doorBottomPosition, 0, openEast ? 2 : 0);
             // Spawn temp objects
             tempRemove.spawn();
             temp.spawn();
