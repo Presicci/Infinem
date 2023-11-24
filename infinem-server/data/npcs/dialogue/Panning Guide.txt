@@ -1,0 +1,19 @@
+Player: Hello, who are you?
+Panning guide: Hello, I am the panning guide. I'm here to teach you how to pan for gold.
+Player: Excellent!
+Panning guide: Let me explain how panning works. First you need a panning tray. Use the tray in the panning points in the water and then search your tray.
+Panning guide: If you find any gold, take it to the archaeological expert up in the museum storage facility. He will calculate its value for you.
+<Can you tell me more about the tools an archaeologist uses?
+Player: Can you tell me more about the tools an archaeologist uses?
+Panning guide: Of course! Let's see now... Rock picks are for splitting rocks or scraping away soil; you can get one from a cupboard in the Education Centre.
+Player: What about sample jars?
+Panning guide: I think you'll find them scattered about pretty much everywhere, but I know you can get one from a cupboard somewhere in the Education Centre, just like the rock pick!
+Player: Okay, what about a specimen brush?
+Panning guide: We have a bit of a shortage of those at the moment. You could try borrowing one from a workman on the site... but I don't think they'd give it willingly.
+Player: Sounds like I'll need to be sneaky to get one of those, then... Okay - trowel?
+Panning guide: Ahh... that you must earn by passing your exams! The examiner holds those.
+Player: Anything else?
+Panning guide: If you need something identified or are not sure about something, give it to Terry; he's the archaeological expert in the next room.
+Player: Ahh, ok thanks.
+><Thank you!
+Player: Thank you!
