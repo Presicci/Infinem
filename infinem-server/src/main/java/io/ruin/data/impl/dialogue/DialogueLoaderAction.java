@@ -12,6 +12,7 @@ import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Items;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.skills.mining.EssenceMine;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
@@ -19,6 +20,28 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    ESSENCE_MINE(player -> {
+        NPC npc = player.getDialogueNPC();
+        String npcName;
+        switch (npc.getId()) {
+            default:
+                npcName = "AUBURY";
+                break;
+            case 5034:
+                npcName = "SEDRIDOR";
+                break;
+            case 3248:
+                npcName = "DISTENTOR";
+                break;
+            case 5314:
+                npcName = "CROMPERTY";
+                break;
+            case 4913:
+                npcName = "BRIMSTAIL";
+                break;
+        }
+        EssenceMine.enterMine(player, npc, npcName);
+    }),
     CHARTER((CharterShips::openInterface)),
     PET_ROCK((player -> {
         if (!player.getInventory().hasFreeSlots(1)) {

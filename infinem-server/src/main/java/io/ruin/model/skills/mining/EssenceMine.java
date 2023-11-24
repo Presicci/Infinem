@@ -59,7 +59,7 @@ public class EssenceMine {
         });
     }
 
-    private static void enterMine(Player player, NPC npc, String npcName) {
+    public static void enterMine(Player player, NPC npc, String npcName) {
         player.getMovement().startTeleport(-1, event -> {
             npc.faceTemp(player);
             npc.forceText("Senventior Disthine Molenko!");
