@@ -91,7 +91,9 @@ public class Stairs {
         registerStair(22933, 3, 0);
         registerStair(22932, 3, 0);
         registerStair(22931, 3, 2);
-
+        // Wizard's guild
+        registerStair(15648, 4, 0);
+        registerStair(15645, 4, 2);
 
     }
 }
