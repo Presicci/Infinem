@@ -63,6 +63,7 @@ public class EssenceMine {
         player.getMovement().startTeleport(-1, event -> {
             npc.faceTemp(player);
             npc.forceText("Senventior Disthine Molenko!");
+            npc.animate(1163);
             npc.graphics(108, 10, 0);
             PROJECTILE.send(npc.getPosition(), player);
             event.delay(2);
