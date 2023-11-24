@@ -2815,6 +2815,10 @@ public class Administrator {
                 player.getCombat().restoreSpecial(100);
                 return true;
             }
+            case "endfc": {
+                player.getPacketSender().sendClientScript(2221, "i", 1);
+                return true;
+            }
         }
         return false;
     }
