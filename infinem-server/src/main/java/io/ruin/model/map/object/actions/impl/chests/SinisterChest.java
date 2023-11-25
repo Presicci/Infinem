@@ -56,6 +56,7 @@ public class SinisterChest {
                     if (item.getId() == -1) continue;
                     player.getInventory().addOrDrop(item.getId(), item.getAmount());
                 }
+                player.getTaskManager().doLookupByUUID(926);    // Open the Sinister Chest
                 event.delay(1);
                 player.unlock();
             });
