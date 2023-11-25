@@ -9,6 +9,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
+    WIZARDS_GUILD_PORTAL_TO_WIZARDS_TOWER(2156, new Position(2596, 3087, 2), new Position(3109, 3165, 0)),
+    WIZARDS_GUILD_PORTAL_TO_DARK_WIZARDS_TOWER(2157, new Position(2590, 3081, 2), new Position(2907, 3337, 0)),
+    WIZARDS_GUILD_PORTAL_TO_SORCERORS_TOWER(2158, new Position(2585, 3087, 2), new Position(2702, 3403, 0)),
     HAUNTED_MINE_ENTRANCE(4913, new Position(3440, 3232), new Position(3436, 9637, 0), 2796),
     HAUNTED_MINE_EXIT(4920, new Position(3437, 9637), new Position(3441, 3232), 2796),
     TARNS_LAIR_ENTRANCE(20822, new Position(3424, 9661), new Position(3166, 4547, 0)),
