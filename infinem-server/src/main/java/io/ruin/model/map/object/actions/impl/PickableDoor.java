@@ -1,6 +1,7 @@
 package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.item.Items;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -18,10 +19,11 @@ public enum PickableDoor {
             if (!player.getStats().check(StatType.Thieving, levelRequirement, "pick this")) return;
             player.startEvent(e -> {
                 while (true) {
+                    boolean hasLockpick = player.getInventory().hasId(Items.LOCKPICK);
                     player.animate(537);
                     player.sendFilteredMessage("You attempt to pick the lock on the door.");
                     e.delay(5);
-                    if (Random.rollPercent(50)) {
+                    if (Random.rollPercent(hasLockpick ? 75 : 50)) {
                         player.sendFilteredMessage("You pick the lock on the door.");
                         player.getStats().addXp(StatType.Thieving, experience, true);
                         Direction walkDirection = vertical ? player.getAbsY() < obj.y ? Direction.NORTH : Direction.SOUTH : player.getAbsX() < obj.x ? Direction.EAST : Direction.WEST;
