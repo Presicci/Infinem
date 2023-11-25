@@ -10,13 +10,13 @@
   "items": [
     {
       "itemId": 1917,
-      "stock": 2147483647,
+      "stock": 159,
       "buy_price": -1,
       "sell_price": 2
     },
     {
       "itemId": 2003,
-      "stock": 2147483647,
+      "stock": 150,
       "buy_price": -1,
       "sell_price": 20
     }
