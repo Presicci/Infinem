@@ -24,6 +24,7 @@ public class Chronicle {
         }
         ModernTeleport.teleport(player, new Bounds(3199, 3353, 3202, 3357, 0));
         player.incrementNumericAttribute("CHRONICLE_CHARGES", -1);
+        player.getTaskManager().doLookupByUUID(929);    // Teleport Using the Chronicle
         player.sendMessage(Color.RED, chargeMessage(player));
     }
 
