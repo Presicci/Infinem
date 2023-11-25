@@ -30,6 +30,7 @@ public class TrainStation {
             player.getMovement().teleport(destination);
             player.getPacketSender().fadeIn();
             player.closeDialogue();
+            player.getTaskManager().doLookupByUUID(928);    // Ride a Train
             player.unlock();
         });
     }
