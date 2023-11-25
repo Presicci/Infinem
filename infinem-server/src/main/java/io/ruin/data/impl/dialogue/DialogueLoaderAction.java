@@ -6,9 +6,12 @@ import io.ruin.model.content.transportation.charterships.CharterShips;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
+import io.ruin.model.entity.npc.actions.Leon;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.*;
+import io.ruin.model.inter.dialogue.skill.SkillDialogue;
+import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Items;
 import io.ruin.model.map.object.GameObject;
@@ -20,6 +23,7 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    LEON_AMMO(Leon::craftAmmo),
     ESSENCE_MINE(player -> {
         NPC npc = player.getDialogueNPC();
         String npcName;
