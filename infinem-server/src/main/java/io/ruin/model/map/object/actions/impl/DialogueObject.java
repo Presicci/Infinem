@@ -2,6 +2,7 @@ package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.model.inter.dialogue.Dialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
+import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -10,6 +11,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/1/2023
  */
 public enum DialogueObject {
+    SITHIK_INTS(6887, new Position(2591, 3103, 1),
+            new NPCDialogue(883, "Leave me be, please.")),
     KALEEFS_BODY(20288, new Position(3239, 9243),
             new MessageDialogue("He's dead.")),
     LUMBRIDGE_COW_PEN_CRATES(358, new Position(3244, 3279),
