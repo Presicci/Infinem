@@ -43,7 +43,7 @@ public class CulinaromancersChest {
     static {
         ObjectAction.register(12308, 1, (player, obj) -> player.getBank().open());
         ObjectAction.register(12308, 3, (player, obj) -> CollectionBox.open(player));
-        ObjectAction.register(12308, 4, (player, obj) -> Shop.shops.get(0).open(player));
+        ObjectAction.register(12308, 4, (player, obj) -> StaticShop.CULINAROMANCERS_CHEST_FOOD.open(player));
         ObjectAction.register(12308, 5, (player, obj) -> {
             List<ShopItem> items = new ArrayList<>();
             items.addAll(gloves);   // TODO Unlock levels of this through something, maybe misthalin task points
