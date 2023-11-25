@@ -1,0 +1,16 @@
+{
+  "name": "Pelters' Veg stall",
+  "currency": "COINS",
+  "uuid": 1,
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2518,
+      "stock": 2000,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}

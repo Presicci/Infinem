@@ -5,7 +5,8 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public enum StaticShop {
-    CULINAROMANCERS_CHEST_FOOD(0);
+    CULINAROMANCERS_CHEST_FOOD(0),
+    PELTERS_VEG_STALL(1);
 
     private final int uuid;
 
