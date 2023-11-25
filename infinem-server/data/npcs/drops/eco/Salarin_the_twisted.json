@@ -49,8 +49,9 @@
       },
       {
         "name": "Other",
-        "weight": 23324,
+        "weight": 65000,
         "items": [
+          { "id": -1, "min": 1, "max": 1, "weight": 27000 },   //Nothing
           { "id": 167, "min": 1, "max": 1, "weight": 8590 },   //Super defence(1)
           { "id": 993, "min": 1, "max": 1, "weight": 7810 }   //Sinister key
         ]
