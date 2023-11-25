@@ -65,6 +65,10 @@ public enum Farmer {
     ALEXANDRA(8536, PatchData.FARMING_GUILD_REDWOOD),
     ALAN(8535, PatchData.FARMING_GUILD_NORTH, PatchData.FARMING_GUILD_SOUTH, "northern", "southern"),
 
+    SQUIRREL_1(7754, PatchData.FOSSIL_ISLAND_HARDWOOD2),
+    SQUIRREL_2(7755, PatchData.FOSSIL_ISLAND_HARDWOOD1),
+    SQUIRREL_3(7756, PatchData.FOSSIL_ISLAND_HARDWOOD),
+
     MERNIA(7758, PatchData.SEAWEED_PATCH1, PatchData.SEAWEED_PATCH2, "northern", "southern");
 
     Farmer(int npcId, PatchData patch1, PatchData patch2, String patchOneName, String patchTwoName) {
