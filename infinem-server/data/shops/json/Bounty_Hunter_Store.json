@@ -2,10 +2,8 @@
   "name": "Bounty Hunter Store",
   "currency": "BOUNTY",
   "npcs": [
-    315,
-    316,
-    7941,
-    7942
+    308,
+    7943
   ],
   "sellMultiplier": 0,
   "buyMultiplier": 0,
