@@ -115,6 +115,7 @@ public class DropViewerCustomEntries {
                             new LootItem(Items.VERACS_PLATESKIRT, 1, 1),
                             new LootItem(Items.VERACS_FLAIL, 1, 1)
                     )
-            )
+            ),
+            new DropViewerEntry("Sinister Chest", SinisterChest.LOOT_TABLE)
     };
 }
