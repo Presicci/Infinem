@@ -7,6 +7,8 @@ import io.ruin.model.map.Position;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
 
+import java.util.function.Consumer;
+
 public class ModernTeleport extends Spell {
 
     public static final ModernTeleport VARROCK_TELEPORT = new ModernTeleport(25, 35.0, new Bounds[] { new Bounds(3211, 3422, 3214, 3424, 0), new Bounds(3163, 3475, 3166, 3478, 0) }, Rune.LAW.toItem(1), Rune.AIR.toItem(3), Rune.FIRE.toItem(1));
@@ -90,6 +92,17 @@ public class ModernTeleport extends Spell {
             player.publicSound(200);
             e.delay(3);
             player.getMovement().teleport(x, y, z);
+        });
+    }
+
+    public static boolean teleport(Player player, int x, int y, int z, Consumer<Player> onComplete) {
+        return player.getMovement().startTeleport(e -> {
+            player.animate(714);
+            player.graphics(111, 92, 0);
+            player.publicSound(200);
+            e.delay(3);
+            player.getMovement().teleport(x, y, z);
+            onComplete.accept(player);
         });
     }
 
