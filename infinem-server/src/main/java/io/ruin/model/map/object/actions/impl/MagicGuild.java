@@ -13,6 +13,8 @@ import io.ruin.model.stat.StatType;
 public class MagicGuild {
 
     private static boolean cantEnter(Player player) {
+        // If the player is in the guild, let them out regardless
+        if (player.getAbsX() == 2596 || player.getAbsX() == 2585) return false;
         if (player.getStats().get(StatType.Magic).currentLevel < 66) {
             player.dialogue(new NPCDialogue(3248, "You need a magic level of 66. The magical energy in here is unsafe for those below that level."));
             return true;
