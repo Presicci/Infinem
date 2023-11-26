@@ -94,6 +94,7 @@ public class Stairs {
         // Wizard's guild
         registerStair(15648, 4, 0);
         registerStair(15645, 4, 2);
-
+        // Yanille wall
+        registerStair(15646, 4, 2);
     }
 }
