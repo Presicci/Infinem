@@ -11,7 +11,8 @@ import io.ruin.model.stat.StatType;
  * Created on 11/24/2023
  */
 public enum InstantMovementShortcut {
-    SALARIN_THE_TWISTED(23563, new Position(2616, 9572), new Position(2614, 9505, 0), 828, 67);
+    SALARIN_THE_TWISTED(23563, new Position(2616, 9572), new Position(2614, 9505, 0), 828, 67),
+    WATCHTOWER(20056, new Position(2548, 3119), new Position(2548, 3118, 1), 828, 18);
 
     private final int id;
     private final String option;
