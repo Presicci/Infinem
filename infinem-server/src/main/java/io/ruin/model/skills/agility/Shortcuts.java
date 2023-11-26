@@ -52,6 +52,22 @@ public class Shortcuts {
         // Gnome Stronghold Shortcut
         // Al Kharid mining pit cliffside scramble
         // (Grapple) Scale Yanille wall
+        ObjectAction.register(17047, 2556, 3075, 0, "grapple", (p, obj) -> Grappling.grapple(p, obj, 39, 21, 38, 4455, 760, 10, Position.of(2556, 3075, 0), Position.of(2556, 3074, 1)));
+        ObjectAction.register(17047, 2556, 3072, 0, "grapple", (p, obj) -> Grappling.grapple(p, obj, 39, 21, 38, 4455, 760, 10, Position.of(2556, 3072, 0), Position.of(2556, 3073, 1)));
+        ObjectAction.register(17048, 2556, 3072, 1, "jump", ((player, obj) -> {
+            player.startEvent(event -> {
+                player.animate(2586);
+                event.delay(1);
+                player.getMovement().teleport(2556, 3072, 0);
+            });
+        }));
+        ObjectAction.register(17048, 2556, 3075, 1, "jump", ((player, obj) -> {
+            player.startEvent(event -> {
+                player.animate(2586);
+                event.delay(1);
+                player.getMovement().teleport(2556, 3075, 0);
+            });
+        }));
         // Yanille Agility dungeon balance ledge
         // Kourend lake isle jump
         // Trollheim easy cliffside scramble
