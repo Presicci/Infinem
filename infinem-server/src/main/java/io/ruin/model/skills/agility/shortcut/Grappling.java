@@ -28,7 +28,7 @@ public class Grappling {
             player.sendMessage("You need a mithril grapple tipped bolt with a rope to do that.");
             return;
         }
-        if (!IntStream.of(CROSSBOWS).anyMatch(player.getEquipment()::hasId)) {
+        if (IntStream.of(CROSSBOWS).noneMatch(player.getEquipment()::hasId)) {
             player.sendMessage("You need a crossbow equipped to do that.");
             return;
         }
@@ -38,9 +38,7 @@ public class Grappling {
             player.animate(emoteId);
             player.graphics(gfxId, 100, 0);
             e.delay(delay);
-            player.getPacketSender().fadeOut();
             e.delay(3);
-            player.getPacketSender().fadeIn();
             player.getMovement().teleport(destination);
             player.unlock();
         });
