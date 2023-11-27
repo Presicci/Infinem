@@ -3,7 +3,8 @@
   "currency": "COINS",
   "npcs": [
     3206,
-    4582
+    4582,
+    8722
   ],
   "sellMultiplier": 1000,
   "buyMultiplier": 700,
