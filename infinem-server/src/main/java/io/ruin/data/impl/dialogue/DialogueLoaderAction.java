@@ -245,6 +245,7 @@ public enum DialogueLoaderAction {
                 return;
             }
             npcCombat.setTarget(player);
+            npcCombat.faceTarget();
             //npc.attackTargetPlayer();
         }
     }),
