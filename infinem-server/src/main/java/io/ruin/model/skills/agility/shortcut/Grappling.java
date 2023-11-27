@@ -2,6 +2,7 @@ package io.ruin.model.skills.agility.shortcut;
 
 import io.ruin.cache.AnimDef;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.Items;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.stat.StatType;
@@ -15,7 +16,9 @@ import java.util.stream.IntStream;
  */
 public class Grappling {
 
-    protected static final int[] CROSSBOWS = { 767, 837, 9174, 9176, 9177, 9179, 9181, 9183, 9185, 11165, 11785, 21012, 21902, 23601, 23611 };
+    protected static final int[] CROSSBOWS = { Items.PHOENIX_CROSSBOW, Items.CROSSBOW, Items.BRONZE_CROSSBOW,
+            Items.BLURITE_CROSSBOW, Items.IRON_CROSSBOW, Items.STEEL_CROSSBOW, Items.MITH_CROSSBOW, Items.ADAMANT_CROSSBOW,
+            Items.RUNE_CROSSBOW, Items.PHOENIX_CROSSBOW_2, Items.ARMADYL_CROSSBOW, Items.DRAGON_HUNTER_CROSSBOW, Items.DRAGON_CROSSBOW };
     private static final int GRAPPLING_HOOK = 9419;
 
     public static void grapple(Player player, GameObject object, int agilityLevel, int rangedLevel, int strengthLevel, int emoteId, int gfxId, int delay, Position position, Position destination) {
