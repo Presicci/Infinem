@@ -1,0 +1,102 @@
+{
+  "name": "Ali's Discount Wares - Basic Stock",
+  "currency": "COINS",
+  "npcs": [
+    3533
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    { // Pot
+      "itemId": 1931,
+      "stock": 75,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Jug
+      "itemId": 1935,
+      "stock": 75,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Empty jug pack
+      "itemId": 20742,
+      "stock": 50,
+      "buy_price": 77,
+      "sell_price": 140
+    },
+    { // Waterskin (3)
+      "itemId": 1825,
+      "stock": 100,
+      "buy_price": 14,
+      "sell_price": 27
+    },
+    { // Desert Shirt
+      "itemId": 1833,
+      "stock": 10,
+      "buy_price": 22,
+      "sell_price": 40
+    },
+    { // Desert Boots
+      "itemId": 1837,
+      "stock": 10,
+      "buy_price": 11,
+      "sell_price": 20
+    },
+    { // Bucket
+      "itemId": 1925,
+      "stock": 75,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    { // Empty bucket pack
+      "itemId": 22660,
+      "stock": 50,
+      "buy_price": 275,
+      "sell_price": 500
+    },
+    { // Fake beard
+      "itemId": 4593,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Kharidian headpiece
+      "itemId": 4591,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Papyrus
+      "itemId": 970,
+      "stock": 50,
+      "buy_price": 5,
+      "sell_price": 10
+    },
+    { // Papyrus
+      "itemId": 946,
+      "stock": 25,
+      "buy_price": 3,
+      "sell_price": 6
+    },
+    { // Tinderbox
+      "itemId": 590,
+      "stock": 25,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Bronze pickaxe
+      "itemId": 1265,
+      "stock": 25,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    { // Raw Chicken
+      "itemId": 2138,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}

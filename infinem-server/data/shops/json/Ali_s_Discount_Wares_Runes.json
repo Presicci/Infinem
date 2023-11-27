@@ -1,0 +1,126 @@
+{
+  "name": "Ali's Discount Wares - Runes",
+  "currency": "COINS",
+  "npcs": [
+    3533
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    { // Water rune
+      "itemId": 555,
+      "stock": 10000,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    { // Fire rune
+      "itemId": 554,
+      "stock": 10000,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    { // Air rune
+      "itemId": 556,
+      "stock": 10000,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    { // Earth rune
+      "itemId": 557,
+      "stock": 10000,
+      "buy_price": 2,
+      "sell_price": 5
+    },
+    { // Nature rune
+      "itemId": 561,
+      "stock": 1000,
+      "buy_price": 90,
+      "sell_price": 225
+    },
+    { // Law rune
+      "itemId": 563,
+      "stock": 1000,
+      "buy_price": 120,
+      "sell_price": 300
+    },
+    { // Chaos rune
+      "itemId": 562,
+      "stock": 1000,
+      "buy_price": 45,
+      "sell_price": 112
+    },
+    { // Death rune
+      "itemId": 560,
+      "stock": 1000,
+      "buy_price": 90,
+      "sell_price": 225
+    },
+    { // Mind rune
+      "itemId": 558,
+      "stock": 5000,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    { // Body rune
+      "itemId": 559,
+      "stock": 5000,
+      "buy_price": 1,
+      "sell_price": 3
+    },
+    { // Blood rune
+      "itemId": 565,
+      "stock": 1000,
+      "buy_price": 200,
+      "sell_price": 500
+    },
+    { // Cosmic rune
+      "itemId": 564,
+      "stock": 1000,
+      "buy_price": 25,
+      "sell_price": 62
+    },
+    { // Soul rune
+      "itemId": 566,
+      "stock": 1000,
+      "buy_price": 150,
+      "sell_price": 375
+    },
+    { // Fire rune pack
+      "itemId": 12734,
+      "stock": 250,
+      "buy_price": 215,
+      "sell_price": 559
+    },
+    { // Water rune pack
+      "itemId": 12730,
+      "stock": 250,
+      "buy_price": 215,
+      "sell_price": 559
+    },
+    { // Air rune pack
+      "itemId": 12728,
+      "stock": 250,
+      "buy_price": 215,
+      "sell_price": 559
+    },
+    { // Earth rune pack
+      "itemId": 12732,
+      "stock": 250,
+      "buy_price": 215,
+      "sell_price": 559
+    },
+    { // Mind rune pack
+      "itemId": 12736,
+      "stock": 250,
+      "buy_price": 165,
+      "sell_price": 412
+    },
+    { // Chaos rune pack
+      "itemId": 12738,
+      "stock": 250,
+      "buy_price": 4975,
+      "sell_price": 12437
+    }
+  ]
+}

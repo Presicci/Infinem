@@ -1,0 +1,90 @@
+{
+  "name": "Ali's Discount Wares - Clothing",
+  "currency": "COINS",
+  "npcs": [
+    3533
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    { // Fez
+      "itemId": 6382,
+      "stock": 25,
+      "buy_price": 11,
+      "sell_price": 20
+    },
+    { // Desert top
+      "itemId": 6384,
+      "stock": 25,
+      "buy_price": 8,
+      "sell_price": 15
+    },
+    { // Desert top (overcoat)
+      "itemId": 6388,
+      "stock": 25,
+      "buy_price": 19,
+      "sell_price": 35
+    },
+    { // Desert legs
+      "itemId": 6390,
+      "stock": 25,
+      "buy_price": 13,
+      "sell_price": 25
+    },
+    { // Desert robes
+      "itemId": 6386,
+      "stock": 25,
+      "buy_price": 13,
+      "sell_price": 25
+    },
+    { // Menaphite purple hat
+      "itemId": 6392,
+      "stock": 25,
+      "buy_price": 19,
+      "sell_price": 35
+    },
+    { // Menaphite purple top
+      "itemId": 6394,
+      "stock": 25,
+      "buy_price": 11,
+      "sell_price": 20
+    },
+    { // Menaphite purple robe
+      "itemId": 6396,
+      "stock": 25,
+      "buy_price": 22,
+      "sell_price": 40
+    },
+    { // Menaphite purple kilt
+      "itemId": 6398,
+      "stock": 25,
+      "buy_price": 11,
+      "sell_price": 20
+    },
+    { // Menaphite red hat
+      "itemId": 6400,
+      "stock": 25,
+      "buy_price": 19,
+      "sell_price": 35
+    },
+    { // Menaphite red top
+      "itemId": 6402,
+      "stock": 25,
+      "buy_price": 11,
+      "sell_price": 20
+    },
+    { // Menaphite red robe
+      "itemId": 6404,
+      "stock": 25,
+      "buy_price": 22,
+      "sell_price": 40
+    },
+    { // Menaphite red kilt
+      "itemId": 6406,
+      "stock": 25,
+      "buy_price": 11,
+      "sell_price": 20
+    }
+  ]
+}

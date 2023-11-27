@@ -1,0 +1,66 @@
+{
+  "name": "Ali's Discount Wares - Blackjacks",
+  "currency": "COINS",
+  "npcs": [
+    3533
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    { // Oak blackjack
+      "itemId": 4599,
+      "stock": 25,
+      "buy_price": 110,
+      "sell_price": 200
+    },
+    { // Oak blackjack (o)
+      "itemId": 6408,
+      "stock": 25,
+      "buy_price": 220,
+      "sell_price": 400
+    },
+    { // Oak blackjack (d)
+      "itemId": 6410,
+      "stock": 25,
+      "buy_price": 220,
+      "sell_price": 400
+    },
+    { // Willow blackjack
+      "itemId": 4600,
+      "stock": 25,
+      "buy_price": 330,
+      "sell_price": 600
+    },
+    { // Willow blackjack (o)
+      "itemId": 6412,
+      "stock": 25,
+      "buy_price": 440,
+      "sell_price": 800
+    },
+    { // Willow blackjack (d)
+      "itemId": 6414,
+      "stock": 25,
+      "buy_price": 440,
+      "sell_price": 800
+    },
+    { // Maple blackjack
+      "itemId": 6416,
+      "stock": 25,
+      "buy_price": 660,
+      "sell_price": 1200
+    },
+    { // Maple blackjack (o)
+      "itemId": 6418,
+      "stock": 25,
+      "buy_price": 880,
+      "sell_price": 1600
+    },
+    { // Maple blackjack (d)
+      "itemId": 6420,
+      "stock": 25,
+      "buy_price": 880,
+      "sell_price": 1600
+    }
+  ]
+}

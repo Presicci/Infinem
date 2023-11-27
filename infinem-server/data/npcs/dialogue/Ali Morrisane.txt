@@ -1,0 +1,12 @@
+Ali Morrisane: Hello [player name]. How's the adventuring going?
+Player: Hi Ali. Not bad. How are you?
+Ali Morrisane: Still selling.
+<I would like to have a look at your selection of blackjacks.
+SHOP:1
+><I would like to have a look at your selection of clothes.
+SHOP:2
+><I would like to have a look at your selection of runes.
+SHOP:3
+><I would like to have a look at your general stock.
+SHOP
+>

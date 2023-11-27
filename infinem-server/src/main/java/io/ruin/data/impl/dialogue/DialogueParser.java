@@ -155,9 +155,23 @@ public class DialogueParser {
         for (DialogueLoaderAction action : DialogueLoaderAction.values()) {
             if (line.startsWith(action.name())) {
                 if (action == DialogueLoaderAction.SHOP) {
-                    return new ActionDialogue((player) -> {
-                        npcDef.shops.get(0).open(player);
-                    });
+                    String[] lineSegments = line.split(":");
+                    if (lineSegments.length == 1) {
+                        return new ActionDialogue((player) -> {
+                            npcDef.shops.get(0).open(player);
+                        });
+                    } else {
+                        try {
+                            int shopIndex = Integer.parseInt(lineSegments[1]);
+                            return new ActionDialogue((player) -> {
+                                npcDef.shops.get(shopIndex).open(player);
+                            });
+                        } catch (NumberFormatException ignored) {
+                            return new ActionDialogue((player) -> {
+                                npcDef.shops.get(0).open(player);
+                            });
+                        }
+                    }
                 }
                 if (action == DialogueLoaderAction.OTHERNPC) {
                     String[] lineSegments = line.split(":");
