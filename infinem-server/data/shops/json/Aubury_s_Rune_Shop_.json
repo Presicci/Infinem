@@ -8,85 +8,85 @@
   "buyMultiplier": 600,
   "hideBuy": false,
   "items": [
-    {
+    { // Air rune
       "itemId": 556,
       "stock": 5000,
       "buy_price": 2,
       "sell_price": 4
     },
-    {
+    { // Fire rune
       "itemId": 554,
       "stock": 5000,
       "buy_price": 2,
       "sell_price": 4
     },
-    {
+    { // Water rune
       "itemId": 555,
       "stock": 5000,
       "buy_price": 2,
       "sell_price": 4
     },
-    {
+    { // Earth rune
       "itemId": 557,
       "stock": 5000,
       "buy_price": 2,
       "sell_price": 4
     },
-    {
+    { // Mind rune
       "itemId": 558,
       "stock": 5000,
       "buy_price": 1,
       "sell_price": 3
     },
-    {
+    { // Body rune
       "itemId": 559,
       "stock": 5000,
       "buy_price": 1,
       "sell_price": 3
     },
-    {
+    { // Chaos rune
       "itemId": 562,
       "stock": 250,
       "buy_price": 54,
       "sell_price": 90
     },
-    {
+    { // Death rune
       "itemId": 560,
       "stock": 250,
       "buy_price": 108,
       "sell_price": 180
     },
-    {
+    { // Fire rune pack
       "itemId": 12734,
       "stock": 80,
       "buy_price": 258,
       "sell_price": 430
     },
-    {
+    { // Water rune pack
       "itemId": 12730,
       "stock": 80,
       "buy_price": 258,
       "sell_price": 430
     },
-    {
+    { // Air rune pack
       "itemId": 12728,
       "stock": 80,
       "buy_price": 258,
       "sell_price": 430
     },
-    {
+    { // Earth rune pack
       "itemId": 12732,
       "stock": 80,
       "buy_price": 258,
       "sell_price": 430
     },
-    {
+    { // Mind rune pack
       "itemId": 12736,
       "stock": 40,
       "buy_price": 198,
       "sell_price": 330
     },
-    {
+    { // Chaos rune pack
       "itemId": 12738,
       "stock": 35,
       "buy_price": 5970,
