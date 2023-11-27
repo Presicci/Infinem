@@ -15,7 +15,7 @@ import java.util.stream.IntStream;
  */
 public class Grappling {
 
-    private static final int[] CROSSBOWS = { 767, 837, 9174, 9176, 9177, 9179, 9181, 9183, 9185, 11165, 11785, 21012, 21902, 23601, 23611 };
+    protected static final int[] CROSSBOWS = { 767, 837, 9174, 9176, 9177, 9179, 9181, 9183, 9185, 11165, 11785, 21012, 21902, 23601, 23611 };
     private static final int GRAPPLING_HOOK = 9419;
 
     public static void grapple(Player player, GameObject object, int agilityLevel, int rangedLevel, int strengthLevel, int emoteId, int gfxId, int delay, Position position, Position destination) {
