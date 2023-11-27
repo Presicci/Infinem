@@ -1,0 +1,11 @@
+Colonel Radick: Who goes there? Friend or foe?
+<Friend
+Player: Friend.
+Colonel Radick: Ok good to hear it.
+><Foe!
+Player: Foe!
+Colonel Radick: Oh righty...
+ATTACK:
+><Why is this town so heavily defended?
+Player: Why is this town so heavily defended?
+Colonel Radick: Yanille is on the southwest border of Kandarin, Beyond here you go into the Feldip hills which is major Ogre territory. Our job is to defend Yanille from the ogres.
