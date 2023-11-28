@@ -59,6 +59,10 @@ public enum PickableDoor {
                     e.delay(2);
                     player.face(obj);
                 }
+                if (insideBounds != null && insideBounds.inBounds(player)) {
+                    PassableDoor.passDoor(player, obj, openDirection, 0, null, obj.id);
+                    return;
+                }
                 while (true) {
                     boolean hasLockpick = player.getInventory().hasId(Items.LOCKPICK);
                     player.animate(537);
