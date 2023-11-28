@@ -17,8 +17,8 @@ public enum PickableDoor {
     ARDY_10_COIN(11719, new Position(2674, 3305), Direction.NORTH, 1, 3.8),
     ROSE_HOUSE(40178, new Position(2610, 3316), Direction.EAST, 13, 15),
     ARDY_NATURE_RUNE(11720, new Position(2674, 3304), Direction.SOUTH, 16, 15),
-    AXE_HUT_1(11726, new Position(3190, 3957), Direction.NORTH, 23, 25, true),
-    AXE_HUT_2(11726, new Position(3191, 3963), Direction.SOUTH, 23, 25, true),
+    AXE_HUT_1(11726, new Position(3190, 3957), Direction.NORTH, 23, 25, true, new Bounds(3187, 3958, 3194, 3962, 0)),
+    AXE_HUT_2(11726, new Position(3191, 3963), Direction.SOUTH, 23, 25, true, new Bounds(3187, 3958, 3194, 3962, 0)),
     YANILLE_DUNGEON(11728, new Position(2601, 9482), Direction.SOUTH, 82, 5);
 
     PickableDoor(int objectId, Position objectPos, Direction openDirection, int levelRequirement, double experience) {
