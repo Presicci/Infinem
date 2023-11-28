@@ -52,19 +52,6 @@ public class ForthosDungeon {
         // Gates
         ObjectAction.register(34843, "open", (player, obj) -> PassableDoor.passDoor(player, obj, Direction.WEST));
         ObjectAction.register(34842, "open", (player, obj) -> PassableDoor.passDoor(player, obj, Direction.NORTH));
-        // Grubby chest gate
-        ObjectAction.register(34840, "pick-lock", (player, obj) -> {
-            if (player.getAbsX() >= obj.getPosition().getX()) {
-                if (player.getStats().get(StatType.Thieving).currentLevel > 57) {
-                    //player.animate(1); TODO
-                    player.getStats().addXp(StatType.Thieving, 1.0, true);
-                } else {
-                    player.sendMessage("You need a thieving level of 57 to pick the lock.");
-                    return;
-                }
-            }
-            PassableDoor.passDoor(player, obj, Direction.WEST);
-        });
         // Stairs
         ObjectAction.register(34865, 1669, 3567, 0, "climb-down", (player, obj) -> climb(player, 1800, 9967, 0, false, true, false));
         ObjectAction.register(34864, 1798, 9967, 0, "climb-up", (player, obj) -> climb(player, 1670, 3569, 0, true, true, false));
