@@ -112,6 +112,7 @@ public class RiverLumGrapple {
             for (Position tile : west ? WEST_ROPE : EAST_ROPE) {
                 new GameObject(-1, tile, 22, 0).spawn();
             }
+            player.getTaskManager().doLookupByUUID(930);    // Grapple across the River Lum
             player.unlock();
         });
     }
