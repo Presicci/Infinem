@@ -2,6 +2,7 @@ package io.ruin.data.impl.dialogue;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
@@ -10,6 +11,7 @@ import java.util.function.BiPredicate;
 
 @Getter
 public enum DialogueLoaderSetting {
+    HASSLAYERTASK((p, i) -> Slayer.getTask(p) == i),
     HASITEM((p, i) -> p.getInventory().hasId(i)),
     HASEQUIPMENT((p, i) -> {
         int secondary = p.getTemporaryAttributeIntOrZero(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
