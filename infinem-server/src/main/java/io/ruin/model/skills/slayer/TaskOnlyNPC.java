@@ -16,7 +16,8 @@ public enum TaskOnlyNPC {
     BUGGY(491, "wooooo ooo woo-woo"),
     BRIEVE(7654, "<col=0040ff>*cough*</col> that isn't your assignment <col=0040ff>*wheeze*</col>"),
     LIEVE(7412, "Oi, I'm Lieve, and I say leave it!"),
-    LIEVE_KRAKEN(7412, "Oi, I'm Lieve McCracken and I say leave m' Kraken alone!");
+    LIEVE_KRAKEN(7412, "Oi, I'm Lieve McCracken and I say leave m' Kraken alone!"),
+    DUSTY_ALIV(11161, "Oi! Only people with a Slayer task can slay in here!");
 
     private final int npcId;
     private final String dialogue;
