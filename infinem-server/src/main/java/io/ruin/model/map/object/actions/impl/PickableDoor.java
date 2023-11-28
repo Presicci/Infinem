@@ -22,6 +22,7 @@ public enum PickableDoor {
     PIRATE_HALL_1(11727, new Position(3044, 3956), Direction.EAST, 39, 35, true, new Bounds(3038, 3949, 3044, 3959, 0)),
     PIRATE_HALL_2(11727, new Position(3041, 3959), Direction.NORTH, 39, 35, true, new Bounds(3038, 3949, 3044, 3959, 0)),
     PIRATE_HALL_3(11727, new Position(3038, 3956), Direction.WEST, 39, 35, true, new Bounds(3038, 3949, 3044, 3959, 0)),
+    CHAOS_DRUID_TOWER(11723, new Position(2565, 3356), Direction.WEST, 46, 37.5, new Bounds(2564, 3355, 2564, 3357, 0)),
     YANILLE_DUNGEON(11728, new Position(2601, 9482), Direction.SOUTH, 82, 5);
 
     PickableDoor(int objectId, Position objectPos, Direction openDirection, int levelRequirement, double experience) {
