@@ -86,6 +86,7 @@ import io.ruin.model.skills.mining.Mining;
 import io.ruin.model.skills.mining.Pickaxe;
 import io.ruin.model.skills.mining.Rock;
 import io.ruin.model.skills.mining.ShootingStar;
+import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 import io.ruin.network.central.CentralClient;
@@ -2817,6 +2818,30 @@ public class Administrator {
             }
             case "endfc": {
                 player.getPacketSender().sendClientScript(2221, "i", 1);
+                return true;
+            }
+            case "givetask": {
+                if (args.length < 2) {
+                    player.sendMessage("Syntax: ::givetask [uuid] [amount]");
+                    return false;
+                }
+                int uuid = Integer.parseInt(args[0]);
+                int amount = Integer.parseInt(args[1]);
+                Slayer.setTask(player, uuid);
+                Slayer.setTaskAmount(player, amount);
+                Slayer.setBossTask(player, 0);
+                return true;
+            }
+            case "givebosstask": {
+                if (args.length < 2) {
+                    player.sendMessage("Syntax: ::givebosstask [uuid] [amount]");
+                    return false;
+                }
+                int uuid = Integer.parseInt(args[0]);
+                int amount = Integer.parseInt(args[1]);
+                Slayer.setTask(player, 98);
+                Slayer.setTaskAmount(player, amount);
+                Slayer.setBossTask(player, uuid);
                 return true;
             }
         }
