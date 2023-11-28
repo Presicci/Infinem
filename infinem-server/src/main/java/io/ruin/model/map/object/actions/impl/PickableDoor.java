@@ -12,9 +12,11 @@ import io.ruin.model.stat.StatType;
  * Created on 11/24/2023
  */
 public enum PickableDoor {
-    YANILLE_DUNGEON(11728, new Position(2601, 9482), 82, 5, true);
+    ARDY_10_COIN(11719, new Position(2674, 3305), Direction.NORTH, 1, 3.8),
+    ARDY_NATURE_RUNE(11720, new Position(2674, 3304), Direction.SOUTH, 16, 15),
+    YANILLE_DUNGEON(11728, new Position(2601, 9482), Direction.SOUTH, 82, 5);
 
-    PickableDoor(int objectId, Position objectPos, int levelRequirement, double experience, boolean vertical) {
+    PickableDoor(int objectId, Position objectPos, Direction openDirection, int levelRequirement, double experience) {
         ObjectAction.register(objectId, objectPos, "pick-lock", (player, obj) -> {
             if (!player.getStats().check(StatType.Thieving, levelRequirement, "pick this")) return;
             player.startEvent(e -> {
@@ -26,8 +28,7 @@ public enum PickableDoor {
                     if (Random.rollPercent(hasLockpick ? 75 : 50)) {
                         player.sendFilteredMessage("You pick the lock on the door.");
                         player.getStats().addXp(StatType.Thieving, experience, true);
-                        Direction walkDirection = vertical ? player.getAbsY() < obj.y ? Direction.NORTH : Direction.SOUTH : player.getAbsX() < obj.x ? Direction.EAST : Direction.WEST;
-                        PassableDoor.passDoor(player, obj, walkDirection, -4, new Position(walkDirection == Direction.EAST ? -2 : 0, walkDirection == Direction.NORTH ? -2 : 0), obj.id);
+                        PassableDoor.passDoor(player, obj, openDirection, 0, null, obj.id);
                         break;
                     }
                 }
