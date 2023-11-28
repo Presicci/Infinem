@@ -14,6 +14,7 @@ import io.ruin.model.stat.StatType;
  */
 public enum PickableDoor {
     ARDY_10_COIN(11719, new Position(2674, 3305), Direction.NORTH, 1, 3.8),
+    ROSE_HOUSE(40178, new Position(2610, 3316), Direction.EAST, 13, 15),
     ARDY_NATURE_RUNE(11720, new Position(2674, 3304), Direction.SOUTH, 16, 15),
     YANILLE_DUNGEON(11728, new Position(2601, 9482), Direction.SOUTH, 82, 5);
 
