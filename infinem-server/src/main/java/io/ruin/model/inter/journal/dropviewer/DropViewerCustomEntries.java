@@ -116,6 +116,7 @@ public class DropViewerCustomEntries {
                             new LootItem(Items.VERACS_FLAIL, 1, 1)
                     )
             ),
-            new DropViewerEntry("Sinister Chest", SinisterChest.LOOT_TABLE)
+            new DropViewerEntry("Sinister Chest", SinisterChest.LOOT_TABLE),
+            new DropViewerEntry("Digsite Workman (Pickpocket)", PickPocket.DIGSITE_WORKMAN.lootTable)
     };
 }

@@ -100,6 +100,20 @@ public enum PickPocket {
                     new LootItem(Items.GRIMY_TARROMIN, 1, 1)
 
             )),
+    DIGSITE_WORKMAN(25, 10.4, 422, 4, 1, "digsite workman's", null,
+            257211,
+            -1,
+            60.55,
+            0.365,
+            new LootTable().addTable(1,
+                    new LootItem(Items.SPECIMEN_BRUSH, 1, 3),
+                    new LootItem(Items.ANIMAL_SKULL, 1, 3),
+                    new LootItem(Items.COINS, 10, 1),
+                    new LootItem(Items.ROPE, 1, 1),
+                    new LootItem(Items.BUCKET, 1, 1),
+                    new LootItem(Items.LEATHER_GLOVES, 1, 1),
+                    new LootItem(Items.SPADE, 1, 1)
+            )),
     WARRIOR(25, 26.0, 386, 5, 2, "warrior's", PlayerCounter.PICKPOCKETED_WARRIOR,
             257211,
             22524,
@@ -490,7 +504,7 @@ public enum PickPocket {
             for (PickPocket pickpocket : values()) {
                 if (npcDef.name.equalsIgnoreCase(pickpocket.name().replace("_", " ")) ||
                         npcDef.name.toLowerCase().contains(pickpocket.name().toLowerCase())) {
-                    int pickpocketOption = npcDef.getOption("pickpocket");
+                    int pickpocketOption = npcDef.getOption("pickpocket", "steal-from");
                     if (pickpocketOption == -1)
                         return;
                     NPCAction.register(npcDef.name, pickpocketOption, (player, npc) -> pickpocket(player, npc, pickpocket));
