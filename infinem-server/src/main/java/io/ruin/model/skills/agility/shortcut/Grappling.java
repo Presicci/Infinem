@@ -18,7 +18,12 @@ public class Grappling {
 
     protected static final int[] CROSSBOWS = { Items.PHOENIX_CROSSBOW, Items.CROSSBOW, Items.BRONZE_CROSSBOW,
             Items.BLURITE_CROSSBOW, Items.IRON_CROSSBOW, Items.STEEL_CROSSBOW, Items.MITH_CROSSBOW, Items.ADAMANT_CROSSBOW,
-            Items.RUNE_CROSSBOW, Items.PHOENIX_CROSSBOW_2, Items.ARMADYL_CROSSBOW, Items.DRAGON_HUNTER_CROSSBOW, Items.DRAGON_CROSSBOW };
+            Items.RUNE_CROSSBOW, Items.PHOENIX_CROSSBOW_2, Items.ARMADYL_CROSSBOW, Items.DRAGON_HUNTER_CROSSBOW, Items.DRAGON_CROSSBOW,
+            Items.KARILS_CROSSBOW, Items.KARILS_CROSSBOW_25, Items.KARILS_CROSSBOW_50, Items.KARILS_CROSSBOW_75, Items.KARILS_CROSSBOW_100,
+            Items.HUNTERS_CROSSBOW, Items.DORGESHUUN_CROSSBOW,
+            26374   // Zaryte crossbow
+    };
+
     private static final int GRAPPLING_HOOK = 9419;
 
     public static void grapple(Player player, GameObject object, int agilityLevel, int rangedLevel, int strengthLevel, int emoteId, int gfxId, int delay, Position position, Position destination) {
