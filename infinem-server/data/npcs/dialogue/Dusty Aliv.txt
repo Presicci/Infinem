@@ -1,0 +1,25 @@
+Dusty Aliv: Eyup. Not too often we get visitors down here.
+<What is this place?
+Player: What is this place?
+Dusty Aliv: Beats me. All I know is, there's dust devils in here, and I'm here to make sure only people with permission can kill 'em.
+Player: Can I kill them?
+HASSLAYERTASK:49
+(Dusty Aliv: You got a Slayer task for it, so sure, be my guest.
+FIRSTOPTIONS
+(Dusty Aliv: Not without a Slayer task. Go talk to a Slayer Master about it.
+FIRSTOPTIONS
+)><Who are you?
+Player: Who are you?
+Dusty Aliv: The name's Dusty Aliv. I guard this place for the Slayer Masters.
+Player: That doesn't sound like a great job.
+Dusty Aliv: Eh, it has its perks. Plus it beats flying around Gielinor after numbskulls like you trying to deliver mail like some people I know.
+FIRSTOPTIONS
+><Nice sword.
+Player: Nice sword.
+Dusty Aliv: Thanks. Probably shouldn't tell you about the previous owner though.
+Player: What happened to them?
+Dusty Aliv: Let's just say the heat got to them.
+FIRSTOPTIONS
+><Goodbye.
+Player: Goodbye.
+Dusty Aliv: See ya.
