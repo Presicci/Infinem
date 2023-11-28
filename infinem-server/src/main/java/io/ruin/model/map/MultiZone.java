@@ -68,7 +68,7 @@ public class MultiZone {
          */
         int[] regions = {
                 /** Safe: **/
-                11827, 11828, 11829, //Falador
+                11828, 11829, //Falador
                 12341, //Barbarian Village
                 8253, 8252, 8508, 8509, 8254, //Lunar Isle:
                 9273, 9017, //Piscatoris Fishing Colony
@@ -208,7 +208,13 @@ public class MultiZone {
                 new Bounds(3110, 3236, 3131, 3258, 0),
 
                 // Wizard tower
-                new Bounds(3094, 3148, 3127, 3175, 0)
+                new Bounds(3094, 3148, 3127, 3175, 0),
+
+                // South falador
+                new Bounds(2944, 3304, 3015, 3327, 0),
+
+                // Falador cow pen
+                new Bounds(3014, 3297, 3043, 3313, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
