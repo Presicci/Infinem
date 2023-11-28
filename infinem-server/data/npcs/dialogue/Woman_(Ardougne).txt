@@ -36,7 +36,7 @@ Woman: I like our king, he's keeping the poor and infected away from us decent f
 Woman: Not too bad thanks.
 /Player: Hello, how's it going?
 Woman: Are you asking for a fight?
-Woman: ATTACKS
+ATTACK
 /Player: Hello, how's it going?
 Woman: I'm busy right now.
 /Player: Hello, how's it going?
