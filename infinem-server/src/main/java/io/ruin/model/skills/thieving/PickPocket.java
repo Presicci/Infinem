@@ -21,6 +21,7 @@ import io.ruin.model.map.MapArea;
 import io.ruin.model.skills.BotPrevention;
 import io.ruin.model.stat.StatType;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static io.ruin.cache.ItemID.COINS_995;
@@ -43,6 +44,15 @@ public enum PickPocket {
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 3, 3, 1)  //Coins
             )),
+    TOWER_OF_LIFE_NPCS(1, 8.0, 422, 5, 1, "gummy's", null,
+            257211,
+            -1,
+            70.70,
+            02.2424,
+            new LootTable().addTable(1,
+                    new LootItem(Items.TRIANGLE_SANDWICH, 1, 1)
+            ),
+            "'black-eye'", "'gummy'", "'no fingers'", "'the guns'"),
     FARMER(10, 14.5, 433, 5, 1, "farmer's", PlayerCounter.PICKPOCKETED_FARMER,
             257211,
             22522,
@@ -213,7 +223,6 @@ public enum PickPocket {
                     new LootItem(Items.CACTUS_SEED, 1, 10),
                     new LootItem(21490, 1, 5),  // Seaweed spore
                     new LootItem(22873, 1, 5)   // Potato cactus seed
-
             )),
     GUARD(40, 46.8, 386, 5, 2, "guard's", PlayerCounter.PICKPOCKETED_GUARD,
             257211,
@@ -358,8 +367,13 @@ public enum PickPocket {
     public final double exp, startingChance, chanceSlope;
     public final LootTable lootTable;
     public final PlayerCounter counter;
+    private final String[] names;
 
     PickPocket(int levelReq, double exp, int stunAnimation, int stunSeconds, int stunDamage, String identifier, PlayerCounter counter, int petOdds, int pouchId, double startingChance, double chanceSlope, LootTable lootTable) {
+        this(levelReq, exp, stunAnimation, stunSeconds, stunDamage, identifier, counter, petOdds, pouchId, startingChance, chanceSlope, lootTable, null);
+    }
+
+    PickPocket(int levelReq, double exp, int stunAnimation, int stunSeconds, int stunDamage, String identifier, PlayerCounter counter, int petOdds, int pouchId, double startingChance, double chanceSlope, LootTable lootTable, String... names) {
         this.levelReq = levelReq;
         this.exp = exp;
         this.stunAnimation = stunAnimation;
@@ -373,6 +387,7 @@ public enum PickPocket {
         this.startingChance = startingChance;
         this.chanceSlope = chanceSlope;
         this.lootTable = lootTable;
+        this.names = names;
     }
 
     private static boolean checkAll(Player player, PickPocket pickpocket) {
@@ -502,8 +517,10 @@ public enum PickPocket {
     static {
         NPCDef.forEach(npcDef -> {
             for (PickPocket pickpocket : values()) {
-                if (npcDef.name.equalsIgnoreCase(pickpocket.name().replace("_", " ")) ||
-                        npcDef.name.toLowerCase().contains(pickpocket.name().toLowerCase())) {
+                if (npcDef.name.equalsIgnoreCase(pickpocket.name().replace("_", " "))
+                        || npcDef.name.toLowerCase().contains(pickpocket.name().toLowerCase())
+                        || (pickpocket.names != null && (Arrays.stream(pickpocket.names).anyMatch(n -> npcDef.name.toLowerCase().contains(n.toLowerCase())
+                            || npcDef.name.equalsIgnoreCase(n))))) {
                     int pickpocketOption = npcDef.getOption("pickpocket", "steal-from");
                     if (pickpocketOption == -1)
                         return;
