@@ -101,6 +101,7 @@ public class MultiZone {
                 7322,   // Sarachnis
                 7991,   // Home
                 12690,  // Smoke dungeon task only area
+                14129,  // South-east Burgh de Rott
 
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, 12600, //Wilderness Ditch
