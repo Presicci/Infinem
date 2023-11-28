@@ -100,6 +100,7 @@ public class MultiZone {
                 12889, // olm chamber
                 7322,   // Sarachnis
                 7991,   // Home
+                12690,  // Smoke dungeon task only area
 
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, 12600, //Wilderness Ditch
