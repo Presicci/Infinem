@@ -1,5 +1,6 @@
 package io.ruin.model.skills.slayer;
 
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Tuple;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.npc.NPC;
@@ -174,7 +175,7 @@ public enum SlayerUnlock {
      * @param player The player cancelling the task.
      */
     private static void cancelTask(Player player) {
-        SlayerCreature task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
+        SlayerCreature task = SlayerCreature.lookup(Slayer.getTask(player));
         if (task == null) {
             player.sendMessage("You don't have a slayer task to block.");
             return;
@@ -184,9 +185,9 @@ public enum SlayerUnlock {
             return;
         }
         Config.SLAYER_POINTS.set(player, Config.SLAYER_POINTS.get(player) - 30);
-        Config.SLAYER_TASK_AMOUNT.set(player, 0);
-        Config.SLAYER_TASK_1.set(player, 0);
+        Slayer.resetTask(player);
         player.sendMessage("Your task has been cancelled.");
+        Slayer.sendVarps(player);
     }
 
     /**
@@ -195,7 +196,8 @@ public enum SlayerUnlock {
      * @param player The player blocking the task.
      */
     private static void blockTask(Player player) {
-        SlayerCreature task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
+        int uuid = Slayer.getTask(player);
+        SlayerCreature task = SlayerCreature.lookup(uuid);
         if (task == null) {
             player.sendMessage("You don't have a slayer task to block.");
             return;
@@ -207,26 +209,21 @@ public enum SlayerUnlock {
         if (task == SlayerCreature.BOSSES) {
             return;
         }
-        // Grab our current task ID
-        final int taskId = Config.SLAYER_TASK_1.get(player);
 
         // Check if the player has already blocked this task
-        if (isBlocked(player, taskId)) {
-            player.sendMessage("You are already blocking " + SlayerCreature.taskName(player, taskId) + ".");
+        if (isBlocked(player, uuid)) {
+            player.sendMessage("You are already blocking " + SlayerCreature.taskName(player, uuid) + ".");
             return;
         }
         // Check for an available slot and block
         for (Config i : Config.BLOCKED_TASKS) {
             if (i.get(player) == 0) {
-                i.set(player, taskId);
-
-                Config.SLAYER_TASK_AMOUNT.set(player, 0);
-                Config.SLAYER_TASK_1.set(player, 0);
-
+                i.set(player, uuid);
+                Slayer.resetTask(player);
                 int pts = Config.SLAYER_POINTS.get(player) - 100;
-
                 Config.SLAYER_POINTS.set(player, pts);
                 player.sendMessage("You have successfully blocked your task.");
+                Slayer.sendVarps(player);
                 return;
             }
         }
@@ -238,8 +235,8 @@ public enum SlayerUnlock {
      * @param player The player storing the task.
      */
     private static void storeTask(Player player) {
-        int taskID = Config.SLAYER_TASK_1.get(player);
-        int taskAmount = Config.SLAYER_TASK_AMOUNT.get(player);
+        int taskID = Slayer.getTask(player);
+        int taskAmount = Slayer.getTaskAmount(player);
         SlayerCreature task = SlayerCreature.lookup(taskID);
         if (task == null || taskAmount <= 0) {
             player.sendMessage("You don't have a slayer task to store.");
@@ -249,34 +246,37 @@ public enum SlayerUnlock {
             player.sendMessage("You need 50 points to store your task.");
             return;
         }
-        Config.STORED_TASK.set(player, taskID);
-        Config.STORED_TASK_AMOUNT.set(player, taskAmount);
-        Config.STORED_BOSS_TASK.set(player, Config.BOSS_TASK.get(player));
-
+        player.putAttribute(AttributeKey.STORED_SLAYER_TASK, taskID);
+        player.putAttribute(AttributeKey.STORED_SLAYER_TASK_AMOUNT, taskAmount);
+        player.putAttribute(AttributeKey.STORED_BOSS_TASK, Slayer.getBossTask(player));
         Slayer.resetTask(player);
         int pts = Config.SLAYER_POINTS.get(player) - 50;
         Config.SLAYER_POINTS.set(player, pts);
+        Slayer.sendVarps(player);
     }
 
     private static void unstoreTask(Player player) {
-        int taskID = Config.STORED_TASK.get(player);
-        int taskAmount = Config.STORED_TASK_AMOUNT.get(player);
+        int taskID = player.getAttributeIntOrZero(AttributeKey.STORED_SLAYER_TASK);
+        int taskAmount = player.getAttributeIntOrZero(AttributeKey.STORED_SLAYER_TASK_AMOUNT);
+        int bossTask = player.getAttributeIntOrZero(AttributeKey.STORED_BOSS_TASK);
         SlayerCreature task = SlayerCreature.lookup(taskID);
         if (task == null || taskAmount <= 0) {
             player.sendMessage("You don't have a slayer task stored.");
             return;
         }
-        task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
+        task = SlayerCreature.lookup(Slayer.getTask(player));
         if (task != null) {
             player.sendMessage("You already have a slayer task.");
             return;
         }
-        Config.SLAYER_TASK_1.set(player, taskID);
-        Config.SLAYER_TASK_AMOUNT.set(player, taskAmount);
-        Config.BOSS_TASK.set(player, Config.STORED_BOSS_TASK.get(player));
+        Slayer.setTask(player, taskID);
+        Slayer.setTaskAmount(player, taskAmount);
+        Slayer.setBossTask(player, bossTask);
 
-        Config.STORED_TASK.set(player, 0);
-        Config.STORED_TASK_AMOUNT.set(player, 0);
+        player.removeAttribute(AttributeKey.STORED_SLAYER_TASK);
+        player.removeAttribute(AttributeKey.STORED_SLAYER_TASK_AMOUNT);
+        player.removeAttribute(AttributeKey.STORED_BOSS_TASK);
+        Slayer.sendVarps(player);
     }
 
     /**
@@ -291,7 +291,7 @@ public enum SlayerUnlock {
         player.openInterface(InterfaceType.MAIN, 426);
         player.getPacketSender().sendAccessMask(426, 8, 0, 62, 2);
         player.getPacketSender().sendAccessMask(426, 23, 0, 5, 1052);
-        player.getPacketSender().sendString(426, 45, "29 x Cave crawlers");
+        Slayer.sendVarps(player);
     }
 
     /**

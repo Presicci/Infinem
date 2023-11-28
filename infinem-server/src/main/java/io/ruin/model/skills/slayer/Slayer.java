@@ -1,5 +1,6 @@
 package io.ruin.model.skills.slayer;
 
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
@@ -37,8 +38,8 @@ public class Slayer {
      * @param npc    The npc killed.
      */
     public static void handleNPCKilled(Player player, NPC npc) {
-        final int task = Config.SLAYER_TASK_1.get(player);
-        int am = Config.SLAYER_TASK_AMOUNT.get(player);
+        final int task = getTask(player);
+        int am = getTaskAmount(player);
         final int master = Config.SLAYER_MASTER.get(player);
 
         SlayerCreature creature = SlayerCreature.lookup(task);
@@ -115,10 +116,10 @@ public class Slayer {
             int killsCounted = 1;
             if (BraceletOfSlaughter.test(player)) {
                 killsCounted = 0;
-            } else if (Config.SLAYER_TASK_AMOUNT.get(player) > 1 && ExpeditiousBracelet.test(player)) {
+            } else if (am > 1 && ExpeditiousBracelet.test(player)) {
                 killsCounted = 2;
             }
-            Config.SLAYER_TASK_AMOUNT.decrement(player, killsCounted);
+            decrementTaskAmount(player, killsCounted);
 
             am -= killsCounted;
 
@@ -137,8 +138,8 @@ public class Slayer {
     }
 
     public static void resetTask(Player player) {
-        Config.SLAYER_TASK_1.set(player, 0);
-        Config.SLAYER_TASK_AMOUNT.set(player, 0);
+        setTask(player, 0);
+        setTaskAmount(player, 0);
     }
 
     /**
@@ -149,8 +150,8 @@ public class Slayer {
      * @return True if task is for npc, false if not.
      */
     public static boolean isTask(Player player, NPC npc) {
-        final int task = Config.SLAYER_TASK_1.get(player);
-        int am = Config.SLAYER_TASK_AMOUNT.get(player);
+        final int task = getTask(player);
+        int am = getTaskAmount(player);
         final int master = Config.SLAYER_MASTER.get(player);
 
         SlayerCreature creature = SlayerCreature.lookup(task);
@@ -178,5 +179,42 @@ public class Slayer {
     public static boolean hasFaceMask(Player player) {
         Item helm = player.getEquipment().get(Equipment.SLOT_HAT);
         return helm != null && (helm.getId() == Items.FACEMASK || helm.getDef().slayerBoostMelee || helm.getDef().slayerBoostAll);
+    }
+
+    public static void sendVarps(Player player) {
+        player.getPacketSender().sendVarp(261, getTaskAmount(player));
+        player.getPacketSender().sendVarp(262, getTask(player));
+        player.getPacketSender().sendVarp(263, getBossTask(player));
+        player.getPacketSender().sendVarp(264, player.getAttributeIntOrZero(AttributeKey.STORED_SLAYER_TASK_AMOUNT));
+        player.getPacketSender().sendVarp(265, player.getAttributeIntOrZero(AttributeKey.STORED_SLAYER_TASK));
+        player.getPacketSender().sendVarp(266, player.getAttributeIntOrZero(AttributeKey.STORED_BOSS_TASK));
+    }
+
+    public static void setTask(Player player, int uuid) {
+        player.putAttribute(AttributeKey.SLAYER_TASK, uuid);
+    }
+
+    public static int getTask(Player player) {
+        return player.getAttributeIntOrZero(AttributeKey.SLAYER_TASK);
+    }
+
+    public static void setBossTask(Player player, int uuid) {
+        player.putAttribute(AttributeKey.BOSS_TASK, uuid);
+    }
+
+    public static int getBossTask(Player player) {
+        return player.getAttributeIntOrZero(AttributeKey.BOSS_TASK);
+    }
+
+    public static void setTaskAmount(Player player, int amount) {
+        player.putAttribute(AttributeKey.SLAYER_TASK_AMOUNT, amount);
+    }
+
+    public static int getTaskAmount(Player player) {
+        return player.getAttributeIntOrZero(AttributeKey.SLAYER_TASK_AMOUNT);
+    }
+
+    public static void decrementTaskAmount(Player player, int amount) {
+        player.incrementNumericAttribute(AttributeKey.SLAYER_TASK_AMOUNT, -amount);
     }
 }

@@ -7,6 +7,7 @@ import io.ruin.model.activities.pvp.leaderboard.DeepWildernessPker;
 import io.ruin.model.activities.pvp.leaderboard.EdgePker;
 import io.ruin.model.activities.pvp.leaderboard.Leaderboard;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.skills.slayer.SlayerMaster;
 
 /**
@@ -43,7 +44,7 @@ public class SeniorModerator {
                     player.sendMessage("Player can't be found.");
                     return true;
                 }
-                SlayerMaster.resetTask(player);
+                Slayer.resetTask(p2);
                 p2.sendMessage("Your slayer task has been reset.");
                 player.sendMessage("You have reset " + p2.getName() + "'s task.");
                 return true;

@@ -34,7 +34,7 @@ public class Konar {
             return;
 
         Config.SLAYER_MASTER.set(player, SlayerMaster.KONAR_ID);
-        Config.SLAYER_TASK_1.set(player, def.getCreatureUid());
+        Slayer.setTask(player, def.getCreatureUid());
 
         KonarData.assignLocation(player, def.getCreatureUid());
 
@@ -52,7 +52,7 @@ public class Konar {
         }
         int task_amt = Random.get(min, max);
 
-        Config.SLAYER_TASK_AMOUNT.set(player, task_amt);
+        Slayer.setTaskAmount(player, task_amt);
     }
 
     public static void handleInteraction(Player player, NPC npc, int option) {
@@ -121,10 +121,10 @@ public class Konar {
                                                             player.getInventory().addOrDrop(new Item(4155, 1));
                                                             assignTask(player);
 
-                                                            SlayerCreature task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
+                                                            SlayerCreature task = SlayerCreature.lookup(Slayer.getTask(player));
 
                                                             if (task != null) {
-                                                                int num = Config.SLAYER_TASK_AMOUNT.get(player);
+                                                                int num = Slayer.getTaskAmount(player);
                                                                 player.dialogue(new NPCDialogue(KONAR, "We'll start you off hunting " + SlayerCreature.taskName(player, task.getUid()) + ", you'll need to kill " + num + "<br>of them."));
                                                             }
                                                         }));
@@ -159,9 +159,9 @@ public class Konar {
             return;
         }
 
-        int left = Config.SLAYER_TASK_AMOUNT.get(player);
+        int left = Slayer.getTaskAmount(player);
 
-        if (left > 0 && !SlayerCreature.taskName(player, Config.SLAYER_TASK_1.get(player)).equalsIgnoreCase("null")) {
+        if (left > 0 && !SlayerCreature.taskName(player, Slayer.getTask(player)).equalsIgnoreCase("null")) {
             String text = SlayerMaster.getTaskText(player, left);
             player.dialogue(new NPCDialogue(KONAR, text));
             return;
@@ -169,8 +169,8 @@ public class Konar {
 
         assignTask(player);
 
-        SlayerCreature task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
-        left = Config.SLAYER_TASK_AMOUNT.get(player);
+        SlayerCreature task = SlayerCreature.lookup(Slayer.getTask(player));
+        left = Slayer.getTaskAmount(player);
         String location = KonarData.TaskLocation.values()[player.slayerLocation].getName();
 
         if (task.equals(SlayerCreature.BOSSES)) {
@@ -185,7 +185,7 @@ public class Konar {
                             if (i > 35)
                                 i = 35;
 
-                            Config.SLAYER_TASK_AMOUNT.set(player, i);
+                            Slayer.setTaskAmount(player, i);
 
                             player.dialogue(
                                     new NPCDialogue(KONAR, "Excellent. You're now assigned to bring balance to " + SlayerCreature.taskName(player, task.getUid()) + " boss " + i + " times."),
@@ -208,8 +208,7 @@ public class Konar {
                                 new Option("Great, thanks!", new PlayerDialogue("Okay, great!")),
                                 new Option("No thanks. (Reroll task, costs 30 Slayer points)", new NPCDialogue(KONAR, "Very well."), new ActionDialogue(() -> {
                                     Config.SLAYER_POINTS.set(player, Config.SLAYER_POINTS.get(player) - 30);
-                                    Config.SLAYER_TASK_AMOUNT.set(player, 0);
-                                    Config.SLAYER_TASK_1.set(player, 0);
+                                    Slayer.resetTask(player);
                                     giveTask(player);
                                 }))
                         )

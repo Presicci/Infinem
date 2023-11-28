@@ -11,10 +11,7 @@ import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
-import io.ruin.model.skills.slayer.SlayerCreature;
-import io.ruin.model.skills.slayer.SlayerMaster;
-import io.ruin.model.skills.slayer.SlayerTaskDef;
-import io.ruin.model.skills.slayer.SlayerUnlock;
+import io.ruin.model.skills.slayer.*;
 import io.ruin.model.stat.StatType;
 
 /**
@@ -37,7 +34,7 @@ public class Turael {
             return;
 
         Config.SLAYER_MASTER.set(player, SlayerMaster.TURAEL_ID);
-        Config.SLAYER_TASK_1.set(player, def.getCreatureUid());
+        Slayer.setTask(player, def.getCreatureUid());
 
         int min = def.getMin();
         int max = def.getMax();
@@ -53,7 +50,7 @@ public class Turael {
         }
         int task_amt = Random.get(min, max);
 
-        Config.SLAYER_TASK_AMOUNT.set(player, task_amt);
+        Slayer.setTaskAmount(player, task_amt);
     }
 
     public static void handleInteraction(Player player, NPC npc, int option) {
@@ -124,10 +121,10 @@ public class Turael {
                                                             player.getInventory().addOrDrop(new Item(4155, 1));
                                                             assignTask(player);
 
-                                                            SlayerCreature task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
+                                                            SlayerCreature task = SlayerCreature.lookup(Slayer.getTask(player));
 
                                                             if (task != null) {
-                                                                int num = Config.SLAYER_TASK_AMOUNT.get(player);
+                                                                int num = Slayer.getTaskAmount(player);
                                                                 player.dialogue(new NPCDialogue(TURAEL, "We'll start you off hunting " + SlayerCreature.taskName(player, task.getUid()) + ", you'll need to kill " + num + "<br>of them."));
                                                             }
                                                         }));
@@ -157,9 +154,9 @@ public class Turael {
     }
 
     private static void giveTask(Player player) {
-        int left = Config.SLAYER_TASK_AMOUNT.get(player);
+        int left = Slayer.getTaskAmount(player);
 
-        if (left > 0 && !SlayerCreature.taskName(player, Config.SLAYER_TASK_1.get(player)).equalsIgnoreCase("null")) {
+        if (left > 0 && !SlayerCreature.taskName(player, Slayer.getTask(player)).equalsIgnoreCase("null")) {
             String text = SlayerMaster.getTaskText(player, left);
             player.dialogue(new NPCDialogue(TURAEL, text));
             return;
@@ -167,8 +164,8 @@ public class Turael {
 
         assignTask(player);
 
-        SlayerCreature task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
-        left = Config.SLAYER_TASK_AMOUNT.get(player);
+        SlayerCreature task = SlayerCreature.lookup(Slayer.getTask(player));
+        left = Slayer.getTaskAmount(player);
 
         player.dialogue(
                 new NPCDialogue(TURAEL, "Excellent, you're doing great. Your new task is to kill " + left + " " + SlayerCreature.taskName(player, task.getUid()) + "."),

@@ -12,10 +12,7 @@ import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
-import io.ruin.model.skills.slayer.SlayerCreature;
-import io.ruin.model.skills.slayer.SlayerMaster;
-import io.ruin.model.skills.slayer.SlayerTaskDef;
-import io.ruin.model.skills.slayer.SlayerUnlock;
+import io.ruin.model.skills.slayer.*;
 import io.ruin.model.stat.StatType;
 
 /**
@@ -38,7 +35,7 @@ public class Vannaka {
             return;
 
         Config.SLAYER_MASTER.set(player, SlayerMaster.VANNAKA_ID);
-        Config.SLAYER_TASK_1.set(player, def.getCreatureUid());
+        Slayer.setTask(player, def.getCreatureUid());
 
         int min = def.getMin();
         int max = def.getMax();
@@ -54,7 +51,7 @@ public class Vannaka {
         }
         int task_amt = Random.get(min, max);
 
-        Config.SLAYER_TASK_AMOUNT.set(player, task_amt);
+        Slayer.setTaskAmount(player, task_amt);
     }
 
     public static void handleInteraction(Player player, NPC npc, int option) {
@@ -125,10 +122,10 @@ public class Vannaka {
                                                             player.getInventory().addOrDrop(new Item(4155, 1));
                                                             assignTask(player);
 
-                                                            SlayerCreature task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
+                                                            SlayerCreature task = SlayerCreature.lookup(Slayer.getTask(player));
 
                                                             if (task != null) {
-                                                                int num = Config.SLAYER_TASK_AMOUNT.get(player);
+                                                                int num = Slayer.getTaskAmount(player);
                                                                 player.dialogue(new NPCDialogue(VANNAKA, "We'll start you off hunting " + SlayerCreature.taskName(player, task.getUid()) + ", you'll need to kill " + num + "<br>of them."));
                                                             }
                                                         }));
@@ -158,9 +155,9 @@ public class Vannaka {
     }
 
     private static void giveTask(Player player) {
-        int left = Config.SLAYER_TASK_AMOUNT.get(player);
+        int left = Slayer.getTaskAmount(player);
 
-        if (left > 0 && !SlayerCreature.taskName(player, Config.SLAYER_TASK_1.get(player)).equalsIgnoreCase("null")) {
+        if (left > 0 && !SlayerCreature.taskName(player, Slayer.getTask(player)).equalsIgnoreCase("null")) {
             String text = SlayerMaster.getTaskText(player, left);
             player.dialogue(new NPCDialogue(VANNAKA, text));
             return;
@@ -168,8 +165,8 @@ public class Vannaka {
 
         assignTask(player);
 
-        SlayerCreature task = SlayerCreature.lookup(Config.SLAYER_TASK_1.get(player));
-        left = Config.SLAYER_TASK_AMOUNT.get(player);
+        SlayerCreature task = SlayerCreature.lookup(Slayer.getTask(player));
+        left = Slayer.getTaskAmount(player);
 
         if (Config.SLAYER_POINTS.get(player) >= 30) {
             player.dialogue(
@@ -179,8 +176,7 @@ public class Vannaka {
                             new Option("Great, thanks!", new PlayerDialogue("Okay, great!")),
                             new Option("No thanks. (Reroll task, costs 30 Slayer points)", new NPCDialogue(VANNAKA, "Very well."), new ActionDialogue(() -> {
                                 Config.SLAYER_POINTS.set(player, Config.SLAYER_POINTS.get(player) - 30);
-                                Config.SLAYER_TASK_AMOUNT.set(player, 0);
-                                Config.SLAYER_TASK_1.set(player, 0);
+                                Slayer.resetTask(player);
                                 giveTask(player);
                             }))
                     )

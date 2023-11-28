@@ -49,7 +49,7 @@ public class SlayerMaster {
      * @return The task being assigned.
      */
     public SlayerTaskDef randomTask(Player player) {
-        int last = Config.SLAYER_TASK_1.get(player);
+        int last = Slayer.getTask(player);
         // Using ImmutableRangeMaps for now, change if issues are identified
         ImmutableRangeMap.Builder<Integer, SlayerTaskDef> builder = ImmutableRangeMap.builder();
 
@@ -88,9 +88,9 @@ public class SlayerMaster {
                     SlayerBoss.THE_CHAOS_FANATIC, SlayerBoss.THE_KING_BLACK_DRAGON, SlayerBoss.VENENATIS)
                     : Arrays.stream(SlayerBoss.values()).filter((v) -> v.canAssign == null || v.canAssign.apply(player)).collect(Collectors.toList());
             SlayerBoss task = validTasks.get(Random.get(validTasks.size() - 1));
-            Config.BOSS_TASK.set(player, task.ordinal() + 1);
+            Slayer.setBossTask(player, task.ordinal() + 1);
         } else {
-            Config.BOSS_TASK.set(player, 0);
+            Slayer.setBossTask(player, 0);
         }
         player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERTASK, NPCDef.get(npcId).name);
         return def;
@@ -282,13 +282,14 @@ public class SlayerMaster {
      * @return Message telling the player how much their current task is left
      */
     public static String getTaskText(Player player, int left) {
-        String text = "You're still hunting " + SlayerCreature.taskName(player, Config.SLAYER_TASK_1.get(player)) + ", with " + left + " to go.<br>Come back when you're finished.";
-
+        int task = Slayer.getTask(player);
+        int bossTask = Slayer.getBossTask(player);
+        String text = "You're still hunting " + SlayerCreature.taskName(player, task) + ", with " + left + " to go.<br>Come back when you're finished.";
         int master = Config.SLAYER_MASTER.get(player);
-        if (master == KRYSTILIA_ID && Config.BOSS_TASK.get(player) == 0) {
-            text = "You're still meant to be slaying " + SlayerCreature.taskName(player, Config.SLAYER_TASK_1.get(player)) + " in<br>the Wilderness, you have " + left + " to go. Come back when<br>you've finished your task.";
-        } else if (master == KONAR_ID && Config.BOSS_TASK.get(player) == 0) {
-            text = "You're still bringing balance to " + SlayerCreature.taskName(player, Config.SLAYER_TASK_1.get(player)) + " at the " + KonarData.TaskLocation.values()[player.slayerLocation].getName() + ", with " + left + " to go.<br>Come back when you're finished.";
+        if (master == KRYSTILIA_ID && bossTask == 0) {
+            text = "You're still meant to be slaying " + SlayerCreature.taskName(player, task) + " in<br>the Wilderness, you have " + left + " to go. Come back when<br>you've finished your task.";
+        } else if (master == KONAR_ID && bossTask == 0) {
+            text = "You're still bringing balance to " + SlayerCreature.taskName(player, task) + " at the " + KonarData.TaskLocation.values()[player.slayerLocation].getName() + ", with " + left + " to go.<br>Come back when you're finished.";
         }
 
         return text;
@@ -302,15 +303,17 @@ public class SlayerMaster {
      * @param player The player being checked.
      */
     public static void checkTask(Player player) {
-        int amount = Config.SLAYER_TASK_AMOUNT.get(player);
-        if (amount > 0 && !SlayerCreature.taskName(player, Config.SLAYER_TASK_1.get(player)).equalsIgnoreCase("null")) {
-            String name = SlayerCreature.taskName(player, Config.SLAYER_TASK_1.get(player));
+        int task = Slayer.getTask(player);
+        int bossTask = Slayer.getBossTask(player);
+        int amount = Slayer.getTaskAmount(player);
+        if (amount > 0 && !SlayerCreature.taskName(player, task).equalsIgnoreCase("null")) {
+            String name = SlayerCreature.taskName(player, task);
             String location = "";
             int master = Config.SLAYER_MASTER.get(player);
 
-            if (master == KRYSTILIA_ID && Config.BOSS_TASK.get(player) == 0) {
+            if (master == KRYSTILIA_ID && bossTask == 0) {
                 location = " in the wilderness";
-            } else if (master == KONAR_ID && Config.BOSS_TASK.get(player) == 0) {
+            } else if (master == KONAR_ID && bossTask == 0) {
                 location = " at the " + KonarData.TaskLocation.values()[player.slayerLocation].getName();
             }
 
@@ -320,15 +323,11 @@ public class SlayerMaster {
         }
         if (player.debug)
             player.sendMessage(
-                    "amt:" + Config.SLAYER_TASK_AMOUNT.get(player)
-                    + "<br>task_1:" + Config.SLAYER_TASK_1.get(player)
+                    "amt:" + amount
+                    + "<br>task_1:" + task
                     + "<br>master:" + Config.SLAYER_MASTER.get(player)
                     + "<br>points:" + Config.SLAYER_POINTS.get(player)
             );
         player.getTaskManager().doLookupByUUID(31, 1);  // Check Your Slayer Task
-    }
-
-    public static void resetTask(Player player) {
-        Config.SLAYER_TASK_AMOUNT.set(player, 0);
     }
 }
