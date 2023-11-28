@@ -3,6 +3,7 @@ package io.ruin.model.map.object.actions.impl;
 import io.ruin.api.utils.Random;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Items;
+import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -25,7 +26,17 @@ public enum PickableDoor {
     }
 
     PickableDoor(int objectId, Position objectPos, Direction openDirection, int levelRequirement, double experience, boolean lockpickRequired) {
-        ObjectAction.register(objectId, objectPos, "open", (player, obj) -> player.dialogue(new MessageDialogue("The door is locked.")));
+        this(objectId, objectPos, openDirection, levelRequirement, experience, lockpickRequired, null);
+    }
+
+    PickableDoor(int objectId, Position objectPos, Direction openDirection, int levelRequirement, double experience, boolean lockpickRequired, Bounds insideBounds) {
+        ObjectAction.register(objectId, objectPos, "open", (player, obj) -> {
+            if (insideBounds != null && insideBounds.inBounds(player)) {
+                PassableDoor.passDoor(player, obj, openDirection, 0, null, obj.id);
+            } else {
+                player.dialogue(new MessageDialogue("The door is locked."));
+            }
+        });
         ObjectAction.register(objectId, objectPos, "pick-lock", (player, obj) -> {
             if (!player.getStats().check(StatType.Thieving, levelRequirement, "pick this")) return;
             if (lockpickRequired && !player.getInventory().hasId(Items.LOCKPICK)) {
