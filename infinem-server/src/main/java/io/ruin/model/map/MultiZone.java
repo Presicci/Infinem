@@ -83,8 +83,6 @@ public class MultiZone {
                 11050, 11051, 10794, 10795,//Apeatoll
                 12590, //Bandit camp
                 13105, //Al Kharid
-                12337, //Wizards tower
-                12338, //Draynor Village
                 11602, 11603, 11346, 11347, //Godwars Dungeon
                 13131, 13387, //FFA clan wars, top half
                 11844, //Corporeal beast
@@ -204,7 +202,13 @@ public class MultiZone {
 
                 // South of port phasmatys
                 new Bounds(3584, 3408, 3667, 3453, 0),
-                new Bounds(3682, 3437, 3704, 3451, 0)
+                new Bounds(3682, 3437, 3704, 3451, 0),
+
+                // Draynor jail
+                new Bounds(3110, 3236, 3131, 3258, 0),
+
+                // Wizard tower
+                new Bounds(3094, 3148, 3127, 3175, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
