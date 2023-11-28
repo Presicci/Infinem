@@ -710,6 +710,96 @@
     "world": "ECO",
     "npcName": "Ochre Blamish Snail"
   },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3639,
+    "y": 3424,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3599,
+    "y": 3425,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3596,
+    "y": 3423,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3594,
+    "y": 3426,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3592,
+    "y": 3425,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3593,
+    "y": 3419,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3601,
+    "y": 3419,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3636,
+    "y": 3426,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3634,
+    "y": 3427,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3634,
+    "y": 3425,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
 
 
   //13622
@@ -942,6 +1032,55 @@
     "walkRange": 3,
     "world": "ECO",
     "npcName": "Ghoul"
+  },
+
+
+
+  //14645
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3693,
+    "y": 3439,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3695,
+    "y": 3442,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3690,
+    "y": 3443,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3688,
+    "y": 3443,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Swampy log",
+    "id": 8299,
+    "x": 3689,
+    "y": 3438,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   },
 
 
