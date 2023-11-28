@@ -1,6 +1,7 @@
 package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Items;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
@@ -17,6 +18,7 @@ public enum PickableDoor {
     YANILLE_DUNGEON(11728, new Position(2601, 9482), Direction.SOUTH, 82, 5);
 
     PickableDoor(int objectId, Position objectPos, Direction openDirection, int levelRequirement, double experience) {
+        ObjectAction.register(objectId, objectPos, "open", (player, obj) -> player.dialogue(new MessageDialogue("The door is locked.")));
         ObjectAction.register(objectId, objectPos, "pick-lock", (player, obj) -> {
             if (!player.getStats().check(StatType.Thieving, levelRequirement, "pick this")) return;
             player.startEvent(e -> {
