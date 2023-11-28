@@ -22,6 +22,12 @@ public enum PickableDoor {
         ObjectAction.register(objectId, objectPos, "pick-lock", (player, obj) -> {
             if (!player.getStats().check(StatType.Thieving, levelRequirement, "pick this")) return;
             player.startEvent(e -> {
+                boolean vertical = openDirection == Direction.NORTH || openDirection == Direction.SOUTH;
+                if ((vertical && player.getAbsX() != obj.x) || (!vertical && player.getAbsY() != obj.y)) {
+                    player.getRouteFinder().routeAbsolute(vertical ? obj.x : player.getAbsX(), vertical ? player.getAbsY() : obj.y);
+                    e.delay(2);
+                    player.face(obj);
+                }
                 while (true) {
                     boolean hasLockpick = player.getInventory().hasId(Items.LOCKPICK);
                     player.animate(537);
