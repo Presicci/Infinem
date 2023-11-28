@@ -102,6 +102,7 @@ public class MultiZone {
                 7991,   // Home
                 12690,  // Smoke dungeon task only area
                 14129,  // South-east Burgh de Rott
+                13876,  // The Hollows in mort myre
 
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, 12600, //Wilderness Ditch
