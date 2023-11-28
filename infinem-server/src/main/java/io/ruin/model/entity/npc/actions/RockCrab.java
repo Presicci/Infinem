@@ -13,7 +13,8 @@ public enum RockCrab {
     SAND_CRAB(5936, 5935),
     SAND_CRAB2(7207, 7206),
     ROCK_CRAB(101, 100),
-    ROCK_CRAB2(103, 102);
+    ROCK_CRAB2(103, 102),
+    SWAMP_CRAB(8299, 8297);
 
     private final int rockId, crabId;
 
