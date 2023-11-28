@@ -170,37 +170,41 @@ public class MultiZone {
          * By bounds
          */
         Bounds[] bounds = {
-            /* wilderness agility area */
-            new Bounds(2984, 3912, 3007, 3927, 0),
-            /* waterbirth dungeon */
-            new Bounds(2433, 10115, 2560, 10177, 0),
-            new Bounds(1792, 4330, 1984, 4452, 0),
-            new Bounds(1792, 4330, 1984, 4452, 1),
-            new Bounds(1792, 4330, 1984, 4452, 2),
-            new Bounds(1792, 4330, 1984, 4452, 3),
+                /* wilderness agility area */
+                new Bounds(2984, 3912, 3007, 3927, 0),
+                /* waterbirth dungeon */
+                new Bounds(2433, 10115, 2560, 10177, 0),
+                new Bounds(1792, 4330, 1984, 4452, 0),
+                new Bounds(1792, 4330, 1984, 4452, 1),
+                new Bounds(1792, 4330, 1984, 4452, 2),
+                new Bounds(1792, 4330, 1984, 4452, 3),
 
-            /* catacombs of kourend */
-            new Bounds(1598, 9963, 1766, 10067, -1),
-            new Bounds(1638, 10067, 1737, 10111, -1),
+                /* catacombs of kourend */
+                new Bounds(1598, 9963, 1766, 10067, -1),
+                new Bounds(1638, 10067, 1737, 10111, -1),
 
-            /* Kraken boss room */
-            new Bounds(2270, 10019, 2293, 10045, -1),
+                /* Kraken boss room */
+                new Bounds(2270, 10019, 2293, 10045, -1),
 
-            /* Zulrah arena */
-            Zulrah.SHRINE_BOUNDS,
+                /* Zulrah arena */
+                Zulrah.SHRINE_BOUNDS,
 
-            /* Wilderness Godwars */
-            new Bounds(3013, 10108, 3078, 10177, 0),
+                /* Wilderness Godwars */
+                new Bounds(3013, 10108, 3078, 10177, 0),
 
-            /* Raids source area */
-            new Bounds(3264, 5152, 3400, 5727, -1),
+                /* Raids source area */
+                new Bounds(3264, 5152, 3400, 5727, -1),
 
-            /* Revs caves */
-            new Bounds(3233, 10229, 3235, 10231, -1),
-            new Bounds(3136, 10061, 3263, 10228, -1),
-            new Bounds(3208, 10048, 3263, 10082, -1),
+                /* Revs caves */
+                new Bounds(3233, 10229, 3235, 10231, -1),
+                new Bounds(3136, 10061, 3263, 10228, -1),
+                new Bounds(3208, 10048, 3263, 10082, -1),
 
-            new Bounds(1357, 10193, 1378, 10220, 1)
+                new Bounds(1357, 10193, 1378, 10220, 1),
+
+                // South of port phasmatys
+                new Bounds(3584, 3408, 3667, 3453, 0),
+                new Bounds(3682, 3437, 3704, 3451, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
