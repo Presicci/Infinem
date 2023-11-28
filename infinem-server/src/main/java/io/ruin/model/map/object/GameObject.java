@@ -56,6 +56,10 @@ public class GameObject extends TemporaryAttributesHolder {
         this.y = y;
         this.z = z;
         this.type = type;
+        if (direction >= 4)
+            direction -= 4;
+        if (direction < 0)
+            direction += 4;
         this.direction = direction;
         this.originalDirection = direction;
     }
