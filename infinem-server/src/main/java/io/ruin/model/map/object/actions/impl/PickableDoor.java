@@ -16,12 +16,22 @@ public enum PickableDoor {
     ARDY_10_COIN(11719, new Position(2674, 3305), Direction.NORTH, 1, 3.8),
     ROSE_HOUSE(40178, new Position(2610, 3316), Direction.EAST, 13, 15),
     ARDY_NATURE_RUNE(11720, new Position(2674, 3304), Direction.SOUTH, 16, 15),
+    AXE_HUT_1(11726, new Position(3190, 3957), Direction.NORTH, 23, 25, true),
+    AXE_HUT_2(11726, new Position(3191, 3963), Direction.SOUTH, 23, 25, true),
     YANILLE_DUNGEON(11728, new Position(2601, 9482), Direction.SOUTH, 82, 5);
 
     PickableDoor(int objectId, Position objectPos, Direction openDirection, int levelRequirement, double experience) {
+        this(objectId, objectPos, openDirection, levelRequirement, experience, false);
+    }
+
+    PickableDoor(int objectId, Position objectPos, Direction openDirection, int levelRequirement, double experience, boolean lockpickRequired) {
         ObjectAction.register(objectId, objectPos, "open", (player, obj) -> player.dialogue(new MessageDialogue("The door is locked.")));
         ObjectAction.register(objectId, objectPos, "pick-lock", (player, obj) -> {
             if (!player.getStats().check(StatType.Thieving, levelRequirement, "pick this")) return;
+            if (lockpickRequired && !player.getInventory().hasId(Items.LOCKPICK)) {
+                player.sendMessage("You need a lockpick to pick the lock.");
+                return;
+            }
             player.startEvent(e -> {
                 boolean vertical = openDirection == Direction.NORTH || openDirection == Direction.SOUTH;
                 if ((vertical && player.getAbsX() != obj.x) || (!vertical && player.getAbsY() != obj.y)) {

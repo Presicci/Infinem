@@ -75,12 +75,4 @@ public class AxeHut {
         player.sendMessage("You fail to the pick lock.");
 
     }
-
-    static {
-        ObjectAction.register(11726, 3190, 3957, 0, "open", (player, obj) -> openDoor(player, obj, 3190, 3957, 3190, 3958, 2, + 1));
-        ObjectAction.register(11726, 3191, 3963, 0, "open", (player, obj) -> openDoor(player, obj, 3191, 3963, 3191, 3962, 0, - 1));
-
-        ObjectAction.register(11726, 3190, 3957, 0, "pick-lock", (player, obj) -> picklockDoor(player, obj, 3190, 3958, 3190, 3958, 2));
-        ObjectAction.register(11726, 3191, 3963, 0, "pick-lock", (player, obj) -> picklockDoor(player, obj, 3191, 3962, 3191, 3962, 0));
-    }
 }
