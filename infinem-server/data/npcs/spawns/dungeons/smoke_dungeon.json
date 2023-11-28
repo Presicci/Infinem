@@ -700,5 +700,144 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
+  },
+  {
+    "name": "Dust devil",
+    "id": 423,
+    "x": 3186,
+    "y": 9363,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "taskOnlyNPC": "DUSTY_ALIV"
+  },
+  {
+    "name": "Dust devil",
+    "id": 423,
+    "x": 3183,
+    "y": 9361,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "taskOnlyNPC": "DUSTY_ALIV"
+  },
+  {
+    "name": "Dust devil",
+    "id": 423,
+    "x": 3181,
+    "y": 9360,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "taskOnlyNPC": "DUSTY_ALIV"
+  },
+  {
+    "name": "Dust devil",
+    "id": 423,
+    "x": 3179,
+    "y": 9362,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "taskOnlyNPC": "DUSTY_ALIV"
+  },
+  {
+    "name": "Dust devil",
+    "id": 423,
+    "x": 3180,
+    "y": 9365,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "taskOnlyNPC": "DUSTY_ALIV"
+  },
+  {
+    "name": "Dust devil",
+    "id": 423,
+    "x": 3183,
+    "y": 9364,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "taskOnlyNPC": "DUSTY_ALIV"
+  },
+  {
+    "name": "Dust devil",
+    "id": 423,
+    "x": 3187,
+    "y": 9367,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "taskOnlyNPC": "DUSTY_ALIV"
+  },
+  {
+    "name": "Dust devil",
+    "id": 423,
+    "x": 3184,
+    "y": 9367,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "taskOnlyNPC": "DUSTY_ALIV"
+  },
+  {
+    "name": "Dust devil",
+    "id": 423,
+    "x": 3188,
+    "y": 9378,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "taskOnlyNPC": "DUSTY_ALIV"
+  },
+  {
+    "name": "Dust devil",
+    "id": 423,
+    "x": 3189,
+    "y": 9381,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "taskOnlyNPC": "DUSTY_ALIV"
+  },
+  {
+    "name": "Dust devil",
+    "id": 423,
+    "x": 3186,
+    "y": 9380,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "taskOnlyNPC": "DUSTY_ALIV"
+  },
+  {
+    "name": "Dust devil",
+    "id": 423,
+    "x": 3184,
+    "y": 9379,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "taskOnlyNPC": "DUSTY_ALIV"
+  },
+  {
+    "name": "Dust devil",
+    "id": 423,
+    "x": 3183,
+    "y": 9382,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "taskOnlyNPC": "DUSTY_ALIV"
+  },
+  {
+    "name": "Dusty Aliv",
+    "id": 11161,
+    "x": 3191,
+    "y": 9362,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
   }
 ]
