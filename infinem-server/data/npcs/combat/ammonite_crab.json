@@ -1,10 +1,10 @@
 [
   { // Ammonite Crab (25)
-  "ids": [ 7799 ],
+  "ids": [ 7799, 7800 ],
   "handler": "",
   //Combat Info
   "hitpoints": 100,
-  "aggressive_level": 26,
+  "aggressive_level": 126,
   "max_damage": 1,
   "attack_style": "CRUSH",
   //Slayer Info
