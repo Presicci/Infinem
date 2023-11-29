@@ -216,7 +216,10 @@ public class MultiZone {
                 new Bounds(3014, 3297, 3043, 3313, 0),
 
                 // Burthorpe
-                new Bounds(2880, 3520, 2903, 3543, 0)
+                new Bounds(2880, 3520, 2903, 3543, 0),
+
+                // Chaos temple
+                new Bounds(2930, 3513, 2940, 3518, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
