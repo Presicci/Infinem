@@ -250,7 +250,10 @@ public class MultiZone {
                 new Bounds(2888, 3720, 2919, 3759, 0),
 
                 // Rellekka
-                new Bounds(2653, 3712, 2735, 3735, 0)
+                new Bounds(2653, 3712, 2735, 3735, 0),
+
+                // Neitiznot
+                new Bounds(2304, 3821, 2381, 3839, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
