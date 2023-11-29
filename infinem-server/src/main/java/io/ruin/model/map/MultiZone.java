@@ -172,12 +172,17 @@ public class MultiZone {
                 20251005, 20316540, 20316541, 20382076, 20382077,
 
                 // Necromancer tower
-                21823892, 21823893, 21889428, 21889429
+                21823892, 21823893, 21889428, 21889429,
+
+                // Tower of magic
+                12779997, 12845532, 12845533, 12845534, 12911067, 12911068, 12911069,
+                12911070, 12911071, 12976604, 12976605, 12976606, 13042141
         };
         for(int chunk : chunks) {
             int chunkAbsX = (chunk >> 16) << 3;
             int chunkAbsY = (chunk & 0xffff) << 3;
             set(true, new Bounds(chunkAbsX, chunkAbsY, chunkAbsX + 7, chunkAbsY + 7, 0));
+            set(true, new Bounds(chunkAbsX, chunkAbsY, chunkAbsX + 7, chunkAbsY + 7, 1));
         }
         /**
          * By bounds
@@ -281,7 +286,11 @@ public class MultiZone {
 
                 // Piscarilius
                 new Bounds(1742, 3661, 1855, 3764, 0),
-                new Bounds(1743, 3726, 1773, 3801, 0)
+                new Bounds(1743, 3726, 1773, 3801, 0),
+
+                // Arceuus
+                new Bounds(1616, 3712, 1735, 3775, 0),
+                new Bounds(1664, 3776, 1718, 3805, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
