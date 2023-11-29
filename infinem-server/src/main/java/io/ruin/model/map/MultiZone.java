@@ -103,6 +103,7 @@ public class MultiZone {
                 11325, 11581,   // Weiss
                 5941,   // Land's End
                 6710,   // Charcoal burners
+                6992, 6993, // Mole lair
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, //Wilderness Ditch
                 12855, 12856, //Mammoths (lvl 9)
