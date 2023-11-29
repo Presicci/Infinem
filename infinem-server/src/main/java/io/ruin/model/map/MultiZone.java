@@ -100,6 +100,7 @@ public class MultiZone {
                 13876,  // The Hollows in mort myre
                 8763,   // Pirates' cove
                 8493, 8749, 9005,   // Soul wars
+                9520,   // Castle wars
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, //Wilderness Ditch
                 12855, 12856, //Mammoths (lvl 9)
