@@ -1967,6 +1967,7 @@ public class Administrator {
                 player.sendMessage("    abs = " + chunkAbsX + ", " + chunkAbsY);
                 player.sendMessage("    local = " + localX + ", " + localY);
                 player.sendMessage("    points =  " + pointX + ", " + pointY);
+                player.sendMessage("    hash =  " + (((chunkAbsX >> 3) << 16) + chunkY));
                 return true;
             }
 
