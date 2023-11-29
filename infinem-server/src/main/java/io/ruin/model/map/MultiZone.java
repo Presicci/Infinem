@@ -105,7 +105,6 @@ public class MultiZone {
                 6710,   // Charcoal burners
                 6992, 6993, // Mole lair
                 9552,   // Fight pits
-                9834, 9890, 9891,   // Jormungand's prison
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, //Wilderness Ditch
                 12855, 12856, //Mammoths (lvl 9)
@@ -383,7 +382,11 @@ public class MultiZone {
                 new Bounds(1677, 3634, 1689, 3642, 0),
 
                 // Kourend castle
-                new Bounds(1592, 3656, 1658, 3690, 0)
+                new Bounds(1592, 3656, 1658, 3690, 0),
+
+                // Jormungand's prison
+                new Bounds(2398, 10402, 2451, 10472, 0),
+                new Bounds(2452, 10424, 2495, 10467, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
