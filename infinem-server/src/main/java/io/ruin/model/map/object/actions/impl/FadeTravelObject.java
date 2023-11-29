@@ -9,6 +9,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
+    JORMUNGAND_PRISON_ENTRANCE(37433, new Position(2464, 4011), new Position(2461, 10417, 0)),
+    JORMUNGAND_PRISON_EXIT(37411, new Position(2460, 10418), new Position(2465, 4010, 0)),
     WIZARDS_GUILD_PORTAL_TO_WIZARDS_TOWER(2156, new Position(2596, 3087, 2), new Position(3109, 3165, 0)),
     WIZARDS_GUILD_PORTAL_TO_DARK_WIZARDS_TOWER(2157, new Position(2590, 3081, 2), new Position(2907, 3337, 0)),
     WIZARDS_GUILD_PORTAL_TO_SORCERORS_TOWER(2158, new Position(2585, 3087, 2), new Position(2702, 3403, 0)),
