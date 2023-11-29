@@ -78,7 +78,6 @@ public class MultiZone {
                 10034, //Battlefield
                 10029, //Feldip hills
                 11318, //White wolf mountain
-                11575, //Burthope
                 11577, 11578, //Trollheim
                 11050, 11051, 10794, 10795,//Apeatoll
                 12590, //Bandit camp
@@ -214,7 +213,10 @@ public class MultiZone {
                 new Bounds(2944, 3304, 3015, 3327, 0),
 
                 // Falador cow pen
-                new Bounds(3014, 3297, 3043, 3313, 0)
+                new Bounds(3014, 3297, 3043, 3313, 0),
+
+                // Burthorpe
+                new Bounds(2880, 3520, 2903, 3543, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
