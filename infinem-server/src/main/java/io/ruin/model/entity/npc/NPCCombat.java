@@ -296,11 +296,12 @@ public abstract class NPCCombat extends Combat {
                     npc.getDef().killCounterType.increment(killer.player);
                 if(info.pet != null) {
                     int dropAverage = info.pet.dropAverage;
-                    int threshold = info.pet.dropThreshold; // TODO Threshold handling
                     if (npc.getId() == 6619) {  // Manual override for chaos fanatic sharing boss pet w/ chaos ele
                         dropAverage = 1000;
                     }
-                    if (Random.rollDie(dropAverage)) {
+                    int threshold = info.pet.dropThreshold;
+                    int numerator = npc.getDef().killCounterType != null ? (npc.getDef().killCounterType.getKills(killer.player) / threshold) + 1 : 1;
+                    if (Random.rollDie(dropAverage, numerator)) {
                         info.pet.unlock(killer.player);
                     }
                 }
