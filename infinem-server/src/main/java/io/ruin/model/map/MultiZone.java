@@ -105,6 +105,7 @@ public class MultiZone {
                 6710,   // Charcoal burners
                 6992, 6993, // Mole lair
                 9552,   // Fight pits
+                9834, 9890, 9891,   // Jormungand's prison
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, //Wilderness Ditch
                 12855, 12856, //Mammoths (lvl 9)
