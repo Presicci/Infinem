@@ -32,9 +32,9 @@ public class InfernalMage extends NPCCombat {
                 .clientDelay(delay);
         hit.postDamage(t -> {
            if(hit.damage > 0) {
-               t.graphics(131, 124, delay);
+               t.graphics(131, 80, 0);
            } else {
-               t.graphics(85, 124, delay);
+               t.graphics(85, 80, 0);
                hit.hide();
            }
         });
