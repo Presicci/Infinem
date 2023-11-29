@@ -102,13 +102,12 @@ public class MultiZone {
                 13876,  // The Hollows in mort myre
 
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
-                12599, 12600, //Wilderness Ditch
+                12599, //Wilderness Ditch
                 12855, 12856, //Mammoths (lvl 9)
                 13111, 13112, 13113, 13114, 13115, 13116, 13117, //Varrock -> GDZ
                 12857, 12858, 12859,12860,12861, //East graveyard (lvl 17)
                 13372, 13373, //East of Callisto (lvl 41)
                 12604, //Black chins (lvl 33)
-                12348, //Wildy GWD & Center wildy north of lava maze
                 12088, 12089, //North of dark warriors (lvl 17)
                 12961, //Scorpia pit
                 9033, // KBD zone
@@ -150,13 +149,11 @@ public class MultiZone {
                 24904162, 24904163, 24904164, 24904165, 24904166, 24904167,
 
                 //Rune rocks north of KBD cage
-                24969699, 24969700, 24969702, 24969703, 25035238, 25035239,
-                25100774, 25100775,
+                24969699, 24969703, 25035239, 25100775,
 
                 // Wilderness agility course at 55 wilderness
                 24445417, 24510953, 24576489,
-                24445418, 24510954, 24576490,
-                24445419
+                24445418, 24510954, 24576490
         };
         for(int chunk : chunks) {
             int chunkAbsX = (chunk >> 16) << 3;
@@ -219,7 +216,28 @@ public class MultiZone {
                 new Bounds(2880, 3520, 2903, 3543, 0),
 
                 // Chaos temple
-                new Bounds(2930, 3513, 2940, 3518, 0)
+                new Bounds(2930, 3513, 2940, 3518, 0),
+
+                // Ferox chunk
+                new Bounds(3152, 3584, 3199, 3623, 0),
+                new Bounds(3144, 3597, 3151, 3619, 0),
+
+                // Ferox bridge
+                new Bounds(3176, 3640, 3191, 3647, 0),
+                new Bounds(3183, 3635, 3199, 3639, 0),
+                new Bounds(3184, 3624, 3199, 3631, 0),
+                new Bounds(3188, 3632, 3199, 3634, 0),
+
+                // Boneyard
+                new Bounds(3192, 3640, 3199, 3751, 0),
+                new Bounds(3152, 3752, 3199, 3775, 0),
+
+                // Center wildy north of lava maze
+                new Bounds(3112, 3872, 3135, 3879, 0),
+                new Bounds(3072, 3880, 3135, 3903, 0),
+                new Bounds(3008, 3896, 3071, 3903, 0),
+                new Bounds(3008, 3856, 3047, 3895, 0),
+                new Bounds(3021, 3854, 3023, 3855, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
