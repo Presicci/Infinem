@@ -16,7 +16,7 @@ import io.ruin.utility.TickDelay;
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 11/29/2023
  */
-public class BasiliskSentinel extends NPCCombat {
+public class BasiliskSentinel extends Superior {
 
     private static final Projectile MAGIC_PROJECTILE = new Projectile(1735, 25, 25, 40, 60, 0, 16, 96);
     private static final Projectile SPECIAL_PROJECTILE = new Projectile(1737, 25, 25, 40, 150, 0, 16, 96);
