@@ -104,6 +104,7 @@ public class MultiZone {
                 5941,   // Land's End
                 6710,   // Charcoal burners
                 6992, 6993, // Mole lair
+                9552,   // Fight pits
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, //Wilderness Ditch
                 12855, 12856, //Mammoths (lvl 9)
