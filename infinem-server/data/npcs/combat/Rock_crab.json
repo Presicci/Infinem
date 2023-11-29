@@ -33,7 +33,7 @@
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
-    "attack_ticks": 6,
+    "attack_ticks": 4,
     "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
