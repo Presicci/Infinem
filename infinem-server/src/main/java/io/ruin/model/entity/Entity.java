@@ -917,38 +917,46 @@ public abstract class Entity extends TemporaryAttributesHolder {
     }
 
     /**
-     *
+     * Breakable root
      */
-    private BreakableRoot breakableRoot = new BreakableRoot();
+    private BreakableLock breakableLock = new BreakableLock();
 
-    public void breakableRoot(int ticks, boolean resetMovement, String successMessage, String failureMessage, String progressMessage) {
-        breakableRoot(ticks, resetMovement, successMessage, failureMessage, progressMessage, null);
+    public void breakableLock(int ticks, boolean resetMovement, BreakableLock.BreakableLockType type, String successMessage, String failureMessage, String progressMessage) {
+        breakableLock(ticks, resetMovement, type, successMessage, failureMessage, progressMessage, null);
     }
 
-    public void breakableRoot(int ticks, boolean resetMovement, String successMessage, String failureMessage, String progressMessage, BiConsumer<Entity, Boolean> action) {
-        breakableRoot = new BreakableRoot(ticks, successMessage, failureMessage, progressMessage, action);
+    public void breakableLock(int ticks, boolean resetMovement, BreakableLock.BreakableLockType type, String successMessage, String failureMessage, String progressMessage, BiConsumer<Entity, Boolean> action) {
+        breakableLock = new BreakableLock(ticks, type, successMessage, failureMessage, progressMessage, action);
         if (resetMovement)
             getMovement().reset();
     }
 
-    public void resetBreakableRoot(boolean success) {
-        if (breakableRoot == null) return;
+    public void resetBreakableLock(boolean success) {
+        if (breakableLock == null) return;
         if (player != null) {
             if (success) {
-                player.sendMessage(Color.GREEN, breakableRoot.getSuccessMessage());
+                player.sendMessage(Color.GREEN, breakableLock.getSuccessMessage());
             } else {
-                player.sendMessage(Color.RED, breakableRoot.getFailureMessage());
+                player.sendMessage(Color.RED, breakableLock.getFailureMessage());
             }
         }
-        BiConsumer<Entity, Boolean> action = breakableRoot.getBreakoutAction();
+        BiConsumer<Entity, Boolean> action = breakableLock.getBreakoutAction();
         if (action != null) {
             action.accept(this, success);
         }
-        breakableRoot.reset();
+        breakableLock.reset();
+    }
+
+    public boolean isBreakableLocked() {
+        return breakableLock.isDelayed();
     }
 
     public boolean isBreakableRooted() {
-        return breakableRoot.isDelayed();
+        return breakableLock.getType() == BreakableLock.BreakableLockType.ROOT && breakableLock.isDelayed();
+    }
+
+    public boolean isBreakableStunned() {
+        return breakableLock.getType() == BreakableLock.BreakableLockType.STUN && breakableLock.isDelayed();
     }
 
     /**
@@ -976,13 +984,13 @@ public abstract class Entity extends TemporaryAttributesHolder {
                 player.sendMessage("You're stunned!");
             return true;
         }
-        if (isBreakableRooted()) {
-            if (breakableRoot.getClicks() > 15) {
-                resetBreakableRoot(true);
+        if (isBreakableLocked()) {
+            if (breakableLock.getClicks() > 15) {
+                resetBreakableLock(true);
             } else {
-                breakableRoot.click();
-                if (breakableRoot.getClicks() % 3 == 0 && player != null) {
-                    player.sendMessage(breakableRoot.getProgressMessage());
+                breakableLock.click();
+                if (breakableLock.getClicks() % 3 == 0 && player != null) {
+                    player.sendMessage(breakableLock.getProgressMessage());
                 }
             }
             return true;

@@ -7,6 +7,7 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.Killer;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
+import io.ruin.model.entity.shared.BreakableLock;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
@@ -172,14 +173,17 @@ public class Hespori extends NPCCombat {
             ENTANGLE_PROJ.send(npc, target);
             e.delay(1);
             target.graphics(1643);
-            target.breakableRoot(rootTicks + 1, true, "You manage to break free of the vines!", "The vines explode!", "You feel the vines loosen slightly as you try to move.");
+            target.breakableLock(rootTicks + 1, true, BreakableLock.BreakableLockType.ROOT,
+                    "You manage to break free of the vines!",
+                    "The vines explode!",
+                    "You feel the vines loosen slightly as you try to move.");
             if (target != null && target.player != null) {
                 target.player.sendMessage(Color.RED, "The Hespori entangles you in some vines!");
             }
             World.startEvent(we -> {
                 we.delay(rootTicks);
                 if (target.isBreakableRooted()) {
-                    target.resetBreakableRoot(false);
+                    target.resetBreakableLock(false);
                     Hit hit = new Hit().randDamage(40).ignoreDefence().ignorePrayer();
                     target.hit(hit);
                 }

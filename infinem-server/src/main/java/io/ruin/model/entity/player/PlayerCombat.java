@@ -156,6 +156,9 @@ public class PlayerCombat extends Combat {
                 player.sendMessage("You're stunned!");
             return false;
         }
+        if (player.isBreakableStunned()) {
+            return false;
+        }
         if(!multiCheck(target, message))
             return false;
         if(target.player != null) {
