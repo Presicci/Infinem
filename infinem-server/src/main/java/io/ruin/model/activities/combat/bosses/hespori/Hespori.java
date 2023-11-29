@@ -172,14 +172,14 @@ public class Hespori extends NPCCombat {
             ENTANGLE_PROJ.send(npc, target);
             e.delay(1);
             target.graphics(1643);
-            target.clickOffRoot(rootTicks + 1, true);
-            if (target.player != null) {
+            target.breakableRoot(rootTicks + 1, true, "You manage to break free of the vines!", "The vines explode!", "You feel the vines loosen slightly as you try to move.");
+            if (target != null && target.player != null) {
                 target.player.sendMessage(Color.RED, "The Hespori entangles you in some vines!");
             }
             World.startEvent(we -> {
                 we.delay(rootTicks);
-                if (target.isClickOffRooted()) {
-                    target.resetClickOffRoot(false);
+                if (target.isBreakableRooted()) {
+                    target.resetBreakableRoot(false);
                     Hit hit = new Hit().randDamage(40).ignoreDefence().ignorePrayer();
                     target.hit(hit);
                 }

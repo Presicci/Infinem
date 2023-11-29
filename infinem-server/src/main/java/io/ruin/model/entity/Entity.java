@@ -15,10 +15,7 @@ import io.ruin.model.combat.HitType;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.behavior.StaticFacingNPC;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.shared.LockType;
-import io.ruin.model.entity.shared.Movement;
-import io.ruin.model.entity.shared.StepType;
-import io.ruin.model.entity.shared.UpdateMask;
+import io.ruin.model.entity.shared.*;
 import io.ruin.model.entity.shared.listeners.*;
 import io.ruin.model.entity.shared.masks.*;
 import io.ruin.model.inter.Widget;
@@ -921,30 +918,28 @@ public abstract class Entity extends TemporaryAttributesHolder {
     /**
      *
      */
-    private TickDelay clickOffRoot = new TickDelay();
+    private BreakableRoot breakableRoot = new BreakableRoot();
 
-    private int clicks = 0;
-
-    public void clickOffRoot(int ticks, boolean resetMovement) {
-        clickOffRoot.delay(ticks);
-        if(resetMovement)
+    public void breakableRoot(int ticks, boolean resetMovement, String successMessage, String failureMessage, String progressMessage) {
+        breakableRoot = new BreakableRoot(ticks, successMessage, failureMessage, progressMessage);
+        if (resetMovement)
             getMovement().reset();
     }
 
-    public void resetClickOffRoot(boolean success) {
+    public void resetBreakableRoot(boolean success) {
+        if (breakableRoot == null) return;
         if (player != null) {
             if (success) {
-                player.sendMessage(Color.GREEN, "You manage to break free of the vines!");
+                player.sendMessage(Color.GREEN, breakableRoot.getSuccessMessage());
             } else {
-                player.sendMessage(Color.RED, "The vines explode!");
+                player.sendMessage(Color.RED, breakableRoot.getFailureMessage());
             }
         }
-        clicks = 0;
-        clickOffRoot.reset();
+        breakableRoot.reset();
     }
 
-    public boolean isClickOffRooted() {
-        return clickOffRoot.isDelayed();
+    public boolean isBreakableRooted() {
+        return breakableRoot.isDelayed();
     }
 
     /**
@@ -952,40 +947,40 @@ public abstract class Entity extends TemporaryAttributesHolder {
      */
 
     public boolean isMovementBlocked(boolean message, boolean ignoreFreeze) {
-        if(!ignoreFreeze && isFrozen()) {
-            if(freezer != null) {
-                if(freezer.player != null && World.getPlayer(freezer.player.getUserId(), true) == null) {
+        if (!ignoreFreeze && isFrozen()) {
+            if (freezer != null) {
+                if (freezer.player != null && World.getPlayer(freezer.player.getUserId(), true) == null) {
                     resetFreeze();
                     return false;
                 }
-                if(!freezer.getPosition().isWithinDistance(getPosition(), false, 12)) {
+                if (!freezer.getPosition().isWithinDistance(getPosition(), false, 12)) {
                     resetFreeze();
                     return false;
                 }
-                if(message && player != null)
+                if (message && player != null)
                     player.sendMessage("A magical force stops you from moving.");
                 return true;
             }
         }
-        if(isStunned() || isRooted()) {
-            if(message && player != null)
+        if (isStunned() || isRooted()) {
+            if (message && player != null)
                 player.sendMessage("You're stunned!");
             return true;
         }
-        if(isStunned() || isClickOffRooted()) {
-            if (clicks > 15) {
-                resetClickOffRoot(true);
+        if (isBreakableRooted()) {
+            if (breakableRoot.getClicks() > 15) {
+                resetBreakableRoot(true);
             } else {
-                ++clicks;
-                if (clicks % 3 == 0 && player != null) {
-                    player.sendMessage("You feel the vines loosen slightly as you try to move.");
+                breakableRoot.click();
+                if (breakableRoot.getClicks() % 3 == 0 && player != null) {
+                    player.sendMessage(breakableRoot.getProgressMessage());
                 }
             }
             return true;
         }
 
-        if(player != null && DuelRule.NO_MOVEMENT.isToggled(player)) {
-            if(message)
+        if (player != null && DuelRule.NO_MOVEMENT.isToggled(player)) {
+            if (message)
                 player.sendMessage("Movement has been disabled for this duel!");
             return true;
         }
