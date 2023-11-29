@@ -1,6 +1,33 @@
 [
   //14652
   {
+    "name": "Fossil Rock",
+    "id": 7800,
+    "x": 3656,
+    "y": 3872,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fossil Rock",
+    "id": 7800,
+    "x": 3658,
+    "y": 3875,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fossil Rock",
+    "id": 7800,
+    "x": 3656,
+    "y": 3878,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
     "id": 8690,
     "x": 3674,
     "y": 3878,
@@ -885,5 +912,63 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Petrified Pete"
+  },
+
+
+
+  //15162
+  {
+    "name": "Fossil Rock",
+    "id": 7800,
+    "x": 3736,
+    "y": 3843,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fossil Rock",
+    "id": 7800,
+    "x": 3718,
+    "y": 3843,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fossil Rock",
+    "id": 7800,
+    "x": 3800,
+    "y": 3754,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fossil Rock",
+    "id": 7800,
+    "x": 3802,
+    "y": 3757,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fossil Rock",
+    "id": 7800,
+    "x": 3805,
+    "y": 3755,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fossil Rock",
+    "id": 7800,
+    "x": 3818,
+    "y": 3760,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   }
 ]
