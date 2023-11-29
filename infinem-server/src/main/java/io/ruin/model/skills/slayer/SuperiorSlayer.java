@@ -54,6 +54,8 @@ public class SuperiorSlayer {
     static int getSuperior(SlayerCreature task, int npcID) {
         switch (task) {
             case BASILISKS:
+                if (npcID == 9293)  // Basilisk knight
+                    return 9258;
                 return 7395;
             case COCKATRICE:
                 return 7393;
