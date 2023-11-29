@@ -680,13 +680,6 @@ public class Config {
             varp(1275, true)
     };
 
-
-    /**
-     * Kalphite lair
-     */
-    public static final Config KALPHITE_LAIR_ROPE_INTERIOR = varpbit(4587, true);
-    public static final Config KALPHITE_LAIR_ROPE_EXTERIOR = varpbit(4586, true);
-
     /**
      * Bounty hunter
      */
