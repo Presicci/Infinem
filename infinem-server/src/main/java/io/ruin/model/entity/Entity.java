@@ -30,6 +30,7 @@ import io.ruin.process.event.EventWorker;
 import io.ruin.utility.TickDelay;
 
 import java.util.*;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 // TODO replace entity.player != null checks with isPlayer (and one for npc)
@@ -921,7 +922,11 @@ public abstract class Entity extends TemporaryAttributesHolder {
     private BreakableRoot breakableRoot = new BreakableRoot();
 
     public void breakableRoot(int ticks, boolean resetMovement, String successMessage, String failureMessage, String progressMessage) {
-        breakableRoot = new BreakableRoot(ticks, successMessage, failureMessage, progressMessage);
+        breakableRoot(ticks, resetMovement, successMessage, failureMessage, progressMessage, null);
+    }
+
+    public void breakableRoot(int ticks, boolean resetMovement, String successMessage, String failureMessage, String progressMessage, BiConsumer<Entity, Boolean> action) {
+        breakableRoot = new BreakableRoot(ticks, successMessage, failureMessage, progressMessage, action);
         if (resetMovement)
             getMovement().reset();
     }
@@ -934,6 +939,10 @@ public abstract class Entity extends TemporaryAttributesHolder {
             } else {
                 player.sendMessage(Color.RED, breakableRoot.getFailureMessage());
             }
+        }
+        BiConsumer<Entity, Boolean> action = breakableRoot.getBreakoutAction();
+        if (action != null) {
+            action.accept(this, success);
         }
         breakableRoot.reset();
     }
