@@ -84,7 +84,6 @@ public class MultiZone {
                 13131, 13387, //FFA clan wars, top half
                 11844, //Corporeal beast
                 11589, 11588, //Dagannoths
-                5690, 5689, //Zeah lizanman pit
                 14682, //Kraken cave
                 8023, //Gnome Stronghold crash site (monkey madness)
                 13972, // Kalphite queen lair
@@ -102,6 +101,8 @@ public class MultiZone {
                 8493, 8749, 9005,   // Soul wars
                 9520,   // Castle wars
                 11325, 11581,   // Weiss
+                5941,   // Land's End
+                6710,   // Charcoal burners
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, //Wilderness Ditch
                 12855, 12856, //Mammoths (lvl 9)
@@ -176,7 +177,10 @@ public class MultiZone {
 
                 // Tower of magic
                 12779997, 12845532, 12845533, 12845534, 12911067, 12911068, 12911069,
-                12911070, 12911071, 12976604, 12976605, 12976606, 13042141
+                12911070, 12911071, 12976604, 12976605, 12976606, 13042141,
+
+                // Hosidius market
+                14352833, 14352834, 14418369, 14418370
         };
         for(int chunk : chunks) {
             int chunkAbsX = (chunk >> 16) << 3;
@@ -290,7 +294,93 @@ public class MultiZone {
 
                 // Arceuus
                 new Bounds(1616, 3712, 1735, 3775, 0),
-                new Bounds(1664, 3776, 1718, 3805, 0)
+                new Bounds(1664, 3776, 1718, 3805, 0),
+
+                // Lovakengj
+                new Bounds(1514, 3830, 1520, 3837, -1), // Thirus's shop
+                new Bounds(1551, 3794, 1558, 3796, 0),
+                new Bounds(1552, 3797, 1554, 3798, 0),
+                new Bounds(1553, 3780, 1559, 3787, 0),
+                new Bounds(1540, 3780, 1547, 3782, 0),
+                new Bounds(1562, 3757, 1570, 3765, 0),  // Bar
+                new Bounds(1570, 3757, 1574, 3758, 0),
+                new Bounds(1565, 3752, 1569, 3756, 0),
+                new Bounds(1502, 3752, 1511, 3754, 0),  // Furnace building
+                new Bounds(1505, 3755, 1508, 3766, 0),
+                new Bounds(1499, 3767, 1514, 3773, 0),
+
+                // Lizardman Canyon
+                new Bounds(1418, 3697, 1456, 3724, 0),
+                new Bounds(1475, 3691, 1512, 3722, 0),
+
+                // Settlement ruins
+                new Bounds(1536, 3864, 1599, 3919, 0),
+
+                // Mount Guidamortem
+                new Bounds(1194, 3553, 1208, 3567, 0),
+                new Bounds(1199, 3533, 1215, 3552, 0),
+                new Bounds(1207, 3524, 1246, 3533, 0),
+                new Bounds(1207, 3480, 1250, 3523, 0),
+                new Bounds(1251, 3486, 1284, 3511, 0),
+                new Bounds(1285, 3498, 1302, 3510, 0),
+
+                // Shayziens' Wall
+                new Bounds(1350, 3487, 1415, 3591, 0),
+                new Bounds(1336, 3576, 1391, 3599, 0),
+
+                // Graveyard
+                new Bounds(1425, 3584, 1444, 3597, 0),
+
+                // Graveyard of heroes
+                new Bounds(1475, 3544, 1519, 3579, 0),
+
+                // Woodcutting guild
+                new Bounds(1563, 3477, 1600, 3503, 0),
+                new Bounds(1601, 3497, 1606, 3500, 0),
+                new Bounds(1607, 3487, 1623, 3519, 0),
+                new Bounds(1624, 3493, 1632, 3519, 0),
+                new Bounds(1633, 3489, 1663, 3519, 0),
+
+                // Saltpetre area
+                new Bounds(1664, 3520, 1727, 3562, 0),
+                new Bounds(1662, 3562, 1684, 3590, 0),
+                new Bounds(1603, 3508, 1663, 3560, 0),
+
+                // Barbarian hut
+                new Bounds(1575, 3428, 1588, 3437, 0),
+
+                // Sandcrab shore
+                new Bounds(1728, 3456, 1799, 3476, 0),
+                new Bounds(1796, 3436, 1855, 3471, 0),
+                new Bounds(1840, 3464, 1887, 3535, 0),
+                new Bounds(1840, 3535, 1887, 3583, 0),
+
+                // Crabclaw isle
+                new Bounds(1743, 3399, 1801, 3454, 0),
+
+                // Monk camp
+                new Bounds(1732, 3486, 1756, 3502, 0),
+
+                // Goblin/bat ruins
+                new Bounds(1766, 3501, 1786, 3515, 0),
+
+                // Onion field
+                new Bounds(1746, 3521, 1759, 3527, 0),
+
+                // Cabbage field
+                new Bounds(1746, 3543, 1757, 3556, 0),
+
+                // Hosidius bar
+                new Bounds(1737, 3610, 1750, 3622, 0),
+
+                // Hosidius cow pen
+                new Bounds(1745, 3634, 1766, 3646, 0),
+
+                // Hosidius pig pen
+                new Bounds(1677, 3634, 1689, 3642, 0),
+
+                // Kourend castle
+                new Bounds(1592, 3656, 1658, 3690, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
