@@ -935,7 +935,7 @@ public abstract class Entity extends TemporaryAttributesHolder {
         if (breakableLock == null) return;
         if (player != null) {
             if (success) {
-                player.sendMessage(Color.GREEN, breakableLock.getSuccessMessage());
+                player.sendMessage(Color.DARK_GREEN, breakableLock.getSuccessMessage());
             } else {
                 player.sendMessage(Color.RED, breakableLock.getFailureMessage());
             }
