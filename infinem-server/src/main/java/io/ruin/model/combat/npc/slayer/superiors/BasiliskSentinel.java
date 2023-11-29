@@ -26,9 +26,6 @@ public class BasiliskSentinel extends Superior {
     private final TickDelay specialCooldown = new TickDelay();
 
     @Override
-    public void init() {}
-
-    @Override
     public void follow() {
         follow(1);
     }
