@@ -73,7 +73,6 @@ public class MultiZone {
                 8253, 8252, 8508, 8509, 8254, //Lunar Isle:
                 9273, 9017, //Piscatoris Fishing Colony
                 9532, 9276, //Fremennik Isles
-                10809, 10810, 10554, //Relleka
                 10549, //Ranging Guild
                 10034, //Battlefield
                 10029, //Feldip hills
@@ -248,7 +247,10 @@ public class MultiZone {
 
                 // Trollheim
                 new Bounds(2880, 3696, 2911, 3719, 0),
-                new Bounds(2888, 3720, 2919, 3759, 0)
+                new Bounds(2888, 3720, 2919, 3759, 0),
+
+                // Rellekka
+                new Bounds(2653, 3712, 2735, 3735, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
