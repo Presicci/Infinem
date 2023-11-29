@@ -98,7 +98,7 @@ public class MultiZone {
                 12690,  // Smoke dungeon task only area
                 14129,  // South-east Burgh de Rott
                 13876,  // The Hollows in mort myre
-
+                8763,   // Pirates' cove
                 /** Wildy: (uses 8x8 chunks for some sections as well as chunks) **/
                 12599, //Wilderness Ditch
                 12855, 12856, //Mammoths (lvl 9)
@@ -159,7 +159,10 @@ public class MultiZone {
                 23855565, 23790029, 23724493,
 
                 // North of godwars
-                23724502, 23790038
+                23724502, 23790038,
+
+                // Arandar
+                19464607, 19530143
         };
         for(int chunk : chunks) {
             int chunkAbsX = (chunk >> 16) << 3;
