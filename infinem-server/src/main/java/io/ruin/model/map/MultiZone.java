@@ -164,7 +164,14 @@ public class MultiZone {
                 23724502, 23790038,
 
                 // Arandar
-                19464607, 19530143
+                19464607, 19530143,
+
+                // Jiggig
+                20119932, 20119933, 20185468, 20185469, 20251004,
+                20251005, 20316540, 20316541, 20382076, 20382077,
+
+                // Necromancer tower
+                21823892, 21823893, 21889428, 21889429
         };
         for(int chunk : chunks) {
             int chunkAbsX = (chunk >> 16) << 3;
@@ -258,7 +265,18 @@ public class MultiZone {
                 new Bounds(2653, 3712, 2735, 3735, 0),
 
                 // Neitiznot
-                new Bounds(2304, 3821, 2381, 3839, 0)
+                new Bounds(2304, 3821, 2381, 3839, 0),
+
+                // Fossil island SE beach
+                new Bounds(3799, 3748, 3823, 3767, 0),
+
+                // Fossil island N beach
+                new Bounds(3704, 3840, 3759, 3855, 0),
+                new Bounds(3704, 3856, 3743, 3903, 0),
+                new Bounds(3680, 3896, 3703, 3901, 0),
+
+                // Fossil island NW beach
+                new Bounds(3654, 3867, 3663, 3887, 0),
         };
         for(Bounds b : bounds)
             set(true, b);
