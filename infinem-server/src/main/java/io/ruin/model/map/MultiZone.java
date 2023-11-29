@@ -278,6 +278,10 @@ public class MultiZone {
 
                 // Fossil island NW beach
                 new Bounds(3654, 3867, 3663, 3887, 0),
+
+                // Piscarilius
+                new Bounds(1742, 3661, 1855, 3764, 0),
+                new Bounds(1743, 3726, 1773, 3801, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
