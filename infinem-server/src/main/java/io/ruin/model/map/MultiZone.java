@@ -78,7 +78,6 @@ public class MultiZone {
                 10034, //Battlefield
                 10029, //Feldip hills
                 11318, //White wolf mountain
-                11577, 11578, //Trollheim
                 11050, 11051, 10794, 10795,//Apeatoll
                 12590, //Bandit camp
                 13105, //Al Kharid
@@ -153,7 +152,16 @@ public class MultiZone {
 
                 // Wilderness agility course at 55 wilderness
                 24445417, 24510953, 24576489,
-                24445418, 24510954, 24576490
+                24445418, 24510954, 24576490,
+
+                // Death plateau
+                23331266, 23396802, 23462338, 23527874,
+
+                // Trollheim
+                23855565, 23790029, 23724493,
+
+                // North of godwars
+                23724502, 23790038
         };
         for(int chunk : chunks) {
             int chunkAbsX = (chunk >> 16) << 3;
@@ -237,7 +245,11 @@ public class MultiZone {
                 new Bounds(3072, 3880, 3135, 3903, 0),
                 new Bounds(3008, 3896, 3071, 3903, 0),
                 new Bounds(3008, 3856, 3047, 3895, 0),
-                new Bounds(3021, 3854, 3023, 3855, 0)
+                new Bounds(3021, 3854, 3023, 3855, 0),
+
+                // Trollheim
+                new Bounds(2880, 3696, 2911, 3719, 0),
+                new Bounds(2888, 3720, 2919, 3759, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
