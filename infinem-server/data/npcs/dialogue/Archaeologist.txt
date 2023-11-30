@@ -1,0 +1,6 @@
+Archaeologist: Hello there.
+Player: Hello, what's an archaeologist like yourself doing here.
+Archaeologist: I'm stocking up on water before I start my trip down south to the quarry.
+Archaeologist: I heard there are ruins around there. Can't pass on an opportunity like that.
+Player: Sounds interesting, good luck.
+Archaeologist: Farewell.
