@@ -52,6 +52,7 @@ public class InstanceDialogue {
             player.dialogue(new OptionsDialogue(
                     new Option("Create an instance", this::createMenu),
                     new Option("Enter a friend's instance", this::enterFriend),
+                    new Option("Enter public encounter", () -> type.enterPublic(player)),
                     new Option("Cancel")
             ).keepOpenWhenHit());
         } else {
@@ -59,6 +60,7 @@ public class InstanceDialogue {
                     new Option("Enter your instance", this::enterOwn),
                     new Option("Enter a friend's instance", this::enterFriend),
                     new Option("Create a new instance", this::replaceInstance),
+                    new Option("Enter public encounter", () -> type.enterPublic(player)),
                     new Option("Cancel")
             ).keepOpenWhenHit());
         }
