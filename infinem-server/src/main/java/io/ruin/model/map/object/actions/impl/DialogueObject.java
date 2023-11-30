@@ -3,6 +3,7 @@ package io.ruin.model.map.object.actions.impl;
 import io.ruin.model.inter.dialogue.Dialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
+import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -11,6 +12,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/1/2023
  */
 public enum DialogueObject {
+    TENT_DOOR(2700, new Position(3169, 3046),
+            new MessageDialogue("It's locked."), new PlayerDialogue("Wait what?")),
     SITHIK_INTS(6887, new Position(2591, 3103, 1),
             new NPCDialogue(883, "Leave me be, please.")),
     KALEEFS_BODY(20288, new Position(3239, 9243),
