@@ -1,0 +1,11 @@
+Bedabin Nomad Fighter: Hello Effendi! How can I help you?
+<What is this place?
+Player: What is this place?
+Bedabin Nomad Fighter: This is the camp of the Bedabin. Talk to our leader, Al Shabim, he'll be happy to chat.
+FIRSTOPTIONS
+><Where is the Shantay Pass?
+Player: Where is the Shantay Pass?
+Bedabin Nomad Fighter: It is north-east of here effendi, across the trackless desert. It will be a thirsty trip!
+FIRSTOPTIONS
+><Okay, thanks.
+Player: Okay, thanks.
