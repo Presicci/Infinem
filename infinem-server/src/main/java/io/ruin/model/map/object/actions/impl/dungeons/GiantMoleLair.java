@@ -6,7 +6,6 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.actions.impl.Spade;
 import io.ruin.model.map.Bounds;
-import io.ruin.model.map.Region;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.Ladder;
@@ -33,17 +32,5 @@ public class GiantMoleLair {
                 });
             }
         });
-
-        ObjectAction.register(12202, "look-inside", (player, obj) -> {
-            int count = Region.get(6992).players.size() + Region.get(6993).players.size();
-            if (count == 0)
-                player.sendMessage("You look inside the hole and see nobody inside.");
-            else if (count == 1)
-                player.sendMessage("You look inside the hole and see one adventurer inside.");
-            else
-                player.sendMessage("You look inside the hole and see " + count + " adventurers inside.");
-        });
-
     }
-
 }
