@@ -2750,7 +2750,7 @@ public class Administrator {
                                 new Option("Ancient", () -> PrayerAltar.switchBook(player, SpellBook.ANCIENT, true)),
                                 new Option("Lunar", () -> PrayerAltar.switchBook(player, SpellBook.LUNAR, true)),
                                 new Option("Arceuus", () -> PrayerAltar.switchBook(player, SpellBook.ARCEUUS, true))
-                        )
+                        ).keepOpenWhenHit()
                 );
                 return true;
             }

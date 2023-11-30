@@ -12,6 +12,7 @@ public abstract class Dialogue {
     private Consumer<Player> onClose = null;
     private BiConsumer<Player, Integer> biOnContinue = null;
     private int value = 0;
+    public boolean closeWhenHit = true;
 
     public Dialogue setOnClose(Consumer<Player> playerConsumer){
         this.onClose = playerConsumer;
@@ -21,6 +22,11 @@ public abstract class Dialogue {
     public Dialogue setOnContinue(BiConsumer<Player, Integer> playerTypeConsumer, int value){
         this.biOnContinue = playerTypeConsumer;
         this.value = value;
+        return this;
+    }
+
+    public Dialogue keepOpenWhenHit() {
+        closeWhenHit = false;
         return this;
     }
 

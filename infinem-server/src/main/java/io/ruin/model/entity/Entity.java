@@ -698,7 +698,7 @@ public abstract class Entity extends TemporaryAttributesHolder {
         Hit baseHit = hits[0];
         if(baseHit.type.resetActions && baseHit.resetActions) {
             if(player != null)
-                player.resetActions(true, false, false);
+                player.resetActionsFromHit();
             else
                 npc.resetActions(false, false);
         }

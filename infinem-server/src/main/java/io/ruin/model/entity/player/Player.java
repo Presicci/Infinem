@@ -1453,6 +1453,20 @@ public class Player extends PlayerAttributes {
     }
 
     /**
+     * Reset call when player is hit.
+     * Done this way to allow dialogues to be able to be reatained in combat.
+     */
+    public void resetActionsFromHit() {
+        GameEventProcessor.killFor(this);
+        if(!isLocked())
+            stopEvent(false);
+        if (lastDialogue != null && !lastDialogue.closeWhenHit)
+            closeInterfacesExcluding(InterfaceType.CHATBOX);
+        else
+            closeInterfaces();
+    }
+
+    /**
      * Logout & Saving
      */
 
