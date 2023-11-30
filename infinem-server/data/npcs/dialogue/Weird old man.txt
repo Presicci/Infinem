@@ -1,0 +1,17 @@
+RAND
+/Weird Old Man: She likes to be tickled hehehehe.
+Player: Okay...
+/Weird Old Man: No thanks, I don't want any.
+/Weird Old Man: Pst, wanna hear a secret?
+<Sure!
+Player: Sure!
+Weird Old Man: They've got six legs... SIX!
+><No thanks.
+Player: No thanks.
+/Weird Old Man: AAAAAAAAARRRRRRGGGGGHHHHHHHH!
+<What's wrong?
+Player: What's wrong?
+Weird Old Man: AAAAAAAAARRRRRRGGGGGHHHHHHHH!
+LASTOPTIONS
+><I'll leave you to it then...
+Player: I'll leave you to it then...
