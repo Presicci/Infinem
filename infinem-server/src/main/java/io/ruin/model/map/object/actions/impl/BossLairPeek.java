@@ -8,7 +8,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 11/29/2023
  */
 public enum BossLairPeek {
-    MOLE_LAIR(12202, "look-inside", "look inside the hole", 6992, 6993);
+    MOLE_LAIR(12202, "look-inside", "look inside the hole", 6992, 6993),
+    KALPHITE_LAIR(23609, "look-inside", "peek down", 12690, 12691, 12946, 12947);
 
     BossLairPeek(int objectId, String option, String actionText, int... regions) {
         ObjectAction.register(objectId, option, (player, obj) -> {
