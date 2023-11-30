@@ -20,7 +20,6 @@ public class KalphiteLair {
                 player.getMovement().teleport(3500, 9510, 2);
             }
         });
-        ObjectAction.register(23596, 1, (player, obj) -> player.sendMessage("Looks like this tunnel is blocked."));
         ObjectAction.register(3829, "climb-up", (player, obj) -> {
             Ladder.climb(player, 3226, 3108, 0, true, true, false);
         });
