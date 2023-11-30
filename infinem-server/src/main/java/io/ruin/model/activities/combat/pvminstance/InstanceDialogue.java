@@ -53,13 +53,14 @@ public class InstanceDialogue {
                     new Option("Create an instance", this::createMenu),
                     new Option("Enter a friend's instance", this::enterFriend),
                     new Option("Cancel")
-            ));
+            ).keepOpenWhenHit());
         } else {
             player.dialogue(new OptionsDialogue(
                     new Option("Enter your instance", this::enterOwn),
                     new Option("Enter a friend's instance", this::enterFriend),
                     new Option("Create a new instance", this::replaceInstance),
-                    new Option("Cancel")));
+                    new Option("Cancel")
+            ).keepOpenWhenHit());
         }
     }
 
