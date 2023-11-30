@@ -13,25 +13,26 @@ import io.ruin.model.map.object.actions.ObjectAction;
  */
 public enum RopeObject {
     KALPHITE_LAIR_EXTERIOR(3827, 1, 4586, 827, new Position(3484, 9510, 2)),
-    KALPHITE_LAIR_INTERIOR(23609, 1, 11705, 827, new Position(3507, 9494, 0));
+    KALPHITE_LAIR_INTERIOR(23609, 1, 11705, 827, null);
 
     RopeObject(int objectId, int optionIndex, int varpbit, int animation, Position destination) {
         Config config = Config.varpbit(varpbit, true);
-        ObjectAction.register(objectId, optionIndex, (player, obj) -> {
-            if (config.get(player) == 0) return;    // No rope attached
-            if (animation > -1) {
-                player.startEvent(e -> {
-                    player.lock(LockType.FULL_DELAY_DAMAGE);
-                    player.animate(animation);
-                    e.delay(1);
+        if (destination != null) {
+            ObjectAction.register(objectId, optionIndex, (player, obj) -> {
+                if (config.get(player) == 0) return;    // No rope attached
+                if (animation > -1) {
+                    player.startEvent(e -> {
+                        player.lock(LockType.FULL_DELAY_DAMAGE);
+                        player.animate(animation);
+                        e.delay(1);
+                        player.getMovement().teleport(destination);
+                        player.unlock();
+                    });
+                } else {
                     player.getMovement().teleport(destination);
-                    player.unlock();
-                });
-            } else {
-                player.getMovement().teleport(destination);
-            }
-        });
-
+                }
+            });
+        }
         ItemObjectAction.register(Items.ROPE, objectId, (player, item, obj) -> {
             if (config.get(player) == 1) {
                 player.sendMessage("You already have a rope set up here.");
