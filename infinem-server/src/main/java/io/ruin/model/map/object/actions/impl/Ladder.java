@@ -12,6 +12,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
 public enum Ladder {
     //UP(1, "climb-up", new Position(), new Position(), true),
     //DOWN(1, "climb-down", new Position(), new Position(), false),
+    SOURHOG_CAVE_EXIT(40330, "climb-up", new Position(3157, 9714), new Position(3151, 3349, 0), true),
+
     CHAOS_TEMPLE_UP(31580, "climb", new Position(2939, 3518), new Position(2939, 3517, 1), true),
     CHAOS_TEMPLE_DOWN(31579, "climb", new Position(2939, 3518, 1), new Position(2939, 3517, 0), false),
 

@@ -12,14 +12,19 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 11/29/2023
  */
 public enum RopeObject {
+    SOURHOG_CAVE(40341, 1, 10582, 40, 827, new Position(3157, 9713, 0)),
     KALPHITE_LAIR_EXTERIOR(3827, 1, 4586, 827, new Position(3484, 9510, 2)),
     KALPHITE_LAIR_INTERIOR(23609, 1, 11705, 827, null);
 
     RopeObject(int objectId, int optionIndex, int varpbit, int animation, Position destination) {
+        this(objectId, optionIndex, varpbit, 1, animation, destination);
+    }
+
+    RopeObject(int objectId, int optionIndex, int varpbit, int builtVBValue, int animation, Position destination) {
         Config config = Config.varpbit(varpbit, true);
         if (destination != null) {
             ObjectAction.register(objectId, optionIndex, (player, obj) -> {
-                if (config.get(player) == 0) return;    // No rope attached
+                if (config.get(player) != builtVBValue) return;    // No rope attached
                 if (animation > -1) {
                     player.startEvent(e -> {
                         player.lock(LockType.FULL_DELAY_DAMAGE);
@@ -34,12 +39,12 @@ public enum RopeObject {
             });
         }
         ItemObjectAction.register(Items.ROPE, objectId, (player, item, obj) -> {
-            if (config.get(player) == 1) {
+            if (config.get(player) == builtVBValue) {
                 player.sendMessage("You already have a rope set up here.");
                 return;
             }
             item.remove();
-            config.set(player, 1);
+            config.set(player, builtVBValue);
             player.sendMessage("You set up the rope.");
         });
     }
