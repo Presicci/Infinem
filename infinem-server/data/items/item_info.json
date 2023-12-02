@@ -109733,6 +109733,16 @@
     "protect_value": 0,
     "destroy": "You may simply open the pouch instead to continue pickpocketing."
   },
+  { // Reinforced goggles
+    "id": 24942,
+    "tradeable": false,
+    "examine": "A very sturdy-feeling pair of slayer goggles.",
+    "weight": 0.01,
+	"protect_value": 100,
+    "equip_slot": 0,
+    "hide_hair": false,
+    "destroy": " I can buy another from a Slayer Master."
+  },
   { // Celestial ring (uncharged)
     "id": 25539,
     "tradeable": false,
