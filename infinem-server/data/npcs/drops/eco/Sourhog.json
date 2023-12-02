@@ -58,9 +58,9 @@
       },
       {
         "name": "Tertiary",
-        "weight": 285,
+        "weight": 1050,
         "items": [
-          { "id": 2677, "min": 1, "max": 1, "weight": 250 },   //Clue scroll (easy) TODO Adjust
+          { "id": 2677, "min": 1, "max": 1, "weight": 760 },   //Clue scroll (easy)
           { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
           { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
         ]
