@@ -14,7 +14,7 @@ public class AsgarnianIceDungeon {
          * Entrance/exit
          */
         ObjectAction.register(17385, 3008, 9550, 0, "climb-up", (player, obj) -> Ladder.climb(player, 3009, 3150, 0, true, true, false));
-        ObjectAction.register(1738, 3008, 3150, 0, "climb-down", (player, obj) -> Ladder.climb(player, 3009, 9550, 0, false, false, false));
+        ObjectAction.register(1738, 3008, 3150, 0, "climb-down", (player, obj) -> Ladder.climb(player, 3009, 9550, 0, false, true, false));
 
         /**
          * Skeletal Wyvern entrance
