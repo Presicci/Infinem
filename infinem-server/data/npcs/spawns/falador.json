@@ -1314,6 +1314,24 @@
     "npcName": "Chicken"
   },
   {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 3017,
+    "y": 3293,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 3015,
+    "y": 3292,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
     "id": 2796,
     "x": 3017,
     "y": 3305,
