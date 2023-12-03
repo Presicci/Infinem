@@ -55,7 +55,6 @@ public enum SpinningWheel {
                 player.getTaskManager().doSkillItemLookup(item.after);
             }
         });
-        player.unlock();
     }
 
     private static void spin(Player player, SpinningWheel item) {
