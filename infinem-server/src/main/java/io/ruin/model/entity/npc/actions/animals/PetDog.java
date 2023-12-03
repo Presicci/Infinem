@@ -12,7 +12,7 @@ import java.util.List;
  * Created on 7/1/2023
  */
 public class PetDog {
-    private static final int[] DOGS = { 9195, 5920 };
+    private static final int[] DOGS = { 9195, 5920, 7771, 111 };
     private static final List<Integer> MEAT = Arrays.asList(2132, 2134, 2136, 10816, 2142);
     private static final List<Integer> BONES = Arrays.asList(526, 530, 2859, 532, 10976, 10977, 3125, 3123, 534, 536, 4812, 4834, 6812, 6729, 11943, 22124, 22780, 22783, 22786, 3179, 3180, 3181, 3182, 3183, 3185, 3186);
 
