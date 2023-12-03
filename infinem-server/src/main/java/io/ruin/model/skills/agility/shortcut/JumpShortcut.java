@@ -30,6 +30,8 @@ public enum JumpShortcut {
             new Position(3063, 3281), new Position(3063, 3284)),
     ARDY_JUMP1(993, new Position(2647, 3375), 1,1, "climb-over",
             new Position(2649, 3375), new Position(2646, 3375)),
+    FALADOR_FARM1(7527, new Position(3043, 3305), 1,1, "climb-over",
+            new Position(3045, 3305), new Position(3042, 3305)),
     BURGH_JUMP1(12776, new Position(3474, 3221), 1,1, "jump-over",
             new Position(3473, 3221), new Position(3474, 3221)),
     FALADOR_JUMP5(24222, new Position(2935, 3355), 5,1, "climb-over",
