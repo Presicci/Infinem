@@ -44,10 +44,16 @@ public enum Loom {
                 if(player.getInventory().getAmount(item.before.getId()) < item.before.getAmount()) {
                     return;
                 }
-                weave(player, item);
+                player.animate(894);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
-                    event.delay(2);
+                    event.delay(3);
                 }
+                if(player.getInventory().getAmount(item.before.getId()) < item.before.getAmount()) {
+                    return;
+                }
+                player.getInventory().remove(item.before);
+                player.getInventory().add(item.after);
+                player.getStats().addXp(StatType.Crafting, item.exp, true);
             }
         });
     }
