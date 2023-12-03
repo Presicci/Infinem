@@ -1,5 +1,6 @@
 package io.ruin.model.skills.crafting;
 
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -46,7 +47,9 @@ public enum Loom {
                     return;
                 }
                 weave(player, item);
-                event.delay(2);
+                if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
+                    event.delay(2);
+                }
                 player.unlock();
             }
         });

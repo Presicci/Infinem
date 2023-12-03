@@ -81,7 +81,7 @@ public enum Relic {
             "\n- Fletching logs and cutting bolt tips" +
             "\n- Cleaning herbs and making potions" +
             "\n- Cooking food and making jugs of wine" +
-            "\n- Crafting leather, uncut gems, glass, jewellery, pottery, battlestaves, and spinning flax/wool")
+            "\n- Crafting leather, uncut gems, glass, jewellery, pottery, battlestaves, spinning flax/wool, and weaving")
     ;
 
     @Getter
