@@ -25,24 +25,19 @@ public enum DialogueObject {
     BRINE_RAT_CAVE_CHEST(14197, new Position(2740, 10164),
             new MessageDialogue("An etching on the chest reads 'Titan.' There is nothing here to indicate how the ship got here or what they were searching for."));
 
-    private final int objectId, option;
-    private final Position position;
-    private final Dialogue[] dialogues;
-
     DialogueObject(int objectId, Position position, Dialogue... dialogues) {
         this(objectId, 1, position, dialogues);
     }
 
     DialogueObject(int objectId, int option, Position position, Dialogue... dialogues) {
-        this.objectId = objectId;
-        this.dialogues = dialogues;
-        this.position = position;
-        this.option = option;
+        ObjectAction.register(objectId, position, option, ((p, o) -> p.dialogue(dialogues)));
     }
 
-    static {
-        for (DialogueObject obj : values()) {
-            ObjectAction.register(obj.objectId, obj.position, obj.option, ((p, o) -> p.dialogue(obj.dialogues)));
-        }
+    DialogueObject(int objectId, Dialogue... dialogues) {
+        this(objectId, 1, dialogues);
+    }
+
+    DialogueObject(int objectId, int option, Dialogue... dialogues) {
+        ObjectAction.register(objectId, option, ((p, o) -> p.dialogue(dialogues)));
     }
 }
