@@ -41,19 +41,15 @@ public enum Loom {
         player.startEvent(event -> {
             int amt = amount;
             while(amt --> 0) {
-                player.lock();
                 if(player.getInventory().getAmount(item.before.getId()) < item.before.getAmount()) {
-                    player.unlock();
                     return;
                 }
                 weave(player, item);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     event.delay(2);
                 }
-                player.unlock();
             }
         });
-        player.unlock();
     }
 
     private static void weave(Player player, Loom item) {
