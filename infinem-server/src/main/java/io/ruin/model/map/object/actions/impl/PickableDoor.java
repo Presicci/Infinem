@@ -14,6 +14,11 @@ import io.ruin.model.stat.StatType;
  * Created on 11/24/2023
  */
 public enum PickableDoor {
+    PORT_SARIL_CELL_DOOR_1(9563, new Position(3012, 3195), Direction.EAST, 1, 0.0),
+    PORT_SARIL_CELL_DOOR_2(9563, new Position(3012, 3192), Direction.EAST, 1, 0.0),
+    PORT_SARIL_CELL_DOOR_3(9563, new Position(3012, 3189), Direction.EAST, 1, 0.0),
+    PORT_SARIL_CELL_DOOR_4(9565, new Position(3018, 3187), Direction.NORTH, 1, 1.0, new Bounds(3017, 3188, 3020, 3190, 0)),
+    PORT_SARIL_CELL_DOOR_5(9565, new Position(3018, 3182), Direction.SOUTH, 1, 1.0, new Bounds(3017, 3179, 3020, 3181, 0)),
     ARDY_10_COIN(11719, new Position(2674, 3305), Direction.NORTH, 1, 3.8, new Bounds(2673, 3306, 2675, 3306, 0)),
     ROSE_HOUSE(40178, new Position(2610, 3316), Direction.EAST, 13, 15, new Bounds(2611, 3315, 2611, 3318, 0)),
     ARDY_NATURE_RUNE(11720, new Position(2674, 3304), Direction.SOUTH, 16, 15, new Bounds(2673, 3303, 2675, 3303, 0)),
