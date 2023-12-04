@@ -68,6 +68,7 @@ public class DialogueParser {
         for (DialogueLoaderSetting setting : DialogueLoaderSetting.values()) {
             if (line.startsWith(setting.name())) {
                 int leftIndex = lineNumber + 1;
+                String settingChar = Character.toString(dialogue.get(leftIndex).charAt(0));
                 int rightIndex = dialogue.size();
                 for (int index = lineNumber; index < dialogue.size(); index++) {
                     if (dialogue.get(index).startsWith(")")) {
@@ -86,7 +87,7 @@ public class DialogueParser {
                             arguments = split[1];
                         }
                         int value = Integer.parseInt(substring);
-                        List<Dialogue[]> dialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, new DialogueParserSettings(setting, value), true).parseRandomDialogues(true);
+                        List<Dialogue[]> dialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, new DialogueParserSettings(setting, value), true).parseRandomDialogues(settingChar);
                         if (dialogues == null) {
                             error("predicate reliant setting but had an issue being read", dialogue);
                             return null;
@@ -98,7 +99,7 @@ public class DialogueParser {
                         lineNumber = rightIndex - 1;
                         return new ConditionalDialogue(setting.getBiPredicate(), new Tuple<>(dialogues.get(0), dialogues.get(1)), value, arguments);
                     } else {
-                        List<Dialogue[]> randomDialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, true).parseRandomDialogues(true);
+                        List<Dialogue[]> randomDialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, true).parseRandomDialogues(settingChar);
                         return new ActionDialogue((player) -> {
                             Dialogue[] dialogues = Random.get(randomDialogues);
                             player.dialogue(dialogues);
@@ -264,17 +265,15 @@ public class DialogueParser {
     }
 
     public List<Dialogue[]> parseRandomDialogues(boolean inner) {
+        return parseRandomDialogues(inner ? "(" : "/");
+    }
+
+    public List<Dialogue[]> parseRandomDialogues(String settingChar) {
         List<Integer> optionLineNumbers = new ArrayList<>();
         int rightLimit = dialogueLines.size();
         for (int index = lineNumber; index < dialogueLines.size(); index++) {
             String line = dialogueLines.get(index);
-            if (line.startsWith("(") && inner) {
-                optionLineNumbers.add(index);
-                if (settings!= null && settings.getSetting() != DialogueLoaderSetting.RAND && optionLineNumbers.size() >= 2) {
-                    break;
-                }
-            }
-            if (line.startsWith("/") && !inner) {
+            if (line.startsWith(settingChar)) {
                 optionLineNumbers.add(index);
                 if (settings!= null && settings.getSetting() != DialogueLoaderSetting.RAND && optionLineNumbers.size() >= 2) {
                     break;
