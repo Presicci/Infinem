@@ -29,6 +29,7 @@ public enum DialogueLoaderAction {
             player.dialogue(new PlayerDialogue("Well I don't have one."), new NPCDialogue(npc, "Aww why would you tease me like that. Get out of here."));
         } else {
             player.getInventory().remove(Items.REDBERRY_PIE, 1);
+            player.getTaskManager().doLookupByUUID(931);    // Feed Thurgo
             player.dialogue(
                     new MessageDialogue("You hand over the pie. Thurgo eats the pie. Thurgo pats his stomach."),
                     new NPCDialogue(npc, "By Guthix! THAT was good pie! Anyone who makes pie like THAT has got to be alright!")
