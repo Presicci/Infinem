@@ -23,6 +23,18 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    THURGO_PIE(player -> {
+        NPC npc = player.getDialogueNPC();
+        if (!player.getInventory().hasId(Items.REDBERRY_PIE)) {
+            player.dialogue(new PlayerDialogue("Well I don't have one."), new NPCDialogue(npc, "Aww why would you tease me like that. Get out of here."));
+        } else {
+            player.getInventory().remove(Items.REDBERRY_PIE, 1);
+            player.dialogue(
+                    new MessageDialogue("You hand over the pie. Thurgo eats the pie. Thurgo pats his stomach."),
+                    new NPCDialogue(npc, "By Guthix! THAT was good pie! Anyone who makes pie like THAT has got to be alright!")
+            );
+        }
+    }),
     LEON_AMMO(Leon::craftAmmo),
     ESSENCE_MINE(player -> {
         NPC npc = player.getDialogueNPC();
@@ -95,6 +107,12 @@ public enum DialogueLoaderAction {
                 capeId = 9810;
                 trimmedId = 9811;
                 hoodId = 9812;
+                break;
+            case "SMITHING":
+                dialogue = "Excellent! Wear that cape with pride my friend.";
+                capeId = 9795;
+                trimmedId = 9796;
+                hoodId = 9797;
                 break;
         }
         int finalHoodId = hoodId;
