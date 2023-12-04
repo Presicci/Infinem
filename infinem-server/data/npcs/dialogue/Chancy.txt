@@ -1,0 +1,2 @@
+Player: Hello! Playing solitaire?
+Chancy: Hush - I'm trying to perfect the art of dealing off the bottom of the deck.
