@@ -35,7 +35,7 @@ public enum PickPocket {
             0.2424,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 3, 3, 1)  //Coins
-            )),
+            ), "hengel"),
     WOMAN(1, 8.0, 422, 5, 1, "woman's", PlayerCounter.PICKPOCKETED_MAN,
             257211,
             22521,
@@ -43,8 +43,8 @@ public enum PickPocket {
             0.2424,
             new LootTable().addTable(1,
                     new LootItem(COINS_995, 3, 3, 1)  //Coins
-            )),
-    TOWER_OF_LIFE_NPCS(1, 8.0, 422, 5, 1, "gummy's", null,
+            ), "anja"),
+    TOWER_OF_LIFE_NPCS(1, 8.0, 422, 5, 1, "man's", null,
             257211,
             -1,
             70.70,
