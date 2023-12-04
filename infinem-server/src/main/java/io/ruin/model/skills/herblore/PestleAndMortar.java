@@ -24,7 +24,8 @@ public enum PestleAndMortar {
     CRYSTAL_DUST(23962, 23867, "You grind the shards to dust."),
     KARAMBWAN_PASTE_R(Items.RAW_KARAMBWAN, 3152, "You grind the karambwan to a paste."),
     KARAMBWAN_PASTE_P(Items.POISON_KARAMBWAN, 3153, "You grind the karambwan to a paste."),
-    KARAMBWAN_PASTE_C(Items.COOKED_KARAMBWAN, 3154, "You grind the karambwan to a paste.");
+    KARAMBWAN_PASTE_C(Items.COOKED_KARAMBWAN, 3154, "You grind the karambwan to a paste."),
+    ANCHOVY_PASTE(Items.ANCHOVIES, Items.ANCHOVY_PASTE, "You grind the anchovies to a paste.");
 
     public final int before, after;
 
