@@ -23,10 +23,52 @@ public enum DialogueLoaderSetting {
     HASLEVEL((p, i) -> {
         String skillString = p.getTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
         switch (skillString) {
+            case "ATTACK":
+                return p.getStats().get(StatType.Attack).currentLevel >= i;
+            case "DEFENCE":
+                return p.getStats().get(StatType.Defence).currentLevel >= i;
+            case "STRENGTH":
+                return p.getStats().get(StatType.Strength).currentLevel >= i;
+            case "HITPOINTS":
+                return p.getStats().get(StatType.Hitpoints).currentLevel >= i;
+            case "RANGED":
+                return p.getStats().get(StatType.Ranged).currentLevel >= i;
             case "PRAYER":
                 return p.getStats().get(StatType.Prayer).currentLevel >= i;
+            case "MAGIC":
+                return p.getStats().get(StatType.Magic).currentLevel >= i;
+            case "COOKING":
+                return p.getStats().get(StatType.Cooking).currentLevel >= i;
+            case "WOODCUTTING":
+                return p.getStats().get(StatType.Woodcutting).currentLevel >= i;
+            case "FLETCHING":
+                return p.getStats().get(StatType.Fletching).currentLevel >= i;
+            case "FISHING":
+                return p.getStats().get(StatType.Fishing).currentLevel >= i;
+            case "FIREMAKING":
+                return p.getStats().get(StatType.Firemaking).currentLevel >= i;
+            case "CRAFTING":
+                return p.getStats().get(StatType.Crafting).currentLevel >= i;
+            case "SMITHING":
+                return p.getStats().get(StatType.Smithing).currentLevel >= i;
+            case "MINING":
+                return p.getStats().get(StatType.Mining).currentLevel >= i;
+            case "HERBLORE":
+                return p.getStats().get(StatType.Herblore).currentLevel >= i;
+            case "AGILITY":
+                return p.getStats().get(StatType.Agility).currentLevel >= i;
+            case "THIEVING":
+                return p.getStats().get(StatType.Thieving).currentLevel >= i;
+            case "SLAYER":
+                return p.getStats().get(StatType.Slayer).currentLevel >= i;
             case "FARMING":
                 return p.getStats().get(StatType.Farming).currentLevel >= i;
+            case "RUNECRAFTING":
+                return p.getStats().get(StatType.Runecrafting).currentLevel >= i;
+            case "HUNTER":
+                return p.getStats().get(StatType.Hunter).currentLevel >= i;
+            case "CONSTRUCTION":
+                return p.getStats().get(StatType.Construction).currentLevel >= i;
             default:
                 return true;
         }
