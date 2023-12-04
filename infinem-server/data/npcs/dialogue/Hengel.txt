@@ -1,0 +1,15 @@
+Player: Hello.
+Hengel: What are you doing here?
+<I'm just wandering around.
+Player: I'm just wandering around.
+Hengel: You do realise you're wandering around in my house?
+Player: Yep.
+Hengel: Well please get out!
+Player: Sheesh, keep your wig on!
+><I was hoping you'd give me some free stuff.
+Player: I was hoping you'd give me some free stuff.
+Hengel: No, I jolly well wouldn't! Get out of my house!
+Player: Meanie!
+><I've come to kill you.
+Player: I've come to kill you.
+ANJA_HENGEL_ATTACK:

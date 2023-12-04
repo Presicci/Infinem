@@ -19,6 +19,7 @@ import io.ruin.model.skills.mining.EssenceMine;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
+import java.util.Optional;
 import java.util.function.Consumer;
 
 @Getter
@@ -255,6 +256,16 @@ public enum DialogueLoaderAction {
         }
 
     })),
+    ANJA_HENGEL_ATTACK((player) -> {
+        NPC npc = player.getDialogueNPC();
+        if (npc == null) return;
+        Optional<NPC> otherNpcOptional = npc.localNpcs().stream().filter(n -> n.getId() == (npc.getId() == 3285 ? 3284 : 3285)).findFirst();
+        if (otherNpcOptional.isPresent()) {
+            NPC otherNpc = otherNpcOptional.get();
+            otherNpc.forceText(otherNpc.getId() == 3285 ? "Eeeek!" : "Aaaarrgh!");
+        }
+        npc.forceText(npc.getId() == 3285 ? "Eeeek!" : "Aaaarrgh!");
+    }),
     ATTACK((player) -> {
         NPC npc = player.getDialogueNPC();
         if (npc != null) {

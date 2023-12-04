@@ -1,0 +1,76 @@
+Player: Hello.
+Anja: Hello [madam/sir]. What are you doing in my house?
+<I'm just wandering around.
+Player: I'm just wandering around.
+Anja: Oh dear, are you lost?
+<Yes, I'm lost.
+Player: Yes, I'm lost.
+Anja: Okay, just walk north-east when you leave this house, and soon you'll reach the big city of Falador.
+Player: Thanks a lot.
+><No, I know where I am.
+Player: No, I know where I am.
+Anja: Oh? Well, would you mind wandering somewhere else? This is my house.
+Player: Meh!
+>
+><I was hoping you'd give me some free stuff.
+Player: I was hoping you'd give me some free stuff.
+RAND
+/Anja: Do you REALLY need it?
+RAND
+(Player: (beg beg beg beg beg beg)
+Anja: Oh, alright. Here you go.
+ITEM:995
+(Player: I promise I'll stop bothering you!
+Anja: Oh, alright. Here you go.
+ITEM:995
+(Player: Pleeease!
+Anja: Oh, alright. Here you go.
+ITEM:995
+(Player: Pwetty pleathe wiv thugar on top!
+Anja: Oh, alright. Here you go.
+ITEM:995
+/Anja: Er...
+RAND
+(Player: (beg beg beg beg beg beg)
+Anja: Oh, alright. Here you go.
+ITEM:995
+(Player: I promise I'll stop bothering you!
+Anja: Oh, alright. Here you go.
+ITEM:995
+(Player: Pleeease!
+Anja: Oh, alright. Here you go.
+ITEM:995
+(Player: Pwetty pleathe wiv thugar on top!
+Anja: Oh, alright. Here you go.
+ITEM:995
+/Anja: I don't have much on me...
+RAND
+(Player: (beg beg beg beg beg beg)
+Anja: Oh, alright. Here you go.
+ITEM:995
+(Player: I promise I'll stop bothering you!
+Anja: Oh, alright. Here you go.
+ITEM:995
+(Player: Pleeease!
+Anja: Oh, alright. Here you go.
+ITEM:995
+(Player: Pwetty pleathe wiv thugar on top!
+Anja: Oh, alright. Here you go.
+ITEM:995
+/Anja: I don't know...
+RAND
+(Player: (beg beg beg beg beg beg)
+Anja: Oh, alright. Here you go.
+ITEM:995
+(Player: I promise I'll stop bothering you!
+Anja: Oh, alright. Here you go.
+ITEM:995
+(Player: Pleeease!
+Anja: Oh, alright. Here you go.
+ITEM:995
+(Player: Pwetty pleathe wiv thugar on top!
+Anja: Oh, alright. Here you go.
+ITEM:995
+)><I've come to kill you.
+Player: I've come to kill you.
+ANJA_HENGEL_ATTACK:
