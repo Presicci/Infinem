@@ -100,6 +100,7 @@ public class DialogueParser {
                         return new ConditionalDialogue(setting.getBiPredicate(), new Tuple<>(dialogues.get(0), dialogues.get(1)), value, arguments);
                     } else {
                         List<Dialogue[]> randomDialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, true).parseRandomDialogues(settingChar);
+                        lineNumber = rightIndex - 1;
                         return new ActionDialogue((player) -> {
                             Dialogue[] dialogues = Random.get(randomDialogues);
                             player.dialogue(dialogues);
