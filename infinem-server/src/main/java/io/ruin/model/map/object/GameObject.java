@@ -223,6 +223,10 @@ public class GameObject extends TemporaryAttributesHolder {
         return ObjectDef.get(this.id);
     }
 
+    public ObjectDef getConfigDef(Player player) {
+        return ObjectDef.getConfigDef(id, player);
+    }
+
     @Override
     public String toString() {
         return "GameObject[name="+ getDef().name + ", id=" + id + ", x=" + x + ", y=" + y + ", z=" + z +"]";

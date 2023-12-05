@@ -61,6 +61,22 @@ public interface ItemObjectAction {
 
     static void handleAction(Player player, Item item, GameObject obj) {
         /**
+         * Actions associated with the varpbit set showId.
+         */
+        ObjectDef configDef = obj.getConfigDef(player);
+        if(configDef.itemActions != null) {
+            ItemObjectAction action = configDef.itemActions.get(item.getId());
+            if(action != null) {
+                action.handle(player, item, obj);
+                return;
+            }
+
+        }
+        if(configDef.defaultItemAction != null) {
+            configDef.defaultItemAction.handle(player, item, obj);
+            return;
+        }
+        /**
          * Actions unique to the given obj.
          */
         if(obj.itemActions != null) {

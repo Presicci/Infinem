@@ -6,6 +6,7 @@ import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -56,6 +57,15 @@ public class ObjectDef {
 
     public static ObjectDef get(int id) {
         return LOADED.get(id);
+    }
+
+    public static ObjectDef getConfigDef(int id, Player player) {
+        ObjectDef def = ObjectDef.LOADED.get(id);
+        if (def.varpBitId != -1) {
+            int value = Config.varpbit(def.varpBitId, false).get(player);
+            def = ObjectDef.get(def.showIds[value]);
+        }
+        return def;
     }
 
     /**
