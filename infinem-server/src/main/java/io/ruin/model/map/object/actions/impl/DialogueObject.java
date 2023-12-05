@@ -12,6 +12,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/1/2023
  */
 public enum DialogueObject {
+    FRACTIONALISING_STILL(4026, new Position(2927, 3212),
+            new PlayerDialogue("That is far too complicated for me to operate.")),
     TENT_DOOR(2700, new Position(3169, 3046),
             new MessageDialogue("It's locked."), new PlayerDialogue("Wait what?")),
     SITHIK_INTS(6887, new Position(2591, 3103, 1),
