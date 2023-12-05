@@ -64,6 +64,19 @@ public class DialogueParser {
         return dialogues.toArray(new Dialogue[0]);
     }
 
+    private String matchingDelineator(String character) {
+        switch (character) {
+            default:
+                return ")";
+            case "/":
+                return "\\";
+            case "[":
+                return "]";
+            case "{":
+                return "}";
+        }
+    }
+
     private Dialogue checkForSetting(String line, List<String> dialogue) {
         for (DialogueLoaderSetting setting : DialogueLoaderSetting.values()) {
             if (line.startsWith(setting.name())) {
@@ -71,7 +84,7 @@ public class DialogueParser {
                 String settingChar = Character.toString(dialogue.get(leftIndex).charAt(0));
                 int rightIndex = dialogue.size();
                 for (int index = lineNumber; index < dialogue.size(); index++) {
-                    if (dialogue.get(index).startsWith(")")) {
+                    if (dialogue.get(index).startsWith(matchingDelineator(settingChar))) {
                         dialogue.set(index, dialogue.get(index).substring(1));
                         rightIndex = index;
                         break;
