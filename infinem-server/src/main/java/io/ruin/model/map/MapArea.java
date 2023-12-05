@@ -85,6 +85,16 @@ public enum MapArea {
         registerOnExit(bounds, exitAction);
     }
 
+    MapArea(Bounds bounds, MapListener.EnteredAction enteredAction) {
+        this.bounds = bounds;
+        registerOnEnter(bounds, enteredAction);
+    }
+
+    MapArea(Bounds bounds, MapListener.ExitAction exitAction) {
+        this.bounds = bounds;
+        registerOnExit(bounds, exitAction);
+    }
+
     private void registerOnEnter(Bounds bounds, MapListener.EnteredAction enteredAction) {
         MapListener.registerBounds(bounds).onEnter(enteredAction);
     }
