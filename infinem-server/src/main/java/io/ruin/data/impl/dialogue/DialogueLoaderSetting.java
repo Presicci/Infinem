@@ -12,6 +12,12 @@ import java.util.function.BiPredicate;
 @Getter
 public enum DialogueLoaderSetting {
     HASSLAYERTASK((p, i) -> Slayer.getTask(p) == i),
+    HASITEMS((p, i) -> {
+        int secondary = p.getTemporaryAttributeIntOrZero(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
+        if (secondary > 0)
+            return p.getInventory().hasId(i) && p.getInventory().hasId(secondary);
+        return p.getInventory().hasId(i);
+    }),
     HASITEM((p, i) -> p.getInventory().hasId(i)),
     HASEQUIPMENT((p, i) -> {
         int secondary = p.getTemporaryAttributeIntOrZero(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
