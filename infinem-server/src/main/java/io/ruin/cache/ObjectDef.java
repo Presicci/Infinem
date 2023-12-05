@@ -280,9 +280,6 @@ public class ObjectDef {
         } else if (id == 23104) { // Cerberus iron winch
             options[1] = "Instance";
             options[2] = "Peek";
-        } else if (id == 29705) { // KQ Crack
-            options[0] = "Instance";
-            options[1] = "Peek";
         } else if (id >= 26502 && id <= 26505) { // GWD boss doors
             options[1] = "Instance";
             options[2] = "Peek";
