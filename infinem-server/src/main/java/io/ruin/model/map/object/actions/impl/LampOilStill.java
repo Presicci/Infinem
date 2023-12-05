@@ -61,6 +61,8 @@ public class LampOilStill {
         item.setId(fillable.filled);
         if (fillable == OilFillable.IMPLING_JAR) {
             player.getTaskManager().doLookupByUUID(934);    // Make an Impling Jar From Scratch
+        } else {
+            player.getTaskManager().doLookupByUUID(933);    // Fill a Lantern at a Lamp Still
         }
         player.sendMessage("You fill the " + ItemDef.get(fillable.filled).name + ".");
     }
