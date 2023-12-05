@@ -167,6 +167,12 @@ public enum Stall {
                     new LootItem(359, 1, 1, 3),                      //Raw tuna
                     new LootItem(377, 1, 1, 2)                      //Raw lobster
             )),
+    WIRE_MACHINE(44, 5, 45.0, 36490, "wire machine",
+            PlayerCounter.WIRE_MACHINE_THIEVES,
+            new int[][] {
+                    {22730, 22731},
+            },
+            new LootTable().addTable(1, new LootItem(Items.CAVE_GOBLIN_WIRE, 1, 1))),
     CROSSBOW_STALL(49, 5, 52.0, 36490, "crossbow stall",
             PlayerCounter.CROSSBOW_STALL_THIEVES,
             new int[][]{
@@ -333,6 +339,6 @@ public enum Stall {
                 ObjectAction.register(ids[0], "steal from", (player, obj) -> attempt(player, stall, obj, ids[1]));
             }
         }
-
+        ObjectAction.register(Stall.WIRE_MACHINE.objIDs[0][0], "grab", (player, obj) -> attempt(player, Stall.WIRE_MACHINE, obj, Stall.WIRE_MACHINE.objIDs[0][1]));
     }
 }
