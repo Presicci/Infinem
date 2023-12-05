@@ -100,6 +100,21 @@ public class Item {
     }
 
     /**
+     * Sets this items id to the desired id.
+     * If new id is a stackable item, will attempt to stack with existing stacks.
+     * @param id    The id.
+     */
+    public void setStackableId(int id) {
+        if (ItemDef.get(id).stackable && attributes.isEmpty() && container != null && container.contains(id)) {
+            container.findItem(id).incrementAmount(amount <= 1 ? 1 : amount);
+            remove();
+        } else {
+            this.id = id;
+        }
+        update();
+    }
+
+    /**
      * Sets this items amount to the desired amount.
      * @param amount
      */
