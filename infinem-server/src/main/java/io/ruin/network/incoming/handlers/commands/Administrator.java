@@ -2845,6 +2845,57 @@ public class Administrator {
                 Slayer.setBossTask(player, uuid);
                 return true;
             }
+            case "findvarpobj": {
+                if (args.length < 1) {
+                    player.sendMessage("Syntax: ::findvarp [varp]");
+                    return false;
+                }
+                int varp = Integer.parseInt(args[0]);
+                List<ObjectDef> objs = ObjectDef.LOADED.values().stream().filter(o -> o.varpId == varp).collect(Collectors.toList());
+                if (objs.size() <= 0) {
+                    player.sendMessage("No objects found.");
+                } else {
+                    player.sendMessage("Found " + objs.size() + " objects with varp " + varp + ":");
+                    for (ObjectDef def : objs) {
+                        player.sendMessage(def.id + "");
+                    }
+                }
+                return true;
+            }
+            case "findvarpbitobj": {
+                if (args.length < 1) {
+                    player.sendMessage("Syntax: ::findvarpobj [varpbit]");
+                    return false;
+                }
+                int varpbit = Integer.parseInt(args[0]);
+                List<ObjectDef> objs = ObjectDef.LOADED.values().stream().filter(o -> o.varpBitId == varpbit).collect(Collectors.toList());
+                if (objs.size() <= 0) {
+                    player.sendMessage("No objects found.");
+                } else {
+                    player.sendMessage("Found " + objs.size() + " objects with varpbit " + varpbit + ":");
+                    for (ObjectDef def : objs) {
+                        player.sendMessage(def.id + "");
+                    }
+                }
+                return true;
+            }
+            case "findshowidobj": {
+                if (args.length < 1) {
+                    player.sendMessage("Syntax: ::findshowidobj [showid]");
+                    return false;
+                }
+                int showid = Integer.parseInt(args[0]);
+                List<ObjectDef> objs = ObjectDef.LOADED.values().stream().filter(o -> o.showIds != null && o.showIds.length > 0 && Arrays.stream(o.showIds).anyMatch(id -> id == showid)).collect(Collectors.toList());
+                if (objs.size() <= 0) {
+                    player.sendMessage("No objects found.");
+                } else {
+                    player.sendMessage("Found " + objs.size() + " objects with showid " + showid + ":");
+                    for (ObjectDef def : objs) {
+                        player.sendMessage(def.id + "");
+                    }
+                }
+                return true;
+            }
         }
         return false;
     }
