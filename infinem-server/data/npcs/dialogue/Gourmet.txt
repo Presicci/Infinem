@@ -1,0 +1,2 @@
+Player: Hello, are you interested in buying some food?
+Gourmet: I'm not too hungry today, maybe another time.
