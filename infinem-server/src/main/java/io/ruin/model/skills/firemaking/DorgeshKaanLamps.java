@@ -47,6 +47,9 @@ public class DorgeshKaanLamps {
             config.set(player, 0);
             player.sendMessage(milestone ? "You have replaced 100 orbs and have gained extra experience." : "You fix the lamp.");
             player.getTaskManager().doLookupByUUID(932);    // Fix a Lamp in Dorgesh-Kaan
+            if (lampsFixed >= 100) {
+                player.getTaskManager().doLookupByUUID(935);    // Fix 100 Lamps in Dorgesh-Kaan
+            }
             player.unlock();
         });
     }
