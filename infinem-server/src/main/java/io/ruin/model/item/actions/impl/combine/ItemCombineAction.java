@@ -228,6 +228,9 @@ public class ItemCombineAction {
         /**
          * Crafting
          */
+        LIGHT_ORB("You attach the wire to the orb.",
+                Collections.singletonList(new SkillRequired(StatType.Crafting, 87, 104)),
+                Arrays.asList(new ItemPair(Items.EMPTY_LIGHT_ORB, Items.LIGHT_ORB), new ItemPair(Items.CAVE_GOBLIN_WIRE, -1))),
         SPIKY_VAMBRACES("You stitch the claws into the vambraces.", 1249, -1,
                 Collections.singletonList(new SkillRequired(StatType.Crafting, 32, 6)),
                 Arrays.asList(new ItemPair(Items.LEATHER_VAMBRACES, Items.SPIKY_VAMBRACES), new ItemPair(Items.KEBBIT_CLAWS, -1))),
