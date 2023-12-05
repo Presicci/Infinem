@@ -53,7 +53,7 @@ public enum PestleAndMortar {
                         player.getInventory().add(item.after, 10);
                         player.sendMessage(item.message);
                     } else {
-                        resource.setId(item.after);
+                        resource.setStackableId(item.after);
                         player.sendMessage(item.message);
                     }
                     player.animate(364);
