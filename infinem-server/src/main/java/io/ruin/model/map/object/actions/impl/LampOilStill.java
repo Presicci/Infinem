@@ -59,6 +59,9 @@ public class LampOilStill {
         player.animate(3572);
         player.removeAttribute(attKey);
         item.setId(fillable.filled);
+        if (fillable == OilFillable.IMPLING_JAR) {
+            player.getTaskManager().doLookupByUUID(934);    // Make an Impling Jar From Scratch
+        }
         player.sendMessage("You fill the " + ItemDef.get(fillable.filled).name + ".");
     }
 
