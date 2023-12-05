@@ -1,0 +1,48 @@
+MESSAGE:Do you want to talk about lamps?
+<Yes.
+Player: Hi, I need fuel for a lamp.
+Chemist: Hello there, the fuel you need is lamp oil, do you need help making it?
+<Yes please.
+Player: Yes please.
+Chemist: It's really quite simple. You use the small still in here. It's all set up, so there's no fiddling around with dials...
+Chemist: Just put ordinary swamp tar in, and then use a lantern or lamp to get the oil out.
+Player: Thanks.
+><No thanks.
+Player: No thanks.
+>
+><No.
+Player: Hello.
+Chemist: Oh.. hello, how's it going?
+Player: Good thanks.
+Chemist: Good to hear, sorry but I have a few things to do right now.
+Player: Well I'd better let you get on then.
+><No, I'm more interested in impling jars.
+Player: I have a slightly odd question.
+Chemist: Jolly good, the odder the better. I like oddities.
+Player: Do you know how I might distil a mix of anchovy oil and flowers so that it forms a layer on the inside of a butterfly jar?
+Chemist: That is an odd question. I commend you for it. Why would you want to do that?
+Player: Apparently, if I can make a jar like this it will be useful for storing implings in.
+Chemist: So, do you have any of this fish-and-flower flavoured oil and a butterfly jar then?
+HASITEMS:11264:10012
+/Player: As it happens, I do.
+Chemist: Well then. Hmmm. My lamp oil still may be able to do what you want. Give it a go and see if it works.
+Player: Thanks!
+/Player: Actually, no.
+Chemist: If you go and get them then I may be able to help you. I'm better at coming up with answers if the questions are in my hands.
+Chemist: Did you need anything else?
+<So how do you make anchovy oil?
+Player: So, how do you make anchovy oil?
+Chemist: Anchovies are pretty oily fish. I'd have thought you could just grind them up and sieve out the bits. You'd probably want to remove any water first - Cooking should do that pretty well.
+LASTOPTIONS
+><Do you have a sieve I can use?
+Player: Do you have a sieve I can use?
+HASITEM:6097
+(Chemist: Errm, yes. But you already have one. Two sieves is a bit excessive, don't you think?
+(Chemist: Errm, yes. Here, have this one. It's only been used for sieving dead rats out of sewer water.
+ITEM:6097
+Player: Err, why? Actually, on second thoughts I don't want to know.
+Chemist: Well, it should be ideally suited to your task.
+Player: Fair enough.
+)><I'd better go and get the repellent.
+Player: I'd better go and get the repellent.
+Chemist: I think so.
