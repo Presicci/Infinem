@@ -20,7 +20,7 @@ public enum Glass {
     FISH_BOWL(42, 42.5, 6667, "a fish bowl"),
     ORB(46, 52.5, 567, "an orb"),
     LANTERN_LENS(49, 55.0, 4542, "a lantern lens"),
-    LIGHT_ORB(87, 70.0, 10973, "a light orb");
+    LIGHT_ORB(87, 70.0, 10980, "an empty light orb");
 
     public final int levelReq, itemID;
     public final double exp;
