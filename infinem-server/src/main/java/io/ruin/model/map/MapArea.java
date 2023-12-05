@@ -5,6 +5,7 @@ import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.actions.impl.Lightables;
 import io.ruin.model.map.object.actions.impl.OldFirePit;
+import io.ruin.model.skills.firemaking.DorgeshKaanLamps;
 import lombok.Getter;
 
 /**
@@ -29,6 +30,11 @@ public enum MapArea {
     MOLE_LAIR(OldFirePit.FirePit.GIANT_MOLE_FIRE, 3, 6992, 6993),
     CHASM_OF_TEARS(null, 2, 12948),
     HAUNTED_MINE_FLOOR_6(null, 1, 11077),
+    DORGESH_KAAN(Bounds.fromRegions(10834, 10835, 11091, 11092, 11348, 11349), (player -> {
+        int broken = DorgeshKaanLamps.getBrokenLamps(player);
+        if (broken >= DorgeshKaanLamps.MAX_BROKEN) return;
+        DorgeshKaanLamps.breakLamp(player, DorgeshKaanLamps.MAX_BROKEN - broken);
+    })),
     DORGESH_KAAN_CAVE(null, 3, 3221, 9603, 3307, 9662, 0),
     DORGESH_KAAN_DUNGEON(null, 3, 10833),
     SHAYZIEN_CRYPT(null, 3, 5786, 5787, 5788, 5789, 6042, 6043, 6044, 6045),
