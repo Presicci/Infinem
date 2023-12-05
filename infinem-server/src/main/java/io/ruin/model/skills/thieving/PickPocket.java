@@ -144,9 +144,8 @@ public enum PickPocket {
                     new LootItem(Items.LOCKPICK, 1, 5),
                     new LootItem(Items.IRON_DAGGER_P, 1, 1)
             )),
-    //  TODO stunAnimation
     // Only record with chances not sourced from osrs wiki data
-    CAVE_GOBLIN(36, 40.0, -1, 5, 1, "goblin's", PlayerCounter.PICKPOCKETED_CAVE_GOBLIN,
+    CAVE_GOBLIN(36, 40.0, 6001, 5, 1, "goblin's", PlayerCounter.PICKPOCKETED_CAVE_GOBLIN,
             257211,
             22526,
             55,
