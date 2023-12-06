@@ -36,9 +36,7 @@ import io.ruin.model.skills.mining.Pickaxe;
 import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.skills.woodcutting.Hatchet;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
@@ -59,6 +57,15 @@ public class ItemDef {
         return currency;
     }
 
+    private static final List<Integer> PLURAL_ITEMS = Arrays.asList(
+            Items.EQUA_LEAVES
+    );
+
+    private static final List<Integer> DESCRIPTORLESS_ITEMS = Arrays.asList(
+            Items.GIN, Items.VODKA, Items.DWELLBERRIES, Items.LEMON_SLICES, Items.LEMON_CHUNKS,
+            Items.LIME_SLICES, Items.ORANGE_SLICES, Items.ORANGE_CHUNKS, Items.LIME_CHUNKS
+    );
+
     public static void load() {
         IndexFile index = Server.fileStore.get(2);
         int size = index.getLastFileId(10) + 1;
@@ -68,10 +75,12 @@ public class ItemDef {
             byte[] data = index.getFile(10, def.id);
             if (data != null) {
                 def.decode(new InBuffer(data));
-                if (def.stackable)
+                if (def.stackable || PLURAL_ITEMS.contains(def.id))
                     def.descriptiveName = "some " + def.name.toLowerCase();
                 else if (StringUtils.vowelStart(def.name))
                     def.descriptiveName = "an " + def.name;
+                else if (DESCRIPTORLESS_ITEMS.contains(def.id))
+                    def.descriptiveName = def.name;
                 else
                     def.descriptiveName = "a " + def.name;
                 cached.put(id, def);
