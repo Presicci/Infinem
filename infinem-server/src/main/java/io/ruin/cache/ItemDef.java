@@ -63,7 +63,8 @@ public class ItemDef {
 
     private static final List<Integer> DESCRIPTORLESS_ITEMS = Arrays.asList(
             Items.GIN, Items.VODKA, Items.DWELLBERRIES, Items.LEMON_SLICES, Items.LEMON_CHUNKS,
-            Items.LIME_SLICES, Items.ORANGE_SLICES, Items.ORANGE_CHUNKS, Items.LIME_CHUNKS
+            Items.LIME_SLICES, Items.ORANGE_SLICES, Items.ORANGE_CHUNKS, Items.LIME_CHUNKS,
+            Items.PINEAPPLE_CHUNKS, Items.CHOCOLATE_DUST
     );
 
     public static void load() {
@@ -77,10 +78,10 @@ public class ItemDef {
                 def.decode(new InBuffer(data));
                 if (def.stackable || PLURAL_ITEMS.contains(def.id))
                     def.descriptiveName = "some " + def.name.toLowerCase();
+                else if (DESCRIPTORLESS_ITEMS.contains(def.id))
+                    def.descriptiveName = def.name.toLowerCase();
                 else if (StringUtils.vowelStart(def.name))
                     def.descriptiveName = "an " + def.name;
-                else if (DESCRIPTORLESS_ITEMS.contains(def.id))
-                    def.descriptiveName = def.name;
                 else
                     def.descriptiveName = "a " + def.name;
                 cached.put(id, def);

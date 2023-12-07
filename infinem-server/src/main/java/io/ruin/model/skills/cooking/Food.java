@@ -87,6 +87,8 @@ public enum Food {
     HALF_BAKED_BATTA(1, 30.0, Items.RAW_BATTA, Items.HALF_BAKED_BATTA, Items.BURNT_BATTA, "the batta", "", 3, 40, 38, 34),
     HALF_BAKED_CRUNCHIES(1, 30.0, Items.RAW_CRUNCHIES, Items.HALF_BAKED_CRUNCHY, Items.BURNT_CRUNCHIES, "the crunchies", "", 3, 40, 38, 34),
     HALF_BAKED_GNOMEBOWL(1, 30.0, Items.RAW_GNOMEBOWL, Items.HALF_BAKED_BOWL, Items.BURNT_GNOMEBOWL, "the gnomebowl", "", 3, 40, 38, 34),
+    DRUNK_DRAGON(32, 130.0, Items.MIXED_DRAGON_3, Items.DRUNK_DRAGON,-1, "the drunk dragon", "", 3, 1, 1, 1),
+    CHOC_SATURDAY(33, 0.0, Items.MIXED_SATURDAY_2, Items.MIXED_SATURDAY_3, -1, "the mixed saturday", "", 3, 1, 1, 1),
 
     //Raids fish
     PYSK(1, 10, 20855, 20856, 20854, "a pysk", "pysk", 3, 31, 31, 31),
