@@ -26,6 +26,7 @@ public class Consumable {
      */
 
     static {
+        registerEat(Items.EQUA_LEAVES, 1, "equa leaves");
         registerEat(Items.TRIANGLE_SANDWICH, 6, "triangle sandwich");
         registerEat(Items.LIME, 2, "lime");
         registerEat(Items.LEMON_CHUNKS, 2, "lemon chunks");
