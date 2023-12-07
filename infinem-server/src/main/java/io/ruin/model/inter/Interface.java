@@ -2,6 +2,8 @@ package io.ruin.model.inter;
 
 public class Interface {
 
+    public static final int GNOME_COOKING = 49;
+
     public static final int DEFAULT_SCREEN = 165;
 
     public static final int MOBILE_SCREEN = 601;
