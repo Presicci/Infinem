@@ -1159,6 +1159,22 @@ public class Administrator {
                 return true;
             }
 
+            case "interloop": {
+                int intId = Integer.parseInt(args[0]);
+                InterfaceType type = InterfaceType.MAIN;
+                player.startEvent(e -> {
+                    int interfaceId = intId;
+                    while (interfaceId < 650) {
+                        player.temp.put("last_inter_cmd", interfaceId);
+                        player.openInterface(type, interfaceId);
+                        player.sendMessage("" + interfaceId);
+                        interfaceId++;
+                        e.delay(15);
+                    }
+                });
+                return true;
+            }
+
             case "inters": {
                 InterfaceType type = InterfaceType.MAIN;
                 if(args != null && args.length == 1)
