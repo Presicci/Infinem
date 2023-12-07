@@ -101,7 +101,9 @@ public class Cooking {
                     player.cookStreak = 0;
                     PlayerCounter.BURNT_FOOD.increment(player, 1);
                 }
-
+                int returnedSecondary = food.returnedSecondary;
+                if (returnedSecondary != -1)
+                    player.getInventory().addOrDrop(new Item(returnedSecondary));
                 if (fire)
                     PlayerCounter.COOKED_ON_FIRE.increment(player, 1);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {

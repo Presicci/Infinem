@@ -108,17 +108,23 @@ public enum Food {
     MURNG(75, 25.0, 20880, 20881, 20869, "a murng", "murng", 3, 95, 95, 95),
     PSYKK(90, 28.0, 20882, 20883, 20869, "a psykk", "psykk", 3, 104, 104, 104);
 
-    public final int levelRequirement, rawID, cookedID, burntID, itemOffset, burnLevelFire, burnLevelRange, burnLevelCookingGauntlets;
+    public final int levelRequirement, rawID, cookedID, burntID, returnedSecondary, itemOffset, burnLevelFire, burnLevelRange, burnLevelCookingGauntlets;
     public final double experience;
     public final String descriptiveName, itemName, itemNamePlural, rawName;
 
     Food(int levelRequirement, double experience, int rawID, int cookedID, int burntID, String descriptiveName,
+         String itemNamePlural, int itemOffset, int burnLevelFire, int burnLevelRange, int burnLevelCookingGauntlets) {
+        this(levelRequirement, experience, rawID, cookedID, burntID, -1, descriptiveName, itemNamePlural, itemOffset, burnLevelFire, burnLevelRange, burnLevelCookingGauntlets);
+    }
+
+    Food(int levelRequirement, double experience, int rawID, int cookedID, int burntID, int returnedSecondary, String descriptiveName,
          String itemNamePlural, int itemOffset, int burnLevelFire, int burnLevelRange, int burnLevelCookingGauntlets) {
         this.levelRequirement = levelRequirement;
         this.experience = experience;
         this.rawID = rawID;
         this.cookedID = cookedID;
         this.burntID = burntID;
+        this.returnedSecondary = returnedSecondary;
         this.rawName = ItemDef.get(rawID).name;
         this.itemName = ItemDef.get(cookedID).name.toLowerCase();
         this.descriptiveName = descriptiveName;
