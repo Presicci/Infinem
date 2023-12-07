@@ -64,7 +64,7 @@ public class ItemDef {
     private static final List<Integer> DESCRIPTORLESS_ITEMS = Arrays.asList(
             Items.GIN, Items.VODKA, Items.DWELLBERRIES, Items.LEMON_SLICES, Items.LEMON_CHUNKS,
             Items.LIME_SLICES, Items.ORANGE_SLICES, Items.ORANGE_CHUNKS, Items.LIME_CHUNKS,
-            Items.PINEAPPLE_CHUNKS, Items.CHOCOLATE_DUST
+            Items.PINEAPPLE_CHUNKS, Items.CHOCOLATE_DUST, Items.GNOME_SPICE
     );
 
     public static void load() {

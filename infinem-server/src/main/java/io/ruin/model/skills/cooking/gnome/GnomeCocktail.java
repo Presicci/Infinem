@@ -68,28 +68,6 @@ public enum GnomeCocktail {
         this.pourProduct = pourProduct;
     }
 
-    private String getIngredientString(Item[] ingredients) {
-        StringBuilder sb = new StringBuilder();
-        int count = 0;
-        int maxCount = ingredients.length;
-        for (Item ing : ingredients) {
-            if (ing.getAmount() == 1) {
-                sb.append(ing.getDef().descriptiveName.toLowerCase());
-            } else {
-                sb.append(ing.getAmount());
-                sb.append("x ");
-                sb.append(ing.getDef().name.toLowerCase());
-            }
-            if (++count < maxCount) {
-                if (count == maxCount - 1)
-                    sb.append(", and ");
-                else
-                    sb.append(", ");
-            }
-        }
-        return sb.toString();
-    }
-
     public void mix(Player player) {
         if (!player.getStats().check(StatType.Cooking, levelRequirement, "mix this")) return;
         Item mixer = player.getInventory().findItem(Items.COCKTAIL_SHAKER);
@@ -99,7 +77,7 @@ public enum GnomeCocktail {
         }
         for (Item req : mixIngredients) {
             if (!player.getInventory().contains(req)) {
-                player.dialogue(new MessageDialogue("To mix a " + this.name().toLowerCase() + " you need " + getIngredientString(mixIngredients) + "."));
+                player.dialogue(new MessageDialogue("To mix a " + this.name().toLowerCase() + " you need " + GnomeRecipe.getIngredientString(mixIngredients) + "."));
                 return;
             }
         }
@@ -109,12 +87,12 @@ public enum GnomeCocktail {
         mixer.setId(mixProduct);
         player.getStats().addXp(StatType.Cooking, mixExperience, true);
         if (extraProduct == -1) {
-            player.dialogue(new MessageDialogue("You just need to pour this into an empty cocktail glass and garnish with " + getIngredientString(pourIngredients) + " before serving."));
+            player.dialogue(new MessageDialogue("You just need to pour this into an empty cocktail glass and garnish with " + GnomeRecipe.getIngredientString(pourIngredients) + " before serving."));
         } else {
             if (extraRequiredMix != -1) {
-                player.dialogue(new MessageDialogue("You just need to pour this into an empty cocktail glass, then heat before garnishing with " + getIngredientString(extraIngredients) + "."));
+                player.dialogue(new MessageDialogue("You just need to pour this into an empty cocktail glass, then heat before garnishing with " + GnomeRecipe.getIngredientString(extraIngredients) + "."));
             } else {
-                player.dialogue(new MessageDialogue("You just need to pour this into an empty cocktail glass, then garnish with " + getIngredientString(extraIngredients) + ". Make sure to heat before serving!"));
+                player.dialogue(new MessageDialogue("You just need to pour this into an empty cocktail glass, then garnish with " + GnomeRecipe.getIngredientString(extraIngredients) + ". Make sure to heat before serving!"));
             }
         }
     }
@@ -128,7 +106,7 @@ public enum GnomeCocktail {
         }
         for (Item req : pourIngredients) {
             if (!player.getInventory().contains(req)) {
-                player.dialogue(new MessageDialogue("To pour this cocktail you need " + getIngredientString(pourIngredients) + "."));
+                player.dialogue(new MessageDialogue("To pour this cocktail you need " + GnomeRecipe.getIngredientString(pourIngredients) + "."));
                 return;
             }
         }
@@ -149,7 +127,7 @@ public enum GnomeCocktail {
         }
         for (Item req : extraIngredients) {
             if (!player.getInventory().contains(req)) {
-                player.dialogue(new MessageDialogue("To " + (this == DRUNK_DRAGON ? "garnish" : "finish") + " this cocktail you need " + getIngredientString(extraIngredients) + "."));
+                player.dialogue(new MessageDialogue("To " + (this == DRUNK_DRAGON ? "garnish" : "finish") + " this cocktail you need " + GnomeRecipe.getIngredientString(extraIngredients) + "."));
                 return;
             }
         }
@@ -160,7 +138,7 @@ public enum GnomeCocktail {
         if (extraExperience > 0.0) {
             player.getStats().addXp(StatType.Cooking, extraExperience, true);
         }
-        player.dialogue(new MessageDialogue("You add " + getIngredientString(extraIngredients) + " for that final touch." + (this == DRUNK_DRAGON ? " Now you just need to heat it up." : "")));
+        player.dialogue(new MessageDialogue("You add " + GnomeRecipe.getIngredientString(extraIngredients) + " for that final touch." + (this == DRUNK_DRAGON ? " Now you just need to heat it up." : "")));
     }
 
     static {

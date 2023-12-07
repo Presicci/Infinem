@@ -34,10 +34,9 @@ public class GnomeCooking {
     }
 
     static {
-        ItemAction.registerInventory(Items.COCKTAIL_SHAKER, "mix-cocktail", (player, item) -> open(player, GnomeCookingType.COCKTAIL));
-        ItemAction.registerInventory(Items.HALF_BAKED_BATTA, "prepare", (player, item) -> open(player, GnomeCookingType.BATTA));
-        ItemAction.registerInventory(Items.HALF_BAKED_BOWL, "prepare", (player, item) -> open(player, GnomeCookingType.GNOME_BOWLS));
-        ItemAction.registerInventory(Items.HALF_BAKED_CRUNCHY, "prepare", (player, item) -> open(player, GnomeCookingType.CRUNCHIES));
+        for (GnomeCookingType type : GnomeCookingType.values()) {
+            ItemAction.registerInventory(type.getPrepareItem(), type.getPrepareOption(), (player, item) -> open(player, type));
+        }
         InterfaceHandler.register(Interface.GNOME_COOKING, h -> {
             h.actions[4] = (SlotAction) (player, slot) -> recipeIndex.set(player, getCookingType(player).getRecipeIndexBySlot(slot));
             h.actions[9] = (SimpleAction) player -> GnomeRecipe.create(player, recipeIndex.get(player));
