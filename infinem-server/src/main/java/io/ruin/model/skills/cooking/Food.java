@@ -8,11 +8,11 @@ import java.util.Map;
 
 public enum Food {
     //Raw Fish
-    RAW_SHRIMPS(1, 30.0, 317, 315, 7954, "a shrimp", "shrimps", 3, 31, 31, 31),
+    RAW_SHRIMPS(1, 30.0, 317, 315, 7954, "the shrimps", "shrimps", 3, 31, 31, 31),
     RAW_KARAMBWANJI(1, 15.0, 3150, 21394, 23873, "a karambwanji", "karambwanji", 3, 99, 99, 99),
     RAW_SARDINE(1, 40.0, 327, 325, 369, "a sardine", "sardines", 3, 35, 35, 35),
     RAW_HERRING(5, 50.0, 345, 347, 357, "a herring", "herring", 3, 41, 41, 41),
-    RAW_ANCHOVIES(1, 30.0, 321, 319, 323, "an anchovy", "anchovies", 3, 34, 34, 34),
+    RAW_ANCHOVIES(1, 30.0, 321, 319, 323, "the anchovies", "anchovies", 3, 34, 34, 34),
     RAW_KARAMBWAN_P(1, 80.0, 3142, 3146, 3148, "a karambwan", "karambwan", 3, 99, 99, 99),
     RAW_KARAMBWAN(30, 190.0, 3142, 3144, 3148, "a karambwan", "karambwan", 3, 99, 99, 99),
     RAW_MACKEREL(10, 60.0, 345, 347, 357, "a mackerel", "mackerels", 3, 45, 45, 45),
