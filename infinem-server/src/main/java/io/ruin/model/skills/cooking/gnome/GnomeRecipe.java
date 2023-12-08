@@ -173,6 +173,7 @@ public enum GnomeRecipe {
         halfMade.setId(finalProduct);
         player.getStats().addXp(StatType.Cooking, garnishExperience, true);
         player.dialogue(new MessageDialogue("You garnish with " + getIngredientString(garnishIngredients, false) + " for that final touch. Mmmm."));
+        player.getTaskManager().doLookupByUUID(936);    // Cook a Gnomish Delicacy
     }
 
     public static void create(Player player, int index) {
