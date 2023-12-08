@@ -117,6 +117,7 @@ public enum GnomeCocktail {
         mix.setId(Items.COCKTAIL_SHAKER);
         player.getStats().addXp(StatType.Cooking, pourExperience, true);
         player.dialogue(new MessageDialogue("You pour the cocktail" + (extraProduct != -1 ? "." : " and add the finishing touches.")));
+        if (extraProduct == -1) player.getTaskManager().doLookupByUUID(937);    // Make a Gnome Cocktail
     }
 
     public void garnish(Player player) {
@@ -139,6 +140,7 @@ public enum GnomeCocktail {
             player.getStats().addXp(StatType.Cooking, extraExperience, true);
         }
         player.dialogue(new MessageDialogue("You add " + GnomeRecipe.getIngredientString(extraIngredients) + " for that final touch." + (this == DRUNK_DRAGON ? " Now you just need to heat it up." : "")));
+        if (this != DRUNK_DRAGON) player.getTaskManager().doLookupByUUID(937);    // Make a Gnome Cocktail
     }
 
     static {

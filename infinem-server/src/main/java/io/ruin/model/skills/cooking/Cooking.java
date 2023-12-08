@@ -101,6 +101,8 @@ public class Cooking {
                     player.cookStreak = 0;
                     PlayerCounter.BURNT_FOOD.increment(player, 1);
                 }
+                if (food == Food.DRUNK_DRAGON)
+                    player.getTaskManager().doLookupByUUID(937);    // Make a Gnome Cocktail
                 int returnedSecondary = food.returnedSecondary;
                 if (returnedSecondary != -1)
                     player.getInventory().addOrDrop(new Item(returnedSecondary));
