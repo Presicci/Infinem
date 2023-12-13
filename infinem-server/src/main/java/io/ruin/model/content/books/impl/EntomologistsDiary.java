@@ -36,7 +36,7 @@ public class EntomologistsDiary extends Book {
                 " <br> " +
                 "Actually, my kalphites are a bit tougher than I'd expected. As they grow larger, they're becoming quite aggressive." +
                 " <br> " +
-                "One of them even bit me today. It didn't hurt much at the time, but now I'm feeling a bit dizzy. I hope the kalphites aren't poisonous - my etymology[sic] books didn't say anything about them being poisonous." +
+                "One of them even bit me today. It didn't hurt much at the time, but now I'm feeling a bit dizzy. I hope the kalphites aren't poisonous - my etymology books didn't say anything about them being poisonous." +
                 " <br> " +
                 "The dizziness is getting worse... I don't know... ... those zoo keepers will show me some proper respect..." +
                 " <br> " +

@@ -34,7 +34,7 @@ public class GlassblowingBook extends Book {
                         " <br> " +
                         "<col=000088> A glassblowing pipe" +
                         " <br> " +
-                        "Found on Entrana or often just north-west of the Ranging Guild. As it's[sic] name suggests, this is used to blow air into molten glass." +
+                        "Found on Entrana or often just north-west of the Ranging Guild. As it's name suggests, this is used to blow air into molten glass." +
                         " <br> " +
                         "<col=000088> Seaweed" +
                         " <br> " +
