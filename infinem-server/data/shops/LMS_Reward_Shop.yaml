@@ -48,7 +48,3 @@ defaultStock:
   amount: 1000
   price: 800
   placeholderId: 0
-- id: 9477
-  amount: 1000
-  price: 300
-  placeholderId: 0

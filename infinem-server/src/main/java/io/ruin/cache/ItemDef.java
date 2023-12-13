@@ -416,13 +416,6 @@ public class ItemDef {
             inventoryOptions[2] = "Roll 100-sided";
         }
 
-        if (id == 9477) {
-            name = "Coinbox";
-            inventoryOptions[0] = "Open";
-            stackable = false;
-            tradeable = true;
-        }
-
         if (id == 3455 || id == 3457 || id == 3458) {
             name = "Clue key";
             inventoryOptions[3] = "Check-Hint";

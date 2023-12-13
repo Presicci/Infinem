@@ -16,8 +16,7 @@ import static io.ruin.cache.ItemID.COINS_995;
 public class CoinBox {
 
     static {
-            ItemAction.registerInventory(9477, "Open",  CoinBox::open
-        );
+            //ItemAction.registerInventory(9477, "Open",  CoinBox::open);
     }
 
     private static void open(Player player, Item item) {
