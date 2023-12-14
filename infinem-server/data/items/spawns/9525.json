@@ -18,5 +18,50 @@
     "world": "ECO",
     "itemName": "Swamp toad",
     "respawnSeconds": 60
+  },
+  {
+    "itemName": "Swamp toad",
+    "amount": 0,
+    "id": 2150,
+    "x": 2398,
+    "y": 3406,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Swamp toad",
+    "amount": 0,
+    "id": 2150,
+    "x": 2401,
+    "y": 3403,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Swamp toad",
+    "amount": 0,
+    "id": 2150,
+    "x": 2406,
+    "y": 3405,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Swamp toad",
+    "amount": 0,
+    "id": 2150,
+    "x": 2407,
+    "y": 3409,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Swamp toad",
+    "amount": 0,
+    "id": 2150,
+    "x": 2384,
+    "y": 3408,
+    "z": 0,
+    "respawnSeconds": 60
   }
 ]
