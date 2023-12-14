@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Burkor",
+    "id": 2575,
+    "x": 2420,
+    "y": 3475,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Damwin",
+    "id": 2559,
+    "x": 2417,
+    "y": 3495,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Eebel",
+    "id": 2566,
+    "x": 2416,
+    "y": 3415,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Gnome child",
+    "id": 6077,
+    "x": 2418,
+    "y": 3415,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Gnome woman",
+    "id": 6086,
+    "x": 2416,
+    "y": 3417,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ermin",
+    "id": 2567,
+    "x": 2490,
+    "y": 3409,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Femi",
+    "id": 1431,
+    "x": 2460,
+    "y": 3381,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Froono",
+    "id": 2576,
+    "x": 2440,
+    "y": 3403,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Wurbel",
+    "id": 2572,
+    "x": 2397,
+    "y": 3476,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
