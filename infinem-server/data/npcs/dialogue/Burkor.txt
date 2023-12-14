@@ -1,0 +1,3 @@
+Player: Hello.
+Burkor: Be vigilant, citizen.
+Player: Err, right.

@@ -1,0 +1,11 @@
+Dalila: Ooh, lovely view, dear.
+OTHERNPC:2562:Yes dear.
+Dalila: I hope the food's better here than it was last time.
+OTHERNPC:2562:I'm sure it will be, dear.
+Player: Sorry to disturb you, but what are you two doing here?
+Dalila: Perrdur and I are having a nice romantic dinner, aren't we dear?
+Dalila: We are celebrating the anniversary of our marriage, aren't we dear?
+OTHERNPC:2562:Yes dear.
+Dalila: And we are having a very enjoyable time, aren't we dear?
+OTHERNPC:2562:Yes dear.
+Player: Clearly. I'll let you two lovebirds carry on, then.

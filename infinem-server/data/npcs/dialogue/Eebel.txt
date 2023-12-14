@@ -1,0 +1,3 @@
+Player: Hello?
+Eebel: Hello Good Sir, can I do anything for you?
+Player: No I'm fine, I'm just wandering around.

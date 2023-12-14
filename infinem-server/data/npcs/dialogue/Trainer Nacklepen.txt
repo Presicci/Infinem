@@ -1,0 +1,30 @@
+Player: Who are you then?
+Trainer Nacklepen: Hurumph.
+Trainer Nacklepen: Nacklepen, tortoise trainer extraordinaire.
+Player: What's extraordinary about you?
+Trainer Nacklepen: Do you know any other tortoise trainers?
+Player: Well, no.
+Trainer Nacklepen: Well there you go then.
+<So what are you training these tortoises to do?
+Trainer Nacklepen: Tortoises are naturally pacifistic animals that eat nothing but cabbages. I am required to beat those peaceful tendencies out of the softies and turn them into hardened battle-trained killers.
+Trainer Nacklepen: Firstly I acclimatise them to excessive aural stimulation and simple physical confrontation.
+Player: You shout at them and beat them with sticks?
+Trainer Nacklepen: Of course. Then I re-educate them to become comfortable with riders and military combat situations.
+Player: You sit on their backs and prod them with sharp pointy things.
+Trainer Nacklepen: If you like.
+Player: Doesn't seem very fair on the tortoises.
+Trainer Nacklepen: This is war! Fairness is a luxury of the weak.
+Player: Hmmm, profound but disturbing.
+FIRSTOPTIONS
+><Why tortoises?
+Player: So why tortoises?
+Trainer Nacklepen: Isn't it obvious? Surely even to your untrained eye that giant tortoises are the perfect mobile armoured field unit?
+Trainer Nacklepen: They are sturdy animals, and well protected by their shell. They can even swim! All we need to do is put a bit of fire in their bellies.
+Player: I suppose so....
+FIRSTOPTIONS
+><Where did these tortoises come from?
+Player: Where do these tortoises come from?
+Trainer Nacklepen: We breed them. The originals were found by gnome explorers back in King Healthorg the Great's rule. On their discovery King Healthorg authorised a small party to go there and transport a breeding pair back here.
+Trainer Nacklepen: He kept one for himself to ride into battle.
+Trainer Nacklepen: Trouble is they take a lot of skill and time to breed, so we're only just getting them battle ready.
+FIRSTOPTIONS

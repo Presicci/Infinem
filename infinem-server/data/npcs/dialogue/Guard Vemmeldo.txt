@@ -1,0 +1,5 @@
+Player: Good day. What are you up to?
+Guard Vemmeldo: My job is to ensure that everyone can use the bank safely. Shifty types always hang around banks, you know.
+Guard Vemmeldo: You're not shifty, are you?
+Player: No, of course not.
+Guard Vemmeldo: Jolly good. Carry on then.
