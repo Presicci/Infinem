@@ -1,6 +1,7 @@
 package io.ruin.model.content.tasksystem.tasks.impl;
 
 import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.item.containers.equipment.EquipAction;
 
 /**
@@ -10,7 +11,7 @@ import io.ruin.model.item.containers.equipment.EquipAction;
 public enum EquipTask {
 
     FIRE_CAPE(418, Items.FIRE_CAPE),
-    INFERNAL_CAPE(429, Items.INFERNAL_CAPE),
+    INFERNAL_CAPE(429, Items.INFERNAL_CAPE, MaxCapeVariants.MaxCapes.INFERNAL.newCapeId),
     SPINY_HELMET(29, Items.SPINY_HELMET),
     DRAGON_DEFENDER(462, Items.DRAGON_DEFENDER),
     FANCY_BOOTS(341, Items.FANCY_BOOTS),
