@@ -7,6 +7,7 @@
     "aggressive_level": 168,
     "max_damage": 14,
     "attack_style": "STAB",
+    "poison": 1,
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
@@ -19,10 +20,10 @@
     "magic": 1,
     //Aggressive Stats
     "stab_attack": 66,
-    "slash_attack": 66,
-    "crush_attack": 66,
-    "magic_attack": 66,
-    "ranged_attack": 66,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 0,
     "slash_defence": 0,
@@ -38,8 +39,8 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 3538,
+    "defend_animation": 3539,
+    "death_animation": 3540
   }
 ]
