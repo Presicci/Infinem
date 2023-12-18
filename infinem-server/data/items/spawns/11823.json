@@ -1,0 +1,38 @@
+[
+  {
+    "itemName": "Hammer",
+    "amount": 0,
+    "id": 2347,
+    "x": 2964,
+    "y": 3058,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Hammer",
+    "amount": 0,
+    "id": 2347,
+    "x": 2953,
+    "y": 3059,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Hammer",
+    "amount": 0,
+    "id": 2347,
+    "x": 2989,
+    "y": 3060,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Hammer",
+    "amount": 0,
+    "id": 2347,
+    "x": 2987,
+    "y": 3048,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
