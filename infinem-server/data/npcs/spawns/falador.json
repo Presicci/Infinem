@@ -1554,6 +1554,15 @@
     "world": "ECO",
     "npcName": "Sir Renitee"
   },
+  {
+    "name": "Ambassador Spanfipple",
+    "id": 2556,
+    "x": 2979,
+    "y": 3333,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 6
+  },
 
 
 
