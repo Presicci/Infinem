@@ -1,0 +1,146 @@
+[
+  {
+    "name": "G.L.O. Caranock",
+    "id": 1460,
+    "x": 2954,
+    "y": 3024,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 1430,
+    "x": 2944,
+    "y": 3043,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 2956,
+    "y": 3030,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 2958,
+    "y": 3032,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 2968,
+    "y": 3033,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 2969,
+    "y": 3041,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 2984,
+    "y": 3049,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 2991,
+    "y": 3049,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 3001,
+    "y": 3048,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 2995,
+    "y": 3061,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 2988,
+    "y": 3062,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 2982,
+    "y": 3060,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 2976,
+    "y": 3064,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 2959,
+    "y": 3059,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 2957,
+    "y": 3054,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Shipyard worker",
+    "id": 5729,
+    "x": 2961,
+    "y": 3055,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
