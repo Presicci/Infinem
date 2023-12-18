@@ -98,6 +98,8 @@ public abstract class NPCCombat extends Combat {
                 info.magic_defence,
                 info.ranged_defence,
         };
+        if (info.poison > 0)
+            setPoison(info.poison);
         init();
         return this;
     }

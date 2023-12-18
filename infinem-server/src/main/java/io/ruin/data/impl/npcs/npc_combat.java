@@ -103,6 +103,8 @@ public class npc_combat extends DataFile {
 
         @Expose public AttackStyle attack_style;
 
+        @Expose public int poison = 0;
+
         /**
          * Slayer Info
          */
