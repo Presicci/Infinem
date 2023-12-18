@@ -1,10 +1,10 @@
 [
   { // Shipyard worker (11)
-    "ids": [ 3255, 3256 ],
+    "ids": [ 5457, 5729 ],
     "handler": "",
     //Combat Info
     "hitpoints": 10,
-    "aggressive_level": 22,
+    "aggressive_level": 0,
     "max_damage": 2,
     "attack_style": "CRUSH",
     //Slayer Info
@@ -12,15 +12,15 @@
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 10,
+    "strength": 10,
+    "defence": 10,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
-    "crush_attack": 0,
+    "crush_attack": 6,
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
@@ -31,7 +31,7 @@
     "ranged_defence": 0,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 2,
