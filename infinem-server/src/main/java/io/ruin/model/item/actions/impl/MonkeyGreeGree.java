@@ -34,7 +34,7 @@ public enum MonkeyGreeGree {
     }
 
     private void hold(Player player, Item greegree) {
-        if(player.getAppearance().getNpcId() != -1 || !player.getPosition().inBounds(ZOO_BOUNDS) || !player.getPosition().inBounds(Bounds.fromRegions(10794, 10795, 11050, 11051))) {
+        if(player.getAppearance().getNpcId() != -1 || (!player.getPosition().inBounds(ZOO_BOUNDS) && !player.getPosition().inBounds(Bounds.fromRegions(10794, 10795, 11050, 11051)))) {
             player.sendMessage("You attempt to use the Monkey Greegree but nothing happens.");
             return;
         }
@@ -48,7 +48,7 @@ public enum MonkeyGreeGree {
                     Item item = player.getEquipment().get(Equipment.SLOT_WEAPON);
                     if(item == null || item.getId() != greegreeId)
                         break;
-                    if(!player.getPosition().inBounds(ZOO_BOUNDS)) {
+                    if(!player.getPosition().inBounds(ZOO_BOUNDS) && !player.getPosition().inBounds(Bounds.fromRegions(10794, 10795, 11050, 11051))) {
                         item.remove();
                         player.getInventory().addOrDrop(item.getId(), 1);
                         player.dialogue(new MessageDialogue("The Monkey Greegree wrenches itself from your hand as its power begins to fade...").lineHeight(24));
@@ -61,6 +61,15 @@ public enum MonkeyGreeGree {
                 player.getAppearance().setNpcId(-1);
             });
         }
+    }
+
+    public boolean isMonkey(Player player) {
+        int npcId = player.getAppearance().getNpcId();
+        if (npcId == -1) return false;
+        for (MonkeyGreeGree greeGree : values()) {
+            if (npcId == greeGree.npcId) return true;
+        }
+        return false;
     }
 
     static {
