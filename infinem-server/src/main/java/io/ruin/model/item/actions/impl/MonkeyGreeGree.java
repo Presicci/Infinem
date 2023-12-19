@@ -34,7 +34,7 @@ public enum MonkeyGreeGree {
     }
 
     private void hold(Player player, Item greegree) {
-        if(player.getAppearance().getNpcId() != -1 || !player.getPosition().inBounds(ZOO_BOUNDS)) {
+        if(player.getAppearance().getNpcId() != -1 || !player.getPosition().inBounds(ZOO_BOUNDS) || !player.getPosition().inBounds(Bounds.fromRegions(10794, 10795, 11050, 11051))) {
             player.sendMessage("You attempt to use the Monkey Greegree but nothing happens.");
             return;
         }
