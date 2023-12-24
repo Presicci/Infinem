@@ -1,5 +1,6 @@
 package io.ruin.data.impl.dialogue;
 
+import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
 import io.ruin.model.content.transportation.charterships.CharterShips;
@@ -24,6 +25,28 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    MONKEYSPEAK(player -> {
+        String[] phrases = {
+                "Ah Ah!",
+                "Ah Uh Ah!",
+                "Ah!",
+                "Ook Ah Ook!",
+                "Ook Ah Uh!",
+                "Ook Ook!",
+                "Ook!",
+                "Ook."
+        };
+        NPC npc = player.getDialogueNPC();
+        StringBuilder sb = new StringBuilder();
+        int count = 0;
+        int max = Random.get(8, 10);
+        while (count < max) {
+            sb.append(Random.get(phrases));
+            sb.append(" ");
+            count++;
+        }
+        player.dialogue(new NPCDialogue(npc, sb.toString()));
+    }),
     THURGO_PIE(player -> {
         NPC npc = player.getDialogueNPC();
         if (!player.getInventory().hasId(Items.REDBERRY_PIE)) {
