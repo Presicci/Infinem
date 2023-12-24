@@ -1,0 +1,5 @@
+HASEQUIPMENT:4021
+/Player: Good day, Muruwoi.
+Muruwoi: Greetings.
+/Player: Good day, Muruwoi.
+MONKEYSPEAK
