@@ -6,6 +6,7 @@ import io.ruin.Server;
 import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.utils.*;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.AnimDef;
 import io.ruin.cache.Color;
 import io.ruin.cache.InterfaceDef;
 import io.ruin.cache.Varp;
@@ -1987,4 +1988,17 @@ public class Player extends PlayerAttributes {
     @Getter private final transient LightBox lightBox = new LightBox(this);
 
     @Getter private final Tileman tileman = new Tileman(this);
+
+    public void NPCAnimate(int npcId, int id) {
+        NPCAnimate(npcId, id, 0);
+    }
+
+    public void NPCAnimate(int npcId, int id, int delay) {
+        if (getAppearance().getNpcId() != npcId) return;
+        AnimDef def = AnimDef.get(id);
+        if (def != null) {
+            animTick = Server.currentTick() + def.getDuration();
+        }
+        animationUpdate.set(id, delay);
+    }
 }

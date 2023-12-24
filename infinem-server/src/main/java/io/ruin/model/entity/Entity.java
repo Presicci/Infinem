@@ -306,7 +306,7 @@ public abstract class Entity extends TemporaryAttributesHolder {
 
     protected AnimationUpdate animationUpdate;
 
-    private long animTick = 0;
+    protected long animTick = 0;
 
     public int animate(int id) {
         return animate(id, 0);
