@@ -1,5 +1,8 @@
 package io.ruin.model.map.object.actions.impl;
 
+import io.ruin.api.utils.Random;
+import io.ruin.data.impl.dialogue.DialogueLoaderAction;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
@@ -13,6 +16,34 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/1/2023
  */
 public enum DialogueObject {
+    AWOWOGEI(4771, new Position(2802, 2765),
+            new ActionDialogue((player) -> {
+                if (player.getEquipment().hasId(4021)) {
+                    player.dialogue(
+                            new NPCDialogue(2972, "Greetings, [player name].")
+                    );
+                } else {
+                    String[] phrases = {
+                            "Ah Ah!",
+                            "Ah Uh Ah!",
+                            "Ah!",
+                            "Ook Ah Ook!",
+                            "Ook Ah Uh!",
+                            "Ook Ook!",
+                            "Ook!",
+                            "Ook."
+                    };
+                    StringBuilder sb = new StringBuilder();
+                    int count = 0;
+                    int max = Random.get(8, 10);
+                    while (count < max) {
+                        sb.append(Random.get(phrases));
+                        sb.append(" ");
+                        count++;
+                    }
+                    player.dialogue(new NPCDialogue(2972, sb.toString()));
+                }
+            })),
     KITCHEN_CABINET(17132, new Position(2449, 3512, 1),
             new OptionsDialogue("What would you like to take?",
                     new Option("Knife", (player) -> takeItem(player, new Item(Items.KNIFE), "cabinet")),
