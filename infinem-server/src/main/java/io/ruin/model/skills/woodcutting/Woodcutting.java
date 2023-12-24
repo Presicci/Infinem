@@ -186,6 +186,8 @@ public class Woodcutting {
     }
 
     static {
+        ObjectAction.register(4818, "chop-down", (player, obj) -> chop(Tree.REGULAR, player, obj, 4819));   // Ape atoll
+        ObjectAction.register(4820, "chop-down", (player, obj) -> chop(Tree.REGULAR, player, obj, 4821));   // Ape atoll
         ObjectAction.register(1278, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 1342));
         ObjectAction.register(1276, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 1342));
         ObjectAction.register(2091, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 1342));
