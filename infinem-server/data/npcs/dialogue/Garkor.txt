@@ -1,0 +1,3 @@
+Garkor: Greetings, [player name].
+Player: Hey Garkor, how's it going?
+Garkor: Very well.
