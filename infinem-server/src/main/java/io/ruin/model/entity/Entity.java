@@ -324,6 +324,7 @@ public abstract class Entity extends TemporaryAttributesHolder {
     }
 
     public int animate(int id, int delay) {
+        if (isPlayer() && player.getAppearance().getNpcId() != -1) return 0;
         AnimDef def = AnimDef.get(id);
         if (def != null) {
             animTick = Server.currentTick() + def.getDuration();
