@@ -266,9 +266,11 @@ public class DialogueParser {
                 } else {
                     String finalLine = line;
                     return new ActionDialogue((player) -> {
-                        String substring = finalLine.substring(action.name().length() + 1);
-                        if (substring.length() > 0)
-                            player.putTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS, substring);
+                        if (action.name().length() + 1 < finalLine.length()) {
+                            String substring = finalLine.substring(action.name().length() + 1);
+                            if (substring.length() > 0)
+                                player.putTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS, substring);
+                        }
                         action.getAction().accept(player);
                     });
                 }
