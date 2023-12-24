@@ -1,0 +1,5 @@
+HASEQUIPMENT:4021
+/Player: Good day, Uwogo.
+Uwogo: Get away from me, you foul commoner!
+/Player: Good day, Uwogo.
+MONKEYSPEAK
