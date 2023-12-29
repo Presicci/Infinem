@@ -1,0 +1,7 @@
+Player: You're a long way from home, what are you doing here?
+Brambickle: I'm on an expedition to try and extend the bounds of gnome knowledge. King Narnode has sent out a number of gnome explorers to map the furthest reaches of Gielinor.
+Player: Seems like a hard job.
+Brambickle: Oh no, I enjoy it - I've always had itchy feet ever since I was a little gnome.
+Player: Still, you seem to have drawn the short straw here - there's nothing but snow...
+Brambickle: Oh, I like it - very peaceful. Avoiding those Trolls can be tricky though.
+Player: Tell me about it...

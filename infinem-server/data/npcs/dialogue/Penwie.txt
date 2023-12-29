@@ -1,0 +1,10 @@
+Player: Are you hunting animals, then?
+Penwie: I'm exploring the region for the good of the gnome people.
+Player: You're not tracking down huge beasts to kill - you look equipped for it.
+Penwie: Well, if I find anything interesting I'll try and bring it back to the King. That might include animals, I suppose. I'd rather not kill it, though - most animals are more useful alive.
+Player: How would you get it home, then?
+Penwie: Never underestimate the ingenuity of a gnome, friend.
+Player: Have you found anything else interesting around here?
+Penwie: I've heard strange rumours about something the locals call the Broodoo. I haven't quite worked out what they are but they seem to be some sort of undead whose ghastly fate depends on the way they were killed.
+Penwie: I think they may be sacrifice victims - but I'm not sure why they are sacrificed. Either way the locals seem to be very scared of them.
+Player: That's interesting. Thanks.
