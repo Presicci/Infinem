@@ -6,6 +6,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.stat.StatType;
+import lombok.Getter;
 import lombok.Setter;
 
 import java.util.function.Consumer;
@@ -16,13 +17,13 @@ import java.util.function.Consumer;
  */
 public enum GnomeRecipe {
     // Cocktails
-    FRUIT_BLAST(GnomeCocktail.FRUIT_BLAST::mix),
-    PINEAPPLE_PUNCH(GnomeCocktail.PINEAPPLE_PUNCH::mix),
-    WIZARD_BLIZZARD(GnomeCocktail.WIZARD_BLIZZARD::mix),
-    SHORT_GREEN_GUY(GnomeCocktail.SHORT_GREEN_GUY::mix),
-    DRUNK_DRAGON(GnomeCocktail.DRUNK_DRAGON::mix),
-    CHOCOLATE_SATURDAY(GnomeCocktail.CHOCOLATE_SATURDAY::mix),
-    BLURBERRY_SPECIAL(GnomeCocktail.BLURBERRY_SPECIAL::mix),
+    FRUIT_BLAST(GnomeCocktail.FRUIT_BLAST),
+    PINEAPPLE_PUNCH(GnomeCocktail.PINEAPPLE_PUNCH),
+    WIZARD_BLIZZARD(GnomeCocktail.WIZARD_BLIZZARD),
+    SHORT_GREEN_GUY(GnomeCocktail.SHORT_GREEN_GUY),
+    DRUNK_DRAGON(GnomeCocktail.DRUNK_DRAGON),
+    CHOCOLATE_SATURDAY(GnomeCocktail.CHOCOLATE_SATURDAY),
+    BLURBERRY_SPECIAL(GnomeCocktail.BLURBERRY_SPECIAL),
 
     // Battas
     FRUIT_BATTA(25, 40.0, 80.0,
@@ -73,6 +74,7 @@ public enum GnomeRecipe {
     private int levelRequirement, halfMadeProduct, unfinishedProduct, finalProduct;
     private double halfMadeExperience, garnishExperience;
     private Item[] halfMadeIngredients, garnishIngredients;
+    @Getter private GnomeCocktail cocktail;
     private Consumer<Player> consumer;
 
     GnomeRecipe(int levelRequirement, double halfMadeExperience, double garnishExperience, Item[] halfMadeIngredients, int halfMadeProduct, int unfinishedProduct, Item[] garnishIngredients, int finalProduct) {
@@ -86,8 +88,9 @@ public enum GnomeRecipe {
         this.finalProduct = finalProduct;
     }
 
-    GnomeRecipe(Consumer<Player> consumer) {
-        this.consumer = consumer;
+    GnomeRecipe(GnomeCocktail cocktail) {
+        this.cocktail = cocktail;
+        this.consumer = cocktail::mix;
     }
 
     static String getAmountString(int amount) {
