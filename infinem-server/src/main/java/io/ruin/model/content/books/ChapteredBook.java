@@ -32,6 +32,10 @@ public abstract class ChapteredBook extends Book {
 
     protected final Int2IntOpenHashMap mappedPages = new Int2IntOpenHashMap();
 
+    protected boolean skipFirstPage() {
+        return false;
+    }
+
     @Override
     protected void sendBook(final boolean open) {
         player.openInterface(InterfaceType.MAIN, 680);
@@ -45,7 +49,12 @@ public abstract class ChapteredBook extends Book {
             for (int i = 1; i < 15; i++) {
                 list.add("");
             }
-
+            if (skipFirstPage()) {
+                int blankPageCount = 0;
+                while (blankPageCount++ < 15) {
+                    list.add("");
+                }
+            }
             for (val arrays : splitContext) {
                 mappedPages.put(chapterIndex++, list.size() / 30);
                 int lineCount = 0;
