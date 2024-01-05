@@ -24,7 +24,7 @@
     "y": 3503,
     "z": 1,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 2
   },
   {
     "name": "Gnome banker",
@@ -42,7 +42,7 @@
     "y": 3503,
     "z": 1,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 2
   },
   {
     "name": "Gnome",
@@ -51,7 +51,7 @@
     "y": 3501,
     "z": 1,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 3
   },
   {
     "name": "Gnome",
@@ -420,7 +420,7 @@
     "y": 3503,
     "z": 1,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 3
   },
   {
     "name": "Heckel Funch",
