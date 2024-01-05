@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Waydar",
+    "id": 1446,
+    "x": 2392,
+    "y": 9892,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Big Snake",
+    "id": 2978,
+    "x": 3021,
+    "y": 5486,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Big Snake",
+    "id": 2978,
+    "x": 3021,
+    "y": 5489,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Big Snake",
+    "id": 2978,
+    "x": 3024,
+    "y": 5491,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Big Snake",
+    "id": 2978,
+    "x": 3025,
+    "y": 5488,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Big Snake",
+    "id": 2978,
+    "x": 3023,
+    "y": 5485,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
