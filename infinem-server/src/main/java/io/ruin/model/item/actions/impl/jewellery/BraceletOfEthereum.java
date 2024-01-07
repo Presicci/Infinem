@@ -44,8 +44,11 @@ public class BraceletOfEthereum {
     }
 
     private static void toggleAbsorption(Player player, Item item) {
-        player.autoCollectEther = !player.autoCollectEther;
-        String toggle = player.autoCollectEther ? "on" : "off";
+        if (player.hasAttribute("AUTO_COLLECT_ETHER"))
+            player.removeAttribute("AUTO_COLLECT_ETHER");
+        else
+            player.putAttribute("AUTO_COLLECT_ETHER", 1);
+        String toggle = player.hasAttribute("AUTO_COLLECT_ETHER") ? "on" : "off";
         player.sendMessage(Color.DARK_GREEN.wrap("Bracelet of Ethereum absorption is now toggled " + toggle + "!"));
 
     }
@@ -107,7 +110,7 @@ public class BraceletOfEthereum {
     private static boolean isToggled(Player pKiller, Item item) {
         if(!wearingBraceletOfEtherum(pKiller))
             return false;
-        return item.getId() == REVENANT_ETHER && pKiller.autoCollectEther;
+        return item.getId() == REVENANT_ETHER && pKiller.hasAttribute("AUTO_COLLECT_ETHER");
     }
 
     private static boolean wearingBraceletOfEtherum(Player player) {
