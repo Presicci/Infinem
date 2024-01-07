@@ -219,21 +219,21 @@ public class PestControlGame {
 				} else {
 				    switch(settings) {
                         case NOVICE:
-                            p.pestNoviceWins++;
+							p.incrementNumericAttribute("PEST_NOVICE_WINS", 1);
 							p.getTaskManager().doLookupByUUID(440, 1);	// Complete a Game of Novice Pest Control
                             break;
                         case INTERMEDIATE:
-                            p.pestIntermediateWins++;
+							p.incrementNumericAttribute("PEST_INTERMEDIATE_WINS", 1);
 							p.getTaskManager().doLookupByUUID(454, 1);	// Complete a Game of Intermediate Pest Control
                             break;
                         case VETERAN:
-                            p.pestVeteranWins++;
+							p.incrementNumericAttribute("PEST_VETERAN_WINS", 1);
 							p.getTaskManager().doLookupByUUID(471, 1);	// Complete a Game of Veteran Pest Control
 							if (voidKnightHealthTask)
 								p.getTaskManager().doLookupByUUID(470, 1);	// Keep the Veteran Void Knight Above 150 Hitpoints
                             break;
                     }
-					p.pestPoints += rewardedPoints;
+					p.incrementNumericAttribute("PEST_POINTS", rewardedPoints);
 					p.getInventory().addOrDrop(new Item(COINS_995, Random.get(3000, 7000)));
 					p.dialogue(new NPCDialogue(SQUIRE_ID,
 							"Congratulations! You managed to destroy all the portals!<br>" +

@@ -83,7 +83,7 @@ public final class PestControlBoat {
 		player.getMovement().teleport(player.getPosition().relative(offset, 0, 0));
 		player.openInterface(InterfaceType.PRIMARY_OVERLAY, OVERLAY);
 		player.getPacketSender().sendString(OVERLAY, 21, settings.title());
-		player.getPacketSender().sendString(OVERLAY, 6, "Points: "+ player.pestPoints);
+		player.getPacketSender().sendString(OVERLAY, 6, "Points: "+ player.getAttributeIntOrZero("PEST_POINTS"));
 		updateOverlay();
 		player.teleportListener = p -> {
 			leave(p);

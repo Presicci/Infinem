@@ -82,9 +82,9 @@ public class PestControl {
      * @param player The player being shown the scoreboard
      */
     private static void displayScoreBoard(Player player) {
-        player.getPacketSender().sendString(PEST_CONTROL_SCOREBOARD, 8, String.valueOf(player.pestNoviceWins));
-        player.getPacketSender().sendString(PEST_CONTROL_SCOREBOARD, 9, String.valueOf(player.pestIntermediateWins));
-        player.getPacketSender().sendString(PEST_CONTROL_SCOREBOARD, 10, String.valueOf(player.pestVeteranWins));
+        player.getPacketSender().sendString(PEST_CONTROL_SCOREBOARD, 8, String.valueOf(player.getAttributeIntOrZero("PEST_NOVICE_WINS")));
+        player.getPacketSender().sendString(PEST_CONTROL_SCOREBOARD, 9, String.valueOf(player.getAttributeIntOrZero("PEST_INTERMEDIATE_WINS")));
+        player.getPacketSender().sendString(PEST_CONTROL_SCOREBOARD, 10, String.valueOf(player.getAttributeIntOrZero("PEST_VETERAN_WINS")));
         player.openInterface(InterfaceType.MAIN, PEST_CONTROL_SCOREBOARD);
     }
 
@@ -120,12 +120,11 @@ public class PestControl {
 
 			PestControlRewards selected = Arrays.stream(PestControlRewards.VALUES).filter(i -> player.selectedWidgetId == i.widgetId()).findAny().orElse(null);
 			if (selected != null) {
-				if (player.pestPoints < selected.cost()) {
+				if (player.getAttributeIntOrZero("PEST_POINTS") < selected.cost()) {
 					player.sendMessage("You do not have enough Pest Points to purchase this "+ selected.displayName() +".");
 					return;
 				}
-
-				player.pestPoints -= selected.cost();
+				player.incrementNumericAttribute("PEST_POINTS", -selected.cost());
 				player.getInventory().add(new Item(selected.itemId()));
 				player.selectedWidgetId = 0;
 			}
