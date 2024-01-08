@@ -1222,7 +1222,7 @@ public class Player extends PlayerAttributes {
 
         if (collectionLog == null)
             collectionLog = new CollectionLog();
-        collectionLog.init(this, 500, -1, -1, 620, true);//621, 35
+        collectionLog.init(this);
 
         if(bankPin == null)
             bankPin = new BankPin();
@@ -1620,7 +1620,6 @@ public class Player extends PlayerAttributes {
         runePouch.sendUpdates();
         tournamentRunePouch.sendUpdates();
         box.sendUpdates();
-        collectionLog.sendUpdates();
 
         combat.preAttack();
         TargetRoute.beforeMovement(this);

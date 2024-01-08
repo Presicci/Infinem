@@ -27,12 +27,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class CollectionLog extends ItemContainerG<CollectionLogItem> {
+public class CollectionLog {
 
     public static final int BLANK_ID = -1;
     public static int[] bossParams = {40697866, 40697867, 40697868, 40697869};
     @Expose @Getter
     private Map<Integer, Integer> collected = new HashMap<>();
+
+    private Player player;
+
+    public void init(Player player) {
+        this.player = player;
+    }
 
     public int getCollected(int itemId) {
         return collected.getOrDefault(itemId,0);
@@ -199,19 +205,4 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
         int sum6 = PlayerCounter.MASTER_CLUES_COMPLETED.get(player);
         return sum1+sum2+sum3+sum4+sum5+sum6;
     }
-
-    @Override
-    protected CollectionLogItem newItem(int id, int amount, Map<String, String> attributes) {
-        return new CollectionLogItem(id, amount, attributes);
-    }
-
-    @Override
-    protected CollectionLogItem[] newArray(int size) {
-        return new CollectionLogItem[size];
-    }
-
-    public boolean sendUpdates() {
-        return sendUpdates(null);
-    }
-
 }
