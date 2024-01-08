@@ -3,6 +3,7 @@ package io.ruin.model.item.actions.impl.jewellery;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerBoolean;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
@@ -63,7 +64,7 @@ public enum RingOfSuffering {
         player.sendFilteredMessage("<col=007f00>Your ring currently has "
                 + NumberUtils.formatNumber(charges) + " recoil charge" + (charges > 1 ? "s" : "")
                 + " remaining. The recoil effect is currently "
-                + (player.ringOfSufferingEffect ? "enabled" : "disabled") + ".</col>");
+                + (PlayerBoolean.RING_OF_SUFFERING.has(player) ? "enabled" : "disabled") + ".</col>");
     }
 
     private static void charge(Player player, Item ringOfSuffering, int chargedId) {
@@ -131,8 +132,8 @@ public enum RingOfSuffering {
     private static void recoilSettings(Player player, Item ring, int unchargedId) {
         player.dialogue(new OptionsDialogue(
                 new Option("Toggle recoil effect", () -> {
-                    player.ringOfSufferingEffect = !player.ringOfSufferingEffect;
-                    player.sendFilteredMessage("You " + (player.ringOfSufferingEffect ? "enable" : "disable") + " the recoil effect of your ring.");
+                    PlayerBoolean.RING_OF_SUFFERING.toggle(player);
+                    player.sendFilteredMessage("You " + (PlayerBoolean.RING_OF_SUFFERING.has(player) ? "enable" : "disable") + " the recoil effect of your ring.");
                 }),
                 new Option("Discard recoil changes", () -> {
                     player.dialogue(new OptionsDialogue("Are you sure you wish to discard your recoil charges?",
@@ -152,7 +153,7 @@ public enum RingOfSuffering {
     }
 
     public static void check(Player player, Hit hit) {
-        if(!player.ringOfSufferingEffect)
+        if(!PlayerBoolean.RING_OF_SUFFERING.has(player))
             return;
         if(hit.attacker == null || hit.attackStyle == null)
             return;

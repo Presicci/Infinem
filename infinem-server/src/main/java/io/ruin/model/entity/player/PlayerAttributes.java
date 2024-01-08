@@ -579,11 +579,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public boolean raidsEntranceWarning = false;
 
     /**
-     * Ring of suffering
-     */
-    @Expose public boolean ringOfSufferingEffect = true;
-
-    /**
      * Buy Credits
      */
 

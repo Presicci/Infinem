@@ -5,6 +5,7 @@ package io.ruin.model.entity.player;
  * Created on 9/20/2023
  */
 public enum PlayerBoolean {
+    RING_OF_SUFFERING,
     CERBERUS_METAMORPH,
     JAD_METAMORPH,
     SIRE_METAMORPH;
