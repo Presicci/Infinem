@@ -76,8 +76,8 @@ public class SeaweedPatch extends Patch {
         int saveChance = (int) (initialSaveChance + (0.236 * (player.getStats().get(StatType.Farming).currentLevel - 23)));
         if (Random.rollPercent(saveChance))
             return false;
-        if (--produceCount <= 0) {
-            produceCount = 0;
+        if (--getStatus().produceCount <= 0) {
+            getStatus().produceCount = 0;
             return true;
         }
         return false;

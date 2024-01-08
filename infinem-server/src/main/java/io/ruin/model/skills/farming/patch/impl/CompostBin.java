@@ -28,7 +28,7 @@ public class CompostBin extends Patch {
     public int getVarpbitValue() {
         if (getProduceCount() == 0)
             return 0;
-        if (stage == 0) {
+        if (getStatus().stage == 0) {
             int value = 0;
             if (currentType == SUPER)
                 value |= 1 << 5;
@@ -38,9 +38,9 @@ public class CompostBin extends Patch {
             if (data == PatchData.FARMING_GUILD_COMPOST_BIN && getProduceCount() == 30)
                 value = 77;
             return value;
-        } else if (stage == 1) {
+        } else if (getStatus().stage == 1) {
             return 31;
-        } else if (stage == 2) {
+        } else if (getStatus().stage == 2) {
             if (currentType != TOMATOES)
                 return (1 << 5) | (1 << 4) | ((data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount() / 2 : getProduceCount()) - 1);
             else
@@ -51,7 +51,7 @@ public class CompostBin extends Patch {
 
     @Override
     public void interact() {
-        if (stage == 0 && (data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount() == 30 : getProduceCount() == 15)) {
+        if (getStatus().stage == 0 && (data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount() == 30 : getProduceCount() == 15)) {
             player.startEvent(event -> {
                 player.animate(810);
                 event.delay(1);
@@ -59,9 +59,9 @@ public class CompostBin extends Patch {
                 setTimePlanted(System.currentTimeMillis());
                 update();
             });
-        } else if (stage == 1) {
+        } else if (getStatus().stage == 1) {
             player.sendMessage("The vegetation hasn't finished rotting yet.");
-        } else if (stage == 2) {
+        } else if (getStatus().stage == 2) {
             if (currentType == TOMATOES) {
                 player.startEvent(event -> {
                     while (getProduceCount() > 0 && player.getInventory().hasRoomFor(PRODUCTS[TOMATOES])) {
@@ -124,7 +124,7 @@ public class CompostBin extends Patch {
 
     @Override
     public boolean isFullyGrown() {
-        return stage == 2;
+        return getStatus().stage == 2;
     }
 
     @Override
@@ -157,7 +157,7 @@ public class CompostBin extends Patch {
 
     @Override
     public void handleItem(Item item) {
-        if (stage == 0) {
+        if (getStatus().stage == 0) {
             if (data == PatchData.FARMING_GUILD_COMPOST_BIN ? getProduceCount() >= 30 : getProduceCount() >= 15) {
                 player.sendMessage("The compost bin is too full to put anything else in it.");
                 return;
@@ -194,7 +194,7 @@ public class CompostBin extends Patch {
             } else {
                 add(item, getProduceCount() == 0 ? type : currentType);
             }
-        } else if (stage == 2) {
+        } else if (getStatus().stage == 2) {
             if (item.getId() == VOLCANIC_ASH) {
                 int ashRequired = data == PatchData.FARMING_GUILD_COMPOST_BIN ? 50 : 25;
                 if (currentType == ULTRA) {
@@ -273,7 +273,7 @@ public class CompostBin extends Patch {
     }
 
     public int getProductId() {
-        if ((stage == 0 && getProduceCount() == 0) || currentType < 0 || currentType > 3) {
+        if ((getStatus().stage == 0 && getProduceCount() == 0) || currentType < 0 || currentType > 3) {
             return 1925;
         } else {
             return PRODUCTS[currentType];
@@ -290,7 +290,7 @@ public class CompostBin extends Patch {
 
     @Override
     protected boolean isNextStageReady() {
-        if (getTimePlanted() <= 0 || stage != 1)
+        if (getTimePlanted() <= 0 || getStatus().stage != 1)
             return false;
         return getTimeElapsed() >= TimeUtils.getMinutesToMillis(30);
     }
@@ -298,7 +298,7 @@ public class CompostBin extends Patch {
     @Override
     public void reset(boolean weeds) {
         currentType = 0;
-        stage = 0;
+        getStatus().stage = 0;
         setProduceCount(0);
         setTimePlanted(0);
         update();
@@ -341,17 +341,17 @@ public class CompostBin extends Patch {
 
     @Override
     public boolean removeProduce() {
-        if (--produceCount <= 0) {
-            produceCount = 0;
+        if (--getStatus().produceCount <= 0) {
+            getStatus().produceCount = 0;
             return true;
         }
         return false;
     }
 
     public boolean removeProduce(int amount) {
-        produceCount -= amount;
-        if (produceCount <= 0) {
-            produceCount = 0;
+        getStatus().produceCount -= amount;
+        if (getStatus().produceCount <= 0) {
+            getStatus().produceCount = 0;
             return true;
         }
         return false;

@@ -89,9 +89,9 @@ public class AllotmentPatch extends Patch {
             if (watered)
                 value -= 65;
             else if (getDiseaseStage() == 1)
-                value = snapeGrassDisease[stage];
+                value = snapeGrassDisease[getStatus().stage];
             else if (getDiseaseStage() == 2)
-                value = snapeGrassDead[stage];
+                value = snapeGrassDead[getStatus().stage];
         } else {
             if (watered)
                 value |= 1 << 6;

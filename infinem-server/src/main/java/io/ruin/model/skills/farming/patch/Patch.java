@@ -21,30 +21,12 @@ import io.ruin.model.stat.StatType;
 public abstract class Patch {
 
     protected Player player;
-    @Expose
-    protected int stage;
-    @Expose
-    private int compost;
-    @Expose
-    private int raked;
-    @Expose
-    private long timePlanted;
-    @Expose
-    private int diseaseStage;
-    @Expose
-    protected int produceCount;
-    @Expose
-    private long lastWeedGrowth;
-
-    @Expose
-    private boolean farmerProtected;
 
     protected Crop plantedCrop;
-    @Expose
-    private int plantedSeed = -1;
-
     protected PatchData data;
     private boolean update;
+
+    @Expose private PatchStatus status;
 
     public Patch() {
 
@@ -102,10 +84,10 @@ public abstract class Patch {
                     player.privateSound(2442);
                     event.delay(4);
                     if (Random.get() < 0.8) {
-                        raked++;
+                        getStatus().raked++;
                         player.getStats().addXp(StatType.Farming, 3, true);
                         player.getInventory().addOrDrop(6055, 1);
-                        lastWeedGrowth = System.currentTimeMillis();
+                        getStatus().lastWeedGrowth = System.currentTimeMillis();
                         send();
                     }
                     if (isRaked()) {
@@ -116,7 +98,7 @@ public abstract class Patch {
                 }
             });
         } else if (plantedCrop == null) {
-            player.sendMessage("The patch is clear for new crops. " + (compost > 0 ? "It has been treated with " + (compost == 1 ? "regular" : "super") + " compost." : ""));
+            player.sendMessage("The patch is clear for new crops. " + (getStatus().compost > 0 ? "It has been treated with " + (getStatus().compost == 1 ? "regular" : "super") + " compost." : ""));
         } else if (isDead()) {
             clear();
         } else if (isDiseased()) {
@@ -160,10 +142,11 @@ public abstract class Patch {
     }
 
     public void tick() {
-        if (plantedCrop == null && raked == 0)
+        if (status == null) return;
+        if (plantedCrop == null && getStatus().raked == 0)
             /* do nothing */
             return;
-        if (plantedCrop == null && System.currentTimeMillis() - lastWeedGrowth >= TimeUtils.getMinutesToMillis(4)) {
+        if (plantedCrop == null && System.currentTimeMillis() - getStatus().lastWeedGrowth >= TimeUtils.getMinutesToMillis(4)) {
             growWeeds();
             return;
         }
@@ -185,9 +168,9 @@ public abstract class Patch {
     }
 
     void growWeeds() {
-        raked -= 1;
+        getStatus().raked -= 1;
         setNeedsUpdate(true);
-        lastWeedGrowth += TimeUtils.getMinutesToMillis(4);
+        getStatus().lastWeedGrowth += TimeUtils.getMinutesToMillis(4);
     }
 
 
@@ -196,30 +179,30 @@ public abstract class Patch {
             return false;
         long stageTime = plantedCrop.getStageTime();
         int actualStage = (int) Math.floor(getTimeElapsed() / (double) (stageTime));
-        return stage < plantedCrop.getTotalStages() && actualStage > stage && !isDead();
+        return getStatus().stage < plantedCrop.getTotalStages() && actualStage > getStatus().stage && !isDead();
     }
 
     protected void diseaseRoll() {
-        double diseaseChance = plantedCrop.getDiseaseChance(compost) * (hasGrowingIasor() ? 0.2 : 1);
-        if (!isFarmerProtected() && !isDiseaseImmune() && diseaseStage == 0 && getStage() != (plantedCrop.getTotalStages() - 1) && Random.get() < diseaseChance) {
-            diseaseStage = 1;
+        double diseaseChance = plantedCrop.getDiseaseChance(getStatus().compost) * (hasGrowingIasor() ? 0.2 : 1);
+        if (!isFarmerProtected() && !isDiseaseImmune() && getStatus().diseaseStage == 0 && getStage() != (plantedCrop.getTotalStages() - 1) && Random.get() < diseaseChance) {
+            getStatus().diseaseStage = 1;
             setNeedsUpdate(true);
         } else if (isDiseased()) {
-            diseaseStage = 2; // rip
+            getStatus().diseaseStage = 2; // rip
             setNeedsUpdate(true);
         }
     }
 
     protected void advanceStage() {
-        stage++;
+        getStatus().stage++;
     }
 
     public boolean isDiseased() {
-        return diseaseStage == 1;
+        return getStatus().diseaseStage == 1;
     }
 
     public boolean isDead() {
-        return diseaseStage == 2;
+        return getStatus().diseaseStage == 2;
     }
 
     public boolean isFullyGrown() {
@@ -250,13 +233,13 @@ public abstract class Patch {
 
     public void reset(boolean weeds) {
         setPlantedCrop(null);
-        stage = 0;
-        diseaseStage = 0;
-        produceCount = 0;
-        timePlanted = 0;
-        compost = 0;
-        raked = weeds ? 0 : 3;
-        farmerProtected = false;
+        getStatus().stage = 0;
+        getStatus().diseaseStage = 0;
+        getStatus().produceCount = 0;
+        getStatus().timePlanted = 0;
+        getStatus().compost = 0;
+        getStatus().raked = weeds ? 0 : 3;
+        getStatus().farmerProtected = false;
         update();
     }
 
@@ -329,9 +312,9 @@ public abstract class Patch {
             else
                 item.setId(5350);
             setPlantedCrop(crop);
-            produceCount = calculateProduceAmount();
+            getStatus().produceCount = calculateProduceAmount();
             player.getStats().addXp(StatType.Farming, crop.getPlantXP(), true);
-            timePlanted = System.currentTimeMillis();
+            getStatus().timePlanted = System.currentTimeMillis();
             send();
         });
     }
@@ -386,11 +369,11 @@ public abstract class Patch {
     }
 
     public int getCompost() {
-        return compost;
+        return getStatus().compost;
     }
 
     public void setCompost(int compost) {
-        this.compost = compost;
+        getStatus().compost = compost;
     }
 
     public int getVarpbitValue() {
@@ -403,15 +386,15 @@ public abstract class Patch {
     }
 
     public boolean isRaked() {
-        return raked >= 3;
+        return getStatus().raked >= 3;
     }
 
     public int getRaked() {
-        return raked;
+        return getStatus().raked;
     }
 
     public void setRaked(int raked) {
-        this.raked = raked;
+        getStatus().raked = raked;
     }
 
     public Crop getPlantedCrop() {
@@ -420,7 +403,7 @@ public abstract class Patch {
 
     public void setPlantedCrop(Crop plantedCrop) {
         this.plantedCrop = plantedCrop;
-        this.plantedSeed = plantedCrop == null ? -1 : plantedCrop.getSeed();
+        getStatus().plantedSeed = plantedCrop == null ? -1 : plantedCrop.getSeed();
     }
 
     public int getObjectId() {
@@ -428,35 +411,35 @@ public abstract class Patch {
     }
 
     public int getDiseaseStage() {
-        return diseaseStage;
+        return getStatus().diseaseStage;
     }
 
     public void setDiseaseStage(int diseaseStage) {
-        this.diseaseStage = diseaseStage;
+        getStatus().diseaseStage = diseaseStage;
     }
 
     public int getStage() {
-        return stage;
+        return getStatus().stage;
     }
 
     public void setStage(int stage) {
-        this.stage = stage;
+        getStatus().stage = stage;
     }
 
     public long getTimePlanted() {
-        return timePlanted;
+        return getStatus().timePlanted;
     }
 
     public void setTimePlanted(long timePlanted) {
-        this.timePlanted = timePlanted;
+        getStatus().timePlanted = timePlanted;
     }
 
     public int getProduceCount() {
-        return produceCount;
+        return getStatus().produceCount;
     }
 
     public void setProduceCount(int produceCount) {
-        this.produceCount = produceCount;
+        getStatus().produceCount = produceCount;
     }
 
     public boolean hasGrowingAttas() {
@@ -506,8 +489,8 @@ public abstract class Patch {
                     break;
             }
         }
-        if (--produceCount <= 0) {
-            produceCount = 0;
+        if (--getStatus().produceCount <= 0) {
+            getStatus().produceCount = 0;
             return true;
         }
         return false;
@@ -523,8 +506,9 @@ public abstract class Patch {
 
 
     public void onLoad() {
-        if (plantedSeed > 0) {
-            Crop crop = ItemDef.get(plantedSeed).seedType;
+        if (status == null) return;
+        if (getStatus().plantedSeed > 0) {
+            Crop crop = ItemDef.get(getStatus().plantedSeed).seedType;
             if (crop != null && canPlant(crop))
                 plantedCrop = crop;
             else
@@ -573,11 +557,11 @@ public abstract class Patch {
     public abstract String getPatchName();
 
     public boolean isFarmerProtected() {
-        return farmerProtected;
+        return getStatus().farmerProtected;
     }
 
     public void setFarmerProtected(boolean farmerProtected) {
-        this.farmerProtected = farmerProtected;
+        getStatus().farmerProtected = farmerProtected;
     }
 
     public void rollPet() {
@@ -595,5 +579,10 @@ public abstract class Patch {
 
     public boolean isWatered() {
         return false;
+    }
+
+    public PatchStatus getStatus() {
+        if (status == null) status = new PatchStatus();
+        return status;
     }
 }
