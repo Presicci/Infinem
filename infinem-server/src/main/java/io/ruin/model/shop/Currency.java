@@ -147,23 +147,23 @@ public enum Currency {
     PEST_CONTROL_POINTS(new CurrencyHandler("pest control points") {
         @Override
         public int getCurrencyCount(Player player) {
-            return player.pestPoints;
+            return player.getAttributeIntOrZero("PEST_POINTS");
         }
 
         @Override
         public int removeCurrency(Player player, int amount) {
-            if(amount > player.pestPoints){
+            if(amount > player.getAttributeIntOrZero("PEST_POINTS")){
                 return 0;
             }
-            player.pestPoints -= amount;
+            player.incrementNumericAttribute("PEST_POINTS", -amount);
             return amount;
         }
         @Override
         public int addCurrency(Player player, int amount) {
-            if((long) player.pestPoints + (long) amount > Integer.MAX_VALUE){
-                player.pestPoints = Integer.MAX_VALUE;
+            if((long) player.getAttributeIntOrZero("PEST_POINTS") + (long) amount > Integer.MAX_VALUE){
+                player.putAttribute("PEST_POINTS", Integer.MAX_VALUE);
             } else {
-                player.pestPoints += amount;
+                player.incrementNumericAttribute("PEST_POINTS", amount);
             }
             return amount;
         }
