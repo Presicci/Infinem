@@ -1983,6 +1983,20 @@ public class Player extends PlayerAttributes {
         return incrementNumericAttribute(key.name(), amount);
     }
 
+    public boolean toggleAttribute(String key) {
+        if (hasAttribute(key)) {
+            removeAttribute(key);
+            return false;
+        } else {
+            putAttribute(key, 1);
+            return true;
+        }
+    }
+
+    public boolean toggleAttribute(AttributeKey key) {
+        return toggleAttribute(key.name());
+    }
+
     @Getter private final transient PuzzleBox puzzleBox = new PuzzleBox(this);
 
     @Getter private final transient LightBox lightBox = new LightBox(this);
