@@ -837,9 +837,6 @@ public abstract class PlayerAttributes extends Entity {
     public LastManStandingSession lmsSession;
     public LastManStandingQueue lmsQueue;
     public int lmsSessionKills;
-    @Expose public int lmsKills;
-    @Expose public int lmsWins;
-    @Expose public int lmsGamesPlayed;
 
     public Tournament tournament;
     public TournamentFightPair tournamentFight;

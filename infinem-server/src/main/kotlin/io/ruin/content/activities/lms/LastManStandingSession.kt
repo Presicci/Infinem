@@ -142,8 +142,8 @@ class LastManStandingSession(private val queue: LastManStandingQueue) {
      * Removes the player from this activity and removes any attributes or listeners that were set within this scope.
      */
     private fun Player.remove() {
-        lmsKills += lmsSessionKills
-        lmsGamesPlayed++
+        incrementNumericAttribute("LMS_KILLS", lmsSessionKills)
+        incrementNumericAttribute("LMS_PLAYED", 1)
         normalize()
         equipment.clear()
         inventory.clear()
@@ -230,7 +230,7 @@ class LastManStandingSession(private val queue: LastManStandingQueue) {
         remove()
         teleport(LastManStanding.randomLobbyTile())
         message("You are victorious!")
-        lmsWins++
+        incrementNumericAttribute("LMS_WINS", 1)
         end()
     }
 
