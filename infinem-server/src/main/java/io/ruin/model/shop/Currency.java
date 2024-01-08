@@ -50,24 +50,24 @@ public enum Currency {
     WILDERNESS_SLAYER_POINTS(new CurrencyHandler("wilderness slayer points") {
         @Override
         public int getCurrencyCount(Player player) {
-            return player.wildernessSlayerPoints;
+            return player.getAttributeIntOrZero("WILDY_SLAYER_POINTS");
         }
 
         @Override
         public int removeCurrency(Player player, int amount) {
-            if(amount > player.wildernessSlayerPoints){
+            if(amount > player.getAttributeIntOrZero("WILDY_SLAYER_POINTS")){
                 return 0;
             }
-            player.wildernessSlayerPoints -= amount;
+            player.incrementNumericAttribute("WILDY_SLAYER_POINTS", -amount);
             return amount;
         }
 
         @Override
         public int addCurrency(Player player, int amount) {
-            if((long) player.wildernessSlayerPoints + (long) amount > Integer.MAX_VALUE){
-                player.wildernessSlayerPoints = Integer.MAX_VALUE;
+            if((long) player.getAttributeIntOrZero("WILDY_SLAYER_POINTS") + (long) amount > Integer.MAX_VALUE){
+                player.putAttribute("WILDY_SLAYER_POINTS", Integer.MAX_VALUE);
             } else {
-                player.wildernessSlayerPoints += amount;
+                player.incrementNumericAttribute("WILDY_SLAYER_POINTS", amount);
             }
             return amount;
         }
