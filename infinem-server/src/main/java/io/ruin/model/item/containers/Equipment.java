@@ -71,11 +71,6 @@ public class Equipment extends ItemContainer {
             return;
         }
 
-        if(selectedDef.achievement != null && !selectedDef.achievement.isFinished(player) && (!selectedDef.achievementReqIsIronmanOnly || player.getGameMode().isIronMan())) {
-            player.sendMessage("You must complete the " + Color.RED.wrap(selectedDef.achievement.getListener().name()) + " achievement to equip this item.");
-            return;
-        }
-
         if(selectedDef.name.toLowerCase().contains("goblin mail")) {
             player.sendMessage("You can't wear this item.");
             return;

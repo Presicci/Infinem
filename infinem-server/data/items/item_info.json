@@ -26752,9 +26752,7 @@
     "crush_attack_bonus": -2,
     "slash_defence_bonus": 1,
     "melee_strength_bonus": 66,
-    "weapon_type": "SCIMITAR",
-	"achievement": "WELCOME_TO_THE_JUNGLE",
-	"achievement_req_is_ironman_only": true
+    "weapon_type": "SCIMITAR"
   },
   { // Keys
     "id": 4589,
@@ -88681,9 +88679,7 @@
     "crush_attack_bonus": -2,
     "slash_defence_bonus": 1,
     "melee_strength_bonus": 66,
-    "weapon_type": "SCIMITAR",
-	"achievement": "WELCOME_TO_THE_JUNGLE",
-	"achievement_req_is_ironman_only": true
+    "weapon_type": "SCIMITAR"
   },
   { // Dragon scimitar ornament kit
     "id": 20002,

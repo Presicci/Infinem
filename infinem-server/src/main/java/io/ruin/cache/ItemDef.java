@@ -149,9 +149,6 @@ public class ItemDef {
 
     public int lowAlchValue, highAlchValue;
 
-    public Achievement achievement;
-    public boolean achievementReqIsIronmanOnly;
-
     public int soundid;
 
     public int getSoundId() {

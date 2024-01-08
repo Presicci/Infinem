@@ -116,9 +116,6 @@ public class item_info extends DataFile {
             def.rangedWeapon = temp.ranged_weapon == null ? null : RangedWeapon.valueOf(temp.ranged_weapon);
             def.rangedAmmo = temp.ranged_ammo == null ? null : RangedAmmo.valueOf(temp.ranged_ammo);
 
-            def.achievement = temp.achievement == null ? null : Achievement.valueOf(temp.achievement);
-            def.achievementReqIsIronmanOnly = temp.achievement_req_is_ironman_only != null && temp.achievement_req_is_ironman_only;
-
         });
         ItemDef.forEach(this::loadMisc);
         shield_types.unload();
@@ -201,9 +198,6 @@ public class item_info extends DataFile {
         @Expose public String weapon_type;
         @Expose public String ranged_weapon;
         @Expose public String ranged_ammo;
-
-        @Expose public String achievement;
-        @Expose public Boolean achievement_req_is_ironman_only; // indicates the achievement req should only be applied to ironman characters
         @Expose public boolean dropAnnounce;
     }
 
