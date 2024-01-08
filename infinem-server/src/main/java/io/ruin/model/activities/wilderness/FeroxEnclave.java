@@ -83,9 +83,9 @@ public class FeroxEnclave {
 
         ObjectAction.register(29064, "view", (player, obj) -> {
 
-            player.getPacketSender().sendString(395, 3, "Wins: " + player.lmsWins);
-            player.getPacketSender().sendString(395, 4, "Kills: " + player.lmsKills);
-            player.getPacketSender().sendString(395, 5, "Games played: " + player.lmsGamesPlayed);
+            player.getPacketSender().sendString(395, 3, "Wins: " + player.getAttributeIntOrZero("LMS_WINS"));
+            player.getPacketSender().sendString(395, 4, "Kills: " + player.getAttributeIntOrZero("LMS_KILLS"));
+            player.getPacketSender().sendString(395, 5, "Games played: " + player.getAttributeIntOrZero("LMS_PLAYED"));
             player.openInterface(InterfaceType.CHATBOX, 395);
         });
 
