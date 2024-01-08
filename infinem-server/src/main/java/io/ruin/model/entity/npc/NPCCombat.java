@@ -26,6 +26,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.killcount.BossKillCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.impl.MonkeyGreeGree;
 import io.ruin.model.item.actions.impl.WildernessKey;
 import io.ruin.model.item.actions.impl.jewellery.BraceletOfEthereum;
 import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
@@ -1049,6 +1050,7 @@ public abstract class NPCCombat extends Combat {
 
     protected boolean canAggro(Player player) {
         int aggroLevel = getAggressiveLevel();
+        if (npc.getDef().name.toLowerCase().contains("monkey") && MonkeyGreeGree.isMonkey(player)) return false;
         return player.getCombat().getLevel() <= aggroLevel // in level range
                 && canAttack(player) // can attack
                 && !player.isIdle // player isn't idle
