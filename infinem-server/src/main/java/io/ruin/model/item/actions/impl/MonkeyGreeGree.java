@@ -63,7 +63,7 @@ public enum MonkeyGreeGree {
         }
     }
 
-    public boolean isMonkey(Player player) {
+    public static boolean isMonkey(Player player) {
         int npcId = player.getAppearance().getNpcId();
         if (npcId == -1) return false;
         for (MonkeyGreeGree greeGree : values()) {
