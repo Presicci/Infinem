@@ -134,19 +134,19 @@ public class Store {
                             items.add(new Item(4151, 1));
                             items.add(new Item(537, 120));
                         } else if (itemId == 1234) { // Green Skin
-                            player.unlockedGreenSkin = true;
+                            player.putAttribute("GREEN_SKIN", 1);
                             player.sendMessage("Right click the Make-over mage to use your new green skin!");
                         } else if (itemId == 1235) { // Blue Skin
-                            player.unlockedBlueSkin = true;
+                            player.putAttribute("BLUE_SKIN", 1);
                             player.sendMessage("Right click the Make-over mage to use your new blue skin!");
                         } else if (itemId == 1236) { // Purple Skin
-                            player.unlockedPurpleSkin = true;
+                            player.putAttribute("PURPLE_SKIN", 1);
                             player.sendMessage("Right click the Make-over mage to use your new purple skin!");
                         } else if (itemId == 1237) { // black Skin
-                            player.unlockedBlackSkin = true;
+                            player.putAttribute("BLACK_SKIN", 1);
                             player.sendMessage("Right click the Make-over mage to use your new black skin!");
                         } else if (itemId == 1238) { // white Skin
-                            player.unlockedWhiteSkin = true;
+                            player.putAttribute("WHITE_SKIN", 1);
                             player.sendMessage("Right click the Make-over mage to use your new white skin!");
                         } else if (itemId == 1239) { // Custom title
                             player.hasCustomTitle = true;

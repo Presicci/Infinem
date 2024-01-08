@@ -69,15 +69,15 @@ public class MakeoverMage {
         private final int color;
     }
     private static boolean unlocked(Player player, Skins skin) {
-        if (skin == Skins.PURPLE && player.unlockedPurpleSkin)
+        if (skin == Skins.PURPLE && player.hasAttribute("PURPLE_SKIN"))
             return true;
-        if (skin == Skins.SWAMP_GREEN && player.unlockedGreenSkin)
+        if (skin == Skins.SWAMP_GREEN && player.hasAttribute("GREEN_SKIN"))
             return true;
-        if (skin == Skins.ZOMBIE_BLUE && player.unlockedBlueSkin)
+        if (skin == Skins.ZOMBIE_BLUE && player.hasAttribute("BLUE_SKIN"))
             return true;
-        if (skin == Skins.BLACK && player.unlockedBlackSkin)
+        if (skin == Skins.BLACK && player.hasAttribute("BLACK_SKIN"))
             return true;
-        if (skin == Skins.WHITE && player.unlockedWhiteSkin)
+        if (skin == Skins.WHITE && player.hasAttribute("WHITE_SKIN"))
             return true;
         return false;
 

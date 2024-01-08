@@ -834,12 +834,6 @@ public abstract class PlayerAttributes extends Entity {
     public int pestActivityScore;
     public int selectedWidgetId;
 
-    @Expose public boolean unlockedGreenSkin;
-    @Expose public boolean unlockedBlueSkin;
-    @Expose public boolean unlockedPurpleSkin;
-    @Expose public boolean unlockedWhiteSkin;
-    @Expose public boolean unlockedBlackSkin;
-
     public LastManStandingSession lmsSession;
     public LastManStandingQueue lmsQueue;
     public int lmsSessionKills;

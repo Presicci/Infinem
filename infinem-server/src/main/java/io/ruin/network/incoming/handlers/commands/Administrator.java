@@ -440,11 +440,11 @@ public class Administrator {
                 });
                 return true;
             case "skins":
-                player.unlockedGreenSkin = !player.unlockedGreenSkin;
-                player.unlockedBlueSkin = !player.unlockedBlueSkin;
-                player.unlockedPurpleSkin = !player.unlockedPurpleSkin;
-                player.unlockedWhiteSkin = !player.unlockedWhiteSkin;
-                player.unlockedBlackSkin = !player.unlockedBlackSkin;
+                player.toggleAttribute("GREEN_SKIN");
+                player.toggleAttribute("BLUE_SKIN");
+                player.toggleAttribute("PURPLE_SKIN");
+                player.toggleAttribute("BLACK_SKIN");
+                player.toggleAttribute("WHITE_SKIN");
                 return true;
 
             case "skin":

@@ -26,16 +26,16 @@ object SkinScrolls {
 
     private fun Player.redeem(item: Item) = event {
         if (options("Redeem Scroll", "No, I don't want to do that") == 1) {
-            if (item.id == GREEN_SKIN_SCROLL && unlockedGreenSkin ||
-                    item.id == BLUE_SKIN_SCROLL && unlockedBlueSkin ||
-                    item.id == PURPLE_SKIN_SCROLL && unlockedPurpleSkin) {
+            if (item.id == GREEN_SKIN_SCROLL && hasAttribute("GREEN_SKIN") ||
+                    item.id == BLUE_SKIN_SCROLL && hasAttribute("BLUE_SKIN") ||
+                    item.id == PURPLE_SKIN_SCROLL && hasAttribute("PURPLE_SKIN")) {
                 player.messageBox("You already have this skin unlocked.")
                 return@event
             }
             when(item.id) {
-                GREEN_SKIN_SCROLL -> unlockedGreenSkin = true
-                BLUE_SKIN_SCROLL -> unlockedBlueSkin = true
-                PURPLE_SKIN_SCROLL -> unlockedPurpleSkin = true
+                GREEN_SKIN_SCROLL -> putAttribute("GREEN_SKIN", 1)
+                BLUE_SKIN_SCROLL -> putAttribute("BLUE_SKIN", 1)
+                PURPLE_SKIN_SCROLL -> putAttribute("PURPLE_SKIN", 1)
             }
             item.remove()
         }
