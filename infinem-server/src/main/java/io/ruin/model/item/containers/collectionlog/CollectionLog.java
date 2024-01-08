@@ -104,8 +104,6 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
 
     public void clearCollectedItems() {
         collected.clear();
-        CollectionLogInfo.TOTAL_COLLECTABLES = 0;
-        //Config.COLLECTION_COUNT.set(player, 0);
     }
 
     public static void handleClose(Player player) {
