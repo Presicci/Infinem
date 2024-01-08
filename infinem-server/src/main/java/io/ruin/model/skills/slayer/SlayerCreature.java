@@ -552,14 +552,13 @@ public enum SlayerCreature {
         int bossTask = Slayer.getBossTask(player);
         if (bossTask != 0) {
             result = EnumMap.get(1174).strings().get(bossTask);
+        } else {
+            result = EnumMap.get(693).strings().get(uid);
         }
-        result = EnumMap.get(693).strings().get(uid);
         return result == null ? "null" : result;
     }
 
     public static boolean isSlayerCreature(NPC npc) {
-        if (npc.getDef().combatInfo == null || npc.getCombat().getInfo().slayer_tasks == null || npc.getCombat().getInfo().slayer_tasks.length <= 0)
-            return false;
-        return true;
+        return npc.getDef().combatInfo != null && npc.getCombat().getInfo().slayer_tasks != null && npc.getCombat().getInfo().slayer_tasks.length > 0;
     }
 }
