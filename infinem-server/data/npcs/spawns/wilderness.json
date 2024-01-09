@@ -15,10 +15,7 @@
     "y": 3559,
     "z": 0,
     "direction": "S",
-    "walkRange": 3,
-    "shopOptions": {
-      "trade": "692511b8-9397-4f34-a546-ae89dcb7790b"
-    }
+    "walkRange": 3
   },
   {
     "name": "Runite Golem",
