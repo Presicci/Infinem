@@ -16,5 +16,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 5
+  },
+  {
+    "name": "Fairy Fixit",
+    "id": 7333,
+    "x": 2413,
+    "y": 4437,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]
