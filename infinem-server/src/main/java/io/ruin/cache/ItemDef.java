@@ -6,7 +6,6 @@ import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.model.World;
-import io.ruin.model.achievements.Achievement;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.combat.*;
 import io.ruin.model.combat.special.Special;

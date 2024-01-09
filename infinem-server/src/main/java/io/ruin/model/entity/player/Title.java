@@ -4,7 +4,6 @@ import io.ruin.api.protocol.world.WorldType;
 import io.ruin.api.utils.ServerWrapper;
 import io.ruin.cache.Color;
 import io.ruin.model.World;
-import io.ruin.model.achievements.Achievement;
 import io.ruin.model.entity.player.killcount.BossKillCounter;
 import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;

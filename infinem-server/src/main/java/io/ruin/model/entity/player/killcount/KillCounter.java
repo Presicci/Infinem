@@ -3,7 +3,6 @@ package io.ruin.model.entity.player.killcount;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.Color;
-import io.ruin.model.achievements.Achievement;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;

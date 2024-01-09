@@ -5,7 +5,6 @@ import io.ruin.api.utils.JsonUtils;
 import io.ruin.api.utils.ServerWrapper;
 import io.ruin.cache.ItemDef;
 import io.ruin.data.DataFile;
-import io.ruin.model.achievements.Achievement;
 import io.ruin.model.combat.RangedAmmo;
 import io.ruin.model.combat.RangedWeapon;
 import io.ruin.model.stat.StatType;

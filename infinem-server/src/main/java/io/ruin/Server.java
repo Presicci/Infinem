@@ -13,7 +13,6 @@ import io.ruin.data.DataFile;
 import io.ruin.data.impl.login_set;
 import io.ruin.data.yaml.YamlLoader;
 import io.ruin.model.World;
-import io.ruin.model.achievements.Achievement;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.player.Player;
 import io.ruin.data.impl.dialogue.DialogueLoader;
@@ -175,9 +174,6 @@ public class Server extends ServerWrapper {
                 //DiscordConnection.setup("NTY4NjgxMjU2NDQzNzA3Mzkz.XLlnsQ.s6HIMbTgRrVsNhclAY1VYJPwGnc");
             }
         }
-
-
-        Achievement.staticInit();
 
         ShopManager.registerUI();
 
