@@ -196,15 +196,11 @@ public class KillCounter {
     private String name;
     private boolean messageOnKill;
 
-    private Achievement achievement;
-
     public void increment(Player player) {
         kills++;
         streak++;
         if (messageOnKill)
             player.sendMessage("Your " + name +" kill count is: " + Color.RED.wrap(NumberUtils.formatNumber(kills)));
-        if (achievement != null)
-            achievement.update(player);
     }
 
     public void resetStreak() {
@@ -231,9 +227,5 @@ public class KillCounter {
     public KillCounter messageOnKill() {
         messageOnKill = true;
         return this;
-    }
-
-    public void setAchievement(Achievement achievement) {
-        this.achievement = achievement;
     }
 }
