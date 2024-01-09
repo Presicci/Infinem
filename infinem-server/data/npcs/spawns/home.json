@@ -132,18 +132,6 @@
     "walkRange": 0
   },
   {
-    "name": "Grace",
-    "id": 5919,
-    "x": 2029,
-    "y": 3581,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0,
-    "shopOptions": {
-      "trade": "130e716b-eb95-479b-ab1e-2a3dbdc52c6f"
-    }
-  },
-  {
     "name": "Garret",
     "id": 2891,
     "x": 2037,
