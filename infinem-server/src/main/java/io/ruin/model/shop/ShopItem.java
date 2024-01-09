@@ -18,14 +18,14 @@ import java.util.function.Function;
 
 @Getter
 @ToString(callSuper = true)
-@JsonPropertyOrder({ "id", "amount", "price", "additionalItems", "placeHolderId", "placeholderRule", "requirementCheckType", "requiredAchievements", "requiredLevels" })
+@JsonPropertyOrder({"id", "amount", "price", "additionalItems", "placeHolderId", "placeholderRule", "requirementCheckType", "requiredAchievements", "requiredLevels"})
 @JsonIgnoreProperties({"onBuy", "additionalRequirements", "container", "lootBroadcast", "def", "defaultStockItem"})
 @Slf4j
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 
 public class ShopItem extends Item {
 
-    public ShopItem(){
+    public ShopItem() {
         this(0, 0, 0);
     }
 
@@ -61,7 +61,6 @@ public class ShopItem extends Item {
         shopItem.buyPrice = this.buyPrice;
         shopItem.defaultStockItem = this.defaultStockItem;
         shopItem.placeholderId = this.placeholderId;
-        shopItem.requiredAchievements = this.requiredAchievements;
         shopItem.requiredLevels = this.requiredLevels;
         shopItem.additionalItems = this.additionalItems;
         shopItem.additionalRequirements = this.additionalRequirements;
@@ -71,11 +70,9 @@ public class ShopItem extends Item {
         return shopItem;
     }
 
-
-
     @Override
     public void remove() {
-        if(!defaultStockItem){
+        if (!defaultStockItem) {
             super.remove();
         }
     }
@@ -84,13 +81,12 @@ public class ShopItem extends Item {
     public ShopItem(int id, int amount, boolean defaultStockItem, Map<String, String> attributes, PlaceHolderRule placeHolderRule, int price, int placeholderId, List<Achievement> requiredAchievements, List<StatRequirement> requiredLevels, List<Item> additionalItems, Function<Player, String> additionalRequirements, Consumer<Player> onBuy, RequirementCheckType requirementCheckType) {
         super(id, amount, attributes);
         this.defaultStockItem = defaultStockItem;
-        this.placeholderRule = placeHolderRule != null ? placeHolderRule :  PlaceHolderRule.SHOW_ON_EMPTY;
+        this.placeholderRule = placeHolderRule != null ? placeHolderRule : PlaceHolderRule.SHOW_ON_EMPTY;
         this.price = price;
 //        if(price == 0){
 //            log.warn("ShopItem {} {} has no price!", id, amount);
 //        }
         this.placeholderId = placeholderId;
-        this.requiredAchievements = requiredAchievements;
         this.requiredLevels = requiredLevels;
         this.additionalItems = additionalItems;
         this.additionalRequirements = additionalRequirements;
@@ -98,12 +94,11 @@ public class ShopItem extends Item {
         this.requirementCheckType = requirementCheckType != null ? requirementCheckType : RequirementCheckType.NONE;
     }
 
-
     public int getDisplayId(Player player) {
-        if(placeholderRule != null){
+        if (placeholderRule != null) {
 
             int placeHolder = placeholderId == -1 ? getDef().placeholderMainId : placeholderId;
-            switch (placeholderRule){
+            switch (placeholderRule) {
                 case SHOW_ON_EMPTY:
                     return getAmount() == 0 ? placeHolder : super.getId();
                 case SHOW_ON_REQUIREMENT_MISSING:
@@ -119,62 +114,43 @@ public class ShopItem extends Item {
         return super.getId();
     }
 
-
     public PlaceHolderRule placeholderRule = PlaceHolderRule.SHOW_ON_EMPTY;
     public int price;
     public int buyPrice = -1;
-
     public boolean defaultStockItem;
-
     public int placeholderId = -1;
-
-
-    public List<Achievement> requiredAchievements;
     public List<StatRequirement> requiredLevels;
-
     public List<Item> additionalItems;
-
     public Function<Player, String> additionalRequirements;
     public Consumer<Player> onBuy;
 
     public RequirementCheckType requirementCheckType = RequirementCheckType.NONE;
 
-    public boolean hasRequirements(Player player){
-        boolean hasAchievements = requiredAchievements == null || requiredAchievements.isEmpty() || requiredAchievements.stream().allMatch(achievement -> achievement.isFinished(player));
+    public boolean hasRequirements(Player player) {
         boolean hasStats = requiredLevels == null || requiredLevels.isEmpty() || requiredLevels.stream().allMatch(requirement -> requirement.hasRequirement(player));
         boolean meetsAdditionalRequirements = additionalRequirements == null || additionalRequirements.apply(player).isEmpty();
-
-        return hasAchievements && hasStats && meetsAdditionalRequirements;
+        return hasStats && meetsAdditionalRequirements;
     }
 
-    public boolean printRequirements(Player player){
-        boolean hasAchievements = requiredAchievements == null || requiredAchievements.isEmpty() || requiredAchievements.stream().allMatch(achievement -> achievement.isFinished(player));
+    public boolean printRequirements(Player player) {
         boolean hasStats = requiredLevels == null || requiredLevels.isEmpty() || requiredLevels.stream().allMatch(requirement -> requirement.hasRequirement(player));
         boolean meetsAdditionalRequirements = additionalRequirements == null || additionalRequirements.apply(player).isEmpty();
-        if(!hasAchievements){
-            requiredAchievements
-                    .stream()
-                    .filter(achievement -> !achievement.isFinished(player))
-                    .forEach(achievement -> player.sendMessage("You require the achievement " + achievement.getListener().name() + " to buy this"));
-        }
 
-        if(!hasStats){
+        if (!hasStats) {
             requiredLevels
                     .stream()
                     .filter(requirement -> !requirement.hasRequirement(player))
                     .forEach(requirement -> player.sendMessage("You require level " + requirement.requiredLevel + " " + requirement.statType.descriptiveName + " to buy this"));
         }
-        if(!meetsAdditionalRequirements){
+        if (!meetsAdditionalRequirements) {
             player.sendMessage(additionalRequirements.apply(player));
         }
-        return hasAchievements && hasStats && meetsAdditionalRequirements;
+        return hasStats && meetsAdditionalRequirements;
     }
 
-    public void validate(){
-        if(placeholderId != -1 && placeholderRule == PlaceHolderRule.NONE){
+    public void validate() {
+        if (placeholderId != -1 && placeholderRule == PlaceHolderRule.NONE) {
             log.warn("Item {} has placeholder ID set but no rule, so will be ignored!", this);
         }
     }
-
-
 }
