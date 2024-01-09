@@ -71,7 +71,7 @@ public class Krystilia {
                                         new OptionsDialogue(new Option("Look at rewards", () -> {
                                             SlayerUnlock.openRewards(player);
                                         }), new Option("Look at shop", () -> {
-                                            //TODO
+                                            SlayerUnlock.openShop(player, npc);
                                         }), new Option("Cancel", player::closeDialogue))
                                 );
                             }), new Option("Let's talk about the difficulty of my assignments.", () -> {
