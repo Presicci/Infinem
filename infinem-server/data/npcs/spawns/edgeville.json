@@ -159,10 +159,7 @@
     "y": 3515,
     "z": 0,
     "direction": "S",
-    "walkRange": 0,
-    "shopOptions": {
-      "trade": "c8918239-a49a-43d7-b465-759eebd2a67b"
-    }
+    "walkRange": 0
   },
   {
     "name": "Twiggy O\u0027Korn",
