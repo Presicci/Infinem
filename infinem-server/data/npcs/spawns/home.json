@@ -1,18 +1,5 @@
 [
   {
-    "name": "Fairy Fixit",
-    "id": 7333,
-    "x": 2019,
-    "y": 3590,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "shopOptions": {
-      "trade": "57466715-a9d7-4284-bfc2-190ce93e07f2"
-    }
-  },
-  {
     "name": "Grum",
     "id": 2889,
     "x": 2022,
