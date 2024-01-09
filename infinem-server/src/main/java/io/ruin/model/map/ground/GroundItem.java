@@ -229,10 +229,6 @@ public class GroundItem {
             if (id == 11849)
                 player.getTaskManager().doLookupByUUID(52, 1);  // Obtain a Mark of Grace
         }
-        if (id == 88 && !player.bootsOfLightnessTaken) {
-            player.bootsOfLightnessTaken = true;
-            Achievement.LIGHTNESS.update(player);
-        }
     }
 
     /**
