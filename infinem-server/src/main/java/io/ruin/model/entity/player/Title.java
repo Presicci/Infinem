@@ -235,12 +235,6 @@ public class Title {
         return worldType == null || worldType == World.type;
     }
 
-    public Title achievementUnlock(Achievement achievement) {
-        predicate = achievement::isFinished;
-        unlockDescription = "Achievement: " + achievement.getListener().name();
-        return this;
-    }
-
     public static Title get(int titleId) {
         if (titleId < 0 || titleId >= PRESET_TITLES.length)
             return null;
