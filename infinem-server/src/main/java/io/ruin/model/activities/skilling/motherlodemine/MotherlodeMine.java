@@ -4,7 +4,6 @@ import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemID;
 import io.ruin.model.World;
-import io.ruin.model.achievements.Achievement;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -134,20 +133,12 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
         ObjectAction.register(26680, "mine", MotherlodeMine::clearRockfall);
 
         ObjectAction.register(DARK_TUNNEL, "enter", (player, obj) -> {
-            if(!Achievement.DOWN_IN_THE_DIRT.isFinished(player)) {
-                if(obj.x == 3760 && obj.y == 5670) {
-                    player.dialogue(
-                            new NPCDialogue(6562, "Oi, git yerself out of that hole! It's not safe in there."),
-                            new MessageDialogue("You must complete the achievement <col=800000>Down in the Dirt</col> before Percy will let you use that tunnel."));
-                } else {
-                    player.dialogue(new MessageDialogue("You must complete the achievement <col=800000>Down in the Dirt</col> before Percy will let you use that tunnel."));
-                }
-            } else {
-                if(obj.x == 3760 && obj.y == 5670)
-                    tunnel(player, 3765, 5671);
-                 else
-                   tunnel(player, 3759, 5670);
-            }
+            if(!player.getStats().check(StatType.Agility, 54, "enter the tunnel")) return;
+            if(obj.x == 3760 && obj.y == 5670)
+                tunnel(player, 3765, 5671);
+            else
+                tunnel(player, 3759, 5670);
+
         });
 
         Tile.getObject(19044, 3755, 5673, 0).walkTo = new Position(3755, 5674, 0);
