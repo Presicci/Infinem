@@ -30,7 +30,7 @@ import java.util.function.Consumer;
 
 @Slf4j
 @ToString(exclude = {"viewingPlayers", "shopItems", "currencyHandler"})
-@JsonPropertyOrder({ "identifier", "title", "currency", "accessibleByIronMan", "generalStore", "canSellToStore", "restockRules", "defaultStock", "requiredAchievements", "requiredLevels" })
+@JsonPropertyOrder({ "identifier", "title", "currency", "accessibleByIronMan", "generalStore", "canSellToStore", "restockRules", "defaultStock", "requiredLevels" })
 @JsonIgnoreProperties({"currencyHandler", "viewingPlayers", "shopItems", "generatedByBuilder", "onTick"})
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class Shop {

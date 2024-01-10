@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import io.ruin.model.achievements.Achievement;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.stat.StatRequirement;
@@ -18,7 +17,7 @@ import java.util.function.Function;
 
 @Getter
 @ToString(callSuper = true)
-@JsonPropertyOrder({"id", "amount", "price", "additionalItems", "placeHolderId", "placeholderRule", "requirementCheckType", "requiredAchievements", "requiredLevels"})
+@JsonPropertyOrder({"id", "amount", "price", "additionalItems", "placeHolderId", "placeholderRule", "requirementCheckType", "requiredLevels"})
 @JsonIgnoreProperties({"onBuy", "additionalRequirements", "container", "lootBroadcast", "def", "defaultStockItem"})
 @Slf4j
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
@@ -78,7 +77,7 @@ public class ShopItem extends Item {
     }
 
     @Builder
-    public ShopItem(int id, int amount, boolean defaultStockItem, Map<String, String> attributes, PlaceHolderRule placeHolderRule, int price, int placeholderId, List<Achievement> requiredAchievements, List<StatRequirement> requiredLevels, List<Item> additionalItems, Function<Player, String> additionalRequirements, Consumer<Player> onBuy, RequirementCheckType requirementCheckType) {
+    public ShopItem(int id, int amount, boolean defaultStockItem, Map<String, String> attributes, PlaceHolderRule placeHolderRule, int price, int placeholderId, List<StatRequirement> requiredLevels, List<Item> additionalItems, Function<Player, String> additionalRequirements, Consumer<Player> onBuy, RequirementCheckType requirementCheckType) {
         super(id, amount, attributes);
         this.defaultStockItem = defaultStockItem;
         this.placeholderRule = placeHolderRule != null ? placeHolderRule : PlaceHolderRule.SHOW_ON_EMPTY;
