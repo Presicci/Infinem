@@ -7,7 +7,6 @@ import io.ruin.cache.Icon;
 import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.model.World;
-import io.ruin.model.achievements.listeners.experienced.DemonSlayer;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.*;
@@ -309,7 +308,6 @@ public abstract class NPCCombat extends Combat {
                     }
                 }
                 DailyTask.checkNPCKill(killer.player, npc);
-                DemonSlayer.check(killer.player, npc);
             }
 
             if(npc.deathEndListener != null) {

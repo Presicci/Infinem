@@ -1,7 +1,6 @@
 package io.ruin.model.entity.npc.actions;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.achievements.listeners.novice.IntoTheAbyss;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.inter.dialogue.NPCDialogue;
@@ -28,7 +27,6 @@ public class MageOfZamorak {
                     player.getCombat().skullNormal(1000);
                     player.getPrayer().drain(1000); //1000 is just a safe "drain all"
                     Abyss.randomize(player);
-                    IntoTheAbyss.entered(player);
                     player.getMovement().teleport(Random.get(Abyss.OUTER_TELEPORTS));
                     player.resetAnimation();
                     npc.unlock();

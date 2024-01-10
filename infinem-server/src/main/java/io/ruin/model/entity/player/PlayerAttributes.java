@@ -6,8 +6,6 @@ import io.ruin.content.activities.lms.LastManStandingSession;
 import io.ruin.content.activities.tournament.Tournament;
 import io.ruin.content.activities.tournament.TournamentFightPair;
 import io.ruin.content.objects.Cannon;
-import io.ruin.model.achievements.Achievement;
-import io.ruin.model.achievements.AchievementStage;
 import io.ruin.model.activities.ActivityTimer;
 import io.ruin.model.activities.combat.barrows.BarrowsBrother;
 import io.ruin.model.activities.cluescrolls.ClueSave;
@@ -287,12 +285,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public boolean obeliskRedirectionScroll;
 
     @Expose public WildernessObelisk obeliskDestination;
-
-    /**
-     * Achievements
-     */
-
-    public AchievementStage[] achievementStages = new AchievementStage[Achievement.values().length];
 
     /**
      * Gem bag
