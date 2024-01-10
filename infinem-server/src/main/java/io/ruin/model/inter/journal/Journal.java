@@ -1,7 +1,5 @@
 package io.ruin.model.inter.journal;
 
-import io.ruin.model.achievements.Achievement;
-import io.ruin.model.achievements.AchievementCategory;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.activities.wilderness.ActiveVolcano;
 import io.ruin.model.activities.wilderness.BloodyMerchant;
@@ -174,18 +172,6 @@ public enum Journal {
         CHARACTER.addEntry(new HighestKillingSpree());
         CHARACTER.addEntry(new HighestShutdown());
 
-
-        /*
-         * Achievements
-         */
-        for (AchievementCategory cat : AchievementCategory.values()) {
-            ACHIEVEMENTS.addCategory(cat.name());
-            Arrays.stream(Achievement.values())
-                    .filter(ach -> ach.getCategory() == cat)
-                    .sorted((a1, a2) -> a1.getListener().name().compareToIgnoreCase(a2.getListener().name()))
-                    .map(Achievement::toEntry)
-                    .forEachOrdered(ACHIEVEMENTS::addEntry);
-        }
 //
 //        /*
 //         * Presets
