@@ -64,8 +64,8 @@ public final class NightmareZoneDream {
             Config.NMZ_ABSORPTION.set(player, player.absorptionPoints);
             potCleanup(player);
             player.sendMessage("You wake up feeling refreshed.");
-            player.nmzRewardPoints += rewardPointsGained;
-            player.sendMessage(Color.DARK_GREEN.wrap("You have earned " + NumberUtils.formatNumber(rewardPointsGained) + " reward points. New total: " + NumberUtils.formatNumber(player.nmzRewardPoints)));
+            Config.NMZ_REWARD_POINTS_TOTAL.increment(player, rewardPointsGained);
+            player.sendMessage(Color.DARK_GREEN.wrap("You have earned " + NumberUtils.formatNumber(rewardPointsGained) + " reward points. New total: " + NumberUtils.formatNumber(Config.NMZ_REWARD_POINTS_TOTAL.get(player))));
             player.set("nmz", null);
             player.teleportListener = null;
             player.deathEndListener = null;
@@ -171,14 +171,12 @@ public final class NightmareZoneDream {
     }
 
     private void leave(boolean logout) {
-        player.nmzRewardPoints += rewardPointsGained;
-
+        Config.NMZ_REWARD_POINTS_TOTAL.increment(player, rewardPointsGained);
         if (!logout) {
             player.getPacketSender().fadeIn();
             player.sendMessage("You wake up feeling refreshed.");
-            player.sendMessage(Color.DARK_GREEN.wrap("You have earned " + NumberUtils.formatNumber(rewardPointsGained) + " reward points. New total: " + NumberUtils.formatNumber(player.nmzRewardPoints)));
+            player.sendMessage(Color.DARK_GREEN.wrap("You have earned " + NumberUtils.formatNumber(rewardPointsGained) + " reward points. New total: " + NumberUtils.formatNumber(Config.NMZ_REWARD_POINTS_TOTAL.get(player))));
         }
-
         player.absorptionPoints = 0;
         Config.NMZ_ABSORPTION.set(player, player.absorptionPoints);
         player.set("nmz", null);

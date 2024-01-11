@@ -78,8 +78,6 @@ public abstract class PlayerAttributes extends Entity {
      */
     @Expose public int absorptionPoints = 0;
 
-    @Expose public int nmzRewardPoints;
-
     @Expose public int nmzCofferCoins;
 
     /**

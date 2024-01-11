@@ -37,13 +37,12 @@ public class NightmareZoneRewards {
             return;
         }
         String name = new Item(id).getDef().name;
-
-        if (player.nmzRewardPoints < upgradable.price) {
+        int points = Config.NMZ_REWARD_POINTS_TOTAL.get(player);
+        if (points < upgradable.price) {
             player.sendMessage("You must have at least " + NumberUtils.formatNumber(upgradable.price) + " NMZ Points to upgrade your " + name);
             return;
         }
-
-        player.nmzRewardPoints -= upgradable.price;
+        Config.NMZ_REWARD_POINTS_TOTAL.increment(player, -upgradable.price);
         player.getInventory().remove(id, 1);
         player.getInventory().add(new Item(upgradable.upgraded));
         player.sendMessage("You have upgraded your " + name + " for " + NumberUtils.formatNumber(upgradable.price) + " points.");
@@ -59,8 +58,9 @@ public class NightmareZoneRewards {
         if (resource.price * amount < 0)
             amount = Integer.MAX_VALUE / resource.price;
         String name = new Item(id).getDef().name;
-        if (player.nmzRewardPoints < amount * resource.price)
-            amount = player.nmzRewardPoints/ resource.price;
+        int points = Config.NMZ_REWARD_POINTS_TOTAL.get(player);
+        if (points < amount * resource.price)
+            amount = points / resource.price;
         if (amount <= 0) {
             player.sendMessage("You must have at least " + NumberUtils.formatNumber(resource.price) + " NMZ Points to purchase " + name);
             return;
@@ -72,9 +72,7 @@ public class NightmareZoneRewards {
             player.sendMessage("You currently have no space in your inventory.");
             return;
         }
-
-
-        player.nmzRewardPoints -= resource.price * amount;
+        Config.NMZ_REWARD_POINTS_TOTAL.increment(player, -(resource.price * amount));
         player.getInventory().add(item);
         refresh(player);
     }
@@ -90,8 +88,9 @@ public class NightmareZoneRewards {
             return;
         }
         String name = new Item(id).getDef().name;
-        if (player.nmzRewardPoints < amount * benefit.getPrice())
-            amount = player.nmzRewardPoints/ benefit.getPrice();
+        int points = Config.NMZ_REWARD_POINTS_TOTAL.get(player);
+        if (points < amount * benefit.getPrice())
+            amount = points / benefit.getPrice();
         if (amount <= 0) {
             player.sendMessage("You must have at least " + NumberUtils.formatNumber(benefit.getPrice()) + " NMZ Points to purchase " + name);
             return;
@@ -102,7 +101,7 @@ public class NightmareZoneRewards {
             player.sendMessage("You currently have no space in your inventory.");
             return;
         }
-        player.nmzRewardPoints -= benefit.getPrice() * amount;
+        Config.NMZ_REWARD_POINTS_TOTAL.increment(player, -(benefit.getPrice() * amount));
         player.getInventory().add(new Item(id - 3, amount).note());
         //player.sendMessage("You now have " + benefit.getConfig().increment(player, amount) + " doses of " + name.split(Pattern.quote("("))[0].trim() + ".");
         refresh(player);
@@ -117,10 +116,6 @@ public class NightmareZoneRewards {
     }
 
     public static void refresh(Player player) {
-        /**
-         * setting the nmz reward points (config refresher)
-         */
-        Config.NMZ_REWARD_POINTS_TOTAL.set(player, player.nmzRewardPoints);
         for (int i = 0; i < 200; i++) {
             /** 4 = Resources, 5 = Upgrades, 6 = Benefits */
             player.getPacketSender().sendAccessMask(Interface.NIGHTMARE_ZONE_REWARDS, NightmareZoneObjects.RESOURCES, 0, i, 1086);
