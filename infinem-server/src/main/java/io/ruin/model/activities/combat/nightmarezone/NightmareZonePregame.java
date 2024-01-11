@@ -39,7 +39,7 @@ public final class NightmareZonePregame {
             numCoins = inventoryCoins;
         }
         int cofferCoins = Config.NMZ_COFFER_AMT.get(player);
-        if ((long) cofferCoins + inventoryCoins > Integer.MAX_VALUE) {
+        if ((long) cofferCoins + inventoryCoins > 262_143_000) {
             numCoins = Integer.MAX_VALUE - cofferCoins;
             if (numCoins == 0) {
                 player.dialogue(new MessageDialogue("Your coffer is full."));
