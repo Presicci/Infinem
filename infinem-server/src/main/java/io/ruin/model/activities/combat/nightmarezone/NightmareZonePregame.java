@@ -192,10 +192,10 @@ public final class NightmareZonePregame {
         /* Lobby enclosure map listener */
         MapListener.registerBounds(ENCLOSURE).onEnter(player -> {
             Config.NMZ_COFFER_STATUS.set(player, 1); // 1 means unlocked coffer
-            player.openInterface(InterfaceType.SECONDARY_OVERLAY, 207);
+            player.openInterface(InterfaceType.PRIMARY_OVERLAY, 207);
             player.getPacketSender().sendClientScript(264, "i", 0);
         }).onExit((player, logout) -> {
-            player.closeInterface(InterfaceType.SECONDARY_OVERLAY);
+            player.closeInterface(InterfaceType.PRIMARY_OVERLAY);
         });
     }
 
