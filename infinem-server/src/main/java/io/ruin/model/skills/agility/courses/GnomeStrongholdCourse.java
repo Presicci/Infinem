@@ -27,7 +27,7 @@ public class GnomeStrongholdCourse {
             p.getAppearance().removeCustomRenders();
             p.sendFilteredMessage("...You make it safely to the other side.");
             p.getStats().addXp(StatType.Agility, 7.5, true);
-            p.lastAgilityObjId = obj.id;
+            p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
         }));
         Tile.get(2474, 3430, 0).flagUnmovable();
@@ -41,8 +41,8 @@ public class GnomeStrongholdCourse {
             e.delay(1);
             p.getMovement().teleport(p.getAbsX(), 3424, 1);
             p.getStats().addXp(StatType.Agility, 7.5, true);
-            if(p.lastAgilityObjId == 23145)
-                p.lastAgilityObjId = obj.id;
+            if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23145)
+                p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
         }));
         /**
@@ -56,8 +56,8 @@ public class GnomeStrongholdCourse {
             p.sendFilteredMessage("...To the platform above.");
             p.getMovement().teleport(2473, 3420, 2);
             p.getStats().addXp(StatType.Agility, 5.0, true);
-            if(p.lastAgilityObjId == 23134)
-                p.lastAgilityObjId = obj.id;
+            if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23134)
+                p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
         }));
         /**
@@ -71,8 +71,8 @@ public class GnomeStrongholdCourse {
             e.waitForMovement(p);
             p.getAppearance().removeCustomRenders();
             p.getStats().addXp(StatType.Agility, 7.5, true);
-            if(p.lastAgilityObjId == 23559)
-                p.lastAgilityObjId = obj.id;
+            if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23559)
+                p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
         }));
         /**
@@ -86,8 +86,8 @@ public class GnomeStrongholdCourse {
             p.sendFilteredMessage("You land on the ground.");
             p.getMovement().teleport(2485, 3419, 0);
             p.getStats().addXp(StatType.Agility, 5.0, true);
-            if(p.lastAgilityObjId == 23557)
-                p.lastAgilityObjId = obj.id;
+            if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23557)
+                p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
         }));
         /**
@@ -105,8 +105,8 @@ public class GnomeStrongholdCourse {
                 e.delay(2);
                 p.getMovement().teleport(p.getAbsX(), 3428, 0);
                 p.getStats().addXp(StatType.Agility, 4.0, true);
-                if(p.lastAgilityObjId == 23560)
-                    p.lastAgilityObjId = obj.id;
+                if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23560)
+                    p.putAttribute("LAST_AGIL_OBJ", obj.id);
                 p.unlock();
             });
         });
@@ -131,7 +131,7 @@ public class GnomeStrongholdCourse {
                 p.getMovement().force(0, 3, 0, 0, 33, 126, Direction.NORTH);
                 e.delay(3);
                 p.getMovement().teleport(obj.x, obj.y + 6, 0);
-                if(p.lastAgilityObjId == 23135) {
+                if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23135) {
                     p.getStats().addXp(StatType.Agility, 46.5, true);
                     int laps = PlayerCounter.GNOME_STRONGHOLD_COURSE.increment(p, 1);
                     AgilityPet.rollForPet(p, 35609);
@@ -141,7 +141,7 @@ public class GnomeStrongholdCourse {
                 } else {
                     p.getStats().addXp(StatType.Agility, 7.5, true);
                 }
-                p.lastAgilityObjId = -1;
+                p.removeAttribute("LAST_AGIL_OBJ");
                 p.unlock();
             });
         };

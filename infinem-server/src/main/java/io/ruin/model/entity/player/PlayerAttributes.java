@@ -89,11 +89,6 @@ public abstract class PlayerAttributes extends Entity {
     public boolean tfa;
 
     /**
-     * Agility
-     */
-    @Expose public int lastAgilityObjId = -1;
-
-    /**
      * Cooking
      */
     public int cookStreak = 0;

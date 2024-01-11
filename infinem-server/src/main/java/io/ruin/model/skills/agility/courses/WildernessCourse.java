@@ -108,7 +108,7 @@ public class WildernessCourse {
             p.getMovement().force(0, 3, 0, 0, 33, 126, Direction.NORTH);
             e.waitForMovement(p);
             p.getStats().addXp(StatType.Agility, 12.5, true);
-            p.lastAgilityObjId = obj.id;
+            p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
         }));
         ObjectAction.register(23137, 3004, 3948, 0, "squeeze-through", (player, obj) -> player.sendMessage("You can't enter the pipe from this side."));
@@ -124,8 +124,8 @@ public class WildernessCourse {
                 e.delay(1);
                 obj.animate(55);
                 p.getStats().addXp(StatType.Agility, 20.0, true);
-                if (p.lastAgilityObjId == 23137)
-                    p.lastAgilityObjId = obj.id;
+                if (p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23137)
+                    p.putAttribute("LAST_AGIL_OBJ", obj.id);
                 p.unlock();
             });
         };
@@ -143,8 +143,8 @@ public class WildernessCourse {
                 else e.delay(1);
             }
             p.getStats().addXp(StatType.Agility, 20.0, true);
-            if (p.lastAgilityObjId == 23132)
-                p.lastAgilityObjId = obj.id;
+            if (p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23132)
+                p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
         }));
         ObjectAction.register(14758, 3005, 3963, 0, "climb-down", (player, obj) -> Ladder.climb(player, player.getAbsX(), player.getAbsY() + 6400, 0, false, true, false));
@@ -163,8 +163,8 @@ public class WildernessCourse {
             player.sendMessage("...you make it safely to the other side.");
             player.getStats().addXp(StatType.Agility, 20.0, true);
             player.getAppearance().removeCustomRenders();
-            if (player.lastAgilityObjId == 23556)
-                player.lastAgilityObjId = obj.id;
+            if (player.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23556)
+                player.putAttribute("LAST_AGIL_OBJ", obj.id);
             player.unlock();
         }));
        Tile.getObject(23542, 3001, 3945, 0).walkTo = new Position(3002, 3945, 0);
@@ -178,14 +178,14 @@ public class WildernessCourse {
             player.getMovement().force(0, -4, 0, 0, 5, 80, Direction.SOUTH);
             e.delay(3);
             player.resetAnimation();
-            if (player.lastAgilityObjId == 23542) {
+            if (player.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23542) {
                 player.getStats().addXp(StatType.Agility, 498.9, true);
                 AgilityPet.rollForPet(player, 34666);
                 int laps = PlayerCounter.WILDERNESS_COURSE.increment(player, 1);
                 player.getTaskManager().doLookupByUUID(848, 1);  // Complete the Wilderness Agility Course
                 if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                     player.sendFilteredMessage("Your Wilderness Agility lap count is: " + Color.RED.wrap(laps + "") + ".");
-                player.lastAgilityObjId = -1;
+                player.removeAttribute("LAST_AGIL_OBJ");
             }
             player.unlock();
         }));

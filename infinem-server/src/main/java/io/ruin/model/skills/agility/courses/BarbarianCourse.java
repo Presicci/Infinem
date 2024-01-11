@@ -28,7 +28,7 @@ public class BarbarianCourse {
             event.delay(1);
             obj.animate(55);
             player.getStats().addXp(StatType.Agility, 22.0, true);
-            player.lastAgilityObjId = obj.id;
+            player.putAttribute("LAST_AGIL_OBJ", obj.id);
             player.unlock();
         }));
         Tile.getObject(23131, 2551, 3550, 0).walkTo = new Position(2551, 3554, 0);
@@ -44,8 +44,8 @@ public class BarbarianCourse {
             player.getAppearance().removeCustomRenders();
             player.getStats().addXp(StatType.Agility, 13.7, true);
             player.sendMessage("...you make it safely to the other side.");
-            if (player.lastAgilityObjId == 23131)
-                player.lastAgilityObjId = obj.id;
+            if (player.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23131)
+                player.putAttribute("LAST_AGIL_OBJ", obj.id);
             player.unlock();
         }));
         Tile.getObject(23144, 2550, 3546, 0).walkTo = new Position(2551, 3546, 0);
@@ -61,8 +61,8 @@ public class BarbarianCourse {
             event.delay(1);
             player.getMovement().teleport(player.getAbsX() - 2, player.getAbsY(), 1);
             player.getStats().addXp(StatType.Agility, 9.2, true);
-            if (player.lastAgilityObjId == 23144)
-                player.lastAgilityObjId = obj.id;
+            if (player.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23144)
+                player.putAttribute("LAST_AGIL_OBJ", obj.id);
             player.unlock();
         }));
         /**
@@ -78,8 +78,8 @@ public class BarbarianCourse {
             player.getAppearance().removeCustomRenders();
             event.delay(1);
             player.getStats().addXp(StatType.Agility, 22.0, true);
-            if (player.lastAgilityObjId == 20211)
-                player.lastAgilityObjId = obj.id;
+            if (player.getAttributeIntOrZero("LAST_AGIL_OBJ") == 20211)
+                player.putAttribute("LAST_AGIL_OBJ", obj.id);
             player.unlock();
         }));
         /**
@@ -96,8 +96,8 @@ public class BarbarianCourse {
             player.getMovement().force(2, 0, 0, 0, 0, 60, Direction.EAST);
             event.delay(1);
             player.getStats().addXp(StatType.Agility, 13.7, true);
-            if (player.lastAgilityObjId == 23547)
-                player.lastAgilityObjId = obj.id;
+            if (player.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23547)
+                player.putAttribute("LAST_AGIL_OBJ", obj.id);
             player.unlock();
         }));
         Tile.getObject(1948, 2536, 3553, 0).walkTo = new Position(2535, 3553, 0);
@@ -121,7 +121,7 @@ public class BarbarianCourse {
             player.animate(839);
             player.getMovement().force(2, 0, 0, 0, 0, 60, Direction.EAST);
             event.delay(1);
-            if (player.lastAgilityObjId == 1948) {
+            if (player.getAttributeIntOrZero("LAST_AGIL_OBJ") == 1948) {
                 player.getStats().addXp(StatType.Agility, 46.2, true);
                 int laps = PlayerCounter.BARBARIAN_COURSE.increment(player, 1);
                 AgilityPet.rollForPet(player, 44376);
@@ -132,7 +132,7 @@ public class BarbarianCourse {
                 player.getStats().addXp(StatType.Agility, 13.7, true);
 
             }
-            player.lastAgilityObjId = -1;
+            player.removeAttribute("LAST_AGIL_OBJ");
             player.unlock();
         }));
         Tile.getObject(1948, 2542, 3553, 0).walkTo = new Position(2541, 3553, 0);

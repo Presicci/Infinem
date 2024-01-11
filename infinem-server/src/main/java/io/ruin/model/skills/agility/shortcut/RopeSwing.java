@@ -46,7 +46,6 @@ public enum RopeSwing {
             event.delay(1);
             obj.animate(55);
             player.getStats().addXp(StatType.Agility, xp, true);
-            player.lastAgilityObjId = obj.id;
             player.unlock();
         });
     }
