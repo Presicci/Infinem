@@ -130,7 +130,7 @@ public final class NightmareZoneDream {
     }
 
     private void prepareInterface() {
-        player.openInterface(InterfaceType.SECONDARY_OVERLAY, 202);
+        player.openInterface(InterfaceType.PRIMARY_OVERLAY, 202);
 
         // This is a hash of the arena's southwestern-most tile. This is presumably used by the client to differentiate between KBD lair
         int hash = map.convertY(4680) + (map.convertX(2256) << 14);
