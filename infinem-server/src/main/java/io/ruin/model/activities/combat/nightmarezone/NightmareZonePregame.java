@@ -40,7 +40,7 @@ public final class NightmareZonePregame {
     }
 
     private static void withdrawCoins(Player player, int numCoins) {
-        int amountToWithdraw = Math.min(player.nmzRewardPoints, numCoins);
+        int amountToWithdraw = Math.min(player.nmzCofferCoins, numCoins);
         player.getInventory().addOrDrop(995, amountToWithdraw);
         player.nmzCofferCoins = Math.min(0, player.nmzCofferCoins - amountToWithdraw);
     }
