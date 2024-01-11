@@ -36,9 +36,9 @@ public class Config {
      */
     public static final Config NMZ_COFFER_STATUS = varpbit(3957, false);
 
-    public static final Config NMZ_COFFER_AMT = varpbit(3948, false);
+    public static final Config NMZ_COFFER_AMT = varpbit(3948, true);
 
-    public static final Config NMZ_ABSORPTION = varpbit(3956, false);
+    public static final Config NMZ_ABSORPTION = varpbit(3956, true);
 
     public static final Config NMZ_POINTS = varpbit(3949, false);
 

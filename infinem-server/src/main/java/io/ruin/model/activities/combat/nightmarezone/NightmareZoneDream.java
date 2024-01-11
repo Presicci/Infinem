@@ -52,16 +52,12 @@ public final class NightmareZoneDream {
         this.player = player;
         this.difficulty = difficulty;
         map = createMap();
-        player.absorptionPoints = 0;
-        Config.NMZ_ABSORPTION.set(player, player.absorptionPoints);
 
         this.MONSTERS = NightmareZoneMonster.getAsList(difficulty == NightmareZoneDreamDifficulty.HARD);
 
         player.deathEndListener = (DeathListener.Simple) () -> {
             player.getMovement().teleport(EXIT);
             player.getPacketSender().fadeIn();
-            player.absorptionPoints = 0;
-            Config.NMZ_ABSORPTION.set(player, player.absorptionPoints);
             potCleanup(player);
             player.sendMessage("You wake up feeling refreshed.");
             Config.NMZ_REWARD_POINTS_TOTAL.increment(player, rewardPointsGained);
@@ -79,15 +75,15 @@ public final class NightmareZoneDream {
     }
 
     public static void check(Player player, Hit hit) {
-        if (player.absorptionPoints > 0 && player.get("nmz") != null) {
+        int absorption = Config.NMZ_ABSORPTION.get(player);
+        if (absorption > 0 && player.get("nmz") != null) {
             if (hit.damage > 0 && !hit.absorptionIgnored) {
                 if (hit.damage > player.getHp())
-                    player.absorptionPoints = Math.max(0, player.absorptionPoints - player.getHp());
+                    Config.NMZ_ABSORPTION.set(player, Math.max(0, absorption - player.getHp()));
                 else
-                    player.absorptionPoints = Math.max(0, player.absorptionPoints - hit.damage);
+                    Config.NMZ_ABSORPTION.set(player, Math.max(0, absorption - hit.damage));
                 hit.block();
-                Config.NMZ_ABSORPTION.set(player, player.absorptionPoints );
-                player.sendMessage(Color.DARK_GREEN.wrap("You now have " + player.absorptionPoints  + " hitpoints of damage absorption left."));
+                player.sendMessage(Color.DARK_GREEN.wrap("You now have " + Config.NMZ_ABSORPTION.get(player)  + " hitpoints of damage absorption left."));
             }
         }
     }
@@ -177,8 +173,6 @@ public final class NightmareZoneDream {
             player.sendMessage("You wake up feeling refreshed.");
             player.sendMessage(Color.DARK_GREEN.wrap("You have earned " + NumberUtils.formatNumber(rewardPointsGained) + " reward points. New total: " + NumberUtils.formatNumber(Config.NMZ_REWARD_POINTS_TOTAL.get(player))));
         }
-        player.absorptionPoints = 0;
-        Config.NMZ_ABSORPTION.set(player, player.absorptionPoints);
         player.set("nmz", null);
         potCleanup(player);
         player.teleportListener = null;

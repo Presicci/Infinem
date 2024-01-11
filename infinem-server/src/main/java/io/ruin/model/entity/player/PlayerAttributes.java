@@ -74,11 +74,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose @Setter @Getter public boolean acceptedTheatreCrystals;
 
     /**
-     * NMZ
-     */
-    @Expose public int absorptionPoints = 0;
-
-    /**
      * 2FA
      */
 

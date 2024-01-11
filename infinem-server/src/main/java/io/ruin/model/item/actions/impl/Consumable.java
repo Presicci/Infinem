@@ -857,9 +857,8 @@ public class Consumable {
         registerPotion(Potion.SUPER_MAGIC, p -> p.getStats().get(StatType.Magic).boost(5, 0.15));
         registerPotion(Potion.SUPER_RANGING, p -> p.getStats().get(StatType.Ranged).boost(5, 0.15));
         registerPotion(Potion.ABSORPTION, p -> {
-            p.absorptionPoints = p.absorptionPoints + 50;
-            Config.NMZ_ABSORPTION.set(p, p.absorptionPoints);
-            p.sendMessage(Color.DARK_GREEN.wrap("You now have " + p.absorptionPoints + " hitpoints of damage absorption left."));
+            Config.NMZ_ABSORPTION.increment(p, 50);
+            p.sendMessage(Color.DARK_GREEN.wrap("You now have " + Config.NMZ_ABSORPTION.get(p) + " hitpoints of damage absorption left."));
         });
     }
 

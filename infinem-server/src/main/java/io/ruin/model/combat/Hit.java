@@ -374,15 +374,15 @@ public class Hit {
 		// NMZ absorption potion
 		// Applied after the damage is set to the players health because thats how its done in osrs
 		if (target.player != null
-				&& target.player.absorptionPoints > 0
+				&& Config.NMZ_ABSORPTION.get(target.player) > 0
 				&& target.player.get("nmz") != null
 				&& !absorptionIgnored) {
-			target.player.absorptionPoints -= damage;
-			if (target.player.absorptionPoints < 0) {
-				target.player.absorptionPoints = 0;
+			Config.NMZ_ABSORPTION.increment(target.player, -damage);
+			int absorption = Config.NMZ_ABSORPTION.get(target.player);
+			if (absorption < 0) {
+				Config.NMZ_ABSORPTION.set(target.player, 0);
 				target.player.sendMessage(Color.RED.wrap("Your absorption has run out."));
 			}
-			Config.NMZ_ABSORPTION.set(target.player, target.player.absorptionPoints);
 			damage = 0;
 		}
 		return true;
