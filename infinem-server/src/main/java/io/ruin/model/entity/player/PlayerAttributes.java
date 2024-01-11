@@ -82,16 +82,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public int nmzCofferCoins;
 
-    /** blast furnace variables */
-    @Getter @Setter @Expose
-    public int blastFurnaceCofferAmount = 0;
-    @Getter @Setter @Expose
-    public int blastFurnaceOres = 0;
-    @Getter @Setter @Expose
-    public int blastFurnaceCoalAmount;
-    @Getter @Setter @Expose
-    public int blastFurnaceBars = 0;
-
     /**
      * 2FA
      */
