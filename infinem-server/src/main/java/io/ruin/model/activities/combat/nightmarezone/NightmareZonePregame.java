@@ -30,30 +30,43 @@ public final class NightmareZonePregame {
     }
 
     private static void depositCoins(Player player, int numCoins) {
-        if (numCoins > player.getInventory().getAmount(995)) {
-            player.dialogue(new MessageDialogue("There are not enough coins in your inventory to deposit"));
+        int inventoryCoins = player.getInventory().getAmount(995);
+        if (inventoryCoins == 0) {
+            player.dialogue(new MessageDialogue("You do not have any coins to deposit into the coffer."));
             return;
         }
-
+        if (numCoins > inventoryCoins) {
+            numCoins = inventoryCoins;
+        }
+        int cofferCoins = Config.NMZ_COFFER_AMT.get(player);
+        if ((long) cofferCoins + inventoryCoins > Integer.MAX_VALUE) {
+            numCoins = Integer.MAX_VALUE - cofferCoins;
+            if (numCoins == 0) {
+                player.dialogue(new MessageDialogue("Your coffer is full."));
+                return;
+            }
+        }
         player.getInventory().remove(995, numCoins);
-        player.nmzCofferCoins += numCoins;
+        Config.NMZ_COFFER_AMT.increment(player, numCoins);
     }
 
     private static void withdrawCoins(Player player, int numCoins) {
-        int amountToWithdraw = Math.min(player.nmzCofferCoins, numCoins);
+        int coinsStored = Config.NMZ_COFFER_AMT.get(player);
+        int amountToWithdraw = Math.min(coinsStored, numCoins);
         player.getInventory().addOrDrop(995, amountToWithdraw);
-        player.nmzCofferCoins = Math.min(0, player.nmzCofferCoins - amountToWithdraw);
+        Config.NMZ_COFFER_AMT.set(player, Math.min(0, coinsStored - amountToWithdraw));
     }
 
     private static OptionsDialogue depositWithdraw(Player player) {
-        return new OptionsDialogue("Dominic's Coffer (" + NumberUtils.formatNumber(player.nmzCofferCoins) + " coins)",
+        int coins = Config.NMZ_COFFER_AMT.get(player);
+        return new OptionsDialogue("Dominic's Coffer (" + NumberUtils.formatNumber(coins) + " coins)",
                 new Option("Deposit Money.", () -> {
-                    player.integerInput("How much do you wish to deposit? (" + NumberUtils.formatNumber(player.nmzCofferCoins) + ")", (p) -> {
+                    player.integerInput("How much do you wish to deposit? (" + NumberUtils.formatNumber(coins) + ")", (p) -> {
                         depositCoins(player, p);
                     });
                 }),
                 new Option("Withdraw Money.", () -> {
-                    player.integerInput("How much do you wish to deposit? (" + NumberUtils.formatNumber(player.nmzCofferCoins) + ")", (p) -> {
+                    player.integerInput("How much do you wish to withdraw? (" + NumberUtils.formatNumber(coins) + ")", (p) -> {
                         withdrawCoins(player, p);
                     });
                 }),
@@ -62,9 +75,10 @@ public final class NightmareZonePregame {
     }
 
     private static OptionsDialogue depositOnly(Player player) {
-        return new OptionsDialogue("Dominic's Coffer (" + NumberUtils.formatNumber(player.nmzCofferCoins) + " coins)",
+        int coins = Config.NMZ_COFFER_AMT.get(player);
+        return new OptionsDialogue("Dominic's Coffer (" + NumberUtils.formatNumber(coins) + " coins)",
                 new Option("Deposit Money.", () -> {
-                    player.integerInput("How much do you wish to deposit? (" + NumberUtils.formatNumber(player.nmzCofferCoins) + ")", (p) -> {
+                    player.integerInput("How much do you wish to deposit? (" + NumberUtils.formatNumber(coins) + ")", (p) -> {
                         depositCoins(player, p);
                     });
                 }),
@@ -73,9 +87,10 @@ public final class NightmareZonePregame {
     }
 
     private static OptionsDialogue withdrawOnly(Player player) {
-        return new OptionsDialogue("Dominic's Coffer (" + NumberUtils.formatNumber(player.nmzCofferCoins) + " coins)",
+        int coins = Config.NMZ_COFFER_AMT.get(player);
+        return new OptionsDialogue("Dominic's Coffer (" + NumberUtils.formatNumber(coins) + " coins)",
                 new Option("Withdraw Money.", () -> {
-                    player.integerInput("How much do you wish to deposit? (" + NumberUtils.formatNumber(player.nmzCofferCoins) + ")", (p) -> {
+                    player.integerInput("How much do you wish to withdraw? (" + NumberUtils.formatNumber(coins) + ")", (p) -> {
                         withdrawCoins(player, p);
                     });
                 }),
@@ -177,7 +192,6 @@ public final class NightmareZonePregame {
         /* Lobby enclosure map listener */
         MapListener.registerBounds(ENCLOSURE).onEnter(player -> {
             Config.NMZ_COFFER_STATUS.set(player, 1); // 1 means unlocked coffer
-            Config.NMZ_COFFER_AMT.set(player, player.nmzCofferCoins / 1000);
             player.openInterface(InterfaceType.SECONDARY_OVERLAY, 207);
             player.getPacketSender().sendClientScript(264, "i", 0);
         }).onExit((player, logout) -> {
