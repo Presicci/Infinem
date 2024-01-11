@@ -96,10 +96,7 @@ public abstract class PlayerAttributes extends Entity {
     /**
      * Cooking
      */
-    @Expose public int cookedFood;
     public int cookStreak = 0;
-
-    @Expose public int wallSafesCracked;
 
     public TickDelay boneBuryDelay = new TickDelay();
 
