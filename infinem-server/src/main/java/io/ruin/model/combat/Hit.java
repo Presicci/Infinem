@@ -377,7 +377,10 @@ public class Hit {
 				&& Config.NMZ_ABSORPTION.get(target.player) > 0
 				&& target.player.get("nmz") != null
 				&& !absorptionIgnored) {
-			Config.NMZ_ABSORPTION.increment(target.player, -damage);
+			if (damage > target.getHp())
+				Config.NMZ_ABSORPTION.increment(target.player, -target.getHp());
+			else
+				Config.NMZ_ABSORPTION.increment(target.player, -damage);
 			int absorption = Config.NMZ_ABSORPTION.get(target.player);
 			if (absorption < 0) {
 				Config.NMZ_ABSORPTION.set(target.player, 0);
