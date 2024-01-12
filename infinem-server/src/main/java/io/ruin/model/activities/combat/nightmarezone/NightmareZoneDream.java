@@ -74,20 +74,6 @@ public final class NightmareZoneDream {
 
     }
 
-    public static void check(Player player, Hit hit) {
-        int absorption = Config.NMZ_ABSORPTION.get(player);
-        if (absorption > 0 && player.get("nmz") != null) {
-            if (hit.damage > 0 && !hit.absorptionIgnored) {
-                if (hit.damage > player.getHp())
-                    Config.NMZ_ABSORPTION.set(player, Math.max(0, absorption - player.getHp()));
-                else
-                    Config.NMZ_ABSORPTION.set(player, Math.max(0, absorption - hit.damage));
-                hit.block();
-                player.sendMessage(Color.DARK_GREEN.wrap("You now have " + Config.NMZ_ABSORPTION.get(player)  + " hitpoints of damage absorption left."));
-            }
-        }
-    }
-
     public void enter() {
         player.set("nmz", this);
         prepareMap();
