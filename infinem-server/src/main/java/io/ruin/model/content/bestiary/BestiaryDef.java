@@ -101,15 +101,17 @@ public class BestiaryDef {
         put("civilian", new String[] { "woman", "man", "svetlana", "boris", "broddi", "thorhild", "joseph", "ksenia", "milla", "lev", "imre", "galina", "drunken man", "shipyard worker",
                 "narf", "zoja", "yadviga", "rusty", "irina", "alexis", "eduard", "nikolai", "penda", "nikita", "vera", "ocga", "sofiya", "liliya", "yuri", "georgy",
                 "jeff" });
-        put("nightmares", new String[] { "khazard warlord (hard)", "kamil (hard)", "corsair traitor", "fareed (hard)", "agrith naar (hard)", "witch's experiment (hard)", "arrg (hard)",
-                "glod (hard)", "king roald (hard)", "evil chicken (hard)", "dad (hard)", "witch's experiment (third form) (hard)", "the inadequacy (hard)",
-                "dessous (hard)", "flambeed (hard)", "black demon (hard)", "the kendal (hard)", "the untouchable (hard)", "nazastarool (hard)",
-                "gelatinnoth mother (hard)", "damis (hard)", "corsair traitor (hard)", "dagannoth mother (hard)", "sand snake (hard)", "tanglefoot (hard)",
-                "dessourt (hard)", "agrith-na-na (hard)", "chronozon (hard)", "slagilith (hard)", "count draynor (hard)", "giant roc (hard)",
-                "karamel (hard)", "skeleton hellhound (hard)", "witch's experiment (fourth form) (hard)", "treus dayth (hard)", "ice troll king (hard)",
-                "barrelchest (hard)", "trapped soul (hard)", "bouncer (hard)", "culinaromancer (hard)", "witch's experiment (second form) (hard)",
-                "me (hard)", "jungle demon (hard)", "giant scarab (hard)", "black knight titan (hard)", "the everlasting (hard)", "agrith naar", "agrith-na-na",
-                "arrg" });
+        put("nightmares", new String[] { "khazard warlord", "khazard warlord (hard)", "kamil", "kamil (hard)", "corsair traitor", "corsair traitor (hard)", "fareed", "fareed (hard)",
+                "agrith naar", "agrith naar (hard)", "witch's experiment", "witch's experiment (hard)", "witch's experiment (second form)", "witch's experiment (second form) (hard)",
+                "witch's experiment (third form)", "witch's experiment (third form) (hard)", "witch's experiment (fourth form)", "witch's experiment (fourth form) (hard)", "arrg", "arrg (hard)",
+                "glod", "glod (hard)", "king roald", "king roald (hard)", "evil chicken", "evil chicken (hard)", "dad", "dad (hard)", "the inadequacy", "the inadequacy (hard)",
+                "dessous", "dessous (hard)", "flambeed", "flambeed (hard)", "black demon", "black demon (hard)", "the kendal", "the kendal (hard)", "the untouchable", "the untouchable (hard)", "nazastarool", "nazastarool (hard)",
+                "gelatinnoth mother", "gelatinnoth mother (hard)", "damis", "damis (hard)", "dagannoth mother", "dagannoth mother (hard)", "sand snake", "sand snake (hard)", "tanglefoot", "tanglefoot (hard)",
+                "dessourt", "dessourt (hard)", "agrith-na-na", "agrith-na-na (hard)", "chronozon", "chronozon (hard)", "slagilith", "slagilith (hard)", "count draynor", "count draynor (hard)", "giant roc", "giant roc (hard)",
+                "karamel", "karamel (hard)", "skeleton hellhound", "skeleton hellhound (hard)", "treus dayth", "treus dayth (hard)", "ice troll king", "ice troll king (hard)",
+                "barrelchest", "barrelchest (hard)", "trapped soul", "trapped soul (hard)", "bouncer", "bouncer (hard)", "culinaromancer", "culinaromancer (hard)",
+                "me", "me (hard)", "jungle demon", "jungle demon (hard)", "giant scarab", "giant scarab (hard)", "black knight titan", "black knight titan (hard)", "the everlasting", "the everlasting (hard)",
+        });
         put("revenant", new String[] { "revenant imp", "revenant pyrefiend", "revenant knight", "revenant cyclops", "revenant hellhound", "revenant dragon", "revenant demon",
                 "revenant dark beast", "revenant ork" });
         put("bandit", new String[] { "black heather", "speedy keith", "bandit champion", "guard bandit" });
