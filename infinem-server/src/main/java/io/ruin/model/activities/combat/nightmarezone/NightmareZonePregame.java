@@ -207,6 +207,7 @@ public final class NightmareZonePregame {
             Config.NMZ_COFFER_STATUS.set(player, 1); // 1 means unlocked coffer
             player.openInterface(InterfaceType.PRIMARY_OVERLAY, 207);
             player.getPacketSender().sendClientScript(264, "i", 0);
+            player.getPacketSender().sendString(207, 7, "" + player.getName()); // Party usernames separated by |
         }).onExit((player, logout) -> {
             player.closeInterface(InterfaceType.PRIMARY_OVERLAY);
         });
