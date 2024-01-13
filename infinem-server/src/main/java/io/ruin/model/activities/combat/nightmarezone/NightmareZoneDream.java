@@ -4,13 +4,13 @@ import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
 import io.ruin.model.World;
-import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.map.Bounds;
+import io.ruin.model.map.MapListener;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.dynamic.DynamicMap;
@@ -18,7 +18,6 @@ import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
 
-import java.util.Arrays;
 import java.util.List;
 
 public final class NightmareZoneDream {
@@ -26,21 +25,18 @@ public final class NightmareZoneDream {
     // Dream vial:
     // Proceed.
     // Not just now.
-
     private static final Position START = new Position(2275, 4680, 0);
-
     private static final Position EXIT = new Position(2608, 3115, 0);
 
     /* As far as I know the NMZ monsters can spawn pretty much anywhere in the arena, although the arena is not a perfect square. */
     private static final Bounds SPAWN_BOUNDS = new Bounds(2256, 4680, 2287, 4711, 0);
-
-    private static final List<Integer> ABSORPTION_POTION = Arrays.asList(11734, 11735, 11736, 11737);
 
     private Player player;
 
     private final NightmareZoneDreamDifficulty difficulty;
 
     private DynamicMap map;
+    private final MapListener mapListener;
 
     private int npcsRemaining;
 
@@ -51,30 +47,19 @@ public final class NightmareZoneDream {
     public NightmareZoneDream(Player player, NightmareZoneDreamDifficulty difficulty) {
         this.player = player;
         this.difficulty = difficulty;
-        map = createMap();
-
+        map = new DynamicMap();
+        map.build(9033, 0);
+        mapListener = map.toListener().onExit(this::onExit);
         this.MONSTERS = NightmareZoneMonster.getAsList(difficulty == NightmareZoneDreamDifficulty.HARD);
-
-        player.deathEndListener = (DeathListener.Simple) () -> {
-            player.getMovement().teleport(EXIT);
-            player.getPacketSender().fadeIn();
-            potCleanup(player);
-            player.sendMessage("You wake up feeling refreshed.");
-            Config.NMZ_REWARD_POINTS_TOTAL.increment(player, rewardPointsGained);
-            player.sendMessage(Color.DARK_GREEN.wrap("You have earned " + NumberUtils.formatNumber(rewardPointsGained) + " reward points. New total: " + NumberUtils.formatNumber(Config.NMZ_REWARD_POINTS_TOTAL.get(player))));
-            player.set("nmz", null);
-            player.teleportListener = null;
-            player.deathEndListener = null;
-        };
-
+        player.deathEndListener = (DeathListener.Simple) () -> player.getMovement().teleport(EXIT);
         player.teleportListener = p -> {
             p.sendMessage("Drink from the vial at the south of the arena to wake up.");
             return false;
         };
-
     }
 
     public void enter() {
+        Config.NMZ_POINTS.set(player, 0);
         player.set("nmz", this);
         prepareMap();
 
@@ -83,6 +68,7 @@ public final class NightmareZoneDream {
             player.getPacketSender().fadeOut();
             event.delay(2);
             player.getMovement().teleport(map.convertPosition(START));
+            player.addActiveMapListener(mapListener);
             event.delay(1);
             player.getPacketSender().fadeIn();
             prepareInterface();
@@ -92,13 +78,6 @@ public final class NightmareZoneDream {
             event.delay(30);
             spawnMonsters();
         });
-
-    }
-
-    private static DynamicMap createMap() {
-        DynamicMap arena = new DynamicMap();
-        arena.build(9033, 0);
-        return arena;
     }
 
     private void prepareMap() {
@@ -122,14 +101,13 @@ public final class NightmareZoneDream {
     }
 
     private void spawnMonsters() {
+        if (map == null) return;
         for (int i = 0; i < 4; i++) {
             NPC npc = new NPC(randomMonster());
-
             Position spawn = map.convertPosition(SPAWN_BOUNDS.randomPosition());
             npc.spawn(spawn);
             map.addNpc(npc);
             npc.face(player);
-
             npc.deathEndListener = (DeathListener.Simple) () -> {
                 rewardPointsGained += Random.get(3000, 5000) * (difficulty == NightmareZoneDreamDifficulty.NORMAL ? 1.0 : 1.85);
                 Config.NMZ_POINTS.set(player, rewardPointsGained);
@@ -139,11 +117,9 @@ public final class NightmareZoneDream {
                     spawnMonsters();
                 }
             };
-
             npc.getCombat().setAllowRespawn(false);
             npc.targetPlayer(player, false);
             npc.attackTargetPlayer();
-
             npcsRemaining++;
         }
     }
@@ -152,18 +128,24 @@ public final class NightmareZoneDream {
         return Random.get(MONSTERS);
     }
 
-    private void leave(boolean logout) {
-        Config.NMZ_REWARD_POINTS_TOTAL.increment(player, rewardPointsGained);
-        if (!logout) {
+    private void onExit(Player player, boolean logout) {
+        if (logout) {
+            player.getMovement().teleport(EXIT);
+        } else {
             player.getPacketSender().fadeIn();
             player.sendMessage("You wake up feeling refreshed.");
-            player.sendMessage(Color.DARK_GREEN.wrap("You have earned " + NumberUtils.formatNumber(rewardPointsGained) + " reward points. New total: " + NumberUtils.formatNumber(Config.NMZ_REWARD_POINTS_TOTAL.get(player))));
+            player.sendMessage(Color.DARK_GREEN.wrap("You have earned " + NumberUtils.formatNumber(rewardPointsGained) + " reward points. New total: " + NumberUtils.formatNumber(Config.NMZ_REWARD_POINTS_TOTAL.get(player) + rewardPointsGained)));
         }
+        Config.NMZ_REWARD_POINTS_TOTAL.increment(player, rewardPointsGained);
         player.set("nmz", null);
-        potCleanup(player);
         player.teleportListener = null;
         player.deathEndListener = null;
-        dispose();
+        potCleanup(player);
+        destroy();
+    }
+
+    private void leave() {
+        player.getMovement().teleport(EXIT);
     }
 
     private void potCleanup(Player player) {
@@ -175,7 +157,7 @@ public final class NightmareZoneDream {
         player.overloadBoostActive = false;
     }
 
-    private void dispose() {
+    private void destroy() {
         player = null;
         map.destroy();
         map = null;
@@ -185,7 +167,7 @@ public final class NightmareZoneDream {
         ObjectAction.register(26276, 1, (player, obj) -> {
             player.getMovement().teleport(EXIT);
             NightmareZoneDream dream = player.get("nmz");
-            dream.leave(false);
+            dream.leave();
         });
     }
 }
