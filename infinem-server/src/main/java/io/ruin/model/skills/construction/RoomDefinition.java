@@ -217,7 +217,7 @@ public enum RoomDefinition {
 
     public static void openRoomSelection(Player player, Consumer<RoomDefinition> action) {
         player.openInterface(InterfaceType.MAIN, Interface.CONSTRUCTION_ROOM_CREATION);
-        player.set("ROOM_CREATION_CONSUMER", action);
+        player.putTemporaryAttribute("ROOM_CREATION_CONSUMER", action);
     }
 
     public Room create() {
@@ -231,7 +231,7 @@ public enum RoomDefinition {
     static {
         InterfaceHandler.register(Interface.CONSTRUCTION_ROOM_CREATION, handler -> {
             handler.actions[4] = (SlotAction) (p, slot) -> {
-                Consumer<RoomDefinition> action = p.get("ROOM_CREATION_CONSUMER"); // workaround for this insanely inflexible interface handler system
+                Consumer<RoomDefinition> action = p.getTemporaryAttribute("ROOM_CREATION_CONSUMER"); // workaround for this insanely inflexible interface handler system
                 if (action == null)
                     return;
                 RoomDefinition def = null;
@@ -247,7 +247,7 @@ public enum RoomDefinition {
                     p.dialogue(new MessageDialogue("You don't have enough coins to create that room."));
                     return;
                 }
-                p.remove("ROOM_CREATION_CONSUMER");
+                p.removeTemporaryAttribute("ROOM_CREATION_CONSUMER");
                 action.accept(def);
             };
         });

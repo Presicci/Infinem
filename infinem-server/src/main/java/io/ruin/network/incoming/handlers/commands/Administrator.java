@@ -492,7 +492,7 @@ public class Administrator {
 
             case "controlnpc": {
                 if (args == null || args.length == 0) {
-                    player.remove("CONTROLLING_NPC");
+                    player.removeTemporaryAttribute("CONTROLLING_NPC");
                     player.sendMessage("NPC control cleared.");
                 } else {
                     int index = Integer.parseInt(args[0]);
@@ -501,7 +501,7 @@ public class Administrator {
                         player.sendMessage("Invalid NPC. Use index");
                         return true;
                     } else {
-                        player.set("CONTROLLING_NPC", npc);
+                        player.putTemporaryAttribute("CONTROLLING_NPC", npc);
                         player.sendMessage("You're now controlling " + npc.getDef().name + ".");
                     }
                 }
@@ -1145,7 +1145,7 @@ public class Administrator {
                 InterfaceType type = InterfaceType.MAIN;
                 if(args.length == 2)
                     type = InterfaceType.valueOf(args[1].toUpperCase());
-                player.temp.put("last_inter_cmd", interfaceId);
+                player.putTemporaryAttribute("last_inter_cmd", interfaceId);
                 player.openInterface(type, interfaceId);
                 return true;
             }
@@ -1156,7 +1156,7 @@ public class Administrator {
                 player.startEvent(e -> {
                     int interfaceId = intId;
                     while (interfaceId < 650) {
-                        player.temp.put("last_inter_cmd", interfaceId);
+                        player.putTemporaryAttribute("last_inter_cmd", interfaceId);
                         player.openInterface(type, interfaceId);
                         player.sendMessage("" + interfaceId);
                         interfaceId++;
@@ -1170,14 +1170,14 @@ public class Administrator {
                 InterfaceType type = InterfaceType.MAIN;
                 if(args != null && args.length == 1)
                     type = InterfaceType.valueOf(args[0].toUpperCase());
-                int interfaceId = (int) player.temp.getOrDefault("last_inter_cmd", 0);
+                int interfaceId = (int) player.getTemporaryAttributeOrDefault("last_inter_cmd", 0);
                 if(interfaceId == 548 || interfaceId == 161 || interfaceId == 164) //main screen
                     interfaceId++;
                 if(interfaceId == Interface.CHAT_BAR) //chat box
                     interfaceId++;
                 if(interfaceId == 156) //annoying
                     interfaceId++;
-                player.temp.put("last_inter_cmd", interfaceId + 1);
+                player.putTemporaryAttribute("last_inter_cmd", interfaceId + 1);
                 player.openInterface(type, interfaceId);
                 player.sendFilteredMessage("Interface: " + interfaceId);
                 return true;
@@ -1574,7 +1574,7 @@ public class Administrator {
                         player.sendMessage("Invalid npc id: " + npcId);
                         return true;
                     }
-                    player.temp.put("LAST_PNPC", npcId);
+                    player.putTemporaryAttribute("LAST_PNPC", npcId);
                     player.getAppearance().setNpcId(npcId);
                     player.sendMessage(def.name + " " + def.size);
                 } else {
@@ -1585,7 +1585,7 @@ public class Administrator {
             }
 
             case "pnpcs": {
-                Integer lastId = (Integer) player.temp.get("LAST_PNPC");
+                Integer lastId = (Integer) player.getTemporaryAttribute("LAST_PNPC");
                 if(lastId == null)
                     lastId = 0;
                 NPCDef def = NPCDef.get(lastId);
@@ -1595,7 +1595,7 @@ public class Administrator {
                 }
                 player.getAppearance().setNpcId(lastId);
                 player.sendMessage("pnpc: " + lastId);
-                player.temp.put("LAST_PNPC", lastId + 1);
+                player.putTemporaryAttribute("LAST_PNPC", lastId + 1);
                 player.getAppearance().update();
                 return true;
             }

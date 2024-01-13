@@ -61,7 +61,7 @@ public class Dungeon {
         player.addEvent(event -> {
             player.lock();
             int animation = pick ? 3692 : 3693;
-            if (player.get("TENTACLE_POOL") != null)
+            if (player.getTemporaryAttribute("TENTACLE_POOL") != null)
                 animation += 2;
             player.animate(animation);
             player.sendMessage("You attempt to " + (pick ? "pick" : "force") + " the lock...");

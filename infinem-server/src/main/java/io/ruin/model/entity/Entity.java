@@ -40,8 +40,6 @@ public abstract class Entity extends TemporaryAttributesHolder {
 
     public NPC npc;
 
-    public final HashMap<Object, Object> temp = new HashMap<>();
-
     public boolean processed;
 
     public Entity() {
@@ -1029,25 +1027,6 @@ public abstract class Entity extends TemporaryAttributesHolder {
     public abstract Movement getMovement();
 
     public abstract Combat getCombat();
-
-    public void set(String key, Object value) {
-        temp.put(key, value);
-    }
-
-    public <T> T get(Object key) {
-        Object value = temp.get(key);
-        return value == null ? null : (T) value;
-    }
-
-    public <T> T get(Object key, T nullValue) {
-        T attribute = get(key);
-        return attribute == null ? nullValue : attribute;
-    }
-
-    public <T> T remove(Object key) {
-        Object value = temp.remove(key);
-        return value == null ? null : (T) value;
-    }
 
     public boolean isPlayer() {
         return false;

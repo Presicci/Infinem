@@ -247,7 +247,7 @@ public class GreatOlm extends NPCCombat {
     private TickDelay siphonDelay = new TickDelay();
     @Override
     public void init() {
-        chamber = npc.get("RAID_CHAMBER");
+        chamber = npc.getTemporaryAttribute("RAID_CHAMBER");
         if (chamber == null) {
             npc.remove();
             return;
@@ -279,7 +279,7 @@ public class GreatOlm extends NPCCombat {
             rise(event);
         });
         startAcidPoolEvent();
-        npc.set("RAID_NO_POINTS", true);
+        npc.putTemporaryAttribute("RAID_NO_POINTS", true);
     }
 
     private void preLeftClawDefend(Hit hit) {
@@ -378,7 +378,7 @@ public class GreatOlm extends NPCCombat {
                 event.delay(1);
             }
             if (!otherClaw.getCombat().isDead() && progress >= 25) { // failed, revive claw
-                claw.set("RAID_NO_POINTS", true);
+                claw.putTemporaryAttribute("RAID_NO_POINTS", true);
                 restore(claw);
                 getObject(claw).setId(claw == rightClaw ? 29886 : 29883);
                 event.delay(1);
@@ -440,7 +440,7 @@ public class GreatOlm extends NPCCombat {
                 finalStand = true;
                 ceilingCrystals(0, 10000);
                 forAllTargets(p -> p.sendMessage("The Great Olm is giving its all. This is its final stand."));
-                npc.remove("RAID_NO_POINTS");
+                npc.removeTemporaryAttribute("RAID_NO_POINTS");
             }
             return;
         }
@@ -815,12 +815,12 @@ public class GreatOlm extends NPCCombat {
     private static final StatType[] BURN_STAT_DRAIN = {StatType.Attack, StatType.Strength, StatType.Defence, StatType.Ranged, StatType.Magic};
 
     private void burnPlayer(Player player, boolean wasSpread) {
-        if (player.get("OLM_BURN_EFFECT") != null)
+        if (player.getTemporaryAttribute("OLM_BURN_EFFECT") != null)
             return;
         if (wasSpread)
             player.forceText("I will burn with you!");
         player.addEvent(event -> {
-            player.set("OLM_BURN_EFFECT", true);
+            player.putTemporaryAttribute("OLM_BURN_EFFECT", true);
             for (int i = 0; i < 5; i++) {
                 if (!player.getPosition().inBounds(arenaBounds))
                     return;
@@ -835,7 +835,7 @@ public class GreatOlm extends NPCCombat {
                 });
                 event.delay(8);
             }
-            player.remove("OLM_BURN_EFFECT");
+            player.removeTemporaryAttribute("OLM_BURN_EFFECT");
         });
     }
 

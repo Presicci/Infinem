@@ -169,20 +169,20 @@ public enum Flatpack {
 
     private static void openCategory(Player p, Flatpack[] set) {
         int count = 1;
-        int maxLevel = p.get("WORKBENCH_LEVEL", 1);
+        int maxLevel = p.getTemporaryAttributeOrDefault("WORKBENCH_LEVEL", 1);
         for (Flatpack flatpack :  set) {
             if (flatpack.getBuildable().getLevelReq() > maxLevel)
                 break;
             p.getPacketSender().sendClientScript(1404, "iiisi", count++, flatpack.getBuildable().getItemId(), flatpack.getBuildable().getLevelReq(), flatpack.getBuildable().getCreationMenuString(), flatpack.getBuildable().hasLevelAndMaterials(p) || p.isAdmin() ? 1 : 0);
         }
         p.getPacketSender().sendClientScript(1406, "ii", count - 1, 0);
-        p.set("FLATPACK_SET", set);
+        p.putTemporaryAttribute("FLATPACK_SET", set);
         p.openInterface(InterfaceType.MAIN, Interface.CONSTRUCTION_FURNITURE_CREATION);
     }
 
     public static void make(Player player, int slot) {
-        Flatpack[] set = player.get("FLATPACK_SET");
-        int maxLevel = player.get("WORKBENCH_LEVEL", 1);
+        Flatpack[] set = player.getTemporaryAttribute("FLATPACK_SET");
+        int maxLevel = player.getTemporaryAttributeOrDefault("WORKBENCH_LEVEL", 1);
         player.closeInterfaces();
         if (set == null || maxLevel == 1 || slot < 1 || slot > set.length) {
             return;

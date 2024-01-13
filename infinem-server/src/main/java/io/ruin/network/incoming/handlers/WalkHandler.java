@@ -45,7 +45,7 @@ public class WalkHandler implements Incoming {
         int y = in.readLEShortA();
 
         if (player.isAdmin() || World.isDev()) {
-            NPC npc = player.get("CONTROLLING_NPC");
+            NPC npc = player.getTemporaryAttribute("CONTROLLING_NPC");
             if (npc != null) {
                 if (type == 2) {
                     npc.getMovement().teleport(x,y, player.getHeight());

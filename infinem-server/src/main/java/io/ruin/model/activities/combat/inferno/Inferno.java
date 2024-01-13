@@ -394,7 +394,7 @@ public class Inferno {
     }
 
     private void registerNPC(NPC npc, boolean attackTarget) {
-        npc.set("INFERNO", this);
+        npc.putTemporaryAttribute("INFERNO", this);
         npc.getCombat().setAllowRespawn(false);
         npc.deathEndListener = (DeathListener.Simple) () -> handleDeath(npc);
         npc.targetPlayer(player, false);
@@ -438,7 +438,7 @@ public class Inferno {
     }
 
     public static Inferno getInstance(NPC npc) {
-        return npc.get("INFERNO");
+        return npc.getTemporaryAttribute("INFERNO");
     }
 
     /**

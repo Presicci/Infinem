@@ -81,7 +81,7 @@ public class VanguardsChamber extends Chamber {
                 for (NPC vanguard : vanguards) {
                     if (vanguard.isRemoved() || vanguard.getCombat().isDead())
                         continue;
-                    vanguard.set("VANGUARD_ORIGINAL_ID", vanguard.getId());
+                    vanguard.putTemporaryAttribute("VANGUARD_ORIGINAL_ID", vanguard.getId());
                     vanguard.getCombat().reset();
                     vanguard.lock(LockType.FULL_NULLIFY_DAMAGE);
                     vanguard.animate(vanguard.getCombat().getInfo().death_animation);
@@ -103,7 +103,7 @@ public class VanguardsChamber extends Chamber {
                 for (NPC vanguard : vanguards) {
                     if (vanguard.isRemoved() || vanguard.getCombat().isDead())
                         continue;
-                    vanguard.transform(vanguard.get("VANGUARD_ORIGINAL_ID", 0));
+                    vanguard.transform(vanguard.getTemporaryAttributeOrDefault("VANGUARD_ORIGINAL_ID", 0));
                     vanguard.animate(vanguard.getCombat().getInfo().spawn_animation);
                     vanguard.unlock();
                 }

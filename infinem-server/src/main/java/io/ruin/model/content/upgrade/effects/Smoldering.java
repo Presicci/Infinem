@@ -17,15 +17,15 @@ public class Smoldering extends ItemUpgrade {
 
     @Override
     public void preTargetDefend(Player player, Entity target, Item item, Hit hit) {
-        if (target != null && target.npc != null && target.get("FIRE_ASPECT") == null && Random.rollDie(10)) {
+        if (target != null && target.npc != null && target.getTemporaryAttribute("FIRE_ASPECT") == null && Random.rollDie(10)) {
             World.startEvent(e -> {
                 target.graphics(453);
-                target.set("FIRE_ASPECT", true);
+                target.putTemporaryAttribute("FIRE_ASPECT", true);
                 for (int cycles = 0; cycles < 3; cycles++) {
                     target.hit(new Hit().fixedDamage(2));
                     e.delay(2);
                 }
-                target.remove("FIRE_ASPECT");
+                target.removeTemporaryAttribute("FIRE_ASPECT");
             });
         }
     }

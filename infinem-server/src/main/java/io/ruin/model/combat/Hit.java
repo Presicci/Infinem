@@ -375,7 +375,7 @@ public class Hit {
 		// Applied after the damage is set to the players health because thats how its done in osrs
 		if (target.player != null
 				&& Config.NMZ_ABSORPTION.get(target.player) > 0
-				&& target.player.get("nmz") != null
+				&& target.player.getTemporaryAttribute("nmz") != null
 				&& !absorptionIgnored) {
 			if (damage > target.getHp())
 				Config.NMZ_ABSORPTION.increment(target.player, -target.getHp());

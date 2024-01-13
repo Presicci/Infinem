@@ -116,7 +116,7 @@ public abstract class Chamber {
 
     public NPC spawnNPC(int id, int localX, int localY, Direction face, int walkRange) {
         NPC npc = new NPC(id);
-        npc.set("RAID_CHAMBER", this);
+        npc.putTemporaryAttribute("RAID_CHAMBER", this);
         Position spawnPosition = basePosition.relative(rotatedX(getTileSize(), localX, localY, npc.getSize(), npc.getSize(), 0), // direction is irrelevant here since npcs are always square
                 rotatedY(getTileSize(), localX, localY, npc.getSize(), npc.getSize(), 0));
         npc.spawn(spawnPosition.getX(), spawnPosition.getY(), spawnPosition.getZ(), rotatedDir(face), walkRange);

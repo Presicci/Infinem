@@ -27,7 +27,7 @@ public class Dream extends Spell {
                 player.sendMessage("You have no need to cast this spell since your hitpoints are already full.");
                 return;
             }
-            if (player.get("nmz") != null) {
+            if (player.getTemporaryAttribute("nmz") != null) {
                 player.sendMessage("You cannot perform Inception here.");
                 return;
             }

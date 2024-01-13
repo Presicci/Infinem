@@ -43,14 +43,14 @@ public class OublietteRoom extends DungeonGuardedRoom {
                 for (int x = getBaseAbsolutePosition().getX() + 2; x <= getBaseAbsolutePosition().getX() + 5; x++) {
                     for (int y = getBaseAbsolutePosition().getY() + 2; y <= getBaseAbsolutePosition().getY() + 5; y++) {
                         Tile.get(x,y,getChunkZ(), true).addLazyPlayerTrigger(p -> {
-                            if (p.get("TENTACLE_POOL") == null) {
-                                p.set("TENTACLE_POOL", Boolean.TRUE);
+                            if (p.getTemporaryAttribute("TENTACLE_POOL") == null) {
+                                p.putTemporaryAttribute("TENTACLE_POOL", Boolean.TRUE);
                                 p.getAppearance().setCustomRenders(Renders.SWIM);
                                 p.addEvent(event -> {
                                     while (p.getPosition().inBounds(cageBounds))
                                         event.delay(1);
                                     p.getAppearance().removeCustomRenders();
-                                    p.remove("TENTACLE_POOL");
+                                    p.removeTemporaryAttribute("TENTACLE_POOL");
                                 });
                             }
                         });
@@ -61,14 +61,14 @@ public class OublietteRoom extends DungeonGuardedRoom {
                 for (int x = getBaseAbsolutePosition().getX() + 2; x <= getBaseAbsolutePosition().getX() + 5; x++) {
                     for (int y = getBaseAbsolutePosition().getY() + 2; y <= getBaseAbsolutePosition().getY() + 5; y++) {
                         Tile.get(x,y,getChunkZ(), true).addLazyPlayerTrigger(p -> {
-                            if (p.get("FLAME_PIT_ACTIVE") == null) {
-                                p.set("FLAME_PIT_ACTIVE", Boolean.TRUE);
+                            if (p.getTemporaryAttribute("FLAME_PIT_ACTIVE") == null) {
+                                p.putTemporaryAttribute("FLAME_PIT_ACTIVE", Boolean.TRUE);
                                 p.addEvent(event -> {
                                     while (Tile.getObject(13337, p.getAbsX(), p.getAbsY(), p.getHeight(), 10, -1) != null) {
                                         p.hit(new Hit().randDamage(1, 3));
                                         event.delay(1);
                                     }
-                                    p.remove("FLAME_PIT_ACTIVE");
+                                    p.removeTemporaryAttribute("FLAME_PIT_ACTIVE");
                                 });
                             }
                         });

@@ -828,23 +828,23 @@ public enum Buildable {
         player.getPacketSender().sendClientScript(1406, "ii", count - 1, allowHotkeys ? 0 : 1);
         player.getPacketSender().sendAccessMask(458, 2, 1, count - 1, 1);
         player.getPacketSender().sendClientScript(2157, "");
-        player.set("BUILD_INTER_ROOM", room);
-        player.set("BUILD_INTER_INDEX", hotspotIndex);
-        player.set("BUILD_INTER_BUILDABLES", buildables);
+        player.putTemporaryAttribute("BUILD_INTER_ROOM", room);
+        player.putTemporaryAttribute("BUILD_INTER_INDEX", hotspotIndex);
+        player.putTemporaryAttribute("BUILD_INTER_BUILDABLES", buildables);
     }
 
     private static void build(Player player, int slot) {
-        Room room = player.get("BUILD_INTER_ROOM");
-        int index = player.get("BUILD_INTER_INDEX",-1);
+        Room room = player.getTemporaryAttribute("BUILD_INTER_ROOM");
+        int index = player.getTemporaryAttributeOrDefault("BUILD_INTER_INDEX",-1);
         if (room == null || index == -1) {
-            if (player.get("FLATPACK_SET") != null) {
+            if (player.getTemporaryAttribute("FLATPACK_SET") != null) {
                 Flatpack.make(player, slot);
             } else if (ChambersOfXeric.isRaiding(player)) {
                 RaidStorage.selectStorageToBuild(player, slot);
             }
             return;
         }
-        Buildable[] array = player.get("BUILD_INTER_BUILDABLES");
+        Buildable[] array = player.getTemporaryAttribute("BUILD_INTER_BUILDABLES");
         if (slot < 1 || slot > array.length)
             return;
         room.buildObject(player, index, array[slot - 1]);
@@ -866,10 +866,10 @@ public enum Buildable {
         InterfaceHandler.register(Interface.CONSTRUCTION_FURNITURE_CREATION, handler -> {
             handler.actions[2] = (SlotAction) Buildable::build;
             handler.closedAction = (player, integer) -> {
-                player.remove("BUILD_INTER_ROOM");
-                player.remove("BUILD_INTER_INDEX");
-                player.remove("BUILD_INTER_BUILDABLES");
-                player.remove("FLATPACK_SET");
+                player.removeTemporaryAttribute("BUILD_INTER_ROOM");
+                player.removeTemporaryAttribute("BUILD_INTER_INDEX");
+                player.removeTemporaryAttribute("BUILD_INTER_BUILDABLES");
+                player.removeTemporaryAttribute("FLATPACK_SET");
                 player.getPacketSender().sendClientScript(2158, "");
             };
         });

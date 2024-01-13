@@ -61,13 +61,13 @@ public class JalZek extends NPCCombat { // Mage
             event.delay(6);
             if (possibleReviveTargetsCount() <= 0)
                 return;
-            NPC corpse = Random.get(map.getNpcs().stream().filter(n -> n.getCombat().isDead() && n.get("ZEK_REVIVE") == null).collect(Collectors.toList()));
+            NPC corpse = Random.get(map.getNpcs().stream().filter(n -> n.getCombat().isDead() && n.getTemporaryAttribute("ZEK_REVIVE") == null).collect(Collectors.toList()));
             corpse.getPosition().set(map.convertX(2270), map.convertY(5344));
             corpse.getCombat().restore();
             corpse.setHp(corpse.getHp() / 2);
             corpse.getCombat().setDead(false);
             corpse.setHidden(false);
-            corpse.set("ZEK_REVIVE", Boolean.TRUE);
+            corpse.putTemporaryAttribute("ZEK_REVIVE", Boolean.TRUE);
             corpse.unlock();
             event.delay(10);
             corpse.attackTargetPlayer();
@@ -78,7 +78,7 @@ public class JalZek extends NPCCombat { // Mage
         DynamicMap map = Inferno.getInstance(npc).getMap();
         if (map == null)
             return 0;
-        return (int) map.getNpcs().stream().filter(n -> n.getCombat().isDead() && n.get("ZEK_REVIVE") == null).count();
+        return (int) map.getNpcs().stream().filter(n -> n.getCombat().isDead() && n.getTemporaryAttribute("ZEK_REVIVE") == null).count();
     }
 
 }

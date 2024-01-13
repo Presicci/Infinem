@@ -34,7 +34,7 @@ public class AchievementGallery {
                 BOX_NAMES[level - 1] + " Jewellery Box",
                 15 // toggling bits in this parameter "unlocks" certain restricted teleports like tears of guthix, by default we just unlock them all
         );
-        player.set("JEWBOX_LEVEL", level);
+        player.putTemporaryAttribute("JEWBOX_LEVEL", level);
     }
 
     static {
@@ -106,8 +106,8 @@ public class AchievementGallery {
                     p.closeInterfaces();
                     if (slot < 0 || slot >= values().length)
                         return;
-                    int level = p.get("JEWBOX_LEVEL", 1);
-                    p.remove("JEWBOX_LEVEL");
+                    int level = p.getTemporaryAttributeOrDefault("JEWBOX_LEVEL", 1);
+                    p.removeTemporaryAttribute("JEWBOX_LEVEL");
                     if ((slot >= 8 && level < 2)
                             || (slot >= 17 && level < 3)) // anti-cheaters i guess...
                         return;

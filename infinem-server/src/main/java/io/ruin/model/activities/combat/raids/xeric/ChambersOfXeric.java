@@ -184,7 +184,7 @@ public class ChambersOfXeric {
     }
 
     public static int getPartySize(NPC npc) {
-        Chamber chamber = npc.get("RAID_CHAMBER");
+        Chamber chamber = npc.getTemporaryAttribute("RAID_CHAMBER");
         if (chamber == null)
             return 1;
         return chamber.getRaid().getPartySize();
@@ -857,7 +857,7 @@ public class ChambersOfXeric {
     public static void addDamagePoints(Player player, NPC target, int points) {
         if (!isRaiding(player))
             return;
-        if (target.get("RAID_NO_POINTS") != null)
+        if (target.getTemporaryAttribute("RAID_NO_POINTS") != null)
             return;
         if (target.getId() == 7548 || target.getId() == 7549) // scavengers
             points /= 4;

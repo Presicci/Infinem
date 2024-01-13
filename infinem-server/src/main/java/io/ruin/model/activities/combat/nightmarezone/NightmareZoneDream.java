@@ -60,7 +60,7 @@ public final class NightmareZoneDream {
 
     public void enter() {
         Config.NMZ_POINTS.set(player, 0);
-        player.set("nmz", this);
+        player.putTemporaryAttribute("nmz", this);
         prepareMap();
 
         World.startEvent(event -> {
@@ -137,7 +137,7 @@ public final class NightmareZoneDream {
             player.sendMessage(Color.DARK_GREEN.wrap("You have earned " + NumberUtils.formatNumber(rewardPointsGained) + " reward points. New total: " + NumberUtils.formatNumber(Config.NMZ_REWARD_POINTS_TOTAL.get(player) + rewardPointsGained)));
         }
         Config.NMZ_REWARD_POINTS_TOTAL.increment(player, rewardPointsGained);
-        player.set("nmz", null);
+        player.putTemporaryAttribute("nmz", null);
         player.teleportListener = null;
         player.deathEndListener = null;
         potCleanup(player);
@@ -166,7 +166,7 @@ public final class NightmareZoneDream {
     static {
         ObjectAction.register(26276, 1, (player, obj) -> {
             player.getMovement().teleport(EXIT);
-            NightmareZoneDream dream = player.get("nmz");
+            NightmareZoneDream dream = player.getTemporaryAttribute("nmz");
             dream.leave();
         });
     }

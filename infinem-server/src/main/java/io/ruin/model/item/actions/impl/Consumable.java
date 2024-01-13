@@ -1007,7 +1007,7 @@ public class Consumable {
             return false;
         }
         boolean isNMZ = potion == Potion.SUPER_RANGING || potion == Potion.ABSORPTION || potion == Potion.SUPER_MAGIC || potion == Potion.OVERLOAD_NMZ;
-        if (isNMZ && player.get("nmz") == null) {
+        if (isNMZ && player.getTemporaryAttribute("nmz") == null) {
             player.sendMessage("You can only drink this potion while dreaming.");
             return false;
         }
@@ -1047,12 +1047,12 @@ public class Consumable {
                 event.delay(2);
             }
             if (potion == Potion.OVERLOAD_NMZ) {
-                if (player.get("nmz") == null) {
+                if (player.getTemporaryAttribute("nmz") == null) {
                     player.sendMessage("You can only drink overload potions while dreaming.");
                     return;
                 }
                 for (int i = 0; i < 20; i++) {
-                    if (player.get("nmz") == null) {
+                    if (player.getTemporaryAttribute("nmz") == null) {
                         player.sendMessage("Your overload boost has worn off.");
                         player.overloadBoostActive = false;
                         player.getStats().get(StatType.Attack).restore();
