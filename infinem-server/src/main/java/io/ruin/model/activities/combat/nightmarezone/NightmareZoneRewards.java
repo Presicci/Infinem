@@ -11,6 +11,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class NightmareZoneRewards {
 
@@ -79,14 +80,11 @@ public class NightmareZoneRewards {
 
     public static void purchaseBenefit(Player player, int id, int amount) {
         NMZBenefits benefit = NMZBenefits.getBenefits(id);
-        if (amount > 5)
-            amount = player.getInventory().getFreeSlots();
-        if (amount < 0)
-            amount = player.getInventory().getFreeSlots();
         if (benefit == null) {
             player.sendMessage("This item currently cannot be purchased, if this is a mistake, please contact staff.");
             return;
         }
+        int storedAmount = benefit.getConfig().get(player);
         String name = new Item(id).getDef().name;
         int points = Config.NMZ_REWARD_POINTS_TOTAL.get(player);
         if (points < amount * benefit.getPrice())
@@ -95,15 +93,15 @@ public class NightmareZoneRewards {
             player.sendMessage("You must have at least " + NumberUtils.formatNumber(benefit.getPrice()) + " NMZ Points to purchase " + name);
             return;
         }
-        if (new Item(id).noteable() && amount > player.getInventory().getFreeSlots())
-            amount = player.getInventory().getFreeSlots();
-        if (player.getInventory().getFreeSlots() < 1) {
-            player.sendMessage("You currently have no space in your inventory.");
+        if (storedAmount >= 255) {
+            player.sendMessage("You already have the maximum potion doses stored.");
             return;
         }
+        if (amount + storedAmount > 255) {
+            amount = 255 - storedAmount;
+        }
         Config.NMZ_REWARD_POINTS_TOTAL.increment(player, -(benefit.getPrice() * amount));
-        player.getInventory().add(new Item(id - 3, amount).note());
-        //player.sendMessage("You now have " + benefit.getConfig().increment(player, amount) + " doses of " + name.split(Pattern.quote("("))[0].trim() + ".");
+        player.sendMessage("You now have " + benefit.getConfig().increment(player, amount) + " doses of " + name.split(Pattern.quote("("))[0].trim() + ".");
         refresh(player);
     }
 
