@@ -61,9 +61,9 @@ public class TargetOverlay extends JournalEntry {
             if(player.targetOverlayResetTicks < 0) {
                 player.targetOverlayResetTicks = 0;
                 if(target.player != null)
-                    player.getPacketSender().sendString(596, 6, target.player.getName());
+                    player.getPacketSender().sendString(596, 5, target.player.getName());
                 else
-                    player.getPacketSender().sendString(596, 6, target.npc.getDef().name);
+                    player.getPacketSender().sendString(596, 5, target.npc.getDef().name);
             }
             if(Server.isPast(target.hitsUpdate.removeAt)) {
                 Config.TARGET_OVERLAY_CUR.set(player, target.getHp());
