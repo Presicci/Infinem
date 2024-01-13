@@ -6,6 +6,8 @@ import io.ruin.cache.Color;
 import io.ruin.model.World;
 import io.ruin.model.activities.combat.raids.tob.dungeon.RoomType;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.killcount.BossKillCounter;
+import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
@@ -194,7 +196,7 @@ public final class TheatrePartyManager {
         .append(member.getStats().get(StatType.Defence).fixedLevel).append(SEPERATOR)
         .append(member.getStats().get(StatType.Hitpoints).fixedLevel).append(SEPERATOR)
         .append(member.getStats().get(StatType.Prayer).fixedLevel).append(SEPERATOR)
-        .append(member.theatreOfBloodCompleted).append(SEPERATOR)
+        .append(KillCounter.getKillCount(member, BossKillCounter.TOB)).append(SEPERATOR)
         .toString();
     }
 
@@ -214,7 +216,7 @@ public final class TheatrePartyManager {
         .append(member.getStats().get(StatType.Defence).fixedLevel).append(SEPERATOR)
         .append(member.getStats().get(StatType.Hitpoints).fixedLevel).append(SEPERATOR)
         .append(member.getStats().get(StatType.Prayer).fixedLevel).append(SEPERATOR)
-        .append(member.theatreOfBloodCompleted).append(SEPERATOR)
+        .append(KillCounter.getKillCount(member, BossKillCounter.TOB)).append(SEPERATOR)
         .toString();
     }
 

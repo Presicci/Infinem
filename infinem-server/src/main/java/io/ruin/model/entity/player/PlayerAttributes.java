@@ -68,7 +68,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public XpMode xpMode = XpMode.MEDIUM;
 
-    @Expose public int theatreOfBloodCompleted;
     public int viewingTheatreSlot;
     @Expose @Setter @Getter public boolean acceptedTheatreRisk;
     @Expose @Setter @Getter public boolean acceptedTheatreCrystals;
