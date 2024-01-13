@@ -78,8 +78,8 @@ public class NightmareZoneRewards {
         refresh(player);
     }
 
-    public static void purchaseBenefit(Player player, int id, int amount) {
-        NMZBenefits benefit = NMZBenefits.getBenefits(id);
+    public static void purchasePotion(Player player, int id, int amount) {
+        NMZPotion benefit = NMZPotion.getBenefits(id);
         if (benefit == null) {
             player.sendMessage("This item currently cannot be purchased, if this is a mistake, please contact staff.");
             return;
@@ -132,7 +132,7 @@ public class NightmareZoneRewards {
             for (NMZResource resource : NMZResource.values()) {
                 upgradables.add( new Item(resource.id,resource.price));
             }
-            for (NMZBenefits benefits : NMZBenefits.values()) {
+            for (NMZPotion benefits : NMZPotion.values()) {
                 upgradables.add( new Item(benefits.getId(),benefits.getPrice()));
             }
             player.getPacketSender().sendItems(-1, 4, 464, upgradables.toArray(new Item[0]));
@@ -164,15 +164,15 @@ public class NightmareZoneRewards {
             }
         } else if (childId == 6)
             if (option == 1) {
-                purchaseBenefit(player, itemId, 1);
+                purchasePotion(player, itemId, 1);
             } else if (option == 2) {
-                purchaseBenefit(player, itemId, 5);
+                purchasePotion(player, itemId, 5);
             } else if (option == 3) {
-                purchaseBenefit(player, itemId, 10);
+                purchasePotion(player, itemId, 10);
             } else if (option == 4) {
-                purchaseBenefit(player, itemId, 50);
+                purchasePotion(player, itemId, 50);
             } else if (option == 5) {
-                player.integerInput("How many would you like to purchase?", amt -> purchaseBenefit(player, itemId, amt));
+                player.integerInput("How many would you like to purchase?", amt -> purchasePotion(player, itemId, amt));
             } else {
                 new Item(itemId).examine(player);
             }
