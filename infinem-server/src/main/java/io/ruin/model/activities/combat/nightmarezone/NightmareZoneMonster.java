@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor @Getter
 public enum NightmareZoneMonster {
     TRAPPED_SOUL(8528, 8529, 183, 2301),
+    THE_KENDAL(6383, 6322, 998, 10127),
     COUNT_DRAYNOR(6393, 6332, 224, 7135),
     //CORSAIR_TRAITOR(7949, 7948, 244, 2301), // Corsair Traitor (dontwork)
     SAND_SNAKE(7895, 7894, 244, 5294),

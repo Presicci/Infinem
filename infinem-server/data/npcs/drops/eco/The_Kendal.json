@@ -1,9 +1,8 @@
 [
   {
-    "ids": [ 1377, 1378, 6383 ],
+    "ids": [ 1377, 1378, 6322, 6383 ],
     "guaranteed": [
-      { "id": 526, "min": 1, "max": 1 },   //Bones
-      { "id": 4502, "min": 1, "max": 1 }   //Bearhead
+      { "id": 526, "min": 1, "max": 1 }   //Bones
     ]
   }
 ]
