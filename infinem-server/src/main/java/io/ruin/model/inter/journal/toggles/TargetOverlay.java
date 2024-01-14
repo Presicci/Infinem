@@ -12,11 +12,11 @@ public class TargetOverlay extends JournalEntry {
 
     @Override
     public void send(Player player) {
-        if(player.targetOverlaySetting == 3)
+        if(player.getAttributeIntOrZero("TARGET_OVERLAY") == 3)
             send(player, "Target Overlay", "PvP & PvM", Color.GREEN);
-        else if(player.targetOverlaySetting == 2)
+        else if(player.getAttributeIntOrZero("TARGET_OVERLAY") == 2)
             send(player, "Target Overlay", "PvM", Color.GREEN);
-        else if(player.targetOverlaySetting == 1)
+        else if(player.getAttributeIntOrZero("TARGET_OVERLAY") == 1)
             send(player, "Target Overlay", "PvP", Color.GREEN);
         else
             send(player, "Target Overlay", "Disabled", Color.RED);
@@ -24,8 +24,9 @@ public class TargetOverlay extends JournalEntry {
 
     @Override
     public void select(Player player) {
-        if(++player.targetOverlaySetting > 3)
-            player.targetOverlaySetting = 0;
+        int setting = player.incrementNumericAttribute("TARGET_OVERLAY", 1);
+        if(setting > 3)
+            player.putAttribute("TARGET_OVERLAY", 0);
         set(player, player.getCombat().getTarget());
         send(player);
     }
@@ -83,11 +84,11 @@ public class TargetOverlay extends JournalEntry {
     }
 
     private static boolean isEnabled(Player player, Entity target) {
-        if(player.targetOverlaySetting == 3)
+        if(player.getAttributeIntOrZero("TARGET_OVERLAY") == 3)
             return true;
-        if(player.targetOverlaySetting == 2)
+        if(player.getAttributeIntOrZero("TARGET_OVERLAY") == 2)
             return target.npc != null;
-        if(player.targetOverlaySetting == 1)
+        if(player.getAttributeIntOrZero("TARGET_OVERLAY") == 1)
             return target.player != null;
         return false;
     }

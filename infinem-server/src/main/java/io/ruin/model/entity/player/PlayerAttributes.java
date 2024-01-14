@@ -62,7 +62,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public Journal journal = Journal.MAIN;
 
-    @Expose public int targetOverlaySetting = 0;
     public Entity targetOverlayTarget;
     public int targetOverlayResetTicks;
 
