@@ -5,6 +5,8 @@ package io.ruin.model.entity.player;
  * Created on 9/20/2023
  */
 public enum PlayerBoolean {
+    MOTHERLODE_MINE_UPPER,
+    MOTHERLODE_MINE_SACK,
     TAN_SOFT_LEATHER,
     RING_OF_SUFFERING,
     CERBERUS_METAMORPH,

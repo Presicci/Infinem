@@ -109,7 +109,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int cleanedPaydirt;
 
     @Expose public int paydirtInWater;
-    @Expose public boolean motherlodeBiggerSackUnlocked;
 
     // TODO redo these when working on pyramid plunder
     public long lastTimeEnteredPlunder = 0;

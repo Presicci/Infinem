@@ -7,6 +7,7 @@ import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerBoolean;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.shared.StepType;
@@ -147,6 +148,10 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
 
         ObjectAction.register(LADDER, 1, (player, obj) -> {
             if (player.isAt(3755, 5673)) {
+                if (!PlayerBoolean.MOTHERLODE_MINE_UPPER.has(player)) {
+                    player.dialogue(new NPCDialogue(6562, "Ye gotta pay to access that. 200 nuggets it'll cost ye."));
+                    return;
+                }
                 if (player.getStats().get(StatType.Mining).fixedLevel < 72) {
                     player.dialogue(new NPCDialogue(6562, "Ye'll need level 72 Mining first. An' don't think ye can<br>fool me with yer potions and fancy stat-boosts. Get yer<br>level up for real."));
                 } else {
@@ -410,7 +415,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
             player.dialogue(new ItemDialogue().one(PAY_DIRT, "You don't have any pay-dirt to put in the hopper."));
             return;
         }
-        if (Config.PAY_DIRT_IN_SACK.get(player) >= (player.motherlodeBiggerSackUnlocked ? 162 : 81)) {
+        if (Config.PAY_DIRT_IN_SACK.get(player) >= (PlayerBoolean.MOTHERLODE_MINE_SACK.has(player) ? 162 : 81)) {
             player.sendMessage("The sack cannot hold any more ore.");
             return;
         }
@@ -448,7 +453,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
             Config.PAY_DIRT_IN_SACK.set(player, Config.PAY_DIRT_IN_SACK.get(player) + amount);
             player.paydirtInWater -= amount;
             paydirt.remove();
-            if (Config.PAY_DIRT_IN_SACK.get(player) >= (player.motherlodeBiggerSackUnlocked ? 162 : 81)) {
+            if (Config.PAY_DIRT_IN_SACK.get(player) >= (PlayerBoolean.MOTHERLODE_MINE_SACK.has(player) ? 162 : 81)) {
                 player.sendMessage("The sack is getting full.");
             }
         });
