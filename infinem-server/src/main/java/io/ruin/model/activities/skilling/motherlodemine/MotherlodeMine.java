@@ -428,7 +428,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
             player.animate(832);
             event.delay(1);
             int amount = player.getInventory().remove(PAY_DIRT, 28);
-            player.paydirtInWater += amount;
+            player.incrementNumericAttribute("PAYDIRT_W", amount);
             sendPaydirt(player, amount);
             player.unlock();
         });
@@ -451,7 +451,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                 event.delay(1);
             }
             Config.PAY_DIRT_IN_SACK.set(player, Config.PAY_DIRT_IN_SACK.get(player) + amount);
-            player.paydirtInWater -= amount;
+            player.incrementNumericAttribute("PAYDIRT_W", -amount);
             paydirt.remove();
             if (Config.PAY_DIRT_IN_SACK.get(player) >= (PlayerBoolean.MOTHERLODE_MINE_SACK.has(player) ? 162 : 81)) {
                 player.sendMessage("The sack is getting full.");

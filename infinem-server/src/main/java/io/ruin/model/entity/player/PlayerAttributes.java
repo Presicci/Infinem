@@ -102,14 +102,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public ClueSave eliteClue;
     @Expose public ClueSave masterClue;
 
-
-    /**
-     * Motherlode mine
-     */
-    @Expose public int cleanedPaydirt;
-
-    @Expose public int paydirtInWater;
-
     // TODO redo these when working on pyramid plunder
     public long lastTimeEnteredPlunder = 0;
     public boolean disarmedPlunderRoomTrap = false;
