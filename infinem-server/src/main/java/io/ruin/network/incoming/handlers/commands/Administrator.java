@@ -2009,10 +2009,6 @@ public class Administrator {
             case "tp":
             case "tele":
             case "teleport": {
-                if(args == null || args.length == 0) {
-                    player.getTeleports().sendInterface();
-                    return true;
-                }
                 int x, y, z;
                 try {
                     x = Integer.parseInt(args[0]);
@@ -2220,10 +2216,6 @@ public class Administrator {
                     }
                     player.sendMessage("Finished.");
                 });
-                return true;
-            }
-            case "teleports": {
-                player.getTeleports().sendInterface();
                 return true;
             }
             case "upgrade": {

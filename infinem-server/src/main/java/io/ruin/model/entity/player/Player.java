@@ -39,7 +39,6 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.handlers.MusicPlayer;
-import io.ruin.model.inter.handlers.TeleportInterface;
 import io.ruin.model.inter.journal.presets.PresetCustom;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
@@ -1260,11 +1259,6 @@ public class Player extends PlayerAttributes {
             tradePost = new TradePost();
         }
         tradePost.init(player);
-
-        if (teleports == null) {
-            teleports = new TeleportInterface();
-        }
-        teleports.setPlayer(this);
 
         if (upgradeMachine == null) {
             upgradeMachine = new UpgradeMachine();

@@ -23,7 +23,6 @@ import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.inter.handlers.OptionScroll;
-import io.ruin.model.inter.handlers.TeleportInterface;
 import io.ruin.model.inter.journal.Journal;
 import io.ruin.model.inter.journal.JournalEntry;
 import io.ruin.model.inter.journal.presets.Preset;
@@ -804,9 +803,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int cannonBallsLoaded;
 
     @Expose public boolean bountyHunterOverlay = true;
-
-    @Expose @Getter
-    public TeleportInterface teleports;
 
     @Expose @Getter
     public UpgradeMachine upgradeMachine;
