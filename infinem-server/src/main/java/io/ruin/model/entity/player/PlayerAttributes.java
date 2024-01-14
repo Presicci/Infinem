@@ -811,14 +811,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose @Getter
     public UpgradeMachine upgradeMachine;
 
-    /*  Stronghold of Security  */
-    @Expose public boolean[] strongholdRewards = { false, false, false, false };
-
-    @Expose @Getter @Setter public int collection_log_current_entry = 0;
-    @Expose @Getter @Setter public int collection_log_current_struct = 471;//471-475
-    @Expose @Getter @Setter public int collection_log_current_tab = 0;
-    @Expose @Getter @Setter public int[] collection_log_current_params = player.getCollectionLog().bossParams;
-
     @Expose @Getter @Setter protected Birdhouse birdhouse;
 
     @Expose @Getter @Setter private boolean tanSoftLeather = true;

@@ -32,11 +32,11 @@ public class StrongholdSecurity {
     }
 
     private static void giftOfPeace(Player player) {
-        if (player.strongholdRewards[0]) {
+        if (player.getAttributeIntOrZero("SHOS") >= 1) {
             player.sendMessage("You have already claimed this gift.");
         } else {
             if (player.getInventory().getCapacityFor(995) > 2000) {
-                player.strongholdRewards[0] = true;
+                player.putAttribute("SHOS", 1);
                 player.getInventory().add(995, 2000);
                 player.dialogue(
                         new MessageDialogue("The box hinges creak and appear to be forming audible words..."),
@@ -51,11 +51,11 @@ public class StrongholdSecurity {
     }
 
     private static void grainOfPlenty(Player player) {
-        if (player.strongholdRewards[1]) {
+        if (player.getAttributeIntOrZero("SHOS") >= 2) {
             player.sendMessage("You have already claimed this gift.");
         } else {
             if (player.getInventory().getCapacityFor(995) > 3000) {
-                player.strongholdRewards[1] = true;
+                player.putAttribute("SHOS", 2);
                 player.getInventory().add(995, 3000);
                 player.dialogue(
                         new MessageDialogue("The grain shifts in the sack, sighing audible words..."),
@@ -70,11 +70,11 @@ public class StrongholdSecurity {
     }
 
     private static void boxOfHealth(Player player) {
-        if (player.strongholdRewards[2]) {
+        if (player.getAttributeIntOrZero("SHOS") >= 3) {
             player.sendMessage("You have already claimed this gift.");
         } else {
             if (player.getInventory().getCapacityFor(995) > 5000) {
-                player.strongholdRewards[2] = true;
+                player.putAttribute("SHOS", 3);
                 player.getInventory().add(995, 5000);
                 player.dialogue(
                         new MessageDialogue("The box hinges creak and appear to be forming audible words..."),
@@ -89,7 +89,7 @@ public class StrongholdSecurity {
     }
 
     private static void cradleOfLife(Player player) {
-        if (player.strongholdRewards[3]) {
+        if (player.getAttributeIntOrZero("SHOS") >= 4) {
             ItemContainerG<? extends Item> fancyBootsContainer = player.findItem(Items.FANCY_BOOTS);
             ItemContainerG<? extends Item> fightingBootsContainer = player.findItem(Items.FIGHTING_BOOTS);
             //  Try to swap fancy boots
@@ -145,7 +145,7 @@ public class StrongholdSecurity {
             }
         } else {
             if (player.getInventory().getFreeSlots() > 0) {
-                player.strongholdRewards[3] = true;
+                player.putAttribute("SHOS", 4);
                 player.dialogue(
                         new MessageDialogue("As your hand touches the cradle, you hear a voice in your head of a million dead adventurers..."),
                         new MessageDialogue("...welcome adventurer... you have a choice..."),
@@ -200,7 +200,7 @@ public class StrongholdSecurity {
             player.sendFilteredMessage("You climb the ladder to the surface.");
         });
         ObjectAction.register(20786, 1863, 5238, 0, "use", (player, obj) -> {
-            if (player.strongholdRewards[0]) {
+            if (player.getAttributeIntOrZero("SHOS") >= 1) {
                 player.getMovement().teleport(1914, 5222, 0);
                 player.sendFilteredMessage("You enter the portal to be whisked through to the treasure room.");
             } else {
@@ -208,7 +208,7 @@ public class StrongholdSecurity {
             }
         });
         ObjectAction.register(20785, 1902, 5222, 0, "climb-down", (player, obj) -> {
-            if (player.strongholdRewards[0]) {
+            if (player.getAttributeIntOrZero("SHOS") >= 1) {
                 Ladder.climb(player, 2042, 5245, 0, false, true, false);
                 player.sendFilteredMessage("You climb down the ladder to the next level.");
             } else {
@@ -240,7 +240,7 @@ public class StrongholdSecurity {
             player.sendFilteredMessage("You climb up the ladder to the level above.");
         });
         ObjectAction.register(19005, 2039, 5240, 0, "use", (player, obj) -> {
-            if (player.strongholdRewards[1]) {
+            if (player.getAttributeIntOrZero("SHOS") >= 2) {
                 player.getMovement().teleport(2021, 5223, 0);
                 player.sendFilteredMessage("You enter the portal to be whisked through to the treasure room.");
             } else {
@@ -248,7 +248,7 @@ public class StrongholdSecurity {
             }
         });
         ObjectAction.register(19004, 2026, 5218, 0, "climb-down", (player, obj) -> {
-            if (player.strongholdRewards[1]) {
+            if (player.getAttributeIntOrZero("SHOS") >= 2) {
                 Ladder.climb(player, 2123, 5252, 0, false, true, false);
                 player.sendFilteredMessage("You climb down the ladder to the next level.");
             } else {
@@ -268,7 +268,7 @@ public class StrongholdSecurity {
             player.sendFilteredMessage("You climb up the ladder to the level above.");
         });
         ObjectAction.register(23707, 2120, 5258, 0, "use", (player, obj) -> {
-            if (player.strongholdRewards[2]) {
+            if (player.getAttributeIntOrZero("SHOS") >= 3) {
                 player.getMovement().teleport(2146, 5287, 0);
                 player.sendFilteredMessage("You enter the portal to be whisked through to the treasure room.");
             } else {
@@ -276,7 +276,7 @@ public class StrongholdSecurity {
             }
         });
         ObjectAction.register(23706, 2148, 5284, 0, "climb-down", (player, obj) -> {
-            if (player.strongholdRewards[2]) {
+            if (player.getAttributeIntOrZero("SHOS") >= 3) {
                 Ladder.climb(player, 2358, 5215, 0, false, true, false);
                 player.sendFilteredMessage("You climb down the ladder to the next level.");
             } else {
@@ -292,7 +292,7 @@ public class StrongholdSecurity {
             player.sendFilteredMessage("You climb up the ladder to the level above.");
         });
         ObjectAction.register(23922, 2365, 5212, 0, "use", (player, obj) -> {
-            if (player.strongholdRewards[3]) {
+            if (player.getAttributeIntOrZero("SHOS") >= 4) {
                 player.getMovement().teleport(2341, 5219, 0);
                 player.sendFilteredMessage("You enter the portal to be whisked through to the treasure room.");
             } else {
