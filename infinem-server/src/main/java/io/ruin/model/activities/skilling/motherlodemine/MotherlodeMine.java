@@ -485,7 +485,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
             fixWheel(wheel, strut);
             /* add event for it to break again later */
             World.startEvent(worldEvent -> {
-                worldEvent.delay(100);
+                worldEvent.delay(Random.get(150, 350));
                 breakWheel(wheel, strut);
             });
         });
