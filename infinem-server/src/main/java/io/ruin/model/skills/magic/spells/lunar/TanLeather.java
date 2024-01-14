@@ -1,5 +1,6 @@
 package io.ruin.model.skills.magic.spells.lunar;
 
+import io.ruin.model.entity.player.PlayerBoolean;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
@@ -72,7 +73,7 @@ public class TanLeather extends Spell {
                         leather = leather.subList(0, 5);
                     }
                     leather.forEach(item -> item.setId(
-                            Leather.forId(item.getId()) == Leather.COWHIDE ? (p.isTanSoftLeather() ? Items.LEATHER : Items.HARD_LEATHER) : Leather.forId(item.getId()).leather)
+                            Leather.forId(item.getId()) == Leather.COWHIDE ? (PlayerBoolean.TAN_SOFT_LEATHER.has(p) ? Items.LEATHER : Items.HARD_LEATHER) : Leather.forId(item.getId()).leather)
                     );
                     event.delay(3);
                     p.unlock();
@@ -81,8 +82,8 @@ public class TanLeather extends Spell {
             } else {
                 p.dialogue(
                         new OptionsDialogue("Tan cowhide into...",
-                                new Option("Soft leather", () -> p.setTanSoftLeather(true)),
-                                new Option("Hard leather", () -> p.setTanSoftLeather(false))
+                                new Option("Soft leather", () -> PlayerBoolean.TAN_SOFT_LEATHER.setTrue(p)),
+                                new Option("Hard leather", () -> PlayerBoolean.TAN_SOFT_LEATHER.setFalse(p))
                         )
                 );
                 return false;

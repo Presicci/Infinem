@@ -813,8 +813,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose @Getter @Setter protected Birdhouse birdhouse;
 
-    @Expose @Getter @Setter private boolean tanSoftLeather = true;
-
     @Getter @Setter private boolean dreaming = false;
 
     @Expose @Getter private final Set<Integer> SpokenToNPCSet = new HashSet<>();
