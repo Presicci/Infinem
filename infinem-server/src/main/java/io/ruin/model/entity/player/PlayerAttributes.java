@@ -787,8 +787,6 @@ public abstract class PlayerAttributes extends Entity {
     public Tournament tournament;
     public TournamentFightPair tournamentFight;
 
-    @Expose public int mysteriousStrangerVarp;
-
     @Expose public Cannon cannon;
     @Expose public Position cannonPosition;
     @Expose public int cannonBallsLoaded;

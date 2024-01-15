@@ -17,7 +17,7 @@ object MysteriousStranger {
 
     init {
         whenNpcClick(ID, 1) { player, npc ->
-            if (player.mysteriousStrangerVarp.and(1.shl(1)) == 0) {
+            if (player.getAttributeIntOrZero("MYS_STRANGER").and(1.shl(1)) == 0) {
                 player.talkAboutVerzik(npc)
             } else {
                 player.talkTo(npc)
@@ -42,7 +42,7 @@ object MysteriousStranger {
         chat("So you just need me to embarass her? Doesn't sound too bad.")
         npc.chat("Be aware, this will be no easy challenge. I doubt you'll succeed alone. However, the vampyres will let you enter in a group of up to five. I suggest you take advantage of this.")
         npc.chat("You can use the notice board to find suitable allies with whom to enter the Theatre.")
-        mysteriousStrangerVarp = mysteriousStrangerVarp.or(1.shl(1))
+        putAttribute("MYS_STRANGER", getAttributeIntOrZero("MYS_STRANGER").or(1.shl(1)))
         when(options("Have you any advice to help me?", "Very well, I'll do my best.")) {
             1 -> talkCrystal(npc)
             2 -> chat("Very well, I'll do my best.")
@@ -80,7 +80,7 @@ object MysteriousStranger {
         chat("Have you any advice to help me?")
         npc.chat("Actually, I do. Lady Verzik's magic prevents most forms of teleportation. However, there is a special crystal whose power can overcome the restriction.")
         npc.chat("My associates have... acquired some shards of the crystal; do not ask me how. If you take one into the Theatre, you can use it to teleport out to safety in an emergency.")
-        mysteriousStrangerVarp = mysteriousStrangerVarp.or(1.shl(2))
+        putAttribute("MYS_STRANGER", getAttributeIntOrZero("MYS_STRANGER").or(1.shl(2)))
         //TODO open shop
     }
 
@@ -95,7 +95,7 @@ object MysteriousStranger {
         }
     }
 
-    fun Player.talkedAboutVerzik() = mysteriousStrangerVarp.and(1.shl(1)) != 0
+    fun Player.talkedAboutVerzik() = getAttributeIntOrZero("MYS_STRANGER").and(1.shl(1)) != 0
 
-    private fun Player.talkedAboutCrystal() = mysteriousStrangerVarp.and(1.shl(2)) != 0
+    private fun Player.talkedAboutCrystal() = getAttributeIntOrZero("MYS_STRANGER").and(1.shl(2)) != 0
 }
