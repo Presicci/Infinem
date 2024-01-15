@@ -10,6 +10,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    ELEMENTAL_WORKSHOP_DOWN(3415, new Position(2710, 3497), new Position(2715, 9889, 0)),
+    ELEMENTAL_WORKSHOP_UP(3416, new Position(2714, 9887), new Position(2709, 3498, 0)),
+
     LIGHTHOUSE_BASEMENT_DOWN_1(4543, new Position(2514, 10003), new Position(2515, 10007, 0)),
     LIGHTHOUSE_BASEMENT_DOWN_2(4544, new Position(2515, 10003), new Position(2515, 10007, 0)),
     LIGHTHOUSE_BASEMENT_UP_1(4413, new Position(2515, 10007), new Position(2515, 10002, 0), 828),
