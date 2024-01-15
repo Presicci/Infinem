@@ -15,6 +15,7 @@ import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.Tool;
@@ -283,6 +284,22 @@ public enum SmithBar {
             SmithItem.NONE,
             SmithItem.NONE,
             SmithItem.NONE
+    ),
+
+    /**
+     * Other
+     */
+    ELEMENTAL(
+            Items.ELEMENTAL_METAL, -1,
+            20, 8.0,
+            null,
+            Arrays.asList(new Item(Items.ELEMENTAL_ORE), new Item(Items.COAL, 4))
+    ),
+    MIND(
+            Items.PRIMED_MIND_BAR, -1,
+            30, 24.0,
+            null,
+            Arrays.asList(new Item(Items.ELEMENTAL_ORE), new Item(Items.COAL, 8))
     )
     ;
 
@@ -423,7 +440,6 @@ public enum SmithBar {
                 bestBar = bar;
             }
         }
-        System.out.println(bestBar);
         return bestBar;
     }
 
