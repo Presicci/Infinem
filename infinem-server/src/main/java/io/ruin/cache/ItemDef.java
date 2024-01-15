@@ -347,11 +347,6 @@ public class ItemDef {
             inventoryOptions[1] = null;
         }
 
-        if (id == 1464) {
-            name = "Vote Lottery Ticket";
-            stackable = false;
-        }
-
         if(id == 13190) { //bond
             name = World.type.getWorldName() + " Credit";
             stackable = true;
