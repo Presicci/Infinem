@@ -1108,6 +1108,12 @@ public class Config {
     public static final Config HAM_STOREROOM_ENTRANCE = varpbit(2270, false).defaultValue(2);
 
     /**
+     * Elemental workshop
+     */
+    private static final Config ELEMENTAL_WORKSHOP_BELLOWS = Config.varpbit(2063, false).defaultValue(1);
+    private static final Config ELEMENTAL_WORKSHOP_FURNACE = Config.varpbit(2062, false).defaultValue(1);
+
+    /**
      * Agility Pyramid
      */
     public static final Config HIDE_PYRAMID = varpbit(1556, false);
