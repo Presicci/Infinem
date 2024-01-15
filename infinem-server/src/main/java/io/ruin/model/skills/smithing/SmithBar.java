@@ -293,13 +293,17 @@ public enum SmithBar {
             Items.ELEMENTAL_METAL, -1,
             20, 8.0,
             null,
-            Arrays.asList(new Item(Items.ELEMENTAL_ORE), new Item(Items.COAL, 4))
+            Arrays.asList(new Item(Items.ELEMENTAL_ORE), new Item(Items.COAL, 4)),
+            new SmithItem(20, 20.0, Items.ELEMENTAL_HELMET, 1, 1),
+            new SmithItem(20, 20.0, Items.ELEMENTAL_SHIELD, 1, 1)
     ),
     MIND(
             Items.PRIMED_MIND_BAR, -1,
             30, 24.0,
             null,
-            Arrays.asList(new Item(Items.ELEMENTAL_ORE), new Item(Items.COAL, 8))
+            Arrays.asList(new Item(Items.ELEMENTAL_ORE), new Item(Items.COAL, 8)),
+            new SmithItem(30, 30.0, Items.MIND_HELMET, 1, 1),
+            new SmithItem(30, 30.0, Items.MIND_SHIELD, 1, 1)
     )
     ;
 
@@ -462,8 +466,10 @@ public enum SmithBar {
 
     static {
         ObjectAction.register("anvil", "smith", (player, obj) -> open(player));
+        ObjectAction.register("workbench", "smith", (player, obj) -> open(player));
         for (SmithBar bar : SmithBar.values()) {
             ItemObjectAction.register(bar.itemId, "anvil", (player, item, obj) -> open(player, item));
+            ItemObjectAction.register(bar.itemId, "workbench", (player, item, obj) -> open(player, item));
         }
         InterfaceHandler.register(Interface.SMITHING, h -> {
             for (int i = 9; i <= 35; i++) {
