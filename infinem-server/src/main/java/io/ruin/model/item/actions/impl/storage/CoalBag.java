@@ -23,14 +23,14 @@ public class CoalBag {
 
     private static void fill(Player player) {
         int maxSize = getBagSize(player);
-        if(player.baggedCoal >= maxSize) {
+        if(player.getAttributeIntOrZero("BAGGED_COAL") >= maxSize) {
             player.dialogue(new ItemDialogue().one(COAL_BAG, "The coal bag is full."));
             return;
         }
         for(Item item : player.getInventory().getItems()) {
             if(item != null && item.getId() == COAL) {
                 item.remove();
-                if(++player.baggedCoal >= maxSize)
+                if(player.incrementNumericAttribute("BAGGED_COAL", 1) >= maxSize)
                     break;
             }
         }
@@ -38,16 +38,16 @@ public class CoalBag {
     }
 
     private static void check(Player player) {
-        if(player.baggedCoal == 0)
+        if(player.getAttributeIntOrZero("BAGGED_COAL") == 0)
             player.dialogue(new ItemDialogue().one(COAL_BAG, "The coal bag is empty."));
-        else if(player.baggedCoal == 1)
+        else if(player.getAttributeIntOrZero("BAGGED_COAL") == 1)
             player.dialogue(new ItemDialogue().one(COAL_BAG, "The coal bag contains one piece of coal."));
         else
-            player.dialogue(new ItemDialogue().one(COAL_BAG, "The coal bag contains " + player.baggedCoal + " pieces of coal."));
+            player.dialogue(new ItemDialogue().one(COAL_BAG, "The coal bag contains " + player.getAttributeIntOrZero("BAGGED_COAL") + " pieces of coal."));
     }
 
     private static void empty(Player player) {
-        if(player.baggedCoal == 0) {
+        if(player.getAttributeIntOrZero("BAGGED_COAL") == 0) {
             player.dialogue(new ItemDialogue().one(COAL_BAG, "The coal bag is empty."));
             return;
         }
@@ -59,24 +59,24 @@ public class CoalBag {
         for(int i = 0; i < player.getInventory().getItems().length; i++) {
             if(player.getInventory().get(i) == null) {
                 player.getInventory().set(i, new Item(COAL, 1));
-                player.baggedCoal--;
-                if (player.baggedCoal == 0)
+                player.incrementNumericAttribute("BAGGED_COAL", -1);
+                if (player.getAttributeIntOrZero("BAGGED_COAL") == 0)
                     break;
             }
         }
-        if(player.baggedCoal == 0)
+        if(player.getAttributeIntOrZero("BAGGED_COAL") == 0)
             player.dialogue(new ItemDialogue().one(COAL_BAG, "The coal bag is now empty."));
-        else if(player.baggedCoal == 1)
+        else if(player.getAttributeIntOrZero("BAGGED_COAL") == 1)
             player.dialogue(new ItemDialogue().one(COAL_BAG, "There is one piece of coal left in the bag."));
         else
-            player.dialogue(new ItemDialogue().one(COAL_BAG, "There are " + player.baggedCoal + " pieces of coal left in the bag."));
+            player.dialogue(new ItemDialogue().one(COAL_BAG, "There are " + player.getAttributeIntOrZero("BAGGED_COAL") + " pieces of coal left in the bag."));
     }
 
     private static int withdrawToBag(Player player, Item item, int amount) {
         if (!player.getInventory().contains(COAL_BAG, 1))
             return 0;
-        int intercept = Math.min(Math.min(getBagSize(player) - player.baggedCoal, item.getAmount()), amount);
-        player.baggedCoal += intercept;
+        int intercept = Math.min(Math.min(getBagSize(player) - player.getAttributeIntOrZero("BAGGED_COAL"), item.getAmount()), amount);
+        player.incrementNumericAttribute("BAGGED_COAL", intercept);
         player.sendFilteredMessage("You withdraw " + intercept + " coal directly to your coal bag.");
         return intercept;
     }

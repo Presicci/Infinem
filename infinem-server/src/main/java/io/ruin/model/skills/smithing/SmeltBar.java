@@ -118,13 +118,13 @@ public class SmeltBar {
                     int id = item.getId();
                     int amount = item.getAmount();
                     if (id == CoalBag.COAL && useCoalBag) {
-                        int baggedCoalRemaining = player.baggedCoal - baggedCoalUsed;
+                        int baggedCoalRemaining = player.incrementNumericAttribute("BAGGED_COAL", -baggedCoalUsed);
                         if (baggedCoalRemaining >= amount) {
                             baggedCoalUsed += amount;
                             continue;
                         }
                         amount -= baggedCoalRemaining;
-                        baggedCoalUsed = player.baggedCoal;
+                        baggedCoalUsed = player.getAttributeIntOrZero("BAGGED_COAL");
                     }
                     if (!player.getInventory().contains(id, amount)) {
                         if (remaining == (smeltAmount - 1))
@@ -140,8 +140,7 @@ public class SmeltBar {
                     int id = item.getId();
                     int amount = item.getAmount();
                     if (id == CoalBag.COAL && baggedCoalUsed > 0) {
-                        player.baggedCoal -= baggedCoalUsed;
-                        amount -= baggedCoalUsed;
+                        player.incrementNumericAttribute("BAGGED_COAL", -baggedCoalUsed);
                         if (amount == 0) {
                             /* all required coal came from bag */
                             continue;
