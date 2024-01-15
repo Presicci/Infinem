@@ -16,6 +16,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/1/2023
  */
 public enum DialogueObject {
+    ELEMENTAL_WORKSHOP_HATCH(3413, new Position(2719, 9890),
+            new PlayerDialogue("Doesn't smell good down there, I think I'll just stay here.")),
     AWOWOGEI(4771, new Position(2802, 2765),
             new ActionDialogue((player) -> {
                 if (player.getEquipment().hasId(4021)) {
