@@ -148,7 +148,7 @@ public class SmeltBar {
                     }
                     player.getInventory().remove(id, amount);
                 }
-                bar.counter.increment(player, 1);
+                if (bar.counter != null) bar.counter.increment(player, 1);
                 player.getInventory().add(bar.itemId, 1);
                 RingOfForging.onSmelt(player, bar);
                 double xp = bar.smeltXp;
