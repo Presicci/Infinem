@@ -1,19 +1,16 @@
 package io.ruin.network.incoming.handlers;
 
-import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.cache.EnumMap;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
-import io.ruin.model.inter.journal.Journal;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.network.PacketSender;
 import io.ruin.network.incoming.Incoming;
 import io.ruin.utility.IdHolder;
 
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 import static io.ruin.model.inter.Interface.COMBAT_OPTIONS;
 
@@ -69,7 +66,9 @@ public class DisplayHandler implements Incoming {
         ps.sendAccessMask(Interface.MAGIC_BOOK, 184, 0, 4, 2);
 
         ps.sendClientScript(3970, "IIi", 46661634, 46661635, 1);
-        Config.varpbit(12933, false).set(p, 1); // if 1 then it shows time played.
+
+        if (Config.ASK_TIME_PLAYED.get(p) == 0)
+            Config.varpbit(12933, false).set(p, 1); // if 1 then it shows time played.
 
         Config.varp(1780, false).set(p, 432); // Membership days left
     }
