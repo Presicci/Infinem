@@ -36,7 +36,7 @@ public class SmeltBar {
             ItemObjectAction.register(ItemID.STEEL_BAR, name, (player, item, object) -> makeCannonballs(player));
             for (SmithBar smithBar : SmithBar.values()) {
                 for (Item item : smithBar.smeltItems) {
-                    if (smithBar == SmithBar.STEEL || smithBar == SmithBar.IRON) {
+                    if (smithBar == SmithBar.STEEL || smithBar == SmithBar.IRON || smithBar == SmithBar.ELEMENTAL || smithBar == SmithBar.MIND) {
                         ItemObjectAction.register(item.getId(), name, (player, item1, obj) -> open(player));
                     } else {
                         ItemObjectAction.register(item.getId(), name, (player, item1, obj) -> smelt(player, smithBar, 1));
