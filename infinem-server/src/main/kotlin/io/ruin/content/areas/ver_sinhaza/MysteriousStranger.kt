@@ -13,7 +13,7 @@ import io.ruin.model.entity.player.Player
  */
 object MysteriousStranger {
 
-    const val ID  = 8325
+    const val ID  = 10875
 
     init {
         whenNpcClick(ID, 1) { player, npc ->
