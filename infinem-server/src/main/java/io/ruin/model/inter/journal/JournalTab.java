@@ -101,6 +101,7 @@ public class JournalTab {
          */
         SUMMARY(Tab.SUMMARY, player -> {
             player.getPacketSender().sendAccessMask(712, 3, 3, 7, AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3, AccessMasks.ClickOp4);
+            player.getPacketSender().sendString(712, 1, player.getName());
         }) {
             @Override
             public void init() {
