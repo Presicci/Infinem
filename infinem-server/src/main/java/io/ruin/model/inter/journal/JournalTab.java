@@ -9,9 +9,11 @@ import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.*;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SimpleAction;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.handlers.TabBestiary;
 import io.ruin.model.inter.journal.dropviewer.DropViewer;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.containers.collectionlog.CollectionLogInfo;
 import lombok.Getter;
 
@@ -98,7 +100,7 @@ public class JournalTab {
          * Journal tab
          */
         SUMMARY(Tab.SUMMARY, player -> {
-            player.getPacketSender().sendAccessMask(712, 3, 3, 6, AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3, AccessMasks.ClickOp4);
+            player.getPacketSender().sendAccessMask(712, 3, 3, 7, AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3, AccessMasks.ClickOp4);
         }) {
             @Override
             public void init() {
@@ -338,6 +340,32 @@ public class JournalTab {
             //CombatAchievements.openOverview(player);
         } else if (slot == 6) {
             player.getCollectionLog().open(player);
+        } else if (slot == 7) {
+            int timeDisplay = Config.SHOW_TIME_PLAYED.get(player);
+            if (timeDisplay == 1) { // Currently showing
+                Config.SHOW_TIME_PLAYED.set(player, 0);
+                setTab(player, Tab.SUMMARY);
+            } else {    // Currently hidden
+                if (Config.ASK_TIME_PLAYED.get(player) == 1) {
+                    Config.SHOW_TIME_PLAYED.set(player, 1);
+                    setTab(player, Tab.SUMMARY);
+                    return;
+                }
+                player.dialogue(
+                        new OptionsDialogue("Are you sure you want to display your time played?",
+                                new Option("Yes", () -> {
+                                    Config.SHOW_TIME_PLAYED.set(player, 1);
+                                    setTab(player, Tab.SUMMARY);
+                                }),
+                                new Option("Yes and don't ask me again", () -> {
+                                    Config.ASK_TIME_PLAYED.set(player, 1);
+                                    Config.SHOW_TIME_PLAYED.set(player, 1);
+                                    setTab(player, Tab.SUMMARY);
+                                }),
+                                new Option("No")
+                        )
+                );
+            }
         }
     }
 
