@@ -30,12 +30,13 @@ public class SmithItem {
 
     public void make(Player player, int amount) {
         player.closeInterface(InterfaceType.MAIN);
+        player.closeInterface(InterfaceType.CHATBOX);
         if (!player.getStats().check(StatType.Smithing, level, "make that"))
             return;
         player.startEvent(e -> {
             int made = 0;
             while (true) {
-                ArrayList<Item> bars = player.getInventory().findItems(player.smithBar.itemId, barReq);
+                ArrayList<Item> bars = player.getInventory().findItems(((SmithBar) player.getTemporaryAttribute("SMITH_BAR")).itemId, barReq);
                 if (bars == null) {
                     if (made == 0)
                         player.sendMessage("You don't have enough bars to make that.");

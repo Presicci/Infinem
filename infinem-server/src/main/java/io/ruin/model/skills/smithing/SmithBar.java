@@ -20,6 +20,7 @@ import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -313,6 +314,13 @@ public enum SmithBar {
         ItemDef.get(itemId).smithBar = this;
     }
 
+    private SmithItem getSmithItem(int itemId) {
+        for (SmithItem item : smithItems) {
+            if (item.makeId == itemId) return item;
+        }
+        return null;
+    }
+
     /**
      * Smithing (Opening)
      */
@@ -327,14 +335,49 @@ public enum SmithBar {
             player.dialogue(new MessageDialogue("You should select an item from your inventory and use it on the anvil."));
             return;
         }
+        if (bar.smithValue == -1) {
+            if (bar.smithItems.length > 0) {
+                List<SkillItem> skillItems = new ArrayList<>();
+                for (SmithItem sItem : bar.smithItems) {
+                    skillItems.add(new SkillItem(sItem.makeId));
+                }
+                player.putTemporaryAttribute("SMITH_BAR", bar);
+                SkillDialogue.make(player,
+                        (p, i) -> {
+                            SmithItem smithItem = bar.getSmithItem(i.getId());
+                            if (smithItem == null) return;
+                            smithItem.make(player, i.getAmount());
+                        },
+                        skillItems.toArray(new SkillItem[0]));
+                return;
+            }
+            player.dialogue(new MessageDialogue("You should select an item from your inventory and use it on the anvil."));
+            return;
+        }
         open(player, bar);
     }
 
     private static void open(Player player, Item item) {
         SmithBar bar = item.getDef().smithBar;
         if (bar.smithValue == -1) {
-            player.dialogue(new PlayerDialogue("Perhaps I should use this in a furnace instead.").animate(575));
-            return;
+            if (bar.smithItems != null && bar.smithItems.length > 0)  {
+                List<SkillItem> skillItems = new ArrayList<>();
+                for (SmithItem sItem : bar.smithItems) {
+                    skillItems.add(new SkillItem(sItem.makeId));
+                }
+                player.putTemporaryAttribute("SMITH_BAR", bar);
+                SkillDialogue.make(player,
+                        (p, i) -> {
+                            SmithItem smithItem = bar.getSmithItem(i.getId());
+                            if (smithItem == null) return;
+                            smithItem.make(player, i.getAmount());
+                        },
+                        skillItems.toArray(new SkillItem[0]));
+                return;
+            } else {
+                player.dialogue(new PlayerDialogue("Perhaps I should use this in a furnace instead.").animate(575));
+                return;
+            }
         }
         if (player.getStats().get(StatType.Smithing).currentLevel < bar.smithItems[0].level) {
             player.dialogue(new MessageDialogue("You need a Smithing level of at least " + bar.smithItems[0].level + " to work " + bar.name + " bars."));
@@ -344,7 +387,7 @@ public enum SmithBar {
     }
 
     private static void open(Player player, SmithBar bar) {
-        player.smithBar = bar;
+        player.putTemporaryAttribute("SMITH_BAR", bar);
         Config.SMITHING_TYPE.set(player, bar.smithValue);
         Config.IQ.update(player);
         player.openInterface(InterfaceType.MAIN, Interface.SMITHING);
@@ -380,6 +423,7 @@ public enum SmithBar {
                 bestBar = bar;
             }
         }
+        System.out.println(bestBar);
         return bestBar;
     }
 
@@ -388,11 +432,11 @@ public enum SmithBar {
      */
 
     private static void make(Player player, int itemIndex, int option) {
-        SmithItem item = player.smithBar.smithItems[itemIndex];
+        SmithItem item = ((SmithBar) player.getTemporaryAttribute("SMITH_BAR")).smithItems[itemIndex];
         if (item == null)
             return;
         int amount = Config.IQ.get(player);
-        int maxAmount = player.getInventory().getAmount(player.smithBar.itemId) / item.barReq;
+        int maxAmount = player.getInventory().getAmount(((SmithBar) player.getTemporaryAttribute("SMITH_BAR")).itemId) / item.barReq;
         item.make(player, Math.min(amount, maxAmount));
     }
 
@@ -417,28 +461,4 @@ public enum SmithBar {
             h.actions[7] = (SimpleAction) (p) -> Config.IQ.set(p, 28);
         });
     }
-
-    private static void openCorrupt(Player player, Item item) {
-        SmithBar bar = item.getDef().smithBar;
-        if (bar == null)
-            return;
-        player.smithBar = bar;
-        SkillDialogue.make(player,
-                new SkillItem(bar.smithItems[0].makeId).addAction((p, amount, e) -> {
-                    if (!player.getInventory().contains(ItemID.HAMMER, 1)) {
-                        player.sendMessage("You need a hammer to do that.");
-                        return;
-                    }
-                    bar.smithItems[0].make(player, Math.min(amount, player.getInventory().getAmount(player.smithBar.itemId)));
-                }),
-                new SkillItem(bar.smithItems[1].makeId).addAction((p, amount, e) -> {
-                    if (!player.getInventory().contains(ItemID.HAMMER, 1)) {
-                        player.sendMessage("You need a hammer to do that.");
-                        return;
-                    }
-                    bar.smithItems[1].make(player, Math.min(amount, player.getInventory().getAmount(player.smithBar.itemId)));
-                })
-        );
-    }
-
 }
