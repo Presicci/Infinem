@@ -1,0 +1,19 @@
+{
+  "name": "Escape Crystals",
+  "currency": "COINS",
+  "npcs": [
+    8325,
+    10875
+  ],
+  "sellMultiplier": 750,
+  "buyMultiplier": 100,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 22517,
+      "stock": 9500,
+      "buy_price": 10000,
+      "sell_price": 75000
+    }
+  ]
+}

@@ -65,7 +65,7 @@ object MysteriousStranger {
                 if (!talkedAboutCrystal()) {
                     talkCrystal(npc)
                 } else {
-                    //TODO open shop
+                    npc.openShop(player)
                 }
             }
         }
@@ -81,7 +81,7 @@ object MysteriousStranger {
         npc.chat("Actually, I do. Lady Verzik's magic prevents most forms of teleportation. However, there is a special crystal whose power can overcome the restriction.")
         npc.chat("My associates have... acquired some shards of the crystal; do not ask me how. If you take one into the Theatre, you can use it to teleport out to safety in an emergency.")
         putAttribute("MYS_STRANGER", getAttributeIntOrZero("MYS_STRANGER").or(1.shl(2)))
-        //TODO open shop
+        npc.openShop(player)
     }
 
     private fun Player.trade(npc: NPC) = event {
@@ -91,7 +91,7 @@ object MysteriousStranger {
         } else if (!talkedAboutCrystal()) {
             talkCrystal(npc)
         } else {
-            //TODO open shop
+            npc.openShop(player)
         }
     }
 
