@@ -10,6 +10,11 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    LIGHTHOUSE_BASEMENT_DOWN_1(4543, new Position(2514, 10003), new Position(2515, 10007, 0)),
+    LIGHTHOUSE_BASEMENT_DOWN_2(4544, new Position(2515, 10003), new Position(2515, 10007, 0)),
+    LIGHTHOUSE_BASEMENT_UP_1(4413, new Position(2515, 10007), new Position(2515, 10002, 0), 828),
+    LIGHTHOUSE_BASEMENT_UP_2(4485, new Position(2515, 10006), new Position(2515, 10002, 0), 828),
+
     YANILLE_DUNGEON_RUBBLE(23564, new Position(2615, 9504), new Position(2616, 9571, 0), 827),
     YANILLE_DUNGEON_SALARIN_UP(15657, new Position(2620, 9562), new Position(2620, 9496, 0)),
     YANILLE_DUNGEON_SALARIN_DOWN(15656, new Position(2620, 9497), new Position(2620, 9565, 0)),
