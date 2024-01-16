@@ -145,8 +145,8 @@ public enum CanoeStation {
             event.delay(1);
             player.animate(3302);
             Config.LOCK_CAMERA.set(player, 1);
-            player.getPacketSender().moveCameraToLocation(dynamicMap.convertX(1810), dynamicMap.convertY(4517), 255, 100, 100);
-            player.getPacketSender().turnCameraToLocation(dynamicMap.convertX(1817), dynamicMap.convertY(4515), 255, 100, 100);
+            player.getPacketSender().moveCameraToLocation(dynamicMap.convertX(1810), dynamicMap.convertY(4515), 255, 100, 100);
+            player.getPacketSender().turnCameraToLocation(dynamicMap.convertX(1815), dynamicMap.convertY(4515), 255, 100, 100);
             player.face(Direction.WEST);
             player.getPacketSender().fadeIn();
             event.delay(10);
