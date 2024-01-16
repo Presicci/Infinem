@@ -87,6 +87,14 @@ public enum CanoeStation {
         this.childId = childId;
     }
 
+    private int getDistance(CanoeStation other) {
+        if (ordinal() > other.ordinal()) {
+            return ordinal() - other.ordinal();
+        } else {
+            return other.ordinal() - ordinal();
+        }
+    }
+
     private static final int
             TREE_FALLING_ANIMATION = 3304,
             PUSH_OFF_ANIMATION = 3301,
@@ -125,6 +133,11 @@ public enum CanoeStation {
     private static void travelToDestination(Player player, CanoeStation canoeStation) {
         if(player.canoeStation == null) {
             canoeStation.config.set(player, 0);
+            return;
+        }
+        int distance = player.canoeStation.config.get(player) - 10;
+        if (canoeStation.getDistance(player.canoeStation) > distance) {
+            player.dialogue(new MessageDialogue("That canoe can only travel " + distance + " " + (distance == 1 ? "stop" : "stops") + " along the river."));
             return;
         }
         if(player.canoeStation == canoeStation) {
