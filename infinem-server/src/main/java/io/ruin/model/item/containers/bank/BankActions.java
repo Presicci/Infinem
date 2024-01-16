@@ -115,7 +115,7 @@ public class BankActions {
                     ItemObjectAction.register(objDef.id, (p, item, obj) -> itemOnBank(p, item));
                 }
             }
-            if(objDef.name.toLowerCase().contains("bank deposit box")
+            if(objDef.name.toLowerCase().contains("bank deposit box") || objDef.name.toLowerCase().contains("bank deposit chest")
                     || objDef.id == 10661 // deposit chest in zul-andra
                     ) {
                 if(ObjectAction.register(objDef.id, "deposit", (p, obj) -> p.getBank().openDepositBox()))
