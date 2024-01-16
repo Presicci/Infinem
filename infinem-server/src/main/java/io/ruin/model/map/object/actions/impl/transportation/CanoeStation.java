@@ -241,14 +241,18 @@ public enum CanoeStation {
             for (int i : PADDLE_TO_DESTINATION) {
                 if (canoeStation.config.get(player) == i) {
                     player.startEvent(event -> {
-                        if(canoeStation.childId != -1)
-                            player.getPacketSender().setHidden(Interface.CANOE_LOCATION, canoeStation.childId, false);
                         player.getPacketSender().setHidden(Interface.CANOE_LOCATION, 11, false);
                         player.getPacketSender().setHidden(Interface.CANOE_LOCATION, 13, false);
                         player.getPacketSender().setHidden(Interface.CANOE_LOCATION, 15, false);
                         player.getPacketSender().setHidden(Interface.CANOE_LOCATION, 38, false);
                         player.getPacketSender().setHidden(Interface.CANOE_LOCATION, 31, false);
                         player.getPacketSender().setHidden(Interface.CANOE_LOCATION, 32, false);
+                        if(canoeStation.childId != -1) {
+                            player.getPacketSender().setHidden(Interface.CANOE_LOCATION, canoeStation.childId, false);
+                            for (int button : canoeStation.travelButtonIds) {
+                                player.getPacketSender().setHidden(Interface.CANOE_LOCATION, button, true);
+                            }
+                        }
                         player.openInterface(InterfaceType.MAIN, Interface.CANOE_LOCATION);
                     });
                     return;
