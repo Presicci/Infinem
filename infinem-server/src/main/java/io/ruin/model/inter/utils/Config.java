@@ -1106,6 +1106,7 @@ public class Config {
     public static final Config NEITIZNOT_BRIDGE_2 = varpbit(3314, false).defaultValue(1);
     public static final Config NEITIZNOT_BRIDGE_3 = varpbit(3315, false).defaultValue(1);
     public static final Config HAM_STOREROOM_ENTRANCE = varpbit(2270, false).defaultValue(2);
+    public static final Config KARAMJA_GLOVES_GEM_MINE = varpbit(3610, true);
 
     /**
      * Elemental workshop
