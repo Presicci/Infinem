@@ -1896,7 +1896,8 @@
     "y": 9805,
     "z": 1,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "SLIEVE"
   },
   {
     "name": "Blue dragon",
@@ -1905,7 +1906,8 @@
     "y": 9810,
     "z": 1,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "SLIEVE"
   },
   {
     "name": "Blue dragon",
@@ -1914,7 +1916,8 @@
     "y": 9811,
     "z": 1,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "SLIEVE"
   },
   {
     "name": "Blue dragon",
@@ -1923,7 +1926,8 @@
     "y": 9812,
     "z": 1,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "SLIEVE"
   },
   {
     "name": "Blue dragon",
@@ -1932,7 +1936,8 @@
     "y": 9809,
     "z": 1,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "SLIEVE"
   },
   {
     "name": "Blue dragon",
@@ -1941,7 +1946,8 @@
     "y": 9812,
     "z": 1,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "SLIEVE"
   },
   {
     "name": "Blue dragon",
@@ -1950,7 +1956,8 @@
     "y": 9813,
     "z": 1,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "SLIEVE"
   },
   {
     "name": "Blue dragon",
@@ -1959,7 +1966,8 @@
     "y": 9820,
     "z": 1,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "SLIEVE"
   },
   {
     "name": "Blue dragon",
@@ -1968,7 +1976,8 @@
     "y": 9816,
     "z": 1,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "SLIEVE"
   },
   {
     "name": "Blue dragon",
@@ -1977,7 +1986,8 @@
     "y": 9823,
     "z": 1,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "SLIEVE"
   },
   {
     "name": "Blue dragon",
@@ -1986,7 +1996,8 @@
     "y": 9827,
     "z": 1,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "SLIEVE"
   },
   {
     "name": "Blue dragon",
@@ -1995,7 +2006,8 @@
     "y": 9826,
     "z": 1,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "SLIEVE"
   },
   {
     "name": "Slieve",
