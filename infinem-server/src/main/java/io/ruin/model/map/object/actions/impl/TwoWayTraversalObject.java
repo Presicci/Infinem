@@ -10,6 +10,7 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 11/5/2023
  */
 public enum TwoWayTraversalObject {
+    EXPERIMENT_CAVE_GATE(5170, new Position(3510, 9957), 1, -1, true),
     ELEMENTAL_WORKSHOP_WALL_1(26114, new Position(2710, 3495), 1, -1, false),
     ELEMENTAL_WORKSHOP_WALL_2(26115, new Position(2709, 3495), 1, -1, false),
     APE_ATOLL_GATE_1(4787, new Position(2719, 2766), 2, -1, false),
