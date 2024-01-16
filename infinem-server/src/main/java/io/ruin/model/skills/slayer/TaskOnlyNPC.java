@@ -1,6 +1,7 @@
 package io.ruin.model.skills.slayer;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.GhostSpeak;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.containers.Equipment;
@@ -32,9 +33,9 @@ public enum TaskOnlyNPC {
         if (npcId == -1) {
             player.sendMessage("You need to be on a slayer task to attack this monster.");
         } else {
-            if (this == BUGGY && player.getEquipment().getId(Equipment.SLOT_AMULET) == Items.GHOSTSPEAK_AMULET) {
+            if (this == BUGGY && GhostSpeak.canSpeak(player)) {
                 player.dialogue(new NPCDialogue(npcId, "I didn't... create this cave for... you to do that... sorry, it's not for you."));
-            } else if (this == RAULYN && player.getEquipment().getId(Equipment.SLOT_AMULET) == Items.GHOSTSPEAK_AMULET) {
+            } else if (this == RAULYN && GhostSpeak.canSpeak(player)) {
                 player.dialogue(new NPCDialogue(npcId, "I don't think that's what you're meant to be slaying."));
             } else {
                 player.dialogue(new NPCDialogue(npcId, dialogue));
