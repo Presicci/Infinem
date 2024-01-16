@@ -4,7 +4,7 @@
     "handler": "",
     //Combat Info
     "hitpoints": 55,
-    "aggressive_level": 116,
+    "aggressive_level": 0,
     "max_damage": 7,
     "attack_style": "STAB",
     //Slayer Info
