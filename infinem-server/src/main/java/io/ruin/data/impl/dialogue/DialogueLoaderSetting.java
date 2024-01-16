@@ -2,6 +2,7 @@ package io.ruin.data.impl.dialogue;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.GhostSpeak;
 import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
@@ -11,6 +12,7 @@ import java.util.function.BiPredicate;
 
 @Getter
 public enum DialogueLoaderSetting {
+    GHOSTSPEAK((p, i) -> GhostSpeak.canSpeak(p)),
     HASSLAYERTASK((p, i) -> Slayer.getTask(p) == i),
     HASITEMS((p, i) -> {
         int secondary = p.getTemporaryAttributeIntOrZero(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
