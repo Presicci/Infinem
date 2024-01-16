@@ -465,7 +465,8 @@
     "y": 9932,
     "z": 3,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Bloodveld",
@@ -483,7 +484,8 @@
     "y": 9970,
     "z": 3,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Bloodveld",
@@ -501,7 +503,8 @@
     "y": 9942,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Aberrant spectre",
@@ -519,7 +522,8 @@
     "y": 9931,
     "z": 3,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Aberrant spectre",
@@ -537,7 +541,8 @@
     "y": 9950,
     "z": 3,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Bloodveld",
@@ -555,7 +560,8 @@
     "y": 9963,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Bloodveld",
@@ -573,7 +579,8 @@
     "y": 9972,
     "z": 3,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Bloodveld",
@@ -587,11 +594,12 @@
   {
     "name": "Nechryael",
     "id": 11,
-    "x": 3408,
-    "y": 9960,
+    "x": 3405,
+    "y": 9959,
     "z": 3,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Bloodveld",
@@ -609,7 +617,8 @@
     "y": 9937,
     "z": 3,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Aberrant spectre",
@@ -627,7 +636,8 @@
     "y": 9946,
     "z": 3,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Aberrant spectre",
@@ -645,7 +655,8 @@
     "y": 9961,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Aberrant spectre",
@@ -663,7 +674,8 @@
     "y": 9936,
     "z": 3,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Aberrant spectre",
@@ -677,11 +689,12 @@
   {
     "name": "Nechryael",
     "id": 11,
-    "x": 3408,
-    "y": 9968,
+    "x": 3413,
+    "y": 9970,
     "z": 3,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -699,7 +712,8 @@
     "y": 9965,
     "z": 3,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -717,7 +731,8 @@
     "y": 9953,
     "z": 3,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -735,7 +750,8 @@
     "y": 9942,
     "z": 3,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -753,7 +769,8 @@
     "y": 9934,
     "z": 3,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Aberrant spectre",
@@ -771,7 +788,8 @@
     "y": 9937,
     "z": 3,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -789,7 +807,8 @@
     "y": 9961,
     "z": 3,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Aberrant spectre",
@@ -807,7 +826,8 @@
     "y": 9966,
     "z": 3,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -825,7 +845,8 @@
     "y": 9943,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -843,7 +864,8 @@
     "y": 9935,
     "z": 3,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -857,11 +879,12 @@
   {
     "name": "Raulyn",
     "id": 5790,
-    "x": 3424,
-    "y": 9952,
+    "x": 3425,
+    "y": 9953,
     "z": 3,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -879,7 +902,8 @@
     "y": 9961,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Aberrant spectre",
@@ -897,7 +921,8 @@
     "y": 9971,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Aberrant spectre",
@@ -915,7 +940,8 @@
     "y": 9944,
     "z": 3,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -933,7 +959,8 @@
     "y": 9966,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -951,7 +978,8 @@
     "y": 9930,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -969,7 +997,8 @@
     "y": 9945,
     "z": 3,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -987,7 +1016,8 @@
     "y": 9952,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -1005,7 +1035,8 @@
     "y": 9964,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Gargoyle",
@@ -1014,7 +1045,8 @@
     "y": 9946,
     "z": 3,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Infernal Mage",
@@ -1032,7 +1064,8 @@
     "y": 9955,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1050,7 +1083,8 @@
     "y": 9963,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1068,7 +1102,8 @@
     "y": 9931,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1086,7 +1121,8 @@
     "y": 9965,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1104,7 +1140,8 @@
     "y": 9970,
     "z": 3,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1122,7 +1159,8 @@
     "y": 9947,
     "z": 3,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1140,7 +1178,8 @@
     "y": 9967,
     "z": 3,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1158,7 +1197,8 @@
     "y": 9954,
     "z": 3,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1176,7 +1216,8 @@
     "y": 9936,
     "z": 3,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1194,7 +1235,8 @@
     "y": 9937,
     "z": 3,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1212,7 +1254,8 @@
     "y": 9934,
     "z": 3,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1230,7 +1273,8 @@
     "y": 9930,
     "z": 3,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1248,7 +1292,8 @@
     "y": 9961,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1266,7 +1311,8 @@
     "y": 9970,
     "z": 3,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Abyssal demon",
@@ -1284,7 +1330,8 @@
     "y": 9973,
     "z": 3,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Gargoyle",
@@ -1302,7 +1349,8 @@
     "y": 9953,
     "z": 3,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Nechryael",
@@ -1320,7 +1368,8 @@
     "y": 9963,
     "z": 3,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Gargoyle",
@@ -1338,7 +1387,8 @@
     "y": 9931,
     "z": 3,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 2,
+    "taskOnlyNPC": "RAULYN"
   },
   {
     "name": "Nechryael",
