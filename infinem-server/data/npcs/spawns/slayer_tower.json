@@ -56,8 +56,17 @@
   {
     "name": "Crawling Hand",
     "id": 448,
-    "x": 3405,
+    "x": 3407,
     "y": 3573,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Crawling Hand",
+    "id": 448,
+    "x": 3415,
+    "y": 3570,
     "z": 0,
     "direction": "S",
     "walkRange": 2
@@ -101,8 +110,8 @@
   {
     "name": "Crawling Hand",
     "id": 454,
-    "x": 3421,
-    "y": 3570,
+    "x": 3412,
+    "y": 3574,
     "z": 0,
     "direction": "S",
     "walkRange": 5
@@ -119,8 +128,8 @@
   {
     "name": "Crawling Hand",
     "id": 453,
-    "x": 3424,
-    "y": 3537,
+    "x": 3422,
+    "y": 3544,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -155,8 +164,8 @@
   {
     "name": "Crawling Hand",
     "id": 448,
-    "x": 3421,
-    "y": 3567,
+    "x": 3418,
+    "y": 3573,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -191,8 +200,8 @@
   {
     "name": "Crawling Hand",
     "id": 448,
-    "x": 3424,
-    "y": 3553,
+    "x": 3427,
+    "y": 3551,
     "z": 0,
     "direction": "S",
     "walkRange": 6
@@ -398,8 +407,8 @@
   {
     "name": "Bloodveld",
     "id": 485,
-    "x": 3413,
-    "y": 3558,
+    "x": 3410,
+    "y": 3560,
     "z": 1,
     "direction": "S",
     "walkRange": 1
@@ -443,8 +452,8 @@
   {
     "name": "Aberrant spectre",
     "id": 5,
-    "x": 3416,
-    "y": 3538,
+    "x": 3420,
+    "y": 3540,
     "z": 1,
     "direction": "S",
     "walkRange": 4
@@ -461,8 +470,8 @@
   {
     "name": "Bloodveld",
     "id": 485,
-    "x": 3419,
-    "y": 3573,
+    "x": 3422,
+    "y": 3574,
     "z": 1,
     "direction": "S",
     "walkRange": 4
@@ -749,8 +758,8 @@
   {
     "name": "Aberrant spectre",
     "id": 4,
-    "x": 3432,
-    "y": 3546,
+    "x": 3434,
+    "y": 3550,
     "z": 1,
     "direction": "S",
     "walkRange": 6
@@ -893,7 +902,7 @@
   {
     "name": "Aberrant spectre",
     "id": 4,
-    "x": 3442,
+    "x": 3437,
     "y": 3545,
     "z": 1,
     "direction": "S",
@@ -999,15 +1008,6 @@
     "walkRange": 2
   },
   {
-    "name": "null",
-    "id": 6122,
-    "x": 3448,
-    "y": 3549,
-    "z": 1,
-    "direction": "S",
-    "walkRange": 1
-  },
-  {
     "name": "Gargoyle",
     "id": 1543,
     "x": 3432,
@@ -1109,8 +1109,8 @@
   {
     "name": "Abyssal demon",
     "id": 415,
-    "x": 3415,
-    "y": 3573,
+    "x": 3409,
+    "y": 3571,
     "z": 2,
     "direction": "S",
     "walkRange": 5
@@ -1253,8 +1253,8 @@
   {
     "name": "Abyssal demon",
     "id": 415,
-    "x": 3424,
-    "y": 3570,
+    "x": 3425,
+    "y": 3569,
     "z": 2,
     "direction": "S",
     "walkRange": 4
@@ -1361,8 +1361,8 @@
   {
     "name": "Nechryael",
     "id": 8,
-    "x": 3439,
-    "y": 3561,
+    "x": 3438,
+    "y": 3566,
     "z": 2,
     "direction": "S",
     "walkRange": 4
@@ -1370,8 +1370,8 @@
   {
     "name": "Gargoyle",
     "id": 412,
-    "x": 3433,
-    "y": 3545,
+    "x": 3440,
+    "y": 3541,
     "z": 2,
     "direction": "S",
     "walkRange": 1
@@ -1379,8 +1379,8 @@
   {
     "name": "Gargoyle",
     "id": 412,
-    "x": 3436,
-    "y": 3547,
+    "x": 3444,
+    "y": 3545,
     "z": 2,
     "direction": "S",
     "walkRange": 5
@@ -1442,8 +1442,8 @@
   {
     "name": "Nechryael",
     "id": 8,
-    "x": 3442,
-    "y": 3554,
+    "x": 3432,
+    "y": 3565,
     "z": 2,
     "direction": "S",
     "walkRange": 1
