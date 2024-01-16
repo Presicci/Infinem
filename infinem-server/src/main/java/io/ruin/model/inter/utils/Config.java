@@ -588,11 +588,11 @@ public class Config {
     /**
      * Canoe station
      */
-    public static final Config LUMBRIDGE_CANOE = varpbit(1839, true);
-    public static final Config CHAMPION_GUILD_CANOE = varpbit(1840, true);
-    public static final Config BARBARIAN_VILLAGE_CANOE = varpbit(1841, true);
-    public static final Config EDGEVILLE_CANOE = varpbit(1842, true);
-    public static final Config WILDERNESS_CHINS_CANOE = varpbit(1843, true);
+    public static final Config LUMBRIDGE_CANOE = varpbit(1839, false);
+    public static final Config CHAMPION_GUILD_CANOE = varpbit(1840, false);
+    public static final Config BARBARIAN_VILLAGE_CANOE = varpbit(1841, false);
+    public static final Config EDGEVILLE_CANOE = varpbit(1842, false);
+    public static final Config WILDERNESS_CHINS_CANOE = varpbit(1843, false);
 
     /**
      * Godwars
