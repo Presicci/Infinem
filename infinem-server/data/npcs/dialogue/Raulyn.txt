@@ -1,0 +1,16 @@
+GHOSTSPEAK:1
+/Raulyn: Aaah! What are you doing down here!?
+Player: Hey, keep it down! I've come to slay the monsters down here.
+Raulyn: Oh, that's ok then. These vile creatures do make an awful racket.
+Player: You should hear it upstairs! Those Aberrant Spectres are just the worst.
+Player: Who are you anyway?
+Raulyn: I'm Raulyn. Once servant to the great Viggora who built this place centuries ago.
+Raulyn: This was, of course, before the building started to sink into the swamp...
+Raulyn: Oh, and the darn Zamorakian mages. They didn't help matters. Always making a mess.
+Raulyn: I've been here ever since. You're the first person I've spoken to in over 200 years.
+Player: Don't you ever get lonely?
+Raulyn: Sometimes, but it's not all that bad. I hope you stop by more often!
+Player: Hopefully! I should be going now, speak to you later.
+Raulyn: Goodbye stranger.
+/Raulyn: Wooooo! Ooooooooooohh!
+Player: Hmm, I wonder if there's something I could use to communicate with him.
