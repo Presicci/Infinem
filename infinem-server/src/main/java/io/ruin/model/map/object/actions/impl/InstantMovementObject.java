@@ -10,6 +10,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    ANCIENT_CAVERN_DRAGON_FORGE_UP(32212, new Position(1744, 5323), new Position(1744, 5321, 1)),
+    ANCIENT_CAVERN_DRAGON_FORGE_DOWN(32211, new Position(1744, 5322, 1), new Position(1745, 5325, 0)),
+
     ELEMENTAL_WORKSHOP_DOWN(3415, new Position(2710, 3497), new Position(2715, 9889, 0)),
     ELEMENTAL_WORKSHOP_UP(3416, new Position(2714, 9887), new Position(2709, 3498, 0)),
 
