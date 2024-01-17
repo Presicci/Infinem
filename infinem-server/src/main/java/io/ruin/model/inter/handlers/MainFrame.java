@@ -51,6 +51,12 @@ public class MainFrame {
                     );
                 }
             };
+            h.actions[31] = (OptionAction) (player, option) -> {
+                if (option == 4) {  // Report a bug
+                    player.openInterface(InterfaceType.MAIN, 156);
+                    player.getPacketSender().sendClientScript(1095, "s", "Please try to be as detailed as possible when you submit a bug report!  Thank you for helping improve the game. <3");
+                }
+            };
         });
         InterfaceHandler.register(Interface.FIXED_SCREEN, actions -> {
             actions.actions[62] = (DefaultAction) (player, option, slot, itemId) -> {
