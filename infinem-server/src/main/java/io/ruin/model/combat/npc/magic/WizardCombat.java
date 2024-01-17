@@ -56,7 +56,7 @@ public abstract class WizardCombat extends NPCCombat {
 
     protected void onCast(boolean standard) {}
 
-    private void cast(NPCCombatSpells spell) {
+    protected void cast(NPCCombatSpells spell) {
         int castAnim = getCastAnimation();
         if (castAnim != -1)
             npc.animate(castAnim);

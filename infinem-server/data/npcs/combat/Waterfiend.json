@@ -1,12 +1,12 @@
 [
   { // Waterfiend (115)
     "ids": [ 2916, 2917 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.Waterfiend",
     //Combat Info
-    "hitpoints": 130,
+    "hitpoints": 128,
     "aggressive_level": 230,
-    "max_damage": 12,
-    "attack_style": "CRUSH",
+    "max_damage": 16,
+    "attack_style": "MAGIC",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 128.0,
