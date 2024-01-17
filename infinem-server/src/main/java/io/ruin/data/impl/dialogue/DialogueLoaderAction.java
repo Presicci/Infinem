@@ -16,6 +16,7 @@ import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Items;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 import io.ruin.model.skills.mining.EssenceMine;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
@@ -25,6 +26,23 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    COUNT_CHECK_TELE(player -> {
+        NPC npc = player.getDialogueNPC();
+        if (player.hasAttribute("SHOS")) {
+            player.dialogue(new NPCDialogue(npc, "The Stronghold of Security, in Barbarian Village. There is much to learn there."));
+            return;
+        }
+        player.dialogue(
+                new NPCDialogue(npc, "The Stronghold of Security, in Barbarian Village. I see you have not visited it. Would you like to? I can send you straight there - but only once."),
+                new OptionsDialogue(
+                        new Option("Yes", () -> {
+                            ModernTeleport.teleport(player, 3080, 3421, 0);
+                            player.putAttribute("SHOS", 0);
+                        }),
+                        new Option("No")
+                )
+        );
+    }),
     MONKEYSPEAK(player -> {
         String[] phrases = {
                 "Ah Ah!",

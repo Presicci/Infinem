@@ -3877,5 +3877,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 7
+  },
+  {
+    "name": "Count Check",
+    "id": 7414,
+    "x": 3238,
+    "y": 3199,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
   }
 ]

@@ -1,0 +1,14 @@
+Count Check: Ahahahaha! I am Count Check, the renowned security expert. Would you like me to check your account to see if it is secure?
+<Where can I learn more about security?
+Player: Where can I learn more about security?
+COUNT_CHECK_TELE:
+><Who are you?
+Player: Who are you?
+Count Check: As you may see, I am a vampyre, from Morytania. I left there when I heard the terrible news and now I choose to spend my days warning others of the perils that lay in wait for them.
+Player: The perils?
+Count Check: Yes, be warned! The travellers of these lands face danger from outside. Accounts can be stolen, and when that happens one can lose everything one has worked for.
+Count Check: I've left my vampyric ways behind me, and now I spend my days letting everyone know of this terrible danger.
+Count Check: In return for my dedication, I have been blessed with the ability to check if adventurers are ready to defend themselves against these account thieves.
+FIRSTOPTIONS
+><I'll see you another time.
+Player: I'll see you another time.
