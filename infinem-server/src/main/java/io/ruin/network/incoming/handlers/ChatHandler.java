@@ -44,8 +44,10 @@ public class ChatHandler implements Incoming {
                 return;
             }
         }
+        player.sentMessages.add(message);
+        if (player.sentMessages.size() > 20) player.sentMessages.poll();
         if(type == 2) {
-            message = message.substring(1, message.length());
+            message = message.substring(1);
             CentralClient.sendClanMessage(player.getUserId(), player.getClientGroupId(), message);
             Loggers.logClanChat(player.getUserId(), player.getName(), player.getIp(), message);
             return;

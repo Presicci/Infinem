@@ -66,6 +66,8 @@ public class FriendsHandler implements Incoming {
                     player.sendMessage("You're muted and can't talk.");
                 return;
             }
+            player.sentMessages.add(message);
+            if (player.sentMessages.size() > 20) player.sentMessages.poll();
             CentralClient.sendPrivateMessage(player.getUserId(), player.getClientGroupId(), name, message);
             Loggers.logPrivateChat(player.getUserId(), player.getName(), player.getIp(), name, message);
             return;

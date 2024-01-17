@@ -121,6 +121,7 @@ public class DisplayHandler implements Incoming {
         ps.sendAccessMask(Interface.EMOTE, 1, 0, 50, 2);
         ps.sendAccessMask(Interface.MUSIC_PLAYER, 3, 0, 665, 6);
         ps.sendAccessMask(Interface.MAGIC_BOOK, 194, 0, 5, 2);
+        ps.sendAccessMask(Interface.CHAT_BAR, 59, 0, 1, 2);
 
         setDisplayMode(player, displayMode);
     }

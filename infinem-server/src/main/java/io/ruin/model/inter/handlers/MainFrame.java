@@ -1,5 +1,6 @@
 package io.ruin.model.inter.handlers;
 
+import io.ruin.model.entity.player.PlayerAction;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -52,11 +53,28 @@ public class MainFrame {
                 }
             };
             h.actions[31] = (OptionAction) (player, option) -> {
-                if (option == 4) {  // Report a bug
+                if (option == 2) {
+                    player.openInterface(InterfaceType.MAIN, 553);
+                    player.getPacketSender().sendClientScript(1104, "iis", 1, 0, "");
+                } else if (option == 3) {
+                    if (player.getAction(4) == PlayerAction.REPORT) {
+                        player.setAction(4, null);
+                    } else {
+                        player.setAction(4, PlayerAction.REPORT);
+                    }
+                } else if (option == 4) {  // Report a bug
                     player.openInterface(InterfaceType.MAIN, 156);
                     player.getPacketSender().sendClientScript(1095, "s", "Please try to be as detailed as possible when you submit a bug report!  Thank you for helping improve the game. <3");
                 }
             };
+            for (int index = 57; index < 557; index++) {
+                h.actions[index] = (OptionAction) (player, option) -> {
+                    if (option == 8) {
+                        player.openInterface(InterfaceType.MAIN, 553);
+                        player.getPacketSender().sendClientScript(1104, "iis", 1, 0, "");
+                    }
+                };
+            }
         });
         InterfaceHandler.register(Interface.FIXED_SCREEN, actions -> {
             actions.actions[62] = (DefaultAction) (player, option, slot, itemId) -> {

@@ -834,6 +834,8 @@ public class Player extends PlayerAttributes {
 
     @Expose private Appearance appearance;
 
+    public Queue<String> sentMessages = new LinkedList<>();
+
     private ChatUpdate chatUpdate;
 
     protected ForceMovementUpdate forceMovementUpdate;

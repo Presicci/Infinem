@@ -1,6 +1,7 @@
 package io.ruin.model.entity.player;
 
 import io.ruin.model.activities.combat.raids.xeric.party.RecruitingBoard;
+import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.map.object.actions.impl.edgeville.Christmas;
 import io.ruin.model.map.route.routes.TargetRoute;
 
@@ -44,6 +45,10 @@ public enum PlayerAction {
             RecruitingBoard.invite(p1, p2);
             p1.faceNone(true);
         });
+    }),
+    REPORT("Report", false, (p1, p2) -> {
+        p1.openInterface(InterfaceType.MAIN, 553);
+        p1.getPacketSender().sendClientScript(1104, "iis", 1, 1, p2.getName());
     });
 
     public final String name;

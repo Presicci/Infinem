@@ -230,7 +230,8 @@ public class Regular {
                         continue;
                     p.sendMessage(message);
                 }
-
+                player.sentMessages.add(message);
+                if (player.sentMessages.size() > 20) player.sentMessages.poll();
                 Loggers.logYell(player.getUserId(), player.getName(), player.getIp(), message);
                 return true;
             }
