@@ -18,6 +18,7 @@ public enum RangedAmmo {
     MITHRIL_ARROW(new RangedData(21, 1107, Projectile.arrow(12))),
     ADAMANT_ARROW(new RangedData(22, 1108, Projectile.arrow(13))),
     RUNE_ARROW(new RangedData(24, 1109, Projectile.arrow(15))),
+    ICE_ARROW(new RangedData(25, 1110, Projectile.arrow(16))),
     AMETHYST_ARROW(new RangedData(1385, 1383, Projectile.arrow(1384))),
     DRAGON_ARROW(new RangedData(1116, 1111, Projectile.arrow(1120))),
     CORRUPT_ARROW(new RangedData(5020, 5021, Projectile.arrow(5022))),

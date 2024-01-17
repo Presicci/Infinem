@@ -63,6 +63,7 @@ public enum RangedWeapon {
             RangedAmmo.MITHRIL_ARROW,
             RangedAmmo.ADAMANT_ARROW,
             RangedAmmo.RUNE_ARROW,
+            RangedAmmo.ICE_ARROW,
             RangedAmmo.AMETHYST_ARROW,
             RangedAmmo.DRAGON_ARROW
     ),
@@ -74,6 +75,7 @@ public enum RangedWeapon {
             RangedAmmo.MITHRIL_ARROW,
             RangedAmmo.ADAMANT_ARROW,
             RangedAmmo.RUNE_ARROW,
+            RangedAmmo.ICE_ARROW,
             RangedAmmo.AMETHYST_ARROW,
             RangedAmmo.DRAGON_ARROW
     ),
@@ -98,6 +100,7 @@ public enum RangedWeapon {
             RangedAmmo.MITHRIL_ARROW,
             RangedAmmo.ADAMANT_ARROW,
             RangedAmmo.RUNE_ARROW,
+            RangedAmmo.ICE_ARROW,
             RangedAmmo.AMETHYST_ARROW,
             RangedAmmo.DRAGON_ARROW,
             RangedAmmo.CORRUPT_ARROW
