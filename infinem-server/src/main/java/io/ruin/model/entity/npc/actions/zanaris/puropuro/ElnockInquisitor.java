@@ -4,6 +4,7 @@ package io.ruin.model.entity.npc.actions.zanaris.puropuro;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.ActionDialogue;
@@ -18,10 +19,6 @@ import io.ruin.model.item.actions.impl.scrolls.ImplingScroll;
 public class ElnockInquisitor {
 
     private static final int ELNOCK_INQUISITOR = 5734;
-
-    private static void trade(Player player) {
-        player.openInterface(InterfaceType.MAIN, Interface.ELNOCK_EXCHANGE);
-    }
 
     private static void requestEquipment(Player player, NPC npc) {
         if (!player.elnockInquisitorDialogueStarted)
@@ -149,7 +146,7 @@ public class ElnockInquisitor {
                 player.dialogue(
                         new NPCDialogue(npc, "Ah, good day, it's you again. What can I do for you?"),
                         new OptionsDialogue("What would you like to ask about?",
-                                new Option("Can I trade some jarred implings please?", () -> trade(player)),
+                                new Option("Can I trade some jarred implings please?", () -> ElnockExchange.open(player)),
                                 new Option("Do you have some spare equipment I can use?", () -> requestEquipment(player, npc))
                         )
                 );
@@ -169,7 +166,7 @@ public class ElnockInquisitor {
                 );
             }
         });
-        NPCAction.register(ELNOCK_INQUISITOR, "trade", (player, npc) -> trade(player));
+        NPCAction.register(ELNOCK_INQUISITOR, "trade", (player, npc) -> ElnockExchange.open(player));
     }
 
 }
