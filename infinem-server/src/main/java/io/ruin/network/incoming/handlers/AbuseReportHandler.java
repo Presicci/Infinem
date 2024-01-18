@@ -1,9 +1,11 @@
 package io.ruin.network.incoming.handlers;
 
 import io.ruin.api.buffer.InBuffer;
+import io.ruin.api.utils.TimeUtils;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.network.incoming.Incoming;
+import io.ruin.services.Punishment;
 import io.ruin.services.discord.impl.AbuseReportEmbedMessage;
 import io.ruin.utility.IdHolder;
 
@@ -20,7 +22,7 @@ public class AbuseReportHandler implements Incoming {
         byte mute = in.readByte();
         Player reportedPlayer = World.getPlayer(playerName);
         if (mute == 1 && player.isStaff()) {
-            // TODO mute
+            Punishment.mute(player, reportedPlayer, System.currentTimeMillis() + TimeUtils.getHoursToMillis(4), false);
         }
         AbuseReportEmbedMessage.sendDiscordMessage(player, reportedPlayer, reportType);
     }
