@@ -96,7 +96,7 @@ public class PuroPuro {
                         ))
                 )
         ));
-        ObjectAction.register(25014, "escape", PuroPuro::exit);
+        ObjectAction.register(25014, "exit", PuroPuro::exit);
 
 
         /**
