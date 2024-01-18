@@ -167,6 +167,8 @@ public class ElnockInquisitor {
             }
         });
         NPCAction.register(ELNOCK_INQUISITOR, "trade", (player, npc) -> ElnockExchange.open(player));
+        NPCAction.register(ELNOCK_INQUISITOR, "exchange", (player, npc) -> ElnockStorage.open(player));
+        NPCAction.register(ELNOCK_INQUISITOR, "quick-withdraw", (player, npc) -> ElnockStorage.withdrawAll(player));
     }
 
 }

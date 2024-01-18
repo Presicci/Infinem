@@ -355,6 +355,10 @@ public class Interface {
 
     public static final int THESSALIA_MAKEOVER = 591;
 
+    public static final int ELNOCK_STORAGE = 661;
+
+    public static final int ELNOCK_STORAGE_INVENTORY = 681;
+
     /**
      * Custom
      */
