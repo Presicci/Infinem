@@ -34,9 +34,9 @@ public enum Impling {
     NATURE(1641, 58, 68, 34, 36, 11250, 100, 25, 1651),
     MAGPIE(1642, 65, 75, 44, 95, 11252, 50, 20, 1652),
     NINJA(1643, 74, 85, 52, 125, 11254, 40, 15, 1653),
-    DRAGON(1644, 83, 93, 65, 300, 11256, 15, 10, 1654),
     CRYSTAL(8741, 80, 90, 0, 150, 23768, 0, 0,
             8741, 8742, 8743, 8744, 8745, 8746, 8747, 8748, 8749, 8750, 8751, 8752, 8753, 8754, 8755, 8756, 8757),
+    DRAGON(1644, 83, 93, 65, 300, 11256, 15, 10, 1654),
     LUCKY(7233, 89, 99, 80, 380, 19732, 2, 1, 7302);
 
     public final int npcId, levelReq, bareHandLevelReq, jarId, puroPuroSpawnWeight, overworldSpawnWeight;
@@ -53,6 +53,14 @@ public enum Impling {
         this.puroPuroSpawnWeight = puroPuroSpawnWeight;
         this.overworldSpawnWeight = overworldSpawnWeight;
         this.altIds = altIds;
+    }
+
+    public String getCounterKey() {
+        return this.name();
+    }
+
+    public String getPuroCounterKey() {
+        return this.name() + "_PURO";
     }
 
     private static final Bounds PURO_PURO = new Bounds(2562, 4290, 2621, 4349, 0);
@@ -130,6 +138,7 @@ public enum Impling {
                 despawnImpling(npc);
                 player.getStats().addXp(StatType.Hunter, player.getPosition().inBounds(PURO_PURO) ? impling.puroExp : impling.worldExp, true);
                 PlayerCounter.IMPLINGS_CAUGHT.increment(player, 1);
+                player.incrementNumericAttribute(isInPuroPuro(npc) ? impling.getPuroCounterKey() : impling.getCounterKey(), 1);
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.IMPLING, npc.getDef().name);
                 if (isInPuroPuro(npc))
                     player.getTaskManager().doLookupByCategory(TaskCategory.IMPLINGPURO, 1, true);
