@@ -4,6 +4,7 @@ package io.ruin.model.entity.npc.actions.zanaris.puropuro;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerBoolean;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
@@ -12,6 +13,7 @@ import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.ButterflyNet;
 import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.actions.impl.scrolls.ImplingScroll;
@@ -21,10 +23,10 @@ public class ElnockInquisitor {
     private static final int ELNOCK_INQUISITOR = 5734;
 
     private static void requestEquipment(Player player, NPC npc) {
-        if (!player.elnockInquisitorDialogueStarted)
-            player.elnockInquisitorDialogueStarted = true;
+        if (!player.getSpokenToNPCSet().contains(npc.getId()))
+            player.getSpokenToNPCSet().add(npc.getId());
 
-        if (player.elnockInquisitorGivenEquipment) {
+        if (PlayerBoolean.ELOCK_EQUIPMENT_CLAIMED.has(player)) {
             player.dialogue(
                     new NPCDialogue(npc, "I have already given you some equipment."),
                     new NPCDialogue(npc, "If you are ready to start hunting implings, then enter the main part of the maze."),
@@ -37,7 +39,7 @@ public class ElnockInquisitor {
                         if (player.getInventory().getFreeSlots() < 9) {
                             player.dialogue(new NPCDialogue(npc, "You'd better clear some space in your inventory for a butterfly net, 7 jars and a collector's scroll, then."));
                         } else {
-                            player.elnockInquisitorGivenEquipment = true;
+                            PlayerBoolean.ELOCK_EQUIPMENT_CLAIMED.setTrue(player);
                             player.getInventory().add(ImplingScroll.IMPLING_SCROLL, 1);
                             player.getInventory().add(ImplingJar.IMPLING_JAR, 7);
                             player.getInventory().add(ButterflyNet.BUTTERFLY_NET, 1);
@@ -141,15 +143,38 @@ public class ElnockInquisitor {
 
     static {
         NPCAction.register(ELNOCK_INQUISITOR, "talk-to", (player, npc) -> {
-            if (player.elnockInquisitorDialogueStarted) {
-                //TODO check for impling scroll and offer to give every time until has
-                player.dialogue(
-                        new NPCDialogue(npc, "Ah, good day, it's you again. What can I do for you?"),
-                        new OptionsDialogue("What would you like to ask about?",
-                                new Option("Can I trade some jarred implings please?", () -> ElnockExchange.open(player)),
-                                new Option("Do you have some spare equipment I can use?", () -> requestEquipment(player, npc))
-                        )
-                );
+            if (player.getSpokenToNPCSet().contains(npc.getId())) {
+                if (player.getInventory().contains(Items.IMPLING_SCROLL) || !player.getInventory().hasFreeSlots(1)) {
+                    player.dialogue(
+                            new NPCDialogue(npc, "Ah, good day, it's you again. What can I do for you?"),
+                            new OptionsDialogue("What would you like to ask about?",
+                                    new Option("Can I trade some jarred implings please?", () -> ElnockExchange.open(player)),
+                                    new Option("Do you have some spare equipment I can use?", () -> requestEquipment(player, npc))
+                            )
+                    );
+                } else {
+                    player.dialogue(
+                            new NPCDialogue(npc, "Ah, I notice you don't own an impling collector's scroll. Do you want one?"),
+                            new OptionsDialogue("Do you want an impling collector's scroll?",
+                                    new Option("Yes, please", () -> {
+                                        player.getInventory().addOrDrop(Items.IMPLING_SCROLL, 1);
+                                        player.dialogue(
+                                                new NPCDialogue(npc, "Ah, good day, it's you again. What can I do for you?"),
+                                                new OptionsDialogue("What would you like to ask about?",
+                                                        new Option("Can I trade some jarred implings please?", () -> ElnockExchange.open(player)),
+                                                        new Option("Do you have some spare equipment I can use?", () -> requestEquipment(player, npc))
+                                                )
+                                        );
+                                    }),
+                                    new Option("No, thanks",
+                                            new NPCDialogue(npc, "Ah, good day, it's you again. What can I do for you?"),
+                                            new OptionsDialogue("What would you like to ask about?",
+                                                    new Option("Can I trade some jarred implings please?", () -> ElnockExchange.open(player)),
+                                                    new Option("Do you have some spare equipment I can use?", () -> requestEquipment(player, npc))
+                                            ))
+                            )
+                    );
+                }
             } else {
                 player.dialogue(
                         new PlayerDialogue("What's a gnome doing here?"),

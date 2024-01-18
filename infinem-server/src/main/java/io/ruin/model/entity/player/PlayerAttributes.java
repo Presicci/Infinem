@@ -146,10 +146,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public boolean fairyAerykaDialogueStarted;
 
-    @Expose public boolean elnockInquisitorDialogueStarted;
-
-    @Expose public boolean elnockInquisitorGivenEquipment;
-
     public NPC examineMonster;
 
     @Expose public BarrowsBrother barrowsChestBrother;
