@@ -43,6 +43,6 @@ public class NPCLocator {
     }
 
     static {
-        NPCAction.register(306, "talk-to", (player, npc) -> open(player));
+        NPCAction.register(306, "find npc", (player, npc) -> open(player));
     }
 }

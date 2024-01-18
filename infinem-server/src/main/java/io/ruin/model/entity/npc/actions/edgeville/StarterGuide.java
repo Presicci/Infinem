@@ -34,13 +34,9 @@ public class StarterGuide {
 
 	static {
 		NPCDef.get(307).ignoreOccupiedTiles = true;
-		NPCAction.register(306, "view-help", (player, npc) -> Help.open(player));
-		NPCAction.register(306, "view-guide", (player, npc) -> player.dialogue(
-                new OptionsDialogue("Watch the guide?",
-                        new Option("Yes", () -> tutorial(player)),
-                        new Option("No", player::closeDialogue))
-        ));
-		NPCAction.register(306, "talk-to", StarterGuide::optionsDialogue);
+        NPCAction.register(306, "talk-to", StarterGuide::optionsDialogue);
+		NPCAction.register(306, "view help", (player, npc) -> Help.open(player));
+
 
 		LoginListener.register(player -> {
             if (player.newPlayer) {
