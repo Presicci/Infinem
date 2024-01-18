@@ -182,12 +182,6 @@ public class NPCDef {
             name = "Donation Manager";
             options[0] = "Open-Shop";
             options[2] = "Claim-purchases";
-        } else if(id == 306) {
-            name = World.type.getWorldName() + " Expert";
-            options[0] = "Talk-to";
-            options[2] = "View-help";
-            options[3] = "View-guide";
-            options[4] = "Task-rewards";
         } else if(id == 5442) {
             name = "Security Advisor";
             options[2] = "Check Pin Settings";
