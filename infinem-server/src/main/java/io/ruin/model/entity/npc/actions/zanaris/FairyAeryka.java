@@ -89,7 +89,7 @@ public class FairyAeryka {
 
     static {
         NPCAction.register(FAIRY_AERYKA, "talk-to", (player, npc) -> {
-            if(player.fairyAerykaDialogueStarted) {
+            if(player.getSpokenToNPCSet().contains(npc.getId())) {
                 player.dialogue(
                         new NPCDialogue(npc, "It's still here."),
                         new PlayerDialogue("Pardon?"),
@@ -114,7 +114,7 @@ public class FairyAeryka {
                         new NPCDialogue(npc, "Crop circle? Oh, you mean the Puromatic portal?"),
                         new PlayerDialogue("The pyromatic what?"),
                         new NPCDialogue(npc, "The Puromatic portal. At least that's what we call them. It's the way the implings travel from Puro-Puro to other planes."),
-                        new PlayerDialogue("Puro-Puro?").action(() -> player.fairyAerykaDialogueStarted = true),
+                        new PlayerDialogue("Puro-Puro?").action(() -> player.getSpokenToNPCSet().add(npc.getId())),
                         new NPCDialogue(npc, "The impling home. We call it Puro-Puro. The implings just call it home, I think."),
                         new OptionsDialogue("Is there anything else you want to ask?",
                                 new Option("What's in Puro-Puro?", () -> whatIsPuroPuro(player, npc)),

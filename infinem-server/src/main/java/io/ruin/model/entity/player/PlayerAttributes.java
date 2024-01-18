@@ -141,11 +141,6 @@ public abstract class PlayerAttributes extends Entity {
     public Teleother teleotherActive;
     public TeleGroup telegroupActive;
 
-
-    @Expose public boolean kylieMinnowDialogueStarted;
-
-    @Expose public boolean fairyAerykaDialogueStarted;
-
     public NPC examineMonster;
 
     @Expose public BarrowsBrother barrowsChestBrother;

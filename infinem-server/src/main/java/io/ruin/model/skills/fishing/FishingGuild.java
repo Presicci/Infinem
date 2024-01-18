@@ -29,7 +29,7 @@ public class FishingGuild {
                         "'em all rounded up over on my fishing platform, but I still can't catch 'em!"),
                 new NPCDialogue(npc, "Then, to make things worse, any time I do finally catch some, those bloody flying fish jump out at me and gobble up me minnows!").animate(611),
                 new NPCDialogue(npc, "What I need is someone who can catch 'em for me!"),
-                new PlayerDialogue("Well, maybe I could help out?").action(() -> player.kylieMinnowDialogueStarted = true),
+                new PlayerDialogue("Well, maybe I could help out?").action(() -> player.getSpokenToNPCSet().add(npc.getId())),
                 new NPCDialogue(npc, "Well I don't know. I don't want to be letting just anyone onto me fishing platform! But I guess if you could show me that you are a " +
                         "worthy fisher than that would be okay. I can even give you shark in exchange"),
                 new NPCDialogue(npc, "for the minnows you catch, 'cos them I can catch no problem!"),
@@ -121,7 +121,7 @@ public class FishingGuild {
          * Kylie Minnow
          */
         NPCAction.register(KYLIE_MINNOW_DOCK, "talk-to", (player, npc) -> {
-            if (player.kylieMinnowDialogueStarted) {
+            if (player.getSpokenToNPCSet().contains(npc.getId())) {
                 int fishingLevel = player.getStats().get(StatType.Fishing).currentLevel;
                 if (fishingLevel < 82)
                     notExperiencedDialogue(player, npc);
