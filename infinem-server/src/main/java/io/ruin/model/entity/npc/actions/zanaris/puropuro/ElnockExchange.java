@@ -96,7 +96,13 @@ public class ElnockExchange {
         for (Item item : exchangeItem.payment) {
             player.getInventory().remove(item);
         }
-        player.getInventory().add(exchangeItem.product);
+        if (exchangeItem == ExchangeItem.JAR_GENERATOR) {
+            Item item = exchangeItem.product.copy();
+            item.setCharges(100);
+            player.getInventory().add(item);
+        } else {
+            player.getInventory().add(exchangeItem.product);
+        }
     }
 
     static {
