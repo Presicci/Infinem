@@ -7,12 +7,14 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.map.MapListener;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Tile;
 import io.ruin.model.map.dynamic.DynamicMap;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.skills.farming.patch.PatchData;
 import io.ruin.model.skills.farming.patch.impl.HesporiPatch;
 import io.ruin.services.Loggers;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -139,6 +141,12 @@ public class PVMInstance {
             player.getMovement().teleport(convertPosition(player.getPosition()));
         } else {
             player.getMovement().teleport(convertPosition(type.getEntryPosition()));
+        }
+        if (type == InstanceType.GIANT_MOLE) {
+            int x = 1752 - type.getBounds().swX;
+            int y = 5136 - type.getBounds().swY;
+            GameObject object = new GameObject(12230, map.swRegion.baseX + x, map.swRegion.baseY + y, 0, 10, 0);
+            object.spawn();
         }
         player.addActiveMapListener(mapListener);
     }
