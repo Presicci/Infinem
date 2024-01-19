@@ -2883,6 +2883,12 @@ public class Administrator {
                 }
                 return true;
             }
+            case "runes": {
+                for (Rune rune : Rune.VALUES) {
+                    player.getInventory().addOrDrop(rune.getId(), 1000);
+                }
+                return true;
+            }
         }
         return false;
     }
