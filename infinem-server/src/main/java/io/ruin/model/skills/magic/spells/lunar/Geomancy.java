@@ -135,13 +135,13 @@ public class Geomancy extends Spell {
             Patch patch = player.getFarming().getPatch(pd);
             if (patch instanceof CompostBin && patch.getStage() == 0 && patch.getProduceCount() == 0) {
                 player.getPacketSender().sendClientScript(1119, "iiii", data.val, getItemId(patch), 0, 0);
-                player.getPacketSender().sendItem(179, items.get(data.val), getItemId(patch), 1);
+                player.getPacketSender().sendItem(179, items.get(data.val) - (179 << 16), getItemId(patch), 1);
             } else if (!patch.isRaked() && !(patch instanceof CompostBin)) {
                 player.getPacketSender().sendClientScript(1119, "iiii", data.val, 6055, 0, 0);
-                player.getPacketSender().sendItem(179, items.get(data.val), 6055, 1);
+                player.getPacketSender().sendItem(179, items.get(data.val) - (179 << 16), 6055, 1);
             } else if (patch.isRaked() && patch.getPlantedCrop() == null && !(patch instanceof CompostBin)) {
                 player.getPacketSender().sendClientScript(1119, "iiii", data.val, 1925, 0, 0);
-                player.getPacketSender().sendItem(179, items.get(data.val), 1925, 1);
+                player.getPacketSender().sendItem(179, items.get(data.val) - (179 << 16), 1925, 1);
             } else {
                 /* Bit flags
                  * 0 - 1 - Diseased
@@ -185,7 +185,7 @@ public class Geomancy extends Spell {
                     growthMask |= 1 << 28;
                 }
                 player.getPacketSender().sendClientScript(1119, "iiii", data.val, getItemId(patch), growthMask, bitMask);
-                player.getPacketSender().sendItem(179, items.get(data.val), getItemId(patch), 1);
+                player.getPacketSender().sendItem(179, items.get(data.val) - (179 << 16), getItemId(patch), 1);
             }
         }
     }
