@@ -230,6 +230,16 @@ public enum SpellBook {
         return Config.MAGIC_BOOK.get(player) == ordinal();
     }
 
+    private static final Config LUNAR_DIPLOMACY_UNLOCK = Config.varpbit(2448, false).defaultValue(190);
+    private static final Config DREAM_MENTOR_UNLOCK = Config.varpbit(3618, false).defaultValue(28);
+    private static final Config WATCHTOWER_UNLOCK = Config.varp(212, false).defaultValue(13);
+    private static final Config EDGARS_RUSE_UNLOCK = Config.varp(335, false).defaultValue(110);
+    //private static final Config MAGE_ARENA_UNLOCK = Config.varp(267, false).defaultValue(8);
+    private static final Config PLAGUE_CITY_UNLOCK = Config.varp(165, false).defaultValue(29);
+    private static final Config DESERT_TREASURE_UNLOCK = Config.varpbit(358, false).defaultValue(15);
+    private static final Config KINGDOM_DIVIDED_UNLOCK = Config.varpbit(12296, false).defaultValue(150);
+    private static final Config GREAT_BRAIN_ROBBERY_UNLOCK = Config.varp(980, false).defaultValue(130);
+
     static {
         SpellBook.MODERN.spellIdOffset = 5;
         SpellBook.ANCIENT.spellIdOffset = 75;
