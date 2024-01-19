@@ -22,7 +22,6 @@ import io.ruin.data.impl.npcs.npc_shops;
 import io.ruin.data.impl.npcs.npc_spawns;
 import io.ruin.data.impl.objects.object_examines;
 import io.ruin.data.impl.objects.object_spawns;
-import io.ruin.data.impl.teleports;
 import io.ruin.data.yaml.YamlLoader;
 import io.ruin.data.yaml.impl.ShopLoader;
 import io.ruin.model.World;
@@ -1451,11 +1450,6 @@ public class Administrator {
                 return true;
             }
 
-            case "testtele": {
-                teleports.open(player);
-                return true;
-            }
-
             /**
              * Npc commands
              */
@@ -2660,12 +2654,6 @@ public class Administrator {
             /**
              * Misc commands
              */
-            case "reloadteles":
-            case "reloadteleports": {
-                DataFile.reload(player, teleports.class);
-                return true;
-            }
-
             case "reloadhelp": {
                 DataFile.reload(player, Help.class);
                 return true;

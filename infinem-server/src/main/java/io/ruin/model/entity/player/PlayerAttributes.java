@@ -149,8 +149,6 @@ public abstract class PlayerAttributes extends Entity {
 
     public TickDelay magicImbueEffect = new TickDelay();
 
-    @Expose public int teleportCategoryIndex, teleportSubcategoryIndex;
-
     @Expose public boolean canEnterMorUlRek;
 
     @Expose public FairyRing[] unlockedFairyRingTeleports = new FairyRing[FairyRing.values().length];

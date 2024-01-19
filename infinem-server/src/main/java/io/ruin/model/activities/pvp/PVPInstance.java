@@ -1,6 +1,5 @@
 package io.ruin.model.activities.pvp;
 
-import io.ruin.data.impl.teleports;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -38,26 +37,6 @@ public class PVPInstance {
     }
 
     private static void register(DynamicMap map, String teleportName, int portalX, int portalY, int portalDestX, int portalDestY, Bounds... safeZones) {
-        /**
-         * Override teleport
-         */
-        for(teleports.Category c : teleports.CATEGORIES) {
-            String cName = c.name.replaceAll("<[^>]*>", "");
-            if(!cName.equalsIgnoreCase("wilderness"))
-                continue;
-            for(teleports.Subcategory s : c.subcategories) {
-                String sCName = s.name.replaceAll("<[^>]*>", "");
-                if(!sCName.equalsIgnoreCase("Instances"))
-                    continue;
-                for(teleports.Teleport t : s.teleports) {
-                    String tName = t.name.replaceAll("<[^>]*>", "");
-                    if(!tName.equalsIgnoreCase(teleportName))
-                        continue;
-                    t.x = map.convertX(t.x);
-                    t.y = map.convertY(t.y);
-                }
-            }
-        }
         /**
          * Create portals
          */

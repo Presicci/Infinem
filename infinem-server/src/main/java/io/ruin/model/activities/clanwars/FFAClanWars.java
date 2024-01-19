@@ -1,6 +1,6 @@
 package io.ruin.model.activities.clanwars;
 
-import io.ruin.data.impl.teleports;
+import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerAction;
 import io.ruin.model.entity.shared.listeners.DeathListener;
@@ -31,7 +31,7 @@ public class FFAClanWars {
         ObjectAction.register(PVP_ENTRANCE_PORTAL, "use", (player, obj) -> player.dialogue(
                 new MessageDialogue("<col=FF0000>Warning:</col> This portal will take you to the Fun PVP Area.<br>Do you wish to proceed?").lineHeight(24),
                 new OptionsDialogue(
-                        new Option("Yes, proceed to the Fun PVP Area.", () -> teleports.teleport(player, 3327, 4751, 0)),
+                        new Option("Yes, proceed to the Fun PVP Area.", () -> Traveling.fadeTravel(player, 3327, 4751, 0)),
                         new Option("No, stay where I am.")
                 )
         ));

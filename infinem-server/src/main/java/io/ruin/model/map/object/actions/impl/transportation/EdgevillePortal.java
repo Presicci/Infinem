@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl.transportation;
 
-import io.ruin.data.impl.teleports;
+import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -16,6 +16,6 @@ public class EdgevillePortal {
     }
 
     private static void teleport(Player player) {
-        teleports.teleport(player, 3085, 3492, 0);
+        Traveling.fadeTravel(player, 3085, 3492, 0);
     }
 }

@@ -7,7 +7,6 @@ import io.ruin.api.protocol.Protocol;
 import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.utils.ISAACCipher;
 import io.ruin.cache.InterfaceDef;
-import io.ruin.data.impl.teleports;
 import io.ruin.model.World;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
@@ -16,7 +15,6 @@ import io.ruin.model.inter.*;
 //import io.ruin.model.inter.handlers.BuyCredits;
 import io.ruin.model.inter.journal.JournalCategory;
 import io.ruin.model.item.Item;
-import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Region;
 import io.ruin.model.map.ground.GroundItem;
@@ -820,44 +818,6 @@ public class PacketSender {
         write(out);*/
     }
 
-    //TODO: 184 Revision Fix Custom Packet
-    public void sendTeleports(String title,
-                              int selectedCategoryIndex, teleports.Category[] categories,
-                              int selectedSubcategoryIndex, teleports.Subcategory[] subcategories,
-                              teleports.Teleport[] teleports) {
-
-        OutBuffer out = new OutBuffer(255).sendVarShortPacket(89);
-
-        if(title != null)
-            out.addString(title);
-        else
-            out.addByte(0);
-
-        out.addByte(selectedCategoryIndex);
-        if(categories != null) {
-            out.addByte(categories.length);
-            for(teleports.Category c : categories)
-                out.addString(c.name);
-        } else {
-            out.addByte(0);
-        }
-
-        out.addByte(selectedSubcategoryIndex);
-        if(subcategories != null) {
-            out.addByte(subcategories.length);
-            for(teleports.Subcategory c : subcategories)
-                out.addString(c.name);
-        } else {
-            out.addByte(0);
-        }
-
-        if(teleports != null) {
-            for(teleports.Teleport t : teleports)
-                out.addString(t.name);
-        }
-
-        write(out);
-    }
     //TODO: 184 Revision Fix Custom Packet
     public void sendDropTable(String name, int petId, int petAverage, List<Integer[]> drops) {
         OutBuffer out = new OutBuffer(3 + Protocol.strLen(name) + 4 + (drops.size() * 13)).sendVarShortPacket(90)
