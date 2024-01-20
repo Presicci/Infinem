@@ -2,6 +2,7 @@ package io.ruin.model.content.tasksystem.relics.inter;
 
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.relics.RelicManager;
+import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
@@ -9,6 +10,7 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
+import io.ruin.model.inter.journal.JournalTab;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -50,6 +52,7 @@ public class RelicInterface {
     public static void open(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.RELICS);
         player.getPacketSender().sendAccessMask(Interface.RELICS, 12, 0, 5, AccessMasks.ClickOp1);
+        player.getPacketSender().sendAccessMask(Interface.RELICS, 32, 9, 16, AccessMasks.ClickOp1);
     }
 
     private static int getRelicStatus(Player player, Relic relic) {
@@ -91,6 +94,16 @@ public class RelicInterface {
         player.putTemporaryAttribute("SEL_RELIC", relic.getRelic());
     }
 
+    private static void navigation(Player player, int slot) {
+        if (slot == 10) {   // Info
+
+        } else if (slot == 12) {
+            TaskInterface.openTaskInterface(player);
+        } else if (slot == 14) {
+            JournalTab.setTab(player, JournalTab.Tab.ACHIEVEMENT);
+        }
+    }
+
     private static void confirm(Player player) {
         Relic relic = player.getTemporaryAttribute("SEL_RELIC");
         player.getRelicManager().takeRelic(relic);
@@ -100,6 +113,7 @@ public class RelicInterface {
     static {
         InterfaceHandler.register(Interface.RELICS, h -> {
             h.actions[12] = (SlotAction) RelicInterface::clickRelic;
+            h.actions[32] = (SlotAction) RelicInterface::navigation;
             h.actions[38] = (SimpleAction) RelicInterface::confirm;
         });
     }
