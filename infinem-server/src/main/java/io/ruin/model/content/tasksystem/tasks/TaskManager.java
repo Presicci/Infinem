@@ -8,6 +8,7 @@ import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
+import io.ruin.model.content.tasksystem.inter.TabTask;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskSQLBuilder;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
@@ -28,7 +29,6 @@ public class TaskManager {
 
     public TaskManager(Player player) {
         this.player = player;
-        this.globalTaskPoints = 0;
         this.taskPoints = new HashMap<>();
         for (TaskArea area : TaskArea.values()) {
             this.taskPoints.put(area.ordinal(), 0);
@@ -44,7 +44,6 @@ public class TaskManager {
     }
 
     private Player player;
-    @Expose private int globalTaskPoints;
     @Expose private HashMap<Integer, Integer> taskPoints;
     @Expose private HashMap<Integer, Integer> inProgressTasks;
     @Expose private HashSet<Integer> completeTasks;
@@ -58,16 +57,18 @@ public class TaskManager {
             return;
         int pointGain = taskDifficulty.getPoints();
         taskPoints.put(taskArea.ordinal(), taskPoints.get(taskArea.ordinal()) + pointGain);
-        globalTaskPoints += pointGain;
+        int newPoints = Config.LEAGUE_POINTS.increment(player, pointGain);
         player.sendMessage("<col=990000>You've completed a task: " + taskName + "!");
-        player.sendMessage("You now have " + globalTaskPoints + " task points.");
+        player.sendMessage("You now have " + newPoints + " task points.");
         completeTasks.add(uuid);
+        Config.LEAGUE_TASKS_COMPLETED.set(player, completeTasks.size());
         player.getPacketSender().sendPopupNotification(0xff981f, "Task Complete!", "Task Completed: " + Color.WHITE.wrap(taskName)
                 + "<br><br>Points Earned: " + Color.WHITE.wrap(pointGain + ""));
+        TabTask.refresh(player);
     }
 
     public void resetTasks() {
-        this.globalTaskPoints = 0;
+        Config.LEAGUE_POINTS.set(player, 0);
         this.taskPoints = new HashMap<>();
         for (TaskArea area : TaskArea.values()) {
             this.taskPoints.put(area.ordinal(), 0);
