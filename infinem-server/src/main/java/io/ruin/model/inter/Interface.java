@@ -360,6 +360,11 @@ public class Interface {
     public static final int ELNOCK_STORAGE_INVENTORY = 681;
 
     /**
+     * Task System
+     */
+    public static final int TASK_TAB = 656, RELICS = 655, TASKS = 1008;
+
+    /**
      * Custom
      */
     public static final int DROP_VIEWER = 1000;
