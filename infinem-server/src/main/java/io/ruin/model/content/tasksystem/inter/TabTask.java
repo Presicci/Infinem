@@ -7,6 +7,7 @@ import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.journal.JournalTab;
+import io.ruin.model.inter.utils.Config;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -15,6 +16,8 @@ import io.ruin.model.inter.journal.JournalTab;
 public class TabTask {
 
     public static void refresh(Player player) {
+        player.getPacketSender().sendVarp(Config.LEAGUE_POINTS.id, Config.LEAGUE_POINTS.get(player));
+        player.getPacketSender().sendVarp(Config.LEAGUE_TASKS_COMPLETED.id, Config.LEAGUE_TASKS_COMPLETED.get(player));
         JournalTab.setTab(player, JournalTab.Tab.TASK);
     }
 
