@@ -1,6 +1,7 @@
 package io.ruin.model.content.tasksystem.tasks.inter;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SlotAction;
@@ -13,18 +14,18 @@ import io.ruin.model.inter.utils.Config;
 public class TaskInterface {
 
     public static void openTaskInterface(Player player) {
-        player.openInterface(InterfaceType.MAIN, 1008);
+        player.openInterface(InterfaceType.MAIN, Interface.TASKS);
         player.getPacketSender().sendClientScript(10062, "iii", 350, 500, (int) (((float) 350/500) * 435));
-        player.getPacketSender().sendAccessMask(1008, 42, 0, 12, 2);
-        player.getPacketSender().sendAccessMask(1008, 44, 0, 12, 2);
-        player.getPacketSender().sendAccessMask(1008, 45, 0, 12, 2);
-        player.getPacketSender().sendAccessMask(1008, 46, 0, 12, 2);
-        player.getPacketSender().sendAccessMask(1008, 47, 0, 12, 2);
+        player.getPacketSender().sendAccessMask(Interface.TASKS, 42, 0, 12, 2);
+        player.getPacketSender().sendAccessMask(Interface.TASKS, 44, 0, 12, 2);
+        player.getPacketSender().sendAccessMask(Interface.TASKS, 45, 0, 12, 2);
+        player.getPacketSender().sendAccessMask(Interface.TASKS, 46, 0, 12, 2);
+        player.getPacketSender().sendAccessMask(Interface.TASKS, 47, 0, 12, 2);
         player.getTaskManager().sendTasksToInterface();
     }
 
     static {
-        InterfaceHandler.register(1008, (h -> {
+        InterfaceHandler.register(Interface.TASKS, (h -> {
             h.actions[9] = (SlotAction) (player, slot) -> {
                 player.stringInput("Search:", search -> {
                     player.getTaskManager().searchString = search;
