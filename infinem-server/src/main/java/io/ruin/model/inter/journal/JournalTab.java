@@ -3,6 +3,7 @@ package io.ruin.model.inter.journal;
 import io.ruin.Server;
 import io.ruin.cache.Color;
 import io.ruin.model.World;
+import io.ruin.model.content.tasksystem.relics.inter.RelicInterface;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;
@@ -33,7 +34,7 @@ public class JournalTab {
     @Getter
     public enum Tab {
         SUMMARY(712),
-        TASK(656),
+        TASK(Interface.TASK_TAB),
         BESTIARY(1009),
         ACHIEVEMENT(Interface.ACHIEVEMENT),
         INFORMATION(-1),
@@ -329,7 +330,11 @@ public class JournalTab {
 
     private static void handleSummaryClick(Player player, int option, int slot, int itemId) {
         if (slot == 3) {
-            TaskInterface.openTaskInterface(player);
+            if (option == 1) {
+                TaskInterface.openTaskInterface(player);
+            } else if (option == 2) {
+                RelicInterface.open(player);
+            }
         } else if (slot == 4) {
             if (option == 1) {
                 setTab(player, Tab.BESTIARY);

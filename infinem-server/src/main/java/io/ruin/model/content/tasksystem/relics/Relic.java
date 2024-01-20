@@ -72,20 +72,24 @@ public enum Relic {
         Special attacks that cost more than 20% energy (such as the Bandos godsword) will cost 20% instead.
 
      **/
-    ENDLESS_HARVEST(1,
+    EYE_OF_THE_ARTISAN(1, 1, ""),
+    GIFT_OF_THE_GATHERER(1, 2, ""),
+    WAY_OF_THE_WARRIOR(1, 3, ""),
+    ENDLESS_HARVEST(2, 1,
             "- Resources gathered from Fishing, Woodcutting and Mining will be multiplied by 2. Experience is granted per resource gathered." +
             "\n- The resources you gather are sent directly to your Bank if you have space. If not, they will be placed in your Inventory."),
-    PRODUCTION_MASTER(1,
+    PRODUCTION_MASTER(2, 2,
             "- When doing the following activities, all items will be processed at once, awarding full XP:" +
             "\n- Smelting ores, smithing bars and making cannonballs" +
             "\n- Fletching logs and cutting bolt tips" +
             "\n- Cleaning herbs and making potions" +
             "\n- Cooking food and making jugs of wine" +
-            "\n- Crafting leather, uncut gems, glass, jewellery, pottery, battlestaves, spinning flax/wool, and weaving")
+            "\n- Crafting leather, uncut gems, glass, jewellery, pottery, battlestaves, spinning flax/wool, and weaving"),
+    TRICKSTER(2, 3, "")
     ;
 
     @Getter
-    private final int tier;
+    private final int tier, configValue;
     @Getter
     private final String description;
 

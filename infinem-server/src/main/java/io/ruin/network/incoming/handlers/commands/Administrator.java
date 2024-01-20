@@ -1439,7 +1439,7 @@ public class Administrator {
 
             case "removerelic": {
                 int index = Integer.parseInt(args[0]);
-                player.getRelicManager().relics[index] = null;
+                player.getRelicManager().removeRelic(index);
                 return true;
             }
             case "testfilter": {
