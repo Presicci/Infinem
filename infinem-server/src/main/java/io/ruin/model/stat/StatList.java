@@ -6,6 +6,7 @@ import io.ruin.cache.Icon;
 import io.ruin.model.World;
 import io.ruin.model.activities.summerevent.SummerTokens;
 import io.ruin.model.activities.wilderness.Wilderness;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.player.Player;
@@ -192,6 +193,8 @@ public class StatList {
          */
         if(World.weekendExpBoost)
             amount *= 1.25;
+        double relicMulti = getRelicMultiplier(type);
+        amount *= relicMulti;
         double newXp = stat.experience + amount;
         if(newXp > Stat.MAX_XP)
             newXp = Stat.MAX_XP;
@@ -288,5 +291,19 @@ public class StatList {
                 lowest = stat.fixedLevel;
         }
         return lowest;
+    }
+
+    private double getRelicMultiplier(StatType stat) {
+        if (stat == StatType.Smithing || stat == StatType.Cooking || stat == StatType.Firemaking || stat == StatType.Herblore
+                || stat == StatType.Fletching || stat == StatType.Crafting || stat == StatType.Construction) {
+            return player.getRelicManager().hasRelicEnalbed(Relic.EYE_OF_THE_ARTISAN) ? 2 : 1;
+        } else if (stat == StatType.Mining || stat == StatType.Fishing || stat == StatType.Woodcutting || stat == StatType.Hunter
+                || stat == StatType.Thieving || stat == StatType.Farming || stat == StatType.Runecrafting) {
+            return player.getRelicManager().hasRelicEnalbed(Relic.GIFT_OF_THE_GATHERER) ? 2 : 1;
+        } else if (stat == StatType.Attack || stat == StatType.Strength || stat == StatType.Defence || stat == StatType.Hitpoints
+                || stat == StatType.Magic || stat == StatType.Ranged || stat == StatType.Prayer) {
+            return player.getRelicManager().hasRelicEnalbed(Relic.WAY_OF_THE_WARRIOR) ? 2 : 1;
+        }
+        return 1;
     }
 }
