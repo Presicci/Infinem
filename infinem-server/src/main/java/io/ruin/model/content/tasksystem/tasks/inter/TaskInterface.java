@@ -1,9 +1,11 @@
 package io.ruin.model.content.tasksystem.tasks.inter;
 
+import io.ruin.model.content.tasksystem.relics.inter.RelicInterface;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.utils.Config;
 
@@ -32,6 +34,7 @@ public class TaskInterface {
                     player.getTaskManager().sendTasksToInterface();
                 });
             };
+            h.actions[37] = (SimpleAction) RelicInterface::open;
             h.actions[42] = (SlotAction) (player, slot) -> {
                 Config.TASK_INTERFACE_AREA.set(player, slot - 1);
                 player.getTaskManager().sendTasksToInterface();
