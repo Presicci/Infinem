@@ -173,7 +173,7 @@ public class StructComposition extends DualNode {
 			Tiles.Tiles_renderFlags[var1][var2][var3] = 0;
 
 			while (true) {
-				var7 = var0.readUnsignedByte();
+				var7 = var0.readUnsignedShort();
 				if (var7 == 0) {
 					if (var1 == 0) {
 						Tiles.Tiles_heights[0][var2][var3] = -WorldMapElement.method2851(932731 + var2 + var4, var5 + var3 + 556238) * 8;
@@ -198,18 +198,18 @@ public class StructComposition extends DualNode {
 				}
 
 				if (var7 <= 49) {
-					Tiles.Tiles_overlays[var1][var2][var3] = var0.readByte();
+					Tiles.Tiles_overlays[var1][var2][var3] = (short)var0.readShort();
 					Tiles.Tiles_shapes[var1][var2][var3] = (byte)((var7 - 2) / 4);
 					Tiles.field977[var1][var2][var3] = (byte)(var7 - 2 + var6 & 3);
 				} else if (var7 <= 81) {
 					Tiles.Tiles_renderFlags[var1][var2][var3] = (byte)(var7 - 49);
 				} else {
-					class6.Tiles_underlays[var1][var2][var3] = (byte)(var7 - 81);
+					class6.Tiles_underlays[var1][var2][var3] = (short)(var7 - 81);
 				}
 			}
 		} else {
 			while (true) {
-				var7 = var0.readUnsignedByte();
+				var7 = var0.readUnsignedShort();
 				if (var7 == 0) {
 					break;
 				}
@@ -220,7 +220,7 @@ public class StructComposition extends DualNode {
 				}
 
 				if (var7 <= 49) {
-					var0.readUnsignedByte();
+					var0.readShort();
 				}
 			}
 		}

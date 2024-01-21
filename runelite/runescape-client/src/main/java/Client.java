@@ -1856,8 +1856,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthTokens {
 
 								class1.playPcmPlayers();
 								Tiles.Tiles_minPlane = 99;
-								class6.Tiles_underlays = new byte[4][104][104];
-								Tiles.Tiles_overlays = new byte[4][104][104];
+								class6.Tiles_underlays = new short[4][104][104];
+								Tiles.Tiles_overlays = new short[4][104][104];
 								Tiles.Tiles_shapes = new byte[4][104][104];
 								Tiles.field977 = new byte[4][104][104];
 								class113.field1367 = new int[4][105][105];
@@ -2282,7 +2282,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthTokens {
 											var16 = var14 + 5;
 											int var10002;
 											if (var16 >= 0 && var16 < 104) {
-												var17 = class6.Tiles_underlays[var53][var16][var15] & 255;
+												var17 = class6.Tiles_underlays[var53][var16][var15] & 32767;
 												if (var17 > 0) {
 													FloorUnderlayDefinition var76 = TaskHandler.method2740(var17 - 1);
 													var10000 = DirectByteArrayCopier.Tiles_hue;
@@ -2299,7 +2299,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthTokens {
 
 											var17 = var14 - 5;
 											if (var17 >= 0 && var17 < 104) {
-												var59 = class6.Tiles_underlays[var53][var17][var15] & 255;
+												var59 = class6.Tiles_underlays[var53][var17][var15] & 32767;
 												if (var59 > 0) {
 													FloorUnderlayDefinition var77 = TaskHandler.method2740(var59 - 1);
 													var10000 = DirectByteArrayCopier.Tiles_hue;
@@ -2346,8 +2346,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthTokens {
 														Tiles.Tiles_minPlane = var53;
 													}
 
-													var23 = class6.Tiles_underlays[var53][var14][var61] & 255;
-													var24 = Tiles.Tiles_overlays[var53][var14][var61] & 255;
+													var23 = class6.Tiles_underlays[var53][var14][var61] & 32767;
+													var24 = Tiles.Tiles_overlays[var53][var14][var61] & 32767;
 													if (var23 > 0 || var24 > 0) {
 														var25 = Tiles.Tiles_heights[var53][var14][var61];
 														var26 = Tiles.Tiles_heights[var53][var14 + 1][var61];

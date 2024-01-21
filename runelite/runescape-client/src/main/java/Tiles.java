@@ -19,7 +19,7 @@ public final class Tiles {
 	static int Tiles_minPlane;
 	@ObfuscatedName("o")
 	@Export("Tiles_overlays")
-	static byte[][][] Tiles_overlays;
+	static short[][][] Tiles_overlays;
 	@ObfuscatedName("g")
 	@Export("Tiles_shapes")
 	static byte[][][] Tiles_shapes;
