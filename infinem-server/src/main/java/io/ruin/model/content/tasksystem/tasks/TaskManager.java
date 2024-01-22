@@ -425,7 +425,7 @@ public class TaskManager {
             doLookupByCategory(TaskCategory.FIRSTLEVEL, level, false);
         }
         doLookupByCategory(TaskCategory.BASELEVEL, player.getStats().getBaseLevel(), false);
-        doLookupByCategory(TaskCategory.TOTALLEVEL, player.getStats().totalLevel, false);
+        doLookupByCategory(TaskCategory.TOTALLEVEL, player.getStats().totalLevel + 1, false);
         doLookupByCategory(TaskCategory.COMBATLEVEL, player.getCombat().getLevel(), false);
     }
 
