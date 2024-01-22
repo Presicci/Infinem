@@ -109950,6 +109950,34 @@
     "magic_defence_bonus": 2,
     "melee_strength_bonus": 80
   },
+  { // Dinh's blazing bulwark
+    "id": 28682,
+    "tradeable": false,
+    "examine": "Hot to the touch.",
+    "weight": 30.0,
+	"protect_value": 40000000,
+    "equip_slot": 3,
+    "attack_level": 75,
+    "defence_level": 75,
+    "crush_attack_bonus": 110,
+    "stab_defence_bonus": 141,
+    "slash_defence_bonus": 145,
+    "crush_defence_bonus": 145,
+    "magic_defence_bonus": 18,
+    "range_defence_bonus": 148,
+    "melee_strength_bonus": 38,
+    "weapon_type": "BULWARK",
+    "two_handed": true
+  },
+  { // Sage's greaves
+    "id": 28771,
+    "tradeable": false,
+    "examine": "Greaves that give you blazing speed.",
+    "weight": 0,
+    "protect_value": 1,
+    "equip_slot": 10,
+    "destroy": "You can get this item back by talking to the Sage near Lumbridge."
+  },
    { // Founder hat
       "id": 30000,
       "tradeable": true,
