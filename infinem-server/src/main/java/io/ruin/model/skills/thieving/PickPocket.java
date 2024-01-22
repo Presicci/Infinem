@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -405,7 +406,7 @@ public enum PickPocket {
             player.sendMessage("You can't pickpocket an NPC while a guard is watching you.");
             return false;
         }
-        if (pickpocket.pouchId > 1 && player.getInventory().getAmount(pickpocket.pouchId) >= 28) {
+        if (pickpocket.pouchId > 1 && player.getInventory().getAmount(pickpocket.pouchId) >= (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER) ? 28 * 3 : 28)) {
             player.sendMessage("You need to open your coin pouches before you pick any more pockets.");
             return false;
         }
