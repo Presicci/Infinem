@@ -75,11 +75,13 @@ import io.ruin.model.stat.StatType;
 import io.ruin.network.PacketSender;
 import io.ruin.network.central.CentralClient;
 import io.ruin.network.incoming.IncomingDecoder;
+import io.ruin.process.tickevent.TickEventType;
 import io.ruin.services.Hiscores;
 import io.ruin.services.Loggers;
 import io.ruin.services.XenGroup;
 import io.ruin.utility.CS2Script;
 import io.ruin.utility.TickDelay;
+import io.ruin.process.tickevent.TickEvent;
 import lombok.Getter;
 
 import java.time.LocalDate;
@@ -1709,6 +1711,7 @@ public class Player extends PlayerAttributes {
         }
         combat.tickSkull();
         tickDarkness();
+        tickEvents();
         /*if(player.wildernessLevel <= 0 && !player.pvpAttackZone && player.snowballPeltOption &&
                 !player.getEquipment().hasId(Christmas.SNOWBALL) && !player.getPosition().inBounds(DuelArena.BOUNDS)
                 && !player.getPosition().inBounds(DuelArena.CUSTOM_EDGE)) {
@@ -2009,5 +2012,21 @@ public class Player extends PlayerAttributes {
             animTick = Server.currentTick() + def.getDuration();
         }
         animationUpdate.set(id, delay);
+    }
+
+    @Getter @Expose private final List<TickEvent> tickingEvents = new ArrayList<>();
+
+    private void tickEvents() {
+        tickingEvents.removeIf(event -> event.tick() <= 0);
+    }
+
+    public boolean addTickEvent(TickEvent event) {
+        if (isTickEventActive(event.getType())) return false;
+        tickingEvents.add(event);
+        return true;
+    }
+
+    private boolean isTickEventActive(TickEventType event) {
+        return tickingEvents.stream().anyMatch(e -> e.getType() == event);
     }
 }
