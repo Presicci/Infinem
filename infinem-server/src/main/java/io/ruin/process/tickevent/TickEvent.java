@@ -35,7 +35,7 @@ public class TickEvent {
             onRun.run();
             onRun = null;
         }
-        if (--durationTicks >= 0 && onComplete != null) {
+        if (--durationTicks <= 0 && onComplete != null) {
             onComplete.run();
         }
         for (TickEventRunnable runnable : onTick) {
