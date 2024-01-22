@@ -313,7 +313,6 @@ public abstract class PlayerAttributes extends Entity {
     /**
      * Antifire
      */
-    @Expose public int antifireTicks;
     @Expose public int superAntifireTicks;
 
     /**

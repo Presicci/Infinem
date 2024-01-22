@@ -703,7 +703,20 @@ public class Consumable {
             p.curePoison((90 * 1000) / 600);
         });
         registerPotion(Potion.ANTIDOTE_PLUS, p -> p.curePoison((540 * 1000) / 600));
-        registerPotion(Potion.ANTIFIRE, p -> p.antifireTicks = (360 * 1000) / 600);
+        registerPotion(Potion.ANTIFIRE, p -> {
+            p.addTickEvent(new TickEvent(
+                    TickEventType.ANTIFIRE,
+                    (360 * 1000) / 600,
+                    () -> {
+                        p.sendMessage("<col=7f007f>Your antifire potion has expired.");
+                        p.privateSound(2607, 1, 0);
+                    },
+                    new TickEventRunnable(30, () -> {
+                        p.sendMessage("<col=7f007f>Your antifire potion is about to expire.");
+                        p.privateSound(3120, 3, 0);
+                    })
+            ));
+        });
         registerPotion(Potion.SUPER_ANTIFIRE, p -> p.superAntifireTicks = (180 * 1000) / 600);
 
         registerPotion(Potion.STAMINA, p -> {
@@ -743,7 +756,20 @@ public class Consumable {
             p.hit(new Hit().fixedDamage((int) (2 + (p.getMaxHp() * 0.1))));
         });
 
-        registerPotion(Potion.EXTENDED_ANTIFIRE, p -> p.antifireTicks = (720 * 1000) / 600);
+        registerPotion(Potion.EXTENDED_ANTIFIRE, p -> {
+            p.addTickEvent(new TickEvent(
+                    TickEventType.ANTIFIRE,
+                    (720 * 1000) / 600,
+                    () -> {
+                        p.sendMessage("<col=7f007f>Your antifire potion has expired.");
+                        p.privateSound(2607, 1, 0);
+                    },
+                    new TickEventRunnable(30, () -> {
+                        p.sendMessage("<col=7f007f>Your antifire potion is about to expire.");
+                        p.privateSound(3120, 3, 0);
+                    })
+            ));
+        });
         registerPotion(Potion.EXTENDED_SUPER_ANTIFIRE, p -> p.superAntifireTicks = (360 * 1000) / 600);
         registerPotion(Potion.MAGIC_ESSENCE, p -> p.getStats().get(StatType.Magic).boost(3, 0));
         registerPotion(Potion.ANTI_VENOM, p -> p.cureVenom((36 * 1000) / 600, (720 * 1000) / 600));

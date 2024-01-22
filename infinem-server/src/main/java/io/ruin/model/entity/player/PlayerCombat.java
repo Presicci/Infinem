@@ -49,6 +49,7 @@ import io.ruin.model.skills.prayer.Redemption;
 import io.ruin.model.skills.prayer.Retribution;
 import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.stat.StatType;
+import io.ruin.process.tickevent.TickEventType;
 import io.ruin.utility.Misc;
 import io.ruin.utility.Utils;
 import lombok.extern.slf4j.Slf4j;
@@ -1674,7 +1675,7 @@ public class PlayerCombat extends Combat {
         double absorbDamage = 0.0;
         if (player.superAntifireTicks > 0)
             absorbDamage += 1.0;
-        else if(player.antifireTicks > 0)
+        else if(player.isTickEventActive(TickEventType.ANTIFIRE))
             absorbDamage += 0.8;
 
         if(player.getPrayer().isActive(Prayer.PROTECT_FROM_MAGIC))
