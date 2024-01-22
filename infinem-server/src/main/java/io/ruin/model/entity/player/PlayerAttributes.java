@@ -311,11 +311,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public boolean contractCompleted;
 
     /**
-     * Antifire
-     */
-    @Expose public int superAntifireTicks;
-
-    /**
      * Alch
      */
     public TickDelay alchDelay = new TickDelay();

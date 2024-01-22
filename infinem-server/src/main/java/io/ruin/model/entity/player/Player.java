@@ -1655,16 +1655,6 @@ public class Player extends PlayerAttributes {
             specialRestoreTicks = 0;
             combat.restoreSpecial(10);
         }
-        if(superAntifireTicks > 0) {
-            superAntifireTicks--;
-            if(superAntifireTicks == 30) {
-                sendMessage("<col=7f007f>Your super antifire potion is about to expire.");
-                privateSound(3120, 3, 0);
-            } else if(superAntifireTicks == 0) {
-                sendMessage("<col=7f007f>Your super antifire potion has expired.");
-                privateSound(2607, 1, 0);
-            }
-        }
 
         if (lastTimeKilledDonatorBoss > 0) {
             if (System.currentTimeMillis() >= lastTimeKilledDonatorBoss + 86400000) {

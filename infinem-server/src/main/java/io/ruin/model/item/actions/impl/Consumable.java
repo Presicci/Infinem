@@ -717,7 +717,20 @@ public class Consumable {
                     })
             ));
         });
-        registerPotion(Potion.SUPER_ANTIFIRE, p -> p.superAntifireTicks = (180 * 1000) / 600);
+        registerPotion(Potion.SUPER_ANTIFIRE, p -> {
+            p.addTickEvent(new TickEvent(
+                    TickEventType.ANTIFIRE,
+                    (180 * 1000) / 600,
+                    () -> {
+                        p.sendMessage("<col=7f007f>Your super antifire potion has expired.");
+                        p.privateSound(2607, 1, 0);
+                    },
+                    new TickEventRunnable(30, () -> {
+                        p.sendMessage("<col=7f007f>Your super antifire potion is about to expire.");
+                        p.privateSound(3120, 3, 0);
+                    })
+            ));
+        });
 
         registerPotion(Potion.STAMINA, p -> {
             p.getMovement().restoreEnergy(20);
@@ -770,7 +783,20 @@ public class Consumable {
                     })
             ));
         });
-        registerPotion(Potion.EXTENDED_SUPER_ANTIFIRE, p -> p.superAntifireTicks = (360 * 1000) / 600);
+        registerPotion(Potion.EXTENDED_SUPER_ANTIFIRE, p -> {
+            p.addTickEvent(new TickEvent(
+                    TickEventType.ANTIFIRE,
+                    (360 * 1000) / 600,
+                    () -> {
+                        p.sendMessage("<col=7f007f>Your super antifire potion has expired.");
+                        p.privateSound(2607, 1, 0);
+                    },
+                    new TickEventRunnable(30, () -> {
+                        p.sendMessage("<col=7f007f>Your super antifire potion is about to expire.");
+                        p.privateSound(3120, 3, 0);
+                    })
+            ));
+        });
         registerPotion(Potion.MAGIC_ESSENCE, p -> p.getStats().get(StatType.Magic).boost(3, 0));
         registerPotion(Potion.ANTI_VENOM, p -> p.cureVenom((36 * 1000) / 600, (720 * 1000) / 600));
         registerPotion(Potion.SUPER_ANTI_VENOM, p -> p.cureVenom((180 * 1000) / 600, (900 * 1000) / 600));

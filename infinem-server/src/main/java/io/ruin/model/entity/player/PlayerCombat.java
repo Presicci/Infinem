@@ -1673,7 +1673,7 @@ public class PlayerCombat extends Combat {
          * Dragon fire
          */
         double absorbDamage = 0.0;
-        if (player.superAntifireTicks > 0)
+        if (player.isTickEventActive(TickEventType.SUPER_ANTIFIRE))
             absorbDamage += 1.0;
         else if(player.isTickEventActive(TickEventType.ANTIFIRE))
             absorbDamage += 0.8;
