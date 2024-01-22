@@ -1990,7 +1990,8 @@ public class Player extends PlayerAttributes {
     }
 
     public boolean addTickEvent(TickEvent event) {
-        if (isTickEventActive(event.getType())) return false;
+        if (event.getType() != TickEventType.GENERIC_UNCHECKABLE_EVENT
+                && isTickEventActive(event.getType())) return false;
         tickingEvents.add(event);
         return true;
     }
