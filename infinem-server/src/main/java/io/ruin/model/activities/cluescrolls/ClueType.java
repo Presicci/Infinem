@@ -17,8 +17,8 @@ import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.pet.Pet;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public enum ClueType {
 
@@ -1073,13 +1073,9 @@ public enum ClueType {
             save = player.easyClue;
         }
         if(save.id == -1 || Clue.CLUES[save.id] == null) {
-            ArrayList<Clue> clues = new ArrayList<>();
-            for(Clue clue : Clue.CLUES) {
-                if(clue != null && clue.type == this)
-                    clues.add(clue);
-            }
-            Collections.shuffle(clues);
-            save.id = clues.get(0).id;
+            StepType stepType = Random.get(StepType.values());
+            List<Clue> clues = Clue.CLUES_BY_CATEGORY.get(stepType).get(this.ordinal());
+            save.id = Random.get(clues).id;
             if(save.remaining == 0)
                 save.remaining = Random.get(minStages, maxStages);
         }

@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueEnemies;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.activities.cluescrolls.StepType;
 import io.ruin.model.combat.Hit;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
@@ -29,7 +30,7 @@ public class HotColdClue extends Clue {
     public Position position;
 
     private HotColdClue(ClueType type, Position position) {
-        super(type);
+        super(type, StepType.HOTCOLD);
         this.position = position;
     }
 

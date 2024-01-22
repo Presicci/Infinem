@@ -3,6 +3,7 @@ package io.ruin.model.activities.cluescrolls.impl;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.activities.cluescrolls.StepType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 
@@ -14,7 +15,7 @@ public class AnagramClue extends Clue {
     private final String clue;
 
     private AnagramClue(String clue, ClueType type) {
-        super(type);
+        super(type, StepType.ANAGRAM);
         this.clue = clue.toUpperCase();
     }
 

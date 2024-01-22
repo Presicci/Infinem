@@ -2,6 +2,7 @@ package io.ruin.model.activities.cluescrolls.impl;
 
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.activities.cluescrolls.StepType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.map.Tile;
@@ -11,7 +12,7 @@ public class MapClue extends Clue {
     private final int interfaceId;
 
     private MapClue(int interfaceId, ClueType type) {
-        super(type);
+        super(type, StepType.MAP);
         this.interfaceId = interfaceId;
     }
 

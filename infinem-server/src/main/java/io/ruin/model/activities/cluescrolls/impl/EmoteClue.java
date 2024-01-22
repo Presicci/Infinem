@@ -6,6 +6,7 @@ import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.cluescrolls.StashUnits;
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.activities.cluescrolls.StepType;
 import io.ruin.model.entity.npc.actions.clues.Uri;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
@@ -33,14 +34,14 @@ public class EmoteClue extends Clue {
     int setSize;
 
     public EmoteClue(String clue, ClueType type, List<Integer> equipment, List<Integer> emptyEquipmentSlots, List<TabEmote> emotes) {
-        super(type);
+        super(type, StepType.EMOTE);
         this.clue = clue;
         this.equipment = equipment;
         this.emptyEquipmentSlots = emptyEquipmentSlots;
         this.emotes = emotes;
     }
     public EmoteClue(String clue, ClueType type, List<Integer> equipment, List<Integer> emptyEquipmentSlots, List<TabEmote> emotes, int setSize) {
-        super(type);
+        super(type, StepType.EMOTE);
         this.clue = clue;
         this.equipment = equipment;
         this.emptyEquipmentSlots = emptyEquipmentSlots;

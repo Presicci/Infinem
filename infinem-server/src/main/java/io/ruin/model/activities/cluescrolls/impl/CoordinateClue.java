@@ -3,6 +3,7 @@ package io.ruin.model.activities.cluescrolls.impl;
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueEnemies;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.activities.cluescrolls.StepType;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
@@ -18,7 +19,7 @@ public class CoordinateClue extends Clue {
     private final String clue;
 
     public CoordinateClue(ClueType type, String clue) {
-        super(type);
+        super(type, StepType.COORDINATE);
         this.clue = clue;
     }
 

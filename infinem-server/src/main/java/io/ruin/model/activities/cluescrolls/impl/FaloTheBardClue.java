@@ -3,6 +3,7 @@ package io.ruin.model.activities.cluescrolls.impl;
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.activities.cluescrolls.StepType;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -23,7 +24,7 @@ public class FaloTheBardClue extends Clue {
     private final String clue;
 
     public FaloTheBardClue(String clue, ClueType type) {
-        super(type);
+        super(type, StepType.FALO);
         this.clue = clue;
     }
 

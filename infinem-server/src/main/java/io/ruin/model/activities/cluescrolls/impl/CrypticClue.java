@@ -3,6 +3,7 @@ package io.ruin.model.activities.cluescrolls.impl;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
+import io.ruin.model.activities.cluescrolls.StepType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.map.Tile;
@@ -17,7 +18,7 @@ public class CrypticClue extends Clue {
     private final String clue;
 
     public CrypticClue(String clue, ClueType type) {
-        super(type);
+        super(type, StepType.CRYPTIC);
         this.clue = clue;
     }
 
