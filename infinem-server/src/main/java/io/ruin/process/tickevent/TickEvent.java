@@ -11,13 +11,19 @@ public class TickEvent {
     @Getter private final TickEventType type;
     private int durationTicks;
     private Runnable onRun;
+    private final TickEventRunnable[] onTick;
     private final Runnable onComplete;
 
-    public TickEvent(TickEventType type, int durationTicks, Runnable onRun, Runnable onComplete) {
+    public TickEvent(TickEventType type, int durationTicks, Runnable onRun, Runnable onComplete, TickEventRunnable... onTick) {
         this.type = type;
         this.durationTicks = durationTicks;
         this.onRun = onRun;
         this.onComplete = onComplete;
+        this.onTick = onTick;
+    }
+
+    public TickEvent(TickEventType type, int durationTicks, Runnable onRun, Runnable onComplete) {
+        this(type, durationTicks, onRun, onComplete, new TickEventRunnable[0]);
     }
 
     public TickEvent(TickEventType type, int durationTicks) {
@@ -32,7 +38,9 @@ public class TickEvent {
         if (--durationTicks >= 0 && onComplete != null) {
             onComplete.run();
         }
-        System.out.println(durationTicks);
+        for (TickEventRunnable runnable : onTick) {
+            if (runnable != null && runnable.getTick() == durationTicks) runnable.getRunnable().run();
+        }
         return durationTicks;
     }
 }
