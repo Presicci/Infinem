@@ -9,6 +9,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
+import io.ruin.model.skills.agility.SagesGreaves;
 import io.ruin.model.stat.StatType;
 import io.ruin.process.event.EventConsumer;
 
@@ -192,6 +193,7 @@ public class PlayerMovement extends Movement {
                     walkDirection = getWalkDirection(diffX, diffY);
                 else if(!forceRun)
                     drainEnergy();
+                SagesGreaves.tickGreaves(player);
                 player.movementModeUpdate.set(2);
             } else {
                 restoreEnergy();
