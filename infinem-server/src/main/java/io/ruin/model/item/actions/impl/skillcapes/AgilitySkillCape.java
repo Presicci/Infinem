@@ -4,6 +4,9 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Widget;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.process.tickevent.TickEvent;
+import io.ruin.process.tickevent.TickEventRunnable;
+import io.ruin.process.tickevent.TickEventType;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -21,7 +24,19 @@ public class AgilitySkillCape {
         }
         player.getMovement().restoreEnergy(100);
         Config.STAMINA_POTION.set(player, 1);
-        player.staminaTicks = 100; // One minute
+        player.addTickEvent(new TickEvent(
+                TickEventType.STAMINA_POTION,
+                100,
+                () -> {
+                    player.sendMessage("<col=8f4808>Your stamina potion has expired.");
+                    player.privateSound(2672, 3, 0);
+                    Config.STAMINA_POTION.set(player, 0);
+                },
+                new TickEventRunnable(17, () -> {
+                    player.sendMessage("<col=8f4808>Your stamina potion is about to expire.");
+                    player.privateSound(3120, 3, 0);
+                })
+        ));
         player.getPacketSender().sendWidget(Widget.STAMINA, 60);
         player.sendMessage("You activate the effect of your Agility cape.");
         player.lastAgilityCapeBoost = System.currentTimeMillis();

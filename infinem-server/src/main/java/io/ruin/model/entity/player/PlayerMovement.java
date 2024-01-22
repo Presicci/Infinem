@@ -12,6 +12,7 @@ import io.ruin.model.map.Tile;
 import io.ruin.model.skills.agility.SagesGreaves;
 import io.ruin.model.stat.StatType;
 import io.ruin.process.event.EventConsumer;
+import io.ruin.process.tickevent.TickEventType;
 
 public class PlayerMovement extends Movement {
 
@@ -67,7 +68,7 @@ public class PlayerMovement extends Movement {
         else if(weight > 64D)
             weight = 64D;
         double drain = ((weight / 100D) + 0.64) * 100D;
-        if(player.staminaTicks > 0) {
+        if(player.isTickEventActive(TickEventType.STAMINA_POTION)) {
             /* reduces drain by 70% */
             drain *= 0.30;
         }

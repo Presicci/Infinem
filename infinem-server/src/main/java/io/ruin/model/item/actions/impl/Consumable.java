@@ -16,6 +16,9 @@ import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.herblore.Potion;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
+import io.ruin.process.tickevent.TickEvent;
+import io.ruin.process.tickevent.TickEventRunnable;
+import io.ruin.process.tickevent.TickEventType;
 
 import java.util.function.Consumer;
 
@@ -706,7 +709,19 @@ public class Consumable {
         registerPotion(Potion.STAMINA, p -> {
             p.getMovement().restoreEnergy(20);
             Config.STAMINA_POTION.set(p, 1);
-            p.staminaTicks = 200;
+            p.addTickEvent(new TickEvent(
+                    TickEventType.STAMINA_POTION,
+                    200,
+                    () -> {
+                        p.sendMessage("<col=8f4808>Your stamina potion has expired.");
+                        p.privateSound(2672, 3, 0);
+                        Config.STAMINA_POTION.set(p, 0);
+                    },
+                    new TickEventRunnable(17, () -> {
+                        p.sendMessage("<col=8f4808>Your stamina potion is about to expire.");
+                        p.privateSound(3120, 3, 0);
+                    })
+            ));
         });
         registerPotion(Potion.ANTIDOTE_PLUS_PLUS, p -> {
             p.curePoison((730 * 1000) / 600);

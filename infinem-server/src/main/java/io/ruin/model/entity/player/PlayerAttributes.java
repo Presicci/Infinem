@@ -114,8 +114,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public long playTime;
 
-    @Expose public int staminaTicks;
-
     public int specialRestoreTicks;
 
     public Config selectedKeybindConfig;

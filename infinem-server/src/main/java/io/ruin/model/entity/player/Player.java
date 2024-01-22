@@ -1675,17 +1675,6 @@ public class Player extends PlayerAttributes {
                 privateSound(2607, 1, 0);
             }
         }
-        if(staminaTicks > 0) {
-            staminaTicks--;
-            if(staminaTicks == 17) {
-                sendMessage("<col=8f4808>Your stamina potion is about to expire.");
-                privateSound(3120, 3, 0);
-            } else if(staminaTicks == 0) {
-                sendMessage("<col=8f4808>Your stamina potion has expired.");
-                privateSound(2672, 3, 0);
-                Config.STAMINA_POTION.set(this, 0);
-            }
-        }
 
         if (lastTimeKilledDonatorBoss > 0) {
             if (System.currentTimeMillis() >= lastTimeKilledDonatorBoss + 86400000) {
@@ -2026,7 +2015,7 @@ public class Player extends PlayerAttributes {
         return true;
     }
 
-    private boolean isTickEventActive(TickEventType event) {
+    public boolean isTickEventActive(TickEventType event) {
         return tickingEvents.stream().anyMatch(e -> e.getType() == event);
     }
 }
