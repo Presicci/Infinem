@@ -8,6 +8,8 @@ import io.ruin.model.item.Item;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.stat.StatType;
+import io.ruin.process.tickevent.TickEvent;
+import io.ruin.process.tickevent.TickEventType;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -59,10 +61,11 @@ public class VengeanceOther extends Spell {
 
         Config.VENG_COOLDOWN.set(player, 1);
         player.getPacketSender().sendWidget(Widget.VENGEANCE, 30);
-        player.addEvent(e -> {
-            e.delay(50);
-            Config.VENG_COOLDOWN.set(player, 0);
-        });
+        player.addTickEvent(new TickEvent(
+                TickEventType.GENERIC_UNCHECKABLE_EVENT,
+                50,
+                () -> Config.VENG_COOLDOWN.set(player, 0)
+        ));
         return true;
     }
 }
