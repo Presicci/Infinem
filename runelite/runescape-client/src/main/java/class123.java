@@ -70,14 +70,14 @@ public class class123 extends class116 {
 		for (var3 = 0; var3 < var2; ++var3) {
 			boolean var4 = var0.readUnsignedByte() == 1;
 			int var5 = var0.readMedium();
-			Object var6;
+			Node var6;
 			if (var4) {
 				var6 = new ObjectNode(var0.readStringCp1252NullTerminated());
 			} else {
 				var6 = new IntegerNode(var0.readInt());
 			}
 
-			var1.put((Node)var6, (long)var5);
+			var1.put(var6, (long)var5);
 		}
 
 		return var1;
