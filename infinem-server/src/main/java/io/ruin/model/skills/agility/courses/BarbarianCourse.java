@@ -9,11 +9,24 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.Ladder;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.stat.StatType;
 
 public class BarbarianCourse {
+
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(2550, 3546, 0), true).getObject(23144, 22, 3),
+            Tile.get(new Position(2538, 3545, 0), true).getObject(20211, 10, 3),
+            Tile.get(new Position(2535, 3547, 1), true).getObject(23547, 22, 1),
+            Tile.get(new Position(2532, 3545, 1), true).getObject(42487, 10, 2),
+            Tile.get(new Position(2536, 3553, 0), true).getObject(1948, 10, 2),
+            Tile.get(new Position(2539, 3553, 0), true).getObject(1948, 10, 2),
+            Tile.get(new Position(2542, 3553, 0), true).getObject(1948, 10, 2)
+    };
+
     static {
         /**
          * Ropeswing
@@ -30,6 +43,8 @@ public class BarbarianCourse {
             player.getStats().addXp(StatType.Agility, 22.0, true);
             player.putAttribute("LAST_AGIL_OBJ", obj.id);
             player.unlock();
+            event.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[0]);
         }));
         Tile.getObject(23131, 2551, 3550, 0).walkTo = new Position(2551, 3554, 0);
         /**
@@ -47,6 +62,8 @@ public class BarbarianCourse {
             if (player.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23131)
                 player.putAttribute("LAST_AGIL_OBJ", obj.id);
             player.unlock();
+            event.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[1]);
         }));
         Tile.getObject(23144, 2550, 3546, 0).walkTo = new Position(2551, 3546, 0);
         /**
@@ -64,6 +81,8 @@ public class BarbarianCourse {
             if (player.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23144)
                 player.putAttribute("LAST_AGIL_OBJ", obj.id);
             player.unlock();
+            event.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[2]);
         }));
         /**
          * Balancing ledge
@@ -81,12 +100,24 @@ public class BarbarianCourse {
             if (player.getAttributeIntOrZero("LAST_AGIL_OBJ") == 20211)
                 player.putAttribute("LAST_AGIL_OBJ", obj.id);
             player.unlock();
+            event.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[3]);
         }));
         /**
          * Ladder
          */
-        ObjectAction.register(16682, "climb-down", (player, obj) -> Ladder.climb(player, player.getAbsX(), player.getAbsY(), 0, false, true, false));
-        ObjectAction.register(16682, "climb-up", (player, obj) -> player.sendMessage("Why would you want to go backwards?"));
+        ObjectAction.register(42487, "climb-down", (player, obj) -> {
+            player.startEvent(e -> {
+                player.lock(LockType.FULL_DELAY_DAMAGE);
+                player.animate(827);
+                e.delay(1);
+                player.getMovement().teleport(2532, 3546, 0);
+                player.unlock();
+                e.delay(1);
+                TricksterAgility.attemptNext(player, OBSTACLES[4]);
+            });
+        });
+        ObjectAction.register(16683, "climb-up", (player, obj) -> player.sendMessage("Why would you want to go backwards?"));
         /**
          * Crumbling wall one!
          */
@@ -99,6 +130,8 @@ public class BarbarianCourse {
             if (player.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23547)
                 player.putAttribute("LAST_AGIL_OBJ", obj.id);
             player.unlock();
+            event.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[5]);
         }));
         Tile.getObject(1948, 2536, 3553, 0).walkTo = new Position(2535, 3553, 0);
         /**
@@ -111,6 +144,8 @@ public class BarbarianCourse {
             event.delay(1);
             player.getStats().addXp(StatType.Agility, 13.7, true);
             player.unlock();
+            event.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[6]);
         }));
         Tile.getObject(1948, 2539, 3553, 0).walkTo = new Position(2538, 3553, 0);
         /**

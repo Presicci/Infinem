@@ -10,7 +10,9 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.skills.agility.courses.AgilityPet;
 import io.ruin.model.stat.StatType;
 
@@ -21,6 +23,20 @@ import java.util.List;
  * @author King Zeus (James) - https://www.rune-server.ee/members/king+zeus/
  */
 public class PrifddinasCourse {
+
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(3257, 6105, 2), true).getObject(36225, 10, 1),
+            Tile.get(new Position(3273, 6107, 2), true).getObject(36227, 10, 1),
+            Tile.get(new Position(3269, 6116, 2), true).getObject(36228, 10, 1),
+            Tile.get(new Position(3269, 6118, 0), true).getObject(36229, 10, 1),
+            Tile.get(new Position(3294, 6145, 0), true).getObject(36231, 10, 1),
+            Tile.get(new Position(3288, 6142, 2), true).getObject(36233, 10, 2),
+            Tile.get(new Position(3277, 6142, 2), true).getObject(36234, 10, 0),
+            Tile.get(new Position(3270, 6151, 2), true).getObject(36235, 10, 2),
+            Tile.get(new Position(3267, 6161, 2), true).getObject(36236, 10, 0),
+            Tile.get(new Position(3277, 6170, 2), true).getObject(36237, 10, 0),
+            Tile.get(new Position(3282, 6184, 0), true).getObject(36238, 10, 2)
+    };
 
     private static final List<Position> MARK_SPAWNS = Arrays.asList(
             new Position(123,123,1)
@@ -41,6 +57,8 @@ public class PrifddinasCourse {
             p.getStats().addXp(StatType.Agility, 11.5, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[0]);
         }));
 
 
@@ -59,6 +77,8 @@ public class PrifddinasCourse {
             p.getStats().addXp(StatType.Agility, 30.7, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[1]);
         }));
 
         /**
@@ -82,6 +102,8 @@ public class PrifddinasCourse {
             p.getStats().addXp(StatType.Agility, 28.1, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[2]);
         }));
 
         /**
@@ -99,6 +121,8 @@ public class PrifddinasCourse {
             p.getStats().addXp(StatType.Agility, 23.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[3]);
         }));
 
         /**
@@ -116,6 +140,8 @@ public class PrifddinasCourse {
             p.getStats().addXp(StatType.Agility, 11.5, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[4]);
         }));
 
 
@@ -133,6 +159,8 @@ public class PrifddinasCourse {
             //no experience given for this obstacle //p.getStats().addXp(StatType.Agility, 0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[5]);
         }));
 
         /**
@@ -150,6 +178,8 @@ public class PrifddinasCourse {
             p.getStats().addXp(StatType.Agility, 25.6, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[6]);
         }));
 
         /**
@@ -168,6 +198,8 @@ public class PrifddinasCourse {
             p.getStats().addXp(StatType.Agility, 30.7, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[7]);
         }));
 
         /**
@@ -185,6 +217,8 @@ public class PrifddinasCourse {
             p.getStats().addXp(StatType.Agility, 25.6, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[8]);
         }));
 
         /**
@@ -203,6 +237,8 @@ public class PrifddinasCourse {
             p.getStats().addXp(StatType.Agility, 30.7, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[9]);
         }));
 
         /**
@@ -222,6 +258,8 @@ public class PrifddinasCourse {
             p.getStats().addXp(StatType.Agility, 30.7, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[10]);
         }));
 
         /**

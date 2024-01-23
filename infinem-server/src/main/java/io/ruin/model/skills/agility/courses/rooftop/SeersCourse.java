@@ -10,7 +10,10 @@ import io.ruin.model.entity.shared.Renders;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.skills.agility.courses.AgilityPet;
 import io.ruin.model.skills.agility.courses.MarkOfGrace;
 import io.ruin.model.stat.StatType;
@@ -19,6 +22,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SeersCourse {
+
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(2720, 3492, 3), true).getObject(14928, 10, 0),
+            Tile.get(new Position(2710, 3489, 2), true).getObject(14932, 22, 2),
+            Tile.get(new Position(2710, 3476, 2), true).getObject(14929, 10, 0),
+            Tile.get(new Position(2700, 3469, 3), true).getObject(14930, 10, 0),
+            Tile.get(new Position(2703, 3461, 2), true).getObject(14931, 10, 0)
+    };
 
     private static final List<Position> MARK_SPAWNS = Arrays.asList(new Position(2726, 3492, 3), new Position(2728, 3495, 3), new Position(2707, 3493, 2), new Position(2708, 3489, 2), new Position(2712, 3481, 2), new Position(2710, 3478, 2), new Position(2710, 3472, 3), new Position(2702, 3474, 3), new Position(2698, 3462, 2));
 
@@ -41,6 +52,8 @@ public class SeersCourse {
             p.getStats().addXp(StatType.Agility, 45, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[0]);
         }));
         /**
          * Rooftop jump
@@ -62,6 +75,8 @@ public class SeersCourse {
             p.getStats().addXp(StatType.Agility, 20, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[1]);
         }));
         /**
          * Tightrope
@@ -78,6 +93,8 @@ public class SeersCourse {
             p.getStats().addXp(StatType.Agility, 20, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[2]);
         }));
         /**
          * Gap
@@ -95,6 +112,8 @@ public class SeersCourse {
             p.getStats().addXp(StatType.Agility, 35, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[3]);
         }));
         /**
          * Small gap
@@ -111,6 +130,8 @@ public class SeersCourse {
             p.getStats().addXp(StatType.Agility, 15, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[4]);
         }));
         /**
          * Final jump

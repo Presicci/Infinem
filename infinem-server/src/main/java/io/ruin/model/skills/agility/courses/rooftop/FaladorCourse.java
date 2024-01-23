@@ -11,7 +11,9 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.skills.agility.courses.AgilityPet;
 import io.ruin.model.skills.agility.courses.MarkOfGrace;
 import io.ruin.model.stat.StatType;
@@ -20,6 +22,22 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FaladorCourse {
+
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(3040, 3343, 3), true).getObject(14899, 22, 1),
+            Tile.get(new Position(3050, 3350, 3), true).getObject(14901, 10, 0),
+            Tile.get(new Position(3048, 3359, 3), true).getObject(14903, 10, 0),
+            Tile.get(new Position(3044, 3361, 3), true).getObject(14904, 10, 0),
+            Tile.get(new Position(3034, 3361, 3), true).getObject(14905, 10, 3),
+            Tile.get(new Position(3026, 3353, 3), true).getObject(14911, 22, 3),
+            Tile.get(new Position(3016, 3352, 3), true).getObject(14919, 10, 2),
+            Tile.get(new Position(3015, 3345, 3), true).getObject(14920, 10, 3),
+            Tile.get(new Position(3011, 3343, 3), true).getObject(14921, 10, 2),
+            Tile.get(new Position(3012, 3334, 3), true).getObject(14922, 10, 2),
+            Tile.get(new Position(3018, 3332, 3), true).getObject(14924, 10, 1),
+            Tile.get(new Position(3025, 3332, 3), true).getObject(14925, 10, 1)
+    };
+
     private static final List<Position> MARK_SPAWNS = Arrays.asList(
             new Position(3038, 3343, 3),
             new Position(3049, 3348, 3),
@@ -47,6 +65,8 @@ public class FaladorCourse {
             p.getStats().addXp(StatType.Agility, 8, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[0]);
         }));
 
         /*
@@ -64,6 +84,8 @@ public class FaladorCourse {
             p.getStats().addXp(StatType.Agility, 17, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[1]);
         }));
 
         /*
@@ -101,6 +123,8 @@ public class FaladorCourse {
             p.getStats().addXp(StatType.Agility, 45, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[2]);
         }));
 
         /*
@@ -115,6 +139,8 @@ public class FaladorCourse {
             p.getStats().addXp(StatType.Agility, 20, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[3]);
         }));
 
         Tile.getObject(14903, 3048, 3359, 3).walkTo = new Position(3048, 3358, 3);
@@ -131,6 +157,8 @@ public class FaladorCourse {
             p.getStats().addXp(StatType.Agility, 20, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[4]);
         }));
 
        Tile.getObject(14904, 3044, 3361, 3).walkTo = new Position(3045, 3361, 3);
@@ -153,6 +181,8 @@ public class FaladorCourse {
             p.getStats().addXp(StatType.Agility, 45.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[5]);
         }));
 
         /*
@@ -172,6 +202,8 @@ public class FaladorCourse {
             p.getStats().addXp(StatType.Agility, 40.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[6]);
         }));
 
         /*
@@ -186,6 +218,8 @@ public class FaladorCourse {
             p.getStats().addXp(StatType.Agility, 25, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[7]);
         }));
 
         Tile.getObject(14919, 3016, 3352, 3).walkTo = new Position(3016, 3353, 3);
@@ -203,6 +237,8 @@ public class FaladorCourse {
             p.getStats().addXp(StatType.Agility, 10, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[8]);
         }));
 
         /*
@@ -218,6 +254,8 @@ public class FaladorCourse {
             p.getStats().addXp(StatType.Agility, 10, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[9]);
         }));
 
         /*
@@ -233,6 +271,8 @@ public class FaladorCourse {
             p.getStats().addXp(StatType.Agility, 10, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[10]);
         }));
 
         /*
@@ -248,6 +288,8 @@ public class FaladorCourse {
             p.getStats().addXp(StatType.Agility, 10, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[11]);
         }));
 
         /*

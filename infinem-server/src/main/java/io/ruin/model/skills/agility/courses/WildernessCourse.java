@@ -13,9 +13,17 @@ import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.Ladder;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.stat.StatType;
 
 public class WildernessCourse {
+
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(3005, 3952, 0), true).getObject(23132, 10, 2),
+            Tile.get(new Position(3001, 3960, 0), true).getObject(23556, 22, 0),
+            Tile.get(new Position(3001, 3945, 0), true).getObject(23542, 22, 3),
+            Tile.get(new Position(2994, 3936, 0), true).getObject(23640, 22, 2)
+    };
 
     private static void openGateEntrance() {
         World.startEvent(e -> {
@@ -110,6 +118,8 @@ public class WildernessCourse {
             p.getStats().addXp(StatType.Agility, 12.5, true);
             p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[0]);
         }));
         ObjectAction.register(23137, 3004, 3948, 0, "squeeze-through", (player, obj) -> player.sendMessage("You can't enter the pipe from this side."));
         /**
@@ -127,6 +137,8 @@ public class WildernessCourse {
                 if (p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23137)
                     p.putAttribute("LAST_AGIL_OBJ", obj.id);
                 p.unlock();
+                e.delay(1);
+                TricksterAgility.attemptNext(p, OBSTACLES[1]);
             });
         };
         ObjectAction.register(23132, "swing-on", ropeswingAction);
@@ -146,6 +158,8 @@ public class WildernessCourse {
             if (p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23132)
                 p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[2]);
         }));
         ObjectAction.register(14758, 3005, 3963, 0, "climb-down", (player, obj) -> Ladder.climb(player, player.getAbsX(), player.getAbsY() + 6400, 0, false, true, false));
         ObjectAction.register(17385, 3005, 10363, 0, "climb-up", (player, obj) -> Ladder.climb(player, player.getAbsX(), player.getAbsY() - 6400, 0, true, true, false));
@@ -166,6 +180,8 @@ public class WildernessCourse {
             if (player.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23556)
                 player.putAttribute("LAST_AGIL_OBJ", obj.id);
             player.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[3]);
         }));
        Tile.getObject(23542, 3001, 3945, 0).walkTo = new Position(3002, 3945, 0);
         /**

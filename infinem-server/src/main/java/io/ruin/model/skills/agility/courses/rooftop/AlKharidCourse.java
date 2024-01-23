@@ -11,7 +11,9 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.skills.agility.courses.AgilityPet;
 import io.ruin.model.skills.agility.courses.MarkOfGrace;
 import io.ruin.model.stat.StatType;
@@ -20,6 +22,16 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AlKharidCourse {
+
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(3272, 3181, 3), true).getObject(14398, 22, 2),
+            Tile.get(new Position(3269, 3166, 3), true).getObject(14402, 10, 1),
+            Tile.get(new Position(3302, 3163, 3), true).getObject(14403, 10, 3),
+            Tile.get(new Position(3318, 3166, 1), true).getObject(14404, 10, 0),
+            Tile.get(new Position(3316, 3179, 2), true).getObject(11634, 4, 1),
+            Tile.get(new Position(3313, 3186, 3), true).getObject(14409, 22, 3),
+            Tile.get(new Position(3300, 3193, 3), true).getObject(14399, 11, 3),
+    };
 
     private static final List<Position> MARK_SPAWNS = Arrays.asList(
             new Position(3276, 3188, 3),
@@ -56,6 +68,8 @@ public class AlKharidCourse {
             p.getStats().addXp(StatType.Agility, 10.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[0]);
         }));
 
         /*
@@ -77,6 +91,8 @@ public class AlKharidCourse {
                 p.getStats().addXp(StatType.Agility, 4, true);
                 p.getMovement().restoreEnergy(Random.get(1, 2));
                 p.unlock();
+                e.delay(1);
+                TricksterAgility.attemptNext(p, OBSTACLES[1]);
 
             } else {
                 p.lock(LockType.FULL_DELAY_DAMAGE);
@@ -89,6 +105,8 @@ public class AlKharidCourse {
                 p.getStats().addXp(StatType.Agility, 30.0, true);
                 p.getMovement().restoreEnergy(Random.get(1, 2));
                 p.unlock();
+                e.delay(1);
+                TricksterAgility.attemptNext(p, OBSTACLES[1]);
             }
         }));
 
@@ -110,6 +128,8 @@ public class AlKharidCourse {
            p.getStats().addXp(StatType.Agility, 40.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
            p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[2]);
         }));
 
         /*
@@ -135,6 +155,8 @@ public class AlKharidCourse {
             p.getStats().addXp(StatType.Agility, 40.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[3]);
         }));
 
         /*
@@ -162,6 +184,8 @@ public class AlKharidCourse {
             p.getStats().addXp(StatType.Agility, 10, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[4]);
         }));
 
         Tile.getObject(14404, 3318, 3166, 1).walkTo = new Position(3318, 3165, 1);
@@ -178,6 +202,8 @@ public class AlKharidCourse {
             p.getStats().addXp(StatType.Agility, 5, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[5]);
         }));
 
         /*
@@ -196,6 +222,8 @@ public class AlKharidCourse {
             p.getStats().addXp(StatType.Agility, 15, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[6]);
         }));
 
         Tile.getObject(14409, 3313, 3186, 3).walkTo = new Position(3314, 3186, 3);

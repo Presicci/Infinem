@@ -10,7 +10,10 @@ import io.ruin.model.entity.shared.Renders;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.skills.agility.courses.AgilityPet;
 import io.ruin.model.skills.agility.courses.MarkOfGrace;
 import io.ruin.model.stat.StatType;
@@ -19,6 +22,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DraynorCourse {
+
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(3098, 3277, 3), true).getObject(11405, 22, 3),
+            Tile.get(new Position(3092, 3276, 3), true).getObject(11406, 22, 2),
+            Tile.get(new Position(3089, 3264, 3), true).getObject(11430, 10, 0),
+            Tile.get(new Position(3088, 3256, 3), true).getObject(11630, 10, 0),
+            Tile.get(new Position(3095, 3255, 3), true).getObject(11631, 10, 0),
+            Tile.get(new Position(3102, 3261, 3), true).getObject(11632, 10, 0)
+    };
 
     private static final List<Position> MARK_SPAWNS = Arrays.asList(
             new Position(3099, 3280, 3),
@@ -45,12 +57,15 @@ public class DraynorCourse {
             p.getStats().addXp(StatType.Agility, 5.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[0]);
         }));
 
         /*
          * Tightrope
          */
         ObjectAction.register(11405, "cross", (p, obj) -> p.startEvent(e -> {
+            if (p.getMovement().hasMoved()) p.sendMessage("moved");
             p.lock(LockType.FULL_DELAY_DAMAGE);
             p.stepAbs(3090, 3277, StepType.FORCE_WALK);
             e.delay(1);
@@ -62,6 +77,8 @@ public class DraynorCourse {
             p.getStats().addXp(StatType.Agility, 8.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[1]);
         }));
 
         /*
@@ -79,6 +96,8 @@ public class DraynorCourse {
             p.getStats().addXp(StatType.Agility, 7.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[2]);
         }));
 
         /*
@@ -98,6 +117,8 @@ public class DraynorCourse {
             p.getStats().addXp(StatType.Agility, 7.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[3]);
         }));
 
         /*
@@ -116,6 +137,8 @@ public class DraynorCourse {
             p.getStats().addXp(StatType.Agility, 10.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[4]);
         }));
 
         /*
@@ -132,6 +155,8 @@ public class DraynorCourse {
             p.getStats().addXp(StatType.Agility, 4.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[5]);
         }));
 
         /*

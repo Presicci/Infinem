@@ -10,7 +10,10 @@ import io.ruin.model.entity.shared.Renders;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.skills.agility.courses.AgilityPet;
 import io.ruin.model.skills.agility.courses.MarkOfGrace;
 import io.ruin.model.stat.StatType;
@@ -19,6 +22,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ArdougneCourse {
+
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(2670, 3310, 3), true).getObject(15609, 10, 3),
+            Tile.get(new Position(2661, 3318, 3), true).getObject(26635, 22, 3),
+            Tile.get(new Position(2653, 3317, 3), true).getObject(15610, 10, 2),
+            Tile.get(new Position(2653, 3308, 3), true).getObject(15611, 10, 2),
+            Tile.get(new Position(2654, 3300, 3), true).getObject(28912, 11, 1),
+            Tile.get(new Position(2656, 3296, 3), true).getObject(15612, 10, 1)
+    };
 
     private static final List<Position> MARK_SPAWNS = Arrays.asList(new Position(2671, 3304, 3), new Position(2663, 3318, 3), new Position(2654, 3318, 3), new Position(2653, 3313, 3), new Position(2653, 3302, 3));
 
@@ -44,6 +56,8 @@ public class ArdougneCourse {
             p.getMovement().restoreEnergy(Random.get(1, 2));
             e.delay(1);
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[0]);
         }));
         /**
          * Jump down roof
@@ -70,6 +84,8 @@ public class ArdougneCourse {
             p.getMovement().restoreEnergy(Random.get(1, 2));
             e.delay(1);
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[1]);
         }));
         /**
          * Plank
@@ -86,6 +102,8 @@ public class ArdougneCourse {
             p.getStats().addXp(StatType.Agility, 50, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[2]);
         }));
         /**
          * Gap
@@ -101,6 +119,8 @@ public class ArdougneCourse {
             p.getMovement().restoreEnergy(Random.get(1, 2));
             e.delay(1);
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[3]);
         }));
         /**
          * Gap
@@ -116,6 +136,8 @@ public class ArdougneCourse {
             p.getMovement().restoreEnergy(Random.get(1, 2));
             e.delay(1);
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[4]);
         }));
         /**
          * Steep roof
@@ -135,6 +157,8 @@ public class ArdougneCourse {
             p.getMovement().restoreEnergy(Random.get(1, 2));
             e.delay(1);
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[5]);
         }));
         /**
          * Gap

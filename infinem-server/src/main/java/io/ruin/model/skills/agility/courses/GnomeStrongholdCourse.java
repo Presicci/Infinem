@@ -9,10 +9,21 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.stat.StatType;
 
 public class GnomeStrongholdCourse {
+
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(2473, 3425, 0), true).getObject(23134, 10, 0),
+            Tile.get(new Position(2473, 3422, 1), true).getObject(23559, 10, 0),
+            Tile.get(new Position(2478, 3420, 2), true).getObject(23557, 22, 1),
+            Tile.get(new Position(2486, 3419, 2), true).getObject(23560, 10, 0),
+            Tile.get(new Position(2485, 3426, 0), true).getObject(23135, 10, 2),
+            Tile.get(new Position(2484, 3431, 0), true).getObject(23138, 10, 1)
+    };
 
     static {
         /**
@@ -29,6 +40,8 @@ public class GnomeStrongholdCourse {
             p.getStats().addXp(StatType.Agility, 7.5, true);
             p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[0]);
         }));
         Tile.get(2474, 3430, 0).flagUnmovable();
         /**
@@ -44,6 +57,8 @@ public class GnomeStrongholdCourse {
             if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23145)
                 p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[1]);
         }));
         /**
          * Tree branch
@@ -59,6 +74,8 @@ public class GnomeStrongholdCourse {
             if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23134)
                 p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[2]);
         }));
         /**
          * Balancing rope
@@ -74,6 +91,8 @@ public class GnomeStrongholdCourse {
             if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23559)
                 p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[3]);
         }));
         /**
          * Tree branch
@@ -89,6 +108,8 @@ public class GnomeStrongholdCourse {
             if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23557)
                 p.putAttribute("LAST_AGIL_OBJ", obj.id);
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[4]);
         }));
         /**
          * Obstacle net
@@ -108,6 +129,8 @@ public class GnomeStrongholdCourse {
                 if(p.getAttributeIntOrZero("LAST_AGIL_OBJ") == 23560)
                     p.putAttribute("LAST_AGIL_OBJ", obj.id);
                 p.unlock();
+                e.delay(1);
+                TricksterAgility.attemptNext(p, OBSTACLES[5]);
             });
         });
         /**

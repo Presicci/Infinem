@@ -10,7 +10,9 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.skills.agility.courses.MarkOfGrace;
 import io.ruin.model.stat.StatType;
 
@@ -22,6 +24,18 @@ import java.util.List;
  * Created on 11/3/2022
  */
 public class PollnivneachCourse {
+
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(3349, 2970, 1), true).getObject(14936, 10, 0),
+            Tile.get(new Position(3356, 2978, 1), true).getObject(14937, 10, 0),
+            Tile.get(new Position(3363, 2976, 1), true).getObject(14938, 10, 0),
+            Tile.get(new Position(3367, 2977, 1), true).getObject(14939, 10, 0),
+            Tile.get(new Position(3365, 2982, 1), true).getObject(14940, 5, 1),
+            Tile.get(new Position(3358, 2985, 2), true).getObject(14941, 10, 0),
+            Tile.get(new Position(3359, 2996, 2), true).getObject(14944, 11, 2),
+            Tile.get(new Position(3363, 3000, 2), true).getObject(14945, 10, 0),
+    };
+
     public static final List<Position> MARK_SPAWNS = Arrays.asList(
             new Position(3346, 2968, 1),
             new Position(3354, 2974, 1),
@@ -48,6 +62,8 @@ public class PollnivneachCourse {
             p.getStats().addXp(StatType.Agility, 10, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[0]);
         }));
 
         // Market stall
@@ -70,6 +86,8 @@ public class PollnivneachCourse {
             p.getStats().addXp(StatType.Agility, 45, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[1]);
         }));
 
         // Banner
@@ -92,6 +110,8 @@ public class PollnivneachCourse {
             p.getStats().addXp(StatType.Agility, 65, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[2]);
         }));
 
         // Gap
@@ -112,6 +132,8 @@ public class PollnivneachCourse {
             p.getStats().addXp(StatType.Agility, 35, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[3]);
         }));
 
         // Tree
@@ -139,6 +161,8 @@ public class PollnivneachCourse {
             p.getStats().addXp(StatType.Agility, 75, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[4]);
         }));
 
         // Rought wall
@@ -152,6 +176,8 @@ public class PollnivneachCourse {
             p.getMovement().teleport(3365, 2983, 2);
             p.getStats().addXp(StatType.Agility, 5, true);
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[5]);
         }));
 
         Position monkeyBarsDest = new Position(3358, 2991, 2);
@@ -181,6 +207,8 @@ public class PollnivneachCourse {
             p.getStats().addXp(StatType.Agility, 55, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[6]);
         }));
 
         // Tree
@@ -203,6 +231,8 @@ public class PollnivneachCourse {
             p.getStats().addXp(StatType.Agility, 60, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[7]);
         }));
 
         // Drying line

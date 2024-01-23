@@ -10,7 +10,10 @@ import io.ruin.model.entity.shared.Renders;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.skills.agility.courses.AgilityPet;
 import io.ruin.model.skills.agility.courses.MarkOfGrace;
 import io.ruin.model.stat.StatType;
@@ -19,6 +22,16 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RellekkaCourse {
+
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(2621, 3669, 3), true).getObject(14947, 10, 2),
+            Tile.get(new Position(2623, 3658, 3), true).getObject(14987, 10, 0),
+            Tile.get(new Position(2629, 3656, 3), true).getObject(14990, 10, 0),
+            Tile.get(new Position(2643, 3654, 3), true).getObject(14991, 10, 0),
+            Tile.get(new Position(2647, 3663, 3), true).getObject(14992, 10, 0),
+            Tile.get(new Position(2654, 3676, 3), true).getObject(14994, 10, 0)
+    };
+
     private static final List<Position> MARK_SPAWNS = Arrays.asList(new Position(2622, 3676, 3), new Position(2617, 3664, 3), new Position(2618, 3660, 3), new Position(2628, 3652, 3), new Position(2628, 3655, 3), new Position(2641, 3649, 3), new Position(2643, 3651, 3), new Position(2649, 3659, 3), new Position(2644, 3662, 3), new Position(2658, 3674, 3), new Position(2656, 3681, 3));
 
     static {
@@ -36,6 +49,8 @@ public class RellekkaCourse {
             p.getStats().addXp(StatType.Agility, 20, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[0]);
         }));
         /*
          * Gap
@@ -51,6 +66,8 @@ public class RellekkaCourse {
             p.getStats().addXp(StatType.Agility, 30, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[1]);
         }));
         /*
          * Tightrope
@@ -67,6 +84,8 @@ public class RellekkaCourse {
             p.getStats().addXp(StatType.Agility, 40, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[2]);
         }));
         /*
          * Gap + tightrope
@@ -88,6 +107,8 @@ public class RellekkaCourse {
             p.getStats().addXp(StatType.Agility, 85, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[3]);
         }));
         /*
          * Gap
@@ -103,6 +124,8 @@ public class RellekkaCourse {
             p.getStats().addXp(StatType.Agility, 25, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[4]);
         }));
         /*
          * Tightrope
@@ -122,6 +145,8 @@ public class RellekkaCourse {
             p.getStats().addXp(StatType.Agility, 105, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[5]);
         }));
         /*
          * Pile of fish

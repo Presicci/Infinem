@@ -10,7 +10,9 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.skills.agility.courses.AgilityPet;
 import io.ruin.model.skills.agility.courses.MarkOfGrace;
 import io.ruin.model.stat.StatType;
@@ -19,6 +21,18 @@ import java.util.Arrays;
 import java.util.List;
 
 public class VarrockCourse {
+
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(3213, 3414, 3), true).getObject(14413, 10, 0),
+            Tile.get(new Position(3200, 3416, 3), true).getObject(14414, 10, 0),
+            Tile.get(new Position(3191, 3415, 1), true).getObject(14832, 10, 0),
+            Tile.get(new Position(3193, 3401, 3), true).getObject(14833, 10, 0),
+            Tile.get(new Position(3209, 3397, 3), true).getObject(14834, 10, 0),
+            Tile.get(new Position(3233, 3402, 3), true).getObject(14835, 10, 0),
+            Tile.get(new Position(3236, 3409, 3), true).getObject(14836, 10, 0),
+            Tile.get(new Position(3236, 3416, 3), true).getObject(14841, 10, 0)
+    };
+
     private static final List<Position> MARK_SPAWNS = Arrays.asList(
             new Position(3214, 3417, 3),
             new Position(3202, 3417, 3),
@@ -47,6 +61,8 @@ public class VarrockCourse {
             p.getStats().addXp(StatType.Agility, 12.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[0]);
         }));
         /*
          * Clothes line
@@ -73,6 +89,8 @@ public class VarrockCourse {
             p.getStats().addXp(StatType.Agility, 21.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[1]);
         }));
         /*
          * Gap
@@ -88,6 +106,8 @@ public class VarrockCourse {
             p.getStats().addXp(StatType.Agility, 17.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[2]);
         }));
         /*
          * Wall
@@ -129,6 +149,8 @@ public class VarrockCourse {
             p.getStats().addXp(StatType.Agility, 25.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[3]);
         }));
 
         Tile.getObject(14832, 3191, 3415, 1).walkTo = new Position(3194, 3416, 0);
@@ -151,6 +173,8 @@ public class VarrockCourse {
             p.getStats().addXp(StatType.Agility, 9.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[4]);
         }));
 
         /*
@@ -179,6 +203,8 @@ public class VarrockCourse {
             p.getStats().addXp(StatType.Agility, 22.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[5]);
         }));
 
         /*
@@ -196,6 +222,8 @@ public class VarrockCourse {
             p.getStats().addXp(StatType.Agility, 4.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[6]);
         }));
 
         /*
@@ -211,6 +239,8 @@ public class VarrockCourse {
             p.getStats().addXp(StatType.Agility, 3.0, true);
             p.getMovement().restoreEnergy(Random.get(1, 2));
             p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[7]);
         }));
 
         /*

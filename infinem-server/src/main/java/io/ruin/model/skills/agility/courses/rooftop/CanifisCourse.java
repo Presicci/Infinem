@@ -10,7 +10,9 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.skills.agility.courses.AgilityPet;
 import io.ruin.model.skills.agility.courses.MarkOfGrace;
 import io.ruin.model.stat.StatType;
@@ -20,7 +22,18 @@ import java.util.List;
 
 public class CanifisCourse {
 
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(3505, 3498, 2), true).getObject(14844, 11, 3),
+            Tile.get(new Position(3496, 3504, 2), true).getObject(14845, 10, 3),
+            Tile.get(new Position(3485, 3499, 2), true).getObject(14848, 10, 3),
+            Tile.get(new Position(3478, 3491, 3), true).getObject(14846, 10, 2),
+            Tile.get(new Position(3480, 3483, 2), true).getObject(14894, 11, 3),
+            Tile.get(new Position(3503, 3476, 3), true).getObject(14847, 10, 1),
+            Tile.get(new Position(3510, 3483, 2), true).getObject(14897, 10, 0)
+    };
+
     private static final List<Position> MARK_SPAWNS = Arrays.asList(new Position(3508, 3494, 2), new Position(3502, 3506, 2), new Position(3499, 3505, 2), new Position(3489, 3500, 2), new Position(3492, 3499, 2), new Position(3476, 3496, 3), new Position(3475, 3493, 3), new Position(3482, 3486, 2), new Position(3478, 3484, 2), new Position(3493, 3476, 3), new Position(3495, 3472, 3), new Position(3491, 3472, 3), new Position(3513, 3479, 2), new Position(3512, 3481, 2), new Position(3510, 3476, 2));
+
     static {
         /*
          * Tall tree
@@ -44,6 +57,8 @@ public class CanifisCourse {
             player.getStats().addXp(StatType.Agility, 10, true);
             player.getMovement().restoreEnergy(Random.get(1, 2));
             player.unlock();
+            event.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[0]);
         }));
 
         Tile.getObject(14843, 3505, 3489, 0).walkTo = new Position(3507, 3488, 0);
@@ -65,6 +80,8 @@ public class CanifisCourse {
             player.getMovement().restoreEnergy(Random.get(1, 2));
             event.delay(1);
             player.unlock();
+            event.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[1]);
         }));
 
         /*
@@ -86,6 +103,8 @@ public class CanifisCourse {
             event.delay(1);
             player.step(-1, 0, StepType.FORCE_WALK);
             player.unlock();
+            event.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[2]);
         }));
 
         Tile.get(3497, 3503, 2, true).flagUnmovable();
@@ -113,6 +132,8 @@ public class CanifisCourse {
             player.getMovement().teleport(player.getAbsX(), player.getAbsY(), player.getHeight() + 1);
             player.resetAnimation();
             player.unlock();
+            event.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[3]);
         }));
 
         Tile.get(3488, 3498, 2, true).flagUnmovable();
@@ -130,6 +151,8 @@ public class CanifisCourse {
             player.getStats().addXp(StatType.Agility, 8, true);
             player.getMovement().restoreEnergy(Random.get(1, 2));
             player.unlock();
+            event.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[4]);
         }));
 
         /*
@@ -162,6 +185,8 @@ public class CanifisCourse {
             player.getStats().addXp(StatType.Agility, 10, true);
             player.getMovement().restoreEnergy(Random.get(1, 2));
             player.unlock();
+            event.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[5]);
         }));
         Tile.get(3481, 3482, 2, true).flagUnmovable();
 
@@ -184,6 +209,8 @@ public class CanifisCourse {
             player.getMovement().restoreEnergy(Random.get(1, 2));
             event.delay(1);
             player.unlock();
+            event.delay(1);
+            TricksterAgility.attemptNext(player, OBSTACLES[6]);
         }));
 
         /*
