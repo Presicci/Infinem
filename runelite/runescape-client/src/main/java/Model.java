@@ -193,8 +193,8 @@ public class Model extends Renderable {
 		field2558 = new int[6500];
 		field2541 = new int[6500];
 		field2539 = new int[6500];
-		field2524 = new int[1600];
-		field2542 = new int[1600][512];
+		field2524 = new int[6000];
+		field2542 = new int[6000][512];
 		field2543 = new int[12];
 		field2556 = new int[12][2000];
 		field2523 = new int[2000];
@@ -1128,7 +1128,7 @@ public class Model extends Renderable {
 	@ObfuscatedName("p")
 	@Export("draw0")
 	final void draw0(boolean var1, boolean var2, boolean var3, long var4) {
-		if (this.diameter < 1600) {
+		if (this.diameter < 6000) {
 			int var6;
 			for (var6 = 0; var6 < this.diameter; ++var6) {
 				field2524[var6] = 0;
