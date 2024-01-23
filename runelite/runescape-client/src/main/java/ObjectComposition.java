@@ -383,7 +383,7 @@ public class ObjectComposition extends DualNode {
 			var3 = var1.readUnsignedByte();
 			if (var3 > 0) {
 				if (this.modelIds != null && !ObjectDefinition_isLowDetail) {
-					var1.offset += var3 * 2;
+					var1.offset += (var3 * 2);
 				} else {
 					this.models = null;
 					this.modelIds = new int[var3];
@@ -443,9 +443,11 @@ public class ObjectComposition extends DualNode {
 			this.retextureTo = new short[var3];
 
 			for (var4 = 0; var4 < var3; ++var4) {
-				this.retextureFrom[var4] = (short)var1.readUnsignedShort();
-				this.retextureTo[var4] = (short)var1.readUnsignedShort();
+				this.retextureFrom[var4] = (short) var1.readUnsignedShort();
+				this.retextureTo[var4] = (short) var1.readUnsignedShort();
 			}
+		} else if (var2 == 60) {
+			var1.readUnsignedShort();
 		} else if (var2 == 61) {
 			var1.readUnsignedShort();
 		} else if (var2 == 62) {
@@ -492,6 +494,8 @@ public class ObjectComposition extends DualNode {
 				this.clipType = var1.readUnsignedByte() * 256;
 			} else if (var2 == 82) {
 				this.mapIconId = var1.readUnsignedShort();
+			} else if (var2 == 83) {
+				var1.readUnsignedShort();
 			} else if (var2 == 89) {
 				this.boolean3 = false;
 			} else if (var2 == 249) {
