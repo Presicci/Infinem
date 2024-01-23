@@ -115,6 +115,12 @@ tasks {
         classpath = project.sourceSets.main.get().runtimeClasspath
         main = "net.runelite.deob.updater.UpdateMappings"
     }
+
+    jar {
+        manifest {
+            attributes(mutableMapOf("Main-Class" to "net.runelite.deob.Deob"))
+        }
+    }
 }
 
 publishing {
