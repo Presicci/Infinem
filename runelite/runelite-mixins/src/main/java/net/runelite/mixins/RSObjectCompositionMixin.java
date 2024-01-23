@@ -164,7 +164,7 @@ public abstract class RSObjectCompositionMixin implements RSObjectComposition
 			else if (opcode == 89) setBoolean3(false);
 			else if (opcode == 249)
 			{
-				setParams((IterableHashTable<Node>) client.readStringIntParameters(buffer, getParams()));
+				//setParams((IterableHashTable<Node>) client.readStringIntParameters(buffer, getParams()));
 			}
 		}
 		else
