@@ -93,6 +93,7 @@ public class WorldMapArea {
 		this.origin = new Coord(var1.readInt());
 		this.backGroundColor = var1.readInt();
 		var1.readUnsignedByte();
+		var1.readInt();
 		this.isMain = var1.readUnsignedByte() == 1;
 		this.zoom = var1.readUnsignedByte();
 		int var3 = var1.readUnsignedByte();
@@ -115,18 +116,18 @@ public class WorldMapArea {
 		int var2 = var1.readUnsignedByte();
 		WorldMapSectionType var3 = (WorldMapSectionType)class260.findEnumerated(WorldMapSectionType.method3770(), var2);
 		Object var4 = null;
-		switch(var3.type) {
+		switch(var2) {
 		case 0:
-			var4 = new WorldMapSection1();
+			var4 = new WorldMapSection2();	// 18
 			break;
 		case 1:
-			var4 = new WorldMapSection0();
+			var4 = new WorldMapSection1();	// 10
 			break;
 		case 2:
-			var4 = new class184();
+			var4 = new WorldMapSection0();	// 18
 			break;
 		case 3:
-			var4 = new WorldMapSection2();
+			var4 = new class184();	// 14
 			break;
 		default:
 			throw new IllegalStateException("");

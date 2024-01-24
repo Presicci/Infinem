@@ -160,10 +160,10 @@ public abstract class AbstractWorldMapData {
 	void method3776(int var1, int var2, Buffer var3, int var4) {
 		boolean var5 = (var4 & 2) != 0;
 		if (var5) {
-			this.floorOverlayIds[0][var1][var2] = (short)var3.readUnsignedByte();
+			this.floorOverlayIds[0][var1][var2] = (short)var3.readUnsignedShort();
 		}
 
-		this.floorUnderlayIds[0][var1][var2] = (short)var3.readUnsignedByte();
+		this.floorUnderlayIds[0][var1][var2] = (short)var3.readUnsignedShort();
 	}
 
 	@ObfuscatedName("w")
@@ -175,15 +175,14 @@ public abstract class AbstractWorldMapData {
 		int var5 = ((var4 & 24) >> 3) + 1;
 		boolean var6 = (var4 & 2) != 0;
 		boolean var7 = (var4 & 4) != 0;
-		this.floorUnderlayIds[0][var1][var2] = (short)var3.readUnsignedByte();
+		this.floorUnderlayIds[0][var1][var2] = (short)var3.readUnsignedShort();
 		int var8;
 		int var9;
 		int var11;
 		if (var6) {
 			var8 = var3.readUnsignedByte();
-
 			for (var9 = 0; var9 < var8; ++var9) {
-				int var14 = var3.readUnsignedByte();
+				int var14 = var3.readUnsignedShort();
 				if (var14 != 0) {
 					this.floorOverlayIds[var9][var1][var2] = (short)var14;
 					var11 = var3.readUnsignedByte();

@@ -3,30 +3,32 @@ import net.runelite.mapping.*;
 @ObfuscatedName("gu")
 @Implements("WorldMapSectionType")
 public enum WorldMapSectionType implements MouseWheel {
-	@ObfuscatedName("n")
-	@ObfuscatedSignature(
-		descriptor = "Lgu;"
-	)
-	@Export("WORLDMAPSECTIONTYPE0")
-	WORLDMAPSECTIONTYPE0(3, (byte)0),
-	@ObfuscatedName("c")
-	@ObfuscatedSignature(
-		descriptor = "Lgu;"
-	)
-	@Export("WORLDMAPSECTIONTYPE1")
-	WORLDMAPSECTIONTYPE1(0, (byte)1),
 	@ObfuscatedName("m")
 	@ObfuscatedSignature(
-		descriptor = "Lgu;"
+			descriptor = "Lgu;"
 	)
 	@Export("WORLDMAPSECTIONTYPE2")
-	WORLDMAPSECTIONTYPE2(1, (byte)2),
+	WORLDMAPSECTIONTYPE2(0, (byte) 2),
+	@ObfuscatedName("c")
+	@ObfuscatedSignature(
+			descriptor = "Lgu;"
+	)
+	@Export("WORLDMAPSECTIONTYPE1")
+	WORLDMAPSECTIONTYPE1(1, (byte) 1),
+	@ObfuscatedName("n")
+	@ObfuscatedSignature(
+			descriptor = "Lgu;"
+	)
+	@Export("WORLDMAPSECTIONTYPE0")
+	WORLDMAPSECTIONTYPE0(2, (byte) 0),
+
+
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
-		descriptor = "Lgu;"
+			descriptor = "Lgu;"
 	)
 	@Export("WORLDMAPSECTIONTYPE3")
-	WORLDMAPSECTIONTYPE3(2, (byte)3);
+	WORLDMAPSECTIONTYPE3(3, (byte) 3);
 
 	@ObfuscatedName("rl")
 	@ObfuscatedSignature(
