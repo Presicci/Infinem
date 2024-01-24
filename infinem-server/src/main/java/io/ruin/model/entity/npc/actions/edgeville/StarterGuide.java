@@ -388,17 +388,8 @@ public class StarterGuide {
         player.getInventory().add(557, 1000); // Earth Rune
         player.getInventory().add(562, 300); // Chaos Rune
         player.getInventory().add(362, 50); // Tuna
-        player.getInventory().add(1169, 1); // Coif
-        player.getInventory().add(1129, 1); // Leather body
-        player.getInventory().add(1095, 1); // Leather Chaps
         player.getInventory().add(863, 500); // Iron Knives
-        player.getInventory().add(579, 1); // Blue wizard hat
-        player.getInventory().add(577, 1); // Blue wizard robe
-        player.getInventory().add(1011, 1); // Blue skirt
         player.getInventory().add(1381, 1); // Air Staff
-        player.getInventory().add(1153, 1); // Iron full helm
-        player.getInventory().add(1115, 1); // Iron platebody
-        player.getInventory().add(1067, 1); // Iron platelegs
         player.getInventory().add(1323, 1); // Iron scim
         player.getInventory().add(757, 1); // Guide book
         switch (player.getGameMode()) {
