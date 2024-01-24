@@ -9,6 +9,7 @@ import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.item.containers.Equipment;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -36,8 +37,10 @@ public abstract class ChargeableItem {
         ItemAction.registerEquipment(chargeableItem.getChargedId(), "check", ChargeableItem::checkCharges);
         ItemAction.registerEquipment(chargeableItem.getUnchargedId(), "check", ChargeableItem::checkCharges);
 
-        ItemItemAction.register(chargeableItem.getUnchargedId(), chargeableItem.getChargeItem(), ((player, primary, secondary) -> charge(chargeableItem, player, primary, secondary)));
-        ItemItemAction.register(chargeableItem.getChargedId(), chargeableItem.getChargeItem(), ((player, primary, secondary) -> charge(chargeableItem, player, primary, secondary)));
+        if (chargeableItem.getChargeItem() > 0) {
+            ItemItemAction.register(chargeableItem.getUnchargedId(), chargeableItem.getChargeItem(), ((player, primary, secondary) -> charge(chargeableItem, player, primary, secondary)));
+            ItemItemAction.register(chargeableItem.getChargedId(), chargeableItem.getChargeItem(), ((player, primary, secondary) -> charge(chargeableItem, player, primary, secondary)));
+        }
     }
 
     private static void charge(ChargeableItem chargeableItem, Player player, Item item, Item chargeItem) {
@@ -69,6 +72,22 @@ public abstract class ChargeableItem {
                     removeCharges(chargeableItem, player, item);
                 })
         );
+    }
+
+    public static void removeCharge(ChargeableItem chargeableItem, Player player, Item item, int amount) {
+        if (amount >= item.getCharges()) {
+            int uncharged = chargeableItem.getUnchargedId();
+            if (uncharged > 0) {
+                item.removeCharges();
+                item.setId(uncharged);
+                player.sendMessage(Color.RED.wrap("Your " + ItemDef.get(chargeableItem.getChargedId()).name + " has run out of charges."));
+            } else {
+                item.remove();
+                player.sendMessage(Color.RED.wrap("Your " + ItemDef.get(chargeableItem.getChargedId()).name + " has run out of charges and turned to dust."));
+            }
+        } else {
+            item.setCharges(item.getCharges() - amount);
+        }
     }
 
     protected static void removeCharges(ChargeableItem chargeableItem, Player player, Item item) {
