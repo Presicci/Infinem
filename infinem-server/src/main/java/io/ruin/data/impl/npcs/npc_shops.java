@@ -5,6 +5,8 @@ import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.JsonUtils;
 import io.ruin.cache.NPCDef;
 import io.ruin.data.DataFile;
+import io.ruin.model.content.tasksystem.tasks.TaskArea;
+import io.ruin.model.content.tasksystem.tasks.areas.AreaTaskTier;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -39,6 +41,10 @@ public class npc_shops extends DataFile {
         for (TempItem i : s.items)
             items.add(new ShopItem(i.itemId, i.stock, i.sell_price, i.buy_price));
         Shop shop = new Shop(s.name, s.currency, s.generalStore, RestockRules.generateDefault(), items, s.ironman);
+        if (s.taskArea != null && s.taskTier != null) {
+            shop.taskTier = s.taskTier;
+            shop.taskArea = s.taskArea;
+        }
         List<Integer> npcs = Arrays.stream(s.npcs).boxed().collect(Collectors.toList());
         for (int n : s.npcs) {
             NPCDef def = NPCDef.get(n);
@@ -68,6 +74,7 @@ public class npc_shops extends DataFile {
             int tradeOption = npcDef.getOption(npcOption);
             if (tradeOption > 0) {
                 NPCAction.register(n, tradeOption, (player, npc) -> {
+                    if (fShop.taskArea != null && !fShop.taskArea.checkTierUnlock(player, fShop.taskTier, "access this shop.")) return;
                     fShop.open(player);
                 });
             } else {
@@ -93,6 +100,7 @@ public class npc_shops extends DataFile {
 
     private static void talkToDialogue(Player player, NPC npc, Shop shop) {
         npc.faceTemp(player);
+        if (shop.taskArea != null && !shop.taskArea.checkTierUnlock(player, shop.taskTier, "access this shop.")) return;
         player.dialogue(
                 new NPCDialogue(npc, "Hello, would you like to browse my shop?"),
                 new OptionsDialogue(
@@ -127,6 +135,10 @@ public class npc_shops extends DataFile {
         private boolean hideBuy;
         @Expose
         private boolean uniquePerNpc;
+        @Expose
+        private TaskArea taskArea;
+        @Expose
+        private AreaTaskTier taskTier;
     }
 
     private static final class TempItem {

@@ -8,6 +8,8 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.google.common.collect.Lists;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.ItemDef;
+import io.ruin.model.content.tasksystem.tasks.TaskArea;
+import io.ruin.model.content.tasksystem.tasks.areas.AreaTaskTier;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
@@ -91,6 +93,8 @@ public class Shop {
     public List<ShopItem> defaultStock;
     public ShopItemContainer shopItems;
     public boolean accessibleByIronMan;
+    public TaskArea taskArea;
+    public AreaTaskTier taskTier;
 
 
     public void startup() {
