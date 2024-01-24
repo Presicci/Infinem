@@ -1,11 +1,14 @@
 package io.ruin.model.entity.npc.actions;
 
+import io.ruin.model.content.tasksystem.tasks.TaskArea;
+import io.ruin.model.content.tasksystem.tasks.areas.AreaTaskTier;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.OptionAction;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Items;
 
 /**
@@ -22,6 +25,8 @@ public class Ava {
     }
 
     private static void purchaseDevice(Player player, int amount, int index) {
+        if (index >= 1 && !TaskArea.MISTHALIN.checkTierUnlock(player, AreaTaskTier.MEDIUM, "purchase this Ava's device.")) return;
+        if (!TaskArea.MISTHALIN.checkTierUnlock(player, AreaTaskTier.EASY, "purchase an Ava's attractor.")) return;
         int coinsAmt = index == 0 ? 999 : index == 1 ? 5000 : 25000;
         if (player.getInventory().getFreeSlots() < amount)
             amount = player.getInventory().getFreeSlots();
