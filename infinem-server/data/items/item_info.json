@@ -93926,7 +93926,7 @@
   { // Dragon hunter crossbow
     "id": 21012,
     "tradeable": true,
-    "examine": "Dragon hunter crossbow - Examine not set.",
+    "examine": "A crossbow used for dragon hunting.",
     "weight": 0.0,
 	"protect_value": 27823613,
     "equip_slot": 3,
@@ -93939,7 +93939,7 @@
   { // Dinh's bulwark
     "id": 21015,
     "tradeable": true,
-    "examine": "Dinh's bulwark - Examine not set.",
+    "examine": "Is it... looking at me?",
     "weight": 0.0,
 	"protect_value": 40000000,
     "equip_slot": 3,
@@ -109949,6 +109949,42 @@
     "slash_defence_bonus": 1,
     "magic_defence_bonus": 2,
     "melee_strength_bonus": 80
+  },
+  { // Starter bow
+    "id": 28555,
+    "tradeable": false,
+    "examine": "A bow from a starter pack.",
+    "weight": 1.36,
+    "weapon_type": "SHORTBOW",
+    "protect_value": 500,
+    "equip_slot": 3,
+    "range_attack_bonus": 20,
+    "range_strength_bonus": 7
+  },
+  { // Starter staff
+    "id": 28557,
+    "tradeable": false,
+    "examine": "A staff from a starter pack.",
+    "weight": 1.814,
+    "weapon_type": "MAGIC_STAFF",
+    "protect_value": 500,
+    "equip_slot": 3,
+    "magic_attack_bonus": 10,
+    "magic_defence_bonus": 10
+  },
+  { // Starter sword
+    "id": 28559,
+    "tradeable": false,
+    "examine": "A sword from a starter pack.",
+    "weight": 1.814,
+    "weapon_type": "SHORTSWORD",
+    "protect_value": 500,
+    "equip_slot": 3,
+    "stab_attack_bonus": 5,
+    "slash_attack_bonus": 21,
+    "crush_attack_bonus": -2,
+    "slash_defence_bonus": 1,
+    "melee_strength_bonus": 20
   },
   { // Dinh's blazing bulwark
     "id": 28682,
