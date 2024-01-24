@@ -31,12 +31,14 @@ public abstract class ChargeableItem {
 
     protected static void register(ChargeableItem chargeableItem) {
         ItemAction.registerInventory(chargeableItem.getChargedId(), "check", ChargeableItem::checkCharges);
-        ItemAction.registerInventory(chargeableItem.getUnchargedId(), "check", ChargeableItem::checkCharges);
         ItemAction.registerInventory(chargeableItem.getChargedId(), "uncharge", ((player, item) -> uncharge(chargeableItem, player, item)));
 
         ItemAction.registerEquipment(chargeableItem.getChargedId(), "check", ChargeableItem::checkCharges);
-        ItemAction.registerEquipment(chargeableItem.getUnchargedId(), "check", ChargeableItem::checkCharges);
 
+        if (chargeableItem.getUnchargedId() > 0) {
+            ItemAction.registerInventory(chargeableItem.getUnchargedId(), "check", ChargeableItem::checkCharges);
+            ItemAction.registerEquipment(chargeableItem.getUnchargedId(), "check", ChargeableItem::checkCharges);
+        }
         if (chargeableItem.getChargeItem() > 0) {
             ItemItemAction.register(chargeableItem.getUnchargedId(), chargeableItem.getChargeItem(), ((player, primary, secondary) -> charge(chargeableItem, player, primary, secondary)));
             ItemItemAction.register(chargeableItem.getChargedId(), chargeableItem.getChargeItem(), ((player, primary, secondary) -> charge(chargeableItem, player, primary, secondary)));
