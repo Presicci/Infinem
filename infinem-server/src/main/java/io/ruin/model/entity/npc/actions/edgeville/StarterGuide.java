@@ -382,12 +382,11 @@ public class StarterGuide {
 
     private static void giveEcoStarter(Player player) {
         player.getInventory().add(COINS_995, 1000); // gp
-        player.getInventory().add(558, 500); // Mind Rune
-        player.getInventory().add(556, 1500); // Air Rune
-        player.getInventory().add(554, 1000); // Fire Rune
-        player.getInventory().add(555, 1000); // Water Rune
-        player.getInventory().add(557, 1000); // Earth Rune
-        player.getInventory().add(562, 300); // Chaos Rune
+        player.getInventory().add(558, 250); // Mind Rune
+        player.getInventory().add(556, 500); // Air Rune
+        player.getInventory().add(554, 500); // Fire Rune
+        player.getInventory().add(555, 500); // Water Rune
+        player.getInventory().add(557, 500); // Earth Rune
         player.getInventory().add(362, 50); // Tuna
         Item bow = new Item(28555);
         bow.setCharges(2000);
