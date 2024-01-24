@@ -62,7 +62,6 @@
     "direction": "S",
     "walkRange": 4
   },
-
   {
     "name": "Grand Exchange Clerk",
     "id": 2148,
@@ -79,6 +78,24 @@
     "y": 3215,
     "z": 0,
     "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Wise old man - vote manager",
+    "id": 2108,
+    "x": 3217,
+    "y": 3215,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Doomsayer - donate manager",
+    "id": 119,
+    "x": 3217,
+    "y": 3213,
+    "z": 0,
+    "direction": "E",
     "walkRange": 0
   }
 ]

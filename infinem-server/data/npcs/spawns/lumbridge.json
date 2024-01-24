@@ -1584,15 +1584,6 @@
     "walkRange": 1
   },
   {
-    "name": "Doomsayer",
-    "id": 119,
-    "x": 3232,
-    "y": 3223,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 0
-  },
-  {
     "name": "Man",
     "id": 3106,
     "x": 3231,
