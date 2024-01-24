@@ -44,6 +44,8 @@ import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.skills.magic.spells.TargetSpell;
 import io.ruin.model.skills.magic.spells.lunar.Vengeance;
+import io.ruin.model.skills.magic.spells.modern.FireSpell;
+import io.ruin.model.skills.magic.spells.modern.FireStrike;
 import io.ruin.model.skills.prayer.Prayer;
 import io.ruin.model.skills.prayer.Redemption;
 import io.ruin.model.skills.prayer.Retribution;
@@ -312,6 +314,14 @@ public class PlayerCombat extends Combat {
             }
             updateLastAttack(4);
         }
+        if (weaponDef.id == 28557) {
+            player.animate(1167);
+            player.graphics(99, 92, 0);
+            FireSpell spell = new FireStrike();
+            spell.setRunes(null);
+            spell.cast(player, target);
+            updateLastAttack(4);
+        }
         if (weaponDef.id == CorruptedStaff.CHARGED) {
             if (target.player != null) {
                 player.sendMessage(Color.RED.wrap("This staff's spell cannot be used against other players."));
@@ -436,7 +446,7 @@ public class PlayerCombat extends Combat {
             /**
              * Crystal bow, Knifes, Darts, etc
              */
-            if(rangedWep != RangedWeapon.CRYSTAL_BOW && rangedWep != RangedWeapon.CRAWS_BOW)
+            if(rangedWep != RangedWeapon.CRYSTAL_BOW && rangedWep != RangedWeapon.CRAWS_BOW && rangedWep != RangedWeapon.STARTER_BOW)
                 ammo = wep;
         } else {
             /**
