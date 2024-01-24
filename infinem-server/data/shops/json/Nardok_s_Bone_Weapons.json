@@ -7,6 +7,8 @@
   "sellMultiplier": 1000,
   "buyMultiplier": 600,
   "hideBuy": false,
+  "taskArea": "MISTHALIN",
+  "taskTier": "EASY",
   "items": [
     {
       "itemId": 5018,

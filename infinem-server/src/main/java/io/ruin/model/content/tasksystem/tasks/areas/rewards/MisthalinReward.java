@@ -23,6 +23,8 @@ public enum MisthalinReward {
     ZAFF_BATTLESTAVES_15(AreaTaskTier.EASY, "Zaff will sell 15 battlestaves every day for 7,000 coins each"),
     SKULL_SCEPTRE_CHARGES_14(AreaTaskTier.EASY, "Skull sceptre will now hold up to 14 charges",
             "Skull sceptre parts now give 1 extra bone fragment"),
+    BONE_WEAPON_SHOP(AreaTaskTier.EASY, "Unlock the bone weapon shop",
+            "Managed by Nardok outside Dorgesh-Kaan"),
     AVAS_ATTRACTOR(AreaTaskTier.EASY, "Can purchase Ava's attractor",
             "Can be purchased from Ava in draynor manor"),
     EXPLORER_RING_2(AreaTaskTier.MEDIUM, "Unlocks the Explorer's Ring 2",
