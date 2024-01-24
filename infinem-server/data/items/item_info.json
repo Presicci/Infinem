@@ -109978,7 +109978,7 @@
     "tradeable": false,
     "examine": "A sword from a starter pack.",
     "weight": 1.814,
-    "weapon_type": "SHORTSWORD",
+    "weapon_type": "SCIMITAR",
     "protect_value": 500,
     "equip_slot": 3,
     "stab_attack_bonus": 5,
