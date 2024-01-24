@@ -306,6 +306,16 @@ public class Administrator {
                 }
                 return true;
             }
+            case "citem": {
+                int id = Integer.parseInt(args[0]);
+                int charges = args.length > 1 ? NumberUtils.intValue(args[1]) : 1;
+                if(id != -1) {
+                    Item item = new Item(id, 1);
+                    item.setCharges(charges);
+                    player.getInventory().add(item);
+                }
+                return true;
+            }
             case "fi":
             case "fitem": {
                 int l = command.length() + 1;
