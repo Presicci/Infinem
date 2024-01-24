@@ -22,6 +22,7 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.locations.home.NPCLocator;
 import io.ruin.model.map.Direction;
 import io.ruin.model.stat.StatType;
 import io.ruin.network.central.CentralClient;
@@ -107,17 +108,15 @@ public class StarterGuide {
 		player.inTutorial = true;
 		player.startEvent(event -> {
             player.lock(LockType.FULL_ALLOW_LOGOUT);
-			player.getMovement().teleport(2038, 3577, 0);
+			player.getMovement().teleport(3237, 3220, 0);
 			if (actuallyNew) {
 				player.openInterface(InterfaceType.MAIN, Interface.APPEARANCE_CUSTOMIZATION);
 				while (player.isVisibleInterface(Interface.APPEARANCE_CUSTOMIZATION)) {
 					event.delay(1);
 				}
 			}
-			NPC guide = new NPC(307).spawn(2037, 3577, 0, Direction.SOUTH, 0); // 307 is a copy of 306 without options so it doesnt get in other people's way
-			player.logoutListener = new LogoutListener().onLogout(p -> guide.remove());
+			NPC guide = NPCLocator.GUIDE;
 			player.getPacketSender().sendHintIcon(guide);
-			guide.face(player);
 			player.face(guide);
 			boolean startTutorial = false;
 			if (actuallyNew) {
@@ -188,11 +187,6 @@ public class StarterGuide {
                     player.logoutListener = null;
                     player.setTutorialStage(0);
                     player.unlock();
-                    guide.addEvent(evt -> {
-                        evt.delay(2);
-                        World.sendGraphics(86, 50, 0, guide.getPosition());
-                        guide.remove();
-                    });
                 })));
             }
 		});

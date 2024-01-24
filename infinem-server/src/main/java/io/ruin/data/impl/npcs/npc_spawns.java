@@ -81,8 +81,13 @@ public class npc_spawns extends DataFile {
     }
 
     private void attemptSaveSpawnNPC(NPC npc) {
-        if (npc.getId() == 3226) {
-            NPCLocator.WOODSMAN_TUTOR = npc;
+        switch (npc.getId()) {
+            case 3226:
+                NPCLocator.WOODSMAN_TUTOR = npc;
+                break;
+            case 306:
+                NPCLocator.GUIDE = npc;
+                break;
         }
     }
 

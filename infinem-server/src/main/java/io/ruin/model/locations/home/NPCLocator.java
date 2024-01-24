@@ -13,7 +13,7 @@ import io.ruin.model.inter.utils.Option;
  */
 public class NPCLocator {
 
-    public static NPC WOODSMAN_TUTOR;
+    public static NPC GUIDE, WOODSMAN_TUTOR;
 
     /**
      * Add a hint arrow towards the npc's location,
