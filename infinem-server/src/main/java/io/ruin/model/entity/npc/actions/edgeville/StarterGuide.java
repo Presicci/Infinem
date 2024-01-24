@@ -19,6 +19,7 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.handlers.XpCounter;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.Direction;
 import io.ruin.model.stat.StatType;
@@ -388,9 +389,13 @@ public class StarterGuide {
         player.getInventory().add(557, 1000); // Earth Rune
         player.getInventory().add(562, 300); // Chaos Rune
         player.getInventory().add(362, 50); // Tuna
-        player.getInventory().add(863, 500); // Iron Knives
-        player.getInventory().add(1381, 1); // Air Staff
-        player.getInventory().add(1323, 1); // Iron scim
+        Item bow = new Item(28555);
+        bow.setCharges(2000);
+        player.getInventory().add(bow); // Starter bow
+        Item staff = new Item(28557);
+        staff.setCharges(500);
+        player.getInventory().add(staff); // Starter staff
+        player.getInventory().add(28559, 1); // Starter sword
         player.getInventory().add(757, 1); // Guide book
         switch (player.getGameMode()) {
             case IRONMAN:
