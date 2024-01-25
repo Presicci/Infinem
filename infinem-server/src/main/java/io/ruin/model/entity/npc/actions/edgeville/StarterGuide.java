@@ -120,15 +120,7 @@ public class StarterGuide {
 			player.face(guide);
 			boolean startTutorial = false;
 			if (actuallyNew) {
-			    player.dialogue(
-			            new NPCDialogue(guide, "Do you want to play in normal or PvP mode?<br>" +
-                                "PvP mode gets double the combat xp but can't compete<br>" +
-                                "on the hiscores and can't be an ironman."),
-                        new OptionsDialogue(
-                                new Option("Normal - 30x Combat, 15x Skilling", () -> XpMode.setXpMode(player, XpMode.NORMAL)),
-                                new Option("PvP - 60x Combat, 15x Skilling (CAN'T BE IRONMAN)", () -> XpMode.setXpMode(player, XpMode.PVP))
-                        )
-                );
+                XpMode.setXpMode(player, XpMode.NORMAL);
 			    event.waitForDialogue(player);
 			    if (player.xpMode.equals(XpMode.NORMAL)) {
                     player.dialogue(
