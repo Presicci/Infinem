@@ -712,6 +712,7 @@ public class Bank extends ItemContainerG<BankItem> {
             h.actions[41] = (SimpleAction) p -> p.getBank().deposit(p.getInventory(), true);
             h.actions[46] = (DefaultAction) (p, option, slot, itemId) -> p.getBank().incinerate(slot, itemId);
             h.actions[43] = (SimpleAction) p -> p.getBank().deposit(p.getEquipment(), true);
+            h.actions[51] = (SimpleAction) Config.BANK_TUTORIAL_BUTTON::toggle;
             h.actions[52] = (SimpleAction) Config.BANK_INCINERATOR::toggle;
             h.actions[53] = (SimpleAction) Config.BANK_DEPOSIT_EQUIPMENT::toggle;
             h.actions[55] = (SimpleAction) p -> p.getBank().releasePlaceholders();
