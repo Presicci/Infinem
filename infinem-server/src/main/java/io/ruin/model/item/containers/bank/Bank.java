@@ -306,7 +306,7 @@ public class Bank extends ItemContainerG<BankItem> {
         sortAfter(() -> {
             int released = 0;
             for(BankItem item : items) {
-                if(item == null || item.getId() == BLANK_ID || !item.getDef().isPlaceholder())
+                if(item == null || item.getId() == BLANK_ID || item.getDef() == null || !item.getDef().isPlaceholder())
                     continue;
                 setBlank(item);
                 released++;
