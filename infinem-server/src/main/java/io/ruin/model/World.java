@@ -19,6 +19,7 @@ import io.ruin.model.entity.EntityList;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerFile;
+import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Region;
 import io.ruin.model.map.object.GameObject;
@@ -82,8 +83,7 @@ public class World extends EventWorker {
 
     public static final int spawnableOffset = 100000;
 
-    public static final Position HOME = new Position(2028, 3577, 0);
-    public static final Position EDGEHOME = new Position(3085, 3492, 0);
+    public static final Bounds HOME = new Bounds(3221, 3218, 3225, 3219, 0);
 
     /**
      * Players
