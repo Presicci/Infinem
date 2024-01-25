@@ -31,6 +31,8 @@ import static io.ruin.model.inter.AccessMasks.*;
 @Slf4j
 public class Bank extends ItemContainerG<BankItem> {
 
+    private static final Config FILLER_AMT = Config.varpbit(6281, false);
+
     public static final int BLANK_ID = -1, FILLER_ID = 20594;
 
     private boolean asNote;
@@ -325,11 +327,14 @@ public class Bank extends ItemContainerG<BankItem> {
      */
 
     private void fillBank() {
+        int fillValue = FILLER_AMT.get(player);
+        int fillAmt = fillValue == 1 ? 1 : fillValue == 2 ? 10 : fillValue == 3 ? 50 : fillValue == 4 ? player.getTemporaryAttributeIntOrZero("FILLER_AMT") : 800;
         sortAfter(() -> {
             int filled = 0;
             boolean hadFiller = false;
             int tab = Config.BANK_TAB.get(player);
             for(int slot = items.length - 1; slot >= 0; slot--) {
+                if (filled >= fillAmt) break;
                 BankItem item = items[slot];
                 if(item == null) {
                     filled++;
@@ -710,7 +715,15 @@ public class Bank extends ItemContainerG<BankItem> {
             h.actions[52] = (SimpleAction) Config.BANK_INCINERATOR::toggle;
             h.actions[53] = (SimpleAction) Config.BANK_DEPOSIT_EQUIPMENT::toggle;
             h.actions[55] = (SimpleAction) p -> p.getBank().releasePlaceholders();
-            h.actions[67] = (SimpleAction) p -> p.getBank().fillBank(); //todo@@ add support for amt
+            h.actions[57] = (SimpleAction) p -> FILLER_AMT.set(p, 1);
+            h.actions[59] = (SimpleAction) p -> FILLER_AMT.set(p, 2);
+            h.actions[61] = (SimpleAction) p -> FILLER_AMT.set(p, 3);
+            h.actions[63] = (SimpleAction) p -> p.integerInput("Enter amount:", amount -> {
+                FILLER_AMT.set(p, 4);
+                p.putTemporaryAttribute("FILLER_AMT", amount);
+            });
+            h.actions[65] = (SimpleAction) p -> FILLER_AMT.set(p, 0);
+            h.actions[67] = (SimpleAction) p -> p.getBank().fillBank();
 
             h.closedAction = (p, i) -> {
                 p.getBank().removeBlankItems();
