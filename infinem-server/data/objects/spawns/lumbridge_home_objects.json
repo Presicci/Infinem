@@ -1,5 +1,4 @@
 [
-  {"id": 2693, "x": 3220, "y": 3216, "z": 0, "type": 10, "direction": 1},   // Bank chest
   {"id": 2031, "x": 3227, "y": 3252, "z": 0, "type": 10, "direction": 0},   // Anvil
   {"id": 11365, "x": 3225, "y": 3150, "z": 0, "type": 10, "direction": 0},  // Iron ore
   {"id": 11365, "x": 3225, "y": 3149, "z": 0, "type": 10, "direction": 0},  // Iron ore
