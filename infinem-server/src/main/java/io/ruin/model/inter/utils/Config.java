@@ -307,6 +307,8 @@ public class Config {
 
     public static final Config BANK_DEPOSIT_EQUIPMENT = varpbit(5364, true);
 
+    public static final Config BANK_DEPOSIT_INVENTORY = varpbit(8352, true);
+
     public static final Config BANK_TUTORIAL_BUTTON = varpbit(10336, true);
 
     public static final Config[] BANK_TAB_SIZES = {

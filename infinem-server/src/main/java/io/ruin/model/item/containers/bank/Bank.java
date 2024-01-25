@@ -715,6 +715,7 @@ public class Bank extends ItemContainerG<BankItem> {
             h.actions[51] = (SimpleAction) Config.BANK_TUTORIAL_BUTTON::toggle;
             h.actions[52] = (SimpleAction) Config.BANK_INCINERATOR::toggle;
             h.actions[53] = (SimpleAction) Config.BANK_DEPOSIT_EQUIPMENT::toggle;
+            h.actions[54] = (SimpleAction) Config.BANK_DEPOSIT_INVENTORY::toggle;
             h.actions[55] = (SimpleAction) p -> p.getBank().releasePlaceholders();
             h.actions[57] = (SimpleAction) p -> FILLER_AMT.set(p, 1);
             h.actions[59] = (SimpleAction) p -> FILLER_AMT.set(p, 2);
