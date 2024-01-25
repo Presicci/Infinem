@@ -173,6 +173,7 @@ public class StarterGuide {
                     });
                 }
 				event.waitForDialogue(player);
+                player.getPacketSender().resetHintIcon(true);
                 Broadcast.WORLD.sendNews(player.getName() + " has just joined " + World.type.getWorldName() + "!");
                 startTutorial = true;
             }
