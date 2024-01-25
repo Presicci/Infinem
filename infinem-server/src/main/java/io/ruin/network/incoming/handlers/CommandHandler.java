@@ -215,6 +215,10 @@ public class CommandHandler implements Incoming {
         );
     }
 
+    public static void teleport(Player player, Bounds bounds) {
+        teleport(player, bounds.randomX(), bounds.randomY(), bounds.z);
+    }
+
     public static void teleport(Player player, Position position) {
         teleport(player, position.getX(), position.getY(), position.getZ());
     }
