@@ -239,6 +239,7 @@ public enum SpellBook {
     private static final Config DESERT_TREASURE_UNLOCK = Config.varpbit(358, false).defaultValue(15);
     private static final Config KINGDOM_DIVIDED_UNLOCK = Config.varpbit(12296, false).defaultValue(150);
     private static final Config GREAT_BRAIN_ROBBERY_UNLOCK = Config.varp(980, false).defaultValue(130);
+    //private static final Config FREMMY_HARD_UNLOCK = Config.varpbit(4533, false).defaultValue(1);
 
     static {
         SpellBook.MODERN.spellIdOffset = 5;
