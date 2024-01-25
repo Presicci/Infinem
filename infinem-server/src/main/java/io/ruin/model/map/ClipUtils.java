@@ -606,6 +606,10 @@ public class ClipUtils {
         clearClipping(3565, 3380, 0, 0, 0);     // Rocks by clue step
         clearClipping(3565, 3379, 0, 0, 0);     // Rocks by clue step
         clearClipping(3564, 3379, 0, 0, 0);     // Rocks by clue step
+        // Lumbridge RFD room
+        clearClipping(3208, 3220, 0, 2, 4);     // Old furniture spawns
+        addClipping(3208, 3218, 0, 0, 1);       // Behind the counter
+        clearClipping(3212, 3221, 0, 1, 1);     // Double doors
     }
 
     public static void clearClipping(int x, int y, int z, int lengthX, int lengthY) {
@@ -617,4 +621,12 @@ public class ClipUtils {
         }
     }
 
+    public static void addClipping(int x, int y, int z, int lengthX, int lengthY) {
+        for (int width = 0; width < lengthX + 1; width++) {
+            for (int height = 0; height < lengthY + 1; height++) {
+                Tile tile = Tile.get(x + width, y + height, z, true);
+                tile.flagUnmovable();
+            }
+        }
+    }
 }
