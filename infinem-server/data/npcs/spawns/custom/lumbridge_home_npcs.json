@@ -97,5 +97,23 @@
     "z": 0,
     "direction": "E",
     "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 2897,
+    "x": 3211,
+    "y": 3218,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Banker",
+    "id": 2898,
+    "x": 3209,
+    "y": 3218,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
   }
 ]

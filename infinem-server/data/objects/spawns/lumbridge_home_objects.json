@@ -21,5 +21,23 @@
   {"id": 11730, "x": 3296, "y": 3208, "z": 0, "type": 10, "direction": 1},  // Bakers stall
   {"id": 11732, "x": 3302, "y": 3211, "z": 0, "type": 10, "direction": 3},  // Fur stall
   {"id": 11734, "x": 3298, "y": 3219, "z": 0, "type": 11, "direction": 2},  // Silver stall
-  {"id": 41593, "x": 3226, "y": 3144, "z": 0, "type": 10, "direction": 1}   // Barrel with pickaxe
+  {"id": 41593, "x": 3226, "y": 3144, "z": 0, "type": 10, "direction": 1},  // Barrel with pickaxe
+  // Bank
+  {"id": 1000, "x": 3208, "y": 3219, "z": 0, "type": 2, "direction": 0},  // Rope
+  {"id": 1000, "x": 3208, "y": 3218, "z": 0, "type": 0, "direction": 0},  // Rope
+  {"id": 1000, "x": 3212, "y": 3219, "z": 0, "type": 0, "direction": 1},  // Rope
+  {"id": -1, "x": 3212, "y": 3218, "z": 0, "type": 10, "direction": 0},  // Remove candle
+  {"id": 10355, "x": 3211, "y": 3219, "z": 0, "type": 10, "direction": 0},  // Booth 1
+  {"id": 10528, "x": 3210, "y": 3219, "z": 0, "type": 10, "direction": 0},  // Empty booth
+  {"id": 10355, "x": 3209, "y": 3219, "z": 0, "type": 10, "direction": 0},  // Booth 2
+  {"id": -1, "x": 3210, "y": 3220, "z": 0, "type": 10, "direction": 0},  // Remove furniture
+  {"id": -1, "x": 3210, "y": 3221, "z": 0, "type": 10, "direction": 0},  // Remove furniture
+  {"id": -1, "x": 3210, "y": 3222, "z": 0, "type": 10, "direction": 0},  // Remove furniture
+  {"id": -1, "x": 3210, "y": 3223, "z": 0, "type": 10, "direction": 0},  // Remove furniture
+  {"id": -1, "x": 3208, "y": 3220, "z": 0, "type": 10, "direction": 0},  // Remove furniture
+  {"id": -1, "x": 3208, "y": 3221, "z": 0, "type": 10, "direction": 0},  // Remove furniture
+  {"id": -1, "x": 3208, "y": 3222, "z": 0, "type": 10, "direction": 0},  // Remove furniture
+  {"id": -1, "x": 3208, "y": 3223, "z": 0, "type": 10, "direction": 0},  // Remove furniture
+  {"id": -1, "x": 3209, "y": 3224, "z": 0, "type": 10, "direction": 0},  // Remove furniture
+  {"id": -1, "x": 3209, "y": 3220, "z": 0, "type": 10, "direction": 0}  // Remove furniture
 ]
