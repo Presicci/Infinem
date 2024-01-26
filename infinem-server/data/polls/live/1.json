@@ -1,0 +1,73 @@
+[
+  {
+    "pollId": 1,
+    "title": "General Improvements",
+    "description": "Infinem has been out for several minutes already, so we would like to gauge the community on what they would like added.",
+    "hyperlink": "https://google.com",
+    "startDate": {
+      "year": 2024,
+      "month": 1,
+      "day": 26
+    },
+    "endDate": {
+      "year": 2024,
+      "month": 1,
+      "day": 27
+    },
+    "votes": 1,
+    "questions": [
+      {
+        "question": "Should we add even more content to Infinem?",
+        "answers": [
+          {
+            "choice": "Yes",
+            "votes": 1
+          },
+          {
+            "choice": "No",
+            "votes": 0
+          },
+          {
+            "choice": "Skip question",
+            "votes": 0
+          }
+        ]
+      },
+      {
+        "question": "Should the Dragon longsword have its slash bonus tripled?",
+        "answers": [
+          {
+            "choice": "Yes",
+            "votes": 1
+          },
+          {
+            "choice": "No",
+            "votes": 0
+          },
+          {
+            "choice": "Skip question",
+            "votes": 0
+          }
+        ]
+      },
+      {
+        "question": "Should a canoe station be added to every major city?",
+        "answers": [
+          {
+            "choice": "Yes",
+            "votes": 1
+          },
+          {
+            "choice": "No",
+            "votes": 0
+          },
+          {
+            "choice": "Skip question",
+            "votes": 0
+          }
+        ]
+      }
+    ],
+    "amendable": true
+  }
+]
