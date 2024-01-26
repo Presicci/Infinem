@@ -257,7 +257,7 @@ public class Server extends ServerWrapper {
                         if(p.getChannel().id() == null)
                             p.logoutStage = -1;
                     }
-                    if (Server.worker.getExecutor().submit(World::removePlayers).get())
+                    if (World.removePlayers())
                         break;
 
                     ThreadUtils.sleep(10L); //^ that will already be a big enough delay
