@@ -20,6 +20,7 @@ import io.ruin.model.activities.pyramidplunder.PyramidPlunder;
 import io.ruin.model.activities.wilderness.BountyHunter;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
+import io.ruin.model.content.poll.PollManager;
 import io.ruin.model.content.upgrade.UpgradeMachine;
 import io.ruin.model.content.bestiary.Bestiary;
 import io.ruin.model.content.tasksystem.relics.RelicManager;
@@ -1877,6 +1878,9 @@ public class Player extends PlayerAttributes {
 
     @Expose @Getter
     private Bestiary bestiary;
+
+    @Getter
+    private final PollManager pollManager = new PollManager(this);
 
     public boolean hasAttribute(String key) {
         return attributes.containsKey(key);
