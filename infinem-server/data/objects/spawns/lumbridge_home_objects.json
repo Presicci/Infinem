@@ -40,5 +40,6 @@
   {"id": -1, "x": 3209, "y": 3224, "z": 0, "type": 10, "direction": 0},  // Remove furniture
   {"id": -1, "x": 3209, "y": 3220, "z": 0, "type": 10, "direction": 0},  // Remove furniture
   {"id": -1, "x": 3213, "y": 3221, "z": 0, "type": 0, "direction": 0},  // Remove door
-  {"id": -1, "x": 3213, "y": 3222, "z": 0, "type": 0, "direction": 0}  // Remove door
+  {"id": -1, "x": 3213, "y": 3222, "z": 0, "type": 0, "direction": 0},  // Remove door
+  {"id": 8720, "x": 3212, "y": 3224, "z": 0, "type": 10, "direction": 2}   // Poll booth
 ]
