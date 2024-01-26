@@ -14,89 +14,85 @@ object CharacterCreator {
                 h.simpleAction(value.childNext, value::next)
                 h.simpleAction(value.childPrevious, value::previous)
             }
-            var hairc = 0
+
+            // Hair color
             h.actions[43] = DefaultAction { p, _, _, _ ->
-                if (hairc == 0) {
-                    hairc = 25
+                p.appearance.colors[0]--
+                if (p.appearance.colors[0] == 0) {
+                    p.appearance.colors[0] = 25
                 }
-                p.appearance.colors[0] = hairc--
                 p.appearance.update()
             }
-
             h.actions[44] = DefaultAction { p, _, _, _ ->
-                if (hairc == 25) {
-                    hairc = 0
+                p.appearance.colors[0]++
+                if (p.appearance.colors[0] == 25) {
+                    p.appearance.colors[0] = 0
                 }
-                p.appearance.colors[0] = hairc++
                 p.appearance.update()
 
             }
 
-            var torsoc = 0
+            // Torso color
             h.actions[47] = DefaultAction { p, _, _, _ ->
-                if (torsoc == 0) {
-                    torsoc = 29
+                p.appearance.colors[1]--
+                if (p.appearance.colors[1] == 0) {
+                    p.appearance.colors[1] = 29
                 }
-                p.appearance.colors[1] = torsoc--
                 p.appearance.update()
             }
-
             h.actions[48] = DefaultAction { p, _, _, _ ->
-                if (torsoc == 29) {
-                    torsoc = 0
+                p.appearance.colors[1]++
+                if (p.appearance.colors[1] == 29) {
+                    p.appearance.colors[1] = 0
                 }
-                p.appearance.colors[1] = torsoc++
                 p.appearance.update()
             }
 
-            var legsc = 0
+            // Leg color
             h.actions[51] = DefaultAction { p, _, _, _ ->
-                if (legsc == 0) {
-                    legsc = 29
+                p.appearance.colors[2]--
+                if (p.appearance.colors[2] == 0) {
+                    p.appearance.colors[2] = 29
                 }
-                p.appearance.colors[2] = legsc--
                 p.appearance.update()
             }
-
             h.actions[52] = DefaultAction { p, _, _, _ ->
-                if (legsc == 29) {
-                    legsc = 0
+                p.appearance.colors[2]++
+                if (p.appearance.colors[2] == 29) {
+                    p.appearance.colors[2] = 0
                 }
-                p.appearance.colors[2] = legsc++
                 p.appearance.update()
             }
 
-            var feetc = 0
+            // Feet color
             h.actions[55] = DefaultAction { p, _, _, _ ->
-                if (feetc == 0) {
-                    feetc = 7
+                p.appearance.colors[3]--
+                if (p.appearance.colors[3] == 0) {
+                    p.appearance.colors[3] = 7
                 }
-                p.appearance.colors[3] = feetc--
                 p.appearance.update()
             }
-
             h.actions[56] = DefaultAction { p, _, _, _ ->
-                if (feetc == 7) {
-                    feetc = 0
+                p.appearance.colors[3]++
+                if (p.appearance.colors[3] == 7) {
+                    p.appearance.colors[3] = 0
                 }
-                p.appearance.colors[3] = feetc++
                 p.appearance.update()
             }
 
-            var skinc = 0
+            // Skin color
             h.actions[59] = DefaultAction { p, _, _, _ ->
-                if (skinc == 0) {
-                    skinc = 8
+                p.appearance.colors[4]--
+                if (p.appearance.colors[4] == 0) {
+                    p.appearance.colors[4] = 8
                 }
-                p.appearance.colors[4] = skinc--
                 p.appearance.update()
             }
-
             h.actions[60] = DefaultAction { p, _, _, _ ->
-                if (skinc == 8) {
-                    skinc = 0
+                p.appearance.colors[4]++
+                if (p.appearance.colors[4] == 8) {
+                    p.appearance.colors[4] = 0
                 }
-                p.appearance.colors[4] = skinc++
                 p.appearance.update()
             }
 
