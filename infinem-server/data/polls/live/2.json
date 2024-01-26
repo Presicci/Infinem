@@ -14,14 +14,14 @@
       "month": 1,
       "day": 27
     },
-    "votes": 1,
+    "votes": 0,
     "questions": [
       {
         "question": "Should we add even more content to Infinem?",
         "answers": [
           {
             "choice": "Yes",
-            "votes": 1
+            "votes": 0
           },
           {
             "choice": "No",
@@ -38,7 +38,7 @@
         "answers": [
           {
             "choice": "Yes",
-            "votes": 1
+            "votes": 0
           },
           {
             "choice": "No",
@@ -55,7 +55,7 @@
         "answers": [
           {
             "choice": "Yes",
-            "votes": 1
+            "votes": 0
           },
           {
             "choice": "No",
