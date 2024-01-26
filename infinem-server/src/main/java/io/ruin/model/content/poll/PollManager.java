@@ -80,6 +80,7 @@ public class PollManager {
                 } else {
                     polls.POLLS.get(poll.getPollId()).castVote(votes);
                 }
+                polls.checkSave();
             }
             final AnsweredPoll answeredPoll = new AnsweredPoll();
             answeredPoll.setPollId(poll.getPollId());

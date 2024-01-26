@@ -17,6 +17,7 @@ public class polls extends DataFile {
 
     public static int latestPollId = 1;
     public static final Map<Integer, Poll> POLLS = new HashMap<Integer, Poll>();
+    public static long lastSave;
 
     @Override
     public String path() {
@@ -49,9 +50,18 @@ public class polls extends DataFile {
 
     public static void toJson(int id) {
         try (PrintWriter pw = new PrintWriter(Server.dataFolder.getAbsolutePath() + "/polls/live/" + id + ".json", "UTF-8")) {
-            pw.println(JsonUtils.GSON_PRETTY.toJson(POLLS.get(id)));
+            List<Poll> poll = new ArrayList<>();
+            poll.add(POLLS.get(id));
+            pw.println(JsonUtils.GSON_PRETTY.toJson(poll));
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void checkSave() {
+        if (System.currentTimeMillis() - lastSave > 300000L) {
+            lastSave = System.currentTimeMillis();
+            toJson();
         }
     }
 }
