@@ -13,6 +13,7 @@ import io.ruin.api.utils.Tuple;
 import io.ruin.cache.Color;
 import io.ruin.cache.Icon;
 import io.ruin.content.activities.event.TimedEventManager;
+import io.ruin.data.impl.polls;
 import io.ruin.model.activities.combat.pvminstance.PVMInstance;
 import io.ruin.model.combat.Killer;
 import io.ruin.model.entity.EntityList;
@@ -332,8 +333,10 @@ public class World extends EventWorker {
         startEvent(e -> {
             int ticks = minutes * 100;
             while(updating) {
-                if(--ticks <= 0 && removeBots() && removePlayers())
+                if(--ticks <= 0 && removeBots() && removePlayers()) {
+                    shutdown();
                     return;
+                }
                 e.delay(1);
             }
         });
@@ -364,6 +367,10 @@ public class World extends EventWorker {
                 p.logoutStage = -1;
         }
         return true;
+    }
+
+    private static void shutdown() {
+        System.exit(0);
     }
 
     /**
