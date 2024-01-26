@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public enum LooseRailing {
+    GNOME_VILLAGE(2186, 1, new Position(2515, 3161)),
     PATERDOMUS_TOP(16552, 65, new Position(3424, 3476)),
     PATERDOMUS_BOTTOM(17000, 65, new Position(3425, 3484)),
     MCGRUBOR_WOODS(51, 1, new Position(2662, 3500)),

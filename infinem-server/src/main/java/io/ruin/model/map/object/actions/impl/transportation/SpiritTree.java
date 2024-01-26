@@ -24,25 +24,16 @@ public class SpiritTree {
             ObjectAction.register(id, 2, (player, obj) -> open(player));
         }
 
-        ObjectAction.register(2186, 1, (player, obj) -> {
-            player.startEvent(event -> {
-                player.lock();
-                player.getPacketSender().fadeOut();
-                event.delay(2);
-                player.getMovement().teleport(2503, 3192, 0);
-                event.delay(2);
-                player.getPacketSender().fadeIn();
-                player.unlock();
-                player.dialogue(new MessageDialogue("You make your way through the maze."));
-            });
-        });
-
         NPCAction toMaze = (player, npc) -> player.startEvent(event -> {
             player.lock();
             player.sendMessage("Elkoy leads you through the maze.");
             player.getPacketSender().fadeOut();
             event.delay(2);
-            player.getMovement().teleport(2515, 3161, 0);
+            if (player.getAbsY() > 3174) {
+                player.getMovement().teleport(2515, 3160, 0);
+            } else {
+                player.getMovement().teleport(2503, 3192, 0);
+            }
             event.delay(2);
             player.getPacketSender().fadeIn();
             player.unlock();
