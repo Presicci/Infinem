@@ -370,6 +370,8 @@ public class World extends EventWorker {
     }
 
     private static void shutdown() {
+        // Save poll data
+        polls.toJson();
         System.exit(0);
     }
 
