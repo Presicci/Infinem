@@ -24,7 +24,8 @@ public class NPCActionHandler implements Incoming {
         if(player.isLocked())
             return;
         int option = OPTIONS[opcode];
-        player.resetActions(true, true, true);
+        if (option != 6)
+            player.resetActions(true, true, true);
         if(option == 1) {
             int ctrlRun = in.readByte();
             int targetIndex = in.readLEShort();
