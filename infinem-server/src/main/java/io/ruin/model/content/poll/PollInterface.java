@@ -186,7 +186,7 @@ public class PollInterface {
         return (256 * index) + (4 * question.getAnswers().length);
     }
 
-    private static final ImmutableList<Integer> BOOTHS = ImmutableList.of(26815, 8720);
+    private static final ImmutableList<Integer> BOOTHS = ImmutableList.of(8720, 26813, 26814, 26815, 26816, 26817, 26818, 26819, 26820, 32138, 32649);
 
     static {
         LoginListener.register(player -> {
