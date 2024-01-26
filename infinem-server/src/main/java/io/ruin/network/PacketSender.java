@@ -373,22 +373,24 @@ public class PacketSender {
     }
 
     public void sendClientScript(int id, Object... params) {
-        OutBuffer out = new OutBuffer(1000).sendVarShortPacket(92);
-
         StringBuilder args = new StringBuilder();
-
         if (params != null) {
-            for (int index = params.length - 1; index >= 0; index--) {
-                if (params[index] instanceof String) {
+            for (Object obj : params) {
+                if (obj instanceof String) {
                     args.append("s");
                 } else {
                     args.append("i");
                 }
             }
         }
-
+        OutBuffer out;
+        if (params == null) {
+            out = new OutBuffer(3);
+        } else {
+            out = new OutBuffer(3 + Protocol.strLen(args.toString()) + (params.length * 4));
+        }
+        out.sendVarShortPacket(92);
         out.writeStringCp1252NullTerminated(args.toString());
-
         if (params != null) {
             for (int i = params.length - 1; i >= 0; i--) {
                 Object param = params[i];
