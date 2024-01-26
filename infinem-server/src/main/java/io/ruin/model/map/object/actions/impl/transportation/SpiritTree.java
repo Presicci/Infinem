@@ -23,33 +23,6 @@ public class SpiritTree {
             ObjectAction.register(id, 1, (player, obj) -> open(player));
             ObjectAction.register(id, 2, (player, obj) -> open(player));
         }
-
-        NPCAction toMaze = (player, npc) -> player.startEvent(event -> {
-            player.lock();
-            player.sendMessage("Elkoy leads you through the maze.");
-            player.getPacketSender().fadeOut();
-            event.delay(2);
-            if (player.getAbsY() > 3174) {
-                player.getMovement().teleport(2515, 3160, 0);
-            } else {
-                player.getMovement().teleport(2503, 3192, 0);
-            }
-            event.delay(2);
-            player.getPacketSender().fadeIn();
-            player.unlock();
-            player.dialogue(new NPCDialogue(npc,"Here we are."));
-        });
-
-        NPCAction.register(4968, "follow", toMaze);
-        NPCAction.register(4968, "talk-to", (player, npc) -> {
-            player.dialogue(new NPCDialogue(npc, "I can lead you through the maze, if you'd like."),
-                    new OptionsDialogue(
-                            new Option("Yes, please.", () -> {
-                                toMaze.handle(player, npc);
-                            }),
-                            new Option("No thanks.", () -> {})
-                    ));
-        });
     }
 
     private static List<PatchData> SPIRIT_TREE_PATCHES = Arrays.asList(PatchData.PORT_SARIM_SPIRIT_TREE, PatchData.BRIMHAVEN_SPIRIT_TREE, PatchData.ETCETERIA_SPIRIT_TREE, PatchData.ZEAH_SPIRIT_TREE, PatchData.FARMING_GUILD_SPIRIT_TREE);
