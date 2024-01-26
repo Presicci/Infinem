@@ -39,7 +39,7 @@ enum class Style(
         val availableIdentityKits = this.availableIdentityKits(player.appearance.isMale)
 
         var nextIdentityKitIndex = currentIdentityKitIndex + increment;
-        if (nextIdentityKitIndex >= availableIdentityKits.size - 1) {
+        if (nextIdentityKitIndex >= availableIdentityKits.size) {
             nextIdentityKitIndex = 0;
         } else if (nextIdentityKitIndex < 0) {
             nextIdentityKitIndex = availableIdentityKits.size - 1;
