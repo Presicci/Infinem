@@ -19,6 +19,28 @@ public class StringUtils {
         return Character.toUpperCase(string.charAt(0)) + string.substring(1);
     }
 
+    public static String initialCaps(String str) {
+        if (str == null || str.isEmpty())
+            return str;
+        char[] array = str.toLowerCase().toCharArray();
+        // Uppercase first letter.
+        array[0] = Character.toUpperCase(array[0]);
+        if (array[0] == '_') {
+            array[0] = ' ';
+        }
+
+        // Uppercase all letters that follow a whitespace character.
+        for (int i = 1; i < array.length; i++) {
+            if (Character.isWhitespace(array[i - 1])) {
+                array[i] = Character.toUpperCase(array[i]);
+            } else if (array[i - 1] == '_') {
+                array[i - 1] = ' ';
+            }
+        }
+
+        return new String(array);
+    }
+
     public static String fixCaps(String message) {
         char[] chars = message.toCharArray();
         boolean allowCap = true, forceCap = true;
