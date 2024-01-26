@@ -1,5 +1,5 @@
 [
-  {"id": 31675, "x": 3220, "y": 3221, "z": 0, "type": 10, "direction": 1},  // Lumbridge
+  {"id": 31675, "x": 3216, "y": 3221, "z": 0, "type": 10, "direction": 3},  // Lumbridge
   {"id": 31675, "x": 3093, "y": 3487, "z": 0, "type": 10, "direction": 2},  // Edgeville
   {"id": 31675, "x": 2943, "y": 3371, "z": 0, "type": 10, "direction": 1},  // Falador
   {"id": 31675, "x": 2760, "y": 3481, "z": 0, "type": 10, "direction": 2},  // Camelot
