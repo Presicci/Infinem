@@ -360,6 +360,16 @@ public class Interface {
     public static final int ELNOCK_STORAGE_INVENTORY = 681;
 
     /**
+     * Polls
+     */
+
+    public static final int POLL_RESULTS = 345;
+
+    public static final int POLL_VOTE = 400;
+
+    public static final int POLL_HISTORY = 310;
+
+    /**
      * Task System
      */
     public static final int TASK_TAB = 656, RELICS = 655, TASKS = 1008;
