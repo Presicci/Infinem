@@ -19,8 +19,9 @@ public class ObjectActionHandler implements Incoming {
     public void handle(Player player, InBuffer in, int opcode) {
         if(player.isLocked())
             return;
-        player.resetActions(true, true, true);
         int option = OPTIONS[opcode];
+        if (option != 6)
+            player.resetActions(true, true, true);
         if(option == 1) {
             int ctrlRun = in.readByteC();
             int x = in.readShortA();
