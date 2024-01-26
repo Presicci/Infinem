@@ -69,11 +69,6 @@ public final class Poll {
             PollAnswer answer = question.getAnswers()[answerIndex];
             answer.incrementVotes();
         }
-        for (PollQuestion question : questions) {
-            for (PollAnswer answer : question.getAnswers()) {
-                System.out.println(answer.getChoice() + ": " + answer.getVotes());
-            }
-        }
     }
 
     public void updateVote(AnsweredPoll.AnsweredPollQuestion[] oldAnswers, int[] answers) {
@@ -95,11 +90,6 @@ public final class Poll {
                 continue;
             }
             answer.incrementVotes();
-        }
-        for (PollQuestion question : questions) {
-            for (PollAnswer answer : question.getAnswers()) {
-                System.out.println(answer.getChoice() + ": " + answer.getVotes());
-            }
         }
     }
 

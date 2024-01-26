@@ -145,7 +145,6 @@ public class PollInterface {
 
             if (voting) {
                 int value = player.getPollManager().getVotes()[i] - 1;
-                System.out.println(value);
                 if (clear || initial) {
                     player.getPacketSender().sendClientScript(619, "isi",
                             getQuestionValue(question, i), ("Question " + (i + 1) + "|" + question.getQuestion() + "|||" + question.getFormattedPollAnswers()), value < 0 ? 0 : 1 << value);
