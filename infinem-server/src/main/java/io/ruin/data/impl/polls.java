@@ -4,6 +4,7 @@ import io.ruin.Server;
 import io.ruin.api.utils.JsonUtils;
 import io.ruin.data.DataFile;
 import io.ruin.model.content.poll.Poll;
+import io.ruin.model.inter.utils.Config;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -18,6 +19,7 @@ public class polls extends DataFile {
     public static int latestPollId = 1;
     public static final Map<Integer, Poll> POLLS = new HashMap<Integer, Poll>();
     public static long lastSave;
+    public static Config POLL_BOOTH;
 
     @Override
     public String path() {
@@ -39,6 +41,7 @@ public class polls extends DataFile {
             }
             int id = p.getPollId();
             if (id > latestPollId) latestPollId = id;
+            if (!p.isClosed()) POLL_BOOTH = Config.varpbit(4337, false).defaultValue(1);
             POLLS.put(id, p);
         }
         return polls;
