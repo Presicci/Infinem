@@ -23,9 +23,8 @@ public class NPCActionHandler implements Incoming {
     public void handle(Player player, InBuffer in, int opcode) {
         if(player.isLocked())
             return;
-        player.resetActions(true, true, true);
-
         int option = OPTIONS[opcode];
+        player.resetActions(true, true, true);
         if(option == 1) {
             int ctrlRun = in.readByte();
             int targetIndex = in.readLEShort();
@@ -62,7 +61,7 @@ public class NPCActionHandler implements Incoming {
             if(def == null)
                 return;
             if(player.debug)
-                debug(player, null, def, -1);
+                player.sendFilteredMessage("[NpcAction] option: 6 id=" + id);
             def.examine(player);
             return;
         }
