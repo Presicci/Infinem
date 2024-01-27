@@ -80,7 +80,8 @@ public class LootTable {
         totalWeight = 0;
         if(tables != null) {
             for(ItemsTable table : tables) {
-                if (!table.name.equalsIgnoreCase("tertiary")) {
+                if (!table.name.equalsIgnoreCase("tertiary")
+                        && !CommonTables.tertiaryTableNames.contains(table.name)) {
                     totalWeight += table.weight;
                 }
                 table.totalWeight = 0;
@@ -152,14 +153,20 @@ public class LootTable {
 
     public List<Item> rollTertiary(List<Item> rolledItems) {
         List<Item> items = new ArrayList<>();
+        List<Item> commonTableItems = new ArrayList<>(); // Doing this to prevent multiple side-tertiary rolls
         if(tables != null) {
             tableLoop : for(ItemsTable table : tables) {
-                if (table.name != null && table.name.equalsIgnoreCase("tertiary")) {
+                if (table.name != null && (table.name.equalsIgnoreCase("tertiary")
+                        || CommonTables.tertiaryTableNames.contains(table.name))) {
                     if (Random.rollDie((int) (totalWeight / table.weight))) {
                         double itemsRand = Random.get() * table.totalWeight;
+                        boolean commonTableRolled = CommonTables.tertiaryTableNames.contains(table.name);
                         for(LootItem item : table.items) {
                             if(item.weight == 0) {  // weightless item landed, break
-                                items.add(item.toItem());
+                                if (commonTableRolled)
+                                    commonTableItems.add(item.toItem());
+                                else
+                                    items.add(item.toItem());
                                 break tableLoop;
                             }
                             if((itemsRand -= item.weight) <= 0) { // weighted item landed, add it and break loop
@@ -171,7 +178,10 @@ public class LootTable {
                                 }
                                 if (item.id == -1)  // Quit out if we roll a empty slot
                                     break;
-                                items.add(item.toItem());
+                                if (commonTableRolled)
+                                    commonTableItems.add(item.toItem());
+                                else
+                                    items.add(item.toItem());
                                 break;
                             }
                         }
@@ -188,6 +198,7 @@ public class LootTable {
                 }
             }
         }
+        items.addAll(commonTableItems);
         return items.isEmpty() ? null : items;
     }
 
@@ -361,7 +372,6 @@ public class LootTable {
     /**
      * Common drop table that can be added to monsters table lists
      */
-    @AllArgsConstructor
     public enum CommonTables {
         HERB(199, "herb drop", "Herb table",128, new LootItem[] {
                 new LootItem(199, 1, 32),   // Guam
@@ -544,5 +554,27 @@ public class LootTable {
         public String title, name;
         public int totalWeight;
         public LootItem[] items;
+        public boolean tertiary;
+
+        public static List<String> tertiaryTableNames = new ArrayList<>();
+
+        CommonTables(int itemId, String title, String name, int totalWeight, LootItem[] items) {
+            this(false, itemId, title, name, totalWeight, items);
+        }
+
+        CommonTables(boolean tertiary, int itemId, String title, String name, int totalWeight, LootItem[] items) {
+            this.tertiary = tertiary;
+            this.itemId = itemId;
+            this.title = title;
+            this.name = name;
+            this.totalWeight = totalWeight;
+            this.items = items;
+        }
+
+        static {
+            for (CommonTables t : values()) {
+                if (t.tertiary) tertiaryTableNames.add(t.title);
+            }
+        }
     }
 }
