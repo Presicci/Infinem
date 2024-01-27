@@ -36,7 +36,12 @@ public class DropViewerSearch {
                         String searchName = formatForSearch(npcDef.name);
                         if (!searchName.contains(search))
                             return;
-                        map.computeIfAbsent(searchName, k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef);
+                        String extension = DropViewerNPCExtensions.NPCS.get(npcDef.id);
+                        if (extension != null) {
+                            map.computeIfAbsent(searchName + extension, k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef);
+                        } else {
+                            map.computeIfAbsent(searchName, k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef);
+                        }
                     });
                     for (DropViewerEntry entry : DropViewerCustomEntries.ENTRIES) {
                         if (formatForSearch(entry.name).contains(search))
@@ -48,7 +53,15 @@ public class DropViewerSearch {
                             return;
                         HashSet<NPCDef> npcDefs = DropViewer.drops.get(itemDef.id);
                         if (npcDefs != null)
-                            npcDefs.forEach(npcDef -> map.computeIfAbsent(formatForSearch(npcDef.name), k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef));
+                            npcDefs.forEach(npcDef -> {
+                                String npcName = formatForSearch(npcDef.name);
+                                String extension = DropViewerNPCExtensions.NPCS.get(npcDef.id);
+                                if (extension != null) {
+                                    map.computeIfAbsent(npcName + extension, k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef);
+                                } else {
+                                    map.computeIfAbsent(npcName, k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef);
+                                }
+                            });
                         HashSet<DropViewerEntry> nonNPCEntries = DropViewer.NON_NPC_DROPS.get(itemDef.id);
                         if (nonNPCEntries != null) {
                             nonNPCEntries.stream().filter(e -> !results.contains(e)).forEach(results::add);
@@ -91,6 +104,9 @@ public class DropViewerSearch {
                             break;
                         }
                         DropViewerEntry result = new DropViewerEntry(def.id);
+                        String extension = DropViewerNPCExtensions.NPCS.get(def.id);
+                        if (extension != null)
+                            result.name += extension;
                         if (matched.size() > 1) //multiple same levels
                             result.name += " (" + def.combatLevel + ")";
                         result.name = result.name.replace("Greater Skeleton Hellhound", "Grtr. Skeleton Hellhound");
