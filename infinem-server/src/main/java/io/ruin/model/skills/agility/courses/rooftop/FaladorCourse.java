@@ -278,6 +278,23 @@ public class FaladorCourse {
         /*
          * Gap
          */
+        ObjectAction.register(14923, "jump", (p, obj) -> p.startEvent(e -> {
+            p.lock(LockType.FULL_DELAY_DAMAGE);
+            p.privateSound(2461);
+            p.animate(1603);
+            p.getMovement().force(1, -1, 0, 0, 15, 30, Direction.SOUTH);
+            e.delay(1);
+            p.resetAnimation();
+            p.getStats().addXp(StatType.Agility, 10, true);
+            p.getMovement().restoreEnergy(Random.get(1, 2));
+            p.unlock();
+            e.delay(1);
+            TricksterAgility.attemptNext(p, OBSTACLES[10]);
+        }));
+
+        /*
+         * Gap
+         */
         ObjectAction.register(14924, "jump", (p, obj) -> p.startEvent(e -> {
             p.lock(LockType.FULL_DELAY_DAMAGE);
             p.privateSound(2461);
