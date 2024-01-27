@@ -129,7 +129,7 @@
     "death_animation": 2304
   },
   { // Ankou (95)
-    "ids": [ 7257, 7864  ],
+    "ids": [ 7257  ],
     "handler": "",
     //Combat Info
     "hitpoints": 60,
