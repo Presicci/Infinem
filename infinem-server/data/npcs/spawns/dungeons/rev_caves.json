@@ -252,15 +252,6 @@
     "walkRange": 3
   },
   {
-    "name": "Black demon",
-    "id": 7874,
-    "x": 3163,
-    "y": 10154,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Ice giant",
     "id": 7880,
     "x": 3207,
@@ -283,15 +274,6 @@
     "id": 7879,
     "x": 3205,
     "y": 10168,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Black demon",
-    "id": 7875,
-    "x": 3168,
-    "y": 10162,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -337,24 +319,6 @@
     "id": 7879,
     "x": 3217,
     "y": 10168,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Black demon",
-    "id": 7876,
-    "x": 3175,
-    "y": 10149,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Black demon",
-    "id": 7874,
-    "x": 3177,
-    "y": 10155,
     "z": 0,
     "direction": "S",
     "walkRange": 3
