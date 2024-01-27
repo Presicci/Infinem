@@ -723,6 +723,7 @@ public class Consumable {
         registerPotion(Potion.SUPER_ANTIPOISON, p -> p.curePoison((360 * 1000) / 600));
         registerPotion(Potion.SUPER_ENERGY, p -> p.getMovement().restoreEnergy(20));
         registerPotion(Potion.SUPER_RESTORE, p -> restore(p, true));
+        registerPotion(Potion.BLIGHTED_SUPER_RESTORE, p -> restore(p, true));
         registerPotion(Potion.SANFEW_SERUM, p -> {
             for (StatType type : StatType.values()) {
                 if (type == StatType.Hitpoints)
@@ -1097,6 +1098,12 @@ public class Consumable {
         if(DuelRule.NO_DRINKS.isToggled(player)) {
             player.sendMessage("Drinks have been disabled for this duel!");
             return false;
+        }
+        if (potion == Potion.BLIGHTED_SUPER_RESTORE) {
+            if (player.wildernessLevel <= 0) {
+                player.sendMessage("The blighted potion can be used only in the Wilderness.");
+                return false;
+            }
         }
         if (!divinePreCheck(player, potion)) {
             return false;

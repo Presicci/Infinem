@@ -72,6 +72,11 @@ public enum Potion {
     DIVINE_BASTION(86, 1.5, "divine bastion potion", "bastion potion(3)", "crystal shard"),
 
     /**
+     * Blighted
+     */
+    BLIGHTED_SUPER_RESTORE("blighted super restore", false),
+
+    /**
      * NMZ
      */
     OVERLOAD_NMZ("overload ", false),
