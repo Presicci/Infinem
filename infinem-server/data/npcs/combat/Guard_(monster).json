@@ -343,6 +343,49 @@
   "defend_animation": 6488,
   "death_animation": 6490
   },
+  { // Guard (21) VARROCK NEW
+    "ids": [ 11911, 11912, 11913, 11914, 11915, 11916, 11917 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 22,
+    "aggressive_level": 0,
+    "max_damage": 3,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 0.0,
+    "slayer_tasks": [],
+    //Combat Stats
+    "attack": 19,
+    "strength": 18,
+    "defence": 14,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 4,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 24,
+    "slash_defence": 30,
+    "crush_defence": 25,
+    "magic_defence": -9,
+    "ranged_defence": 25,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 2,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 386,
+    "defend_animation": 1156,
+    "death_animation": 836
+  },
   { // Guard (1337)
     "ids": [ 6575, 6576, 6579, 6580, 6581, 6582, 6583, 6699, 6700, 6701, 6702 ],
     "handler": "",
