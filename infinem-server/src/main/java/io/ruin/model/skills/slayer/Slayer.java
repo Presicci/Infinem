@@ -13,6 +13,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.jewellery.BraceletOfSlaughter;
 import io.ruin.model.item.actions.impl.jewellery.ExpeditiousBracelet;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.map.MapArea;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.stat.StatType;
 
@@ -58,6 +59,9 @@ public class Slayer {
                 int chance = (int) Math.floor(0.3 * Math.pow((80 - combatLevel), 2)) + 100;
                 if (combatLevel > 80) {
                     chance = (int) Math.floor(-0.18519 * combatLevel) + 115;
+                }
+                if (MapArea.WILDERNESS_SLAYER_CAVE.inArea(npc.getPosition())) {
+                    chance *= 0.85; // 15% boost in wildy slayer cave
                 }
                 if (chance < 50) {
                     chance = 50;
