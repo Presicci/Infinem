@@ -567,31 +567,10 @@ public abstract class NPCCombat extends Combat {
                          * Handles common table drops, denoted in the item list as an id of 0
                          */
                         if (item.getId() == 0) {
-                            switch (item.getAmount()) {
-                                case 0:
-                                    handleGeneralSeedDrop(killer, dropPosition, pKiller);
-                                    break;
-                                case 1:
-                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.HERB);
-                                    break;
-                                case 2:
-                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.UNCOMMON_SEED);
-                                    break;
-                                case 3:
-                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.RARE_SEED);
-                                    break;
-                                case 4:
-                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.TREE_HERB_SEED);
-                                    break;
-                                case 5:
-                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.USEFUL_HERB);
-                                    break;
-                                case 6:
-                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.ALLOTMENT_SEED);
-                                    break;
-                                case 7:
-                                    handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.TALISMAN);
-                                    break;
+                            if (item.getAmount() == 0) {
+                                handleGeneralSeedDrop(killer, dropPosition, pKiller);
+                            } else {
+                                handleTableDrop(killer, dropPosition, pKiller, LootTable.CommonTables.values()[item.getAmount() + 5]);
                             }
                             seedItem = item;
                         }
