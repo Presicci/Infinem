@@ -39,16 +39,23 @@
           { "id": 0, "min": 2, "max": 2, "weight": 5 }
         ]
       },
+
       {
         "name": "Other",
         "weight": 329,
         "items": [
           { "id": 11940, "min": 60, "max": 60, "weight": 55799 },   //Dark fishing bait
           { "id": 995, "min": 500, "max": 999, "weight": 10500 },   //Coins
-          { "id": 7946, "min": 1, "max": 1, "weight": 2109 },   //Monkfish
-          { "id": 7946, "min": 2, "max": 2, "weight": 1050 },   //Monkfish
           { "id": 448, "min": 3, "max": 7, "weight": 2109 },   //Mithril ore (noted)
           { "id": 187, "min": 1, "max": 1, "weight": 2109 }   //Weapon poison
+        ]
+      },
+
+      {
+        "name": "wilderness slayer",
+        "weight": 287,
+        "items": [
+          { "id": 0, "min": 8, "max": 8, "weight": 5 }
         ]
       },
       {
