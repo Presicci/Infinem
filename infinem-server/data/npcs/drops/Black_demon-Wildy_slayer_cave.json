@@ -32,39 +32,36 @@
       },
       {
         "name": "herb drop",
-        "weight": 94,
+        "weight": 85,
         "items": [
           { "id": 0, "min": 1, "max": 1, "weight": 5 }
         ]
       },
       {
         "name": "Materials",
-        "weight": 12,
+        "weight": 11,
         "items": [
-          { "id": 2362, "min": 2, "max": 2, "weight": 1560 },   //Adamantite bar (noted)
-          { "id": 450, "min": 2, "max": 2, "weight": 781 }   //Adamantite ore (noted)
+          { "id": 2362, "min": 2, "max": 2, "weight": 1500 },   //Adamantite bar (noted)
+          { "id": 450, "min": 2, "max": 2, "weight": 750 }   //Adamantite ore (noted)
         ]
       },
       {
         "name": "Coins",
-        "weight": 241,
+        "weight": 30,
         "items": [
-          { "id": 995, "min": 250, "max": 499, "weight": 31300 },   //Coins
-          { "id": 995, "min": 250, "max": 250, "weight": 5470 },   //Coins
-          { "id": 995, "min": 500, "max": 749, "weight": 4690 },   //Coins
-          { "id": 995, "min": 500, "max": 999, "weight": 4690 }   //Coins
+          { "id": 995, "min": 250, "max": 250, "weight": 31300 }   //Coins
         ]
       },
       {
-        "name": "Other",
-        "weight": 8,
+        "name": "wilderness slayer",
+        "weight": 244,
         "items": [
-          { "id": 385, "min": 1, "max": 1, "weight": 1560 }   //Shark
+          { "id": 0, "min": 8, "max": 8, "weight": 5 }
         ]
       },
       {
         "name": "Tertiary",
-        "weight": 19,
+        "weight": 10,
         "items": [
           { "id": 2722, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (hard)
           { "id": 13502, "min": 1, "max": 1, "weight": 2860 }   //Ensouled demon head
