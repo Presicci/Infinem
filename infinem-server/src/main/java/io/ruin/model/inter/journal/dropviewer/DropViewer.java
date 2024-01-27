@@ -64,7 +64,7 @@ public class DropViewer {
                 if (table != null) {
                     for (LootTable.CommonTables cTable : LootTable.CommonTables.values()) {
                         if (cTable.title.equalsIgnoreCase(table.name)) {
-                            drops.add(new DropViewerResultCommon(cTable, (int) Math.ceil(1D /(table.weight / totalTablesWeight))));
+                            drops.add(new DropViewerResultCommon(cTable, (int) Math.max(2, 1D /(table.weight / totalTablesWeight))));
                         }
                     }
                 }
@@ -94,9 +94,9 @@ public class DropViewer {
                             }
                             int chance;
                             if (item.weight == 0)
-                                chance = (int) (1D / tableChance);
+                                chance = (int) Math.max(2, (1D / tableChance));
                             else
-                                chance = (int) (1D / (tableChance * (item.weight / table.totalWeight)));
+                                chance = (int) Math.max(2, 1D / (tableChance * (item.weight / table.totalWeight)));
                             List<Item> groupDrops = getGroupDrop(item.id, name);
                             String dropDescription = getDropDescription(item.id, name);
                             if (groupDrops != null && groupDrops.size() > 1) {
