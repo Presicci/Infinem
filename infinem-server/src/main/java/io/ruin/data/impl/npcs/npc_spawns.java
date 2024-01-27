@@ -44,6 +44,10 @@ public class npc_spawns extends DataFile {
         if (!Server.dataOnlyMode) {
             spawns.forEach(spawn -> {
                 if (spawn.world != null && spawn.world != World.type) return;
+                if (fileName.toLowerCase().contains("sophanemdungeon")) {
+                    spawn.x -= 1152;
+                    spawn.y -= 4864;
+                }
                 if (spawn.walkRange == 0) Tile.get(spawn.x, spawn.y, spawn.z, true).flagUnmovable();
                 if (NPCDef.get(spawn.id) == null) {
                     System.err.println("[npc_spawns] NPC with ID: " + spawn.id + " has invalid cache def.");
