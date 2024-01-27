@@ -13,9 +13,11 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
-import io.ruin.model.skills.farming.crop.impl.WoodTreeCrop;
 import io.ruin.model.skills.farming.patch.Patch;
 import io.ruin.model.skills.farming.patch.PatchData;
+import io.ruin.model.skills.farming.patch.impl.CelastrusPatch;
+import io.ruin.model.skills.farming.patch.impl.HardWoodTreePatch;
+import io.ruin.model.skills.farming.patch.impl.RedwoodPatch;
 import io.ruin.model.skills.farming.patch.impl.WoodTreePatch;
 
 import static io.ruin.cache.ItemID.COINS_995;
@@ -254,10 +256,47 @@ public enum Farmer {
         }
     }
 
+    private static void clearDialogue(Player player, NPC npc, Farmer farmer) {
+        Patch patch = player.getFarming().getPatch(farmer.patch1);
+        if (patch == null) {
+            throw new IllegalArgumentException();
+        }
+        if (patch.getPlantedCrop() == null) {
+            player.dialogue(new NPCDialogue(npc, "You don't have anything planted in that patch."));
+            return;
+        }
+        player.dialogue(new NPCDialogue(npc, "I can clear your patch for you if you pay me 200 coins."),
+                new ActionDialogue(() -> {
+                    if (!player.getInventory().contains(995, 200)) {
+                        player.dialogue(new PlayerDialogue("My pockets are a little light at the moment, I'll take you up on that later."));
+                        return;
+                    }
+                    player.dialogue(new OptionsDialogue("Pay 200 to clear patch?",
+                            new Option("Clear my patch", () -> {
+                                player.getInventory().remove(995, 200);
+                                patch.reset(false);
+                                player.dialogue(new NPCDialogue(npc, "There you are friend, good as new."));
+                            }),
+                            new Option("No")
+                    ));
+        }));
+    }
+
     private static void dialogue(Player player, NPC npc, Farmer farmer) {
+        Option patchOption = new Option("Would you look after my crops for me?", () -> lookAfterDialogue(player, npc, farmer));
+        Patch patch = player.getFarming().getPatch(farmer.patch1);
+        if (patch instanceof WoodTreePatch || patch instanceof HardWoodTreePatch || patch instanceof RedwoodPatch || patch instanceof CelastrusPatch) {
+            if (patch.getPlantedCrop() != null && patch.getStage() >= patch.getPlantedCrop().getTotalStages() + 1) {  // Can clear
+                patchOption = new Option("Could you clear the patch for me?", () -> clearDialogue(player, npc, farmer));
+            } else if (patch.getPlantedCrop() != null && patch.getStage() == patch.getPlantedCrop().getTotalStages()) {
+                patchOption = new Option("Could you clear the patch for me?",
+                        new NPCDialogue(npc, "You should probably check its health first."),
+                        new PlayerDialogue("Oh yeah, good idea."));
+            }
+        }
         player.dialogue(
                 new OptionsDialogue(
-                        new Option("Would you look after my crops for me?", () -> lookAfterDialogue(player, npc, farmer)),
+                        patchOption,
                         new Option("Can you give me any farming advice?", () -> randomAdvice(player, npc, farmer)),
                         new Option("Do you have anything for sale?", new PlayerDialogue("Do you have anything for sale?"), new NPCDialogue(npc, "Sure, take a look."), new ActionDialogue(() -> npc.openShop(player))),
                         new Option("I'll come back another time.", new PlayerDialogue("I'll come back another time."))
