@@ -7,9 +7,9 @@
     "tables": [
       {
         "name": "Weapons and armour",
-        "weight": 56,
+        "weight": 70,
         "items": [
-          { "id": 1355, "min": 1, "max": 1, "weight": 3130 },   //Mithril axe
+          { "id": 1355, "min": 1, "max": 1, "weight": 3130 },   //Mithril axen
           { "id": 1287, "min": 1, "max": 1, "weight": 3130 },   //Adamant sword
           { "id": 1071, "min": 1, "max": 1, "weight": 781 },   //Mithril platelegs
           { "id": 1211, "min": 1, "max": 1, "weight": 781 },   //Adamant dagger
@@ -21,7 +21,7 @@
       },
       {
         "name": "Runes and ammunition",
-        "weight": 80,
+        "weight": 100,
         "items": [
           { "id": 890, "min": 5, "max": 14, "weight": 4690 },   //Adamant arrow
           { "id": 561, "min": 6, "max": 6, "weight": 3130 },   //Nature rune
@@ -42,13 +42,9 @@
       },
       {
         "name": "Coins",
-        "weight": 289,
+        "weight": 40,
         "items": [
-          { "id": 995, "min": 150, "max": 299, "weight": 34400 },   //Coins
-          { "id": 995, "min": 200, "max": 399, "weight": 7810 },   //Coins
-          { "id": 995, "min": 250, "max": 250, "weight": 7030 },   //Coins
-          { "id": 995, "min": 100, "max": 100, "weight": 5470 },   //Coins
-          { "id": 995, "min": 400, "max": 799, "weight": 1560 }   //Coins
+          { "id": 995, "min": 100, "max": 100, "weight": 34400 }   //Coins
         ]
       },
       {
@@ -56,13 +52,19 @@
         "weight": 20,
         "items": [
           { "id": 1993, "min": 1, "max": 1, "weight": 2339 },   //Jug of wine
-          { "id": 448, "min": 3, "max": 3, "weight": 781 },   //Mithril ore (noted)
-          { "id": 7946, "min": 1, "max": 1, "weight": 781 }   //Monkfish
+          { "id": 448, "min": 3, "max": 3, "weight": 781 }   //Mithril ore (noted)
+        ]
+      },
+      {
+        "name": "wilderness slayer",
+        "weight": 205,
+        "items": [
+          { "id": 0, "min": 8, "max": 8, "weight": 5 }
         ]
       },
       {
         "name": "Tertiary",
-        "weight": 25,
+        "weight": 14,
         "items": [
           { "id": 13475, "min": 1, "max": 1, "weight": 4760 },   //Ensouled giant head
           { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
