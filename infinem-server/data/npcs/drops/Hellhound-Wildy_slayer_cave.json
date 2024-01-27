@@ -6,25 +6,26 @@
     ],
     "tables": [
       {
-        "name": "Nothing",
-        "weight": 31,
+        "name": "Other",
+        "weight": 25,
         "items": [
-          { "id": -1, "min": 1, "max": 1, "weight": 1 }   //Nothing
+          { "id": -1, "min": 1, "max": 1, "weight": 32767 },   //Nothing
+          { "id": 13233, "min": 1, "max": 1, "weight": 1 }   //Smouldering stone
         ]
       },
       {
-        "name": "Other",
-        "weight": 32,
+        "name": "wilderness slayer",
+        "weight": 21,
         "items": [
-          { "id": -1, "min": 1, "max": 1, "weight": 8190 },   //Nothing
-          { "id": 13233, "min": 1, "max": 1, "weight": 1 }   //Smouldering stone
+          { "id": 0, "min": 8, "max": 8, "weight": 5 }
         ]
       },
       {
         "name": "Tertiary",
         "weight": 1,
         "items": [
-          { "id": 2722, "min": 1, "max": 1, "weight": 1 }   //Clue scroll (hard)
+          { "id": 26996, "min": 1, "max": 1, "weight": 63 },   // Ensouled hellhound head
+          { "id": 2722, "min": 1, "max": 1, "weight": 40 }   //Clue scroll (hard)
         ]
       }
     ]
