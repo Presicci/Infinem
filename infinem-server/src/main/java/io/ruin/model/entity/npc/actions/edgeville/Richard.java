@@ -26,14 +26,13 @@ public class Richard {
                                                 " friends or anyone else you don't want to harm."),
                                         new NPCDialogue(npc, "So would you like to buy one?"),
                                         new OptionsDialogue(
-                                                new Option("Yes please!", () -> ShopManager.openIfExists(player, "")),//TODO Fill this in
+                                                new Option("Yes please!", () -> npc.openShop(player)),
                                                 new Option("No thanks.", () -> player.dialogue(new PlayerDialogue("No thanks.")))
                                 ));
                             }),
-                            new Option("Yes please!", () -> ShopManager.openIfExists(player, "")),//TODO Fill this in
+                            new Option("Yes please!", () -> npc.openShop(player)),
                             new Option("No thanks.", () -> player.dialogue(new PlayerDialogue("No thanks.")))
                     ));
         });
-        NPCAction.register(RICHARD, "trade", (player, npc) -> ShopManager.openIfExists(player, ""));//TODO Fill this in
     }
 }
