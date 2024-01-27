@@ -65,6 +65,13 @@
         ]
       },
       {
+        "name": "wilderness slayer",
+        "weight": 800,
+        "items": [
+          { "id": 0, "min": 8, "max": 8, "weight": 5 }
+        ]
+      },
+      {
         "name": "Tertiary",
         "weight": 51,
         "items": [
