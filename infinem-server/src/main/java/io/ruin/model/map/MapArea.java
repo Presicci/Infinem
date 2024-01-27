@@ -113,6 +113,10 @@ public enum MapArea {
         return bounds.inBounds(player);
     }
 
+    public boolean inArea(Position position) {
+        return bounds.inBounds(position);
+    }
+
     public boolean hasFirePitInArea(Player player) {
         if (!inArea(player))
             return false;
