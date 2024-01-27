@@ -66,7 +66,7 @@ public enum Ladder {
     WATCHTOWER_UP(2796, "climb-up", new Position(2549, 3111, 1), new Position(2933, 4712, 2), true),
     WATCHTOWER_DOWN(2797, "climb-down", new Position(2933, 4711, 2), new Position(2549, 3112, 1), false),
 
-    SOPHANEM_BANK_UP(20277, "climb-up", new Position(2799, 5159, 0), new Position(3315, 2796, 0), true),
+    /*SOPHANEM_BANK_UP(20277, "climb-up", new Position(2799, 5159, 0), new Position(3315, 2796, 0), true),
     SOPHANEM_BANK_DOWN(20275, "climb-down", new Position(3315, 2797, 0), new Position(2799, 5160, 0), false),
 
     SOPHANEM_UP(20356, "climb-up", new Position(3308, 2803, 0), new Position(3307, 2803, 2), true),
@@ -100,7 +100,7 @@ public enum Ladder {
     SOPHANEM_DUNGEON_MAZE_7_DOWN(20285, "climb-down", new Position(3267, 9221, 2), new Position(3267, 9222, 0), false),
 
     SOPHANEM_DUNGEON_MAZE_8_UP(20284, "climb-up", new Position(3317, 9224, 0), new Position(3317, 9225, 2), true),
-    SOPHANEM_DUNGEON_MAZE_8_DOWN(20285, "climb-down", new Position(3317, 9224, 2), new Position(3317, 9223, 0), false),
+    SOPHANEM_DUNGEON_MAZE_8_DOWN(20285, "climb-down", new Position(3317, 9224, 2), new Position(3317, 9223, 0), false),*/
 
     TROLL_STRONGHOLD_EXIT(18834, "climb-up", new Position(2831, 10077, 2), new Position(2831, 3678), true),
     TROLL_STRONGHOLD_ENTRANCE(18833, "climb-down", new Position(2831, 3677, 0), new Position(2831, 10077, 2), false);
