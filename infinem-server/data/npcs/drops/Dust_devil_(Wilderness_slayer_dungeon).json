@@ -1,0 +1,57 @@
+[
+  {
+    "ids": [ 11238 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 129,
+        "items": [
+          { "id": 1357, "min": 1, "max": 1, "weight": 2339 },   //Adamant axe
+          { "id": 1213, "min": 1, "max": 1, "weight": 1560 },   //Rune dagger
+          { "id": 2489, "min": 1, "max": 1, "weight": 1560 },   //Red d'hide vambraces
+          { "id": 2491, "min": 1, "max": 1, "weight": 781 },   //Black d'hide vambraces
+          { "id": 1397, "min": 1, "max": 1, "weight": 1560 },   //Air battlestaff
+          { "id": 1399, "min": 1, "max": 1, "weight": 1560 },   //Earth battlestaff
+          { "id": 1405, "min": 1, "max": 1, "weight": 781 },   //Mystic air staff
+          { "id": 1407, "min": 1, "max": 1, "weight": 781 },   //Mystic earth staff
+          { "id": 1215, "min": 1, "max": 1, "weight": 781 },   //Dragon dagger
+          { "id": 20736, "min": 1, "max": 1, "weight": 25 },   //Dust battlestaff
+          { "id": 3140, "min": 1, "max": 1, "weight": 3 }   //Dragon chainbody
+        ]
+      },
+      {
+        "name": "Runes and ammunition",
+        "weight": 413,
+        "items": [
+          { "id": 4696, "min": 200, "max": 200, "weight": 7810 },   //Dust rune
+          { "id": 557, "min": 300, "max": 300, "weight": 7810 },   //Earth rune
+          { "id": 554, "min": 300, "max": 300, "weight": 7810 },   //Fire rune
+          { "id": 554, "min": 50, "max": 50, "weight": 781 },   //Fire rune
+          { "id": 562, "min": 80, "max": 80, "weight": 5470 },   //Chaos rune
+          { "id": 892, "min": 12, "max": 12, "weight": 3910 },   //Rune arrow
+          { "id": 566, "min": 20, "max": 20, "weight": 3130 },   //Soul rune
+          { "id": 566, "min": 50, "max": 50, "weight": 781 }   //Soul rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 163,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 293,
+        "items": [
+          { "id": 995, "min": 2000, "max": 4000, "weight": 21899 },   //Coins
+          { "id": 2360, "min": 10, "max": 10, "weight": 2339 },   //Mithril bar (noted)
+          { "id": 2362, "min": 4, "max": 4, "weight": 781 }   //Adamantite bar (noted)
+        ]
+      }
+    ]
+  }
+]
