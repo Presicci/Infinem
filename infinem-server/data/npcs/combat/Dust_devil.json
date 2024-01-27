@@ -1,6 +1,6 @@
 [
   { // Dust devil (93)
-    "ids": [ 423, 11238,  ],
+    "ids": [ 423, 11238 ],
     "handler": "io.ruin.model.combat.npc.slayer.DustDevil",
     //Combat Info
     "hitpoints": 105,
