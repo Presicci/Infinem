@@ -979,5 +979,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 2
+  },
+  {
+    "name": "Obor",
+    "id": 7416,
+    "x": 3096,
+    "y": 9800,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3
   }
 ]
