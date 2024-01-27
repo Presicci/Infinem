@@ -216,69 +216,6 @@
     "walkRange": 3
   },
   {
-    "name": "Greater demon",
-    "id": 7871,
-    "x": 3215,
-    "y": 10130,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Greater demon",
-    "id": 7873,
-    "x": 3224,
-    "y": 10142,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Greater demon",
-    "id": 7872,
-    "x": 3220,
-    "y": 10122,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Greater demon",
-    "id": 7871,
-    "x": 3229,
-    "y": 10132,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Greater demon",
-    "id": 7873,
-    "x": 3229,
-    "y": 10126,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Greater demon",
-    "id": 7873,
-    "x": 3231,
-    "y": 10136,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Greater demon",
-    "id": 7872,
-    "x": 3235,
-    "y": 10132,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Revenant pyrefiend",
     "id": 7932,
     "x": 3226,
