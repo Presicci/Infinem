@@ -27,24 +27,6 @@
     "walkRange": 3
   },
   {
-    "name": "Lesser demon",
-    "id": 7866,
-    "x": 3153,
-    "y": 10111,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Lesser demon",
-    "id": 7865,
-    "x": 3167,
-    "y": 10109,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Emblem Trader",
     "id": 7941,
     "x": 3246,
@@ -52,78 +34,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 6
-  },
-  {
-    "name": "Lesser demon",
-    "id": 7867,
-    "x": 3148,
-    "y": 10113,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Lesser demon",
-    "id": 7865,
-    "x": 3151,
-    "y": 10121,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Lesser demon",
-    "id": 7866,
-    "x": 3156,
-    "y": 10117,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Lesser demon",
-    "id": 7867,
-    "x": 3158,
-    "y": 10111,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Lesser demon",
-    "id": 7866,
-    "x": 3161,
-    "y": 10112,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Lesser demon",
-    "id": 7865,
-    "x": 3166,
-    "y": 10119,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Lesser demon",
-    "id": 7867,
-    "x": 3170,
-    "y": 10112,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Lesser demon",
-    "id": 7866,
-    "x": 3169,
-    "y": 10118,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
   },
   {
     "name": "Revenant pyrefiend",
