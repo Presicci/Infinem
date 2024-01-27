@@ -359,6 +359,8 @@ public class Interface {
 
     public static final int ELNOCK_STORAGE_INVENTORY = 681;
 
+    public static final int CHAMPION_DEFEATED_SCROLL = 63;
+
     /**
      * Polls
      */
