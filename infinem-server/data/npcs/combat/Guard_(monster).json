@@ -86,7 +86,7 @@
   "death_animation": 836
   },
   { // Guard (21) SWORD/SHIELD
-  "ids": [ 3269, 3254 ],
+  "ids": [ 3269, 3254, 11922, 11923, 11924, 11942, 11943, 11944 ],
   "handler": "",
   //Combat Info
   "hitpoints": 22,
@@ -129,7 +129,7 @@
   "death_animation": 836
   },
   { // Guard (21) BATTLEAXE/SHIELD
-  "ids": [ 3271 ],
+  "ids": [ 3271, 11946 ],
   "handler": "",
   //Combat Info
   "hitpoints": 22,
@@ -172,7 +172,7 @@
   "death_animation": 836
   },
   { // Guard (21) BOW
-  "ids": [ 3272 ],
+  "ids": [ 3272, 3273, 3274, 11947 ],
   "handler": "",
   //Combat Info
   "hitpoints": 22,
@@ -215,7 +215,7 @@
   "death_animation": 836
   },
   { // Guard (21) CROSSBOW
-  "ids": [ 3270 ],
+  "ids": [ 3270, 11945 ],
   "handler": "io.ruin.model.combat.npc.basic.BasicCrossbowCombat",
   //Combat Info
   "hitpoints": 22,
@@ -258,7 +258,7 @@
   "death_animation": 836
   },
   { // Guard (21) EASTARDY
-  "ids": [ 5418 ],
+  "ids": [ 5418, 11937, 11938, 11939 ],
   "handler": "",
   //Combat Info
   "hitpoints": 22,
