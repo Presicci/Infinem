@@ -466,5 +466,77 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Abyssal demon",
+    "id": 11239,
+    "x": 3337,
+    "y": 10160,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Abyssal demon",
+    "id": 11239,
+    "x": 3338,
+    "y": 10163,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Abyssal demon",
+    "id": 11239,
+    "x": 3340,
+    "y": 10167,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Abyssal demon",
+    "id": 11239,
+    "x": 3343,
+    "y": 10165,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Abyssal demon",
+    "id": 11239,
+    "x": 3341,
+    "y": 10161,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Abyssal demon",
+    "id": 11239,
+    "x": 3341,
+    "y": 10157,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Abyssal demon",
+    "id": 11239,
+    "x": 3344,
+    "y": 10158,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Abyssal demon",
+    "id": 11239,
+    "x": 3346,
+    "y": 10161,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
