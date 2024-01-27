@@ -4,19 +4,20 @@
     "tables": [
       {
         "name": "Weapons and armour",
-        "weight": 201,
+        "weight": 525,
         "items": [
-          { "id": 1365, "min": 1, "max": 1, "weight": 8590 },   //Steel battleaxe
-          { "id": 1311, "min": 1, "max": 1, "weight": 5470 },   //Steel 2h sword
-          { "id": 1353, "min": 1, "max": 1, "weight": 2339 },   //Steel axe
-          { "id": 1197, "min": 1, "max": 1, "weight": 1560 },   //Mithril kiteshield
-          { "id": 4127, "min": 1, "max": 1, "weight": 781 },   //Mithril boots
-          { "id": 1163, "min": 1, "max": 1, "weight": 781 }   //Rune full helm
+          { "id": 1371, "min": 1, "max": 1, "weight": 41 },   //Addy battleaxe
+          { "id": 1313, "min": 1, "max": 1, "weight": 22 },   //Black 2h sword
+          { "id": 1357, "min": 1, "max": 1, "weight": 14 },   //Addy axe
+          { "id": 1317, "min": 1, "max": 1, "weight": 8 },   //Addy 2h sword
+          { "id": 1201, "min": 1, "max": 1, "weight": 8 },   //rune kiteshield
+          { "id": 4127, "min": 1, "max": 1, "weight": 8 },   //Mithril boots
+          { "id": 1163, "min": 1, "max": 1, "weight": 4 }   //Rune full helm
         ]
       },
       {
         "name": "Runes",
-        "weight": 709,
+        "weight": 200,
         "items": [
           { "id": 562, "min": 15, "max": 15, "weight": 3910 },   //Chaos rune
           { "id": 560, "min": 5, "max": 5, "weight": 2339 }   //Death rune
@@ -24,16 +25,23 @@
       },
       {
         "name": "Other",
-        "weight": 88,
+        "weight": 450,
         "items": [
           { "id": 995, "min": 1000, "max": 1000, "weight": 3910 },   //Coins
-          { "id": 2357, "min": 1, "max": 1, "weight": 1560 },   //Gold bar
-          { "id": 1734, "min": 10, "max": 10, "weight": 781 }   //Thread
+          { "id": 2357, "min": 1, "max": 1, "weight": 400 },   //Gold bar
+          { "id": 1734, "min": 10, "max": 10, "weight": 200 }   //Thread
+        ]
+      },
+      {
+        "name": "wilderness slayer",
+        "weight": 893,
+        "items": [
+          { "id": 0, "min": 8, "max": 8, "weight": 5 }
         ]
       },
       {
         "name": "Tertiary",
-        "weight": 8,
+        "weight": 18,
         "items": [
           { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
         ]
