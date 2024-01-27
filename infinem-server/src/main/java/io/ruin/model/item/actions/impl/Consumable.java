@@ -153,11 +153,26 @@ public class Consumable {
         registerEat(403, 4, "seaweed");
         registerEat(2152, 3, "toad's legs");
 
-
+        // Anglerfish
         ItemDef.get(13441).consumable = true;
         ItemAction.registerInventory(13441, "eat", (player, item) -> {
             if(eatAngler(player, item))
                 player.sendFilteredMessage("You eat the anglerfish.");
+        });
+        /*
+         * Blighted Food
+         */
+        registerEatBlightedComboFood(24595, 18, "blighted karambwan");
+        registerBlightedEat(24589, 22, "blighted manta ray");
+        // Blighted Anglerfish
+        ItemDef.get(24592).consumable = true;
+        ItemAction.registerInventory(24592, "eat", (player, item) -> {
+            if (player.wildernessLevel <= 0) {
+                player.sendMessage("The blighted anglerfish can be eaten only in the Wilderness.");
+                return;
+            }
+            if (eatAngler(player, item))
+                player.sendFilteredMessage("You eat the blighted anglerfish.");
         });
 
         ItemAction.registerInventory(Items.PINEAPPLE, "eat", (player, item) -> {
@@ -473,6 +488,18 @@ public class Consumable {
         });
     }
 
+    private static void registerBlightedEat(int id, int heal, String name) {
+        ItemDef.get(id).consumable = true;
+        ItemAction.registerInventory(id, "eat", (player, item) -> {
+            if (player.wildernessLevel <= 0) {
+                player.sendMessage("The " + name + " can be eaten only in the Wilderness.");
+                return;
+            }
+            if(eat(player, item, -1, heal, 3, false))
+                player.sendFilteredMessage("You eat the " + name + ".");
+        });
+    }
+
     private static void registerDrink(int id, int newId, int heal, String name) {
         registerDrink(id, newId, heal, 3, p -> p.sendFilteredMessage("You drink the " + name + "."));
     }
@@ -488,6 +515,18 @@ public class Consumable {
     private static void registerEatComboFood(int id, int heal, String name) {
         ItemDef.get(id).consumable = true;
         ItemAction.registerInventory(id, "eat", (player, item) -> {
+            if(eatComboFood(player, item, heal))
+                player.sendFilteredMessage("You eat the " + name + ".");
+        });
+    }
+
+    private static void registerEatBlightedComboFood(int id, int heal, String name) {
+        ItemDef.get(id).consumable = true;
+        ItemAction.registerInventory(id, "eat", (player, item) -> {
+            if (player.wildernessLevel <= 0) {
+                player.sendMessage("The " + name + " can be eaten only in the Wilderness.");
+                return;
+            }
             if(eatComboFood(player, item, heal))
                 player.sendFilteredMessage("You eat the " + name + ".");
         });
