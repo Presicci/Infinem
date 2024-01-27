@@ -29,6 +29,9 @@ public enum TeleportTab {
     PADDEWWA(12781, 3097, 9882, 0),
     SENNTISTEN(12782, 3349, 3346, 0),
 
+    // Wilderness crabs
+    WILDERNESS_CRABS(24251, 3349, 3782, 0),
+
     //Arceuus
     LUMBRIDGE_GRAVEYARD(19613, 3240, 3195, 0),
     DRAYNOR_MANOR(19615, 3109, 3350, 0),
