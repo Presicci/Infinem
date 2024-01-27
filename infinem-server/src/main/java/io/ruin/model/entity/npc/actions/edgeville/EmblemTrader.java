@@ -45,30 +45,30 @@ public class EmblemTrader {
             })));
         }
         //Edgeville Emblem Trader
-        ItemNPCAction.register(BLOOD_FRAGMENT, 315, (player, item, npc) -> player.dialogue(new MessageDialogue("<col=ff0000>Warning:</col> you are about to swap all your blood fragments for " +
+        ItemNPCAction.register(BLOOD_FRAGMENT, 308, (player, item, npc) -> player.dialogue(new MessageDialogue("<col=ff0000>Warning:</col> you are about to swap all your blood fragments for " +
                 "blood money. Are you sure you want to continue?").lineHeight(25),
                 new OptionsDialogue(
                         new Option("Yes", () -> item.setId(BLOOD_MONEY)),
                         new Option("No")
                 )));
-        ItemNPCAction.register(BLOOD_MONEY, 315, (player, item, npc) -> player.dialogue(new MessageDialogue("<col=ff0000>Warning:</col> you are about to swap all your blood money for " +
+        ItemNPCAction.register(BLOOD_MONEY, 308, (player, item, npc) -> player.dialogue(new MessageDialogue("<col=ff0000>Warning:</col> you are about to swap all your blood money for " +
                         "coins at a 1:10k ratio. Are you sure you want to continue?").lineHeight(25),
                 new OptionsDialogue(
                         new Option("Yes", () -> fromBloodMoneyToPlatinum(player, item)),
                         new Option("No")
                 )));
-        ItemNPCAction.register(COINS_995, 315, (player, item, npc) -> player.dialogue(new MessageDialogue("<col=ff0000>Warning:</col> you are about to swap all your coins for " +
+        ItemNPCAction.register(COINS_995, 308, (player, item, npc) -> player.dialogue(new MessageDialogue("<col=ff0000>Warning:</col> you are about to swap all your coins for " +
                         "blood money at a 25k:1 ratio. Are you sure you want to continue?").lineHeight(25),
                 new OptionsDialogue(
                         new Option("Yes", () -> fromCoinsToBloodTokens(player, item)),
                         new Option("No")
                 )));
-        NPCAction.register(315, "talk-to", (player, npc) -> {
+        NPCAction.register(308, "talk-to", (player, npc) -> {
             String currencyName = "coins";
             player.dialogue(new NPCDialogue(npc, "If you find an ancient emblem, totem, or statuette, use it on me in revenant caves and I'll exchange it for " + currencyName + "."));
         });
-        NPCAction.register(315, "set-skull", (player, npc) -> skull(player));
-        NPCAction.register(315, "reset-kdr", (player, npc) -> player.dialogue(
+        NPCAction.register(308, "set-skull", (player, npc) -> skull(player));
+        NPCAction.register(308, "reset-kdr", (player, npc) -> player.dialogue(
                 new MessageDialogue("<col=ff0000>Warning:</col> You are about to reset your kills & deaths. All " +
                         "statistics related to kills will also be reset. Are you sure you want to continue?").lineHeight(25),
                 new OptionsDialogue(
@@ -84,7 +84,7 @@ public class EmblemTrader {
                 )
         ));
         SpawnListener.forEach(npc -> {
-            if (npc.getId() == 315 && npc.walkBounds != null)
+            if (npc.getId() == 308 && npc.walkBounds != null)
                 npc.walkBounds = new Bounds(3099, 3518, 3092, 3516, 0);
         });
 
