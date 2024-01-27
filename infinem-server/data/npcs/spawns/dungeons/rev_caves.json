@@ -9,28 +9,10 @@
     "walkRange": 3
   },
   {
-    "name": "Black dragon",
-    "id": 7862,
-    "x": 3235,
-    "y": 10199,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Revenant dragon",
     "id": 7940,
     "x": 3239,
     "y": 10176,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Black dragon",
-    "id": 7863,
-    "x": 3240,
-    "y": 10200,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -508,15 +490,6 @@
     "id": 7869,
     "x": 3227,
     "y": 10068,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Black dragon",
-    "id": 7861,
-    "x": 3234,
-    "y": 10203,
     "z": 0,
     "direction": "S",
     "walkRange": 3
