@@ -373,65 +373,6 @@ public class LootTable {
      * Common drop table that can be added to monsters table lists
      */
     public enum CommonTables {
-        HERB(199, "herb drop", "Herb table",128, new LootItem[] {
-                new LootItem(199, 1, 32),   // Guam
-                new LootItem(201, 1, 24),   // Marrentill
-                new LootItem(203, 1, 18),   // Tarromin
-                new LootItem(205, 1, 14),   // Harralander
-                new LootItem(207, 1, 11),   // Ranarr
-                new LootItem(259, 1, 8),    // Irit
-                new LootItem(211, 1, 6),    // Avantoe
-                new LootItem(213, 1, 5),    // Kwuarm
-                new LootItem(215, 1, 4),    // Cadantine
-                new LootItem(2485, 1, 3),   // Lantadyme
-                new LootItem(217, 1, 3),    // Dwarf weed
-        }),
-
-        UNCOMMON_SEED(22879, "uncommon seed", "Uncommon seed table", 1048, new LootItem[] {
-                new LootItem(5100, 1, 137), // Limpwurt
-                new LootItem(5323, 1, 131), // Strawberry
-                new LootItem(5292, 1, 125), // Marrentill
-                new LootItem(5104, 1, 92),  // Jangerberry
-                new LootItem(5293, 1, 85),  // Tarromin
-                new LootItem(5311, 1, 82),  // Wildblood
-                new LootItem(5321, 1, 63),  // Watermelon
-                new LootItem(5294, 1, 56),  // Harralander
-                new LootItem(22879, 1, 40), // Snape grass
-                new LootItem(5295, 1, 39),  // Ranarr
-                new LootItem(5105, 1, 34),  // Whiteberry
-                new LootItem(5282, 1, 29),  // Mushroom
-                new LootItem(5296, 1, 27),  // Toadflax
-                new LootItem(5281, 1, 18),  // Belladonna
-                new LootItem(5297, 1, 18),  // Irit
-                new LootItem(5106, 1, 13),  // Poison ivy
-                new LootItem(5298, 1, 12),  // Avantoe
-                new LootItem(5280, 1, 12),  // Cactus
-                new LootItem(5299, 1, 9),   // Kwuarm
-                new LootItem(22873, 1, 8),  // Potato cactus
-                new LootItem(5300, 1, 5),   // Snapdragon
-                new LootItem(5301, 1, 4),   // Cadantine
-                new LootItem(5302, 1, 3),   // Lantadyme
-                new LootItem(5303, 1, 2),   // Dwarf weed
-                new LootItem(5304, 1, 1)    // Torstol
-        }),
-
-        RARE_SEED(5304, "rare seed", "Rare seed table", 238, new LootItem[] {
-                new LootItem(5296, 1, 47),   // Toadflax
-                new LootItem(5297, 1, 32),   // Irit
-                new LootItem(5281, 1, 31),   // Belladonna
-                new LootItem(5298, 1, 22),   // Avantoe
-                new LootItem(5106, 1, 22),   // Poison ivy
-                new LootItem(5280, 1, 21),   // Cactus
-                new LootItem(5299, 1, 15),   // Kwuarm
-                new LootItem(22873, 1, 15),  // Potato cactus
-                new LootItem(5300, 1, 10),   // Snapdragon
-                new LootItem(5301, 1, 7),   // Cadantine
-                new LootItem(5302, 1, 5),   // Lantadyme
-                new LootItem(22879, 1, 4),  // Snape grass
-                new LootItem(5303, 1, 3),   // Dwarf weed
-                new LootItem(5304, 1, 2)   // Torstol
-        }),
-
         GENERAL_SEED_0(5318, "general seed", "General seed table",1008, new LootItem[] {
                 new LootItem(5318, 4, 368),     // Potato
                 new LootItem(5319, 4, 276),     // Onion
@@ -494,6 +435,65 @@ public class LootTable {
                 new LootItem(22873, 1, 100)     // Potato cactus
         }),
 
+        HERB(199, "herb drop", "Herb table",128, new LootItem[] {
+                new LootItem(199, 1, 32),   // Guam
+                new LootItem(201, 1, 24),   // Marrentill
+                new LootItem(203, 1, 18),   // Tarromin
+                new LootItem(205, 1, 14),   // Harralander
+                new LootItem(207, 1, 11),   // Ranarr
+                new LootItem(259, 1, 8),    // Irit
+                new LootItem(211, 1, 6),    // Avantoe
+                new LootItem(213, 1, 5),    // Kwuarm
+                new LootItem(215, 1, 4),    // Cadantine
+                new LootItem(2485, 1, 3),   // Lantadyme
+                new LootItem(217, 1, 3),    // Dwarf weed
+        }),
+
+        UNCOMMON_SEED(22879, "uncommon seed", "Uncommon seed table", 1048, new LootItem[] {
+                new LootItem(5100, 1, 137), // Limpwurt
+                new LootItem(5323, 1, 131), // Strawberry
+                new LootItem(5292, 1, 125), // Marrentill
+                new LootItem(5104, 1, 92),  // Jangerberry
+                new LootItem(5293, 1, 85),  // Tarromin
+                new LootItem(5311, 1, 82),  // Wildblood
+                new LootItem(5321, 1, 63),  // Watermelon
+                new LootItem(5294, 1, 56),  // Harralander
+                new LootItem(22879, 1, 40), // Snape grass
+                new LootItem(5295, 1, 39),  // Ranarr
+                new LootItem(5105, 1, 34),  // Whiteberry
+                new LootItem(5282, 1, 29),  // Mushroom
+                new LootItem(5296, 1, 27),  // Toadflax
+                new LootItem(5281, 1, 18),  // Belladonna
+                new LootItem(5297, 1, 18),  // Irit
+                new LootItem(5106, 1, 13),  // Poison ivy
+                new LootItem(5298, 1, 12),  // Avantoe
+                new LootItem(5280, 1, 12),  // Cactus
+                new LootItem(5299, 1, 9),   // Kwuarm
+                new LootItem(22873, 1, 8),  // Potato cactus
+                new LootItem(5300, 1, 5),   // Snapdragon
+                new LootItem(5301, 1, 4),   // Cadantine
+                new LootItem(5302, 1, 3),   // Lantadyme
+                new LootItem(5303, 1, 2),   // Dwarf weed
+                new LootItem(5304, 1, 1)    // Torstol
+        }),
+
+        RARE_SEED(5304, "rare seed", "Rare seed table", 238, new LootItem[] {
+                new LootItem(5296, 1, 47),   // Toadflax
+                new LootItem(5297, 1, 32),   // Irit
+                new LootItem(5281, 1, 31),   // Belladonna
+                new LootItem(5298, 1, 22),   // Avantoe
+                new LootItem(5106, 1, 22),   // Poison ivy
+                new LootItem(5280, 1, 21),   // Cactus
+                new LootItem(5299, 1, 15),   // Kwuarm
+                new LootItem(22873, 1, 15),  // Potato cactus
+                new LootItem(5300, 1, 10),   // Snapdragon
+                new LootItem(5301, 1, 7),   // Cadantine
+                new LootItem(5302, 1, 5),   // Lantadyme
+                new LootItem(22879, 1, 4),  // Snape grass
+                new LootItem(5303, 1, 3),   // Dwarf weed
+                new LootItem(5304, 1, 2)   // Torstol
+        }),
+
         TREE_HERB_SEED(5313, "tree-herb seed", "Tree-herb seed table", 250, new LootItem[] {
                 new LootItem(5295, 1, 30),      // Ranarr
                 new LootItem(5300, 1, 28),      // Snapdragon
@@ -531,13 +531,6 @@ public class LootTable {
                 new LootItem(22879, 1, 1),                       // Snape grass
         }),
 
-        SUPERIOR(20724, "superior", "Superior table", 8, new LootItem[] {
-                new LootItem(20736, 1, 1, 3),        // Dust battlestaff
-                new LootItem(20730, 1, 1, 3),        // Mist battlestaff
-                new LootItem(20724, 1, 1, 1),        // Imbued heart
-                new LootItem(21270, 1, 1, 1)         // Eternal gem
-        }),
-
         TALISMAN(Items.AIR_TALISMAN, "talisman drop", "Talisman table", 28, new LootItem[] {
                 new LootItem(Items.AIR_TALISMAN, 1, 1, 4),          // Air
                 new LootItem(Items.BODY_TALISMAN, 1, 1, 4),         // Body
@@ -548,7 +541,38 @@ public class LootTable {
                 new LootItem(Items.COSMIC_TALISMAN, 1, 1, 2),       // Cosmic
                 new LootItem(Items.CHAOS_TALISMAN, 1, 1, 1),        // Chaos
                 new LootItem(Items.NATURE_TALISMAN, 1, 1, 1)        // Nature
-        }),;
+        }),
+
+        WILDERNESS_SLAYER_CAVE(true, 24613, "wilderness slayer", "Wildy slayer cave", 28, new LootItem[] {
+                new LootItem(24613, 1, 10, 60),  // Blighted entangle sack
+                new LootItem(24592, 1, 2, 50),   // Blighted anglerfish
+                new LootItem(24589, 1, 2, 50),   // Blighted manta ray
+                new LootItem(24595, 1, 2, 42),   // Blighted karambwan
+                new LootItem(24615, 1, 10, 42),   // Blighted teleport spell sack
+                new LootItem(24607, 1, 10, 42),   // Blighted ancient ice sack
+                new LootItem(24621, 1, 10, 42),   // Blighted vengeance sack
+                new LootItem(24598, 1, 21),   // Blighted super restore
+                new LootItem(21802, 1, 21),   // Revenant cave teleport
+                new LootItem(12777, 1, 4),   // Dareeyak teleport
+                new LootItem(12776, 1, 4),   // Carrallanger teleport
+                new LootItem(12781, 1, 4),   // Paddewwa teleport
+                new LootItem(12775, 1, 4),   // Annakarl teleport
+                new LootItem(12780, 1, 4),   // Lassar teleport
+                new LootItem(12779, 1, 4),   // Kharyrll teleport
+                new LootItem(12782, 1, 4),   // Senntisten teleport
+                new LootItem(12778, 1, 4),   // Ghorrock teleport
+                new LootItem(24336, 1, 4),   // Target teleport
+                new LootItem(12786, 1, 4),   // Magic shortbow scroll
+                new LootItem(12783, 1, 4),   // Ring of wealth scroll
+                new LootItem(24585, 1, 1)   // Looting bag note
+        }),
+
+        SUPERIOR(20724, "superior", "Superior table", 8, new LootItem[] {
+                new LootItem(20736, 1, 1, 3),        // Dust battlestaff
+                new LootItem(20730, 1, 1, 3),        // Mist battlestaff
+                new LootItem(20724, 1, 1, 1),        // Imbued heart
+                new LootItem(21270, 1, 1, 1)         // Eternal gem
+        });
 
         public int itemId;
         public String title, name;
