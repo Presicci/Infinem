@@ -12,7 +12,7 @@ import java.util.Set;
 
 @AllArgsConstructor
 public enum Trapdoor {
-
+    CHAMPIONS_GUILD(10559, new Position(3190, 3355), new Position(3189, 9758, 0)),
     EDGEVILLE_DUNGEON(1581, new Position(3098, 3468), new Position(3096, 9867)),
     PATERDOMUS_DUNGEON(1581, new Position(3405, 3507), new Position(3405, 9906));
 
@@ -53,6 +53,12 @@ public enum Trapdoor {
                 }
             });
         }
+
+        /*
+         * Champion's guild
+         */
+        ObjectAction.register(10558, "open", (player, obj) -> open(player, obj, 10559));
+        ObjectAction.register(10559, "close", Trapdoor::close);
 
         /*
          * Edgeville dungeon
