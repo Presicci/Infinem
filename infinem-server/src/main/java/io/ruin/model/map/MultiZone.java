@@ -122,6 +122,7 @@ public class MultiZone {
                 12960, 12958, 12957,
                 6810, // Skotizo lair
                 10536, // Pest Control battlegrounds
+                13470, 13469, 13726, 13725  // Wildy slayer dungeon
         };
         for(int regionId : regions)
             set(true, Bounds.fromRegion(regionId));
