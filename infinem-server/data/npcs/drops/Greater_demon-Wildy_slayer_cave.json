@@ -7,7 +7,7 @@
     "tables": [
       {
         "name": "Weapons and armour",
-        "weight": 49,
+        "weight": 75,
         "items": [
           { "id": 1317, "min": 1, "max": 1, "weight": 3130 },   //Adamant 2h sword
           { "id": 1357, "min": 1, "max": 1, "weight": 2339 },   //Adamant axe
@@ -19,7 +19,7 @@
       },
       {
         "name": "Runes",
-        "weight": 53,
+        "weight": 75,
         "items": [
           { "id": 562, "min": 40, "max": 40, "weight": 3910 },   //Chaos rune
           { "id": 560, "min": 5, "max": 5, "weight": 3910 },   //Death rune
@@ -29,28 +29,30 @@
       },
       {
         "name": "Coins",
-        "weight": 373,
+        "weight": 50,
         "items": [
-          { "id": 995, "min": 250, "max": 499, "weight": 34400 },   //Coins
-          { "id": 995, "min": 250, "max": 250, "weight": 22699 },   //Coins
-          { "id": 995, "min": 150, "max": 150, "weight": 5470 },   //Coins
-          { "id": 995, "min": 500, "max": 749, "weight": 7810 },   //Coins
-          { "id": 995, "min": 500, "max": 999, "weight": 781 }   //Coins
+          { "id": 995, "min": 150, "max": 150, "weight": 34400 }   //Coins
         ]
       },
       {
         "name": "Other",
-        "weight": 28,
+        "weight": 50,
         "items": [
-          { "id": 385, "min": 1, "max": 1, "weight": 1560 },   //Shark
-          { "id": 7946, "min": 1, "max": 1, "weight": 781 },   //Monkfish
           { "id": 2358, "min": 10, "max": 10, "weight": 2339 },   //Gold bar (noted)
           { "id": 445, "min": 10, "max": 10, "weight": 781 }   //Gold ore (noted)
         ]
       },
+
+      {
+        "name": "wilderness slayer",
+        "weight": 170,
+        "items": [
+          { "id": 0, "min": 8, "max": 8, "weight": 5 }
+        ]
+      },
       {
         "name": "Tertiary",
-        "weight": 17,
+        "weight": 8,
         "items": [
           { "id": 13502, "min": 1, "max": 1, "weight": 2500 },   //Ensouled demon head
           { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
