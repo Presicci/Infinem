@@ -189,5 +189,59 @@
 	"z": 0, 
 	"direction": "W",
 	"walkRange": 3 // Obor
+  },
+  {
+    "name": "Guard",
+    "id": 3254,
+    "x": 3085,
+    "y": 3518,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 11923,
+    "x": 3094,
+    "y": 3518,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Guard",
+    "id": 11922,
+    "x": 3110,
+    "y": 3512,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 11923,
+    "x": 3108,
+    "y": 3514,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 11924,
+    "x": 3113,
+    "y": 3516,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Guard",
+    "id": 3254,
+    "x": 3113,
+    "y": 3512,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
