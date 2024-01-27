@@ -1,0 +1,67 @@
+[
+  {
+    "ids": [ 11240 ],
+    "guaranteed": [
+      { "id": 25772, "min": 1, "max": 1 }   //Malicious ashes
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 296,
+        "items": [
+          { "id": 1199, "min": 1, "max": 1, "weight": 5470 },   //Adamant kiteshield
+          { "id": 1359, "min": 1, "max": 1, "weight": 5470 },   //Rune axe
+          { "id": 1185, "min": 1, "max": 1, "weight": 5470 },   //Rune sq shield
+          { "id": 1371, "min": 1, "max": 1, "weight": 3910 },   //Adamant battleaxe
+          { "id": 1147, "min": 1, "max": 1, "weight": 3130 },   //Rune med helm
+          { "id": 1163, "min": 1, "max": 1, "weight": 2339 },   //Rune full helm
+          { "id": 1405, "min": 1, "max": 1, "weight": 1560 },   //Mystic air staff
+          { "id": 4131, "min": 1, "max": 1, "weight": 781 },   //Rune boots
+          { "id": 1113, "min": 1, "max": 1, "weight": 781 }   //Rune chainbody
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 344,
+        "items": [
+          { "id": 560, "min": 23, "max": 23, "weight": 9380 },   //Death rune
+          { "id": 565, "min": 20, "max": 20, "weight": 7810 },   //Blood rune
+          { "id": 562, "min": 50, "max": 50, "weight": 7810 },   //Chaos rune
+          { "id": 556, "min": 150, "max": 150, "weight": 4690 },   //Air rune
+          { "id": 566, "min": 25, "max": 25, "weight": 3910 }   //Soul rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 55,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "rare seed",
+        "weight": 39,
+        "items": [
+          { "id": 0, "min": 3, "max": 3, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 263,
+        "items": [
+          { "id": 995, "min": 2000, "max": 2500, "weight": 6250 },   //Coins
+          { "id": 2358, "min": 5, "max": 5, "weight": 5470 },   //Gold bar (noted)
+          { "id": 361, "min": 2, "max": 2, "weight": 4690 },   //Tuna
+          { "id": 246, "min": 3, "max": 3, "weight": 1560 }   //Wine of zamorak (noted)
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 7,
+        "items": [
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
+        ]
+      }
+    ]
+  }
+]

@@ -10,8 +10,9 @@ import java.util.Map;
 public class DropViewerNPCExtensions {
 
     protected static final Map<Integer, String> NPCS = new HashMap<Integer, String>() {{
-        put(11239, " (Wildy)");
         put(11238, " (Wildy)");
+        put(11239, " (Wildy)");
+        put(11240, " (Wildy)");
     }};
 
 }

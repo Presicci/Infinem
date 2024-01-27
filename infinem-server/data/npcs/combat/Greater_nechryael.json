@@ -1,6 +1,6 @@
 [
   { // Greater Nechryael (200)
-    "ids": [ 7278 ],
+    "ids": [ 7278, 11240 ],
     "handler": "io.ruin.model.combat.npc.slayer.Nechryael",
     //Combat Info
     "hitpoints": 205,
