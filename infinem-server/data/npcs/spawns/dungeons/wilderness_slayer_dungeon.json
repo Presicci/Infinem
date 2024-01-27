@@ -691,5 +691,86 @@
     "z": 0,
     "direction": "S",
     "walkRange": 2
+  },
+  {
+    "name": "Jelly",
+    "id": 11241,
+    "x": 3433,
+    "y": 10097,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jelly",
+    "id": 11242,
+    "x": 3434,
+    "y": 10100,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jelly",
+    "id": 11243,
+    "x": 3437,
+    "y": 10103,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jelly",
+    "id": 11242,
+    "x": 3439,
+    "y": 10106,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jelly",
+    "id": 11245,
+    "x": 3435,
+    "y": 10106,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jelly",
+    "id": 11244,
+    "x": 3432,
+    "y": 10104,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jelly",
+    "id": 11241,
+    "x": 3429,
+    "y": 10105,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jelly",
+    "id": 11243,
+    "x": 3425,
+    "y": 10106,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Jelly",
+    "id": 11242,
+    "x": 3430,
+    "y": 10101,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
