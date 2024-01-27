@@ -772,5 +772,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Peeve",
+    "id": 11237,
+    "x": 3408,
+    "y": 10102,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 40
   }
 ]
