@@ -144,15 +144,18 @@ public class MasterScrollBook {
             MasterScrollBook.sendInterface(player);
         });
         ItemAction.registerInventory(SCROLLBOOK, "teleport", (player, item) -> {
-            MasterScrollBook.teleport(player, TeleportScroll.values()[Config.DEFAULT_SCROLL.get(player) - 1]);
+            int scrollIndex = Config.DEFAULT_SCROLL.get(player) - 1;
+            if (scrollIndex < 0) {
+                player.sendMessage("You do not have a default scroll set.");
+                return;
+            }
+            MasterScrollBook.teleport(player, TeleportScroll.values()[scrollIndex]);
         });
-        ItemAction.registerInventory(SCROLLBOOK, "remove defualt", (player, item) -> {
+        ItemAction.registerInventory(SCROLLBOOK, "remove default", (player, item) -> {
             Config.DEFAULT_SCROLL.set(player, 0);
         });
         for (TeleportScroll scroll : TeleportScroll.values()) {
-            ItemItemAction.register(SCROLLBOOK, scroll.id, (player, primary, secondary) -> {
-                MasterScrollBook.deposit(player, primary, secondary);
-            });
+            ItemItemAction.register(SCROLLBOOK, scroll.id, MasterScrollBook::deposit);
         }
         InterfaceHandler.register(INTERFACE, h -> {
             for (TeleportScroll scroll : TeleportScroll.values()) {
