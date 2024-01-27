@@ -19,6 +19,7 @@ public enum TaskOnlyNPC {
     LIEVE(7412, "Oi, I'm Lieve, and I say leave it!"),
     LIEVE_KRAKEN(7412, "Oi, I'm Lieve McCracken and I say leave m' Kraken alone!"),
     DUSTY_ALIV(11161, "Oi! Only people with a Slayer task can slay in here!"),
+    PEEVE(11237, "wooooo ooo woo-woo"),
     RAULYN(5790, "wooooo ooo woo-woo");
 
     private final int npcId;
@@ -37,6 +38,8 @@ public enum TaskOnlyNPC {
                 player.dialogue(new NPCDialogue(npcId, "I didn't... create this cave for... you to do that... sorry, it's not for you."));
             } else if (this == RAULYN && GhostSpeak.canSpeak(player)) {
                 player.dialogue(new NPCDialogue(npcId, "I don't think that's what you're meant to be slaying."));
+            } else if (this == PEEVE && GhostSpeak.canSpeak(player)) {
+                player.dialogue(new NPCDialogue(npcId, "Sneaky one! Don't touch these unless you have a Slayer task to kill them."));
             } else {
                 player.dialogue(new NPCDialogue(npcId, dialogue));
             }

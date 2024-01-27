@@ -474,7 +474,8 @@
     "y": 10160,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Abyssal demon",
@@ -483,7 +484,8 @@
     "y": 10163,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Abyssal demon",
@@ -492,7 +494,8 @@
     "y": 10167,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Abyssal demon",
@@ -501,7 +504,8 @@
     "y": 10165,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Abyssal demon",
@@ -510,7 +514,8 @@
     "y": 10161,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Abyssal demon",
@@ -519,7 +524,8 @@
     "y": 10157,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Abyssal demon",
@@ -528,7 +534,8 @@
     "y": 10158,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Abyssal demon",
@@ -537,7 +544,8 @@
     "y": 10161,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Dust devil",
@@ -546,7 +554,8 @@
     "y": 10117,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Dust devil",
@@ -555,7 +564,8 @@
     "y": 10120,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Dust devil",
@@ -564,7 +574,8 @@
     "y": 10123,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Dust devil",
@@ -573,7 +584,8 @@
     "y": 10126,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Dust devil",
@@ -582,7 +594,8 @@
     "y": 10123,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Dust devil",
@@ -591,7 +604,8 @@
     "y": 10119,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Dust devil",
@@ -600,7 +614,8 @@
     "y": 10120,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Dust devil",
@@ -609,7 +624,8 @@
     "y": 10125,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Dust devil",
@@ -618,7 +634,8 @@
     "y": 10124,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Greater Nechryael",
@@ -627,7 +644,8 @@
     "y": 10100,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Greater Nechryael",
@@ -636,7 +654,8 @@
     "y": 10101,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Greater Nechryael",
@@ -645,7 +664,8 @@
     "y": 10104,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Greater Nechryael",
@@ -654,7 +674,8 @@
     "y": 10108,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Greater Nechryael",
@@ -663,7 +684,8 @@
     "y": 10112,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Greater Nechryael",
@@ -672,7 +694,8 @@
     "y": 10108,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Greater Nechryael",
@@ -681,7 +704,8 @@
     "y": 10104,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Greater Nechryael",
@@ -690,7 +714,8 @@
     "y": 10102,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Jelly",
@@ -699,7 +724,8 @@
     "y": 10097,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Jelly",
@@ -708,7 +734,8 @@
     "y": 10100,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Jelly",
@@ -717,7 +744,8 @@
     "y": 10103,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Jelly",
@@ -726,7 +754,8 @@
     "y": 10106,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Jelly",
@@ -735,7 +764,8 @@
     "y": 10106,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Jelly",
@@ -744,7 +774,8 @@
     "y": 10104,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Jelly",
@@ -753,7 +784,8 @@
     "y": 10105,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Jelly",
@@ -762,7 +794,8 @@
     "y": 10106,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Jelly",
@@ -771,7 +804,8 @@
     "y": 10101,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "PEEVE"
   },
   {
     "name": "Peeve",
