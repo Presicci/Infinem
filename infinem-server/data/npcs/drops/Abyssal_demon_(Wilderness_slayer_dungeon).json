@@ -1,0 +1,79 @@
+[
+  {
+    "ids": [ 11239 ],
+    "guaranteed": [
+      { "id": 25775, "min": 1, "max": 1 }   //Abyssal ashes
+    ],
+    "tables": [
+      {
+        "name": "Weapons and armour",
+        "weight": 101,
+        "items": [
+          { "id": 1283, "min": 1, "max": 1, "weight": 3130 },   //Black sword
+          { "id": 1365, "min": 1, "max": 1, "weight": 2339 },   //Steel battleaxe
+          { "id": 1361, "min": 1, "max": 1, "weight": 1560 },   //Black axe
+          { "id": 1197, "min": 1, "max": 1, "weight": 781 },   //Mithril kiteshield
+          { "id": 1113, "min": 1, "max": 1, "weight": 781 },   //Rune chainbody
+          { "id": 1147, "min": 1, "max": 1, "weight": 781 },   //Rune med helm
+          { "id": 4151, "min": 1, "max": 1, "weight": 195 },   //Abyssal whip
+          { "id": 13265, "min": 1, "max": 1, "weight": 3 }   //Abyssal dagger
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 158,
+        "items": [
+          { "id": 556, "min": 50, "max": 50, "weight": 6250 },   //Air rune
+          { "id": 562, "min": 10, "max": 10, "weight": 4690 },   //Chaos rune
+          { "id": 565, "min": 7, "max": 7, "weight": 3130 },   //Blood rune
+          { "id": 563, "min": 3, "max": 3, "weight": 781 }   //Law rune
+        ]
+      },
+      {
+        "name": "herb drop",
+        "weight": 158,
+        "items": [
+          { "id": 0, "min": 1, "max": 1, "weight": 5 }
+        ]
+      },
+      {
+        "name": "Materials",
+        "weight": 58,
+        "items": [
+          { "id": 7937, "min": 60, "max": 60, "weight": 3910 },   //Pure essence (noted)
+          { "id": 2361, "min": 1, "max": 1, "weight": 1560 }   //Adamantite bar
+        ]
+      },
+      {
+        "name": "Coins",
+        "weight": 482,
+        "items": [
+          { "id": 995, "min": 132, "max": 132, "weight": 27300 },   //Coins
+          { "id": 995, "min": 220, "max": 220, "weight": 7030 },   //Coins
+          { "id": 995, "min": 30, "max": 30, "weight": 5470 },   //Coins
+          { "id": 995, "min": 44, "max": 44, "weight": 4690 },   //Coins
+          { "id": 995, "min": 460, "max": 460, "weight": 781 }   //Coins
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 43,
+        "items": [
+          { "id": 1454, "min": 1, "max": 1, "weight": 781 },   //Cosmic talisman
+          { "id": 1452, "min": 1, "max": 1, "weight": 781 },   //Chaos talisman
+          { "id": 133, "min": 1, "max": 1, "weight": 781 }   //Defence potion(3)
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 51,
+        "items": [
+          { "id": 13508, "min": 1, "max": 1, "weight": 4000 },   //Ensouled abyssal head
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (hard)
+          { "id": 12073, "min": 1, "max": 1, "weight": 83 },   //Clue scroll (elite)
+          { "id": 7979, "min": 1, "max": 1, "weight": 16 }   //Abyssal head
+        ]
+      }
+    ]
+  }
+]
