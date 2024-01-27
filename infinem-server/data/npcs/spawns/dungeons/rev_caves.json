@@ -99,60 +99,6 @@
     "walkRange": 3
   },
   {
-    "name": "Green dragon",
-    "id": 7869,
-    "x": 3207,
-    "y": 10092,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Green dragon",
-    "id": 7870,
-    "x": 3212,
-    "y": 10098,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Green dragon",
-    "id": 7868,
-    "x": 3220,
-    "y": 10064,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Green dragon",
-    "id": 7870,
-    "x": 3220,
-    "y": 10075,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Green dragon",
-    "id": 7868,
-    "x": 3221,
-    "y": 10093,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Green dragon",
-    "id": 7869,
-    "x": 3227,
-    "y": 10068,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Revenant dark beast",
     "id": 7938,
     "x": 3252,
