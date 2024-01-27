@@ -68,41 +68,41 @@ public enum Ladder {
     WATCHTOWER_UP(2796, "climb-up", new Position(2549, 3111, 1), new Position(2933, 4712, 2), true),
     WATCHTOWER_DOWN(2797, "climb-down", new Position(2933, 4711, 2), new Position(2549, 3112, 1), false),
 
-    /*SOPHANEM_BANK_UP(20277, "climb-up", new Position(2799, 5159, 0), new Position(3315, 2796, 0), true),
+    SOPHANEM_BANK_UP(20277, "climb-up", new Position(2799, 5159, 0), new Position(3315, 2796, 0), true),
     SOPHANEM_BANK_DOWN(20275, "climb-down", new Position(3315, 2797, 0), new Position(2799, 5160, 0), false),
 
     SOPHANEM_UP(20356, "climb-up", new Position(3308, 2803, 0), new Position(3307, 2803, 2), true),
     SOPHANEM_DOWN(20357, "climb-down", new Position(3308, 2803, 2), new Position(3309, 2803, 0), false),
 
-    SOPHANEM_DUNGEON_UP(20281, "climb-up", new Position(3318, 9274, 2), new Position(2800, 5160, 0), true),
-    SOPHANEM_DUNGEON_DOWN(20278, "climb-down", new Position(2800, 5159), new Position(3318, 9273, 2), false),
+    SOPHANEM_DUNGEON_UP(20281, "climb-up", new Position(3318 - 1152, 9274 - 4864, 2), new Position(2800, 5160, 0), true),
+    SOPHANEM_DUNGEON_DOWN(20278, "climb-down", new Position(2800, 5159), new Position(3318 - 1152, 9273 - 4864, 2), false),
 
-    SOPHANEM_DUNGEON_MAZE_KALEEF_UP(20286, "climb-up", new Position(3257, 9225, 0), new Position(3268, 9228, 2), true),
-    SOPHANEM_DUNGEON_MAZE_KALEEF_DOWN(20287, "climb-down", new Position(3268, 9229, 2), new Position(3257, 9226, 0), false),
+    SOPHANEM_DUNGEON_MAZE_KALEEF_UP(20286, "climb-up", new Position(2297, 4297, 0), new Position(2116, 4364, 2), true),
+    SOPHANEM_DUNGEON_MAZE_KALEEF_DOWN(20287, "climb-down", new Position(2116, 4365, 2), new Position(2297, 4298, 0), false),
 
-    SOPHANEM_DUNGEON_MAZE_1_UP(20284, "climb-up", new Position(3271, 9274, 0), new Position(3270, 9274, 2), true),
-    SOPHANEM_DUNGEON_MAZE_1_DOWN(20285, "climb-down", new Position(3271, 9274, 2), new Position(3272, 9274, 0), false),
+    SOPHANEM_DUNGEON_MAZE_1_UP(20284, "climb-up", new Position(3271 - 1152, 9274 - 4864, 0), new Position(3270 - 1152, 9274 - 4864, 2), true),
+    SOPHANEM_DUNGEON_MAZE_1_DOWN(20285, "climb-down", new Position(3271 - 1152, 9274 - 4864, 2), new Position(3272 - 1152, 9274 - 4864, 0), false),
 
-    SOPHANEM_DUNGEON_MAZE_2_UP(20284, "climb-up", new Position(3286, 9274, 0), new Position(3286, 9275, 2), true),
-    SOPHANEM_DUNGEON_MAZE_2_DOWN(20285, "climb-down", new Position(3286, 9274, 2), new Position(3286, 9273, 0), false),
+    SOPHANEM_DUNGEON_MAZE_2_UP(20284, "climb-up", new Position(3286 - 1152, 9274 - 4864, 0), new Position(3286 - 1152, 9275 - 4864, 2), true),
+    SOPHANEM_DUNGEON_MAZE_2_DOWN(20285, "climb-down", new Position(3286 - 1152, 9274 - 4864, 2), new Position(3286 - 1152, 9273 - 4864, 0), false),
 
-    SOPHANEM_DUNGEON_MAZE_3_UP(20284, "climb-up", new Position(3317, 9250, 0), new Position(3317, 9249, 2), true),
-    SOPHANEM_DUNGEON_MAZE_3_DOWN(20285, "climb-down", new Position(3317, 9250, 2), new Position(3317, 9251, 0), false),
+    SOPHANEM_DUNGEON_MAZE_3_UP(20284, "climb-up", new Position(3317 - 1152, 9250 - 4864, 0), new Position(3317 - 1152, 9249 - 4864, 2), true),
+    SOPHANEM_DUNGEON_MAZE_3_DOWN(20285, "climb-down", new Position(3317 - 1152, 9250 - 4864, 2), new Position(3317 - 1152, 9251 - 4864, 0), false),
 
-    SOPHANEM_DUNGEON_MAZE_4_UP(20284, "climb-up", new Position(3280, 9255, 0), new Position(3280, 9256, 2), true),
-    SOPHANEM_DUNGEON_MAZE_4_DOWN(20285, "climb-down", new Position(3280, 9255, 2), new Position(3280, 9254, 0), false),
+    SOPHANEM_DUNGEON_MAZE_4_UP(20284, "climb-up", new Position(3280 - 1152, 9255 - 4864, 0), new Position(3280 - 1152, 9256 - 4864, 2), true),
+    SOPHANEM_DUNGEON_MAZE_4_DOWN(20285, "climb-down", new Position(3280 - 1152, 9255 - 4864, 2), new Position(3280 - 1152, 9254 - 4864, 0), false),
 
-    SOPHANEM_DUNGEON_MAZE_5_UP(20284, "climb-up", new Position(3271, 9235, 0), new Position(3272, 9235, 2), true),
-    SOPHANEM_DUNGEON_MAZE_5_DOWN(20285, "climb-down", new Position(3271, 9235, 2), new Position(3270, 9235, 0), false),
+    SOPHANEM_DUNGEON_MAZE_5_UP(20284, "climb-up", new Position(3271 - 1152, 9235 - 4864, 0), new Position(3272 - 1152, 9235 - 4864, 2), true),
+    SOPHANEM_DUNGEON_MAZE_5_DOWN(20285, "climb-down", new Position(3271 - 1152, 9235 - 4864, 2), new Position(3270 - 1152, 9235 - 4864, 0), false),
 
-    SOPHANEM_DUNGEON_MAZE_6_UP(20284, "climb-up", new Position(3323, 9241, 0), new Position(3323, 9242, 2), true),
-    SOPHANEM_DUNGEON_MAZE_6_DOWN(20285, "climb-down", new Position(3323, 9241, 2), new Position(3323, 9240, 0), false),
+    SOPHANEM_DUNGEON_MAZE_6_UP(20284, "climb-up", new Position(3323 - 1152, 9241 - 4864, 0), new Position(3323 - 1152, 9242 - 4864, 2), true),
+    SOPHANEM_DUNGEON_MAZE_6_DOWN(20285, "climb-down", new Position(3323 - 1152, 9241 - 4864, 2), new Position(3323 - 1152, 9240 - 4864, 0), false),
 
-    SOPHANEM_DUNGEON_MAZE_7_UP(20284, "climb-up", new Position(3267, 9221, 0), new Position(3267, 9220, 2), true),
-    SOPHANEM_DUNGEON_MAZE_7_DOWN(20285, "climb-down", new Position(3267, 9221, 2), new Position(3267, 9222, 0), false),
+    SOPHANEM_DUNGEON_MAZE_7_UP(20284, "climb-up", new Position(3267 - 1152, 9221 - 4864, 0), new Position(3267 - 1152, 9220 - 4864, 2), true),
+    SOPHANEM_DUNGEON_MAZE_7_DOWN(20285, "climb-down", new Position(3267 - 1152, 9221 - 4864, 2), new Position(3267 - 1152, 9222 - 4864, 0), false),
 
-    SOPHANEM_DUNGEON_MAZE_8_UP(20284, "climb-up", new Position(3317, 9224, 0), new Position(3317, 9225, 2), true),
-    SOPHANEM_DUNGEON_MAZE_8_DOWN(20285, "climb-down", new Position(3317, 9224, 2), new Position(3317, 9223, 0), false),*/
+    SOPHANEM_DUNGEON_MAZE_8_UP(20284, "climb-up", new Position(3317 - 1152, 9224 - 4864, 0), new Position(3317 - 1152, 9225 - 4864, 2), true),
+    SOPHANEM_DUNGEON_MAZE_8_DOWN(20285, "climb-down", new Position(3317 - 1152, 9224 - 4864, 2), new Position(3317 - 1152, 9223 - 4864, 0), false),
 
     TROLL_STRONGHOLD_EXIT(18834, "climb-up", new Position(2831, 10077, 2), new Position(2831, 3678), true),
     TROLL_STRONGHOLD_ENTRANCE(18833, "climb-down", new Position(2831, 3677, 0), new Position(2831, 10077, 2), false);
