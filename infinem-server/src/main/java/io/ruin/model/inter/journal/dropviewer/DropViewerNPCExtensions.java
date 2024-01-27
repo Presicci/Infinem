@@ -16,6 +16,7 @@ public class DropViewerNPCExtensions {
         put(11240, " (Wildy)"); // Nechryael
         put(11241, " (Wildy)"); // Jelly
         put(7865, " (Wildy cave)"); // Lesser demon
+        put(2514, " (Stronghold)"); // Ankou
     }};
 
 }
