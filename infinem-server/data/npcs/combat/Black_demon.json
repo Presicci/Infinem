@@ -132,18 +132,18 @@
     "ids": [ 7874, 7875, 7876 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 170,
+    "hitpoints": 200,
     "aggressive_level": 368,
     "max_damage": 17,
     "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 170.0,
+    "slayer_xp": 200.0,
     "slayer_tasks": [ "Black Demons" ],
     //Combat Stats
-    "attack": 155,
-    "strength": 158,
-    "defence": 162,
+    "attack": 145,
+    "strength": 165,
+    "defence": 152,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
