@@ -45,33 +45,6 @@
     "walkRange": 3
   },
   {
-    "name": "Hellhound",
-    "id": 7877,
-    "x": 3194,
-    "y": 10072,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Hellhound",
-    "id": 7877,
-    "x": 3195,
-    "y": 10067,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Hellhound",
-    "id": 7877,
-    "x": 3198,
-    "y": 10073,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Ankou",
     "id": 7864,
     "x": 3164,
@@ -418,24 +391,6 @@
     "id": 7937,
     "x": 3252,
     "y": 10151,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Hellhound",
-    "id": 7877,
-    "x": 3203,
-    "y": 10069,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Hellhound",
-    "id": 7877,
-    "x": 3203,
-    "y": 10075,
     "z": 0,
     "direction": "S",
     "walkRange": 3
