@@ -20,6 +20,7 @@ import io.ruin.model.map.Position;
 import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
+import lombok.val;
 
 import java.util.Arrays;
 
@@ -153,7 +154,12 @@ public enum Impling {
 
     private static boolean isCatch(Player player, Impling impling) {
         int hunterLevel = player.getStats().get(StatType.Hunter).currentLevel;
-        return Random.rollDie(4, Math.min(3, Math.max(1, (int) ((hunterLevel - impling.levelReq) / 5))));
+        int n = hunterLevel + (hasMagicButterflyNet(player) ? 8 : 0) - impling.levelReq;
+        float chance = n / 99F;
+        float base = .5f;
+        float finalChance = chance + base;
+        double rand = Random.get();
+        return rand < finalChance;
     }
 
     private static boolean hasButterflyNet(Player player) {
