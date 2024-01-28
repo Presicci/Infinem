@@ -197,7 +197,14 @@ public enum Impling {
         if (type == null)
             return;
         if (isInPuroPuro(npc)) {
-            if (type == BABY || type == YOUNG || type == GOURMET || type == EARTH || type == ECLECTIC) { // these have static spawns
+            if (type == BABY || type == YOUNG || type == GOURMET || type == ECLECTIC) { // these have static spawns
+                npc.addEvent(event -> {
+                    npc.setHidden(true);
+                    event.delay(7);
+                    npc.getMovement().teleport(npc.getSpawnPosition());
+                    npc.setHidden(false);
+                });
+            } else if (type == EARTH || type == ESSENCE) {
                 npc.addEvent(event -> {
                     npc.setHidden(true);
                     event.delay(PURO_PURO_STATIC_RESPAWN_DELAY);
