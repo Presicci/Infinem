@@ -197,6 +197,10 @@ public enum Impling {
         if (type == null)
             return;
         if (isInPuroPuro(npc)) {
+            if (npc.hasTemporaryAttribute("RANDOM_IMPLING")) {
+                ACTIVE_PURO_PURO_IMPLINGS--;
+                npc.remove();
+            }
             if (type == BABY || type == YOUNG || type == GOURMET || type == ECLECTIC) { // these have static spawns
                 npc.addEvent(event -> {
                     npc.setHidden(true);
@@ -254,6 +258,7 @@ public enum Impling {
         Position spawnPosition = Random.get(PURO_PURO_RANDOM_SPAWN_POSITIONS);
         NPC impling = new NPC(type.npcId).spawn(spawnPosition.getX(), spawnPosition.getY(), spawnPosition.getZ(), 12);
         impling.getRouteFinder().routeAbsolute(impling.walkBounds.randomX(), impling.walkBounds.randomY());
+        impling.putTemporaryAttribute("RANDOM_IMPLING", 1);
         ACTIVE_PURO_PURO_IMPLINGS++;
     }
 
