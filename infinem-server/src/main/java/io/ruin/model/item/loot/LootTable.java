@@ -543,7 +543,7 @@ public class LootTable {
                 new LootItem(Items.NATURE_TALISMAN, 1, 1, 1)        // Nature
         }),
 
-        WILDERNESS_SLAYER_CAVE(true, 24613, "wilderness slayer", "Wildy slayer cave", 28, new LootItem[] {
+        WILDERNESS_SLAYER_CAVE(true, 24614, "wilderness slayer", "Wildy slayer cave", 28, new LootItem[] {
                 new LootItem(24613, 1, 10, 60),  // Blighted entangle sack
                 new LootItem(24592, 1, 2, 50),   // Blighted anglerfish
                 new LootItem(24589, 1, 2, 50),   // Blighted manta ray
