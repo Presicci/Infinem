@@ -6,6 +6,7 @@ import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
+import io.ruin.model.content.tasksystem.tasks.areas.rewards.KandarinReward;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -503,14 +504,13 @@ public enum PickPocket {
         double chance = pickpocket.startingChance;
         int thievingLevel = player.getStats().get(StatType.Thieving).currentLevel;
         chance += (thievingLevel - levelReq) * pickpocket.chanceSlope;
-        if (player.getEquipment().hasId(GLOVES_OF_SILENCE))
+        if ((KandarinReward.THIEVING_BOOST_1.hasReward(player) && MapArea.ARDOUGNE.inArea(player)) || KandarinReward.THIEVING_BOOST_2.hasReward(player)) {
+            chance *= 1.1;
+        } else if (player.getEquipment().hasId(GLOVES_OF_SILENCE))  // Only applies if ardy effect doesn't
             chance *= 1.05;
         if (player.getEquipment().hasAtLeastOneOf(MAX_CAPES) || ThievingSkillCape.wearsThievingCape(player)) {
             chance *= 1.1;
         }
-        //TODO Ardy buff? if (player.getEquipment().hasAtLeastOneOf(MAX_CAPES) || ThievingSkillCape.wearsThievingCape(player)) {
-        //    chance *= 1.1;
-        //}
         return (int) Math.floor(chance);
     }
 
