@@ -26,20 +26,21 @@ public class PuroPuro {
             "You use your strength to push through the wheat.",
     };
 
-    private static void moveThroughWall(Player player, GameObject wall) {
+    private static void moveThroughWall(Player player, GameObject wall, boolean goFast) {
         int playerX = player.getAbsX();
         int playerY = player.getAbsY();
         int wallX = wall.x;
         int wallY = wall.y;
+        int speed = goFast ? 150 : 210;
 
         if (playerX == wallX && playerY < wallY)
-            player.getMovement().force(0, 2, 0, 0, 0, 210, Direction.NORTH);
+            player.getMovement().force(0, 2, 0, 0, 0, speed, Direction.NORTH);
         else if (playerX == wallX && playerY > wallY)
-            player.getMovement().force(0, -2, 0, 0, 0, 210, Direction.SOUTH);
+            player.getMovement().force(0, -2, 0, 0, 0, speed, Direction.SOUTH);
         else if (playerY == wallY && playerX < wallX)
-            player.getMovement().force(2, 0, 0, 0, 0, 210, Direction.EAST);
+            player.getMovement().force(2, 0, 0, 0, 0, speed, Direction.EAST);
         else if (playerY == wallY && playerX > wallX)
-            player.getMovement().force(-2, 0, 0, 0, 0, 210, Direction.WEST);
+            player.getMovement().force(-2, 0, 0, 0, 0, speed, Direction.WEST);
 
         if (player.hasAttribute("PURO_STR_XP"))
             player.getStats().addXp(StatType.Strength, Random.get(2, 4), true);
@@ -108,10 +109,13 @@ public class PuroPuro {
             ObjectAction.register(id, "push-through", (player, obj) -> player.startEvent(event -> {
                 player.lock();
                 event.delay(1);
-                moveThroughWall(player, obj);
-                player.animate(6594);
+
+                boolean goFast = Random.get(1, 99) <= player.getStats().get(StatType.Strength).currentLevel;
+
+                moveThroughWall(player, obj, goFast);
+                player.animate(goFast ? 6593 : 6594);
                 player.sendFilteredMessage(Random.get(PUSH_THROUGH_MESSAGE));
-                event.delay(6);
+                event.delay(goFast ? 4 : 6);
                 player.unlock();
             }));
         }
