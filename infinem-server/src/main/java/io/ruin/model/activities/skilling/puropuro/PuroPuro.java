@@ -41,7 +41,8 @@ public class PuroPuro {
         else if (playerY == wallY && playerX > wallX)
             player.getMovement().force(-2, 0, 0, 0, 0, 210, Direction.WEST);
 
-        player.getStats().addXp(StatType.Strength, Random.get(2, 4), false);
+        if (player.hasAttribute("PURO_STR_XP"))
+            player.getStats().addXp(StatType.Strength, Random.get(2, 4), true);
     }
 
     private static void exit(Player player, GameObject portal) {

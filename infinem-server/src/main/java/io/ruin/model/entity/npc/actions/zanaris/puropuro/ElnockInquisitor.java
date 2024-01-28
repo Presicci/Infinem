@@ -90,6 +90,34 @@ public class ElnockInquisitor {
         );
     }
 
+    private static void wheatDialogue(Player player, NPC npc) {
+        player.dialogue(
+                new PlayerDialogue("Can you tell me about the wheat?"),
+                new NPCDialogue(npc, "The wheat here can be hard to push through and pushing through it definitely makes you stronger."),
+                new ActionDialogue(() -> {
+                    if (player.hasAttribute("PURO_STR_XP")) {
+                        player.dialogue(
+                                new PlayerDialogue("What if I didn't want to become stronger pushing through the wheat?"),
+                                new NPCDialogue(npc, "I could give you oil to rub on you to reduce friction. Still as hard to push but you don't get stronger."),
+                                new OptionsDialogue("Turn wheat Strength XP OFF?",
+                                        new Option("Yes", () -> player.removeAttribute("PURO_STR_XP")),
+                                        new Option("No")
+                                )
+                        );
+                    } else {
+                        player.dialogue(
+                                new PlayerDialogue("What if I want to get stronger?"),
+                                new NPCDialogue(npc, "I could lend you a cloth to wipe off the oil with. That should let you become strong while pushing through the wheat."),
+                                new OptionsDialogue("Turn wheat Strength XP ON?",
+                                        new Option("Yes", () -> player.putAttribute("PURO_STR_XP", 1)),
+                                        new Option("No")
+                                )
+                        );
+                    }
+                })
+        );
+    }
+
     private static void canICatch(Player player, NPC npc) {
         player.dialogue(
                 new PlayerDialogue("Can I catch these implings, then?"),
@@ -149,7 +177,8 @@ public class ElnockInquisitor {
                             new NPCDialogue(npc, "Ah, good day, it's you again. What can I do for you?"),
                             new OptionsDialogue("What would you like to ask about?",
                                     new Option("Can I trade some jarred implings please?", () -> ElnockExchange.open(player)),
-                                    new Option("Do you have some spare equipment I can use?", () -> requestEquipment(player, npc))
+                                    new Option("Do you have some spare equipment I can use?", () -> requestEquipment(player, npc)),
+                                    new Option("Can you tell me about the wheat?", () -> wheatDialogue(player, npc))
                             )
                     );
                 } else {
@@ -162,7 +191,8 @@ public class ElnockInquisitor {
                                                 new NPCDialogue(npc, "Ah, good day, it's you again. What can I do for you?"),
                                                 new OptionsDialogue("What would you like to ask about?",
                                                         new Option("Can I trade some jarred implings please?", () -> ElnockExchange.open(player)),
-                                                        new Option("Do you have some spare equipment I can use?", () -> requestEquipment(player, npc))
+                                                        new Option("Do you have some spare equipment I can use?", () -> requestEquipment(player, npc)),
+                                                        new Option("Can you tell me about the wheat?", () -> wheatDialogue(player, npc))
                                                 )
                                         );
                                     }),
@@ -170,7 +200,8 @@ public class ElnockInquisitor {
                                             new NPCDialogue(npc, "Ah, good day, it's you again. What can I do for you?"),
                                             new OptionsDialogue("What would you like to ask about?",
                                                     new Option("Can I trade some jarred implings please?", () -> ElnockExchange.open(player)),
-                                                    new Option("Do you have some spare equipment I can use?", () -> requestEquipment(player, npc))
+                                                    new Option("Do you have some spare equipment I can use?", () -> requestEquipment(player, npc)),
+                                                    new Option("Can you tell me about the wheat?", () -> wheatDialogue(player, npc))
                                             ))
                             )
                     );
