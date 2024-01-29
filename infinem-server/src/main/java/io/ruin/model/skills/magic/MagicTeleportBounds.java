@@ -34,6 +34,16 @@ public enum MagicTeleportBounds {
     CARRALLANGAR(new Bounds(3162, 3663, 3164, 3665, 0)),
     ANNAKARL(new Bounds(3287, 3886, 3288, 3887, 0)),
     GHORROCK(new Bounds(2970, 3871, 2975, 3875, 0)),
+
+    // Lunar Spellbook
+    MOONCLAN(new Bounds(2112, 3914, 2114, 3917, 0)),
+    OURANIA(new Bounds(2466, 3245, 2469, 3248, 0)),
+    WATERBIRTH(new Bounds(2545, 3753, 2548, 3757, 0)),
+    BARBARIAN(new Bounds(2541, 3566, 2544, 3570, 0)),
+    KHAZARD(new Bounds(2636, 3166, 2639, 3168, 0)),
+    FISHING_GUILD(new Bounds(2609, 3390, 2614, 3393, 0)),
+    CATHERBY(new Bounds(2801, 3447, 2804, 3451, 0)),
+    ICE_PLATEAU(new Bounds(2972, 3938, 2975, 3940, 0)),
     ;
 
     private final Bounds bounds;
