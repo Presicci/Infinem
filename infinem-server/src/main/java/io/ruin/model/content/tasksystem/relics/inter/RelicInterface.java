@@ -19,6 +19,11 @@ import io.ruin.model.inter.journal.JournalTab;
 public class RelicInterface {
 
     /**
+     * Adding new relic?
+     * - enum 9000 contains the struct references for the tiers
+     * - make a struct for new tier
+     *
+     *
      * VB 10032 - 1 = twisted, 2 = trailblazer, 3 = infinem, 4 = trailblazer II
      * struct 3771 - Infinem 'league'
      * enum 9000 - Infinem relic tiers
@@ -31,6 +36,9 @@ public class RelicInterface {
      * struct 9002 - tier 1 passives
      * enum 9002 - tier 2 relics
      * struct 9003 - tier 2 passives
+     * enum 9003 - tier 3 relics
+     * struct 9004 - tier 3 relics
+     * struct 9005 - tier 3 passives
      *
      * varp 2615 - points
      *
@@ -43,6 +51,7 @@ public class RelicInterface {
      *
      * 1725 - fairy's flight
      * 4717 - globetrotter
+     * 729 - dungeon hub premium (old natural selection)
      *
      * 730 - eye of the artisan
      * 731 - gift of the gatherer
@@ -51,7 +60,7 @@ public class RelicInterface {
 
     public static void open(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.RELICS);
-        player.getPacketSender().sendAccessMask(Interface.RELICS, 12, 0, 5, AccessMasks.ClickOp1);
+        player.getPacketSender().sendAccessMask(Interface.RELICS, 12, 0, 100, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(Interface.RELICS, 32, 9, 16, AccessMasks.ClickOp1);
     }
 

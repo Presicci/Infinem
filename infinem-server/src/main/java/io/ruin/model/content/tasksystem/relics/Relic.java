@@ -85,7 +85,10 @@ public enum Relic {
             "\n- Cleaning herbs and making potions" +
             "\n- Cooking food and making jugs of wine" +
             "\n- Crafting leather, uncut gems, glass, jewellery, pottery, battlestaves, spinning flax/wool, and weaving"),
-    TRICKSTER(2, 3, "")
+    TRICKSTER(2, 3, ""),
+    FAIRYS_FLIGHT(3, 1, ""),
+    GLOBETROTTER(3, 2, ""),
+    DUNGEON_HUB_PREMIUM(3, 3, "")
     ;
 
     @Getter
