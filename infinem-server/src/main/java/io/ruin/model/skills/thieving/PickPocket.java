@@ -465,7 +465,6 @@ public enum PickPocket {
                             player.getInventory().add(pouchId, 1);
                         } else {
                             player.getInventory().add(item);
-                            player.getTaskManager().doSkillItemLookup(item);
                             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.PICKPOCKETLOOT, item.getDef().name, item.getAmount(), true);
                         }
                     }
