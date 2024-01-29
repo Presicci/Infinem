@@ -417,6 +417,7 @@ public enum PickPocket {
     }
 
     private static void recursiveAttemptPickpocket(Player player, NPC npc, PickPocket pickpocket) {
+        if (!player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) return;
         player.unlock();
         player.startEvent(e -> {
             e.delay(1);

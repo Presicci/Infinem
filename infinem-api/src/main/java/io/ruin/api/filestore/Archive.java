@@ -8,7 +8,7 @@ public class Archive {
 
     private static final GZIP gzip = new GZIP();
 
-    protected int nameHash;
+    public int nameHash;
     protected int crc;
     protected int revision;
     protected int fileCount;
@@ -35,7 +35,7 @@ public class Archive {
         }
         int length = in.readInt();
         if(length < 0 || length > 100000000) //todo - make sure this length is valid for osrs
-            throw new RuntimeException("Invalid archive length!");
+            throw new RuntimeException("Invalid archive length! " + length);
         byte[] data = new byte[length];
         if(compression != 1) {
             /**
