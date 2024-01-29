@@ -276,7 +276,7 @@ public class FishingSpot {
 
                 if (animTicks == 0) {
                     player.animate(barehand ? 6704 : finalTool.loopAnimationId);
-                    animTicks = 3;
+                    animTicks = 5;
                 }
             }
         });
