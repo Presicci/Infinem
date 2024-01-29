@@ -106,14 +106,14 @@ public enum SpellBook {
             ShadowBurst.INSTANCE,
             ShadowBarrage.INSTANCE,
 
-            new AncientTeleport(54, 64.0, new Bounds(3098, 9881, 3095, 9884, 0), Rune.LAW.toItem(2), Rune.FIRE.toItem(1), Rune.AIR.toItem(1)),
-            new AncientTeleport(60, 70.0, new Bounds(3349, 3345, 3346, 3348, 0), Rune.LAW.toItem(2), Rune.SOUL.toItem(1)),
-            new AncientTeleport(66, 76.0, new Bounds(3490, 3471, 3493, 3472, 0), Rune.LAW.toItem(2), Rune.BLOOD.toItem(1)),
-            new AncientTeleport(72, 82.0, new Bounds(3013, 3500, 3015, 3501, 0), Rune.LAW.toItem(2), Rune.WATER.toItem(4)),
-            new AncientTeleport(78, 88.0, new Bounds(2965, 3964, 2969, 3697, 0), Rune.LAW.toItem(2), Rune.FIRE.toItem(3), Rune.AIR.toItem(2)),
-            new AncientTeleport(84, 94.0, new Bounds(3162, 3663, 3164, 3665, 0), Rune.LAW.toItem(2), Rune.SOUL.toItem(2)),
-            new AncientTeleport(90, 100.0, new Bounds(3287, 3886, 3288, 3887, 0), Rune.LAW.toItem(2), Rune.BLOOD.toItem(2)),
-            new AncientTeleport(96, 106.0, new Bounds(2970, 3871, 2975, 3875, 0), Rune.LAW.toItem(2), Rune.WATER.toItem(8)),
+            new AncientTeleport(54, 64.0, MagicTeleportBounds.PADDEWWA.getBounds(), Rune.LAW.toItem(2), Rune.FIRE.toItem(1), Rune.AIR.toItem(1)),
+            new AncientTeleport(60, 70.0, MagicTeleportBounds.SENNTISTEN.getBounds(), Rune.LAW.toItem(2), Rune.SOUL.toItem(1)),
+            new AncientTeleport(66, 76.0, MagicTeleportBounds.KHARYLL.getBounds(), Rune.LAW.toItem(2), Rune.BLOOD.toItem(1)),
+            new AncientTeleport(72, 82.0, MagicTeleportBounds.LASSAR.getBounds(), Rune.LAW.toItem(2), Rune.WATER.toItem(4)),
+            new AncientTeleport(78, 88.0, MagicTeleportBounds.DAREEYAK.getBounds(), Rune.LAW.toItem(2), Rune.FIRE.toItem(3), Rune.AIR.toItem(2)),
+            new AncientTeleport(84, 94.0, MagicTeleportBounds.CARRALLANGAR.getBounds(), Rune.LAW.toItem(2), Rune.SOUL.toItem(2)),
+            new AncientTeleport(90, 100.0, MagicTeleportBounds.ANNAKARL.getBounds(), Rune.LAW.toItem(2), Rune.BLOOD.toItem(2)),
+            new AncientTeleport(96, 106.0, MagicTeleportBounds.GHORROCK.getBounds(), Rune.LAW.toItem(2), Rune.WATER.toItem(8)),
             HomeTeleport.ANCIENT
     ),
     LUNAR(

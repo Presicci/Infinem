@@ -25,6 +25,15 @@ public enum MagicTeleportBounds {
     APE_ATOLL(new Bounds(2784, 2785, 2785, 2786, 0)),
     KOUREND(new Bounds(1644, 3672, 1642, 3674, 0)),
 
+    // Ancient Spellbook
+    PADDEWWA(new Bounds(3098, 9881, 3095, 9884, 0)),
+    SENNTISTEN(new Bounds(3317, 3335, 3321, 3338, 0)),
+    KHARYLL(new Bounds(3490, 3471, 3493, 3472, 0)),
+    LASSAR(new Bounds(3004, 3470, 3007, 3473, 0)),
+    DAREEYAK(new Bounds(2965, 3964, 2969, 3697, 0)),
+    CARRALLANGAR(new Bounds(3162, 3663, 3164, 3665, 0)),
+    ANNAKARL(new Bounds(3287, 3886, 3288, 3887, 0)),
+    GHORROCK(new Bounds(2970, 3871, 2975, 3875, 0)),
     ;
 
     private final Bounds bounds;
