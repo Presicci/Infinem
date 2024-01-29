@@ -474,6 +474,8 @@ public enum PickPocket {
                     Pet.ROCKY.unlock(player);
                 player.getStats().addXp(StatType.Thieving, pickpocket.exp, true);
                 player.getTaskManager().doLookupByCategory(TaskCategory.PICKPOCKET, npc.getDef().name.toLowerCase());
+                if (pickpocket == HAM && !player.getTaskManager().hasCompletedTask(938) && hasHAMSet(player))
+                    player.getTaskManager().doLookupByUUID(938);    // Pickpocket a H.A.M. Member as a H.A.M. Member
             } else {
                 player.sendFilteredMessage("You fail to pick the " + pickpocket.identifier + " pocket.");
                 npc.forceText("What do you think you're doing?");
