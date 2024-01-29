@@ -8,7 +8,7 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.map.object.actions.impl.locations.prifddinas.CityEntrance;
+import io.ruin.model.map.object.actions.impl.locations.prifddinas.PrifCityEntrance;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 
 import java.util.Arrays;
@@ -29,7 +29,7 @@ public class WaystoneNetwork {
     }
 
     private static void channelWaystone(Player player, Waystone waystone) {
-        if (waystone == Waystone.PRIFDDINAS && !CityEntrance.prifSkillCheck(player)) {
+        if (waystone == Waystone.PRIFDDINAS && !PrifCityEntrance.prifSkillCheck(player)) {
             return;
         }
         if (isWaystoneUnlocked(player, waystone)) {

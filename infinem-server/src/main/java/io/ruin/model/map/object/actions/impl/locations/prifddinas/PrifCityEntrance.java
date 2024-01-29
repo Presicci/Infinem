@@ -12,7 +12,7 @@ import io.ruin.model.stat.StatType;
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 1/18/2022
  */
-public class CityEntrance {
+public class PrifCityEntrance {
 
     private static final int[] ELVES = {9151, 9084, 9114, 9109, 9116, 9085, 9115};
     private static final StatType[] SKILLS = {
