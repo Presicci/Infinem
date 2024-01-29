@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.combat.raids.xeric.ChambersOfXeric;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -21,6 +22,7 @@ import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static io.ruin.model.skills.Tool.TINDER_BOX;
 
@@ -175,6 +177,56 @@ public enum Burning {
         });
     }
 
+    private static void tricksterBurn(Player player, Item inventoryLog, Burning burning, Boolean barbarianBurning, int animationId) {
+        if (!player.getStats().check(StatType.Firemaking, barbarianBurning ? burning.barbLevelReq : burning.levelReq,
+                barbarianBurning ? "burn " + burning.pluralName + " in a barbarian fashion" : "burn " + burning.pluralName))
+            return;
+        int amount = Math.min(9, player.getInventory().getAmount(inventoryLog.getId()));
+        if (amount == 1) {
+            burn(player, inventoryLog, burning, null, barbarianBurning, animationId);
+            return;
+        }
+        List<Position> availableTiles = new ArrayList<>();
+        if (Tile.allowObjectPlacement(player.getPosition())) {
+            availableTiles.add(player.getPosition());
+        }
+        for (int x = -1; x < 2; x++) {
+            for (int y = -1; y < 2; y++) {
+                Position position = new Position(x + player.getAbsX(), y + player.getAbsY(), player.getHeight());
+                if (Tile.allowObjectPlacement(position) && !position.equals(player.getPosition()))
+                    availableTiles.add(position);
+            }
+        }
+        amount = Math.min(amount, availableTiles.size());
+        if (amount == 1) {
+            burn(player, inventoryLog, burning, null, barbarianBurning, animationId);
+            return;
+        }
+        if (availableTiles.size() <= 0) {
+            player.sendMessage("You can't light a fire here.");
+            return;
+        }
+
+        int finalAmount = amount;
+        player.startEvent(event -> {
+            player.getMovement().reset();
+            player.animate(animationId);
+            event.delay(1);
+            player.resetAnimation();
+            player.sendFilteredMessage("The fire catches and the logs begin to burn.");
+            player.privateSound(2596);
+            for (int index = 0; index < finalAmount; index++) {
+                player.getInventory().remove(inventoryLog.getId(), 1);
+                Position firePos = availableTiles.get(index);
+                GameObject fire = new GameObject(burning.fireId, firePos.getX(), firePos.getY(), firePos.getZ(), 10, 0);
+                createFire(burning, fire);
+            }
+            player.getStats().addXp(StatType.Firemaking, burning.exp * pyromancerBonus(player) * finalAmount, true);
+            player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDef.get(burning.itemId).name, finalAmount);
+            burning.counter.increment(player, finalAmount);
+        });
+    }
+
     private static void createFire(Burning log, GameObject obj) {
         World.startEvent(event -> {
             GameObject fire = GameObject.spawn(obj.id, obj.x, obj.y, obj.z, obj.type, obj.direction);
@@ -185,9 +237,10 @@ public enum Burning {
     }
 
     private static double lightChance(Player player, Burning log) {
+        if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) return 100;
         int points = 20;
         int level = player.getStats().get(StatType.Firemaking).currentLevel;
-        double difference = (level - log.levelReq) * (level > 95 ? 3 : 2);
+        double difference = (level - log.levelReq) * (level > 95 ? 3 : level > 50 ? 2 : 1);
         return Math.min(100, points + difference);
     }
 
@@ -222,12 +275,22 @@ public enum Burning {
             /*
              * Tinderbox
              */
-            ItemItemAction.register(log.itemId, TINDER_BOX, (player, primary, secondary) -> burn(player, primary, log, null, false, 733));
+            ItemItemAction.register(log.itemId, TINDER_BOX, (player, primary, secondary) -> {
+                if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER))
+                    tricksterBurn(player, primary, log, false, 733);
+                else
+                    burn(player, primary, log, null, false, 733);
+            });
             /*
              * Barbarian
              */
             for (BarbarianBurning barbarianBurning : BarbarianBurning.values()) {
-                ItemItemAction.register(log.itemId, barbarianBurning.itemId, (player, primary, secondary) -> burn(player, primary, log, null, true, barbarianBurning.animationId));
+                ItemItemAction.register(log.itemId, barbarianBurning.itemId, (player, primary, secondary) -> {
+                    if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER))
+                        tricksterBurn(player, primary, log, true, barbarianBurning.animationId);
+                    else
+                        burn(player, primary, log, null, true, barbarianBurning.animationId);
+                });
             }
 
             /*
