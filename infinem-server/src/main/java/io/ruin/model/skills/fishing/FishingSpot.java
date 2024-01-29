@@ -163,16 +163,15 @@ public class FishingSpot {
             }
         }
 
-        int level = getLevelWithBoost(player, fishing);
-
         /*
          * Start event
          */
         player.animate(barehand ? 6703 : tool.startAnimationId);
-        FishingTool finalTool = tool;
         player.startEvent(event -> {
             int animTicks = 2;
             boolean firstBarehandAnim = true;
+            int lastLevel = fishing.currentLevel;
+            int level = getLevelWithBoost(player, fishing);
             while (true) {
                 if (animTicks > 0) { //we do this so we can check if the npc has moved every tick
                     int diffX = Math.abs(player.getAbsX() - npc.getAbsX());
@@ -186,8 +185,9 @@ public class FishingSpot {
                     animTicks--;
                     continue;
                 }
-
-                FishingCatch c = randomCatch(player, level, barehand, finalTool);
+                if (lastLevel != fishing.currentLevel)
+                    level = getLevelWithBoost(player, fishing);
+                FishingCatch c = randomCatch(player, level, barehand, tool);
                 if (c != null) {
                     if (npc.getId() == MINNOWS && (npc.minnowsFish || (npc.minnowsFish = Random.rollDie(100)))) {
                         npc.graphics(1387);
@@ -207,13 +207,13 @@ public class FishingSpot {
                                 : c.id == FishingCatch.KARAMBWANJI.id ? ((fishing.currentLevel / 5) + 1)
                                 : 1;
                         player.collectResource(new Item(c.id, amount));
-                        if (finalTool == FishingTool.CRYSTAL_HARPOON && CrystalEquipment.HARPOON.hasCharge(player))
+                        if (tool == FishingTool.CRYSTAL_HARPOON && CrystalEquipment.HARPOON.hasCharge(player))
                             CrystalEquipment.HARPOON.removeCharge(player);
                         if (player.darkCrabBoost.isDelayed()) {
                             if (Random.rollPercent(20))
                                 amount++;
                         }
-                        if (finalTool == FishingTool.INFERNAL_HARPOON && InfernalTools.INFERNAL_HARPOON.hasCharge(player) && Random.rollDie(3, 1) && Food.COOKING_EXPERIENCE.containsKey(c.id)) {
+                        if (tool == FishingTool.INFERNAL_HARPOON && InfernalTools.INFERNAL_HARPOON.hasCharge(player) && Random.rollDie(3, 1) && Food.COOKING_EXPERIENCE.containsKey(c.id)) {
                             player.graphics(580, 155, 0);
                             InfernalTools.INFERNAL_HARPOON.removeCharge(player);
                             player.getStats().addXp(StatType.Fishing, c.xp * anglerBonus(player), true);
@@ -264,18 +264,18 @@ public class FishingSpot {
                         return;
                     }
 
-                    if (!barehand && finalTool.secondaryId != -1) {
-                        Item requiredSecondary = player.getInventory().findItem(finalTool.secondaryId);
+                    if (!barehand && tool.secondaryId != -1) {
+                        Item requiredSecondary = player.getInventory().findItem(tool.secondaryId);
 
                         if (requiredSecondary == null) {
-                            player.sendMessage("You need at least one " + finalTool.secondaryName + " to fish at this spot.");
+                            player.sendMessage("You need at least one " + tool.secondaryName + " to fish at this spot.");
                             return;
                         }
                     }
                 }
 
                 if (animTicks == 0) {
-                    player.animate(barehand ? 6704 : finalTool.loopAnimationId);
+                    player.animate(barehand ? 6704 : tool.loopAnimationId);
                     animTicks = 5;
                 }
             }
