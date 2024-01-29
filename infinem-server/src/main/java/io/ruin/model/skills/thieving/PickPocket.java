@@ -21,6 +21,7 @@ import io.ruin.model.item.actions.impl.skillcapes.ThievingSkillCape;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.MapArea;
+import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.skills.BotPrevention;
 import io.ruin.model.stat.StatType;
 
@@ -415,6 +416,17 @@ public enum PickPocket {
         return true;
     }
 
+    private static void recursiveAttemptPickpocket(Player player, NPC npc, PickPocket pickpocket) {
+        player.unlock();
+        player.startEvent(e -> {
+            e.delay(1);
+            TargetRoute.set(player, npc, () -> {
+                player.face(npc);
+                pickpocket(player, npc, pickpocket);
+            });
+        });
+    }
+
     private static void pickpocket(Player player, NPC npc, PickPocket pickpocket) {
         if (!checkAll(player, pickpocket)) {
             return;
@@ -487,6 +499,7 @@ public enum PickPocket {
                 player.getTaskManager().doLookupByCategory(TaskCategory.PICKPOCKET, npc.getDef().name.toLowerCase());
                 if (pickpocket == HAM && !player.getTaskManager().hasCompletedTask(938) && hasHAMSet(player))
                     player.getTaskManager().doLookupByUUID(938);    // Pickpocket a H.A.M. Member as a H.A.M. Member
+                recursiveAttemptPickpocket(player, npc, pickpocket);
             } else {
                 player.sendFilteredMessage("You fail to pick the " + pickpocket.identifier + " pocket.");
                 npc.forceText("What do you think you're doing?");
