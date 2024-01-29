@@ -504,6 +504,9 @@ public enum PickPocket {
         double chance = pickpocket.startingChance;
         int thievingLevel = player.getStats().get(StatType.Thieving).currentLevel;
         chance += (thievingLevel - levelReq) * pickpocket.chanceSlope;
+        if (pickpocket == HAM && hasHAMSet(player)) {
+            chance *= 1.15; // 15% boost for wearing ham set when pickpocketing ham
+        }
         if ((KandarinReward.THIEVING_BOOST_1.hasReward(player) && MapArea.ARDOUGNE.inArea(player)) || KandarinReward.THIEVING_BOOST_2.hasReward(player)) {
             chance *= 1.1;
         } else if (player.getEquipment().hasId(GLOVES_OF_SILENCE))  // Only applies if ardy effect doesn't
@@ -512,6 +515,15 @@ public enum PickPocket {
             chance *= 1.1;
         }
         return (int) Math.floor(chance);
+    }
+
+    private static boolean hasHAMSet(Player player) {
+        for (int id : Arrays.asList(Items.HAM_BOOTS, Items.HAM_HOOD, Items.HAM_ROBE, Items.HAM_SHIRT, Items.HAM_BOOTS, Items.HAM_LOGO)) {
+            if (!player.getEquipment().hasId(id)) return false;
+        }
+        if (!player.getEquipment().hasAtLeastOneOf(MAX_CAPES) && !ThievingSkillCape.wearsThievingCape(player) && !player.getEquipment().hasId(Items.HAM_CLOAK))
+            return false;
+        return player.getEquipment().hasId(Items.HAM_GLOVES) || player.getEquipment().hasId(Items.GLOVES_OF_SILENCE);
     }
 
     static {
