@@ -29,7 +29,7 @@ public class WaystoneNetwork {
     }
 
     private static void channelWaystone(Player player, Waystone waystone) {
-        if (waystone == Waystone.PRIFDDINAS && !PrifCityEntrance.prifSkillCheck(player)) {
+        if (waystone == Waystone.PRIFDDINAS && !PrifCityEntrance.prifSkillCheckNoNPC(player)) {
             return;
         }
         if (isWaystoneUnlocked(player, waystone)) {

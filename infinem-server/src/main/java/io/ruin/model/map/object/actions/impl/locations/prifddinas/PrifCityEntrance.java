@@ -3,6 +3,7 @@ package io.ruin.model.map.object.actions.impl.locations.prifddinas;
 import io.ruin.api.utils.Random;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -24,6 +25,16 @@ public class PrifCityEntrance {
         for (StatType statType : SKILLS) {
             if (player.getStats().get(statType).currentLevel < 70) {
                 player.dialogue(new NPCDialogue(ELVES[Random.get(ELVES.length - 1)], "You need level 70 in " + statType.name() + " to enter Prifddinas.").animate(588));
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean prifSkillCheckNoNPC(Player player) {
+        for (StatType statType : SKILLS) {
+            if (player.getStats().get(statType).currentLevel < 70) {
+                player.dialogue(new MessageDialogue("You need level 70 in " + statType.name() + " to enter Prifddinas."));
                 return false;
             }
         }
