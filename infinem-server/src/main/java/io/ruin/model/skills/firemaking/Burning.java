@@ -136,8 +136,9 @@ public enum Burning {
 
             player.getMovement().reset();
             player.sendFilteredMessage("You attempt to light the logs.");
-            if (chainLighting(player, burning))
+            if (player.getTemporaryAttributeOrDefault("BURN_DELAY", 0L) > System.currentTimeMillis())
                 event.delay(1);
+            player.removeTemporaryAttribute("BURN_DELAY");
 
             while (Random.get(100) > lightChance(player, burning)) {
                 if (groundLog.isRemoved()) {
@@ -166,6 +167,7 @@ public enum Burning {
                 burning.counter.increment(player, 1);
                 player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDef.get(burning.itemId).name);
                 GameObject fire = new GameObject(burning.fireId, firePos.getX(), firePos.getY(), firePos.getZ(), 10, 0);
+                player.putTemporaryAttribute("BURN_DELAY", System.currentTimeMillis() + 1800);
                 createFire(burning, fire);
                 player.face(fire);
             }
@@ -187,10 +189,6 @@ public enum Burning {
         int level = player.getStats().get(StatType.Firemaking).currentLevel;
         double difference = (level - log.levelReq) * (level > 95 ? 3 : 2);
         return Math.min(100, points + difference);
-    }
-
-    private static boolean chainLighting(Player player, Burning log) {
-        return player.getInventory().hasMultiple(log.itemId) && player.getInventory().getFreeSlots() > 1;
     }
 
     private static double pyromancerBonus(Player player) {
