@@ -130,10 +130,9 @@ public enum Burning {
 
         player.startEvent(event -> {
             int attempts = 0;
-            if (inventoryLog == null)
-                return;
 
-            inventoryLog.remove();
+            if (inventoryLog != null)
+                inventoryLog.remove();
             GroundItem groundLog = groundItem == null ? new GroundItem(inventoryLog.getId(), 1).owner(player).position(player.getPosition()).spawn() : groundItem;
 
             player.getMovement().reset();
