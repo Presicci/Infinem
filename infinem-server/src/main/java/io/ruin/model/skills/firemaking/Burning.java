@@ -125,11 +125,13 @@ public enum Burning {
             return;
         }
 
-        GroundItem groundLog = groundItem == null ? new GroundItem(inventoryLog.getId(), 1).owner(player).position(player.getPosition()).spawn() : groundItem;
         player.startEvent(event -> {
             int attempts = 0;
-            if (inventoryLog != null)
-                inventoryLog.remove();
+            if (inventoryLog == null)
+                return;
+
+            inventoryLog.remove();
+            GroundItem groundLog = groundItem == null ? new GroundItem(inventoryLog.getId(), 1).owner(player).position(player.getPosition()).spawn() : groundItem;
 
             player.getMovement().reset();
             player.sendFilteredMessage("You attempt to light the logs.");
