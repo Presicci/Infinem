@@ -504,6 +504,7 @@ public enum PickPocket {
     }
 
     private static boolean successful(Player player, PickPocket pickpocket) {
+        if (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) return true; // Trickster cannot fail
         return Random.get(100) <= chance(player, pickpocket.levelReq, pickpocket);
     }
 
