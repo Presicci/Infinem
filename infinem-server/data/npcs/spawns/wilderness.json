@@ -947,8 +947,8 @@
   {
     "name": "Zombie",
     "id": 47,
-    "x": 3157,
-    "y": 3665,
+    "x": 3154,
+    "y": 3664,
     "z": 0,
     "direction": "S",
     "walkRange": 2
@@ -983,8 +983,8 @@
   {
     "name": "Zombie",
     "id": 61,
-    "x": 3164,
-    "y": 3666,
+    "x": 3163,
+    "y": 3665,
     "z": 0,
     "direction": "S",
     "walkRange": 7
