@@ -16,6 +16,7 @@ import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
 import io.ruin.model.stat.StatType;
 import io.ruin.network.incoming.Incoming;
+import io.ruin.utility.DebugMessage;
 import io.ruin.utility.IdHolder;
 
 public class InterfaceOnGroundItemHandler {
@@ -142,6 +143,16 @@ public class InterfaceOnGroundItemHandler {
             return;
         player.getMovement().setCtrlRun(ctrlRun == 1);
         player.getRouteFinder().routeGroundItem(groundItem  , distance -> action(player, interfaceHash, slot, itemId, groundItem, distance));
+        if (player.debug) {
+            DebugMessage debug = new DebugMessage();
+            debug.add("groundItemId", groundItemId);
+            debug.add("id", itemId);
+            debug.add("slot", slot);
+            debug.add("x", x);
+            debug.add("y", y);
+            debug.add("hash", interfaceHash);
+            player.sendFilteredMessage("[InterOnGround] " + debug.toString());
+        }
     }
 
     private static void action(Player player, int interfaceHash, int slot, int itemId, GroundItem groundItem, int distance) {
