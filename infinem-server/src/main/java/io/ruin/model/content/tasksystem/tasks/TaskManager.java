@@ -95,6 +95,10 @@ public class TaskManager {
         doLookupByCategory(category, trigger, 1, true);
     }
 
+    public void doLookupByCategory(TaskCategory category, String trigger, int amount) {
+        doLookupByCategory(category, trigger, amount, true);
+    }
+
     public void doLookupByCategory(TaskCategory category, int amount, boolean incremental) {
         doLookupByCategory(category, "", amount, incremental);
     }
