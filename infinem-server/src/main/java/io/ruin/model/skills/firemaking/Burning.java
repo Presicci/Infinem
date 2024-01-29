@@ -140,8 +140,8 @@ public enum Burning {
 
             while (Random.get(100) > lightChance(player, burning)) {
                 if (groundLog.isRemoved()) {
-                    player.sendMessage("The logs you were trying to light have disappeared.");
                     player.resetAnimation();
+                    return;
                 } else if (attempts++ % 12 == 0) {
                     player.animate(animationId);
                     player.privateSound(2597);
@@ -157,7 +157,6 @@ public enum Burning {
             player.getRouteFinder().routeSelf();
             event.delay(1);
             if (groundLog == null) {
-                player.sendMessage("The logs you were trying to light have disappeared.");
                 player.resetAnimation();
             } else {
                 groundLog.remove();
