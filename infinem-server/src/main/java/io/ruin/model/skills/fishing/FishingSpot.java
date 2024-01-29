@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -227,7 +228,7 @@ public class FishingSpot {
                             player.getInventory().addOrDrop(c.id, amount);
                             player.getStats().addXp(StatType.Fishing, c.xp * anglerBonus(player), true);
                         }
-                        player.getTaskManager().doSkillItemLookup(c.id, amount);
+                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FISHCATCH, ItemDef.get(c.id).name, amount, true);
                         if (npc.getId() != MINNOWS)
                             PlayerCounter.TOTAL_FISH.increment(player, amount);
 
