@@ -41,6 +41,15 @@ public class PrifCityEntrance {
         return true;
     }
 
+    public static boolean prifSkillCheckNoMessage(Player player) {
+        for (StatType statType : SKILLS) {
+            if (player.getStats().get(statType).currentLevel < 70) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private static void entrance(Player player, Position pos) {
         player.startEvent(e -> {
             if (prifSkillCheck(player)) {
