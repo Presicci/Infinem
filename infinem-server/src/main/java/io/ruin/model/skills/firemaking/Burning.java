@@ -11,6 +11,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemGroundItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.ground.GroundItemAction;
@@ -150,9 +151,8 @@ public enum Burning {
                     event.delay(1);
                 }
             }
-
+            Position firePos = player.getPosition().copy();
             player.lock();
-            GameObject fire = new GameObject(burning.fireId, player.getAbsX(), player.getAbsY(), player.getPosition().getZ(), 10, 0);
             player.resetAnimation();
             player.getRouteFinder().routeSelf();
             event.delay(1);
@@ -165,6 +165,7 @@ public enum Burning {
                 player.getStats().addXp(StatType.Firemaking, burning.exp * pyromancerBonus(player), true);
                 burning.counter.increment(player, 1);
                 player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDef.get(burning.itemId).name);
+                GameObject fire = new GameObject(burning.fireId, firePos.getX(), firePos.getY(), firePos.getZ(), 10, 0);
                 createFire(burning, fire);
                 player.face(fire);
             }
