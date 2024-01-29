@@ -30,8 +30,8 @@ public enum MagicTeleportBounds {
     SENNTISTEN(new Bounds(3317, 3335, 3321, 3338, 0)),
     KHARYLL(new Bounds(3490, 3471, 3493, 3472, 0)),
     LASSAR(new Bounds(3004, 3470, 3007, 3473, 0)),
-    DAREEYAK(new Bounds(2965, 3964, 2969, 3697, 0)),
-    CARRALLANGAR(new Bounds(3162, 3663, 3164, 3665, 0)),
+    DAREEYAK(new Bounds(2966, 3693, 2970, 3697, 0)),
+    CARRALLANGAR(new Bounds(3156, 3666, 3159, 3669, 0)),
     ANNAKARL(new Bounds(3287, 3886, 3288, 3887, 0)),
     GHORROCK(new Bounds(2970, 3871, 2975, 3875, 0)),
 
