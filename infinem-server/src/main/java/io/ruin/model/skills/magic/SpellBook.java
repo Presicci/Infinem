@@ -165,23 +165,23 @@ public enum SpellBook {
     ARCEUUS(
             HomeTeleport.ARCEUUS,
             new TodoSpell("Basic Reanimation"),
-            new ArceuusTeleport(6, 10.0, new Bounds(1631, 3835, 1634, 3838, 0), Rune.LAW.toItem(1), Rune.EARTH.toItem(2)),  // Arceuus library
+            new ArceuusTeleport(6, 10.0, MagicTeleportBounds.ARCEUUS_LIBRARY.getBounds(), Rune.LAW.toItem(1), Rune.EARTH.toItem(2)),  // Arceuus library
             new TodoSpell("Adept Reanimation"),
             new TodoSpell("Expert Reanimation"),
             new TodoSpell("Master Reanimation"),
-            new ArceuusTeleport(17, 16.0, new Bounds(3108, 3350, 3109, 3351, 0), Rune.LAW.toItem(1), Rune.EARTH.toItem(1), Rune.WATER.toItem(1)),   // Draynor manor
+            new ArceuusTeleport(17, 16.0, MagicTeleportBounds.DRAYNOR_MANOR.getBounds(), Rune.LAW.toItem(1), Rune.EARTH.toItem(1), Rune.WATER.toItem(1)),   // Draynor manor
             new TodoSpell("Empty Slot"),
-            new ArceuusTeleport(28, 22.0, new Bounds(2979, 3509, 2980, 3510, 0), Rune.LAW.toItem(1), Rune.MIND.toItem(2)),  // Mind altar
+            new ArceuusTeleport(28, 22.0, MagicTeleportBounds.MIND_ALTAR.getBounds(), Rune.LAW.toItem(1), Rune.MIND.toItem(2)),  // Mind altar
             new ArceuusTeleport(34, 27.0, new Bounds(3084, 3489, 3088, 3492, 0), Rune.LAW.toItem(1), Rune.SOUL.toItem(1)),  // TODO respawn
-            new ArceuusTeleport(40, 30.0, new Bounds(3433, 3460, 3435, 3462, 0), Rune.LAW.toItem(1), Rune.SOUL.toItem(2)),  // Salve graveyard
-            new ArceuusTeleport(48, 50.0, new Bounds(3547, 3528, 3549, 3529, 0), Rune.LAW.toItem(1), Rune.EARTH.toItem(1), Rune.SOUL.toItem(1)),    // Frankenstrains castle
-            new ArceuusTeleport(61, 68.0, new Bounds(2499, 3291, 2501, 3292, 0), Rune.LAW.toItem(2), Rune.SOUL.toItem(2)),  // West ardy
-            new ArceuusTeleport(65, 74.0, new Bounds(3796, 2864, 3798, 2866, 0), Rune.LAW.toItem(1), Rune.SOUL.toItem(1), Rune.NATURE.toItem(1)),   // Harmony island
-            new ArceuusTeleport(71, 82.0, new Bounds(2979, 3763, 2981, 3763, 0), Rune.LAW.toItem(1), Rune.SOUL.toItem(1), Rune.BLOOD.toItem(1)),    // Cemetary TODO WARNING
+            new ArceuusTeleport(40, 30.0, MagicTeleportBounds.SALVE_GRAVEYARD.getBounds(), Rune.LAW.toItem(1), Rune.SOUL.toItem(2)),  // Salve graveyard
+            new ArceuusTeleport(48, 50.0, MagicTeleportBounds.FENKENSTRAINS_CASTLE.getBounds(), Rune.LAW.toItem(1), Rune.EARTH.toItem(1), Rune.SOUL.toItem(1)),    // Frankenstrains castle
+            new ArceuusTeleport(61, 68.0, MagicTeleportBounds.WEST_ARDOUGNE.getBounds(), Rune.LAW.toItem(2), Rune.SOUL.toItem(2)),  // West ardy
+            new ArceuusTeleport(65, 74.0, MagicTeleportBounds.HARMONY_ISLAND.getBounds(), Rune.LAW.toItem(1), Rune.SOUL.toItem(1), Rune.NATURE.toItem(1)),   // Harmony island
+            new ArceuusTeleport(71, 82.0, MagicTeleportBounds.CEMETARY.getBounds(), Rune.LAW.toItem(1), Rune.SOUL.toItem(1), Rune.BLOOD.toItem(1)),    // Cemetary TODO WARNING
             new TodoSpell("Resurrect Crops"),
-            new ArceuusTeleport(83, 90.0, new Bounds(3564, 3313, 3566, 3315, 0), Rune.LAW.toItem(2), Rune.SOUL.toItem(2), Rune.BLOOD.toItem(1)),    // Barrows
-            new ArceuusTeleport(90, 100.0, new Bounds(2768, 2702, 2769, 2704, 0), Rune.LAW.toItem(2), Rune.SOUL.toItem(2), Rune.BLOOD.toItem(2)),   // Ape atoll
-            new ArceuusTeleport(23, 19.0, new Bounds(1345, 3740, 1347, 3741, 0), Rune.LAW.toItem(1), Rune.EARTH.toItem(1), Rune.FIRE.toItem(1)),    // Battlefront
+            new ArceuusTeleport(83, 90.0, MagicTeleportBounds.BARROWS.getBounds(), Rune.LAW.toItem(2), Rune.SOUL.toItem(2), Rune.BLOOD.toItem(1)),    // Barrows
+            new ArceuusTeleport(90, 100.0, MagicTeleportBounds.APE_ATOLL_DUNGEON.getBounds(), Rune.LAW.toItem(2), Rune.SOUL.toItem(2), Rune.BLOOD.toItem(2)),   // Ape atoll
+            new ArceuusTeleport(23, 19.0, MagicTeleportBounds.BATTLEFRONT.getBounds(), Rune.LAW.toItem(1), Rune.EARTH.toItem(1), Rune.FIRE.toItem(1)),    // Battlefront
             new InferiorDemonbane(),
             new SuperiorDemonbane(),
             new DarkDemonbane(),

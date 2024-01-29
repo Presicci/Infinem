@@ -44,7 +44,19 @@ public enum MagicTeleportBounds {
     FISHING_GUILD(new Bounds(2609, 3390, 2614, 3393, 0)),
     CATHERBY(new Bounds(2801, 3447, 2804, 3451, 0)),
     ICE_PLATEAU(new Bounds(2972, 3938, 2975, 3940, 0)),
-    ;
+
+    // Arceuus Spellbook
+    ARCEUUS_LIBRARY(new Bounds(1631, 3835, 1634, 3838, 0)),
+    DRAYNOR_MANOR(new Bounds(3108, 3350, 3109, 3351, 0)),
+    BATTLEFRONT(new Bounds(1345, 3740, 1347, 3741, 0)),
+    MIND_ALTAR(new Bounds(2979, 3509, 2980, 3510, 0)),
+    SALVE_GRAVEYARD(new Bounds(3433, 3460, 3435, 3462, 0)),
+    FENKENSTRAINS_CASTLE(new Bounds(3547, 3528, 3549, 3529, 0)),
+    WEST_ARDOUGNE(new Bounds(2499, 3291, 2501, 3292, 0)),
+    HARMONY_ISLAND(new Bounds(3796, 2864, 3798, 2866, 0)),
+    CEMETARY(new Bounds(2979, 3763, 2981, 3763, 0)),
+    BARROWS(new Bounds(3564, 3313, 3566, 3315, 0)),
+    APE_ATOLL_DUNGEON(new Bounds(2768, 2702, 2769, 2704, 0));
 
     private final Bounds bounds;
 }
