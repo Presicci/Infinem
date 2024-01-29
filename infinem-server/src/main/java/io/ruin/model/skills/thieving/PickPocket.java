@@ -471,7 +471,12 @@ public enum PickPocket {
                                 player.getInventory().addOrDrop(pouchId, 1);
                                 hasGottenPouch = true;  // Prevents getting multiple pouches per pickpocket
                             } else {
-                                player.getInventory().addOrDrop(item);
+                                int noted = item.getDef().notedId;
+                                if (noted > 0 && player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
+                                    player.getInventory().addOrDrop(item.note());
+                                } else {
+                                    player.getInventory().addOrDrop(item);
+                                }
                                 player.getTaskManager().doSkillItemLookup(item);
                             }
                         }
@@ -488,7 +493,12 @@ public enum PickPocket {
                         if (item.getId() == 995 && pouchId != -1) {
                             player.getInventory().add(pouchId, 1);
                         } else {
-                            player.getInventory().add(item);
+                            int noted = item.getDef().notedId;
+                            if (noted > 0 && player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) {
+                                player.getInventory().addOrDrop(item.note());
+                            } else {
+                                player.getInventory().addOrDrop(item);
+                            }
                             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.PICKPOCKETLOOT, item.getDef().name, item.getAmount(), true);
                         }
                     }
