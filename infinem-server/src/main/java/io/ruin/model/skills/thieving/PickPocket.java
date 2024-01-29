@@ -15,6 +15,7 @@ import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.jewellery.DodgyNecklace;
+import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.ThievingSkillCape;
 import io.ruin.model.item.loot.LootItem;
@@ -437,6 +438,13 @@ public enum PickPocket {
                     agilityLevel -= 10;
                     thievingLevel -= 10;
                 }
+                // Rogue set effect
+                boolean rogueEffectActive = false;
+                if (Random.get() < getRogueEffectChance(player)) {
+                    ++additionalRolls;
+                    rogueEffectActive = true;
+                }
+
                 int pouchId = pickpocket.pouchId;
                 player.animate(881);
                 player.privateSound(2581);
@@ -456,7 +464,11 @@ public enum PickPocket {
                             }
                         }
                     }
-                    player.sendFilteredMessage("Your lightning-fast reactions allow you to steal " + (additionalRolls == 1 ? "double" : additionalRolls == 2 ? "triple" : "quadruple") + " the loot.");
+                    if (rogueEffectActive && additionalRolls == 1) {
+                        player.sendFilteredMessage("You pick the " + pickpocket.identifier + " pocket. Your outfit allows you to steal double loot.");
+                    } else {
+                        player.sendFilteredMessage("Your lightning-fast reactions allow you to steal " + (additionalRolls == 1 ? "double" : additionalRolls == 2 ? "triple" : additionalRolls == 3 ? "quadruple" : "quintuple") + " the loot.");
+                    }
                 } else {
                     player.sendFilteredMessage("You pick the " + pickpocket.identifier + " pocket.");
                     List<Item> items = lootTable.rollItems(true);
@@ -525,6 +537,15 @@ public enum PickPocket {
         if (!player.getEquipment().hasAtLeastOneOf(MAX_CAPES) && !ThievingSkillCape.wearsThievingCape(player) && !player.getEquipment().hasId(Items.HAM_CLOAK))
             return false;
         return player.getEquipment().hasId(Items.HAM_GLOVES) || player.getEquipment().hasId(Items.GLOVES_OF_SILENCE);
+    }
+
+    private static float getRogueEffectChance(Player player) {
+        float chance = 0;
+        Equipment equipment = player.getEquipment();
+        for (int id : Arrays.asList(Items.ROGUE_BOOTS, Items.ROGUE_GLOVES, Items.ROGUE_TOP, Items.ROGUE_TROUSERS, Items.ROGUE_MASK)) {
+            if (equipment.hasId(id)) chance += .2;
+        }
+        return chance;
     }
 
     static {
