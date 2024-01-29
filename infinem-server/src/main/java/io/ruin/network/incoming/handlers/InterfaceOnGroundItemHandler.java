@@ -49,7 +49,7 @@ public class InterfaceOnGroundItemHandler {
             int x = in.readLEShort();
             int ctrlRun = in.readByteS();
             int itemId = in.readLEShort();
-            int telegrabHash = 14286871;
+            int telegrabHash = 14286872;
             if(interfaceHash == telegrabHash) {
                 handleTelegrab(player, groundItemId, x, y, ctrlRun == 1);
             } else {
