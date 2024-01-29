@@ -2,6 +2,7 @@ package io.ruin.model.skills.hunter.creature;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
+import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -16,6 +17,7 @@ import io.ruin.model.skills.hunter.creature.impl.Bird;
 import io.ruin.model.skills.hunter.creature.impl.Chinchompa;
 import io.ruin.model.skills.hunter.traps.Trap;
 import io.ruin.model.skills.hunter.traps.TrapType;
+import io.ruin.model.skills.hunter.traps.impl.BoxTrap;
 import io.ruin.model.stat.StatType;
 import io.ruin.process.event.Event;
 import io.ruin.utility.Misc;
@@ -132,7 +134,9 @@ public abstract class Creature {
         ArrayList<Trap> viableTraps = new ArrayList<>();
         for (Player player : npc.localPlayers()) {
             player.traps.forEach(trap -> {
-                if (Random.get() > ignoreTrapChance(npc, trap) && isViableTrap(npc, trap))
+                if ((trap.getTrapType() instanceof BoxTrap && player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER) // Trickster skips the ignore trap chance for box traps
+                        || (Random.get() > ignoreTrapChance(npc, trap)))
+                        && isViableTrap(npc, trap))
                     viableTraps.add(trap);
             });
         }
