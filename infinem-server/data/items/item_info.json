@@ -109739,6 +109739,15 @@
     "hide_hair": false,
     "destroy": " I can buy another from a Slayer Master."
   },
+  { // Fairy mushroom
+    "id": 25102,
+    "tradeable": false,
+    "examine": "A squishy mushroom from a fairy ring.",
+    "weight": 0.002,
+    "protect_value": 1,
+    "equip_slot": 5,
+    "destroy": "You can get this item back by talking to the Sage near Lumbridge."
+  },
   { // Celestial ring (uncharged)
     "id": 25539,
     "tradeable": false,
@@ -110005,6 +110014,15 @@
     "melee_strength_bonus": 38,
     "weapon_type": "BULWARK",
     "two_handed": true
+  },
+  { // Globetrotter pendant
+    "id": 28765,
+    "tradeable": false,
+    "examine": "A pendant which can whisk you to all sorts of locations.",
+    "weight": 0.002,
+    "protect_value": 1,
+    "equip_slot": 2,
+    "destroy": "You can get this item back by talking to the Sage near Lumbridge."
   },
   { // Sage's greaves
     "id": 28771,
