@@ -24,7 +24,7 @@ public class AchievementGallery {
 
     private static final String[] BOX_NAMES = {"Basic", "Fancy", "Ornate"};
 
-    private static void openJewelleryBox(Player player, int level) {
+    public static void openJewelleryBox(Player player, int level) {
         if (level < 1 || level > BOX_NAMES.length) {
             return;
         }
@@ -41,6 +41,7 @@ public class AchievementGallery {
         // TODO Recent teleport handling, VB 2308
         for (Buildable b : Arrays.asList(BASIC_JEWELLERY_BOX, FANCY_JEWELLERY_BOX, ORNATE_JEWELLERY_BOX)) {
             ObjectAction.register(b.getBuiltObjects()[0], 2, (player, obj) -> {
+                player.removeTemporaryAttribute("GLOBETROTTER_JEWELLERY");
                 openJewelleryBox(player, b.getBuiltObjects()[0] - 29153);
             });
         }
@@ -97,7 +98,11 @@ public class AchievementGallery {
                 player.graphics(111, 92, 0);
                 player.publicSound(200);
                 event.delay(3);
-                player.getMovement().teleport(position.getX(), position.getY(), position.getZ());
+                player.getMovement().teleport(position);
+                if (player.hasTemporaryAttribute("GLOBETROTTER_JEWELLERY")) {
+                    player.putTemporaryAttribute("LAST_TELE", position);
+                    player.removeTemporaryAttribute("GLOBETROTTER_JEWELLERY");
+                }
             });
         }
         static {
