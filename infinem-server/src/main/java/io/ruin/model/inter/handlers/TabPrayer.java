@@ -107,38 +107,38 @@ public class TabPrayer {
         switch(player.getGameFrameId()) {
             case 161:
                 if(setup) {
-                    player.getPacketSender().sendInterface(77, 161, 73, 1);
+                    player.getPacketSender().sendInterface(77, 161, 84, 1);
                     player.getPacketSender().sendAccessMask(161, 56, -1, -1, 2);
                     player.getPacketSender().sendAccessMask(77, 4, 0, 28, 2);
                     player.getPacketSender().sendClientScript(915, "i", 5);
                 } else {
-                    player.getPacketSender().sendInterface(541, 161, 73, 1);
+                    player.getPacketSender().sendInterface(541, 161, 84, 1);
                     player.getPacketSender().sendAccessMask(161, 56, -1, -1, 2);
-                  //  checkPrayerSwap(player);
+                    //  checkPrayerSwap(player);
                 }
                 return;
             case 164:
                 if(setup) {
-                    player.getPacketSender().sendInterface(77, 164, 71, 1);
+                    player.getPacketSender().sendInterface(77, 164, 83, 1);
                     player.getPacketSender().sendAccessMask(164, 53, -1, -1, 2);
                     player.getPacketSender().sendAccessMask(77, 4, 0, 28, 2);
                     player.getPacketSender().sendClientScript(915, "i", 5);
                 } else {
-                    player.getPacketSender().sendInterface(541, 164, 71, 1);
+                    player.getPacketSender().sendInterface(541, 164, 83, 1);
                     player.getPacketSender().sendAccessMask(164, 53, -1, -1, 2);
-                  //  checkPrayerSwap(player);
+                    //  checkPrayerSwap(player);
                 }
                 return;
             default:
                 if(setup) {
-                    player.getPacketSender().sendInterface(77, 548, 71, 1);
+                    player.getPacketSender().sendInterface(77, 548, 80, 1);
                     player.getPacketSender().sendAccessMask(548, 52, -1, -1, 2);
                     player.getPacketSender().sendAccessMask(77, 4, 0, 28, 2);
                     player.getPacketSender().sendClientScript(915, "i", 5);
                 } else {
-                    player.getPacketSender().sendInterface(541, 548, 71, 1);
+                    player.getPacketSender().sendInterface(541, 548, 80, 1);
                     player.getPacketSender().sendAccessMask(548, 52, -1, -1, 2);
-                   // checkPrayerSwap(player);
+                    // checkPrayerSwap(player);
                 }
                 return;
         }
