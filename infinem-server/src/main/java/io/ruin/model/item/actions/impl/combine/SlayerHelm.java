@@ -133,8 +133,9 @@ public class SlayerHelm {
             ItemAction.registerEquipment(helm, "log", (player, item) -> KillCounter.openOwnSlayer(player));
             ItemAction.registerInventory(helm, "check", (player, item) -> SlayerMaster.checkTask(player));
         }
+        ItemAction.registerEquipment(ItemID.ENCHANTED_GEM, "partner", (player, item) -> player.sendMessage("Coop slayer is not available yet."));
         ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "check", (player, item) -> SlayerMaster.checkTask(player));
-        ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "activate", (player, item) -> SlayerMaster.checkTask(player));
+        ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "activate", (player, item) -> SlayerMaster.simpleDialogue(player));
         ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "log", (player, item) -> KillCounter.openOwnSlayer(player));
     }
 

@@ -6,8 +6,14 @@ import com.google.common.collect.RangeMap;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.ActionDialogue;
+import io.ruin.model.inter.dialogue.NPCDialogue;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.skills.slayer.master.Krystilia;
 import io.ruin.model.stat.StatType;
 
@@ -329,5 +335,97 @@ public class SlayerMaster {
                     + "<br>points:" + Config.SLAYER_POINTS.get(player)
             );
         player.getTaskManager().doLookupByUUID(31, 1);  // Check Your Slayer Task
+    }
+
+    private static int getMasterNPCId(Player player) {
+        int master = Config.SLAYER_MASTER.get(player);
+        switch (master) {
+            case 2:
+                return 402;
+            case 3:
+                return 403;
+            case 4:
+                return 404;
+            case 5:
+                return 6797;
+            case 6:
+                return 405;
+            case 7:
+                return 7663;
+            case 8:
+                return 8623;
+            case 9:
+                return 6798;
+            default:
+                return 401;
+        }
+    }
+
+    private static String getMasterLocation(Player player) {
+        int master = Config.SLAYER_MASTER.get(player);
+        switch (master) {
+            case 2:
+                return "in Canifis";
+            case 3:
+                return "in the Edgeville dungeon";
+            case 4:
+                return "in Zanaris";
+            case 5:
+            case 9:
+                return "in the Tree Gnome Stronghold";
+            case 6:
+                return "in Shilo Village";
+            case 7:
+                return "in Edgeville";
+            case 8:
+                return "atop Mount Karuulm";
+            default:
+                return "in Burthorpe or Lumbridge";
+        }
+    }
+
+    private static void simpleDialogueOptions(Player player, int npc) {
+        player.dialogue(
+                new OptionsDialogue(
+                        new Option("How am I doing so far?", new PlayerDialogue("How am I doing so far?"), new ActionDialogue(() -> {
+                            int task = Slayer.getTask(player);
+                            if (Slayer.getTask(player) > 0) {
+                                int amount = Slayer.getTaskAmount(player);
+                                String name = SlayerCreature.taskName(player, task);
+                                player.dialogue(
+                                        new NPCDialogue(npc, "You're currently assigned to kill " + name + "; only " + amount + " more to go."),
+                                        new ActionDialogue(() -> simpleDialogueOptions(player, npc))
+                                );
+                            } else {
+                                player.dialogue(
+                                        new NPCDialogue(npc, "You need something new to hunt. Come and see me when you can and I'll give you a new task."),
+                                        new ActionDialogue(() -> simpleDialogueOptions(player, npc))
+                                );
+                            }
+                        })),
+                        new Option("Who are you?", new PlayerDialogue("Who are you?"), new NPCDialogue(npc, "My name is " + NPCDef.get(npc).name + "; I'm a Slayer Master."),
+                                new ActionDialogue(() -> simpleDialogueOptions(player, npc))),
+                        new Option("Where are you?", new PlayerDialogue("Where are you?"), new NPCDialogue(npc, "You'll find me " + getMasterLocation(player) + ". I'll be here when you need a new task."),
+                                new ActionDialogue(() -> simpleDialogueOptions(player, npc))),
+                        new Option("Got any tips for me?", new PlayerDialogue("Got any tips for me?"), new ActionDialogue(() -> {
+                            int task = Slayer.getTask(player);
+                            SlayerCreature creature = SlayerCreature.lookup(task);
+                            if (Slayer.getTask(player) > 0) {
+                                player.dialogue(new NPCDialogue(npc, SlayerCreature.getTipFor(creature)), new ActionDialogue(() -> simpleDialogueOptions(player, npc)));
+                            } else {
+                                player.dialogue(new NPCDialogue(npc, "You need something new to hunt."), new ActionDialogue(() -> simpleDialogueOptions(player, npc)));
+                            }
+                        })),
+                        new Option("Nothing really.", () -> new PlayerDialogue("Nothing really."))
+                )
+        );
+    }
+
+    public static void simpleDialogue(Player player) {
+        int npc = getMasterNPCId(player);
+        player.dialogue(
+                new NPCDialogue(npc, "Hello there, [player name], what can I help you with?"),
+                new ActionDialogue(() -> simpleDialogueOptions(player, npc))
+        );
     }
 }
