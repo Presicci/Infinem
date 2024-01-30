@@ -45,6 +45,11 @@ public enum JewelleryTeleportBounds {
     CORPOREAL_BEAST(new Bounds(2967, 4382, 2969, 4385, 2)),
     TEARS_OF_GUTHIX(new Bounds(3242, 9498, 3246, 9501, 2)),
     WINTERTODT_CAMP(new Bounds(1623, 3935, 1625, 3939, 0)),
+
+    // Necklace of Passage
+    WIZARDS_TOWER(new Bounds(3112, 3176, 3115, 3180, 0)),
+    THE_OUTPOST(new Bounds(2431, 3346, 2433, 3349, 0)),
+    EAGLES_EYRIE(new Bounds(3403, 3156, 3408, 3159, 0)),
     ;
 
     private final Bounds bounds;

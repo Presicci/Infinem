@@ -1,7 +1,6 @@
 package io.ruin.model.item.actions.impl.jewellery;
 
 import io.ruin.model.item.actions.impl.jewellery.JeweleryTeleports.Teleport;
-import io.ruin.model.map.Bounds;
 
 public enum NecklaceOfPassage {
 
@@ -21,9 +20,9 @@ public enum NecklaceOfPassage {
 
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("necklace", false,
-                new Teleport("Wizard's Tower", new Bounds(3115, 3171, 3112, 3168, 0)),
-                new Teleport("The Outpost", new Bounds(2430, 3350, 2433, 3353, 0)),
-                new Teleport("Eagle's Eyrie", new Bounds(3404, 3156, 3406, 3158, 0))
+                new Teleport("Wizard's Tower", JewelleryTeleportBounds.WIZARDS_TOWER.getBounds()),
+                new Teleport("The Outpost", JewelleryTeleportBounds.THE_OUTPOST.getBounds()),
+                new Teleport("Eagle's Eyrie", JewelleryTeleportBounds.EAGLES_EYRIE.getBounds())
         );
         for(NecklaceOfPassage necklace : values())
             teleports.register(necklace.id, necklace.charges, necklace.replacementId);
