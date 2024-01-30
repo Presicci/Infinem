@@ -89,7 +89,7 @@ import java.util.Optional;
 public class RuneLite
 {
 	//public static final File RUNELITE_DIR = new File(System.getProperty("user.home"), ".Oblivian");
-	public static final File RUNELITE_DIR = new File(System.getProperty("user.home"), ".AssHole");
+	public static final File RUNELITE_DIR = new File(System.getProperty("user.home"), ".Infinem");
 	public static final File CACHE_DIR = new File(RUNELITE_DIR, "cache");
 	public static final File PLUGINS_DIR = new File(RUNELITE_DIR, "plugin-hub");
 	public static final File PROFILES_DIR = new File(RUNELITE_DIR, "profiles");
