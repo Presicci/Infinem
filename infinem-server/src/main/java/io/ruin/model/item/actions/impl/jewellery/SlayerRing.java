@@ -36,7 +36,8 @@ public enum SlayerRing {
                 new JeweleryTeleports.Teleport("Slayer Tower", JewelleryTeleportBounds.SLAYER_TOWER.getBounds()),
                 new JeweleryTeleports.Teleport("Fremennik Slayer Dungeon", JewelleryTeleportBounds.FREMENNIK_SLAYER_DUNGEON.getBounds()),
                 new JeweleryTeleports.Teleport("Stronghold Slayer Cave", JewelleryTeleportBounds.STRONGHOLD_SLAYER_CAVE.getBounds()),
-                new JeweleryTeleports.Teleport("Dark Beasts", JewelleryTeleportBounds.DARK_BEASTS.getBounds())
+                new JeweleryTeleports.Teleport("Dark Beasts", JewelleryTeleportBounds.DARK_BEASTS.getBounds()),
+                new JeweleryTeleports.Teleport("Tarn's Lair", JewelleryTeleportBounds.TARNS_LAIR.getBounds())
         );
         for(SlayerRing ring : values()) {
             teleports.register(ring.id, ring.charges, ring.replacementId);

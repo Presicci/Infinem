@@ -69,6 +69,7 @@ public enum JewelleryTeleportBounds {
     FREMENNIK_SLAYER_DUNGEON(new Bounds(2799, 9997, 2801, 10000, 0)),
     STRONGHOLD_SLAYER_CAVE(new Bounds(2432, 3420, 2434, 3422, 0)),
     DARK_BEASTS(new Bounds(2029, 4637, 2031, 4639, 0)),
+    TARNS_LAIR(new Bounds(3184, 4599, 3186, 4599, 0)),
 
     ;
 
