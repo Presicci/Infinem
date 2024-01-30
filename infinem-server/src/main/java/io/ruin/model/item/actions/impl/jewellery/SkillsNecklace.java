@@ -1,7 +1,5 @@
 package io.ruin.model.item.actions.impl.jewellery;
 
-import io.ruin.model.map.Bounds;
-
 public enum SkillsNecklace {
 
     SIX(11968, 6, 11970),
@@ -22,12 +20,12 @@ public enum SkillsNecklace {
 
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("necklace", false,
-                new JeweleryTeleports.Teleport("Fishing Guild", new Bounds(2610, 3390, 2612, 3392, 0)),
-                new JeweleryTeleports.Teleport("Mining Guild", new Bounds(3045, 9759, 3047, 9761, 0)),
-                new JeweleryTeleports.Teleport("Crafting Guild", new Bounds(2932, 3292, 2934, 3294, 0)),
-                new JeweleryTeleports.Teleport("Cooking Guild", new Bounds(3142, 3441, 3143, 3442, 0)),
-                new JeweleryTeleports.Teleport("Woodcutting Guild", new Bounds(1659, 3504, 1661, 3506, 0)),
-                new JeweleryTeleports.Teleport("Farming Guild", new Bounds(1248, 3719, 1249, 3720, 0))
+                new JeweleryTeleports.Teleport("Fishing Guild", JewelleryTeleportBounds.FISHING_GUILD.getBounds()),
+                new JeweleryTeleports.Teleport("Mining Guild", JewelleryTeleportBounds.MINING_GUILD.getBounds()),
+                new JeweleryTeleports.Teleport("Crafting Guild", JewelleryTeleportBounds.CRAFTING_GUILD.getBounds()),
+                new JeweleryTeleports.Teleport("Cooking Guild", JewelleryTeleportBounds.COOKING_GUILD.getBounds()),
+                new JeweleryTeleports.Teleport("Woodcutting Guild", JewelleryTeleportBounds.WOODCUTTING_GUILD.getBounds()),
+                new JeweleryTeleports.Teleport("Farming Guild", JewelleryTeleportBounds.FARMING_GUILD.getBounds())
         );
         for(SkillsNecklace necklace : values())
             teleports.register(necklace.id, necklace.charges, necklace.replacementId);

@@ -55,6 +55,15 @@ public enum JewelleryTeleportBounds {
     DUEL_ARENA(new Bounds(3313, 3233, 3317, 3236, 0)),
     CASTLE_WARS(new Bounds(2441, 3088, 2443, 3091, 0)),
     FEROX_ENCLAVE(new Bounds(3150, 3634, 3151, 3635, 0)),
+
+    // Skills Necklace
+    FISHING_GUILD(new Bounds(2610, 3390, 2614, 3393, 0)),
+    MINING_GUILD(new Bounds(3047, 9761, 3050, 9763, 0)),
+    CRAFTING_GUILD(new Bounds(2932, 3292, 2934, 3295, 0)),
+    COOKING_GUILD(new Bounds(3142, 3438, 3145, 3439, 0)),
+    WOODCUTTING_GUILD(new Bounds(1658, 3503, 1664, 3506, 0)),
+    FARMING_GUILD(new Bounds(1247, 3716, 1250, 3720, 0)),
+
     ;
 
     private final Bounds bounds;
