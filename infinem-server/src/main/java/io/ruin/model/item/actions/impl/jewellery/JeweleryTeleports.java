@@ -21,25 +21,26 @@ public class JeweleryTeleports {
         this.teleports = teleports;
     }
 
+    private void teleportDialogue(Player player, Item item, int charges, int replacementId) {
+        if(charges == 0) {
+            player.sendFilteredMessage("This " + type + " doesn't have any remaining charges.");
+            return;
+        }
+        player.sendFilteredMessage("You rub the " + type + "...");
+        Option[] options = new Option[teleports.length];
+        for(int i = 0; i < teleports.length; i++) {
+            Teleport teleport = teleports[i];
+            options[i] = new Option(teleport.name, () -> teleport.select(player, item, charges, replacementId, this));
+        }
+        player.dialogue(new OptionsDialogue("Where would you like to teleport to?", options));
+    }
+
     public void register(int id, int charges, int replacementId) {
-        ItemAction.registerInventory(id, "rub", (player, item) -> {
-            if(charges == 0) {
-                player.sendFilteredMessage("This " + type + " doesn't have any remaining charges.");
-                return;
-            }
-            player.sendFilteredMessage("You rub the " + type + "...");
-            Option[] options = new Option[teleports.length];
-            for(int i = 0; i < teleports.length; i++) {
-                Teleport teleport = teleports[i];
-                options[i] = new Option(teleport.name, () -> teleport.select(player, item, charges, replacementId, this));
-            }
-            player.dialogue(new OptionsDialogue("Where would you like to teleport to?", options));
-        });
-        for(Teleport teleport : teleports) {
-            if(charges == 0)
-                ItemAction.registerEquipment(id, "rub", (player, item) -> player.sendFilteredMessage("This " + type + " doesn't have any remaining charges."));
-            else
-                ItemAction.registerEquipment(id, teleport.name, (player, item) -> teleport.select(player, item, charges, replacementId, this));
+        ItemAction.registerInventory(id, "rub", (player, item) -> teleportDialogue(player, item, charges, replacementId));
+        if (charges == 0) ItemAction.registerEquipment(id, "rub", (player, item) -> player.sendFilteredMessage("This " + type + " doesn't have any remaining charges."));
+        else ItemAction.registerEquipment(id, "rub", (player, item) -> teleportDialogue(player, item, charges, replacementId));
+        for (Teleport teleport : teleports) {
+            if (charges > 0) ItemAction.registerEquipment(id, teleport.name, (player, item) -> teleport.select(player, item, charges, replacementId, this));
         }
     }
 
