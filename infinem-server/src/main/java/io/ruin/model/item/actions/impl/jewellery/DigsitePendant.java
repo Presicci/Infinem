@@ -1,7 +1,5 @@
 package io.ruin.model.item.actions.impl.jewellery;
 
-import io.ruin.model.map.Bounds;
-
 public enum DigsitePendant {
 
     FIVE(11194, 5, 11193),
@@ -20,9 +18,9 @@ public enum DigsitePendant {
 
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("pendant", false,
-                new JeweleryTeleports.Teleport("Digsite", new Bounds(3337, 3444, 3339, 3446, 0)),
-                new JeweleryTeleports.Teleport("House on the Hill", new Bounds(3763, 3868, 3765, 3870, 1)),
-                new JeweleryTeleports.Teleport("Lithkren", new Bounds(1566, 5073, 1569, 5076, 0))
+                new JeweleryTeleports.Teleport("Digsite", JewelleryTeleportBounds.DIGSITE.getBounds()),
+                new JeweleryTeleports.Teleport("House on the Hill", JewelleryTeleportBounds.HOUSE_ON_THE_HILL.getBounds()),
+                new JeweleryTeleports.Teleport("Lithkren", JewelleryTeleportBounds.LITHKREN.getBounds())
         );
         for(DigsitePendant pendant : values())
             teleports.register(pendant.id, pendant.charges, pendant.replacementId);

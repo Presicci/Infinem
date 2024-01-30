@@ -33,6 +33,11 @@ public enum JewelleryTeleportBounds {
     CHAMPIONS_GUILD(new Bounds(3189, 3366, 3192, 3369, 0)),
     EDGEVILLE_MONASTERY(new Bounds(3051, 3486, 3053, 3489, 0)),
     RANGING_GUILD(new Bounds(2653, 3439, 2656, 3443, 0)),
+
+    // Digsite Pendant
+    DIGSITE(new Bounds(3337, 3443, 3344, 3444, 0)),
+    HOUSE_ON_THE_HILL(new Bounds(3763, 3868, 3765, 3870, 1)),
+    LITHKREN(new Bounds(1565, 5072, 1570, 5077, 0)),
     ;
 
     private final Bounds bounds;
