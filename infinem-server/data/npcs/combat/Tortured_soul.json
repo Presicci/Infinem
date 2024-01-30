@@ -4,13 +4,13 @@
     "handler": "",
     //Combat Info
     "hitpoints": 51,
-    "aggressive_level": 118,
+    "aggressive_level": 0,
     "max_damage": 7,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 51.0,
-    "slayer_tasks": [ "Zombies" ],
+    "slayer_tasks": [ "Ghosts" ],
     //Combat Stats
     "attack": 52,
     "strength": 62,
