@@ -39,10 +39,10 @@ public enum AmuletOfGlory {
 
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("amulet", true,
-                new JeweleryTeleports.Teleport("Edgeville", 3087,3496, 0),
-                new JeweleryTeleports.Teleport("Karamja", 2918, 3176, 0),
-                new JeweleryTeleports.Teleport("Draynor Village", 3105, 3251, 0),
-                new JeweleryTeleports.Teleport("Al Kharid", 3293, 3163, 0)
+                new JeweleryTeleports.Teleport("Edgeville", JewelleryTeleportBounds.EDGEVILLE.getBounds()),
+                new JeweleryTeleports.Teleport("Karamja", JewelleryTeleportBounds.KARAMJA.getBounds()),
+                new JeweleryTeleports.Teleport("Draynor Village", JewelleryTeleportBounds.DRAYNOR_VILLAGE.getBounds()),
+                new JeweleryTeleports.Teleport("Al Kharid", JewelleryTeleportBounds.AL_KHARID.getBounds())
         );
         for(AmuletOfGlory glory : values())
             teleports.register(glory.id, glory.charges, glory.replacementId);
