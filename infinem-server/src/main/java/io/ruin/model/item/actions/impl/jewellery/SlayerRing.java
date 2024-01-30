@@ -39,12 +39,14 @@ public enum SlayerRing {
                 new JeweleryTeleports.Teleport("Dark Beasts", JewelleryTeleportBounds.DARK_BEASTS.getBounds()),
                 new JeweleryTeleports.Teleport("Tarn's Lair", JewelleryTeleportBounds.TARNS_LAIR.getBounds())
         );
+
         for(SlayerRing ring : values()) {
             teleports.register(ring.id, ring.charges, ring.replacementId);
+            ItemAction.registerInventory(ring.id, "check", (player, item) -> SlayerMaster.checkTask(player));
+            ItemAction.registerEquipment(ring.id, "master", (player, item) -> SlayerMaster.simpleDialogue(player));
+            ItemAction.registerEquipment(ring.id, "log", (player, item) -> KillCounter.openOwnSlayer(player));
             ItemAction.registerEquipment(ring.id, "check", (player, item) -> SlayerMaster.checkTask(player));
-            ItemAction.registerInventory(ring.id, "log", (player, item) -> KillCounter.openOwnSlayer(player));
-
+            ItemAction.registerEquipment(ring.id, "partner", (player, item) -> player.sendMessage("Coop slayer is not available yet."));
         }
     }
-
 }
