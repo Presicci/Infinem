@@ -16,22 +16,24 @@ public class TeleportToHouse extends Spell {
         registerClick(LVL_REQ, XP, true, RUNES, TeleportToHouse::teleport);
     }
 
-    private static boolean teleport(Player player, Integer i) {
+    public static boolean teleport(Player player, Integer i) {
         if (player.house == null) {
             player.sendMessage("You don't have a house to teleport to.");
             return false;
         }
-        if (player.isInOwnHouse()) {
+        boolean inside = i == 0 || i == 2;
+        if (player.isInOwnHouse() && inside) {
             player.sendMessage("You're already in your house!");
             return false;
         }
+        System.out.println(i);
         return player.getMovement().startTeleport(e -> {
             player.animate(714);
             player.graphics(111, 92, 0);
             player.publicSound(200);
             e.delay(2);
             player.getTaskManager().doLookupByUUID(147, 1); // Teleport Using Law Runes
-            if (Config.TELEPORT_INSIDE.get(player) == 0) {
+            if (inside)  {
                 player.house.buildAndEnter(player, false);
                 while (player.isLocked())
                     e.delay(1);
