@@ -61,7 +61,7 @@ public class OptionScroll {
     }
 
     public static void open(Player player, String title, boolean allowHotkeys, List<Option> options) {
-        open(player, title, false, options.toArray(new Option[options.size()]));
+        open(player, title, allowHotkeys, options.toArray(new Option[options.size()]));
     }
 
     static {
