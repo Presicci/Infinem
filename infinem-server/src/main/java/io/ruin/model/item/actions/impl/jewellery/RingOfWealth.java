@@ -48,10 +48,10 @@ public enum RingOfWealth {
 
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("ring", true,
-                new JeweleryTeleports.Teleport("Miscellania", new Bounds(2563, 3846, 2566, 3849, 0)),
-                new JeweleryTeleports.Teleport("Grand Exchange", new Bounds(3163, 3463, 3166, 3466, 0)),
-                new JeweleryTeleports.Teleport("Falador", new Bounds(3022, 3375, 3024, 3377, 0)),
-                new JeweleryTeleports.Teleport("Dondakan", new Bounds(2837, 10127, 2839, 10129, 0))
+                new JeweleryTeleports.Teleport("Miscellania", JewelleryTeleportBounds.MISCELLANIA.getBounds()),
+                new JeweleryTeleports.Teleport("Grand Exchange", JewelleryTeleportBounds.GRAND_EXCHANGE.getBounds()),
+                new JeweleryTeleports.Teleport("Falador", JewelleryTeleportBounds.FALADOR.getBounds()),
+                new JeweleryTeleports.Teleport("Dondakan", JewelleryTeleportBounds.DONDAKAN.getBounds())
         );
         for(RingOfWealth ring : values()) {
             /**

@@ -18,7 +18,10 @@ public enum JewelleryTeleportBounds {
     AL_KHARID(new Bounds(3291, 3162, 3295, 3163, 0)),
 
     // Ring of Wealth
-
+    MISCELLANIA(new Bounds(2535, 3860, 2538, 3863, 0)),
+    GRAND_EXCHANGE(new Bounds(3162, 3478, 3167, 3479, 0)),
+    FALADOR(new Bounds(2994, 3374, 2997, 3376, 0)),
+    DONDAKAN(new Bounds(2829, 10164, 2833, 10167, 0)),
     ;
 
     private final Bounds bounds;
