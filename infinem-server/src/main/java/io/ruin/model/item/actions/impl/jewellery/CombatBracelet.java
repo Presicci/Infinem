@@ -22,10 +22,10 @@ public enum CombatBracelet {
 
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("bracelet", false,
-                new JeweleryTeleports.Teleport("Warrior's Guild", new Bounds(2880, 3545, 2882, 3547, 0)),
-                new JeweleryTeleports.Teleport("Champion's Guild", new Bounds(3190, 3366, 3192, 3368, 0)),
-                new JeweleryTeleports.Teleport("Edgeville Monastery", new Bounds(3053, 3489, 3053, 3492, 0)),
-                new JeweleryTeleports.Teleport("Ranging Guild", new Bounds(2653, 3440, 2655, 3442, 0))
+                new JeweleryTeleports.Teleport("Warrior's Guild", JewelleryTeleportBounds.WARRIORS_GUILD.getBounds()),
+                new JeweleryTeleports.Teleport("Champion's Guild", JewelleryTeleportBounds.CHAMPIONS_GUILD.getBounds()),
+                new JeweleryTeleports.Teleport("Edgeville Monastery", JewelleryTeleportBounds.EDGEVILLE_MONASTERY.getBounds()),
+                new JeweleryTeleports.Teleport("Ranging Guild", JewelleryTeleportBounds.RANGING_GUILD.getBounds())
         );
         for(CombatBracelet bracelet : values())
             teleports.register(bracelet.id, bracelet.charges, bracelet.replacementId);

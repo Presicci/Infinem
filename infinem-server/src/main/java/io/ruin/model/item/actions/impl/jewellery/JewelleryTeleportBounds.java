@@ -27,6 +27,12 @@ public enum JewelleryTeleportBounds {
     CHAOS_TEMPLE(new Bounds(3231, 3635, 3235, 3637, 0)),
     BANDIT_CAMP(new Bounds(3035, 3649, 3038, 3651, 0)),
     LAVA_MAZE(new Bounds(3026, 3837, 3029, 3840, 0)),
+
+    // Combat Bracelet
+    WARRIORS_GUILD(new Bounds(2881, 3548, 2884, 3551, 0)),
+    CHAMPIONS_GUILD(new Bounds(3189, 3366, 3192, 3369, 0)),
+    EDGEVILLE_MONASTERY(new Bounds(3051, 3486, 3053, 3489, 0)),
+    RANGING_GUILD(new Bounds(2653, 3439, 2656, 3443, 0)),
     ;
 
     private final Bounds bounds;
