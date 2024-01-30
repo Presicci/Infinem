@@ -85,7 +85,8 @@ public enum FairyRing { //todo add favorite option
 
     public static void teleport(Player player, FairyRing entry, GameObject fairyRing) {
         Item dramenStaff = player.getEquipment().findFirst(772, 9084);
-        if(dramenStaff == null) {
+        boolean hasFairyMushroom = player.getEquipment().hasId(25102) || player.getInventory().hasId(25102);
+        if(dramenStaff == null && !hasFairyMushroom) {
             player.sendFilteredMessage("The fairy ring only works for those who wield fairy magic.");
             return;
         }
@@ -106,7 +107,7 @@ public enum FairyRing { //todo add favorite option
         }
         player.startEvent(event -> {
             player.lock();
-            if (!player.isAt(fairyRing.x, fairyRing.y) && fairyRing.id != Buildable.SPIRIT_TREE_AND_FAIRY_RING.getBuiltObjects()[0]) { // don't walk through the spirit treel ol
+            if (fairyRing != null && !player.isAt(fairyRing.x, fairyRing.y) && fairyRing.id != Buildable.SPIRIT_TREE_AND_FAIRY_RING.getBuiltObjects()[0]) { // don't walk through the spirit treel ol
                 player.stepAbs(fairyRing.x, fairyRing.y, StepType.FORCE_WALK);
                 event.delay(1);
             }
@@ -129,6 +130,8 @@ public enum FairyRing { //todo add favorite option
                 } else {
                     player.getMovement().teleport(entry.position);
                 }
+                if (player.hasTemporaryAttribute("FAIRYFLIGHT_RING"))  // Used so we can track last teleport for Fairy's Flight
+                    player.putTemporaryAttribute("FAIRY_LAST_TELE", entry.position);
             }
             player.animate(3266);
             event.delay(1);
@@ -140,7 +143,8 @@ public enum FairyRing { //todo add favorite option
 
     public static void openCombinationPanel(Player player, GameObject fairyRing) {
         Item dramenStaff = player.getEquipment().findFirst(772, 9084);
-        if(dramenStaff == null) {
+        boolean hasFairyMushroom = player.getEquipment().hasId(25102) || player.getInventory().hasId(25102);
+        if(dramenStaff == null && !hasFairyMushroom) {
             player.sendFilteredMessage("The fairy ring only works for those who wield fairy magic.");
             return;
         }
@@ -149,7 +153,8 @@ public enum FairyRing { //todo add favorite option
                 if (ring != null)
                     player.getPacketSender().sendString(Interface.FAIRY_RING_TRAVEL_LOG, ring.childId, (ring.targetName.equals("") ? "" : "<br>" + ring.targetName));
         }
-
+        if (fairyRing != null)  // Used so we can track last teleport for Fairy's Flight
+            player.removeTemporaryAttribute("FAIRYFLIGHT_RING");
         player.fairyRing = fairyRing;
         player.openInterface(InterfaceType.MAIN, Interface.FAIRY_RING_COMBINATION);
         player.openInterface(InterfaceType.INVENTORY, Interface.FAIRY_RING_TRAVEL_LOG);

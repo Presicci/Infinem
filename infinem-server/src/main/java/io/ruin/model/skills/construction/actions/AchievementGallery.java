@@ -8,6 +8,8 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.actions.impl.jewellery.JewelleryTeleportBounds;
+import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.PrayerAltar;
@@ -49,47 +51,47 @@ public class AchievementGallery {
 
     public enum JewelleryTeleport { // order is the same as slots in the interface!
         //Ring of dueling
-        DUEL_ARENA(3316,3234,0),
-        CASTLE_WARS(2441,3089,0),
-        CLAN_WARS(3365, 3162, 0),
+        DUEL_ARENA(JewelleryTeleportBounds.DUEL_ARENA.getBounds()),
+        CASTLE_WARS(JewelleryTeleportBounds.CASTLE_WARS.getBounds()),
+        FEROX_ENCLAVE(JewelleryTeleportBounds.FEROX_ENCLAVE.getBounds()),
 
         //Games necklace
-        BURTHORPE(2898,3545,0),
-        BARBARIAN_OUTPOST(2518,3570,0),
-        CORPOREAL_BEAST(2965,4382,2),
-        TEARS_OF_GUTHIX(3251,9516,2),
-        WINTERTODT_CAMP(1631,3945,0),
+        BURTHORPE(JewelleryTeleportBounds.BURTHORPE.getBounds()),
+        BARBARIAN_OUTPOST(JewelleryTeleportBounds.BARBARIAN_OUTPOST.getBounds()),
+        CORPOREAL_BEAST(JewelleryTeleportBounds.CORPOREAL_BEAST.getBounds()),
+        TEARS_OF_GUTHIX(JewelleryTeleportBounds.TEARS_OF_GUTHIX.getBounds()),
+        WINTERTODT_CAMP(JewelleryTeleportBounds.WINTERTODT_CAMP.getBounds()),
 
         //Combat bracelet
-        WARRIORS_GUILD(2878,3546,0),
-        CHAMPIONS_GUILD(3191,3364,0),
-        MONASTERY(3051,3499,0),
-        RANGING_GUILD(2656,3439,0),
+        WARRIORS_GUILD(JewelleryTeleportBounds.WARRIORS_GUILD.getBounds()),
+        CHAMPIONS_GUILD(JewelleryTeleportBounds.CHAMPIONS_GUILD.getBounds()),
+        MONASTERY(JewelleryTeleportBounds.EDGEVILLE_MONASTERY.getBounds()),
+        RANGING_GUILD(JewelleryTeleportBounds.RANGING_GUILD.getBounds()),
 
         //Skills necklace
-        FISHING_GUILD(2611,3392,0),
-        MINING_GUILD(3016,3339,0),
-        CRAFTING_GUILD(2933,3290,0),
-        COOKING_GUILD(3143,3442,0),
-        WOODCUTTING_GUILD(1659,3504,0),
-        FARMING_GUILD(1248, 3718, 0),
+        FISHING_GUILD(JewelleryTeleportBounds.FISHING_GUILD.getBounds()),
+        MINING_GUILD(JewelleryTeleportBounds.MINING_GUILD.getBounds()),
+        CRAFTING_GUILD(JewelleryTeleportBounds.CRAFTING_GUILD.getBounds()),
+        COOKING_GUILD(JewelleryTeleportBounds.COOKING_GUILD.getBounds()),
+        WOODCUTTING_GUILD(JewelleryTeleportBounds.WOODCUTTING_GUILD.getBounds()),
+        FARMING_GUILD(JewelleryTeleportBounds.FARMING_GUILD.getBounds()),
 
         //Ring of wealth
-        MISCELLANIA(2527,3859,0),
-        GRAND_EXCHANGE(3164,3464,0),
-        FALADOR_PARK(2995,3374,0),
-        DONDAKANS_ROCK(2819,10155,0),
+        MISCELLANIA(JewelleryTeleportBounds.MISCELLANIA.getBounds()),
+        GRAND_EXCHANGE(JewelleryTeleportBounds.GRAND_EXCHANGE.getBounds()),
+        FALADOR_PARK(JewelleryTeleportBounds.FALADOR.getBounds()),
+        DONDAKANS_ROCK(JewelleryTeleportBounds.DONDAKAN.getBounds()),
 
         //Amulet of glory
-        EDGEVILLE(3088,3490,0),
-        KARAMJA(2912,3171,0),
-        DRAYNOR_VILLAGE(3104,3249,0),
-        AL_KHARID(3292,3163,0);
+        EDGEVILLE(JewelleryTeleportBounds.EDGEVILLE.getBounds()),
+        KARAMJA(JewelleryTeleportBounds.KARAMJA.getBounds()),
+        DRAYNOR_VILLAGE(JewelleryTeleportBounds.DRAYNOR_VILLAGE.getBounds()),
+        AL_KHARID(JewelleryTeleportBounds.AL_KHARID.getBounds());
 
-        private Position position;
+        private final Bounds bounds;
 
-        JewelleryTeleport(int x, int y, int z) {
-            this.position = new Position(x,y,z);
+        JewelleryTeleport(Bounds bounds) {
+            this.bounds = bounds;
         }
 
         public void teleport(Player player) {
@@ -98,6 +100,7 @@ public class AchievementGallery {
                 player.graphics(111, 92, 0);
                 player.publicSound(200);
                 event.delay(3);
+                Position position = bounds.randomPosition();
                 player.getMovement().teleport(position);
                 if (player.hasTemporaryAttribute("GLOBETROTTER_JEWELLERY")) {
                     player.putTemporaryAttribute("LAST_TELE", position);

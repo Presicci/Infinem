@@ -1,13 +1,11 @@
 package io.ruin.model.map.object.actions.impl.transportation;
 
-import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
-import io.ruin.model.inter.dialogue.NPCDialogue;
-import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.farming.patch.PatchData;
 import io.ruin.model.skills.farming.patch.impl.SpiritTreePatch;
@@ -67,20 +65,37 @@ public class SpiritTree {
         return new Option(houseText, houseAction);
     }
 
+    public static void openFairysFlight(Player player) {
+        player.putTemporaryAttribute("FAIRYFLIGHT_TREE", 1);
+        OptionScroll.open(player, "Spirit Tree Locations", getOptions(player));
+    }
+
     public static void open(Player player) {
+        player.removeTemporaryAttribute("FAIRYFLIGHT_TREE");
         OptionScroll.open(player, "Spirit Tree Locations", getOptions(player));
     }
 
     private static void teleport(Player player, int x, int y, int z) {
-        player.getMovement().startTeleport(event -> {
-            player.animate(828);
-            player.dialogue(new ItemDialogue().one(6063, "You place your hands on the dry tough bark of the<br>" +
-                    "spirit tree, and feel a surge of energy run through<br>" +
-                    "your veins.").hideContinue());
-            event.delay(2);
-            player.closeDialogue();
-            player.getMovement().teleport(x,y,z);
-        });
+        if (player.hasTemporaryAttribute("FAIRYFLIGHT_TREE")) {
+            player.getMovement().startTeleport(e -> {
+                player.animate(3265, 30);
+                player.graphics(569);
+                e.delay(3);
+                player.getMovement().teleport(x, y, z);
+                player.putTemporaryAttribute("FAIRY_LAST_TELE", new Position(x, y, z));
+                player.removeTemporaryAttribute("FAIRYFLIGHT_TREE");
+            });
+        } else {
+            player.getMovement().startTeleport(event -> {
+                player.animate(828);
+                player.dialogue(new ItemDialogue().one(6063, "You place your hands on the dry tough bark of the<br>" +
+                        "spirit tree, and feel a surge of energy run through<br>" +
+                        "your veins.").hideContinue());
+                event.delay(2);
+                player.closeDialogue();
+                player.getMovement().teleport(x,y,z);
+            });
+        }
     }
 
     private static void houseTeleport(Player player) {
