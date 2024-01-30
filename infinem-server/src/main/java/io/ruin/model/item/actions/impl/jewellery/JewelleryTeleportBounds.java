@@ -22,6 +22,11 @@ public enum JewelleryTeleportBounds {
     GRAND_EXCHANGE(new Bounds(3162, 3478, 3167, 3479, 0)),
     FALADOR(new Bounds(2994, 3374, 2997, 3376, 0)),
     DONDAKAN(new Bounds(2829, 10164, 2833, 10167, 0)),
+
+    // Burning Amulet
+    CHAOS_TEMPLE(new Bounds(3231, 3635, 3235, 3637, 0)),
+    BANDIT_CAMP(new Bounds(3035, 3649, 3038, 3651, 0)),
+    LAVA_MAZE(new Bounds(3026, 3837, 3029, 3840, 0)),
     ;
 
     private final Bounds bounds;

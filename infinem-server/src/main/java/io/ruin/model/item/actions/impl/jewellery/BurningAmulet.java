@@ -18,9 +18,9 @@ public enum BurningAmulet {
 
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("amulet", false,
-                new JeweleryTeleports.Teleport("Chaos Temple", 3236, 3635, 0),
-                new JeweleryTeleports.Teleport("Bandit Camp", 3037, 3651, 0),
-                new JeweleryTeleports.Teleport("Lava Maze", 3030, 3841, 0)
+                new JeweleryTeleports.Teleport("Chaos Temple", JewelleryTeleportBounds.CHAOS_TEMPLE.getBounds()),
+                new JeweleryTeleports.Teleport("Bandit Camp", JewelleryTeleportBounds.BANDIT_CAMP.getBounds()),
+                new JeweleryTeleports.Teleport("Lava Maze", JewelleryTeleportBounds.LAVA_MAZE.getBounds())
         );
         for(BurningAmulet amulet : values())
             teleports.register(amulet.id, amulet.charges, amulet.replacementId);
