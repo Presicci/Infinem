@@ -23,8 +23,8 @@ public enum RingOfDueling {
 
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("ring", false,
-                new JeweleryTeleports.Teleport("Duel Arena", new Bounds(3313, 3232, 3318, 3237, 0)),
-                new JeweleryTeleports.Teleport("Castle Wars", new Bounds(2439, 3088, 2442, 3092, 0)),
+                new JeweleryTeleports.Teleport("Duel Arena", JewelleryTeleportBounds.DUEL_ARENA.getBounds()),
+                new JeweleryTeleports.Teleport("Castle Wars", JewelleryTeleportBounds.CASTLE_WARS.getBounds()),
                 new JeweleryTeleports.Teleport("Clan Wars", new Bounds(3387, 3158, 3390, 3161, 0))
         );
         for(RingOfDueling ring : values())

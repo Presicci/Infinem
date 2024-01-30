@@ -50,6 +50,11 @@ public enum JewelleryTeleportBounds {
     WIZARDS_TOWER(new Bounds(3112, 3176, 3115, 3180, 0)),
     THE_OUTPOST(new Bounds(2431, 3346, 2433, 3349, 0)),
     EAGLES_EYRIE(new Bounds(3403, 3156, 3408, 3159, 0)),
+
+    // Ring of Dueling
+    DUEL_ARENA(new Bounds(3313, 3233, 3317, 3236, 0)),
+    CASTLE_WARS(new Bounds(2441, 3088, 2443, 3091, 0)),
+    FEROX_ENCLAVE(new Bounds(3150, 3634, 3151, 3635, 0)),
     ;
 
     private final Bounds bounds;
