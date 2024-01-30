@@ -64,6 +64,12 @@ public enum JewelleryTeleportBounds {
     WOODCUTTING_GUILD(new Bounds(1658, 3503, 1664, 3506, 0)),
     FARMING_GUILD(new Bounds(1247, 3716, 1250, 3720, 0)),
 
+    // Slayer Ring
+    SLAYER_TOWER(new Bounds(3422, 3535, 3424, 3537, 0)),
+    FREMENNIK_SLAYER_DUNGEON(new Bounds(2799, 9997, 2801, 10000, 0)),
+    STRONGHOLD_SLAYER_CAVE(new Bounds(2432, 3420, 2434, 3422, 0)),
+    DARK_BEASTS(new Bounds(2029, 4637, 2031, 4639, 0)),
+
     ;
 
     private final Bounds bounds;

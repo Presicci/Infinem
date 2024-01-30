@@ -2,7 +2,6 @@ package io.ruin.model.item.actions.impl.jewellery;
 
 import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.item.actions.ItemAction;
-import io.ruin.model.map.Bounds;
 import io.ruin.model.skills.slayer.SlayerMaster;
 
 public enum SlayerRing {
@@ -34,10 +33,10 @@ public enum SlayerRing {
 
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("ring", false,
-                new JeweleryTeleports.Teleport("Slayer Tower", new Bounds(3428, 3545, 3429, 3535, 0)),
-                new JeweleryTeleports.Teleport("Fremennik Slayer Dungeon", 2794, 3615, 0),
-                new JeweleryTeleports.Teleport("Stronghold Slayer Cave", new Bounds(2433, 3421, 2435, 3423, 0)),
-                new JeweleryTeleports.Teleport("Dark Beasts", new Bounds(2025, 4635, 2027, 4637, 0))
+                new JeweleryTeleports.Teleport("Slayer Tower", JewelleryTeleportBounds.SLAYER_TOWER.getBounds()),
+                new JeweleryTeleports.Teleport("Fremennik Slayer Dungeon", JewelleryTeleportBounds.FREMENNIK_SLAYER_DUNGEON.getBounds()),
+                new JeweleryTeleports.Teleport("Stronghold Slayer Cave", JewelleryTeleportBounds.STRONGHOLD_SLAYER_CAVE.getBounds()),
+                new JeweleryTeleports.Teleport("Dark Beasts", JewelleryTeleportBounds.DARK_BEASTS.getBounds())
         );
         for(SlayerRing ring : values()) {
             teleports.register(ring.id, ring.charges, ring.replacementId);
