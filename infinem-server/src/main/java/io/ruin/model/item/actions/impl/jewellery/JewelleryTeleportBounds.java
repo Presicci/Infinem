@@ -38,6 +38,13 @@ public enum JewelleryTeleportBounds {
     DIGSITE(new Bounds(3337, 3443, 3344, 3444, 0)),
     HOUSE_ON_THE_HILL(new Bounds(3763, 3868, 3765, 3870, 1)),
     LITHKREN(new Bounds(1565, 5072, 1570, 5077, 0)),
+
+    // Games Necklace
+    BURTHORPE(new Bounds(2897, 3551, 2900, 3555, 0)),
+    BARBARIAN_OUTPOST(new Bounds(2518, 3570, 2520, 3572, 0)),
+    CORPOREAL_BEAST(new Bounds(2967, 4382, 2969, 4385, 2)),
+    TEARS_OF_GUTHIX(new Bounds(3242, 9498, 3246, 9501, 2)),
+    WINTERTODT_CAMP(new Bounds(1623, 3935, 1625, 3939, 0)),
     ;
 
     private final Bounds bounds;

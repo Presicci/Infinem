@@ -21,11 +21,11 @@ public enum GamesNecklace {
 
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("necklace", false,
-                new JeweleryTeleports.Teleport("Burthorpe", 2898, 3552, 0),
-                new JeweleryTeleports.Teleport("Barbarian Outpost", 2519, 3572, 0),
-                new JeweleryTeleports.Teleport("Corporeal Beast", 2968, 4383, 2),
-                new JeweleryTeleports.Teleport("Tears of Guthix", 3244, 9503, 2),
-                new JeweleryTeleports.Teleport("Wintertodt camp", 1627, 3941, 0)
+                new JeweleryTeleports.Teleport("Burthorpe", JewelleryTeleportBounds.BURTHORPE.getBounds()),
+                new JeweleryTeleports.Teleport("Barbarian Outpost", JewelleryTeleportBounds.BARBARIAN_OUTPOST.getBounds()),
+                new JeweleryTeleports.Teleport("Corporeal Beast", JewelleryTeleportBounds.CORPOREAL_BEAST.getBounds()),
+                new JeweleryTeleports.Teleport("Tears of Guthix", JewelleryTeleportBounds.TEARS_OF_GUTHIX.getBounds()),
+                new JeweleryTeleports.Teleport("Wintertodt Camp", JewelleryTeleportBounds.WINTERTODT_CAMP.getBounds())
         );
         for(GamesNecklace necklace : values())
             teleports.register(necklace.id, necklace.charges, necklace.replacementId);
