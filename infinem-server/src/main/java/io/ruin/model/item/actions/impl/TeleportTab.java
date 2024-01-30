@@ -90,9 +90,13 @@ public enum TeleportTab {
         });
     }
 
-    public static void houseTab(Player player, Item tab) {
+    public static void houseTab(Player player, Item tab, boolean inside) {
         if (player.house == null) {
             player.sendMessage("You don't have a house to teleport to.");
+            return;
+        }
+        if (player.isInOwnHouse() && inside) {
+            player.sendMessage("You're already in your house!");
             return;
         }
         player.getMovement().startTeleport(event -> {
@@ -105,7 +109,7 @@ public enum TeleportTab {
             player.animate(4071);
             player.graphics(678);
             event.delay(1);
-            if (Config.TELEPORT_INSIDE.get(player) == 0) {
+            if (inside) {
                 player.house.buildAndEnter(player, false);
                 while (player.isLocked())
                     event.delay(1);
@@ -120,7 +124,9 @@ public enum TeleportTab {
     static {
         for(TeleportTab tab : values())
             ItemAction.registerInventory(tab.id, "break", tab::teleport);
-        ItemAction.registerInventory(8013, "break", TeleportTab::houseTab);
+        ItemAction.registerInventory(8013, "break", (player, item) -> houseTab(player, item, Config.TELEPORT_INSIDE.get(player) == 0));
+        ItemAction.registerInventory(8013, "inside", (player, item) -> houseTab(player, item, true));
+        ItemAction.registerInventory(8013, "outside", (player, item) -> houseTab(player, item, false));
         ItemAction.registerInventory(4251, "empty", (player, item) -> {
             if (player.wildernessLevel <= 20) {
                 player.startEvent(e -> {
