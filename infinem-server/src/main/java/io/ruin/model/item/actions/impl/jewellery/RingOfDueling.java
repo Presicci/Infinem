@@ -1,7 +1,5 @@
 package io.ruin.model.item.actions.impl.jewellery;
 
-import io.ruin.model.map.Bounds;
-
 public enum RingOfDueling {
 
     EIGHT(2552, 8, 2554),
@@ -25,7 +23,7 @@ public enum RingOfDueling {
         JeweleryTeleports teleports = new JeweleryTeleports("ring", false,
                 new JeweleryTeleports.Teleport("Duel Arena", JewelleryTeleportBounds.DUEL_ARENA.getBounds()),
                 new JeweleryTeleports.Teleport("Castle Wars", JewelleryTeleportBounds.CASTLE_WARS.getBounds()),
-                new JeweleryTeleports.Teleport("Clan Wars", new Bounds(3387, 3158, 3390, 3161, 0))
+                new JeweleryTeleports.Teleport("Ferox Enclave", JewelleryTeleportBounds.FEROX_ENCLAVE.getBounds())
         );
         for(RingOfDueling ring : values())
             teleports.register(ring.id, ring.charges, ring.replacementId);
