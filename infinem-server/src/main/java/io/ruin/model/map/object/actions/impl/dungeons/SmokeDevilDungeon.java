@@ -40,31 +40,7 @@ public class SmokeDevilDungeon {
         /**
          * Boss room
          */
-        ObjectAction.register(535, 2378, 9452, 0, "use", (player, obj) -> {
-            if(player.smokeBossWarning) {
-                player.dialogue(
-                        new MessageDialogue(Color.DARK_RED.wrap("WARNING!") +
-                                "<br> This is the lair of the Smoke Devil boss. <br> Are you sure you want to enter?").lineHeight(24),
-                        new OptionsDialogue("Enter the boss area?",
-                                new Option("Yes.", () -> player.getMovement().teleport(2376, 9452)),
-                                new Option("Yes, and don't warn me again.", () -> {
-                                    player.getMovement().teleport(2376, 9452);
-                                    player.smokeBossWarning = false;
-                                }),
-                                new Option("No.", player::closeDialogue)
-                        )
-                );
-            } else {
-                player.getMovement().teleport(2376, 9452);
-            }
-        });
-        ObjectAction.register(535, 2378, 9452, 0, "peek", (player, obj) -> {
-            if(playerCount == 0)
-                player.sendFilteredMessage("You look inside the crevice and see no adventurers inside the cave.");
-            else
-                player.sendFilteredMessage("You look inside the crevice and see " + playerCount + " adventurer" + (playerCount == 1 ? "" : "s") + " inside the cave.");
-        });
-        ObjectAction.register(535, 2378, 9452, 0, "instance", (player, obj) -> InstanceDialogue.open(player, InstanceType.THERMONUCLEAR_SMOKE_DEVIL));
+        ObjectAction.register(535, 2378, 9452, 0, "use", (player, obj) -> InstanceDialogue.open(player, InstanceType.THERMONUCLEAR_SMOKE_DEVIL));
         ObjectAction.register(536, 2377, 9452, 0, "use", (player, obj) -> player.getMovement().teleport(2379, 9452));
 
         MapListener.registerBounds(DUNGEON_BOSS).onEnter(player -> playerCount++).onExit((player, logout) -> playerCount--);

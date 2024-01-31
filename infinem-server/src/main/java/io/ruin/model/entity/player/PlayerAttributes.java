@@ -173,8 +173,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public boolean krakenWarning = true;
 
-    @Expose public boolean smokeBossWarning = true;
-
     @Expose public boolean wyvernWarning = true;
 
     @Expose public int dragSetting = 5;
