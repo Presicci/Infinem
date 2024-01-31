@@ -29,10 +29,10 @@ public enum BossLairPeek {
         for (int region : regions) {
             count += Region.get(region).players.size();
         }
-        peek(player, actionText, count);
+        peekMessage(player, actionText, count);
     }
 
-    private static void peek(Player player, String actionText, int count) {
+    private static void peekMessage(Player player, String actionText, int count) {
         if (count == 0)
             player.sendMessage("You " + actionText + " nobody inside.");
         else if (count == 1)
@@ -58,10 +58,10 @@ public enum BossLairPeek {
     }
 
     BossLairPeek(int objectId, String option, int z, String actionText, int region) {
-        ObjectAction.register(objectId, option, (player, obj) -> peek(player, actionText, (int) Region.get(region).players.stream().filter(p -> p.getHeight() == z).count()));
+        ObjectAction.register(objectId, option, (player, obj) -> peekMessage(player, actionText, (int) Region.get(region).players.stream().filter(p -> p.getHeight() == z).count()));
     }
 
     BossLairPeek(int objectId, int option, int z, String actionText, int region) {
-        ObjectAction.register(objectId, option, (player, obj) -> peek(player, actionText, (int) Region.get(region).players.stream().filter(p -> p.getHeight() == z).count()));
+        ObjectAction.register(objectId, option, (player, obj) -> peekMessage(player, actionText, (int) Region.get(region).players.stream().filter(p -> p.getHeight() == z).count()));
     }
 }
