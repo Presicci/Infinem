@@ -22,12 +22,55 @@ public class GodwarsFollower {
     private static final int[] BANDOS_FOLLOWER = {2215, 2216, 2217, 2218, 2244, 2243, 2235, 2236, 2237, 2238, 2239, 2240, 2234, 2246,
             2245, 2249, 2248, 2247, 2241, 2241, 2242};
 
+    private static final String[] SARADOMIN_ITEM_NAMES = {
+            "saradomin",
+            "staff of light",
+            "hallowed",
+            "holy",
+            "justiciar",
+            "monk's robe",
+            "devout boots",
+            "ring of endurance"
+    };
+
+    private static final String[] ZAMORAK_ITEM_NAMES = {
+            "zamorak",
+            "staff of the dead",
+            "staff of light",
+            "staff of balance",
+            "dragon hunter lance",
+            "thammaron's sceptre",
+            "accursed sceptre",
+            "viggora's chainmace",
+            "ursine chainmace",
+            "inquisitor's",
+            "unholy",
+            "elder chaos",
+            "dagon'hai"
+    };
+
+    private static final String[] BANDOS_ITEM_NAMES = {
+            "bandos",
+            "ancient mace",
+            "book of war",
+            "guardian boots",
+            "war blessing"
+    };
+
+    private static final String[] ARMADYL_ITEM_NAMES = {
+            "armadyl",
+            "craw's bow",
+            "webweaver bow",
+            "book of law",
+            "honourable blessing"
+    };
+
     private static Bounds GODWARS = new Bounds(2816, 5249, 2943, 5375, -1);
 
-    private static final Predicate<ItemDef> ARMADYL_ITEM = def -> def.name.toLowerCase().contains("armadyl") || def.name.toLowerCase().equals("book of law") || def.name.toLowerCase().equals("honourable blessing");
-    private static final Predicate<ItemDef> SARADOMIN_ITEM = def -> def.name.toLowerCase().contains("saradomin") || def.name.toLowerCase().contains("holy") ||def.name.toLowerCase().contains("monk's ") && !def.name.toLowerCase().contains("unholy");
-    private static final Predicate<ItemDef> ZAMORAK_ITEM = def -> def.name.toLowerCase().contains("zamorak") || def.name.toLowerCase().contains("unholy") || def.name.toLowerCase().contains("staff of the dead");
-    private static final Predicate<ItemDef> BANDOS_ITEM = def -> def.name.toLowerCase().contains("bandos")  || def.name.toLowerCase().equals("book of war") || def.name.toLowerCase().equals("war blessing");
+    private static final Predicate<ItemDef> ARMADYL_ITEM = def -> Arrays.stream(ARMADYL_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
+    private static final Predicate<ItemDef> SARADOMIN_ITEM = def -> Arrays.stream(SARADOMIN_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
+    private static final Predicate<ItemDef> ZAMORAK_ITEM = def -> Arrays.stream(ZAMORAK_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
+     private static final Predicate<ItemDef> BANDOS_ITEM = def -> Arrays.stream(BANDOS_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
 
     static {
 
