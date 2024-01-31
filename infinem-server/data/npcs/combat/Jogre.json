@@ -1,6 +1,6 @@
 [
   { // Jogre (53)
-    "ids": [ 2094, 2234 ],
+    "ids": [ 2094 ],
     "handler": "",
     //Combat Info
     "hitpoints": 60,
@@ -9,8 +9,8 @@
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 60.0,
-    "slayer_tasks": [ "Ogres" ],
+    "slayer_xp": 0.0,
+    "slayer_tasks": [],
     //Combat Stats
     "attack": 43,
     "strength": 43,
@@ -18,11 +18,11 @@
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
-    "stab_attack": 22,
-    "slash_attack": 22,
+    "stab_attack": 0,
+    "slash_attack": 0,
     "crush_attack": 22,
-    "magic_attack": 22,
-    "ranged_attack": 22,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 0,
     "slash_defence": 0,
@@ -31,15 +31,58 @@
     "ranged_defence": 0,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
     "attack_ticks": 6,
     "death_ticks": 2,
-    "respawn_ticks": 50,
+    "respawn_ticks": 30,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 128,
     "defend_animation": 129,
     "death_animation": 131
+  },
+  { // Jogre (53)
+    "ids": [ 2234 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 70,
+    "aggressive_level": 106,
+    "max_damage": 8,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 0.0,
+    "slayer_tasks": [],
+    //Combat Stats
+    "attack": 46,
+    "strength": 48,
+    "defence": 43,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 22,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 6,
+    "death_ticks": 2,
+    "respawn_ticks": 25,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 2930,
+    "defend_animation": 2937,
+    "death_animation": 2938
   }
 ]
