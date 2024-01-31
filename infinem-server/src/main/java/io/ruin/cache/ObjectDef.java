@@ -278,9 +278,6 @@ public class ObjectDef {
             options[2] = null;
             options[3] = null;
             options[4] = null;
-        } else if (id == 30169) { // Dagannoth kings crack
-            options[0] = "Instance";
-            options[1] = "Peek";
         } else if (id == 1816) { // KBD Lever
             options[1] = "Instance";
             options[2] = "Commune";
