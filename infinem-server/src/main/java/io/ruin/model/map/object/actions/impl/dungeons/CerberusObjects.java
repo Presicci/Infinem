@@ -10,7 +10,7 @@ import io.ruin.model.map.MapListener;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
 
-public class Cerberus {
+public class CerberusObjects {
 
     private static int eastCount = 0;
     private static int westCount = 0;
