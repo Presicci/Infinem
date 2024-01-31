@@ -10,17 +10,18 @@ import io.ruin.model.item.Item;
 import io.ruin.model.map.Bounds;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.Predicate;
 
 public class GodwarsFollower {
 
-    private static final int[] ARMADYL_FOLLOWER = {3165, 3163, 3164, 3162, 3166, 3167, 3168, 3169, 3170, 3171, 3172, 3173, 3174,
-            3175, 3176, 3177, 3178, 3179, 3180, 3181, 3182, 3183};
-    private static final int[] SARADOMIN_FOLLOWER = {2206, 2208, 2207, 2205, 2213, 2214, 2210, 2212, 2209, 2211};
-    private static final int[] ZAMORAK_FOLLOWER = {3130, 3131, 3132, 3129, 3159, 3133, 3141, 3138, 484, 485, 486, 487, 3134, 5007,
-            3135, 3136, 3137, 3140, 3139, 3161, 3160};
-    private static final int[] BANDOS_FOLLOWER = {2215, 2216, 2217, 2218, 2244, 2243, 2235, 2236, 2237, 2238, 2239, 2240, 2234, 2246,
-            2245, 2249, 2248, 2247, 2241, 2241, 2242};
+    public static final List<Integer> ARMADYL_FOLLOWER = Arrays.asList(3165, 3163, 3164, 3162, 3166, 3167, 3168, 3169, 3170, 3171, 3172, 3173, 3174,
+            3175, 3176, 3177, 3178, 3179, 3180, 3181, 3182, 3183);
+    public static final List<Integer> SARADOMIN_FOLLOWER = Arrays.asList(2206, 2208, 2207, 2205, 2213, 2214, 2210, 2212, 2209, 2211);
+    public static final List<Integer> ZAMORAK_FOLLOWER = Arrays.asList(3130, 3131, 3132, 3129, 3159, 3133, 3141, 3138, 484, 485, 486, 487, 3134, 5007,
+            3135, 3136, 3137, 3140, 3139, 3161, 3160);
+    public static final List<Integer> BANDOS_FOLLOWER = Arrays.asList(2215, 2216, 2217, 2218, 2244, 2243, 2235, 2236, 2237, 2238, 2239, 2240, 2234, 2246,
+            2245, 2249, 2248, 2247, 2241, 2241, 2242);
 
     private static final String[] SARADOMIN_ITEM_NAMES = {
             "saradomin",
@@ -85,7 +86,7 @@ public class GodwarsFollower {
         /**
          * Armadyl
          */
-        SpawnListener.register(ARMADYL_FOLLOWER, npc -> {
+        SpawnListener.register(ARMADYL_FOLLOWER.stream().mapToInt(i -> i).toArray(), npc -> {
             if (npc.getPosition().inBounds(GODWARS)) {
                 npc.deathEndListener = (DeathListener.SimplePlayer) killer -> Config.GWD_ARMADYL_KC.set(killer.player, Config.GWD_ARMADYL_KC.get(killer.player) + 1);
                 if (npc.aggressionImmunity == null)
@@ -96,7 +97,7 @@ public class GodwarsFollower {
         /**
          * Saradomin
          */
-        SpawnListener.register(SARADOMIN_FOLLOWER, npc -> {
+        SpawnListener.register(SARADOMIN_FOLLOWER.stream().mapToInt(i -> i).toArray(), npc -> {
             if (npc.getPosition().inBounds(GODWARS)) {
                 npc.deathEndListener = (DeathListener.SimplePlayer) killer -> Config.GWD_SARADOMIN_KC.set(killer.player, Config.GWD_SARADOMIN_KC.get(killer.player) + 1);
                 if (npc.aggressionImmunity == null)
@@ -107,7 +108,7 @@ public class GodwarsFollower {
         /**
          * Zamorak
          */
-        SpawnListener.register(ZAMORAK_FOLLOWER, npc -> {
+        SpawnListener.register(ZAMORAK_FOLLOWER.stream().mapToInt(i -> i).toArray(), npc -> {
             if (npc.getPosition().inBounds(GODWARS)) {
                 npc.deathEndListener = (DeathListener.SimplePlayer) killer -> Config.GWD_ZAMORAK_KC.set(killer.player, Config.GWD_ZAMORAK_KC.get(killer.player) + 1);
                 if (npc.aggressionImmunity == null)
@@ -118,7 +119,7 @@ public class GodwarsFollower {
         /**
          * Bandos
          */
-        SpawnListener.register(BANDOS_FOLLOWER, npc -> {
+        SpawnListener.register(BANDOS_FOLLOWER.stream().mapToInt(i -> i).toArray(), npc -> {
             if (npc.getPosition().inBounds(GODWARS)) {
                 npc.deathEndListener = (DeathListener.SimplePlayer) killer -> Config.GWD_BANDOS_KC.set(killer.player, Config.GWD_BANDOS_KC.get(killer.player) + 1);
                 if (npc.aggressionImmunity == null)
