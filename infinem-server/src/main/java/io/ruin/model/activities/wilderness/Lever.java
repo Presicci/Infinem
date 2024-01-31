@@ -69,7 +69,7 @@ public class Lever {
          * KBD
          */
         ObjectAction.register(1816, 3067, 10253, 0, "pull", (player, obj) -> pull(player, obj, 2271, 4680, "...and teleport into the Dragon's Lair."));
-        ObjectAction.register(1816, 3067, 10253, 0, "instance", (player, obj) -> {
+        ObjectAction.register(1816, 3067, 10253, 0, "private", (player, obj) -> {
             if(player.getCombat().checkTb())
                 return;
             InstanceDialogue.open(player, InstanceType.KBD);
