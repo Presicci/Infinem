@@ -6,7 +6,7 @@
     "hitpoints": 70,
     "aggressive_level": 138,
     "max_damage": 8,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 70.0,
@@ -35,7 +35,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -49,7 +49,7 @@
     "hitpoints": 63,
     "aggressive_level": 142,
     "max_damage": 10,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 63.0,
@@ -78,7 +78,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -92,7 +92,7 @@
     "hitpoints": 67,
     "aggressive_level": 146,
     "max_damage": 10,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 67.0,
@@ -121,7 +121,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -129,13 +129,13 @@
     "death_animation": 6959
   },
   { // Aviansie (79)
-    "ids": [ 3170, 3179 ],
+    "ids": [ 3170 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
     "hitpoints": 83,
     "aggressive_level": 158,
     "max_damage": 9,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 83.0,
@@ -164,7 +164,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -172,13 +172,13 @@
     "death_animation": 6959
   },
   { // Aviansie (79)
-    "ids": [ 3170, 3179 ],
+    "ids": [ 3179 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
     "hitpoints": 77,
     "aggressive_level": 158,
     "max_damage": 11,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 77.0,
@@ -207,7 +207,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -221,7 +221,7 @@
     "hitpoints": 86,
     "aggressive_level": 166,
     "max_damage": 9,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 86.0,
@@ -250,7 +250,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -264,7 +264,7 @@
     "hitpoints": 86,
     "aggressive_level": 168,
     "max_damage": 10,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 86.0,
@@ -293,7 +293,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -307,7 +307,7 @@
     "hitpoints": 69,
     "aggressive_level": 178,
     "max_damage": 12,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 69.0,
@@ -336,7 +336,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -350,7 +350,7 @@
     "hitpoints": 95,
     "aggressive_level": 184,
     "max_damage": 10,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 95.0,
@@ -379,7 +379,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -393,7 +393,7 @@
     "hitpoints": 75,
     "aggressive_level": 188,
     "max_damage": 11,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 75.0,
@@ -422,7 +422,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -430,13 +430,13 @@
     "death_animation": 6959
   },
   { // Aviansie (97)
-    "ids": [ 3174, 3182 ],
+    "ids": [ 3174 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
     "hitpoints": 98,
     "aggressive_level": 194,
     "max_damage": 11,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 98.0,
@@ -465,7 +465,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -473,13 +473,13 @@
     "death_animation": 6959
   },
   { // Aviansie (97)
-    "ids": [ 3174, 3182 ],
+    "ids": [ 3182 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.armadyl.Aviansie",
     //Combat Info
     "hitpoints": 79,
     "aggressive_level": 194,
     "max_damage": 11,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 79.0,
@@ -508,7 +508,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -522,7 +522,7 @@
     "hitpoints": 115,
     "aggressive_level": 262,
     "max_damage": 15,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 115.0,
@@ -551,7 +551,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -565,7 +565,7 @@
     "hitpoints": 124,
     "aggressive_level": 274,
     "max_damage": 15,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 124.0,
@@ -594,7 +594,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
@@ -608,7 +608,7 @@
     "hitpoints": 139,
     "aggressive_level": 296,
     "max_damage": 16,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 139.0,
@@ -637,7 +637,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
