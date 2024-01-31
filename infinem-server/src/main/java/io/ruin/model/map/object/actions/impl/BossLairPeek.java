@@ -1,6 +1,8 @@
 package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Region;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -9,6 +11,14 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 11/29/2023
  */
 public enum BossLairPeek {
+    DAG_KINGS(30169, "peek", new OptionsDialogue("Peek which lair?",
+            new Option("Normal lair", (player) -> peek(player, "peek down and see", 11589)),
+            new Option("Slayer lair", (player) -> peek(player, "peek down and see", 11588))
+    )),
+    DAG_KINGS_LADDER(3831, 4, new OptionsDialogue("Peek which lair?",
+            new Option("Normal lair", (player) -> peek(player, "peek down and see", 11589)),
+            new Option("Slayer lair", (player) -> peek(player, "peek down and see", 11588))
+    )),
     MOLE_LAIR(12202, "look-inside", "look inside the hole and see", 6992, 6993),
     KALPHITE_LAIR(23609, 3, 0, "peek down and see", 13972),
     KALPHITE_LAIR_CRACK(29705, "peek", 0, "peek down and see", 13972),
@@ -37,6 +47,14 @@ public enum BossLairPeek {
 
     BossLairPeek(int objectId, int option, String actionText, int... regions) {
         ObjectAction.register(objectId, option, (player, obj) -> peek(player, actionText, regions));
+    }
+
+    BossLairPeek(int objectId, String option, OptionsDialogue dialogue) {
+        ObjectAction.register(objectId, option, (player, obj) -> player.dialogue(dialogue));
+    }
+
+    BossLairPeek(int objectId, int option, OptionsDialogue dialogue) {
+        ObjectAction.register(objectId, option, (player, obj) -> player.dialogue(dialogue));
     }
 
     BossLairPeek(int objectId, String option, int z, String actionText, int region) {
