@@ -7,6 +7,7 @@ import io.ruin.model.activities.combat.pvminstance.InstanceType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.Region;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -41,22 +42,11 @@ public class WaterbirthDungeon {
             climb(player, 2900, 4385, 0, false);
         }); // ladder to kings, slayer-only lair
 
-        ObjectAction peekAction = (player, obj) -> {
-            int regularCount = Region.get(11589).players.size();
-            int slayerCount = Region.get(11588).players.size();
-            if (regularCount == 0)
-                player.sendMessage("It doesn't look like there's anyone down in the regular lair.");
-            else
-                player.sendMessage("It looks like there " + (regularCount > 1 ? "are" : "is") + " " + regularCount + " adventurer" + (regularCount > 1 ? "s" : "") + " in the regular lair.");
+        ObjectAction.register(3831, 3, (player, obj) -> InstanceDialogue.open(player, InstanceType.DAGANNOTH_KINGS));
+        ObjectAction.register(3831, 1, (player, obj) -> Ladder.climb(player, new Position(2899, 4449, 0), false, true, false));
+        ObjectAction.register(3831, 2, (player, obj) -> Ladder.climb(player, new Position(2899, 4385, 0), false, true, false));
 
-            if (slayerCount == 0)
-                player.sendMessage("It doesn't look like there's anyone down in the slayer-only lair.");
-            else
-                player.sendMessage("It looks like there " + (slayerCount > 1 ? "are" : "is") + " " + slayerCount + " adventurer" + (slayerCount > 1 ? "s" : "") + " in the regular lair.");
-        };
-        ObjectAction.register(10230, 4, peekAction);
-        ObjectAction.register(30169, 1, (player, obj) -> InstanceDialogue.open(player, InstanceType.DAGANNOTH_KINGS));
-        ObjectAction.register(30169, 2, peekAction);
+
         ObjectAction.register(30170, 1, (player, obj) -> {
             player.step(0, player.getAbsY() > obj.y ? -2 : 2, StepType.FORCE_WALK);
         });
