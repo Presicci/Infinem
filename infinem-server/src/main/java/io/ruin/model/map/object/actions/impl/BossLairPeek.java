@@ -4,14 +4,19 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.Dialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Region;
 import io.ruin.model.map.object.actions.ObjectAction;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 11/29/2023
  */
 public enum BossLairPeek {
+    THERMONUCLEAR_SMOKE_DEVIL(535, "peek", "peek inside and see", new Bounds(2351, 9436, 2378, 9459, 0), 9363, 9619),
     KING_BLACK_DRAGON(1816, "commune", "feel", 9033),
     DAG_KINGS(30169, "peek", new OptionsDialogue("Peek which lair?",
             new Option("Normal lair", (player) -> peek(player, "peek down and see", 11589)),
@@ -25,6 +30,18 @@ public enum BossLairPeek {
     KALPHITE_LAIR(23609, 3, 0, "peek down and see", 13972),
     KALPHITE_LAIR_CRACK(29705, "peek", 0, "peek down and see", 13972),
     KALPHITE_LAIR_CREVICE(16465, "listen", 0, "listen through the crack and can hear", 13972);
+
+    private static void peek(Player player, String actionText, Bounds bounds, int... regions) {
+        Set<Player> players = new HashSet<>();
+        for (int region : regions) {
+            players.addAll(Region.get(region).players);
+        }
+        int count = 0;
+        for (Player p : players) {
+            if (bounds.inBounds(p)) ++count;
+        }
+        peekMessage(player, actionText, count);
+    }
 
     private static void peek(Player player, String actionText, int... regions) {
         int count = 0;
@@ -49,6 +66,10 @@ public enum BossLairPeek {
 
     BossLairPeek(int objectId, int option, String actionText, int... regions) {
         ObjectAction.register(objectId, option, (player, obj) -> peek(player, actionText, regions));
+    }
+
+    BossLairPeek(int objectId, String option, String actionText, Bounds bounds, int... regions) {
+        ObjectAction.register(objectId, option, (player, obj) -> peek(player, actionText, bounds, regions));
     }
 
     BossLairPeek(int objectId, String option, Dialogue dialogue) {
