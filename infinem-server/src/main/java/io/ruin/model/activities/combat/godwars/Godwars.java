@@ -10,7 +10,7 @@ import io.ruin.model.map.MapListener;
 public class Godwars {
 
     private static void enteredMain(Player player) {
-        player.openInterface(InterfaceType.PRIMARY_OVERLAY, Interface.GODWARS);
+        player.openInterface(InterfaceType.SECONDARY_OVERLAY, Interface.GODWARS);
     }
 
     private static void exitedMain(Player player, boolean logout) {
