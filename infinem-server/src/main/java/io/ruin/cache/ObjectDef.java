@@ -278,9 +278,6 @@ public class ObjectDef {
             options[2] = null;
             options[3] = null;
             options[4] = null;
-        } else if (id == 535) { // Thermonuclear smoke devil crevice
-            options[1] = "Instance";
-            options[2] = "Peek";
         } else if (id == 23104) { // Cerberus iron winch
             options[1] = "Instance";
             options[2] = "Peek";
