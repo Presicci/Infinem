@@ -6,7 +6,8 @@
     "y": 4384,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "GENERIC"
   },
   {
     "name": "Dagannoth Prime",
@@ -15,7 +16,8 @@
     "y": 4389,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "GENERIC"
   },
   {
     "name": "Dagannoth Rex",
@@ -24,7 +26,8 @@
     "y": 4381,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "GENERIC"
   },
   {
     "name": "Dagannoth Supreme",

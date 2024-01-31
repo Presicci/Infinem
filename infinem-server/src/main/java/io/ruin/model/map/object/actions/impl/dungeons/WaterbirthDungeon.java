@@ -16,20 +16,6 @@ import io.ruin.model.skills.slayer.Slayer;
 
 public class WaterbirthDungeon {
     static {
-        SpawnListener.register(new String[]{"dagannoth rex", "dagannoth prime", "dagannoth supreme"}, npc -> {
-            if (npc.getPosition().getRegion().id == 11588) {
-                npc.attackNpcListener = (player, npc1, message) -> {
-                    if (!Slayer.isTask(player, npc1)) {
-                        if (message)
-                            player.sendMessage(Color.TOMATO.wrap("You may only attack the Kings in this lair if you are on relevant slayer task."));
-                        return false;
-                    }
-                    return true;
-                };
-            }
-        });
-
-
         Tile.get(2543, 10143, 0, false).clipping = 0;
         Tile.get(2545, 10141, 0, false).clipping = 0;
         Tile.get(2545, 10145, 0, false).clipping = 0;
