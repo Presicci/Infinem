@@ -278,9 +278,6 @@ public class ObjectDef {
             options[2] = null;
             options[3] = null;
             options[4] = null;
-        } else if (id >= 26502 && id <= 26505) { // GWD boss doors
-            options[1] = "Instance";
-            options[2] = "Peek";
         } else if (id == 31621) { // pvm instance portal
             name = "Boss instance portal";
             options[0] = "Use";
