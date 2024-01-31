@@ -67,9 +67,9 @@ public class CerberusObjects {
         /**
          * Iron winch
          */
-        ObjectAction.register(23104, 1291, 1254, 0, "turn", (player, obj) -> turnWinch(player, 1240, 1226));
-        ObjectAction.register(23104, 1328, 1254, 0, "turn", (player, obj) -> turnWinch(player, 1368, 1226));
-        ObjectAction.register(23104, 1307, 1269, 0, "turn", (player, obj) -> turnWinch(player, 1304, 1290));
+        ObjectAction.register(23104, 1291, 1254, 0, "turn", (player, obj) -> InstanceDialogue.open(player, InstanceType.CERBERUS, () -> turnWinch(player, 1240, 1226)));
+        ObjectAction.register(23104, 1328, 1254, 0, "turn", (player, obj) -> InstanceDialogue.open(player, InstanceType.CERBERUS, () -> turnWinch(player, 1368, 1226)));
+        ObjectAction.register(23104, 1307, 1269, 0, "turn", (player, obj) -> InstanceDialogue.open(player, InstanceType.CERBERUS, () -> turnWinch(player, 1304, 1290)));
 
         ObjectAction.register(23104, 1291, 1254, 0, "peek", (player, obj) -> peekWinch(player, westCount));
         ObjectAction.register(23104, 1328, 1254, 0, "peek", (player, obj) -> peekWinch(player, eastCount));

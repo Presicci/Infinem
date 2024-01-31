@@ -27,6 +27,10 @@ public class InstanceDialogue {
         new InstanceDialogue(player, type).start();
     }
 
+    public static void open(Player player, InstanceType type, Runnable runnable) {
+        new InstanceDialogue(player, type).start(runnable);
+    }
+
     private Player player;
 
     private boolean lockedType;
@@ -48,11 +52,21 @@ public class InstanceDialogue {
     }
 
     public void start() {
+        start(null);
+    }
+
+    public void start(Runnable runnable) {
         if (PVMInstance.getByPlayer(player) == null) {
             player.dialogue(new OptionsDialogue(
                     new Option("Create an instance", this::createMenu),
                     new Option("Enter a friend's instance", this::enterFriend),
-                    new Option("Enter public encounter", () -> type.enterPublic(player)),
+                    new Option("Enter public encounter", () -> {
+                        if (runnable != null) {
+                            runnable.run();
+                        } else {
+                            type.enterPublic(player);
+                        }
+                    }),
                     new Option("Cancel")
             ).keepOpenWhenHit());
         } else {
@@ -60,7 +74,13 @@ public class InstanceDialogue {
                     new Option("Enter your instance", this::enterOwn),
                     new Option("Enter a friend's instance", this::enterFriend),
                     new Option("Create a new instance", this::replaceInstance),
-                    new Option("Enter public encounter", () -> type.enterPublic(player)),
+                    new Option("Enter public encounter", () -> {
+                        if (runnable != null) {
+                            runnable.run();
+                        } else {
+                            type.enterPublic(player);
+                        }
+                    }),
                     new Option("Cancel")
             ).keepOpenWhenHit());
         }
@@ -76,7 +96,7 @@ public class InstanceDialogue {
                     }
                     player.dialogue(new MessageDialogue("Instance destroyed. You may now create a new one."), new ActionDialogue(this::createMenu));
                 }),
-                new Option("Nevermind.", this::start)
+                new Option("Nevermind.", () -> start())
         ));
     }
 
@@ -85,7 +105,7 @@ public class InstanceDialogue {
                 new Option("Type: " + getInstanceTypeDisplay(), this::changeType),
                 new Option("Privacy: " + getPrivacyDisplay(), this::changePrivacy),
                 new Option("Create Instance", this::confirmCreation),
-                new Option("Cancel", this::start)
+                new Option("Cancel", () -> start())
         ));
     }
 
@@ -117,7 +137,7 @@ public class InstanceDialogue {
         else
             player.getInventory().remove(cost.getId(), cost.getAmount());
         PVMInstance instance = new PVMInstance(player, type, privacy, password);
-        player.dialogue(new MessageDialogue("Your instance has been created."), new ActionDialogue(this::start));
+        player.dialogue(new MessageDialogue("Your instance has been created."), new ActionDialogue(() -> start()));
     }
 
     private void changePrivacy() {
@@ -188,7 +208,7 @@ public class InstanceDialogue {
 
     private void enterFriend() {
         if (player.getGameMode().isIronMan()) {
-            player.dialogue(new MessageDialogue("Ironmen cannot enter other players' instances."), new ActionDialogue(this::start));
+            player.dialogue(new MessageDialogue("Ironmen cannot enter other players' instances."), new ActionDialogue(() -> start()));
             return;
         }
         player.nameInput("Enter friend's name:", name -> {
@@ -196,12 +216,12 @@ public class InstanceDialogue {
             if (instance == null) {
                 player.retryNameInput("Player not online or does not have an instance, try again:");
             } else if (lockedType && instance.getType() != type) {
-                player.dialogue(new MessageDialogue("You cannot enter " + name + "'s from here."), new ActionDialogue(this::start));
+                player.dialogue(new MessageDialogue("You cannot enter " + name + "'s from here."), new ActionDialogue(() -> start()));
             } else {
                 if (instance.getPrivacy() == InstancePrivacy.PUBLIC)
                     instance.enter(player);
                 else if (instance.getPrivacy() == InstancePrivacy.PRIVATE)
-                    player.dialogue(new MessageDialogue(name + "'s instance is set to private mode. No one may enter."), new ActionDialogue(this::start));
+                    player.dialogue(new MessageDialogue(name + "'s instance is set to private mode. No one may enter."), new ActionDialogue(() -> start()));
                 else if (instance.getPrivacy() == InstancePrivacy.PASSWORD) {
                     player.stringInput("Instance is password protected. Enter the password:", pass -> {
                         if (pass.equalsIgnoreCase(instance.getPassword()))
@@ -217,9 +237,9 @@ public class InstanceDialogue {
     private void enterOwn() {
         PVMInstance instance = PVMInstance.getByPlayer(player);
         if (instance == null) {
-            player.dialogue(new MessageDialogue("You do not have an instance. Use the create option to create one."), new ActionDialogue(this::start));
+            player.dialogue(new MessageDialogue("You do not have an instance. Use the create option to create one."), new ActionDialogue(() -> start()));
         } else if (lockedType && instance.getType() != type) {
-            player.dialogue(new MessageDialogue("You cannot enter your " + instance.getType().getName() + " instance from this location."), new ActionDialogue(this::start));
+            player.dialogue(new MessageDialogue("You cannot enter your " + instance.getType().getName() + " instance from this location."), new ActionDialogue(() -> start()));
         } else {
             instance.enter(player);
         }
