@@ -12,6 +12,7 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 11/29/2023
  */
 public enum BossLairPeek {
+    KING_BLACK_DRAGON(1816, "commune", "feel", 9033),
     DAG_KINGS(30169, "peek", new OptionsDialogue("Peek which lair?",
             new Option("Normal lair", (player) -> peek(player, "peek down and see", 11589)),
             new Option("Slayer lair", (player) -> peek(player, "peek down and see", 11588))
