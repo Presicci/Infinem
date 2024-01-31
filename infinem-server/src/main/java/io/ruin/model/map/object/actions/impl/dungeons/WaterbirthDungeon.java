@@ -7,6 +7,7 @@ import io.ruin.model.activities.combat.pvminstance.InstanceType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Region;
 import io.ruin.model.map.Tile;
@@ -20,14 +21,8 @@ public class WaterbirthDungeon {
         Tile.get(2545, 10141, 0, false).clipping = 0;
         Tile.get(2545, 10145, 0, false).clipping = 0;
 
-        ObjectAction.register(10230, 1, (player, object) ->  {
-            climb(player, 2900, 4449, 0, false);
-        }); // ladder to kings
-
-        ObjectAction.register(10230, 2, (player, object) ->  {
-            climb(player, 2900, 4385, 0, false);
-        }); // ladder to kings, slayer-only lair
-
+        // Kings ladder
+        Config.varpbit(11707, false).defaultValue(1);
         ObjectAction.register(3831, 3, (player, obj) -> InstanceDialogue.open(player, InstanceType.DAGANNOTH_KINGS));
         ObjectAction.register(3831, 1, (player, obj) -> Ladder.climb(player, new Position(2899, 4449, 0), false, true, false));
         ObjectAction.register(3831, 2, (player, obj) -> Ladder.climb(player, new Position(2899, 4385, 0), false, true, false));
