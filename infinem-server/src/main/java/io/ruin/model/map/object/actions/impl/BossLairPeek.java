@@ -1,5 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
+import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.Dialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -97,5 +98,25 @@ public enum BossLairPeek {
 
     BossLairPeek(int objectId, int option, int z, String actionText, int region) {
         ObjectAction.register(objectId, option, (player, obj) -> peekMessage(player, actionText, (int) Region.get(region).players.stream().filter(p -> p.getHeight() == z).count()));
+    }
+
+    static {
+        // These are NPCs for some reason, handle them here
+        // North
+        NPCAction.register(6479, "peek", (player, npc) -> {
+            if (npc.getAbsX() > 3040) { // East
+                peek(player, "gaze into the eye and see", new Bounds(3089, 4808, 3124, 4854, 0), 12362);
+            } else {    // West
+                peek(player, "gaze into the eye and see", new Bounds(2953, 4741, 2986, 4790, 0), 11850);
+            }
+        });
+        // South
+        NPCAction.register(6480, "peek", (player, npc) -> {
+            if (npc.getAbsX() > 3040) { // East
+                peek(player, "gaze into the eye and see", new Bounds(3093, 4743, 3128, 4789, 0), 12363);
+            } else {    // West
+                peek(player, "gaze into the eye and see", new Bounds(2961, 4802, 3001, 4855, 0), 11851);
+            }
+        });
     }
 }
