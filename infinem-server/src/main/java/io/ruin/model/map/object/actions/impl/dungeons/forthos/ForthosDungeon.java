@@ -1,6 +1,8 @@
 package io.ruin.model.map.object.actions.impl.dungeons.forthos;
 
 import io.ruin.cache.ItemDef;
+import io.ruin.model.activities.combat.pvminstance.InstanceDialogue;
+import io.ruin.model.activities.combat.pvminstance.InstanceType;
 import io.ruin.model.activities.wilderness.Web;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.StepType;
@@ -38,8 +40,18 @@ public class ForthosDungeon {
             }
         };
         // Sarachnis
-        ObjectAction.register(34858, 1, enterCrypt);
-        ObjectAction.register(34858, 2, (player, obj) -> enterSarachnisLair(player));
+        ObjectAction.register(34858, 1, (player, obj) -> {
+            if (player.getAbsY() == obj.y)
+                InstanceDialogue.open(player, InstanceType.SARACHNIS);
+            else
+                player.getMovement().teleport(1842, 9912, 0);
+        });
+        ObjectAction.register(34858, 2, (player, obj) -> {
+            if (player.getAbsY() == obj.y)
+                enterSarachnisLair(player);
+            else
+                player.getMovement().teleport(1842, 9912, 0);
+        });
         ObjectAction.register(34898, "slash", Web::slashWeb);
         // Gates
         ObjectAction.register(34843, "open", (player, obj) -> PassableDoor.passDoor(player, obj, Direction.WEST));
