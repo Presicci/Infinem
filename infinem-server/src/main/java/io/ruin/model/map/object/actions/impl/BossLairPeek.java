@@ -16,6 +16,10 @@ import java.util.Set;
  * Created on 11/29/2023
  */
 public enum BossLairPeek {
+    KREEARRA(26502, 3, "peek inside and see", new Bounds(2824, 5296, 2842, 5308, 2), 11346),
+    GRAARDOR(26503, 3, "peek inside and see", new Bounds(2864, 5351, 2876, 5369, 2), 11347),
+    ZILYANA(26504, 3, "peek inside and see", new Bounds(2889, 5258, 2907, 5275, 0), 11602),
+    KRIL(26505, 3, "peek inside and see", new Bounds(2918, 5318, 2936, 5331, 2), 11603),
     THERMONUCLEAR_SMOKE_DEVIL(535, "peek", "peek inside and see", new Bounds(2351, 9436, 2378, 9459, 0), 9363, 9619),
     KING_BLACK_DRAGON(1816, "commune", "feel", 9033),
     DAG_KINGS(30169, "peek", new OptionsDialogue("Peek which lair?",
@@ -69,6 +73,10 @@ public enum BossLairPeek {
     }
 
     BossLairPeek(int objectId, String option, String actionText, Bounds bounds, int... regions) {
+        ObjectAction.register(objectId, option, (player, obj) -> peek(player, actionText, bounds, regions));
+    }
+
+    BossLairPeek(int objectId, int option, String actionText, Bounds bounds, int... regions) {
         ObjectAction.register(objectId, option, (player, obj) -> peek(player, actionText, bounds, regions));
     }
 
