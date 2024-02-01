@@ -23,7 +23,7 @@ public class GodwarsFollower {
     public static final List<Integer> BANDOS_FOLLOWER = Arrays.asList(2215, 2216, 2217, 2218, 2244, 2243, 2235, 2236, 2237, 2238, 2239, 2240, 2234, 2246,
             2245, 2249, 2248, 2247, 2241, 2241, 2242);
 
-    private static final String[] SARADOMIN_ITEM_NAMES = {
+    public static final String[] SARADOMIN_ITEM_NAMES = {
             "saradomin",
             "staff of light",
             "hallowed",
@@ -34,7 +34,7 @@ public class GodwarsFollower {
             "ring of endurance"
     };
 
-    private static final String[] ZAMORAK_ITEM_NAMES = {
+    public static final String[] ZAMORAK_ITEM_NAMES = {
             "zamorak",
             "staff of the dead",
             "staff of light",
@@ -50,7 +50,7 @@ public class GodwarsFollower {
             "dagon'hai"
     };
 
-    private static final String[] BANDOS_ITEM_NAMES = {
+    public static final String[] BANDOS_ITEM_NAMES = {
             "bandos",
             "ancient mace",
             "book of war",
@@ -58,7 +58,7 @@ public class GodwarsFollower {
             "war blessing"
     };
 
-    private static final String[] ARMADYL_ITEM_NAMES = {
+    public static final String[] ARMADYL_ITEM_NAMES = {
             "armadyl",
             "craw's bow",
             "webweaver bow",
