@@ -132,7 +132,6 @@ public class PollManager {
             try {
                 final File file = new File("data/polls/answers/" + player.getName() + ".json");
                 if (!file.exists()) {
-                    System.out.println("not exist: " + file.getAbsolutePath());
                     return;
                 }
                 final BufferedReader br = new BufferedReader(new FileReader(file));
