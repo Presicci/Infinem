@@ -285,11 +285,6 @@ public abstract class PlayerAttributes extends Entity {
     public ArrayList<Trap> traps = new ArrayList<>(5);
 
     /**
-     * Godwars
-     */
-    public TickDelay godwarsAltarCooldown = new TickDelay();
-
-    /**
      * Slayer
      */
     @Expose public int slayerTasksCompleted;
