@@ -19,9 +19,9 @@ public class KrilTsutsaroth extends General {
 //    {"id": 3131, "x": 2921, "y": 5327, "walkRange": 3, "z": 2}, // Zakl'n Gritch
 
     public KrilTsutsaroth() {
-        super(new Lieutenant(3130, 9, 1, 5),
-                new Lieutenant(3131, 1, 1, 3),
-                new Lieutenant(3132, 3, -2, 5));
+        super(new Lieutenant(3130, 6, 2, 5),
+                new Lieutenant(3131, -3, -2, 3),
+                new Lieutenant(3132, 3, -3, 5));
     }
 
     @Override
