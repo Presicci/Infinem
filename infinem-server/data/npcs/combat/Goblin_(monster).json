@@ -1,9 +1,10 @@
 [
-  { // Goblin (2)
-    "ids": [ 3028, 3029, 2245, 2248, 3030, 3031, 3032, 3033, 3034, 3035, 3036, 3037, 3038, 3039, 3040, 3041, 3042, 3043, 3044, 3051, 3052, 3053, 3054, 5192, 5193, 5195, 5196, 5197, 5198, 5199, 5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208 ],
+  { // Goblin (2) - Unarmed
+    "ids": [ 3028, 3029, 3030, 3031, 3032, 3033, 3034, 3035, 3036, 3037, 3038, 3039, 3040, 3041, 3042, 3043, 3044, 3051, 3052, 3053, 3054,
+      5195, 5196, 5197, 5198, 5199, 5200, 5201, 5202, 5203 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 3,
+    "hitpoints": 5,
     "aggressive_level": 0,
     "max_damage": 1,
     "attack_style": "CRUSH",
@@ -20,7 +21,7 @@
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
-    "crush_attack": 0,
+    "crush_attack": -21,
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
@@ -31,11 +32,54 @@
     "ranged_defence": -15,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 35,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 6184,
+    "defend_animation": 6183,
+    "death_animation": 6182
+  },
+  { // Goblin (2)
+    "ids": [ 5192, 5193, 5204, 5205, 5206, 5207, 5208 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 5,
+    "aggressive_level": 0,
+    "max_damage": 1,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 5.0,
+    "slayer_tasks": [ "Goblins" ],
+    //Combat Stats
+    "attack": 3,
+    "strength": 1,
+    "defence": 4,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": -21,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": -15,
+    "slash_defence": -15,
+    "crush_defence": -15,
+    "magic_defence": -15,
+    "ranged_defence": -15,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 3,
+    "respawn_ticks": 35,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6184,
@@ -43,7 +87,12 @@
     "death_animation": 6182
   },
   { // Goblin (5)
-    "ids": [ 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 674, 677, 678, 2484, 3045, 3047, 3048, 3073, 3074, 3075, 3076 ],
+    "ids": [
+      655, 656, 657, 658, 659, 660, 661,  // Goblin village red
+      662, 663, 664, 665, 666, 667, 668,  // Goblin village green
+      674, 677, 678,
+      3045, 3047, 3048, 3073, 3074, 3075, 3076 // Regular goblins
+    ],
     "handler": "",
     //Combat Info
     "hitpoints": 5,
@@ -55,30 +104,73 @@
     "slayer_xp": 5.0,
     "slayer_tasks": [ "Goblins" ],
     //Combat Stats
-    "attack": 1,
+    "attack": 3,
     "strength": 1,
-    "defence": 1,
+    "defence": 4,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
-    "crush_attack": 0,
+    "crush_attack": 12,
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": -15,
-    "slash_defence": -15,
-    "crush_defence": -15,
-    "magic_defence": -15,
-    "ranged_defence": -15,
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
-    "attack_ticks": 4,
+    "attack_ticks": 6,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 35,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 6184,
+    "defend_animation": 6183,
+    "death_animation": 6182
+  },
+  { // Goblin (5) - Stronghold of Security
+    "ids": [ 2484 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 5,
+    "aggressive_level": 0,
+    "max_damage": 2,
+    "attack_style": "STAB",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 5.0,
+    "slayer_tasks": [ "Goblins" ],
+    //Combat Stats
+    "attack": 7,
+    "strength": 2,
+    "defence": 4,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 12,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 6,
+    "death_ticks": 3,
+    "respawn_ticks": 35,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6184,
@@ -117,7 +209,7 @@
     "ranged_defence": -15,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 2,
@@ -129,21 +221,21 @@
     "death_animation": -1
   },
   { // Goblin (12)
-    "ids": [ 2246, 2247 ],
+    "ids": [ 2246 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 3,
-    "aggressive_level": 0,
-    "max_damage": 3,
+    "hitpoints": 15,
+    "aggressive_level": 24,
+    "max_damage": 2,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 16.0,
+    "slayer_xp": 15.0,
     "slayer_tasks": [ "Goblins" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 12,
+    "strength": 6,
+    "defence": 13,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
@@ -153,16 +245,59 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": -15,
-    "slash_defence": -15,
-    "crush_defence": -15,
-    "magic_defence": -15,
-    "ranged_defence": -15,
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
-    "attack_ticks": 4,
+    "attack_ticks": 5,
+    "death_ticks": 3,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 6185,
+    "defend_animation": 6183,
+    "death_animation": 6182
+  },
+  { // Goblin (12) - Banner
+    "ids": [ 2247 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 3,
+    "aggressive_level": 0,
+    "max_damage": 2,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 3.0,
+    "slayer_tasks": [ "Goblins" ],
+    //Combat Stats
+    "attack": 15,
+    "strength": 6,
+    "defence": 19,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 5,
     "death_ticks": 3,
     "respawn_ticks": 50,
     //Animations
@@ -172,21 +307,21 @@
     "death_animation": 6182
   },
   { // Goblin (13)
-    "ids": [ 2249, 2485, 3046 ],
+    "ids": [ 2485, 3046 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 7,
+    "hitpoints": 16,
     "aggressive_level": 0,
-    "max_damage": 3,
+    "max_damage": 2,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 16.0,
     "slayer_tasks": [ "Goblins" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 12,
+    "strength": 13,
+    "defence": 7,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
@@ -196,16 +331,102 @@
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": -15,
-    "slash_defence": -15,
-    "crush_defence": -15,
-    "magic_defence": -15,
-    "ranged_defence": -15,
+    "stab_defence": 4,
+    "slash_defence": 6,
+    "crush_defence": 8,
+    "magic_defence": 4,
+    "ranged_defence": 4,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
+    "death_ticks": 3,
+    "respawn_ticks": 35,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 6185,
+    "defend_animation": 6183,
+    "death_animation": 6182
+  },
+  { // Goblin (13) - Godwars
+    "ids": [ 2249 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 13,
+    "aggressive_level": 26,
+    "max_damage": 2,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 13.0,
+    "slayer_tasks": [ "Goblins" ],
+    //Combat Stats
+    "attack": 11,
+    "strength": 6,
+    "defence": 20,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 5,
+    "death_ticks": 3,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 6185,
+    "defend_animation": 6183,
+    "death_animation": 6182
+  },
+  { // Goblin (15) - godwars
+    "ids": [ 2248 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 16,
+    "aggressive_level": 30,
+    "max_damage": 2,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 16.0,
+    "slayer_tasks": [ "Goblins" ],
+    //Combat Stats
+    "attack": 16,
+    "strength": 6,
+    "defence": 19,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 5,
     "death_ticks": 3,
     "respawn_ticks": 50,
     //Animations
@@ -218,8 +439,8 @@
     "ids": [ 7931 ],
     "handler": "io.ruin.model.combat.npc.Revenant",
     //Combat Info
-    "hitpoints": 15,
-    "aggressive_level": 32,
+    "hitpoints": 14,
+    "aggressive_level": 30,
     "max_damage": 3,
     "attack_style": "CRUSH",
     //Slayer Info
@@ -227,95 +448,95 @@
     "slayer_xp": 14.0,
     "slayer_tasks": [ "Ghosts", "Revenants" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
-    "ranged": 1,
-    "magic": 1,
+    "attack": 13,
+    "strength": 14,
+    "defence": 14,
+    "ranged": 15,
+    "magic": 12,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
-    "crush_attack": 0,
-    "magic_attack": 0,
-    "ranged_attack": 0,
+    "crush_attack": 6,
+    "magic_attack": 37,
+    "ranged_attack": 21,
     //Defensive Stats
-    "stab_defence": -15,
-    "slash_defence": -15,
-    "crush_defence": -15,
-    "magic_defence": -15,
-    "ranged_defence": -15,
+    "stab_defence": 25,
+    "slash_defence": 28,
+    "crush_defence": 31,
+    "magic_defence": 1,
+    "ranged_defence": 31,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
-    "attack_ticks": 4,
+    "attack_ticks": 5,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 83,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6184,
     "defend_animation": 6183,
     "death_animation": 6182
   },
-  { // Goblin (16)
+  { // Goblin (16) - stronghold of security
     "ids": [ 2487, 2489 ],
-    "handler": "",
-    //Combat Info
-    "hitpoints": 15,
-    "aggressive_level": 0,
-    "max_damage": 3,
-    "attack_style": "CRUSH",
-    //Slayer Info
-    "slayer_level": 1,
-    "slayer_xp": 16.0,
-    "slayer_tasks": [ "Goblins" ],
-    //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
-    "ranged": 1,
-    "magic": 1,
-    //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
-    "magic_attack": 0,
-    "ranged_attack": 0,
-    //Defensive Stats
-    "stab_defence": -15,
-    "slash_defence": -15,
-    "crush_defence": -15,
-    "magic_defence": -15,
-    "ranged_defence": -15,
-    //Immunites
-    "poison_immunity": false,
-    "venom_immunity": true,
-    //Speeds
-    "attack_ticks": 4,
-    "death_ticks": 3,
-    "respawn_ticks": 50,
-    //Animations
-    "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
-  },
-  { // Goblin (25)
-    "ids": [ 2488 ],
     "handler": "",
     //Combat Info
     "hitpoints": 22,
     "aggressive_level": 0,
     "max_damage": 3,
+    "attack_style": "STAB",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 22.0,
+    "slayer_tasks": [ "Goblins" ],
+    //Combat Stats
+    "attack": 13,
+    "strength": 11,
+    "defence": 14,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 22,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 0,
+    "slash_defence": 0,
+    "crush_defence": 0,
+    "magic_defence": 0,
+    "ranged_defence": 0,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 6,
+    "death_ticks": 3,
+    "respawn_ticks": 35,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 6185,
+    "defend_animation": 6183,
+    "death_animation": 6182
+  },
+  { // Goblin (17) - godwars
+    "ids": [ 2245 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 18,
+    "aggressive_level": 34,
+    "max_damage": 3,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 16.0,
+    "slayer_xp": 18.0,
     "slayer_tasks": [ "Goblins" ],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 14,
+    "strength": 16,
+    "defence": 14,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
@@ -332,15 +553,58 @@
     "ranged_defence": -15,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
-    "attack_ticks": 4,
+    "attack_ticks": 5,
     "death_ticks": 3,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 6185,
+    "defend_animation": 6183,
+    "death_animation": 6182
+  },
+  { // Goblin (25)
+    "ids": [ 2488 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 26,
+    "aggressive_level": 0,
+    "max_damage": 3,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 26.0,
+    "slayer_tasks": [ "Goblins" ],
+    //Combat Stats
+    "attack": 22,
+    "strength": 23,
+    "defence": 17,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 0,
+    "slash_attack": 0,
+    "crush_attack": 0,
+    "magic_attack": 0,
+    "ranged_attack": 0,
+    //Defensive Stats
+    "stab_defence": 14,
+    "slash_defence": 16,
+    "crush_defence": 18,
+    "magic_defence": 14,
+    "ranged_defence": 14,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 3,
+    "respawn_ticks": 35,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 6185,
+    "defend_animation": 6183,
+    "death_animation": 6182
   }
 ]
