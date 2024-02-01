@@ -6,7 +6,7 @@
     "hitpoints": 89,
     "aggressive_level": 226,
     "max_damage": 20,
-    "attack_style": "CRUSH",
+    "attack_style": "MAGIC",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
@@ -35,7 +35,7 @@
     //Speeds
     "attack_ticks": 5,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 811,
