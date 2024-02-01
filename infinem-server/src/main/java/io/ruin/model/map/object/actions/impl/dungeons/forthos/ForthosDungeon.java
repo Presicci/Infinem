@@ -26,13 +26,6 @@ public class ForthosDungeon {
     private static final int KNIFE = 946;
 
     static {
-        ObjectAction peekAction = (player, obj) -> {
-            int regularCount = Region.get(7322).players.size() - 1;
-            if (regularCount <= 0)
-                player.sendMessage("You listen and hear no adventurers inside the crypt.");
-            else
-                player.sendMessage("You listen and hear " + regularCount + " adventurer" + (regularCount > 1 ? "s" : "") + " inside the crypt.");
-        };
         ObjectAction enterCrypt = (player, obj) -> {
             if (player.getAbsY() == 9912) {
                 player.dialogue(
@@ -45,7 +38,6 @@ public class ForthosDungeon {
             }
         };
         // Sarachnis
-        ObjectAction.register(34898, 2, peekAction);
         ObjectAction.register(34858, 1, enterCrypt);
         ObjectAction.register(34858, 2, (player, obj) -> enterSarachnisLair(player));
         ObjectAction.register(34898, "slash", Web::slashWeb);
