@@ -20,6 +20,7 @@ public enum BossLairPeek {
     GRAARDOR(26503, 3, "peek inside and see", new Bounds(2864, 5351, 2876, 5369, 2), 11347),
     ZILYANA(26504, 3, "peek inside and see", new Bounds(2889, 5258, 2907, 5275, 0), 11602),
     KRIL(26505, 3, "peek inside and see", new Bounds(2918, 5318, 2936, 5331, 2), 11603),
+    CORPOREAL_BEAST(677, "peek", "peek inside and see", new Bounds(2974, 4372, 2998, 4396, 2), 13213),
     THERMONUCLEAR_SMOKE_DEVIL(535, "peek", "peek inside and see", new Bounds(2351, 9436, 2378, 9459, 0), 9363, 9619),
     KING_BLACK_DRAGON(1816, "commune", "feel", 9033),
     DAG_KINGS(30169, "peek", new OptionsDialogue("Peek which lair?",
