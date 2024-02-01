@@ -49,7 +49,7 @@
     "hitpoints": 116,
     "aggressive_level": 254,
     "max_damage": 13,
-    "attack_style": "CRUSH",
+    "attack_style": "STAB",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 116.0,
@@ -92,7 +92,7 @@
     "hitpoints": 150,
     "aggressive_level": 254,
     "max_damage": 13,
-    "attack_style": "CRUSH",
+    "attack_style": "STAB",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 150.0,
