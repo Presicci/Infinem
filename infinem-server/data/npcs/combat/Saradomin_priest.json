@@ -21,8 +21,8 @@
     "stab_attack": 9,
     "slash_attack": 9,
     "crush_attack": 9,
-    "magic_attack": 9,
-    "ranged_attack": 9,
+    "magic_attack": 0,
+    "ranged_attack": 0
     //Defensive Stats
     "stab_defence": 12,
     "slash_defence": 14,
