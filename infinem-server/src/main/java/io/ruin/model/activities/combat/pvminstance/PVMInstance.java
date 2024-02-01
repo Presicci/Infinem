@@ -2,19 +2,19 @@ package io.ruin.model.activities.combat.pvminstance;
 
 import io.ruin.cache.Color;
 import io.ruin.model.World;
+import io.ruin.model.activities.combat.godwars.GodwarsBossEntrance;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DeathListener;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.map.MapListener;
 import io.ruin.model.map.Position;
-import io.ruin.model.map.Tile;
 import io.ruin.model.map.dynamic.DynamicMap;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.skills.farming.patch.PatchData;
 import io.ruin.model.skills.farming.patch.impl.HesporiPatch;
 import io.ruin.services.Loggers;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -135,6 +135,10 @@ public class PVMInstance {
     }
 
     public void enter(Player player) {
+        Config godwarsConfig = type.getGodwarsConfig();
+        if (ownerId != player.getUserId() && godwarsConfig != null && !GodwarsBossEntrance.enter(player, godwarsConfig, type.getGodwarsGodName())) {
+            return;
+        }
         playersInside++;
         player.currentInstance = this;
         if (type == InstanceType.HESPORI) {

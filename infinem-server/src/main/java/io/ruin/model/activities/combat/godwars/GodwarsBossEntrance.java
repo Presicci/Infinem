@@ -32,7 +32,19 @@ public class GodwarsBossEntrance {
         }
     }
 
-    private static boolean enterThroughDoor(Player player, Config config, String name) {
+    public static boolean canEnter(Player player, Config config, String name) {
+        Item key = player.getInventory().findItem(ECUMENICAL_KEY);
+        if (key != null) {
+            return true;
+        }
+        int requiredKC = kcRequirement(player);
+        if (config.get(player) >= requiredKC) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean enter(Player player, Config config, String name) {
         Item key = player.getInventory().findItem(ECUMENICAL_KEY);
         if (key != null) {
             key.remove();
@@ -56,52 +68,46 @@ public class GodwarsBossEntrance {
         /**
          * Zamorak
          */
-        ObjectAction.register(26505, "open", (player, obj) -> {
-            if(player.isAt(2925, 5333) && enterThroughDoor(player, Config.GWD_ZAMORAK_KC, "Zamorak")) {
-                player.getMovement().teleport(2925, 5331, 2);
-            } else if(player.getAbsY() < obj.y) {
+        ObjectAction.register(26505, 1, (player, obj) -> {
+            if (player.isAt(2925, 5333)) {
+                InstanceDialogue.open(player, InstanceType.ZAMORAK_GWD);
+            } else if (player.getAbsY() < obj.y) {
                 player.getMovement().teleport(2925, 5333, 2);
             }
         });
-        ObjectAction.register(26505, 2925, 5332, 2, "instance", (player, obj) -> InstanceDialogue.open(player, InstanceType.ZAMORAK_GWD));
 
-            /**
-             * Bandos
-             */
-        ObjectAction.register(26503, "open", (player, obj) -> {
-            if(player.isAt(2862, 5354) && enterThroughDoor(player, Config.GWD_BANDOS_KC, "Bandos")) {
-                player.getMovement().teleport(2864, 5354, 2);
-            } else if(player.getAbsX() > obj.x) {
+        /**
+         * Bandos
+         */
+        ObjectAction.register(26503, 1, (player, obj) -> {
+            if (player.isAt(2862, 5354)) {
+                InstanceDialogue.open(player, InstanceType.BANDOS_GWD);
+            } else if (player.getAbsX() > obj.x) {
                 player.getMovement().teleport(2862, 5354, 2);
             }
         });
-        ObjectAction.register(26503, 2863, 5354, 2, "instance", (player, obj) -> InstanceDialogue.open(player, InstanceType.BANDOS_GWD));
 
 
-            /**
-             * Saradomin
-             */
-        ObjectAction.register(26504, "open", (player, obj) -> {
-            if(player.isAt(2909, 5265) && enterThroughDoor(player, Config.GWD_SARADOMIN_KC, "Saradomin")) {
-                player.getMovement().teleport(2907, 5265, 0);
-            } else if(player.getAbsX() < obj.x) {
+        /**
+         * Saradomin
+         */
+        ObjectAction.register(26504, 1, (player, obj) -> {
+            if (player.isAt(2909, 5265)) {
+                InstanceDialogue.open(player, InstanceType.SARADOMIN_GWD);
+            } else if (player.getAbsX() < obj.x) {
                 player.getMovement().teleport(2909, 5265, 0);
             }
         });
-        ObjectAction.register(26504, 2908, 5265, 0, "instance", (player, obj) -> InstanceDialogue.open(player, InstanceType.SARADOMIN_GWD));
 
         /**
          * Armadyl
          */
-        ObjectAction.register(26502, "open", (player, obj) -> {
-            if(player.isAt(2839, 5294) && enterThroughDoor(player, Config.GWD_ARMADYL_KC, "Armadyl")) {
-                player.getMovement().teleport(2839, 5296, 2);
-            } else if(player.getAbsY() > obj.y) {
+        ObjectAction.register(26502, 1, (player, obj) -> {
+            if (player.isAt(2839, 5294)) {
+                InstanceDialogue.open(player, InstanceType.ARMADYL_GWD);
+            } else if (player.getAbsY() > obj.y) {
                 player.getMovement().teleport(2839, 5294, 2);
             }
         });
-        ObjectAction.register(26502, 2839, 5295, 2, "instance", (player, obj) -> InstanceDialogue.open(player, InstanceType.ARMADYL_GWD));
-
-        }
-
+    }
 }

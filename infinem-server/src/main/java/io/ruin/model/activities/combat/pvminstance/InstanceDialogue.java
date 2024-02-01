@@ -2,12 +2,14 @@ package io.ruin.model.activities.combat.pvminstance;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.Color;
+import io.ruin.model.activities.combat.godwars.GodwarsBossEntrance;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ActionDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.inter.handlers.OptionScroll;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 
@@ -101,6 +103,11 @@ public class InstanceDialogue {
     }
 
     private void createMenu() {
+        Config godwarsConfig = type.getGodwarsConfig();
+        if (godwarsConfig != null && !GodwarsBossEntrance.canEnter(player, godwarsConfig, type.getGodwarsGodName())) {
+            player.dialogue(new MessageDialogue("You lack the required " + type.getGodwarsGodName() + " killcount to create this instance."), new ActionDialogue(() -> start()));
+            return;
+        }
         player.dialogue(new OptionsDialogue(
                 new Option("Type: " + getInstanceTypeDisplay(), this::changeType),
                 new Option("Privacy: " + getPrivacyDisplay(), this::changePrivacy),
@@ -131,6 +138,11 @@ public class InstanceDialogue {
             } else {
                 fromBank = true;
             }
+        }
+        Config godwarsConfig = type.getGodwarsConfig();
+        if (godwarsConfig != null && !GodwarsBossEntrance.enter(player, godwarsConfig, type.getGodwarsGodName())) {
+            player.dialogue(new MessageDialogue("You lack the required " + type.getGodwarsGodName() + " killcount to create this instance."), new ActionDialogue(() -> start()));
+            return;
         }
         if (fromBank)
             player.getBank().remove(cost.getId(), cost.getAmount());
