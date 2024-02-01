@@ -174,7 +174,7 @@ public class PlayerNPCUpdater {
         maskBuffer.addByte(maskData);
         for(UpdateMask updateMask : npc.getMasks()) {
             if((maskData & updateMask.get(false)) != 0) {
-                System.out.println("NPC mask " + maskData + " for " + npc + " type " + updateMask);
+                //System.out.println("NPC mask " + maskData + " for " + npc + " type " + updateMask);
                 updateMask.send(maskBuffer, false);
                 updateMask.setSent(true);
             }
