@@ -3,10 +3,10 @@
     "ids": [ 3160 ],
     "handler": "io.ruin.model.activities.combat.godwars.combat.zamorak.ZamorakSpiritualRanger",
     //Combat Info
-    "hitpoints": 120,
+    "hitpoints": 106,
     "aggressive_level": 236,
-    "max_damage": 16,
-    "attack_style": "CRUSH",
+    "max_damage": 15,
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 63,
     "slayer_xp": 106.0,
@@ -35,7 +35,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 426,
@@ -49,7 +49,7 @@
     "hitpoints": 106,
     "aggressive_level": 244,
     "max_damage": 16,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 63,
     "slayer_xp": 106.0,
@@ -78,7 +78,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 426,
@@ -92,7 +92,7 @@
     "hitpoints": 131,
     "aggressive_level": 230,
     "max_damage": 13,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 63,
     "slayer_xp": 131.0,
@@ -121,7 +121,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 4320,
@@ -138,7 +138,7 @@
     "attack_style": "RANGED",
     //Slayer Info
     "slayer_level": 63,
-    "slayer_xp": 120.0,
+    "slayer_xp": 89.0,
     "slayer_tasks": [ "Spiritual Creatures" ],
     //Combat Stats
     "attack": 1,
@@ -164,7 +164,7 @@
     //Speeds
     "attack_ticks": 3,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
