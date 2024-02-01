@@ -5,12 +5,12 @@
     //Combat Info
     "hitpoints": 106,
     "aggressive_level": 242,
-    "max_damage": 15,
-    "attack_style": "CRUSH",
+    "max_damage": 17,
+    "attack_style": "MAGIC",
     //Slayer Info
     "slayer_level": 83,
     "slayer_xp": 106,
-    "slayer_tasks": [ "Spiritual Creatures", "Spiritual Creatures" ],
+    "slayer_tasks": [ "Spiritual Creatures" ],
     //Combat Stats
     "attack": 1,
     "strength": 1,
@@ -33,9 +33,9 @@
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
-    "attack_ticks": 4,
+    "attack_ticks": 5,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 4320,
@@ -49,11 +49,11 @@
     "hitpoints": 85,
     "aggressive_level": 240,
     "max_damage": 20,
-    "attack_style": "CRUSH",
+    "attack_style": "MAGIC",
     //Slayer Info
     "slayer_level": 83,
     "slayer_xp": 85.0,
-    "slayer_tasks": [ "Spiritual Creatures", "Spiritual Creatures" ],
+    "slayer_tasks": [ "Spiritual Creatures" ],
     //Combat Stats
     "attack": 1,
     "strength": 1,
@@ -78,7 +78,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 811,
@@ -92,11 +92,11 @@
     "hitpoints": 75,
     "aggressive_level": 242,
     "max_damage": 19,
-    "attack_style": "CRUSH",
+    "attack_style": "MAGIC",
     //Slayer Info
     "slayer_level": 83,
     "slayer_xp": 75.0,
-    "slayer_tasks": [ "Spiritual Creatures", "Spiritual Creatures" ],
+    "slayer_tasks": [ "Spiritual Creatures" ],
     //Combat Stats
     "attack": 1,
     "strength": 1,
@@ -121,7 +121,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 811,
@@ -135,7 +135,7 @@
     "hitpoints": 75,
     "aggressive_level": 244,
     "max_damage": 17,
-    "attack_style": "CRUSH",
+    "attack_style": "MAGIC",
     //Slayer Info
     "slayer_level": 83,
     "slayer_xp": 75.0,
@@ -162,9 +162,9 @@
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
-    "attack_ticks": 4,
+    "attack_ticks": 3,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 6956,
