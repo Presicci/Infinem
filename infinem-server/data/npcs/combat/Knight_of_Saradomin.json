@@ -34,7 +34,7 @@
     "venom_immunity": false,
     //Speeds
     "attack_ticks": 6,
-    "death_ticks": 5,
+    "death_ticks": 3,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
@@ -55,7 +55,7 @@
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 70,
+    "attack": 75,
     "strength": 85,
     "defence": 70,
     "ranged": 1,
@@ -77,7 +77,7 @@
     "venom_immunity": false,
     //Speeds
     "attack_ticks": 6,
-    "death_ticks": 5,
+    "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
