@@ -10,13 +10,53 @@ import io.ruin.model.map.object.actions.impl.locations.prifddinas.PrifCityEntran
 import io.ruin.model.map.object.actions.impl.transportation.FairyRing;
 import io.ruin.model.map.object.actions.impl.transportation.SpiritTree;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 1/29/2024
  */
 public class FairysFlight {
+
+    private static final List<Option> OPTIONS = Arrays.asList(
+            new Option("Al Kharid", (player) -> teleport(player, 3318, 3203, 0)),
+            new Option("Ardougne Monastery", (player) -> teleport(player, 2615, 3226, 0)),
+            new Option("Brimhaven", (player) -> teleport(player, 2767, 3212, 0)),
+            new Option("Catherby", (player) -> teleport(player, 2816, 3464, 0)),
+            new Option("Champions' Guild", (player) -> teleport(player, 3184, 3357, 0)),
+            new Option("Canifis", (player) -> teleport(player, 3454, 3474, 0)),
+            new Option("Draynor Manor", (player) -> teleport(player, 3087, 3353, 0)),
+            new Option("Entrana", (player) -> teleport(player, 2814, 3336, 0)),
+            new Option("Etceteria", (player) -> teleport(player, 2591, 3860, 0)),
+            new Option("Falador Farm", (player) -> teleport(player, 3052, 3306, 0)),
+            new Option("Falador Park", (player) -> teleport(player, 3007, 3375, 0)),
+            new Option("Farming Guild", (player) -> teleport(player, 1249, 3727, 0)),
+            new Option("Fossil Island", (player) -> teleport(player, 3711, 3837, 0)),
+            new Option("Harmony Island", (player) -> teleport(player, 3791, 2834, 0)),
+            new Option("Hosidius Allotment", (player) -> teleport(player, 1741, 3554, 0)),
+            new Option("Hosidius Saltpetre", (player) -> teleport(player, 1696, 3542, 0)),
+            new Option("Hosidius Vinery", (player) -> teleport(player, 1806, 3556, 0)),
+            new Option("Lletya", (player) -> teleport(player, 2346, 3164, 0)),
+            new Option("Lumbridge", (player) -> teleport(player, 3190, 3232, 0)),
+            new Option("North of Ardougne", (player) -> teleport(player, 2673, 3376, 0)),
+            new Option("North of McGrubor's Wood", (player) -> teleport(player, 2662, 3526, 0)),
+            new Option("North of Seth Groats' Farm", (player) -> teleport(player, 3233, 3314, 0)),
+            new Option("Port Phasmatys", (player) -> teleport(player, 3600, 3523, 0)),
+            new Option("Port Sarim", (player) -> teleport(player, 3059, 3261, 0)),
+            new Option("Prifddinas", PrifCityEntrance::prifSkillCheckNoNPC),
+            new Option("Rimmington", (player) -> teleport(player, 2943, 3223, 0)),
+            new Option("Tai Bwo Wannai", (player) -> teleport(player, 2799, 3100, 0)),
+            new Option("Taverly", (player) -> teleport(player, 2935, 3441, 0)),
+            new Option("Tree Gnome Stronghold", (player) -> teleport(player, 2438, 3417, 0)),
+            new Option("Tree Gnome Village", (player) -> teleport(player, 2488, 3182, 0)),
+            new Option("Underwater", (player) -> teleport(player, 3734, 10271, 1)),
+            new Option("Varrock", (player) -> teleport(player, 3230, 3456, 0)),
+            new Option("Weiss", (player) -> teleport(player, 2847, 3934, 0)),
+            new Option("White Wolf Mountain", (player) -> teleport(player, 2857, 3433, 0)),
+            new Option("Yanille", (player) -> teleport(player, 2572, 3103, 0))
+    );
 
     private static void teleports(Player player) {
         player.dialogue(
@@ -39,48 +79,14 @@ public class FairysFlight {
 
     private static void toolLeprechauns(Player player) {
         boolean canEnterPrif = PrifCityEntrance.prifSkillCheckNoMessage(player);
-        OptionScroll.open(player, "Tool Leprechauns", true, Arrays.asList(
-                new Option("Al Kharid", () -> teleport(player, 3318, 3203, 0)),
-                new Option("Ardougne Monastery", () -> teleport(player, 2615, 3226, 0)),
-                new Option("Brimhaven", () -> teleport(player, 2767, 3212, 0)),
-                new Option("Catherby", () -> teleport(player, 2816, 3464, 0)),
-                new Option("Champions' Guild", () -> teleport(player, 3184, 3357, 0)),
-                new Option("Canifis", () -> teleport(player, 3454, 3474, 0)),
-                new Option("Draynor Manor", () -> teleport(player, 3087, 3353, 0)),
-                new Option("Entrana", () -> teleport(player, 2814, 3336, 0)),
-                new Option("Etceteria", () -> teleport(player, 2591, 3860, 0)),
-                new Option("Falador Farm", () -> teleport(player, 3052, 3306, 0)),
-                new Option("Falador Park", () -> teleport(player, 3007, 3375, 0)),
-                new Option("Farming Guild", () -> teleport(player, 1249, 3727, 0)),
-                new Option("Fossil Island", () -> teleport(player, 3711, 3837, 0)),
-                new Option("Harmony Island", () -> teleport(player, 3791, 2834, 0)),
-                new Option("Hosidius Allotment", () -> teleport(player, 1741, 3554, 0)),
-                new Option("Hosidius Saltpetre", () -> teleport(player, 1696, 3542, 0)),
-                new Option("Hosidius Vinery", () -> teleport(player, 1806, 3556, 0)),
-                new Option("Lletya", () -> teleport(player, 2346, 3164, 0)),
-                new Option("Lumbridge", () -> teleport(player, 3190, 3232, 0)),
-                new Option("North of Ardougne", () -> teleport(player, 2673, 3376, 0)),
-                new Option("North of McGrubor's Wood", () -> teleport(player, 2662, 3526, 0)),
-                new Option("North of Seth Groats' Farm", () -> teleport(player, 3233, 3314, 0)),
-                new Option("Port Phasmatys", () -> teleport(player, 3600, 3523, 0)),
-                new Option("Port Sarim", () -> teleport(player, 3059, 3261, 0)),
-                new Option((canEnterPrif ? "" : "<str>") + "Prifddinas", () -> {
-                    if (canEnterPrif)
-                        teleport(player, 3295, 6103, 0);
-                    else
-                        PrifCityEntrance.prifSkillCheckNoNPC(player);
-                }),
-                new Option("Rimmington", () -> teleport(player, 2943, 3223, 0)),
-                new Option("Tai Bwo Wannai", () -> teleport(player, 2799, 3100, 0)),
-                new Option("Taverly", () -> teleport(player, 2935, 3441, 0)),
-                new Option("Tree Gnome Stronghold", () -> teleport(player, 2438, 3417, 0)),
-                new Option("Tree Gnome Village", () -> teleport(player, 2488, 3182, 0)),
-                new Option("Underwater", () -> teleport(player, 3734, 10271, 1)),
-                new Option("Varrock", () -> teleport(player, 3230, 3456, 0)),
-                new Option("Weiss", () -> teleport(player, 2847, 3934, 0)),
-                new Option("White Wolf Mountain", () -> teleport(player, 2857, 3433, 0)),
-                new Option("Yanille", () -> teleport(player, 2572, 3103, 0))
-        ));
+        List<Option> options = new ArrayList<>(OPTIONS);
+        options.set(24, new Option((canEnterPrif ? "" : "<str>") + "Prifddinas", () -> {
+            if (canEnterPrif)
+                teleport(player, 3295, 6103, 0);
+            else
+                PrifCityEntrance.prifSkillCheckNoNPC(player);
+        }));
+        OptionScroll.open(player, "Tool Leprechauns", true, options);
     }
 
     private static void lastDestination(Player player) {
