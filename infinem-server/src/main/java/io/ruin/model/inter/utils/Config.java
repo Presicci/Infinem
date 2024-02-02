@@ -857,7 +857,7 @@ public class Config {
      * Leagues
      */
     public static final Config LEAGUE_POINTS = varp(2615, true);
-    public static final Config LEAGUE_TASKS_COMPLETED = varp(2610, false);
+    public static final Config LEAGUE_TASKS_COMPLETED = varp(2610, true);
 
     /**
      * Catacombs entrances
