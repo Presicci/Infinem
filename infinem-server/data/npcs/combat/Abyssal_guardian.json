@@ -31,7 +31,7 @@
     "ranged_defence": 70,
     //Immunites
     "poison_immunity": false,
-    "venom_immunity": true,
+    "venom_immunity": false,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 2,

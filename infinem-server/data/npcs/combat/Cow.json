@@ -30,8 +30,8 @@
     "magic_defence": -21,
     "ranged_defence": -21,
     //Immunites
-    "poison_immunity": false,
-    "venom_immunity": false,
+    "poison_immunity": true,
+    "venom_immunity": true,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
