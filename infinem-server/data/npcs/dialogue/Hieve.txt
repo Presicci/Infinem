@@ -1,0 +1,12 @@
+Hieve: Hey, down there! What is it?
+Player: Why are you here?
+Hieve: For the dragons, of course! I've always wanted to slay dragons. I've found they're a bit tough, though, even with all this kit I've got, but I'll slay them one day.
+Hieve: My little cousin is a Slayer Master, lucky girl. But one day I'll be a mighty dragon-slayer, and they'll give me a job like that too.
+FIRSTOPTIONS:
+<Why are you here?
+><Can I kill the dragons in here?
+Player: Can I kill the dragons in here?
+Hieve: Only if you've been assigned to do so.
+FIRSTOPTIONS:
+><I'll be off.
+Player: I'll be off.
