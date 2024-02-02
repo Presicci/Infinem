@@ -35,8 +35,10 @@ public class AlchemicalHydra extends NPCCombat {
             NPCDef.get(id).ignoreOccupiedTiles = true;
 
         ObjectAction.register(34548, 1351, 10251, 0, "climb", (player, obj) -> createAndEnterInstance(player));
-        ObjectAction.register("Alchemical door", 1, AlchemicalHydra::confirmAndEnterBossRoom);
-        ObjectAction.register("Alchemical door", "quick-open", AlchemicalHydra::enterBossRoom);
+        ObjectAction.register(34553, "open", AlchemicalHydra::confirmAndEnterBossRoom);
+        ObjectAction.register(34554, "open", AlchemicalHydra::confirmAndEnterBossRoom);
+        ObjectAction.register(34553, "quick-open", AlchemicalHydra::enterBossRoom);
+        ObjectAction.register(34554, "quick-open", AlchemicalHydra::enterBossRoom);
     }
 
     private FireArea fireLockdownArea;
@@ -58,11 +60,11 @@ public class AlchemicalHydra extends NPCCombat {
     }
 
     public static void createAndEnterInstance(Player player) {
+        player.lock(LockType.FULL_NULLIFY_DAMAGE);
         DynamicMap map = new DynamicMap().build(5536, 1);
         NPC hydra = new NPC(8615).spawn(map.convertX(SPAWN_POSITION.getX()), map.convertY(SPAWN_POSITION.getY()), 0, Direction.SOUTH, 0);
         map.addNpc(hydra);
         player.startEvent(event -> {
-            player.lock(LockType.FULL_NULLIFY_DAMAGE);
             player.getMovement().teleport(map.convertPosition(player.getPosition()));
             event.delay(1);
             player.animate(839);
