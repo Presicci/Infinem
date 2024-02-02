@@ -259,7 +259,7 @@ public class DeathStorage extends ItemContainer {
                     player.getPacketSender().sendHintIcon(1633, 3673);
                     break;
                 default:
-                    player.getPacketSender().sendHintIcon(3220, 3221);
+                    player.getPacketSender().sendHintIcon(3216, 3221);
                     break;
             }
         }
