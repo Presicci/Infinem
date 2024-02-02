@@ -1,0 +1,9 @@
+7669
+Player: Hello!
+Disciple of Yama: Welcome. Have you come to give your soul to the Chasm?
+Player: Uh, I believe I'm still using it.
+Disciple of Yama: For now. Have you come to prove yourself in combat against the many demons within the Chasm?
+Player: ...Perhaps.
+Disciple of Yama: My master wishes you not to kill his minions without an agenda. You may only slay within the Chasm that which you have been assigned by a Slayer Master.
+Player: That's an oddly specific reason.
+Disciple of Yama: I ask no questions of my master, I just inform.

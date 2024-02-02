@@ -1,0 +1,31 @@
+7670
+Player: Are you okay?
+Disciple of Yama: Oh yes! Just praying to my new master. It's hot down here, isn't it?
+Player: I guess so.
+<Your new master, that would be...?
+Player: Your new master, that would be...?
+Disciple of Yama: Yama! I sold my soul you see, well, I guess that Ox-headed guy down there forcibly removed it.
+Player: That doesn't sound like a fair trade...
+Disciple of Yama: Oh, don't worry, I'm perfectly fine with the outcome. Sure, the loss of vision is a shame but it could be worse.
+Player: Could it?
+Disciple of Yama: Underground there are no tall buildings, I'm awfully afraid of heights, you see.
+Player: Perhaps it's a good thing you can't see...
+Disciple of Yama: What was that?
+Player: Oh, nothing...
+><What happened to your eyes?
+Player: What happened to your eyes?
+Disciple of Yama: The ritual, there were some... adverse effects...
+Player: The ritual?
+Disciple of Yama: Oh yes! Pretty basic really, head of an Ox, bruma roots, lots of fire and of course the human sacrifice.
+Player: And at what point did that blind you?
+Disciple of Yama: The voice demanded that we stare into the fire until we saw enlightenment.
+Player: I guess the fire was pretty bright.
+Disciple of Yama: Blindingly so.
+Player: Wait! Did you say human sacrifice?
+Disciple of Yama: Why, of course! We're Zamorakians, we're evil...
+Player: Yeah, I guess that's true.
+><Well, I'll leave you to it.
+Player: Well, I'll leave you to it.
+Disciple of Yama: So soon?
+Player: Yep, the demons won't slay themselves.
+Disciple of Yama: What demons?
