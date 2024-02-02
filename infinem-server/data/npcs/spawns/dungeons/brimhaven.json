@@ -870,7 +870,8 @@
     "y": 9422,
     "z": 0,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 0,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Baby dragon",
@@ -888,7 +889,8 @@
     "y": 9456,
     "z": 0,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 0,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Red dragon",
@@ -906,7 +908,8 @@
     "y": 9451,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Baby dragon",
@@ -924,7 +927,8 @@
     "y": 9426,
     "z": 0,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 0,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Bronze dragon",
@@ -942,7 +946,8 @@
     "y": 9430,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Bronze dragon",
@@ -960,7 +965,8 @@
     "y": 9417,
     "z": 0,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Black demon",
@@ -978,7 +984,8 @@
     "y": 9458,
     "z": 0,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Bronze dragon",
@@ -996,7 +1003,8 @@
     "y": 9445,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Wild dog",
@@ -1014,7 +1022,8 @@
     "y": 9422,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Wild dog",
@@ -1032,7 +1041,8 @@
     "y": 9429,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Wild dog",
@@ -1050,7 +1060,8 @@
     "y": 9453,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Steel dragon",
@@ -1059,7 +1070,8 @@
     "y": 9426,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Steel dragon",
@@ -1068,7 +1080,8 @@
     "y": 9419,
     "z": 0,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 0,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Iron dragon",
@@ -1077,7 +1090,8 @@
     "y": 9452,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Steel dragon",
@@ -1086,7 +1100,8 @@
     "y": 9418,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Iron dragon",
@@ -1095,7 +1110,8 @@
     "y": 9458,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Iron dragon",
@@ -1104,7 +1120,8 @@
     "y": 9452,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Iron dragon",
@@ -1113,7 +1130,8 @@
     "y": 9447,
     "z": 0,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Wild dog",
@@ -1131,7 +1149,8 @@
     "y": 9458,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Baby dragon",
@@ -1149,7 +1168,8 @@
     "y": 9449,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Red dragon",
@@ -1167,7 +1187,8 @@
     "y": 9440,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Red dragon",
@@ -1185,7 +1206,8 @@
     "y": 9454,
     "z": 0,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "taskOnlyNPC": "HIEVE"
   },
   {
     "name": "Baby dragon",

@@ -23,7 +23,8 @@ public enum TaskOnlyNPC {
     DUSTY_ALIV(11161, "Oi! Only people with a Slayer task can slay in here!"),
     PEEVE(11237, "wooooo ooo woo-woo"),
     RAULYN(5790, "wooooo ooo woo-woo"),
-    DISCIPLE_OF_YAMA(7669, "My master wishes you not to kill his minions without an agenda. You may only slay within the Chasm that which you have been assigned by a Slayer Master.");
+    DISCIPLE_OF_YAMA(7669, "My master wishes you not to kill his minions without an agenda. You may only slay within the Chasm that which you have been assigned by a Slayer Master."),
+    HIEVE(7667, "I'm sure that's not what you're meant to be slaying.");
 
     private final int npcId;
     private final String dialogue;
