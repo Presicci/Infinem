@@ -16,7 +16,7 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/1/2023
  */
 public enum DialogueObject {
-    BROKEN_MACHINERY(34587, new Position(8003, 1495),
+    BROKEN_MACHINERY(34587, new Position(1347, 10263),
             new MessageDialogue("This machine doesn't look like it's in working order... I wonder if there's a fixed one, anywhere.")),
     ELEMENTAL_WORKSHOP_HATCH(3413, new Position(2719, 9890),
             new PlayerDialogue("Doesn't smell good down there, I think I'll just stay here.")),
