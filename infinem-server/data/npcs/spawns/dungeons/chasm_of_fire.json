@@ -6,7 +6,8 @@
     "y": 10071,
     "z": 1,
     "direction": "E",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Black demon",
@@ -15,7 +16,8 @@
     "y": 10068,
     "z": 1,
     "direction": "E",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Voice of Yama",
@@ -33,7 +35,8 @@
     "y": 10092,
     "z": 1,
     "direction": "W",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Black demon",
@@ -42,7 +45,8 @@
     "y": 10062,
     "z": 1,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Black demon",
@@ -51,7 +55,8 @@
     "y": 10086,
     "z": 1,
     "direction": "N",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Black demon",
@@ -60,7 +65,8 @@
     "y": 10060,
     "z": 1,
     "direction": "E",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Black demon",
@@ -69,7 +75,8 @@
     "y": 10072,
     "z": 1,
     "direction": "N",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Black demon",
@@ -78,7 +85,8 @@
     "y": 10074,
     "z": 1,
     "direction": "S",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Black demon",
@@ -87,7 +95,8 @@
     "y": 10085,
     "z": 1,
     "direction": "W",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Black demon",
@@ -96,7 +105,8 @@
     "y": 10074,
     "z": 1,
     "direction": "N",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Black demon",
@@ -105,7 +115,8 @@
     "y": 10077,
     "z": 1,
     "direction": "E",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -114,7 +125,8 @@
     "y": 10088,
     "z": 2,
     "direction": "W",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -123,7 +135,8 @@
     "y": 10082,
     "z": 2,
     "direction": "E",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -132,7 +145,8 @@
     "y": 10075,
     "z": 2,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -141,7 +155,8 @@
     "y": 10078,
     "z": 2,
     "direction": "N",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -150,7 +165,8 @@
     "y": 10079,
     "z": 2,
     "direction": "N",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -159,7 +175,8 @@
     "y": 10090,
     "z": 2,
     "direction": "W",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -168,7 +185,8 @@
     "y": 10089,
     "z": 2,
     "direction": "N",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -177,7 +195,8 @@
     "y": 10076,
     "z": 2,
     "direction": "N",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -186,7 +205,8 @@
     "y": 10091,
     "z": 2,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -195,7 +215,8 @@
     "y": 10077,
     "z": 2,
     "direction": "N",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -204,7 +225,8 @@
     "y": 10073,
     "z": 2,
     "direction": "E",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -213,7 +235,8 @@
     "y": 10086,
     "z": 2,
     "direction": "N",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -222,7 +245,8 @@
     "y": 10082,
     "z": 2,
     "direction": "E",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -231,7 +255,8 @@
     "y": 10090,
     "z": 2,
     "direction": "N",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -240,7 +265,8 @@
     "y": 10084,
     "z": 2,
     "direction": "N",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -249,7 +275,8 @@
     "y": 10091,
     "z": 2,
     "direction": "W",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Greater demon",
@@ -258,7 +285,8 @@
     "y": 10094,
     "z": 2,
     "direction": "W",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Disciple of Yama",
@@ -276,7 +304,8 @@
     "y": 10079,
     "z": 3,
     "direction": "N",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Lesser demon",
@@ -285,7 +314,8 @@
     "y": 10081,
     "z": 3,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Lesser demon",
@@ -294,7 +324,8 @@
     "y": 10084,
     "z": 3,
     "direction": "E",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Lesser demon",
@@ -303,7 +334,8 @@
     "y": 10082,
     "z": 3,
     "direction": "W",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Lesser demon",
@@ -312,7 +344,8 @@
     "y": 10074,
     "z": 3,
     "direction": "E",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Lesser demon",
@@ -321,7 +354,8 @@
     "y": 10076,
     "z": 3,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Lesser demon",
@@ -330,7 +364,8 @@
     "y": 10082,
     "z": 3,
     "direction": "N",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Lesser demon",
@@ -339,7 +374,8 @@
     "y": 10077,
     "z": 3,
     "direction": "W",
-    "walkRange": 4
+    "walkRange": 4,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Lesser demon",
@@ -348,7 +384,8 @@
     "y": 10081,
     "z": 3,
     "direction": "N",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Black demon",
@@ -357,7 +394,8 @@
     "y": 10071,
     "z": 1,
     "direction": "N",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Black demon",
@@ -366,7 +404,8 @@
     "y": 10076,
     "z": 1,
     "direction": "E",
-    "walkRange": 2
+    "walkRange": 2,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Black demon",
@@ -375,7 +414,8 @@
     "y": 10087,
     "z": 1,
     "direction": "N",
-    "walkRange": 5
+    "walkRange": 5,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   },
   {
     "name": "Black demon",
@@ -384,6 +424,7 @@
     "y": 10066,
     "z": 1,
     "direction": "N",
-    "walkRange": 3
+    "walkRange": 3,
+    "taskOnlyNPC": "DISCIPLE_OF_YAMA"
   }
 ]
