@@ -11,6 +11,8 @@ import io.ruin.model.stat.StatType;
  * Created on 11/24/2023
  */
 public enum InstantMovementShortcut {
+    MYSTERIOUS_PIPE_MAIN(34655, new Position(1316, 10214), new Position(1346, 10232, 0), 827, 88),
+    MYSTERIOUS_PIPE_HYDRA(34655, new Position(1346, 10231), new Position(1316, 10213, 0), 827, 88),
     ASGARNIAN_ICE_DUNGEON_ENTER(42506, new Position(3025, 9570), new Position(3035, 9557, 0), 2796, 72),
     ASGARNIAN_ICE_DUNGEON_EXIT(42507, new Position(3034, 9558), new Position(3026, 9572, 0), 2796, 72),
     SALARIN_THE_TWISTED(23563, new Position(2616, 9572), new Position(2614, 9505, 0), 828, 67),
