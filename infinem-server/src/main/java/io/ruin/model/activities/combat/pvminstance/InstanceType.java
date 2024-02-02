@@ -32,10 +32,7 @@ public enum InstanceType {
     BANDOS_GWD("General Graardor", new Bounds(2856, 5344, 2877, 5374, 2), 500_000, 3_000, 60, Config.GWD_BANDOS_KC, "Bandos", new Position(2864, 5354, 2), new Position(2862, 5354, 2)),
     ZAMORAK_GWD("K'ril Tsutsaroth", new Bounds(2912, 5312, 2944, 5336, 2), 500_000, 3_000, 60, Config.GWD_ZAMORAK_KC, "Zamorak", new Position(2925, 5331, 2), new Position(2925, 5333, 2)),
     ARMADYL_GWD("Kree'arra", new Bounds(2816, 5288, 2840, 5304, 2), 500_000, 3_000, 60, Config.GWD_ARMADYL_KC, "Armadyl", new Position(2839, 5296, 2), new Position(2839, 5294, 2)),
-    SARADOMIN_GWD("Commander Zilyana", new Bounds(2880, 5248, 2911, 5278, -1), 500_000, 3_000, 60, Config.GWD_SARADOMIN_KC, "Saradomin", new Position(2907, 5265, 0), new Position(2909, 5265, 0))
-    //todo - add support for gwd kc requirements (for eco worlds, not used in pvp world)
-
-    ;
+    SARADOMIN_GWD("Commander Zilyana", new Bounds(2880, 5248, 2911, 5278, -1), 500_000, 3_000, 60, Config.GWD_SARADOMIN_KC, "Saradomin", new Position(2907, 5265, 0), new Position(2909, 5265, 0));
 
     InstanceType(String name, Bounds bounds, int coinCost, int bmCost, int duration, Position entryPosition, Position exitPosition) {
         this(name, bounds, coinCost, bmCost, duration, null, "", entryPosition, exitPosition);
