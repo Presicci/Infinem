@@ -239,7 +239,7 @@ public class Equipment extends ItemContainer {
                             continue;
                         if (wilderness && !inWilderness)
                             bonus *= .75;
-                        if (item.getId() == 11283 || item.getId() == 22002) {
+                        if (item.getId() == 11283 || item.getId() == 22002 || item.getId() == 21633) {
                             if (i == EquipmentStats.STAB_DEFENCE || i == EquipmentStats.SLASH_DEFENCE
                                     || i == EquipmentStats.CRUSH_DEFENCE || i == EquipmentStats.RANGE_DEFENCE) {
                                 bonus -= (50 - item.getCharges());
