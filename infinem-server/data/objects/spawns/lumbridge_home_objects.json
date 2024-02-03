@@ -1,5 +1,5 @@
 [
-  {"id": 2031, "x": 3227, "y": 3252, "z": 0, "type": 10, "direction": 0},   // Anvil
+  {"id": 2031, "x": 3227, "y": 3250, "z": 0, "type": 10, "direction": 3},   // Anvil
   {"id": 11365, "x": 3225, "y": 3150, "z": 0, "type": 10, "direction": 0},  // Iron ore
   {"id": 11365, "x": 3225, "y": 3149, "z": 0, "type": 10, "direction": 0},  // Iron ore
   {"id": 11365, "x": 3226, "y": 3151, "z": 0, "type": 10, "direction": 0},  // Iron ore
