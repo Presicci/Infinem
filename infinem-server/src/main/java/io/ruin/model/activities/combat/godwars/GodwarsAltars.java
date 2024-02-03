@@ -34,6 +34,7 @@ public enum GodwarsAltars {
                 }
                 int equipmentCount = (int) Arrays.stream(player.getEquipment().getItems()).filter(i -> i != null && Arrays.stream(altar.godEquipment).anyMatch(e -> i.getDef().name.toLowerCase().contains(e))).count();
                 player.animate(645);
+                player.addTickEvent(new TickEvent(TickEventType.GODWARS_ALTAR_COOLDOWN, 1000));
                 player.sendFilteredMessage("You pray to the gods...");
                 player.getStats().get(StatType.Prayer).restore();
                 player.getStats().get(StatType.Prayer).boost(equipmentCount, 0);
