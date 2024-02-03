@@ -24,18 +24,16 @@ public enum DraconicVisage {
     private void make(Player player) {
         Item leftHalf = player.getInventory().findItem(primary);
         Item rightHalf = player.getInventory().findItem(secondary);
-
+        if (!player.getStats().check(StatType.Smithing, 90, "forge this")) return;
         if(leftHalf == null || rightHalf == null) {
             player.dialogue(new ItemDialogue().two(primary, secondary, "You need a draconic visage and " + ItemDef.get(secondary).descriptiveName + " to forge " + ItemDef.get(product).descriptiveName + "."));
             return;
         }
-
         Item hammer = player.getInventory().findItem(Tool.HAMMER);
         if(hammer == null) {
             player.sendMessage("You need a hammer to forge the shield.");
             return;
         }
-
         player.startEvent(event -> {
             player.lock();
             player.sendMessage("You start to hammer the shield...");
