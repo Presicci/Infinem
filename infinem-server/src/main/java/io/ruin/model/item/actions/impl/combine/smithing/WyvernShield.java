@@ -16,18 +16,17 @@ public class WyvernShield {
     private static void make(Player player) {
         Item leftHalf = player.getInventory().findItem(VISAGE);
         Item rightHalf = player.getInventory().findItem(ELE_SHIELD);
-
+        if (!player.getStats().check(StatType.Smithing, 66, "forge this")) return;
+        if (!player.getStats().check(StatType.Magic, 66, "forge this")) return;
         if(leftHalf == null || rightHalf == null) {
             player.dialogue(new ItemDialogue().two(VISAGE, ELE_SHIELD, "You need a wyvern visage and elemental shield to forge an ancient wyvern shield."));
             return;
         }
-
         Item hammer = player.getInventory().findItem(Tool.HAMMER);
         if(hammer == null) {
             player.sendMessage("You need a hammer to forge the shield.");
             return;
         }
-
         player.startEvent(event -> {
             player.lock();
             player.sendMessage("You start to hammer the shield...");
@@ -47,8 +46,7 @@ public class WyvernShield {
     }
 
     static {
-        //  TODO change to the strange machine in house on the hill
-        ItemObjectAction.register(VISAGE, "anvil", (player, item, obj) -> make(player));
-        ItemObjectAction.register(ELE_SHIELD, "anvil", (player, item, obj) -> make(player));
+        ItemObjectAction.register(VISAGE, 30944, (player, item, obj) -> make(player));
+        ItemObjectAction.register(ELE_SHIELD, 30944, (player, item, obj) -> make(player));
     }
 }
