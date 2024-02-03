@@ -1,0 +1,28 @@
+HASTALKED:6093
+/HASRELICTIER:3
+(Player: Hey Nigel.
+Nigel: Hey [player name].
+Player: Mind if use the Hub?
+Nigel: Please do.
+(Player: Hey Nigel.
+Nigel: Hey [player name].
+Player: How do I gain access to the Dungeon Hub again?
+Nigel: You need to harness the power of a tier 3 relic.
+/Player: What's this portal for?
+Nigel: This portal? Why, it's the Dungeon Hub.
+Player: What's the Dungeon Hub?
+*Nigel: The Dungeon Hub lets adventurers like you and I travel to various dungeons around Gielnor.
+Nigel: Saves quite a bit of walking.
+HASRELICTIER:3
+(Player: Thank you.
+(Player: What's this portal for?
+Nigel: This portal? Why, it's the Dungeon Hub.
+Player: What's the Dungeon Hub?
+Nigel: You must be new here, that's alright. The Dungeon Hub lets adventurers like you and I travel to various dungeons around Gielnor.
+Nigel: Saves quite a bit of walking.
+Player: Why is it that I can't seem to access it?
+Nigel: Ahh right, only adventurers who have harnessed the power of a tier 3 relic can access the Hub.
+Player: That's the only requirement?
+*Nigel: Well, yes, but adventurers that harness the right relic will unlock the full potential of the Hub. That'll allow you to choose where you teleport to in the dungeons.
+Player: Thanks man.
+Nigel: Call me Nigel.
