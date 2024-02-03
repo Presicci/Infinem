@@ -2,8 +2,7 @@
   "name": "Deadman Armour",
   "currency": "BLOOD_MONEY",
   "npcs": [
-    8390,
-    8391
+
   ],
   "sellMultiplier": 0,
   "buyMultiplier": 0,
