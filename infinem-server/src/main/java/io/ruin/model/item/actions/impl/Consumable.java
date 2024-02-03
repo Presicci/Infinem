@@ -13,6 +13,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.impl.skillcapes.PrayerSkillCape;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.skills.herblore.BarbarianMix;
 import io.ruin.model.skills.herblore.Potion;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -1045,6 +1046,24 @@ public class Consumable {
         });
         for(int vial : potion.vialIds) {
             registerEmpty(vial);
+        }
+        BarbarianMix mix = BarbarianMix.MIXES.get(potion);
+        if (mix != null) {
+            registerDrink(potion, mix.vialIds[1], mix.vialIds[0], p -> {
+                effect.accept(p);
+                p.incrementHp(mix.getHeal());
+                p.sendFilteredMessage("You drink the lumpy potion.");
+                p.sendFilteredMessage("You have 1 dose of potion left.");
+            });
+            registerDrink(potion, mix.vialIds[0], 229, p -> {
+                effect.accept(p);
+                p.incrementHp(mix.getHeal());
+                p.sendFilteredMessage("You drink the lumpy potion.");
+                p.sendFilteredMessage("You have finished your potion.");
+            });
+            for(int vial : mix.vialIds) {
+                registerEmpty(vial);
+            }
         }
     }
 

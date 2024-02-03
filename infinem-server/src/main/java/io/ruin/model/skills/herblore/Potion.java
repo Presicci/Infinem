@@ -10,10 +10,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.stat.StatType;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public enum Potion {
 
@@ -388,6 +385,6 @@ public enum Potion {
                 }
             }
         }
+        BarbarianMix.registerMixes();
     }
-
 }
