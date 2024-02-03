@@ -46,12 +46,16 @@ public class CombatUtils {
                 effectiveAttack = (int) Math.floor((double) effectiveAttack * (1D + entity.player.getPrayer().magicBoost));
             }
         } else if(statType == StatType.Ranged) {
-            if(entity.player != null)
+            if (entity.player != null)
                 effectiveAttack *= (1D + entity.player.getPrayer().rangedAttackBoost);
-            if(attackType == AttackType.ACCURATE)
+            if (attackType == AttackType.ACCURATE)
                 effectiveAttack += 3;
-            else if(attackType == AttackType.LONG_RANGED)
+            else if (attackType == AttackType.LONG_RANGED)
                 effectiveAttack += 1;
+        } else if (statType == StatType.Defence) {
+            if(entity.player != null) {
+                effectiveAttack = (int) Math.floor((double) effectiveAttack * (1D + entity.player.getPrayer().defenceBoost));
+            }
         } else {
             if(entity.player != null)
                 effectiveAttack *= (1D + entity.player.getPrayer().attackBoost);
@@ -72,6 +76,8 @@ public class CombatUtils {
         } else if(attackStyle == AttackStyle.RANGED || attackStyle == AttackStyle.MAGICAL_RANGED) {
             effectiveAttack = getEffectiveAttack(entity, StatType.Ranged, attackType);
             bonus = entity.getCombat().getBonus(EquipmentStats.RANGE_ATTACK);
+        } else if (entity.isPlayer() && attackStyle == AttackStyle.DRAGONFIRE) {
+            effectiveAttack = getEffectiveAttack(entity, StatType.Defence, attackType);
         } else {
             effectiveAttack = getEffectiveAttack(entity, StatType.Attack, attackType);
             if(attackStyle == AttackStyle.STAB)

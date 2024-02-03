@@ -222,7 +222,10 @@ public enum DragonfireShield {
             player.addTickEvent(new TickEvent(TickEventType.DFS_COOLDOWN, 192));
             player.dragonfireShieldSpecial = false;
             event.delay(3);
-            target.hit(new Hit(player, AttackStyle.MAGIC, AttackType.ACCURATE).fixedDamage(damage));
+            if (target.isPlayer())
+                target.hit(new Hit(player, AttackStyle.DRAGONFIRE, AttackType.ACCURATE).randDamage(Random.get(15)));
+            else
+                target.hit(new Hit(player, AttackStyle.MAGIC, AttackType.ACCURATE).randDamage(Random.get(15)));
             target.graphics(367);
             player.unlock();
         });
@@ -238,7 +241,10 @@ public enum DragonfireShield {
             player.getCombat().updateLastAttack(4);
             event.delay(3);
             int delay = PROJECTILE.send(player, target);
-            target.hit(new Hit(player, AttackStyle.MAGIC, AttackType.ACCURATE).randDamage(Random.get(25)).clientDelay(delay));
+            if (target.isPlayer())
+                target.hit(new Hit(player, AttackStyle.DRAGONFIRE, AttackType.ACCURATE).randDamage(Random.get(25)).clientDelay(delay));
+            else
+                target.hit(new Hit(player, AttackStyle.MAGIC, AttackType.ACCURATE).randDamage(Random.get(25)).clientDelay(delay));
             player.unlock();
         });
     }
