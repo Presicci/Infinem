@@ -45,7 +45,11 @@ public class RelicManager {
     private Player player;
 
     public boolean hasRelicInTier(Relic relic) {
-        return RELICS[relic.getTier() - 1].get(player) != 0;
+        return hasRelicInTier(relic.getTier());
+    }
+
+    public boolean hasRelicInTier(int tier) {
+        return RELICS[tier - 1].get(player) != 0;
     }
 
     public boolean hasPointsForRelic(Relic relic) {

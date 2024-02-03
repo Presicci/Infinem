@@ -12,6 +12,7 @@ import java.util.function.BiPredicate;
 
 @Getter
 public enum DialogueLoaderSetting {
+    HASRELICTIER((p, i) -> p.getRelicManager().hasRelicInTier(i)),
     GHOSTSPEAK((p, i) -> GhostSpeak.canSpeak(p)),
     HASSLAYERTASK((p, i) -> Slayer.getTask(p) == i),
     HASITEMS((p, i) -> {
