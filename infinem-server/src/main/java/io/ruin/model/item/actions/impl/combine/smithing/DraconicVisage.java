@@ -4,10 +4,7 @@ import io.ruin.cache.ItemDef;
 import io.ruin.cache.NpcID;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.dialogue.ItemDialogue;
-import io.ruin.model.inter.dialogue.NPCDialogue;
-import io.ruin.model.inter.dialogue.OptionsDialogue;
-import io.ruin.model.inter.dialogue.PlayerDialogue;
+import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
@@ -20,7 +17,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum DraconicVisage {
     SHIELD(Items.DRAGONFIRE_SHIELD, Items.DRACONIC_VISAGE, Items.ANTIDRAGON_SHIELD),
-    WARD(22003, Items.DRACONIC_VISAGE, 22006);  // TODO replace draconic visage id with skeltal visage id
+    WARD(22003, 22006, Items.ANTIDRAGON_SHIELD);
 
     private final int product, primary, secondary;
 
@@ -53,6 +50,20 @@ public enum DraconicVisage {
             }
             player.unlock();
         });
+    }
+
+    private static void makeStatic(Player player) {
+        Item skeletal = player.getInventory().findItem(22006);
+        Item draconic = player.getInventory().findItem(Items.DRACONIC_VISAGE);
+        if (skeletal != null && draconic == null) {
+            WARD.make(player);
+        } else if (draconic != null && skeletal == null) {
+            SHIELD.make(player);
+        } else if (draconic != null) {
+            player.dialogue(new MessageDialogue("You should use the visage for whichever shield you'd like to craft on the anvil."));
+        } else {
+            player.sendMessage("Nothing interesting happens.");
+        }
     }
 
     private static void makeNPC(Player player, NPC npc, DraconicVisage shield) {
@@ -88,9 +99,9 @@ public enum DraconicVisage {
     }
 
     static {
+        ItemObjectAction.register(Items.ANTIDRAGON_SHIELD, "anvil", (player, item, obj) -> makeStatic(player));
         for (DraconicVisage shield : values()) {
             ItemObjectAction.register(shield.primary, "anvil", (player, item, obj) -> shield.make(player));
-            ItemObjectAction.register(shield.secondary, "anvil", (player, item, obj) -> shield.make(player));
             ItemNPCAction.register(shield.primary, NpcID.OZIACH, (player, item, npc) -> makeNPC(player, npc, shield));
             ItemNPCAction.register(shield.secondary, NpcID.OZIACH, (player, item, npc) -> makeNPC(player, npc, shield));
         }
