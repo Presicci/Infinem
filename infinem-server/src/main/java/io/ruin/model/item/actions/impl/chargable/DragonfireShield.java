@@ -13,9 +13,10 @@ import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.attributes.AttributeExtensions;
-import io.ruin.model.item.attributes.AttributeTypes;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Projectile;
+import io.ruin.process.tickevent.TickEvent;
+import io.ruin.process.tickevent.TickEventType;
 
 import static io.ruin.cache.ItemID.BLOOD_MONEY;
 
@@ -150,7 +151,7 @@ public enum DragonfireShield {
     public static final Projectile PROJECTILE = new Projectile(1166, 31, 16, 0, 30, 2, 0, 11);
 
     public static void specialAttack(Player player, Entity target) {
-        if(player.dragonfireShieldCooldown.isDelayed()) {
+        if(player.isTickEventActive(TickEventType.DFS_COOLDOWN)) {
             player.dragonfireShieldSpecial = false;
             player.sendMessage("<col=007f00>Your shield is still on cooldown from its last use!");
             return;
@@ -218,7 +219,7 @@ public enum DragonfireShield {
             player.getCombat().updateLastAttack(4);
             if(damage > 0)
                 target.freeze(15, target);
-            player.dragonfireShieldCooldown.delaySeconds(120);
+            player.addTickEvent(new TickEvent(TickEventType.DFS_COOLDOWN, 192));
             player.dragonfireShieldSpecial = false;
             event.delay(3);
             target.hit(new Hit(player, AttackStyle.MAGIC, AttackType.ACCURATE).fixedDamage(damage));
@@ -232,7 +233,7 @@ public enum DragonfireShield {
             player.lock();
             player.animate(6696);
             player.graphics(1165);
-            player.dragonfireShieldCooldown.delaySeconds(120);
+            player.addTickEvent(new TickEvent(TickEventType.DFS_COOLDOWN, 192));
             player.dragonfireShieldSpecial = false;
             player.getCombat().updateLastAttack(4);
             event.delay(3);

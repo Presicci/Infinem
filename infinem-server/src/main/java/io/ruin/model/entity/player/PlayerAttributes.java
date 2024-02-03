@@ -622,7 +622,6 @@ public abstract class PlayerAttributes extends Entity {
      * Used for the dragonfire shield special attack
      */
     public boolean dragonfireShieldSpecial = false;
-    public TickDelay dragonfireShieldCooldown = new TickDelay();
 
     /**
      * Ring of wealth attributes for features
