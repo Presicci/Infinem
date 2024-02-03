@@ -12,6 +12,14 @@ import io.ruin.model.map.object.actions.ObjectAction;
 public enum Ladder {
     //UP(1, "climb-up", new Position(), new Position(), true),
     //DOWN(1, "climb-down", new Position(), new Position(), false),
+    FOSSIL_ISLAND_HOUSE_DOWN(30725, "climb-down", new Position(3767, 3866, 1), new Position(3767, 3868, 0), false),
+
+    FOSSIL_ISLAND_BRIDGE_WEST_DOWN(30939, "climb down", new Position(3729, 3831, 1), new Position(3728, 3831, 0), false),
+    FOSSIL_ISLAND_BRIDGE_WEST_UP(30938, "climb up", new Position(3729, 3831), new Position(3730, 3831, 1), true),
+
+    FOSSIL_ISLAND_BRIDGE_EAST_DOWN(30941, "climb down", new Position(3746, 3831, 1), new Position(3747, 3831, 0), false),
+    FOSSIL_ISLAND_BRIDGE_EAST_UP(30940, "climb up", new Position(3746, 3831), new Position(3745, 3831, 1), true),
+
     DORGESH_KAAN_DUNGEON_DOWN(22666, "climb-down", new Position(2719, 5241, 3), new Position(2715, 5241, 0), false),
     DORGESH_KAAN_DUNGEON_UP(22600, "climb-up", new Position(2716, 5241), new Position(2720, 5241, 3), true),
 
