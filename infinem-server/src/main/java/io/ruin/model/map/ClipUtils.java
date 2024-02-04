@@ -610,6 +610,10 @@ public class ClipUtils {
         clearClipping(3208, 3220, 0, 2, 4);     // Old furniture spawns
         addClipping(3208, 3218, 0, 0, 1);       // Behind the counter
         clearClipping(3212, 3221, 0, 1, 1);     // Double doors
+        // Tiranwn log balances
+        addClipping(2259, 3250, 0, 4, 0);
+        addClipping(2197, 3237, 0, 4, 0);
+        addClipping(2290, 3233, 0, 0, 5);
     }
 
     public static void clearClipping(int x, int y, int z, int lengthX, int lengthY) {
