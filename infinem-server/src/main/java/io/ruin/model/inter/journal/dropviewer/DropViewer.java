@@ -6,6 +6,7 @@ import io.ruin.cache.NPCDef;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -36,6 +37,7 @@ public class DropViewer {
                     new DropViewerEntry(6766), new DropViewerEntry(8061), new DropViewerEntry(2042)
             )));
         }
+        player.getPacketSender().sendAccessMask(Interface.DROP_VIEWER, 24, 0, 1000, AccessMasks.ClickOp1);
         DropViewerSearch.sendEntries(player);
     }
 
@@ -120,15 +122,21 @@ public class DropViewer {
             if (petDrop != null) {
                 drops.add(0, petDrop);
             }
-            player.getPacketSender().sendClientScript(227, "is", 1000 << 16 | 1, "Viewing drop table for: <col=ff0000>" + name + "</col>");
-            player.getPacketSender().sendClientScript(9004, "is", drops.size(), buildDropString(drops));
-            int slot = 1;
-            for (DropViewerResult drop : drops) {
-                Item item = drop.getItem();
-                player.getPacketSender().sendClientScript(9006, "iii", slot, item.getId(), item.getAmount());
-                slot += 5;
-            }
+            sendResults(player, name, drops);
         }
+    }
+
+    private static void sendResults(Player player, String name, List<DropViewerResult> drops) {
+        player.getPacketSender().sendClientScript(227, "is", 1000 << 16 | 1, "Viewing drop table for: <col=ff0000>" + name + "</col>");
+        player.getPacketSender().sendClientScript(9004, "is", drops.size(), buildDropString(drops));
+        int slot = 1;
+        for (DropViewerResult drop : drops) {
+            Item item = drop.getItem();
+            player.getPacketSender().sendClientScript(9006, "iii", slot, item.getId(), item.getAmount());
+            slot += 5;
+        }
+        player.putTemporaryAttribute("DROPVIEWER_DROPS", drops);
+        player.putTemporaryAttribute("DROPVIEWER_NAME", name);
     }
 
     private static List<Item> getGroupDrop(int item, String name) {
@@ -173,10 +181,27 @@ public class DropViewer {
     private static void clickEntry(Player player, int slot) {
         List<DropViewerEntry> results = player.getTemporaryAttribute(AttributeKey.DROP_VIEWER_RESULTS);
         DropViewerEntry result = results.get(slot);
+        player.getPacketSender().setHidden(Interface.DROP_VIEWER, 32, true);
         if (result.table != null) {
             displayDrops(player, result.name, result.table);
         } else {
             displayDrops(player, result.id, result.name);
+        }
+    }
+
+    private static void clickItem(Player player, int slot) {
+        List<DropViewerResult> drops = player.getTemporaryAttributeOrDefault("DROPVIEWER_DROPS", new ArrayList<>());
+        int index = ((slot - 2) / 5);
+        if (drops == null || drops.isEmpty() || drops.size() < index) return;
+        DropViewerResult result = drops.get(index);
+        if (result instanceof DropViewerResultCommon) {
+            player.putTemporaryAttribute("DROPVIEWER_LAST", drops);
+            player.putTemporaryAttribute("DROPVIEWER_LAST_NAME", player.getTemporaryAttributeOrDefault("DROPVIEWER_NAME", ""));
+            LootTable.CommonTables table = ((DropViewerResultCommon) result).getCommonTable();
+            displayDrops(player, table.name, new LootTable().addTable(1, table.items));
+            player.getPacketSender().setHidden(Interface.DROP_VIEWER, 32, false);
+        } else {
+            DropViewerSearch.search(player, result.getItem().getDef().name, false);
         }
     }
 
@@ -196,6 +221,14 @@ public class DropViewer {
             h.actions[16] = (SlotAction) DropViewer::clickEntry;
             h.actions[17] = (SimpleAction) player -> player.stringInput("<img=108> Enter monster name to search for:", name -> DropViewerSearch.search(player, name, true));
             h.actions[18] = (SimpleAction) player -> player.stringInput("<img=33> Enter drop name to search for:", name -> DropViewerSearch.search(player, name, false));
+            h.actions[24] = (SlotAction) DropViewer::clickItem;
+            h.actions[32] = (SimpleAction) player -> {
+                List<DropViewerResult> drops = player.getTemporaryAttributeOrDefault("DROPVIEWER_LAST", new ArrayList<>());
+                String name = player.getTemporaryAttributeOrDefault("DROPVIEWER_LAST_NAME", "");
+                if (drops == null || drops.isEmpty()) return;
+                sendResults(player, name, drops);
+                player.getPacketSender().setHidden(Interface.DROP_VIEWER, 32, true);
+            };
         });
     }
 }

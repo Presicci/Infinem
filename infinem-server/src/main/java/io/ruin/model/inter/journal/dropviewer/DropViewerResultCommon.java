@@ -2,13 +2,14 @@ package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.model.item.Item;
 import io.ruin.model.item.loot.LootTable;
+import lombok.Getter;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 6/1/2023
  */
 public class DropViewerResultCommon extends DropViewerResult {
-    private final LootTable.CommonTables commonTable;
+    @Getter private final LootTable.CommonTables commonTable;
 
     public DropViewerResultCommon(LootTable.CommonTables commonTable, int chance) {
         this.commonTable = commonTable;
