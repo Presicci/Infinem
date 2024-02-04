@@ -1,0 +1,93 @@
+[
+  {"id": -1, "x": 2273, "y": 3175, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2274, "y": 3175, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2275, "y": 3175, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2273, "y": 3174, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2274, "y": 3174, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2275, "y": 3174, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2273, "y": 3173, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2274, "y": 3173, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2275, "y": 3173, "z": 0, "type": 22, "direction":  0},
+
+  {"id": -1, "x": 2275, "y": 3163, "z": 0, "type": 10, "direction":  0},
+
+  {"id": -1, "x": 2284, "y": 3189, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2287, "y": 3189, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2284, "y": 3187, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2287, "y": 3187, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2285, "y": 3189, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2285, "y": 3187, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2285, "y": 3188, "z": 0, "type": 10, "direction":  0},
+
+  {"id": -1, "x": 2219, "y": 3152, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2219, "y": 3155, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2221, "y": 3152, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2221, "y": 3155, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2219, "y": 3153, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2220, "y": 3153, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2221, "y": 3153, "z": 0, "type": 10, "direction":  0},
+
+  {"id": -1, "x": 2214, "y": 3153, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2214, "y": 3156, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2216, "y": 3153, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2216, "y": 3156, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2214, "y": 3154, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2215, "y": 3154, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2216, "y": 3154, "z": 0, "type": 10, "direction":  0},
+
+  {"id": -1, "x": 2200, "y": 3169, "z": 0, "type": 10, "direction":  0},
+
+  {"id": -1, "x": 2250, "y": 3169, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2253, "y": 3169, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2250, "y": 3167, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2253, "y": 3167, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2251, "y": 3169, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2251, "y": 3168, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2251, "y": 3167, "z": 0, "type": 10, "direction":  0},
+
+  {"id": -1, "x": 2266, "y": 3204, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2267, "y": 3204, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2268, "y": 3204, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2266, "y": 3203, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2267, "y": 3203, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2268, "y": 3203, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2266, "y": 3202, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2267, "y": 3202, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2268, "y": 3202, "z": 0, "type": 22, "direction":  0},
+
+  {"id": -1, "x": 2295, "y": 3214, "z": 0, "type": 10, "direction":  0},
+
+  {"id": -1, "x": 2293, "y": 3242, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2295, "y": 3242, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2293, "y": 3245, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2295, "y": 3245, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2293, "y": 3243, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2294, "y": 3243, "z": 0, "type": 10, "direction":  0},
+  {"id": -1, "x": 2295, "y": 3243, "z": 0, "type": 10, "direction":  0},
+
+  {"id": -1, "x": 2276, "y": 3263, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2277, "y": 3263, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2278, "y": 3263, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2276, "y": 3262, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2277, "y": 3262, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2278, "y": 3262, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2276, "y": 3261, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2277, "y": 3261, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2278, "y": 3261, "z": 0, "type": 22, "direction":  0},
+
+  {"id": -1, "x": 2181, "y": 3209, "z": 0, "type": 10, "direction":  0},
+
+  {"id": -1, "x": 2235, "y": 3181, "z": 0, "type": 10, "direction":  0},
+
+  {"id": -1, "x": 2257, "y": 3227, "z": 0, "type": 10, "direction":  0},
+
+  {"id": -1, "x": 2208, "y": 3204, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2209, "y": 3204, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2210, "y": 3204, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2208, "y": 3203, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2209, "y": 3203, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2210, "y": 3203, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2208, "y": 3202, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2209, "y": 3202, "z": 0, "type": 22, "direction":  0},
+  {"id": -1, "x": 2210, "y": 3202, "z": 0, "type": 22, "direction":  0}
+]
