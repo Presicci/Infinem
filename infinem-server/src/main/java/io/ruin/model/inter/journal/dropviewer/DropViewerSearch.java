@@ -20,11 +20,10 @@ public class DropViewerSearch {
     private static final int MAX_RESULTS = 100;
 
     protected static void search(Player player, String name, boolean monster) {
-        String imgTag;
         if (monster)
-            player.sendMessage((imgTag = "<img=108>") + Color.DARK_GREEN.tag() + " Drop Viewer: Searching for monster \"" + name + "\"...");
+            player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: Searching for monster \"" + name + "\"...");
         else
-            player.sendMessage((imgTag = "<img=33>") + Color.DARK_GREEN.tag() + " Drop Viewer: Searching for monsters that drop \"" + name + "\"...");
+            player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: Searching for monsters that drop \"" + name + "\"...");
         TaskWorker.startTask(t -> {
             List<DropViewerEntry> results = new ArrayList<>();
             String search = formatForSearch(name);
@@ -118,16 +117,16 @@ public class DropViewerSearch {
                 int found = results.size(); //minus two because of the search entries
                 if (found == 0) {
                     player.removeAttribute(AttributeKey.DROP_VIEWER_RESULTS);
-                    player.sendMessage(imgTag + Color.DARK_GREEN.tag() + " Drop Viewer: No results found.");
+                    player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: No results found.");
                 } else {
                     player.putTemporaryAttribute(AttributeKey.DROP_VIEWER_RESULTS, results);
                     if (found == 1)
-                        player.sendMessage(imgTag + Color.DARK_GREEN.tag() + " Drop Viewer: 1 result found.");
+                        player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: 1 result found.");
                     else {
                         if (tooMany.get()) {
-                            player.sendMessage(imgTag + Color.DARK_GREEN.tag() + " Drop Viewer: Too many results found, showing first " + found + ".");
+                            player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: Too many results found, showing first " + found + ".");
                         } else {
-                            player.sendMessage(imgTag + Color.DARK_GREEN.tag() + " Drop Viewer: " + found + " results found.");
+                            player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: " + found + " results found.");
                         }
                     }
                     sendEntries(player);

@@ -44,7 +44,7 @@ public class DropViewer {
     private static void displayDrops(Player player, int id, String name) {
         NPCDef def = NPCDef.get(id);
         if (def.lootTable == null) {
-            player.sendMessage("<img=108>" + Color.DARK_GREEN.tag() + " Drop Viewer: " + Color.OLIVE.tag() + name + " has no drops.");
+            player.sendMessage("" + Color.DARK_GREEN.tag() + " Drop Viewer: " + Color.OLIVE.tag() + name + " has no drops.");
             return;
         }
         DropViewerResult petDrop = null;
@@ -219,8 +219,8 @@ public class DropViewer {
         }
         InterfaceHandler.register(Interface.DROP_VIEWER, h -> {
             h.actions[16] = (SlotAction) DropViewer::clickEntry;
-            h.actions[17] = (SimpleAction) player -> player.stringInput("<img=108> Enter monster name to search for:", name -> DropViewerSearch.search(player, name, true));
-            h.actions[18] = (SimpleAction) player -> player.stringInput("<img=33> Enter drop name to search for:", name -> DropViewerSearch.search(player, name, false));
+            h.actions[17] = (SimpleAction) player -> player.stringInput("Enter monster name to search for:", name -> DropViewerSearch.search(player, name, true));
+            h.actions[18] = (SimpleAction) player -> player.stringInput("Enter drop name to search for:", name -> DropViewerSearch.search(player, name, false));
             h.actions[24] = (SlotAction) DropViewer::clickItem;
             h.actions[32] = (SimpleAction) player -> {
                 List<DropViewerResult> drops = player.getTemporaryAttributeOrDefault("DROPVIEWER_LAST", new ArrayList<>());
