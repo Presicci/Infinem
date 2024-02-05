@@ -90,7 +90,7 @@ public class RepairNPC {
             10619,  // Bob
             4105,   // Dunstan
             1358,   // Tindel merchant
-            // TODO Squire
+            1766,   // Squire
             9157,   // Aneirin
             2882,   // Horvik
     };
