@@ -210,6 +210,8 @@ public abstract class NPCCombat extends Combat {
                 }
             });
         }
+        if (info.typeless)
+            hit.ignorePrayer();
         target.hit(hit);
         return hit;
     }
@@ -234,6 +236,8 @@ public abstract class NPCCombat extends Combat {
                 }
             });
         }
+        if (info.typeless)
+            hit.ignorePrayer();
         hit.afterPostDamage(e -> {
             boolean splash = hit.isBlocked();
             if (target != null) {

@@ -105,6 +105,8 @@ public class npc_combat extends DataFile {
 
         @Expose public int poison = 0;
 
+        @Expose public boolean typeless = false;
+
         /**
          * Slayer Info
          */
