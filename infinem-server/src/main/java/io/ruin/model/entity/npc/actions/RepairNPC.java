@@ -25,7 +25,7 @@ import static io.ruin.cache.NpcID.BOB_2812;
  */
 public class RepairNPC {
 
-    private static void repairAll(Player player, NPC npc) {
+    /*private static void repairAll(Player player, NPC npc) {
         int totalPrice = 0;
         ArrayList<Item> brokenItems = new ArrayList<>();
         for(Item item : player.getInventory().getItems()) {
@@ -62,16 +62,11 @@ public class RepairNPC {
                 item.setId(item.getDef().brokenFrom.fixedId);
             player.dialogue(new NPCDialogue(npc, "I've repaired all your items for you."));
         }));
-    }
+    }*/
 
-    private static void repairItem(Player player, Item item, ItemBreaking brokenItem) {
-        int currencyId;
-        String currencyName;
-        int price;
-        currencyId = COINS_995;
-        currencyName = "coins";
-        price = coinPrice(player, brokenItem.coinRepairCost);
-
+    public static void repairItem(Player player, Item item, int price, int fixedId) {
+        int currencyId = COINS_995;
+        String currencyName = "coins";
         player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Fix your " + item.getDef().name + " for " + NumberUtils.formatNumber(price) + " " + currencyName + "?", item, () -> {
             Item currency = player.getInventory().findItem(currencyId);
             if(currency == null || currency.getAmount() < price) {
@@ -82,18 +77,12 @@ public class RepairNPC {
                 }
             }
             currency.remove(price);
-            item.setId(brokenItem.fixedId);
+            item.setId(fixedId);
             player.dialogue(new MessageDialogue("You have repaired your " + item.getDef().name + "."));
         }));
     }
 
-    private static int coinPrice(Player player, int basePrice) {
-        double smithingLevel = player.getStats().get(StatType.Smithing).fixedLevel;
-        double smithingMultiplier = 1D - (smithingLevel / 200D);
-        return (int) (smithingMultiplier * basePrice);
-    }
-
-    private static final int[] REPAIR_NPCS = {
+    public static final int[] REPAIR_NPCS = {
             BOB_2812,
             4105,   // Dunstan
             1358,   // Tindel merchant
@@ -104,14 +93,7 @@ public class RepairNPC {
 
     static {
         for (int npcId : REPAIR_NPCS) {
-            NPCAction.register(npcId, "repair", RepairNPC::repairAll);
-        }
-        for(ItemBreaking brokenItem : ItemBreaking.values()) {
-            ItemAction.registerInventory(brokenItem.brokenId, "fix", (player, item) -> repairItem(player, item, brokenItem));
-            ItemItemAction.register(COINS_995, brokenItem.brokenId, (player, primary, secondary) -> repairItem(player, secondary, brokenItem));
-            for (int npcId : REPAIR_NPCS) {
-                ItemNPCAction.register(brokenItem.brokenId, npcId, (player, item, npc) -> repairItem(player, item, brokenItem));
-            }
+            //NPCAction.register(npcId, "repair", RepairNPC::repairAll);
         }
     }
 }

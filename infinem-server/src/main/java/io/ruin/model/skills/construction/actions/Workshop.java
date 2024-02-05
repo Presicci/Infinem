@@ -1,10 +1,10 @@
 package io.ruin.model.skills.construction.actions;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
-import io.ruin.model.item.actions.ItemObjectAction;
-import io.ruin.model.item.actions.impl.ItemBreaking;
+import io.ruin.model.item.Item;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.skills.construction.Buildable;
@@ -15,24 +15,19 @@ import static io.ruin.cache.ItemID.COINS_995;
 
 public class Workshop {
 
-    static {
-        ItemObjectAction.register(Buildable.ARMOUR_STAND.getBuiltObjects()[0], (player, item, obj) -> {
-            ItemBreaking broken = item.getDef().brokenFrom;
-            if (broken == null) {
-                player.dialogue(new MessageDialogue("You can't repair that."));
+    public static void repair(Player player, Item item, int price, int fixedId) {
+        int finalPrice = (int) ((1d - (player.getStats().get(StatType.Smithing).currentLevel / 200d)) * price);
+        player.dialogue(new YesNoDialogue("Repair the item?", "Repairing this item will cost " + NumberUtils.formatNumber(finalPrice) + " coins. Continue?", fixedId, 1, () -> {
+            if (!player.getInventory().contains(COINS_995, finalPrice)) {
+                player.dialogue(new MessageDialogue("Not enough coins in your inventory."));
                 return;
             }
-            int price = (int) ((1d - (player.getStats().get(StatType.Smithing).currentLevel / 200d)) * broken.coinRepairCost);
-            player.dialogue(new YesNoDialogue("Repair the item?", "Repairing this item will cost " + NumberUtils.formatNumber(price) + " coins. Continue?", broken.fixedId, 1, () -> {
-                if (!player.getInventory().contains(COINS_995, price)) {
-                    player.dialogue(new MessageDialogue("Not enough coins in your inventory."));
-                    return;
-                }
-                player.getInventory().remove(COINS_995, price);
-                item.setId(broken.fixedId);
-            }));
-        });
+            player.getInventory().remove(COINS_995, finalPrice);
+            item.setId(fixedId);
+        }));
+    }
 
+    static {
         //Tool stores
         ItemDispenser.register(6786, Tool.SAW, Tool.HAMMER, Tool.CHISEL, Tool.SHEARS);
         ItemDispenser.register(6787, Tool.EMPTY_BUCKET, Tool.KNIFE, Tool.SPADE, Tool.TINDER_BOX);

@@ -1,6 +1,13 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.cache.ItemDef;
+import io.ruin.model.entity.npc.actions.RepairNPC;
+import io.ruin.model.item.actions.ItemNPCAction;
+import io.ruin.model.item.actions.ItemObjectAction;
+import io.ruin.model.skills.construction.Buildable;
+import io.ruin.model.skills.construction.actions.Workshop;
+
+import java.util.Arrays;
 
 public enum ItemBreaking {
 
@@ -58,38 +65,7 @@ public enum ItemBreaking {
     /* halos */
     SARADOMIN_HALO(12637, 20537, 15, 25000, false),
     ZAMORAK_HALO(12638, 20539, 15, 25000, false),
-    GUTHIX_HALO(12639, 20541, 15, 25000, false),
-
-    /* barrows */
-    VERAC_HELM(4753, 4980, 10, 60000, false),
-    VERAC_FLAIL(4755, 4986, 10, 100000, false),
-    VERAC_BRASSARD(4757, 4992, 10, 90000, false),
-    VERAC_PLATE_SKIRT(4759, 4998, 10, 80000, false),
-
-    TORAG_HELM(4745, 4956, 10, 60000, false),
-    TORAG_HAMMERS(4747, 4962, 10, 100000, false),
-    TORAG_PLATE_BODY(4749, 4968, 10, 90000, false),
-    TORAG_PLATE_LEGS(4751, 4974, 10, 80000, false),
-
-    DHAROK_HELM(4716, 4884, 10, 60000, false),
-    DHAROK_GREAT_AXE(4718, 4890, 10, 100000, false),
-    DHAROK_PLATE_BODY(4720, 4896, 10, 90000, false),
-    DHAROK_PLATE_LEGS(4722, 4902, 10, 80000, false),
-
-    AHRIM_HOOD(4708, 4860, 10, 60000, false),
-    AHRIM_STAFF(4710, 4866, 10, 100000, false),
-    AHRIM_ROBE_TOP(4712, 4872, 10, 90000, false),
-    AHRIM_ROBE_SKIRT(4714, 4878, 10, 80000, false),
-
-    KARIL_COIF(4732, 4932, 10, 60000, false),
-    KARIL_CROSSBOW(4734, 4938, 10, 100000, false),
-    KARIL_LEATHER_TOP(4736, 4944, 10, 90000, false),
-    KARIL_LEATHER_SKIRT(4738, 4950, 10, 80000, false),
-
-    GUTHAN_HELM(4724, 4908, 10, 6000, false),
-    GUTHAN_WAR_SPEAR(4726, 4914, 10, 10000, false),
-    GUTHAN_PLATE_BODY(4728, 4920, 10, 9000, false),
-    GUTHAN_CHAIN_SKIRT(4730, 4926, 10, 80000, false);
+    GUTHIX_HALO(12639, 20541, 15, 25000, false);
 
     public final int brokenId, fixedId, bmRepairCost, coinRepairCost;
     public final boolean freeFromShops;
@@ -100,8 +76,15 @@ public enum ItemBreaking {
         this.bmRepairCost = bmRepairCost;
         this.coinRepairCost = coinRepairCost;
         this.freeFromShops = freeFromShops;
-        ItemDef.get(brokenId).brokenFrom = this;
         ItemDef.get(fixedId).breakTo = this;
     }
 
+    static {
+        for (ItemBreaking i : values()) {
+            for (int npc : RepairNPC.REPAIR_NPCS) {
+                ItemNPCAction.register(i.brokenId, npc, (player, item, npc1) -> RepairNPC.repairItem(player, item, i.coinRepairCost, i.fixedId));
+            }
+            ItemObjectAction.register(i.brokenId, Buildable.ARMOUR_STAND.getBuiltObjects()[0], (player, item, obj) -> Workshop.repair(player, item, i.coinRepairCost, i.fixedId));
+        }
+    }
 }
