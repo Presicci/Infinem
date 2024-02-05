@@ -4,6 +4,7 @@ import io.ruin.model.content.bestiary.Bestiary;
 import io.ruin.model.content.bestiary.BestiaryDef;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceHandler;
+import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.journal.dropviewer.DropViewer;
@@ -57,7 +58,14 @@ public class TabBestiary {
         InterfaceHandler.register(1009, interfaceHandler -> {
             interfaceHandler.actions[2] = (SlotAction) (player, slot) -> player.getBestiary().displayEntry(slot);
             interfaceHandler.actions[6] = (SimpleAction) DropViewer::open;
-            interfaceHandler.actions[8] = (SimpleAction) (player) -> player.stringInput("Search:", search -> processSearch(player, search));
+            interfaceHandler.actions[8] = (OptionAction) (player, option) -> {
+                if (option == 1) {
+                    player.stringInput("Search:", search -> processSearch(player, search));
+                } else {
+                    player.getBestiary().setEntries(BestiaryDef.ENTRIES);
+                    populateList(player);
+                }
+            };
             interfaceHandler.actions[14] = (SlotAction) (player, slot) -> {
                 Config.BESTIARY_SORT.set(player, slot-1);
                 sendTab(player);
