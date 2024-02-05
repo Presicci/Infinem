@@ -779,7 +779,7 @@ public class PlayerCombat extends Combat {
                     else
                         hit.damage = 0;
                 }
-            } else if(hit.attackStyle.isMagic()) {
+            } else if(hit.attackStyle.isMagic() || hit.attackStyle.isRangedMagic()) {
                 if(player.getPrayer().isActive(Prayer.PROTECT_FROM_MAGIC)) {
                     if(hit.attacker != null && hit.attacker.player != null)
                         hit.damage *= 0.60;

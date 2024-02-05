@@ -70,7 +70,7 @@ public class CombatUtils {
 
     public static double getAttackBonus(Entity entity, AttackStyle attackStyle, AttackType attackType) {
         double effectiveAttack, bonus = 0;
-        if(attackStyle == AttackStyle.MAGIC) {
+        if(attackStyle == AttackStyle.MAGIC || attackStyle == AttackStyle.RANGED_MAGIC) {
             effectiveAttack = getEffectiveAttack(entity, StatType.Magic, attackType);
             bonus = entity.getCombat().getBonus(EquipmentStats.MAGIC_ATTACK);
         } else if(attackStyle == AttackStyle.RANGED || attackStyle == AttackStyle.MAGICAL_RANGED) {
@@ -135,16 +135,14 @@ public class CombatUtils {
         if(attackStyle == AttackStyle.MAGIC || attackStyle == AttackStyle.MAGICAL_RANGED || attackStyle == AttackStyle.MAGICAL_MELEE) {
             effectiveDefence = getEffectiveMagicDefence(entity);
             bonus = entity.getCombat().getBonus(EquipmentStats.MAGIC_DEFENCE);
-        } else {
-            if(attackStyle == AttackStyle.STAB)
-                bonus = entity.getCombat().getBonus(EquipmentStats.STAB_DEFENCE);
-            else if(attackStyle == AttackStyle.SLASH)
-                bonus = entity.getCombat().getBonus(EquipmentStats.SLASH_DEFENCE);
-            else if(attackStyle == AttackStyle.CRUSH)
-                bonus = entity.getCombat().getBonus(EquipmentStats.CRUSH_DEFENCE);
-            else if(attackStyle == AttackStyle.RANGED)
-                bonus = entity.getCombat().getBonus(EquipmentStats.RANGE_DEFENCE);
-        }
+        } else if(attackStyle == AttackStyle.STAB)
+            bonus = entity.getCombat().getBonus(EquipmentStats.STAB_DEFENCE);
+        else if(attackStyle == AttackStyle.SLASH)
+            bonus = entity.getCombat().getBonus(EquipmentStats.SLASH_DEFENCE);
+        else if(attackStyle == AttackStyle.CRUSH)
+            bonus = entity.getCombat().getBonus(EquipmentStats.CRUSH_DEFENCE);
+        else if(attackStyle == AttackStyle.RANGED || attackStyle == AttackStyle.RANGED_MAGIC)
+            bonus = entity.getCombat().getBonus(EquipmentStats.RANGE_DEFENCE);
         return effectiveDefence * (bonus + 64D);
     }
 
