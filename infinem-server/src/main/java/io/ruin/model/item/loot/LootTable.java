@@ -158,7 +158,9 @@ public class LootTable {
             tableLoop : for(ItemsTable table : tables) {
                 if (table.name != null && (table.name.equalsIgnoreCase("tertiary")
                         || CommonTables.tertiaryTableNames.contains(table.name))) {
-                    if (Random.rollDie((int) (totalWeight / table.weight))) {
+                    double tableRand = Random.get() * totalWeight;
+                    System.out.println(tableRand + "/"  + table.weight);
+                    if (tableRand <= table.weight) {
                         double itemsRand = Random.get() * table.totalWeight;
                         boolean commonTableRolled = CommonTables.tertiaryTableNames.contains(table.name);
                         for(LootItem item : table.items) {
