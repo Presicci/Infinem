@@ -69,7 +69,7 @@ public class KreeArra extends General {
         npc.localPlayers().forEach(p -> {
             if (ProjectileRoute.allow(npc, p)) {
                 int delay = MAGIC_PROJECTILE.send(npc, p);
-                p.hit(new Hit(npc, AttackStyle.MAGIC).randDamage(21).clientDelay(delay));
+                p.hit(new Hit(npc, AttackStyle.RANGED_MAGIC).randDamage(21).clientDelay(delay));
             }
         });
     }
