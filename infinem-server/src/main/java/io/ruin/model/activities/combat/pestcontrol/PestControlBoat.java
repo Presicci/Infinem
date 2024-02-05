@@ -82,8 +82,8 @@ public final class PestControlBoat {
 		players.add(player);
 		player.getMovement().teleport(player.getPosition().relative(offset, 0, 0));
 		player.openInterface(InterfaceType.PRIMARY_OVERLAY, OVERLAY);
-		player.getPacketSender().sendString(OVERLAY, 21, settings.title());
-		player.getPacketSender().sendString(OVERLAY, 6, "Points: "+ player.getAttributeIntOrZero("PEST_POINTS"));
+		player.getPacketSender().sendString(OVERLAY, 20, settings.title());
+		player.getPacketSender().sendString(OVERLAY, 5, "Points: "+ player.getAttributeIntOrZero("PEST_POINTS"));
 		updateOverlay();
 		player.teleportListener = p -> {
 			leave(p);
@@ -145,12 +145,12 @@ public final class PestControlBoat {
 		players.forEach(p -> {
 			int mins = nextDeparture.remainingToMins();
 			String timeDisplay = mins == 0 ? "In a few moments!" : mins + " min";
-			p.getPacketSender().sendString(OVERLAY, 4, "Next Departure: "+ timeDisplay);
+			p.getPacketSender().sendString(OVERLAY, 3, "Next Departure: "+ timeDisplay);
 			if (lobbySize() < MINIMUM_PARTY_SIZE) {
 				int needed = MINIMUM_PARTY_SIZE - lobbySize();
-				p.getPacketSender().sendString(OVERLAY, 5, "Players Ready: "+ lobbySize() +" ("+ needed +" needed)");
+				p.getPacketSender().sendString(OVERLAY, 4, "Players Ready: "+ lobbySize() +" ("+ needed +" needed)");
 			} else {
-				p.getPacketSender().sendString(OVERLAY, 5, "Players Ready: "+ lobbySize());
+				p.getPacketSender().sendString(OVERLAY, 4, "Players Ready: "+ lobbySize());
 			}
 		});
 	}
