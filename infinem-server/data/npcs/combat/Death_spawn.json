@@ -7,6 +7,7 @@
     "aggressive_level": 0,
     "max_damage": 2,
     "attack_style": "SLASH",
+    "typeless": true,
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
