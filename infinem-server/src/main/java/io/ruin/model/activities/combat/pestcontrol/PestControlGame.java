@@ -142,10 +142,10 @@ public class PestControlGame {
 		});
 
 		// Register our portals.
-		registerPortal(new PestPortal(this, "Purple", 23, 1743, 1747), 2628, 2591);
-		registerPortal(new PestPortal(this, "Blue", 24, 1744, 1748), 2680, 2588);
-		registerPortal(new PestPortal(this, "Yellow", 25, 1745, 1749), 2669, 2570);
-		registerPortal(new PestPortal(this, "Red", 26, 1746, 1750), 2645, 2569);
+		registerPortal(new PestPortal(this, "Purple", 21, 1743, 1747), 2628, 2591);
+		registerPortal(new PestPortal(this, "Blue", 22, 1744, 1748), 2680, 2588);
+		registerPortal(new PestPortal(this, "Yellow", 23, 1745, 1749), 2669, 2570);
+		registerPortal(new PestPortal(this, "Red", 24, 1746, 1750), 2645, 2569);
 
 		//Register ladders
 		//North-west tower
@@ -308,17 +308,16 @@ public class PestControlGame {
 	private void updateOverlay() {
 		players.forEach(p -> {
 			int knightHp = knight.getHp();
-			p.getPacketSender().sendString(OVERLAY, 6, displayTimeFor(lifespan));
-			p.getPacketSender().sendString(OVERLAY, 7, knightHp > 70 ? "<col=00ff00>" + knightHp : "<col=ff0000>" + knightHp);
-			p.getPacketSender().sendString(OVERLAY, 8, p.pestActivityScore > 50 ? "<col=00ff00>" + p.pestActivityScore : "<col=ff0000>" + p.pestActivityScore);
+			p.getPacketSender().sendString(OVERLAY, 5, displayTimeFor(lifespan));
+			p.getPacketSender().sendString(OVERLAY, 6, knightHp > 70 ? "<col=00ff00>" + knightHp : "<col=ff0000>" + knightHp);
+			p.getPacketSender().sendString(OVERLAY, 7, p.pestActivityScore > 50 ? "<col=00ff00>" + p.pestActivityScore : "<col=ff0000>" + p.pestActivityScore);
 			portals.forEach(portal -> {
 				if (portal.dead) {
 					p.getPacketSender().sendString(OVERLAY, portal.widgetIdx, "<col=ff0000>0");
 				} else {
 					p.getPacketSender().sendString(OVERLAY, portal.widgetIdx, "<col=00ff00>" + portal.link().getHp());
 				}
-
-				p.getPacketSender().setHidden(OVERLAY, portal.widgetIdx, !portal.shieldDropped);
+				p.getPacketSender().setHidden(OVERLAY, ((portal.widgetIdx - 21) * 2) + 25, portal.shieldDropped);
 			});
 		});
 	}
