@@ -46,5 +46,59 @@
     "z": 0,
     "direction": "S",
     "walkRange": 2
+  },
+  {
+    "name": "Squire - Smith",
+    "id": 1766,
+    "x": 2650,
+    "y": 2659,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Squire",
+    "id": 1768,
+    "x": 2650,
+    "y": 2665,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Squire",
+    "id": 1767,
+    "x": 2658,
+    "y": 2654,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Squire",
+    "id": 1765,
+    "x": 2665,
+    "y": 2660,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+  {
+    "name": "Squire",
+    "id": 1764,
+    "x": 2668,
+    "y": 2651,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Squire",
+    "id": 6509,
+    "x": 2666,
+    "y": 2651,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
   }
 ]
