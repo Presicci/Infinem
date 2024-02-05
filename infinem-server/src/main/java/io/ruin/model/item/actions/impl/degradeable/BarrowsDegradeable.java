@@ -52,7 +52,7 @@ public enum BarrowsDegradeable {
     private final int newId;
     private final int degradeableBaseId;
 
-    public static final int MAX_CHARGES = 20;
+    public static final int MAX_CHARGES = 20_000;
     private static final int CHARGES_PER_QUARTER = MAX_CHARGES / 4;
     private static final int[] DEGRADE_CHARGES = { CHARGES_PER_QUARTER * 3, CHARGES_PER_QUARTER * 2, CHARGES_PER_QUARTER };
 
