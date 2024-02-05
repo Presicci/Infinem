@@ -12,11 +12,11 @@
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 47,
+    "strength": 37,
+    "defence": 23,
     "ranged": 1,
-    "magic": 1,
+    "magic": 27,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
@@ -30,11 +30,11 @@
     "magic_defence": 0,
     "ranged_defence": 0,
     //Immunites
-    "poison_immunity": false,
+    "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
     "attack_ticks": 4,
-    "death_ticks": 5,
+    "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
@@ -55,11 +55,11 @@
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 67,
+    "strength": 52,
+    "defence": 38,
     "ranged": 1,
-    "magic": 1,
+    "magic": 37,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
@@ -73,11 +73,11 @@
     "magic_defence": 0,
     "ranged_defence": 0,
     //Immunites
-    "poison_immunity": false,
+    "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
     "attack_ticks": 4,
-    "death_ticks": 5,
+    "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
@@ -98,11 +98,11 @@
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 87,
+    "strength": 67,
+    "defence": 53,
     "ranged": 1,
-    "magic": 1,
+    "magic": 47,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
@@ -116,11 +116,11 @@
     "magic_defence": 0,
     "ranged_defence": 0,
     //Immunites
-    "poison_immunity": false,
+    "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
     "attack_ticks": 4,
-    "death_ticks": 5,
+    "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
@@ -141,11 +141,11 @@
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 100,
+    "strength": 75,
+    "defence": 68,
     "ranged": 1,
-    "magic": 1,
+    "magic": 50,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
@@ -159,11 +159,11 @@
     "magic_defence": 0,
     "ranged_defence": 0,
     //Immunites
-    "poison_immunity": false,
+    "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
     "attack_ticks": 4,
-    "death_ticks": 5,
+    "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
@@ -184,11 +184,11 @@
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 110,
+    "strength": 83,
+    "defence": 83,
     "ranged": 1,
-    "magic": 1,
+    "magic": 60,
     //Aggressive Stats
     "stab_attack": 0,
     "slash_attack": 0,
@@ -202,11 +202,11 @@
     "magic_defence": 0,
     "ranged_defence": 0,
     //Immunites
-    "poison_immunity": false,
+    "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
     "attack_ticks": 4,
-    "death_ticks": 5,
+    "death_ticks": 2,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
