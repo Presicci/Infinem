@@ -107,8 +107,10 @@ public class Bestiary {
             List<String> keys = new ArrayList<>(killCounts.keySet());
             Collections.reverse(keys);
             for (String key : keys) {
-                if (entries.contains(key))
+                if (entries.contains(key)) {
                     sb.append(getEntryString(key, killCounts.get(key)));
+                    orderedEntries.add(key);
+                }
             }
         }
         sb.deleteCharAt(sb.length() - 1);   // Trim trailing |
