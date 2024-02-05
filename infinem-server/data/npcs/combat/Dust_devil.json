@@ -6,7 +6,7 @@
     "hitpoints": 105,
     "aggressive_level": 0,
     "max_damage": 8,
-    "attack_style": "CRUSH",
+    "attack_style": "RANGED_MELEE",
     //Slayer Info
     "slayer_level": 65,
     "slayer_xp": 105.0,
