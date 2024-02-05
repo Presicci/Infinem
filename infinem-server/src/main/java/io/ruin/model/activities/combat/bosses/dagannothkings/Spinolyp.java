@@ -42,7 +42,7 @@ public class Spinolyp extends NPCCombat {
                 target.poison(6);
             }
         } else {
-            if (projectileAttack(MAGIC_PROJECTILE, info.attack_animation, AttackStyle.MAGIC, info.max_damage).damage > 0 && target.player  != null) {
+            if (projectileAttack(MAGIC_PROJECTILE, info.attack_animation, AttackStyle.RANGED_MAGIC, info.max_damage).damage > 0 && target.player  != null) {
                 target.player.getPrayer().drain(1);
             }
         }
