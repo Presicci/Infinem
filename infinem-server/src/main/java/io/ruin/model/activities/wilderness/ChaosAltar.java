@@ -22,7 +22,7 @@ public class ChaosAltar {
 
     private static final int CHAOS_ALTAR = 411;
     private static final int ELDER_CHAOS_DRUID = 7995;
-    private static final int COST_PER_BONE = 200;
+    private static final int COST_PER_BONE = 50;
 
     static {
         NPCAction.register(ELDER_CHAOS_DRUID, "talk-to", (player, npc) -> player.dialogue(
