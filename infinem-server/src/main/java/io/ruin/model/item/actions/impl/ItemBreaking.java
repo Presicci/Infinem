@@ -7,8 +7,6 @@ import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.skills.construction.Buildable;
 import io.ruin.model.skills.construction.actions.Workshop;
 
-import java.util.Arrays;
-
 public enum ItemBreaking {
 
     /* capes */
@@ -85,6 +83,7 @@ public enum ItemBreaking {
                 ItemNPCAction.register(i.brokenId, npc, (player, item, npc1) -> RepairNPC.repairItem(player, item, i.coinRepairCost, i.fixedId));
             }
             ItemObjectAction.register(i.brokenId, Buildable.ARMOUR_STAND.getBuiltObjects()[0], (player, item, obj) -> Workshop.repair(player, item, i.coinRepairCost, i.fixedId));
+            RepairNPC.REPAIR_COSTS.put(i.brokenId, i.coinRepairCost);
         }
     }
 }

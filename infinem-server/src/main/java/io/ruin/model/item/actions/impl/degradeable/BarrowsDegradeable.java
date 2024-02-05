@@ -52,7 +52,7 @@ public enum BarrowsDegradeable {
     private final int newId;
     private final int degradeableBaseId;
 
-    private static final int MAX_CHARGES = 20;
+    public static final int MAX_CHARGES = 20;
     private static final int CHARGES_PER_QUARTER = MAX_CHARGES / 4;
     private static final int[] DEGRADE_CHARGES = { CHARGES_PER_QUARTER * 3, CHARGES_PER_QUARTER * 2, CHARGES_PER_QUARTER };
 
@@ -90,18 +90,22 @@ public enum BarrowsDegradeable {
             item.setId(degradeableBaseId + (index + 1));
     }
 
-    public int getRepairCost(Item item) {
-        double multi = 1D - ((double) item.getCharges() / MAX_CHARGES);
+    private int getStaticRepairCost() {
         int equipSlot = ItemDef.get(newId).equipSlot;
         if (equipSlot == Equipment.SLOT_WEAPON) {
-            return (int) (100_000 * multi);
+            return (int) (100_000);
         } else if (equipSlot == Equipment.SLOT_HAT) {
-            return (int) (60_000 * multi);
+            return (int) (60_000 );
         } else if (equipSlot == Equipment.SLOT_CHEST) {
-            return (int) (90_000 * multi);
+            return (int) (90_000);
         } else {
-            return (int) (80_000 * multi);
+            return (int) (80_000);
         }
+    }
+
+    public int getRepairCost(Item item) {
+        double multi = 1D - ((double) item.getCharges() / MAX_CHARGES);
+        return (int) (getStaticRepairCost() * multi);
     }
 
     static {
@@ -111,6 +115,7 @@ public enum BarrowsDegradeable {
                     ItemNPCAction.register(id, npc, (player, item, npc1) -> RepairNPC.repairItem(player, item, set.getRepairCost(item), set.newId));
                 }
                 ItemObjectAction.register(id, Buildable.ARMOUR_STAND.getBuiltObjects()[0], (player, item, obj) -> Workshop.repair(player, item, set.getRepairCost(item), set.newId));
+                RepairNPC.REPAIR_COSTS.put(id, set.getStaticRepairCost());
             }
         }
     }
