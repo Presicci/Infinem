@@ -765,7 +765,7 @@ public class PlayerCombat extends Combat {
 
     private void postDefend(Hit hit) {
         if(hit.attackStyle != null && !hit.prayerIgnored) {
-            if(hit.attackStyle.isMelee() || hit.attackStyle.isMagicalMelee()) {
+            if(hit.attackStyle.isMelee() || hit.attackStyle.isMagicalMelee() || hit.attackStyle.isRangedMelee()) {
                 if(player.getPrayer().isActive(Prayer.PROTECT_FROM_MELEE)) {
                     if(hit.attacker != null && hit.attacker.player != null)
                         hit.damage *= 0.60;

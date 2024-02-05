@@ -84,7 +84,7 @@ public class CombatUtils {
                 bonus = entity.getCombat().getBonus(EquipmentStats.STAB_ATTACK);
             else if(attackStyle == AttackStyle.SLASH)
                 bonus = entity.getCombat().getBonus(EquipmentStats.SLASH_ATTACK);
-            else if(attackStyle == AttackStyle.CRUSH)
+            else if(attackStyle == AttackStyle.CRUSH || attackStyle == AttackStyle.RANGED_MELEE)
                 bonus = entity.getCombat().getBonus(EquipmentStats.CRUSH_ATTACK);
             else if(attackStyle == AttackStyle.MAGICAL_MELEE)
                 bonus = 0; // i know this was implied before but im leaving it explicit just to make it clear
@@ -141,7 +141,7 @@ public class CombatUtils {
             bonus = entity.getCombat().getBonus(EquipmentStats.SLASH_DEFENCE);
         else if(attackStyle == AttackStyle.CRUSH)
             bonus = entity.getCombat().getBonus(EquipmentStats.CRUSH_DEFENCE);
-        else if(attackStyle == AttackStyle.RANGED || attackStyle == AttackStyle.RANGED_MAGIC)
+        else if(attackStyle == AttackStyle.RANGED || attackStyle == AttackStyle.RANGED_MAGIC || attackStyle == AttackStyle.RANGED_MELEE)
             bonus = entity.getCombat().getBonus(EquipmentStats.RANGE_DEFENCE);
         return effectiveDefence * (bonus + 64D);
     }

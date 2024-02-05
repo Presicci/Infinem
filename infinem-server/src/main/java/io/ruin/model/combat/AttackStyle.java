@@ -7,6 +7,7 @@ public enum AttackStyle {
     CRUSH,
     RANGED,
     RANGED_MAGIC,
+    RANGED_MELEE,
     MAGIC,
     MAGICAL_RANGED,
     MAGICAL_MELEE,
@@ -27,6 +28,10 @@ public enum AttackStyle {
 
     public boolean isRangedMagic() {
         return this == RANGED_MAGIC;
+    }
+
+    public boolean isRangedMelee() {
+        return this == RANGED_MELEE;
     }
 
     public boolean isMagicalRanged() {
