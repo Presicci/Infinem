@@ -5,6 +5,7 @@ import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.HitListener;
+import io.ruin.model.map.Graphic;
 import io.ruin.model.map.Projectile;
 
 /**
@@ -35,8 +36,9 @@ public class Torcher extends NPCCombat {
 
 	@Override
 	public boolean attack() {
-		if (withinDistance(6)) {
-			projectileAttack(PROJECTILE, 3882, AttackStyle.MAGIC, info.max_damage);
+		if (withinDistance(10)) {
+			npc.graphics(646);
+			projectileAttack(PROJECTILE, 3882, Graphic.builder().id(648).height(89).build(), AttackStyle.MAGIC, info.max_damage);
 			return true;
 		}
 		return false;
