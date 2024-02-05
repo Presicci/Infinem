@@ -36,6 +36,7 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.areas.rewards.MisthalinReward;
+import io.ruin.model.content.transportation.relics.DungeonHub;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.*;
@@ -2896,6 +2897,33 @@ public class Administrator {
             case "runes": {
                 for (Rune rune : Rune.VALUES) {
                     player.getInventory().addOrDrop(rune.getId(), 1000);
+                }
+                return true;
+            }
+            case "searchstructs": {
+                String searchString = args[0];
+                for (int index = 0; index < 5904; index++) {
+                    Struct struct = Struct.get(index);
+                    for (Object param :  struct.getParams().values()) {
+                        if (param instanceof String) {
+                            if (((String) param).contains(searchString)) {
+                                System.out.println("Struct " + index + ": " + (String) param);
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+            case "searchenums": {
+                String searchString = args[0];
+                for (int index = 0; index < 5278; index++) {
+                    EnumMap enumMap = EnumMap.get(index);
+                    if (enumMap == null || enumMap.stringValues == null) continue;
+                    for (String s :  enumMap.stringValues) {
+                        if (s.contains(searchString)) {
+                            System.out.println("Enum " + index + ": " + s);
+                        }
+                    }
                 }
                 return true;
             }
