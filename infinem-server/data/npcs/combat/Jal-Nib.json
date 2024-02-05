@@ -7,6 +7,7 @@
     "aggressive_level": 0,
     "max_damage": 4,
     "attack_style": "CRUSH",
+    "typeless": true,
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 10.0,
@@ -30,7 +31,7 @@
     "magic_defence": -20,
     "ranged_defence": -20,
     //Immunites
-    "poison_immunity": false,
+    "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
     "attack_ticks": 4,
