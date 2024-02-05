@@ -7,6 +7,7 @@
     "aggressive_level": 290,
     "max_damage": 14,
     "attack_style": "CRUSH",
+    "typeless": true,
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
@@ -50,6 +51,7 @@
     "aggressive_level": 298,
     "max_damage": 14,
     "attack_style": "CRUSH",
+    "typeless": true,
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
