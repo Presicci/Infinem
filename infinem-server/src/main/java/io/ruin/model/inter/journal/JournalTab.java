@@ -10,6 +10,7 @@ import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.model.inter.*;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SimpleAction;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.handlers.TabBestiary;
 import io.ruin.model.inter.journal.dropviewer.DropViewer;
@@ -343,6 +344,7 @@ public class JournalTab {
                 DropViewer.open(player);
             }
         } else if (slot == 5) {
+            player.dialogue(new MessageDialogue("Combat achievements are not currently implemented."));
             //CombatAchievements.openOverview(player);
         } else if (slot == 6) {
             player.getCollectionLog().open(player);
