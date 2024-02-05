@@ -154,12 +154,12 @@ public class LootTable {
     public List<Item> rollTertiary(List<Item> rolledItems) {
         List<Item> items = new ArrayList<>();
         List<Item> commonTableItems = new ArrayList<>(); // Doing this to prevent multiple side-tertiary rolls
+        if (totalWeight <= 0) return null;
         if(tables != null) {
             tableLoop : for(ItemsTable table : tables) {
                 if (table.name != null && (table.name.equalsIgnoreCase("tertiary")
                         || CommonTables.tertiaryTableNames.contains(table.name))) {
                     double tableRand = Random.get() * totalWeight;
-                    System.out.println(tableRand + "/"  + table.weight);
                     if (tableRand <= table.weight) {
                         double itemsRand = Random.get() * table.totalWeight;
                         boolean commonTableRolled = CommonTables.tertiaryTableNames.contains(table.name);
