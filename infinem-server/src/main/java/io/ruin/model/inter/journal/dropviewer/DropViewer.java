@@ -96,7 +96,7 @@ public class DropViewer {
                             }
                             int chance;
                             if (item.weight == 0)
-                                chance = (int) Math.max(2, (1D / tableChance));
+                                chance = (int) (1D / tableChance);
                             else
                                 chance = (int) Math.max(2, 1D / (tableChance * (item.weight / table.totalWeight)));
                             List<Item> groupDrops = getGroupDrop(item.id, name);
