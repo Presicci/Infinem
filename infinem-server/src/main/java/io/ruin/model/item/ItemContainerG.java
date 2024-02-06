@@ -567,6 +567,17 @@ public abstract class ItemContainerG<I extends Item> {
         return false;
     }
 
+    public boolean hasRoomForAll(int... ids) {
+        List<I> items = collectItems(ids);
+        int currentStackables = 0;
+        if (items != null) {
+            for (I item : items) {
+                if (item != null && item.getDef().stackable) ++currentStackables;
+            }
+        }
+        return getFreeSlots() >= (ids.length - currentStackables);
+    }
+
     public boolean hasRoomFor(int id) {
         ItemDef def = ItemDef.get(id);
         return getFreeSlots() > 0 || (def != null && def.stackable && hasId(id));
