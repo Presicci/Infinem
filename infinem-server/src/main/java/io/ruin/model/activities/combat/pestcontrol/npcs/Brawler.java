@@ -13,6 +13,7 @@ public class Brawler extends NPCCombat {
 
 	@Override
 	public void init() {
+		npc.clip = true;
 		npc.hitListener = new HitListener().postDamage((hit)-> {
 			Entity attacker = hit.attacker;
 			if (attacker != null && attacker.isPlayer()) {
