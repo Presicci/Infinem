@@ -33,10 +33,7 @@
     "y": 2649,
     "z": 0,
     "direction": "S",
-    "walkRange": 3,
-    "shopOptions": {
-      "Exchange": "c0d4952f-03c0-4dd7-a836-1c6592cfef2e"
-    }
+    "walkRange": 3
   },
   {
     "name": "Squire",

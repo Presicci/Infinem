@@ -87,47 +87,4 @@ public class PestControl {
         player.getPacketSender().sendString(PEST_CONTROL_SCOREBOARD, 10, String.valueOf(player.getAttributeIntOrZero("PEST_VETERAN_WINS")));
         player.openInterface(InterfaceType.MAIN, PEST_CONTROL_SCOREBOARD);
     }
-
-    /**
-	 * Opens the rewards interface and displays all items / perks buyable with Pest Control points.
-	 * @param player The player being shown the rewards interface
-	 */
-	private static void displayRewardsShop(Player player) {
-		player.selectedWidgetId = 0;
-		player.openInterface(InterfaceType.MAIN, PEST_CONTROL_REWARDS);
-        player.getPacketSender().sendAccessMask(PEST_CONTROL_REWARDS, 5, 0, 2, 1);
-	}
-
-	/**
-	 * Handles the selection of a shop item within the Void Knights' Reward Options
-	 * @param player The player being selecting the items in the shop
-	 */
-	private static void selectShopItem(Player player, PestControlRewards reward) {
-		player.selectedWidgetId = reward.widgetId();
-	}
-
-	/**
-	 * Attempts to purchase the selected item if the player has enough points to do so. If completed, we deduct the cost and reset
-	 * their selection.
-	 * @param player The player confirming the shop purchase
-	 */
-	private static void confirmShopPurchase(Player player) {
-		if (player.selectedWidgetId != 0) {
-			if (player.getInventory().isFull()) {
-				player.sendMessage("You do not have enough space in your inventory.");
-				return;
-			}
-
-			PestControlRewards selected = Arrays.stream(PestControlRewards.VALUES).filter(i -> player.selectedWidgetId == i.widgetId()).findAny().orElse(null);
-			if (selected != null) {
-				if (player.getAttributeIntOrZero("PEST_POINTS") < selected.cost()) {
-					player.sendMessage("You do not have enough Pest Points to purchase this "+ selected.displayName() +".");
-					return;
-				}
-				player.incrementNumericAttribute("PEST_POINTS", -selected.cost());
-				player.getInventory().add(new Item(selected.itemId()));
-				player.selectedWidgetId = 0;
-			}
-		}
-	}
 }

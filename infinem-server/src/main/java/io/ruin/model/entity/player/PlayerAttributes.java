@@ -747,7 +747,6 @@ public abstract class PlayerAttributes extends Entity {
 
     public PestControlGame pestGame;
     public int pestActivityScore;
-    public int selectedWidgetId;
 
     public LastManStandingSession lmsSession;
     public LastManStandingQueue lmsQueue;
