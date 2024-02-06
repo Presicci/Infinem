@@ -92281,7 +92281,8 @@
     "crush_attack_bonus": 65,
     "magic_attack_bonus": -4,
     "melee_strength_bonus": 70,
-    "weapon_type": "MEAT_TENDERISER"
+    "weapon_type": "MEAT_TENDERISER",
+    "two_handed": true
   },
   { // null
     "id": 20759,
