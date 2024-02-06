@@ -2,6 +2,7 @@ package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.combat.barrows.BarrowsRewards;
+import io.ruin.model.activities.combat.pestcontrol.rewards.PCReward;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.loot.LootItem;
@@ -117,6 +118,9 @@ public class DropViewerCustomEntries {
                     )
             ),
             new DropViewerEntry("Sinister Chest", SinisterChest.LOOT_TABLE),
-            new DropViewerEntry("Digsite Workman (Pickpocket)", PickPocket.DIGSITE_WORKMAN.lootTable)
+            new DropViewerEntry("Digsite Workman (Pickpocket)", PickPocket.DIGSITE_WORKMAN.lootTable),
+            new DropViewerEntry("Pest Control Herbs", PCReward.HERB_PACK_LOOT),
+            new DropViewerEntry("Pest Control Minerals", PCReward.MINERAL_PACK_LOOT),
+            new DropViewerEntry("Pest Control Seeds", PCReward.SEED_PACK_LOOT),
     };
 }
