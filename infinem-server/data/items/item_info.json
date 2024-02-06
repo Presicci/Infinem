@@ -92272,10 +92272,16 @@
   { // Hill giant club
     "id": 20756,
     "tradeable": true,
-    "examine": "Hill giant club - Examine not set.",
-    "weight": 0.0,
-	"protect_value": 921241,
-    "equip_slot": 3
+    "examine": "A brutal weapon popular among giants.",
+    "weight": 3.628,
+	"protect_value": 60000,
+    "equip_slot": 3,
+    "stab_attack_bonus": -4,
+    "slash_attack_bonus": 50,
+    "crush_attack_bonus": 65,
+    "magic_attack_bonus": -4,
+    "melee_strength_bonus": 70,
+    "weapon_type": "MEAT_TENDERISER"
   },
   { // null
     "id": 20759,
