@@ -379,7 +379,8 @@ public class PestControlGame {
 	 */
 	private void spawnKnightPests() {
 		int[] pests = settings.pests();
-		Bounds knightBounds = new Bounds(knight.getPosition(), 3);
+		Position knightPos = knight.getPosition();
+		Bounds knightBounds = new Bounds(knightPos.getX() - 2, knightPos.getY() - 2, knightPos.getX() + 3, knightPos.getY() + 3, 0);
 		List<Position> tiles = new ArrayList<>();
 		knightBounds.forEachPos(tiles::add);
 		Collections.shuffle(tiles);
