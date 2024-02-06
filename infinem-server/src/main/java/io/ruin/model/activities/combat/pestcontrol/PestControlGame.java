@@ -388,6 +388,11 @@ public class PestControlGame {
 		pest.getCombat().setTarget(knight);
 	}
 
+	protected void healKnight() {
+		knight.incrementHp(50);
+		updateOverlay();
+	}
+
 	/**
 	 * Adds a {@link NPC} to this Pest Control game.
 	 *

@@ -52,6 +52,9 @@ public class PestPortal {
 				}
 			}
 		});
+		npc.deathStartListener = (entity, killer, killHit) -> {
+			game.healKnight();
+		};
 		game.portals().add(this);
 		game.map().addNpc(npc);
 	}
