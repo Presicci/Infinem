@@ -105214,7 +105214,8 @@
     "melee_strength_bonus": 70,
     "ranged_strength_bonus": 0,
     "magic_damage_bonus": 0,
-    "prayer_bonus": 0
+    "prayer_bonus": 0,
+    "weapon_type": "SARACHNIS_CUDGEL"
   },
   {
     "id": 23650,
