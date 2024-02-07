@@ -102,10 +102,6 @@ public class PestControlGame {
 		addNpc(SQUIRE_ID, new Position(2660, 2608, 0));
 		NPCDef def = NPCDef.get(settings.voidKnightId());
 		def.combatHandlerClass = PassiveCombat.class;
-		def.combatInfo = new npc_combat.Info();
-		def.combatInfo.hitpoints = 250;
-		def.combatInfo.defend_animation = -1;
-		def.combatInfo.death_animation = -1;
 		def.ignoreMultiCheck = true;
 		knight = addNpc(settings.voidKnightId(), new Position(2656, 2592, 0));
 		knight.attackNpcListener = (player, npc, message) -> false;
@@ -385,8 +381,8 @@ public class PestControlGame {
 		knightBounds.forEachPos(tiles::add);
 		Collections.shuffle(tiles);
 		NPC pest = new NPC(pests[Random.get(pests.length - 1)]).spawn(Random.get(tiles));
-		pest.face(knight);
 		pest.getCombat().setTarget(knight);
+		pest.getCombat().faceTarget();
 	}
 
 	protected void healKnight() {
