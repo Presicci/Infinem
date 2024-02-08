@@ -282,7 +282,7 @@ public class PestControlGame {
 			spawnKnightPests();
 		}
 
-		if (cycles % 17 == 0) {
+		if (cycles == 12 || (cycles - 12) % 25 == 0) {
 			dropRandomShield();
 		}
 	}
