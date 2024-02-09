@@ -347,7 +347,7 @@ public enum SmithBar {
      */
 
     private static void open(Player player) {
-        if (!player.getInventory().hasId(Tool.HAMMER) && !player.getInventory().hasId(ItemID.DRAGON_WARHAMMER)) {
+        if (!player.getInventory().hasId(Tool.HAMMER)) {
             player.dialogue(new MessageDialogue("You need a hammer to work the metal with."));
             return;
         }
