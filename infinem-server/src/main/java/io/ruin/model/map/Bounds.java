@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.entity.player.Player;
 
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class Bounds {
 
@@ -49,6 +50,26 @@ public class Bounds {
             for(int x = swX; x <= neX; x++) {
                 for(int y= swY; y <= neY; y++)
                     consumer.accept(new Position(x, y, z));
+            }
+        }
+    }
+
+    public void forEachPos(Predicate<Position> predicate, Consumer<Position> consumer) {
+        int minZ, maxZ;
+        if(z == -1) {
+            minZ = 0;
+            maxZ = 3;
+        } else {
+            minZ = z;
+            maxZ = minZ;
+        }
+        for(int z = minZ; z <= maxZ; z++) {
+            for(int x = swX; x <= neX; x++) {
+                for(int y= swY; y <= neY; y++) {
+                    Position pos = new Position(x, y, z);
+                    if (predicate.test(pos))
+                        consumer.accept(pos);
+                }
             }
         }
     }
