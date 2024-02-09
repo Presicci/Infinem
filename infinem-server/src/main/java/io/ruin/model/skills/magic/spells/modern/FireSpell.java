@@ -20,6 +20,9 @@ public class FireSpell extends TargetSpell {
                 hit.boostDamage(1.5);
                 hit.ignoreDefence();
             }
+            if (target.npc != null && target.npc.getDef().icy) {
+                hit.boostDamage(1.0);
+            }
         }
     }
 }
