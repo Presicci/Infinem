@@ -353,6 +353,9 @@ public class NPCDef {
         golem = name.toLowerCase().contains("golem");
 
         icy = id == 11290 || id == 11291 || id == 11292;    // Zaros spirituals
+
+        kalphite = name.toLowerCase().contains("scarab") || name.toLowerCase().contains("kalphite")
+                || name.equalsIgnoreCase("locust rider") || name.equalsIgnoreCase("kephri");
     }
 
     void decode(InBuffer var1, int var2) {
