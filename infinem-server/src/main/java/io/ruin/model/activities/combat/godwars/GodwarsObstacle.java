@@ -8,7 +8,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
-import io.ruin.model.skills.Tool;
+import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 
 public class GodwarsObstacle {
@@ -71,8 +71,8 @@ public class GodwarsObstacle {
          */
         ObjectAction.register(26461, 2851, 5333, 2, "open", (player, obj) -> {
 
-            boolean hammer = player.getInventory().hasId(Tool.HAMMER) || player.getInventory().hasId(ItemID.DRAGON_WARHAMMER) || player.getEquipment().hasId(ItemID.DRAGON_WARHAMMER);
-            if (!hammer) {
+            boolean hammer = player.getInventory().hasId(ItemID.DRAGON_WARHAMMER) || player.getEquipment().hasId(ItemID.DRAGON_WARHAMMER);
+            if (!hammer && !SmithBar.hasHammer(player)) {
                 player.sendFilteredMessage("You need a hammer to ring the gong.");
                 return;
             }
