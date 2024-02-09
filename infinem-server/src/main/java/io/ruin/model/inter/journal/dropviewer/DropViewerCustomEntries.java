@@ -5,6 +5,7 @@ import io.ruin.model.activities.combat.barrows.BarrowsRewards;
 import io.ruin.model.activities.combat.pestcontrol.rewards.PCReward;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.ImplingJar;
+import io.ruin.model.item.actions.impl.InfernalEel;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.actions.impl.chests.*;
@@ -122,5 +123,6 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Pest Control Herbs", PCReward.HERB_PACK_LOOT),
             new DropViewerEntry("Pest Control Minerals", PCReward.MINERAL_PACK_LOOT),
             new DropViewerEntry("Pest Control Seeds", PCReward.SEED_PACK_LOOT),
+            new DropViewerEntry("Infernal Eel", InfernalEel.LOOT_TABLE)
     };
 }
