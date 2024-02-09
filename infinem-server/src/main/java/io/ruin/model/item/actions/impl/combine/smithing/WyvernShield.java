@@ -5,6 +5,7 @@ import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.skills.Tool;
+import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 
 public class WyvernShield {
@@ -22,15 +23,14 @@ public class WyvernShield {
             player.dialogue(new ItemDialogue().two(VISAGE, ELE_SHIELD, "You need a wyvern visage and elemental shield to forge an ancient wyvern shield."));
             return;
         }
-        Item hammer = player.getInventory().findItem(Tool.HAMMER);
-        if(hammer == null) {
+        if(!SmithBar.hasHammer(player)) {
             player.sendMessage("You need a hammer to forge the shield.");
             return;
         }
         player.startEvent(event -> {
             player.lock();
             player.sendMessage("You start to hammer the shield...");
-            player.animate(898);
+            player.animate(SmithBar.getHammerAnim(player));
             event.delay(6);
             if(player.getInventory().hasId(VISAGE) && player.getInventory().hasId(ELE_SHIELD)) {
                 player.getInventory().remove(ELE_SHIELD, 1);
