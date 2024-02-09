@@ -5,6 +5,7 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 
 import static io.ruin.model.skills.Tool.HAMMER;
@@ -52,8 +53,7 @@ public enum LeatherShields{
         player.closeInterfaces();
         if (!player.getStats().check(StatType.Crafting, armour.levelRequirement, "make " + armour.completedShieldName))
             return;
-        int hammerAmount = player.getInventory().getAmount(HAMMER);
-        if (hammerAmount <= 0) {
+        if (!SmithBar.hasHammer(player)) {
             player.dialogue(new MessageDialogue("You need a hammer to craft " + armour.completedShieldName + "."));
             return;
         }
@@ -82,7 +82,7 @@ public enum LeatherShields{
         player.startEvent(event -> {
             int made = 0;
             while (made++ < amt) {
-                if (player.getInventory().getAmount(HAMMER) <= 0) {
+                if (!SmithBar.hasHammer(player)) {
                     player.dialogue(new MessageDialogue("You need a hammer to craft " + armour.completedShieldName + "."));
                     return;
                 }
