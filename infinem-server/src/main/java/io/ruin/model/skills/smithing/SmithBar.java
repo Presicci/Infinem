@@ -347,7 +347,7 @@ public enum SmithBar {
      */
 
     private static void open(Player player) {
-        if (!player.getInventory().hasId(Tool.HAMMER)) {
+        if (!hasHammer(player)) {
             player.dialogue(new MessageDialogue("You need a hammer to work the metal with."));
             return;
         }
@@ -379,7 +379,7 @@ public enum SmithBar {
     }
 
     private static void open(Player player, Item item) {
-        if (!player.getInventory().hasId(Tool.HAMMER)) {
+        if (!hasHammer(player)) {
             player.dialogue(new MessageDialogue("You need a hammer to work the metal with."));
             return;
         }
@@ -409,6 +409,11 @@ public enum SmithBar {
             return;
         }
         open(player, bar);
+    }
+
+    public static boolean hasHammer(Player player) {
+        return player.getInventory().hasId(Tool.HAMMER)
+                || player.getInventory().hasId(25644) || player.getEquipment().hasId(25644);    // Imcando hammers
     }
 
     private static void open(Player player, SmithBar bar) {

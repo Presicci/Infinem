@@ -33,7 +33,7 @@ public class SmithItem {
     public void make(Player player, int amount) {
         player.closeInterface(InterfaceType.MAIN);
         player.closeInterface(InterfaceType.CHATBOX);
-        if (!player.getInventory().hasId(Tool.HAMMER)) {
+        if (!SmithBar.hasHammer(player)) {
             player.dialogue(new MessageDialogue("You need a hammer to work the metal with."));
             return;
         }
