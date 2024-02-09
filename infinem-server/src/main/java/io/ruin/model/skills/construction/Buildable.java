@@ -16,6 +16,7 @@ import io.ruin.model.skills.Tool;
 import io.ruin.model.skills.construction.room.Room;
 import io.ruin.model.skills.herblore.Potion;
 import io.ruin.model.skills.magic.rune.Rune;
+import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
@@ -779,7 +780,7 @@ public enum Buildable {
 
     public boolean hasTools(Player player) {
         return !isRequireTools()
-                || (player.getInventory().contains(Tool.HAMMER, 1) && (player.getInventory().contains(Tool.SAW, 1) || player.getInventory().contains(Tool.CRYSTAL_SAW, 1)));
+                || (SmithBar.hasHammer(player) && (player.getInventory().contains(Tool.SAW, 1) || player.getInventory().contains(Tool.CRYSTAL_SAW, 1)));
     }
 
     public boolean canBuild(Player player) {
