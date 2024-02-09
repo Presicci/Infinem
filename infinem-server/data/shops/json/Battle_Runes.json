@@ -2,12 +2,7 @@
   "name": "Battle Runes",
   "currency": "COINS",
   "npcs": [
-    2580,
-    2581,
-    2582,
-    4936,
-    4937,
-    4938
+    2581
   ],
   "sellMultiplier": 1000,
   "buyMultiplier": 550,
