@@ -6,6 +6,7 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.skills.Tool;
+import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 
 public class DragonSquare {
@@ -22,9 +23,7 @@ public class DragonSquare {
             player.dialogue(new ItemDialogue().two(LEFT, RIGHT, "You need both the left and right shield halves to forge a square shield."));
             return;
         }
-
-        Item hammer = player.getInventory().findItem(Tool.HAMMER);
-        if(hammer == null) {
+        if(!SmithBar.hasHammer(player)) {
             player.dialogue(new MessageDialogue("You need a hammer to forge the shield halves."));
             return;
         }
@@ -32,7 +31,7 @@ public class DragonSquare {
         player.startEvent(event -> {
             player.lock();
             player.sendMessage("You start to hammer the metal...");
-            player.animate(898);
+            player.animate(SmithBar.getHammerAnim(player));
             event.delay(6);
             if(player.getInventory().hasId(RIGHT) && player.getInventory().hasId(LEFT)) {
                 player.getInventory().remove(RIGHT, 1);
