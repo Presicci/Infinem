@@ -18,11 +18,6 @@ import java.util.function.BiFunction;
  */
 public class PearlBoltEffect implements BiFunction<Entity, Hit, Boolean> {
 
-    private static final String[] fieryMonsters = {
-            "fire giant", "pyrefiend", "pyrelord", "fire elemental", "bronze dragon", "iron dragon", "steel dragon", "mithril dragon", "adamant dragon", "rune dragon",
-            "blue dragon", "green dragon", "red dragon", "black dragon", "king black dragon", "lava dragon"
-    };
-
     @Override
     public Boolean apply(Entity target, Hit hit) {
         if (hit.attacker.player == null)
@@ -37,7 +32,7 @@ public class PearlBoltEffect implements BiFunction<Entity, Hit, Boolean> {
                 return false;
             newDamage += (int) (hit.attacker.player.getStats().get(StatType.Ranged).currentLevel * (hasFire ? 0.06 : 0.05));
         } else if (target.npc != null) {
-            boolean fireMonster = (Arrays.stream(fieryMonsters).anyMatch(NPCDef.get(((NPC) target).getId()).name::equalsIgnoreCase));
+            boolean fireMonster = target.npc.getDef().fiery;
             newDamage += (int) (hit.attacker.player.getStats().get(StatType.Ranged).currentLevel * (fireMonster ? 0.06 : 0.05));
         }
         target.graphics(750);

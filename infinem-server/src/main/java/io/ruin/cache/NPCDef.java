@@ -106,9 +106,7 @@ public class NPCDef {
 
     public List<Dialogue> optionDialogues;
 
-    public boolean dragon;
-
-    public boolean demon;
+    public boolean demon, dragon, fiery, golem, icy, kalphite, leafy, penance, rat, shade, spectral, undead, vampyre, xerician;
 
     public boolean ignoreMultiCheck = false;
 
@@ -340,6 +338,17 @@ public class NPCDef {
                 || name.equalsIgnoreCase("porazdir") || name.equalsIgnoreCase("reanimated abyssal")
                 || id == 5912 // Sire tentacle
                 || name.equalsIgnoreCase("waterfiend");
+
+        fiery = name.equalsIgnoreCase("adamant dragon") || name.toLowerCase().contains("black dragon")
+                || name.toLowerCase().contains("blue dragon") || name.equalsIgnoreCase("bronze dragon")
+                || name.toLowerCase().contains("red dragon") || name.toLowerCase().contains("green dragon")
+                || name.equalsIgnoreCase("fire elemental") || name.equalsIgnoreCase("fire giant")
+                || name.equalsIgnoreCase("galvek") || name.equalsIgnoreCase("iron dragon")
+                || name.equalsIgnoreCase("king black dragon") || name.equalsIgnoreCase("lava dragon")
+                || name.equalsIgnoreCase("mithril dragon") || name.toLowerCase().contains("pyrefiend")
+                || name.equalsIgnoreCase("rune dragon") || name.equalsIgnoreCase("steel dragon")
+                || name.equalsIgnoreCase("vorkath") || name.equalsIgnoreCase("pyrelord")
+                || name.equalsIgnoreCase("elvarg");
     }
 
     void decode(InBuffer var1, int var2) {
