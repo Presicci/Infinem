@@ -1,0 +1,20 @@
+Player: Hello.
+Master smithing tutor: Well met! Are you interested in hearing about the art of smithing?
+<How can I train my smithing?
+HASITEM:2347
+(Master smithing tutor: I see you already have a hammer. Nice one.
+SMITHING_HELP:
+(ITEM:2347
+SMITHING_HELP:
+)><What kind of things can I smith?
+Player: What kind of things can I smith?
+Master smithing tutor: There are many things you can make, from weapons to your good old fashioned armour.
+Master smithing tutor: Weapons are the cheapest to smith. They range from a measly one bar, all the way to three bars.
+Master smithing tutor: Armour can be the costliest item to smith, the cost of each item ranges from a measly one bar all the way up to a whopping five bars.
+Master smithing tutor: Some weapons and armour, such as darts, will require you to have gained knowledge on how to smith them. This is due to the complex nature of the weapon.
+Master smithing tutor: You might find that other items don't require conventional bars you would gather. Some may require you to piece blades back together or even infuse a crystal into a piece of armour.
+Master smithing tutor: Is there anything else you want to know?
+FIRSTOPTIONS:
+><Not right now, thank you.
+Player: Not right now, thank you.
+Master smithing tutor: Well, just come back any time you want to know anything!

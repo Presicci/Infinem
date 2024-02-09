@@ -240,6 +240,54 @@ public enum DialogueLoaderAction {
                 )
         );
     })),
+    SMITHING_HELP((player -> {
+        int smithingLevel = player.getStats().get(StatType.Smithing).fixedLevel;
+        int dialogueSize = NPCDef.get(3225).optionDialogues.size();
+        Dialogue dialogue = NPCDef.get(3225).optionDialogues.get(dialogueSize - 1);
+        if (smithingLevel >= 99)
+            player.dialogue(
+                    new NPCDialogue(3225, "Cor blimey, I don't think there is anything I can teach you, but I'll do my best."),
+                    new NPCDialogue(3225, "As you get better you'll find you will be able to smith Mithril and eventually Adamantite and even Runite. This can be very lucrative but very expensive on the coal front."),
+                    new NPCDialogue(3225, "It may be worth you stockpiling coal for a while before attempting these difficult metals or even sticking to good old reliable iron by the bucket load."),
+                    new NPCDialogue(3225, "If you craft or purchase any Rings of Forging, they will help you to smith more bars for the same ore."),
+                    //new NPCDialogue(3225, "If you want to save on coal, you could try smithing your bars over at the Blast Furnace in Keldagrim."),
+                    new NPCDialogue(3225, "If you are looking for something more interesting to smith, you could talk to Otto Godblessed about smithing hastae."),
+                    new NPCDialogue(3225, "You can find him south of the barbarian outpost and west of the whirlpool."),
+                    new NPCDialogue(3225, "Is there anything else you would like to know?"),
+                    dialogue
+            );
+        else if (smithingLevel >= 38)
+            player.dialogue(
+                    new NPCDialogue(3225, "As you get better you'll find you will be able to smith Mithril and eventually Adamantite and even Runite. This can be very lucrative but very expensive on the coal front."),
+                    new NPCDialogue(3225, "It may be worth you stockpiling coal for a while before attempting these difficult metals or even sticking to good old reliable iron by the bucket load."),
+                    new NPCDialogue(3225, "If you craft or purchase any Rings of Forging, they will help you to smith more bars for the same ore."),
+                    //new NPCDialogue(3225, "If you want to save on coal, you could try smithing your bars over at the Blast Furnace in Keldagrim."),
+                    new NPCDialogue(3225, "If you are looking for something more interesting to smith, you could talk to Otto Godblessed about smithing hastae."),
+                    new NPCDialogue(3225, "You can find him south of the barbarian outpost and west of the whirlpool."),
+                    new NPCDialogue(3225, "Is there anything else you would like to know?"),
+                    dialogue
+            );
+        else if (smithingLevel >= 21)
+            player.dialogue(
+                    new NPCDialogue(3225, "You might find it beneficial to keep a nice stack of bars in your bank before you start smithing. Unless you like to jump from task to task of course."),
+                    new NPCDialogue(3225, "If you want to smith something that you may not have the level for, you could try gaining some temporary knowledge in smithing from a boost."),
+                    new NPCDialogue(3225, "You can buy a Dwarven stout at the Rising Sun Inn in Falador."),
+                    new NPCDialogue(3225, "Is there anything else you would like to know?"),
+                    dialogue
+            );
+        else
+            player.dialogue(
+                    new NPCDialogue(3225, "You're going to need to get your hand on some metal bars. You could do this by mining your own ores and smelting them at a furnace."),
+                    new NPCDialogue(3225, "There is a furnace located in Lumbridge, just north of the castle opposite the general store."),
+                    new NPCDialogue(3225, "If you are looking for some ore, there is a mine east of Varrock. There you can find some copper and tin ore. Don't forget to bring a pickaxe."),
+                    new NPCDialogue(3225, "When you have your bars, bring them to an anvil to open the smithing interface. If the item name is in black, this means you do not have the level to smith the item."),
+                    new NPCDialogue(3225, "If the item name is in white, this means you do have the level to smith the item. You will see the bars required to smith the item underneath the name of the item."),
+                    new NPCDialogue(3225, "If the number of bars is in orange, this means you do not have enough bars to smith the item. If it is in green, this means you have enough bars for the item."),
+                    new PlayerDialogue("Thanks for the advice."),
+                    new NPCDialogue(3225, "Is there anything else you would like to know?"),
+                    dialogue
+            );
+    })),
     FISHING_HELP((player -> {
         int fishingLevel = player.getStats().get(StatType.Fishing).fixedLevel;
         int dialogueSize = NPCDef.get(3221).optionDialogues.size();
