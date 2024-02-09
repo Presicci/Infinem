@@ -324,7 +324,22 @@ public class NPCDef {
                 || name.equalsIgnoreCase("wyrm") || name.equalsIgnoreCase("drake")
                 || name.toLowerCase().contains("hydra") || name.toLowerCase().contains("great olm")
                 || name.toLowerCase().contains("wyvern") || name.equalsIgnoreCase("galvek");
-        demon = name.toLowerCase().contains("demon") || name.equalsIgnoreCase("skotizo") || name.equalsIgnoreCase("imp") || name.toLowerCase().contains("nechryael") || name.toLowerCase().contains("abyssal sire") || name.toLowerCase().contains("k'ril") || name.toLowerCase().contains("balfrug") || name.toLowerCase().contains("tstanon") || name.toLowerCase().contains("zakl'n") || name.toLowerCase().contains("cerberus") || name.toLowerCase().contains("hellhound");
+
+        demon = name.toLowerCase().contains("demon") || name.equalsIgnoreCase("skotizo")
+                || name.equalsIgnoreCase("imp") || name.toLowerCase().contains("nechryael")
+                || name.toLowerCase().contains("abyssal sire") || name.toLowerCase().contains("k'ril")
+                || name.toLowerCase().contains("balfrug") || name.toLowerCase().contains("tstanon")
+                || name.toLowerCase().contains("zakl'n") || name.toLowerCase().contains("cerberus")
+                || name.toLowerCase().contains("hellhound") || name.toLowerCase().contains("bloodveld")
+                || name.toLowerCase().contains("nechryarch") || name.equalsIgnoreCase("blood reaver")
+                || name.toLowerCase().contains("pyrefiend") || name.toLowerCase().contains("pyrelord")
+                || name.equalsIgnoreCase("bouncer") || name.equalsIgnoreCase("chronozon")
+                || name.equalsIgnoreCase("doomion") || name.equalsIgnoreCase("duke sucellus")
+                || name.equalsIgnoreCase("holthion") || name.equalsIgnoreCase("icefiend")
+                || name.equalsIgnoreCase("judge of yama") || name.equalsIgnoreCase("othainian")
+                || name.equalsIgnoreCase("porazdir") || name.equalsIgnoreCase("reanimated abyssal")
+                || id == 5912 // Sire tentacle
+                || name.equalsIgnoreCase("waterfiend");
     }
 
     void decode(InBuffer var1, int var2) {
