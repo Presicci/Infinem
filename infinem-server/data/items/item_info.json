@@ -109788,6 +109788,15 @@
 	"protect_value": 2000,
     "equip_slot": 12
   },
+  { // Imcando hammer
+    "id": 25644,
+    "tradeable": false,
+	"examine": "It's good for holding and hitting things!",
+    "weight": 2.0,
+	"protect_value": 1,
+    "equip_slot": 3,
+    "weapon_type": "WARHAMMER"
+  },
   { // Zaryte crossbow
     "id": 26374,
     "tradeable": true,
