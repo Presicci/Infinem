@@ -6,6 +6,7 @@ import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.skills.Tool;
+import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 
 public enum Crossbow {
@@ -57,8 +58,7 @@ public enum Crossbow {
             ItemItemAction.register(crossbow.limbs, crossbow.stock, (player, limbs, stock) -> {
                 if (!player.getStats().check(StatType.Fletching, crossbow.levelReq, crossbow.unfCrossbow, "do that"))
                     return;
-                Item hammer = player.getInventory().findItem(Tool.HAMMER);
-                if (hammer == null) {
+                if (!SmithBar.hasHammer(player)) {
                     player.sendFilteredMessage("You'll need a hammer to do that.");
                     return;
                 }
