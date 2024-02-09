@@ -917,6 +917,7 @@ public class PlayerCombat extends Combat {
      */
 
     private void preTargetDefend(Hit hit, Entity target) {
+        if (target == null) return;
         boolean slayerHelmEffectActive = SlayerHelm.boost(player, target, hit);
         //If slayer helmet effect isn't active try salve amulet
         if (!slayerHelmEffectActive) {
@@ -936,7 +937,7 @@ public class PlayerCombat extends Combat {
         SetEffect.OBSIDIAN_ARMOUR.checkAndApply(player, target, hit);
 
         // Bestiary damage perk handling
-        if (target != null && target.isNpc()) {
+        if (target.isNpc()) {
             double damage = player.getBestiary().getBestiaryEntry(target.npc.getDef()).getPerkMultiplier(DamagePerk.class);
             hit.boostDamage(damage);
             double accuracy = player.getBestiary().getBestiaryEntry(target.npc.getDef()).getPerkMultiplier(AccuracyPerk.class);
@@ -970,7 +971,7 @@ public class PlayerCombat extends Combat {
         for(Item item : player.getEquipment().getItems()) {
             if(item != null && item.getDef() != null) {
                 item.getDef().preTargetDefend(player, item, hit, target);
-                if (target != null && target.isNpc()) {
+                if (target.isNpc()) {
                     List<String> upgrades = AttributeExtensions.getEffectUpgrades(item);
                     boolean hasEffect = upgrades != null;
                     if (hasEffect) {
