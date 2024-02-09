@@ -11,14 +11,14 @@ public class InfernalEel {
 
     private static final int INFERNAL_EEL = 21293;
 
-    public static final LootTable chanceTable = new LootTable().addTable(1,
-            new LootItem(6529, 10, 20, 16), // tokkul
-            new LootItem(9194, 1, 3),       // onyx bolt tips
-            new LootItem(11994, 1, 5, 1)    // lava scale shard
+    public static final LootTable LOOT_TABLE = new LootTable().addTable(1,
+            new LootItem(6529, 10, 20, 55), // tokkul
+            new LootItem(9194, 1, 4),       // onyx bolt tips
+            new LootItem(11994, 1, 5, 5)    // lava scale shard
     );
 
     private static void open(Player player, Item eel) {
-        Item loot = chanceTable.rollItem();
+        Item loot = LOOT_TABLE.rollItem();
         player.startEvent(event -> {
             player.lock();
             player.animate(7553);
