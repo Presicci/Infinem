@@ -349,6 +349,8 @@ public class NPCDef {
                 || name.equalsIgnoreCase("rune dragon") || name.equalsIgnoreCase("steel dragon")
                 || name.equalsIgnoreCase("vorkath") || name.equalsIgnoreCase("pyrelord")
                 || name.equalsIgnoreCase("elvarg");
+
+        golem = name.toLowerCase().contains("golem");
     }
 
     void decode(InBuffer var1, int var2) {
