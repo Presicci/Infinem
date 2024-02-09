@@ -363,6 +363,21 @@ public class NPCDef {
                 || name.equalsIgnoreCase("zombie rat") || name.equalsIgnoreCase("scurrius");
 
         shade = name.toLowerCase().contains("shade");
+
+        spectral = name.toLowerCase().contains("spectre") || name.equalsIgnoreCase("ahrim the blighted")
+                || name.toLowerCase().contains("barbarian spirit") || name.equalsIgnoreCase("ankou")
+                || name.toLowerCase().contains("banshee") || name.toLowerCase().contains("shade")
+                || name.equalsIgnoreCase("death wing") || name.equalsIgnoreCase("dharok the wretched")
+                || name.equalsIgnoreCase("evil spirit") || name.equalsIgnoreCase("forgotten soul")
+                || name.equalsIgnoreCase("ghast") || name.equalsIgnoreCase("ghost")
+                || name.equalsIgnoreCase("guthan the infested") || name.equalsIgnoreCase("irvig senay")
+                || name.equalsIgnoreCase("karil the tainted") || name.equalsIgnoreCase("nazastarool")
+                || name.equalsIgnoreCase("otherworldly being") || name.equalsIgnoreCase("phantom muspah")
+                || name.equalsIgnoreCase("ranalph devere") || name.toLowerCase().contains("revenant")
+                || name.equalsIgnoreCase("san tojalon") || name.toLowerCase().contains("spiritual")
+                || name.equalsIgnoreCase("torag the corrupted") || name.equalsIgnoreCase("tortured soul")
+                || name.equalsIgnoreCase("tree spirit") || name.equalsIgnoreCase("treus dayth")
+                || name.equalsIgnoreCase("verac the defiled");
     }
 
     void decode(InBuffer var1, int var2) {
