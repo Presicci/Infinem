@@ -351,6 +351,8 @@ public class NPCDef {
                 || name.equalsIgnoreCase("elvarg");
 
         golem = name.toLowerCase().contains("golem");
+
+        icy = id == 11290 || id == 11291 || id == 11292;    // Zaros spirituals
     }
 
     void decode(InBuffer var1, int var2) {
