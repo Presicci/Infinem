@@ -923,17 +923,17 @@ public class PlayerCombat extends Combat {
             salveAmuletBoost(player, hit, target);
             amuletOfAvariceBoost(player, hit, target);
         }
-        boolean dharoksEffectActive = SetEffect.DHAROK.checkAndApply(player, target, hit);
-        boolean veracsEffectActive = SetEffect.VERAC.checkAndApply(player, target, hit);
-        boolean ahrimDamnedEffectActive = SetEffect.AHRIM_DAMNED.checkAndApply(player, target, hit);
-        boolean voidMagesEffectActive = SetEffect.VOID_MAGE.checkAndApply(player, target, hit) ;
-        boolean voidRangeEffectActive = SetEffect.VOID_RANGE.checkAndApply(player, target, hit);
-        boolean voidMeleeEffectActive = SetEffect.VOID_MELEE.checkAndApply(player, target, hit);
-        boolean eliteVoidMageEffectActive = SetEffect.ELITE_VOID_MAGE.checkAndApply(player, target, hit);
-        boolean eliteVoidRangeEffectActive = SetEffect.ELITE_VOID_RANGE.checkAndApply(player, target, hit);
-        boolean eliteVoidMeleeEffectActive = SetEffect.ELITE_VOID_MELEE.checkAndApply(player, target, hit);
-        boolean berserkerNecklaceEffectActive = SetEffect.BERSERKER_NECKLACE.checkAndApply(player, target, hit);
-        boolean obsidianEffectActive = SetEffect.OBSIDIAN_ARMOUR.checkAndApply(player, target, hit);
+        SetEffect.DHAROK.checkAndApply(player, target, hit);
+        SetEffect.VERAC.checkAndApply(player, target, hit);
+        SetEffect.AHRIM_DAMNED.checkAndApply(player, target, hit);
+        SetEffect.VOID_MAGE.checkAndApply(player, target, hit) ;
+        SetEffect.VOID_RANGE.checkAndApply(player, target, hit);
+        SetEffect.VOID_MELEE.checkAndApply(player, target, hit);
+        SetEffect.ELITE_VOID_MAGE.checkAndApply(player, target, hit);
+        SetEffect.ELITE_VOID_RANGE.checkAndApply(player, target, hit);
+        SetEffect.ELITE_VOID_MELEE.checkAndApply(player, target, hit);
+        SetEffect.BERSERKER_NECKLACE.checkAndApply(player, target, hit);
+        SetEffect.OBSIDIAN_ARMOUR.checkAndApply(player, target, hit);
 
         // Bestiary damage perk handling
         if (target != null && target.isNpc()) {
