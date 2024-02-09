@@ -356,6 +356,11 @@ public class NPCDef {
 
         kalphite = name.toLowerCase().contains("scarab") || name.toLowerCase().contains("kalphite")
                 || name.equalsIgnoreCase("locust rider") || name.equalsIgnoreCase("kephri");
+
+        rat = name.toLowerCase().contains("giant rat") || name.equalsIgnoreCase("rat")
+                || name.equalsIgnoreCase("brine rat") || name.equalsIgnoreCase("crypt rat")
+                || name.equalsIgnoreCase("dungeon rat") || name.equalsIgnoreCase("giant crypt rat")
+                || name.equalsIgnoreCase("zombie rat") || name.equalsIgnoreCase("scurrius");
     }
 
     void decode(InBuffer var1, int var2) {
