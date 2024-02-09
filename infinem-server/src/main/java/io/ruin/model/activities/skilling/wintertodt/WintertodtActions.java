@@ -20,6 +20,7 @@ import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.Tool;
+import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.skills.woodcutting.Hatchet;
 import io.ruin.model.stat.StatType;
 
@@ -160,7 +161,7 @@ public class WintertodtActions {
     }
 
     private static void fix(Player player, Brazier b) {
-        if (!player.getInventory().contains(Tool.HAMMER, 1)) {
+        if (!SmithBar.hasHammer(player)) {
             player.sendMessage("You need a hammer to repair that brazier.");
             return;
         }
