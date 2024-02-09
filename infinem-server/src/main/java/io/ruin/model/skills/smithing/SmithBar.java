@@ -411,6 +411,11 @@ public enum SmithBar {
         open(player, bar);
     }
 
+    public static int getHammerAnim(Player player) {
+        if (player.getInventory().hasId(25644) || player.getEquipment().hasId(25644)) return 8918;
+        return 898;
+    }
+
     public static boolean hasHammer(Player player) {
         return player.getInventory().hasId(Tool.HAMMER)
                 || player.getInventory().hasId(25644) || player.getEquipment().hasId(25644);    // Imcando hammers
