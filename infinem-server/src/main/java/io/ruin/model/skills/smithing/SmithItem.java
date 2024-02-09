@@ -51,7 +51,7 @@ public class SmithItem {
                     return;
                 }
                 if (made % 2 == 0)
-                    player.animate(898);
+                    player.animate(SmithBar.getHammerAnim(player));
                 for (Item bar : bars)
                     bar.remove();
                 player.getInventory().add(makeId, makeAmount);
