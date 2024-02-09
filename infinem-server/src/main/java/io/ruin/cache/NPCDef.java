@@ -151,6 +151,14 @@ public class NPCDef {
     int resizeY = 128;
     int ambient = 0;
     int contrast = 0;
+    int runSequence = -1;
+    int runBackSequence = -1;
+    int runLeftSequence = -1;
+    int runRightSequence = -1;
+    int crawlSequence = -1;
+    int crawlBackSequence = -1;
+    int crawlLeftSequence = -1;
+    int crawlRightSequence = -1;
     public HashMap<Object, Object> attributes;
 
     void decode(InBuffer buffer) {
@@ -412,7 +420,21 @@ public class NPCDef {
             aBool3588 = false;
         else if (var2 == 111)
             aBool3573 = true;
-        else if (var2 == 249) {
+        else if (var2 == 114) {
+            runSequence = var1.readUnsignedShort();
+        } else if (var2 == 115) {
+            runSequence = var1.readUnsignedShort();
+            runBackSequence = var1.readUnsignedShort();
+            runLeftSequence = var1.readUnsignedShort();
+            runRightSequence = var1.readUnsignedShort();
+        } else if (var2 == 116) {
+            crawlSequence = var1.readUnsignedShort();
+        } else if (var2 == 117) {
+            crawlSequence = var1.readUnsignedShort();
+            crawlBackSequence = var1.readUnsignedShort();
+            crawlLeftSequence = var1.readUnsignedShort();
+            crawlRightSequence = var1.readUnsignedShort();
+        } else if (var2 == 249) {
             int size = var1.readUnsignedByte();
             if (attributes == null)
                 attributes = new HashMap<>();
