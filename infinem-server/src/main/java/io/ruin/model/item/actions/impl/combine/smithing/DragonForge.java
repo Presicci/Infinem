@@ -11,6 +11,7 @@ import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.MapArea;
 import io.ruin.model.skills.Tool;
+import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 
 /**
@@ -39,15 +40,14 @@ public class DragonForge {
             player.dialogue(new MessageDialogue("You can only forge a dragon kiteshield at the dragon forge."));
             return;
         }
-        Item hammer = player.getInventory().findItem(Tool.HAMMER);
-        if(hammer == null) {
+        if(!SmithBar.hasHammer(player)) {
             player.dialogue(new MessageDialogue("You need a hammer to forge the shield."));
             return;
         }
         player.startEvent(event -> {
             player.lock();
             player.sendMessage("You start to hammer the metal...");
-            player.animate(898);
+            player.animate(SmithBar.getHammerAnim(player));
             event.delay(6);
             if(player.getInventory().hasId(SHARD) && player.getInventory().hasId(SLICE) && player.getInventory().hasId(SQUARE)) {
                 player.getInventory().remove(SHARD, 1);
