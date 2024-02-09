@@ -12,6 +12,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.skills.Tool;
+import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 
 public class SpiritShield {
@@ -34,18 +35,16 @@ public class SpiritShield {
             player.sendMessage("You don't have a spirit shield to attach your " + item.getDef().name + " to.");
             return;
         }
-
-        Item hammer = player.getInventory().findItem(Tool.HAMMER);
-        if(hammer == null) {
+        if(!SmithBar.hasHammer(player)) {
             player.sendMessage("You need a hammer to do this.");
             return;
         }
 
         player.startEvent(event -> {
             player.lock();
-            player.animate(898);
+            player.animate(SmithBar.getHammerAnim(player));
             event.delay(6);
-            player.animate(898);
+            player.animate(SmithBar.getHammerAnim(player));
             event.delay(6);
             player.getInventory().remove(BLESSED_SPIRIT_SHIELD, 1);
             player.dialogue(new ItemDialogue().one(item.getId() == DIVINE_SIGIL ? 30191 : item.getId() - 2, "You successfully combine the " + item.getDef().name + " with the shield."));
