@@ -3,7 +3,9 @@ package io.ruin.model.skills.smithing;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
@@ -31,6 +33,10 @@ public class SmithItem {
     public void make(Player player, int amount) {
         player.closeInterface(InterfaceType.MAIN);
         player.closeInterface(InterfaceType.CHATBOX);
+        if (!player.getInventory().hasId(Tool.HAMMER)) {
+            player.dialogue(new MessageDialogue("You need a hammer to work the metal with."));
+            return;
+        }
         if (!player.getStats().check(StatType.Smithing, level, "make that"))
             return;
         player.startEvent(e -> {
