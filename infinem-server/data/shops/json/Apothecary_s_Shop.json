@@ -17,14 +17,14 @@
     {
       "itemId": 3008,
       "stock": 250,
-      "buy_price": 5,
-      "sell_price": 600
+      "buy_price": 1,
+      "sell_price": 350
     },
     {
       "itemId": 2446,
       "stock": 250,
-      "buy_price": 72,
-      "sell_price": 432
+      "buy_price": 1,
+      "sell_price": 462
     }
   ]
 }
