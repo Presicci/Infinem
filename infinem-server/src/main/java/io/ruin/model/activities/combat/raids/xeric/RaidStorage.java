@@ -13,6 +13,7 @@ import io.ruin.model.inter.utils.Unlock;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
 import io.ruin.model.item.ItemContainerG;
+import io.ruin.model.item.Items;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.skills.construction.Buildable;
@@ -233,7 +234,7 @@ public class RaidStorage extends ItemContainer {
             p.sendMessage("You will need 2 mallignum root planks to upgrade the storage unit.");
             return;
         }
-        if (!p.getInventory().contains(Tool.HAMMER, 1) && !p.getInventory().contains(ItemID.DRAGON_WARHAMMER, 1)) {
+        if (!p.getInventory().contains(Tool.HAMMER, 1) && !p.getInventory().hasId(ItemID.DRAGON_WARHAMMER) && !p.getEquipment().hasId(Items.DRAGON_WARHAMMER)) {
             p.sendMessage("You'll need a hammer to upgrade the storage unit.");
             return;
         }
