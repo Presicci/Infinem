@@ -23,6 +23,7 @@ import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.mining.Mining;
 import io.ruin.model.skills.mining.Pickaxe;
 import io.ruin.model.skills.mining.Rock;
+import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 
 import java.util.Optional;
@@ -462,7 +463,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
     private static void strutInteract(Player player, GameObject strut, GameObject wheel) {
         if (strut.id == WORKING_STRUT)
             return;
-        if (!player.getInventory().contains(HAMMER, 1) && !player.getInventory().hasId(ItemID.DRAGON_WARHAMMER)) {
+        if (!SmithBar.hasHammer(player)) {
             player.sendMessage("You'll need a hammer to fix it.");
             return;
         }
