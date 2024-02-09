@@ -11,6 +11,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.skills.Tool;
+import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 
@@ -29,15 +30,14 @@ public enum DraconicVisage {
             player.dialogue(new ItemDialogue().two(primary, secondary, "You need a draconic visage and " + ItemDef.get(secondary).descriptiveName + " to forge " + ItemDef.get(product).descriptiveName + "."));
             return;
         }
-        Item hammer = player.getInventory().findItem(Tool.HAMMER);
-        if(hammer == null) {
+        if(!SmithBar.hasHammer(player)) {
             player.sendMessage("You need a hammer to forge the shield.");
             return;
         }
         player.startEvent(event -> {
             player.lock();
             player.sendMessage("You start to hammer the shield...");
-            player.animate(898);
+            player.animate(SmithBar.getHammerAnim(player));
             event.delay(6);
             if(player.getInventory().hasId(primary) && player.getInventory().hasId(secondary)) {
                 player.getInventory().remove(primary, 1);
