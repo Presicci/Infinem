@@ -361,6 +361,8 @@ public class NPCDef {
                 || name.equalsIgnoreCase("brine rat") || name.equalsIgnoreCase("crypt rat")
                 || name.equalsIgnoreCase("dungeon rat") || name.equalsIgnoreCase("giant crypt rat")
                 || name.equalsIgnoreCase("zombie rat") || name.equalsIgnoreCase("scurrius");
+
+        shade = name.toLowerCase().contains("shade");
     }
 
     void decode(InBuffer var1, int var2) {
