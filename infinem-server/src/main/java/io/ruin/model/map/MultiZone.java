@@ -387,7 +387,10 @@ public class MultiZone {
 
                 // Jormungand's prison
                 new Bounds(2398, 10402, 2451, 10472, 0),
-                new Bounds(2452, 10424, 2495, 10467, 0)
+                new Bounds(2452, 10424, 2495, 10467, 0),
+
+                // Forthos dungeon spiders
+                new Bounds(1826, 9947, 1851, 9972, 0)
         };
         for(Bounds b : bounds)
             set(true, b);
