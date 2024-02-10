@@ -1,0 +1,11 @@
+RAND
+/Player: Hello how are you?
+Gnome trainer: I'm amazed by how much humans chat. The sign over there says training area, not pointless conversation area.
+/Player: Hello, what is this place?
+Gnome trainer: This, my friend, is where we train. Here we improve our agility. It's an essential skill.
+Player: It looks easy enough.
+Gnome trainer: If you complete the course in order from the slippery log to the end, your agility will increase much faster than by repeating just one obstacle.
+/Player: This is fun!
+Gnome trainer: This is training soldier. If you want fun go make some cocktails.
+/Player: Hello there.
+Gnome trainer: This isn't a grannies' tea party, let's see some sweat human. Go! Go! Go!
