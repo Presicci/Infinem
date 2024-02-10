@@ -1,6 +1,7 @@
 package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.api.utils.Random;
+import io.ruin.cache.Color;
 import io.ruin.data.impl.dialogue.DialogueLoaderAction;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -16,6 +17,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/1/2023
  */
 public enum DialogueObject {
+    SACRED_BONE_BURNER(34855, new Position(1810, 9951),
+            new MessageDialogue("You hear a faint whisper in your ear..."), new MessageDialogue(Color.GOLD.wrap("MOOOOOORE BOOOOONES!"))),
     BROKEN_MACHINERY(34587, new Position(1347, 10263),
             new MessageDialogue("This machine doesn't look like it's in working order... I wonder if there's a fixed one, anywhere.")),
     ELEMENTAL_WORKSHOP_HATCH(3413, new Position(2719, 9890),
