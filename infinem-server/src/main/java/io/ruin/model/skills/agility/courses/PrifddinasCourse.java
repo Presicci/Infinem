@@ -1,4 +1,4 @@
-package io.ruin.model.skills.agility.courses.rooftop;
+package io.ruin.model.skills.agility.courses;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
