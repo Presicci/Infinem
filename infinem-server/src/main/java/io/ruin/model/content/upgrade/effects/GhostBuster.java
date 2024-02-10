@@ -19,11 +19,8 @@ public class GhostBuster extends ItemUpgrade {
 
     @Override
     public void preTargetDefend(Player player, Entity target, Item item, Hit hit) {
-        if (hit.attacker != null && hit.attacker.npc != null) {
-            Optional<String> npc = PlayerCombat.UNDEAD_NPCS.stream().filter(Objects::nonNull).filter(s -> s.equalsIgnoreCase(hit.attacker.npc.getDef().name) || Utils.containsIgnoreCase(hit.attacker.npc.getDef().name, s)).findAny();
-            if (npc.isPresent()) {
-                hit.boostDamage(0.05);
-            }
+        if (!target.npc.getDef().undead) {
+            hit.boostDamage(0.05);
         }
     }
 
