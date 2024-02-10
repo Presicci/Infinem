@@ -106,7 +106,7 @@ public class NPCDef {
 
     public List<Dialogue> optionDialogues;
 
-    public boolean demon, dragon, fiery, golem, icy, kalphite, leafy, penance, rat, shade, spectral, undead, vampyre, xerician;
+    public boolean demon, dragon, fiery, golem, icy, kalphite, rat, shade, spectral, undead;
 
     public boolean ignoreMultiCheck = false;
 
