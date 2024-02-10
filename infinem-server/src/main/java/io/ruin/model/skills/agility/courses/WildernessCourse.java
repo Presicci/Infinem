@@ -16,6 +16,9 @@ import io.ruin.model.map.object.actions.impl.Ladder;
 import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.stat.StatType;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class WildernessCourse {
 
     private static final GameObject[] OBSTACLES = {
@@ -24,6 +27,12 @@ public class WildernessCourse {
             Tile.get(new Position(3001, 3945, 0), true).getObject(23542, 22, 3),
             Tile.get(new Position(2994, 3936, 0), true).getObject(23640, 22, 2)
     };
+
+    private static final List<Position> MARK_SPAWNS = Arrays.asList(
+            new Position(3002, 3948, 0),
+            new Position(2993, 3954, 0),
+            new Position(2992, 3944, 0)
+    );
 
     private static void openGateEntrance() {
         World.startEvent(e -> {
@@ -199,6 +208,7 @@ public class WildernessCourse {
                 AgilityPet.rollForPet(player, 34666);
                 int laps = PlayerCounter.WILDERNESS_COURSE.increment(player, 1);
                 player.getTaskManager().doLookupByUUID(848, 1);  // Complete the Wilderness Agility Course
+                MarkOfGrace.rollMark(player, 52, MARK_SPAWNS);
                 if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                     player.sendFilteredMessage("Your Wilderness Agility lap count is: " + Color.RED.wrap(laps + "") + ".");
                 player.removeAttribute("LAST_AGIL_OBJ");
