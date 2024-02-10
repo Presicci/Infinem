@@ -14,6 +14,7 @@ import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.skills.agility.courses.AgilityPet;
+import io.ruin.model.skills.agility.courses.MarkOfGrace;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
@@ -39,7 +40,13 @@ public class PrifddinasCourse {
     };
 
     private static final List<Position> MARK_SPAWNS = Arrays.asList(
-            new Position(123,123,1)
+            new Position(3257, 6111, 2),
+            new Position(3274, 6105, 2),
+            new Position(3269, 6113, 2),
+            new Position(3290, 6141, 2),
+            new Position(3280, 6139, 2),
+            new Position(3269, 6147, 2),
+            new Position(3277, 6168, 2)
     );
 
     static {
@@ -278,6 +285,7 @@ public class PrifddinasCourse {
             p.getStats().addXp(StatType.Agility, 1037.1, true);
             p.getTaskManager().doLookupByUUID(790, 1);  // Complete the Prifddinas Agility Course
             p.getMovement().restoreEnergy(Random.get(1, 2));
+            MarkOfGrace.rollMark(p, 75, MARK_SPAWNS);
             int laps = PlayerCounter.PRIFDDINAS_COURSE.increment(p, 1);
             if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                 p.sendFilteredMessage("Your Prifddinas Agility lap count is: " + Color.RED.wrap(laps + "") + ".");
