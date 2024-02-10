@@ -20,14 +20,14 @@ import static io.ruin.cache.ItemID.COINS_995;
 
 public enum Tanner {
 
-    SOFT_LEATHER("Soft Leather", 1739, 1741, 10),
-    HARD_LEATHER("Hard Leather", 1739, 1743, 30),
-    SNAKESKIN("Snakeskin", 7801, 6289, 20),
-    SECOND_SNAKESKIN("Snakeskin", 6287, 6289, 15),
+    SOFT_LEATHER("Soft Leather", 1739, 1741, 1),
+    HARD_LEATHER("Hard Leather", 1739, 1743, 3),
+    SNAKESKIN("Snakeskin", 7801, 6289, 15),
+    SECOND_SNAKESKIN("Snakeskin", 6287, 6289, 20),
     GREEN_DRAGONHIDE("Green d'hide", 1753, 1745, 20),
-    BLUE_DRAGONHIDE("Blue d'hide", 1751, 2505, 30),
-    RED_DRAGONHIDE("Red d'hide", 1749, 2507, 35),
-    BLACK_DRAGONHIDE("Black d'hide", 1747, 2509, 40);
+    BLUE_DRAGONHIDE("Blue d'hide", 1751, 2505, 20),
+    RED_DRAGONHIDE("Red d'hide", 1749, 2507, 20),
+    BLACK_DRAGONHIDE("Black d'hide", 1747, 2509, 20);
 
     public int raw, product, cost;
     public String displayName, rawName, productName;
