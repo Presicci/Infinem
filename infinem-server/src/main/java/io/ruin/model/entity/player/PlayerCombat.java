@@ -852,17 +852,6 @@ public class PlayerCombat extends Combat {
         }
     }
 
-    public static List<String> UNDEAD_NPCS = Arrays.asList("Aberrant spectre", "Abhorrent spectre",
-            "Ankou", "Banshee", "Calvar'ion", "Crawling Hand", "Crushing hand", "Dark ankou",
-            "Deviant spectre", "Forgotten Soul", "Ghast", "Ghost", "Giant skeleton", "Headless Beast",
-            "Headless Beast (hard)", "Monkey Zombie", "Mummy", "Pestilent Bloat", "Repugnant spectre",
-            "Revenant", "Screaming banshee", "Screaming twisted banshee", "Shade", "Skeletal",
-            "Skeleton", "Skogre", "Slash Bash", "Summoned Zombie", "Tarn", "The Draugen", "Tormented Soul", "Tortured Soul",
-            "Trapped soul", "Tree spirit", "Twisted banshee", "Undead Chicken", "Undead Druid",
-            "Undead Cow", "Undead lumberjack", "Undead One", "Zogre", "Zombified Spawn", "Zombie", "Vet'ion", "Zombified Spawn",
-            "Mi-Gor", "Treus Dayth", "Nazastarool", "Ulfric", "Vorkath");
-
-
     private boolean salveAmuletBoost(Player player, Hit hit, Entity entity) {
         final int salveAmulet = 4081;
         final int salveAmuletImbued = 12017;
@@ -872,12 +861,9 @@ public class PlayerCombat extends Combat {
             if (amulet == null) {
                 return false;
             }
-
-            Optional<String> npc = UNDEAD_NPCS.stream().filter(Objects::nonNull).filter(s -> s.equalsIgnoreCase(entity.npc.getDef().name) || Utils.containsIgnoreCase(entity.npc.getDef().name, s)).findAny();
-            if (!npc.isPresent()) {
+            if (!target.npc.getDef().undead) {
                 return false;
             }
-
             if (hit.attackStyle.isMelee() && amulet.getId() == salveAmulet) {
                 hit.boostAttack(0.15);
                 hit.boostDamage(0.15);

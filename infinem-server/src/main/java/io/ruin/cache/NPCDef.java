@@ -378,6 +378,23 @@ public class NPCDef {
                 || name.equalsIgnoreCase("torag the corrupted") || name.equalsIgnoreCase("tortured soul")
                 || name.equalsIgnoreCase("tree spirit") || name.equalsIgnoreCase("treus dayth")
                 || name.equalsIgnoreCase("verac the defiled");
+
+        undead = name.toLowerCase().contains("spectre") || name.toLowerCase().contains("ankou")
+                || name.toLowerCase().contains("shade") || name.toLowerCase().contains("banshee")
+                || name.equalsIgnoreCase("crawling hand") || name.equalsIgnoreCase("bloodthirsty hand")
+                || name.equalsIgnoreCase("Calvar'ion") || name.equalsIgnoreCase("crushing hand")
+                || name.equalsIgnoreCase("forgotten soul") || name.equalsIgnoreCase("ghost")
+                || name.toLowerCase().contains("skeleton") || name.equalsIgnoreCase("headless beast")
+                || name.toLowerCase().contains("zombie") || name.equalsIgnoreCase("mummy")
+                || name.equalsIgnoreCase("pestilent bloat") || name.toLowerCase().contains("revenant")
+                || name.equalsIgnoreCase("skeletal mystic") || name.equalsIgnoreCase("skogre")
+                || name.equalsIgnoreCase("slash bash") || name.equalsIgnoreCase("tarn")
+                || name.equalsIgnoreCase("the draugen") || name.equalsIgnoreCase("tormented soul")
+                || name.equalsIgnoreCase("tortured soul") || name.equalsIgnoreCase("trapped soul")
+                || name.equalsIgnoreCase("tree spirit") || name.equalsIgnoreCase("ulfric")
+                || name.toLowerCase().contains("undead") || name.equalsIgnoreCase("vet'ion")
+                || name.equalsIgnoreCase("vorkath") || name.equalsIgnoreCase("zogre")
+                || name.equalsIgnoreCase("zombified spawn");
     }
 
     void decode(InBuffer var1, int var2) {
