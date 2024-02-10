@@ -488,6 +488,24 @@
   {
     "name": "Gnome trainer",
     "id": 6080,
+    "x": 2472,
+    "y": 3423,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Gnome trainer",
+    "id": 6080,
+    "x": 2473,
+    "y": 3420,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Gnome trainer",
+    "id": 6080,
     "x": 2469,
     "y": 3422,
     "z": 0,
