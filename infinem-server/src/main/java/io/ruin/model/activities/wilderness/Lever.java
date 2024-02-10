@@ -37,19 +37,19 @@ public class Lever {
          * Edge
          */
         ObjectAction.register(26761, 3090, 3475, 0, "pull", (player, obj) -> {
-            if (player.edgevilleLeverWarning) {
+            if (player.hasAttribute("WILDY_LEVER")) {
+                pull(player, obj, 3154, 3924, "...and teleport into the wilderness.");
+            } else {
                 player.dialogue(
                         new MessageDialogue("Warning! Pulling the lever will teleport you deep into the Wilderness."),
                         new OptionsDialogue("Are you sure you wish to pull it?",
                                 new Option("Yes, I'm brave.", () -> pull(player, obj, 3154, 3924, "...and teleport into the wilderness.")),
                                 new Option("Eep! The Wilderness... No thank you.", () -> player.sendFilteredMessage("You decide not to pull the lever. ")),
                                 new Option("Yes please, don't show this message again.", () -> {
-                                    player.edgevilleLeverWarning = false;
+                                    player.putAttribute("WILDY_LEVER", 1);
                                     pull(player, obj, 3154, 3924, "...and teleport into the wilderness.");
                                 }))
                 );
-            } else {
-                pull(player, obj, 3154, 3924, "...and teleport into the wilderness.");
             }
         });
 

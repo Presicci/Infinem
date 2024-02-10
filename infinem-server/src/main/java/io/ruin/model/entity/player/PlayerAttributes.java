@@ -157,8 +157,6 @@ public abstract class PlayerAttributes extends Entity {
 
     public boolean npcTarget; //just so we can check if a player has a target or not.
 
-    @Expose public boolean edgevilleLeverWarning = true;
-
     @Expose public int mageArenaPoints;
 
     @Expose public int previousTeleportX = -1, previousTeleportY, previousTeleportZ;
