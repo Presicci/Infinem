@@ -14,6 +14,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.stat.StatType;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class GnomeStrongholdCourse {
 
     private static final GameObject[] OBSTACLES = {
@@ -24,6 +27,12 @@ public class GnomeStrongholdCourse {
             Tile.get(new Position(2485, 3426, 0), true).getObject(23135, 10, 2),
             Tile.get(new Position(2484, 3431, 0), true).getObject(23138, 10, 1)
     };
+
+    private static final List<Position> MARK_SPAWNS = Arrays.asList(
+            new Position(2472, 3423, 1),
+            new Position(2472, 3419, 2),
+            new Position(2487, 3421, 2)
+    );
 
     static {
         /**
@@ -159,6 +168,7 @@ public class GnomeStrongholdCourse {
                     int laps = PlayerCounter.GNOME_STRONGHOLD_COURSE.increment(p, 1);
                     AgilityPet.rollForPet(p, 35609);
                     p.getTaskManager().doLookupByUUID(559, 1);  // Complete the Gnome Stronghold Agility Course
+                    MarkOfGrace.rollMark(p, 1, MARK_SPAWNS);
                     if (!p.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                         p.sendFilteredMessage("Your Gnome Agility lap count is: " + Color.RED.wrap(laps + "") + ".");
                 } else {
