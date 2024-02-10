@@ -2099,5 +2099,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
+  },
+  {
+    "name": "Tool Leprechaun",
+    "id": 0,
+    "x": 3008,
+    "y": 3374,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   }
 ]
