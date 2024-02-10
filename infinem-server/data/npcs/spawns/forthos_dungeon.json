@@ -1,0 +1,434 @@
+[
+  {
+    "id": 2145,
+    "x": 1803,
+    "y": 9940,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "id": 2145,
+    "x": 1799,
+    "y": 9941,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "id": 2145,
+    "x": 1801,
+    "y": 9935,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "id": 2145,
+    "x": 1802,
+    "y": 9937,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "id": 2145,
+    "x": 1798,
+    "y": 9939,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "id": 2145,
+    "x": 1800,
+    "y": 9940,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "id": 2145,
+    "x": 1799,
+    "y": 9936,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "id": 2145,
+    "x": 1803,
+    "y": 9937,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "id": 247,
+    "x": 1812,
+    "y": 9937,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Red dragon"
+  },
+  {
+    "id": 247,
+    "x": 1817,
+    "y": 9934,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Red dragon"
+  },
+  {
+    "id": 247,
+    "x": 1819,
+    "y": 9928,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Red dragon"
+  },
+  {
+    "id": 137,
+    "x": 1825,
+    "y": 9937,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Baby red dragon"
+  },
+  {
+    "id": 137,
+    "x": 1818,
+    "y": 9942,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Baby red dragon"
+  },
+  {
+    "id": 137,
+    "x": 1811,
+    "y": 9939,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Baby red dragon"
+  },
+  {
+    "id": 137,
+    "x": 1813,
+    "y": 9933,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Baby red dragon"
+  },
+  {
+    "id": 8703,
+    "x": 1835,
+    "y": 9958,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1833,
+    "y": 9958,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1833,
+    "y": 9961,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1833,
+    "y": 9963,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1835,
+    "y": 9964,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1840,
+    "y": 9964,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1837,
+    "y": 9964,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1838,
+    "y": 9959,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1841,
+    "y": 9957,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1845,
+    "y": 9962,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1842,
+    "y": 9958,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1839,
+    "y": 9951,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1837,
+    "y": 9952,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1835,
+    "y": 9953,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1838,
+    "y": 9957,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1832,
+    "y": 9949,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1835,
+    "y": 9957,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1837,
+    "y": 9959,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1846,
+    "y": 9952,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1845,
+    "y": 9957,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1840,
+    "y": 9951,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1844,
+    "y": 9949,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1841,
+    "y": 9947,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1833,
+    "y": 9964,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1834,
+    "y": 9965,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 8703,
+    "x": 1831,
+    "y": 9965,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Temple Spider"
+  },
+  {
+    "id": 2145,
+    "x": 1811,
+    "y": 9971,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "id": 2145,
+    "x": 1812,
+    "y": 9967,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "id": 2145,
+    "x": 1809,
+    "y": 9966,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "id": 2145,
+    "x": 1811,
+    "y": 9962,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "id": 2145,
+    "x": 1810,
+    "y": 9962,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "id": 2145,
+    "x": 1808,
+    "y": 9970,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "npcName": "Undead Druid"
+  },
+  {
+    "name": "Eodan",
+    "id": 8711,
+    "x": 1808,
+    "y": 9951,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  }
+]
