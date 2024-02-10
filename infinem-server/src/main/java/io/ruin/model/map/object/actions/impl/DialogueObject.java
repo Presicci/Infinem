@@ -17,6 +17,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/1/2023
  */
 public enum DialogueObject {
+    FORTHOS_LEVER(34902, new Position(1808, 9948),
+            new PlayerDialogue("Who knows what could happen if I pull this... best to leave it alone.")),
     SACRED_BONE_BURNER(34855, new Position(1810, 9951),
             new MessageDialogue("You hear a faint whisper in your ear..."), new MessageDialogue(Color.GOLD.wrap("MOOOOOORE BOOOOONES!"))),
     BROKEN_MACHINERY(34587, new Position(1347, 10263),
