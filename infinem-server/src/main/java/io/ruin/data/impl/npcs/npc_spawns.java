@@ -16,6 +16,7 @@ import io.ruin.model.locations.home.NPCLocator;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Tile;
 import io.ruin.model.shop.ShopManager;
+import io.ruin.model.skills.agility.courses.GnomeStrongholdCourse;
 import io.ruin.model.skills.slayer.TaskOnlyNPC;
 import lombok.extern.slf4j.Slf4j;
 
@@ -91,6 +92,9 @@ public class npc_spawns extends DataFile {
                 break;
             case 306:
                 NPCLocator.GUIDE = npc;
+                break;
+            case 6080:
+                GnomeStrongholdCourse.GNOME_TRAINERS.add(npc);
                 break;
         }
     }

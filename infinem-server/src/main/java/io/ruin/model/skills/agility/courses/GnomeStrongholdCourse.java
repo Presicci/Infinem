@@ -2,6 +2,7 @@ package io.ruin.model.skills.agility.courses;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.cache.Color;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -14,6 +15,7 @@ import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.stat.StatType;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -34,6 +36,17 @@ public class GnomeStrongholdCourse {
             new Position(2487, 3421, 2)
     );
 
+    public static final List<NPC> GNOME_TRAINERS = new ArrayList<>();
+
+    private static void gnomeTrainerDialogue(Position position, String text) {
+        for (NPC npc : GNOME_TRAINERS) {
+            if (position.distance(npc.getPosition()) < 7 && position.getZ() == npc.getHeight()) {
+                npc.forceText(text);
+                return;
+            }
+        }
+    }
+
     static {
         /**
          * Log balance
@@ -41,6 +54,7 @@ public class GnomeStrongholdCourse {
         ObjectAction.register(23145, "walk-across", (p, obj) -> p.startEvent(e -> {
             p.lock(LockType.FULL_DELAY_DAMAGE);
             p.sendFilteredMessage("You walk carefully across the slippery log...");
+            gnomeTrainerDialogue(obj.getPosition(), "Okay get over that log, quick quick!");
             p.getAppearance().setCustomRenders(Renders.AGILITY_BALANCE);
             p.stepAbs(2474, 3429, StepType.FORCE_WALK);
             e.waitForMovement(p);
@@ -59,6 +73,7 @@ public class GnomeStrongholdCourse {
         ObjectAction.register(23134, "climb-over", (p, obj) -> p.startEvent(e -> {
             p.lock(LockType.FULL_DELAY_DAMAGE);
             p.sendFilteredMessage("You climb the netting...");
+            gnomeTrainerDialogue(obj.getPosition(), "Move it, move it, move it!");
             p.animate(828);
             e.delay(1);
             p.getMovement().teleport(p.getAbsX(), 3424, 1);
@@ -75,6 +90,7 @@ public class GnomeStrongholdCourse {
         ObjectAction.register(23559, "climb", (p, obj) -> p.startEvent(e -> {
             p.lock(LockType.FULL_DELAY_DAMAGE);
             p.sendFilteredMessage("You climb the tree...");
+            gnomeTrainerDialogue(obj.getPosition(), "That's it - straight up");
             p.animate(828);
             e.delay(1);
             p.sendFilteredMessage("...To the platform above.");
@@ -92,6 +108,7 @@ public class GnomeStrongholdCourse {
         ObjectAction.register(23557, "walk-on", (p, obj) -> p.startEvent(e -> {
             p.lock(LockType.FULL_DELAY_DAMAGE);
             p.sendFilteredMessage("You carefully cross the tightrope.");
+            gnomeTrainerDialogue(obj.getPosition(), "Come on scaredy cat, get across that rope!");
             p.getAppearance().setCustomRenders(Renders.AGILITY_BALANCE);
             p.stepAbs(2483, 3420, StepType.FORCE_WALK);
             e.waitForMovement(p);
@@ -131,6 +148,7 @@ public class GnomeStrongholdCourse {
             p.startEvent(e -> {
                 p.lock(LockType.FULL_DELAY_DAMAGE);
                 p.sendMessage("You climb the netting...");
+                gnomeTrainerDialogue(obj.getPosition(), "My Granny can move faster than you.");
                 p.animate(828);
                 e.delay(2);
                 p.getMovement().teleport(p.getAbsX(), 3428, 0);
