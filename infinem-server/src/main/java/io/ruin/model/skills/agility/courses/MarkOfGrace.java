@@ -15,7 +15,7 @@ public class MarkOfGrace {
     public static void rollMark(Player player, int levelReq, List<Position> spawns) {
         if (spawns == null)
             return;
-        double chance = levelReq / 2 / 100.0;
+        double chance = levelReq / 2D / 100D;
         if (Random.get() <= chance) {
             Position spawn = Random.get(spawns);
             new GroundItem(new Item(11849, (Random.get(1, 4) + markOfGraceDonatorIncrease(player)) * (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_MARKS_OF_GRACE) ? 2 : 1))).owner(player).position(spawn).spawn(2);
