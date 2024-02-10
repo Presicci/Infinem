@@ -12,7 +12,7 @@ import lombok.Getter;
 
 import java.util.*;
 
-
+@Getter
 public enum InstanceType {
     GIANT_MOLE("Giant Mole", new Bounds(1728, 5120, 1791, 5247, -1), 300_000, 60, new Position(1752, 5236, 0), new Position(2985, 3316, 0)),
     DAGANNOTH_KINGS("Dagannoth Kings", 11589, 400_000, 60, new Position(2899, 4449, 0), new Position(1912, 4367, 0)),
@@ -33,6 +33,41 @@ public enum InstanceType {
     ZAMORAK_GWD("K'ril Tsutsaroth", new Bounds(2912, 5312, 2944, 5336, 2), 500_000, 60, Config.GWD_ZAMORAK_KC, "Zamorak", new Position(2925, 5331, 2), new Position(2925, 5333, 2)),
     ARMADYL_GWD("Kree'arra", new Bounds(2816, 5288, 2840, 5304, 2), 500_000, 60, Config.GWD_ARMADYL_KC, "Armadyl", new Position(2839, 5296, 2), new Position(2839, 5294, 2)),
     SARADOMIN_GWD("Commander Zilyana", new Bounds(2880, 5248, 2911, 5278, -1), 500_000, 60, Config.GWD_SARADOMIN_KC, "Saradomin", new Position(2907, 5265, 0), new Position(2909, 5265, 0));
+
+    /**
+     * Name of type
+     */
+    private final String name;
+
+    /**
+     * The position the player will be teleported to upon leaving
+     */
+    private final Position exitPosition;
+
+    /**
+     * Entry position
+     */
+    private final Position entryPosition;
+
+    /**
+     * How many coins it costs to create this instance (only used if world is set to Eco)
+     */
+    private final int coinCost;
+
+
+    /**
+     * Instance duration (in ticks)
+     */
+    private final int duration;
+
+    /**
+     * Bounds. Always use whole chunks to make sure coordinate conversion works properly
+     */
+    private final Bounds bounds;
+
+    @Getter private Config godwarsConfig = null;
+
+    @Getter private String godwarsGodName = "";
 
     InstanceType(String name, Bounds bounds, int coinCost, int duration, Position entryPosition, Position exitPosition) {
         this(name, bounds, coinCost, duration, null, "", entryPosition, exitPosition);
@@ -80,74 +115,14 @@ public enum InstanceType {
         player.getMovement().teleport(getEntryPosition());
     }
 
-    /**
-     * Name of type
-     */
-    private String name;
-
-    /**
-     * The position the player will be teleported to upon leaving
-     */
-    private Position exitPosition;
-
-    /**
-     * Entry position
-     */
-    private Position entryPosition;
-
-    /**
-     * How many coins it costs to create this instance (only used if world is set to Eco)
-     */
-    private int coinCost;
-
-
-    /**
-     * Instance duration (in ticks)
-     */
-    private int duration;
-
-    /**
-     * Bounds. Always use whole chunks to make sure coordinate conversion works properly
-     */
-    private Bounds bounds;
-
-    @Getter private Config godwarsConfig = null;
-
-    @Getter private String godwarsGodName = "";
-
-    /**
-   ,  * Spawns (In Local coords)
-     */
-    private List<Spawn> spawns;
-
-    public Position getExitPosition() {
-        return exitPosition;
-    }
-
-    public Position getEntryPosition() {
-        return entryPosition;
-    }
-
     public int getCost() {
         return coinCost;
     }
 
-    public int getDuration() {
-        return duration;
-    }
-
-    public Bounds getBounds() {
-        return bounds;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public List<Spawn> getSpawns() {
-        return spawns;
-    }
-
+    /**
+     * Spawns (In Local coords)
+     */
+    private List<Spawn> spawns;
 
     static class Spawn {
         int id;
