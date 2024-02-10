@@ -2,6 +2,8 @@ package io.ruin.model.entity.npc.actions.guild.crafting;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.ItemDef;
+import io.ruin.model.content.tasksystem.tasks.TaskArea;
+import io.ruin.model.content.tasksystem.tasks.areas.AreaTaskTier;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -94,6 +96,23 @@ public enum Tanner {
 
     }
 
+    /**
+     * Eodan charges different rates depending on the player's Zeah area task points.
+     */
+    public static void eodanTanning(Player player) {
+        double multiplier = 10D;
+        if (TaskArea.ZEAH.hasTierUnlocked(player, AreaTaskTier.ELITE)) {
+            multiplier = 2D;
+        } else if (TaskArea.ZEAH.hasTierUnlocked(player, AreaTaskTier.HARD)) {
+            multiplier = 4D;
+        } else if (TaskArea.ZEAH.hasTierUnlocked(player, AreaTaskTier.MEDIUM)) {
+            multiplier = 6D;
+        } else if (TaskArea.ZEAH.hasTierUnlocked(player, AreaTaskTier.EASY)) {
+            multiplier = 8D;
+        }
+        leatherTanning(player, multiplier);
+    }
+
     public static void leatherTanning(Player player) {
         leatherTanning(player, 1D);
     }
@@ -163,6 +182,7 @@ public enum Tanner {
              */
             NPCAction.register(tanner, "trade", (player, obj) -> leatherTanning(player));
         }
+        NPCAction.register(8711, "tan-hides", (player, npc) -> eodanTanning(player));
         InterfaceHandler.register(Interface.LEATHER_TANNING, h -> {
             /**
              * Soft leather

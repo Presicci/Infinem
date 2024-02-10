@@ -8,6 +8,7 @@ import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.npc.actions.Leon;
+import io.ruin.model.entity.npc.actions.guild.crafting.Tanner;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.*;
@@ -26,6 +27,7 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    EODAN_TAN(Tanner::eodanTanning),
     COUNT_CHECK_TELE(player -> {
         NPC npc = player.getDialogueNPC();
         if (player.hasAttribute("SHOS")) {
