@@ -15,6 +15,9 @@ import io.ruin.model.map.object.actions.impl.Ladder;
 import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.stat.StatType;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class BarbarianCourse {
 
     private static final GameObject[] OBSTACLES = {
@@ -26,6 +29,11 @@ public class BarbarianCourse {
             Tile.get(new Position(2539, 3553, 0), true).getObject(1948, 10, 2),
             Tile.get(new Position(2542, 3553, 0), true).getObject(1948, 10, 2)
     };
+
+    private static final List<Position> MARK_SPAWNS = Arrays.asList(
+            new Position(2537, 3547, 1),
+            new Position(2532, 3546, 1)
+    );
 
     static {
         /**
@@ -161,6 +169,7 @@ public class BarbarianCourse {
                 int laps = PlayerCounter.BARBARIAN_COURSE.increment(player, 1);
                 AgilityPet.rollForPet(player, 44376);
                 player.getTaskManager().doLookupByUUID(571, 1);  // Complete the Barbarian Outpost Agility Course
+                MarkOfGrace.rollMark(player, 35, MARK_SPAWNS);
                 if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                     player.sendFilteredMessage("Your Barbarian Agility lap count is: " + Color.RED.wrap(laps + "") + ".");
             } else {
