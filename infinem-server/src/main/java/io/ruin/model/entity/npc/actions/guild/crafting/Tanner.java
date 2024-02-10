@@ -54,8 +54,8 @@ public enum Tanner {
             player.sendMessage("You don't have any " + tanner.rawName + "s to tan.");
             return;
         }
-
-        if (!player.getInventory().contains(COINS_995, tanner.cost)) {
+        int cost = (int) (tanner.cost * player.getTemporaryAttributeOrDefault("TAN_MULTI", 1D));
+        if (!player.getInventory().contains(COINS_995, cost)) {
             player.sendMessage("You haven't got enough coins to pay for " + tanner.productName + "s.");
             return;
         }
@@ -66,10 +66,10 @@ public enum Tanner {
             int made = 0;
             if (ItemDef.get(tanner.raw).notedId > 0) {
                 if (finalNoted != null) {
-                    int tan = Math.min(Math.min(finalNoted.getAmount(), amount), player.getInventory().getAmount(COINS_995) / tanner.cost);
+                    int tan = Math.min(Math.min(finalNoted.getAmount(), amount), player.getInventory().getAmount(COINS_995) / cost);
                     if (tan == 0)
                         return;
-                    player.getInventory().remove(COINS_995, tanner.cost * tan);
+                    player.getInventory().remove(COINS_995, cost * tan);
                     player.getInventory().remove(finalNoted.getId(), tan);
                     player.getInventory().add(ItemDef.get(tanner.product).notedId, tan);
                     made += tan;
@@ -79,11 +79,11 @@ public enum Tanner {
                 Item raw = player.getInventory().findItem(tanner.raw);
                 if (raw == null)
                     break;
-                if (!player.getInventory().contains(COINS_995, tanner.cost))
+                if (!player.getInventory().contains(COINS_995, cost))
                     break;
 
                 raw.setId(tanner.product);
-                player.getInventory().remove(COINS_995, tanner.cost);
+                player.getInventory().remove(COINS_995, cost);
             }
 
             if ((made - 1) > 1)
@@ -94,14 +94,19 @@ public enum Tanner {
 
     }
 
-    private static void leatherTanning(Player player) {
+    public static void leatherTanning(Player player) {
+        leatherTanning(player, 1D);
+    }
+
+    public static void leatherTanning(Player player, double costMultiplier) {
+        player.putTemporaryAttribute("TAN_MULTI", costMultiplier);
         player.openInterface(InterfaceType.MAIN, Interface.LEATHER_TANNING);
             /* Interface settings */
         for (int i = 0; i < values().length; i++) {
             Tanner type = values()[i];
             String color = color(player, type.raw, type.cost);
             player.getPacketSender().sendString(Interface.LEATHER_TANNING, 108 + i, color + type.displayName);
-            player.getPacketSender().sendString(Interface.LEATHER_TANNING, 116 + i, color + NumberUtils.formatNumber(type.cost) + " coins");
+            player.getPacketSender().sendString(Interface.LEATHER_TANNING, 116 + i, color + NumberUtils.formatNumber((int) (type.cost * costMultiplier)) + " coins");
             player.getPacketSender().sendItem(Interface.LEATHER_TANNING, 100 + i, type.raw, 250);
         }
     }
