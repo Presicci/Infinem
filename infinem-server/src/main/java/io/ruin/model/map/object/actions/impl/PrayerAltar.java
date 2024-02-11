@@ -62,6 +62,12 @@ public class PrayerAltar {
             if(def.hasOption("pray-at"))
                 ObjectAction.register(def.id, "pray-at", (player, obj) -> pray(player));
         });
+        // Forthos dungeon altars
+        ObjectAction.register(34900, 1,  (player, obj) -> pray(player));
+        ObjectAction.register(34872, 1,  (player, obj) -> {
+            player.animate(645);
+            player.sendMessage("You pray at the altar, nothing interesting happens.");
+        });
         /**
          * Custom Edgeville altar
          */
