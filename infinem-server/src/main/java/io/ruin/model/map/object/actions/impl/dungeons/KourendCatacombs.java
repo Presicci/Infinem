@@ -78,7 +78,7 @@ public class KourendCatacombs {
         });
 
         ObjectAction.register(28897, "climb-up", (player, obj) -> { // SE
-            Ladder.climb(player, 1667, 3565, 0, true, true, false);
+            Ladder.climb(player, 1803, 9968, 0, true, true, false);
             Config.CATACOMBS_ENTRANCE_SE.set(player, 1);
         });
         ObjectAction.register(28918, 1, (player, obj) -> {
