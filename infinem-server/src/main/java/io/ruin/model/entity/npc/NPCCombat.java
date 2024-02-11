@@ -11,7 +11,6 @@ import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.*;
 import io.ruin.model.content.PvmPoints;
-import io.ruin.model.content.bestiary.perks.impl.AccuracyPerk;
 import io.ruin.model.content.bestiary.perks.impl.NotedDropPerk;
 import io.ruin.model.content.bestiary.perks.impl.RespawnPerk;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
@@ -464,6 +463,17 @@ public abstract class NPCCombat extends Combat {
         }
     }
 
+    private void handleGrubbyDrops(Killer killer, Player player, Position pos) {
+        if (Bounds.fromRegion(7323).inBounds(pos)) {
+            String name = npc.getDef().name;
+            if (name.equalsIgnoreCase("red dragon") && Random.rollDie(50)) {
+                handleDrop(killer, pos, player, Collections.singletonList(new Item(23499)));
+            } else if (name.equalsIgnoreCase("baby red dragon") && Random.rollDie(80)) {
+                handleDrop(killer, pos, player, Collections.singletonList(new Item(23499)));
+            }
+        }
+    }
+
     private void handleSuperiorDrops(Killer killer, Player player, Position pos) {
         if (!npc.isSuperior)
             return;
@@ -633,6 +643,9 @@ public abstract class NPCCombat extends Combat {
          * Handle superior slayer monster unique drops
          */
         handleSuperiorDrops(killer, pKiller, dropPosition);
+
+        // Forthos dungeon grubby key drops
+        handleGrubbyDrops(killer, pKiller, dropPosition);
 
         /*
          * Handle giving player vorkaths head after 50 kills.
