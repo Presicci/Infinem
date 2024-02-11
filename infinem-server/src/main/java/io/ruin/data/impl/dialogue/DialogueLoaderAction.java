@@ -27,6 +27,7 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    TAN(Tanner::leatherTanning),
     EODAN_TAN(Tanner::eodanTanning),
     COUNT_CHECK_TELE(player -> {
         NPC npc = player.getDialogueNPC();

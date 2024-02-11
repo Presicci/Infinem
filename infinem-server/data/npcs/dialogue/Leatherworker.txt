@@ -1,0 +1,37 @@
+Player: Hello.
+Leatherworker: Can I help you?
+<I'd like you to tan something for me.
+TAN:
+><What do you do here?
+Player: What do you do here?
+Leatherworker: Well, I can cure plain cowhides into pieces of leather ready for crafting.
+Leatherworker: I work with ordinary, hard or dragonhide leather and also snakeskin. What would you like to know about?
+<Ordinary leather.
+Player: Ordinary leather.
+Leatherworker: I can work one piece of cow hide into ordinary leather. It only costs one piece of gold.
+Leatherworker: Is there anything else I can help you with?
+FIRSTOPTIONS:
+><Hard leather.
+Player: Hard leather.
+Leatherworker: Hard leather is made by specially treating normal leather by wetting and drying several times.
+Leatherworker: It's then treated with pine oils. It's harder wearing than ordinary leather.
+Leatherworker: Is there anything else I can help you with?
+FIRSTOPTIONS:
+><Snakeskin.
+Player: Snake skins.
+Leatherworker: I can work one piece of snake hide into a snakeskin. It only costs 15 pieces of gold. Snakeskin armour is great for intermediate level rangers and provides more defence than hard and studded leather.
+Leatherworker: Is there anything else I can help you with?
+FIRSTOPTIONS:
+><Dragonhide leather.
+Player: Dragonhide leather.
+Leatherworker: Dragon leather is made from dragonhides. One piece of hide can be worked into one piece of dragon leather. It costs 20 coins each piece.
+Leatherworker: Dragon leather is hard-wearing and has excellent flexibility. You can make strong and supple armour with this.
+Leatherworker: Is there anything else I can help you with?
+FIRSTOPTIONS:
+><I'm bored of leather already.
+Player: I'm bored of leather already.
+Leatherworker: You may be bored now, but an arrow in the backside will soon fix that!
+>
+><No thanks.
+Player: No thanks.
+Leatherworker: Suit yourself.
