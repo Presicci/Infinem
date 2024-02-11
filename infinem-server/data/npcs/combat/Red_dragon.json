@@ -1,6 +1,6 @@
 [
   { // Red dragon (152)
-    "ids": [ 247, 248, 249, 250, 251 ],
+    "ids": [ 247, 248, 249, 250, 251, 8079 ],
     "handler": "io.ruin.model.combat.npc.dragons.ChromaticDragon",
     //Combat Info
     "hitpoints": 140,
