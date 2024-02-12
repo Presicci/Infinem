@@ -4,13 +4,21 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 2/11/2024
  */
 public class ZygomiteFungi {
 
-    private static final int[] FUNGI = { 533, 538 };
+    private static Map<Integer, Integer> FUNGI = new HashMap<Integer, Integer>() {{
+        put(533, 537);
+        put(538, 1024);
+        put(8690, 7797);
+        put(8691, 7797);
+    }};
 
     private static void pick(Player player, NPC npc) {
         player.lock();
@@ -21,10 +29,10 @@ public class ZygomiteFungi {
         });
         npc.lock();
         npc.startEvent(e -> {
-            int id = npc.getId();
             e.delay(1);
-            npc.putTemporaryAttribute("ORIG_ID", npc.getId());
-            npc.transform(id == 533 ? 537 : 1024);
+            int id = npc.getId();
+            npc.putTemporaryAttribute("ORIG_ID", id);
+            npc.transform(FUNGI.get(id));
             npc.animate(3330);
             e.delay(1);
             npc.getCombat().setTarget(player);
@@ -42,7 +50,7 @@ public class ZygomiteFungi {
     }
 
     static {
-        for (int mushroom : FUNGI) {
+        for (int mushroom : FUNGI.keySet()) {
             NPCAction.register(mushroom, "pick", ZygomiteFungi::pick);
         }
     }
