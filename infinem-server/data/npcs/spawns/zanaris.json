@@ -26,6 +26,24 @@
     "direction": "S",
     "walkRange": 2
   },
+  {
+    "name": "Fairy shop keeper",
+    "id": 2868,
+    "x": 2376,
+    "y": 4445,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Fairy shop assistant",
+    "id": 2869,
+    "x": 2377,
+    "y": 4448,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
 
   // Marketplace
   {
