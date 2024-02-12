@@ -1,0 +1,10 @@
+Player: Hello. Who are you?
+Gordon: The name's Gordon. Good day to you.
+Player: It's a nice farm you've got here.
+Gordon: Thank you. We built it ourselves.
+Player: Really? So you haven't been here long?
+Gordon: Nope. Not too long ago you couldn't safely travel around these parts. Too many lizardmen. But then some Hosidius explorers discovered how fertile this land was.
+Gordon: Lord Hosidius made a deal with Lord Shayzien and the lizardmen were cleared out to make room for the Farming Guild.
+Gordon: When we heard, we decided to come up here and start up our own farm.
+Player: Very nice. Well I hope it goes well for you.
+Gordon: Thank you friend. See you later.
