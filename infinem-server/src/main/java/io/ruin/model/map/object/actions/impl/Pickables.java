@@ -17,6 +17,8 @@ public class Pickables {
     @AllArgsConstructor
     public enum Nodes {
         NETTLES(1181, 4241),
+        NETTLES2(5256, 4241),
+        NETTLES3(5258, 4241),
         FLAX(14896, 1779),
         CABBAGE(1161, 1965),
         WHEAT(15506, 1947),
