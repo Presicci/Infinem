@@ -1,5 +1,10 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
+import io.ruin.model.activities.combat.pvminstance.InstanceType;
+import io.ruin.model.activities.combat.pvminstance.PVMInstance;
+import io.ruin.model.inter.dialogue.MessageDialogue;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -24,5 +29,15 @@ public class GoblinCave {
             });
         }));
         ObjectAction.register(13, 2621, 9796, 0, "climb-over", (player, obj) -> Ladder.climb(player, new Position(2624, 3391), true, true, false));
+        ObjectAction.register(21800, 2617, 9827, 0, "enter", (player, obj) -> {
+            player.dialogue(
+                    new MessageDialogue("You have a bad feeling about crawling into the next cavern."),
+                    new OptionsDialogue("Do you want to enter the cavern?",
+                            new Option("Yes", () -> PVMInstance.enterTimeless(player, InstanceType.BOUNCER_GHOST)),
+                            new Option("No")
+                    )
+            );
+        });
+        ObjectAction.register(21800, "enter", (player, obj) -> player.getMovement().teleport(2617, 9828, 0));
     }
 }

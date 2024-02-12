@@ -558,5 +558,14 @@
     "direction": "W",
     "walkRange": "1",
     "world": "ECO"
+  },
+  {
+    "name": "Bouncer",
+    "id": 3508,
+    "x": 1761,
+    "y": 4705,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   }
 ]

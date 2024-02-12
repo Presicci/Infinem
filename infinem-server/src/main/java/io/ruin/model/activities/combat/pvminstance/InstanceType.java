@@ -24,6 +24,7 @@ public enum InstanceType {
     KALPHITE_QUEEN("Kalphite Queen", 13972, 500_000, 60, new Position(3507, 9494, 0), new Position(3509, 9496, 2)),
     SARACHNIS("Sarachnis", 7322, 50_000, 60, new Position(1842, 9911, 0), new Position(1842, 9912, 0)),
 
+    BOUNCER_GHOST("Bouncer", new Bounds(1752, 4696, 1775, 4719, 0), 0, 60, new Position(1759, 4711, 0), new Position(2617, 9828, 0)),
     OBOR("Obor", new Bounds(3072, 9792, 3107, 9817, 0), 0, 60, new Position(3091, 9815, 0), new Position(3095, 9832, 0)),
     BRYOPHYTA("Bryophyta", new Bounds(3200, 9920, 3235, 9951, -1), 0, 60, new Position(3214, 9937, 0), new Position(3174, 9900, 0)),
 
@@ -89,7 +90,7 @@ public enum InstanceType {
         loadSpawns();
     }
 
-    public static final Set<InstanceType> timelessInstances = EnumSet.of(OBOR, BRYOPHYTA, HESPORI);
+    public static final Set<InstanceType> timelessInstances = EnumSet.of(OBOR, BRYOPHYTA, HESPORI, BOUNCER_GHOST);
 
     private void loadSpawns() {
         int baseX = bounds.swX;
