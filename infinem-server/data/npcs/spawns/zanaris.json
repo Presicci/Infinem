@@ -72,5 +72,131 @@
     "z": 0,
     "direction": "S",
     "walkRange": 2
+  },
+  {
+    "name": "Lunderwin",
+    "id": 3202,
+    "x": 2477,
+    "y": 4464,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Cow",
+    "id": 2790,
+    "x": 2437,
+    "y": 4444,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Cow",
+    "id": 2795,
+    "x": 2440,
+    "y": 4450,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Cow",
+    "id": 2790,
+    "x": 2439,
+    "y": 4455,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Fungi",
+    "id": 533,
+    "x": 2413,
+    "y": 4370,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fungi",
+    "id": 533,
+    "x": 2420,
+    "y": 4370,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fungi",
+    "id": 538,
+    "x": 2418,
+    "y": 4373,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fungi",
+    "id": 533,
+    "x": 2415,
+    "y": 4376,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fungi",
+    "id": 538,
+    "x": 2421,
+    "y": 4376,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fungi",
+    "id": 533,
+    "x": 2412,
+    "y": 4470,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fungi",
+    "id": 538,
+    "x": 2414,
+    "y": 4475,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fungi",
+    "id": 533,
+    "x": 2418,
+    "y": 4474,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fungi",
+    "id": 538,
+    "x": 2420,
+    "y": 4468,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Fungi",
+    "id": 538,
+    "x": 2414,
+    "y": 4467,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   }
 ]
