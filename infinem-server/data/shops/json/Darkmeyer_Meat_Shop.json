@@ -1,0 +1,44 @@
+{
+  "name": "Darkmeyer Meat Shop",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    9723
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 2132,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2138,
+      "stock": 15,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2134,
+      "stock": 20,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 24782,
+      "stock": 25,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 2136,
+      "stock": 10,
+      "buy_price": 0,
+      "sell_price": 1
+    }
+  ]
+}
