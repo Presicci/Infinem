@@ -44,6 +44,7 @@ public enum Food {
     RAW_RABBIT(1, 30.0, 3226, 3228, 7222, "a rabbit", "rabbits", 3, 31, 31, 31),
     CRAB_MEAT(21, 100.0, 7518, 7521, 7520, "a piece of crab meat", "crab meat", 3, 31, 31, 31),
     RAW_UGTHANKI_MEAT(1, 40.0, Items.RAW_UGTHANKI_MEAT, Items.UGTHANKI_MEAT, 2146, "a piece of ugthanki meat", "ugthanki meat", 3, 99, 99, 95),
+    RAW_MYSTERY_MEAT(1, 30.0, 24782, 24785, 2146, "a piece of mystery meat", "mystery meat", 3, 31, 31, 31),
 
     //Pies
     REDBERRY_PIE(10, 78.0, 2321, 2325, 2329, "a redberry pie", "", 3, 10, 10, 10),
