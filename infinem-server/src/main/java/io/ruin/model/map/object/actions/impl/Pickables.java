@@ -2,32 +2,30 @@ package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
-import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
-import lombok.AllArgsConstructor;
 
 public class Pickables {
 
-    @AllArgsConstructor
-    public enum Nodes {
-        NETTLES(1181, 4241),
-        NETTLES2(5256, 4241),
-        NETTLES3(5258, 4241),
-        FLAX(14896, 1779),
-        CABBAGE(1161, 1965),
-        WHEAT(15506, 1947),
-        WHEAT1(15507, 1947),
-        WHEAT2(15508, 1947),
-        POTATO(312, 1942),
-        ONION(3366, 1957);
+    public enum Node {
+        NETTLES(4241, 1181, 5256, 5258),
+        FLAX(1779, 14896),
+        CABBAGE(1965, 1161),
+        WHEAT(1947, 15506, 15507, 15508),
+        POTATO(1942, 312),
+        ONION(1957, 3366);
 
-        public final int objectId, itemId;
+        private final int itemId;
+        private final int[] objectIds;
+
+        Node(int itemId, int... objectIds) {
+            this.itemId = itemId;
+            this.objectIds = objectIds;
+        }
 
         private void pick(Player player, GameObject obj) {
             if(player.getInventory().isFull()) {
@@ -60,9 +58,10 @@ public class Pickables {
     }
 
     static {
-        for (Nodes node : Nodes.values()) {
-            ObjectAction.register(node.objectId, "pick", node::pick);
+        for (Node node : Node.values()) {
+            for (int objectId : node.objectIds) {
+                ObjectAction.register(objectId, "pick", node::pick);
+            }
         }
     }
-
 }
