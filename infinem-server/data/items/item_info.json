@@ -66637,7 +66637,7 @@
     "id": 10858,
     "tradeable": false,
     "examine": "A shadow sword.",
-    "weight": 3.6,
+    "weight": 3.628,
 	"protect_value": 0,
     "equip_slot": 3,
     "stab_attack_bonus": -4,
@@ -66647,7 +66647,7 @@
     "magic_defence_bonus": 4,
     "range_defence_bonus": -1,
     "melee_strength_bonus": 26,
-    "weapon_type": "SWORD",
+    "weapon_type": "TWO_HANDED",
     "two_handed": true
   },
   { // Tea flask
