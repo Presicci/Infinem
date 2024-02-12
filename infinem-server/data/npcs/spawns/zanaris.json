@@ -25,5 +25,34 @@
     "z": 0,
     "direction": "S",
     "walkRange": 2
+  },
+
+  // Marketplace
+  {
+    "name": "Jukat",
+    "id": 3201,
+    "x": 2485,
+    "y": 4451,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Gatekeeper",
+    "id": 5840,
+    "x": 2468,
+    "y": 4436,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Irksol",
+    "id": 3203,
+    "x": 2479,
+    "y": 4468,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]
