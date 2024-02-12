@@ -1,0 +1,10 @@
+10503
+Player: Hello there. Is this your home?
+Mary: It is. What brings you here?
+<Could you tan something for me?
+Player: Could you tan something for me?
+Mary: Of course.
+TAN:
+><I'm just looking around.
+Mary: Well you won't find anything too exciting here I'm afraid. Just farming.
+Player: Well you have fun with it.

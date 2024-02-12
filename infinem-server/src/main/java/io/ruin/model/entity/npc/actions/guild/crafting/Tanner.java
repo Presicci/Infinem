@@ -183,6 +183,7 @@ public enum Tanner {
             NPCAction.register(tanner, "trade", (player, obj) -> leatherTanning(player));
         }
         NPCAction.register(8711, "tan-hides", (player, npc) -> eodanTanning(player));
+        NPCAction.register(10503, "trade", (player, npc) -> leatherTanning(player));    // Mary - kebos
         InterfaceHandler.register(Interface.LEATHER_TANNING, h -> {
             /**
              * Soft leather
