@@ -632,12 +632,12 @@
     "npcName": "Charles"
   },
   {
-    "id": 2147,
+    "id": 10726,
     "x": 1824,
     "y": 3690,
     "z": 0,
     "direction": "S",
-    "walkRange": 0,
+    "walkRange": 1,
     "world": "ECO",
     "npcName": "Veos"
   },

@@ -41,7 +41,7 @@ public class KourendBoat {
         NPCAction.register(7471, "port sarim", (player, npc) -> Traveling.fadeTravel(player, 3055, 3245, 0));
 
         // Port piscarilius
-        NPCAction.register(2147, "talk-to", ((player, npc) -> {
+        NPCAction.register(10726, "talk-to", ((player, npc) -> {
             player.dialogue(
                     new NPCDialogue(npc.getId(), "Would you like me to take you to Port Sarim or Land's End?"),
                     new OptionsDialogue(
@@ -51,7 +51,7 @@ public class KourendBoat {
                     )
             );
         }));
-        NPCAction.register(2147, "port sarim", (player, npc) -> Traveling.fadeTravel(player, 3055, 3245, 0));
-        NPCAction.register(2147, "land's end", (player, npc) -> Traveling.fadeTravel(player, 1504, 3399, 0));
+        NPCAction.register(10726, "port sarim", (player, npc) -> Traveling.fadeTravel(player, 3055, 3245, 0));
+        NPCAction.register(10726, "land's end", (player, npc) -> Traveling.fadeTravel(player, 1504, 3399, 0));
     }
 }
