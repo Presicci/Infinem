@@ -1,0 +1,46 @@
+{
+  "name": "Darkmeyer Seamstress",
+  "currency": "COINS",
+  "npcOption": "Trade",
+  "generalStore": false,
+  "npcs": [
+    9724
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1733,
+      "stock": 50,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1734,
+      "stock": 500,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 1759,
+      "stock": 50,
+      "buy_price": 0,
+      "sell_price": 2
+    },
+    {
+      "itemId": 950,
+      "stock": 5,
+      "buy_price": 12,
+      "sell_price": 39
+    },
+    {
+      "itemId": 6814,
+      "stock": 3,
+      "buy_price": 4,
+      "sell_price": 13
+    }
+    // TODO add clothing
+    // https://oldschool.runescape.wiki/w/Darkmeyer_Seamstress
+  ]
+}
