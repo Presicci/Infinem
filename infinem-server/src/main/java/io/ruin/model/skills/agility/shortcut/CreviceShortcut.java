@@ -16,12 +16,15 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum CreviceShortcut {
 
-    FALADOR(42, 1, Position.of(3028, 9806), Position.of(3035, 9806)),
-    HEROES_GUILD(67, 1, new Position(2899, 9902), new Position(2914, 9894)),
+    FALADOR(42, 1, Position.of(3028, 9806), Position.of(3035, 9806), true),
+    HEROES_GUILD(67, 1, new Position(2899, 9902), new Position(2914, 9894), true),
+    ZANARIS_46(46, 1, new Position(2400, 4404, 0), new Position(2400, 4402, 0), false),
+    ZANARIS_66(46, 1, new Position(2409, 4402, 0), new Position(2409, 4400, 0), false),
     ;
 
     private final int levelReq, xp;
     private final Position startPosition, endPosition;
+    private final boolean useMidPoint;
 
     public void squeeze(Player player, GameObject obj){
         if (!player.getStats().check(StatType.Agility, levelReq, "attempt this"))
@@ -32,11 +35,13 @@ public enum CreviceShortcut {
             player.animate(2594);
             Position target = player.getPosition().equals(startPosition) ? endPosition : startPosition;
             e.delay(1);
-            player.getMovement().teleport(
-                    (startPosition.getX() + endPosition.getX()) / 2,
-                    (startPosition.getY() + endPosition.getY()) / 2,
-                    startPosition.getZ());
-            e.delay(2);
+            if (useMidPoint) {
+                player.getMovement().teleport(
+                        (startPosition.getX() + endPosition.getX()) / 2,
+                        (startPosition.getY() + endPosition.getY()) / 2,
+                        startPosition.getZ());
+                e.delay(2);
+            }
             player.getMovement().teleport(target);
             player.animate(2595);
             e.delay(1);

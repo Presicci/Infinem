@@ -131,6 +131,8 @@ public class Shortcuts {
         // Brimhaven Dungeon vine to baby green dragons
         // Dwarven mine crevice
         ObjectAction.register(16543, "Squeeze-through", CreviceShortcut.FALADOR::squeeze);
+        ObjectAction.register(17002, 2400, 4403, 0, "Squeeze-past", CreviceShortcut.ZANARIS_46::squeeze);
+        ObjectAction.register(17002, 2409, 4401, 0, "Squeeze-past", CreviceShortcut.ZANARIS_66::squeeze);
 
         /**
          * Rope swings
