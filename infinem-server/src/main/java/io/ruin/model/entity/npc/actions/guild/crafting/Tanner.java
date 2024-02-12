@@ -44,8 +44,8 @@ public enum Tanner {
     }
 
     private static final int[] TANNERS = {
-            5809, // canifis
-            3231, // al-kharid
+            5809,   // Crafting guild
+            3231    // Al-kharid
     };
     private static final int[] MATERIALS = {1739, 7801, 6287, 1753, 1751, 1749, 1747};
 
@@ -184,6 +184,7 @@ public enum Tanner {
         }
         NPCAction.register(8711, "tan-hides", (player, npc) -> eodanTanning(player));
         NPCAction.register(10503, "trade", (player, npc) -> leatherTanning(player));    // Mary - kebos
+        NPCAction.register(6526, "trade", (player, npc) -> leatherTanning(player, 2D));    // Sbott - Canifis
         InterfaceHandler.register(Interface.LEATHER_TANNING, h -> {
             /**
              * Soft leather

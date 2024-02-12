@@ -1,0 +1,18 @@
+Sbott: Hello stranger. Would you like me to tan any hides for you?
+Sbott: Soft leather - 2 gp per hide<br>Hard leather - 5 gp per hide<br>Snakeskins - 25 gp per hide<br>Dragon leather - 45 gp per hide.
+<Yes please.
+TAN:2
+><Why are you so expensive?
+Player: Why are you so expensive? The tanner in Al-Kharid is half the price!
+Sbott: Hey, I charge more because I'm worth it! I deal in bulk, and I work extremely quickly. You'll see for yourself!
+Sbott: You got a lot of hides you want tanning quickly? I'm your guy!
+Sbott: So you got hides for me to tan, or are you just gonna bust my chops about prices all day?
+<Yes please.
+TAN:2
+><No thanks, I'm not interested.
+Player: No thanks, I'm not interested.
+Sbott: Okay; you change your mind, you come see me. I'm your guy!
+>
+><No thanks, I'm not interested.
+Player: No thanks, I'm not interested.
+Sbott: Okay; you change your mind, you come see me. I'm your guy!
