@@ -1,0 +1,7 @@
+8600
+Player: Hello. What are you doing here?
+Sergeant: We're here to keep the farmers safe from the lizardmen.
+Player: There's not many of you though.
+Sergeant: Luckily the lizardmen have been focusing their efforts elsewhere. They haven't tried to come up here yet.
+Sergeant: If they do, we can quickly call in reinforcements if required.
+Player: I see. Well I'd better let you get on then.
