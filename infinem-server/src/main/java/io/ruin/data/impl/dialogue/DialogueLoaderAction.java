@@ -27,7 +27,15 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
-    TAN(Tanner::leatherTanning),
+    TAN(player -> {
+        String arg = player.getTemporaryAttribute(AttributeKey.DIALOGUE_ACTION_ARGUMENTS);
+        if (arg == null || arg.isEmpty())
+            Tanner.leatherTanning(player, 1D);
+        else {
+            double multiplier = Double.parseDouble(arg);
+            Tanner.leatherTanning(player, multiplier);
+        }
+    }),
     EODAN_TAN(Tanner::eodanTanning),
     COUNT_CHECK_TELE(player -> {
         NPC npc = player.getDialogueNPC();
