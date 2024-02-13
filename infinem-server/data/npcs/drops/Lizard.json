@@ -7,14 +7,14 @@
     "tables": [
       {
         "name": "Armour",
-        "weight": 1,
+        "weight": 20,
         "items": [
           { "id": 4115, "min": 1, "max": 1, "weight": 195 }   //Mystic gloves (light)
         ]
       },
       {
         "name": "Runes",
-        "weight": 338,
+        "weight": 3380,
         "items": [
           { "id": 554, "min": 5, "max": 5, "weight": 23400 },   //Fire rune
           { "id": 554, "min": 42, "max": 42, "weight": 10900 },   //Fire rune
@@ -23,21 +23,21 @@
       },
       {
         "name": "herb drop",
-        "weight": 70,
+        "weight": 750,
         "items": [
           { "id": 0, "min": 1, "max": 1, "weight": 5 }
         ]
       },
       {
         "name": "general seed",
-        "weight": 63,
+        "weight": 680,
         "items": [
           { "id": 0, "min": 0, "max": 0, "weight": 5 }
         ]
       },
       {
         "name": "Ores and bars",
-        "weight": 340,
+        "weight": 3400,
         "items": [
           { "id": 453, "min": 1, "max": 1, "weight": 10200 },   //Coal
           { "id": 436, "min": 1, "max": 1, "weight": 2339 },   //Copper ore
@@ -50,7 +50,7 @@
       },
       {
         "name": "Other",
-        "weight": 184,
+        "weight": 1840,
         "items": [
           { "id": 1971, "min": 1, "max": 1, "weight": 10200 },   //Kebab
           { "id": 1831, "min": 2, "max": 2, "weight": 10200 }   //Waterskin(0)
@@ -58,7 +58,7 @@
       },
       {
         "name": "Tertiary",
-        "weight": 2,
+        "weight": 27,
         "items": [
           { "id": 10976, "min": 1, "max": 1, "weight": 250 },   //Long bone
           { "id": 10977, "min": 1, "max": 1, "weight": 20 }   //Curved bone
