@@ -1,7 +1,7 @@
 [
   { // Lizard (42)
     "ids": [ 458 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.slayer.DesertLizard",
     //Combat Info
     "hitpoints": 40,
     "aggressive_level": 84,
