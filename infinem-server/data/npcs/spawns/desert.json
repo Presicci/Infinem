@@ -161,16 +161,6 @@
   },
   {
     "id": 4652,
-    "x": 3268,
-    "y": 3120,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Ugthanki"
-  },
-  {
-    "id": 4652,
     "x": 3310,
     "y": 3083,
     "z": 0,
@@ -1219,16 +1209,6 @@
     "npcName": "Ugthanki"
   },
   {
-    "id": 4652,
-    "x": 3224,
-    "y": 3080,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Ugthanki"
-  },
-  {
     "id": 4651,
     "x": 3257,
     "y": 3115,
@@ -1443,16 +1423,6 @@
     "id": 4652,
     "x": 3254,
     "y": 3063,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Ugthanki"
-  },
-  {
-    "id": 4652,
-    "x": 3214,
-    "y": 3064,
     "z": 0,
     "direction": "W",
     "walkRange": 1,
@@ -1868,6 +1838,17 @@
     "direction": "S",
     "walkRange": 6
   },
+  {
+    "name": "Ugthanki",
+    "id": 4652,
+    "x": 3243,
+    "y": 2962,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+
+
 
 
 
