@@ -1100,6 +1100,33 @@
 
 
 
+  //13098
+  {
+    "name": "Desert Wolf",
+    "id": 4649,
+    "x": 3295,
+    "y": 2713,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4650,
+    "x": 3297,
+    "y": 2711,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+
+
+
+
+
+
+
+
   //12848
   {
     "id": 4652,
@@ -1326,6 +1353,51 @@
     "id": 1797,
     "x": 3207,
     "y": 3082,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4649,
+    "x": 3223,
+    "y": 3121,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4650,
+    "x": 3221,
+    "y": 3119,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4651,
+    "x": 3216,
+    "y": 3091,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4649,
+    "x": 3215,
+    "y": 3094,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4649,
+    "x": 3234,
+    "y": 3077,
     "z": 0,
     "direction": "S",
     "walkRange": 5
@@ -1607,6 +1679,62 @@
     "world": "ECO",
     "npcName": "Desert Wolf"
   },
+  {
+    "name": "Desert Wolf",
+    "id": 4649,
+    "x": 3229,
+    "y": 3061,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4650,
+    "x": 3233,
+    "y": 3062,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4651,
+    "x": 3247,
+    "y": 3059,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4651,
+    "x": 3226,
+    "y": 3034,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4651,
+    "x": 3222,
+    "y": 3035,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4651,
+    "x": 3226,
+    "y": 3014,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+
+
 
 
 
@@ -1730,6 +1858,15 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Desert snake"
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4651,
+    "x": 3238,
+    "y": 2967,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
   },
 
 
@@ -2161,6 +2298,64 @@
     "world": "ECO",
     "npcName": "Desert Wolf"
   },
+  {
+    "name": "Desert Wolf",
+    "id": 4649,
+    "x": 3174,
+    "y": 3012,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4650,
+    "x": 3171,
+    "y": 3010,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4649,
+    "x": 3193,
+    "y": 3012,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4651,
+    "x": 3196,
+    "y": 3014,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4651,
+    "x": 3194,
+    "y": 3035,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Wolf",
+    "id": 4649,
+    "x": 3193,
+    "y": 3043,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+
+
+
+
 
 
 
