@@ -1,45 +1,27 @@
 [
   {
-    "name": "Revenant goblin",
-    "id": 7931,
-    "x": 3233,
-    "y": 10181,
+    "name": "Revenant knight",
+    "id": 7939,
+    "x": 3228,
+    "y": 10221,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 4
   },
   {
-    "name": "Revenant dragon",
-    "id": 7940,
-    "x": 3239,
-    "y": 10176,
+    "name": "Revenant knight",
+    "id": 7939,
+    "x": 3211,
+    "y": 10217,
     "z": 0,
     "direction": "S",
-    "walkRange": 3
+    "walkRange": 4
   },
   {
-    "name": "Revenant imp",
-    "id": 7881,
-    "x": 3248,
-    "y": 10184,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Emblem Trader",
-    "id": 7941,
-    "x": 3246,
-    "y": 10169,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 6
-  },
-  {
-    "name": "Revenant pyrefiend",
-    "id": 7932,
-    "x": 3226,
-    "y": 10180,
+    "name": "Revenant demon",
+    "id": 7936,
+    "x": 3179,
+    "y": 10201,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -47,35 +29,8 @@
   {
     "name": "Revenant demon",
     "id": 7936,
-    "x": 3235,
-    "y": 10161,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Revenant ork",
-    "id": 7937,
-    "x": 3236,
-    "y": 10168,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Revenant knight",
-    "id": 7939,
-    "x": 3251,
-    "y": 10166,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
-    "name": "Revenant pyrefiend",
-    "id": 7932,
-    "x": 3246,
-    "y": 10162,
+    "x": 3185,
+    "y": 10196,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -83,26 +38,53 @@
   {
     "name": "Revenant cyclops",
     "id": 7934,
-    "x": 3247,
-    "y": 10156,
+    "x": 3175,
+    "y": 10184,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant cyclops",
+    "id": 7934,
+    "x": 3169,
+    "y": 10193,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Revenant imp",
+    "id": 7881,
+    "x": 3210,
+    "y": 10195,
     "z": 0,
     "direction": "S",
     "walkRange": 3
   },
   {
-    "name": "Revenant ork",
-    "id": 7937,
-    "x": 3252,
-    "y": 10151,
+    "name": "Revenant imp",
+    "id": 7881,
+    "x": 3217,
+    "y": 10189,
     "z": 0,
     "direction": "S",
     "walkRange": 3
   },
   {
-    "name": "Revenant dark beast",
-    "id": 7938,
-    "x": 3252,
-    "y": 10143,
+    "name": "Revenant dragon",
+    "id": 7940,
+    "x": 3231,
+    "y": 10201,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant dragon",
+    "id": 7940,
+    "x": 3243,
+    "y": 10199,
     "z": 0,
     "direction": "S",
     "walkRange": 3
@@ -110,8 +92,179 @@
   {
     "name": "Revenant hellhound",
     "id": 7935,
-    "x": 3250,
-    "y": 10173,
+    "x": 3246,
+    "y": 10179,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant hellhound",
+    "id": 7935,
+    "x": 3240,
+    "y": 10161,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant pyrefiend",
+    "id": 7932,
+    "x": 3249,
+    "y": 10153,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant pyrefiend",
+    "id": 7932,
+    "x": 3251,
+    "y": 10144,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant ork",
+    "id": 7937,
+    "x": 3231,
+    "y": 10135,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant ork",
+    "id": 7937,
+    "x": 3218,
+    "y": 10127,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant ork",
+    "id": 7937,
+    "x": 3219,
+    "y": 10095,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant ork",
+    "id": 7937,
+    "x": 3209,
+    "y": 10095,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant hobgoblin",
+    "id": 7933,
+    "x": 3239,
+    "y": 10095,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant hobgoblin",
+    "id": 7933,
+    "x": 3245,
+    "y": 10102,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant goblin",
+    "id": 7931,
+    "x": 3226,
+    "y": 10074,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant goblin",
+    "id": 7931,
+    "x": 3223,
+    "y": 10066,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant imp",
+    "id": 7881,
+    "x": 3202,
+    "y": 10073,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant imp",
+    "id": 7881,
+    "x": 3196,
+    "y": 10071,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant demon",
+    "id": 7936,
+    "x": 3168,
+    "y": 10114,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant demon",
+    "id": 7936,
+    "x": 3154,
+    "y": 10112,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant pyrefiend",
+    "id": 7932,
+    "x": 3181,
+    "y": 10153,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant pyrefiend",
+    "id": 7932,
+    "x": 3170,
+    "y": 10157,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant dark beast",
+    "id": 7938,
+    "x": 3200,
+    "y": 10165,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant dark beast",
+    "id": 7938,
+    "x": 3212,
+    "y": 10163,
     "z": 0,
     "direction": "S",
     "walkRange": 3
