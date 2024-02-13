@@ -1,6 +1,7 @@
 package io.ruin.model.combat.npc.slayer;
 
 import io.ruin.model.combat.Hit;
+import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
@@ -24,7 +25,8 @@ public class DesertLizard extends NPCCombat {
     }
 
     private static void cool(Player player, NPC npc, boolean manual) {
-        if (npc.getCombat().getTarget() != player) {
+        Entity target = npc.getCombat().getTarget();
+        if (target != null && target != player) {
             player.sendMessage("That lizard is not fighting you.");
             return;
         }
