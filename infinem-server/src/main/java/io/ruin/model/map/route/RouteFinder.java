@@ -455,9 +455,18 @@ public class RouteFinder {
             direction = (directions[foundMapX - arrayOffsetX][foundMapY - arrayOffsetY]);
         }
         int stepCount = 0;
+        int distance = 0;
         while(writeOffset-- > 0) {
+            // Intercept npc pathing, so they don't walk more than their walkrange
+            if (entity.isNpc() && distance > entity.npc.walkRange)
+                return stepCount;
             stepsX[stepCount] = clipUtils.baseX + queueX[writeOffset];
             stepsY[stepCount] = clipUtils.baseY + queueY[writeOffset];
+            if (stepCount > 0) {
+                distance += Math.max(Math.abs(stepsX[stepCount] - stepsX[stepCount-1]), Math.abs(stepsY[stepCount] - stepsY[stepCount-1]));
+            } else {
+                distance += Math.max(Math.abs(stepsX[stepCount] - entity.getAbsX()), Math.abs(stepsY[stepCount] - entity.getAbsY()));
+            }
             if(++stepCount >= stepsX.length)
                 break;
         }
