@@ -1,0 +1,81 @@
+HASTALKED:12103
+/Morgiana: Ah, hello again.
+HASTALKED:12102
+(<That armour looks mighty fancy!
+Player: That armour looks mighty fancy!
+Morgiana: Indeed! A family heirloom of mine, passed down from my father.
+Player: Oh? Are you from a family of famous knights?
+Morgiana: You could say that...
+Player: What's wrong?
+Morgiana: Oh, nothing... it's just... old memories. I'm getting old, as you can probably see. My family have all died to war. This is meant to be my retirement.
+Player: Retirement? Then why still wear the armour? Especially with how hot it is here.
+Morgiana: I find it's best to be prepared in this region. Bandits regularly visit this fine oasis, and they ask fewer questions when they see me in armour.
+Player: I see.
+FIRSTOPTIONS:
+><How's the tea here?
+Player: How's the tea here?
+Morgiana: Hmm...
+Morgiana: Umm...
+Morgiana: Well... I think it's quite nice! I prefer a warm cup of Saradomin's Wisdom, a special recipe of mine.
+Player: Oh? How's it made?
+Morgiana: Bit of a family secret. A fine blend of herbs that are quite magical.
+Player: Alright then. Keep your secrets.
+FIRSTOPTIONS:
+><I'd best be off.
+Player: I'd best be off.
+Morgiana: Quite. Perhaps I'll see you around...
+(<That armour looks mighty fancy!
+Player: That armour looks mighty fancy!
+Morgiana: Indeed! A family heirloom of mine, passed down from my father.
+Player: Oh? Are you from a family of famous knights?
+Morgiana: You could say that...
+Player: What's wrong?
+Morgiana: Oh, nothing... it's just... old memories. I'm getting old, as you can probably see. My family have all died to war. This is meant to be my retirement.
+Player: Retirement? Then why still wear the armour? Especially with how hot it is here.
+Morgiana: I find it's best to be prepared in this region. Bandits regularly visit this fine oasis, and they ask fewer questions when they see me in armour.
+Player: I see.
+FIRSTOPTIONS:
+><I'd best be off.
+Player: I'd best be off.
+Morgiana: Quite. Perhaps I'll see you around...
+/Morgiana: Afternoon. I'm Morgiana, and by all means, let yourself in...
+Player: Oh, hey! The door was open...
+*Morgiana: ... Yes?
+HASTALKED:12102
+(<That armour looks mighty fancy!
+Player: That armour looks mighty fancy!
+Morgiana: Indeed! A family heirloom of mine, passed down from my father.
+Player: Oh? Are you from a family of famous knights?
+Morgiana: You could say that...
+Player: What's wrong?
+Morgiana: Oh, nothing... it's just... old memories. I'm getting old, as you can probably see. My family have all died to war. This is meant to be my retirement.
+Player: Retirement? Then why still wear the armour? Especially with how hot it is here.
+Morgiana: I find it's best to be prepared in this region. Bandits regularly visit this fine oasis, and they ask fewer questions when they see me in armour.
+Player: I see.
+FIRSTOPTIONS:
+><How's the tea here?
+Player: How's the tea here?
+Morgiana: Hmm...
+Morgiana: Umm...
+Morgiana: Well... I think it's quite nice! I prefer a warm cup of Saradomin's Wisdom, a special recipe of mine.
+Player: Oh? How's it made?
+Morgiana: Bit of a family secret. A fine blend of herbs that are quite magical.
+Player: Alright then. Keep your secrets.
+FIRSTOPTIONS:
+><I'd best be off.
+Player: I'd best be off.
+Morgiana: Quite. Perhaps I'll see you around...
+(<That armour looks mighty fancy!
+Player: That armour looks mighty fancy!
+Morgiana: Indeed! A family heirloom of mine, passed down from my father.
+Player: Oh? Are you from a family of famous knights?
+Morgiana: You could say that...
+Player: What's wrong?
+Morgiana: Oh, nothing... it's just... old memories. I'm getting old, as you can probably see. My family have all died to war. This is meant to be my retirement.
+Player: Retirement? Then why still wear the armour? Especially with how hot it is here.
+Morgiana: I find it's best to be prepared in this region. Bandits regularly visit this fine oasis, and they ask fewer questions when they see me in armour.
+Player: I see.
+FIRSTOPTIONS:
+><I'd best be off.
+Player: I'd best be off.
+Morgiana: Quite. Perhaps I'll see you around...

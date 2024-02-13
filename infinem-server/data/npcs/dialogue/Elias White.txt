@@ -1,0 +1,53 @@
+HASTALKED:12105
+/Player: Hello there.
+Elias White: Hello again.
+<Are you searching for something here?
+Player: Are you searching for something here?
+Elias White: Of course. As I said, my search is for knowledge.
+Player: What kind of knowledge?
+Elias White: Information lost to the ages. Specifically, information on an ancient race.
+Player: And you expect to find something here?
+Elias White: Not quite here, but up on the plateau. There's an old mastaba up there that I believe dates from a time when the race resided in these lands.
+Player: Well if you ever need help raiding an ancient tomb, I reckon I can be of service.
+Elias White: A generous offer! I still have quite a bit of preparatory work to do before I dare head inside, but once that's done, maybe we can work something out.
+LASTOPTIONS:
+><Where do you call home?
+Player: Where do you call home?
+Elias White: Ah, I've lived in many places over the years, but I wouldn't really say I have a home. I guess Varrock would be the closest answer.
+Player: Sounds like you have quite the history.
+Elias White: Oh yes! If nothing else, I've definitely lived a varied life.
+Player: So you weren't always an explorer?
+Elias White: Not at all. I've done all sorts of things in my time. In fact, at one point I was an adventurer like you!
+Player: What happened? Some sort of life-changing injury?
+Elias White: Thankfully not. I just found that when it came to my work, it was the history I discovered that interested me more than the treasure.
+LASTOPTIONS:
+><I'd better get going.
+Player: I'd better get going.
+Elias White: Until next time.
+/Player: Hello there.
+Elias White: Good day to you.
+Player: What brings you all the way out here?
+*Elias White: The eternal quest for knowledge, of course! The name's Elias White. I'm something of an explorer.
+<Are you searching for something here?
+Player: Are you searching for something here?
+Elias White: Of course. As I said, my search is for knowledge.
+Player: What kind of knowledge?
+Elias White: Information lost to the ages. Specifically, information on an ancient race.
+Player: And you expect to find something here?
+Elias White: Not quite here, but up on the plateau. There's an old mastaba up there that I believe dates from a time when the race resided in these lands.
+Player: Well if you ever need help raiding an ancient tomb, I reckon I can be of service.
+Elias White: A generous offer! I still have quite a bit of preparatory work to do before I dare head inside, but once that's done, maybe we can work something out.
+LASTOPTIONS:
+><Where do you call home?
+Player: Where do you call home?
+Elias White: Ah, I've lived in many places over the years, but I wouldn't really say I have a home. I guess Varrock would be the closest answer.
+Player: Sounds like you have quite the history.
+Elias White: Oh yes! If nothing else, I've definitely lived a varied life.
+Player: So you weren't always an explorer?
+Elias White: Not at all. I've done all sorts of things in my time. In fact, at one point I was an adventurer like you!
+Player: What happened? Some sort of life-changing injury?
+Elias White: Thankfully not. I just found that when it came to my work, it was the history I discovered that interested me more than the treasure.
+LASTOPTIONS:
+><I'd better get going.
+Player: I'd better get going.
+Elias White: Until next time.

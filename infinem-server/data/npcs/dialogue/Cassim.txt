@@ -1,0 +1,81 @@
+HASTALKED:12104
+/Player: Hello!
+Cassim: Welcome back.
+HASTALKED:12102
+(<That's a big barrel of wine!
+Player: That's a big barrel of wine!
+Cassim: Isn't it just! I'm a bit of a connoisseur.
+Player: Do you make it yourself?
+Cassim: I've dabbled, but this is all imported. I have a connection in the far west who has the best vineyards.
+Player: In the west?
+Cassim: Yes! A fine Hosidius grape, strong hints of plum and blackberry, very sweet.
+Player: Sounds lovely!
+FIRSTOPTIONS:
+><How's the tea here?
+Player: How's the tea here?
+Cassim: It's fantastic! Ali really knows how to brew a fine tea!
+Player: Which is your favourite?
+Cassim: Well I've supplied him with a small import of mine. I call the concoction 'Zamorak's Fire'.
+Player: Sounds hot!
+Cassim: Yes, yes. It has a certain kick to it! Although, it'll keep you safe from fire for a short time after drinking!
+Cassim: Great for when dragons attack!
+Player: Does that happen often here?
+Cassim: You never know... Dragons can be sneaky.
+FIRSTOPTIONS:
+><I'd best be off.
+Player: I'd best be off.
+Cassim: May the flames of Zamorak light your path.
+Player: Er... yeah...
+(<That's a big barrel of wine!
+Player: That's a big barrel of wine!
+Cassim: Isn't it just! I'm a bit of a connoisseur.
+Player: Do you make it yourself?
+Cassim: I've dabbled, but this is all imported. I have a connection in the far west who has the best vineyards.
+Player: In the west?
+Cassim: Yes! A fine Hosidius grape, strong hints of plum and blackberry, very sweet.
+Player: Sounds lovely!
+FIRSTOPTIONS:
+><I'd best be off.
+Player: I'd best be off.
+Cassim: May the flames of Zamorak light your path.
+Player: Er... yeah...
+/Player: Hello!
+*Cassim: Greetings! I'm Cassim. Welcome to my home.
+HASTALKED:12102
+(<That's a big barrel of wine!
+Player: That's a big barrel of wine!
+Cassim: Isn't it just! I'm a bit of a connoisseur.
+Player: Do you make it yourself?
+Cassim: I've dabbled, but this is all imported. I have a connection in the far west who has the best vineyards.
+Player: In the west?
+Cassim: Yes! A fine Hosidius grape, strong hints of plum and blackberry, very sweet.
+Player: Sounds lovely!
+FIRSTOPTIONS:
+><How's the tea here?
+Player: How's the tea here?
+Cassim: It's fantastic! Ali really knows how to brew a fine tea!
+Player: Which is your favourite?
+Cassim: Well I've supplied him with a small import of mine. I call the concoction 'Zamorak's Fire'.
+Player: Sounds hot!
+Cassim: Yes, yes. It has a certain kick to it! Although, it'll keep you safe from fire for a short time after drinking!
+Cassim: Great for when dragons attack!
+Player: Does that happen often here?
+Cassim: You never know... Dragons can be sneaky.
+FIRSTOPTIONS:
+><I'd best be off.
+Player: I'd best be off.
+Cassim: May the flames of Zamorak light your path.
+Player: Er... yeah...
+(<That's a big barrel of wine!
+Player: That's a big barrel of wine!
+Cassim: Isn't it just! I'm a bit of a connoisseur.
+Player: Do you make it yourself?
+Cassim: I've dabbled, but this is all imported. I have a connection in the far west who has the best vineyards.
+Player: In the west?
+Cassim: Yes! A fine Hosidius grape, strong hints of plum and blackberry, very sweet.
+Player: Sounds lovely!
+FIRSTOPTIONS:
+><I'd best be off.
+Player: I'd best be off.
+Cassim: May the flames of Zamorak light your path.
+Player: Er... yeah...

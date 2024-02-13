@@ -1,0 +1,52 @@
+HASTALKED:12102
+/Ali the Tea Seller: Welcome! I'm Ali, and this is my tea shop! Is there anything I can do for you today?
+Player: Well you never actually made me that tea...
+Ali the Tea Seller: Ah yes! I'll get the water boiling at once. Is there anything else I can do for you while you wait?
+<How's the tea coming along?
+Player: How's the tea coming along?
+Ali the Tea Seller: Oh! Yes, the water is boiling. Just give me a minute!
+Player: I'm so thirsty.
+Ali the Tea Seller: I know, the desert is forever hot. Thirsty work here!
+FIRSTOPTIONS:
+><How's business here? Seems quite out the way.
+Player: How's business here? Seems quite out the way.
+Ali the Tea Seller: Hmm...
+Player: Not good?
+Ali the Tea Seller: It's not that. It's just that I've been having issues with a few thieves lately. Four to be precise!
+Player: They've been stealing your tea?
+Ali the Tea Seller: There have been a few break-ins. A recent shipment from Karamja has been taken! That was some of the finest stuff I've ever managed to get my hands on.
+Player: That's awful. If I see any shifty characters, I'll be sure to teach them a lesson.
+Ali the Tea Seller: Ha! Very courageous, adventurer! These thieves are big and brutish. I wouldn't start something you may not be able to finish.
+Player: I'm pretty tough. I think I can handle them.
+Ali the Tea Seller: If you say so.
+FIRSTOPTIONS:
+><I'd best be heading off.
+Player: I'd best be heading off.
+Ali the Tea Seller: You're leaving? But the tea is almost done!
+Player: I've been waiting quite a while. Perhaps another time.
+/Player: Hello.
+Ali the Tea Seller: Welcome! I'm Ali, and this is my tea shop! Is there anything I can do for you today?
+Player: Hmm... Could I get some tea?
+*Ali the Tea Seller: Of course! I'll get the water boiling at once. Is there anything else I can do for you while you wait?
+<How's the tea coming along?
+Player: How's the tea coming along?
+Ali the Tea Seller: Oh! Yes, the water is boiling. Just give me a minute!
+Player: I'm so thirsty.
+Ali the Tea Seller: I know, the desert is forever hot. Thirsty work here!
+FIRSTOPTIONS:
+><How's business here? Seems quite out the way.
+Player: How's business here? Seems quite out the way.
+Ali the Tea Seller: Hmm...
+Player: Not good?
+Ali the Tea Seller: It's not that. It's just that I've been having issues with a few thieves lately. Four to be precise!
+Player: They've been stealing your tea?
+Ali the Tea Seller: There have been a few break-ins. A recent shipment from Karamja has been taken! That was some of the finest stuff I've ever managed to get my hands on.
+Player: That's awful. If I see any shifty characters, I'll be sure to teach them a lesson.
+Ali the Tea Seller: Ha! Very courageous, adventurer! These thieves are big and brutish. I wouldn't start something you may not be able to finish.
+Player: I'm pretty tough. I think I can handle them.
+Ali the Tea Seller: If you say so.
+FIRSTOPTIONS:
+><I'd best be heading off.
+Player: I'd best be heading off.
+Ali the Tea Seller: You're leaving? But the tea is almost done!
+Player: I've been waiting quite a while. Perhaps another time.
