@@ -4257,6 +4257,81 @@
     "direction": "S",
     "walkRange": 2
   },
+  {
+    "name": "Bird",
+    "id": 5241,
+    "x": 3484,
+    "y": 3051,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bird",
+    "id": 5241,
+    "x": 3479,
+    "y": 3056,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Bird",
+    "id": 5241,
+    "x": 3471,
+    "y": 3045,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bird",
+    "id": 5241,
+    "x": 3475,
+    "y": 3044,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Bird",
+    "id": 5241,
+    "x": 3491,
+    "y": 3036,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Bird",
+    "id": 5241,
+    "x": 3505,
+    "y": 3045,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Bird",
+    "id": 5241,
+    "x": 3506,
+    "y": 3031,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Bird",
+    "id": 5241,
+    "x": 3510,
+    "y": 3023,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+
+
+
 
 
 
