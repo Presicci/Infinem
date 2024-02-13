@@ -1,0 +1,389 @@
+[
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3271,
+    "y": 2819,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3260,
+    "y": 2820,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3259,
+    "y": 2823,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3260,
+    "y": 2828,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3269,
+    "y": 2827,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3272,
+    "y": 2841,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3275,
+    "y": 2842,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3280,
+    "y": 2839,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3290,
+    "y": 2846,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3269,
+    "y": 2854,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3257,
+    "y": 2846,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3260,
+    "y": 2852,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3259,
+    "y": 2859,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3257,
+    "y": 2868,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3268,
+    "y": 2865,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3271,
+    "y": 2875,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3269,
+    "y": 2882,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3271,
+    "y": 2885,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3262,
+    "y": 2886,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3265,
+    "y": 2892,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3297,
+    "y": 2912,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3306,
+    "y": 2915,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3298,
+    "y": 2920,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3295,
+    "y": 2920,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3338,
+    "y": 2923,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3344,
+    "y": 2922,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3341,
+    "y": 2932,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3346,
+    "y": 2931,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3356,
+    "y": 2921,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3360,
+    "y": 2929,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3363,
+    "y": 2937,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3422,
+    "y": 2762,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3416,
+    "y": 2765,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3422,
+    "y": 2768,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3426,
+    "y": 2772,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3420,
+    "y": 2772,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3417,
+    "y": 2774,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3414,
+    "y": 2773,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3415,
+    "y": 2777,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3417,
+    "y": 2782,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3424,
+    "y": 2783,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3416,
+    "y": 2786,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Crocodile",
+    "id": 4184,
+    "x": 3427,
+    "y": 2790,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  }
+]
