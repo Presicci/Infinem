@@ -4221,6 +4221,42 @@
     "direction": "S",
     "walkRange": 4
   },
+  {
+    "name": "Ali the Tea Seller",
+    "id": 12102,
+    "x": 3490,
+    "y": 3058,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Morgiana",
+    "id": 12103,
+    "x": 3501,
+    "y": 3055,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Cassim",
+    "id": 12104,
+    "x": 3509,
+    "y": 3048,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Elias White",
+    "id": 12105,
+    "x": 3505,
+    "y": 3038,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
 
 
 
