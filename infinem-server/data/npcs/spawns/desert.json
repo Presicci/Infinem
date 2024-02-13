@@ -3022,6 +3022,24 @@
     "direction": "S",
     "walkRange": 6
   },
+  {
+    "name": "Desert snake",
+    "id": 3544,
+    "x": 3404,
+    "y": 2962,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Desert snake",
+    "id": 3544,
+    "x": 3429,
+    "y": 2975,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
 
 
 
@@ -3378,6 +3396,33 @@
     "direction": "S",
     "walkRange": 5
   },
+  {
+    "name": "Desert snake",
+    "id": 3544,
+    "x": 3394,
+    "y": 3031,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Desert snake",
+    "id": 3544,
+    "x": 3397,
+    "y": 3038,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
+  {
+    "name": "Desert snake",
+    "id": 3544,
+    "x": 3395,
+    "y": 3042,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 10
+  },
 
 
 
@@ -3422,5 +3467,32 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Desert snake",
+    "id": 3544,
+    "x": 3478,
+    "y": 3020,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Desert snake",
+    "id": 3544,
+    "x": 3483,
+    "y": 3038,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert snake",
+    "id": 3544,
+    "x": 3498,
+    "y": 3037,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
   }
 ]
