@@ -1,0 +1,38 @@
+[
+  {
+    "itemName": "Jug",
+    "amount": 0,
+    "id": 1935,
+    "x": 3512,
+    "y": 3049,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Jug of wine",
+    "amount": 0,
+    "id": 1993,
+    "x": 3511,
+    "y": 3047,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Cup of tea",
+    "amount": 0,
+    "id": 712,
+    "x": 3485,
+    "y": 3057,
+    "z": 0,
+    "respawnSeconds": 60
+  },
+  {
+    "itemName": "Jug of water",
+    "amount": 0,
+    "id": 1937,
+    "x": 3485,
+    "y": 3056,
+    "z": 0,
+    "respawnSeconds": 60
+  }
+]
