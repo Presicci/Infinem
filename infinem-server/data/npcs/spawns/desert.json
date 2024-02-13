@@ -2110,6 +2110,22 @@
     "world": "ECO",
     "npcName": "Desert Wolf"
   },
+  {
+    "name": "Desert Lizard",
+    "id": 461,
+    "x": 3384,
+    "y": 3014,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+
+
+
+
+
+
+
 
 
   //13358 POLLNIVNEACH
@@ -2838,6 +2854,42 @@
     "direction": "S",
     "walkRange": 4
   },
+  {
+    "name": "Desert Lizard",
+    "id": 459,
+    "x": 3352,
+    "y": 2805,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Desert Lizard",
+    "id": 460,
+    "x": 3348,
+    "y": 2802,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Lizard",
+    "id": 460,
+    "x": 3346,
+    "y": 2804,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Desert Lizard",
+    "id": 459,
+    "x": 3345,
+    "y": 2801,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
 
 
 
@@ -2947,5 +2999,77 @@
     "z": 0,
     "direction": "S",
     "walkRange": 6
+  },
+  {
+    "name": "Desert Lizard",
+    "id": 459,
+    "x": 3409,
+    "y": 3030,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Desert Lizard",
+    "id": 459,
+    "x": 3413,
+    "y": 3027,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Desert Lizard",
+    "id": 461,
+    "x": 3445,
+    "y": 3030,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Desert Lizard",
+    "id": 461,
+    "x": 3406,
+    "y": 3061,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Desert Lizard",
+    "id": 460,
+    "x": 3440,
+    "y": 3059,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+
+
+
+
+
+
+
+
+  //13871
+  {
+    "name": "Desert Lizard",
+    "id": 459,
+    "x": 3469,
+    "y": 3052,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Desert Lizard",
+    "id": 459,
+    "x": 3472,
+    "y": 3053,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
   }
 ]
