@@ -1106,6 +1106,7 @@ public class Config {
     public static final Config HAM_STOREROOM_ENTRANCE = varpbit(2270, false).defaultValue(2);
     public static final Config KARAMJA_GLOVES_GEM_MINE = varpbit(3610, true);
     private static final Config EDGEVILLE_PORTAL = varpbit(4153, false).defaultValue(1);    // Hides a portal in the upstairs of a house in edge
+    private static final Config VARROCK_GARDEN_STATUE = varpbit(963, false).defaultValue(2);
 
     /**
      * Elemental workshop
