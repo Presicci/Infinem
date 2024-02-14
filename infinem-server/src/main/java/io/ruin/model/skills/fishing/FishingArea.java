@@ -374,6 +374,20 @@ public enum FishingArea {
             new Position(2280, 2837, 0),
             new Position(2280, 2836, 0)
     ),
+    APE_ATOLL_WEST(
+            new Position(2694, 2706, 0),
+            new Position(2699, 2702, 0),
+            new Position(2700, 2702, 0),
+            new Position(2707, 2698, 0),
+            new Position(2714, 2695, 0)
+    ),
+    APE_ATOLL_EAST(
+            new Position(2771, 2734, 0),
+            new Position(2771, 2733, 0),
+            new Position(2777, 2740, 0),
+            new Position(2780, 2741, 0),
+            new Position(2788, 2741, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -489,6 +503,8 @@ public enum FishingArea {
         ISLE_OF_SOULS_WEST.add(FishingSpot.CAGE_HARPOON, 2);
         ISLE_OF_SOULS_NORTH.add(FishingSpot.CAGE_HARPOON, 3);
         ISLE_OF_SOULS_EAST.add(FishingSpot.BIG_NET_HARPOON, 3);
+        APE_ATOLL_EAST.add(FishingSpot.BIG_NET_HARPOON, 3);
+        APE_ATOLL_WEST.add(FishingSpot.BIG_NET_HARPOON, 3);
         FishingArea.fishingSpotTimer();
     }
 }
