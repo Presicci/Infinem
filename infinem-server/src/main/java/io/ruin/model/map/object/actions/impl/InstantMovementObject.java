@@ -10,6 +10,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    APE_ATOLL_SOUTH_EXIT(4745, new Position(2803, 2727, 2), new Position(2803, 2725, 0), 2586),
+
     BRIMHAVEN_DUNGEON_SOUTH_EXIT(30201, new Position(2734, 9477), new Position(2761, 3063, 0)),
 
     ANCIENT_CAVERN_DRAGON_FORGE_UP(32212, new Position(1744, 5323), new Position(1744, 5321, 1)),
