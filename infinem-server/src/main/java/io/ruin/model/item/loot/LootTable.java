@@ -9,7 +9,6 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
-import lombok.AllArgsConstructor;
 
 import java.text.DecimalFormat;
 import java.util.*;
@@ -74,6 +73,23 @@ public class LootTable {
         newTable.tables = newTables.isEmpty() ? null : newTables;
 
         return newTable;
+    }
+
+    public void modifyTableWeight(String tableName, int newWeight) {
+        boolean tablePresent = false;
+        if (tables != null) {
+            for (ItemsTable table : tables) {
+                if (table.name.equalsIgnoreCase(tableName)) {
+                    totalWeight -= table.weight;
+                    totalWeight += newWeight;
+                    table.weight = newWeight;
+                    tablePresent = true;
+                    break;
+                }
+            }
+        }
+        if (!tablePresent)
+            System.err.println(tableName + " couldn't be found in loot table.");
     }
 
     public void calculateWeight() {
@@ -352,7 +368,7 @@ public class LootTable {
 
         @Expose public final String name;
 
-        @Expose public final int weight;
+        @Expose public int weight;
 
         @Expose public final LootItem[] items;
 
