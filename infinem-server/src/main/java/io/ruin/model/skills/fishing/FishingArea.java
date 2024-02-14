@@ -501,6 +501,28 @@ public enum FishingArea {
             new Position(1676, 3490, 0),
             new Position(1678, 3492, 0)
     ),
+    FARMING_GUILD_NORTH(
+            new Position(1206, 3746, 0),
+            new Position(1206, 3747, 0),
+            new Position(1209, 3753, 0),
+            new Position(1199, 3735, 0),
+            new Position(1199, 3736, 0),
+            new Position(1199, 3737, 0),
+            new Position(1204, 3730, 0)
+    ),
+    FARMING_GUILD_MID(
+            new Position(1221, 3714, 0),
+            new Position(1221, 3713, 0),
+            new Position(1220, 3717, 0),
+            new Position(1220, 3710, 0)
+    ),
+    FARMING_GUILD_SOUTH(
+            new Position(1209, 3689, 0),
+            new Position(1209, 3688, 0),
+            new Position(1210, 3685, 0),
+            new Position(1211, 3680, 0),
+            new Position(1206, 3695, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -633,6 +655,9 @@ public enum FishingArea {
         HOSIDIUS_SOUTH_NET.add(FishingSpot.NET_BAIT, 3);
         HOSIDIUS_SOUTH_CAGE.add(FishingSpot.CAGE_HARPOON, 2);
         HOSIDIUS_SOUTH_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 2);
+        FARMING_GUILD_NORTH.add(FishingSpot.BIG_NET_HARPOON, 3);
+        FARMING_GUILD_MID.add(FishingSpot.BIG_NET_HARPOON, 2);
+        FARMING_GUILD_SOUTH.add(FishingSpot.BIG_NET_HARPOON, 2);
         FishingArea.fishingSpotTimer();
     }
 }
