@@ -644,6 +644,14 @@ public enum FishingArea {
             new Position(2420, 3789, 0),
             new Position(2424, 3791, 0)
     ),
+    SINCLAIR_MANSION(
+            new Position(2716, 3530, 0),
+            new Position(2714, 3532, 0),
+            new Position(2714, 3533, 0),
+            new Position(2726, 3524, 0),
+            new Position(2727, 3524, 0),
+            new Position(2728, 3524, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -796,6 +804,7 @@ public enum FishingArea {
         GWENITH_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 3);
         JATIZSO_CAGE.add(FishingSpot.CAGE_HARPOON, 4);
         JATIZSO_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 4);
+        SINCLAIR_MANSION.add(FishingSpot.LURE_BAIT, 3);
         FishingArea.fishingSpotTimer();
     }
 }
