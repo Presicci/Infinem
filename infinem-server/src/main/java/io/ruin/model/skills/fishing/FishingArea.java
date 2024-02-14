@@ -388,6 +388,13 @@ public enum FishingArea {
             new Position(2780, 2741, 0),
             new Position(2788, 2741, 0)
     ),
+    CORSAIR_COVE(
+            new Position(2510, 2838, 0),
+            new Position(2509, 2838, 0),
+            new Position(2515, 2838, 0),
+            new Position(2516, 2838, 0),
+            new Position(2505, 2835, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -505,6 +512,7 @@ public enum FishingArea {
         ISLE_OF_SOULS_EAST.add(FishingSpot.BIG_NET_HARPOON, 3);
         APE_ATOLL_EAST.add(FishingSpot.BIG_NET_HARPOON, 3);
         APE_ATOLL_WEST.add(FishingSpot.BIG_NET_HARPOON, 3);
+        CORSAIR_COVE.add(FishingSpot.NET_BAIT, 3);
         FishingArea.fishingSpotTimer();
     }
 }
