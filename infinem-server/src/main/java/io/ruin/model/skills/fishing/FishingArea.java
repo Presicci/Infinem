@@ -597,6 +597,19 @@ public enum FishingArea {
             new Position(2163, 3365, 0),
             new Position(2165, 3373, 0)
     ),
+    GWENITH_CAGE(
+            new Position(2225, 3429, 0),
+            new Position(2226, 3430, 0),
+            new Position(2235, 3433, 0),
+            new Position(2234, 3441, 0)
+    ),
+    GWENITH_HARPOON(
+            new Position(2228, 3428, 0),
+            new Position(2228, 3429, 0),
+            new Position(2225, 3428, 0),
+            new Position(2236, 3445, 0),
+            new Position(2227, 3430, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -743,6 +756,8 @@ public enum FishingArea {
         PRIF_SOUTH.add(FishingSpot.BIG_NET_HARPOON, 3);
         PRIF_NORTH_CAGE.add(FishingSpot.CAGE_HARPOON, 1);
         PRIF_NORTH_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 1);
+        GWENITH_CAGE.add(FishingSpot.CAGE_HARPOON, 3);
+        GWENITH_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 3);
         FishingArea.fishingSpotTimer();
     }
 }
