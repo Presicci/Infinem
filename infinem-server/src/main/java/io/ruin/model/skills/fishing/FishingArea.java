@@ -433,6 +433,20 @@ public enum FishingArea {
             new Position(2633, 3692, 0),
             new Position(2633, 3693, 0)
     ),
+    RELEKKA_CAGE(
+            new Position(2642, 3694, 0),
+            new Position(2642, 3695, 0),
+            new Position(2642, 3696, 0),
+            new Position(2642, 3697, 0),
+            new Position(2642, 3698, 0)
+    ),
+    RELEKKA_HARPOON(
+            new Position(2648, 3708, 0),
+            new Position(2647, 3708, 0),
+            new Position(2646, 3708, 0),
+            new Position(2645, 3708, 0),
+            new Position(2648, 3711, 0)
+    ),
     BARBARIAN_OUTPOST(
             new Position(2516, 3574, 0),
             new Position(2516, 3575, 0),
@@ -753,6 +767,8 @@ public enum FishingArea {
         NORTH_ARDY.add(FishingSpot.LURE_BAIT, 2);
         BAXTORIAN_FALLS_SOUTH.add(FishingSpot.LURE_BAIT, 4);
         RELEKKA_NET.add(FishingSpot.NET_BAIT, 4);
+        RELEKKA_CAGE.add(FishingSpot.CAGE_HARPOON, 2);
+        RELEKKA_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 2);
         BARBARIAN_OUTPOST.add(FishingSpot.NET_BAIT, 4);
         PISCARILIUS_NET.add(FishingSpot.NET_BAIT, 3);
         PISCARILIUS_CAGE.add(FishingSpot.CAGE_HARPOON, 2);
