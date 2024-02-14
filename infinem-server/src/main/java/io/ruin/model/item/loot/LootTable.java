@@ -75,6 +75,14 @@ public class LootTable {
         return newTable;
     }
 
+    public LootTable copy() {
+        LootTable newTable = new LootTable();
+        newTable.guaranteed = this.guaranteed;
+        newTable.tables = this.tables;
+        newTable.totalWeight = this.totalWeight;
+        return newTable;
+    }
+
     public void modifyTableWeight(String tableName, int newWeight) {
         boolean tablePresent = false;
         if (tables != null) {
