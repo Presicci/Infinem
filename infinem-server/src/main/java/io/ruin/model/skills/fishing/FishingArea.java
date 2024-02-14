@@ -549,6 +549,13 @@ public enum FishingArea {
             new Position(1721, 3686, 0),
             new Position(1720, 3686, 0)
     ),
+    TREE_GNOME_STRONGHOLD(
+            new Position(2382, 3414, 0),
+            new Position(2382, 3415, 0),
+            new Position(2389, 3423, 0),
+            new Position(2395, 3417, 0),
+            new Position(2383, 3412, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -688,6 +695,7 @@ public enum FishingArea {
         WATSON_HOUSE.add(FishingSpot.LURE_BAIT, 2);
         WEST_HOSIDIUS.add(FishingSpot.LURE_BAIT, 2);
         KOUREND_PARK.add(FishingSpot.LURE_BAIT, 2);
+        TREE_GNOME_STRONGHOLD.add(FishingSpot.LURE_BAIT, 3);
         FishingArea.fishingSpotTimer();
     }
 }
