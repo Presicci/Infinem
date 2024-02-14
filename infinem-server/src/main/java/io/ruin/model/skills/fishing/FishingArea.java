@@ -412,6 +412,11 @@ public enum FishingArea {
             new Position(2478, 3164, 0),
             new Position(2462, 3145, 0)
     ),
+    NORTH_ARDY(
+            new Position(2566, 3370, 0),
+            new Position(2562, 3374, 0),
+            new Position(2561, 3374, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -532,6 +537,7 @@ public enum FishingArea {
         CORSAIR_COVE.add(FishingSpot.NET_BAIT, 3);
         FELDIP_HILLS.add(FishingSpot.CAGE_HARPOON, 3);
         GNOME_VILLAGE.add(FishingSpot.NET_BAIT, 5);
+        NORTH_ARDY.add(FishingSpot.NET_BAIT, 2);
         FishingArea.fishingSpotTimer();
     }
 }
