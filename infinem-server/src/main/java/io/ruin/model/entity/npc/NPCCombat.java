@@ -1063,6 +1063,9 @@ public abstract class NPCCombat extends Combat {
     }
 
     public int getAggressionRange() {
+        String name = npc.getDef().name;
+        if (name.equalsIgnoreCase("monkey archer"))
+            return 8;
         return npc.wildernessSpawnLevel > 0 ? 2 : npc.hasTemporaryAttribute(AttributeKey.CRAB_TRANSFORM) ? 2 : 4;
     }
 
