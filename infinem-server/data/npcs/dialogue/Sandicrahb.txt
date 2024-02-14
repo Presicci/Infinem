@@ -1,0 +1,19 @@
+7483
+Sandicrahb: Good day to you bwana.
+<Can you ferry me to that island?
+Player: Can you ferry me to that island?
+Sandicrahb: Most certainly, but my services come at a price... of 10,000 coins
+><Who are you?
+Player: Who are you?
+Sandicrahb: Why bwana, I'm Sandicrahb! I travel far over the ocean from the tropical land of Karamja.
+Player: How come you're charging so much?
+Sandicrahb: The gold is for a good cause, I promise bwana.
+Player: Uh huh, that's a mighty fine gold necklace you have.
+Sandicrahb: Well bwana, of course I take a cut, but the funds keep these beaches clean and tidy, I promise!
+Player: If you say so...
+><Good day to you too.
+Player: Good day to you too.
+><That's a nice boat!
+Player: That's a nice boat! Would be a shame if something were to happen to it.
+Sandicrahb: Made from the wood of the Fyburglars tree, strong and light weight! Perhaps if it went missing, I'd find you.
+Player: Perhaps.
