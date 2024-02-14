@@ -417,6 +417,14 @@ public enum FishingArea {
             new Position(2562, 3374, 0),
             new Position(2561, 3374, 0)
     ),
+    BAXTORIAN_FALLS_SOUTH(
+            new Position(2534, 3403, 0),
+            new Position(2537, 3406, 0),
+            new Position(2533, 3410, 0),
+            new Position(2530, 3412, 0),
+            new Position(2527, 3412, 0),
+            new Position(2507, 3421, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -536,8 +544,9 @@ public enum FishingArea {
         APE_ATOLL_WEST.add(FishingSpot.BIG_NET_HARPOON, 3);
         CORSAIR_COVE.add(FishingSpot.NET_BAIT, 3);
         FELDIP_HILLS.add(FishingSpot.CAGE_HARPOON, 3);
-        GNOME_VILLAGE.add(FishingSpot.NET_BAIT, 5);
-        NORTH_ARDY.add(FishingSpot.NET_BAIT, 2);
+        GNOME_VILLAGE.add(FishingSpot.LURE_BAIT, 5);
+        NORTH_ARDY.add(FishingSpot.LURE_BAIT, 2);
+        BAXTORIAN_FALLS_SOUTH.add(FishingSpot.LURE_BAIT, 4);
         FishingArea.fishingSpotTimer();
     }
 }
