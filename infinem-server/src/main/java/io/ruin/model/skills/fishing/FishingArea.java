@@ -589,6 +589,14 @@ public enum FishingArea {
             new Position(2165, 3268, 0),
             new Position(2165, 3266, 0)
     ),
+    PRIF_NORTH_CAGE(
+            new Position(2166, 3347, 0),
+            new Position(2165, 3374, 0)
+    ),
+    PRIF_NORTH_HARPOON(
+            new Position(2163, 3365, 0),
+            new Position(2165, 3373, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -733,6 +741,8 @@ public enum FishingArea {
         TIRANWN_BAIT_EAST.add(FishingSpot.LURE_BAIT, 4);
         ZUL_ANDRA.add(FishingSpot.SACRED_EEL, 2);
         PRIF_SOUTH.add(FishingSpot.BIG_NET_HARPOON, 3);
+        PRIF_NORTH_CAGE.add(FishingSpot.CAGE_HARPOON, 1);
+        PRIF_NORTH_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 1);
         FishingArea.fishingSpotTimer();
     }
 }
