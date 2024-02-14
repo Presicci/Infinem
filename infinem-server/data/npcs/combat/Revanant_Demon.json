@@ -1,15 +1,15 @@
 [
-    { // Rev dragon
+    { // Rev dragon (98)
     "ids": [ 7936 ],
     "handler": "io.ruin.model.combat.npc.Revenant",
     //Combat Info
     "hitpoints": 80,
-    "aggressive_level": 135,
-    "max_damage": 18,
-    "attack_style": "STAB",
+    "aggressive_level": 176,
+    "max_damage": 15,
+    "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 86.0,
+    "slayer_xp": 80.0,
     "slayer_tasks": [ "Ghosts", "Revenants" ],
     //Combat Stats
     "attack": 83,
@@ -18,9 +18,9 @@
     "ranged": 80,
     "magic": 120,
     //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
+    "stab_attack": 30,
+    "slash_attack": 30,
+    "crush_attack": 30,
     "magic_attack": 50,
     "ranged_attack": 40,
     //Defensive Stats
@@ -33,8 +33,8 @@
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
-    "attack_ticks": 4,
-    "death_ticks": 5,
+    "attack_ticks": 5,
+    "death_ticks": 3,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
