@@ -1,15 +1,15 @@
 [
-    { // Rev hellhound
+    { // Rev hellhound (90)
     "ids": [ 7935 ],
     "handler": "io.ruin.model.combat.npc.Revenant",
     //Combat Info
     "hitpoints": 90,
-    "aggressive_level": 135,
+    "aggressive_level": 180,
     "max_damage": 14,
     "attack_style": "STAB",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 86.0,
+    "slayer_xp": 80.0,
     "slayer_tasks": [ "Ghosts", "Revenants" ],
     //Combat Stats
     "attack": 76,
@@ -18,9 +18,9 @@
     "ranged": 80,
     "magic": 104,
     //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
+    "stab_attack": 38,
+    "slash_attack": 38,
+    "crush_attack": 38,
     "magic_attack": 30,
     "ranged_attack": 0,
     //Defensive Stats
@@ -33,8 +33,8 @@
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
-    "attack_ticks": 4,
-    "death_ticks": 5,
+    "attack_ticks": 5,
+    "death_ticks": 3,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
