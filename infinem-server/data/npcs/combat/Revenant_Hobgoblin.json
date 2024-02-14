@@ -1,0 +1,45 @@
+[
+  { // Rev Hobgoblin (60)
+    "ids": [ 7933 ],
+    "handler": "io.ruin.model.combat.npc.Revenant",
+    //Combat Info
+    "hitpoints": 72,
+    "aggressive_level": 120,
+    "max_damage": 8,
+    "attack_style": "SLASH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 72.0,
+    "slayer_tasks": [ "Ghosts", "Revenants" ],
+    //Combat Stats
+    "attack": 50,
+    "strength": 50,
+    "defence": 41,
+    "ranged": 60,
+    "magic": 55,
+    //Aggressive Stats
+    "stab_attack": 20,
+    "slash_attack": 20,
+    "crush_attack": 20,
+    "magic_attack": 5,
+    "ranged_attack": 25,
+    //Defensive Stats
+    "stab_defence": 65,
+    "slash_defence": 60,
+    "crush_defence": 68,
+    "magic_defence": 30,
+    "ranged_defence": 50,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 2,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 164,
+    "defend_animation": 165,
+    "death_animation": 167
+  }
+]
