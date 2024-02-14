@@ -10,7 +10,7 @@
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 60.0,
-    "slayer_tasks": [ "Monkeys" ],
+    "slayer_tasks": [ "Monkeys", "Zombies" ],
     //Combat Stats
     "attack": 100,
     "strength": 60,
@@ -21,8 +21,8 @@
     "stab_attack": 15,
     "slash_attack": 15,
     "crush_attack": 15,
-    "magic_attack": 15,
-    "ranged_attack": 15,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 0,
     "slash_defence": 0,
@@ -38,9 +38,9 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 1383,
+    "defend_animation": 1393,
+    "death_animation": 1384
   },
   { // Monkey Zombie (98)
     "ids": [ 5281 ],
@@ -53,7 +53,7 @@
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 90.0,
-    "slayer_tasks": [ "Monkeys" ],
+    "slayer_tasks": [ "Monkeys", "Zombies" ],
     //Combat Stats
     "attack": 150,
     "strength": 60,
@@ -64,8 +64,8 @@
     "stab_attack": 35,
     "slash_attack": 35,
     "crush_attack": 35,
-    "magic_attack": 35,
-    "ranged_attack": 35,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 0,
     "slash_defence": 0,
@@ -81,9 +81,9 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 1383,
+    "defend_animation": 1393,
+    "death_animation": 1384
   },
   { // Monkey Zombie (129)
     "ids": [ 5282 ],
@@ -96,7 +96,7 @@
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 90.0,
-    "slayer_tasks": [ "Monkeys" ],
+    "slayer_tasks": [ "Monkeys", "Zombies" ],
     //Combat Stats
     "attack": 150,
     "strength": 110,
@@ -107,8 +107,8 @@
     "stab_attack": 35,
     "slash_attack": 35,
     "crush_attack": 35,
-    "magic_attack": 35,
-    "ranged_attack": 35,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 0,
     "slash_defence": 0,
@@ -121,11 +121,11 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 2,
-    "respawn_ticks": 50,
+    "respawn_ticks": 12,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1
+    "attack_animation": 1383,
+    "defend_animation": 1393,
+    "death_animation": 1384
   }
 ]
