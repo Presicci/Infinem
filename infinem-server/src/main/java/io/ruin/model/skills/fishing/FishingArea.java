@@ -556,6 +556,26 @@ public enum FishingArea {
             new Position(2395, 3417, 0),
             new Position(2383, 3412, 0)
     ),
+    TIRANWN_BAIT_WEST(
+            new Position(2215, 3248, 0),
+            new Position(2217, 3245, 0),
+            new Position(2210, 3237, 0),
+            new Position(2212, 3239, 0),
+            new Position(2210, 3243, 0),
+            new Position(2225, 3243, 0),
+            new Position(2222, 3241, 0)
+    ),
+    TIRANWN_BAIT_EAST(
+            new Position(2264, 3258, 0),
+            new Position(2265, 3258, 0),
+            new Position(2266, 3253, 0),
+            new Position(2267, 3253, 0),
+            new Position(2273, 3247, 0),
+            new Position(2274, 3248, 0),
+            new Position(2276, 3243, 0),
+            new Position(2275, 3240, 0),
+            new Position(2282, 3244, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -696,6 +716,8 @@ public enum FishingArea {
         WEST_HOSIDIUS.add(FishingSpot.LURE_BAIT, 2);
         KOUREND_PARK.add(FishingSpot.LURE_BAIT, 2);
         TREE_GNOME_STRONGHOLD.add(FishingSpot.LURE_BAIT, 3);
+        TIRANWN_BAIT_WEST.add(FishingSpot.LURE_BAIT, 3);
+        TIRANWN_BAIT_EAST.add(FishingSpot.LURE_BAIT, 4);
         FishingArea.fishingSpotTimer();
     }
 }
