@@ -318,6 +318,8 @@ public class FishingSpot {
 
     public static final int SLIMY_EEL = 2653;
 
+    public static final int SACRED_EEL = 6488;
+
     static {
         new FishingSpot(FishingTool.KARAMBWAN_VESSEL)
                 .regularCatches(FishingCatch.KARAMBWAN)
@@ -419,6 +421,12 @@ public class FishingSpot {
         new FishingSpot(FishingTool.FISHING_ROD)
                 .regularCatches(FishingCatch.SLIMY_EEL)
                 .register(SLIMY_EEL, "bait");
+        /*
+         * Sacred eel
+         */
+        new FishingSpot(FishingTool.FISHING_ROD)
+                .regularCatches(FishingCatch.SACRED_EEL)
+                .register(SACRED_EEL, "bait");
 
         /*
          * Karambwanji

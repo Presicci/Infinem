@@ -576,6 +576,12 @@ public enum FishingArea {
             new Position(2275, 3240, 0),
             new Position(2282, 3244, 0)
     ),
+    ZUL_ANDRA(
+            new Position(2192, 3070, 0),
+            new Position(2199, 3066, 0),
+            new Position(2182, 3067, 0),
+            new Position(2186, 3070, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -718,6 +724,7 @@ public enum FishingArea {
         TREE_GNOME_STRONGHOLD.add(FishingSpot.LURE_BAIT, 3);
         TIRANWN_BAIT_WEST.add(FishingSpot.LURE_BAIT, 3);
         TIRANWN_BAIT_EAST.add(FishingSpot.LURE_BAIT, 4);
+        ZUL_ANDRA.add(FishingSpot.SACRED_EEL, 2);
         FishingArea.fishingSpotTimer();
     }
 }
