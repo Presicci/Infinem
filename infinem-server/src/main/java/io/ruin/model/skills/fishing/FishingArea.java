@@ -433,6 +433,15 @@ public enum FishingArea {
             new Position(2633, 3692, 0),
             new Position(2633, 3693, 0)
     ),
+    BARBARIAN_OUTPOST(
+            new Position(2516, 3574, 0),
+            new Position(2516, 3575, 0),
+            new Position(2515, 3571, 0),
+            new Position(2514, 3568, 0),
+            new Position(2511, 3562, 0),
+            new Position(2507, 3554, 0),
+            new Position(2498, 3547, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -556,6 +565,7 @@ public enum FishingArea {
         NORTH_ARDY.add(FishingSpot.LURE_BAIT, 2);
         BAXTORIAN_FALLS_SOUTH.add(FishingSpot.LURE_BAIT, 4);
         RELEKKA_NET.add(FishingSpot.NET_BAIT, 4);
+        BARBARIAN_OUTPOST.add(FishingSpot.NET_BAIT, 4);
         FishingArea.fishingSpotTimer();
     }
 }
