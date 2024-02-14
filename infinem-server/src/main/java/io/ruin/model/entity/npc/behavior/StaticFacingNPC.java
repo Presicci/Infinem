@@ -13,7 +13,8 @@ public class StaticFacingNPC {
     private static final Integer[] VALUES = new Integer[] {
             2542,   // Sitting H.A.M. member
             3596,   // 'Black-eye'
-            4766    // Tegid
+            4766,   // Tegid
+            5381,   // Clothears
     };
     public static final Set<Integer> NPCS = new HashSet<>(Arrays.asList(VALUES));
 
