@@ -542,6 +542,13 @@ public enum FishingArea {
             new Position(1715, 3612, 0),
             new Position(1715, 3613, 0)
     ),
+    KOUREND_PARK(
+            new Position(1720, 3683, 0),
+            new Position(1722, 3684, 0),
+            new Position(1722, 3685, 0),
+            new Position(1721, 3686, 0),
+            new Position(1720, 3686, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -680,6 +687,7 @@ public enum FishingArea {
         FARMING_GUILD_EAST.add(FishingSpot.LURE_BAIT, 3);
         WATSON_HOUSE.add(FishingSpot.LURE_BAIT, 2);
         WEST_HOSIDIUS.add(FishingSpot.LURE_BAIT, 2);
+        KOUREND_PARK.add(FishingSpot.LURE_BAIT, 2);
         FishingArea.fishingSpotTimer();
     }
 }
