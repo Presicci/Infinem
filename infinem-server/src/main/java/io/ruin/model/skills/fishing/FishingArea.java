@@ -457,6 +457,29 @@ public enum FishingArea {
             new Position(1748, 3802, 0),
             new Position(1747, 3802, 0)
     ),
+    HOSIDIUS_NET(
+            new Position(1840, 3595, 0),
+            new Position(1828, 3613, 0),
+            new Position(1827, 3605, 0),
+            new Position(1819, 3604, 0)
+    ),
+    HOSIDIUS_CAGE(
+            new Position(1819, 3603, 0),
+            new Position(1819, 3601, 0),
+            new Position(1842, 3618, 0),
+            new Position(1842, 3620, 0),
+            new Position(1838, 3608, 0),
+            new Position(1838, 3607, 0),
+            new Position(1828, 3614, 0)
+    ),
+    HOSIDIUS_HARPOON(
+            new Position(1828, 3602, 0),
+            new Position(1828, 3601, 0),
+            new Position(1828, 3600, 0),
+            new Position(1828, 3598, 0),
+            new Position(1838, 3606, 0),
+            new Position(1819, 3602, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -583,6 +606,9 @@ public enum FishingArea {
         BARBARIAN_OUTPOST.add(FishingSpot.NET_BAIT, 4);
         PISCARILIUS_NET.add(FishingSpot.NET_BAIT, 3);
         PISCARILIUS_CAGE.add(FishingSpot.CAGE_HARPOON, 2);
+        HOSIDIUS_NET.add(FishingSpot.NET_BAIT, 2);
+        HOSIDIUS_CAGE.add(FishingSpot.CAGE_HARPOON, 3);
+        HOSIDIUS_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 3);
         FishingArea.fishingSpotTimer();
     }
 }
