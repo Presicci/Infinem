@@ -21,7 +21,7 @@ public class MonkeyArcher extends NPCCombat {
 
     @Override
     public boolean attack() {
-        if(withinDistance(6)) {
+        if(withinDistance(8)) {
             projectileAttack(PROJECTILE, info.attack_animation, info.attack_style, info.max_damage);
             return true;
         }
