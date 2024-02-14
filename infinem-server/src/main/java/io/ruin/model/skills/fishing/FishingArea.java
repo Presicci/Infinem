@@ -425,6 +425,14 @@ public enum FishingArea {
             new Position(2527, 3412, 0),
             new Position(2507, 3421, 0)
     ),
+    RELEKKA_NET(
+            new Position(2633, 3688, 0),
+            new Position(2633, 3689, 0),
+            new Position(2633, 3690, 0),
+            new Position(2633, 3691, 0),
+            new Position(2633, 3692, 0),
+            new Position(2633, 3693, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -547,6 +555,7 @@ public enum FishingArea {
         GNOME_VILLAGE.add(FishingSpot.LURE_BAIT, 5);
         NORTH_ARDY.add(FishingSpot.LURE_BAIT, 2);
         BAXTORIAN_FALLS_SOUTH.add(FishingSpot.LURE_BAIT, 4);
+        RELEKKA_NET.add(FishingSpot.NET_BAIT, 4);
         FishingArea.fishingSpotTimer();
     }
 }
