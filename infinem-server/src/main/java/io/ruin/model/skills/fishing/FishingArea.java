@@ -610,6 +610,26 @@ public enum FishingArea {
             new Position(2236, 3445, 0),
             new Position(2227, 3430, 0)
     ),
+    JATIZSO_CAGE(
+            new Position(2411, 3780, 0),
+            new Position(2417, 3783, 0),
+            new Position(2401, 3781, 0),
+            new Position(2404, 3778, 0),
+            new Position(2414, 3788, 0),
+            new Position(2419, 3789, 0),
+            new Position(2422, 3789, 0),
+            new Position(2427, 3792, 0)
+    ),
+    JATIZSO_HARPOON(
+            new Position(2414, 3783, 0),
+            new Position(2401, 3782, 0),
+            new Position(2401, 3780, 0),
+            new Position(2403, 3778, 0),
+            new Position(2412, 3786, 0),
+            new Position(2421, 3789, 0),
+            new Position(2420, 3789, 0),
+            new Position(2424, 3791, 0)
+    ),
     HOME(
             new Position(2039, 3607, 0),
             new Position(2039, 3606, 0),
@@ -758,6 +778,8 @@ public enum FishingArea {
         PRIF_NORTH_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 1);
         GWENITH_CAGE.add(FishingSpot.CAGE_HARPOON, 3);
         GWENITH_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 3);
+        JATIZSO_CAGE.add(FishingSpot.CAGE_HARPOON, 4);
+        JATIZSO_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 4);
         FishingArea.fishingSpotTimer();
     }
 }
