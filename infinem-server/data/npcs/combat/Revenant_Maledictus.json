@@ -1,0 +1,45 @@
+[
+  { // Rev maledictus (397)
+    "ids": [ 11246 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 1250,
+    "aggressive_level": 794,
+    "max_damage": 30,
+    "attack_style": "RANGED",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 920.0,
+    "slayer_tasks": [ "Ghosts", "Revenants" ],
+    //Combat Stats
+    "attack": 106,
+    "strength": 126,
+    "defence": 90,
+    "ranged": 130,
+    "magic": 130,
+    //Aggressive Stats
+    "stab_attack": 72,
+    "slash_attack": 72,
+    "crush_attack": 72,
+    "magic_attack": 60,
+    "ranged_attack": 265,
+    //Defensive Stats
+    "stab_defence": 201,
+    "slash_defence": 206,
+    "crush_defence": 188,
+    "magic_defence": 101,
+    "ranged_defence": 231,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 5,
+    "death_ticks": 4,
+    "respawn_ticks": -1,
+    //Animations
+    "spawn_animation": 9281,
+    "attack_animation": 9277,
+    "defend_animation": -1,
+    "death_animation": 9280
+  }
+]
