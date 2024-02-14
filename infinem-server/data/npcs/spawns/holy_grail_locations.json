@@ -550,16 +550,6 @@
     "world": "ECO"
   },
   {
-    "name": "Rod Fishing spot",
-    "id": "1512",
-    "x": "2668",
-    "y": "4710",
-    "z": "0",
-    "direction": "W",
-    "walkRange": "1",
-    "world": "ECO"
-  },
-  {
     "name": "Duck",
     "id": "1839",
     "x": "2669",
@@ -614,26 +604,6 @@
     "id": "1839",
     "x": "2670",
     "y": "4688",
-    "z": "0",
-    "direction": "W",
-    "walkRange": "1",
-    "world": "ECO"
-  },
-  {
-    "name": "Rod Fishing spot",
-    "id": "1512",
-    "x": "2673",
-    "y": "4708",
-    "z": "0",
-    "direction": "W",
-    "walkRange": "1",
-    "world": "ECO"
-  },
-  {
-    "name": "Rod Fishing spot",
-    "id": "1512",
-    "x": "2679",
-    "y": "4702",
     "z": "0",
     "direction": "W",
     "walkRange": "1",

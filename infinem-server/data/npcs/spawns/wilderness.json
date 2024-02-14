@@ -5377,33 +5377,6 @@
     "walkRange": 3
   },
   {
-    "name": "Dark Crab Fishing Spot",
-    "id": 1535,
-    "x": 3186,
-    "y": 3926,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
-    "name": "Dark Crab Fishing Spot",
-    "id": 1535,
-    "x": 3184,
-    "y": 3926,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
-    "name": "Dark Crab Fishing Spot",
-    "id": 1535,
-    "x": 3187,
-    "y": 3927,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
     "name": "Terror Dog",
     "id": 6473,
     "x": 3204,

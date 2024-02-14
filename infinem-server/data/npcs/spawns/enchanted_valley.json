@@ -80,16 +80,6 @@
     "world": "ECO"
   },
   {
-    "name": "Fishing spot",
-    "id": "6731",
-    "x": "3042",
-    "y": "4510",
-    "z": "0",
-    "direction": "W",
-    "walkRange": "1",
-    "world": "ECO"
-  },
-  {
     "name": "Rabbit",
     "id": "1853",
     "x": "3045",

@@ -2290,16 +2290,6 @@
     "world": "ECO",
     "npcName": "Snake"
   },
-  {
-    "id": 4714,
-    "x": 2768,
-    "y": 3165,
-    "z": 0,
-    "direction": "W",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Fishing spot"
-  },
 
 
 

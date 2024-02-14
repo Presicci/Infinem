@@ -369,15 +369,6 @@
     "walkRange": 3
   },
   {
-    "name": "Fishing spot",
-    "id": 1497,
-    "x": 3153,
-    "y": 9544,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1
-  },
-  {
     "name": "Cave bug larva",
     "id": 482,
     "x": 3244,
@@ -412,15 +403,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 8
-  },
-  {
-    "name": "Fishing spot",
-    "id": 1498,
-    "x": 3246,
-    "y": 9569,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
   },
   {
     "name": "Cave slime",
