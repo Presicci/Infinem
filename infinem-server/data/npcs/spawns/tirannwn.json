@@ -464,36 +464,6 @@
     "world": "ECO",
     "npcName": "Stag"
   },
-  {
-    "id": 9173,
-    "x": 2166,
-    "y": 3347,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Fishing spot"
-  },
-  {
-    "id": 9173,
-    "x": 2165,
-    "y": 3374,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Fishing spot"
-  },
-  {
-    "id": 9171,
-    "x": 2165,
-    "y": 3373,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "world": "ECO",
-    "npcName": "Fishing spot"
-  },
 
 
 
