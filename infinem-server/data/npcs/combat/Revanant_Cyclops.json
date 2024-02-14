@@ -1,15 +1,15 @@
 [
-    { // Rev cyclops
+    { // Rev cyclops (82)
     "ids": [ 7934 ],
     "handler": "io.ruin.model.combat.npc.Revenant",
     //Combat Info
-    "hitpoints": 44,
-    "aggressive_level": 135,
+    "hitpoints": 110,
+    "aggressive_level": 164,
     "max_damage": 16,
-    "attack_style": "STAB",
+    "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
-    "slayer_xp": 119.0,
+    "slayer_xp": 110.0,
     "slayer_tasks": [ "Ghosts", "Revenants" ],
     //Combat Stats
     "attack": 60,
@@ -18,9 +18,9 @@
     "ranged": 70,
     "magic": 65,
     //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
+    "stab_attack": 53,
+    "slash_attack": 53,
+    "crush_attack": 53,
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
@@ -33,8 +33,8 @@
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
-    "attack_ticks": 4,
-    "death_ticks": 5,
+    "attack_ticks": 6,
+    "death_ticks": 3,
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
