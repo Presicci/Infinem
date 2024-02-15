@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Mountain troll",
+    "id": 940,
+    "x": 2850,
+    "y": 3672,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain troll",
+    "id": 938,
+    "x": 2852,
+    "y": 3677,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain troll",
+    "id": 939,
+    "x": 2846,
+    "y": 3676,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain troll",
+    "id": 937,
+    "x": 2844,
+    "y": 3675,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Mountain troll",
+    "id": 937,
+    "x": 2850,
+    "y": 3682,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain troll",
+    "id": 941,
+    "x": 2846,
+    "y": 3684,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain troll",
+    "id": 942,
+    "x": 2843,
+    "y": 3682,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mountain troll",
+    "id": 936,
+    "x": 2856,
+    "y": 3682,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Mushroom",
+    "id": 4144,
+    "x": 2853,
+    "y": 3689,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
