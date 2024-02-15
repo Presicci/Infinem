@@ -635,7 +635,16 @@ public enum FishingArea {
             new Position(2726, 3524, 0),
             new Position(2727, 3524, 0),
             new Position(2728, 3524, 0)
-    )
+    ),
+    RUINS_OF_UNKAH(
+            new Position(3142, 2802, 0),
+            new Position(3142, 2805, 0),
+            new Position(3142, 2806, 0),
+            new Position(3143, 2809, 0),
+            new Position(3140, 2797, 0),
+            new Position(3140, 2796, 0),
+            new Position(3140, 2795, 0)
+    ),
     ;
 
     private final ArrayDeque<Position> freePositions;
@@ -766,6 +775,7 @@ public enum FishingArea {
         JATIZSO.add(FishingSpot.CAGE_HARPOON, 4);
         JATIZSO.add(FishingSpot.BIG_NET_HARPOON, 4);
         SINCLAIR_MANSION.add(FishingSpot.LURE_BAIT, 3);
+        RUINS_OF_UNKAH.add(FishingSpot.CAGE_HARPOON, 3);
         FishingArea.fishingSpotTimer();
     }
 }
