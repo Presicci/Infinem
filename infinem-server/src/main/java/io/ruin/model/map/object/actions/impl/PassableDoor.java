@@ -67,6 +67,7 @@ public enum PassableDoor {
      * @param tempObjectId The id for the temp door.
      */
     public static void passDoor(Player player, GameObject obj, Direction doorOpenDirection, int rotationOffset, Position objectOffset, int tempObjectId) {
+        player.lock();
         World.startEvent(e -> {
             e.delay(1);
             Position tempGatePos = obj.getPosition().translate(
@@ -84,6 +85,7 @@ public enum PassableDoor {
                     player.getAbsY() + (doorOpenDirection == Direction.NORTH ? (player.getAbsY() <= obj.getPosition().getY() ? 1 : -1) : doorOpenDirection == Direction.SOUTH ? (player.getAbsY() >= obj.getPosition().getY() ? -1 : 1) : 0),
                     StepType.FORCE_WALK);
             e.delay(2);
+            player.unlock();
             tempGate.remove();
             tempRemove.remove();
             obj.spawn();
