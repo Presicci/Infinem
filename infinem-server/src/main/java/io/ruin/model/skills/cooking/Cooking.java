@@ -22,8 +22,14 @@ import java.util.List;
 
 public class Cooking {
 
-    private static final String[] FIRE_NAMES = { "fire", "cooking pot" };
-    private static final String[] RANGE_NAMES = { "range", "cooking range", "stove", "sulphur vent", "gnome cooker", "clay oven" };
+    private static final String[] FIRE_NAMES = { "fire", "cooking pot",
+            // House fires
+            "firepit", "firepit with hook", "firepit with pot"
+    };
+    private static final String[] RANGE_NAMES = { "range", "cooking range", "stove", "sulphur vent", "gnome cooker", "clay oven",
+            // House ranges
+            "steel range", "fancy range", "large oven", "small oven"
+    };
     public static final int COOKING_GAUNLETS = 775;
 
     static {
