@@ -21,7 +21,7 @@ public class Taverly {
          * Door to blue drags
          */
         ObjectAction.register(2623, 2924, 9803, 0, "open", (player, obj) -> {
-            if (player.getPosition().equals(obj.getPosition()) && !player.getInventory().contains(Items.DUSTY_KEY)) {
+            if (player.getAbsX() == obj.x && !player.getInventory().contains(Items.DUSTY_KEY)) {
                 player.sendMessage("It's locked.");
                 return;
             }
