@@ -14,6 +14,7 @@ public enum Food {
     RAW_HERRING(5, 50.0, 345, 347, 357, "a herring", "herring", 3, 41, 41, 41),
     RAW_ANCHOVIES(1, 30.0, 321, 319, 323, "the anchovies", "anchovies", 3, 34, 34, 34),
     RAW_KARAMBWAN_P(1, 80.0, 3142, 3146, 3148, "a karambwan", "karambwan", 3, 99, 99, 99),
+    RAW_GIANT_CARP(10, 10.0, Items.RAW_GIANT_CARP, Items.GIANT_CARP, -1, "a giant carp", "giant carp", 3, 1, 1, 1),
     RAW_KARAMBWAN(30, 190.0, 3142, 3144, 3148, "a karambwan", "karambwan", 3, 99, 99, 99),
     RAW_MACKEREL(10, 60.0, 345, 347, 357, "a mackerel", "mackerels", 3, 45, 45, 45),
     RAW_TROUT(15, 70.0, 335, 333, 343, "a trout", "trouts", 3, 50, 49, 49),
