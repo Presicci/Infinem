@@ -81,28 +81,29 @@ public enum Containers {
          * Water sources
          */
         ObjectDef.forEach(objDef -> {
-            if (objDef.name.equalsIgnoreCase("sink"))
+            String name = objDef.name;
+            if (name.equalsIgnoreCase("sink") || name.equalsIgnoreCase("gold sink"))
                 for (Containers container : values())
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.SINK));
-            if (objDef.name.equalsIgnoreCase("waterpump"))
+            if (name.equalsIgnoreCase("waterpump"))
                 for (Containers container : values())
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.WATERPUMP));
-            if (objDef.name.equalsIgnoreCase("fountain"))
+            if (name.equalsIgnoreCase("fountain"))
                 for (Containers container : values())
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.FOUNTAIN));
-            if (objDef.name.equalsIgnoreCase("well"))
+            if (name.equalsIgnoreCase("well"))
                 for (Containers container : values())
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.WELL));
-            if (objDef.name.equalsIgnoreCase("tap"))
+            if (name.equalsIgnoreCase("tap"))
                 for (Containers container : values())
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.TAP));
-            if (objDef.name.equalsIgnoreCase("water tap"))
+            if (name.equalsIgnoreCase("water tap"))
                 for (Containers container : values())
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.TAP));
-            if (objDef.name.equalsIgnoreCase("water barrel"))
+            if (name.equalsIgnoreCase("water barrel"))
                 for (Containers container : values())
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.BARREL));
-            if (objDef.name.equalsIgnoreCase("pump and drain") || objDef.name.equalsIgnoreCase("pump and tub"))
+            if (name.equalsIgnoreCase("pump and drain") || name.equalsIgnoreCase("pump and tub"))
                 for (Containers container : values())
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> fillContainer(player, item, container, WaterSource.PUMP));
         });
