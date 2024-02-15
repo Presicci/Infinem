@@ -8,7 +8,6 @@ import io.ruin.model.map.Position;
 import java.util.*;
 
 public enum FishingArea {
-
     KARAMBWAN_RIVER(
             new Position(2899, 3119, 0),
             new Position(2912, 3119, 0),
@@ -174,15 +173,17 @@ public enum FishingArea {
             new Position(2500, 3512, 0),
             new Position(2500, 3510, 0)
     ),
-    INFERNAL_EEL(
-            new Position(2540, 5088, 0),
-            new Position(2539, 5088, 0),
-            new Position(2541, 5088, 0),
+    INFERNAL_EEL_EAST(
             new Position(2536, 5086, 0),
+            new Position(2539, 5088, 0),
+            new Position(2540, 5088, 0),
+            new Position(2541, 5088, 0)
+    ),
+    INFERNAL_EEL_SOUTH_AND_WEST(
+            new Position(2479, 5078, 0),
             new Position(2478, 5078, 0),
             new Position(2477, 5078, 0),
-            new Position(2479, 5078, 0),
-            new Position(2448, 5014, 0)
+            new Position(2446, 5104, 0)
     ),
     KARAMJA(
             new Position(2921, 3178, 0),
@@ -778,7 +779,8 @@ public enum FishingArea {
         RESOURCE_AREA.add(FishingSpot.CAGE, 2);
         ZEAH_ANGLER.add(FishingSpot.BAIT, 3);
         BARBARIAN.add(FishingSpot.USE_ROD, 4);
-        INFERNAL_EEL.add(FishingSpot.INFERNO_EEL, 4);
+        INFERNAL_EEL_EAST.add(FishingSpot.INFERNO_EEL, 2);
+        INFERNAL_EEL_SOUTH_AND_WEST.add(FishingSpot.INFERNO_EEL, 2);
         PISCATORIS.add(FishingSpot.SMALL_NET_HARPOON, 5);
         KARAMJA.add(FishingSpot.CAGE_HARPOON, 3);
         KARAMJA.add(FishingSpot.NET_BAIT, 3);
