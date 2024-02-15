@@ -194,20 +194,6 @@ public enum FishingArea {
             new Position(2926, 3180, 0),
             new Position(2925, 3181, 0)
     ),
-    DONATOR_ZONE(
-            new Position(3828, 2869, 0),
-            new Position(3830, 2869, 0),
-            new Position(3832, 2869, 0),
-            new Position(3833, 2869, 0),
-            new Position(3835, 2869, 0),
-            new Position(3836, 2870, 0),
-            new Position(3835, 2872, 0),
-            new Position(3833, 2872, 0),
-            new Position(3831, 2872, 0),
-            new Position(3829, 2872, 0),
-            new Position(3828, 2872, 0),
-            new Position(3826, 2872, 0)
-    ),
     AL_KHARID(
             new Position(3267, 3148, 0),
             new Position(3266, 3148, 0),
@@ -796,10 +782,6 @@ public enum FishingArea {
         PISCATORIS.add(FishingSpot.SMALL_NET_HARPOON, 5);
         KARAMJA.add(FishingSpot.CAGE_HARPOON, 3);
         KARAMJA.add(FishingSpot.NET_BAIT, 3);
-        DONATOR_ZONE.add(FishingSpot.NET_BAIT, 1);
-        DONATOR_ZONE.add(FishingSpot.LURE_BAIT, 1);
-        DONATOR_ZONE.add(FishingSpot.CAGE_HARPOON, 2);
-        DONATOR_ZONE.add(FishingSpot.BIG_NET_HARPOON, 2);
         PVP_WORLD_37S.add(FishingSpot.CAGE, 3);
         MORT_MYRE_SWAMP_WEST.add(FishingSpot.SLIMY_EEL, 2);
         MORT_MYRE_SWAMP_NORTH_WEST.add(FishingSpot.SLIMY_EEL, 1);
