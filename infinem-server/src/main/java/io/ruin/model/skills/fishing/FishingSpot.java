@@ -317,6 +317,8 @@ public class FishingSpot {
 
     public static final int MOLTEN_EEL = 15018;
 
+    public static final int LAVA_EEL = 4928;
+
     public static final int SLIMY_EEL = 2653;
 
     public static final int SACRED_EEL = 6488;
@@ -428,6 +430,13 @@ public class FishingSpot {
         new FishingSpot(FishingTool.FISHING_ROD)
                 .regularCatches(FishingCatch.SACRED_EEL)
                 .register(SACRED_EEL, "bait");
+
+        /*
+         * Lava eel
+         */
+        new FishingSpot(FishingTool.OILY_FISHING_ROD)
+                .regularCatches(FishingCatch.LAVA_EEL)
+                .register(LAVA_EEL, "bait");
 
         /*
          * Karambwanji

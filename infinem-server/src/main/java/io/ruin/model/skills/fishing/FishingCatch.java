@@ -1,5 +1,7 @@
 package io.ruin.model.skills.fishing;
 
+import io.ruin.model.item.Items;
+
 public enum FishingCatch {
     /**
      * Regular
@@ -18,6 +20,7 @@ public enum FishingCatch {
     LOBSTER(377, 40, 90.0, 0.16, 116129),
     BASS(363, 46, 100.0, 0.08, 382609),
     SWORDFISH(371, 50, 100.0, 0.11, 128885),
+    LAVA_EEL(Items.RAW_LAVA_EEL, 53, 30.0, 0.5, 128885),
     MONKFISH(7944, 62, 120.0, 0.3, 138583),
     SHARK(383, 76, 110.0, 0.12, 82243),
     ANGLERFISH(13439, 82, 120.0, 0.07, 78649),

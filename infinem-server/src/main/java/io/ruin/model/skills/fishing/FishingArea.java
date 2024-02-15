@@ -648,6 +648,13 @@ public enum FishingArea {
     BANDIT_CAMP(
             new Position(3050, 3704, 0),
             new Position(3054, 3706, 0)
+    ),
+    LAVA_MAZE(
+            new Position(3074, 3838, 0),
+            new Position(3077, 3836, 0),
+            new Position(3078, 3836, 0),
+            new Position(3079, 3836, 0),
+            new Position(3070, 3839, 0)
     )
     ;
 
@@ -781,6 +788,7 @@ public enum FishingArea {
         SINCLAIR_MANSION.add(FishingSpot.LURE_BAIT, 3);
         RUINS_OF_UNKAH.add(FishingSpot.CAGE_HARPOON, 3);
         BANDIT_CAMP.add(FishingSpot.NET_BAIT, 1);
+        LAVA_MAZE.add(FishingSpot.LAVA_EEL, 2);
         FishingArea.fishingSpotTimer();
     }
 }
