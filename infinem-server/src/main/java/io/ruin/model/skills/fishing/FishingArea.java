@@ -635,25 +635,8 @@ public enum FishingArea {
             new Position(2726, 3524, 0),
             new Position(2727, 3524, 0),
             new Position(2728, 3524, 0)
-    ),
-    HOME(
-            new Position(2039, 3607, 0),
-            new Position(2039, 3606, 0),
-            new Position(2039, 3605, 0),
-            new Position(2039, 3604, 0),
-            new Position(2039, 3603, 0),
-            new Position(2039, 3602, 0),
-            new Position(2044, 3597, 0),
-            new Position(2044, 3596, 0),
-            new Position(2044, 3595, 0),
-            new Position(2044, 3594, 0),
-            new Position(2044, 3593, 0),
-            new Position(2044, 3592, 0),
-            new Position(2044, 3591, 0),
-            new Position(2044, 3590, 0),
-            new Position(2044, 3589, 0),
-            new Position(2044, 3588, 0)
-    );
+    )
+    ;
 
     private final ArrayDeque<Position> freePositions;
     private static final List<NPC> spots = new ArrayList<>();
@@ -723,12 +706,6 @@ public enum FishingArea {
         DONATOR_ZONE.add(FishingSpot.CAGE_HARPOON, 2);
         DONATOR_ZONE.add(FishingSpot.BIG_NET_HARPOON, 2);
         PVP_WORLD_37S.add(FishingSpot.CAGE, 3);
-        HOME.add(FishingSpot.BIG_NET_HARPOON, 2);
-        HOME.add(FishingSpot.KARAMBWAN_SPOT, 1);
-        HOME.add(FishingSpot.CAGE_HARPOON, 1);
-        HOME.add(FishingSpot.SMALL_NET_HARPOON, 2);
-        HOME.add(FishingSpot.LURE_BAIT, 1);
-        HOME.add(FishingSpot.NET_BAIT, 1);
         MORT_MYRE_SWAMP_WEST.add(FishingSpot.SLIMY_EEL, 2);
         MORT_MYRE_SWAMP_NORTH_WEST.add(FishingSpot.SLIMY_EEL, 1);
         MORT_MYRE_SWAMP_NORTH_WEST_2.add(FishingSpot.SLIMY_EEL, 1);
