@@ -456,37 +456,31 @@ public enum FishingArea {
             new Position(2507, 3554, 0),
             new Position(2498, 3547, 0)
     ),
-    PISCARILIUS_NET(
+    PISCARILIUS(
             new Position(1771, 3798, 0),
             new Position(1770, 3798, 0),
             new Position(1769, 3798, 0),
             new Position(1765, 3796, 0),
             new Position(1763, 3796, 0),
-            new Position(1761, 3796, 0)
-    ),
-    PISCARILIUS_CAGE(
+            new Position(1761, 3796, 0),
             new Position(1762, 3796, 0),
             new Position(1750, 3802, 0),
             new Position(1749, 3802, 0),
             new Position(1748, 3802, 0),
             new Position(1747, 3802, 0)
     ),
-    HOSIDIUS_NET(
+    HOSIDIUS(
             new Position(1840, 3595, 0),
             new Position(1828, 3613, 0),
             new Position(1827, 3605, 0),
-            new Position(1819, 3604, 0)
-    ),
-    HOSIDIUS_CAGE(
+            new Position(1819, 3604, 0),
             new Position(1819, 3603, 0),
             new Position(1819, 3601, 0),
             new Position(1842, 3618, 0),
             new Position(1842, 3620, 0),
             new Position(1838, 3608, 0),
             new Position(1838, 3607, 0),
-            new Position(1828, 3614, 0)
-    ),
-    HOSIDIUS_HARPOON(
+            new Position(1828, 3614, 0),
             new Position(1828, 3602, 0),
             new Position(1828, 3601, 0),
             new Position(1828, 3600, 0),
@@ -494,7 +488,7 @@ public enum FishingArea {
             new Position(1838, 3606, 0),
             new Position(1819, 3602, 0)
     ),
-    HOSIDIUS_SOUTH_NET(
+    HOSIDIUS_SOUTH(
             new Position(1673, 3469, 0),
             new Position(1674, 3469, 0),
             new Position(1675, 3469, 0),
@@ -502,15 +496,11 @@ public enum FishingArea {
             new Position(1684, 3472, 0),
             new Position(1685, 3472, 0),
             new Position(1688, 3469, 0),
-            new Position(1690, 3467, 0)
-    ),
-    HOSIDIUS_SOUTH_CAGE(
+            new Position(1690, 3467, 0),
             new Position(1668, 3475, 0),
             new Position(1668, 3474, 0),
             new Position(1668, 3473, 0),
-            new Position(1672, 3469, 0)
-    ),
-    HOSIDIUS_SOUTH_HARPOON(
+            new Position(1672, 3469, 0),
             new Position(1676, 3489, 0),
             new Position(1676, 3490, 0),
             new Position(1678, 3492, 0)
@@ -603,28 +593,24 @@ public enum FishingArea {
             new Position(2165, 3268, 0),
             new Position(2165, 3266, 0)
     ),
-    PRIF_NORTH_CAGE(
+    PRIF_NORTH(
             new Position(2166, 3347, 0),
-            new Position(2165, 3374, 0)
-    ),
-    PRIF_NORTH_HARPOON(
+            new Position(2165, 3374, 0),
             new Position(2163, 3365, 0),
             new Position(2165, 3373, 0)
     ),
-    GWENITH_CAGE(
+    GWENITH(
             new Position(2225, 3429, 0),
             new Position(2226, 3430, 0),
             new Position(2235, 3433, 0),
-            new Position(2234, 3441, 0)
-    ),
-    GWENITH_HARPOON(
+            new Position(2234, 3441, 0),
             new Position(2228, 3428, 0),
             new Position(2228, 3429, 0),
             new Position(2225, 3428, 0),
             new Position(2236, 3445, 0),
             new Position(2227, 3430, 0)
     ),
-    JATIZSO_CAGE(
+    JATIZSO(
             new Position(2411, 3780, 0),
             new Position(2417, 3783, 0),
             new Position(2401, 3781, 0),
@@ -632,9 +618,7 @@ public enum FishingArea {
             new Position(2414, 3788, 0),
             new Position(2419, 3789, 0),
             new Position(2422, 3789, 0),
-            new Position(2427, 3792, 0)
-    ),
-    JATIZSO_HARPOON(
+            new Position(2427, 3792, 0),
             new Position(2414, 3783, 0),
             new Position(2401, 3782, 0),
             new Position(2401, 3780, 0),
@@ -778,14 +762,14 @@ public enum FishingArea {
         RELEKKA_CAGE.add(FishingSpot.CAGE_HARPOON, 2);
         RELEKKA_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 2);
         BARBARIAN_OUTPOST.add(FishingSpot.NET_BAIT, 4);
-        PISCARILIUS_NET.add(FishingSpot.NET_BAIT, 3);
-        PISCARILIUS_CAGE.add(FishingSpot.CAGE_HARPOON, 2);
-        HOSIDIUS_NET.add(FishingSpot.NET_BAIT, 2);
-        HOSIDIUS_CAGE.add(FishingSpot.CAGE_HARPOON, 3);
-        HOSIDIUS_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 3);
-        HOSIDIUS_SOUTH_NET.add(FishingSpot.NET_BAIT, 3);
-        HOSIDIUS_SOUTH_CAGE.add(FishingSpot.CAGE_HARPOON, 2);
-        HOSIDIUS_SOUTH_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 2);
+        PISCARILIUS.add(FishingSpot.NET_BAIT, 3);
+        PISCARILIUS.add(FishingSpot.CAGE_HARPOON, 2);
+        HOSIDIUS.add(FishingSpot.NET_BAIT, 2);
+        HOSIDIUS.add(FishingSpot.CAGE_HARPOON, 3);
+        HOSIDIUS.add(FishingSpot.BIG_NET_HARPOON, 3);
+        HOSIDIUS_SOUTH.add(FishingSpot.NET_BAIT, 3);
+        HOSIDIUS_SOUTH.add(FishingSpot.CAGE_HARPOON, 2);
+        HOSIDIUS_SOUTH.add(FishingSpot.BIG_NET_HARPOON, 2);
         FARMING_GUILD_NORTH.add(FishingSpot.BIG_NET_HARPOON, 3);
         FARMING_GUILD_MID.add(FishingSpot.BIG_NET_HARPOON, 2);
         FARMING_GUILD_SOUTH.add(FishingSpot.BIG_NET_HARPOON, 2);
@@ -798,12 +782,12 @@ public enum FishingArea {
         TIRANWN_BAIT_EAST.add(FishingSpot.LURE_BAIT, 4);
         ZUL_ANDRA.add(FishingSpot.SACRED_EEL, 2);
         PRIF_SOUTH.add(FishingSpot.BIG_NET_HARPOON, 3);
-        PRIF_NORTH_CAGE.add(FishingSpot.CAGE_HARPOON, 1);
-        PRIF_NORTH_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 1);
-        GWENITH_CAGE.add(FishingSpot.CAGE_HARPOON, 3);
-        GWENITH_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 3);
-        JATIZSO_CAGE.add(FishingSpot.CAGE_HARPOON, 4);
-        JATIZSO_HARPOON.add(FishingSpot.BIG_NET_HARPOON, 4);
+        PRIF_NORTH.add(FishingSpot.CAGE_HARPOON, 1);
+        PRIF_NORTH.add(FishingSpot.BIG_NET_HARPOON, 1);
+        GWENITH.add(FishingSpot.CAGE_HARPOON, 3);
+        GWENITH.add(FishingSpot.BIG_NET_HARPOON, 3);
+        JATIZSO.add(FishingSpot.CAGE_HARPOON, 4);
+        JATIZSO.add(FishingSpot.BIG_NET_HARPOON, 4);
         SINCLAIR_MANSION.add(FishingSpot.LURE_BAIT, 3);
         FishingArea.fishingSpotTimer();
     }
