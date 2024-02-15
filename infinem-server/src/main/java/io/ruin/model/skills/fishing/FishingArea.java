@@ -663,6 +663,21 @@ public enum FishingArea {
             new Position(2890, 9766, 0),
             new Position(2891, 9766, 0),
             new Position(2884, 9765, 0)
+    ),
+    LUMBRIDGE_SWAMP_CAVE_WEST(
+            new Position(3154, 9544, 0),
+            new Position(3156, 9542, 0),
+            new Position(3157, 9542, 0),
+            new Position(3153, 9545, 0),
+            new Position(3152, 9545, 0)
+    ),
+    LUMBRIDGE_SWAMP_CAVE_EAST(
+            new Position(3245, 9570, 0),
+            new Position(3246, 9569, 0),
+            new Position(3247, 9572, 0),
+            new Position(3248, 9572, 0),
+            new Position(3249, 9571, 0),
+            new Position(3249, 9568, 0)
     )
     ;
 
@@ -798,6 +813,8 @@ public enum FishingArea {
         BANDIT_CAMP.add(FishingSpot.NET_BAIT, 1);
         LAVA_MAZE.add(FishingSpot.LAVA_EEL, 2);
         TAVERLY_DUNGEON.add(FishingSpot.LAVA_EEL, 2);
+        LUMBRIDGE_SWAMP_CAVE_WEST.add(FishingSpot.SWAMP_NET_BAIT, 2);
+        LUMBRIDGE_SWAMP_CAVE_EAST.add(FishingSpot.SWAMP_NET_BAIT, 2);
         FishingArea.fishingSpotTimer();
     }
 }
