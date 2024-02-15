@@ -323,6 +323,8 @@ public class FishingSpot {
 
     public static final int SACRED_EEL = 6488;
 
+    public static final int SWAMP_NET_BAIT = 1497;
+
     static {
         new FishingSpot(FishingTool.KARAMBWAN_VESSEL)
                 .regularCatches(FishingCatch.KARAMBWAN)
@@ -375,6 +377,15 @@ public class FishingSpot {
                 .regularCatches(FishingCatch.SWORDFISH)
                 .barehandCatches(FishingCatch.BARBARIAN_SWORDFISH)
                 .register(SMALL_NET_HARPOON, "harpoon");
+        /*
+         * Swamp Net (small) / Bait
+         */
+        new FishingSpot(FishingTool.SMALL_FISHING_NET)
+                .regularCatches(FishingCatch.FROG_SPAWN, FishingCatch.SWAMP_WEED)
+                .register(SWAMP_NET_BAIT, "small net");
+        new FishingSpot(FishingTool.FISHING_ROD)
+                .regularCatches(FishingCatch.SLIMY_EEL, FishingCatch.CAVE_EEL)
+                .register(SWAMP_NET_BAIT, "bait");
         /*
          * Use-rod (Leaping)
          */

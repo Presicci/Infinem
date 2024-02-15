@@ -16,7 +16,10 @@ public enum FishingCatch {
     PIKE(349, 25, 60.0, 0.14, 305792),
     SLIMY_EEL(3379, 28, 65.0, 0.18, 461808),    // Slightly higher rate than osrs but it's cool
     SALMON(331, 30, 70.0, 0.15, 461808),
+    FROG_SPAWN(Items.FROG_SPAWN, 33, 75.0, 0.15, 461808),
+    SWAMP_WEED(Items.SWAMP_WEED, 33, 1.0, 0.01, 461808),
     TUNA(359, 35, 80.0, 0.11, 128885),
+    CAVE_EEL(Items.RAW_CAVE_EEL, 38, 80.0, 0.11, 128885),
     LOBSTER(377, 40, 90.0, 0.16, 116129),
     BASS(363, 46, 100.0, 0.08, 382609),
     SWORDFISH(371, 50, 100.0, 0.11, 128885),
