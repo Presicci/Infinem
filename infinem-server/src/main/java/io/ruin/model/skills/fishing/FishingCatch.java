@@ -8,6 +8,7 @@ public enum FishingCatch {
      */
     SHRIMPS(317, 1, 10.0, 0.2, 435165),
     SARDINE(327, 5, 20.0, 0.15, 528000),
+    GIANT_CARP(Items.RAW_GIANT_CARP, 10, 30.0, 0.13, 528000),
     HERRING(345, 10, 30.0, 0.13, 528000),
     ANCHOVIES(321, 15, 40.0, 0.15, 435165),
     MACKEREL(353, 16, 20.0, 0.05, 382609),

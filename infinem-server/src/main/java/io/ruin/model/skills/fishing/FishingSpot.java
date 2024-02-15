@@ -325,6 +325,8 @@ public class FishingSpot {
 
     public static final int SWAMP_NET_BAIT = 1497;
 
+    public static final int HEMENSTER = 4079;
+
     static {
         new FishingSpot(FishingTool.KARAMBWAN_VESSEL)
                 .regularCatches(FishingCatch.KARAMBWAN)
@@ -398,6 +400,13 @@ public class FishingSpot {
         new FishingSpot(FishingTool.DARK_CRAB_POT)
                 .regularCatches(FishingCatch.DARK_CRAB)
                 .register(CAGE, "cage");
+
+        /*
+         * Hemenster - Giant carp
+         */
+        new FishingSpot(FishingTool.FISHING_ROD)
+                .regularCatches(FishingCatch.GIANT_CARP)
+                .register(HEMENSTER, "bait");
 
         /*
          * Bait (Angler)

@@ -719,6 +719,17 @@ public enum FishingArea {
             new Position(1267, 3541, 0),
             new Position(1272, 3546, 0),
             new Position(1272, 3547, 0)
+    ),
+    HEMENSTER(
+            new Position(2632, 3428, 0),
+            new Position(2632, 3427, 0),
+            new Position(2632, 3426, 0),
+            new Position(2632, 3425, 0),
+            new Position(2629, 3420, 0),
+            new Position(2627, 3415, 0),
+            new Position(2630, 3435, 0),
+            new Position(2637, 3443, 0),
+            new Position(2637, 3444, 0)
     )
     ;
 
@@ -861,6 +872,7 @@ public enum FishingArea {
         CAMDOZAAL_BAIT.add(FishingSpot.SWAMP_NET_BAIT, 2);
         WATER_RAVINE_DUNGEON.add(FishingSpot.LURE_BAIT, 6);
         MOUNT_QUIDAMORTEM.add(FishingSpot.USE_ROD, 4);
+        HEMENSTER.add(FishingSpot.HEMENSTER, 5);
         FishingArea.fishingSpotTimer();
     }
 }
