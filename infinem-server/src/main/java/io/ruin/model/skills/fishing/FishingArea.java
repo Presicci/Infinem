@@ -710,6 +710,15 @@ public enum FishingArea {
             new Position(3362, 9588, 0),
             new Position(3359, 9589, 0),
             new Position(3356, 9590, 0)
+    ),
+    MOUNT_QUIDAMORTEM(
+            new Position(1253, 3542, 0),
+            new Position(1252, 3542, 0),
+            new Position(1261, 3542, 0),
+            new Position(1266, 3541, 0),
+            new Position(1267, 3541, 0),
+            new Position(1272, 3546, 0),
+            new Position(1272, 3547, 0)
     )
     ;
 
@@ -851,6 +860,7 @@ public enum FishingArea {
         DORGESH_KAAN_DUNGEON_EAST.add(FishingSpot.SWAMP_NET_BAIT, 2);
         CAMDOZAAL_BAIT.add(FishingSpot.SWAMP_NET_BAIT, 2);
         WATER_RAVINE_DUNGEON.add(FishingSpot.LURE_BAIT, 6);
+        MOUNT_QUIDAMORTEM.add(FishingSpot.USE_ROD, 4);
         FishingArea.fishingSpotTimer();
     }
 }
