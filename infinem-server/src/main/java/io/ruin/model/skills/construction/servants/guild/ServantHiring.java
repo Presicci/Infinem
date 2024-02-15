@@ -52,7 +52,7 @@ public class ServantHiring {
                         return;
                     }
                     if (!player.house.canHaveServant()) {
-                        player.dialogue(new NPCDialogue(servant.getNpcId(), format.apply("Sorry, but I can't work for you unless you have 2 bedrooms in 2 beds in your house.")),
+                        player.dialogue(new NPCDialogue(servant.getNpcId(), format.apply("Sorry, but I can't work for you unless you have 2 beds in 2 bedrooms in your house.")),
                                 returnDialogue);
                         return;
                     }
