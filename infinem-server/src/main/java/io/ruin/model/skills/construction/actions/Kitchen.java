@@ -127,30 +127,32 @@ public class Kitchen {
         ASGARNIAN_ALE(Buildable.ASGARNIAN_ALE_BARREL, 7744),
         GREENMANS_ALE(Buildable.GREENMANS_ALE_BARREL, 7746),
         DRAGON_BITTER(Buildable.DRAGON_BITTER_BARREL, 7748),
-        CHEFS_DELIGHT(Buildable.CHEFS_DELIGHT_BARREL, 7754),
-        ;
+        CHEFS_DELIGHT(Buildable.CHEFS_DELIGHT_BARREL, 7754);
 
-        Buildable buildable;
-        int ale;
+        final Buildable buildable;
+        final int ale;
 
         Barrel(Buildable buildable, int ale) {
             this.buildable = buildable;
             this.ale = ale;
+        }
+
+        public void fill(Player player, Item item) {
+            player.startEvent(event -> {
+                player.lock();
+                player.animate(3660);
+                event.delay(1);
+                item.setId(ale);
+                player.unlock();
+            });
         }
     }
 
     static { // Beer things
         for (Barrel barrel : Barrel.values()) {
             int barrelId = barrel.buildable.getBuiltObjects()[0];
-            ItemObjectAction.register(7742, barrelId, (player, item, obj) -> {
-                player.startEvent(event -> {
-                   player.lock();
-                   player.animate(3660);
-                   event.delay(1);
-                   item.setId(barrel.ale);
-                   player.unlock();
-                });
-            });
+            ItemObjectAction.register(1919, barrelId, (player, item, obj) -> barrel.fill(player, item));
+            ItemObjectAction.register(7742, barrelId, (player, item, obj) -> barrel.fill(player, item));
         }
         ItemAction.registerInventory(Barrel.BEER.ale, "drink", (player, item) -> drinkAle(player, item, p -> {
             p.incrementHp(1);
