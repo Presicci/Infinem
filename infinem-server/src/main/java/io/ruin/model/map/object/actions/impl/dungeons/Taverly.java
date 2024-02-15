@@ -217,7 +217,7 @@ public class Taverly {
          * Jail cells
          */
         ObjectAction.register(2631, 2931, 9690, 0, "open", ((player, obj) -> {
-            if (player.getInventory().hasId(Items.JAIL_KEY) || player.getAbsY() == obj.y + 1 || player.getAbsY() == obj.y - 1) {
+            if (player.getInventory().hasId(Items.JAIL_KEY) || player.getAbsY() == obj.y + 1) {
                 player.startEvent(e -> {
                     if (player.getAbsX() != obj.x) {
                         player.stepAbs(obj.x, player.getAbsY(), StepType.FORCE_WALK);
@@ -229,7 +229,7 @@ public class Taverly {
                 player.sendMessage("It's locked.");
         }));
         ObjectAction.register(2631, 2931, 9694, 0, "open", ((player, obj) -> {
-            if (player.getInventory().hasId(Items.JAIL_KEY) || player.getAbsY() == obj.y + 1 || player.getAbsY() == obj.y - 1) {
+            if (player.getInventory().hasId(Items.JAIL_KEY) || player.getAbsY() == obj.y - 1) {
                 player.startEvent(e -> {
                     if (player.getAbsX() != obj.x) {
                         player.stepAbs(obj.x, player.getAbsY(), StepType.FORCE_WALK);
