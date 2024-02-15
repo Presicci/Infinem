@@ -11,8 +11,6 @@ public class CamdozaalObjects {
 
     // vb 12063 40
     static {
-        // Entrance and exit
-        ObjectAction.register(41357, "enter", (player, obj) -> Traveling.fadeTravel(player, 2952, 5762, 0));
-        ObjectAction.register(41446, "exit", (player, obj) -> Traveling.fadeTravel(player, 2998, 3494, 0));
+
     }
 }
