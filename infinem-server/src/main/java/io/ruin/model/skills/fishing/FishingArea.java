@@ -655,6 +655,14 @@ public enum FishingArea {
             new Position(3078, 3836, 0),
             new Position(3079, 3836, 0),
             new Position(3070, 3839, 0)
+    ),
+    TAVERLY_DUNGEON(
+            new Position(2887, 9766, 0),
+            new Position(2888, 9766, 0),
+            new Position(2889, 9766, 0),
+            new Position(2890, 9766, 0),
+            new Position(2891, 9766, 0),
+            new Position(2884, 9765, 0)
     )
     ;
 
@@ -789,6 +797,7 @@ public enum FishingArea {
         RUINS_OF_UNKAH.add(FishingSpot.CAGE_HARPOON, 3);
         BANDIT_CAMP.add(FishingSpot.NET_BAIT, 1);
         LAVA_MAZE.add(FishingSpot.LAVA_EEL, 2);
+        TAVERLY_DUNGEON.add(FishingSpot.LAVA_EEL, 2);
         FishingArea.fishingSpotTimer();
     }
 }
