@@ -65,6 +65,13 @@ public class Servant extends NPC {
             player.dialogue(new NPCDialogue(getId(), getDefinition().getOwnerOnlyLine()));
             return;
         }
+        if (!getInventory().isEmpty()) {    // are we holding items? if yes, try to give them
+            if (!giveInventory(player)) {
+                faceTemp(player);
+                player.dialogue(new NPCDialogue(getId(), getDefinition().getStillHaveItemsLine(getInventory().getCount())));
+                return;
+            }
+        }
         if (save.getActions() >= ACTIONS_FOR_PAYMENT && !takePaymentFromMoneybag()) {
             faceTemp(player);
             player.dialogue(new NPCDialogue(getId(), getDefinition().getPaymentRequiredLine()),
@@ -99,12 +106,12 @@ public class Servant extends NPC {
         player.dialogue(new NPCDialogue(getId(), getDefinition().getInventoryFullLine(amount)),
                 new OptionsDialogue("Choose an option",
                         new Option("Hold on to them for now", () -> player.dialogue(new NPCDialogue(getId(), getDefinition().getAgreeLine()))),
-                        new Option("Take them to the bank", () -> player.dialogue(new NPCDialogue(getId(), getDefinition().getAgreeLine()), new ActionDialogue(this::depositInventory)))
+                        new Option("Take them to the bank", () -> player.dialogue(new NPCDialogue(getId(), getDefinition().getAgreeLine()), new ActionDialogue(() -> depositInventory(player))))
                 )
         );
     }
 
-    private void depositInventory() {
+    private void depositInventory(Player player) {
         addEvent(event -> {
             state = State.FETCHING;
             setHidden(true);
