@@ -100,7 +100,7 @@ public class MenagerieRoom extends Room {
     @Override
     protected void onBuild() {
         loadSpawnPoints();
-        if (getHouse().getPetContainer().getItems() == null) {
+        if (getHouse().getPetContainer().player == null) {
             getHouse().initPetContainer();
         }
         if (getBuilt(Hotspot.PET_HOUSE) != null && Config.PETS_ROAMING_DISABLED.get(getHouse().getOwner()) == 0) {
