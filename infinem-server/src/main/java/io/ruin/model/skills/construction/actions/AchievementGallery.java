@@ -17,7 +17,9 @@ import io.ruin.model.skills.construction.Buildable;
 import io.ruin.model.skills.construction.Construction;
 import io.ruin.model.skills.magic.SpellBook;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static io.ruin.model.skills.construction.Buildable.*;
 import static io.ruin.model.skills.construction.Construction.forHouseOwnerOnly;
@@ -153,7 +155,18 @@ public class AchievementGallery {
         ObjectAction.register(ANCIENT_ALTAR.getBuiltObjects()[0], "venerate", (player, obj) -> switchDialogue(player, SpellBook.ANCIENT, SpellBook.MODERN));
         ObjectAction.register(LUNAR_ALTAR.getBuiltObjects()[0], "venerate", (player, obj) -> switchDialogue(player, SpellBook.LUNAR, SpellBook.MODERN));
         ObjectAction.register(DARK_ALTAR.getBuiltObjects()[0], "venerate", (player, obj) -> switchDialogue(player, SpellBook.ARCEUUS, SpellBook.MODERN));
-        ObjectAction.register(OCCULT_ALTAR.getBuiltObjects()[0], "venerate", (player, obj) -> switchDialogue(player, SpellBook.ANCIENT, SpellBook.LUNAR, SpellBook.ARCEUUS, SpellBook.MODERN));
+        ObjectAction.register(OCCULT_ALTAR.getBuiltObjects()[0], 1, (player, obj) -> switchDialogue(player, SpellBook.ANCIENT, SpellBook.LUNAR, SpellBook.ARCEUUS, SpellBook.MODERN));
+        ObjectAction.register(OCCULT_ALTAR.getBuiltObjects()[0], 2, (player, obj) -> occultOption(player, 0));
+        ObjectAction.register(OCCULT_ALTAR.getBuiltObjects()[0], 3, (player, obj) -> occultOption(player, 1));
+        ObjectAction.register(OCCULT_ALTAR.getBuiltObjects()[0], 4, (player, obj) -> occultOption(player, 2));
+    }
+
+    private static void occultOption(Player player, int index) {
+        List<SpellBook> books = new ArrayList<>();
+        for (SpellBook book : SpellBook.values()) {
+            if (!book.isActive(player)) books.add(book);
+        }
+        PrayerAltar.switchBook(player, books.get(index), true);
     }
 
     private static void switchDialogue(Player player, SpellBook... books) {

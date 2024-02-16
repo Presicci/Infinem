@@ -71,7 +71,7 @@ public class PrayerAltar {
         /**
          * Custom Edgeville altar
          */
-        final int[] ALTARS = new int[] { 18258, 31858, 33524 };
+        final int[] ALTARS = new int[] { 18258, 33524 };
         for(int altar : ALTARS){
             ObjectAction.register(altar, actions -> {
                 actions[1] = (player, obj) -> pray(player);
