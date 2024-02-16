@@ -11,11 +11,16 @@ import io.ruin.model.skills.construction.Buildable;
 import io.ruin.model.skills.construction.Construction;
 import io.ruin.model.skills.construction.House;
 
+import java.util.Calendar;
+
 import static io.ruin.cache.ItemID.COINS_995;
 
 public class Bedroom {
 
     static {
+        ObjectAction.register(Buildable.OAK_CLOCK.getBuiltObjects()[0], "read", (player, object) -> checkTime(player));
+        ObjectAction.register(Buildable.TEAK_CLOCK.getBuiltObjects()[0], "read", (player, object) -> checkTime(player));
+        ObjectAction.register(Buildable.GILDED_CLOCK.getBuiltObjects()[0], "read", (player, object) -> checkTime(player));
         ObjectAction.register(Buildable.SERVANTS_MONEYBAG.getBuiltObjects()[0], "use", Construction.forHouseOwnerOnly((player, house) -> {
             player.dialogue(new ItemDialogue().one(Buildable.SERVANTS_MONEYBAG.getItemId(), house.getMoneyInMoneybag() == 0 ? "The moneybag is empty." : "The servant's moneybag currently has " + NumberUtils.formatNumber(house.getMoneyInMoneybag()) + " coins in it."),
                     new OptionsDialogue("Choose an option",
@@ -25,6 +30,37 @@ public class Bedroom {
                     )
             );
         }));
+    }
+
+    private static final String[] NUMS = { "zero", "one", "two", "three", "four",
+            "five", "six", "seven", "eight", "nine",
+            "ten", "eleven", "twelve", "thirteen",
+            "fourteen", "fifteen", "sixteen", "seventeen",
+            "eighteen", "nineteen", "twenty", "twenty one",
+            "twenty two", "twenty three", "twenty four",
+            "twenty five", "twenty six", "twenty seven",
+            "twenty eight", "twenty nine"
+    };
+
+    private static void checkTime(Player player) {
+        int minutes = Calendar.getInstance().get(Calendar.MINUTE);
+        if (minutes == 0) {
+            player.sendMessage("It's Rune o'clock.");
+        } else if (minutes == 1) {
+            player.sendMessage("It's one minute past Rune.");
+        } else if (minutes == 59) {
+            player.sendMessage("It's one minute to Rune.");
+        } else if (minutes == 15) {
+            player.sendMessage("It's quarter past Rune.");
+        } else if (minutes == 30) {
+            player.sendMessage("It's half past Rune.");
+        } else if (minutes == 45) {
+            player.sendMessage("It's quarter to Rune.");
+        } else if (minutes < 30) {
+            player.sendMessage("It's " + NUMS[minutes] + " past Rune.");
+        } else {
+            player.sendMessage("It's " + NUMS[60 - minutes] + " to Rune.");
+        }
     }
 
     private static void withdraw(Player player, House house) {
