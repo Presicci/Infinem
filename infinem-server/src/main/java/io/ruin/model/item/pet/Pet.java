@@ -71,6 +71,14 @@ public enum Pet {
     IKKLE_HYDRA_RED(22750, 8494, 8495, null),
     IKKLE_HYDRA_BLACK(22752, 8495, 8492, null),
     SRARACHA(23495, 2143, null, 3000, 600),
+    SMOLCANO(23760, 8731, 8739, null),
+    YOUNGLLEF(23757, 8729, 8737, null),
+    CORRUPTED_YOUNGLLEF(23759, 8730, 8738, null),
+    LITTLE_NIGHTMARE(24491, 9399, 8541, null),
+    LITTLE_PARASITE(25836, 8541, 9399, null),
+    LIL_CREATOR(25348, 3566, 5008, null),
+    LIL_DESTRUCTOR(25350, 5008, 3566, null),
+    TINY_TEMPOR(25602, 10562, null),
 
     /**
      * Skilling pets
@@ -181,10 +189,7 @@ public enum Pet {
     HELL_CAT(7582, 1625, 5604, null),
     HELL_OVERGROWN_CAT(7581, 5604, 5590, null),
     HELL_WILY_CAT(7585, 5590, 1632, null),
-    HELL_LAZY_CAT(7584, 1632, 5597, null),
-    SMOLCANO(23760, 8731, 8739, null),
-    YOUNGLLEF(23757, 8729, 8737, null),
-    CORRUPTED_YOUNGLLEF(23759, 8730, 8738, null);
+    HELL_LAZY_CAT(7584, 1632, 5597, null);
 
     public final int itemId, npcId, metaId;
 
