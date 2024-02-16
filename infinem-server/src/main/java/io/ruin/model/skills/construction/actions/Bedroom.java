@@ -25,9 +25,9 @@ public class Bedroom {
             ObjectAction.register(obj, "haircut", (player, object) -> Hairdresser.open(player, -1, true));
             ObjectAction.register(obj, "shave", (player, object) -> Hairdresser.open(player, -1, false));
         }
-        ObjectAction.register(Buildable.OAK_CLOCK.getBuiltObjects()[0], "read", (player, object) -> checkTime(player));
-        ObjectAction.register(Buildable.TEAK_CLOCK.getBuiltObjects()[0], "read", (player, object) -> checkTime(player));
-        ObjectAction.register(Buildable.GILDED_CLOCK.getBuiltObjects()[0], "read", (player, object) -> checkTime(player));
+        for (int obj : Arrays.asList(Buildable.OAK_CLOCK.getBuiltObjects()[0], Buildable.TEAK_CLOCK.getBuiltObjects()[0], Buildable.GILDED_CLOCK.getBuiltObjects()[0])) {
+            ObjectAction.register(obj, "read", (player, object) -> checkTime(player));
+        }
         ObjectAction.register(Buildable.SERVANTS_MONEYBAG.getBuiltObjects()[0], "use", Construction.forHouseOwnerOnly((player, house) -> {
             player.dialogue(new ItemDialogue().one(Buildable.SERVANTS_MONEYBAG.getItemId(), house.getMoneyInMoneybag() == 0 ? "The moneybag is empty." : "The servant's moneybag currently has " + NumberUtils.formatNumber(house.getMoneyInMoneybag()) + " coins in it."),
                     new OptionsDialogue("Choose an option",
