@@ -1,6 +1,7 @@
 package io.ruin.model.skills.construction.servants;
 
 import com.google.gson.annotations.Expose;
+import io.ruin.model.inter.Interface;
 import io.ruin.model.item.ItemContainer;
 
 public class ServantSave {
@@ -75,6 +76,7 @@ public class ServantSave {
     public void hire(ServantDefinition servant) {
         hiredServant = servant;
         resetActions();
+        inventory.init(servant.getItemCapacity(), false);
         inventory.clear();
     }
 }
