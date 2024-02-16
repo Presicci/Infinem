@@ -5,12 +5,14 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.handlers.Hairdresser;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.construction.Buildable;
 import io.ruin.model.skills.construction.Construction;
 import io.ruin.model.skills.construction.House;
 
+import java.util.Arrays;
 import java.util.Calendar;
 
 import static io.ruin.cache.ItemID.COINS_995;
@@ -18,6 +20,11 @@ import static io.ruin.cache.ItemID.COINS_995;
 public class Bedroom {
 
     static {
+        for (int obj : Arrays.asList(Buildable.OAK_SHAVING_STAND.getBuiltObjects()[0], Buildable.OAK_DRESSER.getBuiltObjects()[0], Buildable.TEAK_DRESSER.getBuiltObjects()[0],
+                Buildable.FANCY_TEAK_DRESSER.getBuiltObjects()[0], Buildable.MAHOGANY_DRESSER.getBuiltObjects()[0], Buildable.GILDED_DRESSER.getBuiltObjects()[0])) {
+            ObjectAction.register(obj, "haircut", (player, object) -> Hairdresser.open(player, -1, true));
+            ObjectAction.register(obj, "shave", (player, object) -> Hairdresser.open(player, -1, false));
+        }
         ObjectAction.register(Buildable.OAK_CLOCK.getBuiltObjects()[0], "read", (player, object) -> checkTime(player));
         ObjectAction.register(Buildable.TEAK_CLOCK.getBuiltObjects()[0], "read", (player, object) -> checkTime(player));
         ObjectAction.register(Buildable.GILDED_CLOCK.getBuiltObjects()[0], "read", (player, object) -> checkTime(player));

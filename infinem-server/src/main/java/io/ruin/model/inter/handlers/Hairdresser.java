@@ -11,10 +11,7 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SimpleAction;
-import io.ruin.model.inter.dialogue.ActionDialogue;
-import io.ruin.model.inter.dialogue.NPCDialogue;
-import io.ruin.model.inter.dialogue.OptionsDialogue;
-import io.ruin.model.inter.dialogue.PlayerDialogue;
+import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import lombok.val;
@@ -35,11 +32,11 @@ public class Hairdresser {
                             new Option("I'd like a haircut please.",
                                     new PlayerDialogue("I'd like a haircut please."),
                                     new NPCDialogue(npc, "Please select the hairstyle you would like from this brochure. I'll even throw in a free recolour."),
-                                    new ActionDialogue(() -> open(player, npc, true))),
+                                    new ActionDialogue(() -> open(player, npc.getId(), true))),
                             new Option("I'd like a shave please.",
                                     new PlayerDialogue("I'd like a shave please."),
                                     new NPCDialogue(npc, "Please select the facial hair you would like from this brochure. I'll even throw in a free recolour."),
-                                    new ActionDialogue(() -> open(player, npc, false))),
+                                    new ActionDialogue(() -> open(player, npc.getId(), false))),
                             new Option("No thank you.",
                                     new PlayerDialogue("No thank you."),
                                     new NPCDialogue(npc, "Very well. Come back if you change your mind."))
@@ -52,7 +49,7 @@ public class Hairdresser {
                             new Option("Yes please.",
                                     new PlayerDialogue("Yes please."),
                                     new NPCDialogue(npc, "Please select the hairstyle and colour you would like from this brochure."),
-                                    new ActionDialogue(() -> open(player, npc, true))),
+                                    new ActionDialogue(() -> open(player, npc.getId(), true))),
                             new Option("No thank you.",
                                     new PlayerDialogue("No thank you."),
                                     new NPCDialogue(npc, "Very well. Come back if you change your mind."))
@@ -62,8 +59,12 @@ public class Hairdresser {
 
     }
 
-    private static void open(Player player, NPC npc, boolean haircut) {
+    public static void open(Player player, int npc, boolean haircut) {
         boolean male = player.getAppearance().isMale();
+        if (!haircut && !male) {
+            player.sendMessage("You don't have any facial hair to shave.");
+            return;
+        }
         int hair = Style.HAIR.getIndexById(male, player.getAppearance().styles[0]);
         int beard = Style.JAW.getIndexById(male, player.getAppearance().styles[1]);
         int color = player.getAppearance().colors[0];
@@ -79,10 +80,11 @@ public class Hairdresser {
             Config.MAKEOVER_INTERFACE.set(player, male ? 0 : 1);
             Config.HAIRCUT.set(player, 2);
         }
+        player.putTemporaryAttribute("BARBER_NPC", npc);
         player.openInterface(InterfaceType.MAIN, Interface.HAIRDRESSER);
         player.getPacketSender().sendAccessMask(Interface.HAIRDRESSER, 2, 0, 23, 2);
         player.getPacketSender().sendAccessMask(Interface.HAIRDRESSER, 8, 0, 24, 2);
-        player.getPacketSender().sendString(82, 9, "CONFIRM - (" + (PRICE == 0 ? "Free!" : NumberUtils.formatNumber(PRICE) + " coins") + ")");
+        player.getPacketSender().sendString(82, 9, "CONFIRM - (" + (PRICE == 0 || npc < 0 ? "Free!" : NumberUtils.formatNumber(PRICE) + " coins") + ")");
     }
 
     private static void confimDialogue(Player player, int npcId, boolean haircut) {
@@ -102,11 +104,11 @@ public class Hairdresser {
         NPCAction.register(1305, "haircut", ((player, npc) -> {
             if (player.getAppearance().isMale()) {
                 player.dialogue(new OptionsDialogue("What would you like?",
-                        new Option("Haircut", () -> open(player, npc, true)),
-                        new Option("Shave", () -> open(player, npc, false))
+                        new Option("Haircut", () -> open(player, npc.getId(), true)),
+                        new Option("Shave", () -> open(player, npc.getId(), false))
                 ));
             } else {
-                open(player, npc, true);
+                open(player, npc.getId(), true);
             }
         }));
         InterfaceHandler.register(Interface.HAIRDRESSER, h -> {
@@ -135,12 +137,17 @@ public class Hairdresser {
                 val slot = player.getTemporaryAttributeIntOrZero(haircut ? AttributeKey.SELECTED_HAIR_STYLE : AttributeKey.SELECTED_BEARD_STYLE);
                 val style = haircut ? Style.HAIR.getIdAtIndex(male, slot) : Style.JAW.getIdAtIndex(true, slot);
                 val colour = player.getTemporaryAttributeIntOrZero(AttributeKey.SELECTED_HAIR_COLOR);
-                val npcId = 1305;
+                val npcId = player.getTemporaryAttributeOrDefault("BARBER_NPC", -1);
+                player.removeTemporaryAttribute("BARBER_NPC");
                 if (style == -1 || slot == -1 || colour == -1) {
-                    player.dialogue(new NPCDialogue(npcId, "You must select a hair style and colour first!"));
+                    if (npcId > 0) {
+                        player.dialogue(new NPCDialogue(npcId, "You must select a hair style and colour first!"));
+                    } else {
+                        player.dialogue(new MessageDialogue("You must select a hair style and colour first!"));
+                    }
                     return;
                 }
-                if (!player.getInventory().contains(995, PRICE)) {
+                if (npcId > 0 && !player.getInventory().contains(995, PRICE)) {
                     player.closeInterface(InterfaceType.MAIN);
                     player.dialogue(new NPCDialogue(npcId, "You don't have enough money for a haircut."));
                     return;
@@ -148,9 +155,14 @@ public class Hairdresser {
                 player.getAppearance().modifyAppearance((byte) (haircut ? 0 : 1), (short) style);
                 player.getAppearance().modifyColor((byte) 0, (byte) colour);
                 player.closeInterface(InterfaceType.MAIN);
-                player.getInventory().remove(995, PRICE);
-                player.getTaskManager().doLookupByUUID(435, 1); // Get a Haircut at the Barber in Falador
-                confimDialogue(player, npcId, haircut);
+                if (npcId == 1305)
+                    player.getTaskManager().doLookupByUUID(435, 1); // Get a Haircut at the Barber in Falador
+                if (npcId > 0) {
+                    player.getInventory().remove(995, PRICE);
+                    confimDialogue(player, npcId, haircut);
+                } else {
+                    player.dialogue(new PlayerDialogue("Damn, I look good."));
+                }
             };
         });
     }
