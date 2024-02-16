@@ -473,7 +473,7 @@ public class Servant extends NPC {
             }
             save.incrementActions();
             save.setLastAction(ServantAction.UNNOTE);
-            save.setLastActionItemId(id);
+            save.setLastActionItemId(item.getId());
             save.setLastActionItemAmount(finalAmount);
             startFollowing();
         });
