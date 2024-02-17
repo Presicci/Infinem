@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.LogoutListener;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -127,7 +128,9 @@ public class PortalChamberRoom extends Room {
     }
 
     private void scry(Player player, int portalIndex) {
-        PortalDestination dest = portalDestinations[portalIndex];
+        int count = portalDestinations[portalIndex].bounds.getRegion().players.size();
+        player.dialogue(new MessageDialogue("There are " + count + " players at the destination."));
+        /*PortalDestination dest = portalDestinations[portalIndex];
         if (dest == null) {
             player.dialogue(new MessageDialogue("That portal is not focused."));
             return;
@@ -141,9 +144,16 @@ public class PortalChamberRoom extends Room {
             player.openInterface(InterfaceType.SECONDARY_OVERLAY, Interface.SCRYING_POOL);
             player.lock();
             event.delay(1);
+            player.logoutListener = new LogoutListener().onAttempt(p -> {
+                p.putTemporaryAttribute("SCRY_LOGOUT", 1);
+                p.closeDialogue();
+                p.getMovement().teleport(getHouse().getLocation().getPosition());
+                return true;
+            });
             player.dialogue(new MessageDialogue("You view " + dest.name + "...") {
                 @Override
                 public void closed(Player player) {
+                    if (player.hasTemporaryAttribute("SCRY_LOGOUT")) return;
                     if (getHouse().getOwner() == player) {
                         player.house.buildAndEnter(player, returnPosition, false);
                     } else {
@@ -154,8 +164,9 @@ public class PortalChamberRoom extends Room {
             event.waitForDialogue(player);
             player.setHidden(false);
             player.getAppearance().setNpcId(-1);
+            player.logoutListener = null;
             player.unlock();
-        });
+        });*/
     }
 
     private void teleport(Player p, int portalIndex) {
