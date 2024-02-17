@@ -89,8 +89,9 @@ public class MenagerieRoom extends Room {
         if (pet == null) {
             return;
         }
-        if (pet.move(pet.getId(), 1, player.getInventory()) > 0 && Config.PETS_ROAMING_DISABLED.get(player) == 0) {
-            despawnPet(pet.getDef().pet); // player removed pet from house, despawn it from the house
+        if (pet.move(pet.getId(), 1, player.getInventory()) > 0) {
+            if (Config.PETS_ROAMING_DISABLED.get(player) == 0)
+                despawnPet(pet.getDef().pet); // player removed pet from house, despawn it from the house
             getHouse().getPetContainer().send(player);
         }
     }
