@@ -1,0 +1,14 @@
+[
+  {
+    "ids": [ 9013 ],
+    "guaranteed": [
+      { "id": 526, "min": 1, "max": 1 },   //Bones
+      { "id": 6070, "min": 1, "max": 1 },   //Mourner cloak
+      { "id": 6069, "min": 1, "max": 1 },   //Mourner boots
+      { "id": 6065, "min": 1, "max": 1 },   //Mourner top
+      { "id": 6068, "min": 1, "max": 1 },   //Mourner gloves
+      { "id": 1506, "min": 1, "max": 1 },   //Gas mask
+      { "id": 6067, "min": 1, "max": 1 }   //Mourner trousers
+    ]
+  }
+]
