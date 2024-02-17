@@ -30,6 +30,10 @@ public enum KandarinReward {
         this.additionalDescription = additionalDescription;
     }
 
+    public boolean checkReward(Player player, String message) {
+        return TaskArea.KANDARIN.checkTierUnlock(player, tier, message);
+    }
+
     public boolean hasReward(Player player) {
         return TaskArea.KANDARIN.hasTierUnlocked(player, tier);
     }

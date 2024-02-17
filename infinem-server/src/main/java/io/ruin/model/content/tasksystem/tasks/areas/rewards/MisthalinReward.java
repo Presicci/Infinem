@@ -5,6 +5,7 @@ import io.ruin.model.content.scroll.DiaryScroll;
 import io.ruin.model.content.tasksystem.tasks.TaskArea;
 import io.ruin.model.content.tasksystem.tasks.areas.AreaTaskTier;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -77,6 +78,10 @@ public enum MisthalinReward {
         this.tier = tier;
         this.description = description;
         this.additionalDescription = additionalDescription;
+    }
+
+    public boolean checkReward(Player player, String message) {
+        return TaskArea.MISTHALIN.checkTierUnlock(player, tier, message);
     }
 
     public boolean hasReward(Player player) {

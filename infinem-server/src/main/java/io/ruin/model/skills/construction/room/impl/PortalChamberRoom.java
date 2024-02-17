@@ -63,9 +63,9 @@ public class PortalChamberRoom extends Room {
         TROLL_STRONGHOLD(1, BasaltTeleport.TROLL_STRONGHOLD.toBounds(), new int[]{33179, 33180, 33181}, new Item(22604, 100), new Item(22593, 100), new Item(22597, 300)),
         WEISS(1, BasaltTeleport.WEISS.toBounds(), new int[]{37581, 37593, 37605}, new Item(22604, 100), new Item(22593, 100), new Item(22595, 300)),
 
-        GRAND_EXCHANGE(VARROCK, MagicTeleportBounds.VARROCK_GE.getBounds(), Config.varpbit(4585, true), MisthalinReward.GRAND_EXCHANGE_TELEPORT::hasReward),
-        SEERS_VILLAGE(CAMELOT, MagicTeleportBounds.CAMELOT_SEERS.getBounds(), Config.varpbit(4560, true), KandarinReward.SEERS_TELEPORT::hasReward),
-        YANILLE(WATCHTOWER, MagicTeleportBounds.WATCHTOWER_YANILLE.getBounds(), Config.varpbit(4548, true), KandarinReward.YANILLE_TELEPORT::hasReward);
+        GRAND_EXCHANGE(VARROCK, MagicTeleportBounds.VARROCK_GE.getBounds(), Config.varpbit(4585, true), player -> MisthalinReward.GRAND_EXCHANGE_TELEPORT.checkReward(player, NOT_ENOUGH_TASKS_MESSAGE)),
+        SEERS_VILLAGE(CAMELOT, MagicTeleportBounds.CAMELOT_SEERS.getBounds(), Config.varpbit(4560, true), player -> KandarinReward.SEERS_TELEPORT.checkReward(player, NOT_ENOUGH_TASKS_MESSAGE)),
+        YANILLE(WATCHTOWER, MagicTeleportBounds.WATCHTOWER_YANILLE.getBounds(), Config.varpbit(4548, true), player -> KandarinReward.YANILLE_TELEPORT.checkReward(player, NOT_ENOUGH_TASKS_MESSAGE));
 
         final int levelReq;
         final Item[] runes;
@@ -92,11 +92,13 @@ public class PortalChamberRoom extends Room {
             this.alternateReq = alternateReq;
             this.config = config;
             other.alternate = this;
-            other.alternateReq = p -> true;
+            other.alternateReq = alternateReq;
             alternate = other;
             hidden = true;
         }
     }
+
+    private static final String NOT_ENOUGH_TASKS_MESSAGE = "use this teleport.";
 
     @Expose
     private PortalDestination[] portalDestinations = new PortalDestination[3];
@@ -189,7 +191,8 @@ public class PortalChamberRoom extends Room {
         } else {
             if (dest.alternate != null) {
                 if (dest.alternate.config.get(p) == 1) {
-                    p.getMovement().teleport(dest.alternate.bounds.randomX(), dest.alternate.bounds.randomY(), dest.alternate.bounds.z);
+                    if (dest.alternateReq.test(p))
+                        p.getMovement().teleport(dest.alternate.bounds.randomX(), dest.alternate.bounds.randomY(), dest.alternate.bounds.z);
                 } else {
                     p.getMovement().teleport(dest.bounds.randomX(), dest.bounds.randomY(), dest.bounds.z);
                 }
@@ -210,7 +213,8 @@ public class PortalChamberRoom extends Room {
             return;
         }
         if (dest.alternate.config.get(p) == 0) {
-            p.getMovement().teleport(dest.alternate.bounds.randomX(), dest.alternate.bounds.randomY(), dest.alternate.bounds.z);
+            if (dest.alternateReq.test(p))
+                p.getMovement().teleport(dest.alternate.bounds.randomX(), dest.alternate.bounds.randomY(), dest.alternate.bounds.z);
         } else {
             p.getMovement().teleport(dest.bounds.randomX(), dest.bounds.randomY(), dest.bounds.z);
         }
