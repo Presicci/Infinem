@@ -877,6 +877,19 @@ public class PlayerCombat extends Combat {
         return false;
     }
 
+    private void efaritaysAidBoost(Player player, Hit hit) {
+        if (hit.attackStyle != null && target != null && target.isNpc()) {
+            String name = target.npc.getDef().name;
+            if (!name.equalsIgnoreCase("dessous") && !name.equalsIgnoreCase("feral vampyre")
+                    && !name.equalsIgnoreCase("kroy") && !name.equalsIgnoreCase("vampyre juvenile")) {
+                return;
+            }
+            if (EfaritaysAid.test(player)) {
+                hit.boostDamage(0.10);
+            }
+        }
+    }
+
     /**
      * The Amulet of Avarice boosts the player's accuracy and damage by 20% when fighting revenants.
      * <a href="https://oldschool.runescape.wiki/w/Amulet_of_avarice">Wiki link</a>
@@ -938,6 +951,9 @@ public class PlayerCombat extends Combat {
             if(hit.attackStyle.isMelee() && player.getEquipment().hasId(22978))
                 hit.boostAttack(0.2).boostDamage(0.2);
         }
+
+        // Efaritay's aid vs Tier 1 vampyre
+        efaritaysAidBoost(player, hit);
 
         /* twisted bow */
         if(hit.attackStyle != null && hit.attackStyle.isRanged() && (player.getEquipment().hasId(20997))) {
