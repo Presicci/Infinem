@@ -3,6 +3,8 @@ package io.ruin.model.skills.construction.room.impl;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.ObjectDef;
+import io.ruin.model.content.tasksystem.tasks.areas.rewards.KandarinReward;
+import io.ruin.model.content.tasksystem.tasks.areas.rewards.MisthalinReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LogoutListener;
 import io.ruin.model.inter.Interface;
@@ -64,9 +66,9 @@ public class PortalChamberRoom extends Room {
         TROLL_STRONGHOLD(1, BasaltTeleport.TROLL_STRONGHOLD.toBounds(), new int[]{33179, 33180, 33181}, new Item(22604, 100), new Item(22593, 100), new Item(22597, 300)),
         WEISS(1, BasaltTeleport.WEISS.toBounds(), new int[]{37581, 37593, 37605}, new Item(22604, 100), new Item(22593, 100), new Item(22595, 300)),
 
-        GRAND_EXCHANGE(VARROCK, MagicTeleportBounds.VARROCK_GE.getBounds()),
-        SEERS_VILLAGE(CAMELOT, MagicTeleportBounds.CAMELOT_SEERS.getBounds()),
-        YANILLE(WATCHTOWER, MagicTeleportBounds.WATCHTOWER_YANILLE.getBounds());
+        GRAND_EXCHANGE(VARROCK, MagicTeleportBounds.VARROCK_GE.getBounds(), MisthalinReward.GRAND_EXCHANGE_TELEPORT::hasReward),
+        SEERS_VILLAGE(CAMELOT, MagicTeleportBounds.CAMELOT_SEERS.getBounds(), KandarinReward.SEERS_TELEPORT::hasReward),
+        YANILLE(WATCHTOWER, MagicTeleportBounds.WATCHTOWER_YANILLE.getBounds(), KandarinReward.YANILLE_TELEPORT::hasReward);
 
         final int levelReq;
         final Item[] runes;
@@ -87,12 +89,12 @@ public class PortalChamberRoom extends Room {
             this.focusReq = p -> true;
         }
 
-        PortalDestination(PortalDestination other, Bounds bounds) {
+        PortalDestination(PortalDestination other, Bounds bounds, Predicate<Player> alternateReq) {
             this(other.levelReq, bounds, other.portalIds, other.runes);
             other.alternate = this;
             other.alternateReq = p -> true;
             alternate = other;
-            alternateReq = p -> true;
+            this.alternateReq = alternateReq;
             hidden = true;
         }
     }
@@ -112,9 +114,9 @@ public class PortalChamberRoom extends Room {
         getHotspotObjects(Hotspot.PORTAL_2).forEach(obj -> ObjectAction.register(obj, 1, (p, o) -> teleport(p, 1)));
         getHotspotObjects(Hotspot.PORTAL_3).forEach(obj -> ObjectAction.register(obj, 1, (p, o) -> teleport(p, 2)));
 
-        getHotspotObjects(Hotspot.PORTAL_1).forEach(obj -> ObjectAction.register(obj, 2, (p, o) -> toggle(p, 0)));
-        getHotspotObjects(Hotspot.PORTAL_2).forEach(obj -> ObjectAction.register(obj, 2, (p, o) -> toggle(p, 1)));
-        getHotspotObjects(Hotspot.PORTAL_3).forEach(obj -> ObjectAction.register(obj, 2, (p, o) -> toggle(p, 2)));
+        getHotspotObjects(Hotspot.PORTAL_1).forEach(obj -> ObjectAction.register(obj, 3, (p, o) -> toggle(p, 0)));
+        getHotspotObjects(Hotspot.PORTAL_2).forEach(obj -> ObjectAction.register(obj, 3, (p, o) -> toggle(p, 1)));
+        getHotspotObjects(Hotspot.PORTAL_3).forEach(obj -> ObjectAction.register(obj, 3, (p, o) -> toggle(p, 2)));
     }
 
     private void openScrySelection(Player player) {

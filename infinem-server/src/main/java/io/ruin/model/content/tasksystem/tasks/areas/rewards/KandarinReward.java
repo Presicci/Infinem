@@ -16,7 +16,9 @@ import java.util.List;
  */
 public enum KandarinReward {
     THIEVING_BOOST_1(AreaTaskTier.MEDIUM, "10% increased chance to pickpocket in Ardougne"),
-    THIEVING_BOOST_2(AreaTaskTier.HARD, "10% increased chance to pickpocket around Gielinor");
+    YANILLE_TELEPORT(AreaTaskTier.MEDIUM, "Can switch the destination of Watchtower Teleport to Yanille"),
+    THIEVING_BOOST_2(AreaTaskTier.HARD, "10% increased chance to pickpocket around Gielinor"),
+    SEERS_TELEPORT(AreaTaskTier.HARD, "Can switch the destination of Camelot Teleport to Seers' Village");
 
     private final AreaTaskTier tier;
     private final String description;

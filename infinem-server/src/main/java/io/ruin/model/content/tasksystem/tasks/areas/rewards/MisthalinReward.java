@@ -2,6 +2,7 @@ package io.ruin.model.content.tasksystem.tasks.areas.rewards;
 
 import io.ruin.cache.Color;
 import io.ruin.model.content.scroll.DiaryScroll;
+import io.ruin.model.content.tasksystem.tasks.TaskArea;
 import io.ruin.model.content.tasksystem.tasks.areas.AreaTaskTier;
 import io.ruin.model.entity.player.Player;
 
@@ -39,6 +40,7 @@ public enum MisthalinReward {
             "Skull sceptre parts now give 2 extra bone fragment"),
     AVAS_ACCUMULATOR(AreaTaskTier.MEDIUM, "Can purchase Ava's accumulator",
             "Can be purchased from Ava in draynor manor"),
+    GRAND_EXCHANGE_TELEPORT(AreaTaskTier.MEDIUM, "Can switch the destination of Varrock Teleport to the GE"),
     EXPLORER_RING_3(AreaTaskTier.HARD, "Unlocks the Explorer's Ring 3",
             "50% run energy replenish 4 times a day",
             "Unlimited teleports to cabbage patch near Falador farm"),
@@ -75,6 +77,10 @@ public enum MisthalinReward {
         this.tier = tier;
         this.description = description;
         this.additionalDescription = additionalDescription;
+    }
+
+    public boolean hasReward(Player player) {
+        return TaskArea.MISTHALIN.hasTierUnlocked(player, tier);
     }
 
     public static void openRewards(Player player) {
