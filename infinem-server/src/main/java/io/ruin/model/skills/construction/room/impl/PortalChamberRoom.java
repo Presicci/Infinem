@@ -18,6 +18,7 @@ import io.ruin.model.skills.construction.Buildable;
 import io.ruin.model.skills.construction.Hotspot;
 import io.ruin.model.skills.construction.RoomDefinition;
 import io.ruin.model.skills.construction.room.Room;
+import io.ruin.model.skills.magic.MagicTeleportBounds;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
@@ -30,24 +31,24 @@ import static io.ruin.model.skills.magic.rune.Rune.*;
 public class PortalChamberRoom extends Room {
 
     public enum PortalDestination {
-        VARROCK(25, new Bounds(3211, 3422, 3214, 3424, 0), new int[]{13615, 13622, 13629}, LAW.toItem(100), AIR.toItem(300), FIRE.toItem(100)),
-        LUMBRIDGE(31, new Bounds(3221, 3218, 3224, 3219, 0), new int[]{13616, 13623, 13630}, LAW.toItem(100), EARTH.toItem(100), AIR.toItem(300)),
-        FALADOR(37, new Bounds(2964, 3378, 2966, 3379, 0), new int[]{13617, 13624, 13631}, LAW.toItem(100), WATER.toItem(100), AIR.toItem(300)),
-        CAMELOT(45, new Bounds(2756, 3746, 2759, 3480, 0), new int[]{13618, 13625, 13632}, LAW.toItem(100), AIR.toItem(500)),
-        ARDOUGNE(51, new Bounds(2659, 3304, 2664, 3308, 0), new int[]{13619, 13626, 13633}, LAW.toItem(200), WATER.toItem(200)),
-        WATCHTOWER(58, new Bounds(2546, 3112, 2547, 3113, 2), new int[]{13620, 13627, 13634}, LAW.toItem(200), EARTH.toItem(200)),
-        SENNTISTEN(60, new Bounds(3349, 3345, 3346, 3348, 0), new int[]{29340, 29348, 29356}, SOUL.toItem(100), LAW.toItem(200)),
-        MARIM(64, new Bounds(2784, 2785, 2785, 2786, 0), new int[]{29344, 29352, 29360}, LAW.toItem(200), FIRE.toItem(200), WATER.toItem(200), new Item(1963, 100)),
-        KHARYRLL(66, new Bounds(3490, 3471, 3493, 3472, 0), new int[]{29338, 29346, 29354}, BLOOD.toItem(100), LAW.toItem(200)),
-        LUNAR_ISLE(69, new Bounds(2112, 3915, 0, 1), new int[]{29339, 29347, 29355}, LAW.toItem(100), ASTRAL.toItem(200), EARTH.toItem(200)),
-        KOUREND(69, new Bounds(1644, 3672, 1642, 3674, 0), new int[]{29345, 29353, 29361}, SOUL.toItem(200), LAW.toItem(200), FIRE.toItem(500), WATER.toItem(400)),
-        WATERBIRTH_ISLAND(72, new Bounds(2546, 3758, 0, 1), new int[]{29342, 29350, 29358}, LAW.toItem(100), ASTRAL.toItem(200), WATER.toItem(100)),
-        FISHING_GUILD(85, new Bounds(2611, 3392, 0, 1), new int[]{29343, 29351, 29359}, LAW.toItem(300), ASTRAL.toItem(300), WATER.toItem(1000)),
-        ANNAKARL(90, new Bounds(3287, 3886, 3288, 3887, 0), new int[]{29341, 29349, 29357}, BLOOD.toItem(200), LAW.toItem(200)),
+        VARROCK(25, MagicTeleportBounds.VARROCK.getBounds(), new int[]{13615, 13622, 13629}, LAW.toItem(100), AIR.toItem(300), FIRE.toItem(100)),
+        LUMBRIDGE(31, MagicTeleportBounds.LUMBRIDGE.getBounds(), new int[]{13616, 13623, 13630}, LAW.toItem(100), EARTH.toItem(100), AIR.toItem(300)),
+        FALADOR(37, MagicTeleportBounds.FALADOR.getBounds(), new int[]{13617, 13624, 13631}, LAW.toItem(100), WATER.toItem(100), AIR.toItem(300)),
+        CAMELOT(45, MagicTeleportBounds.CAMELOT.getBounds(), new int[]{13618, 13625, 13632}, LAW.toItem(100), AIR.toItem(500)),
+        ARDOUGNE(51, MagicTeleportBounds.ARDOUGNE.getBounds(), new int[]{13619, 13626, 13633}, LAW.toItem(200), WATER.toItem(200)),
+        WATCHTOWER(58, MagicTeleportBounds.WATCHTOWER.getBounds(), new int[]{13620, 13627, 13634}, LAW.toItem(200), EARTH.toItem(200)),
+        SENNTISTEN(60, MagicTeleportBounds.SENNTISTEN.getBounds(), new int[]{29340, 29348, 29356}, SOUL.toItem(100), LAW.toItem(200)),
+        MARIM(64, MagicTeleportBounds.APE_ATOLL.getBounds(), new int[]{29344, 29352, 29360}, LAW.toItem(200), FIRE.toItem(200), WATER.toItem(200), new Item(1963, 100)),
+        KHARYRLL(66, MagicTeleportBounds.KHARYLL.getBounds(), new int[]{29338, 29346, 29354}, BLOOD.toItem(100), LAW.toItem(200)),
+        LUNAR_ISLE(69, MagicTeleportBounds.MOONCLAN.getBounds(), new int[]{29339, 29347, 29355}, LAW.toItem(100), ASTRAL.toItem(200), EARTH.toItem(200)),
+        KOUREND(69, MagicTeleportBounds.KOUREND.getBounds(), new int[]{29345, 29353, 29361}, SOUL.toItem(200), LAW.toItem(200), FIRE.toItem(500), WATER.toItem(400)),
+        WATERBIRTH_ISLAND(72, MagicTeleportBounds.WATERBIRTH.getBounds(), new int[]{29342, 29350, 29358}, LAW.toItem(100), ASTRAL.toItem(200), WATER.toItem(100)),
+        FISHING_GUILD(85, MagicTeleportBounds.FISHING_GUILD.getBounds(), new int[]{29343, 29351, 29359}, LAW.toItem(300), ASTRAL.toItem(300), WATER.toItem(1000)),
+        ANNAKARL(90, MagicTeleportBounds.ANNAKARL.getBounds(), new int[]{29341, 29349, 29357}, BLOOD.toItem(200), LAW.toItem(200)),
 
-        GRAND_EXCHANGE(VARROCK, new Bounds(3163, 3463, 3166, 3466, 0)),
-        SEERS_VILLAGE(CAMELOT, new Bounds(2725, 3485, 2726, 3486, 0)),
-        YANILLE(WATCHTOWER, new Bounds(2605, 3093, 0, 1));
+        GRAND_EXCHANGE(VARROCK, MagicTeleportBounds.VARROCK_GE.getBounds()),
+        SEERS_VILLAGE(CAMELOT, MagicTeleportBounds.CAMELOT_SEERS.getBounds()),
+        YANILLE(WATCHTOWER, MagicTeleportBounds.WATCHTOWER_YANILLE.getBounds());
 
         int levelReq;
         Item[] runes;
