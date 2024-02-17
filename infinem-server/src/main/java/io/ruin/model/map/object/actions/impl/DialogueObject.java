@@ -17,6 +17,13 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/1/2023
  */
 public enum DialogueObject {
+    GNOME_ON_A_RACK(8794, new Position(2035, 4629),
+            new NPCDialogue(8848, "AGHHHHH! SOMEONE HELP ME!"),
+            new PlayerDialogue("Uhhh..."),
+            new NPCDialogue(8771, "Don't worry about that guy,"),
+            new PlayerDialogue("Alright."),
+            new NPCDialogue(8848, "Noooooooo!")
+    ),
     FORTHOS_LEVER(34902, new Position(1808, 9948),
             new PlayerDialogue("Who knows what could happen if I pull this... best to leave it alone.")),
     SACRED_BONE_BURNER(34855, new Position(1810, 9951),
