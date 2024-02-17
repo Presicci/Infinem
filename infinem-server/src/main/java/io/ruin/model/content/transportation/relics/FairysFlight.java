@@ -91,7 +91,10 @@ public class FairysFlight {
 
     private static void lastDestination(Player player) {
         Position position = player.getTemporaryAttribute("FAIRY_LAST_TELE");
-        if (position == null) return;
+        if (position == null) {
+            player.sendMessage("You haven't teleported anywhere yet.");
+            return;
+        }
         player.getMovement().startTeleport(e -> {
             player.animate(3265, 30);
             player.graphics(569);

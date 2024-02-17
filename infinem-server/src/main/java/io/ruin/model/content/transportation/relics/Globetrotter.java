@@ -117,7 +117,10 @@ public class Globetrotter {
             TeleportToHouse.teleport(player, house);
         }
         Position pos = player.getTemporaryAttribute("LAST_TELE");
-        if (pos == null) return;
+        if (pos == null) {
+            player.sendMessage("You haven't teleported anywhere yet.");
+            return;
+        }
         ModernTeleport.teleport(player, pos);
     }
 
