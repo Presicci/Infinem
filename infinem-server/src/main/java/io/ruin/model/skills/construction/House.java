@@ -376,6 +376,10 @@ public class House {
             player.dialogue(new MessageDialogue("You can only add that room on surface level."));
             return false;
         }
+        if (def == RoomDefinition.PORTAL_NEXUS || def == RoomDefinition.GAMES_ROOM) {
+            player.dialogue(new MessageDialogue("This room has not been added yet."));
+            return false;
+        }
         if ((def == RoomDefinition.MENAGERIE_INDOORS || def == RoomDefinition.MENAGERIE_OUTDOORS)
                 && roomTypeCounts.getOrDefault(RoomDefinition.MENAGERIE_INDOORS, 0) + roomTypeCounts.getOrDefault(RoomDefinition.MENAGERIE_OUTDOORS, 0) > 0) {
             player.dialogue(new MessageDialogue("You may only have one menagerie in your house.<br><br>Use the house viewer if you'd like to move it here."));
