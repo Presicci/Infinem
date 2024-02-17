@@ -175,7 +175,15 @@ public class PortalChamberRoom extends Room {
             p.sendMessage("Invalid portal?");
             return;
         }
-        p.getMovement().teleport(dest.bounds.randomX(), dest.bounds.randomY(), dest.bounds.z);
+        if (dest == PortalDestination.TROLL_STRONGHOLD) {
+            if (BasaltTeleport.canTeleportUpper.test(p)) {
+                p.getMovement().teleport(BasaltTeleport.TROLL_STRONGHOLD_UPPER);
+            } else {
+                p.getMovement().teleport(dest.bounds.randomX(), dest.bounds.randomY(), dest.bounds.z);
+            }
+        } else {
+            p.getMovement().teleport(dest.bounds.randomX(), dest.bounds.randomY(), dest.bounds.z);
+        }
     }
 
     private void toggle(Player p, int portalIndex) {
