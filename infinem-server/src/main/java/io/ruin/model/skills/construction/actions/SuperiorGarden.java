@@ -48,6 +48,7 @@ public class SuperiorGarden {
         }
         if (poolLevel >= 4) {
             player.setHp(player.getMaxHp());
+            player.cureVenom(0, 0);
         }
         player.sendFilteredMessage("You drink from the pool. It makes you feel replenished.");
     }
