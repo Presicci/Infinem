@@ -7,23 +7,34 @@
     "tables": [
       {
         "name": "Runes",
-        "weight": 42723,
+        "weight": 46548,
         "items": [
-          { "id": 556, "min": 40, "max": 40, "weight": 2000 },   //Air rune
-          { "id": 564, "min": 5, "max": 5, "weight": 2000 },   //Cosmic rune
-          { "id": 562, "min": 35, "max": 35, "weight": 2000 },   //Chaos rune
-          { "id": 562, "min": 50, "max": 50, "weight": 2000 }   //Chaos rune
+          { "id": 556, "min": 40, "max": 40, "weight": 15000 },   //Air rune
+          { "id": 564, "min": 5, "max": 5, "weight": 3330 },   //Cosmic rune
+          { "id": 562, "min": 35, "max": 35, "weight": 15000 },   //Chaos rune
+          { "id": 562, "min": 50, "max": 50, "weight": 15000 }   //Chaos rune
         ]
       },
       {
         "name": "Other",
-        "weight": 57276,
+        "weight": 53451,
         "items": [
-          { "id": 313, "min": 27, "max": 27, "weight": 5000 },   //Fishing bait
-          { "id": 313, "min": 50, "max": 50, "weight": 5000 },   //Fishing bait
-          { "id": 995, "min": 26, "max": 26, "weight": 725 },   //Coins
-          { "id": 526, "min": 3, "max": 10, "weight": 1000 },   //Bones
-          { "id": 536, "min": 1, "max": 3, "weight": 350 }   //Dragon bones
+          { "id": 313, "min": 27, "max": 27, "weight": 17000 },   //Fishing bait
+          { "id": 313, "min": 50, "max": 50, "weight": 17000 },   //Fishing bait
+          { "id": 995, "min": 26, "max": 26, "weight": 10000 },   //Coins
+          { "id": 526, "min": 3, "max": 3, "weight": 3330 },   //Bones
+          { "id": 526, "min": 9, "max": 9, "weight": 3330 },   //Bones
+          { "id": 526, "min": 10, "max": 10, "weight": 3330 },   //Bones
+          { "id": 536, "min": 1, "max": 1, "weight": 1950 },   //Dragon bones
+          { "id": 536, "min": 2, "max": 2, "weight": 391 },   //Dragon bones
+          { "id": 536, "min": 3, "max": 3, "weight": 391 }   //Dragon bones
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 245,
+        "items": [
+          { "id": 10976, "min": 1, "max": 1, "weight": 250 }   //Long bone
         ]
       }
     ]
