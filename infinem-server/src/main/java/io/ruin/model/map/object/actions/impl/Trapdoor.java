@@ -71,6 +71,18 @@ public enum Trapdoor {
          */
         ObjectAction.register(7257, "enter", (player, obj) -> player.getMovement().teleport(3061, 4985, 1));
         ObjectAction.register(7258, "enter", (player, obj) -> player.getMovement().teleport(2906, 3537, 0));
+
+        /*
+         * Mourner's tunnel
+         */
+        ObjectAction.register(8783, "open", (player, obj) -> {
+            World.startEvent(e -> {
+                obj.setId(8784);
+                e.delay(2);
+                obj.setId(8783);
+            });
+            climbDown(player, new Position(2044, 4649, 0));
+        });
     }
 
     static {
