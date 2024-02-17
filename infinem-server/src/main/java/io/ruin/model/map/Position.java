@@ -217,6 +217,10 @@ public class Position {
         return (!checkHeight || other.z == z) && Math.abs(x - other.x) <= distance && Math.abs(y - other.y) <= distance;
     }
 
+    public Bounds toBounds() {
+        return new Bounds(this, 0);
+    }
+
     public boolean inBounds(Bounds bounds) {
         return bounds.inBounds(x, y, z, 0);
     }
