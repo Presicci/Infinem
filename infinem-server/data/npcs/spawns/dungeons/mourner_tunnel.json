@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Mourner",
+    "id": 9017,
+    "x": 2038,
+    "y": 4636,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Mourner",
+    "id": 9017,
+    "x": 2041,
+    "y": 4638,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Mourner",
+    "id": 9017,
+    "x": 2044,
+    "y": 4643,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Mourner",
+    "id": 9017,
+    "x": 2038,
+    "y": 4644,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Paladin",
+    "id": 3293,
+    "x": 2045,
+    "y": 4647,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Paladin",
+    "id": 3293,
+    "x": 2043,
+    "y": 4632,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Knight of Ardougne",
+    "id": 3297,
+    "x": 2036,
+    "y": 4637,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Knight of Ardougne",
+    "id": 3297,
+    "x": 2036,
+    "y": 4641,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "null",
+    "id": 9237,
+    "x": 2037,
+    "y": 4632,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "null",
+    "id": 9235,
+    "x": 2042,
+    "y": 4629,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  }
+]
