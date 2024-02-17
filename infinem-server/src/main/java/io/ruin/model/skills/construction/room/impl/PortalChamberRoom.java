@@ -6,17 +6,14 @@ import io.ruin.cache.ObjectDef;
 import io.ruin.model.content.tasksystem.tasks.areas.rewards.KandarinReward;
 import io.ruin.model.content.tasksystem.tasks.areas.rewards.MisthalinReward;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.shared.listeners.LogoutListener;
-import io.ruin.model.inter.Interface;
-import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.handlers.OptionScroll;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.teleport.BasaltTeleport;
 import io.ruin.model.map.Bounds;
-import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.construction.Buildable;
 import io.ruin.model.skills.construction.Hotspot;
@@ -66,9 +63,9 @@ public class PortalChamberRoom extends Room {
         TROLL_STRONGHOLD(1, BasaltTeleport.TROLL_STRONGHOLD.toBounds(), new int[]{33179, 33180, 33181}, new Item(22604, 100), new Item(22593, 100), new Item(22597, 300)),
         WEISS(1, BasaltTeleport.WEISS.toBounds(), new int[]{37581, 37593, 37605}, new Item(22604, 100), new Item(22593, 100), new Item(22595, 300)),
 
-        GRAND_EXCHANGE(VARROCK, MagicTeleportBounds.VARROCK_GE.getBounds(), MisthalinReward.GRAND_EXCHANGE_TELEPORT::hasReward),
-        SEERS_VILLAGE(CAMELOT, MagicTeleportBounds.CAMELOT_SEERS.getBounds(), KandarinReward.SEERS_TELEPORT::hasReward),
-        YANILLE(WATCHTOWER, MagicTeleportBounds.WATCHTOWER_YANILLE.getBounds(), KandarinReward.YANILLE_TELEPORT::hasReward);
+        GRAND_EXCHANGE(VARROCK, MagicTeleportBounds.VARROCK_GE.getBounds(), Config.varpbit(4585, true), MisthalinReward.GRAND_EXCHANGE_TELEPORT::hasReward),
+        SEERS_VILLAGE(CAMELOT, MagicTeleportBounds.CAMELOT_SEERS.getBounds(), Config.varpbit(4560, true), KandarinReward.SEERS_TELEPORT::hasReward),
+        YANILLE(WATCHTOWER, MagicTeleportBounds.WATCHTOWER_YANILLE.getBounds(), Config.varpbit(4548, true), KandarinReward.YANILLE_TELEPORT::hasReward);
 
         final int levelReq;
         final Item[] runes;
@@ -78,6 +75,7 @@ public class PortalChamberRoom extends Room {
         boolean hidden;
         Predicate<Player> alternateReq;
         PortalDestination alternate;
+        Config config;
         public final Bounds bounds;
 
         PortalDestination(int levelReq, Bounds bounds, int[] portalIds, Item... runes) {
@@ -89,12 +87,13 @@ public class PortalChamberRoom extends Room {
             this.focusReq = p -> true;
         }
 
-        PortalDestination(PortalDestination other, Bounds bounds, Predicate<Player> alternateReq) {
+        PortalDestination(PortalDestination other, Bounds bounds, Config config, Predicate<Player> alternateReq) {
             this(other.levelReq, bounds, other.portalIds, other.runes);
+            this.alternateReq = alternateReq;
+            this.config = config;
             other.alternate = this;
             other.alternateReq = p -> true;
             alternate = other;
-            this.alternateReq = alternateReq;
             hidden = true;
         }
     }
@@ -113,6 +112,10 @@ public class PortalChamberRoom extends Room {
         getHotspotObjects(Hotspot.PORTAL_1).forEach(obj -> ObjectAction.register(obj, 1, (p, o) -> teleport(p, 0)));
         getHotspotObjects(Hotspot.PORTAL_2).forEach(obj -> ObjectAction.register(obj, 1, (p, o) -> teleport(p, 1)));
         getHotspotObjects(Hotspot.PORTAL_3).forEach(obj -> ObjectAction.register(obj, 1, (p, o) -> teleport(p, 2)));
+
+        getHotspotObjects(Hotspot.PORTAL_1).forEach(obj -> ObjectAction.register(obj, 2, (p, o) -> altTeleport(p, 0)));
+        getHotspotObjects(Hotspot.PORTAL_2).forEach(obj -> ObjectAction.register(obj, 2, (p, o) -> altTeleport(p, 1)));
+        getHotspotObjects(Hotspot.PORTAL_3).forEach(obj -> ObjectAction.register(obj, 2, (p, o) -> altTeleport(p, 2)));
 
         getHotspotObjects(Hotspot.PORTAL_1).forEach(obj -> ObjectAction.register(obj, 3, (p, o) -> toggle(p, 0)));
         getHotspotObjects(Hotspot.PORTAL_2).forEach(obj -> ObjectAction.register(obj, 3, (p, o) -> toggle(p, 1)));
@@ -184,6 +187,31 @@ public class PortalChamberRoom extends Room {
                 p.getMovement().teleport(dest.bounds.randomX(), dest.bounds.randomY(), dest.bounds.z);
             }
         } else {
+            if (dest.alternate != null) {
+                if (dest.alternate.config.get(p) == 1) {
+                    p.getMovement().teleport(dest.alternate.bounds.randomX(), dest.alternate.bounds.randomY(), dest.alternate.bounds.z);
+                } else {
+                    p.getMovement().teleport(dest.bounds.randomX(), dest.bounds.randomY(), dest.bounds.z);
+                }
+            } else {
+                p.getMovement().teleport(dest.bounds.randomX(), dest.bounds.randomY(), dest.bounds.z);
+            }
+        }
+    }
+
+    private void altTeleport(Player p, int portalIndex) {
+        PortalDestination dest = portalDestinations[portalIndex];
+        if (dest == null) {
+            p.sendMessage("Invalid portal?");
+            return;
+        }
+        if (dest.alternate == null) {
+            p.dialogue(new MessageDialogue("This portal doesn't have an alternate destination."));
+            return;
+        }
+        if (dest.alternate.config.get(p) == 0) {
+            p.getMovement().teleport(dest.alternate.bounds.randomX(), dest.alternate.bounds.randomY(), dest.alternate.bounds.z);
+        } else {
             p.getMovement().teleport(dest.bounds.randomX(), dest.bounds.randomY(), dest.bounds.z);
         }
     }
@@ -205,8 +233,8 @@ public class PortalChamberRoom extends Room {
         if (!dest.alternateReq.test(p)) {
             return;
         }
-        portalDestinations[portalIndex] = dest.alternate;
-        p.dialogue(new MessageDialogue("Portal destination changed to " + portalDestinations[portalIndex].name + "."));
+        int toAlt = dest.alternate.config.toggle(p);
+        p.dialogue(new MessageDialogue("Left-click changed to " + (toAlt == 1 ? dest.alternate.name : dest.name) + "."));
     }
 
     private void openFocusSelection(Player player) {
