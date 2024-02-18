@@ -108,8 +108,8 @@ public enum RingOfWealth {
             if(player.getEquipment().hasId(ring.id))
                 return true;
         }
-        player.getEquipment().hasId(773);   // Hazelmere's signet ring
-        return false;
+        return player.getEquipment().hasId(773)         // Hazelmere's signet ring
+                || player.getEquipment().hasId(6583);   // Ring of fortune
     }
 
 }
