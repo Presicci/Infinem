@@ -12,7 +12,8 @@ public enum PlayerBoolean {
     RING_OF_SUFFERING,
     CERBERUS_METAMORPH,
     JAD_METAMORPH,
-    SIRE_METAMORPH;
+    SIRE_METAMORPH,
+    ROW_DISABLED;
 
     /**
      * Checks the boolean value for given player.

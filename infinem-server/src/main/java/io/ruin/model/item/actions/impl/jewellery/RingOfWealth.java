@@ -1,6 +1,7 @@
 package io.ruin.model.item.actions.impl.jewellery;
 
 import io.ruin.cache.Color;
+import io.ruin.model.entity.player.PlayerBoolean;
 import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
@@ -8,6 +9,7 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.map.Bounds;
@@ -60,7 +62,7 @@ public enum RingOfWealth {
             teleports.register(ring.id, ring.charges, ring.replacementId);
             ItemAction.registerInventory(ring.id, "features", RingOfWealth::displayFeatures);
             ItemAction.registerEquipment(ring.id, "boss log", (player, item) -> KillCounter.openOwnBoss(player));
-            ItemAction.registerEquipment(ring.id, "coin collection", (player, item) -> toggleBMCollect(player));
+            ItemAction.registerEquipment(ring.id, "coin collection", (player, item) -> toggleCoinCollect(player));
             /**
              * Imbued ring actions
              */
@@ -78,45 +80,27 @@ public enum RingOfWealth {
     }
 
     private static void displayFeatures(Player player, Item item) {
-        player.dialogue(new OptionsDialogue("What features would you like to toggle?",
-                        new Option("Auto Collect Coins: " + (player.ROWAutoCollectGold ? Color.DARK_GREEN.wrap("Enabled") : Color.DARK_RED.wrap("Disabled")), () -> toggleCoinCollect(player)),
-                        new Option("Auto Collect Revenant Ether: " + (player.ROWAutoCollectEther ? Color.DARK_GREEN.wrap("Enabled") : Color.DARK_RED.wrap("Disabled")), () -> toggleEtherCollect(player))
+        player.dialogue(new OptionsDialogue(
+                        new Option("Auto collect coins: " + (PlayerBoolean.ROW_DISABLED.has(player) ? Color.DARK_GREEN.wrap("Disabled") : Color.DARK_RED.wrap("Enabled")), () -> toggleCoinCollect(player)),
+                        new Option("View boss log", () -> KillCounter.openOwnBoss(player))
                 )
         );
     }
 
-    private static void toggleBMCollect(Player player) {
-        player.ROWAutoCollectBloodMoney = !player.ROWAutoCollectBloodMoney;
-        if(player.ROWAutoCollectBloodMoney)
-            player.sendMessage(Color.DARK_GREEN.wrap("Your ring of wealth will now collect all blood money drops from monsters."));
-        else
-            player.sendMessage(Color.DARK_GREEN.wrap("Your ring of wealth will no longer automatically collect blood money drops from monsters."));
-    }
-
     private static void toggleCoinCollect(Player player) {
-        player.ROWAutoCollectGold = !player.ROWAutoCollectGold;
-        if(player.ROWAutoCollectGold)
-            player.sendMessage(Color.DARK_GREEN.wrap("Your ring of wealth will now collect all coin drops from monsters."));
-        else
+        boolean disabled = PlayerBoolean.ROW_DISABLED.toggle(player);
+        if(disabled)
             player.sendMessage(Color.DARK_GREEN.wrap("Your ring of wealth will no longer automatically collect coin drops from monsters."));
-    }
-
-    private static void toggleEtherCollect(Player player) {
-        player.ROWAutoCollectEther = !player.ROWAutoCollectEther;
-        if(player.ROWAutoCollectEther)
-            player.sendMessage(Color.DARK_GREEN.wrap("Your ring of wealth will now collect all revenant ether drops from monsters."));
         else
-            player.sendMessage(Color.DARK_GREEN.wrap("Your ring of wealth will no longer automatically collect revenant ether drops from monsters."));
+            player.sendMessage(Color.DARK_GREEN.wrap("Your ring of wealth will now collect all coin drops from monsters."));
     }
 
     public static boolean check(Player pKiller, Item item) {
         if(!RingOfWealth.wearingRingOfWealth(pKiller))
             return false;
-        if(item.getId() == BLOOD_MONEY && pKiller.ROWAutoCollectBloodMoney)
-            return true;
-        if(item.getId() == 21820 && pKiller.ROWAutoCollectEther)
-            return true;
-        return item.getId() == COINS_995 && pKiller.ROWAutoCollectGold;
+        return (item.getId() == COINS_995 || item.getId() == Items.TOKKUL
+                || item.getId() == 21555)   // Numulite
+                && !PlayerBoolean.ROW_DISABLED.has(pKiller);
     }
 
     public static boolean wearingRingOfWealth(Player player) {
@@ -124,6 +108,7 @@ public enum RingOfWealth {
             if(player.getEquipment().hasId(ring.id))
                 return true;
         }
+        player.getEquipment().hasId(773);   // Hazelmere's signet ring
         return false;
     }
 

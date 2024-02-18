@@ -624,12 +624,6 @@ public abstract class PlayerAttributes extends Entity {
     /**
      * Ring of wealth attributes for features
      */
-    @Expose public boolean ROWAutoCollectBloodMoney = false;
-
-    @Expose public boolean ROWAutoCollectEther = false;
-
-    @Expose public boolean ROWAutoCollectGold = false;
-
     public boolean insideWildernessAgilityCourse = false;
 
     public TickDelay presetDelay = new TickDelay();
