@@ -34,7 +34,7 @@ public class PortalOfLegends {
 	}
 
 	static {
-		ObjectAction.register("Ket'ian Wilderness Boss Portal", "Enter", PortalOfLegends::enter);
+		//ObjectAction.register("Ket'ian Wilderness Boss Portal", "Enter", PortalOfLegends::enter);
 	}
 
 }
