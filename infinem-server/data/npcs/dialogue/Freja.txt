@@ -1,0 +1,31 @@
+Player: Hello!
+Freja: Well met, adventurer.
+<Who are you?
+Player: Who are you?
+Freja: I'm Freja the Kyattess of the Fremennik Province, who are you?
+Player: Oh me? I'm [player name], an adventurer... I guess.
+Freja: You must have done something impressive to gain entry here.
+Player: I may have killed some dragons.
+Freja: Ah, fantastic! I've yet to face one myself, but I look forward to the challenge.
+FIRSTOPTIONS:
+><What grand feats are you known for?
+Player: What grand feats are you known for?
+Freja: Much like you, I have a book or two detailing such things, but it seems to have gone walkabouts.
+Player: Anything particularly interesting?
+Freja: Pah! All of it is incredibly interesting, I slew the great Smolodin Kyatt that plagued the province for many years, I retrieved the crown of many heads from the snake pit and hunted the silver stag of the western
+Freja: provinces.
+Player: None of that sounds at all boring, I look forward to finding your book.
+Freja: Funny you should mention boars, I'm currently hunting one, well... I was...
+FIRSTOPTIONS:
+><Why are you here?
+Player: Why are you here?
+Freja: My current quest took me to Acheron, a horribly bitter northern territory, in search for this famous Boar... as big as a hut, so the songs say. Anyway, my companions all met a rather grizzly end, I guess I'm looking for
+Freja: new ones.
+Player: Take me! I'm great.
+Freja: Ha ha ha! You're very new here, you've certainly proved you are a worthy hero, but I'd rather someone with a few more years behind them.
+Player: What?! I've literally killed many dragons that threatened to kill everyone, I think I'm ready for a boar hunt.
+Freja: Hmm... When it comes time for me to venture back to the Isle of Garmr, I'll consider inviting you.
+FIRSTOPTIONS:
+><Bye!
+Player: Bye!
+Freja: I'll see you around.
