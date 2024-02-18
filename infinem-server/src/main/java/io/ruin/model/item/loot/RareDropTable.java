@@ -110,7 +110,7 @@ public class RareDropTable {
             // 1 in 10, total is 1 in 31,810
             .addTable(0,
                     new LootItem(Items.BLURBERRY_SPECIAL, 1, 9),  // Blurberry Special
-                    new LootItem(1, 1, 1)   // Hazelmere
+                    new LootItem(773, 1, 1)   // Hazelmere's signet ring
             );
 
     private static final int[] ROLL_CHANCE = { // 1 in x, index is luck tier
@@ -134,9 +134,10 @@ public class RareDropTable {
             case Items.RING_OF_WEALTH_2:
             case Items.RING_OF_WEALTH_1:
             case Items.RING_OF_WEALTH:
+                return 1;
+            case Items.RING_OF_STONE:   // Ring of fortune
+            case 773:                   // Hazelmere's signet ring
                 return 2;
-            case Items.RING_OF_STONE:
-                return 3;
             default:
                 return 0;
         }
@@ -157,13 +158,7 @@ public class RareDropTable {
         if (item.getId() == -1) {
             item = MEGA_RARE_DROP_TABLE.rollItem();
             if (item.getId() == -1) {
-                if (luckTier == 4) {
-                    player.sendMessage("rolling giga with tier 4");
-                    item = GIGA_RARE_DROP_TABLE.rollItem(); // 1 in 10 baby
-                } else {
-                    player.sendMessage("rolling giga without tier 4");
-                    item = new Item(Items.CHEESETOM_BATTA); // Oof unlucky
-                }
+                item = GIGA_RARE_DROP_TABLE.rollItem(); // 1 in 10 baby
             }
         }
         player.getTaskManager().doLookupByUUID(905, 1); // Get a Drop from the Rare Drop Table
