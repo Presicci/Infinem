@@ -6,9 +6,10 @@
         "name": "Weapons and armour",
         "weight": 150,
         "items": [
-          { "id": 6528, "min": 1, "max": 1, "weight": 195 },   //Tzhaar-ket-om
-          { "id": 6524, "min": 1, "max": 1, "weight": 195 },   //Toktz-ket-xil
-          { "id": 6568, "min": 1, "max": 1, "weight": 195 }   //Obsidian cape
+          { "id": 6528, "min": 1, "max": 1, "weight": 1950 },   //Tzhaar-ket-om
+          { "id": 6524, "min": 1, "max": 1, "weight": 1950 },   //Toktz-ket-xil
+          { "id": 6568, "min": 1, "max": 1, "weight": 1950 },   //Obsidian cape
+          { "id": 32000, "min": 1, "max": 1, "weight": 203 }   //Ring of stone
         ]
       },
       {

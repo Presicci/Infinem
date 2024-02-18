@@ -6,11 +6,20 @@
         "name": "Materials",
         "weight": 22540,
         "items": [
-          { "id": 1623, "min": 1, "max": 1, "weight": 725 },   //Uncut sapphire
-          { "id": 1621, "min": 1, "max": 1, "weight": 725 },   //Uncut emerald
-          { "id": 1619, "min": 1, "max": 1, "weight": 725 },   //Uncut ruby
-          { "id": 1617, "min": 1, "max": 1, "weight": 100 },   //Uncut diamond
-          { "id": 6529, "min": 1, "max": 16, "weight": 5000 }   //Tokkul
+          { "id": 1623, "min": 1, "max": 1, "weight": 7250 },   //Uncut sapphire
+          { "id": 1621, "min": 1, "max": 1, "weight": 7250 },   //Uncut emerald
+          { "id": 1619, "min": 1, "max": 1, "weight": 7250 },   //Uncut ruby
+          { "id": 1617, "min": 1, "max": 1, "weight": 1000 },   //Uncut diamond
+          { "id": 1631, "min": 1, "max": 1, "weight": 100 },   //Uncut dragonstone
+          { "id": 6571, "min": 1, "max": 1, "weight": 1 },   //Uncut onyx
+          { "id": 6529, "min": 1, "max": 16, "weight": 50000 }   //Tokkul
+        ]
+      },
+      {
+        "name": "Ring of stone",
+        "weight": 20,
+        "items": [
+          { "id": 32000, "min": 1, "max": 1, "weight": 1 }   //Ring of stone
         ]
       },
       {

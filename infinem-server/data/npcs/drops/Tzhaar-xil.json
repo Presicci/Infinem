@@ -6,10 +6,11 @@
         "name": "Weapons and armour",
         "weight": 750,
         "items": [
-          { "id": 6522, "min": 9, "max": 29, "weight": 195 },   //Toktz-xil-ul
-          { "id": 6523, "min": 1, "max": 1, "weight": 195 },   //Toktz-xil-ak
-          { "id": 6525, "min": 1, "max": 1, "weight": 195 },   //Toktz-xil-ek
-          { "id": 6568, "min": 1, "max": 1, "weight": 195 }   //Obsidian cape
+          { "id": 6522, "min": 9, "max": 29, "weight": 1950 },   //Toktz-xil-ul
+          { "id": 6523, "min": 1, "max": 1, "weight": 1950 },   //Toktz-xil-ak
+          { "id": 6525, "min": 1, "max": 1, "weight": 1950 },   //Toktz-xil-ek
+          { "id": 6568, "min": 1, "max": 1, "weight": 1950 },   //Obsidian cape
+          { "id": 32000, "min": 1, "max": 1, "weight": 202 }   //Ring of stone
         ]
       },
       {
