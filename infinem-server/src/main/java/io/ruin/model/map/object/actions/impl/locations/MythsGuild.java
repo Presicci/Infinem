@@ -14,13 +14,17 @@ import io.ruin.model.stat.StatType;
  */
 public class MythsGuild {
 
-    private static void guildGate(Player player, GameObject obj, boolean dungeon) {
+    public static boolean canEnter(Player player) {
         StatList stats = player.getStats();
+        return stats.get(StatType.Magic).currentLevel >= 75 && stats.get(StatType.Smithing).currentLevel >= 70
+                && stats.get(StatType.Mining).currentLevel >= 68 && stats.get(StatType.Crafting).currentLevel >= 62
+                && stats.get(StatType.Agility).currentLevel >= 60 && stats.get(StatType.Thieving).currentLevel >= 60
+                && stats.get(StatType.Construction).currentLevel >= 50;
+    }
+
+    private static void guildGate(Player player, GameObject obj, boolean dungeon) {
         if (((!dungeon && player.getPosition().getY() == 2862) || (dungeon && player.getAbsX() == 1969))
-                && (stats.get(StatType.Magic).currentLevel < 75) || stats.get(StatType.Smithing).currentLevel < 70
-            || stats.get(StatType.Mining).currentLevel < 68 || stats.get(StatType.Crafting).currentLevel < 62
-                || stats.get(StatType.Agility).currentLevel < 60 || stats.get(StatType.Thieving).currentLevel < 60
-                || stats.get(StatType.Construction).currentLevel < 50) {
+                && (!canEnter(player))) {
             player.dialogue(new MessageDialogue("You need 75 magic, 70 smithing, 68 mining, 62 crafting, 60 agility, 60 thieving, and 50 construction to enter the Myths' guild."));
             return;
         }

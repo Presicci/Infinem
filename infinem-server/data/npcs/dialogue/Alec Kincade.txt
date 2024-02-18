@@ -1,0 +1,19 @@
+Alec Kincade: Greetings adventurer. Welcome to the Myths' Guild.
+<Tell me about the Guild.
+Player: Tell me about the Guild.
+Alec Kincade: The Myths' Guild is home to those who wish to uncover the lost secrets of this world. We investigate the myths of this land to see if any facts may be hidden within them.
+Alec Kincade: Here you will discover things that others only dream of. The cost of entry is not insignificant though, only the most worthy may share in our secrets.
+Player: Am I worthy?
+CANENTERMYTHS:1
+(Alec Kincade: Absolutely. You've proven your worth to the guild and may enter whenever you please.
+(Alec Kincade: Not yet. However, that could well change. Go out and hone your skills then return to us.
+MESSAGE:You need 75 magic, 70 smithing, 68 mining, 62 crafting, 60 agility, 60 thieving, and 50 construction to enter the Myths' guild.
+)><How can I gain access to the Guild?
+Player: How can I gain access to the Guild?
+CANENTERMYTHS:1
+(Alec Kincade: Well for you, it's as easy as walking through that barrier.
+(Alec Kincade: Only the most worthy may access our Guild and I'm afraid you are not quite there yet. Go out and hone your skills then return to us.
+MESSAGE:You need 75 magic, 70 smithing, 68 mining, 62 crafting, 60 agility, 60 thieving, and 50 construction to enter the Myths' guild.
+)><Goodbye.
+Player: Goodbye.
+Alec Kincade: Farewell adventurer.
