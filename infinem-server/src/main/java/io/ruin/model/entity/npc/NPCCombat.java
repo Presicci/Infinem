@@ -1017,7 +1017,14 @@ public abstract class NPCCombat extends Combat {
     }
 
     protected Entity findAggressionTargetNPC() {
-        Set<Integer> t = FightingNPC.getTargets(npc.getId());
+        Set<Integer> t;
+        if (!npc.hasTemporaryAttribute("NPC_TARGETS")) {
+            Set<Integer> targets = FightingNPC.getTargets(npc.getId());
+            npc.putTemporaryAttribute("NPC_TARGETS", targets);
+            t = targets;
+        } else {
+            t = npc.getTemporaryAttribute("NPC_TARGETS");
+        }
         if (t == null)
             return null;
         List<Entity> targets = npc.localNpcs().stream()
@@ -1046,6 +1053,7 @@ public abstract class NPCCombat extends Combat {
         int aggroLevel = getAggressiveLevel();
         if (npc.getDef().name.toLowerCase().contains("monkey") && MonkeyGreeGree.isMonkey(player)) return false;
         return player.getCombat().getLevel() <= aggroLevel // in level range
+                && playerAggroExtraCheck(player)
                 && canAttack(player) // can attack
                 && !player.isIdle // player isn't idle
                 && (player.inMulti() || !player.getCombat().isDefending(12))
@@ -1053,6 +1061,10 @@ public abstract class NPCCombat extends Combat {
                 && (npc.inMulti() || (StreamSupport.stream(npc.localNpcs().spliterator(), false)
                 .noneMatch(n -> n.getCombat() != null && n.getCombat().getTarget() == player && !n.getCombat().isAttacking(10) && !n.getMovement().isAtDestination()))) // not 100% sure how i feel about this check, but it ensures multiple npcs don't try to go for the same player at the same time in a single-way zone since they wouldn't be able to attack upon reaching
                 && (npc.aggressionImmunity == null || !npc.aggressionImmunity.test(player));
+    }
+
+    protected boolean playerAggroExtraCheck(Player player) {
+        return true;
     }
 
     protected boolean canAggro(NPC n) {
@@ -1064,7 +1076,7 @@ public abstract class NPCCombat extends Combat {
 
     public int getAggressionRange() {
         String name = npc.getDef().name;
-        if (name.equalsIgnoreCase("monkey archer"))
+        if (name.equalsIgnoreCase("monkey archer") || name.equalsIgnoreCase("thrower troll"))
             return 8;
         return npc.wildernessSpawnLevel > 0 ? 2 : npc.hasTemporaryAttribute(AttributeKey.CRAB_TRANSFORM) ? 2 : 4;
     }
