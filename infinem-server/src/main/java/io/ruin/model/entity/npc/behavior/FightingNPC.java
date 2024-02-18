@@ -57,6 +57,10 @@ public class FightingNPC {
                 constructSet(3114, 3243), // Farmers
                 constructSet(3029, 3030, 3031, 3033, 3034, 3035, 3036)  // Goblins
         );
+        put(
+                constructSet(1889, 1890, 1891, 1892, 7437, 7438),   // Honour guards
+                constructSet(1874, 1875, 1876, 1877, 5822, 5823, 5824, 5825, 2826, 2827, 2828, 2829, 5830, 5831)  // Ice trolls
+        );
     }};
 
     private static Set<Integer> constructSet(List<Integer> ids) {
