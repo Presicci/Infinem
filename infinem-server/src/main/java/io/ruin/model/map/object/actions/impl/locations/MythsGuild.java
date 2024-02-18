@@ -14,9 +14,9 @@ import io.ruin.model.stat.StatType;
  */
 public class MythsGuild {
 
-    private static void guildGate(Player player, GameObject obj) {
+    private static void guildGate(Player player, GameObject obj, boolean dungeon) {
         StatList stats = player.getStats();
-        if (player.getPosition().getY() == 2862
+        if (((!dungeon && player.getPosition().getY() == 2862) || (dungeon && player.getAbsX() == 1969))
                 && (stats.get(StatType.Magic).currentLevel < 75) || stats.get(StatType.Smithing).currentLevel < 70
             || stats.get(StatType.Mining).currentLevel < 68 || stats.get(StatType.Crafting).currentLevel < 62
                 || stats.get(StatType.Agility).currentLevel < 60 || stats.get(StatType.Thieving).currentLevel < 60
@@ -28,8 +28,8 @@ public class MythsGuild {
         player.startEvent(e -> {
             e.delay(1);
             player.stepAbs(
-                    player.getAbsX(),
-                    player.getAbsY() + (player.getAbsY() <= obj.getPosition().getY() ? 2 : -2),
+                    dungeon ? player.getAbsX() + (player.getAbsX() <= obj.getPosition().getX() ? 2 : -2) : player.getAbsX(),
+                    !dungeon ? player.getAbsY() + (player.getAbsY() <= obj.getPosition().getY() ? 2 : -2) : player.getAbsY(),
                     StepType.FORCE_WALK);
             e.delay(2);
             player.unlock();
@@ -37,8 +37,10 @@ public class MythsGuild {
     }
 
     static {
-        ObjectAction.register(31616, 2456, 2861, 0, "pass", MythsGuild::guildGate);
-        ObjectAction.register(31616, 2457, 2861, 0, "pass", MythsGuild::guildGate);
-        ObjectAction.register(31616, 2458, 2861, 0, "pass", MythsGuild::guildGate);
+        ObjectAction.register(31616, 2456, 2861, 0, "pass", (player, obj) -> guildGate(player, obj, false));
+        ObjectAction.register(31616, 2457, 2861, 0, "pass", (player, obj) -> guildGate(player, obj, false));
+        ObjectAction.register(31616, 2458, 2861, 0, "pass", (player, obj) -> guildGate(player, obj, false));
+        ObjectAction.register(31617, 1968, 8986, 1, "pass", (player, obj) -> guildGate(player, obj, true));
+        ObjectAction.register(31617, 1968, 8987, 1, "pass", (player, obj) -> guildGate(player, obj, true));
     }
 }
