@@ -223,11 +223,6 @@ public class ObjectDef {
             unknownOpcode29 = 40;
             modelIds = new int[]{32101};
             varpBitId = -1;
-        } else if (id == PORTAL_OF_CHAMPIONS) {
-            //home teleport portal - where is this portal even used on real rs?
-            name = "Rift Teleporter";
-            options[0] = "Teleport";
-            options[1] = "Teleport-previous";
         } else if (id == 25203) {
             //decapitated elvarg corpse
             options[0] = "Loot";
@@ -267,8 +262,6 @@ public class ObjectDef {
         } else if(id == 32572) {
             name = "Bloody Chest";
             options[1] = "Information";
-        } else if(id == 31622) {
-            name = "Ket'ian Wilderness Boss Portal";
         } else if(id == 31626) {
             name = "Tournament Entrance";
         } else if(id == 32573) {
@@ -278,9 +271,6 @@ public class ObjectDef {
             options[2] = null;
             options[3] = null;
             options[4] = null;
-        } else if (id == 31621) { // pvm instance portal
-            name = "Boss instance portal";
-            options[0] = "Use";
         } else if(id == 19038) { //christmas tree
             name = "Christmas tree";
             options[0] = "Grab-present";
