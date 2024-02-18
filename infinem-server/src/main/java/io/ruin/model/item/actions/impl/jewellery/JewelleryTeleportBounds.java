@@ -71,6 +71,9 @@ public enum JewelleryTeleportBounds {
     DARK_BEASTS(new Bounds(2029, 4637, 2031, 4639, 0)),
     TARNS_LAIR(new Bounds(3184, 4599, 3186, 4599, 0)),
 
+    // Hazelmere's signet ring
+    KELDAGRIM(new Bounds(2853, 10198, 2857, 10200, 0)),
+
     ;
 
     private final Bounds bounds;
