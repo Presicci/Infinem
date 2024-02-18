@@ -68,6 +68,7 @@ public class MultiZone {
          */
         int[] regions = {
                 /** Safe: **/
+                9632,   // Ice troll cave
                 11828, 11829, //Falador
                 12341, //Barbarian Village
                 8253, 8252, 8508, 8509, 8254, //Lunar Isle:
