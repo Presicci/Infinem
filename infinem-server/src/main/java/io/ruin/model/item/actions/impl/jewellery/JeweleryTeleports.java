@@ -41,7 +41,7 @@ public class JeweleryTeleports {
         ItemAction.registerEquipment(id, "teleport", (player, item) -> teleportDialogue(player, item, charges, replacementId));
         if (charges == 0) ItemAction.registerEquipment(id, "rub", (player, item) -> player.sendFilteredMessage("This " + type + " doesn't have any remaining charges."));
         for (Teleport teleport : teleports) {
-            if (charges > 0) ItemAction.registerEquipment(id, teleport.name, (player, item) -> teleport.select(player, item, charges, replacementId, this));
+            if (charges > 0 || charges == -1) ItemAction.registerEquipment(id, teleport.name, (player, item) -> teleport.select(player, item, charges, replacementId, this));
         }
     }
 
