@@ -17,6 +17,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/1/2023
  */
 public enum DialogueObject {
+    DANGER_SIGN_DEATH_PLATEAU(3742, new Position(2839, 3595),
+            new MessageDialogue("DANGER! Rock slinging trolls ahead! Be careful!")),
     GNOME_ON_A_RACK(8794, new Position(2035, 4629),
             new NPCDialogue(8848, "AGHHHHH! SOMEONE HELP ME!"),
             new PlayerDialogue("Uhhh..."),
