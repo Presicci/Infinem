@@ -43,11 +43,11 @@ object TournamentManager {
         /*
          * Custom home statue to handle tournament entrance.
          */
-        whenObjClick(31626, 1) { player, _ ->
-            if (activeTournament != null) {
-                player.join()
-            }
-        }
+        //whenObjClick(31626, 1) { player, _ ->
+        //    if (activeTournament != null) {
+        //        player.join()
+        //    }
+        //}
         /*
          * Custom home ensure people can't go up the ladder.
          */
