@@ -311,6 +311,8 @@ public class Config {
 
     public static final Config BANK_TUTORIAL_BUTTON = varpbit(10336, true);
 
+    public static final Config BANK_INVENTORY_OPTIONS = varpbit(10079, false).defaultValue(1);
+
     public static final Config[] BANK_TAB_SIZES = {
             varpbit(4171, true), varpbit(4172, true), varpbit(4173, true),
             varpbit(4174, true), varpbit(4175, true), varpbit(4176, true),
@@ -1108,6 +1110,7 @@ public class Config {
     private static final Config EDGEVILLE_PORTAL = varpbit(4153, false).defaultValue(1);    // Hides a portal in the upstairs of a house in edge
     private static final Config VARROCK_GARDEN_STATUE = varpbit(963, false).defaultValue(2);
     private static final Config CAMDOZAAL_ENTRANCE = varpbit(12063, false).defaultValue(50);    // Opens the entrance to the city
+    public static final Config IN_WILDERNESS = varpbit(5963, false);    // 1 = in wildy, 0 = not
 
     /**
      * Elemental workshop
