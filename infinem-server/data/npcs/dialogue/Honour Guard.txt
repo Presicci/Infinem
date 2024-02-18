@@ -1,0 +1,5 @@
+Honour guard: Hail, [Fremennik name]!
+Player: Good day!
+Honour guard: Are you here to help with the trolls?
+Player: I'm afraid not, I have other things to do.
+Honour guard: Well, watch yourself. Those rocks that the trolls throw can take your arm off.
