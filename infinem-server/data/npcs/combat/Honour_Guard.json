@@ -1,6 +1,6 @@
 [
-  { // Ice troll runt (74)
-    "ids": [ 1889, 1890, 1891, 1892 ],
+  { // Honour guard
+    "ids": [ 1889, 1890, 1891, 1892, 7437, 7438 ],
     "handler": "",
     //Combat Info
     "hitpoints": 120,
