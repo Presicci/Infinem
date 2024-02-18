@@ -10,6 +10,11 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    MYTHS_GUILD_UP_1(31627, new Position(2455, 2836), new Position(2456, 2839, 1)),
+    MYTHS_GUILD_DOWN_1(32206, new Position(2455, 2836, 1), new Position(2457, 2839, 0)),
+    MYTHS_GUILD_UP_2(31609, new Position(2450, 2847, 1), new Position(2452, 2847, 2)),
+    MYTHS_GUILD_DOWN_2(31610, new Position(2450, 2847, 2), new Position(2449, 2847, 1)),
+
     APE_ATOLL_SOUTH_EXIT(4745, new Position(2803, 2727, 2), new Position(2803, 2725, 0), 2586),
 
     BRIMHAVEN_DUNGEON_SOUTH_EXIT(30201, new Position(2734, 9477), new Position(2761, 3063, 0)),
