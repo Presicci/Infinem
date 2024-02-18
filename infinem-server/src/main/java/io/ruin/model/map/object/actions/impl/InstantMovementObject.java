@@ -10,6 +10,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    WRATH_ALTAR_ISLAND_TO(31807, new Position(1938, 8966, 1), new Position(2445, 2818, 0), 2796),
+    WRATH_ALTAR_ISLAND_FROM(31606, new Position(2444, 2819), new Position(1939, 8968, 1), 2796),
+
     MYTHS_GUILD_UP_1(31627, new Position(2455, 2836), new Position(2456, 2839, 1)),
     MYTHS_GUILD_DOWN_1(32206, new Position(2455, 2836, 1), new Position(2457, 2839, 0)),
     MYTHS_GUILD_UP_2(31609, new Position(2450, 2847, 1), new Position(2452, 2847, 2)),
