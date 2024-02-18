@@ -16,7 +16,7 @@ public class BasicCrossbowCombat extends NPCCombat {
 
     @Override
     public void follow() {
-        follow(8);
+        follow(6);
     }
 
     @Override
