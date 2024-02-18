@@ -15,6 +15,7 @@ public class StaticFacingNPC {
             3596,   // 'Black-eye'
             4766,   // Tegid
             5381,   // Clothears
+            1992, 1993,     // Miners
     };
     public static final Set<Integer> NPCS = new HashSet<>(Arrays.asList(VALUES));
 
