@@ -9,6 +9,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
+    PORTAL_OF_HEROES(31621, new Position(2455, 2853, 2), new Position(2904, 3511, 0)),
+    PORTAL_OF_CHAMPIONS(31618, new Position(2456, 2856, 2), new Position(3191, 3364, 0)),
+    PORTAL_OF_LEGENDS(31622, new Position(2459, 2853, 2), new Position(2729, 3348, 0)),
     WATER_RAVINE_DUNGEON_EXIT(10417, new Position(3347, 9533), new Position(3372, 3130, 0)),
     CAMDOZAAL_ENTRANCE(41357, new Position(2999, 3493), new Position(2952, 5762, 0)),
     CAMDOZAAL_EXIT(41446, new Position(2951, 5761), new Position(2998, 3494, 0)),
