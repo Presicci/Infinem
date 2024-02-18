@@ -314,6 +314,123 @@
     "direction": "S",
     "walkRange": 5
   },
+  {
+    "name": "Ice troll female",
+    "id": 1876,
+    "x": 2362,
+    "y": 3829,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll female",
+    "id": 1876,
+    "x": 2371,
+    "y": 3833,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll female",
+    "id": 1876,
+    "x": 2353,
+    "y": 3864,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll female",
+    "id": 1876,
+    "x": 2347,
+    "y": 3861,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll female",
+    "id": 1876,
+    "x": 2326,
+    "y": 3856,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll female",
+    "id": 1876,
+    "x": 2315,
+    "y": 3887,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll female",
+    "id": 1876,
+    "x": 2320,
+    "y": 3892,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll female",
+    "id": 1876,
+    "x": 2341,
+    "y": 3895,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll female",
+    "id": 1876,
+    "x": 2342,
+    "y": 3891,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Ice troll female",
+    "id": 1876,
+    "x": 2359,
+    "y": 3895,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll female",
+    "id": 1876,
+    "x": 2360,
+    "y": 3890,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll female",
+    "id": 1876,
+    "x": 2369,
+    "y": 3893,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Ice troll female",
+    "id": 1876,
+    "x": 2374,
+    "y": 3889,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
 
 
 
