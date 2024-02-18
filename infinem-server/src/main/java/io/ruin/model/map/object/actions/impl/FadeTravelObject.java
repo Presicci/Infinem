@@ -9,6 +9,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
+    ICETROLL_CAVE_ENTRANCE(21584, new Position(2401, 3889), new Position(2394, 10300, 1), 2796),
+    ICETROLL_CAVE_EXIT(21598, new Position(2394, 10301, 1), new Position(2401, 3888, 0), 2796),
     PORTAL_OF_HEROES(31621, new Position(2455, 2853, 2), new Position(2904, 3511, 0)),
     PORTAL_OF_CHAMPIONS(31618, new Position(2456, 2856, 2), new Position(3191, 3364, 0)),
     PORTAL_OF_LEGENDS(31622, new Position(2459, 2853, 2), new Position(2729, 3348, 0)),
