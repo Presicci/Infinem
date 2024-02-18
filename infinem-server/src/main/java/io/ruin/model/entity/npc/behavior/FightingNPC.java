@@ -13,14 +13,6 @@ import java.util.stream.Stream;
 public class FightingNPC {
 
     private static final Map<Set<Integer>, Set<Integer>> PAIRINGS = new HashMap<Set<Integer>, Set<Integer>>() {{
-        put(
-                constructSet(8563, 8564), // Lizardmen
-                constructSet(8566, 8567, 8568)// Shayzien warriors
-        );
-        put(
-                constructSet(3114, 3243), // Farmers
-                constructSet(3029, 3030, 3031, 3033, 3034, 3035, 3036)  // Goblins
-        );
         // Godwars Dungeon
         List<Integer> armadylEnemies = new ArrayList<>();
         armadylEnemies.addAll(GodwarsFollower.SARADOMIN_FOLLOWER);
@@ -56,6 +48,17 @@ public class FightingNPC {
         );
     }};
 
+    private static final Map<Set<Integer>, Set<Integer>> MUTUAL_PAIRINGS = new HashMap<Set<Integer>, Set<Integer>>() {{
+        put(
+                constructSet(8563, 8564), // Lizardmen
+                constructSet(8566, 8567, 8568)// Shayzien warriors
+        );
+        put(
+                constructSet(3114, 3243), // Farmers
+                constructSet(3029, 3030, 3031, 3033, 3034, 3035, 3036)  // Goblins
+        );
+    }};
+
     private static Set<Integer> constructSet(List<Integer> ids) {
         return new HashSet<Integer>() {{ addAll(ids); }};
     }
@@ -70,6 +73,16 @@ public class FightingNPC {
                 return pair.getValue();
             }
         }
+        for (Map.Entry<Set<Integer>, Set<Integer>> pair : MUTUAL_PAIRINGS.entrySet()) {
+            if (pair.getKey().contains(npcId))
+                return pair.getValue();
+            if (pair.getValue().contains(npcId))
+                return pair.getKey();
+        }
         return null;
+    }
+
+    static {
+
     }
 }
