@@ -1,0 +1,173 @@
+[
+  {
+    "name": "Black dragon",
+    "id": 256,
+    "x": 1947,
+    "y": 8971,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Black dragon",
+    "id": 252,
+    "x": 1944,
+    "y": 8968,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Blue dragon",
+    "id": 267,
+    "x": 1932,
+    "y": 8968,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Blue dragon",
+    "id": 266,
+    "x": 1927,
+    "y": 8969,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Blue dragon",
+    "id": 265,
+    "x": 1931,
+    "y": 8974,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Blue dragon",
+    "id": 269,
+    "x": 1929,
+    "y": 8980,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Blue dragon",
+    "id": 268,
+    "x": 1929,
+    "y": 8985,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green dragon",
+    "id": 262,
+    "x": 1937,
+    "y": 8989,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green dragon",
+    "id": 261,
+    "x": 1941,
+    "y": 8993,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Red dragon",
+    "id": 251,
+    "x": 1918,
+    "y": 9005,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Red dragon",
+    "id": 250,
+    "x": 1912,
+    "y": 9002,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Red dragon",
+    "id": 248,
+    "x": 1910,
+    "y": 8996,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Baby blue dragon",
+    "id": 242,
+    "x": 1900,
+    "y": 8999,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Baby green dragon",
+    "id": 5194,
+    "x": 1901,
+    "y": 9010,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Baby blue dragon",
+    "id": 243,
+    "x": 1899,
+    "y": 9006,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Baby blue dragon",
+    "id": 241,
+    "x": 1898,
+    "y": 9002,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Baby red dragon",
+    "id": 244,
+    "x": 1891,
+    "y": 8998,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Baby red dragon",
+    "id": 246,
+    "x": 1889,
+    "y": 8995,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Baby black dragon",
+    "id": 7955,
+    "x": 1888,
+    "y": 9002,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  }
+]
