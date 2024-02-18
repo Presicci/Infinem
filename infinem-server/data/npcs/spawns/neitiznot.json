@@ -221,7 +221,7 @@
   //9275
   {
     "id": 1891,
-    "x": 2318,
+    "x": 2321,
     "y": 3833,
     "z": 0,
     "direction": "N",
@@ -259,6 +259,51 @@
     "world": "ECO",
     "npcName": "Ice troll runt"
   },
+  {
+    "name": "Ice troll runt",
+    "id": 1874,
+    "x": 2334,
+    "y": 3834,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll runt",
+    "id": 1874,
+    "x": 2331,
+    "y": 3831,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll runt",
+    "id": 1874,
+    "x": 2355,
+    "y": 3830,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll runt",
+    "id": 1874,
+    "x": 2364,
+    "y": 3832,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll runt",
+    "id": 1874,
+    "x": 2369,
+    "y": 3834,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
 
 
 
@@ -282,6 +327,51 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Ice troll runt"
+  },
+  {
+    "name": "Ice troll runt",
+    "id": 1874,
+    "x": 2374,
+    "y": 3892,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll runt",
+    "id": 1874,
+    "x": 2370,
+    "y": 3886,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll runt",
+    "id": 1874,
+    "x": 2358,
+    "y": 3892,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll runt",
+    "id": 1874,
+    "x": 2333,
+    "y": 3892,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice troll runt",
+    "id": 1874,
+    "x": 2319,
+    "y": 3888,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
   },
 
 
