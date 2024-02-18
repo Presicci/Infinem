@@ -1,0 +1,54 @@
+Player: Hello!
+Lutwidge: Greetings.
+<Who are you?
+Player: Who are you?
+Lutwidge: Well [laddie/lassie], I'm Arls Lutwidge of the Moonlight broadsword! Renowned all over Gielinor!
+Player: Can't say I've heard of you before.
+Lutwidge: You haven't... Heard of... That's madness!
+Lutwidge: Surely you've heard of my feats, but perhaps not the name?
+Player: Perhaps.
+Lutwidge: And yourself?
+Player: An adventurer mostly, but I've slain some dragons and I've conquered some nightmares.
+Lutwidge: Very good young one! Very good indeed!
+Player: So... Where's this famous sword of yours?
+Lutwidge: Gone. I gave it to a fledgling when I retired and the damned fool went and died fighting some great monster in a far off land.
+Lutwidge: Say... If you find it, could you bring it to me? I won't pay you, as holding such a magnificent weapon should be payment enough.
+Player: ... I think you need to work on your bartering skills.
+Lutwidge: Perhaps.
+FIRSTOPTIONS:
+><What grand feats are you known for?
+Player: What grand feats are you known for?
+Lutwidge: I peaked rather early and most know me for my first act of heroism when I defeated the Moonfly. It may sound cute, but it killed many of the smallfolk and their livestock, for it was a vile creature.
+Player: Where'd it come from?
+Lutwidge: It was I that discovered the creature, I pulled it from the Lum during a fishing trip of mine. As young and foolish as I was, I dropped it down a dried up well and went for help. However, upon my return, the creature
+Lutwidge: was gone.
+Player: ... And then what happened?
+Lutwidge: Many years passed until suddenly there were sightings of a winged demon around the River Lum. Some claimed it was an overly large heron and that it was nothing to be worried about. As time went on, folk
+Lutwidge: started to go missing and I knew I had to return home and face this demon.
+Player: You left?
+Lutwidge: I had wars to fight, glory to be won and all that rubbish. Upon my return I spoke to an old crone who lived in the swamps and she gave me some advice. She told me to spike my armour and described how to lure
+Lutwidge: the creature toward me.
+Player: And you defeated it? The Moonfly?
+Lutwidge: Some bard wrote a poem of the events, the telling of the battle is a little embellished and rife with errors. The poem can be found in this library somewhere, providing it has been returned.
+Lutwidge: Did I defeat the creature? I wouldn't be here if I hadn't!
+Player: I'll be sure to keep an eye out.
+Lutwidge: Please do! And come to me if you have any burning questions about it.
+Player: Sure thing.
+FIRSTOPTIONS:
+><Why are you here?
+Player: Why are you here?
+Lutwidge: I've grown old [laddie/lassie], heroes need to know when to throw in the towel, so they say. I've always enjoyed a good book, so it seemed fitting to stay here as librarian of the guild.
+Player: Hmm, the books are very interesting I thought there would be more though...
+Lutwidge: Well, that's why I'm here!
+Lutwidge: So many of you adventurers help yourself to any old book and never return the damn things! If I could have it my way, you wouldn't be allowed to wonder off with them, but I'm not the guildmaster, as Alec likes to
+Lutwidge: remind me.
+Player: Certainly sounds like you have a problem.
+Lutwidge: Ah, but I'm working on it! If you find any books with my symbol on them, be sure to bring it to me, I'll be sure to reward you!
+Player: What's your symbol?
+Lutwidge: Check out the fountain in the dungeon below, I based it on the artefact that powers it.
+Player: Ok, I'll be sure to keep an eye out.
+Lutwidge: Thanks [laddie/lassie], I like you already!
+FIRSTOPTIONS:
+><Bye!
+Player: Bye!
+Lutwidge: I'll see you around, [player name].
