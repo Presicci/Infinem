@@ -1,0 +1,6 @@
+4092
+Player: Are you OK?
+Soldier: Urrrgggh... I'll be OK, the trolls only leave the plateau at nightfall. The guys are bringing a stretcher shortly.
+Player: As long as you're sure.
+Soldier: It's my own fault really, I was having a walk and wandered too far past the danger sign. The trolls throw rocks down at anyone who goes up the path! Don't go up there!
+Player: OK, thanks for the warning.
