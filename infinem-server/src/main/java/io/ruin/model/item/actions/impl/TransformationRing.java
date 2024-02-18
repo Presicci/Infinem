@@ -13,7 +13,7 @@ import io.ruin.model.item.actions.ItemAction;
 
 public enum TransformationRing {
 
-    STONE(6583, 2188),
+    STONE(32000, 2188),
     NATURE(20005, 7314),
     COINS(20017, 7315),
     EASTER(7927, 5538, 5539, 5540, 5541, 5542, 5543);
