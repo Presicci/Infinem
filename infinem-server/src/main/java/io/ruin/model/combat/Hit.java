@@ -337,6 +337,11 @@ public class Hit {
 							attackBonus *= PVP_MELEE_ACCURACY_MODIFIER;
 					}
 					double defenceBonus = getDefenceBonus(target) * (1D + defenceBoost);
+					// Brimstone ring effect
+					if (attacker.isPlayer() && attacker.player.getEquipment().hasId(22975) && attackStyle == AttackStyle.MAGIC && Random.rollDie(4, 1)) {
+						defenceBonus *= .9;
+						attacker.player.sendFilteredMessage(Color.RED.wrap("Your attack ignored 10% of your opponent's magic defence."));
+					}
 					double hitChance;
 					if (attackBonus > defenceBonus)
 						hitChance = 1D - (defenceBonus + 2D) / (2D * (attackBonus + 1D));
