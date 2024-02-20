@@ -54,6 +54,11 @@ public enum CreviceShortcut {
     }
 
     static {
+        ObjectAction.register(16543, "Squeeze-through", CreviceShortcut.FALADOR::squeeze);
+        ObjectAction.register(17002, 2400, 4403, 0, "Squeeze-past", CreviceShortcut.ZANARIS_46::squeeze);
+        ObjectAction.register(17002, 2409, 4401, 0, "Squeeze-past", CreviceShortcut.ZANARIS_66::squeeze);
+        ObjectAction.register(9739, 2899, 9901, 0, "use", CreviceShortcut.HEROES_GUILD::squeeze);
+        ObjectAction.register(9740, 2914, 9895, 0, "use", CreviceShortcut.HEROES_GUILD::squeeze);
         ObjectAction.register(36692, 3221, 12441, 0, "pass", CreviceShortcut.IORWERTH_DUNGEON_78::squeeze);
         ObjectAction.register(36693, 3217, 12441, 0, "pass", CreviceShortcut.IORWERTH_DUNGEON_78::squeeze);
         ObjectAction.register(36694, 3241, 12420, 0, "pass", CreviceShortcut.IORWERTH_DUNGEON_84::squeeze);

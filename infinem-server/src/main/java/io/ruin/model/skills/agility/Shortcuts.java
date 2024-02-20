@@ -104,9 +104,6 @@ public class Shortcuts {
         // Temple on the Salve to Morytania shortcut
         // Cosmic Temple advanced narrow walkway
         // Lumbridge Swamp to Al Kharid narrow crevice
-        // Heroes' Guild tunnel
-        ObjectAction.register(9739, 2899, 9901, 0, "use", CreviceShortcut.HEROES_GUILD::squeeze);
-        ObjectAction.register(9740, 2914, 9895, 0, "use", CreviceShortcut.HEROES_GUILD::squeeze);
         // Yanille Dungeon's rubble climb
         // Elven Overpass (Arandar) medium cliffside scramble
         // Arceuus essence mine northern scramble
@@ -130,9 +127,6 @@ public class Shortcuts {
         // Kalphite Lair wall shortcut
         // Brimhaven Dungeon vine to baby green dragons
         // Dwarven mine crevice
-        ObjectAction.register(16543, "Squeeze-through", CreviceShortcut.FALADOR::squeeze);
-        ObjectAction.register(17002, 2400, 4403, 0, "Squeeze-past", CreviceShortcut.ZANARIS_46::squeeze);
-        ObjectAction.register(17002, 2409, 4401, 0, "Squeeze-past", CreviceShortcut.ZANARIS_66::squeeze);
 
         /**
          * Rope swings
