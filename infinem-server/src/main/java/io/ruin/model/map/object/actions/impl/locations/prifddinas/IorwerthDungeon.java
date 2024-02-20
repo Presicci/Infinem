@@ -1,5 +1,6 @@
 package io.ruin.model.map.object.actions.impl.locations.prifddinas;
 
+import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.StepType;
@@ -14,34 +15,10 @@ import io.ruin.model.stat.StatType;
 public class IorwerthDungeon {
 
     static {
-        ObjectAction.register(36690, "enter", (player, obj) -> enterIorwerthDungeon(player));
-        ObjectAction.register(36691, "exit", (player, obj) -> exitIorwerthDungeon(player));
         ObjectAction.register(36692, "pass", (player, obj) -> shortcutOne(player));
         ObjectAction.register(36693, "pass", (player, obj) -> shortcutOneBack(player));
         ObjectAction.register(36694, "pass", (player, obj) -> shortcutTwo(player));
         ObjectAction.register(36695, "pass", (player, obj) -> shortcutTwoBack(player));
-    }
-
-    public static void enterIorwerthDungeon(Player player) {
-        player.lock();
-        player.getPacketSender().fadeOut();
-        player.dialogue(
-                new MessageDialogue("Welcome to the Iorwerth Dungeon.")
-        );
-        player.getMovement().teleport(3225, 12445, 0);
-        player.getPacketSender().fadeIn();
-        player.unlock();
-    }
-
-    public static void exitIorwerthDungeon(Player player) {
-        player.lock();
-        player.getPacketSender().fadeOut();
-        player.dialogue(
-                new MessageDialogue("Welcome to the Iorwerth District.")
-        );
-        player.getMovement().teleport(3225, 6046, 0);
-        player.getPacketSender().fadeIn();
-        player.unlock();
     }
 
     public static void shortcutOne(Player player) {

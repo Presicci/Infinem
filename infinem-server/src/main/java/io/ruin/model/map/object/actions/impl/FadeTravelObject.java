@@ -9,6 +9,8 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
+    IORWERTH_DUNGEON_ENTRANCE(36690, new Position(3224, 6043), new Position(3225, 12445)),
+    IORWERTH_DUNGEON_EXIT(36691, new Position(3224, 12446), new Position(3225, 6046)),
     ICETROLL_CAVE_WEST_ENTRANCE(21585, new Position(2316, 3894), new Position(2420, 10279, 1), 2796),
     ICETROLL_CAVE_ENTRANCE(21584, new Position(2401, 3889), new Position(2394, 10300, 1), 2796),
     ICETROLL_CAVE_EXIT(21598, new Position(2394, 10301, 1), new Position(2401, 3888, 0), 2796),
