@@ -6,6 +6,7 @@ import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
+import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 
@@ -17,9 +18,11 @@ import lombok.AllArgsConstructor;
 public enum CreviceShortcut {
 
     FALADOR(42, 1, Position.of(3028, 9806), Position.of(3035, 9806), true),
-    HEROES_GUILD(67, 1, new Position(2899, 9902), new Position(2914, 9894), true),
     ZANARIS_46(46, 1, new Position(2400, 4404, 0), new Position(2400, 4402, 0), false),
     ZANARIS_66(46, 1, new Position(2409, 4402, 0), new Position(2409, 4400, 0), false),
+    HEROES_GUILD(67, 1, new Position(2899, 9902), new Position(2914, 9894), true),
+    IORWERTH_DUNGEON_78(78, 1, new Position(3216, 12441), new Position(3222, 12441), true),
+    IORWERTH_DUNGEON_84(84, 1, new Position(3242, 12420), new Position(3232, 12420, 0), true)
     ;
 
     private final int levelReq, xp;
@@ -48,5 +51,12 @@ public enum CreviceShortcut {
             player.getStats().addXp(StatType.Agility, xp, true);
             player.unlock();
         });
+    }
+
+    static {
+        ObjectAction.register(36692, 3221, 12441, 0, "pass", CreviceShortcut.IORWERTH_DUNGEON_78::squeeze);
+        ObjectAction.register(36693, 3217, 12441, 0, "pass", CreviceShortcut.IORWERTH_DUNGEON_78::squeeze);
+        ObjectAction.register(36694, 3241, 12420, 0, "pass", CreviceShortcut.IORWERTH_DUNGEON_84::squeeze);
+        ObjectAction.register(36695, 3233, 12420, 0, "pass", CreviceShortcut.IORWERTH_DUNGEON_84::squeeze);
     }
 }
