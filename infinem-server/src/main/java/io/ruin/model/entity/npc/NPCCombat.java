@@ -554,6 +554,18 @@ public abstract class NPCCombat extends Combat {
         }
     }
 
+    private void handCrystalShard(Killer killer, Player player, Position pos) {
+        switch(npc.getId()) {
+            case 410:
+            case 411:
+                if (Random.rollDie(24, 1))
+                    handleDrop(killer, pos, player, new Item(23962));
+                break;
+            default:
+                return;
+        }
+    }
+
     public void dropItems(Killer killer) {
         NPCDef def = npc.getDef();
         Position dropPosition = getDropPosition();
@@ -638,6 +650,13 @@ public abstract class NPCCombat extends Combat {
          * Handle the kalphite queen consumable drops
          */
         handleKalphiteQueenDrops(killer, pKiller, dropPosition);
+
+        /*
+         * Crystal shard drops
+         * Some monsters in Iorwerth Dungeon don't have exclusive drop polls,
+         * so we add a crystal shard roll here
+         */
+        handCrystalShard(killer, pKiller, dropPosition);
 
         /*
          * Handle superior slayer monster unique drops
