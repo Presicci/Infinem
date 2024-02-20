@@ -42,7 +42,7 @@
       },
       {
         "name": "uncommon seed",
-        "weight": 139,
+        "weight": 150,
         "items": [
           { "id": 0, "min": 2, "max": 2, "weight": 5 }
         ]
