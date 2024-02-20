@@ -1,32 +1,33 @@
 [
   { // Tribesman (32)
-    "ids": [ 522, 6406, 6407 ],
+    "ids": [ 530, 6406, 6407, 11954 ],
     "handler": "",
     //Combat Info
-    "hitpoints": 40,
+    "hitpoints": 39,
     "aggressive_level": 64,
-    "max_damage": 6,
+    "max_damage": 4,
     "attack_style": "STAB",
+    "poison": 11,
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 0.0,
     "slayer_tasks": [],
     //Combat Stats
-    "attack": 1,
-    "strength": 1,
-    "defence": 1,
+    "attack": 23,
+    "strength": 27,
+    "defence": 26,
     "ranged": 1,
     "magic": 1,
     //Aggressive Stats
-    "stab_attack": 0,
-    "slash_attack": 0,
-    "crush_attack": 0,
+    "stab_attack": 8,
+    "slash_attack": 8,
+    "crush_attack": 8,
     "magic_attack": 0,
     "ranged_attack": 0,
     //Defensive Stats
-    "stab_defence": 0,
-    "slash_defence": 0,
-    "crush_defence": 0,
+    "stab_defence": 4,
+    "slash_defence": 6,
+    "crush_defence": 6,
     "magic_defence": 0,
     "ranged_defence": 0,
     //Immunites
@@ -38,7 +39,7 @@
     "respawn_ticks": 50,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": 422,
+    "attack_animation": 428,
     "defend_animation": 424,
     "death_animation": 836
   }
