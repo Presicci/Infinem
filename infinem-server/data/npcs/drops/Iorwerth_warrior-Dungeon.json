@@ -1,20 +1,20 @@
 [
   {
-    "ids": [ 8922, 8938, 8939, 8955, 8956 ],
+    "ids": [ 9502, 9503 ],
     "guaranteed": [
       { "id": 526, "min": 1, "max": 1 }   //Bones
     ],
     "tables": [
       {
         "name": "Pre-roll",
-        "weight": 1,
+        "weight": 5,
         "items": [
           { "id": 23959, "min": 1, "max": 1, "weight": 97 }   //Enhanced crystal teleport seed
         ]
       },
       {
         "name": "Weapons and armour",
-        "weight": 48,
+        "weight": 480,
         "items": [
           { "id": 1099, "min": 1, "max": 1, "weight": 2339 },   //Green d'hide chaps
           { "id": 1135, "min": 1, "max": 1, "weight": 3130 },   //Green d'hide body
@@ -26,7 +26,7 @@
       },
       {
         "name": "Runes",
-        "weight": 77,
+        "weight": 770,
         "items": [
           { "id": 555, "min": 70, "max": 70, "weight": 6250 },   //Water rune
           { "id": 561, "min": 12, "max": 12, "weight": 3910 },   //Nature rune
@@ -36,14 +36,14 @@
       },
       {
         "name": "herb drop",
-        "weight": 60,
+        "weight": 600,
         "items": [
           { "id": 0, "min": 1, "max": 1, "weight": 5 }
         ]
       },
       {
         "name": "Coins",
-        "weight": 178,
+        "weight": 1780,
         "items": [
           { "id": 995, "min": 20, "max": 20, "weight": 3910 },   //Coins
           { "id": 995, "min": 44, "max": 44, "weight": 22699 },   //Coins
@@ -52,7 +52,7 @@
       },
       {
         "name": "Other",
-        "weight": 133,
+        "weight": 1330,
         "items": [
           { "id": 6103, "min": 1, "max": 1, "weight": 19500 },   //Crystal teleport seed
           { "id": 365, "min": 1, "max": 1, "weight": 2339 },   //Bass
@@ -63,7 +63,7 @@
       },
       {
         "name": "Tertiary",
-        "weight": 36,
+        "weight": 360,
         "items": [
           { "id": 23962, "min": 1, "max": 1, "weight": 4170 },   //Crystal shard
           { "id": 13481, "min": 1, "max": 1, "weight": 2000 },   //Ensouled elf head
