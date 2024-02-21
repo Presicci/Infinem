@@ -1,0 +1,8 @@
+Sir mordred: Are you looking for a fight?
+<You look rather weak.
+Player: You look rather weak.
+Sir mordred: Don't be so sure.
+ATTACK:
+><I was just looking around.
+Player: I was just looking around.
+Sir mordred: Well get out of my keep!
