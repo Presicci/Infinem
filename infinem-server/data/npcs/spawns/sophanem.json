@@ -52,5 +52,158 @@
     "z": 0,
     "direction": "N",
     "walkRange": 0
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3279,
+    "y": 2751,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3278,
+    "y": 2752,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3279,
+    "y": 2754,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3277,
+    "y": 2754,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3278,
+    "y": 2756,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3277,
+    "y": 2757,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3276,
+    "y": 2759,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3277,
+    "y": 2760,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3275,
+    "y": 2796,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3274,
+    "y": 2798,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3275,
+    "y": 2800,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3272,
+    "y": 2802,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3274,
+    "y": 2803,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3273,
+    "y": 2805,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3274,
+    "y": 2806,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3275,
+    "y": 2802,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Plague frog",
+    "id": 4188,
+    "x": 3275,
+    "y": 2798,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
   }
 ]
