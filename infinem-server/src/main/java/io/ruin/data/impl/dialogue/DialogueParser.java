@@ -163,8 +163,8 @@ public class DialogueParser {
         if (line.startsWith("Player:")) {
             return new PlayerDialogue(line.substring(8));
         }
-        String npcName = npcDef.name;
-        if (line.startsWith(npcName + ":")) {
+        String npcName = npcDef.name.toLowerCase();
+        if (line.toLowerCase().startsWith(npcName + ":")) {
             return new NPCDialogue(npcDef.id, line.substring(npcName.length() + 1));
         }
         for (DialogueLoaderAction action : DialogueLoaderAction.values()) {
@@ -276,7 +276,7 @@ public class DialogueParser {
                 }
             }
         }
-        error("invalid line prefix", dialogue);
+        error("invalid line prefix for " + npcName, dialogue);
         return new MessageDialogue("");
     }
 
