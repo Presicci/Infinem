@@ -555,6 +555,7 @@ public abstract class NPCCombat extends Combat {
     }
 
     private void handCrystalShard(Killer killer, Player player, Position pos) {
+        if (!MapArea.IORWERTH_DUNGEON.inArea(pos)) return;
         switch(npc.getId()) {
             case 410:
             case 411:
