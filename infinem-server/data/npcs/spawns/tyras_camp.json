@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Tyras guard",
+    "id": 639,
+    "x": 2192,
+    "y": 3150,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tyras guard",
+    "id": 639,
+    "x": 2189,
+    "y": 3153,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Tyras guard",
+    "id": 639,
+    "x": 2187,
+    "y": 3156,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Tyras guard",
+    "id": 639,
+    "x": 2183,
+    "y": 3147,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "General Hining",
+    "id": 3437,
+    "x": 2187,
+    "y": 3149,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 2186,
+    "y": 3151,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Chicken",
+    "id": 1174,
+    "x": 2184,
+    "y": 3153,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Chicken",
+    "id": 1173,
+    "x": 2186,
+    "y": 3154,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Tyras guard",
+    "id": 3436,
+    "x": 2186,
+    "y": 3145,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Quartermaster",
+    "id": 3438,
+    "x": 2194,
+    "y": 3139,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Tyras guard",
+    "id": 1327,
+    "x": 2143,
+    "y": 3122,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Tyras guard",
+    "id": 1327,
+    "x": 2150,
+    "y": 3122,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Tyras guard",
+    "id": 1327,
+    "x": 2154,
+    "y": 3121,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Tyras guard",
+    "id": 1327,
+    "x": 2154,
+    "y": 3123,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Tyras guard",
+    "id": 1327,
+    "x": 2160,
+    "y": 3125,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tyras guard",
+    "id": 1327,
+    "x": 2163,
+    "y": 3122,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
