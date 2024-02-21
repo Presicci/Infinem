@@ -1245,6 +1245,15 @@
     "world": "ECO",
     "npcName": "Monkey"
   },
+  {
+    "name": "The Shaikahan",
+    "id": 4708,
+    "x": 2906,
+    "y": 3095,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
 
 
 
