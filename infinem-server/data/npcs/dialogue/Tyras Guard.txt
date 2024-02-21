@@ -1,0 +1,13 @@
+Tyras guard: What is it?
+<What's going on around here?
+Player: What's going on around here?
+Tyras guard: Sorry, I shouldn't give out sensitive information to civilians. You should go to General Hining, in the camp along the road.
+><Do you know what's south of here?
+Player: Do you know what's south of here?
+Tyras guard: No. We sent a scouting party in that direction, when we first established our camp. Some of the men got lost in the swamps. Eventually we listed them as dead.
+Tyras guard: Then suddenly they returned, with a wild gleam in their eyes, raving about gods and snakes and all kinds of madness.
+Tyras guard: We had to drive them out, in case their condition infected the rest of the troops. Their wives will be given a full widow pension when we return home.
+Tyras guard: General Hining concluded that, whatever is down there, it's not affiliated with any of the elf factions, and it should be left alone.
+Player: Thank you.
+><I'll leave you alone.
+Player: I'll leave you alone.

@@ -1,0 +1,5 @@
+Player: Hello.
+General Hining: Good day adventurer.
+Player: I'm surprised you're still here. Are you not going back to Ardougne?
+General Hining: King Thoros and the Prifddinas Elders have agreed that we continue to maintain this outpost. We're now able to rotate our troops between here and Ardougne though, so they can spend more time with their families.
+Player: Good to hear. Anyway, I'll leave you to it.
