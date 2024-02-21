@@ -83,19 +83,19 @@
   {
     "name": "Wise old man - vote manager",
     "id": 2108,
-    "x": 3217,
-    "y": 3215,
+    "x": 3209,
+    "y": 3226,
     "z": 0,
-    "direction": "E",
+    "direction": "S",
     "walkRange": 0
   },
   {
     "name": "Doomsayer - donate manager",
     "id": 119,
-    "x": 3217,
-    "y": 3213,
+    "x": 3208,
+    "y": 3226,
     "z": 0,
-    "direction": "E",
+    "direction": "S",
     "walkRange": 0
   },
   {
