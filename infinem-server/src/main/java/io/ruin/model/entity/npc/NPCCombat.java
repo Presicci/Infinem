@@ -559,6 +559,7 @@ public abstract class NPCCombat extends Combat {
         switch(npc.getId()) {
             case 410:
             case 411:
+            case 2916:
                 if (Random.rollDie(24, 1))
                     handleDrop(killer, pos, player, new Item(23962));
                 break;

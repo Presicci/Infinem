@@ -22,6 +22,7 @@ public enum MapArea {
     REVENANT_CAVES(12703, 12702, 12701, 12959, 12958, 12957),
     WILDERNESS_SLAYER_CAVE(13470, 13469, 13726, 13725),
     PRIFDDINAS(12894, 12895, 13150, 13151),
+    IORWERTH_DUNGEON(12737, 12738, 12993, 12994),
     FISHING_GUILD(2596, 3394, 2614, 3426, 0, (player -> {
         player.getTaskManager().doLookupByUUID(575, 1); // Enter the Fishing Guild
     })),
