@@ -35,7 +35,7 @@
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 6,
-    "respawn_ticks": 50,
+    "respawn_ticks": 25,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 8283,
