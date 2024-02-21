@@ -11,6 +11,7 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Widget;
 import io.ruin.model.inter.handlers.EquipmentStats;
+import io.ruin.model.inter.handlers.TabCombat;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.Spell;
@@ -152,6 +153,7 @@ public class TargetSpell extends Spell {
                 }
                 if(runeItems != null && (r = RuneRemoval.get(entity.player, runeItems)) == null) {
                     entity.player.sendMessage("You don't have enough runes to cast this spell.");
+                    TabCombat.resetAutocast(entity.player);
                     return false;
                 }
             }
