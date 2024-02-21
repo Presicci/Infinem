@@ -25,5 +25,50 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
+  },
+  {
+    "name": "Renegade Knight",
+    "id": 3517,
+    "x": 2766,
+    "y": 3405,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Renegade Knight",
+    "id": 3517,
+    "x": 2770,
+    "y": 3402,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Renegade Knight",
+    "id": 3517,
+    "x": 2767,
+    "y": 3400,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Renegade Knight",
+    "id": 3517,
+    "x": 2771,
+    "y": 3396,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sir Mordred",
+    "id": 3527,
+    "x": 2770,
+    "y": 3402,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 4
   }
 ]
