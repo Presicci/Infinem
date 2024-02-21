@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Mercenary Captain",
+    "id": 4635,
+    "x": 3269,
+    "y": 3029,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mercenary",
+    "id": 4657,
+    "x": 3266,
+    "y": 3027,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mercenary",
+    "id": 4658,
+    "x": 3270,
+    "y": 3032,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mercenary",
+    "id": 4659,
+    "x": 3267,
+    "y": 3031,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Mercenary",
+    "id": 4656,
+    "x": 3272,
+    "y": 3028,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]
