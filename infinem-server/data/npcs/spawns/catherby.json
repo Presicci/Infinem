@@ -315,15 +315,6 @@
     "walkRange": 3
   },
   {
-    "name": "Renegade Knight",
-    "id": 3517,
-    "x": 2766,
-    "y": 3398,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Man",
     "id": 3108,
     "x": 2698,
@@ -333,15 +324,6 @@
     "walkRange": 5
   },
   {
-    "name": "Renegade Knight",
-    "id": 3517,
-    "x": 2767,
-    "y": 3399,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
     "name": "Woman",
     "id": 3112,
     "x": 2698,
@@ -349,15 +331,6 @@
     "z": 0,
     "direction": "S",
     "walkRange": 1
-  },
-  {
-    "name": "Renegade Knight",
-    "id": 3517,
-    "x": 2771,
-    "y": 3401,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
   },
   {
     "name": "Seer",
