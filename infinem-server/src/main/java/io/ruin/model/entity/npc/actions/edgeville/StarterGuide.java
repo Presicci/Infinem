@@ -142,31 +142,21 @@ public class StarterGuide {
                 } else if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
                     text = "Ultimate Iron Man... Up for quite the challenge, aren't you?";
                 }
-				if (player.getGameMode().isIronMan()) {
-                    player.dialogue(new NPCDialogue(guide, text),
-                    new NPCDialogue(guide, "I'll give you a few items to help get you started..."),
-                    new NPCDialogue(guide, "There you go, some basic stuff. If you need anything else, remember to check the shops.") {
-                        @Override
-                        public void open(Player player) {
-                            giveEcoStarter(player);
-                            player.newPlayer = false;
-                            super.open(player);
-                        }
-                    });
-                } else {
-                    player.dialogue(new NPCDialogue(guide, "Excellent.. I'll give you a few items to help get you started and fill your bank with various starter items"),
-                    new NPCDialogue(guide, "There you go, some basic stuff. If you need anything else, remember to check Sigmund's shop.") {
-                        @Override
+                player.dialogue(new NPCDialogue(guide, text),
+                        new NPCDialogue(guide, "I'll give you a few items to help get you started..."),
+                        new NPCDialogue(guide, "There you go, some basic stuff. If you need anything else, remember to check the shops.") {
+                            @Override
                             public void open(Player player) {
-                            giveEcoStarter(player);
-                            player.newPlayer = false;
-                            super.open(player);
-                        }
-                    });
-                }
-				event.waitForDialogue(player);
+                                giveEcoStarter(player);
+                                player.newPlayer = false;
+                                super.open(player);
+                            }
+                        });
+                event.waitForDialogue(player);
                 player.getPacketSender().resetHintIcon(true);
                 Broadcast.WORLD.sendNews(player.getName() + " has just joined " + World.type.getWorldName() + "!");
+                startTutorial = true;
+            } else {
                 startTutorial = true;
             }
 			if (startTutorial) {
@@ -185,186 +175,60 @@ public class StarterGuide {
 		});
 	}
 
-    private static void oldIntroCutscene(NPC guide, Player player) {
-
-        guide.startEvent((e) -> {
-            player.getPacketSender().sendClientScript(39, "i", 100);
-            Config.LOCK_CAMERA.set(player, 1);
-            player.getPacketSender().moveCameraToLocation(2050, 3572, 600, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2045, 3577, 400, 0, 25);
-            e.delay(1);
-            player.dialogue(new NPCDialogue(guide,
-                    "This is our teleporter. Using it will give you access<br>" +
-                            "to locations all around the world, and even in the<br>" +
-                            "wilderness. You can even access your most recent<br>" +
-                            "teleport by right-clicking on the teleporter!"));
-            e.waitForDialogue(player);
-
-            player.getMovement().teleport(2019, 3577, 0);
-            e.delay(1);
-            player.getPacketSender().moveCameraToLocation(2015, 3577, 750, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2010, 3577, 500, 0, 30);
-            e.delay(1);
-            player.dialogue(new NPCDialogue(guide,
-                    "This is the bank. It houses the normal bank<br>" +
-                            "amenities but also inside are the vote point and<br>" +
-                            "donation managers."));
-            e.waitForDialogue(player);
-            player.getPacketSender().moveCameraToLocation(2013, 3577, 750, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2019, 3577, 500, 0, 18);
-            e.delay(1);
-            player.dialogue(new NPCDialogue(guide,
-                    "Here we have the trading post.<br>" +
-                            "You can buy items from other players, much like<br>" +
-                            "the grand exchange."));
-            e.waitForDialogue(player);
-
-            player.getMovement().teleport(2031, 3577, 0);
-            player.getPacketSender().moveCameraToLocation(2026, 3573, 500, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2032, 3571, 500, 0, 30);
-            e.delay(1);
-            player.dialogue(new NPCDialogue(guide,
-                    "Here is the construction portal. There are <br>" +
-                            "also NPC's here to sell you supplies to <br>" +
-                            "build your house and remodel it as well."));
-            e.waitForDialogue(player);
-
-            player.getMovement().teleport(2031, 3577, 0);
-            player.getPacketSender().turnCameraToLocation(2020, 3558, 400, 0, 30);
-            e.delay(1);
-            player.dialogue(new NPCDialogue(guide,
-                    "All of our basic shops are located in this building<br>" +
-                            "The ironman shop is in the small building to<br>" +
-                            "the east."));
-            e.waitForDialogue(player);
-
-            player.getPacketSender().moveCameraToLocation(2064, 3583, 1000, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2062, 3570, 0, 0, 30);
-            e.delay(1);
-            player.dialogue(new NPCDialogue(guide,
-                    "There is a skilling area to the east of home<br>" +
-                            "just over the bridge. Fishing is also available<br>" +
-                            "to the north."));
-            e.delay(10);
-            player.getPacketSender().moveCameraToLocation(2064, 3572, 1200, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2064, 3590, 0, 0, 32);
-            e.waitForDialogue(player);
-            Config.LOCK_CAMERA.set(player, 0);
-            player.getPacketSender().resetCamera();
-            player.setTutorialStage(1);
-
-            guide.getMovement().teleport(2031, 3577, 0);
-            player.getMovement().teleport(2032, 3577, 0);
-            guide.face(player);
-            player.face(guide);
-            player.getPacketSender().moveCameraToLocation(2032, 3582, 450, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2032, 3577, 400, 0, 30);
-            player.dialogue(new NPCDialogue(guide,
-                    "If you have any other questions, there are always<br>" +
-                            "helpful users in the help clan chat"));
-            e.waitForDialogue(player);
-            guide.animate(863);
-            player.inTutorial = false;
-            player.unlock();
-            player.setTutorialStage(0);
-            guide.addEvent(evt -> {
-                evt.delay(2);
-                World.sendGraphics(86, 50, 0, guide.getPosition());
-                player.logoutListener = null;
-                guide.remove();
-            });
-            player.getPacketSender().resetCamera();
-        });
-    }
-
     private static void introCutscene(NPC guide, Player player) {
         guide.startEvent((e) -> {
             player.getPacketSender().sendClientScript(39, "i", 100);
             Config.LOCK_CAMERA.set(player, 1);
-            player.getPacketSender().moveCameraToLocation(2050, 3572, 600, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2045, 3577, 400, 0, 25);
-            e.delay(1);
+            player.getPacketSender().moveCameraToLocation(3234, 3220, 600, 0, 12);
+            player.getPacketSender().turnCameraToLocation(3238, 3222, 250, 0, 25);
             player.dialogue(new NPCDialogue(guide,
-                    "This is our teleporter. Using it will give you access<br>" +
-                            "to locations all around the world, and even in the<br>" +
-                            "wilderness. You can even access your most recent<br>" +
-                            "teleport by right-clicking on the teleporter!"));
+                    "Waystones are located at most major cities in Infinem. " +
+                    "When you channel a waystone, you can travel to any other waystone that you have unlocked. " +
+                    "To unlock a waystone all you have to do is find it and channel it."));
             e.waitForDialogue(player);
 
-            player.getMovement().teleport(2019, 3577, 0);
-            e.delay(1);
-            player.getPacketSender().moveCameraToLocation(2015, 3577, 750, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2010, 3577, 500, 0, 30);
-            e.delay(1);
+            player.getMovement().teleport(3230, 3241, 0);
+            player.face(Direction.EAST);
+            player.getPacketSender().moveCameraToLocation(3223, 3239, 600, 0, 12);
+            player.getPacketSender().turnCameraToLocation(3218, 3238, 400, 0, 30);
             player.dialogue(new NPCDialogue(guide,
-                    "This is the bank. It houses the normal bank<br>" +
-                            "amenities but also inside are the vote point and<br>" +
-                            "donation managers."));
-            e.waitForDialogue(player);
-            player.getPacketSender().moveCameraToLocation(2013, 3577, 750, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2019, 3577, 500, 0, 18);
-            e.delay(1);
-            player.dialogue(new NPCDialogue(guide,
-                    "Here we have the trading post.<br>" +
-                            "You can buy items from other players, much like<br>" +
-                            "the grand exchange."));
+                    "Around Lumbridge you will find tutors that offer advice and have shops relating to their skill of expertise. " +
+                            "These are the combat tutors who will supply you with any combat equipment you might need starting out."));
             e.waitForDialogue(player);
 
-            player.getMovement().teleport(2031, 3577, 0);
-            player.getPacketSender().moveCameraToLocation(2026, 3573, 500, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2032, 3571, 500, 0, 30);
-            e.delay(1);
-            player.dialogue(new NPCDialogue(guide,
-                    "Here is the construction portal. There are <br>" +
-                            "also NPC's here to sell you supplies to <br>" +
-                            "build your house and remodel it as well."));
+            player.getMovement().teleport(3211, 3220, 0);
+            player.face(Direction.SOUTH);
+            player.getPacketSender().moveCameraToLocation(3214, 3221, 800, 0, 12);
+            player.getPacketSender().turnCameraToLocation(3209, 3222, 0, 0, 18);
+            if (!player.getGameMode().isIronMan()) {
+                player.dialogue(
+                        new NPCDialogue(guide, "In this room you'll find a bank and a poll booth. You'll also find the Wise Old Man who will help you vote and claim voting rewards, and __ who will help you visit the shop and claim anything you might have purchased."),
+                        new NPCDialogue(guide, "If you're interested in trading with other players the clerks here will help you access the Trading Post."));
+            } else {
+                player.dialogue(
+                        new NPCDialogue(guide, "In this room you'll find a bank and a poll booth. You'll also find the Wise Old Man who will help you vote and claim voting rewards, and __ who will help you visit the shop and claim anything you might have purchased."
+                ));
+            }
             e.waitForDialogue(player);
-
-            player.getMovement().teleport(2031, 3577, 0);
-            player.getPacketSender().turnCameraToLocation(2020, 3558, 400, 0, 30);
+            player.getPacketSender().moveCameraToLocation(3213, 3221, 800, 0, 12);
+            player.getPacketSender().turnCameraToLocation(3216, 3221, 0, 0, 18);
             e.delay(1);
             player.dialogue(new NPCDialogue(guide,
-                    "All of our basic shops are located in this building<br>" +
-                            "The ironman shop is in the small building to<br>" +
-                            "the east."));
-            e.waitForDialogue(player);
-
-            player.getPacketSender().moveCameraToLocation(2064, 3583, 1000, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2062, 3570, 0, 0, 30);
-            e.delay(1);
-            player.dialogue(new NPCDialogue(guide,
-                    "There is a skilling area to the east of home<br>" +
-                            "just over the bridge. Fishing is also available<br>" +
-                            "to the north."));
-            e.delay(10);
-            player.getPacketSender().moveCameraToLocation(2064, 3572, 1200, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2064, 3590, 0, 0, 32);
+                    "This is Death's Chest, it will hold your items in the event that you die horribly. Hopefully you wont be using it much."));
             e.waitForDialogue(player);
             Config.LOCK_CAMERA.set(player, 0);
+            player.getMovement().teleport(3237, 3220, 0);
             player.getPacketSender().resetCamera();
             player.setTutorialStage(1);
-
-            guide.getMovement().teleport(2031, 3577, 0);
-            player.getMovement().teleport(2032, 3577, 0);
-            guide.face(player);
             player.face(guide);
-            player.getPacketSender().moveCameraToLocation(2032, 3582, 450, 0, 12);
-            player.getPacketSender().turnCameraToLocation(2032, 3577, 400, 0, 30);
             player.dialogue(new NPCDialogue(guide,
-                    "If you have any other questions, there are always<br>" +
-                            "helpful users in the help clan chat"));
+                    "If you have any other questions, there are always helpful users in the help clan chat"));
             e.waitForDialogue(player);
             guide.animate(863);
             player.inTutorial = false;
             player.unlock();
             player.setTutorialStage(0);
-            guide.addEvent(evt -> {
-                evt.delay(2);
-                World.sendGraphics(86, 50, 0, guide.getPosition());
-                player.logoutListener = null;
-                guide.remove();
-            });
-            player.getPacketSender().resetCamera();
+            player.clearHintArrow();
         });
     }
 
