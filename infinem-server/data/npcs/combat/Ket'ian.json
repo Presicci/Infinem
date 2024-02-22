@@ -1,6 +1,6 @@
 [
   { // Ket'ian
-    "ids": [ 3358 ],
+    "ids": [  ],
     "handler": "io.ruin.model.activities.wilderness.bosses.custom.Ketian",
     //Combat Info
     "hitpoints": 3600,
