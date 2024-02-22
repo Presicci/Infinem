@@ -229,12 +229,6 @@ public class NPCDef {
         } else if (id == 6118) {
             name = "Elvarg";
             combatLevel = 280;
-        } else if (id == 3358) {
-            name = "Ket'ian";
-            combatLevel = 420;
-            resizeX *= 2;
-            resizeY *= 2;
-            size = 2;
         } else if(id == 5906) {
             options[2] = null;
         } else if("Pick-up".equals(options[0]) && "Talk-to".equals(options[2]) && "Chase".equals(options[3]) && "Interact".equals(options[4])) {
