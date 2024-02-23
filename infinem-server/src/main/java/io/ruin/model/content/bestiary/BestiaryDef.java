@@ -86,21 +86,23 @@ public class BestiaryDef {
     };
 
     public static Map<String, String[]> CATEGORIES = new HashMap<String, String[]>() {{
-        put("zombie", new String[] { "sorebones", "zombie pirate", "zombie swab", "zombies champion", "summoned zombie" });
+        put("zombie", new String[] { "sorebones", "zombie pirate", "zombie swab", "zombies champion", "summoned zombie", "undead lumberjack" });
         put("dagannoth", new String[] { "dagannoth spawn", "dagannoth fledgeling" });
         put("kourend guard", new String[] { "soldier (tier 1)", "soldier (tier 2)", "soldier (tier 3)", "soldier (tier 4)", "soldier (tier 5)", "kourend head guard" });
         put("dwarf", new String[] { "dwarf gang member", "black guard berserker", "black guard" });
         put("kalphite", new String[] { "kalphite guardian", "kalphite soldier", "kalphite worker" });
         put("snail", new String[] { "bark blamish snail", "blood blamish snail", "myre blamish snail", "bruise blamish snail", "giant snail", "ochre blamish snail" });
-        put("barbarian", new String[] { "gunthor the brave" });
+        put("barbarian", new String[] { "gunthor the brave", "confused barbarian", "lost barbarian" });
         put("wizard", new String[] { "earth wizard", "fire wizard", "air wizard", "water wizard", "dark wizard", "necromancer", "invrigar the necromancer", "ancient wizard" });
-        put("vampyre", new String[] { "vampyre juvenile", "vampyre juvinate", "feral vampyre" });
         put("goblin", new String[] { "wormbrain", "goblin guard" });
+        put("cave goblin", new String[] { "cave goblin guard", "cave goblin miner" });
         put("gnome", new String[] { "gnome guard", "gnome child", "gnome mage", "gnome driver", "mounted terrorbird gnome", "gnome archer", "gnome troop", "gnome woman" });
         put("pest", new String[] { "ravager", "shifter", "defiler", "spinner", "torcher", "splatter", "brawler" });
-        put("civilian", new String[] { "woman", "man", "svetlana", "boris", "broddi", "thorhild", "joseph", "ksenia", "milla", "lev", "imre", "galina", "drunken man", "shipyard worker",
-                "narf", "zoja", "yadviga", "rusty", "irina", "alexis", "eduard", "nikolai", "penda", "nikita", "vera", "ocga", "sofiya", "liliya", "yuri", "georgy",
-                "jeff" });
+        put("rellekka denizen", new String[] { "freidir", "jennella", "borrokar" });
+        put("canifis denizen", new String[] { "svetlana", "boris", "joseph", "ksenia", "lev", "milla", "imre", "zoja", "nikolai", "georgy", "yuri", "nikita", "vera",
+                "alexis", "sofiya", "irina", "eduard", "galina", "liliya", "yadviga" });
+        put("gielinor denizen", new String[] { "woman", "man", "broddi", "thorhild", "drunken man", "shipyard worker",
+                "narf", "rusty", "penda", "ocga", "jeff", "hengel", "anja", "cuff" });
         put("nightmares", new String[] { "khazard warlord", "khazard warlord (hard)", "kamil", "kamil (hard)", "corsair traitor", "corsair traitor (hard)", "fareed", "fareed (hard)",
                 "agrith naar", "agrith naar (hard)", "witch's experiment", "witch's experiment (hard)", "witch's experiment (second form)", "witch's experiment (second form) (hard)",
                 "witch's experiment (third form)", "witch's experiment (third form) (hard)", "witch's experiment (fourth form)", "witch's experiment (fourth form) (hard)", "arrg", "arrg (hard)",
@@ -112,29 +114,40 @@ public class BestiaryDef {
                 "barrelchest", "barrelchest (hard)", "trapped soul", "trapped soul (hard)", "bouncer", "bouncer (hard)", "culinaromancer", "culinaromancer (hard)",
                 "me", "me (hard)", "jungle demon", "jungle demon (hard)", "giant scarab", "giant scarab (hard)", "black knight titan", "black knight titan (hard)", "the everlasting", "the everlasting (hard)",
         });
-        put("revenant", new String[] { "revenant imp", "revenant pyrefiend", "revenant knight", "revenant cyclops", "revenant hellhound", "revenant dragon", "revenant demon",
-                "revenant dark beast", "revenant ork" });
         put("bandit", new String[] { "black heather", "speedy keith", "bandit champion", "guard bandit" });
         put("troll", new String[] { "troll general", "kraka", "mountain troll", "pee hat", "thrower troll", "troll spectator", "stick", "berry", "twig", "kob" });
         put("ice troll", new String[] { "ice troll", "ice troll grunt", "ice troll male", "ice troll female", "ice troll runt" });
         put("ogre", new String[] { "city guard", "keef", "enclave guard", "gorad", "ogre chieftain" });
         put("black knight", new String[] { "fortress guard", "jailer" });
-        put("elf", new String[] { "iorwerth warrior", "elf warrior", "elf archer", "iorwerth archer" });
+        put("elf warrior", new String[] { "iorwerth warrior", "elf warrior" });
+        put("elf archer", new String[] { "elf archer", "iorwerth archer" });
         put("skeleton", new String[] { "skeletal miner" });
         put("pirate", new String[] { "jake", "pirate guard", "wilson", "palmer" });
         put("guard", new String[] { "tower guard", "jail guard", "radat", "poltenip" });
-        put("h.A.M. member", new String[] { "h.a.m. guard", "h.a.m. archer", "h.a.m. mage" });
+        put("h.A.M. Member", new String[] { "h.a.m. guard", "h.a.m. archer", "h.a.m. mage" });
+        put("z.M.I. Member", new String[] { "zamorak crafter", "zamorak warrior", "zamorak ranger", "zamorak mage" });
         put("abyss monster", new String[] { "abyssal leech", "abyssal guardian", "abyssal walker" });
-        put("barrows brothers", new String[] { "verac the defiled", "guthan the infested", "torag the corrupted", "ahrim the blighted", "dharok the wretched", "karil the tainted" });
+        put("barrows brother", new String[] { "verac the defiled", "guthan the infested", "torag the corrupted", "ahrim the blighted", "dharok the wretched", "karil the tainted" });
         put("animated armour", new String[] { "animated adamant armour", "animated bronze armour", "animated iron armour", "animated mithril armour", "animated rune armour",
                 "animated steel armour"});
+        put("elemental", new String[] { "fire elemental", "air elemental", "earth elemental", "water elemental" });
+        put("wolf", new String[] { "white wolf", "jungle wolf", "ice wolf", "dire wolf", "desert wolf", "big wolf" });
+        put("tzhaar", new String[] { "tzhaar-hur", "tzhaar-ket", "tzhaar-mej", "tzhaar-xil" });
+        put("fight cave tzhaar", new String[] { "tz-kek", "ket-zek", "tz-kih", "yt-hurkot", "yt-mejkot", "tok-xil" });
+        put("inferno tzhaar", new String[] { "jal-zek", "jal-akrek-xil", "jal-xil", "jal-akrek-ket", "jal-akrek-mej", "jal-mejjak", "jal-mejrah", "jal-ak", "jal-nib", "jal-imkot", "jaltok-jad" });
+        put("barbarian spirit", new String[] { "angry barbarian spirit", "berserk barbarian spirit", "enraged barbarian spirit", "ferocious barbarian spirit" });
     }};
 
     public static Map<String, String> REPLACEMENTS = new HashMap<String,String>() {{
         // Misc replacers
+        put("grizzly bear", "bear");
+        put("black bear", "bear");
+        put("grizzly bear cub", "bear cub");
         put("tekton (enraged)", "tekton");
         put("vet'ion reborn", "vet'ion");
         put("head thief", "thief");
+        put("mercenary captain", "mercenary");
+        put("billy goat", "goat");
         // Champions
         put("lesser demon champion", "lesser demon");
         put("earth warrior champion", "earth warrior");
@@ -143,37 +156,45 @@ public class BestiaryDef {
         put("imp champion", "imp");
         put("giant champion", "hill giant");
         put("goblin champion", "goblin");
+        put("hobgoblin champion", "hobgoblin");
         // Superiors
-        put("king kurask", "kurask");
-        put("greater nechryael", "nechryael");
-        put("greater abyssal demon", "abyssal demon");
-        put("repugnant spectre", "deviant spectre");
-        put("chaotic death spawn", "death spawn");
-        put("flaming pyrelord", "pyrefiend");
+        put("crushing hand", "crawling hand");
+        put("chasm crawler", "cave crawler");
         put("screaming banshee", "banshee");
-        put("infernal pyrelord", "pyrelord");
-        put("insatiable mutated bloodveld", "mutated bloodveld");
-        put("cave abomination", "cave horror");
-        put("abhorrent spectre", "aberrant spectre");
-        put("cockathrice", "cockatrice");
+        put("screaming twisted banshee", "twisted banshee");
         put("giant rockslug", "rockslug");
+        put("cockathrice", "cockatrice");
+        put("flaming pyrelord", "pyrefiend");
+        put("infernal pyrelord", "pyrelord");
+        put("monstrous basilisk", "basilisk");
         put("malevolent mage", "infernal mage");
         put("insatiable bloodveld", "bloodveld");
-        put("vitreous warped jelly", "warped jelly");
-        put("chasm crawler", "cave crawler");
-        put("monstrous basilisk", "basilisk");
-        put("marble gargoyle", "gargoyle");
-        put("choke devil", "smoke devil");
-        put("nechryarch", "nechryael");
-        put("crushing hand", "crawling hand");
-        put("screaming twisted banshee", "twisted banshee");
-        put("deviant spectre", "aberrant spectre");
+        put("insatiable mutated bloodveld", "mutated bloodveld");
         put("vitreous jelly", "jelly");
-        put("albino bat", "bat");
+        put("vitreous warped jelly", "warped jelly");
+        put("spiked turoth", "turoth");                 //
+        put("mutated terrorbird", "warped terrorbird"); //
+        put("mutated tortoise", "warped tortoise");     //
+        put("cave abomination", "cave horror");
+        put("abhorrent spectre", "aberrant spectre");
+        put("repugnant spectre", "deviant spectre");
+        put("basilisk sentinel", "basilisk knight");
+        put("shadow wyrm", "wyrm");                     //
+        put("choke devil", "smoke devil");
+        put("king kurask", "kurask");
+        put("marble gargoyle", "gargoyle");
+        put("nechryarch", "nechryael");
+        put("chaotic death spawn", "death spawn");
+        put("guardian drake", "drake");                 //
+        put("greater abyssal demon", "abyssal demon");
+        put("night beast", "dark beast");
+        put("nuclear smoke devil", "smoke devil");
+        put("colossal hydra", "hydra");                 //
     }};
 
     private static final Set<String> BOSS = new HashSet<String>() {{
         addAll(Arrays.asList(
+                "barrows brother",
                 "general graardor",
                 "commander zilyana",
                 "k'ril tsutsaroth",
@@ -221,7 +242,52 @@ public class BestiaryDef {
         ));
     }};
 
+    // mage arena 2 npcs
     private static final String[] IGNORED = {
+            "delrith",
+            "evil spirit",
+            "fire warrior of lesarkus", // Temple of ikov
+            "forester",
+            "fungi",
+            "ancient fungi",
+            "giant sea snake",
+            "grip",             // Heroes' quest
+            "head",
+            "honour guard",
+            "huge spider",      // PoH
+            "irvig senay",      // Legends' quest
+            "khazard ogre",
+            "khazard scorpion",
+            "khazard commander",
+            "kolodion",         // Mage arena
+            "leon d'cour",      // Champion's challenge
+            "lucien",
+            "melzard the mad",  // Melzar maze ???
+            "possessed priest", // Icthlarin's little helper
+            "rocnar",           //PoH
+            "rowdy slave",
+            "ranalph devere",   // Legends' quest
+            "san tojalon",      // Legends' quest
+            "sea troll queen",  // Swan song
+            "shadow",           // Mourning's end part II
+            "sir leye",         // Recruitment drive
+            "slash bash",       // Zogre flesh eaters
+            "slug prince",      // Slug menace
+            "stranger",         // Desert treasure
+            "suit of armour",   // Taverly dungeon door
+            "swamp snake",      // Temple trekking
+            "tentacle",         // Temple trekking
+            "the draugen",
+            "thrantax the mighty",
+            "tough guy",
+            "viyeldi",
+            "ulfric",
+            "ungadulu",
+            "weaponsmaster",
+            "white golem",
+            "grey golem",
+            "black golem",
+            "alomone",
             "angry bear",
             "angry giant rat",
             "angry goblin",
@@ -311,6 +377,7 @@ public class BestiaryDef {
     static {
         System.out.println("Loading Bestiary..." + System.currentTimeMillis());
         NPCDef.forEach(e -> {
+            if (e.combatInfo == null || e.combatLevel < 1) return;
             String name = e.name.toLowerCase();
             for (String ignored : IGNORED) {
                 if (name.equalsIgnoreCase(ignored))
