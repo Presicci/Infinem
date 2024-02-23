@@ -1,4 +1,4 @@
-package io.ruin.model.combat.npc;
+package io.ruin.model.combat.npc.magearena;
 
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
