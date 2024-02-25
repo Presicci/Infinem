@@ -44,7 +44,7 @@ public class HotColdClue extends Clue {
         player.openInterface(InterfaceType.MAIN, 203);
     }
 
-    private static void feel(Player player, Position origin) {
+    private static boolean feel(Player player, Position origin) {
         String message = "The device is ";
         int distance = Math.max(Math.abs(player.getPosition().getX() - origin.getX()),
                 Math.abs(player.getPosition().getY() - origin.getY()));
@@ -60,6 +60,7 @@ public class HotColdClue extends Clue {
         }
         if (temperature == Temperature.VISIBLY_SHAKING) {
             player.sendMessage(message + " and burns to the touch. This must be the spot.");
+            return true;
         } else if (lastDistance <= 0) {
             player.sendMessage(message + ".");
         } else {
@@ -72,10 +73,10 @@ public class HotColdClue extends Clue {
             }
             player.sendMessage(message);
         }
+        return false;
     }
 
     private static void feelBeginner(Player player, Item item) {
-        String message = "The device is ";
         if (player.beginnerClue != null && player.beginnerClue.id >= 0 && player.getInventory().contains(ClueType.BEGINNER.clueId) &&
                 Clue.CLUES[player.beginnerClue.id] instanceof HotColdClue) {
             HotColdClue clue = (HotColdClue) Clue.CLUES[player.beginnerClue.id];
@@ -86,7 +87,6 @@ public class HotColdClue extends Clue {
     }
 
     private static void feelMaster(Player player, Item item) {
-        String message = "The device is ";
         if (player.masterClue != null && player.masterClue.id >= 0 && player.getInventory().contains(ClueType.MASTER.clueId) &&
                 Clue.CLUES[player.masterClue.id] instanceof HotColdClue) {
             HotColdClue clue = (HotColdClue) Clue.CLUES[player.masterClue.id];
