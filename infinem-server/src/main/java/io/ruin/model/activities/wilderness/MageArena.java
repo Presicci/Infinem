@@ -1,7 +1,9 @@
 package io.ruin.model.activities.wilderness;
 
+import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
@@ -9,14 +11,13 @@ import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
-import io.ruin.model.map.Direction;
-import io.ruin.model.map.MapListener;
-import io.ruin.model.map.Position;
-import io.ruin.model.map.Tile;
+import io.ruin.model.map.*;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.Tool;
+import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
+import io.ruin.model.stat.StatType;
 
 public class MageArena {
 
@@ -38,6 +39,159 @@ public class MageArena {
             player.sendMessage("...and get teleported " + message + " the arena!");
             player.unlock();
         });
+    }
+
+    private static final Position[] TELEPORT_POSITIONS = new Position[] {
+            new Position(3102, 3926, 0),
+            new Position(3114, 3933, 0),
+            new Position(3097, 3930, 0),
+            new Position(3107, 3942, 0),
+            new Position(3105, 3934, 0)
+    };
+
+    private static void startFight(Player player) {
+        Position destination = null;
+        for (Position pos : TELEPORT_POSITIONS) {
+            if (Tile.get(pos).playerCount == 0) {
+                destination = pos;
+                break;
+            }
+        }
+        if (destination == null)
+            destination = TELEPORT_POSITIONS[0];
+        ModernTeleport.teleport(player, destination);
+        NPC kolodion = new NPC(1605);
+        player.getCombat().updateLastDefend(kolodion);
+        Position npcDest = destination.relative(-2, 0);
+        World.startEvent(e -> {
+            e.delay(3);
+            kolodion.spawn(npcDest);
+            kolodion.removeIfIdle(player);
+            kolodion.removeOnDeath();
+            kolodion.targetPlayer(player, false);
+            kolodion.attackTargetPlayer();
+        });
+    }
+
+    private static void askToFight(Player player, NPC npc) {
+        player.dialogue(
+                new OptionsDialogue(
+                        new Option("Yes indeedy.",
+                                new PlayerDialogue("Yes indeedy."),
+                                new NPCDialogue(npc, "Good, good. You have a healthy sense of competition."),
+                                new NPCDialogue(npc, "Remember, traveller - in my arena, hand-to-hand combat is useless. Your strength will diminish as you enter the arena, but the spells you can learn are amongst the most powerful in all of Gielinor."),
+                                new NPCDialogue(npc, "Before I can accept you in, we must duel."),
+                                new OptionsDialogue(
+                                        new Option("Okay, let's fight.",
+                                                new PlayerDialogue("Okay, let's fight."),
+                                                new NPCDialogue(npc, "I must first check that you are up to scratch."),
+                                                new PlayerDialogue("You don't need to worry about that."),
+                                                new NPCDialogue(npc, "Not just any magician can enter - only the most powerful and most feared. Before you can use the power of this arena, you must prove yourself against me."),
+                                                new ActionDialogue(() -> startFight(player))
+                                        ),
+                                        new Option("No thanks.", new PlayerDialogue("No thanks."))
+                                )
+                        ),
+                        new Option("No I don't.", new PlayerDialogue("No I don't."), new NPCDialogue(npc, "Your loss."))
+                )
+        );
+    }
+
+    private static void mainOptions(Player player, NPC npc) {
+        player.dialogue(
+                new OptionsDialogue(
+                        new Option("Can I fight here?", () -> player.dialogue(
+                                new PlayerDialogue("Can I fight here?"),
+                                new NPCDialogue(npc, "My arena is open to any high level wizard, but this is no game. Many wizards fall in this arena, never to rise again. The strongest mages have been destroyed."),
+                                new NPCDialogue(npc, "If you're sure you want in?"),
+                                new ActionDialogue(() -> askToFight(player, npc))
+                        )),
+                        new Option("What's the point of that?", () -> player.dialogue(
+                                new PlayerDialogue("CWhat's the point of that?"),
+                                new NPCDialogue(npc, "We learn how to use our magic to its fullest and how to channel the forces of the cosmos into our world..."),
+                                new NPCDialogue(npc, "But mainly, I just like blasting people into dust."),
+                                new ActionDialogue(() -> mainOptions(player, npc))
+                        )),
+                        new Option("That's barbaric!",
+                                new PlayerDialogue("That's barbaric!"),
+                                new NPCDialogue(npc, "Nope, it's magic. But I know what you mean. So do you want to join us?"),
+                                new ActionDialogue(() -> askToFight(player, npc))
+                        )
+                )
+        );
+    }
+
+    private static void kolodionDialogue(Player player, NPC npc) {
+        if (player.getStats().get(StatType.Magic).fixedLevel < 60) {
+            player.dialogue(
+                    new PlayerDialogue("Hello there. What is this place?"),
+                    new NPCDialogue(npc, "Do not waste my time with trivial questions. I am the Great Kolodion, master of battle magic. I have an arena to run."),
+                    new PlayerDialogue("Can I enter?"),
+                    new NPCDialogue(npc, "Hah! A wizard of your level? Don't be absurd.")
+            );
+        } else {
+            if (player.hasAttribute("MA")) {
+                player.dialogue(
+                        new PlayerDialogue("Hello, Kolodion."),
+                        new NPCDialogue(npc, "Hello, young mage. You're a tough one."),
+                        new PlayerDialogue("What now?"),
+                        new NPCDialogue(1603, "Step into the magic pool. It will take you to a chamber. There, you must decide which god you will represent in the arena."),
+                        new PlayerDialogue("Thanks, Kolodion."),
+                        new NPCDialogue(1603, "That's what I'm here for.")
+                );
+            } else {
+                player.dialogue(
+                        new PlayerDialogue("Hello there. What is this place?"),
+                        new NPCDialogue(npc, "I am the great Kolodion, master of battle magic, and this is my battle arena. Top wizards travel from all over Gielinor to fight here."),
+                        new ActionDialogue(() -> mainOptions(player, npc))
+                );
+            }
+        }
+    }
+
+    private static final int[] CAPES = new int[] { 2412, 2413, 2414 };
+
+    private static void pickCape(Player player, NPC npc, int itemId) {
+        if (!player.getInventory().hasFreeSlots(1)) {
+            player.dialogue(new NPCDialogue(npc, "You don't have enough space for me to give you the staff."));
+            return;
+        }
+        player.putAttribute("MA", 2);
+        player.getInventory().add(itemId);
+        player.dialogue(new ItemDialogue().one(itemId, "The guardian hands you an ornate magic staff."));
+    }
+
+    private static void guardianDialogue(Player player, NPC npc) {
+        if (player.getAttributeIntOrZero("MA") != 2) {
+            if (player.getInventory().hasAtLeastOneOf(CAPES) || player.getEquipment().hasAtLeastOneOf(CAPES)) {
+                player.dialogue(
+                        new PlayerDialogue("Hi."),
+                        new NPCDialogue(npc, "Hello adventurer, have you made your choice?"),
+                        new OptionsDialogue(
+                                new Option("Saradomin", () -> pickCape(player, npc, 2415)),
+                                new Option("Guthix", () -> pickCape(player, npc, 2416)),
+                                new Option("Zamorak", () -> pickCape(player, npc, 2417))
+                        )
+                );
+            } else {
+                player.dialogue(
+                        new PlayerDialogue("Hello my friend, Kolodion sent me down."),
+                        new NPCDialogue(npc, "Sssshhh... the gods are talking. I can hear their whispers."),
+                        new NPCDialogue(npc, "Can you hear them adventurer, they're calling you."),
+                        new PlayerDialogue("Erm... ok!"),
+                        new NPCDialogue(npc, "Go chant at the statue of the god you most wish to represent in this world, you will be rewarded."),
+                        new NPCDialogue(npc, "Once you are done, come back to me. I shall supply you with a mage staff ready for battle.")
+                );
+            }
+        } else {
+            player.dialogue(
+                    new NPCDialogue(npc, "Hello, would you like to browse my shop?"),
+                    new OptionsDialogue(
+                            new Option("Yes please. What are you selling?", () -> npc.openShop(player)),
+                            new Option("No thanks.", new PlayerDialogue("No thanks."))
+                    )
+            );
+        }
     }
 
     static {
@@ -85,27 +239,8 @@ public class MageArena {
                         p.mageArena = false;
                 });
 
-        NPCAction.register(1603, "talk-to", (player, npc) -> player.dialogue(
-                new NPCDialogue(npc, "How can I help you?"),
-                new OptionsDialogue(
-                        new Option("How do I get mage arena points?", () -> player.dialogue(
-                                new PlayerDialogue("How do I get mage arena points?"),
-                                new NPCDialogue(npc, "Killing a Battle mage inside the Mage Arena will give you anywhere from 1-3 points. Be careful though, as "),
-                                new NPCDialogue(npc, "it's dangerous out there. Also be sure to bring runes, as you can only use magic based attacks inside the arena."),
-                                new PlayerDialogue("Okay, thanks.")
-                        )),
-                        /*
-                        new Option("Can I see the point exchange?", () -> player.dialogue(
-                                new PlayerDialogue("Can I see the point exchange?"),
-                                new ActionDialogue(() -> npc.getDefinition().shop.open(player))
-                        )),
-                        */
-                        new Option("I have to go.", () -> player.dialogue(new PlayerDialogue("I have to go.")))
-                )
-        ));
-        NPCAction.register(1603, "check-points", (player, npc) -> {
-            player.dialogue(new NPCDialogue(npc, "You've currently have " + player.mageArenaPoints + " point" + (player.mageArenaPoints == 1 ? "." : "s. Kill Battle Mage's inside the Mage Arena to get more points.")));
-        });
+        NPCAction.register(1602, "talk-to", MageArena::guardianDialogue);
+        NPCAction.register(1603, "talk-to", MageArena::kolodionDialogue);
 
         /**
          * Sack containing knife
@@ -121,6 +256,10 @@ public class MageArena {
         });
 
         ObjectAction.register(2878, 2541, 4719, 0, "Step-into", (player, obj) -> {
+            if (!player.hasAttribute("MA")) {
+                player.dialogue(new NPCDialogue(1603, "If you wish to step into the magic pool, you must first prove yourself to me."));
+                return;
+            }
             player.dialogue(new MessageDialogue("You step into the pool of sparkling water. You feel energy rush through your veins."), new ActionDialogue(() -> {
                 player.startEvent((event) -> {
                     player.lock(LockType.FULL_DELAY_DAMAGE);
@@ -135,7 +274,6 @@ public class MageArena {
                     player.getMovement().teleport(2509, 4689, 0);
                     player.animate(-1);
                     player.unlock();
-                    player.getAppearance();
                 });
             }));
         });
