@@ -219,11 +219,6 @@ public class NPCDef {
             options[2] = "Trade";
         } else if(id == 6481) {
             combatLevel = 0;
-        } else if(id == 1603) {
-            /* Kolodion */
-            name = "Battle Point Exchange";
-            options[2] = "Trade";
-            options[3] = "Check-points";
         } else if(id == 3278) {
             name = "Construction Worker";
         } else if (id == 6118) {
