@@ -7,33 +7,18 @@
     "tables": [
     {
       "name": "Runes",
-      "weight": 148,
+      "weight": 1,
       "items": [
-        { "id": 556, "min": 50, "max": 250, "weight": 10 }, //Air rune
-        { "id": 565, "min": 10, "max": 50, "weight": 7 }, //Blood rune
-        { "id": 562, "min": 25, "max": 100, "weight": 9 }, //Chaos rune
-        { "id": 563, "min": 25, "max": 100, "weight": 8 } //Law rune
+        { "id": 554, "min": 5, "max": 150, "weight": 25 }, //Fire rune
+        { "id": 555, "min": 5, "max": 150, "weight": 25 }, //Water rune
+        { "id": 556, "min": 5, "max": 150, "weight": 25 }, //Air rune
+        { "id": 557, "min": 5, "max": 150, "weight": 25 }, //Earth rune
+        { "id": 558, "min": 4, "max": 60, "weight": 15 }, //Mind rune
+        { "id": 562, "min": 3, "max": 25, "weight": 10 }, //Chaos rune
+        { "id": 560, "min": 2, "max": 15, "weight": 5 }, //Death rune
+        { "id": 565, "min": 1, "max": 10, "weight": 3 }  //Blood rune
       ]
-    },
-      {
-        "name": "infinity",
-        "weight": 1,
-        "items": [
-          { "id": 6916, "min": 1, "max": 1, "weight": 1 }, //inf top
-          { "id": 6918, "min": 1, "max": 1, "weight": 1 }, //inf hat
-          { "id": 6920, "min": 1, "max": 1, "weight": 1 }, //inf boots
-          { "id": 6922, "min": 1, "max": 1, "weight": 1 }, //inf gloves
-          { "id": 6924, "min": 1, "max": 1, "weight": 1 } //inf bottom
-        ]
-      },
-      {
-        "name": "weps",
-        "weight": 1,
-        "items": [
-          { "id": 6914, "min": 1, "max": 1, "weight": 1 }, //master wand
-          { "id": 6889, "min": 1, "max": 1, "weight": 1 } //mages book
-        ]
-      }
+    }
     ]
   }
 ]
