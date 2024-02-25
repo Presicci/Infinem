@@ -1584,16 +1584,22 @@
     "walkRange": 1
   },
   {
-    "name": "Battle Point Exchange",
+    "name": "Kolodion",
     "id": 1603,
     "x": 2541,
     "y": 4714,
     "z": 0,
     "direction": "S",
-    "walkRange": 1,
-    "shopOptions": {
-      "trade": "4080fd7d-e876-4780-af90-5a5c2270fbaf"
-    }
+    "walkRange": 1
+  },
+  {
+    "name": "Chamber guardian",
+    "id": 1602,
+    "x": 2507,
+    "y": 4698,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   },
   {
     "name": "Lundail",
