@@ -1,6 +1,7 @@
 package io.ruin.model.combat.npc.magearena;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.activities.wilderness.MageArena;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
@@ -54,7 +55,7 @@ public class Kolodion extends NPCCombat {
                 player.publicSound(200);
                 e.delay(3);
                 player.getMovement().teleport(2542, 4716, 0);
-                player.putAttribute("MA", 1);
+                MageArena.CONFIG.set(player, 8);
                 player.dialogue(
                         new NPCDialogue(1603, "Well done, young adventurer; you truly are a worthy battle mage."),
                         new PlayerDialogue("What now?"),

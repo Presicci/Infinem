@@ -8,6 +8,7 @@ import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.dialogue.*;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.*;
 import io.ruin.model.map.ground.GroundItem;
@@ -18,6 +19,8 @@ import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 import io.ruin.model.stat.StatType;
 
 public class MageArena {
+
+    public static final Config CONFIG = Config.varp(267, true);
 
     private static void pullLever(Player player, GameObject lever, int teleportY, String message) {
         if (player.getCombat().checkTb())
@@ -127,7 +130,7 @@ public class MageArena {
                     new NPCDialogue(npc, "Hah! A wizard of your level? Don't be absurd.")
             );
         } else {
-            if (player.hasAttribute("MA")) {
+            if (CONFIG.get(player) >= 8) {
                 player.dialogue(
                         new PlayerDialogue("Hello, Kolodion."),
                         new NPCDialogue(npc, "Hello, young mage. You're a tough one."),
@@ -148,26 +151,26 @@ public class MageArena {
 
     private static final int[] CAPES = new int[] { 2412, 2413, 2414 };
 
-    private static void pickCape(Player player, NPC npc, int itemId) {
+    private static void pickStaff(Player player, NPC npc, int itemId) {
         if (!player.getInventory().hasFreeSlots(1)) {
             player.dialogue(new NPCDialogue(npc, "You don't have enough space for me to give you the staff."));
             return;
         }
-        player.putAttribute("MA", 2);
+        CONFIG.set(player, 9);
         player.getInventory().add(itemId);
         player.dialogue(new ItemDialogue().one(itemId, "The guardian hands you an ornate magic staff."));
     }
 
     private static void guardianDialogue(Player player, NPC npc) {
-        if (player.getAttributeIntOrZero("MA") != 2) {
+        if (CONFIG.get(player) < 9) {
             if (player.getInventory().hasAtLeastOneOf(CAPES) || player.getEquipment().hasAtLeastOneOf(CAPES)) {
                 player.dialogue(
                         new PlayerDialogue("Hi."),
                         new NPCDialogue(npc, "Hello adventurer, have you made your choice?"),
                         new OptionsDialogue(
-                                new Option("Saradomin", () -> pickCape(player, npc, 2415)),
-                                new Option("Guthix", () -> pickCape(player, npc, 2416)),
-                                new Option("Zamorak", () -> pickCape(player, npc, 2417))
+                                new Option("Saradomin", () -> pickStaff(player, npc, 2415)),
+                                new Option("Guthix", () -> pickStaff(player, npc, 2416)),
+                                new Option("Zamorak", () -> pickStaff(player, npc, 2417))
                         )
                 );
             } else {
@@ -246,7 +249,7 @@ public class MageArena {
         });
 
         ObjectAction.register(2878, 2541, 4719, 0, "Step-into", (player, obj) -> {
-            if (!player.hasAttribute("MA")) {
+            if (CONFIG.get(player) < 8) {
                 player.dialogue(new NPCDialogue(1603, "If you wish to step into the magic pool, you must first prove yourself to me."));
                 return;
             }
