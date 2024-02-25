@@ -38,6 +38,7 @@ import io.ruin.model.item.actions.impl.skillcapes.DefenceSkillCape;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Direction;
+import io.ruin.model.map.MapArea;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.map.ground.GroundItem;
@@ -232,7 +233,7 @@ public class PlayerCombat extends Combat {
                 attackWithMagic();
             return;
         }
-        if(player.mageArena && attackSet.style != AttackStyle.MAGIC) {
+        if(MapArea.MAGE_ARENA.inArea(player) && attackSet.style != AttackStyle.MAGIC) {
             player.sendMessage("You can only use magic inside the arena!");
             reset();
             return;

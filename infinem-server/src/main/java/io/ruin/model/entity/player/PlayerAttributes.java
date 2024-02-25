@@ -214,7 +214,7 @@ public abstract class PlayerAttributes extends Entity {
 
     public int wildernessLevel = -1;
 
-    @Expose public boolean mageArena, resourceArea;
+    @Expose public boolean resourceArea;
 
     @Expose public boolean obeliskRedirectionScroll;
 

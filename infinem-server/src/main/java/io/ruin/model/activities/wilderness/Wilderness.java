@@ -112,7 +112,6 @@ public class Wilderness {
         if(!logout) {
             player.attackPlayerListener = null;
             player.attackNpcListener = null;
-            player.mageArena = player.resourceArea = false; //just to be safe
             player.getCombat().resetTb();
             player.supplyChestRestricted = false;
             player.insideWildernessAgilityCourse = false;

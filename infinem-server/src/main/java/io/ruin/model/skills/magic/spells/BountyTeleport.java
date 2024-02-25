@@ -49,7 +49,6 @@ public class BountyTeleport extends Spell {
                 player.sendFilteredMessage("You can't teleport to your target at the moment.");
                 return;
             }
-            player.mageArena = target.mageArena;
             player.animate(714);
             player.graphics(111, 92, 0);
             player.publicSound(200);

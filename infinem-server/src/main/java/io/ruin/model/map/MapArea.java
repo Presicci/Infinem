@@ -26,6 +26,7 @@ public enum MapArea {
     FISHING_GUILD(2596, 3394, 2614, 3426, 0, (player -> {
         player.getTaskManager().doLookupByUUID(575, 1); // Enter the Fishing Guild
     })),
+    MAGE_ARENA(3093, 3921, 3117, 3946, 0),
     // Dark caves
     LUMBRIDGE_SWAMP_CAVE(OldFirePit.FirePit.LUMBRIDGE_SWAMP_CAVES_FIRE, 3, 12693, 12949),
     CAVE_OF_HORROR(OldFirePit.FirePit.MOS_LE_HARMLESS_FIRE, 3, 14994, 14995, 15251),

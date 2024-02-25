@@ -21,7 +21,7 @@ import io.ruin.model.stat.StatType;
 
 public class MageArena {
 
-    private static void pullLever(Player player, GameObject lever, int teleportY, String message, boolean enter) {
+    private static void pullLever(Player player, GameObject lever, int teleportY, String message) {
         if (player.getCombat().checkTb())
             return;
         player.startEvent(event -> {
@@ -34,7 +34,6 @@ public class MageArena {
             player.graphics(111, 110, 0);
             event.delay(3);
             player.resetAnimation();
-            player.mageArena = enter;
             player.getMovement().teleport(3105, teleportY, 0);
             player.sendMessage("...and get teleported " + message + " the arena!");
             player.unlock();
@@ -199,10 +198,10 @@ public class MageArena {
          * Levers
          */
         ObjectAction.register(9706, 3104, 3956, 0, "pull", (player, obj) -> {
-            pullLever(player, obj, 3951, "into", true);
+            pullLever(player, obj, 3951, "into");
         });
         ObjectAction.register(9707, 3105, 3952, 0, "pull", (player, obj) -> {
-            pullLever(player, obj, 3956, "out of", false);
+            pullLever(player, obj, 3956, "out of");
         });
 
         /**
@@ -227,16 +226,10 @@ public class MageArena {
         Tile.get(3093, 3928, 0).flagUnmovable();
 
        SpawnListener.register("battle mage", npc -> npc.deathEndListener = (DeathListener.SimpleKiller) killer -> {
-            if (killer.player.mageArena) {
+            if (MapArea.MAGE_ARENA.inArea(killer.player)) {
 
             }
         });
-
-        MapListener.registerRegion(12349)
-                .onExit((p, logout) -> {
-                    if (!logout)
-                        p.mageArena = false;
-                });
 
         NPCAction.register(1602, "talk-to", MageArena::guardianDialogue);
         NPCAction.register(1603, "talk-to", MageArena::kolodionDialogue);
