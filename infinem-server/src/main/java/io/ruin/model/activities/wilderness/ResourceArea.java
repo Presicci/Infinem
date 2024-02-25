@@ -133,12 +133,10 @@ public class ResourceArea {
     }
 
     private static void entered(Player player) {
-        player.resourceArea = true;
         ResourceArea.playerCount++;
     }
 
     private static void exited(Player player, boolean logout) {
-        player.resourceArea = false;
         ResourceArea.playerCount--;
     }
 

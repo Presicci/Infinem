@@ -16,10 +16,7 @@ import io.ruin.model.inter.journal.toggles.RiskProtection;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
-import io.ruin.model.map.Bounds;
-import io.ruin.model.map.MapListener;
-import io.ruin.model.map.Position;
-import io.ruin.model.map.Tile;
+import io.ruin.model.map.*;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.stat.StatType;
@@ -341,7 +338,7 @@ public class Wilderness {
     public static double getXPModifier(Player player, StatType stat) {
         if(player.wildernessLevel < 1)
             return 0;
-        if(BONUS_SKILLS.contains(stat) && !player.resourceArea)
+        if(BONUS_SKILLS.contains(stat) && !MapArea.WILDERNESS_RESOURCE_AREA.inArea(player))
             return (Math.min(30, player.wildernessLevel) * 0.005) + (Math.max(0, player.wildernessLevel - 30) * 0.01);
         return 0;
     }
