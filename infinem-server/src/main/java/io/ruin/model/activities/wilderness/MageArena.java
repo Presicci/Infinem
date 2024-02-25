@@ -228,8 +228,7 @@ public class MageArena {
 
        SpawnListener.register("battle mage", npc -> npc.deathEndListener = (DeathListener.SimpleKiller) killer -> {
             if (killer.player.mageArena) {
-                int randomPoints = Random.get(3, 6);
-                killer.player.mageArenaPoints += randomPoints;
+
             }
         });
 

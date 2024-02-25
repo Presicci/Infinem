@@ -73,30 +73,6 @@ public enum Currency {
             return amount;
         }
     }),
-    MAGE_ARENA_POINTS(new CurrencyHandler("mage arena points") {
-        @Override
-        public int getCurrencyCount(Player player) {
-            return player.mageArenaPoints;
-        }
-
-        @Override
-        public int removeCurrency(Player player, int amount) {
-            if(amount > player.mageArenaPoints){
-                return 0;
-            }
-            player.mageArenaPoints -= amount;
-            return amount;
-        }
-        @Override
-        public int addCurrency(Player player, int amount) {
-            if((long) player.mageArenaPoints + (long) amount > Integer.MAX_VALUE){
-                player.mageArenaPoints = Integer.MAX_VALUE;
-            } else {
-                player.mageArenaPoints += amount;
-            }
-            return amount;
-        }
-    }),
     APPRECIATION_POINTS(new CurrencyHandler("appreciation points") {
         @Override
         public int getCurrencyCount(Player player) {
