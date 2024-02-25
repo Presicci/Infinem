@@ -48,7 +48,7 @@ public class HotColdClue extends Clue {
         return feel(player, origin, "The device is ");
     }
 
-    private static boolean feel(Player player, Position origin, String message) {
+    public static boolean feel(Player player, Position origin, String message) {
         int distance = Math.max(Math.abs(player.getPosition().getX() - origin.getX()),
                 Math.abs(player.getPosition().getY() - origin.getY()));
         int lastDistance = player.getTemporaryAttributeOrDefault(AttributeKey.HOT_AND_COLD, 0);
