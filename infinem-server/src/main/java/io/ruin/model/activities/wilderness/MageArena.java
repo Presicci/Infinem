@@ -1,7 +1,5 @@
 package io.ruin.model.activities.wilderness;
 
-import io.ruin.api.utils.AttributeKey;
-import io.ruin.api.utils.Random;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
