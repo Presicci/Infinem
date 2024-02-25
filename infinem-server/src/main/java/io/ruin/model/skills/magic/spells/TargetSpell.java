@@ -1,6 +1,7 @@
 package io.ruin.model.skills.magic.spells;
 
 import io.ruin.model.activities.duelarena.DuelRule;
+import io.ruin.model.activities.wilderness.MageArena;
 import io.ruin.model.combat.npc.MaxHitDummy;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
@@ -16,6 +17,9 @@ import io.ruin.model.item.Item;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
+import io.ruin.model.skills.magic.spells.modern.ClawsOfGuthix;
+import io.ruin.model.skills.magic.spells.modern.FlamesOfZamorak;
+import io.ruin.model.skills.magic.spells.modern.SaradominStrike;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
@@ -149,6 +153,11 @@ public class TargetSpell extends Spell {
                     return false;
                 if(DuelRule.NO_MAGIC.isToggled(entity.player)) {
                     entity.player.sendMessage("Magic has been disabled for this duel!");
+                    return false;
+                }
+                if ((this instanceof SaradominStrike || this instanceof FlamesOfZamorak || this instanceof ClawsOfGuthix)
+                        && MageArena.CONFIG.get(entity.player) < 8) {
+                    entity.player.sendMessage("You need to complete the Mage Arena miniquest to cast this spell.");
                     return false;
                 }
                 if(runeItems != null && (r = RuneRemoval.get(entity.player, runeItems)) == null) {
