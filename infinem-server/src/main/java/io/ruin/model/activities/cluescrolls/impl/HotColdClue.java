@@ -242,8 +242,8 @@ public class HotColdClue extends Clue {
         WARM("warm", 100, 149),
         HOT("hot", 70, 99),
         VERY_HOT("very hot", 30, 69),
-        INCREDIBLY_HOT("incredibly hot", 4, 29),
-        VISIBLY_SHAKING("visibly shaking", 0, 3);
+        INCREDIBLY_HOT("incredibly hot", 6, 29),
+        VISIBLY_SHAKING("visibly shaking", 0, 5);
 
         private final String message;
         private final int minDistance, maxDistance;
