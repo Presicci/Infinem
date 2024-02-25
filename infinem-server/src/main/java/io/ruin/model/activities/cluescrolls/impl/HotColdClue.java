@@ -44,37 +44,42 @@ public class HotColdClue extends Clue {
         player.openInterface(InterfaceType.MAIN, 203);
     }
 
+    private static void feel(Player player, Position origin) {
+        String message = "The device is ";
+        int distance = Math.max(Math.abs(player.getPosition().getX() - origin.getX()),
+                Math.abs(player.getPosition().getY() - origin.getY()));
+        int lastDistance = player.getTemporaryAttributeOrDefault(AttributeKey.HOT_AND_COLD, 0);
+        Temperature temperature = null;
+        for (Temperature temp : Temperature.values()) {
+            if (distance >= temp.minDistance && distance <= temp.maxDistance) {
+                message += temp.message;
+                player.putTemporaryAttribute(AttributeKey.HOT_AND_COLD, distance);
+                temperature = temp;
+                break;
+            }
+        }
+        if (temperature == Temperature.VISIBLY_SHAKING) {
+            player.sendMessage(message + " and burns to the touch. This must be the spot.");
+        } else if (lastDistance <= 0) {
+            player.sendMessage(message + ".");
+        } else {
+            if (distance < lastDistance) {
+                message += ", and warmer than last time.";
+            } else if (distance > lastDistance) {
+                message += ", but colder than last time.";
+            } else {
+                message += ", and the same temperature as last time.";
+            }
+            player.sendMessage(message);
+        }
+    }
+
     private static void feelBeginner(Player player, Item item) {
         String message = "The device is ";
         if (player.beginnerClue != null && player.beginnerClue.id >= 0 && player.getInventory().contains(ClueType.BEGINNER.clueId) &&
                 Clue.CLUES[player.beginnerClue.id] instanceof HotColdClue) {
             HotColdClue clue = (HotColdClue) Clue.CLUES[player.beginnerClue.id];
-            int distance = Math.max(Math.abs(player.getPosition().getX() - clue.position.getX()),
-                    Math.abs(player.getPosition().getY() - clue.position.getY()));
-            int lastDistance = player.getTemporaryAttributeOrDefault(AttributeKey.HOT_AND_COLD, 0);
-            Temperature temperature = null;
-            for (Temperature temp : Temperature.values()) {
-                if (distance >= temp.minDistance && distance <= temp.maxDistance) {
-                    message += temp.message;
-                    player.putTemporaryAttribute(AttributeKey.HOT_AND_COLD, distance);
-                    temperature = temp;
-                    break;
-                }
-            }
-            if (temperature == Temperature.VISIBLY_SHAKING) {
-                player.sendMessage(message + " and burns to the touch. This must be the spot.");
-            } else if (lastDistance <= 0) {
-                player.sendMessage(message + ".");
-            } else {
-                if (distance < lastDistance) {
-                    message += ", and warmer than last time.";
-                } else if (distance > lastDistance) {
-                    message += ", but colder than last time.";
-                } else {
-                    message += ", and the same temperature as last time.";
-                }
-                player.sendMessage(message);
-            }
+            feel(player, clue.position);
         } else {
             player.dialogue(new ItemDialogue().one(item.getId(), "The device is inactive."));
         }
@@ -85,32 +90,7 @@ public class HotColdClue extends Clue {
         if (player.masterClue != null && player.masterClue.id >= 0 && player.getInventory().contains(ClueType.MASTER.clueId) &&
                 Clue.CLUES[player.masterClue.id] instanceof HotColdClue) {
             HotColdClue clue = (HotColdClue) Clue.CLUES[player.masterClue.id];
-            int distance = Math.max(Math.abs(player.getPosition().getX() - clue.position.getX()),
-                    Math.abs(player.getPosition().getY() - clue.position.getY()));
-            int lastDistance = player.getTemporaryAttributeOrDefault(AttributeKey.HOT_AND_COLD, 0);
-            Temperature temperature = null;
-            for (Temperature temp : Temperature.values()) {
-                if (distance >= temp.minDistance && distance <= temp.maxDistance) {
-                    message += temp.message;
-                    player.putTemporaryAttribute(AttributeKey.HOT_AND_COLD, distance);
-                    temperature = temp;
-                    break;
-                }
-            }
-            if (temperature == Temperature.VISIBLY_SHAKING) {
-                player.sendMessage(message + " and burns to the touch. This must be the spot.");
-            } else if (lastDistance <= 0) {
-                player.sendMessage(message + ".");
-            } else {
-                if (distance < lastDistance) {
-                    message += ", and warmer than last time.";
-                } else if (distance > lastDistance) {
-                    message += ", but colder than last time.";
-                } else {
-                    message += ", and the same temperature as last time.";
-                }
-                player.sendMessage(message);
-            }
+            feel(player, clue.position);
             player.hit(new Hit().fixedDamage(Random.get(3, 8)));
             player.sendFilteredMessage("The power of the strange device hurts you in the process.");
         } else {
