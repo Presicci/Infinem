@@ -11,6 +11,7 @@ import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.map.route.routes.ProjectileRoute;
+import io.ruin.model.skills.magic.spells.modern.ClawsOfGuthix;
 import io.ruin.model.skills.prayer.Prayer;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -26,13 +27,14 @@ public class Derwen extends NPCCombat {
     @Override
     public void init() {
         npc.hitListener = new HitListener().preDefend(this::preDefend);
+        updateLastAttack(6);
     }
 
     private void preDefend(Hit hit) {
-        if (hit.attackStyle != null && !hit.attackStyle.isMagic()) {
+        if (hit.attackStyle == null || !hit.attackStyle.isMagic() || !(hit.attackSpell instanceof ClawsOfGuthix)) {
             hit.block();
             if (hit.attacker != null && hit.attacker.player != null)
-                hit.attacker.player.sendMessage("Derwen's magic protects him against your attacks. He is only vulnerable to magic spells!");
+                hit.attacker.player.sendMessage("Derwen's magic protects him against your attacks. He is only vulnerable to guthix magic!");
         }
     }
 
