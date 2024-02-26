@@ -8,6 +8,7 @@ import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
+import io.ruin.model.skills.magic.spells.modern.SaradominStrike;
 import io.ruin.model.skills.prayer.Prayer;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -18,18 +19,19 @@ public class JusticiarZachariah extends NPCCombat {
 
     private static final Projectile SPECIAL_PROJECTILE = new Projectile(1515, 45, 31, 25, 80, 0, 16, 32);
 
-    private TickDelay specialCooldown = new TickDelay();
+    private final TickDelay specialCooldown = new TickDelay();
 
     @Override
     public void init() {
         npc.hitListener = new HitListener().preDefend(this::preDefend);
+        updateLastAttack(6);
     }
 
     private void preDefend(Hit hit) {
-        if (hit.attackStyle != null && !hit.attackStyle.isMagic()) {
+        if (hit.attackStyle == null || !hit.attackStyle.isMagic() || !(hit.attackSpell instanceof SaradominStrike)) {
             hit.block();
             if (hit.attacker != null && hit.attacker.player != null)
-                hit.attacker.player.sendMessage("Justiciar Zachariah's magic protects him against your attacks. He is only vulnerable to magic spells!");
+                hit.attacker.player.sendMessage("Justiciar Zachariah's magic protects him against your attacks. He is only vulnerable to saradomin magic!");
         }
     }
 
@@ -42,23 +44,24 @@ public class JusticiarZachariah extends NPCCombat {
     public boolean attack() {
         if (!withinDistance(10))
             return false;
-        if (withinDistance(1) && Random.rollDie(2, 1)) {
+        if (withinDistance(2) && Random.rollDie(2, 1)) {
             basicAttack();
             return true;
         }
-        if (!withinDistance(1) && !specialCooldown.isDelayed() && Random.rollDie(3, 1)) {
+        if (!withinDistance(2) && !specialCooldown.isDelayed() && Random.rollDie(3, 1)) {
             specialAttack();
         } else {
             magicAttack();
         }
-        return true;
+        updateLastAttack(6);    // Magic has 6 tick delay, melee has 3
+        return false;   // Returning false here to manually update last attack
     }
 
     private void magicAttack() {
         npc.animate(7965);
         target.graphics(76, 128, 20);
         boolean prayer = target.player != null && target.player.getPrayer().isActive(Prayer.PROTECT_FROM_MAGIC);
-        Hit hit = new Hit(npc, AttackStyle.MAGIC).randDamage(prayer ? 21 : 43).delay(1);
+        Hit hit = new Hit(npc, AttackStyle.MAGIC).randDamage(prayer ? 13 : 26).delay(1);
         hit.postDamage(entity -> {
             if (entity.player != null && hit.damage > 0 && Random.rollDie(5, 1)) {
                 Stat magic = entity.player.getStats().get(StatType.Magic);

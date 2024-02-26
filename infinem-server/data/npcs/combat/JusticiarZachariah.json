@@ -5,7 +5,7 @@
     //Combat Info
     "hitpoints": 320,
     "aggressive_level": 300,
-    "max_damage": 32,
+    "max_damage": 43,
     "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 1,
@@ -19,7 +19,7 @@
     "magic": 180,
     //Aggressive Stats
     "stab_attack": 0,
-    "slash_attack": 0,
+    "slash_attack": 200,
     "crush_attack": 0,
     "magic_attack": 80,
     "ranged_attack": 0,
@@ -33,7 +33,7 @@
     "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
-    "attack_ticks": 6,
+    "attack_ticks": 3,
     "death_ticks": 3,
     "respawn_ticks": -1,
     //Animations
