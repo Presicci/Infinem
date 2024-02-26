@@ -7,6 +7,7 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.map.Projectile;
+import io.ruin.model.skills.magic.spells.modern.FlamesOfZamorak;
 import io.ruin.model.skills.prayer.Prayer;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -22,13 +23,14 @@ public class Porazdir extends NPCCombat {
     @Override
     public void init() {
         npc.hitListener = new HitListener().preDefend(this::preDefend);
+        updateLastAttack(6);
     }
 
     private void preDefend(Hit hit) {
-        if (hit.attackStyle != null && !hit.attackStyle.isMagic()) {
+        if (hit.attackStyle == null || !hit.attackStyle.isMagic() || !(hit.attackSpell instanceof FlamesOfZamorak)) {
             hit.block();
             if (hit.attacker != null && hit.attacker.player != null)
-                hit.attacker.player.sendMessage("Porazdir's magic protects him against your attacks. He is only vulnerable to magic spells!");
+                hit.attacker.player.sendMessage("Porazdir's magic protects him against your attacks. He is only vulnerable to zamorak magic!");
         }
     }
 

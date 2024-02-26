@@ -9,7 +9,7 @@
   "attack_style": "SLASH",
   //Slayer Info
   "slayer_level": 1,
-  "slayer_xp": 500.0,
+  "slayer_xp": 320.0,
   "slayer_tasks": [ "Black Demons" ],
   //Combat Stats
   "attack": 250,
