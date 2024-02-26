@@ -39,6 +39,7 @@ public class Kolodion extends NPCCombat {
     @Override
     public void startDeath(Hit killHit) {
         if (form < 4) {
+            npc.resetAnimation();
             npc.transform(FORMS[++form]);
             npc.forceText(MESSAGES[form]);
             npc.setHp(npc.getMaxHp());
