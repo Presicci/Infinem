@@ -51,12 +51,16 @@ public class TradePost {
     }
 
     public void openViewOffers() {
+        if(player.getBankPin().requiresVerification(p -> openViewOffers()))
+            return;
         player.openInterface(InterfaceType.MAIN, Interface.TRADING_POST_VIEW);
         player.closeInterface(InterfaceType.INVENTORY);
         resetSearch();
     }
 
     public void openMyOffers() {
+        if(player.getBankPin().requiresVerification(p -> openMyOffers()))
+            return;
         player.openInterface(InterfaceType.MAIN, Interface.TRADING_POST_MY_OFFERS);
         changeInventoryAccess();
         updateMyOffers();
