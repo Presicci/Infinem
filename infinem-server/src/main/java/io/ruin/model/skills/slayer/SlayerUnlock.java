@@ -287,6 +287,8 @@ public enum SlayerUnlock {
     public static void openRewards(Player player) {
         //Slayer.sendTaskInfo(player);
         //Slayer.sendRewardInfo(player);
+        if (player.getBankPin().requiresVerification(SlayerUnlock::openRewards))
+            return;
         player.getPacketSender().sendClientScript(917, "ii", -1, -1);
         player.openInterface(InterfaceType.MAIN, 426);
         player.getPacketSender().sendAccessMask(426, 8, 0, 62, 2);
