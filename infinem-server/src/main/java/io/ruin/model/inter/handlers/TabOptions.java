@@ -331,7 +331,11 @@ public class TabOptions {
             InterfaceHandler.register(Interface.HOUSE_OPTIONS, h -> {
                 h.actions[21] = (SimpleAction) p -> p.closeInterface(InterfaceType.INVENTORY_OVERLAY);
                 h.actions[1] = (SimpleAction) HouseViewer::open;
-                h.actions[5] = (SimpleAction) p -> setBuildingMode(p, 1);
+                h.actions[5] = (SimpleAction) p -> {
+                    if (p.getBankPin().requiresVerification(player -> setBuildingMode(player, 1)))
+                        return;
+                    setBuildingMode(p, 1);
+                };
                 h.actions[6] = (SimpleAction) p -> setBuildingMode(p, 0);
                 h.actions[12] = (SimpleAction) p -> Config.RENDER_DOORS_MODE.set(p, 0);
                 h.actions[14] = (SimpleAction) p -> Config.RENDER_DOORS_MODE.set(p, 1);

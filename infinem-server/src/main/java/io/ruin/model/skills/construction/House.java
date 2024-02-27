@@ -171,6 +171,8 @@ public class House {
     }
 
     public void buildAndEnter(Player player, Position localToEnter, boolean buildingMode, Runnable onEnter) {
+        if (buildingMode && player.getBankPin().requiresVerification(p -> buildAndEnter(p, localToEnter, buildingMode, onEnter)))
+            return;
         if (player.house == this)
             this.owner = player;
         if (map != null)
