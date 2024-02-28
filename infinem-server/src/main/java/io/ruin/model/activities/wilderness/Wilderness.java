@@ -125,27 +125,17 @@ public class Wilderness {
     }
 
     private static boolean allowAttack(Player player, Player pTarget, boolean message) {
-
-        if (player.getBounds().inBounds(mageArenaBounds, player.getPosition())) {
-            if (!player.getCombat().getAttackStyle().isMagic() && !player.getCombat().useSpell()) {
-                player.sendMessage("You can only attack with magical attacks in the Mage Arena.");
-                return false;
-            }
-        }
-
-        if(pTarget.wildernessLevel == 0) {
-            if(message)
+        if (pTarget.wildernessLevel == 0) {
+            if (message)
                 player.sendMessage("You can't attack players who aren't in the Wilderness.");
             return false;
         }
-
         if (isAtWildernessLimitForIP(player) && !player.isAdmin()) {
-            if(message)
+            if (message)
                 player.sendMessage("You can't attack yourself.");
             return false;
         }
-
-        if(pTarget == player.getBountyHunter().target) {
+        if (pTarget == player.getBountyHunter().target) {
             if (Math.abs(player.getCombat().getLevel() - pTarget.getCombat().getLevel()) > 5) {
                 if (message)
                     player.sendMessage("You must be within 5 combat levels of your target to attack them.");
@@ -153,8 +143,7 @@ public class Wilderness {
             }
             return true;
         }
-
-        if(!player.inMulti() && !pTarget.inMulti()) {
+        if (!player.inMulti() && !pTarget.inMulti()) {
             RiskProtection.monitorRiskProtection(player);
             RiskProtection.monitorRiskProtection(pTarget);
             long playerProtection = RiskProtection.protectionValue(player);
@@ -174,17 +163,15 @@ public class Wilderness {
 //                    RiskProtection.INSTANCE.send(player);
             }
         }
-
         int wildernessLevel = player.wildernessLevel;
         int combatLevel = player.getCombat().getLevel();
         int targetWildernessLevel = pTarget.wildernessLevel;
         int targetCombatLevel = pTarget.getCombat().getLevel();
-        if(!((combatLevel + wildernessLevel >= targetCombatLevel && combatLevel - wildernessLevel <= targetCombatLevel) && (targetCombatLevel + targetWildernessLevel) >= combatLevel && targetCombatLevel - targetWildernessLevel <= combatLevel)) {
-            if(message)
+        if (!((combatLevel + wildernessLevel >= targetCombatLevel && combatLevel - wildernessLevel <= targetCombatLevel) && (targetCombatLevel + targetWildernessLevel) >= combatLevel && targetCombatLevel - targetWildernessLevel <= combatLevel)) {
+            if (message)
                 player.sendMessage("Your combat level difference is to0 high to attack from here. Please move deeper into the wilderness");
             return false;
         }
-
         return EdgevilleBlacklist.canAttack(player, pTarget);
     }
 
