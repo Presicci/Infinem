@@ -16,6 +16,7 @@ public class OutOfRangeNPC {
             4019,   // Joe (mos le'harmless)
             4017,   // Charley (mos le`harmless)
             7667,   // Hieve
+            10392,  // Camarst
     };
 
     private static final int[] ONE_TILE_NPCS = {

@@ -23,8 +23,8 @@
     "x": 3148,
     "y": 3643,
     "z": 0,
-    "direction": "S",
-    "walkRange": 3
+    "direction": "E",
+    "walkRange": 0
   },
   {
     "name": "Rat",

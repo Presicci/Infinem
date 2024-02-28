@@ -1,0 +1,18 @@
+{
+  "name": "Old Nite",
+  "currency": "COINS",
+  "npcs": [
+    10392
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 600,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1917,
+      "stock": 50,
+      "buy_price": -1,
+      "sell_price": 2
+    }
+  ]
+}
