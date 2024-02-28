@@ -1,5 +1,7 @@
 package io.ruin.model.entity.npc.actions.edgeville;
 
+import io.ruin.api.utils.NumberUtils;
+import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.Help;
 import io.ruin.model.World;
@@ -7,12 +9,13 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.GameMode;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.RespawnPoint;
 import io.ruin.model.entity.player.XpMode;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.listeners.LoginListener;
-import io.ruin.model.entity.shared.listeners.LogoutListener;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.dialogue.ActionDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -29,6 +32,9 @@ import io.ruin.network.central.CentralClient;
 import io.ruin.utility.Broadcast;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static io.ruin.cache.ItemID.*;
 
@@ -53,53 +59,59 @@ public class StarterGuide {
         ItemAction.registerInventory(757, "read", (player, item) -> Help.open(player));
 	}
 
+    private static void moveRespawn(Player player, NPC npc, RespawnPoint respawnPoint) {
+        int cost = respawnPoint.getCost();
+        String name = StringUtils.getFormattedEnumName(respawnPoint);
+        if (player.getInventory().getAmount(995) < cost) {
+            player.dialogue(new NPCDialogue(npc, "You need " + NumberUtils.formatNumber(cost) + " coins to change your respawn location to " + name + "."));
+            return;
+        }
+        player.dialogue(
+                new NPCDialogue(npc, cost > 0 ? "Do you want to pay " + NumberUtils.formatNumber(cost) + " coins to change your respawn location to " + name + "?" : "Do you want to change your respawn location to " + name + "?"),
+                new OptionsDialogue("Change respawn to " + name + "?",
+                        new Option("Yes", () -> {
+                            player.setRespawnPoint(respawnPoint);
+                            if (cost > 0)
+                                player.getInventory().remove(995, cost);
+                            player.dialogue(
+                                    new NPCDialogue(npc, "I've changed your respawn location to " + name + ".")
+                            );
+                        }),
+                        new Option("No")
+                )
+        );
+    }
+
+    private static void respawnDialogue(Player player, NPC npc) {
+        List<Option> options = new ArrayList<>();
+        List<Option> secondOptions = new ArrayList<>();
+        RespawnPoint currentRespawn = player.getRespawnPoint();
+        for (RespawnPoint respawnPoint : RespawnPoint.values()) {
+            if (respawnPoint != currentRespawn && respawnPoint.canChange(player)) {
+                int cost = respawnPoint.getCost();
+                if (options.size() >= 4) {
+                    secondOptions.add(new Option(StringUtils.getFormattedEnumName(respawnPoint) + " (" + (cost > 0 ? ((cost/1000) + "K") : "Free") + ")", () -> moveRespawn(player, npc, respawnPoint)));
+                } else {
+                    options.add(new Option(StringUtils.getFormattedEnumName(respawnPoint) + " (" + (cost > 0 ? ((cost/1000) + "K") : "Free") + ")", () -> moveRespawn(player, npc, respawnPoint)));
+                }
+            }
+        }
+        secondOptions.add(new Option("Back", () -> respawnDialogue(player, npc)));
+        options.add(4, new Option("More...", new OptionsDialogue("Change respawn location?", secondOptions)));
+        player.dialogue(new OptionsDialogue("Change respawn location?", options));
+    }
+
     private static void optionsDialogue(Player player, NPC npc) {
         player.dialogue(new NPCDialogue(npc, "Hello " + player.getName() + ", is there something I could assist you with?"),
                 new OptionsDialogue(
                         new Option("View help pages", () -> Help.open(player)),
                         new Option("Replay tutorial", () -> ecoTutorial(player)),
-                        new Option("Change home point", () -> {
-                            npc.startEvent(event -> {
-                                if (false) {//!player.edgeHome) {
-                                    player.dialogue(new NPCDialogue(npc, "I can move your spawn point and <br>" +
-                                            "home teleport location to Edgeville.<br>" +
-                                            "it will cost 5,000,000 GP.<br>" +
-                                            "Would you like to do this?"),
-                                    new OptionsDialogue(
-                                        new Option("No.. I like this home.", player::closeDialogue),
-                                        new Option("Yes! I want to respawn in Edgeville!", () -> {
-                                            if (player.getInventory().hasItem(995, 5000000)) {
-                                                player.getInventory().remove(995, 5000000);
-                                                player.dialogue(new NPCDialogue(npc, "Your spawn point has been changed<br>" +
-                                                        "to Edgeville! If you'd like to change<br>" +
-                                                        "it back, just speak to me again."));
-                                            } else {
-                                                player.dialogue(new NPCDialogue(npc, "I'm sorry but it doesn't look like<br>" +
-                                                        "you can afford this.."));
-                                            }
-                                    })));
-                                } else {
-                                    player.dialogue(
-                                    new NPCDialogue(npc, "Are you wanting to move your<br>" +
-                                            "spawn point back to home? It will cost<br>" +
-                                            "another 5,000,000 GP."),
-                                    new OptionsDialogue(
-                                            new Option("No thanks.", player::closeDialogue),
-                                            new Option("Yes please!", () -> {
-                                                if (player.getInventory().hasItem(995, 5000000)) {
-                                                    player.getInventory().remove(995, 5000000);
-                                                    player.dialogue(new NPCDialogue(npc, "Your spawn point has been changed<br>" +
-                                                            "back to home. If you'd like it changed,<br>" +
-                                                            "just speak to me again!"));
-                                                } else {
-                                                    player.dialogue(new NPCDialogue(npc,"I'm sorry but it doesn't look like<br>" +
-                                                            "you can afford this.."));
-                                                }
-                                            })
-                                    ));
-                                }
-                            });
-                        })));
+                        new Option("Change respawn point",
+                                new NPCDialogue(npc, "I can move your respawn location if you would like. Some have a fee associated with them."),
+                                new ActionDialogue(() -> respawnDialogue(player, npc))
+                        )
+                )
+        );
     }
 
 	@SneakyThrows
