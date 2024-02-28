@@ -124,7 +124,32 @@ public class Wilderness {
         }
     }
 
+    private static final Bounds[] FEROX_SAFE_ZONE = new Bounds[] {
+            new Bounds(3155, 3634, 3160, 3635, 0),
+            new Bounds(3124, 3640, 3137, 3643, 0),
+            new Bounds(3120, 3635, 3124, 3639, 0),
+            new Bounds(3118, 3623, 3122, 3634, 0),
+            new Bounds(3121, 3621, 3124, 3622, 0),
+            new Bounds(3123, 3615, 3124, 3620, 0),
+            new Bounds(3125, 3615, 3128, 3616, 0),
+            new Bounds(3129, 3609, 3140, 3616, 0)
+    };
+
+    private static boolean inFeroxSafeZone(Player target) {
+        if (target.getCombat().tbTicks > 0)
+            return false;
+        for (Bounds bounds : FEROX_SAFE_ZONE) {
+            if (bounds.inBounds(target)) return true;
+        }
+        return false;
+    }
+
     private static boolean allowAttack(Player player, Player pTarget, boolean message) {
+        if (inFeroxSafeZone(pTarget) && pTarget.getCombat().getTarget() != player) {
+            if (message)
+                player.sendMessage("You can't attack players near the Ferox Enclave barriers.");
+            return false;
+        }
         if (pTarget.wildernessLevel == 0) {
             if (message)
                 player.sendMessage("You can't attack players who aren't in the Wilderness.");
