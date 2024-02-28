@@ -56,6 +56,8 @@ public final class NightmareZonePregame {
     }
 
     private static void withdrawCoins(Player player, int numCoins) {
+        if (player.getBankPin().requiresVerification(p -> withdrawCoins(p, numCoins)))
+            return;
         int coinsStored = Config.NMZ_COFFER_AMT.get(player) * 1000;
         int amountToWithdraw = Math.min(coinsStored, numCoins);
         int inventoryAmount = player.getInventory().getAmount(995);
