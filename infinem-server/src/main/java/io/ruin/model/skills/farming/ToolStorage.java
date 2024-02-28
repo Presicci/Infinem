@@ -232,6 +232,8 @@ public class ToolStorage {
     }
 
     public void open(Player player) {
+        if (player.getBankPin().requiresVerification(this::open))
+            return;
         player.openInterface(InterfaceType.MAIN, 125);
         player.openInterface(InterfaceType.INVENTORY, 126);
         // Unlock quantity buttons
