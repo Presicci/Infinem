@@ -109,6 +109,8 @@ public class NightmareZoneRewards {
         /**
          * sends the nightmare zone rewards interface
          */
+        if (player.getBankPin().requiresVerification(NightmareZoneRewards::open))
+            return;
         player.openInterface(InterfaceType.MAIN, Interface.NIGHTMARE_ZONE_REWARDS);
         refresh(player);
     }
