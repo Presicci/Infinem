@@ -36,7 +36,7 @@ public class FFAClanWars {
                 )
         ));
         ObjectAction.register(ENTRANCE_PORTAL, "enter", (player, obj) -> player.getMovement().teleport(3327, 4751));
-        ObjectAction.register(EXIT_PORTAL, "exit", (player, obj) -> player.getMovement().teleport(3352, 3163, 0));
+        ObjectAction.register(EXIT_PORTAL, "exit", (player, obj) -> player.getMovement().teleport(3128, 3625, 0));
 
         /**
          * Enter/exit bounds
