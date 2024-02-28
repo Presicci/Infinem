@@ -283,6 +283,16 @@ public class Wilderness {
         setLevels(new Bounds(3003, 3537, 3004, 3538, -1), 0); //black knight fortress part 5
         setLevel(2997, 3525, 0, 0);
 
+        setLevels(new Bounds(3126, 3618, 3149, 3639, -1), 0); //Fernox enclave
+        setLevels(new Bounds(3138, 3640, 3155, 3646, -1), 0); //Fernox enclave
+        setLevels(new Bounds(3150, 3627, 3154, 3639, -1), 0); //Fernox enclave
+        setLevels(new Bounds(3154, 3636, 3156, 3641, -1), 0); //Fernox enclave
+        setLevels(new Bounds(3123, 3622, 3125, 3632, -1), 0); //Fernox enclave
+        setLevels(new Bounds(3125, 3634, 3127, 3639, -1), 0); //Fernox enclave
+        setLevels(new Bounds(3130, 3617, 3139, 3619, -1), 0); //Fernox enclave
+        setLevels(new Bounds(3124, 3617, 3156, 3647, 1), 0); //Fernox enclave
+        setLevels(new Bounds(3147, 3618, 3419, 3620, 0), 13); //Fernox enclave
+
         /*ItemAction.registerInventory(30104, "open", (player, item) -> {
             Item reward = Random.get(RESOURCE_PACK_LOOT);
             player.getInventory().remove(item.getId(), 1);
