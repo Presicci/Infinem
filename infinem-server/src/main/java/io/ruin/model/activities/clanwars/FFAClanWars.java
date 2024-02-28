@@ -46,7 +46,7 @@ public class FFAClanWars {
                     player.openInterface(InterfaceType.SECONDARY_OVERLAY, Interface.FFA_CLAN_WARS);
                     player.getPacketSender().sendVarp(20003, 0);
                     player.openInterface(InterfaceType.WILDERNESS_OVERLAY, Interface.WILDERNESS_OVERLAY);
-                    player.getPacketSender().setHidden(Interface.WILDERNESS_OVERLAY, 58, true);
+                    //player.getPacketSender().setHidden(Interface.WILDERNESS_OVERLAY, 58, true);
                 })
                 .onExit((player, logout) -> {
                     if(!logout) {
@@ -64,7 +64,7 @@ public class FFAClanWars {
                         player.sendMessage("Oh dear, you have died!");
                     };
                     Config.SPECIAL_ORB_STATE.set(player, 1);
-                    player.getPacketSender().setHidden(90, 57, true);
+                    //player.getPacketSender().setHidden(90, 57, true);
 
                 })
                 .onExit((player, logout) -> {
@@ -72,7 +72,7 @@ public class FFAClanWars {
                         player.setAction(1, null);
                         player.getCombat().resetTb();
                         player.getCombat().resetKillers();
-                        player.getPacketSender().setHidden(90, 57, false);
+                        //player.getPacketSender().setHidden(90, 57, false);
                         Config.SPECIAL_ORB_STATE.set(player, 2);
                         player.clearHits();
                         player.pvpAttackZone = false;
