@@ -129,7 +129,7 @@ public class Equipment extends ItemContainer {
                     worn.clearAttributes();
                     worn.putAttributes(selectedItem.copyOfAttributes());
                 }
-                if (worn.getId() == 12853 || worn.getId() == 12851) {
+                if (equipSlot == SLOT_WEAPON || worn.getId() == 12853 || worn.getId() == 12851) {
                     TabCombat.resetAutocast(player);
                 }
                 worn.setId(selectedId);
