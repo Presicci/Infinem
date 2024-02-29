@@ -105,7 +105,7 @@ public class StarterGuide {
         player.dialogue(new NPCDialogue(npc, "Hello " + player.getName() + ", is there something I could assist you with?"),
                 new OptionsDialogue(
                         new Option("View help pages", () -> Help.open(player)),
-                        new Option("Replay tutorial", () -> ecoTutorial(player)),
+                        new Option("Replay tutorial", () -> introCutscene(npc, player)),
                         new Option("Change respawn point",
                                 new NPCDialogue(npc, "I can move your respawn location if you would like. Some have a fee associated with them."),
                                 new ActionDialogue(() -> respawnDialogue(player, npc))
