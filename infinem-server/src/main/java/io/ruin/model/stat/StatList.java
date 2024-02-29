@@ -177,22 +177,8 @@ public class StatList {
             }
         }
 
+        amount *= getExperienceMultiplier();
 
-        /**
-         * 50% experience boost from scroll
-         */
-        if(player.expBonus.isDelayed())
-            amount *= 2.00;
-        /**
-         * 10% experience boost from first 3 days
-         */
-        if (player.first3.isDelayed())
-            amount *= 1.10;
-        /**
-         * 25% weekend experience boost
-         */
-        if(World.weekendExpBoost)
-            amount *= 1.25;
         double relicMulti = getRelicMultiplier(type);
         amount *= relicMulti;
         double newXp = stat.experience + amount;
@@ -237,6 +223,26 @@ public class StatList {
         if(statId <= 6)
             player.getCombat().updateLevel();
         player.getTaskManager().doLevelUpLookup(newLevel, type == StatType.Hitpoints);
+    }
+
+    private double getExperienceMultiplier() {
+        double multi = 1D;
+        /**
+         * 50% experience boost from scroll
+         */
+        if(player.expBonus.isDelayed())
+            multi *= 2.00;
+        /**
+         * 10% experience boost from first 3 days
+         */
+        if (player.first3.isDelayed())
+            multi *= 1.10;
+        /**
+         * 25% weekend experience boost
+         */
+        if(World.weekendExpBoost)
+            multi *= 1.25;
+        return multi;
     }
 
     public void process() {
