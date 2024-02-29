@@ -85,7 +85,10 @@ import io.ruin.utility.TickDelay;
 import io.ruin.process.tickevent.TickEvent;
 import lombok.Getter;
 
+import java.time.Duration;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
 import java.util.function.Consumer;
 
@@ -1791,6 +1794,20 @@ public class Player extends PlayerAttributes {
     public void dailyReset() {
         lastLoginDate = LocalDate.now().toString();
         DailyResetListener.executeAll(this);
+    }
+
+    public void timeTillDailyReset() {
+        timeTillDailyReset("");
+    }
+
+    public void timeTillDailyReset(String preMessage) {
+        LocalDateTime tomorrowMidnight = LocalDateTime.of(LocalDate.now(), LocalTime.MIDNIGHT).plusDays(1);
+        Duration timeRemaining = Duration.between(LocalDateTime.now(), tomorrowMidnight);
+        if (timeRemaining.toMinutes() < 60) {
+            player.dialogue(new MessageDialogue(preMessage + timeRemaining.toMinutes() + " minutes until daily reset."));
+        } else {
+            player.dialogue(new MessageDialogue(preMessage + timeRemaining.toHours() + " hours until daily reset."));
+        }
     }
 
     public boolean showHitAsExperience() {
