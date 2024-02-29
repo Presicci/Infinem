@@ -22,6 +22,7 @@ public class DiaryScroll {
     }
 
     public void open(Player player) {
+        player.closeInterface(InterfaceType.MAIN);
         player.openInterface(InterfaceType.MAIN, Interface.DIARY_SCROLL);
         player.getPacketSender().sendClientScript(2498, "i", 1);
         for (int index = 0; index < size; index++) {
