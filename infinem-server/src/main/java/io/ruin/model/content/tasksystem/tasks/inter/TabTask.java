@@ -1,4 +1,4 @@
-package io.ruin.model.content.tasksystem.inter;
+package io.ruin.model.content.tasksystem.tasks.inter;
 
 import io.ruin.model.content.tasksystem.relics.inter.RelicInterface;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskInterface;
