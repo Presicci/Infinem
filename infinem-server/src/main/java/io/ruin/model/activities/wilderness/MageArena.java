@@ -10,6 +10,8 @@ import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.map.*;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
@@ -17,6 +19,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 import io.ruin.model.stat.StatType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MageArena {
 
@@ -121,6 +126,56 @@ public class MageArena {
         );
     }
 
+    private static void mageArenaTwo(Player player, NPC npc) {
+        player.dialogue(
+                new PlayerDialogue("Hello, Kolodion."),
+                new NPCDialogue(npc, "Hello, young mage. You're a tough one."),
+                new OptionsDialogue(
+                        new Option("What now?",
+                                new PlayerDialogue("What now?"),
+                                new NPCDialogue(1603, "Step into the magic pool. It will take you to a chamber. There, you must decide which god you will represent in the arena."),
+                                new PlayerDialogue("Thanks, Kolodion."),
+                                new NPCDialogue(1603, "That's what I'm here for.")
+                        ),
+                        new Option("Are there any more challenges?",
+                                new PlayerDialogue("Are there any more challenges?"),
+                                new ActionDialogue(() -> {
+                                    if (player.getStats().get(StatType.Magic).fixedLevel < 75) {
+                                        player.dialogue(new NPCDialogue(npc, "There are but you are not experienced enough to attempt them."));
+                                    } else {
+                                        player.dialogue(
+                                                new NPCDialogue(npc, "Ah, yes. I have been working on a spell that will increase the powers given by your god cape, but the components are difficult to obtain"),
+                                                new NPCDialogue(npc, "I require the components fo three powerful opponents who are each aligned to a god."),
+                                                new ActionDialogue(() -> {
+                                                    if (player.getInventory().hasId(21800)) {
+                                                        player.dialogue(
+                                                                new NPCDialogue(npc, "Use that symbol I gave you to track down the divine combatants.")
+                                                        );
+                                                    } else {
+                                                        player.dialogue(
+                                                                new NPCDialogue(npc, "Take this symbol with you, it will help track down the divine combatants."),
+                                                                new ActionDialogue(() -> {
+                                                                    if (!player.getInventory().hasFreeSlots(1)) {
+                                                                        player.dialogue(new PlayerDialogue("Oh haha, let me clear some space up first."));
+                                                                        return;
+                                                                    }
+                                                                    player.getInventory().add(21800);
+                                                                    player.dialogue(
+                                                                            new ItemDialogue().one(21800, "Kolodion hands you a strange symbol."),
+                                                                            new NPCDialogue(npc, "Come back with any of the components and I'll keep them safe for you. Once you get me all three I can empower your cape.")
+                                                                    );
+                                                                })
+                                                        );
+                                                    }
+                                                })
+                                        );
+                                    }
+                                })
+                        )
+                )
+        );
+    }
+
     private static void kolodionDialogue(Player player, NPC npc) {
         if (player.getStats().get(StatType.Magic).fixedLevel < 60) {
             player.dialogue(
@@ -130,7 +185,7 @@ public class MageArena {
                     new NPCDialogue(npc, "Hah! A wizard of your level? Don't be absurd.")
             );
         } else {
-            if (CONFIG.get(player) >= 8) {
+            if (CONFIG.get(player) == 8) {
                 player.dialogue(
                         new PlayerDialogue("Hello, Kolodion."),
                         new NPCDialogue(npc, "Hello, young mage. You're a tough one."),
@@ -139,6 +194,22 @@ public class MageArena {
                         new PlayerDialogue("Thanks, Kolodion."),
                         new NPCDialogue(1603, "That's what I'm here for.")
                 );
+            } else if (CONFIG.get(player) > 8 && player.getAttributeIntOrZero("MA2") > 7) {
+                player.dialogue(
+                        new PlayerDialogue("Hello, Kolodion."),
+                        new NPCDialogue(npc, "Hello, young mage. You're a tough one."),
+                        new PlayerDialogue("Can you empower more capes for me?"),
+                        new NPCDialogue(npc, "Sure just bring me the corresponding component for that cape and I'll upgrade it for you.")
+                );
+            } else if (CONFIG.get(player) > 8 && player.getAttributeIntOrZero("MA2") == 7) {
+                player.dialogue(
+                        new PlayerDialogue("Hello, Kolodion."),
+                        new NPCDialogue(npc, "Hello, young mage. You're a tough one."),
+                        new PlayerDialogue("Can you empower my cape for me?"),
+                        new NPCDialogue(npc, "Sure just bring me the cape and I'll upgrade it for you.")
+                );
+            } else if (CONFIG.get(player) > 8) {
+                mageArenaTwo(player, npc);
             } else {
                 player.dialogue(
                         new PlayerDialogue("Hello there. What is this place?"),
@@ -194,6 +265,92 @@ public class MageArena {
         }
     }
 
+    private static String getRemainingComponentString(Player player) {
+        int questProgress = player.getAttributeIntOrZero("MA2");
+        System.out.println(questProgress);
+        List<String> names = new ArrayList<>();
+        if ((questProgress & 1) != 1) {
+            names.add("Saradomin");
+        }
+        if ((questProgress & 2) != 2) {
+            names.add("Guthix");
+        }
+        if ((questProgress & 4) != 4) {
+            names.add("Zamorak");
+        }
+        if (names.size() == 3) {
+            return names.get(0) + ", " + names.get(1) + " and " + names.get(2);
+        } else if (names.size() == 2) {
+            return names.get(0) + " and " + names.get(1);
+        } else if (names.size() == 1) {
+            return names.get(0);
+        }
+        return "";
+    }
+
+    private static void turnInComponent(Player player, Item item, NPC npc) {
+        int questProgress = player.getAttributeIntOrZero("MA2");
+        if (questProgress == 7) {
+            player.dialogue(new NPCDialogue(npc, "I already have all the components, I just need a cape to upgrade."));
+            return;
+        }
+        int index = item.getId() - 21797;
+        int bit = index == 2 ? 4 : index + 1;
+        int newValue = questProgress | bit;
+        if (questProgress > 7) {
+            int capeId = (item.getId() - 21797) + 2412;
+            Item cape = player.getInventory().findItem(capeId);
+            if (cape != null) {
+                int newCapeId = ((item.getId() - 21797) * 2) + 21791;
+                player.getInventory().remove(item);
+                cape.setId(newCapeId);
+                player.dialogue(new ItemDialogue().one(newCapeId, "Kolodion imbues your god cape."));
+            } else {
+                player.dialogue(new NPCDialogue(npc, "Bring me the cape you want imbued and it's corresponding god component."));
+            }
+            return;
+        }
+        if ((questProgress & bit) == bit) {
+            player.dialogue(
+                    new NPCDialogue(npc, "Uhh, you've already handed me that one. What'd you go and kill that guy twice?"),
+                    new PlayerDialogue("Maybe. Well what ones do I have left?"),
+                    new NPCDialogue(npc, "I still need the " + getRemainingComponentString(player) + " components to complete the spell.")
+            );
+            return;
+        }
+        player.getInventory().remove(item);
+        player.putAttribute("MA2", newValue);
+        if (newValue == 7) {
+            player.dialogue(new NPCDialogue(npc, "Good, now hand me the cape that you want upgraded."));
+        } else {
+            player.dialogue(new NPCDialogue(npc, "I still need the " + getRemainingComponentString(player) + " components to complete the spell."));
+        }
+    }
+
+    private static void upgradeCape(Player player, Item item, NPC npc) {
+        int questProgress = player.getAttributeIntOrZero("MA2");
+        if (questProgress < 7) {
+            player.dialogue(new NPCDialogue(npc, "I still need the " + getRemainingComponentString(player) + " components to complete the spell."));
+            return;
+        }
+        if (questProgress > 7) {
+            int componentId = (item.getId() - 2412) + 21797;
+            if (player.getInventory().hasId(componentId)) {
+                int newCapeId = ((item.getId() - 2412) * 2) + 21791;
+                player.getInventory().remove(componentId, 1);
+                item.setId(newCapeId);
+                player.dialogue(new ItemDialogue().one(newCapeId, "Kolodion imbues your god cape."));
+            } else {
+                player.dialogue(new NPCDialogue(npc, "Bring me the cape you want imbued and it's corresponding god component."));
+            }
+            return;
+        }
+        int newId = ((item.getId() - 2412) * 2) + 21791;
+        player.putAttribute("MA2", 8);
+        item.setId(newId);
+        player.dialogue(new ItemDialogue().one(newId, "Kolodion imbues your god cape."));
+    }
+
     static {
         /**
          * Levers
@@ -234,6 +391,12 @@ public class MageArena {
 
         NPCAction.register(1602, "talk-to", MageArena::guardianDialogue);
         NPCAction.register(1603, "talk-to", MageArena::kolodionDialogue);
+        ItemNPCAction.register(21797, 1603, MageArena::turnInComponent);
+        ItemNPCAction.register(21798, 1603, MageArena::turnInComponent);
+        ItemNPCAction.register(21799, 1603, MageArena::turnInComponent);
+        ItemNPCAction.register(2412, 1603, MageArena::upgradeCape);
+        ItemNPCAction.register(2413, 1603, MageArena::upgradeCape);
+        ItemNPCAction.register(2414, 1603, MageArena::upgradeCape);
 
         /**
          * Sack containing knife
