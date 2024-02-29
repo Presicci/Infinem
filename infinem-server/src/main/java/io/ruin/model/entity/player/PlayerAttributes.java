@@ -424,12 +424,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int highestLoyaltyChestSpree;
 
     /*
-     * first3 stuff
-     */
-    public TickDelay first3 = new TickDelay();
-    @Expose public int first3TimeLeft;
-
-    /*
      * Custom Points
      */
     @Expose public int PvmPoints;

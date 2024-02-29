@@ -235,11 +235,6 @@ public class StatList {
         if (player.expBonus.isDelayed())
             multi *= 2.00;
         /*
-         * 10% experience boost from first 3 days
-         */
-        if (player.first3.isDelayed())
-            multi *= 1.10;
-        /*
          * 25% weekend experience boost
          */
         if (World.weekendExpBoost)

@@ -32,10 +32,6 @@ public class BonusExpScroll {
                 player.expBonus.delay(player.expBonusTimeLeft);
                 player.expBonusTimeLeft = 0;
             }
-            if (player.first3TimeLeft > 0) {
-                player.first3.delay(player.first3TimeLeft);
-                player.first3TimeLeft = 0;
-            }
         });
     }
 }
