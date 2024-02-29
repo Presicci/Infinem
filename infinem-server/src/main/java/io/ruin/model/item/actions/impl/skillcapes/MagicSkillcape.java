@@ -50,19 +50,25 @@ public class MagicSkillcape {
             player.dialogue(new OptionsDialogue("Choose spellbook:",
                     new Option("Ancient", () -> swap(player, SpellBook.ANCIENT, "Ancient")),
                     new Option("Lunar", () -> swap(player, SpellBook.LUNAR, "Lunar")),
-                    new Option("<str>Arceuus", player::closeDialogue)
+                    new Option("Arceuus", () -> swap(player, SpellBook.ARCEUUS, "Arceuus"))
             ));
         } else if(spellBook == SpellBook.ANCIENT.ordinal()) {
             player.dialogue(new OptionsDialogue("Choose spellbook:",
                     new Option("Modern", () -> swap(player, SpellBook.MODERN, "Modern")),
                     new Option("Lunar", () -> swap(player, SpellBook.LUNAR, "Lunar")),
-                    new Option("<str>Arceuus", player::closeDialogue)
+                    new Option("Arceuus", () -> swap(player, SpellBook.ARCEUUS, "Arceuus"))
             ));
         } else if(spellBook == SpellBook.LUNAR.ordinal()) {
             player.dialogue(new OptionsDialogue("Choose spellbook:",
                     new Option("Modern", () -> swap(player, SpellBook.MODERN, "Modern")),
                     new Option("Ancient", () -> swap(player, SpellBook.ANCIENT, "Ancient")),
-                    new Option("<str>Arceuus", player::closeDialogue)
+                    new Option("Arceuus", () -> swap(player, SpellBook.ARCEUUS, "Arceuus"))
+            ));
+        } else if(spellBook == SpellBook.ARCEUUS.ordinal()) {
+            player.dialogue(new OptionsDialogue("Choose spellbook:",
+                    new Option("Modern", () -> swap(player, SpellBook.MODERN, "Modern")),
+                    new Option("Ancient", () -> swap(player, SpellBook.ANCIENT, "Ancient")),
+                    new Option("Lunar", () -> swap(player, SpellBook.LUNAR, "Lunar"))
             ));
         }
     }
