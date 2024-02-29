@@ -2,10 +2,12 @@ package io.ruin.model.activities.combat.bosses;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.content.tasksystem.areas.diaryitems.FaladorShield;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.listeners.HitListener;
+import io.ruin.model.item.Items;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
 
@@ -42,6 +44,8 @@ public class GiantMole extends NPCCombat {
         }
     }
 
+    private static final int[] FALADOR_SHIELDS = { Items.FALADOR_SHIELD_3, Items.FALADOR_SHIELD_4 };
+
     private void burrow() {
         int[] offsets = Random.get(BURROW_POINTS);
         System.out.println(Arrays.toString(offsets));
@@ -58,7 +62,7 @@ public class GiantMole extends NPCCombat {
             npc.getMovement().teleport(burrowDestination);
             npc.animate(BURROW_SURFACE_ANIM);
             event.delay(2);
-            if (player != null) {
+            if (player != null && (player.getInventory().hasAtLeastOneOf(FALADOR_SHIELDS) || player.getEquipment().hasAtLeastOneOf(FALADOR_SHIELDS))) {
                 player.getPacketSender().sendHintIcon(npc.getAbsX(), npc.getAbsY());
                 player.addEvent(e -> {
                     e.waitForCondition(() -> player.getCombat().getTarget() == npc || !player.getPosition().isWithinDistance(npc.getPosition(), 64), 200);
