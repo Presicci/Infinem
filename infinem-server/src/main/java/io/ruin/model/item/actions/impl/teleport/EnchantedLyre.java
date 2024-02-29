@@ -1,7 +1,7 @@
 package io.ruin.model.item.actions.impl.teleport;
 
 import io.ruin.cache.ItemDef;
-import io.ruin.model.content.tasksystem.tasks.areas.AreaReward;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;

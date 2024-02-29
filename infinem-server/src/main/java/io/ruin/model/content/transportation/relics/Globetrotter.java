@@ -1,6 +1,6 @@
 package io.ruin.model.content.transportation.relics;
 
-import io.ruin.model.content.tasksystem.tasks.areas.AreaReward;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Option;

@@ -1,6 +1,6 @@
 package io.ruin.model.skills.magic.spells.modern;
 
-import io.ruin.model.content.tasksystem.tasks.areas.AreaReward;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Config;

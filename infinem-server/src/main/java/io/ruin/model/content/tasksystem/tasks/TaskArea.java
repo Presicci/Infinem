@@ -1,7 +1,7 @@
 package io.ruin.model.content.tasksystem.tasks;
 
 import io.ruin.api.utils.StringUtils;
-import io.ruin.model.content.tasksystem.tasks.areas.AreaTaskTier;
+import io.ruin.model.content.tasksystem.areas.AreaTaskTier;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 

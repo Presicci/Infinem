@@ -1,4 +1,4 @@
-package io.ruin.model.content.tasksystem.tasks.areas;
+package io.ruin.model.content.tasksystem.areas;
 
 import io.ruin.model.content.tasksystem.tasks.TaskArea;
 import io.ruin.model.entity.player.Player;

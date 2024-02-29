@@ -3,7 +3,7 @@ package io.ruin.model.entity.npc.actions.guild.crafting;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.content.tasksystem.tasks.TaskArea;
-import io.ruin.model.content.tasksystem.tasks.areas.AreaTaskTier;
+import io.ruin.model.content.tasksystem.areas.AreaTaskTier;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;

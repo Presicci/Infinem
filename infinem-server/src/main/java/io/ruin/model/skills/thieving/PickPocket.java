@@ -6,7 +6,7 @@ import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
-import io.ruin.model.content.tasksystem.tasks.areas.AreaReward;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;

@@ -1,4 +1,4 @@
-package io.ruin.model.content.tasksystem.tasks.areas;
+package io.ruin.model.content.tasksystem.areas;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

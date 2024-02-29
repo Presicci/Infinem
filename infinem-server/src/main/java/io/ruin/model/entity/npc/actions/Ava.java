@@ -1,14 +1,13 @@
 package io.ruin.model.entity.npc.actions;
 
 import io.ruin.model.content.tasksystem.tasks.TaskArea;
-import io.ruin.model.content.tasksystem.tasks.areas.AreaTaskTier;
+import io.ruin.model.content.tasksystem.areas.AreaTaskTier;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.OptionAction;
-import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Items;
 
 /**

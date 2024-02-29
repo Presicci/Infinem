@@ -1,4 +1,4 @@
-package io.ruin.model.content.tasksystem.tasks.areas;
+package io.ruin.model.content.tasksystem.areas;
 
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.Color;
@@ -13,6 +13,30 @@ import java.util.*;
  * Created on 2/29/2024
  */
 public enum AreaReward {
+    /**
+     * Asgarnia rewards
+     */
+    FALADOR_SHIELD_1(TaskArea.ASGARNIA, AreaTaskTier.EASY, "Unlocks the Falador Shield 1",
+            "25% Prayer restore once per day"),
+    //Tight-gap shortcut to the Chaos Temple from Burthorpe
+    FALADOR_SHIELD_2(TaskArea.ASGARNIA, AreaTaskTier.MEDIUM, "Unlocks the Falador Shield 2",
+            "50% Prayer restore once per day"),
+    FALADOR_FARMING_EXPERIENCE(TaskArea.ASGARNIA, AreaTaskTier.MEDIUM, "10% more experience from Falador farming patch"),
+    //Access to a shortcut in the Motherlode Mine (requires 54 Agility)
+    //Higher chance of receiving a clue scroll (medium) (1/106) from a guard in Falador (The shield does not need to be equipped)
+    FALADOR_SHIELD_3(TaskArea.ASGARNIA, AreaTaskTier.HARD, "Unlocks the Falador Shield 3",
+            "100% Prayer restore once per day",
+            "Giant Mole indicator when equipped"),
+    CRAFTING_GUILD_BANK(TaskArea.ASGARNIA, AreaTaskTier.HARD, "Access to the Crafting Guild bank"),
+    NOTED_GIANT_MOLE_PARTS(TaskArea.ASGARNIA, AreaTaskTier.HARD, "Giant Mole parts will drop noted"),
+    //Access to a shortcut to the Fountain of Heroes in the Heroes' Guild basement, requiring 67 Agility
+    FALADOR_SHIELD_4(TaskArea.ASGARNIA, AreaTaskTier.ELITE, "Unlocks the Falador Shield 3",
+            "100% Prayer restore twice per day"),
+    FALADOR_TREE_PATCH_DISEASE_FREE(TaskArea.ASGARNIA, AreaTaskTier.ELITE, "Falador tree patch will never get diseased"),
+    //Increased chance at receiving higher level ores when cleaning pay-dirt.[1]
+    //The roll for each ore type is increased by ~1 percentage point.[2]
+    ALTERNATE_AMETHYST_MINE(TaskArea.ASGARNIA, AreaTaskTier.ELITE, "Access to alternative Amethyst mining spot"),
+
     /**
      * Desert rewards
      */
