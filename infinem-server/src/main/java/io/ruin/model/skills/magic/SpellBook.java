@@ -172,7 +172,7 @@ public enum SpellBook {
             new ArceuusTeleport(17, 16.0, MagicTeleportBounds.DRAYNOR_MANOR.getBounds(), Rune.LAW.toItem(1), Rune.EARTH.toItem(1), Rune.WATER.toItem(1)),   // Draynor manor
             new TodoSpell("Empty Slot"),
             new ArceuusTeleport(28, 22.0, MagicTeleportBounds.MIND_ALTAR.getBounds(), Rune.LAW.toItem(1), Rune.MIND.toItem(2)),  // Mind altar
-            new ArceuusTeleport(34, 27.0, new Bounds(3084, 3489, 3088, 3492, 0), Rune.LAW.toItem(1), Rune.SOUL.toItem(1)),  // TODO respawn
+            new RespawnTeleport(34, 27.0, Rune.LAW.toItem(1), Rune.SOUL.toItem(1)),
             new ArceuusTeleport(40, 30.0, MagicTeleportBounds.SALVE_GRAVEYARD.getBounds(), Rune.LAW.toItem(1), Rune.SOUL.toItem(2)),  // Salve graveyard
             new ArceuusTeleport(48, 50.0, MagicTeleportBounds.FENKENSTRAINS_CASTLE.getBounds(), Rune.LAW.toItem(1), Rune.EARTH.toItem(1), Rune.SOUL.toItem(1)),    // Frankenstrains castle
             new ArceuusTeleport(61, 68.0, MagicTeleportBounds.WEST_ARDOUGNE.getBounds(), Rune.LAW.toItem(2), Rune.SOUL.toItem(2)),  // West ardy
