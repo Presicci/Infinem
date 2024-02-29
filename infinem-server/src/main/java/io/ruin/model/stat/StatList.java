@@ -6,6 +6,7 @@ import io.ruin.cache.Icon;
 import io.ruin.model.World;
 import io.ruin.model.activities.summerevent.SummerTokens;
 import io.ruin.model.activities.wilderness.Wilderness;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.content.upgrade.ItemEffect;
@@ -14,6 +15,7 @@ import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.skillcapes.HitpointsSkillCape;
 import io.ruin.model.item.attributes.AttributeExtensions;
+import io.ruin.model.map.MapArea;
 import io.ruin.model.skills.prayer.Prayer;
 import io.ruin.utility.Broadcast;
 
@@ -177,7 +179,7 @@ public class StatList {
             }
         }
 
-        amount *= getExperienceMultiplier();
+        amount *= getExperienceMultiplier(type);
 
         double relicMulti = getRelicMultiplier(type);
         amount *= relicMulti;
@@ -225,23 +227,31 @@ public class StatList {
         player.getTaskManager().doLevelUpLookup(newLevel, type == StatType.Hitpoints);
     }
 
-    private double getExperienceMultiplier() {
+    private double getExperienceMultiplier(StatType type) {
         double multi = 1D;
-        /**
+        /*
          * 50% experience boost from scroll
          */
-        if(player.expBonus.isDelayed())
+        if (player.expBonus.isDelayed())
             multi *= 2.00;
-        /**
+        /*
          * 10% experience boost from first 3 days
          */
         if (player.first3.isDelayed())
             multi *= 1.10;
-        /**
+        /*
          * 25% weekend experience boost
          */
-        if(World.weekendExpBoost)
+        if (World.weekendExpBoost)
             multi *= 1.25;
+        /*
+         * Falador medium unlock
+         * 10% more experience from the Falador farming patch
+         */
+        if (AreaReward.FALADOR_FARMING_EXPERIENCE.hasReward(player)
+                && type == StatType.Farming
+                && MapArea.FALADOR_FARM.inArea(player))
+            multi *= 1.1;
         return multi;
     }
 
