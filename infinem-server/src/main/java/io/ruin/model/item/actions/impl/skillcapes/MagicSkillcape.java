@@ -1,6 +1,7 @@
 package io.ruin.model.item.actions.impl.skillcapes;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.DailyResetListener;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
@@ -9,8 +10,6 @@ import io.ruin.model.map.object.actions.impl.PrayerAltar;
 import io.ruin.model.skills.magic.SpellBook;
 import io.ruin.model.stat.StatType;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 5/17/2021
@@ -18,21 +17,32 @@ import java.util.concurrent.TimeUnit;
 public class MagicSkillcape {
     private static final int CAPE = StatType.Magic.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Magic.trimmedCapeId;
+    private static final String KEY = "MAGIC_CAPE";
 
     static {
         ItemAction.registerInventory(CAPE, "spellbook", (player, item) -> swapSelection(player));
         ItemAction.registerEquipment(CAPE, "spellbook", (player, item) -> swapSelection(player));
+        ItemAction.registerInventory(CAPE, "check", (player, item) -> check(player));
+        ItemAction.registerEquipment(CAPE, "check", (player, item) -> check(player));
         ItemAction.registerInventory(TRIMMED_CAPE, "spellbook", (player, item) -> swapSelection(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "spellbook", (player, item) -> swapSelection(player));
+        ItemAction.registerInventory(TRIMMED_CAPE, "check", (player, item) -> check(player));
+        ItemAction.registerEquipment(TRIMMED_CAPE, "check", (player, item) -> check(player));
+        DailyResetListener.register(player -> player.removeAttribute(KEY));
+    }
+
+    private static void check(Player player) {
+        int uses = player.getAttributeIntOrZero(KEY);
+        if (uses >= 5) {
+            player.timeTillDailyReset("You've used all 5 spellbook swaps today.<br><br>");
+        } else {
+            player.timeTillDailyReset("You have " + (5 - uses) + " spellbook swaps left today.<br><br>");
+        }
     }
 
     public static void swapSelection(Player player) {
-        if(player.mageSkillcapeSpecial < System.currentTimeMillis()) {
-            player.mageSkillcapeSpecial = System.currentTimeMillis() + TimeUnit.HOURS.toMillis(player.isSapphire() ? 6 : 12);
-            player.magicSkillcapeUses = 0;
-        }
-        if(player.magicSkillcapeUses >= 5) {
-            player.sendMessage("You've already used spellbook swap 5 times today. You can use this again in another " + getRemainingTime(player) + ".");
+        if(player.getAttributeIntOrZero(KEY) >= 5) {
+            player.timeTillDailyReset("You've used all 5 spellbook swaps today.<br><br>");
             return;
         }
         int spellBook = Config.MAGIC_BOOK.get(player);
@@ -60,15 +70,6 @@ public class MagicSkillcape {
     private static void swap(Player player, SpellBook spellBook, String name) {
         PrayerAltar.switchBook(player, spellBook, false);
         player.sendMessage(name + " spellbook activated.");
-        player.magicSkillcapeUses++;
-    }
-
-    private static String getRemainingTime(Player player) {
-        long ms = player.mageSkillcapeSpecial - System.currentTimeMillis();
-        long hours = TimeUnit.MILLISECONDS.toHours(ms);
-        long minutes = TimeUnit.MILLISECONDS.toMinutes(ms);
-        return (hours >= 1 ? (hours + " hour" + (hours > 1 ? "s" : "") + " and ") : "") +
-                Math.max((minutes - TimeUnit.HOURS.toMinutes(hours)), 1) + " minute" +
-                ((minutes - TimeUnit.HOURS.toMinutes(hours)) > 1 ? "s" : "");
+        player.incrementNumericAttribute(KEY, 1);
     }
 }
