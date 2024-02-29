@@ -23,7 +23,7 @@ public class FaladorShield {
         int uses = player.getAttributeIntOrZero(KEY);
         int max = item.getId() == Items.FALADOR_SHIELD_4 ? 2 : 1;
         if (uses >= max) {
-            player.timeTillDailyReset("You've already used your prayer restore" + (max == 2 ? "s" : "") + " for the day.<br>");
+            player.timeTillDailyReset("You've already used your prayer restore" + (max == 2 ? "s" : "") + " for the day.<br><br>");
             return;
         }
         Stat prayer = player.getStats().get(StatType.Prayer);
