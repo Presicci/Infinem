@@ -3,8 +3,7 @@ package io.ruin.model.skills.construction.room.impl;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.ObjectDef;
-import io.ruin.model.content.tasksystem.tasks.areas.rewards.KandarinReward;
-import io.ruin.model.content.tasksystem.tasks.areas.rewards.MisthalinReward;
+import io.ruin.model.content.tasksystem.tasks.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -63,9 +62,9 @@ public class PortalChamberRoom extends Room {
         TROLL_STRONGHOLD(1, BasaltTeleport.TROLL_STRONGHOLD.toBounds(), new int[]{33179, 33180, 33181}, new Item(22604, 100), new Item(22593, 100), new Item(22597, 300)),
         WEISS(1, BasaltTeleport.WEISS.toBounds(), new int[]{37581, 37593, 37605}, new Item(22604, 100), new Item(22593, 100), new Item(22595, 300)),
 
-        GRAND_EXCHANGE(VARROCK, MagicTeleportBounds.VARROCK_GE.getBounds(), Config.varpbit(4585, true), player -> MisthalinReward.GRAND_EXCHANGE_TELEPORT.checkReward(player, NOT_ENOUGH_TASKS_MESSAGE)),
-        SEERS_VILLAGE(CAMELOT, MagicTeleportBounds.CAMELOT_SEERS.getBounds(), Config.varpbit(4560, true), player -> KandarinReward.SEERS_TELEPORT.checkReward(player, NOT_ENOUGH_TASKS_MESSAGE)),
-        YANILLE(WATCHTOWER, MagicTeleportBounds.WATCHTOWER_YANILLE.getBounds(), Config.varpbit(4548, true), player -> KandarinReward.YANILLE_TELEPORT.checkReward(player, NOT_ENOUGH_TASKS_MESSAGE));
+        GRAND_EXCHANGE(VARROCK, MagicTeleportBounds.VARROCK_GE.getBounds(), Config.varpbit(4585, true), player -> AreaReward.GRAND_EXCHANGE_TELEPORT.checkReward(player, NOT_ENOUGH_TASKS_MESSAGE)),
+        SEERS_VILLAGE(CAMELOT, MagicTeleportBounds.CAMELOT_SEERS.getBounds(), Config.varpbit(4560, true), player -> AreaReward.SEERS_TELEPORT.checkReward(player, NOT_ENOUGH_TASKS_MESSAGE)),
+        YANILLE(WATCHTOWER, MagicTeleportBounds.WATCHTOWER_YANILLE.getBounds(), Config.varpbit(4548, true), player -> AreaReward.YANILLE_TELEPORT.checkReward(player, NOT_ENOUGH_TASKS_MESSAGE));
 
         final int levelReq;
         final Item[] runes;

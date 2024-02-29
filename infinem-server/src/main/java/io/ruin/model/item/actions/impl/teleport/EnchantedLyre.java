@@ -1,7 +1,7 @@
 package io.ruin.model.item.actions.impl.teleport;
 
 import io.ruin.cache.ItemDef;
-import io.ruin.model.content.tasksystem.tasks.areas.rewards.FremennikReward;
+import io.ruin.model.content.tasksystem.tasks.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
@@ -107,7 +107,7 @@ public class EnchantedLyre {
             return;
         }
         player.getInventory().remove(fishId, 1);
-        lyre.setId(LYRES.get(FISH_CHARGES.get(fishId) + (FremennikReward.LYRE_EXTRA_CHARGE.hasUnlocked(player) ? 1 : 0)));
+        lyre.setId(LYRES.get(FISH_CHARGES.get(fishId) + (AreaReward.LYRE_EXTRA_CHARGE.hasReward(player) ? 1 : 0)));
         player.dialogue(new NPCDialogue(FESSEGRIMEN, "I offer you this enchantment for your worthy offering."));
     }
 
@@ -179,9 +179,9 @@ public class EnchantedLyre {
     private static void teleportDialogue(Player player, Item item) {
         List<Option> options = new ArrayList<>();
         options.add(new Option("Rellekka", () -> teleport(player, item, RELLEKKA)));
-        if (FremennikReward.LYRE_WATERBIRTH_TELEPORT.hasUnlocked(player))
+        if (AreaReward.LYRE_WATERBIRTH_TELEPORT.hasReward(player))
             options.add(new Option("Waterbirth Island", () -> teleport(player, item, WATERBIRTH_ISLAND)));
-        if (FremennikReward.LYRE_JATIZSO_NEITIZNOT.hasUnlocked(player)) {
+        if (AreaReward.LYRE_JATIZSO_NEITIZNOT.hasReward(player)) {
             options.add(new Option("Neitiznot", () -> teleport(player, item, NEITIZNOT)));
             options.add(new Option("Jatizso", () -> teleport(player, item, JATIZSO)));
         }
@@ -206,22 +206,16 @@ public class EnchantedLyre {
             ItemAction.registerInventory(id, "play", EnchantedLyre::teleportDialogue);
             ItemAction.registerEquipment(id, "rellekka", ((player, item) -> teleport(player, item, RELLEKKA)));
             ItemAction.registerEquipment(id, "waterbirth island", ((player, item) -> {
-                if (FremennikReward.LYRE_WATERBIRTH_TELEPORT.hasUnlocked(player))
+                if (AreaReward.LYRE_WATERBIRTH_TELEPORT.checkReward(player, "use this teleport."))
                     teleport(player, item, RELLEKKA);
-                else
-                    player.dialogue(new MessageDialogue(FremennikReward.LYRE_WATERBIRTH_TELEPORT.notUnlockedMessage()));
             }));
             ItemAction.registerEquipment(id, "jatiszo", ((player, item) -> {
-                if (FremennikReward.LYRE_JATIZSO_NEITIZNOT.hasUnlocked(player))
+                if (AreaReward.LYRE_JATIZSO_NEITIZNOT.checkReward(player, "use this teleport."))
                     teleport(player, item, JATIZSO);
-                else
-                    player.dialogue(new MessageDialogue(FremennikReward.LYRE_JATIZSO_NEITIZNOT.notUnlockedMessage()));
             }));
             ItemAction.registerEquipment(id, "neitiznot", ((player, item) -> {
-                if (FremennikReward.LYRE_JATIZSO_NEITIZNOT.hasUnlocked(player))
+                if (AreaReward.LYRE_JATIZSO_NEITIZNOT.checkReward(player, "use this teleport."))
                     teleport(player, item, NEITIZNOT);
-                else
-                    player.dialogue(new MessageDialogue(FremennikReward.LYRE_JATIZSO_NEITIZNOT.notUnlockedMessage()));
             }));
         }
     }

@@ -1,7 +1,6 @@
 package io.ruin.model.content.transportation.relics;
 
-import io.ruin.model.content.tasksystem.tasks.areas.rewards.KandarinReward;
-import io.ruin.model.content.tasksystem.tasks.areas.rewards.MisthalinReward;
+import io.ruin.model.content.tasksystem.tasks.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Option;
@@ -9,7 +8,6 @@ import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.impl.teleport.BasaltTeleport;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
-import io.ruin.model.map.object.actions.impl.locations.prifddinas.PrifCityEntrance;
 import io.ruin.model.skills.construction.actions.AchievementGallery;
 import io.ruin.model.skills.magic.MagicTeleportBounds;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
@@ -79,28 +77,28 @@ public class Globetrotter {
     private static void nexus(Player player) {
         List<Option> options = new ArrayList<>(OPTIONS); // 16, 30, 42
         // Grand exchange
-        boolean ge = MisthalinReward.GRAND_EXCHANGE_TELEPORT.hasReward(player);
+        boolean ge = AreaReward.GRAND_EXCHANGE_TELEPORT.hasReward(player);
         options.set(16, new Option((ge ? "" : "<str>") + "Grand Exchange", () -> {
             if (ge)
                 teleport(player, MagicTeleportBounds.VARROCK_GE.getBounds());
             else
-                MisthalinReward.GRAND_EXCHANGE_TELEPORT.checkReward(player, "cast this teleport.");
+                AreaReward.GRAND_EXCHANGE_TELEPORT.checkReward(player, "cast this teleport.");
         }));
         // Seers' village
-        boolean seers = KandarinReward.SEERS_TELEPORT.hasReward(player);
+        boolean seers = AreaReward.SEERS_TELEPORT.hasReward(player);
         options.set(29, new Option((seers ? "" : "<str>") + "Seers' Village", () -> {
             if (seers)
                 teleport(player, MagicTeleportBounds.CAMELOT_SEERS.getBounds());
             else
-                KandarinReward.SEERS_TELEPORT.checkReward(player, "cast this teleport.");
+                AreaReward.SEERS_TELEPORT.checkReward(player, "cast this teleport.");
         }));
         // Yanille
-        boolean yanille = KandarinReward.YANILLE_TELEPORT.hasReward(player);
+        boolean yanille = AreaReward.YANILLE_TELEPORT.hasReward(player);
         options.set(41, new Option((yanille ? "" : "<str>") + "Yanille", () -> {
             if (yanille)
                 teleport(player, MagicTeleportBounds.WATCHTOWER_YANILLE.getBounds());
             else
-                KandarinReward.YANILLE_TELEPORT.checkReward(player, "cast this teleport.");
+                AreaReward.YANILLE_TELEPORT.checkReward(player, "cast this teleport.");
         }));
         OptionScroll.open(player, "Globetrotter Teleports", true, options);
     }

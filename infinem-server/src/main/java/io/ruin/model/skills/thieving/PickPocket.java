@@ -6,7 +6,7 @@ import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
-import io.ruin.model.content.tasksystem.tasks.areas.rewards.KandarinReward;
+import io.ruin.model.content.tasksystem.tasks.areas.AreaReward;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -556,7 +556,7 @@ public enum PickPocket {
         if (pickpocket == HAM && hasHAMSet(player)) {
             chance *= 1.15; // 15% boost for wearing ham set when pickpocketing ham
         }
-        if ((KandarinReward.THIEVING_BOOST_1.hasReward(player) && MapArea.ARDOUGNE.inArea(player)) || KandarinReward.THIEVING_BOOST_2.hasReward(player)) {
+        if ((AreaReward.THIEVING_BOOST_1.hasReward(player) && MapArea.ARDOUGNE.inArea(player)) || AreaReward.THIEVING_BOOST_2.hasReward(player)) {
             chance *= 1.1;
         } else if (player.getEquipment().hasId(GLOVES_OF_SILENCE))  // Only applies if ardy effect doesn't
             chance *= 1.05;
