@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.content.ActivitySpotlight;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -20,6 +21,7 @@ import io.ruin.model.item.actions.impl.skillcapes.MiningSkillCape;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
+import io.ruin.model.map.MapArea;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.Stat;
@@ -43,20 +45,19 @@ public class Mining {
             player.privateSound(2277);
             return;
         }
-
         Stat stat = player.getStats().get(StatType.Mining);
         if (stat.currentLevel < rockData.levelReq) {
             player.sendMessage("You need a Mining level of " + rockData.levelReq + " to mine this rock.");
             player.privateSound(2277);
             return;
         }
-
+        if (rockData == Rock.AMETHYST && MapArea.EXCLUSIVE_AMETHYST_MINE.inArea(player) && !AreaReward.ALTERNATE_AMETHYST_MINE.checkReward(player, "mine these rocks."))
+            return;
         if (player.getInventory().isFull()) {
             player.privateSound(2277);
             player.sendMessage("Your inventory is too full to hold any more " + rockData.rockName + ".");
             return;
         }
-
         player.startEvent(event -> {
             int attempts = 0;
             while (true) {
