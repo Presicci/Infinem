@@ -5,6 +5,7 @@ import io.ruin.cache.Color;
 import io.ruin.cache.NPCDef;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPCCombat;
+import io.ruin.model.entity.npc.NPCDrops;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
@@ -140,7 +141,7 @@ public class DropViewer {
     }
 
     private static List<Item> getGroupDrop(int item, String name) {
-        Item[][] groups = NPCCombat.groupedDrops.get(name.toLowerCase());
+        Item[][] groups = NPCDrops.groupedDrops.get(name.toLowerCase());
         if (groups == null) {
             return null;
         }
