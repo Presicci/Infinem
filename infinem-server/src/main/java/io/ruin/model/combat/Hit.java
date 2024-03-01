@@ -4,6 +4,8 @@ import io.ruin.Server;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
+import io.ruin.model.content.bestiary.perks.impl.AccuracyPerk;
+import io.ruin.model.content.bestiary.perks.impl.ReducedEnemyAccuracyPerk;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.inter.utils.Config;
@@ -337,6 +339,11 @@ public class Hit {
 							attackBonus *= PVP_MELEE_ACCURACY_MODIFIER;
 					}
 					double defenceBonus = getDefenceBonus(target) * (1D + defenceBoost);
+					// Bestiary - Reduced enemy accuracy
+					if (attacker.isNpc() && target.isPlayer()) {
+						double accuracy = target.player.getBestiary().getBestiaryEntry(attacker.npc.getDef()).getPerkMultiplier(ReducedEnemyAccuracyPerk.class);
+						attackBonus *= accuracy;
+					}
 					// Brimstone ring effect
 					if (attacker.isPlayer() && attacker.player.getEquipment().hasId(22975) && attackStyle == AttackStyle.MAGIC && Random.rollDie(4, 1)) {
 						defenceBonus *= .9;
