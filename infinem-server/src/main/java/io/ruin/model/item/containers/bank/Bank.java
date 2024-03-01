@@ -1,6 +1,7 @@
 package io.ruin.model.item.containers.bank;
 
 import io.ruin.cache.ItemDef;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceAction;
@@ -21,6 +22,7 @@ import io.ruin.model.item.actions.impl.storage.GemBag;
 import io.ruin.model.item.actions.impl.storage.LootingBag;
 import io.ruin.model.item.actions.impl.storage.RunePouch;
 import io.ruin.model.item.attributes.AttributeExtensions;
+import io.ruin.model.map.MapArea;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -40,11 +42,13 @@ public class Bank extends ItemContainerG<BankItem> {
     private boolean sortSkip, sortRequired;
 
     public void open() {
-        if(player.getGameMode().isUltimateIronman()) {
+        if (player.getGameMode().isUltimateIronman()) {
             player.sendMessage("Ultimate ironmen cannot access the bank.");
             return;
         }
-        if(player.getBankPin().requiresVerification(p -> open()))
+        if (MapArea.CRAFTING_GUILD.inArea(player) && !AreaReward.CRAFTING_GUILD_BANK.checkReward(player, "access this bank."))
+            return;
+        if (player.getBankPin().requiresVerification(p -> open()))
             return;
         //player.getPacketSender().sendClientScript(917, "ii", -1, -2147483648);
         player.setInterfaceUnderlay(-1, -2);
@@ -73,6 +77,8 @@ public class Bank extends ItemContainerG<BankItem> {
             player.sendMessage("Ultimate ironmen cannot access the bank.");
             return;
         }
+        if (MapArea.CRAFTING_GUILD.inArea(player) && !AreaReward.CRAFTING_GUILD_BANK.checkReward(player, "access this deposit box."))
+            return;
         player.getPacketSender().sendAccessMask(161, 47, -1, -1, 0);
         player.getPacketSender().sendAccessMask(161, 48, -1, -1, 0);
         player.getPacketSender().sendClientScript(915, "i", 3);
