@@ -11,6 +11,7 @@ import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.Killer;
 import io.ruin.model.content.PvmPoints;
 import io.ruin.model.content.bestiary.perks.impl.NotedDropPerk;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.player.DoubleDrops;
@@ -320,6 +321,8 @@ public class NPCDrops {
             double chance = pKiller.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(NotedDropPerk.class);
             if (item.getDef().notedId > -1 && chance > 0 && Random.get() < chance) {
                 item.setId(item.getDef().notedId);
+            } else if (canNote(pKiller, item)) {
+                item.setId(item.getDef().notedId);
             }
 
             /*
@@ -344,6 +347,14 @@ public class NPCDrops {
                 }
             }
         }
+    }
+
+    private boolean canNote(Player pKiller, Item item) {
+        if (item.getDef().notedId < 0) return false;
+        String name = npc.getDef().name;
+        if (name.toLowerCase().contains("giant mole") && AreaReward.NOTED_GIANT_MOLE_PARTS.hasReward(pKiller) && (item.getId() == Items.MOLE_CLAW || item.getId() == Items.MOLE_SKIN))
+            return true;
+        return false;
     }
 
     private void getRareDropAnnounce(Player pKiller, Item item) {
