@@ -354,6 +354,8 @@ public class NPCDrops {
         String name = npc.getDef().name;
         if (name.toLowerCase().contains("giant mole") && AreaReward.NOTED_GIANT_MOLE_PARTS.hasReward(pKiller) && (item.getId() == Items.MOLE_CLAW || item.getId() == Items.MOLE_SKIN))
             return true;
+        if (name.toLowerCase().contains("goat") && AreaReward.NOTED_GOAT_HORN.hasReward(pKiller) && item.getId() == Items.DESERT_GOAT_HORN)
+            return true;
         return false;
     }
 
