@@ -15,11 +15,14 @@ import io.ruin.model.skills.herblore.Potion;
  * Created on - 7/20/2020
  */
 public class Decanter {
-    private static void decantPotions(Player player, NPC npc) {
+
+    public static void decantPotions(Player player, NPC npc) {
         player.openInterface(InterfaceType.CHATBOX, Interface.POTION_DECANTING);
     }
+
     static {
         NPCAction.register(5449, "decant", Decanter::decantPotions);
+        NPCAction.register(4753, "decant", Decanter::decantPotions);    // Zahur
         InterfaceHandler.register(Interface.POTION_DECANTING, h -> {
             h.actions[3] = (SimpleAction) p -> Potion.decant(p, 1);
             h.actions[4] = (SimpleAction) p -> Potion.decant(p, 2);
