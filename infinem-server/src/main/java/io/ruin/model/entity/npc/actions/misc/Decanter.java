@@ -1,4 +1,4 @@
-package io.ruin.model.entity.npc.actions.edgeville;
+package io.ruin.model.entity.npc.actions.misc;
 
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
