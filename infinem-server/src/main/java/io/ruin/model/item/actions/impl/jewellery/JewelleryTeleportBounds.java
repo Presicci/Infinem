@@ -74,6 +74,11 @@ public enum JewelleryTeleportBounds {
     // Hazelmere's signet ring
     KELDAGRIM(new Bounds(2853, 10198, 2857, 10200, 0)),
 
+    // Desert amulet
+    NARDAH(new Bounds(3417, 2916, 3423, 2920, 0)),
+    NARDAH_SHRINE(new Bounds(3424, 2927, 3429, 2929, 0)),
+    KALPHITE_CAVE(new Bounds(3321, 3120, 3324, 3124, 0)),
+
     ;
 
     private final Bounds bounds;
