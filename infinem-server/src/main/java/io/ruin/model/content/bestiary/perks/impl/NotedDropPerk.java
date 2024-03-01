@@ -21,12 +21,12 @@ public class NotedDropPerk extends IntervalPerk {
     }
 
     @Override
-    protected int getBreakpointCap() {
+    protected int getIntervalCap() {
         return -1;
     }
 
     @Override
     protected String getLabel(int killCount) {
-        return new DecimalFormat("#").format(getMultiplier(killCount) * 100f) + "% Noted Drop Chance";
+        return "% Noted Drop Chance";
     }
 }

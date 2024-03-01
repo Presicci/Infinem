@@ -1,5 +1,6 @@
 package io.ruin.model.content.bestiary.perks;
 
+import java.text.DecimalFormat;
 import java.util.*;
 
 /**
@@ -13,6 +14,19 @@ public abstract class MixedPerk extends BestiaryPerk {
     protected abstract Map<Integer, Double> getBreakpoints();
     protected abstract double getIncrement();
     protected abstract int getInterval();
+
+    @Override
+    protected String getBreakpointString(int killCount) {
+        int nextBreakpoint = getNextBreakpoint(killCount);
+        if (nextBreakpoint <= 0) return "";
+        if (getBreakpoints().containsKey(getNextBreakpoint(killCount))) {
+            Double breakpointReward = getBreakpoints().get(nextBreakpoint);
+            return (getInvertedPercentage() ? "-" + inverseDoubleToPercentage(breakpointReward) : "+" + new DecimalFormat("#").format(breakpointReward * 100f)) + "% at " + super.getBreakpointString(killCount);
+        } else {
+            double increment = getIncrement();
+            return (getInvertedPercentage() ? "-" + inverseDoubleToPercentage(increment) : "+" + new DecimalFormat("#").format(increment * 100f)) + "% at " + super.getBreakpointString(killCount);
+        }
+    }
 
     protected int getLastBreakpoint() {
         List<Integer> keys = new ArrayList<>(getBreakpoints().keySet());

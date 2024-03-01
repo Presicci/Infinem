@@ -22,6 +22,6 @@ public class DamagePerk extends BreakpointPerk {
 
     @Override
     protected String getLabel(int killCount) {
-        return new DecimalFormat("#").format(getMultiplier(killCount) * 100f) + "% Increased Damage";
+        return "% Increased Damage";
     }
 }

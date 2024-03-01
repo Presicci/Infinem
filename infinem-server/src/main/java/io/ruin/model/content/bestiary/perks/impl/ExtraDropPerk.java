@@ -34,6 +34,6 @@ public class ExtraDropPerk extends MixedPerk {
 
     @Override
     protected String getLabel(int killCount) {
-        return new DecimalFormat("#").format(getMultiplier(killCount) * 100f) + "% Extra Loot Chance";
+        return "% Extra Loot Chance";
     }
 }

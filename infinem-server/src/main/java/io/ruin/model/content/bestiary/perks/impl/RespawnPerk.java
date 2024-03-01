@@ -19,18 +19,17 @@ public class RespawnPerk extends IntervalPerk {
     }
 
     @Override
-    protected int getBreakpointCap() {
+    protected int getIntervalCap() {
         return 75;
     }
 
     @Override
-    protected String getLabel(int killCount) {
-        return inverseDoubleToPercentage(getMultiplier(killCount)) + "% Faster Respawn Time";
+    protected boolean getInvertedPercentage() {
+        return true;
     }
 
     @Override
-    public double getMultiplier(int killCount) {
-        double multiplier = super.getMultiplier(killCount);
-        return multiplier == 0 ? 1 : 1 - multiplier;
+    protected String getLabel(int killCount) {
+        return "% Faster Respawn Time";
     }
 }

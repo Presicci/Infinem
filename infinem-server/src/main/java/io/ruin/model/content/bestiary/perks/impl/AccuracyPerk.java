@@ -3,8 +3,10 @@ package io.ruin.model.content.bestiary.perks.impl;
 import io.ruin.model.content.bestiary.perks.BreakpointPerk;
 
 import java.text.DecimalFormat;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -24,6 +26,6 @@ public class AccuracyPerk extends BreakpointPerk {
 
     @Override
     protected String getLabel(int killCount) {
-        return new DecimalFormat("#").format(getMultiplier(killCount) * 100f) + "% Increased Accuracy";
+        return "% Increased Accuracy";
     }
 }

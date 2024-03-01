@@ -27,7 +27,12 @@ public class ReducedEnemyAccuracyPerk extends BreakpointPerk {
     }
 
     @Override
+    protected boolean getInvertedPercentage() {
+        return true;
+    }
+
+    @Override
     protected String getLabel(int killCount) {
-        return inverseDoubleToPercentage(getMultiplier(killCount)) + "% Reduced Enemy Accuracy";
+        return "% Reduced Enemy Accuracy";
     }
 }
