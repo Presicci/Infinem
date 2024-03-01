@@ -1,11 +1,13 @@
 package io.ruin.model.skills.farming.patch.impl;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.skills.farming.crop.Crop;
 import io.ruin.model.skills.farming.crop.impl.WoodTreeCrop;
 import io.ruin.model.skills.farming.farming_contracts.FarmingContracts;
 import io.ruin.model.skills.farming.patch.Patch;
+import io.ruin.model.skills.farming.patch.PatchData;
 import io.ruin.model.skills.woodcutting.Woodcutting;
 import io.ruin.model.stat.StatType;
 
@@ -88,7 +90,7 @@ public class WoodTreePatch extends Patch {
 
     @Override
     public boolean isDiseaseImmune() {
-        return false;
+        return data == PatchData.FALADOR_TREE && AreaReward.FALADOR_TREE_PATCH_DISEASE_FREE.hasReward(player);
     }
 
     @Override
