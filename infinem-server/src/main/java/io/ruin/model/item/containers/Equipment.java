@@ -255,6 +255,9 @@ public class Equipment extends ItemContainer {
         if (prayerBonus >= 15) {
             player.getTaskManager().doLookupByUUID(152);    // Reach a Prayer Bonus of 15
         }
+        if (prayerBonus >= 30) {
+            player.getTaskManager().doLookupByUUID(216);    // Reach a Prayer Bonus of 30
+        }
         /**
          * Update equipment stats interface
          */
