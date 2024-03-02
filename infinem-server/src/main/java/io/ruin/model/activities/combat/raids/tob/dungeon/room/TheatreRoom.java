@@ -42,7 +42,10 @@ public abstract class TheatreRoom extends DynamicMap {
     public void assignMapListener(Player player) {
         assignListener(player)
         .onEnter(p -> p.openInterface(InterfaceType.PRIMARY_OVERLAY, Interface.TOB_PARTY_MEMBERS_OVERLAY))
-        .onExit((p, logout) ->  player.closeInterface(InterfaceType.PRIMARY_OVERLAY));
+        .onExit((p, logout) ->  {
+            player.getMovement().teleport(3675, 3219, 0);
+            player.closeInterface(InterfaceType.PRIMARY_OVERLAY);
+        });
     }
 
     /**
