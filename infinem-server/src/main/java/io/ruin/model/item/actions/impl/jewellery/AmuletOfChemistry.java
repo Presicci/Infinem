@@ -76,6 +76,7 @@ public class AmuletOfChemistry {
                 fullCharges(player);
                 player.sendFilteredMessage("Your amulet of chemistry helps you creat a 4 dose potion. " + Color.RED.wrap("It then crumbles to dust."));
             }
+            player.getTaskManager().doLookupByUUID(133);    // Make a 4 dose potion
             return true;
         }
         return false;
