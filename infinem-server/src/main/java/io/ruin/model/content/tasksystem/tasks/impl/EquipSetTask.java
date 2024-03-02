@@ -24,6 +24,11 @@ public enum EquipSetTask {
             SetPiece.ADAMANT_LEGS,
             SetPiece.ADAMANT_HELM
     ),
+    RUNE(140,
+            SetPiece.RUNE_CHEST,
+            SetPiece.RUNE_LEGS,
+            SetPiece.RUNE_HELM
+    ),
     STUDDED(61, // Equip a Studded Body and Chaps
             SetPiece.STUDDED_BODY,
             SetPiece.STUDDED_CHAPS
@@ -54,6 +59,10 @@ public enum EquipSetTask {
         ADAMANT_CHEST(Items.ADAMANT_PLATEBODY, Items.ADAMANT_PLATEBODY_G, Items.ADAMANT_PLATEBODY_T),
         ADAMANT_LEGS(Items.ADAMANT_PLATELEGS, Items.ADAMANT_PLATELEGS_G, Items.ADAMANT_PLATELEGS_T,
                 Items.ADAMANT_PLATESKIRT, Items.ADAMANT_PLATESKIRT_G, Items.ADAMANT_PLATESKIRT_T),
+        RUNE_HELM(Items.RUNE_FULL_HELM, Items.RUNE_FULL_HELM_G, Items.RUNE_FULL_HELM_T),
+        RUNE_CHEST(Items.RUNE_PLATEBODY, Items.RUNE_PLATEBODY_G, Items.RUNE_PLATEBODY_T),
+        RUNE_LEGS(Items.RUNE_PLATELEGS, Items.RUNE_PLATELEGS_G, Items.RUNE_PLATELEGS_T,
+                Items.RUNE_PLATESKIRT, Items.RUNE_PLATESKIRT_G, Items.RUNE_PLATESKIRT_T),
         STUDDED_BODY(Items.STUDDED_BODY, Items.STUDDED_BODY_G, Items.STUDDED_BODY_T),
         STUDDED_CHAPS(Items.STUDDED_CHAPS, Items.STUDDED_CHAPS_G, Items.STUDDED_CHAPS_T),
         WIZARD_ROBE(Items.BLUE_WIZARD_ROBE, Items.BLACK_ROBE, Items.BLUE_WIZARD_ROBE_G, Items.BLUE_WIZARD_ROBE_T, Items.BLACK_WIZARD_ROBE_G, Items.BLACK_WIZARD_ROBE_T),
