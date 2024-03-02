@@ -1,5 +1,6 @@
 package io.ruin.model.activities.combat.raids.tob.dungeon.room;
 
+import com.google.common.collect.Lists;
 import io.ruin.model.activities.combat.raids.tob.party.TheatreParty;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
@@ -55,7 +56,13 @@ public class BloatRoom extends TheatreRoom {
 
     @Override
     public List<Position> getSpectatorSpots() {
-        return null;
+        return Lists.newArrayList(
+                Position.of(convertX(3296), convertY(4436)),
+                Position.of(convertX(3295), convertY(4436)),
+                Position.of(convertX(3296), convertY(4459)),
+                Position.of(convertX(3295), convertY(4459))
+
+        );
     }
 
     @Override

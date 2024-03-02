@@ -1,5 +1,6 @@
 package io.ruin.model.activities.combat.raids.tob.dungeon.room;
 
+import com.google.common.collect.Lists;
 import io.ruin.model.activities.combat.raids.tob.party.TheatreParty;
 import io.ruin.model.map.Position;
 
@@ -28,7 +29,12 @@ public class SotetsegRoom extends TheatreRoom {
 
     @Override
     public List<Position> getSpectatorSpots() {
-        return null;
+        return Lists.newArrayList(
+                Position.of(convertX(3270), convertY(4313)),
+                Position.of(convertX(3270), convertY(4314)),
+                Position.of(convertX(3289), convertY(4314)),
+                Position.of(convertX(3289), convertY(4313))
+        );
     }
 
     @Override
