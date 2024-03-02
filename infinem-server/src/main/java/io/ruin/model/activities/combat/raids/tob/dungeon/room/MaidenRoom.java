@@ -15,6 +15,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -36,12 +37,35 @@ public class MaidenRoom extends TheatreRoom {
         buildSw(12613, 1);
         buildSe(12869, 1);
         GameObject.spawn(32756, convertX(3192), convertY(4448), 0, 11, 4);
+        fixClipping();
         boss = new TheMaidenOfSugadinti(NpcID.THE_MAIDEN_OF_SUGADINTI, party);
-        //boss.lock(LockType.MOVEMENT);
-        boss.setMaxHp(3500);
         boss.spawn(convertX(3162), convertY(4444), 0, Direction.EAST, 0);
         boss.getCombat().setAllowRespawn(false);
+        boss.setIgnoreMulti(true);
         boss.postEffects();
+    }
+
+    private void fixClipping() {
+        Tile.get(convertX(3167), convertY(4449), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3167), convertY(4448), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3167), convertY(4447), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3167), convertY(4446), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3167), convertY(4445), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3167), convertY(4444), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3166), convertY(4444), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3165), convertY(4444), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3164), convertY(4444), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3163), convertY(4444), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3162), convertY(4444), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3162), convertY(4445), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3162), convertY(4446), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3162), convertY(4447), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3162), convertY(4448), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3162), convertY(4449), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3166), convertY(4449), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3165), convertY(4449), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3164), convertY(4449), 0, true).flagUnmovable(); // block floor
+        Tile.get(convertX(3163), convertY(4449), 0, true).flagUnmovable(); // block floor
     }
 
     @Override
