@@ -51,7 +51,8 @@ public enum Potion {
     MAGIC(76, 172.5, "magic potion", "lantadyme potion (unf)", "potato cactus"),
     STAMINA(77, 102.0, "stamina potion", "super energy(3)", "amylase crystal"),
     ZAMORAK_BREW(78, 175.0, "zamorak brew", "torstol potion (unf)", "jangerberries"),
-    ANTIDOTE_PLUS_PLUS(79, 177.5, "antidote++", "coconut milk", "irit leaf", "magic roots"),
+    ANTIDOTE_PLUS_PLUS_UNF(79, 0.0, "antidote++ (unf)", "coconut milk", "irit leaf"),
+    ANTIDOTE_PLUS_PLUS(79, 177.5, "antidote++", "antidote++ (unf)", "magic roots"),
     SARADOMIN_BREW(81, 180.0, "saradomin brew", "toadflax potion (unf)", "crushed nest"),
     WEAPON_POISON_PLUS_PLUS(82, 190.0, "weapon poison(++)", "coconut milk", "cave nightshade", "poison ivy berries"),
     EXTENDED_ANTIFIRE(84, 110.0, "extended antifire", "antifire potion(3)", "lava scale shard"),
@@ -143,6 +144,7 @@ public enum Potion {
 
     private static final Set<Potion> FOUR_DOSE = new HashSet<Potion>() {{
         add(Potion.ANTIDOTE_PLUS);
+        add(Potion.ANTIDOTE_PLUS_PLUS);
     }};
 
     private void mix(Player player, Item primaryItem, List<Item> secondaryItems) {
@@ -367,8 +369,14 @@ public enum Potion {
                             secondaryIds[i] = def.id;
                     }
             }
+
+            /*
+             * Antidotes have multiple (unf) ids for some reason
+             */
             if (potion == ANTIDOTE_PLUS_UNF)
                 potion.vialIds[2] = 5942;
+            else if (potion == ANTIDOTE_PLUS_PLUS_UNF)
+                potion.vialIds[2] = 5951;
 
             /*
              * Register mixes
