@@ -95,4 +95,12 @@ public class RelicManager {
         if (tier < 0 || tier >= RELICS.length) return;
         RELICS[tier-1].set(player, 0);
     }
+
+    public int getHighestTier() {
+        for (int index = 0; index < RELICS.length; index++) {
+            if (!hasRelicInTier(index + 1))
+                return index;
+        }
+        return RELICS.length;
+    }
 }

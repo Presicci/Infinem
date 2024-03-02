@@ -168,15 +168,7 @@ public class StatList {
          * XP Modes
          */
         if (useMultiplier) {
-            if (stat.fixedLevel >= 99) {
-                amount *= player.xpMode.getAfter99Rate();
-            } else {
-                if (type.isCombat()) {
-                    amount *= player.xpMode.getCombatRate();
-                } else {
-                    amount *= player.xpMode.getSkillRate();
-                }
-            }
+            amount *= 5 + ((player.getRelicManager().getHighestTier() - 1) * 2);
         }
 
         amount *= getExperienceMultiplier(type);
