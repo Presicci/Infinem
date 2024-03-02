@@ -32,6 +32,7 @@ public enum EquipTask {
             Items.RUNE_SPEAR, Items.RUNE_SPEAR_P, Items.RUNE_SPEAR_P_2, Items.RUNE_SPEAR_P_3, Items.RUNE_SPEAR_KP,
             Items.RUNE_HALBERD, Items.RUNE_2H_SWORD, Items.RUNE_CROSSBOW, Items.RUNE_KNIFE, Items.RUNE_DART, Items.RUNE_THROWNAXE
     ),
+    YEW_SHORTBOW(144, Items.YEW_SHORTBOW),  // Equip a Yew Shortbow
     ;
 
     private final int uuid;
