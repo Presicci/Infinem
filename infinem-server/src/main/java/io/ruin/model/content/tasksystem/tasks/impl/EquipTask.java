@@ -36,6 +36,13 @@ public enum EquipTask {
             Items.RUNE_HALBERD, Items.RUNE_2H_SWORD, Items.RUNE_CROSSBOW, Items.RUNE_KNIFE, Items.RUNE_DART, Items.RUNE_THROWNAXE
     ),
     YEW_SHORTBOW(144, Items.YEW_SHORTBOW),  // Equip a Yew Shortbow
+    MYSTIC(149, // Equip a Piece of a Mystic Set
+            Items.MYSTIC_HAT, Items.MYSTIC_ROBE_TOP, Items.MYSTIC_ROBE_BOTTOM, Items.MYSTIC_GLOVES, Items.MYSTIC_BOOTS,
+            Items.MYSTIC_HAT_LIGHT, Items.MYSTIC_ROBE_TOP_LIGHT, Items.MYSTIC_ROBE_BOTTOM_LIGHT, Items.MYSTIC_GLOVES_LIGHT, Items.MYSTIC_BOOTS_LIGHT,
+            Items.MYSTIC_HAT_DARK, Items.MYSTIC_ROBE_TOP_DARK, Items.MYSTIC_ROBE_BOTTOM_DARK, Items.MYSTIC_GLOVES_DARK, Items.MYSTIC_BOOTS_DARK,
+            23047, 23050, 23053, 23056, 23059,  // Dusk
+            26531, 26533, 26535, 26537, 26539   // Shattered
+    )
     ;
 
     private final int uuid;
