@@ -18,7 +18,13 @@ public abstract class BreakpointPerk extends BestiaryPerk {
         int nextBreakpoint = getNextBreakpoint(killCount);
         if (nextBreakpoint <= 0) return "";
         Double breakpointReward = getBreakpoints().get(nextBreakpoint);
-        return "+" + (getInvertedPercentage() ? inverseDoubleToPercentage(breakpointReward) : new DecimalFormat("#").format(breakpointReward * 100f)) + "% at " + super.getBreakpointString(killCount);
+        List<Integer> keys = new ArrayList<>(getBreakpoints().keySet());
+        if (keys.indexOf(nextBreakpoint) == 0) {
+            return "+" + (getInvertedPercentage() ? inverseDoubleToPercentage(breakpointReward) : new DecimalFormat("#").format(breakpointReward * 100f)) + "% at " + super.getBreakpointString(killCount);
+        } else {
+            Double multiplier = getMultiplier(killCount);
+            return "+" + (getInvertedPercentage() ? new DecimalFormat("#").format(((1D - breakpointReward) - (1D - multiplier)) * 100D) : new DecimalFormat("#").format((breakpointReward - multiplier) * 100f)) + "% at " + super.getBreakpointString(killCount);
+        }
     }
 
     public double getMultiplier(int killCount) {
