@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl.jewellery;
 
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.cache.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -69,11 +70,11 @@ public class ExpeditiousBracelet {
         if (Random.rollDie(4)) {
             if (charges > 1) {
                 player.putAttribute(AttributeKey.EXPEDITIOUS_CHARGES, --charges);
-                player.sendFilteredMessage("Your expeditious bracelet helps you progress your slayer task faster. It has " + (charges == 1 ? "1 charge" : charges + " charges") + " left.");
+                player.sendFilteredMessage("Your expeditious bracelet helps you progress your slayer task faster. " + Color.RED.wrap("It has " + (charges == 1 ? "1 charge" : charges + " charges") + " left."));
             } else {
                 player.getEquipment().remove(EXPEDITIOUS_BRACELET, 1);
                 fullCharges(player);
-                player.sendFilteredMessage("Your expeditious bracelet helps you progress your slayer task faster. It then crumbles to dust.");
+                player.sendFilteredMessage("Your expeditious bracelet helps you progress your slayer task faster. " + Color.RED.wrap("It then crumbles to dust."));
             }
             return true;
         }

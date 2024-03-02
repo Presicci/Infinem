@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl.jewellery;
 
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.cache.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -70,11 +71,11 @@ public class DodgyNecklace {
         }
         if (charges > 1) {
             player.putAttribute(AttributeKey.DODGY_NECKLACE_CHARGES, --charges);
-            player.sendFilteredMessage("Your dodgy necklace protects you. It has " + (charges == 1 ? "1 charge" : charges + " charges") + " left.");
+            player.sendFilteredMessage("Your dodgy necklace protects you. " + Color.RED.wrap("It has " + (charges == 1 ? "1 charge" : charges + " charges") + " left."));
         } else {
             player.getEquipment().remove(DODGY_NECKLACE, 1);
             fullCharges(player);
-            player.sendFilteredMessage("Your dodgy necklace protects you. It then crumbles to dust.");
+            player.sendFilteredMessage("Your dodgy necklace protects you. " + Color.RED.wrap("It then crumbles to dust."));
         }
         return true;
     }
