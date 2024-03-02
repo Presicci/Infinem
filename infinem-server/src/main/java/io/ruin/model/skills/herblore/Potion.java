@@ -43,7 +43,8 @@ public enum Potion {
     SANFEW_SERUM_2(65, 63.0, "mixture - step 2", "mixture - step 1(3)", "snake weed"),
     SANFEW_SERUM(65, 72.0, "sanfew serum", "mixture - step 2(3)", "nail beast nails"),
     SUPER_DEFENCE(66, 150.0, "super defence", "cadantine potion (unf)", "white berries"),
-    ANTIDOTE_PLUS(68, 155.0, "antidote+", "coconut milk", "toadflax", "yew roots"),
+    ANTIDOTE_PLUS_UNF(68, 0.0, "antidote+ (unf)", "coconut milk", "toadflax"),
+    ANTIDOTE_PLUS(68, 155.0, "antidote+", "antidote+ (unf)", "yew roots"),
     ANTIFIRE(69, 157.5, "antifire potion", "lantadyme potion (unf)", "dragon scale dust"),
     RANGING(72, 162.5, "ranging potion", "dwarf weed potion (unf)", "wine of zamorak"),
     WEAPON_POISON_PLUS(73, 165.0, "weapon poison(+)", "coconut milk", "cactus spine", "red spiders' eggs"),
@@ -140,13 +141,21 @@ public enum Potion {
         this.raidsPotion = raidsPotion;
     }
 
+    private static final Set<Potion> FOUR_DOSE = new HashSet<Potion>() {{
+        add(Potion.ANTIDOTE_PLUS);
+    }};
+
     private void mix(Player player, Item primaryItem, List<Item> secondaryItems) {
         primaryItem.remove();
         for (Item secondaryItem : secondaryItems)
             secondaryItem.remove();
-        player.getInventory().add(vialIds[2], 1);
+        int potion = vialIds[2];
+        if (FOUR_DOSE.contains(this)) {
+            potion = vialIds[3];
+        }
+        player.getInventory().add(potion, 1);
         player.getStats().addXp(StatType.Herblore, xp, true);
-        player.getTaskManager().doSkillItemLookup(vialIds[2]);
+        player.getTaskManager().doSkillItemLookup(potion);
         player.animate(363);
     }
 
@@ -236,7 +245,6 @@ public enum Potion {
     /**
      * Registering
      */
-
     private static void register(Potion potion, int primaryId, int[] secondaryIds) {
         SkillItem item = new SkillItem(potion.vialIds[2]).addAction((player, amount, event) -> {
             while (amount-- > 0) {
@@ -359,6 +367,9 @@ public enum Potion {
                             secondaryIds[i] = def.id;
                     }
             }
+            if (potion == ANTIDOTE_PLUS_UNF)
+                potion.vialIds[2] = 5942;
+
             /*
              * Register mixes
              */
@@ -374,6 +385,7 @@ public enum Potion {
                 registerUpgrade(potion, primaryId, secondaryIds[0], 0);
             else if (!potion.raidsPotion)
                 register(potion, primaryId, secondaryIds);
+
             /*
              * Register decant actions
              */
