@@ -7,6 +7,7 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.stat.StatType;
 
@@ -57,7 +58,7 @@ public enum Potion {
     WEAPON_POISON_PLUS_PLUS(82, 190.0, "weapon poison(++)", "coconut milk", "cave nightshade", "poison ivy berries"),
     EXTENDED_ANTIFIRE(84, 110.0, "extended antifire", "antifire potion(3)", "lava scale shard"),
     ANTI_VENOM(87, 120.0, "anti-venom", "antidote++(3)", "zulrah's scales"),
-    SUPER_COMBAT(90, 150.0, "super combat potion", "torstol", "super attack(3)", "super strength(3)", "super defence(3)"),
+    SUPER_COMBAT(90, 150.0, "super combat potion", "torstol", "super attack(4)", "super strength(4)", "super defence(4)"),
     SUPER_ANTIFIRE(92, 130.0, "super antifire potion", "antifire potion(3)", "crushed superior dragon bones"),
     SUPER_ANTI_VENOM(94, 125.0, "anti-venom+", "anti-venom(4)", "torstol"),
     EXTENDED_SUPER_ANTIFIRE(98, 160.0, "extended super antifire", "super antifire potion(3)", "lava scale shard"),
@@ -146,6 +147,7 @@ public enum Potion {
         add(Potion.ANTIDOTE_PLUS);
         add(Potion.ANTIDOTE_PLUS_PLUS);
         add(Potion.SUPER_ANTI_VENOM);
+        add(Potion.SUPER_COMBAT);
     }};
 
     private void mix(Player player, Item primaryItem, List<Item> secondaryItems) {
@@ -394,6 +396,12 @@ public enum Potion {
                 registerUpgrade(potion, primaryId, secondaryIds[0], 0);
             else if (!potion.raidsPotion)
                 register(potion, primaryId, secondaryIds);
+
+            /*
+             * Extra primary ingredient registration
+             */
+            if (potion == Potion.SUPER_COMBAT)
+                register(potion, Items.TORSTOL_POTION_UNF, secondaryIds);
 
             /*
              * Register decant actions
