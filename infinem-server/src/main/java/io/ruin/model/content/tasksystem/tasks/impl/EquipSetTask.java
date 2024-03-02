@@ -38,6 +38,11 @@ public enum EquipSetTask {
             SetPiece.GREEN_DHIDE_CHAPS,
             SetPiece.GREEN_DHIDE_VAMBS
     ),
+    BLUE_DHIDE(142,    // Equip a Full Blue Dragonhide Set
+            SetPiece.BLUE_DHIDE_BODY,
+            SetPiece.BLUE_DHIDE_CHAPS,
+            SetPiece.BLUE_DHIDE_VAMBS
+    ),
     RED_DHIDE(143,    // Equip a Full Red Dragonhide Set
             SetPiece.RED_DHIDE_BODY,
             SetPiece.RED_DHIDE_CHAPS,
@@ -78,6 +83,9 @@ public enum EquipSetTask {
         GREEN_DHIDE_BODY(Items.GREEN_DHIDE_BODY, Items.GREEN_DHIDE_BODY_T, Items.GREEN_DHIDE_BODY_G),
         GREEN_DHIDE_CHAPS(Items.GREEN_DHIDE_CHAPS, Items.GREEN_DHIDE_CHAPS_T, Items.GREEN_DHIDE_CHAPS_G),
         GREEN_DHIDE_VAMBS(Items.GREEN_DHIDE_VAMB),
+        BLUE_DHIDE_BODY(Items.BLUE_DHIDE_BODY, Items.BLUE_DHIDE_BODY_T, Items.BLUE_DHIDE_BODY_G),
+        BLUE_DHIDE_CHAPS(Items.BLUE_DHIDE_CHAPS, Items.BLUE_DHIDE_CHAPS_T, Items.BLUE_DHIDE_CHAPS_G),
+        BLUE_DHIDE_VAMBS(Items.BLUE_DHIDE_VAMB),
         RED_DHIDE_BODY(Items.RED_DHIDE_BODY, Items.RED_DHIDE_BODY_T, Items.RED_DHIDE_BODY_G),
         RED_DHIDE_CHAPS(Items.RED_DHIDE_CHAPS, Items.RED_DHIDE_CHAPS_T, Items.RED_DHIDE_CHAPS_G),
         RED_DHIDE_VAMBS(Items.RED_DHIDE_VAMB),
