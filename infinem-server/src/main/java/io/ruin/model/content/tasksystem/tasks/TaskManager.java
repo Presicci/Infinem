@@ -14,9 +14,11 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.MapArea;
+import lombok.Setter;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -38,11 +40,7 @@ public class TaskManager {
         this.collectedItems = new HashSet<>();
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
-    private Player player;
+    @Setter private Player player;
     @Expose private HashMap<Integer, Integer> taskPoints;
     @Expose private HashMap<Integer, Integer> inProgressTasks;
     @Expose private HashSet<Integer> completeTasks;
@@ -109,90 +107,14 @@ public class TaskManager {
             return;
         }
         long currentTime = System.currentTimeMillis();
-        MapArea mapArea = MapArea.getMapArea(player);
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;
-            boolean foundNotCompletedTask = false;
             try {
                 statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ?");
                 statement.setString(1, StringUtils.capitalizeFirst(category.toString().toLowerCase()));
                 rs = statement.executeQuery();
-                while (rs.next()) {
-                    int uuid = rs.getInt("uuid");
-                    if (completeTasks.contains(uuid)) {
-                        continue;
-                    }
-                    foundNotCompletedTask = true;
-                    String trig = rs.getString("required_object");
-                    if (trig.trim().length() > 0) {
-                        String[] trigs = trig.trim().split(",");
-                        boolean found = false;
-                        for (String s : trigs) {
-                            if (s.toLowerCase().equals(trigger.toLowerCase())) {
-                                found = true;
-                                break;
-                            }
-                        }
-                        if (!found) {
-                            System.out.println("[" + player.getName() + "]" + category + "/" + trigger + "/" + amount + "/" + incremental + ", exit on obj");
-                            continue;
-                        }
-                    }
-                    String area = rs.getString("maparea");
-                    if (area.trim().length() > 0 && (mapArea == null || !area.toLowerCase().equalsIgnoreCase(mapArea.toString().toLowerCase()))) {
-                        System.out.println("[" + player.getName() + "]" + category + "/" + trigger + "/" + amount + "/" + incremental + ", exit on map");
-                        continue;
-                    }
-                    int requiredAmount = rs.getInt("required_amount");
-                    int currentAmount = inProgressTasks.get(uuid) == null ? 0 : inProgressTasks.get(uuid);
-                    if (requiredAmount > 1) {
-                        if (incremental) {
-                            currentAmount += amount;
-                            if (currentAmount < requiredAmount) {
-                                inProgressTasks.put(uuid, currentAmount);
-                                System.out.println("Task #" + uuid + " progress: " + currentAmount + "/" + requiredAmount);
-                                continue;
-                            } else {
-                                inProgressTasks.remove(uuid);
-                            }
-                        } else {
-                            if (amount < requiredAmount) {
-                                System.out.println("[" + player.getName() + "]" + category + "/" + trigger + "/" + amount + "/" + incremental + ", exit on amt");
-                                continue;
-                            }
-                        }
-                    }
-                    String name = rs.getString("name");
-                    String taskArea = rs.getString("region").toLowerCase();
-                    TaskArea finalTaskarea = null;
-                    for (TaskArea ta : TaskArea.values()) {
-                        if (taskArea.trim().equalsIgnoreCase(ta.toString().toLowerCase())) {
-                            finalTaskarea = ta;
-                            break;
-                        }
-                    }
-                    String difficulty = rs.getString("difficulty").toLowerCase();
-                    TaskDifficulty finalDifficulty = null;
-                    for (TaskDifficulty diff : TaskDifficulty.values()) {
-                        if (difficulty.equalsIgnoreCase(diff.toString().toLowerCase())) {
-                            finalDifficulty = diff;
-                            break;
-                        }
-                    }
-                    if (finalDifficulty == null || finalTaskarea == null) {
-                        System.out.println("cat TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
-                    } else {
-                        TaskArea finalTaskarea1 = finalTaskarea;
-                        TaskDifficulty finalDifficulty1 = finalDifficulty;
-                        player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
-                            completeTask(name, uuid, finalTaskarea1, finalDifficulty1);
-                        });
-                    }
-                }
-                if (!foundNotCompletedTask) {
-                    completedCategories.add(category.ordinal());
-                }
+                checkResults(rs, TaskLookupType.CATEGORY, category, trigger, amount, incremental);
             } finally {
                 DatabaseUtils.close(statement, rs);
                 System.out.println("Lookup time for normal " + category + "," + trigger + "," + amount + ":" + (System.currentTimeMillis() - currentTime));
@@ -206,7 +128,6 @@ public class TaskManager {
 
     public void doLookupByCategoryAndTrigger(TaskCategory category, String trigger, int amount, boolean incremental) {
         long currentTime = System.currentTimeMillis();
-        MapArea mapArea = MapArea.getMapArea(player);
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;
@@ -216,62 +137,7 @@ public class TaskManager {
                 String replace = trigger.trim().toLowerCase().replace("_", " ").replace("+", "/+");
                 statement.setString(2, "^" + replace + "$|," + replace + "$|," + replace + ",|^" + replace + ",");
                 rs = statement.executeQuery();
-                while (rs.next()) {
-                    int uuid = rs.getInt("uuid");
-                    if (completeTasks.contains(uuid)) {
-                        continue;
-                    }
-                    String area = rs.getString("maparea");
-                    if (area.trim().length() > 0 && (mapArea == null || !area.toLowerCase().equalsIgnoreCase(mapArea.toString().toLowerCase().replace("_", " ")))) {
-                        System.out.println("cat&trigger1 TASK ERROR! area=" + area.trim() + " / " + (mapArea == null ? "null" : mapArea.toString().toLowerCase()));
-                        continue;
-                    }
-                    int requiredAmount = rs.getInt("required_amount");
-                    int currentAmount = inProgressTasks.get(uuid) == null ? 0 : inProgressTasks.get(uuid);
-                    if (requiredAmount > 1) {
-                        if (incremental) {
-                            currentAmount += amount;
-                            if (currentAmount < requiredAmount) {
-                                inProgressTasks.put(uuid, currentAmount);
-                                System.out.println("Task #" + uuid + " progress: " + currentAmount + "/" + requiredAmount);
-                                continue;
-                            } else {
-                                inProgressTasks.remove(uuid);
-                            }
-                        } else {
-                            if (amount < requiredAmount) {
-                                System.out.println("[" + player.getName() + "]" + category + "/" + trigger + "/" + amount + "/" + incremental + ", exit on amt");
-                                continue;
-                            }
-                        }
-                    }
-                    String name = rs.getString("name");
-                    String taskArea = rs.getString("region").toLowerCase();
-                    TaskArea finalTaskarea = null;
-                    for (TaskArea ta : TaskArea.values()) {
-                        if (taskArea.trim().equalsIgnoreCase(ta.toString().toLowerCase())) {
-                            finalTaskarea = ta;
-                            break;
-                        }
-                    }
-                    String difficulty = rs.getString("difficulty").toLowerCase();
-                    TaskDifficulty finalDifficulty = null;
-                    for (TaskDifficulty diff : TaskDifficulty.values()) {
-                        if (difficulty.equalsIgnoreCase(diff.toString().toLowerCase())) {
-                            finalDifficulty = diff;
-                            break;
-                        }
-                    }
-                    if (finalDifficulty == null || finalTaskarea == null) {
-                        System.out.println("cat&trigger2 TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
-                    } else {
-                        TaskArea finalTaskarea1 = finalTaskarea;
-                        TaskDifficulty finalDifficulty1 = finalDifficulty;
-                        player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
-                            completeTask(name, uuid, finalTaskarea1, finalDifficulty1);
-                        });
-                    }
-                }
+                checkResults(rs, TaskLookupType.CAT_AND_TRIGGER, null, trigger, amount, incremental);
             } finally {
                 DatabaseUtils.close(statement, rs);
                 System.out.println("Lookup time for " + category + "," + trigger + "," + amount + ":" + (System.currentTimeMillis() - currentTime));
@@ -281,7 +147,6 @@ public class TaskManager {
 
     public void doDropGroupLookup(String trigger) {
         long currentTime = System.currentTimeMillis();
-        MapArea mapArea = MapArea.getMapArea(player);
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;
@@ -291,66 +156,7 @@ public class TaskManager {
                 String replace = trigger.trim().toLowerCase().replace("_", " ");
                 statement.setString(2, "^" + replace + "|," + replace);
                 rs = statement.executeQuery();
-                while (rs.next()) {
-                    int uuid = rs.getInt("uuid");
-                    if (completeTasks.contains(uuid)) {
-                        continue;
-                    }
-                    String area = rs.getString("maparea");
-                    if (area.trim().length() > 0 && (mapArea == null || !area.toLowerCase().equalsIgnoreCase(mapArea.toString().toLowerCase()))) {
-                        System.out.println("[" + player.getName() + "]" + "/" + trigger + "/" + "/" + ", exit on map");
-                        continue;
-                    }
-                    String trig = rs.getString("required_object");
-                    String[] trigs;
-                    if (trig.trim().length() > 0) {
-                        trigs = trig.trim().split(",");
-                        boolean complete = true;
-                        for (String s : trigs) {
-                            if (s.toLowerCase().contains(trigger.trim().toLowerCase())) {
-                                collectedItems.add(s);
-                            }
-                            if (!collectedItems.contains(s))
-                                complete = false;
-                        }
-                        if (!complete) {
-                            System.out.println("[" + player.getName() + "]" + "/" + trigger + "/"  + "/"  + ", not complete set");
-                            continue;
-                        }
-                    } else {
-                        ServerWrapper.logError("Task#" + uuid + " does not have any valid item names listed for required_object");
-                        continue;
-                    }
-                    String name = rs.getString("name");
-                    String taskArea = rs.getString("region").toLowerCase();
-                    TaskArea finalTaskarea = null;
-                    for (TaskArea ta : TaskArea.values()) {
-                        if (taskArea.trim().equalsIgnoreCase(ta.toString().toLowerCase())) {
-                            finalTaskarea = ta;
-                            break;
-                        }
-                    }
-                    String difficulty = rs.getString("difficulty").toLowerCase();
-                    TaskDifficulty finalDifficulty = null;
-                    for (TaskDifficulty diff : TaskDifficulty.values()) {
-                        if (difficulty.equalsIgnoreCase(diff.toString().toLowerCase())) {
-                            finalDifficulty = diff;
-                            break;
-                        }
-                    }
-                    if (finalDifficulty == null || finalTaskarea == null) {
-                        System.out.println("TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
-                    } else {
-                        for (String s : trigs) {
-                            collectedItems.remove(s);
-                        }
-                        TaskArea finalTaskarea1 = finalTaskarea;
-                        TaskDifficulty finalDifficulty1 = finalDifficulty;
-                        player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
-                            completeTask(name, uuid, finalTaskarea1, finalDifficulty1);
-                        });
-                    }
-                }
+                checkResults(rs, TaskLookupType.DROP_SET, null, trigger, 1, false);
             } finally {
                 DatabaseUtils.close(statement, rs);
                 System.out.println("Lookup time for " + trigger + ":" + (System.currentTimeMillis() - currentTime));
@@ -363,59 +169,23 @@ public class TaskManager {
     }
 
     public void doLookupByUUID(int uuid, int amount) {
+        doLookupByUUID(uuid, amount, false);
+    }
+
+    public void doLookupByUUID(int uuid, int amount, boolean incremental) {
         //  Task already completed, abort
         if (completeTasks.contains(uuid)) {
             return;
         }
         long currentTime = System.currentTimeMillis();
         Server.gameDb.execute(connection -> {
-
             PreparedStatement statement = null;
             ResultSet rs = null;
             try {
                 statement = connection.prepareStatement("SELECT * FROM task_list WHERE uuid = ?");
                 statement.setInt(1, uuid);
                 rs = statement.executeQuery();
-                while (rs.next()) {
-                    int requiredAmount = rs.getInt("required_amount");
-                    int currentAmount = inProgressTasks.get(uuid) == null ? 0 : inProgressTasks.get(uuid);
-                    if (requiredAmount > 1) {
-                        currentAmount += amount;
-                        if (currentAmount < requiredAmount) {
-                            inProgressTasks.put(uuid, currentAmount);
-                            System.out.println("Task #" + uuid + " progress: " + currentAmount + "/" + requiredAmount);
-                            break;
-                        } else {
-                            inProgressTasks.remove(uuid);
-                        }
-                    }
-                    String taskArea = rs.getString("region");
-                    TaskArea finalTaskarea = null;
-                    for (TaskArea ta : TaskArea.values()) {
-                        if (taskArea.trim().equalsIgnoreCase(ta.toString())) {
-                            finalTaskarea = ta;
-                            break;
-                        }
-                    }
-                    String difficulty = rs.getString("difficulty");
-                    TaskDifficulty finalDifficulty = null;
-                    for (TaskDifficulty diff : TaskDifficulty.values()) {
-                        if (difficulty.equalsIgnoreCase(diff.toString())) {
-                            finalDifficulty = diff;
-                            break;
-                        }
-                    }
-                    String name = rs.getString("name");
-                    if (finalDifficulty == null || finalTaskarea == null) {
-                        System.out.println("uuid TASK ERROR! diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
-                    } else {
-                        TaskArea finalTaskarea1 = finalTaskarea;
-                        TaskDifficulty finalDifficulty1 = finalDifficulty;
-                        player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
-                            completeTask(name, uuid, finalTaskarea1, finalDifficulty1);
-                        });
-                    }
-                }
+                checkResults(rs, TaskLookupType.UUID, null, null, amount, incremental);
             } finally {
                 DatabaseUtils.close(statement, rs);
                 System.out.println("Lookup time for " + uuid + ":" + (System.currentTimeMillis() - currentTime));
@@ -454,6 +224,142 @@ public class TaskManager {
 
     public boolean hasCompletedTask(int uuid) {
         return completeTasks.contains(uuid);
+    }
+
+    /**
+     * Parses the result set for task(s) that match the provided criteria.
+     * @param rs The ResultSet being parsed.
+     * @param lookupType The type of lookup being performed, influences some logic.
+     * @param category The category of the task.
+     * @param trigger Trigger being tested against the required_objeects of the task.
+     * @param amount The amount being tested.
+     * @param incremental Whether the task is incremental or not.
+     */
+    private void checkResults(ResultSet rs, TaskLookupType lookupType, TaskCategory category, String trigger, int amount, boolean incremental) throws SQLException {
+        MapArea mapArea = MapArea.getMapArea(player);
+        boolean foundNotCompletedTask = false;
+        while (rs.next()) {
+            /*
+             * Skip tasks that are already completed.
+             */
+            int uuid = rs.getInt("uuid");
+            if (completeTasks.contains(uuid)) {
+                continue;
+            }
+
+            // Track if we find a task that isn't completed, if we don't we can clear the category from searches
+            foundNotCompletedTask = true;
+
+            /*
+             * If we send a trigger, make sure it matches any of the required_objects of the task.
+             */
+            String[] triggers = new String[0];
+            if (trigger != null) {
+                String triggerString = rs.getString("required_object");
+                if (!triggerString.trim().isEmpty()) {
+                    triggers = triggerString.trim().split(",");
+                    if (!handleTrigger(lookupType, trigger, triggers)) {
+                        System.out.println("[" + player.getName() + "] uuid=" + uuid + ", cat=" + category + ", trig=" + trigger + ", amt=" + amount + ", inc=" + incremental + ", exit on required_obj");
+                        continue;
+                    }
+                }
+            }
+
+            /*
+             * If the task has an area restriction, check that the player satisfies it.
+             */
+            String mapareaString = rs.getString("maparea");
+            if (!mapareaString.trim().isEmpty() && (mapArea == null || !mapareaString.equalsIgnoreCase(mapArea.toString()))) {
+                System.out.println("[" + player.getName() + "] uuid=" + uuid + ", cat=" + category + ", trig=" + trigger + ", amt=" + amount + ", inc=" + incremental + ", exit on maparea");
+                continue;
+            }
+
+            /*
+             * Checks if the player satisfies the required amount to complete the task
+             * - If the task is incremental, increment the amount
+             */
+            int requiredAmount = rs.getInt("required_amount");
+            int currentAmount = inProgressTasks.get(uuid) == null ? 0 : inProgressTasks.get(uuid);
+            if (requiredAmount > 1) {
+                if (incremental) {
+                    currentAmount += amount;
+                    if (currentAmount < requiredAmount) {
+                        inProgressTasks.put(uuid, currentAmount);
+                        System.out.println("Task #" + uuid + " progress: " + currentAmount + "/" + requiredAmount);
+                        continue;
+                    } else {
+                        inProgressTasks.remove(uuid);
+                    }
+                } else {
+                    if (amount < requiredAmount) {
+                        System.out.println("[" + player.getName() + "] uuid=" + uuid + ", cat=" + category + ", trig=" + trigger + ", amt=" + amount + ", exit on amt");
+                        continue;
+                    }
+                }
+            }
+
+            /*
+             * Get relevant info to complete the task.
+             */
+            String name = rs.getString("name");
+            String taskArea = rs.getString("region").toLowerCase();
+            TaskArea finalTaskarea = null;
+            for (TaskArea ta : TaskArea.values()) {
+                if (taskArea.trim().equalsIgnoreCase(ta.toString().toLowerCase())) {
+                    finalTaskarea = ta;
+                    break;
+                }
+            }
+            String difficulty = rs.getString("difficulty").toLowerCase();
+            TaskDifficulty finalDifficulty = null;
+            for (TaskDifficulty diff : TaskDifficulty.values()) {
+                if (difficulty.equalsIgnoreCase(diff.toString().toLowerCase())) {
+                    finalDifficulty = diff;
+                    break;
+                }
+            }
+            if (finalDifficulty == null || finalTaskarea == null) {
+                System.out.println("TASK ERROR! uuid=" + uuid + " diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
+                continue;
+            }
+            if (lookupType == TaskLookupType.DROP_SET) {
+                for (String s : triggers) {
+                    collectedItems.remove(s);
+                }
+            }
+            TaskArea finalTaskarea1 = finalTaskarea;
+            TaskDifficulty finalDifficulty1 = finalDifficulty;
+            player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
+                completeTask(name, uuid, finalTaskarea1, finalDifficulty1);
+            });
+        }
+        // Remove category from searches
+        if (category != null && !foundNotCompletedTask && lookupType == TaskLookupType.CATEGORY) {
+            completedCategories.add(category.ordinal());
+        }
+    }
+
+    private boolean handleTrigger(TaskLookupType lookupType, String trigger, String[] triggers) {
+        if (lookupType == TaskLookupType.DROP_SET) {
+            boolean complete = true;
+            for (String s : triggers) {
+                if (s.toLowerCase().contains(trigger.trim().toLowerCase())) {
+                    collectedItems.add(s);
+                }
+                if (!collectedItems.contains(s))
+                    complete = false;
+            }
+            return complete;
+        } else {
+            boolean found = false;
+            for (String s : triggers) {
+                if (s.equalsIgnoreCase(trigger)) {
+                    found = true;
+                    break;
+                }
+            }
+            return found;
+        }
     }
 
     /**
