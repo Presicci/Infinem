@@ -9,6 +9,7 @@ import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.item.actions.impl.jewellery.AmuletOfChemistry;
 import io.ruin.model.stat.StatType;
 
 import java.util.*;
@@ -158,7 +159,7 @@ public enum Potion {
         for (Item secondaryItem : secondaryItems)
             secondaryItem.remove();
         int potion = vialIds[2];
-        if (FOUR_DOSE.contains(this)) {
+        if (FOUR_DOSE.contains(this) || AmuletOfChemistry.test(player)) {
             potion = vialIds[3];
         }
         player.getInventory().add(potion, 1);
@@ -314,12 +315,21 @@ public enum Potion {
                         amt = (int) Math.floor((double) amtSecondary / (double) reqAmt);
                     secondary.remove(reqAmt * amt);
                     player.getInventory().remove(primaryId, amt);
-                    player.getInventory().add(potion.vialIds[doses - 1], amt);
+                    for (int index = 0; index < amt; index++) {
+                        if (AmuletOfChemistry.test(player)) {
+                            player.getInventory().add(potion.vialIds[3], amt);
+                        } else {
+                            player.getInventory().add(potion.vialIds[doses - 1], amt);
+                        }
+                    }
                     player.animate(363);
                     player.getStats().addXp(StatType.Herblore, experience * amt, true);
                 } else {
                     secondary.remove(reqAmt);
-                    primary.setId(potion.vialIds[doses - 1]);
+                    if (AmuletOfChemistry.test(player))
+                        primary.setId(potion.vialIds[3]);
+                    else
+                        primary.setId(potion.vialIds[doses - 1]);
                     player.animate(363);
                     player.getStats().addXp(StatType.Herblore, experience, true);
                     if (reqAmt == 1)
