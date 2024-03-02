@@ -94535,7 +94535,7 @@
   { // Amulet of chemistry
     "id": 21163,
     "tradeable": true,
-    "examine": "Amulet of chemistry - Examine not set.",
+    "examine": "Useful when making potions - has the chance of giving an extra dose.",
     "weight": 0.0,
 	"protect_value": 1394,
     "equip_slot": 2
