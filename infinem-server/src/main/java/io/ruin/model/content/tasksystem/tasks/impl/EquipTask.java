@@ -25,6 +25,13 @@ public enum EquipTask {
             Items.ADAMANT_SPEAR, Items.ADAMANT_SPEAR_P, Items.ADAMANT_SPEAR_P_2, Items.ADAMANT_SPEAR_P_3, Items.ADAMANT_SPEAR_KP,
             Items.ADAMANT_HALBERD, Items.ADAMANT_2H_SWORD, Items.ADAMANT_CROSSBOW, Items.ADAMANT_KNIFE, Items.ADAMANT_DART, Items.ADAMANT_THROWNAXE
     ),
+    RUNITE_WEAPON(138,     // Equip a Rune Weapon
+            Items.RUNE_DAGGER, Items.RUNE_DAGGER_P, Items.RUNE_DAGGER_P_2, Items.RUNE_DAGGER_P_3, Items.RUNE_AXE, Items.RUNE_PICKAXE,
+            Items.RUNE_MACE, Items.RUNE_CANE, Items.RUNE_SWORD, Items.RUNE_SCIMITAR, Items.RUNE_HASTA, Items.RUNE_HASTA_P, Items.RUNE_HASTA_P_2,
+            Items.RUNE_HASTA_P_3, Items.RUNE_HASTA_KP, Items.RUNE_LONGSWORD, Items.RUNE_WARHAMMER, Items.RUNE_BATTLEAXE, Items.RUNE_CLAWS,
+            Items.RUNE_SPEAR, Items.RUNE_SPEAR_P, Items.RUNE_SPEAR_P_2, Items.RUNE_SPEAR_P_3, Items.RUNE_SPEAR_KP,
+            Items.RUNE_HALBERD, Items.RUNE_2H_SWORD, Items.RUNE_CROSSBOW, Items.RUNE_KNIFE, Items.RUNE_DART, Items.RUNE_THROWNAXE
+    ),
     ;
 
     private final int uuid;
