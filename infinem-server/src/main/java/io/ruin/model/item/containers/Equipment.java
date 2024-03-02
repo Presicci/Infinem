@@ -251,6 +251,10 @@ public class Equipment extends ItemContainer {
         if (SetEffect.VERAC_DAMNED.hasPieces(player)) {
             bonuses[EquipmentStats.PRAYER] += 7;
         }
+        int prayerBonus = bonuses[EquipmentStats.PRAYER];
+        if (prayerBonus >= 15) {
+            player.getTaskManager().doLookupByUUID(152);    // Reach a Prayer Bonus of 15
+        }
         /**
          * Update equipment stats interface
          */
