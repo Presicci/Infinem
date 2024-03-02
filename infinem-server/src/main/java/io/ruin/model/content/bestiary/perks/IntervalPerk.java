@@ -28,7 +28,6 @@ public abstract class IntervalPerk extends BestiaryPerk {
         if (getIntervalCap() > 0) {
             multi = Math.min(getIntervalCap() * getIncrement(), multi);
         }
-        System.out.println(multi);
         return getInvertedPercentage() ? 1D - multi : multi;
     }
 
