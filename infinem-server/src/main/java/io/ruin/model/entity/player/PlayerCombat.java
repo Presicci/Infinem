@@ -1415,6 +1415,7 @@ public class PlayerCombat extends Combat {
 
         specialActive = null;
         Config.SPECIAL_ACTIVE.set(player, 0);
+        player.getTaskManager().doLookupByUUID(136);    // Perform a Special Attack
         return true;
     }
 
