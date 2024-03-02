@@ -8,7 +8,6 @@ import io.ruin.model.item.containers.equipment.EquipAction;
  * Created on 4/5/2022
  */
 public enum EquipSetTask {
-
     VOID(468, // Equip a Full Void Knight Set
             SetPiece.VOID_TOP,
             SetPiece.VOID_BOTTOM,
@@ -19,6 +18,11 @@ public enum EquipSetTask {
             SetPiece.MITHRIL_CHEST,
             SetPiece.MITHRIL_LEGS,
             SetPiece.MITHRIL_HELM
+    ),
+    ADAMANT(139,
+            SetPiece.ADAMANT_CHEST,
+            SetPiece.ADAMANT_LEGS,
+            SetPiece.ADAMANT_HELM
     ),
     STUDDED(61, // Equip a Studded Body and Chaps
             SetPiece.STUDDED_BODY,
@@ -46,6 +50,10 @@ public enum EquipSetTask {
         MITHRIL_CHEST(Items.MITHRIL_PLATEBODY, Items.MITHRIL_PLATEBODY_G, Items.MITHRIL_PLATEBODY_T),
         MITHRIL_LEGS(Items.MITHRIL_PLATELEGS, Items.MITHRIL_PLATELEGS_G, Items.MITHRIL_PLATELEGS_T,
                 Items.MITHRIL_PLATESKIRT, Items.MITHRIL_PLATESKIRT_G, Items.MITHRIL_PLATESKIRT_T),
+        ADAMANT_HELM(Items.ADAMANT_FULL_HELM, Items.ADAMANT_FULL_HELM_G, Items.ADAMANT_FULL_HELM_T),
+        ADAMANT_CHEST(Items.ADAMANT_PLATEBODY, Items.ADAMANT_PLATEBODY_G, Items.ADAMANT_PLATEBODY_T),
+        ADAMANT_LEGS(Items.ADAMANT_PLATELEGS, Items.ADAMANT_PLATELEGS_G, Items.ADAMANT_PLATELEGS_T,
+                Items.ADAMANT_PLATESKIRT, Items.ADAMANT_PLATESKIRT_G, Items.ADAMANT_PLATESKIRT_T),
         STUDDED_BODY(Items.STUDDED_BODY, Items.STUDDED_BODY_G, Items.STUDDED_BODY_T),
         STUDDED_CHAPS(Items.STUDDED_CHAPS, Items.STUDDED_CHAPS_G, Items.STUDDED_CHAPS_T),
         WIZARD_ROBE(Items.BLUE_WIZARD_ROBE, Items.BLACK_ROBE, Items.BLUE_WIZARD_ROBE_G, Items.BLUE_WIZARD_ROBE_T, Items.BLACK_WIZARD_ROBE_G, Items.BLACK_WIZARD_ROBE_T),
