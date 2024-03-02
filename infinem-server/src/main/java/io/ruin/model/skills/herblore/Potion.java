@@ -59,7 +59,7 @@ public enum Potion {
     ANTI_VENOM(87, 120.0, "anti-venom", "antidote++(3)", "zulrah's scales"),
     SUPER_COMBAT(90, 150.0, "super combat potion", "torstol", "super attack(3)", "super strength(3)", "super defence(3)"),
     SUPER_ANTIFIRE(92, 130.0, "super antifire potion", "antifire potion(3)", "crushed superior dragon bones"),
-    SUPER_ANTI_VENOM(94, 125.0, "anti-venom+", "anti-venom(3)", "torstol"),
+    SUPER_ANTI_VENOM(94, 125.0, "anti-venom+", "anti-venom(4)", "torstol"),
     EXTENDED_SUPER_ANTIFIRE(98, 160.0, "extended super antifire", "super antifire potion(3)", "lava scale shard"),
     DIVINE_SUPER_ATTACK(70, 1.5, "divine super attack potion", "super attack(3)", "crystal shard"),
     DIVINE_SUPER_STRENGTH(70, 1.5, "divine super strength potion", "super strength(3)", "crystal shard"),
@@ -145,6 +145,7 @@ public enum Potion {
     private static final Set<Potion> FOUR_DOSE = new HashSet<Potion>() {{
         add(Potion.ANTIDOTE_PLUS);
         add(Potion.ANTIDOTE_PLUS_PLUS);
+        add(Potion.SUPER_ANTI_VENOM);
     }};
 
     private void mix(Player player, Item primaryItem, List<Item> secondaryItems) {
