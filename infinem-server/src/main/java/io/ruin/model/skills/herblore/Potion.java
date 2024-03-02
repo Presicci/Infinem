@@ -326,10 +326,11 @@ public enum Potion {
                     player.getStats().addXp(StatType.Herblore, experience * amt, true);
                 } else {
                     secondary.remove(reqAmt);
+                    primary.remove(1);
                     if (AmuletOfChemistry.test(player))
-                        primary.setId(potion.vialIds[3]);
+                        player.getInventory().add(potion.vialIds[3]);
                     else
-                        primary.setId(potion.vialIds[doses - 1]);
+                        player.getInventory().add(potion.vialIds[doses - 1]);
                     player.animate(363);
                     player.getStats().addXp(StatType.Herblore, experience, true);
                     if (reqAmt == 1)
