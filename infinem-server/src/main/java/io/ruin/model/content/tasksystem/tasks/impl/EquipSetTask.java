@@ -38,6 +38,11 @@ public enum EquipSetTask {
             SetPiece.GREEN_DHIDE_CHAPS,
             SetPiece.GREEN_DHIDE_VAMBS
     ),
+    RED_DHIDE(143,    // Equip a Full Red Dragonhide Set
+            SetPiece.RED_DHIDE_BODY,
+            SetPiece.RED_DHIDE_CHAPS,
+            SetPiece.RED_DHIDE_VAMBS
+    ),
     WIZARD(65, // Equip a Wizard Robe and Hat
             SetPiece.WIZARD_HAT,
             SetPiece.WIZARD_ROBE
@@ -73,6 +78,9 @@ public enum EquipSetTask {
         GREEN_DHIDE_BODY(Items.GREEN_DHIDE_BODY, Items.GREEN_DHIDE_BODY_T, Items.GREEN_DHIDE_BODY_G),
         GREEN_DHIDE_CHAPS(Items.GREEN_DHIDE_CHAPS, Items.GREEN_DHIDE_CHAPS_T, Items.GREEN_DHIDE_CHAPS_G),
         GREEN_DHIDE_VAMBS(Items.GREEN_DHIDE_VAMB),
+        RED_DHIDE_BODY(Items.RED_DHIDE_BODY, Items.RED_DHIDE_BODY_T, Items.RED_DHIDE_BODY_G),
+        RED_DHIDE_CHAPS(Items.RED_DHIDE_CHAPS, Items.RED_DHIDE_CHAPS_T, Items.RED_DHIDE_CHAPS_G),
+        RED_DHIDE_VAMBS(Items.RED_DHIDE_VAMB),
         WIZARD_ROBE(Items.BLUE_WIZARD_ROBE, Items.BLACK_ROBE, Items.BLUE_WIZARD_ROBE_G, Items.BLUE_WIZARD_ROBE_T, Items.BLACK_WIZARD_ROBE_G, Items.BLACK_WIZARD_ROBE_T),
         WIZARD_HAT(Items.BLUE_WIZARD_HAT, Items.WIZARD_HAT, Items.BLUE_WIZARD_HAT_G, Items.BLUE_WIZARD_HAT_T, Items.BLACK_WIZARD_HAT_G, Items.BLACK_WIZARD_HAT_T);
 
