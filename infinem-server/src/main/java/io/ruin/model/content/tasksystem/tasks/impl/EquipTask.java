@@ -18,6 +18,9 @@ public enum EquipTask {
     BUG_LANTERN(125, Items.LIT_BUG_LANTERN),    // Equip a Harpie Bug Lantern
     MAPLE_SHORTBOW(62, Items.MAPLE_SHORTBOW),   // Equip a Maple Shortbow
     ELEMENTAL_STAFF(63, Items.STAFF_OF_AIR, Items.STAFF_OF_EARTH, Items.STAFF_OF_FIRE, Items.STAFF_OF_WATER),     // Equip an Elemental Staff
+    ELEMENTAL_BATTLESTAFF(145,  // Equip an Elemental Battlestaff or Mystic Staff
+            Items.AIR_BATTLESTAFF, Items.WATER_BATTLESTAFF, Items.EARTH_BATTLESTAFF, Items.FIRE_BATTLESTAFF,
+            Items.MYSTIC_AIR_STAFF, Items.MYSTIC_WATER_STAFF, Items.MYSTIC_EARTH_STAFF, Items.MYSTIC_FIRE_STAFF),
     ADAMANT_WEAPON(137,     // Equip an Adamant Weapon
             Items.ADAMANT_DAGGER, Items.ADAMANT_DAGGER_P, Items.ADAMANT_DAGGER_P_2, Items.ADAMANT_DAGGER_P_3, Items.ADAMANT_AXE, Items.ADAMANT_PICKAXE,
             Items.ADAMANT_MACE, Items.ADAMANT_CANE, Items.ADAMANT_SWORD, Items.ADAMANT_SCIMITAR, Items.ADAMANT_HASTA, Items.ADAMANT_HASTA_P, Items.ADAMANT_HASTA_P_2,
