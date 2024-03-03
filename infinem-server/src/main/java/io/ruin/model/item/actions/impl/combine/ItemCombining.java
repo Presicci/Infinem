@@ -70,6 +70,7 @@ public enum ItemCombining {
     AVERNIC_DEFENDER(12954, 22477, 22322, true),
     SARADOMINS_LIGHT(11791, 13256, 22296, false),
     DRAGON_HUNTER_LANCE(22966, 11889, 22978, false),
+    NEITIZNOT_FACEGUARD(24268, Items.HELM_OF_NEITIZNOT, 24271, true, "Revert the helm back to its normal form and get the jaw back?"),
     /**
      * Shattered Relic League Cosmetics
      */
