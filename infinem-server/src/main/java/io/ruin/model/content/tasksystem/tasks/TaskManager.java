@@ -148,10 +148,9 @@ public class TaskManager {
             PreparedStatement statement = null;
             ResultSet rs = null;
             try {
-                statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ? AND required_object LIKE ?");
-                statement.setString(1, StringUtils.capitalizeFirst("unlockitemset"));
-                String replace = trigger.trim().toLowerCase().replace("_", " ");
-                statement.setString(2, "^" + replace + "|," + replace);
+                statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = 'UNLOCKITEMSET' AND required_object REGEXP ?");
+                String replace = trigger.trim().toLowerCase().replace("_", " ").replace("+", "/+");
+                statement.setString(1, "^" + replace + "$|," + replace + "$|," + replace + ",|^" + replace + ",");
                 rs = statement.executeQuery();
                 checkResults(rs, TaskLookupType.DROP_SET, null, trigger, 1, false);
             } finally {
