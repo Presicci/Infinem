@@ -108,7 +108,6 @@ public class TaskManager {
             System.out.println("category complete");
             return;
         }
-        long currentTime = System.currentTimeMillis();
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;
@@ -119,7 +118,6 @@ public class TaskManager {
                 checkResults(rs, TaskLookupType.CATEGORY, category, trigger, amount, incremental);
             } finally {
                 DatabaseUtils.close(statement, rs);
-                System.out.println("Lookup time for normal " + category + "," + trigger + "," + amount + ":" + (System.currentTimeMillis() - currentTime));
             }
         });
     }
@@ -129,7 +127,6 @@ public class TaskManager {
     }
 
     public void doLookupByCategoryAndTrigger(TaskCategory category, String trigger, int amount, boolean incremental) {
-        long currentTime = System.currentTimeMillis();
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;
@@ -142,13 +139,11 @@ public class TaskManager {
                 checkResults(rs, TaskLookupType.CAT_AND_TRIGGER, null, null, amount, incremental);
             } finally {
                 DatabaseUtils.close(statement, rs);
-                System.out.println("Lookup time for " + category + "," + trigger + "," + amount + ":" + (System.currentTimeMillis() - currentTime));
             }
         });
     }
 
     public void doLookupByCategoryAndTriggerRegex(TaskCategory category, String trigger) {
-        long currentTime = System.currentTimeMillis();
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;
@@ -159,13 +154,11 @@ public class TaskManager {
                 checkResults(rs, TaskLookupType.REGEX_COMPARE_TRIGGER, null, trigger, 1, false);
             } finally {
                 DatabaseUtils.close(statement, rs);
-                System.out.println("Lookup time for " + category + "," + trigger + "," + 1 + ":" + (System.currentTimeMillis() - currentTime));
             }
         });
     }
 
     public void doDropGroupLookup(String trigger) {
-        long currentTime = System.currentTimeMillis();
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;
@@ -178,7 +171,6 @@ public class TaskManager {
                 checkResults(rs, TaskLookupType.DROP_SET, null, trigger, 1, false);
             } finally {
                 DatabaseUtils.close(statement, rs);
-                System.out.println("Lookup time for " + trigger + ":" + (System.currentTimeMillis() - currentTime));
             }
         });
     }
@@ -196,7 +188,6 @@ public class TaskManager {
         if (completeTasks.contains(uuid)) {
             return;
         }
-        long currentTime = System.currentTimeMillis();
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
             ResultSet rs = null;
@@ -207,7 +198,6 @@ public class TaskManager {
                 checkResults(rs, TaskLookupType.UUID, null, null, amount, incremental);
             } finally {
                 DatabaseUtils.close(statement, rs);
-                System.out.println("Lookup time for " + uuid + ":" + (System.currentTimeMillis() - currentTime));
             }
         });
     }
@@ -372,8 +362,6 @@ public class TaskManager {
         } else if (lookupType == TaskLookupType.REGEX_COMPARE_TRIGGER) {
             boolean found = false;
             for (String s : triggers) {
-                System.out.println(s);
-                System.out.println(trigger);
                 Pattern pattern = Pattern.compile(s, Pattern.CASE_INSENSITIVE);
                 Matcher matcher = pattern.matcher(trigger);
                 if (matcher.find()) {
