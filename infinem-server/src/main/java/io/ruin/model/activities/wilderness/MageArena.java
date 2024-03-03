@@ -349,6 +349,7 @@ public class MageArena {
         player.putAttribute("MA2", 8);
         item.setId(newId);
         player.dialogue(new ItemDialogue().one(newId, "Kolodion imbues your god cape."));
+        player.getTaskManager().doLookupByUUID(876);    // Imbue a God Cape
     }
 
     static {
