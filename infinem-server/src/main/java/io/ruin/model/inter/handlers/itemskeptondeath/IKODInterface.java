@@ -401,18 +401,18 @@ public class IKODInterface {
             if(combined != null && (player.wildernessLevel > 0 || player.pvpAttackZone)) {
                 if (Objects.isNull(killer)) {
                     keepItems.add(item);
-                } else if (ItemDef.get(combined.primaryId).tradeable) {
-                    loseItems.add(new Item(combined.primaryId, item.getAmount()));
-                    loseItems.add(new Item(combined.secondaryId, item.getAmount()));
+                } else if (ItemDef.get(combined.mainId).tradeable) {
+                    loseItems.add(new Item(combined.mainId, item.getAmount()));
+                    loseItems.add(new Item(combined.accessoryId, item.getAmount()));
                 } else {
-                    ItemBreaking breakab = ItemDef.get(combined.primaryId).breakTo;
-                    if (ItemDef.get(combined.primaryId).breakTo != null) {
+                    ItemBreaking breakab = ItemDef.get(combined.mainId).breakTo;
+                    if (ItemDef.get(combined.mainId).breakTo != null) {
                         item.setId(ItemDef.get(breakab.brokenId).id);
                         keepItems.add(item);
-                        loseItems.add(new Item(combined.secondaryId, item.getAmount()));
+                        loseItems.add(new Item(combined.accessoryId, item.getAmount()));
                     } else {
-                        keepItems.add(new Item(combined.primaryId, item.getAmount()));
-                        loseItems.add(new Item(combined.secondaryId, item.getAmount()));
+                        keepItems.add(new Item(combined.mainId, item.getAmount()));
+                        loseItems.add(new Item(combined.accessoryId, item.getAmount()));
                     }
                 }
                 continue;
