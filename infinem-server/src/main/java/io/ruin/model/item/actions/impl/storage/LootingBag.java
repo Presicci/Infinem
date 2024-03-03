@@ -44,6 +44,7 @@ public class LootingBag extends ItemContainer {
         player.getPacketSender().sendAccessMask(Interface.LOOTING_BAG, 5, 0, 27, 542);
         player.getPacketSender().sendClientScript(495, "s1", "Add to bag", 1);
         player.getPacketSender().setHidden(Interface.LOOTING_BAG, 7, true);
+        player.getTaskManager().doLookupByUUID(862);    // Open a Looting Bag
     }
 
     private void deposit(Item item, int amount) {
