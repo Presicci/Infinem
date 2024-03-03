@@ -61,6 +61,7 @@ public enum GodBook {
             player.sendMessage("The book is now complete!");
             player.sendMessage("You can now use it to bless holy symbols.");
             player.getTaskManager().doLookupByUUID(554);    // Complete a God Book
+            checkAllComplete(player);
             book.setId(completedBookId);
         }
     }
@@ -112,7 +113,11 @@ public enum GodBook {
     }
 
     private static void checkAllComplete(Player player) {
-
+        for (GodBook book : values()) {
+            if (player.getAttributeIntOrZero(book.name() + "_PAGES") < 15)
+                return;
+        }
+        player.getTaskManager().doLookupByUUID(558);    // Complete Every God Book
     }
 
     private static GodBook get(Item item) {
