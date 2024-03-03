@@ -101,8 +101,7 @@ public class LarransChest {
             player.animate(536);
             Item loot = big ? bigTable.rollItem() : smallTable.rollItem();
             player.getInventory().addOrDrop(loot);
-            player.getTaskManager().doUnlockItemLookup(loot);
-            player.getTaskManager().doDropGroupLookup(loot.getDef().name.toLowerCase());
+            player.getTaskManager().doDropLookup(loot);
             player.getCollectionLog().collect(loot);
             event.delay(1);
             player.unlock();

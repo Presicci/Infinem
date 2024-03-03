@@ -212,8 +212,7 @@ public class NPCDrops {
     private void handleDrop(Killer killer, Position dropPosition, Player pKiller, List<Item> items) {
         for(Item item : items) {
             // Attempt a task unlock for each item dropped
-            pKiller.getTaskManager().doUnlockItemLookup(item);
-            pKiller.getTaskManager().doDropGroupLookup(item.getDef().name.toLowerCase());
+            pKiller.getTaskManager().doDropLookup(item);
 
             /*
              * Convert clue scrolls into clue boxes

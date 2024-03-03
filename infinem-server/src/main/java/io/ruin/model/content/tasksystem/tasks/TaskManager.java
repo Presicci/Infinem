@@ -143,21 +143,6 @@ public class TaskManager {
         });
     }
 
-    public void doLookupByCategoryAndTriggerRegex(TaskCategory category, String trigger) {
-        Server.gameDb.execute(connection -> {
-            PreparedStatement statement = null;
-            ResultSet rs = null;
-            try {
-                statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ?");
-                statement.setString(1, StringUtils.capitalizeFirst(category.toString().toLowerCase()));
-                rs = statement.executeQuery();
-                checkResults(rs, TaskLookupType.REGEX_COMPARE_TRIGGER, category, trigger, 1, false);
-            } finally {
-                DatabaseUtils.close(statement, rs);
-            }
-        });
-    }
-
     public void doDropGroupLookup(String trigger) {
         Server.gameDb.execute(connection -> {
             PreparedStatement statement = null;
@@ -227,8 +212,13 @@ public class TaskManager {
         player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, item.getDef().name.toLowerCase(), item.getAmount(), true);
     }
 
-    public void doUnlockItemLookup(Item item) {
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.UNLOCKITEM, item.getDef().name.toLowerCase(), item.getAmount(), true);
+    public void doDropLookup(Item item) {
+        doLookupByCategoryAndTrigger(TaskCategory.UNLOCKITEM, item.getDef().name.toLowerCase(), item.getAmount(), true);
+        doDropGroupLookup(item.getDef().name.toLowerCase());
+        int regexUuid = item.getDef().getCustomValueOrDefault("UNLOCKITEMREGEX", 0);
+        if (regexUuid > 0) {
+            doLookupByUUID(regexUuid, item.getAmount());
+        }
     }
 
     public boolean hasCompletedTask(int uuid) {
@@ -359,17 +349,6 @@ public class TaskManager {
                     complete = false;
             }
             return complete;
-        } else if (lookupType == TaskLookupType.REGEX_COMPARE_TRIGGER) {
-            boolean found = false;
-            for (String s : triggers) {
-                Pattern pattern = Pattern.compile(s, Pattern.CASE_INSENSITIVE);
-                Matcher matcher = pattern.matcher(trigger);
-                if (matcher.find()) {
-                    found = true;
-                    break;
-                }
-            }
-            return found;
         } else {
             boolean found = false;
             for (String s : triggers) {
