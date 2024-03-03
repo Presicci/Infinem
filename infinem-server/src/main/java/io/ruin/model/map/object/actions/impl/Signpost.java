@@ -72,7 +72,7 @@ public enum Signpost {
                 // Move the camera so its facing north
                 player.getPacketSender().sendClientScript(143, "ii", 280, 0);
                 // Tanned background behind interface
-                player.getPacketSender().sendClientScript(917, "ii", 10786175, 200);
+                //player.getPacketSender().sendClientScript(917, "ii", 10786175, 200);
                 // Assign the corresponding directions to the signpost
                 player.getPacketSender().sendString(135, 2, signpost.north);
                 player.getPacketSender().sendString(135, 7, signpost.east);
