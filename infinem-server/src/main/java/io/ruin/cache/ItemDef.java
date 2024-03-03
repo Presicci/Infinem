@@ -249,6 +249,8 @@ public class ItemDef {
 
     public boolean coxItem;
 
+    public Map<String, Object> custom_values = new HashMap<>();
+
 
     /**
      * Cache data
@@ -893,5 +895,8 @@ public class ItemDef {
             onDrop.accept(item);
     }
 
-
+    public <T> T getCustomValueOrDefault(String key, T defaultValue) {
+        Object value = custom_values.get(key);
+        return value == null ? defaultValue : (T) value;
+    }
 }
