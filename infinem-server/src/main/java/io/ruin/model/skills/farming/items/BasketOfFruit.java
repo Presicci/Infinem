@@ -1,4 +1,4 @@
-package io.ruin.model.skills.farming;
+package io.ruin.model.skills.farming.items;
 
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.player.Player;
