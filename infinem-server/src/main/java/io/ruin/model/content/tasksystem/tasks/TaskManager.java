@@ -136,7 +136,7 @@ public class TaskManager {
                 String replace = trigger.trim().toLowerCase().replace("_", " ").replace("+", "/+");
                 statement.setString(2, "^" + replace + "$|," + replace + "$|," + replace + ",|^" + replace + ",");
                 rs = statement.executeQuery();
-                checkResults(rs, TaskLookupType.CAT_AND_TRIGGER, null, null, amount, incremental);
+                checkResults(rs, TaskLookupType.CAT_AND_TRIGGER, category, null, amount, incremental);
             } finally {
                 DatabaseUtils.close(statement, rs);
             }
@@ -151,7 +151,7 @@ public class TaskManager {
                 statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ?");
                 statement.setString(1, StringUtils.capitalizeFirst(category.toString().toLowerCase()));
                 rs = statement.executeQuery();
-                checkResults(rs, TaskLookupType.REGEX_COMPARE_TRIGGER, null, trigger, 1, false);
+                checkResults(rs, TaskLookupType.REGEX_COMPARE_TRIGGER, category, trigger, 1, false);
             } finally {
                 DatabaseUtils.close(statement, rs);
             }
