@@ -5,6 +5,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.attributes.AttributeExtensions;
@@ -85,6 +86,7 @@ public enum ItemCombining {
 
     public final int primaryId, secondaryId, combinedId;
     public final boolean reversible;
+    private String dismantleString = "Revert the item back to its normal form and get the kit back?";
 
     ItemCombining(int primaryId, int secondaryId, int combinedId, boolean reversible) {
         this.primaryId = primaryId;
@@ -92,6 +94,11 @@ public enum ItemCombining {
         this.combinedId = combinedId;
         this.reversible = reversible;
         ItemDef.get(combinedId).combinedFrom = this;
+    }
+
+    ItemCombining(int primaryId, int secondaryId, int combinedId, boolean reversible, String dismantleString) {
+        this(primaryId, secondaryId, combinedId, reversible);
+        this.dismantleString = dismantleString;
     }
 
     private static void make(Player player, Item item, Item kit, int resultID, boolean reversible) {
@@ -113,15 +120,17 @@ public enum ItemCombining {
         );
     }
 
-    private static void revert(Player player, Item kit, int primary, int revert) {
+    private static void revert(Player player, Item kit, ItemCombining itemCombine) {
         if(player.getInventory().getFreeSlots() < 1) {
             player.sendMessage("You don't have enough inventory space to do this.");
             return;
         }
+        int primary = itemCombine.primaryId;
+        int revert = itemCombine.secondaryId;
         Item item = new Item(primary, 1);
         AttributeExtensions.putAttributes(item, kit.copyOfAttributes());
         player.dialogue(
-            new YesNoDialogue("Are you sure you want to do this?", "Revert the item back to its normal form and get the kit back?", primary, 1, () -> {
+            new YesNoDialogue("Are you sure you want to do this?", itemCombine.dismantleString, primary, 1, () -> {
                 player.getInventory().add(item);
                 kit.setId(revert);
                 AttributeExtensions.removeUpgrades(kit);
@@ -133,9 +142,9 @@ public enum ItemCombining {
     static {
         for (ItemCombining kit : values()) {
             ItemItemAction.register(kit.primaryId, kit.secondaryId, (player, primary, secondary) -> make(player, primary, secondary, kit.combinedId, kit.reversible));
-            ItemAction.registerInventory(kit.combinedId, "dismantle", (player, item) -> revert(player, item, kit.primaryId, kit.secondaryId));
-            ItemAction.registerInventory(kit.combinedId, "revert", (player, item) -> revert(player, item, kit.primaryId, kit.secondaryId));
-            ItemAction.registerInventory(kit.combinedId, "dismantle kit", (player, item) -> revert(player, item, kit.primaryId, kit.secondaryId));
+            ItemAction.registerInventory(kit.combinedId, "dismantle", (player, item) -> revert(player, item, kit));
+            ItemAction.registerInventory(kit.combinedId, "revert", (player, item) -> revert(player, item, kit));
+            ItemAction.registerInventory(kit.combinedId, "dismantle kit", (player, item) -> revert(player, item, kit));
             int combinedProtect = ItemDef.get(kit.combinedId).protectValue;
             int componentsProtect = Math.max(ItemDef.get(kit.primaryId).protectValue, ItemDef.get(kit.secondaryId).protectValue);
             if (combinedProtect < componentsProtect)
