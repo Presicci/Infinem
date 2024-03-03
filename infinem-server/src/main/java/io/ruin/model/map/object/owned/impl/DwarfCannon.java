@@ -418,6 +418,7 @@ public class DwarfCannon extends OwnedObject {
                     }
 
                     cannon.fill();
+                    player.getTaskManager().doLookupByUUID(580);    // Set Up a Dwarf Cannon
                     player.unlock();
 
                 }).setCancelCondition(() -> !cannon.getOwnerOpt().isPresent() || cannon.getOwner().getCombat().isDead());
