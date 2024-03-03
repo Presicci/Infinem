@@ -36,6 +36,10 @@ public enum EquipTask {
             Items.ADAMANT_HALBERD, Items.ADAMANT_2H_SWORD, Items.ADAMANT_CROSSBOW, Items.ADAMANT_KNIFE, Items.ADAMANT_DART, Items.ADAMANT_THROWNAXE
     ),
     YEW_SHORTBOW(144, Items.YEW_SHORTBOW),  // Equip a Yew Shortbow
+    GOD_CAPE(857,   // Equip a God Cape
+            Items.SARADOMIN_CAPE, Items.ZAMORAK_CAPE, Items.GUTHIX_CAPE,
+            Items.IMBUED_SARADOMIN_CAPE, Items.IMBUED_ZAMORAK_CAPE, Items.IMBUED_GUTHIX_CAPE
+    )
     ;
 
     private final int uuid;
