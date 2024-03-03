@@ -137,7 +137,7 @@ public class TaskManager {
                 String replace = trigger.trim().toLowerCase().replace("_", " ").replace("+", "/+");
                 statement.setString(2, "^" + replace + "$|," + replace + "$|," + replace + ",|^" + replace + ",");
                 rs = statement.executeQuery();
-                checkResults(rs, TaskLookupType.CAT_AND_TRIGGER, null, trigger, amount, incremental);
+                checkResults(rs, TaskLookupType.CAT_AND_TRIGGER, null, null, amount, incremental);
             } finally {
                 DatabaseUtils.close(statement, rs);
                 System.out.println("Lookup time for " + category + "," + trigger + "," + amount + ":" + (System.currentTimeMillis() - currentTime));
