@@ -77112,7 +77112,8 @@
     "slash_defence_bonus": 93,
     "crush_defence_bonus": 98,
     "magic_defence_bonus": -3,
-    "range_defence_bonus": 82
+    "range_defence_bonus": 82,
+    "hide_arms": true
   },
   { // Dragon platelegs (g)
     "id": 12415,
