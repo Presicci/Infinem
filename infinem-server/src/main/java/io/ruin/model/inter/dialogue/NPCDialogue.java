@@ -66,6 +66,7 @@ public class NPCDialogue extends Dialogue {
         message = message.replace("[monsieur/mademoiselle]", player.getAppearance().isMale() ? "monsieur" : "mademoiselle");
         message = message.replace("[Fremennik name]", player.getFremennikName());
         message = message.replace("[lad/lass]", player.getAppearance().isMale() ? "lad" : "lass");
+        message = message.replace("[craftsman/craftswoman]", player.getAppearance().isMale() ? "craftsman" : "craftswoman");
         player.openInterface(InterfaceType.CHATBOX, Interface.NPC_DIALOGUE);
         player.getPacketSender().sendNpcHead(Interface.NPC_DIALOGUE, 6, npcDef.id);
         player.getPacketSender().animateInterface(Interface.NPC_DIALOGUE, 6, animationId);
