@@ -21,6 +21,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
@@ -141,6 +143,23 @@ public class TaskManager {
             } finally {
                 DatabaseUtils.close(statement, rs);
                 System.out.println("Lookup time for " + category + "," + trigger + "," + amount + ":" + (System.currentTimeMillis() - currentTime));
+            }
+        });
+    }
+
+    public void doLookupByCategoryAndTriggerRegex(TaskCategory category, String trigger) {
+        long currentTime = System.currentTimeMillis();
+        Server.gameDb.execute(connection -> {
+            PreparedStatement statement = null;
+            ResultSet rs = null;
+            try {
+                statement = connection.prepareStatement("SELECT * FROM task_list WHERE category = ?");
+                statement.setString(1, StringUtils.capitalizeFirst(category.toString().toLowerCase()));
+                rs = statement.executeQuery();
+                checkResults(rs, TaskLookupType.REGEX_COMPARE_TRIGGER, null, trigger, 1, false);
+            } finally {
+                DatabaseUtils.close(statement, rs);
+                System.out.println("Lookup time for " + category + "," + trigger + "," + 1 + ":" + (System.currentTimeMillis() - currentTime));
             }
         });
     }
@@ -350,6 +369,19 @@ public class TaskManager {
                     complete = false;
             }
             return complete;
+        } else if (lookupType == TaskLookupType.REGEX_COMPARE_TRIGGER) {
+            boolean found = false;
+            for (String s : triggers) {
+                System.out.println(s);
+                System.out.println(trigger);
+                Pattern pattern = Pattern.compile(s, Pattern.CASE_INSENSITIVE);
+                Matcher matcher = pattern.matcher(trigger);
+                if (matcher.find()) {
+                    found = true;
+                    break;
+                }
+            }
+            return found;
         } else {
             boolean found = false;
             for (String s : triggers) {
