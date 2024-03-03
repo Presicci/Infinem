@@ -1,6 +1,6 @@
 [
   { // Cow calf (2)
-    "ids": [ 2807, 2809, 2816, 2792 ],
+    "ids": [ 2792, 2794, 2801 ],
     "handler": "",
     //Combat Info
     "hitpoints": 6,
@@ -30,12 +30,12 @@
     "magic_defence": -26,
     "ranged_defence": -26,
     //Immunites
-    "poison_immunity": false,
+    "poison_immunity": true,
     "venom_immunity": true,
     //Speeds
     "attack_ticks": 4,
     "death_ticks": 3,
-    "respawn_ticks": 50,
+    "respawn_ticks": 45,
     //Animations
     "spawn_animation": -1,
     "attack_animation": 5849,
