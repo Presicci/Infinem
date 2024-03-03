@@ -1,5 +1,7 @@
 package io.ruin.model.content.tasksystem.tasks.impl;
 
+import io.ruin.cache.ItemDef;
+import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.containers.equipment.EquipAction;
 
@@ -93,8 +95,19 @@ public enum EquipSetTask {
         WIZARD_HAT(Items.BLUE_WIZARD_HAT, Items.WIZARD_HAT, Items.BLUE_WIZARD_HAT_G, Items.BLUE_WIZARD_HAT_T, Items.BLACK_WIZARD_HAT_G, Items.BLACK_WIZARD_HAT_T);
 
         public final int[] itemIds;
+        public final boolean respectIndex, compareNames;
 
         SetPiece(int... itemIds) {
+            this(false, itemIds);
+        }
+
+        SetPiece(boolean respectIndex, int... itemIds) {
+            this(respectIndex, false, itemIds);
+        }
+
+        SetPiece(boolean respectIndex, boolean compareNames, int... itemIds) {
+            this.respectIndex = respectIndex;
+            this.compareNames = compareNames;
             this.itemIds = itemIds;
         }
     }
@@ -104,12 +117,44 @@ public enum EquipSetTask {
             for (SetPiece s : set.set) {
                 for (int i : s.itemIds) {
                     EquipAction.register(i, (player -> {
-                        for (SetPiece slot : set.set) {
-                            if (!player.getEquipment().hasAtLeastOneOf(slot.itemIds)) {
-                                return;
+                        if (s.respectIndex) {
+                            int index = -1;
+                            for (SetPiece slot : set.set) {
+                                int[] itemIds = slot.itemIds;
+                                if (index == -1) {
+                                    for (int idx = 0; idx < itemIds.length; idx++) {
+                                        int id = itemIds[idx];
+                                        if (player.getEquipment().hasId(id)) {
+                                            ItemDef def = ItemDef.get(id);
+                                            index = idx;
+                                            break;
+                                        }
+                                    }
+                                    if (index == -1)
+                                        return;
+                                } else {
+                                    ItemDef compareItemDef = ItemDef.get(itemIds[index]);
+                                    int equipSlot = compareItemDef.equipSlot;
+                                    if (s.compareNames) {
+                                        String compareName = compareItemDef.name.toLowerCase().replaceAll("\\d", "").trim();
+                                        Item equippedItem = player.getEquipment().get(equipSlot);
+                                        if (equippedItem == null || !equippedItem.getDef().name.toLowerCase().contains(compareName))
+                                            return;
+                                    } else {
+                                        if (!player.getEquipment().hasId(itemIds[index]))
+                                            return;
+                                    }
+                                }
                             }
+                            player.getTaskManager().doLookupByUUID(set.uuid, 1);
+                        } else {
+                            for (SetPiece slot : set.set) {
+                                if (!player.getEquipment().hasAtLeastOneOf(slot.itemIds)) {
+                                    return;
+                                }
+                            }
+                            player.getTaskManager().doLookupByUUID(set.uuid, 1);
                         }
-                        player.getTaskManager().doLookupByUUID(set.uuid, 1);
                     }));
                 }
             }
