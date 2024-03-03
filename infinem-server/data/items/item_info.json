@@ -72988,6 +72988,15 @@
     "equip_slot": 3,
     "attack_level": 30,
     "magic_level": 30,
+    "stab_attack_bonus": 7,
+    "slash_attack_bonus": -1,
+    "crush_attack_bonus": 28,
+    "magic_attack_bonus": 10,
+    "stab_defence_bonus": 2,
+    "slash_defence_bonus": 3,
+    "crush_defence_bonus": 1,
+    "magic_defence_bonus": 10,
+    "melee_strength_bonus": 35,
     "weapon_type": "MAGIC_STAFF"
   },
   { // Mystic steam staff
@@ -72999,6 +73008,15 @@
     "equip_slot": 3,
     "attack_level": 40,
     "magic_level": 40,
+    "stab_attack_bonus": 7,
+    "slash_attack_bonus": -1,
+    "crush_attack_bonus": 40,
+    "magic_attack_bonus": 10,
+    "stab_defence_bonus": 2,
+    "slash_defence_bonus": 3,
+    "crush_defence_bonus": 1,
+    "magic_defence_bonus": 10,
+    "melee_strength_bonus": 50,
     "weapon_type": "MAGIC_STAFF"
   },
   { // Staff of the dead
