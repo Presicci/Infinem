@@ -31,6 +31,9 @@ public enum MapArea {
     FALADOR_FARM(3044, 3300, 3065, 3318, 0),
     CRAFTING_GUILD(2929, 3279, 2943, 3288, 0),
     EXCLUSIVE_AMETHYST_MINE(2999, 9705, 3012, 9728, 0),
+    COMBAT_TRAINING_CAMP_ENTRANCE(2516, 3357, 2519, 3360, 0, player -> {
+        player.getTaskManager().doLookupByUUID(561);    // Enter the Combat Training Camp
+    }),
     // Dark caves
     LUMBRIDGE_SWAMP_CAVE(OldFirePit.FirePit.LUMBRIDGE_SWAMP_CAVES_FIRE, 3, 12693, 12949),
     CAVE_OF_HORROR(OldFirePit.FirePit.MOS_LE_HARMLESS_FIRE, 3, 14994, 14995, 15251),
