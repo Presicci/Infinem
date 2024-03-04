@@ -87,7 +87,7 @@
   },
   { // Ogre (63)
     "ids": [ 1153 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.CombatTrainingOgre",
     //Combat Info
     "hitpoints": 60,
     "aggressive_level": 0,
