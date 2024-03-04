@@ -94,9 +94,11 @@ public class EssenceMine {
         ObjectAction.register(34825, 1, EssenceMine::leaveMine);
         NPCAction.register(2886, "teleport", (player, npc) -> enterMine(player, npc, "AUBURY"));
         NPCAction.register(5034, "teleport", (player, npc) -> enterMine(player, npc, "SEDRIDOR"));
+        NPCAction.register(5034, "talk-to", (player, npc) -> dialogue(player, npc, "SEDRIDOR"));
         NPCAction.register(3248, "teleport", (player, npc) -> enterMine(player, npc, "DISTENTOR"));
         NPCAction.register(8480, 3, (player, npc) -> enterMine(player, npc, "CROMPERTY"));
         NPCAction.register(8480, 1, (player, npc) -> dialogue(player, npc, "CROMPERTY"));
         NPCAction.register(4913, "teleport", (player, npc) -> enterMine(player, npc, "BRIMSTAIL"));
+        NPCAction.register(4913, "talk-to", (player, npc) -> dialogue(player, npc, "BRIMSTAIL"));
     }
 }
