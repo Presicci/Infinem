@@ -579,7 +579,7 @@ public enum PickPocket {
         float chance = 0;
         Equipment equipment = player.getEquipment();
         for (int id : Arrays.asList(Items.ROGUE_BOOTS, Items.ROGUE_GLOVES, Items.ROGUE_TOP, Items.ROGUE_TROUSERS, Items.ROGUE_MASK)) {
-            if (equipment.hasId(id)) chance += .2;
+            if (equipment.hasId(id)) chance += .2f;
         }
         return chance;
     }
@@ -591,14 +591,12 @@ public enum PickPocket {
                         || npcDef.name.toLowerCase().contains(pickpocket.name().toLowerCase())
                         || (pickpocket.names != null && (Arrays.stream(pickpocket.names).anyMatch(n -> npcDef.name.toLowerCase().contains(n.toLowerCase())
                             || npcDef.name.equalsIgnoreCase(n))))) {
-                    int pickpocketOption = npcDef.getOption("pickpocket", "steal-from");
-                    if (pickpocketOption == -1)
-                        return;
-                    NPCAction.register(npcDef.name, pickpocketOption, (player, npc) -> pickpocket(player, npc, pickpocket));
+                    NPCAction.register(npcDef.name, "pickpocket", (player, npc) -> pickpocket(player, npc, pickpocket));
+                    NPCAction.register(npcDef.name, "steal-from", (player, npc) -> pickpocket(player, npc, pickpocket));
                 }
             }
         });
-        final int[] HAM_MEMBERS = {2540, 2541};
+        final int[] HAM_MEMBERS = { 2540, 2541 };
         for (int hamMember : HAM_MEMBERS) {
             NPCAction.register(hamMember, "pickpocket", (player, npc) -> pickpocket(player, npc, HAM));
         }
