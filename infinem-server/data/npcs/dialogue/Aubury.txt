@@ -1,0 +1,9 @@
+Aubury: Do you want to buy some runes?
+<Yes please!
+SHOP:
+><Oh, it's a rune shop. No thank you, then.
+Player: Oh, it's a rune shop. No thank you, then.
+Aubury: Well, if you find someone who does want runes, please send them my way.
+><Can you teleport me to the Rune Essence?
+Player: Can you teleport me to the Rune Essence?
+ESSENCE_MINE:
