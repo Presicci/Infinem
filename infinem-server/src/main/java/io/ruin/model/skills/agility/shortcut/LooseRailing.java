@@ -23,12 +23,12 @@ public enum LooseRailing {
 
     static {
         for (LooseRailing railing : values()) {
-            ObjectAction.register(railing.id, railing.objectPos, "squeeze-through", (player, obj) -> shortcut(player, obj, railing.levelRequirement));
+            ObjectAction.register(railing.id, railing.objectPos, "squeeze-through", railing::shortcut);
         }
     }
 
-    public static void shortcut(Player player, GameObject obj, int levelReq) {
-        if (!player.getStats().check(StatType.Agility, levelReq, "attempt this"))
+    public void shortcut(Player player, GameObject obj) {
+        if (!player.getStats().check(StatType.Agility, levelRequirement, "attempt this"))
             return;
         int objDir = obj.direction;
         boolean onObjectSide = (objDir == 0 && player.getAbsX() == obj.getPosition().getX())
@@ -53,6 +53,8 @@ public enum LooseRailing {
                 direction = Direction.fromDoorDirection(objDir);
             player.getMovement().force(player.getPosition().relative(diffX, diffY), 0, 60, direction);
             e.delay(2);
+            if (this == GNOME_VILLAGE)
+                player.getTaskManager().doLookupByUUID(564);    // Make it through the Tree Gnome Village Maze
             player.unlock();
         });
 
