@@ -28,7 +28,12 @@ public class SpiritTree {
 
     private static List<Option> getOptions(Player player) {
         List<Option> options = new ArrayList<>();
-        options.add(new Option("Tree Gnome Village", () -> teleport(player, 2542, 3170, 0)));
+        if (player.getTaskManager().hasCompletedTask(564)) {  // Make it through the Tree Gnome Village Maze
+            options.add(new Option("Tree Gnome Village", () -> teleport(player, 2542, 3170, 0)));
+        } else {
+            options.add(new Option("<str>Tree Gnome Village", () -> player.dialogue(new MessageDialogue("You need to traverse the Tree Gnome Village Maze before traveling to that spirit tree."))));
+        }
+        //options.add(new Option("Tree Gnome Village", () -> teleport(player, 2542, 3170, 0)));
         options.add(new Option("Gnome Stronghold", () -> teleport(player, 2462, 3444, 0)));
         options.add(new Option("Battlefield of Khazard", () -> teleport(player, 2555, 3259, 0)));
         options.add(new Option("Grand Exchange", () -> teleport(player, 3184, 3508, 0)));
