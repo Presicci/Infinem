@@ -57,7 +57,7 @@ public class RustyWeapons {
     private static void refineWeapon(Player player, Item item, LootTable lootTable, boolean atNPC) {
         if (atNPC && !player.getInventory().contains(995, 100)) {
             player.dialogue(
-                    new NPCDialogue(TINDEL_MARCHANT, "*cough cough* You're going to pay me for this, right?")
+                    new NPCDialogue(TINDEL_MARCHANT, "*cough cough* You're going to pay me for this, right? 100 coins each.")
             );
             return;
         }
@@ -72,6 +72,7 @@ public class RustyWeapons {
             );
         } else {
             player.getInventory().remove(995, 100);
+            player.getTaskManager().doLookupByUUID(565);    // Have Tindel Marchant Identify a Rusty Sword
             player.dialogue(
                     new ItemDialogue().one(loot.getId(), "He hands you back "
                             + loot.getDef().descriptiveName + ". Good as new!")
@@ -103,7 +104,7 @@ public class RustyWeapons {
 
         NPCAction.register(TINDEL_MARCHANT, "talk-to", ((player, npc) -> player.dialogue(
                 new PlayerDialogue("Hello there."),
-                new NPCDialogue(TINDEL_MARCHANT, "Hello there friend, if you happen to find any rusty or discarded armaments, I would happily repair them for a price."),
+                new NPCDialogue(TINDEL_MARCHANT, "Hello there friend, if you happen to find any rusty or discarded armaments, I would happily repair them for a price. 100 coins each."),
                 new PlayerDialogue("I'll keep that in mind...")
         )));
 
