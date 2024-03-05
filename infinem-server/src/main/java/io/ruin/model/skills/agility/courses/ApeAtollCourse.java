@@ -18,6 +18,7 @@ import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -32,6 +33,12 @@ public class ApeAtollCourse {
             Tile.get(new Position(2752, 2731, 0), true).getObject(15487, 10, 0),    // Rope swing
             Tile.get(new Position(2757, 2734, 0), true).getObject(16062, 10, 0)     // Tropical tree
     };
+
+    private static final List<Position> MARK_SPAWNS = Arrays.asList(
+            new Position(2746, 2732, 0),
+            new Position(2759, 2732, 0),
+            new Position(2752, 2741, 0)
+    );
 
     private static final int[] MONKEY_IDS = { 1462, 1463, 5257 };
 
@@ -196,6 +203,7 @@ public class ApeAtollCourse {
                 if (player.getAttributeIntOrZero("LAST_AGIL_OBJ") == 15487) {
                     player.getStats().addXp(StatType.Agility, 200.0, true);
                     AgilityPet.rollForPet(player, 37720);
+                    MarkOfGrace.rollMark(player, 48, MARK_SPAWNS);
                     int laps = PlayerCounter.APE_ATOLL_COURSE.increment(player, 1);
                     if (!player.hasAttribute(AttributeKey.HIDE_AGILITY_COUNT))
                         player.sendFilteredMessage("Your Ape Atoll Agility lap count is: " + Color.RED.wrap(laps + "") + ".");
