@@ -40,6 +40,7 @@ public enum EquipTask {
             Items.IMBUED_SARADOMIN_CAPE, Items.IMBUED_ZAMORAK_CAPE, Items.IMBUED_GUTHIX_CAPE
     ),
     MONKEY_BACKPACK(568, 19556),    // Equip a Monkey Backpack
+    KARAMJA_MONKEY_BACKPACK(590, 24862),    // Equip a Karamja Monkey Backpack
     ;
 
     private final int uuid;
