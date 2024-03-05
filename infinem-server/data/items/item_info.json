@@ -86411,7 +86411,7 @@
   { // Monkey
     "id": 19556,
     "tradeable": false,
-    "examine": "Monkey - Examine not set.",
+    "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
     "weight": 0.0,
 	"protect_value": 0,
     "equip_slot": 1
@@ -109767,6 +109767,54 @@
     "weight_equipped": 0.0,
     "protect_value": 0,
     "destroy": "You may simply open the pouch instead to continue pickpocketing."
+  },
+  { // Karamjan Monkey
+    "id": 24862,
+    "tradeable": false,
+    "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
+    "weight": 0.01,
+	"protect_value": 0,
+    "equip_slot": 1
+  },
+  { // Zombie Monkey
+    "id": 24863,
+    "tradeable": false,
+    "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
+    "weight": 0.01,
+	"protect_value": 0,
+    "equip_slot": 1
+  },
+  { // Maniacal Monkey
+    "id": 24864,
+    "tradeable": false,
+    "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
+    "weight": 0.01,
+	"protect_value": 0,
+    "equip_slot": 1
+  },
+  { // Skeleton Monkey
+    "id": 24865,
+    "tradeable": false,
+    "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
+    "weight": 0.01,
+	"protect_value": 0,
+    "equip_slot": 1
+  },
+  { // Kruk Jr
+    "id": 24866,
+    "tradeable": false,
+    "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
+    "weight": 0.01,
+	"protect_value": 0,
+    "equip_slot": 1
+  },
+  { // Princely Monkey
+    "id": 24867,
+    "tradeable": false,
+    "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
+    "weight": 0.01,
+	"protect_value": 0,
+    "equip_slot": 1
   },
   { // Reinforced goggles
     "id": 24942,
