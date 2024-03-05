@@ -69,7 +69,7 @@ public enum MonkeyBackpack {
             Item cape = player.getEquipment().get(Equipment.SLOT_CAPE);
             for (MonkeyBackpack backpack : values()) {
                 if (cape.getId() == backpack.itemId || player.getInventory().hasId(backpack.itemId)) {
-                    player.dialogue(new MessageDialogue("You already own a cute little monkey. Leave some for everyone else."));
+                    player.sendMessage("The crate is empty.");
                     return;
                 }
                 if (player.getInventory().freeSlot() < 1) {
