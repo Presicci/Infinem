@@ -6,7 +6,6 @@ import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.combat.WeaponType;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.player.Title;
 import io.ruin.model.entity.shared.UpdateMask;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
@@ -126,6 +125,22 @@ public class Appearance extends UpdateMask {
      */
 
     private int[] customRenders;
+
+    public void restoreNPCRender(int index) {
+        if (npcId == -1) {
+            removeCustomRenders();
+            return;
+        }
+        NPCDef def = NPCDef.get(npcId);
+        int[] renders = { def.standAnimation, -1, def.walkAnimation, def.walkBackAnimation, def.walkLeftAnimation, def.walkRightAnimation, -1 };
+        setCustomRender(index, renders[index]);
+    }
+
+    public void setCustomRender(int index, int anim) {
+        if (customRenders.length <= index) return;
+        this.customRenders[index] = anim;
+        update();
+    }
 
     public void setCustomRenders(int... renders) {
         this.customRenders = renders;
