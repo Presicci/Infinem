@@ -1989,17 +1989,13 @@ public class Player extends PlayerAttributes {
     @Getter private final Tileman tileman = new Tileman(this);
 
     public void npcAnimate(int id, int... npcIds) {
-        npcAnimate(id, 0, npcIds);
-    }
-
-    public void npcAnimate(int id, int delay, int... npcIds) {
         int playerId = player.getAppearance().getNpcId();
         if (!isPlayer() || !Arrays.stream(npcIds).anyMatch(i -> i == playerId)) return;
         AnimDef def = AnimDef.get(id);
         if (def != null) {
             animTick = Server.currentTick() + def.getDuration();
         }
-        animationUpdate.set(id, delay);
+        animationUpdate.set(id, 0);
     }
 
     @Getter @Expose private final List<TickEvent> tickingEvents = new ArrayList<>();
