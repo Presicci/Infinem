@@ -86414,7 +86414,8 @@
     "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
     "weight": 0.0,
 	"protect_value": 0,
-    "equip_slot": 1
+    "equip_slot": 1,
+    "release": "The monkey scampers back to the warmth of its crate."
   },
   { // Nieve
     "id": 19558,
@@ -109774,7 +109775,8 @@
     "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
     "weight": 0.01,
 	"protect_value": 0,
-    "equip_slot": 1
+    "equip_slot": 1,
+    "release": "The monkey scampers back to the warmth of its crate."
   },
   { // Zombie Monkey
     "id": 24863,
@@ -109782,7 +109784,8 @@
     "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
     "weight": 0.01,
 	"protect_value": 0,
-    "equip_slot": 1
+    "equip_slot": 1,
+    "release": "The monkey scampers back to the warmth of its crate."
   },
   { // Maniacal Monkey
     "id": 24864,
@@ -109790,7 +109793,8 @@
     "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
     "weight": 0.01,
 	"protect_value": 0,
-    "equip_slot": 1
+    "equip_slot": 1,
+    "release": "The monkey scampers back to the warmth of its crate."
   },
   { // Skeleton Monkey
     "id": 24865,
@@ -109798,7 +109802,8 @@
     "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
     "weight": 0.01,
 	"protect_value": 0,
-    "equip_slot": 1
+    "equip_slot": 1,
+    "release": "The monkey scampers back to the warmth of its crate."
   },
   { // Kruk Jr
     "id": 24866,
@@ -109806,7 +109811,8 @@
     "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
     "weight": 0.01,
 	"protect_value": 0,
-    "equip_slot": 1
+    "equip_slot": 1,
+    "release": "The monkey scampers back to the warmth of its crate."
   },
   { // Princely Monkey
     "id": 24867,
@@ -109814,7 +109820,8 @@
     "examine": "A monkey retrieved from the wreckage of Glough's airship laboratory.",
     "weight": 0.01,
 	"protect_value": 0,
-    "equip_slot": 1
+    "equip_slot": 1,
+    "release": "The monkey scampers back to the warmth of its crate."
   },
   { // Reinforced goggles
     "id": 24942,
