@@ -12,9 +12,9 @@
   {
     "id": 245,
     "amount": 1,
-    "x": 2930,
-    "y": 3515,
-    "z": 0,
+    "x": 2938,
+    "y": 3517,
+    "z": 1,
     "world": "ECO",
     "itemName": "Wine of zamorak",
     "respawnSeconds": 60
