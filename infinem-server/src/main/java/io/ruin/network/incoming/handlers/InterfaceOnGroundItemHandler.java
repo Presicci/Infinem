@@ -109,6 +109,11 @@ public class InterfaceOnGroundItemHandler {
             if (groundItem.tile == null) {
                 return;
             }
+            if (!player.getInventory().hasRoomFor(groundItem.id, groundItem.amount)) {
+                player.getMovement().reset();
+                player.sendMessage("Not enough space in your inventory.");
+                return;
+            }
             r.remove();
             player.privateSound(3006, 1, 0);
             player.animate(723, 0);
@@ -128,6 +133,7 @@ public class InterfaceOnGroundItemHandler {
             }
             player.getInventory().add(groundItem.id, groundItem.amount);
             groundItem.remove();
+            groundItem.postPickup(player);
         });
     }
 
