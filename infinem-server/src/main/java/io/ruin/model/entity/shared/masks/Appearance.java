@@ -136,6 +136,15 @@ public class Appearance extends UpdateMask {
         setCustomRender(index, renders[index]);
     }
 
+    public void restoreNPCRenders() {
+        if (npcId == -1) {
+            removeCustomRenders();
+            return;
+        }
+        NPCDef def = NPCDef.get(npcId);
+        setCustomRenders(def.standAnimation, -1, def.walkAnimation, def.walkBackAnimation, def.walkLeftAnimation, def.walkRightAnimation, -1);
+    }
+
     public void setCustomRender(int index, int anim) {
         if (customRenders.length <= index) return;
         this.customRenders[index] = anim;
