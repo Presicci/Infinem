@@ -84,12 +84,8 @@ public class InterfaceOnGroundItemHandler {
         int z = player.getHeight();
         Tile tile = Tile.get(targetX, targetY, z, false);
         GroundItem groundItem = tile.getPickupItem(groundItemId, player.getUserId());
-        if (player.getGameMode().isIronMan() || player.getGameMode().isHardcoreIronman() || player.getGameMode().isUltimateIronman()) {
-            if(!groundItem.droppedByIronPlayer(player)) {
-                player.sendMessage("As an ironman you cannot telegrab items dropped by other players.");
-                return;
-            }
-        }
+        if (!groundItem.check(player))
+            return;
         player.getMovement().setCtrlRun(ctrlRun);
         player.getRouteFinder().routeGroundItem(groundItem  , distance -> player.getMovement().reset());
         RouteType route = player.getRouteFinder().routeAbsolute(groundItem.x  , groundItem.y);
