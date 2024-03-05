@@ -8,6 +8,8 @@ import io.ruin.model.map.object.actions.impl.OldFirePit;
 import io.ruin.model.skills.firemaking.DorgeshKaanLamps;
 import lombok.Getter;
 
+import java.util.function.Predicate;
+
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 8/19/2021
@@ -34,6 +36,7 @@ public enum MapArea {
     COMBAT_TRAINING_CAMP_ENTRANCE(2516, 3357, 2519, 3360, 0, player -> {
         player.getTaskManager().doLookupByUUID(561);    // Enter the Combat Training Camp
     }),
+    WILDERNESS(player -> player.wildernessLevel > 0),
     // Dark caves
     LUMBRIDGE_SWAMP_CAVE(OldFirePit.FirePit.LUMBRIDGE_SWAMP_CAVES_FIRE, 3, 12693, 12949),
     CAVE_OF_HORROR(OldFirePit.FirePit.MOS_LE_HARMLESS_FIRE, 3, 14994, 14995, 15251),
@@ -55,6 +58,7 @@ public enum MapArea {
 
     private OldFirePit.FirePit firePit;
     private final Bounds bounds;
+    private Predicate<Player> predicate;
 
     MapArea(OldFirePit.FirePit firepit, int darknessLevel, int southWestX, int southWestY, int northEastX, int northEastY, int z) {
         this(firepit, darknessLevel, new Bounds(new Position(southWestX, southWestY), new Position(northEastX, northEastY), z));
@@ -106,6 +110,11 @@ public enum MapArea {
         registerOnEnter(bounds, enteredAction);
     }
 
+    MapArea(Predicate<Player> predicate) {
+        this.bounds = null;
+        this.predicate = predicate;
+    }
+
     MapArea(Bounds bounds, MapListener.ExitAction exitAction) {
         this.bounds = bounds;
         registerOnExit(bounds, exitAction);
@@ -120,10 +129,12 @@ public enum MapArea {
     }
 
     public boolean inArea(Player player) {
+        if (predicate != null && predicate.test(player)) return true;
         return bounds.inBounds(player);
     }
 
     public boolean inArea(Position position) {
+        if (bounds == null) return false;
         return bounds.inBounds(position);
     }
 
