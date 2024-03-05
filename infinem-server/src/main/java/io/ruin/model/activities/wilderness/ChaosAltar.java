@@ -99,6 +99,7 @@ public class ChaosAltar {
               player.getStats().addXp(StatType.Prayer, bone.exp * 3.5, true);
               World.sendGraphics(624, 10, 0, player.getAbsX() - 1, player.getAbsY(), 0);
               bone.altarCounter.increment(player, 1);
+              player.getTaskManager().doLookupByUUID(831);  // Sacrifice Some Bones at the Chaos Temple
               event.delay(4);
           }
       });
