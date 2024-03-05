@@ -100,6 +100,8 @@ public class ChaosAltar {
               World.sendGraphics(624, 10, 0, player.getAbsX() - 1, player.getAbsY(), 0);
               bone.altarCounter.increment(player, 1);
               player.getTaskManager().doLookupByUUID(831);  // Sacrifice Some Bones at the Chaos Temple
+              if (bone == Bone.DRAGON_BONES)
+                  player.getTaskManager().doLookupByUUID(846);  // Sacrifice Some Dragon Bones at the Chaos Temple
               event.delay(4);
           }
       });
