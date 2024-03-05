@@ -168,59 +168,64 @@ public class GroundItem {
         return tile == null;
     }
 
+    public boolean check(Player player) {
+        if (isRemoved()) {
+            System.out.println("Can't pick up ground item is removed.");
+            return false;
+        }
+        if (activeOwner != -1 && activeOwner != player.getUserId()) {
+            System.out.println("Can't pick up item not spawned for you.");
+            return false;
+        }
+        if (diedToIron != -1 && diedToIron != player.getUserId()) {
+            return false;
+        }
+        if (player.getGameMode().isIronMan() && originalOwner != -1 && originalOwner != player.getUserId()) {
+            player.sendMessage("Ironmen cannot pick up items dropped by or for other players.");
+            return false;
+        }
+        if (player.getDuel().stage >= 4) {
+            player.sendMessage("You can't pickup items in a duel.");
+            return false;
+        }
+        if (player.joinedTournament) {
+            player.sendMessage("You can't pickup items while you're signed up for a tournament.");
+            return false;
+        }
+        ItemDef def = ItemDef.get(id);
+        if (def.clueType != null && player.getInventory().hasId(def.clueType.clueId) && id == def.clueType.clueId) {
+            player.sendMessage("You already have one of those in your inventory!");
+            return false;
+        }
+        return true;
+    }
+
     /**
      * Pickup
      */
-
     public void pickup(Player player, int distance) {
-        if(isRemoved()) {
-            System.out.println("Can't pick up ground item is removed.");
+        if (!check(player))
             return;
-        }
-        if(activeOwner != -1 && activeOwner != player.getUserId()) {
-            System.out.println("Can't pick up item not spawned for you.");
-            return;
-        }
-        if(diedToIron != -1 && diedToIron != player.getUserId()) {
-            return;
-        }
-        if(player.getGameMode().isIronMan() && originalOwner != -1 && originalOwner != player.getUserId()) {
-            player.sendMessage("Ironmen cannot pick up items dropped by or for other players.");
-            return;
-        }
-        if(player.getDuel().stage >= 4) {
-            player.sendMessage("You can't pickup items in a duel.");
-            return;
-        }
-        if(player.joinedTournament) {
-            player.sendMessage("You can't pickup items while you're signed up for a tournament.");
-            return;
-        }
-        ItemDef def = ItemDef.get(id);
-        if(def.clueType != null && player.getInventory().hasId(def.clueType.clueId) && id == def.clueType.clueId) {
-            player.sendMessage("You already have one of those in your inventory!");
-            return;
-        }
         if (id == Items.WINE_OF_ZAMORAK && originalOwner == -1) {
             if (!WineOfZamorak.takeWine(player))
                 return;
         } else if (player.getInventory().contains(HerbSack.HERB_SACK)
                 && Arrays.stream(HerbSack.GRIMY_HERBS).anyMatch(i -> i == id)
                 && HerbSack.addToSackFromGround(player, id, amount)) {
-        } else if(!player.getLootingBag().isFull() && player.getInventory().hasId(LootingBag.OPENED_LOOTING_BAG) && player.wildernessLevel > 0) {
-            if(player.getLootingBag().add(id, amount, attributes) == 0) {
+        } else if (!player.getLootingBag().isFull() && player.getInventory().hasId(LootingBag.OPENED_LOOTING_BAG) && player.wildernessLevel > 0) {
+            if (player.getLootingBag().add(id, amount, attributes) == 0) {
                 player.sendMessage("Not enough space in your looting bag.");
                 return;
             }
-        } else if(player.getInventory().add(id, amount, attributes) == 0) {
+        } else if (player.getInventory().add(id, amount, attributes) == 0) {
             player.sendMessage("Not enough space in your inventory.");
             return;
         }
         remove();
-        if(distance > 0)
+        if (distance > 0)
             player.animate(832);
         player.privateSound(2582);
-        if(respawnSeconds > 0) {
+        if (respawnSeconds > 0) {
             World.startTask(t -> {
                 t.sleep(respawnSeconds * 1000L);
                 t.sync(() -> this.spawnWithRespawn(respawnSeconds));
