@@ -85,21 +85,21 @@ public class ChaosAltar {
     private static void boneOnAltar(Player player, Item item, Object obj) {
       player.startEvent(event -> {
           while(true) {
-              Item bone = player.getInventory().findItem(item.getId());
-              if(bone == null)
+              if (!player.getInventory().hasId(item.getId()))
                   break;
-              if(Random.rollDie(100, (int) player.chaosAltarBoneChance)) {
+              Bone bone = Bone.get(item.getId());
+              if (bone == null)
+                  break;
+              if(Random.rollDie(2, 1)) {
                   player.sendMessage("The Dark Lord spares your sacrifice but still rewards you for your efforts.");
-                  player.chaosAltarBoneChance = player.chaosAltarBoneChance / 2;
               } else {
-                  player.chaosAltarBoneChance = 50;
                   player.getInventory().remove(item.getId(), 1);
               }
               player.animate(3705);
-              player.getStats().addXp(StatType.Prayer, Bone.get(item.getId()).exp * 1.5, true);
+              player.getStats().addXp(StatType.Prayer, bone.exp * 3.5, true);
               World.sendGraphics(624, 10, 0, player.getAbsX() - 1, player.getAbsY(), 0);
-              Bone.get(item.getId()).altarCounter.increment(player, 1);
-              event.delay(2);
+              bone.altarCounter.increment(player, 1);
+              event.delay(4);
           }
       });
     }

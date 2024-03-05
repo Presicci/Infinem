@@ -678,8 +678,6 @@ public abstract class PlayerAttributes extends Entity {
 
     public TickDelay edgevilleStallCooldown = new TickDelay();
 
-    @Expose public double chaosAltarBoneChance = 50;
-
     /**
      * Appreciation points
      */
