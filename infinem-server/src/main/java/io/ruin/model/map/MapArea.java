@@ -29,6 +29,9 @@ public enum MapArea {
         player.getTaskManager().doLookupByUUID(575, 1); // Enter the Fishing Guild
     })),
     MAGE_ARENA(3093, 3921, 3117, 3946, 0),
+    MAGE_ARENA_BANK(2528, 4711, 2549, 4723, 0, player -> {
+        player.getTaskManager().doLookupByUUID(844);    // Enter the Mage Arena Bank
+    }),
     WILDERNESS_RESOURCE_AREA(3174, 3924, 3196, 3944, 0),
     FALADOR_FARM(3044, 3300, 3065, 3318, 0),
     CRAFTING_GUILD(2929, 3279, 2943, 3288, 0),
