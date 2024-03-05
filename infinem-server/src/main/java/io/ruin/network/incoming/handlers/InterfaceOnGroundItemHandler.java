@@ -5,6 +5,8 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceAction;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.impl.WineOfZamorak;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.map.Tile;
@@ -124,6 +126,9 @@ public class InterfaceOnGroundItemHandler {
             if(groundItem.isRemoved()) {
                 player.sendMessage("It's gone!");
                 return;
+            }
+            if (groundItem.id == Items.WINE_OF_ZAMORAK && groundItem.originalOwner == -1) {
+                WineOfZamorak.telegrabWine(player);
             }
             player.getInventory().add(groundItem.id, groundItem.amount);
             groundItem.remove();

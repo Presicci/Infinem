@@ -4,6 +4,8 @@ import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.impl.WineOfZamorak;
 import io.ruin.model.item.actions.impl.storage.HerbSack;
 import io.ruin.model.item.actions.impl.storage.LootingBag;
 import io.ruin.model.map.Position;
@@ -199,7 +201,10 @@ public class GroundItem {
             player.sendMessage("You already have one of those in your inventory!");
             return;
         }
-        if (player.getInventory().contains(HerbSack.HERB_SACK)
+        if (id == Items.WINE_OF_ZAMORAK && originalOwner == -1) {
+            if (!WineOfZamorak.takeWine(player))
+                return;
+        } else if (player.getInventory().contains(HerbSack.HERB_SACK)
                 && Arrays.stream(HerbSack.GRIMY_HERBS).anyMatch(i -> i == id)
                 && HerbSack.addToSackFromGround(player, id, amount)) {
         } else if(!player.getLootingBag().isFull() && player.getInventory().hasId(LootingBag.OPENED_LOOTING_BAG) && player.wildernessLevel > 0) {
