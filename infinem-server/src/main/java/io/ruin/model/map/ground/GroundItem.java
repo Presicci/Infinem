@@ -200,6 +200,22 @@ public class GroundItem {
         return true;
     }
 
+    public void postPickup(Player player) {
+        if (respawnSeconds > 0) {
+            World.startTask(t -> {
+                t.sleep(respawnSeconds * 1000L);
+                t.sync(() -> this.spawnWithRespawn(respawnSeconds));
+            });
+        }
+        Loggers.logPickup(player.getUserId(), player.getName(), player.getIp(), id, amount, x, y, z);
+        if (getTimeDropped() > 0) { // this item was manually dropped by someone, log as trade
+            Loggers.logDropTrade(player.getUserId(), originalOwner, player.getIp(), getDropperIp(), player.getName(), getDropperName(), id, amount, x, y, z, getTimeDropped());
+        } else {
+            if (id == 11849)
+                player.getTaskManager().doLookupByUUID(52, 1);  // Obtain a Mark of Grace
+        }
+    }
+
     /**
      * Pickup
      */
@@ -225,19 +241,7 @@ public class GroundItem {
         if (distance > 0)
             player.animate(832);
         player.privateSound(2582);
-        if (respawnSeconds > 0) {
-            World.startTask(t -> {
-                t.sleep(respawnSeconds * 1000L);
-                t.sync(() -> this.spawnWithRespawn(respawnSeconds));
-            });
-        }
-        Loggers.logPickup(player.getUserId(), player.getName(), player.getIp(), id, amount, x, y, z);
-        if (getTimeDropped() > 0) { // this item was manually dropped by someone, log as trade
-            Loggers.logDropTrade(player.getUserId(), originalOwner, player.getIp(), getDropperIp(), player.getName(), getDropperName(), id, amount, x, y, z, getTimeDropped());
-        } else {
-            if (id == 11849)
-                player.getTaskManager().doLookupByUUID(52, 1);  // Obtain a Mark of Grace
-        }
+        postPickup(player);
     }
 
     /**
