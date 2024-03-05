@@ -84,6 +84,16 @@ public class CollectionLog {
     }
 
     /**
+     * Collects an item into the collection log if it isn't already collected.
+     *
+     * @param item The item being collected.
+     */
+    public boolean collectIfNotCollected(Item item) {
+        if (collected.containsKey(item.getId())) return false;
+        return collect(item);
+    }
+
+    /**
      * Collects an item into the collection log.
      *
      * @param item The item being collected.
