@@ -7,6 +7,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceAction;
 import io.ruin.model.inter.InterfaceHandler;
+import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.*;
 import io.ruin.model.map.Tile;
@@ -77,7 +78,7 @@ public class TabInventory {
         }
         if(option == def.dropOption) {
             Tile tile = player.getPosition().getTile();
-            if(tile != null && !tile.allowDrop) {
+            if (tile != null && !tile.allowDrop) {
                 player.sendMessage("You can't drop items here.");
                 return;
             }
@@ -85,11 +86,11 @@ public class TabInventory {
                 player.sendMessage("You cannot drop items while in jail.");
                 return;
             }
-            if(player.getDuel().stage >= 4) {
+            if (player.getDuel().stage >= 4) {
                 player.sendMessage("You can't drop items in a duel.");
                 return;
             }
-            if(player.joinedTournament) {
+            if (player.joinedTournament) {
                 player.sendMessage("You can't drop items while you're signed up for a tournament.");
                 return;
             }
@@ -97,21 +98,26 @@ public class TabInventory {
                 player.sendMessage("You can't drop items while in building mode.");
                 return;
             }
-            if(player.supplyChestRestricted) {
+            if (player.supplyChestRestricted) {
                 player.sendMessage("The power of the supply chest prevents you from dropping items!");
                 return;
             }
-            if(player.wildernessLevel > 0 && BloodyChest.hasBloodyKey(player)) {
+            if (player.wildernessLevel > 0 && BloodyChest.hasBloodyKey(player)) {
                 player.sendMessage("The power of your bloody key prevents you from dropping items!");
             }
             item.remove();
             player.resetActions(true, false, true);
             player.privateSound(2739);
-            if(player.wildernessLevel > 0) {
+            if (def.inventoryOptions[option - 1].equalsIgnoreCase("release")) {
+                String releaseString = def.getCustomValueOrDefault("RELEASE", "");
+                if (!releaseString.isEmpty()) {
+                    player.dialogue(new ItemDialogue().one(itemId, releaseString));
+                }
+            } else if (player.wildernessLevel > 0) {
                 /**
                  * Dropping in the wilderness
                  */
-                if(def.consumable || !def.tradeable)
+                if (def.consumable || !def.tradeable)
                     new GroundItem(item).owner(player).droppedBy(player).position(player.getPosition()).spawnPrivate();
                 else
                     new GroundItem(item).owner(player).droppedBy(player).position(player.getPosition()).spawnPublic();

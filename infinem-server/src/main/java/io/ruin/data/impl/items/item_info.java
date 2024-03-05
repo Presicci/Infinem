@@ -114,7 +114,8 @@ public class item_info extends DataFile {
             def.weaponType = temp.weapon_type == null ? null : weapon_types.MAP.get(temp.weapon_type);
             def.rangedWeapon = temp.ranged_weapon == null ? null : RangedWeapon.valueOf(temp.ranged_weapon);
             def.rangedAmmo = temp.ranged_ammo == null ? null : RangedAmmo.valueOf(temp.ranged_ammo);
-
+            if (temp.release != null)
+                def.custom_values.put("RELEASE", temp.release);
         });
         ItemDef.forEach(this::loadMisc);
         shield_types.unload();
@@ -179,6 +180,7 @@ public class item_info extends DataFile {
         /**
          * Attributes that don't have to be set.
          */
+        @Expose public String release;
         @Expose public Integer equip_slot;
         @Expose public Boolean two_handed;
         @Expose public Boolean hide_hair;
