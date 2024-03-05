@@ -459,6 +459,15 @@
     "walkRange": 1
   },
   {
+    "name": "Monk of Zamorak",
+    "id": 528,
+    "x": 2939,
+    "y": 3517,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
     "name": "Helemos",
     "id": 4924,
     "x": 2894,
