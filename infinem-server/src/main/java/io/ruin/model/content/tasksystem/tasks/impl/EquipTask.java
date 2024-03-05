@@ -9,7 +9,6 @@ import io.ruin.model.item.containers.equipment.EquipAction;
  * Created on 4/4/2022
  */
 public enum EquipTask {
-
     FIRE_CAPE(418, Items.FIRE_CAPE),    // Equip a Fire Cape
     INFERNAL_CAPE(429, Items.INFERNAL_CAPE, MaxCapeVariants.MaxCapes.INFERNAL.newCapeId),   // Equip an Infernal Cape
     SPINY_HELMET(29, Items.SPINY_HELMET),   // Equip a Spiny Helmet
@@ -39,7 +38,8 @@ public enum EquipTask {
     GOD_CAPE(857,   // Equip a God Cape
             Items.SARADOMIN_CAPE, Items.ZAMORAK_CAPE, Items.GUTHIX_CAPE,
             Items.IMBUED_SARADOMIN_CAPE, Items.IMBUED_ZAMORAK_CAPE, Items.IMBUED_GUTHIX_CAPE
-    )
+    ),
+    MONKEY_BACKPACK(568, 19556),    // Equip a Monkey Backpack
     ;
 
     private final int uuid;
