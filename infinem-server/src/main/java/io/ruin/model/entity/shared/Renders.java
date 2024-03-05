@@ -20,4 +20,11 @@ public class Renders {
 
     public static final int[] SWIM = {773, 6993, 6993, 6993, 6993, 6993, -1};
 
+    /*
+     * Ape atoll agility
+     */
+    public static final int[] APE_ATOLL_MONKEY_BARS = {3483, 3483, 3483, 3483, 3483, 3483, -1};
+
+    public static final int[] APE_ATOLL_TROPICAL_TREE = {3494, 3494, 3494, 3494, 3494, 3494, -1};
+
 }
