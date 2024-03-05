@@ -10,7 +10,11 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.map.Direction;
+import io.ruin.model.map.Position;
+import io.ruin.model.map.Tile;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
@@ -20,6 +24,14 @@ import java.util.Arrays;
  * Created on 3/4/2024
  */
 public class ApeAtollCourse {
+
+    private static final GameObject[] OBSTACLES = {
+            Tile.get(new Position(2753, 2741, 0), true).getObject(15414, 10, 3),    // Tropical tree
+            Tile.get(new Position(2752, 2741, 2), true).getObject(15417, 10, 3),    // Monkeybars
+            Tile.get(new Position(2746, 2741, 0), true).getObject(1747, 22, 2),     // Skull slope
+            Tile.get(new Position(2752, 2731, 0), true).getObject(15487, 10, 0),    // Rope swing
+            Tile.get(new Position(2757, 2734, 0), true).getObject(16062, 10, 0)     // Tropical tree
+    };
 
     private static final int[] MONKEY_IDS = { 1462, 1463, 5257 };
 
@@ -51,6 +63,8 @@ public class ApeAtollCourse {
                 e.delay(1);
                 player.getStats().addXp(StatType.Agility, 40.0, true);
                 player.unlock();
+                e.delay(1);
+                TricksterAgility.attemptNext(player, OBSTACLES[0]);
             });
         });
         ObjectAction.register(15414, 2753, 2741, 0, "climb", (player, obj) -> {
@@ -68,6 +82,8 @@ public class ApeAtollCourse {
                 player.getMovement().teleport(2753, 2742, 2);
                 player.getStats().addXp(StatType.Agility, 40.0, true);
                 player.unlock();
+                e.delay(1);
+                TricksterAgility.attemptNext(player, OBSTACLES[1]);
             });
         });
         ObjectAction.register(15417, 2752, 2741, 2, "swing across", (player, obj) -> {
@@ -95,6 +111,8 @@ public class ApeAtollCourse {
                 player.getMovement().teleport(2747, 2741, 0);
                 player.getStats().addXp(StatType.Agility, 40.0, true);
                 player.unlock();
+                e.delay(1);
+                TricksterAgility.attemptNext(player, OBSTACLES[2]);
             });
         });
         ObjectAction.register(1747, 2746, 2741, 0, "climb-up", (player, obj) -> {
@@ -115,6 +133,8 @@ public class ApeAtollCourse {
                 player.putAttribute("LAST_AGIL_OBJ", obj.id);
                 player.getStats().addXp(StatType.Agility, 60.0, true);
                 player.unlock();
+                e.delay(1);
+                TricksterAgility.attemptNext(player, OBSTACLES[3]);
             });
         });
         ObjectAction.register(15487, 2752, 2731, 0, "swing", (player, obj) -> {
@@ -148,6 +168,8 @@ public class ApeAtollCourse {
                     player.putAttribute("LAST_AGIL_OBJ", obj.id);
                 player.getStats().addXp(StatType.Agility, 100.0, true);
                 player.unlock();
+                e.delay(1);
+                TricksterAgility.attemptNext(player, OBSTACLES[4]);
             });
         });
         ObjectAction.register(16062, 2757, 2734, 0, "climb-down", (player, obj) -> {
