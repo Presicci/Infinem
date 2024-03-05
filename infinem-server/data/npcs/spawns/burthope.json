@@ -406,7 +406,7 @@
   },
   {
     "name": "Monk of Zamorak",
-    "id": 520,
+    "id": 528,
     "x": 2935,
     "y": 3515,
     "z": 0,
@@ -415,17 +415,17 @@
   },
   {
     "name": "Monk of Zamorak",
-    "id": 520,
-    "x": 2933,
-    "y": 3515,
+    "id": 528,
+    "x": 2932,
+    "y": 3516,
     "z": 0,
     "direction": "S",
     "walkRange": 3
   },
   {
     "name": "Monk of Zamorak",
-    "id": 519,
-    "x": 2935,
+    "id": 527,
+    "x": 2936,
     "y": 3515,
     "z": 0,
     "direction": "S",
@@ -433,7 +433,7 @@
   },
   {
     "name": "Monk of Zamorak",
-    "id": 519,
+    "id": 527,
     "x": 2933,
     "y": 3515,
     "z": 0,
@@ -442,16 +442,16 @@
   },
   {
     "name": "Monk of Zamorak",
-    "id": 520,
-    "x": 2935,
-    "y": 3515,
+    "id": 528,
+    "x": 2934,
+    "y": 3514,
     "z": 0,
     "direction": "S",
     "walkRange": 5
   },
   {
     "name": "Monk of Zamorak",
-    "id": 520,
+    "id": 528,
     "x": 2939,
     "y": 3516,
     "z": 0,
