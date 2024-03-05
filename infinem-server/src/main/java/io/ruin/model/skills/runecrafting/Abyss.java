@@ -325,7 +325,10 @@ public class Abyss {
             });
         }
         for (Rift rift : Rift.values())
-            ObjectAction.register(rift.objectID, 1, (player, obj) -> player.getMovement().teleport(rift.position));
+            ObjectAction.register(rift.objectID, 1, (player, obj) -> {
+                player.getMovement().teleport(rift.position);
+                player.getTaskManager().doLookupByUUID(832);    // Use the Abyss
+            });
 
         /**
          * Entrance/exit to abyssal sire
