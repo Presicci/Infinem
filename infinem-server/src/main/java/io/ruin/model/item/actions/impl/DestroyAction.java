@@ -8,10 +8,11 @@ public class DestroyAction {
 
     static {
         ItemDef.forEach(def -> ItemAction.registerInventory(def.id, "destroy", (player, item) -> {
+            String destroyString = def.getCustomValueOrDefault("DESTROY", "Warning: This action cannot be undone.");
             player.dialogue(
                     new YesNoDialogue(
                             "Are you sure you want to destroy this item?",
-                            "Warning: This action cannot be undone.",
+                            destroyString,
                             item, item::remove
                     )
             );
