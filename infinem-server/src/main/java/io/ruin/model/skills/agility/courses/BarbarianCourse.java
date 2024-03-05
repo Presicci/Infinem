@@ -59,6 +59,8 @@ public class BarbarianCourse {
          * Log balance
          */
         ObjectAction.register(23144, "walk-across", (player, obj) -> player.startEvent(event -> {
+            if (!player.getStats().check(StatType.Agility, 35, "attempt this"))
+                return;
             player.lock(LockType.FULL_DELAY_DAMAGE);
             player.sendMessage("You walk carefully across the slippery log...");
             player.stepAbs(2541, 3546, StepType.FORCE_WALK);
@@ -78,6 +80,8 @@ public class BarbarianCourse {
          * Obstacle net
          */
         ObjectAction.register(20211, "climb-over", (player, obj) -> player.startEvent(event -> {
+            if (!player.getStats().check(StatType.Agility, 35, "attempt this"))
+                return;
             if (player.getAbsX() < obj.x) {
                 return;
             }
@@ -96,6 +100,8 @@ public class BarbarianCourse {
          * Balancing ledge
          */
         ObjectAction.register(23547, "walk-across", (player, obj) -> player.startEvent(event -> {
+            if (!player.getStats().check(StatType.Agility, 35, "attempt this"))
+                return;
             player.lock(LockType.FULL_DELAY_DAMAGE);
             player.animate(753);
             player.stepAbs(2532, 3547, StepType.FORCE_WALK);
@@ -115,6 +121,8 @@ public class BarbarianCourse {
          * Ladder
          */
         ObjectAction.register(42487, "climb-down", (player, obj) -> {
+            if (!player.getStats().check(StatType.Agility, 35, "attempt this"))
+                return;
             player.startEvent(e -> {
                 player.lock(LockType.FULL_DELAY_DAMAGE);
                 player.animate(827);
@@ -130,6 +138,8 @@ public class BarbarianCourse {
          * Crumbling wall one!
          */
         ObjectAction.register(1948, 2536, 3553, 0, "climb-over", (player, obj) -> player.startEvent(event -> {
+            if (!player.getStats().check(StatType.Agility, 35, "attempt this"))
+                return;
             player.lock(LockType.FULL_DELAY_DAMAGE);
             player.animate(839);
             player.getMovement().force(2, 0, 0, 0, 0, 60, Direction.EAST);
@@ -146,6 +156,8 @@ public class BarbarianCourse {
          * Crumbling wall two!
          */
         ObjectAction.register(1948, 2539, 3553, 0, "climb-over", (player, obj) -> player.startEvent(event -> {
+            if (!player.getStats().check(StatType.Agility, 35, "attempt this"))
+                return;
             player.lock(LockType.FULL_DELAY_DAMAGE);
             player.animate(839);
             player.getMovement().force(2, 0, 0, 0, 0, 60, Direction.EAST);
@@ -160,6 +172,8 @@ public class BarbarianCourse {
          * Last crumbling wall! :- )
          */
         ObjectAction.register(1948, 2542, 3553, 0, "climb-over", (player, obj) -> player.startEvent(event -> {
+            if (!player.getStats().check(StatType.Agility, 35, "attempt this"))
+                return;
             player.lock(LockType.FULL_DELAY_DAMAGE);
             player.animate(839);
             player.getMovement().force(2, 0, 0, 0, 0, 60, Direction.EAST);
