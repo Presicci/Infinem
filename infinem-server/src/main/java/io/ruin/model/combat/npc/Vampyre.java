@@ -16,9 +16,9 @@ public class Vampyre extends NPCCombat {
         npc.hitListener = new HitListener().preDefend(this::preDefend);
     }
 
-    private boolean isSilver(String name) {
+    public static boolean isSilver(String name) {
         name = name.toLowerCase();
-        return name.contains("silver") || name.contains("ivandis") || name.contains("blisterwood");
+        return name.contains("silver") || name.contains("ivandis") || name.contains("blisterwood") || name.equalsIgnoreCase("darklight") || name.equalsIgnoreCase("arclight");
     }
 
     public void preDefend(Hit hit) {
