@@ -13,7 +13,6 @@ import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Tile;
 
 public enum TabEmote {
-
     YES(0, 855),
     NO(1, 856),
     BOW(2, 858),
@@ -68,7 +67,7 @@ public enum TabEmote {
     // Custom for clue
     BULL_ROARER(51, -1, 81);
 
-    public int slot, animationID, gfxId;
+    public final int slot, animationID, gfxId;
 
     TabEmote(int slot, int animationID) {
         this(slot, animationID, -1);
@@ -80,6 +79,56 @@ public enum TabEmote {
         this.gfxId = gfxId;
     }
 
+    public void perform(Player player) {
+        if (player.emoteDelay.isDelayed())
+            return;
+        int emoteId = animationID;
+        int gfx = gfxId;
+        if (slot == TabEmote.SKILL_CAPE.slot) {
+            emoteId = skillCapeAnim(player);
+            gfx = skillCapeGraphic(player);
+            if (emoteId == -1) {
+                player.sendMessage("You need to be wearing a Skill Cape to perform this emote.");
+                return;
+            }
+            int finalEmoteId = emoteId;
+            player.startEvent(event -> {
+                player.lock();
+                AnimDef def = AnimDef.get(finalEmoteId);
+                if (def != null)
+                    event.delay(def.getTickDelay());
+                player.unlock();
+            });
+        } else if (slot == TabEmote.DANCE.slot && player.getEquipment().getId(Equipment.SLOT_LEGS) == 10394) {
+            emoteId = 5316;
+        } else if (slot == TabEmote.CRAZY_DANCE.slot) {
+            if (Random.rollDie(2))
+                emoteId = 7536;
+            else
+                emoteId = 7537;
+        }
+        player.animate(emoteId);
+        player.putTemporaryAttribute(AttributeKey.LAST_EMOTE, this);
+        if (gfx != -1)
+            player.graphics(gfx);
+        Tile tile = player.getPosition().getTile();
+        if (tile.emoteAction != null) {
+            tile.emoteAction.accept(player, this);
+        }
+        if (player.yesDelay.isDelayed())
+            return;
+        if (this == YES && !player.yesDelay.isDelayed()) {
+            player.yesDelay.delay(3);
+        }
+        if (this == NO && !player.noDelay.isDelayed()) {
+            player.noDelay.delay(2);
+        }
+        AnimDef def = AnimDef.get(emoteId);
+        if (def != null)
+            player.emoteDelay.delay(def.getTickDelay());
+        player.resetSteps();
+    }
+
     static {
         InterfaceHandler.register(Interface.EMOTE, h -> h.actions[1] = (SlotAction) (p, slot) -> {
             TabEmote[] emotes = values();
@@ -88,56 +137,8 @@ public enum TabEmote {
             TabEmote emote = emotes[slot];
             if(emote == null)
                 return;
-            if(p.emoteDelay.isDelayed())
-                return;
-
-            int emoteId = emote.animationID;
-            if(slot == TabEmote.SKILL_CAPE.slot) {
-                emote.animationID = skillCapeAnim(p);
-                emote.gfxId = skillCapeGraphic(p);
-                if(emote.animationID == -1) {
-                    p.sendMessage("You need to be wearing a Skill Cape to perform this emote.");
-                    return;
-                }
-                p.startEvent(event -> {
-                    p.lock();
-                    AnimDef def = AnimDef.get(emote.animationID);
-                    if(def != null)
-                        event.delay(def.getTickDelay());
-                    p.unlock();
-                });
-            } else if (slot == TabEmote.DANCE.slot && p.getEquipment().getId(Equipment.SLOT_LEGS) == 10394) {
-                emoteId = 5316;
-            } else if (slot == TabEmote.CRAZY_DANCE.slot) {
-                if (Random.rollDie(2))
-                    emoteId = 7536;
-                else
-                    emoteId = 7537;
-            }
-
-            p.animate(emoteId);
-            p.putTemporaryAttribute(AttributeKey.LAST_EMOTE, emote);
-            if(emote.gfxId != -1)
-                p.graphics(emote.gfxId);
-            Tile tile = p.getPosition().getTile();
-            if (tile.emoteAction != null) {
-                tile.emoteAction.accept(p, emote);
-            }
-            if(p.yesDelay.isDelayed())
-                return;
-            if(emote == YES && !p.yesDelay.isDelayed()) {
-                p.yesDelay.delay(3);
-            }
-            if(emote == NO && !p.noDelay.isDelayed()) {
-                p.noDelay.delay(2);
-            }
-
-            AnimDef def = AnimDef.get(emote.animationID);
-            if(def != null)
-                p.emoteDelay.delay(def.getTickDelay());
-            p.resetSteps();
+            emote.perform(p);
         });
-
         LoginListener.register(player -> {
             //Unlock all the emotes
             Config.EMOTES.set(player, 16777215);
@@ -149,122 +150,123 @@ public enum TabEmote {
         });
     }
 
+    private static boolean isMaxCape(int capeId) {
+        return capeId == 13280 || capeId == 13329 || capeId == 13331 || capeId == 13333 || capeId == 13335
+                || capeId == 13337 || capeId == 13342 || capeId == 20760 || capeId == 21776 || capeId == 21780
+                || capeId == 21784 || capeId == 21898 || capeId == 21285;
+    }
+
     private static int skillCapeAnim(Player player) {
         int capeId = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        if(capeId == 9747 || capeId == 9748) //Attack
+        if (capeId == 9747 || capeId == 9748) //Attack
             return 4959;
-        if(capeId == 9753 || capeId == 9754) //Defence
+        if (capeId == 9753 || capeId == 9754) //Defence
             return 4961;
-        if(capeId == 9750 || capeId == 9751) //Strength
+        if (capeId == 9750 || capeId == 9751) //Strength
             return 4981;
-        if(capeId == 9768 || capeId == 9769) //Hitpoints
+        if (capeId == 9768 || capeId == 9769) //Hitpoints
             return 4971;
-        if(capeId == 9756 || capeId == 9757) //Ranged
+        if (capeId == 9756 || capeId == 9757) //Ranged
             return 4973;
-        if(capeId == 9762 || capeId == 9763) //Magic
+        if (capeId == 9762 || capeId == 9763) //Magic
             return 4939;
-        if(capeId == 9759 || capeId == 9760) //Prayer
+        if (capeId == 9759 || capeId == 9760) //Prayer
             return 4979;
-        if(capeId == 9801 || capeId == 9802) //Cooking
+        if (capeId == 9801 || capeId == 9802) //Cooking
             return 4955;
-        if(capeId == 9807 || capeId == 9808) //Woodcutting
+        if (capeId == 9807 || capeId == 9808) //Woodcutting
             return 4957;
-        if(capeId == 9783 || capeId == 9784) //Fletching
+        if (capeId == 9783 || capeId == 9784) //Fletching
             return 4937;
-        if(capeId == 9798 || capeId == 9799) //Fishing
+        if (capeId == 9798 || capeId == 9799) //Fishing
             return 4951;
-        if(capeId == 9804 || capeId == 9805) //Firemaking
+        if (capeId == 9804 || capeId == 9805) //Firemaking
             return 4975;
-        if(capeId == 9780 || capeId == 9781) //Crafting
+        if (capeId == 9780 || capeId == 9781) //Crafting
             return 4949;
-        if(capeId == 9795 || capeId == 9796) //Smithing
+        if (capeId == 9795 || capeId == 9796) //Smithing
             return 4943;
-        if(capeId == 9792 || capeId == 9793) //Mining
+        if (capeId == 9792 || capeId == 9793) //Mining
             return 4941;
-        if(capeId == 9774 || capeId == 9775) //Herblore
+        if (capeId == 9774 || capeId == 9775) //Herblore
             return 4969;
-        if(capeId == 9771 || capeId == 9772) //Agility
+        if (capeId == 9771 || capeId == 9772) //Agility
             return 4977;
-        if(capeId == 9777 || capeId == 9778) //Thieving
+        if (capeId == 9777 || capeId == 9778) //Thieving
             return 4965;
-        if(capeId == 9786 || capeId == 9787) //Slayer
+        if (capeId == 9786 || capeId == 9787) //Slayer
             return 4967;
-        if(capeId == 9810 || capeId == 9811) //Farming
+        if (capeId == 9810 || capeId == 9811) //Farming
             return 4963;
-        if(capeId == 9765 || capeId == 9766) //Runecrafting
+        if (capeId == 9765 || capeId == 9766) //Runecrafting
             return 4947;
-        if(capeId == 9789 || capeId == 9790) //Construction
+        if (capeId == 9789 || capeId == 9790) //Construction
             return 4953;
-        if(capeId == 9948 || capeId == 9949) //Hunter
+        if (capeId == 9948 || capeId == 9949) //Hunter
             return 5158;
-        if(capeId == 9813) //Quest
+        if (capeId == 9813) //Quest
             return 4945;
-        if(capeId == 13069) //Achievement
+        if (capeId == 13069) //Achievement
             return 7121;
-        if(capeId == 13280 || capeId == 13329 || capeId == 13331 || capeId == 13333 || capeId == 13335
-                || capeId == 13337 || capeId == 13342 || capeId == 20760 || capeId == 21776 || capeId == 21780
-                || capeId == 21784 || capeId == 21898 || capeId == 21285 ) //Max cape
+        if (isMaxCape(capeId))
             return 7121;
         return -1;
     }
 
     private static int skillCapeGraphic(Player player) {
         int capeId = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        if(capeId == 9747 || capeId == 9748) //Attack
+        if (capeId == 9747 || capeId == 9748) //Attack
             return 823;
-        if(capeId == 9753 || capeId == 9754) //Defence
+        if (capeId == 9753 || capeId == 9754) //Defence
             return 824;
-        if(capeId == 9750 || capeId == 9751) //Strength
+        if (capeId == 9750 || capeId == 9751) //Strength
             return 828;
-        if(capeId == 9768 || capeId == 9769) //Hitpoints
+        if (capeId == 9768 || capeId == 9769) //Hitpoints
             return 833;
-        if(capeId == 9756 || capeId == 9757) //Ranged
+        if (capeId == 9756 || capeId == 9757) //Ranged
             return 832;
-        if(capeId == 9762 || capeId == 9763) //Magic
+        if (capeId == 9762 || capeId == 9763) //Magic
             return 813;
-        if(capeId == 9759 || capeId == 9760) //Prayer
+        if (capeId == 9759 || capeId == 9760) //Prayer
             return 829;
-        if(capeId == 9801 || capeId == 9802) //Cooking
+        if (capeId == 9801 || capeId == 9802) //Cooking
             return 821;
-        if(capeId == 9807 || capeId == 9808) //Woodcutting
+        if (capeId == 9807 || capeId == 9808) //Woodcutting
             return 822;
-        if(capeId == 9783 || capeId == 9784) //Fletching
+        if (capeId == 9783 || capeId == 9784) //Fletching
             return 812;
-        if(capeId == 9798 || capeId == 9799) //Fishing
+        if (capeId == 9798 || capeId == 9799) //Fishing
             return 819;
-        if(capeId == 9804 || capeId == 9805) //Firemaking
+        if (capeId == 9804 || capeId == 9805) //Firemaking
             return 831;
-        if(capeId == 9780 || capeId == 9781) //Crafting
+        if (capeId == 9780 || capeId == 9781) //Crafting
             return 818;
-        if(capeId == 9795 || capeId == 9796) //Smithing
+        if (capeId == 9795 || capeId == 9796) //Smithing
             return 815;
-        if(capeId == 9792 || capeId == 9793) //Mining
+        if (capeId == 9792 || capeId == 9793) //Mining
             return 814;
-        if(capeId == 9774 || capeId == 9775) //Herblore
+        if (capeId == 9774 || capeId == 9775) //Herblore
             return 835;
-        if(capeId == 9771 || capeId == 9772) //Agility
+        if (capeId == 9771 || capeId == 9772) //Agility
             return 830;
-        if(capeId == 9777 || capeId == 9778) //Thieving
+        if (capeId == 9777 || capeId == 9778) //Thieving
             return 826;
-        if(capeId == 9786 || capeId == 9787) //Slayer
+        if (capeId == 9786 || capeId == 9787) //Slayer
             return 827;
-        if(capeId == 9810 || capeId == 9811) //Farming
+        if (capeId == 9810 || capeId == 9811) //Farming
             return 825;
-        if(capeId == 9765 || capeId == 9766) //Runecrafting
+        if (capeId == 9765 || capeId == 9766) //Runecrafting
             return 817;
-        if(capeId == 9789 || capeId == 9790) //Construction
+        if (capeId == 9789 || capeId == 9790) //Construction
             return 820;
-        if(capeId == 9948 || capeId == 9949) //Hunter
-            return 907 ;
-        if(capeId == 9813) //Quest
+        if (capeId == 9948 || capeId == 9949) //Hunter
+            return 907;
+        if (capeId == 9813) //Quest
             return 816;
-        if(capeId == 13069) //Achievement
+        if (capeId == 13069) //Achievement
             return 1286;
-        if(capeId == 13280 || capeId == 13329 || capeId == 13331 || capeId == 13333 || capeId == 13335 ||
-                capeId == 13337 || capeId == 13342 || capeId == 20760 || capeId == 21776 || capeId == 21780 ||
-                capeId == 21784 || capeId == 21898 || capeId == 21285 ) //Max cape
+        if (isMaxCape(capeId))
             return 1286;
         return -1;
     }
-
 }
