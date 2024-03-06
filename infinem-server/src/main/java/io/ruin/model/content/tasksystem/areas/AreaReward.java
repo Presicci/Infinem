@@ -41,15 +41,15 @@ public enum AreaReward {
      * Desert rewards
      */
     DESERT_AMULET_1(TaskArea.DESERT, AreaTaskTier.EASY, "Unlocks the Desert Amulet 1"),
-    PHAROH_SCEPTRE_CHARGES_10(TaskArea.DESERT, AreaTaskTier.EASY, "Pharaoh's sceptre can hold up to 10 charges"),
+    //PHAROH_SCEPTRE_CHARGES_10(TaskArea.DESERT, AreaTaskTier.EASY, "Pharaoh's sceptre can hold up to 10 charges"),
     NOTED_GOAT_HORN(TaskArea.DESERT, AreaTaskTier.EASY, "Goats will always drop noted desert goat horn"),
     //Simon Templeton will now buy your noted artefacts too
     DESERT_AMULET_2(TaskArea.DESERT, AreaTaskTier.MEDIUM, "Unlocks the Desert Amulet 2",
             "One teleport to Nardah per day"),
-    PHAROH_SCEPTRE_CHARGES_25(TaskArea.DESERT, AreaTaskTier.MEDIUM, "Pharaoh's sceptre can hold up to 25 charges"),
+    //PHAROH_SCEPTRE_CHARGES_25(TaskArea.DESERT, AreaTaskTier.MEDIUM, "Pharaoh's sceptre can hold up to 25 charges"),
     DESERT_AMULET_3(TaskArea.DESERT, AreaTaskTier.HARD, "Unlocks the Desert Amulet 3"),
-    PHAROH_SCEPTRE_CHARGES_50(TaskArea.DESERT, AreaTaskTier.HARD, "Pharaoh's sceptre can hold up to 50 charges"),
-    AL_KHARID_PALACE_SHORTCUT(TaskArea.DESERT, AreaTaskTier.HARD, "Access to the big window shortcut in Al Kharid Palace"),
+    //PHAROH_SCEPTRE_CHARGES_50(TaskArea.DESERT, AreaTaskTier.HARD, "Pharaoh's sceptre can hold up to 50 charges"),
+    //AL_KHARID_PALACE_SHORTCUT(TaskArea.DESERT, AreaTaskTier.HARD, "Access to the big window shortcut in Al Kharid Palace"),
     ZAHUR_UNFINISHED_POTIONS(TaskArea.DESERT, AreaTaskTier.HARD, "Zahur will create unfinished potions for 200 coins per potion"),
     ZAHUR_CLEAN_HERB(TaskArea.DESERT, AreaTaskTier.HARD, "Zahur will now clean noted grimy herbs for 200 coins each"),
     //All carpet rides are free.
@@ -58,7 +58,7 @@ public enum AreaReward {
             "Unlimited teleports to Nardah and the Kalphite Cave",
             "The Nardah teleport now takes players directly inside the Elidinis shrine",
             "100% protection against desert heat when worn"),
-    PHAROH_SCEPTRE_CHARGES_100(TaskArea.DESERT, AreaTaskTier.ELITE, "Pharaoh's sceptre can hold up to 100 charges"),
+    //PHAROH_SCEPTRE_CHARGES_100(TaskArea.DESERT, AreaTaskTier.ELITE, "Pharaoh's sceptre can hold up to 100 charges"),
     //Free pass-through of the Shantay Pass and the Ruins of Unkah
     //Access to a crevice shortcut, requiring 86 Agility, in the Kalphite Lair from the entrance to the antechamber before the Kalphite Queen boss room.
 
