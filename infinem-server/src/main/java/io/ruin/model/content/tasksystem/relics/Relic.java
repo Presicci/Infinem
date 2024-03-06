@@ -36,14 +36,19 @@ public enum Relic {
      Quick Shot
         1 tick faster
         50% increased accuracy
+        Ava's effect w/o avas
+        consecutive attacks inc attack speed?
      Quick Cast
         1 tick faster
         50% increased accuracy
+        rune pouch, increased rune pouch size
+        AoE
      Fluid Strikes
         1 tick faster
         25% increased accuracy
         15% less damage from non-lethal
-         x4 hp regen
+        x4 hp regen
+        immune to poison/venom/dragonfire/icy breath
 
     Tier 5 - Skilling - 13x XP
      Key Master
