@@ -26,7 +26,7 @@ public class Arclight {
     static {
         ItemObjectAction.register(DARKLIGHT, 28900, Arclight::createArclight);
         ItemItemAction.register(ARCLIGHT, SHARD, Arclight::charge);
-        ItemItemAction.register(DARKLIGHT, SHARD, (player, primary, secondary) -> player.sendMessage("The power of the altar in the Catacombs is required to do this."));
+        ItemItemAction.register(DARKLIGHT, SHARD, (player, primary, secondary) -> player.sendMessage("You require additional power from the catacombs altar to create Arclight."));
         ItemAction.registerInventory(ARCLIGHT, "check", Arclight::check);
         ItemAction.registerEquipment(ARCLIGHT, "check", Arclight::check);
         ItemDef.get(ARCLIGHT).addPreTargetDefendListener(Arclight::onArclightHit);
