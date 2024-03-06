@@ -945,12 +945,12 @@ public class PlayerCombat extends Combat {
             hit.boostAttack(accuracy);
         }
 
-        if(target.npc != null && target.npc.getDef().dragon && hit.attackStyle != null) {
-            //dragon hunter crossbow
-            if(hit.attackStyle.isRanged() && player.getEquipment().hasId(21012))
-                hit.boostAttack(0.3).boostDamage(0.3);
-            //dragon hunter lance
-            if(hit.attackStyle.isMelee() && player.getEquipment().hasId(22978))
+        if (target.npc != null && target.npc.getDef().dragon && hit.attackStyle != null) {
+            // Dragon hunter crossbow
+            if (hit.attackStyle.isRanged() && player.getEquipment().hasId(21012))
+                hit.boostAttack(0.3).boostDamage(0.25);
+            // Dragon hunter lance
+            if (hit.attackStyle.isMelee() && player.getEquipment().hasId(22978))
                 hit.boostAttack(0.2).boostDamage(0.2);
         }
 
