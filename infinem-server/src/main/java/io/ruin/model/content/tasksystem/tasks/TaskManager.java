@@ -391,7 +391,14 @@ public class TaskManager {
             StringBuilder sb = new StringBuilder();
             int count = 0;
             try {
-                statement = connection.prepareStatement(TaskSQLBuilder.getSelectQuery(player, searchString));
+                if (searchString == null || searchString.trim().isEmpty()) {
+                    statement = connection.prepareStatement(TaskSQLBuilder.getSortQuery(player));
+                } else {
+                    statement = connection.prepareStatement(TaskSQLBuilder.getSearch(player));
+                    statement.setString(1, "%" + searchString + "%");
+                    statement.setString(2, "%" + searchString + "%");
+                    statement.setString(3, "%" + searchString + "%");
+                }
                 rs = statement.executeQuery();
                 while (rs.next()) {
                     int uuid = rs.getInt("uuid");

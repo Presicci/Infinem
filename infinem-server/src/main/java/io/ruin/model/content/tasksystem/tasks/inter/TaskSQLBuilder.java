@@ -14,19 +14,12 @@ public class TaskSQLBuilder {
     public static final String REGION_FIELD = "FIELD(region, 'General/Multiple Regions', 'Asgarnia', 'Fremennik Provinces', 'Kandarin', 'Karamja', 'Kharidian Desert', 'Misthalin', 'Morytania', 'Tirannwn', 'Wilderness')";
     public static final String DIFFICULTY_FIELD = "FIELD(difficulty, 'Easy', 'Medium', 'Hard', 'Elite', 'Master')";
 
-    public static String getSelectQuery(Player player, String search) {
-        if (search == null || search.trim().isEmpty())
-            return getSortQuery(player);
-        System.out.println(getSearch(player, search));
-        return getSearch(player, search);
-    }
-
-    private static String getSearch(Player player, String search) {
+    public static String getSearch(Player player) {
         String query = getSelect(player);
-        return query + (query.endsWith("task_list") ? " WHERE " : "AND ") + "(name LIKE '%" + search + "%' OR region LIKE '%" + search + "%' OR difficulty LIKE '%" + search + "%')" + getOrder(player);
+        return query + (query.endsWith("task_list") ? " WHERE " : "AND ") + "(name LIKE ? OR region LIKE ? OR difficulty LIKE ?)" + getOrder(player);
     }
 
-    private static String getSortQuery(Player player) {
+    public static String getSortQuery(Player player) {
         return getSelect(player) + getOrder(player);
     }
 
