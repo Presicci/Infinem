@@ -5,6 +5,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.utils.Config;
@@ -28,11 +29,16 @@ public class TaskInterface {
 
     static {
         InterfaceHandler.register(Interface.TASKS, (h -> {
-            h.actions[9] = (SlotAction) (player, slot) -> {
-                player.stringInput("Search:", search -> {
-                    player.getTaskManager().searchString = search;
+            h.actions[9] = (OptionAction) (player, option) -> {
+                if (option == 1) {
+                    player.stringInput("Search:", search -> {
+                        player.getTaskManager().searchString = search;
+                        player.getTaskManager().sendTasksToInterface();
+                    });
+                } else {
+                    player.getTaskManager().searchString = "";
                     player.getTaskManager().sendTasksToInterface();
-                });
+                }
             };
             h.actions[37] = (SimpleAction) RelicInterface::open;
             h.actions[42] = (SlotAction) (player, slot) -> {
