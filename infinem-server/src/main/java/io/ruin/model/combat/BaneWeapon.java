@@ -1,7 +1,9 @@
 package io.ruin.model.combat;
 
+import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.Entity;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Items;
 
 import java.util.function.Consumer;
@@ -16,7 +18,15 @@ public enum BaneWeapon {
     DARKLIGHT(Items.DARKLIGHT, "DEMON", AttackStyle::isMelee, 0, 0.6),
     DRAGON_HUNTER_CROSSBOW(Items.DRAGON_HUNTER_CROSSBOW, "DRAGON", AttackStyle::isRanged, 0.3, 0.25),
     DRAGON_HUNTER_LANCE(22978, "DRAGON", AttackStyle::isMelee, 0.2, 0.2),
-    BARRONITE_MACE(25641, "GOLEM", AttackStyle::isMelee, 0, 0.15)
+    BARRONITE_MACE(25641, "GOLEM", AttackStyle::isMelee, 0, 0.15),
+    KERIS(Items.KERIS, "KALPHITE", AttackStyle::isMelee, 0, 0.33, HitStageOutgoing.POST_TARGET_DEFEND, hit -> {
+        Player player = hit.attacker.player;
+        if (player != null && Random.rollDie(51, 1)) {
+            hit.damage *= 3;
+            if (hit.damage >= 10)
+                player.sendMessage("You slip your dagger through a gap in the creature's chitin, landing a vicious blow.");
+        }
+    })
     ;
 
     private final int itemId;
