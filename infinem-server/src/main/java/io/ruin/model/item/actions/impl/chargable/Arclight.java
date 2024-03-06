@@ -30,14 +30,6 @@ public class Arclight {
         ItemAction.registerInventory(ARCLIGHT, "check", Arclight::check);
         ItemAction.registerEquipment(ARCLIGHT, "check", Arclight::check);
         ItemDef.get(ARCLIGHT).addPreTargetDefendListener(Arclight::onArclightHit);
-        ItemDef.get(DARKLIGHT).addPreTargetDefendListener(Arclight::onSilverlightHit);
-        ItemDef.get(Items.SILVERLIGHT).addPreTargetDefendListener(Arclight::onSilverlightHit);
-    }
-
-    private static void onSilverlightHit(Player player, Item item, Hit hit, Entity entity) {
-        if (entity == null || entity.isPlayer() || !entity.npc.getDef().demon || hit.attackStyle == null || !hit.attackStyle.isMelee())
-            return;
-        hit.boostDamage(0.6);
     }
 
     private static void onArclightHit(Player player, Item item, Hit hit, Entity entity) {
