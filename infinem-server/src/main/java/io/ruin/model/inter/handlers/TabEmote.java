@@ -115,14 +115,6 @@ public enum TabEmote {
         if (tile.emoteAction != null) {
             tile.emoteAction.accept(player, this);
         }
-        if (player.yesDelay.isDelayed())
-            return;
-        if (this == YES && !player.yesDelay.isDelayed()) {
-            player.yesDelay.delay(3);
-        }
-        if (this == NO && !player.noDelay.isDelayed()) {
-            player.noDelay.delay(2);
-        }
         AnimDef def = AnimDef.get(emoteId);
         if (def != null)
             player.emoteDelay.delay(def.getTickDelay());

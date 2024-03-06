@@ -128,10 +128,6 @@ public abstract class PlayerAttributes extends Entity {
 
     @Expose public boolean miningGuildMinerals;
 
-    public TickDelay yesDelay = new TickDelay();
-
-    public TickDelay noDelay = new TickDelay();
-
     public TickDelay emoteDelay = new TickDelay();
 
     @Expose public boolean beginnerParkourEnergyBoost;
