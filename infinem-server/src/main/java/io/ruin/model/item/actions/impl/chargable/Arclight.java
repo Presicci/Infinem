@@ -9,6 +9,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.ItemObjectAction;
@@ -29,18 +30,18 @@ public class Arclight {
         ItemAction.registerInventory(ARCLIGHT, "check", Arclight::check);
         ItemAction.registerEquipment(ARCLIGHT, "check", Arclight::check);
         ItemDef.get(ARCLIGHT).addPreTargetDefendListener(Arclight::onArclightHit);
-        ItemDef.get(DARKLIGHT).addPreTargetDefendListener(Arclight::onDarklightHit);
+        ItemDef.get(DARKLIGHT).addPreTargetDefendListener(Arclight::onSilverlightHit);
+        ItemDef.get(Items.SILVERLIGHT).addPreTargetDefendListener(Arclight::onSilverlightHit);
     }
 
-    private static void onDarklightHit(Player player, Item item, Hit hit, Entity entity) {
-        if (entity == null || entity.player != null || !entity.npc.getDef().demon || hit.attackStyle == null || !hit.attackStyle.isMelee())
+    private static void onSilverlightHit(Player player, Item item, Hit hit, Entity entity) {
+        if (entity == null || entity.isPlayer() || !entity.npc.getDef().demon || hit.attackStyle == null || !hit.attackStyle.isMelee())
             return;
-        hit.boostDamage(0.75);
-        hit.boostAttack(0.5);
+        hit.boostDamage(0.6);
     }
 
     private static void onArclightHit(Player player, Item item, Hit hit, Entity entity) {
-        if (entity == null || entity.player != null || !entity.npc.getDef().demon || hit.attackStyle == null || !hit.attackStyle.isMelee())
+        if (entity == null || entity.isPlayer() || !entity.npc.getDef().demon || hit.attackStyle == null || !hit.attackStyle.isMelee())
             return;
         int currentCharges = AttributeExtensions.getCharges(item);
         if (currentCharges <= 1) {
