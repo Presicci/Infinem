@@ -82,42 +82,46 @@ public enum TabEmote {
     public void perform(Player player) {
         if (player.emoteDelay.isDelayed())
             return;
-        int emoteId = animationID;
-        int gfx = gfxId;
-        if (slot == TabEmote.SKILL_CAPE.slot) {
-            emoteId = skillCapeAnim(player);
-            gfx = skillCapeGraphic(player);
-            if (emoteId == -1) {
+        if (this == TabEmote.SKILL_CAPE) {
+            int emote = skillCapeAnim(player);
+            if (emote == -1) {
                 player.sendMessage("You need to be wearing a Skill Cape to perform this emote.");
                 return;
             }
-            int finalEmoteId = emoteId;
+            player.animate(emote);
+            player.graphics(skillCapeGraphic(player));
             player.startEvent(event -> {
                 player.lock();
-                AnimDef def = AnimDef.get(finalEmoteId);
+                AnimDef def = AnimDef.get(emote);
                 if (def != null)
                     event.delay(def.getTickDelay());
                 player.unlock();
             });
-        } else if (slot == TabEmote.DANCE.slot && player.getEquipment().getId(Equipment.SLOT_LEGS) == 10394) {
-            emoteId = 5316;
-        } else if (slot == TabEmote.CRAZY_DANCE.slot) {
+            return;
+        } else if (this == TabEmote.DANCE && player.getEquipment().getId(Equipment.SLOT_LEGS) == 10394) {
+            player.animate(5316);
+        } else if (this == TabEmote.CRAZY_DANCE) {
             if (Random.rollDie(2))
-                emoteId = 7536;
+                player.animate(7536);
             else
-                emoteId = 7537;
+                player.animate(7537);
+        } else {
+            player.animate(animationID);
+            if (gfxId != -1)
+                player.graphics(gfxId);
         }
-        player.animate(emoteId);
+
+        // Emote clue handling
         player.putTemporaryAttribute(AttributeKey.LAST_EMOTE, this);
-        if (gfx != -1)
-            player.graphics(gfx);
         Tile tile = player.getPosition().getTile();
         if (tile.emoteAction != null) {
             tile.emoteAction.accept(player, this);
         }
-        AnimDef def = AnimDef.get(emoteId);
+        // Emote delay
+        AnimDef def = AnimDef.get(animationID);
         if (def != null)
             player.emoteDelay.delay(def.getTickDelay());
+
         player.resetSteps();
     }
 
