@@ -7,5 +7,23 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+  {
+    "name": "Alfonse the waiter",
+    "id": 4920,
+    "x": 2793,
+    "y": 3188,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Charlie the cook",
+    "id": 4921,
+    "x": 2793,
+    "y": 3191,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
   }
 ]
