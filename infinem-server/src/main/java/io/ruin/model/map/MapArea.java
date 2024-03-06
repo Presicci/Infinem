@@ -40,6 +40,8 @@ public enum MapArea {
         player.getTaskManager().doLookupByUUID(561);    // Enter the Combat Training Camp
     }),
     WILDERNESS(player -> player.wildernessLevel > 0),
+    ASGARNIA_CHAOS_TEMPLE(2930, 3513, 2940, 3518, 0),
+    ASGARNIA_CHAOS_TEMPLE_SECOND_FLOOR(2938, 3516, 2940, 3518, 1),
     // Dark caves
     LUMBRIDGE_SWAMP_CAVE(OldFirePit.FirePit.LUMBRIDGE_SWAMP_CAVES_FIRE, 3, 12693, 12949),
     CAVE_OF_HORROR(OldFirePit.FirePit.MOS_LE_HARMLESS_FIRE, 3, 14994, 14995, 15251),
