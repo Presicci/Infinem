@@ -16,7 +16,8 @@ public enum BaneWeapon {
     SILVERLIGHT(Items.SILVERLIGHT, "DEMON", AttackStyle::isMelee, 0, 0.6),
     DARKLIGHT(Items.DARKLIGHT, "DEMON", AttackStyle::isMelee, 0, 0.6),
     DRAGON_HUNTER_CROSSBOW(Items.DRAGON_HUNTER_CROSSBOW, "DRAGON", AttackStyle::isRanged, 0.3, 0.25),
-    DRAGON_HUNTER_LANCE(22978, "DRAGON", AttackStyle::isMelee, 0.2, 0.2)
+    DRAGON_HUNTER_LANCE(22978, "DRAGON", AttackStyle::isMelee, 0.2, 0.2),
+    BARRONITE_MACE(25641, "GOLEM", AttackStyle::isMelee, 0, 0.15)
     ;
 
     private final int itemId;
