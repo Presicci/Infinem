@@ -12,6 +12,7 @@ import io.ruin.model.activities.combat.raids.xeric.ChambersOfXeric;
 import io.ruin.model.activities.wilderness.BloodyChest;
 import io.ruin.model.activities.wilderness.SkullingItem;
 import io.ruin.model.combat.*;
+import io.ruin.model.combat.npc.Vampyre;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.combat.special.magic.StaffOfTheDead;
 import io.ruin.model.combat.special.melee.VestasSpear;
@@ -54,7 +55,6 @@ import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.stat.StatType;
 import io.ruin.process.tickevent.TickEventType;
 import io.ruin.utility.Misc;
-import io.ruin.utility.Utils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
@@ -878,14 +878,15 @@ public class PlayerCombat extends Combat {
         return false;
     }
 
-    private void efaritaysAidBoost(Player player, Hit hit) {
+    private void tierOneVampireDamageBoost(Player player, Hit hit) {
         if (hit.attackStyle != null && target != null && target.isNpc()) {
             String name = target.npc.getDef().name;
             if (!name.equalsIgnoreCase("dessous") && !name.equalsIgnoreCase("feral vampyre")
                     && !name.equalsIgnoreCase("kroy") && !name.equalsIgnoreCase("vampyre juvenile")) {
                 return;
             }
-            if (EfaritaysAid.test(player)) {
+            Item weapon = player.getEquipment().get(Equipment.SLOT_WEAPON);
+            if ((weapon != null && Vampyre.isSilver(weapon.getDef().name)) || EfaritaysAid.test(player)) {
                 hit.boostDamage(0.10);
             }
         }
@@ -954,7 +955,7 @@ public class PlayerCombat extends Combat {
         }
 
         // Efaritay's aid vs Tier 1 vampyre
-        efaritaysAidBoost(player, hit);
+        tierOneVampireDamageBoost(player, hit);
 
         /* twisted bow */
         if(hit.attackStyle != null && hit.attackStyle.isRanged() && (player.getEquipment().hasId(20997))) {
