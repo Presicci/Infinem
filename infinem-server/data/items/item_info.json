@@ -109887,6 +109887,22 @@
     "equip_slot": 3,
     "weapon_type": "WARHAMMER"
   },
+  { // Keris partisan
+    "id": 25979,
+    "tradeable": false,
+    "examine": "A mystical-feeling polearm.",
+    "weight": 2.267,
+	"protect_value": 60000,
+    "equip_slot": 3,
+    "stab_attack_bonus": 58,
+    "slash_attack_bonus": -2,
+    "crush_attack_bonus": 57,
+    "magic_attack_bonus": 2,
+    "melee_strength_bonus": 45,
+    "prayer_bonus": 3,
+    "weapon_type": "SPEAR",
+    "two_handed": true
+  },
   { // Zaryte crossbow
     "id": 26374,
     "tradeable": true,
