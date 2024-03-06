@@ -3,15 +3,14 @@ package io.ruin.model.combat;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.item.Items;
-import lombok.AllArgsConstructor;
 
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 3/6/2024
  */
-@AllArgsConstructor
 public enum BaneWeapon {
     SILVERLIGHT(Items.SILVERLIGHT, "DEMON", AttackStyle::isMelee, 0, 0.6),
     DARKLIGHT(Items.DARKLIGHT, "DEMON", AttackStyle::isMelee, 0, 0.6),
@@ -23,7 +22,21 @@ public enum BaneWeapon {
     private final int itemId;
     private final String tagKey;
     private final Predicate<AttackStyle> predicate;
+    private final Consumer<Hit> otherEffects;
     private final double attackBoost, damageBoost;
+
+    BaneWeapon(int itemId, String tagKey, Predicate<AttackStyle> predicate, double attackBoost, double damageBoost) {
+        this(itemId, tagKey, predicate, attackBoost, damageBoost, null);
+    }
+
+    BaneWeapon(int itemId, String tagKey, Predicate<AttackStyle> predicate, double attackBoost, double damageBoost, Consumer<Hit> otherEffects) {
+        this.itemId = itemId;
+        this.tagKey = tagKey;
+        this.predicate = predicate;
+        this.attackBoost = attackBoost;
+        this.damageBoost = damageBoost;
+        this.otherEffects = otherEffects;
+    }
 
     static {
         for (BaneWeapon weapon : values()) {
@@ -41,6 +54,9 @@ public enum BaneWeapon {
         if (weapon.damageBoost > 0) {
             System.out.println(weapon.name() + " boosting damage by " + weapon.damageBoost);
             hit.boostDamage(weapon.damageBoost);
+        }
+        if (weapon.otherEffects != null) {
+            weapon.otherEffects.accept(hit);
         }
     }
 }
