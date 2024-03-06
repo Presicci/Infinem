@@ -22,25 +22,39 @@ public enum BaneWeapon {
     private final int itemId;
     private final String tagKey;
     private final Predicate<AttackStyle> predicate;
-    private final Consumer<Hit> otherEffects;
     private final double attackBoost, damageBoost;
+    private final HitStageOutgoing otherEffectStage;
+    private final Consumer<Hit> otherEffects;
 
     BaneWeapon(int itemId, String tagKey, Predicate<AttackStyle> predicate, double attackBoost, double damageBoost) {
-        this(itemId, tagKey, predicate, attackBoost, damageBoost, null);
+        this(itemId, tagKey, predicate, attackBoost, damageBoost, null, null);
     }
 
-    BaneWeapon(int itemId, String tagKey, Predicate<AttackStyle> predicate, double attackBoost, double damageBoost, Consumer<Hit> otherEffects) {
+    BaneWeapon(int itemId, String tagKey, Predicate<AttackStyle> predicate, double attackBoost, double damageBoost, HitStageOutgoing otherEffectStage, Consumer<Hit> otherEffects) {
         this.itemId = itemId;
         this.tagKey = tagKey;
         this.predicate = predicate;
         this.attackBoost = attackBoost;
         this.damageBoost = damageBoost;
+        this.otherEffectStage = otherEffectStage;
         this.otherEffects = otherEffects;
     }
 
     static {
         for (BaneWeapon weapon : values()) {
             ItemDef.get(weapon.itemId).addPreTargetDefendListener((player, item, hit, target) -> onHit(hit, target, weapon));
+            if (weapon.otherEffectStage == null) continue;
+            switch (weapon.otherEffectStage) {
+                case PRE_TARGET_DEFEND:
+                    ItemDef.get(weapon.itemId).addPreTargetDefendListener((player, item, hit, target) -> onHitOtherEffect(hit, target, weapon));
+                    break;
+                case POST_TARGET_DEFEND:
+                    ItemDef.get(weapon.itemId).addPostTargetDefendListener((player, item, hit, target) -> onHitOtherEffect(hit, target, weapon));
+                    break;
+                case POST_TARGET_DAMAGE:
+                    ItemDef.get(weapon.itemId).addPostTargetDamageListener((player, item, hit, target) -> onHitOtherEffect(hit, target, weapon));
+                    break;
+            }
         }
     }
 
@@ -55,6 +69,11 @@ public enum BaneWeapon {
             System.out.println(weapon.name() + " boosting damage by " + weapon.damageBoost);
             hit.boostDamage(weapon.damageBoost);
         }
+    }
+
+    private static void onHitOtherEffect(Hit hit, Entity target, BaneWeapon weapon) {
+        if (target == null || target.isPlayer() || !target.npc.getDef().hasCustomValue(weapon.tagKey) || hit.attackStyle == null || !weapon.predicate.test(hit.attackStyle))
+            return;
         if (weapon.otherEffects != null) {
             weapon.otherEffects.accept(hit);
         }
