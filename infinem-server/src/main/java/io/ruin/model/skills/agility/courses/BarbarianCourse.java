@@ -120,7 +120,7 @@ public class BarbarianCourse {
         /**
          * Ladder
          */
-        ObjectAction.register(42487, "climb-down", (player, obj) -> {
+        ObjectAction.register(42487, 2532, 3545, 1, "climb-down", (player, obj) -> {
             if (!player.getStats().check(StatType.Agility, 35, "attempt this"))
                 return;
             player.startEvent(e -> {
@@ -133,7 +133,7 @@ public class BarbarianCourse {
                 TricksterAgility.attemptNext(player, OBSTACLES[4]);
             });
         });
-        ObjectAction.register(16683, "climb-up", (player, obj) -> player.sendMessage("Why would you want to go backwards?"));
+        ObjectAction.register(16683, 2532, 3545, 0, "climb-up", (player, obj) -> player.sendMessage("Why would you want to go backwards?"));
         /**
          * Crumbling wall one!
          */
