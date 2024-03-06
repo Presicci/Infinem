@@ -45,7 +45,7 @@ public class DropViewer {
     private static void displayDrops(Player player, int id, String name) {
         NPCDef def = NPCDef.get(id);
         if (def.lootTable == null) {
-            player.sendMessage("" + Color.DARK_GREEN.tag() + " Drop Viewer: " + Color.OLIVE.tag() + name + " has no drops.");
+            player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: " + Color.OLIVE.tag() + name + " has no drops.");
             return;
         }
         DropViewerResult petDrop = null;
@@ -128,7 +128,7 @@ public class DropViewer {
     }
 
     private static void sendResults(Player player, String name, List<DropViewerResult> drops) {
-        player.getPacketSender().sendClientScript(227, "is", 1000 << 16 | 1, "Viewing drop table for: <col=ff0000>" + name + "</col>");
+        player.getPacketSender().sendClientScript(227, "is", 1000 << 16 | 1, name);
         player.getPacketSender().sendClientScript(9004, "is", drops.size(), buildDropString(drops));
         int slot = 1;
         for (DropViewerResult drop : drops) {
