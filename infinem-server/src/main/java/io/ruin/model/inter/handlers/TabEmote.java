@@ -65,7 +65,7 @@ public enum TabEmote {
     EXPLORE(49, -1, -1),
     RELIC_UNLOCK(50, -1, -1),
     // Custom for clue
-    BULL_ROARER(51, -1, 81);
+    BULL_ROARER(51, 908, 81);
 
     public final int slot, animationID, gfxId;
 
@@ -105,6 +105,9 @@ public enum TabEmote {
                 player.animate(7536);
             else
                 player.animate(7537);
+        } else if (this == BULL_ROARER) {
+            player.animate(animationID);
+            player.graphics(gfxId, 80, 0);
         } else {
             player.animate(animationID);
             if (gfxId != -1)
