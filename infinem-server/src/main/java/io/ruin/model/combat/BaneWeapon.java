@@ -26,6 +26,14 @@ public enum BaneWeapon {
             if (hit.damage >= 10)
                 player.sendMessage("You slip your dagger through a gap in the creature's chitin, landing a vicious blow.");
         }
+    }),
+    KERIS_PARTISAN(25979, "KALPHITE", AttackStyle::isMelee, 0, 0.33, HitStageOutgoing.POST_TARGET_DEFEND, hit -> {
+        Player player = hit.attacker.player;
+        if (player != null && Random.rollDie(51, 1)) {
+            hit.damage *= 3;
+            if (hit.damage >= 10)
+                player.sendMessage("You slip your weapon through a gap in the creature's chitin, landing a vicious blow.");
+        }
     })
     ;
 
