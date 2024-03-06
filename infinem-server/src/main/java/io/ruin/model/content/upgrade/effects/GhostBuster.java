@@ -19,7 +19,7 @@ public class GhostBuster extends ItemUpgrade {
 
     @Override
     public void preTargetDefend(Player player, Entity target, Item item, Hit hit) {
-        if (!target.npc.getDef().undead) {
+        if (!target.npc.getDef().hasCustomValue("UNDEAD")) {
             hit.boostDamage(0.05);
         }
     }

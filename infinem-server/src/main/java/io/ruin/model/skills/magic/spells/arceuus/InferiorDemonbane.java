@@ -21,7 +21,7 @@ public class InferiorDemonbane extends TargetSpell {
         setRunes(Rune.CHAOS.toItem(1), Rune.FIRE.toItem(4));
         setAutoCast(53);
         setCastCheck((p, t) -> {
-            if (t.isNpc() && t.npc.getDef().demon) {
+            if (t.isNpc() && t.npc.getDef().hasCustomValue("DEMON")) {
                 return true;
             }
             if (!p.isPlayer()) return false;

@@ -21,7 +21,7 @@ public class DarkDemonbane extends TargetSpell {
         setRunes(Rune.SOUL.toItem(2), Rune.FIRE.toItem(12));
         setAutoCast(55);
         setCastCheck((p, t) -> {
-            if (t.isNpc() && t.npc.getDef().demon) {
+            if (t.isNpc() && t.npc.getDef().hasCustomValue("DEMON")) {
                 return true;
             }
             if (!p.isPlayer()) return false;

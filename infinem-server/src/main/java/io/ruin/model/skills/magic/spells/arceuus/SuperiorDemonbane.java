@@ -21,7 +21,7 @@ public class SuperiorDemonbane extends TargetSpell {
         setRunes(Rune.SOUL.toItem(1), Rune.FIRE.toItem(8));
         setAutoCast(54);
         setCastCheck((p, t) -> {
-            if (t.isNpc() && t.npc.getDef().demon) {
+            if (t.isNpc() && t.npc.getDef().hasCustomValue("DEMON")) {
                 return true;
             }
             if (!p.isPlayer()) return false;

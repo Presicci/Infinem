@@ -33,7 +33,7 @@ public class Arclight {
     }
 
     private static void onArclightHit(Player player, Item item, Hit hit, Entity entity) {
-        if (entity == null || entity.isPlayer() || !entity.npc.getDef().demon || hit.attackStyle == null || !hit.attackStyle.isMelee())
+        if (entity == null || entity.isPlayer() || !entity.npc.getDef().hasCustomValue("DEMON") || hit.attackStyle == null || !hit.attackStyle.isMelee())
             return;
         int currentCharges = AttributeExtensions.getCharges(item);
         if (currentCharges <= 1) {

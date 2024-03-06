@@ -18,7 +18,7 @@ public class BaneWeapons {
     }
 
     private static void onSilverlightHit(Player player, Item item, Hit hit, Entity entity) {
-        if (entity == null || entity.isPlayer() || !entity.npc.getDef().demon || hit.attackStyle == null || !hit.attackStyle.isMelee())
+        if (entity == null || entity.isPlayer() || !entity.npc.getDef().hasCustomValue("DEMON") || hit.attackStyle == null || !hit.attackStyle.isMelee())
             return;
         hit.boostDamage(0.6);
     }

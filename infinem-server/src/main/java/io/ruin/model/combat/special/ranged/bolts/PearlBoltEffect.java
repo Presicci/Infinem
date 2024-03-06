@@ -32,7 +32,7 @@ public class PearlBoltEffect implements BiFunction<Entity, Hit, Boolean> {
                 return false;
             newDamage += (int) (hit.attacker.player.getStats().get(StatType.Ranged).currentLevel * (hasFire ? 0.06 : 0.05));
         } else if (target.npc != null) {
-            boolean fireMonster = target.npc.getDef().fiery;
+            boolean fireMonster = target.npc.getDef().hasCustomValue("FIERY");
             newDamage += (int) (hit.attacker.player.getStats().get(StatType.Ranged).currentLevel * (fireMonster ? 0.06 : 0.05));
         }
         target.graphics(750);

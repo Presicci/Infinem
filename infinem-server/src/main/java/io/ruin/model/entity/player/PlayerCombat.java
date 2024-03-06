@@ -862,7 +862,7 @@ public class PlayerCombat extends Combat {
             if (amulet == null) {
                 return false;
             }
-            if (!target.npc.getDef().undead) {
+            if (!target.npc.getDef().hasCustomValue("UNDEAD")) {
                 return false;
             }
             if (hit.attackStyle.isMelee() && amulet.getId() == salveAmulet) {
@@ -945,7 +945,7 @@ public class PlayerCombat extends Combat {
             hit.boostAttack(accuracy);
         }
 
-        if (target.npc != null && target.npc.getDef().dragon && hit.attackStyle != null) {
+        if (target.npc != null && target.npc.getDef().hasCustomValue("DRAGON") && hit.attackStyle != null) {
             // Dragon hunter crossbow
             if (hit.attackStyle.isRanged() && player.getEquipment().hasId(21012))
                 hit.boostAttack(0.3).boostDamage(0.25);

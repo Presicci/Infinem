@@ -20,7 +20,7 @@ public class Darklight implements Special {
 
     @Override
     public boolean handle(Player player, Entity victim, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
-        boolean demon = victim.npc != null && victim.npc.getDef().demon;
+        boolean demon = victim.npc != null && victim.npc.getDef().hasCustomValue("DEMON");
         player.animate(2890);
         player.graphics(483);
         Hit hit = new Hit(player, attackStyle, attackType).randDamage(maxDamage).boostAttack(0.5);

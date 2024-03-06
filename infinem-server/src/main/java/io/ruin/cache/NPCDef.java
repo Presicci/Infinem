@@ -106,11 +106,11 @@ public class NPCDef {
 
     public List<Dialogue> optionDialogues;
 
-    public boolean demon, dragon, fiery, golem, icy, kalphite, rat, shade, spectral, undead;
-
     public boolean ignoreMultiCheck = false;
 
     public KillCounterType killCounterType;
+
+    public Map<String, Object> custom_values = new HashMap<>();
 
     /**
      * Cache data
@@ -307,12 +307,12 @@ public class NPCDef {
         attackOption = getOption("attack", "fight");
         flightClipping = name.toLowerCase().contains("impling") || name.toLowerCase().contains("butterfly")
                 || id == 5317;  // Eagle
-        dragon = name.toLowerCase().contains("dragon") || name.equalsIgnoreCase("elvarg")
+        if (name.toLowerCase().contains("dragon") || name.equalsIgnoreCase("elvarg")
                 || name.equalsIgnoreCase("wyrm") || name.equalsIgnoreCase("drake")
                 || name.toLowerCase().contains("hydra") || name.toLowerCase().contains("great olm")
-                || name.toLowerCase().contains("wyvern") || name.equalsIgnoreCase("galvek");
-
-        demon = name.toLowerCase().contains("demon") || name.equalsIgnoreCase("skotizo")
+                || name.toLowerCase().contains("wyvern") || name.equalsIgnoreCase("galvek"))
+            custom_values.put("DRAGON", 1);
+        if (name.toLowerCase().contains("demon") || name.equalsIgnoreCase("skotizo")
                 || name.equalsIgnoreCase("imp") || name.toLowerCase().contains("nechryael")
                 || name.toLowerCase().contains("abyssal sire") || name.toLowerCase().contains("k'ril")
                 || name.toLowerCase().contains("balfrug") || name.toLowerCase().contains("tstanon")
@@ -326,9 +326,9 @@ public class NPCDef {
                 || name.equalsIgnoreCase("judge of yama") || name.equalsIgnoreCase("othainian")
                 || name.equalsIgnoreCase("porazdir") || name.equalsIgnoreCase("reanimated abyssal")
                 || id == 5912 // Sire tentacle
-                || name.equalsIgnoreCase("waterfiend");
-
-        fiery = name.equalsIgnoreCase("adamant dragon") || name.toLowerCase().contains("black dragon")
+                || name.equalsIgnoreCase("waterfiend"))
+            custom_values.put("DEMON", 1);
+        if (name.equalsIgnoreCase("adamant dragon") || name.toLowerCase().contains("black dragon")
                 || name.toLowerCase().contains("blue dragon") || name.equalsIgnoreCase("bronze dragon")
                 || name.toLowerCase().contains("red dragon") || name.toLowerCase().contains("green dragon")
                 || name.equalsIgnoreCase("fire elemental") || name.equalsIgnoreCase("fire giant")
@@ -337,23 +337,23 @@ public class NPCDef {
                 || name.equalsIgnoreCase("mithril dragon") || name.toLowerCase().contains("pyrefiend")
                 || name.equalsIgnoreCase("rune dragon") || name.equalsIgnoreCase("steel dragon")
                 || name.equalsIgnoreCase("vorkath") || name.equalsIgnoreCase("pyrelord")
-                || name.equalsIgnoreCase("elvarg");
-
-        golem = name.toLowerCase().contains("golem");
-
-        icy = id == 11290 || id == 11291 || id == 11292;    // Zaros spirituals
-
-        kalphite = name.toLowerCase().contains("scarab") || name.toLowerCase().contains("kalphite")
-                || name.equalsIgnoreCase("locust rider") || name.equalsIgnoreCase("kephri");
-
-        rat = name.toLowerCase().contains("giant rat") || name.equalsIgnoreCase("rat")
+                || name.equalsIgnoreCase("elvarg"))
+            custom_values.put("FIERY", 1);
+        if (name.toLowerCase().contains("golem"))
+            custom_values.put("GOLEM", 1);
+        if (id == 11290 || id == 11291 || id == 11292)    // Zaros spirituals
+            custom_values.put("ICY", 1);
+        if (name.toLowerCase().contains("scarab") || name.toLowerCase().contains("kalphite")
+                || name.equalsIgnoreCase("locust rider") || name.equalsIgnoreCase("kephri"))
+            custom_values.put("KALPHITE", 1);
+        if (name.toLowerCase().contains("giant rat") || name.equalsIgnoreCase("rat")
                 || name.equalsIgnoreCase("brine rat") || name.equalsIgnoreCase("crypt rat")
                 || name.equalsIgnoreCase("dungeon rat") || name.equalsIgnoreCase("giant crypt rat")
-                || name.equalsIgnoreCase("zombie rat") || name.equalsIgnoreCase("scurrius");
-
-        shade = name.toLowerCase().contains("shade");
-
-        spectral = name.toLowerCase().contains("spectre") || name.equalsIgnoreCase("ahrim the blighted")
+                || name.equalsIgnoreCase("zombie rat") || name.equalsIgnoreCase("scurrius"))
+            custom_values.put("RAT", 1);
+        if (name.toLowerCase().contains("shade"))
+            custom_values.put("SHADE", 1);
+        if (name.toLowerCase().contains("spectre") || name.equalsIgnoreCase("ahrim the blighted")
                 || name.toLowerCase().contains("barbarian spirit") || name.equalsIgnoreCase("ankou")
                 || name.toLowerCase().contains("banshee") || name.toLowerCase().contains("shade")
                 || name.equalsIgnoreCase("death wing") || name.equalsIgnoreCase("dharok the wretched")
@@ -366,9 +366,9 @@ public class NPCDef {
                 || name.equalsIgnoreCase("san tojalon") || name.toLowerCase().contains("spiritual")
                 || name.equalsIgnoreCase("torag the corrupted") || name.equalsIgnoreCase("tortured soul")
                 || name.equalsIgnoreCase("tree spirit") || name.equalsIgnoreCase("treus dayth")
-                || name.equalsIgnoreCase("verac the defiled");
-
-        undead = name.toLowerCase().contains("spectre") || name.toLowerCase().contains("ankou")
+                || name.equalsIgnoreCase("verac the defiled"))
+            custom_values.put("SPECTRAL", 1);
+        if (name.toLowerCase().contains("spectre") || name.toLowerCase().contains("ankou")
                 || name.toLowerCase().contains("shade") || name.toLowerCase().contains("banshee")
                 || name.equalsIgnoreCase("crawling hand") || name.equalsIgnoreCase("bloodthirsty hand")
                 || name.equalsIgnoreCase("Calvar'ion") || name.equalsIgnoreCase("crushing hand")
@@ -383,7 +383,8 @@ public class NPCDef {
                 || name.equalsIgnoreCase("tree spirit") || name.equalsIgnoreCase("ulfric")
                 || name.toLowerCase().contains("undead") || name.equalsIgnoreCase("vet'ion")
                 || name.equalsIgnoreCase("vorkath") || name.equalsIgnoreCase("zogre")
-                || name.equalsIgnoreCase("zombified spawn");
+                || name.equalsIgnoreCase("zombified spawn"))
+            custom_values.put("UNDEAD", 1);
     }
 
     void decode(InBuffer var1, int var2) {
@@ -575,5 +576,14 @@ public class NPCDef {
         if (examine == null)
             return;
         player.sendMessage(examine);
+    }
+
+    public boolean hasCustomValue(String key) {
+        return custom_values.containsKey(key);
+    }
+
+    public <T> T getCustomValueOrDefault(String key, T defaultValue) {
+        Object value = custom_values.get(key);
+        return value == null ? defaultValue : (T) value;
     }
 }
