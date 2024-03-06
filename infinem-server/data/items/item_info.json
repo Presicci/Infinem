@@ -66151,7 +66151,8 @@
     "magic_attack_bonus": 2,
     "magic_defence_bonus": 2,
     "melee_strength_bonus": 30,
-    "prayer_bonus": 2
+    "prayer_bonus": 2,
+    "weapon_type": "DRAGON_DAGGER"
   },
   { // Keris(p)
     "id": 10582,
@@ -66166,7 +66167,8 @@
     "magic_attack_bonus": 2,
     "magic_defence_bonus": 2,
     "melee_strength_bonus": 30,
-    "prayer_bonus": 2
+    "prayer_bonus": 2,
+    "weapon_type": "DRAGON_DAGGER"
   },
   { // Keris(p+)
     "id": 10583,
@@ -66181,7 +66183,8 @@
     "magic_attack_bonus": 2,
     "magic_defence_bonus": 2,
     "melee_strength_bonus": 30,
-    "prayer_bonus": 2
+    "prayer_bonus": 2,
+    "weapon_type": "DRAGON_DAGGER"
   },
   { // Keris(p++)
     "id": 10584,
@@ -66196,7 +66199,8 @@
     "magic_attack_bonus": 2,
     "magic_defence_bonus": 2,
     "melee_strength_bonus": 30,
-    "prayer_bonus": 2
+    "prayer_bonus": 2,
+    "weapon_type": "DRAGON_DAGGER"
   },
   { // Parchment
     "id": 10585,
