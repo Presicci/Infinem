@@ -33,8 +33,14 @@ public enum MonkeyGreeGree {
         this.npcId = npcId;
     }
 
+    private boolean canUse(Player player) {
+        return (player.getPosition().inBounds(ZOO_BOUNDS)
+                || player.getPosition().inBounds(Bounds.fromRegions(10794, 10795, 11050, 11051)) // Ape atoll
+                || player.getPosition().inBounds(Bounds.fromRegion(10127))); // Kruk dungeon
+    }
+
     private void hold(Player player, Item greegree) {
-        if(player.getAppearance().getNpcId() != -1 || (!player.getPosition().inBounds(ZOO_BOUNDS) && !player.getPosition().inBounds(Bounds.fromRegions(10794, 10795, 11050, 11051)))) {
+        if(player.getAppearance().getNpcId() != -1 || (!canUse(player))) {
             player.sendMessage("You attempt to use the Monkey Greegree but nothing happens.");
             return;
         }
@@ -48,10 +54,7 @@ public enum MonkeyGreeGree {
                     Item item = player.getEquipment().get(Equipment.SLOT_WEAPON);
                     if(item == null || item.getId() != greegreeId)
                         break;
-                    if(!player.getPosition().inBounds(ZOO_BOUNDS) && !player.getPosition().inBounds(Bounds.fromRegions(
-                            10794, 10795, 11050, 11051, // Ape atoll
-                            10127   // Kruk dungeon
-                    ))) {
+                    if(!canUse(player)) {
                         item.remove();
                         player.getInventory().addOrDrop(item.getId(), 1);
                         player.dialogue(new MessageDialogue("The Monkey Greegree wrenches itself from your hand as its power begins to fade...").lineHeight(24));
