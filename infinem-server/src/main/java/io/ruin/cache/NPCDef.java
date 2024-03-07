@@ -178,12 +178,6 @@ public class NPCDef {
             options[2] = "Reset-kdr";
             options[3] = null;
             options[4] = null;
-        } else if(id == 1815) {
-            name = "Vote Manager";
-            options[0] = "Trade";
-            options[2] = "Cast-votes";
-            options[3] = "Claim-votes";
-            options[4] = "Lottery-info";
         } else if(id == 2108) {
             name = "Donation Manager";
             options[0] = "Open-Shop";
