@@ -11,7 +11,15 @@ import io.ruin.model.map.object.actions.ObjectAction;
 
 public enum Ladder {
     //UP(1, "climb-up", new Position(), new Position(), true),
-    //DOWN(1, "climb-down", new Position(), new Position(), false),
+    //DOWN(1, "climb-down", new Position(), new Position(), false),\
+    KRUK_DUNGEON_ENTRANCE(28810, 1, new Position(2714, 2788), new Position(2509, 9173, 1), false),
+    KRUK_DUNGEON_EXIT(28676, "climb-up", new Position(2510, 9173, 1), new Position(2714, 2787), true),
+    //KRUK_DUNGEON_EXIT1(28775, "climb-up", new Position(2513, 9206, 1), new Position(), true),
+
+    // Goes to east location for now
+    KRUK_DUNGEON_HOLE(28772, "enter", new Position(2509, 9159, 1), new Position(2380, 9168, 1), false),
+    KRUK_DUNGEON_HOLE_EXIT(28775, "climb-up", new Position(2378, 9168, 1), new Position(2508, 9159, 1), true),
+
     ICETROLL_CAVE_WEST_EXIT(21592, "climb-up", new Position(2421, 10279, 1), new Position(2317, 3893, 0), true),
 
     MYTHIC_STATUE(31626, "enter", new Position(2456, 2846), new Position(1936, 9009, 1), false),
