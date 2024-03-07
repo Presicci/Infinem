@@ -1,0 +1,30 @@
+{
+  "name": "Ali's Kebabs",
+  "currency": "COINS",
+  "npcs": [
+    3536
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 500,
+  "hideBuy": false,
+  "items": [
+    { // Kebab
+      "itemId": 1971,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 3
+    },
+    { // Super kebab
+      "itemId": 4609,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 5
+    },
+    { // Red hot sauce
+      "itemId": 4610,
+      "stock": 100,
+      "buy_price": -1,
+      "sell_price": 2
+    }
+  ]
+}
