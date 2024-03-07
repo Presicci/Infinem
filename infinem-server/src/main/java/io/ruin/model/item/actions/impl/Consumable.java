@@ -100,6 +100,23 @@ public class Consumable {
                 player.sendMessage("Wow, that was an amazing kebab! You feel really invigorated.");
             }
         });
+        registerEat(4608, 0, player -> {
+            int hpLevel = player.getStats().get(StatType.Hitpoints).fixedLevel;
+            int rand = Random.get(1, 32);
+            player.sendMessage("You eat the extra-hot kebab.");
+            if (rand <= 20) {
+                if (player.incrementHp((int) (3 + (hpLevel * 0.07))) > 0)
+                    player.sendMessage("It heals some health.");
+            } else if (rand <= 31) {
+                // Nothing happens
+            } else {
+                int randStat = Random.get(0, 21);
+                if (randStat == StatType.Hitpoints.ordinal()) randStat = 22;    // Can't drain hitpoints
+                player.getStats().get(randStat).drain(3);
+                player.sendMessage("That tasted a bit dodgy. You feel a bit ill.");
+                player.sendMessage("Eating the kebab has damaged your " + StatType.get(randStat).name() + " stat.");
+            }
+        });
         registerEat(2108, 2, "orange");
         registerEat(22929, 10, "dragonfruit");
         registerEat(Items.STEW, Items.BOWL, 11, "stew");
