@@ -1,5 +1,6 @@
 package io.ruin.model.item.actions.impl;
 
+import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
@@ -61,7 +62,10 @@ public class Consumable {
         registerEat(1963, 2, "banana");
         registerEat(2162, 2, "king worm");
         registerEat(6883, 8, "peach");
-        registerEat(1883, 19, "kebab");
+        registerEat(1883, 19, p -> {
+            p.sendMessage("You eat the kebab.");
+            p.forceText("Yum!");
+        });
         registerEat(2108, 2, "orange");
         registerEat(22929, 10, "dragonfruit");
         registerEat(Items.STEW, Items.BOWL, 11, "stew");
