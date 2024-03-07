@@ -48,7 +48,10 @@ public enum MonkeyGreeGree {
                     Item item = player.getEquipment().get(Equipment.SLOT_WEAPON);
                     if(item == null || item.getId() != greegreeId)
                         break;
-                    if(!player.getPosition().inBounds(ZOO_BOUNDS) && !player.getPosition().inBounds(Bounds.fromRegions(10794, 10795, 11050, 11051))) {
+                    if(!player.getPosition().inBounds(ZOO_BOUNDS) && !player.getPosition().inBounds(Bounds.fromRegions(
+                            10794, 10795, 11050, 11051, // Ape atoll
+                            10127   // Kruk dungeon
+                    ))) {
                         item.remove();
                         player.getInventory().addOrDrop(item.getId(), 1);
                         player.dialogue(new MessageDialogue("The Monkey Greegree wrenches itself from your hand as its power begins to fade...").lineHeight(24));
