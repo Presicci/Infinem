@@ -148,6 +148,7 @@ public class Cooking {
         double burnBonus = 0.0;
         int levelReq = food.levelRequirement;
         int burnStop = getBurnStop(player, food, fire);
+        if (burnStop <= levelReq) return true;
         if (!fire)
             burnBonus = 3.0;
         double burnChance = (55.0 - burnBonus);
