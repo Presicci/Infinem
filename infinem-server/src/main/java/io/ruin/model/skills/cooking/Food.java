@@ -84,6 +84,7 @@ public enum Food {
     FRIED_MUSHROOMS(46, 60, Items.SLICED_MUSHROOMS, Items.FRIED_MUSHROOMS, Items.BURNT_MUSHROOM, "the fried mushrooms", "", 3, 90, 90, 86),
     FRIED_ONIONS(42, 60, Items.CHOPPED_ONION, Items.FRIED_ONIONS, Items.BURNT_ONION, "the fried onions", "", 3, 77, 77, 72),
     BARLEY_MALT(1, 0.0, Items.BARLEY, Items.BARLEY_MALT, Items.BARLEY_MALT, "the barley malt", "", 3, 1, 1, 1),
+    COOKED_OOMLIE_WRAP(50, 30.0, Items.WRAPPED_OOMLIE, Items.COOKED_OOMLIE_WRAP, Items.BURNT_OOMLIE_WRAP, "the oomlie wrap", "", 3, 1, 1, 1),
 
     //Gnome
     HALF_BAKED_BATTA(1, 30.0, Items.RAW_BATTA, Items.HALF_BAKED_BATTA, Items.BURNT_BATTA, "the batta", "", 3, 40, 38, 34),
