@@ -141,17 +141,17 @@ public class ItemCombineAction {
         /**
          * Potatoes
          */
-        POTATO_WITH_BUTTER("You use the butter on the potato to make potato with butter.", Collections.singletonList(new SkillRequired(StatType.Cooking, 39, 40.0)),
+        POTATO_WITH_BUTTER("You use the butter on the potato to make a potato with butter.", Collections.singletonList(new SkillRequired(StatType.Cooking, 39, 40.0)),
                 Arrays.asList(new ItemPair(Items.BAKED_POTATO, Items.POTATO_WITH_BUTTER), new ItemPair(Items.PAT_OF_BUTTER, -1))),
-        CHILLI_POTATO("You use the chili on the potato to make chilli potato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 41, 15)),
+        CHILLI_POTATO("You use the chili on the potato to make a chilli potato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 41, 15)),
                 Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.CHILLI_POTATO), new ItemPair(Items.CHILLI_CON_CARNE, -1))),
-        POTATO_WITH_CHEESE("You use the cheese on the potato to make potato with cheese.", Collections.singletonList(new SkillRequired(StatType.Cooking, 47, 40)),
+        POTATO_WITH_CHEESE("You use the cheese on the potato to make a potato with cheese.", Collections.singletonList(new SkillRequired(StatType.Cooking, 47, 40)),
                 Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.POTATO_WITH_CHEESE), new ItemPair(Items.CHEESE, -1))),
-        EGG_POTATO("You use the egg on the potato to make egg potato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 51, 45)),
+        EGG_POTATO("You use the egg on the potato to make an egg potato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 51, 45)),
                 Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.EGG_POTATO), new ItemPair(Items.EGG_AND_TOMATO, -1))),
-        MUSHROOM_POTATO("You use the mushroom on the potato to make mushroom potato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 64, 55)),
+        MUSHROOM_POTATO("You use the mushroom on the potato to make a mushroom potato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 64, 55)),
                 Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.MUSHROOM_POTATO), new ItemPair(Items.MUSHROOM_ONION, -1))),
-        TUNA_POTATO("You use the tuna on the potato to make tuna potato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 68, 10)),
+        TUNA_POTATO("You use the tuna on the potato to make a tuna potato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 68, 10)),
                 Arrays.asList(new ItemPair(Items.POTATO_WITH_BUTTER, Items.TUNA_POTATO), new ItemPair(Items.TUNA_AND_CORN, -1))),
 
         /**
@@ -216,19 +216,23 @@ public class ItemCombineAction {
         SWEETCORN_BOWL("You slice the sweetcorn and add it to the bowl.", true,
                 Arrays.asList(new ItemPair(Items.BOWL, Items.SWEETCORN_2), new ItemPair(Items.COOKED_SWEETCORN, -1))),
 
-        SPICY_SAUCE("You use the gnome spice on the garlic to make spicy sauce.", Collections.singletonList(new SkillRequired(StatType.Cooking, 9, 25)),
+        SPICY_SAUCE("You add the spice to the garlic to make spicy sauce.", Collections.singletonList(new SkillRequired(StatType.Cooking, 9, 25)),
                 Arrays.asList(new ItemPair(Items.CHOPPED_GARLIC, Items.SPICY_SAUCE), new ItemPair(Items.GNOME_SPICE, -1))),
-        CHILLI_CON_CARNE("You use the meat on the spicy sauce to make chili con carne.", Collections.singletonList(new SkillRequired(StatType.Cooking, 11, 0)),
+        CHILLI_CON_CARNE("You add the meat to the spicy sauce to make chili con carne.", true, Collections.singletonList(new SkillRequired(StatType.Cooking, 11, 0)),
                 Arrays.asList(new ItemPair(Items.SPICY_SAUCE, Items.CHILLI_CON_CARNE), new ItemPair(Items.COOKED_MEAT, -1))),
-        CHILLI_CON_CARNE_MEAT("You use the minced meat on the spicy sauce to make chili con carne.", Collections.singletonList(new SkillRequired(StatType.Cooking, 11, 0)),
-                Arrays.asList(new ItemPair(Items.SPICY_SAUCE, Items.CHILLI_CON_CARNE), new ItemPair(Items.MINCED_MEAT, -1))),
-        EGG_AND_TOMATO("You use the tomato on the scrambled eggs to make egg and tomato.", Collections.singletonList(new SkillRequired(StatType.Cooking, 23, 0)),
+        CHILLI_CON_CARNE_MEAT("You add the meat to the spicy sauce to make chili con carne.", Collections.singletonList(new SkillRequired(StatType.Cooking, 11, 0)),
+                Arrays.asList(new ItemPair(Items.SPICY_SAUCE, Items.CHILLI_CON_CARNE), new ItemPair(Items.MINCED_MEAT, Items.BOWL))),
+        EGG_AND_TOMATO("You add the tomato to the eggs.", Collections.singletonList(new SkillRequired(StatType.Cooking, 23, 0)),
                 Arrays.asList(new ItemPair(Items.SCRAMBLED_EGG, Items.EGG_AND_TOMATO), new ItemPair(Items.TOMATO, -1))),
-        MUSHROOM_AND_ONION("You use the mushroom on the onion to make mushroom and onion.", Collections.singletonList(new SkillRequired(StatType.Cooking, 57, 0)),
-                Arrays.asList(new ItemPair(Items.FRIED_MUSHROOMS, Items.MUSHROOM_ONION), new ItemPair(Items.FRIED_ONIONS, -1))),
-        TUNA_AND_CORN("You use the tuna on the sweetcorn to make tuna and corn.", Collections.singletonList(new SkillRequired(StatType.Cooking, 67, 0)),
+        MUSHROOM_AND_ONION("You add the onions to the bowl of mushrooms.", Collections.singletonList(new SkillRequired(StatType.Cooking, 57, 0)),
+                Arrays.asList(new ItemPair(Items.FRIED_MUSHROOMS, Items.MUSHROOM_ONION), new ItemPair(Items.FRIED_ONIONS, Items.BOWL))),
+        TUNA_AND_CORN_1("You add the sweetcorn to the bowl of tuna.", Collections.singletonList(new SkillRequired(StatType.Cooking, 67, 0)),
                 Arrays.asList(new ItemPair(Items.CHOPPED_TUNA, Items.TUNA_AND_CORN), new ItemPair(Items.COOKED_SWEETCORN, -1))),
-        RAW_FISHCAPE("You mix the items to form a raw fishcake.", Collections.singletonList(new SkillRequired(StatType.Cooking, 31, 0)),
+        TUNA_AND_CORN_2("You slice the tuna and add it to the bowl of sweetcorn.", true, Collections.singletonList(new SkillRequired(StatType.Cooking, 67, 0)),
+                Arrays.asList(new ItemPair(Items.SWEETCORN_2, Items.TUNA_AND_CORN), new ItemPair(Items.TUNA, -1))),
+        TUNA_AND_CORN_3("You add the sweetcorn to the bowl of tuna.", Collections.singletonList(new SkillRequired(StatType.Cooking, 67, 0)),
+                Arrays.asList(new ItemPair(Items.CHOPPED_TUNA, Items.TUNA_AND_CORN), new ItemPair(Items.SWEETCORN_2, -1))),
+        RAW_FISHCAKE("You mix the items to form a raw fishcake.", Collections.singletonList(new SkillRequired(StatType.Cooking, 31, 0)),
                 Arrays.asList(new ItemPair(Items.BREADCRUMBS, Items.RAW_FISHCAKE), new ItemPair(Items.GROUND_COD, -1), new ItemPair(Items.GROUND_KELP, -1), new ItemPair(Items.GROUND_CRAB_MEAT, -1))),
         WRAPPED_OOMLIE("You use the palm leaf on the raw oomlie to make wrapped oomlie.", Collections.singletonList(new SkillRequired(StatType.Cooking, 50, 10)),
                 Arrays.asList(new ItemPair(Items.RAW_OOMLIE, Items.WRAPPED_OOMLIE), new ItemPair(Items.PALM_LEAF, -1))),
@@ -286,6 +290,11 @@ public class ItemCombineAction {
 
         ItemCombine(String combineMessage, List<SkillRequired> skillsRequired, List<ItemPair>... items) {
             this(2, -1, -1, combineMessage, "", 0, skillsRequired, items);
+        }
+
+        ItemCombine(String combineMessage, boolean needKnife, List<SkillRequired> skillsRequired, List<ItemPair>... items) {
+            this(2, -1, -1, combineMessage, "", 0, skillsRequired, items);
+            this.needKnife = needKnife;
         }
 
         ItemCombine(String combineMessage, List<ItemPair>... items) {
