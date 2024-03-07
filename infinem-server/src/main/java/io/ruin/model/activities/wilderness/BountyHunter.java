@@ -416,7 +416,7 @@ public class BountyHunter {
 
     static {
         List<Player> potentialTargets = new ArrayList<>(500);
-        World.startEvent(e -> {
+        /*World.startEvent(e -> {
             while (true) {
                 long ms = System.currentTimeMillis();
                 for (Player p1 : Wilderness.players) {
@@ -438,8 +438,8 @@ public class BountyHunter {
                 }
                 e.delay(20);
             }
-        });
-        InterfaceHandler.register(Interface.WILDERNESS_OVERLAY, h -> h.actions[56] = (SimpleAction) p -> p.getBountyHunter().skip(true));
+        });*/
+        //InterfaceHandler.register(Interface.WILDERNESS_OVERLAY, h -> h.actions[56] = (SimpleAction) p -> p.getBountyHunter().skip(true));
     }
 
 }
