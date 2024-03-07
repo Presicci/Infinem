@@ -1,0 +1,290 @@
+[
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2779,
+    "y": 2901,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2768,
+    "y": 2909,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2765,
+    "y": 2914,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2773,
+    "y": 2929,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2775,
+    "y": 2933,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2780,
+    "y": 2933,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2787,
+    "y": 2931,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2784,
+    "y": 2926,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2790,
+    "y": 2916,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2793,
+    "y": 2905,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2796,
+    "y": 2901,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2806,
+    "y": 2906,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2802,
+    "y": 2921,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2797,
+    "y": 2933,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2814,
+    "y": 2908,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2816,
+    "y": 2899,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2820,
+    "y": 2912,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2828,
+    "y": 2923,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2834,
+    "y": 2911,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2837,
+    "y": 2899,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2861,
+    "y": 2905,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2863,
+    "y": 2916,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2885,
+    "y": 2926,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2897,
+    "y": 2925,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2891,
+    "y": 2907,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2886,
+    "y": 2898,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2905,
+    "y": 2894,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2908,
+    "y": 2906,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2917,
+    "y": 2895,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2938,
+    "y": 2893,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2944,
+    "y": 2916,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Oomlie bird",
+    "id": 2062,
+    "x": 2921,
+    "y": 2925,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  }
+]
