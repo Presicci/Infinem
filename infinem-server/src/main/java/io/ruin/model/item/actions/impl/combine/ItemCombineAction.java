@@ -313,6 +313,8 @@ public class ItemCombineAction {
             }
             if (this == ItemCombine.PINEAPPLE_PIZZA)
                 player.getTaskManager().doLookupByUUID(99, 1);  // Make a Pineapple Pizza
+            if (this == ItemCombine.SUPER_KEBAB_1 || this == ItemCombine.SUPER_KEBAB_2 || this == ItemCombine.SUPER_KEBAB_3)
+                player.getTaskManager().doLookupByUUID(939);    // Make a Super Kebab
             player.resetAnimation();
         }
     }
