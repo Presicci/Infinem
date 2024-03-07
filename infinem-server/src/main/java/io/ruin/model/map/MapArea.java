@@ -135,6 +135,7 @@ public enum MapArea {
 
     public boolean inArea(Player player) {
         if (predicate != null && predicate.test(player)) return true;
+        if (bounds == null) return false;
         return bounds.inBounds(player);
     }
 
