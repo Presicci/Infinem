@@ -40,9 +40,9 @@ public class ApeAtollCourse {
             new Position(2752, 2741, 0)
     );
 
-    private static final int[] MONKEY_IDS = { 1462, 1463, 5257 };
+    public static final int[] MONKEY_IDS = { 1462, 1463, 5257 };
 
-    private static boolean checkGreeGree(Player player) {
+    public static boolean checkGreeGree(Player player) {
         int npcId = player.getAppearance().getNpcId();
         return Arrays.stream(MONKEY_IDS).anyMatch(id -> id == npcId);
     }
