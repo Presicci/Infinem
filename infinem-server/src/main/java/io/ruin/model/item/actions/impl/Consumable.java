@@ -31,6 +31,7 @@ public class Consumable {
      */
 
     static {
+        registerEat(Items.CHOPPED_TOMATO, 2, "chopped tomato");
         registerEat(Items.GIANT_CARP, 6, "giant carp");
         registerEat(Items.LAVA_EEL, 11, "lava eel");
         registerEat(Items.FIELD_RATION, 10, "field ration");
