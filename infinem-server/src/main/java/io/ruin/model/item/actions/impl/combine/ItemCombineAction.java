@@ -183,6 +183,12 @@ public class ItemCombineAction {
                 Arrays.asList(new ItemPair(Items.ONION_TOMATO, Items.KEBAB_MIX), new ItemPair(Items.UGTHANKI_MEAT, -1))),
         KEBAB("You add the kebab mix to the pitta to make a kebab.", Collections.singletonList(new SkillRequired(StatType.Cooking, 58, 40)),
                 Arrays.asList(new ItemPair(Items.PITTA_BREAD, Items.UGTHANKI_KEBAB), new ItemPair(Items.KEBAB_MIX, -1))),
+        SUPER_KEBAB_1("You cover the kebab in red hot saunce.",
+                Arrays.asList(new ItemPair(Items.KEBAB, Items.SUPER_KEBAB), new ItemPair(Items.RED_HOT_SAUCE, -1))),
+        SUPER_KEBAB_2("You cover the kebab in red hot saunce.",
+                Arrays.asList(new ItemPair(Items.UGTHANKI_KEBAB, Items.SUPER_KEBAB), new ItemPair(Items.RED_HOT_SAUCE, -1))),
+        SUPER_KEBAB_3("You cover the kebab in red hot saunce.",
+                Arrays.asList(new ItemPair(Items.UGTHANKI_KEBAB_2, Items.SUPER_KEBAB), new ItemPair(Items.RED_HOT_SAUCE, -1))),
 
         /**
          * Misc
