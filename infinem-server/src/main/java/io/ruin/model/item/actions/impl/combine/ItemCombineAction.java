@@ -193,21 +193,21 @@ public class ItemCombineAction {
         /**
          * Misc
          */
-        UNCOOKED_EGG("You use the egg on the empty bowl to make uncooked egg.", Collections.singletonList(new SkillRequired(StatType.Cooking, 13, 0)),
+        UNCOOKED_EGG("You crack the egg into the bowl.", Collections.singletonList(new SkillRequired(StatType.Cooking, 13, 0)),
                 Arrays.asList(new ItemPair(Items.BOWL, Items.UNCOOKED_EGG), new ItemPair(Items.EGG, -1))),
-        CHOPPED_ONION("You use the onion on an empty bowl to make chopped onion.",
+        CHOPPED_ONION("You slice the onion and add it to the bowl.", true,
                 Arrays.asList(new ItemPair(Items.BOWL, Items.CHOPPED_ONION), new ItemPair(Items.ONION, -1))),
-        CHOPPED_GARLIC("You use the garlic on an empty bowl to make chopped garlic.",
+        CHOPPED_GARLIC("You slice the garlic and add it to the bowl.", true,
                 Arrays.asList(new ItemPair(Items.BOWL, Items.CHOPPED_GARLIC), new ItemPair(Items.GARLIC, -1))),
-        CHOPPED_TUNA("You use the tuna on an empty bowl to make chopped tuna.",
+        CHOPPED_TUNA("You slice the tuna and add it to the bowl.", true,
                 Arrays.asList(new ItemPair(Items.BOWL, Items.CHOPPED_TUNA), new ItemPair(Items.TUNA, -1))),
-        CHOPPED_TOMATO("You use the tomato on an empty bowl to make chopped tomato.",
+        CHOPPED_TOMATO("You slice the tomato and add it to the bowl.", true,
                 Arrays.asList(new ItemPair(Items.BOWL, Items.CHOPPED_TOMATO), new ItemPair(Items.TOMATO, -1))),
-        MINCED_MEAT("You use the meat on an empty bowl to make minced meat.",
+        MINCED_MEAT("You slice the meat and add it to the bowl.", true,
                 Arrays.asList(new ItemPair(Items.BOWL, Items.MINCED_MEAT), new ItemPair(Items.COOKED_MEAT, -1))),
-        SLICED_MUSHROOMS("You use the mushrooms on an empty bowl to make sliced mushrooms.",
+        SLICED_MUSHROOMS("You slice the mushrooms and add them to the bowl.", true,
                 Arrays.asList(new ItemPair(Items.BOWL, Items.SLICED_MUSHROOMS), new ItemPair(Items.MUSHROOM, -1))),
-        SWEETCORN_BOWL("You add the sweetcorn to the bowl.",
+        SWEETCORN_BOWL("You slice the sweetcorn and add it to the bowl.", true,
                 Arrays.asList(new ItemPair(Items.BOWL, Items.SWEETCORN_2), new ItemPair(Items.COOKED_SWEETCORN, -1))),
 
         SPICY_SAUCE("You use the gnome spice on the garlic to make spicy sauce.", Collections.singletonList(new SkillRequired(StatType.Cooking, 9, 25)),
@@ -259,6 +259,7 @@ public class ItemCombineAction {
         public final String combineMessage, warningMessage;
         public final List<SkillRequired> skillsRequired;
         public final List<ItemPair>[] items;
+        public boolean needKnife = false;
 
         ItemCombine(int tickInterval, int animation, int graphics, String combineMessage, String warningMessage, int inventorySpaceRequired, List<SkillRequired> skillsRequired, List<ItemPair>... items) {
             this.tickInterval = tickInterval;
@@ -285,6 +286,11 @@ public class ItemCombineAction {
 
         ItemCombine(String combineMessage, List<ItemPair>... items) {
             this(2, -1, -1, combineMessage, "", 0, null, items);
+        }
+
+        ItemCombine(String combineMessage, boolean needKnife, List<ItemPair>... items) {
+            this(2, -1, -1, combineMessage, "", 0, null, items);
+            this.needKnife = needKnife;
         }
 
         public boolean combine(Player player, List<ItemPair> itemReqs) {
@@ -352,6 +358,10 @@ public class ItemCombineAction {
                                 if(!player.getStats().check(skill.statType, skill.levelReq, itemReqs.get(0).replacement.getId(), "make the " + ItemDef.get(itemReqs.get(0).replacement.getId()) + ""))
                                     return;
                             }
+                        }
+                        if (itemCombine.needKnife && !player.getInventory().hasId(Items.KNIFE)) {
+                            player.sendMessage("You need a knife to make that.");
+                            return;
                         }
                         if (player.getInventory().getFreeSlots() < itemCombine.inventorySpaceRequired) {
                             player.sendMessage("You do not have enough inventory space to do that.");
