@@ -34,6 +34,11 @@ public enum BaneWeapon {
             if (hit.damage >= 10)
                 player.sendMessage("You slip your weapon through a gap in the creature's chitin, landing a vicious blow.");
         }
+    }),
+    GADDERHAMMER(Items.GADDERHAMMER, "SHADE", AttackStyle::isMelee, 0, 0.25, HitStageOutgoing.PRE_TARGET_DEFEND, hit -> {
+        if (Random.rollDie(20, 1)) {
+            hit.damage *= 2;
+        }
     })
     ;
 
@@ -46,6 +51,10 @@ public enum BaneWeapon {
 
     BaneWeapon(int itemId, String tagKey, Predicate<AttackStyle> predicate, double attackBoost, double damageBoost) {
         this(itemId, tagKey, predicate, attackBoost, damageBoost, null, null);
+    }
+
+    BaneWeapon(int itemId, String tagKey, Predicate<AttackStyle> predicate, HitStageOutgoing otherEffectStage, Consumer<Hit> otherEffects) {
+        this(itemId, tagKey, predicate, 0, 0, otherEffectStage, otherEffects);
     }
 
     BaneWeapon(int itemId, String tagKey, Predicate<AttackStyle> predicate, double attackBoost, double damageBoost, HitStageOutgoing otherEffectStage, Consumer<Hit> otherEffects) {
