@@ -287,10 +287,10 @@ public class ItemCombineAction {
             this(2, -1, -1, combineMessage, "", 0, null, items);
         }
 
-        public void combine(Player player, List<ItemPair> itemReqs) {
+        public boolean combine(Player player, List<ItemPair> itemReqs) {
             for (ItemPair i : itemReqs) {   // If the player runs out of items, break loop
                 if (i.required != null && !player.getInventory().contains(i.required)) {
-                    return;
+                    return false;
                 }
             }
             if (this.animation != -1) {  // If an animation exists, play it
@@ -315,7 +315,7 @@ public class ItemCombineAction {
                 player.getTaskManager().doLookupByUUID(99, 1);  // Make a Pineapple Pizza
             if (this == ItemCombine.SUPER_KEBAB_1 || this == ItemCombine.SUPER_KEBAB_2 || this == ItemCombine.SUPER_KEBAB_3)
                 player.getTaskManager().doLookupByUUID(939);    // Make a Super Kebab
-            player.resetAnimation();
+            return true;
         }
     }
 
@@ -324,32 +324,10 @@ public class ItemCombineAction {
             List<SkillItem> skillItems = new ArrayList<SkillItem>();
             for (List<ItemPair> items : itemCombine.items) {
                 SkillItem item = new SkillItem(items.get(0).replacement.getId()).addAction((player, amount, event) -> {
-                    whileLoop:
                     while(amount-- > 0) {
-                        for (ItemPair i : items) {   // If the player runs out of items, break loop
-                            if (i.required != null && !player.getInventory().contains(i.required)) {
-                                break whileLoop;
-                            }
-                        }
-                        if (itemCombine.animation != -1) {  // If an animation exists, play it
-                            player.animate(itemCombine.animation);
-                        }
-                        if (itemCombine.graphics != -1) {   // If a graphic exists, play it
-                            player.animate(itemCombine.graphics);
-                        }
-                        if (!itemCombine.combineMessage.equalsIgnoreCase("")) { // If a combine message exists, send it
-                            player.sendFilteredMessage(itemCombine.combineMessage);
-                        }
-                        for (ItemPair i : items) {
-                            if (i.required != null && i.replacement != null) {
-                                player.getInventory().findItem(i.required.getId()).setId(i.replacement.getId());
-                            } else if (i.required == null) {
-                                player.getInventory().addOrDrop(i.replacement);
-                            } else {
-                                player.getInventory().remove(i.required);
-                            }
-                        }
-                        event.delay(itemCombine.tickInterval);
+                        if (itemCombine.combine(player, items))
+                            event.delay(itemCombine.tickInterval);
+                        else break;
                     }
                     player.resetAnimation();
                 });
