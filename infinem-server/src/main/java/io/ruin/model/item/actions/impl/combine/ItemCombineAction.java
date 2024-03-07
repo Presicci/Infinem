@@ -334,6 +334,8 @@ public class ItemCombineAction {
                 player.getTaskManager().doLookupByUUID(99, 1);  // Make a Pineapple Pizza
             if (this == ItemCombine.SUPER_KEBAB_1 || this == ItemCombine.SUPER_KEBAB_2 || this == ItemCombine.SUPER_KEBAB_3)
                 player.getTaskManager().doLookupByUUID(939);    // Make a Super Kebab
+            if (this == ItemCombine.KEBAB)
+                player.getTaskManager().doLookupByUUID(940);      // Make an Ugthanki Kebab
             return true;
         }
     }
