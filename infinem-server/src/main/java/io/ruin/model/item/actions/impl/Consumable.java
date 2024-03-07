@@ -66,6 +66,10 @@ public class Consumable {
             p.sendMessage("You eat the kebab.");
             p.forceText("Yum!");
         });
+        registerEat(1885, 19, p -> {
+            p.sendMessage("You eat the kebab.");
+            p.forceText("Yum!");
+        });
         registerEat(1971, 0, player -> {
             int hpLevel = player.getStats().get(StatType.Hitpoints).fixedLevel;
             int rand = Random.get(1, 128);
