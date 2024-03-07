@@ -66,6 +66,40 @@ public class Consumable {
             p.sendMessage("You eat the kebab.");
             p.forceText("Yum!");
         });
+        registerEat(1971, 0, player -> {
+            int hpLevel = player.getStats().get(StatType.Hitpoints).fixedLevel;
+            int rand = Random.get(1, 128);
+            player.sendMessage("You eat the kebab.");
+            if (rand <= 80) {
+                if (player.incrementHp((int) (3 + (hpLevel * 0.07))) > 0)
+                    player.sendMessage("It heals some health.");
+            } else if (rand <= 112) {
+                player.incrementHp((int) (6 + (hpLevel * 0.14)));
+                player.sendMessage("That was a good kebab. You feel a lot better.");
+            } else if (rand <= 116) {
+                player.sendMessage("That kebab didn't seem to do a lot.");
+            } else if (rand <= 120) {
+                int randStat = Random.get(0, 21);
+                if (randStat == StatType.Hitpoints.ordinal()) randStat = 22;    // Can't drain hitpoints
+                player.getStats().get(randStat).drain(3);
+                player.sendMessage("That tasted a bit dodgy. You feel a bit ill.");
+                player.sendMessage("Eating the kebab has damaged your " + StatType.get(randStat).name() + " stat.");
+            } else if (rand <= 124) {
+                int randStat = Random.get(7, 22);
+                player.getStats().get(randStat).drain(3);
+                player.getStats().get(StatType.Attack).drain(3);
+                player.getStats().get(StatType.Strength).drain(3);
+                player.getStats().get(StatType.Defence).drain(3);
+                player.sendMessage("That tasted a bit dodgy. You feel very ill.");
+                player.sendMessage("Eating the kebab has done damage to some of your stats.");
+            } else {
+                player.getStats().get(StatType.Attack).boost(2, 0);
+                player.getStats().get(StatType.Strength).boost(2, 0);
+                player.getStats().get(StatType.Defence).boost(2, 0);
+                player.incrementHp((int) (7 + (hpLevel * 0.24)));
+                player.sendMessage("Wow, that was an amazing kebab! You feel really invigorated.");
+            }
+        });
         registerEat(2108, 2, "orange");
         registerEat(22929, 10, "dragonfruit");
         registerEat(Items.STEW, Items.BOWL, 11, "stew");
