@@ -318,7 +318,7 @@ public abstract class Entity extends TemporaryAttributesHolder {
     }
 
     public int resetAnimation() {
-        int npcId = player.getAppearance().getNpcId();
+        int npcId = isNpc() ? -1 : player.getAppearance().getNpcId();
         if (isPlayer() && npcId != -1) {
             player.npcAnimate(-1, npcId);
             return 0;
