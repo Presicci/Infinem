@@ -1557,6 +1557,42 @@
     "walkRange": 1
   },
   {
+    "name": "Monk of Zamorak",
+    "id": 8698,
+    "x": 3065,
+    "y": 10334,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Monk of Zamorak",
+    "id": 8698,
+    "x": 3026,
+    "y": 10351,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Chaos dwarf",
+    "id": 291,
+    "x": 3033,
+    "y": 10310,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Fire giant",
+    "id": 2077,
+    "x": 3049,
+    "y": 10337,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
     "name": "Hellhound",
     "id": 104,
     "x": 3173,
