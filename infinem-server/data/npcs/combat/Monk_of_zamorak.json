@@ -1,7 +1,7 @@
 [
   { // Monk of Zamorak (17)
     "ids": [ 528, 3485, 8401 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.magic.MonkOfZamorak",
     //Combat Info
     "hitpoints": 10,
     "aggressive_level": 34,
@@ -44,7 +44,7 @@
   },
   { // Monk of Zamorak (22)
     "ids": [ 527, 3484, 8400 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.magic.MonkOfZamorak",
     //Combat Info
     "hitpoints": 20,
     "aggressive_level": 44,
@@ -87,7 +87,7 @@
   },
   { // Monk of Zamorak (23)
     "ids": [ 8698 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.magic.MonkOfZamorak",
     //Combat Info
     "hitpoints": 16,
     "aggressive_level": 46,
@@ -130,11 +130,11 @@
   },
   { // Monk of Zamorak (30)
     "ids": [ 3486 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.magic.MonkOfZamorak",
     //Combat Info
     "hitpoints": 25,
     "aggressive_level": 60,
-    "max_damage": 12,
+    "max_damage": 3,
     "attack_style": "CRUSH",
     //Slayer Info
     "slayer_level": 1,
@@ -173,7 +173,7 @@
   },
   { // Monk of Zamorak (45)
     "ids": [ 529 ],
-    "handler": "",
+    "handler": "io.ruin.model.combat.npc.magic.MonkOfZamorak",
     //Combat Info
     "hitpoints": 40,
     "aggressive_level": 90,
