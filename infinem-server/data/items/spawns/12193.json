@@ -12,5 +12,14 @@
     "x": 3044,
     "y": 10314,
     "z": 0
+  },
+  {
+    "itemName": "Wine of zamorak",
+    "amount": 0,
+    "id": 245,
+    "x": 3018,
+    "y": 10353,
+    "z": 0,
+    "respawnSeconds": 30
   }
 ]
