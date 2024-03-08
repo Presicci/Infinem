@@ -56,6 +56,10 @@ public abstract class WizardCombat extends NPCCombat {
 
     protected void onCast(boolean standard) {}
 
+    protected int getSpellMaxHit() {
+        return info.max_damage;
+    }
+
     protected void cast(NPCCombatSpells spell) {
         int castAnim = getCastAnimation();
         if (castAnim != -1)
@@ -69,7 +73,7 @@ public abstract class WizardCombat extends NPCCombat {
         npc.publicSound(spell.getCastSoundId(), spell.getCastSoundType(), 0);
         int delay = spell.getProjectile().send(npc, target);
         Hit hit = new Hit(npc, AttackStyle.MAGIC)
-                .randDamage(spell.getOnHitAction() != null ? 0 : info.max_damage)
+                .randDamage(spell.getOnHitAction() != null ? 0 : getSpellMaxHit())
                 .clientDelay(delay);
         onCast(spell == standardCast);
         hit.postDamage(t -> {
