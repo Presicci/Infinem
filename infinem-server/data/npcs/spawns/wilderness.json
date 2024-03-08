@@ -4987,6 +4987,42 @@
     "walkRange": 6
   },
   {
+    "name": "Ent",
+    "id": 6594,
+    "x": 3299,
+    "y": 3591,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ent",
+    "id": 6594,
+    "x": 3302,
+    "y": 3600,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ent",
+    "id": 6594,
+    "x": 3304,
+    "y": 3615,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Ent",
+    "id": 6594,
+    "x": 3306,
+    "y": 3630,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
     "name": "Black unicorn",
     "id": 2849,
     "x": 3211,
