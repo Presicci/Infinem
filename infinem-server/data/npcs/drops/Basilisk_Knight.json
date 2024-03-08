@@ -21,7 +21,7 @@
       },
       {
         "name": "Runes and ammunition",
-        "weight": 544,
+        "weight": 625,
         "items": [
           { "id": 9075, "min": 15, "max": 35, "weight": 11500 },   //Astral rune
           { "id": 561, "min": 15, "max": 30, "weight": 11500 },   //Nature rune
@@ -32,14 +32,14 @@
       },
       {
         "name": "useful herb",
-        "weight": 68,
+        "weight": 84,
         "items": [
           { "id": 0, "min": 5, "max": 5, "weight": 5 }
         ]
       },
       {
         "name": "Other",
-        "weight": 182,
+        "weight": 240,
         "items": [
           { "id": 995, "min": 500, "max": 2499, "weight": 13500 },   //Coins
           { "id": 450, "min": 1, "max": 2, "weight": 1919 }   //Adamantite ore (noted)
