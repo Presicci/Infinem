@@ -147,7 +147,7 @@ public class WoodcuttingGuild {
          */
         ObjectAction.register(29682, "enter", (player, obj) -> player.getMovement().teleport(player.getAbsX(), player.getAbsY(), player.getHeight() - 1));
 
-        NPCAction.register(6595, "chop", (player, npc) -> player.startEvent(event -> {
+        NPCAction.register(9474, "chop", (player, npc) -> player.startEvent(event -> {
             event.delay(1);
             Hatchet axe = Hatchet.find(player);
 

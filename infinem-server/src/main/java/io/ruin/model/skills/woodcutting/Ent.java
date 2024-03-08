@@ -11,7 +11,7 @@ import io.ruin.model.stat.StatType;
 
 public class Ent {
     private static void summonTrunk(NPC npc, Player killer) {
-        NPC trunk = new NPC(6595);
+        NPC trunk = new NPC(9474);
         trunk.ownerId = killer.getUserId();
         trunk.spawn(npc.getPosition());
         World.startEvent(e -> {
