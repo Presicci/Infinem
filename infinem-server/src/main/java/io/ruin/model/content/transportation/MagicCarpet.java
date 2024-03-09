@@ -1,42 +1,17 @@
 package io.ruin.model.content.transportation;
 
-import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Position;
-import io.ruin.model.map.route.RouteType;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 5/26/2021
  */
 public class MagicCarpet {
-
-    private static int ANIM = 6936;
-
-    private static Position[] gateToPoll = {
-            new Position(3308, 3110),
-            new Position(3349, 3004)
-    };
-
-    private static void carpetRide(Player player) {
-        /*player.startEvent(e -> {
-            player.lock();
-            //RouteType route = player.getRouteFinder().routeAbsolute(gateToPoll[0].getX(), gateToPoll[0].getY());
-            e.path(player, gateToPoll[0]);
-            //player.animate();
-            //e.delay(2);
-            player.animate(ANIM);
-            e.path(player, gateToPoll[1]);
-            player.resetAnimation();
-            player.unlock();
-        });*/
-    }
-
 
     // 20 Shanty pass
     // 17 uzer, camp, pollniv
@@ -51,69 +26,74 @@ public class MagicCarpet {
     private static final Position sophanem = new Position(3285, 2813);
     private static final Position nardah = new Position(3401, 2916);
 
+    private static void travel(Player player, Position destination) {
+        Traveling.fadeTravel(player, destination);
+        if (destination.equals(sophanem))
+            player.getTaskManager().doLookupByUUID(641);    // Take a Carpet Ride from Pollnivneach to Sophanem
+    }
 
     static {
         NPCAction.register(17, "travel", (player, npc) -> {
             player.dialogue(
                     new OptionsDialogue("Where do you want to travel?",
-                            new Option("Pollnivneach", () -> Traveling.fadeTravel(player, northPollniv)),
-                            new Option("Bedabin Camp", () -> Traveling.fadeTravel(player, camp)),
-                            new Option("Uzer", () -> Traveling.fadeTravel(player, uzer))
+                            new Option("Pollnivneach", () -> travel(player, northPollniv)),
+                            new Option("Bedabin Camp", () -> travel(player, camp)),
+                            new Option("Uzer", () -> travel(player, uzer))
                     ));
         });
 
         NPCAction.register(17, "talk-to", (player, npc) -> {
             player.dialogue(
                     new OptionsDialogue("Where do you want to travel?",
-                            new Option("Pollnivneach", () -> Traveling.fadeTravel(player, northPollniv)),
-                            new Option("Bedabin Camp", () -> Traveling.fadeTravel(player, camp)),
-                            new Option("Uzer", () -> Traveling.fadeTravel(player, uzer))
+                            new Option("Pollnivneach", () -> travel(player, northPollniv)),
+                            new Option("Bedabin Camp", () -> travel(player, camp)),
+                            new Option("Uzer", () -> travel(player, uzer))
                     ));
         });
 
         NPCAction.register(20, "travel", (player, npc) -> {
             player.dialogue(
                     new OptionsDialogue("Where do you want to travel?",
-                            new Option("Shanty Pass", () -> Traveling.fadeTravel(player, shantyPass))
+                            new Option("Shanty Pass", () -> travel(player, shantyPass))
                     ));
         });
 
         NPCAction.register(20, "talk-to", (player, npc) -> {
             player.dialogue(
                     new OptionsDialogue("Where do you want to travel?",
-                            new Option("Shanty Pass", () -> Traveling.fadeTravel(player, shantyPass))
+                            new Option("Shanty Pass", () -> travel(player, shantyPass))
                     ));
         });
 
         NPCAction.register(18, "travel", (player, npc) -> {
             player.dialogue(
                     new OptionsDialogue("Where do you want to travel?",
-                            new Option("Pollnivneach", () -> Traveling.fadeTravel(player, southPollniv))
+                            new Option("Pollnivneach", () -> travel(player, southPollniv))
                     ));
         });
 
         NPCAction.register(18, "talk-to", (player, npc) -> {
             player.dialogue(
                     new OptionsDialogue("Where do you want to travel?",
-                            new Option("Pollnivneach", () -> Traveling.fadeTravel(player, southPollniv))
+                            new Option("Pollnivneach", () -> travel(player, southPollniv))
                     ));
         });
 
         NPCAction.register(22, "travel", (player, npc) -> {
             player.dialogue(
                     new OptionsDialogue("Where do you want to travel?",
-                            new Option("Nardah", () -> Traveling.fadeTravel(player, nardah)),
-                            new Option("Sophanem", () -> Traveling.fadeTravel(player, sophanem)),
-                            new Option("Menaphos", () -> Traveling.fadeTravel(player, menaphos))
+                            new Option("Nardah", () -> travel(player, nardah)),
+                            new Option("Sophanem", () -> travel(player, sophanem)),
+                            new Option("Menaphos", () -> travel(player, menaphos))
                     ));
         });
 
         NPCAction.register(22, "talk-to", (player, npc) -> {
             player.dialogue(
                     new OptionsDialogue("Where do you want to travel?",
-                            new Option("Nardah", () -> Traveling.fadeTravel(player, nardah)),
-                            new Option("Sophanem", () -> Traveling.fadeTravel(player, sophanem)),
-                            new Option("Menaphos", () -> Traveling.fadeTravel(player, menaphos))
+                            new Option("Nardah", () -> travel(player, nardah)),
+                            new Option("Sophanem", () -> travel(player, sophanem)),
+                            new Option("Menaphos", () -> travel(player, menaphos))
                     ));
         });
     }
