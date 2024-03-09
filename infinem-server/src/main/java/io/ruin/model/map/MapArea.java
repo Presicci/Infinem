@@ -110,18 +110,24 @@ public enum MapArea {
         registerOnExit(bounds, exitAction);
     }
 
-    MapArea(Bounds bounds, MapListener.EnteredAction enteredAction) {
-        this.bounds = bounds;
-        registerOnEnter(bounds, enteredAction);
-    }
-
     MapArea(Predicate<Player> predicate) {
         this.bounds = null;
         this.predicate = predicate;
     }
 
+    MapArea(Bounds bounds, MapListener.EnteredAction enteredAction) {
+        this.bounds = bounds;
+        registerOnEnter(bounds, enteredAction);
+    }
+
     MapArea(Bounds bounds, MapListener.ExitAction exitAction) {
         this.bounds = bounds;
+        registerOnExit(bounds, exitAction);
+    }
+
+    MapArea(Bounds bounds,  MapListener.EnteredAction enteredAction, MapListener.ExitAction exitAction) {
+        this.bounds = bounds;
+        registerOnEnter(bounds, enteredAction);
         registerOnExit(bounds, exitAction);
     }
 
