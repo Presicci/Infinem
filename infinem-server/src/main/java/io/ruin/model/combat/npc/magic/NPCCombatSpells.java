@@ -94,6 +94,12 @@ public enum NPCCombatSpells {
                     entity.npc.getCombat().getStat(StatType.Defence).drain(4);
                 }
             })),
+    FLAMES_OF_ZAMORAK(new Projectile(64, 0),
+            811,
+            -1, -1,
+            -1, -1,
+            78, 0,
+            1655),
     DRUID_FAKE_ENTANGLE(new Projectile(178, 45, 0, 75, 56, 10, 16, 64),
             1161,
             177, 120,
