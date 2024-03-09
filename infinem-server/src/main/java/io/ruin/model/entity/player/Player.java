@@ -63,6 +63,7 @@ import io.ruin.model.item.containers.bank.Bank;
 import io.ruin.model.item.containers.bank.BankPin;
 import io.ruin.model.item.containers.collectionlog.CollectionLog;
 import io.ruin.model.map.*;
+import io.ruin.model.map.environment.Desert;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.shop.Shop;
@@ -1682,6 +1683,7 @@ public class Player extends PlayerAttributes {
         combat.tickSkull();
         tickDarkness();
         tickEvents();
+        Desert.tickDesertHeat(this);
         /*if(player.wildernessLevel <= 0 && !player.pvpAttackZone && player.snowballPeltOption &&
                 !player.getEquipment().hasId(Christmas.SNOWBALL) && !player.getPosition().inBounds(DuelArena.BOUNDS)
                 && !player.getPosition().inBounds(DuelArena.CUSTOM_EDGE)) {
