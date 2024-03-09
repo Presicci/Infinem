@@ -49,7 +49,7 @@ public class Bird extends Creature {
     @Override
     protected void failCatch(NPC npc, Trap trap, Event event) throws Pausable {
         trap.getObject().setId(9346);
-        npc.animate(5172);
+        npc.animate(6783);
         event.delay(1);
         if (!trap.getOwner().isOnline()) {
             return;
@@ -61,7 +61,7 @@ public class Bird extends Creature {
     protected void prepareForCatchAttempt(NPC npc, Trap trap, Event event) throws Pausable {
         npc.face(npc.getAbsX(), npc.getAbsY() - 1);
         event.delay(2);
-        npc.animate(5171);
+        npc.animate(6780);
         event.delay(1);
     }
 
