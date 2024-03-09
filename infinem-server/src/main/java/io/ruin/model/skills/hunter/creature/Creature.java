@@ -150,7 +150,7 @@ public abstract class Creature {
     }
 
     public boolean isViableTrap(NPC npc, Trap trap) {
-        return Misc.getDistance(npc.getPosition(), trap.getObject().x, trap.getObject().y) <= 12 // within reasonable distance
+        return Misc.getDistance(npc.getPosition(), trap.getObject().x, trap.getObject().y) <= 6 // within reasonable distance
                 && trap.getTrapType() == getTrapType() // correct trap type
                 && ProjectileRoute.allow(npc, trap.getObject().x, trap.getObject().y) // npc has line of sight to the trap
                 && trap.getObject().id == trap.getTrapType().getActiveObjectId() // trap is in ready to catch state
