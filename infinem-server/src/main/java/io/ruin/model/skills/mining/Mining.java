@@ -127,7 +127,10 @@ public class Mining {
                         if (rockData.ordinal() <= Rock.ADAMANT.ordinal())
                             CelestialRing.removeChargeIfEquipped(player);
                         player.collectResource(new Item(id, amount));
-                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MINE, ItemDef.get(id).name);
+                        if (rockData == Rock.GRANITE)
+                            player.getTaskManager().doLookupByUUID(656);    // Granite lookup sucks so just manually do it
+                        else
+                            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MINE, ItemDef.get(id).name);
                         if (pickaxe == Pickaxe.INFERNAL && Random.rollDie(3, 1) && InfernalTools.INFERNAL_PICKAXE.hasCharge(player) && infernalPickProc(player, rockData.ore)) {
                             player.graphics(580, 155, 0);
                             InfernalTools.INFERNAL_PICKAXE.removeCharge(player);
