@@ -46,6 +46,7 @@ public class KharidianCactus {
                     finalWaterskin.setId(Items.WATERSKIN_4);
                     player.sendMessage("You top up your skin with water from the cactus.");
                     player.getStats().addXp(StatType.Woodcutting, 10.0, true);
+                    player.getTaskManager().doLookupByUUID(640);    // Cut a Cactus in the Kharidian Desert
                     World.startEvent(we -> {
                         object.setId(2671);
                         we.delay(100);
