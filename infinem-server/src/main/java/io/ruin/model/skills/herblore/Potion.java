@@ -2,6 +2,7 @@ package io.ruin.model.skills.herblore;
 
 import io.ruin.cache.ItemDef;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -164,7 +165,8 @@ public enum Potion {
         }
         player.getInventory().add(potion, 1);
         player.getStats().addXp(StatType.Herblore, xp, true);
-        player.getTaskManager().doSkillItemLookup(potion);
+        String name = ItemDef.get(potion).name.toLowerCase();
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.POTION, name.substring(0, name.indexOf("(")), 1, true);
         player.animate(363);
     }
 
@@ -307,6 +309,7 @@ public enum Potion {
                     return;
                 }
                 double experience = secondaryAmtPerDose == 0 ? potion.xp + (xpPerDose * doses) : xpPerDose * doses;
+                String name = ItemDef.get(potion.vialIds[doses - 1]).name.toLowerCase();
                 if (player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     int amtPrimary = player.getInventory().getAmount(primaryId);
                     int amtSecondary = player.getInventory().getAmount(secondaryId);
@@ -324,6 +327,7 @@ public enum Potion {
                     }
                     player.animate(363);
                     player.getStats().addXp(StatType.Herblore, experience * amt, true);
+                    player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.POTION, name.substring(0, name.indexOf("(")), amt, true);
                 } else {
                     secondary.remove(reqAmt);
                     primary.remove(1);
@@ -333,6 +337,7 @@ public enum Potion {
                         player.getInventory().add(potion.vialIds[doses - 1]);
                     player.animate(363);
                     player.getStats().addXp(StatType.Herblore, experience, true);
+                    player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.POTION, name.substring(0, name.indexOf("(")), 1, true);
                     if (reqAmt == 1)
                         player.sendFilteredMessage("You mix 1 " + secondaryName + " into your potion.");
                     else
