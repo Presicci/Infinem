@@ -6,6 +6,7 @@ import io.ruin.model.World;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -126,6 +127,7 @@ public class Mining {
                         if (rockData.ordinal() <= Rock.ADAMANT.ordinal())
                             CelestialRing.removeChargeIfEquipped(player);
                         player.collectResource(new Item(id, amount));
+                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MINE, ItemDef.get(id).name);
                         if (pickaxe == Pickaxe.INFERNAL && Random.rollDie(3, 1) && InfernalTools.INFERNAL_PICKAXE.hasCharge(player) && infernalPickProc(player, rockData.ore)) {
                             player.graphics(580, 155, 0);
                             InfernalTools.INFERNAL_PICKAXE.removeCharge(player);
