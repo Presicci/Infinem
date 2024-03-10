@@ -1,0 +1,8 @@
+4648
+Shantay Guard: Hello there! What can I do for you?
+<I'd like to go into the desert please.
+Player: I'd like to go into the desert please.
+Shantay Guard: You'll need a Shantay pass to go through the gate into the desert. See Shantay, he'll sell you one for a very reasonable price.
+><Nothing thanks.
+Player: Nothing thanks.
+Shantay Guard: Okay then, have a nice day.
