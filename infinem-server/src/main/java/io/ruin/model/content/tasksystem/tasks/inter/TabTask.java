@@ -16,6 +16,7 @@ import io.ruin.model.inter.utils.Config;
 public class TabTask {
 
     public static void refresh(Player player) {
+        if (!player.isVisibleInterface(656)) return;
         player.getPacketSender().sendVarp(Config.LEAGUE_POINTS.id, Config.LEAGUE_POINTS.get(player));
         player.getPacketSender().sendVarp(Config.LEAGUE_TASKS_COMPLETED.id, Config.LEAGUE_TASKS_COMPLETED.get(player));
         JournalTab.setTab(player, JournalTab.Tab.TASK);
