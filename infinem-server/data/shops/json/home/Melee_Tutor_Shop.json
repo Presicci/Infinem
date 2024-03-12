@@ -51,58 +51,40 @@
       "sell_price": 32000
     },
     {
-      "itemId": 5574,
-      "stock": 100,
-      "buy_price": 3000,
-      "sell_price": 6000
-    },
-    {
-      "itemId": 5575,
-      "stock": 100,
-      "buy_price": 5000,
-      "sell_price": 10000
-    },
-    {
-      "itemId": 5576,
-      "stock": 100,
-      "buy_price": 4000,
-      "sell_price": 8000
-    },
-    {
-      "itemId": 9672,
-      "stock": 100,
-      "buy_price": 4000,
-      "sell_price": 8000
-    },
-    {
-      "itemId": 9674,
-      "stock": 100,
-      "buy_price": 6000,
-      "sell_price": 12000
-    },
-    {
-      "itemId": 9676,
-      "stock": 100,
-      "buy_price": 5000,
-      "sell_price": 10000
-    },
-    {
-      "itemId": 9678,
-      "stock": 100,
-      "buy_price": 5000,
-      "sell_price": 10000
-    },
-    {
       "itemId": 3751,
       "stock": 100,
       "buy_price": 42000,
       "sell_price": 78000
     },
     {
-      "itemId": 10828,
+      "itemId": 1163,
       "stock": 100,
-      "buy_price": 42000,
-      "sell_price": 100000
+      "buy_price": 21120,
+      "sell_price": 35200
+    },
+    {
+      "itemId": 1127,
+      "stock": 100,
+      "buy_price": 26000,
+      "sell_price": 84500
+    },
+    {
+      "itemId": 1079,
+      "stock": 100,
+      "buy_price": 38400,
+      "sell_price": 64000
+    },
+    {
+      "itemId": 1201,
+      "stock": 100,
+      "buy_price": 32640,
+      "sell_price": 59400
+    },
+    {
+      "itemId": 1540,
+      "stock": 100,
+      "buy_price": 8,
+      "sell_price": 26
     }
   ]
 }
