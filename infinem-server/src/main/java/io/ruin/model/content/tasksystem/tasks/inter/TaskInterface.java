@@ -18,7 +18,11 @@ public class TaskInterface {
 
     public static void openTaskInterface(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.TASKS);
-        player.getPacketSender().sendClientScript(10062, "iii", 350, 500, (int) (((float) 350/500) * 435));
+        int currentPoints = Config.LEAGUE_POINTS.get(player);
+        int pointsForCurrentTier = player.getRelicManager().pointsForCurrentRelic();
+        int pointsForNextTier = player.getRelicManager().pointsForNextRelic();
+        int fill = (int) (((double) (currentPoints - pointsForCurrentTier) / (pointsForNextTier - pointsForCurrentTier)) * 430);
+        player.getPacketSender().sendClientScript(10062, "iii", currentPoints, pointsForNextTier, Math.min(fill, 430));
         player.getPacketSender().sendAccessMask(Interface.TASKS, 42, 0, 12, 2);
         player.getPacketSender().sendAccessMask(Interface.TASKS, 44, 0, 12, 2);
         player.getPacketSender().sendAccessMask(Interface.TASKS, 45, 0, 12, 2);
