@@ -202,7 +202,7 @@ public enum DailyTask {
 //    }
 
     static {
-        DailyResetListener.register(DailyTask::assignTasks);
+        //DailyResetListener.register(DailyTask::assignTasks);
     }
 
     public static class TaskEntry extends JournalEntry {
