@@ -61,6 +61,16 @@ public class RelicManager {
         return RELICS[relic.getTier() - 2].get(player) != 0;
     }
 
+    public int pointsForCurrentRelic() {
+        return TIER_REQUIREMENTS[Math.min(0, getHighestTier() - 1)];
+    }
+
+    public int pointsForNextRelic() {
+        int tier = getHighestTier();
+        if (tier >= RELICS.length) return -1;
+        return TIER_REQUIREMENTS[tier];
+    }
+
     public boolean takeRelic(Relic relic) {
         int tier = relic.getTier();
         Config config = RELICS[tier-1];
