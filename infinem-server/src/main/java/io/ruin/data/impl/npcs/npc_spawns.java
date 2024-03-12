@@ -78,25 +78,10 @@ public class npc_spawns extends DataFile {
                         }
                     });
                 }
-                attemptSaveSpawnNPC(n);
             });
         }
 
         return spawns;
-    }
-
-    private void attemptSaveSpawnNPC(NPC npc) {
-        switch (npc.getId()) {
-            case 3226:
-                NPCLocator.WOODSMAN_TUTOR = npc;
-                break;
-            case 306:
-                NPCLocator.GUIDE = npc;
-                break;
-            case 6080:
-                GnomeStrongholdCourse.GNOME_TRAINERS.add(npc);
-                break;
-        }
     }
 
     @Override

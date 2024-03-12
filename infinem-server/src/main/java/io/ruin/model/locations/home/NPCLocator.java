@@ -1,9 +1,11 @@
 package io.ruin.model.locations.home;
 
+import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Option;
 
@@ -44,5 +46,7 @@ public class NPCLocator {
 
     static {
         NPCAction.register(306, "find npc", (player, npc) -> open(player));
+        SpawnListener.register(3226, npc -> WOODSMAN_TUTOR = npc);
+        SpawnListener.register(306, npc -> GUIDE = npc);
     }
 }

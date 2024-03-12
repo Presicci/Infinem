@@ -7,6 +7,7 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
 import io.ruin.model.entity.shared.StepType;
+import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
@@ -201,6 +202,8 @@ public class GnomeStrongholdCourse {
 
         ObjectAction.register(23139, "squeeze-through", pipeAction);
         Tile.getObject(23139, 2487, 3431, 0).walkTo = new Position(2487, 3430, 0);
+
+        SpawnListener.register(6080, npc -> GNOME_TRAINERS.add(npc));
     }
 
 }
