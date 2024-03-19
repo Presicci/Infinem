@@ -21,7 +21,8 @@ public class OutOfRangeNPC {
 
     private static final int[] ONE_TILE_NPCS = {
             3101,   // Sawmill operator
-            4291    // Herman Caranos
+            4291,   // Herman Caranos
+            2148,   // GE clerk
     };
 
     private static void addTwoTileWalkException(NPC npc) {
