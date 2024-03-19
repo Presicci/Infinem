@@ -999,8 +999,8 @@
     "walkRange": 4
   },
   {
-    "name": "null",
-    "id": 6523,
+    "name": "Banker",
+    "id": 1613,
     "x": 2615,
     "y": 3330,
     "z": 0,
@@ -1503,8 +1503,8 @@
     "walkRange": 0
   },
   {
-    "name": "null",
-    "id": 6528,
+    "name": "Banker",
+    "id": 1618,
     "x": 2657,
     "y": 3283,
     "z": 0,
