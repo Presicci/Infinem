@@ -1,6 +1,7 @@
 package io.ruin.model.inter.handlers;
 
 
+import io.ruin.cache.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.InterfaceHandler;
@@ -14,6 +15,7 @@ import io.ruin.network.incoming.handlers.DisplayHandler;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class Settings {
 
@@ -41,29 +43,29 @@ public class Settings {
         COMBAT_ACHIEVEMENT_FAILURE(2, 14, 49),
         COMBAT_ACHIEVEMENT_REPEAT_FAILURE(2, 15, 50),
         COMBAT_ACHIEVEMENT_REPEAT_COMPLETE(2, 16, 51),
-        OPAQUE_PUBLIC_CHAT(2, 19, 54),
-        OPAQUE_PRIVATE_CHAT(2, 20, 55),
-        OPAQUE_AUTO_CHAT(2, 21, 56),
-        OPAQUE_BROADCAST_CHAT(2, 22, 57),
-        OPAQUE_FRIEND_CHAT(2, 23, 58),
-        OPAQUE_CLAN_CHAT(2, 24, 59),
-        OPAQUE_GUEST_CHAT(2, 25, 60),
-        OPAQUE_TRADE_CHAT(2, 26, 61),
-        OPAQUE_CHALLENGE_CHAT(2, 27, 62),
-        OPAQUE_RESET(2, 28, 63),
-        TRANSPARENT_PUBLIC_CHAT(2, 31, 66),
-        TRANSPARENT_PRIVATE_CHAT(2, 32, 67),
-        TRANSPARENT_AUTO_CHAT(2, 33, 68),
-        TRANSPARENT_BROADCAST_CHAT(2, 34, 69),
-        TRANSPARENT_FRIEND_CHAT(2, 35, 70),
-        TRANSPARENT_CLAN_CHAT(2, 36, 71),
-        TRANSPARENT_GUEST_CHAT(2, 37, 72),
-        TRANSPARENT_TRADE_CHAT(2, 38, 73),
-        TRANSPARENT_CHALLENGE_CHAT(2, 39, 74),
-        TRANSPARENT_RESET(2, 40, 75),
-        SPLIT_PRIVATE(2, 43, 78),
-        SPLIT_BROADCAST(2, 44, 79),
-        SPLIT_RESET(2, 45, 80),
+        OPAQUE_PUBLIC_CHAT(2, 19, 54, player -> pickColor(player, 87, Config.OPAQUE_CHAT_COLORS[0], p -> Config.TRANSPARENT_CHATBOX.get(p) == 0 || player.isFixedScreen())),
+        OPAQUE_PRIVATE_CHAT(2, 20, 55, player -> pickColor(player, 89, Config.OPAQUE_CHAT_COLORS[1], p -> Config.TRANSPARENT_CHATBOX.get(p) == 0 || player.isFixedScreen())),
+        OPAQUE_AUTO_CHAT(2, 21, 56, player -> pickColor(player, 92, Config.OPAQUE_CHAT_COLORS[2], p -> Config.TRANSPARENT_CHATBOX.get(p) == 0 || player.isFixedScreen())),
+        OPAQUE_BROADCAST_CHAT(2, 22, 57, player -> pickColor(player, 94, Config.OPAQUE_CHAT_COLORS[3], p -> Config.TRANSPARENT_CHATBOX.get(p) == 0 || player.isFixedScreen())),
+        OPAQUE_FRIEND_CHAT(2, 23, 58, player -> pickColor(player, 97, Config.OPAQUE_CHAT_COLORS[4], p -> Config.TRANSPARENT_CHATBOX.get(p) == 0 || player.isFixedScreen())),
+        OPAQUE_CLAN_CHAT(2, 24, 59, player -> pickColor(player, 99, Config.OPAQUE_CHAT_COLORS[5], p -> Config.TRANSPARENT_CHATBOX.get(p) == 0 || player.isFixedScreen())),
+        OPAQUE_GUEST_CHAT(2, 25, 60, player -> pickColor(player, 105, Config.OPAQUE_CHAT_COLORS[6], p -> Config.TRANSPARENT_CHATBOX.get(p) == 0 || player.isFixedScreen())),
+        OPAQUE_TRADE_CHAT(2, 26, 61, player -> pickColor(player, 101, Config.OPAQUE_CHAT_COLORS[7], p -> Config.TRANSPARENT_CHATBOX.get(p) == 0 || player.isFixedScreen())),
+        OPAQUE_CHALLENGE_CHAT(2, 27, 62, player -> pickColor(player, 103, Config.OPAQUE_CHAT_COLORS[8], p -> Config.TRANSPARENT_CHATBOX.get(p) == 0|| player.isFixedScreen())),
+        OPAQUE_RESET(2, 28, 63, player -> resetColors(player, "opaque", Config.OPAQUE_CHAT_COLORS, p -> Config.TRANSPARENT_CHATBOX.get(p) == 0 || player.isFixedScreen())),
+        TRANSPARENT_PUBLIC_CHAT(2, 31, 66, player -> pickColor(player, 88, Config.TRANSPARENT_CHAT_COLORS[0], p -> Config.TRANSPARENT_CHATBOX.get(p) == 1 && !player.isFixedScreen())),
+        TRANSPARENT_PRIVATE_CHAT(2, 32, 67, player -> pickColor(player, 90, Config.TRANSPARENT_CHAT_COLORS[1], p -> Config.TRANSPARENT_CHATBOX.get(p) == 1 && !player.isFixedScreen())),
+        TRANSPARENT_AUTO_CHAT(2, 33, 68, player -> pickColor(player, 93, Config.TRANSPARENT_CHAT_COLORS[2], p -> Config.TRANSPARENT_CHATBOX.get(p) == 1 && !player.isFixedScreen())),
+        TRANSPARENT_BROADCAST_CHAT(2, 34, 69, player -> pickColor(player, 95, Config.TRANSPARENT_CHAT_COLORS[3], p -> Config.TRANSPARENT_CHATBOX.get(p) == 1 && !player.isFixedScreen())),
+        TRANSPARENT_FRIEND_CHAT(2, 35, 70, player -> pickColor(player, 98, Config.TRANSPARENT_CHAT_COLORS[4], p -> Config.TRANSPARENT_CHATBOX.get(p) == 1 && !player.isFixedScreen())),
+        TRANSPARENT_CLAN_CHAT(2, 36, 71, player -> pickColor(player, 100, Config.TRANSPARENT_CHAT_COLORS[5], p -> Config.TRANSPARENT_CHATBOX.get(p) == 1 && !player.isFixedScreen())),
+        TRANSPARENT_GUEST_CHAT(2, 37, 72, player -> pickColor(player, 106, Config.TRANSPARENT_CHAT_COLORS[6], p -> Config.TRANSPARENT_CHATBOX.get(p) == 1 && !player.isFixedScreen())),
+        TRANSPARENT_TRADE_CHAT(2, 38, 73, player -> pickColor(player, 102, Config.TRANSPARENT_CHAT_COLORS[7], p -> Config.TRANSPARENT_CHATBOX.get(p) == 1 && !player.isFixedScreen())),
+        TRANSPARENT_CHALLENGE_CHAT(2, 39, 74, player -> pickColor(player, 104, Config.TRANSPARENT_CHAT_COLORS[8], p -> Config.TRANSPARENT_CHATBOX.get(p) == 1 && !player.isFixedScreen())),
+        TRANSPARENT_RESET(2, 40, 75, player -> resetColors(player, "transparent", Config.TRANSPARENT_CHAT_COLORS, p -> Config.TRANSPARENT_CHATBOX.get(p) == 1 && !player.isFixedScreen())),
+        SPLIT_PRIVATE(2, 43, 78, player -> pickColor(player, 91, Config.SPLIT_CHAT_COLORS[0], p -> Config.SPLIT_PRIVATE_CHAT.get(p) == 1)),
+        SPLIT_BROADCAST(2, 44, 79, player -> pickColor(player, 96, Config.SPLIT_CHAT_COLORS[1])),
+        SPLIT_RESET(2, 45, 80, player -> resetColors(player, "split", Config.SPLIT_CHAT_COLORS)),
         // Controls
         MOUSE_BUTTONS(3, 3, 84, Config.MOUSE_BUTTONS::toggle),
         MOUSE_CAMERA(3, 4, 85, Config.MOUSE_CAMERA::toggle),
@@ -228,6 +230,41 @@ public class Settings {
         player.getPacketSender().sendClientScript(2158);
         Config.SettingSearch.set(player, 0);
         Config.SettingSearch1.set(player, 0);
+    }
+
+    private static void pickColor(Player player, int identifier, Config config, Predicate<Player> predicate) {
+        if (predicate.test(player)) pickColor(player, identifier, config);
+    }
+
+    private static void pickColor(Player player, int identifier, Config config) {
+        Config.varpbit(12284, false).set(player, 1);
+        Config.varpbit(9657, false).setInstant(player, identifier);
+        player.openInterface(134, 8, 288);
+        player.consumerInt = integer -> {
+            if (integer < Integer.MAX_VALUE) {
+                config.set(player, integer + 1);
+            }
+            player.closeInterface(134, 8);
+            Config.varpbit(12284, false).set(player, 0);
+        };
+        player.retryIntConsumer = false;
+        player.getPacketSender().sendClientScript(4185, "ii", 134 << 16 | 8, config.get(player) - 1);
+    }
+
+    private static void resetColors(Player player, String type, Config[] colors, Predicate<Player> predicate) {
+        if (predicate.test(player)) resetColors(player, type, colors);
+    }
+
+    private static void resetColors(Player player, String type, Config[] colors) {
+        player.dialogue(false, new OptionsDialogue(Color.DARK_RED.wrap("Are you sure you want to reset your " + type + " " + (type.equalsIgnoreCase("split") ? " chat" : " chatbox") + " colours?"),
+                new Option("Yes.", () -> {
+                    for (Config color : colors) {
+                        color.set(player, 0);
+                    }
+                    player.sendMessage("Default " + type + " colours restored.");
+                }),
+                new Option("No.")
+        ));
     }
 
     static {

@@ -490,6 +490,19 @@ public class Player extends PlayerAttributes {
 
     private InterfaceHandler[] activeInterfaceHandlers = new InterfaceHandler[InterfaceType.values().length];
 
+    public void openInterface(int containerParent, int containerChild, int interfaceId) {
+        closeChatbox(false);
+        closeInterface(containerParent, containerChild);
+        InterfaceType.open(player, containerParent, containerChild, interfaceId);
+        putTemporaryAttribute("INT_PARENT", containerParent);
+        putTemporaryAttribute("INT_CHILD", containerChild);
+    }
+
+    public void closeInterface(int containerParent, int containerChild) {
+        if (getTemporaryAttributeIntOrZero("INT_PARENT") == containerParent && getTemporaryAttributeIntOrZero("INT_CHILD") == containerChild)
+            InterfaceType.close(player, containerParent, containerChild);
+    }
+
     public void openInterface(InterfaceType type, int interfaceId, InterfaceHandler handler) {
         if (type != InterfaceType.PRIMARY_OVERLAY && type != InterfaceType.SECONDARY_OVERLAY && type != InterfaceType.POPUP_NOTIFICATION_OVERLAY)
             closeChatbox(type == InterfaceType.CHATBOX); //dupe prevention

@@ -107,6 +107,38 @@ public class Config {
 
     public static final Config ALCH_UNTRADEABLES = varpbit(6092, true).defaultValue(1);
     public static final Config ALCH_THRESHOLD = varpbit(6091, true).defaultValue(1000);
+    public static final Config[] OPAQUE_CHAT_COLORS = {
+            varp(2992, true).defaultValue(0),   // Public
+            varp(2993, true).defaultValue(0),   // Private
+            varp(2994, true).defaultValue(0),   // Auto
+            varp(2995, true).defaultValue(0),   // Broadcast
+            varp(2996, true).defaultValue(0),   // Friend
+            varp(2997, true).defaultValue(0),   // Clan
+            varp(3060, true).defaultValue(0),   // Clan guest
+            //varp(3192, true).defaultValue(0),   // Clan broadcast
+            //varp(3191, true).defaultValue(0),   // Iron group chat
+            //varp(3193, true).defaultValue(0),   // Iron group broadcast
+            varp(2998, true).defaultValue(0),   // Trade request
+            varp(2999, true).defaultValue(0)    // Challenge request
+    };
+    public static final Config[] TRANSPARENT_CHAT_COLORS = {
+            varp(3000, true).defaultValue(0),   // Public
+            varp(3001, true).defaultValue(0),   // Private
+            varp(3002, true).defaultValue(0),   // Auto
+            varp(3003, true).defaultValue(0),   // Broadcast
+            varp(3004, true).defaultValue(0),   // Friend
+            varp(3005, true).defaultValue(0),   // Clan
+            varp(3061, true).defaultValue(0),   // Clan guest
+            //varp(3195, true).defaultValue(0),   // Clan broadcast
+            //varp(3194, true).defaultValue(0),   // Iron group chat
+            //varp(3196, true).defaultValue(0),   // Iron group broadcast
+            varp(3006, true).defaultValue(0),   // Trade request
+            varp(3007, true).defaultValue(0)    // Challenge request
+    };
+    public static final Config[] SPLIT_CHAT_COLORS = {
+            varp(3008, true).defaultValue(0),   // Private
+            varp(3009, true).defaultValue(0)    // Broadcast
+    };
 
     /**
      * Advanced options

@@ -20,6 +20,12 @@ public enum InterfaceType {
             new Component(164, 14 + DEFAULT_SCREEN_CHILD_OFFSET),
             false
     ),
+    TEST(
+            new Component(134, 8),
+            new Component(134, 8),
+            new Component(134, 8),
+            false
+    ),
     INVENTORY(
             new Component(548, 73),
             new Component(161, 77),
@@ -139,6 +145,14 @@ public enum InterfaceType {
         if(player.getGameFrameId() == 164)
             return resizedStackedComponent;
         return fixedComponent;
+    }
+
+    public static void open(Player player, int containerParent, int containerChild, int interfaceId) {
+        player.getPacketSender().sendInterface(interfaceId, containerParent, containerChild, 0);
+    }
+
+    public static void close(Player player, int containerParent, int containerChild) {
+        player.getPacketSender().removeInterface(containerParent, containerChild);
     }
 
     private static final class Component {
