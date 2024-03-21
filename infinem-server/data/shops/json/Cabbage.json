@@ -10,7 +10,7 @@
   "items": [
     {
       "itemId": 1965,
-      "stock": 0,
+      "stock": 100,
       "buy_price": -1,
       "sell_price": 1
     }
