@@ -138,8 +138,7 @@ public class Woodcutting {
                         PlayerCounter.ACQUIRED_BIRDS_NESTS.increment(player, 1);
                     }
                     rollClueNest(player, treeData);
-                    if (Random.rollDie(treeData.petOdds - (player.getStats().get(StatType.Woodcutting).currentLevel * 25)))
-                        Pet.BEAVER.unlock(player);
+                    rollPet(player, treeData);
                     treeData.counter.increment(player, amount);
                     double xp = treeData.experience;
                     player.getStats().addXp(StatType.Woodcutting, xp * amount, true);
@@ -155,6 +154,11 @@ public class Woodcutting {
                 event.delay(1);
             }
         });
+    }
+
+    private static void rollPet(Player player, Tree tree) {
+        if (Random.rollDie(tree.petOdds - (player.getStats().get(StatType.Woodcutting).currentLevel * 25)))
+            Pet.BEAVER.unlock(player);
     }
 
     private static void rollClueNest(Player player, Tree tree) {
