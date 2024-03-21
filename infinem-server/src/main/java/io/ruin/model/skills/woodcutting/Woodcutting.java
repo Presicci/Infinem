@@ -4,6 +4,7 @@ import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
+import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
@@ -134,11 +135,7 @@ public class Woodcutting {
                         player.getTaskManager().doLookupByUUID(18, 1);  // Obtain a Bird Nest
                         PlayerCounter.ACQUIRED_BIRDS_NESTS.increment(player, 1);
                     }
-                    /* Rolling for a Clue nest */
-                    if (Random.rollDie(ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_CLUE_NEST_CHANCE) ? 125 : 250, 1)) {
-                        player.getInventory().addOrDrop(ClueNest.getRandomNest(), 1);
-                    }
-
+                    rollClueNest(player, treeData);
                     if (Random.rollDie(treeData.petOdds - (player.getStats().get(StatType.Woodcutting).currentLevel * 25)))
                         Pet.BEAVER.unlock(player);
                     treeData.counter.increment(player, amount);
@@ -156,6 +153,21 @@ public class Woodcutting {
                 event.delay(1);
             }
         });
+    }
+
+    private static void rollClueNest(Player player, Tree tree) {
+         int numerator = tree.petOdds;
+         if (numerator <= 0) return;
+         int denominator = 100 + player.getStats().get(StatType.Woodcutting).currentLevel;
+         for (ClueType clue : ClueType.values()) {
+             if (clue == ClueType.MASTER) continue;
+             int chance = (numerator / denominator) * (clue.ordinal() + 1);
+             if (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_CLUE_NEST_CHANCE))
+                 chance /= 2;
+             if (Random.rollDie(chance)) {
+                 player.getInventory().addOrDrop(ClueNest.values()[clue.ordinal()].itemID, 1);
+             }
+         }
     }
 
     protected static int nestChance(Player player) {
