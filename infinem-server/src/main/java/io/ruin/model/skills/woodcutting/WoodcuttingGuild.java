@@ -167,13 +167,7 @@ public class WoodcuttingGuild {
                     } else {
                         player.getInventory().add(Ent.getEntLog(player, axe));
                     }
-                    if (Random.rollDie(Woodcutting.nestChance(player), 1)) {
-                        new GroundItem(BirdNest.getRandomNest(), 1)
-                                .owner(player).position(RouteFinder.findWalkable(player.getPosition()))
-                                .spawn();
-                        player.sendFilteredMessage("A bird's nest falls out of the trunk.");
-                        PlayerCounter.ACQUIRED_BIRDS_NESTS.increment(player, 1);
-                    }
+                    Woodcutting.rollBirdNest(player, Tree.ENTTRUNK);
                     if (Random.rollDie(10, 1)) { // 10% chance per harvest of trunk leaving
                         npc.remove();
                     }

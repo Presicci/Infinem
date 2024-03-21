@@ -129,14 +129,7 @@ public class Woodcutting {
                         }
                         player.collectResource(new Item(treeData.log, 1));
                     }
-                    if (treeData != Tree.REDWOOD && Random.rollDie(nestChance(player), 1)) {
-                        new GroundItem(BirdNest.getRandomNest(), 1)
-                                .owner(player).position(RouteFinder.findWalkable(player.getPosition()))
-                                .spawn();
-                        player.sendFilteredMessage("A bird's nest falls out of the tree.");
-                        player.getTaskManager().doLookupByUUID(18, 1);  // Obtain a Bird Nest
-                        PlayerCounter.ACQUIRED_BIRDS_NESTS.increment(player, 1);
-                    }
+                    rollBirdNest(player, treeData);
                     rollClueNest(player, treeData);
                     rollPet(player, treeData);
                     treeData.counter.increment(player, amount);
@@ -161,6 +154,23 @@ public class Woodcutting {
             Pet.BEAVER.unlock(player);
     }
 
+    private static void rollBirdNest(Player player, Tree tree) {
+        if (tree == Tree.REDWOOD || tree == Tree.SULLIUSCEP) return;
+        int chance = 256;
+        if (WoodcuttingSkillCape.wearsWoodcuttingCape(player))
+            chance -= chance / 10;
+        if (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_BIRD_NEST_CHANCE))
+            chance /= 2;
+        if (Random.rollDie(chance)) {
+            new GroundItem(BirdNest.getRandomNest(), 1)
+                    .owner(player).position(RouteFinder.findWalkable(player.getPosition()))
+                    .spawn();
+            player.sendFilteredMessage("A bird's nest falls out of the tree.");
+            player.getTaskManager().doLookupByUUID(18, 1);  // Obtain a Bird Nest
+            PlayerCounter.ACQUIRED_BIRDS_NESTS.increment(player, 1);
+        }
+    }
+
     private static void rollClueNest(Player player, Tree tree) {
          int numerator = tree.petOdds;
          if (numerator <= 0) return;
@@ -177,16 +187,6 @@ public class Woodcutting {
                  player.getInventory().addOrDrop(ClueNest.values()[clue.ordinal()].itemID, 1);
              }
          }
-    }
-
-    protected static int nestChance(Player player) {
-        int chance = 256;
-        if (WoodcuttingSkillCape.wearsWoodcuttingCape(player)) {
-            chance -= chance / 10;
-        }
-        if (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_BIRD_NEST_CHANCE))
-            chance /= 2;
-        return chance;
     }
 
     protected static int getEffectiveLevel(Player player, Tree treeData, Hatchet hatchet) {
