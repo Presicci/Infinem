@@ -138,12 +138,19 @@ public class Player extends PlayerAttributes {
      * Info
      */
 
-    @Getter private int userId;
+    private int userId;
 
-    @Getter private String name;
+    public int getUserId() {
+        return userId;
+    }
 
-    @Getter
-    @Expose private String fremennikName;
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    @Getter @Expose private String fremennikName;
 
     @Getter @Expose private String password;
 
@@ -297,7 +304,11 @@ public class Player extends PlayerAttributes {
     /**
      * Outgoing packets
      */
-    @Getter private PacketSender packetSender;
+    private PacketSender packetSender;
+
+    public PacketSender getPacketSender() {
+        return packetSender;
+    }
 
     public void sendMessage(String message) {
         packetSender.sendMessage(message, null, 0);
@@ -357,7 +368,11 @@ public class Player extends PlayerAttributes {
      * Online
      */
 
-    @Setter @Getter private boolean online;
+    @Setter private boolean online;
+
+    public boolean isOnline() {
+        return online;
+    }
 
     /**
      * Display
@@ -764,7 +779,11 @@ public class Player extends PlayerAttributes {
      * Movement
      */
 
-    @Getter @Expose private PlayerMovement movement;
+    @Expose private PlayerMovement movement;
+
+    public PlayerMovement getMovement() {
+        return movement;
+    }
 
     /**
      * Masks
@@ -772,7 +791,11 @@ public class Player extends PlayerAttributes {
 
     @Getter private UpdateMask[] masks;
 
-    @Getter @Expose private Appearance appearance;
+    @Expose private Appearance appearance;
+
+    public Appearance getAppearance() {
+        return appearance;
+    }
 
     public Queue<String> sentMessages = new LinkedList<>();
 
@@ -788,15 +811,27 @@ public class Player extends PlayerAttributes {
      * Items
      */
 
-    @Getter @Expose private Inventory inventory;
+    @Expose private Inventory inventory;
 
-    @Getter @Expose private Equipment equipment;
+    @Expose private Equipment equipment;
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public Equipment getEquipment() {
+        return equipment;
+    }
 
     @Getter private Trade trade;
 
     @Getter private Duel duel;
 
-    @Getter @Expose private Bank bank;
+    @Expose private Bank bank;
+
+    public Bank getBank() {
+        return bank;
+    }
 
     @Getter @Expose private BankPin bankPin;
 
@@ -804,11 +839,19 @@ public class Player extends PlayerAttributes {
 
     @Getter @Expose private SeedVault seedVault;
 
-    @Getter @Expose private RunePouch runePouch;
+    @Expose private RunePouch runePouch;
+
+    public RunePouch getRunePouch() {
+        return runePouch;
+    }
 
     @Expose private HashMap<EmoteClue.EmoteClueData, List<Item>> stashes;
 
-    @Getter @Expose private RunePouch tournamentRunePouch;
+    @Expose private RunePouch tournamentRunePouch;
+
+    public RunePouch getTournamentRunePouch() {
+        return tournamentRunePouch;
+    }
 
     @Getter private SuperMysteryBox box;
 
@@ -837,7 +880,11 @@ public class Player extends PlayerAttributes {
      * Stats
      */
 
-    @Getter @Expose private StatList stats;
+    @Expose private StatList stats;
+
+    public StatList getStats() {
+        return stats;
+    }
 
     /**
      * Prayer
@@ -851,16 +898,28 @@ public class Player extends PlayerAttributes {
 
     @Getter @Expose private PlayerCombat combat;
 
+    public PlayerCombat getCombat() {
+        return combat;
+    }
+
     /**
      * Bounty Hunter
      */
 
-    @Getter @Expose private BountyHunter bountyHunter;
+    @Expose private BountyHunter bountyHunter;
+
+    public BountyHunter getBountyHunter() {
+        return bountyHunter;
+    }
 
     /**
      * Trade post
      */
-    @Getter @Expose private TradePost tradePost;
+    @Expose private TradePost tradePost;
+
+    public TradePost getTradePost() {
+        return tradePost;
+    }
 
     /**
      * Hitpoints
