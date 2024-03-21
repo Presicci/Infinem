@@ -85,6 +85,7 @@ import io.ruin.utility.CS2Script;
 import io.ruin.utility.TickDelay;
 import io.ruin.process.tickevent.TickEvent;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -102,15 +103,11 @@ public class Player extends PlayerAttributes {
      * Session
      */
 
-    private Channel channel;
+    @Getter private Channel channel;
 
     private String ipAddress;
 
     private int ipAddressInt;
-
-    public Channel getChannel() {
-        return channel;
-    }
 
     public String getIp() {
         return ipAddress;
@@ -135,47 +132,30 @@ public class Player extends PlayerAttributes {
     /**
      * Collection Log
      */
-    @Expose private CollectionLog collectionLog;
-
-    public CollectionLog getCollectionLog() { return collectionLog; }
+    @Getter @Expose private CollectionLog collectionLog;
 
     /**
      * Info
      */
 
-    private int userId;
+    @Getter private int userId;
 
-    private String name;
+    @Getter private String name;
 
+    @Getter
     @Expose private String fremennikName;
 
-    @Expose private String password;
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public String getName() {
-        return name;
-    }
+    @Getter @Expose private String password;
 
     public void setName(String name) {
         this.name = name;
         getAppearance().update();
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     /**
      * Pyramid plunder
      */
-    private PyramidPlunder pyramidPlunder;
-
-    public PyramidPlunder getPyramidPlunder() {
-        return pyramidPlunder;
-    }
+    @Getter private PyramidPlunder pyramidPlunder;
 
     public int[][] lootedPlunderObjects = {
             {26580, 0},
@@ -198,15 +178,11 @@ public class Player extends PlayerAttributes {
     /**
      * Groups & Rank (Used to display client icons)
      */
-    private boolean[] groups;
+    @Getter private boolean[] groups;
 
-    @ Expose private PlayerGroup primaryGroup;
+    @Getter @Expose private PlayerGroup primaryGroup;
 
     private PlayerGroup clientGroup; //the group displayed on clients
-
-    public PlayerGroup getPrimaryGroup() {
-        return primaryGroup;
-    }
 
     public void setGroups(List<Integer> groupIds) {
         groups = new boolean[PlayerGroup.GROUPS_BY_ID.length];
@@ -295,10 +271,6 @@ public class Player extends PlayerAttributes {
         return isGroup(PlayerGroup.ZENYTE);
     }
 
-    public boolean[] getGroups() {
-        return groups;
-    }
-
     public PlayerGroup getClientGroup() {
         return hidePlayerIcon ? PlayerGroup.REGISTERED : clientGroup;
     }
@@ -315,25 +287,17 @@ public class Player extends PlayerAttributes {
     /**
      * Private message information
      */
-    private int unreadPMs;
-
-    public int getUnreadPMs() {
-        return unreadPMs;
-    }
+    @Getter private int unreadPMs;
 
     /**
      * Incoming packets
      */
-    private IncomingDecoder decoder;
-
-    public IncomingDecoder getDecoder() {
-        return decoder;
-    }
+    @Getter private IncomingDecoder decoder;
 
     /**
      * Outgoing packets
      */
-    private PacketSender packetSender;
+    @Getter private PacketSender packetSender;
 
     public void sendMessage(String message) {
         packetSender.sendMessage(message, null, 0);
@@ -389,36 +353,16 @@ public class Player extends PlayerAttributes {
         packetSender.resetHintIcon(false);
     }
 
-    public PacketSender getPacketSender() {
-        return packetSender;
-    }
-
     /**
      * Online
      */
 
-    private boolean online;
-
-    public void setOnline(boolean online) {
-        this.online = online;
-    }
-
-    public boolean isOnline() {
-        return online;
-    }
+    @Setter @Getter private boolean online;
 
     /**
      * Display
      */
-    private int displayMode = -1;
-
-    public void setDisplayMode(int displayMode) {
-        this.displayMode = displayMode;
-    }
-
-    public int getDisplayMode() {
-        return displayMode;
-    }
+    @Getter @Setter private int displayMode = -1;
 
     public boolean hasDisplay() {
         return displayMode != -1;
@@ -431,15 +375,7 @@ public class Player extends PlayerAttributes {
     /**
      * Game frame
      */
-    private int gameFrameId;
-
-    public void setGameFrameId(int gameFrameId) {
-        this.gameFrameId = gameFrameId;
-    }
-
-    public int getGameFrameId() {
-        return gameFrameId;
-    }
+    @Getter @Setter private int gameFrameId;
 
     /**
      * Interface visibility
@@ -488,7 +424,7 @@ public class Player extends PlayerAttributes {
      * Interfaces - Opening, Closing & Handling
      */
 
-    private InterfaceHandler[] activeInterfaceHandlers = new InterfaceHandler[InterfaceType.values().length];
+    private final InterfaceHandler[] activeInterfaceHandlers = new InterfaceHandler[InterfaceType.values().length];
 
     public void openInterface(int containerParent, int containerChild, int interfaceId) {
         closeChatbox(false);
@@ -724,7 +660,7 @@ public class Player extends PlayerAttributes {
      * Options
      */
 
-    private PlayerAction[] actions = new PlayerAction[8];
+    private final PlayerAction[] actions = new PlayerAction[8];
 
     public void setAction(int option, PlayerAction action) {
         if(action == null) {
@@ -755,9 +691,9 @@ public class Player extends PlayerAttributes {
 
     public int[] varps = new int[Varp.LOADED.length];
 
-    private boolean[] updatedVarps = new boolean[varps.length];
+    private final boolean[] updatedVarps = new boolean[varps.length];
 
-    private int[] updatedVarpIds = new int[varps.length];
+    private final int[] updatedVarpIds = new int[varps.length];
 
     private int updatedVarpCount;
 
@@ -786,7 +722,7 @@ public class Player extends PlayerAttributes {
 
     public Region lastRegion;
 
-    private ArrayList<Region> regions = new ArrayList<>();
+    @Getter private final ArrayList<Region> regions = new ArrayList<>();
 
     public void addRegion(Region region) {
         region.players.add(this);
@@ -800,15 +736,11 @@ public class Player extends PlayerAttributes {
         });
     }
 
-    public ArrayList<Region> getRegions() {
-        return regions;
-    }
-
     /**
      * Player updating
      */
 
-    private PlayerUpdater updater;
+    @Getter private PlayerUpdater updater;
 
     public Iterable<Player> localPlayers() {
         return updater.localIterator();
@@ -818,45 +750,33 @@ public class Player extends PlayerAttributes {
         return updater.local[p.getIndex()];
     }
 
-    public PlayerUpdater getUpdater() {
-        return updater;
-    }
-
     /**
      * Npc updating
      */
 
-    private PlayerNPCUpdater npcUpdater;
+    @Getter private PlayerNPCUpdater npcUpdater;
 
     public Collection<NPC> localNpcs() {
         return npcUpdater.localNpcs;
-    }
-
-    public PlayerNPCUpdater getNpcUpdater() {
-        return npcUpdater;
     }
 
     /**
      * Movement
      */
 
-    @Expose private PlayerMovement movement;
-
-    public PlayerMovement getMovement() {
-        return movement;
-    }
+    @Getter @Expose private PlayerMovement movement;
 
     /**
      * Masks
      */
 
-    private UpdateMask[] masks;
+    @Getter private UpdateMask[] masks;
 
-    @Expose private Appearance appearance;
+    @Getter @Expose private Appearance appearance;
 
     public Queue<String> sentMessages = new LinkedList<>();
 
-    private ChatUpdate chatUpdate;
+    @Getter private ChatUpdate chatUpdate;
 
     protected ForceMovementUpdate forceMovementUpdate;
 
@@ -864,164 +784,83 @@ public class Player extends PlayerAttributes {
 
     protected TeleportModeUpdate teleportModeUpdate;
 
-    public UpdateMask[] getMasks() {
-        return masks;
-    }
-
-    public Appearance getAppearance() {
-        return appearance;
-    }
-
-    public ChatUpdate getChatUpdate() {
-        return chatUpdate;
-    }
-
     /**
      * Items
      */
 
-    @Expose private Inventory inventory;
+    @Getter @Expose private Inventory inventory;
 
-    @Expose private Equipment equipment;
+    @Getter @Expose private Equipment equipment;
 
-    private Trade trade;
+    @Getter private Trade trade;
 
-    private Duel duel;
+    @Getter private Duel duel;
 
-    @Expose private Bank bank;
+    @Getter @Expose private Bank bank;
 
-    @Expose private BankPin bankPin;
+    @Getter @Expose private BankPin bankPin;
 
-    @Expose private LootingBag lootingBag;
+    @Getter @Expose private LootingBag lootingBag;
 
-    @Expose private SeedVault seedVault;
+    @Getter @Expose private SeedVault seedVault;
 
-    @Expose private RunePouch runePouch;
+    @Getter @Expose private RunePouch runePouch;
 
     @Expose private HashMap<EmoteClue.EmoteClueData, List<Item>> stashes;
 
-    public RunePouch getTournamentRunePouch() {
-        return tournamentRunePouch;
-    }
+    @Getter @Expose private RunePouch tournamentRunePouch;
 
-    @Expose private RunePouch tournamentRunePouch;
+    @Getter private SuperMysteryBox box;
 
-    private SuperMysteryBox box;
+    @Getter @Expose private DeathStorage deathStorage;
 
-    @Expose private DeathStorage deathStorage;
-
+    @Getter
     @Expose private ItemContainer privateRaidStorage;
 
+    @Getter
     @Expose private ItemContainer raidRewards = new ItemContainer();
-
-    public Inventory getInventory() {
-        return inventory;
-    }
-
-    public Equipment getEquipment() {
-        return equipment;
-    }
-
-    public Trade getTrade() {
-        return trade;
-    }
-
-    public Duel getDuel() {
-        return duel;
-    }
-
-    public Bank getBank() {
-        return bank;
-    }
-
-    public BankPin getBankPin() {
-        return bankPin;
-    }
-
-    public LootingBag getLootingBag() {
-        return lootingBag;
-    }
 
     public HashMap<EmoteClue.EmoteClueData, List<Item>> getStashUnits() {
         return stashes;
     }
 
-    public SeedVault getSeedVault() {
-        return seedVault;
-    }
-
-    public RunePouch getRunePouch() {
-        return runePouch;
-    }
-
-    public SuperMysteryBox getBox() { return box; }
-
-    public DeathStorage getDeathStorage() {
-        return deathStorage;
-    }
-
-    //Bonecrusher
     @Getter @Expose public BoneCrusher boneCrusher;
-    //Ash sanctifier
+
     @Getter @Expose public AshSanctifier ashSanctifier;
 
     /**
      * Farming
      */
-    @Expose public Farming farming;
-
-    public Farming getFarming() {
-        return farming;
-    }
+    @Getter @Expose public Farming farming;
 
     /**
      * Stats
      */
 
-    @Expose private StatList stats;
-
-    public StatList getStats() {
-        return stats;
-    }
+    @Getter @Expose private StatList stats;
 
     /**
      * Prayer
      */
 
-    @Expose private PlayerPrayer prayer;
-
-    public PlayerPrayer getPrayer() {
-        return prayer;
-    }
+    @Getter @Expose private PlayerPrayer prayer;
 
     /**
      * Combat
      */
 
-    @Expose private PlayerCombat combat;
-
-    public PlayerCombat getCombat() {
-        return combat;
-    }
+    @Getter @Expose private PlayerCombat combat;
 
     /**
      * Bounty Hunter
      */
 
-    @Expose private BountyHunter bountyHunter;
-
-    public BountyHunter getBountyHunter() {
-        return bountyHunter;
-    }
+    @Getter @Expose private BountyHunter bountyHunter;
 
     /**
      * Trade post
      */
-    @Expose private TradePost tradePost;
-
-    public TradePost getTradePost() {
-        return tradePost;
-    }
+    @Getter @Expose private TradePost tradePost;
 
     /**
      * Hitpoints
@@ -1053,7 +892,7 @@ public class Player extends PlayerAttributes {
 
     private List<MapListener> activeMapListeners = new ArrayList<>();
 
-    private boolean[] activeStaticMapListeners = new boolean[MapListener.LISTENERS.length];
+    private final boolean[] activeStaticMapListeners = new boolean[MapListener.LISTENERS.length];
 
     public void addActiveMapListener(MapListener listener) {
         //Warning: If the listener isn't already active this won't function properly!
@@ -1315,9 +1154,6 @@ public class Player extends PlayerAttributes {
     /**
      * Start & Finish
      */
-
-    private Bounds EDGEVILLE = new Bounds(3063, 3457, 3121, 3519, -1);
-
     public void start() {
         combat.start();
         movement.sendEnergy(-1);
@@ -1538,7 +1374,7 @@ public class Player extends PlayerAttributes {
     }
 
     public void checkLogout() {
-        /**
+        /*
          * Validate channel & decode packets.
          */
         if(logoutStage == 0) {
@@ -1552,7 +1388,7 @@ public class Player extends PlayerAttributes {
                     return;
             }
         }
-        /**
+        /*
          * Attempt to logout if a logout is required.
          */
         if(logoutStage == 1) {
@@ -1574,14 +1410,14 @@ public class Player extends PlayerAttributes {
             }
             logoutStage = -1;
         }
-        /**
+        /*
          * Logout accepted, finish this player.
          */
         if(online) {
             online = false;
             finish();
         }
-        /**
+        /*
          * Attempt to save this player. (Player won't be fully logged out until save is complete!)
          */
         if(saveRetry != -1) {
@@ -1606,7 +1442,7 @@ public class Player extends PlayerAttributes {
         }
         World.players.remove(getIndex());
         CentralClient.sendLogout(userId);
-        /**
+        /*
          * Misc things like SQL updates
          */
         XenGroup.update(this);
@@ -1826,14 +1662,6 @@ public class Player extends PlayerAttributes {
         return showHitAsExperience;
     }
 
-    public ItemContainer getPrivateRaidStorage() {
-        return privateRaidStorage;
-    }
-
-    public ItemContainer getRaidRewards() {
-        return raidRewards;
-    }
-
     @Override
     public boolean isPlayer() {
         return true;
@@ -1849,7 +1677,6 @@ public class Player extends PlayerAttributes {
 
     /**
      * Finds an item in any containers connected to the player.
-     * @param itemId
      * @return ItemContainerG<? extends Item>,
      * Null if no item is found
      */
@@ -1893,10 +1720,6 @@ public class Player extends PlayerAttributes {
 
     private String generateFremennikName() {
         return Random.get(PREFIX) + Random.get(SUFFIX);
-    }
-
-    public String getFremennikName() {
-        return fremennikName;
     }
 
     @Expose @Getter
@@ -2005,7 +1828,7 @@ public class Player extends PlayerAttributes {
 
     public void npcAnimate(int id, int... npcIds) {
         int playerId = player.getAppearance().getNpcId();
-        if (!isPlayer() || !Arrays.stream(npcIds).anyMatch(i -> i == playerId)) return;
+        if (!isPlayer() || Arrays.stream(npcIds).noneMatch(i -> i == playerId)) return;
         AnimDef def = AnimDef.get(id);
         if (def != null) {
             animTick = Server.currentTick() + def.getDuration();
