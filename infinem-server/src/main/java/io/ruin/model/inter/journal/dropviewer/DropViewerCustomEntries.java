@@ -13,6 +13,7 @@ import io.ruin.model.skills.thieving.PickPocket;
 import io.ruin.model.skills.thieving.Stall;
 import io.ruin.model.skills.thieving.ThievableChests;
 import io.ruin.model.skills.thieving.WallSafe;
+import io.ruin.model.skills.woodcutting.Woodcutting;
 
 public class DropViewerCustomEntries {
 
@@ -123,6 +124,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Pest Control Herbs", PCReward.HERB_PACK_LOOT),
             new DropViewerEntry("Pest Control Minerals", PCReward.MINERAL_PACK_LOOT),
             new DropViewerEntry("Pest Control Seeds", PCReward.SEED_PACK_LOOT),
-            new DropViewerEntry("Infernal Eel", InfernalEel.LOOT_TABLE)
+            new DropViewerEntry("Infernal Eel", InfernalEel.LOOT_TABLE),
+            new DropViewerEntry("Sulliuscep", Woodcutting.SULLIUSCEP_LOOT)
     };
 }

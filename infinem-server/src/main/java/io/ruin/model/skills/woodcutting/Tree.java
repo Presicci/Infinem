@@ -17,6 +17,7 @@ public enum Tree {
     MAHOGANY(6332, "mahogany logs", 50, 200, 125.0, 80, false, 220623, PlayerCounter.CHOPPED_MAHOGANY),
     ARCTIC_PINE(10810, "arctic pine logs", 54, 215, 40.0, 80, false, 144408, PlayerCounter.CHOPPED_REGULAR),
     YEW(1515, "yew logs", 60, 225, 175.0, 100, false, 145013, PlayerCounter.CHOPPED_YEW),
+    SULLIUSCEP(6004, "", 65, 200, 127.0, 100, false, 343000, PlayerCounter.CHOPPED_SULLIUSCEP),
     MAGIC(1513, "magic logs", 75, 340, 250.0, 100, false, 72321, PlayerCounter.CHOPPED_MAGIC),
     REDWOOD(19669, "redwood logs", 90, 460, 380.0, 200, false, 72321, PlayerCounter.CHOPPED_REDWOOD),
     ENTTRUNK(-1, "ent trunk", -1, 250, 25, 0, false, 317647, PlayerCounter.CHOPPED_ENTS), // Used for algo only;

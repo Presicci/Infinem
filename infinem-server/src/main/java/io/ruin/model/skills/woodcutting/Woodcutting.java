@@ -9,11 +9,14 @@ import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.BirdNest;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
 import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.item.loot.LootItem;
+import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.WoodcuttingSkillCape;
 import io.ruin.model.map.ground.GroundItem;
@@ -28,6 +31,19 @@ import io.ruin.process.event.EventConsumer;
 import java.util.function.Supplier;
 
 public class Woodcutting {
+
+    public static final LootTable SULLIUSCEP_LOOT = new LootTable().addTable(1,
+            new LootItem(21562, 1, 1440),  // Small unid fossil
+            new LootItem(21564, 1, 45),  // Medium unid fossil
+            new LootItem(21566, 1, 40),  // Large unid fossil
+            new LootItem(21568, 1, 10),  // Rare unid fossil
+            new LootItem(21555, 5, 16, 4000),  // Numulite
+            new LootItem(6004, 1, 1, 650),  // Mushroom
+            new LootItem(2970, 1, 1, 650),  // Mort myre fungus
+            new LootItem(21626, 1, 1, 70)   // Sulliuscep cap
+    );
+
+    private static final Config SULLIUSCEP_VARPBIT = Config.varpbit(5808, true);
 
     private static void chop(Tree treeData, Player player, GameObject tree, int treeStump) {
         chop(treeData, player, () -> tree.id == treeStump, worldEvent -> {
@@ -111,7 +127,19 @@ public class Woodcutting {
                         player.getStats().addXp(StatType.Firemaking, burning.exp / 2, true);
                         InfernalTools.INFERNAL_AXE.removeCharge(player);
                     } else {
-                        if (treeData != Tree.CRYSTAL) {
+                        if (treeData == Tree.SULLIUSCEP) {
+                            Item loot = SULLIUSCEP_LOOT.rollItem();
+                            if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(treeData.log)) {
+                                amount *= 2;
+                                player.getBank().add(loot.getId(), loot.getAmount());
+                                player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(loot.getId()) + ".");
+                            } else {
+                                player.sendFilteredMessage("You get " + loot.getDef().descriptiveName + ".");
+                                player.getInventory().add(loot);
+                            }
+                            if (loot.getId() == 21626)
+                                player.getTaskManager().doLookupByUUID(352);    // Chop a Sulliuscep Cap
+                        } else if (treeData != Tree.CRYSTAL) {
                             if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(treeData.log)) {
                                 amount *= 2;
                                 player.getBank().add(treeData.log, amount);
@@ -137,6 +165,12 @@ public class Woodcutting {
                     player.getStats().addXp(StatType.Woodcutting, xp * amount, true);
                     if ((treeData.single || Random.get(10) == 3) && treeData != Tree.DRAMEN_TREE) {
                         player.resetAnimation();
+                        if (treeData == Tree.SULLIUSCEP) {
+                            int newValue = SULLIUSCEP_VARPBIT.increment(player, 1);
+                            if (newValue >= 5)
+                                SULLIUSCEP_VARPBIT.set(player, 0);
+                            return;
+                        }
                         World.startEvent(treeDeadAction);
                         return;
                     }
@@ -154,7 +188,7 @@ public class Woodcutting {
             Pet.BEAVER.unlock(player);
     }
 
-    private static void rollBirdNest(Player player, Tree tree) {
+    protected static void rollBirdNest(Player player, Tree tree) {
         if (tree == Tree.REDWOOD || tree == Tree.SULLIUSCEP) return;
         int chance = 256;
         if (WoodcuttingSkillCape.wearsWoodcuttingCape(player))
@@ -247,6 +281,7 @@ public class Woodcutting {
         ObjectAction.register(10830, "chop down", (player, obj) -> chop(Tree.HOLLOW_TREE, player, obj, 4061));
         ObjectAction.register(1292, "chop down", (player, obj) -> chop(Tree.DRAMEN_TREE, player, obj, -1));
         ObjectAction.register(3037, "cut down", (player, obj) -> chop(Tree.ARCTIC_PINE, player, obj, 1349));
+        ObjectAction.register(31420, 1, (player, obj) -> chop(Tree.SULLIUSCEP, player, obj, -1));
     }
 
 }
