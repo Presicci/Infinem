@@ -1,0 +1,8 @@
+Player: Hello!
+Suzie: ...
+Player: Is everything okay?
+Suzie: *mumble mumble*
+Player: I didn't catch that.
+Suzie: ...
+Player: Right... Well, have a nice day.
+Suzie: *mumble*
