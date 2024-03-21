@@ -2499,5 +2499,24 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+
+  {
+    "name": "Emma",
+    "id": 12116,
+    "x": 3259,
+    "y": 3462,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Suzie",
+    "id": 12117,
+    "x": 3258,
+    "y": 3461,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
   }
 ]

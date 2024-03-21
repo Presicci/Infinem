@@ -111,6 +111,9 @@ public class Hairdresser {
                 open(player, npc.getId(), true);
             }
         }));
+        NPCAction.register(12116, "talk-to", Hairdresser::dialogue);
+        NPCAction.register(12116, "haircut", (player, npc) -> open(player, npc.getId(), true));
+        NPCAction.register(12116, "shave", (player, npc) -> open(player, npc.getId(), false));
         InterfaceHandler.register(Interface.HAIRDRESSER, h -> {
             h.actions[2] = (DefaultAction) (player, option, slot, itemId) -> {
                 boolean haircut = Config.HAIRCUT.get(player) == 1;
