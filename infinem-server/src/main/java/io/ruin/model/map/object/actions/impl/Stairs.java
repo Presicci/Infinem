@@ -96,5 +96,8 @@ public class Stairs {
         registerStair(15645, 4, 2);
         // Yanille wall
         registerStair(15646, 4, 2);
+        // Blue moon inn
+        registerStair(11796, 4, 2);
+        registerStair(11799, 4, 0);
     }
 }
