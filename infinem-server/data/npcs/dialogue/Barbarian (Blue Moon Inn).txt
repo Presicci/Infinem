@@ -1,0 +1,21 @@
+3262
+Player: Hello.
+Barbarian: Hah! What you want with me, little city man?
+<Can I buy you a drink?
+Player: Can I buy you a drink?
+Barbarian: Ha ha ha! Little Player wants to buy me a drink, how sweet.
+Player: Well... how about it?
+Barbarian: You not talk like barbarian man. You certainly not smell like barbarian man! But I think I give you test anyway.
+Player: What's the test?
+Barbarian: Back in village to the west, we barbarians scream our defiance as we fight. We scream 'YYEEEEEAAARRRRGGHHHH!!!' Can you do this?
+Barbarian: YYEEEEEAAARRRRGGHHHH!!!
+Player: Yyeeeeeaaarrrrgghhhh!!!
+Barbarian: YYEEEEEAAARRRRGGHHHH!!!
+Player: Yyeeeeeaaarrrrgghhhh!!!
+Barbarian: Ha ha ha! Little Player cannot yell like barbarian. Also, I strong barbarian woman; I get my own drink. Run away now, little Player.
+><Can I fight you?
+Player: Can I fight you?
+Barbarian: Ha ha ha! We fight anytime you like.
+><Um...
+Player: Um...
+Barbarian: Ha ha ha! I not interested in talking to soft city man who not know what he want.
