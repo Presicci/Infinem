@@ -112,4 +112,11 @@ public enum RingOfWealth {
                 || player.getEquipment().hasId(6583);   // Ring of fortune
     }
 
+    public static boolean wearingRingOfWealthImbued(Player player) {
+        for (RingOfWealth ring : RingOfWealth.values()) {
+            if (ring.imbueId == -1 && player.getEquipment().hasId(ring.id))
+                return true;
+        }
+        return false;
+    }
 }

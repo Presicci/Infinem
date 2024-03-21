@@ -12,6 +12,8 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.BirdNest;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
+import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
+import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.WoodcuttingSkillCape;
 import io.ruin.model.map.ground.GroundItem;
@@ -159,10 +161,13 @@ public class Woodcutting {
          int numerator = tree.petOdds;
          if (numerator <= 0) return;
          int denominator = 100 + player.getStats().get(StatType.Woodcutting).currentLevel;
+         boolean ringOfWealthEffect = RingOfWealth.wearingRingOfWealthImbued(player) && player.wildernessLevel > 0;
          for (ClueType clue : ClueType.values()) {
              if (clue == ClueType.MASTER) continue;
              int chance = (numerator / denominator) * (clue.ordinal() + 1);
              if (ActivitySpotlight.isActive(ActivitySpotlight.DOUBLE_CLUE_NEST_CHANCE))
+                 chance /= 2;
+             if (ringOfWealthEffect)
                  chance /= 2;
              if (Random.rollDie(chance)) {
                  player.getInventory().addOrDrop(ClueNest.values()[clue.ordinal()].itemID, 1);
