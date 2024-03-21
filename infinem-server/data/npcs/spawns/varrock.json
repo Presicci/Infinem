@@ -2378,6 +2378,15 @@
     "walkRange": 3
   },
   {
+    "name": "Cook",
+    "id": 2895,
+    "x": 3230,
+    "y": 3400,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
     "name": "Barbarian",
     "id": 3262,
     "x": 3224,
