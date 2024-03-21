@@ -1,0 +1,16 @@
+Player: Hello, what's a little boy like you doing down here?
+Weve: I ain't no little boy. Me dad, Steve, said I was big enough to take care of these 'ere wyverns, as the pal- palint-palintililiolog- those blokes from the museum are too scared of them.
+<Calm down, I was just worried.
+Weve: Yeah, whatever. I know how to look after myself, my entire family are slayer guardians or something like that.
+><Why are you here?
+Weve: To guard the wyverns of course.
+Player: Guard them? From what?
+Weve: From people like you who just want to kill 'em.
+Player: But... that's what they're for?
+Weve: They have lives too. They were created for a purpose. But whatever, you can only kill these ones if the Slayer Masters say you can.
+><Who are you?
+Weve: I'm Weve, son of Steve.
+Player: That's... an interesting name.
+Weve: Well, it's kinda a family tradition you might say. Plus I'm good at looking after wyverns and fast enough to weave between their legs and not get hurt.
+><Ok, bye.
+Player: Ok, bye.

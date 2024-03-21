@@ -17,7 +17,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Long-tailed Wyvern",
@@ -27,7 +28,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Spitting Wyvern",
@@ -37,7 +39,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Fossil Rock",
@@ -57,7 +60,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Fossil Rock",
@@ -77,7 +81,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Spitting Wyvern",
@@ -87,7 +92,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Spitting Wyvern",
@@ -97,7 +103,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Long-tailed Wyvern",
@@ -107,7 +114,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Taloned Wyvern",
@@ -117,7 +125,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Taloned Wyvern",
@@ -127,7 +136,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Taloned Wyvern",
@@ -137,7 +147,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Fossil Rock",
@@ -157,7 +168,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Fossil Rock",
@@ -207,7 +219,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Ancient Wyvern",
@@ -217,7 +230,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Ancient Wyvern",
@@ -227,7 +241,8 @@
     "z": "0",
     "direction": "W",
     "walkRange": "1",
-    "world": "ECO"
+    "world": "ECO",
+    "taskOnlyNPC": "WEVE"
   },
   {
     "name": "Ice spider",

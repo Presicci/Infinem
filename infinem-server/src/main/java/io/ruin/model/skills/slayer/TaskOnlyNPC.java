@@ -24,7 +24,8 @@ public enum TaskOnlyNPC {
     PEEVE(11237, "wooooo ooo woo-woo"),
     RAULYN(5790, "wooooo ooo woo-woo"),
     DISCIPLE_OF_YAMA(7669, "My master wishes you not to kill his minions without an agenda. You may only slay within the Chasm that which you have been assigned by a Slayer Master."),
-    HIEVE(7667, "I'm sure that's not what you're meant to be slaying.");
+    HIEVE(7667, "I'm sure that's not what you're meant to be slaying."),
+    WEVE(7777, "Hey! Leave them alone! My dad Steve will beat you up unless a Slayer Master has given you special permission.");
 
     private final int npcId;
     private final String dialogue;
