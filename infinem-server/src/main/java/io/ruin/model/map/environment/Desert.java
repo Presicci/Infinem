@@ -146,7 +146,7 @@ public class Desert {
         }
     }
 
-    private static final int[] WATERSKINS = { Items.WATERSKIN_0, Items.WATERSKIN_1, Items.WATERSKIN_2, Items.WATERSKIN_3, Items.WATERSKIN_4 };
+    public static final int[] WATERSKINS = { Items.WATERSKIN_0, Items.WATERSKIN_1, Items.WATERSKIN_2, Items.WATERSKIN_3, Items.WATERSKIN_4 };
 
     private static void damage(Player player) {
         // Water evaporates from bowls, buckets, jugs, and vials here, but i think thats kinda lame
