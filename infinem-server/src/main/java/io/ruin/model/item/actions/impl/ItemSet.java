@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl;
 
-import io.ruin.cache.EnumMap;
+import io.ruin.cache.def.EnumDefinition;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -20,7 +20,7 @@ public class ItemSet {
 
     private final String contentsMessage;
 
-    private ItemSet(EnumMap map) {
+    private ItemSet(EnumDefinition map) {
         this.id = map.intValues[0];
         this.itemIds = new int[map.length - 1];
         System.arraycopy(map.intValues, 1, this.itemIds, 0, map.length - 1);
@@ -69,10 +69,10 @@ public class ItemSet {
         /**
          * Sets on interface
          */
-        EnumMap map = EnumMap.get(1033);
+        EnumDefinition map = EnumDefinition.get(1033);
         ArrayList<ItemSet> setList = new ArrayList<>();
         for(int i = 0; i < map.length; i++) {
-            EnumMap itemsMap = EnumMap.get(map.intValues[i]);
+            EnumDefinition itemsMap = EnumDefinition.get(map.intValues[i]);
             setList.add(new ItemSet(itemsMap));
         }
         ItemSet[] sets = setList.toArray(new ItemSet[setList.size()]);

@@ -1,4 +1,4 @@
-package io.ruin.cache;
+package io.ruin.cache.def;
 
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
@@ -7,12 +7,12 @@ import io.ruin.api.filestore.IndexFile;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EnumMap {
+public class EnumDefinition {
 
-    public static EnumMap get(int id) {
+    public static EnumDefinition get(int id) {
         IndexFile index = Server.fileStore.get(2);
         byte[] data = index.getFile(8, id);
-        EnumMap map = new EnumMap();
+        EnumDefinition map = new EnumDefinition();
         if(data != null)
             map.decode(new InBuffer(data));
         return map;

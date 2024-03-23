@@ -1,6 +1,6 @@
 package io.ruin.model.skills.construction.actions;
 
-import io.ruin.cache.EnumMap;
+import io.ruin.cache.def.EnumDefinition;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -13,7 +13,7 @@ import io.ruin.model.skills.construction.Buildable;
 public class Menagerie {
 
     static {
-        EnumMap map = EnumMap.get(985);
+        EnumDefinition map = EnumDefinition.get(985);
         StringBuilder sb = new StringBuilder();
         for(int key : map.keys) {
             int itemId = map.intValues[key];

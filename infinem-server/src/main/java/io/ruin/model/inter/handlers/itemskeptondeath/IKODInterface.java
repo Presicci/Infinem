@@ -1,6 +1,6 @@
 package io.ruin.model.inter.handlers.itemskeptondeath;
 
-import io.ruin.cache.EnumMap;
+import io.ruin.cache.def.EnumDefinition;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.combat.Killer;
 import io.ruin.api.utils.AttributeKey;
@@ -488,7 +488,7 @@ public class IKODInterface {
     }
 
     static {
-        EnumMap map = EnumMap.get(879);
+        EnumDefinition map = EnumDefinition.get(879);
         //for(int id : map.keys)
          //   ItemDef.get(id).neverProtect = id != 13190 && id != 13192; //true when not bonds
 

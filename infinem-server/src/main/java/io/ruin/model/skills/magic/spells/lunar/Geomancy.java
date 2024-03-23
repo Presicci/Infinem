@@ -1,6 +1,6 @@
 package io.ruin.model.skills.magic.spells.lunar;
 
-import io.ruin.cache.EnumMap;
+import io.ruin.cache.def.EnumDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
@@ -127,7 +127,7 @@ public class Geomancy extends Spell {
 
     private static void updateInterface(Player player) {
         for (GeomancyData data : GeomancyData.values()) {
-            Map<Integer, Integer> items = EnumMap.get(1236).ints();
+            Map<Integer, Integer> items = EnumDefinition.get(1236).ints();
             PatchData pd = data.patchData;
             if (pd == null) {
                 continue;

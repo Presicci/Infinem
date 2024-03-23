@@ -1,7 +1,7 @@
 package io.ruin.network.incoming.handlers;
 
 import io.ruin.api.buffer.InBuffer;
-import io.ruin.cache.EnumMap;
+import io.ruin.cache.def.EnumDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
@@ -191,22 +191,22 @@ public class DisplayHandler implements Incoming {
         }
     }
 
-    private static EnumMap getToplevelComponents(Player player) {
+    private static EnumDefinition getToplevelComponents(Player player) {
         switch (player.getGameFrameId()) {
             case Interface.FIXED_SCREEN:
-                return EnumMap.get(1129);
+                return EnumDefinition.get(1129);
 
             case Interface.RESIZED_SCREEN:
-                return EnumMap.get(1130);
+                return EnumDefinition.get(1130);
 
             case Interface.RESIZED_STACKED_SCREEN:
-                return EnumMap.get(1131);
+                return EnumDefinition.get(1131);
 
             case Interface.DEFAULT_SCREEN:
-                return EnumMap.get(1132);
+                return EnumDefinition.get(1132);
 
             case Interface.MOBILE_SCREEN:
-                return EnumMap.get(1745);
+                return EnumDefinition.get(1745);
         }
 
         return null;

@@ -1,7 +1,7 @@
 package io.ruin.model.activities.cluescrolls.puzzles;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.EnumMap;
+import io.ruin.cache.def.EnumDefinition;
 import io.ruin.model.activities.cluescrolls.ClueSave;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceHandler;
@@ -84,7 +84,7 @@ public final class PuzzleBox {
         assert puzzle != null : "Puzzle is not set yet.";
         currentPuzzle.sendAll = true;
         currentPuzzle.sendUpdates();
-        Config.PUZZLE_INDEX.set(player, EnumMap.get(1864).valuesAsKeysInts().get(puzzle.getEnumId()));
+        Config.PUZZLE_INDEX.set(player, EnumDefinition.get(1864).valuesAsKeysInts().get(puzzle.getEnumId()));
     }
 
     /**
@@ -101,8 +101,8 @@ public final class PuzzleBox {
      *
      * @return the enum containing all the puzzle pieces in the correct order.
      */
-    private EnumMap getEnum() {
-        return EnumMap.get(puzzle.getEnumId());
+    private EnumDefinition getEnum() {
+        return EnumDefinition.get(puzzle.getEnumId());
     }
 
     /**

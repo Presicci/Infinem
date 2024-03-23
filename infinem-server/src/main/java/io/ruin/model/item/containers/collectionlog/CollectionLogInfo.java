@@ -1,6 +1,6 @@
 package io.ruin.model.item.containers.collectionlog;
 
-import io.ruin.cache.EnumMap;
+import io.ruin.cache.def.EnumDefinition;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.Struct;
 import io.ruin.model.entity.player.killcount.KillCounter;
@@ -312,12 +312,12 @@ public enum CollectionLogInfo {
         for (CollectionLogInfo info : values()) {
             Struct category = Struct.get(info.getCategoryStruct());
 
-            EnumMap subcategories = EnumMap.get(category.getInt(STRUCT_LOG_SUBCATEGORY));
+            EnumDefinition subcategories = EnumDefinition.get(category.getInt(STRUCT_LOG_SUBCATEGORY));
 
             for (int slot = 0; slot < subcategories.length; slot++) {
                 Struct subcategory = Struct.get(subcategories.intValues[slot]);
 
-                EnumMap group = EnumMap.get(subcategory.getInt(STRUCT_LOG_GROUP));
+                EnumDefinition group = EnumDefinition.get(subcategory.getInt(STRUCT_LOG_GROUP));
                 info.items.put(subcategory.getInt(STRUCT_LOG_GROUP), group.intValues);
                 info.enums.add(subcategory.getInt(STRUCT_LOG_GROUP));
 
@@ -334,12 +334,12 @@ public enum CollectionLogInfo {
         for (CollectionLogInfo info : values()) {
             Struct category = Struct.get(info.getCategoryStruct());
 
-            EnumMap subcategories = EnumMap.get(category.getInt(STRUCT_LOG_SUBCATEGORY));
+            EnumDefinition subcategories = EnumDefinition.get(category.getInt(STRUCT_LOG_SUBCATEGORY));
 
             for (int slot = 0; slot < subcategories.length; slot++) {
                 Struct subcategory = Struct.get(subcategories.intValues[slot]);
 
-                EnumMap group = EnumMap.get(subcategory.getInt(STRUCT_LOG_GROUP));
+                EnumDefinition group = EnumDefinition.get(subcategory.getInt(STRUCT_LOG_GROUP));
                 info.items.put(subcategory.getInt(STRUCT_LOG_GROUP), group.intValues);
                 info.enums.add(subcategory.getInt(STRUCT_LOG_GROUP));
                 for (int index = 0; index < group.intValues.length; index++) {
