@@ -7,27 +7,27 @@ import io.ruin.api.filestore.IndexFile;
 import java.io.PrintStream;
 import java.util.HashMap;
 
-public class ScriptDef {
+public class ScriptDefinition {
 
-    public static ScriptDef[] LOADED;
+    public static ScriptDefinition[] LOADED;
 
     public static void load() {
         IndexFile index = Server.fileStore.get(12);
-        LOADED = new ScriptDef[index.getLastArchiveId() + 1];
+        LOADED = new ScriptDefinition[index.getLastArchiveId() + 1];
         for(int id = 0; id < LOADED.length; id++) {
             byte[] data = index.getFile(id, 0);
             if(data == null) {
               //  System.err.println("CS2 " + id + " has null data!");
                 continue;
             }
-            ScriptDef def = new ScriptDef();
+            ScriptDefinition def = new ScriptDefinition();
             def.id = id;
             def.decode(data);
             LOADED[id] = def;
         }
     }
 
-    public static ScriptDef get(int id) {
+    public static ScriptDefinition get(int id) {
         if(id < 0 || id >= LOADED.length)
             return null;
         return LOADED[id];

@@ -35,13 +35,13 @@ public class InterfaceDefinition {
     }
 
     public static void printConfigs(int interfaceId, boolean recursiveSearch) {
-        Set<ScriptDef> scripts = getScripts(interfaceId, recursiveSearch);
+        Set<ScriptDefinition> scripts = getScripts(interfaceId, recursiveSearch);
         if(scripts == null) {
             System.out.println("Interface " + interfaceId + " uses no scripts! [recursiveSearch=" + recursiveSearch + "]");
             return;
         }
         HashSet<Integer> varpIds = new HashSet<>();
-        for(ScriptDef script : scripts) {
+        for(ScriptDefinition script : scripts) {
             for(int i = 0; i < script.instructions.length; i++) {
                 int instruction = script.instructions[i];
                 if(instruction == 1)
@@ -67,18 +67,18 @@ public class InterfaceDefinition {
         }
     }
 
-    public static Set<ScriptDef> getScripts(int interfaceId, boolean recursiveSearch) {
+    public static Set<ScriptDefinition> getScripts(int interfaceId, boolean recursiveSearch) {
         IndexFile idx = Server.fileStore.get(3);
         int lastFileId = idx.getLastFileId(interfaceId);
         if(lastFileId == -1)
             return null;
-        Set<ScriptDef> scripts = Collections.newSetFromMap(new ConcurrentHashMap<>());
+        Set<ScriptDefinition> scripts = Collections.newSetFromMap(new ConcurrentHashMap<>());
         for(int fileId = 0; fileId <= lastFileId; fileId++) {
             byte[] data = idx.getFile(interfaceId, fileId);
             if(data == null || data[0] != -1)
                 continue;
             InBuffer in = new InBuffer(data);
-            ArrayList<ScriptDef> childScripts = new ArrayList<>();
+            ArrayList<ScriptDefinition> childScripts = new ArrayList<>();
             int scriptListeners = 18, triggers = 3; //count based on client reads
             c: for(int offset = 0; offset < data.length; offset++) {
                 in.position(offset);
@@ -108,7 +108,7 @@ public class InterfaceDefinition {
                             continue c;
                         }
                         int scriptId = (int) objects[0];
-                        ScriptDef script = ScriptDef.get(scriptId);
+                        ScriptDefinition script = ScriptDefinition.get(scriptId);
                         if(script == null || intCount - 1 != script.intStackCount || strCount != script.stringStackCount)
                             continue c;
                         childScripts.add(script);
@@ -133,9 +133,9 @@ public class InterfaceDefinition {
                 }
             }
         }
-        boolean[] searched = new boolean[ScriptDef.LOADED.length];
+        boolean[] searched = new boolean[ScriptDefinition.LOADED.length];
         for(int a = 0; a < 100; a++)
-        for(ScriptDef script : scripts) {
+        for(ScriptDefinition script : scripts) {
             if(searched[script.id])
                 continue;
             searched[script.id] = true;
@@ -144,7 +144,7 @@ public class InterfaceDefinition {
                 if(instruction == 40) {
                     /* include instruction */
                     if(recursiveSearch)
-                        scripts.add(ScriptDef.get(script.intArgs[i]));
+                        scripts.add(ScriptDefinition.get(script.intArgs[i]));
                 } else if(instruction >= 1400 && instruction < 1500 || instruction >= 2400 && instruction < 2500) {
                     /* hook instruction */
                     int offset = i - 1;
@@ -181,7 +181,7 @@ public class InterfaceDefinition {
                     }
                     int scriptId = script.intArgs[offset];
                     if(scriptId != -1)
-                        scripts.add(ScriptDef.get(scriptId));
+                        scripts.add(ScriptDefinition.get(scriptId));
                 }
             }
         }
