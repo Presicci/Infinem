@@ -7,6 +7,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.route.routes.ProjectileRoute;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,7 +39,9 @@ public class Shifter extends NPCCombat {
 
 	@Override
 	public boolean attack() {
-		if (!teleport() && withinDistance(1)) {
+		if (teleport())
+			return true;
+		if (withinDistance(1)) {
 			basicAttack();
 			return true;
 		}
@@ -49,10 +52,11 @@ public class Shifter extends NPCCombat {
 		if (target != null && Random.rollDie(4, 1)) {
 			Bounds b = new Bounds(target.getPosition(), 1);
 			List<Position> tiles = new ArrayList<>();
-			b.forEachPos(tiles::add);
+			b.forEachPos(p -> ProjectileRoute.allow(npc, p) && !p.equals(target.getPosition()), tiles::add);
 			Collections.shuffle(tiles);
 			Position dstTile = Random.get(tiles);
 			npc.getMovement().teleport(dstTile);
+			basicAttack();
 			return true;
 		}
 
