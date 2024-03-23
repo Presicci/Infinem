@@ -3,6 +3,7 @@ package io.ruin.cache;
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
+import io.ruin.cache.def.VarpDefinition;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,8 +33,8 @@ public class Varpbit {
 
             LOADED[id] = bit;
         }
-        Varp.LOADED = new Varp[highestVarpId + 1];
-        varpMap.forEach((varpId, bits) -> new Varp(varpId, bits.toArray(new Varpbit[bits.size()])));
+        VarpDefinition.LOADED = new VarpDefinition[highestVarpId + 1];
+        varpMap.forEach((varpId, bits) -> new VarpDefinition(varpId, bits.toArray(new Varpbit[bits.size()])));
     }
 
     public static Varpbit get(int id) {

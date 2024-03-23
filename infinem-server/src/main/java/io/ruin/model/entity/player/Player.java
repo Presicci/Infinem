@@ -9,7 +9,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.InterfaceDefinition;
-import io.ruin.cache.Varp;
+import io.ruin.cache.def.VarpDefinition;
 import io.ruin.event.GameEventProcessor;
 import io.ruin.model.World;
 import io.ruin.model.activities.cluescrolls.impl.EmoteClue;
@@ -704,7 +704,7 @@ public class Player extends PlayerAttributes {
 
     @Expose public HashMap<Integer, Integer> savedConfigs = new HashMap<>();
 
-    public int[] varps = new int[Varp.LOADED.length];
+    public int[] varps = new int[VarpDefinition.LOADED.length];
 
     private final boolean[] updatedVarps = new boolean[varps.length];
 

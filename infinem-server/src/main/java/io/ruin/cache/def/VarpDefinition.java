@@ -1,10 +1,12 @@
-package io.ruin.cache;
+package io.ruin.cache.def;
 
-public class Varp {
+import io.ruin.cache.Varpbit;
 
-    public static Varp[] LOADED;
+public class VarpDefinition {
 
-    public static Varp get(int id) {
+    public static VarpDefinition[] LOADED;
+
+    public static VarpDefinition get(int id) {
         if(id < 0 || id >= LOADED.length)
             return null;
         return LOADED[id];
@@ -18,7 +20,7 @@ public class Varp {
 
     public final Varpbit[] bits;
 
-    public Varp(int id, Varpbit[] bits) {
+    public VarpDefinition(int id, Varpbit[] bits) {
         this.id = id;
         this.bits = bits;
         LOADED[id] = this;
