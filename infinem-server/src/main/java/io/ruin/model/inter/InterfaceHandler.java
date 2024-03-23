@@ -1,6 +1,6 @@
 package io.ruin.model.inter;
 
-import io.ruin.cache.InterfaceDefinition;
+import io.ruin.cache.def.InterfaceDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.actions.SimpleAction;
 

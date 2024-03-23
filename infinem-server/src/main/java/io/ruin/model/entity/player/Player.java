@@ -8,7 +8,7 @@ import io.ruin.api.utils.*;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.utility.Color;
-import io.ruin.cache.InterfaceDefinition;
+import io.ruin.cache.def.InterfaceDefinition;
 import io.ruin.cache.Varp;
 import io.ruin.event.GameEventProcessor;
 import io.ruin.model.World;

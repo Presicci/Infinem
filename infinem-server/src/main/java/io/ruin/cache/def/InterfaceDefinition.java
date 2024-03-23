@@ -1,8 +1,10 @@
-package io.ruin.cache;
+package io.ruin.cache.def;
 
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
+import io.ruin.cache.Varp;
+import io.ruin.cache.Varpbit;
 
 import java.util.ArrayList;
 import java.util.Collections;

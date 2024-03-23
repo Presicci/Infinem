@@ -6,7 +6,7 @@ import io.ruin.api.buffer.OutBuffer;
 import io.ruin.api.protocol.Protocol;
 import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.utils.ISAACCipher;
-import io.ruin.cache.InterfaceDefinition;
+import io.ruin.cache.def.InterfaceDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
