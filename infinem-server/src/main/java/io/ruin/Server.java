@@ -11,6 +11,7 @@ import io.ruin.api.utils.*;
 import io.ruin.cache.*;
 import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.cache.def.GfxDefinition;
+import io.ruin.cache.def.IdentityKitDefinition;
 import io.ruin.data.DataFile;
 import io.ruin.data.impl.login_set;
 import io.ruin.data.yaml.YamlLoader;
@@ -128,7 +129,7 @@ public class Server extends ServerWrapper {
             fileStore = new FileStore(properties.getProperty("cache_path"));
             dataFolder = FileUtils.get(properties.getProperty("data_path"));
             Varpbit.load();
-            IdentityKit.load();
+            IdentityKitDefinition.load();
             AnimationDefinition.load();
             GfxDefinition.load();
             InventoryDef.load();

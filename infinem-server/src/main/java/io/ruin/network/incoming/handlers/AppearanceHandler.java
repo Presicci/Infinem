@@ -2,7 +2,7 @@ package io.ruin.network.incoming.handlers;
 
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
-import io.ruin.cache.IdentityKit;
+import io.ruin.cache.def.IdentityKitDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.masks.Appearance;
 import io.ruin.model.inter.InterfaceType;
@@ -27,7 +27,7 @@ public class AppearanceHandler implements Incoming {
                  */
                 style = 255;
             } else {
-                IdentityKit identitykit = IdentityKit.get(style);
+                IdentityKitDefinition identitykit = IdentityKitDefinition.get(style);
                 if(identitykit == null || identitykit.selectable || identitykit.bodyPartId != (female ? 7 : 0) + i) {
                     Server.logWarning("Invalid Appearance Style: [" + i + "]=" + style + " player=" + player.getName());
                     continue;

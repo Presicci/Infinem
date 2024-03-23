@@ -1,33 +1,30 @@
-package io.ruin.cache;
+package io.ruin.cache.def;
 
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class IdentityKit {
+public class IdentityKitDefinition {
 
     /**
      * Storage
      */
 
-    public static IdentityKit[] LOADED;
+    public static IdentityKitDefinition[] LOADED;
 
     public static void load() {
         IndexFile index = Server.fileStore.get(2);
-        LOADED = new IdentityKit[index.getLastFileId(3) + 1];
+        LOADED = new IdentityKitDefinition[index.getLastFileId(3) + 1];
         for(int id = 0; id < LOADED.length; id++) {
             byte[] data = index.getFile(3, id);
-            IdentityKit def = new IdentityKit();
+            IdentityKitDefinition def = new IdentityKitDefinition();
             def.id = id;
             def.decode(new InBuffer(data));
             LOADED[id] = def;
         }
     }
 
-    public static IdentityKit get(int id) {
+    public static IdentityKitDefinition get(int id) {
         if(id < 0 || id >= LOADED.length)
             return null;
         return LOADED[id];

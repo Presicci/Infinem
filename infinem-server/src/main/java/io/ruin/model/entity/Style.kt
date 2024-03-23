@@ -1,9 +1,8 @@
 package io.ruin.model.entity.player
 
-import com.sun.org.apache.xpath.internal.operations.Bool
 import io.ruin.Server
 import io.ruin.api.filestore.FileStore
-import io.ruin.cache.IdentityKit
+import io.ruin.cache.def.IdentityKitDefinition
 import io.ruin.cache.Varpbit
 import kotlin.collections.ArrayList
 import kotlin.system.exitProcess
@@ -80,13 +79,13 @@ enum class Style(
         return indexOfFirst
     }
 
-    fun availableIdentityKits(male: Boolean): List<IdentityKit> {
+    fun availableIdentityKits(male: Boolean): List<IdentityKitDefinition> {
         val bodyPart = this.bodyPart(male) ?: return emptyList()
         val allAvailable = this.allAvailableKits(bodyPart)
         return allAvailable;
     }
 
-    fun allAvailableKits(bodyPart: Int): List<IdentityKit> {
+    fun allAvailableKits(bodyPart: Int): List<IdentityKitDefinition> {
         return ArrayList(bodyParts[bodyPart])
     }
 
@@ -118,8 +117,8 @@ enum class Style(
 
     companion object {
         val bodyParts by lazy {
-            val result = Array(14) { mutableListOf<IdentityKit>() }
-            for (kit in IdentityKit.LOADED) {
+            val result = Array(14) { mutableListOf<IdentityKitDefinition>() }
+            for (kit in IdentityKitDefinition.LOADED) {
                 if(kit.selectable) {
                     result[kit.bodyPartId].add(kit);
                 }
@@ -135,7 +134,7 @@ enum class Style(
         fun main(args: Array<String>) {
             Server.fileStore = FileStore("Cache/")
             Varpbit.load()
-            IdentityKit.load()
+            IdentityKitDefinition.load()
             exitProcess(0)
         }
 
