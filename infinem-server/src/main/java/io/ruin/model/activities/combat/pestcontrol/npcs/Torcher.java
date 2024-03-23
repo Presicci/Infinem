@@ -14,7 +14,7 @@ import io.ruin.model.map.Projectile;
  */
 public class Torcher extends NPCCombat {
 
-	private static final Projectile PROJECTILE = new Projectile(647, 50, 30, 50, 40, 8, 16, 0);
+	private static final Projectile PROJECTILE = new Projectile(647, 50, 30, 15, 40, 8, 16, 0);
 
 	@Override
 	public void init() {
