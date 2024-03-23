@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl.chests;
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;

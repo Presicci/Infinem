@@ -2,9 +2,8 @@ package io.ruin.model.combat;
 
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.ItemDef;
-import io.ruin.model.content.bestiary.perks.impl.AccuracyPerk;
 import io.ruin.model.content.bestiary.perks.impl.ReducedEnemyAccuracyPerk;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.shared.LockType;

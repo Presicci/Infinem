@@ -1,6 +1,6 @@
 package io.ruin.model.entity.npc.actions;
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.item.actions.ItemNPCAction;

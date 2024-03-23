@@ -2,7 +2,7 @@ package io.ruin.model.entity.npc.actions.edgeville;
 
 import io.ruin.Server;
 import io.ruin.api.utils.StringUtils;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;

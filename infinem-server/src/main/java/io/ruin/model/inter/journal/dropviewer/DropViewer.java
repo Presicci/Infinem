@@ -1,10 +1,9 @@
 package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.api.utils.Tuple;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.NPCDef;
 import io.ruin.api.utils.AttributeKey;
-import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.npc.NPCDrops;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.AccessMasks;

@@ -1,7 +1,7 @@
 package io.ruin.model.inter.handlers;
 
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.InterfaceHandler;

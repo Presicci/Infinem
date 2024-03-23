@@ -1,6 +1,6 @@
 package io.ruin.model.inter.journal.main;
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.content.areas.wilderness.DeadmanChest;
 import io.ruin.content.areas.wilderness.DeadmanChestEvent;
 import io.ruin.model.entity.player.Player;

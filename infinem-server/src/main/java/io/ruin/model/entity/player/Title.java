@@ -2,7 +2,7 @@ package io.ruin.model.entity.player;
 
 import io.ruin.api.protocol.world.WorldType;
 import io.ruin.api.utils.ServerWrapper;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.killcount.BossKillCounter;
 import io.ruin.model.entity.player.killcount.KillCounter;

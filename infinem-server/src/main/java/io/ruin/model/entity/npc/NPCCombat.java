@@ -1,56 +1,27 @@
 package io.ruin.model.entity.npc;
 
-import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
-import io.ruin.cache.Icon;
-import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.npcs.npc_combat;
-import io.ruin.model.World;
 import io.ruin.model.activities.tasks.DailyTask;
-import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.*;
-import io.ruin.model.content.PvmPoints;
-import io.ruin.model.content.bestiary.perks.impl.NotedDropPerk;
 import io.ruin.model.content.bestiary.perks.impl.RespawnPerk;
-import io.ruin.model.content.tasksystem.tasks.TaskCategory;
-import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.Entity;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.behavior.FightingNPC;
-import io.ruin.model.entity.player.DoubleDrops;
-import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.player.killcount.BossKillCounter;
-import io.ruin.model.item.Item;
-import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.MonkeyGreeGree;
-import io.ruin.model.item.actions.impl.WildernessKey;
-import io.ruin.model.item.actions.impl.jewellery.BraceletOfEthereum;
-import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
-import io.ruin.model.item.attributes.AttributeExtensions;
-import io.ruin.model.item.loot.LootItem;
-import io.ruin.model.item.loot.LootTable;
-import io.ruin.model.item.loot.RareDropTable;
 import io.ruin.model.map.*;
-import io.ruin.model.map.ground.GroundItem;
-import io.ruin.model.map.object.actions.impl.dungeons.KourendCatacombs;
 import io.ruin.model.map.route.routes.DumbRoute;
 import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
-import io.ruin.services.discord.impl.RareDropEmbedMessage;
-import io.ruin.utility.Broadcast;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
-
-import static io.ruin.cache.ItemID.COINS_995;
-import static io.ruin.cache.ItemID.VORKATHS_HEAD;
 
 public abstract class NPCCombat extends Combat {
 

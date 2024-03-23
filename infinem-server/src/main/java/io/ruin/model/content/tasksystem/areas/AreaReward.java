@@ -1,7 +1,7 @@
 package io.ruin.model.content.tasksystem.areas;
 
 import io.ruin.api.utils.StringUtils;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.content.scroll.DiaryScroll;
 import io.ruin.model.content.tasksystem.tasks.TaskArea;
 import io.ruin.model.entity.player.Player;

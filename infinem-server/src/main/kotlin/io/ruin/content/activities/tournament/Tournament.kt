@@ -1,7 +1,7 @@
 package io.ruin.content.activities.tournament
 
 import io.ruin.api.*
-import io.ruin.cache.Color
+import io.ruin.utility.Color
 import io.ruin.cache.Icon
 import io.ruin.cache.ItemID.BLOOD_MONEY
 import io.ruin.cache.ItemID.COINS_995

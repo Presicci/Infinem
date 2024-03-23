@@ -2,7 +2,7 @@ package io.ruin.model.entity.player;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.XenPost;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;

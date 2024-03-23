@@ -1,19 +1,15 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
-import io.ruin.cache.Color;
 import io.ruin.model.World;
 import io.ruin.model.activities.combat.pvminstance.InstanceDialogue;
 import io.ruin.model.activities.combat.pvminstance.InstanceType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
-import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.map.Position;
-import io.ruin.model.map.Region;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.Ladder;
-import io.ruin.model.skills.slayer.Slayer;
 
 public class WaterbirthDungeon {
     static {

@@ -1,7 +1,7 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;

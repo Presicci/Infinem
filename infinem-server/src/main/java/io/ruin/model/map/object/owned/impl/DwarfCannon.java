@@ -2,7 +2,7 @@ package io.ruin.model.map.object.owned.impl;
 
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.Lists;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;

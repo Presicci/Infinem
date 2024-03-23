@@ -1,7 +1,7 @@
 package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.Server;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
 import io.ruin.api.utils.AttributeKey;

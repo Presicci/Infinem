@@ -3,7 +3,7 @@ package io.ruin.model.entity.npc;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.World;

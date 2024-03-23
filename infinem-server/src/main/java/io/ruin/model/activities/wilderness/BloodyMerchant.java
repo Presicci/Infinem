@@ -2,15 +2,13 @@ package io.ruin.model.activities.wilderness;
 
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
-import io.ruin.cache.ItemDef;
 import io.ruin.data.impl.Help;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.journal.JournalEntry;
@@ -19,7 +17,6 @@ import io.ruin.model.map.Position;
 import io.ruin.model.shop.*;
 import io.ruin.utility.Broadcast;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;

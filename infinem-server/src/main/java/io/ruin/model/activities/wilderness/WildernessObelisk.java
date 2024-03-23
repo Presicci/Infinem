@@ -1,7 +1,7 @@
 package io.ruin.model.activities.wilderness;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.OptionScroll;

@@ -1,7 +1,7 @@
 package io.ruin.model.inter.journal.toggles;
 
 import com.google.gson.annotations.Expose;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;

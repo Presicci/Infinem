@@ -1,10 +1,9 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.activities.combat.pvminstance.InstanceDialogue;
 import io.ruin.model.activities.combat.pvminstance.InstanceType;
 import io.ruin.model.combat.Hit;
-import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;

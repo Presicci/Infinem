@@ -1,6 +1,6 @@
 package io.ruin.network.incoming.handlers.commands;
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.data.impl.Help;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.actions.edgeville.EmblemTrader;

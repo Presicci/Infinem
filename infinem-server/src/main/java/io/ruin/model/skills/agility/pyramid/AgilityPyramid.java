@@ -2,7 +2,7 @@ package io.ruin.model.skills.agility.pyramid;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
 import io.ruin.model.entity.player.Player;

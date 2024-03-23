@@ -1,7 +1,7 @@
 package io.ruin.model.inter.journal.presets;
 
 import com.google.gson.annotations.Expose;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.content.activities.tournament.TournamentManager;
 import io.ruin.model.activities.clanwars.FFAClanWars;

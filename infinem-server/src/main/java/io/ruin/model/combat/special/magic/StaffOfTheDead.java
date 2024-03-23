@@ -1,6 +1,5 @@
 package io.ruin.model.combat.special.magic;
 
-import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.special.Special;

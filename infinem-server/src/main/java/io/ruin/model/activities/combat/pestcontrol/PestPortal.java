@@ -1,7 +1,7 @@
 package io.ruin.model.activities.combat.pestcontrol;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.model.combat.npc.PassiveCombat;

@@ -3,7 +3,7 @@ package io.ruin.model.entity.player;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.npc.MaxHitDummy;

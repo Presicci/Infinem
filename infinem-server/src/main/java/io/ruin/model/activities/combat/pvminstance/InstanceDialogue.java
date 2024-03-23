@@ -1,7 +1,7 @@
 package io.ruin.model.activities.combat.pvminstance;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.activities.combat.godwars.GodwarsBossEntrance;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ActionDialogue;

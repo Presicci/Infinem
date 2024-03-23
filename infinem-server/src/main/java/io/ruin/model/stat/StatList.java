@@ -1,11 +1,9 @@
 package io.ruin.model.stat;
 
 import com.google.gson.annotations.Expose;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.model.World;
-import io.ruin.model.activities.summerevent.SummerTokens;
-import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;

@@ -1,7 +1,7 @@
 package io.ruin.model.combat.npc.dragons;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
 import io.ruin.model.combat.AttackStyle;

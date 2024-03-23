@@ -1,7 +1,7 @@
 package io.ruin.model.activities.wilderness.bosses.custom;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;

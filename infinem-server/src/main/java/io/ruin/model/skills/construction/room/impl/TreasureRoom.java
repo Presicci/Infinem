@@ -2,7 +2,7 @@ package io.ruin.model.skills.construction.room.impl;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;

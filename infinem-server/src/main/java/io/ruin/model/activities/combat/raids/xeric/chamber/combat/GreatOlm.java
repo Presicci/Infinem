@@ -1,7 +1,7 @@
 package io.ruin.model.activities.combat.raids.xeric.chamber.combat;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.combat.raids.xeric.chamber.Chamber;

@@ -1,4 +1,4 @@
-package io.ruin.cache;
+package io.ruin.utility;
 
 /**
  * Remember: If we add/remove/change a color, remember to also change it in the custom JournalInterface client class!

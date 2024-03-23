@@ -1,6 +1,6 @@
 package io.ruin.model.skills.construction.actions;
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
@@ -8,7 +8,6 @@ import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
-import java.util.Map;
 
 public enum Costume {
     //fancy dress box

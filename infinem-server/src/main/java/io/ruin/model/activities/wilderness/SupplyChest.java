@@ -2,16 +2,14 @@ package io.ruin.model.activities.wilderness;
 
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.data.impl.Help;
 import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Widget;
-import io.ruin.model.inter.journal.Journal;
 import io.ruin.model.inter.journal.JournalEntry;
-import io.ruin.model.inter.journal.toggles.RiskProtection;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;

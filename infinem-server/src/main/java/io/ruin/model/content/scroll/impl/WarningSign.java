@@ -1,6 +1,6 @@
 package io.ruin.model.content.scroll.impl;
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.content.scroll.Scroll;
 import io.ruin.model.content.scroll.ScrollLine;
 import io.ruin.model.map.object.actions.ObjectAction;

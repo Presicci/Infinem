@@ -1,7 +1,7 @@
 package io.ruin.model.skills.agility.courses;
 
 import io.ruin.api.utils.AttributeKey;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;

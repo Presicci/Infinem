@@ -1,7 +1,7 @@
 package io.ruin.model.activities.combat.raids.tob.dungeon.room;
 
 import com.google.common.collect.Lists;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.NpcID;
 import io.ruin.model.activities.combat.raids.tob.dungeon.boss.TheMaidenOfSugadinti;
 import io.ruin.model.activities.combat.raids.tob.dungeon.RoomType;

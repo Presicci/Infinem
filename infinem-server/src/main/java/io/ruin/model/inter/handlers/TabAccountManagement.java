@@ -1,6 +1,6 @@
 package io.ruin.model.inter.handlers;
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.actions.edgeville.CreditManager;
 import io.ruin.model.entity.player.Player;

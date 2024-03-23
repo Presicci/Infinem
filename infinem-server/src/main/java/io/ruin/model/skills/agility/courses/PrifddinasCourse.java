@@ -2,7 +2,7 @@ package io.ruin.model.skills.agility.courses;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -13,8 +13,6 @@ import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.agility.TricksterAgility;
-import io.ruin.model.skills.agility.courses.AgilityPet;
-import io.ruin.model.skills.agility.courses.MarkOfGrace;
 import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;

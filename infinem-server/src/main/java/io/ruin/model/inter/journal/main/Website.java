@@ -1,7 +1,5 @@
 package io.ruin.model.inter.journal.main;
 
-import io.ruin.cache.Color;
-import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.journal.JournalEntry;
 

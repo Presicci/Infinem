@@ -7,7 +7,7 @@ import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.utils.*;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.AnimDef;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.InterfaceDef;
 import io.ruin.cache.Varp;
 import io.ruin.event.GameEventProcessor;

@@ -1,7 +1,7 @@
 package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.ItemID;
 import io.ruin.model.combat.Hit;
@@ -14,10 +14,6 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.attributes.AttributeExtensions;
-import io.ruin.model.item.attributes.AttributeTypes;
-import io.ruin.model.map.ground.GroundItem;
-import io.ruin.utility.Utils;
-import lombok.experimental.ExtensionMethod;
 
 /**
  * @author ReverendDread on 5/16/2020

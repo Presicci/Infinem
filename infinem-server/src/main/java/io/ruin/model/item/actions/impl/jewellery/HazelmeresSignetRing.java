@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.jewellery;
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerBoolean;
 import io.ruin.model.entity.player.killcount.KillCounter;

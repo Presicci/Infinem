@@ -1,14 +1,12 @@
 package io.ruin.model.activities.tasks;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
-import io.ruin.model.entity.shared.listeners.DailyResetListener;
 import io.ruin.model.inter.dialogue.MessageDialogue;
-import io.ruin.model.inter.journal.Journal;
 import io.ruin.model.inter.journal.JournalEntry;
 
 import java.util.Arrays;

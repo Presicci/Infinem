@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.jewellery;
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.entity.player.PlayerBoolean;
 import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
@@ -12,9 +12,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
-import io.ruin.model.map.Bounds;
 
-import static io.ruin.cache.ItemID.BLOOD_MONEY;
 import static io.ruin.cache.ItemID.COINS_995;
 
 public enum RingOfWealth {

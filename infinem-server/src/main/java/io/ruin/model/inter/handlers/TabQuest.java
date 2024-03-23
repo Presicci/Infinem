@@ -2,8 +2,7 @@ package io.ruin.model.inter.handlers;
 
 import io.ruin.Server;
 import io.ruin.api.utils.TimeUtils;
-import io.ruin.cache.Color;
-import io.ruin.cache.Icon;
+import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.activities.pvp.PVPInstance;
 import io.ruin.model.activities.wilderness.Wilderness;
@@ -17,10 +16,8 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.journal.Journal;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**

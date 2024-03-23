@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.TemporaryAttributesHolder;
 import io.ruin.cache.AnimDef;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.duelarena.DuelRule;

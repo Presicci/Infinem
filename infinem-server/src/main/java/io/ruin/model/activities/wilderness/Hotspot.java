@@ -1,7 +1,7 @@
 package io.ruin.model.activities.wilderness;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.data.impl.Help;
 import io.ruin.model.World;

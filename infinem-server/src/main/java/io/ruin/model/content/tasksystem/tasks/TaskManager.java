@@ -3,9 +3,8 @@ package io.ruin.model.content.tasksystem.tasks;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.database.DatabaseUtils;
-import io.ruin.api.utils.ServerWrapper;
 import io.ruin.api.utils.StringUtils;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.content.tasksystem.tasks.inter.TabTask;
@@ -21,8 +20,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry

@@ -1,7 +1,7 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.duelarena.DuelRule;

@@ -1,6 +1,6 @@
 package io.ruin.model.activities.combat.raids.xeric;
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.activities.combat.raids.xeric.chamber.Chamber;
 import io.ruin.model.activities.combat.raids.xeric.chamber.ChamberDefinition;
 import io.ruin.model.activities.combat.raids.xeric.chamber.ChamberType;

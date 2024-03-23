@@ -2,7 +2,7 @@ package io.ruin.model.activities.combat.inferno;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.npcs.npc_combat;

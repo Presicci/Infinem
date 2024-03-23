@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.chargable;
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
@@ -9,7 +9,6 @@ import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.item.attributes.AttributeTypes;
-import io.ruin.model.item.containers.Equipment;
 
 public class TomeOfFire {
 

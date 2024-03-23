@@ -1,7 +1,7 @@
 package io.ruin.model.activities.combat.bosses.hespori;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.Killer;

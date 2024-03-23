@@ -2,7 +2,7 @@ package io.ruin.model.activities.combat.raids.tob.party;
 
 import io.ruin.Server;
 import io.ruin.api.utils.StringUtils;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.activities.combat.raids.tob.dungeon.TheatreDungeon;
 import io.ruin.model.entity.player.Player;

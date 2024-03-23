@@ -2,7 +2,7 @@ package io.ruin.model.skills.agility.courses.rooftop;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;

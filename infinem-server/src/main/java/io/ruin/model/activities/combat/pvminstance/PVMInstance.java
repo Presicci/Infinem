@@ -1,6 +1,6 @@
 package io.ruin.model.activities.combat.pvminstance;
 
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.activities.combat.godwars.GodwarsBossEntrance;
 import io.ruin.model.entity.npc.NPC;

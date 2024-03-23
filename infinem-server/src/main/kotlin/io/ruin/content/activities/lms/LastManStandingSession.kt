@@ -1,7 +1,7 @@
 package io.ruin.content.activities.lms
 
 import io.ruin.api.*
-import io.ruin.cache.Color
+import io.ruin.utility.Color
 import io.ruin.model.World
 import io.ruin.model.combat.Hit
 import io.ruin.model.combat.Killer

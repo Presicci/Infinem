@@ -1,7 +1,7 @@
 package io.ruin.model.entity.npc.actions;
 
 import io.ruin.api.utils.AttributeKey;
-import io.ruin.cache.Color;
+import io.ruin.utility.Color;
 import io.ruin.model.content.scroll.ScrollingScroll;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.PlayerCounter;
