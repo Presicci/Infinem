@@ -6,7 +6,7 @@ import io.ruin.api.buffer.OutBuffer;
 import io.ruin.api.protocol.Protocol;
 import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.utils.ISAACCipher;
-import io.ruin.cache.InterfaceDef;
+import io.ruin.cache.InterfaceDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
@@ -192,7 +192,7 @@ public class PacketSender {
     }
 
     public void sendModelInformation(int parentId, int childId, int zoom, int rotationX, int rotationY) {
-        if (!InterfaceDef.valid(parentId, childId)) {
+        if (!InterfaceDefinition.valid(parentId, childId)) {
             new Exception("INVALID sendModelInformation " + parentId + ":" + childId).printStackTrace();
             return;
         }
@@ -227,7 +227,7 @@ public class PacketSender {
     }
 
     public void sendInterface(int interfaceId, int parentId, int childId, int overlayType) {
-        if (!InterfaceDef.valid(interfaceId) || !InterfaceDef.valid(parentId, childId)) {
+        if (!InterfaceDefinition.valid(interfaceId) || !InterfaceDefinition.valid(parentId, childId)) {
             new Exception("INVALID sendInterface " + interfaceId
                     + " -> " + parentId + ":" + childId
                     + " (overlayType=" + overlayType + ")").printStackTrace();
@@ -242,7 +242,7 @@ public class PacketSender {
     }
 
     public void sendModel(int parentId, int childId, int modelId) {
-        if (!InterfaceDef.valid(parentId, childId)) {
+        if (!InterfaceDefinition.valid(parentId, childId)) {
             new Exception("INVALID sendModel " + parentId + ":" + childId + " (modelId=" + modelId + ")").printStackTrace();
             return;
         }
@@ -253,7 +253,7 @@ public class PacketSender {
     }
 
     public void removeInterface(int parentId, int childId) {
-        if (!InterfaceDef.valid(parentId, childId)) {
+        if (!InterfaceDefinition.valid(parentId, childId)) {
             new Exception("INVALID removeInterface " + parentId + ":" + childId).printStackTrace();
             return;
         }
@@ -264,7 +264,7 @@ public class PacketSender {
     }
 
     public void moveInterface(int fromParentId, int fromChildId, int toParentId, int toChildId) {
-        if (!InterfaceDef.valid(fromParentId, fromChildId) || !InterfaceDef.valid(toParentId, toChildId)) {
+        if (!InterfaceDefinition.valid(fromParentId, fromChildId) || !InterfaceDefinition.valid(toParentId, toChildId)) {
             new Exception("INVALID moveInterface " + fromParentId + "," + fromChildId + " -> " + toParentId + "," + toChildId).printStackTrace();
             return;
         }
@@ -276,7 +276,7 @@ public class PacketSender {
     }
 
     public void sendString(int interfaceId, int childId, String string) {
-        if (!InterfaceDef.valid(interfaceId, childId)) {
+        if (!InterfaceDefinition.valid(interfaceId, childId)) {
             new Exception("INVALID sendString " + interfaceId + ":" + childId + " (\"" + string + "\")").printStackTrace();
             return;
         }
@@ -288,7 +288,7 @@ public class PacketSender {
     }
 
     public void setHidden(int interfaceId, int childId, boolean hide) {
-        if (!InterfaceDef.valid(interfaceId, childId)) {
+        if (!InterfaceDefinition.valid(interfaceId, childId)) {
             new Exception("INVALID setHidden " + interfaceId + ":" + childId + " (hide=" + hide + ")").printStackTrace();
             return;
         }
@@ -299,7 +299,7 @@ public class PacketSender {
     }
 
     public void sendItem(int parentId, int childId, int itemId, int amount) {
-        if (!InterfaceDef.valid(parentId, childId)) {
+        if (!InterfaceDefinition.valid(parentId, childId)) {
             new Exception("INVALID sendItem " + parentId + ":" + childId + " (itemId=" + itemId + ", amount=" + amount + ")").printStackTrace();
             return;
         }
@@ -311,7 +311,7 @@ public class PacketSender {
     }
 
     public void setAlignment(int parentId, int childId, int x, int y) {
-        if (!InterfaceDef.valid(parentId, childId)) {
+        if (!InterfaceDefinition.valid(parentId, childId)) {
             new Exception("INVALID setAlignment " + parentId + ":" + childId + " (x=" + x + ", y=" + y + ")").printStackTrace();
             return;
         }
@@ -358,7 +358,7 @@ public class PacketSender {
     }
 
     public void sendAccessMask(boolean debug, int interfaceId, int childParentId, int minChildId, int maxChildId, int... masks) {
-        if (!InterfaceDef.valid(interfaceId, childParentId/*Math.max(childParentId, Math.max(minChildId, maxChildId))*/)) {
+        if (!InterfaceDefinition.valid(interfaceId, childParentId/*Math.max(childParentId, Math.max(minChildId, maxChildId))*/)) {
             if (debug)
                 new Exception("INVALID sendAccessMask " + interfaceId + ":" + childParentId + " (" + minChildId + ".." + maxChildId + ")").printStackTrace();
             return;

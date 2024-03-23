@@ -134,7 +134,7 @@ public class Server extends ServerWrapper {
             GfxDefinition.load();
             InventoryDef.load();
             ScriptDef.load();
-            InterfaceDef.load();
+            InterfaceDefinition.load();
             ItemDef.load();
             NPCDef.load();
             ObjectDef.load();

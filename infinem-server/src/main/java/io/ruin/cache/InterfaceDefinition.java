@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
-public class InterfaceDef {
+public class InterfaceDefinition {
 
     public static int[] COUNTS;
 

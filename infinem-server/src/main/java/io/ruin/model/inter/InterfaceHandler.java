@@ -1,6 +1,6 @@
 package io.ruin.model.inter;
 
-import io.ruin.cache.InterfaceDef;
+import io.ruin.cache.InterfaceDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.actions.SimpleAction;
 
@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 
 public class InterfaceHandler {
 
-    public static final InterfaceHandler[] HANDLERS = new InterfaceHandler[InterfaceDef.COUNTS == null ? 712 : InterfaceDef.COUNTS.length];
+    public static final InterfaceHandler[] HANDLERS = new InterfaceHandler[InterfaceDefinition.COUNTS == null ? 712 : InterfaceDefinition.COUNTS.length];
 
     public static final InterfaceHandler EMPTY_HANDLER = new InterfaceHandler();
 
@@ -26,7 +26,7 @@ public class InterfaceHandler {
 
     protected InterfaceHandler(int id) {
         this.id = id;
-        this.actions = new InterfaceAction[InterfaceDef.COUNTS[id]];
+        this.actions = new InterfaceAction[InterfaceDefinition.COUNTS[id]];
         HANDLERS[id] = this;
     }
 

@@ -8,7 +8,7 @@ import io.ruin.api.utils.*;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.utility.Color;
-import io.ruin.cache.InterfaceDef;
+import io.ruin.cache.InterfaceDefinition;
 import io.ruin.cache.Varp;
 import io.ruin.event.GameEventProcessor;
 import io.ruin.model.World;
@@ -395,13 +395,13 @@ public class Player extends PlayerAttributes {
     /**
      * Interface visibility
      */
-    private final boolean[] visibleInterfaces = new boolean[InterfaceDef.COUNTS.length];
+    private final boolean[] visibleInterfaces = new boolean[InterfaceDefinition.COUNTS.length];
 
-    private final Integer[][] visibleInterfaceIds = new Integer[InterfaceDef.COUNTS.length][];
+    private final Integer[][] visibleInterfaceIds = new Integer[InterfaceDefinition.COUNTS.length][];
 
     public void setVisibleInterface(int interfaceId, int parentId, int childId) {
         if(visibleInterfaceIds[parentId] == null)
-            visibleInterfaceIds[parentId] = new Integer[InterfaceDef.COUNTS[parentId]];
+            visibleInterfaceIds[parentId] = new Integer[InterfaceDefinition.COUNTS[parentId]];
         else if(visibleInterfaceIds[parentId] != null) {
             Integer id = visibleInterfaceIds[parentId][childId];
             if(id != null)
@@ -419,7 +419,7 @@ public class Player extends PlayerAttributes {
 
     public void moveVisibleInterface(int fromParentId, int fromChildId, int toParentId, int toChildId) {
         if(visibleInterfaceIds[fromParentId] == null)
-            visibleInterfaceIds[fromParentId] = new Integer[InterfaceDef.COUNTS[fromParentId]];
+            visibleInterfaceIds[fromParentId] = new Integer[InterfaceDefinition.COUNTS[fromParentId]];
         Integer interfaceId = visibleInterfaceIds[fromParentId][fromChildId];
         if(interfaceId == null)
             return;
