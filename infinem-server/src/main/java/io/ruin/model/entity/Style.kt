@@ -3,7 +3,7 @@ package io.ruin.model.entity.player
 import io.ruin.Server
 import io.ruin.api.filestore.FileStore
 import io.ruin.cache.def.IdentityKitDefinition
-import io.ruin.cache.Varpbit
+import io.ruin.cache.def.VarpbitDefinition
 import kotlin.collections.ArrayList
 import kotlin.system.exitProcess
 
@@ -133,7 +133,7 @@ enum class Style(
         @JvmStatic
         fun main(args: Array<String>) {
             Server.fileStore = FileStore("Cache/")
-            Varpbit.load()
+            VarpbitDefinition.load()
             IdentityKitDefinition.load()
             exitProcess(0)
         }

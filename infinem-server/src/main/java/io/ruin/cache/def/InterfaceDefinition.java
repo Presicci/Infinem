@@ -3,7 +3,6 @@ package io.ruin.cache.def;
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
-import io.ruin.cache.Varpbit;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -48,7 +47,7 @@ public class InterfaceDefinition {
                 if(instruction == 1)
                     varpIds.add(script.intArgs[i]);
                 else if(instruction == 25) //get
-                    varpIds.add(Varpbit.get(script.intArgs[i]).varpId);
+                    varpIds.add(VarpbitDefinition.get(script.intArgs[i]).varpId);
             }
         }
         if(varpIds.isEmpty()) {
@@ -63,7 +62,7 @@ public class InterfaceDefinition {
             VarpDefinition varp = VarpDefinition.get(varpId);
             if(varp == null || varp.bits == null)
                 continue;
-            for(Varpbit bit : varp.bits)
+            for(VarpbitDefinition bit : varp.bits)
                 System.out.println("      bit: " + bit.id + "  shift: " + bit.leastSigBit);
         }
     }

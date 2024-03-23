@@ -1,28 +1,27 @@
-package io.ruin.cache;
+package io.ruin.cache.def;
 
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
-import io.ruin.cache.def.VarpDefinition;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Varpbit {
+public class VarpbitDefinition {
 
-    public static Varpbit[] LOADED;
+    public static VarpbitDefinition[] LOADED;
 
     public static void load() {
         IndexFile index = Server.fileStore.get(2);
-        LOADED = new Varpbit[index.getLastFileId(14) + 1];
-        HashMap<Integer, ArrayList<Varpbit>> varpMap = new HashMap<>();
+        LOADED = new VarpbitDefinition[index.getLastFileId(14) + 1];
+        HashMap<Integer, ArrayList<VarpbitDefinition>> varpMap = new HashMap<>();
         int highestVarpId = -1;
         for(int id = 0; id < LOADED.length; id++) {
             byte[] data = index.getFile(14, id);
-            Varpbit bit = new Varpbit(id);
+            VarpbitDefinition bit = new VarpbitDefinition(id);
             bit.decode(new InBuffer(data));
 
-            ArrayList<Varpbit> bits = varpMap.get(bit.varpId);
+            ArrayList<VarpbitDefinition> bits = varpMap.get(bit.varpId);
             if(bits == null)
                 bits = new ArrayList<>();
             bits.add(bit);
@@ -34,10 +33,10 @@ public class Varpbit {
             LOADED[id] = bit;
         }
         VarpDefinition.LOADED = new VarpDefinition[highestVarpId + 1];
-        varpMap.forEach((varpId, bits) -> new VarpDefinition(varpId, bits.toArray(new Varpbit[bits.size()])));
+        varpMap.forEach((varpId, bits) -> new VarpDefinition(varpId, bits.toArray(new VarpbitDefinition[bits.size()])));
     }
 
-    public static Varpbit get(int id) {
+    public static VarpbitDefinition get(int id) {
         if(id < 0 || id >= LOADED.length)
             return null;
         return LOADED[id];
@@ -55,7 +54,7 @@ public class Varpbit {
 
     public int mostSigBit;
 
-    public Varpbit(int id) {
+    public VarpbitDefinition(int id) {
         this.id = id;
     }
 

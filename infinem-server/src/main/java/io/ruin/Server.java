@@ -8,7 +8,6 @@ import io.ruin.api.filestore.FileStore;
 import io.ruin.api.netty.NettyServer;
 import io.ruin.api.process.ProcessWorker;
 import io.ruin.api.utils.*;
-import io.ruin.cache.*;
 import io.ruin.cache.def.*;
 import io.ruin.data.DataFile;
 import io.ruin.data.impl.login_set;
@@ -126,7 +125,7 @@ public class Server extends ServerWrapper {
 
             fileStore = new FileStore(properties.getProperty("cache_path"));
             dataFolder = FileUtils.get(properties.getProperty("data_path"));
-            Varpbit.load();
+            VarpbitDefinition.load();
             IdentityKitDefinition.load();
             AnimationDefinition.load();
             GfxDefinition.load();

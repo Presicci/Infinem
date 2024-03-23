@@ -1,6 +1,6 @@
 package io.ruin.model.inter.utils;
 
-import io.ruin.cache.Varpbit;
+import io.ruin.cache.def.VarpbitDefinition;
 import io.ruin.model.entity.player.Player;
 
 import java.util.Collection;
@@ -1183,7 +1183,7 @@ public class Config {
 
     public int id;
 
-    private Varpbit bit;
+    private VarpbitDefinition bit;
 
     private boolean save;
 
@@ -1283,10 +1283,10 @@ public class Config {
     }
 
     public static Config varpbit(int id, boolean save) {
-        return create(id, Varpbit.get(id), save, true);
+        return create(id, VarpbitDefinition.get(id), save, true);
     }
 
-    public static Config create(int id, Varpbit bit, boolean save, boolean store) {
+    public static Config create(int id, VarpbitDefinition bit, boolean save, boolean store) {
         Config config = bit == null ? VARPS.get(id) : VARPBITS.get(id);
         if (config != null) {
             return config;
