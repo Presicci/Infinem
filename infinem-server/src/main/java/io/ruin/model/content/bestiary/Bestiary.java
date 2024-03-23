@@ -35,14 +35,25 @@ public class Bestiary {
      * Called on NPC death, increments the player's kill count for bestiary entry
      * matching npcName.
      * @param def NPCDef for npc
+     * @param amt Amount to increment
+     */
+    public void incrementKillCount(NPCDef def, int amt) {
+        String bestiaryName = def.bestiaryEntry;
+        if (bestiaryName == null || !BestiaryDef.ENTRIES.contains(bestiaryName)) return;
+        int currentCount = killCounts.getOrDefault(bestiaryName, 0);
+        killCounts.remove(bestiaryName);   // Reset order in map, for recent sort
+        killCounts.put(bestiaryName, currentCount + amt);
+        TabBestiary.attemptRefresh(player);
+        player.sendMessage("You have now killed " + (currentCount + 1) + "<col=ff0000> " + bestiaryName + "s</col>.");
+    }
+
+    /**
+     * Called on NPC death, increments the player's kill count for bestiary entry
+     * matching npcName.
+     * @param def NPCDef for npc
      */
     public void incrementKillCount(NPCDef def) {
-        String bestiaryName = def.bestiaryEntry;
-         int currentCount = killCounts.getOrDefault(bestiaryName, 0);
-         killCounts.remove(bestiaryName);   // Reset order in map, for recent sort
-         killCounts.put(bestiaryName, currentCount + 1);
-         TabBestiary.attemptRefresh(player);
-         player.sendMessage("You have now killed " + (currentCount + 1) + "<col=ff0000> " + bestiaryName + "s</col>.");
+        incrementKillCount(def, 1);
     }
 
     public int getKillCount(NPCDef def) {
