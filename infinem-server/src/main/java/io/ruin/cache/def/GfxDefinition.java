@@ -1,26 +1,26 @@
-package io.ruin.cache;
+package io.ruin.cache.def;
 
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
 
-public class GfxDef {
+public class GfxDefinition {
 
-    public static GfxDef[] LOADED;
+    public static GfxDefinition[] LOADED;
 
     public static void load() {
         IndexFile index = Server.fileStore.get(2);
-        LOADED = new GfxDef[index.getLastFileId(13) + 1];
+        LOADED = new GfxDefinition[index.getLastFileId(13) + 1];
         for(int id = 0; id < LOADED.length; id++) {
             byte[] data = index.getFile(13, id);
-            GfxDef def = new GfxDef();
+            GfxDefinition def = new GfxDefinition();
             def.id = id;
             def.method4211(new InBuffer(data));
             LOADED[id] = def;
         }
     }
 
-    public static GfxDef get(int id) {
+    public static GfxDefinition get(int id) {
         if(id < 0 || id >= LOADED.length)
             return null;
         return LOADED[id];

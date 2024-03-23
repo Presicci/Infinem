@@ -10,6 +10,7 @@ import io.ruin.api.process.ProcessWorker;
 import io.ruin.api.utils.*;
 import io.ruin.cache.*;
 import io.ruin.cache.def.AnimationDefinition;
+import io.ruin.cache.def.GfxDefinition;
 import io.ruin.data.DataFile;
 import io.ruin.data.impl.login_set;
 import io.ruin.data.yaml.YamlLoader;
@@ -129,7 +130,7 @@ public class Server extends ServerWrapper {
             Varpbit.load();
             IdentityKit.load();
             AnimationDefinition.load();
-            GfxDef.load();
+            GfxDefinition.load();
             InventoryDef.load();
             ScriptDef.load();
             InterfaceDef.load();
