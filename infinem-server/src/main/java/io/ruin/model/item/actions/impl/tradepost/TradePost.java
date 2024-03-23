@@ -240,10 +240,22 @@ public class TradePost {
     }
 
     private void promptSearch() {
-        player.stringInput("Enter item name to search for:", searchText -> {
-            this.searchText = searchText;
-            updateSearch();
-        });
+        player.dialogue(false,
+                new OptionsDialogue("How would you like to search?",
+                        new Option("Item name search", () -> {
+                            player.stringInput("Enter item name to search for:", searchText -> {
+                                this.searchText = searchText;
+                                updateSearch();
+                            });
+                        }),
+                        new Option("Item search", () -> {
+                            player.itemSearch("Check listings for:", false, item -> {
+                                this.searchText = ItemDef.get(item).name.toLowerCase();
+                                updateSearch();
+                            });
+                        })
+                )
+        );
     }
 
     private void resetSearch() {
