@@ -1,6 +1,6 @@
 package io.ruin.model.activities.warriorsguild;
 
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
@@ -81,7 +81,7 @@ public enum AnimatedArmor {
         for(AnimatedArmor armour : values()) {
             for(int id : armour.armorIds)
                 ItemObjectAction.register(id, 23955, (p, item, obj) -> armour.spawn(p, obj));
-            NPCDef.get(armour.npcId).ignoreOccupiedTiles = true;
+            NPCDefinition.get(armour.npcId).ignoreOccupiedTiles = true;
         }
         ObjectAction.register(23955, "animate", (player, obj) -> {
             for(AnimatedArmor armour : values()) {

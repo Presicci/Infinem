@@ -1,6 +1,5 @@
 package io.ruin.model.locations.home;
 
-import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;

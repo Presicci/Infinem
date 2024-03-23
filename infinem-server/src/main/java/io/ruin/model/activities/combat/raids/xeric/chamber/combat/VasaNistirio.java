@@ -1,7 +1,7 @@
 package io.ruin.model.activities.combat.raids.xeric.chamber.combat;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPC;
@@ -24,9 +24,9 @@ import java.util.stream.StreamSupport;
 public class VasaNistirio extends NPCCombat {
 
     static {
-        NPCDef.get(7565).ignoreOccupiedTiles = true;
-        NPCDef.get(7566).ignoreOccupiedTiles = true;
-        NPCDef.get(7567).ignoreOccupiedTiles = true;
+        NPCDefinition.get(7565).ignoreOccupiedTiles = true;
+        NPCDefinition.get(7566).ignoreOccupiedTiles = true;
+        NPCDefinition.get(7567).ignoreOccupiedTiles = true;
     }
 
     private static final Projectile TELEPORT_ATTACK_PROJECTILE = new Projectile(1327, 90, 0, 25, 75, 0, 16, 0);

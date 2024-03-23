@@ -3,7 +3,7 @@ package io.ruin.data.impl.dialogue;
 import io.ruin.Server;
 import io.ruin.api.utils.FileUtils;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.inter.dialogue.*;
 
@@ -54,20 +54,20 @@ public class DialogueLoader {
                 for (String string : idStrings) {
                     int npcId = Integer.parseInt(string);
                     if (npcId > 0) {
-                        NPCDef npcDef = NPCDef.get(npcId);
-                        readAndRegisterDialogue(dialogue.subList(1, dialogue.size()), npcDef);
+                        NPCDefinition npcDefinition = NPCDefinition.get(npcId);
+                        readAndRegisterDialogue(dialogue.subList(1, dialogue.size()), npcDefinition);
                     }
                 }
             } else {
                 int npcId = Integer.parseInt(lineOne);
                 if (npcId > 0) {
-                    NPCDef npcDef = NPCDef.get(npcId);
-                    readAndRegisterDialogue(dialogue.subList(1, dialogue.size()), npcDef);
+                    NPCDefinition npcDefinition = NPCDefinition.get(npcId);
+                    readAndRegisterDialogue(dialogue.subList(1, dialogue.size()), npcDefinition);
                 }
             }
         } catch (NumberFormatException ignored) {
             String name = file.getName().replace(".txt", "").replace("_", " ");
-            NPCDef.forEach(def -> {
+            NPCDefinition.forEach(def -> {
                 if(def.name.equalsIgnoreCase(name)) {
                     readAndRegisterDialogue(dialogue, def);
                 }
@@ -75,19 +75,19 @@ public class DialogueLoader {
         }
     }
 
-    private static void readAndRegisterDialogue(List<String> dialogue, NPCDef npcDef) {
+    private static void readAndRegisterDialogue(List<String> dialogue, NPCDefinition npcDefinition) {
         String lineOne = dialogue.get(0);
         for (DialogueLoaderSetting setting : DialogueLoaderSetting.values()) {
             if (lineOne.startsWith(setting.name())) {
                 if (setting == DialogueLoaderSetting.RAND) {
-                    registerRandomDialogue(new DialogueParser(npcDef, dialogue, 1).parseRandomDialogues(false), npcDef.id);
+                    registerRandomDialogue(new DialogueParser(npcDefinition, dialogue, 1).parseRandomDialogues(false), npcDefinition.id);
                 } else {
-                    registerPredicateDialogue(setting, lineOne, dialogue, npcDef);
+                    registerPredicateDialogue(setting, lineOne, dialogue, npcDefinition);
                 }
                 return;
             }
         }
-        registerDialogue(new DialogueParser(npcDef, dialogue).parseDialogue(), npcDef.id);
+        registerDialogue(new DialogueParser(npcDefinition, dialogue).parseDialogue(), npcDefinition.id);
     }
 
     private static void registerDialogue(Dialogue[] dialogue, int npcId) {
@@ -97,24 +97,24 @@ public class DialogueLoader {
         }));
     }
 
-    private static void registerPredicateDialogue(DialogueLoaderSetting setting, String lineOne, List<String> dialogue, NPCDef npcDef) {
+    private static void registerPredicateDialogue(DialogueLoaderSetting setting, String lineOne, List<String> dialogue, NPCDefinition npcDefinition) {
         int value;
         try {
             value = Integer.parseInt(lineOne.substring(setting.name().length() + 1));
         } catch (NumberFormatException ignored) {
-            System.err.println(NPCDef.get(npcDef.id).name + " has predicate reliant setting without an integer value afterwards.");
+            System.err.println(NPCDefinition.get(npcDefinition.id).name + " has predicate reliant setting without an integer value afterwards.");
             return;
         }
-        List<Dialogue[]> dialogues = new DialogueParser(npcDef, dialogue, 1, new DialogueParserSettings(setting, value)).parseRandomDialogues(false);
+        List<Dialogue[]> dialogues = new DialogueParser(npcDefinition, dialogue, 1, new DialogueParserSettings(setting, value)).parseRandomDialogues(false);
         if (dialogues == null) {
-            System.err.println(NPCDef.get(npcDef.id).name + " has predicate reliant setting but had an issue being read.");
+            System.err.println(NPCDefinition.get(npcDefinition.id).name + " has predicate reliant setting but had an issue being read.");
             return;
         }
         if (dialogues.size() > 2) {
-            System.err.println(NPCDef.get(npcDef.id).name + " has predicate reliant setting but has more than 2 dialogue sets denoted by '/'.");
+            System.err.println(NPCDefinition.get(npcDefinition.id).name + " has predicate reliant setting but has more than 2 dialogue sets denoted by '/'.");
             return;
         }
-        NPCAction.register(npcDef.id, "talk-to", ((player, npc) -> {
+        NPCAction.register(npcDefinition.id, "talk-to", ((player, npc) -> {
             npc.faceTemp(player);
             player.dialogue(npc, dialogues.get(setting.getBiPredicate().test(player, value) ? 0 : 1));
         }));

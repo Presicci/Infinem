@@ -2,7 +2,7 @@ package io.ruin.model.combat.npc.dragons;
 
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
@@ -213,7 +213,7 @@ public class Elvarg extends ChromaticDragon {
     }
 
     public static void loot(Player player, NPC npc, GameObject corpse) {
-        List<Item> items = NPCDef.get(6118).lootTable.rollItems(true);
+        List<Item> items = NPCDefinition.get(6118).lootTable.rollItems(true);
         player.startEvent(event -> {
             player.lock();
             player.animate(827);

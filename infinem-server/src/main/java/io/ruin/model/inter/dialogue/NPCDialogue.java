@@ -1,6 +1,6 @@
 package io.ruin.model.inter.dialogue;
 
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class NPCDialogue extends Dialogue {
 
-    private NPCDef npcDef;
+    private NPCDefinition npcDefinition;
 
     private String message;
 
@@ -25,15 +25,15 @@ public class NPCDialogue extends Dialogue {
     private boolean hideContinue;
 
     public NPCDialogue(int npcId, String message) {
-        this(NPCDef.get(npcId), message);
+        this(NPCDefinition.get(npcId), message);
     }
 
     public NPCDialogue(NPC npc, String message) {
         this(npc.getDef(), message);
     }
 
-    private NPCDialogue(NPCDef npcDef, String message) {
-        this.npcDef = npcDef;
+    private NPCDialogue(NPCDefinition npcDefinition, String message) {
+        this.npcDefinition = npcDefinition;
         this.message = message;
     }
 
@@ -59,7 +59,7 @@ public class NPCDialogue extends Dialogue {
 
     @Override
     public void open(Player player) {
-        npcDef = NPCDef.getConfigDef(npcDef.id, player);
+        npcDefinition = NPCDefinition.getConfigDef(npcDefinition.id, player);
         message = message.replace("[player name]", player.getName());
         message = message.replace("[madam/sir]", player.getAppearance().getGenderString());
         message = message.replace("[brother/sister]", player.getAppearance().isMale() ? "brother" : "sister");
@@ -68,9 +68,9 @@ public class NPCDialogue extends Dialogue {
         message = message.replace("[lad/lass]", player.getAppearance().isMale() ? "lad" : "lass");
         message = message.replace("[craftsman/craftswoman]", player.getAppearance().isMale() ? "craftsman" : "craftswoman");
         player.openInterface(InterfaceType.CHATBOX, Interface.NPC_DIALOGUE);
-        player.getPacketSender().sendNpcHead(Interface.NPC_DIALOGUE, 6, npcDef.id);
+        player.getPacketSender().sendNpcHead(Interface.NPC_DIALOGUE, 6, npcDefinition.id);
         player.getPacketSender().animateInterface(Interface.NPC_DIALOGUE, 6, animationId);
-        player.getPacketSender().sendString(Interface.NPC_DIALOGUE, 3, npcDef.name);
+        player.getPacketSender().sendString(Interface.NPC_DIALOGUE, 3, npcDefinition.name);
         player.getPacketSender().sendString(Interface.NPC_DIALOGUE, 5, message);
         player.getPacketSender().setTextStyle(Interface.NPC_DIALOGUE, 5, 1, 1, lineHeight);
         player.getPacketSender().sendAccessMask(Interface.NPC_DIALOGUE, 4, -1, -1, 1);

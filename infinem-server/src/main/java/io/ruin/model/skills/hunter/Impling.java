@@ -1,7 +1,7 @@
 package io.ruin.model.skills.hunter;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.WorldConstants;
 import io.ruin.model.activities.cluescrolls.ClueType;
@@ -14,13 +14,11 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.ButterflyNet;
 import io.ruin.model.item.actions.impl.ImplingJar;
-import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.route.routes.TargetRoute;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
-import lombok.val;
 
 import java.util.Arrays;
 
@@ -466,10 +464,10 @@ public enum Impling {
     static {
         for (Impling impling : values()) {
             NPCAction.register(impling.npcId, "catch", (player, npc) -> attemptCatch(player, npc, impling));
-            NPCDef.get(impling.npcId).flightClipping = true;
+            NPCDefinition.get(impling.npcId).flightClipping = true;
             for (int altId : impling.altIds) {
                 NPCAction.register(altId, "catch", (player, npc) -> attemptCatch(player, npc, impling));
-                NPCDef.get(altId).flightClipping = true;
+                NPCDefinition.get(altId).flightClipping = true;
             }
         }
 

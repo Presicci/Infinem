@@ -1,6 +1,6 @@
 package io.ruin.model.activities.combat.godwars.combat;
 
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.map.Direction;
@@ -15,7 +15,7 @@ public abstract class General extends NPCCombat { // TODO something on npc remov
         if (lieutenants.length != 3)
             throw new IllegalArgumentException("must have exactly 3 lieutenants");
         this.lieutenants = lieutenants;
-        Arrays.stream(lieutenants).map(l -> NPCDef.get(l.npc.getId())).forEach(def -> def.ignoreOccupiedTiles = true);
+        Arrays.stream(lieutenants).map(l -> NPCDefinition.get(l.npc.getId())).forEach(def -> def.ignoreOccupiedTiles = true);
     }
 
     @Override

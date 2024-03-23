@@ -4,7 +4,7 @@ import io.ruin.Server;
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.data.impl.Help;
 import io.ruin.model.World;
 import io.ruin.model.combat.Killer;
@@ -137,7 +137,7 @@ public class BossEvent extends JournalEntry {
 
     public BossEvent(int index) {
         this.index = index;
-        this.bossName = NPCDef.get(BOSSES[index]).name;
+        this.bossName = NPCDefinition.get(BOSSES[index]).name;
     }
 
     @Override

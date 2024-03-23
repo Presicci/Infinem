@@ -3,7 +3,7 @@ package io.ruin.model.entity.shared.masks;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.buffer.OutBuffer;
 import io.ruin.cache.def.ItemDefinition;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.combat.WeaponType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.UpdateMask;
@@ -112,7 +112,7 @@ public class Appearance extends UpdateMask {
             removeCustomRenders();
             return;
         }
-        NPCDef def = NPCDef.get(npcId);
+        NPCDefinition def = NPCDefinition.get(npcId);
         setCustomRenders(def.standAnimation, -1, def.walkAnimation, def.walkBackAnimation, def.walkLeftAnimation, def.walkRightAnimation, -1);
     }
 
@@ -131,7 +131,7 @@ public class Appearance extends UpdateMask {
             removeCustomRenders();
             return;
         }
-        NPCDef def = NPCDef.get(npcId);
+        NPCDefinition def = NPCDefinition.get(npcId);
         int[] renders = { def.standAnimation, -1, def.walkAnimation, def.walkBackAnimation, def.walkLeftAnimation, def.walkRightAnimation, -1 };
         setCustomRender(index, renders[index]);
     }
@@ -141,7 +141,7 @@ public class Appearance extends UpdateMask {
             removeCustomRenders();
             return;
         }
-        NPCDef def = NPCDef.get(npcId);
+        NPCDefinition def = NPCDefinition.get(npcId);
         setCustomRenders(def.standAnimation, -1, def.walkAnimation, def.walkBackAnimation, def.walkLeftAnimation, def.walkRightAnimation, -1);
     }
 

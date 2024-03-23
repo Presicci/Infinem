@@ -1,7 +1,7 @@
 package io.ruin.model.skills.hunter;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.cache.NpcID;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
@@ -156,7 +156,7 @@ public enum Butterfly {
     static {
         for (Butterfly butterfly : values()) {
             NPCAction.register(butterfly.npcId, "catch", (player, npc) -> attemptCatch(player, npc, butterfly));
-            NPCDef.get(butterfly.npcId).flightClipping = true;
+            NPCDefinition.get(butterfly.npcId).flightClipping = true;
         }
     }
 }

@@ -1,7 +1,6 @@
 package io.ruin.model.inter.journal.dropviewer;
 
-import io.ruin.cache.NPCDef;
-import io.ruin.model.item.loot.LootItem;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.item.loot.LootTable;
 
 /**
@@ -15,7 +14,7 @@ public class DropViewerEntry {
 
     public DropViewerEntry(int npcId) {
         this.id = npcId;
-        this.name = NPCDef.get(npcId).name.replaceAll("<col=\\w{6}>|</col>", "");
+        this.name = NPCDefinition.get(npcId).name.replaceAll("<col=\\w{6}>|</col>", "");
     }
 
     public DropViewerEntry(String name, LootTable table) {

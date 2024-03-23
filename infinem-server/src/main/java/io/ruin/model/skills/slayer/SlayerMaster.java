@@ -4,9 +4,8 @@ import com.google.common.collect.ImmutableRangeMap;
 import com.google.common.collect.Range;
 import com.google.common.collect.RangeMap;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
-import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ActionDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
@@ -98,7 +97,7 @@ public class SlayerMaster {
         } else {
             Slayer.setBossTask(player, 0);
         }
-        player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERTASK, NPCDef.get(npcId).name);
+        player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERTASK, NPCDefinition.get(npcId).name);
         return def;
     }
 
@@ -403,7 +402,7 @@ public class SlayerMaster {
                                 );
                             }
                         })),
-                        new Option("Who are you?", new PlayerDialogue("Who are you?"), new NPCDialogue(npc, "My name is " + NPCDef.get(npc).name + "; I'm a Slayer Master."),
+                        new Option("Who are you?", new PlayerDialogue("Who are you?"), new NPCDialogue(npc, "My name is " + NPCDefinition.get(npc).name + "; I'm a Slayer Master."),
                                 new ActionDialogue(() -> simpleDialogueOptions(player, npc))),
                         new Option("Where are you?", new PlayerDialogue("Where are you?"), new NPCDialogue(npc, "You'll find me " + getMasterLocation(player) + ". I'll be here when you need a new task."),
                                 new ActionDialogue(() -> simpleDialogueOptions(player, npc))),

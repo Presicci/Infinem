@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions;
 
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
@@ -16,12 +16,12 @@ public interface ItemNPCAction {
      */
 
     static void register(int npcId, ItemNPCAction action) {
-        NPCDef npcDef = NPCDef.get(npcId);
-        npcDef.defaultItemAction = action;
+        NPCDefinition npcDefinition = NPCDefinition.get(npcId);
+        npcDefinition.defaultItemAction = action;
     }
 
     static void register(String npcName, ItemNPCAction action) {
-        NPCDef.forEach(npcDef -> {
+        NPCDefinition.forEach(npcDef -> {
             if(npcDef.name.equalsIgnoreCase(npcName))
                 register(npcDef.id, action);
         });
@@ -36,14 +36,14 @@ public interface ItemNPCAction {
      */
 
     static void register(int itemId, int npcId, ItemNPCAction action) {
-        NPCDef npcDef = NPCDef.get(npcId);
-        if(npcDef.itemActions == null)
-            npcDef.itemActions = new HashMap<>();
-        npcDef.itemActions.put(itemId, action);
+        NPCDefinition npcDefinition = NPCDefinition.get(npcId);
+        if(npcDefinition.itemActions == null)
+            npcDefinition.itemActions = new HashMap<>();
+        npcDefinition.itemActions.put(itemId, action);
     }
 
     static void register(int itemId, String npcName, ItemNPCAction action) {
-        NPCDef.forEach(npcDef -> {
+        NPCDefinition.forEach(npcDef -> {
             if(npcDef.name.equalsIgnoreCase(npcName))
                 register(itemId, npcDef.id, action);
         });
@@ -77,7 +77,7 @@ public interface ItemNPCAction {
         /**
          * Actions shared by the given npc.
          */
-        NPCDef def = npc.getDef();
+        NPCDefinition def = npc.getDef();
         if(def.itemActions != null) {
             ItemNPCAction action = def.itemActions.get(item.getId());
             if(action != null) {

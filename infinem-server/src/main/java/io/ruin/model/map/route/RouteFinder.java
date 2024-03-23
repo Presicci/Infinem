@@ -1,9 +1,8 @@
 package io.ruin.model.map.route;
 
-import com.google.api.client.util.Sets;
 import com.google.common.collect.ImmutableSet;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.entity.Entity;
@@ -23,7 +22,6 @@ import io.ruin.model.map.route.types.RouteObject;
 import io.ruin.model.map.route.types.RouteRelative;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
@@ -63,7 +61,7 @@ public class RouteFinder {
     public RouteFinder(Entity entity) {
         this.entity = entity;
         if(entity.npc != null) {
-            NPCDef def = entity.npc.getDef();
+            NPCDefinition def = entity.npc.getDef();
             if(def.flightClipping) {
                 this.clipUtils = ClipUtils.FLIGHT;
                 return;

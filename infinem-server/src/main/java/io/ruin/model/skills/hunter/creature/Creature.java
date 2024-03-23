@@ -1,7 +1,7 @@
 package io.ruin.model.skills.hunter.creature;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
@@ -72,7 +72,7 @@ public abstract class Creature {
                 }
             });
         });
-        NPCDef.get(npcId).ignoreOccupiedTiles = true;
+        NPCDefinition.get(npcId).ignoreOccupiedTiles = true;
     }
 
     protected void creatureLoop(NPC npc, Event event) throws Pausable {
@@ -232,7 +232,7 @@ public abstract class Creature {
             player.getTaskManager().doLookupByCategoryAndTrigger(
                     this instanceof Chinchompa ? TaskCategory.BOXTRAP
                             : this instanceof Bird ? TaskCategory.BIRDSNARE
-                            : TaskCategory.NETTRAP, NPCDef.get(npcId).name);
+                            : TaskCategory.NETTRAP, NPCDefinition.get(npcId).name);
             if (counter != null)
                 counter.increment(player, 1);
             trap.getTrapType().onRemove(player, obj);

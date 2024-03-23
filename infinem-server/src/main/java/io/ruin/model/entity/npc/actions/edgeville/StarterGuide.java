@@ -2,7 +2,7 @@ package io.ruin.model.entity.npc.actions.edgeville;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.StringUtils;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.data.impl.Help;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
@@ -42,7 +42,7 @@ import static io.ruin.cache.ItemID.*;
 public class StarterGuide {
 
 	static {
-		NPCDef.get(307).ignoreOccupiedTiles = true;
+		NPCDefinition.get(307).ignoreOccupiedTiles = true;
         NPCAction.register(306, "talk-to", StarterGuide::optionsDialogue);
 		NPCAction.register(306, "view help", (player, npc) -> Help.open(player));
 

@@ -1,7 +1,7 @@
 package io.ruin.model.entity.npc;
 
 import io.ruin.Server;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.combat.npc.BasicCombat;
 import io.ruin.model.combat.npc.basic.BasicArcherCombat;
@@ -45,12 +45,12 @@ public class NPC extends NPCAttributes {
         return id;
     }
 
-    public NPCDef getDef() {
-        return NPCDef.cached.get(id);
+    public NPCDefinition getDef() {
+        return NPCDefinition.cached.get(id);
     }
 
-    public NPCDef getConfigDef(Player player) {
-        return NPCDef.getConfigDef(id, player);
+    public NPCDefinition getConfigDef(Player player) {
+        return NPCDefinition.getConfigDef(id, player);
     }
 
     /**
@@ -157,7 +157,7 @@ public class NPC extends NPCAttributes {
     protected NPCCombat combat;
 
     private boolean setCombat() {
-        NPCDef def = getDef();
+        NPCDefinition def = getDef();
         if(def.combatInfo == null) {
             /* not a combat npc */
             return false;
@@ -245,7 +245,7 @@ public class NPC extends NPCAttributes {
 
     public void transform(int id) {
         transformUpdate.set(this.id = id);
-        NPCDef def = getDef();
+        NPCDefinition def = getDef();
         setSize(def.size);
         if(combat != null && def.combatInfo != null)
             combat.updateInfo(def.combatInfo);
@@ -524,7 +524,7 @@ public class NPC extends NPCAttributes {
     }
 
     public void openShop(Player player) {
-        NPCDef def = getDef();
+        NPCDefinition def = getDef();
         List<Shop> shops = def.shops;
         if (shops != null && shops.size() > 0) {
             shops.get(0).open(player);

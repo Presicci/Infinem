@@ -2,7 +2,7 @@ package io.ruin.model.activities.combat.pestcontrol;
 
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.model.combat.npc.PassiveCombat;
 import io.ruin.model.entity.Entity;
@@ -34,7 +34,7 @@ public class PestPortal {
 	}
 
 	public void spawn(int x, int y) {
-		NPCDef def = NPCDef.get(shieldId);
+		NPCDefinition def = NPCDefinition.get(shieldId);
 		def.combatHandlerClass = PassiveCombat.class;
 		def.combatInfo = new npc_combat.Info();
 		def.combatInfo.hitpoints = game.settings().portalHp();

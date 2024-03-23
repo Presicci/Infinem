@@ -3,7 +3,7 @@ package io.ruin.data.impl.dialogue;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.Tuple;
 import io.ruin.cache.def.ItemDefinition;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Option;
@@ -19,33 +19,33 @@ import java.util.List;
 @Slf4j
 public class DialogueParser {
     private int lineNumber;
-    private final NPCDef npcDef;
+    private final NPCDefinition npcDefinition;
     private final List<String> dialogueLines;
     private final DialogueParserSettings settings;
     private boolean recordDialogueLoop;
 
-    public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber, DialogueParserSettings settings, boolean recordDialogueLoop) {
-        this.npcDef = npcDef;
+    public DialogueParser(NPCDefinition npcDefinition, List<String> dialogueLines, int lineNumber, DialogueParserSettings settings, boolean recordDialogueLoop) {
+        this.npcDefinition = npcDefinition;
         this.dialogueLines = dialogueLines;
         this.lineNumber = lineNumber;
         this.settings = settings;
         this.recordDialogueLoop = recordDialogueLoop;
     }
 
-    public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber, DialogueParserSettings settings) {
-        this(npcDef, dialogueLines, lineNumber, settings, false);
+    public DialogueParser(NPCDefinition npcDefinition, List<String> dialogueLines, int lineNumber, DialogueParserSettings settings) {
+        this(npcDefinition, dialogueLines, lineNumber, settings, false);
     }
 
-    public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber, boolean recordDialogueLoop) {
-        this(npcDef, dialogueLines, lineNumber, null, recordDialogueLoop);
+    public DialogueParser(NPCDefinition npcDefinition, List<String> dialogueLines, int lineNumber, boolean recordDialogueLoop) {
+        this(npcDefinition, dialogueLines, lineNumber, null, recordDialogueLoop);
     }
 
-    public DialogueParser(NPCDef npcDef, List<String> dialogueLines, int lineNumber) {
-        this(npcDef, dialogueLines, lineNumber, null, false);
+    public DialogueParser(NPCDefinition npcDefinition, List<String> dialogueLines, int lineNumber) {
+        this(npcDefinition, dialogueLines, lineNumber, null, false);
     }
 
-    public DialogueParser(NPCDef npcDef, List<String> dialogueLines) {
-        this(npcDef, dialogueLines, 0, null, false);
+    public DialogueParser(NPCDefinition npcDefinition, List<String> dialogueLines) {
+        this(npcDefinition, dialogueLines, 0, null, false);
     }
 
     public Dialogue[] parseDialogue() {
@@ -100,7 +100,7 @@ public class DialogueParser {
                             arguments = split[1];
                         }
                         int value = Integer.parseInt(substring);
-                        List<Dialogue[]> dialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, new DialogueParserSettings(setting, value), true).parseRandomDialogues(settingChar);
+                        List<Dialogue[]> dialogues = new DialogueParser(npcDefinition, dialogue.subList(leftIndex, rightIndex), 0, new DialogueParserSettings(setting, value), true).parseRandomDialogues(settingChar);
                         if (dialogues == null) {
                             error("predicate reliant setting but had an issue being read", dialogue);
                             return null;
@@ -112,7 +112,7 @@ public class DialogueParser {
                         lineNumber = rightIndex - 1;
                         return new ConditionalDialogue(setting.getBiPredicate(), new Tuple<>(dialogues.get(0), dialogues.get(1)), value, arguments);
                     } else {
-                        List<Dialogue[]> randomDialogues = new DialogueParser(npcDef, dialogue.subList(leftIndex, rightIndex), 0, true).parseRandomDialogues(settingChar);
+                        List<Dialogue[]> randomDialogues = new DialogueParser(npcDefinition, dialogue.subList(leftIndex, rightIndex), 0, true).parseRandomDialogues(settingChar);
                         lineNumber = rightIndex - 1;
                         return new ActionDialogue((player) -> {
                             Dialogue[] dialogues = Random.get(randomDialogues);
@@ -163,9 +163,9 @@ public class DialogueParser {
         if (line.startsWith("Player:")) {
             return new PlayerDialogue(line.substring(8));
         }
-        String npcName = npcDef.name.toLowerCase();
+        String npcName = npcDefinition.name.toLowerCase();
         if (line.toLowerCase().startsWith(npcName + ":")) {
-            return new NPCDialogue(npcDef.id, line.substring(npcName.length() + 1));
+            return new NPCDialogue(npcDefinition.id, line.substring(npcName.length() + 1));
         }
         for (DialogueLoaderAction action : DialogueLoaderAction.values()) {
             if (line.startsWith(action.name())) {
@@ -173,17 +173,17 @@ public class DialogueParser {
                     String[] lineSegments = line.split(":");
                     if (lineSegments.length == 1) {
                         return new ActionDialogue((player) -> {
-                            npcDef.shops.get(0).open(player);
+                            npcDefinition.shops.get(0).open(player);
                         });
                     } else {
                         try {
                             int shopIndex = Integer.parseInt(lineSegments[1]);
                             return new ActionDialogue((player) -> {
-                                npcDef.shops.get(shopIndex).open(player);
+                                npcDefinition.shops.get(shopIndex).open(player);
                             });
                         } catch (NumberFormatException ignored) {
                             return new ActionDialogue((player) -> {
-                                npcDef.shops.get(0).open(player);
+                                npcDefinition.shops.get(0).open(player);
                             });
                         }
                     }
@@ -231,18 +231,18 @@ public class DialogueParser {
                     return new ItemDialogue().two(itemId, itemId2, lineSegments[3]);
                 } else if (action == DialogueLoaderAction.LASTOPTIONS) {
                     recordDialogueLoop = true;
-                    int index = npcDef.optionDialogues == null ? 0 : npcDef.optionDialogues.size() - 1;
+                    int index = npcDefinition.optionDialogues == null ? 0 : npcDefinition.optionDialogues.size() - 1;
                     return new ActionDialogue((player) -> {
-                        Dialogue loop = npcDef.optionDialogues.get(index);
+                        Dialogue loop = npcDefinition.optionDialogues.get(index);
                         if (loop != null)
                             player.dialogue(loop);
                     });
                 } else if (action == DialogueLoaderAction.FIRSTOPTIONS) {
                     recordDialogueLoop = true;
                     return new ActionDialogue((player) -> {
-                        if (npcDef.optionDialogues == null)
+                        if (npcDefinition.optionDialogues == null)
                             return;
-                        Dialogue loop = npcDef.optionDialogues.get(npcDef.optionDialogues.size() - 1);
+                        Dialogue loop = npcDefinition.optionDialogues.get(npcDefinition.optionDialogues.size() - 1);
                         if (loop != null)
                             player.dialogue(loop);
                     });
@@ -260,7 +260,7 @@ public class DialogueParser {
                         error("missing itemId for ITEM action", dialogue);
                     }
                     int finalItemId = itemId;
-                    return new ItemDialogue().one(finalItemId, npcDef.name + " hands you " + ItemDefinition.get(finalItemId).descriptiveName + ".").consumer((player) -> {
+                    return new ItemDialogue().one(finalItemId, npcDefinition.name + " hands you " + ItemDefinition.get(finalItemId).descriptiveName + ".").consumer((player) -> {
                         player.getInventory().addOrDrop(finalItemId, 1);
                     });
                 } else {
@@ -297,7 +297,7 @@ public class DialogueParser {
             }
         }
         if (optionLineNumbers.size() == 0) {
-            System.err.println(NPCDef.get(npcDef.id).name + " has setting but has no options specified with open parentheses '('.");
+            System.err.println(NPCDefinition.get(npcDefinition.id).name + " has setting but has no options specified with open parentheses '('.");
             return null;
         }
         List<Dialogue[]> randomDialogues = new ArrayList<>();
@@ -336,9 +336,9 @@ public class DialogueParser {
         }
         Dialogue finalDialogue = new OptionsDialogue(options);
         if (recordDialogueLoop) {
-            if (npcDef.optionDialogues == null)
-                npcDef.optionDialogues = new ArrayList<>();
-            npcDef.optionDialogues.add(finalDialogue);
+            if (npcDefinition.optionDialogues == null)
+                npcDefinition.optionDialogues = new ArrayList<>();
+            npcDefinition.optionDialogues.add(finalDialogue);
         }
         return finalDialogue;
     }
@@ -363,7 +363,7 @@ public class DialogueParser {
 
     protected void error(String issue, List<String> dialogue) {
         StringBuilder sb = new StringBuilder();
-        sb.append(npcDef.name).append(" error on line: ").append(lineNumber + 1).append(". Error: ").append(issue).append("\n");
+        sb.append(npcDefinition.name).append(" error on line: ").append(lineNumber + 1).append(". Error: ").append(issue).append("\n");
         for (String line : dialogue) {
             if (dialogue.indexOf(line) == lineNumber)
                 sb.append("\u001B[35m").append(line).append("\u001B[0m\n");

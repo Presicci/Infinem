@@ -2,15 +2,13 @@ package io.ruin.model.skills.cooking.gnome;
 
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Items;
-import io.ruin.model.item.actions.ItemAction;
-import io.ruin.model.stat.StatType;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -60,7 +58,7 @@ public class GnomeRestaurant {
         player.putAttribute(GNOME_ORDER, order.ordinal());
         RestaurantCustomer customer = Random.get(RestaurantCustomer.values());
         player.putAttribute(GNOME_CUSTOMER, customer.ordinal());
-        String customerName = NPCDef.get(customer.getNpcId()).name;
+        String customerName = NPCDefinition.get(customer.getNpcId()).name;
         player.dialogue(
                 new NPCDialogue(GIANNE, customerName + " has ordered " + (order.ordinal() >= 16 ? "some " : "a ") + StringUtils.capitalizeFirst(order.name().toLowerCase())
                         + ". They can be found " + customer.getLocationString() + " Any questions?"),

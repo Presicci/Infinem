@@ -2,7 +2,7 @@ package io.ruin.model.content.bestiary;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.StringUtils;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.handlers.TabBestiary;
@@ -37,7 +37,7 @@ public class Bestiary {
      * @param def NPCDef for npc
      * @param amt Amount to increment
      */
-    public void incrementKillCount(NPCDef def, int amt) {
+    public void incrementKillCount(NPCDefinition def, int amt) {
         String bestiaryName = def.bestiaryEntry;
         if (bestiaryName == null || !BestiaryDef.ENTRIES.contains(bestiaryName)) return;
         int currentCount = killCounts.getOrDefault(bestiaryName, 0);
@@ -52,11 +52,11 @@ public class Bestiary {
      * matching npcName.
      * @param def NPCDef for npc
      */
-    public void incrementKillCount(NPCDef def) {
+    public void incrementKillCount(NPCDefinition def) {
         incrementKillCount(def, 1);
     }
 
-    public int getKillCount(NPCDef def) {
+    public int getKillCount(NPCDefinition def) {
         return getKillCount(def.bestiaryEntry);
     }
 
@@ -66,7 +66,7 @@ public class Bestiary {
         return killCounts.getOrDefault(entry, 0);
     }
 
-    public BestiaryEntry getBestiaryEntry(NPCDef def) {
+    public BestiaryEntry getBestiaryEntry(NPCDefinition def) {
         return new BestiaryEntry(getKillCount(def));
     }
 

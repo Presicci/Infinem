@@ -3,7 +3,7 @@ package io.ruin.data.impl.npcs;
 import com.google.api.client.util.Lists;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.JsonUtils;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.data.DataFile;
 import io.ruin.model.content.tasksystem.tasks.TaskArea;
 import io.ruin.model.content.tasksystem.areas.AreaTaskTier;
@@ -43,7 +43,7 @@ public class npc_shops extends DataFile {
         }
         List<Integer> npcs = Arrays.stream(s.npcs).boxed().collect(Collectors.toList());
         for (int n : s.npcs) {
-            NPCDef def = NPCDef.get(n);
+            NPCDefinition def = NPCDefinition.get(n);
             if ((def.varpbitId != -1 || def.varpId != -1) && def.showIds.length > 0) {
                 npcs.addAll(Arrays.stream(def.showIds).filter(e -> e != -1).boxed().collect(Collectors.toList()));
             }
@@ -53,28 +53,28 @@ public class npc_shops extends DataFile {
                 shop = new Shop(s.name, s.currency, s.generalStore, RestockRules.generateDefault(), items, s.ironman);
             }
             Shop fShop = shop;
-            NPCDef npcDef = NPCDef.get(n);
+            NPCDefinition npcDefinition = NPCDefinition.get(n);
 
-            if(npcDef.shops == null){
-                npcDef.shops = Lists.newArrayList();
+            if(npcDefinition.shops == null){
+                npcDefinition.shops = Lists.newArrayList();
             }
-            npcDef.shops.add(shop);
+            npcDefinition.shops.add(shop);
             shop.startup();
-            int talkToOption = npcDef.getOption("Talk-to");
+            int talkToOption = npcDefinition.getOption("Talk-to");
             if (talkToOption < 0)
-                talkToOption = npcDef.getOption("Talk");
+                talkToOption = npcDefinition.getOption("Talk");
             if (talkToOption > 0)
                 NPCAction.register(n, talkToOption, (player, npc) -> talkToDialogue(player, npc, fShop));
 
             String npcOption = s.npcOption != null ? s.npcOption : "Trade";
-            int tradeOption = npcDef.getOption(npcOption);
+            int tradeOption = npcDefinition.getOption(npcOption);
             if (tradeOption > 0) {
                 NPCAction.register(n, tradeOption, (player, npc) -> {
                     if (fShop.taskArea != null && !fShop.taskArea.checkTierUnlock(player, fShop.taskTier, "access this shop.")) return;
                     fShop.open(player);
                 });
             } else {
-                tradeOption = npcDef.getOption("Shop");
+                tradeOption = npcDefinition.getOption("Shop");
                 if (tradeOption > 0) {
                     NPCAction.register(n, tradeOption, (player, npc) -> {
                         fShop.open(player);

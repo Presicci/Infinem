@@ -1,7 +1,7 @@
 package io.ruin.model.activities.combat.raids.xeric.chamber.combat;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.activities.combat.raids.xeric.chamber.impl.MuttadilesChamber;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
@@ -18,7 +18,7 @@ public class SmallMuttadile extends NPCCombat {
     private static final Projectile RANGED_PROJECTILE = new Projectile(1291, 20, 31, 20, 15, 12, 15, 10);
 
     static {
-        NPCDef.get(7562).ignoreOccupiedTiles = true;
+        NPCDefinition.get(7562).ignoreOccupiedTiles = true;
     }
 
     public MuttadilesChamber chamber;

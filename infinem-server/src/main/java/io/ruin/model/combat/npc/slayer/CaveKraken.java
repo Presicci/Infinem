@@ -1,6 +1,6 @@
 package io.ruin.model.combat.npc.slayer;
 
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPCCombat;
@@ -16,10 +16,10 @@ public class CaveKraken extends NPCCombat {
     private static final Projectile PROJECTILE = new Projectile(162, 25, 31, 25, 56, 10, 15, 64);
 
     static {
-        NPCDef def = NPCDef.get(493);
+        NPCDefinition def = NPCDefinition.get(493);
         def.attackOption = def.getOption("disturb");
         def.swimClipping = true;
-        def = NPCDef.get(492);
+        def = NPCDefinition.get(492);
         def.swimClipping = true;
     }
 

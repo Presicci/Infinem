@@ -1,4 +1,4 @@
-package io.ruin.cache;
+package io.ruin.cache.def;
 
 import com.google.common.collect.Maps;
 import io.ruin.Server;
@@ -24,9 +24,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
-public class NPCDef {
+public class NPCDefinition {
 
-    public static Map<Integer, NPCDef> cached = Maps.newConcurrentMap();
+    public static Map<Integer, NPCDefinition> cached = Maps.newConcurrentMap();
 
     public static void load() {
         IndexFile index = Server.fileStore.get(2);
@@ -34,7 +34,7 @@ public class NPCDef {
         for(int id = 0; id < size; id++) {
             byte[] data = index.getFile(9, id);
             if (data != null) {
-                NPCDef def = new NPCDef();
+                NPCDefinition def = new NPCDefinition();
                 def.id = id;
                 def.decode(new InBuffer(data));
                 cached.put(id, def);
@@ -42,22 +42,22 @@ public class NPCDef {
         }
     }
 
-    public static void forEach(Consumer<NPCDef> consumer) {
-        for(NPCDef def : cached.values()) {
+    public static void forEach(Consumer<NPCDefinition> consumer) {
+        for(NPCDefinition def : cached.values()) {
             if(def != null)
                 consumer.accept(def);
         }
     }
 
-    public static NPCDef get(int id) {
+    public static NPCDefinition get(int id) {
         return cached.get(id);
     }
 
-    public static NPCDef getConfigDef(int id, Player player) {
-        NPCDef def = NPCDef.cached.get(id);
+    public static NPCDefinition getConfigDef(int id, Player player) {
+        NPCDefinition def = NPCDefinition.cached.get(id);
         if (def.varpbitId != -1) {// || def.varpId != -1) {
             int value = Config.varpbit(def.varpbitId, false).get(player);
-            def = NPCDef.get(def.showIds[value]);
+            def = NPCDefinition.get(def.showIds[value]);
         }
         return def;
     }
@@ -510,7 +510,7 @@ public class NPCDef {
     }
 
     void copy(int otherId) {
-        NPCDef otherDef = cached.get(otherId);
+        NPCDefinition otherDef = cached.get(otherId);
         try {
             isMinimapVisible = otherDef.isMinimapVisible;
             anInt3558 = otherDef.anInt3558;

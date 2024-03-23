@@ -2,7 +2,7 @@ package io.ruin.model.activities.combat.bosses.slayer.sire;
 
 import io.ruin.api.protocol.world.WorldType;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
@@ -84,7 +84,7 @@ public class AbyssalSire extends NPCCombat {
 
     static {
         for (int id : Arrays.asList(5886, 5887, 5888, 5889, 5890, 5891, 5908, 5916, 5917, 5918))
-            NPCDef.get(id).ignoreOccupiedTiles = true;
+            NPCDefinition.get(id).ignoreOccupiedTiles = true;
     }
 
     @Override

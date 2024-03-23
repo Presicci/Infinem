@@ -1,6 +1,6 @@
 package io.ruin.model.entity.npc;
 
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.entity.player.Player;
 
 import java.util.Arrays;
@@ -15,14 +15,14 @@ public interface NPCAction {
      */
 
     static void register(int npcId, int option, NPCAction action) {
-        NPCDef def = NPCDef.get(npcId);
+        NPCDefinition def = NPCDefinition.get(npcId);
         if(def.defaultActions == null)
             def.defaultActions = new NPCAction[5];
         def.defaultActions[option - 1] = action;
     }
 
     static boolean register(int npcId, String optionName, NPCAction action) {
-        int option = NPCDef.get(npcId).getOption(optionName);
+        int option = NPCDefinition.get(npcId).getOption(optionName);
         if(option == -1)
             return false;
         register(npcId, option, action);
@@ -32,7 +32,7 @@ public interface NPCAction {
     static void register(int npcId, Consumer<NPCAction[]> actionsConsumer) {
         NPCAction[] actions = new NPCAction[6];
         actionsConsumer.accept(actions);
-        NPCDef.get(npcId).defaultActions = Arrays.copyOfRange(actions, 1, actions.length);
+        NPCDefinition.get(npcId).defaultActions = Arrays.copyOfRange(actions, 1, actions.length);
     }
 
     /**
@@ -40,21 +40,21 @@ public interface NPCAction {
      */
 
     static void register(String npcName, int option, NPCAction action) {
-        NPCDef.forEach(def -> {
+        NPCDefinition.forEach(def -> {
             if(def.name.equalsIgnoreCase(npcName))
                 register(def.id, option, action);
         });
     }
 
     static void register(String npcName, String optionName, NPCAction action) {
-        NPCDef.forEach(def -> {
+        NPCDefinition.forEach(def -> {
             if(def.name.equalsIgnoreCase(npcName))
                 register(def.id, optionName, action);
         });
     }
 
     static void register(String npcName, Consumer<NPCAction[]> actionsConsumer) {
-        NPCDef.forEach(def -> {
+        NPCDefinition.forEach(def -> {
             if(def.name.equalsIgnoreCase(npcName))
                 register(def.id, actionsConsumer);
         });
@@ -89,7 +89,7 @@ public interface NPCAction {
      */
 
     static void registerIncludeVariants(int npcId, String optionName, NPCAction action) {
-        NPCDef def = NPCDef.get(npcId);
+        NPCDefinition def = NPCDefinition.get(npcId);
         if ((def.varpbitId != -1 || def.varpId != -1) && def.showIds != null) {
             int[] ids = def.showIds;
             for (int id : ids) {

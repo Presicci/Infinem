@@ -1,6 +1,6 @@
 package io.ruin.model.entity.player.killcount;
 
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 
 import java.util.Objects;
 
@@ -71,7 +71,7 @@ public enum BossKillCounter {
 
     BossKillCounter(String name) {
         this.name = name;
-        NPCDef.cached.values().stream().filter(Objects::nonNull)
+        NPCDefinition.cached.values().stream().filter(Objects::nonNull)
                 .filter(def -> def.name.toLowerCase().contains(name.toLowerCase()))
                 .forEach(def -> def.killCounterType = new KillCounterType(this));
     }

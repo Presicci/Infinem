@@ -3,7 +3,7 @@ package io.ruin.model.item.actions.impl;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
@@ -112,14 +112,14 @@ public enum GoldCasket {
 
     private static void set(double chance, int...ids) {
         for (int id : ids)
-            NPCDef.get(id).giantCasketChance = chance;
+            NPCDefinition.get(id).giantCasketChance = chance;
     }
 
     private static void set(double chance, String... names) {
         for (int i = 0; i < names.length; i++) {
             names[i] = names[i].toLowerCase();
         }
-        NPCDef.cached.values().stream()
+        NPCDefinition.cached.values().stream()
                 .filter(def -> def.name != null && Arrays.asList(names).contains(def.name.toLowerCase()))
                 .forEach(def -> def.giantCasketChance = chance);
     }

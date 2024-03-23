@@ -3,7 +3,7 @@ package io.ruin.data.impl.npcs;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.JsonUtils;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.data.DataFile;
 
 import java.io.File;
@@ -24,7 +24,7 @@ public class npc_examines extends DataFile {
         List<io.ruin.data.impl.objects.object_examines.Examine> examines = JsonUtils.fromJson(json, List.class, io.ruin.data.impl.objects.object_examines.Examine.class);
         if (!Server.dataOnlyMode) {
             examines.forEach(examine -> {
-                NPCDef.get(examine.id).examine = examine.examine;
+                NPCDefinition.get(examine.id).examine = examine.examine;
             });
         }
         return examines;

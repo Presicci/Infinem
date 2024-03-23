@@ -1,7 +1,7 @@
 package io.ruin.model.activities.wilderness.bosses;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPC;
@@ -35,8 +35,8 @@ public class Vetion extends NPCCombat {
                 .preDefend(this::block)
                 .postDefend(this::spawnDogs);
         npc.deathEndListener = (entity, killer, killHit) -> entity.npc.transform(VETION);
-        NPCDef.get(SKELETON_HELLHOUND).ignoreOccupiedTiles = true;
-        NPCDef.get(GREATER_SKELETON_HELLHOUND).ignoreOccupiedTiles = true; // they can do this i saw it in a vid
+        NPCDefinition.get(SKELETON_HELLHOUND).ignoreOccupiedTiles = true;
+        NPCDefinition.get(GREATER_SKELETON_HELLHOUND).ignoreOccupiedTiles = true; // they can do this i saw it in a vid
     }
 
     @Override

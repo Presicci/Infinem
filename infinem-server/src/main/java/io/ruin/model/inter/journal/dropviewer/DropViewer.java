@@ -2,7 +2,7 @@ package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.api.utils.Tuple;
 import io.ruin.utility.Color;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPCDrops;
 import io.ruin.model.entity.player.Player;
@@ -24,7 +24,7 @@ import java.util.*;
  */
 public class DropViewer {
 
-    protected static final HashMap<Integer, LinkedHashSet<NPCDef>> drops = new HashMap<>();
+    protected static final HashMap<Integer, LinkedHashSet<NPCDefinition>> drops = new HashMap<>();
     protected static final HashMap<Integer, LinkedHashSet<DropViewerEntry>> NON_NPC_DROPS = new HashMap<>();
 
     public static void open(Player player) {
@@ -42,7 +42,7 @@ public class DropViewer {
     }
 
     private static void displayDrops(Player player, int id, String name) {
-        NPCDef def = NPCDef.get(id);
+        NPCDefinition def = NPCDefinition.get(id);
         if (def.lootTable == null) {
             player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: " + Color.OLIVE.tag() + name + " has no drops.");
             return;
@@ -206,7 +206,7 @@ public class DropViewer {
     }
 
     static {
-        NPCDef.forEach(def -> {
+        NPCDefinition.forEach(def -> {
             if (def != null && def.lootTable != null)
                 def.lootTable.allItems().forEach(item -> drops.computeIfAbsent(item.getId(), k -> new LinkedHashSet<>()).add(def));
             if (def != null && def.combatInfo != null && def.combatInfo.pet != null)

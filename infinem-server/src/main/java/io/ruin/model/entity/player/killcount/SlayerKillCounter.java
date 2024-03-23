@@ -1,11 +1,9 @@
 package io.ruin.model.entity.player.killcount;
 
-import io.ruin.cache.NPCDef;
-import lombok.AllArgsConstructor;
+import io.ruin.cache.def.NPCDefinition;
 
 import java.util.Arrays;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -94,21 +92,21 @@ public enum SlayerKillCounter {
 
     SlayerKillCounter(String name) {
         this.name = name;
-        NPCDef.cached.values().stream().filter(Objects::nonNull)
+        NPCDefinition.cached.values().stream().filter(Objects::nonNull)
                 .filter(def -> def.name.toLowerCase().contains(name.toLowerCase().substring(0, name.length() - 1)))
                 .forEach(def -> def.killCounterType = new KillCounterType(this));
     }
 
     SlayerKillCounter(String name, String npcName) {
         this.name = name;
-        NPCDef.cached.values().stream().filter(Objects::nonNull)
+        NPCDefinition.cached.values().stream().filter(Objects::nonNull)
                 .filter(def -> def.name.toLowerCase().contains(npcName.toLowerCase()))
                 .forEach(def -> def.killCounterType = new KillCounterType(this));
     }
 
     SlayerKillCounter(String name, int... ids) {
         this.name = name;
-        if (NPCDef.cached.values().stream()
+        if (NPCDefinition.cached.values().stream()
                 .filter(Objects::nonNull)
                 .filter(def -> {
                     if (Arrays.stream(ids).anyMatch(i -> i == def.id)) {

@@ -3,7 +3,7 @@ package io.ruin.model.skills.slayer;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -110,7 +110,7 @@ public class Slayer {
                 }
             }
 
-            final int hp = NPCDef.get(npc.getId()).combatInfo.hitpoints;
+            final int hp = NPCDefinition.get(npc.getId()).combatInfo.hitpoints;
             final boolean superior = SuperiorSlayer.getSuperior(creature, npc.getId()) != -1 && SuperiorSlayer.getSuperior(creature, npc.getId()) == npc.getId();
             final int xp = superior ? hp * 10 : hp;
 

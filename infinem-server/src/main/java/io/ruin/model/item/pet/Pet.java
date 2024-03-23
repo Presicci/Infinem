@@ -4,7 +4,7 @@ import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Icon;
 import io.ruin.cache.def.ItemDefinition;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -312,8 +312,8 @@ public enum Pet {
     );
 
     private int findRoamId() {
-        NPCDef baseDef = NPCDef.get(npcId);
-        for (NPCDef def : NPCDef.cached.values()) {
+        NPCDefinition baseDef = NPCDefinition.get(npcId);
+        for (NPCDefinition def : NPCDefinition.cached.values()) {
             if (def == null || def.id == baseDef.id || def.name == null || def.options == null || !def.name.equalsIgnoreCase(baseDef.name)) {
                 continue;
             }
@@ -568,8 +568,8 @@ public enum Pet {
     static {
         for (Pet pet : values()) {
             ItemDefinition.get(pet.itemId).pet = pet;
-            NPCDef.get(pet.npcId).occupyTiles = false;
-            NPCDef.get(pet.npcId).ignoreOccupiedTiles = true;
+            NPCDefinition.get(pet.npcId).occupyTiles = false;
+            NPCDefinition.get(pet.npcId).ignoreOccupiedTiles = true;
             /**
              * Drop
              */

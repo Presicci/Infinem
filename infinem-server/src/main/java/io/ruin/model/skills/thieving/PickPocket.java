@@ -1,7 +1,7 @@
 package io.ruin.model.skills.thieving;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.tasksystem.relics.Relic;
@@ -585,7 +585,7 @@ public enum PickPocket {
     }
 
     static {
-        NPCDef.forEach(npcDef -> {
+        NPCDefinition.forEach(npcDef -> {
             for (PickPocket pickpocket : values()) {
                 if (npcDef.name.equalsIgnoreCase(pickpocket.name().replace("_", " "))
                         || npcDef.name.toLowerCase().contains(pickpocket.name().toLowerCase())

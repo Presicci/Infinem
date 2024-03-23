@@ -2,7 +2,7 @@ package io.ruin.model.item.containers.bank;
 
 import io.ruin.Server;
 import io.ruin.cache.def.ItemDefinition;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
@@ -38,7 +38,7 @@ public class BankActions {
     static {
         Server.afterData.add(() -> {
             ArrayList<Integer> bankerIds = new ArrayList<>();
-            NPCDef.forEach(def -> {
+            NPCDefinition.forEach(def -> {
                 if(NPCAction.register(def.id, "bank", (p, n) -> p.getBank().open())) {
                     NPCAction.register(def.id, "talk-to", BankActions::talk);
                     NPCAction.register(def.id, "collect", (p, n) -> CollectionBox.open(p));

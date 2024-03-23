@@ -1,7 +1,7 @@
 package io.ruin.model.activities.wilderness.bosses.scorpia;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
@@ -15,8 +15,8 @@ public class Scorpia extends NPCCombat {
 
 
     static {
-        NPCDef.get(6615).ignoreOccupiedTiles = true; // so she doesnt get stuck on her babies
-        NPCDef.get(6617).ignoreOccupiedTiles = true;
+        NPCDefinition.get(6615).ignoreOccupiedTiles = true; // so she doesnt get stuck on her babies
+        NPCDefinition.get(6617).ignoreOccupiedTiles = true;
     }
 
     private boolean spawnedGuardians = false;

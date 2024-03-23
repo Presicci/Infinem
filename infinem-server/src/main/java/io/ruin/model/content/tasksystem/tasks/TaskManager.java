@@ -6,7 +6,7 @@ import io.ruin.api.database.DatabaseUtils;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.content.tasksystem.tasks.inter.TabTask;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskSQLBuilder;
 import io.ruin.model.entity.player.Player;
@@ -193,7 +193,7 @@ public class TaskManager {
     }
 
     public void doKillLookup(int npcId) {
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.NPCKILL, NPCDef.get(npcId).name.toLowerCase(), 1, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.NPCKILL, NPCDefinition.get(npcId).name.toLowerCase(), 1, true);
     }
 
     public void doSkillItemLookup(int itemId) {

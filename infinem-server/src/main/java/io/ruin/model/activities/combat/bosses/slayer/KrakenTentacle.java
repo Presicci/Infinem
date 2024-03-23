@@ -1,6 +1,6 @@
 package io.ruin.model.activities.combat.bosses.slayer;
 
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.combat.npc.slayer.CaveKraken;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
@@ -11,10 +11,10 @@ public class KrakenTentacle extends CaveKraken {
     private static final Projectile PROJECTILE = new Projectile(162, 60, 31, 25, 56, 10, 15, 0);
 
     static {
-        NPCDef def = NPCDef.get(5534);
+        NPCDefinition def = NPCDefinition.get(5534);
         def.attackOption = def.getOption("disturb");
         def.swimClipping = true;
-        def = NPCDef.get(5535);
+        def = NPCDefinition.get(5535);
         def.swimClipping = true;
     }
 

@@ -1,6 +1,6 @@
 package io.ruin.model.activities.combat.barrows;
 
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DeathListener;
@@ -69,7 +69,7 @@ public enum BarrowsBrother {
 
     static {
         for(BarrowsBrother brother : BarrowsBrother.values()) {
-            NPCDef.get(brother.npcId).ignoreOccupiedTiles = true;
+            NPCDefinition.get(brother.npcId).ignoreOccupiedTiles = true;
         }
     }
 

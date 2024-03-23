@@ -1,7 +1,7 @@
 package io.ruin.model.activities.combat.raids.xeric.chamber.impl;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.activities.combat.raids.xeric.chamber.Chamber;
 import io.ruin.model.entity.npc.NPC;
@@ -17,7 +17,7 @@ public class VanguardsChamber extends Chamber {
 
     static {
         for (int id = 7525; id <= 7529; id++) {
-            NPCDef.get(id).ignoreOccupiedTiles = true;
+            NPCDefinition.get(id).ignoreOccupiedTiles = true;
         }
     }
 

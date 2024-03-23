@@ -3,7 +3,7 @@ package io.ruin.model.inter.journal.dropviewer;
 import io.ruin.Server;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.process.task.TaskWorker;
@@ -29,9 +29,9 @@ public class DropViewerSearch {
             String search = formatForSearch(name);
             AtomicBoolean tooMany = new AtomicBoolean(false);
             if (!search.isEmpty()) {
-                LinkedHashMap<String, TreeMap<Integer, List<NPCDef>>> map = new LinkedHashMap<>();
+                LinkedHashMap<String, TreeMap<Integer, List<NPCDefinition>>> map = new LinkedHashMap<>();
                 if (monster) {
-                    NPCDef.forEach(npcDef -> {
+                    NPCDefinition.forEach(npcDef -> {
                         String searchName = formatForSearch(npcDef.name);
                         if (!searchName.contains(search))
                             return;
@@ -50,9 +50,9 @@ public class DropViewerSearch {
                     ItemDefinition.forEach(itemDef -> {
                         if (!formatForSearch(itemDef.name).contains(search))
                             return;
-                        HashSet<NPCDef> npcDefs = DropViewer.drops.get(itemDef.id);
-                        if (npcDefs != null)
-                            npcDefs.forEach(npcDef -> {
+                        HashSet<NPCDefinition> npcDefinitions = DropViewer.drops.get(itemDef.id);
+                        if (npcDefinitions != null)
+                            npcDefinitions.forEach(npcDef -> {
                                 String npcName = formatForSearch(npcDef.name);
                                 String extension = DropViewerNPCExtensions.NPCS.get(npcDef.id);
                                 if (extension != null) {
@@ -72,14 +72,14 @@ public class DropViewerSearch {
                         tooMany.set(true);
                         return;
                     }
-                    List<NPCDef> matched = new ArrayList<>();
+                    List<NPCDefinition> matched = new ArrayList<>();
                     levelsMap.values().forEach(defs -> {
-                        defs.sort(new Comparator<NPCDef>() {
+                        defs.sort(new Comparator<NPCDefinition>() {
                             @Override
-                            public int compare(NPCDef d1, NPCDef d2) {
+                            public int compare(NPCDefinition d1, NPCDefinition d2) {
                                 return Integer.compare(priority(d2), priority(d1));
                             }
-                            private int priority(NPCDef def) {
+                            private int priority(NPCDefinition def) {
                                 int priority = 0;
                                 if (def.combatInfo != null)
                                     priority++;
@@ -92,12 +92,12 @@ public class DropViewerSearch {
                                 return priority;
                             }
                         });
-                        NPCDef def = defs.get(0);
+                        NPCDefinition def = defs.get(0);
                         if (def.combatInfo != null && def.lootTable != null && def.combatLevel > 0)
                             matched.add(def);
                         //^ only match the highest priority npc with this combat level.
                     });
-                    for (NPCDef def : matched) {
+                    for (NPCDefinition def : matched) {
                         if (results.size() >= MAX_RESULTS) {
                             tooMany.set(true);
                             break;

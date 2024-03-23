@@ -1,6 +1,6 @@
 package io.ruin.model.activities.combat.bosses.slayer;
 
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.combat.npc.slayer.CaveKraken;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
@@ -14,10 +14,10 @@ import java.util.List;
 public class Kraken extends CaveKraken {
 
     static {
-        NPCDef def = NPCDef.get(496);
+        NPCDefinition def = NPCDefinition.get(496);
         def.attackOption = def.getOption("disturb");
         def.swimClipping = true;
-        def = NPCDef.get(494);
+        def = NPCDefinition.get(494);
         def.swimClipping = true;
     }
 

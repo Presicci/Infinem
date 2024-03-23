@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.model.World;
 import io.ruin.model.activities.ActivityTimer;
@@ -559,8 +559,8 @@ public class Inferno {
                 pillars.remove(this);
             };
             npc.deathEndListener = (DeathListener.Simple) () -> map.removeNpc(npc);
-            NPCDef.get(PILLAR_ALIVE).ignoreMultiCheck = true;
-            NPCDef.get(PILLAR_DEAD).ignoreMultiCheck = true;
+            NPCDefinition.get(PILLAR_ALIVE).ignoreMultiCheck = true;
+            NPCDefinition.get(PILLAR_DEAD).ignoreMultiCheck = true;
         }
 
         private boolean withinDistance(Entity entity) {
@@ -588,16 +588,16 @@ public class Inferno {
     }
 
     static {
-        NPCDef def = NPCDef.get(PILLAR_ALIVE);
+        NPCDefinition def = NPCDefinition.get(PILLAR_ALIVE);
         def.combatHandlerClass = PassiveCombat.class;
         def.combatInfo = new npc_combat.Info();
         def.combatInfo.hitpoints = 254;
         def.combatInfo.defend_animation = -1;
         def.combatInfo.death_animation = -1;
 
-        NPCDef.get(NIBBLER).ignoreOccupiedTiles = true;
+        NPCDefinition.get(NIBBLER).ignoreOccupiedTiles = true;
 
-        def = NPCDef.get(SHIELD);
+        def = NPCDefinition.get(SHIELD);
         def.combatHandlerClass = PassiveCombat.class;
         def.combatInfo = new npc_combat.Info();
         def.combatInfo.hitpoints = 600;

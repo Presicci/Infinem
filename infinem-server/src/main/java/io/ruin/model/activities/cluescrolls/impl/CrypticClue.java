@@ -1,6 +1,6 @@
 package io.ruin.model.activities.cluescrolls.impl;
 
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.cluescrolls.StepType;
@@ -163,7 +163,7 @@ public class CrypticClue extends Clue {
     private static void registerTalk(List<String> npcNames, String clue, ClueType type) {
         CrypticClue cryptic = new CrypticClue(clue, type);
         for(String npcName : npcNames) {
-            NPCDef.forEach(def -> {
+            NPCDefinition.forEach(def -> {
                 if(def.name.equalsIgnoreCase(npcName))
                     registerTalk(def.id, cryptic);
             });
@@ -171,7 +171,7 @@ public class CrypticClue extends Clue {
     }
 
     private static void registerTalk(int npcId, CrypticClue cryptic) {
-        NPCDef def = NPCDef.get(npcId);
+        NPCDefinition def = NPCDefinition.get(npcId);
         if(def.cryptic != null)
             System.err.println(def.name + " has duplicate cryptic clues set!");
         def.cryptic = cryptic;

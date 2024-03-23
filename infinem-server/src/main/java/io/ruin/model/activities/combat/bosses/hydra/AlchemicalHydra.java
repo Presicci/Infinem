@@ -2,7 +2,7 @@ package io.ruin.model.activities.combat.bosses.hydra;
 
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
@@ -32,7 +32,7 @@ public class AlchemicalHydra extends NPCCombat {
 
     static {
         for (int id : new int[]{8615, 8616, 8617, 8618, 8619, 8620, 8621, 8622})
-            NPCDef.get(id).ignoreOccupiedTiles = true;
+            NPCDefinition.get(id).ignoreOccupiedTiles = true;
 
         ObjectAction.register(34548, 1351, 10251, 0, "climb", (player, obj) -> createAndEnterInstance(player));
         ObjectAction.register(34553, "open", AlchemicalHydra::confirmAndEnterBossRoom);

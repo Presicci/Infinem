@@ -1,15 +1,11 @@
 package io.ruin.model.combat.special.ranged.bolts;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
-import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.item.Items;
 import io.ruin.model.stat.StatType;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.function.BiFunction;
 
 /**

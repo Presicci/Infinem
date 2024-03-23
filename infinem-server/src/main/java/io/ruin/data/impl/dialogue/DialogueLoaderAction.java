@@ -1,7 +1,7 @@
 package io.ruin.data.impl.dialogue;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.content.transportation.charterships.CharterShips;
 import io.ruin.api.utils.AttributeKey;
@@ -212,8 +212,8 @@ public enum DialogueLoaderAction {
     }),
     LIEVE_TRIDENTS((player -> {
         int tentacles = player.getAttributeIntOrZero(AttributeKey.LIEVE_KRAKEN_TENTACLES);
-        int dialogueSize = NPCDef.get(7412).optionDialogues.size();
-        Dialogue optionDialogue = NPCDef.get(7412).optionDialogues.get(dialogueSize - 1);
+        int dialogueSize = NPCDefinition.get(7412).optionDialogues.size();
+        Dialogue optionDialogue = NPCDefinition.get(7412).optionDialogues.get(dialogueSize - 1);
         player.dialogue(
                 new NPCDialogue(7412, "If ya brings me a trident, I can enhance it for ya. It'll store 20,000 charges, not just 2,500. "
                         + (tentacles == 0 ? "But I wants payin' fer the job."
@@ -256,8 +256,8 @@ public enum DialogueLoaderAction {
     })),
     SMITHING_HELP((player -> {
         int smithingLevel = player.getStats().get(StatType.Smithing).fixedLevel;
-        int dialogueSize = NPCDef.get(3225).optionDialogues.size();
-        Dialogue dialogue = NPCDef.get(3225).optionDialogues.get(dialogueSize - 1);
+        int dialogueSize = NPCDefinition.get(3225).optionDialogues.size();
+        Dialogue dialogue = NPCDefinition.get(3225).optionDialogues.get(dialogueSize - 1);
         if (smithingLevel >= 99)
             player.dialogue(
                     new NPCDialogue(3225, "Cor blimey, I don't think there is anything I can teach you, but I'll do my best."),
@@ -304,8 +304,8 @@ public enum DialogueLoaderAction {
     })),
     FISHING_HELP((player -> {
         int fishingLevel = player.getStats().get(StatType.Fishing).fixedLevel;
-        int dialogueSize = NPCDef.get(3221).optionDialogues.size();
-        Dialogue dialogue = NPCDef.get(3221).optionDialogues.get(dialogueSize - 1);
+        int dialogueSize = NPCDefinition.get(3221).optionDialogues.size();
+        Dialogue dialogue = NPCDefinition.get(3221).optionDialogues.get(dialogueSize - 1);
         if (fishingLevel > 50)
             player.dialogue(new NPCDialogue(3221, "Tuna and Swordfish can be harpooned - if you're good enough - from the thrivin' fishing village of Catherby, or if you can get in try the Fishin' Guild. Level 35 for Tuna and 50 for Swordfish."), dialogue);
         else if (fishingLevel > 46)

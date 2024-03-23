@@ -1,8 +1,7 @@
 package io.ruin.model.activities.combat.pestcontrol;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
-import io.ruin.data.impl.npcs.npc_combat;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.combat.npc.PassiveCombat;
 import io.ruin.model.content.ActivitySpotlight;
@@ -100,7 +99,7 @@ public class PestControlGame {
 	public void start(ArrayList<Player> participants) {
 		initMap();
 		addNpc(SQUIRE_ID, new Position(2660, 2608, 0));
-		NPCDef def = NPCDef.get(settings.voidKnightId());
+		NPCDefinition def = NPCDefinition.get(settings.voidKnightId());
 		def.combatHandlerClass = PassiveCombat.class;
 		def.ignoreMultiCheck = true;
 		knight = addNpc(settings.voidKnightId(), new Position(2656, 2592, 0));

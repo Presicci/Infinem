@@ -1,6 +1,6 @@
 package io.ruin.model.skills.construction.servants;
 
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 
 public enum ServantDefinition {
 
@@ -120,8 +120,8 @@ public enum ServantDefinition {
 
     static {
         for (ServantDefinition def : values()) {
-            NPCDef.get(def.getNpcId()).ignoreOccupiedTiles = true;
-            NPCDef.get(def.getNpcId()).occupyTiles = false;
+            NPCDefinition.get(def.getNpcId()).ignoreOccupiedTiles = true;
+            NPCDefinition.get(def.getNpcId()).occupyTiles = false;
         }
     }
 }

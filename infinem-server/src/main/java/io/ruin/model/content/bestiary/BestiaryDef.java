@@ -1,7 +1,6 @@
 package io.ruin.model.content.bestiary;
 
-import io.ruin.api.utils.Tuple;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 
 import java.util.*;
 
@@ -376,7 +375,7 @@ public class BestiaryDef {
 
     static {
         System.out.println("Loading Bestiary..." + System.currentTimeMillis());
-        NPCDef.forEach(e -> {
+        NPCDefinition.forEach(e -> {
             if (e.combatInfo == null || e.combatLevel < 1) return;
             String name = e.name.toLowerCase();
             for (String ignored : IGNORED) {

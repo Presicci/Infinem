@@ -1,7 +1,7 @@
 package io.ruin.network.incoming.handlers;
 
 import io.ruin.api.buffer.InBuffer;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -14,7 +14,6 @@ import io.ruin.utility.DebugMessage;
 import io.ruin.utility.IdHolder;
 
 import java.util.Arrays;
-import java.util.HashSet;
 
 @IdHolder(ids = {70, 88, 95, 6, 18, 81})//@IdHolder(ids = {89, 96, 35, 79, 37, 9})
 public class NPCActionHandler implements Incoming {
@@ -58,7 +57,7 @@ public class NPCActionHandler implements Incoming {
         }
         if(option == 6) {
             int id = in.readLEShortA();
-            NPCDef def = NPCDef.get(id);
+            NPCDefinition def = NPCDefinition.get(id);
             if(def == null)
                 return;
             if(player.debug)
@@ -73,7 +72,7 @@ public class NPCActionHandler implements Incoming {
         NPC npc = World.getNpc(npcIndex);
         if(npc == null)
             return;
-        NPCDef def = npc.getConfigDef(player);
+        NPCDefinition def = npc.getConfigDef(player);
         if(player.debug)
             debug(player, npc, def, option);
         player.face(npc);
@@ -126,7 +125,7 @@ public class NPCActionHandler implements Incoming {
         });
     }
 
-    private static void debug(Player player, NPC npc, NPCDef def, int option) {
+    private static void debug(Player player, NPC npc, NPCDefinition def, int option) {
         int configId = def.id;
         if(npc == null) {
             player.sendFilteredMessage("[NpcAction] option: " + option + " NULL NPC");

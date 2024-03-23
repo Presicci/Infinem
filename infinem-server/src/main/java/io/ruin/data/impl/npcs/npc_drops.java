@@ -6,7 +6,7 @@ import io.ruin.api.utils.JsonUtils;
 import io.ruin.api.utils.ServerWrapper;
 import io.ruin.api.utils.ThreadUtils;
 import io.ruin.cache.def.ItemDefinition;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.data.DataFile;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
@@ -116,11 +116,11 @@ public class npc_drops extends DataFile {
             }
         }
         loaded.forEach((id, table) -> {
-            if (NPCDef.get(id) == null) {
+            if (NPCDefinition.get(id) == null) {
                 System.err.println("[npc_drops] NPC with ID: " + id + " has invalid cache def.");
                 return;
             }
-            NPCDef.get(id).lootTable = table;
+            NPCDefinition.get(id).lootTable = table;
         });
         return tables;
     }
@@ -145,7 +145,7 @@ public class npc_drops extends DataFile {
             e.printStackTrace();
         }
         int finalCombatLevel = combatLevel;
-        NPCDef.forEach(npcDef -> {
+        NPCDefinition.forEach(npcDef -> {
             if (finalCombatLevel >= 0 && npcDef.combatLevel != finalCombatLevel) {
                 return;
             }

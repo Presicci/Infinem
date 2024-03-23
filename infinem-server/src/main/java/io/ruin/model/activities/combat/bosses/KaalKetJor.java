@@ -1,7 +1,6 @@
 package io.ruin.model.activities.combat.bosses;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
@@ -10,7 +9,6 @@ import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
-import io.ruin.model.map.route.routes.DumbRoute;
 import io.ruin.model.map.route.routes.ProjectileRoute;
 import io.ruin.utility.TickDelay;
 

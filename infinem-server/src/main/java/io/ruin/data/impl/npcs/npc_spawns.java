@@ -6,17 +6,15 @@ import io.ruin.Server;
 import io.ruin.api.protocol.world.WorldType;
 import io.ruin.api.utils.ArrayUtils;
 import io.ruin.api.utils.JsonUtils;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.data.DataFile;
 import io.ruin.model.World;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
-import io.ruin.model.locations.home.NPCLocator;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Tile;
 import io.ruin.model.shop.ShopManager;
-import io.ruin.model.skills.agility.courses.GnomeStrongholdCourse;
 import io.ruin.model.skills.slayer.TaskOnlyNPC;
 import lombok.extern.slf4j.Slf4j;
 
@@ -50,7 +48,7 @@ public class npc_spawns extends DataFile {
                     spawn.y -= 4864;
                 }
                 if (spawn.walkRange == 0) Tile.get(spawn.x, spawn.y, spawn.z, true).flagUnmovable();
-                if (NPCDef.get(spawn.id) == null) {
+                if (NPCDefinition.get(spawn.id) == null) {
                     System.err.println("[npc_spawns] NPC with ID: " + spawn.id + " has invalid cache def.");
                     return;
                 }

@@ -5,7 +5,7 @@ import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.Killer;
@@ -55,7 +55,7 @@ public class NPCDrops {
     }
 
     public void dropItems(Killer killer) {
-        NPCDef def = npc.getDef();
+        NPCDefinition def = npc.getDef();
         Position dropPosition = npcCombat.getDropPosition();
         Player pKiller = killer == null ? null : killer.player;
         if (pKiller == null) {

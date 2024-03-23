@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.*;
 import io.ruin.cache.def.AnimationDefinition;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.NPCDefinition;
 import io.ruin.data.DataFile;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.entity.npc.NPCCombat;
@@ -54,7 +54,7 @@ public class npc_combat extends DataFile {
         if (!Server.dataOnlyMode) {
             list.forEach(info -> {
                 for (int id : info.ids) {
-                    NPCDef def = NPCDef.get(id);
+                    NPCDefinition def = NPCDefinition.get(id);
                     if (def == null) {
                         System.err.println("[NPC_COMBAT] " + id + " is invalid npc id.");
                         continue;
@@ -191,7 +191,7 @@ public class npc_combat extends DataFile {
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(FileUtils.get("%HOME%/Dropbox/Runite/Server/data/wiki_dumps/combat/temp/~FAILED.txt")))) {
             bw.write("# id     name     combat");
             bw.newLine();
-            NPCDef.forEach(def -> {
+            NPCDefinition.forEach(def -> {
                 if(def.combatLevel == 0)
                     return;
                 String name = def.name.trim();
@@ -738,7 +738,7 @@ public class npc_combat extends DataFile {
             for(int i = 0; i < combatLevels.length; i++) {
                 int combatLevel = combatLevels[i];
                 List<Integer> npcIds = new ArrayList<>();
-                NPCDef.forEach(def -> {
+                NPCDefinition.forEach(def -> {
                     if(def.combatLevel == combatLevel && def.name.equalsIgnoreCase(name))
                         npcIds.add(def.id);
                 });
@@ -748,7 +748,7 @@ public class npc_combat extends DataFile {
                      */
                     Info oldInfo = null;
                     for(int id : npcIds) {
-                        NPCDef def = NPCDef.get(id);
+                        NPCDefinition def = NPCDefinition.get(id);
                         if(def != null && def.combatInfo != null) {
                             oldInfo = def.combatInfo;
                             break;
@@ -822,7 +822,7 @@ public class npc_combat extends DataFile {
                     newInfo.defend_animation = oldInfo == null ? -1 : oldInfo.defend_animation;
                     newInfo.death_animation = oldInfo == null ? -1 : oldInfo.death_animation;
 
-                    NPCDef def = NPCDef.get(npcIds.get(0));
+                    NPCDefinition def = NPCDefinition.get(npcIds.get(0));
                     SortedSet<Integer> anims = AnimationDefinition.findAnimationsWithSameRigging(def.walkAnimation, def.standAnimation, def.walkBackAnimation, def.walkLeftAnimation, def.walkRightAnimation);
                     if(anims != null && anims.contains(836)) { //human like npc
                         if(newInfo.attack_animation == -1)
