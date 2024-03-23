@@ -76,7 +76,7 @@ public class Region {
                 for(int x = 0; x < 64; x++) {
                     for(int y = 0; y < 64; y++) {
                         for(; ; ) {
-                            int i = mapIn.readByteUnsafe() & 0xFF;  // mapIn.readUnsignedShort(); if loading 209
+                            int i = mapIn.readUnsignedShort() & 0xFF;
                             if(i == 0)
                                 break;
                             if(i == 1) {
@@ -84,7 +84,7 @@ public class Region {
                                 break;
                             }
                             if(i <= 49)
-                                mapIn.skipByte();   // mapIn.readShort(); if loading 209
+                                mapIn.readShort();
                             else if(i <= 81)
                                 tileData[z][x][y] = (byte) (i - 49);
                         }
