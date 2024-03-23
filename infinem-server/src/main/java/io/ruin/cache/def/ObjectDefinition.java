@@ -1,10 +1,11 @@
-package io.ruin.cache;
+package io.ruin.cache.def;
 
 import com.google.common.collect.Maps;
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
 import io.ruin.api.utils.StringUtils;
+import io.ruin.cache.ObjectID;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.actions.ItemObjectAction;
@@ -15,15 +16,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
-import static io.ruin.cache.ObjectID.PORTAL_OF_CHAMPIONS;
-
-public class ObjectDef {
+public class ObjectDefinition {
 
     public static boolean aBool1550 = false;
     private static byte[] EMPTY_BUFFER = new byte[] {0};
 
-    public static Map<Integer, ObjectDef> LOADED = Maps.newConcurrentMap();
-    public static ObjectDef[] LOADED_EXTRA = new ObjectDef[10];
+    public static Map<Integer, ObjectDefinition> LOADED = Maps.newConcurrentMap();
+    public static ObjectDefinition[] LOADED_EXTRA = new ObjectDefinition[10];
 
     @SuppressWarnings("Duplicates")
     public static void load() {
@@ -32,7 +31,7 @@ public class ObjectDef {
         for (int id = 0; id < size; id++) {
             byte[] data = index.getFile(6, id);
             if (data != null) {
-                ObjectDef def = new ObjectDef();
+                ObjectDefinition def = new ObjectDefinition();
                 def.id = id;
                 def.decode(new InBuffer(data));
                 if (def.someFlag) {
@@ -48,22 +47,22 @@ public class ObjectDef {
         }
     }
 
-    public static void forEach(Consumer<ObjectDef> consumer) {
-        for (ObjectDef def : LOADED.values()) {
+    public static void forEach(Consumer<ObjectDefinition> consumer) {
+        for (ObjectDefinition def : LOADED.values()) {
             if (def != null)
                 consumer.accept(def);
         }
     }
 
-    public static ObjectDef get(int id) {
+    public static ObjectDefinition get(int id) {
         return LOADED.get(id);
     }
 
-    public static ObjectDef getConfigDef(int id, Player player) {
-        ObjectDef def = ObjectDef.LOADED.get(id);
+    public static ObjectDefinition getConfigDef(int id, Player player) {
+        ObjectDefinition def = ObjectDefinition.LOADED.get(id);
         if (def.varpBitId != -1) {
             int value = Config.varpbit(def.varpBitId, false).get(player);
-            def = ObjectDef.get(def.showIds[value]);
+            def = ObjectDefinition.get(def.showIds[value]);
         }
         return def;
     }
@@ -536,7 +535,7 @@ public class ObjectDef {
             return;
         }
 
-        ObjectDef from = LOADED.get(id);
+        ObjectDefinition from = LOADED.get(id);
 
         try {
             type22Int = from.type22Int;

@@ -1,6 +1,6 @@
 package io.ruin.model.map.dynamic;
 
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.World;
 import io.ruin.model.activities.pvp.PVPInstance;
 import io.ruin.model.activities.wilderness.Wilderness;
@@ -16,7 +16,6 @@ import io.ruin.util.CheckedConcurrentLinkedDeque;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
@@ -139,7 +138,7 @@ public class DynamicMap {
                         for(GameObject obj : localTargetTile.gameObjects) {
                             if(obj.isSpawned()) //we don't want to copy spawned objects
                                 continue;
-                            ObjectDef def = ObjectDef.get(obj.originalId);
+                            ObjectDefinition def = ObjectDefinition.get(obj.originalId);
                             int newX = newChunkAbsX + DynamicChunk.rotatedX(localX, localY, chunk.rotation, def.xLength, def.yLength, obj.direction);
                             int newY = newChunkAbsY + DynamicChunk.rotatedY(localX, localY, chunk.rotation, def.xLength, def.yLength, obj.direction);
                             int newDirection = (obj.direction + chunk.rotation) & 0x3;

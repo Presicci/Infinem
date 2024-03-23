@@ -1,7 +1,7 @@
 package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.Server;
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Tile;
@@ -23,7 +23,7 @@ public class Door {
     }
 
     public static void handle(Player player, GameObject obj, boolean skipJammedCheck) {
-        ObjectDef def = obj.getDef();
+        ObjectDefinition def = obj.getDef();
         if (def.id == 2144 || def.id == 2143) {
             if (player.getAbsX() <= 2888) {
                 player.getMovement().teleport(2889, player.getAbsY());
@@ -242,7 +242,7 @@ public class Door {
             obj.doorReplaced = null;
             return;
         }
-        ObjectDef def = obj.getDef();
+        ObjectDefinition def = obj.getDef();
         int dir = obj.direction;
         int diffX = 0, diffY = 0, diffDir = 0;
         if (paired) {
@@ -409,7 +409,7 @@ public class Door {
                     diffX--;
             }
         }
-        if (obj.conOwner == -1 && def.doorReversed != ObjectDef.get(def.doorOppositeId).doorReversed) {
+        if (obj.conOwner == -1 && def.doorReversed != ObjectDefinition.get(def.doorOppositeId).doorReversed) {
             diffX = diffY = 0;
             diffDir += 2;
         } else if (def.doorReversed) {
@@ -484,7 +484,7 @@ public class Door {
         /**
          * Registering
          */
-        ObjectDef.forEach(def -> {
+        ObjectDefinition.forEach(def -> {
             if (def.id >= 26502 && def.id <= 26505) // gwd doors
                 return;
             if (def.id == 34553 || def.id == 34554) // alchemical hydra doors
@@ -555,19 +555,19 @@ public class Door {
         ObjectAction.register(12657, 2319, 3690, 0, "open", (player, obj) -> player.sendFilteredMessage("The door seems to be stuck."));
     }
 
-    private static void setSound(ObjectDef def, int open, int close) {
+    private static void setSound(ObjectDefinition def, int open, int close) {
         if (def.hasOption("open"))
             def.doorOpenSound = open;
         else
             def.doorCloseSound = close;
     }
 
-    private static int findOppositeId(ObjectDef originalDef) {
+    private static int findOppositeId(ObjectDefinition originalDef) {
         if (originalDef.getOption("open", "close") == -1)
             return -1;
         ArrayList<Integer> ids = new ArrayList<>();
         defs:
-        for (ObjectDef def : ObjectDef.LOADED.values()) {
+        for (ObjectDefinition def : ObjectDefinition.LOADED.values()) {
             if (def == null || def.id == originalDef.id)
                 continue;
             if (!Objects.equals(def.name, originalDef.name))

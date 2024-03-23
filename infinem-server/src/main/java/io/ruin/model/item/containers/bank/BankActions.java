@@ -3,7 +3,7 @@ package io.ruin.model.item.containers.bank;
 import io.ruin.Server;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.def.NPCDefinition;
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -96,7 +96,7 @@ public class BankActions {
         GameObject obj = Tile.getObject(-1, x, y, z, 10, -1);
         if(obj == null)
             return;
-        ObjectDef def = obj.getDef();
+        ObjectDefinition def = obj.getDef();
         if(def.xLength > 1 || def.yLength > 1)
             return;
         npc.walkTo = new Position(x + deltaX, y + deltaY, z);
@@ -107,7 +107,7 @@ public class BankActions {
      */
 
     static {
-        ObjectDef.forEach(objDef -> {
+        ObjectDefinition.forEach(objDef -> {
             if(objDef.hasOption("bank") || objDef.name.toLowerCase().contains("bank")) {
                 if(ObjectAction.register(objDef.id, "use", (p, obj) -> p.getBank().open()) || ObjectAction.register(objDef.id, "bank", (p, obj) -> p.getBank().open())) {
                     objDef.bank = true;

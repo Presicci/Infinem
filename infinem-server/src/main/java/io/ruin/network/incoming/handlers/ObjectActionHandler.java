@@ -1,7 +1,7 @@
 package io.ruin.network.incoming.handlers;
 
 import io.ruin.api.buffer.InBuffer;
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
@@ -64,7 +64,7 @@ public class ObjectActionHandler implements Incoming {
         }
         if(option == 6) {
             int id = in.readUnsignedShortA();
-            ObjectDef def = ObjectDef.get(id);
+            ObjectDefinition def = ObjectDefinition.get(id);
             if(def != null) {
                 if(player.debug) {
                     DebugMessage debug = new DebugMessage()

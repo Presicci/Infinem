@@ -2,7 +2,7 @@ package io.ruin.model.map.object;
 
 import io.ruin.Server;
 import io.ruin.api.utils.TemporaryAttributesHolder;
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.World;
 import io.ruin.model.activities.cluescrolls.impl.CrypticClue;
 import io.ruin.model.activities.cluescrolls.impl.MapClue;
@@ -126,7 +126,7 @@ public class GameObject extends TemporaryAttributesHolder {
     public void clip(boolean remove) {
         if(id == -1 || skipClipping)
             return;
-        ObjectDef def = getDef();
+        ObjectDefinition def = getDef();
         if(def == null)
             return;
         if(type == 22) {
@@ -219,12 +219,12 @@ public class GameObject extends TemporaryAttributesHolder {
         return spawned || id != originalId || conOwner != -1;
     }
 
-    public ObjectDef getDef() {
-        return ObjectDef.get(this.id);
+    public ObjectDefinition getDef() {
+        return ObjectDefinition.get(this.id);
     }
 
-    public ObjectDef getConfigDef(Player player) {
-        return ObjectDef.getConfigDef(id, player);
+    public ObjectDefinition getConfigDef(Player player) {
+        return ObjectDefinition.getConfigDef(id, player);
     }
 
     @Override
@@ -281,7 +281,7 @@ public class GameObject extends TemporaryAttributesHolder {
     }
 
     public void examine(Player player) {
-        ObjectDef def = getDef();
+        ObjectDefinition def = getDef();
         if (def == null || def.examine == null)
             return;
         player.sendMessage(def.examine);

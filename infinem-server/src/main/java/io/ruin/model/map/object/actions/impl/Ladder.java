@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -201,7 +201,7 @@ public enum Ladder {
                 ObjectAction.register(entry.id, entry.objectPos.getX(), entry.objectPos.getY(), entry.objectPos.getZ(), entry.optionString, ((player, obj) -> climb(player, entry.destinationPos, entry.up, true, false)));
             }
         }
-        ObjectDef.forEach(def -> {
+        ObjectDefinition.forEach(def -> {
             if ((def.name.equalsIgnoreCase("ladder") || def.name.equalsIgnoreCase("bamboo ladder"))
                     && def.defaultActions == null) {
                 /**

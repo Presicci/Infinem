@@ -2,7 +2,7 @@ package io.ruin.model.skills.construction.room;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.StringUtils;
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -596,7 +596,7 @@ public abstract class Room {
             rotation &= 0x3;
             clear(player);
             for(RoomDefinition.VisualObject obj : type.getVisualObjects()) {
-                ObjectDef def = ObjectDef.get(obj.id);
+                ObjectDefinition def = ObjectDefinition.get(obj.id);
                 int x = baseX + DynamicChunk.rotatedX(obj.x, obj.y, rotation, def.xLength, def.yLength, obj.direction);
                 int y = baseY + DynamicChunk.rotatedY(obj.x, obj.y, rotation, def.xLength, def.yLength, obj.direction);
                 player.getPacketSender().sendCreateObject(obj.id, x, y, player.getHeight(), obj.type, (obj.direction + rotation) & 0x3);

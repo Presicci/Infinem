@@ -1,6 +1,6 @@
 package io.ruin.model.activities.combat.raids.xeric.chamber;
 
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.activities.combat.raids.xeric.ChambersOfXeric;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.map.*;
@@ -134,7 +134,7 @@ public abstract class Chamber {
     }
 
     public GameObject spawnObject(int id, int localX, int localY, int type, int direction) {
-        ObjectDef def = ObjectDef.get(id);
+        ObjectDefinition def = ObjectDefinition.get(id);
         if (def == null)
             throw new IllegalArgumentException("Invalid object " + id);
         Position pos = basePosition.relative(rotatedX(getTileSize(), localX, localY, def.xLength, def.yLength, direction),
@@ -148,7 +148,7 @@ public abstract class Chamber {
     }
 
     public GameObject getObject(int id, int localX, int localY, int direction) {
-        ObjectDef def = ObjectDef.get(id);
+        ObjectDefinition def = ObjectDefinition.get(id);
         if (def == null)
             throw new IllegalArgumentException("Invalid object " + id);
         Position pos = basePosition.relative(rotatedX(getTileSize(), localX, localY, def.xLength, def.yLength, direction),

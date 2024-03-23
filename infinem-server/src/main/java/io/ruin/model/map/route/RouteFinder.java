@@ -3,7 +3,7 @@ package io.ruin.model.map.route;
 import com.google.common.collect.ImmutableSet;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.NPCDefinition;
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.shared.Movement;
@@ -189,7 +189,7 @@ public class RouteFinder {
     public RouteObject routeObject(GameObject gameObject) {
         if(routeObject == null)
             routeObject = new RouteObject();
-        ObjectDef definition = gameObject.getDef();
+        ObjectDefinition definition = gameObject.getDef();
         if(gameObject.type == 10 || gameObject.type == 11 || gameObject.type == 22) {
             int xLength, yLength;
             if(gameObject.direction == 0 || gameObject.direction == 2) {

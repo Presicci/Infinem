@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.inter.InterfaceType;
@@ -66,7 +66,7 @@ public class OldFirePit {
             this.objectId = objectId;
             this.type = type;
             this.onBuild = onBuild;
-            this.config = Config.varpbit(ObjectDef.get(objectId).varpBitId, true);
+            this.config = Config.varpbit(ObjectDefinition.get(objectId).varpBitId, true);
         }
 
         public boolean isBuilt(@NotNull final Player player) {

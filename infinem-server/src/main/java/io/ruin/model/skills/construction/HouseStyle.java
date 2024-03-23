@@ -1,6 +1,6 @@
 package io.ruin.model.skills.construction;
 
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 
 public enum HouseStyle {
     /**
@@ -56,8 +56,8 @@ public enum HouseStyle {
         for (HouseStyle style : values()) {
             if (style == DEATHLY_MANSION)
                 continue;
-            ObjectDef.get(style.doorId1).reversedConstructionDoor = true;
-            ObjectDef.get(style.doorId2).reversedConstructionDoor = true;
+            ObjectDefinition.get(style.doorId1).reversedConstructionDoor = true;
+            ObjectDefinition.get(style.doorId2).reversedConstructionDoor = true;
         }
     }
 }

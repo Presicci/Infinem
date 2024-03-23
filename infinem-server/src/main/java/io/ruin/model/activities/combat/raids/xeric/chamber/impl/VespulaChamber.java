@@ -1,6 +1,6 @@
 package io.ruin.model.activities.combat.raids.xeric.chamber.impl;
 
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.World;
 import io.ruin.model.activities.combat.raids.xeric.chamber.Chamber;
 import io.ruin.model.entity.npc.NPC;
@@ -90,7 +90,7 @@ public class VespulaChamber extends Chamber {
                    obj.setId(30068);
             });
         });
-        ObjectDef.get(30061).clipType = 1;
+        ObjectDefinition.get(30061).clipType = 1;
     }
 
     private NPC portal;

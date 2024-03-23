@@ -2,7 +2,7 @@ package io.ruin.model.skills.construction.room.impl;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.StringUtils;
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -313,7 +313,7 @@ public class PortalChamberRoom extends Room {
         for (PortalDestination pd : PortalDestination.values()) {
             String nameSearch = pd.name().replace('_', ' ') + " Portal";
             int[] portals = new int[3];
-            for (ObjectDef def : ObjectDef.LOADED.values()) {
+            for (ObjectDefinition def : ObjectDefinition.LOADED.values()) {
                 if (def == null || def.name == null || def.modelIds == null)
                     continue;
                 if (def.name.equalsIgnoreCase(nameSearch)) {

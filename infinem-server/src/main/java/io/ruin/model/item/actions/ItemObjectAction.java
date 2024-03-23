@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions;
 
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.object.GameObject;
@@ -16,12 +16,12 @@ public interface ItemObjectAction {
      */
 
     static void register(int objectId, ItemObjectAction action) {
-        ObjectDef objDef = ObjectDef.get(objectId);
+        ObjectDefinition objDef = ObjectDefinition.get(objectId);
         objDef.defaultItemAction = action;
     }
 
     static void register(String objectName, ItemObjectAction action) {
-        ObjectDef.forEach(objectDef -> {
+        ObjectDefinition.forEach(objectDef -> {
             if(objectDef.name.equalsIgnoreCase(objectName))
                 register(objectDef.id, action);
         });
@@ -36,14 +36,14 @@ public interface ItemObjectAction {
      */
 
     static void register(int itemId, int objectId, ItemObjectAction action) {
-        ObjectDef objDef = ObjectDef.get(objectId);
+        ObjectDefinition objDef = ObjectDefinition.get(objectId);
         if(objDef.itemActions == null)
             objDef.itemActions = new HashMap<>();
         objDef.itemActions.put(itemId, action);
     }
 
     static void register(int itemId, String objectName, ItemObjectAction action) {
-        ObjectDef.forEach(objDef -> {
+        ObjectDefinition.forEach(objDef -> {
             if(objDef.name.equalsIgnoreCase(objectName))
                 register(itemId, objDef.id, action);
         });
@@ -63,7 +63,7 @@ public interface ItemObjectAction {
         /**
          * Actions associated with the varpbit set showId.
          */
-        ObjectDef configDef = obj.getConfigDef(player);
+        ObjectDefinition configDef = obj.getConfigDef(player);
         if(configDef.itemActions != null) {
             ItemObjectAction action = configDef.itemActions.get(item.getId());
             if(action != null) {
@@ -93,7 +93,7 @@ public interface ItemObjectAction {
         /**
          * Actions shared by the given obj.
          */
-        ObjectDef def = obj.getDef();
+        ObjectDefinition def = obj.getDef();
         if(def.itemActions != null) {
             ItemObjectAction action = def.itemActions.get(item.getId());
             if(action != null) {

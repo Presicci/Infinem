@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.World;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
@@ -58,7 +58,7 @@ public class PrayerAltar {
         /**
          * Registering all prayer altars
          */
-        ObjectDef.forEach(def -> {
+        ObjectDefinition.forEach(def -> {
             if(def.hasOption("pray-at"))
                 ObjectAction.register(def.id, "pray-at", (player, obj) -> pray(player));
         });

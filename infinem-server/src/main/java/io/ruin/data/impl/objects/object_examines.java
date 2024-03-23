@@ -3,7 +3,7 @@ package io.ruin.data.impl.objects;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.JsonUtils;
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.data.DataFile;
 
 import java.io.File;
@@ -24,7 +24,7 @@ public class object_examines extends DataFile {
         List<Examine> examines = JsonUtils.fromJson(json, List.class, Examine.class);
         if (!Server.dataOnlyMode) {
             examines.forEach(examine -> {
-                ObjectDef.get(examine.id).examine = examine.examine;
+                ObjectDefinition.get(examine.id).examine = examine.examine;
             });
         }
         return examines;

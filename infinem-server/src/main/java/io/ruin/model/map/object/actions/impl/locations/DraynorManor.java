@@ -1,6 +1,5 @@
 package io.ruin.model.map.object.actions.impl.locations;
 
-import io.ruin.cache.ObjectDef;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;

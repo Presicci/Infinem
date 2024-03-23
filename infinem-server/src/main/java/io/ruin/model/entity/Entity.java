@@ -5,7 +5,7 @@ import io.ruin.Server;
 import io.ruin.api.utils.TemporaryAttributesHolder;
 import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.utility.Color;
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.World;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.Combat;
@@ -386,7 +386,7 @@ public abstract class Entity extends TemporaryAttributesHolder {
             /* object was removed */
             return;
         }
-        ObjectDef def = gameObject.getDef();
+        ObjectDefinition def = gameObject.getDef();
         int x = gameObject.x, y = gameObject.y;
         if(isAt(x, y) && gameObject.type <= 9) {//(gameObject.type == 0 || gameObject.type == 5)) {
             if(gameObject.direction == 0)

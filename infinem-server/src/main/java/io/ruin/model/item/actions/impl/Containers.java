@@ -1,7 +1,7 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.cache.def.ItemDefinition;
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
@@ -80,7 +80,7 @@ public enum Containers {
         /**
          * Water sources
          */
-        ObjectDef.forEach(objDef -> {
+        ObjectDefinition.forEach(objDef -> {
             String name = objDef.name;
             if (name.equalsIgnoreCase("sink") || name.equalsIgnoreCase("gold sink"))
                 for (Containers container : values())

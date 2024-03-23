@@ -2,7 +2,7 @@ package io.ruin.model.activities.combat.raids.xeric.chamber.combat;
 
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.World;
 import io.ruin.model.activities.combat.raids.xeric.chamber.Chamber;
 import io.ruin.model.combat.AttackStyle;
@@ -46,7 +46,7 @@ public class GreatOlm extends NPCCombat {
     };
 
     static {
-        ObjectDef.get(32297).clipType = 1; // force flame wall fire to clip tiles
+        ObjectDefinition.get(32297).clipType = 1; // force flame wall fire to clip tiles
         ObjectAction.register(32297, "douse", (player, obj) -> { // fire wall douse
             for (int i = 0; i < WATER_SPELLS.length; i++) { // combat spells
                 TargetSpell spell = WATER_SPELLS[i];

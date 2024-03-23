@@ -1,6 +1,6 @@
 package io.ruin.model.activities.cluescrolls;
 
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.content.activities.lms.LastManStanding;
 import io.ruin.model.activities.skilling.motherlodemine.MotherlodeMine;
 import io.ruin.model.inter.dialogue.ItemDialogue;
@@ -15,7 +15,7 @@ public class ClueObjects {
 		/*
 		 * Searchables
 		 */
-		ObjectDef.forEach(def -> {
+		ObjectDefinition.forEach(def -> {
 			if (def.name.equalsIgnoreCase("mine cart") || def.name.equalsIgnoreCase("bookcase")
 					|| def.name.equalsIgnoreCase("chest") || def.name.equalsIgnoreCase("open chest")
 					|| def.name.contains("wardrobe") || def.name.equalsIgnoreCase("drawers")

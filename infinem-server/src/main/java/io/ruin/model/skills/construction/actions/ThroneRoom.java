@@ -2,7 +2,7 @@ package io.ruin.model.skills.construction.actions;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -129,12 +129,12 @@ public class ThroneRoom {
     }
 
     static {
-        ObjectDef.get(13681).clipType = 1;
-        ObjectDef.get(13681).tall = true;
-        ObjectDef.get(13682).clipType = 1;
-        ObjectDef.get(13682).tall = true;
-        ObjectDef.get(13683).clipType = 1;
-        ObjectDef.get(13683).tall = true;
+        ObjectDefinition.get(13681).clipType = 1;
+        ObjectDefinition.get(13681).tall = true;
+        ObjectDefinition.get(13682).clipType = 1;
+        ObjectDefinition.get(13682).tall = true;
+        ObjectDefinition.get(13683).clipType = 1;
+        ObjectDefinition.get(13683).tall = true;
     }
 
     private static void activateTrap(Player player, Room room, Buildable trap) {

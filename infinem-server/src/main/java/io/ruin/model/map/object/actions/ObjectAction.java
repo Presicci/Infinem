@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions;
 
-import io.ruin.cache.ObjectDef;
+import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
@@ -18,14 +18,14 @@ public interface ObjectAction {
      */
 
     static void register(int objectId, int option, ObjectAction action) {
-        ObjectDef def = ObjectDef.get(objectId);
+        ObjectDefinition def = ObjectDefinition.get(objectId);
         if(def.defaultActions == null)
             def.defaultActions = new ObjectAction[5];
         def.defaultActions[option - 1] = action;
     }
 
     static boolean register(int objectId, String optionName, ObjectAction action) {
-        int option = ObjectDef.get(objectId).getOption(optionName);
+        int option = ObjectDefinition.get(objectId).getOption(optionName);
         if(option == -1)
             return false;
         register(objectId, option, action);
@@ -35,7 +35,7 @@ public interface ObjectAction {
     static void register(int objectId, Consumer<ObjectAction[]> actionsConsumer) {
         ObjectAction[] actions = new ObjectAction[6];
         actionsConsumer.accept(actions);
-        ObjectDef.get(objectId).defaultActions = Arrays.copyOfRange(actions, 1, actions.length);
+        ObjectDefinition.get(objectId).defaultActions = Arrays.copyOfRange(actions, 1, actions.length);
     }
 
     /**
@@ -43,21 +43,21 @@ public interface ObjectAction {
      */
 
     static void register(String objectName, int option, ObjectAction action) {
-        ObjectDef.forEach(def -> {
+        ObjectDefinition.forEach(def -> {
             if(def.name.equalsIgnoreCase(objectName))
                 register(def.id, option, action);
         });
     }
 
     static void register(String objectName, String optionName, ObjectAction action) {
-        ObjectDef.forEach(def -> {
+        ObjectDefinition.forEach(def -> {
             if(def.name.equalsIgnoreCase(objectName))
                 register(def.id, optionName, action);
         });
     }
 
     static void register(String objectName, Consumer<ObjectAction[]> actionsConsumer) {
-        ObjectDef.forEach(def -> {
+        ObjectDefinition.forEach(def -> {
             if(def.name.equalsIgnoreCase(objectName))
                 register(def.id, actionsConsumer);
         });
