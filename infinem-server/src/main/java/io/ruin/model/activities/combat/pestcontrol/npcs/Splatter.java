@@ -18,7 +18,7 @@ public class Splatter extends NPCCombat {
 
 	@Override
 	public void init() {
-		npc.deathStartListener = (entity, killer, hit) -> splat();
+		npc.deathStartListener = (entity, killer, killHit) -> splat();
 		npc.hitListener = new HitListener().postDamage((hit)-> {
 			Entity attacker = hit.attacker;
 			if (attacker != null && attacker.isPlayer()) {
@@ -32,7 +32,7 @@ public class Splatter extends NPCCombat {
 
 	@Override
 	public void follow() {
-		follow(10);
+		follow(1);
 	}
 
 	@Override
@@ -45,17 +45,22 @@ public class Splatter extends NPCCombat {
 	}
 
 	private void splat() {
-		npc.graphics(650);
-		npc.localPlayers().forEach(p -> {
-			if (Misc.getEffectiveDistance(npc, p) <= 1) {
-				p.hit(new Hit(npc).fixedDamage(Random.get(5, 24)));
-			}
+		npc.addEvent(e -> {
+			npc.publicSound(847);
+			e.delay(4);
+			npc.graphics(npc.getId() - 1039);
+			npc.localPlayers().forEach(p -> {
+				if (Misc.getEffectiveDistance(npc, p) <= 1) {
+					p.hit(new Hit(npc).fixedDamage(Random.get(5, 24)));
+				}
+			});
+			npc.localNpcs().forEach(n -> {
+				if (!Arrays.asList(2950, 2951, 2952, 2953).contains(n.getId()) // Can't hit the void knight
+						&& Misc.getEffectiveDistance(npc, n) <= 1) {
+					n.hit(new Hit(npc).fixedDamage(Random.get(5, 24)));
+				}
+			});
 		});
-		npc.localNpcs().forEach(n -> {
-			if (!Arrays.asList(2950, 2951, 2952, 2953).contains(n.getId()) // Can't hit the void knight
-					&& Misc.getEffectiveDistance(npc, n) <= 1) {
-				n.hit(new Hit(npc).fixedDamage(Random.get(5, 24)));
-			}
-		});
+
 	}
 }
