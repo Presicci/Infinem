@@ -2,7 +2,7 @@ package io.ruin.model.item.containers.collectionlog;
 
 import io.ruin.cache.def.EnumDefinition;
 import io.ruin.cache.def.ItemDefinition;
-import io.ruin.cache.Struct;
+import io.ruin.cache.def.StructDefinition;
 import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -310,12 +310,12 @@ public enum CollectionLogInfo {
 
     public static void collectAll(Player player) {
         for (CollectionLogInfo info : values()) {
-            Struct category = Struct.get(info.getCategoryStruct());
+            StructDefinition category = StructDefinition.get(info.getCategoryStruct());
 
             EnumDefinition subcategories = EnumDefinition.get(category.getInt(STRUCT_LOG_SUBCATEGORY));
 
             for (int slot = 0; slot < subcategories.length; slot++) {
-                Struct subcategory = Struct.get(subcategories.intValues[slot]);
+                StructDefinition subcategory = StructDefinition.get(subcategories.intValues[slot]);
 
                 EnumDefinition group = EnumDefinition.get(subcategory.getInt(STRUCT_LOG_GROUP));
                 info.items.put(subcategory.getInt(STRUCT_LOG_GROUP), group.intValues);
@@ -332,12 +332,12 @@ public enum CollectionLogInfo {
 
     static {
         for (CollectionLogInfo info : values()) {
-            Struct category = Struct.get(info.getCategoryStruct());
+            StructDefinition category = StructDefinition.get(info.getCategoryStruct());
 
             EnumDefinition subcategories = EnumDefinition.get(category.getInt(STRUCT_LOG_SUBCATEGORY));
 
             for (int slot = 0; slot < subcategories.length; slot++) {
-                Struct subcategory = Struct.get(subcategories.intValues[slot]);
+                StructDefinition subcategory = StructDefinition.get(subcategories.intValues[slot]);
 
                 EnumDefinition group = EnumDefinition.get(subcategory.getInt(STRUCT_LOG_GROUP));
                 info.items.put(subcategory.getInt(STRUCT_LOG_GROUP), group.intValues);

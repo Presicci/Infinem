@@ -1,4 +1,4 @@
-package io.ruin.cache;
+package io.ruin.cache.def;
 
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
@@ -8,12 +8,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class Struct {
+public class StructDefinition {
 
-    public static Struct get(int id) {
+    public static StructDefinition get(int id) {
         IndexFile index = Server.fileStore.get(2);
         byte[] data = index.getFile(34, id);
-        Struct struct = new Struct();
+        StructDefinition struct = new StructDefinition();
         if (data != null)
             struct.decode(new InBuffer(data));
         return struct;
