@@ -37,15 +37,7 @@ public class Defiler extends NPCCombat {
 	@Override
 	public boolean attack() {
 		if (withinDistance(8)) {
-			if (Random.rollDie(2, 1)) {
-				if (withinDistance(1)) {
-					basicAttack();
-				} else {
-					rangedAttack();
-				}
-			} else {
-				rangedAttack();
-			}
+			rangedAttack();
 			return true;
 		}
 		return false;
