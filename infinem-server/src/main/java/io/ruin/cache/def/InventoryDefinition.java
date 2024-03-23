@@ -1,4 +1,4 @@
-package io.ruin.cache;
+package io.ruin.cache.def;
 
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
@@ -10,16 +10,16 @@ import io.ruin.cache.type.GroupType;
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 11/23/2023
  */
-public class InventoryDef {
+public class InventoryDefinition {
 
-    public static InventoryDef[] LOADED;
+    public static InventoryDefinition[] LOADED;
 
     public static void load() {
         IndexFile index = Server.fileStore.get(ArchiveType.CONFIGS.getId());
-        LOADED = new InventoryDef[index.getLastFileId(GroupType.INV.getId()) + 1];
+        LOADED = new InventoryDefinition[index.getLastFileId(GroupType.INV.getId()) + 1];
         for(int id = 0; id < LOADED.length; id++) {
             byte[] data = index.getFile(GroupType.INV.getId(), id);
-            InventoryDef def = new InventoryDef();
+            InventoryDefinition def = new InventoryDefinition();
             def.id = id;
             def.decode(new InBuffer(data));
             LOADED[id] = def;
@@ -43,7 +43,7 @@ public class InventoryDef {
         }
     }
 
-    public static InventoryDef get(int id) {
+    public static InventoryDefinition get(int id) {
         if (id < 0 || id >= LOADED.length) {
             return null;
         }
@@ -51,7 +51,7 @@ public class InventoryDef {
     }
 
     public static int getSize(int id) {
-        InventoryDef def = get(id);
+        InventoryDefinition def = get(id);
         return def == null ? 0 : def.size;
     }
 

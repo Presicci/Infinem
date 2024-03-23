@@ -130,7 +130,7 @@ public class Server extends ServerWrapper {
             IdentityKitDefinition.load();
             AnimationDefinition.load();
             GfxDefinition.load();
-            InventoryDef.load();
+            InventoryDefinition.load();
             ScriptDefinition.load();
             InterfaceDefinition.load();
             ItemDef.load();

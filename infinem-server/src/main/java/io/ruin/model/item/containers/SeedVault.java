@@ -1,6 +1,6 @@
 package io.ruin.model.item.containers;
 
-import io.ruin.cache.InventoryDef;
+import io.ruin.cache.def.InventoryDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.*;
 import io.ruin.model.inter.actions.DefaultAction;
@@ -312,7 +312,7 @@ public class SeedVault extends ItemContainer {
                     Item toItem = player.getSeedVault().getSafe(toSlot);
                     SeedVault vault = player.getSeedVault();
                     // Favorite slot
-                    if (toSlot == InventoryDef.getSize(626)) {
+                    if (toSlot == InventoryDefinition.getSize(626)) {
                         vault.favorite(fromSlot);
                         vault.send(player);
                         return;
