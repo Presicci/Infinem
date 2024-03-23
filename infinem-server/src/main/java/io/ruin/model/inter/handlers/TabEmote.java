@@ -1,7 +1,7 @@
 package io.ruin.model.inter.handlers;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.AnimDef;
+import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;
@@ -92,7 +92,7 @@ public enum TabEmote {
             player.graphics(skillCapeGraphic(player));
             player.startEvent(event -> {
                 player.lock();
-                AnimDef def = AnimDef.get(emote);
+                AnimationDefinition def = AnimationDefinition.get(emote);
                 if (def != null)
                     event.delay(def.getTickDelay());
                 player.unlock();
@@ -121,7 +121,7 @@ public enum TabEmote {
             tile.emoteAction.accept(player, this);
         }
         // Emote delay
-        AnimDef def = AnimDef.get(animationID);
+        AnimationDefinition def = AnimationDefinition.get(animationID);
         if (def != null)
             player.emoteDelay.delay(def.getTickDelay());
 

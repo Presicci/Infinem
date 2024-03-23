@@ -3,7 +3,7 @@ package io.ruin.model.entity;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.TemporaryAttributesHolder;
-import io.ruin.cache.AnimDef;
+import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.utility.Color;
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.World;
@@ -329,7 +329,7 @@ public abstract class Entity extends TemporaryAttributesHolder {
 
     public int animate(int id, int delay) {
         if (isPlayer() && player.getAppearance().getNpcId() != -1) return 0;
-        AnimDef def = AnimDef.get(id);
+        AnimationDefinition def = AnimationDefinition.get(id);
         if (def != null) {
             animTick = Server.currentTick() + def.getDuration();
         }

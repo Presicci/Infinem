@@ -1,7 +1,7 @@
 package io.ruin.model.skills.construction;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.AnimDef;
+import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.combat.raids.xeric.ChambersOfXeric;
 import io.ruin.model.activities.combat.raids.xeric.RaidStorage;
@@ -702,7 +702,7 @@ public enum Buildable {
         this.builtObjects = builtObjects;
         this.upgradeFrom = upgradeFrom;
         this.materials = Arrays.stream(materials).collect(Collectors.toList());
-        this.requireTools = animation != -1 && AnimDef.get(animation).rightHandItem == (Tool.HAMMER + 512);
+        this.requireTools = animation != -1 && AnimationDefinition.get(animation).rightHandItem == (Tool.HAMMER + 512);
         this.xp = xp;
         StringBuilder sb = new StringBuilder();
         sb.append(ItemDef.get(itemId).name);

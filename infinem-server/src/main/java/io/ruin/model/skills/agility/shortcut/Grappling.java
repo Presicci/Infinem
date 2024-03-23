@@ -1,6 +1,5 @@
 package io.ruin.model.skills.agility.shortcut;
 
-import io.ruin.cache.AnimDef;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Items;
 import io.ruin.model.map.Position;

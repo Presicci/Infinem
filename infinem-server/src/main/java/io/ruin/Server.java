@@ -9,6 +9,7 @@ import io.ruin.api.netty.NettyServer;
 import io.ruin.api.process.ProcessWorker;
 import io.ruin.api.utils.*;
 import io.ruin.cache.*;
+import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.data.DataFile;
 import io.ruin.data.impl.login_set;
 import io.ruin.data.yaml.YamlLoader;
@@ -127,7 +128,7 @@ public class Server extends ServerWrapper {
             dataFolder = FileUtils.get(properties.getProperty("data_path"));
             Varpbit.load();
             IdentityKit.load();
-            AnimDef.load();
+            AnimationDefinition.load();
             GfxDef.load();
             InventoryDef.load();
             ScriptDef.load();

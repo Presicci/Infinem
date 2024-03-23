@@ -1,4 +1,4 @@
-package io.ruin.cache;
+package io.ruin.cache.def;
 
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
@@ -6,16 +6,16 @@ import io.ruin.api.filestore.IndexFile;
 
 import java.util.*;
 
-public class AnimDef {
+public class AnimationDefinition {
 
-    public static AnimDef[] LOADED;
+    public static AnimationDefinition[] LOADED;
 
     public static void load() {
         IndexFile index = Server.fileStore.get(2);
-        LOADED = new AnimDef[index.getLastFileId(12) + 1];
+        LOADED = new AnimationDefinition[index.getLastFileId(12) + 1];
         for(int id = 0; id < LOADED.length; id++) {
             byte[] data = index.getFile(12, id);
-            AnimDef def = new AnimDef();
+            AnimationDefinition def = new AnimationDefinition();
             def.id = id;
             def.method4576(new InBuffer(data));
             def.method4578();
@@ -23,7 +23,7 @@ public class AnimDef {
         }
     }
 
-    public static AnimDef get(int id) {
+    public static AnimationDefinition get(int id) {
         if(id < 0 || id >= LOADED.length)
             return null;
         return LOADED[id];
@@ -146,7 +146,7 @@ public class AnimDef {
         HashSet<Integer> skeletons = new HashSet<>();
         for (int srcAnim : ids) {
             if (srcAnim != -1) {
-                AnimDef anim = AnimDef.get(srcAnim);
+                AnimationDefinition anim = AnimationDefinition.get(srcAnim);
                 if (anim == null)
                     continue;
                 if (anim.frameData == null)
@@ -161,7 +161,7 @@ public class AnimDef {
         }
         SortedSet<Integer> results = new TreeSet<>();
         anim_loop:
-        for (AnimDef anim : AnimDef.LOADED) {
+        for (AnimationDefinition anim : AnimationDefinition.LOADED) {
             if (anim == null || anim.frameData == null)
                 continue;
             for (int frame : anim.frameData)

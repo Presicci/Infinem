@@ -6,7 +6,7 @@ import io.ruin.Server;
 import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.utils.*;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.AnimDef;
+import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.utility.Color;
 import io.ruin.cache.InterfaceDef;
 import io.ruin.cache.Varp;
@@ -1888,7 +1888,7 @@ public class Player extends PlayerAttributes {
     public void npcAnimate(int id, int... npcIds) {
         int playerId = player.getAppearance().getNpcId();
         if (!isPlayer() || Arrays.stream(npcIds).noneMatch(i -> i == playerId)) return;
-        AnimDef def = AnimDef.get(id);
+        AnimationDefinition def = AnimationDefinition.get(id);
         if (def != null) {
             animTick = Server.currentTick() + def.getDuration();
         }

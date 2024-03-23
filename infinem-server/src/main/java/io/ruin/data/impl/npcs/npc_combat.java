@@ -3,7 +3,7 @@ package io.ruin.data.impl.npcs;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.*;
-import io.ruin.cache.AnimDef;
+import io.ruin.cache.def.AnimationDefinition;
 import io.ruin.cache.NPCDef;
 import io.ruin.data.DataFile;
 import io.ruin.model.combat.AttackStyle;
@@ -823,7 +823,7 @@ public class npc_combat extends DataFile {
                     newInfo.death_animation = oldInfo == null ? -1 : oldInfo.death_animation;
 
                     NPCDef def = NPCDef.get(npcIds.get(0));
-                    SortedSet<Integer> anims = AnimDef.findAnimationsWithSameRigging(def.walkAnimation, def.standAnimation, def.walkBackAnimation, def.walkLeftAnimation, def.walkRightAnimation);
+                    SortedSet<Integer> anims = AnimationDefinition.findAnimationsWithSameRigging(def.walkAnimation, def.standAnimation, def.walkBackAnimation, def.walkLeftAnimation, def.walkRightAnimation);
                     if(anims != null && anims.contains(836)) { //human like npc
                         if(newInfo.attack_animation == -1)
                             newInfo.attack_animation = 422;
