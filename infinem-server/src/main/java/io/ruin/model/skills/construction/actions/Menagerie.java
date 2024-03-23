@@ -1,7 +1,7 @@
 package io.ruin.model.skills.construction.actions;
 
 import io.ruin.cache.def.EnumDefinition;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.construction.Buildable;
@@ -17,7 +17,7 @@ public class Menagerie {
         StringBuilder sb = new StringBuilder();
         for(int key : map.keys) {
             int itemId = map.intValues[key];
-            ItemDef def = ItemDef.get(itemId);
+            ItemDefinition def = ItemDefinition.get(itemId);
             if(def.pet == null) {
                 System.err.println(def.name + " (" + itemId + ") pet not supported!");
                 continue;

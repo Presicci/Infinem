@@ -1,7 +1,7 @@
 package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.item.Item;
@@ -25,7 +25,7 @@ public class ThammaronsSceptre {
         ItemAction.registerInventory(CHARGED, "uncharge", ThammaronsSceptre::uncharge);
         ItemItemAction.register(CHARGED, REVENANT_ETHER, ThammaronsSceptre::charge);
         ItemItemAction.register(UNCHARGED, REVENANT_ETHER, ThammaronsSceptre::charge);
-        ItemDef.get(CHARGED).addPreTargetDefendListener((player, item, hit, target) -> {
+        ItemDefinition.get(CHARGED).addPreTargetDefendListener((player, item, hit, target) -> {
             if (hit.attackStyle != null && hit.attackStyle.isMagic() && target.npc != null && player.wildernessLevel > 0) {
                 if(consumeCharge(player, item)) {
                     hit.boostAttack(1); //100% accuracy increase

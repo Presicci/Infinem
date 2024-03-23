@@ -3,7 +3,7 @@ package io.ruin.model.item.loot;
 import com.google.common.collect.Maps;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.item.Item;
 import io.ruin.utility.Broadcast;
 
@@ -63,9 +63,9 @@ public class LootItem {
     }
 
     public String getName() {
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         if(def.isNote())
-            return ItemDef.get(def.notedId).name + " (noted)";
+            return ItemDefinition.get(def.notedId).name + " (noted)";
         return def.name;
     }
 

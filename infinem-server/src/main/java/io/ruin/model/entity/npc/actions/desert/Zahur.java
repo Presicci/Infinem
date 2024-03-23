@@ -1,7 +1,7 @@
 package io.ruin.model.entity.npc.actions.desert;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -34,8 +34,8 @@ public class Zahur {
         }
         //if (AreaReward.ZAHUR_CLEAN_HERB.hasReward(player)) {
             for (Herb herb : Herb.values()) {
-                if (player.getInventory().hasId(ItemDef.get(herb.grimyId).notedId)) {
-                    clean(player, npc, ItemDef.get(herb.grimyId).notedId, ItemDef.get(herb.cleanId).notedId, false);
+                if (player.getInventory().hasId(ItemDefinition.get(herb.grimyId).notedId)) {
+                    clean(player, npc, ItemDefinition.get(herb.grimyId).notedId, ItemDefinition.get(herb.cleanId).notedId, false);
                 }
             }
         //}
@@ -57,12 +57,12 @@ public class Zahur {
         }
         if (herbAmt == 0) {
             if (message)
-                player.dialogue(new NPCDialogue(npc, "You don't have any " + ItemDef.get(herbId).name + " for me to clean."));
+                player.dialogue(new NPCDialogue(npc, "You don't have any " + ItemDefinition.get(herbId).name + " for me to clean."));
             return;
         }
         if (message) {
             player.dialogue(
-                    new NPCDialogue(npc, "Would you like me to clean " + NumberUtils.formatNumber(possibleAmt) + " " + ItemDef.get(herbId).name + " for you? It'll cost you " + possibleAmt * 200 + " coins."),
+                    new NPCDialogue(npc, "Would you like me to clean " + NumberUtils.formatNumber(possibleAmt) + " " + ItemDefinition.get(herbId).name + " for you? It'll cost you " + possibleAmt * 200 + " coins."),
                     new OptionsDialogue(
                             new Option("Yes", () -> {
                                 if (!cleanHerb(player, possibleAmt, herbId, cleanId)) return;
@@ -98,7 +98,7 @@ public class Zahur {
             return;
         }
         for (Herb herb : Herb.values()) {
-            if (player.getInventory().hasId(ItemDef.get(herb.cleanId).notedId)) {
+            if (player.getInventory().hasId(ItemDefinition.get(herb.cleanId).notedId)) {
                 makeUnfinished(player, npc, herb, false);
             }
         }
@@ -116,8 +116,8 @@ public class Zahur {
     private static void makeUnfinished(Player player, NPC npc, Herb herb, boolean message) {
         if (message && !HerbloreSkillCape.wearingHerbloreCape(player) && !AreaReward.ZAHUR_UNFINISHED_POTIONS.checkReward(player, "have Zahur make unfinished potions for you."))
             return;
-        int herbId = ItemDef.get(herb.cleanId).notedId;
-        int unfId = ItemDef.get(herb.unfId).notedId;
+        int herbId = ItemDefinition.get(herb.cleanId).notedId;
+        int unfId = ItemDefinition.get(herb.unfId).notedId;
         int vialAmt = player.getInventory().getAmount(Items.VIAL_OF_WATER_NOTE);
         int herbAmt = player.getInventory().getAmount(herbId);
         int affordableAmt = player.getInventory().getAmount(995) / 200;
@@ -139,7 +139,7 @@ public class Zahur {
         }
         if (message) {
             player.dialogue(
-                    new NPCDialogue(npc, "Would you like me to make " + NumberUtils.formatNumber(possibleAmt) + " " + ItemDef.get(herb.unfId).name + " for you? It'll cost you " + possibleAmt * 200 + " coins."),
+                    new NPCDialogue(npc, "Would you like me to make " + NumberUtils.formatNumber(possibleAmt) + " " + ItemDefinition.get(herb.unfId).name + " for you? It'll cost you " + possibleAmt * 200 + " coins."),
                     new OptionsDialogue(
                             new Option("Yes", () -> {
                                 if (!mixUnfinished(player, possibleAmt, herbId, unfId)) return;
@@ -183,9 +183,9 @@ public class Zahur {
         NPCAction.register(4753, "clean", Zahur::clean);
         NPCAction.register(4753, "make unfinished potion(s)", Zahur::makeUnfinished);
         for (Herb herb : Herb.values()) {
-            ItemNPCAction.register(ItemDef.get(herb.cleanId).notedId, 4753, (player, item, npc) -> makeUnfinished(player, npc, herb, true));
+            ItemNPCAction.register(ItemDefinition.get(herb.cleanId).notedId, 4753, (player, item, npc) -> makeUnfinished(player, npc, herb, true));
             ItemNPCAction.register(herb.grimyId, 4753, (player, item, npc) -> clean(player, npc, herb.grimyId, herb.cleanId, true));
-            ItemNPCAction.register(ItemDef.get(herb.grimyId).notedId, 4753, (player, item, npc) -> {
+            ItemNPCAction.register(ItemDefinition.get(herb.grimyId).notedId, 4753, (player, item, npc) -> {
                 //if (AreaReward.ZAHUR_CLEAN_HERB.checkReward(player, "have Zahur clean noted herbs for you."))
                     clean(player, npc, herb.grimyId, herb.cleanId, true);
             });

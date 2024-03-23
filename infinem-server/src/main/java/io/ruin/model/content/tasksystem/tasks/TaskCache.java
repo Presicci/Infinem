@@ -2,7 +2,7 @@ package io.ruin.model.content.tasksystem.tasks;
 
 import io.ruin.Server;
 import io.ruin.api.database.DatabaseUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -28,7 +28,7 @@ public class TaskCache {
                         String[] triggers = triggerString.trim().split(",");
                         for (String s : triggers) {
                             Pattern pattern = Pattern.compile(s, Pattern.CASE_INSENSITIVE);
-                            ItemDef.forEach(e -> {
+                            ItemDefinition.forEach(e -> {
                                 if (pattern.matcher(e.name.toLowerCase()).find())
                                     e.custom_values.put("UNLOCKITEMREGEX", uuid);
                             });

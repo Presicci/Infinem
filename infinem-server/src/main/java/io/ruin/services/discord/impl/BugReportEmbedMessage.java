@@ -1,7 +1,7 @@
 package io.ruin.services.discord.impl;
 
 import io.ruin.api.utils.ServerWrapper;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
@@ -32,7 +32,7 @@ public class BugReportEmbedMessage {
                 inventoryItems.append(", ");
                 inventoryItems.append(item.getAmount());
                 inventoryItems.append("\t\t(");
-                inventoryItems.append(ItemDef.get(item.getId()).name);
+                inventoryItems.append(ItemDefinition.get(item.getId()).name);
                 inventoryItems.append(")\n");
             }
             StringBuilder equipmentItems = new StringBuilder();
@@ -42,7 +42,7 @@ public class BugReportEmbedMessage {
                 equipmentItems.append(", ");
                 equipmentItems.append(item.getAmount());
                 equipmentItems.append("\t\t(");
-                equipmentItems.append(ItemDef.get(item.getId()).name);
+                equipmentItems.append(ItemDefinition.get(item.getId()).name);
                 equipmentItems.append(")\n");
             }
 

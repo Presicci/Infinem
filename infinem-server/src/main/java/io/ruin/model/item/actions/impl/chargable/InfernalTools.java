@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Tuple;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -55,7 +55,7 @@ public enum InfernalTools {
             System.err.println("Tried to charge while tool already had charges! player: " + player.getName() + ", tool: " + this);
             return;
         }
-        player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Sacrifice the " + itemUsedToCharge.getDef().name + " to add 5,000 charges to your " + ItemDef.get(infernalTool).name + "?", itemUsedToCharge.getId(), 1, () -> {
+        player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Sacrifice the " + itemUsedToCharge.getDef().name + " to add 5,000 charges to your " + ItemDefinition.get(infernalTool).name + "?", itemUsedToCharge.getId(), 1, () -> {
                     tool.setId(infernalTool);
                     tool.putAttribute(AttributeTypes.CHARGES, MAX_CHARGES);
                     itemUsedToCharge.remove(1);
@@ -94,14 +94,14 @@ public enum InfernalTools {
 
     private void create(Player player, Item tool, Item smoulderingStone) {
         if (player.getStats().get(stats.first()).currentLevel < statRequirements.first()) {
-            player.dialogue(new MessageDialogue("You need a " + stats.first() + " level of " +statRequirements.first() + " to create an " + ItemDef.get(infernalTool).name + "."));
+            player.dialogue(new MessageDialogue("You need a " + stats.first() + " level of " +statRequirements.first() + " to create an " + ItemDefinition.get(infernalTool).name + "."));
             return;
         }
         if (player.getStats().get(stats.second()).currentLevel < statRequirements.second()) {
-            player.dialogue(new MessageDialogue("You need a " + stats.second() + " level of " +statRequirements.second() + " to create an " + ItemDef.get(infernalTool).name + "."));
+            player.dialogue(new MessageDialogue("You need a " + stats.second() + " level of " +statRequirements.second() + " to create an " + ItemDefinition.get(infernalTool).name + "."));
             return;
         }
-        player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Convert your " + tool.getDef().name + " into an " + ItemDef.get(infernalTool).name + "?<br>This process is irreversible.", infernalTool, 1, () -> {
+        player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Convert your " + tool.getDef().name + " into an " + ItemDefinition.get(infernalTool).name + "?<br>This process is irreversible.", infernalTool, 1, () -> {
                     smoulderingStone.remove();
                     tool.setId(infernalTool);
                     tool.putAttribute(AttributeTypes.CHARGES, MAX_CHARGES);
@@ -109,7 +109,7 @@ public enum InfernalTools {
                     player.graphics(GRAPHIC);
                     player.getStats().addXp(stats.first(), 200, true);
                     player.getStats().addXp(stats.second(), 350, true);
-                    player.dialogue(new ItemDialogue().one(infernalTool, "You infuse the smouldering stone into the " + ItemDef.get(dragonTool).name + " to make an " + ItemDef.get(infernalTool).name + "."));
+                    player.dialogue(new ItemDialogue().one(infernalTool, "You infuse the smouldering stone into the " + ItemDefinition.get(dragonTool).name + " to make an " + ItemDefinition.get(infernalTool).name + "."));
                 })
         );
     }

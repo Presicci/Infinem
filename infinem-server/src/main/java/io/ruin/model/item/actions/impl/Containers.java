@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
@@ -49,7 +49,7 @@ public enum Containers {
     Containers(int empty, int full) {
         this.empty = empty;
         this.full = full;
-        this.name = ItemDef.get(empty).name.toLowerCase();
+        this.name = ItemDefinition.get(empty).name.toLowerCase();
     }
 
     public enum WaterSource {

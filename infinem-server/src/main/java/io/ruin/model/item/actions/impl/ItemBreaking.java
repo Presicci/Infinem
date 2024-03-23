@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.npc.actions.RepairNPC;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.item.actions.ItemObjectAction;
@@ -74,7 +74,7 @@ public enum ItemBreaking {
         this.bmRepairCost = bmRepairCost;
         this.coinRepairCost = coinRepairCost;
         this.freeFromShops = freeFromShops;
-        ItemDef.get(fixedId).breakTo = this;
+        ItemDefinition.get(fixedId).breakTo = this;
     }
 
     static {

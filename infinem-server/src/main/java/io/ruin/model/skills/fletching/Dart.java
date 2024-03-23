@@ -1,6 +1,6 @@
 package io.ruin.model.skills.fletching;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
@@ -45,7 +45,7 @@ public enum Dart {
         this.xp = xp;
         this.unfinishedId = tipId;
         this.finishedId = dartId;
-        this.pluralName = ItemDef.get(dartId).name.toLowerCase() + (ItemDef.get(dartId).name.endsWith("s") ? "" : "s");
+        this.pluralName = ItemDefinition.get(dartId).name.toLowerCase() + (ItemDefinition.get(dartId).name.endsWith("s") ? "" : "s");
         this.emote = emote;
     }
 

@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
@@ -15,7 +15,7 @@ public class PKModeItems {
 	static {
 		for (int itemId : ITEMS) {
 			ItemAction.registerInventory(itemId, 4, PKModeItems::examine);
-			ItemDef.get(itemId).addPostTargetDefendListener((player, item, hit, target) -> {
+			ItemDefinition.get(itemId).addPostTargetDefendListener((player, item, hit, target) -> {
 				int charges = AttributeExtensions.getCharges(item);
 				if (--charges <= 0) {
 					item.remove();

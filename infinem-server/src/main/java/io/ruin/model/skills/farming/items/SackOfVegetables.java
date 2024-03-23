@@ -1,6 +1,6 @@
 package io.ruin.model.skills.farming.items;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
@@ -38,7 +38,7 @@ public class SackOfVegetables {
         } else {
             item.setId(item.getId() - (withdrawAmount * 2));
         }
-        player.sendMessage("You empty " + withdrawAmount + " " + ItemDef.get(sack.veggieId).name.toLowerCase() + "" + (withdrawAmount > 1 ? "s" : "") + " from the sack.");
+        player.sendMessage("You empty " + withdrawAmount + " " + ItemDefinition.get(sack.veggieId).name.toLowerCase() + "" + (withdrawAmount > 1 ? "s" : "") + " from the sack.");
     }
 
     private static void fillBasket(Player player, Item item, Sacks sack) {
@@ -56,7 +56,7 @@ public class SackOfVegetables {
         }
         player.getInventory().remove(sack.veggieId, fillAmount);
         item.setId(item.getId() + (fillAmount * 2));
-        player.sendMessage("You add " + fillAmount + " " + ItemDef.get(sack.veggieId).name.toLowerCase() + "" + (fillAmount > 1 ? "s" : "") + " to the sack.");
+        player.sendMessage("You add " + fillAmount + " " + ItemDefinition.get(sack.veggieId).name.toLowerCase() + "" + (fillAmount > 1 ? "s" : "") + " to the sack.");
     }
 
     private static void fillFromEmpty(Player player, Item item) {
@@ -84,7 +84,7 @@ public class SackOfVegetables {
         }
         player.getInventory().remove(sack.veggieId, fillAmount);
         item.setId(item.getId() + (fillAmount * 2));
-        player.sendMessage("You add " + fillAmount + " " + ItemDef.get(sack.veggieId).name.toLowerCase() + "" + (fillAmount > 1 ? "s" : "") + " to the sack.");
+        player.sendMessage("You add " + fillAmount + " " + ItemDefinition.get(sack.veggieId).name.toLowerCase() + "" + (fillAmount > 1 ? "s" : "") + " to the sack.");
     }
 
     private static void addOne(Player player, Item item, Sacks sack) {
@@ -107,7 +107,7 @@ public class SackOfVegetables {
         } else {
             item.setId(item.getId() + (fillAmount * 2));
         }
-        player.sendMessage("You add one " + ItemDef.get(sack.veggieId).name.toLowerCase() + " to the sack.");
+        player.sendMessage("You add one " + ItemDefinition.get(sack.veggieId).name.toLowerCase() + " to the sack.");
     }
 
     private static void removeOne(Player player, Item item, Sacks sack) {
@@ -124,7 +124,7 @@ public class SackOfVegetables {
         } else {
             item.setId(item.getId() - (withdrawAmount * 2));
         }
-        player.sendMessage("You take one " + ItemDef.get(sack.veggieId).name.toLowerCase() + " from the sack.");
+        player.sendMessage("You take one " + ItemDefinition.get(sack.veggieId).name.toLowerCase() + " from the sack.");
     }
 
     private static boolean isFull(Item item, Sacks sack) {

@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.storage;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
@@ -54,7 +54,7 @@ public class GemBag {
     private static void addToBag(Player player, int gemId, int amount) {
         int gemSize = amountStored(player, gemId);
         if (gemSize >= 60) {
-            player.sendFilteredMessage("Your gam bag cannot carry any more " + ItemDef.get(gemId).name.toLowerCase() + "s.");
+            player.sendFilteredMessage("Your gam bag cannot carry any more " + ItemDefinition.get(gemId).name.toLowerCase() + "s.");
             return;
         }
         int minToAdd = Math.min(amount, 60 - gemSize);
@@ -113,7 +113,7 @@ public class GemBag {
         int amount = 0;
         for (int gemId : GEMS) {
             int amountStored = amountStored(player, gemId);
-            sb.append(amountStored).append(" ").append(ItemDef.get(gemId).name.toLowerCase()).append("s").append(gemId == Items.UNCUT_DRAGONSTONE ? "." : ", ");
+            sb.append(amountStored).append(" ").append(ItemDefinition.get(gemId).name.toLowerCase()).append("s").append(gemId == Items.UNCUT_DRAGONSTONE ? "." : ", ");
             if (amountStored > 0)
                 amount++;
         }

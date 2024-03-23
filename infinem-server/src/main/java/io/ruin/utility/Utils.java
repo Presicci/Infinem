@@ -1,10 +1,8 @@
 package io.ruin.utility;
 
-import com.google.api.client.util.Strings;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.item.Item;
-import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.NonNull;
 import lombok.val;
 
@@ -82,7 +80,7 @@ public final class Utils {
         List<String> names = new ArrayList<>();
         for (Item item : items) {
             names.add(
-                    item.getAmount() > 1 ? (item.getAmount() + " " + ItemDef.get(item.getId()).name) : ItemDef.get(item.getId()).descriptiveName
+                    item.getAmount() > 1 ? (item.getAmount() + " " + ItemDefinition.get(item.getId()).name) : ItemDefinition.get(item.getId()).descriptiveName
             );
         }
         return names;
@@ -97,7 +95,7 @@ public final class Utils {
         List<String> names = new ArrayList<>();
         for (Item item : items) {
             names.add(
-                    item.getAmount() > 1 ? (item.getAmount() + " " + ItemDef.get(item.getId()).name + "s") : ItemDef.get(item.getId()).descriptiveName
+                    item.getAmount() > 1 ? (item.getAmount() + " " + ItemDefinition.get(item.getId()).name + "s") : ItemDefinition.get(item.getId()).descriptiveName
             );
         }
         return grammarCorrectList(names);
@@ -111,7 +109,7 @@ public final class Utils {
     public static String grammarCorrectListForItemIds(List<Integer> items) {
         List<String> names = new ArrayList<>();
         for (int itemId : items) {
-            names.add(ItemDef.get(itemId).descriptiveName);
+            names.add(ItemDefinition.get(itemId).descriptiveName);
         }
         return grammarCorrectList(names);
     }

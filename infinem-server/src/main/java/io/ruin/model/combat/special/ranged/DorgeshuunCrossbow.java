@@ -1,6 +1,6 @@
 package io.ruin.model.combat.special.ranged;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.Hit;
@@ -17,7 +17,7 @@ import io.ruin.model.stat.StatType;
 public class DorgeshuunCrossbow implements Special {
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return name.contains("dorgeshuun crossbow");
     }
 

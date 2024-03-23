@@ -1,4 +1,4 @@
-package io.ruin.cache;
+package io.ruin.cache.def;
 
 import com.google.common.collect.Maps;
 import io.ruin.Server;
@@ -41,9 +41,9 @@ import java.util.function.Consumer;
 
 import static io.ruin.cache.ItemID.BLOOD_FRAGMENT;
 
-public class ItemDef {
+public class ItemDefinition {
 
-    public static Map<Integer, ItemDef> cached = Maps.newConcurrentMap();
+    public static Map<Integer, ItemDefinition> cached = Maps.newConcurrentMap();
     public boolean collectable;
     private boolean currency;
     private boolean currencyChecked;
@@ -70,7 +70,7 @@ public class ItemDef {
         IndexFile index = Server.fileStore.get(2);
         int size = index.getLastFileId(10) + 1;
         for(int id = 0; id < size; id++) {
-            ItemDef def = new ItemDef();
+            ItemDefinition def = new ItemDefinition();
             def.id = id;
             byte[] data = index.getFile(10, def.id);
             if (data != null) {
@@ -88,15 +88,15 @@ public class ItemDef {
         }
     }
 
-    public static void forEach(Consumer<ItemDef> consumer) {
-        for(ItemDef def : cached.values()) {
+    public static void forEach(Consumer<ItemDefinition> consumer) {
+        for(ItemDefinition def : cached.values()) {
             if(def != null)
                 consumer.accept(def);
         }
     }
 
     public static int findId(String name) {
-        for(ItemDef def : cached.values()) {
+        for(ItemDefinition def : cached.values()) {
             if(def != null && def.name.toLowerCase().contains(name))
                 return def.id;
         }
@@ -104,7 +104,7 @@ public class ItemDef {
         return -1;
     }
 
-    public static ItemDef get(int id) {
+    public static ItemDefinition get(int id) {
         return cached.get(id);
     }
 
@@ -738,7 +738,7 @@ public class ItemDef {
         return notedId != -1 && notedTemplateId != -1;
     }
 
-    public ItemDef fromNote() {
+    public ItemDefinition fromNote() {
         return get(notedId);
     }
 
@@ -763,9 +763,9 @@ public class ItemDef {
     @FunctionalInterface
     public interface ItemDefPredicate {
 
-        boolean accept(ItemDef def, String name);
+        boolean accept(ItemDefinition def, String name);
 
-        default boolean test(ItemDef def) {
+        default boolean test(ItemDefinition def) {
             return accept(def, def.name.toLowerCase());
         }
 

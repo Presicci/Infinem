@@ -1,6 +1,6 @@
 package io.ruin.model.combat.npc.slayer;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.shared.listeners.HitListener;
@@ -11,7 +11,7 @@ public class LeafVulnerableMonster extends NPCCombat {// Turoths and Kurasks
 
     static {
         for (int i : Arrays.asList(4158, 11902, 20727, 4160, 11875, 21316)) // leaf-bladed/broad items
-            ItemDef.get(i).leafBladed = true;
+            ItemDefinition.get(i).leafBladed = true;
     }
 
     @Override

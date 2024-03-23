@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.teleport;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.*;
@@ -98,7 +98,7 @@ public class EnchantedLyre {
 
     private static void offerFish(Player player, int fishId) {
         if (!player.getInventory().contains(fishId)) {
-            player.dialogue(new NPCDialogue(FESSEGRIMEN, "You do not have a " + ItemDef.get(fishId).name + " to offer."));
+            player.dialogue(new NPCDialogue(FESSEGRIMEN, "You do not have a " + ItemDefinition.get(fishId).name + " to offer."));
             return;
         }
         Item lyre = player.getInventory().findItem(LYRES.get(0));

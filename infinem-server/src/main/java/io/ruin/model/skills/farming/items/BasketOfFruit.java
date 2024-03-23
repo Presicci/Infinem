@@ -1,6 +1,6 @@
 package io.ruin.model.skills.farming.items;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
@@ -40,7 +40,7 @@ public class BasketOfFruit {
         } else {
             item.setId(item.getId() - (withdrawAmount * 2));
         }
-        player.sendMessage("You empty " + withdrawAmount + " " + ItemDef.get(basket.fruitId).name.toLowerCase() + "" + (withdrawAmount > 1 ? "s" : "") + " from the basket.");
+        player.sendMessage("You empty " + withdrawAmount + " " + ItemDefinition.get(basket.fruitId).name.toLowerCase() + "" + (withdrawAmount > 1 ? "s" : "") + " from the basket.");
     }
 
     private static void fillBasket(Player player, Item item, Baskets basket) {
@@ -58,7 +58,7 @@ public class BasketOfFruit {
         }
         player.getInventory().remove(basket.fruitId, fillAmount);
         item.setId(item.getId() + (fillAmount * 2));
-        player.sendMessage("You add " + fillAmount + " " + ItemDef.get(basket.fruitId).name.toLowerCase() + "" + (fillAmount > 1 ? "s" : "") + " to the basket.");
+        player.sendMessage("You add " + fillAmount + " " + ItemDefinition.get(basket.fruitId).name.toLowerCase() + "" + (fillAmount > 1 ? "s" : "") + " to the basket.");
     }
 
     private static void fillFromEmpty(Player player, Item item) {
@@ -86,7 +86,7 @@ public class BasketOfFruit {
         }
         player.getInventory().remove(basket.fruitId, fillAmount);
         item.setId(item.getId() + (fillAmount * 2));
-        player.sendMessage("You add " + fillAmount + " " + ItemDef.get(basket.fruitId).name.toLowerCase() + "" + (fillAmount > 1 ? "s" : "") + " to the basket.");
+        player.sendMessage("You add " + fillAmount + " " + ItemDefinition.get(basket.fruitId).name.toLowerCase() + "" + (fillAmount > 1 ? "s" : "") + " to the basket.");
     }
 
     private static void addOne(Player player, Item item, Baskets basket) {
@@ -109,7 +109,7 @@ public class BasketOfFruit {
         } else {
             item.setId(item.getId() + (fillAmount * 2));
         }
-        player.sendMessage("You add one " + ItemDef.get(basket.fruitId).name.toLowerCase() + " to the basket.");
+        player.sendMessage("You add one " + ItemDefinition.get(basket.fruitId).name.toLowerCase() + " to the basket.");
     }
 
     private static void removeOne(Player player, Item item, Baskets basket) {
@@ -126,7 +126,7 @@ public class BasketOfFruit {
         } else {
             item.setId(item.getId() - (withdrawAmount * 2));
         }
-        player.sendMessage("You take one " + ItemDef.get(basket.fruitId).name.toLowerCase() + " from the basket.");
+        player.sendMessage("You take one " + ItemDefinition.get(basket.fruitId).name.toLowerCase() + " from the basket.");
     }
 
     private static boolean isFull(Item item, Baskets basket) {

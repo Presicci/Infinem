@@ -2,7 +2,7 @@ package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.Server;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.NPCDef;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
@@ -47,7 +47,7 @@ public class DropViewerSearch {
                             results.add(entry);
                     }
                 } else {
-                    ItemDef.forEach(itemDef -> {
+                    ItemDefinition.forEach(itemDef -> {
                         if (!formatForSearch(itemDef.name).contains(search))
                             return;
                         HashSet<NPCDef> npcDefs = DropViewer.drops.get(itemDef.id);

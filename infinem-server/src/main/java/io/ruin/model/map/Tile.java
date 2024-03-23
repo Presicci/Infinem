@@ -1,7 +1,7 @@
 package io.ruin.model.map;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.TabEmote;
@@ -193,7 +193,7 @@ public class Tile {
     public ArrayList<GroundItem> groundItems;
 
     public void addItem(GroundItem groundItem) {
-        if(ItemDef.get(groundItem.id).stackable) {
+        if(ItemDefinition.get(groundItem.id).stackable) {
             GroundItem stack = getItem(groundItem.id, groundItem.activeOwner);
             if(stack != null) {
                 stack.amount = NumberUtils.intSum(stack.amount, groundItem.amount);

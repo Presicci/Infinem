@@ -1,6 +1,6 @@
 package io.ruin.model.skills.construction.servants;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 
 public enum ServantAction { // for saving
     DEPOSIT,
@@ -9,7 +9,7 @@ public enum ServantAction { // for saving
     TAKE_TO_SAWMILL;
 
     public String toString(int itemId, int itemAmount) {
-        String item = itemAmount + " x " + ItemDef.get(itemId).name;
+        String item = itemAmount + " x " + ItemDefinition.get(itemId).name;
         switch (this) {
             case DEPOSIT:
                 return "Deposit in bank - " + item;

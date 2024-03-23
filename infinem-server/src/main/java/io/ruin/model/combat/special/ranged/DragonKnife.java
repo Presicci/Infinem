@@ -1,6 +1,6 @@
 package io.ruin.model.combat.special.ranged;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.Hit;
@@ -15,14 +15,14 @@ public class DragonKnife implements Special {
     private static final Projectile PROJECTILE = new Projectile(699, 40, 36, 15, 37, 5, 15, 11);//699 = spec proj  8291 = anim
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return def.id == 22804;
     }
 
     @Override
     public boolean handle(Player player, Entity victim, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
         // In place to allow weapon poison to work
-        ItemDef weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+        ItemDefinition weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
 
         int delay = PROJECTILE.send(player, victim);
         player.animate(8291);

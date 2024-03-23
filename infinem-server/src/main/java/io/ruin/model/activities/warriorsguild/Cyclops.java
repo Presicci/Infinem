@@ -1,7 +1,7 @@
 package io.ruin.model.activities.warriorsguild;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.npc.BasicCombat;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DeathListener;
@@ -26,7 +26,7 @@ public class Cyclops extends BasicCombat {
                     .position(npc.getPosition())
                     .spawn();
             killer.player.nextDefenderId = getNext(killer.player, killer.player.getHeight() == 0);
-            killer.player.sendMessage("<col=804080>The cyclops has dropped a " + ItemDef.get(defenderId).name + "."
+            killer.player.sendMessage("<col=804080>The cyclops has dropped a " + ItemDefinition.get(defenderId).name + "."
                     + (defenderId == DRAGON_DEFENDER ? "" : (defenderId == RUNE_DEFENDER ? " Head to the basement for a chance at a Dragon defender." : " Reenter the room to get the next tier defender.")));
         };
     }

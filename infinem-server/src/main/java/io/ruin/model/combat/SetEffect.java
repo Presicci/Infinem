@@ -1,7 +1,7 @@
 package io.ruin.model.combat;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -292,8 +292,8 @@ public enum SetEffect {
             this(slot, def -> def.name.toLowerCase().contains(name));
         }
 
-        public Piece(int slot, Predicate<ItemDef> predicate) {
-            this.ids = ItemDef.cached.values().stream().filter(predicate).map(def -> def.id).collect(Collectors.toList());
+        public Piece(int slot, Predicate<ItemDefinition> predicate) {
+            this.ids = ItemDefinition.cached.values().stream().filter(predicate).map(def -> def.id).collect(Collectors.toList());
             this.slot = slot;
         }
 

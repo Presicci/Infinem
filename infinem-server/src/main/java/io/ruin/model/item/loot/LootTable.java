@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.WebTable;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
@@ -388,7 +388,7 @@ public class LootTable {
             this.items = items;
             for(LootItem item : items) {
                 totalWeight += item.weight;
-                if(ItemDef.get(item.id) == null)
+                if(ItemDefinition.get(item.id) == null)
                     System.err.println("!!@@@@@@@@@@@@@@@@@@@@@@: " + item.id);
             }
         }

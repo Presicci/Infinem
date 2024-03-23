@@ -1,6 +1,6 @@
 package io.ruin.model.skills.cooking;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
@@ -28,7 +28,7 @@ public class JugOfWine {
                 player.getInventory().add(JUG_OF_WINE, 1);
                 player.getStats().addXp(StatType.Cooking, 200.0, true);
                 PlayerCounter.JUGS_OF_WINE_MADE.increment(player, 1);
-                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.COOKITEM, ItemDef.get(JUG_OF_WINE).name);
+                player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.COOKITEM, ItemDefinition.get(JUG_OF_WINE).name);
                 if (!player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     player.sendMessage("You squeeze the grapes into the jug. The wine begins to ferment.");
                     event.delay(2);

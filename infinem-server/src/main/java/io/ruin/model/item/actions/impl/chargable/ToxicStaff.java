@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.item.Item;
@@ -19,7 +19,7 @@ public class ToxicStaff {
 
     static {
         ItemAction.registerInventory(12932, "dismantle", SerpentineHelm::dismantle);
-        ItemDef.get(CHARGED).breakId = UNCHARGED;
+        ItemDefinition.get(CHARGED).breakId = UNCHARGED;
         ItemItemAction.register(11791, 12932, (player, primary, secondary) -> {
             player.dialogue(new YesNoDialogue("Are you sure you want to do this?",
                     "The staff will consume the magic fang.", secondary, () -> {
@@ -45,7 +45,7 @@ public class ToxicStaff {
         ItemAction.registerInventory(CHARGED, "check", ToxicStaff::check);
         ItemAction.registerEquipment(CHARGED, "check", ToxicStaff::check);
         ItemAction.registerInventory(CHARGED, "uncharge", ToxicStaff::uncharge);
-        ItemDef.get(CHARGED).addPostTargetDefendListener((player, item, hit, target) -> {
+        ItemDefinition.get(CHARGED).addPostTargetDefendListener((player, item, hit, target) -> {
             if(hit.attackSpell != null && Random.rollDie(4, 1))
                 target.envenom(6);
             int charges = getScalesAmount(item);

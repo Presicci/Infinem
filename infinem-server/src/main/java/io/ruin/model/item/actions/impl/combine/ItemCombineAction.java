@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.combine;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -370,7 +370,7 @@ public class ItemCombineAction {
                     ItemItemAction.register(mainId, itemId, (player, item1, item2) -> {
                         if (itemCombine.skillsRequired != null) {
                             for (SkillRequired skill : itemCombine.skillsRequired) {
-                                if(!player.getStats().check(skill.statType, skill.levelReq, itemReqs.get(0).replacement.getId(), "make the " + ItemDef.get(itemReqs.get(0).replacement.getId()) + ""))
+                                if(!player.getStats().check(skill.statType, skill.levelReq, itemReqs.get(0).replacement.getId(), "make the " + ItemDefinition.get(itemReqs.get(0).replacement.getId()) + ""))
                                     return;
                             }
                         }

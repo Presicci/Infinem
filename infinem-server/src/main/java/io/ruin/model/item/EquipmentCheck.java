@@ -1,6 +1,6 @@
 package io.ruin.model.item;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 
@@ -22,7 +22,7 @@ public class EquipmentCheck implements BiPredicate<Entity, Entity> {
     public EquipmentCheck(String message, int... itemIds) {
         this.message = message;
         for (int id: itemIds) {
-            ItemDef def = ItemDef.get(id);
+            ItemDefinition def = ItemDefinition.get(id);
             if (def == null || def.equipSlot == -1)
                 throw new IllegalArgumentException("invalid item given for equipment check: " + id);
             int slot = def.equipSlot;

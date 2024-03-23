@@ -1,6 +1,6 @@
 package io.ruin.model.combat.special.ranged;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.Hit;
@@ -19,14 +19,14 @@ public class DragonCrossbow implements Special {
     private static final Projectile PROJECTILE = new Projectile(698, 38, 36, 41, 51, 5, 5, 11);
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return def.id == 21902;
     }
 
     @Override
     public boolean handle(Player player, Entity victim, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
         // In place to allow weapon poison to work
-        ItemDef ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
+        ItemDefinition ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
 
         int delay = PROJECTILE.send(player, victim);
         victim.hit(new Hit(player, attackStyle, attackType).randDamage((int) (maxDamage * 1.2)).clientDelay(delay));

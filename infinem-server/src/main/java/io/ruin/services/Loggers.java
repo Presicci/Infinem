@@ -4,7 +4,7 @@ import io.ruin.Server;
 import io.ruin.api.database.DatabaseUtils;
 import io.ruin.api.utils.JsonUtils;
 import io.ruin.api.utils.ServerWrapper;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
@@ -316,7 +316,7 @@ public class Loggers extends DatabaseUtils {
                 statement.setString(2, userName);
                 statement.setString(3, userIp);
                 statement.setInt(4, itemId);
-                statement.setString(5, ItemDef.get(itemId).name);
+                statement.setString(5, ItemDefinition.get(itemId).name);
                 statement.setInt(6, itemAmount);
                 statement.setInt(7, x);
                 statement.setInt(8, y);
@@ -338,7 +338,7 @@ public class Loggers extends DatabaseUtils {
                 statement.setString(2, userName);
                 statement.setString(3, userIp);
                 statement.setInt(4, itemId);
-                statement.setString(5, ItemDef.get(itemId).name);
+                statement.setString(5, ItemDefinition.get(itemId).name);
                 statement.setInt(6, itemAmount);
                 statement.setInt(7, x);
                 statement.setInt(8, y);
@@ -367,7 +367,7 @@ public class Loggers extends DatabaseUtils {
                 statement.setString(6, dropperName);
                 statement.setInt(7, itemId);
                 statement.setInt(8, amount);
-                statement.setInt(9, ItemDef.get(itemId).protectValue * amount);
+                statement.setInt(9, ItemDefinition.get(itemId).protectValue * amount);
                 statement.setInt(10, x);
                 statement.setInt(11, y);
                 statement.setInt(12, z);
@@ -387,7 +387,7 @@ public class Loggers extends DatabaseUtils {
                 statement.setString(2, userName);
                 statement.setString(3, userIp);
                 statement.setInt(4, itemId);
-                statement.setString(5, ItemDef.get(itemId).name);
+                statement.setString(5, ItemDefinition.get(itemId).name);
                 statement.setInt(6, itemPrice);
                 statement.setInt(7, buyAmount);
                 statement.setInt(8, World.id);

@@ -3,7 +3,7 @@ package io.ruin.model.content.upgrade;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -69,7 +69,7 @@ public class UpgradeMachine {
         Item item = player.getInventory().get(slot);
         if (item == null)
             return;
-        ItemDef def = item.getDef();
+        ItemDefinition def = item.getDef();
         if (def != null && canSelect(def)) {
             player.getPacketSender().sendModel(Interface.UPGRADE_MACHINE, ITEM_PANE, def.inventoryModel);
             player.getPacketSender().sendModelInformation(Interface.UPGRADE_MACHINE, ITEM_PANE, (int) (def.zoom2d / ZOOM_SCALE), def.xan2d, def.yan2d);
@@ -239,7 +239,7 @@ public class UpgradeMachine {
     }
 
     //If the item clicked can be selected
-    private static boolean canSelect(ItemDef def) {
+    private static boolean canSelect(ItemDefinition def) {
         return (def.inventoryOptions != null && !def.stackable && Stream.of(def.inventoryOptions).filter(Objects::nonNull).anyMatch(s -> s.equalsIgnoreCase("wield") || s.equalsIgnoreCase("wear") || s.equalsIgnoreCase("equip"))) || allowUpgrade(def.id);
     }
 

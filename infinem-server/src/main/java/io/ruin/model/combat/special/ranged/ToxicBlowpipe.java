@@ -1,6 +1,6 @@
 package io.ruin.model.combat.special.ranged;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.special.Special;
@@ -15,7 +15,7 @@ public class ToxicBlowpipe implements Special {
     public static final Projectile SIPHON_PROJECTILE = new Projectile(1043, 35, 36, 32, 39, 3, 15, 105);
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return def.id == 12926;
     }
 

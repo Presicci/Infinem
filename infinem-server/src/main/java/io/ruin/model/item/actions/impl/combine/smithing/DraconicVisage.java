@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.combine.smithing;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.NpcID;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -10,7 +10,6 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.item.actions.ItemObjectAction;
-import io.ruin.model.skills.Tool;
 import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
@@ -27,7 +26,7 @@ public enum DraconicVisage {
         Item rightHalf = player.getInventory().findItem(secondary);
         if (!player.getStats().check(StatType.Smithing, 90, "forge this")) return;
         if(leftHalf == null || rightHalf == null) {
-            player.dialogue(new ItemDialogue().two(primary, secondary, "You need a draconic visage and " + ItemDef.get(secondary).descriptiveName + " to forge " + ItemDef.get(product).descriptiveName + "."));
+            player.dialogue(new ItemDialogue().two(primary, secondary, "You need a draconic visage and " + ItemDefinition.get(secondary).descriptiveName + " to forge " + ItemDefinition.get(product).descriptiveName + "."));
             return;
         }
         if(!SmithBar.hasHammer(player)) {
@@ -66,7 +65,7 @@ public enum DraconicVisage {
 
     private static void makeNPC(Player player, NPC npc, DraconicVisage shield) {
         player.dialogue(
-                new NPCDialogue(npc.getId(), "Would you like me to forge " + ItemDef.get(shield.product).descriptiveName
+                new NPCDialogue(npc.getId(), "Would you like me to forge " + ItemDefinition.get(shield.product).descriptiveName
                         + " for you? It is a lot of work and would cost you 1,250,000 coins."),
                 new OptionsDialogue(
                         new Option("Yes! (pay 1,250,000 coins)", () -> {

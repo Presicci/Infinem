@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.combine;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
@@ -98,7 +98,7 @@ public enum ItemCombining {
         this.accessoryId = accessoryId;
         this.combinedId = combinedId;
         this.reversible = reversible;
-        ItemDef.get(combinedId).combinedFrom = this;
+        ItemDefinition.get(combinedId).combinedFrom = this;
     }
 
     ItemCombining(int mainId, int accessoryId, int combinedId, boolean reversible, String dismantleString) {
@@ -131,7 +131,7 @@ public enum ItemCombining {
             new YesNoDialogue("Are you sure you want to do this?", itemCombining.dismantleString, itemCombining.mainId, 1, () -> {
                 player.getInventory().add(itemCombining.accessoryId);
                 item.setId(itemCombining.mainId);
-                new ItemDialogue().one(itemCombining.mainId, "You remove the " + ItemDef.get(itemCombining.accessoryId).name + " from the " + item.getDef().name + ".");
+                new ItemDialogue().one(itemCombining.mainId, "You remove the " + ItemDefinition.get(itemCombining.accessoryId).name + " from the " + item.getDef().name + ".");
             })
         );
     }
@@ -142,10 +142,10 @@ public enum ItemCombining {
             ItemAction.registerInventory(kit.combinedId, "dismantle", (player, item) -> revert(player, item, kit));
             ItemAction.registerInventory(kit.combinedId, "revert", (player, item) -> revert(player, item, kit));
             ItemAction.registerInventory(kit.combinedId, "dismantle kit", (player, item) -> revert(player, item, kit));
-            int combinedProtect = ItemDef.get(kit.combinedId).protectValue;
-            int componentsProtect = Math.max(ItemDef.get(kit.mainId).protectValue, ItemDef.get(kit.accessoryId).protectValue);
+            int combinedProtect = ItemDefinition.get(kit.combinedId).protectValue;
+            int componentsProtect = Math.max(ItemDefinition.get(kit.mainId).protectValue, ItemDefinition.get(kit.accessoryId).protectValue);
             if (combinedProtect < componentsProtect)
-                ItemDef.get(kit.combinedId).protectValue = componentsProtect;
+                ItemDefinition.get(kit.combinedId).protectValue = componentsProtect;
         }
     }
 

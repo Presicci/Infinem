@@ -1,7 +1,7 @@
 package io.ruin.model.skills.runecrafting;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
@@ -58,7 +58,7 @@ public enum Altars {
         this.levelRequirement = levelRequirement;
         this.experience = experience;
         this.talisman = talisman;
-        this.talismanName = talisman != -1 ? ItemDef.get(talisman).descriptiveName : "";
+        this.talismanName = talisman != -1 ? ItemDefinition.get(talisman).descriptiveName : "";
         this.tiara = tiara;
         this.runeID = runeID;
         this.altarObj = altarObj;
@@ -112,10 +112,10 @@ public enum Altars {
             this.requiredTalismanId = requiredTalismanId;
             this.levelReq = levelReq;
             this.exp = exp;
-            this.runeName = ItemDef.get(combinationRuneId).name + "s";
-            this.runeNameLowercase = ItemDef.get(combinationRuneId).name.toLowerCase() + "s";
-            this.requiredTalismanName = ItemDef.get(requiredTalismanId).name.toLowerCase();
-            this.requiredRuneName = ItemDef.get(requiredRuneId).name.toLowerCase() + "s";
+            this.runeName = ItemDefinition.get(combinationRuneId).name + "s";
+            this.runeNameLowercase = ItemDefinition.get(combinationRuneId).name.toLowerCase() + "s";
+            this.requiredTalismanName = ItemDefinition.get(requiredTalismanId).name.toLowerCase();
+            this.requiredRuneName = ItemDefinition.get(requiredRuneId).name.toLowerCase() + "s";
             this.pet = pet;
         }
     }
@@ -172,7 +172,7 @@ public enum Altars {
             int amount = essenceCount * runesPerEssence;
             player.getInventory().add(altar.runeID, amount);
             player.getStats().addXp(StatType.Runecrafting, essenceCount * altar.experience, true);
-            player.getTaskManager().doLookupByCategory(TaskCategory.RUNECRAFT, ItemDef.get(altar.runeID).name, amount, true);
+            player.getTaskManager().doLookupByCategory(TaskCategory.RUNECRAFT, ItemDefinition.get(altar.runeID).name, amount, true);
             if (runesPerEssence >= 4)
                 player.getTaskManager().doLookupByUUID(121, 1); // Craft 4 Runes With 1 Essence
             counter.increment(player, amount);
@@ -245,7 +245,7 @@ public enum Altars {
             } else {
                 player.getInventory().add(runeCombination.combinationRuneId, amountToCombine);
                 player.sendMessage("You bind the Temple's power into " + runeCombination.runeName + ".");
-                player.getTaskManager().doLookupByCategory(TaskCategory.RUNECRAFTCOMBO, ItemDef.get(runeCombination.combinationRuneId).name, amountToCombine, true);
+                player.getTaskManager().doLookupByCategory(TaskCategory.RUNECRAFTCOMBO, ItemDefinition.get(runeCombination.combinationRuneId).name, amountToCombine, true);
             }
 
             player.unlock();

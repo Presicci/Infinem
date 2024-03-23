@@ -1,11 +1,10 @@
 package io.ruin.model.item.actions.impl.boxes;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.attributes.AttributeExtensions;
-import io.ruin.model.item.attributes.AttributeTypes;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 
@@ -56,7 +55,7 @@ public class HerbBox {
                 int herb = table.rollItem().getId();
                 AttributeExtensions.deincrementCharges(item, 1);
                 player.getInventory().add(herb, 1);
-                player.sendMessage("You open the herb box and find " + ItemDef.get(herb).descriptiveName + ".");
+                player.sendMessage("You open the herb box and find " + ItemDefinition.get(herb).descriptiveName + ".");
                 if (AttributeExtensions.getCharges(item) == 0) {
                     item.remove();
                 }

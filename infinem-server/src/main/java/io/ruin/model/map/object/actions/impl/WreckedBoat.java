@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -21,7 +21,7 @@ public class WreckedBoat {
             return;
         }
         player.getInventory().add(itemId, 1);
-        player.dialogue(new ItemDialogue().one(itemId, "You take a " + ItemDef.get(itemId).name + "."));
+        player.dialogue(new ItemDialogue().one(itemId, "You take a " + ItemDefinition.get(itemId).name + "."));
     }
 
     static {

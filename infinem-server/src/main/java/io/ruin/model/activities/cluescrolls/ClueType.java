@@ -2,7 +2,7 @@ package io.ruin.model.activities.cluescrolls;
 
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
@@ -17,7 +17,6 @@ import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.pet.Pet;
 
-import java.util.Collections;
 import java.util.List;
 
 public enum ClueType {
@@ -1160,7 +1159,7 @@ public enum ClueType {
              */
             if(type.clueId == -1)
                 continue;
-            ItemDef clueDef = ItemDef.get(type.clueId);
+            ItemDefinition clueDef = ItemDefinition.get(type.clueId);
             clueDef.clueType = type;
             ItemAction.registerInventory(clueDef.id, "read", (player, item) -> {
                 type.open(player);
@@ -1178,7 +1177,7 @@ public enum ClueType {
             /*
              * Casket
              */
-            ItemDef casketDef = ItemDef.get(type.casketId);
+            ItemDefinition casketDef = ItemDefinition.get(type.casketId);
             ItemAction.registerInventory(casketDef.id, "open", (player, item) -> {
                 item.remove(1);
                 type.loot(player);

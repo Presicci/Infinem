@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
@@ -60,7 +60,7 @@ public class PvPArmor {
 
     static {
         for (int i : ARMOR_PARTS) {
-            ItemDef.get(i).addPostDamageListener(PvPArmor::postDamageListener);
+            ItemDefinition.get(i).addPostDamageListener(PvPArmor::postDamageListener);
 //            ItemAction.registerEquipment(i, "check", PvPArmor::checkCharges);
             ItemAction.registerInventory(i, "check", PvPArmor::checkCharges);
         }

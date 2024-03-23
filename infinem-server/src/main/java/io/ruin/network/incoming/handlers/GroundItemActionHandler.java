@@ -1,7 +1,7 @@
 package io.ruin.network.incoming.handlers;
 
 import io.ruin.api.buffer.InBuffer;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.ground.GroundItem;
@@ -69,7 +69,7 @@ public class GroundItemActionHandler implements Incoming {
         GroundItem groundItem = tile.getPickupItem(groundItemId, player.getUserId());
         if(groundItem == null)
             return;
-        ItemDef def = ItemDef.get(groundItem.id);
+        ItemDefinition def = ItemDefinition.get(groundItem.id);
         player.getMovement().setCtrlRun(ctrlRun == 1);
         player.getRouteFinder().routeGroundItem(groundItem, distance -> {
             int i = option - 1;

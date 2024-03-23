@@ -2,7 +2,7 @@ package io.ruin.model.skills.slayer;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Tuple;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceHandler;
@@ -330,7 +330,7 @@ public enum SlayerUnlock {
         itemAmount = item.buyAmount;
 
         if (option == 10) {
-            player.sendMessage(ItemDef.get(itemID).examine);
+            player.sendMessage(ItemDefinition.get(itemID).examine);
             return;
         }
         int pts = Config.SLAYER_POINTS.get(player);
@@ -339,9 +339,9 @@ public enum SlayerUnlock {
             return;
         }
         int amount = ((option == 2) ? 1 : ((option == 3) ? 5 : 10));
-        if (ItemDef.get(itemID).stackable && !player.getInventory().hasRoomFor(itemID)) {
+        if (ItemDefinition.get(itemID).stackable && !player.getInventory().hasRoomFor(itemID)) {
             player.sendMessage("Not enough space in your inventory.");
-        } else if (!ItemDef.get(itemID).stackable && player.getInventory().isFull()) {
+        } else if (!ItemDefinition.get(itemID).stackable && player.getInventory().isFull()) {
             player.sendMessage("Not enough space in your inventory.");
         }
         amount = Math.min(amount, pts / itemPrice);

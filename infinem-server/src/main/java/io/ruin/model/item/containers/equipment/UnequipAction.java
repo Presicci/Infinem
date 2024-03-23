@@ -1,7 +1,6 @@
 package io.ruin.model.item.containers.equipment;
 
-import io.ruin.cache.ItemDef;
-import io.ruin.model.entity.npc.NPC;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 
 /**
@@ -13,7 +12,7 @@ public interface UnequipAction {
     void handle(Player player);
 
     static void register(int itemId, UnequipAction action) {
-        ItemDef def = ItemDef.get(itemId);
+        ItemDefinition def = ItemDefinition.get(itemId);
         def.unequipAction = action;
     }
 }

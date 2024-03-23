@@ -2,11 +2,10 @@ package io.ruin.model.item.actions.impl.tradepost;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.entity.shared.listeners.SpawnListener;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceAction;
 import io.ruin.model.inter.InterfaceHandler;
@@ -72,13 +71,13 @@ public class TradePost {
             return;
         }
 
-        ItemDef itemDef = ItemDef.get(itemId);
-        if (itemDef == null || !itemDef.tradeable || itemId == COINS_995) {
+        ItemDefinition itemDefinition = ItemDefinition.get(itemId);
+        if (itemDefinition == null || !itemDefinition.tradeable || itemId == COINS_995) {
             player.sendMessage("You cannot trade this item.");
             return;
         }
 
-        final int unnotedId = !itemDef.isNote() ? itemId : itemDef.fromNote().id;
+        final int unnotedId = !itemDefinition.isNote() ? itemId : itemDefinition.fromNote().id;
 
         if (tradePostOffers.stream().anyMatch(offer -> offer.getItem().getId() == unnotedId)) {
             player.sendMessage("You are already selling this item.");
@@ -250,7 +249,7 @@ public class TradePost {
                         }),
                         new Option("Item search", () -> {
                             player.itemSearch("Check listings for:", false, item -> {
-                                this.searchText = ItemDef.get(item).name.toLowerCase();
+                                this.searchText = ItemDefinition.get(item).name.toLowerCase();
                                 updateSearch();
                             });
                         })

@@ -1,11 +1,10 @@
 package io.ruin.model.entity.npc.actions.zanaris.puropuro;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.*;
 import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
-import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
@@ -102,7 +101,7 @@ public class ElnockStorage {
         }
         Inventory inventory = player.getInventory();
         int invAmount = inventory.getAmount(itemId);
-        int notedAmount = inventory.getAmount(ItemDef.get(itemId).notedId);
+        int notedAmount = inventory.getAmount(ItemDefinition.get(itemId).notedId);
         if (invAmount + notedAmount <= 0) {
             player.dialogue(false, new MessageDialogue("You don't have any jars to deposit."));
             return;
@@ -113,7 +112,7 @@ public class ElnockStorage {
         if (amount + currentlyStored > 1000) {
             amount = 1000 - currentlyStored;
         }
-        int amountRemoved = inventory.remove(ItemDef.get(itemId).notedId, amount);
+        int amountRemoved = inventory.remove(ItemDefinition.get(itemId).notedId, amount);
         amount -= amountRemoved;
         if (amount > 0)
             amountRemoved += inventory.remove(itemId, amount);

@@ -1,7 +1,6 @@
 package io.ruin.model.entity.npc.actions.edgeville;
 
-import io.ruin.cache.ItemDef;
-import io.ruin.cache.NPCDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.wilderness.SkullingItem;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -36,8 +35,8 @@ public class EmblemTrader {
         };
         for (int[] artifact : ancientArtifacts) {
             int id = artifact[0];
-            ItemDef.get(id).sigmundBuyPrice = artifact[1];
-            ItemNPCAction.register(id, 7941, (player, item, npc) -> player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Sell your " + ItemDef.get(id).name +
+            ItemDefinition.get(id).sigmundBuyPrice = artifact[1];
+            ItemNPCAction.register(id, 7941, (player, item, npc) -> player.dialogue(new YesNoDialogue("Are you sure you want to do this?", "Sell your " + ItemDefinition.get(id).name +
                     " for " + artifact[1] + " coins?", item, () -> {
                 item.remove();
                 player.getInventory().add(COINS_995, artifact[1]);
@@ -101,7 +100,7 @@ public class EmblemTrader {
             return 0;
         for (ShopItem item : shop.defaultStock) {
             int price;
-            ItemDef def = item.getDef();
+            ItemDefinition def = item.getDef();
             if (def.id == itemSelling.getDef().id) {
                 price =+ item.price;
                 return price / 4;

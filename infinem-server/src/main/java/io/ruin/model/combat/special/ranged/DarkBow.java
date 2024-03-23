@@ -1,6 +1,6 @@
 package io.ruin.model.combat.special.ranged;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.*;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.Entity;
@@ -24,14 +24,14 @@ public class DarkBow implements Special {
     };
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return name.contains("dark bow");
     }
 
     @Override
     public boolean handle(Player player, Entity target, AttackStyle style, AttackType type, int maxDamage) {
         // In place to allow weapon poison to work
-        ItemDef ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
+        ItemDefinition ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
 
         Item ammo = player.getEquipment().get(Equipment.SLOT_AMMO);
         if(ammo == null || ammo.getAmount() < 2) {

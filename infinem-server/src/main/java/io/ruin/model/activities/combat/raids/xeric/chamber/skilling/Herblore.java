@@ -1,6 +1,6 @@
 package io.ruin.model.activities.combat.raids.xeric.chamber.skilling;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -246,7 +246,7 @@ public class Herblore {
             ItemAction.registerInventory(herb.grimyId, "clean", (player, item) -> {
                 item.setId(herb.cleanId);
                 player.getStats().addXp(StatType.Herblore, 2, false);
-                player.sendFilteredMessage("You clean the " + ItemDef.get(herb.cleanId).name + ".");
+                player.sendFilteredMessage("You clean the " + ItemDefinition.get(herb.cleanId).name + ".");
             });
     }
 

@@ -1,6 +1,6 @@
 package io.ruin.model.combat.special.melee;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.player.Player;
@@ -13,7 +13,7 @@ public class DragonBattleaxe implements Special {
     private static final StatType[] DRAIN_STATS = {StatType.Attack, StatType.Defence, StatType.Ranged, StatType.Magic};
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return name.contains("dragon battleaxe");
     }
 

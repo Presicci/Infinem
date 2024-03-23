@@ -1,6 +1,6 @@
 package io.ruin.model.skills.herblore;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
@@ -165,7 +165,7 @@ public enum Potion {
         }
         player.getInventory().add(potion, 1);
         player.getStats().addXp(StatType.Herblore, xp, true);
-        String name = ItemDef.get(potion).name.toLowerCase();
+        String name = ItemDefinition.get(potion).name.toLowerCase();
         player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.POTION, name.substring(0, name.indexOf("(")), 1, true);
         player.animate(363);
     }
@@ -212,7 +212,7 @@ public enum Potion {
             if (item == null)
                 continue;
             boolean noted = false;
-            ItemDef def = item.getDef();
+            ItemDefinition def = item.getDef();
             if (def.isNote()) {
                 noted = true;
                 def = def.fromNote();
@@ -241,13 +241,13 @@ public enum Potion {
             int desired = (int) (doses / (double) dosage);
             if (desired > 0) {
                 int addId = potion.vialIds[dosage - 1];
-                player.getInventory().addOrDrop(note ? ItemDef.get(addId).notedId : addId, desired);
+                player.getInventory().addOrDrop(note ? ItemDefinition.get(addId).notedId : addId, desired);
                 doses -= (desired * dosage);
             }
             int remainingDoses = (int) doses;
             if (remainingDoses > 0) {
                 int addId = potion.vialIds[remainingDoses - 1];
-                player.getInventory().addOrDrop(note ? ItemDef.get(addId).notedId : addId, 1);
+                player.getInventory().addOrDrop(note ? ItemDefinition.get(addId).notedId : addId, 1);
             }
         }
 
@@ -290,8 +290,8 @@ public enum Potion {
     }
 
     private static void registerUpgrade(Potion potion, int primaryId, int secondaryId, int secondaryAmtPerDose) {
-        Potion primaryPotion = ItemDef.get(primaryId).potion;
-        String secondaryName = ItemDef.get(secondaryId).name.toLowerCase().replace("'s", "");
+        Potion primaryPotion = ItemDefinition.get(primaryId).potion;
+        String secondaryName = ItemDefinition.get(secondaryId).name.toLowerCase().replace("'s", "");
         String secondaryPluralName = secondaryName + (secondaryName.endsWith("s") ? "" : "s");
         double xpPerDose = secondaryAmtPerDose == 0 ? (potion.xp / 2) / 4 : potion.xp / 4;
         for (int i = 0; i < primaryPotion.vialIds.length; i++) {
@@ -309,7 +309,7 @@ public enum Potion {
                     return;
                 }
                 double experience = secondaryAmtPerDose == 0 ? potion.xp + (xpPerDose * doses) : xpPerDose * doses;
-                String name = ItemDef.get(potion.vialIds[doses - 1]).name.toLowerCase();
+                String name = ItemDefinition.get(potion.vialIds[doses - 1]).name.toLowerCase();
                 if (player.getRelicManager().hasRelicEnalbed(Relic.PRODUCTION_MASTER)) {
                     int amtPrimary = player.getInventory().getAmount(primaryId);
                     int amtSecondary = player.getInventory().getAmount(secondaryId);
@@ -354,7 +354,7 @@ public enum Potion {
              */
             int primaryId = -1;
             int[] secondaryIds = new int[potion.secondaryNames.length];
-            for (ItemDef def : ItemDef.cached.values()) {
+            for (ItemDefinition def : ItemDefinition.cached.values()) {
                 if (def == null)
                     continue;
                 if (def.name.toLowerCase().startsWith(potion.potionName + "(") || def.name.toLowerCase().startsWith(potion.potionName + " (")) {

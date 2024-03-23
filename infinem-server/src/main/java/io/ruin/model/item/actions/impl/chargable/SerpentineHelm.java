@@ -3,7 +3,7 @@ package io.ruin.model.item.actions.impl.chargable;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.item.Item;
@@ -74,12 +74,12 @@ public enum SerpentineHelm {
             ItemItemAction.register(helm.uncharged, ZULRAH_SCALES, SerpentineHelm::charge);
             ItemItemAction.register(helm.charged, ZULRAH_SCALES, SerpentineHelm::charge);
 
-            ItemDef.get(helm.charged).addOnTickEvent(SerpentineHelm::consumeCharge);
-            ItemDef.get(helm.charged).addPreTargetDefendListener((player, item, hit, target) -> {
+            ItemDefinition.get(helm.charged).addOnTickEvent(SerpentineHelm::consumeCharge);
+            ItemDefinition.get(helm.charged).addPreTargetDefendListener((player, item, hit, target) -> {
                 if (hit.attackStyle != null && hit.attackStyle.isMelee() && target.npc != null && !target.isPoisonImmune() && Random.rollDie(6, 1))
                     target.envenom(6);
             });
-            ItemDef.get(helm.charged).breakId = SERPENTINE.uncharged;
+            ItemDefinition.get(helm.charged).breakId = SERPENTINE.uncharged;
         }
         ItemItemAction.register(SERPENTINE.uncharged, MAGMA.mutagen, SerpentineHelm::color);
         ItemItemAction.register(SERPENTINE.charged, MAGMA.mutagen, SerpentineHelm::color);

@@ -1,7 +1,7 @@
 package io.ruin.model.skills.farming.patch;
 
 import com.google.gson.annotations.Expose;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.item.Item;
 import io.ruin.model.stat.StatType;
 
@@ -54,7 +54,7 @@ public abstract class RegrowPatch extends Patch { // for patches that "restore" 
                 player.getInventory().add(getPlantedCrop().getProduceId(), 1);
                 player.collectResource(new Item(getPlantedCrop().getProduceId(), 1));
                 player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP(), true);
-                player.sendFilteredMessage("You pick a " + ItemDef.get(getPlantedCrop().getProduceId()).name.toLowerCase() + ".");
+                player.sendFilteredMessage("You pick a " + ItemDefinition.get(getPlantedCrop().getProduceId()).name.toLowerCase() + ".");
                 removeProduce();
                 update();
                 if (getProduceCount() == 0) {

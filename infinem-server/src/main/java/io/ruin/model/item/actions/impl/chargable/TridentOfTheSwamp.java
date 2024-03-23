@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
@@ -38,7 +38,7 @@ public class TridentOfTheSwamp {
             ItemAction.registerInventory(id, "check", TridentOfTheSwamp::check);
             ItemAction.registerEquipment(id, "check", TridentOfTheSwamp::check);
             ItemAction.registerInventory(id, "uncharge", TridentOfTheSwamp::uncharge);
-            ItemDef.get(id).addPreTargetDefendListener(TridentOfTheSwamp::consumeCharge);
+            ItemDefinition.get(id).addPreTargetDefendListener(TridentOfTheSwamp::consumeCharge);
         }
         ItemAction.registerInventory(CHARGED, "drop", TridentOfTheSwamp::drop);
         ItemAction.registerInventory(ENHANCED_CHARGED, "drop", TridentOfTheSwamp::drop);

@@ -1,7 +1,7 @@
 package io.ruin.model.skills.firemaking;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.activities.combat.raids.xeric.ChambersOfXeric;
 import io.ruin.model.content.tasksystem.relics.Relic;
@@ -71,7 +71,7 @@ public enum Burning {
         this.lifeSpan = lifeSpan;
         this.fireId = fireId;
         this.counter = counter;
-        this.pluralName = ItemDef.get(logId).name.toLowerCase();
+        this.pluralName = ItemDefinition.get(logId).name.toLowerCase();
     }
 
     public static Burning get(int log) {
@@ -166,7 +166,7 @@ public enum Burning {
                 player.privateSound(2596);
                 player.getStats().addXp(StatType.Firemaking, burning.exp * pyromancerBonus(player), true);
                 burning.counter.increment(player, 1);
-                player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDef.get(burning.itemId).name);
+                player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDefinition.get(burning.itemId).name);
                 GameObject fire = new GameObject(burning.fireId, firePos.getX(), firePos.getY(), firePos.getZ(), 10, 0);
                 player.putTemporaryAttribute("BURN_DELAY", System.currentTimeMillis() + 1800);
                 createFire(burning, fire);
@@ -221,7 +221,7 @@ public enum Burning {
                 createFire(burning, fire);
             }
             player.getStats().addXp(StatType.Firemaking, burning.exp * pyromancerBonus(player) * finalAmount, true);
-            player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDef.get(burning.itemId).name, finalAmount);
+            player.getTaskManager().doLookupByCategory(TaskCategory.BURNLOG, ItemDefinition.get(burning.itemId).name, finalAmount);
             burning.counter.increment(player, finalAmount);
         });
     }

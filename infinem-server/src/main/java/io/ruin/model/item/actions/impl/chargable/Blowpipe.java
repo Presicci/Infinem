@@ -1,7 +1,7 @@
 package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.RangedData;
 import io.ruin.model.combat.RangedWeapon;
 import io.ruin.model.entity.player.Player;
@@ -17,7 +17,6 @@ import io.ruin.model.item.attributes.AttributeTypes;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.stat.StatType;
 
-import static io.ruin.cache.ItemID.MAGMA_MUTAGEN;
 import static io.ruin.model.skills.Tool.CHISEL;
 
 public class Blowpipe {
@@ -80,7 +79,7 @@ public class Blowpipe {
         if(dart == Dart.NONE)
             darts = "None";
         else
-            darts = ItemDef.get(dart.id).name + " x " + getDartAmount(blowpipe);
+            darts = ItemDefinition.get(dart.id).name + " x " + getDartAmount(blowpipe);
         String scales;
         int scalesAmount = getScalesAmount(blowpipe);
         System.out.println("Scales: " + scalesAmount); //prints out 16380 here
@@ -236,7 +235,7 @@ public class Blowpipe {
 
         ItemItemAction loadPoisonedAction = (player, primary, secondary) ->
                 player.sendMessage("You can't use that kind of dart - the venom doesn't mix with other poisons.");
-        ItemDef.forEach(def -> {
+        ItemDefinition.forEach(def -> {
             if(def.name.toLowerCase().contains("dart(p")) {
                 ItemItemAction.register(UNCHARGED, def.id, loadPoisonedAction);
                 ItemItemAction.register(CHARGED, def.id, loadPoisonedAction);

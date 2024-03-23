@@ -1,6 +1,6 @@
 package io.ruin.model.combat.special.ranged;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.Hit;
@@ -19,14 +19,14 @@ public class MagicShortbow implements Special {
     private static final Projectile SECOND = new Projectile(249, 40, 36, 50, 53, 3, 15, 11);
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return def.id == 861;
     }
 
     @Override
     public boolean handle(Player player, Entity target, AttackStyle style, AttackType type, int maxDamage) {
         // In place to allow weapon poison to work
-        ItemDef ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
+        ItemDefinition ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
 
         Item ammo = player.getEquipment().get(Equipment.SLOT_AMMO);
         if(ammo == null || ammo.getAmount() < 2) {

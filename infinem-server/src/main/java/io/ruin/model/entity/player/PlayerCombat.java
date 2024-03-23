@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.npc.MaxHitDummy;
 import io.ruin.model.activities.pvp.leaderboard.Leaderboard;
@@ -257,7 +257,7 @@ public class PlayerCombat extends Combat {
     }
 
     private void attackWithMagicWeapon() {
-        ItemDef weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+        ItemDefinition weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         boolean swamp = weaponDef.id == 12899;
         if (weaponDef.id == TridentOfTheSeas.UNCHARGED || weaponDef.id == 12900) {
             player.sendMessage("Your trident has no charges left!");
@@ -425,7 +425,7 @@ public class PlayerCombat extends Combat {
             /* obviously should never happen */
             return;
         }
-        ItemDef wepDef = wep.getDef();
+        ItemDefinition wepDef = wep.getDef();
         RangedWeapon rangedWep = wepDef.rangedWeapon;
         if(rangedWep == null) {
             player.sendMessage("Unhandled ranged weapon: " + wepDef.name);
@@ -459,7 +459,7 @@ public class PlayerCombat extends Combat {
                 reset();
                 return;
             }
-            ItemDef ammoDef = ammo.getDef();
+            ItemDefinition ammoDef = ammo.getDef();
             if((rangedAmmo = ammoDef.rangedAmmo) == null || !rangedWep.allowAmmo(rangedAmmo)) {
                 player.sendMessage("Your weapon can't fire that ammo.");
                 reset();
@@ -564,7 +564,7 @@ public class PlayerCombat extends Combat {
         updateLastAttack(attackTicks);
         Hit hit = new Hit(player, style, type)
                 .setAttackWeapon(wep.getDef())
-                .setRangedAmmo(ItemDef.get(11230));
+                .setRangedAmmo(ItemDefinition.get(11230));
         player.graphics(5006, 96, 0);
         attackAnim();
         Projectile proj =  Projectile.javelin(5019)[0];
@@ -596,7 +596,7 @@ public class PlayerCombat extends Combat {
         updateLastAttack(attackTicks);
         Hit hit = new Hit(player, style, type)
                 .setAttackWeapon(blowpipe.getDef())
-                .setRangedAmmo(ItemDef.get(dart.id));
+                .setRangedAmmo(ItemDefinition.get(dart.id));
         attackAnim();
         if(handleSpecial(style, type, maxDamage)) {
             int delay = ToxicBlowpipe.SIPHON_PROJECTILE.send(player, target);
@@ -729,7 +729,7 @@ public class PlayerCombat extends Combat {
     public int getDefendAnimation() {
         if(player.recentlyEquipped.isDelayed())
             return -1;
-        ItemDef shieldDef = player.getEquipment().getDef(Equipment.SLOT_SHIELD);
+        ItemDefinition shieldDef = player.getEquipment().getDef(Equipment.SLOT_SHIELD);
         if(shieldDef != null && shieldDef.shieldType != null)
             return shieldDef.shieldType.animationId;
         return weaponType.defendAnimation;
@@ -1173,7 +1173,7 @@ public class PlayerCombat extends Combat {
                     player.getDeathStorage().death(killer);
                 } else {
                     IKODInterface.forLostItem(player, killer, item -> {
-                        ItemDef def = item.getDef();
+                        ItemDefinition def = item.getDef();
                         if (pKiller != null && pKiller.hideFreeItems && def.free) {
                             return;
                         }
@@ -1294,7 +1294,7 @@ public class PlayerCombat extends Combat {
     private AttackSet attackSet;
 
     public void updateWeapon(boolean fromAutocast) {
-        ItemDef wepDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+        ItemDefinition wepDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         WeaponType newWeapon = (wepDef == null || wepDef.weaponType == null) ? WeaponType.UNARMED : wepDef.weaponType;
         boolean login = weaponType == null;
         if(weaponType != newWeapon) {
@@ -1355,7 +1355,7 @@ public class PlayerCombat extends Combat {
     }
 
     public void toggleSpecial() {
-        ItemDef wepDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+        ItemDefinition wepDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         if(specialActive != null) {
             deactivateSpecial();
             if(wepDef != null && wepDef.graniteMaul)
@@ -1485,7 +1485,7 @@ public class PlayerCombat extends Combat {
             return false;
         this.graniteMaulSpecials = 0;
 
-        ItemDef wep = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+        ItemDefinition wep = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         if(wep == null || !wep.graniteMaul)
             return false;
 

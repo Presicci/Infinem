@@ -2,7 +2,7 @@ package io.ruin.model.entity.shared.masks;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.api.buffer.OutBuffer;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.combat.WeaponType;
 import io.ruin.model.entity.player.Player;
@@ -216,7 +216,7 @@ public class Appearance extends UpdateMask {
             if(customRenders != null) {
                 renders = customRenders;
             } else {
-                ItemDef def = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+                ItemDefinition def = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
                 if(def == null || def.weaponType == null)
                     renders = WeaponType.UNARMED.renderAnimations;
                 else

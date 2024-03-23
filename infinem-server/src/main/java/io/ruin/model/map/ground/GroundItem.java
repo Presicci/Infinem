@@ -1,6 +1,6 @@
 package io.ruin.model.map.ground;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
@@ -98,7 +98,7 @@ public class GroundItem {
     public GroundItem spawn(int appearMinutes) {
         Tile.get(x, y, z, true).addItem(this);
         if(appearMinutes != 0) {
-            boolean allowAppear = appearMinutes > 0 && activeOwner != -1 && ItemDef.get(id).tradeable;
+            boolean allowAppear = appearMinutes > 0 && activeOwner != -1 && ItemDefinition.get(id).tradeable;
             World.startTask(t -> {
                 t.sleep(Math.abs(appearMinutes) * 60000L);
                 if(allowAppear)
@@ -192,7 +192,7 @@ public class GroundItem {
             player.sendMessage("You can't pickup items while you're signed up for a tournament.");
             return false;
         }
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         if (def.clueType != null && player.getInventory().hasId(def.clueType.clueId) && id == def.clueType.clueId) {
             player.sendMessage("You already have one of those in your inventory!");
             return false;

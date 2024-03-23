@@ -1,7 +1,7 @@
 package io.ruin.model.item;
 
 import com.google.gson.annotations.Expose;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import lombok.extern.slf4j.Slf4j;
@@ -124,7 +124,7 @@ public abstract class ItemContainerG<I extends Item> {
         return item == null ? -1 : item.getId();
     }
 
-    public ItemDef getDef(int slot) {
+    public ItemDefinition getDef(int slot) {
         I item = get(slot);
         return item == null ? null : item.getDef();
     }
@@ -171,7 +171,7 @@ public abstract class ItemContainerG<I extends Item> {
             System.err.println("Invalid add amount: " + amount + " | " + new Throwable().getStackTrace()[1].toString());
             return 0;
         }
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         if (def == null) {
             System.err.println("Failed to add non-existing item: " + id + " | " + new Throwable().getStackTrace()[1].toString());
             return 0;
@@ -258,7 +258,7 @@ public abstract class ItemContainerG<I extends Item> {
             System.err.println("Invalid remove amount: " + amount + " | " + new Throwable().getStackTrace()[1].toString());
             return 0;
         }
-        ItemDef definition = ItemDef.get(id);
+        ItemDefinition definition = ItemDefinition.get(id);
         if(definition == null) {
             System.err.println("Failed to remove non-existing item: " + id + " | " + new Throwable().getStackTrace()[1].toString());
             return 0;
@@ -411,7 +411,7 @@ public abstract class ItemContainerG<I extends Item> {
 
     public I findItem(int id, boolean acceptNoted) {
         for(I item : items) {
-            if(item != null && item.getAttributeHash() == 0 && (item.getId() == id || (acceptNoted && ItemDef.get(id).notedId != -1 && item.getId() == ItemDef.get(id).notedId)))
+            if(item != null && item.getAttributeHash() == 0 && (item.getId() == id || (acceptNoted && ItemDefinition.get(id).notedId != -1 && item.getId() == ItemDefinition.get(id).notedId)))
                 return item;
         }
         return null;
@@ -419,7 +419,7 @@ public abstract class ItemContainerG<I extends Item> {
 
     public I findItemIgnoringAttributes(int id, boolean acceptNoted) {
         for(I item : items) {
-            if(item != null && (item.getId() == id || (acceptNoted && ItemDef.get(id).notedId != -1 && item.getId() == ItemDef.get(id).notedId)))
+            if(item != null && (item.getId() == id || (acceptNoted && ItemDefinition.get(id).notedId != -1 && item.getId() == ItemDefinition.get(id).notedId)))
                 return item;
         }
         return null;
@@ -427,7 +427,7 @@ public abstract class ItemContainerG<I extends Item> {
 
     public I findItem(int id, boolean acceptNoted, int attributeHash) {
         for(I item : items) {
-            if(item != null && item.getAttributeHash() == attributeHash && (item.getId() == id || (acceptNoted && ItemDef.get(id).notedId != -1 && item.getId() == ItemDef.get(id).notedId)))
+            if(item != null && item.getAttributeHash() == attributeHash && (item.getId() == id || (acceptNoted && ItemDefinition.get(id).notedId != -1 && item.getId() == ItemDefinition.get(id).notedId)))
                 return item;
         }
         return null;
@@ -463,7 +463,7 @@ public abstract class ItemContainerG<I extends Item> {
     }
 
     public int getAmount(int id) {
-        ItemDef definition = ItemDef.get(id);
+        ItemDefinition definition = ItemDefinition.get(id);
         if(definition == null) {
             System.err.println("Failed to get amount for non-existing item: " + id + " | " + new Throwable().getStackTrace()[1].toString());
             return 0;
@@ -487,7 +487,7 @@ public abstract class ItemContainerG<I extends Item> {
 
     public int count(int id, boolean acceptNoted, boolean ignoreAttributes) {
         int amount = 0;
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         for(Item item : items) {
             if (item == null)
                 continue;
@@ -579,7 +579,7 @@ public abstract class ItemContainerG<I extends Item> {
     }
 
     public boolean hasRoomFor(int id) {
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         return getFreeSlots() > 0 || (def != null && def.stackable && hasId(id));
     }
 
@@ -631,7 +631,7 @@ public abstract class ItemContainerG<I extends Item> {
     }
 
     public boolean hasRoomFor(int id, int amt) {
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         boolean stackable = forceStack || def.stackable;
         Item existing = findItem(id);
         if(stackable){
@@ -641,7 +641,7 @@ public abstract class ItemContainerG<I extends Item> {
     }
 
     public int getCapacityFor(int id){
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         boolean stackable = forceStack || def.stackable;
         Item existing = findItem(id);
         if(stackable){
@@ -671,8 +671,8 @@ public abstract class ItemContainerG<I extends Item> {
     public long getContainerWorth() {
         long worth = 0;
         for (Item item : this.items) {
-            if (item != null && ItemDef.get(item.getId()) != null) {
-                worth += ItemDef.get(item.getId()).value;
+            if (item != null && ItemDefinition.get(item.getId()) != null) {
+                worth += ItemDefinition.get(item.getId()).value;
             }
         }
         return worth;

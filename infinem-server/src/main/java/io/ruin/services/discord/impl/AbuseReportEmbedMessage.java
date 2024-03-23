@@ -1,7 +1,7 @@
 package io.ruin.services.discord.impl;
 
 import io.ruin.api.utils.ServerWrapper;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
@@ -66,7 +66,7 @@ public class AbuseReportEmbedMessage {
                 inventoryItems.append(", ");
                 inventoryItems.append(item.getAmount());
                 inventoryItems.append("\t\t(");
-                inventoryItems.append(ItemDef.get(item.getId()).name);
+                inventoryItems.append(ItemDefinition.get(item.getId()).name);
                 inventoryItems.append(")\n");
             }
             StringBuilder equipmentItems = new StringBuilder();
@@ -76,7 +76,7 @@ public class AbuseReportEmbedMessage {
                 equipmentItems.append(", ");
                 equipmentItems.append(item.getAmount());
                 equipmentItems.append("\t\t(");
-                equipmentItems.append(ItemDef.get(item.getId()).name);
+                equipmentItems.append(ItemDefinition.get(item.getId()).name);
                 equipmentItems.append(")\n");
             }
             StringBuilder sentMessages = new StringBuilder();

@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.ground.GroundItem;
@@ -16,7 +16,7 @@ public interface ItemGroundItemAction {
      */
 
     static void register(int groundItemId, ItemGroundItemAction action) {
-        ItemDef def = ItemDef.get(groundItemId);
+        ItemDefinition def = ItemDefinition.get(groundItemId);
         def.defaultItemGroundItemAction = action;
     }
 
@@ -25,7 +25,7 @@ public interface ItemGroundItemAction {
      */
 
     static void register(int itemId, int groundItemId, ItemGroundItemAction action) {
-        ItemDef def = ItemDef.get(groundItemId);
+        ItemDefinition def = ItemDefinition.get(groundItemId);
         if(def.itemGroundItemActions == null)
             def.itemGroundItemActions = new HashMap<>();
         def.itemGroundItemActions.put(itemId, action);
@@ -36,7 +36,7 @@ public interface ItemGroundItemAction {
      */
 
     static void handleAction(Player player, Item item, GroundItem groundItem, int distance) {
-        ItemDef def = ItemDef.get(groundItem.id);
+        ItemDefinition def = ItemDefinition.get(groundItem.id);
         if(def.itemGroundItemActions != null) {
             ItemGroundItemAction action = def.itemGroundItemActions.get(item.getId());
             if(action != null) {

@@ -133,7 +133,7 @@ public class Server extends ServerWrapper {
             InventoryDefinition.load();
             ScriptDefinition.load();
             InterfaceDefinition.load();
-            ItemDef.load();
+            ItemDefinition.load();
             NPCDef.load();
             ObjectDef.load();
             DataFile.load();

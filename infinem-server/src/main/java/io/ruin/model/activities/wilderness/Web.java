@@ -1,15 +1,13 @@
 package io.ruin.model.activities.wilderness;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
-
-import static io.ruin.cache.ItemID.KNIFE;
 
 public class Web {
 
@@ -45,7 +43,7 @@ public class Web {
      * 3 - Wilderness sword (only in wilderness)
      */
     private static int sharpItemChance(Player player) {
-        ItemDef weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+        ItemDefinition weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         if(weaponDef != null && weaponDef.sharpWeapon) {
             return (weaponDef.id >= 13108 && weaponDef.id <= 13111 && player.wildernessLevel > 0) ? 3 : 2;
         } else {
@@ -63,7 +61,7 @@ public class Web {
 
     static {
         ObjectAction.register(733, "slash", Web::slashWeb);
-        ItemDef.forEach(def -> {
+        ItemDefinition.forEach(def -> {
             if(def.equipSlot != Equipment.SLOT_WEAPON)
                 return;
             String name = def.name.toLowerCase();

@@ -1,9 +1,7 @@
 package io.ruin.model.shop;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.item.Item;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 public class ItemCurrencyHandler extends CurrencyHandler {
@@ -13,9 +11,9 @@ public class ItemCurrencyHandler extends CurrencyHandler {
 
     public ItemCurrencyHandler(int currencyItemId){
         super("" + currencyItemId);
-        ItemDef itemDef = ItemDef.get(currencyItemId);
-        if(itemDef != null) {
-            this.name = itemDef.name;
+        ItemDefinition itemDefinition = ItemDefinition.get(currencyItemId);
+        if(itemDefinition != null) {
+            this.name = itemDefinition.name;
             this.pluralName = this.name.endsWith("s") ? this.name : this.name + "s";
         }
         this.currencyItemId = currencyItemId;

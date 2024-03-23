@@ -1,6 +1,6 @@
 package io.ruin.model.skills.prayer;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -52,7 +52,7 @@ public enum Bone {
 
     Bone(int id, double exp, PlayerCounter buryCounter, PlayerCounter altarCounter) {
         this.id = id;
-        this.notedId = ItemDef.get(id).notedId;
+        this.notedId = ItemDefinition.get(id).notedId;
         ;
         this.exp = exp;
         this.buryCounter = buryCounter;
@@ -79,7 +79,7 @@ public enum Bone {
         player.startEvent(event -> {
             if (player.boneBuryDelay.isDelayed())
                 return;
-            ItemDef neckDef = player.getEquipment().getDef(Equipment.SLOT_AMULET);
+            ItemDefinition neckDef = player.getEquipment().getDef(Equipment.SLOT_AMULET);
             if (neckDef != null && neckDef.id == DRAGONBONE_NECKLACE) {
                 boneNecklaceEffect(player, bone);
             }
@@ -118,7 +118,7 @@ public enum Bone {
     static {
         for (Bone bone : values()) {
             if (bone.exp <= Bone.BIG_BONES.exp)
-                ItemDef.get(bone.id).allowFruit = true;
+                ItemDefinition.get(bone.id).allowFruit = true;
             ItemAction.registerInventory(bone.id, "bury", bone::checkBeforeBury);
         }
     }

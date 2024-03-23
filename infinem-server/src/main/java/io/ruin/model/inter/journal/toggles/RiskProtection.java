@@ -2,7 +2,7 @@ package io.ruin.model.inter.journal.toggles;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -155,7 +155,7 @@ public class RiskProtection extends JournalEntry {
         long value = 0;
         for(Iterator<Item> it = items.iterator(); it.hasNext(); ) {
             Item item = it.next();
-            ItemDef def = item.getDef();
+            ItemDefinition def = item.getDef();
             if(!def.tradeable && item.getAttributeHash() <= 0)
                 continue;
             if(!def.neverProtect && keepCountRemaining > 0) {

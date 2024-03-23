@@ -2,7 +2,7 @@ package io.ruin.data.impl.dialogue;
 
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.Tuple;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.NPCDef;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.inter.dialogue.*;
@@ -260,7 +260,7 @@ public class DialogueParser {
                         error("missing itemId for ITEM action", dialogue);
                     }
                     int finalItemId = itemId;
-                    return new ItemDialogue().one(finalItemId, npcDef.name + " hands you " + ItemDef.get(finalItemId).descriptiveName + ".").consumer((player) -> {
+                    return new ItemDialogue().one(finalItemId, npcDef.name + " hands you " + ItemDefinition.get(finalItemId).descriptiveName + ".").consumer((player) -> {
                         player.getInventory().addOrDrop(finalItemId, 1);
                     });
                 } else {

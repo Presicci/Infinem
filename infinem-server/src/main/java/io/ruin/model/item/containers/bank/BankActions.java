@@ -1,7 +1,7 @@
 package io.ruin.model.item.containers.bank;
 
 import io.ruin.Server;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.NPCDef;
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.World;
@@ -130,7 +130,7 @@ public class BankActions {
         } else if (item.getId() == BLOODY_TOKENS || item.getId() == BLOOD_MONEY) {
             BloodyTokens.exchange(player, item);
         } else {
-            ItemDef def = item.getDef();
+            ItemDefinition def = item.getDef();
 //            if (!def.isNote()) {
 //                player.dialogue(new MessageDialogue("Use a banknote on the bank to convert it to an item."));
 //                return;

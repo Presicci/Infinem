@@ -1,7 +1,7 @@
 package io.ruin.model.activities.combat.raids.xeric;
 
 import io.ruin.cache.def.EnumDefinition;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 
 public class CoxItem {
 
@@ -12,12 +12,12 @@ public class CoxItem {
     }
 
     private static void mark(int id) {
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         if (def != null)
             mark(def);
     }
 
-    private static void mark(ItemDef def) {
+    private static void mark(ItemDefinition def) {
         def.coxItem = true;
         def.tradeable = true;
     }

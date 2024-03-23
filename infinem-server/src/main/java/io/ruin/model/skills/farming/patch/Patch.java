@@ -3,7 +3,7 @@ package io.ruin.model.skills.farming.patch;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.TimeUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.TabStats;
@@ -508,7 +508,7 @@ public abstract class Patch {
     public void onLoad() {
         if (status == null) return;
         if (getStatus().plantedSeed > 0) {
-            Crop crop = ItemDef.get(getStatus().plantedSeed).seedType;
+            Crop crop = ItemDefinition.get(getStatus().plantedSeed).seedType;
             if (crop != null && canPlant(crop))
                 plantedCrop = crop;
             else

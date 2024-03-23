@@ -1,6 +1,6 @@
 package io.ruin.model.combat.special.melee;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.Hit;
@@ -14,7 +14,7 @@ public class Darklight implements Special {
     public static final StatType[] DRAIN_STATS = {StatType.Strength, StatType.Attack, StatType.Defence};
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return def.id == 6746 || def.id == 19675;
     }
 

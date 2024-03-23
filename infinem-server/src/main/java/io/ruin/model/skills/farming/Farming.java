@@ -2,7 +2,7 @@ package io.ruin.model.skills.farming;
 
 
 import com.google.gson.annotations.Expose;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
@@ -474,7 +474,7 @@ public class Farming {
         Collections.addAll(CROPS, HesporiCrop.INSTANCE);
         Collections.addAll(CROPS, VineCrop.INSTANCE);
         Collections.addAll(CROPS, SeaweedCrop.INSTANCE);
-        ItemDef.cached.values().stream().filter(Objects::nonNull).forEach(def -> {
+        ItemDefinition.cached.values().stream().filter(Objects::nonNull).forEach(def -> {
             def.produceOf = getCropForProduce(def.id);
             def.seedType = getCropForSeed(def.id);
             if (def.seedType == null)

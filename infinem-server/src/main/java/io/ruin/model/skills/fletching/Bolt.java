@@ -1,6 +1,6 @@
 package io.ruin.model.skills.fletching;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -59,7 +59,7 @@ public enum Bolt {
         this.id = id;
         this.tip = tip;
         this.tipped = tipped;
-        this.tippedName = ItemDef.get(tipped).name;
+        this.tippedName = ItemDefinition.get(tipped).name;
         this.emote = emote;
     }
 

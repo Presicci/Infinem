@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.combine;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.ItemID;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
@@ -41,17 +41,17 @@ public class SlayerHelm {
     private static final List<Integer> MASK_PARTS = Arrays.asList(4155, 4166, 4551, 4168, 4164);
 
     static {
-        MASKS.stream().map(ItemDef::get).forEach(def -> def.slayerBoostMelee = true);
-        IMBUED_MASKS.stream().map(ItemDef::get).forEach(def -> def.slayerBoostAll = true);
-        ItemDef.get(SLAYER_HELM).slayerBoostMelee = true;
-        ItemDef.get(SLAYER_HELM_IMBUE).slayerBoostAll = true;
+        MASKS.stream().map(ItemDefinition::get).forEach(def -> def.slayerBoostMelee = true);
+        IMBUED_MASKS.stream().map(ItemDefinition::get).forEach(def -> def.slayerBoostAll = true);
+        ItemDefinition.get(SLAYER_HELM).slayerBoostMelee = true;
+        ItemDefinition.get(SLAYER_HELM_IMBUE).slayerBoostAll = true;
     }
 
 
     public static boolean boost(Player player, Entity target, Hit hit) {
         if (hit.attackStyle != null && target.npc != null && (Slayer.isTask(player, target.npc)
                 || target.npc.getId() == 7413)) { // npc 7413 = undead combat dummy, always counts as task for max hit
-            ItemDef helm = player.getEquipment().getDef(Equipment.SLOT_HAT);
+            ItemDefinition helm = player.getEquipment().getDef(Equipment.SLOT_HAT);
             if (helm == null)
                 return false;
             if (hit.attackStyle.isMelee() && (helm.slayerBoostMelee || helm.slayerBoostAll)) {

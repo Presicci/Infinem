@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.combine.smithing;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
@@ -11,7 +11,6 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.ItemObjectAction;
-import io.ruin.model.skills.Tool;
 import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.stat.StatType;
 
@@ -57,7 +56,7 @@ public class SpiritShield {
     private static void attachSigilNPC(Player player, NPC npc, Item sigil) {
         int shieldId = sigil.getId() == DIVINE_SIGIL ? 30191 : sigil.getId() - 2;
         player.dialogue(
-                new NPCDialogue(npc.getId(), "Would you like me to make " + ItemDef.get(shieldId).descriptiveName
+                new NPCDialogue(npc.getId(), "Would you like me to make " + ItemDefinition.get(shieldId).descriptiveName
                         + " for you? It is a lot of work and would cost you 1,500,000 coins."),
                 new OptionsDialogue(
                         new Option("Yes! (pay 1,500,000 coins)", () -> {

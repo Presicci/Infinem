@@ -1,7 +1,7 @@
 package io.ruin.model.combat;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Items;
@@ -69,17 +69,17 @@ public enum BaneWeapon {
 
     static {
         for (BaneWeapon weapon : values()) {
-            ItemDef.get(weapon.itemId).addPreTargetDefendListener((player, item, hit, target) -> onHit(hit, target, weapon));
+            ItemDefinition.get(weapon.itemId).addPreTargetDefendListener((player, item, hit, target) -> onHit(hit, target, weapon));
             if (weapon.otherEffectStage == null) continue;
             switch (weapon.otherEffectStage) {
                 case PRE_TARGET_DEFEND:
-                    ItemDef.get(weapon.itemId).addPreTargetDefendListener((player, item, hit, target) -> onHitOtherEffect(hit, target, weapon));
+                    ItemDefinition.get(weapon.itemId).addPreTargetDefendListener((player, item, hit, target) -> onHitOtherEffect(hit, target, weapon));
                     break;
                 case POST_TARGET_DEFEND:
-                    ItemDef.get(weapon.itemId).addPostTargetDefendListener((player, item, hit, target) -> onHitOtherEffect(hit, target, weapon));
+                    ItemDefinition.get(weapon.itemId).addPostTargetDefendListener((player, item, hit, target) -> onHitOtherEffect(hit, target, weapon));
                     break;
                 case POST_TARGET_DAMAGE:
-                    ItemDef.get(weapon.itemId).addPostTargetDamageListener((player, item, hit, target) -> onHitOtherEffect(hit, target, weapon));
+                    ItemDefinition.get(weapon.itemId).addPostTargetDamageListener((player, item, hit, target) -> onHitOtherEffect(hit, target, weapon));
                     break;
             }
         }

@@ -1,6 +1,6 @@
 package io.ruin.model.combat.special.skilling;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.stat.StatType;
@@ -9,7 +9,7 @@ import io.ruin.model.stat.StatType;
 public class DragonAxeSpecial implements Special {
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return name.contains("dragon axe") || name.contains("infernal axe") || name.contains("crystal axe");
     }
 

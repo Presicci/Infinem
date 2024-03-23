@@ -1,7 +1,6 @@
 package io.ruin.network.incoming.handlers;
 
 import io.ruin.api.buffer.InBuffer;
-import io.ruin.cache.ItemDef;
 import io.ruin.event.GameEventProcessor;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -12,10 +11,6 @@ import io.ruin.network.incoming.Incoming;
 import io.ruin.utility.DebugMessage;
 import io.ruin.utility.IdHolder;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Objects;
 
 @Slf4j
 public class ActionButtonHandler {

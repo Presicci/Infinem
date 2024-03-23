@@ -1,7 +1,7 @@
 package io.ruin.model.inter.handlers.itemskeptondeath;
 
 import io.ruin.cache.def.EnumDefinition;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.Killer;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
@@ -115,7 +115,7 @@ public class IKODInterface {
         if(item.getDef().combinedFrom != null)
             return true;
         if (item.getDef().upgradedFrom != null) {
-            ItemDef broken = ItemDef.get(item.getDef().upgradedFrom.regularId);
+            ItemDefinition broken = ItemDefinition.get(item.getDef().upgradedFrom.regularId);
             return broken.tradeable;
         }
         return item.getDef().tradeable || player.wildernessLevel > 20;
@@ -332,7 +332,7 @@ public class IKODInterface {
                     keepItems.add(item);
                     continue;
                 }
-                ItemDef brokenDef = ItemDef.get(breakable.brokenId);
+                ItemDefinition brokenDef = ItemDefinition.get(breakable.brokenId);
                 if (brokenDef == null) {
                     System.out.println("Broken Def is null: " + breakable.brokenId);
                     continue;
@@ -362,7 +362,7 @@ public class IKODInterface {
                     keepItems.add(item);
                     continue;
                 }
-                ItemDef regularDef = ItemDef.get(upgrade.regularId);
+                ItemDefinition regularDef = ItemDefinition.get(upgrade.regularId);
                 if (regularDef == null) {
                     System.out.println("Regular Def is null: " + upgrade.regularId);
                     continue;
@@ -401,13 +401,13 @@ public class IKODInterface {
             if(combined != null && (player.wildernessLevel > 0 || player.pvpAttackZone)) {
                 if (Objects.isNull(killer)) {
                     keepItems.add(item);
-                } else if (ItemDef.get(combined.mainId).tradeable) {
+                } else if (ItemDefinition.get(combined.mainId).tradeable) {
                     loseItems.add(new Item(combined.mainId, item.getAmount()));
                     loseItems.add(new Item(combined.accessoryId, item.getAmount()));
                 } else {
-                    ItemBreaking breakab = ItemDef.get(combined.mainId).breakTo;
-                    if (ItemDef.get(combined.mainId).breakTo != null) {
-                        item.setId(ItemDef.get(breakab.brokenId).id);
+                    ItemBreaking breakab = ItemDefinition.get(combined.mainId).breakTo;
+                    if (ItemDefinition.get(combined.mainId).breakTo != null) {
+                        item.setId(ItemDefinition.get(breakab.brokenId).id);
                         keepItems.add(item);
                         loseItems.add(new Item(combined.accessoryId, item.getAmount()));
                     } else {
@@ -495,26 +495,26 @@ public class IKODInterface {
         /**
          * Custom protect items
          */
-        ItemDef.get(12931).protectValue = (int) Math.min(Integer.MAX_VALUE, 20000 * 1000L); // Serpentine helm (charged)
-        ItemDef.get(13197).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); // Tanzanite helm (charged)
-        ItemDef.get(13199).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); // Magma helm (charged)
-        ItemDef.get(12926).protectValue = (int) Math.min(Integer.MAX_VALUE, 20000 * 1000L); //Charged blowpipe (charged)
-        ItemDef.get(22550).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); //Craws bow (charged)
-        ItemDef.get(22547).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); //Craws bow (uncharged)
-        ItemDef.get(22545).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); //Viggora's chainmace (charged)
-        ItemDef.get(22542).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); //Viggora's chainmace (uncharged)
-        ItemDef.get(22555).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); //Thammaron's sceptre (charged)
-        ItemDef.get(22552).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); //Thammaron's sceptre (uncharged)
-        ItemDef.get(11283).protectValue = (int) Math.min(Integer.MAX_VALUE, 20000 * 1000L); //Dragonfire shield (charged)
-        ItemDef.get(21633).protectValue = (int) Math.min(Integer.MAX_VALUE, 25000 * 1000L); //Ancient wyvern (charged)
-        ItemDef.get(22002).protectValue = (int) Math.min(Integer.MAX_VALUE, 25000 * 1000L); //Dragonfire ward (charged)
-        ItemDef.get(12899).protectValue = (int) Math.min(Integer.MAX_VALUE, 25000 * 1000L); //Trident of the swamp (charged)
-        ItemDef.get(11907).protectValue = (int) Math.min(Integer.MAX_VALUE, 5000 * 1000L); //Trident of the seas (charged)
-        ItemDef.get(11905).protectValue = (int) Math.min(Integer.MAX_VALUE, 5000 * 1000L); //Trident of the seas (fully charged)
-        ItemDef.get(12904).protectValue = (int) Math.min(Integer.MAX_VALUE, 10000 * 1000L); //Toxic staff of the dead
-        ItemDef.get(20714).protectValue = (int) Math.min(Integer.MAX_VALUE, 6000 * 1000L); //Tome of fire
-        ItemDef.get(19550).protectValue = (int) Math.min(Integer.MAX_VALUE, 15000 * 1000L); //Ring of suffering
-        ItemDef.get(22613).protectValue = (int) Math.min(Integer.MAX_VALUE, 120000 * 1000L); //Vesta long
+        ItemDefinition.get(12931).protectValue = (int) Math.min(Integer.MAX_VALUE, 20000 * 1000L); // Serpentine helm (charged)
+        ItemDefinition.get(13197).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); // Tanzanite helm (charged)
+        ItemDefinition.get(13199).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); // Magma helm (charged)
+        ItemDefinition.get(12926).protectValue = (int) Math.min(Integer.MAX_VALUE, 20000 * 1000L); //Charged blowpipe (charged)
+        ItemDefinition.get(22550).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); //Craws bow (charged)
+        ItemDefinition.get(22547).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); //Craws bow (uncharged)
+        ItemDefinition.get(22545).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); //Viggora's chainmace (charged)
+        ItemDefinition.get(22542).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); //Viggora's chainmace (uncharged)
+        ItemDefinition.get(22555).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); //Thammaron's sceptre (charged)
+        ItemDefinition.get(22552).protectValue = (int) Math.min(Integer.MAX_VALUE, 30000 * 1000L); //Thammaron's sceptre (uncharged)
+        ItemDefinition.get(11283).protectValue = (int) Math.min(Integer.MAX_VALUE, 20000 * 1000L); //Dragonfire shield (charged)
+        ItemDefinition.get(21633).protectValue = (int) Math.min(Integer.MAX_VALUE, 25000 * 1000L); //Ancient wyvern (charged)
+        ItemDefinition.get(22002).protectValue = (int) Math.min(Integer.MAX_VALUE, 25000 * 1000L); //Dragonfire ward (charged)
+        ItemDefinition.get(12899).protectValue = (int) Math.min(Integer.MAX_VALUE, 25000 * 1000L); //Trident of the swamp (charged)
+        ItemDefinition.get(11907).protectValue = (int) Math.min(Integer.MAX_VALUE, 5000 * 1000L); //Trident of the seas (charged)
+        ItemDefinition.get(11905).protectValue = (int) Math.min(Integer.MAX_VALUE, 5000 * 1000L); //Trident of the seas (fully charged)
+        ItemDefinition.get(12904).protectValue = (int) Math.min(Integer.MAX_VALUE, 10000 * 1000L); //Toxic staff of the dead
+        ItemDefinition.get(20714).protectValue = (int) Math.min(Integer.MAX_VALUE, 6000 * 1000L); //Tome of fire
+        ItemDefinition.get(19550).protectValue = (int) Math.min(Integer.MAX_VALUE, 15000 * 1000L); //Ring of suffering
+        ItemDefinition.get(22613).protectValue = (int) Math.min(Integer.MAX_VALUE, 120000 * 1000L); //Vesta long
 
         InterfaceHandler.register(Interface.ITEMS_KEPT_ON_DEATH, h -> {
             h.actions[12] = (DefaultAction) (p, option, slot, itemId) -> {

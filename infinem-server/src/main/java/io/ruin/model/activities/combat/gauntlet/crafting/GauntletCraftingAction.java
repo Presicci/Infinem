@@ -4,7 +4,7 @@
 package io.ruin.model.activities.combat.gauntlet.crafting;
 
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 
 import java.util.Optional;
@@ -50,7 +50,7 @@ public class GauntletCraftingAction {
 			attachment.getEquipment()(craftable.getProduct(), 1, equipSlot);
 		} else */
         attachment.getEquipment().add(craftable.getProduct(), 1);
-        attachment.sendMessage("You successfully make a " + ItemDef.get(craftable.getProduct()) + ".");
+        attachment.sendMessage("You successfully make a " + ItemDefinition.get(craftable.getProduct()) + ".");
         amount--;
     }
 

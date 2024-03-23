@@ -1,7 +1,7 @@
 package io.ruin.model.activities.combat.raids.xeric.chamber.skilling;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
@@ -124,7 +124,7 @@ public enum Farming {
         if (object.id == patch.objectIdEnd)
             player.sendFilteredMessage("This herb patch is ready to be picked.");
         else
-            player.sendFilteredMessage("There's a " + ItemDef.get(patch.seedId).name + " growing here.");
+            player.sendFilteredMessage("There's a " + ItemDefinition.get(patch.seedId).name + " growing here.");
     }
 
     private static void clearHerbPatch(Player player, GameObject object) {

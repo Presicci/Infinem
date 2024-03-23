@@ -1,7 +1,6 @@
 package io.ruin.model.skills.smithing;
 
-import io.ruin.cache.ItemDef;
-import io.ruin.cache.ItemID;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.Interface;
@@ -332,7 +331,7 @@ public enum SmithBar {
         this.smeltItems = smeltItems;
         this.smithItems = smithItems;
         this.name = name().toLowerCase();
-        ItemDef.get(itemId).smithBar = this;
+        ItemDefinition.get(itemId).smithBar = this;
     }
 
     private SmithItem getSmithItem(int itemId) {

@@ -3,7 +3,7 @@ package io.ruin.data.impl.items;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.JsonUtils;
 import io.ruin.api.utils.ServerWrapper;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.data.DataFile;
 import io.ruin.model.combat.RangedAmmo;
 import io.ruin.model.combat.RangedWeapon;
@@ -24,7 +24,7 @@ public class item_info extends DataFile {
     public Object fromJson(String fileName, String json) {
         List<Temp> temps = JsonUtils.fromJson(json, List.class, Temp.class);
         temps.forEach(temp -> {
-            ItemDef def = ItemDef.get(temp.id);
+            ItemDefinition def = ItemDefinition.get(temp.id);
             if (def == null) return;
             def.tradeable = temp.tradeable;
             def.examine = temp.examine;
@@ -119,13 +119,13 @@ public class item_info extends DataFile {
             if (temp.release != null)
                 def.custom_values.put("RELEASE", temp.release);
         });
-        ItemDef.forEach(this::loadMisc);
+        ItemDefinition.forEach(this::loadMisc);
         shield_types.unload();
         weapon_types.unload();
         return temps;
     }
 
-    private void loadMisc(ItemDef def) {
+    private void loadMisc(ItemDefinition def) {
         def.dropOption = def.getOption("drop", "release");
         def.equipOption = def.getOption("wield", "equip", "wear", "ride", "hold", "chill");
         def.pickupOption = def.getGroundOption("take", "pickup");
@@ -137,7 +137,7 @@ public class item_info extends DataFile {
          * Keep last
          */
         if(def.isNote()) {
-            ItemDef reg = ItemDef.get(def.notedId);
+            ItemDefinition reg = ItemDefinition.get(def.notedId);
             if (reg == null) {
                 System.err.println("ITEM NOTE ERROR! ID:" + def.id + "");
                 return;
@@ -148,7 +148,7 @@ public class item_info extends DataFile {
             def.stackable = true;
         }
         if(def.isPlaceholder()) {
-            ItemDef reg = ItemDef.get(def.placeholderMainId);
+            ItemDefinition reg = ItemDefinition.get(def.placeholderMainId);
             def.name = reg.name;
             def.examine = reg.examine;
             /*ItemDef.forEach(def2 -> {

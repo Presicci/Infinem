@@ -1,6 +1,6 @@
 package io.ruin.model.content.tasksystem.tasks.impl;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.containers.equipment.EquipAction;
@@ -163,7 +163,7 @@ public enum EquipSetTask {
                                     for (int idx = 0; idx < itemIds.length; idx++) {
                                         int id = itemIds[idx];
                                         if (player.getEquipment().hasId(id)) {
-                                            ItemDef def = ItemDef.get(id);
+                                            ItemDefinition def = ItemDefinition.get(id);
                                             index = idx;
                                             break;
                                         }
@@ -171,10 +171,10 @@ public enum EquipSetTask {
                                     if (index == -1)
                                         return;
                                 } else {
-                                    ItemDef compareItemDef = ItemDef.get(itemIds[index]);
-                                    int equipSlot = compareItemDef.equipSlot;
+                                    ItemDefinition compareItemDefinition = ItemDefinition.get(itemIds[index]);
+                                    int equipSlot = compareItemDefinition.equipSlot;
                                     if (s.compareNames) {
-                                        String compareName = compareItemDef.name.toLowerCase().replaceAll("\\d", "").trim();
+                                        String compareName = compareItemDefinition.name.toLowerCase().replaceAll("\\d", "").trim();
                                         Item equippedItem = player.getEquipment().get(equipSlot);
                                         if (equippedItem == null || !equippedItem.getDef().name.toLowerCase().contains(compareName))
                                             return;

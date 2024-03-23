@@ -1,7 +1,7 @@
 package io.ruin.model.entity.npc.actions;
 
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.item.actions.ItemNPCAction;
 
@@ -12,9 +12,9 @@ import io.ruin.model.item.actions.ItemNPCAction;
 public class Phials {
     static {
         ItemNPCAction.register(1614, ((player, item, npc) -> {
-            ItemDef def = item.getDef();
+            ItemDefinition def = item.getDef();
             if (def.isNote()) {
-                ItemDef normal = def.fromNote();
+                ItemDefinition normal = def.fromNote();
                 int amount = item.getAmount();
                 int freeSpace = player.getInventory().getFreeSlots();
                 if (amount == freeSpace + 1)

@@ -3,7 +3,7 @@ package io.ruin.model.skills.farming.farmer;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -166,7 +166,7 @@ public enum Farmer {
 
     private static String getItemName(Item item) {
         String str = "";
-        ItemDef def = item.getDef();
+        ItemDefinition def = item.getDef();
         if (item.getId() == COINS_995) {
             return NumberUtils.formatNumber(item.getAmount()) + " coins";
         } else {

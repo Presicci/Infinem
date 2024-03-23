@@ -1,7 +1,7 @@
 package io.ruin.model.activities.combat.godwars;
 
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
@@ -68,14 +68,14 @@ public class GodwarsFollower {
 
     private static Bounds GODWARS = new Bounds(2816, 5249, 2943, 5375, -1);
 
-    private static final Predicate<ItemDef> ARMADYL_ITEM = def -> Arrays.stream(ARMADYL_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
-    private static final Predicate<ItemDef> SARADOMIN_ITEM = def -> Arrays.stream(SARADOMIN_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
-    private static final Predicate<ItemDef> ZAMORAK_ITEM = def -> Arrays.stream(ZAMORAK_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
-     private static final Predicate<ItemDef> BANDOS_ITEM = def -> Arrays.stream(BANDOS_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
+    private static final Predicate<ItemDefinition> ARMADYL_ITEM = def -> Arrays.stream(ARMADYL_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
+    private static final Predicate<ItemDefinition> SARADOMIN_ITEM = def -> Arrays.stream(SARADOMIN_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
+    private static final Predicate<ItemDefinition> ZAMORAK_ITEM = def -> Arrays.stream(ZAMORAK_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
+     private static final Predicate<ItemDefinition> BANDOS_ITEM = def -> Arrays.stream(BANDOS_ITEM_NAMES).anyMatch(n -> def.name.toLowerCase().contains(n));
 
     static {
 
-        ItemDef.cached.values().forEach(def -> {
+        ItemDefinition.cached.values().forEach(def -> {
             if (ARMADYL_ITEM.test(def)) def.godItem[0] = true;
             if (SARADOMIN_ITEM.test(def)) def.godItem[1] = true;
             if (ZAMORAK_ITEM.test(def)) def.godItem[2] = true;

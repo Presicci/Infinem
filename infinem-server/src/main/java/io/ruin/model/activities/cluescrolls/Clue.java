@@ -1,7 +1,7 @@
 package io.ruin.model.activities.cluescrolls;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -53,7 +53,7 @@ public class Clue {
         for(Item item : player.getInventory().getItems()) {
             if(item == null)
                 continue;
-            ItemDef def = item.getDef();
+            ItemDefinition def = item.getDef();
             if(def.clueType == null)
                 continue;
             ClueSave save = def.clueType.getSave(player);

@@ -2,7 +2,7 @@ package io.ruin.model.skills.woodcutting;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.content.ActivitySpotlight;
@@ -14,7 +14,6 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.BirdNest;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
 import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
-import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.pet.Pet;
@@ -132,7 +131,7 @@ public class Woodcutting {
                             if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(treeData.log)) {
                                 amount *= 2;
                                 player.getBank().add(loot.getId(), loot.getAmount());
-                                player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(loot.getId()) + ".");
+                                player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(loot.getId()) + ".");
                             } else {
                                 player.sendFilteredMessage("You get " + loot.getDef().descriptiveName + ".");
                                 player.getInventory().add(loot);
@@ -143,7 +142,7 @@ public class Woodcutting {
                             if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(treeData.log)) {
                                 amount *= 2;
                                 player.getBank().add(treeData.log, amount);
-                                player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(treeData.log) + ".");
+                                player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(treeData.log).name + " you would have gained, giving you a total of " + player.getBank().getAmount(treeData.log) + ".");
                             } else {
                                 player.sendFilteredMessage("You get some " + treeData.treeName + ".");
                                 player.getInventory().add(treeData.log, amount);

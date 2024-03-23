@@ -3,7 +3,7 @@ package io.ruin.model.item.actions.impl;
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -76,7 +76,7 @@ public class WildernessDeadmanKey {
         Item loot = REWARDS[Random.get(REWARDS.length - 1)];
         player.getInventory().addOrDrop(loot.getId(), loot.getAmount());
         player.getInventory().addOrDrop(COINS_995, Random.get(100000, 150000));
-        player.sendFilteredMessage(Color.BLUE.wrap("You have received " + ItemDef.get(loot.getId()).name + " from the Deadman chest!"));
+        player.sendFilteredMessage(Color.BLUE.wrap("You have received " + ItemDefinition.get(loot.getId()).name + " from the Deadman chest!"));
     }
 
     public static void rollForDeadmanKey(Player killer, Player victim) {

@@ -3,12 +3,9 @@ package io.ruin.data.impl.dialogue;
 import io.ruin.Server;
 import io.ruin.api.utils.FileUtils;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.entity.npc.NPCAction;
-import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.*;
-import io.ruin.model.inter.utils.Option;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,7 +14,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiConsumer;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci

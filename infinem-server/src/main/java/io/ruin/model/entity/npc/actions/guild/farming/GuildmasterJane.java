@@ -1,6 +1,6 @@
 package io.ruin.model.entity.npc.actions.guild.farming;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -117,7 +117,7 @@ public class GuildmasterJane {
         player.dialogue(
                 new PlayerDialogue("What's my current farming contract?"),
                 (contract != null ?
-                        (new NPCDialogue(npc, "We need you to grow a " + ItemDef.get(contract.crop.getSeed()).name.toLowerCase()
+                        (new NPCDialogue(npc, "We need you to grow a " + ItemDefinition.get(contract.crop.getSeed()).name.toLowerCase()
                                 + ".  I'll reward you once " + (contract.checkHealth ? "you have checked its health." : "it has been fully harvested.")).animate(569)) :
                         (new NPCDialogue(npc, "It seems you don't have a contract.").animate(569))    // Shouldn't happen
                 ),
@@ -155,7 +155,7 @@ public class GuildmasterJane {
             FarmingContracts contract = FarmingContracts.generateContract(player, difficulty);
             player.dialogue(
                     new PlayerDialogue("Could I have an " + difficultyName + " contract please?"),
-                    new NPCDialogue(npc, "Please could you grow a " + ItemDef.get(contract.crop.getSeed()).name.toLowerCase()
+                    new NPCDialogue(npc, "Please could you grow a " + ItemDefinition.get(contract.crop.getSeed()).name.toLowerCase()
                             + " for us?  I'll reward you once " + (contract.checkHealth ? "you have checked its health." : "it has been fully harvested.")).animate(569)
             );
         }

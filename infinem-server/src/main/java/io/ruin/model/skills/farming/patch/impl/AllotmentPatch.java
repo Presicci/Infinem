@@ -2,7 +2,7 @@ package io.ruin.model.skills.farming.patch.impl;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.farming.crop.Crop;
@@ -120,7 +120,7 @@ public class AllotmentPatch extends Patch {
                     player.collectResource(new Item(getPlantedCrop().getProduceId(), 1));
                     player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP(), true);
                     player.sendFilteredMessage("You harvest the patch.");
-                    player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.HARVESTALLOT, ItemDef.get(getPlantedCrop().getProduceId()).name);
+                    player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.HARVESTALLOT, ItemDefinition.get(getPlantedCrop().getProduceId()).name);
                     getPlantedCrop().getCounter().increment(player, 1);
                     removeProduce();
                     if (getProduceCount() == 0) {

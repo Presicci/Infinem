@@ -1,7 +1,7 @@
 package io.ruin.model.activities.combat.barrows;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
@@ -12,8 +12,6 @@ import io.ruin.model.item.loot.LootTable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import static io.ruin.cache.ItemID.COINS_995;
 
 public class BarrowsRewards {
 
@@ -86,7 +84,7 @@ public class BarrowsRewards {
                 /**
                  * Barrows loot
                  */
-                ItemDef def = ItemDef.get(barrowsIds.remove(0));
+                ItemDefinition def = ItemDefinition.get(barrowsIds.remove(0));
                // Broadcast.FRIENDS.sendNews(player, player.getName() + " just received " + def.descriptiveName + " from the Barrows chest!");
                 container.add(def.id, 1);
             }

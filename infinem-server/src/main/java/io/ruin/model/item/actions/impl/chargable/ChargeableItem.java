@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
@@ -65,7 +65,7 @@ public abstract class ChargeableItem {
 
     protected static void uncharge(ChargeableItem chargeableItem, Player player, Item item) {
         String itemName = item.getDef().name.replace(" (uncharged)", "").toLowerCase();
-        String chargeItemName =  ItemDef.get(chargeableItem.getChargeItem()).name.toLowerCase();
+        String chargeItemName =  ItemDefinition.get(chargeableItem.getChargeItem()).name.toLowerCase();
         player.dialogue(
                 new YesNoDialogue("Are you sure you'd like to uncharge the " + itemName + "?",
                         "The " + chargeItemName + "s within will " + (chargeableItem.doesReturnItems() ? "" : Color.RED.wrap("not ")) + "be returned to you."
@@ -81,10 +81,10 @@ public abstract class ChargeableItem {
             if (uncharged > 0) {
                 item.removeCharges();
                 item.setId(uncharged);
-                player.sendMessage(Color.RED.wrap("Your " + ItemDef.get(chargeableItem.getChargedId()).name + " has run out of charges."));
+                player.sendMessage(Color.RED.wrap("Your " + ItemDefinition.get(chargeableItem.getChargedId()).name + " has run out of charges."));
             } else {
                 item.remove();
-                player.sendMessage(Color.RED.wrap("Your " + ItemDef.get(chargeableItem.getChargedId()).name + " has run out of charges and turned to dust."));
+                player.sendMessage(Color.RED.wrap("Your " + ItemDefinition.get(chargeableItem.getChargedId()).name + " has run out of charges and turned to dust."));
             }
         } else {
             item.setCharges(item.getCharges() - amount);

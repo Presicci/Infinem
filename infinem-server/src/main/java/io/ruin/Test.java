@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.api.database.Database;
 import io.ruin.api.database.DatabaseUtils;
 import io.ruin.api.filestore.FileStore;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,7 +22,7 @@ public class Test {
     }
 
     public int getProtectValue(int itemId) {
-        ItemDef def = ItemDef.get(itemId);
+        ItemDefinition def = ItemDefinition.get(itemId);
         return def == null ? 0 : def.protectValue;
     }
 

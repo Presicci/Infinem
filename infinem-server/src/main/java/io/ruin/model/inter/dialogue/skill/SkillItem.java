@@ -1,6 +1,6 @@
 package io.ruin.model.inter.dialogue.skill;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.process.event.Event;
 import kilim.Pausable;
@@ -18,7 +18,7 @@ public class SkillItem {
 
     public SkillItem(int id) {
         this.id = id;
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         if (def != null)
             this.name = def.name;
         else

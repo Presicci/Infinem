@@ -1,6 +1,6 @@
 package io.ruin.model.combat;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.npc.MaxHitDummy;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
@@ -23,7 +23,7 @@ public class CombatUtils {
     private static double getMagicInterference(Player player) {
         int interferenceCount = 0;
         for(int slot : MAGIC_CALC_SLOTS) {
-            ItemDef def = player.getEquipment().getDef(slot);
+            ItemDefinition def = player.getEquipment().getDef(slot);
             if(def == null || def.equipBonuses == null)
                 continue;
             /**

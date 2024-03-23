@@ -1,7 +1,7 @@
 package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.HitType;
 import io.ruin.model.entity.player.Player;
@@ -29,7 +29,7 @@ public class Pickables {
 
         private void pick(Player player, GameObject obj) {
             if(player.getInventory().isFull()) {
-                player.sendMessage("You can't carry any more " + ItemDef.get(itemId).name.toLowerCase() + ".");
+                player.sendMessage("You can't carry any more " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
                 return;
             }
             player.startEvent(event -> {
@@ -45,7 +45,7 @@ public class Pickables {
                     return;
                 }
                 player.getInventory().add(itemId, 1);
-                player.sendMessage("You pick some " + ItemDef.get(itemId).name.toLowerCase() + ".");
+                player.sendMessage("You pick some " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
                 if(Random.rollDie(6, 1))
                     remove(obj);
                 player.unlock();

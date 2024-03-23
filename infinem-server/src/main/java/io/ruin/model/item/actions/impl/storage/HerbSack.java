@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.storage;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
@@ -88,7 +88,7 @@ public class HerbSack {
     private static void addToSack(Player player, int herbId, int amount) {
         int herbSize = amountStored(player, herbId);
         if (herbSize >= 30) {
-            player.sendFilteredMessage("Your herb sack cannot carry anymore " + ItemDef.get(herbId).name.toLowerCase() + "s.");
+            player.sendFilteredMessage("Your herb sack cannot carry anymore " + ItemDefinition.get(herbId).name.toLowerCase() + "s.");
             return;
         }
         int minToAdd = Math.min(amount, 30 - herbSize);
@@ -145,7 +145,7 @@ public class HerbSack {
             player.sendFilteredMessage("The herb sack contains:");
             for (int herbs : GRIMY_HERBS) {
                 int herbSize = amountStored(player, herbs);
-                player.sendFilteredMessage(herbSize + " " + ItemDef.get(herbs).name.toLowerCase() + "s");
+                player.sendFilteredMessage(herbSize + " " + ItemDefinition.get(herbs).name.toLowerCase() + "s");
             }
         });
         /**

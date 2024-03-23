@@ -1,20 +1,18 @@
 package io.ruin.model.entity.npc.actions.varrock;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
-import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.containers.Inventory;
 import io.ruin.utility.Utils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.val;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -71,7 +69,7 @@ public class CustomFurClothing {
         int fee = furItem.fee;
         Item requirement = furItem.fur;
         Item alternativeRequirement = furItem.alternativeFur;
-        String name = ItemDef.get(itemId).name;
+        String name = ItemDefinition.get(itemId).name;
         if (option == 1) {
             player.sendMessage(name + " costs: " + furItem.fee + " coins and " +
                     (alternativeRequirement == null ? "" : "either ") + requirement.getAmount() + " " + requirement.getDef().name.toLowerCase()
@@ -79,7 +77,7 @@ public class CustomFurClothing {
             return;
         }
         if (option == 5) {
-            player.sendMessage(ItemDef.get(itemId).examine);
+            player.sendMessage(ItemDefinition.get(itemId).examine);
             return;
         }
         Inventory inventory = player.getInventory();

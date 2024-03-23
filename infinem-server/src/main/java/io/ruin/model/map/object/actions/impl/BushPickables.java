@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.object.GameObject;
@@ -34,7 +34,7 @@ public class BushPickables {
                 return;
             }
             if (player.getInventory().isFull()) {
-                player.sendMessage("You can't carry any more " + ItemDef.get(itemId).name.toLowerCase() + ".");
+                player.sendMessage("You can't carry any more " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
                 return;
             }
             player.startEvent(event -> {
@@ -42,7 +42,7 @@ public class BushPickables {
                 player.animate(832);
                 event.delay(1);
                 player.getInventory().add(itemId, 1);
-                player.sendMessage("You pick " + (this == PINEAPPLE || this == PINEAPPLE_APE ? "a" : "some") + " " + ItemDef.get(itemId).name.toLowerCase() + ".");
+                player.sendMessage("You pick " + (this == PINEAPPLE || this == PINEAPPLE_APE ? "a" : "some") + " " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
                 changeObject(obj);
                 player.unlock();
             });

@@ -1,7 +1,7 @@
 package io.ruin.model.skills.fishing;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
@@ -10,7 +10,6 @@ import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.StepType;
-import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.chargable.CrystalEquipment;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
@@ -223,13 +222,13 @@ public class FishingSpot {
                         } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(c.id)) {
                             amount *= 2;
                             player.getBank().add(c.id, amount);
-                            player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(c.id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(c.id) + ".");
+                            player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(c.id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(c.id) + ".");
                             player.getStats().addXp(StatType.Fishing, (c.xp * anglerBonus(player)) * (npc.getId() == MINNOWS ? 1 : 2), true);
                         } else {
                             player.getInventory().addOrDrop(c.id, amount);
                             player.getStats().addXp(StatType.Fishing, c.xp * anglerBonus(player), true);
                         }
-                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FISHCATCH, ItemDef.get(c.id).name, amount, true);
+                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.FISHCATCH, ItemDefinition.get(c.id).name, amount, true);
                         if (npc.getId() != MINNOWS)
                             PlayerCounter.TOTAL_FISH.increment(player, amount);
 

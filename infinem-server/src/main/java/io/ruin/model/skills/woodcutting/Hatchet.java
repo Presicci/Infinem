@@ -1,6 +1,6 @@
 package io.ruin.model.skills.woodcutting;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
@@ -55,14 +55,14 @@ public enum Hatchet {
     }
 
     static {
-        ItemDef.forEach(def -> {
+        ItemDefinition.forEach(def -> {
             String name = def.name.toLowerCase();
             for (Hatchet hatchet : Hatchet.values()) {
                 if (name.startsWith(hatchet.name().toLowerCase() + " axe"))
                     def.hatchet = hatchet;
             }
         });
-        ItemDef.get(13242).hatchet = INFERNAL_UNCHARGED;
+        ItemDefinition.get(13242).hatchet = INFERNAL_UNCHARGED;
     }
 
 }

@@ -1,7 +1,7 @@
 package io.ruin.model.entity.npc.actions.guild.crafting;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskArea;
 import io.ruin.model.content.tasksystem.areas.AreaTaskTier;
 import io.ruin.model.entity.npc.NPCAction;
@@ -39,8 +39,8 @@ public enum Tanner {
         this.product = product;
         this.cost = cost;
         this.displayName = displayName;
-        this.rawName = ItemDef.get(raw).name.toLowerCase();
-        this.productName = ItemDef.get(product).name.toLowerCase();
+        this.rawName = ItemDefinition.get(raw).name.toLowerCase();
+        this.productName = ItemDefinition.get(product).name.toLowerCase();
     }
 
     private static final int[] TANNERS = {
@@ -52,7 +52,7 @@ public enum Tanner {
     private static void tan(Player player, Tanner tanner, int amount) {
         Item rawItem = player.getInventory().findItem(tanner.raw);
         Item noted = null;
-        if (rawItem == null && (ItemDef.get(tanner.raw).notedId < 1 || (noted = player.getInventory().findItem(ItemDef.get(tanner.raw).notedId)) == null)) {
+        if (rawItem == null && (ItemDefinition.get(tanner.raw).notedId < 1 || (noted = player.getInventory().findItem(ItemDefinition.get(tanner.raw).notedId)) == null)) {
             player.sendMessage("You don't have any " + tanner.rawName + "s to tan.");
             return;
         }
@@ -66,14 +66,14 @@ public enum Tanner {
         Item finalNoted = noted;
         player.startEvent(event -> {
             int made = 0;
-            if (ItemDef.get(tanner.raw).notedId > 0) {
+            if (ItemDefinition.get(tanner.raw).notedId > 0) {
                 if (finalNoted != null) {
                     int tan = Math.min(Math.min(finalNoted.getAmount(), amount), player.getInventory().getAmount(COINS_995) / cost);
                     if (tan == 0)
                         return;
                     player.getInventory().remove(COINS_995, cost * tan);
                     player.getInventory().remove(finalNoted.getId(), tan);
-                    player.getInventory().add(ItemDef.get(tanner.product).notedId, tan);
+                    player.getInventory().add(ItemDefinition.get(tanner.product).notedId, tan);
                     made += tan;
                 }
             }
@@ -131,7 +131,7 @@ public enum Tanner {
     }
 
     private static String color(Player player, int rawMaterial, int cost) {
-        if ((player.getInventory().findItem(rawMaterial) == null && (ItemDef.get(rawMaterial).notedId < 1 || player.getInventory().findItem(ItemDef.get(rawMaterial).notedId) == null)) || !player.getInventory().contains(COINS_995, cost))
+        if ((player.getInventory().findItem(rawMaterial) == null && (ItemDefinition.get(rawMaterial).notedId < 1 || player.getInventory().findItem(ItemDefinition.get(rawMaterial).notedId) == null)) || !player.getInventory().contains(COINS_995, cost))
             return "<col=f80000>";
         return "<col=00c8f8>";
     }

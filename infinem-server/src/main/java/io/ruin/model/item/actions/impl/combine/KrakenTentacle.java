@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl.combine;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
@@ -49,7 +49,7 @@ public class KrakenTentacle {
         ItemAction.registerInventory(ABYSSAL_TENTACLE, "dissolve", KrakenTentacle::revertWhip);
         ItemItemAction.register(ABYSSAL_WHIP, KRAKEN_TENTACLE, (player, primary, secondary) -> makeWhip(player, primary, secondary, 12006));
 
-        ItemDef.get(ABYSSAL_TENTACLE).addPostTargetDefendListener((player, item, hit, target) -> {
+        ItemDefinition.get(ABYSSAL_TENTACLE).addPostTargetDefendListener((player, item, hit, target) -> {
             if(Random.rollDie(4, 1))
                 target.poison(4);
             int charges = AttributeExtensions.getCharges(item);

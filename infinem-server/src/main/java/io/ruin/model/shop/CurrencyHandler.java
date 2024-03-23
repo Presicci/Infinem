@@ -1,11 +1,10 @@
 package io.ruin.model.shop;
 
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
 
@@ -57,7 +56,7 @@ public abstract class CurrencyHandler {
                 }
                 int slotsPerPurchase = 1;
                 for(Item additional : shopItem.getAdditionalItems()){
-                    ItemDef def = additional.getDef();
+                    ItemDefinition def = additional.getDef();
                     if(def.stackable){
                         slotsPerPurchase++;
                     } else {

@@ -1,7 +1,7 @@
 package io.ruin.model.entity.npc.actions.wilderness;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -73,7 +73,7 @@ public enum Piles {
     static {
         NPCAction.register(13, "talk-to", Piles::talk);
         for (Piles exchangeableItem : values())
-            ItemDef.get(exchangeableItem.itemID).allowPilesToNote = true;
+            ItemDefinition.get(exchangeableItem.itemID).allowPilesToNote = true;
         ItemNPCAction.register("piles", (player, item, npc) -> {
             if(item != null && item.getDef().allowPilesToNote) {
                 int amountOfItems = item.count();

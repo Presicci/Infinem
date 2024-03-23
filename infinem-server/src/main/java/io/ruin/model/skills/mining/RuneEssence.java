@@ -1,11 +1,9 @@
 package io.ruin.model.skills.mining;
 
-import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
-import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.Tool;
@@ -78,7 +76,7 @@ public class RuneEssence {
                     if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(itemId)) {
                         amount *= 2;
                         player.getBank().add(itemId, amount);
-                        player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(itemId).name + " you would have gained, giving you a total of " + player.getBank().getAmount(itemId) + ".");
+                        player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(itemId).name + " you would have gained, giving you a total of " + player.getBank().getAmount(itemId) + ".");
                     } else {
                         player.getInventory().add(itemId, amount);
                     }

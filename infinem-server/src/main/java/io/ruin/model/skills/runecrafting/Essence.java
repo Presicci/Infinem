@@ -1,6 +1,6 @@
 package io.ruin.model.skills.runecrafting;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 
 public enum Essence {
 
@@ -13,7 +13,7 @@ public enum Essence {
 
     Essence(int id) {
         this.id = id;
-        this.name = ItemDef.get(id).name.toLowerCase();
+        this.name = ItemDefinition.get(id).name.toLowerCase();
     }
 
 }

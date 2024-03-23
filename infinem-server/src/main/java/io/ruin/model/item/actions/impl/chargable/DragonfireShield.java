@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.Hit;
@@ -62,8 +62,8 @@ public enum DragonfireShield {
             /**
              * Dragonfire charging
              */
-            ItemDef.get(shield.chargedId).addPreDefendListener(DragonfireShield::chargeCheck);
-            ItemDef.get(shield.unchargedId).addPostDamageListener(DragonfireShield::chargeCheck);
+            ItemDefinition.get(shield.chargedId).addPreDefendListener(DragonfireShield::chargeCheck);
+            ItemDefinition.get(shield.unchargedId).addPostDamageListener(DragonfireShield::chargeCheck);
 
             /**
              * Activate

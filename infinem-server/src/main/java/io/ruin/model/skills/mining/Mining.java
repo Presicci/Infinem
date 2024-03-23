@@ -1,7 +1,7 @@
 package io.ruin.model.skills.mining;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
@@ -130,14 +130,14 @@ public class Mining {
                         if (rockData == Rock.GRANITE)
                             player.getTaskManager().doLookupByUUID(656);    // Granite lookup sucks so just manually do it
                         else
-                            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MINE, ItemDef.get(id).name);
+                            player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MINE, ItemDefinition.get(id).name);
                         if (pickaxe == Pickaxe.INFERNAL && Random.rollDie(3, 1) && InfernalTools.INFERNAL_PICKAXE.hasCharge(player) && infernalPickProc(player, rockData.ore)) {
                             player.graphics(580, 155, 0);
                             InfernalTools.INFERNAL_PICKAXE.removeCharge(player);
-                            player.sendMessage("Your infernal pickaxe incinerates the " + ItemDef.get(id).name + ".");
+                            player.sendMessage("Your infernal pickaxe incinerates the " + ItemDefinition.get(id).name + ".");
                         } else if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(id)) {
                             player.getBank().add(id, amount*2);
-                            player.sendFilteredMessage("Your Relic banks the " + ItemDef.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
+                            player.sendFilteredMessage("Your Relic banks the " + ItemDefinition.get(id).name + " you would have gained, giving you a total of " + player.getBank().getAmount(id) + ".");
                         } else {
                             player.getInventory().add(id, amount);
                         }
@@ -171,7 +171,7 @@ public class Mining {
                     }
                     if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
                         player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
-                                (rockData == Rock.GEM_ROCK ? ItemDef.get(itemId).name.toLowerCase() : rockData.rockName) + ".");
+                                (rockData == Rock.GEM_ROCK ? ItemDefinition.get(itemId).name.toLowerCase() : rockData.rockName) + ".");
                     }
                     player.getTaskManager().doSkillItemLookup(itemId, amount);  // Fix this looking up id 0 all the time
                     if (pickaxe == Pickaxe.STEEL)

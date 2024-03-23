@@ -5,7 +5,7 @@ import io.ruin.Server;
 import io.ruin.api.database.DatabaseUtils;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.content.tasksystem.tasks.inter.TabTask;
 import io.ruin.model.content.tasksystem.tasks.inter.TaskSQLBuilder;
@@ -197,11 +197,11 @@ public class TaskManager {
     }
 
     public void doSkillItemLookup(int itemId) {
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, ItemDef.get(itemId).name.toLowerCase(), 1, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, ItemDefinition.get(itemId).name.toLowerCase(), 1, true);
     }
 
     public void doSkillItemLookup(int itemId, int amount) {
-        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, ItemDef.get(itemId).name.toLowerCase(), amount, true);
+        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLITEM, ItemDefinition.get(itemId).name.toLowerCase(), amount, true);
     }
 
     public void doSkillItemLookup(Item item) {

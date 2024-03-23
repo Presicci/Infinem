@@ -3,7 +3,7 @@ package io.ruin.model.combat;
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.bestiary.perks.impl.ReducedEnemyAccuracyPerk;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.shared.LockType;
@@ -242,21 +242,21 @@ public class Hit {
 	 * Attacking data
 	 */
 
-	public ItemDef attackWeapon, rangedWeapon, rangedAmmo;
+	public ItemDefinition attackWeapon, rangedWeapon, rangedAmmo;
 
 	public TargetSpell attackSpell;
 
-	public Hit setAttackWeapon(ItemDef attackWeapon) {
+	public Hit setAttackWeapon(ItemDefinition attackWeapon) {
 		this.attackWeapon = attackWeapon;
 		return this;
 	}
 
-	public Hit setRangedWeapon(ItemDef rangedWeapon) {
+	public Hit setRangedWeapon(ItemDefinition rangedWeapon) {
 		this.rangedWeapon = rangedWeapon;
 		return this;
 	}
 
-	public Hit setRangedAmmo(ItemDef rangedAmmo) {
+	public Hit setRangedAmmo(ItemDefinition rangedAmmo) {
 		this.rangedAmmo = rangedAmmo;
 		return this;
 	}

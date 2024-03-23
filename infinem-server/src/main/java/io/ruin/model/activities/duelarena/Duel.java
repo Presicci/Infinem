@@ -2,7 +2,7 @@ package io.ruin.model.activities.duelarena;
 
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerAction;
@@ -268,8 +268,8 @@ public class Duel extends ItemContainer {
                 return;
             }
             if(isToggled(DuelRule.NO_MELEE)) {
-                ItemDef playerWeapon = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
-                ItemDef targetWeapon = targetDuel.player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+                ItemDefinition playerWeapon = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+                ItemDefinition targetWeapon = targetDuel.player.getEquipment().getDef(Equipment.SLOT_WEAPON);
                 if(playerWeapon == null) {
                     player.sendMessage("You don't have a weapon equipped!");
                     return;
@@ -538,8 +538,8 @@ public class Duel extends ItemContainer {
             return true;
         }
         if(rule == DuelRule.NO_WEAPON_SWITCH) {
-            ItemDef playerWeapon = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
-            ItemDef targetWeapon = targetDuel.player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+            ItemDefinition playerWeapon = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+            ItemDefinition targetWeapon = targetDuel.player.getEquipment().getDef(Equipment.SLOT_WEAPON);
             if(playerWeapon == null) {
                 player.sendMessage("You don't have a weapon equipped!");
                 return false;
@@ -801,7 +801,7 @@ public class Duel extends ItemContainer {
      * Equipment
      */
 
-    public boolean isBlocked(ItemDef def) {
+    public boolean isBlocked(ItemDefinition def) {
         if(stage < 4)
             return false;
         switch(def.equipSlot) {

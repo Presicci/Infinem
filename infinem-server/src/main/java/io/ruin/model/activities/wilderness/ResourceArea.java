@@ -1,7 +1,7 @@
 package io.ruin.model.activities.wilderness;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
@@ -31,7 +31,7 @@ public class ResourceArea {
                 enter(player, door);
             }
             Item currency = player.getInventory().findItem(getCurrency());
-            ItemDef wepDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+            ItemDefinition wepDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
             boolean hasWildernessSword = wepDef != null && wepDef.id == 13111;
             if((currency == null || currency.getAmount() < getEntryFee()) && !hasWildernessSword) {
                 player.sendMessage("You need " + NumberUtils.formatNumber(getEntryFee()) + " " + getCurrencyName() + " to enter the Arena.");

@@ -1,6 +1,6 @@
 package io.ruin.model.activities.warriorsguild;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -72,7 +72,7 @@ public class WarriorsGuild {
                             player.dialogue(new ItemDialogue().one(Cyclops.RUNE_DEFENDER, "You need a Rune Defender or Dragon Defender to access this area."));
                             return;
                         }
-                        player.sendFilteredMessage("<col=804080>Cyclops' are currently dropping " + ItemDef.get(defender).name + "s.");
+                        player.sendFilteredMessage("<col=804080>Cyclops' are currently dropping " + ItemDefinition.get(defender).name + "s.");
                     }
                 }
 

@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.chargable;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -10,7 +10,7 @@ public class StarterBow extends ChargeableItem {
     static {
         ChargeableItem chargeableItem = new StarterBow();
         register(chargeableItem);
-        ItemDef.get(28555).addPreTargetDefendListener((player, item, hit, target) -> removeCharge(chargeableItem, player, item, 1));
+        ItemDefinition.get(28555).addPreTargetDefendListener((player, item, hit, target) -> removeCharge(chargeableItem, player, item, 1));
     }
 
     @Override

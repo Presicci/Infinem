@@ -1,6 +1,6 @@
 package io.ruin.model.inter.journal.dropviewer;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.item.Item;
 import io.ruin.utility.Misc;
 
@@ -32,7 +32,7 @@ public class DropViewerResultItem extends DropViewerResult {
             case 22973:
                 return "Brimstone Ring Part";
             default:
-                return ItemDef.get(id).name;
+                return ItemDefinition.get(id).name;
         }
     }
 

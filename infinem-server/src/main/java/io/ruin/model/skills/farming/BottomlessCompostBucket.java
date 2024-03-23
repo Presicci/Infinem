@@ -1,6 +1,6 @@
 package io.ruin.model.skills.farming;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -131,7 +131,7 @@ public class BottomlessCompostBucket {
             return;
         }
         int amountToFill = player.getInventory().getAmount(COMPOSTS[type]) * 2;
-        amountToFill += player.getInventory().getAmount(ItemDef.get(COMPOSTS[type]).notedId) * 2;
+        amountToFill += player.getInventory().getAmount(ItemDefinition.get(COMPOSTS[type]).notedId) * 2;
         if (amountToFill == 0) {
             player.dialogue(new MessageDialogue("You don't have any " + (type == 0 ? "compost" : type == 1 ? "supercompost" : "ultracompost")
                     + " to add to the bucket."));
@@ -149,7 +149,7 @@ public class BottomlessCompostBucket {
         } else {
             amountToRemove -= player.getInventory().getAmount(COMPOSTS[type]) * 2;
             player.getInventory().remove(COMPOSTS[type], player.getInventory().getAmount(COMPOSTS[type]));
-            player.getInventory().remove(ItemDef.get(COMPOSTS[type]).notedId, amountToRemove / 2);
+            player.getInventory().remove(ItemDefinition.get(COMPOSTS[type]).notedId, amountToRemove / 2);
         }
         if (item.getId() == EMPTY)
             item.setId(FILLED);
@@ -198,7 +198,7 @@ public class BottomlessCompostBucket {
     static {
         for (int index = 0; index < COMPOSTS.length; index++) {
             int itemId = COMPOSTS[index];
-            int noteId = ItemDef.get(itemId).notedId;
+            int noteId = ItemDefinition.get(itemId).notedId;
             int finalIndex = index;
             ItemItemAction.register(itemId, EMPTY, ((player, primary, secondary) -> addOne(player, secondary, primary, finalIndex)));
             ItemItemAction.register(itemId, FILLED, ((player, primary, secondary) -> addOne(player, secondary, primary, finalIndex)));

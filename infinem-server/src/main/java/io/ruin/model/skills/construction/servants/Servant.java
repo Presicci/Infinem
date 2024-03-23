@@ -1,7 +1,7 @@
 package io.ruin.model.skills.construction.servants;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.npc.actions.edgeville.SawmillOperator;
@@ -361,7 +361,7 @@ public class Servant extends NPC {
 
     private void configWithdraw(Player player) {
         startFollowing();
-        OptionScroll.open(player, "Choose a material", true, BANK_ITEMS.stream().map(mat -> new Option(ItemDef.get(mat.getItemId()).name, () -> {
+        OptionScroll.open(player, "Choose a material", true, BANK_ITEMS.stream().map(mat -> new Option(ItemDefinition.get(mat.getItemId()).name, () -> {
             player.integerInput("Enter amount:", amount -> withdrawFromBank(player, mat.getItemId(), amount));
         })).collect(Collectors.toList()));
     }

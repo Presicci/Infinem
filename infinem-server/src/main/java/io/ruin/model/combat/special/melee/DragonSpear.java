@@ -1,6 +1,6 @@
 package io.ruin.model.combat.special.melee;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.npc.MaxHitDummy;
 import io.ruin.model.combat.AttackStyle;
@@ -19,7 +19,7 @@ import java.util.Arrays;
 public class DragonSpear implements Special {
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return name.contains("dragon spear") || name.contains("zamorakian");
     }
 

@@ -1,8 +1,6 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
-import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;

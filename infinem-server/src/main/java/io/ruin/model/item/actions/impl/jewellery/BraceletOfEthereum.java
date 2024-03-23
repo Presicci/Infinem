@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl.jewellery;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
@@ -28,7 +28,7 @@ public class BraceletOfEthereum {
         ItemAction.registerEquipment(UNCHARGED, "check", BraceletOfEthereum::check);
         ItemAction.registerEquipment(UNCHARGED, "toggle absorption", BraceletOfEthereum::toggleAbsorption);
         ItemItemAction.register(UNCHARGED, REVENANT_ETHER, BraceletOfEthereum::charge);
-        ItemDef.get(UNCHARGED).sigmundBuyPrice = 500;
+        ItemDefinition.get(UNCHARGED).sigmundBuyPrice = 500;
 
         /**
          * Charged
@@ -39,7 +39,7 @@ public class BraceletOfEthereum {
         ItemAction.registerInventory(CHARGED, "check", BraceletOfEthereum::check);
         ItemAction.registerInventory(CHARGED, "uncharge", BraceletOfEthereum::uncharge);
         ItemItemAction.register(CHARGED, REVENANT_ETHER, BraceletOfEthereum::charge);
-        ItemDef.get(CHARGED).breakId = UNCHARGED;
+        ItemDefinition.get(CHARGED).breakId = UNCHARGED;
     }
 
     private static void toggleAbsorption(Player player, Item item) {

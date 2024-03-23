@@ -2,7 +2,7 @@ package io.ruin.model.inter.handlers;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerAction;
 import io.ruin.model.inter.Interface;
@@ -117,7 +117,7 @@ public class TabStats {
             for(Item item : player.getEquipment().getItems()) {
                 if(item == null)
                     continue;
-                ItemDef def = item.getDef();
+                ItemDefinition def = item.getDef();
                 int[] reqs = def.equipReqs;
                 if(reqs == null)
                     continue;

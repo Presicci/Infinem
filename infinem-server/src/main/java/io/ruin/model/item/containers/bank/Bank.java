@@ -1,6 +1,6 @@
 package io.ruin.model.item.containers.bank;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -10,7 +10,6 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
-import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.handlers.EquipmentStats;
 import io.ruin.model.inter.handlers.TabInventory;
 import io.ruin.model.inter.utils.Config;
@@ -93,7 +92,7 @@ public class Bank extends ItemContainerG<BankItem> {
         if (player.getGameMode().isUltimateIronman()) {
             return 0;
         }
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         if(def == null || def.isPlaceholder())
             return -1;
         int tab = Config.BANK_TAB.get(player);
@@ -153,7 +152,7 @@ public class Bank extends ItemContainerG<BankItem> {
      */
 
     public int deposit(Item item, int amount, boolean message) {
-        ItemDef def = item.getDef();
+        ItemDefinition def = item.getDef();
         int moved = item.move(def.isNote() ? def.notedId : def.id, amount, this);
         if (moved == 0 && message)
             player.sendMessage("You don't have enough space in your bank account.");
@@ -191,7 +190,7 @@ public class Bank extends ItemContainerG<BankItem> {
                 clearFillers();
             return;
         }
-        ItemDef def = item.getDef();
+        ItemDefinition def = item.getDef();
         if(def.isPlaceholder()) {
             setBlank(item);
             return;
@@ -292,7 +291,7 @@ public class Bank extends ItemContainerG<BankItem> {
      * Placeholders
      */
 
-    private boolean allowPlaceHolder(ItemDef def) {
+    private boolean allowPlaceHolder(ItemDefinition def) {
         if(!def.hasPlaceholder()) {
             player.sendMessage("This item cannot leave a placeholder.");
             return false;
@@ -301,7 +300,7 @@ public class Bank extends ItemContainerG<BankItem> {
     }
 
     public boolean toPlaceholder(BankItem item) {
-        ItemDef def = item.getDef();
+        ItemDefinition def = item.getDef();
         if(allowPlaceHolder(def)) {
             item.setId(def.placeholderMainId);
             item.setAmount(1);

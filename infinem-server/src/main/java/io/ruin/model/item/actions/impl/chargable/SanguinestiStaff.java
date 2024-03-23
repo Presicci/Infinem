@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.ItemID;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
@@ -93,7 +93,7 @@ public class SanguinestiStaff {
         ItemAction.registerEquipment(CHARGED, "check", SanguinestiStaff::check);
         ItemAction.registerInventory(CHARGED, "check", SanguinestiStaff::check);
         ItemAction.registerInventory(CHARGED, "uncharge", SanguinestiStaff::uncharge);
-        ItemDef.get(CHARGED).addPreTargetDefendListener(SanguinestiStaff::consumeCharge);
+        ItemDefinition.get(CHARGED).addPreTargetDefendListener(SanguinestiStaff::consumeCharge);
 
     }
 

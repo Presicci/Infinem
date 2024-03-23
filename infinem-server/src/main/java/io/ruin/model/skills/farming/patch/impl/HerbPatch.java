@@ -2,7 +2,7 @@ package io.ruin.model.skills.farming.patch.impl;
 
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.skillcapes.FarmingSkillCape;
@@ -55,7 +55,7 @@ public class HerbPatch extends Patch {
                 player.collectResource(new Item(getPlantedCrop().getProduceId(), 1));
                 player.getInventory().add(getPlantedCrop().getProduceId(), 1);
                 player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP(), true);
-                String itemName = ItemDef.get(getPlantedCrop().getProduceId()).name;
+                String itemName = ItemDefinition.get(getPlantedCrop().getProduceId()).name;
                 player.sendFilteredMessage("You pick a " + itemName + ".");
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.HARVESTHERB, itemName);
                 getPlantedCrop().getCounter().increment(player, 1);

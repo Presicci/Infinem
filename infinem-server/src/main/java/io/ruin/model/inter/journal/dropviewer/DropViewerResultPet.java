@@ -1,6 +1,6 @@
 package io.ruin.model.inter.journal.dropviewer;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.pet.Pet;
 
@@ -17,7 +17,7 @@ public class DropViewerResultPet extends DropViewerResult {
     }
 
     public String get() {
-        String name = ItemDef.get(pet.itemId).name;
+        String name = ItemDefinition.get(pet.itemId).name;
         String amount = "" + (pet.dropThreshold > 0 ? "Threshold: <br><col=F5DEB3>" + pet.dropThreshold : "<col=F5DEB3>No threshold");
         String c = chance == 1 ? "Always" : ("1 / " + (chance == 0 ? "?" : chance));
         return name + "|" + amount + "|" + c;

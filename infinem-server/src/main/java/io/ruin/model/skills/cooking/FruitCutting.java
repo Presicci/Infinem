@@ -1,6 +1,6 @@
 package io.ruin.model.skills.cooking;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -24,7 +24,7 @@ public class FruitCutting {
                     addAction((p, amount, event) -> startCutting(p, cuttableFruit, item, amount));
             skillItems[index] = i;
         }
-        SkillDialogue.make("How would you like to cut the " + ItemDef.get(cuttableFruit.getItemId()).name + "?", player, skillItems);
+        SkillDialogue.make("How would you like to cut the " + ItemDefinition.get(cuttableFruit.getItemId()).name + "?", player, skillItems);
     }
 
     public static void startCutting(Player player, CuttableFruit cuttableFruit, Item item, int amount) {
@@ -50,7 +50,7 @@ public class FruitCutting {
                 fruit.remove(1);
                 player.getInventory().add(item);
                 player.animate(1248);
-                player.sendFilteredMessage("You slice up the " + ItemDef.get(cuttableFruit.getItemId()).name + ".");
+                player.sendFilteredMessage("You slice up the " + ItemDefinition.get(cuttableFruit.getItemId()).name + ".");
                 event.delay(2);
             }
         });

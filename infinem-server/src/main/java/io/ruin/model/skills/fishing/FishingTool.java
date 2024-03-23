@@ -1,6 +1,6 @@
 package io.ruin.model.skills.fishing;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
@@ -61,8 +61,8 @@ public enum FishingTool {
         this.secondaryId = secondaryId;
         this.startAnimationId = startAnimationId;
         this.loopAnimationId = loopAnimationId;
-        this.primaryName = ItemDef.get(id).name.toLowerCase();
-        this.secondaryName = secondaryId == -1 ? null : ItemDef.get(secondaryId).name.toLowerCase();
+        this.primaryName = ItemDefinition.get(id).name.toLowerCase();
+        this.secondaryName = secondaryId == -1 ? null : ItemDefinition.get(secondaryId).name.toLowerCase();
         this.baseTool = baseTool;
     }
 

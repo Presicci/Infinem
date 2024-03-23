@@ -1,6 +1,6 @@
 package io.ruin.model.inter.handlers;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.wilderness.BloodyChest;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
@@ -13,13 +13,7 @@ import io.ruin.model.item.actions.*;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
-import io.ruin.process.CoreWorker;
-import io.ruin.process.event.EventWorker;
-import io.ruin.process.task.TaskWorker;
 import io.ruin.services.Loggers;
-import io.ruin.utility.Misc;
-
-import java.util.List;
 
 public class TabInventory {
 
@@ -67,7 +61,7 @@ public class TabInventory {
         int i = option - 1;
         if(i < 0 || i >= 5)
             return;
-        ItemDef def = item.getDef();
+        ItemDefinition def = item.getDef();
         ItemAction[] actions = def.inventoryActions;
         if(actions != null) {
             ItemAction action = actions[i];

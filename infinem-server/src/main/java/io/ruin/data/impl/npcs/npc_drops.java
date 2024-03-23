@@ -1,16 +1,13 @@
 package io.ruin.data.impl.npcs;
 
-import com.google.common.base.CharMatcher;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.FileUtils;
 import io.ruin.api.utils.JsonUtils;
-import io.ruin.api.utils.Random;
 import io.ruin.api.utils.ServerWrapper;
 import io.ruin.api.utils.ThreadUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.NPCDef;
 import io.ruin.data.DataFile;
-import io.ruin.model.World;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.skills.herblore.Herb;
@@ -420,7 +417,7 @@ public class npc_drops extends DataFile {
                 for(String s : split) {
                     int id = itemId;
                     if(id != -1 && (asNote || s.contains("noted"))) {
-                        ItemDef def = ItemDef.get(id);
+                        ItemDefinition def = ItemDefinition.get(id);
                         if((id = def.notedId) == -1)
                             throw new IOException("Item can't be noted!");
                         s = s.replace("(noted)", "");
@@ -479,8 +476,8 @@ public class npc_drops extends DataFile {
             /**
              * Search for item with name...
              */
-            ItemDef found = null;
-            for(ItemDef def : ItemDef.cached.values()) {
+            ItemDefinition found = null;
+            for(ItemDefinition def : ItemDefinition.cached.values()) {
                 if(def == null || def.name == null || !def.name.equalsIgnoreCase(name))
                     continue;
                 if(found == null) {

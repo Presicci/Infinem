@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.combine;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
@@ -80,8 +80,8 @@ public enum SlayerHelmVariant {
                 ItemItemAction.register(Items.SLAYER_HELMET, variant.requiredId, ((player, primary, secondary) -> variant.colorize(player, primary, secondary, false)));
                 ItemItemAction.register(Items.SLAYER_HELMET_I, variant.requiredId, ((player, primary, secondary) -> variant.colorize(player, primary, secondary, true)));
             }
-            ItemDef.get(variant.helmId).slayerBoostMelee = true;
-            ItemDef.get(variant.imbuedHelmId).slayerBoostAll = true;
+            ItemDefinition.get(variant.helmId).slayerBoostMelee = true;
+            ItemDefinition.get(variant.imbuedHelmId).slayerBoostAll = true;
         }
     }
 }

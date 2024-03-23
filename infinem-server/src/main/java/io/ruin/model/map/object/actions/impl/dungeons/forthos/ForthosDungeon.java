@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl.dungeons.forthos;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.activities.combat.pvminstance.InstanceDialogue;
 import io.ruin.model.activities.combat.pvminstance.InstanceType;
@@ -14,7 +14,6 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Direction;
-import io.ruin.model.map.Region;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.Ladder;
 import io.ruin.model.map.object.actions.impl.PassableDoor;
@@ -98,7 +97,7 @@ public class ForthosDungeon {
 
 
     private static void enterSarachnisLair(Player player) {
-        ItemDef wepDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+        ItemDefinition wepDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         boolean knife;
         if (wepDef != null && wepDef.sharpWeapon) {
             knife = false;

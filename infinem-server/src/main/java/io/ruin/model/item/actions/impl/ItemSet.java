@@ -1,7 +1,7 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.cache.def.EnumDefinition;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -26,14 +26,14 @@ public class ItemSet {
         System.arraycopy(map.intValues, 1, this.itemIds, 0, map.length - 1);
         StringBuilder message = new StringBuilder();
         for(int i = 0; i < itemIds.length; i++) {
-            message.append("<col=ef1020>").append(ItemDef.get(itemIds[i]).name);
+            message.append("<col=ef1020>").append(ItemDefinition.get(itemIds[i]).name);
             if(i == itemIds.length - 1)
                 message.append("</col>.");
             else
                 message.append("</col>, ");
         }
         this.contentsMessage = message.toString();
-        ItemDef.get(id).itemSet = this;
+        ItemDefinition.get(id).itemSet = this;
     }
 
     private ItemSet(int id, int... itemIds) {

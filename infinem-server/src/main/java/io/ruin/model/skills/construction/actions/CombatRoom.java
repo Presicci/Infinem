@@ -1,6 +1,6 @@
 package io.ruin.model.skills.construction.actions;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -133,7 +133,7 @@ public class CombatRoom {
                 || (x == DynamicChunk.rotatedX(2, 5, player.getCurrentRoom().getRotation()) && y == DynamicChunk.rotatedY(2, 5, player.getCurrentRoom().getRotation()));
     }
 
-    public static boolean allowEquip(Player player, ItemDef selectedDef) {
+    public static boolean allowEquip(Player player, ItemDefinition selectedDef) {
         if (player.getCurrentRoom() == null || player.getCurrentRoom().getDefinition() != RoomDefinition.COMBAT_ROOM || player.getCurrentRoom().getBuilt(Hotspot.COMBAT_RING) == null)
             return true;
         Buildable arena = player.getCurrentRoom().getBuilt(Hotspot.COMBAT_RING);

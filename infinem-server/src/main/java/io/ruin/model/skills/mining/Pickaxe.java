@@ -1,6 +1,6 @@
 package io.ruin.model.skills.mining;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
@@ -56,6 +56,6 @@ public enum Pickaxe {
 
     static {
         for (Pickaxe pickaxe : values())
-            ItemDef.get(pickaxe.id).pickaxe = pickaxe;
+            ItemDefinition.get(pickaxe.id).pickaxe = pickaxe;
     }
 }

@@ -1,7 +1,6 @@
 package io.ruin.model.skills.magic.rune;
 
-import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.chargable.BryophytasStaff;
@@ -9,7 +8,6 @@ import io.ruin.model.item.actions.impl.storage.RunePouch;
 import io.ruin.model.item.containers.Equipment;
 
 import java.util.ArrayList;
-import java.util.function.Consumer;
 
 public class RuneRemoval {
 
@@ -40,7 +38,7 @@ public class RuneRemoval {
      */
 
     public static RuneRemoval get(Player player, Item... runeItems) {
-        ItemDef wepDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
+        ItemDefinition wepDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
         Rune staffRune = wepDef == null ? null : wepDef.staffRune;
 
         ArrayList<Item> pItems = new ArrayList<>();
@@ -91,7 +89,7 @@ public class RuneRemoval {
                 reqAmount -= charges;
             }
             for (Item item : pItems) {
-                ItemDef def = item.getDef();
+                ItemDefinition def = item.getDef();
                 if (reqRune != null) {
                     if (!reqRune.accept(def.rune))
                         continue;

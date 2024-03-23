@@ -1,13 +1,10 @@
 package io.ruin.model.item;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Maps;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.StringUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.attributes.AttributeExtensions;
@@ -16,7 +13,6 @@ import io.ruin.model.item.attributes.AugmentType;
 import io.ruin.utility.Broadcast;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.builder.ToStringExclude;
 
 import java.util.Map;
 
@@ -86,8 +82,8 @@ public class Item {
      * Gets the <code>ItemDef</code> for this item.
      * @return
      */
-    public ItemDef getDef() {
-        return ItemDef.cached.get(id);
+    public ItemDefinition getDef() {
+        return ItemDefinition.cached.get(id);
     }
 
     /**
@@ -105,7 +101,7 @@ public class Item {
      * @param id    The id.
      */
     public void setStackableId(int id) {
-        if (ItemDef.get(id).stackable && attributes.isEmpty() && container != null && container.contains(id)) {
+        if (ItemDefinition.get(id).stackable && attributes.isEmpty() && container != null && container.contains(id)) {
             container.findItem(id).incrementAmount(amount <= 1 ? 1 : amount);
             remove();
         } else {
@@ -387,7 +383,7 @@ public class Item {
      * @param player    The player to send the message to.
      */
     public void examine(Player player) {
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         if (def == null)
             return;
         player.sendMessage(def.examine == null ? "This item has no examine" : def.examine);
@@ -438,7 +434,7 @@ public class Item {
     }
 
     public static void examine(Player player, int id, int amount) {
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         if(def == null)
             return;
         player.sendMessage(def.examine == null ? "This item has no examine" : def.examine);

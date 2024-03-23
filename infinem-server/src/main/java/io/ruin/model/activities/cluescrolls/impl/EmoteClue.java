@@ -1,7 +1,7 @@
 package io.ruin.model.activities.cluescrolls.impl;
 
 import com.google.common.collect.ImmutableMap;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.cluescrolls.StashUnits;
@@ -149,7 +149,7 @@ public class EmoteClue extends Clue {
         item = player.getInventory().findFirst(alternatives.stream().mapToInt(Integer::intValue).toArray());
         if (item != null)
             return item;
-        Item equipped = player.getEquipment().get(ItemDef.get(itemId).equipSlot);
+        Item equipped = player.getEquipment().get(ItemDefinition.get(itemId).equipSlot);
         if (equipped != null && alternatives.contains(equipped.getId())) {
             return equipped;
         } else {

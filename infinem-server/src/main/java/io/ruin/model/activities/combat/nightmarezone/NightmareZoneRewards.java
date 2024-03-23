@@ -1,7 +1,7 @@
 package io.ruin.model.activities.combat.nightmarezone;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -66,7 +66,7 @@ public class NightmareZoneRewards {
             player.sendMessage("You must have at least " + NumberUtils.formatNumber(resource.price) + " NMZ Points to purchase " + name);
             return;
         }
-        if ((!new Item(id).noteable() && !ItemDef.get(id).stackable) && amount > player.getInventory().getFreeSlots())
+        if ((!new Item(id).noteable() && !ItemDefinition.get(id).stackable) && amount > player.getInventory().getFreeSlots())
             amount = player.getInventory().getFreeSlots();
         Item item = new Item(id, amount).note();
         if (!player.getInventory().hasRoomFor(item)) {

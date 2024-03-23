@@ -1,7 +1,7 @@
 package io.ruin.model.map.object.actions.impl.edgeville;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.activities.duelarena.DuelArena;
 import io.ruin.model.entity.player.Player;
@@ -123,7 +123,7 @@ public class Christmas {
                 player.setAction(1, PlayerAction.PELT);
         });
 
-        ItemDef.get(SNOWBALL).addOnTickEvent((player, item) -> {
+        ItemDefinition.get(SNOWBALL).addOnTickEvent((player, item) -> {
             if (player.wildernessLevel <= 0 && !player.pvpAttackZone && !player.getPosition().inBounds(DuelArena.CUSTOM_EDGE)) {
                 player.setAction(1, PlayerAction.PELT);
                 player.snowballPeltOption = true;

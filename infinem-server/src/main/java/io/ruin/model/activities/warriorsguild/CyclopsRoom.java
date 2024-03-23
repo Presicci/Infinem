@@ -1,6 +1,6 @@
 package io.ruin.model.activities.warriorsguild;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.skillcapes.AttackSkillCape;
@@ -20,7 +20,7 @@ public class CyclopsRoom {
 
     private static void entered(Player player) {
         player.nextDefenderId = Cyclops.getNext(player, player.getHeight() == 0);
-        player.sendMessage(ItemDef.get(player.nextDefenderId).name + "s are now being dropped.");
+        player.sendMessage(ItemDefinition.get(player.nextDefenderId).name + "s are now being dropped.");
     }
 
     private static void exited(Player player, boolean logout) {

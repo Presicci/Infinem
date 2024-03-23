@@ -1,7 +1,7 @@
 package io.ruin.model.skills.cooking;
 
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
@@ -94,7 +94,7 @@ public class Cooking {
                     player.getStats().addXp(StatType.Cooking, food.experience * bonus(player, fire), true);
                     player.sendFilteredMessage(cookingMessage(food));
                     PlayerCounter.COOKED_FOOD.increment(player, 1);
-                    player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.COOKITEM, ItemDef.get(food.cookedID).name);
+                    player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.COOKITEM, ItemDefinition.get(food.cookedID).name);
                     player.cookStreak++;
                     if (player.cookStreak >= 5)
                         player.getTaskManager().doLookupByUUID(21, 1);  // Cook 5 pieces of food in a row without burning them

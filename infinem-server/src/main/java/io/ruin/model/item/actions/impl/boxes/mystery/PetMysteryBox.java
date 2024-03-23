@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl.boxes.mystery;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Icon;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
@@ -66,7 +66,7 @@ public class PetMysteryBox {
                  * Give pet! :)
                  */
                 Pet pet = Random.get(potentialPets);
-                String descriptiveName = ItemDef.get(pet.itemId).descriptiveName;
+                String descriptiveName = ItemDefinition.get(pet.itemId).descriptiveName;
                 item.setId(pet.itemId);
                 player.dialogue(new ItemDialogue().one(pet.itemId, "You have unlocked " + descriptiveName + "."));
                 if(World.isLive()) {

@@ -1,7 +1,7 @@
 package io.ruin.model.item.actions.impl.combine;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
@@ -48,7 +48,7 @@ public class SaradominsTear {
         ItemAction.registerInventory(BLESSED_SWORD, "revert", SaradominsTear::revertSword);
         ItemItemAction.register(SARADOMIN_SWORD, SARADOMIN_TEAR, (player, primary, secondary) -> makeSword(player, primary, secondary, BLESSED_SWORD));
 
-        ItemDef.get(BLESSED_SWORD).addPostTargetDefendListener((player, item, hit, target) -> {
+        ItemDefinition.get(BLESSED_SWORD).addPostTargetDefendListener((player, item, hit, target) -> {
             int charges = AttributeExtensions.getCharges(item);
             if(charges == 0) //Assume the full sword was bought from a shop or the online store.
                 charges = 10000;

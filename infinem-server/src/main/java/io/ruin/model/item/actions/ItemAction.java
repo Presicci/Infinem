@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 
@@ -17,14 +17,14 @@ public interface ItemAction {
      */
 
     static void registerInventory(int itemId, int option, ItemAction action) {
-        ItemDef def = ItemDef.get(itemId);
+        ItemDefinition def = ItemDefinition.get(itemId);
         if(def.inventoryActions == null)
             def.inventoryActions = new ItemAction[5];
         def.inventoryActions[option - 1] = action;
     }
 
     static boolean registerInventory(int itemId, String optionName, ItemAction action) {
-        int option = ItemDef.get(itemId).getOption(optionName);
+        int option = ItemDefinition.get(itemId).getOption(optionName);
         if(option == -1)
             return false;
         registerInventory(itemId, option, action);
@@ -34,7 +34,7 @@ public interface ItemAction {
     static void registerInventory(int itemId, Consumer<ItemAction[]> actionsConsumer) {
         ItemAction[] actions = new ItemAction[5 + 1];
         actionsConsumer.accept(actions);
-        ItemDef.get(itemId).inventoryActions = Arrays.copyOfRange(actions, 1, actions.length);
+        ItemDefinition.get(itemId).inventoryActions = Arrays.copyOfRange(actions, 1, actions.length);
     }
 
     /**
@@ -42,14 +42,14 @@ public interface ItemAction {
      */
 
     static void registerEquipment(int itemId, int option, ItemAction action) {
-        ItemDef def = ItemDef.get(itemId);
+        ItemDefinition def = ItemDefinition.get(itemId);
         if(def.equipmentActions == null)
             def.equipmentActions = new ItemAction[9];
         def.equipmentActions[option - 1] = action;
     }
 
     static boolean registerEquipment(int itemId, String optionName, ItemAction action) {
-        ItemDef def = ItemDef.get(itemId);
+        ItemDefinition def = ItemDefinition.get(itemId);
         int option = -1;
         for(int i = 451; i < 459; i++) { //tbh might go past 458, but doubt it..
             if (def.attributes == null) {
@@ -71,7 +71,7 @@ public interface ItemAction {
     static void registerEquipment(int itemId, Consumer<ItemAction[]> actionsConsumer) {
         ItemAction[] actions = new ItemAction[7 + 1];
         actionsConsumer.accept(actions);
-        ItemDef.get(itemId).equipmentActions = Arrays.copyOfRange(actions, 1, actions.length);
+        ItemDefinition.get(itemId).equipmentActions = Arrays.copyOfRange(actions, 1, actions.length);
     }
 
     /**
@@ -82,8 +82,8 @@ public interface ItemAction {
         ItemAction[] invActions = new ItemAction[5 + 1];
         ItemAction[] equipActions = new ItemAction[6 + 1];
         actionsConsumer.accept(invActions, equipActions);
-        ItemDef.get(itemId).inventoryActions = Arrays.copyOfRange(invActions, 1, invActions.length);
-        ItemDef.get(itemId).equipmentActions = Arrays.copyOfRange(equipActions, 1, equipActions.length);
+        ItemDefinition.get(itemId).inventoryActions = Arrays.copyOfRange(invActions, 1, invActions.length);
+        ItemDefinition.get(itemId).equipmentActions = Arrays.copyOfRange(equipActions, 1, equipActions.length);
     }
 
     /**
@@ -92,17 +92,17 @@ public interface ItemAction {
 
     static void registerTick(int itemId, ItemAction action) {
         //This applies for all equipped items.
-        ItemDef.get(itemId).tickAction = action;
+        ItemDefinition.get(itemId).tickAction = action;
     }
 
     static void registerAttack(int itemId, ItemAction action) {
         //This applies for equipped weapon.
-        ItemDef.get(itemId).attackAction = action;
+        ItemDefinition.get(itemId).attackAction = action;
     }
 
     static void registerDefend(int itemId, ItemAction action) {
         //This applies for all equipped items.
-        ItemDef.get(itemId).defendAction = action;
+        ItemDefinition.get(itemId).defendAction = action;
     }
 
 }

@@ -1,6 +1,6 @@
 package io.ruin.model.item.containers;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.RangedWeapon;
 import io.ruin.model.combat.SetEffect;
@@ -27,7 +27,7 @@ public class Equipment extends ItemContainer {
     public double weight;
 
     public void equip(Item selectedItem) {
-        ItemDef selectedDef = selectedItem.getDef();
+        ItemDefinition selectedDef = selectedItem.getDef();
         int equipSlot = selectedDef.equipSlot;
         if(equipSlot == -1 || selectedDef.equipOption == -1) {
             player.sendMessage("You can't wear this item.");
@@ -105,7 +105,7 @@ public class Equipment extends ItemContainer {
             selectedItem.remove();
             set(equipSlot, selectedItem);
         } else {
-            ItemDef equippedDef = worn.getDef();
+            ItemDefinition equippedDef = worn.getDef();
             int selectedId = selectedItem.getId();
             int selectedAmount = selectedItem.getAmount();
             Map<String, String> attributeCopy = selectedItem.copyOfAttributes();
@@ -212,7 +212,7 @@ public class Equipment extends ItemContainer {
             if(wep.getId() == 12926) { //blowpipe
                 Blowpipe.Dart dart = Blowpipe.getDart(wep);
                 if(dart != Blowpipe.Dart.NONE) //should always be true
-                    bonuses[EquipmentStats.RANGED_STRENGTH] += ItemDef.get(dart.id).equipBonuses[EquipmentStats.RANGED_STRENGTH];
+                    bonuses[EquipmentStats.RANGED_STRENGTH] += ItemDefinition.get(dart.id).equipBonuses[EquipmentStats.RANGED_STRENGTH];
                 ignoreRangedAmmoStr = true;
             } else {
                 RangedWeapon rangedWep = wep.getDef().rangedWeapon;
@@ -221,7 +221,7 @@ public class Equipment extends ItemContainer {
         }
         for(Item item : getItems()) {
             if(item != null) {
-                ItemDef def = item.getDef();
+                ItemDefinition def = item.getDef();
                 if(def.equipBonuses != null) {
                     boolean wilderness = def.wilderness; //If its pvp armor
                     boolean inWilderness = player.wildernessLevel > 0 || player.tournament != null;
@@ -265,7 +265,7 @@ public class Equipment extends ItemContainer {
 
     @Override
     public boolean hasId(int id) {
-        return getId(ItemDef.get(id).equipSlot) == id;
+        return getId(ItemDefinition.get(id).equipSlot) == id;
     }
 
 }

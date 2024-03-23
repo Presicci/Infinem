@@ -1,6 +1,6 @@
 package io.ruin.model.combat.special.magic;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.player.Player;
@@ -11,7 +11,7 @@ import io.ruin.model.item.containers.Equipment;
 public class StaffOfTheDead implements Special {
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return def.id == 11791 || def.id == 12904 || def.id == 12902 || def.id == 22296;
     }
 

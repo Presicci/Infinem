@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 
 public enum ItemUpgrading {
 
@@ -36,8 +36,8 @@ public enum ItemUpgrading {
         this.bmUpgradeCost = bmUpgradeCost;
         this.coinUpgradeCost = coinUpgradeCost;
 
-        ItemDef regularDef = ItemDef.get(regularId);
-        ItemDef upgradeDef = ItemDef.get(upgradeId);
+        ItemDefinition regularDef = ItemDefinition.get(regularId);
+        ItemDefinition upgradeDef = ItemDefinition.get(upgradeId);
         if(upgradeDef.protectValue < regularDef.protectValue)
             upgradeDef.protectValue = regularDef.protectValue;
         upgradeDef.protectValue += bmUpgradeCost;

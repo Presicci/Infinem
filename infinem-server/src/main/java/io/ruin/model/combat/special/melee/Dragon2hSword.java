@@ -1,14 +1,13 @@
 package io.ruin.model.combat.special.melee;
 
 import com.google.common.collect.Lists;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.map.MultiZone;
 import io.ruin.utility.Misc;
 
 import java.util.List;
@@ -21,7 +20,7 @@ import java.util.List;
 public class Dragon2hSword implements Special {
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return name.contains("dragon 2h sword");
     }
 

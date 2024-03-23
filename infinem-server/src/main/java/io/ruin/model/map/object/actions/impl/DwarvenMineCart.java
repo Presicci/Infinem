@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Items;
@@ -26,7 +26,7 @@ public class DwarvenMineCart {
             ItemObjectAction.register(ore, 6045, (((player, item, obj) -> {
                 int bankAmt = player.getBank().getAmount(ore);
                 int amt = Math.min(Integer.MAX_VALUE - bankAmt, player.getInventory().getAmount(ore));
-                String oreName = ItemDef.get(ore).name;
+                String oreName = ItemDefinition.get(ore).name;
                 if (amt <= 0) {
                     player.dialogue(new MessageDialogue("Your bank has too much " + oreName + "!"));
                     return;

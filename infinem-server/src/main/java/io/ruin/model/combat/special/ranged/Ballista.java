@@ -1,6 +1,6 @@
 package io.ruin.model.combat.special.ranged;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.Hit;
@@ -14,14 +14,14 @@ import io.ruin.model.item.containers.Equipment;
 public class Ballista implements Special {
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return def.id == 19478 || def.id == 19481;
     }
 
     @Override
     public boolean handle(Player player, Entity victim, AttackStyle style, AttackType type, int maxDamage) {
         // In place to allow weapon poison to work
-        ItemDef ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
+        ItemDefinition ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
 
         player.animate(7222);
         int delay = player.getCombat().rangedData.projectiles[1].send(player, victim);

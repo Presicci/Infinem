@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.degradeable;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.npc.actions.RepairNPC;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
@@ -60,9 +60,9 @@ public enum BarrowsDegradeable {
         this.newId = newId;
         this.degradeableBaseId = degradeableBaseId;
         for (int id : Arrays.asList(newId, degradeableBaseId, degradeableBaseId + 1, degradeableBaseId + 2, degradeableBaseId + 3)) {
-            ItemDef.get(id).addPreDefendListener((player, item, hit) -> removeCharge(item, 1));
-            ItemAction.registerInventory(id, "check", (player, item) -> player.sendMessage("Your " + ItemDef.get(newId).name + " has " + item.getCharges() + " charges remaining."));
-            ItemAction.registerEquipment(id, "check", (player, item) -> player.sendMessage("Your " + ItemDef.get(newId).name + " has " + item.getCharges() + " charges remaining."));
+            ItemDefinition.get(id).addPreDefendListener((player, item, hit) -> removeCharge(item, 1));
+            ItemAction.registerInventory(id, "check", (player, item) -> player.sendMessage("Your " + ItemDefinition.get(newId).name + " has " + item.getCharges() + " charges remaining."));
+            ItemAction.registerEquipment(id, "check", (player, item) -> player.sendMessage("Your " + ItemDefinition.get(newId).name + " has " + item.getCharges() + " charges remaining."));
         }
         EquipAction.register(newId, (player -> {
             Item item = player.getEquipment().findItemIgnoringAttributes(newId, false);
@@ -91,7 +91,7 @@ public enum BarrowsDegradeable {
     }
 
     private int getStaticRepairCost() {
-        int equipSlot = ItemDef.get(newId).equipSlot;
+        int equipSlot = ItemDefinition.get(newId).equipSlot;
         if (equipSlot == Equipment.SLOT_WEAPON) {
             return (int) (100_000);
         } else if (equipSlot == Equipment.SLOT_HAT) {

@@ -1,12 +1,11 @@
 package io.ruin.model.item.actions.impl.storage;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.impl.skillcapes.SmithingSkillCape;
-import io.ruin.model.item.containers.Equipment;
 
 public class CoalBag {
 
@@ -85,7 +84,7 @@ public class CoalBag {
         ItemAction.registerInventory(COAL_BAG, "fill", (player, item) -> fill(player));
         ItemAction.registerInventory(COAL_BAG, "check", (player, item) -> check(player));
         ItemAction.registerInventory(COAL_BAG, "empty", (player, item) -> empty(player));
-        ItemDef.get(COAL).bankWithdrawListener = CoalBag::withdrawToBag;
+        ItemDefinition.get(COAL).bankWithdrawListener = CoalBag::withdrawToBag;
     }
 
 }

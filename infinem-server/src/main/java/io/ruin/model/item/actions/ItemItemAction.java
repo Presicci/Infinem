@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 
@@ -15,7 +15,7 @@ public interface ItemItemAction {
      */
 
     default void register(int id, boolean primary) {
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         ArrayList<ItemItemAction> list;
         if(primary) {
             if(def.primaryItemItemActions == null)
@@ -35,7 +35,7 @@ public interface ItemItemAction {
      */
 
     static void register(int primaryId, ItemItemAction action) {
-        ItemDef def = ItemDef.get(primaryId);
+        ItemDefinition def = ItemDefinition.get(primaryId);
         def.defaultPrimaryItemItemAction = action;
     }
 
@@ -53,8 +53,8 @@ public interface ItemItemAction {
      */
 
     static void handleAction(Player player, Item from, Item to) {
-        ItemDef fromDef = from.getDef();
-        ItemDef toDef = to.getDef();
+        ItemDefinition fromDef = from.getDef();
+        ItemDefinition toDef = to.getDef();
         ItemItemAction action;
         if((action = match(fromDef.primaryItemItemActions, toDef.secondaryItemItemActions)) != null) {
             action.handle(player, from, to);

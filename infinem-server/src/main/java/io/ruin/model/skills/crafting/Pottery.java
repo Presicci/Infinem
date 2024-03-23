@@ -1,6 +1,6 @@
 package io.ruin.model.skills.crafting;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -30,7 +30,7 @@ public enum Pottery {
         this.levelReq = levelReq;
         this.unfiredExp = unfiredExp;
         this.firedExp = firedExp;
-        this.name = ItemDef.get(fired).name.toLowerCase();
+        this.name = ItemDefinition.get(fired).name.toLowerCase();
     }
 
     /* Items */
@@ -114,24 +114,24 @@ public enum Pottery {
             player.dialogue(new MessageDialogue("This clay is too hard to craft. You'll need to soften it with some water."));
         });
         ItemObjectAction.register(SOFT_CLAY, POTTERS_WHEEL, (player, item, obj) -> SkillDialogue.make(player,
-                new SkillItem(POT.unfired).name(ItemDef.get(POT.fired).name).addAction((p, amount, event) -> spinClay(p, POT, amount)),
-                new SkillItem(PIE_DISH.unfired).name(ItemDef.get(PIE_DISH.fired).name).addAction((p, amount, event) -> spinClay(p, PIE_DISH, amount)),
-                new SkillItem(BOWL.unfired).name(ItemDef.get(BOWL.fired).name).addAction((p, amount, event) -> spinClay(p, BOWL, amount)),
-                new SkillItem(PLANT_POT.unfired).name(ItemDef.get(PLANT_POT.fired).name).addAction((p, amount, event) -> spinClay(p, PLANT_POT, amount))));
+                new SkillItem(POT.unfired).name(ItemDefinition.get(POT.fired).name).addAction((p, amount, event) -> spinClay(p, POT, amount)),
+                new SkillItem(PIE_DISH.unfired).name(ItemDefinition.get(PIE_DISH.fired).name).addAction((p, amount, event) -> spinClay(p, PIE_DISH, amount)),
+                new SkillItem(BOWL.unfired).name(ItemDefinition.get(BOWL.fired).name).addAction((p, amount, event) -> spinClay(p, BOWL, amount)),
+                new SkillItem(PLANT_POT.unfired).name(ItemDefinition.get(PLANT_POT.fired).name).addAction((p, amount, event) -> spinClay(p, PLANT_POT, amount))));
         ObjectAction.register(POTTERS_WHEEL, "use", ((player, obj) -> SkillDialogue.make(player,
-                new SkillItem(POT.unfired).name(ItemDef.get(POT.fired).name).addAction((p, amount, event) -> spinClay(p, POT, amount)),
-                new SkillItem(PIE_DISH.unfired).name(ItemDef.get(PIE_DISH.fired).name).addAction((p, amount, event) -> spinClay(p, PIE_DISH, amount)),
-                new SkillItem(BOWL.unfired).name(ItemDef.get(BOWL.fired).name).addAction((p, amount, event) -> spinClay(p, BOWL, amount)),
-                new SkillItem(PLANT_POT.unfired).name(ItemDef.get(PLANT_POT.fired).name).addAction((p, amount, event) -> spinClay(p, PLANT_POT, amount)))));
+                new SkillItem(POT.unfired).name(ItemDefinition.get(POT.fired).name).addAction((p, amount, event) -> spinClay(p, POT, amount)),
+                new SkillItem(PIE_DISH.unfired).name(ItemDefinition.get(PIE_DISH.fired).name).addAction((p, amount, event) -> spinClay(p, PIE_DISH, amount)),
+                new SkillItem(BOWL.unfired).name(ItemDefinition.get(BOWL.fired).name).addAction((p, amount, event) -> spinClay(p, BOWL, amount)),
+                new SkillItem(PLANT_POT.unfired).name(ItemDefinition.get(PLANT_POT.fired).name).addAction((p, amount, event) -> spinClay(p, PLANT_POT, amount)))));
         /*
          * Pottery oven
          */
         for(int oven : POTTERY_OVENS) {
             ObjectAction.register(oven, "fire", (player, obj) -> SkillDialogue.make(player,
-                    new SkillItem(POT.unfired).name(ItemDef.get(POT.fired).name).addAction((p, amount, event) -> firePottery(p, POT, amount)),
-                    new SkillItem(PIE_DISH.unfired).name(ItemDef.get(PIE_DISH.fired).name).addAction((p, amount, event) -> firePottery(p, PIE_DISH, amount)),
-                    new SkillItem(BOWL.unfired).name(ItemDef.get(BOWL.fired).name).addAction((p, amount, event) -> firePottery(p, BOWL, amount)),
-                    new SkillItem(PLANT_POT.unfired).name(ItemDef.get(PLANT_POT.fired).name).addAction((p, amount, event) -> firePottery(p, PLANT_POT, amount))));
+                    new SkillItem(POT.unfired).name(ItemDefinition.get(POT.fired).name).addAction((p, amount, event) -> firePottery(p, POT, amount)),
+                    new SkillItem(PIE_DISH.unfired).name(ItemDefinition.get(PIE_DISH.fired).name).addAction((p, amount, event) -> firePottery(p, PIE_DISH, amount)),
+                    new SkillItem(BOWL.unfired).name(ItemDefinition.get(BOWL.fired).name).addAction((p, amount, event) -> firePottery(p, BOWL, amount)),
+                    new SkillItem(PLANT_POT.unfired).name(ItemDefinition.get(PLANT_POT.fired).name).addAction((p, amount, event) -> firePottery(p, PLANT_POT, amount))));
             for (Pottery pottery : values())
                 ItemObjectAction.register(pottery.unfired, oven, (player, item, obj) -> firePottery(player, pottery, 1));
         }

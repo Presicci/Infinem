@@ -3,7 +3,7 @@ package io.ruin.model.entity.npc.actions.edgeville;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
@@ -86,7 +86,7 @@ public class CreditManager {
                 int claimedPurchases = 0;
                 for(Iterator<Item> it = items.iterator(); it.hasNext(); ) {
                     Item item = it.next();
-                    ItemDef def = item.getDef();
+                    ItemDefinition def = item.getDef();
                     if(def.stackable) {
                         Item invItem = player.getInventory().findItem(item.getId());
                         if(invItem != null) {

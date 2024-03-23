@@ -2,7 +2,7 @@ package io.ruin.model.skills.slayer;
 
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.Random;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.npc.NPC;
@@ -170,7 +170,7 @@ public class Slayer {
      * @return True if helmet is worn.
      */
     public static boolean hasSlayerHelmEquipped(Player player) {
-        ItemDef def = player.getEquipment().getDef(Equipment.SLOT_HAT);
+        ItemDefinition def = player.getEquipment().getDef(Equipment.SLOT_HAT);
         return def != null && (def.slayerBoostMelee || def.slayerBoostAll);
     }
 

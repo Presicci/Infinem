@@ -3,7 +3,7 @@ package io.ruin.model.item.pet;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Icon;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
@@ -560,14 +560,14 @@ public enum Pet {
                 Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Vorki pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.VORKATH)) + " kill count!");
                 break;
             default:
-                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " just unlocked the following pet: " + ItemDef.get(itemId).name);
+                Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " just unlocked the following pet: " + ItemDefinition.get(itemId).name);
                 break;
         }
     }
 
     static {
         for (Pet pet : values()) {
-            ItemDef.get(pet.itemId).pet = pet;
+            ItemDefinition.get(pet.itemId).pet = pet;
             NPCDef.get(pet.npcId).occupyTiles = false;
             NPCDef.get(pet.npcId).ignoreOccupiedTiles = true;
             /**
@@ -696,9 +696,9 @@ public enum Pet {
                     if (pet != TANGLEROOTS[indexF]) {
                         player.getInventory().remove(TANGLEROOT_SEEDS[indexF], 1);
                         npc.transform(TANGLEROOTS[indexF].npcId);
-                        player.sendMessage("Tangleroot eats the " + ItemDef.get(TANGLEROOT_SEEDS[indexF]).name + " and takes on a new appearance.");
+                        player.sendMessage("Tangleroot eats the " + ItemDefinition.get(TANGLEROOT_SEEDS[indexF]).name + " and takes on a new appearance.");
                     } else {
-                        player.sendMessage("Tangleroot has already consumed his daily intake of " + ItemDef.get(TANGLEROOT_SEEDS[indexF]).name + "s.");
+                        player.sendMessage("Tangleroot has already consumed his daily intake of " + ItemDefinition.get(TANGLEROOT_SEEDS[indexF]).name + "s.");
                     }
                 });
             }
@@ -716,9 +716,9 @@ public enum Pet {
                         String oldName = npc.getDef().name;
                         player.getInventory().remove(ROCKY_BERRIES[indexF], 1);
                         npc.transform(ROCKY_VARIANTS[indexF].npcId);
-                        player.sendMessage(oldName + " happily eats the " + ItemDef.get(ROCKY_BERRIES[indexF]).name + " and magically turns into his " + relations[Random.get(relations.length) - 1] + ", " + npc.getDef().name + ".");
+                        player.sendMessage(oldName + " happily eats the " + ItemDefinition.get(ROCKY_BERRIES[indexF]).name + " and magically turns into his " + relations[Random.get(relations.length) - 1] + ", " + npc.getDef().name + ".");
                     } else {
-                        player.sendMessage(npc.getDef().name + " doesn't want to eat any more " + ItemDef.get(ROCKY_BERRIES[indexF]).name + ".");
+                        player.sendMessage(npc.getDef().name + " doesn't want to eat any more " + ItemDefinition.get(ROCKY_BERRIES[indexF]).name + ".");
                     }
                 });
             }
@@ -732,7 +732,7 @@ public enum Pet {
                     if (pet != ROCK_GOLEMS[indexF]) {
                         player.getInventory().remove(ROCK_GOLEM_ORES[indexF], 1);
                         npc.transform(ROCK_GOLEMS[indexF].npcId);
-                        player.sendMessage("Your rock golem eats the " + ItemDef.get(ROCK_GOLEM_ORES[indexF]).name + " and takes on a new appearance.");
+                        player.sendMessage("Your rock golem eats the " + ItemDefinition.get(ROCK_GOLEM_ORES[indexF]).name + " and takes on a new appearance.");
                     } else {
                         player.sendMessage("Your rock golem has already taken that appearance.");
                     }
@@ -743,7 +743,7 @@ public enum Pet {
                         if (pet != ROCK_GOLEMS[indexF]) {
                             player.getInventory().remove(Items.GRANITE_5KG, 1);
                             npc.transform(ROCK_GOLEMS[indexF].npcId);
-                            player.sendMessage("Your rock golem eats the " + ItemDef.get(Items.GRANITE_5KG).name + " and takes on a new appearance.");
+                            player.sendMessage("Your rock golem eats the " + ItemDefinition.get(Items.GRANITE_5KG).name + " and takes on a new appearance.");
                         } else {
                             player.sendMessage("Your rock golem has already taken that appearance.");
                         }
@@ -752,7 +752,7 @@ public enum Pet {
                         if (pet != ROCK_GOLEMS[indexF]) {
                             player.getInventory().remove(Items.GRANITE_500G, 1);
                             npc.transform(ROCK_GOLEMS[indexF].npcId);
-                            player.sendMessage("Your rock golem eats the " + ItemDef.get(Items.GRANITE_500G).name + " and takes on a new appearance.");
+                            player.sendMessage("Your rock golem eats the " + ItemDefinition.get(Items.GRANITE_500G).name + " and takes on a new appearance.");
                         } else {
                             player.sendMessage("Your rock golem has already taken that appearance.");
                         }

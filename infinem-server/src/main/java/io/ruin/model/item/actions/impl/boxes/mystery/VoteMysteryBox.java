@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl.boxes.mystery;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.Icon;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -229,7 +229,7 @@ public class VoteMysteryBox {
                 4, 7, 1, -1, "", "", "", "", ""
         );
         player.getPacketSender().sendItems(VIEW_REWARDS_WIDGET, containerWidgetId, itemContainerId, offer.toItem());
-        player.getPacketSender().sendString(VIEW_REWARDS_WIDGET, ItemNameId, ItemDef.get(offer.id).name);
+        player.getPacketSender().sendString(VIEW_REWARDS_WIDGET, ItemNameId, ItemDefinition.get(offer.id).name);
         player.getPacketSender().sendString(VIEW_REWARDS_WIDGET, amountToGetId, offer.max == 1 ? "" : (formatPrice(offer.min) + " - " + formatPrice(offer.max)));
         player.getPacketSender().sendString(VIEW_REWARDS_WIDGET, rarityId, "");
     }

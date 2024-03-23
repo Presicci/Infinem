@@ -3,7 +3,7 @@ package io.ruin.model.item.actions.impl;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.ServerWrapper;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.item.Item;
@@ -27,7 +27,7 @@ public class MysteriousEmblem {
                 {12756, 5000},  //Tier 10
         };
         for(int[] emblem : emblems) {
-            ItemDef def = ItemDef.get(emblem[0]);
+            ItemDefinition def = ItemDefinition.get(emblem[0]);
             def.sigmundBuyPrice = emblem[1];
             ItemAction.registerInventory(def.id, "info", (player, item) -> player.sendScroll("<col=800000>About Mysterious Emblems",
                     "Mysterious Emblems are items dropped from killing",

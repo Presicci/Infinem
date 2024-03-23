@@ -1,7 +1,7 @@
 package io.ruin.model.item.containers.collectionlog;
 
 import io.ruin.cache.def.EnumDefinition;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.Struct;
 import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
@@ -323,7 +323,7 @@ public enum CollectionLogInfo {
 
                 for (int index = 0; index < group.intValues.length; index++) {
                     player.getCollectionLog().collect(group.intValues[index], 1);
-                    ItemDef.get(group.intValues[index]).collectable = true;
+                    ItemDefinition.get(group.intValues[index]).collectable = true;
                     TOTAL_COLLECTABLES++;
                 }
             }
@@ -343,7 +343,7 @@ public enum CollectionLogInfo {
                 info.items.put(subcategory.getInt(STRUCT_LOG_GROUP), group.intValues);
                 info.enums.add(subcategory.getInt(STRUCT_LOG_GROUP));
                 for (int index = 0; index < group.intValues.length; index++) {
-                    ItemDef.get(group.intValues[index]).collectable = true;
+                    ItemDefinition.get(group.intValues[index]).collectable = true;
                     TOTAL_COLLECTABLES++;
                 }
             }

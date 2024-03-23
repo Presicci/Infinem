@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
@@ -28,7 +28,7 @@ public class Arclight {
         ItemItemAction.register(DARKLIGHT, SHARD, (player, primary, secondary) -> player.sendMessage("You require additional power from the catacombs altar to create Arclight."));
         ItemAction.registerInventory(ARCLIGHT, "check", Arclight::check);
         ItemAction.registerEquipment(ARCLIGHT, "check", Arclight::check);
-        ItemDef.get(ARCLIGHT).addPreTargetDefendListener(Arclight::onArclightHit);
+        ItemDefinition.get(ARCLIGHT).addPreTargetDefendListener(Arclight::onArclightHit);
     }
 
     private static void onArclightHit(Player player, Item item, Hit hit, Entity entity) {

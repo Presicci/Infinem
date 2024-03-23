@@ -1,6 +1,6 @@
 package io.ruin.model.activities.combat.raids.xeric;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.ItemID;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -142,7 +142,7 @@ public class RaidStorage extends ItemContainer {
                             p.integerInput("Enter amount:", amt -> storage.deposit(p, slot, amt));
                             return;
                         case 10:
-                            if (!ItemDef.get(id).coxItem) {
+                            if (!ItemDefinition.get(id).coxItem) {
                                 p.sendMessage("This item cannot be placed in the shared storage.");
                             }
                             return;
@@ -372,7 +372,7 @@ public class RaidStorage extends ItemContainer {
 
     @Override
     public int add(int id, int amount, Map<String, String> attributes) {
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         if (def == null || !def.coxItem)
             return 0;
         return super.add(id, amount, attributes);

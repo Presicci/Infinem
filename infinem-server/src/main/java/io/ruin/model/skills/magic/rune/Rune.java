@@ -1,6 +1,6 @@
 package io.ruin.model.skills.magic.rune;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.item.Item;
 
 /**
@@ -62,7 +62,7 @@ public enum Rune {
     }
 
     static {
-        ItemDef.forEach(def -> {
+        ItemDefinition.forEach(def -> {
             String name = def.name.toLowerCase();
             for (Rune rune : values()) {
                 if (name.replace(" (nz)", "").equalsIgnoreCase(rune.name() + " rune")) {

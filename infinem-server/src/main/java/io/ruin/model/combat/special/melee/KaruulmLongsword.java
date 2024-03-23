@@ -1,7 +1,6 @@
 package io.ruin.model.combat.special.melee;
 
-import io.ruin.cache.ItemDef;
-import io.ruin.model.World;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.Hit;
@@ -17,7 +16,7 @@ import io.ruin.model.entity.player.Player;
 public class KaruulmLongsword implements Special {
 
     @Override
-    public boolean accept(ItemDef def, String name) {
+    public boolean accept(ItemDefinition def, String name) {
         return name.contains("karuulm longsword");
     }
 

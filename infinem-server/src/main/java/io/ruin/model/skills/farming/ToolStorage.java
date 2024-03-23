@@ -3,7 +3,7 @@ package io.ruin.model.skills.farming;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -89,7 +89,7 @@ public class ToolStorage {
             public int addItem(Player player, int amount, boolean noted) {
                 int id = Config.STORAGE_SECATEURS_TYPE.get(player) == 1 ? 7409 : 5329;
                 if (noted) {
-                    return player.getInventory().add(ItemDef.get(id).notedId, amount);
+                    return player.getInventory().add(ItemDefinition.get(id).notedId, amount);
                 }
                 int added = player.getInventory().add(id, amount);
                 if ((get(player) - added) <= 0)
@@ -216,7 +216,7 @@ public class ToolStorage {
 
         public int addItem(Player player, int amount, boolean noted) {
             if (noted) {
-                return player.getInventory().add(ItemDef.get(itemId).notedId, amount);
+                return player.getInventory().add(ItemDefinition.get(itemId).notedId, amount);
             }
             return player.getInventory().add(itemId, amount);
         }
@@ -281,7 +281,7 @@ public class ToolStorage {
                 player.sendMessage("You cannot mix different types of secateurs in the storage.");
                 return;
             }
-            int notedId = ItemDef.get(itemId).notedId;
+            int notedId = ItemDefinition.get(itemId).notedId;
             int unnotedAmt = player.getInventory().getAmount(itemId);
             int notedAmt = notedId == -1 ? 0 : player.getInventory().getAmount(notedId);
             amount = Math.min(amount, Math.min(unnotedAmt + notedAmt, maxAmount - tool.get(player)));

@@ -1,6 +1,6 @@
 package io.ruin.model.skills.cooking;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.item.Items;
 
 import java.util.HashMap;
@@ -141,8 +141,8 @@ public enum Food {
         this.cookedID = cookedID;
         this.burntID = burntID;
         this.returnedSecondary = returnedSecondary;
-        this.rawName = ItemDef.get(rawID).name;
-        this.itemName = ItemDef.get(cookedID).name.toLowerCase();
+        this.rawName = ItemDefinition.get(rawID).name;
+        this.itemName = ItemDefinition.get(cookedID).name.toLowerCase();
         this.descriptiveName = descriptiveName;
         this.itemNamePlural = itemNamePlural;
         this.itemOffset = itemOffset;

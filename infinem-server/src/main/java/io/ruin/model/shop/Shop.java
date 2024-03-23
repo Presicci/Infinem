@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.google.common.collect.Lists;
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskArea;
 import io.ruin.model.content.tasksystem.areas.AreaTaskTier;
 import io.ruin.model.entity.player.Player;
@@ -337,18 +337,18 @@ public class Shop {
     }
 
     public int getBuyPrice(Item itemForSlot) {
-        ItemDef itemDef = itemForSlot.getDef().isNote() ? itemForSlot.getDef().fromNote() : itemForSlot.getDef();
-        if(!itemDef.tradeable && generalStore && defaultStock.stream().noneMatch(i -> i.getId() == itemDef.id)){
+        ItemDefinition itemDefinition = itemForSlot.getDef().isNote() ? itemForSlot.getDef().fromNote() : itemForSlot.getDef();
+        if(!itemDefinition.tradeable && generalStore && defaultStock.stream().noneMatch(i -> i.getId() == itemDefinition.id)){
             return -1;
         }
-        if(itemDef.free){
+        if(itemDefinition.free){
             return -1;
         }
-        if(itemDef.isCurrency()){
+        if(itemDefinition.isCurrency()){
             return -1;
         }
-        if(generalStore && defaultStock.stream().noneMatch(i -> i.getId() == itemDef.id)){
-            return Math.max(itemDef.lowAlchValue, 1);
+        if(generalStore && defaultStock.stream().noneMatch(i -> i.getId() == itemDefinition.id)){
+            return Math.max(itemDefinition.lowAlchValue, 1);
         }
         if(!canSellToStore){
             return -1;
@@ -369,9 +369,9 @@ public class Shop {
     public int getSellPrice(ShopItem itemForSlot) {
 
         if(itemForSlot != null){
-            ItemDef itemDef = itemForSlot.getDef().isNote() ? itemForSlot.getDef().fromNote() : itemForSlot.getDef();
+            ItemDefinition itemDefinition = itemForSlot.getDef().isNote() ? itemForSlot.getDef().fromNote() : itemForSlot.getDef();
             if(itemForSlot.getPrice() <= 0){
-                return itemDef.highAlchValue;
+                return itemDefinition.highAlchValue;
             }
             return itemForSlot.getPrice();//Can this ever be null?
         }

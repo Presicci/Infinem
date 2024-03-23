@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl;
 
 import io.ruin.api.utils.Random;
 import io.ruin.utility.Color;
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.Hit;
@@ -220,7 +220,7 @@ public class Consumable {
         registerEat(2152, 3, "toad's legs");
 
         // Anglerfish
-        ItemDef.get(13441).consumable = true;
+        ItemDefinition.get(13441).consumable = true;
         ItemAction.registerInventory(13441, "eat", (player, item) -> {
             if(eatAngler(player, item))
                 player.sendFilteredMessage("You eat the anglerfish.");
@@ -231,7 +231,7 @@ public class Consumable {
         registerEatBlightedComboFood(24595, 18, "blighted karambwan");
         registerBlightedEat(24589, 22, "blighted manta ray");
         // Blighted Anglerfish
-        ItemDef.get(24592).consumable = true;
+        ItemDefinition.get(24592).consumable = true;
         ItemAction.registerInventory(24592, "eat", (player, item) -> {
             if (player.wildernessLevel <= 0) {
                 player.sendMessage("The blighted anglerfish can be eaten only in the Wilderness.");
@@ -539,7 +539,7 @@ public class Consumable {
     }
 
     private static void registerEat(int id, int heal, int ticks, boolean stackable, Consumer<Player> eatAction) {
-        ItemDef.get(id).consumable = true;
+        ItemDefinition.get(id).consumable = true;
         ItemAction.registerInventory(id, "eat", (player, item) -> {
             if(eat(player, item, -1, heal, ticks, stackable))
                 eatAction.accept(player);
@@ -547,7 +547,7 @@ public class Consumable {
     }
 
     private static void registerEat(int id, int newId, int heal, int ticks, boolean stackable, Consumer<Player> eatAction) {
-        ItemDef.get(id).consumable = true;
+        ItemDefinition.get(id).consumable = true;
         ItemAction.registerInventory(id, "eat", (player, item) -> {
             if(eat(player, item, newId, heal, ticks, stackable))
                 eatAction.accept(player);
@@ -555,7 +555,7 @@ public class Consumable {
     }
 
     private static void registerBlightedEat(int id, int heal, String name) {
-        ItemDef.get(id).consumable = true;
+        ItemDefinition.get(id).consumable = true;
         ItemAction.registerInventory(id, "eat", (player, item) -> {
             if (player.wildernessLevel <= 0) {
                 player.sendMessage("The " + name + " can be eaten only in the Wilderness.");
@@ -571,7 +571,7 @@ public class Consumable {
     }
 
     private static void registerDrink(int id, int newId, int heal, int ticks, Consumer<Player> eatAction) {
-        ItemDef.get(id).consumable = true;
+        ItemDefinition.get(id).consumable = true;
         ItemAction.registerInventory(id, "drink", (player, item) -> {
             if (eat(player, item, newId, heal, ticks, false))
                 eatAction.accept(player);
@@ -579,7 +579,7 @@ public class Consumable {
     }
 
     private static void registerEatComboFood(int id, int heal, String name) {
-        ItemDef.get(id).consumable = true;
+        ItemDefinition.get(id).consumable = true;
         ItemAction.registerInventory(id, "eat", (player, item) -> {
             if(eatComboFood(player, item, heal))
                 player.sendFilteredMessage("You eat the " + name + ".");
@@ -587,7 +587,7 @@ public class Consumable {
     }
 
     private static void registerEatBlightedComboFood(int id, int heal, String name) {
-        ItemDef.get(id).consumable = true;
+        ItemDefinition.get(id).consumable = true;
         ItemAction.registerInventory(id, "eat", (player, item) -> {
             if (player.wildernessLevel <= 0) {
                 player.sendMessage("The " + name + " can be eaten only in the Wilderness.");
@@ -607,7 +607,7 @@ public class Consumable {
 
     private static void registerCrabMeat(int heal, String name, int... itemIds) {
         for (int itemId : itemIds) {
-            ItemDef.get(itemId).consumable = true;
+            ItemDefinition.get(itemId).consumable = true;
             ItemAction.registerInventory(itemId, "eat", (player, item) -> {
                 if (eat(player, item,
                         item.getId() == 7526 ? -1 : item.getId() + (item.getId() == 7521 ? 2 : 1),
@@ -1061,7 +1061,7 @@ public class Consumable {
     }
 
     private static void registerDrink(Potion potion, int id, int newId, Consumer<Player> effect) {
-        ItemDef.get(id).consumable = true;
+        ItemDefinition.get(id).consumable = true;
         ItemAction.registerInventory(id, "drink", (player, item) -> {
             if(drink(player, potion, item, newId))
                 effect.accept(player);
@@ -1069,12 +1069,12 @@ public class Consumable {
     }
 
     private static void registerEmpty(int id) {
-        ItemDef def = ItemDef.get(id);
+        ItemDefinition def = ItemDefinition.get(id);
         if(def == null)
             return;
         if(!def.hasOption("empty"))
             return;
-        if (ItemDef.get(id).name.toLowerCase().contains("guthix rest")) {
+        if (ItemDefinition.get(id).name.toLowerCase().contains("guthix rest")) {
             ItemAction.registerInventory(id, "empty", (player, item) -> {
                 item.setId(1980);
                 player.sendMessage("You empty the cup.");

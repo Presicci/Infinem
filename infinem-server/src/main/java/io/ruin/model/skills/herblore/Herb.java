@@ -1,6 +1,6 @@
 package io.ruin.model.skills.herblore;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -56,7 +56,7 @@ public enum Herb {
 
     static {
         for (Herb herb : values()) {
-            String herbName = ItemDef.get(herb.cleanId).name.toLowerCase();
+            String herbName = ItemDefinition.get(herb.cleanId).name.toLowerCase();
             ItemAction.registerInventory(herb.grimyId, "clean", (player, item) -> {
                 if (!player.getStats().check(StatType.Herblore, herb.lvlReq, item.getId(), "clean this"))
                     return;

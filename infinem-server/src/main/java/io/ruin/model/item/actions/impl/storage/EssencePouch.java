@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.storage;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
@@ -109,7 +109,7 @@ public enum EssencePouch {
             ItemAction.registerInventory(pouch.itemId, "check", (player, item) -> check(player, pouch));
         }
 
-        ItemDef.get(Essence.PURE.id).bankWithdrawListener = EssencePouch::withdrawToPouch;
+        ItemDefinition.get(Essence.PURE.id).bankWithdrawListener = EssencePouch::withdrawToPouch;
     }
 
     private static int withdrawToPouch(Player player, Item item, int amount) {

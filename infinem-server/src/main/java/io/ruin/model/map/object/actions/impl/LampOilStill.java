@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
-import io.ruin.cache.ItemDef;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
@@ -33,7 +33,7 @@ public class LampOilStill {
     private static void loadOil(Player player, Item item, OilFillable fillable) {
         int fillableIndex = player.getAttributeIntOrZero(attKey);
         if (fillableIndex != 0) {
-            player.dialogue(new MessageDialogue("There is already " + ItemDef.get(OilFillable.values()[fillableIndex - 1].oil).name + " in the lamp still. Wash it out first."));
+            player.dialogue(new MessageDialogue("There is already " + ItemDefinition.get(OilFillable.values()[fillableIndex - 1].oil).name + " in the lamp still. Wash it out first."));
             return;
         }
         player.animate(3572);
@@ -45,15 +45,15 @@ public class LampOilStill {
     private static void fill(Player player, Item item, OilFillable fillable) {
         int fillableIndex = player.getAttributeIntOrZero(attKey);
         if (fillableIndex == 0) {
-            player.dialogue(new MessageDialogue("You first need to fill the lamp still with " + ItemDef.get(fillable.oil).name + "."));
+            player.dialogue(new MessageDialogue("You first need to fill the lamp still with " + ItemDefinition.get(fillable.oil).name + "."));
             return;
         }
         int oilId = OilFillable.values()[fillableIndex - 1].oil;
         if (oilId != fillable.oil) {
             player.dialogue(new MessageDialogue("The lamp still is currently filled with "
-                    + ItemDef.get(oilId).name
-                    + ". You can only fill a " + ItemDef.get(fillable.empty).name
-                    + " with " + ItemDef.get(fillable.oil).name + "."));
+                    + ItemDefinition.get(oilId).name
+                    + ". You can only fill a " + ItemDefinition.get(fillable.empty).name
+                    + " with " + ItemDefinition.get(fillable.oil).name + "."));
             return;
         }
         player.animate(3572);
@@ -64,7 +64,7 @@ public class LampOilStill {
         } else {
             player.getTaskManager().doLookupByUUID(933);    // Fill a Lamp or Lantern at a Lamp Still
         }
-        player.sendMessage("You fill the " + ItemDef.get(fillable.filled).name + ".");
+        player.sendMessage("You fill the " + ItemDefinition.get(fillable.filled).name + ".");
     }
 
     static {
