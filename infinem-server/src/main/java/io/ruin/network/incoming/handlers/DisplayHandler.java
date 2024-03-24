@@ -39,7 +39,7 @@ public class DisplayHandler implements Incoming {
         p.setDisplayMode(displayMode);
         PacketSender ps = p.getPacketSender();
 
-        Map<Integer, Integer> oldComponents = getToplevelComponents(p).ints();
+        Map<Integer, Integer> oldComponents = getToplevelComponents(p).getValuesAsInts();
 
         ps.sendGameFrame(getGameFrameFor(displayMode));
         ps.sendClientScript(3998, "i", displayMode - 1);
@@ -51,7 +51,7 @@ public class DisplayHandler implements Incoming {
                 Config.SIDE_PANELS.set(p, 1);
                 break;
         }
-        Map<Integer, Integer> newComponents = getToplevelComponents(p).ints();
+        Map<Integer, Integer> newComponents = getToplevelComponents(p).getValuesAsInts();
         moveSubInterfaces(oldComponents, newComponents, p);
         ps.sendAccessMask(Interface.OPTIONS, 39, 0, 21, AccessMasks.ClickOp1);
         ps.sendAccessMask(Interface.OPTIONS, 53, 0, 21, AccessMasks.ClickOp1);
@@ -127,7 +127,7 @@ public class DisplayHandler implements Incoming {
     }
 
     public static void updateDisplay(Player player) {
-        Map<Integer, Integer> oldComponents = getToplevelComponents(player).ints();
+        Map<Integer, Integer> oldComponents = getToplevelComponents(player).getValuesAsInts();
 
         PacketSender ps = player.getPacketSender();
         if(player.isFixedScreen()) {
@@ -138,12 +138,12 @@ public class DisplayHandler implements Incoming {
             ps.sendGameFrame(161);
         }
 
-        Map<Integer, Integer> newComponents = getToplevelComponents(player).ints();
+        Map<Integer, Integer> newComponents = getToplevelComponents(player).getValuesAsInts();
         moveSubInterfaces(oldComponents, newComponents, player);
     }
 
     public static void updateResizedTabs(Player player) {
-        Map<Integer, Integer> oldComponents = getToplevelComponents(player).ints();
+        Map<Integer, Integer> oldComponents = getToplevelComponents(player).getValuesAsInts();
         PacketSender ps = player.getPacketSender();
         if(player.getGameFrameId() == 161) {
             ps.sendGameFrame(164);
@@ -151,7 +151,7 @@ public class DisplayHandler implements Incoming {
             ps.sendGameFrame(161);
         }
 
-        Map<Integer, Integer> newComponents = getToplevelComponents(player).ints();
+        Map<Integer, Integer> newComponents = getToplevelComponents(player).getValuesAsInts();
         moveSubInterfaces(oldComponents, newComponents, player);
     }
 

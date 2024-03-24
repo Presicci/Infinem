@@ -6,6 +6,8 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.construction.Buildable;
 
+import java.util.Map;
+
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 2/16/2024
@@ -15,8 +17,9 @@ public class Menagerie {
     static {
         EnumDefinition map = EnumDefinition.get(985);
         StringBuilder sb = new StringBuilder();
-        for(int key : map.keys) {
-            int itemId = map.intValues[key];
+        Map<Integer, Integer> intValues = map.getValuesAsInts();
+        for (int key : intValues.keySet()) {
+            int itemId = intValues.get(key);
             ItemDefinition def = ItemDefinition.get(itemId);
             if(def.pet == null) {
                 System.err.println(def.name + " (" + itemId + ") pet not supported!");

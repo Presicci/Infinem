@@ -125,6 +125,7 @@ public class Server extends ServerWrapper {
 
             fileStore = new FileStore(properties.getProperty("cache_path"));
             dataFolder = FileUtils.get(properties.getProperty("data_path"));
+            EnumDefinition.load();
             VarpbitDefinition.load();
             IdentityKitDefinition.load();
             AnimationDefinition.load();

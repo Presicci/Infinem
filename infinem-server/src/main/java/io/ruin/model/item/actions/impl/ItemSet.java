@@ -21,9 +21,9 @@ public class ItemSet {
     private final String contentsMessage;
 
     private ItemSet(EnumDefinition map) {
-        this.id = map.intValues[0];
-        this.itemIds = new int[map.length - 1];
-        System.arraycopy(map.intValues, 1, this.itemIds, 0, map.length - 1);
+        this.id = map.getIntValuesArray()[0];
+        this.itemIds = new int[map.size - 1];
+        System.arraycopy(map.getIntValuesArray(), 1, this.itemIds, 0, map.size - 1);
         StringBuilder message = new StringBuilder();
         for(int i = 0; i < itemIds.length; i++) {
             message.append("<col=ef1020>").append(ItemDefinition.get(itemIds[i]).name);
@@ -71,8 +71,8 @@ public class ItemSet {
          */
         EnumDefinition map = EnumDefinition.get(1033);
         ArrayList<ItemSet> setList = new ArrayList<>();
-        for(int i = 0; i < map.length; i++) {
-            EnumDefinition itemsMap = EnumDefinition.get(map.intValues[i]);
+        for(int i = 0; i < map.size; i++) {
+            EnumDefinition itemsMap = EnumDefinition.get(map.getValuesAsInts().get(i));
             setList.add(new ItemSet(itemsMap));
         }
         ItemSet[] sets = setList.toArray(new ItemSet[setList.size()]);

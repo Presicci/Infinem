@@ -314,16 +314,16 @@ public enum CollectionLogInfo {
 
             EnumDefinition subcategories = EnumDefinition.get(category.getInt(STRUCT_LOG_SUBCATEGORY));
 
-            for (int slot = 0; slot < subcategories.length; slot++) {
-                StructDefinition subcategory = StructDefinition.get(subcategories.intValues[slot]);
+            for (int slot = 0; slot < subcategories.size; slot++) {
+                StructDefinition subcategory = StructDefinition.get(subcategories.getIntValuesArray()[slot]);
 
                 EnumDefinition group = EnumDefinition.get(subcategory.getInt(STRUCT_LOG_GROUP));
-                info.items.put(subcategory.getInt(STRUCT_LOG_GROUP), group.intValues);
+                info.items.put(subcategory.getInt(STRUCT_LOG_GROUP), group.getIntValuesArray());
                 info.enums.add(subcategory.getInt(STRUCT_LOG_GROUP));
 
-                for (int index = 0; index < group.intValues.length; index++) {
-                    player.getCollectionLog().collect(group.intValues[index], 1);
-                    ItemDefinition.get(group.intValues[index]).collectable = true;
+                for (int index = 0; index < group.getIntValuesArray().length; index++) {
+                    player.getCollectionLog().collect(group.getIntValuesArray()[index], 1);
+                    ItemDefinition.get(group.getIntValuesArray()[index]).collectable = true;
                     TOTAL_COLLECTABLES++;
                 }
             }
@@ -336,14 +336,14 @@ public enum CollectionLogInfo {
 
             EnumDefinition subcategories = EnumDefinition.get(category.getInt(STRUCT_LOG_SUBCATEGORY));
 
-            for (int slot = 0; slot < subcategories.length; slot++) {
-                StructDefinition subcategory = StructDefinition.get(subcategories.intValues[slot]);
+            for (int slot = 0; slot < subcategories.size; slot++) {
+                StructDefinition subcategory = StructDefinition.get(subcategories.getIntValuesArray()[slot]);
 
                 EnumDefinition group = EnumDefinition.get(subcategory.getInt(STRUCT_LOG_GROUP));
-                info.items.put(subcategory.getInt(STRUCT_LOG_GROUP), group.intValues);
+                info.items.put(subcategory.getInt(STRUCT_LOG_GROUP), group.getIntValuesArray());
                 info.enums.add(subcategory.getInt(STRUCT_LOG_GROUP));
-                for (int index = 0; index < group.intValues.length; index++) {
-                    ItemDefinition.get(group.intValues[index]).collectable = true;
+                for (int index = 0; index < group.getIntValuesArray().length; index++) {
+                    ItemDefinition.get(group.getIntValuesArray()[index]).collectable = true;
                     TOTAL_COLLECTABLES++;
                 }
             }

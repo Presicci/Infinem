@@ -113,7 +113,7 @@ public class MusicPlayer {
         if (randomTrack == currentlyPlaying) {
             return;
         }
-        val slot = EnumDefinition.get(812).valuesAsKeysStrings().get(randomTrack.getName()) - 1;
+        val slot = EnumDefinition.get(812).getValuesAsKeysStrings().get(randomTrack.getName()) - 1;
         play(slot);
     }
 
@@ -146,8 +146,8 @@ public class MusicPlayer {
     }
 
     public void unlock(final Music music, final boolean play) {
-        val slot = EnumDefinition.get(812).valuesAsKeysStrings().get(music.getName()) - 1;
-        val musicIndex = EnumDefinition.get(819).intValues[slot];
+        val slot = EnumDefinition.get(812).getValuesAsKeysStrings().get(music.getName()) - 1;
+        val musicIndex = EnumDefinition.get(819).getIntValuesArray()[slot];
         val index = (musicIndex >> 14) - 1;
         if (index >= Config.MUSIC_UNLOCKS.length) {
             return;
@@ -174,7 +174,7 @@ public class MusicPlayer {
 
     /** Whether the track at the given slot is unlocked or not. */
     private boolean isUnlocked(final int slot) {
-        val randomSong = EnumDefinition.get(819).intValues[slot];
+        val randomSong = EnumDefinition.get(819).getIntValuesArray()[slot];
         if (randomSong == -1) {
             return true;
         }
@@ -205,7 +205,7 @@ public class MusicPlayer {
                 val current = currentlyPlaying;
                 currentlyPlaying = null;
                 if (current != null) {
-                    val slot = EnumDefinition.get(812).valuesAsKeysStrings().get(current.getName()) - 1;
+                    val slot = EnumDefinition.get(812).getValuesAsKeysStrings().get(current.getName()) - 1;
                     play(slot);
                 } else {
                     playRandomTrackInRegion();
@@ -216,7 +216,7 @@ public class MusicPlayer {
 
     /** Sends the hint for the music track at the given slot. */
     public void sendUnlockHint(final int slotId) {
-        val musicName = EnumDefinition.get(812).stringValues[slotId];
+        val musicName = EnumDefinition.get(812).getStringValuesArray()[slotId];
         val music = Music.map.get(musicName);
         if (music == null) {
             return;
@@ -233,7 +233,7 @@ public class MusicPlayer {
         if (!isUnlocked(slot)) {
             return false;
         }
-        String musicName = EnumDefinition.get(812).stringValues[slot];
+        String musicName = EnumDefinition.get(812).getStringValuesArray()[slot];
         Music music = Music.map.get(musicName);
         if (music == null) {
             return false;

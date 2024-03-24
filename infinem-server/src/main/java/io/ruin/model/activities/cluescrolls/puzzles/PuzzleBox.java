@@ -84,7 +84,7 @@ public final class PuzzleBox {
         assert puzzle != null : "Puzzle is not set yet.";
         currentPuzzle.sendAll = true;
         currentPuzzle.sendUpdates();
-        Config.PUZZLE_INDEX.set(player, EnumDefinition.get(1864).valuesAsKeysInts().get(puzzle.getEnumId()));
+        Config.PUZZLE_INDEX.set(player, EnumDefinition.get(1864).getValuesAsKeysInts().get(puzzle.getEnumId()));
     }
 
     /**
@@ -154,7 +154,7 @@ public final class PuzzleBox {
         }
         val enumList = getEnum();
         for (int i = 0; i < 24; i++) {
-            val enumValue = enumList.ints().get(i);
+            val enumValue = enumList.getValuesAsInts().get(i);
             val currentPiece = currentPuzzle.get(i);
             if (currentPiece == null || (currentPiece.getId() != enumValue)) {
                 return;
@@ -191,7 +191,7 @@ public final class PuzzleBox {
         currentPuzzle.sendAll = true;
         complete = false;
         currentPuzzle.clear();
-        val firstPieceItemId = getEnum().ints().get(0);
+        val firstPieceItemId = getEnum().getValuesAsInts().get(0);
         for (int i = 0; i < 24; i++) {
             currentPuzzle.set(i, new Item(firstPieceItemId + i));
         }

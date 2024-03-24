@@ -6,7 +6,7 @@ import io.ruin.cache.def.ItemDefinition;
 public class CoxItem {
 
     static {
-        EnumDefinition.get(1666).ints().forEach((k, v) -> {
+        EnumDefinition.get(1666).getValuesAsInts().forEach((k, v) -> {
             mark(v);
         });
     }

@@ -551,9 +551,9 @@ public enum SlayerCreature {
         String result = "";
         int bossTask = Slayer.getBossTask(player);
         if (bossTask != 0) {
-            result = EnumDefinition.get(1174).strings().get(bossTask);
+            result = EnumDefinition.get(1174).getValuesAsStrings().get(bossTask);
         } else {
-            result = EnumDefinition.get(693).strings().get(uid);
+            result = EnumDefinition.get(693).getValuesAsStrings().get(uid);
         }
         return result == null ? "null" : result;
     }

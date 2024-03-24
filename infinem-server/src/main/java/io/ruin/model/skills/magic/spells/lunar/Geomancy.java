@@ -127,7 +127,7 @@ public class Geomancy extends Spell {
 
     private static void updateInterface(Player player) {
         for (GeomancyData data : GeomancyData.values()) {
-            Map<Integer, Integer> items = EnumDefinition.get(1236).ints();
+            Map<Integer, Integer> items = EnumDefinition.get(1236).getValuesAsInts();
             PatchData pd = data.patchData;
             if (pd == null) {
                 continue;
