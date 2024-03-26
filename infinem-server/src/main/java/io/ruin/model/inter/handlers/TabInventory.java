@@ -100,36 +100,7 @@ public class TabInventory {
                 player.sendMessage("The power of your bloody key prevents you from dropping items!");
                 return;
             }
-            item.remove();
-            player.resetActions(true, false, true);
-            player.privateSound(2739);
-            if (def.inventoryOptions[option - 1].equalsIgnoreCase("release")) {
-                String releaseString = def.getCustomValueOrDefault("RELEASE", "");
-                if (!releaseString.isEmpty()) {
-                    player.dialogue(new ItemDialogue().one(itemId, releaseString));
-                }
-            } else if (player.wildernessLevel > 0) {
-                /**
-                 * Dropping in the wilderness
-                 */
-                if (def.consumable || !def.tradeable)
-                    new GroundItem(item).owner(player).droppedBy(player).position(player.getPosition()).spawnPrivate();
-                else
-                    new GroundItem(item).owner(player).droppedBy(player).position(player.getPosition()).spawnPublic();
-            } else {
-                /**
-                 * Player is in a raid, so make items appear instantly.
-                 */
-                if (player.raidsParty != null) {
-                    new GroundItem(item).owner(player).droppedBy(player).position(player.getPosition()).spawnPublic();
-                } else {
-                    /**
-                     * Regular dropping
-                     */
-                    new GroundItem(item).owner(player).droppedBy(player).position(player.getPosition()).spawn();
-                }
-            }
-            Loggers.logDrop(player.getUserId(), player.getName(), player.getIp(), item.getId(), item.getAmount(), player.getAbsX(), player.getAbsY(), player.getHeight());
+            drop(player, item, option);
             return;
         }
         if (option == def.equipOption) {
@@ -138,6 +109,40 @@ public class TabInventory {
             return;
         }
         item.examine(player);
+    }
+
+    private static void drop(Player player, Item item, int option) {
+        ItemDefinition def = item.getDef();
+        item.remove();
+        player.resetActions(true, false, true);
+        player.privateSound(2739);
+        if (def.inventoryOptions[option - 1].equalsIgnoreCase("release")) {
+            String releaseString = def.getCustomValueOrDefault("RELEASE", "");
+            if (!releaseString.isEmpty()) {
+                player.dialogue(new ItemDialogue().one(item.getId(), releaseString));
+            }
+        } else if (player.wildernessLevel > 0) {
+            /**
+             * Dropping in the wilderness
+             */
+            if (def.consumable || !def.tradeable)
+                new GroundItem(item).owner(player).droppedBy(player).position(player.getPosition()).spawnPrivate();
+            else
+                new GroundItem(item).owner(player).droppedBy(player).position(player.getPosition()).spawnPublic();
+        } else {
+            /**
+             * Player is in a raid, so make items appear instantly.
+             */
+            if (player.raidsParty != null) {
+                new GroundItem(item).owner(player).droppedBy(player).position(player.getPosition()).spawnPublic();
+            } else {
+                /**
+                 * Regular dropping
+                 */
+                new GroundItem(item).owner(player).droppedBy(player).position(player.getPosition()).spawn();
+            }
+        }
+        Loggers.logDrop(player.getUserId(), player.getName(), player.getIp(), item.getId(), item.getAmount(), player.getAbsX(), player.getAbsY(), player.getHeight());
     }
 
     public static void drag(Player player, int fromSlot, int toSlot) {
