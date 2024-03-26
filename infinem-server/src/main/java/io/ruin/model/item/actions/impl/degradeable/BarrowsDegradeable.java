@@ -3,6 +3,7 @@ package io.ruin.model.item.actions.impl.degradeable;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.npc.actions.RepairNPC;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.ItemDropPrompt;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemNPCAction;
@@ -63,6 +64,8 @@ public enum BarrowsDegradeable {
             ItemDefinition.get(id).addPreDefendListener((player, item, hit) -> removeCharge(item, 1));
             ItemAction.registerInventory(id, "check", (player, item) -> player.sendMessage("Your " + ItemDefinition.get(newId).name + " has " + item.getCharges() + " charges remaining."));
             ItemAction.registerEquipment(id, "check", (player, item) -> player.sendMessage("Your " + ItemDefinition.get(newId).name + " has " + item.getCharges() + " charges remaining."));
+            ItemDefinition.get(id).custom_values.put("DROP_PROMPT", new ItemDropPrompt("Dropping this item will break it.", this::destroy
+            ));
         }
         EquipAction.register(newId, (player -> {
             Item item = player.getEquipment().findItemIgnoringAttributes(newId, false);

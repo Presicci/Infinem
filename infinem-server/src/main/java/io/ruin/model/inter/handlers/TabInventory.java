@@ -8,7 +8,9 @@ import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceAction;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.ItemDropPrompt;
 import io.ruin.model.item.actions.*;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.ground.GroundItem;
@@ -100,7 +102,17 @@ public class TabInventory {
                 player.sendMessage("The power of your bloody key prevents you from dropping items!");
                 return;
             }
-            drop(player, item, option);
+            ItemDropPrompt dropPrompt = def.getCustomValueOrDefault("DROP_PROMPT", null);
+            if (dropPrompt != null) {
+                player.dialogue(
+                        new YesNoDialogue("Are you sure you want to do this?", dropPrompt.getMessage(), item.getId(), 1, () -> {
+                            dropPrompt.getAction().accept(item);
+                            drop(player, item, option);
+                        })
+                );
+            } else {
+                drop(player, item, option);
+            }
             return;
         }
         if (option == def.equipOption) {
