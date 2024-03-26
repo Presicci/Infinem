@@ -11,6 +11,7 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
+import io.ruin.model.item.ItemDropPrompt;
 import io.ruin.model.item.actions.impl.ItemBreaking;
 import io.ruin.model.item.actions.impl.ItemUpgrading;
 import io.ruin.model.item.pet.Pet;
@@ -353,6 +354,10 @@ public class IKODInterface {
                 if (player.wildernessLevel > 0 || player.pvpAttackZone) {
                     item.setId(brokenDef.id);
                 }
+            }
+            ItemDropPrompt dropPrompt = item.getDef().getCustomValueOrDefault("DROP_PROMPT", null);
+            if (dropPrompt != null) {
+                dropPrompt.getAction().accept(item);
             }
             /* upgraded items */
             ItemUpgrading upgrade = item.getDef().upgradedFrom;
