@@ -98,6 +98,7 @@ public class TabInventory {
             }
             if (player.wildernessLevel > 0 && BloodyChest.hasBloodyKey(player)) {
                 player.sendMessage("The power of your bloody key prevents you from dropping items!");
+                return;
             }
             item.remove();
             player.resetActions(true, false, true);
