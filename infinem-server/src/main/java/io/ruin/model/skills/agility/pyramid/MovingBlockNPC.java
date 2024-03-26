@@ -7,8 +7,6 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
-import javafx.geometry.Pos;
-import lombok.val;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
