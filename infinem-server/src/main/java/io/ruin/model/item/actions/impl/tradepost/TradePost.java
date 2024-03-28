@@ -6,11 +6,11 @@ import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.Interface;
-import io.ruin.model.inter.InterfaceAction;
-import io.ruin.model.inter.InterfaceHandler;
-import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.*;
+import io.ruin.model.inter.actions.DefaultAction;
+import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
+import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
@@ -52,7 +52,8 @@ public class TradePost {
     public void openViewOffers() {
         if(player.getBankPin().requiresVerification(p -> openViewOffers()))
             return;
-        player.openInterface(InterfaceType.MAIN, Interface.TRADING_POST_VIEW);
+        player.openInterface(InterfaceType.MAIN_STRETCHED, Interface.TRADING_POST_VIEW);
+        player.getPacketSender().sendAccessMask(1005, 19, 0, 100, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
         player.closeInterface(InterfaceType.INVENTORY);
         resetSearch();
     }
@@ -206,6 +207,10 @@ public class TradePost {
                     return offer.getItem().getDef().name.toLowerCase().contains(searchText);
                 }).sorted((offerA, offerB) -> {
                     switch (sort) {
+                        case QUANT_DESCENDING:
+                            return offerB.getItem().getAmount() - offerA.getItem().getAmount();
+                        case QUANT_ASCENDING:
+                            return offerA.getItem().getAmount() - offerB.getItem().getAmount();
                         case PRICE_DESCENDING:
                             return offerB.getPricePerItem() - offerA.getPricePerItem();
                         case PRICE_ASCENDING:
@@ -220,45 +225,89 @@ public class TradePost {
                 .collect(Collectors.toList());
     }
 
-    private void sortByPrice() {
-        if (sort == TradePostSort.PRICE_ASCENDING) {
-            sort = TradePostSort.PRICE_DESCENDING;
+    private void sortByQuantity() {
+        if (sort == TradePostSort.QUANT_DESCENDING) {
+            sort = TradePostSort.QUANT_ASCENDING;
+            player.getPacketSender().sendClientScript(44, "ii", 1005 << 16 | 21, 1050);
         } else {
-            sort = TradePostSort.PRICE_ASCENDING;
+            sort = TradePostSort.QUANT_DESCENDING;
+            player.getPacketSender().sendClientScript(44, "ii", 1005 << 16 | 21, 1051);
         }
         updateViewOffers();
+        player.getPacketSender().setHidden(1005, 21, false);
+        player.getPacketSender().setHidden(1005, 7, true);
+        player.getPacketSender().setHidden(1005, 8, true);
+    }
+
+    private void sortByPrice() {
+        if (sort == TradePostSort.PRICE_DESCENDING) {
+            sort = TradePostSort.PRICE_ASCENDING;
+            player.getPacketSender().sendClientScript(44, "ii", 1005 << 16 | 7, 1050);
+        } else {
+            sort = TradePostSort.PRICE_DESCENDING;
+            player.getPacketSender().sendClientScript(44, "ii", 1005 << 16 | 7, 1051);
+        }
+        updateViewOffers();
+        player.getPacketSender().setHidden(1005, 21, true);
+        player.getPacketSender().setHidden(1005, 7, false);
+        player.getPacketSender().setHidden(1005, 8, true);
     }
 
     private void sortByAge() {
-        if (sort == TradePostSort.AGE_ASCENDING) {
-            sort = TradePostSort.AGE_DESCENDING;
-        } else {
+        if (sort == TradePostSort.AGE_DESCENDING) {
             sort = TradePostSort.AGE_ASCENDING;
+            player.getPacketSender().sendClientScript(44, "ii", 1005 << 16 | 8, 1050);
+        } else {
+            sort = TradePostSort.AGE_DESCENDING;
+            player.getPacketSender().sendClientScript(44, "ii", 1005 << 16 | 8, 1051);
         }
         updateViewOffers();
+        player.getPacketSender().setHidden(1005, 21, true);
+        player.getPacketSender().setHidden(1005, 7, true);
+        player.getPacketSender().setHidden(1005, 8, false);
     }
 
-    private void promptSearch() {
-        player.dialogue(false,
-                new OptionsDialogue("How would you like to search?",
-                        new Option("Item name search", () -> {
-                            player.stringInput("Enter item name to search for:", searchText -> {
-                                this.searchText = searchText;
-                                updateSearch();
-                            });
-                        }),
-                        new Option("Item search", () -> {
-                            player.itemSearch("Check listings for:", false, item -> {
-                                this.searchText = ItemDefinition.get(item).name.toLowerCase();
-                                updateSearch();
-                            });
-                        })
-                )
-        );
+    private void promptSearch(int option) {
+        switch (option) {
+            case 1:
+            default:
+                player.dialogue(false,
+                        new OptionsDialogue("How would you like to search?",
+                                new Option("Item name search", () -> {
+                                    player.stringInput("Enter item name to search for:", searchText -> {
+                                        this.searchText = searchText;
+                                        updateSearch();
+                                    });
+                                }),
+                                new Option("Item search", () -> {
+                                    player.itemSearch("Check listings for:", false, item -> {
+                                        this.searchText = ItemDefinition.get(item).name.toLowerCase();
+                                        updateSearch();
+                                    });
+                                })
+                        )
+                );
+                break;
+            case 2:
+                player.closeDialogue();
+                player.stringInput("Enter item name to search for:", searchText -> {
+                    this.searchText = searchText;
+                    updateSearch();
+                });
+                break;
+            case 3:
+                player.closeDialogue();
+                player.itemSearch("Check listings for:", false, item -> {
+                    this.searchText = ItemDefinition.get(item).name.toLowerCase();
+                    updateSearch();
+                });
+                break;
+        }
     }
 
     private void resetSearch() {
         this.searchText = null;
+        player.closeDialogue();
         updateSearch();
     }
 
@@ -270,14 +319,13 @@ public class TradePost {
             search = search.substring(0, 18) + "...";
         }
 
-        player.getPacketSender().sendString(Interface.TRADING_POST_VIEW, 32, search);
+        player.getPacketSender().sendString(Interface.TRADING_POST_VIEW, 16, search);
     }
 
     private void buy(int index) {
         if (index >= viewOffers.size()) {
             return;
         }
-
         player.integerInput("Amount to Buy:", amount -> {
             TradePostOffer offer = viewOffers.get(index);
             String sellerName = offer.getUsername();
@@ -388,19 +436,29 @@ public class TradePost {
             hideViewOffer(index, true);
         }
 
+        StringBuilder sb = new StringBuilder();
         for (int index = 0; index < viewOffers.size(); index++) {
-            updateViewOffer(index, viewOffers.get(index));
-            hideViewOffer(index, false);
+            TradePostOffer offer = viewOffers.get(index);
+            String price = formatPrice(offer.getPricePerItem()) + (offer.getPricePerItem() < 100_000 ? "gp" : "");
+            String totalPrice = offer.getItem().getAmount() > 1 ? formatPrice((long) offer.getPricePerItem() *
+                    offer.getItem().getAmount()) : "";
+            sb.append(price);
+            sb.append("|");
+            sb.append(totalPrice);
+            sb.append("|");
+            sb.append(offer.getUsername());
+            sb.append("|");
+            sb.append(formatAge(offer.getTimestamp()));
+            if (index < viewOffers.size() - 1) {
+                sb.append("|");
+            }
         }
-
-        int scrollBarWidgetId = 494;
-        int scrollContainerWidgetId = 43;
-        player.getPacketSender().sendClientScript(
-                30, "ii",
-                Interface.TRADING_POST_VIEW << 16 | scrollBarWidgetId,
-                Interface.TRADING_POST_VIEW << 16 | scrollContainerWidgetId
-        );
-
+        player.getPacketSender().sendClientScript(10072, "ss", "Buy", sb.toString());
+        int slot = 1;
+        for (TradePostOffer offer : viewOffers) {
+            player.getPacketSender().sendClientScript(9006, "iiii", 1005 << 16 | 19, slot, offer.getItem().getId(), offer.getItem().getAmount());
+            slot += 7;
+        }
     }
 
     private void hideViewOffer(int index, boolean hidden) {
@@ -512,27 +570,31 @@ public class TradePost {
         });
 
         InterfaceHandler.register(Interface.TRADING_POST_VIEW, handler -> {
-            handler.actions[42] = (SimpleAction) player -> {
+            handler.actions[17] = (SimpleAction) player -> {
                 player.getTradePost().openMyOffers();
             };
-            handler.actions[17] = (SimpleAction) player -> {
+            handler.actions[22] = (SimpleAction) player -> {
+                player.getTradePost().sortByQuantity();
+            };
+            handler.actions[23] = (SimpleAction) player -> {
                 player.getTradePost().sortByPrice();
             };
-            handler.actions[20] = (SimpleAction) player -> {
+            handler.actions[24] = (SimpleAction) player -> {
                 player.getTradePost().sortByAge();
             };
-            handler.actions[26] = (SimpleAction) player -> {
-                player.getTradePost().promptSearch();
+            handler.actions[9] = (OptionAction) (player, option) -> {
+                player.getTradePost().promptSearch(option);
             };
-            handler.actions[30] = (SimpleAction) player -> {
+            handler.actions[12] = (SimpleAction) player -> {
                 player.getTradePost().resetSearch();
             };
-            for (int i = 0; i < MAX_VIEW_OFFERS; i++) {
-                final int index = i;
-                handler.actions[51 + (index * 9)] = (SimpleAction) player -> {
-                    player.getTradePost().buy(index);
-                };
-            }
+            handler.actions[19] = (DefaultAction) (player, option, slot, itemId) -> {
+                if (option == 10) {
+                    new Item(itemId, 1).examine(player);
+                    return;
+                }
+                player.getTradePost().buy(slot / 7);
+            };
         });
 
         for(int trader : new int[]{2149, 2148}) {
