@@ -132,7 +132,7 @@ public class DropViewer {
         int slot = 1;
         for (DropViewerResult drop : drops) {
             Item item = drop.getItem();
-            player.getPacketSender().sendClientScript(9006, "iii", slot, item.getId(), item.getAmount());
+            player.getPacketSender().sendClientScript(9006, "iiii", 1000 << 16 | 24, slot, item.getId(), item.getAmount());
             slot += 5;
         }
         player.putTemporaryAttribute("DROPVIEWER_DROPS", drops);
