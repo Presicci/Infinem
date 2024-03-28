@@ -14,16 +14,10 @@ public enum InterfaceType {
             new Component(164, 13 + DEFAULT_SCREEN_CHILD_OFFSET),
             false
     ),
-    MAIN_FILL(
+    MAIN_STRETCHED(
             new Component(548, 21 + DEFAULT_SCREEN_CHILD_OFFSET),
             new Component(161, 14 + DEFAULT_SCREEN_CHILD_OFFSET),
             new Component(164, 14 + DEFAULT_SCREEN_CHILD_OFFSET),
-            false
-    ),
-    TEST(
-            new Component(134, 8),
-            new Component(134, 8),
-            new Component(134, 8),
             false
     ),
     INVENTORY(

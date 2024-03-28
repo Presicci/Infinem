@@ -211,7 +211,7 @@ public class Settings {
     public static void open(Player player) {
         if (player.isVisibleInterface(INTERFACE_ID)) return;
         resetSettings(player);
-        player.openInterface(InterfaceType.MAIN_FILL, INTERFACE_ID);
+        player.openInterface(InterfaceType.MAIN_STRETCHED, INTERFACE_ID);
 
         player.getPacketSender().sendAccessMask(INTERFACE_ID, 23, 0, 7, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(INTERFACE_ID, 19, 0, 1000, AccessMasks.ClickOp1);

@@ -460,6 +460,10 @@ public class Player extends PlayerAttributes {
         InterfaceHandler activeHandler = activeInterfaceHandlers[type.ordinal()];
         if(activeHandler != null && activeHandler.closedAction != null)
             activeHandler.closedAction.accept(this, interfaceId);
+        if (type == InterfaceType.MAIN || type == InterfaceType.MAIN_STRETCHED) {
+            closeInterface(InterfaceType.MAIN);
+            closeInterface(InterfaceType.MAIN_STRETCHED);
+        }
         type.open(this, interfaceId);
         activeInterfaceHandlers[type.ordinal()] = handler == null ? InterfaceHandler.EMPTY_HANDLER : handler;
     }
