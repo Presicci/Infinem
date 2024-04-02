@@ -55,6 +55,7 @@ public class TradePost {
         player.openInterface(InterfaceType.MAIN_STRETCHED, Interface.TRADING_POST_VIEW);
         player.getPacketSender().sendAccessMask(1005, 19, 0, 100, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
         player.closeInterface(InterfaceType.INVENTORY);
+        changeInventoryAccess();
         resetSearch();
     }
 
@@ -520,6 +521,8 @@ public class TradePost {
                         player.sendMessage("You can't offer upgraded items on the trading post.");
                         return;
                     }
+                    if (!player.isVisibleInterface(1006))
+                        player.getTradePost().openMyOffers();
                     player.getTradePost().promptCreateOffer(itemId);
                 }
             };
