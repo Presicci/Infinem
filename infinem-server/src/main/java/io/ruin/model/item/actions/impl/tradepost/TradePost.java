@@ -31,7 +31,7 @@ import static io.ruin.cache.ItemID.COINS_995;
  */
 public class TradePost {
 
-    private static final int MAX_MY_OFFERS = 6;
+    private static final int MAX_MY_OFFERS = 100;
     private static final int MAX_VIEW_OFFERS = 50;
 
     private Player player;
@@ -50,8 +50,8 @@ public class TradePost {
     }
 
     public void openViewOffers() {
-        if(player.getBankPin().requiresVerification(p -> openViewOffers()))
-            return;
+        //if(player.getBankPin().requiresVerification(p -> openViewOffers()))
+        //    return;
         player.openInterface(InterfaceType.MAIN_STRETCHED, Interface.TRADING_POST_VIEW);
         player.getPacketSender().sendAccessMask(1005, 19, 0, 100, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
         player.closeInterface(InterfaceType.INVENTORY);
@@ -59,32 +59,29 @@ public class TradePost {
     }
 
     public void openMyOffers() {
-        if(player.getBankPin().requiresVerification(p -> openMyOffers()))
-            return;
-        player.openInterface(InterfaceType.MAIN, Interface.TRADING_POST_MY_OFFERS);
+        //if(player.getBankPin().requiresVerification(p -> openMyOffers()))
+        //    return;
+        player.openInterface(InterfaceType.MAIN_STRETCHED, Interface.TRADING_POST_MY_OFFERS);
+        player.getPacketSender().sendAccessMask(1006, 5, 0, 100, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
         changeInventoryAccess();
         updateMyOffers();
     }
 
     private void promptCreateOffer(int itemId) {
-        if (tradePostOffers.size() > 5) {
+        if (tradePostOffers.size() >= MAX_MY_OFFERS) {
             player.sendMessage("You cannot create more sell offers.");
             return;
         }
-
         ItemDefinition itemDefinition = ItemDefinition.get(itemId);
         if (itemDefinition == null || !itemDefinition.tradeable || itemId == COINS_995) {
             player.sendMessage("You cannot trade this item.");
             return;
         }
-
         final int unnotedId = !itemDefinition.isNote() ? itemId : itemDefinition.fromNote().id;
-
         if (tradePostOffers.stream().anyMatch(offer -> offer.getItem().getId() == unnotedId)) {
             player.sendMessage("You are already selling this item.");
             return;
         }
-
         if (player.getInventory().getAmount(itemId) > 1) {
             player.integerInput("Enter item amount you would like to sell:", amount -> {
                 if (!player.getInventory().contains(itemId, amount)) {
@@ -157,43 +154,41 @@ public class TradePost {
     }
 
     private void updateMyOffers() {
+        StringBuilder sb = new StringBuilder();
         for (int index = 0; index < MAX_MY_OFFERS; index++) {
-            updateMyOffer(index, index >= tradePostOffers.size() ? null : tradePostOffers.get(index));
+            if (index >= tradePostOffers.size()) {
+                break;
+            }
+            TradePostOffer offer = tradePostOffers.get(index);
+            if (offer == null) break;
+            String price = "<col=ffffff>" + (formatPrice(offer.getPricePerItem()) + " ea");
+            String totalPrice = "<col=999999>" + formatPrice((long) offer.getPricePerItem() *
+                    offer.getItem().getAmount());
+            sb.append(offer.getItem().getDef().name);
+            sb.append("|");
+            sb.append(price);
+            sb.append("|");
+            sb.append(totalPrice);
+            if (index < tradePostOffers.size() - 1) {
+                sb.append("|");
+            }
+            //updateMyOffer(index, index >= tradePostOffers.size() ? null : tradePostOffers.get(index));
         }
-    }
-
-    private void updateMyOffer(int index, TradePostOffer offer) {
-        String price = "Price: <col=ffffff>" + (offer == null ? "-" : formatPrice(offer.getPricePerItem()) + " ea");
-        String totalPrice = offer == null ? ""
-                : "<col=999999>=" + formatPrice((long) offer.getPricePerItem() *
-                offer.getItem().getAmount()) + " total";
-        int titleWidgetId = 27 + (15 * index);
-        int priceWidgetId = 37 + (15 * index);
-        int totalPriceWidgetId = 38 + (15 * index);
-        int adjustButtonWidgetId = 29 + (15 * index);
-        int resetButtonWidgetId = 33 + (15 * index);
-        int containerWidgetId = 39 + (15 * index);
-        int itemContainerId = 1000 + index;
-
-        player.getPacketSender().sendClientScript(
-                149, "IviiiIsssss",
-                Interface.TRADING_POST_MY_OFFERS << 16 | containerWidgetId, itemContainerId,
-                4, 7, 1, -1, "", "", "", "", ""
-        );
-        player.getPacketSender().sendItems(
-                Interface.TRADING_POST_MY_OFFERS,
-                containerWidgetId,
-                itemContainerId,
-                offer == null ? null : offer.getItem()
-        );
-        player.getPacketSender().sendString(
-                Interface.TRADING_POST_MY_OFFERS,
-                titleWidgetId, offer == null ? "Empty Slot" : offer.getItem().getDef().name
-        );
-        player.getPacketSender().sendString(Interface.TRADING_POST_MY_OFFERS, priceWidgetId, price);
-        player.getPacketSender().sendString(Interface.TRADING_POST_MY_OFFERS, totalPriceWidgetId, totalPrice);
-        player.getPacketSender().sendClientScript(69, "ii", offer != null ? 0 : 1, Interface.TRADING_POST_MY_OFFERS << 16 | adjustButtonWidgetId);
-        player.getPacketSender().sendClientScript(69, "ii", offer != null ? 0 : 1, Interface.TRADING_POST_MY_OFFERS << 16 | resetButtonWidgetId);
+        if (tradePostOffers.size() < MAX_MY_OFFERS) {
+            if (!tradePostOffers.isEmpty())
+                sb.append("|");
+            sb.append("Open slot");
+            int emptyAmt = MAX_MY_OFFERS - tradePostOffers.size();
+            if (emptyAmt > 1)
+                sb.append(" x").append(emptyAmt);
+            sb.append("|<col=ffffff>-|");
+        }
+        player.getPacketSender().sendClientScript(10075, "s", sb.toString());
+        int slot = 2;
+        for (TradePostOffer offer : tradePostOffers) {
+            player.getPacketSender().sendClientScript(9006, "iiii", 1006 << 16 | 5, slot, offer.getItem().getId(), offer.getItem().getAmount());
+            slot += 12;
+        }
     }
 
     private List<TradePostOffer> findViewOffers() {
@@ -465,30 +460,6 @@ public class TradePost {
         player.getPacketSender().sendClientScript(69, "ii", hidden ? 1 : 0, Interface.TRADING_POST_VIEW << 16 | (44 + (9 * index)));
     }
 
-    private void updateViewOffer(int index, TradePostOffer offer) {
-        String price = formatPrice(offer.getPricePerItem()) + " ea";
-        String totalPrice = "=" + formatPrice((long) offer.getPricePerItem() *
-                offer.getItem().getAmount()) + " total";
-
-        int containerWidgetId = 46 + (index * 9);
-        int itemContainerId = 1100 + index;
-        int priceWidgetId = 47 + (index * 9);
-        int totalPriceWidgetId = 48 + (index * 9);
-        int usernameWidgetId = 49 + (index * 9);
-        int ageWidgetId = 50 + (index * 9);
-
-        player.getPacketSender().sendClientScript(
-                149, "IviiiIsssss",
-                Interface.TRADING_POST_VIEW << 16 | containerWidgetId, itemContainerId,
-                4, 7, 1, -1, "", "", "", "", ""
-        );
-        player.getPacketSender().sendItems(Interface.TRADING_POST_VIEW, containerWidgetId, itemContainerId, offer.getItem());
-        player.getPacketSender().sendString(Interface.TRADING_POST_VIEW, priceWidgetId, price);
-        player.getPacketSender().sendString(Interface.TRADING_POST_VIEW, totalPriceWidgetId, totalPrice);
-        player.getPacketSender().sendString(Interface.TRADING_POST_VIEW, usernameWidgetId, offer.getUsername());
-        player.getPacketSender().sendString(Interface.TRADING_POST_VIEW, ageWidgetId, formatAge(offer.getTimestamp()));
-    }
-
     private static String formatPrice(long price) {
         if (price > 9_999_999) {
             return NumberUtils.formatNumber(price / 1000_000) + "M";
@@ -555,18 +526,20 @@ public class TradePost {
         });
 
         InterfaceHandler.register(Interface.TRADING_POST_MY_OFFERS, handler -> {
-            handler.actions[19] = (SimpleAction) player -> {
-                player.getTradePost().openViewOffers();
-            };
-            for (int i = 0; i < MAX_MY_OFFERS; i++) {
-                final int index = i;
-                handler.actions[31 + (index * 15)] = (SimpleAction) player -> {
+            handler.actions[2] = (SimpleAction) player -> player.getTradePost().openViewOffers();
+            handler.actions[5] = (DefaultAction) (player, option, slot, itemId) -> {
+                if (option == 10 && itemId > -1) {
+                    new Item(itemId, 1).examine(player);
+                    return;
+                }
+                int index = slot / 12;
+                if (slot % 12 == 6) {
                     player.getTradePost().promptAdjustOffer(index);
-                };
-                handler.actions[35 + (index * 15)] = (SimpleAction) player -> {
+                }
+                if (slot % 12 == 9) {
                     player.getTradePost().resetOffer(index);
-                };
-            }
+                }
+            };
         });
 
         InterfaceHandler.register(Interface.TRADING_POST_VIEW, handler -> {
