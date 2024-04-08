@@ -10,17 +10,13 @@ import io.ruin.model.inter.*;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
-import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.ItemSet;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -31,8 +27,9 @@ import static io.ruin.cache.ItemID.COINS_995;
  */
 public class TradePost {
 
-    private static final int MAX_MY_OFFERS = 100;
+    private static final int MAX_MY_OFFERS = 10;
     private static final int MAX_VIEW_OFFERS = 50;
+    private static final int MAX_HISTORY = 50;
 
     private Player player;
     private String searchText;
@@ -41,6 +38,8 @@ public class TradePost {
     @Expose
     private List<TradePostOffer> tradePostOffers = new ArrayList<>();
     private List<TradePostOffer> viewOffers = new ArrayList<>();
+    @Expose
+    private LinkedList<ExchangeHistory> exchangeHistory = new LinkedList<>();
 
     @Expose
     private long coffer;
@@ -66,6 +65,18 @@ public class TradePost {
         player.getPacketSender().sendAccessMask(1006, 5, 0, 100, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
         changeInventoryAccess();
         updateMyOffers();
+    }
+
+    public void openHistory() {
+        player.openInterface(InterfaceType.MAIN, 383);
+        player.getPacketSender().sendClientScript(1644);
+        Iterator<ExchangeHistory> iterator = exchangeHistory.descendingIterator();
+        int index = 0;
+        while (iterator.hasNext()) {
+            ExchangeHistory record = iterator.next();
+            player.getPacketSender().sendClientScript(1645, "iiiii", index++, record.getItemId(), record.getType() == ExchangeType.BUYING ? 0 : 1, record.getItemQuantity(), record.getPrice());
+        }
+        player.getPacketSender().sendClientScript(1646);
     }
 
     private void promptCreateOffer(int itemId) {
@@ -409,6 +420,8 @@ public class TradePost {
                                         );
                                         seller.getTradePost().tradePostOffers.set(seller.getTradePost().tradePostOffers.indexOf(tradePostOffer), newOffer);
                                     }
+                                    seller.getTradePost().updateTradeHistory(new ExchangeHistory(offer.getItem().getId(), finalAmount, (int) price, ExchangeType.SELLING));
+                                    player.getTradePost().updateTradeHistory(new ExchangeHistory(offer.getItem().getId(), finalAmount, (int) price, ExchangeType.BUYING));
                                     if (outOfStock) {
                                         seller.sendMessage("<col=00c203>" + "Trading Post: Finished selling all of " + offer.getItem().getDef().name + ".</col>");
                                     } else {
@@ -423,6 +436,13 @@ public class TradePost {
                     )
             );
         });
+    }
+
+    public void updateTradeHistory(ExchangeHistory record) {
+        exchangeHistory.add(record);
+        if (exchangeHistory.size() > MAX_HISTORY) {
+            exchangeHistory.poll();
+        }
     }
 
     private void updateViewOffers() {
@@ -513,6 +533,7 @@ public class TradePost {
     }
 
     static {
+        NPCAction.register(2148, "history", (player, npc) -> player.getTradePost().openHistory());
         InterfaceHandler.register(Interface.TRADING_POST_INVENTORY, handler -> {
             handler.actions[0] = new InterfaceAction() {
                 public void handleClick(Player player, int option, int slot, int itemId) {
@@ -571,6 +592,9 @@ public class TradePost {
                 }
                 player.getTradePost().buy(slot / 7);
             };
+        });
+        InterfaceHandler.register(383, handler -> {
+            handler.actions[2] = (SimpleAction) player -> player.getTradePost().openViewOffers();
         });
 
         for(int trader : new int[]{2149, 2148}) {
