@@ -1178,6 +1178,12 @@ public class Config {
     public static final Config BESTIARY_SORT = varpbit(9334, true);
 
     /**
+     * Map Key
+     */
+    private static final Config MAP_KEY_OPEN_BY_DEFAULT = varpbit(10294, false).defaultValue(1);
+
+
+    /**
      * Separator
      */
 
