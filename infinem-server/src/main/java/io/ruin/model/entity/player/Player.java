@@ -571,6 +571,10 @@ public class Player extends PlayerAttributes {
         openDialogue(true, dialogues);
     }
 
+    public void dialogueKeepInterfaces(Dialogue... dialogues) {
+        openDialogue(false, dialogues);
+    }
+
     public void dialogue(boolean closeInterfaces, Dialogue... dialogues) {
         openDialogue(closeInterfaces, dialogues);
     }
