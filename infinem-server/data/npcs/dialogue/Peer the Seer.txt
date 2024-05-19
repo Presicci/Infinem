@@ -1,0 +1,12 @@
+Player: Hello Peer.
+Peer the Seer: Greetings to you [brother/sister] [Fremennik name]! What brings you to see me again?
+<Can you tell my future?
+Player: I was wondering if you could give me a reading on my future...?
+Peer the Seer: Ah, you would like a prediction? I do not see that that would be so difficult... wait a moment...
+PEER_FUTURE
+><Can you bank my stuff?
+Player: Can you bank my stuff?
+PEER_DEPOSIT:
+><Nothing really.
+Player: Nothing really, I just stopped by to say hello.
+Peer the Seer: Well, hello to you too!

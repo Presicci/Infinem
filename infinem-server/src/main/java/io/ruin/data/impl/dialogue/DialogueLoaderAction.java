@@ -9,6 +9,7 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.npc.actions.Leon;
 import io.ruin.model.entity.npc.actions.guild.crafting.Tanner;
+import io.ruin.model.entity.npc.actions.rellekka.PeerTheSeer;
 import io.ruin.model.entity.npc.actions.traveling.Sandicrahb;
 import io.ruin.model.entity.npc.actions.traveling.Traveling;
 import io.ruin.model.entity.player.Player;
@@ -26,6 +27,8 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    PEER_FUTURE(player -> PeerTheSeer.tellFortune(player, player.getDialogueNPC())),
+    PEER_DEPOSIT(player -> PeerTheSeer.deposit(player)),
     SANDICRAHB(player -> {
         NPC npc = player.getDialogueNPC();
         Sandicrahb.pay(player, npc);
