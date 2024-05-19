@@ -31,6 +31,10 @@ public class PartnerSlayer {
             }
             return;
         }
+        if (otherPlayer.getGameMode().isIronMan()) {
+            player.dialogueKeepInterfaces(new MessageDialogue("That player is an ironman and cannot be your slayer partner."));
+            return;
+        }
         if (Config.ACCEPT_AID.get(player) == 0) {
             player.dialogueKeepInterfaces(new MessageDialogue("You both need accept aid enabled to be slayer partners."));
             return;
@@ -81,6 +85,10 @@ public class PartnerSlayer {
     }
 
     public static void openPartnerInterface(Player player) {
+        if (player.getGameMode().isIronMan()) {
+            player.sendMessage("Ironmen can not have slayer partners.");
+            return;
+        }
         Player currentPartner = getPartner(player);
         player.openInterface(InterfaceType.MAIN, 68);
         if (currentPartner == null) {
@@ -97,7 +105,7 @@ public class PartnerSlayer {
         } else {
             int slayerLevel = player.getStats().get(StatType.Slayer).fixedLevel;
             int partnerSlayerLevel = currentPartner.getStats().get(StatType.Slayer).fixedLevel;
-            player.getPacketSender().sendString(68, 4, "Current partner: " + Color.WHITE.wrap(player.getName()) + " (" + slayerLevel + ")");
+            player.getPacketSender().sendString(68, 4, "Current partner: " + Color.WHITE.wrap(currentPartner.getName()) + " (" + partnerSlayerLevel + ")");
             player.getPacketSender().sendString(68, 5,
                     "Your Slayer level is " + Color.WHITE.wrap(slayerLevel > partnerSlayerLevel ? "higher than" : slayerLevel < partnerSlayerLevel ? "lower than" : "equal to")
                             + " your partner's."
