@@ -13,8 +13,6 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
-import io.ruin.model.skills.slayer.master.Krystilia;
-import io.ruin.model.stat.StatType;
 
 import java.util.Arrays;
 import java.util.List;
@@ -58,22 +56,24 @@ public class SlayerMaster {
         // Using ImmutableRangeMaps for now, change if issues are identified
         ImmutableRangeMap.Builder<Integer, SlayerTaskDef> builder = ImmutableRangeMap.builder();
 
+        int slayerLevel = PartnerSlayer.getSlayerLevel(player);
+        int combatLevel = PartnerSlayer.getCombatLevel(player);
         int tmp = 0;
-
         for (SlayerTaskDef task : defs) {
             if (task != null && task.getCreatureUid() != last &&
-                    player.getStats().get(StatType.Slayer).fixedLevel >= SlayerCreature.lookup(task.getCreatureUid()).getReq() &&
+                    slayerLevel >= SlayerCreature.lookup(task.getCreatureUid()).getReq() &&
                     !SlayerUnlock.isBlocked(player, task.getCreatureUid())) {
-
                 if (!player.slayerCombatCheck &&
-                        player.getCombat().getLevel() < SlayerCreature.lookup(task.getCreatureUid()).getCbreq()) {
+                        combatLevel < SlayerCreature.lookup(task.getCreatureUid()).getCbreq()) {
                     continue;
                 }
-
                 if (SlayerCreature.lookup(task.getCreatureUid()).canAssign != null && !SlayerCreature.lookup(task.getCreatureUid()).canAssign.apply(player, master(npcId))) {
                     continue;
                 }
-
+                // Can't get boss tasks with partner
+                if (task.getCreatureUid() == 98 && PartnerSlayer.hasPartner(player)) {
+                    continue;
+                }
                 builder.put(Range.closedOpen(tmp, tmp + task.getWeighing()), task); // Range from where we left off up to the task weight
                 tmp += task.getWeighing();
             }
@@ -88,7 +88,7 @@ public class SlayerMaster {
         if (def.getCreatureUid() == 98) {
             // Krystilia, duradel, nieve and steve can assign boss tasks
             // Krystilia can only assign wilderness bosses
-            List<SlayerBoss> validTasks = npcId == Krystilia.KRYSTILIA
+            List<SlayerBoss> validTasks = npcId == Master.KRYSTILIA.getNpcId()
                     ? Arrays.asList(SlayerBoss.SCORPIA, SlayerBoss.CALLISTO, SlayerBoss.VET_ION, SlayerBoss.CRAZY_ARCHAEOLOGIST, SlayerBoss.THE_CHAOS_ELEMENTAL,
                     SlayerBoss.THE_CHAOS_FANATIC, SlayerBoss.THE_KING_BLACK_DRAGON, SlayerBoss.VENENATIS)
                     : Arrays.stream(SlayerBoss.values()).filter((v) -> v.canAssign == null || v.canAssign.apply(player)).collect(Collectors.toList());

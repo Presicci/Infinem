@@ -123,20 +123,12 @@ public class Slayer {
             } else if (am > 1 && ExpeditiousBracelet.test(player)) {
                 killsCounted = 2;
             }
-            decrementTaskAmount(player, killsCounted);
-
-            am -= killsCounted;
-
-            if (am == 0) {
-                final int spree = ++player.slayerSpree;
-                final int points = SlayerMaster.getTaskPoints(master, spree);
-                final int current = Config.SLAYER_POINTS.get(player);
-
-                player.sendMessage("<col=7F00FF>You've completed " + spree + " tasks in a row and received " + points + " points; return to a Slayer Master.");
-                Config.SLAYER_POINTS.set(player, current + points);
-                player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERTASKCOMPL, 1, true);
-            } else {
+            if (decrementTaskAmount(player, killsCounted, master) > 0) {
                 SuperiorSlayer.trySpawn(player, creature, npc);
+            }
+            Player partner = PartnerSlayer.getPartner(player);
+            if (partner != null && partner.getPosition().distance(npc.getPosition()) <= PartnerSlayer.TILE_RANGE) {
+                decrementTaskAmount(partner, killsCounted, master);
             }
         }
     }
@@ -218,7 +210,17 @@ public class Slayer {
         return player.getAttributeIntOrZero(AttributeKey.SLAYER_TASK_AMOUNT);
     }
 
-    public static void decrementTaskAmount(Player player, int amount) {
-        player.incrementNumericAttribute(AttributeKey.SLAYER_TASK_AMOUNT, -amount);
+    public static int decrementTaskAmount(Player player, int amount, int master) {
+        int am = player.incrementNumericAttribute(AttributeKey.SLAYER_TASK_AMOUNT, -amount);
+        if (am == 0) {
+            final int spree = ++player.slayerSpree;
+            final int points = SlayerMaster.getTaskPoints(master, spree);
+            final int current = Config.SLAYER_POINTS.get(player);
+
+            player.sendMessage("<col=7F00FF>You've completed " + spree + " tasks in a row and received " + points + " points; return to a Slayer Master.");
+            Config.SLAYER_POINTS.set(player, current + points);
+            player.getTaskManager().doLookupByCategory(TaskCategory.SLAYERTASKCOMPL, 1, true);
+        }
+        return am;
     }
 }

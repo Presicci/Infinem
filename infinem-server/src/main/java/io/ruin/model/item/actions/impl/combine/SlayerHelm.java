@@ -11,9 +11,11 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.item.actions.ItemPlayerAction;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.skills.slayer.SlayerMaster;
+import io.ruin.model.skills.slayer.PartnerSlayer;
 import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
@@ -132,11 +134,12 @@ public class SlayerHelm {
             ItemAction.registerEquipment(helm, 4, (player, item) -> SlayerMaster.checkTask(player));
             ItemAction.registerEquipment(helm, "log", (player, item) -> KillCounter.openOwnSlayer(player));
             ItemAction.registerInventory(helm, "check", (player, item) -> SlayerMaster.checkTask(player));
+            ItemPlayerAction.register(helm, (player, item, other) -> PartnerSlayer.attemptToPartnerPlayer(player, other));
         }
-        ItemAction.registerEquipment(ItemID.ENCHANTED_GEM, "partner", (player, item) -> player.sendMessage("Coop slayer is not available yet."));
         ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "check", (player, item) -> SlayerMaster.checkTask(player));
         ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "activate", (player, item) -> SlayerMaster.simpleDialogue(player));
         ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "log", (player, item) -> KillCounter.openOwnSlayer(player));
+        ItemAction.registerInventory(ItemID.ENCHANTED_GEM, "partner", (player, item) -> PartnerSlayer.openPartnerInterface(player));
+        ItemPlayerAction.register(ItemID.ENCHANTED_GEM, (player, item, other) -> PartnerSlayer.attemptToPartnerPlayer(player, other));
     }
-
 }

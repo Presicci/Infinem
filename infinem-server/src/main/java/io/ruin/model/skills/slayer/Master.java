@@ -76,11 +76,34 @@ public enum Master {
         }
         int task_amt = Random.get(min, max);
         Slayer.setTaskAmount(player, task_amt);
+        assignTaskToPartner(player);
+    }
+
+    private void assignTaskToPartner(Player player) {
+        Player partner = PartnerSlayer.getPartner(player);
+        if (partner == null) return;
+        Config.SLAYER_MASTER.set(partner, configIndex);
+        int task = Slayer.getTask(player);
+        int amount = Slayer.getTaskAmount(player);
+        Slayer.setTask(partner, task);
+        Slayer.setTaskAmount(partner, amount);
+        Slayer.setBossTask(partner, 0);
+        if (this == KONAR) partner.slayerLocation = player.slayerLocation;
+        partner.sendMessage("You and your partner's new task is to kill "
+                + amount + " "
+                + SlayerCreature.taskName(partner, task)
+                + (this == KRYSTILIA ? " in the wilderness" : "")
+                + (this == KONAR ? " at the " + KonarData.TaskLocation.values()[partner.slayerLocation].getName() : "")
+                + ".");
     }
 
     private void giveTask(Player player) {
-        if (player.getStats().get(StatType.Slayer).fixedLevel < slayerRequirement && player.getCombat().getLevel() < combatRequirement) {
-            player.dialogue(new NPCDialogue(npcId, "Sorry, but you're not strong enough to be taught by me, you need " + (slayerRequirement > 1 ? slayerRequirement + " slayer and " : "") + combatRequirement + " combat!"));
+        if (PartnerSlayer.getSlayerLevel(player) < 50 && PartnerSlayer.getCombatLevel(player) < 100) {
+            if (PartnerSlayer.hasPartner(player)) {
+                player.dialogue(new NPCDialogue(npcId, "Sorry, but you and your partner are not strong enough to be taught by me, you need " + (slayerRequirement > 1 ? slayerRequirement + " slayer and " : "") + combatRequirement + " combat!"));
+            } else {
+                player.dialogue(new NPCDialogue(npcId, "Sorry, but you're not strong enough to be taught by me, you need " + (slayerRequirement > 1 ? slayerRequirement + " slayer and " : "") + combatRequirement + " combat!"));
+            }
             return;
         }
         int left = Slayer.getTaskAmount(player);

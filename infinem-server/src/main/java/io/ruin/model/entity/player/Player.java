@@ -7,6 +7,7 @@ import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.utils.*;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.AnimationDefinition;
+import io.ruin.model.skills.slayer.PartnerSlayer;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.InterfaceDefinition;
 import io.ruin.cache.def.VarpDefinition;
@@ -1412,6 +1413,9 @@ public class Player extends PlayerAttributes {
             return;
         if(logoutListener != null && logoutListener.attemptAction != null && !logoutListener.attemptAction.allow(this))
             return;
+        if (PartnerSlayer.hasPartner(this)) {
+            PartnerSlayer.removePartner(this);
+        }
         logoutStage = 1;
         packetSender.sendDiscordPresence("In Lobby");
         packetSender.sendLogout();
