@@ -1,6 +1,7 @@
 package io.ruin.model.entity.npc.actions.rellekka;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.content.tasksystem.areas.AreaTaskTier;
 import io.ruin.model.content.tasksystem.tasks.TaskArea;
 import io.ruin.model.entity.npc.NPC;
@@ -42,7 +43,7 @@ public class PeerTheSeer {
     }
 
     public static void deposit(Player player) {
-        if (!TaskArea.FREMENNIK.checkTierUnlock(player, AreaTaskTier.EASY, "deposit items with Peer the Seer.")) return;
+        if (!AreaReward.PEER_DEPOSIT_BOX.checkReward(player, "deposit items with Peer the Seer.")) return;
         player.getTaskManager().doLookupByUUID(498);    // Deposit an Item Using Peer the Seer
         player.getBank().openDepositBox();
     }
