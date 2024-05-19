@@ -43,6 +43,7 @@ public class PeerTheSeer {
 
     public static void deposit(Player player) {
         if (!TaskArea.FREMENNIK.checkTierUnlock(player, AreaTaskTier.EASY, "deposit items with Peer the Seer.")) return;
+        player.getTaskManager().doLookupByUUID(498);    // Deposit an Item Using Peer the Seer
         player.getBank().openDepositBox();
     }
 
