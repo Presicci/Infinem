@@ -79,6 +79,8 @@ public enum JewelleryTeleportBounds {
     NARDAH_SHRINE(new Bounds(3424, 2927, 3429, 2929, 0)),
     KALPHITE_CAVE(new Bounds(3321, 3120, 3324, 3124, 0)),
 
+    // Fremennik sea boots
+    RELLEKKA(new Bounds(2640, 3672, 2646, 3681, 0)),
     ;
 
     private final Bounds bounds;
