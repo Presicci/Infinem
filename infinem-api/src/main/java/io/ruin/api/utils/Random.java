@@ -9,6 +9,9 @@ public class Random {
         return ThreadLocalRandom.current().nextDouble();
     }
 
+    /**
+     * 0 inclusive
+     */
     public static int get(int maxRange) {
         return (int) (get() * (maxRange + 1D));
     }
