@@ -1,7 +1,6 @@
 package io.ruin.model.skills.magic.spells.lunar;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -11,7 +10,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
-import io.ruin.model.skills.slayer.master.*;
+import io.ruin.model.skills.slayer.Master;
 import io.ruin.model.stat.StatType;
 
 /**
@@ -48,14 +47,14 @@ public class NPCContact extends Spell {
     }
 
     private static final SimpleAction[] DIALOGUES = new SimpleAction[] {
-            (player) -> Turael.handleInteraction(player, new NPC(Turael.TURAEL), 1),
-            (player) -> Mazchna.handleInteraction(player, new NPC(Mazchna.MAZCHNA), 1),
-            (player) -> Vannaka.handleInteraction(player, new NPC(Vannaka.VANNAKA), 1),
-            (player) -> Chaeldar.handleInteraction(player, new NPC(Chaeldar.CHAELDAR), 1),
-            (player) -> Nieve.handleInteraction(player, new NPC(Nieve.NIEVE), 1),
-            (player) -> Duradel.handleInteraction(player, new NPC(Duradel.DURADEL), 1),
-            (player) -> Krystilia.handleInteraction(player, new NPC(Krystilia.KRYSTILIA), 1),
-            (player) -> Konar.handleInteraction(player, new NPC(Konar.KONAR), 1)
+            (player) -> Master.TURAEL.handleInteraction(player, 1),
+            (player) -> Master.MAZCHNA.handleInteraction(player, 1),
+            (player) -> Master.VANNAKA.handleInteraction(player, 1),
+            (player) -> Master.CHAELDAR.handleInteraction(player, 1),
+            (player) -> Master.NIEVE.handleInteraction(player, 1),
+            (player) -> Master.DURADEL.handleInteraction(player, 1),
+            (player) -> Master.KRYSTILIA.handleInteraction(player, 1),
+            (player) -> Master.KONAR.handleInteraction(player, 1),
     };
 
     private static void startDialogue(Player player, SimpleAction action) {

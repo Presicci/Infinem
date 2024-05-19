@@ -8,7 +8,6 @@ import io.ruin.model.activities.pvp.leaderboard.EdgePker;
 import io.ruin.model.activities.pvp.leaderboard.Leaderboard;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.skills.slayer.Slayer;
-import io.ruin.model.skills.slayer.SlayerMaster;
 
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
