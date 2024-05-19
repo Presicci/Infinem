@@ -112,7 +112,7 @@ public class PartnerSlayer {
                     + "<br><br>"
                     + "When a new task is assigned to either of you, it will be assigned as if you were slayer level " + Color.WHITE.wrap("" + Math.min(slayerLevel, partnerSlayerLevel)) + "."
                     + "<br><br>"
-                    + "When a task monster is killed, you and your partner need to be withing " + Color.WHITE.wrap(TILE_RANGE + " tiles") + " of it to get credit."
+                    + "When a task monster is killed, you and your partner need to be within " + Color.WHITE.wrap(TILE_RANGE + " tiles") + " of it to get credit."
 
             );
             player.getPacketSender().sendClientScript(746, "s", "Dismiss partner");
