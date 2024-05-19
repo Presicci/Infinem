@@ -38,6 +38,7 @@ public class PeerTheSeer {
         String[] options = DIALOGUES.get(dialogue);
         String randomOption = Random.get(options);
         player.dialogue(new NPCDialogue(npc, dialogue.replace("*", randomOption)));
+        player.getTaskManager().doLookupByUUID(499);    // Have Peer the Seer Tell You The Future
     }
 
     public static void deposit(Player player) {
