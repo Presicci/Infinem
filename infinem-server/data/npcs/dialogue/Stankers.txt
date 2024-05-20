@@ -1,6 +1,3 @@
 Stankers: Greetins, tall one.
 Player: Mind if I use your coal trucks? It's a long way back to the bank.
-Stankers: Oh no problem at all. Those carts be takin' trips to thee bank all day long.
-Stankers: Only problem es I'm the only dwarf out 'ere minin' the coal.
-Player: I'll keep you company out here.
-Stankers: Thank ye very much.
+STANKERS_COAL_TRUCK:

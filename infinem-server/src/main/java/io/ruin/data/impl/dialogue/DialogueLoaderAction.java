@@ -3,6 +3,7 @@ package io.ruin.data.impl.dialogue;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.content.transportation.charterships.CharterShips;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.npc.NPC;
@@ -27,8 +28,18 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    STANKERS_COAL_TRUCK(player -> {
+        NPC npc = player.getDialogueNPC();
+        if (!AreaReward.COAL_TRUCKS.checkReward(player, "use the coal trucks.")) return;
+        player.dialogue(
+                new NPCDialogue(npc, "Oh no problem at all. Those carts be takin' trips to thee bank all day long."),
+                new NPCDialogue(npc, "Only problem es I'm the only dwarf out 'ere minin' the coal."),
+                new PlayerDialogue("I'll keep you company out here."),
+                new NPCDialogue(npc, "Thank ye very much.")
+        );
+    }),
     PEER_FUTURE(player -> PeerTheSeer.tellFortune(player, player.getDialogueNPC())),
-    PEER_DEPOSIT(player -> PeerTheSeer.deposit(player)),
+    PEER_DEPOSIT(PeerTheSeer::deposit),
     SANDICRAHB(player -> {
         NPC npc = player.getDialogueNPC();
         Sandicrahb.pay(player, npc);

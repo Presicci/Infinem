@@ -1,5 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Items;
@@ -13,11 +14,16 @@ import io.ruin.model.map.object.actions.ObjectAction;
 public class CoalTruck {
 
     static {
-        ObjectAction.register(10836, "remove-coal", ((player, obj) ->
-                player.dialogue(new MessageDialogue("The dwarf will take your coal to the bank, no need to worry about it."))));
-        ObjectAction.register(10836, "investigate", (((player, obj) ->
-                player.dialogue(new MessageDialogue("If you deposit coal into the truck, the dwarves will bring it to your bank for you, free of charge.")))));
+        ObjectAction.register(10836, "remove-coal", (player, obj) -> {
+            if (!AreaReward.COAL_TRUCKS.checkReward(player, "use these trucks.")) return;
+            player.dialogue(new MessageDialogue("The dwarf will take your coal to the bank, no need to worry about it."));
+        });
+        ObjectAction.register(10836, "investigate", (player, obj) -> {
+            if (!AreaReward.COAL_TRUCKS.checkReward(player, "use these trucks.")) return;
+            player.dialogue(new MessageDialogue("If you deposit coal into the truck, the dwarves will bring it to your bank for you, free of charge."));
+        });
         ItemObjectAction.register(Items.COAL, 10836, ((player, item, obj) -> {
+            if (!AreaReward.COAL_TRUCKS.checkReward(player, "use these trucks.")) return;
             int bankAmt = player.getBank().getAmount(Items.COAL);
             int amt = Math.min(Integer.MAX_VALUE - bankAmt, player.getInventory().getAmount(Items.COAL));
             if (amt <= 0) {

@@ -93,6 +93,7 @@ public enum AreaReward {
     KANDARIN_HEADGEAR_1(TaskArea.KANDARIN, AreaTaskTier.EASY, "Unlocks the Kandarin Headgear 1",
             "Functions as a light source",
             "Normal logs reward double logs when chopped"),
+    COAL_TRUCKS(TaskArea.KANDARIN, AreaTaskTier.EASY, "Access to the coal trucks west of McGrubor's Wood"),
     KANDARIN_HEADGEAR_2(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Unlocks the Kandarin Headgear 2"),
     THIEVING_BOOST_1(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "10% increased chance to pickpocket in Ardougne"),
     YANILLE_TELEPORT(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Can switch the destination of Watchtower Teleport to Yanille"),
