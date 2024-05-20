@@ -6,6 +6,7 @@ import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.content.ActivitySpotlight;
+import io.ruin.model.content.tasksystem.areas.diaryitems.KandarinHeadgear;
 import io.ruin.model.content.tasksystem.relics.Relic;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -139,6 +140,7 @@ public class Woodcutting {
                             if (loot.getId() == 21626)
                                 player.getTaskManager().doLookupByUUID(352);    // Chop a Sulliuscep Cap
                         } else if (treeData != Tree.CRYSTAL) {
+                            if (treeData == Tree.REGULAR && KandarinHeadgear.hasEquipped(player)) amount += 1;
                             if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasRoomFor(treeData.log)) {
                                 amount *= 2;
                                 player.getBank().add(treeData.log, amount);

@@ -28,6 +28,12 @@ public class KandarinHeadgear {
         ModernTeleport.teleport(player, JewelleryTeleportBounds.SHERLOCK.getBounds());
     }
 
+    public static boolean hasEquipped(Player player) {
+        Equipment equipment = player.getEquipment();
+        return equipment.hasId(Items.KANDARIN_HEADGEAR_1) || equipment.hasId(Items.KANDARIN_HEADGEAR_2)
+                || equipment.hasId(Items.KANDARIN_HEADGEAR_3) || equipment.hasId(Items.KANDARIN_HEADGEAR_4);
+    }
+
     static {
         for (int itemId : ITEM_IDS) {
             ItemAction.registerInventory(itemId, "teleport", KandarinHeadgear::teleport);
