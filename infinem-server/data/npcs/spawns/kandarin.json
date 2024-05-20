@@ -70,5 +70,15 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+
+  {
+    "name": "Sherlock",
+    "id": 6586,
+    "x": 2730,
+    "y": 3411,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
   }
 ]
