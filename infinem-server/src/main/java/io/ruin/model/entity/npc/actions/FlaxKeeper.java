@@ -25,18 +25,19 @@ public class FlaxKeeper {
             amountToConvert = moneyCarried / 50;
         }
         if (amountToConvert <= 0) {
-            player.dialogue(new NPCDialogue(FLAX_KEEPER, "No way I am doing that for free!  Spinning flax is some of the worst content in this game.  All I am asking for is 50 gp...").animate(DialogueAnimations.SAD));
+            player.dialogue(new NPCDialogue(FLAX_KEEPER, "No way I am doing that for free! Spinning flax is some of the worst content in this game. All I am asking for is 50 gp...").animate(DialogueAnimations.SAD));
             return;
         }
         player.getInventory().remove(FLAX, amountToConvert);
         player.getInventory().remove(995, amountToConvert * 50);
         player.getInventory().add(NOTED_BOWSTRING, amountToConvert);
         player.dialogue(new NPCDialogue(FLAX_KEEPER, "Thank you! Come again.").animate(557));
+        player.getTaskManager().doLookupByUUID(941);    // Have The Flax Keeper Make Some Bowstring For You
     }
 
     static {
         NPCAction.register(FLAX_KEEPER, "talk-to", (player, npc) -> {
-            player.dialogue(new NPCDialogue(npc, "Hello there!  If you need me to, I can exchange flax for noted bowstring at 50 gp per.").animate(557));
+            player.dialogue(new NPCDialogue(npc, "Hello there! If you need me to, I can exchange flax for noted bowstring at 50 gp per.").animate(557));
         });
         NPCAction.register(FLAX_KEEPER, "Exchange", (player, npc) -> convert(player));
         ItemNPCAction.register(FLAX, FLAX_KEEPER, (player, item, npc) -> convert(player));
