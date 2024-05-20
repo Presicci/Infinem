@@ -15,8 +15,10 @@ import io.ruin.utility.Utils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
@@ -48,7 +50,7 @@ public class OuraniaAltar {
     static {
         ObjectAction.register(29631, "Craft-rune", (player, obj) -> {
             player.startEvent(event -> {
-                List<Altars> altars = Lists.newArrayList(Altars.values());
+                List<Altars> altars = Arrays.stream(Altars.values()).filter(a -> a != Altars.WRATH).collect(Collectors.toList());
                 int essenceCount = 0, fromPouches = 0;
                 ArrayList<Item> essence = player.getInventory().collectItems(Essence.PURE.id);
                 essenceCount += fromPouches = Altars.essenceFromPouches(player);
