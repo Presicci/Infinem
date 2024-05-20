@@ -84,6 +84,10 @@ public enum JewelleryTeleportBounds {
 
     // Kandarin headgear
     SHERLOCK(new Bounds(2727, 3409, 2731, 3413, 0)),
+
+    // Ardougne cloak
+    ARDOUGNE_MONASTERY(new Bounds(2606, 3221, 2607, 3223, 0)),
+    ARDOUGNE_FARM(new Bounds(2672, 3372, 2673, 3377, 0)),
     ;
 
     private final Bounds bounds;
