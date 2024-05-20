@@ -2,6 +2,7 @@ package io.ruin.model.skills.runecrafting;
 
 import com.google.common.collect.Lists;
 import io.ruin.api.utils.Random;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.item.Item;
@@ -56,7 +57,7 @@ public class OuraniaAltar {
                         player.getStats().addXp(StatType.Runecrafting, altar.experience, true);
                         if (Random.rollDie(1487213 - (player.getStats().get(StatType.Runecrafting).currentLevel * 25)))
                             Pet.RIFT_GUARDIAN_AIR.unlock(player);
-                        altar.counter.increment(player, 1);
+                       PlayerCounter.CRAFTED_OURANIA.increment(player, 1);
                     });
 
                     player.unlock();

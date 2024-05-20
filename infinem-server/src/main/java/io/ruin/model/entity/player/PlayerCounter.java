@@ -25,6 +25,7 @@ public enum PlayerCounter {
     CRAFTED_BLOOD,
     CRAFTED_SOUL,
     CRAFTED_WRATH,
+    CRAFTED_OURANIA,
 
     /**
      * Agility
