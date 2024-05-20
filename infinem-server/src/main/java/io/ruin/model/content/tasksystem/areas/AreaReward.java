@@ -107,6 +107,7 @@ public enum AreaReward {
     ARDOUGNE_RING_OF_LIFE(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Ability to toggle the Ring of life teleport to Ardougne"),
     OURANIA_RUNES(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Receive additional runes when crafting essence at the Ourania Altar"),
     COIN_POUCHES(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Ability to hold a maximum of 56 coin pouches"),
+    CATHERBY_HERB_LIFE(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "5% chance to save a harvest life from Catherby herb patch"),
     // 100 free noted pure essence every day from wizard cromperty
     // Unicow, Newtroost, and Spidine drops will be noted in the tower of life
     KANDARIN_HEADGEAR_3(TaskArea.KANDARIN, AreaTaskTier.HARD, "Unlocks the Kandarin Headgear 3",

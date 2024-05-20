@@ -5,6 +5,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.api.utils.TimeUtils;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.api.utils.AttributeKey;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.TabStats;
 import io.ruin.model.item.Item;
@@ -464,6 +465,10 @@ public abstract class Patch {
         }
         if (hasGrowingAttas() && Random.get() < 0.05) {
             player.sendFilteredMessage("<col=076900>Your Attas plant allow you to efficiently harvest the crop!");
+            return false;
+        }
+        if (data == PatchData.CATHERBY_HERB && AreaReward.CATHERBY_HERB_LIFE.hasReward(player) && Random.get() < 0.05) {
+            player.sendFilteredMessage("<col=076900>Your expertise in the Kandarin region allows you to efficiently harvest the crop!");
             return false;
         }
         if (this instanceof AllotmentPatch || this instanceof HopsPatch
