@@ -74,6 +74,7 @@ public enum AreaReward {
     FREMENNIK_SEA_BOOTS_3(TaskArea.FREMENNIK, AreaTaskTier.HARD, "Unlocks the Fremennik Sea Boots 3"),
     LYRE_WATERBIRTH_TELEPORT(TaskArea.FREMENNIK, AreaTaskTier.HARD, "Ability to change enchanted lyre teleport destination to Waterbirth Island"),
     AVIANSIE_NOTED_ADDY_BARS(TaskArea.FREMENNIK, AreaTaskTier.HARD, "Aviansies in the God Wars Dungeon will drop noted adamantite bars"),
+    // Unlock miscellania
 
     //Stony basalt teleport destination changed to the roof of the Troll Stronghold if you have Agility 73
     //Access to 2 new Lunar spells:
@@ -89,10 +90,18 @@ public enum AreaReward {
     /**
      * Kandarin rewards
      */
+    KANDARIN_HEADGEAR_1(TaskArea.KANDARIN, AreaTaskTier.EASY, "Unlocks the Kandarin Headgear 1",
+            "Functions as a light source",
+            "Normal logs reward double logs when chopped"),
+    KANDARIN_HEADGEAR_2(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Unlocks the Kandarin Headgear 2"),
     THIEVING_BOOST_1(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "10% increased chance to pickpocket in Ardougne"),
     YANILLE_TELEPORT(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Can switch the destination of Watchtower Teleport to Yanille"),
+    KANDARIN_HEADGEAR_3(TaskArea.KANDARIN, AreaTaskTier.HARD, "Unlocks the Kandarin Headgear 3",
+            "One free teleport to Sherlock per day"),
     THIEVING_BOOST_2(TaskArea.KANDARIN, AreaTaskTier.HARD, "10% increased chance to pickpocket around Gielinor"),
     SEERS_TELEPORT(TaskArea.KANDARIN, AreaTaskTier.HARD, "Can switch the destination of Camelot Teleport to Seers' Village"),
+    KANDARIN_HEADGEAR_4(TaskArea.KANDARIN, AreaTaskTier.ELITE, "Unlocks the Kandarin Headgear 4",
+            "Unlimited free teleports to Sherlock"),
 
     /**
      * Karamja rewards
