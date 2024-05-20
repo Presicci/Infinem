@@ -81,6 +81,9 @@ public enum JewelleryTeleportBounds {
 
     // Fremennik sea boots
     RELLEKKA(new Bounds(2640, 3672, 2646, 3681, 0)),
+
+    // Kandarin headgear
+    SHERLOCK(new Bounds(2727, 3409, 2731, 3413, 0)),
     ;
 
     private final Bounds bounds;
