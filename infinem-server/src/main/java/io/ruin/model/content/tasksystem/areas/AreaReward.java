@@ -93,16 +93,27 @@ public enum AreaReward {
     KANDARIN_HEADGEAR_1(TaskArea.KANDARIN, AreaTaskTier.EASY, "Unlocks the Kandarin Headgear 1",
             "Functions as a light source",
             "Normal logs reward double logs when chopped"),
+    ARDOUGNE_CLOAK_1(TaskArea.KANDARIN, AreaTaskTier.EASY, "Unlocks the Ardougne Cloak 1",
+            "Unlimited teleports to the Ardougne Monastery"),
     COAL_TRUCKS(TaskArea.KANDARIN, AreaTaskTier.EASY, "Access to the coal trucks west of McGrubor's Wood"),
+    // Jubster and Frogeel drops will be noted at the Tower of Life
+    // Double death runes wehn trading in cats
+    // 5% more marks of grace on Seers' village rooftop course
     KANDARIN_HEADGEAR_2(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Unlocks the Kandarin Headgear 2"),
+    ARDOUGNE_CLOAK_2(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Unlocks the Ardougne Cloak 2",
+            "Three teleports to the Ardougne farm patch every day"),
     THIEVING_BOOST_1(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "10% increased chance to pickpocket in Ardougne"),
     YANILLE_TELEPORT(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Can switch the destination of Watchtower Teleport to Yanille"),
     KANDARIN_HEADGEAR_3(TaskArea.KANDARIN, AreaTaskTier.HARD, "Unlocks the Kandarin Headgear 3",
             "One free teleport to Sherlock per day"),
+    ARDOUGNE_CLOAK_3(TaskArea.KANDARIN, AreaTaskTier.HARD, "Unlocks the Ardougne Cloak 3",
+            "Five teleports to the Ardougne farm patch every day"),
     THIEVING_BOOST_2(TaskArea.KANDARIN, AreaTaskTier.HARD, "10% increased chance to pickpocket around Gielinor"),
     SEERS_TELEPORT(TaskArea.KANDARIN, AreaTaskTier.HARD, "Can switch the destination of Camelot Teleport to Seers' Village"),
     KANDARIN_HEADGEAR_4(TaskArea.KANDARIN, AreaTaskTier.ELITE, "Unlocks the Kandarin Headgear 4",
             "Unlimited free teleports to Sherlock"),
+    ARDOUGNE_CLOAK_4(TaskArea.KANDARIN, AreaTaskTier.ELITE, "Unlocks the Ardougne Cloak 4",
+            "Unlimited teleports to the Ardougne farm patch"),
 
     /**
      * Karamja rewards
