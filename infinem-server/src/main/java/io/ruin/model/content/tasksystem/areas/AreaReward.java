@@ -70,12 +70,11 @@ public enum AreaReward {
     PEER_DEPOSIT_BOX(TaskArea.FREMENNIK, AreaTaskTier.EASY, "Peer the Seer will act as a bank deposit box"),
     LYRE_EXTRA_CHARGE(TaskArea.FREMENNIK, AreaTaskTier.EASY, "Enchanted lyre gets an extra charge when making a sacrifice"),
     FREMENNIK_SEA_BOOTS_2(TaskArea.FREMENNIK, AreaTaskTier.MEDIUM, "Unlocks the Fremennik Sea Boots 2"),
-    MISCELLANIA_DOCK_SHORTCUT(TaskArea.FREMENNIK, AreaTaskTier.MEDIUM, "Shortcut jump between Miscellania dock and Etceteria"),
     //+10% chance of gaining approval in Managing Miscellania
     FREMENNIK_SEA_BOOTS_3(TaskArea.FREMENNIK, AreaTaskTier.HARD, "Unlocks the Fremennik Sea Boots 3"),
     LYRE_WATERBIRTH_TELEPORT(TaskArea.FREMENNIK, AreaTaskTier.HARD, "Ability to change enchanted lyre teleport destination to Waterbirth Island"),
-    AVIANCIE_NOTED_ADDY_BARS(TaskArea.FREMENNIK, AreaTaskTier.HARD, "Aviansies in the God Wars Dungeon will drop noted adamantite bars"),
-    TROLL_STRONGHOLD_SHORTCUT(TaskArea.FREMENNIK, AreaTaskTier.HARD, "Shortcut to roof of the Troll Stronghold"),
+    AVIANSIE_NOTED_ADDY_BARS(TaskArea.FREMENNIK, AreaTaskTier.HARD, "Aviansies in the God Wars Dungeon will drop noted adamantite bars"),
+
     //Stony basalt teleport destination changed to the roof of the Troll Stronghold if you have Agility 73
     //Access to 2 new Lunar spells:
     //Tan Leather — Requires Magic 78 , 5Fire 2Astral 1Nature ; tans up to 5 hides per spell.

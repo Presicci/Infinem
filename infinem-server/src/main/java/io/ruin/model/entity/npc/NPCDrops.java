@@ -355,6 +355,8 @@ public class NPCDrops {
             return true;
         if (name.toLowerCase().contains("goat") && AreaReward.NOTED_GOAT_HORN.hasReward(pKiller) && item.getId() == Items.DESERT_GOAT_HORN)
             return true;
+        if (name.toLowerCase().contains("aviansie") && AreaReward.AVIANSIE_NOTED_ADDY_BARS.hasReward(pKiller) && item.getId() == Items.ADAMANTITE_BAR)
+            return true;
         return false;
     }
 
