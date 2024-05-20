@@ -106,6 +106,7 @@ public enum AreaReward {
     YANILLE_TELEPORT(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Can switch the destination of Watchtower Teleport to Yanille"),
     ARDOUGNE_RING_OF_LIFE(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Ability to toggle the Ring of life teleport to Ardougne"),
     OURANIA_RUNES(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Receive additional runes when crafting essence at the Ourania Altar"),
+    COIN_POUCHES(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Ability to hold a maximum of 56 coin pouches"),
     // 100 free noted pure essence every day from wizard cromperty
     // Unicow, Newtroost, and Spidine drops will be noted in the tower of life
     KANDARIN_HEADGEAR_3(TaskArea.KANDARIN, AreaTaskTier.HARD, "Unlocks the Kandarin Headgear 3",

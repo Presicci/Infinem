@@ -420,7 +420,9 @@ public enum PickPocket {
             player.sendMessage("You can't pickpocket an NPC while a guard is watching you.");
             return false;
         }
-        if (pickpocket.pouchId > 1 && player.getInventory().getAmount(pickpocket.pouchId) >= (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER) ? 28 * 3 : 28)) {
+        int maxPouches = (AreaReward.COIN_POUCHES.hasReward(player) ? 56 : 28)
+                * (player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER) ? 3 : 1);
+        if (pickpocket.pouchId > 1 && player.getInventory().getAmount(pickpocket.pouchId) >= maxPouches) {
             player.sendMessage("You need to open your coin pouches before you pick any more pockets.");
             return false;
         }
