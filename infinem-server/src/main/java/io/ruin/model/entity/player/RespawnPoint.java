@@ -22,7 +22,7 @@ public enum RespawnPoint {
     EDGEVILLE(500_000, new Bounds(3093, 3468, 3095, 3471, 0));
 
     @Getter private final int cost;
-    private final Bounds bounds;
+    @Getter private final Bounds bounds;
 
     public Position getRandomPosition() {
         return new Position(bounds.randomX(), bounds.randomY(), bounds.z);
