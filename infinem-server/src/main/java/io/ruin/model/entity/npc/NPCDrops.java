@@ -357,6 +357,8 @@ public class NPCDrops {
             return true;
         if (name.toLowerCase().contains("aviansie") && AreaReward.AVIANSIE_NOTED_ADDY_BARS.hasReward(pKiller) && item.getId() == Items.ADAMANTITE_BAR)
             return true;
+        if (AreaReward.NOTED_DAG_BONES.hasReward(pKiller) && item.getId() == Items.DAGANNOTH_BONES)
+            return true;
         return false;
     }
 
