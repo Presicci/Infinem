@@ -106,7 +106,7 @@ public enum AreaReward {
     YANILLE_TELEPORT(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Can switch the destination of Watchtower Teleport to Yanille"),
     ARDOUGNE_RING_OF_LIFE(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Ability to toggle the Ring of life teleport to Ardougne"),
     OURANIA_RUNES(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Receive additional runes when crafting essence at the Ourania Altar"),
-    COIN_POUCHES(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Ability to hold a maximum of 56 coin pouches"),
+    COIN_POUCHES_1(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "Ability to hold a maximum of 56 coin pouches"),
     CATHERBY_HERB_LIFE(TaskArea.KANDARIN, AreaTaskTier.MEDIUM, "5% chance to save a harvest life from Catherby herb patch"),
     // 100 free noted pure essence every day from wizard cromperty
     // Unicow, Newtroost, and Spidine drops will be noted in the tower of life
@@ -116,10 +116,22 @@ public enum AreaReward {
             "Five teleports to the Ardougne farm patch every day"),
     THIEVING_BOOST_2(TaskArea.KANDARIN, AreaTaskTier.HARD, "10% increased chance to pickpocket around Gielinor"),
     SEERS_TELEPORT(TaskArea.KANDARIN, AreaTaskTier.HARD, "Can switch the destination of Camelot Teleport to Seers' Village"),
+    COIN_POUCHES_2(TaskArea.KANDARIN, AreaTaskTier.HARD, "Ability to hold a maximum of 84 coin pouches"),
+    // 150 free noted pure essence every day from Wizard Cromperty
+    // Thormac will enchant battlestaves for 30,000 coins each (down from 40,000)
+    // 15% more marks of grace from Seers' Village Rooftop Course
+    // 10% increased chance to save a harvest life from the Catherby herb patch
     KANDARIN_HEADGEAR_4(TaskArea.KANDARIN, AreaTaskTier.ELITE, "Unlocks the Kandarin Headgear 4",
             "Unlimited free teleports to Sherlock"),
     ARDOUGNE_CLOAK_4(TaskArea.KANDARIN, AreaTaskTier.ELITE, "Unlocks the Ardougne Cloak 4",
             "Unlimited teleports to the Ardougne farm patch"),
+    COIN_POUCHES_3(TaskArea.KANDARIN, AreaTaskTier.ELITE, "Ability to hold a maximum of 140 coin pouches"),
+    // 250 free noted pure essence every day from Wizard Cromperty
+    // Thormac will enchant battlestaves for 20,000 coins each (down from 30,000)
+    // 15% increased chance to save a harvest life from the Catherby herb patch
+    // 25% more marks of grace from the Ardougne Rooftop Course
+    // Bert will automatically deliver 84 buckets of sand to your bank each day you log in. (Ultimate ironmen are ineligible)
+    // Ability to hold a maximum of 140 coin pouches
 
     /**
      * Karamja rewards
