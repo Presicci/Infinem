@@ -400,7 +400,7 @@ public class TradePost {
                                     int amountLeft = tradePostOffer.getItem().getAmount() - finalAmount;
 
                                     if (amountLeft < 0) {
-                                        player.sendMessage("TRADING POST [ERROR: 1] Contact a Developer!");
+                                        player.sendMessage("GRAND EXCHANGE [ERROR: 1] Contact a Developer!");
                                         player.closeDialogue();
                                         return;
                                     }
@@ -430,9 +430,9 @@ public class TradePost {
                                         PlayerCounter.GE_PROFIT.increment(seller, (int) price/1000);
                                     }
                                     if (outOfStock) {
-                                        seller.sendMessage("<col=00c203>" + "Trading Post: Finished selling all of " + offer.getItem().getDef().name + ".</col>");
+                                        seller.sendMessage("<col=00c203>" + "Grand Exchange: Finished selling all of " + offer.getItem().getDef().name + ".</col>");
                                     } else {
-                                        seller.sendMessage("<col=00c203>" + "Trading Post: " + finalAmount + "/" + offer.getItem().getAmount() + " of " + offer.getItem().getDef().name + " sold.</col>");
+                                        seller.sendMessage("<col=00c203>" + "Grand Exchange: " + finalAmount + "/" + offer.getItem().getAmount() + " of " + offer.getItem().getDef().name + " sold.</col>");
                                     }
                                     seller.sendMessage("Current Coffer: " + formatPrice(seller.getTradePost().coffer));
                                     player.sendMessage("<col=ff0000>" + "You have purchased " + finalAmount + "x " + offer.getItem().getDef().name + " for a price of " + formatPrice(price) + ".</col>");
@@ -511,7 +511,7 @@ public class TradePost {
 
     public static void openCoffer(Player player) {
         if (player.getGameMode().isIronMan()) {
-            player.sendMessage("Your gamemode prevents you from accessing the trading post!");
+            player.sendMessage("Your gamemode prevents you from accessing the Grand Exchange!");
             return;
         }
         long coffer = player.getTradePost().coffer;
@@ -546,7 +546,7 @@ public class TradePost {
                 public void handleClick(Player player, int option, int slot, int itemId) {
                     Item item = player.getInventory().get(slot);
                     if (item.hasAttributes()) {
-                        player.sendMessage("You can't offer upgraded items on the trading post.");
+                        player.sendMessage("You can't offer upgraded items on the Grand Exchange.");
                         return;
                     }
                     if (!player.isVisibleInterface(1006))
@@ -608,7 +608,7 @@ public class TradePost {
             NPCAction.register(trader, "sets", (player, npc) -> ItemSet.open(player));
             NPCAction.register(trader, "exchange", ((player, npc) -> {
                 if (player.getGameMode().isIronMan()) {
-                    player.sendMessage("Your gamemode prevents you from accessing the trading post!");
+                    player.sendMessage("Your gamemode prevents you from accessing the Grand Exchange!");
                     return;
                 }
                 player.getTradePost().openViewOffers();
