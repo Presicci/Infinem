@@ -2,6 +2,7 @@ package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
+import io.ruin.model.map.Direction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -42,6 +43,18 @@ public class TiranwnDenseForest {
         });
     }
 
+    public static void passLetyaTree(Player player, Direction faceDirection, Position destination){
+        player.startEvent( e -> {
+            player.lock(LockType.FULL_DELAY_DAMAGE);
+            player.face(faceDirection);
+            player.animate(2796);
+            e.delay(1);
+            player.getMovement().teleport(destination);
+            e.delay(1);
+            player.unlock();
+        });
+    }
+
     static {
         // Tyras camp
         ObjectAction.register(3998, 2187, 3169, 0, "enter", (player, obj) -> passSideways(player, obj, new Position(2188, 3162, 0)));
@@ -74,5 +87,20 @@ public class TiranwnDenseForest {
         // South even more
         ObjectAction.register(3939, 2236, 3218, 0, "enter", (player, obj) -> passSideways(player, obj, new Position(2226, 3219, 0)));
         ObjectAction.register(3938, 2227, 3218, 0, "enter", (player, obj) -> passSideways(player, obj, new Position(2238, 3219, 0)));
+        // Letya trees
+        ObjectAction.register(8742, 2305, 3191, 0, "pass", (player, obj) -> {
+            if (player.getAbsX() > obj.x) {
+                passLetyaTree(player, Direction.WEST, new Position(2304, 3194, 0));
+            } else {
+                passLetyaTree(player, Direction.EAST, new Position(2306, 3194, 0));
+            }
+        });
+        ObjectAction.register(8742, 2305, 3195, 0, "pass", (player, obj) -> {
+            if (player.getAbsX() > obj.x) {
+                passLetyaTree(player, Direction.WEST, new Position(2304, 3195, 0));
+            } else {
+                passLetyaTree(player, Direction.EAST, new Position(2306, 3195, 0));
+            }
+        });
     }
 }
