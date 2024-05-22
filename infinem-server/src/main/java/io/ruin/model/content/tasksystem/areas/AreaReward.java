@@ -136,18 +136,26 @@ public enum AreaReward {
     /**
      * Karamja rewards
      */
-    KARAMJA_GLOVES_1(TaskArea.KARAMJA, AreaTaskTier.EASY, "Unlocks the Karamja Gloves 1",
-            "Better deals in shops on Karamja when worn"),
+    KARAMJA_GLOVES_1(TaskArea.KARAMJA, AreaTaskTier.EASY, "Unlocks the Karamja Gloves 1"),
     KARAMJA_GLOVES_2(TaskArea.KARAMJA, AreaTaskTier.MEDIUM, "Unlocks the Karamja Gloves 2",
             "Grant access to underground Shilo Village mine when worn"),
         // While worn, 10% additional Agility experience from redeeming Agility tickets
         // While worn, 10% additional Agility experience earned from all obstacles in the Brimhaven Agility Arena
     KARAMJA_GLOVES_3(TaskArea.KARAMJA, AreaTaskTier.HARD, "Unlocks the Karamja Gloves 3",
             "Unlimited teleports to the underground Shilo Village mine"),
-        // While worn, discounted prices buying at Jiminua's Jungle Store.
-        // While worn, improved prices selling at Jiminua's Jungle Store.
     KARAMJA_GLOVES_4(TaskArea.KARAMJA, AreaTaskTier.ELITE, "Unlocks the Karamja Gloves 4",
             "Unlimited teleports to Duradel"),
+    /*
+     *  10% chance of receiving 2 Agility arena tickets and Brimhaven vouchers, instead of one, upon every successful dispenser tag at the Brimhaven Agility Arena
+        Free usage of Shilo Village's furnace
+        Free cart rides on Hajedy's cart system
+        Free access to the Hardwood Grove
+        Access to the stepping stones shortcut leading to the red dragons in Brimhaven dungeon, requiring 83 Agility
+        Red dragons in Brimhaven Dungeon will always drop noted red dragonhide
+        All Metal dragons (bronze, iron, and steel) in Brimhaven Dungeon will drop their respective bars in noted form if toggled-on through Pirate Jackie the Fruit - can toggle on/off freely
+        1 free resurrection, per day, in the TzHaar Fight Cave (not the Inferno)
+        Double Tokkul from the TzHaar Fight Cave, the Inferno, and TzHaar-Ket-Rak's Challenges
+     */
 
     /**
      * Misthalin rewards
