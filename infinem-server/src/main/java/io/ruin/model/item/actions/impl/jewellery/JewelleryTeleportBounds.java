@@ -1,6 +1,7 @@
 package io.ruin.model.item.actions.impl.jewellery;
 
 import io.ruin.model.map.Bounds;
+import io.ruin.model.map.Position;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -88,6 +89,10 @@ public enum JewelleryTeleportBounds {
     // Ardougne cloak
     ARDOUGNE_MONASTERY(new Bounds(2606, 3221, 2607, 3223, 0)),
     ARDOUGNE_FARM(new Bounds(2672, 3372, 2673, 3377, 0)),
+
+    // Karamja Gloves
+    SHILO_GEM_MINE(new Bounds(2840, 9384, 2843, 9388, 0)),
+    DURADEL(new Position(2869, 2981, 1).toBounds()),
     ;
 
     private final Bounds bounds;

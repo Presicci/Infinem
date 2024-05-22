@@ -139,7 +139,15 @@ public enum AreaReward {
     KARAMJA_GLOVES_1(TaskArea.KARAMJA, AreaTaskTier.EASY, "Unlocks the Karamja Gloves 1",
             "Better deals in shops on Karamja when worn"),
     KARAMJA_GLOVES_2(TaskArea.KARAMJA, AreaTaskTier.MEDIUM, "Unlocks the Karamja Gloves 2",
-            ""),
+            "Grant access to underground Shilo Village mine when worn"),
+        // While worn, 10% additional Agility experience from redeeming Agility tickets
+        // While worn, 10% additional Agility experience earned from all obstacles in the Brimhaven Agility Arena
+    KARAMJA_GLOVES_3(TaskArea.KARAMJA, AreaTaskTier.HARD, "Unlocks the Karamja Gloves 3",
+            "Unlimited teleports to the underground Shilo Village mine"),
+        // While worn, discounted prices buying at Jiminua's Jungle Store.
+        // While worn, improved prices selling at Jiminua's Jungle Store.
+    KARAMJA_GLOVES_4(TaskArea.KARAMJA, AreaTaskTier.ELITE, "Unlocks the Karamja Gloves 4",
+            "Unlimited teleports to Duradel"),
 
     /**
      * Misthalin rewards
