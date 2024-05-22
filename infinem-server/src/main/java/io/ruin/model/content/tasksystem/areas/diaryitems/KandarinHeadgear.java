@@ -1,6 +1,7 @@
 package io.ruin.model.content.tasksystem.areas.diaryitems;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.DailyResetListener;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
@@ -39,5 +40,6 @@ public class KandarinHeadgear {
             ItemAction.registerInventory(itemId, "teleport", KandarinHeadgear::teleport);
             ItemAction.registerEquipment(itemId, "teleport", KandarinHeadgear::teleport);
         }
+        DailyResetListener.register(player -> player.removeAttribute(KEY));
     }
 }
