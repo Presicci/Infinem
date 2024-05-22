@@ -394,6 +394,15 @@ public enum PlayerCounter {
     MASTER_CLUES_COMPLETED,
 
     /**
+     * Grand Exchange
+     */
+    GE_SALES,
+    GE_BUYS,
+    GE_PROFIT,
+    GE_SPENT,
+    GE_TAX,
+
+    /**
      * Chests
      */
     BRIMSTONE_CHESTS_OPENED,

@@ -6,6 +6,7 @@ import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.*;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.OptionAction;
@@ -422,6 +423,12 @@ public class TradePost {
                                     }
                                     seller.getTradePost().updateTradeHistory(new ExchangeHistory(offer.getItem().getId(), finalAmount, (int) price, ExchangeType.SELLING));
                                     player.getTradePost().updateTradeHistory(new ExchangeHistory(offer.getItem().getId(), finalAmount, (int) price, ExchangeType.BUYING));
+                                    PlayerCounter.GE_BUYS.increment(player, 1);
+                                    PlayerCounter.GE_SALES.increment(seller, 1);
+                                    if (price > 1000) {
+                                        PlayerCounter.GE_SPENT.increment(player, (int) price/1000);
+                                        PlayerCounter.GE_PROFIT.increment(seller, (int) price/1000);
+                                    }
                                     if (outOfStock) {
                                         seller.sendMessage("<col=00c203>" + "Trading Post: Finished selling all of " + offer.getItem().getDef().name + ".</col>");
                                     } else {
