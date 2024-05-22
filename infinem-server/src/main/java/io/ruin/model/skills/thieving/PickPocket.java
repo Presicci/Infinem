@@ -338,7 +338,8 @@ public enum PickPocket {
                     new LootItem(Items.FIRE_ORB, 1, 2),
                     new LootItem(Items.GOLD_ORE, 1, 1),
                     new LootItem(Items.DIAMOND, 1, 1)
-            )),
+            ),
+            "Arvel", "Goreu", "Kelyn", "Mawrth"),
     ELF_PRIF(85, 353.0, 422, 6, 5, "elf's", PlayerCounter.PICKPOCKETED_ELF,
             99175,
             22538,
