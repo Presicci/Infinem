@@ -356,7 +356,17 @@ public enum PickPocket {
             ).addTable(1,
                     new LootItem(Items.CRYSTAL_SHARD, 1, 29),
                     new LootItem(Items.ENHANCED_CRYSTAL_TELEPORT_SEED, 1, 1)
-            )),
+            ),
+            "Anaire", "Aranwe", "Aredhel", "Caranthir",
+            "Celebrian", "Celegorm", "Cirdan", "Curufin",
+            "Earwen", "Edrahil", "Elenwe", "Elladan", "Enel",
+            "Erestor", "Enerdhil", "Enelye", "Feanor", "Findis",
+            "Finduilas", "Fingolfin", "Fingon", "Galathil", "Gelmir",
+            "Glorfindel", "Guilin", "Hendor", "Idril", "Imin",
+            "Iminye", "Indis", "Ingwe", "Ingwion", "Lenwe", "Lindir",
+            "Maeglin", "Mahtan", "Miriel", "Mithrellas", "Nellas",
+            "Nerdanel", "Nimloth", "Oropher", "Orophin", "Saeros",
+            "Salgant", "Tatie", "Thingol", "Turgon", "Vaire"),
     TZHAAR_HUR(90, 103.0, 2609, 6, 4, "tzhaar-hur's", PlayerCounter.PICKPOCKETED_TZHAAR_HUR,
             176743,
             -1,
@@ -475,7 +485,7 @@ public enum PickPocket {
                 int pouchId = pickpocket.pouchId;
                 player.animate(881);
                 player.privateSound(2581);
-                LootTable lootTable = pickpocket == ELF && MapArea.PRIFDDINAS.inArea(player) ? ELF_PRIF.lootTable : pickpocket.lootTable;
+                LootTable lootTable = pickpocket.lootTable;
                 if (additionalRolls > 0) {
                     boolean hasGottenPouch = false;
                     for (int index = additionalRolls + 1; index > 0; index--) {
