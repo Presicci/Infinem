@@ -1,0 +1,6 @@
+Player: Hello Arianwyn, how's it going?
+Arianwyn: I am well [player name], yourself?
+Player: Not bad thanks, any news on Lord Iorwerth?
+Arianwyn: Not yet, I will try to send word if we find out anything new.
+Player: Oh okay, well see you then.
+Arianwyn: Until next time, [player name].

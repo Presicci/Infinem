@@ -1,0 +1,7 @@
+Arvel: Good day traveller. You are far from home, what brings you here?
+Player: I am a wandering [hero/heroine], I come here in search of adventure.
+Arvel: Sounds ghastly, I just want to live in peace.
+Player: Unfortunately without people like me, peace doesn't last for long.
+Arvel: True, but then again most adventurers cause as much trouble as they put right.
+Player: You've got a point there... Hmm...
+Arvel: Well, good day traveller. And always do the right thing.

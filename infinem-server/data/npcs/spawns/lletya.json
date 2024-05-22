@@ -16,5 +16,167 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+  {
+    "name": "Arianwyn",
+    "id": 3432,
+    "x": 2352,
+    "y": 3172,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Arvel",
+    "id": 5299,
+    "x": 2334,
+    "y": 3174,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Dalldav",
+    "id": 1481,
+    "x": 2326,
+    "y": 3176,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Eoin",
+    "id": 5302,
+    "x": 2341,
+    "y": 3170,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Elf Archer",
+    "id": 5296,
+    "x": 2329,
+    "y": 3171,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Elf Archer",
+    "id": 5295,
+    "x": 2335,
+    "y": 3167,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Elf Warrior",
+    "id": 5293,
+    "x": 2331,
+    "y": 3173,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Elf Warrior",
+    "id": 5294,
+    "x": 2344,
+    "y": 3176,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Eudav",
+    "id": 1477,
+    "x": 2336,
+    "y": 3183,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Gethin",
+    "id": 1482,
+    "x": 2340,
+    "y": 3158,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Goreu",
+    "id": 5297,
+    "x": 2336,
+    "y": 3159,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Iona",
+    "id": 5303,
+    "x": 2333,
+    "y": 3170,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 7
+  },
+  {
+    "name": "Mawrth",
+    "id": 5300,
+    "x": 2331,
+    "y": 3166,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Oronwen",
+    "id": 1478,
+    "x": 2324,
+    "y": 3179,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sheep",
+    "id": 2693,
+    "x": 2320,
+    "y": 3190,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sheep",
+    "id": 2693,
+    "x": 2322,
+    "y": 3191,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sheep",
+    "id": 2693,
+    "x": 2324,
+    "y": 3189,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ysgawyn",
+    "id": 8814,
+    "x": 2342,
+    "y": 3168,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 8
   }
 ]
