@@ -20,6 +20,8 @@ import io.ruin.model.skills.magic.SpellBook;
  */
 public class ExplorersRing {
 
+    private static final String ENERGY_KEY = "EXPL_RUN";
+    private static final String TELEPORT_KEY = "EXPL_TELE";
     public static final Config DAILY_ALCHEMY = Config.varpbit(4554, true);
     private static final Config ALCHEMY_TAB = Config.varpbit(5398, false);
 
@@ -48,11 +50,25 @@ public class ExplorersRing {
         player.getPacketSender().sendAccessMask(483, 7, 0, 27, AccessMasks.ClickOp1);
     }
 
+    private static void restoreRun(Player player, Item item) {
+        int maxUses = item.getId() == Items.EXPLORERS_RING_1 ? 2 : item.getId() == Items.EXPLORERS_RING_3 ? 4 : 3;
+        int recharge = item.getId() == Items.EXPLORERS_RING_4 ? 100 : 50;
+        if (player.getAttributeIntOrZero(ENERGY_KEY) >= maxUses) {
+            player.timeTillDailyReset("You've already used your energy recharges for the day.<br><br>");
+            return;
+        }
+        player.incrementNumericAttribute(ENERGY_KEY, 1);
+        player.getMovement().restoreEnergy(recharge);
+    }
+
     static {
         ItemAction.registerInventory(Items.EXPLORERS_RING_1, "alchemy", (player, item) -> alchemy(player, false));
+        ItemAction.registerInventory(Items.EXPLORERS_RING_1, "energy", ExplorersRing::restoreRun);
         for (int itemId : RINGS) {
             ItemAction.registerEquipment(itemId, "alchemy", (player, item) -> alchemy(player, itemId == Items.EXPLORERS_RING_4));
+            ItemAction.registerEquipment(itemId, "energy", ExplorersRing::restoreRun);
         }
+        // Alchemy interface
         InterfaceHandler.register(483, h -> {
             h.actions[1] = (SimpleAction) player -> ALCHEMY_TAB.set(player, 0);
             h.actions[2] = (SimpleAction) player -> {
