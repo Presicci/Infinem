@@ -1,6 +1,7 @@
 package io.ruin.model.skills.magic.spells.modern;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.model.content.tasksystem.areas.diaryitems.ExplorersRing;
 import io.ruin.utility.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
@@ -25,10 +26,10 @@ public class Alchemy extends Spell {
         LOW(712, 763, 21, 31, 3, Rune.NATURE.toItem(1), Rune.FIRE.toItem(3)),
         HIGH(713, 764, 55, 65, 5, Rune.NATURE.toItem(1), Rune.FIRE.toItem(5))
         ;
-        private int anim, gfx, levelReq;
-        private double xp;
-        private Item[] runes;
-        private int delay;
+        private final int anim, gfx, levelReq;
+        private final double xp;
+        private final Item[] runes;
+        private final int delay;
 
         Level(int anim, int gfx, int levelReq, double xp, int delay, Item... runes) {
             this.anim = anim;
@@ -46,7 +47,8 @@ public class Alchemy extends Spell {
             if (!p.getStats().check(StatType.Magic, level.levelReq, "cast this spell"))
                 return;
             RuneRemoval r = null;
-            if (level.runes != null && (r = RuneRemoval.get(p, level.runes)) == null) {
+            if ((low ? !ExplorersRing.hasRing(p) : !ExplorersRing.hasFourthRing(p))
+                    && level.runes != null && (r = RuneRemoval.get(p, level.runes)) == null) {
                 p.sendMessage("You don't have enough runes to cast this spell.");
                 return;
             }
@@ -116,7 +118,7 @@ public class Alchemy extends Spell {
         }
         if (item.getDef().value > Config.ALCH_THRESHOLD.get(player)) {
             int finalValue = value;
-            player.dialogue(new YesNoDialogue("Are you sure you want to alchemize that?",
+            player.dialogueKeepInterfaces(new YesNoDialogue("Are you sure you want to alchemize that?",
                     item.getDef().name + " is above your alchemy warning threshold.", item, () -> {
                 alch(player, item, runes, level, finalValue);
             }));
@@ -124,7 +126,7 @@ public class Alchemy extends Spell {
         }
         if (Config.ALCH_UNTRADEABLES.get(player) == 1 && !item.getDef().tradeable) {
             int finalValue = value;
-            player.dialogue(new YesNoDialogue("Are you sure you want to alchemize that?",
+            player.dialogueKeepInterfaces(new YesNoDialogue("Are you sure you want to alchemize that?",
                     item.getDef().name + " is untradeable.", item, () -> {
                 alch(player, item, runes, level, finalValue);
             }));
@@ -142,10 +144,13 @@ public class Alchemy extends Spell {
         player.animate(level.anim);
         player.graphics(level.gfx, 46, 0);
         player.getInventory().add(COINS_995, value);
-        player.getPacketSender().sendClientScript(915, "i", 6);
         player.alchDelay.delay(level.delay);
-        if (runes != null)
+        if (runes != null) {
             runes.remove();
+        } else {
+            ExplorersRing.DAILY_ALCHEMY.increment(player, 1);
+        }
+        if (!player.isVisibleInterface(483)) player.getPacketSender().sendClientScript(915, "i", 6);
         player.getStats().addXp(StatType.Magic, level.xp, true);
         if (level == Level.HIGH)
             player.getTaskManager().doLookupByUUID(148, 1); // Cast the High Level Alchemy spell
