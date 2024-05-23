@@ -29,6 +29,7 @@ public class ZygomiteFungi {
         });
         npc.lock();
         npc.startEvent(e -> {
+            npc.face(player);
             e.delay(1);
             int id = npc.getId();
             npc.putTemporaryAttribute("ORIG_ID", id);
