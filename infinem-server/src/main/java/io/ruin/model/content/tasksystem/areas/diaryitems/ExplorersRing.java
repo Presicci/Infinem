@@ -1,6 +1,7 @@
 package io.ruin.model.content.tasksystem.areas.diaryitems;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.DailyResetListener;
 import io.ruin.model.inter.AccessMask;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.InterfaceHandler;
@@ -14,7 +15,9 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.item.actions.impl.jewellery.JewelleryTeleportBounds;
 import io.ruin.model.skills.magic.SpellBook;
+import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -63,6 +66,17 @@ public class ExplorersRing {
         player.getMovement().restoreEnergy(recharge);
     }
 
+    private static void teleport(Player player, Item item) {
+        if (item.getId() == Items.EXPLORERS_RING_2) {
+            if (player.getAttributeIntOrZero(TELEPORT_KEY) >= 3) {
+                player.timeTillDailyReset("You've already used your teleports for the day.<br><br>");
+                return;
+            }
+            player.incrementNumericAttribute(TELEPORT_KEY, 1);
+        }
+        ModernTeleport.teleport(player, JewelleryTeleportBounds.CABBAGE_PATCH.getBounds());
+    }
+
     static {
         ItemAction.registerInventory(Items.EXPLORERS_RING_1, "alchemy", (player, item) -> alchemy(player, false));
         ItemAction.registerInventory(Items.EXPLORERS_RING_1, "energy", ExplorersRing::restoreRun);
@@ -77,7 +91,13 @@ public class ExplorersRing {
             });
             ItemAction.registerEquipment(itemId, "alchemy", (player, item) -> alchemy(player, itemId == Items.EXPLORERS_RING_4));
             ItemAction.registerEquipment(itemId, "energy", ExplorersRing::restoreRun);
+            if (itemId != Items.EXPLORERS_RING_1) {
+                ItemAction.registerInventory(itemId, "teleport", ExplorersRing::teleport);
+                ItemAction.registerEquipment(itemId, "teleport", ExplorersRing::teleport);
+            }
         }
+        DailyResetListener.register(player -> player.removeAttribute(ENERGY_KEY));
+        DailyResetListener.register(player -> player.removeAttribute(TELEPORT_KEY));
         // Alchemy interface
         InterfaceHandler.register(483, h -> {
             h.actions[1] = (SimpleAction) player -> ALCHEMY_TAB.set(player, 0);
