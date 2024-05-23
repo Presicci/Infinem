@@ -8,7 +8,9 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
@@ -65,6 +67,14 @@ public class ExplorersRing {
         ItemAction.registerInventory(Items.EXPLORERS_RING_1, "alchemy", (player, item) -> alchemy(player, false));
         ItemAction.registerInventory(Items.EXPLORERS_RING_1, "energy", ExplorersRing::restoreRun);
         for (int itemId : RINGS) {
+            ItemAction.registerInventory(itemId, "functions", (player, item) -> {
+                player.dialogue(
+                        new OptionsDialogue(
+                                new Option("Run energy recharge", () -> restoreRun(player, item)),
+                                new Option("Alchemy", () -> alchemy(player, itemId == Items.EXPLORERS_RING_4))
+                        )
+                );
+            });
             ItemAction.registerEquipment(itemId, "alchemy", (player, item) -> alchemy(player, itemId == Items.EXPLORERS_RING_4));
             ItemAction.registerEquipment(itemId, "energy", ExplorersRing::restoreRun);
         }
