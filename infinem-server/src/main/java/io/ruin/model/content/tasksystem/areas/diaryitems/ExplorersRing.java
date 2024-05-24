@@ -98,6 +98,7 @@ public class ExplorersRing {
         }
         DailyResetListener.register(player -> player.removeAttribute(ENERGY_KEY));
         DailyResetListener.register(player -> player.removeAttribute(TELEPORT_KEY));
+        DailyResetListener.register(DAILY_ALCHEMY::reset);
         // Alchemy interface
         InterfaceHandler.register(483, h -> {
             h.actions[1] = (SimpleAction) player -> ALCHEMY_TAB.set(player, 0);
