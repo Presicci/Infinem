@@ -192,7 +192,6 @@ public enum AreaReward {
             "10% chance of mining 2 ores at once, up to adamantite",
             "10% chance to smelt 2 bars at once, up to adamantite",
             "Can be worn in place of a chef's hat to access the Cooks' Guild"),
-    LUMBRIDGE_SWAMP_SHORTCUT(TaskArea.MISTHALIN, AreaTaskTier.HARD, "Access to a shortcut from Lumbridge Swamp to the desert"),
     //TEARS_OF_GUTHIX(AreaTaskTier.HARD, "10% increased experience from Tears of Guthix"),
     ZAFF_BATTLESTAVES_60(TaskArea.MISTHALIN, AreaTaskTier.HARD, "Zaff will sell 60 battlestaves every day for 7,000 coins each"),
     SKULL_SCEPTRE_CHARGES_22(TaskArea.MISTHALIN, AreaTaskTier.HARD, "Skull sceptre will now hold up to 22 charges",
