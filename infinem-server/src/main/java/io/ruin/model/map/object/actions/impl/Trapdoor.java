@@ -67,6 +67,13 @@ public enum Trapdoor {
         ObjectAction.register(1581, "close", Trapdoor::close);
 
         /*
+         * Ectofuntus
+         */
+        ObjectAction.register(16113, "open", (player, obj) -> open(player, obj, 16114));
+        ObjectAction.register(16114, "climb-down", (player, obj) -> Ladder.climb(player, new Position(3669, 9888, 3), false, true, false));
+        ObjectAction.register(16114, "close", Trapdoor::close);
+
+        /*
          * Rogues' Den
          */
         ObjectAction.register(7257, "enter", (player, obj) -> player.getMovement().teleport(3061, 4985, 1));

@@ -10,6 +10,13 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    ECTOFUNTUS_DOWN_1(16109, new Position(3672, 9887, 2), new Position(3675, 9888, 1)),
+    ECTOFUNTUS_DOWN_2(16109, new Position(3684, 9887, 1), new Position(3683, 9888, 0)),
+    ECTOFUNTUS_DOWN_3(16109, new Position(3689, 9887, 3), new Position(3688, 9888, 2)),
+    ECTOFUNTUS_UP_1(16108, new Position(3672, 9887, 1), new Position(3671, 9888, 2)),
+    ECTOFUNTUS_UP_2(16108, new Position(3684, 9887), new Position(3687, 9888, 1)),
+    ECTOFUNTUS_UP_3(16108, new Position(3689, 9887, 2), new Position(3692, 9888, 3)),
+
     WRATH_ALTAR_ISLAND_TO(31807, new Position(1938, 8966, 1), new Position(2445, 2818, 0), 2796),
     WRATH_ALTAR_ISLAND_FROM(31606, new Position(2444, 2819), new Position(1939, 8968, 1), 2796),
 

@@ -99,5 +99,8 @@ public class Stairs {
         // Blue moon inn
         registerStair(11796, 4, 2);
         registerStair(11799, 4, 0);
+        // Ectofuntus
+        registerStair(16646, 5, 2);
+        registerStair(16647, 5, 0);
     }
 }
