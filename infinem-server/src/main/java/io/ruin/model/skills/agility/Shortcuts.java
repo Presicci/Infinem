@@ -8,6 +8,7 @@ import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.Ladder;
 import io.ruin.model.skills.agility.shortcut.*;
+import io.ruin.model.stat.StatType;
 
 public class Shortcuts {
     static {
@@ -93,6 +94,25 @@ public class Shortcuts {
         // Stepping stones in the Cave Kraken lake
         // Rellekka east fence shortcut
         // Port Phasmatys Ectopool Shortcut
+        Tile.getObject(16526, new Position(3670, 9888, 3)).nearPosition = (player, obj) -> obj.getPosition();
+        ObjectAction.register(16526, "jump-down", (player, obj) -> {
+            if (!player.getStats().check(StatType.Agility, 58, "jump-down"))
+                return;
+            player.startEvent(e -> {
+                player.animate(2586);
+                e.delay(1);
+                player.getMovement().teleport(3671, 9888, 2);
+            });
+        });
+        ObjectAction.register(16525, "jump-up", (player, obj) -> {
+            if (!player.getStats().check(StatType.Agility, 58, "jump-up"))
+                return;
+            player.startEvent(e -> {
+                player.animate(828);
+                e.delay(1);
+                player.getMovement().teleport(3670, 9888, 3);
+            });
+        });
         // Elven Overpass (Arandar) easy cliffside scramble
         // Wilderness from God Wars Dungeon area climb
         // Squeeze through to God Wars Dungeon surface access
