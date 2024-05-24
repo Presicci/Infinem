@@ -1,5 +1,6 @@
 package io.ruin.model.item.actions.impl.chargable;
 
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
@@ -17,9 +18,14 @@ import lombok.AllArgsConstructor;
  */
 public class SkullSceptre {
 
-    private static final int MAX_CHARGES = 10;
-
     private static final int[] sceptreIDS = { Items.SKULL_SCEPTRE, 21276 };
+
+    private static int getMaxCharges(Player player) {
+        return AreaReward.SKULL_SCEPTRE_CHARGES_26.hasReward(player) ? 26
+                : AreaReward.SKULL_SCEPTRE_CHARGES_22.hasReward(player) ? 22
+                : AreaReward.SKULL_SCEPTRE_CHARGES_18.hasReward(player) ? 18
+                : AreaReward.SKULL_SCEPTRE_CHARGES_14.hasReward(player) ? 14 : 10;
+    }
 
     private static void invoke(Player player, Item item, int itemId) {
         int currentCharges = item.getAttributeInt(AttributeTypes.CHARGES);
@@ -54,10 +60,10 @@ public class SkullSceptre {
         });
         ItemItemAction.register(Items.RUNED_SCEPTRE, Items.STRANGE_SKULL, (player, item1, item2) -> {
             item1.setId(Items.SKULL_SCEPTRE);
-            item1.putAttribute(AttributeTypes.CHARGES, MAX_CHARGES);
+            item1.putAttribute(AttributeTypes.CHARGES, getMaxCharges(player));
             player.getInventory().remove(item2);
             player.dialogue(new ItemDialogue().one(Items.SKULL_SCEPTRE, "The skull fits perfectly atop the sceptre. You feel there is great " +
-                    "magical power at work here, and that the sceptre has " + MAX_CHARGES + " charges."));
+                    "magical power at work here, and that the sceptre has " + getMaxCharges(player) + " charges."));
         });
 
         for (int itemId : sceptreIDS) {
@@ -84,7 +90,7 @@ public class SkullSceptre {
             });
             ItemItemAction.register(21276, part.itemId, (player, item, item2) -> {
                 int charges = item.getAttributeInt(AttributeTypes.CHARGES);
-                if (charges >= MAX_CHARGES) {
+                if (charges >= getMaxCharges(player)) {
                     player.sendMessage("The sceptre is already fully charged.");
                     return;
                 }
@@ -95,11 +101,11 @@ public class SkullSceptre {
         }
         ItemItemAction.register(21276, 25139, (player, item, item2) -> {
             int charges = item.getAttributeInt(AttributeTypes.CHARGES);
-            if (charges >= MAX_CHARGES) {
+            if (charges >= getMaxCharges(player)) {
                 player.sendMessage("The sceptre is already fully charged.");
                 return;
             }
-            int chargesToAdd = Math.min(player.getInventory().getAmount(25139), MAX_CHARGES - charges);
+            int chargesToAdd = Math.min(player.getInventory().getAmount(25139), getMaxCharges(player) - charges);
             player.getInventory().remove(item2.getId(), chargesToAdd);
             item.putAttribute(AttributeTypes.CHARGES, charges + chargesToAdd);
             player.sendFilteredMessage("You add " + chargesToAdd + " charges to your sceptre.");
