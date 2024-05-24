@@ -47,6 +47,8 @@ public class Bank extends ItemContainerG<BankItem> {
         }
         if (MapArea.CRAFTING_GUILD.inArea(player) && !AreaReward.CRAFTING_GUILD_BANK.checkReward(player, "access this bank."))
             return;
+        if (MapArea.COOKING_GUILD.inArea(player) && !AreaReward.COOKS_GUILD_BANK.checkReward(player, "access this bank."))
+            return;
         if (player.getBankPin().requiresVerification(p -> open()))
             return;
         //player.getPacketSender().sendClientScript(917, "ii", -1, -2147483648);

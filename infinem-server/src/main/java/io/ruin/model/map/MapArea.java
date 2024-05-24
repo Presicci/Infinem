@@ -35,6 +35,7 @@ public enum MapArea {
     WILDERNESS_RESOURCE_AREA(3174, 3924, 3196, 3944, 0),
     FALADOR_FARM(3044, 3300, 3065, 3318, 0),
     CRAFTING_GUILD(2929, 3279, 2943, 3288, 0),
+    COOKING_GUILD(3144, 3447, 3148, 3452, 0),
     EXCLUSIVE_AMETHYST_MINE(2999, 9705, 3012, 9728, 0),
     COMBAT_TRAINING_CAMP_ENTRANCE(2516, 3357, 2519, 3360, 0, player -> {
         player.getTaskManager().doLookupByUUID(561);    // Enter the Combat Training Camp
