@@ -93,6 +93,9 @@ public enum JewelleryTeleportBounds {
     // Karamja Gloves
     SHILO_GEM_MINE(new Bounds(2840, 9384, 2843, 9388, 0)),
     DURADEL(new Position(2869, 2981, 1).toBounds()),
+
+    // Explorer's Ring
+    CABBAGE_PATCH(new Bounds(3049, 3290, 3055, 3294, 0)),
     ;
 
     private final Bounds bounds;
