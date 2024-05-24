@@ -96,6 +96,10 @@ public enum JewelleryTeleportBounds {
 
     // Explorer's Ring
     CABBAGE_PATCH(new Bounds(3049, 3290, 3055, 3294, 0)),
+
+    // Morytania Legs
+    ECTOFUNTUS(new Position(3683, 9888, 0).toBounds()),
+    BURGH(new Bounds(3480, 3229, 3484, 3231, 0)),
     ;
 
     private final Bounds bounds;
