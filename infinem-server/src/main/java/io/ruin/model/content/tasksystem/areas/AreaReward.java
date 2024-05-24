@@ -179,7 +179,6 @@ public enum AreaReward {
     VARROCK_ARMOR_2(TaskArea.MISTHALIN, AreaTaskTier.MEDIUM, "Unlocks the Varrock Armour 2",
             "10% chance of mining 2 ores at once, up to mithril",
             "10% chance to smelt 2 bars at once in Misthalin, up to mithril"),
-    DRAYNOR_VILLAGE_WALL_SHORTCUT(TaskArea.MISTHALIN, AreaTaskTier.MEDIUM, "Access to Draynor Village wall shortcut"),
     ZAFF_BATTLESTAVES_30(TaskArea.MISTHALIN, AreaTaskTier.MEDIUM, "Zaff will sell 30 battlestaves every day for 7,000 coins each"),
     SKULL_SCEPTRE_CHARGES_18(TaskArea.MISTHALIN, AreaTaskTier.MEDIUM, "Skull sceptre will now hold up to 18 charges",
             "Skull sceptre parts now give 2 extra bone fragment"),
