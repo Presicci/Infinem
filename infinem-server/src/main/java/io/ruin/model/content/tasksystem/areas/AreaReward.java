@@ -243,7 +243,7 @@ public enum AreaReward {
     SHADE_FIREMAKING_EXP(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "50% more Firemaking experience from burning shade remains"),
     BONECRUSHER_FULL_EXP(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "Bones buried via the Bonecrusher grant full Prayer experience"),
     HARMONY_ISLAND_HERB(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "Access to the herb patch on Harmony Island"),
-    SLAYER_EXPERIENCE_10(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "10% more Slayer experience in the Slayer Tower"),
+    SLAYER_EXPERIENCE_100(TaskArea.MORYTANIA, AreaTaskTier.ELITE, "10% more Slayer experience in the Slayer Tower"),
 
     /**
      * Tirannwn rewards
