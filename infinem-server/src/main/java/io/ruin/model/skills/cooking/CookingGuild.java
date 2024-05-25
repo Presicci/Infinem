@@ -4,6 +4,7 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.GameObject;
@@ -35,11 +36,13 @@ public class CookingGuild {
 
                 int hat = player.getEquipment().getId(Equipment.SLOT_HAT);
                 int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
+                int chest = player.getEquipment().getId(Equipment.SLOT_CHEST);
 
                 boolean hasChefsHat = hat == CHEFS_HAT || hat == GOLDEN_CHEF_HAT || hat == COOKING_HOOD;
                 boolean hasCookingCape = cape == COOKING_CAPE || cape == COOKING_CAPE_T || cape == MASTER_COOKING_CAPE;
+                boolean hasVarrockArmour = chest == Items.VARROCK_ARMOUR_3 || chest == Items.VARROCK_ARMOUR_4;
 
-                if (!hasChefsHat && !hasCookingCape && !MaxCapeVariants.wearing(player)) {
+                if (!hasChefsHat && !hasCookingCape && !MaxCapeVariants.wearing(player) && !hasVarrockArmour) {
                     player.dialogue(new NPCDialogue(HEAD_CHEF, "You can't come in here unless you're wearing a chef's hat, or something like that."));
                     return;
                 }
