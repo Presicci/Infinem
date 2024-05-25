@@ -331,7 +331,7 @@ public class Mining {
 
         if (helmet != null && helmet.getId() == 12013)
             bonus += 0.4;
-        if (jacket != null && jacket.getId() == 12014)
+        if (jacket != null && (jacket.getId() == 12014 || legs.getId() == Items.VARROCK_ARMOUR_4))
             bonus += 0.8;
         if (legs != null && legs.getId() == 12015)
             bonus += 0.6;
