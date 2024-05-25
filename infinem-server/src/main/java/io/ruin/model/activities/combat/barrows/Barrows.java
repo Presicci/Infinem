@@ -1,6 +1,7 @@
 package io.ruin.model.activities.combat.barrows;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
@@ -10,6 +11,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.Spade;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.MapListener;
@@ -124,6 +126,9 @@ public class Barrows {
             loot.sendUpdates();
             for(Item item : loot.getItems()) {
                 if(item != null) {
+                    if (AreaReward.BARROWS_RUNES.hasReward(player)
+                            && item.getId() == Items.MIND_RUNE || item.getId() == Items.CHAOS_RUNE
+                            || item.getId() == Items.DEATH_RUNE || item.getId() == Items.BLOOD_RUNE) item.setAmount((int) (item.getAmount() * 1.5));
                     player.getInventory().addOrDrop(item.getId(), item.getAmount());
                     player.getCollectionLog().collect(item);
                 }
