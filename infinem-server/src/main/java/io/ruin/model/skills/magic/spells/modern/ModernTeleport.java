@@ -3,6 +3,7 @@ package io.ruin.model.skills.magic.spells.modern;
 import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
@@ -11,6 +12,7 @@ import io.ruin.model.map.Position;
 import io.ruin.model.skills.magic.MagicTeleportBounds;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
+import io.ruin.utility.Color;
 
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -95,6 +97,19 @@ public class ModernTeleport extends Spell {
     private final int lvlReq;
     private final double xp;
     private final Item[] runes;
+
+    public static void wildernessTeleport(Player player, int wildernessLevel, Bounds bounds) {
+        if (player.wildernessLevel > 0) {
+            teleport(player, bounds);
+            return;
+        }
+        player.dialogueKeepInterfaces(
+                new OptionsDialogue(Color.RED.wrap("This teleport leads to level " + wildernessLevel + " wilderness."),
+                        new Option("Teleport", () -> teleport(player, bounds)),
+                        new Option("Nope")
+                )
+        );
+    }
 
     public static boolean teleport(Player player, Bounds bounds) {
         return teleport(player, bounds.randomX(), bounds.randomY(), bounds.z);
