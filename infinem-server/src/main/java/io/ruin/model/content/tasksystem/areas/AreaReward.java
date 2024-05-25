@@ -14,6 +14,12 @@ import java.util.*;
  */
 public enum AreaReward {
     /**
+     * General rewards
+     */
+    CULINAROMANCERS_CHEST_DISCOUNT(TaskArea.GENERAL, AreaTaskTier.ELITE, "20% discount on items in the Culinaromancer's Chest"),
+    FAIRY_RING(TaskArea.GENERAL, AreaTaskTier.ELITE, "Ability to use fairy rings without the need of a dramen or lunar staff"),
+    SLAYER_BLOCK(TaskArea.GENERAL, AreaTaskTier.ELITE, "Unlocked the 6th slot for blocking Slayer tasks"),
+    /**
      * Asgarnia rewards
      */
     FALADOR_SHIELD_1(TaskArea.ASGARNIA, AreaTaskTier.EASY, "Unlocks the Falador Shield 1",
@@ -204,9 +210,6 @@ public enum AreaReward {
             "10% chance of mining 2 ores at once, up to amethyst",
             "10% chance to smelt 2 bars at once",
             "Acts as a prospector jacket for the purposes of experience bonus and clues"),
-    CULINAROMANCERS_CHEST_DISCOUNT(TaskArea.MISTHALIN, AreaTaskTier.ELITE, "20% discount on items in the Culinaromancer's Chest"),
-    FAIRY_RING(TaskArea.MISTHALIN, AreaTaskTier.ELITE, "Ability to use fairy rings without the need of a dramen or lunar staff"),
-    SLAYER_BLOCK(TaskArea.MISTHALIN, AreaTaskTier.ELITE, "Unlocked the 6th slot for blocking Slayer tasks"),
     ZAFF_BATTLESTAVES_120(TaskArea.MISTHALIN, AreaTaskTier.ELITE, "Zaff will sell 120 battlestaves every day for 7,000 coins each"),
     SKULL_SCEPTRE_CHARGES_26(TaskArea.MISTHALIN, AreaTaskTier.ELITE, "Skull sceptre will now hold up to 26 charges",
             "Skull sceptre parts now give 4 extra bone fragment"),
