@@ -100,6 +100,9 @@ public enum JewelleryTeleportBounds {
     // Morytania Legs
     ECTOFUNTUS(new Position(3683, 9888, 0).toBounds()),
     BURGH(new Bounds(3480, 3229, 3484, 3231, 0)),
+
+    // Wilderness Sword
+    FOUNTAIN_OF_RUNE(new Bounds(3376, 3888, 3378, 3893, 0)),
     ;
 
     private final Bounds bounds;
