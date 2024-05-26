@@ -21,17 +21,17 @@ public class PartnerSlayer {
     protected static final int TILE_RANGE = 20;
     protected static final String PARTNER_KEY = "SLAY_PARTNER";
 
-    public static void attemptToPartnerPlayer(Player player, Player otherPlayer) {
+    public static void attemptToPartnerPlayer(Player player, Player target) {
         Player currentPartner = getPartner(player);
         if (currentPartner != null) {
-            if (currentPartner == otherPlayer) {
+            if (currentPartner == target) {
                 player.dialogueKeepInterfaces(new MessageDialogue("That player is already your slayer partner."));
             } else {
                 player.dialogueKeepInterfaces(new MessageDialogue("You already have a slayer partner."));
             }
             return;
         }
-        if (otherPlayer.getGameMode().isIronMan()) {
+        if (target.getGameMode().isIronMan()) {
             player.dialogueKeepInterfaces(new MessageDialogue("That player is an ironman and cannot be your slayer partner."));
             return;
         }
@@ -39,12 +39,19 @@ public class PartnerSlayer {
             player.dialogueKeepInterfaces(new MessageDialogue("You both need accept aid enabled to be slayer partners."));
             return;
         }
-        if (Config.ACCEPT_AID.get(otherPlayer) == 0) {
+        if (Config.ACCEPT_AID.get(target) == 0) {
             player.dialogueKeepInterfaces(new MessageDialogue("That player needs accept aid enabled to be your slayer partner."));
             return;
         }
+        if (target.isLocked() || target.getCombat().isDefending(5)
+                || target.hasOpenInterface(InterfaceType.MAIN)
+                || target.hasOpenInterface(InterfaceType.MAIN_STRETCHED)
+                || target.hasOpenInterface(InterfaceType.CHATBOX)) {
+            player.dialogueKeepInterfaces(new MessageDialogue("That player is currently busy."));
+            return;
+        }
         int task = Slayer.getTask(player);
-        int otherTask = Slayer.getTask(otherPlayer);
+        int otherTask = Slayer.getTask(target);
         if (task != otherTask) {
             player.dialogueKeepInterfaces(new MessageDialogue("To partner with this player you both need the same or no current task."));
             return;
@@ -53,17 +60,17 @@ public class PartnerSlayer {
             player.dialogueKeepInterfaces(new MessageDialogue("Boss tasks cannot be done with a partner."));
             return;
         }
-        otherPlayer.dialogue(false,
+        target.dialogue(false,
                 new OptionsDialogue(player.getName() + " has requested to be your slayer partner.",
                         new Option("Accept", () -> {
-                            player.putTemporaryAttribute(PARTNER_KEY, otherPlayer);
-                            otherPlayer.putTemporaryAttribute(PARTNER_KEY, player);
-                            player.sendMessage("You are now slayer partner's with " + otherPlayer.getName() + ".");
-                            otherPlayer.sendMessage("You are now slayer partner's with " + player.getName() + ".");
+                            player.putTemporaryAttribute(PARTNER_KEY, target);
+                            target.putTemporaryAttribute(PARTNER_KEY, player);
+                            player.sendMessage("You are now slayer partner's with " + target.getName() + ".");
+                            target.sendMessage("You are now slayer partner's with " + player.getName() + ".");
                             updateInterface(player);
-                            updateInterface(otherPlayer);
+                            updateInterface(target);
                         }),
-                        new Option("Decline", () -> player.sendMessage(otherPlayer.getName() + " has declined your slayer partner invite."))
+                        new Option("Decline", () -> player.sendMessage(target.getName() + " has declined your slayer partner invite."))
                 )
         );
     }
