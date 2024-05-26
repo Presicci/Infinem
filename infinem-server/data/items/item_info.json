@@ -82331,7 +82331,7 @@
     "stab_defence_bonus": 1,
     "slash_defence_bonus": 1,
     "melee_strength_bonus": 12,
-    "two_handed": true
+    "weapon_type": "SPEAR"
   },
   { // Western banner 2
     "id": 13142,
@@ -82346,7 +82346,7 @@
     "stab_defence_bonus": 1,
     "slash_defence_bonus": 1,
     "melee_strength_bonus": 16,
-    "two_handed": true
+    "weapon_type": "SPEAR"
   },
   { // Western banner 3
     "id": 13143,
@@ -82361,7 +82361,7 @@
     "stab_defence_bonus": 1,
     "slash_defence_bonus": 1,
     "melee_strength_bonus": 18,
-    "two_handed": true
+    "weapon_type": "SPEAR"
   },
   { // Western banner 4
     "id": 13144,
@@ -82376,7 +82376,7 @@
     "stab_defence_bonus": 1,
     "slash_defence_bonus": 1,
     "melee_strength_bonus": 28,
-    "two_handed": true
+    "weapon_type": "SPEAR"
   },
   { // Antique lamp
     "id": 13145,
