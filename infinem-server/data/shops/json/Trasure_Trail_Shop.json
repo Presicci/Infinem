@@ -1,0 +1,42 @@
+{
+  "name": "Treasure Trail Shop",
+  "currency": "TREASURE_TRAIL_POINTS",
+  "npcs": [
+    7303
+  ],
+  "sellMultiplier": 1300,
+  "buyMultiplier": 400,
+  "hideBuy": false,
+  "items": [
+    { // Jacket
+      "itemId": 19689,
+      "stock": 1,
+      "buy_price": -1,
+      "sell_price": 800
+    },
+    { // Gloves
+      "itemId": 19691,
+      "stock": 1,
+      "buy_price": -1,
+      "sell_price": 250
+    },
+    { // Legs
+      "itemId": 19693,
+      "stock": 1,
+      "buy_price": -1,
+      "sell_price": 500
+    },
+    { // Boots
+      "itemId": 19695,
+      "stock": 1,
+      "buy_price": -1,
+      "sell_price": 350
+    },
+    { // Cape
+      "itemId": 19697,
+      "stock": 1,
+      "buy_price": -1,
+      "sell_price": 600
+    }
+  ]
+}

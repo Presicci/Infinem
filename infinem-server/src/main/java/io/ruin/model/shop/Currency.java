@@ -193,15 +193,30 @@ public enum Currency {
             }
             return amount;
         }
-    })
-    ;
+    }),
+    TREASURE_TRAIL_POINTS(new CurrencyHandler("treasure trail points") {
+        @Override
+        public int getCurrencyCount(Player player) {
+            return player.getAttributeIntOrZero("CLUE_POINTS");
+        }
 
+        @Override
+        public int removeCurrency(Player player, int amount) {
+            return player.incrementNumericAttribute("CLUE_POINTS", -amount);
+        }
+
+        @Override
+        public int addCurrency(Player player, int amount) {
+            return player.incrementNumericAttribute("CLUE_POINTS", amount);
+        }
+    }),
+    ;
 
     Currency(CurrencyHandler currencyHandler) {
         this.currencyHandler = currencyHandler;
     }
 
-    private CurrencyHandler currencyHandler;
+    private final CurrencyHandler currencyHandler;
 
 
     public static Stream<ItemCurrencyHandler> itemCurrencyStream() {

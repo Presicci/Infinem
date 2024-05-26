@@ -7,6 +7,8 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.shop.Currency;
+import io.ruin.utility.Color;
 
 import java.util.*;
 
@@ -65,21 +67,38 @@ public class Clue {
             } else {
                 item.setId(def.clueType.casketId);
                 String message = "Great job, you have completed your clue scroll!";
-                if(def.clueType == ClueType.BEGINNER)
-                    message += " You have now completed a total of " + NumberUtils.formatNumber(PlayerCounter.BEGINNER_CLUES_COMPLETED.increment(player, 1)) + " beginner clue scrolls!";
-                else if(def.clueType == ClueType.EASY)
-                    message += " You have now completed a total of " + NumberUtils.formatNumber(PlayerCounter.EASY_CLUES_COMPLETED.increment(player, 1)) + " easy clue scrolls!";
-                else if(def.clueType == ClueType.MEDIUM)
-                    message += " You have now completed a total of " + NumberUtils.formatNumber(PlayerCounter.MEDIUM_CLUES_COMPLETED.increment(player, 1)) + " medium clue scrolls!";
-                else if(def.clueType == ClueType.HARD)
-                    message += " You have now completed a total of " + NumberUtils.formatNumber(PlayerCounter.HARD_CLUES_COMPLETED.increment(player, 1)) + " hard clue scrolls!";
-                else if(def.clueType == ClueType.ELITE)
-                    message += " You have now completed a total of " + NumberUtils.formatNumber(PlayerCounter.ELITE_CLUES_COMPLETED.increment(player, 1)) + " elite clue scrolls!";
-                else if(def.clueType == ClueType.MASTER)
-                    message += " You have now completed a total of " + NumberUtils.formatNumber(PlayerCounter.MASTER_CLUES_COMPLETED.increment(player, 1)) + " master clue scrolls!";
+                int completedClues = 0;
+                int pointAmount = 1;
+                if (def.clueType == ClueType.BEGINNER) {
+                    completedClues = PlayerCounter.BEGINNER_CLUES_COMPLETED.increment(player, 1);
+                    message += " You have now completed a total of " + NumberUtils.formatNumber(completedClues) + " beginner clue scrolls!";
+                } else if (def.clueType == ClueType.EASY) {
+                    completedClues = PlayerCounter.EASY_CLUES_COMPLETED.increment(player, 1);
+                    message += " You have now completed a total of " + NumberUtils.formatNumber(completedClues) + " easy clue scrolls!";
+                    pointAmount = 2;
+                } else if (def.clueType == ClueType.MEDIUM) {
+                    completedClues = PlayerCounter.MEDIUM_CLUES_COMPLETED.increment(player, 1);
+                    message += " You have now completed a total of " + NumberUtils.formatNumber(completedClues) + " medium clue scrolls!";
+                    pointAmount = 3;
+                } else if (def.clueType == ClueType.HARD) {
+                    completedClues = PlayerCounter.HARD_CLUES_COMPLETED.increment(player, 1);
+                    message += " You have now completed a total of " + NumberUtils.formatNumber(completedClues) + " hard clue scrolls!";
+                    pointAmount = 4;
+                } else if (def.clueType == ClueType.ELITE) {
+                    completedClues = PlayerCounter.ELITE_CLUES_COMPLETED.increment(player, 1);
+                    message += " You have now completed a total of " + NumberUtils.formatNumber(completedClues) + " elite clue scrolls!";
+                    pointAmount = 6;
+                }  else if (def.clueType == ClueType.MASTER) {
+                    completedClues = PlayerCounter.MASTER_CLUES_COMPLETED.increment(player, 1);
+                    message += " You have now completed a total of " + NumberUtils.formatNumber(completedClues) + " master clue scrolls!";
+                    pointAmount = 10;
+                }
                 player.dialogue(new ItemDialogue().one(def.clueType.casketId, message));
                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.COMPLETECLUE, def.clueType.toString().toLowerCase());
                 player.sendMessage(message);
+                pointAmount *= (completedClues % 100 == 0 ? 4 : completedClues % 10 == 0 ? 2 : 1);
+                int newAmt = Currency.TREASURE_TRAIL_POINTS.getCurrencyHandler().addCurrency(player, pointAmount);
+                player.sendMessage(Color.GREEN.wrap("You earn " + pointAmount + " treasure trail points. You now have " + newAmt + " points."));
             }
             return true;
         }
