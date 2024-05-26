@@ -103,6 +103,9 @@ public enum JewelleryTeleportBounds {
 
     // Wilderness Sword
     FOUNTAIN_OF_RUNE(new Bounds(3376, 3888, 3378, 3893, 0)),
+
+    // Western Banner
+    PISCATORIS(new Bounds(2327, 3684, 2332, 3685, 0)),
     ;
 
     private final Bounds bounds;
