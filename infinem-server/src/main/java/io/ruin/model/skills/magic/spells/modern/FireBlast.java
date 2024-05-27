@@ -23,6 +23,7 @@ public class FireBlast extends FireSpell {
 
     @Override
     protected void beforeHit(Hit hit, Entity target) {
+        super.beforeHit(hit, target);
         if (hit.attacker.player != null)
             hit.attacker.player.getTaskManager().doLookupByUUID(146, 1);    // Cast a Blast Spell
     }

@@ -23,6 +23,7 @@ public class EarthSurge extends TargetSpell {
 
     @Override
     protected void beforeHit(Hit hit, Entity target) {
+        super.beforeHit(hit, target);
         if (hit.attacker.player != null)
             hit.attacker.player.getTaskManager().doLookupByUUID(214, 1);    // Cast a Surge Spell
     }
