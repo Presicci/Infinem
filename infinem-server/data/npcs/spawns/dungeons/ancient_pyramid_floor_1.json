@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Mummy",
+    "id": 720,
+    "x": 2900,
+    "y": 4948,
+    "z": 3,
+    "direction": "S",
+    "walkRange": 8
+  },
+  {
+    "name": "Mummy",
+    "id": 723,
+    "x": 2925,
+    "y": 4964,
+    "z": 3,
+    "direction": "S",
+    "walkRange": 7
+  }
+]

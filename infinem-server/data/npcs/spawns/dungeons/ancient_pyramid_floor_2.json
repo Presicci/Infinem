@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Mummy",
+    "id": 720,
+    "x": 2856,
+    "y": 4964,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Mummy",
+    "id": 721,
+    "x": 2864,
+    "y": 4949,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Mummy",
+    "id": 722,
+    "x": 2838,
+    "y": 4948,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 9
+  },
+  {
+    "name": "Mummy",
+    "id": 723,
+    "x": 2832,
+    "y": 4959,
+    "z": 2,
+    "direction": "S",
+    "walkRange": 9
+  }
+]
