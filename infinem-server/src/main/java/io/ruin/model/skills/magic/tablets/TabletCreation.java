@@ -42,6 +42,7 @@ public class TabletCreation {
             open(player, MagicTabletType.ANCIENT);
         });
         ObjectAction.register(40358, "study", (player, obj) -> open(player, MagicTabletType.LUNAR));
+        ObjectAction.register(28802, "study", (player, obj) -> open(player, MagicTabletType.ARCEUUS));
         InterfaceHandler.register(403, h -> {
             h.actions[4] = (SimpleAction) player -> Config.IQ.set(player, 1);
             h.actions[5] = (SimpleAction) player -> Config.IQ.set(player, 5);
