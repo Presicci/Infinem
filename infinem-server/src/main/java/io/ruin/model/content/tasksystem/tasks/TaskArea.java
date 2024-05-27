@@ -38,6 +38,7 @@ public enum TaskArea {
      }
 
      public boolean checkTierUnlock(Player player, AreaTaskTier tier, String message) {
+          if (player.isStaff() && player.debug) return true;
           int pointsTill = getPointsTillTier(player, tier);
           if (pointsTill <= 0) return true;
           player.dialogue(false, new MessageDialogue("You need " + pointsTill + " more task points from " + toString + " tasks to " + message));
