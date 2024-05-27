@@ -6,7 +6,7 @@ import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.spells.TargetSpell;
 
-public class WaterSurge extends TargetSpell {
+public class WaterSurge extends WaterSpell {
 
     public WaterSurge() {
         setLvlReq(85);

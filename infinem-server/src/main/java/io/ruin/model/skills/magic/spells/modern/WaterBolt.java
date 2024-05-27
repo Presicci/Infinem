@@ -4,7 +4,7 @@ import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.spells.TargetSpell;
 
-public class WaterBolt extends TargetSpell {
+public class WaterBolt extends WaterSpell {
 
     public WaterBolt() {
         setLvlReq(23);
