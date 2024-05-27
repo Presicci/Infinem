@@ -10,6 +10,7 @@ import io.ruin.model.item.actions.ItemNPCAction;
  * Created on 7/12/2023
  */
 public enum ItemOnNPC {
+    GNOME_ON_A_RACK(8795, Items.ABYSSAL_WHIP, (player, item, npc) -> player.sendMessage("Runescape isn't that kind of fantasy game.")),
     SNOWFLAKE_GOAT_DUNG(8431, 22590, (player, item, npc) -> player.dialogue(new NPCDialogue(npc, "No thank you, [player name], I do not need more poo in a bucket from you."))),
     SNOWFLAKE_BASALT(8431, 22603, (player, item, npc) -> {
         int amt = player.getInventory().getAmount(22603);
