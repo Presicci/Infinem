@@ -12,6 +12,14 @@ import io.ruin.model.map.object.actions.ObjectAction;
 public enum Ladder {
     //UP(1, "climb-up", new Position(), new Position(), true),
     //DOWN(1, "climb-down", new Position(), new Position(), false),\
+    ANCIENT_PYRAMID_EXIT(6504, "climb-up", new Position(2913, 4953, 3), new Position(3233, 2898, 0), true),
+    ANCIENT_PYRAMID_1_UP(6503, "climb-up", new Position(2845, 4964, 2), new Position(2909, 4965, 3), true),
+    ANCIENT_PYRAMID_1_DOWN(6498, "climb-down", new Position(2909, 4964, 3), new Position(2845, 4963, 2), false),
+    ANCIENT_PYRAMID_2_UP(6502, "climb-up", new Position(2782, 4973, 1), new Position(2845, 4973, 2), true),
+    ANCIENT_PYRAMID_2_DOWN(6499, "climb-down", new Position(2846, 4973, 2), new Position(2782, 4972, 1), false),
+    ANCIENT_PYRAMID_3_UP(6501, "climb-up", new Position(3232, 9293), new Position(2783, 4941, 1), true),
+    ANCIENT_PYRAMID_3_DOWN(6500, "climb-down", new Position(2784, 4941, 1), new Position(3233, 9293), false),
+
     ECTOFUNTUS_EXIT(16110, "climb-up", new Position(3668, 9888, 3), new Position(3654, 3519, 0), true),
 
     BLUE_MOON_INN_BASEMENT_ENTRANCE(11803, "climb-down", new Position(3231, 3401), new Position(3232, 9801, 0), false),

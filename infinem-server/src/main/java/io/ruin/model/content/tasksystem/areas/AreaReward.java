@@ -52,6 +52,7 @@ public enum AreaReward {
     //Simon Templeton will now buy your noted artefacts too
     DESERT_AMULET_2(TaskArea.DESERT, AreaTaskTier.MEDIUM, "Unlocks the Desert Amulet 2",
             "One teleport to Nardah per day"),
+    ANCIENT_MAGIC(TaskArea.DESERT, AreaTaskTier.MEDIUM, "Access to ancient magics and the ancient pyramid"),
     //PHAROH_SCEPTRE_CHARGES_25(TaskArea.DESERT, AreaTaskTier.MEDIUM, "Pharaoh's sceptre can hold up to 25 charges"),
     DESERT_AMULET_3(TaskArea.DESERT, AreaTaskTier.HARD, "Unlocks the Desert Amulet 3"),
     //PHAROH_SCEPTRE_CHARGES_50(TaskArea.DESERT, AreaTaskTier.HARD, "Pharaoh's sceptre can hold up to 50 charges"),
