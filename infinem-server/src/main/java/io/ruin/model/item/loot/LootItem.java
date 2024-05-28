@@ -15,7 +15,7 @@ public class LootItem {
 
     @Expose public final int min, max;
 
-    @Expose public final int weight;
+    @Expose public int weight;
 
     @Expose public Broadcast broadcast;
 
@@ -49,6 +49,10 @@ public class LootItem {
             this.attributes = Maps.newHashMap();
         else
             this.attributes = Maps.newHashMap(attributes);
+    }
+
+    public LootItem copy() {
+        return new LootItem(id, min, max, weight, attributes);
     }
 
     public LootItem broadcast(Broadcast broadcast) {

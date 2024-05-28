@@ -80,10 +80,34 @@ public class LootTable {
         newTable.guaranteed = guaranteed.clone();
         newTable.tables = new ArrayList<>();
         for (ItemsTable iTable : tables) {
-            newTable.tables.add(new ItemsTable(iTable.name, iTable.weight, iTable.items.clone()));
+            List<LootItem> items = new ArrayList<>();
+            for (LootItem item : iTable.items) {
+                items.add(item.copy());
+            }
+            newTable.tables.add(new ItemsTable(iTable.name, iTable.weight, items.toArray(new LootItem[0])));
         }
         newTable.totalWeight = totalWeight;
         return newTable;
+    }
+
+    public void modifyItemWeight(int itemId, double weightMulti) {
+        boolean itemPresent = false;
+        if (tables != null) {
+            for (ItemsTable table : tables) {
+                for (LootItem item : table.items) {
+                    if (item.id == itemId) {
+                        System.out.println(item.weight);
+                        item.weight *= weightMulti;
+                        itemPresent = true;
+                        table.calculateWeight();
+                        System.out.println(item.weight);
+                        break;
+                    }
+                }
+            }
+        }
+        if (!itemPresent)
+            System.err.println(ItemDefinition.get(itemId).name + " couldn't be found in loot table.");
     }
 
     public void modifyTableWeight(String tableName, double weightMulti) {
@@ -401,9 +425,14 @@ public class LootTable {
             this.name = name;
             this.weight = weight;
             this.items = items;
-            for(LootItem item : items) {
+            calculateWeight();
+        }
+
+        public void calculateWeight() {
+            totalWeight = 0;
+            for (LootItem item : items) {
                 totalWeight += item.weight;
-                if(ItemDefinition.get(item.id) == null)
+                if (ItemDefinition.get(item.id) == null)
                     System.err.println("!!@@@@@@@@@@@@@@@@@@@@@@: " + item.id);
             }
         }
