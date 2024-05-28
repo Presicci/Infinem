@@ -51,5 +51,6 @@ public class AncientPyramid {
         });
         ObjectAction.register(6555, 3233, 9324, 0, "open", AncientPyramid::passChamberDoor);
         ObjectAction.register(6553, 3234, 9324, 0, "open", AncientPyramid::passChamberDoor);
+        ObjectAction.register(6550, 3233, 9312, 0, 1, (player, obj) -> Traveling.fadeTravel(player, new Position(3233, 2909, 0)));
     }
 }
