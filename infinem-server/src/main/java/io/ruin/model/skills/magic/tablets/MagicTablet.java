@@ -92,6 +92,8 @@ public enum MagicTablet {
 
     private void checkTasks(Player player) {
         if (this == CARRALLANGAR) player.getTaskManager().doLookupByUUID(674);  // Make a Carrallanger Teleport Tablet
+        if (this == MOONCLAN) player.getTaskManager().doLookupByUUID(942);      // Make a Moonclan Teleport Tablet
+        if (this == DRAYNOR_MANOR) player.getTaskManager().doLookupByUUID(943); // Make a Draynor Manor Teleport Tablet
     }
 
     public void create(Player player, int amount) {
