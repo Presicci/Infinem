@@ -1,0 +1,119 @@
+[
+  {
+    "name": "Ice wolf",
+    "id": 647,
+    "x": 1580,
+    "y": 3891,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice wolf",
+    "id": 710,
+    "x": 1586,
+    "y": 3895,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice wolf",
+    "id": 711,
+    "x": 1582,
+    "y": 3899,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Ice wolf",
+    "id": 712,
+    "x": 1587,
+    "y": 3904,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ice giant",
+    "id": 2085,
+    "x": 1563,
+    "y": 3886,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ice giant",
+    "id": 2086,
+    "x": 1556,
+    "y": 3892,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice giant",
+    "id": 2085,
+    "x": 1554,
+    "y": 3888,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ice giant",
+    "id": 2087,
+    "x": 1553,
+    "y": 3884,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice giant",
+    "id": 2088,
+    "x": 1551,
+    "y": 3881,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ice spider",
+    "id": 10722,
+    "x": 1550,
+    "y": 3887,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ice spider",
+    "id": 10722,
+    "x": 1556,
+    "y": 3881,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Ice spider",
+    "id": 10722,
+    "x": 1558,
+    "y": 3889,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Ice spider",
+    "id": 10722,
+    "x": 1559,
+    "y": 3886,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  }
+]
