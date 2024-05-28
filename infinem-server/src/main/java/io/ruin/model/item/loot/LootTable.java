@@ -109,10 +109,8 @@ public class LootTable {
                     totalWeight += table.weight;
                 }
                 table.totalWeight = 0;
-                if(table.items != null) {
-                    for(LootItem item : table.items)
-                        table.totalWeight += item.weight;
-                }
+                for (LootItem item : table.items)
+                    table.totalWeight += item.weight;
             }
         }
     }
@@ -232,17 +230,13 @@ public class LootTable {
         List<Item> items = new ArrayList<>();
         if(guaranteed != null) {
             for(LootItem item : guaranteed) {
-                if (item != null)
-                items.add(item.toItem());
+                if (item != null) items.add(item.toItem());
             }
         }
         if(tables != null) {
             for(ItemsTable table : tables) {
-                if(table.items != null) {
-                    for(LootItem item : table.items) {
-                        if (item != null)
-                        items.add(item.toItem());
-                    }
+                for (LootItem item : table.items) {
+                    if (item != null) items.add(item.toItem());
                 }
             }
         }
@@ -600,13 +594,13 @@ public class LootTable {
                 new LootItem(21270, 1, 1, 1)         // Eternal gem
         });
 
-        public int itemId;
-        public String title, name;
-        public int totalWeight;
-        public LootItem[] items;
-        public boolean tertiary;
+        public final int itemId;
+        public final String title, name;
+        public final int totalWeight;
+        public final LootItem[] items;
+        public final boolean tertiary;
 
-        public static List<String> tertiaryTableNames = new ArrayList<>();
+        public final static List<String> tertiaryTableNames = new ArrayList<>();
 
         CommonTables(int itemId, String title, String name, int totalWeight, LootItem[] items) {
             this(false, itemId, title, name, totalWeight, items);
