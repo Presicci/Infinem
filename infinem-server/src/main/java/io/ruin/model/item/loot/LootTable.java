@@ -101,10 +101,7 @@ public class LootTable {
             for (ItemsTable table : tables) {
                 for (LootItem item : table.items) {
                     if (item.id == itemId) {
-                        System.out.println("removing");
-                        System.out.println(Arrays.toString(table.items));
                         table.items = Arrays.stream(table.items).filter(i -> i.id != itemId).toArray(LootItem[]::new);
-                        System.out.println(Arrays.toString(table.items));
                         itemPresent = true;
                         table.calculateWeight();
                         break;

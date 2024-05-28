@@ -3,6 +3,7 @@ package io.ruin.model.entity.npc;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
+import io.ruin.model.item.loot.ConditionalNPCLootTable;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.cache.def.NPCDefinition;
@@ -66,6 +67,13 @@ public class NPCDrops {
          * Drop table loots
          */
         LootTable t = def.lootTable;
+        List<ConditionalNPCLootTable> conditionalTables = ConditionalNPCLootTable.LOADED_TABLES.getOrDefault(npc.getId(), Collections.emptyList());
+        for (ConditionalNPCLootTable table : conditionalTables) {
+            if (table.getCondition().test(pKiller)) {
+                t = table.getNewTable();
+                break;
+            }
+        }
         if(t != null) {
             int rolls = DoubleDrops.getRolls(killer.player, npc);
             if (npc.isSuperior) {
