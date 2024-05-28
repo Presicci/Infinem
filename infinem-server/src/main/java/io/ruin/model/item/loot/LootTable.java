@@ -77,10 +77,31 @@ public class LootTable {
 
     public LootTable copy() {
         LootTable newTable = new LootTable();
-        newTable.guaranteed = this.guaranteed;
-        newTable.tables = this.tables;
-        newTable.totalWeight = this.totalWeight;
+        newTable.guaranteed = guaranteed.clone();
+        newTable.tables = new ArrayList<>();
+        for (ItemsTable iTable : tables) {
+            newTable.tables.add(new ItemsTable(iTable.name, iTable.weight, iTable.items.clone()));
+        }
+        newTable.totalWeight = totalWeight;
         return newTable;
+    }
+
+    public void modifyTableWeight(String tableName, double weightMulti) {
+        boolean tablePresent = false;
+        if (tables != null) {
+            for (ItemsTable table : tables) {
+                if (table.name.equalsIgnoreCase(tableName)) {
+                    totalWeight -= table.weight;
+                    int newWeight = (int) (table.weight * weightMulti);
+                    totalWeight += newWeight;
+                    table.weight = newWeight;
+                    tablePresent = true;
+                    break;
+                }
+            }
+        }
+        if (!tablePresent)
+            System.err.println(tableName + " couldn't be found in loot table.");
     }
 
     public void modifyTableWeight(String tableName, int newWeight) {
