@@ -18,6 +18,7 @@ public class StaticFacingNPC {
             1992, 1993,     // Miners
             7790,   // John
             7791,   // David
+            7480,   // Rakkar
     };
     public static final Set<Integer> NPCS = new HashSet<>(Arrays.asList(VALUES));
 
