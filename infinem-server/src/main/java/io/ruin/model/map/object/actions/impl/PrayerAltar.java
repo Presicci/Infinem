@@ -2,6 +2,7 @@ package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.model.World;
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -72,6 +73,12 @@ public class PrayerAltar {
         });
         // Nardah statuette
         ObjectAction.register(10389, 1, (player, obj) -> pray(player));
+        // Ancient pyramid altar
+        ObjectAction.register(6552, 3232, 9311, 0, "pray-at", (player, obj) -> {
+            if (!AreaReward.ANCIENT_MAGIC.checkReward(player, "use ancient magics.")) return;
+            player.getStats().get(StatType.Prayer).drain(1D);
+            switchBook(player, SpellBook.ANCIENT.isActive(player) ? SpellBook.MODERN : SpellBook.ANCIENT, true);
+        });
         /**
          * Custom Edgeville altar
          */
