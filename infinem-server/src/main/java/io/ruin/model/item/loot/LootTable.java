@@ -9,9 +9,11 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
+import org.apache.commons.lang3.ArrayUtils;
 
 import java.text.DecimalFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class LootTable {
 
@@ -75,6 +77,9 @@ public class LootTable {
         return newTable;
     }
 
+    /**
+     * Table modification
+     */
     public LootTable copy() {
         LootTable newTable = new LootTable();
         newTable.guaranteed = guaranteed.clone();
@@ -90,17 +95,36 @@ public class LootTable {
         return newTable;
     }
 
+    public void removeItem(int itemId) {
+        boolean itemPresent = false;
+        if (tables != null) {
+            for (ItemsTable table : tables) {
+                for (LootItem item : table.items) {
+                    if (item.id == itemId) {
+                        System.out.println("removing");
+                        System.out.println(Arrays.toString(table.items));
+                        table.items = Arrays.stream(table.items).filter(i -> i.id != itemId).toArray(LootItem[]::new);
+                        System.out.println(Arrays.toString(table.items));
+                        itemPresent = true;
+                        table.calculateWeight();
+                        break;
+                    }
+                }
+            }
+        }
+        if (!itemPresent)
+            System.err.println(ItemDefinition.get(itemId).name + " couldn't be found in loot table.");
+    }
+
     public void modifyItemWeight(int itemId, double weightMulti) {
         boolean itemPresent = false;
         if (tables != null) {
             for (ItemsTable table : tables) {
                 for (LootItem item : table.items) {
                     if (item.id == itemId) {
-                        System.out.println(item.weight);
                         item.weight *= weightMulti;
                         itemPresent = true;
                         table.calculateWeight();
-                        System.out.println(item.weight);
                         break;
                     }
                 }
@@ -144,6 +168,9 @@ public class LootTable {
         if (!tablePresent)
             System.err.println(tableName + " couldn't be found in loot table.");
     }
+
+
+
 
     public void calculateWeight() {
         totalWeight = 0;
@@ -417,7 +444,7 @@ public class LootTable {
 
         @Expose public int weight;
 
-        @Expose public final LootItem[] items;
+        @Expose public LootItem[] items;
 
         public double totalWeight;
 
