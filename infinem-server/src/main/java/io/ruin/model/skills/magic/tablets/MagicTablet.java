@@ -90,6 +90,10 @@ public enum MagicTablet {
         this.runes = runes;
     }
 
+    private void checkTasks(Player player) {
+        if (this == CARRALLANGAR) player.getTaskManager().doLookupByUUID(674);  // Make a Carrallanger Teleport Tablet
+    }
+
     public void create(Player player, int amount) {
         Inventory inventory = player.getInventory();
         player.startEvent(e -> {
@@ -115,6 +119,7 @@ public enum MagicTablet {
                 inventory.remove(baseItem);
                 runeRemoval.remove();
                 inventory.add(productId);
+                checkTasks(player);
                 left--;
                 e.delay(5);
             }
