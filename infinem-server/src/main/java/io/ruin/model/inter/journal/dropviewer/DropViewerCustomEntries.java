@@ -15,9 +15,15 @@ import io.ruin.model.skills.thieving.ThievableChests;
 import io.ruin.model.skills.thieving.WallSafe;
 import io.ruin.model.skills.woodcutting.Woodcutting;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class DropViewerCustomEntries {
 
-    protected static final DropViewerEntry[] ENTRIES = new DropViewerEntry[] {
+    public static final List<DropViewerEntry> ENTRIES = Stream.of(
             new DropViewerEntry("Beginner Clue Casket", ClueType.BEGINNER.lootTable),
             new DropViewerEntry("Easy Clue Casket", ClueType.EASY.lootTable),
             new DropViewerEntry("Medium Clue Casket", ClueType.MEDIUM.lootTable),
@@ -126,5 +132,5 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Pest Control Seeds", PCReward.SEED_PACK_LOOT),
             new DropViewerEntry("Infernal Eel", InfernalEel.LOOT_TABLE),
             new DropViewerEntry("Sulliuscep", Woodcutting.SULLIUSCEP_LOOT)
-    };
+    ).collect(Collectors.toCollection(ArrayList::new));
 }
