@@ -69,7 +69,7 @@ public class NPCDrops {
         LootTable t = def.lootTable;
         List<ConditionalNPCLootTable> conditionalTables = ConditionalNPCLootTable.LOADED_TABLES.getOrDefault(npc.getId(), Collections.emptyList());
         for (ConditionalNPCLootTable table : conditionalTables) {
-            if (table.getCondition().test(pKiller)) {
+            if (table.getCondition().test(pKiller, npc)) {
                 t = table.getNewTable();
                 break;
             }
