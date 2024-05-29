@@ -1,6 +1,7 @@
 package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.api.utils.Tuple;
+import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.api.utils.AttributeKey;
@@ -37,7 +38,7 @@ public class DropViewer {
                     new DropViewerEntry(6766), new DropViewerEntry(8061), new DropViewerEntry(2042)
             )));
         }
-        player.getPacketSender().sendAccessMask(Interface.DROP_VIEWER, 24, 0, 1000, AccessMasks.ClickOp1);
+        player.getPacketSender().sendAccessMask(Interface.DROP_VIEWER, 24, 0, 1000, AccessMasks.ClickOp1, AccessMasks.ClickOp10);
         DropViewerSearch.sendEntries(player);
     }
 
@@ -189,19 +190,23 @@ public class DropViewer {
         }
     }
 
-    private static void clickItem(Player player, int slot) {
-        List<DropViewerResult> drops = player.getTemporaryAttributeOrDefault("DROPVIEWER_DROPS", new ArrayList<>());
-        int index = ((slot - 2) / 5);
-        if (drops == null || drops.isEmpty() || drops.size() < index) return;
-        DropViewerResult result = drops.get(index);
-        if (result instanceof DropViewerResultCommon) {
-            player.putTemporaryAttribute("DROPVIEWER_LAST", drops);
-            player.putTemporaryAttribute("DROPVIEWER_LAST_NAME", player.getTemporaryAttributeOrDefault("DROPVIEWER_NAME", ""));
-            LootTable.CommonTables table = ((DropViewerResultCommon) result).getCommonTable();
-            displayDrops(player, table.name, new LootTable().addTable(1, table.items));
-            player.getPacketSender().setHidden(Interface.DROP_VIEWER, 32, false);
-        } else {
-            DropViewerSearch.search(player, result.getItem().getDef().name, false);
+    private static void clickItem(Player player, int option, int slot, int itemId) {
+        if (option == 1) {
+            List<DropViewerResult> drops = player.getTemporaryAttributeOrDefault("DROPVIEWER_DROPS", new ArrayList<>());
+            int index = ((slot - 2) / 5);
+            if (drops == null || drops.isEmpty() || drops.size() < index) return;
+            DropViewerResult result = drops.get(index);
+            if (result instanceof DropViewerResultCommon) {
+                player.putTemporaryAttribute("DROPVIEWER_LAST", drops);
+                player.putTemporaryAttribute("DROPVIEWER_LAST_NAME", player.getTemporaryAttributeOrDefault("DROPVIEWER_NAME", ""));
+                LootTable.CommonTables table = ((DropViewerResultCommon) result).getCommonTable();
+                displayDrops(player, table.name, new LootTable().addTable(1, table.items));
+                player.getPacketSender().setHidden(Interface.DROP_VIEWER, 32, false);
+            } else {
+                DropViewerSearch.search(player, result.getItem().getDef().name, false);
+            }
+        } else if (option == 10 && itemId > -1) {
+            new Item(itemId).examine(player);
         }
     }
 
@@ -221,7 +226,7 @@ public class DropViewer {
             h.actions[16] = (SlotAction) DropViewer::clickEntry;
             h.actions[17] = (SimpleAction) player -> player.stringInput("Enter monster name to search for:", name -> DropViewerSearch.search(player, name, true));
             h.actions[18] = (SimpleAction) player -> player.stringInput("Enter drop name to search for:", name -> DropViewerSearch.search(player, name, false));
-            h.actions[24] = (SlotAction) DropViewer::clickItem;
+            h.actions[24] = (DefaultAction) DropViewer::clickItem;
             h.actions[32] = (SimpleAction) player -> {
                 List<DropViewerResult> drops = player.getTemporaryAttributeOrDefault("DROPVIEWER_LAST", new ArrayList<>());
                 String name = player.getTemporaryAttributeOrDefault("DROPVIEWER_LAST_NAME", "");
