@@ -138,7 +138,7 @@ public enum CostumeStorage {
     public void open(Player player, int clueScrollLevel, Buildable buildable) {
         if (player.getBankPin().requiresVerification(p -> open(p, clueScrollLevel, buildable)))
             return;
-        player.openInterface(InterfaceType.MAIN, 675);
+        player.openInterface(InterfaceType.MAIN_STRETCHED, 675);
         changeInventoryAccess(player);
         if (this == BEGINNER_TREASURE_TRAILS || this == EASY_TREASURE_TRAILS || this == MEDIUM_TREASURE_TRAILS
                 || this == HARD_TREASURE_TRAILS || this == ELITE_TREASURE_TRAILS || this == MASTER_TREASURE_TRAILS) {
