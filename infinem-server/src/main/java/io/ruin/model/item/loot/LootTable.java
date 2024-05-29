@@ -9,11 +9,9 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
-import org.apache.commons.lang3.ArrayUtils;
 
 import java.text.DecimalFormat;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class LootTable {
 
@@ -174,7 +172,8 @@ public class LootTable {
         if(tables != null) {
             for(ItemsTable table : tables) {
                 if (!table.name.equalsIgnoreCase("tertiary")
-                        && !CommonTables.tertiaryTableNames.contains(table.name)) {
+                        && !table.name.equalsIgnoreCase("secondary")
+                        && !CommonTables.secondaryTableNames.contains(table.name)) {
                     totalWeight += table.weight;
                 }
                 table.totalWeight = 0;
@@ -235,29 +234,32 @@ public class LootTable {
                     break;
                 }
             }
-            List<Item> tertiaryRolls = rollTertiary(null);
+            List<Item> tertiaryRolls = rollTertiaryAndSecondary(null);
             if (tertiaryRolls != null)
                 items.addAll(tertiaryRolls);
         }
         return items.isEmpty() ? null : items;
     }
 
-    public List<Item> rollTertiary(List<Item> rolledItems) {
+    public List<Item> rollTertiaryAndSecondary(List<Item> rolledItems) {
         List<Item> items = new ArrayList<>();
-        List<Item> commonTableItems = new ArrayList<>(); // Doing this to prevent multiple side-tertiary rolls
+        List<Item> secondaryItems = new ArrayList<>(); // Doing this to prevent multiple side-tertiary rolls
         if (totalWeight <= 0) return null;
         if(tables != null) {
             tableLoop : for(ItemsTable table : tables) {
-                if (table.name != null && (table.name.equalsIgnoreCase("tertiary")
-                        || CommonTables.tertiaryTableNames.contains(table.name))) {
+                if (table.name != null
+                        && (table.name.equalsIgnoreCase("tertiary")
+                        || table.name.equalsIgnoreCase("secondary")
+                        || CommonTables.secondaryTableNames.contains(table.name))) {
                     double tableRand = Random.get() * totalWeight;
                     if (tableRand <= table.weight) {
                         double itemsRand = Random.get() * table.totalWeight;
-                        boolean commonTableRolled = CommonTables.tertiaryTableNames.contains(table.name);
+                        boolean secondaryRolled = CommonTables.secondaryTableNames.contains(table.name)
+                                || table.name.equalsIgnoreCase("secondary");
                         for(LootItem item : table.items) {
                             if(item.weight == 0) {  // weightless item landed, break
-                                if (commonTableRolled)
-                                    commonTableItems.add(item.toItem());
+                                if (secondaryRolled)
+                                    secondaryItems.add(item.toItem());
                                 else
                                     items.add(item.toItem());
                                 break tableLoop;
@@ -271,8 +273,8 @@ public class LootTable {
                                 }
                                 if (item.id == -1)  // Quit out if we roll a empty slot
                                     break;
-                                if (commonTableRolled)
-                                    commonTableItems.add(item.toItem());
+                                if (secondaryRolled)
+                                    secondaryItems.add(item.toItem());
                                 else
                                     items.add(item.toItem());
                                 break;
@@ -282,7 +284,7 @@ public class LootTable {
                             // Can roll multiple tertiaries in one drop
                             if (rolledItems != null)
                                 rolledItems.addAll(items);
-                            List<Item> recursiveItems = rollTertiary(rolledItems);
+                            List<Item> recursiveItems = rollTertiaryAndSecondary(rolledItems);
                             if (recursiveItems != null)
                                 items.addAll(recursiveItems);
                         }
@@ -291,7 +293,7 @@ public class LootTable {
                 }
             }
         }
-        items.addAll(commonTableItems);
+        items.addAll(secondaryItems);
         return items.isEmpty() ? null : items;
     }
 
@@ -672,16 +674,16 @@ public class LootTable {
         public final String title, name;
         public final int totalWeight;
         public final LootItem[] items;
-        public final boolean tertiary;
+        public final boolean secondary;
 
-        public final static List<String> tertiaryTableNames = new ArrayList<>();
+        public final static List<String> secondaryTableNames = new ArrayList<>();
 
         CommonTables(int itemId, String title, String name, int totalWeight, LootItem[] items) {
             this(false, itemId, title, name, totalWeight, items);
         }
 
-        CommonTables(boolean tertiary, int itemId, String title, String name, int totalWeight, LootItem[] items) {
-            this.tertiary = tertiary;
+        CommonTables(boolean secondary, int itemId, String title, String name, int totalWeight, LootItem[] items) {
+            this.secondary = secondary;
             this.itemId = itemId;
             this.title = title;
             this.name = name;
@@ -691,7 +693,7 @@ public class LootTable {
 
         static {
             for (CommonTables t : values()) {
-                if (t.tertiary) tertiaryTableNames.add(t.title);
+                if (t.secondary) secondaryTableNames.add(t.title);
             }
         }
     }
