@@ -149,6 +149,7 @@ public class DropViewerSearch {
     }
 
     private static String buildEntries(List<DropViewerEntry> entries) {
+        entries.sort(Comparator.comparing(o -> o.name));
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < entries.size(); i++) {
             DropViewerEntry e = entries.get(i);
