@@ -3,13 +3,13 @@
     "ids": [ 7933 ],
     "guaranteed": [
       { "id": 21820, "min": 2, "max": 16 }   //Revenant ether
-    ],
+  ],
     "tables": [
       {
         "name": "Unique",
-        "weight": 5,
+        "weight": 1157,
         "items": [
-          { "id": 22557, "min": 1, "max": 1, "weight": 3 },   //Amulet of avarice
+          { "id": 22557, "min": 1, "max": 1, "weight": 2 },   //Amulet of avarice
           { "id": 22547, "min": 1, "max": 1, "weight": 1 },   //Craw's bow (u)
           { "id": 22552, "min": 1, "max": 1, "weight": 1 },   //Thammaron's sceptre (u)
           { "id": 22542, "min": 1, "max": 1, "weight": 1 }   //Viggora's chainmace (u)
@@ -17,65 +17,87 @@
       },
       {
         "name": "Ancient statuettes",
-        "weight": 136,
+        "weight": 14280,
         "items": [
-          { "id": 21807, "min": 1, "max": 1, "weight": 47 },   //Ancient emblem
-          { "id": 21810, "min": 1, "max": 1, "weight": 31 },   //Ancient totem
-          { "id": 21813, "min": 1, "max": 1, "weight": 15 },   //Ancient statuette
-          { "id": 21804, "min": 1, "max": 1, "weight": 23 },   //Ancient crystal
-          { "id": 22299, "min": 1, "max": 1, "weight": 7 },   //Ancient medallion
-          { "id": 22302, "min": 1, "max": 1, "weight": 7 },   //Ancient effigy
-          { "id": 22305, "min": 1, "max": 1, "weight": 7 }   //Ancient relic
+          { "id": 21807, "min": 1, "max": 1, "weight": 478 },   //Ancient emblem
+          { "id": 21810, "min": 1, "max": 1, "weight": 318 },   //Ancient totem
+          { "id": 21813, "min": 1, "max": 1, "weight": 159 },   //Ancient statuette
+          { "id": 21804, "min": 1, "max": 1, "weight": 239 },   //Ancient crystal
+          { "id": 22299, "min": 1, "max": 1, "weight": 79 },   //Ancient medallion
+          { "id": 22302, "min": 1, "max": 1, "weight": 79 },   //Ancient effigy
+          { "id": 22305, "min": 1, "max": 1, "weight": 79 }   //Ancient relic
         ]
       },
       {
         "name": "Weapons and armour",
-        "weight": 9210,
+        "weight": 920990,
         "items": [
-          { "id": 21817, "min": 1, "max": 1, "weight": 4150 },   //Bracelet of ethereum (uncharged)
-          { "id": 1392, "min": 3, "max": 3, "weight": 1380 },   //Battlestaff (noted)
-          { "id": 1163, "min": 1, "max": 1, "weight": 553 },   //Rune full helm
-          { "id": 1127, "min": 1, "max": 1, "weight": 553 },   //Rune platebody
-          { "id": 1079, "min": 1, "max": 1, "weight": 553 },   //Rune platelegs
-          { "id": 1201, "min": 1, "max": 1, "weight": 553 },   //Rune kiteshield
-          { "id": 1347, "min": 1, "max": 1, "weight": 553 },   //Rune warhammer
-          { "id": 4087, "min": 1, "max": 1, "weight": 138 },   //Dragon platelegs
-          { "id": 4585, "min": 1, "max": 1, "weight": 138 },   //Dragon plateskirt
-          { "id": 1215, "min": 1, "max": 1, "weight": 277 },   //Dragon dagger
-          { "id": 1305, "min": 1, "max": 1, "weight": 277 },   //Dragon longsword
-          { "id": 1149, "min": 1, "max": 1, "weight": 103 }   //Dragon med helm
+          { "id": 21817, "min": 1, "max": 1, "weight": 41500 },   //Bracelet of ethereum (uncharged)
+          { "id": 1391, "min": 4, "max": 4, "weight": 13800 },   //Battlestaff
+          { "id": 1163, "min": 2, "max": 2, "weight": 5530 },   //Rune full helm
+          { "id": 1127, "min": 2, "max": 2, "weight": 5530 },   //Rune platebody
+          { "id": 1079, "min": 2, "max": 2, "weight": 5530 },   //Rune platelegs
+          { "id": 1201, "min": 2, "max": 2, "weight": 5530 },   //Rune kiteshield
+          { "id": 1347, "min": 2, "max": 2, "weight": 5530 },   //Rune warhammer
+          { "id": 4087, "min": 1, "max": 2, "weight": 1380 },   //Dragon platelegs
+          { "id": 4585, "min": 1, "max": 2, "weight": 1380 },   //Dragon plateskirt
+          { "id": 1215, "min": 2, "max": 2, "weight": 2770 },   //Dragon dagger
+          { "id": 1305, "min": 2, "max": 2, "weight": 2770 },   //Dragon longsword
+          { "id": 1149, "min": 1, "max": 1, "weight": 1040 }   //Dragon med helm
         ]
       },
       {
         "name": "Resources",
-        "weight": 10292,
+        "weight": 1112054,
         "items": [
-          { "id": 454, "min": 25, "max": 40, "weight": 1660 },   //Coal (noted)
-          { "id": 2362, "min": 4, "max": 6, "weight": 1660 },   //Adamantite bar (noted)
-          { "id": 452, "min": 1, "max": 3, "weight": 1110 },   //Runite ore (noted)
-          { "id": 2364, "min": 1, "max": 2, "weight": 830 },   //Runite bar (noted)
-          { "id": 1748, "min": 3, "max": 4, "weight": 1110 },   //Black dragonhide (noted)
-          { "id": 8783, "min": 5, "max": 12, "weight": 830 },   //Mahogany plank (noted)
-          { "id": 392, "min": 10, "max": 15, "weight": 1110 },   //Manta ray (noted)
-          { "id": 1516, "min": 20, "max": 40, "weight": 1110 },   //Yew logs (noted)
-          { "id": 1514, "min": 5, "max": 12, "weight": 553 },   //Magic logs (noted)
-          { "id": 1632, "min": 2, "max": 5, "weight": 277 },   //Uncut dragonstone (noted)
-          { "id": 5315, "min": 2, "max": 7, "weight": 31 },   //Yew seed
-          { "id": 5316, "min": 2, "max": 7, "weight": 31 }   //Magic seed
+          { "id": 24598, "min": 1, "max": 3, "weight": 8300 },   //Blighted super restore(4)
+          { "id": 24589, "min": 10, "max": 15, "weight": 11100 },   //Blighted manta ray
+          { "id": 454, "min": 30, "max": 60, "weight": 16600 },   //Coal (noted)
+          { "id": 2361, "min": 4, "max": 6, "weight": 16600 },   //Adamantite bar
+          { "id": 451, "min": 2, "max": 4, "weight": 11100 },   //Runite ore
+          { "id": 2363, "min": 2, "max": 3, "weight": 8300 },   //Runite bar
+          { "id": 1747, "min": 4, "max": 4, "weight": 11100 },   //Black dragonhide
+          { "id": 8783, "min": 8, "max": 16, "weight": 8300 },   //Mahogany plank (noted)
+          { "id": 1516, "min": 20, "max": 40, "weight": 11100 },   //Yew logs (noted)
+          { "id": 1514, "min": 8, "max": 16, "weight": 5530 },   //Magic logs (noted)
+          { "id": 1631, "min": 2, "max": 5, "weight": 2770 },   //Uncut dragonstone
+          { "id": 5315, "min": 2, "max": 6, "weight": 318 },   //Yew seed
+          { "id": 5316, "min": 2, "max": 6, "weight": 318 }   //Magic seed
         ]
       },
       {
         "name": "Other",
-        "weight": 80354,
+        "weight": 7951516,
         "items": [
-          { "id": 995, "min": 1, "max": 176, "weight": 72500 },   //Coins
-          { "id": 21802, "min": 1, "max": 1, "weight": 1380 },   //Revenant cave teleport
-          { "id": 3025, "min": 1, "max": 3, "weight": 830 },   //Super restore(4) (noted)
-          { "id": 9193, "min": 15, "max": 30, "weight": 830 },   //Dragonstone bolt tips
-          { "id": 9194, "min": 2, "max": 4, "weight": 830 },   //Onyx bolt tips
-          { "id": 563, "min": 20, "max": 45, "weight": 1380 },   //Law rune
-          { "id": 560, "min": 15, "max": 30, "weight": 1380 },   //Death rune
-          { "id": 565, "min": 10, "max": 20, "weight": 1380 }   //Blood rune
+          { "id": 995, "min": 1, "max": 176, "weight": 725000 },   //Coins
+          { "id": 21802, "min": 1, "max": 5, "weight": 13800 },   //Revenant cave teleport
+          { "id": 9193, "min": 20, "max": 40, "weight": 8300 },   //Dragonstone bolt tips
+          { "id": 9194, "min": 3, "max": 6, "weight": 8300 },   //Onyx bolt tips
+          { "id": 563, "min": 20, "max": 45, "weight": 13800 },   //Law rune
+          { "id": 560, "min": 30, "max": 60, "weight": 13800 },   //Death rune
+          { "id": 565, "min": 50, "max": 100, "weight": 13800 }   //Blood rune
+        ]
+      },
+      {
+        "name": "Secondary",
+        "weight": 5247122,
+        "items": [
+          { "id": 24607, "min": 1, "max": 10, "weight": 52600 },   //Blighted ancient ice sack
+          { "id": 24613, "min": 1, "max": 10, "weight": 105000 },   //Blighted entangle sack
+          { "id": 24615, "min": 1, "max": 10, "weight": 52600 },   //Blighted teleport spell sack
+          { "id": 24621, "min": 1, "max": 10, "weight": 52600 },   //Blighted vengeance sack
+          { "id": 24589, "min": 1, "max": 2, "weight": 78900 },   //Blighted manta ray
+          { "id": 24592, "min": 1, "max": 2, "weight": 78900 },   //Blighted anglerfish
+          { "id": 24595, "min": 1, "max": 2, "weight": 52600 },   //Blighted karambwan
+          { "id": 24598, "min": 1, "max": 1, "weight": 26300 },   //Blighted super restore(4)
+          { "id": 21802, "min": 1, "max": 1, "weight": 26300 }   //Revenant cave teleport
+        ]
+      },
+      {
+        "name": "Tertiary",
+        "weight": 1995,
+        "items": [
+          { "id": 6802, "min": 1, "max": 1, "weight": 200 }   //Hobgoblin champion scroll
         ]
       }
     ]
