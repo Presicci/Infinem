@@ -255,7 +255,8 @@ public class npc_drops extends DataFile {
                     if(i != -1)
                         tableName = tableName.substring(0, i);
                     if (tableName.toLowerCase().contains("pickpocket") || tableName.toLowerCase().contains("catacombs")
-                            || tableName.toLowerCase().contains("rare drop table") || tableName.toLowerCase().contains("gallery")) {
+                            || tableName.toLowerCase().contains("rare drop table") || tableName.toLowerCase().contains("gallery")
+                            || tableName.toLowerCase().contains("(on-task)")) {
                         continue;
                     }
                     tableName = tableName
@@ -406,7 +407,7 @@ public class npc_drops extends DataFile {
                     }
                     rarityPercent = rarityPercent.replaceAll("[^a-zA-Z0-9.]","");
                     double rarityDouble = Double.parseDouble(rarityPercent) / 100;
-                    rarityWeight = (int ) (100000 * rarityDouble);
+                    rarityWeight = (int ) (1000000 * rarityDouble);
                 }
                 /**
                  * Parse quantities
@@ -559,7 +560,7 @@ public class npc_drops extends DataFile {
                             for(int x = 0; x < table.items.length; x++) {
                                 DumpItem item = (DumpItem) table.items[x];
                                 tableWeights[i] += item.weight;
-                                if (!table.name.equalsIgnoreCase("tertiary")) {
+                                if (!table.name.equalsIgnoreCase("tertiary") && !table.name.equalsIgnoreCase("secondary")) {
                                     totalWeight += item.weight;
                                 }
                             }
@@ -572,12 +573,12 @@ public class npc_drops extends DataFile {
                     }
                 }
                 for(int i = 0; i < tables.size(); i++) {
-                    finalTableWeights[i] = (int) (((double) tableWeights[i] / (double) totalWeight) * 100000);
+                    finalTableWeights[i] = (int) (((double) tableWeights[i] / (double) totalWeight) * 10000000);
                 }
                 if (commonTables > 0) {
                     commonTableWeights = new int[commonTables];
                     for (int i = 0; i < commonTab.size(); i++) {
-                        commonTableWeights[i] = (int) (((double) commonTab.get(i).weight / (double) totalWeight) * 100000);
+                        commonTableWeights[i] = (int) (((double) commonTab.get(i).weight / (double) totalWeight) * 10000000);
                     }
                 }
             }
