@@ -262,6 +262,13 @@ public enum ConditionalNPCLootTable {
             },
             8612,8613
     ),
+    BASILISK_KNIGHT("On-task",
+            Slayer::isTask,
+            table -> {
+                table.modifyItemWeight(24268, 5D);
+            },
+            9293
+    ),
     ;
 
     @Getter private final String dropConditionName;
