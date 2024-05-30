@@ -44,8 +44,11 @@ public class Wilderness {
     public static ArrayList<Player> players = new ArrayList<>(500);
 
     private static boolean checkActive(Player player) {
-        if(player.wildernessLevel == -1 || player.getMovement().hasMoved())
+        if (player.wildernessLevel == -1 || player.getMovement().hasMoved()) {
             player.wildernessLevel = getLevel(player.getPosition());
+            if (player.wildernessLevel > 0) Config.IN_WILDERNESS.set(player, 1);
+            else Config.IN_WILDERNESS.set(player, 0);
+        }
         player.getBountyHunter().checkActive();
         return player.wildernessLevel > 0;
     }
