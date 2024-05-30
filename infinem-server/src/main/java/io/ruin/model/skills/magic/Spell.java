@@ -5,6 +5,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
+import io.ruin.model.skills.magic.spells.SpellSack;
 import io.ruin.model.stat.StatType;
 
 import java.util.function.BiConsumer;
@@ -22,6 +23,10 @@ public class Spell {
 
     public BiConsumer<Player, Entity> entityAction;
 
+    protected SpellSack getSpellSack() {
+        return null;
+    }
+
     public final void registerClick(int lvlReq, double xp, boolean useXpMultiplier, Item[] runeItems, BiPredicate<Player, Integer> check) {
         clickAction = (p, i) -> {
             if(p.isLocked() && !p.getMovement().hasTeleportUpdate())
@@ -29,7 +34,9 @@ public class Spell {
             if (!p.getStats().check(StatType.Magic, lvlReq, "cast this spell"))
                 return;
             RuneRemoval r = null;
-            if (runeItems != null && (r = RuneRemoval.get(p, runeItems)) == null) {
+            SpellSack sack = getSpellSack();
+            if ((sack == null || !sack.canCast(p) || (r = RuneRemoval.get(p, sack.getSack())) == null)
+                    && (runeItems != null && (r = RuneRemoval.get(p, runeItems)) == null)) {
                 p.sendMessage("You don't have enough runes to cast this spell.");
                 return;
             }
@@ -46,6 +53,7 @@ public class Spell {
             if (!p.getStats().check(StatType.Magic, lvlReq, "cast this spell"))
                 return;
             RuneRemoval r = null;
+            SpellSack sack = getSpellSack();
             if (runeItems != null && (r = RuneRemoval.get(p, runeItems)) == null) {
                 p.sendMessage("You don't have enough runes to cast this spell.");
                 return;
@@ -63,6 +71,7 @@ public class Spell {
             if (!p.getStats().check(StatType.Magic, lvlReq, "cast this spell"))
                 return;
             RuneRemoval r = null;
+            SpellSack sack = getSpellSack();
             if (runeItems != null && (r = RuneRemoval.get(p, runeItems)) == null) {
                 p.sendMessage("You don't have enough runes to cast this spell.");
                 return;

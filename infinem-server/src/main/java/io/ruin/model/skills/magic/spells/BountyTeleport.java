@@ -13,6 +13,10 @@ import java.util.List;
 
 public class BountyTeleport extends Spell {
 
+    protected SpellSack getSpellSack() {
+        return SpellSack.TELEPORT_SPELL;
+    }
+
     public BountyTeleport() {
         Item[] runes = {Rune.LAW.toItem(1), Rune.DEATH.toItem(1), Rune.CHAOS.toItem(1)};
         registerClick(85, 45.0, false, runes, BountyTeleport::cast);

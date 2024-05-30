@@ -4,6 +4,7 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.rune.Rune;
+import io.ruin.model.skills.magic.spells.SpellSack;
 import io.ruin.model.skills.magic.spells.TargetSpell;
 import io.ruin.model.stat.StatType;
 
@@ -12,6 +13,10 @@ public class Teleblock extends TargetSpell {
     private static final Projectile LAND_PROJECTILE = new Projectile(1299, 43, 31, 46, 85, 0, 16, 64);
 
     private static final Projectile MISS_PROJECTILE = new Projectile(1300, 43, 31, 46, 85, 0, 16, 64);
+
+    protected SpellSack getSpellSack() {
+        return SpellSack.TELEPORT_SPELL;
+    }
 
     public Teleblock() {
         setLvlReq(85);

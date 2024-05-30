@@ -160,7 +160,9 @@ public class TargetSpell extends Spell {
                     entity.player.sendMessage("You need to complete the Mage Arena miniquest to cast this spell.");
                     return false;
                 }
-                if(runeItems != null && (r = RuneRemoval.get(entity.player, runeItems)) == null) {
+                SpellSack sack = getSpellSack();
+                if ((sack == null || !sack.canCast(entity.player) || (r = RuneRemoval.get(entity.player, sack.getSack())) == null)
+                        && (runeItems != null && (r = RuneRemoval.get(entity.player, runeItems)) == null)) {
                     entity.player.sendMessage("You don't have enough runes to cast this spell.");
                     TabCombat.resetAutocast(entity.player);
                     return false;

@@ -8,6 +8,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
+import io.ruin.model.skills.magic.spells.SpellSack;
 import io.ruin.model.stat.StatType;
 import io.ruin.process.tickevent.TickEvent;
 import io.ruin.process.tickevent.TickEventType;
@@ -17,6 +18,10 @@ public class Vengeance extends Spell {
     public Vengeance() {
         Item[] runes = {Rune.DEATH.toItem(2), Rune.ASTRAL.toItem(4), Rune.EARTH.toItem(10)};
         registerClick(94, 112.0, false, runes, Vengeance::cast);
+    }
+
+    protected SpellSack getSpellSack() {
+        return SpellSack.VENGEANCE;
     }
 
     public static boolean cast(Player player, Integer i) {

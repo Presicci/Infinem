@@ -2,9 +2,14 @@ package io.ruin.model.skills.magic.spells.modern;
 
 import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.rune.Rune;
+import io.ruin.model.skills.magic.spells.SpellSack;
 import io.ruin.model.skills.magic.spells.TargetSpell;
 
 public class Entangle extends RootSpell {
+
+    protected SpellSack getSpellSack() {
+        return SpellSack.ENTANGLE;
+    }
 
     public Entangle() {
         super(15);

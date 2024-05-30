@@ -2,8 +2,13 @@ package io.ruin.model.skills.magic.spells.modern;
 
 import io.ruin.model.map.Projectile;
 import io.ruin.model.skills.magic.rune.Rune;
+import io.ruin.model.skills.magic.spells.SpellSack;
 
 public class Bind extends RootSpell {
+
+    protected SpellSack getSpellSack() {
+        return SpellSack.ENTANGLE;
+    }
 
     public Bind() {
         super(5);
