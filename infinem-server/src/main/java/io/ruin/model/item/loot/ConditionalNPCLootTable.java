@@ -228,7 +228,7 @@ public enum ConditionalNPCLootTable {
             table -> {
                 table.modifyItemWeight(Items.GIANT_KEY, 2D);
             },
-            2103
+            2098, 2099, 2100, 2101, 2102, 2103
     ),
     ;
 
