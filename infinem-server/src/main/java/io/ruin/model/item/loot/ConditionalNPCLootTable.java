@@ -230,6 +230,20 @@ public enum ConditionalNPCLootTable {
             },
             2098, 2099, 2100, 2101, 2102, 2103
     ),
+    MOSS_GIANTS_WILDERNESS("Wilderness",
+            (player, npc) -> player.wildernessLevel > 0,
+            table -> {
+                table.modifyItemWeight(22374, 2.5D);
+            },
+            2090, 2091, 2092, 2093, 3851, 3852, 7262, 8736
+    ),
+    MOSS_GIANTS_TASK("On-task",
+            Slayer::isTask,
+            table -> {
+                table.modifyItemWeight(22374, 2.5D);
+            },
+            2090, 2091, 2092, 2093, 3851, 3852, 7262, 8736
+    ),
     ;
 
     @Getter private final String dropConditionName;
