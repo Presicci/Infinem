@@ -66,14 +66,7 @@ public class NPCDrops {
         /*
          * Drop table loots
          */
-        LootTable t = def.lootTable;
-        List<ConditionalNPCLootTable> conditionalTables = ConditionalNPCLootTable.LOADED_TABLES.getOrDefault(npc.getId(), Collections.emptyList());
-        for (ConditionalNPCLootTable table : conditionalTables) {
-            if (table.getCondition().test(pKiller, npc)) {
-                t = table.getNewTable();
-                break;
-            }
-        }
+        LootTable t = ConditionalNPCLootTable.testAndApplyAllModifications(pKiller, npc);
         if(t != null) {
             int rolls = DoubleDrops.getRolls(killer.player, npc);
             if (npc.isSuperior) {
