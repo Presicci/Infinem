@@ -248,6 +248,13 @@ public enum ConditionalNPCLootTable {
             },
             8610, 8611
     ),
+    HYDRA_TASK("On-task",
+            Slayer::isTask,
+            table -> {
+                table.modifyTableWeight("Pre-roll", 5D);
+            },
+            8609
+    ),
     ;
 
     @Getter private final String dropConditionName;
