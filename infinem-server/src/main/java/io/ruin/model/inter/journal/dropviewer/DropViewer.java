@@ -1,7 +1,9 @@
 package io.ruin.model.inter.journal.dropviewer;
 
+import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Tuple;
 import io.ruin.model.inter.actions.DefaultAction;
+import io.ruin.model.item.loot.ConditionalNPCLootTable;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.api.utils.AttributeKey;
@@ -42,6 +44,24 @@ public class DropViewer {
         DropViewerSearch.sendEntries(player);
     }
 
+    private static void displayDropsWithConditionals(Player player, int id, String name) {
+        NPCDefinition def = NPCDefinition.get(id);
+        int activeModifiers = player.getTemporaryAttributeIntOrZero("DROPVIEWER_MODI");
+        LootTable lootTable = def.lootTable.copy();
+        if (!ConditionalNPCLootTable.LOADED_TABLES.containsKey(id)) displayDrops(player, id, name);
+        int index = 1;
+        for (ConditionalNPCLootTable table : ConditionalNPCLootTable.LOADED_TABLES.get(id)) {
+            if ((activeModifiers & index) == index) table.modifyTable(lootTable);
+            index *= 2;
+        }
+        DropViewerResult petDrop = null;
+        if(def.combatInfo != null && def.combatInfo.pet != null) {
+            petDrop = new DropViewerResultPet(def.combatInfo.pet, def.combatInfo.pet.dropAverage);
+        }
+        List<DropViewerResult> drops = calculateDrops(petDrop, name, lootTable);
+        sendResults(player, id, name, drops, false);
+    }
+
     private static void displayDrops(Player player, int id, String name) {
         NPCDefinition def = NPCDefinition.get(id);
         if (def.lootTable == null) {
@@ -52,14 +72,21 @@ public class DropViewer {
         if(def.combatInfo != null && def.combatInfo.pet != null) {
             petDrop = new DropViewerResultPet(def.combatInfo.pet, def.combatInfo.pet.dropAverage);
         }
-        displayDrops(petDrop, player, name, def.lootTable);
+        displayDrops(petDrop, player, id, name, def.lootTable);
     }
 
     private static void displayDrops(Player player, String name, LootTable lootTable) {
-        displayDrops(null, player, name, lootTable);
+        displayDrops(null, player, -1, name, lootTable);
     }
 
-    private static void displayDrops(DropViewerResult petDrop, Player player, String name, LootTable lootTable) {
+    private static void displayDrops(DropViewerResult petDrop, Player player, int id, String name, LootTable lootTable) {
+        player.removeTemporaryAttribute("DROPVIEWER_MODI");
+        List<DropViewerResult> drops = calculateDrops(petDrop, name, lootTable);
+        if (drops.isEmpty()) return;
+        sendResults(player, id, name, drops, true);
+    }
+
+    private static List<DropViewerResult> calculateDrops(DropViewerResult petDrop, String name, LootTable lootTable) {
         List<DropViewerResult> drops = new ArrayList<>();
         double totalTablesWeight = lootTable.totalWeight;
         if(lootTable.tables != null) {
@@ -123,21 +150,23 @@ public class DropViewer {
             if (petDrop != null) {
                 drops.add(0, petDrop);
             }
-            sendResults(player, name, drops);
         }
+        return drops;
     }
 
-    private static void sendResults(Player player, String name, List<DropViewerResult> drops) {
+    private static void sendResults(Player player, int id, String name, List<DropViewerResult> drops, boolean resetScroll) {
         player.getPacketSender().sendClientScript(227, "is", 1000 << 16 | 1, name);
-        player.getPacketSender().sendClientScript(9004, "is", drops.size(), buildDropString(drops));
+        player.getPacketSender().sendClientScript(9004, "iis", drops.size(), resetScroll ? 1 : 0, buildDropString(drops));
         int slot = 1;
         for (DropViewerResult drop : drops) {
             Item item = drop.getItem();
             player.getPacketSender().sendClientScript(9006, "iiii", 1000 << 16 | 24, slot, item.getId(), item.getAmount());
             slot += 5;
         }
+        sendModifiers(player, id);
         player.putTemporaryAttribute("DROPVIEWER_DROPS", drops);
         player.putTemporaryAttribute("DROPVIEWER_NAME", name);
+        player.putTemporaryAttribute("DROPVIEWER_ID", id);
     }
 
     private static List<Item> getGroupDrop(int item, String name) {
@@ -199,6 +228,7 @@ public class DropViewer {
             if (result instanceof DropViewerResultCommon) {
                 player.putTemporaryAttribute("DROPVIEWER_LAST", drops);
                 player.putTemporaryAttribute("DROPVIEWER_LAST_NAME", player.getTemporaryAttributeOrDefault("DROPVIEWER_NAME", ""));
+                player.putTemporaryAttribute("DROPVIEWER_LAST_ID", player.getTemporaryAttributeOrDefault("DROPVIEWER_ID", -1));
                 LootTable.CommonTables table = ((DropViewerResultCommon) result).getCommonTable();
                 displayDrops(player, table.name, new LootTable().addTable(1, table.items));
                 player.getPacketSender().setHidden(Interface.DROP_VIEWER, 32, false);
@@ -207,6 +237,31 @@ public class DropViewer {
             }
         } else if (option == 10 && itemId > -1) {
             new Item(itemId).examine(player);
+        }
+    }
+
+    private static void clickModifier(Player player, int bit) {
+        player.putTemporaryAttribute("DROPVIEWER_MODI", NumberUtils.toggleBit(player.getTemporaryAttributeOrDefault("DROPVIEWER_MODI", 0), bit));
+        int id = player.getTemporaryAttributeOrDefault("DROPVIEWER_ID", -1);
+        String name = player.getTemporaryAttributeOrDefault("DROPVIEWER_NAME", "");
+        displayDropsWithConditionals(player, id, name);
+    }
+
+    private static void sendModifiers(Player player, int id) {
+        if (id > -1 && ConditionalNPCLootTable.LOADED_TABLES.containsKey(id)) {
+            int activeModifiers = player.getTemporaryAttributeIntOrZero("DROPVIEWER_MODI");
+            StringBuilder sb = new StringBuilder();
+            int index = 1;
+            for (ConditionalNPCLootTable table : ConditionalNPCLootTable.LOADED_TABLES.get(id)) {
+                if (index > 1) sb.append("|");
+                sb.append(table.getDropConditionName());
+                sb.append("|");
+                sb.append((activeModifiers & index) == index ? "1" : "0");
+                index *= 2;
+            }
+            player.getPacketSender().sendClientScript(9000, "is", 1, sb.toString());
+        } else {
+            player.getPacketSender().sendClientScript(9000, "is", 0, "");
         }
     }
 
@@ -230,10 +285,14 @@ public class DropViewer {
             h.actions[32] = (SimpleAction) player -> {
                 List<DropViewerResult> drops = player.getTemporaryAttributeOrDefault("DROPVIEWER_LAST", new ArrayList<>());
                 String name = player.getTemporaryAttributeOrDefault("DROPVIEWER_LAST_NAME", "");
+                int id = player.getTemporaryAttributeOrDefault("DROPVIEWER_LAST_ID", -1);
                 if (drops == null || drops.isEmpty()) return;
-                sendResults(player, name, drops);
+                sendResults(player, id, name, drops, true);
                 player.getPacketSender().setHidden(Interface.DROP_VIEWER, 32, true);
             };
+            h.actions[34] = (SimpleAction) player -> clickModifier(player, 1);
+            h.actions[35] = (SimpleAction) player -> clickModifier(player, 2);
+            h.actions[36] = (SimpleAction) player -> clickModifier(player, 4);
         });
     }
 }
