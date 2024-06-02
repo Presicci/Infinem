@@ -1197,7 +1197,7 @@ public class PlayerCombat extends Combat {
                         else if (player.getGameMode().isIronMan())
                             new GroundItem(item).owner(pKiller).position(player.getPosition()).droppedByIron(player).spawn();
                         else if (pKiller.getGameMode().isIronMan())
-                            new GroundItem(item).owner(player).position(player.getPosition()).spawn();
+                            new GroundItem(item).owner(pKiller).position(player.getPosition()).ironPlayerKill().spawn();
                         else
                             new GroundItem(item).owner(pKiller).position(player.getPosition()).spawn();
                     });

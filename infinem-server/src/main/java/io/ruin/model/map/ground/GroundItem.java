@@ -23,6 +23,8 @@ public class GroundItem {
 
     public int droppedByIron = -1;
 
+    public boolean ironPlayerKill = false;
+
     public int id;
 
     public int amount;
@@ -69,6 +71,11 @@ public class GroundItem {
 
     public GroundItem droppedByIron(int ownerId) {
         this.droppedByIron = ownerId;
+        return this;
+    }
+
+    public GroundItem ironPlayerKill() {
+        this.ironPlayerKill = true;
         return this;
     }
 
@@ -181,6 +188,10 @@ public class GroundItem {
                 && (droppedByIron == -1 || droppedByIron != player.getUserId())
                 && originalOwner != -1 && originalOwner != player.getUserId()) {
             player.sendMessage("Ironmen cannot pick up items dropped by or for other players.");
+            return false;
+        }
+        if (player.getGameMode().isIronMan() && ironPlayerKill) {
+            player.sendMessage("Ironmen cannot pick up items from a player kill.");
             return false;
         }
         if (player.getDuel().stage >= 4) {
