@@ -21,7 +21,7 @@ public class GroundItem {
 
     public int activeOwner = -1;
 
-    public int diedToIron = -1;
+    public int droppedByIron = -1;
 
     public int id;
 
@@ -63,12 +63,12 @@ public class GroundItem {
         return this;
     }
 
-    public GroundItem diedToIron(Player player) {
-        return diedToIron(player.getUserId());
+    public GroundItem droppedByIron(Player player) {
+        return droppedByIron(player.getUserId());
     }
 
-    public GroundItem diedToIron(int ownerId) {
-        this.diedToIron = ownerId;
+    public GroundItem droppedByIron(int ownerId) {
+        this.droppedByIron = ownerId;
         return this;
     }
 
@@ -177,7 +177,9 @@ public class GroundItem {
             System.out.println("Can't pick up item not spawned for you.");
             return false;
         }
-        if (player.getGameMode().isIronMan() && originalOwner != -1 && originalOwner != player.getUserId()) {
+        if (player.getGameMode().isIronMan()
+                && (droppedByIron == -1 || droppedByIron != player.getUserId())
+                && originalOwner != -1 && originalOwner != player.getUserId()) {
             player.sendMessage("Ironmen cannot pick up items dropped by or for other players.");
             return false;
         }
