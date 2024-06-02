@@ -177,9 +177,6 @@ public class GroundItem {
             System.out.println("Can't pick up item not spawned for you.");
             return false;
         }
-        if (diedToIron != -1 && diedToIron != player.getUserId()) {
-            return false;
-        }
         if (player.getGameMode().isIronMan() && originalOwner != -1 && originalOwner != player.getUserId()) {
             player.sendMessage("Ironmen cannot pick up items dropped by or for other players.");
             return false;

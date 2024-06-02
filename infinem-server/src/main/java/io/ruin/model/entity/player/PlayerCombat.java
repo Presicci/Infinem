@@ -1195,7 +1195,7 @@ public class PlayerCombat extends Combat {
                         if (pKiller == null || !def.tradeable)
                             new GroundItem(item).owner(player).position(player.getPosition()).spawn(60);
                         else if (pKiller.getGameMode().isIronMan())
-                            new GroundItem(item).owner(player).position(player.getPosition()).diedToIron(player).spawn(1);
+                            new GroundItem(item).owner(player).position(player.getPosition()).spawn();
                         else
                             new GroundItem(item).owner(pKiller).position(player.getPosition()).spawn();
                     });
