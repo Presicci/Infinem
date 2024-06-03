@@ -31,7 +31,7 @@ import static io.ruin.cache.ItemID.COINS_995;
 public class IKODInterface {
 
     public static void open(Player player) {
-        if(player.isVisibleInterface(Interface.ITEMS_KEPT_ON_DEATH))
+        if (player.isVisibleInterface(Interface.ITEMS_KEPT_ON_DEATH))
             player.closeInterface(InterfaceType.MAIN);
         player.openInterface(InterfaceType.MAIN, Interface.ITEMS_KEPT_ON_DEATH);
 
@@ -113,7 +113,7 @@ public class IKODInterface {
             return true;
         if (item.getDef().breakId != 0)
             return true;
-        if(item.getDef().combinedFrom != null)
+        if (item.getDef().combinedFrom != null)
             return true;
         if (item.getDef().upgradedFrom != null) {
             ItemDefinition broken = ItemDefinition.get(item.getDef().upgradedFrom.regularId);
@@ -125,7 +125,7 @@ public class IKODInterface {
     //todo - still want to clean this up
     public static void forLostItem(Player player, Killer killer, Consumer<Item> dropConsumer) {
         ArrayList<Item> items = getItems(player);
-        if(items.isEmpty())
+        if (items.isEmpty())
             return;
         player.getInventory().clear();
         player.getEquipment().clear();
@@ -133,110 +133,43 @@ public class IKODInterface {
         ArrayList<Item> loseItems = new ArrayList<>(items.size());
         ArrayList<Item> keepItems = new ArrayList<>();
         int keepCountRemaining = getKeepCount(player.getCombat().isSkulled(), false, player.getPrayer().isActive(Prayer.PROTECT_ITEM));
-        global: for(Item item : items) {
+        global: for (Item item : items) {
             boolean lootingBag = isLootingBag(item);
             // UIM lose everything on death
             if (player.getGameMode().isUltimateIronman() && !lootingBag) {
                 loseItems.add(item);
                 continue;
             }
-            /* attempt to protect */
-            if(keepCountRemaining > 0 && allowProtect(player, item)) {
+            // Attempt to protect the item
+            if (keepCountRemaining > 0 && allowProtect(player, item)) {
+                // If player is in wilderness, drop ether always
+                if (player.wildernessLevel > 0) {
+                    if (IKODChargeable.VIGGORAS_CHAINMACE.isCharged(item)) {
+                        loseItems.add(new Item(21820, IKODChargeable.VIGGORAS_CHAINMACE.uncharge(item)));
+                    } else if (IKODChargeable.CRAWS_BOW.isCharged(item)) {
+                        loseItems.add(new Item(21820, IKODChargeable.CRAWS_BOW.uncharge(item)));
+                    } else if (IKODChargeable.THAMMARONS_SCEPTRE.isCharged(item)) {
+                        loseItems.add(new Item(21820, IKODChargeable.THAMMARONS_SCEPTRE.uncharge(item)));
+                    }
+                }
                 int keepAmount = Math.min(item.getAmount(), keepCountRemaining);
                 keepItems.add(new Item(item.getId(), keepAmount, item.copyOfAttributes()));
                 keepCountRemaining -= keepAmount;
                 item.incrementAmount(-keepAmount);
-                // If player is in wilderness, drop ether always
-                if (player.wildernessLevel > 0) {
-                    /* viggora's chainmace */
-                    if (item.getId() == 22545) {
-                        int etherAmount = AttributeExtensions.getCharges(item);
-                        if (etherAmount > 0)
-                            loseItems.add(new Item(21820, etherAmount));
-                        item.setId(22542);
-                        AttributeExtensions.setCharges(item, 0);
-                    }
-                    /* craw's bow */
-                    if (item.getId() == 22550) {
-                        int etherAmount = AttributeExtensions.getCharges(item);
-                        if (etherAmount > 0)
-                            loseItems.add(new Item(21820, etherAmount));
-                        item.setId(22547);
-                        AttributeExtensions.setCharges(item, 0);
-                    }
-                    /* thammarons's sceptre */
-                    if (item.getId() == 22555) {
-                        int etherAmount = AttributeExtensions.getCharges(item);
-                        if (etherAmount > 0)
-                            loseItems.add(new Item(21820, etherAmount));
-                        item.setId(22552);
-                        AttributeExtensions.setCharges(item, 0);
-                    }
-                }
-                if(item.getAmount() == 0)
+                System.out.println("Keeping: " + item.getId() + ", " + keepAmount + "; " + keepCountRemaining + " remaining");
+                if (item.getAmount() == 0)
                     continue;
             }
-
-            // Ferocious Gloves
-            if (item.getId() == 22981) {
-                item.setId(22983);
-                loseItems.add(item);
-                continue;
+            // Uncharge chargeable items
+            for (IKODChargeable chargeable : IKODChargeable.values()) {
+                if (chargeable.isCharged(item) && chargeable.test(player, killer)) {
+                    loseItems.add(new Item(chargeable.getChargeItem(), chargeable.uncharge(item)));
+                    loseItems.add(item);
+                    continue global;
+                }
             }
-            /* serpentine helm */
-            if (item.getDef().breakId == 12929) {
-                int scalesAmount = AttributeExtensions.getCharges(item);
-                if (scalesAmount > 0)
-                    loseItems.add(new Item(12934, scalesAmount));
-                item.setId(12929);
-                AttributeExtensions.setCharges(item, 0);
-                loseItems.add(item);
-                continue;
-            }
-            /* toxic blowpipe */
-            if (item.getId() == 12926) {
-                Blowpipe.Dart dart = Blowpipe.getDart(item);
-                if (dart != Blowpipe.Dart.NONE)
-                    loseItems.add(new Item(dart.id, Blowpipe.getDartAmount(item)));
-                int scales = Blowpipe.getScalesAmount(item);
-                if (scales > 0)
-                    loseItems.add(new Item(12934, scales));
-                AttributeExtensions.setCharges(item, 0);
-                item.setId(12924);
-                loseItems.add(item);
-                continue;
-            }
-            /* bracelet of ethereum */
-            if (item.getDef().breakId == 21817) {
-                int etherAmount = AttributeExtensions.getCharges(item);
-                if (etherAmount > 0)
-                    loseItems.add(new Item(21820, etherAmount));
-                AttributeExtensions.setCharges(item, 0);
-                item.setId(21817);
-                loseItems.add(item);
-                continue;
-            }
-            /* tome of fire */
-            if (item.getId() == 20714) {
-                int charges = AttributeExtensions.getCharges(item);
-                if (charges > 0)
-                    loseItems.add(new Item(20718, Math.max(1, charges / 20)));
-                AttributeExtensions.setCharges(item, 0);
-                item.setId(20716);
-                loseItems.add(item);
-                continue;
-            }
-            /* toxic staff of the dead */
-            if (item.getDef().breakId == 12902) {
-                int scalesAmount = AttributeExtensions.getCharges(item);
-                if (scalesAmount > 0)
-                    loseItems.add(new Item(12934, scalesAmount));
-                item.setId(12902);
-                AttributeExtensions.setCharges(item, 0);
-                loseItems.add(item);
-                continue;
-            }
-            if (item.getDef().name.toLowerCase().contains("chinchompa") && Objects.isNull(killer)) {
+            // Delete chinchompas
+            if (item.getDef().name.toLowerCase().contains("chinchompa") && killer == null) {
                 continue;
             }
             for (int[] i : degradeOnDeath) {
@@ -247,7 +180,10 @@ public class IKODInterface {
                     continue global;
                 }
             }
-            if (player.wildernessLevel > 0 || player.pvpAttackZone) {
+            /*
+              PvP Death
+             */
+            if ((player.wildernessLevel > 0 || player.pvpAttackZone) && killer != null) {
                 for (int[] i : degradeOnDeathInPVP) {
                     if (item.getId() == i[0]) {
                         item.setId(i[1]);
@@ -257,69 +193,19 @@ public class IKODInterface {
                     }
                 }
                 /* rune pouch */
-                if(item.getId() == 12791) {
-                    for(Item rune : player.getRunePouch().getItems()) {
-                        if(rune != null)
+                if (item.getId() == 12791) {
+                    for (Item rune : player.getRunePouch().getItems()) {
+                        if (rune != null)
                             loseItems.add(rune);
                     }
                     player.getRunePouch().clear();
                     continue;
                 }
-                /* corrupted staff
-                if (item.getId() == CorruptedStaff.CHARGED) {
-                    int essenceAmt = AttributeExtensions.getCharges(item);
-                    if (essenceAmt > 0)
-                        loseItems.add(new Item(CorruptedStaff.ESSENCE, essenceAmt));
-                    item.setId(CorruptedStaff.UNCHARGED);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }
-                /* corrupted staff
-                if (item.getId() == CorruptedJavelin.CHARGED) {
-                    int essenceAmt = AttributeExtensions.getCharges(item);
-                    if (essenceAmt > 0)
-                        loseItems.add(new Item(CorruptedJavelin.ESSENCE, essenceAmt));
-                    item.setId(CorruptedJavelin.UNCHARGED);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }*/
-                /* viggora's chainmace */
-                if (item.getId() == 22545) {
-                    int etherAmount = AttributeExtensions.getCharges(item);
-                    if (etherAmount > 0)
-                        loseItems.add(new Item(21820, etherAmount));
-                    item.setId(22542);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }
-                /* craw's bow */
-                if (item.getId() == 22550) {
-                    int etherAmount = AttributeExtensions.getCharges(item);
-                    if (etherAmount > 0)
-                        loseItems.add(new Item(21820, etherAmount));
-                    item.setId(22547);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }
-                /* thammarons's sceptre */
-                if (item.getId() == 22555) {
-                    int etherAmount = AttributeExtensions.getCharges(item);
-                    if (etherAmount > 0)
-                        loseItems.add(new Item(21820, etherAmount));
-                    item.setId(22552);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }
             }
-            
+
             /* pet */
             Pet pet = item.getDef().pet;
-            if(pet != null) {
+            if (pet != null) {
                 keepItems.add(item);
                 continue;
             }
@@ -327,7 +213,7 @@ public class IKODInterface {
 
             /* breakable items */
             ItemBreaking breakable = item.getDef().breakTo;
-            if(breakable != null && !breakable.freeFromShops) {
+            if (breakable != null && !breakable.freeFromShops) {
                 //if not in wilderness keep the item breakable
                 if (player.wildernessLevel < 1 && !player.pvpAttackZone) {
                     keepItems.add(item);
@@ -345,7 +231,7 @@ public class IKODInterface {
                 }
 
                 //if in wilderness and broken item not tradeable, keep that item broken version
-                if(!brokenDef.tradeable) {
+                if (!brokenDef.tradeable) {
                     item.setId(brokenDef.id);
                     keepItems.add(item);
                     continue;
@@ -361,7 +247,7 @@ public class IKODInterface {
             }
             /* upgraded items */
             ItemUpgrading upgrade = item.getDef().upgradedFrom;
-            if(upgrade != null) {
+            if (upgrade != null) {
                 //if not in wilderness keep the item upgradeable
                 if (player.wildernessLevel < 1 && !player.pvpAttackZone) {
                     keepItems.add(item);
@@ -389,8 +275,8 @@ public class IKODInterface {
                 }
 
                 //if in wilderness and below lvl 20 and regular item not tradeable, keep that item
-                if(!regularDef.tradeable) {
-                    if(player.wildernessLevel > 0 && player.wildernessLevel < 30  || player.pvpAttackZone) {
+                if (!regularDef.tradeable) {
+                    if (player.wildernessLevel > 0 && player.wildernessLevel < 30 || player.pvpAttackZone) {
                         keepItems.add(new Item(upgrade.regularId, 1, item.copyOfAttributes()));
                     }
                     continue;
@@ -403,7 +289,7 @@ public class IKODInterface {
             }
             /* combined items */
             ItemCombining combined = item.getDef().combinedFrom;
-            if(combined != null && (player.wildernessLevel > 0 || player.pvpAttackZone)) {
+            if (combined != null && (player.wildernessLevel > 0 || player.pvpAttackZone)) {
                 if (Objects.isNull(killer)) {
                     keepItems.add(item);
                 } else if (ItemDefinition.get(combined.mainId).tradeable) {
@@ -441,24 +327,24 @@ public class IKODInterface {
 
             loseItems.add(item);
         }
-        if(currency.getAmount() > 0)
+        if (currency.getAmount() > 0)
             loseItems.add(currency);
         int size = Math.min(keepItems.size(), player.getInventory().getItems().length);
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
             player.getInventory().set(i, keepItems.get(i));
-        for(Item dropItem : loseItems)
+        for (Item dropItem : loseItems)
             dropConsumer.accept(dropItem);
-        if(killer == null)
+        if (killer == null)
             Loggers.logDangerousDeath(player.getUserId(), player.getName(), player.getIp(), -1, "", "", keepItems, loseItems);
         else
             Loggers.logDangerousDeath(player.getUserId(), player.getName(), player.getIp(), killer.player.getUserId(), killer.player.getName(), killer.player.getIp(), keepItems, loseItems);
     }
 
     public static int getKeepCount(boolean skulled, boolean ultimateIronman, boolean protectingItem) {
-        if(ultimateIronman)
+        if (ultimateIronman)
             return 0;
         int keepCount = skulled ? 0 : 3;
-        if(protectingItem)
+        if (protectingItem)
             keepCount++;
         return keepCount;
     }
@@ -466,28 +352,27 @@ public class IKODInterface {
     public static ArrayList<Item> getItems(Player player) {
         int count = player.getInventory().getCount() + player.getEquipment().getCount();
         ArrayList<Item> list = new ArrayList<>(count);
-        if(count > 0) {
-            for(Item item : player.getInventory().getItems()) {
-                if(item != null)
+        if (count > 0) {
+            for (Item item : player.getInventory().getItems()) {
+                if (item != null)
                     list.add(item.copy());
             }
-            for(Item item : player.getEquipment().getItems()) {
-                if(item != null)
+            for (Item item : player.getEquipment().getItems()) {
+                if (item != null)
                     list.add(item.copy());
             }
-
             list.sort((i1, i2) -> Integer.compare(i2.getDef().protectValue, i1.getDef().protectValue));
         }
         return list;
     }
 
     private static long getValue(Item item) {
-        if(item.getId() == BLOOD_MONEY)
+        if (item.getId() == BLOOD_MONEY)
             return item.getAmount();
-        if(item.getId() == COINS_995)
+        if (item.getId() == COINS_995)
             return item.getAmount();
         long price = item.getDef().protectValue;
-        if(price <= 0 && ((price = item.getDef().highAlchValue)) <= 0)
+        if (price <= 0 && ((price = item.getDef().highAlchValue)) <= 0)
             return 0;
         return item.getAmount() * price;
     }
@@ -495,7 +380,7 @@ public class IKODInterface {
     static {
         EnumDefinition map = EnumDefinition.get(879);
         //for(int id : map.keys)
-         //   ItemDef.get(id).neverProtect = id != 13190 && id != 13192; //true when not bonds
+        //   ItemDef.get(id).neverProtect = id != 13190 && id != 13192; //true when not bonds
 
         /**
          * Custom protect items
@@ -557,5 +442,9 @@ public class IKODInterface {
 
     private static boolean isLootingBag(Item item) {
         return item.getId() == 11941 || item.getId() == 22586;
+    }
+
+    protected static boolean isPlayerDeath(Player player, Killer killer) {
+        return (player.wildernessLevel > 0 || player.pvpAttackZone) && killer != null;
     }
 }
