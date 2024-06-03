@@ -175,12 +175,21 @@ public class IKODInterface {
                 keepItems.add(item);
                 continue;
             }
+            // Process any death prompt actions
+            ItemDropPrompt dropPrompt = item.getDef().getCustomValueOrDefault("DROP_PROMPT", null);
+            if (dropPrompt != null) {
+                dropPrompt.getAction().accept(item);
+            }
 
-
-            /* breakable items */
+            /*
+             * Breakable items
+             * If not in wilderness, do not break item
+             * If in wilderness, break item
+             * Reward killer with repair cost
+             */
             ItemBreaking breakable = item.getDef().breakTo;
-            if (breakable != null && !breakable.freeFromShops) {
-                //if not in wilderness keep the item breakable
+            if (breakable != null) {
+                // If not in the wilderness, keep item without breaking
                 if (player.wildernessLevel < 1 && !player.pvpAttackZone) {
                     keepItems.add(item);
                     continue;
@@ -190,28 +199,25 @@ public class IKODInterface {
                     System.out.println("Broken Def is null: " + breakable.brokenId);
                     continue;
                 }
-
-                //if killed by player add coins to drop
+                // If PvP death, reward killer with coins equal to repair cost
                 if (!Objects.isNull(killer)) {
                     currency.incrementAmount(breakable.coinRepairCost);
                 }
-
-                //if in wilderness and broken item not tradeable, keep that item broken version
+                // Keep broken item if it is untradeable
                 if (!brokenDef.tradeable) {
                     item.setId(brokenDef.id);
                     keepItems.add(item);
                     continue;
                 }
-                //if in wilderness and item is tradeable set item to broken id
+                // Lose broken item if it is tradeable
                 if (player.wildernessLevel > 0 || player.pvpAttackZone) {
                     item.setId(brokenDef.id);
                 }
             }
-            ItemDropPrompt dropPrompt = item.getDef().getCustomValueOrDefault("DROP_PROMPT", null);
-            if (dropPrompt != null) {
-                dropPrompt.getAction().accept(item);
-            }
-            /* upgraded items */
+
+            /*
+             * Upgraded items
+             */
             ItemUpgrading upgrade = item.getDef().upgradedFrom;
             if (upgrade != null) {
                 //if not in wilderness keep the item upgradeable
@@ -253,7 +259,10 @@ public class IKODInterface {
                     item.setId(regularDef.id);
                 }
             }
-            /* combined items */
+
+            /*
+             * Combined items
+             */
             ItemCombining combined = item.getDef().combinedFrom;
             if (combined != null && (player.wildernessLevel > 0 || player.pvpAttackZone)) {
                 if (Objects.isNull(killer)) {
@@ -275,7 +284,7 @@ public class IKODInterface {
                 continue;
             }
 
-            /* keep untradeables */ // Ignore auto-keeping looting bag.
+            // Keep all untradeables, except looting bag
             if (!isLootingBag(item) && !item.getDef().tradeable) {
                 keepItems.add(item);
                 continue;
