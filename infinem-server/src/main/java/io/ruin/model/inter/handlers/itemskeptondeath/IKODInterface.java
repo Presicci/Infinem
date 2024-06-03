@@ -85,17 +85,6 @@ public class IKODInterface {
     );
 
     /**
-     * Items that, if lost on death, degrade fully, regardless of how you die or where.
-     */
-    private static final int[][] degradeOnDeath = {
-            { 12809, 12804 },    // Saradomin's blessed sword
-            { 12006, 12004 },     // Abyssal tentacle
-            { 11283, 11284 },    // Dragonfire shield
-            { 21633, 21634 },    // ancienct wyvern shield
-            { 22002, 22003 }     // dragonfire ward
-    };
-
-    /**
      * Items that, if lost on death, degrade fully if death is to another player.
      */
     private static final int[][] degradeOnDeathInPVP = {
@@ -163,7 +152,11 @@ public class IKODInterface {
             // Uncharge chargeable items
             for (IKODChargeable chargeable : IKODChargeable.values()) {
                 if (chargeable.isCharged(item) && chargeable.test(player, killer)) {
-                    loseItems.add(new Item(chargeable.getChargeItem(), chargeable.uncharge(item)));
+                    if (chargeable.getChargeItem() != -1) {
+                        loseItems.add(new Item(chargeable.getChargeItem(), chargeable.uncharge(item)));
+                    } else {
+                        chargeable.uncharge(item);
+                    }
                     loseItems.add(item);
                     continue global;
                 }
@@ -171,14 +164,6 @@ public class IKODInterface {
             // Delete chinchompas
             if (item.getDef().name.toLowerCase().contains("chinchompa") && killer == null) {
                 continue;
-            }
-            for (int[] i : degradeOnDeath) {
-                if (item.getId() == i[0]) {
-                    item.setId(i[1]);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue global;
-                }
             }
             /*
               PvP Death
@@ -192,7 +177,7 @@ public class IKODInterface {
                         continue global;
                     }
                 }
-                /* rune pouch */
+                // Drop runes from rune pouch, deletes rune pouch
                 if (item.getId() == 12791) {
                     for (Item rune : player.getRunePouch().getItems()) {
                         if (rune != null)
@@ -202,8 +187,7 @@ public class IKODInterface {
                     continue;
                 }
             }
-
-            /* pet */
+            // Always keep pets
             Pet pet = item.getDef().pet;
             if (pet != null) {
                 keepItems.add(item);

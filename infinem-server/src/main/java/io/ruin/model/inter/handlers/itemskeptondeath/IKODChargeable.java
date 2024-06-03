@@ -19,15 +19,28 @@ public enum IKODChargeable {
     TOXIC_BLOWPIPE(12926, 12924, 12934),
     TOXIC_STAFF_OF_THE_DEAD(12904, 12902, 12934),
     TOME_OF_FIRE(IKODInterface::isPlayerDeath, 20714, 20716, 20718, i -> Math.max(1, i / 20)),
-    FEROCIOUS_GLOVES(IKODInterface::isPlayerDeath, 22981, 22983, -1)
+    FEROCIOUS_GLOVES(IKODInterface::isPlayerDeath, 22981, 22983),
+    SARADOMINS_BLESSED_SWORD(12809, 12804),
+    ABYSSAL_TENTACLE(12006, 12004),
+    DRAGONFIRE_SHIELD(11283, 11284),
+    ANCIENT_WYVERN_SHIELD(21633, 21634),
+    DRAGONFIRE_WARD(22002, 22003),
     ;
 
     private final BiPredicate<Player, Killer> condition;
     private final int chargedId, unchargedId, chargeItem;
     private final IntFunction<Integer> chargeMultiplier;
 
+    IKODChargeable(int chargedId, int unchargedId) {
+        this(null, chargedId, unchargedId, -1, null);
+    }
+
     IKODChargeable(int chargedId, int unchargedId, int chargeItem) {
         this(null, chargedId, unchargedId, chargeItem, null);
+    }
+
+    IKODChargeable(BiPredicate<Player, Killer> condition, int chargedId, int unchargedId) {
+        this(condition, chargedId, unchargedId, -1, null);
     }
 
     IKODChargeable(BiPredicate<Player, Killer> condition, int chargedId, int unchargedId, int chargeItem) {
