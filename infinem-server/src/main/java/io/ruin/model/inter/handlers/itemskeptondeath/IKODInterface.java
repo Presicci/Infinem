@@ -231,10 +231,7 @@ public class IKODInterface {
 
                 //Always keep these upgrades in wilderness
                 if (upgrade.name().toLowerCase().contains("slayer")
-                        || upgrade.name().toLowerCase().contains("salve")
-                        || upgrade.equals(ItemImbuing.GUTHIX_CAPE)
-                        || upgrade.equals(ItemImbuing.ZAMORAK_CAPE)
-                        || upgrade.equals(ItemImbuing.SARADOMIN_CAPE)) {
+                        || upgrade.name().toLowerCase().contains("salve")) {
                     keepItems.add(item);
                     continue;
                 }
