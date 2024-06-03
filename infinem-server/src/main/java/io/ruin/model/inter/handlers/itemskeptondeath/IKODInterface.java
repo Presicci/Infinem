@@ -84,15 +84,6 @@ public class IKODInterface {
             12904, 11907, 12899, 22545
     );
 
-    /**
-     * Items that, if lost on death, degrade fully if death is to another player.
-     */
-    private static final int[][] degradeOnDeathInPVP = {
-            { 20655, 19550 },    // Ring of suffering (r)
-            { 19710, 19550 },    // Ring of suffering (i)
-            { 20657, 19550 },    // Ring of suffering (ri)
-    };
-
     private static boolean allowProtect(Player player, Item item) {  // should this item be allowed to be 'saved'?
         if (item.getDef().neverProtect)
             return false;
@@ -145,7 +136,6 @@ public class IKODInterface {
                 keepItems.add(new Item(item.getId(), keepAmount, item.copyOfAttributes()));
                 keepCountRemaining -= keepAmount;
                 item.incrementAmount(-keepAmount);
-                System.out.println("Keeping: " + item.getId() + ", " + keepAmount + "; " + keepCountRemaining + " remaining");
                 if (item.getAmount() == 0)
                     continue;
             }
@@ -169,14 +159,6 @@ public class IKODInterface {
               PvP Death
              */
             if ((player.wildernessLevel > 0 || player.pvpAttackZone) && killer != null) {
-                for (int[] i : degradeOnDeathInPVP) {
-                    if (item.getId() == i[0]) {
-                        item.setId(i[1]);
-                        AttributeExtensions.setCharges(item, 0);
-                        loseItems.add(item);
-                        continue global;
-                    }
-                }
                 // Drop runes from rune pouch, deletes rune pouch
                 if (item.getId() == 12791) {
                     for (Item rune : player.getRunePouch().getItems()) {

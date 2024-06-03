@@ -25,6 +25,8 @@ public enum IKODChargeable {
     DRAGONFIRE_SHIELD(11283, 11284),
     ANCIENT_WYVERN_SHIELD(21633, 21634),
     DRAGONFIRE_WARD(22002, 22003),
+    RING_OF_SUFFERING_R(IKODInterface::isPlayerDeath, 20655, 19550),
+    RING_OF_SUFFERING_RI(IKODInterface::isPlayerDeath, 20657, 19550),
     ;
 
     private final BiPredicate<Player, Killer> condition;
