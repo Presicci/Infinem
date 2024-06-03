@@ -19,7 +19,7 @@ import io.ruin.model.item.actions.ItemGroundItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.impl.ItemBreaking;
 import io.ruin.model.item.actions.impl.ItemSet;
-import io.ruin.model.item.actions.impl.ItemUpgrading;
+import io.ruin.model.item.actions.impl.ItemImbuing;
 import io.ruin.model.item.containers.equipment.EquipAction;
 import io.ruin.model.item.containers.equipment.UnequipAction;
 import io.ruin.model.item.pet.Pet;
@@ -221,7 +221,7 @@ public class ItemDefinition {
 
     public ItemBreaking brokenFrom;
     public ItemBreaking breakTo;
-    public ItemUpgrading upgradedFrom;
+    public ItemImbuing upgradedFrom;
     public ItemCombining combinedFrom;
     public int breakId;
 

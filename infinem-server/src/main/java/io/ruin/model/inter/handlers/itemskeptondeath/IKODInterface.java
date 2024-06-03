@@ -13,11 +13,9 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
 import io.ruin.model.item.ItemDropPrompt;
 import io.ruin.model.item.actions.impl.ItemBreaking;
-import io.ruin.model.item.actions.impl.ItemUpgrading;
+import io.ruin.model.item.actions.impl.ItemImbuing;
 import io.ruin.model.item.pet.Pet;
-import io.ruin.model.item.actions.impl.chargable.Blowpipe;
 import io.ruin.model.item.actions.impl.combine.ItemCombining;
-import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.skills.prayer.Prayer;
 import io.ruin.services.Loggers;
 
@@ -218,9 +216,9 @@ public class IKODInterface {
             /*
              * Upgraded items
              */
-            ItemUpgrading upgrade = item.getDef().upgradedFrom;
+            ItemImbuing upgrade = item.getDef().upgradedFrom;
             if (upgrade != null) {
-                //if not in wilderness keep the item upgradeable
+                // If not in the wilderness, keep item without removing upgrade
                 if (player.wildernessLevel < 1 && !player.pvpAttackZone) {
                     keepItems.add(item);
                     continue;
@@ -234,9 +232,9 @@ public class IKODInterface {
                 //Always keep these upgrades in wilderness
                 if (upgrade.name().toLowerCase().contains("slayer")
                         || upgrade.name().toLowerCase().contains("salve")
-                        || upgrade.equals(ItemUpgrading.GUTHIX_CAPE)
-                        || upgrade.equals(ItemUpgrading.ZAMORAK_CAPE)
-                        || upgrade.equals(ItemUpgrading.SARADOMIN_CAPE)) {
+                        || upgrade.equals(ItemImbuing.GUTHIX_CAPE)
+                        || upgrade.equals(ItemImbuing.ZAMORAK_CAPE)
+                        || upgrade.equals(ItemImbuing.SARADOMIN_CAPE)) {
                     keepItems.add(item);
                     continue;
                 }
