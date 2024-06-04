@@ -9,6 +9,7 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.impl.ItemImbuing;
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;
@@ -32,21 +33,21 @@ public class NightmareZoneRewards {
     public static void imbueItem(Player player, int id) {
         if (!player.getInventory().contains(id))
             return;
-        NMZUpgradable upgradable = NMZUpgradable.getUpgradable(id);
-        if (upgradable == null) {
+        ItemImbuing imbueable = ItemImbuing.getImbueable(id);
+        if (imbueable == null) {
             player.sendMessage("This item currently cannot be upgraded, if this is a mistake, please contact staff.");
             return;
         }
         String name = new Item(id).getDef().name;
         int points = Config.NMZ_REWARD_POINTS_TOTAL.get(player);
-        if (points < upgradable.price) {
-            player.sendMessage("You must have at least " + NumberUtils.formatNumber(upgradable.price) + " NMZ Points to upgrade your " + name);
+        if (points < imbueable.nmzCost) {
+            player.sendMessage("You must have at least " + NumberUtils.formatNumber(imbueable.nmzCost) + " NMZ Points to upgrade your " + name);
             return;
         }
-        Config.NMZ_REWARD_POINTS_TOTAL.increment(player, -upgradable.price);
+        Config.NMZ_REWARD_POINTS_TOTAL.increment(player, -imbueable.nmzCost);
         player.getInventory().remove(id, 1);
-        player.getInventory().add(new Item(upgradable.upgraded));
-        player.sendMessage("You have upgraded your " + name + " for " + NumberUtils.formatNumber(upgradable.price) + " points.");
+        player.getInventory().add(new Item(imbueable.nmzImbue));
+        player.sendMessage("You have upgraded your " + name + " for " + NumberUtils.formatNumber(imbueable.nmzCost) + " points.");
         refresh(player);
     }
 
@@ -128,8 +129,8 @@ public class NightmareZoneRewards {
              * *
              */
             ArrayList<Item> upgradables = new ArrayList<Item>();
-            for (NMZUpgradable upgradable : NMZUpgradable.values()) {
-                upgradables.add( new Item(upgradable.id,upgradable.price));
+            for (ItemImbuing imbueable : ItemImbuing.values()) {
+                upgradables.add( new Item(imbueable.regularId, imbueable.nmzCost));
             }
             for (NMZResource resource : NMZResource.values()) {
                 upgradables.add( new Item(resource.id,resource.price));
