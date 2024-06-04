@@ -236,11 +236,6 @@ public class IKODInterface {
                     continue;
                 }
 
-                //if killed by player add coins to drop
-                if (!Objects.isNull(killer)) {
-                    currency.incrementAmount((long) (upgrade.coinUpgradeCost * .05));
-                }
-
                 //if in wilderness and below lvl 20 and regular item not tradeable, keep that item
                 if (!regularDef.tradeable) {
                     if (player.wildernessLevel > 0 && player.wildernessLevel < 30 || player.pvpAttackZone) {
