@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl;
 
 import io.ruin.cache.def.ItemDefinition;
 
-public enum ItemImbuing {
+public enum ItemImbue {
     BLACK_MASK(8921, 11784, 1_250_000),
     SLAYER_HELMET(11864, 11865, 1_250_000),
     BLACK_SLAYER_HELMET(19639, 19641, 1_250_000),
@@ -22,7 +22,7 @@ public enum ItemImbuing {
 
     public final int regularId, nmzImbue, nmzCost;
 
-    ItemImbuing(int regularId, int nmzImbue, int nmzCost) {
+    ItemImbue(int regularId, int nmzImbue, int nmzCost) {
         this.regularId = regularId;
         this.nmzImbue = nmzImbue;
         this.nmzCost = nmzCost;
@@ -34,10 +34,10 @@ public enum ItemImbuing {
         upgradeDef.upgradedFrom = this;
     }
 
-    public static ItemImbuing getImbueable(int id) {
-        for (ItemImbuing imbueable : values())
-            if (imbueable.regularId == id)
-                return imbueable;
+    public static ItemImbue getImbue(int id) {
+        for (ItemImbue imbue : values())
+            if (imbue.regularId == id)
+                return imbue;
         return null;
     }
 }

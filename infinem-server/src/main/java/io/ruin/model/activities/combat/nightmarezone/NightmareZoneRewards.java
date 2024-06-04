@@ -9,7 +9,7 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
-import io.ruin.model.item.actions.impl.ItemImbuing;
+import io.ruin.model.item.actions.impl.ItemImbue;
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;
@@ -33,21 +33,21 @@ public class NightmareZoneRewards {
     public static void imbueItem(Player player, int id) {
         if (!player.getInventory().contains(id))
             return;
-        ItemImbuing imbueable = ItemImbuing.getImbueable(id);
-        if (imbueable == null) {
+        ItemImbue imbue = ItemImbue.getImbue(id);
+        if (imbue == null) {
             player.sendMessage("This item currently cannot be upgraded, if this is a mistake, please contact staff.");
             return;
         }
         String name = new Item(id).getDef().name;
         int points = Config.NMZ_REWARD_POINTS_TOTAL.get(player);
-        if (points < imbueable.nmzCost) {
-            player.sendMessage("You must have at least " + NumberUtils.formatNumber(imbueable.nmzCost) + " NMZ Points to upgrade your " + name);
+        if (points < imbue.nmzCost) {
+            player.sendMessage("You must have at least " + NumberUtils.formatNumber(imbue.nmzCost) + " NMZ Points to upgrade your " + name);
             return;
         }
-        Config.NMZ_REWARD_POINTS_TOTAL.increment(player, -imbueable.nmzCost);
+        Config.NMZ_REWARD_POINTS_TOTAL.increment(player, -imbue.nmzCost);
         player.getInventory().remove(id, 1);
-        player.getInventory().add(new Item(imbueable.nmzImbue));
-        player.sendMessage("You have upgraded your " + name + " for " + NumberUtils.formatNumber(imbueable.nmzCost) + " points.");
+        player.getInventory().add(new Item(imbue.nmzImbue));
+        player.sendMessage("You have upgraded your " + name + " for " + NumberUtils.formatNumber(imbue.nmzCost) + " points.");
         refresh(player);
     }
 
@@ -129,8 +129,8 @@ public class NightmareZoneRewards {
              * *
              */
             ArrayList<Item> upgradables = new ArrayList<Item>();
-            for (ItemImbuing imbueable : ItemImbuing.values()) {
-                upgradables.add( new Item(imbueable.regularId, imbueable.nmzCost));
+            for (ItemImbue imbue : ItemImbue.values()) {
+                upgradables.add( new Item(imbue.regularId, imbue.nmzCost));
             }
             for (NMZResource resource : NMZResource.values()) {
                 upgradables.add( new Item(resource.id,resource.price));

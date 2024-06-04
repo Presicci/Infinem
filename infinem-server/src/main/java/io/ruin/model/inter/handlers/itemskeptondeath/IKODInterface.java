@@ -13,7 +13,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
 import io.ruin.model.item.ItemDropPrompt;
 import io.ruin.model.item.actions.impl.ItemBreaking;
-import io.ruin.model.item.actions.impl.ItemImbuing;
+import io.ruin.model.item.actions.impl.ItemImbue;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.combine.ItemCombining;
 import io.ruin.model.skills.prayer.Prayer;
@@ -216,7 +216,7 @@ public class IKODInterface {
             /*
              * Upgraded items
              */
-            ItemImbuing upgrade = item.getDef().upgradedFrom;
+            ItemImbue upgrade = item.getDef().upgradedFrom;
             if (upgrade != null) {
                 // If not in the wilderness, keep item without removing upgrade
                 if (player.wildernessLevel < 1 && !player.pvpAttackZone) {
