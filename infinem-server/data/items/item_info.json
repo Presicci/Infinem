@@ -109828,6 +109828,21 @@
     "equip_slot": 1,
     "release": "The monkey scampers back to the warmth of its crate."
   },
+  { // Black mask (i)
+    "id": 25276,
+    "tradeable": false,
+    "examine": "An inert-seeming cave horror mask.",
+    "weight": 10.0,
+	"protect_value": 712557,
+    "equip_slot": 0,
+    "defence_level": 10,
+    "strength_level": 20,
+    "stab_defence_bonus": 9,
+    "slash_defence_bonus": 10,
+    "crush_defence_bonus": 8,
+    "magic_defence_bonus": -1,
+    "range_defence_bonus": 9
+  },
   { // Reinforced goggles
     "id": 24942,
     "tradeable": false,
@@ -109996,6 +110011,21 @@
     "weight": 0.0002,
 	"protect_value": 400,
     "equip_slot": 2
+  },
+  { // Black mask (i)
+    "id": 26781,
+    "tradeable": false,
+    "examine": "An inert-seeming cave horror mask.",
+    "weight": 10.0,
+	"protect_value": 712557,
+    "equip_slot": 0,
+    "defence_level": 10,
+    "strength_level": 20,
+    "stab_defence_bonus": 9,
+    "slash_defence_bonus": 10,
+    "crush_defence_bonus": 8,
+    "magic_defence_bonus": -1,
+    "range_defence_bonus": 9
   },
   { // Venator bow
     "id": 27610,
