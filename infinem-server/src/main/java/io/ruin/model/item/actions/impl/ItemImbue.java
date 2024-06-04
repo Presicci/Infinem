@@ -2,6 +2,8 @@ package io.ruin.model.item.actions.impl;
 
 import io.ruin.cache.def.ItemDefinition;
 
+import java.util.Arrays;
+
 public enum ItemImbue {
     BLACK_MASK(8921, 11784, 1_250_000, 25276, 500, 26781),
     SLAYER_HELMET(11864, 11865, 1_250_000, 25177, 500, 26674),
@@ -39,10 +41,12 @@ public enum ItemImbue {
         this.emirImbue = emirImbue;
 
         ItemDefinition regularDef = ItemDefinition.get(regularId);
-        ItemDefinition upgradeDef = ItemDefinition.get(nmzImbue);
-        if(upgradeDef.protectValue < regularDef.protectValue)
-            upgradeDef.protectValue = regularDef.protectValue;
-        upgradeDef.upgradedFrom = this;
+        for (int imbuedId : Arrays.asList(nmzImbue, soulWarsImbue, emirImbue)) {
+            ItemDefinition upgradeDef = ItemDefinition.get(imbuedId);
+            if(upgradeDef.protectValue < regularDef.protectValue)
+                upgradeDef.protectValue = regularDef.protectValue;
+            upgradeDef.upgradedFrom = this;
+        }
     }
 
     public static ItemImbue getImbue(int id) {
