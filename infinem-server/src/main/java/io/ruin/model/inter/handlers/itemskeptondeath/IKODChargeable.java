@@ -3,6 +3,7 @@ package io.ruin.model.inter.handlers.itemskeptondeath;
 import io.ruin.model.combat.Killer;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import lombok.Getter;
 
@@ -27,6 +28,17 @@ public enum IKODChargeable {
     DRAGONFIRE_WARD(22002, 22003),
     RING_OF_SUFFERING_R(IKODInterface::isPlayerDeath, 20655, 19550),
     RING_OF_SUFFERING_RI(IKODInterface::isPlayerDeath, 20657, 19550),
+    SLAYER_HELM(IKODInterface::isPlayerDeath, Items.SLAYER_HELMET, Items.BLACK_MASK),
+    BLACK_SLAYER_HELM(IKODInterface::isPlayerDeath, Items.BLACK_SLAYER_HELMET, Items.BLACK_MASK),
+    GREEN_SLAYER_HELM(IKODInterface::isPlayerDeath, Items.GREEN_SLAYER_HELMET, Items.BLACK_MASK),
+    RED_SLAYER_HELM(IKODInterface::isPlayerDeath, Items.RED_SLAYER_HELMET, Items.BLACK_MASK),
+    PURPLE_SLAYER_HELM(IKODInterface::isPlayerDeath, Items.PURPLE_SLAYER_HELMET, Items.BLACK_MASK),
+    TURQUOISE_SLAYER_HELM(IKODInterface::isPlayerDeath, 21888, Items.BLACK_MASK),
+    HYDRA_SLAYER_HELM(IKODInterface::isPlayerDeath, 23073, Items.BLACK_MASK),
+    TWISTED_SLAYER_HELM(IKODInterface::isPlayerDeath, 24370, Items.BLACK_MASK),
+    TZTOK_SLAYER_HELM(IKODInterface::isPlayerDeath, 25898, Items.BLACK_MASK),
+    VAMPYRIC_SLAYER_HELM(IKODInterface::isPlayerDeath, 25904, Items.BLACK_MASK),
+    TZKAL_SLAYER_HELM(IKODInterface::isPlayerDeath, 25910, Items.BLACK_MASK),
     ;
 
     private final BiPredicate<Player, Killer> condition;
