@@ -137,18 +137,6 @@ public class IKODInterface {
                 if (item.getAmount() == 0)
                     continue;
             }
-            // Uncharge chargeable items
-            for (IKODChargeable chargeable : IKODChargeable.values()) {
-                if (chargeable.isCharged(item) && chargeable.test(player, killer)) {
-                    if (chargeable.getChargeItem() != -1) {
-                        loseItems.add(new Item(chargeable.getChargeItem(), chargeable.uncharge(item)));
-                    } else {
-                        chargeable.uncharge(item);
-                    }
-                    loseItems.add(item);
-                    continue global;
-                }
-            }
             // Delete chinchompas
             if (item.getDef().name.toLowerCase().contains("chinchompa") && killer == null) {
                 continue;
@@ -218,8 +206,8 @@ public class IKODInterface {
              */
             ItemImbue upgrade = item.getDef().upgradedFrom;
             if (upgrade != null) {
-                // If not in the wilderness, keep item without removing upgrade
-                if (player.wildernessLevel < 1 && !player.pvpAttackZone) {
+                // If not PvP death, keep imbue and item
+                if (!isPlayerDeath(player, killer)) {
                     keepItems.add(item);
                     continue;
                 }
@@ -228,18 +216,8 @@ public class IKODInterface {
                     System.out.println("Regular Def is null: " + upgrade.regularId);
                     continue;
                 }
-                //if in wilderness and below lvl 20 and regular item not tradeable, keep that item
-                if (!regularDef.tradeable) {
-                    if (player.wildernessLevel > 0 && player.wildernessLevel < 30 || player.pvpAttackZone) {
-                        keepItems.add(new Item(upgrade.regularId, 1, item.copyOfAttributes()));
-                    }
-                    continue;
-                }
-
-                //if in wilderness and item is tradeable set item to regular id
-                if (player.wildernessLevel > 0 || player.pvpAttackZone) {
-                    item.setId(regularDef.id);
-                }
+                // If PvP death, remove imbue
+                item.setId(regularDef.id);
             }
 
             /*
@@ -264,6 +242,19 @@ public class IKODInterface {
                     }
                 }
                 continue;
+            }
+
+            // Uncharge chargeable items
+            for (IKODChargeable chargeable : IKODChargeable.values()) {
+                if (chargeable.isCharged(item) && chargeable.test(player, killer)) {
+                    if (chargeable.getChargeItem() != -1) {
+                        loseItems.add(new Item(chargeable.getChargeItem(), chargeable.uncharge(item)));
+                    } else {
+                        chargeable.uncharge(item);
+                    }
+                    loseItems.add(item);
+                    continue global;
+                }
             }
 
             // Keep all untradeables, except looting bag
