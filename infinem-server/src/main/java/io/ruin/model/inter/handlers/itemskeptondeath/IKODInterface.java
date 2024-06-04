@@ -214,7 +214,7 @@ public class IKODInterface {
             }
 
             /*
-             * Upgraded items
+             * Imbued items
              */
             ItemImbue upgrade = item.getDef().upgradedFrom;
             if (upgrade != null) {
@@ -228,14 +228,6 @@ public class IKODInterface {
                     System.out.println("Regular Def is null: " + upgrade.regularId);
                     continue;
                 }
-
-                //Always keep these upgrades in wilderness
-                if (upgrade.name().toLowerCase().contains("slayer")
-                        || upgrade.name().toLowerCase().contains("salve")) {
-                    keepItems.add(item);
-                    continue;
-                }
-
                 //if in wilderness and below lvl 20 and regular item not tradeable, keep that item
                 if (!regularDef.tradeable) {
                     if (player.wildernessLevel > 0 && player.wildernessLevel < 30 || player.pvpAttackZone) {
