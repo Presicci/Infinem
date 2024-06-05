@@ -94,8 +94,7 @@ public class IKODInterface {
         if (item.getDef().combinedFrom != null)
             return true;
         if (item.getDef().upgradedFrom != null) {
-            ItemDefinition broken = ItemDefinition.get(item.getDef().upgradedFrom.regularId);
-            return broken.tradeable;
+            return true;
         }
         return item.getDef().tradeable || player.wildernessLevel > 20;
     }
@@ -204,16 +203,16 @@ public class IKODInterface {
             /*
              * Imbued items
              */
-            ItemImbue upgrade = item.getDef().upgradedFrom;
-            if (upgrade != null) {
+            ItemImbue imbue = item.getDef().upgradedFrom;
+            if (imbue != null) {
                 // If not PvP death, keep imbue and item
                 if (!isPlayerDeath(player, killer)) {
                     keepItems.add(item);
                     continue;
                 }
-                ItemDefinition regularDef = ItemDefinition.get(upgrade.regularId);
+                ItemDefinition regularDef = ItemDefinition.get(imbue.regularId);
                 if (regularDef == null) {
-                    System.out.println("Regular Def is null: " + upgrade.regularId);
+                    System.out.println("Regular Def is null: " + imbue.regularId);
                     continue;
                 }
                 // If PvP death, remove imbue
