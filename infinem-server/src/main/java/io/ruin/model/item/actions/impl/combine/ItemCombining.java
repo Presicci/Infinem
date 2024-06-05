@@ -75,6 +75,10 @@ public enum ItemCombining {
     SARADOMINS_LIGHT(Items.STAFF_OF_THE_DEAD, Items.SARADOMINS_LIGHT, Items.STAFF_OF_LIGHT, false),
     DRAGON_HUNTER_LANCE(Items.ZAMORAKIAN_HASTA, 22966, 22978, false),
     NEITIZNOT_FACEGUARD(Items.HELM_OF_NEITIZNOT, 24268, 24271, true, "Revert the helm back to its normal form and get the jaw back?"),
+    MAGMA_HELM(Items.SERPENTINE_HELM, 13201, 13199, true, "Revert the helm back to its normal form and get the mutagen back?"),
+    MAGMA_HELM_UNCHARGED(Items.SERPENTINE_HELM_UNCHARGED, 13201, 13198, true, "Revert the helm back to its normal form and get the mutagen back?"),
+    TANZANITE_HELM(Items.SERPENTINE_HELM, 13200, 13197, true, "Revert the helm back to its normal form and get the mutagen back?"),
+    TANZANITE_UNCHARGED(Items.SERPENTINE_HELM_UNCHARGED, 13200, 13196, true, "Revert the helm back to its normal form and get the mutagen back?"),
 
     /**
      * Shattered Relic League Cosmetics
@@ -142,6 +146,7 @@ public enum ItemCombining {
             ItemAction.registerInventory(kit.combinedId, "dismantle", (player, item) -> revert(player, item, kit));
             ItemAction.registerInventory(kit.combinedId, "revert", (player, item) -> revert(player, item, kit));
             ItemAction.registerInventory(kit.combinedId, "dismantle kit", (player, item) -> revert(player, item, kit));
+            ItemAction.registerInventory(kit.combinedId, "restore", (player, item) -> revert(player, item, kit));
             int combinedProtect = ItemDefinition.get(kit.combinedId).protectValue;
             int componentsProtect = Math.max(ItemDefinition.get(kit.mainId).protectValue, ItemDefinition.get(kit.accessoryId).protectValue);
             if (combinedProtect < componentsProtect)
