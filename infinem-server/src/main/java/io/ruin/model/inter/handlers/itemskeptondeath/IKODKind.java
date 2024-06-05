@@ -6,8 +6,8 @@ package io.ruin.model.inter.handlers.itemskeptondeath;
  */
 public enum IKODKind {
     Deleted(-1),
-    OtherKept(343),
-    OtherKeptDowngraded(323),
+    OtherKept(323),
+    OtherKeptDowngraded(343),
     Lost(367),
     LostDowngraded(369),
     LostGraveyardCoins(7531),
