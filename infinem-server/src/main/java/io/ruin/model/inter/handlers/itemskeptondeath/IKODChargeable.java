@@ -7,6 +7,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import lombok.Getter;
 
+import java.util.HashMap;
 import java.util.function.BiPredicate;
 import java.util.function.IntFunction;
 
@@ -92,5 +93,17 @@ public enum IKODChargeable {
         AttributeExtensions.setCharges(item, 0);
         if (chargeMultiplier != null) chargeAmt = chargeMultiplier.apply(chargeAmt);
         return chargeAmt;
+    }
+
+    protected static final HashMap<Integer, IKODChargeable> CHARGEABLES = new HashMap<>();
+
+    protected static boolean isChargeable(int itemId) {
+        return CHARGEABLES.containsKey(itemId);
+    }
+
+    static {
+        for (IKODChargeable chargeable : values()) {
+            CHARGEABLES.put(chargeable.chargedId, chargeable);
+        }
     }
 }
