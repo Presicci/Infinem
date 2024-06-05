@@ -8,6 +8,7 @@ public enum IKODKind {
     Deleted(-1),
     OtherKept(323),
     OtherKeptDowngraded(343),
+    OtherKeptDowngradedLostKit(7532),
     Lost(367),
     LostDowngraded(369),
     LostGraveyardCoins(7531),
