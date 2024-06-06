@@ -86,6 +86,7 @@ public enum ItemBreaking {
         this.brokenId = brokenId;
         this.coinRepairCost = coinRepairCost;
         ItemDefinition.get(fixedId).breakTo = this;
+        ItemDefinition.get(brokenId).brokenFrom = this;
     }
 
     static {
