@@ -20,29 +20,29 @@ public enum IKODChargeable {
     SERPENTINE_HELM(12931, 12929, 12934),
     TOXIC_BLOWPIPE(12926, 12924, 12934),
     TOXIC_STAFF_OF_THE_DEAD(12904, 12902, 12934),
-    TOME_OF_FIRE(IKODInterface::isPlayerDeath, 20714, 20716, 20718, i -> Math.max(1, i / 20)),
-    FEROCIOUS_GLOVES(IKODInterface::isPlayerDeath, 22981, 22983),
+    TOME_OF_FIRE(IKODChargeable::isPlayerDeath, 20714, 20716, 20718, i -> Math.max(1, i / 20)),
+    FEROCIOUS_GLOVES(IKODChargeable::isPlayerDeath, 22981, 22983),
     SARADOMINS_BLESSED_SWORD(12809, 12804),
     ABYSSAL_TENTACLE(12006, 12004),
     DRAGONFIRE_SHIELD(11283, 11284),
     ANCIENT_WYVERN_SHIELD(21633, 21634),
     DRAGONFIRE_WARD(22002, 22003),
-    RING_OF_SUFFERING_R(IKODInterface::isPlayerDeath, 20655, 19550),
-    RING_OF_SUFFERING_RI(IKODInterface::isPlayerDeath, 20657, 19550),
-    SLAYER_HELM(IKODInterface::isPlayerDeath, Items.SLAYER_HELMET, Items.BLACK_MASK),
-    BLACK_SLAYER_HELM(IKODInterface::isPlayerDeath, Items.BLACK_SLAYER_HELMET, Items.BLACK_MASK),
-    GREEN_SLAYER_HELM(IKODInterface::isPlayerDeath, Items.GREEN_SLAYER_HELMET, Items.BLACK_MASK),
-    RED_SLAYER_HELM(IKODInterface::isPlayerDeath, Items.RED_SLAYER_HELMET, Items.BLACK_MASK),
-    PURPLE_SLAYER_HELM(IKODInterface::isPlayerDeath, Items.PURPLE_SLAYER_HELMET, Items.BLACK_MASK),
-    TURQUOISE_SLAYER_HELM(IKODInterface::isPlayerDeath, 21888, Items.BLACK_MASK),
-    HYDRA_SLAYER_HELM(IKODInterface::isPlayerDeath, 23073, Items.BLACK_MASK),
-    TWISTED_SLAYER_HELM(IKODInterface::isPlayerDeath, 24370, Items.BLACK_MASK),
-    TZTOK_SLAYER_HELM(IKODInterface::isPlayerDeath, 25898, Items.BLACK_MASK),
-    VAMPYRIC_SLAYER_HELM(IKODInterface::isPlayerDeath, 25904, Items.BLACK_MASK),
-    TZKAL_SLAYER_HELM(IKODInterface::isPlayerDeath, 25910, Items.BLACK_MASK),
+    RING_OF_SUFFERING_R(IKODChargeable::isPlayerDeath, 20655, 19550),
+    RING_OF_SUFFERING_RI(IKODChargeable::isPlayerDeath, 20657, 19550),
+    SLAYER_HELM(IKODChargeable::isPlayerDeath, Items.SLAYER_HELMET, Items.BLACK_MASK),
+    BLACK_SLAYER_HELM(IKODChargeable::isPlayerDeath, Items.BLACK_SLAYER_HELMET, Items.BLACK_MASK),
+    GREEN_SLAYER_HELM(IKODChargeable::isPlayerDeath, Items.GREEN_SLAYER_HELMET, Items.BLACK_MASK),
+    RED_SLAYER_HELM(IKODChargeable::isPlayerDeath, Items.RED_SLAYER_HELMET, Items.BLACK_MASK),
+    PURPLE_SLAYER_HELM(IKODChargeable::isPlayerDeath, Items.PURPLE_SLAYER_HELMET, Items.BLACK_MASK),
+    TURQUOISE_SLAYER_HELM(IKODChargeable::isPlayerDeath, 21888, Items.BLACK_MASK),
+    HYDRA_SLAYER_HELM(IKODChargeable::isPlayerDeath, 23073, Items.BLACK_MASK),
+    TWISTED_SLAYER_HELM(IKODChargeable::isPlayerDeath, 24370, Items.BLACK_MASK),
+    TZTOK_SLAYER_HELM(IKODChargeable::isPlayerDeath, 25898, Items.BLACK_MASK),
+    VAMPYRIC_SLAYER_HELM(IKODChargeable::isPlayerDeath, 25904, Items.BLACK_MASK),
+    TZKAL_SLAYER_HELM(IKODChargeable::isPlayerDeath, 25910, Items.BLACK_MASK),
     ;
 
-    private final BiPredicate<Player, Killer> condition;
+    private final BiPredicate<Player, Boolean> condition;
     private final int chargedId, unchargedId, chargeItem;
     private final IntFunction<Integer> chargeMultiplier;
 
@@ -54,11 +54,11 @@ public enum IKODChargeable {
         this(null, chargedId, unchargedId, chargeItem, null);
     }
 
-    IKODChargeable(BiPredicate<Player, Killer> condition, int chargedId, int unchargedId) {
+    IKODChargeable(BiPredicate<Player, Boolean> condition, int chargedId, int unchargedId) {
         this(condition, chargedId, unchargedId, -1, null);
     }
 
-    IKODChargeable(BiPredicate<Player, Killer> condition, int chargedId, int unchargedId, int chargeItem) {
+    IKODChargeable(BiPredicate<Player, Boolean> condition, int chargedId, int unchargedId, int chargeItem) {
         this(condition, chargedId, unchargedId, chargeItem, null);
     }
 
@@ -66,7 +66,7 @@ public enum IKODChargeable {
         this(null, chargedId, unchargedId, chargeItem, chargeMultiplier);
     }
 
-    IKODChargeable(BiPredicate<Player, Killer> condition, int chargedId, int unchargedId, int chargeItem, IntFunction<Integer> chargeMultiplier) {
+    IKODChargeable(BiPredicate<Player, Boolean> condition, int chargedId, int unchargedId, int chargeItem, IntFunction<Integer> chargeMultiplier) {
         this.condition = condition;
         this.chargedId = chargedId;
         this.unchargedId = unchargedId;
@@ -74,9 +74,9 @@ public enum IKODChargeable {
         this.chargeMultiplier = chargeMultiplier;
     }
 
-    public boolean test(Player player, Killer killer) {
+    public boolean test(Player player, boolean playerKill) {
         if (condition == null) return true;
-        return condition.test(player, killer);
+        return condition.test(player, playerKill);
     }
 
     public boolean isCharged(Item item) {
@@ -95,7 +95,17 @@ public enum IKODChargeable {
         return chargeAmt;
     }
 
+    private static boolean isPlayerDeath(Player player, boolean playerKill) {
+        if (player == null) return playerKill;
+        return (player.wildernessLevel > 0 || player.pvpAttackZone) && playerKill;
+    }
+
     protected static final HashMap<Integer, IKODChargeable> CHARGEABLES = new HashMap<>();
+
+    protected static IKODChargeable getChargeable(int itemId) {
+        if (!isChargeable(itemId)) return null;
+        return CHARGEABLES.get(itemId);
+    }
 
     protected static boolean isChargeable(int itemId) {
         return CHARGEABLES.containsKey(itemId);
