@@ -21,11 +21,8 @@ public class TomeOfFire {
         ItemAction.registerEquipment(CHARGED, "check", TomeOfFire::check);
         ItemAction.registerInventory(CHARGED, "check", TomeOfFire::check);
 
-        ItemAction.registerInventory(CHARGED, "Add or Remove pages", TomeOfFire::addOrRemovePages);
-        ItemAction.registerEquipment(CHARGED, "Add or Remove pages", TomeOfFire::addOrRemovePages);
-
-        ItemAction.registerInventory(UNCHARGED, "Add pages", TomeOfFire::addPages);
-        ItemAction.registerEquipment(UNCHARGED, "Add pages", TomeOfFire::addPages);
+        ItemAction.registerInventory(CHARGED, "pages", TomeOfFire::addOrRemovePages);
+        ItemAction.registerEquipment(CHARGED, "pages", TomeOfFire::addOrRemovePages);
 
         ItemItemAction.register(CHARGED, BURNT_PAGE, (player, primary, secondary) -> addPages(player, primary));
         ItemItemAction.register(UNCHARGED, BURNT_PAGE, (player, primary, secondary) -> addPages(player, primary));
