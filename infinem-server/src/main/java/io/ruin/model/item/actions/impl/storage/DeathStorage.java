@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl.storage;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.handlers.itemskeptondeath.IKOD;
 import io.ruin.utility.Color;
 import io.ruin.model.combat.Killer;
@@ -214,17 +215,12 @@ public class DeathStorage extends ItemContainer {
         if (cost > 10000000) {
             cost = 10000000;
         }
-        if (player.isDiamond()) {           // 50% discount
-            cost = (long) (cost * 0.5f);
-        } else if (player.isRuby()) {       // 25% discount
-            cost = (long) (cost * 0.75f);
-        } else if (player.isEmerald()) {    // 20% discount
-            cost = (long) (cost * 0.8f);
-        } else if (player.isSapphire()) {   // 10% discount
-            cost = (long) (cost * 0.9f);
-        }
+        cost = (long) (cost * getDonatorCostMultiplier(player));
         return new Item(COINS_995, (int) cost);
+    }
 
+    public static float getDonatorCostMultiplier(Player player) {
+        return player.isDiamond() ? 0.5f : player.isRuby() ? 0.75f : player.isEmerald() ? 0.8f : player.isSapphire() ? 0.9f : 1f;
     }
 
     public void reset() {
