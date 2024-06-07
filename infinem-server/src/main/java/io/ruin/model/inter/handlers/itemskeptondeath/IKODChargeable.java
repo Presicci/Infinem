@@ -1,6 +1,5 @@
 package io.ruin.model.inter.handlers.itemskeptondeath;
 
-import io.ruin.model.combat.Killer;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
@@ -18,6 +17,8 @@ public enum IKODChargeable {
     THAMMARONS_SCEPTRE((p, k) -> p.wildernessLevel > 0, 22555, 22552, 21820),
     BRACELET_OF_ETHEREUM(21816, 21817, 21820),
     SERPENTINE_HELM(12931, 12929, 12934),
+    TANZANITE_HELM(13197, 13196, 12934),
+    MAGMA_HELM(13199, 13198, 12934),
     TOXIC_BLOWPIPE(12926, 12924, 12934),
     TOXIC_STAFF_OF_THE_DEAD(12904, 12902, 12934),
     TOME_OF_FIRE(IKODChargeable::isPlayerDeath, 20714, 20716, 20718, i -> Math.max(1, i / 20)),
@@ -40,6 +41,10 @@ public enum IKODChargeable {
     TZTOK_SLAYER_HELM(IKODChargeable::isPlayerDeath, 25898, Items.BLACK_MASK),
     VAMPYRIC_SLAYER_HELM(IKODChargeable::isPlayerDeath, 25904, Items.BLACK_MASK),
     TZKAL_SLAYER_HELM(IKODChargeable::isPlayerDeath, 25910, Items.BLACK_MASK),
+    TRIDENT_OF_THE_SEAS(IKODChargeable::isPlayerDeath, Items.TRIDENT_OF_THE_SEAS, Items.UNCHARGED_TRIDENT),
+    TRIDENT_OF_THE_SEAS_E(IKODChargeable::isPlayerDeath, 22288, 22290),
+    TRIDENT_OF_THE_SWAMP(IKODChargeable::isPlayerDeath, Items.TRIDENT_OF_THE_SWAMP, Items.UNCHARGED_TOXIC_TRIDENT),
+    TRIDENT_OF_THE_SWAMP_E(IKODChargeable::isPlayerDeath, 22292, 22294),
     ;
 
     private final BiPredicate<Player, Boolean> condition;
