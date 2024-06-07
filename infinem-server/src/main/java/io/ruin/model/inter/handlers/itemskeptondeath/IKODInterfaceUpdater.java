@@ -39,18 +39,13 @@ public class IKODInterfaceUpdater {
                 this.flags.wilderness ? 21 : 0,
                 this.flags.killedByAPlayer ? 1 : 0,
                 this.kept.kept.size(), this.keptIds[0], this.keptIds[1], this.keptIds[2], this.keptIds[3], "");
-
-
         ArrayList<Item> items = new ArrayList<>();
         ArrayList<Item> itemConfigs = new ArrayList<>();
-
         for (IKODItem item : this.kept.otherItems) {
             items.add(item.item);
             itemConfigs.add(new Item(item.kind.configItem, item.item.getAmount()));
         }
-
         player.getPacketSender().sendItems(584, items);
         player.getPacketSender().sendItems(468, itemConfigs);
-
     }
 }
