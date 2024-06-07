@@ -65,6 +65,7 @@ public class TomeOfFire {
     private static void removePages(Player player, Item tomeOfFire, int pagesToRemove, boolean emptyBook) {
         int charges = AttributeExtensions.getCharges(tomeOfFire);
         if (charges < 20) {
+            tomeOfFire.setId(UNCHARGED);
             player.sendMessage("Your Tome of fire doesn't have any pages to remove.");
             return;
         }
