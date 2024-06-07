@@ -194,6 +194,7 @@ public class item_info extends DataFile {
                 cooking_level, woodcutting_level, fletching_level, fishing_level, firemaking_level, crafting_level, smithing_level, mining_level,
                 herblore_level, agility_level, thieving_level, slayer_level, farming_level, runecrafting_level, hunter_level, construction_level;
         //neither is this...
+        @Expose public Integer[] bonuses;
         @Expose public Integer stab_attack_bonus, slash_attack_bonus, crush_attack_bonus, magic_attack_bonus, range_attack_bonus,
                 stab_defence_bonus, slash_defence_bonus, crush_defence_bonus, magic_defence_bonus, range_defence_bonus,
                 melee_strength_bonus, ranged_strength_bonus, magic_damage_bonus,

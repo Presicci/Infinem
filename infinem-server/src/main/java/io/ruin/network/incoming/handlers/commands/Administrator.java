@@ -10,6 +10,7 @@ import io.ruin.content.activities.event.TimedEventManager;
 import io.ruin.content.areas.wilderness.DeadmanChestEvent;
 import io.ruin.data.DataFile;
 import io.ruin.data.dumper.DropDumper;
+import io.ruin.data.dumper.ItemInfoDumper;
 import io.ruin.data.impl.dialogue.DialogueLoader;
 import io.ruin.data.impl.Help;
 import io.ruin.data.impl.items.item_info;
@@ -1811,6 +1812,15 @@ public class Administrator {
 
             case "impdrops": {
                 ImplingJar.BABY_IMPLING_JAR.getLootTable().showDrops(player, "Baby Impling");
+                return true;
+            }
+
+            case "dumpitem": {
+                ItemInfoDumper.dump(Integer.parseInt(args[0]));
+                return true;
+            }
+            case "dumpitems": {
+                ItemInfoDumper.dump(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
                 return true;
             }
 
