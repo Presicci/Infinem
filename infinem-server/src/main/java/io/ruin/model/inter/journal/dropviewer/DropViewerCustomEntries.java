@@ -8,6 +8,7 @@ import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.actions.impl.InfernalEel;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
+import io.ruin.model.item.loot.RareDropTable;
 import io.ruin.model.map.object.actions.impl.chests.*;
 import io.ruin.model.skills.thieving.PickPocket;
 import io.ruin.model.skills.thieving.Stall;
@@ -131,6 +132,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Pest Control Minerals", PCReward.MINERAL_PACK_LOOT),
             new DropViewerEntry("Pest Control Seeds", PCReward.SEED_PACK_LOOT),
             new DropViewerEntry("Infernal Eel", InfernalEel.LOOT_TABLE),
-            new DropViewerEntry("Sulliuscep", Woodcutting.SULLIUSCEP_LOOT)
+            new DropViewerEntry("Sulliuscep", Woodcutting.SULLIUSCEP_LOOT),
+            new DropViewerEntry("Rare Drop Table", RareDropTable.RARE_DROP_TABLE)
     ).collect(Collectors.toCollection(ArrayList::new));
 }
