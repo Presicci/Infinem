@@ -5,11 +5,11 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.google.common.collect.Lists;
 import com.google.gson.GsonBuilder;
 import io.ruin.api.utils.*;
-import io.ruin.cache.*;
-import io.ruin.cache.EnumMap;
+import io.ruin.cache.def.*;
 import io.ruin.content.activities.event.TimedEventManager;
 import io.ruin.content.areas.wilderness.DeadmanChestEvent;
 import io.ruin.data.DataFile;
+import io.ruin.data.dumper.DropDumper;
 import io.ruin.data.impl.dialogue.DialogueLoader;
 import io.ruin.data.impl.Help;
 import io.ruin.data.impl.items.item_info;
@@ -35,7 +35,6 @@ import io.ruin.model.activities.wilderness.StaffBounty;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.relics.Relic;
-import io.ruin.model.content.tasksystem.tasks.areas.rewards.MisthalinReward;
 import io.ruin.model.content.transportation.relics.DungeonHub;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.npc.NPC;
@@ -59,7 +58,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.GoldCasket;
 import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.actions.impl.ItemBreaking;
-import io.ruin.model.item.actions.impl.ItemUpgrading;
+import io.ruin.model.item.actions.impl.ItemImbue;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.item.attributes.AttributeTypes;
 import io.ruin.model.item.containers.Equipment;
@@ -323,8 +322,8 @@ public class Administrator {
                 if(query.length() > l) {
                     String search = query.substring(l).toLowerCase();
                     //int found = 0;
-                    ItemDef exactMatch = null;
-                    for(ItemDef def : ItemDef.cached.values()) {
+                    ItemDefinition exactMatch = null;
+                    for(ItemDefinition def : ItemDefinition.cached.values()) {
                         if(def == null || def.name == null)
                             continue;
                         if(def.isNote() || def.isPlaceholder())
@@ -345,7 +344,7 @@ public class Administrator {
                     }
                     return true;
                 }
-                player.itemSearch("Select an item to spawn", false, itemId -> {
+                player.itemSearch("Select an item to spawn:", true, itemId -> {
                     Item item = new Item(itemId, 1);
                     player.integerInput("How many would you like to spawn:", amt -> {
                         if(item.getDef().stackable)
@@ -471,14 +470,14 @@ public class Administrator {
                 if (isCommunityManager) {
                     return false;
                 }
-                for (ItemUpgrading upgrade : ItemUpgrading.values()) {
-                    player.getInventory().add(upgrade.upgradeId, 1);
+                for (ItemImbue upgrade : ItemImbue.values()) {
+                    player.getInventory().add(upgrade.nmzImbue, 1);
                 }
                 return true;
 
             case "itemdef": {
                 int itemId = Integer.parseInt(args[0]);
-                ItemDef def = ItemDef.get(itemId);
+                ItemDefinition def = ItemDefinition.get(itemId);
                 if (def == null) {
                     player.sendMessage("Invalid item definition for fileId "+ itemId +".");
                 } else {
@@ -616,26 +615,14 @@ public class Administrator {
                 return true;
             }
 
-            case "conenum": {
-                int id = Integer.parseInt(args[0]);
-                for (int i = 0; i < 2000; i++) {
-                    EnumMap map = EnumMap.get(i);
-                    if (map.keys != null && map.intValues != null && map.length > 0
-                            && (map.ints().containsValue(id) || map.ints().containsKey(id))) {
-                        player.sendMessage("Found in enum " + i);
-                    }
-                }
-                return true;
-            }
-
             case "enum": {
-                EnumMap map = EnumMap.get(Integer.parseInt(args[0]));
+                EnumDefinition map = EnumDefinition.get(Integer.parseInt(args[0]));
                 System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(map));
                 return true;
             }
 
             case "struct": {
-                Struct struct = Struct.get(Integer.parseInt(args[0]));
+                StructDefinition struct = StructDefinition.get(Integer.parseInt(args[0]));
                 System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(struct));
                 return true;
             }
@@ -685,10 +672,10 @@ public class Administrator {
 
             case "conobj": {
                 int id = Integer.parseInt(args[0]);
-                ItemDef itemDef = ItemDef.get(id);
-                player.sendMessage("Looking for objects for item " + itemDef.id + "...");
-                List<ObjectDef> found = ObjectDef.LOADED.values().stream()
-                        .filter(objectDef -> objectDef != null && objectDef.modelIds != null && Arrays.stream(objectDef.modelIds).anyMatch(model -> model == itemDef.inventoryModel))
+                ItemDefinition itemDefinition = ItemDefinition.get(id);
+                player.sendMessage("Looking for objects for item " + itemDefinition.id + "...");
+                List<ObjectDefinition> found = ObjectDefinition.LOADED.values().stream()
+                        .filter(objectDef -> objectDef != null && objectDef.modelIds != null && Arrays.stream(objectDef.modelIds).anyMatch(model -> model == itemDefinition.inventoryModel))
                         .collect(Collectors.toList());
                 if (found.size() == 0) {
                     player.sendMessage("No matches!");
@@ -702,7 +689,7 @@ public class Administrator {
 
             case "fconobj": {
                 String name = String.join(" ", args).toLowerCase();
-                ObjectDef.forEach(def -> {
+                ObjectDefinition.forEach(def -> {
                     if (def != null && def.name != null && def.name.toLowerCase().contains(name) && def.options != null && def.options.length >= 5 && def.options[4] != null && def.options[4].equalsIgnoreCase("remove")) {
                         player.sendMessage(def.id + " - " + def.name + " " + Arrays.toString(def.options));
                     }
@@ -713,7 +700,7 @@ public class Administrator {
             case "dbolts": {
                 for (String gem: Arrays.asList("opal", "jade", "pearl", "topaz", "sapphire", "emerald", "ruby", "diamond", "dragonstone", "onyx")) {
                     String type = gem + " dragon bolts";
-                    for (ItemDef def : ItemDef.cached.values()) {
+                    for (ItemDefinition def : ItemDefinition.cached.values()) {
                         if (def == null || def.name == null || def.isPlaceholder() || def.isNote()) continue;
                         if (def.name.toLowerCase().startsWith(type.toLowerCase())) {
                             boolean enchanted = def.name.contains("(e)");
@@ -755,13 +742,6 @@ public class Administrator {
                 player.getAppearance().update();
                 return true;
             }
-
-            case "wikidrops": {
-                npc_drops.dump(String.join("_", args));
-                player.sendMessage("Dumped!");
-                return true;
-            }
-
             case "raidroom": {
                 int rotation = 0;
                 int layout = 0;
@@ -868,7 +848,7 @@ public class Administrator {
 
             case "objanim": {
                 int id = Integer.parseInt(args[0]);
-                ObjectDef def = ObjectDef.get(id);
+                ObjectDefinition def = ObjectDefinition.get(id);
                 if (def == null) {
                     player.sendMessage("Invalid id.");
                     return true;
@@ -990,7 +970,7 @@ public class Administrator {
             }
 
             case "oldcasket": {
-                NPCDef def = NPCDef.get(Integer.parseInt(args[0]));
+                NPCDefinition def = NPCDefinition.get(Integer.parseInt(args[0]));
                 if (def == null) {
                     return true;
                 }
@@ -1012,7 +992,7 @@ public class Administrator {
             }
 
             case "newcasket": {
-                NPCDef def = NPCDef.get(Integer.parseInt(args[0]));
+                NPCDefinition def = NPCDefinition.get(Integer.parseInt(args[0]));
                 if (def == null) {
                     return true;
                 }
@@ -1039,7 +1019,7 @@ public class Administrator {
                     int id = 0;
                     if (args.length > 0)
                         id = Integer.parseInt(args[0]);
-                    while (id < GfxDef.LOADED.length) {
+                    while (id < GfxDefinition.LOADED.length) {
                         new Projectile(id, 60, 60, 0, 300, 20, 0, 64).send(player.getAbsX(), player.getAbsY(), player.getAbsX() - 5, player.getAbsY());
                         player.sendMessage("Sending: " + id);
                         id++;
@@ -1086,7 +1066,7 @@ public class Administrator {
 
             case "attribs": {
                 int id = Integer.parseInt(args[0]);
-                ItemDef def = ItemDef.get(id);
+                ItemDefinition def = ItemDefinition.get(id);
                 if(def == null) {
                     player.sendMessage("Item " + id + " not found!");
                     return true;
@@ -1197,15 +1177,15 @@ public class Administrator {
             case "iconf": {
                 int interfaceId = Integer.parseInt(args[0]);
                 boolean recursiveSearch = args.length >= 2 && Integer.parseInt(args[1]) == 1;
-                InterfaceDef.printConfigs(interfaceId, recursiveSearch);
+                InterfaceDefinition.printConfigs(interfaceId, recursiveSearch);
                 return true;
             }
 
             case "findinterscript": {
                 int scriptId = Integer.parseInt(args[0]);
                 boolean recursiveSearch = args.length >= 2 && Integer.parseInt(args[1]) == 1;
-                for (int interId = 0; interId < InterfaceDef.COUNTS.length; interId++) {
-                    Set<ScriptDef> s = InterfaceDef.getScripts(interId, recursiveSearch);
+                for (int interId = 0; interId < InterfaceDefinition.COUNTS.length; interId++) {
+                    Set<ScriptDefinition> s = InterfaceDefinition.getScripts(interId, recursiveSearch);
                     if (s != null && s.stream().anyMatch(def -> def.id == scriptId)) {
                         player.sendMessage("Inter " + interId + " uses script " + scriptId +"!");
                     }
@@ -1215,13 +1195,13 @@ public class Administrator {
 
             case "bits": {
                 int id = Integer.parseInt(args[0]);
-                Varp varp = Varp.get(id);
+                VarpDefinition varp = VarpDefinition.get(id);
                 if(varp == null) {
                     player.sendFilteredMessage("Varp " + id + " has no bits!");
                     return true;
                 }
                 System.out.println("Varp: " + id);
-                for(Varpbit bit : varp.bits)
+                for(VarpbitDefinition bit : varp.bits)
                     System.out.println("    bit: " + bit.id + "  shift: " + bit.leastSigBit);
                 return true;
             }
@@ -1271,7 +1251,7 @@ public class Administrator {
             case "varpbit": {
                 int id = Integer.parseInt(args[0]);
                 int value = Integer.parseInt(args[1]);
-                Varpbit bit = Varpbit.get(id);
+                VarpbitDefinition bit = VarpbitDefinition.get(id);
                 if(bit == null) {
                     player.sendFilteredMessage("Varpbit " + id + " does not exist.");
                     return true;
@@ -1284,7 +1264,7 @@ public class Administrator {
 
             case "vbloop": {
                 int id = Integer.parseInt(args[0]);
-                Varpbit bit = Varpbit.get(id);
+                VarpbitDefinition bit = VarpbitDefinition.get(id);
                 if(bit == null) {
                     player.sendFilteredMessage("Varpbit " + id + " does not exist.");
                     return true;
@@ -1301,7 +1281,7 @@ public class Administrator {
 
             case "varbitdef": {
                 int varpbit = Integer.parseInt(args[0]);
-                Varpbit def = Varpbit.get(varpbit);
+                VarpbitDefinition def = VarpbitDefinition.get(varpbit);
                 if (def != null) {
                     player.sendMessage("[Varpbit Def] varp="+ def.varpId +", start="+ def.leastSigBit +", end="+ def.mostSigBit +", maxValue="+ Math.pow(2, (def.mostSigBit - def.leastSigBit)));
                 } else {
@@ -1315,12 +1295,12 @@ public class Administrator {
                 int minId = Integer.parseInt(args[0]);
                 int maxId = Integer.parseInt(args[1]);
                 int value = Integer.parseInt(args[2]);
-                if(minId < 0 || minId >= Varpbit.LOADED.length || maxId < 0 || maxId >= Varpbit.LOADED.length) {
-                    player.sendFilteredMessage("Invalid values! Please use values between 0 and " + (Varpbit.LOADED.length - 1) + "!");
+                if(minId < 0 || minId >= VarpbitDefinition.LOADED.length || maxId < 0 || maxId >= VarpbitDefinition.LOADED.length) {
+                    player.sendFilteredMessage("Invalid values! Please use values between 0 and " + (VarpbitDefinition.LOADED.length - 1) + "!");
                     return true;
                 }
                 for(int i = minId; i <= maxId; i++) {
-                    Varpbit bit = Varpbit.get(i);
+                    VarpbitDefinition bit = VarpbitDefinition.get(i);
                     if(bit == null)
                         continue;
                     Config.create(i, bit, false, false).set(player, value);
@@ -1338,7 +1318,7 @@ public class Administrator {
 
             case "strings": {
                 int interfaceId = Integer.parseInt(args[0]);
-                for(int i = 0; i < InterfaceDef.COUNTS[interfaceId]; i++) {
+                for(int i = 0; i < InterfaceDefinition.COUNTS[interfaceId]; i++) {
                     player.getPacketSender().sendString(interfaceId, i, "" + i);
                     player.getPacketSender().setHidden(interfaceId, i, false);
                 }
@@ -1371,7 +1351,7 @@ public class Administrator {
 
             case "script": {
                 int id = Integer.parseInt(args[0]);
-                ScriptDef def = ScriptDef.get(id);
+                ScriptDefinition def = ScriptDefinition.get(id);
                 if(def == null) {
                     System.err.println("Script " + id + " does not exist!");
                     return true;
@@ -1382,7 +1362,7 @@ public class Administrator {
 
             case "dumpscripts": {
                 for(int i = 0; i < 65535; i++) {
-                    ScriptDef def = ScriptDef.get(i);
+                    ScriptDefinition def = ScriptDefinition.get(i);
                     if(def == null)
                         continue;
                     try(PrintStream ps = new PrintStream(System.getProperty("user.home") + "/Desktop/script_instructions/" + i + ".txt")) {
@@ -1397,7 +1377,7 @@ public class Administrator {
 
             case "findintinscript": {
                 int search = Integer.parseInt(args[0]);
-                for (ScriptDef def : ScriptDef.LOADED) {
+                for (ScriptDefinition def : ScriptDefinition.LOADED) {
                     if (def == null)
                         continue;
                     if (def.intArgs == null)
@@ -1411,7 +1391,7 @@ public class Administrator {
 
             case "findstringinscript": {
                 String search = String.join(" ", args).toLowerCase();
-                for (ScriptDef def : ScriptDef.LOADED) {
+                for (ScriptDefinition def : ScriptDefinition.LOADED) {
                     if (def == null)
                         continue;
                     if (def.stringArgs == null)
@@ -1428,7 +1408,7 @@ public class Administrator {
 
             case "findvarcinscript": {
                 int id = Integer.parseInt(args[0]);
-                for (ScriptDef def : ScriptDef.LOADED) {
+                for (ScriptDefinition def : ScriptDefinition.LOADED) {
                     if (def == null)
                         continue;
                     if (def.intArgs == null)
@@ -1470,7 +1450,7 @@ public class Administrator {
                 if (args.length > 1) {
                     walkRange = Integer.parseInt(args[1]);
                 }
-                NPCDef def = NPCDef.get(npcId);
+                NPCDefinition def = NPCDefinition.get(npcId);
                 if(def == null) {
                     player.sendMessage("Invalid npc id: " + npcId);
                     return true;
@@ -1485,7 +1465,7 @@ public class Administrator {
                 if (args.length > 1) {
                     walkRange = Integer.parseInt(args[1]);
                 }
-                NPCDef def = NPCDef.get(npcId);
+                NPCDefinition def = NPCDefinition.get(npcId);
                 if(def == null) {
                     player.sendMessage("Invalid npc id: " + npcId);
                     return true;
@@ -1502,7 +1482,7 @@ public class Administrator {
             case "spawn": {
                 int npcId = Integer.parseInt(args[0]);
                 int walkRange = args.length > 1 ? Integer.parseInt(args[1]) : 0;
-                NPCDef def = NPCDef.get(npcId);
+                NPCDefinition def = NPCDefinition.get(npcId);
                 if(def == null) {
                     player.sendMessage("Invalid npc id: " + npcId);
                     return true;
@@ -1543,7 +1523,7 @@ public class Administrator {
                     search = s[0];
                     combat = Integer.parseInt(s[1]);
                 }
-                for(NPCDef def : NPCDef.cached.values()) {
+                for(NPCDefinition def : NPCDefinition.cached.values()) {
                     if(def != null && def.name.toLowerCase().contains(search.toLowerCase()) && (combat == -1 || def.combatLevel == combat))
                         player.sendMessage(def.id + " (" + def.name + "): combat=" + def.combatLevel + " options=" + Arrays.toString(def.options) +" size=" + def.size);
                 }
@@ -1553,13 +1533,13 @@ public class Administrator {
             case "fvn":
             case "fvnpc": {
                 int id = Integer.parseInt(args[0]);
-                for (NPCDef def : NPCDef.cached.values()) {
+                for (NPCDefinition def : NPCDefinition.cached.values()) {
                     if (def != null && def.id == id) {
                         player.sendMessage("Main ID: " + def.id + " (" + def.name + "): combat=" + def.combatLevel + " options=" + Arrays.toString(def.options) +" size=" + def.size);
                         break;
                     }
                 }
-                for (NPCDef def : NPCDef.cached.values()) {
+                for (NPCDefinition def : NPCDefinition.cached.values()) {
                     if (def.showIds == null || def.showIds.length == 0)
                         continue;
                     for (int vId : def.showIds) {
@@ -1574,7 +1554,7 @@ public class Administrator {
             case "pnpc": {
                 int npcId = Integer.parseInt(args[0]);
                 if(npcId > 0) {
-                    NPCDef def = NPCDef.get(npcId);
+                    NPCDefinition def = NPCDefinition.get(npcId);
                     if(def == null) {
                         player.sendMessage("Invalid npc id: " + npcId);
                         return true;
@@ -1593,7 +1573,7 @@ public class Administrator {
                 Integer lastId = (Integer) player.getTemporaryAttribute("LAST_PNPC");
                 if(lastId == null)
                     lastId = 0;
-                NPCDef def = NPCDef.get(lastId);
+                NPCDefinition def = NPCDefinition.get(lastId);
                 if(def == null) {
                     player.sendMessage("Invalid npc id: " + lastId);
                     return true;
@@ -1621,7 +1601,7 @@ public class Administrator {
             case "calc":
             case "calculate": {
                 int id = Integer.parseInt(args[0]);
-                NPCDef def = NPCDef.get(id);
+                NPCDefinition def = NPCDefinition.get(id);
                 if(def == null) {
                     player.sendMessage("Invalid npc id: " + id);
                     return true;
@@ -1640,7 +1620,7 @@ public class Administrator {
             case "ispawn": {
                 int itemId = Integer.parseInt(args[0]);
                 int amt = args.length > 1 ? Integer.parseInt(args[1]) : 0;
-                ItemDef def = ItemDef.get(itemId);
+                ItemDefinition def = ItemDefinition.get(itemId);
                 if(def == null) {
                     player.sendMessage("Invalid item id: " + itemId);
                     return true;
@@ -1675,7 +1655,7 @@ public class Administrator {
 
             case "addnpc": { // TODO support more options
                 int id = Integer.parseInt(args[0]);
-                NPCDef def = NPCDef.get(id);
+                NPCDefinition def = NPCDefinition.get(id);
                 if(def == null) {
                     player.sendMessage("Invalid npc id: " + id);
                     return true;
@@ -1698,13 +1678,13 @@ public class Administrator {
 
             case "npcanims": {
                 int sourceId = Integer.parseInt(args[0]);
-                NPCDef sourceDef = NPCDef.get(sourceId);
+                NPCDefinition sourceDef = NPCDefinition.get(sourceId);
                 if(sourceDef == null) {
                     player.sendMessage("Invalid NPC!");
                     return true;
                 }
                 player.sendMessage("Stand: " + sourceDef.standAnimation + " Walk: " + sourceDef.walkAnimation);
-                SortedSet<Integer> results = AnimDef.findAnimationsWithSameRigging(sourceDef.walkAnimation, sourceDef.standAnimation, sourceDef.walkBackAnimation, sourceDef.walkLeftAnimation, sourceDef.walkRightAnimation);
+                SortedSet<Integer> results = AnimationDefinition.findAnimationsWithSameRigging(sourceDef.walkAnimation, sourceDef.standAnimation, sourceDef.walkBackAnimation, sourceDef.walkLeftAnimation, sourceDef.walkRightAnimation);
                 if(results == null) {
                     player.sendMessage("Nothing found!");
                     return true;
@@ -1715,16 +1695,16 @@ public class Administrator {
 
             case "similaranims": {
                 int sourceId = Integer.parseInt(args[0]);
-                AnimDef source = AnimDef.LOADED[sourceId];
-                SortedSet<Integer> results = AnimDef.findAnimationsWithSameRigging(sourceId);
+                AnimationDefinition source = AnimationDefinition.LOADED[sourceId];
+                SortedSet<Integer> results = AnimationDefinition.findAnimationsWithSameRigging(sourceId);
                 if(results == null) {
                     player.sendMessage("Nothing found!");
                     return true;
                 }
                 System.out.println("Same rigging: " + Arrays.toString(results.toArray()));
                 results.clear();
-                for (int id = 0; id < AnimDef.LOADED.length; id++) {
-                    AnimDef def = AnimDef.LOADED[id];
+                for (int id = 0; id < AnimationDefinition.LOADED.length; id++) {
+                    AnimationDefinition def = AnimationDefinition.LOADED[id];
                     if (def == null || def.frameData == null) continue;
                     if (def.frameData[0] == source.frameData[0]) { // TODO consider checking other frames and outputting a % match?
                         results.add(id);
@@ -1738,12 +1718,12 @@ public class Administrator {
                 try(BufferedWriter bw = new BufferedWriter(new FileWriter("npcanims.txt"))) {
                     bw.write("id\tname\tanims");
                     bw.newLine();
-                    for(NPCDef def : NPCDef.cached.values()) {
+                    for(NPCDefinition def : NPCDefinition.cached.values()) {
                         bw.write(String.valueOf(def.id));
                         bw.write("\t");
                         bw.write(def.name);
                         bw.write("\t");
-                        SortedSet<Integer> anims = AnimDef.findAnimationsWithSameRigging(def.walkAnimation, def.standAnimation, def.walkBackAnimation, def.walkLeftAnimation, def.walkRightAnimation);
+                        SortedSet<Integer> anims = AnimationDefinition.findAnimationsWithSameRigging(def.walkAnimation, def.standAnimation, def.walkBackAnimation, def.walkLeftAnimation, def.walkRightAnimation);
                         if(anims == null)
                             bw.write("[none found]");
                         else
@@ -1838,12 +1818,12 @@ public class Administrator {
              * Drop commands
              */
             case "dumpdrops": {
-                npc_drops.dump(String.join("_", args));
+                DropDumper.dump(String.join("_", args));
                 return true;
             }
 
             case "reloaddrops": {
-                NPCDef.forEach(def -> def.lootTable = null);
+                NPCDefinition.forEach(def -> def.lootTable = null);
                 DataFile.reload(player, npc_drops.class);
                 return true;
             }
@@ -1907,7 +1887,7 @@ public class Administrator {
 
             case "namespawns": {
                 npc_spawns.allSpawns.forEach((file, spawns) -> {
-                    spawns.forEach(spawn -> spawn.name = NPCDef.get(spawn.id).name);
+                    spawns.forEach(spawn -> spawn.name = NPCDefinition.get(spawn.id).name);
                     try {
                         JsonUtils.toFile(new File(file), JsonUtils.toPrettyJson(spawns));
                     } catch (IOException e) {
@@ -1955,6 +1935,7 @@ public class Administrator {
             /**
              * Map commands
              */
+            case "c":
             case "pos":
             case "loc":
             case "coords": {
@@ -2167,7 +2148,7 @@ public class Administrator {
 
                 }
                 int finalNumber = number;
-                ObjectDef.forEach(def -> {
+                ObjectDefinition.forEach(def -> {
                     if(def != null && def.name != null && def.name.toLowerCase().contains(search)) {
                         player.sendMessage(def.id + " (" + def.name + ") options=" + Arrays.toString(def.options));
                         System.out.println(def.id + " (" + def.name + ") options=" + Arrays.toString(def.options));
@@ -2246,12 +2227,12 @@ public class Administrator {
             }
 
             case "containerobjs": {
-                ObjectDef def = ObjectDef.get(Integer.parseInt(args[0]));
+                ObjectDefinition def = ObjectDefinition.get(Integer.parseInt(args[0]));
                 if(def == null)
                     return true;
                 for(int i = 0; i < def.showIds.length; i++) {
                     int id = def.showIds[i];
-                    ObjectDef obj = ObjectDef.get(id);
+                    ObjectDefinition obj = ObjectDefinition.get(id);
                     if(obj == null)
                         continue;
                     System.out.println("[" + i + "]: \"" + obj.name + "\" #" + id + "; options=" + Arrays.toString(obj.options));
@@ -2348,7 +2329,7 @@ public class Administrator {
                     int id = 0;
                     if (args.length > 0)
                         id = Integer.parseInt(args[0]);
-                    while (id < AnimDef.LOADED.length) {
+                    while (id < AnimationDefinition.LOADED.length) {
                         player.animate(id);
                         player.sendMessage("Sending: " + id);
                         id++;
@@ -2382,7 +2363,7 @@ public class Administrator {
             }
 
             case "iteminfo": {
-                ItemDef def = ItemDef.get(Integer.parseInt(args[0]));
+                ItemDefinition def = ItemDefinition.get(Integer.parseInt(args[0]));
                 if (def == null) {
                     player.sendMessage("Invalid id!");
                     return true;
@@ -2395,7 +2376,7 @@ public class Administrator {
             }
 
             case "gfxanim": {
-                GfxDef def = GfxDef.get(Integer.parseInt(args[0]));
+                GfxDefinition def = GfxDefinition.get(Integer.parseInt(args[0]));
                 if(def == null) {
                     player.sendMessage("Invalid id.");
                     return true;
@@ -2405,7 +2386,7 @@ public class Administrator {
             }
 
             case "gfxmodel": {
-                GfxDef def = GfxDef.get(Integer.parseInt(args[0]));
+                GfxDefinition def = GfxDefinition.get(Integer.parseInt(args[0]));
                 if(def == null) {
                     player.sendMessage("Invalid id.");
                     return true;
@@ -2417,7 +2398,7 @@ public class Administrator {
             case "findgfxa": {
                 int animId = Integer.parseInt(args[0]);
                 player.sendMessage("Finding gfx using anim " + animId + "...");
-                Arrays.stream(GfxDef.LOADED)
+                Arrays.stream(GfxDefinition.LOADED)
                         .filter(Objects::nonNull)
                         .filter(def -> def.animationId == animId)
                         .forEachOrdered(def -> player.sendMessage("Found: " + def.id));
@@ -2427,7 +2408,7 @@ public class Administrator {
             case "findgfxm": {
                 int model = Integer.parseInt(args[0]);
                 player.sendMessage("Finding gfx using model " + model + "...");
-                Arrays.stream(GfxDef.LOADED)
+                Arrays.stream(GfxDefinition.LOADED)
                         .filter(Objects::nonNull)
                         .filter(def -> def.modelId == model)
                         .forEachOrdered(def -> player.sendMessage("Found: " + def.id));
@@ -2435,7 +2416,7 @@ public class Administrator {
             }
 
             case "objmodels": {
-                ObjectDef obj = ObjectDef.get(Integer.parseInt(args[0]));
+                ObjectDefinition obj = ObjectDefinition.get(Integer.parseInt(args[0]));
                 if (obj == null) {
                     player.sendMessage("Invalid id!");
                     return true;
@@ -2446,7 +2427,7 @@ public class Administrator {
 
             case "findo":
             case "findobj": {
-                ObjectDef.LOADED.values().stream()
+                ObjectDefinition.LOADED.values().stream()
                         .filter(Objects::nonNull)
                         .filter(def -> !def.name.isEmpty())
                         .filter(def -> query.toLowerCase().contains(def.name.toLowerCase()))
@@ -2460,13 +2441,13 @@ public class Administrator {
             }
 
             case "dumpobjs": {
-                ObjectDef[] defs = ObjectDef.LOADED.values().stream()
+                ObjectDefinition[] defs = ObjectDefinition.LOADED.values().stream()
                         .filter(Objects::nonNull)
                         .filter(def -> !def.name.isEmpty())
-                        .toArray(ObjectDef[]::new);
+                        .toArray(ObjectDefinition[]::new);
                 try {
                     BufferedWriter bw = new BufferedWriter(new FileWriter("./object_defs.txt"));
-                    for (ObjectDef o : defs) {
+                    for (ObjectDefinition o : defs) {
                         bw.write(o.id +" - "+ o.name);
                         bw.newLine();
                     }
@@ -2481,7 +2462,7 @@ public class Administrator {
             case "itemanim": {
                 int id = Integer.parseInt(args[0]);
                 player.sendMessage("Finding animation that uses item " + id + "...");
-                Arrays.stream(AnimDef.LOADED)
+                Arrays.stream(AnimationDefinition.LOADED)
                         .filter(Objects::nonNull)
                         .filter(def -> def.rightHandItem - 512 == id)
                         .forEachOrdered(def -> player.sendMessage("Found: " + def.id));
@@ -2489,7 +2470,7 @@ public class Administrator {
             }
 
             case "animitem": {
-                AnimDef anim = AnimDef.get(Integer.parseInt(args[0]));
+                AnimationDefinition anim = AnimationDefinition.get(Integer.parseInt(args[0]));
                 if (anim.rightHandItem == -1)
                     player.sendMessage("Animation does not use an item");
                 else
@@ -2628,29 +2609,20 @@ public class Administrator {
             /**
              * Camera
              */
-            case "resetcamera": {
+            case "rcam": {
                 player.getPacketSender().resetCamera();
                 return true;
             }
-            case "zoomcamera": {
+            case "zcam": {
                 player.getPacketSender().sendClientScript(39, "i", Integer.parseInt(args[0]));
                 return true;
             }
-
-            case "movecamera": {
-                player.getPacketSender().moveCameraToLocation(3071, 3515, 400, 0, 15);
-                player.getPacketSender().turnCameraToLocation(3068, 3517, 0, 0, 25);
-                return true;
-            }
-
-            case "movecamera2": {
-                player.getPacketSender().moveCameraToLocation(3080, 3499, 800, 0, 15);
-                player.getPacketSender().turnCameraToLocation(3084, 3504, 0, 0, 25);
-                return true;
-            }
-
-            case "rotatecamera": {
-                player.getPacketSender().turnCameraToLocation(3079, 3487, 30, 0, 30);
+            case "tcam": {
+                if (args.length < 2) return false;
+                int height1 = args.length >= 3 ? Integer.parseInt(args[2]) : 600;
+                int height2 = args.length >= 4 ? Integer.parseInt(args[3]) : 400;
+                player.getPacketSender().moveCameraToLocation(player.getAbsX(), player.getAbsY(), height1, 0, 12);
+                player.getPacketSender().turnCameraToLocation(Integer.parseInt(args[0]), Integer.parseInt(args[1]), height2, 0, 25);
                 return true;
             }
 
@@ -2706,7 +2678,7 @@ public class Administrator {
                 return true;
             }
             case "stressdb": {
-                ItemDef.forEach(def -> {
+                ItemDefinition.forEach(def -> {
                     player.getTaskManager().doSkillItemLookup(def.id);
                 });
                 return true;
@@ -2798,10 +2770,6 @@ public class Administrator {
                 player.sendMessage("LEShortA: signed=" + lesa + ", unsigned=" + ulesa);
                 return true;
             }
-            case "areatask": {
-                MisthalinReward.openRewards(player);
-                return true;
-            }
             case "btest": {
                 player.openInterface(InterfaceType.MAIN, 1010);
                 player.getPacketSender().sendClientScript(10070, "is", 1, "Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000|Damage|15|Drops|25|Aggressive|1000");
@@ -2843,18 +2811,34 @@ public class Administrator {
                 Slayer.setBossTask(player, uuid);
                 return true;
             }
+            case "unlocktask": {
+                if (args.length < 1) {
+                    player.sendMessage("Syntax: ::unlocktask [id]");
+                    return false;
+                }
+                player.getTaskManager().doDropLookup(new Item(Integer.parseInt(args[0]), 1));
+                return true;
+            }
+            case "killtask": {
+                if (args.length < 1) {
+                    player.sendMessage("Syntax: ::killtask [id]");
+                    return false;
+                }
+                player.getTaskManager().doKillLookup(Integer.parseInt(args[0]));
+                return true;
+            }
             case "findvarpobj": {
                 if (args.length < 1) {
                     player.sendMessage("Syntax: ::findvarp [varp]");
                     return false;
                 }
                 int varp = Integer.parseInt(args[0]);
-                List<ObjectDef> objs = ObjectDef.LOADED.values().stream().filter(o -> o.varpId == varp).collect(Collectors.toList());
+                List<ObjectDefinition> objs = ObjectDefinition.LOADED.values().stream().filter(o -> o.varpId == varp).collect(Collectors.toList());
                 if (objs.size() <= 0) {
                     player.sendMessage("No objects found.");
                 } else {
                     player.sendMessage("Found " + objs.size() + " objects with varp " + varp + ":");
-                    for (ObjectDef def : objs) {
+                    for (ObjectDefinition def : objs) {
                         player.sendMessage(def.id + "");
                     }
                 }
@@ -2866,12 +2850,12 @@ public class Administrator {
                     return false;
                 }
                 int varpbit = Integer.parseInt(args[0]);
-                List<ObjectDef> objs = ObjectDef.LOADED.values().stream().filter(o -> o.varpBitId == varpbit).collect(Collectors.toList());
+                List<ObjectDefinition> objs = ObjectDefinition.LOADED.values().stream().filter(o -> o.varpBitId == varpbit).collect(Collectors.toList());
                 if (objs.size() <= 0) {
                     player.sendMessage("No objects found.");
                 } else {
                     player.sendMessage("Found " + objs.size() + " objects with varpbit " + varpbit + ":");
-                    for (ObjectDef def : objs) {
+                    for (ObjectDefinition def : objs) {
                         player.sendMessage(def.id + "");
                     }
                 }
@@ -2883,12 +2867,12 @@ public class Administrator {
                     return false;
                 }
                 int showid = Integer.parseInt(args[0]);
-                List<ObjectDef> objs = ObjectDef.LOADED.values().stream().filter(o -> o.showIds != null && o.showIds.length > 0 && Arrays.stream(o.showIds).anyMatch(id -> id == showid)).collect(Collectors.toList());
+                List<ObjectDefinition> objs = ObjectDefinition.LOADED.values().stream().filter(o -> o.showIds != null && o.showIds.length > 0 && Arrays.stream(o.showIds).anyMatch(id -> id == showid)).collect(Collectors.toList());
                 if (objs.size() <= 0) {
                     player.sendMessage("No objects found.");
                 } else {
                     player.sendMessage("Found " + objs.size() + " objects with showid " + showid + ":");
-                    for (ObjectDef def : objs) {
+                    for (ObjectDefinition def : objs) {
                         player.sendMessage(def.id + "");
                     }
                 }
@@ -2900,14 +2884,32 @@ public class Administrator {
                 }
                 return true;
             }
+            case "dungeonhub": {
+                DungeonHub.open(player);
+                return true;
+            }
             case "searchstructs": {
                 String searchString = args[0];
-                for (int index = 0; index < 5904; index++) {
-                    Struct struct = Struct.get(index);
-                    for (Object param :  struct.getParams().values()) {
-                        if (param instanceof String) {
-                            if (((String) param).contains(searchString)) {
-                                System.out.println("Struct " + index + ": " + (String) param);
+                if (searchString.matches("-?\\d+")) {
+                    int searchInt = Integer.parseInt(searchString);
+                    for (int index = 0; index < 5904; index++) {
+                        StructDefinition struct = StructDefinition.get(index);
+                        for (Object param :  struct.getParams().values()) {
+                            if (param instanceof Integer) {
+                                if ((int) param == searchInt) {
+                                    System.out.println("Struct " + index + ": " + (int) param);
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    for (int index = 0; index < 5904; index++) {
+                        StructDefinition struct = StructDefinition.get(index);
+                        for (Object param :  struct.getParams().values()) {
+                            if (param instanceof String) {
+                                if (((String) param).contains(searchString)) {
+                                    System.out.println("Struct " + index + ": " + (String) param);
+                                }
                             }
                         }
                     }
@@ -2916,13 +2918,63 @@ public class Administrator {
             }
             case "searchenums": {
                 String searchString = args[0];
-                for (int index = 0; index < 5278; index++) {
-                    EnumMap enumMap = EnumMap.get(index);
-                    if (enumMap == null || enumMap.stringValues == null) continue;
-                    for (String s :  enumMap.stringValues) {
-                        if (s.contains(searchString)) {
-                            System.out.println("Enum " + index + ": " + s);
+                if (searchString.matches("-?\\d+")) {
+                    int searchInt = Integer.parseInt(searchString);
+                    for (int index = 0; index < 5278; index++) {
+                        EnumDefinition enumDefinition = EnumDefinition.get(index);
+                        if (enumDefinition == null || enumDefinition.getIntValuesArray() == null) continue;
+                        for (int s :  enumDefinition.getIntValuesArray()) {
+                            if (s == searchInt) {
+                                System.out.println("Enum " + index + ": " + s);
+                            }
                         }
+                    }
+                } else {
+                    for (int index = 0; index < 5278; index++) {
+                        EnumDefinition enumDefinition = EnumDefinition.get(index);
+                        if (enumDefinition == null || enumDefinition.getStringValuesArray() == null) continue;
+                        for (String s :  enumDefinition.getStringValuesArray()) {
+                            if (s.contains(searchString)) {
+                                System.out.println("Enum " + index + ": " + s);
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+            case "bestiaryaddkills": {
+                if (args.length < 2) {
+                    player.sendMessage("Syntax: ::bestiaryaddkills [ID] [AMT]");
+                    return false;
+                }
+                int id = Integer.parseInt(args[0]);
+                int amt = Integer.parseInt(args[1]);
+                player.getBestiary().incrementKillCount(NPCDefinition.get(id), amt);
+                return true;
+            }
+            case "debugbestiary": {
+                NPCDefinition.forEach(e -> {
+                    if (e.combatInfo == null) return;
+                    if (e.combatLevel < 2) return;
+                    System.out.println(e.name);
+                    player.getBestiary().incrementKillCount(e);
+                });
+                return true;
+            }
+            case "findvbindexofobj": {
+                if (args.length < 2) {
+                    player.sendMessage("Syntax: ::findvbindexofobj [obj ID] [show ID]");
+                }
+                int id = Integer.parseInt(args[0]);
+                int showId = Integer.parseInt(args[1]);
+                int[] showIds = ObjectDefinition.get(id).showIds;
+                if (showIds == null) {
+                    player.sendMessage("Object " + id + " has no showIds.");
+                    return false;
+                }
+                for (int index = 0; index < showIds.length; index++) {
+                    if (showIds[index] == showId) {
+                        player.sendMessage("Object " + id + " has showId " + showId + " at index " + index);
                     }
                 }
                 return true;
