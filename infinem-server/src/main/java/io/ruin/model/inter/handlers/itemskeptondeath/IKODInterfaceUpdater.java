@@ -2,6 +2,7 @@ package io.ruin.model.inter.handlers.itemskeptondeath;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.impl.storage.DeathStorage;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,7 +44,8 @@ public class IKODInterfaceUpdater {
         ArrayList<Item> itemConfigs = new ArrayList<>();
         for (IKODItem item : this.kept.otherItems) {
             items.add(item.item);
-            itemConfigs.add(new Item(item.kind.configItem, item.item.getAmount()));
+            int itemValue = (int) ((int) (item.item.getDef().value * 0.05f) * DeathStorage.getDonatorCostMultiplier(player));
+            itemConfigs.add(new Item(item.kind.configItem, itemValue + 1));
         }
         player.getPacketSender().sendItems(584, items);
         player.getPacketSender().sendItems(468, itemConfigs);
