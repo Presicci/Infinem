@@ -3,6 +3,7 @@ package io.ruin.model.entity.player;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
+import io.ruin.model.inter.handlers.itemskeptondeath.IKOD;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.duelarena.DuelRule;
@@ -26,7 +27,6 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.inter.Widget;
 import io.ruin.model.inter.handlers.EquipmentStats;
-import io.ruin.model.inter.handlers.itemskeptondeath.IKODInterface;
 import io.ruin.model.inter.handlers.TabCombat;
 import io.ruin.model.inter.journal.toggles.TargetOverlay;
 import io.ruin.model.inter.utils.Config;
@@ -1172,7 +1172,7 @@ public class PlayerCombat extends Combat {
                 if (useDeathStorage) {
                     player.getDeathStorage().death(killer);
                 } else {
-                    IKODInterface.forLostItem(player, killer, item -> {
+                    IKOD.forLostItem(player, killer, item -> {
                         ItemDefinition def = item.getDef();
                         if (pKiller != null && pKiller.hideFreeItems && def.free) {
                             return;

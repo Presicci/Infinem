@@ -1,6 +1,7 @@
 package io.ruin.model.inter.journal.toggles;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.model.inter.handlers.itemskeptondeath.IKOD;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
@@ -147,9 +148,9 @@ public class RiskProtection extends JournalEntry {
     public static void updateRiskedBloodMoney(Player player) {
         boolean skulled = player.getCombat().isSkulled();
         boolean ultimateIronMan = player.getGameMode().isUltimateIronman();
-        int keepCount = IKODInterface.getKeepCount(skulled, ultimateIronMan, !player.getCombat().highRiskSkull);
+        int keepCount = IKOD.getKeepCount(skulled, ultimateIronMan, !player.getCombat().highRiskSkull);
 
-        ArrayList<Item> items = IKODInterface.getItems(player);
+        ArrayList<Item> items = IKOD.getItems(player);
         ArrayList<Item> keepItems = new ArrayList<>(keepCount);
         int keepCountRemaining = keepCount;
         long value = 0;
