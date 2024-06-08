@@ -140,6 +140,8 @@ public class NPCDrops {
          */
         handleKalphiteQueenDrops(killer, pKiller, dropPosition);
 
+        handleLootingBagDrop(killer, pKiller, dropPosition);
+
         /*
          * Crystal shard drops
          * Some monsters in Iorwerth Dungeon don't have exclusive drop polls,
@@ -408,6 +410,16 @@ public class NPCDrops {
     private void rollRareDropTable(Killer killer, Player player, Position pos) {
         Optional<Item> item = RareDropTable.rollRareDropTable(npc, player);
         item.ifPresent(value -> handleDrop(killer, pos, player, value));
+    }
+
+    private void handleLootingBagDrop(Killer killer, Player pKiller, Position dropPosition) {
+        if (npc.wildernessSpawnLevel <= 0) return;
+        int chance = Math.max(3, Math.min(15, 40 - npc.getDef().combatLevel));
+        if (Random.rollDie(chance)) {
+            if (pKiller.findItem(Items.LOOTING_BAG) != null) {
+                handleDrop(killer, dropPosition, pKiller, new Item(Items.LOOTING_BAG));
+            }
+        }
     }
 
     private void vorkathHead(Position dropPosition, Player pKiller) {
