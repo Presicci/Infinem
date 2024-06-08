@@ -12,9 +12,11 @@ import io.ruin.network.incoming.handlers.ObjectActionHandler;
  */
 public class TricksterAgility {
 
+    public static final String KEY = "TRICKSTER_AGIL";
+
     public static void attemptNext(Player player, GameObject object) {
         if (!player.getRelicManager().hasRelicEnalbed(Relic.TRICKSTER)) return;
-        if (Random.rollDie(4)) return;
+        if (player.incrementTemporaryNumericAttribute(KEY, 1) >= 4) return;
         ObjectActionHandler.handleAction(player, 1, object.id, object.getPosition().getX(), object.getPosition().getY(), 0);
     }
 }

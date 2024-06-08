@@ -6,6 +6,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.agility.TricksterAgility;
 import io.ruin.network.incoming.Incoming;
 import io.ruin.utility.DebugMessage;
 import io.ruin.utility.IdHolder;
@@ -27,6 +28,7 @@ public class ObjectActionHandler implements Incoming {
             int x = in.readShortA();
             int y = in.readLEShort();
             int id = in.readUnsignedShort();
+            player.removeTemporaryAttribute(TricksterAgility.KEY);
             handleAction(player, option, id, x, y, ctrlRun);
             return;
         }
