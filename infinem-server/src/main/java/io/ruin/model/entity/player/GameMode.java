@@ -98,13 +98,13 @@ public enum GameMode {
     }
 
     public static void changeForumsGroup(Player player, int mode) {
-        CompletableFuture.runAsync(() -> {
+        /*CompletableFuture.runAsync(() -> {
             Map<Object, Object> map = new HashMap<>();
             map.put("userId", player.getUserId());
             map.put("type", "ironman_mode");
             map.put("groupId", mode);
             XenPost.post("add_group", map);
-        });
+        });*/
     }
 
     static {
