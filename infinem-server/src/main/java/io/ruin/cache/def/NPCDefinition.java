@@ -244,10 +244,6 @@ public class NPCDefinition {
             options[4] = null;
             standAnimation = 813;
             walkAnimation = 1205;
-        } else if(id == 311) {
-            name = "Ironman";
-            options[1] = "Open-shop";
-            options[2] = null;
         } else if(id == 7951) {
             name = "PvP Event Manager";
             options[0] = "Join-event";
