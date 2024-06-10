@@ -84,6 +84,11 @@ public enum GameMode {
         }
     }
 
+    /*
+     * cs687
+     * 1777 - gamemode
+     * 1776 - 1 = pin required, 0 = no chaning gamemode
+     */
     public static void openSelection(Player player) {
         player.openInterface(InterfaceType.MAIN, 215);
         player.getPacketSender().setHidden(215, 16, true);
