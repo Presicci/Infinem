@@ -43,6 +43,7 @@ public enum EquipTask {
     KARAMJA_MONKEY_BACKPACK(590, 24862),    // Equip a Karamja Monkey Backpack
     MANIACAL_MONKEY_BACKPACK(604, 24864),   // Equip a Maniacal Monkey Backpack
     KRUK_JR_BACKPACK(622, 24866),   // Equip a Kruk Jr. Monkey Backpack
+    PROTEST_BANNER(948, 25822),     // Equip a Protest Banner
     ;
 
     private final int uuid;
