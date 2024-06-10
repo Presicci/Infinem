@@ -1,0 +1,7 @@
+RAND
+/Player: Hello.
+Vespina: Bzzzzt!
+/Player: Bzzz bzzz bzz?
+Vespina: Buzz off human.
+Player: It's you that's following me! Maybe I should invest in a large flyswat...
+Vespina: Bzzzzt!

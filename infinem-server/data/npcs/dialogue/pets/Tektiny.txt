@@ -1,0 +1,10 @@
+RAND
+/Player: You look hot.
+Tektiny: Heat required for forge.
+Player: What are you making?
+Tektiny: Heat.
+Player: Well, forge ahead then.
+/Player: What are you-
+Tektiny: STOP!
+Player: ???
+Tektiny: HAMMER TIME!
