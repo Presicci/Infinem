@@ -109903,6 +109903,16 @@
     "equip_slot": 3,
     "weapon_type": "WARHAMMER"
   },
+  { // Protest banner
+    "id": 25822,
+    "tradeable": false,
+	"examine": "Down with the Council!",
+    "weight": 2.267,
+	"protect_value": 500,
+    "equip_slot": 3,
+    "weapon_type": "SARADOMIN_SWORD",
+    "two_handed": true
+  },
   { // Keris partisan
     "id": 25979,
     "tradeable": false,
