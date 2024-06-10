@@ -75,4 +75,8 @@ public enum BossKillCounter {
                 .filter(def -> def.name.toLowerCase().contains(name.toLowerCase()))
                 .forEach(def -> def.killCounterType = new KillCounterType(this));
     }
+
+    public KillCounterType getCounter() {
+        return new KillCounterType(this);
+    }
 }
