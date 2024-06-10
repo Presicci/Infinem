@@ -106,6 +106,13 @@ public enum JewelleryTeleportBounds {
 
     // Western Banner
     PISCATORIS(new Bounds(2327, 3684, 2332, 3685, 0)),
+
+    // Xeric's Talisman
+    XERICS_LOOKOUT(new Bounds(1576, 3528, 1580, 3531, 0)),
+    XERICS_GLADE(new Bounds(1751, 3564, 1753, 3566, 0)),
+    XERICS_INFERNO(new Bounds(1503, 3816, 1506, 3818, 0)),
+    XERICS_HEART(new Bounds(1639, 3669, 1641, 3677, 0)),
+    XERICS_HONOUR(new Bounds(1253, 3557, 1256, 3560, 0)),
     ;
 
     private final Bounds bounds;
