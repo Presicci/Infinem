@@ -1,8 +1,13 @@
 package io.ruin.model.content;
 
+import io.ruin.Server;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.model.World;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -40,6 +45,11 @@ public enum ActivitySpotlight {
 
     static {
         World.startEvent(event -> {
+            cycleSpotlight();
+            LocalDateTime now = LocalDateTime.now();
+            LocalDateTime nearestHour = now.plusHours(1).truncatedTo(ChronoUnit.HOURS);
+            Duration waitTime = Duration.between(now, nearestHour);
+            event.delay(Server.toTicks((int) waitTime.toMinutes() * 60));
             while (spotlightsEnabled) {
                 cycleSpotlight();
                 event.delay(SPOTLIGHT_TIMER);
