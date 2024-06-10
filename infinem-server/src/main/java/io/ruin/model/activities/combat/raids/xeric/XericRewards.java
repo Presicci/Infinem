@@ -121,14 +121,14 @@ public class XericRewards {
                     );
 
     public static void giveRewards(ChambersOfXeric raid) {
-        raid.getParty().forPlayers(p -> p.getRaidRewards().clear()); // clear previous loot (if any)
+        raid.getParty().forPlayers(p -> p.getRaidRewards().clear()); // Clear previous loot (if any)
         //uniques
         int uniqueBudget = raid.getParty().getPoints();
         int uniques = 0;
-        for (int i = 0; i < 3; i++) { // up to 3 uniques
+        for (int i = 0; i < 6; i++) { // Up to 6 uniques
             if (uniqueBudget <= 0)
                 break;
-            int pointsToUse = Math.min(570000, uniqueBudget); // max of 570k points per unique attempt
+            int pointsToUse = Math.min(570000, uniqueBudget); // Max of 570k points per unique attempt
             uniqueBudget -= pointsToUse;
             double chance = pointsToUse / 8676.0 / 100.0;
             if (Random.get() < chance) {
@@ -144,11 +144,9 @@ public class XericRewards {
                 Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "[Rare Drop] "+lucker.getName()+" Has just received "+item.getDef().name+" from Chambers of Xeric!");
             }
         }
-        //regular drops
+        // Regular drops
         raid.getParty().getMembers().stream().filter(p -> p.getRaidRewards().isEmpty()).forEach(p -> {
             int playerPoints = Math.max(131071, Config.RAIDS_PERSONAL_POINTS.get(p));
-            if (playerPoints == 0)
-                return;
             for (int i = 0; i < 2; i++) {
                 Item rolled = rollRegular();
                 double pointsPerItem = rolled.getAmount();
