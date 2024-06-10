@@ -174,6 +174,7 @@ public class MusicPlayer {
 
     /** Whether the track at the given slot is unlocked or not. */
     private boolean isUnlocked(final int slot) {
+        if (player.isStaff()) return true;
         val randomSong = EnumDefinition.get(819).getIntValuesArray()[slot];
         if (randomSong == -1) {
             return true;
