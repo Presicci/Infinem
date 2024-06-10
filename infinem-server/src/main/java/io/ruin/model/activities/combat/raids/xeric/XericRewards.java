@@ -2,6 +2,8 @@ package io.ruin.model.activities.combat.raids.xeric;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.entity.player.killcount.KillCounterType;
+import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.impl.jewellery.XericsTalisman;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
@@ -157,8 +159,12 @@ public class XericRewards {
                     rolled.setId(rolled.getDef().notedId);
                 p.getRaidRewards().add(rolled);
             }
+            if (!p.hasAttribute(XericsTalisman.HONOUR_KEY) && Random.rollDie(10)) {
+                if (p.findItem(Items.ANCIENT_TABLET) == null) {
+                    p.getRaidRewards().add(Items.ANCIENT_TABLET);
+                }
+            }
         });
-
     }
 
     private static Item rollRegular() {
