@@ -1,0 +1,43 @@
+{
+  "name": "The Cloak and Stagger",
+  "currency": "COINS",
+  "npcs": [
+    11043,
+    11044
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 550,
+  "hideBuy": false,
+  "items": [
+    {
+      "itemId": 1917,
+      "stock": 10,
+      "buy_price": 1,
+      "sell_price": 2
+    },
+    {
+      "itemId": 25826,
+      "stock": 10,
+      "buy_price": 11,
+      "sell_price": 20
+    },
+    {
+      "itemId": 1993,
+      "stock": 5,
+      "buy_price": 0,
+      "sell_price": 1
+    },
+    {
+      "itemId": 712,
+      "stock": 5,
+      "buy_price": 5,
+      "sell_price": 10
+    },
+    {
+      "itemId": 2003,
+      "stock": 5,
+      "buy_price": 11,
+      "sell_price": 20
+    }
+  ]
+}
