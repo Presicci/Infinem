@@ -60,7 +60,7 @@ public class XericRewards {
         new Unlock(Interface.RAID_REWARDS, 5, 0, 2).unlockMultiple(player, 0, 9);
     }
 
-    private static LootTable uniqueTable = new LootTable()
+    public static final LootTable UNIQUE_TABLE = new LootTable()
             .addTable(1,
                     new LootItem(21034, 1, 20), // dexterous scroll
                     new LootItem(21079, 1, 20), // arcane scroll
@@ -76,7 +76,7 @@ public class XericRewards {
                     new LootItem(20997, 1, 2) // twisted bow
             );
 
-    private static LootTable regularTable = new LootTable() // regular table. the "amount" here is the number used to determine the amount given to players based on how many points they have, for example 1 soul rune per 20 points
+    private static final LootTable REGULAR_TABLE = new LootTable() // regular table. the "amount" here is the number used to determine the amount given to players based on how many points they have, for example 1 soul rune per 20 points
             .addTable(1,
                     new LootItem(560, 40, 1), // death rune
                     new LootItem(565, 32, 1), // blood rune
@@ -109,15 +109,13 @@ public class XericRewards {
 
                     new LootItem(13391, 30, 1), // lizardman fang
                     new LootItem(7937, 2, 1), // pure essence
-//                    new LootItem(13422, 24, 1), // saltpetre
+                    //new LootItem(13422, 24, 1), // saltpetre
                     new LootItem(8781, 100, 1), // teak plank
                     new LootItem(8783, 240, 1), // mahogany plank
-//                    new LootItem(13574, 55, 1), // dynamite
-
+                    //new LootItem(13574, 55, 1), // dynamite
 
                     new LootItem(21047, 131071, 1), // torn prayer scroll
                     new LootItem(21027, 131071, 1) // dark relic
-
                     );
 
     public static void giveRewards(ChambersOfXeric raid) {
@@ -161,11 +159,11 @@ public class XericRewards {
     }
 
     private static Item rollRegular() {
-        return regularTable.rollItem();
+        return REGULAR_TABLE.rollItem();
     }
 
     private static Item rollUnique() {
-        return uniqueTable.rollItem();
+        return UNIQUE_TABLE.rollItem();
     }
 
 
