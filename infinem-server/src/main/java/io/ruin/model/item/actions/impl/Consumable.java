@@ -464,6 +464,7 @@ public class Consumable {
             p.getStats().get(StatType.Strength).drain(2, 0.04);
             p.getStats().get(StatType.Magic).drain(2, 0.04);
             p.sendMessage("You drink the Lizardkicker. It tastes like swampwater, but you feel like your eyesight has improved slightly.");
+            p.getTaskManager().doLookupByUUID(947);     // Drink a LizardKicker
         });
 
         //Beer tankard
