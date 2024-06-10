@@ -107,7 +107,7 @@ public class XericRewards {
                     new LootItem(1620, 250, 1), // uncut ruby
                     new LootItem(1618, 520, 1), // uncut diamond
 
-//                    new LootItem(13391, 25, 1), // lizardman fang
+                    new LootItem(13391, 30, 1), // lizardman fang
                     new LootItem(7937, 2, 1), // pure essence
 //                    new LootItem(13422, 24, 1), // saltpetre
                     new LootItem(8781, 100, 1), // teak plank
