@@ -458,6 +458,14 @@ public class Consumable {
             p.getStats().get(StatType.Attack).drain(1, 0.06);
         });
 
+        // Lizardkicker
+        registerDrink(25826, 1919, 0, 3, p -> {
+            p.getStats().get(StatType.Ranged).boost(4, 0.00);
+            p.getStats().get(StatType.Strength).drain(2, 0.04);
+            p.getStats().get(StatType.Magic).drain(2, 0.04);
+            p.sendMessage("You drink the Lizardkicker. It tastes like swampwater, but you feel like your eyesight has improved slightly.");
+        });
+
         //Beer tankard
         registerDrink(3803, 3805, 4, 3, p -> {
             p.getStats().get(StatType.Strength).boost(1, 0.02);
