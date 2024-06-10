@@ -81,6 +81,18 @@ public enum Pet {
     TINY_TEMPOR(25602, 10562, null),
 
     /**
+     * CoX
+     */
+    OLMLET(20851, 7520, 8201, null, 53, 750),
+    PUPPADILE(22376, 8201, 8202, null),
+    TEKTINY(22378, 8202, 9513, null),
+    ENRAGED_TEKTINY(24656, 9513, 8203, null),
+    VANGUARD(22380, 8203, 8204, null),
+    VASA(22382, 8204, 8205, null),
+    VESPINA(22384, 8205, 9514, null),
+    FLYING_VESPINA(24658, 9514, 7520, null),
+
+    /**
      * Skilling pets
      */
     BABY_CHINCHOMPA_GREY(13324, 6757, PetVariants.BABY_CHIN),
@@ -139,12 +151,6 @@ public enum Pet {
     BLOODHOUND(19730, 7232, null),
     CHOMPY_CHICK(13071, 4002, null),
     PHOENIX(20693, 7370, null),
-    OLMLET(20851, 7520, 8201, null, 53, 750),
-    PUPPADILE(22376, 8201, 8202, null),
-    TEKTINY(22378, 8202, 8203, null),
-    VANGUARD(22380, 8203, 8204, null),
-    VASA(22382, 8204, 8205, null),
-    VESPINE(22384, 8205, 7520, null),
 
     /**
      * Cats
