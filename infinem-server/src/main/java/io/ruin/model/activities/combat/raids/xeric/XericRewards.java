@@ -130,7 +130,7 @@ public class XericRewards {
                 break;
             int pointsToUse = Math.min(570000, uniqueBudget); // max of 570k points per unique attempt
             uniqueBudget -= pointsToUse;
-            double chance = pointsToUse / 6500 / 100.0; // 1% chance per 6500 points - OSRS = 8675
+            double chance = pointsToUse / 8676.0 / 100.0;
             if (Random.get() < chance) {
                 uniques++;
                 Player lucker = getPlayerToReceiveUnique(raid);
