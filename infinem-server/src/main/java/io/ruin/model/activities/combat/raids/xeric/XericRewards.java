@@ -149,6 +149,9 @@ public class XericRewards {
         }
         // Regular drops
         raid.getParty().getMembers().stream().filter(p -> p.getRaidRewards().isEmpty()).forEach(p -> {
+            if (p.getRaidRewards().isEmpty() && Random.rollDie(12)) {
+                p.getRaidRewards().add(24365);  // 1/12 of an elite clue if no uniques
+            }
             int playerPoints = Math.min(131071, Config.RAIDS_PERSONAL_POINTS.get(p));
             for (int i = 0; i < 2; i++) {
                 Item rolled = rollRegular();
