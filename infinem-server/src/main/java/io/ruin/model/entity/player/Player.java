@@ -1772,6 +1772,24 @@ public class Player extends PlayerAttributes {
     }
 
     /**
+     * Finds an item in any containers connected to the player.
+     * @return ItemContainerG<? extends Item>,
+     * Null if no item is found
+     */
+    public void forEachItemOwned(int itemId, Consumer<Item> action) {
+        for (ItemContainerG<? extends Item> container : Arrays.asList(
+                getInventory(), getEquipment(), getBank(), getLootingBag(),
+                getSeedVault(), getDeathStorage(), getPrivateRaidStorage())) {
+            List<? extends Item> items = container.collectItems(itemId);
+            if (items == null) continue;
+            for (Item item : items) {
+                if (item != null && item.getId() == itemId) action.accept(item);
+            }
+        }
+    }
+
+
+    /**
      * Finds the amount of an item in all containers connected to the player.
      */
     public int getItemAmount(int itemId) {

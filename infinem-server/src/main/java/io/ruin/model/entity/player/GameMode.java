@@ -1,7 +1,6 @@
 package io.ruin.model.entity.player;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.api.utils.XenPost;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.model.combat.Hit;
@@ -13,10 +12,6 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainerG;
 import io.ruin.utility.Broadcast;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.CompletableFuture;
 
 public enum GameMode {
     STANDARD(-1),
@@ -45,8 +40,9 @@ public enum GameMode {
         return this == HARDCORE_IRONMAN;
     }
 
-    private static int[] hcimArmor = { 20792, 20794, 20796 };
-    private static int[] normalArmor = { 12810, 12811, 12812 };
+    public static final int[] HCIM_ARMOR = { 20792, 20794, 20796 };
+    public static final int[] ULTIMATE_ARMOR = { 12813, 12814, 12815 };
+    public static final int[] NORMAL_ARMOR = { 12810, 12811, 12812 };
 
     public static void hardcoreDeath(Player player, Hit killHit) {
         Config.IRONMAN_MODE.set(player, 1);
@@ -72,11 +68,11 @@ public enum GameMode {
                 }
             }
         }
-        for (int index = 0; index <= hcimArmor.length; index++) {   // Hopefully swaps the players hcim armor
-            ItemContainerG<? extends Item> container = player.findItem(hcimArmor[index]);
+        for (int index = 0; index <= HCIM_ARMOR.length; index++) {   // Hopefully swaps the players hcim armor
+            ItemContainerG<? extends Item> container = player.findItem(HCIM_ARMOR[index]);
             if (container != null) {
-                container.remove(hcimArmor[index], 1);
-                container.add(normalArmor[index], 1);
+                container.remove(HCIM_ARMOR[index], 1);
+                container.add(NORMAL_ARMOR[index], 1);
             }
         }
     }

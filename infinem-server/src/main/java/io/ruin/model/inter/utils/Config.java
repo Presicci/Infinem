@@ -829,6 +829,7 @@ public class Config {
      * Gamemode (ironman)
      */
     public static final Config IRONMAN_MODE = varpbit(1777, true);
+    public static final Config IRONMAN_MODE_REMOVAL_REQUIREMENT = varpbit(1776, true).defaultValue(1);
 
     /**
      * Used to toggle the friends/ignore list frame icon
