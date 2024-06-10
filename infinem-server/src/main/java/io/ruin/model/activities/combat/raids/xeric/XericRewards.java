@@ -133,20 +133,20 @@ public class XericRewards {
             double chance = pointsToUse / 8676.0 / 100.0;
             if (Random.get() < chance) {
                 uniques++;
-                Player lucker = getPlayerToReceiveUnique(raid);
+                Player winner = getPlayerToReceiveUnique(raid);
                 Item item = rollUnique();
-                lucker.getRaidRewards().add(item);
-                Loggers.logRaidsUnique(lucker.getName(), item.getDef().name, KillCounter.getKillCount(lucker, BossKillCounter.COX));
+                winner.getRaidRewards().add(item);
+                Loggers.logRaidsUnique(winner.getName(), item.getDef().name, KillCounter.getKillCount(winner, BossKillCounter.COX));
                 if (uniques == 1) {
                     raid.getParty().forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap("Special loot:")));
                 }
-                raid.getParty().forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap(lucker.getName() + " - ") + Color.RED.wrap(item.getDef().name)));
-                Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "[Rare Drop] "+lucker.getName()+" Has just received "+item.getDef().name+" from Chambers of Xeric!");
+                raid.getParty().forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap(winner.getName() + " - ") + Color.RED.wrap(item.getDef().name)));
+                Broadcast.WORLD.sendNews(Icon.GOLD_STAR, "[Rare Drop] "+winner.getName()+" Has just received "+item.getDef().name+" from Chambers of Xeric!");
             }
         }
         // Regular drops
         raid.getParty().getMembers().stream().filter(p -> p.getRaidRewards().isEmpty()).forEach(p -> {
-            int playerPoints = Math.max(131071, Config.RAIDS_PERSONAL_POINTS.get(p));
+            int playerPoints = Math.min(131071, Config.RAIDS_PERSONAL_POINTS.get(p));
             for (int i = 0; i < 2; i++) {
                 Item rolled = rollRegular();
                 double pointsPerItem = rolled.getAmount();
