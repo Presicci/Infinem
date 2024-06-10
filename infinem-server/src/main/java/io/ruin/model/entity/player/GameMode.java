@@ -68,12 +68,9 @@ public enum GameMode {
                 }
             }
         }
-        for (int index = 0; index <= HCIM_ARMOR.length; index++) {   // Hopefully swaps the players hcim armor
-            ItemContainerG<? extends Item> container = player.findItem(HCIM_ARMOR[index]);
-            if (container != null) {
-                container.remove(HCIM_ARMOR[index], 1);
-                container.add(NORMAL_ARMOR[index], 1);
-            }
+        for (int index = 0; index <= HCIM_ARMOR.length; index++) {
+            int finalIndex = index;
+            player.forEachItemOwned(HCIM_ARMOR[index], (item) -> item.setId(NORMAL_ARMOR[finalIndex]));
         }
     }
 
