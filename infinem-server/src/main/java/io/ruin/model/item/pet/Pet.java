@@ -634,7 +634,13 @@ public enum Pet {
                 }
                 if (pet == TZREK_JAD) {
                     if (!PlayerBoolean.JAD_METAMORPH.has(player)) {
-                        player.sendMessage("You need to use Infernal shard on this first before you can use metamorphosis.");
+                        player.sendMessage("You need to use an Infernal shard on this first before you can use metamorphosis.");
+                        return;
+                    }
+                }
+                if (pet == OLMLET) {
+                    if (!PlayerBoolean.OLM_METAMORPH.has(player)) {
+                        player.sendMessage("You need to use some Metamorphic dust on him first before you can use metamorphosis.");
                         return;
                     }
                 }
@@ -692,6 +698,16 @@ public enum Pet {
                 bool.setTrue(player);
             } else {
                 player.sendMessage("You've already unlocked the JalTok-Jad metamorphosis.");
+            }
+        });
+        ItemNPCAction.register(22386, OLMLET.npcId, (player, item, npc) -> {
+            PlayerBoolean bool = PlayerBoolean.OLM_METAMORPH;
+            if (!bool.has(player)) {
+                player.dialogue(new ItemDialogue().one(item.getId(), "You sprinkle the dust over Olmlet. Congratulations! You may now metamorphise them."));
+                item.remove(1);
+                bool.setTrue(player);
+            } else {
+                player.sendMessage("You've already unlocked metamorphosis for this pet.");
             }
         });
         //  Tangleroot recoloring handling

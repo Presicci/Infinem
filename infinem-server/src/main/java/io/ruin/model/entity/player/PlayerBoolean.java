@@ -13,6 +13,7 @@ public enum PlayerBoolean {
     CERBERUS_METAMORPH,
     JAD_METAMORPH,
     SIRE_METAMORPH,
+    OLM_METAMORPH,
     ROW_DISABLED;
 
     /**
