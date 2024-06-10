@@ -139,7 +139,7 @@ public enum Pet {
     BLOODHOUND(19730, 7232, null),
     CHOMPY_CHICK(13071, 4002, null),
     PHOENIX(20693, 7370, null),
-    OLMLET(20851, 7520, 8201, null),
+    OLMLET(20851, 7520, 8201, null, 53, 750),
     PUPPADILE(22376, 8201, 8202, null),
     TEKTINY(22378, 8202, 8203, null),
     VANGUARD(22380, 8203, 8204, null),

@@ -1,6 +1,8 @@
 package io.ruin.model.activities.combat.raids.xeric;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.entity.player.killcount.KillCounterType;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.model.entity.player.killcount.KillCounter;
@@ -134,6 +136,7 @@ public class XericRewards {
                 Player winner = getPlayerToReceiveUnique(raid);
                 Item item = rollUnique();
                 winner.getRaidRewards().add(item);
+                rollPet(winner);
                 Loggers.logRaidsUnique(winner.getName(), item.getDef().name, KillCounter.getKillCount(winner, BossKillCounter.COX));
                 if (uniques == 1) {
                     raid.getParty().forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap("Special loot:")));
@@ -164,6 +167,16 @@ public class XericRewards {
 
     private static Item rollUnique() {
         return UNIQUE_TABLE.rollItem();
+    }
+
+    private static void rollPet(Player player) {
+        Pet pet = Pet.OLMLET;
+        int average = pet.dropAverage;
+        int threshold = pet.dropThreshold;
+        int numerator = BossKillCounter.COX.getCounter().getKills(player) / threshold + 1;
+        if (Random.rollDie(average, numerator)) {
+            pet.unlock(player);
+        }
     }
 
 
