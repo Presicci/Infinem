@@ -46,7 +46,10 @@ public class FarmingGuild {
     }
 
     private static void checkRequirement(Player player, int levelReq) {
-        if (player.getStats().get(StatType.Farming).fixedLevel >= levelReq) return;
+        if (player.getStats().get(StatType.Farming).fixedLevel >= levelReq) {
+            if (levelReq == 65) player.getTaskManager().doLookupByUUID(958);    // Enter the Farming Guild's Mid Tier
+            return;
+        }
         player.lock();
         player.getMovement().reset();
         player.startEvent(e -> {
