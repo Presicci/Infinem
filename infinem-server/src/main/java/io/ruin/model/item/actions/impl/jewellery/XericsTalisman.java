@@ -80,6 +80,7 @@ public class XericsTalisman {
             item.setId(Items.XERICS_TALISMAN_INERT);
         }
         ModernTeleport.teleport(player, teleportBounds.getBounds());
+        player.getTaskManager().doLookupByUUID(960);    // Teleport With Xeric's Talisman
     }
 
     private static void combineAncientTablet(Player player, Item ancientTablet) {
