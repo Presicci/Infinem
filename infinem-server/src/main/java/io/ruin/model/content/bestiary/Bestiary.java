@@ -3,8 +3,14 @@ package io.ruin.model.content.bestiary;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.def.NPCDefinition;
+import io.ruin.model.content.bestiary.perks.BestiaryPerk;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.AccessMask;
+import io.ruin.model.inter.AccessMasks;
+import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.actions.SimpleAction;
+import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.handlers.TabBestiary;
 import io.ruin.model.inter.utils.Config;
 import lombok.Getter;
@@ -21,6 +27,9 @@ public class Bestiary {
     @Setter private Player player;
 
     @Expose @Getter private final Map<String, Integer> killCounts;
+
+    private BestiaryEntry currentEntry;
+    private List<BestiaryPerk> displayedPerks;
 
     public Bestiary(Player player) {
         this.player = player;
@@ -63,11 +72,11 @@ public class Bestiary {
     }
 
     public BestiaryEntry getBestiaryEntry(NPCDefinition def) {
-        return new BestiaryEntry(getKillCount(def));
+        return new BestiaryEntry(player, def.bestiaryEntry, getKillCount(def));
     }
 
     public BestiaryEntry getBestiaryEntry(String entry) {
-        return new BestiaryEntry(getKillCount(entry));
+        return new BestiaryEntry(player, entry, getKillCount(entry));
     }
 
     /*
@@ -135,10 +144,25 @@ public class Bestiary {
         }
         System.out.println(Arrays.toString(orderedEntries.toArray(new String[0])));
         System.out.println("Slot: " + slot + ", index:" + index);
-        String entry = orderedEntries.toArray(new String[0])[index];
+        String entryName = orderedEntries.toArray(new String[0])[index];
+        currentEntry = getBestiaryEntry(entryName);
+        displayedPerks = currentEntry.getSortedPerks();
         player.openInterface(InterfaceType.MAIN, 1010);
-        player.getPacketSender().sendString(1010, 7, StringUtils.capitalizeFirst(entry));
-        player.getPacketSender().sendClientScript(10070, "is", getKillCount(entry), getBestiaryEntry(entry).generateRewardString());
+        player.getPacketSender().sendString(1010, 7, StringUtils.capitalizeFirst(entryName));
+        player.getPacketSender().sendClientScript(10070, "is", getKillCount(entryName), currentEntry.generateRewardString());
+        player.getPacketSender().sendAccessMask(1010, 3, 0, 100, AccessMasks.ClickOp1);
+    }
 
+    static {
+        InterfaceHandler.register(1010, h -> {
+            h.actions[3] = (SlotAction) (player, slot) -> {
+                Bestiary bestiary = player.getBestiary();
+                BestiaryEntry entry = bestiary.currentEntry;
+                int index = slot / 6;
+                BestiaryPerk perk = bestiary.displayedPerks.get(index);
+                entry.togglePerk(perk.getClass());
+                player.getPacketSender().sendClientScript(10070, "is", bestiary.getKillCount(entry.getName()), entry.generateRewardString());
+            };
+        });
     }
 }
