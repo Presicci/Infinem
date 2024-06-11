@@ -106,7 +106,7 @@ public class BestiaryDef {
                 "agrith naar", "agrith naar (hard)", "witch's experiment", "witch's experiment (hard)", "witch's experiment (second form)", "witch's experiment (second form) (hard)",
                 "witch's experiment (third form)", "witch's experiment (third form) (hard)", "witch's experiment (fourth form)", "witch's experiment (fourth form) (hard)", "arrg", "arrg (hard)",
                 "glod", "glod (hard)", "king roald", "king roald (hard)", "evil chicken", "evil chicken (hard)", "dad", "dad (hard)", "the inadequacy", "the inadequacy (hard)",
-                "dessous", "dessous (hard)", "flambeed", "flambeed (hard)", "black demon", "black demon (hard)", "the kendal", "the kendal (hard)", "the untouchable", "the untouchable (hard)", "nazastarool", "nazastarool (hard)",
+                "dessous", "dessous (hard)", "flambeed", "flambeed (hard)", "black demon (hard)", "the kendal", "the kendal (hard)", "the untouchable", "the untouchable (hard)", "nazastarool", "nazastarool (hard)",
                 "gelatinnoth mother", "gelatinnoth mother (hard)", "damis", "damis (hard)", "dagannoth mother", "dagannoth mother (hard)", "sand snake", "sand snake (hard)", "tanglefoot", "tanglefoot (hard)",
                 "dessourt", "dessourt (hard)", "agrith-na-na", "agrith-na-na (hard)", "chronozon", "chronozon (hard)", "slagilith", "slagilith (hard)", "count draynor", "count draynor (hard)", "giant roc", "giant roc (hard)",
                 "karamel", "karamel (hard)", "skeleton hellhound", "skeleton hellhound (hard)", "treus dayth", "treus dayth (hard)", "ice troll king", "ice troll king (hard)",
