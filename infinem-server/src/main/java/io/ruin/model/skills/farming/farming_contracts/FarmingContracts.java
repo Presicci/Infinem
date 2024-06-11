@@ -1,6 +1,7 @@
 package io.ruin.model.skills.farming.farming_contracts;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
@@ -143,6 +144,7 @@ public enum FarmingContracts {
         if (Arrays.stream(player.farmingContract.patches).anyMatch(p -> p == patchData)) {
             player.sendMessage("<col=ff0000>You have completed your farming contract!  Go see Guildmaster Jane for your reward!</col>");
             PlayerCounter.FARMING_CONTRACTS_COMPLETED.increment(player, 1);
+            player.getTaskManager().doLookupByCategory(TaskCategory.FARMINGCONTRACT, 1, true);
             player.contractCompleted = true;
         }
     }
