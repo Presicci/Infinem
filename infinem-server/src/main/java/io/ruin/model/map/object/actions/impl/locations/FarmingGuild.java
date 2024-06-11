@@ -31,6 +31,7 @@ public class FarmingGuild {
             }
             event.delay(1);
             player.getMovement().teleport(player.getAbsX(), player.getAbsY() + (player.getAbsY() >= object.y ? -2 : 2));
+            player.getTaskManager().doSkillItemLookup(957); // Enter the Farming Guild
             //player.lock();
             /*GameObject opened = GameObject.spawn(object.id, object.x, object.y, object.z, object.type, 1);
             object.skipClipping(true).remove();
