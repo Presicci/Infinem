@@ -18,11 +18,11 @@ public abstract class BestiaryPerk {
     public BestiaryPerk() {}
 
     protected int doubleToPercentage(double value) {
-        return (int) ((value - 1f) * 100);
+        return (int) ((value - 1D) * 100);
     }
 
     protected int inverseDoubleToPercentage(double value) {
-        return (int) ((1f - value) * 100);
+        return (int) Math.round((1D - value) * 100D);
     }
 
     protected boolean getInvertedPercentage() {
