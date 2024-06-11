@@ -18,17 +18,13 @@ import java.util.*;
  */
 public class Bestiary {
 
-    private Player player;
+    @Setter private Player player;
 
     @Expose @Getter private final Map<String, Integer> killCounts;
 
     public Bestiary(Player player) {
         this.player = player;
         killCounts = new LinkedHashMap<>();
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
     }
 
     /**
@@ -61,7 +57,7 @@ public class Bestiary {
     }
 
     public int getKillCount(String entry) {
-        if (killCounts == null || entry == null || entry.equals(""))
+        if (entry == null || entry.isEmpty())
             return 0;
         return killCounts.getOrDefault(entry, 0);
     }
