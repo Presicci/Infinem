@@ -81,6 +81,9 @@ public class XericsTalisman {
         }
         ModernTeleport.teleport(player, teleportBounds.getBounds());
         player.getTaskManager().doLookupByUUID(960);    // Teleport With Xeric's Talisman
+        if (teleportBounds == JewelleryTeleportBounds.XERICS_HONOUR) {
+            player.getTaskManager().doSkillItemLookup(962); // Teleport to Xeric's Honour
+        }
     }
 
     private static void combineAncientTablet(Player player, Item ancientTablet) {
