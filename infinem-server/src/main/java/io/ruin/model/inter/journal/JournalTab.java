@@ -477,12 +477,6 @@ public class JournalTab {
         });
         LoginListener.register(player -> {
             setTab(player,Tab.SUMMARY);
-            player.addEvent(event -> {
-                while(true) {
-                    //updateTab(player,Tab.QUEST);
-                    event.delay(5);
-                }
-            });
         });
     }
 }
