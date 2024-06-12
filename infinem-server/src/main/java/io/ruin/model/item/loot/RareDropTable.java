@@ -18,6 +18,11 @@ import java.util.Optional;
 public class RareDropTable {
 
     public static LootTable RARE_DROP_TABLE = new LootTable()
+            .addTable(250,  // Coin table
+                    new LootItem(Items.COINS, 2500, 10000, 3),
+                    new LootItem(Items.COINS, 15000, 25000, 2),
+                    new LootItem(Items.COINS, 25000, 100000, 1)
+            )
             .addTable(1000,  // Runes table
                     new LootItem(Items.NATURE_RUNE, 25, 60, 3),
                     new LootItem(Items.LAW_RUNE, 25, 65,3),
