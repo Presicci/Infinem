@@ -32,6 +32,11 @@ public class DoubleDrops {
             }
         }
         double bestiaryChance = player.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(ExtraDropPerk.class);
+        if (bestiaryChance > 1) {
+            int bestiaryRolls = (int) bestiaryChance;
+            bestiaryChance -= bestiaryRolls;
+            rolls += bestiaryRolls;
+        }
         if (bestiaryChance > 0 && Random.get() < bestiaryChance) {
             rolls++;
         }
@@ -48,7 +53,7 @@ public class DoubleDrops {
         if (Random.get(1, 100) <= gearCount(player) * 2) {
             rolls++;
         }
-
+        player.sendMessage(rolls + "");
         return rolls;
     }
 
