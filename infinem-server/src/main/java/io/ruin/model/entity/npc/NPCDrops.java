@@ -3,6 +3,7 @@ package io.ruin.model.entity.npc;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.bestiary.perks.impl.GoldPickupPerk;
 import io.ruin.model.item.loot.ConditionalNPCLootTable;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
@@ -245,7 +246,7 @@ public class NPCDrops {
              * Coin auto collect
              */
             if (item.getId() == COINS_995) {
-                if (RingOfWealth.check(pKiller, item)) {
+                if (RingOfWealth.check(pKiller, item) || pKiller.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(GoldPickupPerk.class) > 0) {
                     pKiller.getInventory().addOrDrop(item);
                     continue;
                 }

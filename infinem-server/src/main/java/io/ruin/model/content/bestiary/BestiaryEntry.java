@@ -31,7 +31,8 @@ public class BestiaryEntry {
                 new NotedDropPerk(isBoss),
                 new ReducedEnemyAccuracyPerk(isBoss),
                 new RespawnPerk(isBoss),
-                new LuckPerk(isBoss)
+                new LuckPerk(isBoss),
+                new GoldPickupPerk()
         );
     }
 
