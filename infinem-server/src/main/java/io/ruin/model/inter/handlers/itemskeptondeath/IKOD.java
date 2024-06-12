@@ -210,13 +210,15 @@ public class IKOD {
         ArrayList<Item> keptItems = new ArrayList<>();
         for (Item item : ikod.kept) {
             if (player.wildernessLevel > 0) {
+                int ether = 0;
                 if (IKODChargeable.VIGGORAS_CHAINMACE.isCharged(item)) {
-                    lostItems.add(new Item(21820, IKODChargeable.VIGGORAS_CHAINMACE.uncharge(item)));
+                    ether = IKODChargeable.VIGGORAS_CHAINMACE.uncharge(item);
                 } else if (IKODChargeable.CRAWS_BOW.isCharged(item)) {
-                    lostItems.add(new Item(21820, IKODChargeable.CRAWS_BOW.uncharge(item)));
+                    ether = IKODChargeable.CRAWS_BOW.uncharge(item);
                 } else if (IKODChargeable.THAMMARONS_SCEPTRE.isCharged(item)) {
-                    lostItems.add(new Item(21820, IKODChargeable.THAMMARONS_SCEPTRE.uncharge(item)));
+                    ether = IKODChargeable.THAMMARONS_SCEPTRE.uncharge(item);
                 }
+                if (ether - 1000 > 0) lostItems.add(new Item(21820, ether - 1000));
             }
             keptItems.add(item);
         }
