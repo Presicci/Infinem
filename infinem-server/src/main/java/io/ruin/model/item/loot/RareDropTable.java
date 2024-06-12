@@ -98,7 +98,7 @@ public class RareDropTable {
             );
 
     private static final int[] ROLL_CHANCE = { // 1 in x, index is luck tier
-            1000, 500, 450, 350, 300
+            1000, 500, 450, 425, 400
     };
 
     private static int getLuckTier(Player player) {
@@ -134,7 +134,7 @@ public class RareDropTable {
             return Optional.empty();
         }
         int luckTier = getLuckTier(player);
-        int chance = ROLL_CHANCE[luckTier] - (int) Math.floor(npc.getDef().combatLevel * 0.35);
+        int chance = Math.max(ROLL_CHANCE[luckTier] - (int) Math.floor(npc.getDef().combatLevel * 0.35), 75);   // 1/75 is the lowest the rate can go
         if (Random.get(chance) != 1) {
             return Optional.empty();
         }
