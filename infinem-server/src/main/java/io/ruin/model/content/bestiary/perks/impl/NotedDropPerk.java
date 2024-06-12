@@ -33,6 +33,6 @@ public class NotedDropPerk extends IntervalPerk {
 
     @Override
     protected String getLabel(int killCount) {
-        return "% Noted Drop Chance";
+        return "*% Noted Drop Chance";
     }
 }

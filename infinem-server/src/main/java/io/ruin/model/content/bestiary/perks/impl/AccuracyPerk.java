@@ -38,6 +38,6 @@ public class AccuracyPerk extends BreakpointPerk {
 
     @Override
     protected String getLabel(int killCount) {
-        return "% Increased Accuracy";
+        return "*% Increased Accuracy";
     }
 }

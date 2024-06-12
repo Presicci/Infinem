@@ -34,6 +34,6 @@ public class DamagePerk extends BreakpointPerk {
 
     @Override
     protected String getLabel(int killCount) {
-        return "% Increased Damage";
+        return "*% Increased Damage";
     }
 }

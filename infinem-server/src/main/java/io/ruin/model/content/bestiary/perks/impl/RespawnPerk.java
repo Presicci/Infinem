@@ -38,6 +38,6 @@ public class RespawnPerk extends IntervalPerk {
 
     @Override
     protected String getLabel(int killCount) {
-        return "% Faster Respawn Time";
+        return "*% Faster Respawn Time";
     }
 }

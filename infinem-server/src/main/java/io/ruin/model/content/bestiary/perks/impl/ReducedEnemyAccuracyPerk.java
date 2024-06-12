@@ -53,6 +53,6 @@ public class ReducedEnemyAccuracyPerk extends BreakpointPerk {
 
     @Override
     protected String getLabel(int killCount) {
-        return "% Reduced Enemy Accuracy";
+        return "*% Reduced Enemy Accuracy";
     }
 }

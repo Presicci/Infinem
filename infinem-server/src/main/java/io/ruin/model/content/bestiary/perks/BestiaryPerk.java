@@ -36,7 +36,7 @@ public abstract class BestiaryPerk {
     }
 
     protected String getLabelString(int killCount) {
-        return (getInvertedPercentage() ? inverseDoubleToPercentage(getMultiplier(killCount)) : new DecimalFormat("#").format(getMultiplier(killCount) * 100f)) + getLabel(killCount);
+        return getLabel(killCount).replace("*", (getInvertedPercentage() ? inverseDoubleToPercentage(getMultiplier(killCount)) + "" : new DecimalFormat("#").format(getMultiplier(killCount) * 100f)));
     }
 
     protected String getBreakpointString(int killCount) {
