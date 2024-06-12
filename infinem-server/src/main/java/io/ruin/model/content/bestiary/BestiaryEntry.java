@@ -30,7 +30,8 @@ public class BestiaryEntry {
                 new ExtraDropPerk(isBoss),
                 new NotedDropPerk(isBoss),
                 new ReducedEnemyAccuracyPerk(isBoss),
-                new RespawnPerk(isBoss)
+                new RespawnPerk(isBoss),
+                new LuckPerk(isBoss)
         );
     }
 

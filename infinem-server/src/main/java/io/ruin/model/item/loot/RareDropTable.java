@@ -1,6 +1,8 @@
 package io.ruin.model.item.loot;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.content.bestiary.perks.impl.LuckPerk;
+import io.ruin.model.content.bestiary.perks.impl.RespawnPerk;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
@@ -133,7 +135,10 @@ public class RareDropTable {
         if (npc.getDef().combatInfo == null || npc.getDef().combatInfo.hitpoints < 15) {
             return Optional.empty();
         }
-        int luckTier = getLuckTier(player);
+        int luckTier = Math.max(
+                getLuckTier(player),
+                (int) Math.round(player.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(LuckPerk.class) * 100D));
+        player.sendMessage("Rolling using luck tier: " + luckTier);
         int chance = Math.max(ROLL_CHANCE[luckTier] - (int) Math.floor(npc.getDef().combatLevel * 0.35), 75);   // 1/75 is the lowest the rate can go
         if (Random.get(chance) != 1) {
             return Optional.empty();
