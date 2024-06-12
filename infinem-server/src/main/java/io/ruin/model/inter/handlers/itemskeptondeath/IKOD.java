@@ -92,7 +92,7 @@ public class IKOD {
                 ItemCombining combined = item.getDef().combinedFrom;
                 boolean isChargeable = IKODChargeable.isChargeable(item.getId());
                 IKODKind kind;
-                if ((item.getId() == Items.RUNE_POUCH && flags.killedByAPlayer) || isLootingBag(item)) {
+                if ((item.getId() == Items.RUNE_POUCH && flags.killedByAPlayer) || isLootingBag(item) || item.getDef().name.contains("ironman")) {
                     kind = IKODKind.Deleted;
                 } else if (breakable != null) {
                     if (flags.killedByAPlayer) {
