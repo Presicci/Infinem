@@ -476,6 +476,7 @@ public class JournalTab {
             interfaceHandler.actions[23] = (SimpleAction) player -> setTab(player, Tab.INFORMATION);
         });
         LoginListener.register(player -> {
+            player.getBestiary().calculateTotalKillcount();
             setTab(player,Tab.SUMMARY);
         });
     }

@@ -535,10 +535,8 @@ public class Config {
     public static final Config BIRD_HOUSE_VALLEY_NORTH = varp(1628, true);
     public static final Config BIRD_HOUSE_VALLEY_SOUTH = varp(1629, true);
 
-    /**
-     * Quest points
-     */
-    public static final Config QUEST_POINTS = varp(101, true).defaultValue(252).forceSend();
+
+    public static final Config BESTIARY_KILLS = varp(101, false);   // Was used for quest points
 
     /**
      * Farming
@@ -1168,7 +1166,7 @@ public class Config {
      * Task Interface Filters/Sort
      */
     public static final Config TASK_INTERFACE_AREA = varpbit(11689, false);
-    public static final Config TASK_INTERFACE_SKILL = varpbit(11692, false);
+    public static final Config TASK_INTERFACE_SKILL = varpbit(7936, false);
     public static final Config TASK_INTERFACE_TIER = varpbit(10033, false);
     public static final Config TASK_INTERFACE_COMPLETED = varpbit(10034, false);
     public static final Config TASK_INTERFACE_SORT = varpbit(10037, false);

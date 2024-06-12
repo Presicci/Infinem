@@ -5,11 +5,9 @@ import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.content.bestiary.perks.BestiaryPerk;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.AccessMask;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
-import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.handlers.TabBestiary;
 import io.ruin.model.inter.utils.Config;
@@ -49,6 +47,7 @@ public class Bestiary {
         killCounts.remove(bestiaryName);   // Reset order in map, for recent sort
         killCounts.put(bestiaryName, currentCount + amt);
         TabBestiary.attemptRefresh(player);
+        Config.BESTIARY_KILLS.increment(player, 1);
         player.sendMessage("You have now killed " + (currentCount + 1) + "<col=ff0000> " + bestiaryName + "s</col>.");
     }
 
@@ -69,6 +68,14 @@ public class Bestiary {
         if (entry == null || entry.isEmpty())
             return 0;
         return killCounts.getOrDefault(entry, 0);
+    }
+
+    public void calculateTotalKillcount() {
+        int total = 0;
+        for (int kc : killCounts.values()) {
+            total += kc;
+        }
+        Config.BESTIARY_KILLS.set(player, total);
     }
 
     public BestiaryEntry getBestiaryEntry(NPCDefinition def) {
