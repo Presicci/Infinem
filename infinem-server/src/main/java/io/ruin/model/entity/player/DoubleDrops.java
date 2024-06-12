@@ -53,7 +53,6 @@ public class DoubleDrops {
         if (Random.get(1, 100) <= gearCount(player) * 2) {
             rolls++;
         }
-        player.sendMessage(rolls + "");
         return rolls;
     }
 
