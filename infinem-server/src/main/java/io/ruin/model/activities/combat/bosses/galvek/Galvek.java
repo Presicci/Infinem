@@ -1,6 +1,7 @@
 package io.ruin.model.activities.combat.bosses.galvek;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.combat.AttackStyle;
@@ -380,11 +381,12 @@ public final class Galvek extends NPCCombat {
 
     static {
         ObjectAction.register(ROW_BOAT, 1, (player, obj) -> {
-            player.dialogue(new OptionsDialogue("Enter Galvek's boat?",
+            player.dialogue(new MessageDialogue("The boat looks to be out of gas...<br>(Disabled for now)"));
+            /*player.dialogue(new OptionsDialogue("Enter Galvek's boat?",
                     new Option("Yes", () -> {
                         enter(player);
                     }),
-                    new Option(("No"))));
+                    new Option(("No"))));*/
         });
     }
 }
