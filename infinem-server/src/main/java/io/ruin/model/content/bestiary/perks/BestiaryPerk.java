@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
  */
 public abstract class BestiaryPerk {
 
-    protected static final int MAX_FILL = 460;
+    protected static final int MAX_FILL = 484;
 
     protected boolean isBoss = false;
 
