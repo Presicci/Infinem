@@ -51,11 +51,7 @@ public class IKOD {
     private static List<IKODItem> otherKept(List<Item> items, IKODInterfaceFlags flags) {
         ArrayList<IKODItem> result = new ArrayList<>();
         for (Item item : new ArrayList<>(items)) {
-            Pet pet = item.getDef().pet;
-            if (pet != null) {
-                result.add(new IKODItem(IKODKind.OtherKept, item));
-                items.remove(item);
-            } else if (!item.getDef().tradeable) {
+            if (!item.getDef().tradeable) {
                 result.add(new IKODItem(IKODKind.OtherKept, item));
                 items.remove(item);
             }
@@ -92,7 +88,10 @@ public class IKOD {
                 ItemCombining combined = item.getDef().combinedFrom;
                 boolean isChargeable = IKODChargeable.isChargeable(item.getId());
                 IKODKind kind;
-                if ((item.getId() == Items.RUNE_POUCH && flags.killedByAPlayer) || isLootingBag(item) || item.getDef().name.contains("ironman")) {
+                Pet pet = item.getDef().pet;
+                if (pet != null) {
+                    kind = IKODKind.OtherKept;
+                } else if ((item.getId() == Items.RUNE_POUCH && flags.killedByAPlayer) || isLootingBag(item) || item.getDef().name.contains("ironman")) {
                     kind = IKODKind.Deleted;
                 } else if (breakable != null) {
                     if (flags.killedByAPlayer) {
