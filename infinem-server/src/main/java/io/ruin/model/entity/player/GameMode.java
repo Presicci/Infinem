@@ -68,7 +68,7 @@ public enum GameMode {
                 }
             }
         }
-        for (int index = 0; index <= HCIM_ARMOR.length; index++) {
+        for (int index = 0; index < HCIM_ARMOR.length; index++) {
             int finalIndex = index;
             player.forEachItemOwned(HCIM_ARMOR[index], (item) -> item.setId(NORMAL_ARMOR[finalIndex]));
         }
