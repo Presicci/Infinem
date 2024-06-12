@@ -39,7 +39,6 @@ public class BestiaryEntry {
     public double getPerkMultiplier(Class<?> perkType) {
         for (BestiaryPerk perk : perks) {
             if (player.hasAttribute(getPerkKey(perkType))) {
-                player.sendMessage("Perk disabled: " + perkType.getSimpleName() + ", returning value: " + perk.getMultiplier(0));
                 return perk.getMultiplier(0);
             }
             if (perkType.isInstance(perk))
