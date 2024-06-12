@@ -8,6 +8,10 @@ import io.ruin.model.content.bestiary.perks.IntervalPerk;
  */
 public class RespawnPerk extends IntervalPerk {
 
+    public RespawnPerk(boolean isBoss) {
+        this.isBoss = isBoss;
+    }
+
     @Override
     protected double getIncrement() {
         return 0.01;
@@ -15,7 +19,11 @@ public class RespawnPerk extends IntervalPerk {
 
     @Override
     protected int getInterval() {
-        return 25;
+        return isBoss ? getBossInterval() : 25;
+    }
+
+    private int getBossInterval() {
+        return 50;
     }
 
     @Override

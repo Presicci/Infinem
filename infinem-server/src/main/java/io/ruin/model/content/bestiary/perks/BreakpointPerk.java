@@ -11,6 +11,10 @@ public abstract class BreakpointPerk extends BestiaryPerk {
 
     public BreakpointPerk() {}
 
+    public BreakpointPerk(boolean isBoss) {
+        this.isBoss = isBoss;
+    }
+
     protected abstract Map<Integer, Double> getBreakpoints();
 
     @Override

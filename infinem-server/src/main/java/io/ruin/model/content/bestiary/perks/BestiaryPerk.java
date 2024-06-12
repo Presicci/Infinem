@@ -10,12 +10,18 @@ public abstract class BestiaryPerk {
 
     protected static final int MAX_FILL = 460;
 
+    protected boolean isBoss = false;
+
     protected abstract String getLabel(int killCount);
     public abstract double getMultiplier(int killCount);
     protected abstract int getNextBreakpoint(int killCount);
     public abstract int getFill(int killCount);
 
     public BestiaryPerk() {}
+
+    public BestiaryPerk(boolean isBoss) {
+        this.isBoss = isBoss;
+    }
 
     protected int doubleToPercentage(double value) {
         return (int) ((value - 1D) * 100);

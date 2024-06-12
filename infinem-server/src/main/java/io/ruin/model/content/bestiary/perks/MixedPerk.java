@@ -11,6 +11,10 @@ public abstract class MixedPerk extends BestiaryPerk {
 
     public MixedPerk() {}
 
+    public MixedPerk(boolean isBoss) {
+        this.isBoss = isBoss;
+    }
+
     protected abstract Map<Integer, Double> getBreakpoints();
     protected abstract double getIncrement();
     protected abstract int getInterval();

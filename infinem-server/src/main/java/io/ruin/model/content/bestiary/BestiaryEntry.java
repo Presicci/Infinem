@@ -17,19 +17,21 @@ public class BestiaryEntry {
     private final int killCount;
     private final Player player;
 
-    private static final List<BestiaryPerk> perks = Arrays.asList(
-            new DamagePerk(),
-            new AccuracyPerk(),
-            new ExtraDropPerk(),
-            new NotedDropPerk(),
-            new ReducedEnemyAccuracyPerk(),
-            new RespawnPerk()
-    );
+    private static List<BestiaryPerk> perks;
 
     public BestiaryEntry(Player player, String name, int killCount) {
         this.player = player;
         this.name = name;
         this.killCount = killCount;
+        boolean isBoss = BestiaryDef.isBoss(name);
+        perks = Arrays.asList(
+                new DamagePerk(isBoss),
+                new AccuracyPerk(isBoss),
+                new ExtraDropPerk(isBoss),
+                new NotedDropPerk(isBoss),
+                new ReducedEnemyAccuracyPerk(isBoss),
+                new RespawnPerk(isBoss)
+        );
     }
 
     public double getPerkMultiplier(Class<?> perkType) {

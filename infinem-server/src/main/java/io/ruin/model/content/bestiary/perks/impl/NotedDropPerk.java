@@ -2,13 +2,15 @@ package io.ruin.model.content.bestiary.perks.impl;
 
 import io.ruin.model.content.bestiary.perks.IntervalPerk;
 
-import java.text.DecimalFormat;
-
 /**
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 11/7/2023
  */
 public class NotedDropPerk extends IntervalPerk {
+
+    public NotedDropPerk(boolean isBoss) {
+        this.isBoss = isBoss;
+    }
 
     @Override
     protected double getIncrement() {
@@ -17,7 +19,11 @@ public class NotedDropPerk extends IntervalPerk {
 
     @Override
     protected int getInterval() {
-        return 1500;
+        return isBoss ? getBossInterval() : 1500;
+    }
+
+    private int getBossInterval() {
+        return 1000;
     }
 
     @Override

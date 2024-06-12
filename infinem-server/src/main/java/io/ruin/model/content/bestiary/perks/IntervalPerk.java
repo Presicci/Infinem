@@ -10,6 +10,10 @@ public abstract class IntervalPerk extends BestiaryPerk {
 
     public IntervalPerk() {}
 
+    public IntervalPerk(boolean isBoss) {
+        this.isBoss = isBoss;
+    }
+
     protected abstract double getIncrement();
     protected abstract int getInterval();
     protected abstract int getIntervalCap();
