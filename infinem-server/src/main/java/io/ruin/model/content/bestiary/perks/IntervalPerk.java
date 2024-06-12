@@ -1,6 +1,9 @@
 package io.ruin.model.content.bestiary.perks;
 
 import java.text.DecimalFormat;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.Optional;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -46,5 +49,10 @@ public abstract class IntervalPerk extends BestiaryPerk {
         int nextBreakpoint = getNextBreakpoint(killCount);
         if (nextBreakpoint == -1) return MAX_FILL;
         return (int) (MAX_FILL * ((double) (getInterval() - (nextBreakpoint - killCount)) / (double) getInterval()));
+    }
+
+    @Override
+    public boolean hasUnlocked(int killCount) {
+        return killCount >= getInterval();
     }
 }

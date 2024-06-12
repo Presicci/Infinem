@@ -80,7 +80,7 @@ public class BestiaryEntry {
         StringBuilder sb = new StringBuilder();
         for (BestiaryPerk perk : perks) {
             sb.append(perk.getString(killCount));
-            sb.append(player.hasAttribute(getPerkKey(perk.getClass())) ? "0" : "1");
+            sb.append(!perk.hasUnlocked(killCount) ? "2" : player.hasAttribute(getPerkKey(perk.getClass())) ? "0" : "1");
             sb.append("|");
         }
         sb.deleteCharAt(sb.length() - 1);   // Trim trailing |

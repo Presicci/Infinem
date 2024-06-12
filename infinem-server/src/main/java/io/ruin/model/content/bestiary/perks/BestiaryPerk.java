@@ -16,6 +16,7 @@ public abstract class BestiaryPerk {
     public abstract double getMultiplier(int killCount);
     protected abstract int getNextBreakpoint(int killCount);
     public abstract int getFill(int killCount);
+    public abstract boolean hasUnlocked(int killCount);
 
     public BestiaryPerk() {}
 

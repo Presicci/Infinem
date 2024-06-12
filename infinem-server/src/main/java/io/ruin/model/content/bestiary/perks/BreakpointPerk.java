@@ -56,4 +56,11 @@ public abstract class BreakpointPerk extends BestiaryPerk {
             lastBreakpoint = keys.get(indexOfNext - 1);
         return (int) (MAX_FILL * ((float) (killCount - lastBreakpoint) / (float) (nextBreakpoint - lastBreakpoint)));
     }
+
+    @Override
+    public boolean hasUnlocked(int killCount) {
+        Map<Integer, Double> breakpoints = getBreakpoints();
+        Optional<Integer> breakpoint = breakpoints.keySet().stream().filter(b -> b <= killCount).max(Comparator.naturalOrder());
+        return breakpoint.isPresent();
+    }
 }
