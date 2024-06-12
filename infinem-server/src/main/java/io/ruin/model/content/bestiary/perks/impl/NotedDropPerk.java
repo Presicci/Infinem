@@ -28,7 +28,7 @@ public class NotedDropPerk extends IntervalPerk {
 
     @Override
     protected int getIntervalCap() {
-        return -1;
+        return 5;
     }
 
     @Override
