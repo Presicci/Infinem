@@ -1,6 +1,7 @@
 package io.ruin.model.combat.npc.dragons;
 
 import io.ruin.api.utils.Random;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
@@ -322,7 +323,8 @@ public class Elvarg extends ChromaticDragon {
 
     static {
         ObjectAction.register(25161, "climb-over", (player, obj) -> {
-            createAndEnter(player);
+            player.dialogue(new MessageDialogue("Elvarg is not currently taking visitors.<br>(Disabled for now)"));
+            //createAndEnter(player);
         });
         ItemItemAction.register(11279, Tool.CHISEL, Elvarg::lootHead);
     }
