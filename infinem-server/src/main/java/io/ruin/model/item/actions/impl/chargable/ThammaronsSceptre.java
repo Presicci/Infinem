@@ -26,11 +26,10 @@ public class ThammaronsSceptre {
         ItemItemAction.register(CHARGED, REVENANT_ETHER, ThammaronsSceptre::charge);
         ItemItemAction.register(UNCHARGED, REVENANT_ETHER, ThammaronsSceptre::charge);
         ItemDefinition.get(CHARGED).addPreTargetDefendListener((player, item, hit, target) -> {
+            consumeCharge(player, item);
             if (hit.attackStyle != null && hit.attackStyle.isMagic() && target.npc != null && player.wildernessLevel > 0) {
-                if(consumeCharge(player, item)) {
-                    hit.boostAttack(1); //100% accuracy increase
-                    hit.boostDamage(0.25); //25% damage increase
-                }
+                hit.boostAttack(0.5);               // 50% accuracy increase
+                hit.boostDamage(0.5);    // 50% damage increase
             }
         });
     }
