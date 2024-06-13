@@ -1,6 +1,12 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.YesNoDialogue;
+import io.ruin.model.inter.utils.Config;
+import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.ItemAction;
 
 import java.util.Arrays;
 
@@ -49,11 +55,24 @@ public enum ItemImbue {
         }
     }
 
+    public void uncharge(Player player, Item item) {
+        player.dialogue(new YesNoDialogue("Uncharge the item?", "Uncharging will return 100% of the Nightmare Zone Point cost.", item, () -> {
+            item.setId(regularId);
+            Config.NMZ_REWARD_POINTS_TOTAL.increment(player, nmzCost);
+        }));
+    }
+
     public static ItemImbue getImbue(int id) {
         for (ItemImbue imbue : values())
             if (imbue.regularId == id)
                 return imbue;
         return null;
+    }
+
+    static {
+        for (ItemImbue imbue : values()) {
+            ItemAction.registerInventory(imbue.nmzImbue, "uncharge", imbue::uncharge);
+        }
     }
 }
 
