@@ -59,6 +59,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.function.BiPredicate;
 
 import static io.ruin.model.inter.Interface.COMBAT_OPTIONS;
 
@@ -228,6 +229,13 @@ public class PlayerCombat extends Combat {
     public void attack() {
         if(target == null || !player.getRouteFinder().targetRoute.withinDistance)
             return;
+        Item weapon = player.getEquipment().get(Equipment.SLOT_WEAPON);
+        BiPredicate<Player, Item> weaponTest = weapon.getDef().getCustomValueOrDefault("CAN_ATTACK", null);
+        if (weaponTest != null && !weaponTest.test(player, weapon)) {
+            target = null;
+            updateLastAttack(4);
+            return;
+        }
         if(useSpell()) {
             if(!hasAttackDelay())
                 attackWithMagic();

@@ -9,6 +9,8 @@ import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.attributes.AttributeExtensions;
 
+import java.util.function.BiPredicate;
+
 public class CrawsBow {
 
     private static final int CHARGED = 22550;
@@ -25,12 +27,24 @@ public class CrawsBow {
         ItemItemAction.register(CHARGED, REVENANT_ETHER, CrawsBow::charge);
         ItemItemAction.register(UNCHARGED, REVENANT_ETHER, CrawsBow::charge);
         ItemDefinition.get(CHARGED).addPreTargetDefendListener((player, item, hit, target) -> {
+            consumeCharge(player, item);
             if (hit.attackStyle != null && hit.attackStyle.isRanged() && target.npc != null && player.wildernessLevel > 0) {
-                if(consumeCharge(player, item)) {
-                    hit.boostAttack(0.5); //50% accuracy increase
-                    hit.boostDamage(0.5); //50% damage increase
-                }
+                hit.boostAttack(0.5);               // 50% accuracy increase
+                hit.boostDamage(0.5);    // 50% damage increase
             }
+        });
+        ItemDefinition.get(CHARGED).custom_values.put("CAN_ATTACK", (BiPredicate<Player, Item>) (player, item) -> {
+            int currentCharges = AttributeExtensions.getCharges(item);
+            if (currentCharges > 1000) {
+                return true;
+            } else {
+                player.sendMessage("Your Craw's bow has no charges remaining.");
+                return false;
+            }
+        });
+        ItemDefinition.get(UNCHARGED).custom_values.put("CAN_ATTACK", (BiPredicate<Player, Item>) (player, item) -> {
+            player.sendMessage("Your Craw's bow has no charges remaining.");
+            return false;
         });
     }
 
