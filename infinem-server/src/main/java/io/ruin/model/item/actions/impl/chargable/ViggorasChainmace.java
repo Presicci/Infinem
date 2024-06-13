@@ -9,6 +9,8 @@ import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.attributes.AttributeExtensions;
 
+import java.util.function.BiPredicate;
+
 public class ViggorasChainmace {
 
     private static final int CHARGED = 22545;
@@ -30,6 +32,19 @@ public class ViggorasChainmace {
                 hit.boostAttack(0.5);               // 50% accuracy increase
                 hit.boostDamage(0.5);    // 50% damage increase
             }
+        });
+        ItemDefinition.get(CHARGED).custom_values.put("CAN_ATTACK", (BiPredicate<Player, Item>) (player, item) -> {
+            int currentCharges = AttributeExtensions.getCharges(item);
+            if (currentCharges > 1000) {
+                return true;
+            } else {
+                player.sendMessage("Your Viggora's chainmace has no charges remaining.");
+                return false;
+            }
+        });
+        ItemDefinition.get(UNCHARGED).custom_values.put("CAN_ATTACK", (BiPredicate<Player, Item>) (player, item) -> {
+            player.sendMessage("Your Viggora's chainmace has no charges remaining.");
+            return false;
         });
     }
 
