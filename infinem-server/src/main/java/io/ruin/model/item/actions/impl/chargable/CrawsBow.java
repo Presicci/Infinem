@@ -1,5 +1,6 @@
 package io.ruin.model.item.actions.impl.chargable;
 
+import io.ruin.model.item.Items;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
@@ -24,6 +25,7 @@ public class CrawsBow {
         ItemAction.registerInventory(CHARGED, "check", CrawsBow::check);
         ItemAction.registerEquipment(CHARGED, "check", CrawsBow::check);
         ItemAction.registerInventory(CHARGED, "uncharge", CrawsBow::uncharge);
+        ItemAction.registerInventory(UNCHARGED, "dismantle", CrawsBow::dismantle);
         ItemItemAction.register(CHARGED, REVENANT_ETHER, CrawsBow::charge);
         ItemItemAction.register(UNCHARGED, REVENANT_ETHER, CrawsBow::charge);
         ItemDefinition.get(CHARGED).addPreTargetDefendListener((player, item, hit, target) -> {
@@ -95,5 +97,11 @@ public class CrawsBow {
         return true;
     }
 
+    private static void dismantle(Player player, Item item) {
+        player.dialogue(new YesNoDialogue("Dismantle the bow?", "Dismantling the bow will give you 7,500 revenant ether.", item, () -> {
+            item.remove();
+            player.getInventory().add(Items.REVENANT_ETHER, 7500);
+        }));
+    }
 }
 

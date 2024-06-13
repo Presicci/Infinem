@@ -1,5 +1,6 @@
 package io.ruin.model.item.actions.impl.chargable;
 
+import io.ruin.model.item.Items;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
@@ -25,6 +26,7 @@ public class ThammaronsSceptre {
         ItemAction.registerInventory(CHARGED, "check", ThammaronsSceptre::check);
         ItemAction.registerEquipment(CHARGED, "check", ThammaronsSceptre::check);
         ItemAction.registerInventory(CHARGED, "uncharge", ThammaronsSceptre::uncharge);
+        ItemAction.registerInventory(UNCHARGED, "dismantle", ThammaronsSceptre::dismantle);
         ItemItemAction.register(CHARGED, REVENANT_ETHER, ThammaronsSceptre::charge);
         ItemItemAction.register(UNCHARGED, REVENANT_ETHER, ThammaronsSceptre::charge);
         ItemDefinition.get(CHARGED).addPreTargetDefendListener((player, item, hit, target) -> {
@@ -93,5 +95,12 @@ public class ThammaronsSceptre {
         }
         AttributeExtensions.deincrementCharges(item, 1);
         return true;
+    }
+
+    private static void dismantle(Player player, Item item) {
+        player.dialogue(new YesNoDialogue("Dismantle the sceptre?", "Dismantling the sceptre will give you 7,500 revenant ether.", item, () -> {
+            item.remove();
+            player.getInventory().add(Items.REVENANT_ETHER, 7500);
+        }));
     }
 }

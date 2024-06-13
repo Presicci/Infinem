@@ -1,5 +1,6 @@
 package io.ruin.model.item.actions.impl.chargable;
 
+import io.ruin.model.item.Items;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
@@ -24,6 +25,7 @@ public class ViggorasChainmace {
         ItemAction.registerInventory(CHARGED, "check", ViggorasChainmace::check);
         ItemAction.registerEquipment(CHARGED, "check", ViggorasChainmace::check);
         ItemAction.registerInventory(CHARGED, "uncharge", ViggorasChainmace::uncharge);
+        ItemAction.registerInventory(UNCHARGED, "dismantle", ViggorasChainmace::dismantle);
         ItemItemAction.register(CHARGED, REVENANT_ETHER, ViggorasChainmace::charge);
         ItemItemAction.register(UNCHARGED, REVENANT_ETHER, ViggorasChainmace::charge);
         ItemDefinition.get(CHARGED).addPreTargetDefendListener((player, item, hit, target) -> {
@@ -91,5 +93,12 @@ public class ViggorasChainmace {
         }
         AttributeExtensions.deincrementCharges(item, 1);
         return true;
+    }
+
+    private static void dismantle(Player player, Item item) {
+        player.dialogue(new YesNoDialogue("Dismantle the chainmace?", "Dismantling the chainmace will give you 7,500 revenant ether.", item, () -> {
+            item.remove();
+            player.getInventory().add(Items.REVENANT_ETHER, 7500);
+        }));
     }
 }
