@@ -203,6 +203,40 @@ public class Makeover {
                     player.dialogue(new NPCDialogue(npcId, "You don't have enough money for a makeover."));
                     return;
                 }
+                if (skinColor >= 8) {
+                    switch (skinColor) {
+                        case 8:
+                            if (!player.hasAttribute("GREEN_SKIN")) {
+                                player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
+                                return;
+                            }
+                            break;
+                        case 9:
+                            if (!player.hasAttribute("BLACK_SKIN")) {
+                                player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
+                                return;
+                            }
+                            break;
+                        case 10:
+                            if (!player.hasAttribute("WHITE_SKIN")) {
+                                player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
+                                return;
+                            }
+                            break;
+                        case 11:
+                            if (!player.hasAttribute("BLUE_SKIN")) {
+                                player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
+                                return;
+                            }
+                            break;
+                        case 12:
+                            if (!player.hasAttribute("PURPLE_SKIN")) {
+                                player.dialogue(new NPCDialogue(npcId, "You haven't unlocked that skin colour."));
+                                return;
+                            }
+                            break;
+                    }
+                }
                 player.getAppearance().setGender(male ? 0 : 1);
                 Style.Companion.updateAll(player);
                 player.getAppearance().modifyColor((byte) 4, (byte) skinColor);
