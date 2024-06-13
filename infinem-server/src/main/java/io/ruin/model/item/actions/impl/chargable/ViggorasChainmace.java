@@ -25,11 +25,10 @@ public class ViggorasChainmace {
         ItemItemAction.register(CHARGED, REVENANT_ETHER, ViggorasChainmace::charge);
         ItemItemAction.register(UNCHARGED, REVENANT_ETHER, ViggorasChainmace::charge);
         ItemDefinition.get(CHARGED).addPreTargetDefendListener((player, item, hit, target) -> {
+            consumeCharge(player, item);
             if (hit.attackStyle != null && hit.attackStyle.isMelee() && target.npc != null && player.wildernessLevel > 0) {
-                if(consumeCharge(player, item)) {
-                    hit.boostAttack(0.5); //50% accuracy increase
-                    hit.boostDamage(0.5); //50% damage increase
-                }
+                hit.boostAttack(0.5);               // 50% accuracy increase
+                hit.boostDamage(0.5);    // 50% damage increase
             }
         });
     }
