@@ -2,6 +2,7 @@ package io.ruin.model.map.object.actions.impl.locations;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -11,7 +12,7 @@ import io.ruin.model.map.object.actions.ObjectAction;
  */
 public class Zanaris {
 
-    private static void marketFairyRing(Player player, GameObject fairyRing) {
+    private static void staticFairyRing(Player player, GameObject fairyRing, Position destination) {
         player.startEvent(event -> {
             player.lock();
             if (fairyRing != null && !player.isAt(fairyRing.x, fairyRing.y)) {
@@ -22,7 +23,7 @@ public class Zanaris {
             player.animate(3265, 30);
             player.graphics(569);
             event.delay(3);
-            player.getMovement().teleport(3262, 3167, 0);
+            player.getMovement().teleport(destination);
             player.animate(3266);
             event.delay(1);
             player.unlock();
@@ -30,6 +31,7 @@ public class Zanaris {
     }
 
     static {
-        ObjectAction.register(12003, "use", Zanaris::marketFairyRing);
+        ObjectAction.register(12003, "use", ((player, obj) -> staticFairyRing(player, obj, new Position(3262, 3167, 0))));
+        ObjectAction.register(12094, "use", ((player, obj) -> staticFairyRing(player, obj, new Position(3201, 3169, 0))));
     }
 }
