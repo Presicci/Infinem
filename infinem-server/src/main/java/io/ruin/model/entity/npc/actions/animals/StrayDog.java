@@ -24,6 +24,8 @@ public class StrayDog {
             player.sendMessage("You pet the dog...");
             player.forceText("Who's a good doggie?");
             npc.forceText("Woof!");
+            if (npc.getId() == 2922 || npc.getId() == 2902)
+                player.getTaskManager().doLookupByUUID(334);    // Pet a Stray Dog in Varrock
         }));
         SpawnListener.register(ArrayUtils.of("stray dog"), npc -> {
             npc.addEvent(e -> {
