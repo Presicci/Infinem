@@ -6,7 +6,10 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemObjectAction;
+import io.ruin.model.item.loot.LootItem;
+import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -14,6 +17,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FontOfConsumption {
+
+    public static LootTable LOOT = new LootTable().addTable(1,
+            new LootItem(Items.BLUDGEON_SPINE, 1, 1, 61),
+            new LootItem(Items.ABYSSAL_DAGGER, 1, 1, 16),
+            new LootItem(Items.ABYSSAL_WHIP, 1, 1, 12),
+            new LootItem(Items.JAR_OF_MIASMA, 1, 1, 13),
+            new LootItem(Items.ABYSSAL_HEAD, 1, 1, 10),
+            new LootItem(Items.ABYSSAL_ORPHAN, 1, 1, 5)
+    );
 
     private static int roll(Player player) {
         int roll = Random.get(127);
@@ -31,27 +43,9 @@ public class FontOfConsumption {
     }
 
     private static int getNextBludgeonPiece(Player player) {
-        int claws = 0, spines = 0, axons = 0;
-        for (Item item : player.getBank().getItems()) {
-            if (item == null)
-                continue;
-            if (item.getId() == 13274)
-                spines += item.getAmount();
-            else if (item.getId() == 13275)
-                claws += item.getAmount();
-            else if (item.getId() == 13276)
-                axons += item.getAmount();
-        }
-        for (Item item : player.getInventory().getItems()) {
-            if (item == null)
-                continue;
-            if (item.getId() == 13274)
-                spines++;
-            else if (item.getId() == 13275)
-                claws++;
-            else if (item.getId() == 13276)
-                axons++;
-        }
+        int claws = player.getItemAmount(Items.BLUDGEON_CLAW);
+        int spines = player.getItemAmount(Items.BLUDGEON_SPINE);
+        int axons = player.getItemAmount(Items.BLUDGEON_AXON);;
         int lowest = Math.min(Math.min(claws, axons), spines);
         List<Integer> possible = new ArrayList<>();
         if (lowest == spines)
