@@ -264,7 +264,7 @@ public class TaskManager {
              * If the task has an area restriction, check that the player satisfies it.
              */
             String mapareaString = rs.getString("maparea");
-            if (!mapareaString.trim().isEmpty() && (mapArea == null || !mapareaString.equalsIgnoreCase(mapArea.toString()))) {
+            if (!mapareaString.trim().isEmpty() && (mapArea == null || !mapareaString.equalsIgnoreCase(mapArea.toString().replace("_", " ")))) {
                 System.out.println("[" + player.getName() + "] uuid=" + uuid + ", cat=" + category + ", trig=" + trigger + ", amt=" + amount + ", inc=" + incremental + ", exit on maparea");
                 continue;
             }
