@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Stuliette",
+    "id": 7616,
+    "x": 1256,
+    "y": 3548,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Ferain",
+    "id": 12702,
+    "x": 1219,
+    "y": 3737,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Elnes",
+    "id": 12703,
+    "x": 1807,
+    "y": 3479,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Hordal",
+    "id": 12704,
+    "x": 1699,
+    "y": 3659,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Buneir",
+    "id": 12705,
+    "x": 1572,
+    "y": 3465,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Lassin",
+    "id": 12706,
+    "x": 1648,
+    "y": 3929,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Hatna",
+    "id": 12707,
+    "x": 1415,
+    "y": 3578,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0
+  }
+]
