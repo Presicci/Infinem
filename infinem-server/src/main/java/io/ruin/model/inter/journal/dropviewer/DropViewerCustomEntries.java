@@ -2,6 +2,7 @@ package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.combat.barrows.BarrowsRewards;
+import io.ruin.model.activities.combat.bosses.slayer.sire.FontOfConsumption;
 import io.ruin.model.activities.combat.pestcontrol.rewards.PCReward;
 import io.ruin.model.activities.combat.raids.xeric.XericRewards;
 import io.ruin.model.item.Items;
@@ -135,6 +136,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Infernal Eel", InfernalEel.LOOT_TABLE),
             new DropViewerEntry("Sulliuscep", Woodcutting.SULLIUSCEP_LOOT),
             new DropViewerEntry("Rare Drop Table", RareDropTable.RARE_DROP_TABLE),
-            new DropViewerEntry("Chambers of Xeric (Unique)", XericRewards.UNIQUE_TABLE)
+            new DropViewerEntry("Chambers of Xeric (Unique)", XericRewards.UNIQUE_TABLE),
+            new DropViewerEntry("Abyssal Sire (Unsired)", FontOfConsumption.LOOT)
     ).collect(Collectors.toCollection(ArrayList::new));
 }

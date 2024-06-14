@@ -32,6 +32,8 @@ public class DropViewerResultItem extends DropViewerResult {
         switch (id) {
             case 22973:
                 return "Brimstone ring part";
+            case Items.BLUDGEON_SPINE:
+                return "Bludgeon piece";
             default:
                 return ItemDefinition.get(id).name;
         }
@@ -41,6 +43,8 @@ public class DropViewerResultItem extends DropViewerResult {
         switch (id) {
             case 22973:
                 return "Drop order:<br><col=F5DEB3>Eye, Fang, Heart";
+            case Items.BLUDGEON_SPINE:
+                return "Drop order:<br><col=F5DEB3>Spine, Claw, Axon";
             default:
                 return min == max ? Misc.abbreviateItemQuantity(min)
                         : (Misc.abbreviateItemQuantity(min) + "-" + Misc.abbreviateItemQuantity(max));
