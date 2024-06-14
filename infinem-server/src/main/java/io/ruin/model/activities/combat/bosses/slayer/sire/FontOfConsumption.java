@@ -10,6 +10,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -20,27 +21,12 @@ public class FontOfConsumption {
 
     public static LootTable LOOT = new LootTable().addTable(1,
             new LootItem(Items.BLUDGEON_SPINE, 1, 1, 61),
-            new LootItem(Items.ABYSSAL_DAGGER, 1, 1, 16),
+            new LootItem(Items.ABYSSAL_DAGGER, 1, 1, 25),
             new LootItem(Items.ABYSSAL_WHIP, 1, 1, 12),
             new LootItem(Items.JAR_OF_MIASMA, 1, 1, 13),
             new LootItem(Items.ABYSSAL_HEAD, 1, 1, 10),
             new LootItem(Items.ABYSSAL_ORPHAN, 1, 1, 5)
     );
-
-    private static int roll(Player player) {
-        int roll = Random.get(127);
-        if (roll < 5)
-            return 13262; // abyssal orphan (pet)
-        if (roll < 15)
-            return 7979; // abyssal head
-        if (roll < 41)
-            return 13265; // abyssal dagger
-        if (roll < 53)
-            return 4151; // whip
-        if (roll < 66)
-            return 13277; // jar of miasma
-        return getNextBludgeonPiece(player); // 66-127 -> bludgeon piece
-    }
 
     private static int getNextBludgeonPiece(Player player) {
         int claws = player.getItemAmount(Items.BLUDGEON_CLAW);
@@ -67,10 +53,18 @@ public class FontOfConsumption {
                 player.animate(827);
                 World.sendGraphics(1276, 0, 0, player.getPosition().relative(0, 1));
                 event.delay(2);
-                int reward = roll(player);
-                item.setId(reward);
-                player.getCollectionLog().collect(new Item(reward, 1));
-                player.dialogue(new ItemDialogue().one(reward, "The Font consumes the Unsired and returns you a<br>reward."));
+                Item reward = LOOT.rollItem();
+                if (reward.getId() == Items.ABYSSAL_ORPHAN) {
+                    Pet.ABYSSAL_ORPHAN.unlock(player);
+                } else {
+                    if (reward.getId() == Items.BLUDGEON_SPINE) {
+                        reward.setId(getNextBludgeonPiece(player));
+                    }
+                    item.setId(reward.getId());
+                    player.getCollectionLog().collect(reward);
+                }
+
+                player.dialogue(new ItemDialogue().one(reward.getId(), "The Font consumes the Unsired and returns you a<br>reward."));
                 player.unlock();
             });
         });
