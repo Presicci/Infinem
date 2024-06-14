@@ -230,11 +230,13 @@ public class PlayerCombat extends Combat {
         if(target == null || !player.getRouteFinder().targetRoute.withinDistance)
             return;
         Item weapon = player.getEquipment().get(Equipment.SLOT_WEAPON);
-        BiPredicate<Player, Item> weaponTest = weapon.getDef().getCustomValueOrDefault("CAN_ATTACK", null);
-        if (weaponTest != null && !weaponTest.test(player, weapon)) {
-            target = null;
-            updateLastAttack(4);
-            return;
+        if (weapon != null) {
+            BiPredicate<Player, Item> weaponTest = weapon.getDef().getCustomValueOrDefault("CAN_ATTACK", null);
+            if (weaponTest != null && !weaponTest.test(player, weapon)) {
+                target = null;
+                updateLastAttack(4);
+                return;
+            }
         }
         if(useSpell()) {
             if(!hasAttackDelay())
