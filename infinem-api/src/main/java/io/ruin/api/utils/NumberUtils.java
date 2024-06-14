@@ -115,4 +115,11 @@ public class NumberUtils {
         return num + 1;
     }
 
+    public static int toggleBit(int value, int bit) {
+        if ((value & bit) == bit) {
+            return value & ~bit;
+        } else {
+            return value | bit;
+        }
+    }
 }
