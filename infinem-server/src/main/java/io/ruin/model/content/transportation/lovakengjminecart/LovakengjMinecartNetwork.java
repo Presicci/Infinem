@@ -1,5 +1,6 @@
 package io.ruin.model.content.transportation.lovakengjminecart;
 
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -35,7 +36,7 @@ public class LovakengjMinecartNetwork {
         if (!fromMinecart.hasUnlocked(player)) {
             fromMinecart.unlock(player);
         }
-        final int cost = 20;
+        final int cost = AreaReward.NO_MINECART_FEE.hasReward(player) ? 0 : 20;
         Option[] options = Arrays.stream(LovakengjMinecart.values())
                 .map(cart -> new Option((cart.hasUnlocked(player) ? "" : "<str>") + cart.getName(),
                         () -> {
@@ -54,7 +55,7 @@ public class LovakengjMinecartNetwork {
             player.dialogue(new NPCDialogue(fromMinecart.getConductorId(), "You haven't unlocked any other locations yet."));
             return;
         }
-        OptionScroll.open(player, "Minecart rides: " + cost + "gp", true, options);
+        OptionScroll.open(player, "Minecart rides: " + (cost > 0 ? cost + "gp" : "Free"), true, options);
     }
 
     static {

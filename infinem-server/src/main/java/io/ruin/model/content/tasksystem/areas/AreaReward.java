@@ -284,6 +284,7 @@ public enum AreaReward {
     /**
      * Zeah
      */
+    NO_MINECART_FEE(TaskArea.ZEAH, AreaTaskTier.MEDIUM, "No charge when using the Lovakengj Minecart Network")
     ;
 
     private final TaskArea area;
