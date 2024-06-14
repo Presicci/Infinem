@@ -28,6 +28,23 @@ public class StrayDog {
             if (npc.getId() == 2922 || npc.getId() == 2902)
                 player.getTaskManager().doLookupByUUID(334);    // Pet a Stray Dog in Varrock
         });
+        NPCAction.register("stray dog", "shoo-away", (player, npc) -> {
+            player.animate(2110);
+            player.forceText("Thbbbbt!");
+            npc.forceText("Whine!");
+            npc.startEvent(e -> {
+                Position playerPos = player.getPosition();
+                Position pos = npc.getPosition();
+                int xDiff = pos.getX() - playerPos.getX();
+                int yDiff = pos.getY() - playerPos.getY();
+                Position dest = pos.relative(xDiff * 5, yDiff * 5);
+                DumbRoute.route(npc, dest.getX(), dest.getY());
+                npc.removeTemporaryAttribute(KEY);
+                npc.face(player);
+                e.delay(5);
+                npc.faceNone(false);
+            });
+        });
         SpawnListener.register(ArrayUtils.of("stray dog"), npc -> {
             npc.addEvent(e -> {
                 int followCycles = 0;
