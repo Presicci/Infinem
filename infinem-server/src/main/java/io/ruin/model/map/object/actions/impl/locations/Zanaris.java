@@ -3,6 +3,7 @@ package io.ruin.model.map.object.actions.impl.locations;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
+import io.ruin.model.item.Item;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -32,6 +33,12 @@ public class Zanaris {
     }
 
     private static void zanarisDoorEntrance(Player player, GameObject door) {
+        Item dramenStaff = player.getEquipment().findFirst(772, 9084);
+        boolean hasFairyMushroom = player.getEquipment().hasId(25102) || player.getInventory().hasId(25102);
+        if(dramenStaff == null && !hasFairyMushroom) {
+            player.sendFilteredMessage("The door wont budge.");
+            return;
+        }
         GameObject rotatedDoor = new GameObject(door.id, door.getPosition(), door.type, 1);
         rotatedDoor.spawn();
         staticFairyRing(player, door, new Position(2452, 4472, 0));
