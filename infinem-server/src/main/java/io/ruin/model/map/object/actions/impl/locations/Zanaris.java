@@ -26,6 +26,7 @@ public class Zanaris {
             player.graphics(569);
             event.delay(3);
             player.getMovement().teleport(destination);
+            player.getTaskManager().doLookupByUUID(332);    // Enter Zanaris
             player.animate(3266);
             event.delay(1);
             player.unlock();
