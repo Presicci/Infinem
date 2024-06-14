@@ -2,6 +2,7 @@ package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.utility.Misc;
 
 /**
@@ -30,7 +31,7 @@ public class DropViewerResultItem extends DropViewerResult {
     private String getItemName() {
         switch (id) {
             case 22973:
-                return "Brimstone Ring Part";
+                return "Brimstone ring part";
             default:
                 return ItemDefinition.get(id).name;
         }
@@ -39,7 +40,7 @@ public class DropViewerResultItem extends DropViewerResult {
     private String getAmountString() {
         switch (id) {
             case 22973:
-                return "Dropped order:<br><col=F5DEB3>Eye, Fang, Heart";
+                return "Drop order:<br><col=F5DEB3>Eye, Fang, Heart";
             default:
                 return min == max ? Misc.abbreviateItemQuantity(min)
                         : (Misc.abbreviateItemQuantity(min) + "-" + Misc.abbreviateItemQuantity(max));
