@@ -238,7 +238,10 @@ public class NPCDrops {
              * Note drops in rev caves and wildy slayer cave while amulet of avarice is equipped.
              */
             if ((MapArea.REVENANT_CAVES.inArea(pKiller) || MapArea.WILDERNESS_SLAYER_CAVE.inArea(pKiller))
-                    && pKiller.getEquipment().contains(22557) && item.getDef().notedId > 0) {
+                    && pKiller.getEquipment().contains(22557) && item.getDef().notedId > 0
+                    && !item.getDef().name.toLowerCase().contains("blighted") && item.getId() != 22557
+                    && item.getId() != 22547 && item.getId() != 22542 && item.getId() != 22552  // Doesn't note weapons/amulet
+            ) {
                 item.setId(item.getDef().notedId);
             }
 
