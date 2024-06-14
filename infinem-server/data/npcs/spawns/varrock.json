@@ -1429,16 +1429,6 @@
     "npcName": "Hops"
   },
   {
-    "id": 2902,
-    "x": 3272,
-    "y": 3386,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Stray dog"
-  },
-  {
     "id": 2864,
     "x": 3265,
     "y": 3386,
@@ -2527,5 +2517,53 @@
     "z": 0,
     "direction": "S",
     "walkRange": 4
+  },
+
+
+  // Stray dogs
+  {
+    "name": "Stray dog",
+    "id": 2902,
+    "x": 3276,
+    "y": 3380,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 30
+  },
+  {
+    "name": "Stray dog",
+    "id": 2922,
+    "x": 3262,
+    "y": 3409,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 25
+  },
+  {
+    "name": "Stray dog",
+    "id": 2902,
+    "x": 3234,
+    "y": 3393,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 20
+  },
+  {
+    "name": "Stray dog",
+    "id": 2902,
+    "x": 3198,
+    "y": 3400,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 20
+  },
+  {
+    "name": "Stray dog",
+    "id": 2922,
+    "x": 3170,
+    "y": 3442,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 15
   }
 ]
