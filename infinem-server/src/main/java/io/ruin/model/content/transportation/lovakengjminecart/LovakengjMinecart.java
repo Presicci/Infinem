@@ -35,6 +35,7 @@ public enum LovakengjMinecart {
             player.getInventory().remove(995, cost);
         }
         Traveling.fadeTravel(player, destination);
+        player.getTaskManager().doLookupByUUID(991);    // Travel Using the Lovakengj Minecart Network
     }
 
     protected int getBit() {
