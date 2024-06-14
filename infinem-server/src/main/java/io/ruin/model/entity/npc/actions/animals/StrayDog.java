@@ -5,6 +5,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.route.routes.DumbRoute;
 
 import java.util.List;
@@ -19,14 +20,14 @@ public class StrayDog {
     private static final String LAST_KEY = "LAST_TARGET";
 
     static {
-        NPCAction.register("stray dog", "pet", ((player, npc) -> {
+        NPCAction.register("stray dog", "pet", (player, npc) -> {
             player.animate(827);
             player.sendMessage("You pet the dog...");
             player.forceText("Who's a good doggie?");
             npc.forceText("Woof!");
             if (npc.getId() == 2922 || npc.getId() == 2902)
                 player.getTaskManager().doLookupByUUID(334);    // Pet a Stray Dog in Varrock
-        }));
+        });
         SpawnListener.register(ArrayUtils.of("stray dog"), npc -> {
             npc.addEvent(e -> {
                 int followCycles = 0;
@@ -35,11 +36,13 @@ public class StrayDog {
                         Player followingPlayer = npc.getTemporaryAttributeOrDefault(KEY, null);
                         if (followingPlayer == null || !followingPlayer.isOnline() || followingPlayer.getPosition().distance(npc.getPosition()) > 10) {
                             npc.removeTemporaryAttribute(KEY);
+                            npc.faceNone(false);
                             followCycles = 0;
                             continue;
                         }
                         if (followCycles > 25 && Random.rollDie(4)) {
                             npc.removeTemporaryAttribute(KEY);
+                            npc.faceNone(false);
                             followCycles = 0;
                             continue;
                         }
