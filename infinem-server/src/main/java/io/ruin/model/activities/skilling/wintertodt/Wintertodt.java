@@ -150,6 +150,7 @@ public class Wintertodt { // TODO make hits not reset events
             player.sendMessage("You have a new high score! " + player.wintertodtHighscore);
         }
         PlayerCounter.WINTERTODT_SUBDUED.increment(player, 1);
+        player.getTaskManager().doLookupByUUID(944);    //    Subdue Wintertodt
         player.sendMessage("Your subdued Wintertodt count is: <col=ff0000>" + PlayerCounter.WINTERTODT_SUBDUED.get(player) + "</col>.");
         if (player.wintertodtPoints >= 500) {
             int crates = player.wintertodtPoints / 500; // guaranteed crates
