@@ -15,41 +15,6 @@ import java.util.List;
 
 public class FontOfConsumption {
 
-    static {
-        ItemObjectAction.register(13273, 27029, (player, item, obj) -> {
-            player.startEvent(event -> {
-                player.lock();
-                player.face(Direction.NORTH);
-                event.delay(1);
-                player.dialogue(new ItemDialogue().one(13273, "You place the Unsired into the Font of Consumption...").hideContinue());
-                player.animate(827);
-                World.sendGraphics(1276, 0, 0, player.getPosition().relative(0, 1));
-                event.delay(2);
-                int reward = roll(player);
-                item.setId(reward);
-                player.dialogue(new ItemDialogue().one(reward, "The Font consumes the Unsired and returns you a<br>reward."));
-                player.unlock();
-            });
-        });
-
-        ObjectAction.register(27057, 1, (player, obj) -> { // TODO find chathead and full dialogue... @Nick :)
-            List<Item> pieces = player.getInventory().collectOneOfEach(13274, 13275, 13276);
-            if (pieces == null) {
-                player.dialogue(new MessageDialogue("You'll need a bludgeon claw, axon and spine<br> to have the Overseer create a weapon for you."));
-            } else {
-                player.startEvent(event -> {
-                    player.lock();
-                    pieces.forEach(Item::remove);
-                    player.dialogue(new ItemDialogue().two(13274, 13275, "You hand over the components to the Overseer.").hideContinue());
-                    event.delay(2);
-                    player.getInventory().add(13263, 1);
-                    player.dialogue(new ItemDialogue().one(13263, "The Overseer presents you with an Abyssal Bludgeon."));
-                    player.unlock();
-                });
-            }
-        });
-    }
-
     private static int roll(Player player) {
         int roll = Random.get(127);
         if (roll < 5)
@@ -98,4 +63,39 @@ public class FontOfConsumption {
         return Random.get(possible);
     }
 
+    static {
+        ItemObjectAction.register(13273, 27029, (player, item, obj) -> {
+            player.startEvent(event -> {
+                player.lock();
+                player.face(Direction.NORTH);
+                event.delay(1);
+                player.dialogue(new ItemDialogue().one(13273, "You place the Unsired into the Font of Consumption...").hideContinue());
+                player.animate(827);
+                World.sendGraphics(1276, 0, 0, player.getPosition().relative(0, 1));
+                event.delay(2);
+                int reward = roll(player);
+                item.setId(reward);
+                player.getCollectionLog().collect(new Item(reward, 1));
+                player.dialogue(new ItemDialogue().one(reward, "The Font consumes the Unsired and returns you a<br>reward."));
+                player.unlock();
+            });
+        });
+
+        ObjectAction.register(27057, 1, (player, obj) -> { // TODO find chathead and full dialogue... @Nick :)
+            List<Item> pieces = player.getInventory().collectOneOfEach(13274, 13275, 13276);
+            if (pieces == null) {
+                player.dialogue(new MessageDialogue("You'll need a bludgeon claw, axon and spine<br> to have the Overseer create a weapon for you."));
+            } else {
+                player.startEvent(event -> {
+                    player.lock();
+                    pieces.forEach(Item::remove);
+                    player.dialogue(new ItemDialogue().two(13274, 13275, "You hand over the components to the Overseer.").hideContinue());
+                    event.delay(2);
+                    player.getInventory().add(13263, 1);
+                    player.dialogue(new ItemDialogue().one(13263, "The Overseer presents you with an Abyssal Bludgeon."));
+                    player.unlock();
+                });
+            }
+        });
+    }
 }
