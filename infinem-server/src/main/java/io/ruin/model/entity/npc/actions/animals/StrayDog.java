@@ -19,6 +19,12 @@ public class StrayDog {
     private static final String LAST_KEY = "LAST_TARGET";
 
     static {
+        NPCAction.register("stray dog", "pet", ((player, npc) -> {
+            player.animate(827);
+            player.sendMessage("You pet the dog...");
+            player.forceText("Who's a good doggie?");
+            npc.forceText("Woof!");
+        }));
         SpawnListener.register(ArrayUtils.of("stray dog"), npc -> {
             npc.addEvent(e -> {
                 int followCycles = 0;
