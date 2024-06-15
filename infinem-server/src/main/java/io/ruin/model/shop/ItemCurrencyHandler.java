@@ -9,7 +9,11 @@ public class ItemCurrencyHandler extends CurrencyHandler {
     @Getter
     private int currencyItemId;
 
-    public ItemCurrencyHandler(int currencyItemId){
+    public ItemCurrencyHandler(int currencyItemId) {
+        this(currencyItemId, false);
+    }
+
+    public ItemCurrencyHandler(int currencyItemId, boolean addToCollectionLog) {
         super("" + currencyItemId);
         ItemDefinition itemDefinition = ItemDefinition.get(currencyItemId);
         if(itemDefinition != null) {
@@ -17,6 +21,7 @@ public class ItemCurrencyHandler extends CurrencyHandler {
             this.pluralName = this.name.endsWith("s") ? this.name : this.name + "s";
         }
         this.currencyItemId = currencyItemId;
+        this.addToCollectionLog = addToCollectionLog;
     }
 
     @Override

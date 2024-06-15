@@ -91,6 +91,7 @@ public class Shop {
     public List<ShopItem> defaultStock;
     public ShopItemContainer shopItems;
     public boolean accessibleByIronMan;
+    public boolean addToCL;
     public TaskArea taskArea;
     public AreaTaskTier taskTier;
 
@@ -231,8 +232,7 @@ public class Shop {
             if (removedCurrency == requiredCurrency) {
                 Item bought = new Item(shopItem.getId(), buyAmount);
                 player.getInventory().add(bought);
-                if (currencyHandler.name.toLowerCase().contains("pest control points") || currencyHandler.name.toLowerCase().contains("molch pearl")
-                        || currencyHandler.name.toLowerCase().contains("marks of grace") || currencyHandler.name.toLowerCase().contains("golden nuggets")) {
+                if (currencyHandler.addToCollectionLog) {
                     player.getCollectionLog().collect(bought);
                 }
                 if(shopItem.getAdditionalItems() != null && !shopItem.getAdditionalItems().isEmpty()){

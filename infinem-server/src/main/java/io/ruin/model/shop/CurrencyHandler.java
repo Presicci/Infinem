@@ -18,6 +18,8 @@ public abstract class CurrencyHandler {
     @Getter
     protected String name, pluralName;
 
+    protected boolean addToCollectionLog;
+
     public CurrencyHandler(String name, String pluralName) {
         this.name = name;
         this.pluralName = pluralName;
@@ -92,4 +94,7 @@ public abstract class CurrencyHandler {
 
     public abstract int addCurrency(Player player, int amount);
 
+    public boolean addToCollectionLog() {
+        return addToCollectionLog;
+    }
 }
