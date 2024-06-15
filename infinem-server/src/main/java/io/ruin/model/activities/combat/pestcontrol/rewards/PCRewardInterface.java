@@ -104,6 +104,7 @@ public class PCRewardInterface {
                             return;
                         }
                         player.getInventory().add(new Item(reward.getItemId()));
+                        player.getCollectionLog().collect(reward.getItemId());
                         player.incrementNumericAttribute("PEST_POINTS", -reward.getCost());
                         player.removeTemporaryAttribute("PC_SHOP_SLOT");
                         break;
