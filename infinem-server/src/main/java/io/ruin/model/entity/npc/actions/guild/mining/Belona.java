@@ -64,6 +64,7 @@ public class Belona {
                                             miningGloves.remove();
                                             superiorMiningGloves.remove();
                                             player.getInventory().add(21392, 1);
+                                            player.getCollectionLog().collect(21392);
                                             player.dialogue(
                                                     new NPCDialogue(npc, "Here's a pair of expert mining gloves!"),
                                                     new PlayerDialogue("Thanks!"));
