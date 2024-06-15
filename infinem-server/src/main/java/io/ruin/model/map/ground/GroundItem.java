@@ -25,6 +25,8 @@ public class GroundItem {
 
     public boolean ironPlayerKill = false;
 
+    public boolean addToCL = false;
+
     public int id;
 
     public int amount;
@@ -76,6 +78,11 @@ public class GroundItem {
 
     public GroundItem ironPlayerKill() {
         this.ironPlayerKill = true;
+        return this;
+    }
+
+    public GroundItem addToCL() {
+        this.addToCL = true;
         return this;
     }
 
@@ -221,6 +228,8 @@ public class GroundItem {
         if (getTimeDropped() > 0) { // this item was manually dropped by someone, log as trade
             Loggers.logDropTrade(player.getUserId(), originalOwner, player.getIp(), getDropperIp(), player.getName(), getDropperName(), id, amount, x, y, z, getTimeDropped());
         } else {
+            if (addToCL)
+                player.getCollectionLog().collect(id, amount);
             if (id == 11849)
                 player.getTaskManager().doLookupByUUID(52, 1);  // Obtain a Mark of Grace
         }
