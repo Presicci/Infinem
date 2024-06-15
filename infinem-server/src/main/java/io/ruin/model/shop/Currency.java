@@ -20,7 +20,7 @@ public enum Currency {
     WARRIOR_GUILD_TOKEN(new ItemCurrencyHandler(ItemID.WARRIOR_GUILD_TOKEN)),
     VOTE_TICKETS(new ItemCurrencyHandler(ItemID.VOTE_TICKETS)),
     UNIDENTIFIED_MINERALS(new ItemCurrencyHandler(ItemID.UNIDENTIFIED_MINERALS, true)),
-    STARDUST(new ItemCurrencyHandler(25527)),
+    STARDUST(new ItemCurrencyHandler(25527, true)),
     PIECES_OF_EIGHT(new ItemCurrencyHandler(Items.PIECES_OF_EIGHT)),
     ARCHERY_TICKETS(new ItemCurrencyHandler(1464)),
     TASK_POINTS(new CurrencyHandler("daily task points") {
