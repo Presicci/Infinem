@@ -212,7 +212,7 @@ public enum ArielFishing {
     }
 
     private static void rollForGoldenTench(Player player) {
-        if (Random.rollDie(10000, 1)) {  // OSRS is 1/20,000
+        if (Random.rollDie(20000, 1)) {
             player.getInventory().add(GOLDEN_TENCH, 1);
             player.getCollectionLog().collect(GOLDEN_TENCH);
             player.sendMessage(Color.RED.wrap("The cormorant has brought you a very strange tench."));
