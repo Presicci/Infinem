@@ -96,6 +96,7 @@ public class BrimstoneChest {
             if (loot.getId() == Items.RAW_TUNA_NOTE)
                 loot = rollRawFood(player);
             player.getInventory().addOrDrop(loot);
+            player.getCollectionLog().collect(loot);
             chestCounter.increment(player, 1);
             event.delay(1);
             player.unlock();
