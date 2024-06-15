@@ -2974,6 +2974,7 @@ public class Administrator {
             case "findvbindexofobj": {
                 if (args.length < 2) {
                     player.sendMessage("Syntax: ::findvbindexofobj [obj ID] [show ID]");
+                    return false;
                 }
                 int id = Integer.parseInt(args[0]);
                 int showId = Integer.parseInt(args[1]);
@@ -2987,6 +2988,15 @@ public class Administrator {
                         player.sendMessage("Object " + id + " has showId " + showId + " at index " + index);
                     }
                 }
+                return true;
+            }
+            case "pestpoints": {
+                if (args.length < 1) {
+                    player.sendMessage("Syntax: ::pestpoints [amt]");
+                    return false;
+                }
+                int amount = Integer.parseInt(args[0]);
+                player.putAttribute("PEST_POINTS", amount);
                 return true;
             }
         }
