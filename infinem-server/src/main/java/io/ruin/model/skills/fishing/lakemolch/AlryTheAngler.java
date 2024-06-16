@@ -155,6 +155,7 @@ public class AlryTheAngler {
                                                 new ActionDialogue(() -> {
                                                     player.getInventory().remove(GOLDEN_TENCH, 1);
                                                     player.getInventory().add(MOLCH_PEARL, 100);
+                                                    player.getCollectionLog().collect(MOLCH_PEARL, 100);
                                                     player.dialogue(
                                                             new ItemDialogue().two(GOLDEN_TENCH, MOLCH_PEARL, "You trade the golden tench with Alry for a load of pearls."),
                                                             new NPCDialogue(ARLY_THE_ANGLER, "Pleasure doing business with you!")

@@ -147,6 +147,7 @@ public enum ArielFishing {
                 player.getInventory().add(reward.fishId, 1);
                 if (Random.rollDie(10, 3)) {
                     player.getInventory().addOrDrop(MOLCH_PEARL, 1);
+                    player.getCollectionLog().collect(MOLCH_PEARL);
                 }
                 rollToFeed(player);
                 if (player.getEquipment().get(Equipment.SLOT_WEAPON).getId() == CORMORANTS_GLOVES)
