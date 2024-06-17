@@ -24,7 +24,7 @@ public class EnumDefinition implements CacheDefinition {
         LOADED = new EnumDefinition[index.getLastFileId(8) + 1];
         for(int id = 0; id < LOADED.length; id++) {
             byte[] data = index.getFile(8, id);
-            EnumDefinition def = new EnumDefinition();
+            EnumDefinition def = new EnumDefinition(id);
             if(data != null)
                 def.decode(new InBuffer(data));
             LOADED[id] = def;
@@ -37,6 +37,7 @@ public class EnumDefinition implements CacheDefinition {
         return LOADED[id];
     }
 
+    public int id;
     public int size = 0;
     public char keyType;
     public char valType;
@@ -45,6 +46,9 @@ public class EnumDefinition implements CacheDefinition {
     @Getter @Setter
     private Map<Integer, Object> values = new HashMap<>();
 
+    public EnumDefinition(int id) {
+        this.id = id;
+    }
 
     public void decode(InBuffer in) {
         for(; ; ) {
@@ -71,12 +75,18 @@ public class EnumDefinition implements CacheDefinition {
                 String value = in.readString();
                 values.put(key, value);
             }
+            if (size != values.size()) {
+                size = values.size();
+            }
         } else if(opcode == 6) {
             size = in.readUnsignedShort();
             for (int index = 0; index < size; ++index) {
                 int key = in.readInt();
                 int value = in.readInt();
                 values.put(key, value);
+            }
+            if (size != values.size()) {
+                size = values.size();
             }
         }
     }
