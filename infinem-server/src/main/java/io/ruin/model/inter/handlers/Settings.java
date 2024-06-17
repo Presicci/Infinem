@@ -1,6 +1,7 @@
 package io.ruin.model.inter.handlers;
 
 
+import io.ruin.model.entity.shared.listeners.LoginListener;
 import io.ruin.utility.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.AccessMasks;
@@ -325,6 +326,10 @@ public class Settings {
                     }
                 }
             };
+        });
+        LoginListener.register(player -> {
+            player.sendVarps();
+            player.getPacketSender().sendClientScript(3145, "i", -1);
         });
     }
 }
