@@ -126,8 +126,8 @@ public class RareDropTable {
             case Items.RING_OF_WEALTH_1:
             case Items.RING_OF_WEALTH:
                 return 1;
-            case Items.RING_OF_STONE:   // Ring of fortune
-            case 773:                   // Hazelmere's signet ring
+            case 32000:   // Ring of fortune
+            case 32003:   // Hazelmere's signet ring
                 return 2;
             default:
                 return 0;

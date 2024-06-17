@@ -67,7 +67,7 @@ public class JewelleryEnchant extends Spell {
         /**
          * Lvl-6 Enchant
          */
-        ONYX_RING(6575, 6583, 712, 238),
+        ONYX_RING(6575, 32000, 712, 238),
         ONYX_AMULET(6581, 6585, 721, 452),
         ONYX_NECKLACE(6577, 11128, 721, 452),
         ONYX_BRACELET(11130, 11133, 721, -1),

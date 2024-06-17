@@ -15,7 +15,7 @@ import io.ruin.model.item.actions.ItemAction;
  */
 public class HazelmeresSignetRing {
 
-    private static final int SIGNET_RING = 773; // Old - 'perfect' gold ring
+    private static final int SIGNET_RING = 32003;
 
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("ring", true,

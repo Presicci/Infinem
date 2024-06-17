@@ -15,7 +15,7 @@ import io.ruin.model.item.actions.ItemAction;
  */
 public class RingOfFortune {
 
-    private static final int RING_OF_FORTUNE = 6583; // Old - ring of stone
+    private static final int RING_OF_FORTUNE = 32000;
 
     static {
         JeweleryTeleports teleports = new JeweleryTeleports("ring", true,
