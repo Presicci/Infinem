@@ -64,6 +64,12 @@ public class Config {
 
     public static final Config AREA_SOUND_EFFECT_VOLUME = varp(872, true);
 
+    public static final Config MUSIC_MUTED = varpbit(9666, true);
+
+    public static final Config SOUND_EFFECT_MUTED = varpbit(9674, true);
+
+    public static final Config AREA_SOUND_EFFECT_MUTED = varpbit(9675, true);
+
     public static final Config MUSIC_UNLOCK_MESSAGE = varpbit(10078, true).defaultValue(1);
 
     public static final Config CHAT_EFFECTS = varp(171, true);

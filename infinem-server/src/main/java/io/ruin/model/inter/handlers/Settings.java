@@ -207,6 +207,35 @@ public class Settings {
         }
     }
 
+    private enum SettingSlider {
+        SOUND_EFFECT_VOLUME(1, 0, 0, (player, integer) -> {
+            player.sendMessage((integer * 5) + "");
+            Config.SOUND_EFFECT_MUTED.setInstant(player, 1 - integer == 0 ? 1 : 0);
+            Config.SOUND_EFFECT_VOLUME.setInstant(player, integer * 5);
+            player.getPacketSender().sendVarp(169, integer * 5);
+        }),
+        AREA_SOUND_VOLUME(1, 21, 21, (player, integer) -> {
+            player.sendMessage((integer * 5) + "");
+            Config.AREA_SOUND_EFFECT_VOLUME.setInstant(player, integer * 5);
+            Config.AREA_SOUND_EFFECT_MUTED.setInstant(player, integer == 0 ? 1 : 0);
+        }),
+        MUSIC_VOLUME(1, 42, 42, (player, integer) -> {
+            player.sendMessage((integer * 5) + "");
+            Config.MUSIC_VOLUME.set(player, integer * 5);
+            Config.MUSIC_MUTED.setInstant(player, 1 - integer == 0 ? 1 : 0);
+        });
+
+        private final int menuIndex, childIndex, searchIndex;
+        private final BiConsumer<Player, Integer> consumer;
+
+        SettingSlider(int menuIndex, int childIndex, int searchIndex, BiConsumer<Player, Integer> consumer) {
+            this.menuIndex = menuIndex;
+            this.childIndex = childIndex;
+            this.searchIndex = searchIndex;
+            this.consumer = consumer;
+        }
+    }
+
     private static final int INTERFACE_ID = WidgetID.SETTINGS_GROUP_ID;
 
     public static void open(Player player) {
@@ -217,6 +246,7 @@ public class Settings {
         player.getPacketSender().sendAccessMask(INTERFACE_ID, 23, 0, 7, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(INTERFACE_ID, 19, 0, 1000, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(INTERFACE_ID, 25, -1, -1, AccessMasks.ClickOp1);
+        player.getPacketSender().sendAccessMask(INTERFACE_ID, 21, 0, 62, AccessMasks.ClickOp1);
         for (int i = 2; i <= 41; i += 3) {
             player.getPacketSender().sendAccessMask(INTERFACE_ID, 28, i, i, AccessMasks.ClickOp1);
         }
@@ -277,12 +307,6 @@ public class Settings {
                 Config.SettingSearch.set(player, 1);
                 Config.SettingSearch1.set(player, 1);
             });
-            h.actions[23] = (DefaultAction) (player, option, slot, item) -> {
-                Config.SettingSearch.set(player, 0);
-                Config.SettingSearch1.set(player, 0);
-                player.putTemporaryAttribute("SETTING_MENU", slot);
-                Config.varpbit(9656, false).set(player, slot);
-            };
             h.actions[19] = (DefaultAction) (player, option, slot, item) -> {
                 player.putTemporaryAttribute("SETTING_CHILD", slot);
                 if (Config.SettingSearch.get(player) == 0) {
@@ -303,6 +327,32 @@ public class Settings {
                         }
                     }
                 }
+            };
+            /*h.actions[21] = (DefaultAction) (player, option, slot, item) -> {
+                if (Config.SettingSearch.get(player) == 0) {
+                    int menu = player.getTemporaryAttributeIntOrZero("SETTING_MENU");
+                    for (SettingSlider setting : SettingSlider.values()) {
+                        if (menu == setting.menuIndex && slot >= setting.childIndex && slot <= setting.childIndex + 20) {
+                            if (setting.consumer != null)
+                                setting.consumer.accept(player, slot - setting.childIndex);
+                            return;
+                        }
+                    }
+                } else {
+                    for (SettingSlider setting : SettingSlider.values()) {
+                        if (slot >= setting.searchIndex && slot <= setting.searchIndex + 20) {
+                            if (setting.consumer != null)
+                                setting.consumer.accept(player, slot - setting.searchIndex);
+                            return;
+                        }
+                    }
+                }
+            };*/
+            h.actions[23] = (DefaultAction) (player, option, slot, item) -> {
+                Config.SettingSearch.set(player, 0);
+                Config.SettingSearch1.set(player, 0);
+                player.putTemporaryAttribute("SETTING_MENU", slot);
+                Config.varpbit(9656, false).set(player, slot);
             };
             h.actions[28] = (DefaultAction) (player, option, slot, item) -> {
                 int dropSlot = (slot - 2) / 3;
