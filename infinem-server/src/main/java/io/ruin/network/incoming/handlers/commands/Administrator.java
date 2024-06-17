@@ -2926,6 +2926,23 @@ public class Administrator {
                 }
                 return true;
             }
+            case "searchstructkeys": {
+                String searchString = args[0];
+                if (searchString.matches("-?\\d+")) {
+                    int searchInt = Integer.parseInt(searchString);
+                    for (int index = 0; index < 5904; index++) {
+                        StructDefinition struct = StructDefinition.get(index);
+                        for (Object param :  struct.getParams().keySet()) {
+                            if (param instanceof Integer) {
+                                if ((int) param == searchInt) {
+                                    System.out.println("Struct " + index + ": " + struct.getInt((int) param));
+                                }
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
             case "searchenums": {
                 String searchString = args[0];
                 if (searchString.matches("-?\\d+")) {
