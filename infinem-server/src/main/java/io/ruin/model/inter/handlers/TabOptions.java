@@ -44,6 +44,11 @@ public class TabOptions {
             h.actions[74] = (SimpleAction) p -> p.sendMessage("Bonds");
             h.actions[79] = (SlotAction) (p, slot) -> Config.PLAYER_ATTACK_OPTION.set(p, slot - 1);
             h.actions[80] = (SlotAction) (p, slot) -> Config.NPC_ATTACK_OPTION.set(p, slot - 1);
+
+            /**
+             * Audio
+             */
+            h.actions[69] = (SimpleAction) Config.MUSIC_UNLOCK_MESSAGE::toggle;
         });
         /*InterfaceHandler.register(Interface.OPTIONS, h -> {
             h.actions[5] = (SimpleAction) Config.ZOOMING_DISABLED::toggle;

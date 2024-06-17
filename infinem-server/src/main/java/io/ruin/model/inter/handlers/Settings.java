@@ -25,7 +25,7 @@ public class Settings {
         HITSPLAT_TINTING(0, 23, 23),
         BOSS_HEALTH_OVERLAY(0, 24, 24),
         // Audio
-        MUSIC_UNLOCK_MESSAGE(1, 5, 34),
+        MUSIC_UNLOCK_MESSAGE(1, 5, 34, Config.MUSIC_UNLOCK_MESSAGE::toggle),
         // Chat
         PROFANITY_FILTER(2, 1, 36, Config.PROFANITY_FILTER::toggle),
         CHAT_EFFECTS(2, 3, 38, Config.CHAT_EFFECTS::toggle),

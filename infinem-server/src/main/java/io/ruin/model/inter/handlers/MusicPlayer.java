@@ -157,7 +157,9 @@ public class MusicPlayer {
         val value = varp.get(player);
         if (!isUnlocked(slot)) {
             varp.set(player, value | (1 << (musicIndex & 0x3FFF)));
-            player.sendFilteredMessage("<col=ff0000>You have unlocked a new music track: " + music.getName());
+            if (Config.MUSIC_UNLOCK_MESSAGE.get(player) == 1) {
+                player.sendFilteredMessage("<col=ff0000>You have unlocked a new music track: " + music.getName());
+            }
             //val unlocked = player.getEmotesHandler().isUnlocked(Emote.AIR_GUITAR);
             //if (!unlocked && unlockedMusicCount() >= 500) {
             //    player.getEmotesHandler().unlock(Emote.AIR_GUITAR);

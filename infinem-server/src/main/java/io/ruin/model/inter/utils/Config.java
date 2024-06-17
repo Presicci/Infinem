@@ -64,6 +64,8 @@ public class Config {
 
     public static final Config AREA_SOUND_EFFECT_VOLUME = varp(872, true);
 
+    public static final Config MUSIC_UNLOCK_MESSAGE = varpbit(10078, true).defaultValue(1);
+
     public static final Config CHAT_EFFECTS = varp(171, true);
 
     public static final Config SPLIT_PRIVATE_CHAT = varp(287, true).defaultValue(1);
