@@ -75,9 +75,6 @@ public class AnagramClue extends Clue {
         // UESNKRL NRIEDDO
         // VESTE
 
-        // NOT ON WIKI
-        RECRUITER("Recruiter", "Err Cure It", ClueType.MEDIUM),
-
         // Hard
         //BAKER CLIMB
         //BLUE GRIM GUIDED
