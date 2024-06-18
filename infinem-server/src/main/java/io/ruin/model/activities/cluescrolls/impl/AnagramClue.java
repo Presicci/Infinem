@@ -56,45 +56,48 @@ public class AnagramClue extends Clue {
     }
 
     static {
+        // Easy
+        register("Hans", "Snah", ClueType.EASY);
+        register("Lowe", "El Ow", ClueType.EASY);
+        register("Party Pete", "Peaty Pert", ClueType.EASY);
+        // Medium
+        register("Brundt the Chieftain", "Dt Run B", ClueType.MEDIUM);
+        register("Zoo keeper", "Eek Zero Op", ClueType.MEDIUM);
+        register("Saba", "A Bas", ClueType.MEDIUM);
         register("Baraek", "A Baker", ClueType.MEDIUM);
         register("Captain Tobias", "A Basic Anti Pot", ClueType.MEDIUM);
         register("Zenesha", "A Zen She", ClueType.HARD);
         register("Jaraah", "Aha Jar", ClueType.MEDIUM);
         register("Caroline", "Arc O Line", ClueType.MEDIUM);
         register("Oracle", "Are Col", ClueType.MEDIUM);
-        register("Ramara du Croissant", "Arr! So I am a crust, and?", ClueType.HARD);
-        register("Saba", "A Bas", ClueType.MEDIUM);
-        register("Oneiromancer", "Career In Moon", ClueType.ELITE);
-        register("Gnome Coach", "C On Game Hoc", ClueType.HARD);
-        register("Old Crone", "Cool Nerd", ClueType.ELITE); //Check after restart
-        register("Prospector Percy", "Copper Ore Crypts", ClueType.HARD);
-        register("Doomsayer", "Do Say More", ClueType.HARD);
-        register("Mandrith", "Dr Hitman", ClueType.ELITE);
-        register("Strange Old Man", "Dragons Lament", ClueType.HARD);
-        register("Brundt the Chieftain", "Dt Run B", ClueType.MEDIUM);
-        register("Zoo keeper", "Eek Zero Op", ClueType.MEDIUM);
-        register("Lowe", "El Ow", ClueType.EASY);
+        register("Hickton", "Thickno", ClueType.MEDIUM);
+        register("Sigli the Huntsman", "Unleash Night Mist", ClueType.MEDIUM);
+        register("Taria", "Ratai", ClueType.MEDIUM);
         register("Recruiter", "Err Cure It", ClueType.MEDIUM);
         register("Gabooty", "Got A Boy", ClueType.MEDIUM);
         register("Otto Godblessed", "Goblets Odd Toes", ClueType.MEDIUM);
         register("Luthas", "Halt Us", ClueType.MEDIUM);
         register(490, "I Even", ClueType.MEDIUM);
         register("Kaylee", "Leakey", ClueType.MEDIUM);
-        register("Odd Old Man", "Land Doomd", ClueType.HARD);
-        register("Cam the Camel", "Machete Clam", ClueType.ELITE);
         register("Femi", "Me if", ClueType.MEDIUM);
-        register("Brother Omad", "Motherboard", ClueType.HARD);
-        register("Cap'n Izzy No-Beard", "O Birdz A Zany En Pc", ClueType.HARD);
-        register(4626, "Ok Co", ClueType.MEDIUM);//Cook
-        register("Party Pete", "Peaty Pert", ClueType.EASY);
-        register("Professor Onglewip", "Profs Lose Wrong Pie", ClueType.HARD);
         register("Karim", "R Ak Mi", ClueType.MEDIUM);
+        register(4626, "Ok Co", ClueType.MEDIUM);//Cook
+        // Hard
+        register("Prospector Percy", "Copper Ore Crypts", ClueType.HARD);
+        register("Doomsayer", "Do Say More", ClueType.HARD);
+        register("Gnome Coach", "C On Game Hoc", ClueType.HARD);
+        register("Ramara du Croissant", "Arr! So I am a crust, and?", ClueType.HARD);
+        register("Strange Old Man", "Dragons Lament", ClueType.HARD);
+        register("Cap'n Izzy No-Beard", "O Birdz A Zany En Pc", ClueType.HARD);
+        register("Professor Onglewip", "Profs Lose Wrong Pie", ClueType.HARD);
+        register("Brother Omad", "Motherboard", ClueType.HARD);
         register("Martin Thwait", "Rat Mat Within", ClueType.HARD);
         register("Trader Stan", "Red Art Tans", ClueType.HARD);
-        register("Taria", "Ratai", ClueType.MEDIUM);
-        register("Hans", "Snah", ClueType.EASY);
-        register("Hickton", "Thickno", ClueType.MEDIUM);
-        register("Sigli the Huntsman", "Unleash Night Mist", ClueType.MEDIUM);
+        register("Odd Old Man", "Land Doomd", ClueType.HARD);
+        // Elite
+        register("Oneiromancer", "Career In Moon", ClueType.ELITE);
+        register("Old Crone", "Cool Nerd", ClueType.ELITE); //Check after restart
+        register("Mandrith", "Dr Hitman", ClueType.ELITE);
+        register("Cam the Camel", "Machete Clam", ClueType.ELITE);
     }
-
 }
