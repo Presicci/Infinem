@@ -15,7 +15,6 @@ import io.ruin.event.GameEventProcessor;
 import io.ruin.model.World;
 import io.ruin.model.activities.cluescrolls.impl.EmoteClue;
 import io.ruin.model.activities.cluescrolls.puzzles.LightBox;
-import io.ruin.model.activities.cluescrolls.puzzles.PuzzleBox;
 import io.ruin.model.activities.duelarena.Duel;
 import io.ruin.model.activities.pyramidplunder.PyramidPlunder;
 import io.ruin.model.activities.wilderness.BountyHunter;
@@ -1752,19 +1751,28 @@ public class Player extends PlayerAttributes {
      * Null if no item is found
      */
     public ItemContainerG<? extends Item> findItem(int itemId) {
-        if (getInventory().contains(itemId)) {
+        return findItem(itemId, false);
+    }
+
+    /**
+     * Finds an item in any containers connected to the player.
+     * @return ItemContainerG<? extends Item>,
+     * Null if no item is found
+     */
+    public ItemContainerG<? extends Item> findItem(int itemId, boolean ignoreAttributes) {
+        if (getInventory().contains(itemId, 1, false, ignoreAttributes)) {
             return getInventory();
-        } else if (getEquipment().contains(itemId)) {
+        } else if (getEquipment().contains(itemId, 1, false, ignoreAttributes)) {
             return getEquipment();
-        } else if (getBank().contains(itemId)) {
+        } else if (getBank().contains(itemId, 1, false, ignoreAttributes)) {
             return getBank();
-        } else if (getLootingBag().contains(itemId)) {
+        } else if (getLootingBag().contains(itemId, 1, false, ignoreAttributes)) {
             return getLootingBag();
-        } else if (getSeedVault().contains(itemId)) {
+        } else if (getSeedVault().contains(itemId, 1, false, ignoreAttributes)) {
             return getSeedVault();
-        } else if (getDeathStorage().contains(itemId)) {
+        } else if (getDeathStorage().contains(itemId, 1, false, ignoreAttributes)) {
             return getDeathStorage();
-        } else if (getPrivateRaidStorage().contains(itemId)) {
+        } else if (getPrivateRaidStorage().contains(itemId, 1, false, ignoreAttributes)) {
             return getPrivateRaidStorage();
         } else {
             return null;
@@ -1908,8 +1916,6 @@ public class Player extends PlayerAttributes {
     public boolean toggleAttribute(AttributeKey key) {
         return toggleAttribute(key.name());
     }
-
-    @Getter private final transient PuzzleBox puzzleBox = new PuzzleBox(this);
 
     @Getter private final transient LightBox lightBox = new LightBox(this);
 
