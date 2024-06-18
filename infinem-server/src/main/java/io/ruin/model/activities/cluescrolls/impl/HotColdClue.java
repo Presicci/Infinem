@@ -40,8 +40,8 @@ public class HotColdClue extends Clue {
 
     @Override
     public void open(Player player) {
-        player.getPacketSender().sendString(203, 2, type == ClueType.MASTER ? MASTER_MESSAGE : BEGINNER_MESSAGE);
         player.openInterface(InterfaceType.MAIN, 203);
+        player.getPacketSender().sendString(203, 2, type == ClueType.MASTER ? MASTER_MESSAGE : BEGINNER_MESSAGE);
     }
 
     private static boolean feel(Player player, Position origin) {

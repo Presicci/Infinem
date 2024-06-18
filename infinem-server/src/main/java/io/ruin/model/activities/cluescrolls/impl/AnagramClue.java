@@ -109,11 +109,11 @@ public class AnagramClue extends Clue {
     @Override
     public void open(Player player) {
         if (player.hasAttribute(KEY) && hasChallenge()) {
+            player.openInterface(InterfaceType.MAIN, 203);
             player.getPacketSender().sendString(203, 2, challenge);
-            player.openInterface(InterfaceType.MAIN, 203);
         } else {
-            player.getPacketSender().sendString(203, 2, "The anagram reveals<br>who to speak to next:<br>" + clue);
             player.openInterface(InterfaceType.MAIN, 203);
+            player.getPacketSender().sendString(203, 2, "The anagram reveals<br>who to speak to next:<br>" + clue);
         }
     }
 

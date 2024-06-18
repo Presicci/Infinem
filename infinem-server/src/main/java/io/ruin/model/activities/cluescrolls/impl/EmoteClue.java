@@ -51,8 +51,8 @@ public class EmoteClue extends Clue {
 
     @Override
     public void open(Player player) {
-        player.getPacketSender().sendString(203, 2, clue);
         player.openInterface(InterfaceType.MAIN, 203);
+        player.getPacketSender().sendString(203, 2, clue);
     }
 
     public void spawnUri(Player player, TabEmote emote) {

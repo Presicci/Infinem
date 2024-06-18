@@ -31,11 +31,11 @@ public class FaloTheBardClue extends Clue {
     @Override
     public void open(Player player) {
         if (player.hasAttribute(AttributeKey.FALO_SONG)) {
+            player.openInterface(InterfaceType.MAIN, 203);
             player.getPacketSender().sendString(203, 2, clue);
-            player.openInterface(InterfaceType.MAIN, 203);
         } else {    // If the player has yet to speek to falo
-            player.getPacketSender().sendString(203, 2, "Falo the bard wants to see you.");
             player.openInterface(InterfaceType.MAIN, 203);
+            player.getPacketSender().sendString(203, 2, "Falo the bard wants to see you.");
         }
     }
 
