@@ -123,6 +123,23 @@ public class AnagramClue extends Clue {
         //SNAKES SO I SAIL
         //UNLEASH NIGHT MIST
 
+        // Master
+        //A Elf Knows
+        //Brucie Catnap
+        //Car If Ices
+        //Ded War
+        //Dim Tharn
+        //Duo Plug
+        //Forlun
+        //Im N Zezim
+        //Mal in Tau
+        //Mold La Ran
+        //Mus Kil Reader
+        //Rip Maul
+        //Rue Go
+        //Slam Duster Grail
+        //Ten Wigs On
+        //Twenty Cure Iron
         ;
 
         AnagramClueData(String npcName, String clue, ClueType type) {
