@@ -111,10 +111,19 @@ public class AnagramClue extends Clue {
         ODD_OLD_MAN("Odd Old Man", "Land Doomd", ClueType.HARD),
 
         // Elite
-        ONEIROMANCER("Oneiromancer", "Career In Moon", ClueType.ELITE),
-        OLD_CRONE("Old Crone", "Cool Nerd", ClueType.ELITE), //Check after restart
-        MANDRITH("Mandrith", "Dr Hitman", ClueType.ELITE),
-        CAM("Cam the Camel", "Machete Clam", ClueType.ELITE);
+        //AT HERG
+        ONEIROMANCER("Oneiromancer", "Career In Moon", ClueType.ELITE, "How many Suqah inhabit Lunar isle?", 25),
+        OLD_CRONE("Old Crone", "Cool Nerd", ClueType.ELITE, "What is the combined combat level of each species that live in Slayer tower?", 619), //Check after restart
+        MANDRITH("Mandrith", "Dr Hitman", ClueType.ELITE, "How many scorpions live under the pit?", 20),
+        //LADDER MEMO GUV
+        CAM("Cam the Camel", "Machete Clam", ClueType.ELITE, "How many items can carry water in Gielinor?", 6)
+        //MAJORS LAVA BADS AIR
+        //NO OWNER
+        //OUR OWN NEEDS
+        //SNAKES SO I SAIL
+        //UNLEASH NIGHT MIST
+
+        ;
 
         AnagramClueData(String npcName, String clue, ClueType type) {
             register(npcName, clue, type);
