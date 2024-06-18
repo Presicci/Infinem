@@ -17,6 +17,7 @@ import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.pet.Pet;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public enum ClueType {
@@ -109,7 +110,8 @@ public enum ClueType {
                     new LootItem(316, 5, 14, 1),   //Shrimps (noted)
                     new LootItem(326, 5, 17, 1),   //Sardine (noted)
                     new LootItem(348, 5, 9, 1)   //Herring (noted)
-            )
+            ),
+            StepType.ANAGRAM, StepType.HOTCOLD, StepType.EMOTE
     ),
     EASY(2677, 20546, 24362, 2, 4, 16728, 2, 4, 50, new LootTable()
                 .addTable("easyclue", 8515,    // Uniques
@@ -905,7 +907,8 @@ public enum ClueType {
                     new LootItem(5289, 1, 2, 1100),   //Palm tree seed
                     new LootItem(5315, 1, 2, 1100),   //Yew seed
                     new LootItem(5316, 1, 2, 1100)   //Magic seed
-            )
+            ),
+            StepType.COORDINATE, StepType.HOTCOLD, StepType.FALO, StepType.EMOTE
     );
 
     public final int clueId, casketId, boxId;
@@ -916,7 +919,9 @@ public enum ClueType {
 
     public final LootTable lootTable;
 
-    ClueType(int clueId, int casketId, int boxId, int minStages, int maxStages, int sharedWeight, int minRolls, int maxRolls, int masterChance, LootTable lootTable) {
+    private final StepType[] stepTypes;
+
+    ClueType(int clueId, int casketId, int boxId, int minStages, int maxStages, int sharedWeight, int minRolls, int maxRolls, int masterChance, LootTable lootTable, StepType... stepTypes) {
         this.clueId = clueId;
         this.casketId = casketId;
         this.boxId = boxId;
@@ -927,6 +932,7 @@ public enum ClueType {
         this.masterChance = masterChance;
         this.descriptiveName = StringUtils.vowelStart(name()) ? ("an " + name().toLowerCase()) : ("a " + name().toLowerCase());
         this.lootTable = lootTable;
+        this.stepTypes = stepTypes;
 
         // Add the shared table to each qualifying clue reward
         if (sharedWeight != -1) {
@@ -1072,8 +1078,17 @@ public enum ClueType {
             save = player.easyClue;
         }
         if(save.id == -1 || Clue.CLUES[save.id] == null) {
-            StepType stepType = Random.get(StepType.values());
-            List<Clue> clues = Clue.CLUES_BY_CATEGORY.get(stepType).get(this.ordinal());
+            List<Clue> clues;
+            if (this == BEGINNER || this == MASTER) {
+                StepType stepType = Random.get(stepTypes);
+                clues = Clue.CLUES_BY_CATEGORY.get(stepType).get(this.ordinal());
+            } else {
+                clues = new ArrayList<>();
+                for(Clue clue : Clue.CLUES) {
+                    if(clue != null && clue.type == this)
+                        clues.add(clue);
+                }
+            }
             save.id = Random.get(clues).id;
             if(save.remaining == 0)
                 save.remaining = Random.get(minStages, maxStages);
