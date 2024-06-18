@@ -3,6 +3,7 @@ package io.ruin.model.activities.cluescrolls.puzzles;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.EnumDefinition;
 import io.ruin.model.activities.cluescrolls.ClueSave;
+import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -25,6 +26,11 @@ import org.jetbrains.annotations.NotNull;
  * @see <a href="https://www.rune-server.ee/members/kris/">Rune-Server profile</a>
  */
 public final class PuzzleBox {
+
+    /**
+     * Attribute key for storing the currently opened puzzle.
+     */
+    private static final String KEY = "PUZZLE";
 
     /**
      * The player managing the puzzle box.
@@ -62,15 +68,11 @@ public final class PuzzleBox {
      * @param id the id of the puzzle box that we're managing.
      */
     public void openPuzzle(final int id) {
-        if (currentPuzzle == null || puzzle != null && puzzle.getPuzzleBox() != id) {
-            generatePuzzle(id);
-        }
-        assert puzzle != null : "Puzzle is not yet set";
-        val puzzleBox = player.getPuzzleBox();
-        assert puzzleBox.containsPuzzle() : "A puzzle has not yet been constructed.";
+        player.putTemporaryAttribute(KEY, this);
+        generatePuzzle(id);
         player.openInterface(InterfaceType.MAIN, 306);
         player.getPacketSender().sendAccessMask(306, 4, 0, 25, 2);
-        puzzleBox.fullRefresh();
+        fullRefresh();
     }
 
     public void reset() {
@@ -85,15 +87,6 @@ public final class PuzzleBox {
         currentPuzzle.sendAll = true;
         currentPuzzle.sendUpdates();
         Config.PUZZLE_INDEX.set(player, EnumDefinition.get(1864).getValuesAsKeysInts().get(puzzle.getEnumId()));
-    }
-
-    /**
-     * Checks whether a puzzle has currently been generated.
-     *
-     * @return whether a puzzle has been generated.
-     */
-    public boolean containsPuzzle() {
-        return puzzle != null;
     }
 
     /**
@@ -133,7 +126,7 @@ public final class PuzzleBox {
      * @param slot the slot that was clicked.
      */
     public void shiftPuzzle(final int slot) {
-        if (complete || !canMove(slot)) {
+        if (complete || puzzle == null || !canMove(slot)) {
             return;
         }
         val movedTile = currentPuzzle.get(slot);
@@ -149,7 +142,8 @@ public final class PuzzleBox {
      * they've solved the puzzle.
      */
     public void checkCompletion() {
-        if (complete) {
+        player.removeTemporaryAttribute(KEY);
+        if (complete || puzzle == null) {
             return;
         }
         val enumList = getEnum();
@@ -174,7 +168,7 @@ public final class PuzzleBox {
      *
      * @return the puzzle box item.
      */
-    private Item findPuzzleItem() {
+    public Item findPuzzleItem() {
         val puzzleBox = puzzle.getPuzzleBox();
         return player.getInventory().findItem(puzzleBox);
     }
@@ -242,6 +236,20 @@ public final class PuzzleBox {
         return Utils.findMatching(list, element -> element < 0 || element > 24) == null;
     }
 
+    public static void clearPuzzleBoxes(Player player, ClueType clueType) {
+        for (PuzzleBoxType puzzleBoxType : PuzzleBoxType.values()) {
+            if (puzzleBoxType.getLevel() != clueType) continue;
+            player.forEachItemOwned(puzzleBoxType.getPuzzleBox(), Item::remove);
+        }
+    }
+
+    public static boolean isCompleted(Item item) {
+        return AttributeExtensions.getCharges(item) > 0;
+    }
+
+    private static PuzzleBox getPuzzleBox(Player player) {
+        return player.getTemporaryAttributeOrDefault(KEY, new PuzzleBox(player));
+    }
 
     static {
         for (PuzzleBoxType puz : PuzzleBoxType.values()) {
@@ -250,7 +258,7 @@ public final class PuzzleBox {
                     p.sendMessage("You've already completed this puzzle.");
                     return;
                 }
-                p.getPuzzleBox().openPuzzle(item.getId());
+                new PuzzleBox(p).openPuzzle(item.getId());
             }));
             ItemAction.registerInventory(puz.getPuzzleBox(), "check steps", ((p, item) -> {
                 ClueSave save = puz.getLevel().getSave(p);
@@ -263,8 +271,8 @@ public final class PuzzleBox {
             }));
         }
         InterfaceHandler.register(306, h -> {
-            h.actions[4] = (SlotAction)  (player, slot) -> player.getPuzzleBox().shiftPuzzle(slot);
-            h.closedAction = ((player, integer) -> player.getPuzzleBox().checkCompletion());
+            h.actions[4] = (SlotAction)  (player, slot) -> getPuzzleBox(player).shiftPuzzle(slot);
+            h.closedAction = (player, integer) -> getPuzzleBox(player).checkCompletion();
         });
     }
 
