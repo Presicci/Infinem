@@ -95,13 +95,6 @@ public class AnagramClue extends Clue {
         //VEIL VEDA
         //WOO AN EGG KIWI
 
-        // NOT ON WIKI
-        ZENESHA("Zenesha", "A Zen She", ClueType.HARD),
-        RAMARA("Ramara du Croissant", "Arr! So I am a crust, and?", ClueType.HARD),
-        ONGLEWIP("Professor Onglewip", "Profs Lose Wrong Pie", ClueType.HARD),
-        STAN("Trader Stan", "Red Art Tans", ClueType.HARD),
-        ODD_OLD_MAN("Odd Old Man", "Land Doomd", ClueType.HARD),
-
         // Elite
         //AT HERG
         ONEIROMANCER("Oneiromancer", "Career In Moon", ClueType.ELITE, "How many Suqah inhabit Lunar isle?", 25),
