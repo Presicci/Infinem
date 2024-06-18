@@ -32,28 +32,58 @@ public class AnagramClue extends Clue {
         LOWE("Lowe", "El Ow", ClueType.EASY),
         PARTY_PETE("Party Pete", "Peaty Pert", ClueType.EASY),
         // Medium
-        BRUNDT("Brundt the Chieftain", "Dt Run B", ClueType.MEDIUM),
-        ZOO_KEEPER("Zoo keeper", "Eek Zero Op", ClueType.MEDIUM),
+        BARAEK("Baraek", "A Baker", ClueType.MEDIUM, "How many stalls are there in Varrock Square?", 5),
         SABA("Saba", "A Bas", ClueType.MEDIUM),
-        BARAEK("Baraek", "A Baker", ClueType.MEDIUM),
-        TOBIAS("Captain Tobias", "A Basic Anti Pot", ClueType.MEDIUM),
-        ZENESHA("Zenesha", "A Zen She", ClueType.HARD),
+        TOBIAS("Captain Tobias", "A Basic Anti Pot", ClueType.MEDIUM, "How many ships are there docked at Port Sarim currently?", 6),
         JARAAH("Jaraah", "Aha Jar", ClueType.MEDIUM),
-        CAROLINE("Caroline", "Arc O Line", ClueType.MEDIUM),
-        ORACLE("Oracle", "Are Col", ClueType.MEDIUM),
-        HICKTON("Hickton", "Thickno", ClueType.MEDIUM),
-        SIGLI("Sigli the Huntsman", "Unleash Night Mist", ClueType.MEDIUM),
-        TARIA("Taria", "Ratai", ClueType.MEDIUM),
-        RECRUITER("Recruiter", "Err Cure It", ClueType.MEDIUM),
-        GABOOTY("Gabooty", "Got A Boy", ClueType.MEDIUM),
-        OTTO("Otto Godblessed", "Goblets Odd Toes", ClueType.MEDIUM),
+        // A HEART
+        CAROLINE("Caroline", "Arc O Line", ClueType.MEDIUM, "How many fishermen are there on the fishing platform?", 11),
+        // AREA CHEF TREK
+        ORACLE("Oracle", "Are Col", ClueType.MEDIUM, "If x is 15 and y is 3 what is 3x + y?", 48),
+        // ARMCHAIR THE PELT
+        // BAIL TRIMS
+        // CALAMARI MADE MUD
+        // CLASH ION
+        BRUNDT("Brundt the Chieftain", "Dt Run B", ClueType.MEDIUM, "How many people are waiting for the next bard to perform?", 4),
+        ZOO_KEEPER("Zoo keeper", "Eek Zero Op", ClueType.MEDIUM, "How many animals are in the Ardougne Zoo?", 40),
+        // LOWE
+        OTTO("Otto Godblessed", "Goblets Odd Toes", ClueType.MEDIUM, "How many types of dragon are there beneath the whirlpool's cavern?", 2),
+        // GOBLIN KERN
+        GABOOTY("Gabooty", "Got A Boy", ClueType.MEDIUM, "How many buildings in the village?", 11),
         LUTHAS("Luthas", "Halt Us", ClueType.MEDIUM),
-        NIEVE(490, "I Even", ClueType.MEDIUM),
-        KAYLEE("Kaylee", "Leakey", ClueType.MEDIUM),
+        // HEORIC
+        // HICK JET
+        // HIS PHOR
+        // I AM SIR
+        // ICY FE
+        // I DOOM ICON INN
+        NIEVE(490, "I Even", ClueType.MEDIUM, "How many farming patches are there in Gnome stronghold?", 2),
+        // KAY SIR
+        // LAME T
+        // LARK IN DOG
+        KAYLEE("Kaylee", "Leakey", ClueType.MEDIUM, "How many chairs are there in the Rising Sun?", 18),
+        // LOW LAG
         FEMI("Femi", "Me if", ClueType.MEDIUM),
-        KARIM("Karim", "R Ak Mi", ClueType.MEDIUM),
-        COOK(4626, "Ok Co", ClueType.MEDIUM),//Cook
+        // NOD MED
+        COOK(4626, "Ok Co", ClueType.MEDIUM, "How many cannons does Lumbridge Castle have?", 9),
+        // PACINNG A TAIE
+        // PEAK REFLEX
+        // PEATY PERT
+        // QUE SIR
+        KARIM("Karim", "R Ak Mi", ClueType.MEDIUM, "I have 16 kebabs, I eat one myself and share the rest equally between 3 friends. How many do they have each?", 5),
+        TARIA("Taria", "Ratai", ClueType.MEDIUM, "How many buildings are there in Rimmington?", 7),
+        // R SLICER
+        // SAND NUT
+        // TAMED ROCKS
+        HICKTON("Hickton", "Thickno", ClueType.MEDIUM, "How many ranges are there in Catherby?", 2),
+        // UESNKRL NRIEDDO
+        // VESTE
+
+        // NOT ON WIKI
+        SIGLI("Sigli the Huntsman", "Unleash Night Mist", ClueType.MEDIUM),
+        RECRUITER("Recruiter", "Err Cure It", ClueType.MEDIUM),
         // Hard
+        ZENESHA("Zenesha", "A Zen She", ClueType.HARD),
         PERCY("Prospector Percy", "Copper Ore Crypts", ClueType.HARD),
         DOOMSAYER("Doomsayer", "Do Say More", ClueType.HARD),
         GNOME_COACH("Gnome Coach", "C On Game Hoc", ClueType.HARD),
