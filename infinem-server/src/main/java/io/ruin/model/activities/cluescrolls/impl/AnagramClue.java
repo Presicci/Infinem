@@ -27,8 +27,6 @@ public class AnagramClue extends Clue {
         GERTRUDE("Gertrude", "Rug Deter", ClueType.BEGINNER),
         HAIRDRESSER("Hairdresser", "Sir Share Red", ClueType.BEGINNER),
         FORTUNATO("Fortunato", "Taunt Roof", ClueType.BEGINNER),
-        // Easy
-        HANS("Hans", "Snah", ClueType.EASY),
         // Medium
         BARAEK("Baraek", "A Baker", ClueType.MEDIUM, "How many stalls are there in Varrock Square?", 5),
         SABA("Saba", "A Bas", ClueType.MEDIUM),
