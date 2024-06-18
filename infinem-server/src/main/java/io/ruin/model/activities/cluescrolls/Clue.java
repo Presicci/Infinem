@@ -2,11 +2,18 @@ package io.ruin.model.activities.cluescrolls;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.activities.cluescrolls.puzzles.PuzzleBox;
+import io.ruin.model.activities.cluescrolls.puzzles.PuzzleBoxType;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
+import io.ruin.model.inter.dialogue.ActionDialogue;
 import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.ItemContainerG;
+import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.shop.Currency;
 import io.ruin.utility.Color;
 
@@ -40,9 +47,16 @@ public class Clue {
 
     public final ClueType type;
 
+    private final boolean requiresPuzzleBox;
+
     public Clue(ClueType type, StepType stepType) {
+        this(type, stepType, false);
+    }
+
+    public Clue(ClueType type, StepType stepType, boolean requiresPuzzleBox) {
         this.id = OFFSET++;
         this.type = type;
+        this.requiresPuzzleBox = requiresPuzzleBox;
         CLUES[id] = this;
         CLUES_BY_CATEGORY.get(stepType).get(type.ordinal()).add(this);
     }
@@ -105,4 +119,60 @@ public class Clue {
         return false;
     }
 
+    public boolean requiresPuzzleBox() {
+        return requiresPuzzleBox;
+    }
+
+    private Item getPuzzleBox(Player player) {
+        for (PuzzleBoxType boxType : PuzzleBoxType.values()) {
+            if (boxType.getLevel() != type) continue;
+            Item item = player.getInventory().findItemIgnoringAttributes(boxType.getPuzzleBox(), false);
+            if (item != null) return item;
+        }
+        return null;
+    }
+
+    public boolean hasPuzzleBox(Player player) {
+        for (PuzzleBoxType boxType : PuzzleBoxType.values()) {
+            if (boxType.getLevel() != type) continue;
+            if (player.findItem(boxType.getPuzzleBox(), true) != null) return true;
+        }
+        return false;
+    }
+
+    public void puzzleBoxDialogue(Player player, NPC npc) {
+        if (!requiresPuzzleBox()) return;
+        if (hasPuzzleBox(player)) {
+            Item item = getPuzzleBox(player);
+            if (item == null) {
+                player.dialogue(new NPCDialogue(npc, "You must complete the puzzle I gave you."));
+                return;
+            }
+            if (PuzzleBox.isCompleted(item)) {
+                player.dialogue(
+                        new NPCDialogue(npc, "Good work!"),
+                        new ActionDialogue(() -> {
+                            PuzzleBox.clearPuzzleBoxes(player, type);
+                            this.advance(player);
+                        })
+                );
+            } else {
+                player.dialogue(new NPCDialogue(npc, "Sorry but you haven't solved the puzzle yet."));
+            }
+        } else {
+            player.dialogue(
+                    new NPCDialogue(npc, "Here, solve this for me."),
+                    new ActionDialogue(() -> {
+                        if (!player.getInventory().hasFreeSlots(1)) {
+                            player.dialogue(new NPCDialogue(npc, "Make some room so I can give you this puzzle box."));
+                            return;
+                        }
+                        PuzzleBoxType puzzleBoxType = PuzzleBoxType.random(type);
+                        int puzzleBox = puzzleBoxType.getPuzzleBox();
+                        player.getInventory().add(puzzleBox);
+                        player.dialogue(new ItemDialogue().one(puzzleBox, npc.getDef().name + " has given you a puzzle box!"));
+                    })
+            );
+        }
+    }
 }

@@ -113,6 +113,10 @@ public class NPCActionHandler implements Incoming {
                     def.anagram.challengeDialogue(player, npc);
                     return;
                 }
+                if (def.anagram.requiresPuzzleBox()) {
+                    def.anagram.puzzleBoxDialogue(player, npc);
+                    return;
+                }
                 if (def.anagram.advance(player)) return;
             }
             if(action == null && (actions = def.defaultActions) != null)

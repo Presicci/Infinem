@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.cluescrolls.impl.AnagramClue;
+import io.ruin.model.activities.cluescrolls.puzzles.PuzzleBoxType;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
@@ -1140,6 +1141,14 @@ public enum ClueType {
         return player.easyClue;
     }
 
+    public boolean hasPuzzleBox(Player player) {
+        for (PuzzleBoxType boxType : PuzzleBoxType.values()) {
+            if (boxType.getLevel() != this) continue;
+            if (player.findItem(boxType.getPuzzleBox()) != null) return true;
+        }
+        return false;
+    }
+
     public static void showClueDrops(Player player, ClueType clue) {
         clue.lootTable.showDrops(player, "Clue Scroll");
     }
@@ -1147,6 +1156,10 @@ public enum ClueType {
     private static void openClueBox(Player player, Item item, ClueType clueType) {
         if (player.getInventory().contains(clueType.clueId) || player.getBank().contains(clueType.clueId)) {
             player.dialogue(new ItemDialogue().one(clueType.clueId, "You already have a clue of this tier. Please complete that one before opening another."));
+            return;
+        }
+        if (clueType.hasPuzzleBox(player)) {
+            player.dialogue(new ItemDialogue().one(clueType.clueId, "You currently have a puzzle box, you can't open anymore clues until you complete or discard that puzzle."));
             return;
         }
         if (!player.getInventory().hasFreeSlots(1) && player.getInventory().getAmount(clueType.boxId) > 1) {

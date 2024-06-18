@@ -116,6 +116,14 @@ public class AnagramClue extends Clue {
         AnagramClueData(int npcId, String clue, ClueType type, String challenge, int answer) {
             register(npcId, clue, type, challenge, answer);
         }
+
+        AnagramClueData(String npcName, String clue, ClueType type, boolean puzzleBox) {
+            register(npcName, clue, type, puzzleBox);
+        }
+
+        AnagramClueData(int npcId, String clue, ClueType type, boolean puzzleBox) {
+            register(npcId, clue, type, puzzleBox);
+        }
     }
 
     private final String clue;
@@ -132,6 +140,11 @@ public class AnagramClue extends Clue {
         this.clue = clue.toUpperCase();
         this.challenge = challenge;
         this.answer = answer;
+    }
+
+    AnagramClue(String clue, ClueType type, boolean puzzleBox) {
+        super(type, StepType.ANAGRAM, puzzleBox);
+        this.clue = clue.toUpperCase();
     }
 
     public static final String KEY = "ANAG_CHALLENGE";
@@ -200,6 +213,14 @@ public class AnagramClue extends Clue {
 
     private static void register(String npcName, String clue, ClueType type, String challenge, int answer) {
         register(Collections.singletonList(npcName), new AnagramClue(clue, type, challenge, answer));
+    }
+
+    private static void register(int npcId, String clue, ClueType type, boolean puzzleBox) {
+        register(npcId, new AnagramClue(clue, type, puzzleBox));
+    }
+
+    private static void register(String npcName, String clue, ClueType type, boolean puzzleBox) {
+        register(Collections.singletonList(npcName), new AnagramClue(clue, type, puzzleBox));
     }
 
     private static void register(List<String> npcNames, AnagramClue anagram) {
