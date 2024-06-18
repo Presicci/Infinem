@@ -29,7 +29,6 @@ public class AnagramClue extends Clue {
         FORTUNATO("Fortunato", "Taunt Roof", ClueType.BEGINNER),
         // Easy
         HANS("Hans", "Snah", ClueType.EASY),
-        LOWE("Lowe", "El Ow", ClueType.EASY),
         // Medium
         BARAEK("Baraek", "A Baker", ClueType.MEDIUM, "How many stalls are there in Varrock Square?", 5),
         SABA("Saba", "A Bas", ClueType.MEDIUM),
@@ -45,7 +44,7 @@ public class AnagramClue extends Clue {
         // CLASH ION
         BRUNDT("Brundt the Chieftain", "Dt Run B", ClueType.MEDIUM, "How many people are waiting for the next bard to perform?", 4),
         ZOO_KEEPER("Zoo keeper", "Eek Zero Op", ClueType.MEDIUM, "How many animals are in the Ardougne Zoo?", 40),
-        // LOWE
+        LOWE("Lowe", "El Ow", ClueType.MEDIUM),
         OTTO("Otto Godblessed", "Goblets Odd Toes", ClueType.MEDIUM, "How many types of dragon are there beneath the whirlpool's cavern?", 2),
         // GOBLIN KERN
         GABOOTY("Gabooty", "Got A Boy", ClueType.MEDIUM, "How many buildings in the village?", 11),
