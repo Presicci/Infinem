@@ -3,6 +3,7 @@ package io.ruin.model.activities.cluescrolls;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.activities.cluescrolls.impl.AnagramClue;
 import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.entity.player.Player;
@@ -1158,6 +1159,7 @@ public enum ClueType {
         }
         // Clear clue attributes
         player.removeAttribute(AttributeKey.FALO_SONG);
+        player.removeAttribute(AnagramClue.KEY);
         player.removeTemporaryAttribute(AttributeKey.SPAWNED_WIZARD);
         player.removeTemporaryAttribute(AttributeKey.KILLED_WIZARD);
         player.removeTemporaryAttribute(AttributeKey.URI_SPAWNED);

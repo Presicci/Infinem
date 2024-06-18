@@ -4,8 +4,12 @@ import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.cluescrolls.StepType;
+import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.dialogue.ActionDialogue;
+import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.NPCDialogue;
 
 import java.util.Collections;
 import java.util.List;
@@ -74,35 +78,101 @@ public class AnagramClue extends Clue {
         AnagramClueData(int npcId, String clue, ClueType type) {
             register(npcId, clue, type);
         }
+
+        AnagramClueData(String npcName, String clue, ClueType type, String challenge, int answer) {
+            register(npcName, clue, type, challenge, answer);
+        }
+
+        AnagramClueData(int npcId, String clue, ClueType type, String challenge, int answer) {
+            register(npcId, clue, type, challenge, answer);
+        }
     }
 
     private final String clue;
+    private String challenge;
+    private int answer;
 
     AnagramClue(String clue, ClueType type) {
         super(type, StepType.ANAGRAM);
         this.clue = clue.toUpperCase();
     }
 
+    AnagramClue(String clue, ClueType type, String challenge, int answer) {
+        super(type, StepType.ANAGRAM);
+        this.clue = clue.toUpperCase();
+        this.challenge = challenge;
+        this.answer = answer;
+    }
+
+    public static final String KEY = "ANAG_CHALLENGE";
+
     @Override
     public void open(Player player) {
-        player.getPacketSender().sendString(203, 2, "The anagram reveals<br>who to speak to next:<br>" + clue);
-        player.openInterface(InterfaceType.MAIN, 203);
+        if (player.hasAttribute(KEY) && hasChallenge()) {
+            player.getPacketSender().sendString(203, 2, challenge);
+            player.openInterface(InterfaceType.MAIN, 203);
+        } else {
+            player.getPacketSender().sendString(203, 2, "The anagram reveals<br>who to speak to next:<br>" + clue);
+            player.openInterface(InterfaceType.MAIN, 203);
+        }
+    }
+
+    public boolean hasChallenge() {
+        return challenge != null && !challenge.isEmpty();
+    }
+
+    public void challengeDialogue(Player player, NPC npc) {
+        if (!hasChallenge()) return;
+        if (player.hasAttribute(KEY)) {
+            player.dialogue(
+                    new NPCDialogue(npc, "Please enter the answer to the question."),
+                    new ActionDialogue(() -> {
+                        player.integerInput("Please enter the answer to the question", i -> {
+                            if (i == answer) {
+                                player.dialogue(
+                                        new NPCDialogue(npc, "Correct!"),
+                                        new ActionDialogue(() -> {
+                                            player.removeAttribute(KEY);
+                                            this.advance(player);
+                                        }
+                                ));
+                            } else {
+                                player.dialogue(new NPCDialogue(npc, "No, try again."));
+                            }
+                        });
+                    })
+            );
+        } else {
+            player.dialogue(
+                    new NPCDialogue(npc, "I have a question for you."),
+                    new ActionDialogue(() -> {
+                        player.putAttribute(KEY, 1);
+                        player.dialogue(new ItemDialogue().one(type.clueId, npc.getDef().name + " has given you a challenge scroll!"));
+                    })
+            );
+        }
     }
 
     /**
      * Register
      */
-
     private static void register(int npcId, String clue, ClueType type) {
         register(npcId, new AnagramClue(clue, type));
     }
 
     private static void register(String npcName, String clue, ClueType type) {
-        register(Collections.singletonList(npcName), clue, type);
+        register(Collections.singletonList(npcName), new AnagramClue(clue, type));
     }
 
-    private static void register(List<String> npcNames, String clue, ClueType type) {
-        AnagramClue anagram = new AnagramClue(clue, type);
+    private static void register(int npcId, String clue, ClueType type, String challenge, int answer) {
+        register(npcId, new AnagramClue(clue, type, challenge, answer));
+    }
+
+    private static void register(String npcName, String clue, ClueType type, String challenge, int answer) {
+        register(Collections.singletonList(npcName), new AnagramClue(clue, type, challenge, answer));
+    }
+
+    private static void register(List<String> npcNames, AnagramClue anagram) {
         for(String npcName : npcNames) {
             NPCDefinition.forEach(def -> {
                 if(def.name.equalsIgnoreCase(npcName)) {

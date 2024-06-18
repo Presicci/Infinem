@@ -108,8 +108,13 @@ public class NPCActionHandler implements Incoming {
                 action = actions[i];
             if(def.cryptic != null && def.cryptic.advance(player))
                 return;
-            if(def.anagram != null && def.anagram.advance(player))
-                return;
+            if(def.anagram != null) {
+                if (def.anagram.hasChallenge()) {
+                    def.anagram.challengeDialogue(player, npc);
+                    return;
+                }
+                if (def.anagram.advance(player)) return;
+            }
             if(action == null && (actions = def.defaultActions) != null)
                 action = actions[i];
             if(action != null) {
