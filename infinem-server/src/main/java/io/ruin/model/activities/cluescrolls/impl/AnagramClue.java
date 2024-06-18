@@ -30,7 +30,6 @@ public class AnagramClue extends Clue {
         // Easy
         HANS("Hans", "Snah", ClueType.EASY),
         LOWE("Lowe", "El Ow", ClueType.EASY),
-        PARTY_PETE("Party Pete", "Peaty Pert", ClueType.EASY),
         // Medium
         BARAEK("Baraek", "A Baker", ClueType.MEDIUM, "How many stalls are there in Varrock Square?", 5),
         SABA("Saba", "A Bas", ClueType.MEDIUM),
@@ -68,7 +67,7 @@ public class AnagramClue extends Clue {
         COOK(4626, "Ok Co", ClueType.MEDIUM, "How many cannons does Lumbridge Castle have?", 9),
         // PACINNG A TAIE
         // PEAK REFLEX
-        // PEATY PERT
+        PARTY_PETE("Party Pete", "Peaty Pert", ClueType.MEDIUM),
         // QUE SIR
         KARIM("Karim", "R Ak Mi", ClueType.MEDIUM, "I have 16 kebabs, I eat one myself and share the rest equally between 3 friends. How many do they have each?", 5),
         TARIA("Taria", "Ratai", ClueType.MEDIUM, "How many buildings are there in Rimmington?", 7),
