@@ -13,6 +13,16 @@ import java.util.List;
 public class AnagramClue extends Clue {
 
     private enum AnagramClueData {
+        // Beginner
+        RANAEL("Ranael", "An Earl", ClueType.BEGINNER),
+        SEDRIDOR("Archmage Sedridor", "Char Game Disorder", ClueType.BEGINNER),
+        APOTHECARY("Apothecary", "Carpet Ahoy", ClueType.BEGINNER),
+        Doric("Doric", "I Cord", ClueType.BEGINNER),
+        BRIAN("Brian", "In Bar", ClueType.BEGINNER),
+        VERONICA("Veronica", "Rain Cove", ClueType.BEGINNER),
+        GERTRUDE("Gertrude", "Rug Deter", ClueType.BEGINNER),
+        HAIRDRESSER("Hairdresser", "Sir Share Red", ClueType.BEGINNER),
+        FORTUNATO("Fortunato", "Taunt Roof", ClueType.BEGINNER),
         // Easy
         HANS("Hans", "Snah", ClueType.EASY),
         LOWE("Lowe", "El Ow", ClueType.EASY),
