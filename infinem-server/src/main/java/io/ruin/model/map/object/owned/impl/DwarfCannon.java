@@ -2,6 +2,11 @@ package io.ruin.model.map.object.owned.impl;
 
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.Lists;
+import io.ruin.model.entity.npc.NPCAction;
+import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.MessageDialogue;
+import io.ruin.model.inter.dialogue.NPCDialogue;
+import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.combat.AttackStyle;
@@ -504,6 +509,25 @@ public class DwarfCannon extends OwnedObject {
         ObjectAction.register(ORNAMENT_CANNON_OBJECTS[3], 1, DwarfCannon::fillCannon);
         ObjectAction.register(ORNAMENT_BROKEN_CANNON, 1, DwarfCannon::repairCannon);
         ObjectAction.register(ORNAMENT_CANNON_OBJECTS[3], 3, DwarfCannon::removeAmmo);
+
+        /*
+         * Nulodion reclaiming
+         */
+        NPCAction.register(1400, "talk-to", (player, npc) -> {
+            World.doCannonReclaim(player.getUserId(), (reclaim) -> {
+                if (reclaim.first()) {
+                    boolean hasSpace = player.getInventory().hasFreeSlots(DwarfCannon.CANNON_PARTS.length);
+                    player.dialogue(
+                            new PlayerDialogue("I've lost my cannon, can i have another one?"),
+                            !hasSpace ? new NPCDialogue(npc, "Come back when you at least 4 inventory spaces.") : new NPCDialogue(npc, "Yeah sure, here you go. Try not to do it again."),
+                            !hasSpace ? new MessageDialogue("You need at least 4 inventory spaces to claim your cannon back.") : new ItemDialogue().one(DwarfCannon.BARRELS, "The Drunken dwarf gives you another cannon.").action(() -> {
+                                IntStream.of(reclaim.second() ? DwarfCannon.ORNAMENT_CANNON_PARTS : DwarfCannon.CANNON_PARTS).forEach(player.getInventory()::add);
+                                World.removeCannonReclaim(player.getUserId());
+                            })
+                    );
+                }
+            });
+        });
 
         LoginListener.register(player -> {
             World.doCannonReclaim(player.getUserId(), (reclaim) -> {    // TODO ADD ISORNAMENT TAG TO THIS!

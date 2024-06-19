@@ -288,7 +288,7 @@ public class UpgradeMachine {
                 player.sendMessage("This item doesn't have any upgrades.");
             }
         });*/
-        NPCAction.register(2408, "talk-to", (player, npc) -> {
+        /*NPCAction.register(2408, "talk-to", (player, npc) -> {
             World.doCannonReclaim(player.getUserId(), (reclaim) -> {
                 if (reclaim.first()) {
                     boolean hasSpace = player.getInventory().hasFreeSlots(DwarfCannon.CANNON_PARTS.length);
@@ -322,7 +322,7 @@ public class UpgradeMachine {
                     );
                 }
             });
-        });
+        });*/
     }
 
 }
