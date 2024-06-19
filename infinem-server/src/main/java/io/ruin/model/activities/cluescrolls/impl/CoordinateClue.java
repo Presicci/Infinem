@@ -122,11 +122,11 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.HARD, new Position(3544, 3256, 0)); // North-east of Burgh de Rott.
         registerDig(ClueType.HARD, new Position(2841, 3267, 0)); // Crandor island.
         registerDig(ClueType.HARD, new Position(3168, 3041, 0)); // Bedabin Camp.
-        registerDig(ClueType.HARD, new Position(2542, 3031, 0)); // Gu'Tanoth, may require 20gp.
-        registerDig(ClueType.HARD, new Position(2581, 3030, 0)); // Gu'Tanoth island, enter cave north-west of Feldip Hills (AKS).
+        //registerDig(ClueType.HARD, new Position(2542, 3031, 0)); // Gu'Tanoth, may require 20gp.
+        //registerDig(ClueType.HARD, new Position(2581, 3030, 0)); // Gu'Tanoth island, enter cave north-west of Feldip Hills (AKS).
         registerDig(ClueType.HARD, new Position(2961, 3024, 0)); // Ship yard (DKP).
         registerDig(ClueType.HARD, new Position(2339, 3311, 0)); // East of Prifddinas on Arandar mountain pass.
-        registerDig(ClueType.HARD, new Position(3440, 3341, 0)); // Nature Spirit's grotto.
+        //registerDig(ClueType.HARD, new Position(3440, 3341, 0)); // Nature Spirit's grotto.
         registerDig(ClueType.HARD, new Position(2763, 2974, 0)); // Cairn Isle, west of Shilo Village.
         registerDig(ClueType.HARD, new Position(3138, 2969, 0)); // West of Bandit Camp in Kharidian Desert.
         registerDig(ClueType.HARD, new Position(2924, 2963, 0)); // On the southern part of eastern Karamja.
@@ -134,6 +134,7 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.HARD, new Position(3441, 3419, 0)); // Mort Myre Swamp.
         registerDig(ClueType.HARD, new Position(2950, 2902, 0)); // South-east of Kharazi Jungle.
         registerDig(ClueType.HARD, new Position(2775, 2891, 0)); // South-west of Kharazi Jungle.
+        registerDig(ClueType.HARD, new Position(1410, 3484, 0)); // Southern end of shayzien's wall
         registerDig(ClueType.HARD, new Position(3113, 3602, 0)); // Wilderness. North of Edgeville (level 11).
         registerDig(ClueType.HARD, new Position(2892, 3675, 0)); // On the summit of Trollheim.
         registerDig(ClueType.HARD, new Position(3168, 3677, 0)); // Wilderness. Graveyard of Shadows.
@@ -142,10 +143,12 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.HARD, new Position(3055, 3696, 0)); // Wilderness. Bandit Camp.
         registerDig(ClueType.HARD, new Position(3302, 3696, 0)); // Wilderness. West of eastern green dragon.
         registerDig(ClueType.HARD, new Position(1479, 3696, 0)); // Lizardman Canyon.
+        registerDig(ClueType.HARD, new Position(2341, 3697, 0)); // North-east of the Piscatoris Fishing Colony bank.
         registerDig(ClueType.HARD, new Position(2712, 3732, 0)); // North-east of Rellekka.
         registerDig(ClueType.HARD, new Position(2970, 3749, 0)); // Wilderness. Forgotten Cemetery.
         registerDig(ClueType.HARD, new Position(3094, 3764, 0)); // Wilderness. Mining site north of Bandit Camp.
         registerDig(ClueType.HARD, new Position(3311, 3769, 0)); // Wilderness. North of Venenatis.
+        registerDig(ClueType.HARD, new Position(3143, 3774, 0)); // In level 32 Wilderness, by the black chinchompa hunting area.
         registerDig(ClueType.HARD, new Position(1460, 3782, 0)); // Lovakengj, near burning man.
         registerDig(ClueType.HARD, new Position(3244, 3792, 0)); // Wilderness. South-east of Lava Dragon Isle by some Chaos Dwarves.
         registerDig(ClueType.HARD, new Position(3140, 3804, 0)); // Wilderness. North of Ruins.
@@ -161,9 +164,6 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.HARD, new Position(3039, 3960, 0)); // Wilderness. Pirates' Hideout.
         registerDig(ClueType.HARD, new Position(2987, 3963, 0)); // Wilderness. West of Wilderness Agility Course.
         registerDig(ClueType.HARD, new Position(3189, 3963, 0)); // Wilderness. North of Resource Area, near magic axe hut.
-        registerDig(ClueType.HARD, new Position(2341, 3697, 0)); // North-east of the Piscatoris Fishing Colony bank.
-        registerDig(ClueType.HARD, new Position(3143, 3774, 0)); // In level 32 Wilderness, by the black chinchompa hunting area.
-        registerDig(ClueType.HARD, new Position(2992, 3941, 0)); // Wilderness Agility Course, past the log balance.
         // Elite
         registerDig(ClueType.ELITE, new Position(2357, 3151, 0)); // Lletya.
         registerDig(ClueType.ELITE, new Position(3587, 3180, 0)); // Meiyerditch.
