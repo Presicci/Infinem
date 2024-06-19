@@ -5138,5 +5138,14 @@
     "z": 1,
     "direction": "S",
     "walkRange": 4
+  },
+  {
+    "name": "Jethick",
+    "id": 8806,
+    "x": 2538,
+    "y": 3304,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
   }
 ]
