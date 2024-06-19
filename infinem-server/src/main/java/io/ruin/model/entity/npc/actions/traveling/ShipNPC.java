@@ -78,6 +78,33 @@ public class ShipNPC {
         registerShipNPC(8268, "Port Phasmatys", new Position(3672, 3544, 0));
         ObjectAction.register(32601, "travel", (player, obj) -> ShipNPC.setSail(player, "Slepe", new Position(3661, 3278, 0)));
         ObjectAction.register(32602, "travel", (player, obj) -> ShipNPC.setSail(player, "Port Phasmatys", new Position(3672, 3544, 0)));
+        // Phasmatys <-> Mos Le Harmless
+        NPCAction.register(4016, "travel", (player, npc) -> {
+            if (npc.getAbsY() > 3184) {
+                ShipNPC.setSail(player, "Mos Le'Harmless", new Position(3682, 2948, 1));
+            } else {
+                ShipNPC.setSail(player, "Port Phasmatys", new Position(3714, 3497, 1));
+            }
+        });
+        NPCAction.register(4016, "talk-to", ((player, npc) -> {
+            if (npc.getAbsY() > 3184) {
+                player.dialogue(
+                        new NPCDialogue(npc.getId(), "Would you like me to take you to Mos Le'Harmless?"),
+                        new OptionsDialogue(
+                                new Option("Yes", () -> ShipNPC.setSail(player, "Mos Le'Harmless", new Position(3682, 2948, 1))),
+                                new Option("No")
+                        )
+                );
+            } else {
+                player.dialogue(
+                        new NPCDialogue(npc.getId(), "Would you like me to take you to Port Phasmatys?"),
+                        new OptionsDialogue(
+                                new Option("Yes", () -> ShipNPC.setSail(player, "Port Phasmatys", new Position(3714, 3497, 1))),
+                                new Option("No")
+                        )
+                );
+            }
+        }));
         // Phasmatys <-> Dragontooth
         NPCAction.register(3005, "talk-to", (player, npc) -> {
             boolean hasGhostspeak = GhostSpeak.canSpeak(player);
