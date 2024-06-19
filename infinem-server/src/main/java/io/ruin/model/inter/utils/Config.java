@@ -1187,7 +1187,7 @@ public class Config {
     /**
      * Map Key
      */
-    private static final Config MAP_KEY_OPEN_BY_DEFAULT = varpbit(10294, false).defaultValue(1);
+    public static final Config MAP_KEY_OPEN_BY_DEFAULT = varpbit(10294, false).defaultValue(1);
 
 
     /**

@@ -138,7 +138,8 @@ public class Settings {
         ALCH_THRESHOLD(7, 24, 207, (player ->
                 player.integerInput("Set value threshold for alchemy warnings:", (i) ->
                         Config.ALCH_THRESHOLD.set(player, i))
-        ));
+        )),
+        MAP_KEY(8, 1, 209, Config.MAP_KEY_OPEN_BY_DEFAULT::toggle);
 
         private final int menuIndex, childIndex, searchIndex;
         private final Consumer<Player> consumer;
@@ -243,7 +244,7 @@ public class Settings {
         resetSettings(player);
         player.openInterface(InterfaceType.MAIN_STRETCHED, INTERFACE_ID);
 
-        player.getPacketSender().sendAccessMask(INTERFACE_ID, 23, 0, 7, AccessMasks.ClickOp1);
+        player.getPacketSender().sendAccessMask(INTERFACE_ID, 23, 0, 8, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(INTERFACE_ID, 19, 0, 1000, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(INTERFACE_ID, 25, -1, -1, AccessMasks.ClickOp1);
         player.getPacketSender().sendAccessMask(INTERFACE_ID, 21, 0, 62, AccessMasks.ClickOp1);
