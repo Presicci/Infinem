@@ -116,23 +116,22 @@ public class AnagramClue extends Clue {
         SIGLI("Sigli the Huntsman", "Unleash Night Mist", ClueType.ELITE, "What is the combined slayer requirement of every monster in the slayer cave?", 302),
 
         // Master
-        //A Elf Knows
-        //Brucie Catnap
-        //Car If Ices
-        //Ded War
-        //Dim Tharn
-        //Duo Plug
-        //Forlun
-        //Im N Zezim
-        //Mal in Tau
-        //Mold La Ran
-        //Mus Kil Reader
-        //Rip Maul
-        //Rue Go
-        //Slam Duster Grail
-        //Ten Wigs On
-        //Twenty Cure Iron
-        ;
+        SNOWFLAKE("Snowflake", "A Elf Knows", ClueType.MASTER),
+        CAPTAIN_BRUCE("Captain Bruce", "Brucie Catnap", ClueType.MASTER),
+        SACRIFICE("Sacrifice", "Car If Ices", ClueType.MASTER),
+        EDWARD("Edward", "Ded War", ClueType.MASTER),
+        //MANDRITH(), DUPLICATE
+        DUGOPUL("Dugopul", "Duo Plug", ClueType.MASTER),
+        RUNOLF("Runolf", "Forlun", ClueType.MASTER),
+        IMMENIZZ("Immenizz", "Im N Zezim", ClueType.MASTER),
+        LUMINATA("Luminata", "Mal in Tau", ClueType.MASTER),
+        //OLD_MAN_RAL("Old Man Ral", "Mold La Ran", ClueType.MASTER), - CANT REACH
+        RADIMUS_ERKLE("Radimus Erkle", "Mus Kil Reader", ClueType.MASTER),
+        PRIMULA("Primula", "Rip Maul", ClueType.MASTER),
+        GOREU("Goreu", "Rue Go", ClueType.MASTER),
+        GUILDMASTER_LARS("Guildmaster Lars", "Slam Duster Grail", ClueType.MASTER),
+        WINGSTONE("Wingstone", "Ten Wigs On", ClueType.MASTER),
+        NEW_RECRUIT_TONY("New Recruit Tony", "Twenty Cure Iron", ClueType.MASTER);
 
         AnagramClueData(String npcName, String clue, ClueType type) {
             register(npcName, clue, type);
