@@ -76,24 +76,24 @@ public class AnagramClue extends Clue {
         // STEVE - Not using cause we have nieve
 
         // Hard
-        //BAKER CLIMB
-        //BLUE GRIM GUIDED
-        //BY LOOK
+        BRAMBICKLE("Brambickle", "Baker Climb", ClueType.HARD, true),
+        LUMBRIDGE_GUIDE(306, "Blue Grim Guided", ClueType.HARD, true),
+        BOLKOY("Bolkoy", "By Look", ClueType.HARD, "How many flowers are there in the clearing below this platform?", 13),
         GNOME_COACH("Gnome Coach", "C On Game Hoc", ClueType.HARD, "How many gnomes on the Gnome ball field have red patches on their uniforms?", 6),
         PERCY("Prospector Percy", "Copper Ore Crypts", ClueType.HARD, "During a party, everyone shook hands with everyone else. There were 66 handshakes. How many people were at the party?", 12),
-        //DARN DRAKE
-        //DEKAGRAM
+        //DAER_KRAND("Daer Krand", "Darn Drake", ClueType.HARD, true),
+        DARK_MAGE("Dark mage", "Dekagram", ClueType.HARD, "How many rifts are found here in the abyss?", 13),
         DOOMSAYER("Doomsayer", "Do Say More", ClueType.HARD, "What is 40 divided by 1/2 plus 15?", 95),
         STRANGE_OLD_MAN("Strange Old Man", "Dragons Lament", ClueType.HARD, "One pipe fills a barrel in 1 hour while another pipe can fill the same barrel in 2 hours. How many minutes will it take to fill the take if both pipes are used?", 40),
-        //DR WARDEN FUNK
+        DRUNKEN_DWARF("Drunken Dwarf", "Dr Warden Funk", ClueType.HARD, true),
         OMAD("Brother Omad", "Motherboard", ClueType.HARD, "What is the next number? 12, 13, 15, 17, 111, 113, 117, 119, 123....?", 129),
-        //MY MANGLE LAL
+        LAMMY_LANGLE("Lammy Langle", "My Mangle Lal", ClueType.HARD, true),
         IZZY_NO_BEARD("Cap'n Izzy No-Beard", "O Birdz A Zany En Pc", ClueType.HARD, "How many Banana Trees are there in the plantation?", 33),
-        //QUIT HORRIBLE TYRANT
+        BROTHER_TRANQUILITY("Brother Tranquility", "Quit Horrible Tyrant", ClueType.HARD, "If I have 49 bottles of rum to share between 7 pirates, how many would each pirate get?", 7),
         MARTIN_THWAIT("Martin Thwait", "Rat Mat Within", ClueType.HARD, "How many natural fires burn in Rogue's Den?", 2),
-        //SLIDE WOMAN
-        //VEIL VEDA
-        //WOO AN EGG KIWI
+        WISE_OLD_MAN(8052, "Slide Woman", ClueType.HARD, "How many bookcases are in the Wise Old Man's house?", 28),
+        EVIL_DAVE("Evil Dave", "Veil Veda", ClueType.HARD, "What is 333 multiplied by 2?", 666),
+        //AWOWOGEI("Awowogei", "Woo An Egg Kiwi", ClueType.HARD, "If I have 303 bananas, and share them between 31 friends evenly, only handing out full bananas. How many will I have left over?", 24),
 
         // Elite
         //AT HERG
