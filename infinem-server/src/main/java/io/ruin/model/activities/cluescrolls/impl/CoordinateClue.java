@@ -175,10 +175,10 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.ELITE, new Position(3246, 6083, 0)); // Prifddinas
         registerDig(ClueType.ELITE, new Position(3302, 2988, 0)); // On top of a cliff to the west of Pollnivneach.
         registerDig(ClueType.ELITE, new Position(2511, 2980, 0)); // Just south of Gu'Tanoth, west of gnome glider.
-        registerDig(ClueType.ELITE, new Position(2318, 2952, 0)); // Isle of souls east
+        registerDig(ClueType.ELITE, new Position(2318, 2954, 0)); // Isle of souls east
         registerDig(ClueType.ELITE, new Position(2732, 3372, 0)); // Legends' Guild.
         registerDig(ClueType.ELITE, new Position(3573, 3425, 0)); // North of Dessous's tomb from Desert Treasure.
-        registerDig(ClueType.ELITE, new Position(2094, 2887, 0)); // Isle of souls west
+        registerDig(ClueType.ELITE, new Position(2094, 2889, 0)); // Isle of souls west
         registerDig(ClueType.ELITE, new Position(3828, 2848, 0)); // East of Harmony Island.
         registerDig(ClueType.ELITE, new Position(3225, 2838, 0)); // South of Desert Treasure pyramid.
         registerDig(ClueType.ELITE, new Position(1451, 3509, 0)); // Shayzien, ruins of morra
