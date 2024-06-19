@@ -1151,6 +1151,7 @@ public class Config {
     private static final Config CAMDOZAAL_ENTRANCE = varpbit(12063, false).defaultValue(50);    // Opens the entrance to the city
     public static final Config IN_WILDERNESS = varpbit(5963, false);    // 1 = in wildy, 0 = not
     private static final Config ELIDINIS_STATUETTE = varpbit(1444, false).defaultValue(60); // Adds elidinis statuette in Nardah
+    private static final Config EVIL_DAVE_LAIR_ENTRANCE = varpbit(1888, false).defaultValue(1);
 
     /**
      * Elemental workshop
