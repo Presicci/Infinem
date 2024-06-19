@@ -2,6 +2,7 @@ package io.ruin.model.entity.npc.actions.traveling;
 
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.dialogue.GhostSpeak;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -32,6 +33,7 @@ public class ShipNPC {
         }));
         NPCAction.register(npcId, "travel", (player, npc) -> ShipNPC.setSail(player, destinationName, destination));
         NPCAction.register(npcId, "pay-fare", (player, npc) -> ShipNPC.setSail(player, destinationName, destination));
+        NPCAction.register(npcId, destinationName, (player, npc) -> ShipNPC.setSail(player, destinationName, destination));
     }
 
     /**
@@ -67,6 +69,27 @@ public class ShipNPC {
         registerShipNPC(4299, "the Gnome Stronghold", new Position(2367, 3485));
         // Fremmy Province -> Weiss
         registerShipNPC(828, "Weiss", new Position(2851, 3968));
+        // Phasmatys <-> Dragontooth
+        NPCAction.register(3005, "talk-to", (player, npc) -> {
+            boolean hasGhostspeak = GhostSpeak.canSpeak(player);
+            if (npc.getAbsX() < 3736) {
+                player.dialogue(
+                        new NPCDialogue(npc.getId(), hasGhostspeak ? "Would you like me to take you to Dragontooth Island?" : "oooh oooo oooh oh?"),
+                        new OptionsDialogue(
+                                new Option("Yes" + (hasGhostspeak ? "" : "?"), () -> ShipNPC.setSail(player, "Dragontooth Island", new Position(3792, 3559, 0))),
+                                new Option("No" + (hasGhostspeak ? "" : "?"))
+                        )
+                );
+            } else {
+                player.dialogue(
+                        new NPCDialogue(npc.getId(), hasGhostspeak ? "Would you like me to take you to Port Phasmatys?" : "oooooh wooo ooh?"),
+                        new OptionsDialogue(
+                                new Option("Yes" + (hasGhostspeak ? "" : "?"), () -> ShipNPC.setSail(player, "Port Phasmatys", new Position(3702, 3487, 0))),
+                                new Option("No" + (hasGhostspeak ? "" : "?"))
+                        )
+                );
+            }
+        });
         // Morton
         NPCAction.register(5046, "talk-to", ((player, npc) -> {
             if (npc.getAbsY() > 3373) {
