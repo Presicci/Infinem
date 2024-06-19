@@ -32,48 +32,48 @@ public class AnagramClue extends Clue {
         SABA("Saba", "A Bas", ClueType.MEDIUM),
         TOBIAS("Captain Tobias", "A Basic Anti Pot", ClueType.MEDIUM, "How many ships are there docked at Port Sarim currently?", 6),
         JARAAH("Jaraah", "Aha Jar", ClueType.MEDIUM),
-        // A HEART
+        ARETHA("Aretha", "A Heart", ClueType.MEDIUM, "32 - 5x = 22, what is x?", 2),
         CAROLINE("Caroline", "Arc O Line", ClueType.MEDIUM, "How many fishermen are there on the fishing platform?", 11),
-        // AREA CHEF TREK
+        FATHER_AERECK("Father Aereck", "Area Chef Trek", ClueType.MEDIUM, "How many gravestones are in the church graveyard?", 19),
         ORACLE("Oracle", "Are Col", ClueType.MEDIUM, "If x is 15 and y is 3 what is 3x + y?", 48),
-        // ARMCHAIR THE PELT
-        // BAIL TRIMS
-        // CALAMARI MADE MUD
-        // CLASH ION
+        CHARLIE_THE_TRAMP("Charlie the Tramp", "Armchair The Pelt", ClueType.MEDIUM, "How many coins would I have if I had 0 coins and attempted to buy 3 loaves of bread?", 0),
+        BRIMSTAIL("Brimstail", "Bail Trims", ClueType.MEDIUM),
+        MADAME_CALDARIUM("Madame Caldarium", "Calamari Made Mud", ClueType.MEDIUM, "What is 3(5-3)?", 6),
+        NICHOLAS("Nicholas", "Clash Ion", ClueType.MEDIUM, "How many windows are in Tynan's shop?", 4),
         BRUNDT("Brundt the Chieftain", "Dt Run B", ClueType.MEDIUM, "How many people are waiting for the next bard to perform?", 4),
         ZOO_KEEPER("Zoo keeper", "Eek Zero Op", ClueType.MEDIUM, "How many animals are in the Ardougne Zoo?", 40),
         LOWE("Lowe", "El Ow", ClueType.MEDIUM),
         OTTO("Otto Godblessed", "Goblets Odd Toes", ClueType.MEDIUM, "How many types of dragon are there beneath the whirlpool's cavern?", 2),
-        // GOBLIN KERN
+        KING_BOLREN("King Bolren", "Goblin Kern", ClueType.MEDIUM),
         GABOOTY("Gabooty", "Got A Boy", ClueType.MEDIUM, "How many buildings in the village?", 11),
         LUTHAS("Luthas", "Halt Us", ClueType.MEDIUM),
-        // HEORIC
-        // HICK JET
-        // HIS PHOR
-        // I AM SIR
-        // ICY FE
-        // I DOOM ICON INN
-        NIEVE(490, "I Even", ClueType.MEDIUM, "How many farming patches are there in Gnome stronghold?", 2),
-        // KAY SIR
-        // LAME T
-        // LARK IN DOG
+        EOHRIC("Eohric", "Heoric", ClueType.MEDIUM, "King Arthur and Merlin sit down at the Round Table with 8 knights. How many degrees does each get?", 36),
+        JETHICK("Jethick", "Hick Jet", ClueType.MEDIUM, "How many graves are there in the city graveyard?", 38),
+        HORPHIS("Horphis", "His Phor", ClueType.MEDIUM, "On a scale of 1-10, how helpful is Logosia?", 1),
+        MARISI("Marisi", "I Am Sir", ClueType.MEDIUM, "How many cities form the Kingdom of Great Kourend?", 5),
+        //FYCIE("Fycie", "Icy Fe", ClueType.MEDIUM),
+        DOMINIC("Dominic Onion", "I Doom Icon Inn", ClueType.MEDIUM, "How many reward points does a herb box cost?", 9500),
+        NIEVE("Nieve", "I Even", ClueType.MEDIUM, "How many farming patches are there in Gnome stronghold?", 2),
+        SIR_KAY("Sir Kay", "Kay Sir", ClueType.MEDIUM, "How many fountains are there within the grounds of Camelot castle.", 6),
+        // LAME T - VARLAMORE
+        KING_ROALD("King Roald", "Lark In Dog", ClueType.MEDIUM, "How many bookcases are there in the Varrock palace library?", 24),
         KAYLEE("Kaylee", "Leakey", ClueType.MEDIUM, "How many chairs are there in the Rising Sun?", 18),
-        // LOW LAG
+        GALLOW("Gallow", "Low Lag", ClueType.MEDIUM, "How many vine patches can you find in this vinery?", 12),
         FEMI("Femi", "Me if", ClueType.MEDIUM),
-        // NOD MED
+        EDMOND("Edmond", "Nod Med", ClueType.MEDIUM, "How many pigeon cages are there around the back of Jerico's house?", 3),
         COOK(4626, "Ok Co", ClueType.MEDIUM, "How many cannons does Lumbridge Castle have?", 9),
-        // PACINNG A TAIE
-        // PEAK REFLEX
+        CAPTAIN_GINEA("Captain Ginea", "Pacinng A Taie", ClueType.MEDIUM, "1 soldier can deal with 6 lizardmen. How many soldiers do we need for an army of 678 lizardmen?", 113),
+        FLAX_KEEPER("Flax keeper", "Peak Reflex", ClueType.MEDIUM, "If I have 1014 flax, and I spin a third of them into bowstring, how many flax do I have left?", 673),
         PARTY_PETE("Party Pete", "Peaty Pert", ClueType.MEDIUM),
-        // QUE SIR
+        SQUIRE("Squire", "Que Sir", ClueType.MEDIUM, "White knights are superior to black knights. 2 white knights can handle 3 black knights. How many knights do we need for an army of 981 black knights?", 654),
         KARIM("Karim", "R Ak Mi", ClueType.MEDIUM, "I have 16 kebabs, I eat one myself and share the rest equally between 3 friends. How many do they have each?", 5),
         TARIA("Taria", "Ratai", ClueType.MEDIUM, "How many buildings are there in Rimmington?", 7),
-        // R SLICER
-        // SAND NUT
-        // TAMED ROCKS
+        CLERRIS("Clerris", "R Slicer", ClueType.MEDIUM, "If I have 1,000 blood runes, and cast 131 ice barrage spells, how many blood runes do I have left?", 738),
+        DUNSTAN("Dunstan", "Sand Nut", ClueType.MEDIUM, "How much smithing experience does one receive for smelting a blurite bar?", 8),
+        DOCKMASTER("Dockmaster", "Tamed Rocks", ClueType.MEDIUM, "What is the cube root of 125?", 5),
         HICKTON("Hickton", "Thickno", ClueType.MEDIUM, "How many ranges are there in Catherby?", 2),
-        // UESNKRL NRIEDDO
-        // VESTE
+        DRUNKEN_SOLDIER("Drunken soldier", "Uesnkrl Nrieddo", ClueType.MEDIUM, "If 13 Shayzien Soldiers kill 46 Lizardmen each in a day, how many Lizardmen have they killed in total in a single day?", 598),
+        // STEVE - Not using cause we have nieve
 
         // Hard
         //BAKER CLIMB
