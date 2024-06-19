@@ -10,7 +10,7 @@
           { "id": 6523, "min": 1, "max": 1, "weight": 1950 },   //Toktz-xil-ak
           { "id": 6525, "min": 1, "max": 1, "weight": 1950 },   //Toktz-xil-ek
           { "id": 6568, "min": 1, "max": 1, "weight": 1950 },   //Obsidian cape
-          { "id": 32000, "min": 1, "max": 1, "weight": 202 }   //Ring of stone
+          { "id": 6583, "min": 1, "max": 1, "weight": 202 }   //Ring of stone
         ]
       },
       {

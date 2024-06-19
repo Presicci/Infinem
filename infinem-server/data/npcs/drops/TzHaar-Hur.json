@@ -19,7 +19,7 @@
         "name": "Ring of stone",
         "weight": 20,
         "items": [
-          { "id": 32000, "min": 1, "max": 1, "weight": 1 }   //Ring of stone
+          { "id": 6583, "min": 1, "max": 1, "weight": 1 }   //Ring of stone
         ]
       },
       {
