@@ -21,7 +21,7 @@ public class Miscellania {
                     )
             );
         });
-        NPCAction.register(3936, "travel", (player, npc) -> Traveling.fadeTravel(player, new Position(2581, 3845, 0)));
+        NPCAction.register(3936, "miscellania", (player, npc) -> Traveling.fadeTravel(player, new Position(2581, 3845, 0)));
         NPCAction.register(3680, "talk-to", (player, npc) -> {
             player.dialogue(
                     new NPCDialogue(3680, "Would you like a ride over to Rellekka?"),
@@ -31,6 +31,6 @@ public class Miscellania {
                     )
             );
         });
-        NPCAction.register(3680, "travel", (player, npc) -> Traveling.fadeTravel(player, new Position(2629, 3692, 0)));
+        NPCAction.register(3680, "rellekka", (player, npc) -> Traveling.fadeTravel(player, new Position(2629, 3692, 0)));
     }
 }
