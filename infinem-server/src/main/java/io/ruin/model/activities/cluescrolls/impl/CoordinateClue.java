@@ -116,7 +116,7 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.HARD, new Position(2209, 3161, 0)); // North-east of Tyras Camp.
         registerDig(ClueType.HARD, new Position(2181, 3206, 0)); // South of Elf Camp.
         registerDig(ClueType.HARD, new Position(3081, 3209, 0)); // Small Island (CLP).
-        registerDig(ClueType.HARD, new Position(3374, 3250, 0)); // Duel Arena combat area.
+        registerDig(ClueType.HARD, new Position(3399, 3246, 0)); // Duel Arena combat area.
         registerDig(ClueType.HARD, new Position(2699, 3251, 0)); // Little island (AIR).
         registerDig(ClueType.HARD, new Position(3546, 3251, 0)); // North-east of Burgh de Rott.
         registerDig(ClueType.HARD, new Position(3544, 3256, 0)); // North-east of Burgh de Rott.
