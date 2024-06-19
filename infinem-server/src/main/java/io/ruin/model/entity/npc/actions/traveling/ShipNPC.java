@@ -8,6 +8,7 @@ import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.object.actions.ObjectAction;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -72,6 +73,11 @@ public class ShipNPC {
         // Fremmy <-> Isle of Stone
         registerShipNPC(9272, "Rellekka", new Position(2621, 3689, 0));
         registerShipNPC(9270, "the Isle of Stone", new Position(2471, 3996, 0));
+        // Phasmatys <-> Slepe
+        registerShipNPC(8267, "Slepe", new Position(3661, 3278, 0));
+        registerShipNPC(8268, "Port Phasmatys", new Position(3672, 3544, 0));
+        ObjectAction.register(32601, "travel", (player, obj) -> ShipNPC.setSail(player, "Slepe", new Position(3661, 3278, 0)));
+        ObjectAction.register(32602, "travel", (player, obj) -> ShipNPC.setSail(player, "Port Phasmatys", new Position(3672, 3544, 0)));
         // Phasmatys <-> Dragontooth
         NPCAction.register(3005, "talk-to", (player, npc) -> {
             boolean hasGhostspeak = GhostSpeak.canSpeak(player);
