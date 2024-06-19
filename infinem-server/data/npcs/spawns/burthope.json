@@ -484,5 +484,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 3
+  },
+  {
+    "name": "Eohric",
+    "id": 4103,
+    "x": 2899,
+    "y": 3561,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 6
   }
 ]
