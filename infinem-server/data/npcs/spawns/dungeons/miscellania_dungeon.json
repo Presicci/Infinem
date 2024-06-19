@@ -1,0 +1,317 @@
+[
+  {
+    "name": "Runolf",
+    "id": 1082,
+    "x": 2507,
+    "y": 10258,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Finn",
+    "id": 1080,
+    "x": 2508,
+    "y": 10257,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Halla",
+    "id": 1079,
+    "x": 2509,
+    "y": 10250,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Osvald",
+    "id": 1081,
+    "x": 2521,
+    "y": 10251,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Jari",
+    "id": 1093,
+    "x": 2516,
+    "y": 10263,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Alviss",
+    "id": 1091,
+    "x": 2518,
+    "y": 10265,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Fullangr",
+    "id": 1092,
+    "x": 2518,
+    "y": 10263,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ingrid",
+    "id": 1084,
+    "x": 2524,
+    "y": 10264,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Runa",
+    "id": 1078,
+    "x": 2528,
+    "y": 10259,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Donal",
+    "id": 1096,
+    "x": 2529,
+    "y": 10256,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Tjorvi",
+    "id": 1083,
+    "x": 2530,
+    "y": 10257,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Thora",
+    "id": 1085,
+    "x": 2531,
+    "y": 10247,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Signy",
+    "id": 1086,
+    "x": 2572,
+    "y": 10274,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Reinn",
+    "id": 1090,
+    "x": 2574,
+    "y": 10278,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Hild",
+    "id": 1087,
+    "x": 2569,
+    "y": 10275,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Armod",
+    "id": 1088,
+    "x": 2568,
+    "y": 10279,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Beigarth",
+    "id": 1089,
+    "x": 2572,
+    "y": 10281,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sea Snake Hatchling",
+    "id": 1098,
+    "x": 2582,
+    "y": 10296,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sea Snake Hatchling",
+    "id": 1098,
+    "x": 2586,
+    "y": 10293,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sea Snake Hatchling",
+    "id": 1098,
+    "x": 2586,
+    "y": 10296,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sea Snake Hatchling",
+    "id": 1098,
+    "x": 2588,
+    "y": 10290,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sea Snake Hatchling",
+    "id": 1098,
+    "x": 2590,
+    "y": 10292,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sea Snake Hatchling",
+    "id": 1098,
+    "x": 2593,
+    "y": 10290,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sea Snake Hatchling",
+    "id": 1098,
+    "x": 2591,
+    "y": 10286,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sea Snake Young",
+    "id": 1097,
+    "x": 2595,
+    "y": 10283,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sea Snake Young",
+    "id": 1097,
+    "x": 2593,
+    "y": 10281,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sea Snake Young",
+    "id": 1097,
+    "x": 2595,
+    "y": 10277,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Sea Snake Young",
+    "id": 1097,
+    "x": 2594,
+    "y": 10274,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sea Snake Young",
+    "id": 1097,
+    "x": 2598,
+    "y": 10272,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sea Snake Young",
+    "id": 1097,
+    "x": 2597,
+    "y": 10269,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sea Snake Young",
+    "id": 1097,
+    "x": 2600,
+    "y": 10264,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sea Snake Young",
+    "id": 1097,
+    "x": 2598,
+    "y": 10259,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "Sea Snake Young",
+    "id": 1097,
+    "x": 2600,
+    "y": 10253,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sea Snake Young",
+    "id": 1097,
+    "x": 2604,
+    "y": 10249,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Sea Snake Young",
+    "id": 1097,
+    "x": 2606,
+    "y": 10252,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  }
+]
