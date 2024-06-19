@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Evil Dave",
+    "id": 902,
+    "x": 3079,
+    "y": 9891,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 8
+  }
+]
