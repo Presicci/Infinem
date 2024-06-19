@@ -714,6 +714,15 @@
     "walkRange": 5
   },
   {
+    "name": "Sir Kay",
+    "id": 3521,
+    "x": 2759,
+    "y": 3497,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
     "name": "Sir Lucan",
     "id": 3525,
     "x": 2754,
