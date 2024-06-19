@@ -77,7 +77,9 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.MEDIUM, new Position(3007, 3144, 0)); // Near the entrance to the Asgarnian Ice Dungeon, south of Port Sarim (AIQ).
         registerDig(ClueType.MEDIUM, new Position(2896, 3119, 0)); // Near Karambwan fishing spot (DKP).
         registerDig(ClueType.MEDIUM, new Position(2697, 3207, 0)); // Centre of Moss Giant Island, west of Brimhaven.
+        // East the Civitas illa Fortis western bank, dig just south of the statue of Emperor Imafore.
         registerDig(ClueType.MEDIUM, new Position(2679, 3110, 0)); // North of Hazelmere's house (CLS).
+        registerDig(ClueType.MEDIUM, new Position(2828, 3234, 0)); // Southern coast of Crandor.
         registerDig(ClueType.MEDIUM, new Position(3510, 3074, 0)); // East of Uzer (DLQ).
         registerDig(ClueType.MEDIUM, new Position(3160, 3251, 0)); // West of trapdoor leading to H.A.M Hideout.
         registerDig(ClueType.MEDIUM, new Position(2643, 3252, 0)); // South of Ardougne Zoo, North of Tower of Life (DJP).
@@ -94,7 +96,7 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.MEDIUM, new Position(2920, 3403, 0)); // South-east of Taverley, near Lady of the Lake.
         registerDig(ClueType.MEDIUM, new Position(2594, 2899, 0)); // South-east of Feldip Hills, by the crimson swifts (AKS).
         registerDig(ClueType.MEDIUM, new Position(2387, 3435, 0)); // West of Tree Gnome Stronghold, near the pen containing terrorbirds.
-        registerDig(ClueType.MEDIUM, new Position(2512, 3467, 0)); // Baxtorian Falls (Bring rope).
+        //registerDig(ClueType.MEDIUM, new Position(2512, 3467, 0)); // Baxtorian Falls (Bring rope).
         registerDig(ClueType.MEDIUM, new Position(2381, 3468, 0)); // West of Tree Gnome Stronghold, north of the pen with terrorbirds.
         registerDig(ClueType.MEDIUM, new Position(3005, 3475, 0)); // Ice Mountain, west of Edgeville.
         registerDig(ClueType.MEDIUM, new Position(2585, 3505, 0)); // By the shore line north of the Coal Trucks.
@@ -104,12 +106,11 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.MEDIUM, new Position(2363, 3531, 0)); // North-east of Eagles' Peak.
         registerDig(ClueType.MEDIUM, new Position(2919, 3535, 0)); // East of Burthorpe pub.
         registerDig(ClueType.MEDIUM, new Position(3548, 3560, 0)); // Inside Fenkenstrain's Castle.
-        registerDig(ClueType.MEDIUM, new Position(1456, 3620, 0)); // Graveyard west of Shayzien (DJR).
+        registerDig(ClueType.MEDIUM, new Position(1477, 3565, 0)); // Graveyard west of Shayzien.
         registerDig(ClueType.MEDIUM, new Position(2735, 3638, 0)); // East of Rellekka, north-west of Golden Apple Tree (AJR).
-        registerDig(ClueType.MEDIUM, new Position(2681, 3653, 0)); // Rellekka, in the garden of the south-east house.
-        registerDig(ClueType.MEDIUM, new Position(2537, 3881, 0)); // Miscellania.
-        registerDig(ClueType.MEDIUM, new Position(2828, 3234, 0)); // Southern coast of Crandor.
+        //registerDig(ClueType.MEDIUM, new Position(2681, 3653, 0)); // Rellekka, in the garden of the south-east house.
         registerDig(ClueType.MEDIUM, new Position(1247, 3726, 0)); // Just inside the Farming Guild
+        registerDig(ClueType.MEDIUM, new Position(2537, 3881, 0)); // Miscellania.
         registerDig(ClueType.MEDIUM, new Position(3770, 3898, 0)); // On the small island north-east of Fossil Island's mushroom forest.
         // Hard
         registerDig(ClueType.HARD, new Position(2209, 3161, 0)); // North-east of Tyras Camp.
