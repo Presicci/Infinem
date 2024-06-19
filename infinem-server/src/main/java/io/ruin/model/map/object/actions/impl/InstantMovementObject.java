@@ -10,6 +10,11 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    MOSLEHARMLESS_GANGPLANK_ON(11211, new Position(3684, 2952), new Position(3684, 2950, 1)),
+    MOSLEHARMLESS_GANGPLANK_OFF(11212, new Position(3684, 2951, 1), new Position(3684, 2953, 0)),
+    PORT_PHASMATYS_GANGPLANK_ON(11209, new Position(3710, 3496), new Position(3712, 3496, 1)),
+    PORT_PHASMATYS_GANGPLANK_OFF(11210, new Position(3711, 3496, 1), new Position(3709, 3496, 0)),
+
     ECTOFUNTUS_DOWN_1(16109, new Position(3672, 9887, 2), new Position(3675, 9888, 1)),
     ECTOFUNTUS_DOWN_2(16109, new Position(3684, 9887, 1), new Position(3683, 9888, 0)),
     ECTOFUNTUS_DOWN_3(16109, new Position(3689, 9887, 3), new Position(3688, 9888, 2)),
