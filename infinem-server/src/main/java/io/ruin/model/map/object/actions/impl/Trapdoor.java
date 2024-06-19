@@ -79,6 +79,10 @@ public enum Trapdoor {
         ObjectAction.register(7257, "enter", (player, obj) -> player.getMovement().teleport(3061, 4985, 1));
         ObjectAction.register(7258, "enter", (player, obj) -> player.getMovement().teleport(2906, 3537, 0));
 
+        // Evil dave's lair
+        ObjectAction.register(12266, 1, (player, obj) -> player.getMovement().teleport(3077, 9893));
+        ObjectAction.register(12265, "climb", (player, obj) -> player.getMovement().teleport(3078, 3493));
+
         /*
          * Mourner's tunnel
          */
