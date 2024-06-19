@@ -200,7 +200,7 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.ELITE, new Position(2065, 3923, 0)); // Outside the western wall on Lunar Isle.
         registerDig(ClueType.ELITE, new Position(3188, 3933, 0)); // Wilderness. Resource Area
         registerDig(ClueType.ELITE, new Position(2872, 3937, 0)); // Weiss
-        // PIRATE HIDEOUT
+        registerDig(ClueType.ELITE, new Position(3043, 3940, 0)); // Pirate hideout, wildy
         registerDig(ClueType.ELITE, new Position(3380, 3963, 0)); // Wilderness. North of Volcano.
         // LITHKREN
         // ISLAND OF STONE
