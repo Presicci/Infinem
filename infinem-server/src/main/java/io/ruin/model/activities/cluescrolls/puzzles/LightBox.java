@@ -1,6 +1,7 @@
 package io.ruin.model.activities.cluescrolls.puzzles;
 
 import io.ruin.api.utils.Random;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -313,6 +314,7 @@ public final class LightBox {
                 AttributeExtensions.setCharges(item, 1);
             }
         }));
+        ItemDefinition.get(Items.LIGHT_BOX).custom_values.put("DESTROY", "Warning: This will reset the puzzle.");
         InterfaceHandler.register(322, h -> {
             h.actions[8] = (SlotAction)  (player, slot) -> player.getLightBox().press(0);
             h.actions[9] = (SlotAction)  (player, slot) -> player.getLightBox().press(1);
