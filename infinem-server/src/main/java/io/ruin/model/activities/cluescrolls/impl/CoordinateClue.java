@@ -183,7 +183,7 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.ELITE, new Position(3225, 2838, 0)); // South of Desert Treasure pyramid.
         registerDig(ClueType.ELITE, new Position(1451, 3509, 0)); // Shayzien, ruins of morra
         registerDig(ClueType.ELITE, new Position(1773, 3510, 0)); // Ruins north of the Hosidius mine.
-        //registerDig(ClueType.ELITE, new Position(3822, 3562, 0)); // North-east of Dragontooth Island.
+        registerDig(ClueType.ELITE, new Position(3822, 3562, 0)); // North-east of Dragontooth Island.
         //registerDig(ClueType.ELITE, new Position(3603, 3564, 0)); // North of the wrecked ship, outside of Port Phasmatys.
         registerDig(ClueType.ELITE, new Position(2936, 2721, 0)); // Eastern shore of Crash Island.
         registerDig(ClueType.ELITE, new Position(3318, 2706, 0)); // Necropolis
