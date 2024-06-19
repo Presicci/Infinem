@@ -54,15 +54,6 @@
     "walkRange": 4
   },
   {
-    "name": "Drunken Dwarf",
-    "id": 2408,
-    "x": 3229,
-    "y": 3241,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 4
-  },
-  {
     "name": "Grand Exchange Clerk",
     "id": 2148,
     "x": 3208,
