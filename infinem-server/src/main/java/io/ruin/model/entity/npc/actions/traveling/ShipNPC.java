@@ -69,6 +69,9 @@ public class ShipNPC {
         registerShipNPC(4299, "the Gnome Stronghold", new Position(2367, 3485));
         // Fremmy Province -> Weiss
         registerShipNPC(828, "Weiss", new Position(2851, 3968));
+        // Fremmy <-> Isle of Stone
+        registerShipNPC(9272, "Rellekka", new Position(2621, 3689, 0));
+        registerShipNPC(9270, "the Isle of Stone", new Position(2471, 3996, 0));
         // Phasmatys <-> Dragontooth
         NPCAction.register(3005, "talk-to", (player, npc) -> {
             boolean hasGhostspeak = GhostSpeak.canSpeak(player);
