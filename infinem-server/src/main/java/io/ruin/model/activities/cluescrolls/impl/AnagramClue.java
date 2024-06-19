@@ -96,17 +96,17 @@ public class AnagramClue extends Clue {
         //AWOWOGEI("Awowogei", "Woo An Egg Kiwi", ClueType.HARD, "If I have 303 bananas, and share them between 31 friends evenly, only handing out full bananas. How many will I have left over?", 24),
 
         // Elite
-        //AT HERG
+        REGATH("Regath", "At Herg", ClueType.ELITE, "What is -5 to the power of 2?", 25),
         ONEIROMANCER("Oneiromancer", "Career In Moon", ClueType.ELITE, "How many Suqah inhabit Lunar isle?", 25),
         OLD_CRONE("Old Crone", "Cool Nerd", ClueType.ELITE, "What is the combined combat level of each species that live in Slayer tower?", 619), //Check after restart
-        MANDRITH("Mandrith", "Dr Hitman", ClueType.ELITE, "How many scorpions live under the pit?", 20),
-        //LADDER MEMO GUV
+        MANDRITH("Mandrith", "Dr Hitman", ClueType.ELITE, "How many scorpions live under the pit?", 28),
+        GUARD_VEMMELDO("Guard Vemmeldo", "Ladder Memo Guy", ClueType.ELITE, "How many magic trees can you find inside the Gnome Stronghold?", 3),
         CAM("Cam the Camel", "Machete Clam", ClueType.ELITE, "How many items can carry water in Gielinor?", 6),
-        //MAJORS LAVA BADS AIR
-        //NO OWNER
-        //OUR OWN NEEDS
-        //SNAKES SO I SAIL
-        SIGLI("Sigli the Huntsman", "Unleash Night Mist", ClueType.ELITE),
+        AMBASSADOR_ALVIJAR("Ambassador Alvijar", "Majors Lava Bads Air", ClueType.ELITE, "Double the miles before the initial Dorgeshuun veteran.", 2505),
+        ORONWEN("Oronwen", "No Owner", ClueType.ELITE, "What is the minimum amount of quest points required to reach Lletya?", 20),
+        NURSE_WOONED("Nurse Wooned", "Our Own Needs", ClueType.ELITE, "How many wounded soldiers are there in the camp?", 16),
+        LISSE_ISAAKSON("Lisse Isaakson", "Snakes So I Sail", ClueType.ELITE, "How many arctic logs are required to make a large fremennik round shield?", 2),
+        SIGLI("Sigli the Huntsman", "Unleash Night Mist", ClueType.ELITE, "What is the combined slayer requirement of every monster in the slayer cave?", 302),
 
         // Master
         //A Elf Knows
