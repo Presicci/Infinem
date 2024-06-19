@@ -166,34 +166,41 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.HARD, new Position(3189, 3963, 0)); // Wilderness. North of Resource Area, near magic axe hut.
         // Elite
         registerDig(ClueType.ELITE, new Position(2357, 3151, 0)); // Lletya.
-        registerDig(ClueType.ELITE, new Position(3587, 3180, 0)); // Meiyerditch.
+        //registerDig(ClueType.ELITE, new Position(3587, 3180, 0)); // Meiyerditch.
+        // VARLAMORE
         registerDig(ClueType.ELITE, new Position(2820, 3078, 0)); // Tai Bwo Wannai. Hardwood Grove.
         registerDig(ClueType.ELITE, new Position(3811, 3060, 0)); // Small island north-east of Mos Le'Harmless.
         registerDig(ClueType.ELITE, new Position(2180, 3282, 0)); // North of Elf Camp.
         registerDig(ClueType.ELITE, new Position(2870, 2997, 0)); // North-east of Shilo Village.
+        // PRIF
         registerDig(ClueType.ELITE, new Position(3302, 2988, 0)); // On top of a cliff to the west of Pollnivneach.
         registerDig(ClueType.ELITE, new Position(2511, 2980, 0)); // Just south of Gu'Tanoth, west of gnome glider.
+        // ISLE OF SOULS
         registerDig(ClueType.ELITE, new Position(2732, 3372, 0)); // Legends' Guild.
         registerDig(ClueType.ELITE, new Position(3573, 3425, 0)); // North of Dessous's tomb from Desert Treasure.
+        // ISLE OF SOULS
         registerDig(ClueType.ELITE, new Position(3828, 2848, 0)); // East of Harmony Island.
         registerDig(ClueType.ELITE, new Position(3225, 2838, 0)); // South of Desert Treasure pyramid.
+        // RUINS OF MORRA
         registerDig(ClueType.ELITE, new Position(1773, 3510, 0)); // Ruins north of the Hosidius mine.
-        registerDig(ClueType.ELITE, new Position(3822, 3562, 0)); // North-east of Dragontooth Island.
-        registerDig(ClueType.ELITE, new Position(3603, 3564, 0)); // North of the wrecked ship, outside of Port Phasmatys.
+        //registerDig(ClueType.ELITE, new Position(3822, 3562, 0)); // North-east of Dragontooth Island.
+        //registerDig(ClueType.ELITE, new Position(3603, 3564, 0)); // North of the wrecked ship, outside of Port Phasmatys.
         registerDig(ClueType.ELITE, new Position(2936, 2721, 0)); // Eastern shore of Crash Island.
+        // NECROPOLIS
         registerDig(ClueType.ELITE, new Position(2697, 2705, 0)); // South-west of Ape Atoll.
         registerDig(ClueType.ELITE, new Position(2778, 3678, 0)); // Mountain Camp.
+        // NE Bandit camp
         registerDig(ClueType.ELITE, new Position(2827, 3740, 0)); // West of the entrance to the Ice Path, where the Troll child resides.
         registerDig(ClueType.ELITE, new Position(2359, 3799, 0)); // Neitiznot.
         registerDig(ClueType.ELITE, new Position(2194, 3807, 0)); // Pirates' Cove.
         registerDig(ClueType.ELITE, new Position(2700, 3808, 0)); // Northwestern part of the Trollweiss and Rellekka Hunter area (DKS).
+        // NEITIZNOT
         registerDig(ClueType.ELITE, new Position(3215, 3835, 0)); // Wilderness. Lava Dragon Isle.
         registerDig(ClueType.ELITE, new Position(3369, 3894, 0)); // Wilderness. Fountain of Rune.
         registerDig(ClueType.ELITE, new Position(2065, 3923, 0)); // Outside the western wall on Lunar Isle.
         registerDig(ClueType.ELITE, new Position(3188, 3933, 0)); // Wilderness. Resource Area.
-        registerDig(ClueType.ELITE, new Position(2997, 3953, 0)); // Wilderness. Inside Agility Training Area.
+        // PIRATE HIDEOUT
         registerDig(ClueType.ELITE, new Position(3380, 3963, 0)); // Wilderness. North of Volcano.
-        registerDig(ClueType.ELITE, new Position(3051, 3736, 0)); // East of the Wilderness Obelisk in 28 Wilderness.
         registerDig(ClueType.ELITE, new Position(2316, 3814, 0)); // West of Neitiznot, near the bridge.
         registerDig(ClueType.ELITE, new Position(2872, 3937, 0)); // Weiss.
         // Master
