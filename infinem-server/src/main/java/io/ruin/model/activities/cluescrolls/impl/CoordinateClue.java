@@ -203,7 +203,7 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.ELITE, new Position(3043, 3940, 0)); // Pirate hideout, wildy
         registerDig(ClueType.ELITE, new Position(3380, 3963, 0)); // Wilderness. North of Volcano.
         registerDig(ClueType.ELITE, new Position(3560, 3987, 0)); // Lithkren
-        // ISLAND OF STONE
+        registerDig(ClueType.ELITE, new Position(2484, 4016, 0)); // Isle of Stone
         // Master
         registerDig(ClueType.MASTER, new Position(2178, 3209, 0)); // South of Elf Camp.
         registerDig(ClueType.MASTER, new Position(2155, 3100, 0)); // South of Port Tyras (BJS).
