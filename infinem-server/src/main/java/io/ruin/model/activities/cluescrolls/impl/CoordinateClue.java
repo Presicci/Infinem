@@ -172,7 +172,7 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.ELITE, new Position(3811, 3060, 0)); // Small island north-east of Mos Le'Harmless.
         registerDig(ClueType.ELITE, new Position(2180, 3282, 0)); // North of Elf Camp.
         registerDig(ClueType.ELITE, new Position(2870, 2997, 0)); // North-east of Shilo Village.
-        // PRIF
+        registerDig(ClueType.ELITE, new Position(3246, 6083, 0)); // Prifddinas
         registerDig(ClueType.ELITE, new Position(3302, 2988, 0)); // On top of a cliff to the west of Pollnivneach.
         registerDig(ClueType.ELITE, new Position(2511, 2980, 0)); // Just south of Gu'Tanoth, west of gnome glider.
         // ISLE OF SOULS
@@ -194,15 +194,16 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.ELITE, new Position(2359, 3799, 0)); // Neitiznot.
         registerDig(ClueType.ELITE, new Position(2194, 3807, 0)); // Pirates' Cove.
         registerDig(ClueType.ELITE, new Position(2700, 3808, 0)); // Northwestern part of the Trollweiss and Rellekka Hunter area (DKS).
-        // NEITIZNOT
+        registerDig(ClueType.ELITE, new Position(2316, 3814, 0)); // West of Neitiznot, near the bridge.
         registerDig(ClueType.ELITE, new Position(3215, 3835, 0)); // Wilderness. Lava Dragon Isle.
         registerDig(ClueType.ELITE, new Position(3369, 3894, 0)); // Wilderness. Fountain of Rune.
         registerDig(ClueType.ELITE, new Position(2065, 3923, 0)); // Outside the western wall on Lunar Isle.
-        registerDig(ClueType.ELITE, new Position(3188, 3933, 0)); // Wilderness. Resource Area.
+        registerDig(ClueType.ELITE, new Position(3188, 3933, 0)); // Wilderness. Resource Area
+        registerDig(ClueType.ELITE, new Position(2872, 3937, 0)); // Weiss
         // PIRATE HIDEOUT
         registerDig(ClueType.ELITE, new Position(3380, 3963, 0)); // Wilderness. North of Volcano.
-        registerDig(ClueType.ELITE, new Position(2316, 3814, 0)); // West of Neitiznot, near the bridge.
-        registerDig(ClueType.ELITE, new Position(2872, 3937, 0)); // Weiss.
+        // LITHKREN
+        // ISLAND OF STONE
         // Master
         registerDig(ClueType.MASTER, new Position(2178, 3209, 0)); // South of Elf Camp.
         registerDig(ClueType.MASTER, new Position(2155, 3100, 0)); // South of Port Tyras (BJS).
