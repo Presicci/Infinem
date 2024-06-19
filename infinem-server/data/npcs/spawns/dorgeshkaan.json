@@ -1054,5 +1054,14 @@
     "z": 0,
     "direction": 1024,
     "walkRange": 0
+  },
+  {
+    "name": "Ambassador Alvijar",
+    "id": 5177,
+    "x": 2737,
+    "y": 5351,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
