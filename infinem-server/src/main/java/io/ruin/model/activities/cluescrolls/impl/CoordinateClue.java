@@ -189,7 +189,7 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.ELITE, new Position(3318, 2706, 0)); // Necropolis
         registerDig(ClueType.ELITE, new Position(2697, 2705, 0)); // South-west of Ape Atoll.
         registerDig(ClueType.ELITE, new Position(2778, 3678, 0)); // Mountain Camp.
-        // NE Bandit camp
+        registerDig(ClueType.ELITE, new Position(3051, 3736, 0)); // East of obelisk 28 wildy
         registerDig(ClueType.ELITE, new Position(2827, 3740, 0)); // West of the entrance to the Ice Path, where the Troll child resides.
         registerDig(ClueType.ELITE, new Position(2359, 3799, 0)); // Neitiznot.
         registerDig(ClueType.ELITE, new Position(2194, 3807, 0)); // Pirates' Cove.
