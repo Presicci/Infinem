@@ -499,5 +499,14 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Ghost guard"
+  },
+  {
+    "name": "Bill Teach",
+    "id": 4016,
+    "x": 3714,
+    "y": 3498,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
   }
 ]
