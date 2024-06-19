@@ -1,15 +1,22 @@
 package io.ruin.model.activities.cluescrolls.impl;
 
+import io.ruin.api.utils.Random;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.activities.cluescrolls.Clue;
 import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.activities.cluescrolls.StepType;
+import io.ruin.model.activities.cluescrolls.puzzles.LightBox;
+import io.ruin.model.activities.cluescrolls.puzzles.PuzzleBox;
+import io.ruin.model.activities.cluescrolls.puzzles.PuzzleBoxType;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.ActionDialogue;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
+import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
+import io.ruin.model.item.attributes.AttributeExtensions;
 
 import java.util.Collections;
 import java.util.List;
@@ -217,6 +224,86 @@ public class AnagramClue extends Clue {
                     new ActionDialogue(() -> {
                         player.putAttribute(KEY, 1);
                         player.dialogue(new ItemDialogue().one(type.clueId, npc.getDef().name + " has given you a challenge scroll!"));
+                    })
+            );
+        }
+    }
+
+    public boolean requiresPuzzle() {
+        return type == ClueType.MASTER;
+    }
+
+    private Item getPuzzle(Player player) {
+        for (PuzzleBoxType boxType : PuzzleBoxType.values()) {
+            if (boxType.getLevel() != type) continue;
+            Item item = player.getInventory().findItemIgnoringAttributes(boxType.getPuzzleBox(), false);
+            if (item != null) return item;
+        }
+        Item item = player.getInventory().findItemIgnoringAttributes(Items.LIGHT_BOX, false);
+        if (item != null) return item;
+        return null;
+    }
+
+    public boolean hasPuzzle(Player player) {
+        for (PuzzleBoxType boxType : PuzzleBoxType.values()) {
+            if (boxType.getLevel() != type) continue;
+            if (player.findItem(boxType.getPuzzleBox(), true) != null) return true;
+        }
+        if (player.findItem(Items.LIGHT_BOX, true) != null) return true;
+        return false;
+    }
+
+    private boolean hasCompletedPuzzle(Item item) {
+        if (item.getId() == Items.LIGHT_BOX) {
+            return AttributeExtensions.getCharges(item) >= 2;
+        } else {
+            return PuzzleBox.isCompleted(item);
+        }
+    }
+
+    private static final String MASTER_PUZZLE_KEY = "MASTER_PUZZLE";
+
+    public void puzzleDialogue(Player player, NPC npc) {
+        if (!requiresPuzzle()) return;
+        if (hasPuzzle(player)) {
+            Item item = getPuzzle(player);
+            if (item == null) {
+                player.dialogue(new NPCDialogue(npc, "You must complete the puzzle I gave you."));
+                return;
+            }
+            if (hasCompletedPuzzle(item)) {
+                player.dialogue(
+                        new NPCDialogue(npc, "Good work!"),
+                        new ActionDialogue(() -> {
+                            player.removeAttribute(MASTER_PUZZLE_KEY);
+                            item.remove();
+                            PuzzleBox.clearPuzzleBoxes(player, type);
+                            this.advance(player);
+                        })
+                );
+            } else {
+                player.dialogue(new NPCDialogue(npc, "Sorry but you haven't solved the puzzle yet."));
+            }
+        } else {
+            player.dialogue(
+                    new NPCDialogue(npc, "Here, solve this for me."),
+                    new ActionDialogue(() -> {
+                        if (!player.getInventory().hasFreeSlots(1)) {
+                            player.dialogue(new NPCDialogue(npc, "Make some room so I can give you the puzzle."));
+                            return;
+                        }
+                        String currentPuzzle = player.getAttributeOrDefault(MASTER_PUZZLE_KEY, "");
+                        if (!currentPuzzle.equals("light") && (currentPuzzle.equals("puzzle") ||  Random.rollDie(2))) {
+                            player.putAttribute(MASTER_PUZZLE_KEY, "puzzle");
+                            PuzzleBoxType puzzleBoxType = PuzzleBoxType.random(type);
+                            int puzzleBox = puzzleBoxType.getPuzzleBox();
+                            player.getInventory().add(puzzleBox);
+                            player.dialogue(new ItemDialogue().one(puzzleBox, npc.getDef().name + " has given you a puzzle box!"));
+                        } else {
+                            player.putAttribute(MASTER_PUZZLE_KEY, "light");
+                            player.getInventory().add(Items.LIGHT_BOX);
+                            player.dialogue(new ItemDialogue().one(Items.LIGHT_BOX, npc.getDef().name + " has given you a light box!"));
+                        }
                     })
             );
         }

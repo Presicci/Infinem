@@ -3,6 +3,7 @@ package io.ruin.network.incoming.handlers;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.model.World;
+import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -109,6 +110,10 @@ public class NPCActionHandler implements Incoming {
             if(def.cryptic != null && def.cryptic.advance(player))
                 return;
             if(def.anagram != null) {
+                if (def.anagram.type == ClueType.MASTER) {
+                    def.anagram.puzzleDialogue(player, npc);
+                    return;
+                }
                 if (def.anagram.hasChallenge()) {
                     def.anagram.challengeDialogue(player, npc);
                     return;
