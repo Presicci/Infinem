@@ -220,7 +220,7 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.MASTER, new Position(2934, 2727, 0)); // Eastern shore of Crash Island.
         //registerDig(ClueType.MASTER, new Position(1451, 3695, 0)); // West side of Lizardman Canyon with Lizardman shaman.
         registerDig(ClueType.MASTER, new Position(2538, 3739, 0)); // Waterbirth Island. Bring a pet rock and rune thrownaxe.
-        // FARMING GUILD
+        registerDig(ClueType.MASTER, new Position(1248, 3751, 0)); // In the north wing of the Farming Guild.
         registerDig(ClueType.MASTER, new Position(1698, 3792, 0)); // Arceuus church.
         registerDig(ClueType.MASTER, new Position(2951, 3820, 0)); // Wilderness. Chaos Temple (level 38).
         registerDig(ClueType.MASTER, new Position(2202, 3825, 0)); // Pirates' Cove, between Lunar Isle and Rellekka.
@@ -229,8 +229,7 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.MASTER, new Position(1442, 3878, 0)); // Sulphur Mine.
         registerDig(ClueType.MASTER, new Position(3380, 3929, 0)); // Wilderness. Near Volcano.
         registerDig(ClueType.MASTER, new Position(3188, 3939, 0)); // Wilderness. Resource Area.
-        registerDig(ClueType.MASTER, new Position(3304, 3941, 0)); // Wilderness. East of Rogues' Castle.
-        registerDig(ClueType.MASTER, new Position(2994, 3961, 0)); // Wilderness. Inside Agility Training Area.
-        registerDig(ClueType.MASTER, new Position(1248, 3751, 0)); // In the north wing of the Farming Guild.
+        registerDig(ClueType.MASTER, new Position(3304, 3940, 0)); // Wilderness. East of Rogues' Castle.
+        registerDig(ClueType.MASTER, new Position(3028, 3928, 0)); // Wilderness. Inside Agility Training Area.
     }
 }
