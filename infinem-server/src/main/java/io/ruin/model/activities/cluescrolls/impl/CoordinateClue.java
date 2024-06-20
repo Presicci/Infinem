@@ -211,15 +211,16 @@ public class CoordinateClue extends Clue {
         registerDig(ClueType.MASTER, new Position(3830, 3060, 0)); // Small island located north-east of Mos Le'Harmless.
         registerDig(ClueType.MASTER, new Position(2834, 3271, 0)); // Crandor island.
         registerDig(ClueType.MASTER, new Position(2732, 3284, 0)); // Witchaven.
-        registerDig(ClueType.MASTER, new Position(3622, 3320, 0)); // Meiyerditch. Outside mine.
+        //registerDig(ClueType.MASTER, new Position(3622, 3320, 0)); // Meiyerditch. Outside mine.
         registerDig(ClueType.MASTER, new Position(2303, 3328, 0)); // East of Prifddinas.
         registerDig(ClueType.MASTER, new Position(3570, 3405, 0)); // North of Dessous's tomb from Desert Treasure.
         registerDig(ClueType.MASTER, new Position(2840, 3423, 0)); // Water Obelisk Island.
-        registerDig(ClueType.MASTER, new Position(3604, 3564, 0)); // North of the wrecked ship, outside of Port Phasmatys (ALQ).
+        //registerDig(ClueType.MASTER, new Position(3604, 3564, 0)); // North of the wrecked ship, outside of Port Phasmatys (ALQ).
         registerDig(ClueType.MASTER, new Position(3085, 3569, 0)); // Wilderness. Obelisk of Air.
         registerDig(ClueType.MASTER, new Position(2934, 2727, 0)); // Eastern shore of Crash Island.
-        registerDig(ClueType.MASTER, new Position(1451, 3695, 0)); // West side of Lizardman Canyon with Lizardman shaman.
+        //registerDig(ClueType.MASTER, new Position(1451, 3695, 0)); // West side of Lizardman Canyon with Lizardman shaman.
         registerDig(ClueType.MASTER, new Position(2538, 3739, 0)); // Waterbirth Island. Bring a pet rock and rune thrownaxe.
+        // FARMING GUILD
         registerDig(ClueType.MASTER, new Position(1698, 3792, 0)); // Arceuus church.
         registerDig(ClueType.MASTER, new Position(2951, 3820, 0)); // Wilderness. Chaos Temple (level 38).
         registerDig(ClueType.MASTER, new Position(2202, 3825, 0)); // Pirates' Cove, between Lunar Isle and Rellekka.
