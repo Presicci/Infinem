@@ -1,14 +1,12 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
-import io.ruin.model.skills.woodcutting.Tree;
 
 public enum BirdNest {
 
@@ -32,7 +30,7 @@ public enum BirdNest {
         this.itemID = itemID;
     }
 
-    public static final LootTable ringNest = new LootTable().addTable(1,
+    public static final LootTable RING_LOOT = new LootTable().addTable(1,
             new LootItem(1635, 1, 40), //Gold ring
             new LootItem(1637, 1, 30), //Sapphire ring
             new LootItem(1639, 1, 20),  //Emerald ring
@@ -40,7 +38,7 @@ public enum BirdNest {
             new LootItem(1643, 1, 1)   //Diamond ring
     );
 
-    public static final LootTable seedNest = new LootTable().addTable(1,
+    public static final LootTable SEED_LOOT = new LootTable().addTable(1,
             new LootItem(5312, 1, 100), //Acorn
             new LootItem(5283, 1, 80), //Apple tree seed
             new LootItem(5313, 1, 70), //Willow seed
@@ -87,7 +85,7 @@ public enum BirdNest {
                 });
             } else {
                 ItemAction.registerInventory(nest.itemID, "search", (player, item) -> {
-                    Item reward = nest == RING ? ringNest.rollItem() : seedNest.rollItem();
+                    Item reward = nest == RING ? RING_LOOT.rollItem() : SEED_LOOT.rollItem();
                     openNest(player, item, reward, reward.getDef().descriptiveName.toLowerCase());
                 });
             }

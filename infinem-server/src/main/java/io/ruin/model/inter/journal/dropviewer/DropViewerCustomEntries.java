@@ -7,6 +7,7 @@ import io.ruin.model.activities.combat.bosses.slayer.sire.FontOfConsumption;
 import io.ruin.model.activities.combat.pestcontrol.rewards.PCReward;
 import io.ruin.model.activities.combat.raids.xeric.XericRewards;
 import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.impl.BirdNest;
 import io.ruin.model.item.actions.impl.ImplingJar;
 import io.ruin.model.item.actions.impl.InfernalEel;
 import io.ruin.model.item.loot.LootItem;
@@ -140,6 +141,8 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Chambers of Xeric (Unique)", XericRewards.UNIQUE_TABLE),
             new DropViewerEntry("Abyssal Sire (Unsired)", FontOfConsumption.LOOT),
             new DropViewerEntry("Hespori", HesporiLoot.NORMAL_SEEDS),
-            new DropViewerEntry("Hespori (Anima)", HesporiLoot.ANIMA_SEEDS)
+            new DropViewerEntry("Hespori (Anima)", HesporiLoot.ANIMA_SEEDS),
+            new DropViewerEntry("Bird Nest (Ring)", BirdNest.RING_LOOT),
+            new DropViewerEntry("Bird Nest (Seed)", BirdNest.SEED_LOOT)
     ).collect(Collectors.toCollection(ArrayList::new));
 }
