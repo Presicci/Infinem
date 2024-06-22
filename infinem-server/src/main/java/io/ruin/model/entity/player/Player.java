@@ -7,6 +7,7 @@ import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.utils.*;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.AnimationDefinition;
+import io.ruin.model.inter.handlers.NotificationInterface;
 import io.ruin.model.skills.slayer.PartnerSlayer;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.InterfaceDefinition;
@@ -1947,4 +1948,6 @@ public class Player extends PlayerAttributes {
     public boolean isTickEventActive(TickEventType event) {
         return tickingEvents.stream().anyMatch(e -> e.getType() == event);
     }
+
+    public List<NotificationInterface.Notification> queuedPopups = new ArrayList<>();
 }

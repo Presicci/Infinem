@@ -13,6 +13,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.ai.AIPlayer;
 import io.ruin.model.inter.*;
 //import io.ruin.model.inter.handlers.BuyCredits;
+import io.ruin.model.inter.handlers.NotificationInterface;
 import io.ruin.model.inter.journal.JournalCategory;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.Position;
@@ -431,8 +432,7 @@ public class PacketSender {
     }
 
     public void sendPopupNotification(int color, String title, String text) {
-        player.openInterface(InterfaceType.POPUP_NOTIFICATION_OVERLAY, 660);
-        player.getPacketSender().sendClientScript(3343, "iss", color, title, text);
+        NotificationInterface.sendNotification(player, color, title, text);
     }
 
     public void fadeIn() {
