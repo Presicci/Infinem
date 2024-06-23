@@ -27,12 +27,21 @@ import java.util.HashSet;
  */
 public class TaskManager {
 
+    private static final Config[] AREA_POINTS = {
+            Config.varpbit(16000, true),
+            Config.varpbit(16001, true),
+            Config.varpbit(16002, true),
+            Config.varpbit(16003, true),
+            Config.varpbit(16004, true),
+            Config.varpbit(16005, true),
+            Config.varpbit(16006, true),
+            Config.varpbit(16007, true),
+            Config.varpbit(16008, true),
+            Config.varpbit(16009, true)
+    };
+
     public TaskManager(Player player) {
         this.player = player;
-        this.taskPoints = new HashMap<>();
-        for (TaskArea area : TaskArea.values()) {
-            this.taskPoints.put(area.ordinal(), 0);
-        }
         this.inProgressTasks = new HashMap<>();
         this.completeTasks = new HashSet<>();
         this.completedCategories = new HashSet<>();
@@ -40,7 +49,6 @@ public class TaskManager {
     }
 
     @Setter private Player player;
-    @Expose private HashMap<Integer, Integer> taskPoints;
     @Expose private HashMap<Integer, Integer> inProgressTasks;
     @Expose private HashSet<Integer> completeTasks;
     @Expose private HashSet<Integer> completedCategories;
@@ -52,7 +60,10 @@ public class TaskManager {
         if (completeTasks.contains(uuid))
             return;
         int pointGain = taskDifficulty.getPoints();
-        taskPoints.put(taskArea.ordinal(), taskPoints.get(taskArea.ordinal()) + pointGain);
+        //taskPoints.put(taskArea.ordinal(), taskPoints.get(taskArea.ordinal()) + pointGain);
+        if (taskArea != TaskArea.GENERAL) {
+            AREA_POINTS[taskArea.ordinal() - 1].increment(player, pointGain / 10);
+        }
         int newPoints = Config.LEAGUE_POINTS.increment(player, pointGain);
         player.sendMessage("<col=990000>You've completed a task: " + taskName + "!");
         player.sendMessage("You now have " + newPoints + " task points.");
@@ -65,9 +76,8 @@ public class TaskManager {
 
     public void resetTasks() {
         Config.LEAGUE_POINTS.set(player, 0);
-        this.taskPoints = new HashMap<>();
-        for (TaskArea area : TaskArea.values()) {
-            this.taskPoints.put(area.ordinal(), 0);
+        for (Config config : AREA_POINTS) {
+            config.set(player, 0);
         }
         this.inProgressTasks = new HashMap<>();
         this.completeTasks = new HashSet<>();
@@ -76,7 +86,8 @@ public class TaskManager {
     }
 
     public int getAreaTaskPoints(int areaIndex) {
-        return taskPoints.get(areaIndex);
+        if (areaIndex == 0) return Config.LEAGUE_POINTS.get(player);
+        return AREA_POINTS[areaIndex - 1].get(player) * 10;
     }
 
     /**
