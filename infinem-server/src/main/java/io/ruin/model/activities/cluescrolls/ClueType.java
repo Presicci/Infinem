@@ -113,7 +113,7 @@ public enum ClueType {
                     new LootItem(326, 5, 17, 1),   //Sardine (noted)
                     new LootItem(348, 5, 9, 1)   //Herring (noted)
             ),
-            StepType.ANAGRAM, StepType.HOTCOLD, StepType.EMOTE
+            StepType.ANAGRAM, StepType.HOTCOLD, StepType.EMOTE, StepType.MAP
     ),
     EASY(2677, 20546, 24362, 2, 4, 16728, 2, 4, 50, new LootTable()
                 .addTable("easyclue", 8515,    // Uniques
