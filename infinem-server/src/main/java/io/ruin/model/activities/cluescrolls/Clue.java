@@ -23,7 +23,7 @@ public class Clue {
 
     private static int OFFSET;
 
-    public static final Clue[] CLUES = new Clue[600];
+    public static final Clue[] CLUES = new Clue[700];
 
     // Clue storage, separated by ClueType
     public static final Map<StepType, Map<Integer, List<Clue>>> CLUES_BY_CATEGORY = new HashMap<StepType, Map<Integer, List<Clue>>>() {{
