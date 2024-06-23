@@ -53,6 +53,7 @@ public class Wyson {
             }
             player.dialogue(new NPCDialogue(npc, "Here is " + addedAmt + " nests, enjoy."));
         }
+        player.getTaskManager().doLookupByUUID(469, addedAmt, true);    // Turn in 100 Mole Parts to Wyson the Gardener
     }
 
     private static void purchaseLeaves(Player player, NPC npc, int cost) {
