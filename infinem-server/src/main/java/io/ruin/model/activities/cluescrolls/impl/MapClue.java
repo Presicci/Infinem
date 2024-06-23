@@ -62,12 +62,13 @@ public class MapClue extends Clue {
         registerDig(344, 2666, 3562, 0, ClueType.MEDIUM);   // North of Seers
         registerDig(348, 3091, 3227, 0, ClueType.MEDIUM);   // Draynor
         // Hard
-        registerDig(338, 3021, 3912, 0, ClueType.HARD);     // 50 wildy
-        registerDig(339, 2723, 3338, 0, ClueType.HARD);     // South of legends
-        registerDig(353, 2616, 3077, 0, ClueType.HARD);     // Yanille
-        registerDig(357, 2488, 3308, 0, ClueType.HARD);     // West ardy
+        // LUMBER YARD
         registerObj(358, 18506, 2457, 3182, 0, ClueType.HARD);  // Observatory
         registerObj(359, 354, 3026, 3628, 0, ClueType.HARD);    // Dark Warrior's fortress
+        registerDig(353, 2616, 3077, 0, ClueType.HARD);     // Yanille
+        registerDig(338, 3021, 3912, 0, ClueType.HARD);     // 50 wildy
+        registerDig(339, 2723, 3338, 0, ClueType.HARD);     // South of legends
+        registerDig(357, 2488, 3308, 0, ClueType.HARD);     // West ardy
         // Elite
         registerDig(86, 2449, 3130, 0, ClueType.ELITE);     // NE of Castle wars
     }
