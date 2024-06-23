@@ -51,7 +51,7 @@ public class MapClue extends Clue {
         registerDig(337, 2970, 3414, 0, ClueType.EASY);     // N Falador
         // Medium
         registerObj(361, 354, 2565, 3248, 0, ClueType.MEDIUM);  // Clock tower
-        // MCGRUBORS WOOD
+        registerObj(355, 357, 2658, 3488, 0, ClueType.MEDIUM);  // Mcgrubor's wood
         registerDig(343, 2578, 3597, 0, ClueType.MEDIUM);   // West of Rellekka
         registerDig(342, 2455, 3230, 0, ClueType.MEDIUM);   // Ourania altar
         registerDig(341, 3434, 3265, 0, ClueType.MEDIUM);   // Mort'ton
