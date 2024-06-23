@@ -4,6 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
@@ -60,6 +61,35 @@ public enum BirdNest {
             new LootItem(22871, 1, 10)  // Redwood tree seed
     );
 
+    public static final LootTable WYSON_SEED_LOOT = new LootTable().addTable(1,
+            new LootItem(Items.SWEETCORN_SEED, 6, 1020),
+            new LootItem(Items.STRAWBERRY_SEED, 6, 1000),
+            new LootItem(Items.ACORN, 1, 800),
+            new LootItem(Items.LIMPWURT_SEED, 2, 800),
+            new LootItem(Items.WATERMELON_SEED, 2, 700),
+            new LootItem(22879, 2, 400),  // Snape grass seed
+            new LootItem(Items.LANTADYME_SEED, 1, 300),
+            new LootItem(Items.DWARF_WEED_SEED, 1, 300),
+            new LootItem(Items.CADANTINE_SEED, 1, 240),
+            new LootItem(21486, 1, 200),  // Teak seed
+            new LootItem(21488, 1, 200),  // Mahogany seed
+            new LootItem(Items.WILLOW_SEED, 1, 160),
+            new LootItem(Items.PINEAPPLE_SEED, 1, 160),
+            new LootItem(Items.CALQUAT_TREE_SEED, 1, 120),
+            new LootItem(Items.PAPAYA_TREE_SEED, 1, 100),
+            new LootItem(Items.MAPLE_SEED, 1, 60),
+            new LootItem(Items.TORSTOL_SEED, 1, 40),
+            new LootItem(Items.RANARR_SEED, 1, 40),
+            new LootItem(Items.SNAPDRAGON_SEED, 1, 40),
+            new LootItem(Items.YEW_SEED, 1, 40),
+            new LootItem(Items.SPIRIT_SEED, 1, 40),
+            new LootItem(Items.PALM_TREE_SEED, 1, 20),
+            new LootItem(22877, 1, 20),  // Dragonfruit tree seed
+            new LootItem(Items.MAGIC_SEED, 1, 20),
+            new LootItem(22869, 1, 10),  // Celastrus seed
+            new LootItem(22871, 1, 10)  // Redwood tree seed
+    );
+
     private static void openNest(Player player, Item item, Item reward, String descriptiveName) {
         if (player.getInventory().isFull()) {
             player.sendMessage("You don't have enough inventory space to do that.");
@@ -90,5 +120,9 @@ public enum BirdNest {
                 });
             }
         }
+        ItemAction.registerInventory(22800, "search", (player, item) -> {
+            Item reward = WYSON_SEED_LOOT.rollItem();
+            openNest(player, item, reward, reward.getDef().descriptiveName.toLowerCase());
+        });
     }
 }
