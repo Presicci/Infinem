@@ -70,7 +70,9 @@ public class MapClue extends Clue {
         registerDig(339, 2723, 3338, 0, ClueType.HARD);     // South of legends
         registerDig(357, 2488, 3308, 0, ClueType.HARD);     // West ardy
         // Elite
+        registerDig(317, 2202, 3062, 0, ClueType.ELITE);    // Zul-andra
         registerDig(86, 2449, 3130, 0, ClueType.ELITE);     // NE of Castle wars
+        // MUDSKIPPER CAVE - inter 314
     }
 }
 
