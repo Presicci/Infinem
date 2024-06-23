@@ -42,13 +42,13 @@ public class MapClue extends Clue {
         registerDig(347, 3289, 3374, 0, ClueType.BEGINNER);     // Varrock east mine
         registerDig(356, 3110, 3152, 0, ClueType.BEGINNER);     // Wizard tower
         // Easy
-        registerDig(87, 3300, 3290, 0, ClueType.EASY);      // Al kharid
-        registerDig(337, 2970, 3414, 0, ClueType.EASY);     // N Falador
-        registerDig(354, 2612, 3482, 0, ClueType.EASY);     // Galahad's house
-        registerDig(356, 3110, 3152, 0, ClueType.EASY);     // Wizard tower
-        registerDig(351, 3043, 3399, 0, ClueType.EASY);     // NE Falador
         registerDig(346, 3166, 3360, 0, ClueType.EASY);     // Champion's guild
+        registerDig(87, 3300, 3290, 0, ClueType.EASY);      // Al kharid
+        registerDig(356, 3110, 3152, 0, ClueType.EASY);     // Wizard tower
+        registerDig(354, 2612, 3482, 0, ClueType.EASY);     // Galahad's house
+        registerDig(351, 3043, 3399, 0, ClueType.EASY);     // NE Falador
         registerDig(347, 3289, 3374, 0, ClueType.EASY);     // Varrock east mine
+        registerDig(337, 2970, 3414, 0, ClueType.EASY);     // N Falador
         // Medium
         registerDig(340, 2536, 3865, 0, ClueType.MEDIUM);   // Miscellania
         registerDig(341, 3434, 3265, 0, ClueType.MEDIUM);   // Mort'ton
