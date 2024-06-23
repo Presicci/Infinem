@@ -71,6 +71,7 @@ public class MapClue extends Clue {
         registerDig(357, 2488, 3308, 0, ClueType.HARD);     // West ardy
         // Elite
         registerDig(317, 2202, 3062, 0, ClueType.ELITE);    // Zul-andra
+        registerDig(318, 1815, 3852, 0, ClueType.ELITE);    // Soul altar
         registerDig(86, 2449, 3130, 0, ClueType.ELITE);     // NE of Castle wars
         // MUDSKIPPER CAVE - inter 314
     }
