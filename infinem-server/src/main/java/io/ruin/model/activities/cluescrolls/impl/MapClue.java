@@ -50,16 +50,17 @@ public class MapClue extends Clue {
         registerDig(347, 3289, 3374, 0, ClueType.EASY);     // Varrock east mine
         registerDig(337, 2970, 3414, 0, ClueType.EASY);     // N Falador
         // Medium
-        registerDig(340, 2536, 3865, 0, ClueType.MEDIUM);   // Miscellania
-        registerDig(341, 3434, 3265, 0, ClueType.MEDIUM);   // Mort'ton
-        registerDig(342, 2455, 3230, 0, ClueType.MEDIUM);   // Ourania altar
+        registerObj(361, 354, 2565, 3248, 0, ClueType.MEDIUM);  // Clock tower
+        // MCGRUBORS WOOD
         registerDig(343, 2578, 3597, 0, ClueType.MEDIUM);   // West of Rellekka
+        registerDig(342, 2455, 3230, 0, ClueType.MEDIUM);   // Ourania altar
+        registerDig(341, 3434, 3265, 0, ClueType.MEDIUM);   // Mort'ton
+        registerDig(360, 2651, 3231, 0, ClueType.MEDIUM);   // South of Ardy
+        registerDig(340, 2536, 3865, 0, ClueType.MEDIUM);   // Miscellania
+        registerDig(362, 2924, 3209, 0, ClueType.MEDIUM);   // Rimmington
+        registerDig(352, 2906, 3293, 0, ClueType.MEDIUM);   // Crafting guild
         registerDig(344, 2666, 3562, 0, ClueType.MEDIUM);   // North of Seers
         registerDig(348, 3091, 3227, 0, ClueType.MEDIUM);   // Draynor
-        registerDig(352, 2906, 3293, 0, ClueType.MEDIUM);   // Crafting guild
-        registerDig(360, 2651, 3231, 0, ClueType.MEDIUM);   // South of Ardy
-        registerObj(361, 354, 2565, 3248, 0, ClueType.MEDIUM);  // Clock tower
-        registerDig(362, 2924, 3209, 0, ClueType.MEDIUM);   // Rimmington
         // Hard
         registerDig(338, 3021, 3912, 0, ClueType.HARD);     // 50 wildy
         registerDig(339, 2723, 3338, 0, ClueType.HARD);     // South of legends
