@@ -2108,5 +2108,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 0
+  },
+  {
+    "name": "Sir Rebral",
+    "id": 5524,
+    "x": 2977,
+    "y": 3346,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
   }
 ]
