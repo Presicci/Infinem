@@ -4,6 +4,7 @@ import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.RangedWeapon;
 import io.ruin.model.combat.SetEffect;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.handlers.EquipmentStats;
 import io.ruin.model.inter.handlers.TabCombat;
@@ -16,6 +17,7 @@ import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 
 import java.util.Map;
+import java.util.function.Predicate;
 
 public class Equipment extends ItemContainer {
 
@@ -48,7 +50,9 @@ public class Equipment extends ItemContainer {
             player.sendMessage("You don't have the required stats to wear this.");
             return;
         }
-
+        Predicate<Player> equipCheck = selectedDef.getCustomValueOrDefault("EQUIP_CHECK", null);
+        if (equipCheck != null && !equipCheck.test(player))
+            return;
         if(player.getDuel().isBlocked(selectedDef)) {
             player.sendMessage("That item cannot be equipped in this duel!");
             return;

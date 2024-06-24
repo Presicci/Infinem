@@ -1,9 +1,13 @@
 package io.ruin.model.content.tasksystem.areas;
 
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.content.tasksystem.tasks.TaskArea;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Items;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+
+import java.util.function.Predicate;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -212,5 +216,12 @@ public enum AreaShopItem {
         this.tier = tier;
         this.stock = stock;
         this.cost = cost;
+        ItemDefinition.get(itemId).custom_values.put("EQUIP_CHECK", (Predicate<Player>) player -> {
+            if (!area.hasTierUnlocked(player, tier)) {
+                player.sendMessage("You need " + area.getPointsTillTier(player, tier) + " more task points from " + area + " tasks to equip this item.");
+                return false;
+            }
+            return true;
+        });
     }
 }
