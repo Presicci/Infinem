@@ -7,11 +7,11 @@
     "tables": [
       {
         "name": "Pre-roll",
-        "weight": 2,
+        "weight": 10,
         "items": [
           { "id": 22973, "min": 1, "max": 1, "weight": 55 },   //Hydra's eye
-          { "id": 22969, "min": 1, "max": 1, "weight": 55 },   //Hydra's heart
-          { "id": 22971, "min": 1, "max": 1, "weight": 55 },   //Hydra's fang
+          //{ "id": 22969, "min": 1, "max": 1, "weight": 55 },   //Hydra's heart
+         // { "id": 22971, "min": 1, "max": 1, "weight": 55 },   //Hydra's fang
           { "id": 22988, "min": 1, "max": 1, "weight": 20 },   //Hydra tail
           { "id": 20849, "min": 200, "max": 400, "weight": 10 },   //Dragon thrownaxe
           { "id": 22804, "min": 200, "max": 400, "weight": 10 }   //Dragon knife
@@ -19,7 +19,7 @@
       },
       {
         "name": "Weapons and armour",
-        "weight": 167,
+        "weight": 1670,
         "items": [
           { "id": 2497, "min": 1, "max": 1, "weight": 2339 },   //Black d'hide chaps
           { "id": 1392, "min": 2, "max": 3, "weight": 1560 },   //Battlestaff (noted)
@@ -33,7 +33,7 @@
       },
       {
         "name": "Runes",
-        "weight": 431,
+        "weight": 4310,
         "items": [
           { "id": 565, "min": 15, "max": 45, "weight": 7030 },   //Blood rune
           { "id": 562, "min": 20, "max": 50, "weight": 7030 },   //Chaos rune
@@ -45,21 +45,21 @@
       },
       {
         "name": "herb drop",
-        "weight": 31,
+        "weight": 310,
         "items": [
           { "id": 0, "min": 1, "max": 1, "weight": 5 }
         ]
       },
       {
         "name": "rare seed",
-        "weight": 31,
+        "weight": 310,
         "items": [
           { "id": 0, "min": 3, "max": 3, "weight": 5 }
         ]
       },
       {
         "name": "Bolt tips",
-        "weight": 15,
+        "weight": 150,
         "items": [
           { "id": 9192, "min": 20, "max": 20, "weight": 391 },   //Diamond bolt tips
           { "id": 9191, "min": 20, "max": 20, "weight": 351 },   //Ruby bolt tips
@@ -71,7 +71,7 @@
       },
       {
         "name": "Other",
-        "weight": 319,
+        "weight": 3190,
         "items": [
           { "id": 995, "min": 500, "max": 3500, "weight": 12500 },   //Coins
           { "id": 7946, "min": 1, "max": 1, "weight": 8590 },   //Monkfish
@@ -82,7 +82,7 @@
       },
       {
         "name": "Tertiary",
-        "weight": 9,
+        "weight": 90,
         "items": [
           { "id": 2722, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (hard)
           { "id": 12073, "min": 1, "max": 1, "weight": 195 }   //Clue scroll (elite)
