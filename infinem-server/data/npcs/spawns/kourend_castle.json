@@ -1234,5 +1234,14 @@
     "walkRange": 1,
     "world": "ECO",
     "npcName": "Bat"
+  },
+  {
+    "name": "Elise",
+    "id": 8538,
+    "x": 1648,
+    "y": 3665,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]
