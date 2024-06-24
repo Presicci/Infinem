@@ -1133,7 +1133,7 @@ public class Config {
     public static final Config KELDAGRIM_BOATMAN = varpbit(571, false).defaultValue(1);         // Changes caves boatman to variant with travel option
     public static final Config MAKING_FRIENDS_WITH_MY_ARM = varpbit(6528, true).defaultValue(75);
     public static final Config RECIPE_FOR_DISASTER = varpbit(1850, false).defaultValue(3);      // Lets players see the Culinaromancer's chest
-    public static final Config SHADOW_DUNGEON_ENTRANCE = varpbit(393, false).defaultValue(1);   // Lets players see the shadow dungeon entrance
+    public static final Config SHADOW_DUNGEON_ENTRANCE = varpbit(15152, false).defaultValue(1);   // Lets players see the shadow dungeon entrance
     public static final Config COSTUME_DEPOSIT_SET = varpbit(10581, false);
     public static final Config DRUIDIC_RITUAL = varp(80, false).defaultValue(4);    // Lets skill lamps be used on herblore
     public static final Config RUNE_MYSTERIES = varp(63, false).defaultValue(6);    // Lets skill lamps be used on runecrafting
