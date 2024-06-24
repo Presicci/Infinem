@@ -1,7 +1,6 @@
 package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.api.utils.Tuple;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.item.loot.ConditionalNPCLootTable;
 import io.ruin.utility.Color;
@@ -131,6 +130,7 @@ public class DropViewer {
                             String dropDescription = getDropDescription(item.id, name);
                             if (groupDrops != null && groupDrops.size() > 1) {
                                 drops.add(new DropViewerResultPair(groupDrops.get(0), groupDrops.get(1), chance));
+                                drops.add(new DropViewerResultPair(groupDrops.get(1), groupDrops.get(0), chance));
                             } else if (dropDescription != null) {
                                 drops.add(new DropViewerResultDescription(item.id, dropDescription, chance));
                             } else {
@@ -156,12 +156,12 @@ public class DropViewer {
 
     private static void sendResults(Player player, int id, String name, List<DropViewerResult> drops, boolean resetScroll) {
         player.getPacketSender().sendClientScript(227, "is", 1000 << 16 | 1, name);
-        player.getPacketSender().sendClientScript(9004, "iis", drops.size(), resetScroll ? 1 : 0, buildDropString(drops));
+        player.getPacketSender().sendClientScript(9004, "is", resetScroll ? 1 : 0, buildDropString(drops));
         int slot = 1;
         for (DropViewerResult drop : drops) {
             Item item = drop.getItem();
             player.getPacketSender().sendClientScript(9006, "iiii", 1000 << 16 | 24, slot, item.getId(), item.getAmount());
-            slot += 5;
+            slot += 7;
         }
         sendModifiers(player, id);
         player.putTemporaryAttribute("DROPVIEWER_DROPS", drops);
@@ -183,13 +183,13 @@ public class DropViewer {
     }
 
     private static String getDropDescription(int item, String name) {
-        Tuple<Integer, String>[] descriptons = DropViewerResultDescription.descriptionDrops.get(name.toLowerCase());
+        DropViewerResultDescription.ItemDescription[] descriptons = DropViewerResultDescription.descriptionDrops.get(name.toLowerCase());
         if (descriptons == null) {
             return null;
         }
-        for (Tuple<Integer, String> description : descriptons) {
-            if (item == description.first()) {
-                return description.second();
+        for (DropViewerResultDescription.ItemDescription description : descriptons) {
+            if (item == description.getItemId()) {
+                return description.getDescription();
             }
         }
         return null;
@@ -222,7 +222,7 @@ public class DropViewer {
     private static void clickItem(Player player, int option, int slot, int itemId) {
         if (option == 1) {
             List<DropViewerResult> drops = player.getTemporaryAttributeOrDefault("DROPVIEWER_DROPS", new ArrayList<>());
-            int index = ((slot - 2) / 5);
+            int index = ((slot - 2) / 7);
             if (drops == null || drops.isEmpty() || drops.size() < index) return;
             DropViewerResult result = drops.get(index);
             if (result instanceof DropViewerResultCommon) {

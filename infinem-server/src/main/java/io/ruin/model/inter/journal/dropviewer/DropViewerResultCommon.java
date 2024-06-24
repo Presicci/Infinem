@@ -18,9 +18,9 @@ public class DropViewerResultCommon extends DropViewerResult {
 
     public String get() {
         String name = commonTable.name;
-        String amount = "<col=F5DEB3>Shared table";
+        String amount = "<col=F5DEB3>This table is shared by many monsters.";
         String c = chance == 1 ? "Always" : ("1 / " + (chance == 0 ? "?" : chance));
-        return name + "|" + amount + "|" + c;
+        return name + "||" + c + "|" + amount;
     }
 
     public Item getItem() {

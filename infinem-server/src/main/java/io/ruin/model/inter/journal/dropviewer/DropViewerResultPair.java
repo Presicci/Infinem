@@ -18,9 +18,10 @@ public class DropViewerResultPair extends DropViewerResult {
 
     public String get() {
         String name = item1.getDef().name;
-        String amount = "Drops with: <col=F5DEB3>" + (item2.getAmount() > 1 ? item2.getAmount() + "x " : "") + item2.getDef().name;
-        String c = chance == 1 ? "Always" : ("1 / " + (chance == 0 ? "?" : chance));
-        return name + "|" + amount + "|" + c;
+        String amount = item1.getAmount() + "";
+        String info = "Drops with: <col=F5DEB3>" + (item2.getAmount() > 1 ? item2.getAmount() + "x " : "") + item2.getDef().name;
+        String chance = this.chance == 1 ? "Always" : ("1 / " + (this.chance == 0 ? "?" : this.chance));
+        return name + "|" + amount + "|" + chance + "|" + info;
     }
 
     public Item getItem() {

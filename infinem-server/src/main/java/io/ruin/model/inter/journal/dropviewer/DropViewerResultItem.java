@@ -25,30 +25,16 @@ public class DropViewerResultItem extends DropViewerResult {
         String name = getItemName();
         String amount = getAmountString();
         String c = chance == 1 ? "Always" : ("1 / " + (chance == 0 ? "?" : chance));
-        return name + "|" + amount + "|" + c;
+        return name + "|" + amount + "|" + c + "|";
     }
 
     private String getItemName() {
-        switch (id) {
-            case 22973:
-                return "Brimstone ring part";
-            case Items.BLUDGEON_SPINE:
-                return "Bludgeon piece";
-            default:
-                return ItemDefinition.get(id).name;
-        }
+        return ItemDefinition.get(id).name;
     }
 
     private String getAmountString() {
-        switch (id) {
-            case 22973:
-                return "Drop order:<br><col=F5DEB3>Eye, Fang, Heart";
-            case Items.BLUDGEON_SPINE:
-                return "Drop order:<br><col=F5DEB3>Spine, Claw, Axon";
-            default:
-                return min == max ? Misc.abbreviateItemQuantity(min)
-                        : (Misc.abbreviateItemQuantity(min) + "-" + Misc.abbreviateItemQuantity(max));
-        }
+        return min == max ? Misc.abbreviateItemQuantity(min)
+                : (Misc.abbreviateItemQuantity(min) + "-" + Misc.abbreviateItemQuantity(max));
     }
 
     public Item getItem() {

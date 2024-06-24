@@ -20,7 +20,7 @@ public class DropViewerResultPet extends DropViewerResult {
         String name = ItemDefinition.get(pet.itemId).name;
         String amount = "" + (pet.dropThreshold > 0 ? "Threshold: <br><col=F5DEB3>" + pet.dropThreshold : "<col=F5DEB3>No threshold");
         String c = chance == 1 ? "Always" : ("1 / " + (chance == 0 ? "?" : chance));
-        return name + "|" + amount + "|" + c;
+        return name + "|" + amount + "|" + c + "|";
     }
 
     public Item getItem() {
