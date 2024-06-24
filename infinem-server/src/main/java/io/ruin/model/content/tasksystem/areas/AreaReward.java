@@ -314,7 +314,7 @@ public enum AreaReward {
         AreaTaskTier tier = null;
         List<AreaReward> rewards = AREA_REWARDS.get(area);
         if (rewards == null || rewards.isEmpty()) {
-            player.sendMessage("There are currently no unlocks for that area.");
+            player.sendMessage("There are currently no unlocks for that region.");
             return;
         }
         for (AreaReward task : rewards) {
@@ -327,7 +327,7 @@ public enum AreaReward {
                 lines.addAll(Arrays.asList(task.additionalDescription));
             }
         }
-        DiaryScroll scroll = new DiaryScroll(Color.DARK_RED.wrap("Area Task Unlocks - " + StringUtils.capitalizeFirst(area.name().toLowerCase())), lines);
+        DiaryScroll scroll = new DiaryScroll(Color.DARK_RED.wrap("Region Task Unlocks - " + StringUtils.capitalizeFirst(area.name().toLowerCase())), lines);
         scroll.open(player);
     }
 
