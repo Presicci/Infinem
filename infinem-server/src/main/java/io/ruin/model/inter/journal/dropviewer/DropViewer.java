@@ -1,6 +1,7 @@
 package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.api.utils.NumberUtils;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.item.loot.ConditionalNPCLootTable;
 import io.ruin.utility.Color;
@@ -93,9 +94,13 @@ public class DropViewer {
         if (lootTable.tables != null) {
             double totalTablesWeight = lootTable.totalWeight;
             for (LootTable.ItemsTable table : lootTable.tables) {
+                if (table == null) continue;
                 Optional<LootItem> optionalItem = Arrays.stream(table.items).filter(i -> i.id == itemId).findFirst();
                 if (optionalItem.isPresent()) {
-                    double tableChance = table.weight / totalTablesWeight;
+                    double tableChance = 1;
+                    if (totalTablesWeight != 0) {
+                        tableChance = table.weight / totalTablesWeight;
+                    }
                     LootItem item = optionalItem.get();
                     if (item.weight == 0)
                         return (int) (1D / tableChance);
@@ -255,7 +260,7 @@ public class DropViewer {
                 displayDrops(player, table.name, new LootTable().addTable(1, table.items));
                 player.getPacketSender().setHidden(Interface.DROP_VIEWER, 32, false);
             } else {
-                DropViewerSearch.search(player, result.getItem().getDef().name, false);
+                DropViewerSearch.itemSearch(player, result.getItem().getId());
             }
         } else if (option == 10 && itemId > -1) {
             new Item(itemId).examine(player);
@@ -302,7 +307,11 @@ public class DropViewer {
         InterfaceHandler.register(Interface.DROP_VIEWER, h -> {
             h.actions[16] = (SlotAction) DropViewer::clickEntry;
             h.actions[17] = (SimpleAction) player -> player.stringInput("Enter monster name to search for:", name -> DropViewerSearch.search(player, name, true));
-            h.actions[18] = (SimpleAction) player -> player.stringInput("Enter drop name to search for:", name -> DropViewerSearch.search(player, name, false));
+            h.actions[18] = (SimpleAction) player -> {
+                player.itemSearch("Search for monsters that drop:", false, item -> {
+                    DropViewerSearch.itemSearch(player, item);
+                });
+            };
             h.actions[24] = (DefaultAction) DropViewer::clickItem;
             h.actions[32] = (SimpleAction) player -> {
                 List<DropViewerResult> drops = player.getTemporaryAttributeOrDefault("DROPVIEWER_LAST", new ArrayList<>());

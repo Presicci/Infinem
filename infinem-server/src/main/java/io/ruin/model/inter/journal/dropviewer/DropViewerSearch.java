@@ -19,6 +19,76 @@ public class DropViewerSearch {
 
     private static final int MAX_RESULTS = 100;
 
+    protected static void itemSearch(Player player, int itemId) {
+        ItemDefinition def = ItemDefinition.get(itemId);
+        String name = def.name;
+        player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: Searching for monsters that drop \"" + name + "\"...");
+        Map<String, List<Integer>> addedNPCs = new HashMap<>();
+        TaskWorker.startTask(t -> {
+            List<DropViewerEntryItem> results = new ArrayList<>();
+            AtomicBoolean tooMany = new AtomicBoolean(false);
+            for (int id : Arrays.asList(itemId, def.notedId)) {
+                if (id < 0) continue;
+                if (results.size() >= MAX_RESULTS) {
+                    tooMany.set(true);
+                    break;
+                }
+                HashSet<NPCDefinition> npcDefinitions = DropViewer.drops.get(id);
+                if (npcDefinitions != null) {
+                    npcDefinitions.forEach(npcDef -> {
+                        if (results.size() >= MAX_RESULTS) {
+                            tooMany.set(true);
+                            return;
+                        }
+                        String extension = DropViewerNPCExtensions.NPCS.get(npcDef.id);
+                        DropViewerEntryItem entry;
+                        if (extension != null) {
+                            entry = new DropViewerEntryItem(npcDef.name + extension, npcDef.lootTable, id);
+                        } else {
+                            entry = new DropViewerEntryItem(npcDef.name, npcDef.lootTable, id);
+                        }
+                        List<Integer> chances = addedNPCs.get(npcDef.name);
+                        if (chances != null && chances.contains(entry.chance)) {
+                            return;
+                        }
+                        results.add(entry);
+                        addedNPCs.computeIfAbsent(npcDef.name, e -> new ArrayList<>()).add(entry.chance);
+                    });
+                }
+                if (results.size() >= MAX_RESULTS) {
+                    tooMany.set(true);
+                    break;
+                }
+                HashSet<DropViewerEntry> nonNPCEntries = DropViewer.NON_NPC_DROPS.get(id);
+                if (nonNPCEntries != null) {
+                    nonNPCEntries.stream().filter(e -> !results.contains(e)).forEach(e -> {
+                        results.add(new DropViewerEntryItem(e.name, e.table, id));
+                    });
+                }
+            }
+            Server.worker.execute(() -> {
+                int found = results.size(); //minus two because of the search entries
+                if (found == 0) {
+                    player.removeAttribute(AttributeKey.DROP_VIEWER_RESULTS);
+                    player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: No results found.");
+                } else {
+                    results.sort(Comparator.comparingInt(o -> o.chance));
+                    player.putTemporaryAttribute(AttributeKey.DROP_VIEWER_RESULTS, results);
+                    if (found == 1)
+                        player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: 1 result found.");
+                    else {
+                        if (tooMany.get()) {
+                            player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: Too many results found, showing first " + found + ".");
+                        } else {
+                            player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: " + found + " results found.");
+                        }
+                    }
+                    sendEntries(player);
+                }
+            });
+        });
+    }
+
     protected static void search(Player player, String name, boolean monster) {
         if (monster)
             player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: Searching for monster \"" + name + "\"...");
@@ -121,6 +191,7 @@ public class DropViewerSearch {
                     player.removeAttribute(AttributeKey.DROP_VIEWER_RESULTS);
                     player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: No results found.");
                 } else {
+                    results.sort(Comparator.comparing(o -> o.name));
                     player.putTemporaryAttribute(AttributeKey.DROP_VIEWER_RESULTS, results);
                     if (found == 1)
                         player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: 1 result found.");
@@ -151,10 +222,12 @@ public class DropViewerSearch {
     }
 
     private static String buildEntries(List<DropViewerEntry> entries) {
-        entries.sort(Comparator.comparing(o -> o.name));
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < entries.size(); i++) {
             DropViewerEntry e = entries.get(i);
+            if (e instanceof DropViewerEntryItem) {
+                sb.append(((DropViewerEntryItem) e).getChanceString());
+            }
             sb.append(e.name);
 
             if (i != entries.size() - 1) {
