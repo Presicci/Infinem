@@ -63,7 +63,9 @@ public class DropViewerSearch {
                             });
                         HashSet<DropViewerEntry> nonNPCEntries = DropViewer.NON_NPC_DROPS.get(itemDef.id);
                         if (nonNPCEntries != null) {
-                            nonNPCEntries.stream().filter(e -> !results.contains(e)).forEach(results::add);
+                            nonNPCEntries.stream().filter(e -> !results.contains(e)).forEach(e -> {
+                                results.add(new DropViewerEntry("1/" + DropViewer.getDropChance(itemDef.id, e.table) + " - " + e.name, e.table));
+                            });
                         }
                     });
                 }

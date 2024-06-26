@@ -85,6 +85,28 @@ public class DropViewer {
         sendResults(player, id, name, drops, true);
     }
 
+    protected static int getDropChance(int itemId, LootTable lootTable) {
+        if (lootTable.guaranteed != null) {
+            Optional<LootItem> item = Arrays.stream(lootTable.guaranteed).filter(i -> i.id == itemId).findFirst();
+            if (item.isPresent()) return 1;
+        }
+        if (lootTable.tables != null) {
+            double totalTablesWeight = lootTable.totalWeight;
+            for (LootTable.ItemsTable table : lootTable.tables) {
+                Optional<LootItem> optionalItem = Arrays.stream(table.items).filter(i -> i.id == itemId).findFirst();
+                if (optionalItem.isPresent()) {
+                    double tableChance = table.weight / totalTablesWeight;
+                    LootItem item = optionalItem.get();
+                    if (item.weight == 0)
+                        return (int) (1D / tableChance);
+                    else
+                        return (int) Math.max(2, 1D / (tableChance * (item.weight / table.totalWeight)));
+                }
+            }
+        }
+        return -1;
+    }
+
     private static List<DropViewerResult> calculateDrops(DropViewerResult petDrop, String name, LootTable lootTable) {
         List<DropViewerResult> drops = new ArrayList<>();
         double totalTablesWeight = lootTable.totalWeight;
