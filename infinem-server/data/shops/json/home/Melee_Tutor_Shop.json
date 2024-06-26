@@ -51,12 +51,6 @@
       "sell_price": 32000
     },
     {
-      "itemId": 3751,
-      "stock": 100,
-      "buy_price": 42000,
-      "sell_price": 78000
-    },
-    {
       "itemId": 1163,
       "stock": 100,
       "buy_price": 21120,
@@ -73,12 +67,6 @@
       "stock": 100,
       "buy_price": 38400,
       "sell_price": 64000
-    },
-    {
-      "itemId": 1201,
-      "stock": 100,
-      "buy_price": 32640,
-      "sell_price": 59400
     },
     {
       "itemId": 1540,
