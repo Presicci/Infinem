@@ -66,8 +66,20 @@ public class TabAccountManagement {
                   XenUsername.requestNameChange(p, reqName);
               });
             };
+            // Poll
             h.actions[54] = (SimpleAction) player -> player.getPollManager().viewPoll(polls.POLLS.get(polls.latestPollId));
             h.actions[60] = (SimpleAction) PollInterface::sendHistory;
+            // Latest update
+            h.actions[67] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to view recent announcements on the forums?",
+                            new Option("Yes", () -> p.openUrl(World.type.getWorldName() + "Infinem announcements", World.type.getWebsiteUrl() + "/forums/viewforum.php?f=4")),
+                            new Option("No", p::closeDialogue)
+                    )
+            );
+            h.actions[72] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to view recent patch notes on the forums?",
+                            new Option("Yes", () -> p.openUrl(World.type.getWorldName() + "Infinem patch notes", World.type.getWebsiteUrl() + "/forums/viewforum.php?f=5")),
+                            new Option("No", p::closeDialogue)
+                    )
+            );
             // Useful links
             h.actions[80] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to view the website?",
                             new Option("Yes", () -> p.openUrl(World.type.getWorldName(), World.type.getWebsiteUrl())),
