@@ -1,7 +1,7 @@
 package io.ruin.api.protocol.world;
 
 public enum WorldType {
-    ECO("Infinem", "http://127.0.0.1"),
+    ECO("Infinem", "https://infinem.net"),
     BETA("Infinem BETA", "http://127.0.0.1"),
     PVP("InfinemPK", "http://127.0.0.1"),
     DEV("Development", "http://127.0.0.1");
