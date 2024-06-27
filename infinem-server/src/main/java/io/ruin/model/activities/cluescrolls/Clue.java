@@ -65,6 +65,21 @@ public class Clue {
         /* override required */
     }
 
+    public boolean canAdvance(Player player) {
+        for(Item item : player.getInventory().getItems()) {
+            if (item == null)
+                continue;
+            ItemDefinition def = item.getDef();
+            if (def.clueType == null)
+                continue;
+            ClueSave save = def.clueType.getSave(player);
+            if (save == null || save.id != this.id)
+                continue;
+            return true;
+        }
+        return false;
+    }
+
     public boolean advance(Player player) {
         for(Item item : player.getInventory().getItems()) {
             if(item == null)

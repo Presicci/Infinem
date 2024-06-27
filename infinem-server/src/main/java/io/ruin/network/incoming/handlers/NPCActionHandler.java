@@ -110,15 +110,15 @@ public class NPCActionHandler implements Incoming {
             if(def.cryptic != null && def.cryptic.advance(player))
                 return;
             if(def.anagram != null) {
-                if (def.anagram.type == ClueType.MASTER) {
+                if (def.anagram.type == ClueType.MASTER && def.anagram.canAdvance(player)) {
                     def.anagram.puzzleDialogue(player, npc);
                     return;
                 }
-                if (def.anagram.hasChallenge()) {
+                if (def.anagram.hasChallenge() && def.anagram.canAdvance(player)) {
                     def.anagram.challengeDialogue(player, npc);
                     return;
                 }
-                if (def.anagram.requiresPuzzleBox()) {
+                if (def.anagram.requiresPuzzleBox() && def.anagram.canAdvance(player)) {
                     def.anagram.puzzleBoxDialogue(player, npc);
                     return;
                 }
