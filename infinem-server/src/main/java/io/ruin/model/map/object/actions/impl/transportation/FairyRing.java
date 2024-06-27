@@ -45,7 +45,7 @@ public enum FairyRing { //todo add favorite option
     /* 'c' combinations */
     MISCELLANIA(75, new int[]{2, 0, 0}, new Position(2513, 3884, 0), "Islands: Miscellania", 32),
     YANILLE(77, new int[]{2, 0, 3}, new Position(2538, 3127, 0), "Kandarin: North-west of Yanille", 35),
-    ARCEUUS_LIBRARY(81, new int[]{2, 0, 1}, new Position(0, 0, 0), "Arceuus Library", 33),
+    ARCEUUS_LIBRARY(81, new int[]{2, 0, 1}, new Position(1639, 3868, 0), "Arceuus Library", 33),
     SINCLAIR_MANSION(87, new int[]{2, 3, 2}, new Position(2705, 3576, 0), "Kandarin: Sinclair Mansion (east)", 46),
     COSMIC_PLANE(91, new int[]{2, 2, 0}, new Position(2075, 4848, 0), "Other Realms: Cosmic Entity's plane", 40),
     KARAMJA(95, new int[]{2, 2, 2}, new Position(2801, 3003, 0), "Karamja: Tai Bwo Wannai Village", 42),
