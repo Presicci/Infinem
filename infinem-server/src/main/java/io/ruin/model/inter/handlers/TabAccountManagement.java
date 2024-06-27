@@ -18,8 +18,8 @@ import io.ruin.services.XenUsername;
 public class TabAccountManagement {
 
     private static final int OSPVP_CREDITS = 13190;
-    private static final String FORUM_INBOX_URL = "https://community.kronos.rip/index.php?conversations/";
-    private static final String VOTE_URL = World.type.getWebsiteUrl() + "/voting";
+    private static final String FORUM_INBOX_URL = "https://www.infinem.net/forums/ucp.php?i=pm&folder=inbox";
+    private static final String VOTE_URL = World.type.getWebsiteUrl() + "/vote";
     private static final String HISCORES = World.type.getWebsiteUrl() + "/highscores";
 
     static {
@@ -38,19 +38,18 @@ public class TabAccountManagement {
                             new Option("No", p::closeDialogue)
                     )
             );
-            h.actions[8] = (SimpleAction) p -> p.dialogue(
-                    new OptionsDialogue("Would you like to open the credit purchase page?",
-                            new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Store", CreditManager.STORE_URL)),
+            h.actions[31] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to vote now?",
+                            new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Vote", VOTE_URL)),
                             new Option("No", p::closeDialogue)
                     )
             );
-            h.actions[15] = (SimpleAction) p -> p.dialogue(
+            h.actions[38] = (SimpleAction) p -> p.dialogue(
                     new OptionsDialogue("Would you like to open your forum inbox?",
                             new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Inbox", FORUM_INBOX_URL)),
                             new Option("No", p::closeDialogue)
                     )
             );
-            h.actions[22] = (SimpleAction) p -> {
+            h.actions[45] = (SimpleAction) p -> {
               Item credits = p.getInventory().findItem(OSPVP_CREDITS);
               if(credits == null || credits.getAmount() < 50) {
                   p.dialogue(new ItemDialogue().one(OSPVP_CREDITS, "You need at least " + Color.COOL_BLUE.wrap("50 " + World.type.getWorldName() + " Credits") + " to change your username. You can purchase credits from our store." +
@@ -65,12 +64,7 @@ public class TabAccountManagement {
                   XenUsername.requestNameChange(p, reqName);
               });
             };
-            h.actions[29] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to vote now?",
-                    new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Vote", VOTE_URL)),
-                    new Option("No", p::closeDialogue)
-                    )
-            );
-            h.actions[32] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to view the hiscores?",
+            h.actions[83] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to view the hiscores?",
                             new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Hiscores", HISCORES)),
                             new Option("No", p::closeDialogue)
                     )
