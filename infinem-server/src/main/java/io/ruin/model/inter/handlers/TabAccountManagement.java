@@ -1,5 +1,7 @@
 package io.ruin.model.inter.handlers;
 
+import io.ruin.data.impl.polls;
+import io.ruin.model.content.poll.PollInterface;
 import io.ruin.utility.Color;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.actions.edgeville.CreditManager;
@@ -64,6 +66,8 @@ public class TabAccountManagement {
                   XenUsername.requestNameChange(p, reqName);
               });
             };
+            h.actions[54] = (SimpleAction) player -> player.getPollManager().viewPoll(polls.POLLS.get(polls.latestPollId));
+            h.actions[60] = (SimpleAction) PollInterface::sendHistory;
             h.actions[83] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to view the hiscores?",
                             new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Hiscores", HISCORES)),
                             new Option("No", p::closeDialogue)

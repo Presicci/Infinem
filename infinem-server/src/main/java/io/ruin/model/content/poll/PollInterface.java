@@ -41,7 +41,7 @@ public class PollInterface {
         player.getPacketSender().sendVarp(375, 8);
     }
 
-    protected static void sendPollInterface(Player player, Poll poll) {
+    public static void sendPollInterface(Player player, Poll poll) {
         player.closeInterface(InterfaceType.MAIN);
         player.openInterface(InterfaceType.MAIN, Interface.POLL_RESULTS);
         // Title and building...

@@ -42,6 +42,7 @@ public class polls extends DataFile {
             int id = p.getPollId();
             if (id > latestPollId) latestPollId = id;
             if (!p.isClosed()) POLL_BOOTH = Config.varpbit(4337, false).defaultValue(1);
+            if (!p.isClosed()) POLL_BOOTH = Config.varpbit(10065, false).defaultValue(1);
             POLLS.put(id, p);
         }
         return polls;
