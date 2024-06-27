@@ -21,13 +21,13 @@ public enum PlayerGroup {
     SUPPORT(9, 8, 18, 0),
     YOUTUBER(10, 27, 28, 0),
     BETA_TESTER(6, 0, -1, 0),
-    ZENYTE(17, 15, 25, 100),
-    ONYX(16, 14, 24, 80),
-    DRAGONSTONE(15, 13, 23, 60),
-    DIAMOND(14, 12, 22, 40),
-    RUBY(13, 11, 21, 25),
-    EMERALD(12, 10, 20, 15),
-    SAPPHIRE(11, 9, 19, 10),
+    ZENYTE(17, 15, 25, 100),        // <col=E79B3A>
+    ONYX(16, 14, 24, 80),           // <col=444444>
+    DRAGONSTONE(15, 13, 23, 60),    // <col=aa00aa>
+    DIAMOND(14, 12, 22, 40),        // <col=dddddd>
+    RUBY(13, 11, 21, 25),           // <col=ff5555>
+    EMERALD(12, 10, 20, 15),        // <col=55ff55>
+    SAPPHIRE(11, 9, 19, 10),        // <col=5555ff>
     REGISTERED(2, 0, 0, 0),
     BANNED(18, 0, -1, 0);
 
