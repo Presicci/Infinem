@@ -68,8 +68,34 @@ public class TabAccountManagement {
             };
             h.actions[54] = (SimpleAction) player -> player.getPollManager().viewPoll(polls.POLLS.get(polls.latestPollId));
             h.actions[60] = (SimpleAction) PollInterface::sendHistory;
+            // Useful links
+            h.actions[80] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to view the website?",
+                            new Option("Yes", () -> p.openUrl(World.type.getWorldName(), World.type.getWebsiteUrl())),
+                            new Option("No", p::closeDialogue)
+                    )
+            );
+            h.actions[81] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to view the forums?",
+                            new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Forums", World.type.getWebsiteUrl() + "/forums")),
+                            new Option("No", p::closeDialogue)
+                    )
+            );
+            h.actions[82] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to join the discord?",
+                            new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Discord", "https://discord.gg/hG59gZtz")),
+                            new Option("No", p::closeDialogue)
+                    )
+            );
             h.actions[83] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to view the hiscores?",
                             new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Hiscores", HISCORES)),
+                            new Option("No", p::closeDialogue)
+                    )
+            );
+            h.actions[84] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to view the OSRS wiki?",
+                            new Option("Yes", () -> p.openUrl("OSRS Wiki", "https://oldschool.runescape.wiki/")),
+                            new Option("No", p::closeDialogue)
+                    )
+            );
+            h.actions[85] = (SimpleAction) p -> p.dialogue(new OptionsDialogue("Would you like to open our store?",
+                            new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Store", CreditManager.STORE_URL)),
                             new Option("No", p::closeDialogue)
                     )
             );
