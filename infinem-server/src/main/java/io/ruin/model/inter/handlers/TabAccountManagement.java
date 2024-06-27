@@ -32,7 +32,7 @@ public class TabAccountManagement {
          * Interface buttons
          */
         InterfaceHandler.register(Interface.ACCOUNT_MANAGEMENT, h -> {
-            h.actions[3] = (SimpleAction) p -> p.dialogue(
+            h.actions[26] = (SimpleAction) p -> p.dialogue(
                     new OptionsDialogue("Would you like to open our store?",
                             new Option("Yes", () -> p.openUrl(World.type.getWorldName() + " Store", CreditManager.STORE_URL)),
                             new Option("No", p::closeDialogue)
