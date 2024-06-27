@@ -205,12 +205,12 @@ public class Player extends PlayerAttributes {
 
 
     public void updateClientGroup() {
-        if(primaryGroup != null && primaryGroup.clientImgId != -1) {
+        if (primaryGroup != null && primaryGroup.clientImgId != -1) {
             clientGroup = primaryGroup;
             return;
         }
-        for(PlayerGroup group : PlayerGroup.values()) {
-            if(groups[group.id] && group.clientImgId != -1) {
+        for (PlayerGroup group : PlayerGroup.values()) {
+            if (groups[group.id] && group.clientImgId != -1) {
                 clientGroup = group;
                 return;
             }
@@ -221,11 +221,22 @@ public class Player extends PlayerAttributes {
     public void join(PlayerGroup g) {
         groups[g.id] = true;
         updateClientGroup();
+        if (g.id >= 11 && g.id <= 17) {
+            Config.DONATOR_RANK.set(player, g.id - 10);
+        }
     }
 
     public void leave(PlayerGroup g) {
         groups[g.id] = false;
         updateClientGroup();
+        if (g.id >= 11 && g.id <= 17) {
+            for (int index = 17; index >= 11; index--) {
+                if (isGroup(PlayerGroup.GROUPS_BY_ID[index])) {
+                    Config.DONATOR_RANK.set(player, index - 10);
+                    break;
+                }
+            }
+        }
     }
 
     public boolean isGroup(PlayerGroup g) {
