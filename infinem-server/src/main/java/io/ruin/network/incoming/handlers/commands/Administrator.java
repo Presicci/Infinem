@@ -3016,6 +3016,14 @@ public class Administrator {
                 player.putAttribute("PEST_POINTS", amount);
                 return true;
             }
+            case "printnpcdef": {
+                if (args.length < 1) {
+                    player.sendMessage("Syntax: ::printnpcdef [npcid]");
+                    return false;
+                }
+                System.out.println(NPCDefinition.get(Integer.parseInt(args[0])).toString());
+                return true;
+            }
         }
         return false;
     }

@@ -18,6 +18,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.actions.ItemNPCAction;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.shop.Shop;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import java.util.HashMap;
 import java.util.List;
@@ -543,6 +544,10 @@ public class NPCDefinition {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    public String toString() {
+        return ReflectionToStringBuilder.toString(this);
     }
 
     public boolean hasOption(String... searchOptions) {
