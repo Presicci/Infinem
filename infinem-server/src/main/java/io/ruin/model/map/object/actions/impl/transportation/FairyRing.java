@@ -30,6 +30,7 @@ public enum FairyRing { //todo add favorite option
     KANDARIN_SLAYER_CAVE(23, new int[]{0, 3, 2}, new Position(2780, 3613, 0), "Kandarin: Slayer cave near Rellekka", 14),
     PENGUIN_ISLANDS(25, new int[]{0, 3, 1}, new Position(2500, 3896, 0), "Islands: Penguins", 13),
     PISCATORIS_HUNTER_AREA(29, new int[]{0, 2, 3}, new Position(2319, 3619, 0), "Kandarin: Piscatoris Hunter area", 11),
+    HOSIDIUS_VINERY(31, new int[]{0, 2, 2}, new Position(1826, 3540, 0), "Great Kourend: Hosidius Vinery", 10),
     FELDIP_HUNTER_AREA(33, new int[]{0, 2, 1}, new Position(2571, 2956, 0), "Feldip Hills: Jungle Hunter area", 9),
     LIGHTHOUSE(35, new int[]{0, 1, 0}, new Position(2503, 3636, 0), "Islands: Lighthouse", 4),
     HAUNTED_WOODS(37, new int[]{0, 1, 3}, new Position(3597, 3495, 0), "Morytania: Haunted Woods", 7),
