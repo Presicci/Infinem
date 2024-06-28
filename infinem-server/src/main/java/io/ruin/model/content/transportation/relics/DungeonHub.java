@@ -42,6 +42,10 @@ public class DungeonHub {
     }
 
     public static void open(Player player) {
+        if (!player.getRelicManager().hasRelicInTier(Relic.DUNGEON_HUB_PREMIUM)) {
+            player.dialogue(new MessageDialogue("You need to unlock a tier 3 relic to use the Dungeon Hub."));
+            return;
+        }
         List<Option> options = new ArrayList<>();
         for (DungeonHubTeleport dungeon : DungeonHubTeleport.values()) {
             options.add(new Option(StringUtils.initialCaps(dungeon.name()), () -> teleport(player, dungeon)));
