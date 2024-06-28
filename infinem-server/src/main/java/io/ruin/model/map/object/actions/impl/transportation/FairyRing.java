@@ -74,7 +74,7 @@ public enum FairyRing { //todo add favorite option
     GORAK_PLANE(111, new int[]{1, 0, 2}, new Position(3038, 5348, 0), "Other Realms: Goraks' plane", 18),
     WIZARD_TOWER(113, new int[]{1, 0, 1}, new Position(3108, 3149, 0), "Misthalin: Wizards' Tower", 17),
     TOWER_OF_LIFE(115, new int[]{1, 3, 0}, new Position(2658, 3230, 0), "Kandarin: Tower of Life", 28),
-    SINCLAIR_WEST(119, new int[]{1, 3, 2}, new Position(2676, 3587, 0), "Kandarin: Sinclair Mansion (west)", 30),
+    CHASM_OF_FIRE(119, new int[]{1, 3, 2}, new Position(1455, 3658, 0), "Great Kourend: Chasm of Fire", 30),
     GNOME_GLIDER_KARAMAJA(123, new int[]{1, 2, 0}, new Position(2900, 3111, 0), "Karamja: Gnome Glider", 24),
     EDGEVILLE(127, new int[]{1, 2, 2}, new Position(3129, 3496, 0), "Misthalin: Edgeville", 26),
     POLAR_HUNTER(129, new int[]{1, 2, 1}, new Position(2744, 3719, 0), "Kandarin: Polar Hunter area", 25),
