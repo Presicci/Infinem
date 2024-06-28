@@ -51,12 +51,13 @@ public enum FairyRing { //todo add favorite option
     MORYTANIA_MYRE(63, new int[]{3, 2, 2}, new Position(3469, 3431, 0), "Morytania: Mort Myre", 58),
     ZANARIS(65, new int[]{3, 2, 1}, new Position(2412, 4434, 0), "Other Realms: Zanaris", 57),
     TZHAAR(67, new int[]{3, 1, 0}, new Position(2437, 5126, 0), "Dungeons: TzHaar area", 52),
+    // Other Realms: Yu'biusk
     LEGENDS_GUILD(71, new int[]{3, 1, 2}, new Position(2740, 3351, 0), "Kandarin: Legends' Guild", 54),
     MOUNT_QUIDAMORTEM(73, new int[]{3, 1, 1}, new Position(1295, 3493, 0), "Kebos Lowlands: South of Mount Quidamortem", 53),
 
     /* 'c' combinations */
     MISCELLANIA(75, new int[]{2, 0, 0}, new Position(2513, 3884, 0), "Islands: Miscellania", 32),
-    YANILLE(77, new int[]{2, 0, 3}, new Position(2538, 3127, 0), "Kandarin: North-west of Yanille", 35),
+    YANILLE(77, new int[]{2, 0, 3}, new Position(2528, 3127, 0), "Kandarin: North-west of Yanille", 35),
     ARCEUUS_LIBRARY(81, new int[]{2, 0, 1}, new Position(1639, 3868, 0), "Arceuus Library", 33),
     SINCLAIR_MANSION(87, new int[]{2, 3, 2}, new Position(2705, 3576, 0), "Kandarin: Sinclair Mansion (east)", 46),
     COSMIC_PLANE(91, new int[]{2, 2, 0}, new Position(2075, 4848, 0), "Other Realms: Cosmic Entity's plane", 40),
