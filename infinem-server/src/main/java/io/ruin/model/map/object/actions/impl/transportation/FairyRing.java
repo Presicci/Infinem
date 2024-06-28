@@ -43,6 +43,7 @@ public enum FairyRing { //todo add favorite option
     ISLAND_SALVE(43, new int[]{3, 0, 0}, new Position(3410, 3324, 0), "Islands: River Salve", 48),
     DESERT(45, new int[]{3, 0, 3}, new Position(3251, 3095, 0), "Kharidian Desert: Near the Kalphite Hive", 51),
     ARDOUGNE_ZOO(49, new int[]{3, 0, 1}, new Position(2635, 3266, 0), "Kandarin: Ardougne Zoo unicorns", 49),
+    ISLE_OF_SOULS(51, new int[]{3, 3, 0}, new Position(2267, 2976, 0), "Islands: Isle of Souls", 60),
     FISHER_KING(55, new int[]{3, 3, 2}, new Position(0, 0, 0), "Other Realms: Fisher King", 62),
     ZUL_ANDRA(57, new int[]{3, 3, 1}, new Position(2150, 3071, 0), "Islands: Near Zul-Andra", 61),
     CASTLE_WARS(59, new int[]{3, 2, 0}, new Position(2385, 3035, 0), "Feldip Hills: South of Castle Wars", 56),
