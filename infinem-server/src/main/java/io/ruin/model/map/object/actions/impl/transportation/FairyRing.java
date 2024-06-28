@@ -71,6 +71,7 @@ public enum FairyRing { //todo add favorite option
 
     /* 'd' combinations */
     ABBY_NEXUS(107, new int[]{1, 0, 0}, new Position(3037, 4763, 0), "Other Realms: Abyssal Nexus", 16),
+    PLAYER_OWNED_HOUSE(109, new int[]{1, 0, 3}, new Position(3200, 3200, 0), "Player Owned House", 19),
     GORAK_PLANE(111, new int[]{1, 0, 2}, new Position(3038, 5348, 0), "Other Realms: Goraks' plane", 18),
     WIZARD_TOWER(113, new int[]{1, 0, 1}, new Position(3108, 3149, 0), "Misthalin: Wizards' Tower", 17),
     TOWER_OF_LIFE(115, new int[]{1, 3, 0}, new Position(2658, 3230, 0), "Kandarin: Tower of Life", 28),
@@ -80,8 +81,7 @@ public enum FairyRing { //todo add favorite option
     POLAR_HUNTER(129, new int[]{1, 2, 1}, new Position(2744, 3719, 0), "Kandarin: Polar Hunter area", 25),
     NARDAH(133, new int[]{1, 1, 3}, new Position(3423, 3016, 0), "Kharidian Desert: North of Nardah", 23),
     POISON_WASTE(135, new int[]{1, 1, 2}, new Position(2213, 3099, 0), "Islands: Poison Waste", 22),
-    HOLLOWS_HIDEOUT(137, new int[]{1, 1, 1}, new Position(3501, 9821, 3), "Dungeons: Myreque hideout under The Hollows", 21),
-    PLAYER_OWNED_HOUSE(109, new int[]{1, 0, 3}, new Position(3200, 3200, 0), "Player Owned House", 19);
+    HOLLOWS_HIDEOUT(137, new int[]{1, 1, 1}, new Position(3447, 9824, 0), "Dungeons: Myreque hideout under The Hollows", 21);
 
     private static final HashMap<Integer, FairyRing> COMPONENTS;
 
