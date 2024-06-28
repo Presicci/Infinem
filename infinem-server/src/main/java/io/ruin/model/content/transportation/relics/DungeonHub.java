@@ -97,5 +97,6 @@ public class DungeonHub {
     static {
         ObjectAction.register(33037, "access", (player, object) -> open(player));
         ItemAction.registerInventory(24545, "mark", DungeonHub::markTile);
+        ItemAction.registerInventory(24545, "hub", (player, item) -> open(player));
     }
 }
