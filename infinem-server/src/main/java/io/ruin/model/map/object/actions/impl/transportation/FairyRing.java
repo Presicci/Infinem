@@ -26,9 +26,11 @@ public enum FairyRing { //todo add favorite option
     /* 'a' combinations */
     MUDSKIPPER_POINT(13, new int[]{0, 0, 3}, new Position(2996, 3114, 0), "Asgarnia: Mudskipper Point", 3),
     ARDOUGNE_ISLANDS(15, new int[]{0, 0, 2}, new Position(2700, 3247, 0), "Islands: South-east of Ardougne", 2),
+    // Varlamore: Avium Savannah
     DORGESH_KAAN_CAVE(21, new int[]{0, 3, 3}, new Position(2735, 5221, 0), "Dungeons: Dorgesh-Kaan cave", 15),
     KANDARIN_SLAYER_CAVE(23, new int[]{0, 3, 2}, new Position(2780, 3613, 0), "Kandarin: Slayer cave near Rellekka", 14),
     PENGUIN_ISLANDS(25, new int[]{0, 3, 1}, new Position(2500, 3896, 0), "Islands: Penguins", 13),
+    NECROPOLIS(27, new int[]{0, 2, 0}, new Position(3284, 2706, 0), "Kharidian Desert: Necropolis", 8),
     PISCATORIS_HUNTER_AREA(29, new int[]{0, 2, 3}, new Position(2319, 3619, 0), "Kandarin: Piscatoris Hunter area", 11),
     HOSIDIUS_VINERY(31, new int[]{0, 2, 2}, new Position(1826, 3540, 0), "Great Kourend: Hosidius Vinery", 10),
     FELDIP_HUNTER_AREA(33, new int[]{0, 2, 1}, new Position(2571, 2956, 0), "Feldip Hills: Jungle Hunter area", 9),
@@ -224,7 +226,6 @@ public enum FairyRing { //todo add favorite option
     private static void openLog(Player player) {
         player.closeInterface(InterfaceType.INVENTORY);
         List<Integer> favorites = getFavorites(player);
-        System.out.println(favorites);
         if (player.unlockedFairyRingTeleports != null) {
             for (FairyRing ring : player.unlockedFairyRingTeleports)
                 if (ring != null) {
