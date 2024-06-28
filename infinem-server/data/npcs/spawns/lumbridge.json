@@ -3877,5 +3877,32 @@
     "z": 0,
     "direction": "E",
     "walkRange": 0
+  },
+  {
+    "name": "Giant rat",
+    "id": 2856,
+    "x": 3184,
+    "y": 3212,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Giant rat",
+    "id": 2856,
+    "x": 3190,
+    "y": 3213,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Giant rat",
+    "id": 2856,
+    "x": 3188,
+    "y": 3206,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
