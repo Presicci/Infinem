@@ -10,6 +10,20 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    MYRE_TREE_NORTH(5003, 2, new Position(3502, 3431), new Position(3502, 3425, 0), 828),
+    MYRE_TREE_SOUTH(5003, 2, new Position(3502, 3426), new Position(3502, 3432, 0), 828),
+
+    HOLLOWS_FAIRY_RING_OUT(16308, new Position(3447, 9821), new Position(3460, 9813, 0)),
+    HOLLOWS_FAIRY_RING_IN(16308, new Position(3459, 9813), new Position(3447, 9822, 0)),
+    HOLLOWS_RATS_OUT(5046, new Position(3467, 9820), new Position(3481, 9824, 0)),
+    HOLLOWS_RATS_IN(5046, new Position(3480, 9824), new Position(3466, 9820, 0)),
+    HOLLOWS_SPIDERS_OUT(5046, new Position(3476, 9806), new Position(3488, 9815, 0)),
+    HOLLOWS_SPIDERS_IN(5046, new Position(3488, 9814), new Position(3475, 9806, 0)),
+    HOLLOWS_GOBLINS_OUT(5046, new Position(3478, 9799), new Position(3492, 9809, 0)),
+    HOLLOWS_GOBLINS_IN(5046, new Position(3492, 9808), new Position(3477, 9799, 0)),
+    HOLLOWS_HIDEOUT_OUT(5046, new Position(3505, 9831), new Position(3492, 9824, 0)),
+    HOLLOWS_HIDEOUT_IN(5046, new Position(3492, 9823), new Position(3505, 9832, 0)),
+
     MOSLEHARMLESS_GANGPLANK_ON(11211, new Position(3684, 2952), new Position(3684, 2950, 1)),
     MOSLEHARMLESS_GANGPLANK_OFF(11212, new Position(3684, 2951, 1), new Position(3684, 2953, 0)),
     PORT_PHASMATYS_GANGPLANK_ON(11209, new Position(3710, 3496), new Position(3712, 3496, 1)),

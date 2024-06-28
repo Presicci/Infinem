@@ -14,6 +14,7 @@ import lombok.AllArgsConstructor;
  * Created on 1/18/2022
  */
 public enum PassableDoor {
+    HOLLOWS_WALL(5052, "search", new Position(3480, 9837), Direction.SOUTH),
     TROLL_STRONGHOLD_PRISON_DOOR(3780, "unlock", new Position(2848, 10107, 1), Direction.WEST);
 
     private final int id, rotationOffset, tempObjectId;

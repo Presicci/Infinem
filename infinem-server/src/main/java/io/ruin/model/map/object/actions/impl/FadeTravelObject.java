@@ -9,6 +9,13 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 7/12/2023
  */
 public enum FadeTravelObject {
+    HOLLOWS_OUT(5054, new Position(3477, 9846), new Position(3495, 3465, 0), 828),
+    HOLLOWS_IN(5055, new Position(3495, 3464), new Position(3477, 9845, 0), 827),
+    HOLLOWS_MYRE_OUT(5056, new Position(3500, 9812), new Position(3509, 3449, 0)),
+    HOLLOWS_MYRE_OUT_2(5057, new Position(3501, 9812), new Position(3510, 3449, 0)),
+    HOLLOWS_MYRE_IN(5060, new Position(3510, 3447), new Position(3501, 9811, 0)),
+    HOLLOWS_MYRE_IN_2(5061, new Position(3509, 3447), new Position(3500, 9811, 0)),
+
     GLOUGH_LAB_ENTRANCE(28813, new Position(2510, 9213, 1), new Position(2911, 9094)),
     GLOUGH_LAB_EXIT(28683, new Position(2911, 9093), new Position(2510, 9212, 1)),
     IORWERTH_DUNGEON_ENTRANCE(36690, new Position(3224, 6043), new Position(3225, 12445)),
