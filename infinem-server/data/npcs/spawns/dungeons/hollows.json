@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Giant rat",
+    "id": 2856,
+    "x": 3502,
+    "y": 9807,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Giant rat",
+    "id": 2856,
+    "x": 3495,
+    "y": 9812,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant rat",
+    "id": 2856,
+    "x": 3483,
+    "y": 9826,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant rat",
+    "id": 2856,
+    "x": 3480,
+    "y": 9829,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Giant rat",
+    "id": 2862,
+    "x": 3464,
+    "y": 9817,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Giant rat",
+    "id": 2862,
+    "x": 3468,
+    "y": 9815,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Giant rat",
+    "id": 2862,
+    "x": 3462,
+    "y": 9812,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Deadly red spider",
+    "id": 3021,
+    "x": 3465,
+    "y": 9814,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Deadly red spider",
+    "id": 3021,
+    "x": 3471,
+    "y": 9807,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Poison spider",
+    "id": 3023,
+    "x": 3466,
+    "y": 9796,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Poison spider",
+    "id": 3023,
+    "x": 3471,
+    "y": 9797,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Goblin",
+    "id": 3028,
+    "x": 3468,
+    "y": 9797,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Goblin",
+    "id": 3045,
+    "x": 3470,
+    "y": 9796,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Goblin",
+    "id": 3046,
+    "x": 3466,
+    "y": 9797,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Hobgoblin",
+    "id": 3049,
+    "x": 3473,
+    "y": 9799,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Hobgoblin",
+    "id": 3049,
+    "x": 3474,
+    "y": 9796,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  }
+]
