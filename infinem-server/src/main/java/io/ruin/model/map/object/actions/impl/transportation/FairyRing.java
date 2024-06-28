@@ -52,6 +52,7 @@ public enum FairyRing { //todo add favorite option
     ZANARIS(65, new int[]{3, 2, 1}, new Position(2412, 4434, 0), "Other Realms: Zanaris", 57),
     TZHAAR(67, new int[]{3, 1, 0}, new Position(2437, 5126, 0), "Dungeons: TzHaar area", 52),
     LEGENDS_GUILD(71, new int[]{3, 1, 2}, new Position(2740, 3351, 0), "Kandarin: Legends' Guild", 54),
+    MOUNT_QUIDAMORTEM(73, new int[]{3, 1, 1}, new Position(1295, 3493, 0), "Kebos Lowlands: South of Mount Quidamortem", 53),
 
     /* 'c' combinations */
     MISCELLANIA(75, new int[]{2, 0, 0}, new Position(2513, 3884, 0), "Islands: Miscellania", 32),
