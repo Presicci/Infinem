@@ -5,6 +5,7 @@ import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Config;
@@ -13,6 +14,12 @@ import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.construction.Buildable;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public enum FairyRing { //todo add favorite option
 
@@ -69,11 +76,20 @@ public enum FairyRing { //todo add favorite option
     HOLLOWS_HIDEOUT(137, new int[]{1, 1, 1}, new Position(3501, 9821, 3), "Dungeons: Myreque hideout under The Hollows", 21),
     PLAYER_OWNED_HOUSE(109, new int[]{1, 0, 3}, new Position(3200, 3200, 0), "Player Owned House", 19);
 
+    private static final HashMap<Integer, FairyRing> COMPONENTS;
+
+    static {
+        COMPONENTS = new HashMap<>();
+        for (FairyRing fairyRing : values()) {
+            COMPONENTS.put(fairyRing.childId, fairyRing);
+        }
+    }
+
     public final int childId;
     public final int[] varpbitValues;
     public final Position position;
     public final String targetName;
-    public int lastDestination;
+    public final int lastDestination;
 
     FairyRing(int childId, int[] varpbitValues, Position position, String targetName, int lastDestination) {
         this.childId = childId;
@@ -81,6 +97,55 @@ public enum FairyRing { //todo add favorite option
         this.position = position;
         this.targetName = targetName;
         this.lastDestination = lastDestination;
+    }
+
+    public String getCode() {
+        StringBuilder sb = new StringBuilder();
+        switch (varpbitValues[0]) {
+            case 0:
+                sb.append("A");
+                break;
+            case 1:
+                sb.append("D");
+                break;
+            case 2:
+                sb.append("C");
+                break;
+            case 3:
+                sb.append("B");
+                break;
+        }
+        sb.append(" ");
+        switch (varpbitValues[1]) {
+            case 0:
+                sb.append("I");
+                break;
+            case 1:
+                sb.append("L");
+                break;
+            case 2:
+                sb.append("K");
+                break;
+            case 3:
+                sb.append("J");
+                break;
+        }
+        sb.append(" ");
+        switch (varpbitValues[2]) {
+            case 0:
+                sb.append("P");
+                break;
+            case 1:
+                sb.append("S");
+                break;
+            case 2:
+                sb.append("R");
+                break;
+            case 3:
+                sb.append("Q");
+                break;
+        }
+        return sb.toString().toUpperCase();
     }
 
     public static void teleport(Player player, FairyRing entry, GameObject fairyRing) {
@@ -148,15 +213,37 @@ public enum FairyRing { //todo add favorite option
             player.sendFilteredMessage("The fairy ring only works for those who wield fairy magic.");
             return;
         }
-        if (player.unlockedFairyRingTeleports != null) {
-            for (FairyRing ring : player.unlockedFairyRingTeleports)
-                if (ring != null)
-                    player.getPacketSender().sendString(Interface.FAIRY_RING_TRAVEL_LOG, ring.childId, (ring.targetName.equals("") ? "" : "<br>" + ring.targetName));
-        }
         if (fairyRing != null)  // Used so we can track last teleport for Fairy's Flight
             player.removeTemporaryAttribute("FAIRYFLIGHT_RING");
         player.fairyRing = fairyRing;
         player.openInterface(InterfaceType.MAIN, Interface.FAIRY_RING_COMBINATION);
+        openLog(player);
+    }
+
+    private static void openLog(Player player) {
+        player.closeInterface(InterfaceType.INVENTORY);
+        List<Integer> favorites = getFavorites(player);
+        System.out.println(favorites);
+        if (player.unlockedFairyRingTeleports != null) {
+            for (FairyRing ring : player.unlockedFairyRingTeleports)
+                if (ring != null) {
+                    if (favorites.contains(ring.ordinal())) {
+                        continue;
+                    }
+                    player.getPacketSender().sendString(Interface.FAIRY_RING_TRAVEL_LOG, ring.childId, ring.targetName.isEmpty() ? "" : "<br>" + ring.targetName);
+                }
+        }
+        for (int i = 0; i < 4; i++) {
+            if (i >= favorites.size()) {
+                continue;
+            }
+            FairyRing fav = FairyRing.values()[favorites.get(i)];
+            if (fav == null) {
+                continue;
+            }
+            player.getPacketSender().sendString(381, 140 + i, "<br>" + fav.targetName);
+            player.getPacketSender().sendString(381, 144 + i, fav.getCode());
+        }
         player.openInterface(InterfaceType.INVENTORY, Interface.FAIRY_RING_TRAVEL_LOG);
     }
 
@@ -164,6 +251,59 @@ public enum FairyRing { //todo add favorite option
         Config.FAIRY_RING_LEFT.set(player, 0);
         Config.FAIRY_RING_RIGHT.set(player, 0);
         Config.FAIRY_RING_MIDDLE.set(player, 0);
+    }
+
+    public static List<Integer> getFavorites(Player player) {
+        List<Integer> list = player.getAttributeOrDefault("FR_FAVORITES", new ArrayList<>());
+        List<Integer> favorites = new ArrayList<>(list.size());
+        for (Number number : list) {
+            favorites.add(number.intValue());
+        }
+        return favorites;
+    }
+
+    public static void addFavourite(Player player, FairyRing ring) {
+        List<Integer> favorites = getFavorites(player);
+        if (favorites.size() >= 4) {
+            player.sendMessage("You already have 4 favourites.");
+            return;
+        }
+        if (favorites.contains(ring.ordinal())) {
+            return;
+        }
+        player.sendMessage("You have added " + ring.getCode() + " to your favourites.");
+        favorites.add(ring.ordinal());
+        player.putAttribute("FR_FAVORITES", favorites);
+        openLog(player);
+    }
+
+    public static void removeFavourite(Player player, int componentId, int option) {
+        List<Integer> favorites = getFavorites(player);
+        int index = -1;
+        if (option == 1) {
+            if (componentId >= 148 && componentId <= 151) {
+                index = componentId - 148;
+            }
+        } else if (option == 2) {
+            if (componentId >= 140 && componentId <= 143) {
+                index = componentId - 140;
+            }
+        }
+        if (index == -1) {
+            return;
+        }
+        FairyRing ring = FairyRing.values()[favorites.get(index)];
+        if (ring == null) {
+            return;
+        }
+        player.sendMessage("You have removed " + ring.getCode() + " from your favourites.");
+        favorites.remove(favorites.indexOf(ring.ordinal()));
+        if (favorites.isEmpty()) {
+            player.removeAttribute("FR_FAVORITES");
+        } else {
+            player.putAttribute("FR_FAVORITES", favorites);
+        }
+        openLog(player);
     }
 
     private static int leftButton(Player player) {
@@ -183,7 +323,7 @@ public enum FairyRing { //todo add favorite option
     static {
         for (int ring : FAIRY_RING) {
             ObjectAction.register(ring, 1, (player, obj) -> teleport(player, ZANARIS, obj));
-            ObjectAction.register(ring, 2, (player, obj) -> openCombinationPanel(player, obj));
+            ObjectAction.register(ring, 2, FairyRing::openCombinationPanel);
             ObjectAction.register(ring, 3, (player, obj) -> {
                 for (FairyRing fairyRing : values()) {
                     if(fairyRing.lastDestination == Config.FAIRY_RING_LAST_DESTINATION.get(player))
@@ -193,22 +333,22 @@ public enum FairyRing { //todo add favorite option
         }
 
         InterfaceHandler.register(Interface.FAIRY_RING_COMBINATION, h -> {
-            /**
+            /*
              * Left wheel
              */
             h.actions[19] = (SimpleAction) p -> Config.FAIRY_RING_LEFT.set(p, (leftButton(p) == 3 ? 0 : leftButton(p) + 1));
             h.actions[20] = (SimpleAction) p -> Config.FAIRY_RING_LEFT.set(p, (leftButton(p) == 0 ? 3 : leftButton(p) - 1));
-            /**
+            /*
              * Middle wheel
              */
             h.actions[21] = (SimpleAction) p -> Config.FAIRY_RING_MIDDLE.set(p, (middleButton(p) == 3 ? 0 : middleButton(p) + 1));
             h.actions[22] = (SimpleAction) p -> Config.FAIRY_RING_MIDDLE.set(p, (middleButton(p) == 0 ? 3 : middleButton(p) - 1));
-            /**
+            /*
              * Right wheel
              */
             h.actions[23] = (SimpleAction) p -> Config.FAIRY_RING_RIGHT.set(p, (rightButton(p) == 3 ? 0 : rightButton(p) + 1));
             h.actions[24] = (SimpleAction) p -> Config.FAIRY_RING_RIGHT.set(p, (rightButton(p) == 0 ? 3 : rightButton(p) - 1));
-            /**
+            /*
              * Teleport
              */
             h.actions[26] = (SimpleAction) p -> {
@@ -232,10 +372,33 @@ public enum FairyRing { //todo add favorite option
 
         InterfaceHandler.register(Interface.FAIRY_RING_TRAVEL_LOG, h -> {
             for (FairyRing fairyRing : values()) {
-                h.actions[fairyRing.childId] = (SimpleAction) p -> {
-                    Config.FAIRY_RING_LEFT.set(p, fairyRing.varpbitValues[0]);
-                    Config.FAIRY_RING_MIDDLE.set(p, fairyRing.varpbitValues[1]);
-                    Config.FAIRY_RING_RIGHT.set(p, fairyRing.varpbitValues[2]);
+                h.actions[fairyRing.childId] = (OptionAction) (player, option) -> {
+                    if (option == 2) {
+                        addFavourite(player, fairyRing);
+                        return;
+                    }
+                    Config.FAIRY_RING_LEFT.set(player, fairyRing.varpbitValues[0]);
+                    Config.FAIRY_RING_MIDDLE.set(player, fairyRing.varpbitValues[1]);
+                    Config.FAIRY_RING_RIGHT.set(player, fairyRing.varpbitValues[2]);
+                };
+                h.actions[fairyRing.childId + 1] = (SimpleAction) player -> {
+                    addFavourite(player, fairyRing);
+                };
+            }
+            for (int index = 140; index <= 151; index++) {
+                int finalIndex = index;
+                h.actions[index] = (OptionAction) (player, option) -> {
+                    if (option == 2 || finalIndex >= 148) {
+                        removeFavourite(player, finalIndex, option);
+                        return;
+                    }
+                    List<Integer> favorites = getFavorites(player);
+                    int favoriteIndex = finalIndex - 140;
+                    FairyRing ring = FairyRing.values()[favorites.get(favoriteIndex)];
+                    if (ring == null) return;
+                    Config.FAIRY_RING_LEFT.set(player, ring.varpbitValues[0]);
+                    Config.FAIRY_RING_MIDDLE.set(player, ring.varpbitValues[1]);
+                    Config.FAIRY_RING_RIGHT.set(player, ring.varpbitValues[2]);
                 };
             }
         });
