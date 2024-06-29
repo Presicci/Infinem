@@ -99,7 +99,7 @@
     "npcName": "Red dragon"
   },
   {
-    "id": 137,
+    "id": 244,
     "x": 1825,
     "y": 9937,
     "z": 0,
@@ -108,7 +108,7 @@
     "npcName": "Baby red dragon"
   },
   {
-    "id": 137,
+    "id": 245,
     "x": 1818,
     "y": 9940,
     "z": 0,
@@ -117,7 +117,7 @@
     "npcName": "Baby red dragon"
   },
   {
-    "id": 137,
+    "id": 244,
     "x": 1811,
     "y": 9938,
     "z": 0,
@@ -126,13 +126,22 @@
     "npcName": "Baby red dragon"
   },
   {
-    "id": 137,
+    "id": 245,
     "x": 1813,
     "y": 9933,
     "z": 0,
     "direction": "N",
     "walkRange": 3,
     "npcName": "Baby red dragon"
+  },
+  {
+    "name": "Baby red dragon",
+    "id": 245,
+    "x": 1827,
+    "y": 9929,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   },
   {
     "id": 8703,
