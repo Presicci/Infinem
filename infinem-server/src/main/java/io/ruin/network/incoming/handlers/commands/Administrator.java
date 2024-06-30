@@ -1767,7 +1767,7 @@ public class Administrator {
                 return true;
             }
             case "reloaditeminfo": {
-                DataFile.reload(player, item_info.class);
+                item_info.loadFromDatabase();
                 return true;
             }
 
@@ -1865,7 +1865,7 @@ public class Administrator {
                     player.sendMessage("Reloading item info...");
                     DataFile.reload(player, shield_types.class);
                     DataFile.reload(player, weapon_types.class);
-                    DataFile.reload(player, item_info.class);
+                    item_info.loadFromDatabase();
                     player.sendMessage("Done!");
                 }).start();
                 return true;

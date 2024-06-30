@@ -118,14 +118,14 @@ public class ItemInfoDumper {
                     PreparedStatement statement = null;
                     try {
                         if (temp.equip_slot == null) {
-                            statement = connection.prepareStatement("REPLACE INTO item_info (id, name, tradeable, weight, examine) VALUES (?, ?, ?, ?, ?)");
+                            statement = connection.prepareStatement("INSERT INTO item_info (id, name, tradeable, weight, examine) VALUES (?, ?, ?, ?, ?)");
                             statement.setInt(1, id);
                             statement.setString(2, ItemDefinition.get(id).name);
                             statement.setInt(3, temp.tradeable ? 1 : 0);
                             statement.setDouble(4, temp.weight);
                             statement.setString(5, temp.examine);
                         } else {
-                            statement = connection.prepareStatement("REPLACE INTO item_info (id, name, tradeable, weight, examine, tags, equip_slot, " +
+                            statement = connection.prepareStatement("INSERT INTO item_info (id, name, tradeable, weight, examine, tags, equip_slot, " +
                                     "stab_attack, slash_attack, crush_attack, magic_attack, range_attack, " +
                                     "stab_defence, slash_defence, crush_defence, magic_defence, range_defence, " +
                                     "melee_strength, ranged_strength, magic_damage, " +
@@ -176,6 +176,38 @@ public class ItemInfoDumper {
                 ServerWrapper.logError("Error while parsing: " + id, e);
             }
         }
+    }
+
+    public static void applyCurrentModifiers() {
+        ItemDefinition.forEach(def -> {
+            if (def.equipReqs == null || def.equipReqs.length == 0) return;
+            int id = def.id;
+            StringBuilder sb = new StringBuilder();
+            for (int req : def.equipReqs) {
+                int statId = req >> 8;
+                int lvl = req & 0xff;
+                sb.append(statId);
+                sb.append(":");
+                sb.append(lvl);
+                sb.append(",");
+            }
+            sb.deleteCharAt(sb.length() - 1);
+            String tag = sb.toString();
+            Server.gameDb.execute(connection -> {
+                PreparedStatement statement = null;
+                try {
+                    statement = connection.prepareStatement("UPDATE item_info SET equip_requirements= IF(equip_requirements = '' OR equip_requirements IS NULL, ?, concat_ws(',', equip_requirements, ?)) where id=? and not (equip_requirements is not null and equip_requirements like concat('%', ?, '%'))");
+                    statement.setString(1, tag);
+                    statement.setString(2, tag);
+                    statement.setInt(3, id);
+                    statement.setString(4, tag);
+                    statement.execute();
+                } finally {
+                    DatabaseUtils.close(statement);
+                    System.out.println("Added " + tag + " tag to " + id);
+                }
+            });
+        });
     }
 
     private static int slotStringToInt(String slotString) {

@@ -10,6 +10,7 @@ import io.ruin.api.process.ProcessWorker;
 import io.ruin.api.utils.*;
 import io.ruin.cache.def.*;
 import io.ruin.data.DataFile;
+import io.ruin.data.impl.items.item_info;
 import io.ruin.data.impl.login_set;
 import io.ruin.data.yaml.YamlLoader;
 import io.ruin.model.World;
@@ -175,6 +176,8 @@ public class Server extends ServerWrapper {
                 //DiscordConnection.setup("NTY4NjgxMjU2NDQzNzA3Mzkz.XLlnsQ.s6HIMbTgRrVsNhclAY1VYJPwGnc");
             }
         }
+
+        item_info.loadFromDatabase();
 
         ShopManager.registerUI();
 
