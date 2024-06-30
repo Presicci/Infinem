@@ -72,6 +72,7 @@ public enum AreaShopItem {
      */
     SEA_BOOTS_1(Items.FREMENNIK_SEA_BOOTS_1, TaskArea.FREMENNIK, AreaTaskTier.EASY, 50),
     BEARHEAD(Items.BEARHEAD, TaskArea.FREMENNIK, AreaTaskTier.EASY, 2500),
+    GOLD_HELMET(Items.GOLD_HELMET, TaskArea.FREMENNIK, AreaTaskTier.EASY, 2500),
     SEA_BOOTS_2(Items.FREMENNIK_SEA_BOOTS_2, TaskArea.FREMENNIK, AreaTaskTier.MEDIUM, 250),
     HELM_OF_NEITIZNOT(Items.HELM_OF_NEITIZNOT, TaskArea.FREMENNIK, AreaTaskTier.MEDIUM, 50000),
     VS_SHIELD(24266, TaskArea.FREMENNIK, AreaTaskTier.MEDIUM, 50000),
@@ -86,7 +87,6 @@ public enum AreaShopItem {
     LUNAR_RING(Items.LUNAR_RING, TaskArea.FREMENNIK, AreaTaskTier.HARD, 2000),
     LUNAR_STAFF(Items.LUNAR_STAFF, TaskArea.FREMENNIK, AreaTaskTier.HARD, 30000),
     SEA_BOOTS_4(Items.FREMENNIK_SEA_BOOTS_4, TaskArea.FREMENNIK, AreaTaskTier.ELITE, 1000),
-    // gold helmet
     // seal fo passge
     // jester costume
 
