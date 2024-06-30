@@ -76,6 +76,7 @@ public enum AreaReward {
             "One free teleport to Rellekka every day"),
     PEER_DEPOSIT_BOX(TaskArea.FREMENNIK, AreaTaskTier.EASY, "Peer the Seer will act as a bank deposit box"),
     LYRE_EXTRA_CHARGE(TaskArea.FREMENNIK, AreaTaskTier.EASY, "Enchanted lyre gets an extra charge when making a sacrifice"),
+    SKULGRIMENS_BATTLE_GEAR(TaskArea.FREMENNIK, AreaTaskTier.EASY, "Unlock Skulgrimen's Battle Gear shop"),
     FREMENNIK_SEA_BOOTS_2(TaskArea.FREMENNIK, AreaTaskTier.MEDIUM, "Unlocks the Fremennik Sea Boots 2"),
     //+10% chance of gaining approval in Managing Miscellania
     FREMENNIK_SEA_BOOTS_3(TaskArea.FREMENNIK, AreaTaskTier.HARD, "Unlocks the Fremennik Sea Boots 3"),

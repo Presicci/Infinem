@@ -7,6 +7,8 @@
   "sellMultiplier": 1300,
   "buyMultiplier": 700,
   "hideBuy": false,
+  "taskArea": "FREMENNIK",
+  "taskTier": "EASY",
   "items": [
     {
       "itemId": 1337,
