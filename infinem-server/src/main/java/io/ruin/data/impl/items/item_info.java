@@ -132,8 +132,8 @@ public class item_info {
             } finally {
                 DatabaseUtils.close(statement);
                 ItemDefinition.forEach(item_info::loadMisc);
-                shield_types.unload();
-                weapon_types.unload();
+                //shield_types.unload();
+                //weapon_types.unload();
             }
         });
     }
