@@ -10,6 +10,7 @@ import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.actions.impl.jewellery.AbyssalBracelet;
 import io.ruin.model.skills.runecrafting.Abyss;
 
 public class MageOfZamorak {
@@ -26,8 +27,12 @@ public class MageOfZamorak {
             npc.graphics(343, 100, 1);
             event.delay(2);
             player.unlock();
-            player.getCombat().skullNormal(1000);
-            player.getPrayer().drain(1000); //1000 is just a safe "drain all"
+            // Abyssal bracelet only stops skull in osrs
+            // https://oldschool.runescape.wiki/w/Abyssal_bracelet#(5)
+            if (!AbyssalBracelet.test(player)) {
+                player.getCombat().skullNormal(1000);
+                player.getPrayer().drain(1000); //1000 is just a safe "drain all"
+            }
             Abyss.randomize(player);
             player.getMovement().teleport(Random.get(Abyss.OUTER_TELEPORTS));
             player.resetAnimation();
