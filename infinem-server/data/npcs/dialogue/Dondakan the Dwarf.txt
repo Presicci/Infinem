@@ -1,0 +1,11 @@
+Player: How are you doing, Dondakan?
+Dondakan the Dwarf: Oh, just fine, just fine! This gold is certainly creating a steady flow of income for me! After the company takes some of the cut, of course.
+<Can you shoot me into the rock?
+Player: Can you shoot me into the rock again?
+HASEQUIPMENT:4567
+(Dondakan the Dwarf: Of course, just a second, let me adjust my cannon again.
+DONDAKAN_CANNON:
+(Dondakan the Dwarf: You need to wear that golden helmet... unless you want to crack open your skull on the rock.
+)><That's great, but I have to go.
+Player: That's great, but I have to go now.
+Dondakan the Dwarf: Come back any time!

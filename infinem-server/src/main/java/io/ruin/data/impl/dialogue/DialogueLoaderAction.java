@@ -28,6 +28,9 @@ import java.util.function.Consumer;
 
 @Getter
 public enum DialogueLoaderAction {
+    DONDAKAN_CANNON(player -> {
+        Traveling.fadeTravel(player, 2583, 4936, 0);
+    }),
     STANKERS_COAL_TRUCK(player -> {
         NPC npc = player.getDialogueNPC();
         if (!AreaReward.COAL_TRUCKS.checkReward(player, "use the coal trucks.")) return;
