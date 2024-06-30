@@ -49,7 +49,7 @@ public class BasiliskKnight extends NPCCombat {
     private void drain() {
         if (target.player != null
                 && target.player.getEquipment().getId(Equipment.SLOT_SHIELD) != 4156
-                && target.player.getEquipment().getId(Equipment.SLOT_SHIELD) != 24265) {
+                && target.player.getEquipment().getId(Equipment.SLOT_SHIELD) != 24266) {
             for (StatType statType : DRAIN) {
                 target.player.getStats().get(statType).drain(4);
             }
