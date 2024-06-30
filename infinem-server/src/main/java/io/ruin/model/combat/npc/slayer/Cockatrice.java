@@ -24,7 +24,9 @@ public class Cockatrice extends NPCCombat {
             return false;
         if (withinDistance(1))
             basicAttack();
-        if (target.player != null && target.player.getEquipment().getId(Equipment.SLOT_SHIELD) != 4156) {
+        if (target.player != null
+                && target.player.getEquipment().getId(Equipment.SLOT_SHIELD) != 4156
+                && target.player.getEquipment().getId(Equipment.SLOT_SHIELD) != 24266) {
             for (StatType statType : DRAIN) {
                 target.player.getStats().get(statType).drain(8);
             }
