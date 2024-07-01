@@ -40,6 +40,10 @@
     "spawn_animation": -1,
     "attack_animation": 1586,
     "defend_animation": 1585,
-    "death_animation": 1587
+    "death_animation": 1587,
+    //Sounds
+    "attack_sound": 547,
+    "defend_sound": 550,
+    "death_sound": 549
   }
 ]
