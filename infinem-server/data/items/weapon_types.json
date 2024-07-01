@@ -2660,7 +2660,7 @@
     "attackTicks": 3,
     "attackAnimation": -1,
     "defendAnimation": -1,
-    "equipSound": -1,
+    "equipSound": 2249,
     "attackSound": 2696,
     "attackSets": [
       {
