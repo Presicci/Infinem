@@ -112,7 +112,7 @@
     "attackTicks": 5,
     "attackAnimation": 395,
     "defendAnimation": 397,
-    "equipSound": 2240,
+    "equipSound": 2229,
     "attackSound": 2498,
     "attackSets": [
       {
@@ -153,7 +153,7 @@
     "attackTicks": 6,
     "attackAnimation": 7004,
     "defendAnimation": 397,
-    "equipSound": 2240,
+    "equipSound": 2232,
     "attackSound": 2498,
     "attackSets": [
       {
@@ -194,7 +194,7 @@
     "attackTicks": 6,
     "attackAnimation": 395,
     "defendAnimation": 397,
-    "equipSound": 2240,
+    "equipSound": 2232,
     "attackSound": 2498,
     "attackSets": [
       {
@@ -347,7 +347,7 @@
     "attackTicks": 7,
     "attackAnimation": 1665,
     "defendAnimation": 1666,
-    "equipSound": 2246,
+    "equipSound": 2243,
     "attackSound": 2714,
     "attackSets": [
       {
@@ -382,7 +382,7 @@
     "attackTicks": 7,
     "attackAnimation": 2661,
     "defendAnimation": 1666,
-    "equipSound": 2246,
+    "equipSound": 2243,
     "attackSound": 2520,
     "attackSets": [
       {
@@ -417,7 +417,7 @@
     "attackTicks": 7,
     "attackAnimation": 7516,
     "defendAnimation": 7517,
-    "equipSound": 2246,
+    "equipSound": 2243,
     "attackSound": 2520,
     "attackSets": [
       {
@@ -986,7 +986,7 @@
     "attackTicks": 4,
     "attackAnimation": 390,
     "defendAnimation": 388,
-    "equipSound": 2242,
+    "equipSound": 2248,
     "attackSound": 2500,
     "attackSets": [
       {
@@ -1028,7 +1028,7 @@
     "attackTicks": 5,
     "attackAnimation": 390,
     "defendAnimation": 388,
-    "equipSound": 2242,
+    "equipSound": 2248,
     "attackSound": 2500,
     "attackSets": [
       {
@@ -1070,7 +1070,7 @@
     "attackTicks": 5,
     "attackAnimation": 390,
     "defendAnimation": 388,
-    "equipSound": 2242,
+    "equipSound": 2248,
     "attackSound": 2500,
     "attackSets": [
       {
@@ -1112,7 +1112,7 @@
     "attackTicks": 5,
     "attackAnimation": 390,
     "defendAnimation": 388,
-    "equipSound": 2242,
+    "equipSound": 2248,
     "attackSound": 2500,
     "attackSets": [
       {
@@ -1154,7 +1154,7 @@
     "attackTicks": 4,
     "attackAnimation": 390,
     "defendAnimation": 388,
-    "equipSound": 2242,
+    "equipSound": 2248,
     "attackSound": 2500,
     "attackSets": [
       {
@@ -1238,7 +1238,7 @@
     "attackTicks": 6,
     "attackAnimation": 7045,
     "defendAnimation": 7056,
-    "equipSound": 2244,
+    "equipSound": 2248,
     "attackSound": 3847,
     "attackSets": [
       {
@@ -1281,7 +1281,7 @@
     "attackTicks": 4,
     "attackAnimation": 7045,
     "defendAnimation": 7056,
-    "equipSound": 2244,
+    "equipSound": 2248,
     "attackSound": 3847,
     "attackSets": [
       {
@@ -1324,7 +1324,7 @@
     "attackTicks": 5,
     "attackAnimation": 400,
     "defendAnimation": 397,
-    "equipSound": 2240,
+    "equipSound": 2232,
     "attackSound": 2498,
     "attackSets": [
       {
@@ -1530,7 +1530,7 @@
     "attackTicks": 4,
     "attackAnimation": 1711,
     "defendAnimation": 1709,
-    "equipSound": 2238,
+    "equipSound": 2247,
     "attackSound": 2556,
     "attackSets": [
       {
@@ -1572,7 +1572,7 @@
     "attackTicks": 5,
     "attackAnimation": 2080,
     "defendAnimation": 2079,
-    "equipSound": 2238,
+    "equipSound": 2247,
     "attackSound": 2556,
     "attackSets": [
       {
@@ -1614,7 +1614,7 @@
     "attackTicks": 5,
     "attackAnimation": 428,
     "defendAnimation": 430,
-    "equipSound": 2238,
+    "equipSound": 2247,
     "attackSound": 2556,
     "attackSets": [
       {
@@ -1656,7 +1656,7 @@
     "attackTicks": 5,
     "attackAnimation": 401,
     "defendAnimation": 403,
-    "equipSound": 2244,
+    "equipSound": 2246,
     "attackSound": 2508,
     "attackSets": [
       {
@@ -1697,7 +1697,7 @@
     "attackTicks": 5,
     "attackAnimation": 2062,
     "defendAnimation": 2063,
-    "equipSound": 2244,
+    "equipSound": 2246,
     "attackSound": 1323,
     "attackSets": [
       {
@@ -1773,7 +1773,7 @@
     "attackTicks": 4,
     "attackAnimation": 245,
     "defendAnimation": 2063,
-    "equipSound": 2244,
+    "equipSound": 2246,
     "attackSound": 1323,
     "attackSets": [
       {
@@ -1854,7 +1854,7 @@
     "attackTicks": 4,
     "attackAnimation": 386,
     "defendAnimation": 388,
-    "equipSound": 2242,
+    "equipSound": 2248,
     "attackSound": 2500,
     "attackSets": [
       {
@@ -1896,7 +1896,7 @@
     "attackTicks": 4,
     "attackAnimation": 386,
     "defendAnimation": 388,
-    "equipSound": 2242,
+    "equipSound": 2248,
     "attackSound": 2500,
     "attackSets": [
       {
@@ -1938,7 +1938,7 @@
     "attackTicks": 4,
     "attackAnimation": 8145,
     "defendAnimation": 388,
-    "equipSound": 2242,
+    "equipSound": 2248,
     "attackSound": 2500,
     "attackSets": [
       {
@@ -2103,7 +2103,7 @@
     "attackTicks": 4,
     "attackAnimation": 440,
     "defendAnimation": 430,
-    "equipSound": 2238,
+    "equipSound": 2247,
     "attackSound": 2555,
     "attackSets": [
       {
@@ -2138,7 +2138,7 @@
     "attackTicks": 5,
     "attackAnimation": 393,
     "defendAnimation": 420,
-    "equipSound": 2238,
+    "equipSound": 2247,
     "attackSound": 2555,
     "attackSets": [
       {
@@ -2418,7 +2418,7 @@
     "attackTicks": 4,
     "attackAnimation": 1658,
     "defendAnimation": 1659,
-    "equipSound": 2238,
+    "equipSound": 2249,
     "attackSound": 2720,
     "attackSets": [
       {
@@ -2695,7 +2695,7 @@
     "attackTicks": 4,
     "attackAnimation": 419,
     "defendAnimation": 420,
-    "equipSound": -1,
+    "equipSound": 2247,
     "attackSound": -1,
     "attackSets": [
       {
@@ -2730,7 +2730,7 @@
     "attackTicks": 4,
     "attackAnimation": 419,
     "defendAnimation": 420,
-    "equipSound": -1,
+    "equipSound": 2247,
     "attackSound": -1,
     "attackSets": [
       {
