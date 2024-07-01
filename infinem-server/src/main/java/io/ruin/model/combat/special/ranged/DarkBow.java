@@ -74,6 +74,7 @@ public class DarkBow implements Special {
             }).postDamage(t -> t.graphics(gfxId, 96, 0));
             hits[i] = hit;
         }
+        player.publicSound(3737, 1, 0);
         player.getCombat().removeAmmo(ammo, hits);
         target.hit(hits);
         return true;
