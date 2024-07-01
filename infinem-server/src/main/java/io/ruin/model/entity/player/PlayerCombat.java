@@ -378,12 +378,17 @@ public class PlayerCombat extends Combat {
     }
 
     private void attackAnim() {
-        if(attackSet.attackAnimation != null)
+        if (attackSet.attackAnimation != null)
             player.animate(attackSet.attackAnimation);
         else
             player.animate(weaponType.attackAnimation);
-        if(weaponType.attackSound != -1)
-            player.publicSound(weaponType.attackSound, 1, 1);
+        if (weaponType.attackSound != -1 || attackSet.attackSound != null) {
+            if (attackSet.attackSound != null) {
+                player.publicSound(attackSet.attackSound, 1, 1);
+            } else {
+                player.publicSound(weaponType.attackSound, 1, 1);
+            }
+        }
     }
 
     private void ScytheOfVitur() {
