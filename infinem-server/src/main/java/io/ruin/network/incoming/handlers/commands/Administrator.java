@@ -3024,6 +3024,19 @@ public class Administrator {
                 System.out.println(NPCDefinition.get(Integer.parseInt(args[0])).toString());
                 return true;
             }
+            case "checknpcinfo": {
+                NPCDefinition.forEach(def -> {
+                    if (def.attackOption == -1) return;
+                    if (def.combatInfo == null) {
+                        System.out.println(def.id + "-" + def.name + " is missing combat info");
+                        return;
+                    }
+                    if (def.combatInfo.attack_animation == -1 || def.combatInfo.defend_animation == -1 || def.combatInfo.death_animation == -1) {
+                        System.out.println(def.id + "-" + def.name + " is missing animations");
+                    }
+                });
+                return true;
+            }
         }
         return false;
     }
