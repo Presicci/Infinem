@@ -21,7 +21,7 @@ public class DragonScimitar implements Special {
     public boolean handle(Player player, Entity target, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
         player.animate(1872);
         player.graphics(347, 96, 0);
-        player.publicSound(2529);
+        player.publicSound(2540);
         int damage = target.hit(new Hit(player, attackStyle, attackType).randDamage(maxDamage).boostAttack(0.25));
         if(damage > 0 && target.player != null)
             target.player.getPrayer().slashPrayers();
