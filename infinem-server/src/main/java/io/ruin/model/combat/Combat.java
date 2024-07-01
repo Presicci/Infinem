@@ -173,6 +173,8 @@ public abstract class Combat {
 
     public abstract int getDefendAnimation();
 
+    public abstract int getDefendSound();
+
     public abstract double getDragonfireResistance();
 
     public abstract void faceTarget();

@@ -752,6 +752,11 @@ public class PlayerCombat extends Combat {
         return weaponType.defendAnimation;
     }
 
+    @Override
+    public int getDefendSound() {
+        return -1;
+    }
+
     /**
      * Hits to this player
      */

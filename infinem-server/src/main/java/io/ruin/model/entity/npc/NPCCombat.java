@@ -407,6 +407,11 @@ public abstract class NPCCombat extends Combat {
         return info.defend_animation;
     }
 
+    @Override
+    public int getDefendSound() {
+        return info.defend_sound;
+    }
+
     public int getMaxDamage() {
         return info.max_damage;
     }

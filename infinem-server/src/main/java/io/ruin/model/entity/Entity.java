@@ -744,6 +744,10 @@ public abstract class Entity extends TemporaryAttributesHolder {
                                     animate(animId);
                             }
                         }
+                        int soundId = getCombat().getDefendSound();
+                        if (soundId > 0) {
+                            publicSound(soundId);
+                        }
                         //todo - honestly this retaliate system is so bad...
                         if(!isLocked() && !getCombat().retaliating && getCombat().allowRetaliate(hit.attacker)) {
                             getCombat().retaliating = true;
