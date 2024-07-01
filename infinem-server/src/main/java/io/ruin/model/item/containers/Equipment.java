@@ -156,6 +156,9 @@ public class Equipment extends ItemContainer {
             player.recentlyEquipped.delay(1);
            // player.resetAnimation();
         }
+        if (selectedDef.weaponType != null && selectedDef.weaponType.equipSound > 0) {
+            player.privateSound(selectedDef.weaponType.equipSound);
+        }
         player.closeDialogue();
     }
 
