@@ -26,6 +26,7 @@ public class ArmadylCrossbow implements Special {
         ItemDefinition ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
 
         player.animate(4230);
+        player.privateSound(3892, 1, 15);
         int delay = PROJECTILE.send(player, victim);
         victim.hit(new Hit(player, attackStyle, attackType).randDamage(maxDamage).boostAttack(1.0).clientDelay(delay).setRangedAmmo(ammoDef));
         return true;
