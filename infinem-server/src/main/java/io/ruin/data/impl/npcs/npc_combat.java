@@ -157,7 +157,7 @@ public class npc_combat extends DataFile {
          * Sounds
          */
 
-        @Expose public int attack_sound, defend_sound, death_sound;
+        @Expose public int attack_sound = -1, defend_sound = -1, death_sound = -1;
 
         /**
          * Broadcast loot to all nearby players
