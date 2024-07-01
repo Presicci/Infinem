@@ -40,7 +40,11 @@
     "spawn_animation": -1,
     "attack_animation": 4933,
     "defend_animation": 4934,
-    "death_animation": 4935
+    "death_animation": 4935,
+    //Sounds
+    "attack_sound": 710,
+    "defend_sound": 713,
+    "death_sound": 711
   },
   { // Giant rat (6)
     "ids": [ 2862, 2863, 2864 ],
@@ -83,7 +87,11 @@
     "spawn_animation": -1,
     "attack_animation": 4933,
     "defend_animation": 4934,
-    "death_animation": 4935
+    "death_animation": 4935,
+    //Sounds
+    "attack_sound": 710,
+    "defend_sound": 713,
+    "death_sound": 711
   },
   { // Giant rat (26)
     "ids": [ 2510, 2511, 2512 ],
@@ -126,6 +134,10 @@
     "spawn_animation": -1,
     "attack_animation": 4933,
     "defend_animation": 4934,
-    "death_animation": 4935
+    "death_animation": 4935,
+    //Sounds
+    "attack_sound": 710,
+    "defend_sound": 713,
+    "death_sound": 711
   }
 ]
