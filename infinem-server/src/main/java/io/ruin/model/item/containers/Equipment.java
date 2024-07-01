@@ -158,6 +158,21 @@ public class Equipment extends ItemContainer {
         }
         if (selectedDef.weaponType != null && selectedDef.weaponType.equipSound > 0) {
             player.privateSound(selectedDef.weaponType.equipSound);
+        } else {
+            String name = selectedDef.name.toLowerCase();
+            if (name.contains("platebody") || name.contains("chainbody")) {
+                player.privateSound(2239);
+            } else if (name.contains("platelegs") || name.contains("plateskirt")) {
+                player.privateSound(2442);
+            } else if (name.contains("chaps") || name.contains("vambraces") || name.contains("d'hide") || name.contains("leather")) {
+                player.privateSound(2241);
+            } else if (name.contains("arrow")) {
+                player.privateSound(2244);
+            } else if (name.contains("bolt")) {
+                player.privateSound(2235);
+            } else {
+                player.privateSound(2238);
+            }
         }
         player.closeDialogue();
     }
