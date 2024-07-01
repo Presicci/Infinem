@@ -98,6 +98,17 @@ public class KourendCatacombs {
             }
         });
 
+        // Giants den
+        ObjectAction.register(42350, "climb-up", (player, obj) -> {
+            Ladder.climb(player, 1461, 9879, 0, true, true, false);
+            Config.CATACOMBS_ENTRANCE_GIANTS_DEN.set(player, 1);
+        });
+        ObjectAction.register(42351, 1, (player, obj) -> {
+            if (Config.CATACOMBS_ENTRANCE_GIANTS_DEN.get(player) == 1) {
+                Ladder.climb(player, 1640, 10047, 0, false, true, false);
+            }
+        });
+
         //Shortcuts
         ObjectAction.register(28893, "jump-to", (player, obj) -> { // Stepping stones
             if (!player.getStats().check(StatType.Agility, 34, "use this shortcut"))

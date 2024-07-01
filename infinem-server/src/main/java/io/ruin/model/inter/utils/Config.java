@@ -908,6 +908,8 @@ public class Config {
     public static final Config CATACOMBS_ENTRANCE_SE = varpbit(5087, true);
     public static final Config CATACOMBS_ENTRANCE_NE = varpbit(5089, true);
 
+    public static final Config CATACOMBS_ENTRANCE_GIANTS_DEN = varpbit(12341, true);
+
     /**
      * Death storage
      */
