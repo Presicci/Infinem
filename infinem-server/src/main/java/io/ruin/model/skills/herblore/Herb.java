@@ -72,6 +72,7 @@ public enum Herb {
                 } else {
                     item.setId(herb.cleanId);
                     player.getStats().addXp(StatType.Herblore, herb.xp, true);
+                    player.privateSound(3922);
                     player.sendFilteredMessage("You clean the " + herbName + ".");
                     player.getTaskManager().doSkillItemLookup(herb.cleanId);
                 }
