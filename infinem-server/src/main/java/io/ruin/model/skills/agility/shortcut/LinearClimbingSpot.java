@@ -16,6 +16,9 @@ import lombok.AllArgsConstructor;
  */
 @AllArgsConstructor
 public enum LinearClimbingSpot {
+    ICE_MOUNTAIN_68(47571, new Position(2998, 3483),
+            47570, new Position(3001, 3483),
+            68, 1, Direction.EAST),
     KARUULM29(34397, new Position(1324, 3778),
             34397, new Position(1324, 3784),
             29, 1, Direction.NORTH),
