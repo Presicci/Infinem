@@ -264,6 +264,8 @@ public abstract class NPCCombat extends Combat {
             event.delay(1);
             if (info.death_animation != -1)
                 npc.animate(info.death_animation);
+            if (info.death_sound != -1)
+                npc.publicSound(info.death_sound, 1, 0, 3);
             if(info.death_ticks > 0)
                 event.delay(info.death_ticks);
             dropItems(killer);
