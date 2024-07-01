@@ -1402,8 +1402,8 @@
     "attackTicks": 6,
     "attackAnimation": 440,
     "defendAnimation": 430,
-    "equipSound": -1,
-    "attackSound": -1,
+    "equipSound": 2240,
+    "attackSound": 2524,
     "attackSets": [
       {
         "child": 3,
