@@ -23,6 +23,7 @@ public class Darklight implements Special {
         boolean demon = victim.npc != null && victim.npc.getDef().hasCustomValue("DEMON");
         player.animate(2890);
         player.graphics(483);
+        player.publicSound(225);
         Hit hit = new Hit(player, attackStyle, attackType).randDamage(maxDamage).boostAttack(0.5);
         victim.hit(hit);
         if (!hit.isBlocked()) {
