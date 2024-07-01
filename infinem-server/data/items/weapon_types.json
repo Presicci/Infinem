@@ -1247,7 +1247,7 @@
     "attackAnimation": 7045,
     "defendAnimation": 7056,
     "equipSound": 2244,
-    "attackSound": 3846,
+    "attackSound": 3847,
     "attackSets": [
       {
         "child": 3,
@@ -1263,7 +1263,8 @@
         "child": 11,
         "type": "AGGRESSIVE",
         "style": "CRUSH",
-        "attackAnimation": 7054
+        "attackAnimation": 7054,
+        "attackSound": 3846
       },
       {
         "child": 15,

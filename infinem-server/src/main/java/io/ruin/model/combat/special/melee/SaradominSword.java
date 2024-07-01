@@ -23,6 +23,8 @@ public class SaradominSword implements Special {
         player.animate(1132, 0);
         player.graphics(1213, 0, 0);
         target.graphics(1196, 30, 0);
+        player.publicSound(3869, 1, 0, 6);
+        player.publicSound(3887, 1, 0, 6);
         int damage = target.hit(new Hit(player, attackStyle, attackType).randDamage(maxDamage).boostDamage(0.1));
         if(damage > 0)
            target.hit(new Hit(player, AttackStyle.MAGIC, AttackType.ACCURATE).fixedDamage(Random.get(1, 16)));
