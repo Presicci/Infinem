@@ -615,6 +615,8 @@ public class PlayerCombat extends Combat {
         attackAnim();
         if(handleSpecial(style, type, maxDamage)) {
             int delay = ToxicBlowpipe.SIPHON_PROJECTILE.send(player, target);
+            player.publicSound(2696);
+            player.publicSound(800, 1, delay);
             hit.randDamage(maxDamage).boostDamage(0.50).clientDelay(delay);
             int damage = target.hit(hit);
             if(damage >= 2)
