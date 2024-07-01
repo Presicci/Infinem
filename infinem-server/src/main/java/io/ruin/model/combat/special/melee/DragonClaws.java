@@ -60,6 +60,7 @@ public class DragonClaws implements Special {
                     victim.hit(hit4.randDamage(damage));
             }
         }
+        player.publicSound(2548, 1, 0);
         return true;
     }
 
