@@ -28,6 +28,7 @@ public class BoneDagger implements Special {
 
         player.animate(4198);
         player.graphics(704);
+        player.publicSound(1084);
         int damage = target.hit(new Hit(player, attackStyle, attackType)
                 .randDamage(maxDamage)
                 .boostAttack(1.0)
