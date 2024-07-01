@@ -313,7 +313,7 @@
     "attackAnimation": 2068,
     "defendAnimation": 424,
     "equipSound": 2246,
-    "attackSound": 2567,
+    "attackSound": 1332,
     "attackSets": [
       {
         "child": 3,
