@@ -25,6 +25,7 @@ public class DragonBattleaxe implements Special {
             return false;
         player.animate(1056);
         player.graphics(246);
+        player.publicSound(2538);
         player.forceText("Raarrrrrgggggghhhhhhh!");
         int drained = 0;
         for(StatType statType : DRAIN_STATS)
