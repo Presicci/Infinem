@@ -21,6 +21,7 @@ public class DragonSword implements Special {
     public boolean handle(Player player, Entity target, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
         player.animate(7515);
         player.graphics(1369, 96, 0);
+        player.publicSound(3552);
         target.hit(new Hit(player, attackStyle, attackType).randDamage(maxDamage).boostDamage(0.25).boostAttack(0.25).ignorePrayer());
         return true;
     }
