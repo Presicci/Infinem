@@ -10,6 +10,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.item.attributes.AttributeTypes;
 import io.ruin.model.item.attributes.AugmentType;
+import io.ruin.model.item.containers.Equipment;
 import io.ruin.utility.Broadcast;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
@@ -344,13 +345,13 @@ public class Item {
             return moved;
         }
         if (stack) {
-            if (amount - moved <= 0 && getDef().unequipAction != null)
+            if (amount - moved <= 0 && oldContainer instanceof Equipment && getDef().unequipAction != null)
                 getDef().unequipAction.handle(oldContainer.player);
             incrementAmount(-moved);
             return moved;
         }
         if (moved == 1) {
-            if (getDef().unequipAction != null)
+            if (oldContainer instanceof Equipment && getDef().unequipAction != null)
                 getDef().unequipAction.handle(oldContainer.player);
             remove();
             return 1;
