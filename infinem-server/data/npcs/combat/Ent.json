@@ -40,7 +40,11 @@
     "spawn_animation": -1,
     "attack_animation": 7145,
     "defend_animation": 7144,
-    "death_animation": 7146
+    "death_animation": 7146,
+    //Sounds
+    "attack_sound": 822,
+    "defend_sound": 824,
+    "death_sound": 823
   },
   { // Ent (101)
     "ids": [ 6594 ],
@@ -83,6 +87,10 @@
     "spawn_animation": -1,
     "attack_animation": 7145,
     "defend_animation": 7144,
-    "death_animation": 7146
+    "death_animation": 7146,
+    //Sounds
+    "attack_sound": 822,
+    "defend_sound": 824,
+    "death_sound": 823
   }
 ]
