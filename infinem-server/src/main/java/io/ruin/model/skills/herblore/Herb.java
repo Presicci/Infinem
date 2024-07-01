@@ -52,6 +52,7 @@ public enum Herb {
         }
         player.getInventory().add(unfId, 1);
         player.animate(363);
+        player.privateSound(2608);
     }
 
     static {

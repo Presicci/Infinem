@@ -168,6 +168,7 @@ public enum Potion {
         String name = ItemDefinition.get(potion).name.toLowerCase();
         player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.POTION, name.substring(0, name.indexOf("(")), 1, true);
         player.animate(363);
+        player.privateSound(2608);
     }
 
     private void decant(Player player, Item fromPot, Item toPot) {

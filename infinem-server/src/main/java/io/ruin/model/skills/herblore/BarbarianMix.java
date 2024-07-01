@@ -64,6 +64,7 @@ public enum BarbarianMix {
         player.getStats().addXp(StatType.Herblore, experience, true);
         player.getTaskManager().doSkillItemLookup(vialIds[1]);
         player.animate(363);
+        player.privateSound(2608);
     }
 
     private void decant(Player player, Item potionOne, Item potionTwo) {
