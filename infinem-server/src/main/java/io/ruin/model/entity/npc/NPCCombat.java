@@ -183,6 +183,10 @@ public abstract class NPCCombat extends Combat {
         if (info.typeless)
             hit.ignorePrayer();
         target.hit(hit);
+        int hitSound = info.attack_sound;
+        if (hitSound > 0) {
+            target.privateSound(hitSound);
+        }
         return hit;
     }
 
@@ -258,7 +262,7 @@ public abstract class NPCCombat extends Combat {
         npc.startEvent(event -> {
             npc.lock();
             event.delay(1);
-            if(info.death_animation != -1)
+            if (info.death_animation != -1)
                 npc.animate(info.death_animation);
             if(info.death_ticks > 0)
                 event.delay(info.death_ticks);
