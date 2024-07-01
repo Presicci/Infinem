@@ -24,7 +24,7 @@ public class AbyssalTentacle implements Special {
         // In place to allow weapon poison to work
         ItemDefinition weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
 
-        player.publicSound(2713); //TODO: proper sound
+        player.publicSound(2713);
         player.animate(1658);
         target.graphics(341, 96, 0);
         if(!target.isFrozen())
