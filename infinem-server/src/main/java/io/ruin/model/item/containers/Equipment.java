@@ -141,6 +141,7 @@ public class Equipment extends ItemContainer {
                 if (equippedDef.unequipAction != null) {
                     equippedDef.unequipAction.handle(player);
                 }
+                playEquipSound(equippedDef);
             }
         }
         if(addLast != null) {
@@ -148,6 +149,7 @@ public class Equipment extends ItemContainer {
             if (addLast.getDef().unequipAction != null) {
                 addLast.getDef().unequipAction.handle(player);
             }
+            playEquipSound(addLast.getDef());
         }
         if (selectedDef.equipAction != null) {
             selectedDef.equipAction.handle(player);
@@ -156,10 +158,15 @@ public class Equipment extends ItemContainer {
             player.recentlyEquipped.delay(1);
            // player.resetAnimation();
         }
-        if (selectedDef.weaponType != null && selectedDef.weaponType.equipSound > 0) {
-            player.privateSound(selectedDef.weaponType.equipSound);
+        playEquipSound(selectedDef);
+        player.closeDialogue();
+    }
+
+    private void playEquipSound(ItemDefinition itemDefinition) {
+        if (itemDefinition.weaponType != null && itemDefinition.weaponType.equipSound > 0) {
+            player.privateSound(itemDefinition.weaponType.equipSound);
         } else {
-            String name = selectedDef.name.toLowerCase();
+            String name = itemDefinition.name.toLowerCase();
             if (name.contains("platebody") || name.contains("chainbody")) {
                 player.privateSound(2239);
             } else if (name.contains("platelegs") || name.contains("plateskirt")) {
@@ -174,7 +181,6 @@ public class Equipment extends ItemContainer {
                 player.privateSound(2238);
             }
         }
-        player.closeDialogue();
     }
 
     public boolean unequip(Item equipped) {
@@ -204,6 +210,7 @@ public class Equipment extends ItemContainer {
         if (equipped.getDef().unequipAction != null) {
             equipped.getDef().unequipAction.handle(player);
         }
+        playEquipSound(equipped.getDef());
         return true;
     }
     @Override
