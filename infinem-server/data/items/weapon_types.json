@@ -1789,7 +1789,8 @@
       {
         "child": 11,
         "type": "CONTROLLED",
-        "style": "STAB"
+        "style": "STAB",
+        "attackSound": 1342
       },
       {
         "child": 15,
