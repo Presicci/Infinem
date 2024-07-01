@@ -40,7 +40,11 @@
     "spawn_animation": -1,
     "attack_animation": 6559,
     "defend_animation": 6557,
-    "death_animation": 6558
+    "death_animation": 6558,
+    //Sounds
+    "attack_sound": 909,
+    "defend_sound": 912,
+    "death_sound": 911
   },
   { // Ice wolf (132)
     "ids": [ 647, 710, 711, 712, 713, 714, 715 ],
@@ -83,6 +87,10 @@
     "spawn_animation": -1,
     "attack_animation": 6559,
     "defend_animation": 6557,
-    "death_animation": 6558
+    "death_animation": 6558,
+    //Sounds
+    "attack_sound": 909,
+    "defend_sound": 912,
+    "death_sound": 911
   }
 ]
