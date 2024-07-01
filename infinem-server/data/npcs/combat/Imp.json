@@ -40,7 +40,11 @@
     "spawn_animation": -1,
     "attack_animation": 169,
     "defend_animation": 170,
-    "death_animation": 172
+    "death_animation": 172,
+    //Sounds
+    "attack_sound": 534,
+    "defend_sound": 536,
+    "death_sound": 535
   },
   { // Imp (7)
     "ids": [ 3134 ],
@@ -83,6 +87,10 @@
     "spawn_animation": -1,
     "attack_animation": 169,
     "defend_animation": 170,
-    "death_animation": 172
+    "death_animation": 172,
+    //Sounds
+    "attack_sound": 534,
+    "defend_sound": 536,
+    "death_sound": 535
   }
 ]
