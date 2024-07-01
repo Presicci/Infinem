@@ -40,7 +40,11 @@
     "spawn_animation": -1,
     "attack_animation": 4666,
     "defend_animation": 4665,
-    "death_animation": 4668
+    "death_animation": 4668,
+    //Sounds
+    "attack_sound": 447,
+    "defend_sound": 451,
+    "death_sound": 450
   },
   { // Fire giant (104)
     "ids": [ 7252 ],
@@ -83,7 +87,11 @@
     "spawn_animation": -1,
     "attack_animation": -1,
     "defend_animation": -1,
-    "death_animation": -1
+    "death_animation": -1,
+    //Sounds
+    "attack_sound": 447,
+    "defend_sound": 451,
+    "death_sound": 450
   },
   { // Fire giant (109)
     "ids": [ 7251 ],
@@ -126,6 +134,10 @@
     "spawn_animation": -1,
     "attack_animation": -1,
     "defend_animation": -1,
-    "death_animation": -1
+    "death_animation": -1,
+    //Sounds
+    "attack_sound": 447,
+    "defend_sound": 451,
+    "death_sound": 450
   }
 ]
