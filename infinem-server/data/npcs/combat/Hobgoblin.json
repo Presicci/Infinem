@@ -40,7 +40,11 @@
     "spawn_animation": -1,
     "attack_animation": 164,
     "defend_animation": 165,
-    "death_animation": 167
+    "death_animation": 167,
+    //Sounds
+    "attack_sound": 3520,
+    "defend_sound": 451,
+    "death_sound": 450
   },
   { // Hobgoblin (42)
     "ids": [ 3050 ],
@@ -83,7 +87,11 @@
     "spawn_animation": -1,
     "attack_animation": 164,
     "defend_animation": 165,
-    "death_animation": 167
+    "death_animation": 167,
+    //Sounds
+    "attack_sound": 3520,
+    "defend_sound": 451,
+    "death_sound": 450
   },
   { // Hobgoblin (47) - Godwars
     "ids": [ 2241 ],
@@ -126,7 +134,11 @@
     "spawn_animation": -1,
     "attack_animation": 164,
     "defend_animation": 165,
-    "death_animation": 167
+    "death_animation": 167,
+    //Sounds
+    "attack_sound": 3520,
+    "defend_sound": 451,
+    "death_sound": 450
   },
   { // Hobgoblin (POH)
     "ids": [ 132 ],
@@ -171,6 +183,10 @@
     "defend_animation": 165,
     "death_animation": 167,
 	//Misc
-	"combat_xp_modifier": 0
+	"combat_xp_modifier": 0,
+    //Sounds
+    "attack_sound": 3520,
+    "defend_sound": 451,
+    "death_sound": 450
   }
 ]
