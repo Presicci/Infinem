@@ -40,7 +40,11 @@
     "spawn_animation": -1,
     "attack_animation": 1582,
     "defend_animation": 1581,
-    "death_animation": 1580
+    "death_animation": 1580,
+    //Sounds
+    "attack_sound": 696,
+    "defend_sound": 698,
+    "death_sound": 697
   },
   { // Pyrefiend (48) - godwars
     "ids": [ 3139 ],
@@ -83,6 +87,10 @@
     "spawn_animation": -1,
     "attack_animation": 1582,
     "defend_animation": 1581,
-    "death_animation": 1580
+    "death_animation": 1580,
+    //Sounds
+    "attack_sound": 696,
+    "defend_sound": 698,
+    "death_sound": 697
   }
 ]
