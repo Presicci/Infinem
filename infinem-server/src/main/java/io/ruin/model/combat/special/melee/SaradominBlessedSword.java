@@ -22,7 +22,8 @@ public class SaradominBlessedSword implements Special {
         player.animate(1132);
         player.graphics(1213, 0, 0);
         target.graphics(1196, 30, 0);
-        player.publicSound(2537);
+        player.publicSound(3869, 1, 0, 6);
+        player.publicSound(3887, 1, 0, 6);
         target.hit(new Hit(player, AttackStyle.MAGICAL_MELEE, attackType).randDamage(maxDamage).boostDamage(0.25));
         return true;
     }
