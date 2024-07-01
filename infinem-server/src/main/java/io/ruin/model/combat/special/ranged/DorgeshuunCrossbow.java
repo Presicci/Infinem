@@ -24,6 +24,7 @@ public class DorgeshuunCrossbow implements Special {
     @Override
     public boolean handle(Player player, Entity target, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
         player.animate(4230);
+        player.publicSound(1080);
         int delay = Projectile.bolt(698).send(player, target);
         int damage = target.hit(new Hit(player, attackStyle, attackType)
                 .randDamage(maxDamage)
