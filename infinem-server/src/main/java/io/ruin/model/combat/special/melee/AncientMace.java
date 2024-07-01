@@ -22,6 +22,7 @@ public class AncientMace implements Special {
     public boolean handle(Player player, Entity target, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
         player.animate(6147);
         player.graphics(1052);
+        player.publicSound(3592);
         int damage = target.hit(new Hit(player, attackStyle, attackType).randDamage(maxDamage).ignorePrayer());
         if(damage > 0 && target.player != null) {
             target.player.getPrayer().drain(damage);
