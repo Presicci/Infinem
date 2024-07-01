@@ -40,7 +40,11 @@
     "spawn_animation": -1,
     "attack_animation": 4915,
     "defend_animation": 4916,
-    "death_animation": 4917
+    "death_animation": 4917,
+    //Sounds
+    "attack_sound": 292,
+    "defend_sound": 294,
+    "death_sound": 293
   },
   { //Giant bat (27)
     "ids": [ 4504 ],
@@ -83,6 +87,10 @@
     "spawn_animation": -1,
     "attack_animation": 2621,
     "defend_animation": 2622,
-    "death_animation": 2620
+    "death_animation": 2620,
+    //Sounds
+    "attack_sound": 292,
+    "defend_sound": 294,
+    "death_sound": 293
   }
 ]
