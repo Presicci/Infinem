@@ -30,6 +30,7 @@ public class Web {
                 player.unlock();
                 return;
             }
+            player.privateSound(2548);
             player.sendMessage("You fail to cut through it.");
         });
     }
