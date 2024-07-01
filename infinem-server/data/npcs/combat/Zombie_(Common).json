@@ -38,9 +38,13 @@
     "respawn_ticks": 35,
     //Animations
     "spawn_animation": -1,
-  "attack_animation": 5578,
-  "defend_animation": 5579,
-  "death_animation": 5580
+    "attack_animation": 5578,
+    "defend_animation": 5579,
+    "death_animation": 5580,
+    //Sounds
+    "attack_sound": 918,
+    "defend_sound": 923,
+    "death_sound": 922
   },
   { // Zombie (18)
     "ids": [ 42, 43, 44, 45, 46, 47, 48, 6596, 6597, 6598 ],
@@ -83,7 +87,11 @@
     "spawn_animation": -1,
     "attack_animation": 5578,
     "defend_animation": 5579,
-    "death_animation": 5580
+    "death_animation": 5580,
+    //Sounds
+    "attack_sound": 918,
+    "defend_sound": 923,
+    "death_sound": 922
   },
   { // Zombie (24)
     "ids": [ 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 3980, 3981 ],
@@ -126,7 +134,11 @@
     "spawn_animation": -1,
     "attack_animation": 5578,
     "defend_animation": 5579,
-    "death_animation": 5580
+    "death_animation": 5580,
+    //Sounds
+    "attack_sound": 918,
+    "defend_sound": 923,
+    "death_sound": 922
   },
   { // Zombie (30)
     "ids": [ 2501, 2502, 2503 ],
@@ -169,7 +181,11 @@
     "spawn_animation": -1,
     "attack_animation": 5568,
     "defend_animation": 5579,
-    "death_animation": 5569
+    "death_animation": 5569,
+    //Sounds
+    "attack_sound": 918,
+    "defend_sound": 923,
+    "death_sound": 922
   },
   { // Zombie (44)
     "ids": [ 2504, 2505, 2506 ],
@@ -212,7 +228,11 @@
     "spawn_animation": -1,
     "attack_animation": 5571,
     "defend_animation": 5567,
-    "death_animation": 5580
+    "death_animation": 5580,
+    //Sounds
+    "attack_sound": 918,
+    "defend_sound": 923,
+    "death_sound": 922
   },
   { // Zombie (53)
     "ids": [ 2507, 2508, 2509 ],
@@ -255,7 +275,11 @@
     "spawn_animation": -1,
     "attack_animation": 5571,
     "defend_animation": 5567,
-    "death_animation": 5580
+    "death_animation": 5580,
+    //Sounds
+    "attack_sound": 918,
+    "defend_sound": 923,
+    "death_sound": 922
   },
   { // Zombie (159)
     "ids": [ 6741 ],
@@ -298,7 +322,11 @@
     "spawn_animation": -1,
     "attack_animation": 5571,
     "defend_animation": 5567,
-    "death_animation": 5580
+    "death_animation": 5580,
+    //Sounds
+    "attack_sound": 918,
+    "defend_sound": 923,
+    "death_sound": 922
   },
   { // Zombie - Shayzien crypts - Melee (132)
     "ids": [ 8067 ],
@@ -341,7 +369,11 @@
     "spawn_animation": -1,
     "attack_animation": 5578,
     "defend_animation": 5579,
-    "death_animation": 5575
+    "death_animation": 5575,
+    //Sounds
+    "attack_sound": 918,
+    "defend_sound": 923,
+    "death_sound": 922
   },
   { // Zombie - Shayzien crypts - Ranged (132)
     "ids": [ 8068 ],
@@ -384,7 +416,11 @@
     "spawn_animation": -1,
     "attack_animation": 5571,
     "defend_animation": 5574,
-    "death_animation": 5575
+    "death_animation": 5575,
+    //Sounds
+    "attack_sound": -1,
+    "defend_sound": 923,
+    "death_sound": 922
   },
   { // Zombie - Shayzien crypts - Magic (132)
     "ids": [ 8069 ],
@@ -427,7 +463,11 @@
     "spawn_animation": -1,
     "attack_animation": 5568,
     "defend_animation": 5574,
-    "death_animation": 5575
+    "death_animation": 5575,
+    //Sounds
+    "attack_sound": -1,
+    "defend_sound": 923,
+    "death_sound": 922
   },
   { // Zombie (159)
     "ids": [ 6741 ],
@@ -470,6 +510,10 @@
     "spawn_animation": -1,
     "attack_animation": 5571,
     "defend_animation": 5567,
-    "death_animation": 5580
+    "death_animation": 5580,
+    //Sounds
+    "attack_sound": 918,
+    "defend_sound": 923,
+    "death_sound": 922
   }
 ]
