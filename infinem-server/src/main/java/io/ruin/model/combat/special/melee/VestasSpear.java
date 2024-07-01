@@ -21,6 +21,7 @@ public class VestasSpear implements Special {
     public boolean handle(Player player, Entity victim, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
         player.animate(8184);
         player.graphics(1627);
+        player.publicSound(2529);
         player.vestasSpearSpecial.delay(8);
         int targetsHit = 1;
         victim.hit(new Hit(player, attackStyle, attackType).randDamage(maxDamage / 2));
