@@ -24,6 +24,7 @@ public class Ballista implements Special {
         ItemDefinition ammoDef = player.getEquipment().getDef(Equipment.SLOT_AMMO);
 
         player.animate(7222);
+        player.publicSound(2536);
         int delay = player.getCombat().rangedData.projectiles[1].send(player, victim);
         victim.hit(new Hit(player, style, type)
                 .randDamage(maxDamage)
