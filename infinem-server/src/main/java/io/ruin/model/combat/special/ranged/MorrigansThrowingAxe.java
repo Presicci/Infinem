@@ -26,6 +26,7 @@ public class MorrigansThrowingAxe implements Special {
         }
         player.animate(806);
         player.graphics(1626, 96, 0);
+        player.publicSound(2706);
         int delay = PROJECTILE.send(player, victim);
         int damage = victim.hit(new Hit(player, attackStyle, attackType).randDamage((int)(maxDamage * 0.20), (int) (maxDamage * 1.20)).clientDelay(delay));
         if (damage > 0) {
