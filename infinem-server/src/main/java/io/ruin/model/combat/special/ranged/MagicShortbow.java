@@ -35,6 +35,7 @@ public class MagicShortbow implements Special {
         }
         player.animate(1074);
         player.graphics(256, 92, 30);
+        player.publicSound(2545);
         Hit[] hits = new Hit[2];
         FIRST.send(player, target);
         int delay = SECOND.send(player, target);
