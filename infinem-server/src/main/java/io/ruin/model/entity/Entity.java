@@ -828,9 +828,12 @@ public abstract class Entity extends TemporaryAttributesHolder {
     }
 
     public void publicSound(int id, int type, int delay) {
+        publicSound(id, type, delay, 15);
+    }
+
+    public void publicSound(int id, int type, int delay, int distance) {
         int x = getAbsX();
         int y = getAbsY();
-        int distance = 15; //idk how to calc
         for(Player p : localPlayers())
             p.getPacketSender().sendAreaSound(id, type, delay, x, y, distance);
     }
