@@ -20,6 +20,7 @@ public class VestasLongsword implements Special {
     @Override
     public boolean handle(Player player, Entity target, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
         player.animate(7515);
+        player.publicSound(2529);
         Hit hit = new Hit(player, attackStyle, attackType);
         int sides = (int) CombatUtils.getDefenceBonus(target, hit.attackStyle);
         int chance = (int) (sides * 0.75);
