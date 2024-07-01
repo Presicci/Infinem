@@ -4,9 +4,9 @@
     "handler": "",
     //Combat Info
     "hitpoints": 25,
-    "aggressive_level": 38,
+    "aggressive_level": 0,
     "max_damage": 3,
-    "attack_style": "CRUSH",
+    "attack_style": "SLASH",
     //Slayer Info
     "slayer_level": 1,
     "slayer_xp": 25.0,
@@ -33,7 +33,7 @@
     "poison_immunity": false,
     "venom_immunity": false,
     //Speeds
-    "attack_ticks": 6,
+    "attack_ticks": 4,
     "death_ticks": 3,
     "respawn_ticks": 50,
     //Animations
