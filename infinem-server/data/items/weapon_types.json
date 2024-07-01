@@ -2348,8 +2348,8 @@
     "attackTicks": 4,
     "attackAnimation": 5061,
     "defendAnimation": 388,
-    "equipSound": -1,
-    "attackSound": -1,
+    "equipSound": 2238,
+    "attackSound": 2696,
     "attackSets": [
       {
         "child": 3,
