@@ -1010,7 +1010,8 @@
         "child": 11,
         "type": "CONTROLLED",
         "style": "STAB",
-        "attackAnimation": 386
+        "attackAnimation": 386,
+        "attackSound": 2501
       },
       {
         "child": 15,
