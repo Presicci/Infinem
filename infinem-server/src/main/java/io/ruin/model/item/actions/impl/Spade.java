@@ -23,6 +23,7 @@ public class Spade {
     private static void dig(Player player) {
         player.resetActions(true, true, true);
         player.animate(830);
+        player.privateSound(1470);
         Tile tile = Tile.get(player.getAbsX(), player.getAbsY(), player.getHeight(), false);
         player.startEvent(e -> {
             player.lock();
