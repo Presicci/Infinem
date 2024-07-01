@@ -384,9 +384,9 @@ public class PlayerCombat extends Combat {
             player.animate(weaponType.attackAnimation);
         if (weaponType.attackSound != -1 || attackSet.attackSound != null) {
             if (attackSet.attackSound != null) {
-                player.publicSound(attackSet.attackSound, 1, 1);
+                player.privateSound(attackSet.attackSound, 1, 1);
             } else {
-                player.publicSound(weaponType.attackSound, 1, 1);
+                player.privateSound(weaponType.attackSound, 1, 1);
             }
         }
     }
