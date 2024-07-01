@@ -26,6 +26,7 @@ public class DragonKnife implements Special {
 
         int delay = PROJECTILE.send(player, victim);
         player.animate(8291);
+        player.publicSound(2528);
         Hit hit = new Hit(player, attackStyle, attackType).randDamage(maxDamage).clientDelay(delay);
         victim.hit(hit, new Hit(player, attackStyle, attackType).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(weaponDef));
         player.getCombat().removeAmmo(player.getEquipment().get(Equipment.SLOT_WEAPON), hit);
