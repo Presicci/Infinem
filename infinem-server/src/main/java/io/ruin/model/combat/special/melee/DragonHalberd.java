@@ -23,6 +23,7 @@ public class DragonHalberd implements Special {
     public boolean handle(Player player, Entity target, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
         player.animate(1203, 0);
         player.graphics(1231, 100, 0);
+        player.publicSound(2533, 1, 0, 6);
         if(target.getSize() == 1) {
             if(target.inMulti()) {
                 target.forLocalEntity(entity -> {
