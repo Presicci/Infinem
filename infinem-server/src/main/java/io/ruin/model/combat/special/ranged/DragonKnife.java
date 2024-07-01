@@ -13,6 +13,7 @@ import io.ruin.model.map.Projectile;
 public class DragonKnife implements Special {
 
     private static final Projectile PROJECTILE = new Projectile(699, 40, 36, 15, 37, 5, 15, 11);//699 = spec proj  8291 = anim
+    private static final Projectile POISON_PROJECTILE = new Projectile(1629, 40, 36, 15, 37, 5, 15, 11);//699 = spec proj  8291 = anim
 
     @Override
     public boolean accept(ItemDefinition def, String name) {
@@ -24,8 +25,9 @@ public class DragonKnife implements Special {
         // In place to allow weapon poison to work
         ItemDefinition weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
 
-        int delay = PROJECTILE.send(player, victim);
-        player.animate(8291);
+        boolean poisoned = weaponDef.id == 22806 || weaponDef.id == 22808 || weaponDef.id == 22810;
+        int delay = poisoned ? POISON_PROJECTILE.send(player, victim) : PROJECTILE.send(player, victim);
+        player.animate(poisoned ? 8292 : 8291);
         player.publicSound(2528);
         Hit hit = new Hit(player, attackStyle, attackType).randDamage(maxDamage).clientDelay(delay);
         victim.hit(hit, new Hit(player, attackStyle, attackType).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(weaponDef));
