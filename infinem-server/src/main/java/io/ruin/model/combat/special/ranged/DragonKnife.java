@@ -16,7 +16,7 @@ public class DragonKnife implements Special {
 
     @Override
     public boolean accept(ItemDefinition def, String name) {
-        return def.id == 22804;
+        return def.id == 22804 || def.id == 22806 || def.id == 22808 || def.id == 22810;
     }
 
     @Override
