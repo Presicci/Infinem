@@ -210,7 +210,7 @@ public class KourendCatacombs {
 
 
     public static void buriedBone(Player player, Bone bone) {
-        if (!player.getPosition().inBounds(CATACOMBS_BOUNDS))
+        if (!player.getPosition().inBounds(CATACOMBS_BOUNDS) && !player.getPosition().inBounds(GIANTS_DEN_BOUNDS))
             return;
         if (bone.exp < 15)
             player.getStats().get(StatType.Prayer).restore(1, 0);
