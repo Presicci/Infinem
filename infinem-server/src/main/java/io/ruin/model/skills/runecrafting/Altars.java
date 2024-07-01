@@ -161,6 +161,7 @@ public enum Altars {
             player.lock(LockType.FULL_DELAY_DAMAGE);
             player.animate(791);
             player.graphics(186, 100, 0);
+            player.privateSound(2710);
             e.delay(4);
             //  If the player has a rift guardian pet active, set the appearance to that of the rune you crafted
             if (player.pet != null && Arrays.stream(player.pet.getVariantArray()).anyMatch(pet -> pet == player.pet)) {
