@@ -40,7 +40,11 @@
     "spawn_animation": -1,
     "attack_animation": 4658,
     "defend_animation": 4657,
-    "death_animation": 4659
+    "death_animation": 4659,
+    //Sounds
+    "attack_sound": 449,
+    "defend_sound": 451,
+    "death_sound": 450
   },
   { // Moss giant (48)
     "ids": [ 3851, 3852 ],
@@ -83,7 +87,11 @@
     "spawn_animation": -1,
     "attack_animation": 4658,
     "defend_animation": 4657,
-    "death_animation": 4659
+    "death_animation": 4659,
+    //Sounds
+    "attack_sound": 449,
+    "defend_sound": 451,
+    "death_sound": 450
   },
   { // Moss giant (84)
     "ids": [ 8736 ],
@@ -126,6 +134,10 @@
     "spawn_animation": -1,
     "attack_animation": 4658,
     "defend_animation": 4657,
-    "death_animation": 4659
+    "death_animation": 4659,
+    //Sounds
+    "attack_sound": 449,
+    "defend_sound": 451,
+    "death_sound": 450
   }
 ]
