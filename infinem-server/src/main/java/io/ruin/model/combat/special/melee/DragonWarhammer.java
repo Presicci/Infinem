@@ -22,7 +22,7 @@ public class DragonWarhammer implements Special {
     public boolean handle(Player player, Entity target, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
         player.animate(1378);
         player.graphics(1292);
-        player.publicSound(2541);
+        player.publicSound(2520);
         if(target.player != null)
             target.player.getStats().get(StatType.Defence).drain(0.30);
         else
