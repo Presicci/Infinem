@@ -25,6 +25,7 @@ import io.ruin.model.stat.StatType;
 public class KourendCatacombs {
 
     private static final Bounds CATACOMBS_BOUNDS = new Bounds(1578, 9960, 1760, 10110, 0);
+    private static final Bounds GIANTS_DEN_BOUNDS = Bounds.fromRegion(5786);
 
     static { // Object actions
 
@@ -182,7 +183,7 @@ public class KourendCatacombs {
 
 
     public static void drop(Player pKiller, NPC npc, Position dropPosition) {
-        if (!npc.getPosition().inBounds(CATACOMBS_BOUNDS))
+        if (!npc.getPosition().inBounds(CATACOMBS_BOUNDS) && !npc.getPosition().inBounds(GIANTS_DEN_BOUNDS))
             return;
         if (rollTotemDrop(pKiller, npc)) {
             int nextPiece = getNextTotemPiece(pKiller);
