@@ -40,7 +40,11 @@
     "spawn_animation": -1,
     "attack_animation": 6562,
     "defend_animation": 6566,
-    "death_animation": 6576
+    "death_animation": 6576,
+    //Sounds
+    "attack_sound": 3719,
+    "defend_sound": 3717,
+    "death_sound": 3718
   },
   { // Hellhound (127)
     "ids": [ 3133 ],
@@ -83,7 +87,11 @@
     "spawn_animation": -1,
     "attack_animation": 6581,
     "defend_animation": 6578,
-    "death_animation": 6576
+    "death_animation": 6576,
+    //Sounds
+    "attack_sound": 3719,
+    "defend_sound": 3717,
+    "death_sound": 3718
   },
   { // Hellhound (136)
     "ids": [ 7877 ],
@@ -126,6 +134,10 @@
     "spawn_animation": -1,
     "attack_animation": 6581,
     "defend_animation": 6578,
-    "death_animation": 6576
+    "death_animation": 6576,
+    //Sounds
+    "attack_sound": 3719,
+    "defend_sound": 3717,
+    "death_sound": 3718
   }
 ]
