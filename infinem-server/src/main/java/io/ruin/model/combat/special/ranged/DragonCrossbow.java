@@ -32,6 +32,8 @@ public class DragonCrossbow implements Special {
         victim.hit(new Hit(player, attackStyle, attackType).randDamage((int) (maxDamage * 1.2)).clientDelay(delay));
         player.animate(4230);
         victim.graphics(1466, 80, delay);
+        player.publicSound(1080);
+        victim.publicSound(163, 1, delay);
         List<Entity> targets = new LinkedList<>();
         victim.localPlayers().forEach(p -> {
             if (p != victim && p != player && player.getCombat().canAttack(p, false) && Misc.getEffectiveDistance(victim, p) <= 1)
