@@ -1650,41 +1650,6 @@
       1210
     ]
   },
-  "V_MACE": {
-    "config": 18,
-    "maxDistance": 1,
-    "attackTicks": 5,
-    "attackAnimation": 401,
-    "defendAnimation": 403,
-    "equipSound": 2238,
-    "attackSound": 1323,
-    "attackSets": [
-      {
-        "child": 3,
-        "type": "ACCURATE",
-        "style": "CRUSH"
-      },
-      {
-        "child": 7,
-        "type": "AGGRESSIVE",
-        "style": "CRUSH"
-      },
-      {
-        "child": 15,
-        "type": "DEFENSIVE",
-        "style": "CRUSH"
-      }
-    ],
-    "renderAnimations": [
-      813,
-      1209,
-      1205,
-      1206,
-      1207,
-      1208,
-      1210
-    ]
-  },
   "MACE": {
     "config": 16,
     "maxDistance": 1,
