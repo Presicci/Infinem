@@ -28,6 +28,7 @@ public class Dragon2hSword implements Special {
     public boolean handle(Player player, Entity victim, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
         player.animate(3157);
         player.graphics(559);
+        player.publicSound(2530);
         List<Entity> targets = Lists.newArrayList();
         if (player.inMulti()) {
             player.forLocalEntity(e -> {
