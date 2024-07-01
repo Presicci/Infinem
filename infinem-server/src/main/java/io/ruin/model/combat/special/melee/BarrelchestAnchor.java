@@ -25,6 +25,7 @@ public class BarrelchestAnchor implements Special {
     public boolean handle(Player player, Entity target, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
         player.animate(6147);
         player.graphics(1027);
+        player.publicSound(3481);
         int damage = target.hit(new Hit(player, attackStyle, attackType)
                 .randDamage(maxDamage)
                 .boostAttack(1.0)
