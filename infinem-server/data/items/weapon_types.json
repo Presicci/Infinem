@@ -1938,8 +1938,8 @@
     "attackTicks": 4,
     "attackAnimation": 8145,
     "defendAnimation": 388,
-    "equipSound": -1,
-    "attackSound": -1,
+    "equipSound": 2242,
+    "attackSound": 2500,
     "attackSets": [
       {
         "child": 3,
@@ -1955,7 +1955,8 @@
         "child": 11,
         "type": "AGGRESSIVE",
         "style": "SLASH",
-        "attackAnimation": 390
+        "attackAnimation": 390,
+        "attackSound": 2501
       },
       {
         "child": 15,
