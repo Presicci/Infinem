@@ -16,13 +16,14 @@ public enum RangedWeapon {
     ADAMANT_KNIFE(new RangedData(224, Projectile.thrown(217, 11))),
     RUNE_KNIFE(new RangedData(225, Projectile.thrown(218, 11))),
     DRAGON_KNIFE(new RangedData(-1, Projectile.thrown(28, 11))),
+    DRAGON_KNIFE_P(new RangedData(-1, Projectile.thrown(697, 11))),
     /**
      * Darts
      */
     BRONZE_DART(new RangedData(232, Projectile.thrown(226, 11))),
     IRON_DART(new RangedData(233, Projectile.thrown(227, 11))),
     STEEL_DART(new RangedData(234, Projectile.thrown(228, 11))),
-    BLACK_DART(new RangedData(273, Projectile.thrown(34, 11))), //todo - test projectile gfx
+    BLACK_DART(new RangedData(273, Projectile.thrown(34, 11))),
     MITHRIL_DART(new RangedData(235, Projectile.thrown(229, 11))),
     ADAMANT_DART(new RangedData(236, Projectile.thrown(230, 11))),
     RUNE_DART(new RangedData(237, Projectile.thrown(231, 11))),
