@@ -31,6 +31,7 @@ public class StaffOfTheDead implements Special {
         int staff = player.getEquipment().getId(Equipment.SLOT_WEAPON);
         player.animate(staff == 11791 ? 7083 : (staff == 12902 ? 1719 : 1720), 0);
         player.graphics(1228, 300, 0);
+        player.publicSound(1595);
         player.sendMessage("<col=3d5d2b>Spirits of deceased evildoers offer you their protection.");
         return true;
     }
