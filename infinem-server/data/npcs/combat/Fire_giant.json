@@ -68,8 +68,8 @@
     "stab_attack": 50,
     "slash_attack": 50,
     "crush_attack": 50,
-    "magic_attack": 50,
-    "ranged_attack": 50,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 20,
     "slash_defence": 10,
@@ -82,12 +82,12 @@
     //Speeds
     "attack_ticks": 5,
     "death_ticks": 2,
-    "respawn_ticks": 50,
+    "respawn_ticks": 30,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1,
+    "attack_animation": 4666,
+    "defend_animation": 4665,
+    "death_animation": 4668,
     //Sounds
     "attack_sound": 447,
     "defend_sound": 451,
@@ -115,8 +115,8 @@
     "stab_attack": 29,
     "slash_attack": 29,
     "crush_attack": 29,
-    "magic_attack": 29,
-    "ranged_attack": 29,
+    "magic_attack": 0,
+    "ranged_attack": 0,
     //Defensive Stats
     "stab_defence": 0,
     "slash_defence": 3,
@@ -129,12 +129,12 @@
     //Speeds
     "attack_ticks": 5,
     "death_ticks": 2,
-    "respawn_ticks": 50,
+    "respawn_ticks": 30,
     //Animations
     "spawn_animation": -1,
-    "attack_animation": -1,
-    "defend_animation": -1,
-    "death_animation": -1,
+    "attack_animation": 4666,
+    "defend_animation": 4665,
+    "death_animation": 4668,
     //Sounds
     "attack_sound": 447,
     "defend_sound": 451,
