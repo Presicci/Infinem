@@ -180,6 +180,7 @@ public class Inferno {
                 if(!killedZuk) {
                     player.dialogue(new NPCDialogue(HOST, "Well done in the cave, here take TokKul as reward."));
                     player.getInventory().addOrDrop(6529, tokkul);
+                    player.getCollectionLog().collect(6529, tokkul);
                 } else {
                     player.dialogue(new NPCDialogue(HOST, "You are very impressive for a JalYt. You managed to defeat TzKal-Zuk! Please accept this cape as a token of appreciation.").animate(615));
                     killCounter.increment(player);

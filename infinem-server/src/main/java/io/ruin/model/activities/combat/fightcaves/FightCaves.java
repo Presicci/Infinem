@@ -131,6 +131,7 @@ public class FightCaves {
                 if(!killedJad) {
                     player.dialogue(new NPCDialogue(HOST, "Well done in the cave, here take TokKul as reward."));
                     player.getInventory().addOrDrop(6529, tokkul);
+                    player.getCollectionLog().collect(6529, tokkul);
                 } else {
                     player.dialogue(new NPCDialogue(HOST, "You have defeated TzTok-Jad, I am most impressed! Please accept this gift. Give cape back to me if you not want it.").animate(615));
                     player.getInventory().addOrDrop(6570, 1);
