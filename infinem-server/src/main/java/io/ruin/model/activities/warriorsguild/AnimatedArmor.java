@@ -67,9 +67,11 @@ public enum AnimatedArmor {
             npc.animate(4166, 1);
             event.delay(2);
             npc.attackTargetPlayer(() -> !player.getPosition().inBounds(ATTACK_BOUNDS), () -> {
-                if(npc.getCombat().isDead())
+                if (npc.getCombat().isDead()) {
                     new GroundItem(8851, tokenCount).owner(player).position(npc.getPosition()).spawn();
-                for(int id : armorIds)
+                    player.getCollectionLog().collect(8851, tokenCount);
+                }
+                for (int id : armorIds)
                     new GroundItem(id, 1).owner(player).position(npc.getPosition()).spawn();
             });
             player.closeInterface(InterfaceType.CHATBOX);
