@@ -17,6 +17,7 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.map.*;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -206,6 +207,9 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
         while (!player.getInventory().isFull() && Config.PAY_DIRT_IN_SACK.get(player) > 0) {
             PaydirtOre ore = PaydirtOre.get(lvl);
             player.getInventory().add(ore.getItemId(), 1);
+            if (ore.getItemId() == Items.GOLDEN_NUGGET) {
+                player.getCollectionLog().collect(ore.getItemId());
+            }
             player.getStats().addXp(StatType.Mining, ore.getXp(), true);
             Config.PAY_DIRT_IN_SACK.set(player, Config.PAY_DIRT_IN_SACK.get(player) - 1);
             PlayerCounter.CLEANED_PAYDIRT.increment(player, 1);
