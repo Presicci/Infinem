@@ -2446,15 +2446,6 @@
     "walkRange": 4
   },
   {
-    "name": "Bob",
-    "id": 10414,
-    "x": 3239,
-    "y": 3485,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Marlo",
     "id": 10408,
     "x": 3241,

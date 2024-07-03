@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Jess",
+    "id": 10421,
+    "x": 2621,
+    "y": 3292,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Noella",
+    "id": 10419,
+    "x": 2654,
+    "y": 3321,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ross",
+    "id": 10420,
+    "x": 2615,
+    "y": 3316,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Larry",
+    "id": 10418,
+    "x": 3040,
+    "y": 3364,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Norman",
+    "id": 3266,
+    "x": 3037,
+    "y": 3345,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Tau",
+    "id": 10417,
+    "x": 3046,
+    "y": 3344,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Barbara",
+    "id": 10424,
+    "x": 1748,
+    "y": 3535,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Leela",
+    "id": 10423,
+    "x": 1786,
+    "y": 3592,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Mariah",
+    "id": 10422,
+    "x": 1765,
+    "y": 3621,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Bob",
+    "id": 10414,
+    "x": 3239,
+    "y": 3485,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Sarah",
+    "id": 10416,
+    "x": 3235,
+    "y": 3384,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  }
+]
