@@ -11,7 +11,12 @@ import lombok.Getter;
  */
 @Getter
 public enum SkillingOutfit {
-    ;
+    CONSTRUCTION(StatType.Construction, 0.5,
+            new SkillingOutfitPiece(24872, 0.4),
+            new SkillingOutfitPiece(24874, 0.8),
+            new SkillingOutfitPiece(24876, 0.6),
+            new SkillingOutfitPiece(24878, 0.2)
+    );
 
     private final StatType statType;
     private final double setBonus;
