@@ -2731,16 +2731,6 @@
     "npcName": "Town Guard"
   },
   {
-    "id": 6990,
-    "x": 1765,
-    "y": 3621,
-    "z": 0,
-    "direction": "E",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Woman"
-  },
-  {
     "id": 6992,
     "x": 1766,
     "y": 3605,
