@@ -1,0 +1,34 @@
+RAND
+/Player: Hello, how's it going?
+Ross: No, I don't want to buy anything!
+/Player: Hello, how's it going?
+Ross: I'm busy right now.
+/Player: Hello, how's it going?
+Ross: I'm fine, how are you?
+Player: Very well thank you.
+/Player: Hello, how's it going?
+Ross: Not too bad thanks.
+/Player: Hello, how's it going?
+Ross: I'm very well thank you.
+/Player: Hello, how's it going?
+Ross: Who are you?
+Player: I'm a bold adventurer.
+Ross: I suppose someone has to do it.
+/Player: Hello, how's it going?
+Ross: I'm a little worried I've heard there's lots of people going about, killing citizens at random.
+/Player: Hello, how's it going?
+Ross: Get out of my way, I'm in a hurry!
+/Player: Hello, how's it going?
+Ross: That is classified information.
+/Player: Hello, how's it going?
+Ross: Do you require any assistance?
+<Do you wish to trade?
+Player: Do you wish to trade?
+Ross: No, I have nothing I wish to get rid of. If you want to do some trading, there are plenty of shops and market stalls around though.
+><I'm in search of a quest.
+Player: I'm in search of a quest.
+Ross: I'm sorry I cant help you there.
+><I'm in search of enemies to kill.
+Player: I'm in search of enemies to kill.
+Ross: I've heard there are many fearsome creatures that dwell under the ground...
+>
