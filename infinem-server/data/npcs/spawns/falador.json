@@ -504,13 +504,13 @@
     "walkRange": 2
   },
   {
-    "name": "Man",
-    "id": 3264,
+    "name": "Amy",
+    "id": 7417,
     "x": 2991,
     "y": 3365,
     "z": 0,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 2
   },
   {
     "name": "Duck",
