@@ -2576,16 +2576,6 @@
     "npcName": "Chief Farmer"
   },
   {
-    "id": 6958,
-    "x": 1748,
-    "y": 3535,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1,
-    "world": "ECO",
-    "npcName": "Farmer\u0027s wife"
-  },
-  {
     "id": 1838,
     "x": 1728,
     "y": 3524,
