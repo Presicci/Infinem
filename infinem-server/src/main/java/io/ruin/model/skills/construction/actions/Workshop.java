@@ -5,6 +5,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.skills.construction.Buildable;
@@ -29,7 +30,7 @@ public class Workshop {
 
     static {
         //Tool stores
-        ItemDispenser.register(6786, Tool.SAW, Tool.HAMMER, Tool.CHISEL, Tool.SHEARS);
+        ItemDispenser.register(6786, Items.SAW, Tool.HAMMER, Tool.CHISEL, Tool.SHEARS);
         ItemDispenser.register(6787, Tool.EMPTY_BUCKET, Tool.KNIFE, Tool.SPADE, Tool.TINDER_BOX);
         ItemDispenser.register(6788, 1757, Tool.GLASSBLOWING_PIPE, Tool.NEEDLE);
         ItemDispenser.register(6789, 1592, 1597, 1595, 11065, 5523, 1599);

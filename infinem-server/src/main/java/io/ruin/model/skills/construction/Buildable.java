@@ -11,8 +11,10 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.dialogue.MessageDialogue;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.Tool;
+import io.ruin.model.skills.construction.mahoganyhomes.MahoganyObject;
 import io.ruin.model.skills.construction.room.Room;
 import io.ruin.model.skills.herblore.Potion;
 import io.ruin.model.skills.magic.rune.Rune;
@@ -674,13 +676,6 @@ public enum Buildable {
     QUEST_LIST(80, 310, MID_BUILD, 20633, 29226, new Item(970, 10), GOLD_LEAF.item(1)),
 
     /*
-     * Storage units - raids ONLY! not a house object
-     */
-    SMALL_STORAGE_UNIT(30, 150, MID_BUILD, 21037, 29770, MALLIGNUM_ROOT_PLANK.item(2)),
-    MEDIUM_STORAGE_UNIT(60, 150, MID_BUILD, 21038, 29779, MALLIGNUM_ROOT_PLANK.item(4)),
-    LARGE_STORAGE_UNIT(90, 150, MID_BUILD, 21039, 29780, MALLIGNUM_ROOT_PLANK.item(6)),
-
-    /*
      * Portal nexus
      */
     MOUNTED_XERIC(72, 500, HIGH_BUILD, 22708, 33411, MAHOGANY_PLANK.item(1), GOLD_LEAF.item(1), new Item(13392, 1), new Item(13391, 5000)),
@@ -688,7 +683,82 @@ public enum Buildable {
 
     MARBLE_NEXUS(72, 2000, MID_BUILD, 22705, 33354, MARBLE_BLOCK.item(4)),
     GILDED_NEXUS(82, 2600, MID_BUILD, 22706, 33372, MARBLE_NEXUS, MARBLE_BLOCK.item(4), GOLD_LEAF.item(2)),
-    CRYSTALLINE_NEXUS(92, 2600, MID_BUILD, 22707, 33390, GILDED_NEXUS, MAGIC_STONE.item(2), GOLD_LEAF.item(2))
+    CRYSTALLINE_NEXUS(92, 2600, MID_BUILD, 22707, 33390, GILDED_NEXUS, MAGIC_STONE.item(2), GOLD_LEAF.item(2)),
+
+    /*
+     * Storage units - raids ONLY! not a house object
+     */
+    SMALL_STORAGE_UNIT(30, 150, MID_BUILD, 21037, 29770, MALLIGNUM_ROOT_PLANK.item(2)),
+    MEDIUM_STORAGE_UNIT(60, 150, MID_BUILD, 21038, 29779, MALLIGNUM_ROOT_PLANK.item(4)),
+    LARGE_STORAGE_UNIT(90, 150, MID_BUILD, 21039, 29780, MALLIGNUM_ROOT_PLANK.item(6)),
+
+    /*
+     * Mahogany homes
+     */
+    MH_WOODEN_SHELVES(1, 45, MID_BUILD, 24914, -1, REGULAR_PLANK.item(2)),
+    MH_OAK_SHELVES(20, 96, MID_BUILD, 24915, -1, OAK_PLANK.item(2)),
+    MH_TEAK_SHELVES(50, 144, MID_BUILD, 24916, -1, TEAK_PLANK.item(2)),
+    MH_MAHOGANY_SHELVES(70, 224, MID_BUILD, 24917, -1, MAHOGANY_PLANK.item(2)),
+
+    MH_2X2_WOODEN_TABLE(1, 90, LOW_BUILD, 24894, -1, REGULAR_PLANK.item(4)),
+    MH_2X2_OAK_TABLE(20, 192, LOW_BUILD, 24895, -1, OAK_PLANK.item(4)),
+    MH_2X2_TEAK_TABLE(50, 288, LOW_BUILD, 24896, -1, TEAK_PLANK.item(4)),
+    MH_2X2_MAHOGANY_TABLE(70, 448, LOW_BUILD, 24897, -1, MAHOGANY_PLANK.item(4)),
+
+    MH_2X1_WOODEN_TABLE(1, 67.5, LOW_BUILD, 24890, -1, REGULAR_PLANK.item(3)),
+    MH_2X1_OAK_TABLE(20, 144, LOW_BUILD, 24891, -1, OAK_PLANK.item(3)),
+    MH_2X1_TEAK_TABLE(50, 216, LOW_BUILD, 24892, -1, TEAK_PLANK.item(3)),
+    MH_2X1_MAHOGANY_TABLE(70, 336, LOW_BUILD, 24893, -1, MAHOGANY_PLANK.item(3)),
+
+    MH_1X1_WOODEN_TABLE(1, 45, LOW_BUILD, 24886, -1, REGULAR_PLANK.item(2)),
+    MH_1X1_OAK_TABLE(20, 96, LOW_BUILD, 24887, -1, OAK_PLANK.item(2)),
+    MH_1X1_TEAK_TABLE(50, 144, LOW_BUILD, 24888, -1, TEAK_PLANK.item(2)),
+    MH_1X1_MAHOGANY_TABLE(70, 224, LOW_BUILD, 24889, -1, MAHOGANY_PLANK.item(2)),
+
+    MH_WOODEN_CUPBOARD(1, 45, MID_BUILD, 24934, -1, REGULAR_PLANK.item(2)),
+    MH_OAK_CUPBOARD(20, 96, MID_BUILD, 24935, -1, OAK_PLANK.item(2)),
+    MH_TEAK_CUPBOARD(50, 144, MID_BUILD, 24936, -1, TEAK_PLANK.item(2)),
+    MH_MAHOGANY_CUPBOARD(70, 224, MID_BUILD, 24937, -1, MAHOGANY_PLANK.item(2)),
+
+    MH_WOODEN_BOOKCASE(1, 45, MID_BUILD, 24902, -1, REGULAR_PLANK.item(2)),
+    MH_OAK_BOOKCASE(20, 96, MID_BUILD, 24903, -1, OAK_PLANK.item(2)),
+    MH_TEAK_BOOKCASE(50, 144, MID_BUILD, 24904, -1, TEAK_PLANK.item(2)),
+    MH_MAHOGANY_BOOKCASE(70, 224, MID_BUILD, 24905, -1, MAHOGANY_PLANK.item(2)),
+
+    MH_2X1_WOODEN_BED(1, 45, LOW_BUILD, 24918, -1, REGULAR_PLANK.item(2)),
+    MH_2X1_OAK_BED(20, 96, LOW_BUILD, 24919, -1, OAK_PLANK.item(2)),
+    MH_2X1_TEAK_BED(50, 144, LOW_BUILD, 24920, -1, TEAK_PLANK.item(2)),
+    MH_2X1_MAHOGANY_BED(70, 224, LOW_BUILD, 24921, -1, MAHOGANY_PLANK.item(2)),
+
+    MH_2X2_WOODEN_BED(1, 67.5, LOW_BUILD, 24922, -1, REGULAR_PLANK.item(3)),
+    MH_2X2_OAK_BED(20, 114, LOW_BUILD, 24923, -1, OAK_PLANK.item(3)),
+    MH_2X2_TEAK_BED(50, 216, LOW_BUILD, 24924, -1, TEAK_PLANK.item(3)),
+    MH_2X2_MAHOGANY_BED(70, 336, LOW_BUILD, 24925, -1, MAHOGANY_PLANK.item(3)),
+
+    MH_WOODEN_DRAWER(1, 45, LOW_BUILD, 24926, -1, REGULAR_PLANK.item(2)),
+    MH_OAK_DRAWER(20, 96, LOW_BUILD, 24927, -1, OAK_PLANK.item(2)),
+    MH_TEAK_DRAWER(50, 144, LOW_BUILD, 24928, -1, TEAK_PLANK.item(2)),
+    MH_MAHOGANY_DRAWER(70, 224, LOW_BUILD, 24929, -1, MAHOGANY_PLANK.item(2)),
+
+    MH_WOODEN_CABINET(1, 45, MID_BUILD, 24898, -1, REGULAR_PLANK.item(2)),
+    MH_OAK_CABINET(20, 96, MID_BUILD, 24899, -1, OAK_PLANK.item(2)),
+    MH_TEAK_CABINET(50, 144, MID_BUILD, 24900, -1, TEAK_PLANK.item(2)),
+    MH_MAHOGANY_CABINET(70, 224, MID_BUILD, 24901, -1, MAHOGANY_PLANK.item(2)),
+
+    MH_WOODEN_DRESSER(1, 45, LOW_BUILD, 24910, -1, REGULAR_PLANK.item(2)),
+    MH_OAK_DRESSER(20, 96, LOW_BUILD, 24911, -1, OAK_PLANK.item(2)),
+    MH_TEAK_DRESSER(50, 144, LOW_BUILD, 24912, -1, TEAK_PLANK.item(2)),
+    MH_MAHOGANY_DRESSER(70, 224, LOW_BUILD, 24913, -1, MAHOGANY_PLANK.item(2)),
+
+    MH_WOODEN_CHAIR(1, 22.5, LOW_BUILD, 24930, -1, REGULAR_PLANK.item(1)),
+    MH_OAK_CHAIR(20, 48, LOW_BUILD, 24931, -1, OAK_PLANK.item(1)),
+    MH_TEAK_CHAIR(50, 72, LOW_BUILD, 24932, -1, TEAK_PLANK.item(1)),
+    MH_MAHOGANY_CHAIR(70, 112, LOW_BUILD, 24933, -1, MAHOGANY_PLANK.item(1)),
+
+    MH_WOODEN_WARDROBE(1, 45, MID_BUILD, 24906, -1, REGULAR_PLANK.item(2)),
+    MH_OAK_WARDROBE(20, 96, MID_BUILD, 24907, -1, OAK_PLANK.item(2)),
+    MH_TEAK_WARDROBE(50, 144, MID_BUILD, 24908, -1, TEAK_PLANK.item(2)),
+    MH_MAHOGANY_WARDROBE(70, 224, MID_BUILD, 24909, -1, MAHOGANY_PLANK.item(2)),
     ;
 
     Buildable(int levelReq, double xp, int animation, int itemId, int[] builtObjects, Item... materials) {
@@ -780,7 +850,7 @@ public enum Buildable {
 
     public boolean hasTools(Player player) {
         return !isRequireTools()
-                || (SmithBar.hasHammer(player) && (player.getInventory().contains(Tool.SAW, 1) || player.getInventory().contains(Tool.CRYSTAL_SAW, 1)));
+                || (SmithBar.hasHammer(player) && Tool.SAW.hasTool(player));
     }
 
     public boolean canBuild(Player player) {
@@ -840,6 +910,9 @@ public enum Buildable {
         if (room == null || index == -1) {
             if (player.getTemporaryAttribute("FLATPACK_SET") != null) {
                 Flatpack.make(player, slot);
+            } else if (player.hasTemporaryAttribute("BUILD_INTER_MH")) {
+                MahoganyObject object = player.getTemporaryAttribute("BUILD_INTER_MH");
+                object.build(player, slot);
             } else if (ChambersOfXeric.isRaiding(player)) {
                 RaidStorage.selectStorageToBuild(player, slot);
             }
@@ -871,6 +944,7 @@ public enum Buildable {
                 player.removeTemporaryAttribute("BUILD_INTER_INDEX");
                 player.removeTemporaryAttribute("BUILD_INTER_BUILDABLES");
                 player.removeTemporaryAttribute("FLATPACK_SET");
+                player.removeTemporaryAttribute("BUILD_INTER_MH");
                 player.getPacketSender().sendClientScript(2158, "");
             };
         });

@@ -1,9 +1,11 @@
 package io.ruin.model.skills;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.Items;
 import lombok.AllArgsConstructor;
 
 public enum Tool {
+    SAW(new InventoryTool(Items.SAW), new InventoryTool(Items.CRYSTAL_SAW))
     ;
 
     private final AbstractTool[] tools;
@@ -77,8 +79,6 @@ public enum Tool {
     public static final int RAKE = 5341;
 
     public static final int SEED_DIBBER = 5343;
-
-    public static final int SAW = 8794;
 
     public static final int CRYSTAL_SAW = 9625;
 
