@@ -5,7 +5,7 @@ import io.ruin.model.item.Items;
 import lombok.AllArgsConstructor;
 
 public enum Tool {
-    SAW(new InventoryTool(Items.SAW), new InventoryTool(Items.CRYSTAL_SAW))
+    SAW(new InventoryTool(Items.SAW), new InventoryTool(Items.CRYSTAL_SAW), new EquipmentTool(24880))
     ;
 
     private final AbstractTool[] tools;
