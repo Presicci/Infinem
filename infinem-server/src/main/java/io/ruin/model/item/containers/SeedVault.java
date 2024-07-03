@@ -141,7 +141,7 @@ public class SeedVault extends ItemContainer {
         }
         if(player.getBankPin().requiresVerification(p -> sendVault()))
             return;
-        player.openInterface(InterfaceType.MAIN, Interface.SEED_VAULT);
+        player.openInterface(InterfaceType.MAIN_STRETCHED, Interface.SEED_VAULT);
         player.openInterface(InterfaceType.INVENTORY, Interface.SEED_VAULT_INVENTORY);
         player.getPacketSender().sendItems(Interface.SEED_VAULT, 15, 626, this.items);
         player.getPacketSender().sendAccessMask(Interface.SEED_VAULT, 15, 0, 90,
