@@ -1,6 +1,52 @@
 package io.ruin.model.skills;
 
-public class Tool {
+import io.ruin.model.entity.player.Player;
+import lombok.AllArgsConstructor;
+
+public enum Tool {
+    ;
+
+    private final AbstractTool[] tools;
+
+    Tool(AbstractTool... tools) {
+        this.tools = tools;
+    }
+
+    public boolean hasTool(Player player) {
+        for (AbstractTool tool : tools) {
+            if (tool.hasTool(player)) return true;
+        }
+        return false;
+    }
+
+    @AllArgsConstructor
+    private abstract static class AbstractTool {
+        protected final int toolId;
+
+        public abstract boolean hasTool(Player player);
+    }
+
+    private static class InventoryTool extends AbstractTool {
+        private InventoryTool(int toolId) {
+            super(toolId);
+        }
+
+        @Override
+        public boolean hasTool(Player player) {
+            return player.getInventory().hasId(toolId);
+        }
+    }
+
+    private static class EquipmentTool extends AbstractTool {
+        private EquipmentTool(int toolId) {
+            super(toolId);
+        }
+
+        @Override
+        public boolean hasTool(Player player) {
+            return player.getInventory().hasId(toolId) || player.getEquipment().hasId(toolId);
+        }
+    }
 
     public static final int KNIFE = 946;
 
