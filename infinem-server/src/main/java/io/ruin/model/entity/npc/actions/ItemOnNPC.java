@@ -25,4 +25,10 @@ public enum ItemOnNPC {
     ItemOnNPC(int npcId, int itemId, ItemNPCAction action) {
         ItemNPCAction.register(itemId, npcId, action);
     }
+
+    ItemOnNPC(int npcId, ItemNPCAction action, int... items) {
+        for (int item : items) {
+            ItemNPCAction.register(item, npcId, action);
+        }
+    }
 }
