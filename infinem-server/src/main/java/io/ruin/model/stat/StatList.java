@@ -1,6 +1,9 @@
 package io.ruin.model.stat;
 
 import com.google.gson.annotations.Expose;
+import io.ruin.model.item.Items;
+import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.skills.SkillingOutfit;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.model.World;
@@ -170,6 +173,7 @@ public class StatList {
         }
 
         amount *= getExperienceMultiplier(type);
+        amount *= getSkillingOutfitMultiplier(type);
 
         double relicMulti = getRelicMultiplier(type);
         amount *= relicMulti;
@@ -243,6 +247,10 @@ public class StatList {
                     : AreaReward.SLAYER_EXPERIENCE_50.hasReward(player) ? 1.05
                     : 1.025;
         return multi;
+    }
+
+    private double getSkillingOutfitMultiplier(StatType statType) {
+        return SkillingOutfit.getExperienceBonus(player, statType);
     }
 
     public void process() {
