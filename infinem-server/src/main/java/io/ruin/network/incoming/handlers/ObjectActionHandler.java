@@ -33,6 +33,7 @@ public class ObjectActionHandler implements Incoming {
             return;
         }
         if(option == 2) {
+            System.out.println(Arrays.toString(in.getPayload()));
             int id = in.readUnsignedLEShort();
             int y = in.readShortA();
             int x = in.readLEShort();
@@ -49,9 +50,10 @@ public class ObjectActionHandler implements Incoming {
             return;
         }
         if(option == 4) {
+            System.out.println(Arrays.toString(in.getPayload()));
             int x = in.readLEShortA();
             int ctrlRun = in.readByteA();
-            int id = in.readLEShort();
+            int id = in.readUnsignedLEShort();
             int y = in.readShortA();
             handleAction(player, option, id, x, y, ctrlRun);
             return;
