@@ -87,7 +87,6 @@ public interface NPCAction {
     /**
      * Varpbit/varp recursive registers
      */
-
     static void registerIncludeVariants(int npcId, String optionName, NPCAction action) {
         NPCDefinition def = NPCDefinition.get(npcId);
         if ((def.varpbitId != -1 || def.varpId != -1) && def.showIds != null) {
@@ -98,6 +97,19 @@ public interface NPCAction {
             }
         } else {
             register(npcId, optionName, action);
+        }
+    }
+
+    static void registerIncludeVariants(int npcId, int option, NPCAction action) {
+        NPCDefinition def = NPCDefinition.get(npcId);
+        if ((def.varpbitId != -1 || def.varpId != -1) && def.showIds != null) {
+            int[] ids = def.showIds;
+            for (int id : ids) {
+                if (id == -1) continue;
+                register(id, option, action);
+            }
+        } else {
+            register(npcId, option, action);
         }
     }
 }
