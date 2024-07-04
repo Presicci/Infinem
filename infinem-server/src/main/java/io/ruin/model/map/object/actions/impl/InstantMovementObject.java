@@ -10,6 +10,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
  * Created on 6/23/2023
  */
 public enum InstantMovementObject {
+    JEFF_HOUSE_UP(11789, new Position(3237, 3447), new Position(3239, 3447, 1)),
+    JEFF_HOUSE_DOWN(11793, new Position(3237, 3447, 1), new Position(3238, 3446, 0)),
+
     MYRE_TREE_NORTH(5003, 2, new Position(3502, 3431), new Position(3502, 3425, 0), 828),
     MYRE_TREE_SOUTH(5003, 2, new Position(3502, 3426), new Position(3502, 3432, 0), 828),
 
