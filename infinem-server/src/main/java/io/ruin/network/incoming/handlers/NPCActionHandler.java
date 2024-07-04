@@ -10,6 +10,8 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.map.route.routes.TargetRoute;
+import io.ruin.model.skills.construction.mahoganyhomes.MahoganyClient;
+import io.ruin.model.skills.construction.mahoganyhomes.MahoganyHomes;
 import io.ruin.network.incoming.Incoming;
 import io.ruin.utility.DebugMessage;
 import io.ruin.utility.IdHolder;
@@ -123,6 +125,11 @@ public class NPCActionHandler implements Incoming {
                     return;
                 }
                 if (def.anagram.advance(player)) return;
+            }
+            MahoganyClient client = MahoganyHomes.getClient(player);
+            if (client != null && client.getNpcId() == npc.getId()) {
+                client.dialogue(player);
+                return;
             }
             if(action == null && (actions = def.defaultActions) != null)
                 action = actions[i];

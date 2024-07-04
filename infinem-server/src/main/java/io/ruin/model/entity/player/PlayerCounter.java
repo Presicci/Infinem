@@ -413,7 +413,9 @@ public enum PlayerCounter {
     IMPLINGS_CAUGHT,
     BUTTERFLIES_CAUGHT,
 
-    PYRAMID_PLUNDER_GAMES
+    PYRAMID_PLUNDER_GAMES,
+
+    MAHOGANY_HOMES_CONTRACTS
     ;
 
     public final int increment(Player player, int amount) {

@@ -19,7 +19,9 @@ public enum InterfaceRelic {
     TRICKSTER(4730, Relic.TRICKSTER),
     FAIRYS_FLIGHT(1725, Relic.FAIRYS_FLIGHT),
     GLOBETROTTER(4717, Relic.GLOBETROTTER),
-    DUNGEON_HUB_PREMIUM(729, Relic.DUNGEON_HUB_PREMIUM);
+    DUNGEON_HUB_PREMIUM(729, Relic.DUNGEON_HUB_PREMIUM),
+    POISON_RELIC(9011, Relic.POISON_RELIC),
+    TANK_RELIC(9012, Relic.TANK_RELIC);
 
     private final int struct;
     private final Relic relic;

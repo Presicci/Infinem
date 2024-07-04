@@ -3714,5 +3714,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 8
+  },
+  {
+    "name": "Angelo",
+    "id": 10431,
+    "x": 1782,
+    "y": 3625,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]

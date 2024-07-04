@@ -5147,5 +5147,14 @@
     "z": 0,
     "direction": "S",
     "walkRange": 5
+  },
+  {
+    "name": "Ellie",
+    "id": 10430,
+    "x": 2635,
+    "y": 3294,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
   }
 ]
