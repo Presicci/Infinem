@@ -12,10 +12,10 @@ import lombok.Getter;
 @Getter
 public enum SkillingOutfit {
     CONSTRUCTION(StatType.Construction, 0.5,
-            new SkillingOutfitPiece(24872, 0.4),
-            new SkillingOutfitPiece(24874, 0.8),
-            new SkillingOutfitPiece(24876, 0.6),
-            new SkillingOutfitPiece(24878, 0.2)
+            new SkillingOutfitPiece(0.4, 24872),
+            new SkillingOutfitPiece(0.8, 24874),
+            new SkillingOutfitPiece(0.6, 24876),
+            new SkillingOutfitPiece(0.2, 24878)
     );
 
     private final StatType statType;
@@ -31,15 +31,19 @@ public enum SkillingOutfit {
     public double getExperienceBonus(Player player) {
         double bonus = 1D;
         int equippedPieces = 0;
-        for (SkillingOutfitPiece piece : pieces) {
-            if (player.getEquipment().hasId(piece.itemId)) {
-                bonus += piece.experienceBonus;
-                ++equippedPieces;
+        piece: for (SkillingOutfitPiece piece : pieces) {
+            for (int itemId : piece.itemIds) {
+                if (player.getEquipment().hasId(itemId)) {
+                    bonus += piece.experienceBonus;
+                    ++equippedPieces;
+                    continue piece;
+                }
             }
         }
         if (setBonus > 0D && equippedPieces >= pieces.length) {
             bonus += setBonus;
         }
+        player.sendMessage(bonus + "");
         return bonus;
     }
 
@@ -54,9 +58,13 @@ public enum SkillingOutfit {
     }
 
     @Getter
-    @AllArgsConstructor
     private static class SkillingOutfitPiece {
-        private final int itemId;
         private final double experienceBonus;
+        private final int[] itemIds;
+
+        private SkillingOutfitPiece(double experienceBonus, int... itemIds) {
+            this.experienceBonus = experienceBonus;
+            this.itemIds = itemIds;
+        }
     }
 }
