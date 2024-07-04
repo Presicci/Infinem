@@ -109,26 +109,7 @@ public class NPCActionHandler implements Incoming {
             NPCAction[] actions = def.varpbitId != -1 ? def.defaultActions : npc.actions;
             if(actions != null)
                 action = actions[i];
-            if(def.cryptic != null && def.cryptic.advance(player))
-                return;
-            if(def.anagram != null) {
-                if (def.anagram.type == ClueType.MASTER && def.anagram.canAdvance(player)) {
-                    def.anagram.puzzleDialogue(player, npc);
-                    return;
-                }
-                if (def.anagram.hasChallenge() && def.anagram.canAdvance(player)) {
-                    def.anagram.challengeDialogue(player, npc);
-                    return;
-                }
-                if (def.anagram.requiresPuzzleBox() && def.anagram.canAdvance(player)) {
-                    def.anagram.puzzleBoxDialogue(player, npc);
-                    return;
-                }
-                if (def.anagram.advance(player)) return;
-            }
-            MahoganyClient client = MahoganyHomes.getClient(player);
-            if (client != null && client.getNpcId() == npc.getId()) {
-                client.dialogue(player);
+            if (option == 1 && dialogueOverride(player, npc, def)) {
                 return;
             }
             if(action == null && (actions = def.defaultActions) != null)
@@ -144,6 +125,32 @@ public class NPCActionHandler implements Incoming {
                     new PlayerDialogue("Uhh.. yeah I guess.")
             );
         });
+    }
+
+    private static boolean dialogueOverride(Player player, NPC npc, NPCDefinition def) {
+        if(def.cryptic != null && def.cryptic.advance(player))
+            return true;
+        if(def.anagram != null) {
+            if (def.anagram.type == ClueType.MASTER && def.anagram.canAdvance(player)) {
+                def.anagram.puzzleDialogue(player, npc);
+                return true;
+            }
+            if (def.anagram.hasChallenge() && def.anagram.canAdvance(player)) {
+                def.anagram.challengeDialogue(player, npc);
+                return true;
+            }
+            if (def.anagram.requiresPuzzleBox() && def.anagram.canAdvance(player)) {
+                def.anagram.puzzleBoxDialogue(player, npc);
+                return true;
+            }
+            if (def.anagram.advance(player)) return true;
+        }
+        MahoganyClient client = MahoganyHomes.getClient(player);
+        if (client != null && client.getNpcId() == npc.getId()) {
+            client.dialogue(player);
+            return true;
+        }
+        return false;
     }
 
     private static void debug(Player player, NPC npc, NPCDefinition def, int option) {
