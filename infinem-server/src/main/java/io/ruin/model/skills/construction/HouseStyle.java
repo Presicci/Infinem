@@ -36,7 +36,7 @@ public enum HouseStyle {
      *  0 = hosidius
      *  1 = cozy cabin
      */
-    HOSIDIUS(1, 5000, 39883, 39884, 37457, 37455, 39889, player -> false),
+    HOSIDIUS(1, 5000, 39883, 39884, 37457, 37455, 39889, player -> player.hasAttribute("HOSIDIUS_BLUEPRINT")),
     COZY_CABIN(1, 35000, 40862, 40863, 40860, 40858, 39889, player -> false);
 
     public final int level;
