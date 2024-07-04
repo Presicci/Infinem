@@ -60,7 +60,7 @@ public class Inventory extends ItemContainer {
             return false;
         weight = 0;
         for(Item item : items) {
-            if(item != null)
+            if(item != null && item.getDef().weightInventory > 0)
                 weight += item.getDef().weightInventory;
         }
         return true;
