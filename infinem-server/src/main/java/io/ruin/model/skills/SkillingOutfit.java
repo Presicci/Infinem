@@ -18,7 +18,7 @@ public enum SkillingOutfit {
             new SkillingOutfitPiece(0.2, 24878)
     ),
     GRACEFUL(StatType.Agility, 0.4, // 3% total boost
-            // Normal, purple, blue, yellow, red, green, white, dark blue, black, brown
+            // Normal, arceuus, port piscarilius, lovakengj, shayzien, hosidius, kourend, brimhaven agility, hallowed sepulchre, trailblazer
             new SkillingOutfitPiece(0.35, 11850, 13580, 13592, 13604, 13616, 13628, 13668, 21063, 24745, 25071),            // Hood
             new SkillingOutfitPiece(0.4, 11852, 13582, 13594, 13606, 13618, 13630, 13670, 21066, 24748, 25074),             // Cape
             new SkillingOutfitPiece(0.55, 11854, 13584, 13596, 13608, 13620, 13632, 13672, 21069, 24751, 25077),            // Top
