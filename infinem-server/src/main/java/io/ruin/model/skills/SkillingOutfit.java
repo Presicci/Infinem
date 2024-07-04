@@ -27,10 +27,10 @@ public enum SkillingOutfit {
             new SkillingOutfitPiece(0.4, 11860, 13590, 13602, 13614, 13626, 13638, 13678, 21078, 24760, 25086)              // Boots
     ),
     PROSPECTOR(StatType.Mining, 0.5,
-            new SkillingOutfitPiece(0.4, Items.PROSPECTOR_HELMET),
-            new SkillingOutfitPiece(0.8, Items.PROSPECTOR_JACKET, Items.VARROCK_ARMOUR_4),
-            new SkillingOutfitPiece(0.6, Items.PROSPECTOR_LEGS),
-            new SkillingOutfitPiece(0.2, Items.PROSPECTOR_BOOTS)
+            new SkillingOutfitPiece(0.4, Items.PROSPECTOR_HELMET, 25549),
+            new SkillingOutfitPiece(0.8, Items.PROSPECTOR_JACKET, Items.VARROCK_ARMOUR_4, 25551),
+            new SkillingOutfitPiece(0.6, Items.PROSPECTOR_LEGS, 25553),
+            new SkillingOutfitPiece(0.2, Items.PROSPECTOR_BOOTS, 25555)
     );
 
     private final StatType statType;
