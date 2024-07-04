@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
@@ -112,11 +113,11 @@ public enum CrystalSinging {
         }
         player.startEvent(event -> {
             if (!player.getStats().check(StatType.Crafting, sing.levelRequirement)) {
-                player.sendMessage("<col=880000>You need a crafting level of " + sing.levelRequirement + " to make this");
+                player.dialogue(new MessageDialogue("You need a crafting level of " + sing.levelRequirement + " to make this"));
                 return;
             }
             if (!player.getStats().check(StatType.Smithing, sing.levelRequirement)) {
-                player.sendMessage("<col=880000>You need a smithing level of " + sing.levelRequirement + " to make this");
+                player.dialogue(new MessageDialogue("You need a smithing level of " + sing.levelRequirement + " to make this"));
                 return;
             }
             if (player.getInventory().getAmount(Items.CRYSTAL_SHARD) < sing.requiredShards) {
