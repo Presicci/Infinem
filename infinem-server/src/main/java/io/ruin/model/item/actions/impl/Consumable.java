@@ -550,7 +550,7 @@ public class Consumable {
     private static void registerEat(int id, int heal, int ticks, boolean stackable, Consumer<Player> eatAction) {
         ItemDefinition.get(id).consumable = true;
         ItemAction.registerInventory(id, "eat", (player, item) -> {
-            if(eat(player, item, -1, heal, ticks, stackable))
+            if(eat(player, item, -1, heal, ticks, stackable, false))
                 eatAction.accept(player);
         });
     }
@@ -558,7 +558,7 @@ public class Consumable {
     private static void registerEat(int id, int newId, int heal, int ticks, boolean stackable, Consumer<Player> eatAction) {
         ItemDefinition.get(id).consumable = true;
         ItemAction.registerInventory(id, "eat", (player, item) -> {
-            if(eat(player, item, newId, heal, ticks, stackable))
+            if(eat(player, item, newId, heal, ticks, stackable, false))
                 eatAction.accept(player);
         });
     }
@@ -570,7 +570,7 @@ public class Consumable {
                 player.sendMessage("The " + name + " can be eaten only in the Wilderness.");
                 return;
             }
-            if(eat(player, item, -1, heal, 3, false))
+            if(eat(player, item, -1, heal, 3, false, false))
                 player.sendFilteredMessage("You eat the " + name + ".");
         });
     }
@@ -582,7 +582,7 @@ public class Consumable {
     private static void registerDrink(int id, int newId, int heal, int ticks, Consumer<Player> eatAction) {
         ItemDefinition.get(id).consumable = true;
         ItemAction.registerInventory(id, "drink", (player, item) -> {
-            if (eat(player, item, newId, heal, ticks, false))
+            if (eat(player, item, newId, heal, ticks, false, true))
                 eatAction.accept(player);
         });
     }
@@ -620,7 +620,7 @@ public class Consumable {
             ItemAction.registerInventory(itemId, "eat", (player, item) -> {
                 if (eat(player, item,
                         item.getId() == 7526 ? -1 : item.getId() + (item.getId() == 7521 ? 2 : 1),
-                        heal, 2, 2, false))
+                        heal, 2, 2, false, false))
                     player.sendFilteredMessage("You eat some " + name + ".");
             });
         }
@@ -646,11 +646,11 @@ public class Consumable {
         });
     }
 
-    private static boolean eat(Player player, Item item, int newId, int heal, int ticks, boolean stackable) {
-        return eat(player, item, newId, heal, ticks, 3, stackable);
+    private static boolean eat(Player player, Item item, int newId, int heal, int ticks, boolean stackable, boolean drink) {
+        return eat(player, item, newId, heal, ticks, 3, stackable, drink);
     }
 
-    private static boolean eat(Player player, Item item, int newId, int heal, int ticks, int attackTicks, boolean stackable) {
+    private static boolean eat(Player player, Item item, int newId, int heal, int ticks, int attackTicks, boolean stackable, boolean drink) {
         if(player.isLocked() || player.isStunned())
             return false;
         if(player.eatDelay.isDelayed() || player.karamDelay.isDelayed() || player.potDelay.isDelayed())
@@ -665,7 +665,11 @@ public class Consumable {
             item.remove();
         else
             item.setId(newId);
-        animEat(player);
+        if (drink) {
+            animDrink(player);
+        } else {
+            animEat(player);
+        }
         player.incrementHp(heal);
         player.eatDelay.delay(ticks);
         player.getCombat().delayAttack(attackTicks);
