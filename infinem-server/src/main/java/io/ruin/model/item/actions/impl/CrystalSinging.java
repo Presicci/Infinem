@@ -121,6 +121,7 @@ public enum CrystalSinging {
                 return;
             }
             if (player.getInventory().getAmount(Items.CRYSTAL_SHARD) < sing.requiredShards) {
+                player.sendMessage(sing.getRequiredItemsString() + "to make this.");
                 return;
             }
             for (Item requiredItem : sing.getRequiredItems()) {
