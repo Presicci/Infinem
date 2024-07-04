@@ -2,6 +2,7 @@ package io.ruin.model.skills.construction;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.impl.storage.PlankSack;
 
 import java.util.Arrays;
 import java.util.List;
@@ -53,11 +54,16 @@ public enum Material {
                     return true;
             }
             return false;
+        } else if (material.getId() == REGULAR_PLANK.getItemId()
+                || material.getId() == OAK_PLANK.getItemId()
+                || material.getId() == TEAK_PLANK.getItemId()
+                || material.getId() == MAHOGANY_PLANK.getItemId()) {
+            return PlankSack.hasMaterials(player, material.getId(), material.getAmount());
         } else
             return player.getInventory().contains(material.getId(), material.getAmount());
     }
 
-    public static int removeMaterial(Player player, Item material) {
+    public static void removeMaterial(Player player, Item material) {
         if (material.getId() == NAILS.getItemId()) {
             int removed = 0;
             for (int id : NAIL_TYPES) {
@@ -65,9 +71,14 @@ public enum Material {
                 if (removed >= material.getAmount())
                     break;
             }
-            return removed;
-        } else
-            return player.getInventory().remove(material.getId(), material.getAmount());
+        } else if (material.getId() == REGULAR_PLANK.getItemId()
+                || material.getId() == OAK_PLANK.getItemId()
+                || material.getId() == TEAK_PLANK.getItemId()
+                || material.getId() == MAHOGANY_PLANK.getItemId()) {
+            PlankSack.removeMaterials(player, material.getId(), material.getAmount());
+        } else {
+            player.getInventory().remove(material.getId(), material.getAmount());
+        }
     }
 
     public static final List<Integer> NAIL_TYPES = Arrays.asList(4819,4820,1539,4821,4822,4823,4824);
