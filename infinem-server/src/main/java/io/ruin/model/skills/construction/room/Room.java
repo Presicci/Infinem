@@ -351,7 +351,7 @@ public abstract class Room {
             player.dialogue(new MessageDialogue("You will need a hammer and a saw to build that."));
             return;
         }
-        if (!selected.hasAllMaterials(player) && !player.isAdmin()) {
+        if (!selected.hasAllMaterials(player) && !(player.isAdmin() && player.debug)) {
             player.sendMessage("You do not have all the required materials to build that.");
             return;
         }

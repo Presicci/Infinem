@@ -841,7 +841,7 @@ public enum Buildable {
     }
 
     public boolean hasAllMaterials(Player player) {
-        return player.isAdmin() || materials.stream().allMatch(item -> Material.hasMaterial(player, item));
+        return (player.isAdmin() && player.debug) || materials.stream().allMatch(item -> Material.hasMaterial(player, item));
     }
 
     public void removeMaterials(Player player) {
@@ -892,10 +892,10 @@ public enum Buildable {
 
     public static void sendFurnitureCreation(Player player, Room room, int hotspotIndex, Buildable... buildables) {
         int count = 1;
-        boolean allowHotkeys = true || player.isAdmin();
+        boolean allowHotkeys = true;
         player.openInterface(InterfaceType.MAIN, Interface.CONSTRUCTION_FURNITURE_CREATION);
         for (Buildable b : buildables)
-            player.getPacketSender().sendClientScript(1404, "iiisi", count++, b.getItemId(), b.getLevelReq(), b.getCreationMenuString(), b.hasLevelAndMaterials(player) || player.isAdmin() ? 1 : 0);
+            player.getPacketSender().sendClientScript(1404, "iiisi", count++, b.getItemId(), b.getLevelReq(), b.getCreationMenuString(), b.hasLevelAndMaterials(player) || (player.isAdmin() && player.debug) ? 1 : 0);
         player.getPacketSender().sendClientScript(1406, "ii", count - 1, allowHotkeys ? 0 : 1);
         player.getPacketSender().sendAccessMask(458, 2, 1, count - 1, 1);
         player.getPacketSender().sendClientScript(2157, "");
