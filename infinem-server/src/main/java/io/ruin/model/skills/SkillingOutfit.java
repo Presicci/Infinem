@@ -2,7 +2,6 @@ package io.ruin.model.skills;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.stat.StatType;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
@@ -16,6 +15,15 @@ public enum SkillingOutfit {
             new SkillingOutfitPiece(0.8, 24874),
             new SkillingOutfitPiece(0.6, 24876),
             new SkillingOutfitPiece(0.2, 24878)
+    ),
+    GRACEFUL(StatType.Agility, 0.4, // 3% total boost
+            // Normal, purple, blue, yellow, red, green, white, dark blue, black, brown
+            new SkillingOutfitPiece(0.35, 11850, 13580, 13592, 13604, 13616, 13628, 13668, 21063, 24745, 25071),            // Hood
+            new SkillingOutfitPiece(0.4, 11852, 13582, 13594, 13606, 13618, 13630, 13670, 21066, 24748, 25074),             // Cape
+            new SkillingOutfitPiece(0.55, 11854, 13584, 13596, 13608, 13620, 13632, 13672, 21069, 24751, 25077),            // Top
+            new SkillingOutfitPiece(0.6, 11856, 13586, 13598, 13610, 13622, 13634, 13674, 21072, 24754, 25080),             // Legs
+            new SkillingOutfitPiece(0.3, 11858, 13588, 13600, 13612, 13624, 13636, 13676, 21075, 24757, 25083),             // Gloves
+            new SkillingOutfitPiece(0.4, 11860, 13590, 13602, 13614, 13626, 13638, 13678, 21078, 24760, 25086)              // Boots
     );
 
     private final StatType statType;
