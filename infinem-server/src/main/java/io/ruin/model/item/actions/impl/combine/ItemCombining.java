@@ -127,9 +127,9 @@ public enum ItemCombining {
         player.dialogue(
             new YesNoDialogue("Are you sure you want to do this?", message, itemCombining.combinedId, 1, () -> {
                 player.animate(713);
+                player.dialogue(new ItemDialogue().one(itemCombining.combinedId, "You apply the " + kit.getDef().name + " to the " + item.getDef().name + "."));
                 kit.remove();
                 item.setId(itemCombining.combinedId);
-                player.dialogue(new ItemDialogue().one(itemCombining.combinedId, "You apply the " + item.getDef().name + " to the " + kit.getDef().name + "."));
             })
         );
     }
@@ -150,7 +150,7 @@ public enum ItemCombining {
 
     static {
         for (ItemCombining kit : values()) {
-            ItemItemAction.register(kit.mainId, kit.accessoryId, (player, primary, secondary) -> make(player, primary, secondary, kit));
+            ItemItemAction.register(kit.mainId, kit.accessoryId, (player, mainId, accessoryId) -> make(player, mainId, accessoryId, kit));
             ItemAction.registerInventory(kit.combinedId, "dismantle", (player, item) -> revert(player, item, kit));
             ItemAction.registerInventory(kit.combinedId, "revert", (player, item) -> revert(player, item, kit));
             ItemAction.registerInventory(kit.combinedId, "dismantle kit", (player, item) -> revert(player, item, kit));
