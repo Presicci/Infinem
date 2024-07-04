@@ -1,6 +1,7 @@
 package io.ruin.model.skills;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.Items;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
@@ -24,6 +25,12 @@ public enum SkillingOutfit {
             new SkillingOutfitPiece(0.6, 11856, 13586, 13598, 13610, 13622, 13634, 13674, 21072, 24754, 25080),             // Legs
             new SkillingOutfitPiece(0.3, 11858, 13588, 13600, 13612, 13624, 13636, 13676, 21075, 24757, 25083),             // Gloves
             new SkillingOutfitPiece(0.4, 11860, 13590, 13602, 13614, 13626, 13638, 13678, 21078, 24760, 25086)              // Boots
+    ),
+    PROSPECTOR(StatType.Mining, 0.5,
+            new SkillingOutfitPiece(0.4, Items.PROSPECTOR_HELMET),
+            new SkillingOutfitPiece(0.8, Items.PROSPECTOR_JACKET, Items.VARROCK_ARMOUR_4),
+            new SkillingOutfitPiece(0.6, Items.PROSPECTOR_LEGS),
+            new SkillingOutfitPiece(0.2, Items.PROSPECTOR_BOOTS)
     );
 
     private final StatType statType;

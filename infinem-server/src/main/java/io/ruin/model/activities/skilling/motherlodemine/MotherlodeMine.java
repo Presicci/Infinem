@@ -289,7 +289,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                     player.collectResource(new Item(PAY_DIRT, 1));
                     player.getInventory().add(PAY_DIRT, 1);
                     PlayerCounter.MINED_PAYDIRT.increment(player, 1);
-                    player.getStats().addXp(StatType.Mining, 60 * Mining.xpBonus(player, false), true);
+                    player.getStats().addXp(StatType.Mining, 60, true);
                     player.sendMessage("You manage to mine some pay-dirt.");
                     player.resetAnimation();
                     if (!upperLevel && Random.rollDie(3, 1)) {

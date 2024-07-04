@@ -159,7 +159,7 @@ public class Mining {
 
                     counter.increment(player, amount);
                     if (rockData == Rock.GEM_ROCK) {
-                        player.getStats().addXp(StatType.Mining, rockData.experience * xpBonus(player, false), true);
+                        player.getStats().addXp(StatType.Mining, rockData.experience, true);
                     } else if (gem != null) {   // No xp is earned and the ore is not depleted, just go next
                         if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
                             player.sendFilteredMessage("You find an " + gem.getDef().name + ".");
@@ -167,7 +167,7 @@ public class Mining {
                         player.getTaskManager().doLookupByUUID(24, 1);  // Obtain a Gem While Mining
                         continue;
                     } else {
-                        player.getStats().addXp(StatType.Mining, (rockyOutcrop ? rockData.multiExp[random] : rockData.experience * xpBonus(player, multiple)) * amount, true);
+                        player.getStats().addXp(StatType.Mining, (rockyOutcrop ? rockData.multiExp[random] : rockData.experience * (multiple ? 2 : 1)) * amount, true);
                     }
                     if (!player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST)) {
                         player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
@@ -312,37 +312,6 @@ public class Mining {
             player.sendMessage(crystals ? "These crystals are made up of amethyst." : "This rock contains " + (rockData == Rock.GEM_ROCK ? "gems" : rockData.rockName) + ".");
             player.unlock();
         });
-    }
-
-    public static double xpBonus(Player player, Boolean multiple) {
-        double multiplier = 1;
-        multiplier *= prospectorBonus(player);
-        if (multiple)
-            multiplier *= 2;
-        return multiplier;
-    }
-
-    public static double prospectorBonus(Player player) {
-        double bonus = 1.0;
-        Item helmet = player.getEquipment().get(Equipment.SLOT_HAT);
-        Item jacket = player.getEquipment().get(Equipment.SLOT_CHEST);
-        Item legs = player.getEquipment().get(Equipment.SLOT_LEGS);
-        Item boots = player.getEquipment().get(Equipment.SLOT_FEET);
-
-        if (helmet != null && helmet.getId() == 12013)
-            bonus += 0.4;
-        if (jacket != null && (jacket.getId() == 12014 || legs.getId() == Items.VARROCK_ARMOUR_4))
-            bonus += 0.8;
-        if (legs != null && legs.getId() == 12015)
-            bonus += 0.6;
-        if (boots != null && boots.getId() == 12016)
-            bonus += 0.2;
-
-        /* Whole set gives an additional 0.5% exp bonus */
-        if (bonus >= 3.0)
-            bonus += 0.5;
-
-        return bonus;
     }
 
     private static boolean isSalt(Rock rockdata) {
