@@ -231,7 +231,12 @@ public enum CollectionLogInfo {
     MINIGAMES(474, 17, new int[]{25, 26, 35}, 40697881, 40697882, 40697891, 40697883) {
         @Override
         public int getKillCount(Player player, int slot) {
-            return 0;
+            switch (slot) {
+                case 8:
+                    return PlayerCounter.MAHOGANY_HOMES_CONTRACTS.get(player);
+                default:
+                    return 0;
+            }
         }
     },
     OTHER(475, 21, new int[]{27, 32, 33}, 40697884, 40697889, 40697890, 40697885) {
