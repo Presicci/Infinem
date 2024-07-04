@@ -7,6 +7,7 @@ import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.player.killcount.BossKillCounter;
+import io.ruin.model.entity.player.killcount.SlayerKillCounter;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
@@ -247,8 +248,8 @@ public enum CollectionLogInfo {
                     return 0;
                 case 8://glough's experiments kills
                     return 0;//;player.demonicGorillaKills.getKills() + player.torturedGorillaKills.getKills();
-                case 12://revenant kills
-                    return 0;//player.revenantKills.getKills();
+                case 14://revenant kills
+                    return player.killCounterMap.get(SlayerKillCounter.REVENANTS.name()).getKills();//player.revenantKills.getKills();
 
                 default:
                     return 0;
