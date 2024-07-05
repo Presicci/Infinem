@@ -47,7 +47,7 @@ public class Woodcutting {
     private static final Config SULLIUSCEP_VARPBIT = Config.varpbit(5808, true);
 
     private static void chop(Tree treeData, Player player, GameObject tree, int treeStump) {
-        chop(treeData, player, () -> tree.id == treeStump, worldEvent -> {
+        chop(treeData, player, tree, () -> tree.id == treeStump, worldEvent -> {
             tree.setId(treeStump);
             player.publicSound(2734, 1, 0);
             worldEvent.delay(treeData.respawnTime);
@@ -61,7 +61,7 @@ public class Woodcutting {
      * @param treeDeadCheck  Checks if the tree was removed during the time in between the actions of the given player. Only relevant if the tree can lose logs through means other than the given player chopping it
      * @param treeDeadAction What to do when the given player chops the tree's last logs. Should include changing the object into a stump and handle the respawning.
      */
-    public static void chop(Tree treeData, Player player, Supplier<Boolean> treeDeadCheck, EventConsumer treeDeadAction) {
+    public static void chop(Tree treeData, Player player, GameObject tree, Supplier<Boolean> treeDeadCheck, EventConsumer treeDeadAction) {
         Hatchet hatchet = Hatchet.find(player);
         if (hatchet == null) {
             player.sendMessage("You do not have an axe which you have the woodcutting level to use.");
@@ -168,7 +168,10 @@ public class Woodcutting {
                     if (hatchet == Hatchet.CRYSTAL) {
                         CrystalEquipment.AXE.removeCharge(player);
                     }
-                    if ((treeData.single || Random.get(10) == 3) && treeData != Tree.DRAMEN_TREE) {
+                    if (treeData.single
+                            || (treeData.fellChance > 0 && Random.get() < treeData.fellChance)
+                            || (tree == null && treeDeadAction != null && treeData.fellTime > 0 && Random.rollDie(Math.min(8, treeData.fellTime / 10)))  // Should catch farming trees
+                    ) {
                         player.resetAnimation();
                         if (treeData == Tree.SULLIUSCEP) {
                             int newValue = SULLIUSCEP_VARPBIT.increment(player, 1);
@@ -178,7 +181,11 @@ public class Woodcutting {
                         }
                         World.startEvent(treeDeadAction);
                         return;
+                    } else if (tree != null && treeData.fellTime > 0) {
+                        ForestryTree.pingTree(player, tree, treeData, treeDeadAction);
                     }
+                } else if (tree != null) {
+                    ForestryTree.pingIfActive(player, tree);
                 }
                 if (attempts++ % 4 == 0)
                     player.animate(hatchet.animationId);

@@ -78,7 +78,7 @@ public class RedwoodPatch extends Patch {
     }
 
     private void chop() {
-        Woodcutting.chop(Tree.REDWOOD, player, () -> false, (worldEvent) -> {
+        Woodcutting.chop(Tree.REDWOOD, player, null, () -> false, (worldEvent) -> {
             player.sendFilteredMessage("You chop down all the bark on this side of the tree.");
             int direction = -1;
             if (player.getPosition().getX() == 1225) {

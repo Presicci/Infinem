@@ -28,7 +28,7 @@ public class CrystalTreePatch extends Patch {
     }
 
     private void chop() {
-        Woodcutting.chop(getPlantedCrop().getTreeType(), player, () -> false, (worldEvent) -> {
+        Woodcutting.chop(getPlantedCrop().getTreeType(), player, null, () -> false, (worldEvent) -> {
             player.getInventory().addOrDrop(23866, getCompost() == 2 ? Random.get(11, 16) : getCompost() == 3 ? Random.get(14, 16) : Random.get(8, 16));
             player.sendFilteredMessage("You chop down the tree and get some crystal shards.");
             reset(false);

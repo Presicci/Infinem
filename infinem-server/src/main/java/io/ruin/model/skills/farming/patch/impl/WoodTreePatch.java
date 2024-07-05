@@ -60,7 +60,7 @@ public class WoodTreePatch extends Patch {
     }
 
     private void chop() {
-        Woodcutting.chop(getPlantedCrop().getTreeType(), player, () -> false, (worldEvent) -> {
+        Woodcutting.chop(getPlantedCrop().getTreeType(), player, null, () -> false, (worldEvent) -> {
             advanceStage();
             player.sendFilteredMessage("You chop down the tree.");
             update();

@@ -72,7 +72,7 @@ public class CelastrusPatch extends Patch {
     }
 
     private void chop() {
-        Woodcutting.chop(Tree.CELASTRUS, player, () -> false, (worldEvent) -> {
+        Woodcutting.chop(Tree.CELASTRUS, player, null, () -> false, (worldEvent) -> {
             advanceStage();
             player.sendFilteredMessage("You chop down the tree.");
             player.resetAnimation();
