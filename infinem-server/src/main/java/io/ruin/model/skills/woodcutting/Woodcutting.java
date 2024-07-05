@@ -13,6 +13,7 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.BirdNest;
+import io.ruin.model.item.actions.impl.chargable.CrystalEquipment;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
 import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
 import io.ruin.model.item.loot.LootItem;
@@ -144,7 +145,6 @@ public class Woodcutting {
                                 player.sendFilteredMessage("You get some " + treeData.treeName + ".");
                                 player.getInventory().add(treeData.log, amount);
                             }
-
                             player.getTaskManager().doLookupByUUID(16, amount);  // Chop Some Logs
                             if (hatchet == Hatchet.STEEL)
                                 player.getTaskManager().doLookupByUUID(17, 1);  // Chop Some Logs With a Steel Axe
@@ -169,6 +169,10 @@ public class Woodcutting {
                         }
                         World.startEvent(treeDeadAction);
                         return;
+                    }
+                    if (hatchet == Hatchet.CRYSTAL) {
+                        CrystalEquipment.AXE.removeCharge(player);
+                        if (!CrystalEquipment.AXE.hasCharge(player)) break;
                     }
                 }
                 if (attempts++ % 4 == 0)
