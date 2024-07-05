@@ -146,33 +146,5 @@ public class WoodcuttingGuild {
          * Redwood tree exit back to lower level
          */
         ObjectAction.register(29682, "enter", (player, obj) -> player.getMovement().teleport(player.getAbsX(), player.getAbsY(), player.getHeight() - 1));
-
-        NPCAction.register(9474, "chop", (player, npc) -> player.startEvent(event -> {
-            event.delay(1);
-            Hatchet axe = Hatchet.find(player);
-
-            if (axe == null) {
-                player.sendMessage("You do not have an axe which you have the woodcutting level to use.");
-                player.privateSound(2277);
-                return;
-            }
-            while (!npc.isRemoved()) {
-                player.animate(axe.canoeAnimationId);
-                event.delay(3);
-
-                if (Woodcutting.successfullyCutTree(Woodcutting.getEffectiveLevel(player, Tree.ENTTRUNK, axe), Tree.ENTTRUNK, axe)) {
-                    player.getStats().addXp(StatType.Woodcutting, Tree.ENTTRUNK.experience, true);
-                    if (Wilderness.players.contains(player)) {
-                        player.getInventory().add(Ent.getEntLog(player, axe), 2);   // Double logs in wildy
-                    } else {
-                        player.getInventory().add(Ent.getEntLog(player, axe));
-                    }
-                    Woodcutting.rollBirdNest(player, Tree.ENTTRUNK);
-                    if (Random.rollDie(10, 1)) { // 10% chance per harvest of trunk leaving
-                        npc.remove();
-                    }
-                }
-            }
-        }));
     }
 }
