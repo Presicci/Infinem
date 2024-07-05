@@ -50,7 +50,6 @@ public class Cooking {
             return;
         SkillItem i = new SkillItem(food.rawID).name(food.rawName).
                 addAction((p, amount, event) -> startCooking(p, food, obj, amount, anim, fire));
-        System.out.println(food.name());
         if (food.equals(Food.RAW_MEAT)) {
             SkillItem sinew = new SkillItem(Food.SINEW_MEAT.cookedID).name(Food.SINEW_MEAT.itemName).
                     addAction((p, amount, event) -> startCooking(p, Food.SINEW_MEAT, obj, amount, anim, fire));
