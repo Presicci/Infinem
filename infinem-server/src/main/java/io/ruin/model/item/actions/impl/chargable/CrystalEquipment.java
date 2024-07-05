@@ -22,15 +22,21 @@ import java.util.Arrays;
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 1/17/2023
  */
-@AllArgsConstructor
 public enum CrystalEquipment {
     // Tools
-    HARPOON(23762, 23764),
+    HARPOON(23762, 23764, 23953, Items.DRAGON_HARPOON),
     // Weapons
     BLADE_OF_SAELDOR(23995, 23997),
     BOW_OF_FAERDHINEN(25865, 25862);
 
     private final int activeId, inactiveId;
+    private final int[] revertIds;
+
+    CrystalEquipment(int activeId, int inactiveId, int... revertIds) {
+        this.activeId = activeId;
+        this.inactiveId = inactiveId;
+        this.revertIds = revertIds;
+    }
 
     private static final int SHARD = 23962;
     private static final int MAX_CHARGES = 20000;
@@ -74,6 +80,33 @@ public enum CrystalEquipment {
                             item.removeCharges();
                             item.setId(inactiveId);
                             if (shards > 0) player.getInventory().add(Items.CRYSTAL_SHARD, shards);
+                        }),
+                        new Option("No")
+                )
+        );
+    }
+
+    private void revert(Player player, Item item) {
+        if (revertIds.length > 1) {
+            int slotsRequired = revertIds.length - 1;
+            if (!player.getInventory().hasFreeSlots(slotsRequired)) {
+                player.sendMessage("You need " + slotsRequired + " free slots to revert this item.");
+                return;
+            }
+        }
+        String name = item.getDef().name.toLowerCase();
+        player.dialogue(
+                new MessageDialogue("Reverting the " + name + " will return the seed "
+                        + ((revertIds.length > 1) ? "and the " + ItemDefinition.get(revertIds[1]).name : "")
+                        + ". Crystal shards will NOT be returned.<br>Continue?"
+                ),
+                new OptionsDialogue("Revert the " + name + "?",
+                        new Option("Yes", () -> {
+                            if (revertIds.length > 1) {
+                                item.removeCharges();
+                                item.setId(revertIds[1]);
+                            }
+                            player.getInventory().add(revertIds[0], 1);
                         }),
                         new Option("No")
                 )
@@ -135,6 +168,10 @@ public enum CrystalEquipment {
                 ItemAction.registerEquipment(equipment.activeId, "check", CrystalEquipment::check);
             ItemItemAction.register(equipment.activeId, SHARD, equipment::charge);
             ItemItemAction.register(equipment.inactiveId, SHARD, equipment::charge);
+            if (equipment.revertIds.length > 0) {
+                ItemAction.registerInventory(equipment.activeId, "revert", equipment::revert);
+                ItemAction.registerInventory(equipment.inactiveId, "revert", equipment::revert);
+            }
             if (Arrays.stream(CRYSTAL_WEAPONS).anyMatch(e -> e == equipment)) {
                 ItemDefinition.get(equipment.activeId).addPreTargetDefendListener((player, item, hit, target) -> equipment.removeCharge(player, item));
             }
