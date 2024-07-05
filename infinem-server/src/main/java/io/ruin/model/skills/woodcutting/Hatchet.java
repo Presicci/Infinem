@@ -43,6 +43,8 @@ public enum Hatchet {
             return best;
         if (best == null)
             return hatchet;
+        if (hatchet.axeMultiplier < best.axeMultiplier)
+            return best;
         if (hatchet.levelReq < best.levelReq)
             return best;
         return hatchet;
