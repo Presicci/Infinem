@@ -21,6 +21,8 @@ import java.util.Arrays;
  */
 public enum CrystalEquipment {
     // Tools
+    PICKAXE(23680, 23682, 23953, Items.DRAGON_PICKAXE),
+    AXE(23673, 23675, 23953, Items.DRAGON_AXE),
     HARPOON(23762, 23764, 23953, Items.DRAGON_HARPOON),
     // Weapons
     BLADE_OF_SAELDOR(23995, 23997),
