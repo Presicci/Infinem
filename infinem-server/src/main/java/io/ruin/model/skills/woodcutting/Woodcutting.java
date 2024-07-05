@@ -267,7 +267,7 @@ public class Woodcutting {
         ObjectAction.register(36672, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 36673)); // Gwenith tree
         ObjectAction.register(36674, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 36675)); // Gwenith tree
         ObjectAction.register(42393, "chop down", (player, obj) -> chop(Tree.REGULAR, player, obj, 42394)); // Tree in shayzien
-        ObjectAction.register(2023, "chop", (player, obj) -> chop(Tree.ACHEY, player, obj, 1355));
+        ObjectAction.register(2023, "chop", (player, obj) -> chop(Tree.ACHEY, player, obj, 3371));
         ObjectAction.register(10820, "chop down", (player, obj) -> chop(Tree.OAK, player, obj, 1356));
         ObjectAction.register(10819, "chop down", (player, obj) -> chop(Tree.WILLOW, player, obj, 9711));
         ObjectAction.register(10833, "chop down", (player, obj) -> chop(Tree.WILLOW, player, obj, 9711));
