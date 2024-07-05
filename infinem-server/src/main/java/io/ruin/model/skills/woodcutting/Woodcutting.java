@@ -62,20 +62,17 @@ public class Woodcutting {
      */
     public static void chop(Tree treeData, Player player, Supplier<Boolean> treeDeadCheck, EventConsumer treeDeadAction) {
         Hatchet hatchet = Hatchet.find(player);
-
         if (hatchet == null) {
             player.sendMessage("You do not have an axe which you have the woodcutting level to use.");
             player.privateSound(2277);
             return;
         }
-
         Stat stat = player.getStats().get(StatType.Woodcutting);
         if (stat.currentLevel < treeData.levelReq) {
             player.sendMessage("You need a Woodcutting level of " + treeData.levelReq + " to chop down this tree.");
             player.privateSound(2277);
             return;
         }
-
         if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
             player.sendMessage("Your inventory and bank are too full to hold any more logs.");
             player.privateSound(2277);
@@ -85,9 +82,11 @@ public class Woodcutting {
             player.privateSound(2277);
             return;
         }
-
         player.startEvent(event -> {
             int attempts = 0;
+            player.animate(hatchet.animationId);
+            player.sendFilteredMessage("You swing your axe at the tree.");
+            event.delay(1);
             while (true) {
                 int effectiveLevel = getEffectiveLevel(player, treeData, hatchet);
                 if (player.debug) {
@@ -102,21 +101,17 @@ public class Woodcutting {
                 if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
                     player.sendMessage("Your inventory and bank are too full to hold any more logs.");
                     player.privateSound(2277);
+                    player.resetAnimation();
                     return;
                 } else if (player.getInventory().isFull()) {
                     player.sendMessage("Your inventory is too full to hold any more logs.");
+                    player.privateSound(2277);
                     player.resetAnimation();
                     return;
                 }
                 if (treeDeadCheck.get()) {
                     player.resetAnimation();
                     return;
-                }
-
-                if (attempts == 0) {
-                    player.animate(hatchet.animationId);
-                    player.sendFilteredMessage("You swing your axe at the tree.");
-                    event.delay(1);
                 }
                 if (attempts % 4 == 0 && successfullyCutTree(effectiveLevel, treeData, hatchet)) {
                     int amount = 1;
@@ -178,7 +173,6 @@ public class Woodcutting {
                 }
                 if (attempts++ % 4 == 0)
                     player.animate(hatchet.animationId);
-
                 event.delay(1);
             }
         });
