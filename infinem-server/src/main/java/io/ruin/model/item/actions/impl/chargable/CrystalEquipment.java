@@ -124,7 +124,7 @@ public enum CrystalEquipment {
     }
 
     public void removeCharge(Player player, Item item) {
-        if ((item != null && item.getId() == activeId)) {
+        if (item != null && item.getId() == activeId) {
             int currentCharges = item.getCharges();
             if (currentCharges <= 0) {
                 System.err.println("Tried to remove charge with no available charges! player: " + player.getName() + ", item: " + this);
@@ -133,7 +133,7 @@ public enum CrystalEquipment {
             // Signet gives a 10% chance to not use charges
             if (hasSignet(player) && Random.rollDie(10, 1))
                 return;
-            item.incrementAmount(-1);
+            item.setCharges(currentCharges - 1);
             if (currentCharges - 1 <= 0) {
                 item.setId(inactiveId);
                 player.sendMessage("Your " + item.getDef().name + " has run out of charges.");
