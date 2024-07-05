@@ -11,7 +11,7 @@ public enum Tree {
     ACHEY(2862, "achey logs", 1, 25, 0.54, 25.0, -1, 60, true, 317647, PlayerCounter.CHOPPED_ACHEY),
     OAK(1521, "oak logs", 15, 16.8, 0.27, 37.5, 45, 14, false, 361146, PlayerCounter.CHOPPED_OAK),
     WILLOW(1519, "willow logs", 30, 10.55, 0.135, 67.5, 50, 14, false, 289286, PlayerCounter.CHOPPED_WILLOW),
-    TEAK(6333, "teak logs", 35, 10.55, 0.12, 85.0, 50, 10, false, 264336, PlayerCounter.CHOPPED_TEAK),
+    TEAK(6333, "teak logs", 35, 10.55, 0.12, 85.0, 50, 15, false, 264336, PlayerCounter.CHOPPED_TEAK),
     JUNIPER(13355, "juniper logs", 42, 5, 0.077, 35.0, 0.0625, 30, false, 360000, PlayerCounter.CHOPPED_JUNIPER),
     MAPLE(1517, "maple logs", 45, 3.5, 0.067, 100.0, 100, 60, false, 221918, PlayerCounter.CHOPPED_MAPLE),
     MAHOGANY(6332, "mahogany logs", 50, 7, 0.064, 125.0, 100, 80, false, 220623, PlayerCounter.CHOPPED_MAHOGANY),
