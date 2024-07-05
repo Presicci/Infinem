@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl.chargable;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
@@ -32,16 +33,6 @@ public enum CrystalEquipment {
     private static final int MAX_CHARGES = 20000;
     private static final int[] SIGNETS = { 23943, 25543, 25545 };
 
-    static {
-        for (CrystalEquipment equipment : CrystalEquipment.values()) {
-            ItemAction.registerInventory(equipment.activeId, "check", CrystalEquipment::check);
-            if (equipment != BLADE_OF_SAELDOR)  // Blade of saeldor doesn't have equip options for some reason
-                ItemAction.registerEquipment(equipment.activeId, "check", CrystalEquipment::check);
-            ItemItemAction.register(equipment.activeId, SHARD, equipment::charge);
-            ItemItemAction.register(equipment.inactiveId, SHARD, equipment::charge);
-        }
-    }
-
     private static void check(Player player, Item item) {
         player.sendMessage("Your " + item.getDef().name + " currently has " + NumberUtils.formatNumber(item.getAttributeInt(AttributeTypes.CHARGES)) + " charges.");
     }
@@ -63,22 +54,25 @@ public enum CrystalEquipment {
     }
 
     public void removeCharge(Player player) {
-        Item tool = player.getEquipment().get(Equipment.SLOT_WEAPON);
-        if (tool == null || tool.getId() != activeId)
-            tool = player.getInventory().findItemIgnoringAttributes(activeId, false);
-        if ((tool != null && tool.getId() == activeId)) {
-            int currentCharges = AttributeExtensions.getCharges(tool);
+        removeCharge(player, player.getEquipment().get(Equipment.SLOT_WEAPON));
+    }
+
+    public void removeCharge(Player player, Item item) {
+        if (item == null || item.getId() != activeId)
+            item = player.getInventory().findItemIgnoringAttributes(activeId, false);
+        if ((item != null && item.getId() == activeId)) {
+            int currentCharges = AttributeExtensions.getCharges(item);
             if (currentCharges <= 0) {
-                System.err.println("Tried to remove charge with no available charges! player: " + player.getName() + ", tool: " + this);
+                System.err.println("Tried to remove charge with no available charges! player: " + player.getName() + ", item: " + this);
                 return;
             }
             // Signet gives a 10% chance to not use charges
             if (hasSignet(player) && Random.rollDie(10, 1))
                 return;
-            AttributeExtensions.deincrementCharges(tool, 1);
+            AttributeExtensions.deincrementCharges(item, 1);
             if (currentCharges - 1 <= 0) {
-                tool.setId(inactiveId);
-                player.sendMessage("Your " + tool.getDef().name + " has run out of charges.");
+                item.setId(inactiveId);
+                player.sendMessage("Your " + item.getDef().name + " has run out of charges.");
             }
         }
     }
@@ -100,5 +94,22 @@ public enum CrystalEquipment {
             return AttributeExtensions.getCharges(tool) > 0;
         }
         return false;
+    }
+
+    private static final CrystalEquipment[] CRYSTAL_WEAPONS = {
+            BOW_OF_FAERDHINEN, BLADE_OF_SAELDOR
+    };
+
+    static {
+        for (CrystalEquipment equipment : CrystalEquipment.values()) {
+            ItemAction.registerInventory(equipment.activeId, "check", CrystalEquipment::check);
+            if (equipment != BLADE_OF_SAELDOR)  // Blade of saeldor doesn't have equip options for some reason
+                ItemAction.registerEquipment(equipment.activeId, "check", CrystalEquipment::check);
+            ItemItemAction.register(equipment.activeId, SHARD, equipment::charge);
+            ItemItemAction.register(equipment.inactiveId, SHARD, equipment::charge);
+            if (Arrays.stream(CRYSTAL_WEAPONS).anyMatch(e -> e == equipment)) {
+                ItemDefinition.get(equipment.activeId).addPreTargetDefendListener((player, item, hit, target) -> equipment.removeCharge(player, item));
+            }
+        }
     }
 }
