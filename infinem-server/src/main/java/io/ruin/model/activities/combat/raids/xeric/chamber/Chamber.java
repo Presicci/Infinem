@@ -6,6 +6,8 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.map.*;
 import io.ruin.model.map.dynamic.DynamicChunk;
 import io.ruin.model.map.object.GameObject;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,18 +21,28 @@ public abstract class Chamber {
     public static final int CHUNK_SIZE = 4;
     public static final int TILE_SIZE = CHUNK_SIZE * 8;
 
-    private DynamicChunk[][] chunks = new DynamicChunk[getChunkSize()][getChunkSize()];
+    private final DynamicChunk[][] chunks = new DynamicChunk[getChunkSize()][getChunkSize()];
 
     private int basePointX, basePointY, pointZ;
 
+    @Setter
+    @Getter
     private int layout;
 
+    @Setter
+    @Getter
     private int rotation = 0;
 
+    @Getter
     private Position basePosition;
 
+    @Setter
+    @Getter
     private ChamberDefinition definition;
+    @Setter
+    @Getter
     private ChambersOfXeric raid;
+    @Getter
     private Bounds chamberBounds;
 
     public Chamber() {
@@ -63,14 +75,6 @@ public abstract class Chamber {
 
     public void onBuild() {
 
-    }
-
-    public void setLayout(int layout) {
-        this.layout = layout;
-    }
-
-    public void setRotation(int rotation) {
-        this.rotation = rotation;
     }
 
     private void rotate() {
@@ -156,14 +160,6 @@ public abstract class Chamber {
         return Tile.getObject(id, pos.getX(), pos.getY(), pos.getZ());
     }
 
-    public int getLayout() {
-        return layout;
-    }
-
-    public Position getBasePosition() {
-        return basePosition;
-    }
-
     public void setBasePosition(Position basePosition) {
         this.basePosition = basePosition;
         this.chamberBounds = new Bounds(basePosition.getX(), basePosition.getY(), basePosition.getX() + getTileSize(), basePosition.getY() + getTileSize(), basePosition.getZ());
@@ -221,30 +217,6 @@ public abstract class Chamber {
 
     public Direction rotatedDir(Direction dir) {
         return rotatedDir(dir, rotation);
-    }
-
-    public void setDefinition(ChamberDefinition definition) {
-        this.definition = definition;
-    }
-
-    public ChamberDefinition getDefinition() {
-        return definition;
-    }
-
-    public ChambersOfXeric getRaid() {
-        return raid;
-    }
-
-    public void setRaid(ChambersOfXeric raid) {
-        this.raid = raid;
-    }
-
-    public int getRotation() {
-        return rotation;
-    }
-
-    public Bounds getChamberBounds() {
-        return chamberBounds;
     }
 
     protected int getTileSize() {
