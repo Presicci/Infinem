@@ -39,14 +39,19 @@ public enum CrystalSinging {
     //BOW_OF_FAERDHINEN_C(82, 0, 23946, new Item[]{ new Item(Items.CRYSTAL_SHARD, 100), new Item(Items.ENHANCED_CRYSTAL_TELEPORT_SEED) })
     ;
 
-    private final int levelRequirement, productId, requiredShards;
+    private final int levelRequirement, productId, requiredShards, initialCharges;
     private final double experience;
     private final Item[] requiredItems;
 
     CrystalSinging(int levelRequirement, double experience, int productId, int requiredShards, Item... requiredItems) {
+        this(levelRequirement, experience, productId, 0, requiredShards, requiredItems);
+    }
+
+    CrystalSinging(int levelRequirement, double experience, int productId, int initialCharges, int requiredShards, Item... requiredItems) {
         this.levelRequirement = levelRequirement;
         this.experience = experience;
         this.productId = productId;
+        this.initialCharges = initialCharges;
         this.requiredShards = requiredShards;
         this.requiredItems = requiredItems;
     }
@@ -136,6 +141,9 @@ public enum CrystalSinging {
                     if (index == 0) {
                         Item toReplace = player.getInventory().findItem(sing.requiredItems[index].getId());
                         toReplace.setId(sing.productId);
+                        if (sing.initialCharges > 0) {
+                            toReplace.setCharges(sing.initialCharges);
+                        }
                     } else {
                         player.getInventory().remove(sing.requiredItems[index]);
                     }
