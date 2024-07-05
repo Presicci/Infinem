@@ -20,7 +20,8 @@ public enum Hatchet {
     THIRD_AGE(61, 7264, 7266, 42),
     INFERNAL(61, 2117, 2116, 45),
     INFERNAL_UNCHARGED(61, 2117, 2116, 45),
-    CRYSTAL(71, 8324, 8327, 52);
+    CRYSTAL(71, 8324, 8327, 52),
+    CRYSTAL_UNCHARGED(71, 8324, 8327, 42);
 
     public final int levelReq, animationId, canoeAnimationId, points;
 
@@ -63,6 +64,7 @@ public enum Hatchet {
             }
         });
         ItemDefinition.get(13242).hatchet = INFERNAL_UNCHARGED;
+        ItemDefinition.get(23675).hatchet = CRYSTAL_UNCHARGED;
     }
 
 }
