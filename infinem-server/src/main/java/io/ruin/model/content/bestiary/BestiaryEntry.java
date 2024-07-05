@@ -37,6 +37,7 @@ public class BestiaryEntry {
     }
 
     public double getPerkMultiplier(Class<?> perkType) {
+        if (name == null || name.isEmpty()) return 0;
         for (BestiaryPerk perk : perks) {
             if (player.hasAttribute(getPerkKey(perkType))) {
                 return perk.getMultiplier(0);
