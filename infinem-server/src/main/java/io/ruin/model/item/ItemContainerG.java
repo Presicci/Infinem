@@ -587,6 +587,14 @@ public abstract class ItemContainerG<I extends Item> {
         return getFreeSlots() >= slots;
     }
 
+    public boolean containsAll(boolean acceptNoted, boolean ignoreAttributes, I... items) {
+        for (Item item: items) {
+            if (!contains(item.getId(), item.getAmount(), acceptNoted, ignoreAttributes))
+                return false;
+        }
+        return true;
+    }
+
     public boolean containsAll(boolean acceptNoted, I... items) {
         for (Item item: items) {
             if (!contains(item, acceptNoted))

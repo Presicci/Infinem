@@ -11,6 +11,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 1/18/2022
@@ -78,71 +81,67 @@ public enum CrystalSinging {
         return sb.toString();
     }
 
-    public static CrystalSinging getByProductID(int id) {
-        for (CrystalSinging sb : values()) {
-            if (sb.getProductId() == id) {
-                return sb;
+    private static void open(Player player) {
+        List<SkillItem> items = new ArrayList<>();
+        for (CrystalSinging sing : values()) {
+            if (player.getInventory().getAmount(Items.CRYSTAL_SHARD) >= sing.getRequiredShards()
+                    && player.getInventory().containsAll(false, sing.requiredItems)) {
+                items.add(new SkillItem(sing.productId).addAction((p, integer, event) -> makeItem(player, sing, integer)));
             }
         }
-        return null;
+        if (!items.isEmpty()) {
+            SkillDialogue.make(player, items.toArray(new SkillItem[0]));
+        } else {
+            player.sendMessage("There is nothing you can make.");
+        }
+
     }
 
-    private static void open(Player player) {
-        SkillDialogue.make(
-                player,
-                (p, item) -> makeItem(player, item),
-                new SkillItem(23971),
-                new SkillItem(23979),
-                new SkillItem(23975),
-                new SkillItem(23673),
-                new SkillItem(23762),
-                new SkillItem(23680),
-                new SkillItem(23983),
-                new SkillItem(23987),
-                new SkillItem(23991),
-                new SkillItem(23951),
-                new SkillItem(23946)
-        );
-    }
-
-    private static void makeItem(Player player, Item item /*SingingBowl singingBowl*/) {
-        player.closeInterface(InterfaceType.CHATBOX);
-        CrystalSinging sing = getByProductID(item.getId());
-        if (sing == null) {
+    private static void makeItem(Player player, CrystalSinging sing, int amountToMake) {
+        if (!player.getStats().check(StatType.Crafting, sing.levelRequirement)) {
+            player.dialogue(new MessageDialogue("You need a crafting level of " + sing.levelRequirement + " to make this"));
             return;
         }
-        player.startEvent(event -> {
-            if (!player.getStats().check(StatType.Crafting, sing.levelRequirement)) {
-                player.dialogue(new MessageDialogue("You need a crafting level of " + sing.levelRequirement + " to make this"));
-                return;
-            }
-            if (!player.getStats().check(StatType.Smithing, sing.levelRequirement)) {
-                player.dialogue(new MessageDialogue("You need a smithing level of " + sing.levelRequirement + " to make this"));
-                return;
-            }
-            if (player.getInventory().getAmount(Items.CRYSTAL_SHARD) < sing.requiredShards) {
+        if (!player.getStats().check(StatType.Smithing, sing.levelRequirement)) {
+            player.dialogue(new MessageDialogue("You need a smithing level of " + sing.levelRequirement + " to make this"));
+            return;
+        }
+        if (player.getInventory().getAmount(Items.CRYSTAL_SHARD) < sing.requiredShards) {
+            player.sendMessage(sing.getRequiredItemsString() + "to make this.");
+            return;
+        }
+        for (Item requiredItem : sing.getRequiredItems()) {
+            if (!player.getInventory().contains(requiredItem.getId(), requiredItem.getAmount(), false, true)) {
                 player.sendMessage(sing.getRequiredItemsString() + "to make this.");
                 return;
             }
-            for (Item requiredItem : sing.getRequiredItems()) {
-                if (!player.getInventory().contains(requiredItem.getId(), requiredItem.getAmount(), false, true)) {
-                    player.sendMessage(sing.getRequiredItemsString() + "to make this.");
+        }
+        player.startEvent(event -> {
+            int amount = amountToMake;
+            while (amount-- > 0) {
+                if (player.getInventory().getAmount(Items.CRYSTAL_SHARD) < sing.requiredShards) {
+                    player.sendMessage("You've run out of crystal shards.");
                     return;
                 }
-            }
-            player.animate(899);    // TODO get proper singing animation
-            player.getInventory().remove(Items.CRYSTAL_SHARD, sing.requiredShards);
-            for (int index = 0; index < sing.requiredItems.length; index++) {
-                if (index == 0) {
-                    Item toReplace = player.getInventory().findItem(sing.requiredItems[index].getId());
-                    toReplace.setId(sing.productId);
-                } else {
-                    player.getInventory().remove(sing.requiredItems[index]);
+                for (Item requiredItem : sing.getRequiredItems()) {
+                    if (!player.getInventory().contains(requiredItem.getId(), requiredItem.getAmount(), false, true)) {
+                        return;
+                    }
                 }
+                player.animate(899);    // TODO get proper singing animation
+                player.getInventory().remove(Items.CRYSTAL_SHARD, sing.requiredShards);
+                for (int index = 0; index < sing.requiredItems.length; index++) {
+                    if (index == 0) {
+                        Item toReplace = player.getInventory().findItem(sing.requiredItems[index].getId());
+                        toReplace.setId(sing.productId);
+                    } else {
+                        player.getInventory().remove(sing.requiredItems[index]);
+                    }
+                }
+                player.getStats().addXp(StatType.Crafting, sing.getExperience(), false);
+                player.getStats().addXp(StatType.Smithing, sing.getExperience(), false);
+                event.delay(2);
             }
-            player.getStats().addXp(StatType.Crafting, sing.getExperience(), false);
-            player.getStats().addXp(StatType.Smithing, sing.getExperience(), false);
-            event.delay(2);
         });
     }
 
