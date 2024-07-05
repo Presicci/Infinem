@@ -20,9 +20,9 @@ import java.util.Arrays;
  */
 @AllArgsConstructor
 public enum CrystalEquipment {
-
+    // Tools
     HARPOON(23762, 23764),
-
+    // Weapons
     BLADE_OF_SAELDOR(23995, 23997),
     BOW_OF_FAERDHINEN(25865, 25862);
 
@@ -88,6 +88,7 @@ public enum CrystalEquipment {
         if (this == BOW_OF_FAERDHINEN || this == BLADE_OF_SAELDOR)
             return false;
         Item ring = player.getEquipment().get(Equipment.SLOT_RING);
+        if (ring == null) return false;
         return Arrays.stream(SIGNETS).anyMatch(s -> s == ring.getId());
     }
 
