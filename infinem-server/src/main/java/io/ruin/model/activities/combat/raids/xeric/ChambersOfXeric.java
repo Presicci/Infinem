@@ -47,7 +47,6 @@ public class ChambersOfXeric {
     private static KillCounterType killCounter = new KillCounterType(BossKillCounter.COX);
 
     static {
-
         ObjectAction.register(30066, 1, (player, obj) -> { // energy well
             if (player.raidsParty == null || player.raidsParty.getRaid() == null)
                 return;
@@ -134,7 +133,7 @@ public class ChambersOfXeric {
         /**
          * Raids exit
          */
-        ObjectAction.register(29778, 1, (player, obj) -> {
+        ObjectAction.register(49999, 1, (player, obj) -> {
             if (isRaiding(player) && player.raidsParty.getRaid().isComplete()) {
                 leaveRaid(player);
             } else {
