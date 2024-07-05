@@ -17,9 +17,11 @@ import java.util.List;
 /**
  * @author Mrbennjerry - https://github.com/Mrbennjerry
  * Created on 1/18/2022
+ * <a href="https://oldschool.runescape.wiki/w/Crystal_singing">...</a>
  */
 @Getter
 public enum CrystalSinging {
+    CELESTIAL_SIGNET(70, 5000, 25543, 100, new Item(23943), new Item(25539), new Item(25527, 1000)),
     CRYSTAL_HELM(70, 2500, 23971, 50, new Item(Items.CRYSTAL_ARMOUR_SEED)),
     CRYSTAL_LEGS(72, 5000, 23979, 100, new Item(Items.CRYSTAL_ARMOUR_SEED)),
     CRYSTAL_BODY(74, 7500, 23975, 100, new Item(Items.CRYSTAL_ARMOUR_SEED)),
