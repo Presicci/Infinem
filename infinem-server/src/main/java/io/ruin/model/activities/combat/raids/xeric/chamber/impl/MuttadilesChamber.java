@@ -81,7 +81,11 @@ public class MuttadilesChamber extends Chamber {
         spawn = treeSpawns[getLayout()];
         spawnObject(LIVE_TREE_OBJ, spawn[0], spawn[1], 10, 0);
         tree = spawnNPC(TREE_NPC, spawn[0], spawn[1], Direction.SOUTH, 0);
-        maxHealth =  5 + (getRaid().getPartySize() * 3);
+        maxHealth = 0;
+        for (Player player : getRaid().getParty().getMembers()) {
+            maxHealth += player.getStats().get(StatType.Woodcutting).fixedLevel;
+        }
+        maxHealth = Math.max(100, treeHealth * 5);
         treeHealth = maxHealth;
         NPCAction.register(tree, 1, this::chop);
         spawn = smallSpawns[getLayout()];
@@ -132,11 +136,13 @@ public class MuttadilesChamber extends Chamber {
                 player.animate(hatchet.animationId);
                 if (++ticks >= 5) {
                     ticks = 0;
-                    if (Random.rollDie(100, 35 + hatchet.points)) {
+                    int level = player.getStats().get(StatType.Woodcutting).currentLevel;
+                    if (Random.rollDie(100, 20 + (int) (level * 0.6))) {
                         player.animate(-1);
                         npc.hitsUpdate.forceSend(treeHealth, maxHealth);
                         player.getStats().addXp(StatType.Woodcutting, 5, true);
-                        damageTree(1);
+                        int damage = Math.max(1, (level / 2) + Random.get(-7, 3));
+                        damageTree(damage);
                     }
                 }
                 event.delay(1);
