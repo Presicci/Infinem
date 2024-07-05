@@ -266,7 +266,7 @@ public class WintertodtActions {
                 int amount = 1;
                 if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST))
                     amount *= 2;
-                if (Random.rollDie(100, 20 + hatchet.points)) {
+                if (Random.rollDie(100, (int) (26 * hatchet.axeMultiplier))) {
                     player.collectResource(Wintertodt.BRUMA_ROOT, amount);
                     player.getInventory().add(Wintertodt.BRUMA_ROOT, amount);
                     player.sendMessage("You get a bruma root.");
