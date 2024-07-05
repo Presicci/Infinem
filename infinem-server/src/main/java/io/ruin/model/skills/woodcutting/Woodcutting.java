@@ -20,6 +20,7 @@ import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.WoodcuttingSkillCape;
+import io.ruin.model.map.MapArea;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -89,7 +90,7 @@ public class Woodcutting {
             player.sendFilteredMessage("You swing your axe at the tree.");
             event.delay(1);
             while (true) {
-                int effectiveLevel = getEffectiveLevel(player, treeData, hatchet);
+                int effectiveLevel = getEffectiveLevel(player, treeData, tree);
                 if (player.debug) {
                     double chance = chance(effectiveLevel, treeData, hatchet);
                     double logsPerTick = chance / 2;
@@ -234,10 +235,14 @@ public class Woodcutting {
          }
     }
 
-    protected static int getEffectiveLevel(Player player, Tree treeData, Hatchet hatchet) {
+    protected static int getEffectiveLevel(Player player, Tree treeData, GameObject tree) {
         int base = player.getStats().get(StatType.Woodcutting).currentLevel;
-        if (WoodcuttingGuild.hasBoost(player))
+        if (WoodcuttingGuild.hasBoost(player)) {
             base += 7;
+        } else if (!treeData.single && tree != null) {
+            int treePlayers = ForestryTree.getTreePlayers(tree);
+            if (treePlayers > 1) base += Math.min(10, treePlayers - 1);
+        }
         return base;
     }
 

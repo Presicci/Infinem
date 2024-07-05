@@ -23,7 +23,7 @@ public class Ent {
     }
 
     protected static int getEntLog(Player player, Hatchet axe) {
-        int level = Woodcutting.getEffectiveLevel(player, Tree.ENTTRUNK, axe);
+        int level = Woodcutting.getEffectiveLevel(player, Tree.ENTTRUNK, null);
         if (level >= 75 && Random.rollDie(10, 4)) {
             return 1514;
         } else if (level > 60 && Random.rollDie(10, 5)) { // NOT a typo, 61 gives you yews.
@@ -55,7 +55,7 @@ public class Ent {
                 player.animate(axe.canoeAnimationId);
                 event.delay(3);
 
-                if (Woodcutting.successfullyCutTree(Woodcutting.getEffectiveLevel(player, Tree.ENTTRUNK, axe), Tree.ENTTRUNK, axe)) {
+                if (Woodcutting.successfullyCutTree(Woodcutting.getEffectiveLevel(player, Tree.ENTTRUNK, null), Tree.ENTTRUNK, axe)) {
                     player.getStats().addXp(StatType.Woodcutting, Tree.ENTTRUNK.experience, true);
                     if (Wilderness.players.contains(player)) {
                         player.getInventory().add(Ent.getEntLog(player, axe), 2);   // Double logs in wildy

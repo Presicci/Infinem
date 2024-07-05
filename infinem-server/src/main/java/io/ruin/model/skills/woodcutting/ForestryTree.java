@@ -12,11 +12,18 @@ import java.util.*;
  * Created on 7/5/2024
  */
 public class ForestryTree {
-    private static final String PLAYERS_KEY = "TREE_PLAYERS";
+    protected static final String PLAYERS_KEY = "TREE_PLAYERS";
     private static final String HEALTH_KEY = "TREE_HEALTH";
     private static final String TYPE_KEY = "TREE_TYPE";
     private static final String DEAD_ACTION_KEY = "TREE_DEAD";
     private static final List<GameObject> ACTIVE_TREES = new ArrayList<>();
+
+    protected static int getTreePlayers(GameObject tree) {
+        if (!tree.hasTemporaryAttribute(PLAYERS_KEY)) return 1;
+        Map<Player, Integer> activePlayers = tree.getTemporaryAttribute(PLAYERS_KEY);
+        if (activePlayers.isEmpty() || activePlayers.size() == 1) return 1;
+        return activePlayers.size();
+    }
 
     private static void setupTree(GameObject tree, Tree treeType, EventConsumer treeDeadAction) {
         tree.putTemporaryAttribute(TYPE_KEY, treeType);
