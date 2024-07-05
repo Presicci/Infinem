@@ -71,6 +71,8 @@ public class Cooking {
     }
 
     private static void startCooking(Player player, Food food, GameObject obj, int amountToCook, int anim, boolean fire) {
+        if (!player.getStats().check(StatType.Cooking, food.levelRequirement, "cook " + food.descriptiveName))
+            return;
         player.startEvent(e -> {
             int amount = amountToCook;
             while (amount-- > 0) {
