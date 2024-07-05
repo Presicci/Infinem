@@ -45,7 +45,7 @@ public class CelestialRing {
     }
 
     private static void check(Player player, Item item) {
-        player.sendMessage("Your Celestial " + (item.getId() == CHARGED_RING ? "ring" : "signet") + " currently has " + NumberUtils.formatNumber(item.getAttributeInt(AttributeTypes.CHARGES)) + " charges.");
+        player.sendMessage("Your Celestial " + (item.getId() == CHARGED_RING ? "ring" : "signet") + " currently has " + NumberUtils.formatNumber(Math.max(0, item.getAttributeInt(AttributeTypes.CHARGES))) + " charges.");
     }
 
     public static boolean wearingChargedRing(Player player) {
