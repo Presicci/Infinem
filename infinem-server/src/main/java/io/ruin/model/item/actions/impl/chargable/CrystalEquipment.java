@@ -11,10 +11,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
-import io.ruin.model.item.attributes.AttributeExtensions;
-import io.ruin.model.item.attributes.AttributeTypes;
 import io.ruin.model.item.containers.Equipment;
-import lombok.AllArgsConstructor;
 
 import java.util.Arrays;
 
@@ -38,16 +35,20 @@ public enum CrystalEquipment {
         this.revertIds = revertIds;
     }
 
+    private static final CrystalEquipment[] CRYSTAL_WEAPONS = {
+            BOW_OF_FAERDHINEN, BLADE_OF_SAELDOR
+    };
+
     private static final int SHARD = 23962;
     private static final int MAX_CHARGES = 20000;
     private static final int[] SIGNETS = { 23943, 25543, 25545 };
 
     private static void check(Player player, Item item) {
-        player.sendMessage("Your " + item.getDef().name + " currently has " + NumberUtils.formatNumber(item.getAttributeInt(AttributeTypes.CHARGES)) + " charges.");
+        player.sendMessage("Your " + item.getDef().name + " currently has " + NumberUtils.formatNumber(item.getCharges()) + " charges.");
     }
 
     private void charge(Player player, Item crystalItem, Item shards) {
-        int currentCharges = AttributeExtensions.getCharges(crystalItem);
+        int currentCharges = crystalItem.getCharges();
         int shardsToUse = Math.min((MAX_CHARGES - currentCharges) / 100, shards.getAmount());
         if (shardsToUse == 0) {
             player.sendMessage("Your " + crystalItem.getDef().name + " already has maximum charges.");
@@ -59,7 +60,7 @@ public enum CrystalEquipment {
             if (crystalItem.getId() == inactiveId) {
                 crystalItem.setId(activeId);
             }
-            crystalItem.putAttribute(AttributeTypes.CHARGES, currentCharges + chargesToAdd);
+            crystalItem.setCharges(currentCharges + chargesToAdd);
             shards.remove(finalShard);
             check(player, crystalItem);
         });
@@ -114,14 +115,15 @@ public enum CrystalEquipment {
     }
 
     public void removeCharge(Player player) {
-        removeCharge(player, player.getEquipment().get(Equipment.SLOT_WEAPON));
+        Item item = player.getEquipment().get(Equipment.SLOT_WEAPON);
+        if (item == null || item.getId() != activeId)
+            item = player.getInventory().findItemIgnoringAttributes(activeId, false);
+        removeCharge(player, item);
     }
 
     public void removeCharge(Player player, Item item) {
-        if (item == null || item.getId() != activeId)
-            item = player.getInventory().findItemIgnoringAttributes(activeId, false);
         if ((item != null && item.getId() == activeId)) {
-            int currentCharges = AttributeExtensions.getCharges(item);
+            int currentCharges = item.getCharges();
             if (currentCharges <= 0) {
                 System.err.println("Tried to remove charge with no available charges! player: " + player.getName() + ", item: " + this);
                 return;
@@ -129,7 +131,7 @@ public enum CrystalEquipment {
             // Signet gives a 10% chance to not use charges
             if (hasSignet(player) && Random.rollDie(10, 1))
                 return;
-            AttributeExtensions.deincrementCharges(item, 1);
+            item.incrementAmount(-1);
             if (currentCharges - 1 <= 0) {
                 item.setId(inactiveId);
                 player.sendMessage("Your " + item.getDef().name + " has run out of charges.");
@@ -151,14 +153,10 @@ public enum CrystalEquipment {
         if (tool == null || tool.getId() != activeId)
             tool = player.getInventory().findItemIgnoringAttributes(activeId, false);
         if ((tool != null && tool.getId() == activeId)) {
-            return AttributeExtensions.getCharges(tool) > 0;
+            return tool.getCharges() > 0;
         }
         return false;
     }
-
-    private static final CrystalEquipment[] CRYSTAL_WEAPONS = {
-            BOW_OF_FAERDHINEN, BLADE_OF_SAELDOR
-    };
 
     static {
         for (CrystalEquipment equipment : CrystalEquipment.values()) {
