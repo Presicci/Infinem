@@ -44,7 +44,6 @@ public class Ent {
             npc.deathEndListener = (DeathListener.SimplePlayer) killer -> summonTrunk(npc, killer);
         });
         NPCAction.register(9474, "chop", (player, npc) -> player.startEvent(event -> {
-            event.delay(1);
             Hatchet axe = Hatchet.find(player);
 
             if (axe == null) {
