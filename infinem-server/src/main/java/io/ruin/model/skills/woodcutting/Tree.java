@@ -5,10 +5,10 @@ import io.ruin.model.entity.player.PlayerCounter;
 public enum Tree {
 
     CRYSTAL(23962, "crystal shards", 1, 1.6, 0.04, 0, -1, 0, true, 317647, PlayerCounter.CHOPPED_REGULAR),
-    CELASTRUS(22935, "bark", 1, 16.8, 0.27, 0, -1, 75, true, 317647, PlayerCounter.CHOPPED_REGULAR),
+    CELASTRUS(22935, "bark", 1, 16.8, 0.27, 0, -1, 60, true, 317647, PlayerCounter.CHOPPED_REGULAR),
     REGULAR(1511, "logs", 1, 25, 0.54, 25.0, -1, 60, true, 317647, PlayerCounter.CHOPPED_REGULAR),
-    SAPLING(20799, "kindling", 1, 16.8, 0.27, 45.0, 0.0, 75, false, 317647, PlayerCounter.CHOPPED_SAPLING),
-    ACHEY(2862, "achey logs", 1, 25, 0.54, 25.0, -1, 75, true, 317647, PlayerCounter.CHOPPED_ACHEY),
+    SAPLING(20799, "kindling", 1, 16.8, 0.27, 45.0, 0.0, 60, false, 317647, PlayerCounter.CHOPPED_SAPLING),
+    ACHEY(2862, "achey logs", 1, 25, 0.54, 25.0, -1, 60, true, 317647, PlayerCounter.CHOPPED_ACHEY),
     OAK(1521, "oak logs", 15, 16.8, 0.27, 37.5, 45, 15, false, 361146, PlayerCounter.CHOPPED_OAK),
     WILLOW(1519, "willow logs", 30, 10.55, 0.135, 67.5, 50, 10, false, 289286, PlayerCounter.CHOPPED_WILLOW),
     TEAK(6333, "teak logs", 35, 10.55, 0.12, 85.0, 50, 10, false, 264336, PlayerCounter.CHOPPED_TEAK),
