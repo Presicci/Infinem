@@ -91,12 +91,12 @@ public class Woodcutting {
             while (true) {
                 int effectiveLevel = getEffectiveLevel(player, treeData, hatchet);
                 if (player.debug) {
-                    double chance = chance(effectiveLevel, treeData, hatchet) / 100;
+                    double chance = chance(effectiveLevel, treeData, hatchet);
                     double logsPerTick = chance / 2;
                     double logsPerHour = 100 * 60 * logsPerTick;
                     double xpPerTick = logsPerTick * treeData.experience * StatType.Woodcutting.defaultXpMultiplier;
                     double xpPerHour = 100 * 60 * xpPerTick;
-                    player.sendMessage("difficulty=" + treeData.difficulty + ", chance=" + NumberUtils.formatTwoPlaces(chance) + ", xp/tick=" + NumberUtils.formatNumber((long) xpPerTick) + "");
+                    player.sendMessage("baseChance=" + treeData.baseChance + ", chance=" + NumberUtils.formatTwoPlaces(chance) + ", xp/tick=" + NumberUtils.formatNumber((long) xpPerTick) + "");
                     player.sendMessage("logsPerHour=" + NumberUtils.formatTwoPlaces(logsPerHour) + ", xpPerHour=" + NumberUtils.formatNumber((long) xpPerHour));
                 }
                 if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
@@ -235,10 +235,11 @@ public class Woodcutting {
         return Random.get(100) <= chance(level, type, hatchet);
     }
 
-    private static double chance(int level, Tree type, Hatchet hatchet) {
-        double points = ((level - type.levelReq) + 1 + (double) hatchet.points);
-        double denominator = type.difficulty;
-        return (Math.min(0.95, points / denominator) * 100);
+    private static double chance(int woodcuttingLevel, Tree tree, Hatchet hatchet) {
+        int levelDifference = woodcuttingLevel - tree.levelReq;
+        double chance = tree.baseChance + (levelDifference * tree.levelSlope);
+        double axeMultiplier = hatchet.axeMultiplier;
+        return (Math.min(100, chance * axeMultiplier));
     }
 
     static {
