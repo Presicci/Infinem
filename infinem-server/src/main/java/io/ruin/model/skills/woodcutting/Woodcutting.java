@@ -113,6 +113,9 @@ public class Woodcutting {
                 if (hatchet == Hatchet.CRYSTAL) {
                     if (!CrystalEquipment.AXE.hasCharge(player)) return;
                 }
+                if (hatchet == Hatchet.INFERNAL) {
+                    if (!InfernalTools.INFERNAL_AXE.hasCharge(player)) return;
+                }
                 if (treeDeadCheck.get()) {
                     player.resetAnimation();
                     return;
