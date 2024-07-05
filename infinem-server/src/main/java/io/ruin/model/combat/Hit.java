@@ -340,7 +340,7 @@ public class Hit {
 					double defenceBonus = getDefenceBonus(target) * (1D + defenceBoost);
 					// Bestiary - Reduced enemy accuracy
 					if (attacker.isNpc() && target.isPlayer()) {
-						double accuracy = target.player.getBestiary().getBestiaryEntry(attacker.npc.getDef()).getPerkMultiplier(ReducedEnemyAccuracyPerk.class);
+						double accuracy = target.player.getBestiary().getBestiaryEntry(attacker.npc.getDef()).getPerkMultiplier(ReducedEnemyAccuracyPerk.class, 1);
 						attackBonus *= accuracy;
 					}
 					// Brimstone ring effect

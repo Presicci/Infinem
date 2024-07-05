@@ -961,9 +961,9 @@ public class PlayerCombat extends Combat {
 
         // Bestiary damage perk handling
         if (target.isNpc()) {
-            double damage = player.getBestiary().getBestiaryEntry(target.npc.getDef()).getPerkMultiplier(DamagePerk.class);
+            double damage = player.getBestiary().getBestiaryEntry(target.npc.getDef()).getPerkMultiplier(DamagePerk.class, 0);
             hit.boostDamage(damage);
-            double accuracy = player.getBestiary().getBestiaryEntry(target.npc.getDef()).getPerkMultiplier(AccuracyPerk.class);
+            double accuracy = player.getBestiary().getBestiaryEntry(target.npc.getDef()).getPerkMultiplier(AccuracyPerk.class, 0);
             hit.boostAttack(accuracy);
         }
 

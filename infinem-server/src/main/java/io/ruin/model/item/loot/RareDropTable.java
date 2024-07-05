@@ -142,7 +142,7 @@ public class RareDropTable {
         }
         int luckTier = Math.max(
                 getLuckTier(player),
-                (int) Math.round(player.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(LuckPerk.class) * 100D));
+                (int) Math.round(player.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(LuckPerk.class, 0) * 100D));
         int chance = Math.max(ROLL_CHANCE[luckTier] - (int) Math.floor(npc.getDef().combatLevel * 0.35), 75);   // 1/75 is the lowest the rate can go
         if (Random.get(chance) != 1) {
             return Optional.empty();

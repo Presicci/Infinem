@@ -249,7 +249,7 @@ public class NPCDrops {
              * Coin auto collect
              */
             if (item.getId() == COINS_995) {
-                if (RingOfWealth.check(pKiller, item) || pKiller.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(GoldPickupPerk.class) > 0) {
+                if (RingOfWealth.check(pKiller, item) || pKiller.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(GoldPickupPerk.class, 0) > 0) {
                     pKiller.getInventory().addOrDrop(item);
                     continue;
                 }
@@ -324,7 +324,7 @@ public class NPCDrops {
                 getRareDropAnnounce(pKiller, item);
             }
 
-            double chance = pKiller.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(NotedDropPerk.class);
+            double chance = pKiller.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(NotedDropPerk.class, 0);
             if (item.getDef().notedId > -1 && chance > 0 && Random.get() < chance) {
                 item.setId(item.getDef().notedId);
             } else if (canNote(pKiller, item)) {

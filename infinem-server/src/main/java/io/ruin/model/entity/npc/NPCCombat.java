@@ -306,7 +306,7 @@ public abstract class NPCCombat extends Combat {
 
             int respawnTicks = info.respawn_ticks;
             if (killer != null && killer.player != null) {
-                double multiplier = killer.player.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(RespawnPerk.class);
+                double multiplier = killer.player.getBestiary().getBestiaryEntry(npc.getDef()).getPerkMultiplier(RespawnPerk.class, 1);
                 respawnTicks *= multiplier;
             }
             event.delay(respawnTicks);

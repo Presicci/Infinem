@@ -36,8 +36,8 @@ public class BestiaryEntry {
         );
     }
 
-    public double getPerkMultiplier(Class<?> perkType) {
-        if (name == null || name.isEmpty()) return 0;
+    public double getPerkMultiplier(Class<?> perkType, double defaultMulti) {
+        if (name == null || name.isEmpty()) return defaultMulti;
         for (BestiaryPerk perk : perks) {
             if (player.hasAttribute(getPerkKey(perkType))) {
                 return perk.getMultiplier(0);
@@ -45,7 +45,7 @@ public class BestiaryEntry {
             if (perkType.isInstance(perk))
                 return perk.getMultiplier(killCount);
         }
-        return 0;
+        return defaultMulti;
     }
 
     public void togglePerk(Class<?> perkType) {
