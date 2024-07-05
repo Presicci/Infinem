@@ -20,8 +20,8 @@ public enum Hatchet {
     THIRD_AGE(61, 7264, 7266, 3.85),
     INFERNAL(61, 2117, 2116, 3.85),
     INFERNAL_UNCHARGED(61, 2117, 2116, 3.85),
-    CRYSTAL(71, 8324, 8327, 3.85),
-    CRYSTAL_UNCHARGED(71, 8324, 8327, 4.02);
+    CRYSTAL(71, 8324, 8327, 4.02),
+    CRYSTAL_UNCHARGED(71, 8324, 8327, 3.82);
 
     public final int levelReq, animationId, canoeAnimationId;
     public final double axeMultiplier;
