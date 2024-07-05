@@ -44,13 +44,16 @@ public enum CrystalEquipment {
             player.sendMessage("Your " + crystalItem.getDef().name + " already has maximum charges.");
             return;
         }
-        int chargesToAdd = 100 * shardsToUse;
-        if (crystalItem.getId() == inactiveId) {
-            crystalItem.setId(activeId);
-        }
-        crystalItem.putAttribute(AttributeTypes.CHARGES, currentCharges + chargesToAdd);
-        shards.remove(shardsToUse);
-        player.dialogue(new ItemDialogue().one(crystalItem.getId(), "Your " + crystalItem.getDef().name + " now holds " + NumberUtils.formatNumber(AttributeExtensions.getCharges(crystalItem)) + " charges."));
+        player.integerInput("How many shards would you like to add? (Up to " + NumberUtils.formatNumber(shardsToUse) + ")", (input) -> {
+            int finalShard = Math.min(input, shardsToUse);
+            int chargesToAdd = 100 * finalShard;
+            if (crystalItem.getId() == inactiveId) {
+                crystalItem.setId(activeId);
+            }
+            crystalItem.putAttribute(AttributeTypes.CHARGES, currentCharges + chargesToAdd);
+            shards.remove(finalShard);
+            check(player, crystalItem);
+        });
     }
 
     public void removeCharge(Player player) {
