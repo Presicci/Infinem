@@ -110,6 +110,9 @@ public class Woodcutting {
                     player.resetAnimation();
                     return;
                 }
+                if (hatchet == Hatchet.CRYSTAL) {
+                    if (!CrystalEquipment.AXE.hasCharge(player)) return;
+                }
                 if (treeDeadCheck.get()) {
                     player.resetAnimation();
                     return;
@@ -159,6 +162,9 @@ public class Woodcutting {
                     treeData.counter.increment(player, amount);
                     double xp = treeData.experience;
                     player.getStats().addXp(StatType.Woodcutting, xp * amount, true);
+                    if (hatchet == Hatchet.CRYSTAL) {
+                        CrystalEquipment.AXE.removeCharge(player);
+                    }
                     if ((treeData.single || Random.get(10) == 3) && treeData != Tree.DRAMEN_TREE) {
                         player.resetAnimation();
                         if (treeData == Tree.SULLIUSCEP) {
@@ -169,10 +175,6 @@ public class Woodcutting {
                         }
                         World.startEvent(treeDeadAction);
                         return;
-                    }
-                    if (hatchet == Hatchet.CRYSTAL) {
-                        CrystalEquipment.AXE.removeCharge(player);
-                        if (!CrystalEquipment.AXE.hasCharge(player)) break;
                     }
                 }
                 if (attempts++ % 4 == 0)
