@@ -4,8 +4,11 @@ import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.MessageDialogue;
+import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.attributes.AttributeExtensions;
@@ -54,6 +57,27 @@ public enum CrystalEquipment {
             shards.remove(finalShard);
             check(player, crystalItem);
         });
+    }
+
+    private void uncharge(Player player, Item item) {
+        int charges = item.getCharges();
+        int shards = (int) Math.floor(charges / 100D);
+        if (shards > 0 & !player.getInventory().hasRoomFor(Items.CRYSTAL_SHARD, shards)) {
+            player.sendMessage("You need more space to uncharge that.");
+            return;
+        }
+        String name = item.getDef().name.toLowerCase();
+        player.dialogue(
+                new MessageDialogue("Uncharging the " + name + " will return " + shards + " shards to you.<brWould you like to continue?"),
+                new OptionsDialogue("Uncharge the " + name + "?",
+                        new Option("Yes", () -> {
+                            item.removeCharges();
+                            item.setId(inactiveId);
+                            if (shards > 0) player.getInventory().add(Items.CRYSTAL_SHARD, shards);
+                        }),
+                        new Option("No")
+                )
+        );
     }
 
     public void removeCharge(Player player) {
@@ -106,6 +130,7 @@ public enum CrystalEquipment {
     static {
         for (CrystalEquipment equipment : CrystalEquipment.values()) {
             ItemAction.registerInventory(equipment.activeId, "check", CrystalEquipment::check);
+            ItemAction.registerInventory(equipment.activeId, "uncharge", equipment::uncharge);
             if (equipment != BLADE_OF_SAELDOR)  // Blade of saeldor doesn't have equip options for some reason
                 ItemAction.registerEquipment(equipment.activeId, "check", CrystalEquipment::check);
             ItemItemAction.register(equipment.activeId, SHARD, equipment::charge);
