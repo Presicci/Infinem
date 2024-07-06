@@ -35,13 +35,13 @@ public class ForestryTree {
     protected static void pingIfActive(Player player, GameObject tree) {
         if (!tree.hasTemporaryAttribute(PLAYERS_KEY)) return;
         Map<Player, Integer> activePlayers = tree.getTemporaryAttribute(PLAYERS_KEY);
-        activePlayers.put(player, 5);
+        activePlayers.put(player, 6);
     }
 
     protected static void pingTree(Player player, GameObject tree, Tree treeType, EventConsumer treeDeadAction) {
         if (!tree.hasTemporaryAttribute(PLAYERS_KEY)) setupTree(tree, treeType, treeDeadAction);
         Map<Player, Integer> activePlayers = tree.getTemporaryAttribute(PLAYERS_KEY);
-        activePlayers.put(player, 5);
+        activePlayers.put(player, 6);
     }
 
     private static void damageTree(GameObject tree) {
