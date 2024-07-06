@@ -2,22 +2,22 @@ package io.ruin.model.skills.mining;
 
 public enum Rock {
 
-    BLURITE(668, "blurite", 10, 50, 17.5, 25, 1000000, 1),
-    COPPER(436, "copper", 1, 50, 17.5, 5, 741600, 1.0 / 8),
-    TIN(438, "tin", 1, 50, 17.5, 5, 741600, 1.0 / 8),
-    IRON(440, "iron", 15, 150, 25.0, 10, 741600, 1.0 / 4),
-    SILVER(442, "silver", 20, 150, 30.0, 15, 741600, 1.0 / 4),
-    COAL(453, "coal", 30, 150, 35.0, 20, 290640, 1.0 / 9),
-    GOLD(444, "gold", 40, 200, 65.0, 20, 296640, 1.0 / 5),
+    BLURITE(668, "blurite", 10, 50, 17.5, 25, 1000000, 1, 10),
+    COPPER(436, "copper", 1, 50, 17.5, 5, 741600, 1.0 / 8, 10),
+    TIN(438, "tin", 1, 50, 17.5, 5, 741600, 1.0 / 8, 10),
+    IRON(440, "iron", 15, 150, 25.0, 10, 741600, 1.0 / 4, 15),
+    SILVER(442, "silver", 20, 150, 30.0, 15, 741600, 1.0 / 4, 15),
+    COAL(453, "coal", 30, 150, 35.0, 20, 290640, 1.0 / 9, 15),
+    GOLD(444, "gold", 40, 200, 65.0, 20, 296640, 1.0 / 5, 20),
     SANDSTONE(new int[]{6971, 6973, 6975, 6977}, "sandstone", 35, 150, new int[]{30, 40, 50, 60}, 5, 741600, 1),
     GRANITE(new int[]{6979, 6981, 6983}, "granite", 45, 150, new int[]{50, 60, 75}, 5, 741600, 1),
-    MITHRIL(447, "mithril", 55, 225, 75.0, 20, 148320, 1.0 / 5),
-    CLAY(434, "clay", 1, 15, 5.0, 3, 741600, 1.0 / 5),
-    ADAMANT(449, "adamant", 70, 250, 85.0, 25, 59328, 1.0 / 4),
+    MITHRIL(447, "mithril", 55, 225, 75.0, 20, 148320, 1.0 / 5, 25),
+    CLAY(434, "clay", 1, 15, 5.0, 3, 741600, 1.0 / 5, 30),
+    ADAMANT(449, "adamant", 70, 250, 85.0, 25, 59328, 1.0 / 4, 30),
     LOVAKITE(13356, "lovakite", 65, 350, 10.0, 40, 245562, 1),
     AMETHYST(21347, "amethyst", 92, 1000, 246.0, 120, 46350, 1),
-    RUNE(451, "rune", 85, 300, 100.0, 30, 42377, 2.0 / 5),
-    GEM_ROCK(new int[]{1625, 1627, 1629, 1623, 1621, 1619, 1617}, "gem", 40, 300, 65.0, 35, 211886, 1.0 / 3),
+    RUNE(451, "rune", 85, 300, 100.0, 30, 42377, 2.0 / 5, 75),
+    GEM_ROCK(new int[]{1625, 1627, 1629, 1623, 1621, 1619, 1617}, "gem", 40, 300, 65.0, 35, 211886, 1.0 / 3, 50),
     TE_SALT(22593, "te salt", 72, 250, 5.0, 9, 1000000, 1),
     EFH_SALT(22595, "efh salt", 72, 250, 5.0, 9, 1000000, 1),
     URT_SALT(22597, "urt salt", 72, 250, 5.0, 9, 1000000, 1),
@@ -30,6 +30,7 @@ public enum Rock {
     public final int[] multiOre;
     public final int[] multiExp;
     public final double depleteChance;
+    public int depleteTime;
 
     Rock(int ore, String rockName, int levelReq, int difficulty, double experience, int respawnTime, int petOdds, double depleteChance) {
         this.ore = ore;
@@ -42,6 +43,20 @@ public enum Rock {
         this.multiOre = null;
         this.multiExp = null;
         this.depleteChance = depleteChance;
+    }
+
+    Rock(int ore, String rockName, int levelReq, int difficulty, double experience, int respawnTime, int petOdds, double depleteChance, int depleteTime) {
+        this.ore = ore;
+        this.rockName = rockName;
+        this.levelReq = levelReq;
+        this.difficulty = difficulty;
+        this.experience = experience;
+        this.respawnTime = respawnTime;
+        this.petOdds = petOdds;
+        this.multiOre = null;
+        this.multiExp = null;
+        this.depleteChance = depleteChance;
+        this.depleteTime = depleteTime;
     }
 
     Rock(int[] multiOre, String rockName, int levelReq, int difficulty, int[] multiExp, int respawnTime, int petOdds, double depleteChance) {
@@ -70,4 +85,17 @@ public enum Rock {
         this.depleteChance = depleteChance;
     }
 
+    Rock(int[] multiOre, String rockName, int levelReq, int difficulty, double experience, int respawnTime, int petOdds, double depleteChance, int depleteTime) {
+        this.multiOre = multiOre;
+        this.rockName = rockName;
+        this.levelReq = levelReq;
+        this.difficulty = difficulty;
+        this.experience = experience;
+        this.respawnTime = respawnTime;
+        this.petOdds = petOdds;
+        this.ore = -1;
+        multiExp = null;
+        this.depleteChance = depleteChance;
+        this.depleteTime = depleteTime;
+    }
 }

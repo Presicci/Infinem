@@ -181,7 +181,9 @@ public class Mining {
 
                     /* Rolling for rock depletion */
                     double depleteChance = rockData.depleteChance * (1 - miningGloves(player, rockData));
-                    if (Random.get() < depleteChance) {
+                    if (rockData.depleteTime > 0 && rock != null) {
+                        TimedRock.pingRock(rock, rockData, emptyId);
+                    } else if (Random.get() < depleteChance) {
                         player.resetAnimation();
                         World.startEvent(worldEvent -> {
                             if (rock != null) {
@@ -196,6 +198,8 @@ public class Mining {
                         });
                         return;
                     }
+                } else if (rockData.depleteTime > 0 && rock != null) {
+                    TimedRock.pingIfActive(rock);
                 }
 
                 if (attempts++ % 4 == 0)
