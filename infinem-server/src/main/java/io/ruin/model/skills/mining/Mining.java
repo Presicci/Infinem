@@ -38,6 +38,16 @@ public class Mining {
             new LootItem(Items.UNCUT_DIAMOND, 1, 1)
     );
 
+    public static final LootTable GEM_ROCK_TABLE = new LootTable().addTable(1,
+            new LootItem(Items.UNCUT_OPAL, 1, 1500),
+            new LootItem(Items.UNCUT_JADE, 1, 750),
+            new LootItem(Items.UNCUT_RED_TOPAZ, 1, 375),
+            new LootItem(Items.UNCUT_SAPPHIRE, 1, 225),
+            new LootItem(Items.UNCUT_EMERALD, 1, 125),
+            new LootItem(Items.UNCUT_RUBY, 1, 125),
+            new LootItem(Items.UNCUT_DIAMOND, 1, 100)
+    );
+
     private static void mine(Rock rockData, Player player, GameObject rock, int emptyId, PlayerCounter counter, NPC npc) {
         Pickaxe pickaxe = Pickaxe.find(player);
         if (pickaxe == null) {
@@ -93,8 +103,7 @@ public class Mining {
 
                 /* If the rock is a gem rock, grab a random size */
                 if (rockData == Rock.GEM_ROCK) {
-                    if (rockData.multiOre != null)
-                        itemId = rockData.multiOre[Random.get(rockData.multiOre.length - 1)];
+                    itemId = GEM_ROCK_TABLE.rollItem().getId();
                     gemRock = true;
                 }
 

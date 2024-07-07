@@ -16,6 +16,7 @@ import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.loot.RareDropTable;
 import io.ruin.model.map.object.actions.impl.chests.*;
 import io.ruin.model.skills.construction.mahoganyhomes.MahoganySupplyCrate;
+import io.ruin.model.skills.mining.Mining;
 import io.ruin.model.skills.thieving.PickPocket;
 import io.ruin.model.skills.thieving.Stall;
 import io.ruin.model.skills.thieving.ThievableChests;
@@ -148,6 +149,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Bird Nest (Seed)", BirdNest.SEED_LOOT),
             new DropViewerEntry("Bird Nest (Wyson Seed)", BirdNest.WYSON_SEED_LOOT),
             new DropViewerEntry("Trade Mole Parts - Wyson", Wyson.NESTS),
-            new DropViewerEntry("Supply Crate (Mahogany Homes)", MahoganySupplyCrate.LOOT_TABLE)
+            new DropViewerEntry("Supply Crate (Mahogany Homes)", MahoganySupplyCrate.LOOT_TABLE),
+            new DropViewerEntry("Gem Rock", Mining.GEM_ROCK_TABLE)
     ).collect(Collectors.toCollection(ArrayList::new));
 }
