@@ -17,38 +17,40 @@ public class RuneEssence {
         if (pickaxe == null) {
             player.dialogue(new MessageDialogue("You need a pickaxe to mine this rock. You do not have a pickaxe which" +
                     " you have the Mining level to use."));
+            player.privateSound(2277);
             return;
         }
-        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
+        if (darkEssence && player.getStats().get(StatType.Crafting).fixedLevel < 38) {
+            player.sendMessage("You need a Crafting level of least 38 to mine from this rock.");
             player.privateSound(2277);
-            player.sendMessage("Your inventory and bank are too full to hold any more rune stones.");
-            return;
-        } else if (player.getInventory().isFull()) {
-            player.privateSound(2277);
-            player.sendMessage("Your inventory is too full to hold any more rune stones.");
             return;
         }
         if (!player.getInventory().hasId(Tool.CHISEL) && darkEssence) {
             player.sendMessage("You need a chisel to mine the rune stones.");
+            player.privateSound(2277);
+            return;
+        }
+        if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
+            player.sendMessage("Your inventory and bank are too full to hold any more rune stones.");
+            player.privateSound(2277);
+            return;
+        } else if (player.getInventory().isFull()) {
+            player.sendMessage("Your inventory is too full to hold any more rune stones.");
+            player.privateSound(2277);
             return;
         }
         player.startEvent(event -> {
-            event.delay(1);
             player.sendMessage("You swing your pick at the rock.");
             while (true) {
                 if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull() && !darkEssence) {
-                    player.privateSound(2277);
                     player.sendMessage("Your inventory and bank are too full to hold any more rune stones.");
+                    player.privateSound(2277);
                     player.resetAnimation();
                     return;
                 } else if (player.getInventory().isFull()) {
-                    player.privateSound(2277);
                     player.sendMessage("Your inventory is too full to hold any more rune stones.");
+                    player.privateSound(2277);
                     player.resetAnimation();
-                    return;
-                }
-                if (darkEssence && player.getStats().get(StatType.Crafting).fixedLevel < 38) {
-                    player.sendMessage("You need a Crafting level of least 38 to mine from this rock.");
                     return;
                 }
                 Stat stat = player.getStats().get(StatType.Mining);
