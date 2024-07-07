@@ -69,8 +69,12 @@ public class Mining {
             player.sendMessage("Your inventory is too full to hold any more " + rockData.rockName + ".");
             return;
         }
+        int pickaxeTicks = pickaxe.ticks;
+        final int miningAnimation = rockData == Rock.AMETHYST ? pickaxe.crystalAnimationID : pickaxe.regularAnimationID;
         player.startEvent(event -> {
             int attempts = 0;
+            player.sendFilteredMessage("You swing your pick at the rock.");
+            player.animate(miningAnimation);
             while (true) {
                 if ((rock != null && rock.id == emptyId)
                         || (npc != null && npc.isRemoved())) {
@@ -109,14 +113,9 @@ public class Mining {
 
                 Item gem = null;
                 boolean multiple = false;
-                final int miningAnimation = rockData == Rock.AMETHYST ? pickaxe.crystalAnimationID : pickaxe.regularAnimationID;
-                if (attempts == 0) {
-                    player.sendFilteredMessage("You swing your pick at the rock.");
-                    player.animate(miningAnimation);
-                    attempts++;
-                } else if (attempts % 2 == 0 && Random.get(100) <= chance(getEffectiveLevel(player), rockData, pickaxe)) {
+                if (canAttempt(attempts, pickaxe) && Random.get(100) <= chance(getEffectiveLevel(player), rockData, pickaxe)) {
                     int amount = (isSalt(rockData)) ? getSaltAmount(player) : 1;
-                    if (rockData != Rock.GEM_ROCK && Random.rollDie(256)) {  // 1/256 chance to replace ore with a gem)
+                    if (rockData != Rock.GEM_ROCK && Random.rollDie(256)) {  // 1/256 chance to replace ore with a gem
                         gem = GEM_TABLE.rollItem();
 
                         player.collectResource(gem);
@@ -389,8 +388,14 @@ public class Mining {
         }
     }
 
+    public static boolean canAttempt(int cycle, Pickaxe pickaxe) {
+        int pickaxeTicks = pickaxe.ticks;
+        if (cycle % pickaxeTicks == 0) return true;
+        return pickaxe.ordinal() >= 7 && Random.rollDie(6) && cycle % pickaxeTicks - 1 == 0;
+    }
+
     public static double chance(int level, Rock type, Pickaxe pickaxe) {
-        double points = ((level - type.levelReq) + 1 + (double) pickaxe.points);
+        double points = ((level - type.levelReq) + 1);
         double denominator = (double) type.difficulty;
         return (Math.min(0.95, points / denominator) * 100);
     }

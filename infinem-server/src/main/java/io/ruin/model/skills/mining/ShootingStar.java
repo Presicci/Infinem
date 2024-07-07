@@ -120,9 +120,12 @@ public enum ShootingStar {
             player.sendMessage("Your inventory is too full to hold any more stardust.");
             return;
         }
+        final int miningAnimation = pickaxe.regularAnimationID;
         player.startEvent(event -> {
             int attempts = 0;
             ShootingStar currentStar = star;
+            player.sendFilteredMessage("You swing your pick at the rock.");
+            player.animate(miningAnimation);
             while (true) {
                 if (starObject.isRemoved()) {
                     player.resetAnimation();
@@ -137,12 +140,7 @@ public enum ShootingStar {
                     player.sendMessage("Your inventory is too full to hold any more stardust.");
                     return;
                 }
-                final int miningAnimation = pickaxe.regularAnimationID;
-                if (attempts == 0) {
-                    player.sendFilteredMessage("You swing your pick at the rock.");
-                    player.animate(miningAnimation);
-                    attempts++;
-                } else if (attempts % 2 == 0 && Random.get(100) <= chance(Mining.getEffectiveLevel(player), currentStar, pickaxe)) {
+                if (Mining.canAttempt(attempts, pickaxe) && Random.get(100) <= chance(Mining.getEffectiveLevel(player), currentStar, pickaxe)) {
                     int stardustQuantity = Random.rollPercent(currentStar.doubleDustChance) ? 2 : 1;
                     player.collectResource(new Item(STARDUST, stardustQuantity));
                     player.getInventory().add(STARDUST, stardustQuantity);
@@ -177,7 +175,7 @@ public enum ShootingStar {
     }
 
     private static double chance(int level, ShootingStar star, Pickaxe pickaxe) {
-        double points = ((level - star.getLevelRequirement()) + 1 + (double) pickaxe.points);
+        double points = ((level - star.getLevelRequirement()) + 1);
         double denominator = (double) 350;
         return (Math.min(0.80, points / denominator) * 100);
     }
