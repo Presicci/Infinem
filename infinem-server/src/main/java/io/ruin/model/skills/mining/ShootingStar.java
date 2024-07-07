@@ -140,7 +140,7 @@ public enum ShootingStar {
                     player.sendMessage("Your inventory is too full to hold any more stardust.");
                     return;
                 }
-                if (Mining.canAttempt(attempts, pickaxe) && Random.get(100) <= chance(Mining.getEffectiveLevel(player), currentStar, pickaxe)) {
+                if (Mining.canAttempt(attempts, pickaxe) && Random.get(100) <= chance(Mining.getEffectiveLevel(player))) {
                     int stardustQuantity = Random.rollPercent(currentStar.doubleDustChance) ? 2 : 1;
                     player.collectResource(new Item(STARDUST, stardustQuantity));
                     player.getInventory().add(STARDUST, stardustQuantity);
@@ -174,10 +174,11 @@ public enum ShootingStar {
                 + new DecimalFormat("#.##").format((double) (star.stardust - stardustLeft) / star.stardust * 100) + "% of the way to the next layer"));
     }
 
-    private static double chance(int level, ShootingStar star, Pickaxe pickaxe) {
-        double points = ((level - star.getLevelRequirement()) + 1);
-        double denominator = (double) 350;
-        return (Math.min(0.80, points / denominator) * 100);
+    private static double chance(int level) {
+        int levelDifference = level - 10;
+        int baseChance = 30;
+        double slope = 0.175;
+        return baseChance + (levelDifference * slope);
     }
 
     public static String getTelescopeString(int timeWindow) {
