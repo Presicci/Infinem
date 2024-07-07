@@ -19,7 +19,6 @@ public class RuneEssence {
                     " you have the Mining level to use."));
             return;
         }
-
         if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull()) {
             player.privateSound(2277);
             player.sendMessage("Your inventory and bank are too full to hold any more rune stones.");
@@ -29,16 +28,13 @@ public class RuneEssence {
             player.sendMessage("Your inventory is too full to hold any more rune stones.");
             return;
         }
-
         if (!player.getInventory().hasId(Tool.CHISEL) && darkEssence) {
             player.sendMessage("You need a chisel to mine the rune stones.");
             return;
         }
-
         player.startEvent(event -> {
             event.delay(1);
             player.sendMessage("You swing your pick at the rock.");
-
             while (true) {
                 if (player.getRelicManager().hasRelicEnalbed(Relic.ENDLESS_HARVEST) && player.getBank().hasFreeSlots(1) && player.getInventory().isFull() && !darkEssence) {
                     player.privateSound(2277);
@@ -51,16 +47,13 @@ public class RuneEssence {
                     player.resetAnimation();
                     return;
                 }
-
                 if (darkEssence && player.getStats().get(StatType.Crafting).fixedLevel < 38) {
                     player.sendMessage("You need a Crafting level of least 38 to mine from this rock.");
                     return;
                 }
-
                 Stat stat = player.getStats().get(StatType.Mining);
                 player.animate(pickaxe.regularAnimationID);
-                event.delay(darkEssence ? ticks(stat.currentLevel, pickaxe) : 2);
-
+                event.delay(pickaxe.ticks);
                 if (darkEssence) {
                     player.animate(7201);
                     event.delay(6);
@@ -85,22 +78,6 @@ public class RuneEssence {
                 }
             }
         });
-    }
-
-    private static double power(int level, Pickaxe pickaxe) {
-        double points = ((level - 1) + 1 + pickaxe.points);
-        return (Math.min(80, points));
-    }
-
-    private static int ticks(int level, Pickaxe pickaxe) {
-        double power = power(level, pickaxe);
-        if (power > 50)
-            return 2;
-        if (power > 30)
-            return 3;
-        if (power > 15)
-            return 4;
-        return 5;
     }
 
     static {
