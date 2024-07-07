@@ -1,0 +1,7 @@
+Seer: Many greetings.
+<Many greetings.
+Player: Many greetings.
+Seer: Remember, whenever you set out to do something, something else must be done first.
+><I seek knowledge and power!
+Player: I seek knowledge and power!
+Seer: Knowledge comes from experience, power comes from battleaxes.
