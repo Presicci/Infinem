@@ -69,7 +69,6 @@ public class Mining {
             player.sendMessage("Your inventory is too full to hold any more " + rockData.rockName + ".");
             return;
         }
-        int pickaxeTicks = pickaxe.ticks;
         final int miningAnimation = rockData == Rock.AMETHYST ? pickaxe.crystalAnimationID : pickaxe.regularAnimationID;
         player.startEvent(event -> {
             int attempts = 0;
@@ -113,7 +112,7 @@ public class Mining {
 
                 Item gem = null;
                 boolean multiple = false;
-                if (canAttempt(attempts, pickaxe) && Random.get(100) <= chance(getEffectiveLevel(player), rockData, pickaxe)) {
+                if (canAttempt(attempts, pickaxe) && Random.get(100) <= chance(getEffectiveLevel(player), rockData)) {
                     int amount = (isSalt(rockData)) ? getSaltAmount(player) : 1;
                     if (rockData != Rock.GEM_ROCK && Random.rollDie(256)) {  // 1/256 chance to replace ore with a gem
                         gem = GEM_TABLE.rollItem();
@@ -394,10 +393,11 @@ public class Mining {
         return pickaxe.ordinal() >= 7 && Random.rollDie(6) && cycle % pickaxeTicks - 1 == 0;
     }
 
-    public static double chance(int level, Rock type, Pickaxe pickaxe) {
-        double points = ((level - type.levelReq) + 1);
-        double denominator = (double) type.difficulty;
-        return (Math.min(0.95, points / denominator) * 100);
+    public static double chance(int level, Rock type) {
+        int levelDifference = level - type.levelReq;
+        double baseChance = type.baseChance;
+        double levelBonus = type.levelSlope * levelDifference;
+        return baseChance + levelBonus;
     }
 
     static {
