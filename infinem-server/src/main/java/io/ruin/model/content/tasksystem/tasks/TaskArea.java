@@ -50,7 +50,7 @@ public enum TaskArea {
      }
 
      public boolean hasTierUnlocked(Player player, AreaTaskTier tier) {
-          return player.getTaskManager().getAreaTaskPoints(this.ordinal()) >= tier.getPointThreshold();
+          return player.getTaskManager().getAreaTaskPoints(this.ordinal()) >= tier.getPointThreshold() || (player.isStaff() && player.debug);
      }
 
      public static TaskArea getTaskArea(String name) {
