@@ -58,7 +58,6 @@ public enum SkillingOutfit {
         if (setBonus > 0D && equippedPieces >= pieces.length) {
             bonus += setBonus;
         }
-        player.sendMessage("in" + bonus);
         return bonus;
     }
 
@@ -69,7 +68,6 @@ public enum SkillingOutfit {
                 bonus *= outfit.getExperienceBonus(player);
             }
         }
-        player.sendMessage("out " + bonus);
         return bonus;
     }
 
