@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.Random;
 import io.ruin.model.inter.handlers.itemskeptondeath.IKOD;
+import io.ruin.model.item.Items;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.activities.duelarena.DuelRule;
@@ -876,9 +877,6 @@ public class PlayerCombat extends Combat {
     }
 
     private boolean salveAmuletBoost(Player player, Hit hit, Entity entity) {
-        final int salveAmulet = 4081;
-        final int salveAmuletImbued = 12017;
-
         if (hit.attackStyle != null && target != null && target.isNpc()) {
             Item amulet = player.getEquipment().get(Equipment.SLOT_AMULET);
             if (amulet == null) {
@@ -887,13 +885,31 @@ public class PlayerCombat extends Combat {
             if (!target.npc.getDef().hasCustomValue("UNDEAD")) {
                 return false;
             }
-            if (hit.attackStyle.isMelee() && amulet.getId() == salveAmulet) {
-                hit.boostAttack(0.15);
-                hit.boostDamage(0.15);
+            int amuletId = amulet.getId();
+            if (hit.attackStyle.isMelee()) {
+                if (amuletId == Items.SALVE_AMULET || amuletId == Items.SALVE_AMULET_I) {
+                    hit.boostAttack(0.1667);
+                    hit.boostDamage(0.1667);
+                } else if (amuletId == Items.SALVE_AMULET_E || amuletId == Items.SALVE_AMULET_EI) {
+                    hit.boostAttack(0.2);
+                    hit.boostDamage(0.2);
+                }
                 return true;
-            } else if (amulet.getId() == salveAmuletImbued) {
-                hit.boostAttack(0.15);
-                hit.boostDamage(0.15);
+            } else {
+                if (amuletId == Items.SALVE_AMULET_I) {
+                    if (hit.attackStyle.isRanged()) {
+                        hit.boostAttack(0.1667);
+                        hit.boostDamage(0.1667);
+                    } else {
+                        hit.boostAttack(0.15);
+                        hit.boostDamage(0.15);
+                    }
+                } else if (amuletId == Items.SALVE_AMULET_EI) {
+                    hit.boostAttack(0.2);
+                    hit.boostDamage(0.2);
+                } else {
+                    return false;
+                }
                 return true;
             }
         }
