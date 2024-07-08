@@ -25,6 +25,7 @@ public enum CrystalEquipment {
     AXE(23673, 23675, 23953, Items.DRAGON_AXE),
     HARPOON(23762, 23764, 23953, Items.DRAGON_HARPOON),
     // Weapons
+    CRYSTAL_HALBERD(23987, 23989, 4207),
     CRYSTAL_BOW(23983, 23985, 4207),
     BLADE_OF_SAELDOR(23995, 23997),
     BOW_OF_FAERDHINEN(25865, 25862);
@@ -39,7 +40,7 @@ public enum CrystalEquipment {
     }
 
     private static final CrystalEquipment[] CRYSTAL_WEAPONS = {
-            CRYSTAL_BOW, BOW_OF_FAERDHINEN, BLADE_OF_SAELDOR
+            CRYSTAL_HALBERD, CRYSTAL_BOW, BOW_OF_FAERDHINEN, BLADE_OF_SAELDOR
     };
 
     private static final int SHARD = 23962;
