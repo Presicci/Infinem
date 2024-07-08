@@ -114,7 +114,7 @@ public class Mining {
                 boolean multiple = false;
                 if (canAttempt(attempts, pickaxe) && Random.get(100) <= chance(player, getEffectiveLevel(player), rockData)) {
                     int amount = (isSalt(rockData)) ? getSaltAmount(player) : 1;
-                    if (rockData != Rock.GEM_ROCK && Random.rollDie(256)) {  // 1/256 chance to replace ore with a gem
+                    if (rockData != Rock.GEM_ROCK && Random.rollDie(wearingGlory(player) ? 86 : 256)) {  // 1/256 chance to replace ore with a gem
                         gem = GEM_TABLE.rollItem();
 
                         player.collectResource(gem);
