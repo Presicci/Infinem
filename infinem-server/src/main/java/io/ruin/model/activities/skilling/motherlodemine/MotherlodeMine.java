@@ -258,6 +258,8 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
         }
         player.startEvent(event -> {
             int attempts = 0;
+            player.sendFilteredMessage("You swing your pick at the rock.");
+            player.animate(pickaxe.crystalAnimationID);
             while (true) {
                 if (player.debug) {
                     double chance = Mining.chance(player, player.getStats().get(StatType.Mining).currentLevel, Rock.MITHRIL);
@@ -282,11 +284,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                         obj.removeTemporaryAttribute(AttributeKey.OBJECT_DEPLETING);
                     });
                 }
-                if (attempts == 0) {
-                    player.sendFilteredMessage("You swing your pick at the rock.");
-                    player.animate(pickaxe.crystalAnimationID);
-                    attempts++;
-                } else if (attempts % 2 == 0 && Random.get(100) <= Mining.chance(player, player.getStats().get(StatType.Mining).currentLevel, Rock.PAYDIRT)) {
+                if (Mining.canAttempt(attempts, pickaxe) && Random.get(100) <= Mining.chance(player, player.getStats().get(StatType.Mining).currentLevel, Rock.PAYDIRT)) {
                     player.collectResource(new Item(PAY_DIRT, 1));
                     player.getInventory().add(PAY_DIRT, 1);
                     PlayerCounter.MINED_PAYDIRT.increment(player, 1);
