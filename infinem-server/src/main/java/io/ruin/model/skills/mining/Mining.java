@@ -74,7 +74,7 @@ public class Mining {
             int attempts = 1;
             player.sendFilteredMessage("You swing your pick at the rock.");
             player.animate(miningAnimation);
-            while (true) {
+            while (attempts < 300) {
                 if ((rock != null && rock.id == emptyId)
                         || (npc != null && npc.isRemoved())) {
                     player.resetAnimation();
