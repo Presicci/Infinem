@@ -240,17 +240,17 @@ public class Mining {
             return 0;
         if (gloves.getId() == MINING_GLOVES || gloves.getId() == SUPERIOR_MINING_GLOVES || gloves.getId() == EXPERT_MINING_GLOVES) {
             if (rockData == Rock.IRON)
-                return 0.25;
-            if (rockData == Rock.SILVER)
-                return 0.25;
-            if (rockData == Rock.COAL)
-                return 0.25;
-            if (rockData == Rock.GOLD)
                 return 0.2;
+            if (rockData == Rock.SILVER)
+                return 0.2;
+            if (rockData == Rock.COAL)
+                return 0.2;
+            if (rockData == Rock.GOLD)
+                return 0.17;
         }
         if (gloves.getId() == SUPERIOR_MINING_GLOVES || gloves.getId() == EXPERT_MINING_GLOVES) {
             if (rockData == Rock.MITHRIL)
-                return 0.15;
+                return 0.14;
             if (rockData == Rock.ADAMANT)
                 return 0.1;
         }
