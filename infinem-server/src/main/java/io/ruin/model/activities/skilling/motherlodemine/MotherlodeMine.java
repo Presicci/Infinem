@@ -294,7 +294,6 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                     player.sendMessage("You manage to mine some pay-dirt.");
                     if (Random.rollDie(247200 - (player.getStats().get(StatType.Mining).currentLevel * 25)))
                         Pet.ROCK_GOLEM.unlock(player);
-                    player.resetAnimation();
                     if (!upperLevel && Random.rollDie(3, 1)) {
                         obj.setId(obj.originalId);
                         World.startEvent(worldEvent -> {
@@ -304,6 +303,8 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                     }
                 }
                 if (player.getInventory().isFull()) {
+                    player.resetAnimation();
+                    player.privateSound(2277);
                     player.sendFilteredMessage("Your inventory is too full to continue mining.");
                     return;
                 }
