@@ -33,6 +33,14 @@ public class TimedRock {
         rock.putTemporaryAttribute(TIMER_KEY, 5);
     }
 
+    protected static void pingRockWithMiningGloves(GameObject rock, Rock rockType, int emptyId) {
+        if (!rock.hasTemporaryAttribute(TIMER_KEY)) setupRock(rock, rockType, emptyId);
+        System.out.println("Mining gloves!");
+        rock.putTemporaryAttribute(TIMER_KEY, 5);
+        int currentHealth = rock.getTemporaryAttributeIntOrZero(HEALTH_KEY);
+        rock.putTemporaryAttribute(HEALTH_KEY, Math.max(1, currentHealth - 5));
+    }
+
     private static void damageRock(GameObject rock) {
         int health = rock.incrementTemporaryNumericAttribute(HEALTH_KEY, 5);
         Rock rockType = rock.getTemporaryAttribute(TYPE_KEY);

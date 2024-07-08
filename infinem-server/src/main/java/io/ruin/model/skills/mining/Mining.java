@@ -71,7 +71,7 @@ public class Mining {
         }
         final int miningAnimation = rockData == Rock.AMETHYST ? pickaxe.crystalAnimationID : pickaxe.regularAnimationID;
         player.startEvent(event -> {
-            int attempts = 0;
+            int attempts = 1;
             player.sendFilteredMessage("You swing your pick at the rock.");
             player.animate(miningAnimation);
             while (true) {
@@ -185,12 +185,14 @@ public class Mining {
                         player.getTaskManager().doLookupByUUID(23, 1);  // Mine some Ore With a Steel Pickaxe
                     if (pickaxe == Pickaxe.RUNE)
                         player.getTaskManager().doLookupByUUID(101, 1);  // Mine some Ore With a Rune Pickaxe
-
-                    /* Rolling for rock depletion */
-                    double depleteChance = rockData.depleteChance * (1 - miningGloves(player, rockData));
                     if (rockData.depleteTime > 0 && rock != null) {
-                        TimedRock.pingRock(rock, rockData, emptyId);
-                    } else if (Random.get() < depleteChance) {
+                        // Mining gloves now have a chance to add 5 health to the rock being mined
+                        if (Random.get() < miningGloves(player, rockData)) {
+                            TimedRock.pingRockWithMiningGloves(rock, rockData, emptyId);
+                        } else {
+                            TimedRock.pingRock(rock, rockData, emptyId);
+                        }
+                    } else if (Random.get() < rockData.depleteChance) {
                         player.resetAnimation();
                         World.startEvent(worldEvent -> {
                             if (rock != null) {
@@ -229,30 +231,34 @@ public class Mining {
     private static final int SUPERIOR_MINING_GLOVES = 21345;
     private static final int EXPERT_MINING_GLOVES = 21392;
 
+    /**
+     * Chance to add 5 health to the rock being mined.
+     */
     private static double miningGloves(Player player, Rock rockData) {
         Item gloves = player.getEquipment().get(Equipment.SLOT_HANDS);
         if (gloves == null)
             return 0;
-
-        if (gloves.getId() == MINING_GLOVES || gloves.getId() == EXPERT_MINING_GLOVES) {
+        if (gloves.getId() == MINING_GLOVES || gloves.getId() == SUPERIOR_MINING_GLOVES || gloves.getId() == EXPERT_MINING_GLOVES) {
+            if (rockData == Rock.IRON)
+                return 0.25;
             if (rockData == Rock.SILVER)
-                return 0.5;
+                return 0.25;
             if (rockData == Rock.COAL)
-                return 0.4;
+                return 0.25;
             if (rockData == Rock.GOLD)
-                return 0.33;
+                return 0.2;
         }
         if (gloves.getId() == SUPERIOR_MINING_GLOVES || gloves.getId() == EXPERT_MINING_GLOVES) {
             if (rockData == Rock.MITHRIL)
-                return 0.25;
+                return 0.15;
             if (rockData == Rock.ADAMANT)
-                return 0.166;
-            if (rockData == Rock.RUNE)
-                return 0.125;
+                return 0.1;
         }
         if (gloves.getId() == EXPERT_MINING_GLOVES) {
+            if (rockData == Rock.RUNE)
+                return 0.075;
             if (rockData == Rock.AMETHYST)
-                return 0.25;
+                return 0.05;
         }
 
         return 0;
@@ -299,7 +305,6 @@ public class Mining {
             return false;
         if (!player.getPosition().inBounds(MiningGuild.MINERAL_AREA))
             return false;
-
         if (rockData == Rock.IRON)
             return Random.rollDie(100, 1);
         if (rockData == Rock.COAL)
@@ -310,7 +315,6 @@ public class Mining {
             return Random.rollDie(30, 1);
         if (rockData == Rock.RUNE || rockData == Rock.AMETHYST)
             return Random.rollDie(20, 1);
-
         return false;
     }
 
@@ -345,15 +349,12 @@ public class Mining {
         switch (ore) {
             case Items.COPPER_ORE:
             case Items.TIN_ORE:
-//                player.getInventory().add(2349, 1);
                 player.getStats().addXp(StatType.Smithing, 3.6, true);
                 return true;
             case Items.IRON_ORE:
-//                player.getInventory().add(2351, 1);
                 player.getStats().addXp(StatType.Smithing, 6.25, true);
                 return true;
             case Items.SILVER_ORE:
-//                player.getInventory().add(2355, 1);
                 player.getStats().addXp(StatType.Smithing, 7.8, true);
                 return true;
             case Items.SANDSTONE_1KG:
@@ -363,23 +364,18 @@ public class Mining {
             case Items.GRANITE_500G:
             case Items.GRANITE_2KG:
             case Items.GRANITE_5KG:
-//                player.getInventory().add(2357, 1);
                 player.getStats().addXp(StatType.Smithing, 8.0, true);
                 return true;
             case Items.GOLD_ORE:
-//                player.getInventory().add(2359, 1);
                 player.getStats().addXp(StatType.Smithing, 9.0, true);
                 return true;
             case Items.MITHRIL_ORE:
-//                player.getInventory().add(2362, 1);
                 player.getStats().addXp(StatType.Smithing, 12.0, true);
                 return true;
             case Items.ADAMANTITE_ORE:
-//                player.getInventory().add(2362, 1);
                 player.getStats().addXp(StatType.Smithing, 18.75, true);
                 return true;
             case Items.RUNITE_ORE:
-//                player.getInventory().add(2362, 1);
                 player.getStats().addXp(StatType.Smithing, 25, true);
                 return true;
             default:
