@@ -428,5 +428,23 @@
     "walkRange": 0,
     "world": "ECO",
     "npcName": "Ian"
+  },
+  {
+    "name": "Eluned",
+    "id": 9145,
+    "x": 2207,
+    "y": 3158,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Eluned",
+    "id": 9145,
+    "x": 2290,
+    "y": 3148,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
   }
 ]
