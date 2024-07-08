@@ -274,9 +274,9 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                 if (upperLevel && !obj.hasTemporaryAttribute(AttributeKey.OBJECT_DEPLETING)) {
                     obj.putTemporaryAttribute(AttributeKey.OBJECT_DEPLETING, 1);
                     World.startEvent(worldEvent -> {
-                        worldEvent.delay(Random.get(25, 45));
+                        worldEvent.delay(Random.get(60, 70));
                         obj.setId(obj.originalId);
-                        worldEvent.delay(Random.get(10, 25));
+                        worldEvent.delay(100);
                         obj.setId(obj.id - 4);
                         obj.removeTemporaryAttribute(AttributeKey.OBJECT_DEPLETING);
                     });
@@ -295,7 +295,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                     if (!upperLevel && Random.rollDie(3, 1)) {
                         obj.setId(obj.originalId);
                         World.startEvent(worldEvent -> {
-                            worldEvent.delay(Random.get(10, 25));
+                            worldEvent.delay(100);
                             obj.setId(obj.id - 4);
                         });
                     }
