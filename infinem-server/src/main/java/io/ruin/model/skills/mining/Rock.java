@@ -1,5 +1,7 @@
 package io.ruin.model.skills.mining;
 
+import io.ruin.model.item.Items;
+
 public enum Rock {
     BLURITE(668, "blurite", 10, 45, 5, 17.5, 25, 1000000, 1, 25),
     COPPER(436, "copper", 1, 60, 5, 17.5, 5, 741600, 1.0 / 8, 25),
@@ -7,6 +9,7 @@ public enum Rock {
     IRON(440, "iron", 15, 43, 0.95, 25.0, 10, 741600, 1.0 / 4, 35),
     SILVER(442, "silver", 20, 23.5, 0.7, 30.0, 15, 741600, 1.0 / 4, 35),
     COAL(453, "coal", 30, 16.4, 0.33, 35.0, 20, 290640, 1.0 / 9, 35),
+    PAYDIRT(Items.PAYDIRT, "pay-dirt", 30, 28.9, 0.18, 60, 100, -1, 1.0 / 3),
     GOLD(444, "gold", 40, 13.67, 0.27, 65.0, 20, 296640, 1.0 / 5, 45),
     SANDSTONE(new int[]{6971, 6973, 6975, 6977}, "sandstone", 35, 45, 0.65, new int[]{30, 40, 50, 60}, 5, 741600, 1),
     GRANITE(new int[]{6979, 6981, 6983}, "granite", 45, 40, 0.45, new int[]{50, 60, 75}, 5, 741600, 1),

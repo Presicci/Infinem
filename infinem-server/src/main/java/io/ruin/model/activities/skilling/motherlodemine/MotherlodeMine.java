@@ -285,7 +285,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                     player.sendFilteredMessage("You swing your pick at the rock.");
                     player.animate(pickaxe.crystalAnimationID);
                     attempts++;
-                } else if (attempts % 2 == 0 && Random.get(100) <= Mining.chance(player, player.getStats().get(StatType.Mining).currentLevel, Rock.MITHRIL)) {// 300 "difficulty" seems to be a good spot.
+                } else if (attempts % 2 == 0 && Random.get(100) <= Mining.chance(player, player.getStats().get(StatType.Mining).currentLevel, Rock.PAYDIRT)) {
                     player.collectResource(new Item(PAY_DIRT, 1));
                     player.getInventory().add(PAY_DIRT, 1);
                     PlayerCounter.MINED_PAYDIRT.increment(player, 1);
