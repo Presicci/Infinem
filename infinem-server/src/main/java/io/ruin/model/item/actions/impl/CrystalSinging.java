@@ -139,10 +139,19 @@ public enum CrystalSinging {
                 player.getInventory().remove(Items.CRYSTAL_SHARD, sing.requiredShards);
                 for (int index = 0; index < sing.requiredItems.length; index++) {
                     if (index == 0) {
-                        Item toReplace = player.getInventory().findItem(sing.requiredItems[index].getId());
-                        toReplace.setId(sing.productId);
-                        if (sing.initialCharges > 0) {
-                            toReplace.setCharges(sing.initialCharges);
+                        if (sing.requiredItems[index].getAmount() > 1) {
+                            player.getInventory().remove(sing.requiredItems[index]);
+                            Item item = new Item(sing.productId, 1);
+                            if (sing.initialCharges > 0) {
+                                item.setCharges(sing.initialCharges);
+                            }
+                            player.getInventory().add(item);
+                        } else {
+                            Item toReplace = player.getInventory().findItem(sing.requiredItems[index].getId());
+                            toReplace.setId(sing.productId);
+                            if (sing.initialCharges > 0) {
+                                toReplace.setCharges(sing.initialCharges);
+                            }
                         }
                     } else {
                         player.getInventory().remove(sing.requiredItems[index]);
