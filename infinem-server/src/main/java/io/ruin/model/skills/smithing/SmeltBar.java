@@ -28,7 +28,7 @@ import java.util.List;
 
 public class SmeltBar {
 
-    private static final String[] FURNACE_NAMES = { "furnace", "small furnace", "lava forge", "clay forge" };
+    private static final String[] FURNACE_NAMES = { "furnace", "small furnace", "lava forge", "clay forge", "lovakite furnace" };
     private static final int[] MOULDS = { Items.AMULET_MOULD, Items.NECKLACE_MOULD, Items.BRACELET_MOULD, Items.RING_MOULD };
     private static final int[] SILVER_ONLY_MOULDS = { Items.SICKLE_MOULD, Items.TIARA_MOULD, Items.BOLT_MOULD, Items.UNHOLY_MOULD, Items.HOLY_MOULD };
     private static final int[] SILVER_GEMS = { Items.OPAL, Items.JADE, Items.RED_TOPAZ };
