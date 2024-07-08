@@ -239,6 +239,10 @@ public class Mining {
         if (gloves == null)
             return 0;
         if (gloves.getId() == MINING_GLOVES || gloves.getId() == SUPERIOR_MINING_GLOVES || gloves.getId() == EXPERT_MINING_GLOVES) {
+            if (rockData == Rock.COPPER)
+                return 0.25;
+            if (rockData == Rock.TIN)
+                return 0.25;
             if (rockData == Rock.IRON)
                 return 0.2;
             if (rockData == Rock.SILVER)
