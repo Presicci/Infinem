@@ -16,6 +16,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.Geode;
 import io.ruin.model.item.actions.impl.chargable.CelestialRing;
+import io.ruin.model.item.actions.impl.chargable.CrystalEquipment;
 import io.ruin.model.item.actions.impl.chargable.InfernalTools;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.item.actions.impl.skillcapes.MiningSkillCape;
@@ -25,6 +26,7 @@ import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.MapArea;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.woodcutting.Hatchet;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
 
@@ -185,6 +187,9 @@ public class Mining {
                         player.getTaskManager().doLookupByUUID(23, 1);  // Mine some Ore With a Steel Pickaxe
                     if (pickaxe == Pickaxe.RUNE)
                         player.getTaskManager().doLookupByUUID(101, 1);  // Mine some Ore With a Rune Pickaxe
+                    if (pickaxe == Pickaxe.CRYSTAL) {
+                        CrystalEquipment.PICKAXE.removeCharge(player);
+                    }
                     if (rockData.depleteTime > 0 && rock != null) {
                         // Mining gloves now have a chance to add 5 health to the rock being mined
                         if (Random.get() < miningGloves(player, rockData)) {
@@ -390,6 +395,7 @@ public class Mining {
     public static boolean canAttempt(int cycle, Pickaxe pickaxe) {
         int pickaxeTicks = pickaxe.ticks;
         if (cycle % pickaxeTicks == 0) return true;
+        if (pickaxe == Pickaxe.CRYSTAL) return Random.rollDie(4) && cycle % pickaxeTicks - 1 == 0;
         return pickaxe.ordinal() >= 7 && Random.rollDie(6) && cycle % pickaxeTicks - 1 == 0;
     }
 

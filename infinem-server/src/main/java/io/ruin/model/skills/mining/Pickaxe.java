@@ -22,7 +22,9 @@ public enum Pickaxe {
     THIRD_AGE(61, 20014, 7283, 7282, 3),
     DRAGON_OR(61, 12797, 642, 335, 3),
     INFERNAL(61, 13243, 4482, 4481, 3),
-    INFERNAL_UNCHARGED(61, 13244, 4482, 4481, 3);
+    INFERNAL_UNCHARGED(61, 13244, 4482, 4481, 3),
+    CRYSTAL(71, 23680, 8347, 8345, 3),
+    CRYSTAL_UNCHARGED(71, 23682, 8347, 8345, 3);
 
     public final int levelReq, id, regularAnimationID, crystalAnimationID, ticks;
 
