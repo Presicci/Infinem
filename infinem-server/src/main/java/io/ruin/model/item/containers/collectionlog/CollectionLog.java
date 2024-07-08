@@ -1,6 +1,7 @@
 package io.ruin.model.item.containers.collectionlog;
 
 import com.google.gson.annotations.Expose;
+import io.ruin.model.inter.AccessMasks;
 import io.ruin.utility.Color;
 import io.ruin.cache.ItemID;
 import io.ruin.model.entity.npc.NPC;
@@ -29,6 +30,7 @@ public class CollectionLog {
 
     public static final int BLANK_ID = -1;
     public static int[] bossParams = {40697866, 40697867, 40697868, 40697869};
+    private static final String SEARCH_LETTERS = "abcdefghijklmnopqrstuvwxyz \t";
     @Expose @Getter
     private Map<Integer, Integer> collected = new HashMap<>();
 
@@ -45,6 +47,9 @@ public class CollectionLog {
     public void open(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.COLLECTION_LOG);
         sendTab(player, CollectionLogInfo.BOSS);
+        for (int index = 41; index < 70; index++) {
+            player.getPacketSender().sendAccessMask(Interface.COLLECTION_LOG, index, -1, -1, AccessMasks.ClickOp1);
+        }
     }
 
     public void sendTab(Player player, CollectionLogInfo info) {
@@ -196,6 +201,10 @@ public class CollectionLog {
             //h.actions[20] = (SimpleAction) p -> handleCombatAchievementsButton(p);
 
             h.actions[79] = (SimpleAction) CollectionLog::handleClose;
+
+            for (int index = 41; index < 69; index++) {
+                //h.actions[index] = (SimpleAction) player -> player.getPacketSender().sendClientScript(4100, "iiii", 4151, 5, 1, 476);
+            }
 
             h.closedAction = (p, i) -> {
                 p.getPacketSender().sendClientScript(101, "i", 11);
