@@ -25,6 +25,7 @@ public enum CrystalEquipment {
     AXE(23673, 23675, 23953, Items.DRAGON_AXE),
     HARPOON(23762, 23764, 23953, Items.DRAGON_HARPOON),
     // Weapons
+    CRYSTAL_BOW(23983, 23985, 4207),
     BLADE_OF_SAELDOR(23995, 23997),
     BOW_OF_FAERDHINEN(25865, 25862);
 
@@ -38,7 +39,7 @@ public enum CrystalEquipment {
     }
 
     private static final CrystalEquipment[] CRYSTAL_WEAPONS = {
-            BOW_OF_FAERDHINEN, BLADE_OF_SAELDOR
+            CRYSTAL_BOW, BOW_OF_FAERDHINEN, BLADE_OF_SAELDOR
     };
 
     private static final int SHARD = 23962;
@@ -99,8 +100,8 @@ public enum CrystalEquipment {
         }
         String name = item.getDef().name.toLowerCase();
         player.dialogue(
-                new MessageDialogue("Reverting the " + name + " will return the seed "
-                        + ((revertIds.length > 1) ? "and the " + ItemDefinition.get(revertIds[1]).name : "")
+                new MessageDialogue("Reverting the " + name + " will return the seed"
+                        + ((revertIds.length > 1) ? " and the " + ItemDefinition.get(revertIds[1]).name : "")
                         + ". Crystal shards will NOT be returned.<br>Continue?"
                 ),
                 new OptionsDialogue("Revert the " + name + "?",
@@ -108,6 +109,8 @@ public enum CrystalEquipment {
                             if (revertIds.length > 1) {
                                 item.removeCharges();
                                 item.setId(revertIds[1]);
+                            } else {
+                                item.remove();
                             }
                             player.getInventory().add(revertIds[0], 1);
                         }),
