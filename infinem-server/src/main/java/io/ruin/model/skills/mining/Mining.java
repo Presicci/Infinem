@@ -135,7 +135,7 @@ public class Mining {
                             CelestialRing.removeChargeIfEquipped(player);
                         player.collectResource(new Item(id, amount));
                         if (rockData == Rock.GRANITE)
-                            player.getTaskManager().doLookupByUUID(656);    // Granite lookup sucks so just manually do it
+                            player.getTaskManager().doLookupByUUID(656, 1, true);    // Mine 30 Chunks of Granite
                         else
                             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.MINE, ItemDefinition.get(id).name);
                         if (pickaxe == Pickaxe.INFERNAL && Random.rollDie(3, 1) && InfernalTools.INFERNAL_PICKAXE.hasCharge(player) && infernalPickProc(player, rockData.ore)) {
