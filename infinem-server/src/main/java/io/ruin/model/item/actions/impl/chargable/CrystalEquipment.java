@@ -21,9 +21,9 @@ import java.util.Arrays;
  */
 public enum CrystalEquipment {
     // Tools
-    PICKAXE(23680, 23682, 23953, Items.DRAGON_PICKAXE),
-    AXE(23673, 23675, 23953, Items.DRAGON_AXE),
-    HARPOON(23762, 23764, 23953, Items.DRAGON_HARPOON),
+    PICKAXE(23680, 23682, Items.DRAGON_PICKAXE, 23953),
+    AXE(23673, 23675, Items.DRAGON_AXE, 23953),
+    HARPOON(23762, 23764, Items.DRAGON_HARPOON, 23953),
     // Armor
     SHIELD(23991, 23993, 4207),
     HELM(23971, 23973, 23956),
@@ -116,13 +116,13 @@ public enum CrystalEquipment {
                 ),
                 new OptionsDialogue("Revert the " + name + "?",
                         new Option("Yes", () -> {
+                            item.removeCharges();
+                            item.setId(revertIds[0]);
                             if (revertIds.length > 1) {
-                                item.removeCharges();
-                                item.setId(revertIds[1]);
-                            } else {
-                                item.remove();
+                                for (int index = 1; index < revertIds.length; index++) {
+                                    player.getInventory().add(revertIds[index]);
+                                }
                             }
-                            player.getInventory().add(revertIds[0], 1);
                         }),
                         new Option("No")
                 )
