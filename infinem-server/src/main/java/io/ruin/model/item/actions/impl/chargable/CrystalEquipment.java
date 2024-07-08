@@ -12,6 +12,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.containers.Equipment;
+import lombok.Getter;
 
 import java.util.Arrays;
 
@@ -19,6 +20,7 @@ import java.util.Arrays;
  * @author Mrbennjerry - https://github.com/Presicci
  * Created on 1/17/2023
  */
+@Getter
 public enum CrystalEquipment {
     // Tools
     PICKAXE(23680, 23682, Items.DRAGON_PICKAXE, 23953),
@@ -193,6 +195,7 @@ public enum CrystalEquipment {
                     if (hit.damage > 0) equipment.removeCharge(player, item);
                 });
             }
+            ItemDefinition.get(equipment.activeId).custom_values.put("CRYSTAL", equipment);
         }
     }
 }

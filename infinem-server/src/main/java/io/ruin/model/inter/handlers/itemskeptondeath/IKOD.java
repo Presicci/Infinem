@@ -15,6 +15,7 @@ import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.ItemBreaking;
 import io.ruin.model.item.actions.impl.ItemImbue;
 import io.ruin.model.item.actions.impl.chargable.Blowpipe;
+import io.ruin.model.item.actions.impl.chargable.CrystalEquipment;
 import io.ruin.model.item.actions.impl.combine.ItemCombining;
 import io.ruin.model.item.pet.Pet;
 import io.ruin.model.skills.prayer.Prayer;
@@ -86,6 +87,7 @@ public class IKOD {
                 ItemBreaking breakable = item.getDef().breakTo;
                 ItemImbue imbue = item.getDef().upgradedFrom;
                 ItemCombining combined = item.getDef().combinedFrom;
+                CrystalEquipment crystalEquipment = item.getDef().getCustomValueOrDefault("CRYSTAL", null);
                 boolean isChargeable = IKODChargeable.isChargeable(item.getId());
                 IKODKind kind;
                 Pet pet = item.getDef().pet;
@@ -125,7 +127,7 @@ public class IKOD {
                     } else {
                         kind = IKODKind.OtherKept;
                     }
-                } else if (isChargeable) {
+                } else if (isChargeable || crystalEquipment != null) {
                     if (flags.killedByAPlayer) {
                         kind = IKODKind.LostToThePlayerWhoKillsYou;
                     } else {
@@ -165,6 +167,7 @@ public class IKOD {
         ItemBreaking breakable = item.getDef().breakTo;
         ItemImbue imbue = item.getDef().upgradedFrom;
         ItemCombining combined = item.getDef().combinedFrom;
+        CrystalEquipment crystalEquipment = item.getDef().getCustomValueOrDefault("CRYSTAL", null);
         if (breakable != null && ItemDefinition.get(breakable.brokenId) != null) {
             item.setId(breakable.brokenId);
             coins.incrementAmount(breakable.coinRepairCost);
@@ -194,6 +197,16 @@ public class IKOD {
             } else {
                 keepItems.add(new Item(combined.accessoryId));
             }
+        } else if (crystalEquipment != null) {
+            // Turn to inactive id
+            if (crystalEquipment.getRevertIds() == null || crystalEquipment.getRevertIds().length == 0) {
+                item.removeCharges();
+                item.setId(crystalEquipment.getInactiveId());
+            } else {
+                item.removeCharges();
+                item.setId(crystalEquipment.getRevertIds()[0]);
+            }
+            loseItems.add(item);
         } else {
             // Change to keep if we want untradeables to go to dying players inv after death
             loseItems.add(item);
