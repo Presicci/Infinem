@@ -112,7 +112,7 @@ public class Mining {
 
                 Item gem = null;
                 boolean multiple = false;
-                if (canAttempt(attempts, pickaxe) && Random.get(100) <= chance(getEffectiveLevel(player), rockData)) {
+                if (canAttempt(attempts, pickaxe) && Random.get(100) <= chance(player, getEffectiveLevel(player), rockData)) {
                     int amount = (isSalt(rockData)) ? getSaltAmount(player) : 1;
                     if (rockData != Rock.GEM_ROCK && Random.rollDie(256)) {  // 1/256 chance to replace ore with a gem
                         gem = GEM_TABLE.rollItem();
@@ -393,11 +393,22 @@ public class Mining {
         return pickaxe.ordinal() >= 7 && Random.rollDie(6) && cycle % pickaxeTicks - 1 == 0;
     }
 
-    public static double chance(int level, Rock type) {
+    private static boolean wearingGlory(Player player) {
+        return player.getEquipment().hasAtLeastOneOf(
+                Items.AMULET_OF_ETERNAL_GLORY,
+                Items.AMULET_OF_GLORY_1, Items.AMULET_OF_GLORY_2, Items.AMULET_OF_GLORY_3, Items.AMULET_OF_GLORY_4, Items.AMULET_OF_GLORY_5, Items.AMULET_OF_GLORY_6,
+                Items.AMULET_OF_GLORY_T1, Items.AMULET_OF_GLORY_T2, Items.AMULET_OF_GLORY_T3, Items.AMULET_OF_GLORY_T4, Items.AMULET_OF_GLORY_T5, Items.AMULET_OF_GLORY_T6);
+    }
+
+    public static double chance(Player player, int level, Rock type) {
         int levelDifference = level - type.levelReq;
         double baseChance = type.baseChance;
         double levelBonus = type.levelSlope * levelDifference;
-        return baseChance + levelBonus;
+        double chance = baseChance + levelBonus;
+        if (type == Rock.GEM_ROCK && wearingGlory(player)) {
+            chance *= 2;
+        }
+        return chance;
     }
 
     static {
