@@ -502,6 +502,7 @@ public enum PickPocket {
                                 } else {
                                     player.getInventory().addOrDrop(item);
                                 }
+                                player.getCollectionLog().collect(item);
                                 player.getTaskManager().doSkillItemLookup(item);
                             }
                         }
@@ -524,6 +525,7 @@ public enum PickPocket {
                             } else {
                                 player.getInventory().addOrDrop(item);
                             }
+                            player.getCollectionLog().collect(item);
                             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.PICKPOCKETLOOT, item.getDef().name, item.getAmount(), true);
                         }
                     }
