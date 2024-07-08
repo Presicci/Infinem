@@ -18,6 +18,7 @@ import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
+import io.ruin.model.item.pet.Pet;
 import io.ruin.model.map.*;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -281,7 +282,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                         obj.removeTemporaryAttribute(AttributeKey.OBJECT_DEPLETING);
                     });
                 }
-                if(attempts == 0) {
+                if (attempts == 0) {
                     player.sendFilteredMessage("You swing your pick at the rock.");
                     player.animate(pickaxe.crystalAnimationID);
                     attempts++;
@@ -291,6 +292,8 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
                     PlayerCounter.MINED_PAYDIRT.increment(player, 1);
                     player.getStats().addXp(StatType.Mining, 60, true);
                     player.sendMessage("You manage to mine some pay-dirt.");
+                    if (Random.rollDie(247200 - (player.getStats().get(StatType.Mining).currentLevel * 25)))
+                        Pet.ROCK_GOLEM.unlock(player);
                     player.resetAnimation();
                     if (!upperLevel && Random.rollDie(3, 1)) {
                         obj.setId(obj.originalId);
