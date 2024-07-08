@@ -25,9 +25,9 @@ public enum CrystalEquipment {
     AXE(23673, 23675, 23953, Items.DRAGON_AXE),
     HARPOON(23762, 23764, 23953, Items.DRAGON_HARPOON),
     // Weapons
-    CRYSTAL_SHIELD(23991, 23993, 4207),
-    CRYSTAL_HALBERD(23987, 23989, 4207),
-    CRYSTAL_BOW(23983, 23985, 4207),
+    SHIELD(23991, 23993, 4207),
+    HALBERD(23987, 23989, 4207),
+    BOW(23983, 23985, 4207),
     BLADE_OF_SAELDOR(23995, 23997),
     BOW_OF_FAERDHINEN(25865, 25862);
 
@@ -41,7 +41,7 @@ public enum CrystalEquipment {
     }
 
     private static final CrystalEquipment[] CRYSTAL_WEAPONS = {
-            CRYSTAL_HALBERD, CRYSTAL_BOW, BOW_OF_FAERDHINEN, BLADE_OF_SAELDOR
+            HALBERD, BOW, BOW_OF_FAERDHINEN, BLADE_OF_SAELDOR
     };
 
     private static final int SHARD = 23962;
@@ -181,8 +181,8 @@ public enum CrystalEquipment {
                 ItemDefinition.get(equipment.activeId).addPreTargetDefendListener((player, item, hit, target) -> equipment.removeCharge(player, item));
             }
         }
-        ItemDefinition.get(CRYSTAL_SHIELD.activeId).addPostDamageListener((player, item, hit) -> {
-            if (hit.damage > 0) CRYSTAL_SHIELD.removeCharge(player, item);
+        ItemDefinition.get(SHIELD.activeId).addPostDamageListener((player, item, hit) -> {
+            if (hit.damage > 0) SHIELD.removeCharge(player, item);
         });
     }
 }
