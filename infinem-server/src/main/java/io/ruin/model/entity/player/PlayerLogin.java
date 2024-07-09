@@ -102,7 +102,7 @@ public class PlayerLogin extends LoginRequest {
 
     private int phpbbAuth() {
         try {
-            String urlString = "https://www.infinem.net/client_auth.php?auth_key="+AUTH_KEY+"name="+info.name.toLowerCase().replace(" ","_")+"&pass="+encrypt("6YUYrFblfufvV0m9", "o3ZXgtKvts1YRYQT", info.password);
+            String urlString = "https://www.infinem.net/client_auth.php?auth_key="+AUTH_KEY+"&name="+info.name.toLowerCase().replace(" ","_")+"&pass="+encrypt("6YUYrFblfufvV0m9", "o3ZXgtKvts1YRYQT", info.password);
             HttpURLConnection conn = (HttpURLConnection) new URL(urlString).openConnection();
             BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
             String line = in.readLine().trim();
