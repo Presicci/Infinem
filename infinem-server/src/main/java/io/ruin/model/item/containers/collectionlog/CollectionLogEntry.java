@@ -5,6 +5,7 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.player.killcount.BossKillCounter;
 import io.ruin.model.entity.player.killcount.KillCounter;
 import io.ruin.model.entity.player.killcount.SlayerKillCounter;
+import io.ruin.model.inter.utils.Config;
 import lombok.Getter;
 
 import java.util.function.Function;
@@ -194,12 +195,12 @@ public enum CollectionLogEntry {
     TZHAAR(12027, CollectionLogCategory.OTHER),
     MISCELLANEOUS(12025, CollectionLogCategory.OTHER);
 
-    private final int greenLogVarbit;
+    private final Config greenLogVarbit;
     private final CollectionLogCategory category;
     private final Function<Player, Integer>[] killcounts;
 
     CollectionLogEntry(int greenLogVarbit, CollectionLogCategory category, Function<Player, Integer>... killcounts) {
-        this.greenLogVarbit = greenLogVarbit;
+        this.greenLogVarbit = Config.varpbit(greenLogVarbit, true);
         this.category = category;
         this.killcounts = killcounts;
     }

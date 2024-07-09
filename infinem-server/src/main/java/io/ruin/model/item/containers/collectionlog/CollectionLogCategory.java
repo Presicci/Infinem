@@ -9,10 +9,7 @@ import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import lombok.Getter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 @Getter
@@ -46,21 +43,23 @@ public enum CollectionLogCategory {
     }
 
     public void sendItems(Player player, int slot) {
+
         int enumId = enums.get(slot);
-
         int[] itemIds = getItems(enumId);
-
         Item[] container = new Item[itemIds.length];
-
+        int collectedCount = 0;
         for (int index = 0; index < itemIds.length; index++) {
             int itemId = itemIds[index];
             int amount = player.getCollectionLog().getCollected(itemId);
-
             if (amount > 0) {
                 container[index] = new Item(itemId, amount);
+                ++collectedCount;
             }
         }
-
+        if (collectedCount >= itemIds.length) {
+            CollectionLogEntry entry = entries.get(slot);
+            if (entry != null) entry.getGreenLogVarbit().set(player, 1);
+        }
         player.getPacketSender().sendItems(-1, -1, 620, container);
     }
 
@@ -70,11 +69,9 @@ public enum CollectionLogCategory {
 
     public void sendKillCount(Player player, int slot) {
         if (entries.size() <= slot) {
-            player.sendMessage("Oh");
             return;
         }
         CollectionLogEntry entry = entries.get(slot);
-        player.sendMessage("Sending " + entry.name());
         if (entry.getKillcounts().length > 0) {
             Config.COLLECTION_LOG_KC_1.setInstant(player, entry.getKillcounts()[0].apply(player));
         }
