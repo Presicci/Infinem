@@ -80,16 +80,15 @@ public class PlayerLogin extends LoginRequest {
                 return;
             }
             int returnCode = phpbbAuth();
-            if (returnCode == 0) {
-                deny(Response.INVALID_LOGIN);
-                return;
-            }
-            /*if(player.getPassword() != null) {  // TODO BCrypt encryption
-                if (!info.password.equalsIgnoreCase(player.getPassword())) {
+            if (returnCode == -1) {
+                if (player.getPassword() != null && player.getPassword().contains(":") && !info.password.equalsIgnoreCase(decrypt("6YUYrFblfufvV0m9", player.getPassword()))) {
                     deny(Response.INVALID_LOGIN);
                     return;
                 }
-            }*/
+            } else if (returnCode == 0) {
+                deny(Response.INVALID_LOGIN);
+                return;
+            }
             player.setIndex(index);
             player.init(info);
             World.players.set(index, player);
@@ -109,9 +108,8 @@ public class PlayerLogin extends LoginRequest {
             String line = in.readLine().trim();
             return Integer.parseInt(line);
         } catch (Exception e) {
-            e.printStackTrace();
+            return -1;
         }
-        return 0;
     }
 
     private static final String CIPHER_NAME = "AES/CBC/PKCS5PADDING";
@@ -146,6 +144,28 @@ public class PlayerLogin extends LoginRequest {
 
             return base64_EncryptedData + ":" + base64_IV;
 
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public static String decrypt(String key, String data) {
+        try {
+            String[] parts = data.split(":");
+
+            IvParameterSpec iv = new IvParameterSpec(Base64.getDecoder().decode(parts[1]));
+            SecretKeySpec skeySpec = new SecretKeySpec(key.getBytes("UTF-8"), "AES");
+
+            Cipher cipher = Cipher.getInstance(CIPHER_NAME);
+            cipher.init(Cipher.DECRYPT_MODE, skeySpec, iv);
+
+            byte[] decodedEncryptedData = Base64.getDecoder().decode(parts[0]);
+
+            byte[] original = cipher.doFinal(decodedEncryptedData);
+
+            return new String(original);
         } catch (Exception ex) {
             ex.printStackTrace();
         }

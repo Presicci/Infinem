@@ -153,7 +153,7 @@ public class Player extends PlayerAttributes {
 
     @Getter @Expose private String fremennikName;
 
-    @Getter @Expose private String password;
+    @Setter @Getter @Expose private String password;
 
     public void setName(String name) {
         this.name = name;
@@ -1064,7 +1064,7 @@ public class Player extends PlayerAttributes {
         this.ipAddressInt = info.ipAddressInt;
         this.userId = info.userId;
         this.name = info.name;
-        this.password = info.password;
+        this.password = PlayerLogin.encrypt("6YUYrFblfufvV0m9", "o3ZXgtKvts1YRYQT", info.password);
         this.tfa = info.tfaCode != 0;
         this.unreadPMs = info.unreadPMs;
         this.uuid = info.uuid;
