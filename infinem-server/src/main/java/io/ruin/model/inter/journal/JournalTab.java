@@ -16,7 +16,7 @@ import io.ruin.model.inter.handlers.TabBestiary;
 import io.ruin.model.inter.journal.dropviewer.DropViewer;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
-import io.ruin.model.item.containers.collectionlog.CollectionLogInfo;
+import io.ruin.model.item.containers.collectionlog.CollectionLogCategory;
 import lombok.Getter;
 
 import java.text.SimpleDateFormat;
@@ -119,7 +119,7 @@ public class JournalTab {
         }),
         SUMMARY_COLLECTION(Tab.SUMMARY, player -> {
             Config.COLLECTION_LOG_COLLECTED.set(player, player.getCollectionLog().getCollected().size());
-            Config.COLLECTION_LOG_MAX.set(player, CollectionLogInfo.TOTAL_COLLECTABLES);
+            Config.COLLECTION_LOG_MAX.set(player, CollectionLogCategory.TOTAL_COLLECTABLES);
         }),
         SUMMARY_TIME_PLAYED(Tab.SUMMARY, player -> {
             player.getPacketSender().sendClientScript(3970, "iii", 0, 0, (int) TimeUnit.MILLISECONDS.toMinutes(player.playTime * Server.tickMs()));

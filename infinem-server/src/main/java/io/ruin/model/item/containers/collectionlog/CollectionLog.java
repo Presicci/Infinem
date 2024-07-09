@@ -46,16 +46,16 @@ public class CollectionLog {
 
     public void open(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.COLLECTION_LOG);
-        sendTab(player, CollectionLogInfo.BOSS);
+        sendTab(player, CollectionLogCategory.BOSS);
         for (int index = 41; index < 70; index++) {
             player.getPacketSender().sendAccessMask(Interface.COLLECTION_LOG, index, -1, -1, AccessMasks.ClickOp1);
         }
     }
 
-    public void sendTab(Player player, CollectionLogInfo info) {
-        player.getPacketSender().sendClientScript(2389, "i", info.ordinal());
-        selectEntry(player,0, info);
-        info.sendAccessMasks(player);
+    public void sendTab(Player player, CollectionLogCategory category) {
+        player.getPacketSender().sendClientScript(2389, "i", category.ordinal());
+        selectEntry(player,0, category);
+        category.sendAccessMasks(player);
     }
 
     public void collect(int id) {
@@ -130,10 +130,10 @@ public class CollectionLog {
         player.getPacketSender().sendClientScript(101, "i", 11);
     }
 
-    private void selectEntry(Player player, int slot, CollectionLogInfo info) {
-        info.sendKillCount(player, slot);
-        info.sendItems(player, slot);
-        player.getPacketSender().sendClientScript(2730, "iiiiii", info.getParams()[0], info.getParams()[1], info.getParams()[2], info.getParams()[3], info.getCategoryStruct(), slot);
+    private void selectEntry(Player player, int slot, CollectionLogCategory category) {
+        category.sendKillCount(player, slot);
+        category.sendItems(player, slot);
+        player.getPacketSender().sendClientScript(2730, "iiiiii", category.getParams()[0], category.getParams()[1], category.getParams()[2], category.getParams()[3], category.getCategoryStruct(), slot);
     }
 
     private static OptionsDialogue get(Player player, NPC npc) {
@@ -172,30 +172,30 @@ public class CollectionLog {
         });
 
         InterfaceHandler.register(Interface.COLLECTION_LOG, h -> {
-            h.actions[4] = (SimpleAction) p -> p.getCollectionLog().sendTab(p, CollectionLogInfo.BOSS);
-            h.actions[5] = (SimpleAction) p -> p.getCollectionLog().sendTab(p, CollectionLogInfo.RAIDS);
-            h.actions[6] = (SimpleAction) p -> p.getCollectionLog().sendTab(p, CollectionLogInfo.CLUES);
-            h.actions[7] = (SimpleAction) p -> p.getCollectionLog().sendTab(p, CollectionLogInfo.MINIGAMES);
-            h.actions[8] = (SimpleAction) p -> p.getCollectionLog().sendTab(p, CollectionLogInfo.OTHER);
+            h.actions[4] = (SimpleAction) p -> p.getCollectionLog().sendTab(p, CollectionLogCategory.BOSS);
+            h.actions[5] = (SimpleAction) p -> p.getCollectionLog().sendTab(p, CollectionLogCategory.RAIDS);
+            h.actions[6] = (SimpleAction) p -> p.getCollectionLog().sendTab(p, CollectionLogCategory.CLUES);
+            h.actions[7] = (SimpleAction) p -> p.getCollectionLog().sendTab(p, CollectionLogCategory.MINIGAMES);
+            h.actions[8] = (SimpleAction) p -> p.getCollectionLog().sendTab(p, CollectionLogCategory.OTHER);
 
             h.actions[11] = (DefaultAction) (player, option, slot, itemId) -> {
-                player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.BOSS);
+                player.getCollectionLog().selectEntry(player, slot, CollectionLogCategory.BOSS);
             };
 
             h.actions[15] = (DefaultAction) (player, option, slot, itemId) -> {
-                player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.RAIDS);
+                player.getCollectionLog().selectEntry(player, slot, CollectionLogCategory.RAIDS);
             };
 
             h.actions[31] = (DefaultAction) (player, option, slot, itemId) -> {
-                player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.CLUES);
+                player.getCollectionLog().selectEntry(player, slot, CollectionLogCategory.CLUES);
             };
 
             h.actions[26] = (DefaultAction) (player, option, slot, itemId) -> {
-                player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.MINIGAMES);
+                player.getCollectionLog().selectEntry(player, slot, CollectionLogCategory.MINIGAMES);
             };
 
             h.actions[33] = (DefaultAction) (player, option, slot, itemId) -> {
-                player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.OTHER);
+                player.getCollectionLog().selectEntry(player, slot, CollectionLogCategory.OTHER);
             };
 
             //h.actions[20] = (SimpleAction) p -> handleCombatAchievementsButton(p);

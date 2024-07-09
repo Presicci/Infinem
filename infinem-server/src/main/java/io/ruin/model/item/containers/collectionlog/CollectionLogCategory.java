@@ -16,7 +16,7 @@ import java.util.Map;
 
 
 @Getter
-public enum CollectionLogInfo {
+public enum CollectionLogCategory {
     BOSS(471, 36, new int[]{10, 11, 12, 29}, 40697866, 40697867, 40697868, 40697869),
     RAIDS(472, 2, new int[]{14, 15, 16}, 40697870, 40697871, 40697872, 40697878),
     CLUES(473, 9, new int[]{22, 30, 31}, 40697879, 40697887, 40697888, 40697880),
@@ -31,7 +31,7 @@ public enum CollectionLogInfo {
     private final List<Integer> enums = new ArrayList<>();
     private List<CollectionLogEntry> entries;
 
-    CollectionLogInfo(int categoryStruct, int count, int[] childIds, int...params) {
+    CollectionLogCategory(int categoryStruct, int count, int[] childIds, int...params) {
         this.categoryStruct = categoryStruct;
         this.count = count;
         this.childIds = childIds;
@@ -92,7 +92,7 @@ public enum CollectionLogInfo {
     public static int TOTAL_COLLECTABLES;
 
     static {
-        for (CollectionLogInfo info : values()) {
+        for (CollectionLogCategory info : values()) {
             info.entries = new ArrayList<>();
             StructDefinition category = StructDefinition.get(info.getCategoryStruct());
             EnumDefinition subcategories = EnumDefinition.get(category.getInt(STRUCT_LOG_SUBCATEGORY));
