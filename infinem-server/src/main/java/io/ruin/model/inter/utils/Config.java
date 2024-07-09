@@ -890,7 +890,9 @@ public class Config {
      * Collection log?
      */
     public static final Config COLLECTION_LOG_TAB = varpbit(6905, false);
-    public static final Config COLLECTION_LOG_KC = varp(2048, false);
+    public static final Config COLLECTION_LOG_KC_1 = varp(2048, false);
+    public static final Config COLLECTION_LOG_KC_2 = varp(2941, false);
+    public static final Config COLLECTION_LOG_KC_3 = varp(2942, false);
     public static final Config COLLECTION_LOG_MAX = varp(2944, false);
     public static final Config COLLECTION_LOG_COLLECTED = varp(2943, true);
 
