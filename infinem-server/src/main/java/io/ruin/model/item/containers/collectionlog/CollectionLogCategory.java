@@ -25,6 +25,7 @@ public enum CollectionLogCategory {
     private final int[] childIds;
     @Getter private final int[] params;
     private final Map<Integer, int[]> items = new HashMap<>();
+    private final List<Integer> subcategories = new ArrayList<>();
     private final List<Integer> enums = new ArrayList<>();
     private List<CollectionLogEntry> entries;
 
@@ -106,8 +107,8 @@ public enum CollectionLogCategory {
             EnumDefinition subcategories = EnumDefinition.get(category.getInt(STRUCT_LOG_SUBCATEGORY));
             for (int slot = 0; slot < subcategories.size; slot++) {
                 StructDefinition subcategory = StructDefinition.get(subcategories.getIntValuesArray()[slot]);
-
                 EnumDefinition group = EnumDefinition.get(subcategory.getInt(STRUCT_LOG_GROUP));
+                info.subcategories.add(subcategories.getIntValuesArray()[slot]);
                 info.items.put(subcategory.getInt(STRUCT_LOG_GROUP), group.getIntValuesArray());
                 info.enums.add(subcategory.getInt(STRUCT_LOG_GROUP));
                 for (int index = 0; index < group.getIntValuesArray().length; index++) {

@@ -1,7 +1,10 @@
 package io.ruin.model.item.containers.collectionlog;
 
 import com.google.gson.annotations.Expose;
+import io.ruin.cache.def.EnumDefinition;
+import io.ruin.cache.def.StructDefinition;
 import io.ruin.model.inter.AccessMasks;
+import io.ruin.process.CoreWorker;
 import io.ruin.utility.Color;
 import io.ruin.cache.ItemID;
 import io.ruin.model.entity.npc.NPC;
@@ -145,6 +148,25 @@ public class CollectionLog {
         player.putTemporaryAttribute(ENTRY_KEY, slot);
     }
 
+    private static void updateSearchResults(Player player) {
+        int index = 0;
+        for (CollectionLogCategory category : CollectionLogCategory.values()) {
+            for (int struct : category.getSubcategories()) {
+                Map<Object, Object> params = StructDefinition.get(struct).getParams();
+                int enumId = (int) params.get(690);
+                assert EnumDefinition.get(enumId) != null;
+                for (int itemId : EnumDefinition.get(enumId).getIntValuesArray()) {
+                    int amt = player.getCollectionLog().getCollected(itemId);
+                    if (amt > 0) {
+                        player.getPacketSender().sendClientScript(4100, "iiii", itemId, amt, index, struct);
+                    }
+                }
+
+            }
+            ++index;
+        }
+    }
+
     private static OptionsDialogue get(Player player, NPC npc) {
         return new OptionsDialogue("Would you like a Collection log?",
                 new Option("Yes", () -> {
@@ -212,7 +234,13 @@ public class CollectionLog {
             h.actions[79] = (SimpleAction) CollectionLog::handleClose;
 
             for (int index = 41; index < 69; index++) {
-                //h.actions[index] = (SimpleAction) player -> player.getPacketSender().sendClientScript(4100, "iiii", 4151, 5, 1, 476);
+                h.actions[index] = (SimpleAction) player -> {
+                    long lastTick = player.getTemporaryAttributeOrDefault("CL_LAST_SEARCH", 0L);
+                    if (lastTick < CoreWorker.LAST_CYCLE_UPDATE) {
+                        player.putTemporaryAttribute("CL_LAST_SEARCH", CoreWorker.LAST_CYCLE_UPDATE);
+                        updateSearchResults(player);
+                    }
+                };
             }
 
             h.closedAction = (p, i) -> {
