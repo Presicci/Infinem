@@ -1,6 +1,7 @@
 package io.ruin.model.content.tasksystem.tasks.impl;
 
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.item.Items;
 import lombok.Getter;
 
 import java.util.HashSet;
@@ -11,6 +12,9 @@ import java.util.HashSet;
  */
 @Getter
 public enum DropAllTask {
+    MALEDICTION_SHARDS(896, Items.MALEDICTION_SHARD_1, Items.MALEDICTION_SHARD_2, Items.MALEDICTION_SHARD_3),
+    ODIUM_SHARDS(897, Items.ODIUM_SHARD_1, Items.ODIUM_SHARD_2, Items.ODIUM_SHARD_3),
+    DAGONHAI_SET(899, 24288, 24291, 24294),
     WILDERNESS_WEAPON(902, 22542, 22547, 22552),
     ;
 
