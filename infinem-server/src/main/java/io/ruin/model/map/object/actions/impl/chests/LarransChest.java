@@ -103,6 +103,7 @@ public class LarransChest {
             player.getInventory().addOrDrop(loot);
             player.getTaskManager().doDropLookup(loot);
             player.getCollectionLog().collect(loot);
+            player.getTaskManager().doLookupByUUID(864);    // Open One of Larran's Chests
             event.delay(1);
             player.unlock();
         });
