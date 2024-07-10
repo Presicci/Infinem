@@ -28,6 +28,8 @@ import java.util.Map;
 
 public class CollectionLog {
 
+    private static final String CATEGORY_KEY = "CL_CAT";
+    private static final String ENTRY_KEY = "CL_ENT";
     public static final int BLANK_ID = -1;
     public static int[] bossParams = {40697866, 40697867, 40697868, 40697869};
     private static final String SEARCH_LETTERS = "abcdefghijklmnopqrstuvwxyz \t";
@@ -46,7 +48,12 @@ public class CollectionLog {
 
     public void open(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.COLLECTION_LOG);
-        sendTab(player, CollectionLogCategory.BOSS);
+        // Open last tab that was open
+        CollectionLogCategory category = CollectionLogCategory.values()[player.getTemporaryAttributeIntOrZero(CATEGORY_KEY)];
+        player.getPacketSender().sendClientScript(2389, "i", category.ordinal());
+        selectEntry(player,player.getTemporaryAttributeIntOrZero(ENTRY_KEY), category);
+        category.sendAccessMasks(player);
+
         for (int index = 41; index < 70; index++) {
             player.getPacketSender().sendAccessMask(Interface.COLLECTION_LOG, index, -1, -1, AccessMasks.ClickOp1);
         }
@@ -56,6 +63,7 @@ public class CollectionLog {
         player.getPacketSender().sendClientScript(2389, "i", category.ordinal());
         selectEntry(player,0, category);
         category.sendAccessMasks(player);
+        player.putTemporaryAttribute(CATEGORY_KEY, category.ordinal());
     }
 
     public void collect(int id) {
@@ -134,6 +142,7 @@ public class CollectionLog {
         category.sendKillCount(player, slot);
         category.sendItems(player, slot);
         player.getPacketSender().sendClientScript(2730, "iiiiii", category.getParams()[0], category.getParams()[1], category.getParams()[2], category.getParams()[3], category.getCategoryStruct(), slot);
+        player.putTemporaryAttribute(ENTRY_KEY, slot);
     }
 
     private static OptionsDialogue get(Player player, NPC npc) {
