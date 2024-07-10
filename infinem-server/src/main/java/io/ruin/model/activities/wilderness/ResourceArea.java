@@ -72,6 +72,7 @@ public class ResourceArea {
             }
             player.sendMessage("Your donator rank grants you free access to the resource area.");
             openGateEvent(door);
+            player.getTaskManager().doLookupByUUID(842);    // Enter the Wilderness Resource Area
             player.step(0, -1, StepType.FORCE_WALK);
             player.unlock();
         });
