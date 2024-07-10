@@ -10,6 +10,8 @@ import io.ruin.network.incoming.Incoming;
 import io.ruin.utility.DebugMessage;
 import io.ruin.utility.IdHolder;
 
+import java.util.Arrays;
+
 public class InterfaceOnObjectHandler {
 
     @IdHolder(ids = {43})//@IdHolder(ids = {46})
@@ -31,7 +33,8 @@ public class InterfaceOnObjectHandler {
     public static final class FromInterface implements Incoming {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            int objectId = in.readShortA();
+            System.out.println(Arrays.toString(in.getPayload()));
+            int objectId = in.readLEShortA();
             int objectY = in.readShort();
             int objectX = in.readLEShort();
             int slot = in.readLEShort();
