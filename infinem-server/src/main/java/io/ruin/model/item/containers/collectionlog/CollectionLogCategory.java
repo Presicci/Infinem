@@ -43,7 +43,12 @@ public enum CollectionLogCategory {
     }
 
     public void sendItems(Player player, int slot) {
-
+        EnumDefinition genderEnum = EnumDefinition.get(2108);
+        EnumDefinition transformEnum = EnumDefinition.get(3721);
+        assert genderEnum != null;
+        assert transformEnum != null;
+        Map<Integer, Integer> femaleIds = genderEnum.getValuesAsInts();
+        Map<Integer, Integer> transformIds = transformEnum.getValuesAsInts();
         int enumId = enums.get(slot);
         int[] itemIds = getItems(enumId);
         Item[] container = new Item[itemIds.length];
@@ -51,6 +56,12 @@ public enum CollectionLogCategory {
         for (int index = 0; index < itemIds.length; index++) {
             int itemId = itemIds[index];
             int amount = player.getCollectionLog().getCollected(itemId);
+            if (femaleIds.containsKey(itemId) && !player.getAppearance().isMale()) {
+                itemId = femaleIds.get(itemId);
+            }
+            if (transformIds.containsKey(itemId)) {
+                itemId = transformIds.get(itemId);
+            }
             if (amount > 0) {
                 container[index] = new Item(itemId, amount);
                 ++collectedCount;
