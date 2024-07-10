@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.database.DatabaseUtils;
 import io.ruin.api.utils.StringUtils;
+import io.ruin.model.content.tasksystem.tasks.impl.DropAllTask;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.def.NPCDefinition;
@@ -52,7 +53,7 @@ public class TaskManager {
     @Expose private HashMap<Integer, Integer> inProgressTasks;
     @Expose private HashSet<Integer> completeTasks;
     @Expose private HashSet<Integer> completedCategories;
-    @Expose private HashSet<String> collectedItems;
+    @Expose private HashSet<Integer> collectedItems;
 
     public String searchString = "";
 
@@ -223,13 +224,14 @@ public class TaskManager {
         int uuid = item.getDef().getCustomValueOrDefault("DROP_TASK", 0);
         if (uuid > 0) {
             doLookupByUUID(uuid, item.getAmount());
-            return;
         }
-        doLookupByCategoryAndTrigger(TaskCategory.UNLOCKITEM, item.getDef().name.toLowerCase(), item.getAmount(), true);
-        doDropGroupLookup(item.getDef().name.toLowerCase());
-        int regexUuid = item.getDef().getCustomValueOrDefault("UNLOCKITEMREGEX", 0);
-        if (regexUuid > 0) {
-            doLookupByUUID(regexUuid, item.getAmount());
+        DropAllTask dropAllTask = item.getDef().getCustomValueOrDefault("DROPALL_TASK", null);
+        if (dropAllTask != null && !completeTasks.contains(dropAllTask.getTaskUuid())) {
+            collectedItems.add(item.getId());
+            if (dropAllTask.hasCompleted(collectedItems)) {
+                doLookupByUUID(dropAllTask.getTaskUuid(), item.getAmount());
+                dropAllTask.cleanupCollectedItems(collectedItems);
+            }
         }
     }
 
@@ -333,11 +335,6 @@ public class TaskManager {
                 System.out.println("TASK ERROR! uuid=" + uuid + " diff=" + difficulty.trim() + " / " + finalDifficulty + ", area=" + taskArea.trim() + " / " + finalTaskarea);
                 continue;
             }
-            if (lookupType == TaskLookupType.DROP_SET) {
-                for (String s : triggers) {
-                    collectedItems.remove(s);
-                }
-            }
             TaskArea finalTaskarea1 = finalTaskarea;
             TaskDifficulty finalDifficulty1 = finalDifficulty;
             player.addEvent(e -> {  // addEvent here to prevent sending packets in a thread
@@ -351,26 +348,14 @@ public class TaskManager {
     }
 
     private boolean handleTrigger(TaskLookupType lookupType, String trigger, String[] triggers) {
-        if (lookupType == TaskLookupType.DROP_SET) {
-            boolean complete = true;
-            for (String s : triggers) {
-                if (s.toLowerCase().contains(trigger.trim().toLowerCase())) {
-                    collectedItems.add(s);
-                }
-                if (!collectedItems.contains(s))
-                    complete = false;
+        boolean found = false;
+        for (String s : triggers) {
+            if (s.equalsIgnoreCase(trigger)) {
+                found = true;
+                break;
             }
-            return complete;
-        } else {
-            boolean found = false;
-            for (String s : triggers) {
-                if (s.equalsIgnoreCase(trigger)) {
-                    found = true;
-                    break;
-                }
-            }
-            return found;
         }
+        return found;
     }
 
     /**
