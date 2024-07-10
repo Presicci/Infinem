@@ -150,6 +150,12 @@ public class CollectionLog {
 
     private static void updateSearchResults(Player player) {
         int index = 0;
+        EnumDefinition genderEnum = EnumDefinition.get(2108);
+        EnumDefinition transformEnum = EnumDefinition.get(3721);
+        assert genderEnum != null;
+        assert transformEnum != null;
+        Map<Integer, Integer> femaleIds = genderEnum.getValuesAsInts();
+        Map<Integer, Integer> transformIds = transformEnum.getValuesAsInts();
         for (CollectionLogCategory category : CollectionLogCategory.values()) {
             for (int struct : category.getSubcategories()) {
                 Map<Object, Object> params = StructDefinition.get(struct).getParams();
@@ -157,6 +163,12 @@ public class CollectionLog {
                 assert EnumDefinition.get(enumId) != null;
                 for (int itemId : EnumDefinition.get(enumId).getIntValuesArray()) {
                     int amt = player.getCollectionLog().getCollected(itemId);
+                    if (femaleIds.containsKey(itemId) && !player.getAppearance().isMale()) {
+                        itemId = femaleIds.get(itemId);
+                    }
+                    if (transformIds.containsKey(itemId)) {
+                        itemId = transformIds.get(itemId);
+                    }
                     if (amt > 0) {
                         player.getPacketSender().sendClientScript(4100, "iiii", itemId, amt, index, struct);
                     }
