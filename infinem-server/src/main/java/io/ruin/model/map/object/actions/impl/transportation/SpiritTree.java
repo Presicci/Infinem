@@ -23,8 +23,8 @@ public class SpiritTree {
         }
     }
 
-    private static List<PatchData> SPIRIT_TREE_PATCHES = Arrays.asList(PatchData.PORT_SARIM_SPIRIT_TREE, PatchData.BRIMHAVEN_SPIRIT_TREE, PatchData.ETCETERIA_SPIRIT_TREE, PatchData.ZEAH_SPIRIT_TREE, PatchData.FARMING_GUILD_SPIRIT_TREE);
-    private static String[] PATCH_NAMES = {"Port Sarim", "Brimhaven", "Etceteria", "Zeah", "Farming Guild"};
+    private static final List<PatchData> SPIRIT_TREE_PATCHES = Arrays.asList(PatchData.PORT_SARIM_SPIRIT_TREE, PatchData.BRIMHAVEN_SPIRIT_TREE, PatchData.ETCETERIA_SPIRIT_TREE, PatchData.ZEAH_SPIRIT_TREE, PatchData.FARMING_GUILD_SPIRIT_TREE);
+    private static final String[] PATCH_NAMES = {"Port Sarim", "Brimhaven", "Etceteria", "Zeah", "Farming Guild"};
 
     private static List<Option> getOptions(Player player) {
         List<Option> options = new ArrayList<>();
@@ -43,7 +43,11 @@ public class SpiritTree {
             String name = PATCH_NAMES[i++];
             Runnable action;
             if (patch.canTeleport()) {
-                action = () -> teleport(player, patch.getTeleportPosition().getX(), patch.getTeleportPosition().getY(), patch.getTeleportPosition().getZ());
+                action = () -> {
+                    PatchData fromPatch = player.getTemporaryAttributeOrDefault("SPIRIT_TREE_PATCH", null);
+                    if (fromPatch != null && fromPatch != farmTree) player.getTaskManager().doLookupByUUID(295);    // Travel Between Your Spirit Trees
+                    teleport(player, patch.getTeleportPosition().getX(), patch.getTeleportPosition().getY(), patch.getTeleportPosition().getZ());
+                };
             } else {
                 name = "<str>" + name;
                 action = () -> player.dialogue(new MessageDialogue("You do not have a fully grown spirit tree at that location."));
@@ -72,11 +76,19 @@ public class SpiritTree {
 
     public static void openFairysFlight(Player player) {
         player.putTemporaryAttribute("FAIRYFLIGHT_TREE", 1);
+        player.removeTemporaryAttribute("SPIRIT_TREE_PATCH");
         OptionScroll.open(player, "Spirit Tree Locations", getOptions(player));
     }
 
     public static void open(Player player) {
         player.removeTemporaryAttribute("FAIRYFLIGHT_TREE");
+        player.removeTemporaryAttribute("SPIRIT_TREE_PATCH");
+        OptionScroll.open(player, "Spirit Tree Locations", getOptions(player));
+    }
+
+    public static void openFromPatch(Player player, PatchData patchData) {
+        player.removeTemporaryAttribute("FAIRYFLIGHT_TREE");
+        player.putTemporaryAttribute("SPIRIT_TREE_PATCH", patchData);
         OptionScroll.open(player, "Spirit Tree Locations", getOptions(player));
     }
 

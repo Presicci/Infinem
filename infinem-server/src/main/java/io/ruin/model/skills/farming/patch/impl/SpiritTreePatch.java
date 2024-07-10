@@ -56,7 +56,7 @@ public class SpiritTreePatch extends Patch {
         if (getStage() == getPlantedCrop().getTotalStages()) {
             checkHealth();
         } else if (getStage() > getPlantedCrop().getTotalStages()) {
-            SpiritTree.open(player);
+            SpiritTree.openFromPatch(player, data);
         }
     }
 
@@ -65,7 +65,7 @@ public class SpiritTreePatch extends Patch {
         if (option == 1)
             interact();
         else if (option == 2 && getStage() >= getPlantedCrop().getTotalStages())
-            SpiritTree.open(player);
+            SpiritTree.openFromPatch(player, data);
         else if (option == 3)
             player.sendMessage((getPlantedCrop() == null ? "The patch is clear for new crops. " : "The patch has something growing on it. ") + (getCompost() > 0 ? "It has been treated with " + (getCompost() == 1 ? "regular" : "super") + " compost." : ""));
     }
