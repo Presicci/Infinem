@@ -45,6 +45,7 @@ public class MuddyChest {
             for(Item item : loot) {
                 player.getInventory().addOrDrop(item.getId(), item.getAmount());
             }
+            player.getTaskManager().doLookupByUUID(837);    // Open the Muddy Chest
 
             World.startEvent(e -> {
                 obj.setId(171);
