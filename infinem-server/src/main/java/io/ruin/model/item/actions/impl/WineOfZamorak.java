@@ -61,5 +61,7 @@ public class WineOfZamorak {
             }
             player.sendFilteredMessage("STOP STEALING MY WINE! GAH!");
         }
+        if (MapArea.DEEP_WILDERNESS_DUNGEON.inArea(player))
+            player.getTaskManager().doLookupByUUID(863);    // Telegrab The Wine in the Deep Wilderness Dungeon
     }
 }

@@ -43,6 +43,7 @@ public enum MapArea {
     WILDERNESS(player -> player.wildernessLevel > 0),
     ASGARNIA_CHAOS_TEMPLE(2930, 3513, 2940, 3518, 0),
     ASGARNIA_CHAOS_TEMPLE_SECOND_FLOOR(2938, 3516, 2940, 3518, 1),
+    DEEP_WILDERNESS_DUNGEON(12193),
     SLAYER_TOWER(13623, 13723),
     DONDAKANS_MINE(Bounds.fromRegions(10061, 10317), (player, logout) -> {
         if (logout) player.getMovement().teleport(2824, 10169, 0);
