@@ -72,6 +72,7 @@ public enum Volcano {
             item.remove();
             event.delay(2);
             NPC goblin = new NPC(3028).spawn(player.getAbsX() - 1, player.getAbsY(), 0);
+            player.getTaskManager().doLookupByUUID(835);    // Destroy the one ring to rule them all
             goblin.face(player);
             goblin.forceText("My Precious!!! NOOOOO!!!");
             event.delay(1);
