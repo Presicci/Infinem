@@ -39,6 +39,8 @@ public class ChargeOrb extends Spell {
         player.animate(726);
         player.graphics(chargeSpell.gfx, 100, 0);
         orb.setId(chargeSpell.orbId);
+        if (chargeSpell == ChargeSpell.CHARGE_AIR)
+            player.getTaskManager().doLookupByUUID(861);    // Charge an Air Orb
     }
 
     public ChargeOrb(ChargeSpell chargeSpell) {
