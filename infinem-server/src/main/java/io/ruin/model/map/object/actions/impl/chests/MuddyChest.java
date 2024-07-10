@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class MuddyChest {
 
-    private static final LootTable LOOT = new LootTable().addTable(0,
+    public static final LootTable LOOT = new LootTable().addTable(0,
             new LootItem(Items.UNCUT_RUBY, 1, 0),
             new LootItem(Items.MITHRIL_BAR, 1, 0),
             new LootItem(Items.MITHRIL_DAGGER, 1, 0),

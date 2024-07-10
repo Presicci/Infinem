@@ -150,6 +150,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Bird Nest (Wyson Seed)", BirdNest.WYSON_SEED_LOOT),
             new DropViewerEntry("Trade Mole Parts - Wyson", Wyson.NESTS),
             new DropViewerEntry("Supply Crate (Mahogany Homes)", MahoganySupplyCrate.LOOT_TABLE),
-            new DropViewerEntry("Gem Rock", Mining.GEM_ROCK_TABLE)
+            new DropViewerEntry("Gem Rock", Mining.GEM_ROCK_TABLE),
+            new DropViewerEntry("Muddy Chest", MuddyChest.LOOT)
     ).collect(Collectors.toCollection(ArrayList::new));
 }
