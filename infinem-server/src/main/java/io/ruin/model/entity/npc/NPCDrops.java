@@ -163,6 +163,8 @@ public class NPCDrops {
          */
         vorkathHead(dropPosition, pKiller);
 
+        handleEcumenicalKeyDrop(killer, pKiller, dropPosition);
+
         /*
          * Gives players PVM Points
          */
@@ -540,6 +542,14 @@ public class NPCDrops {
             return 22969;
         } else {
             return 22973;
+        }
+    }
+
+    private void handleEcumenicalKeyDrop(Killer killer, Player player, Position pos) {
+        if (MapArea.WILDERNESS_GODWARS_DUNGEON.inArea(pos)) {
+            if (Random.rollDie(60)) {
+                handleDrop(killer, pos, player, Collections.singletonList(new Item(Items.ECUMENICAL_KEY)));
+            }
         }
     }
 

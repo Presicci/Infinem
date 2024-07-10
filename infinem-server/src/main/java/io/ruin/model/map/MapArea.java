@@ -44,6 +44,7 @@ public enum MapArea {
     ASGARNIA_CHAOS_TEMPLE(2930, 3513, 2940, 3518, 0),
     ASGARNIA_CHAOS_TEMPLE_SECOND_FLOOR(2938, 3516, 2940, 3518, 1),
     DEEP_WILDERNESS_DUNGEON(12193),
+    WILDERNESS_GODWARS_DUNGEON(12190),
     WILDERNESS_GODWARS_DUNGEON_ENTRANCE(3062, 10155, 3070, 10160, 3, player -> {
         player.getTaskManager().doLookupByUUID(843);    // Enter the Wilderness God Wars Dungeon
     }),
