@@ -166,7 +166,7 @@ public class NPCDrops {
         /*
          * Gives players PVM Points
          */
-        PvmPoints.addPoints(pKiller, npc);
+        //PvmPoints.addPoints(pKiller, npc);
         /*
          * Casket loots
          */
