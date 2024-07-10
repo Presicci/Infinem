@@ -26,6 +26,8 @@ public class SaradominStrike extends TargetSpell {
     public void beforeHit(Hit hit, Entity target) {
         if(hit.attacker.player.getCombat().chargeTicks > 0 && Charge.capeCheck.hasItems(hit.attacker.player))
             hit.boostDamage(0.5); //makes max damage 30
+        if (hit.attacker.player != null)
+            hit.attacker.player.getTaskManager().doLookupByUUID(858, 1);    // Cast Saradomin Strike
     }
 
     @Override
