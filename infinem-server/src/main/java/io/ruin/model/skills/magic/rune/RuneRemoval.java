@@ -2,6 +2,7 @@ package io.ruin.model.skills.magic.rune;
 
 import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.chargable.BryophytasStaff;
 import io.ruin.model.item.actions.impl.storage.RunePouch;
@@ -61,6 +62,8 @@ public class RuneRemoval {
             int reqId = reqItem.getId();
             int reqAmount = reqItem.getAmount();
             Rune reqRune = reqItem.getDef().rune;
+            if (Config.FOUNTAIN_OF_RUNE.get(player) == 1)
+                continue;
             if (reqRune != null && reqRune.accept(staffRune)) {
                 /**
                  * Use staff

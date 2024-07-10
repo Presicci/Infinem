@@ -1157,6 +1157,7 @@ public class Config {
     private static final Config ELIDINIS_STATUETTE = varpbit(1444, false).defaultValue(60); // Adds elidinis statuette in Nardah
     private static final Config EVIL_DAVE_LAIR_ENTRANCE = varpbit(1888, false).defaultValue(1);
     public static final Config DONATOR_RANK = varp(1780, true);
+    public static final Config FOUNTAIN_OF_RUNE = varpbit(4145, false);
 
     /**
      * Elemental workshop

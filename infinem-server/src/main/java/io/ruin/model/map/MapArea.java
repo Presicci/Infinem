@@ -3,6 +3,7 @@ package io.ruin.model.map;
 import io.ruin.model.entity.player.Player;
 import io.ruin.api.utils.AttributeKey;
 import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.actions.impl.Lightables;
 import io.ruin.model.map.object.actions.impl.OldFirePit;
 import io.ruin.model.skills.firemaking.DorgeshKaanLamps;
@@ -64,6 +65,7 @@ public enum MapArea {
     FEROX_4(3144, 3626, 3154, 3645, 0, player -> {
         player.getTaskManager().doLookupByUUID(845);    // Visit Ferox Enclave
     }),
+    FOUNTAIN_OF_RUNE(new Bounds(3367, 3890, 3387, 3901, 0), player -> Config.FOUNTAIN_OF_RUNE.set(player, 1), (player, logout) -> Config.FOUNTAIN_OF_RUNE.set(player, 0)),
     // Dark caves
     LUMBRIDGE_SWAMP_CAVE(OldFirePit.FirePit.LUMBRIDGE_SWAMP_CAVES_FIRE, 3, 12693, 12949),
     CAVE_OF_HORROR(OldFirePit.FirePit.MOS_LE_HARMLESS_FIRE, 3, 14994, 14995, 15251),

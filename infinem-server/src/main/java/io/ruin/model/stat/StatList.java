@@ -1,6 +1,7 @@
 package io.ruin.model.stat;
 
 import com.google.gson.annotations.Expose;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.SkillingOutfit;
@@ -155,10 +156,12 @@ public class StatList {
         }
 
         //do pre exp drop here
-
         if (player.experienceLock) {
             return;
         }
+        // No experience rewarded by fountain of rune
+        if (Config.FOUNTAIN_OF_RUNE.get(player) == 1)
+            return;
 
         if(useMultiplier) {
             if(World.xpMultiplier > 0)
