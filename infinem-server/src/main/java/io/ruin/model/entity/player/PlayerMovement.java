@@ -158,6 +158,7 @@ public class PlayerMovement extends Movement {
                 player.movementModeUpdate.set(1);
             followX = followY = -1;
             lastFollowX = lastFollowY = -1;
+            player.getFarming().refresh();
             player.getPosition().getTile().checkTriggers(player);
             player.getPosition().getTile().checkLazyTriggers(player);
         } else {
