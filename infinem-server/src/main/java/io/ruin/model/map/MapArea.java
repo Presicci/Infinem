@@ -47,6 +47,18 @@ public enum MapArea {
     DONDAKANS_MINE(Bounds.fromRegions(10061, 10317), (player, logout) -> {
         if (logout) player.getMovement().teleport(2824, 10169, 0);
     }),
+    FEROX_1(3133, 3617, 3136, 3620, 0, player -> {
+        player.getTaskManager().doLookupByUUID(845);    // Visit Ferox Enclave
+    }),
+    FEROX_2(3123, 3626, 3145, 3632, 0, player -> {
+        player.getTaskManager().doLookupByUUID(845);    // Visit Ferox Enclave
+    }),
+    FEROX_3(3132, 3633, 3137, 3639, 0, player -> {
+        player.getTaskManager().doLookupByUUID(845);    // Visit Ferox Enclave
+    }),
+    FEROX_4(3144, 3626, 3154, 3645, 0, player -> {
+        player.getTaskManager().doLookupByUUID(845);    // Visit Ferox Enclave
+    }),
     // Dark caves
     LUMBRIDGE_SWAMP_CAVE(OldFirePit.FirePit.LUMBRIDGE_SWAMP_CAVES_FIRE, 3, 12693, 12949),
     CAVE_OF_HORROR(OldFirePit.FirePit.MOS_LE_HARMLESS_FIRE, 3, 14994, 14995, 15251),
