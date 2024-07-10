@@ -220,6 +220,11 @@ public class TaskManager {
     }
 
     public void doDropLookup(Item item) {
+        int uuid = item.getDef().getCustomValueOrDefault("DROP_TASK", 0);
+        if (uuid > 0) {
+            doLookupByUUID(uuid, item.getAmount());
+            return;
+        }
         doLookupByCategoryAndTrigger(TaskCategory.UNLOCKITEM, item.getDef().name.toLowerCase(), item.getAmount(), true);
         doDropGroupLookup(item.getDef().name.toLowerCase());
         int regexUuid = item.getDef().getCustomValueOrDefault("UNLOCKITEMREGEX", 0);
