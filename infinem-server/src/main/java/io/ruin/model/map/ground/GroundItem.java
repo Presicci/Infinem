@@ -214,6 +214,12 @@ public class GroundItem {
             player.sendMessage("You already have one of those in your inventory!");
             return false;
         }
+        if (id == Items.LOOTING_BAG) {
+            if (player.findItem(Items.LOOTING_BAG) != null || player.findItem(22586) != null) {
+                player.sendMessage("You already have a looting bag.");
+                return false;
+            }
+        }
         return true;
     }
 
