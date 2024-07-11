@@ -89,6 +89,7 @@ public class Misc {
                 p.privateSound(2462, 1, 25);
                 p.getMovement().force(diffX, diffY, 0, 0, 33, 60, dir);
                 event.delay(2);
+                p.getTaskManager().doLookupByUUID(839); // Cross the Wilderness Ditch
                 p.unlock();
             });
         });
