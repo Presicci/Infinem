@@ -9,6 +9,19 @@ import io.ruin.model.item.containers.equipment.EquipAction;
  * Created on 4/4/2022
  */
 public enum EquipTask {
+    TEAM_CAPE(877,
+            Items.TEAM1_CAPE, Items.TEAM2_CAPE, Items.TEAM3_CAPE, Items.TEAM4_CAPE, Items.TEAM5_CAPE,
+            Items.TEAM6_CAPE, Items.TEAM7_CAPE, Items.TEAM8_CAPE, Items.TEAM9_CAPE, Items.TEAM10_CAPE,
+            Items.TEAM11_CAPE, Items.TEAM12_CAPE, Items.TEAM13_CAPE, Items.TEAM14_CAPE, Items.TEAM15_CAPE,
+            Items.TEAM16_CAPE, Items.TEAM17_CAPE, Items.TEAM18_CAPE, Items.TEAM19_CAPE, Items.TEAM20_CAPE,
+            Items.TEAM21_CAPE, Items.TEAM22_CAPE, Items.TEAM23_CAPE, Items.TEAM24_CAPE, Items.TEAM25_CAPE,
+            Items.TEAM26_CAPE, Items.TEAM27_CAPE, Items.TEAM28_CAPE, Items.TEAM29_CAPE, Items.TEAM30_CAPE,
+            Items.TEAM31_CAPE, Items.TEAM32_CAPE, Items.TEAM33_CAPE, Items.TEAM34_CAPE, Items.TEAM35_CAPE,
+            Items.TEAM36_CAPE, Items.TEAM37_CAPE, Items.TEAM38_CAPE, Items.TEAM39_CAPE, Items.TEAM40_CAPE,
+            Items.TEAM41_CAPE, Items.TEAM42_CAPE, Items.TEAM43_CAPE, Items.TEAM44_CAPE, Items.TEAM45_CAPE,
+            Items.TEAM46_CAPE, Items.TEAM47_CAPE, Items.TEAM48_CAPE, Items.TEAM49_CAPE, Items.TEAM50_CAPE,
+            Items.TEAM_CAPE_I, Items.TEAM_CAPE_X
+    ),  // Equip a Team Cape
     FIRE_CAPE(418, Items.FIRE_CAPE),    // Equip a Fire Cape
     INFERNAL_CAPE(429, Items.INFERNAL_CAPE, MaxCapeVariants.MaxCapes.INFERNAL.newCapeId),   // Equip an Infernal Cape
     SPINY_HELMET(29, Items.SPINY_HELMET),   // Equip a Spiny Helmet
