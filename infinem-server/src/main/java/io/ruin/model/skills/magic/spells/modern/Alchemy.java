@@ -154,5 +154,7 @@ public class Alchemy extends Spell {
         player.getStats().addXp(StatType.Magic, level.xp, true);
         if (level == Level.HIGH)
             player.getTaskManager().doLookupByUUID(148, 1); // Cast the High Level Alchemy spell
+        if (Config.FOUNTAIN_OF_RUNE.get(player) == 1)
+            player.getTaskManager().doLookupByUUID(841);    // Cast Alchemy at the Fountain of Rune
     }
 }
