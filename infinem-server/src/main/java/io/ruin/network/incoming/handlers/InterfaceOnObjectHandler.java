@@ -33,7 +33,6 @@ public class InterfaceOnObjectHandler {
     public static final class FromInterface implements Incoming {
         @Override
         public void handle(Player player, InBuffer in, int opcode) {
-            System.out.println(Arrays.toString(in.getPayload()));
             int objectId = in.readLEShortA();
             int objectY = in.readShort();
             int objectX = in.readLEShort();
