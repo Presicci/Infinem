@@ -35,6 +35,7 @@ public class AreaShop {
         shop.init();
         shop.populate();
         shop.open(player);
+        player.getTaskManager().doLookupByUUID(997);    // View a Region's Unlock Shop
     }
 
     private static void dialogue(Player player, NPC npc, TaskArea area) {
