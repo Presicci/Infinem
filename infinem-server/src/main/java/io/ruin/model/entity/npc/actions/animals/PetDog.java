@@ -21,6 +21,8 @@ public class PetDog {
             NPCAction.register(npcId, "pet", ((player, npc) -> {
                 player.animate(827);
                 player.sendMessage("You pet the dog...");
+                if (npc.getId() == 7771)
+                    player.getTaskManager().doLookupByUUID(995);    // Pet the Museum Camp dog
             }));
             ItemNPCAction.register(npcId, ((player, item, npc) -> {
                 if (BONES.contains(item.getId())) {
