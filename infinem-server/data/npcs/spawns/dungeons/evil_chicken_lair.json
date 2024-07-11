@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Black dragon",
+    "id": 252,
+    "x": 2460,
+    "y": 4376,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Black dragon",
+    "id": 253,
+    "x": 2454,
+    "y": 4370,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Black dragon",
+    "id": 252,
+    "x": 2449,
+    "y": 4360,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Black dragon",
+    "id": 254,
+    "x": 2459,
+    "y": 4359,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Baby black dragon",
+    "id": 1871,
+    "x": 2438,
+    "y": 4389,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  }
+]
