@@ -222,7 +222,7 @@ public class ThievableChests {
             new LootItem(Items.BULLSEYE_LANTERN, 1, 1),
             new LootItem(Items.NEWCOMER_MAP, 1, 1),
             new LootItem(Items.BONE_BOLTS, 1, 89, 1),
-            new LootItem(Items.DORGESHUUN_CROSSBOW, 1, 1),
+            new LootItem(Items.BONE_BOLTS, 100, 150, 1),
             new LootItem(Items.BONE_DAGGER, 1, 1),
             new LootItem(Items.HAMMER, 1, 1),
             new LootItem(Items.BIG_BONES, 1, 1),
