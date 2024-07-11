@@ -9,6 +9,12 @@ import java.util.function.Consumer;
 
 @Getter
 public enum NPCCombatSpells {
+    WIND_STRIKE(new Projectile(91, 43, 31, 51, 56, 10, 16, 64),
+            1162,
+            90, 92,
+            220, 1,
+            92, 124,
+            221),
     WATER_STRIKE(new Projectile(94, 43, 31, 51, 56, 10, 16, 64),
             1162,
             93, 92,
