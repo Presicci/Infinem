@@ -67,6 +67,7 @@ public enum MapArea {
     }),
     FOUNTAIN_OF_RUNE(new Bounds(3367, 3890, 3387, 3901, 0), player -> Config.FOUNTAIN_OF_RUNE.set(player, 1), (player, logout) -> Config.FOUNTAIN_OF_RUNE.set(player, 0)),
     VARROCK_SEWER(3152, 9856, 3312, 9919, 0),
+    RELLEKKA_ROCK_CRABS(2655, 3710, 2727, 3735, 0),
     // Dark caves
     LUMBRIDGE_SWAMP_CAVE(OldFirePit.FirePit.LUMBRIDGE_SWAMP_CAVES_FIRE, 3, 12693, 12949),
     CAVE_OF_HORROR(OldFirePit.FirePit.MOS_LE_HARMLESS_FIRE, 3, 14994, 14995, 15251),
