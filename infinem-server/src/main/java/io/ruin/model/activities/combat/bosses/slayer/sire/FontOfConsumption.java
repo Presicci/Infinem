@@ -63,7 +63,7 @@ public class FontOfConsumption {
                     item.setId(reward.getId());
                     player.getCollectionLog().collect(reward);
                 }
-
+                player.getTaskManager().doLookupByUUID(382);    // Offer an Unsired to the Font of Consumption
                 player.dialogue(new ItemDialogue().one(reward.getId(), "The Font consumes the Unsired and returns you a<br>reward."));
                 player.unlock();
             });
