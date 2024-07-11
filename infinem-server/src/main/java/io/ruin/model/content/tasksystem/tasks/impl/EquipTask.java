@@ -9,6 +9,7 @@ import io.ruin.model.item.containers.equipment.EquipAction;
  * Created on 4/4/2022
  */
 public enum EquipTask {
+    DORGESHUUN_CROSSBOW(357, Items.DORGESHUUN_CROSSBOW),
     TEAM_CAPE(877,
             Items.TEAM1_CAPE, Items.TEAM2_CAPE, Items.TEAM3_CAPE, Items.TEAM4_CAPE, Items.TEAM5_CAPE,
             Items.TEAM6_CAPE, Items.TEAM7_CAPE, Items.TEAM8_CAPE, Items.TEAM9_CAPE, Items.TEAM10_CAPE,
