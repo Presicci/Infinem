@@ -1,6 +1,7 @@
 package io.ruin.model.skills.magic;
 
 import io.ruin.model.map.Bounds;
+import io.ruin.model.map.Position;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -59,4 +60,8 @@ public enum MagicTeleportBounds {
     APE_ATOLL_DUNGEON(new Bounds(2768, 2702, 2769, 2704, 0));
 
     private final Bounds bounds;
+
+    public boolean is(int x, int y, int z) {
+        return bounds.inBounds(new Position(x, y, z));
+    }
 }

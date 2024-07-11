@@ -3,6 +3,7 @@ package io.ruin.model.skills.magic.spells.lunar;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.Bounds;
+import io.ruin.model.skills.magic.MagicTeleportBounds;
 import io.ruin.model.skills.magic.Spell;
 
 public class LunarTeleport extends Spell {
@@ -27,6 +28,8 @@ public class LunarTeleport extends Spell {
             e.delay(3);
             player.getMovement().teleport(x, y, z);
             player.getTaskManager().doLookupByUUID(147, 1); // Teleport Using Law Runes
+            if (MagicTeleportBounds.MOONCLAN.is(x, y, z))
+                player.getTaskManager().doLookupByUUID(502);  // Cast Moonclan Teleport
         });
     }
 
