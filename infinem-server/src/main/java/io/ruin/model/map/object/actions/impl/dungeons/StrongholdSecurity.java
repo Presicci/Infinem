@@ -143,7 +143,6 @@ public class StrongholdSecurity {
             }
         } else {
             if (player.getInventory().getFreeSlots() > 0) {
-                player.putAttribute("SHOS", 4);
                 player.dialogue(
                         new MessageDialogue("As your hand touches the cradle, you hear a voice in your head of a million dead adventurers..."),
                         new MessageDialogue("...welcome adventurer... you have a choice..."),
@@ -153,9 +152,11 @@ public class StrongholdSecurity {
                         new OptionsDialogue("Choose your style of boots",
                                 new Option("I'll take the colourful ones!", () -> {
                                     player.getInventory().add(Items.FANCY_BOOTS, 1);
+                                    player.putAttribute("SHOS", 4);
                                 }),
                                 new Option("I'll take the fighting ones!", () -> {
                                     player.getInventory().add(Items.FIGHTING_BOOTS, 1);
+                                    player.putAttribute("SHOS", 4);
                                 })
                         )
                 );
