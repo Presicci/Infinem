@@ -153,10 +153,12 @@ public class StrongholdSecurity {
                                 new Option("I'll take the colourful ones!", () -> {
                                     player.getInventory().add(Items.FANCY_BOOTS, 1);
                                     player.putAttribute("SHOS", 4);
+                                    player.getTaskManager().doLookupByUUID(996);    // Complete the Stronghold of Security
                                 }),
                                 new Option("I'll take the fighting ones!", () -> {
                                     player.getInventory().add(Items.FIGHTING_BOOTS, 1);
                                     player.putAttribute("SHOS", 4);
+                                    player.getTaskManager().doLookupByUUID(996);    // Complete the Stronghold of Security
                                 })
                         )
                 );
