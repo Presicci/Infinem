@@ -62,6 +62,7 @@ public class Zanaris {
                 item.remove();
                 e.delay(2);
                 player.getMovement().teleport(2460, 4356, 0);
+                player.getTaskManager().doLookupByUUID(993);    // Enter the Evil Chicken's Lair
                 player.unlock();
             });
         });
