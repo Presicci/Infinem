@@ -4,6 +4,8 @@ import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.ItemObjectAction;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -53,5 +55,16 @@ public class Zanaris {
         ObjectAction.register(12003, "use", (player, obj) -> staticFairyRing(player, obj, new Position(3262, 3167, 0)));
         ObjectAction.register(12094, "use", (player, obj) -> staticFairyRing(player, obj, new Position(3201, 3169, 0)));
         ObjectAction.register(2406, 3202, 3169, 0, "open", Zanaris::zanarisDoorEntrance);
+        ItemObjectAction.register(Items.RAW_CHICKEN, 12093, (player, item, obj) -> {
+            player.startEvent(e -> {
+                player.lock();
+                player.animate(3265);
+                item.remove();
+                e.delay(2);
+                player.getMovement().teleport(2460, 4356, 0);
+                player.unlock();
+            });
+        });
+        ObjectAction.register(12260, 2459, 4354, 0, "use", (player, obj) -> player.getMovement().teleport(2453, 4476, 0));
     }
 }
