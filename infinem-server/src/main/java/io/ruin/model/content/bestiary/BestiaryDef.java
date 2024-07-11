@@ -393,6 +393,8 @@ public class BestiaryDef {
             }
             // Replace entry names for members of categories with their category name
             cat: for (Map.Entry<String, String[]> category : CATEGORIES.entrySet()) {
+                if (e.id == 6739) // Evil chicken
+                    break cat;
                 for (String member : category.getValue()) {
                     if (name.equalsIgnoreCase(member)) {
                         name = category.getKey();
