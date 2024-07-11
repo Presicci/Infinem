@@ -80,6 +80,7 @@ public class FontOfConsumption {
                     player.dialogue(new ItemDialogue().two(13274, 13275, "You hand over the components to the Overseer.").hideContinue());
                     event.delay(2);
                     player.getInventory().add(13263, 1);
+                    player.getTaskManager().doLookupByUUID(380);    // Have the Overseer Forge an Abyssal Bludgeon
                     player.dialogue(new ItemDialogue().one(13263, "The Overseer presents you with an Abyssal Bludgeon."));
                     player.unlock();
                 });
