@@ -23,6 +23,9 @@ public class Lever {
             event.delay(3);
             lever.setId(lever.originalId);
             player.getMovement().teleport(x, y);
+            if (x == 3090 && y == 3475) {
+                player.getTaskManager().doLookupByUUID(840);    // Use a Lever to Teleport to Edgeville
+            }
             player.sendMessage(message);
         });
     }
