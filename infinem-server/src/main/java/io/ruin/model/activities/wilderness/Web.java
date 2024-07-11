@@ -6,6 +6,7 @@ import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.map.MapArea;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -21,6 +22,8 @@ public class Web {
             if (sharpTier == 3 || Random.rollDie(2, 1)) {
                 player.lock();
                 player.sendMessage("You slash the web apart.");
+                if (MapArea.VARROCK_SEWER.inArea(player))
+                    player.getTaskManager().doLookupByUUID(994);    // Slash a web in varrock sewers
                 event.delay(1);
                 World.startEvent(e -> {
                     web.setId(734);
