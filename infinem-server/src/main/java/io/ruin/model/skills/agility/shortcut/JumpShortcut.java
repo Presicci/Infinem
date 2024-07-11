@@ -52,6 +52,8 @@ public enum JumpShortcut {
             new Position(2857, 3613), new Position(2857, 3611)),
     ZEAH_JUMP49(27990, new Position(1776, 3883), 49,1, "jump",
             new Position(1776, 3884), new Position(1776, 3880)),
+    RELLEKKA57(544, new Position(2689, 3697), 57, 1, "jump",
+            new Position(2688, 3697), new Position(2691, 3697)),
     ZEAH_JUMP69(34741, new Position(1761, 3873), 69,1, "jump",
             new Position(1761, 3874), new Position(1761, 3872)),
     FALCONRY1(19222, new Position(2371, 3620), 1, 0, "climb-over",
