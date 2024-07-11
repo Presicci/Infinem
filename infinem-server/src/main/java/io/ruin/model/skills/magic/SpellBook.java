@@ -224,6 +224,8 @@ public enum SpellBook {
     public void setActive(Player player) {
         TabCombat.updateAutocast(player, false);
         Config.MAGIC_BOOK.set(player, ordinal());
+        if (this == LUNAR)
+            player.getTaskManager().doLookupByUUID(493);    // Switch to the Lunar Spellbook
     }
 
     public boolean isActive(Player player) {
