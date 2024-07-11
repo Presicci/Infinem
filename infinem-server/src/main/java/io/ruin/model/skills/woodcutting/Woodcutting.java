@@ -8,6 +8,7 @@ import io.ruin.model.activities.cluescrolls.ClueType;
 import io.ruin.model.content.ActivitySpotlight;
 import io.ruin.model.content.tasksystem.areas.diaryitems.KandarinHeadgear;
 import io.ruin.model.content.tasksystem.relics.Relic;
+import io.ruin.model.content.tasksystem.tasks.TaskCategory;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.utils.Config;
@@ -158,6 +159,7 @@ public class Woodcutting {
                             if (hatchet == Hatchet.RUNE)
                                 player.getTaskManager().doLookupByUUID(95, 1);  // Chop Some Logs With a Rune Axe
                         }
+                        player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.CHOPLOG, ItemDefinition.get(treeData.log).name);
                         player.collectResource(new Item(treeData.log, 1));
                     }
                     rollBirdNest(player, treeData);
