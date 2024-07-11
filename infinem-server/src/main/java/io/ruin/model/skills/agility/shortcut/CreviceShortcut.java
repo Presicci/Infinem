@@ -49,6 +49,8 @@ public enum CreviceShortcut {
             player.animate(2595);
             e.delay(1);
             player.getStats().addXp(StatType.Agility, xp, true);
+            if (this == ZANARIS_66)
+                player.getTaskManager().doLookupByUUID(366);    // Take the Advanced Shortcut to the Cosmic Altar
             player.unlock();
         });
     }
