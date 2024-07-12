@@ -90,5 +90,13 @@ public class MahoganyHomes {
         int completed = PlayerCounter.MAHOGANY_HOMES_CONTRACTS.increment(player, 1);
         int points = player.incrementNumericAttribute(POINTS_KEY, difficulty == null ? 2 : difficulty.getPointReward());
         player.sendMessage("You have completed " + Color.RED.wrap(completed + "") + " contracts with a total of " + Color.RED.wrap(points + "") + " points.");
+        if (difficulty == MahoganyDifficulty.NOVICE)
+            player.getTaskManager().doLookupByUUID(437);    // Complete a Novice Mahogany Homes Contract
+        if (difficulty == MahoganyDifficulty.ADEPT)
+            player.getTaskManager().doLookupByUUID(1001);   // Complete an Adept Mahogany Homes Contract
+        if (difficulty == MahoganyDifficulty.EXPERT) {
+            player.getTaskManager().doLookupByUUID(1002);   // Complete an Expert Mahogany Homes Contract
+            player.getTaskManager().doLookupByUUID(1003, 1, true);  // Complete 100 Expert Mahogany Homes Contracts
+        }
     }
 }
