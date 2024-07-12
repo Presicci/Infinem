@@ -9,6 +9,7 @@ import io.ruin.model.item.containers.equipment.EquipAction;
  * Created on 4/4/2022
  */
 public enum EquipTask {
+    AVAS_ASSEMBLER(523, 22109), // Equip an Ava's Assembler
     DORGESHUUN_CROSSBOW(357, Items.DORGESHUUN_CROSSBOW),
     TEAM_CAPE(877,
             Items.TEAM1_CAPE, Items.TEAM2_CAPE, Items.TEAM3_CAPE, Items.TEAM4_CAPE, Items.TEAM5_CAPE,
