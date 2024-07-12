@@ -12,7 +12,7 @@ public enum ArmourType {
     RED_DRAGONHIDE(2507, "red dragon hide armour", "red dragon leather"),
     BLACK_DRAGONHIDE(2509, "black dragon hide armour", "black dragon leather"),
     SNAKESKIN(6289, "snakeskin armour", "snake skin"),
-    YAK_HIDE(10818, "yak hide armour", "yak hide"),
+    YAK_HIDE(10820, "yak hide armour", "yak hide"),
     LAVA_DRAGONHIDE(30083, "lava dragon hide armour", "lava dragon hide"),
     ;
 
