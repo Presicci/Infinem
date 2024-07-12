@@ -41,7 +41,7 @@ public enum Pet {
     CHAOS_ELEMENTAL(11995, 2055, null, 300, 300),
     DAGANNOTH_PRIME(12644, 6629, null, 5000, 1500),
     DAGANNOTH_REX(12645, 6630, null, 5000, 1500),
-    DAGGANOTH_SUPREME(12643, 6628, null, 5000, 1500),
+    DAGANNOTH_SUPREME(12643, 6628, null, 5000, 1500),
     DARK_CORE(12816, 318, 8010, null, 5000, 1000),
     GENERAL_GRAARDOR(12650, 6632, null, 5000, 1000),
     JAL_NIB_REK(21291, 7675, 8009, null),
@@ -300,7 +300,7 @@ public enum Pet {
             Pet.CALLISTO_CUB, Pet.HELLPUPPY,
             Pet.IKKLE_HYDRA_GREEN, Pet.JAL_NIB_REK, Pet.KALPHITE_PRINCESS,
             Pet.LIL_ZIK, Pet.NOON, Pet.OLMLET,
-            Pet.CHAOS_ELEMENTAL, Pet.DAGGANOTH_SUPREME, Pet.DAGANNOTH_PRIME, Pet.DAGANNOTH_REX,
+            Pet.CHAOS_ELEMENTAL, Pet.DAGANNOTH_SUPREME, Pet.DAGANNOTH_PRIME, Pet.DAGANNOTH_REX,
             Pet.DARK_CORE, Pet.KRAKEN, Pet.SMOKE_DEVIL, Pet.SNAKELING_GREEN,
             Pet.PRINCE_BLACK_DRAGON, Pet.SCORPIAS_OFFSPRING, Pet.SKOTOS,
             Pet.SRARACHA, Pet.TZREK_JAD, Pet.VENENATIS_SPIDERLING, Pet.VETION_JR_PURPLE,
@@ -508,7 +508,7 @@ public enum Pet {
             case DAGANNOTH_REX:
                 Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Dagannoth Rex pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.DAG_REX)) + " kill count!");
                 break;
-            case DAGGANOTH_SUPREME:
+            case DAGANNOTH_SUPREME:
                 Broadcast.WORLD.sendNews(Icon.PET, player.getName() + " has received the Dagannoth Supreme pet at " + NumberUtils.formatNumber(KillCounter.getKillCount(player, BossKillCounter.DAG_SUPREME)) + " kill count!");
                 break;
             case DARK_CORE:
@@ -1185,7 +1185,7 @@ public enum Pet {
                         new NPCDialogue(pet.npcId, "Been done by someone, nope.")
                 );
             }
-            case DAGGANOTH_SUPREME: {
+            case DAGANNOTH_SUPREME: {
                 return player -> player.dialogue(
                         new PlayerDialogue("Hey, so err... I kind of own you now."),
                         new NPCDialogue(pet.npcId, "Tsssk. Next time you enter those caves, human, my father will be having words."),
