@@ -51,6 +51,7 @@ public class Lighthouse {
             player.animate(769);
         }));
         ObjectAction.register(4551, "jump-across", ((player, obj) -> {
+            player.putTemporaryAttribute("LIGHTHOUSE_TASK", 1);
             player.getMovement().force(0, 2, 0, 0, 15, 50, Direction.NORTH);
             player.animate(769);
         }));
@@ -59,6 +60,7 @@ public class Lighthouse {
             player.animate(769);
         }));
         ObjectAction.register(4553, "jump-across", ((player, obj) -> {
+            if (player.hasTemporaryAttribute("LIGHTHOUSE_TASK")) player.incrementTemporaryNumericAttribute("LIGHTHOUSE_TASK", 1);
             player.getMovement().force(0, 2, 0, 0, 15, 50, Direction.NORTH);
             player.animate(769);
         }));
@@ -67,6 +69,7 @@ public class Lighthouse {
             player.animate(769);
         }));
         ObjectAction.register(4555, "jump-across", ((player, obj) -> {
+            if (player.hasTemporaryAttribute("LIGHTHOUSE_TASK")) player.incrementTemporaryNumericAttribute("LIGHTHOUSE_TASK", 1);
             player.getMovement().force(-2, 0, 0, 0, 15, 50, Direction.WEST);
             player.animate(769);
         }));
@@ -75,6 +78,7 @@ public class Lighthouse {
             player.animate(769);
         }));
         ObjectAction.register(4557, "jump-across", ((player, obj) -> {
+            if (player.hasTemporaryAttribute("LIGHTHOUSE_TASK")) player.incrementTemporaryNumericAttribute("LIGHTHOUSE_TASK", 1);
             player.getMovement().force(0, 2, 0, 0, 15, 50, Direction.NORTH);
             player.animate(769);
         }));
@@ -83,6 +87,7 @@ public class Lighthouse {
             player.animate(769);
         }));
         ObjectAction.register(4559, "jump-to", ((player, obj) -> {
+            if (player.getTemporaryAttributeIntOrZero("LIGHTHOUSE_TASK") >= 4) player.getTaskManager().doLookupByUUID(998);     // Reach the lighthouse via stepping stones
             player.getMovement().force(0, 2, 0, 0, 15, 50, Direction.NORTH);
             player.animate(769);
         }));
