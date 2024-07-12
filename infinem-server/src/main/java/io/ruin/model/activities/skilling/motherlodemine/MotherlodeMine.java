@@ -210,6 +210,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
             player.getInventory().add(ore.getItemId(), 1);
             if (ore.getItemId() == Items.GOLDEN_NUGGET) {
                 player.getCollectionLog().collect(ore.getItemId());
+                player.getTaskManager().doLookupByUUID(442, 1, true);   // Obtain 20 Golden Nuggets
             }
             player.getStats().addXp(StatType.Mining, ore.getXp(), true);
             Config.PAY_DIRT_IN_SACK.set(player, Config.PAY_DIRT_IN_SACK.get(player) - 1);
