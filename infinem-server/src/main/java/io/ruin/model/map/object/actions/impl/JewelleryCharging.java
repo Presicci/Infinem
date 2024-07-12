@@ -55,6 +55,8 @@ public enum JewelleryCharging {
                     eternal = true;
                 } else {
                     item.setId(fountainOfRune ? chargeable.runeCharged : chargeable.charged);
+                    if (object.id == 2939 && (chargeable == GLORY || chargeable == GLORY_T))
+                        player.getTaskManager().doLookupByUUID(449);    // Charge an Amulet of Glory in the Heroes' Guild
                 }
             }
             if (eternal) {
