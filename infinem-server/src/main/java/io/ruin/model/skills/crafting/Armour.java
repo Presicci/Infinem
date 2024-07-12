@@ -55,8 +55,8 @@ public enum Armour {
     SNAKESKIN_BODY(53, ArmourType.SNAKESKIN, 6322, "a snakeskin body", 55.0, 15),
 
     //Yak hide items
-    YAKHIDE_LEGS(43, ArmourType.YAK_HIDE, 10822, "a pair of yak-hide legs", 32.0, 1),
-    YAKHIDE_BODY(46, ArmourType.YAK_HIDE, 10824, "a yak-hide body", 32.0, 2),
+    YAKHIDE_LEGS(43, ArmourType.YAK_HIDE, 10824, "a pair of yak-hide legs", 32.0, 1),
+    YAKHIDE_BODY(46, ArmourType.YAK_HIDE, 10822, "a yak-hide body", 32.0, 2),
 
     //Crab armour
     CRAB_HELMET(15, ArmourType.CRAB_HELMET, 7539, "a crab helmet", 32.5, 1),
