@@ -44,6 +44,7 @@ public class CraftingGuild {
                 if(player.getAbsY() >= 3289)
                     player.dialogue(new NPCDialogue(5810, "Welcome to the Guild of Master Craftsmen."));
                 player.step(0, player.getAbsY() >= 3289 ? -1 : 1, StepType.FORCE_WALK);
+                player.getTaskManager().doLookupByUUID(443);    // Enter the Crafting Guild
                 event.delay(2);
                 obj.restore().skipClipping(false);
                 opened.remove();
