@@ -145,7 +145,7 @@ public enum Armour {
     private static final int LAVA_DRAGON_LEATHER = 30083;
 
     private static final int SNAKESKIN = 6289;
-    private static final int YAK_HIDE = 10818;
+    private static final int YAK_HIDE = 10820;
     private static final int KEBBIT_CLAWS = 10113;
     private static final int FRESH_CRAB_CLAW = 7536;
     private static final int FRESH_CRAB_SHELL = 7538;
