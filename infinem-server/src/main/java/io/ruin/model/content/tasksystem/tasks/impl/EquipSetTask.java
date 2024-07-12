@@ -10,13 +10,17 @@ import io.ruin.model.item.containers.equipment.EquipAction;
  * Created on 4/5/2022
  */
 public enum EquipSetTask {
-    VOID(468, // Equip a Full Void Knight Set
+    YAKHIDE(515,    // Equip a full set of Yakhide Armour
+            SetPiece.YAKHIDE_TOP,
+            SetPiece.YAKHIDE_LEGS
+    ),
+    VOID(468,       // Equip a Full Void Knight Set
             SetPiece.VOID_TOP,
             SetPiece.VOID_BOTTOM,
             SetPiece.VOID_GLOVES,
             SetPiece.VOID_HELM
     ),
-    MITHRIL(60, // Equip a Full Mithril Set
+    MITHRIL(60,     // Equip a Full Mithril Set
             SetPiece.MITHRIL_CHEST,
             SetPiece.MITHRIL_LEGS,
             SetPiece.MITHRIL_HELM
@@ -70,6 +74,8 @@ public enum EquipSetTask {
     }
 
     private enum SetPiece {
+        YAKHIDE_TOP(Items.YAKHIDE_BODY),
+        YAKHIDE_LEGS(Items.YAKHIDE_LEGS),
         VOID_TOP(8839),
         VOID_BOTTOM(8840),
         VOID_GLOVES(8842),
