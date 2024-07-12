@@ -49,12 +49,9 @@ public class Eluned {
             player.dialogue(new NPCDialogue(npc, "I'll need 500 coins for each crystal you want enchanted."));
             return;
         }
-        player.sendMessage(amount +  "");
         List<Item> seeds = player.getInventory().collectItems(6103);
-        player.sendMessage(seeds.size() +  "");
         int coins = player.getInventory().getAmount(995);
         int amountToEnchant = Math.min(seeds.size(), amount);
-        player.sendMessage((coins / (amountToEnchant * COST)) +  "");
         amountToEnchant = Math.min(amountToEnchant, coins / (amountToEnchant * COST));
         for (int index = 0; index < amountToEnchant; index++) {
             Item seed = seeds.get(index);
