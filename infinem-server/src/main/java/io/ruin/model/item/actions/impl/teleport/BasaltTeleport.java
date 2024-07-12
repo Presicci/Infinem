@@ -29,6 +29,7 @@ public class BasaltTeleport {
                 event.delay(3);
                 item.remove(1);
                 player.getMovement().teleport(WEISS);
+                player.getTaskManager().doLookupByUUID(508);    // Use Some Icy Basalt to Teleport to Weiss
                 player.unlock();
             });
         });
