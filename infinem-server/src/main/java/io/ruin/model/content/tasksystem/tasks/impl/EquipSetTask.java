@@ -10,6 +10,12 @@ import io.ruin.model.item.containers.equipment.EquipAction;
  * Created on 4/5/2022
  */
 public enum EquipSetTask {
+    PROSPECTOR(457,
+            SetPiece.PROSPECTOR_HAT,
+            SetPiece.PROSPECTOR_JACKET,
+            SetPiece.PROSPECTOR_LEGS,
+            SetPiece.PROSPECTOR_BOOTS
+    ),
     GRACEFUL(455,
             SetPiece.GRACEFUL_HOOD,
             SetPiece.GRACEFUL_CAPE,
@@ -82,6 +88,10 @@ public enum EquipSetTask {
     }
 
     private enum SetPiece {
+        PROSPECTOR_HAT(Items.PROSPECTOR_HELMET, 25549),
+        PROSPECTOR_JACKET(Items.PROSPECTOR_JACKET, 25551),
+        PROSPECTOR_LEGS(Items.PROSPECTOR_LEGS, 25553),
+        PROSPECTOR_BOOTS(Items.PROSPECTOR_BOOTS, 25555),
         GRACEFUL_HOOD(11850, 13580, 13592, 13604, 13616, 13628, 13668, 21063, 24745, 25071),
         GRACEFUL_CAPE(11852, 13582, 13594, 13606, 13618, 13630, 13670, 21066, 24748, 25074),
         GRACEFUL_TOP(11854, 13584, 13596, 13608, 13620, 13632, 13672, 21069, 24751, 25077),
