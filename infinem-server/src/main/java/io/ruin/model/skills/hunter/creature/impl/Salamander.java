@@ -71,6 +71,8 @@ public class Salamander extends Creature {
             player.getStats().addXp(StatType.Hunter, getCatchXP(), true);
             if (getCounter() != null)
                 getCounter().increment(player, 1);
+            if (getNpcId() == 2906)
+                player.getTaskManager().doLookupByUUID(718);    // Catch a Swamp Lizard in Morytania
             trap.getTrapType().onRemove(player, obj);
             if (obj.direction >= 2) {
                 destroyTrap(obj);
