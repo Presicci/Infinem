@@ -32,6 +32,7 @@ public enum Snelm {
                 player.animate(1309);
                 player.getStats().addXp(StatType.Crafting, 32.5, true);
                 player.sendFilteredMessage("You cut the snelm.");
+                player.getTaskManager().doLookupByUUID(702);    // Craft a Snelm
                 shell.setId(snelm.cutId);
             });
         }
