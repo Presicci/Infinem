@@ -10,6 +10,12 @@ import io.ruin.model.item.containers.equipment.EquipAction;
  * Created on 4/5/2022
  */
 public enum EquipSetTask {
+    PYROMANCER(983,
+            SetPiece.PYROMANCER_GARB,
+            SetPiece.PYROMANCER_ROBE,
+            SetPiece.PYROMANCER_HOOD,
+            SetPiece.PYROMANCER_BOOTS
+    ),
     PROSPECTOR(457,
             SetPiece.PROSPECTOR_HAT,
             SetPiece.PROSPECTOR_JACKET,
@@ -88,6 +94,10 @@ public enum EquipSetTask {
     }
 
     private enum SetPiece {
+        PYROMANCER_GARB(Items.PYROMANCER_GARB),
+        PYROMANCER_ROBE(Items.PYROMANCER_ROBE),
+        PYROMANCER_HOOD(Items.PYROMANCER_HOOD),
+        PYROMANCER_BOOTS(Items.PYROMANCER_BOOTS),
         PROSPECTOR_HAT(Items.PROSPECTOR_HELMET, 25549),
         PROSPECTOR_JACKET(Items.PROSPECTOR_JACKET, 25551),
         PROSPECTOR_LEGS(Items.PROSPECTOR_LEGS, 25553),
