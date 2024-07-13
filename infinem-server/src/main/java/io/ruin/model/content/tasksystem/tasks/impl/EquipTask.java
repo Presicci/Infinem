@@ -58,6 +58,7 @@ public enum EquipTask {
     KARAMJA_MONKEY_BACKPACK(590, 24862),    // Equip a Karamja Monkey Backpack
     MANIACAL_MONKEY_BACKPACK(604, 24864),   // Equip a Maniacal Monkey Backpack
     KRUK_JR_BACKPACK(622, 24866),   // Equip a Kruk Jr. Monkey Backpack
+    SALVE_AMULET_E(729, Items.SALVE_AMULET_E, Items.SALVE_AMULET_EI, 25278, 26782),
     PROTEST_BANNER(948, 25822),     // Equip a Protest Banner
     ;
 
