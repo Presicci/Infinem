@@ -134,6 +134,7 @@ public class Barrows {
                 }
             }
             player.sendMessage("Your Barrows chest count is: <col=FF0000>" + (++player.barrowsChestsOpened) + "</col>.");
+            player.getTaskManager().doLookupByUUID(722);    // Loot a Barrows Chest
             for(BarrowsBrother brother : BarrowsBrother.values())
                 brother.config.set(player, 0);
             Config.BARROWS_CHEST.set(player, 0);
