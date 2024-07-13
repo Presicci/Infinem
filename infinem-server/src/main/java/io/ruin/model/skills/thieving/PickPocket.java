@@ -503,6 +503,7 @@ public enum PickPocket {
                                     player.getInventory().addOrDrop(item);
                                 }
                                 player.getCollectionLog().collect(item);
+                                player.getTaskManager().doDropLookup(item);
                                 player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.PICKPOCKETLOOT, item.getDef().name, item.getAmount(), true);
                             }
                         }
