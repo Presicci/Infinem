@@ -57,6 +57,7 @@ public class WarriorsGuild {
                                 "must be equal to or greater than 130 to enter the Warriors Guild."));
                         return;
                     }
+                    player.getTaskManager().doLookupByUUID(451);    // Enter the Warriors' Guild
                 }
 
                 /* if we're entering a cyclops area, check for tokens */
