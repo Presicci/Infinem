@@ -240,6 +240,10 @@ public class Shop {
                 }
                 int removedFromshop = shopItems.remove(bought);
                 log.debug("Player bought {} {}", bought, removedFromshop);
+                int uuid = bought.getDef().getCustomValueOrDefault("SHOP_TASK", -1);
+                if (uuid > 0) {
+                    player.getTaskManager().doLookupByUUID(uuid);
+                }
                 sendUpdates();
             } else {
                 log.debug("Failed to buy {} x {} | removedCurrency {}", buyAmount, shopItem.getId(), removedCurrency);
