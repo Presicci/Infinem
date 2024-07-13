@@ -10,6 +10,14 @@ import io.ruin.model.item.containers.equipment.EquipAction;
  * Created on 4/5/2022
  */
 public enum EquipSetTask {
+    GRACEFUL(455,
+            SetPiece.GRACEFUL_HOOD,
+            SetPiece.GRACEFUL_CAPE,
+            SetPiece.GRACEFUL_TOP,
+            SetPiece.GRACEFUL_LEGS,
+            SetPiece.GRACEFUL_GLOVES,
+            SetPiece.GRACEFUL_BOOTS
+    ),
     YAKHIDE(515,    // Equip a full set of Yakhide Armour
             SetPiece.YAKHIDE_TOP,
             SetPiece.YAKHIDE_LEGS
@@ -74,6 +82,12 @@ public enum EquipSetTask {
     }
 
     private enum SetPiece {
+        GRACEFUL_HOOD(11850, 13580, 13592, 13604, 13616, 13628, 13668, 21063, 24745, 25071),
+        GRACEFUL_CAPE(11852, 13582, 13594, 13606, 13618, 13630, 13670, 21066, 24748, 25074),
+        GRACEFUL_TOP(11854, 13584, 13596, 13608, 13620, 13632, 13672, 21069, 24751, 25077),
+        GRACEFUL_LEGS(11856, 13586, 13598, 13610, 13622, 13634, 13674, 21072, 24754, 25080),
+        GRACEFUL_GLOVES(11858, 13588, 13600, 13612, 13624, 13636, 13676, 21075, 24757, 25083),
+        GRACEFUL_BOOTS(11860, 13590, 13602, 13614, 13626, 13638, 13678, 21078, 24760, 25086),
         YAKHIDE_TOP(Items.YAKHIDE_BODY),
         YAKHIDE_LEGS(Items.YAKHIDE_LEGS),
         VOID_TOP(8839),
