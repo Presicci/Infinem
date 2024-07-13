@@ -287,14 +287,12 @@ public enum ImplingJar {
             player.sendMessage("You'll need to clear some space in your pack before looting the jar.");
             return;
         }
-
         if (Random.rollDie(10, 1)) {
             item.remove();
             player.sendMessage("You break the jar as you try and open it. You throw the shattered remains away.");
         } else {
             item.setId(IMPLING_JAR);
         }
-
         Item loot;
         if (jar == LUCKY_IMPLING) {
             ClueType randomClue = Random.get(ClueType.values());
@@ -302,9 +300,9 @@ public enum ImplingJar {
         } else {
             loot = jar.lootTable.rollItem();
         }
-
         player.getInventory().addOrDrop(loot);
         player.getCollectionLog().collect(loot);
+        player.getTaskManager().doDropLookup(loot);
     }
 
     static {

@@ -127,6 +127,7 @@ public enum Impling {
                         }
                         player.getInventory().addOrDrop(loot);
                         player.getCollectionLog().collect(loot);
+                        player.getTaskManager().doDropLookup(loot);
                     } else {
                         impJar.setId(impling.jarId);
                     }
