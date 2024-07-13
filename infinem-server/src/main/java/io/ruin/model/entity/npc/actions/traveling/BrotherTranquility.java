@@ -39,6 +39,7 @@ public class BrotherTranquility {
     private static void transport(Player player, NPC npc) {
         if (npc.getAbsX() < 3710) { // Mos Le'Harmless
             ModernTeleport.teleport(player, new Position(3787, 2822, 0));
+            player.getTaskManager().doLookupByUUID(712);    // Visit Harmony Island
         } else {    // Harmony
             ModernTeleport.teleport(player, new Position(3679, 2964, 0));
         }
