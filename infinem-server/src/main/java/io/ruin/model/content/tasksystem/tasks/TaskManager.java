@@ -46,14 +46,12 @@ public class TaskManager {
         this.inProgressTasks = new HashMap<>();
         this.completeTasks = new HashSet<>();
         this.completedCategories = new HashSet<>();
-        this.collectedItems = new HashSet<>();
     }
 
     @Setter private Player player;
     @Expose private HashMap<Integer, Integer> inProgressTasks;
     @Expose private HashSet<Integer> completeTasks;
     @Expose private HashSet<Integer> completedCategories;
-    @Expose private HashSet<Integer> collectedItems;
 
     public String searchString = "";
 
@@ -83,7 +81,6 @@ public class TaskManager {
         this.inProgressTasks = new HashMap<>();
         this.completeTasks = new HashSet<>();
         this.completedCategories = new HashSet<>();
-        this.collectedItems = new HashSet<>();
     }
 
     public int getAreaTaskPoints(int areaIndex) {
@@ -227,10 +224,8 @@ public class TaskManager {
         }
         DropAllTask dropAllTask = item.getDef().getCustomValueOrDefault("DROPALL_TASK", null);
         if (dropAllTask != null && !completeTasks.contains(dropAllTask.getTaskUuid())) {
-            collectedItems.add(item.getId());
-            if (dropAllTask.hasCompleted(collectedItems)) {
+            if (dropAllTask.hasCompleted(player)) {
                 doLookupByUUID(dropAllTask.getTaskUuid(), item.getAmount());
-                dropAllTask.cleanupCollectedItems(collectedItems);
             }
         }
     }

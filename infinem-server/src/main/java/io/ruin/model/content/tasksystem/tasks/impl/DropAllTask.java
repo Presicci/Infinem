@@ -1,6 +1,7 @@
 package io.ruin.model.content.tasksystem.tasks.impl;
 
 import io.ruin.cache.def.ItemDefinition;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Items;
 import lombok.Getter;
 
@@ -25,9 +26,9 @@ public enum DropAllTask {
     private final int taskUuid;
     private final int[] itemIds;
 
-    public boolean hasCompleted(HashSet<Integer> collectedItems) {
+    public boolean hasCompleted(Player player) {
         for (int itemId : itemIds) {
-            if (!collectedItems.contains(itemId)) return false;
+            if (!player.getCollectionLog().getCollected().containsKey(itemId)) return false;
         }
         return true;
     }
