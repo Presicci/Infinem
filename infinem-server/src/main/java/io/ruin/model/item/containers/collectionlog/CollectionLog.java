@@ -2,6 +2,7 @@ package io.ruin.model.item.containers.collectionlog;
 
 import com.google.gson.annotations.Expose;
 import io.ruin.cache.def.EnumDefinition;
+import io.ruin.cache.def.ItemDefinition;
 import io.ruin.cache.def.StructDefinition;
 import io.ruin.model.inter.AccessMasks;
 import io.ruin.process.CoreWorker;
@@ -113,14 +114,21 @@ public class CollectionLog {
      * @param item The item being collected.
      */
     private boolean collect(Item item) {
+        int id = item.getId();
+        int amt = item.getAmount();
         if (!item.getDef().collectable) {
+            int notedId = item.getDef().notedId;
+            if (notedId != -1 && ItemDefinition.get(notedId).collectable) {
+               id = notedId;
+            } else {
+                return false;
+            }
+        }
+        if (amt <= 0) {
             return false;
         }
-        if (item.getAmount() <= 0) {
-            return false;
-        }
-        int amount = collected.getOrDefault(item.getId(),0);
-        collected.put(item.getId(), amount + item.getAmount());
+        int amount = collected.getOrDefault(id,0);
+        collected.put(id, amount + amt);
         if (amount == 0) {
             if ((Config.COLLECTION_LOG_SETTINGS.get(player) & 2) == 2) {
                 player.getPacketSender().sendPopupNotification(0xff981f, "Collection log", "New item:<br><br>" + Color.WHITE.wrap(item.getDef().name));
