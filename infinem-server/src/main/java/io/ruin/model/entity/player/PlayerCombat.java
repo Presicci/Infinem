@@ -1149,7 +1149,7 @@ public class PlayerCombat extends Combat {
             SetEffect.GUTHAN.checkAndApply(player, target, hit);
         }
         if (hit.attackStyle == AttackStyle.CRUSH || hit.attackStyle == AttackStyle.SLASH || hit.attackStyle == AttackStyle.STAB) {
-            if (AmuletOfBloodFury.test(player) && Random.rollDie(5)) {
+            if (hit.damage > 0 && AmuletOfBloodFury.test(player) && Random.rollDie(5)) {
                 target.graphics(398,0 ,0);  // TODO get proper blood ammy gfx
                 player.incrementHp((int) Math.ceil(hit.damage * 0.3));
             }
