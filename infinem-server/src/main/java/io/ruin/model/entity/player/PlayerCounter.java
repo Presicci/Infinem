@@ -173,6 +173,7 @@ public enum PlayerCounter {
     WHITE_LOGS_BURNT,
     PURPLE_LOGS_BURNT,
     KINDLING_BURNT,
+    PYRE_SHIPS,
 
     /**
      * Cooking

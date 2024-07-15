@@ -10,6 +10,7 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Bounds;
+import io.ruin.model.map.object.actions.impl.PyreSite;
 import io.ruin.model.map.object.actions.impl.dungeons.KourendCatacombs;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
@@ -86,15 +87,24 @@ public enum Bone {
             bone.remove();
             player.animate(827);
             player.sendMessage("You dig a hole in the ground...");
+            int pyreCharges = player.getAttributeIntOrZero(PyreSite.PYRE_KEY);
+            int pyreMultiplier = 1;
+            if (pyreCharges > 0) {
+                player.incrementNumericAttribute(PyreSite.PYRE_KEY, -1);
+                pyreMultiplier = 3;
+            }
             if (this == Bone.LAVA_DRAGON_BONES && player.getPosition().inBounds(new Bounds(3173, 3799, 3235, 3855, 0))) {
                 player.getStats().addXp(StatType.Prayer, 340, true);
             } else {
-                player.getStats().addXp(StatType.Prayer, exp, true);
+                player.getStats().addXp(StatType.Prayer, exp * pyreMultiplier, true);
             }
             player.privateSound(2738);
             buryCounter.increment(player, 1);
             player.karamDelay.delay(2);
             player.sendMessage("You bury the bones.");
+            if (pyreMultiplier > 1) {
+                player.sendFilteredMessage("You gain extra prayer experience as the ancestral barbarian spirits watch over you.");
+            }
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.BURYBONE, bone.getDef().name.toLowerCase());
             KourendCatacombs.buriedBone(player, this);
         });

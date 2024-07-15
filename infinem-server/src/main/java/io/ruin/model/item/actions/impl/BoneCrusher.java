@@ -5,6 +5,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
+import io.ruin.model.map.object.actions.impl.PyreSite;
 import io.ruin.model.skills.prayer.Bone;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
@@ -36,7 +37,13 @@ public class BoneCrusher {
         if (player.getBoneCrusher().isActive() && player.getInventory().contains(BONE_CRUSHER) && hasCharges()) {
             Bone bone = Bone.get(item.getId());
             if (Objects.nonNull(bone)) {
-                player.getStats().addXp(StatType.Prayer, bone.exp, true);
+                if (player.getAttributeIntOrZero(PyreSite.PYRE_KEY) > 0) {
+                    player.incrementNumericAttribute(PyreSite.PYRE_KEY, -1);
+                    player.getStats().addXp(StatType.Prayer, bone.exp * 3, true);
+                    player.sendFilteredMessage("You gain extra prayer experience as the ancestral barbarian spirits watch over you.");
+                } else {
+                    player.getStats().addXp(StatType.Prayer, bone.exp, true);
+                }
                 charges--;
                 return true;
             }
