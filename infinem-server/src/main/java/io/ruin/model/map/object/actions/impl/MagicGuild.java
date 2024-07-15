@@ -24,6 +24,7 @@ public class MagicGuild {
             player.dialogue(new NPCDialogue(3248, "You need a magic level of 66. The magical energy in here is unsafe for those below that level."));
             return true;
         }
+        player.getTaskManager().doLookupByUUID(582);    // Enter the Wizards' Guild
         return false;
     }
 
@@ -72,6 +73,7 @@ public class MagicGuild {
                                     new PlayerDialogue("I'm not sure. I'll be leaving now.")
                             ));
                         } else {
+                            player.getTaskManager().doLookupByUUID(582);    // Enter the Wizards' Guild
                             ModernTeleport.teleport(player, 2595, 3087, 0, p -> player.dialogue(
                                     new NPCDialogue(3248, "You could have done that yourself..."),
                                     new PlayerDialogue("Is that any way to talk to your guest?")
