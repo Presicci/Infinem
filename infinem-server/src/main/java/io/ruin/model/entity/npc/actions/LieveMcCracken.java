@@ -61,6 +61,7 @@ public class LieveMcCracken {
         }
         int newTentacles = player.incrementNumericAttribute(AttributeKey.LIEVE_KRAKEN_TENTACLES, -10);
         item.setId(newId);
+        player.getTaskManager().doLookupByUUID(626);    // Enhance a Trident of the Seas
         player.dialogue(new ItemDialogue().one(newId, "Lieve enhances your trident. She has "
                 + (newTentacles == 0 ? "no more tentacles stored for you."
                 : newTentacles == 1 ? "one more tentacle stored for you."
