@@ -14,6 +14,7 @@ import io.ruin.model.item.actions.impl.InfernalEel;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.item.loot.RareDropTable;
+import io.ruin.model.map.object.actions.impl.PyreSite;
 import io.ruin.model.map.object.actions.impl.chests.*;
 import io.ruin.model.skills.construction.mahoganyhomes.MahoganySupplyCrate;
 import io.ruin.model.skills.mining.Mining;
@@ -24,7 +25,6 @@ import io.ruin.model.skills.thieving.WallSafe;
 import io.ruin.model.skills.woodcutting.Woodcutting;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -151,6 +151,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Trade Mole Parts - Wyson", Wyson.NESTS),
             new DropViewerEntry("Supply Crate (Mahogany Homes)", MahoganySupplyCrate.LOOT_TABLE),
             new DropViewerEntry("Gem Rock", Mining.GEM_ROCK_TABLE),
-            new DropViewerEntry("Muddy Chest", MuddyChest.LOOT)
+            new DropViewerEntry("Muddy Chest", MuddyChest.LOOT),
+            new DropViewerEntry("Chewed Bones", PyreSite.CHEWED_BONES_LOOT)
     ).collect(Collectors.toCollection(ArrayList::new));
 }
