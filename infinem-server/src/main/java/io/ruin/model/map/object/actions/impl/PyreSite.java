@@ -133,6 +133,8 @@ public class PyreSite {
             player.sendMessage("The ancient barbarian is laid to rest. Your future prayer training is blessed, as his spirit ascends to a glorious afterlife. " +
                     "Spirits drop an object into your pack");
             player.incrementNumericAttribute(PYRE_KEY, log.boostedBones);
+            if (log == PyreSiteLog.MAGIC)
+                player.getTaskManager().doLookupByUUID(1005);   // Burn some Chewed Logs on a Magic Pyre Ship
             e.delay(3);
             ship.setId(25293);  // Push ship
             e.delay(3);
