@@ -269,8 +269,8 @@ public class PlayerCombat extends Combat {
 
     private void attackWithMagicWeapon() {
         ItemDefinition weaponDef = player.getEquipment().getDef(Equipment.SLOT_WEAPON);
-        boolean swamp = weaponDef.id == 12899;
-        if (weaponDef.id == TridentOfTheSeas.UNCHARGED || weaponDef.id == 12900) {
+        boolean swamp = weaponDef.id == 12899 || weaponDef.id == 22292;
+        if (weaponDef.id == TridentOfTheSeas.UNCHARGED || weaponDef.id == 12900 || weaponDef.id == TridentOfTheSeas.ENHANCED_UNCHARGED || weaponDef.id == 22294) {
             player.sendMessage("Your trident has no charges left!");
             updateLastAttack(4);
             return;
@@ -285,7 +285,7 @@ public class PlayerCombat extends Combat {
             updateLastAttack(4);
             return;
         }
-        if (swamp || weaponDef.id == TridentOfTheSeas.CHARGED || weaponDef.id == TridentOfTheSeas.FULLY_CHARGED) {
+        if (swamp || weaponDef.id == TridentOfTheSeas.CHARGED || weaponDef.id == TridentOfTheSeas.FULLY_CHARGED || weaponDef.id == TridentOfTheSeas.ENHANCED_CHARGED) {
             if (target.player != null) {
                 player.sendMessage(Color.RED.wrap("This staff's spell cannot be used against other players."));
                 return;
