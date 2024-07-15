@@ -62,6 +62,7 @@ public class Consumable {
             p.getMovement().restoreEnergy(10);
             p.getTaskManager().doLookupByUUID(77, 1);   // Eat some Purple Sweets
         });
+        registerEat(Items.PAPAYA_FRUIT, 8, p -> p.getMovement().restoreEnergy(5));
         registerEat(1963, 2, "banana");
         registerEat(2162, 2, "king worm");
         registerEat(6883, 8, "peach");
