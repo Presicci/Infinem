@@ -42,6 +42,7 @@ public enum EquipTask {
     KARAMJA_MONKEY_BACKPACK(590, 24862),    // Equip a Karamja Monkey Backpack
     MANIACAL_MONKEY_BACKPACK(604, 24864),   // Equip a Maniacal Monkey Backpack
     KRUK_JR_BACKPACK(622, 24866),           // Equip a Kruk Jr. Monkey Backpack
+    PRINCE_BACKPACK(628, 24867),            // Equip a Prince Awowogei Monkey Back
     SALVE_AMULET_E(729, Items.SALVE_AMULET_E, Items.SALVE_AMULET_EI, 25278, 26782),
     GOD_CAPE(857,       // Equip a God Cape
             Items.SARADOMIN_CAPE, Items.ZAMORAK_CAPE, Items.GUTHIX_CAPE,
