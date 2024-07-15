@@ -55,12 +55,12 @@ public enum EquipSetTask {
             SetPiece.RUNE_LEGS,
             SetPiece.RUNE_HELM
     ),
-    BARROWS(739,    // Equip any Full Barrows Armour Set
+    /*BARROWS(739,    // Equip any Full Barrows Armour Set
             SetPiece.BARROWS_HELM,
             SetPiece.BARROWS_CHEST,
             SetPiece.BARROWS_LEGS,
             SetPiece.BARROWS_WEAPON
-    ),
+    ),*/
     STUDDED(61, // Equip a Studded Body and Chaps
             SetPiece.STUDDED_BODY,
             SetPiece.STUDDED_CHAPS
@@ -126,7 +126,7 @@ public enum EquipSetTask {
         RUNE_CHEST(Items.RUNE_PLATEBODY, Items.RUNE_PLATEBODY_G, Items.RUNE_PLATEBODY_T),
         RUNE_LEGS(Items.RUNE_PLATELEGS, Items.RUNE_PLATELEGS_G, Items.RUNE_PLATELEGS_T,
                 Items.RUNE_PLATESKIRT, Items.RUNE_PLATESKIRT_G, Items.RUNE_PLATESKIRT_T),
-        BARROWS_HELM(true, true,
+        /*BARROWS_HELM(true, true,
                 Items.GUTHANS_HELM, Items.GUTHANS_HELM_25, Items.GUTHANS_HELM_50, Items.GUTHANS_HELM_75, Items.GUTHANS_HELM_100,
                 Items.DHAROKS_HELM, Items.DHAROKS_HELM_25, Items.DHAROKS_HELM_50, Items.DHAROKS_HELM_75, Items.DHAROKS_HELM_100,
                 Items.KARILS_COIF, Items.KARILS_COIF_25, Items.KARILS_COIF_50, Items.KARILS_COIF_75, Items.KARILS_COIF_100,
@@ -157,7 +157,7 @@ public enum EquipSetTask {
                 Items.TORAGS_HAMMERS, Items.TORAGS_HAMMERS_25, Items.TORAGS_HAMMERS_50, Items.TORAGS_HAMMERS_75, Items.TORAGS_HAMMERS_100,
                 Items.VERACS_FLAIL, Items.VERACS_FLAIL_25, Items.VERACS_FLAIL_50, Items.VERACS_FLAIL_75, Items.VERACS_FLAIL_100,
                 Items.AHRIMS_STAFF, Items.AHRIMS_STAFF_25, Items.AHRIMS_STAFF_50, Items.AHRIMS_STAFF_75, Items.AHRIMS_STAFF_100
-        ),
+        ),*/
         STUDDED_BODY(Items.STUDDED_BODY, Items.STUDDED_BODY_G, Items.STUDDED_BODY_T),
         STUDDED_CHAPS(Items.STUDDED_CHAPS, Items.STUDDED_CHAPS_G, Items.STUDDED_CHAPS_T),
         GREEN_DHIDE_BODY(Items.GREEN_DHIDE_BODY, Items.GREEN_DHIDE_BODY_T, Items.GREEN_DHIDE_BODY_G),
