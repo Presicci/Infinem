@@ -186,6 +186,23 @@ public class Tile {
         return null;
     }
 
+    public boolean hasAnyObject(int... ids) {
+        for (int id : ids) {
+            if (hasObject(id)) return true;
+        }
+        return false;
+    }
+
+    public boolean hasObject(int id) {
+        if (gameObjects != null) {
+            for (GameObject gameObject : gameObjects) {
+                if (gameObject != null && gameObject.id == id)
+                    return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * Ground items
      */
