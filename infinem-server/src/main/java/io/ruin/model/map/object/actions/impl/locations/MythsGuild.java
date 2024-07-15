@@ -36,6 +36,7 @@ public class MythsGuild {
                     !dungeon ? player.getAbsY() + (player.getAbsY() <= obj.getPosition().getY() ? 2 : -2) : player.getAbsY(),
                     StepType.FORCE_WALK);
             e.delay(2);
+            player.getTaskManager().doLookupByUUID(601);    // Enter the Myths' Guild
             player.unlock();
         });
     }
