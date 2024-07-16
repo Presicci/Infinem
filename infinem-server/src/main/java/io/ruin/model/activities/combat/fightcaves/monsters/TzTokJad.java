@@ -6,6 +6,7 @@ import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.map.Projectile;
+import io.ruin.model.skills.prayer.Prayer;
 
 //todo SOUNDS
 public class TzTokJad extends NPCCombat {
@@ -60,6 +61,10 @@ public class TzTokJad extends NPCCombat {
                     t.graphics(157);
                     t.privateSound(163);
                 });
+                hit.postDefend(t -> {
+                    if (t.isPlayer() && !t.player.getPrayer().isActive(Prayer.PROTECT_FROM_MAGIC) && hit.damage < t.player.getHp())
+                        t.player.getTaskManager().doLookupByUUID(407);  // Survive a Hit From TzTok-Jad Without Prayer
+                });
                 target.hit(hit);
             });
         } else {
@@ -78,6 +83,10 @@ public class TzTokJad extends NPCCombat {
                 hit.postDamage(t -> {
                     t.graphics(157);
                     t.privateSound(163);
+                });
+                hit.postDefend(t -> {
+                    if (t.isPlayer() && !t.player.getPrayer().isActive(Prayer.PROTECT_FROM_MISSILES) && hit.damage < t.player.getHp())
+                        t.player.getTaskManager().doLookupByUUID(407);  // Survive a Hit From TzTok-Jad Without Prayer
                 });
                 target.hit(hit);
             });
