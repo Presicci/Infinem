@@ -107,7 +107,7 @@ object TournamentManager {
      * The main method of our manager that is processed every cycle of our dedicated event processor.
      */
     fun pulse() = globalEvent {
-        var attempts = 0;
+        /*var attempts = 0;
         while(activityTimer != -1) {
             pause(100)
             when(activityTimer--) {
@@ -150,8 +150,9 @@ object TournamentManager {
                     }
                 }
             }
-        }
+        }*/
     }
+
     private fun broadcast(message: String) {
         for (p in World.players) {
             //If the player has toggle off tournament broadcasts don't send.
