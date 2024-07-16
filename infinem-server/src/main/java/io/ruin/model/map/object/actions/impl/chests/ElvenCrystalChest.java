@@ -77,6 +77,7 @@ public class ElvenCrystalChest {
                 for(Item item : loot) {
                     player.getInventory().addOrDrop(item.getId(), item.getAmount());
                     player.getCollectionLog().collect(item);
+                    player.getTaskManager().doDropLookup(item);
                 }
                 event.delay(1);
                 player.unlock();
