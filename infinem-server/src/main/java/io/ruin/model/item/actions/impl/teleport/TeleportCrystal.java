@@ -21,6 +21,7 @@ public class TeleportCrystal {
         if (destination == PRIF && !PrifCityEntrance.prifSkillCheckNoMessage(player)) return;
         if (toId > 0) item.setId(toId);
         ModernTeleport.teleport(player, destination);
+        player.getTaskManager().doLookupByUUID(787);    // Use an Elven Teleport Crystal
     }
 
     static {
