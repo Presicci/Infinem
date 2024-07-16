@@ -79,6 +79,7 @@ public class ElvenCrystalChest {
                     player.getCollectionLog().collect(item);
                     player.getTaskManager().doDropLookup(item);
                 }
+                player.getTaskManager().doLookupByUUID(806);    // Open the Enhanced Crystal Chest
                 event.delay(1);
                 player.unlock();
             });
