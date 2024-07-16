@@ -4,6 +4,7 @@ import io.ruin.cache.def.ObjectDefinition;
 import io.ruin.content.activities.lms.LastManStanding;
 import io.ruin.model.activities.skilling.motherlodemine.MotherlodeMine;
 import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.item.Items;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -30,13 +31,13 @@ public class ClueObjects {
 					if (obj.id == 357) {
 						for (Position position : MotherlodeMine.HAMMER_CRATES) {
 							if (position.equals(obj.x, obj.y)) {
-								if (player.getInventory().isFull() || player.getInventory().hasId(HAMMER)) {
+								if (player.getInventory().isFull() || player.getInventory().hasId(Items.HAMMER)) {
 									player.sendFilteredMessage("You search the crate but find nothing.");
 									return;
 								}
 
-								player.getInventory().add(HAMMER, 1);
-								player.dialogue(new ItemDialogue().one(HAMMER, "You've found a hammer. How handy."));
+								player.getInventory().add(Items.HAMMER, 1);
+								player.dialogue(new ItemDialogue().one(Items.HAMMER, "You've found a hammer. How handy."));
 								return;
 							}
 						}

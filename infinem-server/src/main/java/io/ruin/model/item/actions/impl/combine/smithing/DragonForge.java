@@ -73,8 +73,7 @@ public class DragonForge {
             player.dialogue(new MessageDialogue("You can only forge a dragon platebody at the dragon forge."));
             return;
         }
-        Item hammer = player.getInventory().findItem(Tool.HAMMER);
-        if(hammer == null) {
+        if (!Tool.HAMMER.hasTool(player)) {
             player.dialogue(new MessageDialogue("You need a hammer to forge the platebody."));
             return;
         }

@@ -16,7 +16,7 @@ public class JewelledCrab extends NPCCombat {
         for (int id : Arrays.asList(7576, 7577, 7578, 7579))
         NPCAction.register(id, "smash", (player, npc) -> {
             boolean dragon = player.getInventory().hasId(13576) || player.getEquipment().hasId(13576);
-            if (!player.getInventory().hasId(Tool.HAMMER) && !dragon) {
+            if (!Tool.HAMMER.hasTool(player) && !dragon) {
                 player.sendMessage("You'll need a hammer to smash the crab.");
                 return;
             }

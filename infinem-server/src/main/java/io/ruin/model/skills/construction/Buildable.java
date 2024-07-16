@@ -13,6 +13,7 @@ import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.skills.Tool;
 import io.ruin.model.skills.construction.mahoganyhomes.MahoganyObject;
 import io.ruin.model.skills.construction.room.Room;
@@ -772,7 +773,7 @@ public enum Buildable {
         this.builtObjects = builtObjects;
         this.upgradeFrom = upgradeFrom;
         this.materials = Arrays.stream(materials).collect(Collectors.toList());
-        this.requireTools = animation != -1 && AnimationDefinition.get(animation).rightHandItem == (Tool.HAMMER + 512);
+        this.requireTools = animation != -1 && AnimationDefinition.get(animation).rightHandItem == (Items.HAMMER + 512);
         this.xp = xp;
         StringBuilder sb = new StringBuilder();
         sb.append(ItemDefinition.get(itemId).name);

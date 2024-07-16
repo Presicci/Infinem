@@ -234,7 +234,7 @@ public class RaidStorage extends ItemContainer {
             p.sendMessage("You will need 2 mallignum root planks to upgrade the storage unit.");
             return;
         }
-        if (!p.getInventory().contains(Tool.HAMMER, 1) && !p.getInventory().hasId(ItemID.DRAGON_WARHAMMER) && !p.getEquipment().hasId(Items.DRAGON_WARHAMMER)) {
+        if (!Tool.HAMMER.hasTool(p) && !p.getInventory().hasId(ItemID.DRAGON_WARHAMMER) && !p.getEquipment().hasId(Items.DRAGON_WARHAMMER)) {
             p.sendMessage("You'll need a hammer to upgrade the storage unit.");
             return;
         }
@@ -285,7 +285,7 @@ public class RaidStorage extends ItemContainer {
             p.sendMessage("You will need at least " + toBuild.getMaterials().get(0).getAmount() + " mallignum root planks to build that storage unit.");
             return;
         }
-        if (!p.getInventory().contains(Tool.HAMMER, 1) && !p.getInventory().contains(ItemID.DRAGON_WARHAMMER, 1) && !p.getInventory().contains(23620, 1)) {
+        if (!Tool.HAMMER.hasTool(p) && !p.getInventory().contains(ItemID.DRAGON_WARHAMMER, 1) && !p.getInventory().contains(23620, 1)) {
             p.sendMessage("You'll need a hammer to build a storage unit.");
             return;
         }

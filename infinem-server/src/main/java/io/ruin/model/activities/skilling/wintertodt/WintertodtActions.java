@@ -12,6 +12,7 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.actions.ItemNPCAction;
@@ -82,7 +83,7 @@ public class WintertodtActions {
         ObjectAction.register(29320, 2, (player, obj) -> potionCrate(player, 5));
         ObjectAction.register(29320, 3, (player, obj) -> potionCrate(player, 10));
 
-        ObjectAction.register(29316, 1, (player, obj) -> singleItemCrate(player, Tool.HAMMER, "a hammer"));
+        ObjectAction.register(29316, 1, (player, obj) -> singleItemCrate(player, Items.HAMMER, "a hammer"));
         ObjectAction.register(29317, 1, (player, obj) -> singleItemCrate(player, Tool.KNIFE, "a knife"));
         ObjectAction.register(29318, 1, (player, obj) -> singleItemCrate(player, 1351, "an axe"));
         ObjectAction.register(29319, 1, (player, obj) -> singleItemCrate(player, Tool.TINDER_BOX, "a tinderbox"));

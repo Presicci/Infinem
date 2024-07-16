@@ -121,12 +121,12 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
         ObjectAction.register(STRUT_1, 1, (p, obj) -> strutInteract(p, obj, WHEEL_1));
         ObjectAction.register(STRUT_2, 1, (p, obj) -> strutInteract(p, obj, WHEEL_2));
         ObjectAction.register(Tile.getObject(357, 3752, 5664, 0), 1, (player, obj) -> {
-            if (!player.getInventory().contains(HAMMER, 1)) {
-               if (player.getInventory().hasRoomFor(HAMMER)) {
-                   player.getInventory().add(HAMMER, 1);
-                   player.dialogue(new ItemDialogue().one(HAMMER, "You've found a hammer. How handy."));
+            if (!player.getInventory().contains(Items.HAMMER, 1)) {
+               if (player.getInventory().hasRoomFor(Items.HAMMER)) {
+                   player.getInventory().add(Items.HAMMER, 1);
+                   player.dialogue(new ItemDialogue().one(Items.HAMMER, "You've found a hammer. How handy."));
                } else {
-                   player.dialogue(new ItemDialogue().one(HAMMER, "You find a hammer in the crate, but you don't have enough inventory space to take it."));
+                   player.dialogue(new ItemDialogue().one(Items.HAMMER, "You find a hammer in the crate, but you don't have enough inventory space to take it."));
                }
             } else {
                 player.sendMessage("You search the crate but find nothing.");

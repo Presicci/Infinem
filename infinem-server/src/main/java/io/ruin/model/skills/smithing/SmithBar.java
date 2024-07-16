@@ -416,8 +416,7 @@ public enum SmithBar {
     }
 
     public static boolean hasHammer(Player player) {
-        return player.getInventory().hasId(Tool.HAMMER)
-                || player.getInventory().hasId(25644) || player.getEquipment().hasId(25644);    // Imcando hammers
+        return Tool.HAMMER.hasTool(player);
     }
 
     private static void open(Player player, SmithBar bar) {

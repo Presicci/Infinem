@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.loot.LootItem;
 import io.ruin.model.item.loot.LootTable;
@@ -31,7 +32,7 @@ public class InfernalEel {
     }
 
     static {
-        ItemItemAction.register(INFERNAL_EEL, Tool.HAMMER, (player, primary, secondary) -> open(player, primary));
+        ItemItemAction.register(INFERNAL_EEL, Items.HAMMER, (player, primary, secondary) -> open(player, primary));
         ItemItemAction.register(INFERNAL_EEL, 25644, (player, primary, secondary) -> open(player, primary));
     }
 }
