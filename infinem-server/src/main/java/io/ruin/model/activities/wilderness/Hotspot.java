@@ -56,7 +56,7 @@ public class Hotspot {
      * Event
      */
     static {
-        int swapTicks = 20 * 100; //20 minutes
+        /*int swapTicks = 20 * 100; //20 minutes
         World.startEvent(e -> {
             while (true) {
                 Hotspot next = Random.get(HOTSPOTS);
@@ -69,7 +69,7 @@ public class Hotspot {
                 Broadcast.WORLD.sendNews(Icon.SKULL, "[Hotspot]", eventMessage);
                 e.delay(swapTicks);
             }
-        });
+        });*/
     }
 
     /**
