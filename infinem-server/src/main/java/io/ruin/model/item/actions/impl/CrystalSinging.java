@@ -159,6 +159,8 @@ public enum CrystalSinging {
                 }
                 player.getStats().addXp(StatType.Crafting, sing.getExperience(), false);
                 player.getStats().addXp(StatType.Smithing, sing.getExperience(), false);
+                if (sing == ETERNAL_CRYSTAL)
+                    player.getTaskManager().doLookupByUUID(805);    // Craft an Eternal Teleport Crystal
                 event.delay(2);
             }
         });
