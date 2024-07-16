@@ -156,6 +156,7 @@ public class IKOD {
             item.incrementAmount(-1);
             if (item.getAmount() == 0) {
                 removeFromList.add(item);
+                if (!iter.hasNext()) break;
                 item = iter.next();
             }
         }
