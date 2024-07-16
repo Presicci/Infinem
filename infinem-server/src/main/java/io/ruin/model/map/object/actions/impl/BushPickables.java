@@ -43,6 +43,8 @@ public class BushPickables {
                 event.delay(1);
                 player.getInventory().add(itemId, 1);
                 player.sendMessage("You pick " + (this == PINEAPPLE || this == PINEAPPLE_APE ? "a" : "some") + " " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
+                if (this == PINEAPPLE)
+                    player.getTaskManager().doLookupByUUID(393);    // Pick a Pineapple on Karamja
                 changeObject(obj);
                 player.unlock();
             });
