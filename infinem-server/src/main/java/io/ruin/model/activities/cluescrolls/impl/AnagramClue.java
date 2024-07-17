@@ -90,7 +90,7 @@ public class AnagramClue extends Clue {
         PERCY("Prospector Percy", "Copper Ore Crypts", ClueType.HARD, "During a party, everyone shook hands with everyone else. There were 66 handshakes. How many people were at the party?", 12),
         //DAER_KRAND("Daer Krand", "Darn Drake", ClueType.HARD, true),
         DARK_MAGE("Dark mage", "Dekagram", ClueType.HARD, "How many rifts are found here in the abyss?", 13),
-        DOOMSAYER("Doomsayer", "Do Say More", ClueType.HARD, "What is 40 divided by 1/2 plus 15?", 95),
+        //DOOMSAYER("Doomsayer", "Do Say More", ClueType.HARD, "What is 40 divided by 1/2 plus 15?", 95),
         STRANGE_OLD_MAN("Strange Old Man", "Dragons Lament", ClueType.HARD, "One pipe fills a barrel in 1 hour while another pipe can fill the same barrel in 2 hours. How many minutes will it take to fill the take if both pipes are used?", 40),
         DRUNKEN_DWARF("Drunken Dwarf", "Dr Warden Funk", ClueType.HARD, true),
         OMAD("Brother Omad", "Motherboard", ClueType.HARD, "What is the next number? 12, 13, 15, 17, 111, 113, 117, 119, 123....?", 129),
