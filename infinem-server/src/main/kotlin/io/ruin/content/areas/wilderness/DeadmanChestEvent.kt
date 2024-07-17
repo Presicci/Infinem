@@ -46,14 +46,14 @@ object DeadmanChestEvent {
      * Submits a new global scope event for this [DeadmanChestEvent].
      */
     private fun process() = globalEvent {
-        currentEvent = this
+        /*currentEvent = this
         while(enabled) {
             pause(DELAY)
             execute()
         }
 
         currentEvent?.kill()
-        currentEvent = null
+        currentEvent = null*/
     }
 
     /**
