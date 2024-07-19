@@ -68,7 +68,8 @@ public class NPCContact extends Spell {
         player.getStats().addXp(StatType.Magic, 63, true);
         player.openInterface(InterfaceType.MAIN, Interface.NPC_CONTACT);
         player.animate(4413);
-        player.graphics(430);
+        player.graphics(728, 92, 0);
+        player.privateSound(3618);
         action.handle(player);
     }
 
