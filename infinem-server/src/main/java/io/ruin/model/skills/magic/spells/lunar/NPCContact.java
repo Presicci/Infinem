@@ -7,6 +7,7 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.item.Item;
+import io.ruin.model.skills.construction.mahoganyhomes.Amy;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.magic.rune.RuneRemoval;
@@ -79,21 +80,21 @@ public class NPCContact extends Spell {
             h.actions[12] = (SimpleAction) NPCContact::defaultDialogue; // Dark Mage
             h.actions[15] = (SimpleAction) NPCContact::defaultDialogue; // Lanthus
             h.actions[18] = (SimpleAction) NPCContact::defaultDialogue; // Spria
-            h.actions[19] = (SimpleAction) (player) -> startDialogue(player, DIALOGUES[0]); // Turael
-            h.actions[22] = (SimpleAction) (player) -> startDialogue(player, DIALOGUES[1]); // Mazchna
-            h.actions[25] = (SimpleAction) (player) -> startDialogue(player, DIALOGUES[2]); // Vannaka
-            h.actions[28] = (SimpleAction) (player) -> startDialogue(player, DIALOGUES[3]); // Chaeldar
-            h.actions[31] = (SimpleAction) (player) -> startDialogue(player, DIALOGUES[4]); // Nieve
-            h.actions[34] = (SimpleAction) (player) -> startDialogue(player, DIALOGUES[5]); // Duradel
-            h.actions[38] = (SimpleAction) (player) -> startDialogue(player, DIALOGUES[6]); // Krystilia
-            h.actions[37] = (SimpleAction) (player) -> startDialogue(player, DIALOGUES[7]); // Konar
+            h.actions[19] = (SimpleAction) player -> startDialogue(player, DIALOGUES[0]); // Turael
+            h.actions[22] = (SimpleAction) player -> startDialogue(player, DIALOGUES[1]); // Mazchna
+            h.actions[25] = (SimpleAction) player -> startDialogue(player, DIALOGUES[2]); // Vannaka
+            h.actions[28] = (SimpleAction) player -> startDialogue(player, DIALOGUES[3]); // Chaeldar
+            h.actions[31] = (SimpleAction) player -> startDialogue(player, DIALOGUES[4]); // Nieve
+            h.actions[34] = (SimpleAction) player -> startDialogue(player, DIALOGUES[5]); // Duradel
+            h.actions[38] = (SimpleAction) player -> startDialogue(player, DIALOGUES[6]); // Krystilia
+            h.actions[37] = (SimpleAction) player -> startDialogue(player, DIALOGUES[7]); // Konar
             h.actions[41] = (SimpleAction) NPCContact::defaultDialogue; // Murphy
             h.actions[44] = (SimpleAction) NPCContact::defaultDialogue; // Cyrisus
             h.actions[47] = (SimpleAction) NPCContact::defaultDialogue; // Smoggy
             h.actions[50] = (SimpleAction) NPCContact::defaultDialogue; // Ginea
             h.actions[53] = (SimpleAction) NPCContact::defaultDialogue; // Watson
             h.actions[56] = (SimpleAction) NPCContact::defaultDialogue; // Barbarian Guard
-            h.actions[62] = (SimpleAction) NPCContact::defaultDialogue; // Amy
+            h.actions[62] = (SimpleAction) player -> startDialogue(player, Amy::npcContactDialogue);
             h.actions[59] = (SimpleAction) NPCContact::randomDialogue;
         });
     }

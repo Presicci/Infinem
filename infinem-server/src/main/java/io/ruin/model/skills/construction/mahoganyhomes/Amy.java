@@ -6,10 +6,7 @@ import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.InterfaceType;
-import io.ruin.model.inter.dialogue.ActionDialogue;
-import io.ruin.model.inter.dialogue.NPCDialogue;
-import io.ruin.model.inter.dialogue.OptionsDialogue;
-import io.ruin.model.inter.dialogue.PlayerDialogue;
+import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Items;
@@ -131,6 +128,18 @@ public class Amy {
             );
         } else {
             firstTimeDialogue(player, npc);
+        }
+    }
+
+    public static void npcContactDialogue(Player player) {
+        if (TALKED_TO.get(player) == 1) {
+            if (MahoganyHomes.hasContract(player)) {
+                checkContract(player, new NPC(7417));
+            } else {
+                contractDialogue(player, new NPC(7417));
+            }
+        } else {
+            player.dialogue(new MessageDialogue("You should talk to Amy in Falador before magically contacting her. It's polite."));
         }
     }
 
