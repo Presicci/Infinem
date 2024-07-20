@@ -44,7 +44,6 @@ public class StarterGuide {
 	static {
 		NPCDefinition.get(307).ignoreOccupiedTiles = true;
         NPCAction.register(306, "talk-to", StarterGuide::optionsDialogue);
-		NPCAction.register(306, "view help", (player, npc) -> Help.open(player));
 
 
 		LoginListener.register(player -> {
@@ -104,7 +103,6 @@ public class StarterGuide {
     private static void optionsDialogue(Player player, NPC npc) {
         player.dialogue(new NPCDialogue(npc, "Hello " + player.getName() + ", is there something I could assist you with?"),
                 new OptionsDialogue(
-                        new Option("View help pages", () -> Help.open(player)),
                         new Option("Replay tutorial", () -> introCutscene(npc, player)),
                         new Option("Change respawn point",
                                 new NPCDialogue(npc, "I can move your respawn location if you would like. Some have a fee associated with them."),
