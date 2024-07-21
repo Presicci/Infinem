@@ -44,6 +44,7 @@ public class RangingGuild {
                     e.delay(1);
                     player.stepAbs(2659, 3437, StepType.FORCE_WALK);
                     e.delay(1);
+                    player.getTaskManager().doLookupByUUID(581);    // Enter the Ranging Guild
                     changeDoorState(object);
                 } else {    // Exiting
                     Position doorPos = new Position(object.x, object.y, object.z);
