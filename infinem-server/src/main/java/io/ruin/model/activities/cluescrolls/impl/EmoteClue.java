@@ -533,7 +533,7 @@ public class EmoteClue extends Clue {
                 Arrays.asList(Items.MYSTIC_ROBE_BOTTOM, Items.RUNE_KITESHIELD, Items.BOBS_RED_SHIRT), ClueType.ELITE, Config.STASH_UNITS[84], 29036),
         WEST_ARDY_CHURCH("Spin in West Ardougne Church. Equip a dragon spear and red dragonhide chaps.",
                 Collections.singletonList(TabEmote.SPIN), new Bounds(2527, 3285, 2532, 3295, 0),
-                Arrays.asList(Items.DRAGON_SPEAR, Items.RED_DHIDE_VAMB), ClueType.ELITE, Config.STASH_UNITS[85], 29024),
+                Arrays.asList(Items.DRAGON_SPEAR, Items.RED_DHIDE_CHAPS), ClueType.ELITE, Config.STASH_UNITS[85], 29024),
         TROLLHEIM("Yawn at the top of Trollheim. Equip a lava battlestaff, black dragonhide vambraces and a mind shield.",
                 Collections.singletonList(TabEmote.YAWN), new Bounds(2886, 3673, 2895, 3681, 0),
                 Arrays.asList(Items.LAVA_BATTLESTAFF, Items.BLACK_DHIDE_VAMB, Items.MIND_SHIELD), ClueType.ELITE, Config.STASH_UNITS[86], 29032),
