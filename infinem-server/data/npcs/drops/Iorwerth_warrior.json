@@ -66,7 +66,8 @@
         "weight": 17,
         "items": [
           { "id": 13481, "min": 1, "max": 1, "weight": 2500 },   //Ensouled elf head
-          { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
+          { "id": 2722, "min": 1, "max": 1, "weight": 781 },   //Clue scroll (hard)
+          { "id": 4207, "min": 1, "max": 1, "weight": 20 }   // Crystal weapon seed
         ]
       }
     ]
