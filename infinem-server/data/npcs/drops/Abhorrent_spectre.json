@@ -4,42 +4,42 @@
     "tables": [
       {
         "name": "Weapons and armour",
-        "weight": 635,
+        "weight": 756909,
         "items": [
-          { "id": 1353, "min": 1, "max": 1, "weight": 32340 },   //Steel axe
-          { "id": 1197, "min": 1, "max": 1, "weight": 30780 },   //Mithril kiteshield
-          { "id": 3053, "min": 1, "max": 1, "weight": 30780 },   //Lava battlestaff
-          { "id": 1073, "min": 1, "max": 1, "weight": 30780 },   //Adamant platelegs
-          { "id": 1163, "min": 1, "max": 1, "weight": 30780 },   //Rune full helm
-          { "id": 4103, "min": 1, "max": 1, "weight": 30195 }   //Mystic robe bottom (dark)
+          { "id": 1353, "min": 1, "max": 1, "weight": 23399 },   //Steel axe
+          { "id": 1197, "min": 1, "max": 1, "weight": 7810 },   //Mithril kiteshield
+          { "id": 3053, "min": 1, "max": 1, "weight": 7810 },   //Lava battlestaff
+          { "id": 1073, "min": 1, "max": 1, "weight": 7810 },   //Adamant platelegs
+          { "id": 1163, "min": 1, "max": 1, "weight": 7810 },   //Rune full helm
+          { "id": 4103, "min": 1, "max": 1, "weight": 1950 }   //Mystic robe bottom (dark)
         ]
       },
       {
         "name": "herb drop",
-        "weight": 208,
+        "weight": 9347084,
         "items": [
           { "id": 0, "min": 1, "max": 1, "weight": 5 }
         ]
       },
       {
         "name": "rare seed",
-        "weight": 50,
+        "weight": 2058860,
         "items": [
           { "id": 0, "min": 3, "max": 3, "weight": 5 }
         ]
       },
       {
         "name": "Coins",
-        "weight": 105,
+        "weight": 1057144,
         "items": [
-          { "id": 995, "min": 460, "max": 460, "weight": 30780 }   //Coins
+          { "id": 995, "min": 460, "max": 460, "weight": 7810 }   //Coins
         ]
       },
       {
         "name": "Tertiary",
-        "weight": 2,
+        "weight": 5571447,
         "items": [
-          { "id": 2722, "min": 1, "max": 1, "weight": 781 }   //Clue scroll (hard)
+          { "id": 2722, "min": 1, "max": 1, "weight": 78100 }   //Clue scroll (hard)
         ]
       }
     ]
