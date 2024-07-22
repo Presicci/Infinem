@@ -131,6 +131,7 @@ public class EmoteClue extends Clue {
             .put(Items.DRAGON_SQ_SHIELD, Arrays.asList(Items.DRAGON_SQ_SHIELD, Items.DRAGON_SQ_SHIELD_G))
             .put(Items.RED_BOATER, Arrays.asList(Items.RED_BOATER, Items.ORANGE_BOATER, Items.GREEN_BOATER, Items.BLUE_BOATER, Items.BLACK_BOATER, Items.PINK_BOATER, Items.PURPLE_BOATER, Items.WHITE_BOATER))
             .put(Items.PHARAOHS_SCEPTRE, Arrays.asList(Items.PHARAOHS_SCEPTRE, Items.PHARAOHS_SCEPTRE_1, Items.PHARAOHS_SCEPTRE_2, Items.PHARAOHS_SCEPTRE_3, Items.PHARAOHS_SCEPTRE_4, Items.PHARAOHS_SCEPTRE_5, Items.PHARAOHS_SCEPTRE_6, Items.PHARAOHS_SCEPTRE_7, Items.PHARAOHS_SCEPTRE_8))
+            .put(Items.DRAGON_SPEAR, Arrays.asList(Items.DRAGON_SPEAR, Items.DRAGON_SPEAR_P, Items.DRAGON_SPEAR_P_2, Items.DRAGON_SPEAR_P_3, Items.DRAGON_SPEAR_KP))
             .build();
 
     public static Item getAlternative(Player player, int itemId, boolean ignoreIventory) {
