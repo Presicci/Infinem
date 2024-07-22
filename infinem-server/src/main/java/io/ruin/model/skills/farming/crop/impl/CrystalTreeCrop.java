@@ -13,7 +13,7 @@ import lombok.AllArgsConstructor;
  */
 @AllArgsConstructor
 public enum CrystalTreeCrop implements TreeCrop {
-    CRYSTAL(23661, 23659, 23655, 23657, Tree.CRYSTAL, 74, 126, 13240, 6, TimeUtils.getMinutesToMillis(80), null, 8, 9000, PlayerCounter.GROWN_CRYSTAL_TREE);
+    CRYSTAL(23661, 23659, 23655, 23657, Tree.CRYSTAL, 74, 126, 13240, 6, TimeUtils.getMinutesToMillis(80), null, 8, 9000, PlayerCounter.GROWN_CRYSTAL_TREE, 18);
 
     private final int seedId, sapling, seedling, wateredSeedling;
     private final Tree treeType;
@@ -25,6 +25,7 @@ public enum CrystalTreeCrop implements TreeCrop {
     private final int containerIndex;
     private final int petOdds;
     private final PlayerCounter counter;
+    private final int hesporiSeedChance;
 
     @Override
     public int getPetOdds() {
@@ -83,6 +84,11 @@ public enum CrystalTreeCrop implements TreeCrop {
     @Override
     public PlayerCounter getCounter() {
         return counter;
+    }
+
+    @Override
+    public int getHesporiSeedChance() {
+        return hesporiSeedChance;
     }
 
     @Override

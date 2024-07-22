@@ -89,6 +89,11 @@ public class CelastrusCrop implements TreeCrop {
     }
 
     @Override
+    public int getHesporiSeedChance() {
+        return 18;
+    }
+
+    @Override
     public int getSapling() {
         return 22856;
     }

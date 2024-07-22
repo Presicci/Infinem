@@ -85,6 +85,11 @@ public class CalquatCrop implements TreeCrop {
         return PlayerCounter.GROWN_CALQUAT;
     }
 
+    @Override
+    public int getHesporiSeedChance() {
+        return 12;
+    }
+
     private static final Item PAYMENT = new Item(Items.POISON_IVY_BERRIES, 8);
 
     @Override

@@ -69,4 +69,9 @@ public class VineCrop implements Crop {
     public PlayerCounter getCounter() {
         return PlayerCounter.GROWN_GRAPE_VINES;
     }
+
+    @Override
+    public int getHesporiSeedChance() {
+        return 770;
+    }
 }

@@ -97,6 +97,11 @@ public enum HardWoodTreeCrop implements TreeCrop {
     }
 
     @Override
+    public int getHesporiSeedChance() {
+        return 10;
+    }
+
+    @Override
     public Item getPayment() {
         return payment;
     }

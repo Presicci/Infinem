@@ -50,7 +50,7 @@ public class MushroomPatch extends Patch {
                 getPlantedCrop().getCounter().increment(player, 1);
                 removeProduce();
                 if (getProduceCount() == 0) {
-                    rollPet();
+                    rollPetAndHesporiSeed();
                     MushroomPatch.this.reset(false);
                     player.sendMessage("You've picked all the mushrooms from this patch.");
                     return;

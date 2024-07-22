@@ -126,6 +126,11 @@ public enum FruitTreeCrop implements TreeCrop {
 	}
 
 	@Override
+	public int getHesporiSeedChance() {
+		return 18;
+	}
+
+	@Override
 	public Item getPayment() {
 		return payment;
 	}

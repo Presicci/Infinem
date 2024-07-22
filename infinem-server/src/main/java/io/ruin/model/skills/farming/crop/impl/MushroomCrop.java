@@ -6,9 +6,9 @@ import io.ruin.model.skills.farming.crop.Crop;
 
 
 public enum MushroomCrop implements Crop {
-    BITTERCAP(5282, 6004, 53, 61.5, 57.7, 4, PlayerCounter.HARVESTED_BITTERCAP);
+    BITTERCAP(5282, 6004, 53, 61.5, 57.7, 4, PlayerCounter.HARVESTED_BITTERCAP, 15);
 
-    MushroomCrop(int seed, int herbId, int levelReq, double plantXP, double pickXP, int containerIndex, PlayerCounter counter) {
+    MushroomCrop(int seed, int herbId, int levelReq, double plantXP, double pickXP, int containerIndex, PlayerCounter counter, int hesporiSeedChance) {
         this.seed = seed;
         this.levelReq = levelReq;
         this.containerIndex = containerIndex;
@@ -16,11 +16,13 @@ public enum MushroomCrop implements Crop {
         this.plantXP = plantXP;
         this.pickXP = pickXP;
         this.counter = counter;
+        this.hesporiSeedChance = hesporiSeedChance;
     }
 
     int seed, levelReq, containerIndex, herbId;
     double plantXP, pickXP;
 	PlayerCounter counter;
+    private final int hesporiSeedChance;
 
     @Override
     public int getPetOdds() {
@@ -30,6 +32,11 @@ public enum MushroomCrop implements Crop {
     @Override
     public PlayerCounter getCounter() {
         return counter;
+    }
+
+    @Override
+    public int getHesporiSeedChance() {
+        return hesporiSeedChance;
     }
 
     @Override

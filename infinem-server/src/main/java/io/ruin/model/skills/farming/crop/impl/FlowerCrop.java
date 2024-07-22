@@ -5,15 +5,15 @@ import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.skills.farming.crop.Crop;
 
 public enum FlowerCrop implements Crop {
-    MARIGOLDS(5096, 6010, 2, 8.5, 47.0, TimeUtils.getMinutesToMillis(5), 8, 281040, PlayerCounter.HARVESTED_MARIGOLDS),
-    ROSEMARY(5097, 6014, 11, 12, 66.5, TimeUtils.getMinutesToMillis(5), 13, 281040, PlayerCounter.HARVESTED_ROSEMARY),
-    NASTURTIUM(5098, 6012, 24, 19.5, 111, TimeUtils.getMinutesToMillis(5), 18, 281040, PlayerCounter.HARVESTED_NASTURTIUM),
-    WOAD(5099, 1793, 25, 20.5, 115.5, TimeUtils.getMinutesToMillis(5), 23, 281040, PlayerCounter.HARVESTED_WOAD),
-    LIMPWURT(5100, 225, 26, 21.5, 120.0, TimeUtils.getMinutesToMillis(5), 28, 224832, PlayerCounter.HARVESTED_LIMPWURT),
-    WHITE_LILY(22887, 22932, 58, 42, 250, TimeUtils.getMinutesToMillis(5), 37, 281040, PlayerCounter.HARVESTED_WHITE_LILY);
+    MARIGOLDS(5096, 6010, 2, 8.5, 47.0, TimeUtils.getMinutesToMillis(5), 8, 281040, PlayerCounter.HARVESTED_MARIGOLDS, 562),
+    ROSEMARY(5097, 6014, 11, 12, 66.5, TimeUtils.getMinutesToMillis(5), 13, 281040, PlayerCounter.HARVESTED_ROSEMARY, 562),
+    NASTURTIUM(5098, 6012, 24, 19.5, 111, TimeUtils.getMinutesToMillis(5), 18, 281040, PlayerCounter.HARVESTED_NASTURTIUM, 562),
+    WOAD(5099, 1793, 25, 20.5, 115.5, TimeUtils.getMinutesToMillis(5), 23, 281040, PlayerCounter.HARVESTED_WOAD, 562),
+    LIMPWURT(5100, 225, 26, 21.5, 120.0, TimeUtils.getMinutesToMillis(5), 28, 224832, PlayerCounter.HARVESTED_LIMPWURT, 449),
+    WHITE_LILY(22887, 22932, 58, 42, 250, TimeUtils.getMinutesToMillis(5), 37, 281040, PlayerCounter.HARVESTED_WHITE_LILY, 562);
 
     FlowerCrop(int seedId, int produceId, int levelReq, double plantXP, double harvestXP, long stageTime,
-               int containerIndex, int petOdds, PlayerCounter counter) {
+               int containerIndex, int petOdds, PlayerCounter counter, int hesporiSeedChance) {
         this.plantXP = plantXP;
         this.harvestXP = harvestXP;
         this.seedId = seedId;
@@ -23,12 +23,14 @@ public enum FlowerCrop implements Crop {
         this.stageTime = stageTime;
         this.petOdds = petOdds;
         this.counter = counter;
+        this.hesporiSeedChance = hesporiSeedChance;
     }
 
     private final double plantXP, harvestXP;
     private final int seedId, produceId, levelReq, containerIndex, petOdds;
     private final long stageTime;
     private final PlayerCounter counter;
+    private final int hesporiSeedChance;
 
     @Override
     public int getPetOdds() {
@@ -93,5 +95,10 @@ public enum FlowerCrop implements Crop {
     @Override
     public PlayerCounter getCounter() {
         return counter;
+    }
+
+    @Override
+    public int getHesporiSeedChance() {
+        return hesporiSeedChance;
     }
 }

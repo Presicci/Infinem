@@ -131,7 +131,7 @@ public class VinePatch extends Patch {
     }
 
     private void checkHealth() {
-        rollPet();
+        rollPetAndHesporiSeed();
         player.sendMessage("You examine the vines and find that they are in perfect health.");
         getPlantedCrop().getCounter().increment(player, 1);
         player.getStats().addXp(StatType.Farming, ((VineCrop) getPlantedCrop()).getCheckHealthXP(), true);

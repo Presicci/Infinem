@@ -53,7 +53,7 @@ public class SeaweedPatch extends Patch {
                 removeProduce();
                 update();
                 if (getProduceCount() == 0) {
-                    rollPet();
+                    rollPetAndHesporiSeed();
                     player.sendMessage("You've harvested the patch completely.");
                     SeaweedPatch.this.reset(false);
                     return;

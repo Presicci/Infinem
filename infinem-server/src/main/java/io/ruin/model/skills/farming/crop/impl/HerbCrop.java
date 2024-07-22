@@ -46,6 +46,11 @@ public enum HerbCrop implements Crop {
     }
 
     @Override
+    public int getHesporiSeedChance() {
+        return 196;
+    }
+
+    @Override
     public int getSeed() {
         return seed;
     }

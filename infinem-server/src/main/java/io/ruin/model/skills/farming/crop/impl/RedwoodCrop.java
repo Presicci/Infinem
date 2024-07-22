@@ -87,6 +87,11 @@ public class RedwoodCrop implements TreeCrop {
     }
 
     @Override
+    public int getHesporiSeedChance() {
+        return 10;
+    }
+
+    @Override
     public int getSapling() {
         return 22859;
     }

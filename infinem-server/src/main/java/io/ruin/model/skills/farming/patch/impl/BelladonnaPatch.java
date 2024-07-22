@@ -54,7 +54,7 @@ public class BelladonnaPatch extends Patch {
                     getPlantedCrop().getCounter().increment(player, 1);
                     removeProduce();
                     if (getProduceCount() == 0) {
-                        rollPet();
+                        rollPetAndHesporiSeed();
                         player.sendMessage("You've harvested the patch completely.");
                         this.reset(false);
                         return;

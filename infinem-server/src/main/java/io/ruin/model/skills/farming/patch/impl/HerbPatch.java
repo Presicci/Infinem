@@ -44,7 +44,7 @@ public class HerbPatch extends Patch {
                     return;
                 }
                 if (getProduceCount() == 0) {
-                    rollPet();
+                    rollPetAndHesporiSeed();
                     player.sendMessage("You've picked all the herbs from this patch.");
                     FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
                     reset(false);

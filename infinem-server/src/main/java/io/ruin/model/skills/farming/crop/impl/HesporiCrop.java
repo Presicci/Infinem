@@ -69,6 +69,11 @@ public class HesporiCrop implements Crop {
     }
 
     @Override
+    public int getHesporiSeedChance() {
+        return 0;
+    }
+
+    @Override
     public Item getPayment() {
         return null;
     }

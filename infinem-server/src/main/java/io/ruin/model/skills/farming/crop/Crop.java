@@ -27,6 +27,8 @@ public interface Crop {
 
 	PlayerCounter getCounter();
 
+	int getHesporiSeedChance();
+
 	default Item getPayment() {
 		return null;
 	}

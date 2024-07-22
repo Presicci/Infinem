@@ -78,6 +78,11 @@ public class SeaweedCrop implements Crop {
     }
 
     @Override
+    public int getHesporiSeedChance() {
+        return 15;
+    }
+
+    @Override
     public Item getPayment() {
         return new Item(21555, 200);
     }

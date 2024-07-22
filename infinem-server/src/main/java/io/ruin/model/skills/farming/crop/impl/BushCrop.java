@@ -9,19 +9,20 @@ import io.ruin.model.skills.farming.crop.Crop;
 import static io.ruin.cache.ItemID.COINS_995;
 
 public enum BushCrop implements Crop {
-    REDBERRY(5101, 1951, 10, 5, 11.5, 64, 4.5, 5, new Item(Items.CABBAGES_10, 4), 44966, PlayerCounter.GROWN_REDBERRY),
-    CADAVABERRY(5102, 753, 22, 6, 18, 102.5, 7, 15, new Item(Items.TOMATOES_5, 3), 37472, PlayerCounter.GROWN_CADAVABERRY),
-    DWELLBERRY(5103, 2126, 36, 7, 31.5, 177.5, 12, 26, new Item(Items.STRAWBERRIES_5, 3), 32119, PlayerCounter.GROWN_DWELLBERRY),
-    JANGERBERRY(5104, 247, 48, 8, 50.5, 284.5, 19, 38, new Item(Items.WATERMELON, 6), 28104, PlayerCounter.GROWN_JANGERBERRY),
-    WHITEBERRY(5105, 239, 59, 8, 78, 437.5, 4.5, 51, new Item(Items.MUSHROOM, 8), 28104, PlayerCounter.GROWN_WHITEBERRY),
-    POISON_IVY(5106, 6018, 70, 8, 120, 675, 4.5, 197, null, 28104, PlayerCounter.GROWN_POISON_IVY);
+    REDBERRY(5101, 1951, 10, 5, 11.5, 64, 4.5, 5, new Item(Items.CABBAGES_10, 4), 44966, PlayerCounter.GROWN_REDBERRY, 89),
+    CADAVABERRY(5102, 753, 22, 6, 18, 102.5, 7, 15, new Item(Items.TOMATOES_5, 3), 37472, PlayerCounter.GROWN_CADAVABERRY, 74),
+    DWELLBERRY(5103, 2126, 36, 7, 31.5, 177.5, 12, 26, new Item(Items.STRAWBERRIES_5, 3), 32119, PlayerCounter.GROWN_DWELLBERRY, 64),
+    JANGERBERRY(5104, 247, 48, 8, 50.5, 284.5, 19, 38, new Item(Items.WATERMELON, 6), 28104, PlayerCounter.GROWN_JANGERBERRY, 56),
+    WHITEBERRY(5105, 239, 59, 8, 78, 437.5, 4.5, 51, new Item(Items.MUSHROOM, 8), 28104, PlayerCounter.GROWN_WHITEBERRY, 56),
+    POISON_IVY(5106, 6018, 70, 8, 120, 675, 4.5, 197, null, 28104, PlayerCounter.GROWN_POISON_IVY, 56);
 
     private final int seed, levelReq, totalStages, containerIndex, produceId, petOdds;
     private final double plantXP, harvestXP, checkHealthXP;
     private final PlayerCounter counter;
     private final Item payment;
+    private final int hesporiSeedChance;
 
-    BushCrop(int seed, int produceId, int levelReq, int totalStages, double plantXP, double checkHealthXP, double harvestXP, int containerIndex, Item payment, int petOdds, PlayerCounter counter) {
+    BushCrop(int seed, int produceId, int levelReq, int totalStages, double plantXP, double checkHealthXP, double harvestXP, int containerIndex, Item payment, int petOdds, PlayerCounter counter, int hesporiSeedChance) {
         this.seed = seed;
         this.levelReq = levelReq;
         this.totalStages = totalStages;
@@ -33,6 +34,7 @@ public enum BushCrop implements Crop {
         this.counter = counter;
         this.payment = payment;
         this.petOdds = petOdds;
+        this.hesporiSeedChance = hesporiSeedChance;
     }
 
     @Override
@@ -87,6 +89,11 @@ public enum BushCrop implements Crop {
     @Override
     public PlayerCounter getCounter() {
         return counter;
+    }
+
+    @Override
+    public int getHesporiSeedChance() {
+        return hesporiSeedChance;
     }
 
     @Override

@@ -569,13 +569,19 @@ public abstract class Patch {
         getStatus().farmerProtected = farmerProtected;
     }
 
-    public void rollPet() {
+    public void rollPetAndHesporiSeed() {
+        // Roll pet
         int petOdds = plantedCrop.getPetOdds();
-        if (petOdds <= 0) {
-            return;
-        }
+        if (petOdds <= 0) return;
         if (Random.rollDie(petOdds - (player.getStats().get(StatType.Farming).currentLevel * 25)))
             Pet.TANGLEROOT.unlock(player);
+        // Roll hespori seed
+        int seedOdds = plantedCrop.getHesporiSeedChance();
+        if (seedOdds <= 0) return;
+        if (Random.rollDie(seedOdds)) {
+            player.getInventory().addOrDrop(22875, 1);
+            player.getCollectionLog().collect(22875, 1);
+        }
     }
 
     public boolean isFlowerProtected() {

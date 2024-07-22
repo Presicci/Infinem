@@ -33,7 +33,7 @@ public class FruitTreePatch extends RegrowPatch {
     }
 
     private void checkHealth() {
-        rollPet();
+        rollPetAndHesporiSeed();
         player.sendMessage("You examine the tree and find that it is in perfect health.");
         FarmingContracts.completeFarmingContract(player, getPlantedCrop(), data);
         getPlantedCrop().getCounter().increment(player, 1);
