@@ -133,6 +133,7 @@ public class EmoteClue extends Clue {
             .put(Items.PHARAOHS_SCEPTRE, Arrays.asList(Items.PHARAOHS_SCEPTRE, Items.PHARAOHS_SCEPTRE_1, Items.PHARAOHS_SCEPTRE_2, Items.PHARAOHS_SCEPTRE_3, Items.PHARAOHS_SCEPTRE_4, Items.PHARAOHS_SCEPTRE_5, Items.PHARAOHS_SCEPTRE_6, Items.PHARAOHS_SCEPTRE_7, Items.PHARAOHS_SCEPTRE_8))
             .put(Items.DRAGON_SPEAR, Arrays.asList(Items.DRAGON_SPEAR, Items.DRAGON_SPEAR_P, Items.DRAGON_SPEAR_P_2, Items.DRAGON_SPEAR_P_3, Items.DRAGON_SPEAR_KP))
             .put(Items.RED_DHIDE_CHAPS, Arrays.asList(Items.RED_DHIDE_CHAPS, Items.RED_DHIDE_CHAPS_T, Items.RED_DHIDE_CHAPS_G))
+            .put(Items.CLIMBING_BOOTS, Arrays.asList(Items.CLIMBING_BOOTS, 23413))
             .build();
 
     public static Item getAlternative(Player player, int itemId, boolean ignoreIventory) {
