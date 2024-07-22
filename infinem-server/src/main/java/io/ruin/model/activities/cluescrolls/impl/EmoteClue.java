@@ -115,7 +115,7 @@ public class EmoteClue extends Clue {
                     25898, 25900, // Tztok
                     25904, 25906, // Vampyric
                     25910, 25912)) // Tzkal
-            .put(23983, Arrays.asList(23983, 23985, // Crystal bows
+            .put(23983, Arrays.asList(23983, // Crystal bows
                     25862, 25865, 25867, 25869, 25884, 25886, 25888, 25890, 25892, 25894, 25896))   // Bow of Faerdhinen
             .put(Items.IBANS_STAFF, Arrays.asList(Items.IBANS_STAFF, Items.IBANS_STAFF_U))
             .put(Items.RING_OF_WEALTH, Arrays.asList(Items.RING_OF_WEALTH, Items.RING_OF_WEALTH_1, Items.RING_OF_WEALTH_2, Items.RING_OF_WEALTH_3, Items.RING_OF_WEALTH_4, Items.RING_OF_WEALTH_5,
@@ -564,9 +564,9 @@ public class EmoteClue extends Clue {
         TZHAAR_GEM_STORE("Cry in the TzHaar gem store. Beware of double agents! Equip a fire cape and TokTz-Xil-Ul.",
                 Collections.singletonList(TabEmote.CRY), new Bounds(2463, 5147, 2465, 5150, 0),
                 Arrays.asList(Items.FIRE_CAPE, Items.TOKTZ_XIL_UL), ClueType.MASTER, Config.STASH_UNITS[93], 29049),
-        IBANS_TEMPLE("Dance in Iban's temple. Beware of double agents! Equip Iban's staff, a black mystic top and a black mystic bottom.",
+        /*IBANS_TEMPLE("Dance in Iban's temple. Beware of double agents! Equip Iban's staff, a black mystic top and a black mystic bottom.",
                 Collections.singletonList(TabEmote.DANCE), new Bounds(2003, 4705, 2015, 4718, 1),
-                Arrays.asList(Items.IBANS_STAFF, Items.MYSTIC_ROBE_TOP_DARK, Items.MYSTIC_ROBE_BOTTOM_DARK), ClueType.MASTER, Config.STASH_UNITS[94], 29043),
+                Arrays.asList(Items.IBANS_STAFF, Items.MYSTIC_ROBE_TOP_DARK, Items.MYSTIC_ROBE_BOTTOM_DARK), ClueType.MASTER, Config.STASH_UNITS[94], 29043),*/
         KING_BLACK_DRAGON_LAIR("Dance in the King Black Dragon's lair. Beware of double agents! Equip a black dragonhide body, black dragonhide vambraces and a black dragon mask.",
                 Collections.singletonList(TabEmote.DANCE), new Bounds(2252, 4678, 2290, 4713, 0),
                 Arrays.asList(Items.BLACK_DHIDE_BODY, Items.BLACK_DHIDE_VAMB, Items.BLACK_DRAGON_MASK), ClueType.MASTER, Config.STASH_UNITS[95], 29053),
@@ -599,9 +599,9 @@ public class EmoteClue extends Clue {
         ELLAMARIAS_GARDEN("Show your anger towards the Statue of Saradomin in Ellamaria's garden. Beware of double agents! Equip a zamorak godsword.",
                 Collections.singletonList(TabEmote.ANGRY), new Bounds(3228, 3476, 3233, 3481, 0),
                 Collections.singletonList(Items.ZAMORAK_GODSWORD), ClueType.MASTER, Config.STASH_UNITS[102], 29055),
-        KOUREND_CATACOMBS("Slap your head in the centre of the Kourend catacombs. Beware of double agents! Equip the arclight and the amulet of the damned.",
+        /*KOUREND_CATACOMBS("Slap your head in the centre of the Kourend catacombs. Beware of double agents! Equip the arclight and the amulet of the damned.",
                 Collections.singletonList(TabEmote.SLAP_HEAD), new Bounds(1660, 10044, 1667, 10051, 0),
-                Arrays.asList(Items.ARCLIGHT, Items.AMULET_OF_THE_DAMNED), ClueType.MASTER, Config.STASH_UNITS[103], 29052),
+                Arrays.asList(Items.ARCLIGHT, Items.AMULET_OF_THE_DAMNED), ClueType.MASTER, Config.STASH_UNITS[103], 29052),*/
         SOUL_ALTAR("Spin in front of the Soul Altar. Beware of double agents! Equip a dragon pickaxe, helm of neitiznot and a pair of rune boots.",
                 Collections.singletonList(TabEmote.SPIN), new Bounds(1810, 3850, 1819, 3859, 0),
                 Arrays.asList(Items.DRAGON_PICKAXE, Items.HELM_OF_NEITIZNOT, Items.RUNE_BOOTS), ClueType.MASTER, Config.STASH_UNITS[104], 29046),
@@ -614,10 +614,11 @@ public class EmoteClue extends Clue {
         CASTLE_DRAKAN("Wave on the northern wall of Castle Drakan. Beware of double agents! Wear a dragon sq shield, splitbark body and any boater.",
                 Collections.singletonList(TabEmote.WAVE), new Bounds(3558, 3379, 3572, 3385, 0),
                 Arrays.asList(Items.DRAGON_SQ_SHIELD, Items.SPLITBARK_BODY, Items.RED_BOATER), ClueType.MASTER, Config.STASH_UNITS[107], 29044),
-        PYRAMID_PLUNDER("Yawn in the 7th room of Pyramid Plunder. Beware of double agents! Equip a pharaoh sceptre and a full set of menaphite robes.",
+        /*PYRAMID_PLUNDER("Yawn in the 7th room of Pyramid Plunder. Beware of double agents! Equip a pharaoh sceptre and a full set of menaphite robes.",
                 Collections.singletonList(TabEmote.YAWN), new Bounds(1941, 4421, 1954, 4431, 0),
                 Arrays.asList(Items.PHARAOHS_SCEPTRE, Items.MENAPHITE_PURPLE_HAT, Items.MENAPHITE_PURPLE_TOP, Items.MENAPHITE_PURPLE_ROBE, Items.PHARAOHS_SCEPTRE, Items.MENAPHITE_RED_HAT, Items.MENAPHITE_RED_TOP, Items.MENAPHITE_RED_ROBE),
-                ClueType.MASTER, Config.STASH_UNITS[108], 29045, 4);
+                ClueType.MASTER, Config.STASH_UNITS[108], 29045, 4)*/
+        ;
 
         public final String clueText;
         public final List<TabEmote> emotes;
