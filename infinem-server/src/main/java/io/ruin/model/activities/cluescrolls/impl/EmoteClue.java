@@ -137,6 +137,7 @@ public class EmoteClue extends Clue {
             .put(Items.DRAGON_MED_HELM, Arrays.asList(Items.DRAGON_MED_HELM, 28057))
             .put(Items.RUNE_PLATEBODY, Arrays.asList(Items.RUNE_PLATEBODY, Items.RUNE_PLATEBODY_T, Items.RUNE_PLATEBODY_G, 23209, 23212, 23215, 23218, 23221))
             .put(Items.OBSIDIAN_CAPE, Arrays.asList(Items.OBSIDIAN_CAPE, Items.OBSIDIAN_CAPE_R))
+            .put(Items.DRAGON_2H_SWORD, Arrays.asList(Items.DRAGON_2H_SWORD, 28051))
             .build();
 
     public static Item getAlternative(Player player, int itemId, boolean ignoreIventory) {
