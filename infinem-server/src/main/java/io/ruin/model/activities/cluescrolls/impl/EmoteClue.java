@@ -107,14 +107,19 @@ public class EmoteClue extends Clue {
             .put(Items.LAVA_BATTLESTAFF, Arrays.asList(Items.LAVA_BATTLESTAFF, 21198))
             .put(22370, Arrays.asList(22370, 22368))
             .put(Items.DRAGON_DEFENDER, Arrays.asList(Items.DRAGON_DEFENDER, 22322, Items.DRAGON_DEFENDER_T))
-            .put(Items.SLAYER_HELMET, Arrays.asList(Items.SLAYER_HELMET, Items.SLAYER_HELMET_I, Items.BLACK_SLAYER_HELMET, Items.BLACK_SLAYER_HELMET_I, Items.GREEN_SLAYER_HELMET, Items.GREEN_SLAYER_HELMET_I, Items.RED_SLAYER_HELMET, Items.RED_SLAYER_HELMET_I,
-                    Items.PURPLE_SLAYER_HELMET, 21266, // Purple
-                    21888, 21890, // Turquoise
-                    23073, 23075, // Hydra
-                    24370, 24444, // Twisted
-                    25898, 25900, // Tztok
-                    25904, 25906, // Vampyric
-                    25910, 25912)) // Tzkal
+            .put(Items.SLAYER_HELMET, Arrays.asList(
+                    Items.SLAYER_HELMET, Items.SLAYER_HELMET_I, 25177, 26674,
+                    Items.BLACK_SLAYER_HELMET, Items.BLACK_SLAYER_HELMET_I, 25179, 26675,
+                    Items.GREEN_SLAYER_HELMET, Items.GREEN_SLAYER_HELMET_I, 25181, 26676,
+                    Items.RED_SLAYER_HELMET, Items.RED_SLAYER_HELMET_I, 25183, 26677,
+                    Items.PURPLE_SLAYER_HELMET, 21266, 25185, 26678,
+                    21888, 21890, 25187, 26679,   // Turquoise
+                    23073, 23075, 25189, 26680,   // Hydra
+                    24370, 24444, 25191, 26681,   // Twisted
+                    25898, 25900, 25902, 26682,   // Tztok
+                    25904, 25906, 25908, 26683,   // Vampyric
+                    25910, 25912, 25914, 26684    // Tzkal
+            ))
             .put(23983, Arrays.asList(23983, // Crystal bows
                     25862, 25865, 25867, 25869, 25884, 25886, 25888, 25890, 25892, 25894, 25896))   // Bow of Faerdhinen
             .put(Items.IBANS_STAFF, Arrays.asList(Items.IBANS_STAFF, Items.IBANS_STAFF_U))
