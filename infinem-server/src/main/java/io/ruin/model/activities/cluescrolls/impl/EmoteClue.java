@@ -139,6 +139,7 @@ public class EmoteClue extends Clue {
             .put(Items.OBSIDIAN_CAPE, Arrays.asList(Items.OBSIDIAN_CAPE, Items.OBSIDIAN_CAPE_R))
             .put(Items.DRAGON_2H_SWORD, Arrays.asList(Items.DRAGON_2H_SWORD, 28051))
             .put(Items.BANDOS_BOOTS, Arrays.asList(Items.BANDOS_BOOTS, 26720))
+            .put(Items.BLACK_DHIDE_BODY, Arrays.asList(Items.BLACK_DHIDE_BODY, Items.BLACK_DHIDE_BODY_T, Items.BLACK_DHIDE_BODY_G))
             // Barrows pieces
             .put(Items.GUTHANS_HELM, Arrays.asList(Items.GUTHANS_HELM, Items.GUTHANS_HELM_25, Items.GUTHANS_HELM_50, Items.GUTHANS_HELM_75, Items.GUTHANS_HELM_100))
             .put(Items.GUTHANS_PLATEBODY, Arrays.asList(Items.GUTHANS_PLATEBODY, Items.GUTHANS_PLATEBODY_25, Items.GUTHANS_PLATEBODY_50, Items.GUTHANS_PLATEBODY_75, Items.GUTHANS_PLATEBODY_100))
