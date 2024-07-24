@@ -98,7 +98,11 @@ public class EmoteClue extends Clue {
             .put(Items.RED_HEADBAND, Arrays.asList(Items.RED_HEADBAND, Items.BLACK_HEADBAND, Items.BROWN_HEADBAND, Items.WHITE_HEADBAND, Items.BLUE_HEADBAND, Items.GOLD_HEADBAND, Items.PINK_HEADBAND, Items.GREEN_HEADBAND))
             .put(Items.SARADOMIN_CROZIER, Arrays.asList(Items.SARADOMIN_CROZIER, Items.GUTHIX_CROZIER, Items.ZAMORAK_CROZIER, Items.ANCIENT_CROZIER, Items.ARMADYL_CROZIER, Items.BANDOS_CROZIER))
             .put(Items.AMULET_OF_GLORY_1, Arrays.asList(Items.AMULET_OF_GLORY, Items.AMULET_OF_GLORY_1, Items.AMULET_OF_GLORY_2, Items.AMULET_OF_GLORY_3, Items.AMULET_OF_GLORY_4, Items.AMULET_OF_ETERNAL_GLORY))
-            .put(Items.HOLY_BOOK, Arrays.asList(Items.HOLY_BOOK, Items.UNHOLY_BOOK, Items.BOOK_OF_BALANCE, Items.BOOK_OF_WAR, Items.BOOK_OF_LAW, Items.BOOK_OF_DARKNESS))
+            .put(Items.HOLY_BOOK, Arrays.asList(
+                    Items.HOLY_BOOK, Items.UNHOLY_BOOK, Items.BOOK_OF_BALANCE,
+                    Items.BOOK_OF_WAR, Items.BOOK_OF_LAW, Items.BOOK_OF_DARKNESS,
+                    26496, 26498, 26488, 26490, 26492, 26494    // Ornamental books
+            ))
             .put(Items.SARADOMIN_MITRE, Arrays.asList(Items.SARADOMIN_MITRE, Items.GUTHIX_MITRE, Items.ZAMORAK_MITRE, Items.ANCIENT_MITRE, Items.ARMADYL_MITRE, Items.BANDOS_MITRE))
             .put(Items.COMBAT_BRACELET, Arrays.asList(Items.COMBAT_BRACELET, Items.COMBAT_BRACELET_1, Items.COMBAT_BRACELET_2, Items.COMBAT_BRACELET_3, Items.COMBAT_BRACELET_4, Items.COMBAT_BRACELET_5, Items.COMBAT_BRACELET_6))
             .put(Items.PIRATE_BANDANA, Arrays.asList(Items.PIRATE_BANDANA, Items.PIRATE_BANDANA_2, Items.PIRATE_BANDANA_3, Items.PIRATE_BANDANA_4, Items.PIRATE_BANDANA_5))
