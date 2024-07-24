@@ -160,6 +160,8 @@ public class EmoteClue extends Clue {
             .put(Items.IRON_PLATESKIRT, Arrays.asList(Items.IRON_PLATESKIRT, Items.IRON_PLATESKIRT_T, Items.IRON_PLATESKIRT_G))
             .put(Items.IRON_KITESHIELD, Arrays.asList(Items.IRON_KITESHIELD, Items.IRON_KITESHIELD_T, Items.IRON_KITESHIELD_G))
             .put(Items.STEEL_FULL_HELM, Arrays.asList(Items.STEEL_FULL_HELM, Items.STEEL_FULL_HELM_T, Items.STEEL_FULL_HELM_G))
+            .put(Items.STEEL_PLATEBODY, Arrays.asList(Items.STEEL_PLATEBODY, Items.STEEL_PLATEBODY_T, Items.STEEL_PLATEBODY_G))
+            .put(Items.STEEL_PLATESKIRT, Arrays.asList(Items.STEEL_PLATESKIRT, Items.STEEL_PLATESKIRT_T, Items.STEEL_PLATESKIRT_G))
             .put(Items.STEEL_KITESHIELD, Arrays.asList(
                     Items.STEEL_KITESHIELD, Items.STEEL_KITESHIELD_2, Items.STEEL_KITESHIELD_3, Items.STEEL_KITESHIELD_4,
                     Items.STEEL_KITESHIELD_5, Items.STEEL_KITESHIELD_6, Items.STEEL_KITESHIELD_7, Items.STEEL_KITESHIELD_8,
@@ -168,7 +170,6 @@ public class EmoteClue extends Clue {
                     Items.STEEL_KITESHIELD_17,
                     20181, 20196    // Gilded, trimmed
             ))
-            .put(Items.STEEL_PLATEBODY, Arrays.asList(Items.STEEL_PLATEBODY, Items.STEEL_PLATEBODY_T, Items.STEEL_PLATEBODY_G))
             .put(Items.BLACK_PLATEBODY, Arrays.asList(
                     Items.BLACK_PLATEBODY, Items.BLACK_PLATEBODY_T, Items.BLACK_PLATEBODY_G,
                     23366, 23369, 23372, 23375, 23378   // Heraldic
