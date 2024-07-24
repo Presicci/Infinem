@@ -182,6 +182,7 @@ public class EmoteClue extends Clue {
             .put(Items.BLUE_DHIDE_BODY, Arrays.asList(Items.BLUE_DHIDE_BODY, Items.BLUE_DHIDE_BODY_T, Items.BLUE_DHIDE_BODY_G))
             .put(Items.BLUE_DHIDE_CHAPS, Arrays.asList(Items.BLUE_DHIDE_CHAPS, Items.BLUE_DHIDE_CHAPS_T, Items.BLUE_DHIDE_CHAPS_G))
             .put(Items.AMULET_OF_POWER, Arrays.asList(Items.AMULET_OF_POWER, 23354))
+            .put(Items.BONE_DAGGER, Arrays.asList(Items.BONE_DAGGER, Items.BONE_DAGGER_P, Items.BONE_DAGGER_P_2, Items.BONE_DAGGER_P_3))
             .put(Items.ADAMANT_DAGGER, Arrays.asList(Items.ADAMANT_DAGGER, Items.ADAMANT_DAGGER_P, Items.ADAMANT_DAGGER_P_2, Items.ADAMANT_DAGGER_P_3))
             // Barrows pieces
             .put(Items.GUTHANS_HELM, Arrays.asList(Items.GUTHANS_HELM, Items.GUTHANS_HELM_25, Items.GUTHANS_HELM_50, Items.GUTHANS_HELM_75, Items.GUTHANS_HELM_100))
