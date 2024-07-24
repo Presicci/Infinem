@@ -155,6 +155,7 @@ public class EmoteClue extends Clue {
             .put(Items.DRAGON_BATTLEAXE, Arrays.asList(Items.DRAGON_BATTLEAXE, 28037))
             .put(Items.BRONZE_FULL_HELM, Arrays.asList(Items.BRONZE_FULL_HELM, Items.BRONZE_FULL_HELM_T, Items.BRONZE_FULL_HELM_G))
             .put(Items.BRONZE_PLATELEGS, Arrays.asList(Items.BRONZE_PLATELEGS, Items.BRONZE_PLATELEGS_T, Items.BRONZE_PLATELEGS_G))
+            .put(Items.IRON_FULL_HELM, Arrays.asList(Items.IRON_FULL_HELM, Items.IRON_FULL_HELM_T, Items.IRON_FULL_HELM_G))
             .put(Items.IRON_PLATEBODY, Arrays.asList(Items.IRON_PLATEBODY, Items.IRON_PLATEBODY_T, Items.IRON_PLATEBODY_G))
             .put(Items.IRON_KITESHIELD, Arrays.asList(Items.IRON_KITESHIELD, Items.IRON_KITESHIELD_T, Items.IRON_KITESHIELD_G))
             .put(Items.STEEL_KITESHIELD, Arrays.asList(
