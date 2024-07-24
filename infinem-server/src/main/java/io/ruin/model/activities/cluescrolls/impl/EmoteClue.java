@@ -203,6 +203,7 @@ public class EmoteClue extends Clue {
             .put(Items.BRONZE_DAGGER, Arrays.asList(Items.BRONZE_DAGGER, Items.BRONZE_DAGGER_P, Items.BRONZE_DAGGER_P_2, Items.BRONZE_DAGGER_P_3))
             .put(Items.ADAMANT_DAGGER, Arrays.asList(Items.ADAMANT_DAGGER, Items.ADAMANT_DAGGER_P, Items.ADAMANT_DAGGER_P_2, Items.ADAMANT_DAGGER_P_3))
             .put(Items.STUDDED_CHAPS, Arrays.asList(Items.STUDDED_CHAPS, Items.STUDDED_CHAPS_T, Items.STUDDED_CHAPS_G))
+            .put(Items.CHEFS_HAT, Arrays.asList(Items.CHEFS_HAT, Items.GOLDEN_CHEFS_HAT))
             // Barrows pieces
             .put(Items.GUTHANS_HELM, Arrays.asList(Items.GUTHANS_HELM, Items.GUTHANS_HELM_25, Items.GUTHANS_HELM_50, Items.GUTHANS_HELM_75, Items.GUTHANS_HELM_100))
             .put(Items.GUTHANS_PLATEBODY, Arrays.asList(Items.GUTHANS_PLATEBODY, Items.GUTHANS_PLATEBODY_25, Items.GUTHANS_PLATEBODY_50, Items.GUTHANS_PLATEBODY_75, Items.GUTHANS_PLATEBODY_100))
