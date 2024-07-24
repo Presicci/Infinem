@@ -158,6 +158,7 @@ public class EmoteClue extends Clue {
                     Items.RUNE_KITESHIELD_10, Items.RUNE_KITESHIELD_11, Items.RUNE_KITESHIELD_12, Items.RUNE_KITESHIELD_13,
                     Items.RUNE_KITESHIELD_14, Items.RUNE_KITESHIELD_15, Items.RUNE_KITESHIELD_16, Items.RUNE_KITESHIELD_17
             ))
+            .put(Items.RUNE_FULL_HELM, Arrays.asList(Items.RUNE_FULL_HELM, Items.RUNE_FULL_HELM_T, Items.RUNE_FULL_HELM_G))
             .put(Items.RUNE_PLATELEGS, Arrays.asList(Items.RUNE_PLATELEGS, Items.RUNE_PLATELEGS_T, Items.RUNE_PLATELEGS_G))
             .put(Items.RUNE_PLATESKIRT, Arrays.asList(Items.RUNE_PLATESKIRT, Items.RUNE_PLATESKIRT_T, Items.RUNE_PLATESKIRT_G))
             .put(Items.DRAGON_BOOTS, Arrays.asList(Items.DRAGON_BOOTS, Items.DRAGON_BOOTS_G))
