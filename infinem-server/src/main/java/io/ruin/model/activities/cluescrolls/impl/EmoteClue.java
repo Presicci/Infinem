@@ -164,6 +164,10 @@ public class EmoteClue extends Clue {
                     20181, 20196    // Gilded, trimmed
             ))
             .put(Items.STEEL_PLATEBODY, Arrays.asList(Items.STEEL_PLATEBODY, Items.STEEL_PLATEBODY_T, Items.STEEL_PLATEBODY_G))
+            .put(Items.BLACK_PLATEBODY, Arrays.asList(
+                    Items.BLACK_PLATEBODY, Items.BLACK_PLATEBODY_T, Items.BLACK_PLATEBODY_G,
+                    23366, 23369, 23372, 23375, 23378   // Heraldic
+            ))
             .put(Items.MITHRIL_FULL_HELM, Arrays.asList(Items.MITHRIL_FULL_HELM, Items.MITHRIL_FULL_HELM_T, Items.MITHRIL_FULL_HELM_G))
             .put(Items.MITHRIL_PLATEBODY, Arrays.asList(Items.MITHRIL_PLATEBODY, Items.MITHRIL_PLATEBODY_T, Items.MITHRIL_PLATEBODY_G))
             .put(Items.MITHRIL_PLATELEGS, Arrays.asList(Items.MITHRIL_PLATELEGS, Items.MITHRIL_PLATELEGS_T, Items.MITHRIL_PLATELEGS_G))
