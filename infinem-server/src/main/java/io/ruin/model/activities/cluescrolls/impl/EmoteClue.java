@@ -147,6 +147,13 @@ public class EmoteClue extends Clue {
             .put(Items.BLACK_DHIDE_BODY, Arrays.asList(Items.BLACK_DHIDE_BODY, Items.BLACK_DHIDE_BODY_T, Items.BLACK_DHIDE_BODY_G))
             .put(Items.BLACK_DHIDE_CHAPS, Arrays.asList(Items.BLACK_DHIDE_CHAPS, Items.BLACK_DHIDE_CHAPS_T, Items.BLACK_DHIDE_CHAPS_G))
             .put(Items.DRAGON_BATTLEAXE, Arrays.asList(Items.DRAGON_BATTLEAXE, 28037))
+            .put(Items.RUNE_KITESHIELD, Arrays.asList(
+                    Items.RUNE_KITESHIELD, Items.RUNE_KITESHIELD_T, Items.RUNE_KITESHIELD_G,
+                    Items.RUNE_KITESHIELD_2, Items.RUNE_KITESHIELD_3, Items.RUNE_KITESHIELD_4, Items.RUNE_KITESHIELD_5,
+                    Items.RUNE_KITESHIELD_6, Items.RUNE_KITESHIELD_7, Items.RUNE_KITESHIELD_8, Items.RUNE_KITESHIELD_9,
+                    Items.RUNE_KITESHIELD_10, Items.RUNE_KITESHIELD_11, Items.RUNE_KITESHIELD_12, Items.RUNE_KITESHIELD_13,
+                    Items.RUNE_KITESHIELD_14, Items.RUNE_KITESHIELD_15, Items.RUNE_KITESHIELD_16, Items.RUNE_KITESHIELD_17
+            ))
             // Barrows pieces
             .put(Items.GUTHANS_HELM, Arrays.asList(Items.GUTHANS_HELM, Items.GUTHANS_HELM_25, Items.GUTHANS_HELM_50, Items.GUTHANS_HELM_75, Items.GUTHANS_HELM_100))
             .put(Items.GUTHANS_PLATEBODY, Arrays.asList(Items.GUTHANS_PLATEBODY, Items.GUTHANS_PLATEBODY_25, Items.GUTHANS_PLATEBODY_50, Items.GUTHANS_PLATEBODY_75, Items.GUTHANS_PLATEBODY_100))
