@@ -447,8 +447,8 @@ public class EmoteClue extends Clue {
         BARBARIAN_AGILITY("Cheer in the Barbarian Agility Arena. Headbang before you talk to me. Equip a steel platebody, maple shortbow and a Wilderness cape.",
                 Arrays.asList(TabEmote.CHEER, TabEmote.HEAD_BANG), new Bounds(2529, 3542, 2553, 3559, 0),
                 Arrays.asList(Items.STEEL_PLATEBODY, Items.MAPLE_SHORTBOW, Items.TEAM1_CAPE), ClueType.MEDIUM, Config.STASH_UNITS[35], 28992),
-        EDGEVILLE_GENERAL("Cheer in the Edgeville general store. Dance before you talk to me. Equip a brown apron, leather boots and leather gloves.",   // TODO have to reimport edgeville to get this to work
-                Arrays.asList(TabEmote.CHEER, TabEmote.DANCE), new Bounds(1, 1, 1, 1, 0),
+        EDGEVILLE_GENERAL("Cheer in the Edgeville general store. Dance before you talk to me. Equip a brown apron, leather boots and leather gloves.",
+                Arrays.asList(TabEmote.CHEER, TabEmote.DANCE), new Bounds(3076, 3507, 3084, 3513, 0),
                 Arrays.asList(Items.BROWN_APRON, Items.LEATHER_BOOTS, Items.LEATHER_GLOVES), ClueType.MEDIUM, Config.STASH_UNITS[36], 1),
         OGRE_PEN("Cheer in the Ogre Pen in the Training Camp. Show you are angry before you talk to me. Equip a green dragonhide body and chaps and a steel square shield.",
                 Arrays.asList(TabEmote.CHEER, TabEmote.ANGRY), new Bounds(2523, 3373, 2533, 3377, 0),
