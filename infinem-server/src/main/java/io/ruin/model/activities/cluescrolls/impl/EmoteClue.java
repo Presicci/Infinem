@@ -441,7 +441,7 @@ public class EmoteClue extends Clue {
                 Collections.singletonList(TabEmote.BECKON), new Bounds(2774, 3061, 2815, 3076, 0),
                 Arrays.asList(Items.GREEN_DHIDE_VAMB, Items.RING_OF_DUELING_1, Items.MITHRIL_MED_HELM), ClueType.MEDIUM, Config.STASH_UNITS[32],28990),
         SHAYZIEN_COMBAT_RING("Beckon in the combat ring of Shayzien. Show your anger before you talk to me. Equip an adamant platebody, adamant full helm and adamant platelegs.",
-                Collections.singletonList(TabEmote.BECKON), new Bounds(1536, 3585, 1552, 3602, 0),
+                Collections.singletonList(TabEmote.BECKON), new Bounds(1540, 3619, 1547, 3626, 0),
                 Arrays.asList(Items.ADAMANT_PLATELEGS, Items.ADAMANT_PLATEBODY, Items.ADAMANT_FULL_HELM), ClueType.MEDIUM, Config.STASH_UNITS[33], 29006),
         DIGSITE("Beckon in the Digsite, near the eastern winch. Bow before you talk to me. Equip a green gnome hat, snakeskin boots and an iron pickaxe.",
                 Collections.singletonList(TabEmote.BECKON), new Bounds(3367, 3423, 3372, 3430, 0),
