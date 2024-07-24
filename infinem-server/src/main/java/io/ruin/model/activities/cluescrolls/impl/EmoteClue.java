@@ -566,9 +566,9 @@ public class EmoteClue extends Clue {
         TROLLWEISS("Panic at the area flowers meet snow. Equip Blue D'hide vambraces, a dragon spear and a rune plateskirt.",
                 Collections.singletonList(TabEmote.PANIC), new Bounds(2775, 3780, 2782, 3785, 0),
                 Arrays.asList(Items.BLUE_DHIDE_VAMB, Items.DRAGON_SPEAR, Items.RUNE_PLATESKIRT), ClueType.ELITE, Config.STASH_UNITS[81], 29035),
-        CHARCOAL_BURNERS("Salute by the Charcoal Burners. Equip a Farmer's strawhat, Shayzien platebody (5) and Pyromancer robes.",
+        /*CHARCOAL_BURNERS("Salute by the Charcoal Burners. Equip a Farmer's strawhat, Shayzien platebody (5) and Pyromancer robes.",
                 Collections.singletonList(TabEmote.SALUTE), new Bounds(1710, 3465, 1724, 3468, 0),
-                Arrays.asList(Items.FARMERS_STRAWHAT, Items.SHAYZIEN_PLATEBODY_5, Items.PYROMANCER_ROBE), ClueType.ELITE, Config.STASH_UNITS[82], 41758),
+                Arrays.asList(Items.FARMERS_STRAWHAT, Items.SHAYZIEN_PLATEBODY_5, Items.PYROMANCER_ROBE), ClueType.ELITE, Config.STASH_UNITS[82], 41758),*/
         WARRIOR_GUILD_BANK("Salute in the Warriors' guild bank. Equip only a black salamander.",
                 Collections.singletonList(TabEmote.SALUTE), new Bounds(2843, 3537, 2848, 3545, 0),
                 Collections.singletonList(Items.BLACK_SALAMANDER),
