@@ -531,7 +531,7 @@ public class EmoteClue extends Clue {
                 Arrays.asList(Items.RUNE_HALBERD, Items.RUNE_PLATEBODY, Items.AMULET_OF_STRENGTH), ClueType.HARD, Config.STASH_UNITS[67], 29023),
         CHAOS_TEMPLE("Shrug in the Zamorak temple found in the Eastern Wilderness. Beware of double agents! Equip rune platelegs, an iron platebody and blue dragonhide vambraces.",
                 Collections.singletonList(TabEmote.SHRUG), new Bounds(3235, 3604, 3244, 3613, 0),
-                Arrays.asList(Items.RUNE_PLATEBODY, Items.IRON_PLATEBODY, Items.BLACK_DHIDE_VAMB), ClueType.HARD, Config.STASH_UNITS[68], 29009),
+                Arrays.asList(Items.RUNE_PLATELEGS, Items.IRON_PLATEBODY, Items.BLACK_DHIDE_VAMB), ClueType.HARD, Config.STASH_UNITS[68], 29009),
         ROGUES_GENERAL_STORE("Yawn in the rogues' general store. Beware of double agents! Equip an adamant square shield, blue dragon vambraces and a rune pickaxe.",
                 Collections.singletonList(TabEmote.YAWN), new Bounds(3024, 3699, 3027, 3704, 0),
                 Arrays.asList(Items.ADAMANT_SQ_SHIELD, Items.BLUE_DHIDE_VAMB, Items.RUNE_PICKAXE), ClueType.HARD, Config.STASH_UNITS[69], 29013),
@@ -572,9 +572,9 @@ public class EmoteClue extends Clue {
         ARDY_GEM_STALL("Laugh in front of the gem store in Ardougne market. Equip a Castlewars bracelet, a dragonstone amulet and a ring of forging.",
                 Collections.singletonList(TabEmote.LAUGH), new Bounds(2664, 3301, 2666, 3304, 0),
                 Arrays.asList(Items.CASTLE_WARS_BRACELET_1, Items.DRAGONSTONE_AMULET, Items.RING_OF_FORGING), ClueType.ELITE, Config.STASH_UNITS[80], 29038),
-        TROLLWEISS("Panic at the area flowers meet snow. Equip Blue D'hide vambraces, a dragon spear and a rune plateskirt.",
+        /*TROLLWEISS("Panic at the area flowers meet snow. Equip Blue D'hide vambraces, a dragon spear and a rune plateskirt.",
                 Collections.singletonList(TabEmote.PANIC), new Bounds(2775, 3780, 2782, 3785, 0),
-                Arrays.asList(Items.BLUE_DHIDE_VAMB, Items.DRAGON_SPEAR, Items.RUNE_PLATESKIRT), ClueType.ELITE, Config.STASH_UNITS[81], 29035),
+                Arrays.asList(Items.BLUE_DHIDE_VAMB, Items.DRAGON_SPEAR, Items.RUNE_PLATESKIRT), ClueType.ELITE, Config.STASH_UNITS[81], 29035),*/
         /*CHARCOAL_BURNERS("Salute by the Charcoal Burners. Equip a Farmer's strawhat, Shayzien platebody (5) and Pyromancer robes.",
                 Collections.singletonList(TabEmote.SALUTE), new Bounds(1710, 3465, 1724, 3468, 0),
                 Arrays.asList(Items.FARMERS_STRAWHAT, Items.SHAYZIEN_PLATEBODY_5, Items.PYROMANCER_ROBE), ClueType.ELITE, Config.STASH_UNITS[82], 41758),*/
