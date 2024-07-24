@@ -154,6 +154,14 @@ public class EmoteClue extends Clue {
             .put(Items.DRAGON_BATTLEAXE, Arrays.asList(Items.DRAGON_BATTLEAXE, 28037))
             .put(Items.BRONZE_FULL_HELM, Arrays.asList(Items.BRONZE_FULL_HELM, Items.BRONZE_FULL_HELM_T, Items.BRONZE_FULL_HELM_G))
             .put(Items.BRONZE_PLATELEGS, Arrays.asList(Items.BRONZE_PLATELEGS, Items.BRONZE_PLATELEGS_T, Items.BRONZE_PLATELEGS_G))
+            .put(Items.STEEL_KITESHIELD, Arrays.asList(
+                    Items.STEEL_KITESHIELD, Items.STEEL_KITESHIELD_2, Items.STEEL_KITESHIELD_3, Items.STEEL_KITESHIELD_4,
+                    Items.STEEL_KITESHIELD_5, Items.STEEL_KITESHIELD_6, Items.STEEL_KITESHIELD_7, Items.STEEL_KITESHIELD_8,
+                    Items.STEEL_KITESHIELD_9, Items.STEEL_KITESHIELD_10, Items.STEEL_KITESHIELD_11, Items.STEEL_KITESHIELD_12,
+                    Items.STEEL_KITESHIELD_13, Items.STEEL_KITESHIELD_14, Items.STEEL_KITESHIELD_15, Items.STEEL_KITESHIELD_16,
+                    Items.STEEL_KITESHIELD_17,
+                    20181, 20196    // Gilded, trimmed
+            ))
             .put(Items.MITHRIL_PLATELEGS, Arrays.asList(Items.MITHRIL_PLATELEGS, Items.MITHRIL_PLATELEGS_T, Items.MITHRIL_PLATELEGS_G))
             .put(Items.ADAMANT_FULL_HELM, Arrays.asList(Items.ADAMANT_FULL_HELM, Items.ADAMANT_FULL_HELM_T, Items.ADAMANT_FULL_HELM_G))
             .put(Items.RUNE_KITESHIELD, Arrays.asList(
