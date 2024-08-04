@@ -1,7 +1,6 @@
 package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.api.utils.NumberUtils;
-import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.item.loot.ConditionalNPCLootTable;
 import io.ruin.utility.Color;
@@ -306,7 +305,7 @@ public class DropViewer {
         }
         InterfaceHandler.register(Interface.DROP_VIEWER, h -> {
             h.actions[16] = (SlotAction) DropViewer::clickEntry;
-            h.actions[17] = (SimpleAction) player -> player.stringInput("Enter monster name to search for:", name -> DropViewerSearch.search(player, name, true));
+            h.actions[17] = (SimpleAction) player -> player.stringInput("Enter monster name to search for:", name -> DropViewerSearch.search(player, name));
             h.actions[18] = (SimpleAction) player -> {
                 player.itemSearch("Search for monsters that drop:", false, item -> {
                     DropViewerSearch.itemSearch(player, item);

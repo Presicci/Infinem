@@ -11,6 +11,11 @@ public class DropViewerEntryItem extends DropViewerEntry{
 
     public int chance;
 
+    public DropViewerEntryItem(String name, LootTable table, int itemId, int npcId) {
+        super(npcId);
+        this.chance = DropViewer.getDropChance(itemId, table);
+    }
+
     public DropViewerEntryItem(String name, LootTable table, int itemId) {
         super(name, table);
         this.chance = DropViewer.getDropChance(itemId, table);

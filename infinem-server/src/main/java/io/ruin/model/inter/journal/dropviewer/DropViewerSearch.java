@@ -43,9 +43,9 @@ public class DropViewerSearch {
                         String extension = DropViewerNPCExtensions.NPCS.get(npcDef.id);
                         DropViewerEntryItem entry;
                         if (extension != null) {
-                            entry = new DropViewerEntryItem(npcDef.name + extension, npcDef.lootTable, id);
+                            entry = new DropViewerEntryItem(npcDef.name + extension, npcDef.lootTable, id, npcDef.id);
                         } else {
-                            entry = new DropViewerEntryItem(npcDef.name, npcDef.lootTable, id);
+                            entry = new DropViewerEntryItem(npcDef.name, npcDef.lootTable, id, npcDef.id);
                         }
                         List<Integer> chances = addedNPCs.get(npcDef.name);
                         if (chances != null && chances.contains(entry.chance)) {
@@ -89,55 +89,28 @@ public class DropViewerSearch {
         });
     }
 
-    protected static void search(Player player, String name, boolean monster) {
-        if (monster)
-            player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: Searching for monster \"" + name + "\"...");
-        else
-            player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: Searching for monsters that drop \"" + name + "\"...");
+    protected static void search(Player player, String name) {
+        player.sendMessage(Color.DARK_GREEN.tag() + " Drop Viewer: Searching for monster \"" + name + "\"...");
         TaskWorker.startTask(t -> {
             List<DropViewerEntry> results = new ArrayList<>();
             String search = formatForSearch(name);
             AtomicBoolean tooMany = new AtomicBoolean(false);
             if (!search.isEmpty()) {
                 LinkedHashMap<String, TreeMap<Integer, List<NPCDefinition>>> map = new LinkedHashMap<>();
-                if (monster) {
-                    NPCDefinition.forEach(npcDef -> {
-                        String searchName = formatForSearch(npcDef.name);
-                        if (!searchName.contains(search))
-                            return;
-                        String extension = DropViewerNPCExtensions.NPCS.get(npcDef.id);
-                        if (extension != null) {
-                            map.computeIfAbsent(searchName + extension, k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef);
-                        } else {
-                            map.computeIfAbsent(searchName, k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef);
-                        }
-                    });
-                    for (DropViewerEntry entry : DropViewerCustomEntries.ENTRIES) {
-                        if (formatForSearch(entry.name).contains(search))
-                            results.add(entry);
+                NPCDefinition.forEach(npcDef -> {
+                    String searchName = formatForSearch(npcDef.name);
+                    if (!searchName.contains(search))
+                        return;
+                    String extension = DropViewerNPCExtensions.NPCS.get(npcDef.id);
+                    if (extension != null) {
+                        map.computeIfAbsent(searchName + extension, k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef);
+                    } else {
+                        map.computeIfAbsent(searchName, k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef);
                     }
-                } else {
-                    ItemDefinition.forEach(itemDef -> {
-                        if (!formatForSearch(itemDef.name).contains(search))
-                            return;
-                        HashSet<NPCDefinition> npcDefinitions = DropViewer.drops.get(itemDef.id);
-                        if (npcDefinitions != null)
-                            npcDefinitions.forEach(npcDef -> {
-                                String npcName = formatForSearch(npcDef.name);
-                                String extension = DropViewerNPCExtensions.NPCS.get(npcDef.id);
-                                if (extension != null) {
-                                    map.computeIfAbsent(npcName + extension, k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef);
-                                } else {
-                                    map.computeIfAbsent(npcName, k -> new TreeMap<>()).computeIfAbsent(npcDef.combatLevel, k -> new ArrayList<>()).add(npcDef);
-                                }
-                            });
-                        HashSet<DropViewerEntry> nonNPCEntries = DropViewer.NON_NPC_DROPS.get(itemDef.id);
-                        if (nonNPCEntries != null) {
-                            nonNPCEntries.stream().filter(e -> !results.contains(e)).forEach(e -> {
-                                results.add(new DropViewerEntry("1/" + DropViewer.getDropChance(itemDef.id, e.table) + " - " + e.name, e.table));
-                            });
-                        }
-                    });
+                });
+                for (DropViewerEntry entry : DropViewerCustomEntries.ENTRIES) {
+                    if (formatForSearch(entry.name).contains(search))
+                        results.add(entry);
                 }
                 map.values().forEach(levelsMap -> {
                     if (results.size() >= MAX_RESULTS) {
