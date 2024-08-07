@@ -69,8 +69,6 @@ public class DisplayHandler implements Incoming {
 
         if (Config.ASK_TIME_PLAYED.get(p) == 0)
             Config.varpbit(12933, false).set(p, 1); // if 1 then it shows time played.
-
-        Config.varp(1780, false).set(p, 432); // Membership days left
     }
 
     private static void sendDisplay(Player player, int displayMode) {
