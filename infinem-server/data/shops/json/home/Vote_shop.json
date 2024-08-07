@@ -1,0 +1,36 @@
+{
+  "name": "Vote Shop",
+  "currency": "VOTE_TICKETS",
+  "npcs": [
+    15000
+  ],
+  "sellMultiplier": 1000,
+  "buyMultiplier": 1000,
+  "hideBuy": false,
+  "items": [
+    { // Exp lamp
+      "itemId": 28800,
+      "stock": 100,
+      "buy_price": 15,
+      "sell_price": 15
+    },
+    { // Herb box
+      "itemId": 11738,
+      "stock": 100,
+      "buy_price": 10,
+      "sell_price": 10
+    },
+    { // Bag of gems
+      "itemId": 19473,
+      "stock": 100,
+      "buy_price": 10,
+      "sell_price": 10
+    },
+    { // Rune pouch
+      "itemId": 12791,
+      "stock": 100,
+      "buy_price": 50,
+      "sell_price": 50
+    }
+  ]
+}
