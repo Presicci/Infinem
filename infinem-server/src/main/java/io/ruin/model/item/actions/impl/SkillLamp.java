@@ -3,6 +3,7 @@ package io.ruin.model.item.actions.impl;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.StringUtils;
+import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.utility.Color;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -44,13 +45,16 @@ public enum SkillLamp {
     private final boolean combat;
     private final boolean disabled;
 
-    public static final int SKILL_LAMP = 2528;
+    public static final int[] SKILL_LAMPS = { 2528, 28800 };
 
     static {
-        ItemAction.registerInventory(SKILL_LAMP, "rub", (player, item) -> {
-            player.openInterface(InterfaceType.MAIN, Interface.SKILL_LAMP);
-            player.getPacketSender().sendString(Interface.SKILL_LAMP, 25, "Choose the stat you wish to be advanced!");
-        });
+        for (int lamp : SKILL_LAMPS) {
+            ItemAction.registerInventory(lamp, "rub", (player, item) -> {
+                player.openInterface(InterfaceType.MAIN, Interface.SKILL_LAMP);
+                player.getPacketSender().sendString(Interface.SKILL_LAMP, 25, "Choose the stat you wish to be advanced!");
+                player.putTemporaryAttribute("LAMP", lamp);
+            });
+        }
 
         InterfaceHandler.register(Interface.SKILL_LAMP, h -> {
             h.actions[0] = (SlotAction) (player, slot) -> {
@@ -64,7 +68,8 @@ public enum SkillLamp {
                     player.sendMessage(Color.DARK_RED.wrap(skillName + " is currently disabled!"));
                     return;
                 }
-                Item lamp = player.getInventory().findItem(SKILL_LAMP);
+                int lampId = player.getTemporaryAttributeIntOrZero("LAMP");
+                Item lamp = player.getInventory().findItem(lampId);
                 if (lamp == null)
                     return;
                 int experience = Random.get(25000, 50000);
@@ -73,6 +78,7 @@ public enum SkillLamp {
                 player.getStats().addXp(skill.statType, experience, false);
                 player.sendMessage(Color.DARK_GREEN.wrap("You have been awarded " + NumberUtils.formatNumber(experience) + " " + skillName + " experience."));
             };
+            h.closedAction = (player, i) -> player.removeTemporaryAttribute("LAMP");
         });
     }
 }
