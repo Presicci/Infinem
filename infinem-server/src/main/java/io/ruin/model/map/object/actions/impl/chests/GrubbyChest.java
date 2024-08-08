@@ -2,6 +2,7 @@ package io.ruin.model.map.object.actions.impl.chests;
 
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.loot.LootItem;
@@ -10,6 +11,7 @@ import io.ruin.model.item.loot.LootItemSet;
 import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.utility.Color;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,6 +99,8 @@ public class GrubbyChest {
                 e.delay(2);
                 obj.setId(obj.originalId);
             });
+
+            player.sendFilteredMessage("You've opened " + Color.RED.wrap("" + PlayerCounter.GRUBBY_CHEST_OPENED.increment(player, 1)) + " grubby chests.");
 
             event.delay(1);
             player.unlock();

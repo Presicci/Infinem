@@ -408,6 +408,7 @@ public enum PlayerCounter {
      */
     BRIMSTONE_CHESTS_OPENED,
     DARK_CHEST_OPENED,
+    GRUBBY_CHEST_OPENED,
 
     DEMON_KILLS,
 
