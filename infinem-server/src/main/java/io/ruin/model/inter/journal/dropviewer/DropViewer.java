@@ -3,6 +3,7 @@ package io.ruin.model.inter.journal.dropviewer;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.item.loot.ConditionalNPCLootTable;
+import io.ruin.model.item.loot.LootItemPair;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.api.utils.AttributeKey;
@@ -160,7 +161,12 @@ public class DropViewer {
                             } else if (dropDescription != null) {
                                 drops.add(new DropViewerResultDescription(item.id, dropDescription, chance));
                             } else {
-                                drops.add(new DropViewerResultItem(item.id, item.min, item.max, chance));
+                                if (item instanceof LootItemPair) {
+                                    drops.add(new DropViewerResultPair(item.toItem(), ((LootItemPair) item).secondToItem(), chance));
+                                    drops.add(new DropViewerResultPair(((LootItemPair) item).secondToItem(), item.toItem(), chance));
+                                } else {
+                                    drops.add(new DropViewerResultItem(item.id, item.min, item.max, chance));
+                                }
                             }
                         }
                     }

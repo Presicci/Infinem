@@ -7,6 +7,7 @@ import io.ruin.cache.def.ItemDefinition;
 import io.ruin.model.item.Item;
 import io.ruin.utility.Broadcast;
 
+import java.util.List;
 import java.util.Map;
 
 public class LootItem {
@@ -64,6 +65,10 @@ public class LootItem {
         Item item = new Item(id, min == max ? min : Random.get(min, max));
         item.lootBroadcast = broadcast;
         return item;
+    }
+
+    public void addToList(List<Item> items) {
+        items.add(toItem());
     }
 
     public String getName() {

@@ -209,7 +209,7 @@ public class LootTable {
         if(allowGuaranteed && guaranteed != null) {
             items = new ArrayList<>(guaranteed.length + 1);
             for(LootItem item : guaranteed)
-                items.add(item.toItem());
+                item.addToList(items);
         } else {
             items = new ArrayList<>(1);
         }
@@ -220,14 +220,14 @@ public class LootTable {
                     double itemsRand = Random.get() * table.totalWeight;
                     for(LootItem item : table.items) {
                         if(item.weight == 0) {  // weightless item landed, add it and continue loop
-                            items.add(item.toItem());
+                            item.addToList(items);
                             continue;
                         }
                         if((itemsRand -= item.weight) <= 0) { // weighted item landed, add it and break loop
                             if (item.id == -1) {    // -1 is nothing
                                 break;
                             }
-                            items.add(item.toItem());
+                            item.addToList(items);
                             break;
                         }
                     }
@@ -259,9 +259,9 @@ public class LootTable {
                         for(LootItem item : table.items) {
                             if(item.weight == 0) {  // weightless item landed, break
                                 if (secondaryRolled)
-                                    secondaryItems.add(item.toItem());
+                                    item.addToList(secondaryItems);
                                 else
-                                    items.add(item.toItem());
+                                    item.addToList(items);
                                 break tableLoop;
                             }
                             if((itemsRand -= item.weight) <= 0) { // weighted item landed, add it and break loop
@@ -274,9 +274,9 @@ public class LootTable {
                                 if (item.id == -1)  // Quit out if we roll a empty slot
                                     break;
                                 if (secondaryRolled)
-                                    secondaryItems.add(item.toItem());
+                                    item.addToList(secondaryItems);
                                 else
-                                    items.add(item.toItem());
+                                    item.addToList(items);
                                 break;
                             }
                         }
@@ -301,13 +301,13 @@ public class LootTable {
         List<Item> items = new ArrayList<>();
         if(guaranteed != null) {
             for(LootItem item : guaranteed) {
-                if (item != null) items.add(item.toItem());
+                if (item != null) item.addToList(items);
             }
         }
         if(tables != null) {
             for(ItemsTable table : tables) {
                 for (LootItem item : table.items) {
-                    if (item != null) items.add(item.toItem());
+                    if (item != null) item.addToList(items);
                 }
             }
         }
