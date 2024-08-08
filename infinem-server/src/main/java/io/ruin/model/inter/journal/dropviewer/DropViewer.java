@@ -2,8 +2,7 @@ package io.ruin.model.inter.journal.dropviewer;
 
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.model.inter.actions.DefaultAction;
-import io.ruin.model.item.loot.ConditionalNPCLootTable;
-import io.ruin.model.item.loot.LootItemPair;
+import io.ruin.model.item.loot.*;
 import io.ruin.utility.Color;
 import io.ruin.cache.def.NPCDefinition;
 import io.ruin.api.utils.AttributeKey;
@@ -16,8 +15,6 @@ import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.item.Item;
-import io.ruin.model.item.loot.LootItem;
-import io.ruin.model.item.loot.LootTable;
 
 import java.util.*;
 
@@ -161,7 +158,12 @@ public class DropViewer {
                             } else if (dropDescription != null) {
                                 drops.add(new DropViewerResultDescription(item.id, dropDescription, chance));
                             } else {
-                                if (item instanceof LootItemPair) {
+                                if (item instanceof LootItemSet) {
+                                    Item[] setItems = ((LootItemSet) item).toItems();
+                                    for (Item i : setItems) {
+                                        drops.add(new DropViewerResultSet(chance, i, setItems));
+                                    }
+                                } else if (item instanceof LootItemPair) {
                                     drops.add(new DropViewerResultPair(item.toItem(), ((LootItemPair) item).secondToItem(), chance));
                                     drops.add(new DropViewerResultPair(((LootItemPair) item).secondToItem(), item.toItem(), chance));
                                 } else {

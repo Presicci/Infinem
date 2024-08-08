@@ -24,8 +24,10 @@ public class LootItemPair extends LootItem {
 
     public void addToList(List<Item> items) {
         Item item = new Item(id, min == max ? min : Random.get(min, max));
+        item.lootBroadcast = broadcast;
         items.add(item);
         Item secondItem = new Item(secondId, secondMin == secondMax ? secondMin : Random.get(secondMin, secondMax));
+        secondItem.lootBroadcast = broadcast;
         items.add(secondItem);
     }
 
