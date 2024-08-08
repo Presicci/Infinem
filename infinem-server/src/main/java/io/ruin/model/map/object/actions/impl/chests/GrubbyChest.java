@@ -55,6 +55,12 @@ public class GrubbyChest {
             new LootItem(Items.DRAGON_ARROWTIPS, 50, 10)
     );
 
+    public static final LootTable TERTIARY = new LootTable().addTable(0,
+            new LootItem(-1, 1, 24),
+            new LootItem(25844, 1, 1),
+            new LootItem(25846, 1, 1)
+    );
+
     private static void openChest(Player player, GameObject obj) {
         Item grubbyKey = player.getInventory().findItem(23499);
         if (grubbyKey == null) {
@@ -76,9 +82,14 @@ public class GrubbyChest {
             loot.addAll(POTION.rollItems(false));
             // One main roll
             loot.add(MAIN.rollItem());
+            // Roll for egg sacs
+            Item egg = TERTIARY.rollItem();
+            if (egg != null) loot.add(egg);
+
 
             for(Item item : loot) {
                 player.getInventory().addOrDrop(item.getId(), item.getAmount());
+                player.getCollectionLog().collect(item);
             }
 
             World.startEvent(e -> {

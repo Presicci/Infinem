@@ -42,7 +42,7 @@ public class DropViewerCustomEntries {
             new DropViewerEntry("Elven Crystal Chest", ElvenCrystalChest.LOOT_TABLE),
             new DropViewerEntry("Brimstone Chest", BrimstoneChest.LOOT_TABLE),
             new DropViewerEntry("Dark Chest", DarkChest.LOOT_TABLE),
-            new DropViewerEntry("Grubby Chest", false, GrubbyChest.MAIN, GrubbyChest.FOOD, GrubbyChest.POTION),
+            new DropViewerEntry("Grubby Chest", false, GrubbyChest.MAIN, GrubbyChest.FOOD, GrubbyChest.POTION, GrubbyChest.TERTIARY),
             new DropViewerEntry("Larrans Chest (Big)", LarransChest.bigTable),
             new DropViewerEntry("Larrans Chest (Small)", LarransChest.smallTable),
             new DropViewerEntry("Baby Impling", ImplingJar.BABY_IMPLING_JAR.getLootTable()),
