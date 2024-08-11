@@ -93,7 +93,10 @@ public class IKOD {
                 Pet pet = item.getDef().pet;
                 if (pet != null) {
                     kind = IKODKind.OtherKept;
-                } else if ((item.getId() == Items.RUNE_POUCH && flags.killedByAPlayer) || isLootingBag(item) || item.getDef().name.contains("ironman")) {
+                } else if ((item.getId() == Items.RUNE_POUCH && flags.killedByAPlayer)
+                        || isLootingBag(item)
+                        || item.getDef().name.contains("ironman")
+                        || (item.getId() == Items.FALCONERS_GLOVE || item.getId() == Items.FALCONERS_GLOVE_2 || item.getId() == 22816 || item.getId() == 22817)) {
                     kind = IKODKind.Deleted;
                 } else if (breakable != null) {
                     if (flags.killedByAPlayer) {
