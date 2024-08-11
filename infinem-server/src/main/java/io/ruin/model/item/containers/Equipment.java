@@ -68,7 +68,9 @@ public class Equipment extends ItemContainer {
             return;
         }
 
-        if (get(SLOT_WEAPON) != null && get(SLOT_WEAPON).getId() == 22817 && (equipSlot == SLOT_HANDS || equipSlot == SLOT_WEAPON || equipSlot == SLOT_SHIELD)) {
+        if (get(SLOT_WEAPON) != null
+                && (get(SLOT_WEAPON).getId() == 22816 || get(SLOT_WEAPON).getId() == 22817)
+                && (equipSlot == SLOT_HANDS || equipSlot == SLOT_WEAPON || equipSlot == SLOT_SHIELD)) {
             player.sendMessage("You must return the cormorant to Alry before equipping this.");
             return;
         }
@@ -193,7 +195,7 @@ public class Equipment extends ItemContainer {
     public boolean unequip(Item equipped) {
         Inventory inventory = player.getInventory();
         Item inventoryStack = null;
-        if(equipped.getId() == 22817) {
+        if (equipped.getId() == 22816 || equipped.getId() == 22817) {
             player.sendMessage("You must return the cormorant to Alry.");
             return false;
         } else if (equipped.getId() == Items.FALCONERS_GLOVE || equipped.getId() == Items.FALCONERS_GLOVE_2) {
