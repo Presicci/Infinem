@@ -11,10 +11,7 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.Items;
 import io.ruin.model.item.containers.Equipment;
-import io.ruin.model.map.MapListener;
-import io.ruin.model.map.Position;
-import io.ruin.model.map.Projectile;
-import io.ruin.model.map.Tile;
+import io.ruin.model.map.*;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.route.routes.ProjectileRoute;
 import io.ruin.model.skills.agility.shortcut.JumpShortcut;
@@ -54,7 +51,7 @@ public class Falconry {
             });
         }
 
-        MapListener.registerRegions(9271, 9272, 9527, 9528)
+        MapListener.registerBounds(new Bounds(2364, 3573, 2394, 3620, 0))
                 .onExit((player, logout) -> {
                     player.getInventory().remove(FALCONERS_GLOVES, Integer.MAX_VALUE);
                     player.getEquipment().remove(FALCONERS_GLOVES, Integer.MAX_VALUE);
