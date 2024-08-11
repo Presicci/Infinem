@@ -10,6 +10,7 @@ import io.ruin.model.inter.handlers.EquipmentStats;
 import io.ruin.model.inter.handlers.TabCombat;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
+import io.ruin.model.item.Items;
 import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.item.actions.impl.chargable.Blowpipe;
 import io.ruin.model.skills.construction.actions.CombatRoom;
@@ -67,8 +68,14 @@ public class Equipment extends ItemContainer {
             return;
         }
 
-        if(get(SLOT_WEAPON) != null && get(SLOT_WEAPON).getId() == 22817 && (equipSlot == SLOT_HANDS || equipSlot == SLOT_WEAPON || equipSlot == SLOT_SHIELD)) {
+        if (get(SLOT_WEAPON) != null && get(SLOT_WEAPON).getId() == 22817 && (equipSlot == SLOT_HANDS || equipSlot == SLOT_WEAPON || equipSlot == SLOT_SHIELD)) {
             player.sendMessage("You must return the cormorant to Alry before equipping this.");
+            return;
+        }
+        if (get(SLOT_WEAPON) != null
+                && (get(SLOT_WEAPON).getId() == Items.FALCONERS_GLOVE || get(SLOT_WEAPON).getId() == Items.FALCONERS_GLOVE_2)
+                && (equipSlot == SLOT_HANDS || equipSlot == SLOT_WEAPON || equipSlot == SLOT_SHIELD)) {
+            player.sendMessage("You must return the falcon to Matthias before equipping this.");
             return;
         }
 
@@ -188,6 +195,9 @@ public class Equipment extends ItemContainer {
         Item inventoryStack = null;
         if(equipped.getId() == 22817) {
             player.sendMessage("You must return the cormorant to Alry.");
+            return false;
+        } else if (equipped.getId() == Items.FALCONERS_GLOVE || equipped.getId() == Items.FALCONERS_GLOVE_2) {
+            player.sendMessage("You must return the falcon to Matthias.");
             return false;
         }
         if(equipped.getDef().stackable)
