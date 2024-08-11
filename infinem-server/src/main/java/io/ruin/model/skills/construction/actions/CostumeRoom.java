@@ -211,7 +211,7 @@ public class CostumeRoom {
                 player.sendMessage("You can't store modified items in there.");
             return;
         }
-        if (!hasStorageSpace(player, b, type))
+        if (!costume.isNormalCape() && !hasStorageSpace(player, b, type))
             return;
         if (player.getGameMode().isUltimateIronman() && costume.pieces.length > 1 && !type.willCompleteSet(player, costume, item)) {
             CostumeStorage finalType = type;

@@ -729,4 +729,11 @@ public enum Costume {
             player.sendMessage(sb.toString());
         }
     }
+
+    public boolean isNormalCape() {
+        return (ordinal() >= 158 && ordinal() <= 167)
+                || this == SPOTTED_CAPE
+                || this == SPOTTIER_CAPE
+                || (ordinal() >= 197 && ordinal() <= 220);
+    }
 }
