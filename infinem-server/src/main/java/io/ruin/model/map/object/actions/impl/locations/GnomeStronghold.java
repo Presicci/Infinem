@@ -1,6 +1,9 @@
 package io.ruin.model.map.object.actions.impl.locations;
 
+import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.object.actions.impl.Ladder;
 
@@ -10,7 +13,31 @@ import io.ruin.model.map.object.actions.impl.Ladder;
  */
 public class GnomeStronghold {
 
+    private static void treeDoor(Player player, GameObject object) {
+        int newId = object.id == 1968 ? 1970 : 1969;
+        int objectX = object.id == 1967 ? object.x + 1 : object.x;
+        player.startEvent(e -> {
+            player.lock();
+            if (player.getAbsX() != objectX) {
+                player.stepAbs(objectX, player.getAbsY(), StepType.FORCE_WALK);
+                e.delay(1);
+                player.face(object);
+                e.delay(1);
+            }
+            object.setId(newId);
+            e.delay(1);
+            boolean north = player.getAbsY() < object.y;
+            player.stepAbs(player.getAbsX(), player.getAbsY() + (north ? 2 : -2), StepType.FORCE_WALK);
+            e.delay(2);
+            object.setId(object.originalId);
+            player.unlock();
+        });
+    }
+
     static {
+        // Tree doors
+        ObjectAction.register(1967, 2464, 3492, 0, "open", GnomeStronghold::treeDoor);
+        ObjectAction.register(1968, 2466, 3492, 0, "open", GnomeStronghold::treeDoor);
         // Misc
         ObjectAction.register(16675, 2418, 3417, 0, "climb-up", (player, obj) -> player.getMovement().teleport(2418, 3416, 1));
         ObjectAction.register(16677, 2418, 3417, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2417, 3417, 0));
