@@ -1158,6 +1158,7 @@ public class Config {
     private static final Config EVIL_DAVE_LAIR_ENTRANCE = varpbit(1888, false).defaultValue(1);
     public static final Config DONATOR_RANK = varp(1780, true);
     public static final Config FOUNTAIN_OF_RUNE = varpbit(4145, false);
+    private static final Config MEIYERDITCH_BOAT = varpbit(2585, false).defaultValue(1);
 
     /**
      * Elemental workshop
