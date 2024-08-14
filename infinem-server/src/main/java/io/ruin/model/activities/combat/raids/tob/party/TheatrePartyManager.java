@@ -318,6 +318,10 @@ public final class TheatrePartyManager {
         });
 
         ObjectAction.register(32653, "enter", (player, obj) -> {
+            if (!player.isStaff() || !player.debug) {
+                player.dialogue(new MessageDialogue("The Threatre of Blood is not currently implemented."));
+                return;
+            }
             boolean dialogue = TheatrePartyManager.instance().getPartyForPlayer(player.getUserId()).isPresent();
             if (dialogue) {
                 TheatrePartyManager.instance().getPartyForPlayer(player.getUserId()).ifPresent(party -> {
