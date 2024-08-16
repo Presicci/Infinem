@@ -501,14 +501,14 @@ public class Duel extends ItemContainer {
     }
 
     private boolean checkToggle(DuelRule rule) {
-        if(rule == DuelRule.NO_MOVEMENT && isToggled(DuelRule.OBSTACLES)) {
+        /*if(rule == DuelRule.NO_MOVEMENT && isToggled(DuelRule.OBSTACLES)) {
             player.sendMessage("You can't have no movement with obstacles.");
             return false;
         }
         if(rule == DuelRule.OBSTACLES && isToggled(DuelRule.NO_MOVEMENT)) {
             player.sendMessage("You can't have obstacles with no movement.");
             return false;
-        }
+        }*/
         if(rule == DuelRule.NO_MELEE) {
             if(isToggled(DuelRule.NO_RANGED) && isToggled(DuelRule.NO_MAGIC)) {
                 player.sendMessage("You can't have no melee, no magic, no ranged, how would you fight?");
@@ -527,7 +527,7 @@ public class Duel extends ItemContainer {
                 return false;
             }
         }
-        if(rule == DuelRule.FUN_WEAPONS) {
+        if(rule == DuelRule.FUN_WEAPONS || rule == DuelRule.OBSTACLES) {
             player.sendMessage("This rule is currently not supported.");
             return false;
         }
