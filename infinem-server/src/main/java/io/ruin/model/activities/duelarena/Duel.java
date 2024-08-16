@@ -44,7 +44,7 @@ public class Duel extends ItemContainer {
     };
 
     private static final Bounds END_BOUNDS = new Bounds(3362, 3265, 3372, 3268, 0);
-    private static final Bounds CUSTOM_END_BOUNDS = new Bounds(3084, 3470, 3086, 3473, 0);
+    private static final Bounds DRAW_BOUNDS = new Bounds(3362, 3264, 3370, 3267, 0);
 
     static LinkedList<String> FIGHT_HISTORY = new LinkedList<>();
 
@@ -688,7 +688,7 @@ public class Duel extends ItemContainer {
             player.getCombat().setDead(false);
             player.animate(-1, 0);
         }
-        player.getMovement().teleport(CUSTOM_END_BOUNDS.randomX(), CUSTOM_END_BOUNDS.randomY(), 0);
+        player.getMovement().teleport(DRAW_BOUNDS.randomX(), DRAW_BOUNDS.randomY(), 0);
         player.getPacketSender().resetHintIcon(false);
         player.setAction(1, PlayerAction.CHALLENGE);
         player.getCombat().restore();
