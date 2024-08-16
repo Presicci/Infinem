@@ -88,6 +88,10 @@ public class Duel extends ItemContainer {
     private int requestUserId = -1;
 
     public void request(Player target) {
+        if (World.updating) {
+            player.sendMessage("You can't start duels while an update is pending.");
+            return;
+        }
         Duel targetDuel = target.getDuel();
         if (stage >= 4 || targetDuel.stage >= 4) // already in a duel
             return;
