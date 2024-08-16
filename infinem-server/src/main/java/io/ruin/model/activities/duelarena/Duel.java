@@ -813,7 +813,6 @@ public class Duel extends ItemContainer {
         player.getPacketSender().sendClientScript(917, "ii", -1, -1);
         player.openInterface(InterfaceType.MAIN, Interface.DUEL_ARENA_REWARD);
         player.getPacketSender().sendClientScript(149, "IviiiIsssss", Interface.DUEL_ARENA_REWARD << 16 | 33, 541, 6, 6, 0, -1, "", "", "", "", "");
-        player.getPacketSender().sendAccessMask(0, 35, 110, 33, 1024);
         container.sendUpdates();
 
         destroy();
