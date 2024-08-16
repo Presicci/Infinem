@@ -19,22 +19,45 @@ import io.ruin.model.item.ItemContainerG;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.Region;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatList;
 import io.ruin.model.stat.StatType;
 import io.ruin.services.Loggers;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
 
 import static io.ruin.cache.ItemID.BLOOD_MONEY;
 
 public class Duel extends ItemContainer {
 
-    private static final Bounds[][] REGULAR_SPAWNS = {
-            {new Bounds(new Position(3340, 3251, 0), 4), new Bounds(new Position(3350, 3251, 0), 4)},
-            {new Bounds(new Position(3371, 3232, 0), 4), new Bounds(new Position(3381, 3232, 0), 4)},
-            {new Bounds(new Position(3340, 3213, 0), 4), new Bounds(new Position(3350, 3213, 0), 4)},
+    private static final Bounds ARENA_ONE_BOUNDS = new Bounds(3333, 3245, 3352, 3257, 0);
+    private static final Bounds ARENA_TWO_BOUNDS = new Bounds(3333, 3207, 3352, 3219, 0);
+    private static final Bounds ARENA_THREE_BOUNDS = new Bounds(3369, 3207, 3388, 3219, 0);
+    private static final Bounds ARENA_FOUR_BOUNDS = new Bounds(3369, 3245, 3388, 3257, 0);
+
+    private static final Bounds[][] ARENA_ONE = {
+            {new Bounds(new Position(3338, 3250, 0), 4), new Bounds(new Position(3338, 3252, 0), 4)},
+            {new Bounds(new Position(3342, 3250, 0), 4), new Bounds(new Position(3342, 3252, 0), 4)},
+            {new Bounds(new Position(3347, 3250, 0), 4), new Bounds(new Position(3347, 3252, 0), 4)},
+    };
+
+    private static final Bounds[][] ARENA_TWO = {
+            {new Bounds(new Position(3338, 3214, 0), 4), new Bounds(new Position(3338, 3212, 0), 4)},
+            {new Bounds(new Position(3342, 3214, 0), 4), new Bounds(new Position(3342, 3212, 0), 4)},
+            {new Bounds(new Position(3347, 3214, 0), 4), new Bounds(new Position(3347, 3212, 0), 4)},
+    };
+
+    private static final Bounds[][] ARENA_THREE = {
+            {new Bounds(new Position(3374, 3214, 0), 4), new Bounds(new Position(3374, 3212, 0), 4)},
+            {new Bounds(new Position(3378, 3214, 0), 4), new Bounds(new Position(3378, 3212, 0), 4)},
+            {new Bounds(new Position(3383, 3214, 0), 4), new Bounds(new Position(3383, 3212, 0), 4)},
+    };
+
+    private static final Bounds[][] ARENA_FOUR = {
+            {new Bounds(new Position(3374, 3250, 0), 4), new Bounds(new Position(3374, 3252, 0), 4)},
+            {new Bounds(new Position(3378, 3250, 0), 4), new Bounds(new Position(3378, 3252, 0), 4)},
+            {new Bounds(new Position(3383, 3250, 0), 4), new Bounds(new Position(3383, 3252, 0), 4)},
     };
 
     private static final Bounds[][] OBSTACLE_SPAWNS = {
@@ -594,6 +617,16 @@ public class Duel extends ItemContainer {
         return (settings & rule.bitValue) != 0;
     }
 
+    private Bounds[] findSpawnBounds(int maxCapacity) {
+        List<Player> players = Region.get(13362).players;
+        if (players.isEmpty()) return Random.get(ARENA_ONE);
+        if (players.stream().filter(ARENA_ONE_BOUNDS::inBounds).count() < maxCapacity) return Random.get(ARENA_ONE);
+        else if (players.stream().filter(ARENA_TWO_BOUNDS::inBounds).count() < maxCapacity) return Random.get(ARENA_TWO);
+        else if (players.stream().filter(ARENA_THREE_BOUNDS::inBounds).count() < maxCapacity) return Random.get(ARENA_THREE);
+        else if (players.stream().filter(ARENA_FOUR_BOUNDS::inBounds).count() < maxCapacity) return Random.get(ARENA_FOUR);
+        else return findSpawnBounds(maxCapacity + 2);
+    }
+
     /**
      * Mechanics
      */
@@ -612,7 +645,7 @@ public class Duel extends ItemContainer {
         if(isToggled(DuelRule.OBSTACLES))
             spawnBounds = OBSTACLE_SPAWNS[Random.get(OBSTACLE_SPAWNS.length - 1)];
         else
-            spawnBounds = REGULAR_SPAWNS[Random.get(REGULAR_SPAWNS.length - 1)];
+            spawnBounds = findSpawnBounds(5);
         Bounds b1, b2;
         if(Random.rollDie(2)) {
             b1 = spawnBounds[0];
