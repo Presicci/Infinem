@@ -10,6 +10,7 @@ import io.ruin.api.protocol.world.WorldStage;
 import io.ruin.api.protocol.world.WorldType;
 import io.ruin.api.utils.IPAddress;
 import io.ruin.api.utils.Tuple;
+import io.ruin.model.activities.duelarena.Duel;
 import io.ruin.utility.Color;
 import io.ruin.cache.Icon;
 import io.ruin.content.activities.event.TimedEventManager;
@@ -351,6 +352,10 @@ public class World extends EventWorker {
                 GameObject cannon = World.getOwnedObject(player, DwarfCannon.IDENTIFIER);
                 if (cannon != null) {
                     addCannonReclaim(player.getUserId(), Arrays.stream(DwarfCannon.ORNAMENT_CANNON_OBJECTS).anyMatch(e -> e == cannon.id));
+                }
+                Duel duel = player.getDuel();
+                if (duel.stage >= 3) {
+                    duel.handleDraw();
                 }
                 player.forceLogout();
             }
