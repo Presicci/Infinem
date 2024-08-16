@@ -813,12 +813,6 @@ public class PacketSender {
                 addByte(unreadPMs);
         write(out);*/
     }
-    //TODO: 184 Revision Fix Custom Packet
-    public void sendDiscordPresence(String discordStatus) {
-        /*OutBuffer out = new OutBuffer(2 + Protocol.strLen(discordStatus)).sendVarShortPacket(94)
-                .addString(discordStatus);
-        write(out);*/
-    }
 
     //TODO: 184 Revision Fix Custom Packet
     public void sendDropTable(String name, int petId, int petAverage, List<Integer[]> drops) {

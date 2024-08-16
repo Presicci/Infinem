@@ -1253,7 +1253,6 @@ public class Player extends PlayerAttributes {
          */
         sendMessage("Welcome to " + World.type.getWorldName() + "!" + (" Have fun!"));
 
-        packetSender.sendDiscordPresence("Idle");
         if(World.weekendExpBoost)
             player.sendMessage(Color.COOL_BLUE.wrap("The 25% experience weekend boost is currently active!"));
 
@@ -1428,12 +1427,10 @@ public class Player extends PlayerAttributes {
             PartnerSlayer.removePartner(this);
         }
         logoutStage = 1;
-        packetSender.sendDiscordPresence("In Lobby");
         packetSender.sendLogout();
     }
 
     private void attemptIdleLogout() {
-        System.err.println("IDLE LOGOUT");
         if(combat.isDead() || combat.isDefending(17)) {
             return;
         }
@@ -1445,13 +1442,11 @@ public class Player extends PlayerAttributes {
         if(logoutListener != null && logoutListener.attemptAction != null && !logoutListener.attemptAction.allow(this))
             return;
         logoutStage = 1;
-        packetSender.sendDiscordPresence("In Lobby");
         packetSender.sendLogout();
     }
 
     public void forceLogout() {
         logoutStage = -1;
-        packetSender.sendDiscordPresence("In Lobby");
         packetSender.sendLogout();
     }
 

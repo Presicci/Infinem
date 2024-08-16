@@ -66,7 +66,6 @@ public class Wilderness {
         }*/
 
         players.add(player);
-        player.getPacketSender().sendDiscordPresence("Wilderness");
         player.attackPlayerListener = Wilderness::allowAttack;
         player.attackNpcListener = Wilderness::allowNPCAttack;
         RiskProtection.monitorRiskProtection(player);
@@ -112,7 +111,6 @@ public class Wilderness {
             player.insideWildernessAgilityCourse = false;
             player.getCombat().resetKillers(); //important
             //TODO: - clear hits???????????????
-            player.getPacketSender().sendDiscordPresence("Idle");
             Config.SPECIAL_ORB_STATE.set(player, 2);
             if(player.getBountyHunter().returnTicks == 0)
                 player.closeInterface(InterfaceType.WILDERNESS_OVERLAY);
