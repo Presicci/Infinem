@@ -8,6 +8,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.stat.StatType;
 
 public class Pickables {
 
@@ -46,6 +47,7 @@ public class Pickables {
                 }
                 player.getInventory().add(itemId, 1);
                 player.sendMessage("You pick some " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
+                player.getStats().addXp(StatType.Farming, 1, false);
                 if(Random.rollDie(6, 1))
                     remove(obj);
                 player.unlock();

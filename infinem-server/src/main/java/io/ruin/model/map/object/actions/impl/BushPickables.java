@@ -5,6 +5,7 @@ import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 
 /**
@@ -43,6 +44,7 @@ public class BushPickables {
                 event.delay(1);
                 player.getInventory().add(itemId, 1);
                 player.sendMessage("You pick " + (this == PINEAPPLE || this == PINEAPPLE_APE ? "a" : "some") + " " + ItemDefinition.get(itemId).name.toLowerCase() + ".");
+                player.getStats().addXp(StatType.Farming, 1, false);
                 if (this == PINEAPPLE)
                     player.getTaskManager().doLookupByUUID(393);    // Pick a Pineapple on Karamja
                 changeObject(obj);
