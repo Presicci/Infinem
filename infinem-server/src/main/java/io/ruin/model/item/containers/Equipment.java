@@ -16,6 +16,7 @@ import io.ruin.model.item.actions.impl.chargable.Blowpipe;
 import io.ruin.model.skills.construction.actions.CombatRoom;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
+import io.ruin.utility.Misc;
 
 import java.util.Map;
 import java.util.function.Predicate;
@@ -41,9 +42,16 @@ public class Equipment extends ItemContainer {
                 int statId = req >> 8;
                 int lvl = req & 0xff;
                 Stat stat = player.getStats().get(statId);
-                if(stat.fixedLevel < lvl) {
-                    player.sendMessage("You need " + StatType.get(statId).descriptiveName + " level of " + lvl + " to equip this item.");
-                    return;
+                if (lvl > 99) {
+                    if (!stat.hasVirtualLevel(lvl)) {
+                        player.sendMessage("You need a virtual " + StatType.get(statId).name() + " level of " + lvl + " (" + Misc.abbreviateItemQuantity(Stat.getVirtualExperience(lvl)) + " xp) to equip this item.");
+                        return;
+                    }
+                } else {
+                    if (stat.fixedLevel < lvl) {
+                        player.sendMessage("You need " + StatType.get(statId).descriptiveName + " level of " + lvl + " to equip this item.");
+                        return;
+                    }
                 }
             }
         }
