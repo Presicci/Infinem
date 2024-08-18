@@ -20,6 +20,10 @@ public class FishingSkillCape {
     static {
         ItemAction.registerInventory(CAPE, "Fishing Guild", (player, item) -> teleportToFishingGuild(player));
         ItemAction.registerEquipment(CAPE, "Fishing Guild", (player, item) -> teleportToFishingGuild(player));
+        ItemAction.registerInventory(CAPE, "Otto's Grotto", (player, item) -> teleportToOttosGrotto(player));
+        ItemAction.registerEquipment(CAPE, "Otto's Grotto", (player, item) -> teleportToOttosGrotto(player));
+        ItemAction.registerInventory(TRIMMED_CAPE, "Fishing Guild", (player, item) -> teleportToFishingGuild(player));
+        ItemAction.registerEquipment(TRIMMED_CAPE, "Fishing Guild", (player, item) -> teleportToFishingGuild(player));
         ItemAction.registerInventory(TRIMMED_CAPE, "Otto's Grotto", (player, item) -> teleportToOttosGrotto(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Otto's Grotto", (player, item) -> teleportToOttosGrotto(player));
     }
