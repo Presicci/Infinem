@@ -12,9 +12,15 @@ import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.item.containers.Inventory;
 import io.ruin.model.map.ground.GroundItem;
 
 public class MaxCapeVariants {
+
+    public static boolean isMaxCape(int capeId) {
+        ItemDefinition def = ItemDefinition.get(capeId);
+        return def != null && def.maxType;
+    }
 
     public static boolean isMaxCape(Item cape) {
         return cape != null && cape.getDef().maxType;
@@ -34,6 +40,14 @@ public class MaxCapeVariants {
     public static boolean wearing(Player player) {
         Item capeId = player.getEquipment().get(Equipment.SLOT_CAPE);
         return capeId != null && capeId.getDef().maxType;
+    }
+
+    public static boolean has(Player player) {
+        Inventory inventory = player.getInventory();
+        for (MaxCapes variant : MaxCapes.values()) {
+            if (inventory.contains(variant.newCapeId)) return true;
+        }
+        return inventory.contains(13342);
     }
 
     private static void remove(Player player, Item item) {
