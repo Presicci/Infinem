@@ -386,9 +386,9 @@ public enum Altars {
                 ItemObjectAction.register(TIARA, altar.altarObj, (player, item, obj) -> altar.createTiara(player, altar));
             }
 
-            if (altar.entranceObj > 0 && altar.altarObj != -1) {
+            /*if (altar.entranceObj > 0 && altar.altarObj != -1) {
                 ItemObjectAction.register(1379, altar.altarObj, (player, item, obj) -> imbueStaff(player, altar, obj));
-            }
+            }*/
 
             /**
              * Tiara binding & Rune combining
