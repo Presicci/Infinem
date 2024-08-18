@@ -31,7 +31,8 @@ public class DefenceSkillCape {
     public static void check(Player player) {
         if (player.getHp() <= player.getMaxHp() * 0.10 && !player.getCombat().isDead()) {
             Item cape = player.getEquipment().get(Equipment.SLOT_CAPE);
-            if (cape == null || cape.getId() != CAPE || cape.getId() != TRIMMED_CAPE)
+            if (cape == null
+                    || (cape.getId() != CAPE && cape.getId() != TRIMMED_CAPE))
                 return;
             if(ModernTeleport.teleport(player, 2026, 3576, 0)) {
                 player.sendFilteredMessage("Your cape saves you.");
