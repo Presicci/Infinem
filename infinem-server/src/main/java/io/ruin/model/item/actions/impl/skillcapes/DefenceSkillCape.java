@@ -1,5 +1,6 @@
 package io.ruin.model.item.actions.impl.skillcapes;
 
+import io.ruin.model.content.tasksystem.areas.AreaReward;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerBoolean;
 import io.ruin.model.item.Item;
@@ -45,7 +46,7 @@ public class DefenceSkillCape {
             if (cape == null
                     || (cape.getId() != CAPE && cape.getId() != TRIMMED_CAPE && cape.getId() != MASTER_CAPE))
                 return;
-            Bounds teleportBounds = player.getRespawnPoint().getBounds();
+            Bounds teleportBounds = PlayerBoolean.ROL_ARDY.has(player) ? MagicTeleportBounds.ARDOUGNE.getBounds() : player.getRespawnPoint().getBounds();
             if (ModernTeleport.teleport(player, teleportBounds)) {
                 player.sendFilteredMessage("Your cape saves you.");
             }
@@ -58,6 +59,9 @@ public class DefenceSkillCape {
         else player.sendMessage("Your defence cape will " + Color.RED.wrap("no longer") + " act as a ring of life.");
     }
     private static void defenceRespawn(Player player) {
-        player.sendMessage("The cape will only see you safely to home.");
+        if (!AreaReward.ARDOUGNE_RING_OF_LIFE.checkReward(player, "toggle the teleport to Ardougne.")) return;
+        boolean status = PlayerBoolean.ROL_ARDY.toggle(player);
+        if (status) player.sendMessage("Your defence cape will now teleport you to Ardougne.");
+        else player.sendMessage("Your defence cape will now teleport you to your respawn point.");
     }
 }
