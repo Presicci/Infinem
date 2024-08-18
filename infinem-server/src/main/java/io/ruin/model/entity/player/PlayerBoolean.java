@@ -14,7 +14,8 @@ public enum PlayerBoolean {
     JAD_METAMORPH,
     SIRE_METAMORPH,
     OLM_METAMORPH,
-    ROW_DISABLED;
+    ROW_DISABLED,
+    DEFENCE_CAPE;
 
     /**
      * Checks the boolean value for given player.

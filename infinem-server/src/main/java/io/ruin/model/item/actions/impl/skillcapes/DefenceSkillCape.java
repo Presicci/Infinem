@@ -1,11 +1,13 @@
 package io.ruin.model.item.actions.impl.skillcapes;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerBoolean;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 import io.ruin.model.stat.StatType;
+import io.ruin.utility.Color;
 
 /*
  * @project Kronos
@@ -36,6 +38,7 @@ public class DefenceSkillCape {
 
     public static void check(Player player) {
         if (player.getHp() <= player.getMaxHp() * 0.10 && !player.getCombat().isDead()) {
+            if (!PlayerBoolean.DEFENCE_CAPE.has(player)) return;
             Item cape = player.getEquipment().get(Equipment.SLOT_CAPE);
             if (cape == null
                     || (cape.getId() != CAPE && cape.getId() != TRIMMED_CAPE && cape.getId() != MASTER_CAPE))
@@ -47,7 +50,9 @@ public class DefenceSkillCape {
     }
 
     private static void defenceToggle(Player player) {
-        player.sendMessage("The cape doesn't wish to see you harmed and will remain active always.");
+        boolean status = PlayerBoolean.DEFENCE_CAPE.toggle(player);
+        if (status) player.sendMessage("Your defence cape will now act as a ring of life.");
+        else player.sendMessage("Your defence cape will " + Color.RED.wrap("no longer") + " act as a ring of life.");
     }
     private static void defenceRespawn(Player player) {
         player.sendMessage("The cape will only see you safely to home.");
