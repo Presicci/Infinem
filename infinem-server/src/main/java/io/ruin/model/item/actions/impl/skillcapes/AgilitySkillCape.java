@@ -57,5 +57,6 @@ public class AgilitySkillCape {
     static {
         ItemAction.registerInventory(9771, "Stamina Boost", (player, item) -> staminaBoost(player));
         ItemAction.registerInventory(9772, "Stamina Boost", (player, item) -> staminaBoost(player));
+        ItemAction.registerInventory(32006, "Stamina Boost", (player, item) -> staminaBoost(player));
     }
 }

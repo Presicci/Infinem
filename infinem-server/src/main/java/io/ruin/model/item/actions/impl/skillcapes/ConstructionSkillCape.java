@@ -17,6 +17,7 @@ import io.ruin.model.stat.StatType;
 public class ConstructionSkillCape {
     private static final int CAPE = StatType.Construction.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Construction.trimmedCapeId;
+    private static final int MASTER_CAPE = StatType.Construction.masterCapeId;
 
     static {
         ItemAction.registerInventory(CAPE, "Teleport", (player, item) -> selectTeleport(player));
@@ -27,6 +28,10 @@ public class ConstructionSkillCape {
         ItemAction.registerEquipment(TRIMMED_CAPE, "Teleport", (player, item) -> selectTeleport(player));
         ItemAction.registerInventory(TRIMMED_CAPE, "Tele to POH", (player, item) -> teleport(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Tele to POH", (player, item) -> teleport(player));
+        ItemAction.registerInventory(MASTER_CAPE, "Teleport", (player, item) -> selectTeleport(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "Teleport", (player, item) -> selectTeleport(player));
+        ItemAction.registerInventory(MASTER_CAPE, "Tele to POH", (player, item) -> teleport(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "Tele to POH", (player, item) -> teleport(player));
     }
 
     public static void selectTeleport(Player player) {

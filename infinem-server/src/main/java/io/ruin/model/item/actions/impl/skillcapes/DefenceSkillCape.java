@@ -15,6 +15,7 @@ import io.ruin.model.stat.StatType;
 public class DefenceSkillCape {
     private static final int CAPE = StatType.Defence.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Defence.trimmedCapeId;
+    private static final int MASTER_CAPE = StatType.Defence.masterCapeId;
 
     static {
         ItemAction.registerInventory(CAPE, "Toggle Effect", (player, item) -> defenceToggle(player));
@@ -26,13 +27,18 @@ public class DefenceSkillCape {
         ItemAction.registerInventory(TRIMMED_CAPE, "Toggle Respawn", (player, item) -> defenceRespawn(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Toggle Effect", (player, item) -> defenceToggle(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Toggle Respawn", (player, item) -> defenceRespawn(player));
+
+        ItemAction.registerInventory(MASTER_CAPE, "Toggle Effect", (player, item) -> defenceToggle(player));
+        ItemAction.registerInventory(MASTER_CAPE, "Toggle Respawn", (player, item) -> defenceRespawn(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "Toggle Effect", (player, item) -> defenceToggle(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "Toggle Respawn", (player, item) -> defenceRespawn(player));
     }
 
     public static void check(Player player) {
         if (player.getHp() <= player.getMaxHp() * 0.10 && !player.getCombat().isDead()) {
             Item cape = player.getEquipment().get(Equipment.SLOT_CAPE);
             if (cape == null
-                    || (cape.getId() != CAPE && cape.getId() != TRIMMED_CAPE))
+                    || (cape.getId() != CAPE && cape.getId() != TRIMMED_CAPE && cape.getId() != MASTER_CAPE))
                 return;
             if(ModernTeleport.teleport(player, 2026, 3576, 0)) {
                 player.sendFilteredMessage("Your cape saves you.");

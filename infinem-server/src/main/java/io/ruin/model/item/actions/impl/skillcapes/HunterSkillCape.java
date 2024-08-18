@@ -15,12 +15,15 @@ import io.ruin.model.stat.StatType;
 public class HunterSkillCape {
     private static final int CAPE = StatType.Hunter.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Hunter.trimmedCapeId;
+    private static final int MASTER_CAPE = StatType.Hunter.masterCapeId;
 
     static {
         ItemAction.registerInventory(CAPE, "Teleport", (player, item) -> teleport(player));
         ItemAction.registerEquipment(CAPE, "Teleport", (player, item) -> teleport(player));
         ItemAction.registerInventory(TRIMMED_CAPE, "Teleport", (player, item) -> teleport(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerInventory(MASTER_CAPE, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "Teleport", (player, item) -> teleport(player));
     }
 
     public static void teleport(Player player) {

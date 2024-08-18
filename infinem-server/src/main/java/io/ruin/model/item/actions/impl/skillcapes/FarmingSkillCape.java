@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl.skillcapes;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Position;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
@@ -19,7 +20,7 @@ public class FarmingSkillCape {
 
     public static boolean wearingFarmingCape(Player player) {
         int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        return cape == CAPE || cape == TRIMMED_CAPE || cape == MASTER_CAPE || cape == 13342;
+        return cape == CAPE || cape == TRIMMED_CAPE || cape == MASTER_CAPE || MaxCapeVariants.isMaxCape(cape);
     }
 
     public static void teleport(Player player) {
@@ -27,9 +28,11 @@ public class FarmingSkillCape {
     }
 
     static {
-        ItemAction.registerInventory(9810, "Teleport", (player, item) -> teleport(player));
-        ItemAction.registerInventory(9811, "Teleport", (player, item) -> teleport(player));
-        ItemAction.registerEquipment(9810, "Teleport", (player, item) -> teleport(player));
-        ItemAction.registerEquipment(9811, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerInventory(CAPE, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerInventory(CAPE, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerEquipment(TRIMMED_CAPE, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerEquipment(TRIMMED_CAPE, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "Teleport", (player, item) -> teleport(player));
     }
 }

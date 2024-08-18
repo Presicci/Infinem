@@ -16,6 +16,7 @@ import io.ruin.model.stat.StatType;
 public class FishingSkillCape {
     private static final int CAPE = StatType.Fishing.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Fishing.trimmedCapeId;
+    private static final int MASTER_CAPE = StatType.Fishing.masterCapeId;
 
     static {
         ItemAction.registerInventory(CAPE, "Fishing Guild", (player, item) -> teleportToFishingGuild(player));
@@ -26,6 +27,10 @@ public class FishingSkillCape {
         ItemAction.registerEquipment(TRIMMED_CAPE, "Fishing Guild", (player, item) -> teleportToFishingGuild(player));
         ItemAction.registerInventory(TRIMMED_CAPE, "Otto's Grotto", (player, item) -> teleportToOttosGrotto(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Otto's Grotto", (player, item) -> teleportToOttosGrotto(player));
+        ItemAction.registerInventory(MASTER_CAPE, "Fishing Guild", (player, item) -> teleportToFishingGuild(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "Fishing Guild", (player, item) -> teleportToFishingGuild(player));
+        ItemAction.registerInventory(MASTER_CAPE, "Otto's Grotto", (player, item) -> teleportToOttosGrotto(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "Otto's Grotto", (player, item) -> teleportToOttosGrotto(player));
     }
 
     public static void teleport(Player player) {

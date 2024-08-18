@@ -14,6 +14,7 @@ public class FletchingSkillCape {
 
     private static final int CAPE = StatType.Fletching.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Fletching.trimmedCapeId;
+    private static final int MASTER_CAPE = StatType.Fletching.masterCapeId;
 
     public static void search(Player player) {
         if (player.getInventory().hasFreeSlots(1) && !player.getInventory().contains(MITHRIL_GRAPPLE)) {
@@ -33,5 +34,7 @@ public class FletchingSkillCape {
         ItemAction.registerEquipment(CAPE, "Search", (player, item) -> search(player));
         ItemAction.registerInventory(TRIMMED_CAPE, "Search", (player, item) -> search(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Search", (player, item) -> search(player));
+        ItemAction.registerInventory(MASTER_CAPE, "Search", (player, item) -> search(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "Search", (player, item) -> search(player));
     }
 }

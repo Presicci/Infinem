@@ -14,12 +14,15 @@ import io.ruin.model.stat.StatType;
 public class StrengthSkillCape {
     private static final int CAPE = StatType.Strength.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Strength.trimmedCapeId;
+    private static final int MASTER_CAPE = StatType.Strength.masterCapeId;
 
     static {
         ItemAction.registerInventory(CAPE, "Teleport", (player, item) -> teleport(player));
         ItemAction.registerEquipment(CAPE, "Warriors' Guild", (player, item) -> teleport(player));
         ItemAction.registerInventory(TRIMMED_CAPE, "Teleport", (player, item) -> teleport(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Warriors' Guild", (player, item) -> teleport(player));
+        ItemAction.registerInventory(MASTER_CAPE, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "Warriors' Guild", (player, item) -> teleport(player));
     }
 
     public static void teleport(Player player) {

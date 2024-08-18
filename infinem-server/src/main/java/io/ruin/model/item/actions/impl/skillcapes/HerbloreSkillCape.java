@@ -2,6 +2,7 @@ package io.ruin.model.item.actions.impl.skillcapes;
 
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.stat.StatType;
 
@@ -21,6 +22,8 @@ public class HerbloreSkillCape {
         ItemAction.registerEquipment(CAPE, "Search", (player, item) -> search(player));
         ItemAction.registerInventory(TRIMMED_CAPE, "Search", (player, item) -> search(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Search", (player, item) -> search(player));
+        ItemAction.registerInventory(MASTER_CAPE, "Search", (player, item) -> search(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "Search", (player, item) -> search(player));
     }
 
     public static void search(Player player) {
@@ -34,6 +37,6 @@ public class HerbloreSkillCape {
 
     public static boolean wearingHerbloreCape(Player player) {
         int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        return cape == CAPE || cape == TRIMMED_CAPE || cape == 13342 || cape == MASTER_CAPE;
+        return cape == CAPE || cape == TRIMMED_CAPE || cape == MASTER_CAPE || MaxCapeVariants.isMaxCape(cape);
     }
 }

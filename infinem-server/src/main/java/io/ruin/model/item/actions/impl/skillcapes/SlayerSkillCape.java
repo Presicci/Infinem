@@ -1,6 +1,7 @@
 package io.ruin.model.item.actions.impl.skillcapes;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.actions.impl.MaxCapeVariants;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.stat.StatType;
 
@@ -16,6 +17,6 @@ public class SlayerSkillCape {
 
     public static boolean wearingSlayerCape(Player player) {
         int cape = player.getEquipment().getId(Equipment.SLOT_CAPE);
-        return cape == CAPE || cape == TRIMMED_CAPE || cape == 13342 || cape == MASTER_CAPE;
+        return cape == CAPE || cape == TRIMMED_CAPE || cape == MASTER_CAPE || MaxCapeVariants.isMaxCape(cape);
     }
 }

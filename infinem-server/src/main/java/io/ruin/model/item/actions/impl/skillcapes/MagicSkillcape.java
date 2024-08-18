@@ -17,6 +17,7 @@ import io.ruin.model.stat.StatType;
 public class MagicSkillcape {
     private static final int CAPE = StatType.Magic.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Magic.trimmedCapeId;
+    private static final int MASTER_CAPE = StatType.Magic.masterCapeId;
     private static final String KEY = "MAGIC_CAPE";
 
     static {
@@ -28,6 +29,10 @@ public class MagicSkillcape {
         ItemAction.registerEquipment(TRIMMED_CAPE, "spellbook", (player, item) -> swapSelection(player));
         ItemAction.registerInventory(TRIMMED_CAPE, "check", (player, item) -> check(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "check", (player, item) -> check(player));
+        ItemAction.registerInventory(MASTER_CAPE, "spellbook", (player, item) -> swapSelection(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "spellbook", (player, item) -> swapSelection(player));
+        ItemAction.registerInventory(MASTER_CAPE, "check", (player, item) -> check(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "check", (player, item) -> check(player));
         DailyResetListener.register(player -> player.removeAttribute(KEY));
     }
 

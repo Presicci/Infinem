@@ -14,12 +14,15 @@ import io.ruin.model.map.Bounds;
 public class CraftingSkillCape {
     private static final int CAPE = StatType.Crafting.regularCapeId;
     private static final int TRIMMED_CAPE = StatType.Crafting.trimmedCapeId;
+    private static final int MASTER_CAPE = StatType.Crafting.masterCapeId;
 
     static {
         ItemAction.registerInventory(CAPE, "Teleport", (player, item) -> teleport(player));
         ItemAction.registerEquipment(CAPE, "Teleport", (player, item) -> teleport(player));
         ItemAction.registerInventory(TRIMMED_CAPE, "Teleport", (player, item) -> teleport(player));
         ItemAction.registerEquipment(TRIMMED_CAPE, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerInventory(MASTER_CAPE, "Teleport", (player, item) -> teleport(player));
+        ItemAction.registerEquipment(MASTER_CAPE, "Teleport", (player, item) -> teleport(player));
     }
 
     public static void teleport(Player player) {
