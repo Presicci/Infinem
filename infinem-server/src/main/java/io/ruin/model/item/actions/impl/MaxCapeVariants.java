@@ -16,6 +16,10 @@ import io.ruin.model.map.ground.GroundItem;
 
 public class MaxCapeVariants {
 
+    public static boolean isMaxCape(Item cape) {
+        return cape != null && cape.getDef().maxType;
+    }
+
     public static void check(Player player) {
         if(unlocked(player))
             return;
