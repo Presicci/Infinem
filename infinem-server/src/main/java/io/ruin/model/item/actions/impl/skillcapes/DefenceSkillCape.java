@@ -5,6 +5,8 @@ import io.ruin.model.entity.player.PlayerBoolean;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.containers.Equipment;
+import io.ruin.model.map.Bounds;
+import io.ruin.model.skills.magic.MagicTeleportBounds;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 import io.ruin.model.stat.StatType;
 import io.ruin.utility.Color;
@@ -43,7 +45,8 @@ public class DefenceSkillCape {
             if (cape == null
                     || (cape.getId() != CAPE && cape.getId() != TRIMMED_CAPE && cape.getId() != MASTER_CAPE))
                 return;
-            if(ModernTeleport.teleport(player, 2026, 3576, 0)) {
+            Bounds teleportBounds = player.getRespawnPoint().getBounds();
+            if (ModernTeleport.teleport(player, teleportBounds)) {
                 player.sendFilteredMessage("Your cape saves you.");
             }
         }
