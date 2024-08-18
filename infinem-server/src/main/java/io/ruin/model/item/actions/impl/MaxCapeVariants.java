@@ -14,6 +14,10 @@ import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.containers.Inventory;
 import io.ruin.model.map.ground.GroundItem;
+import io.ruin.model.skills.runecrafting.Tiara;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MaxCapeVariants {
 
@@ -89,6 +93,16 @@ public class MaxCapeVariants {
             this.secondaryId = secondaryId;
             this.newHoodId = newHoodId;
             this.newCapeId = newCapeId;
+            Tiara.registerSkillcape(newCapeId);
+        }
+
+        public static List<Integer> getCapeIds() {
+            List<Integer> capeIds = new ArrayList<>();
+            for (MaxCapes cape : values()) {
+                capeIds.add(cape.newCapeId);
+            }
+            capeIds.add(13342);
+            return capeIds;
         }
     }
 

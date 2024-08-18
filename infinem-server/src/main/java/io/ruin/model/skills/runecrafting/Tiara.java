@@ -2,9 +2,15 @@ package io.ruin.model.skills.runecrafting;
 
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Items;
+import io.ruin.model.item.actions.impl.MaxCapeVariants;
+import io.ruin.model.item.actions.impl.skillcapes.MaxCape;
 import io.ruin.model.item.containers.equipment.EquipAction;
 import io.ruin.model.item.containers.equipment.UnequipAction;
+import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Mrbennjerry - https://github.com/Presicci
@@ -28,6 +34,15 @@ public enum Tiara {
     private final int itemId;
     private final Config config;
 
+    public static void registerSkillcape(int capeId) {
+        EquipAction.register(capeId, player -> {
+            for (Tiara tiara : values()) tiara.config.set(player, 1);
+        });
+        UnequipAction.register(capeId, player -> {
+            for (Tiara tiara : values()) tiara.config.set(player, 0);
+        });
+    }
+
     static {
         for (Tiara tiara : values()) {
             EquipAction.register(tiara.itemId, (player -> {
@@ -36,6 +51,9 @@ public enum Tiara {
             UnequipAction.register(tiara.itemId, (player) -> {
                 tiara.config.set(player, 0);
             });
+        }
+        for (int capeId : Arrays.asList(StatType.Runecrafting.regularCapeId, StatType.Runecrafting.trimmedCapeId, StatType.Runecrafting.masterCapeId, 13342)) {
+            registerSkillcape(capeId);
         }
     }
 }
