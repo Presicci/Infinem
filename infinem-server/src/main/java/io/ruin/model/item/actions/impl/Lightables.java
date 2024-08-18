@@ -8,6 +8,7 @@ import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.map.MapArea;
 import io.ruin.model.skills.Tool;
+import io.ruin.model.stat.StatType;
 import lombok.AllArgsConstructor;
 
 /**
@@ -27,9 +28,9 @@ public enum Lightables {
     SAPPHIRE_LANTERN(Items.SAPPHIRE_LANTERN_2, Items.SAPPHIRE_LANTERN_3),
     EMERALD_LANTERN(Items.EMERALD_LANTERN, Items.EMERALD_LANTERN_2),
     MINING_HELMET(Items.MINING_HELMET_2, Items.MINING_HELMET),
-    FIREMAKING_CAPE(-1, Items.FIREMAKING_CAPE),
-    FIREMAKING_CAPE_T(-1, Items.FIREMAKING_CAPE_T),
-    FIREMAKING_MASTER_CAPE(-1, 30244),
+    FIREMAKING_CAPE(-1, StatType.Firemaking.regularCapeId),
+    FIREMAKING_CAPE_T(-1, StatType.Firemaking.trimmedCapeId),
+    FIREMAKING_MASTER_CAPE(-1, StatType.Firemaking.masterCapeId),
     MAX_CAPE(-1, Items.MAX_CAPE_3),
     KANDARIN_HEADGEAR_1(-1, Items.KANDARIN_HEADGEAR_1),
     KANDARIN_HEADGEAR_2(-1, Items.KANDARIN_HEADGEAR_2),
@@ -63,6 +64,8 @@ public enum Lightables {
                 return true;
             }
         }
+        if (MaxCapeVariants.has(player) || MaxCapeVariants.wearing(player))
+            return true;
         if (MapArea.LUMBRIDGE_SWAMP_CAVE.hasFirePitInArea(player) || MapArea.CAVE_OF_HORROR.hasFirePitInArea(player) || MapArea.MOLE_LAIR.hasFirePitInArea(player))
             return true;
         return false;
