@@ -60,10 +60,6 @@ public enum SkillLamp {
             h.actions[0] = (SlotAction) (player, slot) -> {
                 SkillLamp skill = SkillLamp.values()[slot];
                 String skillName = StringUtils.getFormattedEnumName(skill);
-                if (skill.combat) {
-                    player.sendMessage(Color.DARK_RED.wrap("You can't add experience to a combat stat!"));
-                    return;
-                }
                 if (skill.disabled) {
                     player.sendMessage(Color.DARK_RED.wrap(skillName + " is currently disabled!"));
                     return;
