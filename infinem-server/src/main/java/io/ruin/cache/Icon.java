@@ -175,16 +175,8 @@ public enum Icon {
      * 252 Piety
      * 253 Augury
      * 254 Red square
-     * 255 Orange square
-     * 256 Yellow square
-     * 257 Green square
-     * 258 Blue square
-     * 259 Purple square
-     * 260 Pink square
-     * 261 Grey square
+     * ...
      * 262 Red magic
-     * 263 Orange magic
-     * 264 Yellow magic
      * ...
      * 270 Red thieving
      * ...
@@ -220,10 +212,11 @@ public enum Icon {
     INFO(15),
     RED_STAR(30),
     GOLD_STAR(32),
-    SILVER_STAR(31),
+    CROSSED_SWORDS(31),
     SKULL(9),
     PET(66),
-    SKILL_ICON(208)
+    SKILL_ICON(208),
+    INVENTORY_BAG(232)
     ;
 
     public final int imgId;

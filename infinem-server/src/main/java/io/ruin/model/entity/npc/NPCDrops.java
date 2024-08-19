@@ -386,9 +386,9 @@ public class NPCDrops {
         else
             message += item.getDef().descriptiveName;
         if (item.lootBroadcast != null) {
-            item.lootBroadcast.sendNews(pKiller, Icon.SILVER_STAR, "[Rare Drop] " + message + " from " + npc.getDef().descriptiveName + "!");
+            item.lootBroadcast.sendNews(pKiller, Icon.INVENTORY_BAG, "[Rare Drop] " + message + " from " + npc.getDef().descriptiveName + "!");
         } else {
-            Broadcast.WORLD.sendNews(pKiller, Icon.SILVER_STAR, "[Rare Drop] " + message + " from " + npc.getDef().descriptiveName + "!");
+            Broadcast.WORLD.sendNews(pKiller, Icon.INVENTORY_BAG, "[Rare Drop] " + message + " from " + npc.getDef().descriptiveName + "!");
         }
         RareDropEmbedMessage.sendDiscordMessage(message, npc.getDef().descriptiveName, item.getId());
     }
