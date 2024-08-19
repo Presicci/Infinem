@@ -3,6 +3,7 @@ package io.ruin.utility;
 import io.ruin.cache.Icon;
 import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.network.central.CentralClient;
 
 import java.util.function.BiConsumer;
@@ -13,9 +14,6 @@ public enum Broadcast {
     // Sent to everyone in the world.
     WORLD(Icon.BLUE_INFO_BADGE, (player, message) -> World.players.forEach(p -> {
         //If the player has toggle off announcement broadcasts don't send.
-        if (!p.broadcastAnnouncements && (message.contains("[Info]"))) {
-            return;
-        }
         if (!p.broadcastHotspot && (message.contains("[Hotspot]"))) {
             return;
         }
@@ -27,6 +25,9 @@ public enum Broadcast {
             return;
         }
         p.sendMessage(message);
+    })),
+    INFORMATION(Icon.INFO, (player, s) -> World.players.forEach(p -> {
+        if (Config.INFORMATION_BROADCASTS.get(player) == 1) p.sendMessage(s);
     })),
     // Sent to everyone in the world and as a notification.
     WORLD_NOTIFICATION(Icon.BLUE_INFO_BADGE, (player, message) -> World.players.forEach(p -> {
