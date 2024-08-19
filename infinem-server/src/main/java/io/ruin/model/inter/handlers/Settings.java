@@ -139,7 +139,8 @@ public class Settings {
                 player.integerInput("Set value threshold for alchemy warnings:", (i) ->
                         Config.ALCH_THRESHOLD.set(player, i))
         )),
-        MAP_KEY(8, 1, 209, Config.MAP_KEY_OPEN_BY_DEFAULT::toggle);
+        MAP_KEY(8, 1, 209, Config.MAP_KEY_OPEN_BY_DEFAULT::toggle),
+        BESTIARY_KC(8, 3, 211, Config.BESTIARY_KC::toggle);
 
         private final int menuIndex, childIndex, searchIndex;
         private final Consumer<Player> consumer;

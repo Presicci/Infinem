@@ -48,7 +48,9 @@ public class Bestiary {
         killCounts.put(bestiaryName, currentCount + amt);
         TabBestiary.attemptRefresh(player);
         Config.BESTIARY_KILLS.increment(player, 1);
-        player.sendMessage("You have now killed " + (currentCount + 1) + "<col=ff0000> " + bestiaryName + "s</col>.");
+        if (Config.BESTIARY_KC.get(player) == 1) {
+            player.sendMessage("You have now killed " + (currentCount + 1) + "<col=ff0000> " + bestiaryName + "s</col>.");
+        }
     }
 
     /**

@@ -178,6 +178,12 @@ public class Config {
     public static final Config ZOOMING_DISABLED = varpbit(6357, true);
 
     /**
+     * Infinem options
+     */
+    public static final Config MAP_KEY_OPEN_BY_DEFAULT = varpbit(10294, true).defaultValue(1);
+    public static final Config BESTIARY_KC = varpbit(3577, true);
+
+    /**
      * House options
      */
 
@@ -1191,11 +1197,6 @@ public class Config {
      * Bestiary
      */
     public static final Config BESTIARY_SORT = varpbit(9334, true);
-
-    /**
-     * Map Key
-     */
-    public static final Config MAP_KEY_OPEN_BY_DEFAULT = varpbit(10294, false).defaultValue(1);
 
 
     /**
