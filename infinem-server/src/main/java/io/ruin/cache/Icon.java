@@ -147,6 +147,62 @@ public enum Icon {
      * 227 Port sarim anchor
      * 228 Potion
      * 229 Chest
+     * 230 Orange fish
+     * 231 Staff
+     * 232 Inventory bag
+     * 233 Bow
+     * 234 Sara cape
+     * 235 Zammy cape
+     * 236 Guthix cape
+     * 237 I sara cape
+     * 238 I zammy cape
+     * 239 I guthix cape
+     * 240 Legends cape
+     * 241 Myths cape
+     * 242 Fire cape
+     * 243 Inferno cape
+     * 244 Max cape
+     * 245 Protect from magic
+     * 246 Protect from missiles
+     * 247 Protect from melee
+     * 248 Smite
+     * 249 Protect item
+     * 250 Redemption
+     * 251 Eagle eye
+     * 252 Piety
+     * 253 Augury
+     * 254 Red square
+     * 255 Orange square
+     * 256 Yellow square
+     * 257 Green square
+     * 258 Blue square
+     * 259 Purple square
+     * 260 Pink square
+     * 261 Grey square
+     * 262 Red magic
+     * 263 Orange magic
+     * 264 Yellow magic
+     * ...
+     * 270 Red thieving
+     * ...
+     * 278 Black hitpoints
+     * ...
+     * 286 Red book
+     * ...
+     * 294 Red boots
+     * ...
+     * 302 Red cross
+     * ...
+     * 310 Red quest
+     * ...
+     * 318 Red firemaking
+     * ...
+     * 326 White staff
+     * 327 Black staff
+     * 328 Gold warhammer
+     * 329 Smily
+     * 330 Abyssal sire pet
+     * ...pets
      * And theres more
      */
     RED_INFO_BADGE(83),
