@@ -173,13 +173,12 @@ public class StatList {
          */
         if (useMultiplier) {
             amount *= 7 + ((player.getRelicManager().getHighestTier() - 1) * 2);
+            amount *= getExperienceMultiplier(type);
+            amount *= getSkillingOutfitMultiplier(type);
+            double relicMulti = getRelicMultiplier(type);
+            amount *= relicMulti;
         }
 
-        amount *= getExperienceMultiplier(type);
-        amount *= getSkillingOutfitMultiplier(type);
-
-        double relicMulti = getRelicMultiplier(type);
-        amount *= relicMulti;
         double newXp = stat.experience + amount;
         if(newXp > Stat.MAX_XP)
             newXp = Stat.MAX_XP;
