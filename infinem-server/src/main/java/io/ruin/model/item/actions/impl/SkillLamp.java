@@ -50,6 +50,7 @@ public enum SkillLamp {
     static {
         for (int lamp : SKILL_LAMPS) {
             ItemAction.registerInventory(lamp, "rub", (player, item) -> {
+                player.getPacketSender().sendVarp(261, 1);
                 player.openInterface(InterfaceType.MAIN, Interface.SKILL_LAMP);
                 player.getPacketSender().sendString(Interface.SKILL_LAMP, 25, "Choose the stat you wish to be advanced!");
                 player.putTemporaryAttribute("LAMP", lamp);
