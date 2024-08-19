@@ -2,6 +2,9 @@ package io.ruin.cache;
 
 public enum Icon {
     /*
+     * sprite 423 has icons 0-49
+     *
+     * 0 Mod
      * 1 Admin
      * 2 Ironman
      * 3 Ultimate
@@ -220,6 +223,7 @@ public enum Icon {
     SILVER_STAR(31),
     SKULL(9),
     PET(66),
+    SKILL_ICON(208)
     ;
 
     public final int imgId;
