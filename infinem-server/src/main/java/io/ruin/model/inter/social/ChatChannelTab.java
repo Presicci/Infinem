@@ -1,4 +1,4 @@
-package io.ruin.model.inter.handlers;
+package io.ruin.model.inter.social;
 
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -7,7 +7,7 @@ import io.ruin.model.inter.actions.OptionAction;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.network.central.CentralSender;
 
-public class TabClanChat {
+public class ChatChannelTab {
 
     static {
         InterfaceHandler.register(Interface.CLAN_CHAT, h -> h.actions[20] = (SimpleAction) p -> p.openInterface(InterfaceType.MAIN, Interface.CLAN_CHAT_SETTINGS));
