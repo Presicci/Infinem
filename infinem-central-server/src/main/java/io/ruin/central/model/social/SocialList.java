@@ -22,7 +22,7 @@ public class SocialList extends SocialContainer {
     @ Expose public int privacy;
     @ Expose public ClanChat cc;
     private static final HashMap<String, SocialList> LOADED = new HashMap();
-    private static final File social_folder = new File("_saved/social/");
+    private static final File social_folder = new File("../data/social/");
 
     public static String capitalize(String s) {
         s = s.toLowerCase();

@@ -16,7 +16,7 @@ import java.util.List;
 public class UUIDBan {
 
     private static final List<String> banned_ips = Lists.newArrayList();
-    private static final File store = new File("E:/Projects/Runescape/Infinem/Data/Bans/uuid_mutes.txt");
+    private static final File store = new File("../data/bans/uuid_mutes.txt");
 
     static {
         try {

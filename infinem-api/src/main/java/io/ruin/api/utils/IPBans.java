@@ -18,7 +18,7 @@ import java.util.Map;
 public class IPBans {
 
     private static final Map<String, String> banned_ips = Maps.newHashMap();
-    private static final File store = new File("E:/Projects/Runescape/Infinem/Data/Bans/ip_bans.txt");
+    private static final File store = new File("../data/bans/ip_bans.txt");
 
     static {
         try {

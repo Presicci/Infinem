@@ -142,11 +142,11 @@ public class Player {
     }
 
     private static File getSaveFile(String username, World world) throws IOException {
-        File folder = new File(System.getProperty("user.home") + "/Desktop/Kronos/_saved/players/" + world.stage.name().toLowerCase() + "/" + world.type.name().toLowerCase());
+        File folder = new File("../data/players/" + world.stage.name().toLowerCase() + "/" + world.type.name().toLowerCase());
         if (!(folder.exists() || folder.mkdir() || folder.mkdirs())) {
             throw new IOException("Failed to make player saves folder for world: " + world.id + " (" + world.activity + ")");
         }
-        return new File(System.getProperty("user.home") + "/Desktop/Kronos/_saved/players/" + world.stage.name().toLowerCase() + "/" + world.type.name().toLowerCase() + "/" + username + ".json");
+        return new File("../data/players/" + world.stage.name().toLowerCase() + "/" + world.type.name().toLowerCase() + "/" + username + ".json");
     }
 }
 

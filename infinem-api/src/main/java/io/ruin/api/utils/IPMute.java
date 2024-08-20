@@ -16,7 +16,7 @@ import java.util.Map;
 public class IPMute {
 
     private static final Map<String, String> ip_mutes = Maps.newHashMap();
-    private static final File store = new File("E:/Projects/Runescape/Infinem/Data/Bans/ip_mutes.txt");
+    private static final File store = new File("../data/bans/ip_mutes.txt");
 
     static {
         try {
