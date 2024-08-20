@@ -147,8 +147,10 @@ public class WorldDecoder extends MessageDecoder<World> {
             ClanChat cc = player.getClanChat();
             if (settingId == 0) {
                 cc.enterRank = SocialRank.get(value, null);
+                cc.sendSettings(player);
             } else if (settingId == 1) {
                 cc.talkRank = SocialRank.get(value, null);
+                cc.sendSettings(player);
             } else {
                 cc.kickRank = SocialRank.get(value, SocialRank.CORPORAL);
                 cc.update(true);

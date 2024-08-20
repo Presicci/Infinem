@@ -37,7 +37,7 @@ public class ClanChat extends ClanContainer {
 
     private static final String[] settingsActions = {"Anyone", "Any friends", "Recruit+", "Corporal+", "Sergeant+", "Lieutenant+", "Captain+", "General+", "Only me"};
 
-    private void sendSettings(Player player) {
+    public void sendSettings(Player player) {
         sendNameSetting(player);
         sendEnterRank(player);
         sendTalkRank(player);
@@ -82,6 +82,7 @@ public class ClanChat extends ClanContainer {
             Player pMember = Server.getPlayer(member.name);
             if (pMember == null) continue;
             pMember.write(out);
+            if (this.owner.equalsIgnoreCase(pMember.name)) sendSettings(pMember);
         }
     }
 
