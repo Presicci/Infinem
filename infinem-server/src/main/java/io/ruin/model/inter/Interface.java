@@ -219,6 +219,8 @@ public class Interface {
 
     public static final int ITEMS_KEPT_ON_DEATH = 4;
 
+    public static final int SOCIAL_TAB = 707;
+
     public static final int CLAN_CHAT = 7;
 
     public static final int CLAN_CHAT_SETTINGS = 94;

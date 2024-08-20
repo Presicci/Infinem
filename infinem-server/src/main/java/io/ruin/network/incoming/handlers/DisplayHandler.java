@@ -105,7 +105,8 @@ public class DisplayHandler implements Incoming {
         ps.sendInterface(Interface.OPTIONS, 165, 19 + tabChildOffset, 1);
         ps.sendInterface(Interface.EMOTE, 165, 20 + tabChildOffset, 1);
         ps.sendInterface(Interface.MUSIC_PLAYER, 165, 21 + tabChildOffset, 1);
-        ps.sendInterface(Interface.CLAN_CHAT, 165, 15 + tabChildOffset, 1);
+        ps.sendInterface(Interface.SOCIAL_TAB, 165, 15 + tabChildOffset, 1);
+        ps.sendInterface(Interface.CLAN_CHAT, Interface.SOCIAL_TAB, 7, 1);
         ps.sendInterface(COMBAT_OPTIONS, 165, 8 + tabChildOffset, 1);
 
         /**
