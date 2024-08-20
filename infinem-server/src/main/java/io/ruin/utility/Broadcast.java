@@ -32,6 +32,9 @@ public enum Broadcast {
     SKILL(Icon.SKILL_ICON, (player, message) -> World.players.forEach(p -> {
         if (Config.SKILLING_BROADCASTS.get(player) == 1) p.sendMessage(message);
     })),
+    DROP(Icon.INVENTORY_BAG, (player, message) -> World.players.forEach(p -> {
+        if (Config.DROP_BROADCASTS.get(player) == 1) p.sendMessage(message);
+    })),
     // Sent to everyone in the world and as a notification.
     WORLD_NOTIFICATION(Icon.BLUE_INFO_BADGE, (player, message) -> World.players.forEach(p -> {
         p.sendMessage(message);

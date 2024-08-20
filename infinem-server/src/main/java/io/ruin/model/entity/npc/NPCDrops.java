@@ -385,11 +385,7 @@ public class NPCDrops {
             message += NumberUtils.formatNumber(amount) + " x " + item.getDef().name;
         else
             message += item.getDef().descriptiveName;
-        if (item.lootBroadcast != null) {
-            item.lootBroadcast.sendNews(pKiller, Icon.INVENTORY_BAG, "[Rare Drop] " + message + " from " + npc.getDef().descriptiveName + "!");
-        } else {
-            Broadcast.WORLD.sendNews(pKiller, Icon.INVENTORY_BAG, "[Rare Drop] " + message + " from " + npc.getDef().descriptiveName + "!");
-        }
+        Broadcast.DROP.sendNews(pKiller, Icon.INVENTORY_BAG, message + " from " + npc.getDef().descriptiveName + "!");
         RareDropEmbedMessage.sendDiscordMessage(message, npc.getDef().descriptiveName, item.getId());
     }
 
