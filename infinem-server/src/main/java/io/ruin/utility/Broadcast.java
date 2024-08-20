@@ -26,8 +26,11 @@ public enum Broadcast {
         }
         p.sendMessage(message);
     })),
-    INFORMATION(Icon.INFO, (player, s) -> World.players.forEach(p -> {
-        if (Config.INFORMATION_BROADCASTS.get(player) == 1) p.sendMessage(s);
+    INFORMATION(Icon.INFO, (player, message) -> World.players.forEach(p -> {
+        if (Config.INFORMATION_BROADCASTS.get(player) == 1) p.sendMessage(message);
+    })),
+    SKILL(Icon.SKILL_ICON, (player, message) -> World.players.forEach(p -> {
+        if (Config.SKILLING_BROADCASTS.get(player) == 1) p.sendMessage(message);
     })),
     // Sent to everyone in the world and as a notification.
     WORLD_NOTIFICATION(Icon.BLUE_INFO_BADGE, (player, message) -> World.players.forEach(p -> {

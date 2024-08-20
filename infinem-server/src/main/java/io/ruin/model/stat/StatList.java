@@ -187,7 +187,7 @@ public class StatList {
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILLMASTER, type.name());
         }
         if(newXp == Stat.MAX_XP && stat.experience < Stat.MAX_XP) {
-            Broadcast.GLOBAL.sendNews(Icon.SKILL_ICON, player.getName() + " has just reached 200 million experience in " + type.name() + "!");
+            Broadcast.SKILL.sendNews(Icon.SKILL_ICON, player.getName() + " has just reached 200 million experience in " + type.name() + "!");
             player.sendMessage("Congratulations, you have reached max experience in " + type.name() + "!");
         }
 
@@ -214,7 +214,7 @@ public class StatList {
         if(newLevel == 99) {
             player.sendMessage(Color.ORANGE_RED.tag() + "Congratulations on achieving level 99 in " + type.name() + "!");
             player.sendMessage(Color.ORANGE_RED.tag() + "You may now purchase a skillcape from Mac at home.");
-            Broadcast.GLOBAL.sendNews(player, Icon.SKILL_ICON, player.getName() + " has just achieved level 99 in " + type.name() + "!");
+            Broadcast.SKILL.sendNews(player, Icon.SKILL_ICON, player.getName() + " has just achieved level 99 in " + type.name() + "!");
             player.getTaskManager().doLookupByCategoryAndTrigger(TaskCategory.SKILL99, type.name());
         }
         if(statId <= 6)

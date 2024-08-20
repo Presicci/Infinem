@@ -141,7 +141,8 @@ public class Settings {
         )),
         MAP_KEY(8, 1, 209, Config.MAP_KEY_OPEN_BY_DEFAULT::toggle),
         BESTIARY_KC(8, 3, 211, Config.BESTIARY_KC::toggle),
-        INFO_BROADCAST(8, 5, 213, Config.INFORMATION_BROADCASTS::toggle);
+        INFO_BROADCAST(8, 5, 213, Config.INFORMATION_BROADCASTS::toggle),
+        SKILL_BROADCAST(8, 6, 214, Config.SKILLING_BROADCASTS::toggle);
 
         private final int menuIndex, childIndex, searchIndex;
         private final Consumer<Player> consumer;
