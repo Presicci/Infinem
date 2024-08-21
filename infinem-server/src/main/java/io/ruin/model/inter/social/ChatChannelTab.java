@@ -1,6 +1,7 @@
 package io.ruin.model.inter.social;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.AccessMasks;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -13,6 +14,7 @@ public class ChatChannelTab {
     private static void openSettings(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.CLAN_CHAT_SETTINGS);
         CentralSender.sendClanSettingUpdate(player.getUserId());
+        player.getPacketSender().sendAccessMask(94, 28, 0, 100, AccessMasks.ClickOp1, AccessMasks.ClickOp2, AccessMasks.ClickOp3, AccessMasks.ClickOp4, AccessMasks.ClickOp5, AccessMasks.ClickOp6, AccessMasks.ClickOp7);
     }
 
     static {
@@ -38,6 +40,7 @@ public class ChatChannelTab {
             h.actions[13] = (OptionAction) (player, option) -> CentralSender.sendClanSetting(player.getUserId(), 0, (option - 2));
             h.actions[16] = (OptionAction) (player, option) -> CentralSender.sendClanSetting(player.getUserId(), 1, (option - 2));
             h.actions[19] = (OptionAction) (player, option) -> CentralSender.sendClanSetting(player.getUserId(), 2, (option - 2));
+            h.actions[28] = (OptionAction) (player, option) -> player.sendMessage("Rank changing is not currently supported.");
         });
     }
 
