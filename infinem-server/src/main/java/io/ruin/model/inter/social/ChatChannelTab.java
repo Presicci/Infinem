@@ -1,5 +1,6 @@
 package io.ruin.model.inter.social;
 
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
@@ -9,8 +10,13 @@ import io.ruin.network.central.CentralSender;
 
 public class ChatChannelTab {
 
+    private static void openSettings(Player player) {
+        player.openInterface(InterfaceType.MAIN, Interface.CLAN_CHAT_SETTINGS);
+        CentralSender.sendClanSettingUpdate(player.getUserId());
+    }
+
     static {
-        InterfaceHandler.register(Interface.CLAN_CHAT, h -> h.actions[20] = (SimpleAction) p -> p.openInterface(InterfaceType.MAIN, Interface.CLAN_CHAT_SETTINGS));
+        InterfaceHandler.register(Interface.CLAN_CHAT, h -> h.actions[20] = (SimpleAction) ChatChannelTab::openSettings);
         InterfaceHandler.register(Interface.CLAN_CHAT_SETTINGS, h -> {
             h.actions[10] = (OptionAction) (player, option) -> {
                 if(option == 1) {

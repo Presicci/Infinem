@@ -101,6 +101,12 @@ public class CentralSender {
         write(out);
     }
 
+    public static void sendClanSettingUpdate(int userId) {
+        OutBuffer out = new OutBuffer(5).sendFixedPacket(18)
+                .addInt(userId);
+        write(out);
+    }
+
     public static void sendClanSetting(int userId, int settingId, int value) {
         OutBuffer out = new OutBuffer(7).sendFixedPacket(9)
                 .addInt(userId)

@@ -254,6 +254,15 @@ public class WorldDecoder extends MessageDecoder<World> {
             MACBan.requestBan(player.name, mac);
             return;
         }
+        if (opcode == 18) {
+            int userId = in.readInt();
+            Player player = Server.getPlayer(userId);
+            if (player == null) {
+                return;
+            }
+            ClanChat cc = player.getClanChat();
+            cc.update(true);
+        }
     }
 
     @Override
@@ -310,6 +319,9 @@ public class WorldDecoder extends MessageDecoder<World> {
             }
             case 17: {
                 return -1;
+            }
+            case 18: {
+                return 4;
             }
         }
         return -128;
