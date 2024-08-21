@@ -1956,4 +1956,8 @@ public class Player extends PlayerAttributes {
     }
 
     public List<NotificationInterface.Notification> queuedPopups = new ArrayList<>();
+
+    public boolean isFriendsWith(Player otherPlayer) {
+        return onlineFriendNames.contains(otherPlayer.name);
+    }
 }

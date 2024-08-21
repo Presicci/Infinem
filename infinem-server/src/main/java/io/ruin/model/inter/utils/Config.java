@@ -185,6 +185,7 @@ public class Config {
     public static final Config INFORMATION_BROADCASTS = varpbit(4499, true).defaultValue(1);
     public static final Config SKILLING_BROADCASTS = varpbit(4503, true).defaultValue(1);
     public static final Config DROP_BROADCASTS = varpbit(4507, true).defaultValue(1);
+    public static final Config FRIEND_BROADCASTS = varpbit(4511, true).defaultValue(1);
 
     /**
      * House options
