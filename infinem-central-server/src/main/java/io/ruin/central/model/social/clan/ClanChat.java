@@ -313,6 +313,7 @@ public class ClanChat extends ClanContainer {
         if (player != null && player.admin) {
             return SocialRank.ADMIN.id;
         }
+        if (player == null) return -1;
         SocialMember friend = this.parent.getFriend(player.name);
         return friend == null ? -1 : friend.rank.id;
     }
