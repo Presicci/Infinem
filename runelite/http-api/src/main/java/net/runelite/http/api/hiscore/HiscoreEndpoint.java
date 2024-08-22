@@ -35,7 +35,10 @@ public enum HiscoreEndpoint
 	NORMAL("Normal", "https://www.infinem.net/highscores/index.php?gamemode=regular&api=1"),
 	IRONMAN("Ironman", "https://www.infinem.net/highscores/index.php?gamemode=ironman&api=1"),
 	HARDCORE_IRONMAN("Hardcore Ironman", "https://www.infinem.net/highscores/index.php?gamemode=hardcore&api=1"),
-	ULTIMATE_IRONMAN("Ultimate Ironman", "https://www.infinem.net/highscores/index.php?gamemode=ultimate&api=1");
+	ULTIMATE_IRONMAN("Ultimate Ironman", "https://www.infinem.net/highscores/index.php?gamemode=ultimate&api=1"),
+	DEADMAN("Deadman", "https://services.runescape.com/m=hiscore_oldschool_deadman/index_lite.ws"),
+	LEAGUE("Leagues", "https://services.runescape.com/m=hiscore_oldschool_seasonal/index_lite.ws"),
+	TOURNAMENT("Tournament", "https://services.runescape.com/m=hiscore_oldschool_tournament/index_lite.ws");
 
 	private final String name;
 	private final HttpUrl hiscoreURL;
