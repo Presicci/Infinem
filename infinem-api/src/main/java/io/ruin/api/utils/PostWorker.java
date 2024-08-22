@@ -67,6 +67,7 @@ public class PostWorker {
                 String line;
                 while((line = br.readLine()) != null)
                     response.append(line);
+                ServerWrapper.log("Failed to post: " + con.getURL().toString());
                 return response.toString();
             }
         } catch(IOException e) {
