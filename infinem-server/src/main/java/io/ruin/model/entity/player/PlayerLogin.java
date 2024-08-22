@@ -4,6 +4,7 @@ import io.ruin.Server;
 import io.ruin.api.protocol.Response;
 import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.protocol.login.LoginRequest;
+import io.ruin.api.utils.XenPost;
 import io.ruin.data.impl.login_set;
 import io.ruin.model.World;
 import io.ruin.network.central.CentralClient;
@@ -13,14 +14,9 @@ import lombok.extern.slf4j.Slf4j;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.math.BigInteger;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Base64;
+import java.util.HashMap;
 
 @Slf4j
 public class PlayerLogin extends LoginRequest {
@@ -102,11 +98,10 @@ public class PlayerLogin extends LoginRequest {
 
     private int phpbbAuth() {
         try {
-            String urlString = "https://www.infinem.net/client_auth.php?auth_key="+AUTH_KEY+"&name="+info.name.toLowerCase().replace(" ","_")+"&pass="+encrypt("6YUYrFblfufvV0m9", "o3ZXgtKvts1YRYQT", info.password);
-            HttpURLConnection conn = (HttpURLConnection) new URL(urlString).openConnection();
-            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String line = in.readLine().trim();
-            return Integer.parseInt(line);
+            HashMap<Object, Object> map = new HashMap<Object, Object>();
+            map.put("name", info.name.toLowerCase().replace(" ","_"));
+            map.put("pass", encrypt("6YUYrFblfufvV0m9", "o3ZXgtKvts1YRYQT", info.password));
+            return Integer.parseInt(XenPost.post("login", map));
         } catch (Exception e) {
             return -1;
         }
