@@ -300,6 +300,7 @@ public class Wilderness {
         setLevels(new Bounds(3130, 3617, 3139, 3619, -1), 0); //Fernox enclave
         setLevels(new Bounds(3124, 3617, 3156, 3647, 1), 0); //Fernox enclave
         setLevels(new Bounds(3147, 3618, 3419, 3620, 0), 13); //Fernox enclave
+        setLevels(Bounds.fromRegion(12700), 0); //Fernox enclave underground
 
         /*ItemAction.registerInventory(30104, "open", (player, item) -> {
             Item reward = Random.get(RESOURCE_PACK_LOOT);
