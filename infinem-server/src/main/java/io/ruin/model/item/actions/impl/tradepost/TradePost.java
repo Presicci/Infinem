@@ -550,7 +550,6 @@ public class TradePost {
     }
 
     static {
-        NPCAction.register(2148, "history", (player, npc) -> player.getTradePost().openHistory());
         InterfaceHandler.register(Interface.TRADING_POST_INVENTORY, handler -> {
             handler.actions[0] = new InterfaceAction() {
                 public void handleClick(Player player, int option, int slot, int itemId) {
@@ -623,6 +622,7 @@ public class TradePost {
                 }
                 player.getTradePost().openViewOffers();
             }));
+            NPCAction.register(trader, "history", (player, npc) -> player.getTradePost().openHistory());
         }
         for (int objId : Arrays.asList(60000, 60001, 60002, 60003, 60004, 60005)) {
             ObjectAction.register(objId, "exchange", (player, obj) -> {
@@ -633,6 +633,8 @@ public class TradePost {
                 player.getTradePost().openViewOffers();
             });
             ObjectAction.register(objId, "item sets", (player, obj) -> ItemSet.open(player));
+            ObjectAction.register(objId, "history", (player, obj) -> player.getTradePost().openHistory());
+            ObjectAction.register(objId, "collect", (player, obj) -> TradePost.openCoffer(player));
         }
     }
 }
