@@ -27,5 +27,5 @@
   {"id": -1, "x": 3252, "y": 3423, "z": 0, "type": 10, "direction": 0},  // remove east varrock deadman chest
   {"id": -1, "x": 2794, "y": 5165, "z": 0, "type": 10, "direction": 0},  // remove sophanem deadman chest
   {"id": -1, "x": 3691, "y": 3469, "z": 0, "type": 10, "direction": 0},  // remove phatassmas deadman chest
-  {"id": -1, "x": 2669, "y": 2654, "z": 0, "type": 10, "direction": 0},  // remove void knight outpost deadman chest
+  {"id": -1, "x": 2669, "y": 2654, "z": 0, "type": 10, "direction": 0}  // remove void knight outpost deadman chest
 ]
