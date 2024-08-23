@@ -12,6 +12,7 @@ import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
+import io.ruin.model.item.actions.impl.skillcapes.SlayerSkillCape;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 
@@ -59,9 +60,6 @@ public enum Master {
         SlayerTaskDef def = master.randomTask(player);
         if (def == null)
             return;
-        Config.SLAYER_MASTER.set(player, configIndex);
-        Slayer.setTask(player, def.getCreatureUid());
-        if (this == KONAR) KonarData.assignLocation(player, def.getCreatureUid());
         int min = def.getMin();
         int max = def.getMax();
         // Handle task extensions
@@ -74,9 +72,43 @@ public enum Master {
                 }
             }
         }
-        int task_amt = Random.get(min, max);
-        Slayer.setTaskAmount(player, task_amt);
+        int taskAmt = Random.get(min, max);
+        if (SlayerSkillCape.wearingSlayerCape(player) && Random.rollDie(10)) {
+            int previous = Slayer.getTask(player);
+            SlayerTaskDef altDef = master.getTaskByCreatureUid(previous);
+            if (altDef == null) {
+                assignTask(player, def, taskAmt);
+                return;
+            }
+            int altMin = altDef.getMin();
+            int altMax = altDef.getMax();
+            // Handle last task extensions
+            for (Tuple<Integer, Config> creature : SlayerUnlock.multipliable) {
+                if (creature.first() == previous) {
+                    if (creature.second().get(player) != 0) {
+                        altMin = altDef.getMinExtended();
+                        altMax = altDef.getMaxExtended();
+                        break;
+                    }
+                }
+            }
+            int altAmt = Random.get(altMin, altMax);
+            player.dialogue(new OptionsDialogue("Choose a task:",
+                    new Option(taskAmt + " " + SlayerCreature.taskName(player, def.getCreatureUid()), () -> assignTask(player, def, taskAmt)),
+                    new Option(altAmt + " " + SlayerCreature.taskName(player, previous), () -> assignTask(player, altDef, altAmt))
+            ));
+            return;
+        }
+        assignTask(player, def, taskAmt);
+    }
+
+    private void assignTask(Player player, SlayerTaskDef def, int amt) {
+        Config.SLAYER_MASTER.set(player, configIndex);
+        Slayer.setTask(player, def.getCreatureUid());
+        Slayer.setTaskAmount(player, amt);
+        if (this == KONAR) KonarData.assignLocation(player, def.getCreatureUid());
         assignTaskToPartner(player);
+        taskDialogue(player);
     }
 
     private void assignTaskToPartner(Player player) {
@@ -113,8 +145,11 @@ public enum Master {
             return;
         }
         assignTask(player);
+    }
+
+    private void taskDialogue(Player player) {
         SlayerCreature task = SlayerCreature.lookup(Slayer.getTask(player));
-        left = Slayer.getTaskAmount(player);
+        int left = Slayer.getTaskAmount(player);
         boolean isKrystilia = this == KRYSTILIA;
         boolean isKonar = this == KONAR;
         if (task.equals(SlayerCreature.BOSSES)) {

@@ -101,6 +101,13 @@ public class SlayerMaster {
         return def;
     }
 
+    public SlayerTaskDef getTaskByCreatureUid(int uid) {
+        for (SlayerTaskDef task : defs) {
+            if (task.getCreatureUid() == uid) return task;
+        }
+        return null;
+    }
+
     /**
      * Returns a slayer master matching provided npcID.
      *

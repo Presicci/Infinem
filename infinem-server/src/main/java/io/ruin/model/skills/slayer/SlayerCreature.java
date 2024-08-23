@@ -548,7 +548,7 @@ public enum SlayerCreature {
     public static String taskName(Player player, int uid) {
         String result = "";
         int bossTask = Slayer.getBossTask(player);
-        if (bossTask != 0) {
+        if (bossTask != 0 && uid == 98) {
             result = EnumDefinition.get(1174).getValuesAsStrings().get(bossTask);
         } else {
             result = EnumDefinition.get(693).getValuesAsStrings().get(uid);
