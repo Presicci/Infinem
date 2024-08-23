@@ -16,6 +16,7 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.impl.ItemSet;
+import io.ruin.model.map.object.actions.ObjectAction;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -614,5 +615,13 @@ public class TradePost {
                 player.getTradePost().openViewOffers();
             }));
         }
+        ObjectAction.register(60000, "exchange", (player, obj) -> {
+            if (player.getGameMode().isIronMan()) {
+                player.sendMessage("Your gamemode prevents you from accessing the Grand Exchange!");
+                return;
+            }
+            player.getTradePost().openViewOffers();
+        });
+        ObjectAction.register(60000, "item sets", (player, obj) -> ItemSet.open(player));
     }
 }
