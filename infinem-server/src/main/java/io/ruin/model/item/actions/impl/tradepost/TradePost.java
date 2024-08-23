@@ -624,7 +624,7 @@ public class TradePost {
             }));
             NPCAction.register(trader, "history", (player, npc) -> player.getTradePost().openHistory());
         }
-        for (int objId : Arrays.asList(60000, 60001, 60002, 60003, 60004, 60005)) {
+        for (int objId : Arrays.asList(60000, 60001, 60002, 60003, 60004, 60005, 10060, 10061)) {
             ObjectAction.register(objId, "exchange", (player, obj) -> {
                 if (player.getGameMode().isIronMan()) {
                     player.sendMessage("Your gamemode prevents you from accessing the Grand Exchange!");
