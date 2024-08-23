@@ -408,7 +408,13 @@ public class TradePost {
                                     }
 
                                     player.getInventory().remove(COINS_995, (int) price);
-                                    player.getBank().add(offer.getItem().getId(), finalAmount);
+                                    boolean bank = false;
+                                    if (player.getInventory().hasRoomFor(offer.getItem().getId(), finalAmount)) {
+                                        player.getInventory().add(offer.getItem().getId(), finalAmount);
+                                    } else {
+                                        bank = true;
+                                        player.getBank().add(offer.getItem().getId(), finalAmount);
+                                    }
                                     seller.getTradePost().coffer += price;
                                     boolean outOfStock = amountLeft == 0;
 
@@ -438,6 +444,7 @@ public class TradePost {
                                     }
                                     seller.sendMessage("Current Coffer: " + formatPrice(seller.getTradePost().coffer));
                                     player.sendMessage("<col=ff0000>" + "You have purchased " + finalAmount + "x " + offer.getItem().getDef().name + " for a price of " + formatPrice(price) + ".</col>");
+                                    if (bank) player.sendMessage("Your purchased item" + (finalAmount > 1 ? "s have " : " has ") + "been sent to your bank.");
                                     player.getTradePost().openViewOffers();
                                 });
                             }),
