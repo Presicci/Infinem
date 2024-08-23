@@ -368,7 +368,7 @@ public class TradePost {
             }
 
             if (!player.getInventory().contains(COINS_995, (int) price)) {
-                player.sendMessage("You do not have enough to purchase this.");
+                player.sendMessage("You do not have enough coins to purchase this.");
                 return;
             }
 
@@ -384,7 +384,7 @@ public class TradePost {
                                 }
 
                                 if (!player.getInventory().contains(COINS_995, (int) price)) {
-                                    player.sendMessage("You do not have enough to purchase this amount.");
+                                    player.sendMessage("You do not have enough coins to purchase this amount.");
                                     player.closeDialogue();
                                     return;
                                 }
