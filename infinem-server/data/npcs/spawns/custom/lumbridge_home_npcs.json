@@ -54,15 +54,6 @@
     "walkRange": 4
   },
   {
-    "name": "Grand Exchange Clerk",
-    "id": 2148,
-    "x": 3208,
-    "y": 3219,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0
-  },
-  {
     "name": "Vote manager",
     "id": 15000,
     "x": 3209,
